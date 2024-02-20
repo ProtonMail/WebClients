@@ -1,0 +1,2000 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "ka_KA"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "დამატება"
+      ],
+      "Add current URL": [
+        "მიმდინარე URL-ის დამატება"
+      ],
+      "Add more": [
+        "მეტის დამატება"
+      ],
+      "Add new item": [
+        "ახალი ელემენტის დამატება"
+      ],
+      "Admin panel": [
+        "ადმინისტრატორის პანელი"
+      ],
+      "Advanced": [
+        "დამატებით"
+      ],
+      "Advanced options": [
+        "დამატებითი პარამეტრები"
+      ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
+      "Back": [
+        "უკან"
+      ],
+      "Bulk delete items from trash": [
+        "ერთზე მეტი ელემენტის წაშლა ნაგვის ყუთიდან"
+      ],
+      "Bulk move items to another vault": [
+        "ერთზე მეტი ელემენტის გადატანა სხვა საცავში"
+      ],
+      "Bulk move items to trash": [
+        "ერთზე მეტი ელემენტის გადატანა ნაგვის ყუთში"
+      ],
+      "Bulk restore items from trash": [
+        "ერთზე მეტი ელემენტის აღდგენა ნაგვის ყუთიდან"
+      ],
+      "Bulk select items": [
+        "ერთზე მეტი ელემენტის მონიშვნა"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Change": [
+        "შეცვლა"
+      ],
+      "Choose a file or drag it here": [
+        "აირჩიეთ ფაილი ან გადმოათრიეთ აქ"
+      ],
+      "Clear": [
+        "გასუფთავება"
+      ],
+      "Clear search": [
+        "ძებნის გასუფთავება"
+      ],
+      "Close": [
+        "დახურვა"
+      ],
+      "Close advanced options": [
+        "დამატებითი პარამეტრების დახურვა"
+      ],
+      "Close navigation": [
+        "ნავიგაციის დახურვა"
+      ],
+      "Confirm": [
+        "დასტური"
+      ],
+      "Confirm access": [
+        "წვდომის დადასტურება"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "Copy and close": [
+        "კოპირება და დახურვა"
+      ],
+      "Copy to clipboard": [
+        "ბუფერში კოპირება"
+      ],
+      "Create": [
+        "შექმნა"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
+      ],
+      "Create a new vault": [
+        "ახალი საცავის შექმნა"
+      ],
+      "Create a new vault to share": [
+        "შექმენით ახალი საცავი გასაზიარებლად"
+      ],
+      "Create alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "Create card": [
+        "ბარათის შექმნა"
+      ],
+      "Create login": [
+        "შესვლის ჩანაწერის შექმნა"
+      ],
+      "Create new items": [
+        "ახალი ელემენტების შექმნა"
+      ],
+      "Create note": [
+        "შექმენით ჩანაწერი"
+      ],
+      "Create vault": [
+        "საცავის შექმნა"
+      ],
+      "Creating vault": [
+        "საცავის შექმნა"
+      ],
+      "Customize": [
+        "მორგება"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Delete alias": [
+        "ფსევდონიმი წაშლა"
+      ],
+      "Delete all": [
+        "ყველას წაშლა"
+      ],
+      "Delete password": [
+        "პაროლის წაშლა"
+      ],
+      "Delete permanently": [
+        "სამუდამოდ წაშლა"
+      ],
+      "Delete vault": [
+        "საცავის წაშლა"
+      ],
+      "Deselect": [
+        "მონიშვნის მოხსნა"
+      ],
+      "Discard": [
+        "მოცილება"
+      ],
+      "Dismiss": [
+        "მოცილება"
+      ],
+      "Download this CSV template": [
+        "გადმოწერეთ ეს CSV ნიმუში"
+      ],
+      "Edit": [
+        "ჩასწორება"
+      ],
+      "Edit vault": [
+        "საცავის ჩასწორება"
+      ],
+      "Export": [
+        "გატანა"
+      ],
+      "Feedback": [
+        "უკუკავშირი"
+      ],
+      "Fill password": [
+        "შეავსეთ პაროლი"
+      ],
+      "Filter vault items": [
+        "საცავის ელემენტების გაფილტვრა"
+      ],
+      "Generate alias": [
+        "ფსევდონიმის გენერაცია"
+      ],
+      "Generate password": [
+        "პაროლის გენერირება"
+      ],
+      "Generated passwords": [
+        "გენერირებული პაროლები"
+      ],
+      "Get mobile apps": [
+        "მობილური აპების დაყენება"
+      ],
+      "Get Started": [
+        "დაიწყეთ"
+      ],
+      "Help us improve": [
+        "დაგვეხმარეთ, გავუმჯობესდეთ"
+      ],
+      "Hide": [
+        "დამალვა"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "როგორ გავიტანო ჩემი მონაცემები ${ PROVIDER_INFO_MAP[form.values.provider].title }-დან?"
+      ],
+      "Import": [
+        "შემოტანა"
+      ],
+      "Importing": [
+        "შემოტანა"
+      ],
+      "Install extension": [
+        "გაფართოების დაყენება"
+      ],
+      "Invite others": [
+        "სხვების მოწვევა"
+      ],
+      "Join shared vault": [
+        "გაზიარებულ საცავთან მიერთება"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "Leave": [
+        "გასვლა"
+      ],
+      "Leave vault": [
+        "საცავის დატოვება"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის დაბლოკვა"
+      ],
+      "Make admin": [
+        "ადმინობის მინიჭება"
+      ],
+      "Make editor": [
+        "რედაქტორობის მინიჭება"
+      ],
+      "Make viewer": [
+        "მნახველობის მინიჭება"
+      ],
+      "Manage access": [
+        "წვდომის მართვა"
+      ],
+      "Manually sync your data": [
+        "თქვენი მონაცემების ხელით სინქრონიზაცია"
+      ],
+      "More info: ${ safeTitle }": [
+        "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "More options": [
+        "მეტი პარამეტრი"
+      ],
+      "Move": [
+        "გადატანა"
+      ],
+      "Move all items": [
+        "ყველა ელემენტის გადატანა"
+      ],
+      "Move to a shared vault": [
+        "გადატანა გაზიარებულ საცავში"
+      ],
+      "Move to another vault": [
+        "სხვა საცავში გადატანა"
+      ],
+      "Move to Trash": [
+        "ნაგვის ყუთში გადატანა"
+      ],
+      "Move to trash": [
+        "ნაგვის ყუთში გადატანა"
+      ],
+      "Not now": [
+        "არა ახლა"
+      ],
+      "OK": [
+        "დიახ"
+      ],
+      "Open navigation": [
+        "ნავიგაციის გახსნა"
+      ],
+      "Pass for Android": [
+        "Pass-ი Android-სთვის"
+      ],
+      "Pass for iOS": [
+        "Pass-ი iOS-ისთვის"
+      ],
+      "Pin item": [
+        "ელემენტის მიმაგრება"
+      ],
+      "Refresh the page": [
+        "გვერდის განახლება"
+      ],
+      "Regenerate": [
+        "თავიდან რეგენერაცია"
+      ],
+      "Reject": [
+        "უარყოფა"
+      ],
+      "Reject invitation": [
+        "მოსაწვევის უარყოფა"
+      ],
+      "Remove access": [
+        "წვდომის გაუქმება"
+      ],
+      "Remove member": [
+        "წევრის წაშლა"
+      ],
+      "Request a feature": [
+        "თვისების მოთხოვნა"
+      ],
+      "Resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნა"
+      ],
+      "Restore": [
+        "აღდგენა"
+      ],
+      "Restore item": [
+        "ელემენტის აღდგენა"
+      ],
+      "Retry": [
+        "თავიდან"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Saving": [
+        "დაზოგვა"
+      ],
+      "See members": [
+        "წევრების ნახვა"
+      ],
+      "Send invite": [
+        "მოსაწვევის გაგზავნა"
+      ],
+      "Send us a message": [
+        "მოგვწერეთ"
+      ],
+      "Set access level": [
+        "წვდომის დონის დაყენება"
+      ],
+      "Share": [
+        "გაზიარება"
+      ],
+      "Share this vault": [
+        "ამ საცავის გაზიარება"
+      ],
+      "Share vault": [
+        "საცავის გაზიარება"
+      ],
+      "Show": [
+        "ჩვენება"
+      ],
+      "Sign back in": [
+        "თავიდან შესვლა"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }-ით შესვლა"
+      ],
+      "Sign out": [
+        "გასვლა"
+      ],
+      "Sort vault items": [
+        "საცავის ელემენტების დალაგება"
+      ],
+      "Submit": [
+        "დამტკიცება"
+      ],
+      "Submitting report...": [
+        "ანგარიშის გადაგზავნა..."
+      ],
+      "Transfer ownership": [
+        "მფლობელობის გადაცემა"
+      ],
+      "Unpin item": [
+        "ელემენტის მოხსნა"
+      ],
+      "Update vault": [
+        "საცავის განახლება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
+      ],
+      "Upgrade now to share with more people": [
+        "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
+      ],
+      "Write us on Reddit": [
+        "მოგვწერეთ Reddit-ზე"
+      ],
+      "Write us on Twitter": [
+        "მოგვწერეთ ტვიტერზე"
+      ],
+      "Your password manager not here? Request it.": [
+        "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "დაზოგეთ ჭკვიანურად. მიიღეთ ერთი წელი Pass Plus მხოლოდ ${ relativePrice }/თვეში."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "შავი პარასკევის შემოთავაზება"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "მეტი ინფორმაცია"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "ჩაკეცვა"
+      ],
+      "Expand": [
+        "ამოკეცვა"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
+      ],
+      "Authentication error": [
+        "ავთენტიკაციის შეცდომა"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი ${ BRAND_NAME }-ის, პაროლი, რომ გატანა გაგრძელდეს"
+      ],
+      "Auto-lock could not be activated": [
+        "ავტომატური დაბლოკვის ჩართვა შეუძლებელია"
+      ],
+      "Auto-lock could not be disabled": [
+        "ავტომატური დაბლოკვის გამორთვა შეუძლებელია"
+      ],
+      "Cannot send invitation at the moment": [
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი",
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
+      "Cannot send invitations at the moment": [
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
+      "Could not confirm this invite at the moment": [
+        "ამჯამად ამ მოსაწვევის დადასტურება შეუძლებელია"
+      ],
+      "Could not leave vault.": [
+        "საცავის დატოვების შეცდომა."
+      ],
+      "Could not load recommendations at the moment.": [
+        "ამჟამად რეკომენდაციების ჩატვირთვა შეუძლებელია."
+      ],
+      "Could not open created vault": [
+        "შექმნილი საცავის გახსნა შეუძლებელია"
+      ],
+      "Could not open invited vault": [
+        "მოწვეული საცავის გახსნა შეუძლებელია"
+      ],
+      "Could not open updated vault": [
+        "განახლებული საცავის გახსნა შეუძლებელია"
+      ],
+      "Could not resolve share members": [
+        "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV ფაილს მოსალოდნელი თავსართები აკლია: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "თქვენი ${ PASS_APP_NAME }-ის გატანის ფალის გაშიფვრის შეცდომა. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "ელემენტის წაშლის შეცდომა"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "საცავის \"${ payload.content.name }\" წაშლის შეცდომა"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი",
+        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი"
+      ],
+      "Editing item failed": [
+        "ელემენტის ჩასწორების შეცდომა"
+      ],
+      "Empty CSV file": [
+        "ცარიელი CSV ფაილი"
+      ],
+      "Emptying trash failed": [
+        "ნაგვის ყუთის დაცარიელების შეცდომა"
+      ],
+      "Encrypted JSON not supported": [
+        "დაშიფრული JSON-ი მხარდაჭერილი არაა"
+      ],
+      "Error reporting problem": [
+        "პრობლემის გადაგზავნის შეცდომა"
+      ],
+      "Failed removing the invite.": [
+        "მოწვევის წაშლა ჩავარდა."
+      ],
+      "Failed resending invite.": [
+        "მოწვევის თავიდან გაგზავნის შეცდომა."
+      ],
+      "Failed to delete selected items": [
+        "მონიშნული ელემენტების წაშლა ჩავარდა"
+      ],
+      "Failed to edit user's access.": [
+        "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან, ჩავარდა"
+      ],
+      "Failed to move items": [
+        "ელემენტების გადატანა ჩავარდა"
+      ],
+      "Failed to move items to trash": [
+        "ჩავარდა ერთზე მეტი ელემენტის გადატანა ნაგვის ყუთში"
+      ],
+      "Failed to pin item": [
+        "ელემენტის მიმაგრება ჩავარდა"
+      ],
+      "Failed to remove user's access.": [
+        "მომხმარებლის წვდომის წაშლა ჩავარდა."
+      ],
+      "Failed to restore items from trash": [
+        "ნაგვის ყუთიდან ელემენტების აღდგენა ჩავარდა"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "ამ საცავის მფლობელობის გადატანა ჩავარდა."
+      ],
+      "Failed to unpin item": [
+        "ელემენტის მოხსნა ჩავარდა"
+      ],
+      "File could not be parsed": [
+        "ფაილის დამუშავება შეუძლებელია"
+      ],
+      "File does not match expected format": [
+        "ფაილი არ ემთხვევა სასურველ ფორმატს"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ description }"
+      ],
+      "Importing items failed": [
+        "ელემენტების შემოტანის შეცდომა"
+      ],
+      "Invalid password manager": [
+        "არასწორი პაროლების მმართველი"
+      ],
+      "Invitation could not be accepted": [
+        "მოსაწვევზე დათანხმება შეუძლებელია"
+      ],
+      "Invitation could not be rejected": [
+        "მოსაწვევის უარყოფა შეუძლებელია"
+      ],
+      "Item content cannot exceed 40KB": [
+        "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
+      ],
+      "Item creation failed": [
+        "ელემენტის შექმნის შეცდომა"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "თუ რომელიმე თქვენი ჩანაწერის ველი შეიცავს ისეთ სიმბოლოებს, როგორიცაა მძიმე, წერტილი, ბრჭყალები ან ერთზე მეტი ხაზი, LastPass დაზიანებულ CSV ფაილს ჩაწერს"
+      ],
+      "Moving item failed": [
+        "ელემენტის გადატანის შეცდომა"
+      ],
+      "Passphrase is incorrect": [
+        "საკვანძო ფრაზა არასწორია"
+      ],
+      "PIN codes do not match": [
+        "Pin-კოდები არ ემთხვევა"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის კომპიუტერის აპთან ადრეული წვდომის მისაღებად"
+      ],
+      "Request timed out": [
+        "მოთხოვნის ვადა გავიდა"
+      ],
+      "Requesting alias options failed": [
+        "მეტსახელის პარამეტრების გამოთხოვის შეცდომა"
+      ],
+      "Restoring item failed": [
+        "ელემენტის აღდგენის შეცდომა"
+      ],
+      "Restoring trashed items failed": [
+        "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა ჩავარდა"
+      ],
+      "Settings update failed": [
+        "პარამეტრების განახლების შეცდომა"
+      ],
+      "Signature verification failed": [
+        "ხელმოწერის შემოწმების შეცდომა"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "პაროლის შესვლის გამო ზოგიერთი საცავი ხელმისაწვდომი აღარაა. წვდომის დასაბრუნებლად თავიდან გაააქტიურეთ ანგარიშის გასაღებები. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
+      ],
+      "The file you are trying to import is empty": [
+        "ფაილი, რომლის შემოტანასაც ცდილობთ, ცარიელია"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "მეტისმეტად ბევრი ჩავარდნილი მცდელობა. თავიდან შედით."
+      ],
+      "Trashing item failed": [
+        "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
+      ],
+      "Unable to boot": [
+        "ჩატვირთვის შეცდომა"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
+      ],
+      "Unable to sync": [
+        "სინქრონიზაცია შეუძლებელია"
+      ],
+      "Unknown invite": [
+        "უცნობი მოწვევა"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
+      ],
+      "Unsupported 1Password file format": [
+        "მხარდაუჭერელი 1Password-ის ფაილის ფორმატი"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "საცავის \"${ payload.content.name }\" განახლების შეცდომა"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "საცავის \"${ payload.content.name }\" შექმნის შეცდომა"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "საცავის \"${ vaultData.name }\" შექმნა შეუძლებელია"
+      ],
+      "Vault name does not match": [
+        "საცავის სახელი არ ემთხვევა"
+      ],
+      "Wrong PIN code. Try again.": [
+        "PIN-კოდი არასწორია. თავიდან სცადეთ."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "თქვენი PIN-კოდი წაშლილია სხვა ${ PASS_APP_NAME }-ის კლიენტის მიერ"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "უფს, რაღაც არასწორად წავიდა"
+      ],
+      "Please refresh the page or try again later.": [
+        "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "GB": [
+        "გბ"
+      ],
+      "KB": [
+        "კბ"
+      ],
+      "MB": [
+        "მბ"
+      ],
+      "TB": [
+        "ტბ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Gigabyte": [
+        "გიგაბაიტი",
+        "გიგაბაიტი"
+      ],
+      "Kilobyte": [
+        "კილობაიტი",
+        "კილობაიტი"
+      ],
+      "Megabyte": [
+        "მეგაბაიტი",
+        "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" ელემენტი წაიშალა"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
+      ],
+      "${ count } invites successfully sent": [
+        "წარმატებით გაგზავნილია ${ count } მოსაწვევი"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } წევრი",
+        "${ memberCount } წევრი"
+      ],
+      "${ n } item": [
+        "${ n } ელემენტი",
+        "${ n } ელემენტი"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber }-ჯერ",
+        "${ revisionNumber } ჯერ"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
+      ],
+      "Access successfully confirmed": [
+        "წვდომა წარმატებით დადასტურდა"
+      ],
+      "Admin": [
+        "ადმინისტრატორი"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "უქმეობის შემდეგ, განბლოკვისთვის, ${ PASS_APP_NAME }-სთან წვდომას PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "ფსევდონიმი \"${ item.aliasEmail }\" გადატანილია ნაგვის ყუთში. ეს ელფოსტების თქვენს საფოსტო ყუთში გადამისამართებას შეწყვეტს"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
+      ],
+      "All items successfully moved": [
+        "ყველა ელემენტის გადატანა წარმატებულია"
+      ],
+      "All trashed items permanently deleted": [
+        "ყველა ელემენტი ნაგვის ყუთიდან სამუდამოდ წაიშალა"
+      ],
+      "All trashed items successfully restored": [
+        "ყველა ელემენტი ნაგვის ყუთიდან, წარმატებით, აღდგა"
+      ],
+      "An item previously shared with you was removed": [
+        "თქვენთვის ადრე გაზიარებული ელემენტი წაიშალა"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ყველა ელემენტი \"${ fromVaultName }\"-დან \"${ toVaultName }\"-ში?"
+      ],
+      "Auto-lock successfully disabled": [
+        "ავტომატური დაბლოკვა წარმატებით გამოირთო"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "შემოიტანეთ თქვენი არსებული პაროლები ${ BRAND_NAME }-ში."
+      ],
+      "Built in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "შეუძლია ამ საცავზე წვდომების მინიჭება, ჩამორთმევა და წაშლა."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "შეუძლია ამ საცავზე წვდომების მინიჭება და ჩამორთმევა."
+      ],
+      "Can view items in this vault.": [
+        "შეუძლია ამ საცავის ელემენტების დათვალიერება."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "გილოცავთ, თქვენი წვდომა დადასტურებულია"
+      ],
+      "Copied to clipboard": [
+        "დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV გთავაზობთ მოხერხებულ ფორმატს თქვენი მონაცემების სანახავად. მაგრამ, მისი სიმარტივის გამო, ზოგიერთი მონაცემები (დამატებითი ველები, საცავის სტრუქტურა და ა.შ.) ჩასმული არ იქნება. მონაცემების სრული გატანისთვის, გირჩევთ, სხვა ფორმატი გამოიყენოთ."
+      ],
+      "Decrypting your data": [
+        "თქვენი მონაცემების გაშიფვრა"
+      ],
+      "Deleted items will be moved here first": [
+        "წაშლილი ელემენტები ჯერ აქ იქნება გადმოტანილი"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "იშლება \"${ payload.content.name }\""
+      ],
+      "Drop file here to upload": [
+        "ასატვირთად გადმოათრიეთ ფაილები აქ"
+      ],
+      "Drop to import": [
+        "შემოსატანად დააგდეთ"
+      ],
+      "Editor": [
+        "რედაქტორი"
+      ],
+      "Emptying trash...": [
+        "ნაგვის ყუთის დაცარიელება..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
+      ],
+      "Fill in the CSV with your data": [
+        "შეავსეთ CSV თქვენი მონაცემებით"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "მიყევით ამ ნაბიჯებს, რომ შემოიტანოთ თქვენი მონაცემები ზოგადი CSV-ით:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "მიიღეთ Pass-ის ფუნქციების უმრავლესობა თითოეული გუნდისთვის ან პროექტისთვის საკუთარი საცავის შექმნით."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
+      ],
+      "Import in progress:": [
+        "მიმდინარეობს შემოტანა:"
+      ],
+      "Import the CSV file below.": [
+        "ქვემორე CSV ფაილის შემოტანა."
+      ],
+      "Imported ${ payload.total } item": [
+        "შემოტანილია ${ payload.total } ელემენტი",
+        "შემოტანილია ${ payload.total } ელემენტი"
+      ],
+      "Imported on ${ date }": [
+        "შემოტანის დრო ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "იმისათვის, რომ ${ PASS_APP_NAME }-სგან სრული სიამოვნება მიიღოთ, გაფართოებას საჭირო წვდომები მიეცით"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "დააყენეთ ${ PASS_APP_NAME } ${ browser.title }-სთვის, რომ შესვლის დეტალები ავტომატურად შეივსოს."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "დააყენეთ ${ PASS_APP_NAME } ${ browser.title }-სთვის, რომ შესვლის დეტალები ავტომატურად შეივსოს. "
+      ],
+      "Internet connection lost": [
+        "ინტერნეტკავშირი დაკარგულია"
+      ],
+      "Invitation sent": [
+        "მოსაწვევი გაგზავნილია"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "მოიწვიეთ სპეციფიკური ხალხი და დააყენეთ სწორი წვდომები."
+      ],
+      "Invite successfully removed": [
+        "მოსაწვევი წარმატებით წაიშალა"
+      ],
+      "Invite successfully resent": [
+        "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
+      ],
+      "Invite successfully sent": [
+        "მოსაწვევი წარმატებით გაიგზავნა"
+      ],
+      "invites you to access items in": [
+        "გიწვევთ ელემენტებზე წვდომისთვის"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "როგორც ჩანს, ${ PASS_APP_NAME }-ში უკვე შესული ბრძანდებით. თუ ცდილობთ, სხვა მომხმარებლით შეხვიდეთ, ჯერ გამოდით."
+      ],
+      "item": [
+        "ელემენტი",
+        "ელემენტი"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "ელემენტი \"${ payload.item.data.metadata.name }\" შეიქმნა"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "ელემენტი \"${ payload.item.data.metadata.name }\" განახლდა"
+      ],
+      "Item moved to trash": [
+        "ელემენტი გადატანილია ნაგვის ყუთში"
+      ],
+      "Item permanently deleted": [
+        "ელემენტი სამუდამოდ წაიშალა"
+      ],
+      "Item restored": [
+        "ელემენტი აღდგენილია"
+      ],
+      "Item successfully moved": [
+        "ელემენტის გადატანა წარმატებულია"
+      ],
+      "Item successfully pinned": [
+        "ელემენტი წარმატებით მიმაგრდა"
+      ],
+      "Item successfully unpinned": [
+        "ელემენტის მოხსნა წარმატებულია"
+      ],
+      "Leaving vault...": [
+        "საცავიდან გასლვა..."
+      ],
+      "Let's get you started by creating your first item": [
+        "დაიწყეთ თქვენი პირველი ელემენტის შექმნით"
+      ],
+      "Loading": [
+        "იტვირთება"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "იტვირთება ${ PASS_APP_NAME }"
+      ],
+      "Locking your session...": [
+        "მიმდინარეობს თქვენი სესიის ჩაკეტვა..."
+      ],
+      "Logging you out...": [
+        "მიმდინარეობს თქვენი სისტემიდან გაყვანა..."
+      ],
+      "me": [
+        "მე"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving items": [
+        "მიმდინარეობს ელემენტების გადატანა"
+      ],
+      "Moving items to trash": [
+        "ელემენტების გადატანა ნაგვის ყუთში"
+      ],
+      "Never": [
+        "არასოდეს"
+      ],
+      "None": [
+        "არცერთი"
+      ],
+      "Owner": [
+        "მფლობელი"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "მფლობელობის გადაცემა წარმატებით დასრულდა. ამ საცავის მფლობელი აღარ ბრძანდებით."
+      ],
+      "Pass Plus trial": [
+        "Pass Plus-ის საცდელი"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
+      ],
+      "Permanently deleting selected items": [
+        "მონიშნული ელემენტების სამუდამოდ წაშლა"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN-კოდის რეგისტრაცია წარმატებულია. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
+      ],
+      "Pinning item...": [
+        "ელემენტის მიმაგრება..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი PIN-kodi.\n${ PASS_APP_NAME } აღარ დაიბლოკება"
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "პარამეტრის ჩასასწორებლად დაადასტურეთ თქვენი PIN-კოდი"
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "თქვენი ავტომატური დაბლოკვის პარამეტრების რეგისტრაციის დასასრულებლად დაადასტურეთ თქვენი PIN-კოდი."
+      ],
+      "Please consider leaving a review.": [
+        "სჯობს, გახვიდეთ მიმოხილვიდან."
+      ],
+      "Please enter your current PIN code to continue": [
+        "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
+      ],
+      "Press Enter to copy": [
+        "დასაკოპირებლად დააჭირეთ Enter-ს"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "კონფიდენციალობა ჩვენი ძირითადი საზრუნავია. გაიგეთ, რატომაა ${ PASS_APP_NAME } განსხვავებული."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
+      ],
+      "Restoring items from trash": [
+        "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
+      ],
+      "Restoring trashed items...": [
+        "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა..."
+      ],
+      "Select destination vault": [
+        "აირჩიეთ სამიზნე საცავი"
+      ],
+      "Select vault to share": [
+        "აირჩიეთ გასაზიარებელი საცავი"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
+      ],
+      "Selected items permanently deleted": [
+        "მონიშნული ელემენტები სამუდამოდ წაიშალა"
+      ],
+      "Selected items successfully moved to trash": [
+        "მონიშნული ელემენტები წარმატებით იქნა გადატანილი ნაგვის ყუთში"
+      ],
+      "Selected items successfully restored from trash": [
+        "მონიშნული ელემენტები წარმატებით იქნა აღდგენილი ნაგვის ყუთიდან"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
+      ],
+      "Session timed out": [
+        "სესიის დრო გავიდა"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "დააყენეთ PIN კოდი თქვენი მონაცემების ადვილად დასაბლოკად"
+      ],
+      "Settings successfully updated": [
+        "პარამეტრი წარმატებით განახლდა"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "გააზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები, 10 პიროვნებამდე"
+      ],
+      "Signing you in": [
+        "შესვლა"
+      ],
+      "Successfully exported all your items": [
+        "ყველა თქვენი ელემენტის გატანა წარმატებულია"
+      ],
+      "Successfully left the vault": [
+        "საცავიდან გასვლა წარმატებულია"
+      ],
+      "Successfully synced all vaults": [
+        "ყელა საცავის სინქრონიზაცია წარმატებულია"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "ამ საცავში ელემენტის შესაქმნელად სხვა საცავზე გადაერთეთ"
+      ],
+      "Syncing your vaults…": [
+        "თქვენი საცავების სინქრონიზაცია…"
+      ],
+      "Thank you, the problem has been reported": [
+        "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "გატანილი ფაილი PGP-ით დაიშიფრება და რთულ საკვანძო ფრაზას მოითხოვს."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "გატანილი ფაილი არ შეიცავს იმ გაზიარებული საცავების მონაცემებს, სადაც თქვენ მფლობელი არ ბრძანდებით"
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
+        "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "ტექსტი, რომლის ჩასმასაც ცდილობთ, დაშვებულ ${ maxLength } სიმბოლოზე გრძელია."
+      ],
+      "The user did not accept the invitation yet.": [
+        "მომხმარებელი მოსაწვევს ჯერ არ დათანხმებია."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
+      ],
+      "Unable to copy to clipboard": [
+        "ბუფერში დაკოპირება შეუძლებელია"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Unpinning item...": [
+        "ელემენტის მოხსნა..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
+      ],
+      "Use vaults to share this item with others.": [
+        "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
+      ],
+      "User's access removed": [
+        "მომხმარებლის წვდომა წაიშალა"
+      ],
+      "User's access sucessfuly updated": [
+        "მომხმარებლის წვდომები წარმატებით განახლდა"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "საცავი \"${ payload.share.content.name }\" წარმატებით შეიქმნა"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "საცავი \"${ payload.share.content.name }\" წარმატებით განახლდა"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "საცავი \"${ share.content.name }\" წაიშალა"
+      ],
+      "Viewer": [
+        "მთვალიერებელი"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "თქვენს ლოკალურ საცავთან მონაცემების სინქრონიზაციის პრობლემა. დარწუნდით, რომ ${ PASS_SHORT_APP_NAME }-ის სამუშაოდ საკმარისი ადგილი გაგაჩნიათ."
+      ],
+      "You are about to create:": [
+        "აპირებთ, შექმნათ:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, შექმნათ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "მიაღწიეთ შესაძლო ფსევდონიმების რაოდენობს ზღვარს. სატარიფო გეგმის აწევის შემთხვევაში ფსევდონიმების რაოდენობა უსაზღვროა."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "მიაღწიეთ თქვენთვის შესაძლო საცავების რაოდენობის ლიმიტს."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "როცა ${ PASS_APP_NAME } არააქტიურობის გამო თვითდაიბლოკება, ეს PIN-კოდი შეგიძლიათ, მის განსაბლოკად გამოიყენოთ."
+      ],
+      "You're invited to a vault.": [
+        "მიწვეული ხართ საცავში."
+      ],
+      "Your files will be encrypted and then saved": [
+        "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
+      ]
+    },
+    "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } სიმბოლო",
+        "${ config.options.length } სიმბოლო"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } სიტყვა",
+        "${ config.options.wordCount } სიტყვა"
+      ],
+      "1 hour": [
+        "1 სთ"
+      ],
+      "1 minute": [
+        "1 წუთი"
+      ],
+      "10 minutes": [
+        "10 წუთი"
+      ],
+      "15 minutes": [
+        "15 წუთი"
+      ],
+      "2FA secret key (TOTP)": [
+        "2FA საიდუმლო გასაღები (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA კოდი (TOTP)"
+      ],
+      "30 minutes": [
+        "30 წუთი"
+      ],
+      "30 seconds": [
+        "30 წამი"
+      ],
+      "5 minutes": [
+        "5 წუთი"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "ანგარიში"
+      ],
+      "Alias": [
+        "ფსევდონიმი"
+      ],
+      "Alias address": [
+        "ფსევდონიმის მისამართი"
+      ],
+      "Aliases": [
+        "ფსევდონიმები"
+      ],
+      "All": [
+        "ყველა"
+      ],
+      "All vaults": [
+        "ყველა საცავი"
+      ],
+      "Alphabetical": [
+        "ანბანით"
+      ],
+      "Application logs": [
+        "აპლიკაციის ჟურნალი"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის ავტომატური დაბლოკვა"
+      ],
+      "Auto-lock after": [
+        "ავტომატური დაბლოკვის დრო"
+      ],
+      "Capital letters (A-Z)": [
+        "მაღალი რეგისტრის სიმბოლოები (A-Z)"
+      ],
+      "Capitalise": [
+        "ზედა რეგისტრში გადაყვანა"
+      ],
+      "Card": [
+        "ბარათი"
+      ],
+      "Card number": [
+        "ბარათის ნომერი"
+      ],
+      "Cards": [
+        "ბარათები"
+      ],
+      "Confirm vault name": [
+        "დაადასტურეთ საცავის სახელი"
+      ],
+      "Create a credit card": [
+        "საკრედიტო ბარათის შექმნა"
+      ],
+      "Create a hide-my-email alias": [
+        "Hide-my-email-ის ფსევდონიმის შექმნა"
+      ],
+      "Create a login": [
+        "შესვლის ჩანაწერის შექმნა"
+      ],
+      "Create an encrypted note": [
+        "დაშიფრული შენიშვნის შექმნა"
+      ],
+      "Create new vault": [
+        "ახალი საცავის შექმნა"
+      ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Default (recommended)": [
+        "ნაგულისხმევი (რეკომენდებულია)"
+      ],
+      "Display": [
+        "ჩვენება"
+      ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
+      "Empty trash": [
+        "ნაგვის ყუთის გასუფთავება"
+      ],
+      "Encrypted (recommended)": [
+        "დაშიფრული (რეკომენდებულია)"
+      ],
+      "Expiration date": [
+        "ვადა"
+      ],
+      "Export": [
+        "გატანა"
+      ],
+      "Field name": [
+        "ველის სახელწოდება"
+      ],
+      "File format": [
+        "ფაილის ფორმატი"
+      ],
+      "Forwards to": [
+        "გადაგზავნა"
+      ],
+      "General": [
+        "ზოგადი"
+      ],
+      "Generic CSV": [
+        "ზოგადი CSV"
+      ],
+      "Grant": [
+        "უფლების მიცემა"
+      ],
+      "Hidden": [
+        "დამალული"
+      ],
+      "Hide password": [
+        "პაროლის დამალვა"
+      ],
+      "Import": [
+        "შემოტანა"
+      ],
+      "Import passwords": [
+        "პაროლების შემოტანა"
+      ],
+      "Imported from : ": [
+        "შემოტანილია :  "
+      ],
+      "Imported on : ": [
+        "შემოტანის დრო : "
+      ],
+      "Include numbers": [
+        "რიცხვების ჩათვლით"
+      ],
+      "Include numbers (0-9)": [
+        "რიცხვების ჩათვლით (0-9)"
+      ],
+      "Invitations": [
+        "მოწვევები"
+      ],
+      "Item ID": [
+        "ელემენტის ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "კლავიატურის მალსახმობი: ${ shortcut }"
+      ],
+      "Language": [
+        "ენა"
+      ],
+      "Last 2 weeks": [
+        "ბოლო 2 კვირა"
+      ],
+      "Last autofill": [
+        "უკანასკნელი ავტომატური შევსება"
+      ],
+      "Last month": [
+        "ბოლო თვის"
+      ],
+      "Last week": [
+        "გასულ კვირას"
+      ],
+      "Latest import": [
+        "ბოლოს შემოტანილი"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "Login": [
+        "შესვლა"
+      ],
+      "Logins": [
+        "შესვლები"
+      ],
+      "Make all admins": [
+        "ყველას მონიშვნა ადმინისტრატორად"
+      ],
+      "Make all editors": [
+        "ყველას მონიშვნა რედაქტორად"
+      ],
+      "Make all viewers": [
+        "ყველას მონიშვნა დამთვალიერებლად"
+      ],
+      "Members": [
+        "წევრები"
+      ],
+      "Modified": [
+        "შეცვლილია"
+      ],
+      "More than a month": [
+        "თვეზე მეტი"
+      ],
+      "Most recent": [
+        "უახლესი"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Name on card": [
+        "სახელი ბარათზე"
+      ],
+      "Need help ?": [
+        "დახმარება გჭირდებათ ?"
+      ],
+      "New vault": [
+        "ახალი საცავი"
+      ],
+      "New-Old": [
+        "ახალი-ძველი"
+      ],
+      "Newest to oldest": [
+        "უახლესიდან ძველისკენ"
+      ],
+      "No history": [
+        "ისტორია არ არის"
+      ],
+      "Note": [
+        "შენიშვნა"
+      ],
+      "Notes": [
+        "შენიშვნები"
+      ],
+      "Old-New": [
+        "ძველი-ახალი"
+      ],
+      "Oldest to newest": [
+        "უძველესიდან ახლისკენ"
+      ],
+      "Passphrase": [
+        "საკვანძო ფრაზა"
+      ],
+      "Password": [
+        "პაროლი"
+      ],
+      "Password history": [
+        "პაროლების ისტორია"
+      ],
+      "PIN": [
+        "PIN-კოდი"
+      ],
+      "Prefix": [
+        "პრეფიქსი"
+      ],
+      "Rate us": [
+        "შეგვაფასეთ"
+      ],
+      "Recent": [
+        "უახლესი"
+      ],
+      "Report a problem": [
+        "შეტყობინება პრობლემის შესახებ"
+      ],
+      "Restore all items": [
+        "ყველა ელემენტის აღდგენა"
+      ],
+      "Reveal password": [
+        "პაროლის ჩვენება"
+      ],
+      "Security": [
+        "უსაფრთხოება"
+      ],
+      "Security code": [
+        "უსაფრთხოების კოდი"
+      ],
+      "Select an email address": [
+        "აირჩიეთ ელფოსტის მისამართი"
+      ],
+      "Select preferred language": [
+        "ამოირჩიეთ სასურველი ენა"
+      ],
+      "Select your password manager": [
+        "აირჩიეთ თქვენი პაროლების მმართველი"
+      ],
+      "Selected": [
+        "მონიშნულია"
+      ],
+      "Session locking": [
+        "სესიის ჩაკეტვა"
+      ],
+      "Set PIN code": [
+        "PIN-კოდის დაყენება"
+      ],
+      "Show website favicons": [
+        "ვებგვერდის favicon-ების ჩვენება"
+      ],
+      "Special characters (!&*)": [
+        "სპეცსიმბოლოები (!&*)"
+      ],
+      "Suffix": [
+        "სუფიქსი"
+      ],
+      "Support": [
+        "მხარდაჭერა"
+      ],
+      "Text": [
+        "ტექსტი"
+      ],
+      "Title": [
+        "სათაური"
+      ],
+      "Today": [
+        "დღეს"
+      ],
+      "Total imported items : ": [
+        "შემოტანილი ელემენტები სულ : "
+      ],
+      "Total items : ": [
+        "სულ ელემენტები : "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "სანაგვე ყუთი"
+      ],
+      "Type": [
+        "ტიპი"
+      ],
+      "Unnamed Credit Card": [
+        "უსახელო საკრედიტო ბარათი"
+      ],
+      "Unnamed item": [
+        "უსახელო ელემენტი"
+      ],
+      "Unnamed note": [
+        "უსახელო შენიშვნა"
+      ],
+      "Untitled": [
+        "უსათაურო"
+      ],
+      "Update": [
+        "განახლება"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
+      ],
+      "Username (alias)": [
+        "მომხმარებლის სახელი (ფსევდონიმი)"
+      ],
+      "Username (new alias)": [
+        "მომხმარებლის სახელი (ახალი ფსევდონიმი)"
+      ],
+      "Vault": [
+        "საცავი"
+      ],
+      "Vault ID": [
+        "საცავის ID"
+      ],
+      "Vaults": [
+        "საცავები"
+      ],
+      "View details": [
+        "დეტალების ხილვა"
+      ],
+      "View logs": [
+        "ჟურნალის ნახვა"
+      ],
+      "Websites": [
+        "ვებსაიტები"
+      ],
+      "You are about to create": [
+        "აპირებთ, შექმნათ"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "შეიყვანეთ თქვენი PIN კოდი"
+      ],
+      "Sign in to your account": [
+        "შედით თქვენს ანგარიშში"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "განბლოკეთ ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } ელემენტი",
+        "${ count } ელემენტი"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "აირჩიეთ ${ semiboldText } ამ საცავში"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "მძიმეები"
+      ],
+      "Hyphens": [
+        "დეფისები"
+      ],
+      "Memorable Password": [
+        "დამახსოვრებადი პაროლი"
+      ],
+      "Numbers": [
+        "რიცხვები"
+      ],
+      "Numbers and Symbols": [
+        "ციფრები და სიმბოლოები"
+      ],
+      "Periods": [
+        "წერტილები"
+      ],
+      "Random Password": [
+        "შემთხვევითი პაროლი"
+      ],
+      "Spaces": [
+        "ადგილები"
+      ],
+      "Underscores": [
+        "ხაზგასმები"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "2FA საიდუმლო გასაღების დამატება"
+      ],
+      "Add hidden text": [
+        "ფარული ტექსტის დამატება"
+      ],
+      "Add note": [
+        "შენიშვნის დამატება"
+      ],
+      "Add text": [
+        "ტექსტის დამატება"
+      ],
+      "Email address": [
+        "ელ-ფოსტის მისამართი"
+      ],
+      "Enter a note...": [
+        "შეიყვანეთ შენიშვნა..."
+      ],
+      "Enter a prefix": [
+        "შეიყვანეთ პრეფიქსი"
+      ],
+      "Enter email or username": [
+        "შეყვანეთ ელფოსტა ან მომხმარებლის სახელი"
+      ],
+      "Enter password": [
+        "შეიყვანეთ პაროლი"
+      ],
+      "Full Name": [
+        "სახელი და გვარი"
+      ],
+      "MM/YY": [
+        "თთ/წწ"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Password": [
+        "პაროლი"
+      ],
+      "Pick a vault": [
+        "აირჩიეთ საცავი"
+      ],
+      "Please describe the problem and include any error messages": [
+        "აღწერეთ პრობლემა და დაურთეთ შეცდომის ნებისმიერი შეტყობინება"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "წასაშლელად თავიდან აკრიფეთ \"${ vaultName }\""
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ pluralItemType }-ის ძებნა ${ vaultName }-ში"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "${ pluralItemType }-ის ყველა საცავში ძებნა"
+      ],
+      "Search in ${ vaultName }": [
+        "${ vaultName }-ში ძებნა"
+      ],
+      "Search in all vaults": [
+        "ყველა საცავში ძებნა"
+      ],
+      "Search in Trash": [
+        "ნაგვის ყუთში ძებნა"
+      ],
+      "Select a suffix": [
+        "აირჩიეთ სუფიქსი"
+      ],
+      "Shared vault": [
+        "გაზიარებული საცავი"
+      ],
+      "Unknown origin": [
+        "უცნობი წყარო"
+      ],
+      "Untitled": [
+        "უსათაურო"
+      ],
+      "Used on ${ url }": [
+        "გამოიყენება ${ url } -ზე"
+      ],
+      "Write your note": [
+        "დაწერეთ თქვენი შენიშვნა"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "ავტომატური დაბლოკვის განახლება"
+      ],
+      "Confirm PIN code": [
+        "დაადასტურეთ PIN–კოდი"
+      ],
+      "Create a vault": [
+        "საცავის შექმნა"
+      ],
+      "Create PIN code": [
+        "PIN-კოდის შექმნა"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "წავშალო საცავი \"${ vaultName }\" ?"
+      ],
+      "Discard changes?": [
+        "ცვლილებების გაუქმება?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "მოგწონთ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
+      "Enter your PIN": [
+        "შეიყვანეთ PIN-კოდი"
+      ],
+      "Get Started": [
+        "დაიწყეთ"
+      ],
+      "Grant permissions": [
+        "წვდომების მინიჭება"
+      ],
+      "Import - ${ date }": [
+        "შემოტანა - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "საცავ(ებ)-ში შემოტანა"
+      ],
+      "Import your data": [
+        "შემოიტანეთ თქვენი მონაცემები"
+      ],
+      "Install extension": [
+        "გაფართოების დაყენება"
+      ],
+      "Leave vault ?": [
+        "გავიდე საცავიდან?"
+      ],
+      "Low disk space": [
+        "დისკზე ადგილი ცოტაღაა"
+      ],
+      "Member limit": [
+        "წევრების ზღვარი"
+      ],
+      "Members": [
+        "წევრები"
+      ],
+      "Move all items ?": [
+        "გადავიტანო ყველა ელემენტი?"
+      ],
+      "No items selected": [
+        "ელემენტები მონიშნული არაა"
+      ],
+      "Our welcome gift to you": [
+        "ჩვენი მისალმების საჩუქარი"
+      ],
+      "Pending access to the shared data": [
+        "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
+      "Permanently remove all items ?": [
+        "წავშალო სამუდამოდ ყველა ელემენტი?"
+      ],
+      "Pinned (${ items.length })": [
+        "მიმაგრებულია (${ items.length })"
+      ],
+      "Review and share": [
+        "მიმოხილვა და გაზიარება"
+      ],
+      "Secure your data": [
+        "დაიცავით თქვენი მონაცემები"
+      ],
+      "Set access level": [
+        "წვდომის დონის დაყენება"
+      ],
+      "Settings": [
+        "მორგება"
+      ],
+      "Share vaults with your team": [
+        "საცავების გაზიარება თქვენს გუნდთან"
+      ],
+      "Share with": [
+        "გაზიარება"
+      ],
+      "Suggestions": [
+        "შეთავაზებები"
+      ],
+      "Transfer ownership": [
+        "მფლობელობის გადაცემა"
+      ],
+      "Trash empty": [
+        "სანაგვე ყუთი ცარიელია"
+      ],
+      "Update available": [
+        "განახლება ხელმისაწვდომია"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა"
+      ],
+      "Vault": [
+        "საცავი"
+      ],
+      "Vault shared with you": [
+        "თქვენთან გაზიარებული საცავი"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "რატომ ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "თქვენი საცავი ცარიელია"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "დუბლირებული URL"
+      ],
+      "Field name is required": [
+        "ველის სახელი აუცილებელია"
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP საიდუმლო ან URI არასწორია"
+      ],
+      "OTP secret or URI required": [
+        "აუცილებელია OTP საიდუმლო ან URI"
+      ],
+      "Url already exists": [
+        "Url უკვე არსებობს"
+      ],
+      "URL cannot be empty": [
+        "URL ცარიელი ვერ იქნება"
+      ],
+      "Url is invalid": [
+        "Url არასწორია"
+      ],
+      "URL is invalid": [
+        "URL არასწორია"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "პრობლემის აღწერა აუცილებელია"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "ფსევდონიმი '${ name }' ამჟამად გამოიყენება შესვლის დეტალის ჩანაწერში '${ relatedLoginName }'. ასევე აღარ მიიღებთ ელფოსტებს, რომლებიც '${ aliasEmail }'-ზე მოვა"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "ყველა თქვენი ნაგვის ყუთში გადაყრილი ელემენტი სამუდამოდ წაიშლება. ეს ქმედება შეუქცევადია."
+      ],
+      "An error occured while exporting your data": [
+        "შეცდომა თქვენი მონაცემების გატანისას"
+      ],
+      "At least one email address is required": [
+        "აუცილებელია სულ ცოტა ერთი ელფოსტის მისამართი"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "საცავის '${ vaultName }' შექმნა შეუძლებელია"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე :"
+      ],
+      "Duplicate email addresses.": [
+        "დუბლირებული ელფოსტის მისამართები."
+      ],
+      "Empty note": [
+        "ცარიელი შენიშვნა"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
+      ],
+      "Invalid alias prefix": [
+        "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Invalid email addresses.": [
+        "არასწორი ელფოსტის მისამართები."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
+        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო"
+      ],
+      "Missing alias prefix": [
+        "აკლია ფსევდონიმის პრეფიქსი"
+      ],
+      "Missing alias suffix": [
+        "აკლია ფსევდონიმის სუფიქსი"
+      ],
+      "No items": [
+        "ელემენტების გარეშე"
+      ],
+      "No items in trash matching": [
+        "ნაგავში ელემენტები არ ემთხვევა"
+      ],
+      "No items matching": [
+        "ელემენტები არ ემთხვევა"
+      ],
+      "No password manager selected": [
+        "პაროლების მმართველი არჩეული არაა"
+      ],
+      "No results": [
+        "შედეგების გარეშე"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
+      ],
+      "Passphrase is required": [
+        "საკვანძო ფრაზა აუცილებელია"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
+      ],
+      "Please contact us for investigating the issue": [
+        "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "საცავის გასაზიარებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "ფსევდონიმის პრეფიქსი 40 სიმბოლოზე გრძელი ვერ იქნება"
+      ],
+      "Title is required": [
+        "სათაური აუცილებელია"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "გადავცე ამ საცავს ფლობის უფლება ${ email }-ს?"
+      ],
+      "Trash alias ?": [
+        "წავშალო ფსევდონიმები?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "${ PASS_APP_NAME }-ში შესვლა შეუძლებელია. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "წაიშლება საცავი '${ vaultName }' და ყველა მისი ჩანაწერი. ეს ქმედება შეუქცევადია."
+      ],
+      "Vault name is required": [
+        "საცავის სახელი აუცილებელია"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "ტარიფის მიერ დაშვებული საცავეების რაოდენობას ვერ გადააჭარბებთ."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ საცავთან წვდომა შეიძლება, ჰქონდეთ."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "მიაღწიეთ მომხმარებლების ზღვარს ამ საცავში. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "მიაღწიეთ საცავების რაოდენობის ლიმიტს, რომელიც თქვენი ტარიფით შეგიძლიათ, გქონდეთ."
+      ],
+      "You have unsaved changes.": [
+        "გაქვთ შეუნახავი ცვლილებები."
+      ],
+      "You must select at least one mailbox": [
+        "უნდა მიუთითოთ ერთი საფოსტო ყუთი მაინც"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "საცავთან წვდომა აღარ გექნებათ. თავიდან მისაერთებლად, ახალი მოსაწვევი დაგჭირდებათ."
+      ],
+      "Your session could not be authorized.": [
+        "თქვენის სესიის ავტორიზაცია შეუძლებელია."
+      ],
+      "Your session could not be resumed.": [
+        "თქვენის სესიის გაგრძელება შეუძლებელია."
+      ],
+      "Your session is inactive.": [
+        "თქვენი სესია არააქტიურია."
+      ],
+      "Your session was locked.": [
+        "თქვენი სესია დაბლოკილია."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ]
+    }
+  }
+}

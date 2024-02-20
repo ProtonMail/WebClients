@@ -1,0 +1,1985 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "sv_SE"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Lägg till"
+      ],
+      "Add current URL": [
+        "Lägg till nuvarande URL"
+      ],
+      "Add more": [
+        "Lägg till fler"
+      ],
+      "Add new item": [
+        "Lägg till nytt objekt"
+      ],
+      "Admin panel": [
+        "Administratörspanel"
+      ],
+      "Advanced": [
+        "Avancerad"
+      ],
+      "Advanced options": [
+        "Avancerade alternativ"
+      ],
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Back": [
+        "Tillbaka"
+      ],
+      "Bulk delete items from trash": [
+        "Massradera objekt från papperskorg"
+      ],
+      "Bulk move items to another vault": [
+        "Massflytta objekt till annat valv"
+      ],
+      "Bulk move items to trash": [
+        "Massflytta objekt till papperskorg"
+      ],
+      "Bulk restore items from trash": [
+        "Massåterställ objekt från papperskorg"
+      ],
+      "Bulk select items": [
+        "Välj flera objekt"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Change": [
+        "Ändra"
+      ],
+      "Choose a file or drag it here": [
+        "Välj en fil eller dra den hit"
+      ],
+      "Clear": [
+        "Rensa"
+      ],
+      "Clear search": [
+        "Rensa sök"
+      ],
+      "Close": [
+        "Stäng"
+      ],
+      "Close advanced options": [
+        "Stäng avancerade alternativ"
+      ],
+      "Close navigation": [
+        "Stäng navigering"
+      ],
+      "Confirm": [
+        "Bekräfta"
+      ],
+      "Confirm access": [
+        "Bekräfta åtkomst"
+      ],
+      "Continue": [
+        "Fortsätt"
+      ],
+      "Copy and close": [
+        "Kopiera och stäng"
+      ],
+      "Copy to clipboard": [
+        "Kopiera till urklipp"
+      ],
+      "Create": [
+        "Skapa"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Skapa ett ${ BRAND_NAME }-konto"
+      ],
+      "Create a new vault": [
+        "Skapa ett nytt valv"
+      ],
+      "Create a new vault to share": [
+        "Skapa ett nytt valv att dela"
+      ],
+      "Create alias": [
+        "Skapa alias"
+      ],
+      "Create card": [
+        "Skapa kort"
+      ],
+      "Create login": [
+        "Skapa inloggning"
+      ],
+      "Create new items": [
+        "Skapa nya objekt"
+      ],
+      "Create note": [
+        "Skapa anteckning"
+      ],
+      "Create vault": [
+        "Skapa valv"
+      ],
+      "Creating vault": [
+        "Skapar valv"
+      ],
+      "Customize": [
+        "Anpassa"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete alias": [
+        "Ta bort alias"
+      ],
+      "Delete all": [
+        "Ta bort alla"
+      ],
+      "Delete password": [
+        "Ta bort lösenord"
+      ],
+      "Delete permanently": [
+        "Ta bort permanent"
+      ],
+      "Delete vault": [
+        "Ta bort valv"
+      ],
+      "Deselect": [
+        "Avmarkera"
+      ],
+      "Discard": [
+        "Avfärda"
+      ],
+      "Dismiss": [
+        "Avfärda"
+      ],
+      "Download this CSV template": [
+        "Ladda ner denna CSV-mall"
+      ],
+      "Edit": [
+        "Redigera"
+      ],
+      "Edit vault": [
+        "Redigera valv"
+      ],
+      "Export": [
+        "Exportera"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Fill password": [
+        "Fyll lösenord"
+      ],
+      "Filter vault items": [
+        "Filtrera valvobjekt"
+      ],
+      "Generate alias": [
+        "Generera alias"
+      ],
+      "Generate password": [
+        "Generera lösenord"
+      ],
+      "Generated passwords": [
+        "Genererade lösenord"
+      ],
+      "Get mobile apps": [
+        "Skaffa mobilappar"
+      ],
+      "Get Started": [
+        "Kom igång"
+      ],
+      "Help us improve": [
+        "Hjälp oss att förbättra"
+      ],
+      "Hide": [
+        "Dölj"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Hur exporterar jag mina data från ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importera"
+      ],
+      "Importing": [
+        "Importerar"
+      ],
+      "Install extension": [
+        "Installera utökning"
+      ],
+      "Invite others": [
+        "Bjud in andra"
+      ],
+      "Join shared vault": [
+        "Gå med delat valv"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "Leave": [
+        "Lämna"
+      ],
+      "Leave vault": [
+        "Lämna valv"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Lås ${ PASS_APP_NAME }"
+      ],
+      "Make admin": [
+        "Gör till admin"
+      ],
+      "Make editor": [
+        "Gör till redaktör"
+      ],
+      "Make viewer": [
+        "Gör till läsare"
+      ],
+      "Manage access": [
+        "Hantera åtkomst"
+      ],
+      "Manually sync your data": [
+        "Synkronisera dina data manuellt"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mer information: ${ safeTitle }"
+      ],
+      "More options": [
+        "Fler alternativ"
+      ],
+      "Move": [
+        "Flytta"
+      ],
+      "Move all items": [
+        "Flytta alla objekt"
+      ],
+      "Move to a shared vault": [
+        "Flytta till ett delat valv"
+      ],
+      "Move to another vault": [
+        "Flytta till annat valv"
+      ],
+      "Move to Trash": [
+        "Flytta till papperskorg"
+      ],
+      "Move to trash": [
+        "Flytta till papperskorg"
+      ],
+      "Multiple select": [
+        "Välj flera"
+      ],
+      "Not now": [
+        "Inte nu"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open navigation": [
+        "Öppna navigering"
+      ],
+      "Pass for Android": [
+        "Pass för Android"
+      ],
+      "Pass for iOS": [
+        "Pass för iOS"
+      ],
+      "Pin item": [
+        "Fäst objekt"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
+      ],
+      "Regenerate": [
+        "Generera igen"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Reject invitation": [
+        "Avböj inbjudan"
+      ],
+      "Remove access": [
+        "Ta bort åtkomst"
+      ],
+      "Remove member": [
+        "Ta bort medlem"
+      ],
+      "Request a feature": [
+        "Begär en funktion"
+      ],
+      "Resend invitation": [
+        "Skicka inbjudan igen"
+      ],
+      "Restore": [
+        "Återställ"
+      ],
+      "Restore item": [
+        "Återställ objekt"
+      ],
+      "Retry": [
+        "Försök igen"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Saving": [
+        "Sparar"
+      ],
+      "See members": [
+        "Se medlemmar"
+      ],
+      "Send invite": [
+        "Skicka inbjudan"
+      ],
+      "Send us a message": [
+        "Skicka oss ett meddelande"
+      ],
+      "Set access level": [
+        "Ställ in åtkomstnivå"
+      ],
+      "Share": [
+        "Dela"
+      ],
+      "Share this vault": [
+        "Dela detta valv"
+      ],
+      "Share vault": [
+        "Dela valv"
+      ],
+      "Show": [
+        "Visa"
+      ],
+      "Sign back in": [
+        "Logga in igen"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Logga in med ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Logga ut"
+      ],
+      "Sort vault items": [
+        "Sortera valvobjekt"
+      ],
+      "Submit": [
+        "Skicka"
+      ],
+      "Submitting report...": [
+        "Skickar rapport..."
+      ],
+      "Transfer ownership": [
+        "Överför ägarskap"
+      ],
+      "Unpin item": [
+        "Lossa objekt"
+      ],
+      "Update vault": [
+        "Uppdatera valv"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade now to share with more people": [
+        "Uppgradera nu för att dela med fler personer"
+      ],
+      "Write us on Reddit": [
+        "Skriv till oss på Reddit"
+      ],
+      "Write us on Twitter": [
+        "Skriv till oss på Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Är din lösenordshanterare inte här? Begär det."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Spara Smart. Få ett års Pass Plus för endast ${ relativePrice } per månad."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Black Friday-erbjudande"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Mer info"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Mimimera"
+      ],
+      "Expand": [
+        "Expandera"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Alternativ för alias kunde inte lösas"
+      ],
+      "Authentication error": [
+        "Autentiseringsfel"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Autentisering misslyckades. Bekräfta ditt lösenord för ${ BRAND_NAME } för att fortsätta med exporten"
+      ],
+      "Auto-lock could not be activated": [
+        "Automatisk låsning kunde inte aktiveras"
+      ],
+      "Auto-lock could not be disabled": [
+        "Automatisk låsning kunde inte inaktiveras"
+      ],
+      "Cannot send invitation at the moment": [
+        "Kan inte skicka inbjudan just nu",
+        "Kan inte skicka inbjudningar just nu"
+      ],
+      "Cannot send invitations at the moment": [
+        "Kan inte skicka inbjudan just nu"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Kunde inte bekräfta denna inbjudan just nu"
+      ],
+      "Could not leave vault.": [
+        "Kunde inte lämna valv."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kunde inte ladda rekommendationer just nu."
+      ],
+      "Could not open created vault": [
+        "Kunde inte öppna skapat valv"
+      ],
+      "Could not open invited vault": [
+        "Kunde inte öppna inbjudet valv"
+      ],
+      "Could not open updated vault": [
+        "Kunde inte öppna uppdaterat valv"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV-fil saknar förväntade rubriker: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Misslyckades dekryptera din exportfil för ${ PASS_APP_NAME }. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Misslyckades att ta bort objekt"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Misslyckades att ta bort valv ”${ payload.content.name }”"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Upptäckte ${ errors.length } skadad CSV-rad",
+        "Upptäckte ${ errors.length } skadade CSV-rader"
+      ],
+      "Editing item failed": [
+        "Misslyckades att redigera objekt"
+      ],
+      "Empty CSV file": [
+        "Tom CSV-fil"
+      ],
+      "Emptying trash failed": [
+        "Tömning av papperskorgen misslyckades"
+      ],
+      "Encrypted JSON not supported": [
+        "Krypterad JSON stöds inte"
+      ],
+      "Error reporting problem": [
+        "Gick inte rapportera problem"
+      ],
+      "Failed removing the invite.": [
+        "Misslyckades ta bort inbjudan."
+      ],
+      "Failed resending invite.": [
+        "Misslyckades skicka inbjudan igen."
+      ],
+      "Failed to delete selected items": [
+        "Misslyckades att ta bort markerade objekt"
+      ],
+      "Failed to edit user's access.": [
+        "Misslyckades att redigera användaråtkomst."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
+      ],
+      "Failed to move items": [
+        "Misslyckades att flytta objekt"
+      ],
+      "Failed to move items to trash": [
+        "Misslyckades att flytta objekt till papperskorg"
+      ],
+      "Failed to pin item": [
+        "Misslyckades att fästa objekt"
+      ],
+      "Failed to remove user's access.": [
+        "Misslyckades att ta bort användaråtkomst."
+      ],
+      "Failed to restore items from trash": [
+        "Misslyckades att återställa objekt från papperskorg"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Misslyckades att överföra detta valvs äganderätt."
+      ],
+      "Failed to unpin item": [
+        "Misslyckades att lossa objekt"
+      ],
+      "File could not be parsed": [
+        "Fil kunde inte analyseras"
+      ],
+      "File does not match expected format": [
+        "Fil matchar inte förväntat format"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Import misslyckades för valv “${ vaultData.name }“: ${ description }"
+      ],
+      "Importing items failed": [
+        "Misslyckades att importera objekt"
+      ],
+      "Invalid password manager": [
+        "Ogiltig lösenordshanterare"
+      ],
+      "Invitation could not be accepted": [
+        "Inbjudan kan inte accepteras"
+      ],
+      "Invitation could not be rejected": [
+        "Inbjudan kunde inte avvisas"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Objektinnehåll får inte överstiga 40 kB"
+      ],
+      "Item creation failed": [
+        "Misslyckades att skapa objekt"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass kommer att exportera en korrupt CSV-fil om något av dina objektfält innehåller oväntade kommatecken, citattecken eller flera rader"
+      ],
+      "Moving item failed": [
+        "Misslyckades att flytta objekt"
+      ],
+      "Passphrase is incorrect": [
+        "Lösenfras är fel"
+      ],
+      "PIN codes do not match": [
+        "PIN-koder matchar inte"
+      ],
+      "Request timed out": [
+        "Förfrågan gjorde timeout"
+      ],
+      "Requesting alias options failed": [
+        "Misslyckades begära aliasalternativ"
+      ],
+      "Restoring item failed": [
+        "Misslyckades att återställa objekt"
+      ],
+      "Restoring trashed items failed": [
+        "Misslyckades återställa kastade objekt"
+      ],
+      "Settings update failed": [
+        "Misslyckades att uppdatera inställningar"
+      ],
+      "Signature verification failed": [
+        "Signaturverifiering misslyckades"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Några valv är inte längre åtkomliga på grund av en lösenordsåterställning. Återaktivera dina kontonycklar för att få åtkomst igen. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du försöker importera är tom"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "För många misslyckade försök. Logga in igen."
+      ],
+      "Trashing item failed": [
+        "Borttagning av objekt misslyckades"
+      ],
+      "Unable to boot": [
+        "Kan inte starta om"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Kan inte generera en OTP-kod för detta objekt"
+      ],
+      "Unable to sync": [
+        "Kan inte synkronisera"
+      ],
+      "Unknown invite": [
+        "Okänd inbjudan"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Filformat ${ PASS_APP_NAME } stöds inte"
+      ],
+      "Unsupported 1Password file format": [
+        "1Password-filformat stöds inte"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Misslyckades att uppdatera valv ”${ payload.content.name }”"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Misslyckades att skapa valv ”${ payload.content.name }”"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Valv “${ vaultData.name }“ kunde inte skapas"
+      ],
+      "Vault name does not match": [
+        "Valvnamn matchar inte"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Fel PIN-kod. Försök igen."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Hoppsan, något gick fel"
+      ],
+      "Please refresh the page or try again later.": [
+        "Uppdatera sidan eller försök igen senare."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Kilobyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Uppgradera till ett betalt paket för att skapa flera valv."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Objekt ”${ payload.item.data.metadata.name }” avfärdades"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } inbjudningar skickat"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmar"
+      ],
+      "${ n } item": [
+        "${ n } objekt",
+        "${ n } objekt"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } gång",
+        "${ revisionNumber } gånger"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
+      ],
+      "Access successfully confirmed": [
+        "Åtkomst bekräftad"
+      ],
+      "Admin": [
+        "Admin"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Alla objekt från “${ payload.content.name }“ flyttades"
+      ],
+      "All items successfully moved": [
+        "Alla objekt flyttades"
+      ],
+      "All trashed items permanently deleted": [
+        "Alla kastade objekt borttagna permanent"
+      ],
+      "All trashed items successfully restored": [
+        "Alla kastade objekt återställda"
+      ],
+      "An item previously shared with you was removed": [
+        "Ett objekt som tidigare delats med dig togs bort"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Är du säker på att du vill flytta alla objekten från “${ fromVaultName }“ till “${ toVaultName }“?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Automatisk låsning inaktiverat"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Ta med dina befintliga lösenord till ${ BRAND_NAME }."
+      ],
+      "Built in 2FA authenticator": [
+        "Inbyggd 2FA-autentisering"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Kan bevilja och återkalla åtkomst till detta valv, och ta bort det."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Kan bevilja och återkalla åtkomst till detta valv."
+      ],
+      "Can view items in this vault.": [
+        "Kan visa objekt i detta valv."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Grattis, din åtkomst har bekräftats"
+      ],
+      "Copied to clipboard": [
+        "Kopierad till urklipp"
+      ],
+      "Decrypting your data": [
+        "Dekrypterar dina data"
+      ],
+      "Deleted items will be moved here first": [
+        "Borttagna objekt kommer att flyttas hit först"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Tar bort “${ payload.content.name }“"
+      ],
+      "Drop file here to upload": [
+        "Släpp filer här för att ladda upp"
+      ],
+      "Drop to import": [
+        "Släpp för att importera"
+      ],
+      "Editor": [
+        "Redaktör"
+      ],
+      "Emptying trash...": [
+        "Tömmer papperskorg..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ange verifieringskod. Siffra ${ digit }."
+      ],
+      "Fill in the CSV with your data": [
+        "Fyll i CSV med dina data"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Följ dessa steg för att importera dina data med en generisk CSV:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Av säkerhetsskäl måste din åtkomst bekräftas"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
+        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Få ut det mesta av Pass genom att skapa ett valv för varje team eller projekt."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Få obegränsade alias, njut av exklusiva funktioner och stöd oss ​​genom att prenumerera på Pass Plus."
+      ],
+      "Import in progress:": [
+        "Import pågår:"
+      ],
+      "Import the CSV file below.": [
+        "Importera CSV-filen nedan."
+      ],
+      "Imported ${ payload.total } item": [
+        "Importerade ${ payload.total } objekt",
+        "Importerade ${ payload.total } objekt"
+      ],
+      "Imported on ${ date }": [
+        "Importerad den ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "För att få ut den bästa upplevelsen av ${ PASS_APP_NAME }, bevilja de nödvändiga tilläggsbehörigheterna"
+      ],
+      "Internet connection lost": [
+        "Internetanslutning förlorades"
+      ],
+      "Invitation sent": [
+        "Inbjudan skickad"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Bjud in specifika personer och ställ in rätt behörigheter."
+      ],
+      "Invite successfully removed": [
+        "Inbjudan borttagen"
+      ],
+      "Invite successfully resent": [
+        "Inbjudan skickad"
+      ],
+      "Invite successfully sent": [
+        "Inbjudan skickad"
+      ],
+      "invites you to access items in": [
+        "bjöd in dig för att komma åt objekt i detta valv"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Det verkar som att du redan är inloggad på ${ PASS_APP_NAME }. Om du försöker logga in med ett annat konto, logga ut från tillägget först."
+      ],
+      "item": [
+        "objekt",
+        "objekt"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Objekt ”${ payload.item.data.metadata.name }” skapat"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Objekt ”${ payload.item.data.metadata.name }” uppdaterades"
+      ],
+      "Item moved to trash": [
+        "Objekt flyttat till papperskorg"
+      ],
+      "Item permanently deleted": [
+        "Objekt borttagen permanent"
+      ],
+      "Item restored": [
+        "Objekt återställt"
+      ],
+      "Item successfully moved": [
+        "Objekt flyttades"
+      ],
+      "Item successfully pinned": [
+        "Lyckades fästa objekt"
+      ],
+      "Item successfully unpinned": [
+        "Objekt lossat"
+      ],
+      "Leaving vault...": [
+        "Lämnar valv..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Kom igång genom att skapa ditt första objekt"
+      ],
+      "Loading": [
+        "Laddar"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Laddar in ${ PASS_APP_NAME }"
+      ],
+      "Locking your session...": [
+        "Låser din session …"
+      ],
+      "Logging you out...": [
+        "Du loggas ut …"
+      ],
+      "me": [
+        "jag"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving items": [
+        "Flyttar objekt"
+      ],
+      "Moving items to trash": [
+        "Flyttar objekt till papperskorg"
+      ],
+      "Never": [
+        "Aldrig"
+      ],
+      "None": [
+        "Ingen"
+      ],
+      "Owner": [
+        "Ägare"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Äganderätten har överförts. Du är inte längre ägare till detta valv."
+      ],
+      "Pass Plus trial": [
+        "Pass Plus provperiod"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
+        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
+      ],
+      "Permanently deleting selected items": [
+        "Tar bort markerade objekt permanent"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN-kod registrerad. Använd den för att låsa upp ${ PASS_APP_NAME }"
+      ],
+      "Pinning item...": [
+        "Fäster objekt..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Bekräfta din PIN-kod för att avregistrera ditt nuvarande lås.\n${ PASS_APP_NAME } kommer då aldrig att låsas."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Bekräfta din PIN-kod för att redigera denna inställning."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Bekräfta din PIN-kod för att slutföra din inställning för automatisk låsning."
+      ],
+      "Please consider leaving a review.": [
+        "Överväg att lämna en recension."
+      ],
+      "Please enter your current PIN code to continue": [
+        "Ange din nuvarande PIN-kod för att fortsätta"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
+      ],
+      "Press Enter to copy": [
+        "Tryck på Enter för att kopiera"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Integritet är en stor angelägenhet för oss. Lär dig varför ${ PASS_APP_NAME } är annorlunda."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
+      "Restoring items from trash": [
+        "Återställer objekt från papperskorg"
+      ],
+      "Restoring trashed items...": [
+        "Återställer kastade objekt..."
+      ],
+      "Select destination vault": [
+        "Välj målvalv"
+      ],
+      "Select vault to share": [
+        "Välj valv att dela"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Välj var du vill att dina importerade valv ska sparas."
+      ],
+      "Selected items permanently deleted": [
+        "Markerade objekt togs bort permanent"
+      ],
+      "Selected items successfully moved to trash": [
+        "Markerade objekt flyttades till papperskorg"
+      ],
+      "Selected items successfully restored from trash": [
+        "Markerade objekt återställda från papperskorg"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servrarna kan inte nås. Försök igen om några minuter"
+      ],
+      "Session timed out": [
+        "Session timeout"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Ställ in en PIN-kod för att enkelt låsa din data"
+      ],
+      "Settings successfully updated": [
+        "Inställningarna har uppdaterats"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
+      ],
+      "Signing you in": [
+        "Loggar in dig"
+      ],
+      "Successfully exported all your items": [
+        "Alla dina objekt har exporterats"
+      ],
+      "Successfully left the vault": [
+        "Valv har lämnats"
+      ],
+      "Successfully synced all vaults": [
+        "Alla valv synkroniserade"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Byt till ett annat valv eller skapa ett objekt i detta valv"
+      ],
+      "Syncing your vaults…": [
+        "Synkroniserar dina valv…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Tack, problemet har rapporterats"
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Den exporterade filen kommer att krypteras med PGP och kräver en stark lösenfras."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Den exporterade filen kommer inte innehålla data från delade valv där du inte är ägaren"
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Följande ${ result.ignored.length } objekt kunde inte importeras:",
+        "Följande ${ result.ignored.length } objekt kunde inte importeras:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Användaren har inte accepterat inbjudan ännu."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "För att granska dina importerade data, klicka på Pass-ikonen i webbläsarens verktygsfält."
+      ],
+      "Unable to copy to clipboard": [
+        "Kan inte kopiera till urklipp"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal Hide-my-email-alias"
+      ],
+      "Unpinning item...": [
+        "Lossar objekt..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Uppgradera nu för att låsa upp premiumfunktioner"
+      ],
+      "Use vaults to share this item with others.": [
+        "Använd valv för att dela detta objekt med andra."
+      ],
+      "User's access removed": [
+        "Användaråtkomst borttagen"
+      ],
+      "User's access sucessfuly updated": [
+        "Användaråtkomst uppdaterad"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Valv “${ payload.content.name }“ borttaget"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Valv ”${ payload.share.content.name }” skapades"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Valv ”${ payload.share.content.name }” uppdaterades"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Valv “${ share.content.name }“ togs bort"
+      ],
+      "Viewer": [
+        "Läsare"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
+      ],
+      "You are about to create:": [
+        "Du är på väg att skapa:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Du kan inte ändra brevlådorna för detta alias."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
+        "Du har ${ daysRemaining } dagar kvar att prova dessa och andra premiumfunktioner."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till dina två första valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Du har överskridit antalet valv inkluderat i din prenumeration. Nya objekt kan endast skapas i dina två första valv. För att skapa nya objekt i alla valv, uppgradera din prenumeration."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Du har nått gränsen för alias du kan skapa. Skapa ett obegränsat antal alias när du uppgraderar din prenumeration."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Du har nått gränsen för valv du kan skapa."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Du har nått den högsta tillåtna längden på ${ maxLength } tecken."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Du kommer använda denna PIN-kod för att låsa upp ${ PASS_APP_NAME } när den låses automatiskt efter en period av inaktivitet."
+      ],
+      "You're invited to a vault.": [
+        "Du är inbjuden till ett valv."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Dina filer kommer att krypteras och sedan sparas"
+      ]
+    },
+    "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } tecken",
+        "${ config.options.length } tecken"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } ord",
+        "${ config.options.wordCount } ord"
+      ],
+      "1 hour": [
+        "1 timme"
+      ],
+      "1 minute": [
+        "1 minut"
+      ],
+      "10 minutes": [
+        "10 minuter"
+      ],
+      "15 minutes": [
+        "15 minuter"
+      ],
+      "2FA secret key (TOTP)": [
+        "Hemlig nyckel för 2FA (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA-token (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minuter"
+      ],
+      "30 seconds": [
+        "30 sekunder"
+      ],
+      "5 minutes": [
+        "5 minuter"
+      ],
+      "A-Z": [
+        "A-Ö"
+      ],
+      "Account": [
+        "Konto"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alias-adress"
+      ],
+      "Aliases": [
+        "Alias"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "All vaults": [
+        "Alla valv"
+      ],
+      "Alphabetical": [
+        "Alfabetiskt"
+      ],
+      "Application logs": [
+        "Applikationsloggar"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Lås ${ PASS_APP_NAME } automatiskt"
+      ],
+      "Auto-lock after": [
+        "Lås automatiskt efter"
+      ],
+      "Capital letters (A-Z)": [
+        "Versaler (A–Ö)"
+      ],
+      "Capitalise": [
+        "Versaler"
+      ],
+      "Card": [
+        "Kort"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "Cards": [
+        "Kort"
+      ],
+      "Confirm vault name": [
+        "Bekräfta valvnamn"
+      ],
+      "Create a credit card": [
+        "Skapa ett kreditkort"
+      ],
+      "Create a hide-my-email alias": [
+        "Skapa ett hide-my-email-alias"
+      ],
+      "Create a login": [
+        "Skapa en inloggning"
+      ],
+      "Create an encrypted note": [
+        "Skapa en krypterad anteckning"
+      ],
+      "Create new vault": [
+        "Skapa nytt valv"
+      ],
+      "Created": [
+        "Skapad"
+      ],
+      "Default (recommended)": [
+        "Standard (rekommenderad)"
+      ],
+      "Display": [
+        "Visa"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
+      "Empty trash": [
+        "Töm papperskorg"
+      ],
+      "Encrypted (recommended)": [
+        "Krypterad (rekommenderad)"
+      ],
+      "Expiration date": [
+        "Utgångsdatum"
+      ],
+      "Export": [
+        "Exportera"
+      ],
+      "Field name": [
+        "Fältnamn"
+      ],
+      "File format": [
+        "Filformat"
+      ],
+      "Forwards to": [
+        "Vidarebefordras till"
+      ],
+      "General": [
+        "Allmänt"
+      ],
+      "Generic CSV": [
+        "Generisk CSV"
+      ],
+      "Grant": [
+        "Bevilja"
+      ],
+      "Hidden": [
+        "Dolt"
+      ],
+      "Hide password": [
+        "Dölj lösenord"
+      ],
+      "Import": [
+        "Importera"
+      ],
+      "Import passwords": [
+        "Importera lösenord"
+      ],
+      "Imported from : ": [
+        "Importerad från: "
+      ],
+      "Imported on : ": [
+        "Importerad den : "
+      ],
+      "Include numbers": [
+        "Inkludera nummer"
+      ],
+      "Include numbers (0-9)": [
+        "Inkludera nummer (0-9)"
+      ],
+      "Invitations": [
+        "Inbjudningar"
+      ],
+      "Item ID": [
+        "Objekt-ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tangentbordsgenväg: ${ shortcut }"
+      ],
+      "Language": [
+        "Språk"
+      ],
+      "Last 2 weeks": [
+        "Senaste 2 veckorna"
+      ],
+      "Last autofill": [
+        "Sista autofyll"
+      ],
+      "Last month": [
+        "Förra månaden"
+      ],
+      "Last week": [
+        "Förra veckan"
+      ],
+      "Latest import": [
+        "Senaste import"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "Login": [
+        "Logga in"
+      ],
+      "Logins": [
+        "Inloggningar"
+      ],
+      "Make all admins": [
+        "Gör alla till administratörer"
+      ],
+      "Make all editors": [
+        "Gör alla till redaktörer"
+      ],
+      "Make all viewers": [
+        "Gör alla till visare"
+      ],
+      "Members": [
+        "Medlemmar"
+      ],
+      "Modified": [
+        "Ändrad"
+      ],
+      "More than a month": [
+        "Mer än en månad"
+      ],
+      "Most recent": [
+        "Senaste"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Name on card": [
+        "Namn på kort"
+      ],
+      "Need help ?": [
+        "Behöver du hjälp ?"
+      ],
+      "New vault": [
+        "Nytt valv"
+      ],
+      "New-Old": [
+        "Nytt-gammalt"
+      ],
+      "Newest to oldest": [
+        "Nyaste till äldsta"
+      ],
+      "No history": [
+        "Ingen historik"
+      ],
+      "Note": [
+        "Anteckning"
+      ],
+      "Notes": [
+        "Anteckningar"
+      ],
+      "Old-New": [
+        "Gammalt-nytt"
+      ],
+      "Oldest to newest": [
+        "Äldsta till nyaste"
+      ],
+      "Passphrase": [
+        "Lösenfras"
+      ],
+      "Password": [
+        "Lösenord"
+      ],
+      "Password history": [
+        "Lösenordshistorik"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "Prefix"
+      ],
+      "Rate us": [
+        "Betygsätt oss"
+      ],
+      "Recent": [
+        "Senaste"
+      ],
+      "Report a problem": [
+        "Rapportera ett problem"
+      ],
+      "Restore all items": [
+        "Återställ alla objekt"
+      ],
+      "Reveal password": [
+        "Visa lösenord"
+      ],
+      "Security": [
+        "Säkerhet"
+      ],
+      "Security code": [
+        "Säkerhetskod"
+      ],
+      "Select an email address": [
+        "Välj en e-postadress"
+      ],
+      "Select preferred language": [
+        "Välj föredraget språk"
+      ],
+      "Select your password manager": [
+        "Välj din lösenordshanterare"
+      ],
+      "Selected": [
+        "Valda"
+      ],
+      "Session locking": [
+        "Sessionslåsning"
+      ],
+      "Set PIN code": [
+        "Ställ in PIN-kod"
+      ],
+      "Show website favicons": [
+        "Visa webbplatsens favicon"
+      ],
+      "Special characters (!&*)": [
+        "Specialtecken (!&*)"
+      ],
+      "Suffix": [
+        "Suffix"
+      ],
+      "Support": [
+        "Support"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Title": [
+        "Rubrik"
+      ],
+      "Today": [
+        "Idag"
+      ],
+      "Total imported items : ": [
+        "Totalt antal importerade objekt: "
+      ],
+      "Total items : ": [
+        "Totalt antal objekt: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Papperskorg"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Unnamed Credit Card": [
+        "Namnlöst kreditkort"
+      ],
+      "Unnamed item": [
+        "Namnlöst objekt"
+      ],
+      "Unnamed note": [
+        "Namnlös anteckning"
+      ],
+      "Untitled": [
+        "Ingen rubrik"
+      ],
+      "Update": [
+        "Uppdatera"
+      ],
+      "Username": [
+        "Användarnamn"
+      ],
+      "Username (alias)": [
+        "Användarnamn (alias)"
+      ],
+      "Username (new alias)": [
+        "Användarnamn (nytt alias)"
+      ],
+      "Vault": [
+        "Valv"
+      ],
+      "Vault ID": [
+        "Valv-ID"
+      ],
+      "Vaults": [
+        "Valv"
+      ],
+      "View details": [
+        "Visa detaljer"
+      ],
+      "View logs": [
+        "Visa loggar"
+      ],
+      "Websites": [
+        "Webbplatser"
+      ],
+      "You are about to create": [
+        "Du är på väg att skapa"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Ange din PIN-kod"
+      ],
+      "Sign in to your account": [
+        "Logga in på ditt konto"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Lås upp ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Välkommen till ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } objekt",
+        "${ count } objekt"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Du markerade ${ semiboldText } i detta valv"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Kommatecken"
+      ],
+      "Hyphens": [
+        "Bindestreck"
+      ],
+      "Memorable Password": [
+        "Minnesvärt lösenord"
+      ],
+      "Numbers": [
+        "Nummer"
+      ],
+      "Numbers and Symbols": [
+        "Nummer och symboler"
+      ],
+      "Periods": [
+        "Punkter"
+      ],
+      "Random Password": [
+        "Slumpmässigt lösenord"
+      ],
+      "Spaces": [
+        "Mellanslag"
+      ],
+      "Underscores": [
+        "Understreck"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Lägg till hemlig nyckel för 2FA"
+      ],
+      "Add hidden text": [
+        "Lägg till dold text"
+      ],
+      "Add note": [
+        "Lägg till anteckning"
+      ],
+      "Add text": [
+        "Lägga till text"
+      ],
+      "Email address": [
+        "E-postadress"
+      ],
+      "Enter a note...": [
+        "Ange en anteckning..."
+      ],
+      "Enter a prefix": [
+        "Ange ett prefix"
+      ],
+      "Enter email or username": [
+        "Ange e-post eller användarnamn"
+      ],
+      "Enter password": [
+        "Ange lösenord"
+      ],
+      "Full Name": [
+        "Fullständigt namn"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Password": [
+        "Lösenord"
+      ],
+      "Pick a vault": [
+        "Välj ett valv"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beskriv problemet och inkludera eventuella felmeddelanden"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Skriv ”${ vaultName }” igen för att bekräfta borttagning"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Sök ${ pluralItemType } i ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Sök ${ pluralItemType } i alla valv"
+      ],
+      "Search in ${ vaultName }": [
+        "Sök i ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Sök i alla valv"
+      ],
+      "Search in Trash": [
+        "Sök i papperskorg"
+      ],
+      "Select a suffix": [
+        "Välj ett suffix"
+      ],
+      "Shared vault": [
+        "Delat valv"
+      ],
+      "Unknown origin": [
+        "Okänt ursprung"
+      ],
+      "Untitled": [
+        "Ingen rubrik"
+      ],
+      "Used on ${ url }": [
+        "Används på ${ url }"
+      ],
+      "Write your note": [
+        "Skriv din anteckning"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare.",
+        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Uppdatering av autolås"
+      ],
+      "Confirm PIN code": [
+        "Bekräfta PIN-kod"
+      ],
+      "Create a vault": [
+        "Skapa ett valv"
+      ],
+      "Create PIN code": [
+        "Skapa PIN-kod"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Ta bort “${ vaultName }“?"
+      ],
+      "Discard changes?": [
+        "Ignorera ändringar?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Gillar du ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
+      "Enter your PIN": [
+        "Ange din PIN-kod"
+      ],
+      "Get Started": [
+        "Kom igång"
+      ],
+      "Grant permissions": [
+        "Bevilja behörigheter"
+      ],
+      "Import - ${ date }": [
+        "Importera – ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importera till valv"
+      ],
+      "Import your data": [
+        "Importera din data"
+      ],
+      "Install extension": [
+        "Installera utökning"
+      ],
+      "Leave vault ?": [
+        "Lämna valv?"
+      ],
+      "Low disk space": [
+        "Lågt diskutrymme"
+      ],
+      "Member limit": [
+        "Medlemsgräns"
+      ],
+      "Members": [
+        "Medlemmar"
+      ],
+      "Move all items ?": [
+        "Flytta alla objekt?"
+      ],
+      "No items selected": [
+        "Inga objekt markerade"
+      ],
+      "Our welcome gift to you": [
+        "Vår välkomstgåva till dig"
+      ],
+      "Pending access to the shared data": [
+        "Väntar på åtkomst till delade data"
+      ],
+      "Permanently remove all items ?": [
+        "Ta bort alla objekt permanent?"
+      ],
+      "Pinned (${ items.length })": [
+        "Fäst (${ items.length })"
+      ],
+      "Review and share": [
+        "Granska och dela"
+      ],
+      "Secure your data": [
+        "Säkra dina data"
+      ],
+      "Set access level": [
+        "Ställ in åtkomstnivå"
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Share vaults with your team": [
+        "Dela valv med ditt team"
+      ],
+      "Share with": [
+        "Dela med"
+      ],
+      "Suggestions": [
+        "Förslag"
+      ],
+      "Transfer ownership": [
+        "Överför ägarskap"
+      ],
+      "Trash empty": [
+        "Papperskorg tom"
+      ],
+      "Update available": [
+        "Uppdatering tillgänglig"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Uppgradera för att låsa upp premiumfunktioner"
+      ],
+      "Vault": [
+        "Valv"
+      ],
+      "Vault shared with you": [
+        "Valv delade med dig"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Varför ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Ditt valv är tomt"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Duplicerad URL"
+      ],
+      "Field name is required": [
+        "Fältnamn är obligatoriskt"
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP-hemlighet eller URI är ogiltig"
+      ],
+      "OTP secret or URI required": [
+        "OTP-hemlighet eller URI krävs"
+      ],
+      "Url already exists": [
+        "URL finns redan"
+      ],
+      "URL cannot be empty": [
+        "URL kan inte vara tom"
+      ],
+      "Url is invalid": [
+        "URL är ogiltig"
+      ],
+      "URL is invalid": [
+        "URL är ogiltig"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "En beskrivning av problemet är obligatoriskt"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Alias ”${ name }” används för närvarande i inloggningsobjekt ”${ relatedLoginName }”. Du kommer också sluta ta emot e-post som skickas till ”${ aliasEmail }”"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Alla dina kastade objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
+      ],
+      "An error occured while exporting your data": [
+        "Ett fel uppstod när din data skulle exporteras"
+      ],
+      "At least one email address is required": [
+        "Minst en e-postadress är obligatoriskt"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Kan inte hämta brevlådor för detta alias just nu"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Kunde inte skapa valv “${ vaultName }“"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kunde inte skicka inbjudningar till följande adresser:"
+      ],
+      "Duplicate email addresses.": [
+        "Dubbletter av e-postadresser."
+      ],
+      "Empty note": [
+        "Tom anteckning"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Utgångsdatum är inte i formatet MM/ÅÅ"
+      ],
+      "Invalid alias prefix": [
+        "Ogiltigt alias-prefix"
+      ],
+      "Invalid email addresses.": [
+        "Ogiltiga e-postadresser."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximal längd är ${ maxLength } tecken",
+        "Maximal längd är ${ maxLength } tecken"
+      ],
+      "Missing alias prefix": [
+        "Alias-prefix saknas"
+      ],
+      "Missing alias suffix": [
+        "Alias-suffix saknas"
+      ],
+      "No items": [
+        "Inga objekt"
+      ],
+      "No items in trash matching": [
+        "Inga objekt i papperskorgen matchar"
+      ],
+      "No items matching": [
+        "Inga objekt matchar"
+      ],
+      "No password manager selected": [
+        "Ingen lösenordshanterare vald"
+      ],
+      "No results": [
+        "Inga resultat"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"
+      ],
+      "Passphrase is required": [
+        "Lösenfras är obligatoriskt"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP-krypterad exportfil kräver lösenfras"
+      ],
+      "Please contact us for investigating the issue": [
+        "Kontakta oss för att undersöka problemet"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Verifiera din e-postadress för att kunna använda e-postalias"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verifiera din e-postadress för att använda valvdelning"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Alias-prefixet får inte vara längre än 40 tecken"
+      ],
+      "Title is required": [
+        "Rubrik är obligatoriskt"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Vill du överföra äganderätten till detta valv till ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Kasta alias?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Kan inte logga in på ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Valv ”${ vaultName }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
+      ],
+      "Vault name is required": [
+        "Valvnamn är obligatoriskt"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Du kan inte skapa fler valv än vad din prenumeration tillåter."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Du har nått gränsen för medlemmar som kan komma åt detta valv."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Du har nått gränsen för användare i detta valv. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Du har nått gränsen för valven du kan ha i ditt paket."
+      ],
+      "You have unsaved changes.": [
+        "Du har osparade ändringar."
+      ],
+      "You must select at least one mailbox": [
+        "Du måste välja minst en brevlåda"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Du kommer inte längre att ha åtkomst till detta valv. För att gå med igen behöver du en ny inbjudan."
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunde inte auktoriseras."
+      ],
+      "Your session could not be resumed.": [
+        "Din session kunde inte återupptas."
+      ],
+      "Your session is inactive.": [
+        "Din session är inaktiv."
+      ],
+      "Your session was locked.": [
+        "Din session var låst."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    }
+  }
+}
