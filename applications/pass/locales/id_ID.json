@@ -242,6 +242,9 @@
       "More options": [
         "Opsi lainnya"
       ],
+      "Move": [
+        "Pindahkan"
+      ],
       "Move all items": [
         "Pindahkan semua item"
       ],
@@ -298,6 +301,9 @@
       ],
       "Resend invitation": [
         "Kirim ulang undangan"
+      ],
+      "Restore": [
+        "Pulihkan"
       ],
       "Restore item": [
         "Pulihkan item"
@@ -610,6 +616,9 @@
       "Unknown invite": [
         "Undangan tidak dikenal"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Berkas format ${ PASS_APP_NAME } tidak didukung"
+      ],
       "Unsupported 1Password file format": [
         "Format berkas 1Password tidak didukung"
       ],
@@ -717,6 +726,9 @@
       "Admin": [
         "Admin"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Setelah tidak ada aktivitas, akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi saat ini. Anda akan dikeluarkan setelah 3 percobaan gagal."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
       ],
@@ -767,6 +779,9 @@
       ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV menyediakan format yang mudah untuk melihat data Anda. Namun karena kesederhanaannya, beberapa data tidak akan disertakan (kolom kustom, struktur brankas, …). Untuk pengeksporan yang lengkap, kami menyarankan menggunakan format yang lain."
       ],
       "Decrypting your data": [
         "Mendekripsi data Anda"
@@ -1026,6 +1041,12 @@
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Berkas yang diekspor yang dihasilkan tidak akan mengandung data dari brankas bersama yang bukan milik Anda"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
       ],
@@ -1217,6 +1238,9 @@
       "Created": [
         "Waktu pembuatan"
       ],
+      "Default (recommended)": [
+        "Bawaan (disarankan)"
+      ],
       "Display": [
         "Tampilan"
       ],
@@ -1226,6 +1250,9 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
+      "Encrypted (recommended)": [
+        "Terenkripsi (disarankan)"
+      ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
       ],
@@ -1234,6 +1261,9 @@
       ],
       "Field name": [
         "Nama kolom"
+      ],
+      "File format": [
+        "Format berkas"
       ],
       "Forwards to": [
         "Teruskan ke"

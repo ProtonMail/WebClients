@@ -359,6 +359,9 @@
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
+      "Remove single sign-on": [
+        "싱글 사인온 (SSO) 제거"
+      ],
       "Rename": [
         "이름 바꾸기"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "로그인 중"
+      ],
+      "Stop using single sign-on": [
+        "싱글 사인온 (SSO) 중지"
       ],
       "Submit": [
         "제출"
@@ -1509,7 +1515,7 @@
         "네팔"
       ],
       "Netherlands": [
-        "네델란드"
+        "네덜란드"
       ],
       "New Caledonia": [
         "뉴 칼레도니아"
@@ -2103,9 +2109,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "기부 가능한 최소 금액은 ${ price } 입니다."
-      ],
       "The minimum payment we accept is ${ price }": [
         "허용되는 최소 결제 금액은 ${ price } 입니다."
       ],
@@ -2366,7 +2369,7 @@
         "가족 구성원을 생성하고 관리하며 ${ DRIVE_APP_NAME } 및 ${ MAIL_APP_NAME } 간에 공유되는 저장 공간을 할당합니다."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
-        "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 걔정 생성이 필요합니다."
+        "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 계정 생성이 필요합니다."
       ],
       "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
         "초대가 취소되며 사용자가 ${ organizationName } 에 합류하지 않게 됩니다."
@@ -2754,6 +2757,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } 조직에 추가하려면 수동으로 생성해야 합니다."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없습니다."
       ],
@@ -2836,7 +2842,7 @@
         "계정 크기"
       ],
       "Account successfully updated": [
-        "계정이 성공적으로 업데이트됬습니다"
+        "계정을 성공적으로 업그레이드 했습니다."
       ],
       "active": [
         "활성화"
@@ -2927,6 +2933,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "안전한 공간에 비밀번호를 복사하여 저장하십시오."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "사용자 활성화 전에 주소를 위해 비밀번호를 설정하고 암호화 키를 생성해야 합니다."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "주소 생성 전, 비밀번호를 설정하고 암호화 키를 생성해야 합니다."
@@ -3237,6 +3246,9 @@
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
       ],
+      "Keys created": [
+        "키 생성됨"
+      ],
       "Lean more about gateways": [
         "게이트웨이에 대해 더 알아보기"
       ],
@@ -3303,6 +3315,9 @@
       "No results found": [
         "결과를 찾을 수 없음"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "SSO를 사용하지 않는 (ID 제공자를 통하지 않은 수동 생성된) 사용자는 계속 조직에 로그인할 수 있습니다"
+      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -3314,6 +3329,9 @@
       ],
       "old password": [
         "이전 암호"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "조직에서 싱글 사인온 (SSO)을 비활성화하면 다음과 같이 변경됩니다:"
       ],
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
@@ -3501,11 +3519,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
+      "Single sign-on removed": [
+        "싱글 사인온 (SSO) 제거됨"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "(ID 공급자가 제공한) SSO 사용자가 삭제될 예정입니다"
       ],
       "Step ${ step }": [
         "${ step } 단계"
@@ -3551,6 +3575,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "개인 정보 보호와 자유가 최우선인 더 나은 인터넷을 구축하려는 우리의 사명을 지원해 주셔서 감사합니다."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "ID 제공자가 제공한 크리덴셜 정보가 삭제됩니다."
       ],
       "The following address is invalid.": [
         "다음 주소가 유효하지 않습니다."
@@ -3620,6 +3647,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "사용자의 계정 및 계정에 연결된 모든 정보가 영구 삭제되며, 이 계정의 복구가 불가능합니다."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "이렇게 하면${ boldDomainName }의 SSO가 제거됩니다."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "임시 비밀번호를 대체하게 됩니다. 추후 ${ BRAND_NAME } 계정에 접근하는데 사용할 수 있습니다."
@@ -3728,6 +3758,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "애플리케이션 없이 ${ VPN_APP_NAME } 서버에 연결할 때 다음 자격 증명을 사용하세요. macOS의 Tunnelblick, GNU/Linux의 OpenVPN도 사용하고 있어요."
+      ],
+      "User activated": [
+        "사용자 활성화됨"
       ],
       "Users": [
         "사용자"
@@ -4529,6 +4562,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } 및 ${ additionalApp }의 새로운 기능"
+      ],
       "${ app } product updates": [
         "${ app } 제품 업데이트"
       ],
@@ -4555,9 +4591,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 환영 이메일"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME } 새 기능"
       ]
     },
     "Label on payment method": {
@@ -4679,6 +4712,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "사용자 활성화"
+      ],
       "Change password": [
         "비밀번호 변경"
       ],
@@ -5247,7 +5283,7 @@
         "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
       ],
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
@@ -7108,6 +7144,9 @@
       "Activate organization key": [
         "조직 키 활성화하기"
       ],
+      "Activate user": [
+        "사용자 활성화"
+      ],
       "Add address": [
         "주소 추가"
       ],
@@ -7218,6 +7257,9 @@
       ],
       "Create multiple user accounts": [
         "다중 사용자 계정 생성"
+      ],
+      "Create organization key": [
+        "조직 키 생성"
       ],
       "Create user accounts": [
         "사용자 계정 만들기"
@@ -7450,6 +7492,12 @@
       "Remove domain": [
         "도메인 제거"
       ],
+      "Remove single sign-on": [
+        "싱글 사인온 (SSO) 제거"
+      ],
+      "Remove single sign-on for your organization?": [
+        "조직에서 싱글 사인온 (SSO)을 제거하시겠어요?"
+      ],
       "Remove user?": [
         "사용자를 삭제할까요?"
       ],
@@ -7522,8 +7570,8 @@
       "Signed in to member account": [
         "회원 계정으로 로그인됨"
       ],
-      "Single Sign-On": [
-        "싱글 사인 온 (SSO)"
+      "Single sign-on": [
+        "싱글 사인온 (SSO)"
       ],
       "Status": [
         "상태"

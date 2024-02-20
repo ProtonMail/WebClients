@@ -3902,6 +3902,9 @@
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
       ],
+      "Organization key must be activated to create non-private users": [
+        "არაკონფიდენციალური მომხმარებლების შესაქმნებად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
       "Password is required": [
         "პაროლი აუცილებელია"
       ],
@@ -4042,9 +4045,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "შემოწირულობის მინიმალური რაოდენობაა ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "გადახდის მინიმალური თანხაა ${ price }"
       ],
@@ -4077,6 +4077,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "ეს შეტყობინება შეიძლება, შეიცავდეს ბმულებს, რომლებიც თქვენს მიმდინარე ბრაუზერში არასწორად გაიხსნება."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "იმისათვის, რომ არაკონფიდენციალური მომხმარებლის ანგარიშები შექმნათ და მათ ანგარიშებთან წვდომა გქონდეთ, თქვენი ადმინისტრატორის უფლებების აღდგენა დაგჭირდებათ."
       ],
       "Trusted keys are not valid for sending": [
         "სანდო გასაღებების გაგზავნა არ შეიძლება"
@@ -6098,6 +6101,9 @@
       "Are you sure you want to discard your import?": [
         "გნებავთ თქვენი შემოტანის გაუქმება?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები მიანიჭოთ?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "დარწმუნებული ბრძანდებით, რომ ჟურნალის სამუდამოდ წაშლა გნებავთ?"
       ],
@@ -6612,6 +6618,9 @@
       ],
       "inactive": [
         "არააქტიური"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
@@ -7639,7 +7648,7 @@
         "მოგესალმებით"
       ],
       "We’ll send a reset code to ${ boldValue }.": [
-        "ჩამოკრის კოდი გამოგეგზავნებათ მისამართზე ${ boldValue }."
+        "ჩამოყრის კოდი გამოგეგზავნებათ მისამართზე ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "პაროლის შეცვლის ბმული აღდგენის ველში შეყვანილი ელფოსტის მისამართზე გამოიგზავნება."
@@ -9306,9 +9315,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-ის მისალმების ელფოსტები"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ახალი ფუნქციები"
       ]
     },
     "Label in domain modal": {
@@ -10317,7 +10323,7 @@
         "ულიმიტო დღიური გზავნა/დღეში"
       ],
       "Unlimited shared vaults with access permissions": [
-        "განუსაზღვრელ გაზიარებული საცავები წვდომის შეზღუდვებით"
+        "განუსაზღვრელი გაზიარებული საცავები წვდომის შეზღუდვებით"
       ],
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
@@ -10506,6 +10512,9 @@
       "terms and conditions": [
         "პირობები და წესები"
       ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "ორგანიზაციის სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
+      ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "დასაწყისისთვის შეიყვანეთ საჩვენებელი სახელი. ეს ის სახელია, რომელსც ხალხი დაინახავს, როცა ელფოსტას გაუგზავნით, მოიწვევთ მოვლენაზე ან ფაილს გაუზიარებთ."
       ],
@@ -10571,6 +10580,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "შემოსული შეტყობინებებისთვის ავტომოპასუხის დაყენება"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "გადაამისამართეთ ავტომატურ თქვენს ${ MAIL_APP_NAME }-ზე გამოგზავნილი ელფოსტები ნებისმიერ სხვა ელფოსტის მისამართზე."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "სარეკლამო ან პროგრამული ელფოსტის მასიური გაგზავნა ამჟამად მხარდაუჭერელია. ამ მიზნისთვის გირჩევთ, ელფოსტის გამოყოფილი სერვისი აირჩიოთ."
@@ -11240,8 +11252,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "გადადით თქვენს საცავზე, რომ მართოთ თქვენი პაროლები, ფსევდონიმები და სხვ."
+      ],
       "Set up your organization": [
         "ორგანიზაციის მორგება"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "დაიწყეთ მომხმარებლების დამატება, რათა მათ ${ PASS_APP_NAME }-ზე წვდომა მისცეთ."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
@@ -11362,6 +11380,9 @@
       "/month /user, billed biennially": [
         "/თვე /მომხმარებელი, გადახდით ორ წელიწადში ერთხელ"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "დამატებითი დაცვა, რომელიც ინდუსტრიის სტანდარტებს მიღმაც კი გადის"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "${ BRAND_NAME }-ის ყველა ფასიანი სერვისი"
       ],
@@ -11409,6 +11430,12 @@
       ],
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
+      ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "შეიყვანეთ საჩვენებლი სახელი **${ username }**-სთვის. ეს ისაა, რასაც თქვენი მომხმარებლები დაინახავენ, როცა თქვენ მათ წვდომებს შეცვლით, ან მონაცემებს გაუზიარებთ."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "ძირითადი დაცვა და უსაფრთხო კოლაბორაცია განუსაზღვრელი მომხმარებლებისთვის"
       ],
       "Everything from ${ planTitle }, plus...": [
         "${ planTitle }-ის ყველაფერი, პლუს..."
@@ -11467,8 +11494,14 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "შეუერთდით 100 მილიონ ადამიანზე მეტს, ვინც ინტერნეტში უსაფრთხოდ სამუშაოდ ${ BRAND_NAME } ამოირჩია"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "შეუერთდით 50 000-ზე მეტ საზიგადოებას, რომლებიც ენდობიან ${ BRAND_NAME }-ს"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გაშვება"
+      ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "შეზღუდული შეთავაზება: მიიღეთ ${ title } ${ price }-ად თითოეული მომხმარებლისთვის თვეში!"
       ],
       "One easy subscription.": [
         "ერთი ადვილი გამოწერა"
@@ -11508,6 +11541,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "პროდუქტის გაშვების სპეციალური აქცია: მიიღეთ ${ title } ${ price }-ად სამუდამოდ!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "ინდივიდუალური გადაწყვეტილებები დიდი ორგანიზაციებისთვის სპეციფიკური მოთხოვნებით."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "შეთავაზება, რომელიც აირჩიეთ, მიუწვდომელია ${ currentPlanTitle }-ის გამომწერებისთვის."
@@ -11572,14 +11608,23 @@
       "All administrators will get access to the key.": [
         "გასაღებთან წვდომას ყველა ადმინისტრატორი მიიღებს."
       ],
+      "Are you sure you want to change your organization key?": [
+        "მართლა გნებავთ თქვენი ორგანიზაციის გასაღების შეცვლა?"
+      ],
       "Change organization key": [
         "ორგანიზაციის გასაღებების შეცვლა"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "არა-კონფიდენციალური მომხმარებლები შეიძლება, ადმინისტრატორამდე ასწიოთ, თუ მათ გასაღებები მორგებული აქვთ"
       ],
       "Organization key activated": [
         "ორგანიზაციის გასაღები გააქტიურდა"
       ],
       "Organization key does not exist.": [
         "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "ადმინისტრატორის უფლებების მისაცემად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
       ],
       "Organization key restored": [
         "ორგანიზაციის გასაღები აღდგენილია"
@@ -11590,11 +11635,47 @@
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
+      ],
       "Reset organization key": [
         "ორგანიზაციის გასაღების ჩამოყრა"
       ],
+      "The following administrators will get access to the organization key.": [
+        "შემდეგი ადმინისტრატორები მიიღებენ წვდომას ორგანიზაციის გასაღებზე."
+      ],
       "The organization key must be activated first.": [
         "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "ეს გააგზავნის უახლეს ორგანიზაციის გასაღებს ადმინისტრატორებთან, რომლებსაც ამჟამადდ მასზე წვდომა არ გააჩნიათ."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "თქვენი ორგანიზაციის გასაღებების გააქტიურება აუცილებელია. მათი გააქტიურების გარეშე არაკონფიდენციალური მომხმარებლების შექმნა ან მათზე წვდომა შეუძლებელი იქნება."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "იმისათვის, რომ თქვენს ანგარიშზე ადმინისტრატორის უფლებები ჩართოთ, გაააქტიურეთ ორგანიზაციის გასაღები."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "გამოიყენეთ მონაცემების აღდგენის მეთოდი ან ჩამოყარეთ ორგანიზაციის გასღები, რომ ადმინისტრატორის უფლებები აღადგინოთ."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "გამოიყენეთ მონაცემების აღდგენის მეთოდი, დაუკავშირდით სხვა ადმინისტრატორს ან ჩამოყარეთ ორგანიზაციის გასაღები, რომ ადმინისტრატორის უფლებები აღიდგინოთ."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "გამომგზავნის მისამართის გასაღების უსაფრთხოების გადამოწმება ვერ შევძელით. ხანდახან გამომგზავნის ინფორმაციის განახლება ოდნავი დაყოვნებით ხდება. მოგვიანებით სცადეთ. თუ არ ენდობით ამ მოსაწვევის ან გამომგზავნის სისწორეს, დაუკავშირდით ${ BRAND_NAME }-ის მხარდაჭერის გუნს."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "ჩვენ გადავამოწმეთ ამ გამომგზავნისა და მოსაწვევის უტყუარობა."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "მოგენიჭათ ადმინისტრატორის უფლებები ორგანიზაციაზე **${ organizationName }** შემდეგ მომხმარებლის მიერ:"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "ოპერაციის შესასრულებლად ორგანიზაციის გასაღებთან წვდომა გჭირდებათ."
       ]
     },
     "Payment method option": {
@@ -11634,6 +11715,9 @@
       ],
       "Something went wrong. Please try again later.": [
         "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "თქვენი გადახდის მეთოდის ავთენტიკაცია ვერ მოხერხდა. აირჩიეთ სხვა გადახდის მეთოდი, ან თავიდან სცადეთ."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
@@ -11955,6 +12039,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } ადმინისტრატორს თქვენს ორგანიზაციაში სჭირდება წვდომა ორგანიაციის გასაღებზე.",
+        "${ n } ადმინისტრატორს თქვენს ორგანიზაციაში სჭირდება წვდომა ორგანიაციის გასაღებზე."
+      ],
       "Changing organization keys": [
         "ორგანიზაციის გასაღებების შეცვლა"
       ],
@@ -12738,6 +12826,12 @@
       "Get more storage": [
         "მიიღეთ მეტი საცავი"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "სცადეთ ${ app } მისი სრული პოტენციალით"
       ],
@@ -12762,6 +12856,9 @@
       ],
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "თქვენი ${ storage } სავსეა. ${ cta }."
@@ -14877,6 +14974,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "ნაპოვნია პრობლემა DNS-ის თქვენს კონფიგურაციასთან. დარწმუნდით, რომ ჩანაწერები ემთხვევა ქვემოთ მოყვანილ ინსტრუქციებს. თუ პრობლემა მაინც არ გაქრება, ჩვენ DKIM-ით ხელმოწერის გამორთვა მოგვიწევს."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "არაკონფიდენციალური წევრისთვის ელფოსტის მისამართის დამატებამდე საჭიროა ორგანიზაციის გასაღების ${ activateLink }."
       ],
       "You will lose any customization you made so far.": [
         "დაკარგავთ ყველაფერს, რაც თქვენზე მოირგეთ."

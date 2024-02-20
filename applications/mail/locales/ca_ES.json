@@ -168,7 +168,7 @@
         "Esborra tot el format"
       ],
       "Clear application data": [
-        "Esborra les dades de l'aplicació"
+        "Neteja les dades de l'aplicació"
       ],
       "Clear browser data": [
         "Netejar les dades del navegador"
@@ -3286,7 +3286,7 @@
         "L'àlies no és vàlid."
       ],
       "Alias is required": [
-        "Cal l'àlies."
+        "Es requereix un àlies"
       ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
@@ -3451,7 +3451,7 @@
         "Signatura no trobada"
       ],
       "Name is required": [
-        "Cal indicar un nom."
+        "Es requereix un nom"
       ],
       "Network error: Please check your connection and try again.": [
         "Error de xarxa: comprovi la seva connexió i torneu a intentar."
@@ -5120,7 +5120,7 @@
         "Neteja les dades"
       ],
       "Clear selection": [
-        "Esborra la selecció"
+        "Neteja la selecció"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Netejar les dades del navegador també desactiva la cerca de continguts del missatge en aquest dispositiu. Tots els missatges s'hauran de descarregar altra vegada per cercar-hi a dins."
@@ -5187,7 +5187,7 @@
         "Setmanal (personalitzat)"
       ],
       "Custom yearly": [
-        "Personalització de l'any"
+        "Anual (personalitzat)"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
@@ -6646,6 +6646,9 @@
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "per exemple, Amazon, eBay, Etsy"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -7864,6 +7867,9 @@
       "Search name, email or group": [
         "Cerca nom, correu electrónic o grup"
       ],
+      "Search parent folder": [
+        "Cerca la carpeta principal"
+      ],
       "Select": [
         "Seleccionar"
       ],
@@ -8606,6 +8612,9 @@
       "Email tracking protection": [
         "Protecció de seguiment de correu electrònic"
       ],
+      "Get the desktop app": [
+        "Obteniu l'aplicació d'escriptori"
+      ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
       ],
@@ -8673,6 +8682,12 @@
     "storage_split: info": {
       "${ app } storage": [
         "emmagatzematge de ${ app }"
+      ],
+      "upgrade for more storage": [
+        "millorar per obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is full": [
+        "El seu ${ appStorage } és ple."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -9072,6 +9087,9 @@
       ],
       "Account security": [
         "Seguretat del compte"
+      ],
+      "Action all conversations": [
+        "Aplica a totes les converses"
       ],
       "Action all messages": [
         "Aplica a tots els missatges"
@@ -9979,31 +9997,31 @@
         "Cada ${ interval } setmanes, el dimecres a les ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Cada setmana el ${ multipleDaysString }, ${ timesString }"
+        "Cada setmana el ${ multipleDaysString } a les ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
         "Cada setmana tots els dies, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Cada setmana el divendres, ${ timesString }"
+        "Cada setmana el divendres a les ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Cada setmana el dilluns, ${ timesString }"
+        "Cada setmana el dilluns a les ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Cada setmana el dissabte, ${ timesString }"
+        "Cada setmana el dissabte a les ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Cada setmana el diumenge, ${ timesString }"
+        "Cada setmana el diumenge a les ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Cada setmana el dijous, ${ timesString }"
+        "Cada setmana el dijous a les ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Cada setmana el dimarts, ${ timesString }"
+        "Cada setmana el dimarts a les ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Cada setmana el dimecres, ${ timesString }"
+        "Cada setmana el dimecres a les ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {

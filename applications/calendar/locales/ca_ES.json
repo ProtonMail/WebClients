@@ -2399,7 +2399,7 @@
         "L'àlies no és vàlid."
       ],
       "Alias is required": [
-        "Cal l'àlies."
+        "Es requereix un àlies"
       ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
@@ -2561,7 +2561,7 @@
         "Signatura no trobada"
       ],
       "Name is required": [
-        "Cal indicar un nom."
+        "Es requereix un nom"
       ],
       "Name required": [
         "Nom requerit"
@@ -3826,7 +3826,7 @@
         "Setmanal (personalitzat)"
       ],
       "Custom yearly": [
-        "Personalització de l'any"
+        "Anual (personalitzat)"
       ],
       "Daily": [
         "Cada dia"
@@ -4545,6 +4545,9 @@
       ],
       "Don't ask again": [
         "No tornis a preguntar"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "per exemple, Amazon, eBay, Etsy"
       ],
       "Email": [
         "Correu electrònic"
@@ -5664,6 +5667,9 @@
       "Search for name or email": [
         "Cerca per nom o correu electrònic"
       ],
+      "Search parent folder": [
+        "Cerca la carpeta principal"
+      ],
       "Select": [
         "Seleccionar"
       ],
@@ -6273,6 +6279,12 @@
     "storage_split: info": {
       "${ app } storage": [
         "emmagatzematge de ${ app }"
+      ],
+      "upgrade for more storage": [
+        "millorar per obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is full": [
+        "El seu ${ appStorage } és ple."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -7260,31 +7272,31 @@
         "Cada ${ interval } setmanes, el dimecres a les ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Cada setmana el ${ multipleDaysString }, ${ timesString }"
+        "Cada setmana el ${ multipleDaysString } a les ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
         "Cada setmana tots els dies, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Cada setmana el divendres, ${ timesString }"
+        "Cada setmana el divendres a les ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Cada setmana el dilluns, ${ timesString }"
+        "Cada setmana el dilluns a les ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Cada setmana el dissabte, ${ timesString }"
+        "Cada setmana el dissabte a les ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Cada setmana el diumenge, ${ timesString }"
+        "Cada setmana el diumenge a les ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Cada setmana el dijous, ${ timesString }"
+        "Cada setmana el dijous a les ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Cada setmana el dimarts, ${ timesString }"
+        "Cada setmana el dimarts a les ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Cada setmana el dimecres, ${ timesString }"
+        "Cada setmana el dimecres a les ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {

@@ -4045,9 +4045,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Lahjoituksen vähimmäissumma on ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Hyväksymämme vähimmäismaksu on ${ price }"
       ],
@@ -6622,6 +6619,9 @@
       "inactive": [
         "ei käytössä"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName } sisältäen: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Paranna tilisi turvallisuutta vahvistamalla sähköpostiosoitteesi."
       ],
@@ -8055,6 +8055,9 @@
       "Credit": [
         "Krediitit"
       ],
+      "Credit note": [
+        "Hyvityslasku"
+      ],
       "Currency conversion": [
         "Valuutan muuntaminen"
       ],
@@ -9315,9 +9318,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }in tervetuloviestit"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME }in ja ${ CALENDAR_SHORT_APP_NAME }in uudet ominaisuudet"
       ]
     },
     "Label in domain modal": {
@@ -11261,6 +11261,9 @@
       "Set up your organization": [
         "Määritä organisaatiosi"
       ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Aloita käyttäjien lisääminen ja anna heille pääsy palveluun ${ PASS_APP_NAME }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME } -sovelluksen käyttö"
       ]
@@ -11494,8 +11497,14 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }:n pysyäkseen turvassa verkossa"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Liity yli 50 000 yrityksen joukkoon, jotka luottavat ${ BRAND_NAME } -tuotteeseen."
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Käynnistetään ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Rajoitettu tarjous: Hanki ${ title } hintaan ${ price } per käyttäjä kuukausittain!"
       ],
       "One easy subscription.": [
         "Yksi helppo tilaus."
@@ -11661,6 +11670,9 @@
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Olet organisaation **${ organizationName }** järjestelmänvalvoja. Nimityksen teki"
       ],
       "You must privatize all users before generating a new organization key": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
@@ -12818,7 +12830,10 @@
         "Hanki lisää tallennustilaa"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Lähettääksesi ja vastaanottaaksesi sähköposteja, vapauta tallennustilaa tai ${ upgrade }"
+        "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
       ],
       "Try out ${ app } to its full potential": [
         "Kokeile ${ app } -sovelluksen kaikkia ominaisuuksia"
@@ -12844,6 +12859,15 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }si on täynnä"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } on täynnä. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"

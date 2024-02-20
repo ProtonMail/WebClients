@@ -3340,10 +3340,10 @@
         "Cancellazione di un evento che inizia il ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invito per un evento il ${ formattedStart }"
+        "Invito per un evento ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Invito per un evento che inizia il ${ formattedStart }"
+        "Invito per un evento che inizia ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Aggiornamento per un evento il ${ formattedStart }"
@@ -4044,9 +4044,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "L'importo minimo che può essere donato è di ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Il pagamento minimo che accettiamo è di ${ price }"
@@ -5997,8 +5994,8 @@
         "Allocazione dell'account amministratore"
       ],
       "Affected user is on row": [
-        "L'utente condizionato è nella riga",
-        "Gli utenti condizionati sono sulle righe"
+        "L'utente con una password troppo corta è nella riga",
+        "Gli utenti con una password troppo corta sono sulle righe"
       ],
       "Align left": [
         "Allinea a sinistra"
@@ -6161,6 +6158,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Assicurati di copiare la tua password e di conservarla in un luogo sicuro."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Prima di attivare l'utente è necessario fornire una password e creare delle chiavi di crittografia per gli indirizzi."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Prima di creare questo indirizzo è necessario fornire una password e creare chiavi di crittografia per essa."
@@ -6683,6 +6683,9 @@
       ],
       "Key deletion is irreversible!": [
         "L'eliminazione della chiave è irreversibile!"
+      ],
+      "Keys created": [
+        "Chiavi create"
       ],
       "Label all imported messages as": [
         "Etichetta tutti i messaggi importati come"
@@ -7394,6 +7397,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Questo sostituirà la tua password temporanea. La userai per accedere al tuo account ${ BRAND_NAME } in futuro."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Verrai disconnesso da tutti gli account attualmente connessi."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
       ],
@@ -7561,6 +7567,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Usa l'indirizzo email selezionato come nome utente SMTP nel servizio esterno e il token generato come password SMTP."
+      ],
+      "User activated": [
+        "Utente attivato"
       ],
       "Users": [
         "Utenti"
@@ -9309,6 +9318,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Aggiornamenti sui prodotti ${ app } e ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Aggiornamenti sul prodotto ${ app }"
       ],
@@ -9335,9 +9347,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Email di benvenuto di ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nuove funzionalità di ${ MAIL_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9649,7 +9658,7 @@
     },
     "Member action": {
       "Activate user": [
-        "Attiva utente"
+        "Attiva l'utente"
       ],
       "Change password": [
         "Cambia la password"
@@ -13756,6 +13765,9 @@
       ],
       "Create multiple user accounts": [
         "Crea account utente multipli"
+      ],
+      "Create organization key": [
+        "Crea chiave dell'organizzazione"
       ],
       "Create public link": [
         "Crea un link pubblico"
