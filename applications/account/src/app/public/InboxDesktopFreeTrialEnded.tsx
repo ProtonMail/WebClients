@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -27,9 +28,14 @@ const WebAppLink = () => {
 
 const InboxDesktopFreeTrialEnded = () => {
     const history = useHistory();
-    if (!isElectronApp) {
-        history.replace('/login');
-    }
+
+    useEffect(() => {
+        // The free trial page is only displayed for the electron desktop application
+        // This is put here as security to prevent users on the web to access this page
+        if (!isElectronApp) {
+            history.replace('/login');
+        }
+    }, []);
 
     const backToLogin = () => {
         resetEndOfTrialIPCCall();
