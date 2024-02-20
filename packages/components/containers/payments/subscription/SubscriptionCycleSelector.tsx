@@ -12,6 +12,7 @@ import {
     getPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
+    isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
@@ -234,7 +235,13 @@ export const getAllowedCycles = (
     const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
     const isSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
 
+    const isTrialSubscription = isTrial(subscription);
+
     const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => {
+        if (isTrialSubscription) {
+            return true;
+        }
+
         const isHigherThanCurrentSubscription = cycle > (subscription?.Cycle ?? 0);
         const isHigherThanUpcoming = cycle > (subscription?.UpcomingSubscription?.Cycle ?? 0);
 
