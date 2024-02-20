@@ -45,7 +45,7 @@ const ProductDownloadCard = ({ app, qrCodeLink, appStoreLink, playStoreLink }: P
                         className="h-custom"
                         style={{ '--h-custom': '2.25rem' }}
                         src={playStoreSvg}
-                        // translator: Shows the apn name such as: Proton Mail on App Store. Only supports Proton Mail and Proton Calendar
+                        // translator: Shows the app name such as: Proton Mail on Play Store. Only supports Proton Mail and Proton Calendar
                         alt={c('Get started checklist instructions').t`${appName} on Play Store`}
                     />
                 </Href>
