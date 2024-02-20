@@ -1,5 +1,6 @@
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import type { AliasDetails, AliasMailbox, AliasOptions, ItemRevision, Share, ShareType } from '@proton/pass/types';
+import type { MaxAgeMemoizeOptions } from '@proton/pass/utils/fp/memo';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
@@ -23,8 +24,13 @@ export interface PassBridge {
          * Resolves the default - oldest, active and owned - vault.
          * If it does not exist, will create one and return it
          * @param hadVault callback to indicate if the user had a vault
+         * @param options
+         * @param options.maxAge the time it should be cached in SECONDS
          */
-        getDefault: (hadVault?: (hadVault: boolean) => void) => Promise<Share<ShareType.Vault>>;
+        getDefault: (
+            hadVault: (hadVault: boolean) => void,
+            options: MaxAgeMemoizeOptions
+        ) => Promise<Share<ShareType.Vault>>;
     };
     alias: {
         /** Creates an alias item. Call `PassBridge.alias.getAliasOptions` in order
