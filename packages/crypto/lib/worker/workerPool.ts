@@ -131,6 +131,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         processMIME: (opts) => getWorker().processMIME(opts).catch(errorReporter),
         computeHash: (opts) => getWorker().computeHash(opts).catch(errorReporter),
         computeHashStream: (opts) => getWorker().computeHashStream(opts).catch(errorReporter),
+        computeArgon2: (opts) => getWorker().computeArgon2(opts).catch(errorReporter),
 
         generateSessionKey: (opts) => getWorker().generateSessionKey(opts).catch(errorReporter),
         generateSessionKeyForAlgorithm: (opts) => getWorker().generateSessionKeyForAlgorithm(opts).catch(errorReporter),

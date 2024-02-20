@@ -6,8 +6,6 @@ import { serverTime } from '../serverTime';
 import type { ApiInterface } from '../worker/api';
 import { WorkerVerifyOptions } from '../worker/api.models';
 
-export { VERIFICATION_STATUS };
-
 export type CryptoApiInterface = ApiInterface;
 
 const assertNotNull = (value: CryptoApiInterface | null): CryptoApiInterface => {
@@ -46,7 +44,7 @@ interface CryptoProxyInterface extends CryptoApiInterface {
  */
 async function verifyMessageWithFallback<
     DataType extends string | Uint8Array,
-    FormatType extends WorkerVerifyOptions<DataType>['format'] = 'utf8'
+    FormatType extends WorkerVerifyOptions<DataType>['format'] = 'utf8',
 >(options: WorkerVerifyOptions<DataType> & { format?: FormatType }) {
     const verificationResult = await assertNotNull(endpoint).verifyMessage<DataType, FormatType>(options);
 
@@ -154,6 +152,7 @@ export const CryptoProxy: CryptoProxyInterface = {
     getSHA256Fingerprints: async (opts) => assertNotNull(endpoint).getSHA256Fingerprints(opts),
     computeHash: async (opts) => assertNotNull(endpoint).computeHash(opts),
     computeHashStream: async (opts) => assertNotNull(endpoint).computeHashStream(opts),
+    computeArgon2: (opts) => assertNotNull(endpoint).computeArgon2(opts),
 
     getArmoredMessage: async (opts) => assertNotNull(endpoint).getArmoredMessage(opts),
     getArmoredKeys: async (opts) => assertNotNull(endpoint).getArmoredKeys(opts),
