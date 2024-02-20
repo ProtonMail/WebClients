@@ -3,7 +3,6 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
-import { i18n } from 'proton-pass-web/lib/i18n';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
@@ -68,7 +67,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         client.current.setStatus(AppStatus.READY);
 
                         telemetry.start().catch(noop);
-                        void i18n.setLocale(selectLocale(state));
+                        void core.i18n.setLocale(selectLocale(state));
 
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
