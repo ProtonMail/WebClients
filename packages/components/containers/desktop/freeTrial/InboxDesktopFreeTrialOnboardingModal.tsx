@@ -41,7 +41,7 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
                             <h1 className="text-bold mb-2 text-2xl">{c('Free trial desktop')
                                 .t`Introducing the desktop app`}</h1>
                             <p className="my-0">{c('Free trial desktop')
-                                .jt`Enjoy fast, secure, and distraction-free access to your inbox and calendar.`}</p>
+                                .t`Enjoy fast, secure, and distraction-free access to your inbox and calendar.`}</p>
                         </div>
                         <div>
                             <Button color="norm" size="large" onClick={handleClose} fullWidth>{c('Free trial destkop')
