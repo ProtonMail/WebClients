@@ -1,5 +1,9 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 
-export interface WalletThunkArguments extends ProtonThunkArguments {}
+import { WasmProtonWalletApiClient } from '../../pkg';
+
+export interface WalletThunkArguments extends ProtonThunkArguments {
+    rustApi: WasmProtonWalletApiClient;
+}
 
 export const extraThunkArguments = {} as WalletThunkArguments;

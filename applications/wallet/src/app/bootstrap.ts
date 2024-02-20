@@ -19,6 +19,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { WasmAuthData, WasmProtonWalletApiClient } from '../pkg';
 import locales from './locales';
 import { extendStore, setupStore } from './store/store';
 
@@ -35,6 +36,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
+
+    // TODO: remove useless arguments when WasmAuthData's contructor signature has changed
+    const authData = new WasmAuthData(authentication.UID, '', '', []);
+    const rustApi = new WasmProtonWalletApiClient(authData);
+
+    extendStore({ rustApi });
 
     setupGuestCrossStorage();
     initElectronClassnames();
