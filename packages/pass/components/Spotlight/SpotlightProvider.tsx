@@ -79,7 +79,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     const acknowledge = useCallback((messageType: OnboardingMessage, cb: Callback = noop) => {
-        onboardingAcknowledge?.(messageType);
+        void onboardingAcknowledge?.(messageType);
         cb();
         setOnboardingMessage(null);
     }, []);
