@@ -269,6 +269,9 @@
       "More options": [
         "더 많은 옵션"
       ],
+      "Move": [
+        "이동"
+      ],
       "Move all items": [
         "모든 항목 이동"
       ],
@@ -283,6 +286,9 @@
       ],
       "Move to trash": [
         "휴지통으로 이동"
+      ],
+      "Multiple select": [
+        "다중 선택"
       ],
       "Not now": [
         "다음에"
@@ -337,6 +343,9 @@
       ],
       "Resend invitation": [
         "초대장 재전송"
+      ],
+      "Restore": [
+        "복원"
       ],
       "Restore item": [
         "항목 복구"
@@ -400,6 +409,9 @@
       ],
       "Transfer ownership": [
         "소유권 이전"
+      ],
+      "Trash": [
+        "휴지통"
       ],
       "Try again": [
         "다시 시도"
@@ -693,6 +705,9 @@
       "Unknown invite": [
         "알 수 없는 초대"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "지원되지 않는 ${ PASS_APP_NAME } 파일 포맷"
+      ],
       "Unsupported 1Password file format": [
         "지원되지 않는 1Password 파일 포맷"
       ],
@@ -812,6 +827,9 @@
       "Admin": [
         "관리자"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "비활성화 후, ${ PASS_APP_NAME }에 액세스하려면 세션의 잠금을 해제해야 하고 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
       ],
@@ -868,6 +886,9 @@
       ],
       "Creating alias...": [
         "별명 생성 중..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 금고 구조 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
       ],
       "Decrypting your data": [
         "데이터 복호화 중"
@@ -1157,6 +1178,12 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "입력 란을 클릭했을 때 자동 완성 드롭다운이 자동으로 열립니다."
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "내보낸 파일이 PGP를 통해 암호화되며 강력한 암호가 필요합니다."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "내보내기 파일은 사용자가 소유자가 아닌 공유 금고의 데이터를 포함하지 않습니다."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
@@ -1387,6 +1414,9 @@
       "Created": [
         "제작"
       ],
+      "Default (recommended)": [
+        "기본 (권장됨)"
+      ],
       "Display": [
         "표시"
       ],
@@ -1408,6 +1438,9 @@
       "Empty trash": [
         "휴지통 비우기"
       ],
+      "Encrypted (recommended)": [
+        "암호화됨 (권장됨)"
+      ],
       "Expiration date": [
         "만료 시간"
       ],
@@ -1416,6 +1449,9 @@
       ],
       "Field name": [
         "필드 이름"
+      ],
+      "File format": [
+        "파일 형식"
       ],
       "Forwards to": [
         "다음으로 전달:"
