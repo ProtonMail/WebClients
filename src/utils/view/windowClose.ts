@@ -2,7 +2,6 @@ import { BrowserWindow, Event, app } from "electron";
 import Logger from "electron-log";
 import { saveWindowBounds } from "../../store/boundsStore";
 import { isMac, isWindows } from "../helpers";
-import { areAllWindowsClosedOrHidden } from "./windowHelpers";
 
 export const macOSExitEvent = (window: BrowserWindow, event: Event) => {
     if (!isMac) {
@@ -34,9 +33,9 @@ export const windowsExitEvent = (window: BrowserWindow, event: Event) => {
     saveWindowBounds(window);
 
     // Close the application if all windows are closed
-    if (areAllWindowsClosedOrHidden()) {
-        Logger.info("close, areAllWindowsClosedOrHidden on Windows");
-        BrowserWindow.getAllWindows().forEach((window) => window.destroy());
+    if (!window.isVisible()) {
+        Logger.info("close, window not visible on Windows");
+        window.destroy();
         app.quit();
     }
 };

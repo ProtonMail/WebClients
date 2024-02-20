@@ -1,5 +1,6 @@
-import { BrowserView, BrowserWindow, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
+import { BrowserView, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
 import { isMac } from "../helpers";
+import { getMainWindow } from "../view/viewManagement";
 
 const getContextMenuSpellCheck = (props: ContextMenuParams, view: BrowserView) => {
     if (!props.dictionarySuggestions || props.dictionarySuggestions.length === 0) {
@@ -73,13 +74,11 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
         template.push({ type: "separator" });
         template.push({
             label: "Save image as…",
-            click: () => BrowserWindow.getFocusedWindow().webContents.downloadURL(props.srcURL),
+            click: () => getMainWindow()?.webContents.downloadURL(props.srcURL),
         });
         template.push({
             label: "Copy image",
-            click: () => {
-                BrowserWindow.getFocusedWindow().webContents.copyImageAt(props.x, props.y);
-            },
+            click: () => getMainWindow()?.webContents.copyImageAt(props.x, props.y),
         });
         template.push({ type: "separator" });
     }

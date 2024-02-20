@@ -24,11 +24,11 @@ import {
 import {
     getCalendarView,
     getMailView,
+    getMainWindow,
     reloadCalendarWithSession,
     updateView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
-import { areAllWindowsClosedOrHidden } from "./utils/view/windowHelpers";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -61,13 +61,12 @@ if (app.isDefaultProtocolClient("mailto")) {
 } else {
     Logger.info("App is not default mailto client");
 }
-
 app.whenReady().then(() => {
     const secureSession = session.fromPartition(PARTITION, {
         cache: false,
     });
 
-    const window = viewCreationAppStartup(secureSession);
+    viewCreationAppStartup(secureSession);
     const mailView = getMailView();
     if (hasTrialEnded() && mailView) {
         const url = getTrialEndURL();
@@ -84,8 +83,13 @@ app.whenReady().then(() => {
     handleIPCCalls();
 
     app.on("activate", () => {
-        if (isMac && areAllWindowsClosedOrHidden()) {
-            window.show();
+        if (isMac) {
+            getMainWindow()?.show();
+            return;
+        }
+
+        if (BrowserWindow.getAllWindows().length === 0) {
+            return viewCreationAppStartup(secureSession);
         }
     });
 
@@ -123,14 +127,17 @@ app.on("window-all-closed", () => {
 
 // Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
-    const window = BrowserWindow.getFocusedWindow();
-    if (isMac) {
-        saveWindowBounds(window);
-
-        if (window) {
-            window.destroy();
-        }
+    const mainWindow = getMainWindow();
+    if (!mainWindow) {
+        return;
     }
+
+    if (!isMac) {
+        return;
+    }
+
+    saveWindowBounds(mainWindow);
+    mainWindow.destroy();
 });
 
 // Security addition

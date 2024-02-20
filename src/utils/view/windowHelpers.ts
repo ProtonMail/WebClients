@@ -1,4 +1,4 @@
-import { BrowserWindow, BrowserWindowConstructorOptions, Session } from "electron";
+import { BrowserWindowConstructorOptions, Session } from "electron";
 import { getWindowBounds } from "../../store/boundsStore";
 import { getConfig } from "../config";
 import { isMac, isWindows } from "../helpers";
@@ -43,8 +43,4 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
             sandbox: true,
         },
     };
-};
-
-export const areAllWindowsClosedOrHidden = () => {
-    return BrowserWindow.getAllWindows().every((window) => !window.isVisible());
 };

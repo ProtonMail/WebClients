@@ -1,11 +1,13 @@
 import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
+import { resetBadge } from "../../ipc/badge";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getConfig } from "../config";
-import { isWindows } from "../helpers";
+import { clearStorage, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
+import { getTrialEndURL } from "../urls/trial";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./beforeUnload";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
@@ -16,15 +18,17 @@ let mailView: undefined | BrowserView = undefined;
 let calendarView: undefined | BrowserView = undefined;
 let accountView: undefined | BrowserView = undefined;
 
+let mainWindow: undefined | BrowserWindow = undefined;
+
 export const viewCreationAppStartup = (session: Session) => {
     const window = createBrowserWindow(session);
     createViews(session);
     configureViews();
-    loadMailView(window);
+    loadMailView(mainWindow);
 
-    window.on("close", (ev) => {
-        macOSExitEvent(window, ev);
-        windowsExitEvent(window, ev);
+    mainWindow.on("close", (ev) => {
+        macOSExitEvent(mainWindow, ev);
+        windowsExitEvent(mainWindow, ev);
     });
 
     return window;
@@ -58,16 +62,14 @@ const createViews = (session: Session) => {
 };
 
 const createBrowserWindow = (session: Session) => {
-    const window = new BrowserWindow({ ...getWindowConfig(session) });
+    mainWindow = new BrowserWindow({ ...getWindowConfig(session) });
 
     setApplicationMenu(app.isPackaged);
 
-    window.webContents.session.setCertificateVerifyProc((request, callback) => {
+    mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
         callback(callbackValue);
     });
-
-    return window;
 };
 
 const configureViews = () => {
@@ -130,7 +132,7 @@ export const loadAccountView = (window: BrowserWindow) => {
 };
 
 export const updateView = (target: VIEW_TARGET) => {
-    const window = BrowserWindow.getFocusedWindow();
+    const window = mainWindow;
     if (target === "mail") {
         loadMailView(window);
         return;
@@ -149,12 +151,23 @@ export const reloadCalendarWithSession = (session: string) => {
     Logger.info("Reloading calendar with session", session);
     if (!calendarView) {
         Logger.error("calendarView not created");
-        const config = getWindowConfig(BrowserWindow.getFocusedWindow().webContents.session);
+        const window = mainWindow;
+        const config = getWindowConfig(window.webContents.session);
         calendarView = new BrowserView({ ...config });
     }
 
     calendarView.webContents.loadURL(`${config.url.calendar}/u/${session}`);
 };
 
+export const setTrialEnded = () => {
+    const url = getTrialEndURL();
+    clearStorage(true);
+    resetBadge();
+
+    mailView?.webContents?.loadURL(url);
+    calendarView?.webContents?.loadURL(url);
+};
+
 export const getMailView = () => mailView;
 export const getCalendarView = () => calendarView;
+export const getMainWindow = () => mainWindow;
