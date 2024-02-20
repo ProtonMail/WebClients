@@ -648,7 +648,7 @@ ${updateEventDetailsText}`
     }
     if (method === ICAL_METHOD.CANCEL) {
         if (getHasRecurrenceId(vevent)) {
-            return c('Email body for invitation').t`This occurrence of ${eventTitle} was canceled.`;
+            return c('Email body for invitation').t`This event occurrence was canceled.`;
         }
         return c('Email body for invitation').t`${eventTitle} was canceled.`;
     }

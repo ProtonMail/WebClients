@@ -559,7 +559,7 @@ I am a good description`;
                 },
             },
         };
-        const expected = 'This occurrence of A boring recurring meeting was canceled.';
+        const expected = 'This event occurrence was canceled.';
         expect(
             generateEmailBody({
                 vevent,
