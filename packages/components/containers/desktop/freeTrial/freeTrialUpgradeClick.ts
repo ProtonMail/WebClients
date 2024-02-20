@@ -4,6 +4,6 @@ import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers'
 
 export const freeTrialUpgradeClick = () => {
     if (canInvokeInboxDesktopIPC) {
-        window.ipcInboxMessageBroker?.send('openExternal', getAppHref('/mail/upgrade', APPS.PROTONACCOUNT));
+        window.ipcInboxMessageBroker!.send('openExternal', getAppHref('/mail/upgrade', APPS.PROTONACCOUNT));
     }
 };

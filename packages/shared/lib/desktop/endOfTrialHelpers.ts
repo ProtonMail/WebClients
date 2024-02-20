@@ -6,13 +6,13 @@ import { API_CUSTOM_ERROR_CODES } from '../errors';
 
 export const endOfTrialIPCCall = () => {
     if (canInvokeInboxDesktopIPC) {
-        window.ipcInboxMessageBroker?.send('trialEnd', 'trialEnded');
+        window.ipcInboxMessageBroker!.send('trialEnd', 'trialEnded');
     }
 };
 
 export const resetEndOfTrialIPCCall = () => {
     if (canInvokeInboxDesktopIPC) {
-        window.ipcInboxMessageBroker?.send('trialEnd', 'resetTrialEnded');
+        window.ipcInboxMessageBroker!.send('trialEnd', 'resetTrialEnded');
     }
 };
 
