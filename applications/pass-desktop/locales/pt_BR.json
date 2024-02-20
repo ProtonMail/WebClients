@@ -1,0 +1,1994 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "pt_BR"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Adicionar"
+      ],
+      "Add current URL": [
+        "Adicionar URL atual"
+      ],
+      "Add more": [
+        "Adicionar mais"
+      ],
+      "Add new item": [
+        "Adicionar novo item"
+      ],
+      "Admin panel": [
+        "Painel de administração"
+      ],
+      "Advanced": [
+        "Avançado"
+      ],
+      "Advanced options": [
+        "Opções avançadas"
+      ],
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Back": [
+        "Voltar"
+      ],
+      "Bulk delete items from trash": [
+        "Excluir itens em massa da lixeira"
+      ],
+      "Bulk move items to another vault": [
+        "Mover itens em massa para outro cofre"
+      ],
+      "Bulk move items to trash": [
+        "Mover itens em massa para a lixeira"
+      ],
+      "Bulk restore items from trash": [
+        "Restaurar itens em massa da lixeira"
+      ],
+      "Bulk select items": [
+        "Selecionar itens em massa"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Change": [
+        "Alterar"
+      ],
+      "Choose a file or drag it here": [
+        "Escolha um arquivo ou arraste-o aqui"
+      ],
+      "Clear": [
+        "Limpar"
+      ],
+      "Clear search": [
+        "Limpar pesquisa"
+      ],
+      "Close": [
+        "Fechar"
+      ],
+      "Close advanced options": [
+        "Fechar opções avançadas"
+      ],
+      "Close navigation": [
+        "Fechar navegação"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Confirm access": [
+        "Confirmar acesso"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Copy and close": [
+        "Copiar e fechar"
+      ],
+      "Copy to clipboard": [
+        "Copiar para área de transferência"
+      ],
+      "Create": [
+        "Criar"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Criar uma conta no ${ BRAND_NAME }"
+      ],
+      "Create a new vault": [
+        "Criar um novo cofre"
+      ],
+      "Create a new vault to share": [
+        "Criar um cofre para compartilhar"
+      ],
+      "Create alias": [
+        "Criar alias"
+      ],
+      "Create card": [
+        "Criar cartão"
+      ],
+      "Create login": [
+        "Criar login"
+      ],
+      "Create new items": [
+        "Crie novos itens"
+      ],
+      "Create note": [
+        "Criar nota"
+      ],
+      "Create vault": [
+        "Criar cofre"
+      ],
+      "Creating vault": [
+        "Criando cofre"
+      ],
+      "Customize": [
+        "Personalizar"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
+      "Delete alias": [
+        "Excluir alias"
+      ],
+      "Delete all": [
+        "Excluir tudo"
+      ],
+      "Delete password": [
+        "Excluir senha"
+      ],
+      "Delete permanently": [
+        "Excluir permanentemente"
+      ],
+      "Delete vault": [
+        "Excluir cofre"
+      ],
+      "Deselect": [
+        "Desmarcar"
+      ],
+      "Discard": [
+        "Descartar"
+      ],
+      "Dismiss": [
+        "Descartar"
+      ],
+      "Download this CSV template": [
+        "Baixar esse modelo CSV"
+      ],
+      "Edit": [
+        "Editar"
+      ],
+      "Edit vault": [
+        "Editar cofre"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Feedback": [
+        "Comentários"
+      ],
+      "Fill password": [
+        "Preencher senha"
+      ],
+      "Filter vault items": [
+        "Filtrar itens do cofre"
+      ],
+      "Generate alias": [
+        "Gerar alias"
+      ],
+      "Generate password": [
+        "Gerar senha"
+      ],
+      "Generated passwords": [
+        "Senhas geradas"
+      ],
+      "Get mobile apps": [
+        "Baixar aplicativos móveis"
+      ],
+      "Get Started": [
+        "Começar"
+      ],
+      "Help us improve": [
+        "Ajude-nos a melhorar"
+      ],
+      "Hide": [
+        "Ocultar"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Como eu exporto meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Importing": [
+        "Importando"
+      ],
+      "Install extension": [
+        "Instalar extensão"
+      ],
+      "Invite others": [
+        "Convidar outras pessoas"
+      ],
+      "Join shared vault": [
+        "Juntar ao cofre compartilhado"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Leave": [
+        "Sair"
+      ],
+      "Leave vault": [
+        "Deixar cofre"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Bloquear o ${ PASS_APP_NAME }"
+      ],
+      "Make admin": [
+        "Tornar administrador"
+      ],
+      "Make editor": [
+        "Tornar editor"
+      ],
+      "Make viewer": [
+        "Tornar visualizador"
+      ],
+      "Manage access": [
+        "Gerenciar acesso"
+      ],
+      "Manually sync your data": [
+        "Sincronizar seus dados manualmente"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mais informações: ${ safeTitle }"
+      ],
+      "More options": [
+        "Mais opções"
+      ],
+      "Move": [
+        "Mover"
+      ],
+      "Move all items": [
+        "Mover todos os itens"
+      ],
+      "Move to a shared vault": [
+        "Mover para cofre compartilhado"
+      ],
+      "Move to another vault": [
+        "Mover para outro cofre"
+      ],
+      "Move to Trash": [
+        "Mover para Lixeira"
+      ],
+      "Move to trash": [
+        "Mover para lixeira"
+      ],
+      "Not now": [
+        "Agora não"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open navigation": [
+        "Abrir navegação"
+      ],
+      "Pass for Android": [
+        "Pass para Android"
+      ],
+      "Pass for iOS": [
+        "Pass para iOS"
+      ],
+      "Pin item": [
+        "Fixar item"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
+      ],
+      "Regenerate": [
+        "Gerar novamente"
+      ],
+      "Reject": [
+        "Rejeitar"
+      ],
+      "Reject invitation": [
+        "Recusar convite"
+      ],
+      "Remove access": [
+        "Remover o acesso"
+      ],
+      "Remove member": [
+        "Remover membro"
+      ],
+      "Request a feature": [
+        "Solicitar um recurso"
+      ],
+      "Resend invitation": [
+        "Reenviar convite"
+      ],
+      "Restore": [
+        "Restaurar"
+      ],
+      "Restore item": [
+        "Restaurar item"
+      ],
+      "Retry": [
+        "Tentar novamente"
+      ],
+      "Save": [
+        "Salvar"
+      ],
+      "Saving": [
+        "Salvando"
+      ],
+      "See members": [
+        "Ver membros"
+      ],
+      "Send invite": [
+        "Enviar convite"
+      ],
+      "Send us a message": [
+        "Envie-nos uma mensagem"
+      ],
+      "Set access level": [
+        "Definir nível de acesso"
+      ],
+      "Share": [
+        "Compartilhar"
+      ],
+      "Share this vault": [
+        "Compartilhar esse cofre"
+      ],
+      "Share vault": [
+        "Compartilhar cofre"
+      ],
+      "Show": [
+        "Mostrar"
+      ],
+      "Sign back in": [
+        "Faça login novamente"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Faça login com ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Encerrar sessão"
+      ],
+      "Sort vault items": [
+        "Ordenar itens do cofre"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "Submitting report...": [
+        "Enviando relatório..."
+      ],
+      "Transfer ownership": [
+        "Transferir a propriedade"
+      ],
+      "Trash": [
+        "Lixeira"
+      ],
+      "Unpin item": [
+        "Desafixar item"
+      ],
+      "Update vault": [
+        "Atualizar cofre"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
+      "Upgrade now to share with more people": [
+        "Faça upgrade agora para compartilhar com mais pessoas"
+      ],
+      "Write us on Reddit": [
+        "Escreva-nos no Reddit"
+      ],
+      "Write us on Twitter": [
+        "Escreva-nos no Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Seu gerenciador de senhas não está aqui? Solicite."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Economize de forma inteligente. Ganhe um ano do Pass Plus por apenas ${ relativePrice } por mês."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Obtenha a oferta"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Oferta da Black Friday"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Mais informações"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Recolher"
+      ],
+      "Expand": [
+        "Expandir"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Não foi possível resolver as opções de alias."
+      ],
+      "Authentication error": [
+        "Erro de autenticação"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Falha na autenticação. Confirme sua senha do ${ BRAND_NAME } para prosseguir com a exportação"
+      ],
+      "Auto-lock could not be activated": [
+        "Não foi possível ativar o bloqueio automático"
+      ],
+      "Auto-lock could not be disabled": [
+        "Não foi possível desativar o bloqueio automático"
+      ],
+      "Cannot send invitation at the moment": [
+        "Não é possível enviar o convite no momento",
+        "Não é possível enviar convites no momento"
+      ],
+      "Cannot send invitations at the moment": [
+        "Não é possível enviar convites no momento"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Não foi possível confirmar esse convite no momento."
+      ],
+      "Could not leave vault.": [
+        "Não foi possível deixar o cofre."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Não foi possível carregar as recomendações no momento."
+      ],
+      "Could not open created vault": [
+        "Não foi possível abrir o cofre criado"
+      ],
+      "Could not open invited vault": [
+        "Não foi possível abrir o cofre convidado"
+      ],
+      "Could not open updated vault": [
+        "Não foi possível abrir o cofre atualizado"
+      ],
+      "Could not resolve share members": [
+        "Não é possível determinar os membros do compartilhamento"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Não foi possível descriptografar o seu arquivo de exportação do ${ PASS_APP_NAME }. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Erro ao excluir item"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Erro ao excluir o cofre \"${ payload.content.name }\""
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Foi detectada ${ errors.length } linha corrompida no arquivo CSV.",
+        "Foram detectadas ${ errors.length } linhas corrompidas no arquivo CSV."
+      ],
+      "Editing item failed": [
+        "Erro ao editar o item"
+      ],
+      "Empty CSV file": [
+        "Arquivo CSV vazio"
+      ],
+      "Emptying trash failed": [
+        "Erro ao esvaziar a lixeira"
+      ],
+      "Encrypted JSON not supported": [
+        "JSON criptografado não suportado"
+      ],
+      "Error reporting problem": [
+        "Erro ao relatar o problema"
+      ],
+      "Failed removing the invite.": [
+        "Falha ao remover o convite."
+      ],
+      "Failed resending invite.": [
+        "Falha ao reenviar o convite."
+      ],
+      "Failed to delete selected items": [
+        "Falha ao excluir itens selecionados"
+      ],
+      "Failed to edit user's access.": [
+        "Falha ao editar o acesso do usuário."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Falha ao mover todos os itens de \"${ payload.content.name }\""
+      ],
+      "Failed to move items": [
+        "Falha ao mover os itens"
+      ],
+      "Failed to move items to trash": [
+        "Falha ao mover os itens para a lixeira"
+      ],
+      "Failed to pin item": [
+        "Falha ao fixar item"
+      ],
+      "Failed to remove user's access.": [
+        "Falha ao remover o acesso do usuário."
+      ],
+      "Failed to restore items from trash": [
+        "Falha ao restaurar os itens da lixeira"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Falha ao transferir a propriedade deste cofre."
+      ],
+      "Failed to unpin item": [
+        "Falha ao desafixar item"
+      ],
+      "File could not be parsed": [
+        "Não foi possível analisar o arquivo."
+      ],
+      "File does not match expected format": [
+        "O arquivo não corresponde ao formato esperado"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Erro na importação para o cofre \"${ vaultData.name }\": ${ description }"
+      ],
+      "Importing items failed": [
+        "Erro ao importar itens"
+      ],
+      "Invalid password manager": [
+        "O gerenciador de senhas não é valido."
+      ],
+      "Invitation could not be accepted": [
+        "Não é possível aceitar o convite."
+      ],
+      "Invitation could not be rejected": [
+        "Não é possível rejeitar o convite."
+      ],
+      "Item content cannot exceed 40KB": [
+        "O conteúdo do item não pode exceder 40KB"
+      ],
+      "Item creation failed": [
+        "Erro na criação do item"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "O LastPass exportará um arquivo CSV corrompido se algum campo do item contiver vírgulas, aspas ou várias linhas inesperadas."
+      ],
+      "Moving item failed": [
+        "Erro ao mover o item"
+      ],
+      "Passphrase is incorrect": [
+        "A frase de acesso está incorreta"
+      ],
+      "PIN codes do not match": [
+        "Os códigos PIN não correspondem"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Faça upgrade para ter acesso antecipado ao aplicativo desktop do ${ PASS_APP_NAME }"
+      ],
+      "Request timed out": [
+        "A solicitação expirou"
+      ],
+      "Requesting alias options failed": [
+        "Erro ao solicitar opções de alias"
+      ],
+      "Restoring item failed": [
+        "Erro ao restaurar item"
+      ],
+      "Restoring trashed items failed": [
+        "Falha ao restaurar itens da lixeira"
+      ],
+      "Settings update failed": [
+        "Erro ao atualizar as configurações"
+      ],
+      "Signature verification failed": [
+        "Erro na verificação da assinatura"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Alguns cofres não estão mais acessíveis devido a uma redefinição de senha. Reative suas chaves de conta para recuperar o acesso. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
+      "The file you are trying to import is empty": [
+        "O arquivo que você está tentando importar está vazio"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Muitas tentativas erradas. Inicie sessão novamente."
+      ],
+      "Trashing item failed": [
+        "Erro ao mover item para a lixeira"
+      ],
+      "Unable to boot": [
+        "Não foi possível iniciar"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Não é possível gerar um código OTP para este item"
+      ],
+      "Unable to sync": [
+        "Não é possível sincronizar"
+      ],
+      "Unknown invite": [
+        "Convite desconhecido"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Formato de arquivo do ${ PASS_APP_NAME } não suportado"
+      ],
+      "Unsupported 1Password file format": [
+        "Formato de arquivo do 1Password não suportado"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Erro ao atualizar o cofre \"${ payload.content.name }\""
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Erro ao criar o cofre \"${ payload.content.name }\""
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Não foi possível criar o cofre \"${ vaultData.name }\""
+      ],
+      "Vault name does not match": [
+        "O nome do cofre não corresponde"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Código PIN errado. Tente novamente."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Opa, alguma coisa deu errado"
+      ],
+      "Please refresh the page or try again later.": [
+        "Atualize a página ou tente novamente mais tarde."
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Faça upgrade para um plano pago para criar múltiplos cofres."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "O item \"${ payload.item.data.metadata.name }\" foi descartado"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "A atualização \"${ payload.item.data.metadata.name } foi descartada"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } convites enviados com sucesso"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membros"
+      ],
+      "${ n } item": [
+        "${ n } item",
+        "${ n } itens"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } vez",
+        "${ revisionNumber } vezes"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dias para testar os recursos premium de graça. Somente durante a primeira semana da ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
+      ],
+      "Access successfully confirmed": [
+        "Acesso confirmado com sucesso"
+      ],
+      "Admin": [
+        "Administrador"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
+      ],
+      "All items successfully moved": [
+        "Todos os itens movidos"
+      ],
+      "All trashed items permanently deleted": [
+        "Todos os itens da lixeira foram excluídos permanentemente"
+      ],
+      "All trashed items successfully restored": [
+        "Todos os itens da lixeira foram restaurados"
+      ],
+      "An item previously shared with you was removed": [
+        "Um item compartilhado anteriormente com você foi removido"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Você tem certeza de que deseja mover todos os itens de \"${ fromVaultName }\" para \"${ toVaultName }\"?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Bloqueio automático desativado"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Traga suas senhas existentes para ${ BRAND_NAME }."
+      ],
+      "Built in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Pode criar, editar, excluir, e exportar itens para esse cofre."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Pode conceder ou revogar acesso para esse cofre e excluí-lo."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Pode conceder ou revogar acesso para esse cofre."
+      ],
+      "Can view items in this vault.": [
+        "Pode ver itens para esse cofre."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Parabéns, seu acesso foi confirmado."
+      ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
+      ],
+      "Decrypting your data": [
+        "Descriptografando seus dados"
+      ],
+      "Deleted items will be moved here first": [
+        "Os itens excluídos serão movidos para cá primeiro"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Excluindo o cofre \"${ payload.content.name }\""
+      ],
+      "Drop file here to upload": [
+        "Solte o arquivo aqui para enviar"
+      ],
+      "Drop to import": [
+        "Solte para importar"
+      ],
+      "Editor": [
+        "Editor"
+      ],
+      "Emptying trash...": [
+        "Esvaziando lixeira..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Digite o código de verificação. Insira ${ digit }."
+      ],
+      "Fill in the CSV with your data": [
+        "Preencha o CSV com seus dados"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Siga estas etapas para importar seus dados com um CSV genérico:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Por motivos de segurança, é necessário confirmar seu acesso"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas.",
+        "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Tire o máximo proveito do Pass criando um cofre para cada equipe ou projeto."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Obtenha aliases ilimitados, aproveite os recursos exclusivos e nos suporte assinando o Pass Plus."
+      ],
+      "Import in progress:": [
+        "Importação em progresso:"
+      ],
+      "Import the CSV file below.": [
+        "Importe o arquivo CSV abaixo."
+      ],
+      "Imported ${ payload.total } item": [
+        "Importado ${ payload.total } item",
+        "Importados ${ payload.total } itens"
+      ],
+      "Imported on ${ date }": [
+        "Importado em ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Para obter a melhor experiência com o ${ PASS_APP_NAME }, conceda as permissões de extensão necessárias"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Instale ${ PASS_APP_NAME } para ${ browser.title } para um ágil preenchimento automático dos seus logins."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Instale ${ PASS_APP_NAME } para ${ browser.title } para preencher automaticamente seus logins rapidamente. "
+      ],
+      "Internet connection lost": [
+        "Perda de conexão com a internet"
+      ],
+      "Invitation sent": [
+        "Convite enviado"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Convide pessoas específicas e defina as permissões adequadas."
+      ],
+      "Invite successfully removed": [
+        "Convite removido com sucesso"
+      ],
+      "Invite successfully resent": [
+        "Convite enviado com sucesso"
+      ],
+      "Invite successfully sent": [
+        "Convite enviado"
+      ],
+      "invites you to access items in": [
+        "convida você a acessar itens em"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Parece que você já está logado em ${ PASS_APP_NAME }. Se você estiver tentando fazer login com uma conta diferente, primeiro saia da extensão."
+      ],
+      "item": [
+        "item",
+        "itens"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "O item \"${ payload.item.data.metadata.name }\" foi criado"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "O item \"${ payload.item.data.metadata.name }\" foi atualizado"
+      ],
+      "Item moved to trash": [
+        "Item movido para a lixeira"
+      ],
+      "Item permanently deleted": [
+        "Item excluído permanentemente"
+      ],
+      "Item restored": [
+        "Item restaurado"
+      ],
+      "Item successfully moved": [
+        "Item movido"
+      ],
+      "Item successfully pinned": [
+        "Item fixado com sucesso"
+      ],
+      "Item successfully unpinned": [
+        "Item desafixado com sucesso"
+      ],
+      "Leaving vault...": [
+        "Saindo do cofre..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Vamos começar criando seu primeiro item"
+      ],
+      "Loading": [
+        "Carregando"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Carregando o ${ PASS_APP_NAME }"
+      ],
+      "Locking your session...": [
+        "Bloqueando sua sessão..."
+      ],
+      "Logging you out...": [
+        "Desconectando você..."
+      ],
+      "me": [
+        "eu"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving items": [
+        "Movendo itens"
+      ],
+      "Moving items to trash": [
+        "Movendo itens para a lixeira"
+      ],
+      "Never": [
+        "Nunca"
+      ],
+      "None": [
+        "Nenhum"
+      ],
+      "Owner": [
+        "Proprietário"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Propriedade transferida com sucesso. Você não possui mais a propriedade deste cofre."
+      ],
+      "Pass Plus trial": [
+        "Avaliação do Proton Pass Plus"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Senhas anteriores a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas são automaticamente excluídas do histórico.",
+        "Senhas mais antigas que ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas são automaticamente excluídas do histórico."
+      ],
+      "Permanently deleting selected items": [
+        "Excluindo permanentemente itens selecionados"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Código PIN registrado. Use-o para desbloquear o ${ PASS_APP_NAME }"
+      ],
+      "Pinning item...": [
+        "Fixando item..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Confirme seu código PIN para cancelar o bloqueio atual.\nO ${ PASS_APP_NAME } nunca irá bloquea-lo."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Confirme o seu código PIN para editar essa configuração."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Confirme o seu código PIN para finalizar o registro das suas configurações de bloqueio automático."
+      ],
+      "Please consider leaving a review.": [
+        "Considere deixar uma avaliação"
+      ],
+      "Please enter your current PIN code to continue": [
+        "Insira o seu código PIN atual para continuar"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
+      ],
+      "Press Enter to copy": [
+        "Pressione Enter para copiar"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "A privacidade é uma grande preocupação para nós. Saiba por que o ${ PASS_APP_NAME } é diferente."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
+      ],
+      "Restoring items from trash": [
+        "Restaurando itens da lixeira"
+      ],
+      "Restoring trashed items...": [
+        "Restaurando os itens da lixeira..."
+      ],
+      "Select destination vault": [
+        "Selecione o cofre de destino"
+      ],
+      "Select vault to share": [
+        "Selecione cofre para compartilhar"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Selecione onde quer salvar seus cofres importados."
+      ],
+      "Selected items permanently deleted": [
+        "Itens selecionados excluídos permanentemente"
+      ],
+      "Selected items successfully moved to trash": [
+        "Itens selecionados movidos com sucesso para a lixeira"
+      ],
+      "Selected items successfully restored from trash": [
+        "Itens selecionados restaurados da lixeira com sucesso"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
+      ],
+      "Session timed out": [
+        "Sessão expirada"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Configure um código PIN para bloquear facilmente seus dados"
+      ],
+      "Settings successfully updated": [
+        "Configurações atualizadas"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Compartilhe seus logins, notas seguras, com até 10 pessoas"
+      ],
+      "Signing you in": [
+        "Fazendo seu login"
+      ],
+      "Successfully exported all your items": [
+        "Todos os seus itens foram exportados"
+      ],
+      "Successfully left the vault": [
+        "Saiu do cofre com sucesso"
+      ],
+      "Successfully synced all vaults": [
+        "Todos os cofres foram sincronizados"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Altere para outro cofre ou crie um item nesse cofre"
+      ],
+      "Syncing your vaults…": [
+        "Sincronizando seus cofres..."
+      ],
+      "Thank you, the problem has been reported": [
+        "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "O arquivo exportado não conterá os dados de cofres compartilhados dos quais você não é o proprietário"
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Não foi possível importar o seguinte ${ result.ignored.length } item.",
+        "Não foi possível importar os seguintes ${ result.ignored.length } itens."
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "O texto que você está tentando colar é maior que o comprimento máximo permitido de ${ maxLength } caracteres."
+      ],
+      "The user did not accept the invitation yet.": [
+        "O usuário não aceitou o convite ainda."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Para migrar dados de outro gerenciador de senhas, acesse o gerenciador de senhas, exporte seus dados e faça o envio deles para ${ PASS_APP_NAME }. Depois que seus dados forem importados, exclua o arquivo exportado."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Para revisar seus dados importados, clique no ícone do Proton Pass na barra de ferramentas de seu navegador."
+      ],
+      "Unable to copy to clipboard": [
+        "Não é possível copiar para a área de transferência"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases do Hide-my-email ilimitados"
+      ],
+      "Unpinning item...": [
+        "Desafiando item..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Faça upgrade agora para desbloquear recursos premium"
+      ],
+      "Use vaults to share this item with others.": [
+        "Use cofres para compartilhar este item com outros."
+      ],
+      "User's access removed": [
+        "Acesso do usuário removido"
+      ],
+      "User's access sucessfuly updated": [
+        "Acesso do usuário atualizado com sucesso"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Cofre \"${ payload.content.name }\" excluído"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Cofre \"${ payload.share.content.name }\" criado"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Cofre \"${ payload.share.content.name }\" atualizado"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "O cofre \"${ share.content.name }\" foi removido"
+      ],
+      "Viewer": [
+        "Visualizador "
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Estamos tendo problemas em sincronizar seus dados para o seu armazenamento local. Verifique se você tem espaço livre em seu disco para que o ${ PASS_SHORT_APP_NAME } funcione corretamente."
+      ],
+      "You are about to create:": [
+        "Você está prestes a criar:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Você não pode alterar as caixas de entrada para este alias."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Você tem ${ daysRemaining } dia restante para experimentar esses e outros recursos premium.",
+        "Você tem ${ daysRemaining } dias restantes para experimentar esses e outros recursos premium."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Você excedeu o número de cofres incluídos na sua assinatura. Os itens só podem ser movidos para os dois primeiros cofres. Para mover itens entre todos os cofres, atualize sua assinatura."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Você excedeu o número de cofres incluídos na sua assinatura. Novos itens só podem ser criados nos dois primeiros cofres. Para criar novos itens em todos os cofres, atualize sua assinatura."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Você atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases ao fazer upgrade da sua assinatura."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Você atingiu o limite de cofres que pode criar."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Você usará este PIN para desbloquear o ${ PASS_APP_NAME } quando ele bloquear automaticamente após um período de inatividade."
+      ],
+      "You're invited to a vault.": [
+        "Você está convidado para um cofre."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Seus arquivos serão criptografados e depois salvos"
+      ]
+    },
+    "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } caracter",
+        "${ config.options.length } caracteres"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } palavra",
+        "${ config.options.wordCount } palavras"
+      ],
+      "1 hour": [
+        "1 hora"
+      ],
+      "1 minute": [
+        "1 minuto"
+      ],
+      "10 minutes": [
+        "10 minutos"
+      ],
+      "15 minutes": [
+        "15 minutos"
+      ],
+      "2FA secret key (TOTP)": [
+        "Chave secreta A2F (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Token A2F (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minutos"
+      ],
+      "30 seconds": [
+        "30 segundos"
+      ],
+      "5 minutes": [
+        "5 minutos"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Conta"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Endereço de alias"
+      ],
+      "Aliases": [
+        "Aliases"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "All vaults": [
+        "Todos os cofres"
+      ],
+      "Alphabetical": [
+        "Em ordem alfabética"
+      ],
+      "Application logs": [
+        "Registros do aplicativo"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Bloquear o ${ PASS_APP_NAME } automaticamente"
+      ],
+      "Auto-lock after": [
+        "Bloqueio automático após"
+      ],
+      "Capital letters (A-Z)": [
+        "Letras maiúsculas (A-Z)"
+      ],
+      "Capitalise": [
+        "Inicie com Maiúscula"
+      ],
+      "Card": [
+        "Cartão"
+      ],
+      "Card number": [
+        "Número do cartão"
+      ],
+      "Cards": [
+        "Cartões"
+      ],
+      "Confirm vault name": [
+        "Confirmar nome do cofre"
+      ],
+      "Create a credit card": [
+        "Criar um cartão de crédito"
+      ],
+      "Create a hide-my-email alias": [
+        "Criar um alias para ocultar meu e-mail"
+      ],
+      "Create a login": [
+        "Criar um Login"
+      ],
+      "Create an encrypted note": [
+        "Criar uma nota criptografada"
+      ],
+      "Create new vault": [
+        "Criar novo cofre"
+      ],
+      "Created": [
+        "Criado"
+      ],
+      "Default (recommended)": [
+        "Padrão (recomendado)"
+      ],
+      "Display": [
+        "Exibição"
+      ],
+      "Download logs": [
+        "Registros de downloads"
+      ],
+      "Empty trash": [
+        "Esvaziar lixeira"
+      ],
+      "Encrypted (recommended)": [
+        "Criptografado (recomendado)"
+      ],
+      "Expiration date": [
+        "Data de expiração"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Field name": [
+        "Nome do campo"
+      ],
+      "File format": [
+        "Formato do arquivo"
+      ],
+      "Forwards to": [
+        "Encaminhar para"
+      ],
+      "General": [
+        "Geral"
+      ],
+      "Generic CSV": [
+        "CSV genérico"
+      ],
+      "Grant": [
+        "Conceder"
+      ],
+      "Hidden": [
+        "Oculto"
+      ],
+      "Hide password": [
+        "Ocultar senha"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Import passwords": [
+        "Importar senhas"
+      ],
+      "Imported from : ": [
+        "Importado de: "
+      ],
+      "Imported on : ": [
+        "Importado em: "
+      ],
+      "Include numbers": [
+        "Incluir números"
+      ],
+      "Include numbers (0-9)": [
+        "Incluir números (0–9)"
+      ],
+      "Invitations": [
+        "Convites"
+      ],
+      "Item ID": [
+        "ID do item"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
+      ],
+      "Language": [
+        "Idioma"
+      ],
+      "Last 2 weeks": [
+        "Últimas 2 semanas"
+      ],
+      "Last autofill": [
+        "Último preenchimento automático"
+      ],
+      "Last month": [
+        "Último mês"
+      ],
+      "Last week": [
+        "Última semana"
+      ],
+      "Latest import": [
+        "Última importação"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Login": [
+        "Início de sessão"
+      ],
+      "Logins": [
+        "Inícios de sessão"
+      ],
+      "Make all admins": [
+        "Tornar todos os administradores"
+      ],
+      "Make all editors": [
+        "Faça todos os editores"
+      ],
+      "Make all viewers": [
+        "Faça com que todos os espectadores"
+      ],
+      "Members": [
+        "Membros"
+      ],
+      "Modified": [
+        "Modificado"
+      ],
+      "More than a month": [
+        "Mais de 1 mês"
+      ],
+      "Most recent": [
+        "Mais recente"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Name on card": [
+        "Nome no cartão"
+      ],
+      "Need help ?": [
+        "Precisa de ajuda ?"
+      ],
+      "New vault": [
+        "Novo cofre"
+      ],
+      "New-Old": [
+        "Do mais recente para o mais antigo"
+      ],
+      "Newest to oldest": [
+        "Do mais recente ao mais antigo"
+      ],
+      "No history": [
+        "Sem histórico"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Notes": [
+        "Notas"
+      ],
+      "Old-New": [
+        "Do mais antigo para o mais recente"
+      ],
+      "Oldest to newest": [
+        "Do mais antigo ao mais recente"
+      ],
+      "Passphrase": [
+        "Frase secreta"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Password history": [
+        "Histórico de senhas"
+      ],
+      "PIN": [
+        "Código PIN"
+      ],
+      "Prefix": [
+        "Prefixo"
+      ],
+      "Rate us": [
+        "Avalie-nos"
+      ],
+      "Recent": [
+        "Recente"
+      ],
+      "Report a problem": [
+        "Relatar um problema"
+      ],
+      "Restore all items": [
+        "Restaurar todos os itens"
+      ],
+      "Reveal password": [
+        "Mostrar senha"
+      ],
+      "Security": [
+        "Segurança"
+      ],
+      "Security code": [
+        "Código de segurança"
+      ],
+      "Select an email address": [
+        "Selecione um endereço de e-mail"
+      ],
+      "Select preferred language": [
+        "Selecionar idioma preferido"
+      ],
+      "Select your password manager": [
+        "Selecione o seu gerenciador de senhas"
+      ],
+      "Selected": [
+        "Selecionado"
+      ],
+      "Session locking": [
+        "Bloqueio de sessão"
+      ],
+      "Set PIN code": [
+        "Definir código PIN"
+      ],
+      "Show website favicons": [
+        "Mostrar favicons do site"
+      ],
+      "Special characters (!&*)": [
+        "Carateres especiais (!&*)"
+      ],
+      "Suffix": [
+        "Sufixo"
+      ],
+      "Support": [
+        "Suporte"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "Title": [
+        "Título"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Total imported items : ": [
+        "Total de itens importados: "
+      ],
+      "Total items : ": [
+        "Total de itens: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Lixeira"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Unnamed Credit Card": [
+        "Cartão de crédito sem nome"
+      ],
+      "Unnamed item": [
+        "Item sem nome"
+      ],
+      "Unnamed note": [
+        "Nota sem nome"
+      ],
+      "Untitled": [
+        "Sem título"
+      ],
+      "Update": [
+        "Atualizar"
+      ],
+      "Username": [
+        "Nome de usuário"
+      ],
+      "Username (alias)": [
+        "Nome de usuário (alias)"
+      ],
+      "Username (new alias)": [
+        "Nome de usuário (novo alias)"
+      ],
+      "Vault": [
+        "Cofre"
+      ],
+      "Vault ID": [
+        "ID do cofre"
+      ],
+      "Vaults": [
+        "Cofres"
+      ],
+      "View details": [
+        "Ver detalhes"
+      ],
+      "View logs": [
+        "Visualizar registros"
+      ],
+      "Websites": [
+        "Sites"
+      ],
+      "You are about to create": [
+        "Você está prestes a criar"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Digite seu código PIN"
+      ],
+      "Sign in to your account": [
+        "Iniciar sessão em sua conta"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Boas-vindas ao ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Você selecionou ${ semiboldText } neste cofre"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Vírgulas"
+      ],
+      "Hyphens": [
+        "Hifens"
+      ],
+      "Memorable Password": [
+        "Senha memorável"
+      ],
+      "Numbers": [
+        "Números"
+      ],
+      "Numbers and Symbols": [
+        "Números e Símbolos"
+      ],
+      "Periods": [
+        "Pontos"
+      ],
+      "Random Password": [
+        "Senha aleatória"
+      ],
+      "Spaces": [
+        "Espaços"
+      ],
+      "Underscores": [
+        "Sublinhados"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Adicionar chave secreta A2F"
+      ],
+      "Add hidden text": [
+        "Adicionar texto oculto"
+      ],
+      "Add note": [
+        "Adicionar nota"
+      ],
+      "Add text": [
+        "Adicionar texto"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "Enter a note...": [
+        "Digite uma nota..."
+      ],
+      "Enter a prefix": [
+        "Digite um prefixo"
+      ],
+      "Enter email or username": [
+        "Digite o e-mail ou nome de usuário"
+      ],
+      "Enter password": [
+        "Insira a senha"
+      ],
+      "Full Name": [
+        "Nome completo"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Pick a vault": [
+        "Escolher um cofre"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descreva o problema e inclua quaisquer mensagens de erro"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Digite novamente \"${ vaultName }\" para confirmar a exclusão"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Procurar ${ pluralItemType } em ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Procurar ${ pluralItemType } em todos os cofres"
+      ],
+      "Search in ${ vaultName }": [
+        "Pesquisar em ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Procurar em todos os cofres"
+      ],
+      "Search in Trash": [
+        "Pesquisar na Lixeira"
+      ],
+      "Select a suffix": [
+        "Selecionar um sufixo"
+      ],
+      "Shared vault": [
+        "Cofre compartilhado"
+      ],
+      "Unknown origin": [
+        "Origem desconhecida"
+      ],
+      "Untitled": [
+        "Sem título"
+      ],
+      "Used on ${ url }": [
+        "Usado no ${ url }"
+      ],
+      "Write your note": [
+        "Escreva sua nota"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários.",
+        "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Atualização de bloqueio automático"
+      ],
+      "Confirm PIN code": [
+        "Confirmar código PIN"
+      ],
+      "Create a vault": [
+        "Criar um cofre"
+      ],
+      "Create PIN code": [
+        "Criar código PIN"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Excluir cofre \"${ vaultName }\""
+      ],
+      "Discard changes?": [
+        "Descartar alterações?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Aproveitando o ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
+      "Enter your PIN": [
+        "Digite o seu PIN"
+      ],
+      "Get Started": [
+        "Começar"
+      ],
+      "Grant permissions": [
+        "Conceder permissões"
+      ],
+      "Import - ${ date }": [
+        "Importar - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importar para cofre(s)"
+      ],
+      "Import your data": [
+        "Importe seus dados"
+      ],
+      "Install extension": [
+        "Instalar extensão"
+      ],
+      "Leave vault ?": [
+        "Deixar cofre ?"
+      ],
+      "Low disk space": [
+        "Pouco espaço no disco"
+      ],
+      "Member limit": [
+        "Limite de membros"
+      ],
+      "Members": [
+        "Membros"
+      ],
+      "Move all items ?": [
+        "Mover todos os itens?"
+      ],
+      "No items selected": [
+        "Nenhum item selecionado"
+      ],
+      "Our welcome gift to you": [
+        "Nosso presente de boas-vindas para você"
+      ],
+      "Pending access to the shared data": [
+        "Acesso pendente para compartilhar os dados."
+      ],
+      "Permanently remove all items ?": [
+        "Remover permanentemente todos os itens ?"
+      ],
+      "Pinned (${ items.length })": [
+        "Fixado(${ items.length })"
+      ],
+      "Review and share": [
+        "Revisar e compartilhar"
+      ],
+      "Secure your data": [
+        "Proteja seus dados"
+      ],
+      "Set access level": [
+        "Definir nível de acesso"
+      ],
+      "Settings": [
+        "Configurações"
+      ],
+      "Share vaults with your team": [
+        "Compartilhe cofres com sua equipe"
+      ],
+      "Share with": [
+        "Compartilhar com"
+      ],
+      "Suggestions": [
+        "Sugestões"
+      ],
+      "Transfer ownership": [
+        "Transferir a propriedade"
+      ],
+      "Trash empty": [
+        "Lixeira vazia"
+      ],
+      "Update available": [
+        "Atualização disponível"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Faça upgrade para desbloquear recursos premium"
+      ],
+      "Vault": [
+        "Cofre"
+      ],
+      "Vault shared with you": [
+        "Cofre compartilhado com você"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Por que escolher o ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Seu cofre está vazio"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "URL duplicado"
+      ],
+      "Field name is required": [
+        "O nome do campo é obrigatório"
+      ],
+      "OTP secret or URI is invalid": [
+        "A chave secreta OTP ou o URL não funciona."
+      ],
+      "OTP secret or URI required": [
+        "É necessário introduzir uma chave secreta OTP ou um URL."
+      ],
+      "Url already exists": [
+        "URL já existe"
+      ],
+      "URL cannot be empty": [
+        "O URL não pode estar vazio"
+      ],
+      "Url is invalid": [
+        "O URL não é valido."
+      ],
+      "URL is invalid": [
+        "O URL não é válido"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Uma descrição do problema é necessária"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "O alias \"${ name }\" está sendo usado atualmente no item de login \"${ relatedLoginName }\". Você também deixará de receber e-mails enviados para \"${ aliasEmail }"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Todos os itens na lixeira serão excluídos permanentemente. Não é possível desfazer esta ação."
+      ],
+      "An error occured while exporting your data": [
+        "Ocorreu um erro ao exportar seus dados"
+      ],
+      "At least one email address is required": [
+        "É necessário pelo menos um endereço de e-mail"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Não é possível recuperar caixas de correio para este alias no momento"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Não foi possível criar o cofre \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Não foi possível enviar convites para os seguintes endereços:"
+      ],
+      "Duplicate email addresses.": [
+        "Endereços de e-mail duplicados."
+      ],
+      "Empty note": [
+        "Nota vazia"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "A data de expiração não está no formato MM/AA"
+      ],
+      "Invalid alias prefix": [
+        "O prefixo de alias não é valido."
+      ],
+      "Invalid email addresses.": [
+        "Endereços de e-mail inválidos."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "O comprimento máximo é ${ maxLength } carácter",
+        "O comprimento máximo é ${ maxLength } caracteres"
+      ],
+      "Missing alias prefix": [
+        "Faltando prefixo de alias"
+      ],
+      "Missing alias suffix": [
+        "Faltando sufixo de alias"
+      ],
+      "No items": [
+        "Nenhum item"
+      ],
+      "No items in trash matching": [
+        "Nenhum item na lixeira correspondente"
+      ],
+      "No items matching": [
+        "Nenhum item correspondente"
+      ],
+      "No password manager selected": [
+        "Nenhum gerenciador de senhas selecionado"
+      ],
+      "No results": [
+        "Sem resultados"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"
+      ],
+      "Passphrase is required": [
+        "Frase secreta é obrigatória"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "O arquivo de exportação criptografado com PGP requer uma frase secreta"
+      ],
+      "Please contact us for investigating the issue": [
+        "Entre em contato conosco para investigar o problema"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Verifique seu endereço de e-mail para usar os aliases de e-mail"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "O prefixo do alias não pode ter mais de 40 caracteres"
+      ],
+      "Title is required": [
+        "O título é obrigatório"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transferir propriedade deste cofre para ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Excluir alias ?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Não foi possível fazer login no ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "O cofre \"${ vaultName }\" e todos os seus itens serão excluídos permanentemente. Não é possível desfazer esta ação."
+      ],
+      "Vault name is required": [
+        "O nome do cofre é obrigatório"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Sua assinatura não permite a criação de múltiplos cofres."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Você atingiu o limite de membros que podem acessar este cofre."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Você atingiu o limite de usuários neste cofre. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Você atingiu o limite de cofres que pode ter em seu plano."
+      ],
+      "You have unsaved changes.": [
+        "Você tem alterações não salvas."
+      ],
+      "You must select at least one mailbox": [
+        "Você deve selecionar pelo menos uma caixa de correio"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Você não terá mais acesso a este cofre. Para participar novamente, você precisará de um novo convite."
+      ],
+      "Your session could not be authorized.": [
+        "Sua sessão não pôde ser autorizada."
+      ],
+      "Your session could not be resumed.": [
+        "Não foi possível retomar sua sessão."
+      ],
+      "Your session is inactive.": [
+        "Sua sessão está inativa."
+      ],
+      "Your session was locked.": [
+        "Sua sessão foi bloqueada."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ]
+    }
+  }
+}
