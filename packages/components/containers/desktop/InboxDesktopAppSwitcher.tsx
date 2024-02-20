@@ -1,7 +1,9 @@
 import { ButtonLike } from '@proton/atoms/Button';
-import { AppLink, Icon } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import { useConfig } from '@proton/components/hooks';
 import { APPS, APP_NAMES, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -13,13 +15,16 @@ const InboxDesktopAppSwitcher = ({ appToLinkTo }: Props) => {
     const isAppMail = APP_NAME === APPS.PROTONMAIL || APPS.PROTONMAIL === appToLinkTo;
     const isAppCalendar = APP_NAME === APPS.PROTONCALENDAR || APPS.PROTONCALENDAR === appToLinkTo;
 
+    const handleClick = (target: CHANGE_VIEW_TARGET) => {
+        if (canInvokeInboxDesktopIPC) {
+            window.ipcInboxMessageBroker!.send('changeView', target);
+        }
+    };
+
     return (
         <div className="flex flex-col gap-0.5">
             <ButtonLike
-                as={AppLink}
-                to="/"
-                toApp={APPS.PROTONMAIL}
-                target="_blank"
+                onClick={() => handleClick('mail')}
                 className="flex items-center"
                 shape={isAppMail ? 'solid' : 'ghost'}
                 aria-current={isAppMail}
@@ -27,10 +32,7 @@ const InboxDesktopAppSwitcher = ({ appToLinkTo }: Props) => {
                 <Icon name="inbox" alt={MAIL_APP_NAME} className={clsx(isAppMail ? 'color-norm' : 'color-weak')} />
             </ButtonLike>
             <ButtonLike
-                as={AppLink}
-                to="/"
-                toApp={APPS.PROTONCALENDAR}
-                target="_blank"
+                onClick={() => handleClick('calendar')}
                 className="flex items-center"
                 shape={isAppCalendar ? 'solid' : 'ghost'}
                 aria-current={isAppCalendar}
