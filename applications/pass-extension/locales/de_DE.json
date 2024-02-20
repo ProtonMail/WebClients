@@ -269,6 +269,9 @@
       "More options": [
         "Weitere Optionen"
       ],
+      "Move": [
+        "Verschieben"
+      ],
       "Move all items": [
         "Alle Einträge verschieben"
       ],
@@ -283,6 +286,9 @@
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"
+      ],
+      "Multiple select": [
+        "Mehrfachauswahl"
       ],
       "Not now": [
         "Nicht jetzt"
@@ -337,6 +343,9 @@
       ],
       "Resend invitation": [
         "Einladung erneut senden"
+      ],
+      "Restore": [
+        "Wiederherstellen"
       ],
       "Restore item": [
         "Eintrag wiederherstellen"
@@ -400,6 +409,9 @@
       ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
+      ],
+      "Trash": [
+        "In Papierkorb verschieben"
       ],
       "Try again": [
         "Erneut versuchen"
@@ -698,6 +710,9 @@
       "Unknown invite": [
         "Unbekannte Einladung"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
+      ],
       "Unsupported 1Password file format": [
         "Nicht unterstütztes 1Password-Dateiformat."
       ],
@@ -827,6 +842,9 @@
       "Admin": [
         "Administrator"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Nach Inaktivität ist für den Zugriff auf ${ PASS_APP_NAME } ein PIN-Code erforderlich, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du ausgeloggt."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
       ],
@@ -883,6 +901,9 @@
       ],
       "Creating alias...": [
         "Alias wird erstellt..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV bietet ein praktisches Format zur Anzeige deiner Daten. Aufgrund seiner Einfachheit werden jedoch einige Daten nicht einbezogen (benutzerdefinierte Felder, Tresorstruktur...). Für einen vollständigen Export empfehlen wir die Verwendung eines anderen Formats."
       ],
       "Decrypting your data": [
         "Deine Daten werden entschlüsselt"
@@ -1182,6 +1203,12 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Die Auswahlliste zum automatischen Ausfüllen wird automatisch geöffnet, wenn du auf ein Feld klickst oder dieses fokussiert wird."
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Die exportierte Datei wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Die exportierte Datei enthält keine Daten von gemeinsamen Tresoren, bei denen du nicht der Eigentümer bist."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
         "Die folgenden ${ result.ignored.length } Einträge konnten nicht importiert werden:"
@@ -1422,6 +1449,9 @@
       "Created": [
         "Erstellt"
       ],
+      "Default (recommended)": [
+        "Standard (Empfohlen)"
+      ],
       "Display": [
         "Darstellung"
       ],
@@ -1443,6 +1473,9 @@
       "Empty trash": [
         "Papierkorb leeren"
       ],
+      "Encrypted (recommended)": [
+        "Verschlüsselt (empfohlen)"
+      ],
       "Expiration date": [
         "Ablaufdatum"
       ],
@@ -1451,6 +1484,9 @@
       ],
       "Field name": [
         "Feldname"
+      ],
+      "File format": [
+        "Dateiformat"
       ],
       "Forwards to": [
         "Leitet weiter an"
