@@ -1,10 +1,12 @@
 require("dotenv").config();
 
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
+import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import type { ForgeConfig } from "@electron-forge/shared-types";
 import { getExtraResource, getIco, getIcon, getName, isBetaRelease } from "./src/utils/config";
 
+import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { mainConfig } from "./webpack.main.config";
 import { rendererConfig } from "./webpack.renderer.config";
 
@@ -113,6 +115,21 @@ const config: ForgeConfig = {
                     },
                 ],
             },
+        }),
+        new FusesPlugin({
+            version: FuseVersion.V1,
+            // Disables ELECTRON_RUN_AS_NODE
+            [FuseV1Options.RunAsNode]: false,
+            // Enables cookie encryption
+            [FuseV1Options.EnableCookieEncryption]: true,
+            // Disables the NODE_OPTIONS environment variable
+            [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
+            // Disables the --inspect and --inspect-brk family of CLI options
+            [FuseV1Options.EnableNodeCliInspectArguments]: false,
+            // Enables validation of the app.asar archive on macOS
+            [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
+            // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
+            [FuseV1Options.OnlyLoadAppFromAsar]: true,
         }),
     ],
 };
