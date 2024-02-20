@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { DetailledWasmError, WasmError } from '../../../pkg';
 
 const humanReadableByError: Record<WasmError, () => string> = {
+    [WasmError.ApiError]: () => c('Wasm Error').t`An networking error occured`,
     [WasmError.BdkError]: () => c('Wasm Error').t`BDK Error`,
     [WasmError.Bip32Error]: () => c('Wasm Error').t`Bip32 error`,
     [WasmError.Bip39Error]: () => c('Wasm Error').t`Bip39 error`,
@@ -10,9 +11,7 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.CannotBroadcastTransaction]: () => c('Wasm Error').t`Could not broadcast the transaction`,
     [WasmError.CannotComputeTxFees]: () => c('Wasm Error').t`Cannot compute fees for the transaction`,
     [WasmError.CannotCreateAddressFromScript]: () => c('Wasm Error').t`Cannot create address from script`,
-    [WasmError.CannotFindPersistedData]: () => c('Wasm Error').t`Cannot find data in persistence space`,
     [WasmError.CannotGetAddressFromScript]: () => c('Wasm Error').t`Cannot get address from provided script`,
-    [WasmError.CannotGetLocalStorage]: () => c('Wasm Error').t`Cannot access to local storage`,
     [WasmError.CannotGetFeeEstimation]: () => c('Wasm Error').t`Cannot fetch fees estimations`,
     [WasmError.CannotSignPsbt]: () => c('Wasm Error').t`An error occured when signing PSBT`,
     [WasmError.DerivationError]: () => c('Wasm Error').t`Could derive extended key`,
@@ -28,8 +27,6 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.InvalidSecretKey]: () => c('Wasm Error').t`Provided secret key is invalid`,
     [WasmError.InvalidTxId]: () => c('Wasm Error').t`Invalid transaction id provided`,
     [WasmError.LoadError]: () => c('Wasm Error').t`Could not load data`,
-    [WasmError.NoWindowContext]: () => c('Wasm Error').t`You must run ProtonWallet web in a modern browser context`,
-    // [WasmError.NoWindowContext]: () => c('Wasm Error').t`Web wallet needs to be run in a Web Browser`,
     [WasmError.OutpointParsingError]: () => c('Wasm Error').t`Could not parse Outpoint`,
     [WasmError.SyncError]: () => c('Wasm Error').t`Could not sync wallet with blockchain`,
     [WasmError.TransactionNotFound]: () => c('Wasm Error').t`The transaction was not found`,

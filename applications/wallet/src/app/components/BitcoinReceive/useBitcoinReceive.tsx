@@ -45,9 +45,8 @@ export const useBitcoinReceive = (defaultWalletId?: number): UseBitcoinReceiveHe
     useEffect(() => {
         const { account, wallet } = selectedWallet;
         if (account && wallet?.Type === WalletType.OnChain) {
-            void account.wasmAccount
-                .getBitcoinUri(undefined, amount ? BigInt(amount) : undefined)
-                .then((bitcoinUri) => setPaymentLink(bitcoinUri));
+            const bitcoinUri = account.wasmAccount.getBitcoinUri(undefined, amount ? BigInt(amount) : undefined);
+            setPaymentLink(bitcoinUri);
         }
     }, [amount, selectedWallet]);
 
