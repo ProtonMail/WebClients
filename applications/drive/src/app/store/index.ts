@@ -2,6 +2,7 @@ export { DriveProvider, PublicDriveProvider } from './DriveProvider';
 export { useActions } from './_actions';
 
 export { usePublicAuth } from './_api';
+export { useActivePing } from './_user';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useRevisions } from './_revisions';
