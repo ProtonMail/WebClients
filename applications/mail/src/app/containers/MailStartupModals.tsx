@@ -3,12 +3,14 @@ import { useEffect, useRef } from 'react';
 import { EasySwitchProvider } from '@proton/activation';
 import {
     FeatureCode,
+    InboxDesktopFreeTrialOnboardingModal,
     RebrandingFeedbackModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
     useSubscription,
+    useUser,
     useWelcomeFlags,
 } from '@proton/components';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
@@ -22,6 +24,7 @@ interface Props {
 
 const MailStartupModals = ({ onboardingOpen }: Props) => {
     // Onboarding modal
+    const [user] = useUser();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
     // Referral modal
@@ -56,6 +59,7 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
 
     return (
         <>
+            {isElectronApp && !user.hasPaidMail && <InboxDesktopFreeTrialOnboardingModal />}
             {renderOnboardingModal && (
                 <EasySwitchProvider>
                     <MailOnboardingModal

@@ -92,7 +92,7 @@ export default ({ call, onMissingScopes, onVerification }) => {
                                     loggedOut = true;
                                     // Inactive session error is only thrown when this error was caused by a logged in session requesting through the same UID
                                     // to have a specific error consumers can use
-                                    throw InactiveSessionError();
+                                    throw InactiveSessionError(error);
                                 }
                                 // The original 401 error is thrown to make it more clear that this auth & refresh failure
                                 // was caused by an original auth failure and consumers can just check for 401 instead of 4xx

@@ -7,7 +7,8 @@ export type IPCInboxMessage =
     | { type: 'clearAppData'; payload: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
     | { type: 'openExternal'; payload: string }
-    | { type: 'changeView'; payload: CHANGE_VIEW_TARGET };
+    | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
+    | { type: 'trialEnd'; payload: 'trialEnded' | 'resetTrialEnded' };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**
@@ -20,3 +21,16 @@ export type IPCInboxMessageType = IPCInboxMessage['type'];
 export type IPCInboxMessageBroker = {
     send: <T extends IPCInboxMessageType>(type: T, payload: Extract<IPCInboxMessage, { type: T }>['payload']) => void;
 };
+
+export const END_OF_TRIAL_KEY = 'endOfTrial';
+
+export interface InboxDesktopFreeTrialDates {
+    trialStartDate?: Date;
+    trialEndDate?: Date;
+}
+
+export interface InboxDesktopFreeTrialReminders {
+    first: boolean;
+    second: boolean;
+    third: boolean;
+}
