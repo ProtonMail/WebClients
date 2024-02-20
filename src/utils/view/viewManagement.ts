@@ -1,9 +1,9 @@
-import { BrowserView, BrowserWindow, Session, app } from "electron";
+import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
+import { resetBadge } from "../../ipc/badge";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getConfig } from "../config";
 import { clearStorage, isWindows } from "../helpers";
-import { resetBadge } from "../ipc/badge";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
