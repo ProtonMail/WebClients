@@ -12,6 +12,7 @@ import {
     session,
     shell,
 } from 'electron';
+import logger from 'electron-log/main';
 import { join } from 'path';
 
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
@@ -229,12 +230,15 @@ app.addListener('web-contents-created', (_ev, contents) => {
 
         // Prevent opening URLs outside of account
         if (!allowedHosts.includes(url.host) || !['/authorize', '/login'].includes(url.pathname)) {
-            return e.preventDefault();
+            e.preventDefault();
+            logger.warn(`[will-navigate] preventDefault: ${url.toString()}`);
+            return;
         }
 
         // Open Create account externally
         if (url.searchParams.has('t')) {
             e.preventDefault();
+            logger.warn(`[will-navigate] openExternal: ${url.toString()}`);
             return shell.openExternal(href).catch(noop);
         }
     });
