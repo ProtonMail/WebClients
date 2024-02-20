@@ -1,6 +1,8 @@
 import { getAuthVersionWithFallback } from '@proton/srp';
 
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
+import { endOfTrialIPCCall } from '../desktop/endOfTrialHelpers';
+import { API_CUSTOM_ERROR_CODES } from '../errors';
 import { Api } from '../interfaces';
 import { srpAuth } from '../srp';
 import { AuthResponse, AuthVersion, ChallengePayload, InfoResponse } from './interface';
@@ -48,6 +50,10 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload, p
                 result,
             };
         } catch (e: any) {
+            if (e.data && e.data.Code === API_CUSTOM_ERROR_CODES.INBOX_DESKTOP_TRIAL_END) {
+                endOfTrialIPCCall();
+            }
+
             if (e.data && e.data.Code === PASSWORD_WRONG_ERROR && !done) {
                 state = {
                     lastAuthVersion: version,

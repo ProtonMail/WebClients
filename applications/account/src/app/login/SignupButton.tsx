@@ -22,7 +22,7 @@ const SignupButton = ({ paths }: Props) => {
     if (isElectronApp) {
         const handleSignupDesktop = () => {
             if (canInvokeInboxDesktopIPC) {
-                window.ipcInboxMessageBroker?.send('openExternal', getAppHref(paths.signup, APPS.PROTONACCOUNT));
+                window.ipcInboxMessageBroker!.send('openExternal', getAppHref(paths.signup, APPS.PROTONACCOUNT));
             }
         };
 
