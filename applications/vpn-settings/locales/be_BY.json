@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Выдаліць падарункавы код"
       ],
+      "Remove single sign-on": [
+        "Выдаліць адзіны ўваход"
+      ],
       "Rename": [
         "Перайменаваць"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Адбываецца ўваход"
+      ],
+      "Stop using single sign-on": [
+        "Спыніць выкарыстанне адзінага ўваходу"
       ],
       "Submit": [
         "Адправіць"
@@ -2127,9 +2133,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Мінімальная сума ахвяравання складае ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Мінімальная аплата, якую мы прымаем, складае ${ price }"
       ],
@@ -2805,6 +2808,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } і вам спатрэбіцца стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
       ],
@@ -2949,6 +2955,12 @@
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
       ],
+      "Affected user is on row": [
+        "Уплывае на карыстальніка з кароткім паролем",
+        "Уплывае на карыстальнікаў з кароткім паролем",
+        "Уплывае на карыстальнікаў з кароткім паролем",
+        "Уплывае на карыстальнікаў з кароткім паролем"
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -3011,6 +3023,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Пераканайцеся, што ваш пароль скапіяваны і захаваны ў надзейным месцы."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Вам неабходна ўвесці пароль і стварыць зашыфраваныя ключы для адрасоў перад тым, як актываваць карыстальніка."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перад стварэннем гэтага адраса, вам неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
@@ -3327,6 +3342,9 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
+      "Keys created": [
+        "Ключы створаны"
+      ],
       "Lean more about gateways": [
         "Даведацца больш пра шлюзы"
       ],
@@ -3393,6 +3411,9 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Карыстальнікі, якія не належаць да SSO (створаныя ўручную, не забяспечаныя вашым пастаўшчыком ідэнтычнасці) усё яшчэ могуць уваходзіць у вашу арганізацыю"
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -3404,6 +3425,9 @@
       ],
       "old password": [
         "стары пароль"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Пасля адключэння адзінага ўваходу (SSO) для вашай арганізацыі:"
       ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
@@ -3600,11 +3624,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
+      "Single sign-on removed": [
+        "Адзіны ўваход выдалены"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Карыстальнікі SSO (забяспечаныя вашым пастаўшчыком ідэнтычнасці) будуць выдалены"
       ],
       "Step ${ step }": [
         "Крок ${ step }",
@@ -3653,6 +3683,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Дзякуй за падтрымку нашай місіі па стварэнні лепшага інтэрнэту, дзе прыватнасць і свабода стаяць на першым месцы."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Уліковы даныя ад вашага пастаўшчыка ідэнтычнасці будуць выдалены."
       ],
       "The following address is invalid.": [
         "Наступны адрас з'яўляецца памылковым.",
@@ -3732,6 +3765,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Гэта незваротна выдаліць ваш уліковы запіс і ўсе звязаныя з ім даныя. У вас не будзе магчымасці аднавіць яго пазней."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Гэта прывядзе да выдалення адзінага ўваходу (SSO) для ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Гэта заменіць ваш часовы пароль. Вы будзеце выкарыстоўваць яго для доступу да свайго ўліковага запісу ${ BRAND_NAME } у будучыні."
       ],
@@ -3772,7 +3808,7 @@
         "Для працягу, неабходна праверыць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
+        "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } для вашай прылады і падключыцца да сервера."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
@@ -3839,6 +3875,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Выкарыстоўвайце наступныя ўліковыя даныя, калі падключаецеся да сервераў ${ VPN_APP_NAME } праз праграмы VPN ад іншых распрацоўшчыкаў. Напрыклад, Tunnelblick на MacOS або OpenVPN на GNU/Linux."
+      ],
+      "User activated": [
+        "Карыстальнік актываваны"
       ],
       "Users": [
         "Карыстальнікі"
@@ -4664,6 +4703,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Абнаўленні прадуктаў ${ app } і ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Абнаўленні прадукту ${ app }"
       ],
@@ -4690,9 +4732,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Новыя функцыі ${ MAIL_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4817,6 +4856,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Актываваць карыстальніка"
+      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -7417,6 +7459,9 @@
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
       ],
+      "Activate user": [
+        "Актываваць карыстальніка"
+      ],
       "Add address": [
         "Дадаць адрас"
       ],
@@ -7530,6 +7575,9 @@
       ],
       "Create multiple user accounts": [
         "Стварыце некалькі ўліковых запісаў карыстальніка"
+      ],
+      "Create organization key": [
+        "Стварыць ключ арганізацыі"
       ],
       "Create user accounts": [
         "Стварыць уліковыя запісы карыстальніка"
@@ -7768,6 +7816,12 @@
       "Remove domain": [
         "Выдаліць дамен"
       ],
+      "Remove single sign-on": [
+        "Выдаліць адзіны ўваход"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Выдаліць адзіны ўваход для вашай арганізацыі?"
+      ],
       "Remove user?": [
         "Выдаліць карыстальніка?"
       ],
@@ -7840,7 +7894,7 @@
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Адзіны ўваход"
       ],
       "Status": [

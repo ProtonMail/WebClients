@@ -1965,6 +1965,9 @@
       "Code wrong or not valid anymore": [
         "Nesprávny alebo neplatný kód"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
+      ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
       ],
@@ -2102,9 +2105,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimálna čiastka, ktorú je možné darovať, je ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimálna platba, ktorú akceptujeme, je ${ price }"
@@ -2953,6 +2953,9 @@
       "Are you sure you want to discard your changes?": [
         "Naozaj chcete zahodiť všetky zmeny?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Naozaj chcete tomuto používateľovi prideliť oprávnenia správcu?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Naozaj chcete tomuto používateľovi odobrať oprávnenie správcu?"
       ],
@@ -3237,6 +3240,9 @@
       ],
       "inactive": [
         "neaktívne"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Vrátane ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Zvýšte bezpečnosť svojho účtu overením svojej emailovej adresy."
@@ -3690,6 +3696,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnovenia účtu."
+      ],
+      "To proceed, we must verify the request.": [
+        "Pre pokračovanie musíme overiť vašu žiadosť"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
@@ -4329,6 +4338,9 @@
       "Interval": [
         "Interval"
       ],
+      "Issuer ID": [
+        "ID vydávateľa"
+      ],
       "Keep me signed in": [
         "Zostať prihlásený"
       ],
@@ -4565,9 +4577,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítacie emaily"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nové funkcie ${ MAIL_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -5808,6 +5817,15 @@
       ]
     },
     "passwordless": {
+      "Change organization key": [
+        "Zmeniť kľúč organizácie"
+      ],
+      "Organization key activated": [
+        "Kľúč organizácie bol aktivovaný"
+      ],
+      "Organization key does not exist.": [
+        "Kľúč organizácie neexistuje."
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
@@ -7497,9 +7515,6 @@
       ],
       "Signed in to member account": [
         "Prihlásený do členského účtu"
-      ],
-      "Single Sign-On": [
-        "Jednotné prihlásenie"
       ],
       "Status": [
         "Stav"

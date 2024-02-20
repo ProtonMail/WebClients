@@ -2103,9 +2103,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Nominal sumbangan minimal yang dapat diberikan adalah ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
       ],
@@ -2928,6 +2925,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Pastikan untuk menyalin kata sandi Anda dan menyimpan salinan ini di tempat yang aman."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Sebelum mengaktifkan pengguna ini, Anda perlu untuk memberikan kata sandi dan membuat kunci enkripsi untuk alamat yang terkait."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Sebelum membuat alamat ini, Anda harus menentukan kata sandi dan membuat kunci enkripsi."
       ],
@@ -3236,6 +3236,9 @@
       ],
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
+      ],
+      "Keys created": [
+        "Kunci dihasilkan"
       ],
       "Lean more about gateways": [
         "Pelajari lebih lanjut tentang gateway"
@@ -3549,6 +3552,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Terima kasih karena telah mendukung misi kami untuk mewujudkan internet yang mengutamakan privasi dan kebebasan."
       ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Informasi kredensial dari Penyedia Identitas Anda akan dihapus."
+      ],
       "The following address is invalid.": [
         "Alamat berikut tidak valid."
       ],
@@ -3617,6 +3623,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Tindakan ini akan menghapus SSO untuk ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
@@ -3725,6 +3734,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda ingin terhubung ke server ${ VPN_APP_NAME } di luar aplikasi, semisal: Melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
+      ],
+      "User activated": [
+        "Pengguna diaktifkan"
       ],
       "Users": [
         "Pengguna"
@@ -4549,9 +4561,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } surel datang"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Fitur baru ${ MAIL_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4673,6 +4682,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktifkan pengguna"
+      ],
       "Change password": [
         "Ubah kata sandi"
       ],
@@ -7084,6 +7096,9 @@
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
+      "Activate user": [
+        "Aktifkan pengguna"
+      ],
       "Add address": [
         "Tambah alamat"
       ],
@@ -7194,6 +7209,9 @@
       ],
       "Create multiple user accounts": [
         "Buat lebih dari satu akun pengguna"
+      ],
+      "Create organization key": [
+        "Buat kunci organisasi"
       ],
       "Create user accounts": [
         "Buat akun pengguna"
@@ -7497,9 +7515,6 @@
       ],
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
-      ],
-      "Single Sign-On": [
-        "Single Sign-On"
       ],
       "Status": [
         "Status"

@@ -1972,9 +1972,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Найменша сума, яку можна внести, становить ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Найменший платіж, який ми приймаємо — ${ price }"
       ],
@@ -3047,7 +3044,7 @@
         "за вибір ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
-        "Для членів організацій, що користуються єдиним входом (SAML SSO)"
+        "Для учасників організацій, що використовують єдиний вхід (SAML SSO)"
       ],
       "Free forever": [
         "Безплатно назавжди"
@@ -3425,13 +3422,13 @@
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
       "Subscription auto-renews every 12 months.": [
-        "Передплата автоматично подовжується що 12 місяців."
+        "Передплата автоматично поновлюється щороку."
       ],
       "Subscription auto-renews every 24 months.": [
-        "Передплата автоматично подовжується що 24 місяці."
+        "Передплата автоматично поновлюється кожні 24 місяці."
       ],
       "Subscription auto-renews every month.": [
-        "Передплата автоматично подовжується щомісяця."
+        "Передплата автоматично поновлюється щомісяця."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
@@ -3449,7 +3446,7 @@
         "Дякуємо"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
-        "Дякуємо за підтримку нашої місії створити кращий інтернет, де конфіденційність і свобода стоять на першому місці."
+        "Дякуємо за підтримку нашої місії – створити кращий інтернет, де приватність і свобода цінуються понад усе."
       ],
       "The following address is invalid.": [
         "Ця адреса недійсна.",
@@ -3659,7 +3656,7 @@
         "Версія ${ version }"
       ],
       "View, download, and manage your invoices.": [
-        "Перегляд, завантаження та керування інвойсами."
+        "Перегляд, завантаження та керування рахунками-фактурами."
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
@@ -3812,7 +3809,7 @@
         "Вам доступно ${ availableCount } виділених серверів."
       ],
       "You have no invoices.": [
-        "У вас немає рахунків."
+        "У вас немає рахунків-фактур."
       ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
@@ -3869,7 +3866,7 @@
         "Ваш обліковий запис має несплачені рахунки, тому його роботу обмежено. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
-        "Ваш обліковий запис успішно оновлено за цією акцією"
+        "Ваш обліковий запис успішно оновлено за цією промоакцією"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
@@ -5635,6 +5632,11 @@
         "Нова кредитна/платіжна картка"
       ]
     },
+    "Payments": {
+      "MM/YY": [
+        "ММ/РР"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Недійсний номер картки"
@@ -7101,9 +7103,6 @@
       ],
       "Signed in to member account": [
         "Виконано вхід до облікового запису учасника"
-      ],
-      "Single Sign-On": [
-        "Єдиний вхід (SSO)"
       ],
       "Status": [
         "Стан"
