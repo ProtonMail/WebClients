@@ -17,7 +17,7 @@ export interface PassBridge {
         /**
          * Get the user plan which includes aliases limit
          */
-        getUserAccess: () => Promise<HydratedAccessState>;
+        getUserAccess: (options: MaxAgeMemoizeOptions) => Promise<HydratedAccessState>;
     };
     vault: {
         /**
@@ -38,10 +38,10 @@ export interface PassBridge {
         create: (options: PassBridgeAliasCreate) => Promise<PassBridgeAliasItem>;
         /** Retrieves the alias options for a given `shareId`. The alias options
          * will be valid for a limited period of time (10 minutes) */
-        getAliasOptions: (shareId: string) => Promise<AliasOptions>;
+        getAliasOptions: (shareId: string, options: MaxAgeMemoizeOptions) => Promise<AliasOptions>;
         /** Retrieves and decrypts all alias items for a given shareId and retrieves
          * the alias details for the underlying items. */
-        getAllByShareId: (shareId: string) => Promise<PassBridgeAliasItem[]>;
+        getAllByShareId: (shareId: string, options: MaxAgeMemoizeOptions) => Promise<PassBridgeAliasItem[]>;
     };
 }
 

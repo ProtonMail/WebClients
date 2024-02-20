@@ -11,6 +11,7 @@ import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { AliasOptions } from '@proton/pass/types';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -83,7 +84,10 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
             });
 
             // Refetch aliases and set new state
-            const nextAliases = await PassBridge.alias.getAllByShareId(passAliasVault.shareId);
+            const nextAliases = await PassBridge.alias.getAllByShareId(passAliasVault.shareId, {
+                maxAge: UNIX_MINUTE * 5,
+                forceFetch: true,
+            });
             const filteredAliases = filterPassAliases(nextAliases);
 
             if (isMounted()) {
@@ -131,7 +135,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         if (!passAliasVault) {
             throw new Error('Vault should be defined');
         }
-        const options = await PassBridge.alias.getAliasOptions(passAliasVault.shareId);
+        const options = await PassBridge.alias.getAliasOptions(passAliasVault.shareId, { maxAge: UNIX_MINUTE * 10 });
         return options;
     };
 
@@ -139,7 +143,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         const initPassBridge = async () => {
             await PassBridge.ready();
             const { vault, aliases, userHadVault } = await fetchPassBridgeInfos(PassBridge);
-            const userAccess = await PassBridge.user.getUserAccess();
+            const userAccess = await PassBridge.user.getUserAccess({ maxAge: UNIX_MINUTE * 5 });
             const filteredAliases = filterPassAliases(aliases);
 
             if (isMounted()) {
