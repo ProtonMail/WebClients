@@ -17,6 +17,8 @@ function* notificationWorker({ onNotification }: RootSagaOptions, action: WithNo
         notification.key = notification.key ?? action.meta.request.id;
     }
 
+    if (notification.loading) notification.expiration = -1;
+
     onNotification?.(notification);
 }
 
