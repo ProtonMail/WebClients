@@ -242,6 +242,9 @@
       "More options": [
         "მეტი პარამეტრი"
       ],
+      "Move": [
+        "გადატანა"
+      ],
       "Move all items": [
         "ყველა ელემენტის გადატანა"
       ],
@@ -298,6 +301,9 @@
       ],
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
+      ],
+      "Restore": [
+        "აღდგენა"
       ],
       "Restore item": [
         "ელემენტის აღდგენა"
@@ -567,6 +573,9 @@
       "PIN codes do not match": [
         "Pin-კოდები არ ემთხვევა"
       ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის კომპიუტერის აპთან ადრეული წვდომის მისაღებად"
+      ],
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
       ],
@@ -611,6 +620,9 @@
       ],
       "Unknown invite": [
         "უცნობი მოწვევა"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
       ],
       "Unsupported 1Password file format": [
         "მხარდაუჭერელი 1Password-ის ფაილის ფორმატი"
@@ -728,6 +740,9 @@
       "Admin": [
         "ადმინისტრატორი"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "უქმეობის შემდეგ, განბლოკვისთვის, ${ PASS_APP_NAME }-სთან წვდომას PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
       ],
@@ -778,6 +793,9 @@
       ],
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV გთავაზობთ მოხერხებულ ფორმატს თქვენი მონაცემების სანახავად. მაგრამ, მისი სიმარტივის გამო, ზოგიერთი მონაცემები (დამატებითი ველები, საცავის სტრუქტურა და ა.შ.) ჩასმული არ იქნება. მონაცემების სრული გატანისთვის, გირჩევთ, სხვა ფორმატი გამოიყენოთ."
       ],
       "Decrypting your data": [
         "თქვენი მონაცემების გაშიფვრა"
@@ -1047,6 +1065,12 @@
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "გატანილი ფაილი PGP-ით დაიშიფრება და რთულ საკვანძო ფრაზას მოითხოვს."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "გატანილი ფაილი არ შეიცავს იმ გაზიარებული საცავების მონაცემებს, სადაც თქვენ მფლობელი არ ბრძანდებით"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
@@ -1248,6 +1272,9 @@
       "Created": [
         "შექმნილია"
       ],
+      "Default (recommended)": [
+        "ნაგულისხმევი (რეკომენდებულია)"
+      ],
       "Display": [
         "ჩვენება"
       ],
@@ -1257,6 +1284,9 @@
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
       ],
+      "Encrypted (recommended)": [
+        "დაშიფრული (რეკომენდებულია)"
+      ],
       "Expiration date": [
         "ვადა"
       ],
@@ -1265,6 +1295,9 @@
       ],
       "Field name": [
         "ველის სახელწოდება"
+      ],
+      "File format": [
+        "ფაილის ფორმატი"
       ],
       "Forwards to": [
         "გადაგზავნა"
