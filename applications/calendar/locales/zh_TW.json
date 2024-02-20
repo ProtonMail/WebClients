@@ -501,6 +501,9 @@
       "Select calendar view": [
         "選擇行事曆檢視方式"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Select time zone": [
         "選取時區"
       ],
@@ -2360,11 +2363,23 @@
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
+      "Alias is not valid": [
+        "別名無效"
+      ],
+      "Alias is required": [
+        "別名為必填"
+      ],
       "Alias options could not be resolved": [
         "別名選項無法解析處理"
       ],
+      "Aliases could not be loaded": [
+        "無法載入別名"
+      ],
       "Already a member of this calendar": [
         "已經是行事曆的成員了"
+      ],
+      "An error occurred while loading alias options": [
+        "載入別名選項時發生錯誤"
       ],
       "Answer failed to be sent": [
         "回答傳送失敗"
@@ -2459,6 +2474,9 @@
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
       ],
+      "Forward address is required": [
+        "轉寄電郵地址為必填"
+      ],
       "Image upload failed": [
         "影像上載失敗"
       ],
@@ -2512,6 +2530,9 @@
       ],
       "Missing signature": [
         "簽章遺失"
+      ],
+      "Name is required": [
+        "名稱為必填"
       ],
       "Name required": [
         "名稱為必填"
@@ -3822,6 +3843,9 @@
       "Import mailbox": [
         "匯入信箱"
       ],
+      "Important note": [
+        "重要提示"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
@@ -4086,6 +4110,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
+      "Warning": [
+        "警告"
+      ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
       ],
@@ -4154,6 +4181,9 @@
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
+      ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
@@ -4444,6 +4474,9 @@
       "Don't ask again": [
         "不要再次詢問"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "如 Amazon, eBay, Etsy"
+      ],
       "Email": [
         "電郵"
       ],
@@ -4689,6 +4722,9 @@
       ],
       "Wonderful": [
         "太棒了"
+      ],
+      "Your alias": [
+        "你的別名"
       ],
       "Your calendar URL": [
         "您的行事曆網址"
@@ -5605,11 +5641,26 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "全部別名"
+      ],
+      "Create alias": [
+        "創建別名"
+      ],
+      "Create an alias": [
+        "建立一個別名"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
+      "New alias": [
+        "新增别名"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "開啟 ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "保護你的線上身分"
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
@@ -6106,8 +6157,14 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "您的${ storage }已滿${ cta }。"
+      ],
       "Your storage is full": [
         "您的儲存空間已滿"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "您的儲存已滿${ cta }。"
       ]
     },
     "Subscribe to calendar modal": {
@@ -6132,6 +6189,9 @@
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
+      ],
+      "Alias copied to clipboard": [
+        "已複製別名到剪貼簿"
       ],
       "All events deleted": [
         "所有活動已刪除"
@@ -6518,6 +6578,9 @@
       "Email settings": [
         "電郵設定"
       ],
+      "Enable 2FA": [
+        "啟用2FA"
+      ],
       "Encrypted event": [
         "已加密的事件"
       ],
@@ -6538,6 +6601,9 @@
       ],
       "Feedback": [
         "意見反饋"
+      ],
+      "Get advanced protection": [
+        "取得進階保護"
       ],
       "Groups": [
         "群組"
@@ -6574,6 +6640,9 @@
       ],
       "Minicalendar": [
         "小型行事曆"
+      ],
+      "Need more aliases?": [
+        "需要更多別名?"
       ],
       "Night theme": [
         "夜間布景主題"
@@ -6628,6 +6697,9 @@
       ],
       "Save changes": [
         "儲存變更"
+      ],
+      "Security center": [
+        "安全中心"
       ],
       "Select a day in the month": [
         "請選擇月中的一日"
