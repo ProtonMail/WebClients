@@ -20,7 +20,7 @@ export const PassBridgeProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         void bridge.hydrate({ user, addresses: addresses ?? [], authStore });
-    }, [user, addresses]);
+    }, []);
 
     return <PassBridgeContext.Provider value={bridge}>{children}</PassBridgeContext.Provider>;
 };
