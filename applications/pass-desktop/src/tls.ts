@@ -1,4 +1,5 @@
 import { createHash, createPublicKey } from 'crypto';
+import logger from 'electron-log/main';
 
 enum VerificationResult {
     Accept = 0,
@@ -25,5 +26,7 @@ export const certificateVerifyProc = (request: Electron.Request, callback: (code
     } = request;
 
     if (verificationResult === 'net::OK' && isProtonTlsCertificate(data)) return callback(VerificationResult.Accept);
+
+    logger.warn(`[tls] invalid certificate for ${request.hostname} (${verificationResult})`, data);
     return callback(VerificationResult.Reject);
 };
