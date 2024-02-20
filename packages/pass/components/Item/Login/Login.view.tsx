@@ -20,7 +20,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
                 lastUseTime={lastUseTime}
                 createTime={createTime}
                 modifyTime={modifyTime}
-                handleHistoryClick={handleHistoryClick}
+                handleHistoryClick={revisionNumber > 1 ? handleHistoryClick : undefined}
             />
 
             <MoreInfoDropdown

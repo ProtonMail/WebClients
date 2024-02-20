@@ -18,7 +18,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
             <ItemViewHistoryStats
                 createTime={createTime}
                 modifyTime={modifyTime}
-                handleHistoryClick={handleHistoryClick}
+                handleHistoryClick={revisionNumber > 1 ? handleHistoryClick : undefined}
             />
             <MoreInfoDropdown
                 info={[
