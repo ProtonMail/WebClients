@@ -242,6 +242,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "Move": [
+        "Przenieś"
+      ],
       "Move all items": [
         "Przenieś wszystkie elementy"
       ],
@@ -256,6 +259,9 @@
       ],
       "Move to trash": [
         "Przenieś do Kosza"
+      ],
+      "Multiple select": [
+        "Zaznacz"
       ],
       "Not now": [
         "Nie teraz"
@@ -298,6 +304,9 @@
       ],
       "Resend invitation": [
         "Wyślij ponownie zaproszenie"
+      ],
+      "Restore": [
+        "Przywróć"
       ],
       "Restore item": [
         "Przywróć element"
@@ -355,6 +364,9 @@
       ],
       "Transfer ownership": [
         "Zmień właściciela"
+      ],
+      "Trash": [
+        "Przenieś do Kosza"
       ],
       "Unpin item": [
         "Odepnij element"
@@ -619,6 +631,9 @@
       "Unknown invite": [
         "Nieznane zaproszenie"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Format pliku ${ PASS_APP_NAME } jest nieobsługiwany"
+      ],
       "Unsupported 1Password file format": [
         "Format pliku 1Password jest nieobsługiwany"
       ],
@@ -803,6 +818,9 @@
       ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "Plik CSV oferuje wygodny format do przeglądania danych, ale niektóre dane (jak pola niestandardowe, struktura sejfu) nie zostaną uwzględnione. Użyj innego formatu plik, aby wyeksportować wszystkie dane."
       ],
       "Decrypting your data": [
         "Odszyfrowywanie danych"
@@ -1080,6 +1098,12 @@
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Plik eksportu danych zostanie zaszyfrowany za pomocą PGP i będzie wymagał silnego hasła."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Plik eksportu danych nie będzie zawierał danych udostępnionych sejfów, których nie jesteś właścicielem"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
@@ -1289,6 +1313,9 @@
       "Created": [
         "Utworzono"
       ],
+      "Default (recommended)": [
+        "Domyślny (zalecany)"
+      ],
       "Display": [
         "Wyświetlanie"
       ],
@@ -1297,6 +1324,9 @@
       ],
       "Empty trash": [
         "Opróżnij Kosz"
+      ],
+      "Encrypted (recommended)": [
+        "Zaszyfrowany (zalecany)"
       ],
       "Expiration date": [
         "Data wygaśnięcia"

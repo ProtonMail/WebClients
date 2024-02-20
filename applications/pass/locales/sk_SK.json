@@ -242,6 +242,9 @@
       "More options": [
         "Ďalšie možnosti"
       ],
+      "Move": [
+        "Presun"
+      ],
       "Move all items": [
         "Presunúť všetky položky"
       ],
@@ -299,6 +302,9 @@
       "Resend invitation": [
         "Znovu poslať pozvánku"
       ],
+      "Restore": [
+        "Obnoviť"
+      ],
       "Restore item": [
         "Obnoviť položku"
       ],
@@ -321,7 +327,7 @@
         "Pošlite nám správu"
       ],
       "Set access level": [
-        "Nastavte úroveň prístupu"
+        "Nastaviť úroveň prístupu"
       ],
       "Share": [
         "Zdieľať"
@@ -619,6 +625,9 @@
       "Unknown invite": [
         "Neznáma pozvánka"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Nepodporovaný formát súboru ${ PASS_APP_NAME }"
+      ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát súboru 1Password"
       ],
@@ -753,6 +762,9 @@
       "Admin": [
         "Správca"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Po nečinnosti bude prístup k ${ PASS_APP_NAME } vyžadovať PIN kód na odomknutie relácie. Po 3 neúspešných pokusoch budete odhlásení."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
       ],
@@ -803,6 +815,9 @@
       ],
       "Copied to clipboard": [
         "Skopírované do schránky"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV ponúka vhodný formát na zobrazenie údajov. Avšak kvôli svojej jednoduchosti, niektoré údaje nebudú zahrnuté (vlastné polia, štruktúra trezoru...). Pre kompletný export odporúčame použiť iný formát."
       ],
       "Decrypting your data": [
         "Dešifrujeme vaše údaje"
@@ -1036,13 +1051,13 @@
         "Vyberte si, kde chcete uložiť vaše importované trezory."
       ],
       "Selected items permanently deleted": [
-        "Vybrané položky natrvalo odstránené"
+        "Vybrané položky boli natrvalo odstránené"
       ],
       "Selected items successfully moved to trash": [
-        "Vybrané položky úspešne presunuté do koša"
+        "Vybrané položky boli úspešne presunuté do koša"
       ],
       "Selected items successfully restored from trash": [
-        "Vybrané položky úspešne obnovené z koša"
+        "Vybrané položky boli úspešne obnovené z koša"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
@@ -1080,6 +1095,12 @@
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Exportovaný súbor bude šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Exportovaný súbor nebude obsahovať údaje zdieľaných trezorov, ktorých nie ste vlastníkom"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
         "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
@@ -1114,7 +1135,7 @@
         "Odopínanie položky..."
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Inovujte teraz na odomknutie prémiových funkcií"
+        "Inovujte teraz pre odomknutie prémiových funkcií"
       ],
       "Use vaults to share this item with others.": [
         "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
@@ -1289,6 +1310,9 @@
       "Created": [
         "Vytvorené"
       ],
+      "Default (recommended)": [
+        "Predvolené (odporúčané)"
+      ],
       "Display": [
         "Zobraziť"
       ],
@@ -1298,6 +1322,9 @@
       "Empty trash": [
         "Vyprázdniť kôš"
       ],
+      "Encrypted (recommended)": [
+        "Šifrované (odporúčané)"
+      ],
       "Expiration date": [
         "Koniec platnosti "
       ],
@@ -1306,6 +1333,9 @@
       ],
       "Field name": [
         "Názov poľa"
+      ],
+      "File format": [
+        "Formát súboru"
       ],
       "Forwards to": [
         "Preposielať na"
@@ -1383,7 +1413,7 @@
         "Urobiť všetkých správcami"
       ],
       "Make all editors": [
-        "Urobiť všetkých editormi."
+        "Urobiť všetkých editormi"
       ],
       "Make all viewers": [
         "Urobiť všetkých čitateľmi"
@@ -1805,7 +1835,7 @@
         "Nastavenia"
       ],
       "Share vaults with your team": [
-        "Zdieľajte trezory so svojím tímom"
+        "Zdieľať trezory so svojím tímom"
       ],
       "Share with": [
         "Zdieľať s"
@@ -1823,7 +1853,7 @@
         "K dispozícii je aktualizácia"
       ],
       "Upgrade to Unlock Premium Features": [
-        "Inovujte na odomknutie prémiových funkcií"
+        "Inovujte pre odomknutie prémiových funkcií"
       ],
       "Vault": [
         "Trezor"
@@ -1941,7 +1971,7 @@
         "Šifrovaný exportný súbor PGP vyžaduje prístupovú frázu"
       ],
       "Please contact us for investigating the issue": [
-        "Kontaktujte nás pre prešetrenie problému"
+        "Prosím, kontaktujte nás pre prešetrenie problému"
       ],
       "Please verify your email address in order to use email aliases": [
         "Ak chcete používať emailové aliasy, overte svoju emailovú adresu, prosím"

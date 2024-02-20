@@ -242,6 +242,9 @@
       "More options": [
         "Diğer seçenekler"
       ],
+      "Move": [
+        "Taşı"
+      ],
       "Move all items": [
         "Tüm ögeleri taşı"
       ],
@@ -298,6 +301,9 @@
       ],
       "Resend invitation": [
         "Daveti yeniden gönder"
+      ],
+      "Restore": [
+        "Geri yükle"
       ],
       "Restore item": [
         "Ögeyi geri yükle"
@@ -615,6 +621,9 @@
       "Unknown invite": [
         "Davet bilinmiyor"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
+      ],
       "Unsupported 1Password file format": [
         "Desteklenmeyen 1Password dosya biçimi"
       ],
@@ -731,6 +740,9 @@
       "Admin": [
         "Yönetici"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Oturumunuz aık değilken ${ PASS_APP_NAME } erişimi için bir PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
       ],
@@ -781,6 +793,9 @@
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, kasa yapısı...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
       ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
@@ -1050,6 +1065,12 @@
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Dışa aktarılan dosyada, sizinle paylaşılmış ve sahibi olmadığınız kasaların verileri bulunmayacak"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
         "Şu ${ result.ignored.length } öge içe aktarılamadı:"
@@ -1251,6 +1272,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Default (recommended)": [
+        "Varsayılan (önerilen)"
+      ],
       "Display": [
         "Görünüm"
       ],
@@ -1260,6 +1284,9 @@
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
+      "Encrypted (recommended)": [
+        "Şifrelenmiş (önerilen)"
+      ],
       "Expiration date": [
         "Son kullanma tarihi"
       ],
@@ -1268,6 +1295,9 @@
       ],
       "Field name": [
         "Alan adı"
+      ],
+      "File format": [
+        "Dosya biçimi"
       ],
       "Forwards to": [
         "Şuraya iletiyor"
