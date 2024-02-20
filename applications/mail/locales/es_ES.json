@@ -3335,8 +3335,8 @@
       "An error occurred while loading alias options": [
         "Ha ocurrido un error al cargar las opciones de alias."
       ],
-      "An error occurred while saving alias": [
-        "Ocurrió un error al guardar el alias."
+      "An error occurred while saving your alias": [
+        "Ha ocurrido un error al guardar tu alias."
       ],
       "Attachments are limited to 25 MB": [
         "Los archivos adjuntos están limitados a 25 MB."
@@ -6007,6 +6007,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Este mensaje está firmado con la clave adjunta que aún no es de confianza."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Este mensaje se eliminará automáticamente a las ${ value }."
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Este mensaje se eliminará automáticamente a las ${ value }."
       ],
@@ -8226,8 +8229,8 @@
       "Used on amazon for shopping, etc.": [
         "Usado para compras en Amazon, etc."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Cuando te pidan tu dirección de correo electrónico, proporciona este alias en su lugar. Agrega un título y una nota para llevar un registro de dónde lo usas."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Cuando se te pida tu dirección de correo electrónico, indica este alias en su lugar. Los alias son proporcionados por ${ passLink }"
       ]
     },
     "Security Center - Action": {

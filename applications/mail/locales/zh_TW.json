@@ -901,6 +901,9 @@
       "Select all messages": [
         "選取所有郵件"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Select date and time": [
         "選擇日期和時間"
       ],
@@ -3254,8 +3257,20 @@
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
+      "Alias is not valid": [
+        "別名無效"
+      ],
+      "Alias is required": [
+        "別名為必填"
+      ],
       "Alias options could not be resolved": [
         "別名選項無法解析處理"
+      ],
+      "Aliases could not be loaded": [
+        "無法載入別名"
+      ],
+      "An error occurred while loading alias options": [
+        "載入別名選項時發生錯誤"
       ],
       "Attachments are limited to 25 MB": [
         "附件大小上限為 25 MB"
@@ -3365,6 +3380,9 @@
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
       ],
+      "Forward address is required": [
+        "轉寄電郵地址為必填"
+      ],
       "Image upload failed": [
         "影像上載失敗"
       ],
@@ -3418,6 +3436,9 @@
       ],
       "Missing signature": [
         "簽章遺失"
+      ],
+      "Name is required": [
+        "名稱為必填"
       ],
       "Network error: Please check your connection and try again.": [
         "網路錯誤：請檢查您的連線，然後重試。"
@@ -5045,6 +5066,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
+      "Clear app data": [
+        "清除應用程式資料"
+      ],
       "Clear data": [
         "清除資料"
       ],
@@ -5302,6 +5326,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
+      ],
+      "Important note": [
+        "重要提示"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -5969,6 +5996,9 @@
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
+      "Warning": [
+        "警告"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電郵？"
       ],
@@ -6043,6 +6073,9 @@
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
+      ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
@@ -6246,6 +6279,9 @@
       ],
       "Expand / contract composer": [
         "展開 / 收合撰寫工具"
+      ],
+      "Filter": [
+        "篩選器"
       ],
       "Forward": [
         "轉寄"
@@ -6557,6 +6593,9 @@
       "Don't show this again": [
         "不再顯示此內容"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "如 Amazon, eBay, Etsy"
+      ],
       "Email": [
         "電郵"
       ],
@@ -6601,6 +6640,9 @@
       ],
       "Frequency": [
         "頻率"
+      ],
+      "From": [
+        "寄件者"
       ],
       "From:": [
         "寄件者："
@@ -6859,6 +6901,9 @@
       ],
       "Wonderful": [
         "太棒了"
+      ],
+      "Your alias": [
+        "你的別名"
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
@@ -7920,11 +7965,26 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "全部別名"
+      ],
+      "Create alias": [
+        "創建別名"
+      ],
+      "Create an alias": [
+        "建立一個別名"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
+      "New alias": [
+        "新增别名"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "開啟 ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "保護你的線上身分"
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
@@ -8536,8 +8596,14 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "您的${ storage }已滿${ cta }。"
+      ],
       "Your storage is full": [
         "您的儲存空間已滿"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "您的儲存已滿${ cta }。"
       ]
     },
     "Success": {
@@ -8612,6 +8678,9 @@
       ],
       "Address verification disabled": [
         "位址驗證已停用"
+      ],
+      "Alias copied to clipboard": [
+        "已複製別名到剪貼簿"
       ],
       "Bug reported": [
         "錯誤已回報"
@@ -9099,6 +9168,9 @@
       "Email settings": [
         "電郵設定"
       ],
+      "Enable 2FA": [
+        "啟用2FA"
+      ],
       "Enable message content search": [
         "啟用郵件內容搜尋"
       ],
@@ -9128,6 +9200,9 @@
       ],
       "Forward": [
         "轉寄"
+      ],
+      "Get advanced protection": [
+        "取得進階保護"
       ],
       "Groups": [
         "群組"
@@ -9234,6 +9309,12 @@
       "Move all messages": [
         "移動全部郵件"
       ],
+      "Move all messages to archive": [
+        "將所有郵件移動至封存"
+      ],
+      "Move all messages to trash": [
+        "把所有郵件移至垃圾桶"
+      ],
       "Move to": [
         "移動到"
       ],
@@ -9254,6 +9335,9 @@
       ],
       "Moving a snoozed message": [
         "移動已延後程的訊息"
+      ],
+      "Need more aliases?": [
+        "需要更多別名?"
       ],
       "New message": [
         "新訊息"
@@ -9338,6 +9422,9 @@
       ],
       "Schedule send": [
         "排程傳送"
+      ],
+      "Security center": [
+        "安全中心"
       ],
       "Select a theme": [
         "選擇布景主題"

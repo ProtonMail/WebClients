@@ -1306,6 +1306,11 @@
         "Surel baru"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Unduh aplikasi desktop ${ MAIL_APP_NAME }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikasi ${ BRAND_NAME }"
@@ -3312,9 +3317,6 @@
       ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
-      ],
-      "An error occurred while saving alias": [
-        "Terdapat kesalahan pada saat menyimpan alias"
       ],
       "Attachments are limited to 25 MB": [
         "Lampiran terbatas hingga 25 MB"
@@ -5896,6 +5898,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci terlampir yang belum dipercaya."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Pesan ini akan dihapus secara otomatis pada ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Pesan ini akan dihapus secara otomatis pada ${ value }"
       ],
@@ -8076,9 +8081,6 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Digunakan oleh berbagai layanan mis. Amazon untuk berjualan"
-      ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Pada saat Anda diminta untuk mengisi alamat email, gunakan alias ini. Setelahnya, berikan judul dan keterangan agar Anda dapat melacak di mana alias ini digunakan."
       ]
     },
     "Security Center - Action": {
@@ -8611,6 +8613,9 @@
       "Change setting": [
         "Ubah pengaturan"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Buat alias hide-my-email dan lihat semuanya di sini."
       ],
@@ -8619,6 +8624,9 @@
       ],
       "Faster email management": [
         "Pengelolaan email yang lebih cepat"
+      ],
+      "Get the desktop app": [
+        "Dapatkan aplikasi desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
