@@ -266,6 +266,9 @@
       "Hide plan features": [
         "Amaga les característiques del pla"
       ],
+      "Import new SAML metadata": [
+        "Importa les noves metadades SAML"
+      ],
       "Increase": [
         "Incrementa"
       ],
@@ -2049,9 +2052,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "L’import mínim que es pot donar és ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "El pagament mínim que acceptem és ${ price }"
       ],
@@ -2936,6 +2936,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
       ],
+      "Domain ownership verified.": [
+        "S'ha verificat la propietat del domini."
+      ],
       "Done": [
         "Fet"
       ],
@@ -3113,6 +3116,12 @@
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
       ],
+      "Keys created": [
+        "S'han creat les claus."
+      ],
+      "Lean more about gateways": [
+        "Saber-ne més sobre les passarel·les"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
       ],
@@ -3148,6 +3157,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Must not contain spaces.": [
+        "No pot contenir espais."
       ],
       "Must start with a letter.": [
         "Ha de començar amb una lletra."
@@ -3303,6 +3315,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
+      ],
+      "SAML configuration saved": [
+        "La configuració SAML s'ha desat."
       ],
       "Save ${ percentage }": [
         "Deseu ${ percentage }"
@@ -3562,6 +3577,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilitzeu les següents credencials quan us connecteu a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
+      ],
+      "User activated": [
+        "L'usuari s'ha activat."
       ],
       "Users": [
         "Usuaris"
@@ -4222,6 +4240,9 @@
       "Proration": [
         "Prorrateig"
       ],
+      "Public certificate (X.509)": [
+        "Certificat públic (X.509)"
+      ],
       "Recovery email address": [
         "Correu electrònic de recuperació"
       ],
@@ -4248,6 +4269,9 @@
       ],
       "Select your plan": [
         "Seleccioneu el vostre pla"
+      ],
+      "Single sign-on entity ID": [
+        "ID d'entitat d'inici de sessió únic"
       ],
       "Single sign-on URL": [
         "URL d'inici de sessió únic"
@@ -4353,9 +4377,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Noves característiques de ${ MAIL_APP_NAME } i de ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4478,6 +4499,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activa l'usuari"
+      ],
       "Change password": [
         "Canvia la contrasenya"
       ],
@@ -4708,6 +4732,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Emplenament automàtic de targetes de crèdit (disponible pròximament)"
+      ],
+      "Automatic email forwarding": [
+        "Reenviament automàtic de correu"
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
@@ -5412,6 +5439,9 @@
       "Secure Core configs": [
         "Configuracions Secure Core"
       ],
+      "Select who can access...": [
+        "Seleccioneu qui pot accedir..."
+      ],
       "Send to all": [
         "Envia a tots"
       ],
@@ -5534,6 +5564,12 @@
       ]
     },
     "passwordless": {
+      "Organization key activated": [
+        "S'ha activat la clau de l'organització."
+      ],
+      "Organization key updated": [
+        "S'ha actualitzat la clau de l'organització."
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permís denegat. Els privilegis d'administrador s'han restringit."
       ],
@@ -6317,6 +6353,12 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
       ],
+      "upgrade for more storage": [
+        "millorar per obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is full": [
+        "El seu ${ appStorage } és ple."
+      ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
       ]
@@ -6726,6 +6768,9 @@
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
+      "Activate user": [
+        "Activa l'usuari"
+      ],
       "Add address": [
         "Afegeix una adreça"
       ],
@@ -7122,7 +7167,7 @@
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Inici de sessió únic"
       ],
       "Status": [
