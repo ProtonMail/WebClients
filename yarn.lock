@@ -2481,6 +2481,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@electron-forge/plugin-fuses@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@electron-forge/plugin-fuses@npm:7.2.0"
+  dependencies:
+    "@electron-forge/plugin-base": "npm:7.2.0"
+    "@electron-forge/shared-types": "npm:7.2.0"
+  peerDependencies:
+    "@electron/fuses": ">=1.0.0"
+  checksum: 10c0/5274410ed9304337adda2117d5653ee44733d596b33d2fdff4565d76482cea5f77a4b76567b31e079b1e3cca85023a9d05b819a57701788407860970def71bfa
+  languageName: node
+  linkType: hard
+
 "@electron-forge/plugin-webpack@npm:^7.2.0":
   version: 7.2.0
   resolution: "@electron-forge/plugin-webpack@npm:7.2.0"
@@ -2610,6 +2622,19 @@ __metadata:
   bin:
     asar: bin/asar.js
   checksum: 10c0/4b41afae1b34549226c8a175203ee3dba077f213b84ebfd596dc52e2a71149c43d9513f1bb341e77e1980cd253366c84a580a6730e7083542cb63292b60d2ffb
+  languageName: node
+  linkType: hard
+
+"@electron/fuses@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@electron/fuses@npm:1.7.0"
+  dependencies:
+    chalk: "npm:^4.1.1"
+    fs-extra: "npm:^9.0.1"
+    minimist: "npm:^1.2.5"
+  bin:
+    electron-fuses: dist/bin.js
+  checksum: 10c0/c8d48085be5623a5a0f69ca0ab1769845fae4db14c430046d03c02e6cdd091991827db94847f7b647be9ebf66320ede7d25c3ef92ee70906f1d6e4be76a8a9e4
   languageName: node
   linkType: hard
 
@@ -30775,8 +30800,10 @@ __metadata:
     "@electron-forge/maker-squirrel": "npm:^7.2.0"
     "@electron-forge/plugin-auto-unpack-natives": "npm:^7.2.0"
     "@electron-forge/plugin-electronegativity": "npm:^7.2.0"
+    "@electron-forge/plugin-fuses": "npm:^7.2.0"
     "@electron-forge/plugin-webpack": "npm:^7.2.0"
     "@electron-forge/shared-types": "npm:^7.2.0"
+    "@electron/fuses": "npm:^1.7.0"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
