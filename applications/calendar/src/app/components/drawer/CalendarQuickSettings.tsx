@@ -7,6 +7,7 @@ import {
     QuickSettingsSectionRow,
 } from '@proton/components/components/drawer/views/quickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
+import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
 import {
     DrawerAppHeadline,
     DrawerAppScrollContainer,
@@ -61,6 +62,7 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
     return (
         <DrawerAppScrollContainer>
             <DrawerAllSettingsView />
+            <DrawerDownloadApps />
 
             <DrawerAppSection>
                 <QuickSettingsSectionRow

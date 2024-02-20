@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import { Pill } from '@proton/atoms/Pill';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { FeatureCode, useFeature } from '../..';
@@ -53,9 +52,12 @@ const InboxDesktopSettingsSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph className="mt-0 mb-4" learnMoreUrl={getKnowledgeBaseUrl('/mail-desktop-app')}>
-                {c('Info')
-                    .t`Now available in beta, the desktop app lets you conveniently launch ${MAIL_APP_NAME} right from your desktop and stay focused with no browser distractions.`}
+            <SettingsParagraph
+                inlineLearnMore
+                className="mt-0 mb-4"
+                learnMoreUrl={getKnowledgeBaseUrl('/mail-desktop-app')}
+            >
+                {c('Info').t`Fast and focused. Email and calendar, right on your desktop.`}
             </SettingsParagraph>
 
             <div className="mt-8 grid-column-2 grid-auto-fill gap-4">
