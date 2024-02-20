@@ -1,9 +1,12 @@
-import { put, takeLeading } from 'redux-saga/effects';
+import { put, select, takeLeading } from 'redux-saga/effects';
 
 import { CACHE_SALT_LENGTH, OFFLINE_ARGON2_PARAMS, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { getUserSettings } from '@proton/pass/lib/user/user.requests';
 import { offlineSetupFailure, offlineSetupIntent, offlineSetupSuccess } from '@proton/pass/store/actions';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { SETTINGS_PASSWORD_MODE, type UserSettings } from '@proton/shared/lib/interfaces';
 
@@ -16,6 +19,9 @@ function* offlineSetupWorker(
     const requestId = meta.request.id;
 
     try {
+        const plan: UserPassPlan = yield select(selectPassPlan);
+        if (!isPaidPlan(plan)) throw new Error();
+
         /** Offline mode can only work for users in ONE_PASSWORD_MODE.
          * Secondary encryption password cannot be verified through SRP */
         const settings: UserSettings = yield getUserSettings();
