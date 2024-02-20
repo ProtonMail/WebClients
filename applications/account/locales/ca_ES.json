@@ -3931,9 +3931,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "L’import mínim que es pot donar és ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "El pagament mínim que acceptem és ${ price }"
       ],
@@ -6132,7 +6129,7 @@
         "Setmanal (personalitzat)"
       ],
       "Custom yearly": [
-        "Personalització de l'any"
+        "Anual (personalitzat)"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
@@ -6159,7 +6156,7 @@
         "Logo de Discover ProtectBuy"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM permet a ${ BRAND_NAME } signar criptogràficament els teus correus electrònics i evitar que els atacants manipulin el seu correu electrònic. Asseguri's d'afegir els següents registres de CNAME a la seva consola de DNS (ubicada a la plataforma on va adquirir el domini personalitzat)."
+        "DKIM permet a ${ BRAND_NAME } signar criptogràficament els vostres correus electrònics i evitar que els atacants modifiquin el vostre correu electrònic. Assegureu-vos d'afegir els següents tres registres CNAME a la vostra consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del seu domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel seu. La \"p=\" (política) d'aquest registre indica com vol que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Asseguri's d'afegir el següent registre TXT a la seva consola DNS (ubicada a la plataforma on va adquirir el domini personalitzat)."
@@ -6290,6 +6287,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Les invitacions als esdeveniments i les confirmacions d'assistència s'enviaran en aquest idioma."
+      ],
+      "Example: ${ spfExample }": [
+        "Exemple: ${ spfExample }"
       ],
       "Expired": [
         "Caducat"
@@ -6431,7 +6431,7 @@
         "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "IMPORTANT: Si la seva consola de DNS no permet que els valors de CNAME acabin amb un punt, pot eliminar el darrer punt dels valors de CNAME."
+        "IMPORTANT: Si la vostra consola DNS no permet que els valors de CNAME acabin amb un punt, podeu esborrar el darrer punt dels valors de CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
@@ -6503,6 +6503,9 @@
       "Key deletion is irreversible!": [
         "L'eliminació de claus és irreversible."
       ],
+      "Keys created": [
+        "S'han creat les claus."
+      ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
       ],
@@ -6511,6 +6514,9 @@
       ],
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
+      ],
+      "Lean more about gateways": [
+        "Saber-ne més sobre les passarel·les"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
@@ -6586,6 +6592,9 @@
       ],
       "Multi-user support not enabled.": [
         "Suport multi-usuari no activat."
+      ],
+      "Must not contain spaces.": [
+        "No pot contenir espais."
       ],
       "Must start with a letter.": [
         "Ha de començar amb una lletra."
@@ -7337,6 +7346,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el testimoni generat com a contrasenya SMTP."
+      ],
+      "User activated": [
+        "L'usuari s'ha activat."
       ],
       "Users": [
         "Usuaris"
@@ -9068,9 +9080,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Noves característiques de ${ MAIL_APP_NAME } i de ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9378,6 +9387,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activa l'usuari"
+      ],
       "Change password": [
         "Canvia la contrasenya"
       ],
@@ -9852,6 +9864,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Emplenament automàtic de targetes de crèdit (disponible pròximament)"
+      ],
+      "Automatic email forwarding": [
+        "Reenviament automàtic de correu"
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
@@ -10860,6 +10875,9 @@
       "Secure Core configs": [
         "Configuracions Secure Core"
       ],
+      "Select who can access...": [
+        "Seleccioneu qui pot accedir..."
+      ],
       "Send to all": [
         "Envia a tots"
       ],
@@ -11244,6 +11262,12 @@
       ]
     },
     "passwordless": {
+      "Organization key activated": [
+        "S'ha activat la clau de l'organització."
+      ],
+      "Organization key updated": [
+        "S'ha actualitzat la clau de l'organització."
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permís denegat. Els privilegis d'administrador s'han restringit."
       ],
@@ -11395,6 +11419,9 @@
       ],
       "Search for a user or address": [
         "Cerca un usuari o adreça"
+      ],
+      "Search parent folder": [
+        "Cerca la carpeta principal"
       ],
       "Search users": [
         "Cercar usuaris"
@@ -12343,6 +12370,12 @@
       "Get more storage": [
         "Aconseguiu més emmagatzematge"
       ],
+      "upgrade for more storage": [
+        "millorar per obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is full": [
+        "El seu ${ appStorage } és ple."
+      ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
       ]
@@ -12962,6 +12995,9 @@
       ],
       "Activate organization key": [
         "Activar la clau d'organització"
+      ],
+      "Activate user": [
+        "Activa l'usuari"
       ],
       "Add address": [
         "Afegeix una adreça"
@@ -14516,31 +14552,31 @@
         "Cada ${ interval } setmanes, el dimecres a les ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Cada setmana el ${ multipleDaysString }, ${ timesString }"
+        "Cada setmana el ${ multipleDaysString } a les ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
         "Cada setmana tots els dies, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Cada setmana el divendres, ${ timesString }"
+        "Cada setmana el divendres a les ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Cada setmana el dilluns, ${ timesString }"
+        "Cada setmana el dilluns a les ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Cada setmana el dissabte, ${ timesString }"
+        "Cada setmana el dissabte a les ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Cada setmana el diumenge, ${ timesString }"
+        "Cada setmana el diumenge a les ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Cada setmana el dijous, ${ timesString }"
+        "Cada setmana el dijous a les ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Cada setmana el dimarts, ${ timesString }"
+        "Cada setmana el dimarts a les ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Cada setmana el dimecres, ${ timesString }"
+        "Cada setmana el dimecres a les ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
