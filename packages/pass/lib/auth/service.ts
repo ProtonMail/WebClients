@@ -215,8 +215,13 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
         /** Creates a session lock. Automatically updates the authentication
          * store and immediately persists the session on success. */
-        createLock: async (lockCode: string, ttl: number) => {
+        createLock: async (
+            lockCode: string,
+            ttl: number,
+            options?: { onLockCreated?: (sessionLockToken: string) => MaybePromise<void> }
+        ) => {
             const sessionLockToken = await createSessionLock(lockCode, ttl);
+            await options?.onLockCreated?.(sessionLockToken);
 
             authStore.setLockToken(sessionLockToken);
             authStore.setLockTTL(ttl);
@@ -228,8 +233,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
         /** Deletes a registered session lock. Requires the session lock code.
          * Immediately persists the session on success. */
-        deleteLock: async (lockCode: string) => {
+        deleteLock: async (lockCode: string, options?: { onLockDeleted?: () => MaybePromise<void> }) => {
             await deleteSessionLock(lockCode);
+            await options?.onLockDeleted?.();
 
             authStore.setLockToken(undefined);
             authStore.setLockTTL(undefined);
