@@ -2217,7 +2217,7 @@
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe pilotée par IA avec un support d'experts dédié 24h/24 et 7j/7."
+        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME } ; notre solution de sécurité innovante par IA avec un support d'experts dédié 24h/24 et 7j/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
@@ -2429,7 +2429,7 @@
         "L'alias n'est pas valide."
       ],
       "Alias is required": [
-        "L'alias est requis."
+        "Le champ Alias est requis."
       ],
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
@@ -2443,8 +2443,8 @@
       "An error occurred while loading alias options": [
         "Une erreur s’est produite lors du chargement des options de l'alias."
       ],
-      "An error occurred while saving alias": [
-        "Une erreur s'est produite lors de la sauvegarde de l'alias"
+      "An error occurred while saving your alias": [
+        "Une erreur est survenue lors de l'enregistrement de votre alias"
       ],
       "Answer failed to be sent": [
         "La réponse n'a pas pu être envoyée."
@@ -2542,7 +2542,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Forward address is required": [
-        "L'adresse e-mail de transfert est nécessaire."
+        "Le champ adresse e-mail de transfert est requis."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -2603,7 +2603,7 @@
         "Il manque la signature."
       ],
       "Name is required": [
-        "Le nom est nécessaire."
+        "Le champ Nom est requis."
       ],
       "Name required": [
         "Le nom est nécessaire."
@@ -5828,7 +5828,7 @@
         "Créer un alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Créer rapidement des alias à la volée et gérer facilement vos alias et mots de passe."
+        "Créer des alias à la demande et gérer facilement vos alias et mots de passe."
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -5851,8 +5851,8 @@
       "Used on amazon for shopping, etc.": [
         "Utilisé sur Amazon pour vos achats, etc."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Ajoutez un titre et une note pour suivre l'endroit où vous l'utilisez."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -6387,13 +6387,13 @@
         "Votre ${ appStorage } est plein."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Votre ${ storage } est à ${ percentage } % plein. ${ cta }."
+        "Votre ${ storage } est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Votre ${ storage } est plein. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Votre espace de stockage est à ${ percentage } % plein. ${ cta }."
+        "Votre espace de stockage est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
@@ -6430,7 +6430,7 @@
         "L'alias a été copié dans le presse-papiers."
       ],
       "Alias saved and copied": [
-        "L'alias a été copié et enregistré."
+        "L'alias a été enregistré et copié."
       ],
       "All events deleted": [
         "Tous les événements ont été supprimés."
@@ -6830,7 +6830,7 @@
         "Paramètres du message"
       ],
       "Enable 2FA": [
-        "Activer l'authentification 2FA"
+        "Activer l'authentification à deux facteurs (2FA)"
       ],
       "Encrypted event": [
         "Événement chiffré"
@@ -7068,7 +7068,7 @@
         "Vous avez invité des participants avec des adresses e-mail identiques."
       ],
       "Your account is protected": [
-        "Votre compte est protégé"
+        "Votre compte est protégé."
       ],
       "Your calendar link": [
         "Lien de votre calendrier"
