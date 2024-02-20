@@ -11,6 +11,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, handleHistoryClick } = itemViewProps;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
+    const modifiedCount = revisionNumber - 1;
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
@@ -28,11 +29,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
                     {
                         label: c('Label').t`Modified`,
                         values: [
-                            c('Info').ngettext(
-                                msgid`${revisionNumber} time`,
-                                `${revisionNumber} times`,
-                                revisionNumber
-                            ),
+                            c('Info').ngettext(msgid`${modifiedCount} time`, `${modifiedCount} times`, modifiedCount),
                         ],
                     },
                     {
