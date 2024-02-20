@@ -242,6 +242,9 @@
       "More options": [
         "Fler alternativ"
       ],
+      "Move": [
+        "Flytta"
+      ],
       "Move all items": [
         "Flytta alla objekt"
       ],
@@ -256,6 +259,9 @@
       ],
       "Move to trash": [
         "Flytta till papperskorg"
+      ],
+      "Multiple select": [
+        "Välj flera"
       ],
       "Not now": [
         "Inte nu"
@@ -298,6 +304,9 @@
       ],
       "Resend invitation": [
         "Skicka inbjudan igen"
+      ],
+      "Restore": [
+        "Återställ"
       ],
       "Restore item": [
         "Återställ objekt"
@@ -608,6 +617,9 @@
       ],
       "Unknown invite": [
         "Okänd inbjudan"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Filformat ${ PASS_APP_NAME } stöds inte"
       ],
       "Unsupported 1Password file format": [
         "1Password-filformat stöds inte"
@@ -1037,6 +1049,12 @@
       ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Den exporterade filen kommer att krypteras med PGP och kräver en stark lösenfras."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Den exporterade filen kommer inte innehålla data från delade valv där du inte är ägaren"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
