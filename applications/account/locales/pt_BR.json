@@ -4042,9 +4042,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "O valor mínimo que pode ser doado é ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }."
       ],
@@ -9327,9 +9324,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas da ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Novos recursos da ${ MAIL_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9640,6 +9634,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Ativar usuário"
+      ],
       "Change password": [
         "Alterar senha"
       ],
@@ -10288,6 +10285,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
       ],
       "Start protecting your organization": [
         "Comece a proteger sua organização"
@@ -11392,6 +11392,9 @@
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
+      "Based in Switzerland, GDPR compliant": [
+        "Localizado na Suíça, em conformidade com o regulamento RGPD"
+      ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mas você pode obter ${ discount } de desconto atualizando para **${ upsellPlanTitle }** — é apenas ${ relativePrice } a mais por mês."
       ],
@@ -11454,6 +11457,9 @@
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Obtenha ${ appName } para ${ browserName } em breve"
+      ],
+      "Get in touch with our sales team": [
+        "Entre em contato com nossa equipe de vendas"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Os aliases hide-my-email protegem seu e-mail contra violações de dados"
@@ -11524,6 +11530,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
       ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Soluções sob medida para organizações maiores com necessidades personalizadas."
+      ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "A oferta selecionada não está disponível para assinantes de ${ currentPlanTitle }."
       ],
@@ -11587,6 +11596,9 @@
       "Change organization key": [
         "Alterar a chave da organização"
       ],
+      "Organization key activated": [
+        "Chave de organização ativada"
+      ],
       "Organization key does not exist.": [
         "A chave da organização não existe."
       ],
@@ -11601,6 +11613,9 @@
       ],
       "The organization key must be activated first.": [
         "A chave da organização deve ser ativada primeiro."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Você deve tornar privados todos os usuários antes de gerar uma nova chave de organização."
       ]
     },
     "Payment method option": {
@@ -11637,6 +11652,9 @@
       ],
       "Invalid securiry code": [
         "O código de segurança não é válido."
+      ],
+      "Something went wrong. Please try again later.": [
+        "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
@@ -12981,6 +12999,9 @@
       ],
       "Address updated": [
         "Endereço atualizado"
+      ],
+      "Administrator privileges restored": [
+        "Privilégios de administrador restaurados"
       ],
       "Auto-reply disabled": [
         "Resposta automática desativada"

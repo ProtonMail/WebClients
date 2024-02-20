@@ -3688,9 +3688,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Найменша сума, яку можна внести, становить ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Найменший платіж, який ми приймаємо — ${ price }"
       ],
@@ -5451,7 +5448,7 @@
         "${ n } адрес"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "${ none }: не відправляти на карантин і не відхиляти несанкціоновані листи. Зазвичай люди використовують цю політику лише для усунення несправностей або тестування."
+        "${ none }: не відправляти на карантин і не відхиляти несанкціоновані листи. Зазвичай ця політика використовується лише для усунення несправностей або тестування."
       ],
       "${ number } city": [
         "${ number } місто",
@@ -5847,7 +5844,7 @@
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Перш ніж ви зможете отримувати листи на адреси вашого власного домену за адресою ${ MAIL_APP_NAME }, вам потрібно додати два наступні MX-записи у DNS-консолі (розташованій на платформі, на якій ви придбали власний домен). Ви можете знайти приклад і кілька корисних порад ${ kbLink }."
+        "Для можливості отримання листів на адреси вашого власного домену в ${ MAIL_APP_NAME } вам потрібно додати такі два MX-записи у DNS-консолі (розташованій на платформі, на якій ви придбали власний домен). Ви можете знайти приклад і кілька корисних порад ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
@@ -5874,7 +5871,7 @@
         "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для ${ BRAND_NAME } до зашифрованої інформації цього календаря."
       ],
       "Cancel anytime": [
-        "Скасувати будь-коли"
+        "Скасування будь-коли"
       ],
       "Can’t access your recovery email?": [
         "Не можете отримати доступ до резервної е-пошти?"
@@ -6000,10 +5997,10 @@
         "Логотип Discover ProtectBuy"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM дозволяє ${ BRAND_NAME } криптографічно підписувати ваші електронні листи і запобігати підробці вашої е-пошти зловмисниками. Переконайтеся, що ви додали наступні три записи CNAME у консолі DNS (розташованій на платформі, де ви придбали власний домен)."
+        "DKIM дозволяє ${ BRAND_NAME } криптографічно підписувати ваші електронні листи й запобігати підробці вашої е-пошти зловмисниками. Обов'язково додайте зазначені три записи CNAME у консолі DNS (розташованій на платформі, де ви придбали власний домен)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC перевіряє, чи записи SPF і DKIM відправника походять з вашого домену. Це може запобігти використанню зловмисниками SPF і DKIM іншого домену, щоб видати себе за ваш домен. \"p=\" (політика) в цьому записі вказує, як ви хочете, щоб платформи одержувачів обробляли несанкціоновані листи. Ми рекомендуємо використовувати політику \"p=quarantine\" для більшості доменів. Переконайтеся, що ви додали наступний TXT-запис у консоль DNS (розташовану на платформі, на якій ви придбали власний домен)."
+        "DMARC перевіряє, чи записи SPF і DKIM відправника походять з вашого домену. Це може запобігти використанню зловмисниками SPF і DKIM іншого домену, щоб видати себе за ваш домен. \"p=\" (політика) в цьому записі вказує, як ви хочете, щоб платформи одержувачів обробляли несанкціоновані листи. Ми рекомендуємо використовувати політику \"p=quarantine\" для більшості доменів. Обов'язково додайте зазначений TXT-запис у консоль DNS (розташовану на платформі, на якій ви придбали власний домен)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
@@ -6156,7 +6153,7 @@
         "за вибір ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
-        "Для членів організацій, що користуються єдиним входом (SAML SSO)"
+        "Для учасників організацій, що використовують єдиний вхід (SAML SSO)"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
@@ -6273,7 +6270,7 @@
         "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "ВАЖЛИВО: Якщо ваша консоль DNS не допускає, щоб значення CNAME закінчувалися крапкою, ви можете видалити останню крапку в значеннях CNAME."
+        "ВАЖЛИВО: якщо ваша консоль DNS не допускає, щоб значення CNAME закінчувалися крапкою, ви можете видалити останню крапку в значеннях CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
@@ -6501,7 +6498,7 @@
         "Наразі недоступний у нашій мобільній програмі для Android."
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Доступний у бета-версії настільний застосунок дозволяє зручно запускати ${ MAIL_APP_NAME } просто з робочого столу і зосереджуватися без відволікань на браузер."
+        "Відтепер доступна бета-версія програми для комп'ютера, яка дає змогу зручно запускати ${ MAIL_APP_NAME } просто з робочого столу і зосереджуватися на роботі з поштою без відволікань."
       ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
@@ -6858,13 +6855,13 @@
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
       "Subscription auto-renews every 12 months.": [
-        "Передплата автоматично подовжується що 12 місяців."
+        "Передплата автоматично поновлюється щороку."
       ],
       "Subscription auto-renews every 24 months.": [
-        "Передплата автоматично подовжується що 24 місяці."
+        "Передплата автоматично поновлюється кожні 24 місяці."
       ],
       "Subscription auto-renews every month.": [
-        "Передплата автоматично подовжується щомісяця."
+        "Передплата автоматично поновлюється щомісяця."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
@@ -6897,7 +6894,7 @@
         "Дякуємо"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
-        "Дякуємо за підтримку нашої місії створити кращий інтернет, де конфіденційність і свобода стоять на першому місці."
+        "Дякуємо за підтримку нашої місії – створити кращий інтернет, де приватність і свобода цінуються понад усе."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
@@ -7170,7 +7167,7 @@
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Покращити тарифний план до ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
+        "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
@@ -7230,7 +7227,7 @@
         "Історія версій"
       ],
       "View, download, and manage your invoices.": [
-        "Перегляд, завантаження та керування інвойсами."
+        "Перегляд, завантаження та керування рахунками-фактурами."
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
@@ -7452,7 +7449,7 @@
         "У вас немає календарів, які можна експортувати."
       ],
       "You have no invoices.": [
-        "У вас немає рахунків."
+        "У вас немає рахунків-фактур."
       ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
@@ -7539,7 +7536,7 @@
         "Ваш спосіб відновлення облікового запису налаштовано"
       ],
       "Your account was successfully updated with this promotion": [
-        "Ваш обліковий запис успішно оновлено за цією акцією"
+        "Ваш обліковий запис успішно оновлено за цією промоакцією"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
@@ -11069,6 +11066,11 @@
       ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
+      ]
+    },
+    "Payments": {
+      "MM/YY": [
+        "ММ/РР"
       ]
     },
     "Payments.Error": {

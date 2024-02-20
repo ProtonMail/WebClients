@@ -4045,9 +4045,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Le montant minimum d'un don est de ${ price }."
-      ],
       "The minimum payment we accept is ${ price }": [
         "Le paiement minimum accepté est de ${ price }."
       ],
@@ -5829,8 +5826,8 @@
         "${ providerFoldersNumLocalized } labels trouvés dans Gmail"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement environ ${ provisioningDuration }.",
-        "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
+        "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement ${ provisioningDuration }.",
+        "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine } : demande aux plateformes du destinataire d'identifier comme indésirables/spam les e-mails non autorisés ou de les mettre en quarantaine."
@@ -9315,6 +9312,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Mises à jour des produits ${ app } et ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Mises à jour du produit ${ app }"
       ],
@@ -9341,9 +9341,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Messages de bienvenue ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nouvelles fonctionnalités de ${ MAIL_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -12890,13 +12887,13 @@
         "Votre ${ appStorage } est plein."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Votre ${ storage } est à ${ percentage } % plein. ${ cta }."
+        "Votre ${ storage } est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Votre ${ storage } est plein. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Votre espace de stockage est à ${ percentage } % plein. ${ cta }."
+        "Votre espace de stockage est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
@@ -13739,6 +13736,9 @@
       "Create multiple user accounts": [
         "Créer plusieurs comptes utilisateurs"
       ],
+      "Create organization key": [
+        "Créer une clé pour l'organisation"
+      ],
       "Create public link": [
         "Créer un lien public"
       ],
@@ -14356,7 +14356,7 @@
         "Thème"
       ],
       "This field cannot be empty": [
-        "Ce champ ne doit pas être vide"
+        "Ce champ ne doit pas être vide."
       ],
       "This field cannot contain only spaces": [
         "Ce champ ne doit pas contenir uniquement des espaces"
