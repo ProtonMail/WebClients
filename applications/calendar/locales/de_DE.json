@@ -2443,9 +2443,6 @@
       "An error occurred while loading alias options": [
         "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
       ],
-      "An error occurred while saving alias": [
-        "Beim Speichern des Alias ist ein Fehler aufgetreten"
-      ],
       "Answer failed to be sent": [
         "Antwort konnte nicht gesendet werden"
       ],
@@ -5850,9 +5847,6 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Verwendet auf Amazon für Shopping, etc."
-      ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gib stattdessen diesen Alias an. Füge einen Titel und eine Notiz hinzu, damit du weißt, wo du sie verwendest."
       ]
     },
     "Security Center - Action": {
@@ -6370,6 +6364,12 @@
       ],
       "contact your administrator": [
         "wende dich an deinen Administrator."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
       ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
@@ -7168,6 +7168,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
