@@ -1,4 +1,5 @@
 export type Callback<T extends any[] = any[], R = any> = (...args: T) => R;
+export type AsyncCallback<T extends any[] = any[], R extends Promise<any> = Promise<any>> = (...args: T) => R;
 
 export type Maybe<T> = T | undefined;
 export type MaybeNull<T> = T | null;
