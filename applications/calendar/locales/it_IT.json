@@ -2351,10 +2351,10 @@
         "Cancellazione di un evento che inizia il ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invito per un evento il ${ formattedStart }"
+        "Invito per un evento ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Invito per un evento che inizia il ${ formattedStart }"
+        "Invito per un evento che inizia ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Aggiornamento per un evento il ${ formattedStart }"
@@ -2443,7 +2443,7 @@
       "An error occurred while loading alias options": [
         "Si è verificato un errore nel caricamento delle opzioni dell'alias"
       ],
-      "An error occurred while saving alias": [
+      "An error occurred while saving your alias": [
         "Si è verificato un errore nel salvataggio dell'alias"
       ],
       "Answer failed to be sent": [
@@ -5854,8 +5854,8 @@
       "Used on amazon for shopping, etc.": [
         "Utilizzato su Amazon per shopping, ecc."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Quando ti viene chiesto il tuo indirizzo email, fornisci invece questo alias. Aggiungi un nome e una nota per tenere traccia di dove lo usi."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
       ]
     },
     "Security Center - Action": {

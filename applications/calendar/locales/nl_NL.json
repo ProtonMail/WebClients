@@ -498,6 +498,9 @@
       "Select calendar view": [
         "Agendaweergave kiezen"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select time zone": [
         "Kies tijdzone"
       ],
@@ -2330,6 +2333,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
@@ -2361,11 +2367,23 @@
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
+      "Alias is not valid": [
+        "Alias is ongeldig."
+      ],
+      "Alias is required": [
+        "Alias is vereist."
+      ],
       "Alias options could not be resolved": [
         "Alias-opties konden niet worden opgevraagd"
       ],
+      "Aliases could not be loaded": [
+        "Aliassen konden niet worden geladen."
+      ],
       "Already a member of this calendar": [
         "Al lid van deze agenda"
+      ],
+      "An error occurred while loading alias options": [
+        "Er is een fout opgetreden tijdens het laden van de alias opties"
       ],
       "Answer failed to be sent": [
         "Antwoord kon niet verzonden worden"
@@ -2459,6 +2477,9 @@
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
+      "Forward address is required": [
+        "Doorstuuradres is vereist"
+      ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
       ],
@@ -2516,6 +2537,9 @@
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
+      ],
+      "Name is required": [
+        "Naam is vereist."
       ],
       "Name required": [
         "Naam vereist"
@@ -2676,6 +2700,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Onverwachte fout, we kunnen de contacten niet importeren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -3867,6 +3894,9 @@
       "Import mailbox": [
         "Mailbox importeren"
       ],
+      "Important note": [
+        "Belangrijke opmerking"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
@@ -4131,6 +4161,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Warning": [
+        "Waarschuwing"
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -5686,14 +5719,28 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Alias aanmaken"
+      ],
+      "Create an alias": [
+        "Alias aanmaken"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
+      ],
+      "New alias": [
+        "Nieuwe alias"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Open ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Logboeken bekijken"
       ]
     },
     "Select files": {
@@ -6010,6 +6057,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } en ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -6207,6 +6257,9 @@
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
+      ],
+      "Alias copied to clipboard": [
+        "Alias gekopieerd naar klembord"
       ],
       "All events deleted": [
         "Alle afspraken verwijderd"
@@ -6605,6 +6658,9 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
+      "Enable 2FA": [
+        "2FA inschakelen"
+      ],
       "Encrypted event": [
         "Versleutelde afspraak"
       ],
@@ -6625,6 +6681,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Get advanced protection": [
+        "Kies geavanceerde bescherming"
       ],
       "Groups": [
         "Groepen"
@@ -6713,6 +6772,9 @@
       ],
       "Reshare your calendars": [
         "Uw agenda's opnieuw delen"
+      ],
+      "Save": [
+        "Opslaan"
       ],
       "Save changes": [
         "Aanpassingen opslaan"
