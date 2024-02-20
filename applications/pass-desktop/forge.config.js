@@ -1,6 +1,8 @@
 const { AutoUnpackNativesPlugin } = require('@electron-forge/plugin-auto-unpack-natives');
+const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { WebpackPlugin } = require('@electron-forge/plugin-webpack');
 const { MakerSquirrel } = require('@electron-forge/maker-squirrel');
+const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
 const path = require('path');
@@ -47,6 +49,21 @@ const config = {
                     },
                 ],
             },
+        }),
+        new FusesPlugin({
+            version: FuseVersion.V1,
+            // Disables ELECTRON_RUN_AS_NODE
+            [FuseV1Options.RunAsNode]: false,
+            // Enables cookie encryption
+            [FuseV1Options.EnableCookieEncryption]: true,
+            // Disables the NODE_OPTIONS environment variable
+            [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
+            // Disables the --inspect and --inspect-brk family of CLI options
+            [FuseV1Options.EnableNodeCliInspectArguments]: false,
+            // Enables validation of the app.asar archive on macOS
+            [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
+            // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
+            [FuseV1Options.OnlyLoadAppFromAsar]: true,
         }),
     ],
 };
