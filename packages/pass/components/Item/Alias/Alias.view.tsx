@@ -26,6 +26,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { shareId } = vault;
     const aliasEmail = revision.aliasEmail!;
     const trashed = isTrashed(revision);
+    const modifiedCount = revisionNumber - 1;
 
     const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail));
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
@@ -78,11 +79,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                     {
                         label: c('Label').t`Modified`,
                         values: [
-                            c('Info').ngettext(
-                                msgid`${revisionNumber} time`,
-                                `${revisionNumber} times`,
-                                revisionNumber
-                            ),
+                            c('Info').ngettext(msgid`${modifiedCount} time`, `${modifiedCount} times`, modifiedCount),
                             getFormattedDateFromTimestamp(modifyTime),
                         ],
                     },
