@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Geschenkgutschein entfernen"
       ],
+      "Remove single sign-on": [
+        "Single Sign-on entfernen"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Anmeldung erfolgt"
+      ],
+      "Stop using single sign-on": [
+        "Single Sign-on nicht mehr verwenden"
       ],
       "Submit": [
         "Senden"
@@ -2111,9 +2117,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Der akzeptierte Mindestzahlbetrag beträgt ${ price }"
       ],
@@ -2893,6 +2896,10 @@
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
       ],
+      "Affected user is on row": [
+        "Betroffener Benutzer ist in Zeile",
+        "Betroffene Benutzer sind in Zeilen"
+      ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
       ],
@@ -2955,6 +2962,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Kopiere dein Passwort und bewahre es an einem sicheren Ort auf."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Vor dem Aktivieren dieses Benutzers musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die neuen Adressen erstellen."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Vor dem Anlegen dieser Adresse musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die Adresse erstellen."
@@ -3267,6 +3277,9 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "Keys created": [
+        "Schlüssel erstellt"
+      ],
       "Lean more about gateways": [
         "Mehr über Gateways erfahren"
       ],
@@ -3333,6 +3346,9 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Nicht-SSO-Benutzer (manuell erstellt, nicht von deinem Identitätsanbieter bereitgestellt) können sich weiterhin bei deiner Organisation anmelden."
+      ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
@@ -3344,6 +3360,9 @@
       ],
       "old password": [
         "altes Passwort"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Sobald Single Sign-on für deine Organisation deaktiviert ist:"
       ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
@@ -3424,6 +3443,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen.",
+        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen."
       ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
@@ -3530,11 +3553,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "Single sign-on removed": [
+        "Single Sign-on entfernt"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-Benutzer (bereitgestellt von deinem Identitätsanbieter) werden gelöscht."
       ],
       "Step ${ step }": [
         "Schritt ${ step }",
@@ -3581,6 +3610,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vielen Dank für die Unterstützung unserer Mission, ein besseres Internet zu schaffen, in dem Privatsphäre und Freiheit an erster Stelle stehen."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
       ],
       "The following address is invalid.": [
         "Die folgende Adresse ist ungültig.",
@@ -3653,6 +3685,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Dadurch wird Single Sign-on für ${ boldDomainName } entfernt."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dies ersetzt dein vorläufiges Passwort. Du benötigst es, um zukünftig auf dein ${ BRAND_NAME }-Konto zuzugreifen."
@@ -3761,6 +3796,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
+      ],
+      "User activated": [
+        "Benutzer aktiviert"
       ],
       "Users": [
         "Benutzer"
@@ -4596,9 +4634,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-Willkommens-E-Mails"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } neue Funktionen"
       ]
     },
     "Label on payment method": {
@@ -4721,6 +4756,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Benutzer aktivieren"
+      ],
       "Change password": [
         "Passwort ändern"
       ],
@@ -6739,6 +6777,12 @@
       "For all ${ BRAND_NAME } services": [
         "Für alle ${ BRAND_NAME }-Dienste"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
@@ -7195,6 +7239,9 @@
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
       ],
+      "Activate user": [
+        "Benutzer aktivieren"
+      ],
       "Add address": [
         "E-Mail-Adr. hinzufügen"
       ],
@@ -7306,6 +7353,9 @@
       ],
       "Create multiple user accounts": [
         "Mehrere Benutzerkonten erstellen"
+      ],
+      "Create organization key": [
+        "Organisationsschlüssel erstellen"
       ],
       "Create user accounts": [
         "Benutzerkonten erstellen"
@@ -7540,6 +7590,12 @@
       "Remove domain": [
         "Domain entfernen"
       ],
+      "Remove single sign-on": [
+        "Single Sign-on entfernen"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Single Sign-on für deine Organisation entfernen?"
+      ],
       "Remove user?": [
         "Benutzer entfernen?"
       ],
@@ -7612,7 +7668,7 @@
       "Signed in to member account": [
         "In Mitgliedskonto angemeldet"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Single Sign-on"
       ],
       "Status": [
@@ -7834,6 +7890,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
