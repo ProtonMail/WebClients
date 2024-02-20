@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove single sign-on": [
+        "Fjern enkel pålogging"
+      ],
       "Rename": [
         "Gi nytt navn"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Logger på"
+      ],
+      "Stop using single sign-on": [
+        "Slutt å bruke enkel pålogging"
       ],
       "Submit": [
         "Send inn"
@@ -2111,9 +2117,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimumsbeløpet som kan doneres er ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Minimumsbetalingen vi aksepterer er ${ price }."
       ],
@@ -2771,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } og du må opprette dem manuelt for å legge dem tilbake i organisasjonen din"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning }. Du vil miste tilgang til alle gjeldende krypterte data i kontoen din hvis du fortsetter."
       ],
@@ -3343,6 +3349,9 @@
       "No results found": [
         "Ingen resultater funnet"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Ikke-SSO-brukere (opprettet manuelt, ikke levert av identitetsleverandøren din) kan fortsatt logge på organisasjonen din"
+      ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
@@ -3354,6 +3363,9 @@
       ],
       "old password": [
         "gammelt passord"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Når enkel pålogging er deaktivert for organisasjonen din:"
       ],
       "Once you reset your password:": [
         "Når du har tilbakestilt passordet:"
@@ -3547,11 +3559,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
+      "Single sign-on removed": [
+        "Enkel pålogging fjernet"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Noen av de tilgjengelige tjenerne dine kan bare brukes i bestemte land på grunn av nylige fjerninger."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-brukere (levert av identitetsleverandøren din) blir slettet"
       ],
       "Step ${ step }": [
         "Trinn ${ step }",
@@ -3598,6 +3616,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Takk for at du støtter vår misjon om å bygge et bedre internett der personvern og frihet kommer først."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Legitimasjonen fra identitetsleverandøren din blir slettet."
       ],
       "The following address is invalid.": [
         "Den følgende adressen er ugyldig.",
@@ -3670,6 +3691,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dette vil permanent slette kontoen og alle tilhørende data. Du kan ikke aktivere denne kontoen på nytt senere."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Dette vil fjerne SSO for ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte ditt midlertidige passord. Du vil bruke det for å tilgang til din ${ BRAND_NAME }-konto i fremtiden."
@@ -4593,6 +4617,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } og ${ additionalApp } produktoppdateringer"
+      ],
       "${ app } product updates": [
         "${ app } produktoppdateringer"
       ],
@@ -4619,9 +4646,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } velkommen e-post"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME } nye funksjoner"
       ]
     },
     "Label on payment method": {
@@ -7360,6 +7384,9 @@
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
       ],
+      "Create organization key": [
+        "Opprett organisasjonsnøkkel"
+      ],
       "Create user accounts": [
         "Opprett brukerkontoer"
       ],
@@ -7593,6 +7620,12 @@
       "Remove domain": [
         "Fjern domene"
       ],
+      "Remove single sign-on": [
+        "Fjern enkel pålogging"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Fjerne enkel pålogging for organisasjonen din?"
+      ],
       "Remove user?": [
         "Fjern bruker?"
       ],
@@ -7665,7 +7698,7 @@
       "Signed in to member account": [
         "Logget på medlemskonto"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Enkel pålogging"
       ],
       "Status": [

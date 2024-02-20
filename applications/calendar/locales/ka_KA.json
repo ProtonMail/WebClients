@@ -2232,7 +2232,7 @@
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია, 2FA კი - ჩართული."
       ],
       "Your account and data recovery methods are set.": [
-        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთდები დაყეენბულია."
+        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია."
       ]
     },
     "description": {
@@ -2442,9 +2442,6 @@
       ],
       "An error occurred while loading alias options": [
         "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
-      ],
-      "An error occurred while saving alias": [
-        "შეცდომა ფსევდონიმის შენახვისას"
       ],
       "Answer failed to be sent": [
         "ანგარიშის გაგზავნის შეცდომა"
@@ -6368,6 +6365,12 @@
       "contact your administrator": [
         "დაუკავშირდით ადმინისტრატორს"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "აწიეთ ტარიფი მეტი საცავისთვის"
       ],
@@ -6376,6 +6379,9 @@
       ],
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "თქვენი ${ storage } სავსეა. ${ cta }."

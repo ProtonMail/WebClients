@@ -29,6 +29,9 @@
       ]
     },
     "Error": {
+      "Coudn't load invoices. Please try again later.": [
+        "Couldn't load invoices. Please try again later."
+      ],
       "Require at least one action": [
         "Add at least one action"
       ],
@@ -87,6 +90,10 @@
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Please use a password longer than ${ MIN_PASSWORD_LENGTH } character.",
+        "Please use a password longer than ${ MIN_PASSWORD_LENGTH } characters."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains."
       ],
@@ -134,6 +141,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
+      ]
+    },
+    "pass_signup_2023: title": {
+      "For invididuals": [
+        "For individuals"
       ]
     },
     "Payments.Error": {

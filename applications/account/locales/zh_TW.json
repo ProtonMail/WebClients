@@ -815,6 +815,9 @@
       "Select calendar view": [
         "選擇行事曆檢視方式"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Select files": [
         "選取檔案"
       ],
@@ -3930,9 +3933,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "每筆捐款的最低金額為 ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "付款的最低金額為 ${ price }"
@@ -7511,6 +7511,9 @@
       "You can now close this window.": [
         "您現在就能關閉這個視窗。"
       ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
@@ -7885,6 +7888,9 @@
       ],
       "Expand / contract composer": [
         "展開 / 收合撰寫工具"
+      ],
+      "Filter": [
+        "篩選器"
       ],
       "Forward": [
         "轉寄"
@@ -9015,9 +9021,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 新功能"
       ]
     },
     "Label in domain modal": {
@@ -12252,8 +12255,14 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "您的${ storage }已滿${ cta }。"
+      ],
       "Your storage is full": [
         "您的儲存空間已滿"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "您的儲存已滿${ cta }。"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "您將失去存取${ gb }儲存和優先支援。"

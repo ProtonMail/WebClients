@@ -398,6 +398,9 @@
       "Search countries": [
         "国を検索"
       ],
+      "See DNS TXT record": [
+        "DNS TXT レコードを確認"
+      ],
       "See how": [
         "方法の確認"
       ],
@@ -1996,9 +1999,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "寄付金額は ${ price } から受け付けています。"
-      ],
       "The minimum payment we accept is ${ price }": [
         "最低 ${ price } より受け付けています。"
       ],
@@ -2884,8 +2884,20 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
       ],
+      "DNS TXT record": [
+        "DNS TXT レコード"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
+      ],
+      "Domain ownership failed verification.": [
+        "ドメイン所有権の検証に失敗しました。"
+      ],
+      "Domain ownership not verified.": [
+        "ドメイン所有権は未検証です。"
+      ],
+      "Domain ownership verified.": [
+        "ドメイン所有権は検証済みです。"
       ],
       "Done": [
         "完了"
@@ -3543,6 +3555,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
+      ],
+      "Verify domain": [
+        "ドメインを検証"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "認証アプリのタイムベースドワンタイムパスワードで認証します"
@@ -4301,9 +4316,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } ウェルカムメール"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } の新機能"
       ]
     },
     "Label on payment method": {

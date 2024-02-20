@@ -3751,6 +3751,9 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebol overený"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
+      ],
       "Could not save preference": [
         "Nepodarilo sa uložiť predvoľby"
       ],
@@ -3905,7 +3908,7 @@
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Žiadny externý kľúč získaný pre užívateľov nie je platný pre odoslanie"
+        "Žiadny externý kľúč získaný pre používateľa nie je platný na odoslanie"
       ],
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
@@ -4062,9 +4065,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimálna čiastka, ktorú je možné darovať, je ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimálna platba, ktorú akceptujeme, je ${ price }"
@@ -6203,6 +6203,9 @@
       "Are you sure you want to discard your import?": [
         "Naozaj chcete zahodiť váš import?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Naozaj chcete tomuto používateľovi prideliť oprávnenia správcu?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Naozaj chcete natrvalo vymazať všetky vaše záznamy?"
       ],
@@ -6715,6 +6718,9 @@
       ],
       "inactive": [
         "neaktívne"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Vrátane ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Zvýšte bezpečnosť svojho účtu overením svojej emailovej adresy."
@@ -7537,6 +7543,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnovenia účtu."
+      ],
+      "To proceed, we must verify the request.": [
+        "Pre pokračovanie musíme overiť vašu žiadosť"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
@@ -9433,9 +9442,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítacie emaily"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nové funkcie ${ MAIL_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -11708,6 +11714,15 @@
       ]
     },
     "passwordless": {
+      "Change organization key": [
+        "Zmeniť kľúč organizácie"
+      ],
+      "Organization key activated": [
+        "Kľúč organizácie bol aktivovaný"
+      ],
+      "Organization key does not exist.": [
+        "Kľúč organizácie neexistuje."
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],

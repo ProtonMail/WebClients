@@ -4081,9 +4081,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Мінімальная сума ахвяравання складае ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Мінімальная аплата, якую мы прымаем, складае ${ price }"
       ],
@@ -6110,6 +6107,12 @@
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
       ],
+      "Affected user is on row": [
+        "Уплывае на карыстальніка з кароткім паролем",
+        "Уплывае на карыстальнікаў з кароткім паролем",
+        "Уплывае на карыстальнікаў з кароткім паролем",
+        "Уплывае на карыстальнікаў з кароткім паролем"
+      ],
       "Align left": [
         "Выраўнаваць па левым краі"
       ],
@@ -6277,6 +6280,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Пераканайцеся, што ваш пароль скапіяваны і захаваны ў надзейным месцы."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Вам неабходна ўвесці пароль і стварыць зашыфраваныя ключы для адрасоў перад тым, як актываваць карыстальніка."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перад стварэннем гэтага адраса, вам неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
@@ -6811,6 +6817,9 @@
       ],
       "Key deletion is irreversible!": [
         "Выдаленне ключа з'яўляецца незваротным!"
+      ],
+      "Keys created": [
+        "Ключы створаны"
       ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
@@ -7590,7 +7599,7 @@
         "Для працягу, неабходна праверыць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
+        "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } для вашай прылады і падключыцца да сервера."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "для выкарыстання ${ toAppName } і ўсіх сэрвісаў ${ BRAND_NAME }"
@@ -7705,6 +7714,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Выкарыстоўвайце выбраны адрас электроннай пошты ў якасці імя карыстальніка SMTP у знешнім сэрвісе і згенерыраваны токен у якасці пароля SMTP."
+      ],
+      "User activated": [
+        "Карыстальнік актываваны"
       ],
       "Users": [
         "Карыстальнікі"
@@ -9476,6 +9488,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Абнаўленні прадуктаў ${ app } і ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Абнаўленні прадукту ${ app }"
       ],
@@ -9502,9 +9517,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Новыя функцыі ${ MAIL_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9831,6 +9843,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Актываваць карыстальніка"
+      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -13870,6 +13885,9 @@
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
       ],
+      "Activate user": [
+        "Актываваць карыстальніка"
+      ],
       "Add address": [
         "Дадаць адрас"
       ],
@@ -14061,6 +14079,9 @@
       ],
       "Create multiple user accounts": [
         "Стварыце некалькі ўліковых запісаў карыстальніка"
+      ],
+      "Create organization key": [
+        "Стварыць ключ арганізацыі"
       ],
       "Create public link": [
         "Стварэнне публічнай спасылкі"

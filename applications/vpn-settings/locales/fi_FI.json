@@ -2111,9 +2111,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Lahjoituksen vähimmäissumma on ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Hyväksymämme vähimmäismaksu on ${ price }"
       ],
@@ -3240,6 +3237,9 @@
       "inactive": [
         "ei käytössä"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName } sisältäen: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Paranna tilisi turvallisuutta vahvistamalla sähköpostiosoitteesi."
       ],
@@ -4086,6 +4086,9 @@
       "Credit": [
         "Krediitit"
       ],
+      "Credit note": [
+        "Hyvityslasku"
+      ],
       "Currency conversion": [
         "Valuutan muuntaminen"
       ],
@@ -4590,9 +4593,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }in tervetuloviestit"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME }in ja ${ CALENDAR_SHORT_APP_NAME }in uudet ominaisuudet"
       ]
     },
     "Label on payment method": {
@@ -5734,6 +5734,9 @@
       "Set up your organization": [
         "Määritä organisaatiosi"
       ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Aloita käyttäjien lisääminen ja anna heille pääsy palveluun ${ PASS_APP_NAME }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME } -sovelluksen käyttö"
       ]
@@ -5887,6 +5890,9 @@
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Olet organisaation **${ organizationName }** järjestelmänvalvoja. Nimityksen teki"
       ],
       "You must privatize all users before generating a new organization key": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
@@ -6728,7 +6734,10 @@
         "Kaikille ${ BRAND_NAME }-palveluille"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Lähettääksesi ja vastaanottaaksesi sähköposteja, vapauta tallennustilaa tai ${ upgrade }"
+        "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
@@ -6745,6 +6754,15 @@
       ],
       "Your ${ appStorage } is full": [
         "${ appStorage }si on täynnä"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } on täynnä. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
@@ -7593,9 +7611,6 @@
       ],
       "Signed in to member account": [
         "Kirjaudu jäsentilille"
-      ],
-      "Single Sign-On": [
-        "Kertakirjautuminen"
       ],
       "Status": [
         "Tila"

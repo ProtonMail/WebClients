@@ -3363,9 +3363,6 @@
       "An error occurred while loading alias options": [
         "Wystąpił błąd podczas ładowania opcji aliasu"
       ],
-      "An error occurred while saving alias": [
-        "Wystąpił błąd podczas zapisywania aliasu"
-      ],
       "Attachments are limited to 25 MB": [
         "Limit dla załączników to 25 MB"
       ],
@@ -6213,6 +6210,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Ta wiadomość jest podpisana przy pomocy dołączonego klucza, który nie został jeszcze dodany do zaufanych."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Wiadomość zostanie automatycznie usunięta o godzinie ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Wiadomość zostanie automatycznie usunięta w dniu: ${ value }"
       ],
@@ -8498,9 +8498,6 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Używany w Amazon do zakupów itp."
-      ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Użyj aliasu, zamiast adresu e-mail. Dodaj nazwę i notatkę, aby śledzić, gdzie go używasz."
       ]
     },
     "Security Center - Action": {
@@ -8869,7 +8866,7 @@
         "Odłóż wiadomość"
       ],
       "When should the message reappear in your inbox?": [
-        "Kiedy chcesz zobaczyć wiadomość w skrzynce odbiorczej?"
+        "Kiedy wiadomość ma pojawić się w skrzynce odbiorczej?"
       ]
     },
     "Sort option": {
@@ -9130,7 +9127,7 @@
         "Zaplanuj wysyłanie"
       ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
-        "Nowa funkcja pozwala ustawić, kiedy wiadomość ma ponownie pojawić się w skrzynce odbiorczej."
+        "Ustaw, kiedy wiadomość ma pojawić się w skrzynce odbiorczej."
       ],
       "Snooze it for later": [
         "Odłóż na później"
