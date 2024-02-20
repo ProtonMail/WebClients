@@ -3126,7 +3126,7 @@
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია, 2FA კი - ჩართული."
       ],
       "Your account and data recovery methods are set.": [
-        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთდები დაყეენბულია."
+        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია."
       ]
     },
     "description": {
@@ -3329,9 +3329,6 @@
       ],
       "An error occurred while loading alias options": [
         "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
-      ],
-      "An error occurred while saving alias": [
-        "შეცდომა ფსევდონიმის შენახვისას"
       ],
       "Attachments are limited to 25 MB": [
         "მიმაგრებული ფაილების მაქსიმალური ზომა 25 მბ-ა"
@@ -5762,6 +5759,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "წაშლის ამ აპთან ასოცირებულ ყველა მონაცემს, გადმოწერილი შეტყობინებების ჩათვლით"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "შეტყობინების ფიშინგად მონიშვნა გამოიწვევს ამ შეტყობინების ჩვენთვის გადმოგზავნას. ჩვენ გავაანალიზებთ მას და გავაუმჯობესებთ ჩვენს ფილტრებს. ეს ასევე ნიშნავს, რომ ჩვენ წვდომა გვექნება შეტყობინების სრულ შინაარსთან."
       ],
@@ -6038,6 +6038,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "ეს საჯარო გასაღები ავტომატურად იქნება გამოყენებული ამ მისამართზე გამოგზავნილი ელფოსტის დასაშიფრად."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "ეს წაშლის ამ აპთან ასოცირებულ ყველა მონაცემებს, გადმოწერილი შეტყობინებების ჩათვლთ. აპი თავიდანგ აეშვება და მის გამოსაყენებლად თავიდან შესვლა მოგიწევთ."
       ],
       "This sender's public key has not been trusted yet.": [
         "გამოგზავნის საჯარო გასაღები ჯერ სანდო არაა."
@@ -8545,7 +8548,7 @@
         "შეტყობინების დროებით დადუმება"
       ],
       "When should the message reappear in your inbox?": [
-        "როცა უნდა გამოჩნდეს შეტყობინება თავიდან, თქვენს საფოსტო ყუთში?"
+        "როდის უნდა გამოჩნდეს შეტყობინება თავიდან, თქვენს საფოსტო ყუთში?"
       ]
     },
     "Sort option": {
@@ -8855,8 +8858,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "ფაილების ატვირთვის და სინქრონიზაციის გასაგრძელებლად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა, მეტი საცავის მისაღებად."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა მეტი საცავის მისაღებად."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ფაილების ასატვრთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }"
       ],
       "upgrade for more storage": [
         "აწიეთ ტარიფი მეტი საცავისთვის"
@@ -8866,6 +8875,9 @@
       ],
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "თქვენი ${ storage } სავსეა. ${ cta }."

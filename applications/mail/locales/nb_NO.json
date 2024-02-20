@@ -3335,8 +3335,8 @@
       "An error occurred while loading alias options": [
         "Det oppstod en feil under lasting av aliasalternativer"
       ],
-      "An error occurred while saving alias": [
-        "En feil oppstod under lagring av alias"
+      "An error occurred while saving your alias": [
+        "Det oppstod en feil under lagring av aliaset ditt"
       ],
       "Attachments are limited to 25 MB": [
         "Vedlegg er begrenset til 25 MB"
@@ -6007,6 +6007,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Denne meldingen er signert av nøkkelen vedlagt, som ikke er klarert enda."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Denne meldingen slettes automatisk kl. ${ value }."
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Denne meldingen slettes automatisk kl. ${ value }."
       ],
@@ -8223,8 +8226,8 @@
       "Used on amazon for shopping, etc.": [
         "Brukt på Amazon for shopping, og så videre."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Legg til et navn og et notat for å holde oversikt over hvor du bruker det."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
       ]
     },
     "Security Center - Action": {
