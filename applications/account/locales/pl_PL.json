@@ -4075,9 +4075,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimalna kwota darowizny wynosi ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Minimalna kwota akceptowanej płatności wynosi ${ price }"
       ],
@@ -4112,7 +4109,7 @@
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "Aby utworzyć nieprywatne konta użytkowników i uzyskać do nich dostęp, musisz przywrócić swoje uprawnienia administratora."
+        "Aby utworzyć służbowe konta użytkowników i uzyskać do nich dostęp, musisz przywrócić uprawnienia administratora."
       ],
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
@@ -6104,6 +6101,12 @@
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
       ],
+      "Affected user is on row": [
+        "Dotyczy użytkownika",
+        "Dotyczy użytkowników",
+        "Dotyczy użytkowników",
+        "Dotyczy użytkowników"
+      ],
       "Align left": [
         "Wyrównaj do lewej"
       ],
@@ -6271,6 +6274,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Skopiuj hasło i zapisz je w bezpiecznym miejscu."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Przed aktywowaniem użytkownika, musisz wpisać hasło i utworzyć klucze szyfrowania dla adresów."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Przed utworzeniem adresu, musisz wpisać hasło i utworzyć dla niego klucze szyfrowania."
@@ -6609,7 +6615,7 @@
         "Logowanie SSO (SAML) dla użytkowników organizacji"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Dla użytkowników przenoszących usługi na ${ MAIL_APP_NAME } od innego dostawcy poczty e-mail. Aby zapewnić płynną migrację, przejdź do zakładki ${ boldAddresses }, a następnie dodaj wszystkie aktywne adresy e-mail, przed zmianą rekordu MX."
+        "Jeśli przechodzisz od innego dostawcy poczty e-mail do ${ MAIL_APP_NAME }, przejdź do karty ${ boldAddresses } i dodaj wszystkie aktywne adresy przed zmianą rekordu MX."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
@@ -7702,6 +7708,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Użyj wybranej nazwy użytkownika jako nazwy użytkownika SMTP w zewnętrznej usłudze i wygeneruj token jako hasło SMTP."
+      ],
+      "User activated": [
+        "Użytkownik został aktywowany"
       ],
       "Users": [
         "Użytkownicy"
@@ -9473,6 +9482,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Aktualizacje usług ${ app } i ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Aktualizacje usługi ${ app }"
       ],
@@ -9499,9 +9511,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Wiadomość powitalna ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nowe funkcje usług ${ MAIL_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -11735,7 +11744,7 @@
         "Skontaktuj się z naszym zespołem sprzedaży"
       ],
       "Get the security and features your business needs": [
-        "Skorzystaj z zabezpieczeń i funkcji, których potrzebuje Twoja firma"
+        "Skorzystaj z zabezpieczeń i funkcji, których potrzebuje Twój biznes"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
@@ -11813,7 +11822,7 @@
         "Oferta specjalna na start: Uzyskaj ${ title } za ${ price } na zawsze!"
       ],
       "Tailored made solutions for larger organizations with custom needs.": [
-        "Rozwiązania dostosowane do potrzeb większych organizacji z indywidualnymi wymaganiami."
+        "Indywidualne rozwiązania dla większych organizacji o niestandardowych potrzebach"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Oferta nie jest dostępna dla subskrybentów planu ${ currentPlanTitle }."
@@ -11884,6 +11893,9 @@
       "Change organization key": [
         "Zmień klucz organizacji"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Służbowi użytkownicy mogą uzyskać uprawnienia administratora po skonfigurowaniu kluczy"
+      ],
       "Organization key activated": [
         "Klucz organizacji został aktywowany"
       ],
@@ -11891,7 +11903,7 @@
         "Klucz organizacji nie istnieje."
       ],
       "Organization key must be activated to give admin privileges": [
-        "Klucz organizacji musi zostać aktywowany, aby nadać uprawnienia administratora."
+        "Musisz aktywować klucz organizacji, aby przyznać uprawnienia administratora"
       ],
       "Organization key restored": [
         "Klucz organizacji został przywrócony"
@@ -11903,7 +11915,7 @@
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
-        "Prywatni użytkownicy mogą zostać awansowani na administratorów przy pierwszym zalogowaniu się."
+        "Prywatni użytkownicy mogą uzyskać uprawnienia administratora po pierwszym zalogowaniu się."
       ],
       "Reset organization key": [
         "Resetuj klucz organizacji"
@@ -11915,31 +11927,31 @@
         "Najpierw musisz aktywować klucz organizacji."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
-        "To spowoduje wysłanie najnowszego klucza organizacji do administratorów, którzy obecnie nie mają do niego dostępu."
+        "Spowoduje to wysłanie najnowszego klucza organizacji do administratorów, którzy obecnie nie mają do niego dostępu."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
-        "Aby utworzyć nieprywatne konta użytkowników i uzyskać do nich dostęp, musisz przywrócić swój klucz organizacji."
+        "Aby utworzyć służbowe konta użytkowników i uzyskać do nich dostęp, musisz aktywować klucz organizacji."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Aby włączyć uprawnienia administratora na swoim koncie, aktywuj klucz organizacji."
+        "Aby włączyć uprawnienia administratora, aktywuj klucz organizacji."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Skorzystaj z metody odzyskiwania danych lub zresetuj klucz organizacji, aby przywrócić uprawnienia administratora."
+        "Aby przywrócić uprawnienia administratora, użyj metody odzyskiwania danych lub zresetuj klucz organizacji."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Skorzystaj z metody odzyskiwania danych, skontaktuj się z innym administratorem lub zresetuj klucz organizacji, aby przywrócić uprawnienia administratora."
+        "Aby przywrócić uprawnienia administratora, użyj metody odzyskiwania danych, skontaktuj się z innym administratorem lub zresetuj klucz organizacji."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Nie mogliśmy zweryfikować bezpieczeństwa klucza adresu nadawcy. Czasami występuje opóźnienie w aktualizacji informacji o nadawcy. Spróbuj ponownie później. Jeśli wątpisz w autentyczność tego zaproszenia lub jego nadawcy, skontaktuj się z obsługą klienta ${ BRAND_NAME }."
+        "Nie możemy zweryfikować klucza adresu nadawcy. Czasami występuje opóźnienie w aktualizacji informacji o nadawcy. Spróbuj ponownie później. Jeśli nie ufasz zaproszeniu lub nadawcy, skontaktuj się ze wsparciem klienta ${ BRAND_NAME }."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Zweryfikowaliśmy autentyczność nadawcy i zaproszenia."
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
-        "Zostałeś mianowany administratorem organizacji **${ organizationName }** przez"
+        "Zostajesz administratorem organizacji **${ organizationName }**. Uprawnienia otrzymujesz od"
       ],
       "You must privatize all users before generating a new organization key": [
-        "Wszyscy użytkownicy muszą zostać użytkownikami prywatnymi, przed wygenerowaniem nowego klucza organizacji."
+        "Musisz zmienić służbowych użytkowników na prywatnych przed wygenerowaniem nowego klucza organizacji"
       ],
       "You need access to the organization key to perform this operation.": [
         "Potrzebujesz dostępu do klucza organizacji, aby wykonać to działanie."
@@ -11967,7 +11979,7 @@
         "MM/RR"
       ],
       "Timeout exceeded": [
-        "Limit czasu przekroczony"
+        "Limit czasu został przekroczony"
       ]
     },
     "Payments.Error": {
@@ -12310,6 +12322,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrator musi uzyskać dostęp do klucza organizacji.",
+        "${ n } administratorów musi uzyskać dostęp do klucza organizacji.",
+        "${ n } administratorów musi uzyskać dostęp do klucza organizacji.",
+        "${ n } administratorów musi uzyskać dostęp do klucza organizacji."
+      ],
       "Changing organization keys": [
         "Zmiana klucza organizacji"
       ],
@@ -14056,6 +14074,9 @@
       "Create multiple user accounts": [
         "Utwórz wiele kont użytkowników"
       ],
+      "Create organization key": [
+        "Utwórz klucz organizacji"
+      ],
       "Create public link": [
         "Utwórz link"
       ],
@@ -15364,7 +15385,7 @@
         "Wykryliśmy problem z konfiguracją rekordów DNS. Upewnij się, że rekordy pasują do instrukcji. Jeśli ten problem będzie się powtarzał, wyłączymy podpisywanie DKIM."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Musisz ${ activateLink } do klucza organizacji przed dodaniem adresu e-mail nieprywatnego użytkownika."
+        "Musisz ${ activateLink } klucz organizacji przed dodaniem adresu e-mail do służbowego użytkownika."
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."

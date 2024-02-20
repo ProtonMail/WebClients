@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Retirer le code-cadeau"
       ],
+      "Remove single sign-on": [
+        "Retirer l'authentification unique"
+      ],
       "Rename": [
         "Renommer"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Connexion en cours"
+      ],
+      "Stop using single sign-on": [
+        "Arrêter d'utiliser l'authentification unique"
       ],
       "Submit": [
         "Envoyer"
@@ -2111,9 +2117,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Le montant minimum d'un don est de ${ price }."
-      ],
       "The minimum payment we accept is ${ price }": [
         "Le paiement minimum accepté est de ${ price }."
       ],
@@ -2771,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } et vous devrez les créer manuellement pour les ajouter de nouveau à votre organisation."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
       ],
@@ -2802,8 +2808,8 @@
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement environ ${ provisioningDuration }.",
-        "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
+        "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement ${ provisioningDuration }.",
+        "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement ${ provisioningDuration }."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } de plus",
@@ -3343,6 +3349,9 @@
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Les utilisateurs qui n'utilisent pas l'authentification unique (créés manuellement et non fournis par votre fournisseur d'identité) peuvent toujours se connecter à votre organisation."
+      ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
       ],
@@ -3354,6 +3363,9 @@
       ],
       "old password": [
         "ancien mot de passe"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Une fois que l'authentification unique est désactivée pour votre organisation :"
       ],
       "Once you reset your password:": [
         "Une fois votre mot de passe réinitialisé :"
@@ -3544,11 +3556,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
+      "Single sign-on removed": [
+        "L'authentification unique a été retirée."
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Certains des serveurs disponibles peuvent uniquement être utilisés dans certains pays en raison de suppressions récentes."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Les utilisateurs SSO (fournis par votre fournisseur d'identité) seront supprimés."
       ],
       "Step ${ step }": [
         "Étape ${ step }",
@@ -3595,6 +3613,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Merci de soutenir notre mission de créer un meilleur internet qui donne la priorité à la protection de la vie privée et à la liberté."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Les identifiants de votre fournisseur d'identité seront supprimés."
       ],
       "The following address is invalid.": [
         "L'adresse suivante n'est pas valide.",
@@ -3667,6 +3688,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ceci supprimera définitivement votre compte et toutes ses données. Vous ne pourrez pas réactiver ce compte."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Ceci retirera l'authentification unique (SSO) pour ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Cela remplacera votre mot de passe temporaire. Vous l'utiliserez pour accéder à votre compte ${ BRAND_NAME }."
@@ -4587,6 +4611,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Mises à jour des produits ${ app } et ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Mises à jour du produit ${ app }"
       ],
@@ -4613,9 +4640,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Messages de bienvenue ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nouvelles fonctionnalités de ${ MAIL_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -6782,13 +6806,13 @@
         "Votre ${ appStorage } est plein."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Votre ${ storage } est à ${ percentage } % plein. ${ cta }."
+        "Votre ${ storage } est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Votre ${ storage } est plein. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Votre espace de stockage est à ${ percentage } % plein. ${ cta }."
+        "Votre espace de stockage est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
@@ -7336,6 +7360,9 @@
       "Create multiple user accounts": [
         "Créer plusieurs comptes utilisateurs"
       ],
+      "Create organization key": [
+        "Créer une clé pour l'organisation"
+      ],
       "Create user accounts": [
         "Créer des comptes utilisateurs"
       ],
@@ -7569,6 +7596,12 @@
       "Remove domain": [
         "Retirer le domaine"
       ],
+      "Remove single sign-on": [
+        "Retirer l'authentification unique"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Voulez-vous retirer l'authentification unique de votre organisation ?"
+      ],
       "Remove user?": [
         "Retirer l'utilisateur ?"
       ],
@@ -7641,7 +7674,7 @@
       "Signed in to member account": [
         "Connecté au compte membre"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Authentification unique"
       ],
       "Status": [

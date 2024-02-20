@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "Activate": [
+        "Activeren"
+      ],
       "activate": [
         "activeer"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Abonnement opzeggen"
+      ],
+      "Change keys": [
+        "Wijzig sleutels"
       ],
       "Change mailbox password": [
         "Mailboxwachtwoord wijzigen"
@@ -409,6 +415,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
+      ],
+      "Select country": [
+        "Selecteer land"
       ],
       "Select file": [
         "Selecteer bestand"
@@ -1833,6 +1842,11 @@
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ]
     },
+    "Desktop app upsell": {
+      "Upgrade today or check again in early 2024 for access.": [
+        "Voor toegang kunt u vandaag upgraden of begin 2024 nog een keer controleren."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
@@ -1906,6 +1920,9 @@
       ],
       "Code wrong or not valid anymore": [
         "Code verkeerd of niet meer geldig"
+      ],
+      "Coudn't load invoices. Please try again later.": [
+        "Kon facturen niet laden, probeer het later nog een keer."
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -2044,9 +2061,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "De minimale betaling die we accepteren is ${ price }"
@@ -2852,6 +2866,9 @@
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Weet u zeker dat u beheerdersrechten aan deze gebruiker wilt geven?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
       ],
@@ -2937,6 +2954,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
@@ -2973,6 +2993,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
+      ],
+      "Downgrade": [
+        "Downgraden"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
@@ -3252,6 +3275,9 @@
       ],
       "per month": [
         "maandelijks"
+      ],
+      "per month, billed at ${ price }": [
+        "per maand, voor ${ price }"
       ],
       "per month, billed every 12 months": [
         "per maand, gefactureerd elke 12 maanden"
@@ -3753,6 +3779,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
@@ -3934,6 +3963,9 @@
       "Credit": [
         "Tegoed"
       ],
+      "Currency conversion": [
+        "Valuta's omrekenen"
+      ],
       "Donation": [
         "Donatie"
       ],
@@ -3991,6 +4023,9 @@
       ],
       "Addresses": [
         "Adressen"
+      ],
+      "Administrators": [
+        "Beheerders"
       ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
@@ -4331,6 +4366,9 @@
       "Username": [
         "Gebruikersnaam"
       ],
+      "VAT": [
+        "BTW"
+      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -4399,9 +4437,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } welkomst-e-mail"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME } nieuwe functies"
       ]
     },
     "Label on payment method": {
@@ -4755,6 +4790,9 @@
       "Autofill credit cards (coming soon)": [
         "Autofill creditcards (weldra klaar)"
       ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
+      ],
       "Available on all platforms": [
         "Beschikbaar op alle platformen"
       ],
@@ -4971,6 +5009,10 @@
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
+      "Up to ${ n } user": [
+        "Tot ${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
       ],
@@ -5169,6 +5211,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Hiermee kunt u automatische antwoorden instellen voor uw ontvangen berichten"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "E-mails verzonden naar uw ${ MAIL_APP_NAME } account kunt u automatisch doorsturen naar elk ander email adres."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kunt u een hierin gespecialiseerde e-mailserviceprovider gebruiken."
       ],
@@ -5226,6 +5271,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ VPN_APP_NAME }-VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ VPN_APP_NAME }-VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
@@ -5448,6 +5496,9 @@
       "My reason isn't listed": [
         "Mijn reden wordt niet vermeld"
       ],
+      "No permission": [
+        "Geen toestemming"
+      ],
       "Router": [
         "Router"
       ],
@@ -5456,6 +5507,12 @@
       ],
       "Select who can access...": [
         "Selecteer wie toegang krijgt tot..."
+      ],
+      "Send to all": [
+        "Sturen aan alle"
+      ],
+      "Setup incomplete": [
+        "Setup niet voltooid"
       ],
       "Standard server configs": [
         "Standaard server configuraties"
@@ -5494,8 +5551,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Ga naar uw kluis om wachtwoorden, aliassen en meer te beheren."
+      ],
       "Set up your organization": [
         "Stel uw organisatie in"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Voeg gebruikers toe en geef hen toegang tot ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begin met ${ PASS_APP_NAME }"
@@ -5513,6 +5576,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Laten we praten!"
+      ],
       "Limited time offer": [
         "Tijdelijke aanbieding"
       ],
@@ -5524,14 +5590,35 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per maand"
       ],
+      "/month /user": [
+        "/maand /gebruiker"
+      ],
+      "/month /user, billed annually": [
+        "/maand /gebruiker, jaarlijks gefactureerd"
+      ],
+      "/month /user, billed biennially": [
+        "/maand /gebruiker, tweejaarlijks gefactureerd"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
+      ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium password manager!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium VPN service!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
       ],
       "Free forever": [
         "Voor altijd gratis"
+      ],
+      "Get in touch with our sales team": [
+        "Neem contact op met ons verkoopteam"
       ],
       "Includes:": [
         "Omvat:"
@@ -5579,12 +5666,32 @@
         "Nieuwe krediet-/bankkaart"
       ]
     },
+    "Payments": {
+      "Card number": [
+        "Kaartnummer"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/JJ"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Ongeldig kaartnummer"
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
+      ],
+      "Invalid securiry code": [
+        "Ongeldige beveiligingscode"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Er ging iets mis. Probeer het later nog eens."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Wij zijn niet in staat om uw betaalmethode te authenticeren. Kies a.u.b. een andere betaalmethode of probeer het opnieuw."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
@@ -5596,6 +5703,9 @@
       ],
       "Send to all": [
         "Sturen aan alle"
+      ],
+      "Setup incomplete": [
+        "Setup niet voltooid"
       ]
     },
     "Placeholder": {
@@ -6154,6 +6264,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } en ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -6322,6 +6435,13 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
+        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
+      ],
       "Your storage is full": [
         "Uw opslagruimte is vol"
       ]
@@ -6482,6 +6602,9 @@
       ],
       "Address added": [
         "Adres toegevoegd"
+      ],
+      "Administrator privileges restored": [
+        "Beheerdersrechten hersteld"
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -6810,6 +6933,9 @@
       "Change role": [
         "Privileges wijzigen"
       ],
+      "Confirm": [
+        "Bevestigen"
+      ],
       "Confirm address": [
         "Adres bevestigen"
       ],
@@ -7068,6 +7194,9 @@
       "Recovery": [
         "Herstel"
       ],
+      "Remove domain": [
+        "Verwijder bestand"
+      ],
       "Remove user?": [
         "Gebruiker verwijderen?"
       ],
@@ -7322,6 +7451,11 @@
       ],
       "Primary admin": [
         "Primaire administrator"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
       ]
     },
     "Validation": {

@@ -269,6 +269,9 @@
       "More options": [
         "Más opciones"
       ],
+      "Move": [
+        "Mover"
+      ],
       "Move all items": [
         "Mover todos los elementos"
       ],
@@ -283,6 +286,9 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
+      ],
+      "Multiple select": [
+        "Selección múltiple"
       ],
       "Not now": [
         "Ahora no"
@@ -337,6 +343,9 @@
       ],
       "Resend invitation": [
         "Reenviar invitación"
+      ],
+      "Restore": [
+        "Restaurar"
       ],
       "Restore item": [
         "Restaurar elemento"
@@ -400,6 +409,9 @@
       ],
       "Transfer ownership": [
         "Transferir la propiedad"
+      ],
+      "Trash": [
+        "Enviar a papelera"
       ],
       "Try again": [
         "Volver a intentar"
@@ -1195,7 +1207,7 @@
         "El archivo de exportación está cifrado mediante PGP y requiere una frase de contraseña segura."
       ],
       "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "El archivo de exportación no contendrá los datos de bóvedas compartidas que no sean de su propiedad"
+        "El archivo exportado no contendrá los datos de bóvedas compartidas que no sean de su propiedad"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",

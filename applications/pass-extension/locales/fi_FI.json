@@ -269,6 +269,9 @@
       "More options": [
         "Lisää asetuksia"
       ],
+      "Move": [
+        "Siirrä"
+      ],
       "Move all items": [
         "Siirrä kaikki kohteet"
       ],
@@ -337,6 +340,9 @@
       ],
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
+      ],
+      "Restore": [
+        "Palauta"
       ],
       "Restore item": [
         "Palauta kohde"
@@ -698,6 +704,9 @@
       "Unknown invite": [
         "Tuntematon kutsu"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
+      ],
       "Unsupported 1Password file format": [
         "Ei tuettu 1Password-tiedostomuoto"
       ],
@@ -827,6 +836,9 @@
       "Admin": [
         "Ylläpito"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Käyttämättömyyden jälkeen sovelluksen ${ PASS_APP_NAME } käyttö edellyttää PIN-koodia istunnon avaamiseksi. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
@@ -883,6 +895,9 @@
       ],
       "Creating alias...": [
         "Luodaan aliasta..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV tarjoaa kätevän muodon tietojen tarkasteluun. Sen yksinkertaisuuden vuoksi joitain tietoja ei kuitenkaan voida sisällyttää (omat kentät, holvirakenne, jne.). Täydellistä vientiä varten suosittelemme eri tiedostomuodon käyttämistä."
       ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
@@ -1182,6 +1197,12 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun kenttää klikataan tai se kohdistetaan."
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Viety tiedosto ei sisällä tietoja jaetuista holveista, joita et omista"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
         "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
@@ -1422,6 +1443,9 @@
       "Created": [
         "Luotu"
       ],
+      "Default (recommended)": [
+        "Oletus (suositeltu)"
+      ],
       "Display": [
         "Ulkoasu"
       ],
@@ -1443,6 +1467,9 @@
       "Empty trash": [
         "Tyhjennä roskakori"
       ],
+      "Encrypted (recommended)": [
+        "Salattu (suositeltu)"
+      ],
       "Expiration date": [
         "Voimassaolo päättyy"
       ],
@@ -1451,6 +1478,9 @@
       ],
       "Field name": [
         "Kentän nimi"
+      ],
+      "File format": [
+        "Tiedostomuoto"
       ],
       "Forwards to": [
         "Ohjaa osoitteeseen"

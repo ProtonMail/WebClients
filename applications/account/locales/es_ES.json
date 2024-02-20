@@ -4045,9 +4045,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "La cantidad mínima que se puede donar es de ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
       ],
@@ -9315,6 +9312,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualizaciones del producto de ${ app } y ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Actualizaciones del producto ${ app }"
       ],
@@ -9341,9 +9341,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correos electrónicos de bienvenida ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Funciones nuevas de ${ MAIL_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -13738,6 +13735,9 @@
       ],
       "Create multiple user accounts": [
         "Crear varias cuentas de usuario"
+      ],
+      "Create organization key": [
+        "Crear la clave de la organización"
       ],
       "Create public link": [
         "Crear enlace público"

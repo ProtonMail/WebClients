@@ -419,6 +419,9 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Select file": [
         "選取檔案"
       ],
@@ -2058,9 +2061,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "每筆捐款的最低金額為 ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "付款的最低金額為 ${ price }"
@@ -3758,6 +3758,9 @@
       "You can now access and manage the account as an administrator.": [
         "您現在可以管理員身份存取與管理帳號。"
       ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "您一次只能開啟一個聊天實體。在開啟新的對話前，請先關閉先前的對話。"
       ],
@@ -4396,9 +4399,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 新功能"
       ]
     },
     "Label on payment method": {
@@ -6346,8 +6346,14 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "您的${ storage }已滿${ cta }。"
+      ],
       "Your storage is full": [
         "您的儲存空間已滿"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "您的儲存已滿${ cta }。"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "您將失去存取${ gb }儲存和優先支援。"
@@ -7153,9 +7159,6 @@
       ],
       "Signed in to member account": [
         "登入到成員帳號"
-      ],
-      "Single Sign-On": [
-        "單一登入"
       ],
       "Status": [
         "狀態"

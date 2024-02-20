@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Markeren voor verwijderen"
       ],
+      "Maximize": [
+        "Maximaliseren"
+      ],
       "Maximize transfers": [
         "Maximaliseer overdrachten"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
+      ],
+      "Minimize": [
+        "Minimaliseren"
       ],
       "Minimize transfers": [
         "Minimaliseer overdrachten"
@@ -577,6 +583,9 @@
       "Select all": [
         "Alles selecteren"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Send feedback": [
         "Feedback versturen"
       ],
@@ -733,9 +742,6 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
-      ],
-      "Your 500 MB bonus": [
-        "Uw 500 MB bonus"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -2057,6 +2063,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" bestaat reeds"
       ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
@@ -2069,8 +2078,20 @@
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
+      "Alias is not valid": [
+        "Alias is ongeldig."
+      ],
+      "Alias is required": [
+        "Alias is vereist."
+      ],
       "Alias options could not be resolved": [
         "Alias-opties konden niet worden opgevraagd"
+      ],
+      "Aliases could not be loaded": [
+        "Aliassen konden niet worden geladen."
+      ],
+      "An error occurred while loading alias options": [
+        "Er is een fout opgetreden tijdens het laden van de alias opties"
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -2149,6 +2170,9 @@
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
+      "Forward address is required": [
+        "Doorstuuradres is vereist"
+      ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
       ],
@@ -2191,6 +2215,9 @@
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
+      ],
+      "Name is required": [
+        "Naam is vereist."
       ],
       "No calendars found to import": [
         "Geen agenda's gevonden om te importeren"
@@ -2341,6 +2368,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Onverwachte fout, we kunnen de contacten niet importeren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -3420,6 +3450,9 @@
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
       ],
+      "Coming soon": [
+        "Binnenkort beschikbaar"
+      ],
       "Conflict": [
         "Probleem"
       ],
@@ -3487,9 +3520,6 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
-      ],
-      "double your storage": [
-        "uw opslag verdubbelen"
       ],
       "Download canceled": [
         "Download geannuleerd"
@@ -3621,9 +3651,6 @@
       "from the version history?": [
         "van de versie geschiedenis?"
       ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "Maak kennis met ${ DRIVE_APP_NAME } en verdien uw 500 MB opslagbonus! Onderneem vandaag nog actie."
-      ],
       "Go to \"My files\" and upload some files first.": [
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
       ],
@@ -3654,6 +3681,9 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
+      ],
+      "Important note": [
+        "Belangrijke opmerking"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
@@ -3927,6 +3957,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Foto's herstellen. Sluit het tabblad niet"
       ],
+      "Retry now": [
+        "Probeer nu opnieuw"
+      ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
       ],
@@ -4168,8 +4201,8 @@
       "Version is restored": [
         "Versie hersteld"
       ],
-      "Way to go, you’ve just doubled your free storage!": [
-        "Goed zo, u heeft net uw gratis opslag verdubbeld!"
+      "Warning": [
+        "Waarschuwing"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "We ondervinden technische problemen. Nieuwe foto's uploaden is tijdelijk uitgeschakeld."
@@ -4239,10 +4272,6 @@
       ],
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
-      ],
-      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
-        "U heeft nog ${ expiresInDays } dag om uw 500 MB welkomstbonus te claimen en ",
-        "U heeft nog ${ expiresInDays } dagen om uw 500 MB welkomstbonus te claimen en "
       ],
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
@@ -4509,6 +4538,9 @@
       ],
       "Download anyway": [
         "Toch downloaden"
+      ],
+      "Downloading": [
+        "Downloaden"
       ],
       "Downloading ${ percentageValue }": [
         "Downloaden ${ percentageValue }"
@@ -4951,8 +4983,17 @@
       ]
     },
     "Mimetype": {
+      "Android Package": [
+        "Android-pakket"
+      ],
       "iCalendar format": [
         "iCalendar-formaat"
+      ],
+      "Image": [
+        "Afbeelding"
+      ],
+      "Text": [
+        "Tekst"
       ]
     },
     "Modal title": {
@@ -5234,6 +5275,10 @@
         "Verplaats ${ n } bestand",
         "Verplaats ${ n } bestanden"
       ],
+      "Move ${ n } folder": [
+        "Verplaats ${ n } map",
+        "Verplaats ${ n } mappen"
+      ],
       "Move ${ n } item": [
         "Verplaats ${ n } item",
         "Verplaats ${ n } items"
@@ -5303,9 +5348,6 @@
     "Onboarding Info": {
       "Create a share link": [
         "Maak een link om te delen"
-      ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "Start met het gebruik van ${ DRIVE_APP_NAME } en we verdubbelen uw gratis opslagruimte tot 1GB!"
       ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
@@ -5525,14 +5567,28 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Alias aanmaken"
+      ],
+      "Create an alias": [
+        "Alias aanmaken"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
+      ],
+      "New alias": [
+        "Nieuwe alias"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Open ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Logboeken bekijken"
       ]
     },
     "Select files": {
@@ -5797,6 +5853,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } en ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5973,6 +6032,9 @@
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
+      ],
+      "Alias copied to clipboard": [
+        "Alias gekopieerd naar klembord"
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -6318,6 +6380,9 @@
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
+      "Enable 2FA": [
+        "2FA inschakelen"
+      ],
       "Enable drive search": [
         "Drive doorzoeken inschakelen"
       ],
@@ -6345,6 +6410,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } zoekresultaat",
         "${ searchView.numberOfResults } zoekresultaten"
+      ],
+      "Get advanced protection": [
+        "Kies geavanceerde bescherming"
       ],
       "Groups": [
         "Groepen"
@@ -6602,9 +6670,6 @@
       "You have no folders yet": [
         "U hebt nog geen mappen"
       ],
-      "Your 500 MB bonus": [
-        "Uw 500 MB bonus"
-      ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
@@ -6613,9 +6678,6 @@
       ],
       "Your welcome actions": [
         "Uw welkomstacties"
-      ],
-      "You’ve got 1 GB of storage": [
-        "U heeft 1 GB aan opslag"
       ]
     },
     "Today icon tooltip in mini calendar": {
