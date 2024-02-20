@@ -56,7 +56,10 @@ type CreateInvitesReturn =
     | CancelEventInviteIcsAndPmCancelVevent
     | (EventInviteIcsAndPmVevent & CancelEventInviteIcsAndPmCancelVevent);
 
-export const getRSVPStatusDiff = (newVevent: VcalVeventComponent, oldVevent?: VcalVeventComponent) => {
+export const getRSVPStatusDiff = (
+    newVevent: Pick<VcalVeventComponent, 'attendee'>,
+    oldVevent?: Pick<VcalVeventComponent, 'attendee'>
+) => {
     const newEventAttendees = newVevent.attendee;
     const oldEventAttendees = oldVevent?.attendee;
 
@@ -82,7 +85,10 @@ export const getRSVPStatusDiff = (newVevent: VcalVeventComponent, oldVevent?: Vc
     return false;
 };
 
-export const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent?: VcalVeventComponent) => {
+export const getAttendeesDiff = (
+    newVevent: Pick<VcalVeventComponent, 'attendee'>,
+    oldVevent?: Pick<VcalVeventComponent, 'attendee'>
+) => {
     const normalizedNewEmails = (newVevent.attendee || []).map((attendee) =>
         canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );

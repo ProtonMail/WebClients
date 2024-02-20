@@ -8,10 +8,9 @@ import {
     toLocalDate,
     toUTCDate,
 } from '../date/timezone';
-import { buildMailTo, canonicalizeEmail, getEmailTo } from '../helpers/email';
+import { buildMailTo, getEmailTo } from '../helpers/email';
 import {
     DateTime,
-    Participant,
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -22,7 +21,6 @@ import {
     VcalOrganizerProperty,
     VcalVeventComponent,
 } from '../interfaces/calendar';
-import { getAttendeeEmail } from './attendees';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 
 export const dateToProperty = ({
@@ -215,7 +213,7 @@ export const getHasModifiedDateTimes = (newVevent: VcalVeventComponent, oldVeven
     return !isStartPreserved || !isEndPreserved;
 };
 
-const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
+export const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
     if (newAttendee.value !== oldAttendee.value) {
         return false;
     }
@@ -226,43 +224,4 @@ const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee:
         return false;
     }
     return true;
-};
-
-export const getHasModifiedAttendees = ({
-    veventIcs,
-    veventApi,
-    attendeeIcs,
-    attendeeApi,
-}: {
-    veventIcs: VcalVeventComponent;
-    veventApi: VcalVeventComponent;
-    attendeeIcs: Participant;
-    attendeeApi: Participant;
-}) => {
-    const { attendee: attendeesIcs } = veventIcs;
-    const { attendee: attendeesApi } = veventApi;
-    if (!attendeesIcs) {
-        return !!attendeesApi;
-    }
-    if (!attendeesApi || attendeesApi.length !== attendeesIcs.length) {
-        return true;
-    }
-    // We check if attendees other than the invitation attendees have been modified
-    const otherAttendeesIcs = attendeesIcs.filter(
-        (attendee) => canonicalizeEmail(getAttendeeEmail(attendee)) !== canonicalizeEmail(attendeeIcs.emailAddress)
-    );
-    const otherAttendeesApi = attendeesApi.filter(
-        (attendee) => canonicalizeEmail(getAttendeeEmail(attendee)) !== canonicalizeEmail(attendeeApi.emailAddress)
-    );
-    return otherAttendeesIcs.reduce((acc, attendee) => {
-        if (acc === true) {
-            return true;
-        }
-        const index = otherAttendeesApi.findIndex((oldAttendee) => getIsEquivalentAttendee(oldAttendee, attendee));
-        if (index === -1) {
-            return true;
-        }
-        otherAttendeesApi.splice(index, 1);
-        return false;
-    }, false);
 };

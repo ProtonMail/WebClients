@@ -51,7 +51,7 @@ import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
 import { getIsRruleEqual } from '../recurrence/rruleEqual';
 import { fromTriggerString, serialize } from '../vcal';
-import { getAllDayInfo, getHasModifiedDateTimes, propertyToUTCDate } from '../vcalConverter';
+import { getAllDayInfo, getHasModifiedDateTimes, getIsEquivalentAttendee, propertyToUTCDate } from '../vcalConverter';
 import {
     getAttendeePartstat,
     getAttendeeRole,
@@ -786,4 +786,43 @@ export const getMustResetPartstat = (singleEdits: CalendarEvent[], token?: strin
         }
         return true;
     });
+};
+
+export const getHasModifiedAttendees = ({
+    veventIcs,
+    veventApi,
+    attendeeIcs,
+    attendeeApi,
+}: {
+    veventIcs: VcalVeventComponent;
+    veventApi: VcalVeventComponent;
+    attendeeIcs: Participant;
+    attendeeApi: Participant;
+}) => {
+    const { attendee: attendeesIcs } = veventIcs;
+    const { attendee: attendeesApi } = veventApi;
+    if (!attendeesIcs) {
+        return !!attendeesApi;
+    }
+    if (!attendeesApi || attendeesApi.length !== attendeesIcs.length) {
+        return true;
+    }
+    // We check if attendees other than the invitation attendees have been modified
+    const otherAttendeesIcs = attendeesIcs.filter(
+        (attendee) => canonicalizeEmail(getAttendeeEmail(attendee)) !== canonicalizeEmail(attendeeIcs.emailAddress)
+    );
+    const otherAttendeesApi = attendeesApi.filter(
+        (attendee) => canonicalizeEmail(getAttendeeEmail(attendee)) !== canonicalizeEmail(attendeeApi.emailAddress)
+    );
+    return otherAttendeesIcs.reduce((acc, attendee) => {
+        if (acc === true) {
+            return true;
+        }
+        const index = otherAttendeesApi.findIndex((oldAttendee) => getIsEquivalentAttendee(oldAttendee, attendee));
+        if (index === -1) {
+            return true;
+        }
+        otherAttendeesApi.splice(index, 1);
+        return false;
+    }, false);
 };

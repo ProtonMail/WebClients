@@ -38,13 +38,13 @@ import {
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
     findAttendee,
+    getHasModifiedAttendees,
     getInvitedVeventWithAlarms,
     getResetPartstatActions,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import {
-    getHasModifiedAttendees,
     getHasModifiedDateTimes,
     getHasModifiedDtstamp,
     propertyToUTCDate,
