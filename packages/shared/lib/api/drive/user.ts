@@ -1,5 +1,6 @@
 import { UserSettings } from '../../interfaces/drive/userSettings';
 
+/* User settings*/
 export const queryUserSettings = () => {
     return {
         method: 'get',
@@ -12,5 +13,13 @@ export const queryUpdateUserSettings = (data: Partial<UserSettings>) => {
         method: 'put',
         url: `drive/me/settings`,
         data,
+    };
+};
+
+/* User active ping */
+export const queryUserActivePing = () => {
+    return {
+        method: 'get',
+        url: `drive/me/active`,
     };
 };
