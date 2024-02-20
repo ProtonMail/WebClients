@@ -126,7 +126,7 @@ function WelcomeActionsSpotlight({
     ) : (
         <div>
             <h6 className="text-semibold">{c('Title').t`Your welcome actions`}</h6>
-            <div className="mb-4 color-weak">
+            <div className="mb-4 pr-4 color-weak">
                 {c('Info').t`Get to know ${DRIVE_APP_NAME} and earn your 3 GB storage bonus! Take action today.`}
             </div>
             <WelcomeActions
