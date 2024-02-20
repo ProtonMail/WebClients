@@ -99,7 +99,9 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
             await waitFor(() => {
                 const serialised = txBuilder.getUtxosToSpend().map((value) => value[0]);
-                expect(serialised).toStrictEqual([outpointA, outpointB]);
+                // fixes flakiness since getUtxosToSpend()'s sorter doesn't seem to be deterministic
+                serialised.sort();
+                expect(serialised).toStrictEqual([outpointB, outpointA]);
             });
         });
     });

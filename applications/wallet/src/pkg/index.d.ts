@@ -4,14 +4,56 @@
 */
 export function setPanicHook(): void;
 /**
-* @returns {Promise<WasmNetwork>}
-*/
-export function getNetwork(): Promise<WasmNetwork>;
-/**
 * @param {string} word_start
 * @returns {(string)[]}
 */
 export function getWordsAutocomplete(word_start: string): (string)[];
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmError {
+  AccountNotFound = 0,
+  ApiError = 1,
+  BdkError = 2,
+  Bip32Error = 3,
+  Bip39Error = 4,
+  CannotBroadcastTransaction = 5,
+  CannotComputeTxFees = 6,
+  CannotGetFeeEstimation = 7,
+  CannotCreateAddressFromScript = 8,
+  CannotGetAddressFromScript = 9,
+  CannotSignPsbt = 10,
+  DerivationError = 11,
+  DescriptorError = 12,
+  InvalidAccountIndex = 13,
+  InvalidAddress = 14,
+  InvalidData = 15,
+  InvalidDescriptor = 16,
+  InvalidDerivationPath = 17,
+  InvalidNetwork = 18,
+  InvalidTxId = 19,
+  InvalidScriptType = 20,
+  InvalidSecretKey = 21,
+  InvalidMnemonic = 22,
+  LoadError = 23,
+  OutpointParsingError = 24,
+  SyncError = 25,
+  TransactionNotFound = 26,
+}
+/**
+*/
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
 /**
 */
 export enum WasmNetwork {
@@ -34,59 +76,11 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmError {
-  AccountNotFound = 0,
-  BdkError = 1,
-  Bip32Error = 2,
-  Bip39Error = 3,
-  CannotBroadcastTransaction = 4,
-  CannotComputeTxFees = 5,
-  CannotGetFeeEstimation = 6,
-  CannotGetLocalStorage = 7,
-  CannotCreateAddressFromScript = 8,
-  CannotFindPersistedData = 9,
-  CannotGetAddressFromScript = 10,
-  CannotSignPsbt = 11,
-  DerivationError = 12,
-  DescriptorError = 13,
-  InvalidAccountIndex = 14,
-  InvalidAddress = 15,
-  InvalidData = 16,
-  InvalidDescriptor = 17,
-  InvalidDerivationPath = 18,
-  InvalidNetwork = 19,
-  InvalidTxId = 20,
-  InvalidScriptType = 21,
-  InvalidSecretKey = 22,
-  InvalidMnemonic = 23,
-  LoadError = 24,
-  NoWindowContext = 25,
-  OutpointParsingError = 26,
-  SyncError = 27,
-  TransactionNotFound = 28,
-}
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
-}
-/**
-*/
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 /**
 */
@@ -99,6 +93,20 @@ export enum WasmKeychainKind {
 * Internal keychain, used for deriving change addresses.
 */
   Internal = 1,
+}
+/**
+*/
+export enum WasmBitcoinUnit {
+  BTC = 0,
+  MBTC = 1,
+  SAT = 2,
+}
+/**
+*/
+export enum WasmFiatCurrency {
+  USD = 0,
+  EUR = 1,
+  CHF = 2,
 }
 /**
 */
@@ -124,18 +132,11 @@ export enum WasmLanguage {
 }
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
-export enum WasmBitcoinUnit {
-  BTC = 0,
-  MBTC = 1,
-  SAT = 2,
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
 }
 
 interface IWasmBlockTime {
@@ -217,11 +218,6 @@ export class DetailledWasmError {
 }
 /**
 */
-export class SerialisableDatabase {
-  free(): void;
-}
-/**
-*/
 export class WasmAccount {
   free(): void;
 /**
@@ -229,36 +225,36 @@ export class WasmAccount {
 * @param {bigint | undefined} [amount]
 * @param {string | undefined} [label]
 * @param {string | undefined} [message]
-* @returns {Promise<WasmPaymentLink>}
+* @returns {WasmPaymentLink}
 */
-  getBitcoinUri(index?: number, amount?: bigint, label?: string, message?: string): Promise<WasmPaymentLink>;
+  getBitcoinUri(index?: number, amount?: bigint, label?: string, message?: string): WasmPaymentLink;
 /**
 * @param {WasmAddress} address
-* @returns {Promise<boolean>}
+* @returns {boolean}
 */
-  owns(address: WasmAddress): Promise<boolean>;
+  owns(address: WasmAddress): boolean;
 /**
-* @returns {Promise<WasmBalance>}
+* @returns {WasmBalance}
 */
-  getBalance(): Promise<WasmBalance>;
+  getBalance(): WasmBalance;
 /**
-* @returns {Promise<string>}
+* @returns {string}
 */
-  getDerivationPath(): Promise<string>;
+  getDerivationPath(): string;
 /**
-* @returns {Promise<IWasmUtxoArray>}
+* @returns {IWasmUtxoArray}
 */
-  getUtxos(): Promise<IWasmUtxoArray>;
+  getUtxos(): IWasmUtxoArray;
 /**
 * @param {WasmPagination | undefined} [pagination]
-* @returns {Promise<IWasmSimpleTransactionArray>}
+* @returns {IWasmSimpleTransactionArray}
 */
-  getTransactions(pagination?: WasmPagination): Promise<IWasmSimpleTransactionArray>;
+  getTransactions(pagination?: WasmPagination): IWasmSimpleTransactionArray;
 /**
 * @param {string} txid
-* @returns {Promise<WasmTransactionDetails>}
+* @returns {WasmTransactionDetails}
 */
-  getTransaction(txid: string): Promise<WasmTransactionDetails>;
+  getTransaction(txid: string): WasmTransactionDetails;
 }
 /**
 */
@@ -318,6 +314,62 @@ export class WasmAddressInfo {
 }
 /**
 */
+export class WasmApiWallet {
+  free(): void;
+/**
+*/
+  HasPassphrase: number;
+/**
+*/
+  ID: string;
+/**
+*/
+  IsImported: number;
+/**
+*/
+  Mnemonic?: string;
+/**
+*/
+  Name: string;
+/**
+*/
+  Priority: number;
+/**
+*/
+  PublicKey?: string;
+/**
+*/
+  Status: number;
+/**
+*/
+  Type: number;
+}
+/**
+*/
+export class WasmAuthData {
+  free(): void;
+/**
+* @param {string} uid
+* @param {string} access
+* @param {string} refresh
+* @param {(string)[]} scopes
+*/
+  constructor(uid: string, access: string, refresh: string, scopes: (string)[]);
+/**
+*/
+  access: string;
+/**
+*/
+  refresh: string;
+/**
+*/
+  scopes: (string)[];
+/**
+*/
+  uid: string;
+}
+/**
+*/
 export class WasmBalance {
   free(): void;
 /**
@@ -364,18 +416,6 @@ export class WasmBlockchain {
 */
   fullSync(account: WasmAccount): Promise<void>;
 /**
-* Start a syncing loop
-* @param {WasmAccount} account
-* @returns {Promise<void>}
-*/
-  startSyncLoop(account: WasmAccount): Promise<void>;
-/**
-* Stop the syncing loop
-* @param {WasmAccount} account
-* @returns {Promise<void>}
-*/
-  stopSyncLoop(account: WasmAccount): Promise<void>;
-/**
 * Returns fee estimations in a Map
 * @returns {Promise<Map<string, number>>}
 */
@@ -386,6 +426,62 @@ export class WasmBlockchain {
 * @returns {Promise<string>}
 */
   broadcastPsbt(psbt: WasmPartiallySignedTransaction): Promise<string>;
+}
+/**
+*/
+export class WasmCreateWalletAccountRequestBody {
+  free(): void;
+/**
+*/
+  DerivationPath: string;
+/**
+*/
+  Label: string;
+/**
+*/
+  ScriptType: number;
+}
+/**
+*/
+export class WasmCreateWalletRequestBody {
+  free(): void;
+/**
+*/
+  HasPassphrase: number;
+/**
+*/
+  IsImported: number;
+/**
+*/
+  Mnemonic?: string;
+/**
+*/
+  Name: string;
+/**
+*/
+  PublicKey?: string;
+/**
+*/
+  Type: number;
+/**
+*/
+  UserKeyId: string;
+/**
+*/
+  WalletKey: string;
+}
+/**
+*/
+export class WasmCreateWalletTransactionRequestBody {
+  free(): void;
+/**
+* encrypted Base64 encoded binary data
+*/
+  Label: string;
+/**
+* encrypted Base64 encoded binary data
+*/
+  TransactionID: string;
 }
 /**
 */
@@ -455,6 +551,15 @@ export class WasmMnemonic {
 }
 /**
 */
+export class WasmNetworkClient {
+  free(): void;
+/**
+* @returns {Promise<number>}
+*/
+  getNetwork(): Promise<number>;
+}
+/**
+*/
 export class WasmOnchainPaymentLink {
   free(): void;
 /**
@@ -507,9 +612,9 @@ export class WasmPartiallySignedTransaction {
 /**
 * @param {WasmAccount} wasm_account
 * @param {WasmNetwork} network
-* @returns {Promise<WasmPartiallySignedTransaction>}
+* @returns {WasmPartiallySignedTransaction}
 */
-  sign(wasm_account: WasmAccount, network: WasmNetwork): Promise<WasmPartiallySignedTransaction>;
+  sign(wasm_account: WasmAccount, network: WasmNetwork): WasmPartiallySignedTransaction;
 /**
 */
   recipients: (WasmPsbtRecipient)[];
@@ -543,6 +648,34 @@ export class WasmPaymentLink {
 * @returns {WasmOnchainPaymentLink}
 */
   assumeOnchain(): WasmOnchainPaymentLink;
+}
+/**
+*/
+export class WasmProtonWalletApiClient {
+  free(): void;
+/**
+* @param {WasmAuthData | undefined} [auth]
+*/
+  constructor(auth?: WasmAuthData);
+/**
+* @returns {Promise<void>}
+*/
+  login(): Promise<void>;
+/**
+* Returns a client to use settings API
+* @returns {WasmSettingsClient}
+*/
+  settings(): WasmSettingsClient;
+/**
+* Returns a client to use network API
+* @returns {WasmNetworkClient}
+*/
+  network(): WasmNetworkClient;
+/**
+* Returns a client to use wallet API
+* @returns {WasmWalletClient}
+*/
+  wallet(): WasmWalletClient;
 }
 /**
 */
@@ -592,6 +725,35 @@ export class WasmSequence {
 /**
 */
   0: number;
+}
+/**
+*/
+export class WasmSettingsClient {
+  free(): void;
+/**
+* @returns {Promise<WasmUserSettings>}
+*/
+  getUserSettings(): Promise<WasmUserSettings>;
+/**
+* @param {WasmBitcoinUnit} symbol
+* @returns {Promise<WasmUserSettings>}
+*/
+  setBitcoinUnit(symbol: WasmBitcoinUnit): Promise<WasmUserSettings>;
+/**
+* @param {WasmFiatCurrency} symbol
+* @returns {Promise<WasmUserSettings>}
+*/
+  setFiatCurrency(symbol: WasmFiatCurrency): Promise<WasmUserSettings>;
+/**
+* @param {bigint} amount
+* @returns {Promise<WasmUserSettings>}
+*/
+  setTwoFaThreshold(amount: bigint): Promise<WasmUserSettings>;
+/**
+* @param {boolean} hide_empty_used_addresses
+* @returns {Promise<WasmUserSettings>}
+*/
+  setHideEmptyUsedAddresses(hide_empty_used_addresses: boolean): Promise<WasmUserSettings>;
 }
 /**
 */
@@ -820,6 +982,26 @@ export class WasmTxOut {
 }
 /**
 */
+export class WasmUserSettings {
+  free(): void;
+/**
+*/
+  BitcoinUnit: WasmBitcoinUnit;
+/**
+*/
+  FiatCurrency: WasmFiatCurrency;
+/**
+*/
+  HideEmptyUsedAddresses: number;
+/**
+*/
+  ShowWalletRecovery: number;
+/**
+*/
+  TwoFactorAmountThreshold?: bigint;
+}
+/**
+*/
 export class WasmUtxo {
   free(): void;
 /**
@@ -879,4 +1061,166 @@ export class WasmWallet {
 * @returns {string}
 */
   getFingerprint(): string;
+}
+/**
+*/
+export class WasmWalletAccount {
+  free(): void;
+/**
+*/
+  DerivationPath: string;
+/**
+*/
+  ID: string;
+/**
+*/
+  Label: string;
+/**
+*/
+  ScriptType: number;
+}
+/**
+*/
+export class WasmWalletAccountArray {
+  free(): void;
+/**
+*/
+  0: (WasmWalletAccount)[];
+}
+/**
+*/
+export class WasmWalletClient {
+  free(): void;
+/**
+* @returns {Promise<WasmWalletDataArray>}
+*/
+  getWallets(): Promise<WasmWalletDataArray>;
+/**
+* @param {WasmCreateWalletRequestBody} payload
+* @returns {Promise<WasmWalletData>}
+*/
+  createWallet(payload: WasmCreateWalletRequestBody): Promise<WasmWalletData>;
+/**
+* @param {string} wallet_id
+* @returns {Promise<WasmWalletAccountArray>}
+*/
+  getWalletAccounts(wallet_id: string): Promise<WasmWalletAccountArray>;
+/**
+* @param {string} wallet_id
+* @param {WasmCreateWalletAccountRequestBody} payload
+* @returns {Promise<WasmWalletAccount>}
+*/
+  createWalletAccount(wallet_id: string, payload: WasmCreateWalletAccountRequestBody): Promise<WasmWalletAccount>;
+/**
+* @param {string} wallet_id
+* @param {string} wallet_account_id
+* @param {string} label
+* @returns {Promise<WasmWalletAccount>}
+*/
+  updateWalletAccountLabel(wallet_id: string, wallet_account_id: string, label: string): Promise<WasmWalletAccount>;
+/**
+* @param {string} wallet_id
+* @param {string} wallet_account_id
+* @returns {Promise<void>}
+*/
+  deleteWalletAccount(wallet_id: string, wallet_account_id: string): Promise<void>;
+/**
+* @param {string} wallet_id
+* @returns {Promise<WasmWalletTransactionArray>}
+*/
+  getWalletTransactions(wallet_id: string): Promise<WasmWalletTransactionArray>;
+/**
+* @param {string} wallet_id
+* @param {WasmCreateWalletTransactionRequestBody} payload
+* @returns {Promise<WasmWalletTransaction>}
+*/
+  createWalletTransaction(wallet_id: string, payload: WasmCreateWalletTransactionRequestBody): Promise<WasmWalletTransaction>;
+/**
+* @param {string} wallet_id
+* @param {string} wallet_transaction_id
+* @param {string} label
+* @returns {Promise<WasmWalletTransaction>}
+*/
+  updateWalletTransactionLabel(wallet_id: string, wallet_transaction_id: string, label: string): Promise<WasmWalletTransaction>;
+/**
+* @param {string} wallet_id
+* @param {string} wallet_transaction_id
+* @returns {Promise<void>}
+*/
+  deleteWalletTransaction(wallet_id: string, wallet_transaction_id: string): Promise<void>;
+}
+/**
+*/
+export class WasmWalletData {
+  free(): void;
+/**
+*/
+  Wallet: WasmApiWallet;
+/**
+*/
+  WalletKey: WasmWalletKey;
+/**
+*/
+  WalletSettings: WasmWalletSettings;
+}
+/**
+*/
+export class WasmWalletDataArray {
+  free(): void;
+/**
+*/
+  0: (WasmWalletData)[];
+}
+/**
+*/
+export class WasmWalletKey {
+  free(): void;
+/**
+*/
+  UserKeyID: string;
+/**
+*/
+  WalletKey: string;
+}
+/**
+*/
+export class WasmWalletSettings {
+  free(): void;
+/**
+*/
+  HideAccounts: number;
+/**
+*/
+  InvoiceDefaultDescription?: string;
+/**
+*/
+  InvoiceExpirationTime: bigint;
+/**
+*/
+  MaxChannelOpeningFee: bigint;
+}
+/**
+*/
+export class WasmWalletTransaction {
+  free(): void;
+/**
+*/
+  ID: string;
+/**
+*/
+  Label: string;
+/**
+*/
+  TransactionID: string;
+/**
+*/
+  WalletID: string;
+}
+/**
+*/
+export class WasmWalletTransactionArray {
+  free(): void;
+/**
+*/
+  0: (WasmWalletTransaction)[];
 }

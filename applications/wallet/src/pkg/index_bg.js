@@ -33,7 +33,11 @@ function addHeapObject(obj) {
     return idx;
 }
 
-let WASM_VECTOR_LEN = 0;
+const lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;
+
+let cachedTextDecoder = new lTextDecoder('utf-8', { ignoreBOM: true, fatal: true });
+
+cachedTextDecoder.decode();
 
 let cachedUint8Memory0 = null;
 
@@ -43,6 +47,35 @@ function getUint8Memory0() {
     }
     return cachedUint8Memory0;
 }
+
+function getStringFromWasm0(ptr, len) {
+    ptr = ptr >>> 0;
+    return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
+}
+
+function isLikeNone(x) {
+    return x === undefined || x === null;
+}
+
+let cachedFloat64Memory0 = null;
+
+function getFloat64Memory0() {
+    if (cachedFloat64Memory0 === null || cachedFloat64Memory0.byteLength === 0) {
+        cachedFloat64Memory0 = new Float64Array(wasm.memory.buffer);
+    }
+    return cachedFloat64Memory0;
+}
+
+let cachedInt32Memory0 = null;
+
+function getInt32Memory0() {
+    if (cachedInt32Memory0 === null || cachedInt32Memory0.byteLength === 0) {
+        cachedInt32Memory0 = new Int32Array(wasm.memory.buffer);
+    }
+    return cachedInt32Memory0;
+}
+
+let WASM_VECTOR_LEN = 0;
 
 const lTextEncoder = typeof TextEncoder === 'undefined' ? (0, module.require)('util').TextEncoder : TextEncoder;
 
@@ -97,39 +130,6 @@ function passStringToWasm0(arg, malloc, realloc) {
 
     WASM_VECTOR_LEN = offset;
     return ptr;
-}
-
-function isLikeNone(x) {
-    return x === undefined || x === null;
-}
-
-let cachedInt32Memory0 = null;
-
-function getInt32Memory0() {
-    if (cachedInt32Memory0 === null || cachedInt32Memory0.byteLength === 0) {
-        cachedInt32Memory0 = new Int32Array(wasm.memory.buffer);
-    }
-    return cachedInt32Memory0;
-}
-
-const lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;
-
-let cachedTextDecoder = new lTextDecoder('utf-8', { ignoreBOM: true, fatal: true });
-
-cachedTextDecoder.decode();
-
-function getStringFromWasm0(ptr, len) {
-    ptr = ptr >>> 0;
-    return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
-}
-
-let cachedFloat64Memory0 = null;
-
-function getFloat64Memory0() {
-    if (cachedFloat64Memory0 === null || cachedFloat64Memory0.byteLength === 0) {
-        cachedFloat64Memory0 = new Float64Array(wasm.memory.buffer);
-    }
-    return cachedFloat64Memory0;
 }
 
 function debugString(val) {
@@ -234,6 +234,13 @@ function getBigInt64Memory0() {
     return cachedBigInt64Memory0;
 }
 
+function _assertClass(instance, klass) {
+    if (!(instance instanceof klass)) {
+        throw new Error(`expected instance of ${klass.name}`);
+    }
+    return instance.ptr;
+}
+
 let cachedUint32Memory0 = null;
 
 function getUint32Memory0() {
@@ -264,13 +271,6 @@ function passArrayJsValueToWasm0(array, malloc) {
     return ptr;
 }
 
-function _assertClass(instance, klass) {
-    if (!(instance instanceof klass)) {
-        throw new Error(`expected instance of ${klass.name}`);
-    }
-    return instance.ptr;
-}
-
 function getArrayU8FromWasm0(ptr, len) {
     ptr = ptr >>> 0;
     return getUint8Memory0().subarray(ptr / 1, ptr / 1 + len);
@@ -286,14 +286,6 @@ function passArray8ToWasm0(arg, malloc) {
 */
 export function setPanicHook() {
     wasm.setPanicHook();
-}
-
-/**
-* @returns {Promise<WasmNetwork>}
-*/
-export function getNetwork() {
-    const ret = wasm.getNetwork();
-    return takeObject(ret);
 }
 
 /**
@@ -332,10 +324,19 @@ function handleError(f, args) {
         wasm.__wbindgen_exn_store(addHeapObject(e));
     }
 }
-function __wbg_adapter_365(arg0, arg1, arg2, arg3) {
+function __wbg_adapter_492(arg0, arg1, arg2, arg3) {
     wasm.wasm_bindgen__convert__closures__invoke2_mut__hd329ec3002bd13ed(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
 }
 
+/**
+*/
+export const WasmChangeSpendPolicy = Object.freeze({ ChangeAllowed:0,"0":"ChangeAllowed",OnlyChange:1,"1":"OnlyChange",ChangeForbidden:2,"2":"ChangeForbidden", });
+/**
+*/
+export const WasmError = Object.freeze({ AccountNotFound:0,"0":"AccountNotFound",ApiError:1,"1":"ApiError",BdkError:2,"2":"BdkError",Bip32Error:3,"3":"Bip32Error",Bip39Error:4,"4":"Bip39Error",CannotBroadcastTransaction:5,"5":"CannotBroadcastTransaction",CannotComputeTxFees:6,"6":"CannotComputeTxFees",CannotGetFeeEstimation:7,"7":"CannotGetFeeEstimation",CannotCreateAddressFromScript:8,"8":"CannotCreateAddressFromScript",CannotGetAddressFromScript:9,"9":"CannotGetAddressFromScript",CannotSignPsbt:10,"10":"CannotSignPsbt",DerivationError:11,"11":"DerivationError",DescriptorError:12,"12":"DescriptorError",InvalidAccountIndex:13,"13":"InvalidAccountIndex",InvalidAddress:14,"14":"InvalidAddress",InvalidData:15,"15":"InvalidData",InvalidDescriptor:16,"16":"InvalidDescriptor",InvalidDerivationPath:17,"17":"InvalidDerivationPath",InvalidNetwork:18,"18":"InvalidNetwork",InvalidTxId:19,"19":"InvalidTxId",InvalidScriptType:20,"20":"InvalidScriptType",InvalidSecretKey:21,"21":"InvalidSecretKey",InvalidMnemonic:22,"22":"InvalidMnemonic",LoadError:23,"23":"LoadError",OutpointParsingError:24,"24":"OutpointParsingError",SyncError:25,"25":"SyncError",TransactionNotFound:26,"26":"TransactionNotFound", });
+/**
+*/
+export const WasmPaymentLinkKind = Object.freeze({ BitcoinAddress:0,"0":"BitcoinAddress",BitcoinURI:1,"1":"BitcoinURI",LightningURI:2,"2":"LightningURI",UnifiedURI:3,"3":"UnifiedURI", });
 /**
 */
 export const WasmNetwork = Object.freeze({
@@ -357,16 +358,7 @@ Signet:2,"2":"Signet",
 Regtest:3,"3":"Regtest", });
 /**
 */
-export const WasmChangeSpendPolicy = Object.freeze({ ChangeAllowed:0,"0":"ChangeAllowed",OnlyChange:1,"1":"OnlyChange",ChangeForbidden:2,"2":"ChangeForbidden", });
-/**
-*/
-export const WasmError = Object.freeze({ AccountNotFound:0,"0":"AccountNotFound",BdkError:1,"1":"BdkError",Bip32Error:2,"2":"Bip32Error",Bip39Error:3,"3":"Bip39Error",CannotBroadcastTransaction:4,"4":"CannotBroadcastTransaction",CannotComputeTxFees:5,"5":"CannotComputeTxFees",CannotGetFeeEstimation:6,"6":"CannotGetFeeEstimation",CannotGetLocalStorage:7,"7":"CannotGetLocalStorage",CannotCreateAddressFromScript:8,"8":"CannotCreateAddressFromScript",CannotFindPersistedData:9,"9":"CannotFindPersistedData",CannotGetAddressFromScript:10,"10":"CannotGetAddressFromScript",CannotSignPsbt:11,"11":"CannotSignPsbt",DerivationError:12,"12":"DerivationError",DescriptorError:13,"13":"DescriptorError",InvalidAccountIndex:14,"14":"InvalidAccountIndex",InvalidAddress:15,"15":"InvalidAddress",InvalidData:16,"16":"InvalidData",InvalidDescriptor:17,"17":"InvalidDescriptor",InvalidDerivationPath:18,"18":"InvalidDerivationPath",InvalidNetwork:19,"19":"InvalidNetwork",InvalidTxId:20,"20":"InvalidTxId",InvalidScriptType:21,"21":"InvalidScriptType",InvalidSecretKey:22,"22":"InvalidSecretKey",InvalidMnemonic:23,"23":"InvalidMnemonic",LoadError:24,"24":"LoadError",NoWindowContext:25,"25":"NoWindowContext",OutpointParsingError:26,"26":"OutpointParsingError",SyncError:27,"27":"SyncError",TransactionNotFound:28,"28":"TransactionNotFound", });
-/**
-*/
-export const WasmScriptType = Object.freeze({ Legacy:0,"0":"Legacy",NestedSegwit:1,"1":"NestedSegwit",NativeSegwit:2,"2":"NativeSegwit",Taproot:3,"3":"Taproot", });
-/**
-*/
-export const WasmPaymentLinkKind = Object.freeze({ BitcoinAddress:0,"0":"BitcoinAddress",BitcoinURI:1,"1":"BitcoinURI",LightningURI:2,"2":"LightningURI",UnifiedURI:3,"3":"UnifiedURI", });
+export const WasmCoinSelection = Object.freeze({ BranchAndBound:0,"0":"BranchAndBound",LargestFirst:1,"1":"LargestFirst",OldestFirst:2,"2":"OldestFirst",Manual:3,"3":"Manual", });
 /**
 */
 export const WasmKeychainKind = Object.freeze({
@@ -380,16 +372,19 @@ External:0,"0":"External",
 Internal:1,"1":"Internal", });
 /**
 */
+export const WasmBitcoinUnit = Object.freeze({ BTC:0,"0":"BTC",MBTC:1,"1":"MBTC",SAT:2,"2":"SAT", });
+/**
+*/
+export const WasmFiatCurrency = Object.freeze({ USD:0,"0":"USD",EUR:1,"1":"EUR",CHF:2,"2":"CHF", });
+/**
+*/
 export const WasmWordCount = Object.freeze({ Words12:0,"0":"Words12",Words15:1,"1":"Words15",Words18:2,"2":"Words18",Words21:3,"3":"Words21",Words24:4,"4":"Words24", });
 /**
 */
 export const WasmLanguage = Object.freeze({ English:0,"0":"English",SimplifiedChinese:1,"1":"SimplifiedChinese",TraditionalChinese:2,"2":"TraditionalChinese",Czech:3,"3":"Czech",French:4,"4":"French",Italian:5,"5":"Italian",Japanese:6,"6":"Japanese",Korean:7,"7":"Korean",Spanish:8,"8":"Spanish", });
 /**
 */
-export const WasmCoinSelection = Object.freeze({ BranchAndBound:0,"0":"BranchAndBound",LargestFirst:1,"1":"LargestFirst",OldestFirst:2,"2":"OldestFirst",Manual:3,"3":"Manual", });
-/**
-*/
-export const WasmBitcoinUnit = Object.freeze({ BTC:0,"0":"BTC",MBTC:1,"1":"MBTC",SAT:2,"2":"SAT", });
+export const WasmScriptType = Object.freeze({ Legacy:0,"0":"Legacy",NestedSegwit:1,"1":"NestedSegwit",NativeSegwit:2,"2":"NativeSegwit",Taproot:3,"3":"Taproot", });
 /**
 */
 export class DetailledWasmError {
@@ -442,22 +437,6 @@ export class DetailledWasmError {
 }
 /**
 */
-export class SerialisableDatabase {
-
-    __destroy_into_raw() {
-        const ptr = this.__wbg_ptr;
-        this.__wbg_ptr = 0;
-
-        return ptr;
-    }
-
-    free() {
-        const ptr = this.__destroy_into_raw();
-        wasm.__wbg_serialisabledatabase_free(ptr);
-    }
-}
-/**
-*/
 export class WasmAccount {
 
     static __wrap(ptr) {
@@ -484,68 +463,154 @@ export class WasmAccount {
     * @param {bigint | undefined} [amount]
     * @param {string | undefined} [label]
     * @param {string | undefined} [message]
-    * @returns {Promise<WasmPaymentLink>}
+    * @returns {WasmPaymentLink}
     */
     getBitcoinUri(index, amount, label, message) {
-        var ptr0 = isLikeNone(label) ? 0 : passStringToWasm0(label, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        var len0 = WASM_VECTOR_LEN;
-        var ptr1 = isLikeNone(message) ? 0 : passStringToWasm0(message, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        var len1 = WASM_VECTOR_LEN;
-        const ret = wasm.wasmaccount_getBitcoinUri(this.__wbg_ptr, !isLikeNone(index), isLikeNone(index) ? 0 : index, !isLikeNone(amount), isLikeNone(amount) ? BigInt(0) : amount, ptr0, len0, ptr1, len1);
-        return takeObject(ret);
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            var ptr0 = isLikeNone(label) ? 0 : passStringToWasm0(label, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+            var len0 = WASM_VECTOR_LEN;
+            var ptr1 = isLikeNone(message) ? 0 : passStringToWasm0(message, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+            var len1 = WASM_VECTOR_LEN;
+            wasm.wasmaccount_getBitcoinUri(retptr, this.__wbg_ptr, !isLikeNone(index), isLikeNone(index) ? 0 : index, !isLikeNone(amount), isLikeNone(amount) ? BigInt(0) : amount, ptr0, len0, ptr1, len1);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return WasmPaymentLink.__wrap(r0);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
     /**
     * @param {WasmAddress} address
-    * @returns {Promise<boolean>}
+    * @returns {boolean}
     */
     owns(address) {
-        _assertClass(address, WasmAddress);
-        const ret = wasm.wasmaccount_owns(this.__wbg_ptr, address.__wbg_ptr);
-        return takeObject(ret);
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            _assertClass(address, WasmAddress);
+            wasm.wasmaccount_owns(retptr, this.__wbg_ptr, address.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return r0 !== 0;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
     /**
-    * @returns {Promise<WasmBalance>}
+    * @returns {WasmBalance}
     */
     getBalance() {
-        const ret = wasm.wasmaccount_getBalance(this.__wbg_ptr);
-        return takeObject(ret);
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.wasmaccount_getBalance(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return WasmBalance.__wrap(r0);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
     /**
-    * @returns {Promise<string>}
+    * @returns {string}
     */
     getDerivationPath() {
-        const ret = wasm.wasmaccount_getDerivationPath(this.__wbg_ptr);
-        return takeObject(ret);
+        let deferred2_0;
+        let deferred2_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.wasmaccount_getDerivationPath(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            var r3 = getInt32Memory0()[retptr / 4 + 3];
+            var ptr1 = r0;
+            var len1 = r1;
+            if (r3) {
+                ptr1 = 0; len1 = 0;
+                throw takeObject(r2);
+            }
+            deferred2_0 = ptr1;
+            deferred2_1 = len1;
+            return getStringFromWasm0(ptr1, len1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred2_0, deferred2_1, 1);
+        }
     }
     /**
-    * @returns {Promise<IWasmUtxoArray>}
+    * @returns {IWasmUtxoArray}
     */
     getUtxos() {
-        const ret = wasm.wasmaccount_getUtxos(this.__wbg_ptr);
-        return takeObject(ret);
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.wasmaccount_getUtxos(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return takeObject(r0);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
     /**
     * @param {WasmPagination | undefined} [pagination]
-    * @returns {Promise<IWasmSimpleTransactionArray>}
+    * @returns {IWasmSimpleTransactionArray}
     */
     getTransactions(pagination) {
-        let ptr0 = 0;
-        if (!isLikeNone(pagination)) {
-            _assertClass(pagination, WasmPagination);
-            ptr0 = pagination.__destroy_into_raw();
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            let ptr0 = 0;
+            if (!isLikeNone(pagination)) {
+                _assertClass(pagination, WasmPagination);
+                ptr0 = pagination.__destroy_into_raw();
+            }
+            wasm.wasmaccount_getTransactions(retptr, this.__wbg_ptr, ptr0);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return takeObject(r0);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
         }
-        const ret = wasm.wasmaccount_getTransactions(this.__wbg_ptr, ptr0);
-        return takeObject(ret);
     }
     /**
     * @param {string} txid
-    * @returns {Promise<WasmTransactionDetails>}
+    * @returns {WasmTransactionDetails}
     */
     getTransaction(txid) {
-        const ptr0 = passStringToWasm0(txid, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.wasmaccount_getTransaction(this.__wbg_ptr, ptr0, len0);
-        return takeObject(ret);
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            const ptr0 = passStringToWasm0(txid, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+            const len0 = WASM_VECTOR_LEN;
+            wasm.wasmaccount_getTransaction(retptr, this.__wbg_ptr, ptr0, len0);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return WasmTransactionDetails.__wrap(r0);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
 }
 /**
@@ -751,6 +816,343 @@ export class WasmAddressInfo {
 }
 /**
 */
+export class WasmApiWallet {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmApiWallet.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmapiwallet_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get ID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set ID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get Name() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set Name(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {number}
+    */
+    get IsImported() {
+        const ret = wasm.__wbg_get_wasmapiwallet_IsImported(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set IsImported(arg0) {
+        wasm.__wbg_set_wasmapiwallet_IsImported(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get Priority() {
+        const ret = wasm.__wbg_get_wasmapiwallet_Priority(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set Priority(arg0) {
+        wasm.__wbg_set_wasmapiwallet_Priority(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get Type() {
+        const ret = wasm.__wbg_get_wasmapiwallet_Type(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set Type(arg0) {
+        wasm.__wbg_set_wasmapiwallet_Type(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get HasPassphrase() {
+        const ret = wasm.__wbg_get_wasmapiwallet_HasPassphrase(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set HasPassphrase(arg0) {
+        wasm.__wbg_set_wasmapiwallet_HasPassphrase(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get Status() {
+        const ret = wasm.__wbg_get_wasmapiwallet_Status(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set Status(arg0) {
+        wasm.__wbg_set_wasmapiwallet_Status(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {string | undefined}
+    */
+    get Mnemonic() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Mnemonic(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            let v1;
+            if (r0 !== 0) {
+                v1 = getStringFromWasm0(r0, r1).slice();
+                wasm.__wbindgen_free(r0, r1 * 1, 1);
+            }
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {string | undefined} [arg0]
+    */
+    set Mnemonic(arg0) {
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Mnemonic(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string | undefined}
+    */
+    get PublicKey() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_PublicKey(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            let v1;
+            if (r0 !== 0) {
+                v1 = getStringFromWasm0(r0, r1).slice();
+                wasm.__wbindgen_free(r0, r1 * 1, 1);
+            }
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {string | undefined} [arg0]
+    */
+    set PublicKey(arg0) {
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_PublicKey(this.__wbg_ptr, ptr0, len0);
+    }
+}
+/**
+*/
+export class WasmAuthData {
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmauthdata_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get uid() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set uid(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get access() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set access(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get refresh() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmauthdata_refresh(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set refresh(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmauthdata_refresh(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {(string)[]}
+    */
+    get scopes() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmauthdata_scopes(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var v1 = getArrayJsValueFromWasm0(r0, r1).slice();
+            wasm.__wbindgen_free(r0, r1 * 4, 4);
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {(string)[]} arg0
+    */
+    set scopes(arg0) {
+        const ptr0 = passArrayJsValueToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmauthdata_scopes(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @param {string} uid
+    * @param {string} access
+    * @param {string} refresh
+    * @param {(string)[]} scopes
+    */
+    constructor(uid, access, refresh, scopes) {
+        const ptr0 = passStringToWasm0(uid, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passStringToWasm0(access, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ptr2 = passStringToWasm0(refresh, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len2 = WASM_VECTOR_LEN;
+        const ptr3 = passArrayJsValueToWasm0(scopes, wasm.__wbindgen_malloc);
+        const len3 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmauthdata_new(ptr0, len0, ptr1, len1, ptr2, len2, ptr3, len3);
+        this.__wbg_ptr = ret >>> 0;
+        return this;
+    }
+}
+/**
+*/
 export class WasmBalance {
 
     static __wrap(ptr) {
@@ -920,26 +1322,6 @@ export class WasmBlockchain {
         return takeObject(ret);
     }
     /**
-    * Start a syncing loop
-    * @param {WasmAccount} account
-    * @returns {Promise<void>}
-    */
-    startSyncLoop(account) {
-        _assertClass(account, WasmAccount);
-        const ret = wasm.wasmblockchain_startSyncLoop(this.__wbg_ptr, account.__wbg_ptr);
-        return takeObject(ret);
-    }
-    /**
-    * Stop the syncing loop
-    * @param {WasmAccount} account
-    * @returns {Promise<void>}
-    */
-    stopSyncLoop(account) {
-        _assertClass(account, WasmAccount);
-        const ret = wasm.wasmblockchain_stopSyncLoop(this.__wbg_ptr, account.__wbg_ptr);
-        return takeObject(ret);
-    }
-    /**
     * Returns fee estimations in a Map
     * @returns {Promise<Map<string, number>>}
     */
@@ -956,6 +1338,353 @@ export class WasmBlockchain {
         _assertClass(psbt, WasmPartiallySignedTransaction);
         const ret = wasm.wasmblockchain_broadcastPsbt(this.__wbg_ptr, psbt.__wbg_ptr);
         return takeObject(ret);
+    }
+}
+/**
+*/
+export class WasmCreateWalletAccountRequestBody {
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmcreatewalletaccountrequestbody_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get DerivationPath() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set DerivationPath(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get Label() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set Label(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {number}
+    */
+    get ScriptType() {
+        const ret = wasm.__wbg_get_wasmcreatewalletaccountrequestbody_ScriptType(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set ScriptType(arg0) {
+        wasm.__wbg_set_wasmcreatewalletaccountrequestbody_ScriptType(this.__wbg_ptr, arg0);
+    }
+}
+/**
+*/
+export class WasmCreateWalletRequestBody {
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmcreatewalletrequestbody_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get Name() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set Name(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {number}
+    */
+    get IsImported() {
+        const ret = wasm.__wbg_get_wasmcreatewalletrequestbody_IsImported(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set IsImported(arg0) {
+        wasm.__wbg_set_wasmcreatewalletrequestbody_IsImported(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get Type() {
+        const ret = wasm.__wbg_get_wasmcreatewalletrequestbody_Type(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set Type(arg0) {
+        wasm.__wbg_set_wasmcreatewalletrequestbody_Type(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get HasPassphrase() {
+        const ret = wasm.__wbg_get_wasmcreatewalletrequestbody_HasPassphrase(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set HasPassphrase(arg0) {
+        wasm.__wbg_set_wasmcreatewalletrequestbody_HasPassphrase(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {string}
+    */
+    get UserKeyId() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set UserKeyId(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get WalletKey() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmauthdata_refresh(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set WalletKey(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmauthdata_refresh(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string | undefined}
+    */
+    get Mnemonic() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_PublicKey(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            let v1;
+            if (r0 !== 0) {
+                v1 = getStringFromWasm0(r0, r1).slice();
+                wasm.__wbindgen_free(r0, r1 * 1, 1);
+            }
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {string | undefined} [arg0]
+    */
+    set Mnemonic(arg0) {
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_PublicKey(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string | undefined}
+    */
+    get PublicKey() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmcreatewalletrequestbody_PublicKey(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            let v1;
+            if (r0 !== 0) {
+                v1 = getStringFromWasm0(r0, r1).slice();
+                wasm.__wbindgen_free(r0, r1 * 1, 1);
+            }
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {string | undefined} [arg0]
+    */
+    set PublicKey(arg0) {
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmcreatewalletrequestbody_PublicKey(this.__wbg_ptr, ptr0, len0);
+    }
+}
+/**
+*/
+export class WasmCreateWalletTransactionRequestBody {
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmcreatewallettransactionrequestbody_free(ptr);
+    }
+    /**
+    * encrypted Base64 encoded binary data
+    * @returns {string}
+    */
+    get Label() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * encrypted Base64 encoded binary data
+    * @param {string} arg0
+    */
+    set Label(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * encrypted Base64 encoded binary data
+    * @returns {string}
+    */
+    get TransactionID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * encrypted Base64 encoded binary data
+    * @param {string} arg0
+    */
+    set TransactionID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
     }
 }
 /**
@@ -1176,6 +1905,37 @@ export class WasmMnemonic {
 }
 /**
 */
+export class WasmNetworkClient {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmNetworkClient.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmnetworkclient_free(ptr);
+    }
+    /**
+    * @returns {Promise<number>}
+    */
+    getNetwork() {
+        const ret = wasm.wasmnetworkclient_getNetwork(this.__wbg_ptr);
+        return takeObject(ret);
+    }
+}
+/**
+*/
 export class WasmOnchainPaymentLink {
 
     static __wrap(ptr) {
@@ -1331,7 +2091,7 @@ export class WasmOutPoint {
         let deferred1_1;
         try {
             const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-            wasm.__wbg_get_wasmoutpoint_0(retptr, this.__wbg_ptr);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
             var r0 = getInt32Memory0()[retptr / 4 + 0];
             var r1 = getInt32Memory0()[retptr / 4 + 1];
             deferred1_0 = r0;
@@ -1348,7 +2108,7 @@ export class WasmOutPoint {
     set 0(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmoutpoint_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
     }
     /**
     * @param {IWasmOutpoint} raw_ts
@@ -1461,24 +2221,35 @@ export class WasmPartiallySignedTransaction {
     * @returns {bigint}
     */
     get total_fees() {
-        const ret = wasm.__wbg_get_wasmblocktime_timestamp(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmpartiallysignedtransaction_total_fees(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
     * @param {bigint} arg0
     */
     set total_fees(arg0) {
-        wasm.__wbg_set_wasmblocktime_timestamp(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmpartiallysignedtransaction_total_fees(this.__wbg_ptr, arg0);
     }
     /**
     * @param {WasmAccount} wasm_account
     * @param {WasmNetwork} network
-    * @returns {Promise<WasmPartiallySignedTransaction>}
+    * @returns {WasmPartiallySignedTransaction}
     */
     sign(wasm_account, network) {
-        _assertClass(wasm_account, WasmAccount);
-        const ret = wasm.wasmpartiallysignedtransaction_sign(this.__wbg_ptr, wasm_account.__wbg_ptr, network);
-        return takeObject(ret);
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            _assertClass(wasm_account, WasmAccount);
+            wasm.wasmpartiallysignedtransaction_sign(retptr, this.__wbg_ptr, wasm_account.__wbg_ptr, network);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            return WasmPartiallySignedTransaction.__wrap(r0);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
 }
 /**
@@ -1581,6 +2352,77 @@ export class WasmPaymentLink {
 }
 /**
 */
+export class WasmProtonWalletApiClient {
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmprotonwalletapiclient_free(ptr);
+    }
+    /**
+    * @param {WasmAuthData | undefined} [auth]
+    */
+    constructor(auth) {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            let ptr0 = 0;
+            if (!isLikeNone(auth)) {
+                _assertClass(auth, WasmAuthData);
+                ptr0 = auth.__destroy_into_raw();
+            }
+            wasm.wasmprotonwalletapiclient_new(retptr, ptr0);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            this.__wbg_ptr = r0 >>> 0;
+            return this;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @returns {Promise<void>}
+    */
+    login() {
+        const ret = wasm.wasmprotonwalletapiclient_login(this.__wbg_ptr);
+        return takeObject(ret);
+    }
+    /**
+    * Returns a client to use settings API
+    * @returns {WasmSettingsClient}
+    */
+    settings() {
+        const ret = wasm.wasmprotonwalletapiclient_settings(this.__wbg_ptr);
+        return WasmSettingsClient.__wrap(ret);
+    }
+    /**
+    * Returns a client to use network API
+    * @returns {WasmNetworkClient}
+    */
+    network() {
+        const ret = wasm.wasmprotonwalletapiclient_network(this.__wbg_ptr);
+        return WasmNetworkClient.__wrap(ret);
+    }
+    /**
+    * Returns a client to use wallet API
+    * @returns {WasmWalletClient}
+    */
+    wallet() {
+        const ret = wasm.wasmprotonwalletapiclient_wallet(this.__wbg_ptr);
+        return WasmWalletClient.__wrap(ret);
+    }
+}
+/**
+*/
 export class WasmPsbtRecipient {
 
     static __wrap(ptr) {
@@ -1640,14 +2482,14 @@ export class WasmPsbtRecipient {
     * @returns {bigint}
     */
     get 1() {
-        const ret = wasm.__wbg_get_wasmblocktime_timestamp(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmpartiallysignedtransaction_total_fees(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
     * @param {bigint} arg0
     */
     set 1(arg0) {
-        wasm.__wbg_set_wasmblocktime_timestamp(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmpartiallysignedtransaction_total_fees(this.__wbg_ptr, arg0);
     }
 }
 /**
@@ -1681,7 +2523,7 @@ export class WasmRecipient {
         let deferred1_1;
         try {
             const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-            wasm.__wbg_get_wasmrecipient_0(retptr, this.__wbg_ptr);
+            wasm.__wbg_get_wasmpsbtrecipient_0(retptr, this.__wbg_ptr);
             var r0 = getInt32Memory0()[retptr / 4 + 0];
             var r1 = getInt32Memory0()[retptr / 4 + 1];
             deferred1_0 = r0;
@@ -1698,7 +2540,7 @@ export class WasmRecipient {
     set 0(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmrecipient_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmpsbtrecipient_0(this.__wbg_ptr, ptr0, len0);
     }
     /**
     * @returns {string}
@@ -1799,7 +2641,7 @@ export class WasmScript {
     set 0(arg0) {
         const ptr0 = passArray8ToWasm0(arg0, wasm.__wbindgen_malloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmoutpoint_0(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
     }
     /**
     * @param {WasmNetwork} network
@@ -1848,14 +2690,77 @@ export class WasmSequence {
     * @returns {number}
     */
     get 0() {
-        const ret = wasm.__wbg_get_wasmsequence_0(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmaccountconfig_account_index(this.__wbg_ptr);
         return ret >>> 0;
     }
     /**
     * @param {number} arg0
     */
     set 0(arg0) {
-        wasm.__wbg_set_wasmsequence_0(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmaccountconfig_account_index(this.__wbg_ptr, arg0);
+    }
+}
+/**
+*/
+export class WasmSettingsClient {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmSettingsClient.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmsettingsclient_free(ptr);
+    }
+    /**
+    * @returns {Promise<WasmUserSettings>}
+    */
+    getUserSettings() {
+        const ret = wasm.wasmsettingsclient_getUserSettings(this.__wbg_ptr);
+        return takeObject(ret);
+    }
+    /**
+    * @param {WasmBitcoinUnit} symbol
+    * @returns {Promise<WasmUserSettings>}
+    */
+    setBitcoinUnit(symbol) {
+        const ret = wasm.wasmsettingsclient_setBitcoinUnit(this.__wbg_ptr, symbol);
+        return takeObject(ret);
+    }
+    /**
+    * @param {WasmFiatCurrency} symbol
+    * @returns {Promise<WasmUserSettings>}
+    */
+    setFiatCurrency(symbol) {
+        const ret = wasm.wasmsettingsclient_setFiatCurrency(this.__wbg_ptr, symbol);
+        return takeObject(ret);
+    }
+    /**
+    * @param {bigint} amount
+    * @returns {Promise<WasmUserSettings>}
+    */
+    setTwoFaThreshold(amount) {
+        const ret = wasm.wasmsettingsclient_setTwoFaThreshold(this.__wbg_ptr, amount);
+        return takeObject(ret);
+    }
+    /**
+    * @param {boolean} hide_empty_used_addresses
+    * @returns {Promise<WasmUserSettings>}
+    */
+    setHideEmptyUsedAddresses(hide_empty_used_addresses) {
+        const ret = wasm.wasmsettingsclient_setHideEmptyUsedAddresses(this.__wbg_ptr, hide_empty_used_addresses);
+        return takeObject(ret);
     }
 }
 /**
@@ -2612,6 +3517,102 @@ export class WasmTxOut {
 }
 /**
 */
+export class WasmUserSettings {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmUserSettings.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmusersettings_free(ptr);
+    }
+    /**
+    * @returns {WasmBitcoinUnit}
+    */
+    get BitcoinUnit() {
+        const ret = wasm.__wbg_get_wasmusersettings_BitcoinUnit(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {WasmBitcoinUnit} arg0
+    */
+    set BitcoinUnit(arg0) {
+        wasm.__wbg_set_wasmusersettings_BitcoinUnit(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {WasmFiatCurrency}
+    */
+    get FiatCurrency() {
+        const ret = wasm.__wbg_get_wasmusersettings_FiatCurrency(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {WasmFiatCurrency} arg0
+    */
+    set FiatCurrency(arg0) {
+        wasm.__wbg_set_wasmusersettings_FiatCurrency(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get HideEmptyUsedAddresses() {
+        const ret = wasm.__wbg_get_wasmusersettings_HideEmptyUsedAddresses(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set HideEmptyUsedAddresses(arg0) {
+        wasm.__wbg_set_wasmusersettings_HideEmptyUsedAddresses(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {number}
+    */
+    get ShowWalletRecovery() {
+        const ret = wasm.__wbg_get_wasmusersettings_ShowWalletRecovery(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set ShowWalletRecovery(arg0) {
+        wasm.__wbg_set_wasmusersettings_ShowWalletRecovery(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {bigint | undefined}
+    */
+    get TwoFactorAmountThreshold() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmusersettings_TwoFactorAmountThreshold(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r2 = getBigInt64Memory0()[retptr / 8 + 1];
+            return r0 === 0 ? undefined : BigInt.asUintN(64, r2);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {bigint | undefined} [arg0]
+    */
+    set TwoFactorAmountThreshold(arg0) {
+        wasm.__wbg_set_wasmonchainpaymentlink_amount(this.__wbg_ptr, !isLikeNone(arg0), isLikeNone(arg0) ? BigInt(0) : arg0);
+    }
+}
+/**
+*/
 export class WasmUtxo {
 
     __destroy_into_raw() {
@@ -2629,14 +3630,14 @@ export class WasmUtxo {
     * @returns {bigint}
     */
     get value() {
-        const ret = wasm.__wbg_get_wasmutxo_value(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmblocktime_timestamp(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
     * @param {bigint} arg0
     */
     set value(arg0) {
-        wasm.__wbg_set_wasmutxo_value(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmblocktime_timestamp(this.__wbg_ptr, arg0);
     }
     /**
     * @returns {WasmOutPoint}
@@ -2819,28 +3820,810 @@ export class WasmWallet {
         }
     }
 }
+/**
+*/
+export class WasmWalletAccount {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletAccount.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    static __unwrap(jsValue) {
+        if (!(jsValue instanceof WasmWalletAccount)) {
+            return 0;
+        }
+        return jsValue.__destroy_into_raw();
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletaccount_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get ID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set ID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get DerivationPath() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set DerivationPath(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get Label() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmauthdata_refresh(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set Label(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmauthdata_refresh(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {number}
+    */
+    get ScriptType() {
+        const ret = wasm.__wbg_get_wasmwalletaccount_ScriptType(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set ScriptType(arg0) {
+        wasm.__wbg_set_wasmwalletaccount_ScriptType(this.__wbg_ptr, arg0);
+    }
+}
+/**
+*/
+export class WasmWalletAccountArray {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletAccountArray.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletaccountarray_free(ptr);
+    }
+    /**
+    * @returns {(WasmWalletAccount)[]}
+    */
+    get 0() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmwalletaccountarray_0(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var v1 = getArrayJsValueFromWasm0(r0, r1).slice();
+            wasm.__wbindgen_free(r0, r1 * 4, 4);
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {(WasmWalletAccount)[]} arg0
+    */
+    set 0(arg0) {
+        const ptr0 = passArrayJsValueToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmwalletaccountarray_0(this.__wbg_ptr, ptr0, len0);
+    }
+}
+/**
+*/
+export class WasmWalletClient {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletClient.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletclient_free(ptr);
+    }
+    /**
+    * @returns {Promise<WasmWalletDataArray>}
+    */
+    getWallets() {
+        const ret = wasm.wasmwalletclient_getWallets(this.__wbg_ptr);
+        return takeObject(ret);
+    }
+    /**
+    * @param {WasmCreateWalletRequestBody} payload
+    * @returns {Promise<WasmWalletData>}
+    */
+    createWallet(payload) {
+        _assertClass(payload, WasmCreateWalletRequestBody);
+        var ptr0 = payload.__destroy_into_raw();
+        const ret = wasm.wasmwalletclient_createWallet(this.__wbg_ptr, ptr0);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @returns {Promise<WasmWalletAccountArray>}
+    */
+    getWalletAccounts(wallet_id) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmwalletclient_getWalletAccounts(this.__wbg_ptr, ptr0, len0);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @param {WasmCreateWalletAccountRequestBody} payload
+    * @returns {Promise<WasmWalletAccount>}
+    */
+    createWalletAccount(wallet_id, payload) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        _assertClass(payload, WasmCreateWalletAccountRequestBody);
+        var ptr1 = payload.__destroy_into_raw();
+        const ret = wasm.wasmwalletclient_createWalletAccount(this.__wbg_ptr, ptr0, len0, ptr1);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @param {string} wallet_account_id
+    * @param {string} label
+    * @returns {Promise<WasmWalletAccount>}
+    */
+    updateWalletAccountLabel(wallet_id, wallet_account_id, label) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passStringToWasm0(wallet_account_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ptr2 = passStringToWasm0(label, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len2 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmwalletclient_updateWalletAccountLabel(this.__wbg_ptr, ptr0, len0, ptr1, len1, ptr2, len2);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @param {string} wallet_account_id
+    * @returns {Promise<void>}
+    */
+    deleteWalletAccount(wallet_id, wallet_account_id) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passStringToWasm0(wallet_account_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmwalletclient_deleteWalletAccount(this.__wbg_ptr, ptr0, len0, ptr1, len1);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @returns {Promise<WasmWalletTransactionArray>}
+    */
+    getWalletTransactions(wallet_id) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmwalletclient_getWalletTransactions(this.__wbg_ptr, ptr0, len0);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @param {WasmCreateWalletTransactionRequestBody} payload
+    * @returns {Promise<WasmWalletTransaction>}
+    */
+    createWalletTransaction(wallet_id, payload) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        _assertClass(payload, WasmCreateWalletTransactionRequestBody);
+        var ptr1 = payload.__destroy_into_raw();
+        const ret = wasm.wasmwalletclient_createWalletTransaction(this.__wbg_ptr, ptr0, len0, ptr1);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @param {string} wallet_transaction_id
+    * @param {string} label
+    * @returns {Promise<WasmWalletTransaction>}
+    */
+    updateWalletTransactionLabel(wallet_id, wallet_transaction_id, label) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passStringToWasm0(wallet_transaction_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ptr2 = passStringToWasm0(label, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len2 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmwalletclient_updateWalletTransactionLabel(this.__wbg_ptr, ptr0, len0, ptr1, len1, ptr2, len2);
+        return takeObject(ret);
+    }
+    /**
+    * @param {string} wallet_id
+    * @param {string} wallet_transaction_id
+    * @returns {Promise<void>}
+    */
+    deleteWalletTransaction(wallet_id, wallet_transaction_id) {
+        const ptr0 = passStringToWasm0(wallet_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passStringToWasm0(wallet_transaction_id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmwalletclient_deleteWalletTransaction(this.__wbg_ptr, ptr0, len0, ptr1, len1);
+        return takeObject(ret);
+    }
+}
+/**
+*/
+export class WasmWalletData {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletData.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    static __unwrap(jsValue) {
+        if (!(jsValue instanceof WasmWalletData)) {
+            return 0;
+        }
+        return jsValue.__destroy_into_raw();
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletdata_free(ptr);
+    }
+    /**
+    * @returns {WasmApiWallet}
+    */
+    get Wallet() {
+        const ret = wasm.__wbg_get_wasmwalletdata_Wallet(this.__wbg_ptr);
+        return WasmApiWallet.__wrap(ret);
+    }
+    /**
+    * @param {WasmApiWallet} arg0
+    */
+    set Wallet(arg0) {
+        _assertClass(arg0, WasmApiWallet);
+        var ptr0 = arg0.__destroy_into_raw();
+        wasm.__wbg_set_wasmwalletdata_Wallet(this.__wbg_ptr, ptr0);
+    }
+    /**
+    * @returns {WasmWalletKey}
+    */
+    get WalletKey() {
+        const ret = wasm.__wbg_get_wasmwalletdata_WalletKey(this.__wbg_ptr);
+        return WasmWalletKey.__wrap(ret);
+    }
+    /**
+    * @param {WasmWalletKey} arg0
+    */
+    set WalletKey(arg0) {
+        _assertClass(arg0, WasmWalletKey);
+        var ptr0 = arg0.__destroy_into_raw();
+        wasm.__wbg_set_wasmwalletdata_WalletKey(this.__wbg_ptr, ptr0);
+    }
+    /**
+    * @returns {WasmWalletSettings}
+    */
+    get WalletSettings() {
+        const ret = wasm.__wbg_get_wasmwalletdata_WalletSettings(this.__wbg_ptr);
+        return WasmWalletSettings.__wrap(ret);
+    }
+    /**
+    * @param {WasmWalletSettings} arg0
+    */
+    set WalletSettings(arg0) {
+        _assertClass(arg0, WasmWalletSettings);
+        var ptr0 = arg0.__destroy_into_raw();
+        wasm.__wbg_set_wasmwalletdata_WalletSettings(this.__wbg_ptr, ptr0);
+    }
+}
+/**
+*/
+export class WasmWalletDataArray {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletDataArray.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletdataarray_free(ptr);
+    }
+    /**
+    * @returns {(WasmWalletData)[]}
+    */
+    get 0() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmwalletdataarray_0(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var v1 = getArrayJsValueFromWasm0(r0, r1).slice();
+            wasm.__wbindgen_free(r0, r1 * 4, 4);
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {(WasmWalletData)[]} arg0
+    */
+    set 0(arg0) {
+        const ptr0 = passArrayJsValueToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmwalletdataarray_0(this.__wbg_ptr, ptr0, len0);
+    }
+}
+/**
+*/
+export class WasmWalletKey {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletKey.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletkey_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get UserKeyID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set UserKeyID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get WalletKey() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set WalletKey(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+}
+/**
+*/
+export class WasmWalletSettings {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletSettings.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwalletsettings_free(ptr);
+    }
+    /**
+    * @returns {number}
+    */
+    get HideAccounts() {
+        const ret = wasm.__wbg_get_wasmwalletsettings_HideAccounts(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+    * @param {number} arg0
+    */
+    set HideAccounts(arg0) {
+        wasm.__wbg_set_wasmwalletsettings_HideAccounts(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {string | undefined}
+    */
+    get InvoiceDefaultDescription() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmonchainpaymentlink_address(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            let v1;
+            if (r0 !== 0) {
+                v1 = getStringFromWasm0(r0, r1).slice();
+                wasm.__wbindgen_free(r0, r1 * 1, 1);
+            }
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {string | undefined} [arg0]
+    */
+    set InvoiceDefaultDescription(arg0) {
+        var ptr0 = isLikeNone(arg0) ? 0 : passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmonchainpaymentlink_address(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {bigint}
+    */
+    get InvoiceExpirationTime() {
+        const ret = wasm.__wbg_get_wasmblocktime_timestamp(this.__wbg_ptr);
+        return BigInt.asUintN(64, ret);
+    }
+    /**
+    * @param {bigint} arg0
+    */
+    set InvoiceExpirationTime(arg0) {
+        wasm.__wbg_set_wasmblocktime_timestamp(this.__wbg_ptr, arg0);
+    }
+    /**
+    * @returns {bigint}
+    */
+    get MaxChannelOpeningFee() {
+        const ret = wasm.__wbg_get_wasmwalletsettings_MaxChannelOpeningFee(this.__wbg_ptr);
+        return BigInt.asUintN(64, ret);
+    }
+    /**
+    * @param {bigint} arg0
+    */
+    set MaxChannelOpeningFee(arg0) {
+        wasm.__wbg_set_wasmwalletsettings_MaxChannelOpeningFee(this.__wbg_ptr, arg0);
+    }
+}
+/**
+*/
+export class WasmWalletTransaction {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletTransaction.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    static __unwrap(jsValue) {
+        if (!(jsValue instanceof WasmWalletTransaction)) {
+            return 0;
+        }
+        return jsValue.__destroy_into_raw();
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwallettransaction_free(ptr);
+    }
+    /**
+    * @returns {string}
+    */
+    get ID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_ID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set ID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_ID(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get WalletID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmapiwallet_Name(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set WalletID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmapiwallet_Name(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get Label() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmauthdata_refresh(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set Label(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmauthdata_refresh(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+    * @returns {string}
+    */
+    get TransactionID() {
+        let deferred1_0;
+        let deferred1_1;
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmwallettransaction_TransactionID(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            deferred1_0 = r0;
+            deferred1_1 = r1;
+            return getStringFromWasm0(r0, r1);
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+        }
+    }
+    /**
+    * @param {string} arg0
+    */
+    set TransactionID(arg0) {
+        const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmwallettransaction_TransactionID(this.__wbg_ptr, ptr0, len0);
+    }
+}
+/**
+*/
+export class WasmWalletTransactionArray {
+
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(WasmWalletTransactionArray.prototype);
+        obj.__wbg_ptr = ptr;
+
+        return obj;
+    }
+
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+
+        return ptr;
+    }
+
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_wasmwallettransactionarray_free(ptr);
+    }
+    /**
+    * @returns {(WasmWalletTransaction)[]}
+    */
+    get 0() {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            wasm.__wbg_get_wasmwallettransactionarray_0(retptr, this.__wbg_ptr);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var v1 = getArrayJsValueFromWasm0(r0, r1).slice();
+            wasm.__wbindgen_free(r0, r1 * 4, 4);
+            return v1;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
+    }
+    /**
+    * @param {(WasmWalletTransaction)[]} arg0
+    */
+    set 0(arg0) {
+        const ptr0 = passArrayJsValueToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_wasmwallettransactionarray_0(this.__wbg_ptr, ptr0, len0);
+    }
+}
 
 export function __wbindgen_object_drop_ref(arg0) {
     takeObject(arg0);
 };
 
-export function __wbg_wasmtransactiondetails_new(arg0) {
-    const ret = WasmTransactionDetails.__wrap(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbg_wasmpsbtrecipient_new(arg0) {
-    const ret = WasmPsbtRecipient.__wrap(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbg_wasmtxin_new(arg0) {
-    const ret = WasmTxIn.__wrap(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbg_wasmbalance_new(arg0) {
-    const ret = WasmBalance.__wrap(arg0);
+export function __wbindgen_number_new(arg0) {
+    const ret = arg0;
     return addHeapObject(ret);
 };
 
@@ -2849,33 +4632,13 @@ export function __wbg_wasmtxbuilder_new(arg0) {
     return addHeapObject(ret);
 };
 
-export function __wbg_wasmrecipient_new(arg0) {
-    const ret = WasmRecipient.__wrap(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbindgen_number_new(arg0) {
-    const ret = arg0;
-    return addHeapObject(ret);
-};
-
-export function __wbg_detailledwasmerror_new(arg0) {
-    const ret = DetailledWasmError.__wrap(arg0);
-    return addHeapObject(ret);
-};
-
 export function __wbg_wasmpartiallysignedtransaction_new(arg0) {
     const ret = WasmPartiallySignedTransaction.__wrap(arg0);
     return addHeapObject(ret);
 };
 
-export function __wbg_wasmpaymentlink_new(arg0) {
-    const ret = WasmPaymentLink.__wrap(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbg_wasmoutpoint_new(arg0) {
-    const ret = WasmOutPoint.__wrap(arg0);
+export function __wbg_wasmpsbtrecipient_new(arg0) {
+    const ret = WasmPsbtRecipient.__wrap(arg0);
     return addHeapObject(ret);
 };
 
@@ -2884,13 +4647,94 @@ export function __wbg_wasmtxout_new(arg0) {
     return addHeapObject(ret);
 };
 
-export function __wbindgen_string_get(arg0, arg1) {
-    const obj = getObject(arg1);
-    const ret = typeof(obj) === 'string' ? obj : undefined;
-    var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    var len1 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len1;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr1;
+export function __wbg_wasmrecipient_new(arg0) {
+    const ret = WasmRecipient.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_detailledwasmerror_new(arg0) {
+    const ret = DetailledWasmError.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmbalance_new(arg0) {
+    const ret = WasmBalance.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmoutpoint_new(arg0) {
+    const ret = WasmOutPoint.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmtxin_new(arg0) {
+    const ret = WasmTxIn.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwalletaccount_new(arg0) {
+    const ret = WasmWalletAccount.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmtransactiondetails_new(arg0) {
+    const ret = WasmTransactionDetails.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwalletdata_new(arg0) {
+    const ret = WasmWalletData.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwalletdataarray_new(arg0) {
+    const ret = WasmWalletDataArray.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwallettransactionarray_new(arg0) {
+    const ret = WasmWalletTransactionArray.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwalletaccountarray_new(arg0) {
+    const ret = WasmWalletAccountArray.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwallettransaction_new(arg0) {
+    const ret = WasmWalletTransaction.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmusersettings_new(arg0) {
+    const ret = WasmUserSettings.__wrap(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbindgen_as_number(arg0) {
+    const ret = +getObject(arg0);
+    return ret;
+};
+
+export function __wbindgen_object_clone_ref(arg0) {
+    const ret = getObject(arg0);
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmwalletdata_unwrap(arg0) {
+    const ret = WasmWalletData.__unwrap(takeObject(arg0));
+    return ret;
+};
+
+export function __wbg_wasmwalletaccount_unwrap(arg0) {
+    const ret = WasmWalletAccount.__unwrap(takeObject(arg0));
+    return ret;
+};
+
+export function __wbg_wasmwallettransaction_unwrap(arg0) {
+    const ret = WasmWalletTransaction.__unwrap(takeObject(arg0));
+    return ret;
 };
 
 export function __wbindgen_string_new(arg0, arg1) {
@@ -2905,16 +4749,6 @@ export function __wbindgen_number_get(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 0] = !isLikeNone(ret);
 };
 
-export function __wbindgen_object_clone_ref(arg0) {
-    const ret = getObject(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbg_wasmpsbtrecipient_unwrap(arg0) {
-    const ret = WasmPsbtRecipient.__unwrap(takeObject(arg0));
-    return ret;
-};
-
 export function __wbg_wasmtxin_unwrap(arg0) {
     const ret = WasmTxIn.__unwrap(takeObject(arg0));
     return ret;
@@ -2923,6 +4757,11 @@ export function __wbg_wasmtxin_unwrap(arg0) {
 export function __wbg_wasmtxout_unwrap(arg0) {
     const ret = WasmTxOut.__unwrap(takeObject(arg0));
     return ret;
+};
+
+export function __wbindgen_error_new(arg0, arg1) {
+    const ret = new Error(getStringFromWasm0(arg0, arg1));
+    return addHeapObject(ret);
 };
 
 export function __wbindgen_is_undefined(arg0) {
@@ -2940,19 +4779,23 @@ export function __wbindgen_is_string(arg0) {
     return ret;
 };
 
+export function __wbindgen_string_get(arg0, arg1) {
+    const obj = getObject(arg1);
+    const ret = typeof(obj) === 'string' ? obj : undefined;
+    var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var len1 = WASM_VECTOR_LEN;
+    getInt32Memory0()[arg0 / 4 + 1] = len1;
+    getInt32Memory0()[arg0 / 4 + 0] = ptr1;
+};
+
 export function __wbindgen_is_object(arg0) {
     const val = getObject(arg0);
     const ret = typeof(val) === 'object' && val !== null;
     return ret;
 };
 
-export function __wbindgen_error_new(arg0, arg1) {
-    const ret = new Error(getStringFromWasm0(arg0, arg1));
-    return addHeapObject(ret);
-};
-
-export function __wbindgen_as_number(arg0) {
-    const ret = +getObject(arg0);
+export function __wbg_wasmpsbtrecipient_unwrap(arg0) {
+    const ret = WasmPsbtRecipient.__unwrap(takeObject(arg0));
     return ret;
 };
 
@@ -3006,58 +4849,9 @@ export function __wbg_set_9182712abebf82ef(arg0, arg1, arg2) {
     getObject(arg0)[takeObject(arg1)] = takeObject(arg2);
 };
 
-export function __wbindgen_cb_drop(arg0) {
-    const obj = takeObject(arg0).original;
-    if (obj.cnt-- == 1) {
-        obj.a = 0;
-        return true;
-    }
-    const ret = false;
-    return ret;
-};
-
 export function __wbg_fetch_6a2624d7f767e331(arg0) {
     const ret = fetch(getObject(arg0));
     return addHeapObject(ret);
-};
-
-export function __wbg_queueMicrotask_26a89c14c53809c0(arg0) {
-    const ret = getObject(arg0).queueMicrotask;
-    return addHeapObject(ret);
-};
-
-export function __wbindgen_is_function(arg0) {
-    const ret = typeof(getObject(arg0)) === 'function';
-    return ret;
-};
-
-export function __wbg_queueMicrotask_118eeb525d584d9a(arg0) {
-    queueMicrotask(getObject(arg0));
-};
-
-export function __wbg_instanceof_Window_99dc9805eaa2614b(arg0) {
-    let result;
-    try {
-        result = getObject(arg0) instanceof Window;
-    } catch (_) {
-        result = false;
-    }
-    const ret = result;
-    return ret;
-};
-
-export function __wbg_localStorage_318b1c4f106a46f9() { return handleError(function (arg0) {
-    const ret = getObject(arg0).localStorage;
-    return isLikeNone(ret) ? 0 : addHeapObject(ret);
-}, arguments) };
-
-export function __wbg_setTimeout_bd20251bb242e262() { return handleError(function (arg0, arg1, arg2) {
-    const ret = getObject(arg0).setTimeout(getObject(arg1), arg2);
-    return ret;
-}, arguments) };
-
-export function __wbg_log_9dfb3879776dd797(arg0) {
-    console.log(getObject(arg0));
 };
 
 export function __wbg_log_91b163d7ed112e53(arg0, arg1) {
@@ -3131,18 +4925,6 @@ export function __wbg_append_047382169b61373d() { return handleError(function (a
     getObject(arg0).append(getStringFromWasm0(arg1, arg2), getStringFromWasm0(arg3, arg4));
 }, arguments) };
 
-export function __wbg_getItem_f7e7a061bbdabefe() { return handleError(function (arg0, arg1, arg2, arg3) {
-    const ret = getObject(arg1).getItem(getStringFromWasm0(arg2, arg3));
-    var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    var len1 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len1;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr1;
-}, arguments) };
-
-export function __wbg_setItem_2b72ddf192083111() { return handleError(function (arg0, arg1, arg2, arg3, arg4) {
-    getObject(arg0).setItem(getStringFromWasm0(arg1, arg2), getStringFromWasm0(arg3, arg4));
-}, arguments) };
-
 export function __wbg_newwithstrandinit_9fd2fc855c6327eb() { return handleError(function (arg0, arg1, arg2) {
     const ret = new Request(getStringFromWasm0(arg0, arg1), getObject(arg2));
     return addHeapObject(ret);
@@ -3185,6 +4967,30 @@ export function __wbg_randomFillSync_b70ccbdf4926a99d() { return handleError(fun
 export function __wbg_getRandomValues_7e42b4fb8779dc6d() { return handleError(function (arg0, arg1) {
     getObject(arg0).getRandomValues(getObject(arg1));
 }, arguments) };
+
+export function __wbg_queueMicrotask_26a89c14c53809c0(arg0) {
+    const ret = getObject(arg0).queueMicrotask;
+    return addHeapObject(ret);
+};
+
+export function __wbindgen_is_function(arg0) {
+    const ret = typeof(getObject(arg0)) === 'function';
+    return ret;
+};
+
+export function __wbindgen_cb_drop(arg0) {
+    const obj = takeObject(arg0).original;
+    if (obj.cnt-- == 1) {
+        obj.a = 0;
+        return true;
+    }
+    const ret = false;
+    return ret;
+};
+
+export function __wbg_queueMicrotask_118eeb525d584d9a(arg0) {
+    queueMicrotask(getObject(arg0));
+};
 
 export function __wbg_get_c43534c00f382c8a(arg0, arg1) {
     const ret = getObject(arg0)[arg1 >>> 0];
@@ -3323,7 +5129,7 @@ export function __wbg_new_1d93771b84541aa5(arg0, arg1) {
             const a = state0.a;
             state0.a = 0;
             try {
-                return __wbg_adapter_365(a, state0.b, arg0, arg1);
+                return __wbg_adapter_492(a, state0.b, arg0, arg1);
             } finally {
                 state0.a = a;
             }
@@ -3427,8 +5233,8 @@ export function __wbindgen_memory() {
     return addHeapObject(ret);
 };
 
-export function __wbindgen_closure_wrapper6388(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 1618, __wbg_adapter_42);
+export function __wbindgen_closure_wrapper9267(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 1923, __wbg_adapter_42);
     return addHeapObject(ret);
 };
 
