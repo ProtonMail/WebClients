@@ -18,11 +18,11 @@ const getTopBannerMessage = (daysDifference: number, endDate: Date) => {
 
     if (daysDifference === FIRST_REMINDER_DAYS) {
         const formattedEndDate = format(endDate, 'MMMM dd yyyy');
-        return c('Action').jt`Your destkop app free trial ends on ${formattedEndDate}. ${upgradeButton}`;
+        return c('Action').jt`Your desktop app free trial ends on ${formattedEndDate}. ${upgradeButton}`;
     } else if (daysDifference === SECOND_REMINDER_DAYS) {
-        return c('Action').jt`Your destkop app free trial ends in 5 days. ${upgradeButton}`;
+        return c('Action').jt`Your desktop app free trial ends in 5 days. ${upgradeButton}`;
     } else if (daysDifference === THIRD_REMINDER_DAYS) {
-        return c('Action').jt`Your destkop app free trial ends in 2 days. ${upgradeButton}`;
+        return c('Action').jt`Your desktop app free trial ends in 2 days. ${upgradeButton}`;
     }
 
     return undefined;
