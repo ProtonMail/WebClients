@@ -12,7 +12,7 @@ const addressKeyEqualityComparator = (a: Key[] | undefined = [], b: Key[] | unde
         a.length === b.length &&
         a.every((value, index) => {
             const otherKey = b[index];
-            if (
+            return (
                 otherKey &&
                 value.ID === otherKey.ID &&
                 value.Primary === otherKey.Primary &&
@@ -20,19 +20,14 @@ const addressKeyEqualityComparator = (a: Key[] | undefined = [], b: Key[] | unde
                 value.Flags === otherKey.Flags &&
                 value.Version === otherKey.Version &&
                 value.Fingerprint === otherKey.Fingerprint &&
-                value.Fingerprints?.length === otherKey.Fingerprints?.length &&
                 value.Activation === otherKey.Activation &&
                 value.PrivateKey === otherKey.PrivateKey &&
                 value.Token === otherKey.Token &&
                 value.Signature === otherKey.Signature &&
-                value.AddressForwardingID === otherKey.AddressForwardingID
-            ) {
-                return (
-                    !value.Fingerprints ||
-                    value.Fingerprints.every((fingerprint, fpIndex) => fingerprint === otherKey.Fingerprints[fpIndex])
-                );
-            }
-            return false;
+                value.AddressForwardingID === otherKey.AddressForwardingID &&
+                value.Fingerprints.length === otherKey.Fingerprints.length &&
+                value.Fingerprints.every((fingerprint, fpIndex) => fingerprint === otherKey.Fingerprints[fpIndex])
+            );
         })
     );
 };
