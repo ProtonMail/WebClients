@@ -132,8 +132,12 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 throw new Error('Unsupported algorithm');
             default:
                 const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
-                if (algorithmInfo.curve !== undefined) { result.curve = algorithmInfo.curve as AlgorithmInfo['curve'] };
-                if (algorithmInfo.bits !== undefined) { result.bits = algorithmInfo.bits };
+                if (algorithmInfo.curve !== undefined) {
+                    result.curve = algorithmInfo.curve as AlgorithmInfo['curve'];
+                }
+                if (algorithmInfo.bits !== undefined) {
+                    result.bits = algorithmInfo.bits;
+                }
                 return result;
         }
     };
@@ -1017,6 +1021,13 @@ export class Api extends KeyManagementApi {
             default:
                 throw new Error(`Unsupported algorithm: ${algorithm}`);
         }
+    }
+
+    /**
+     * Compute argon2 hash of the given `password`
+     */
+    async computeArgon2() {
+        throw new Error('Not implemented');
     }
 
     /**
