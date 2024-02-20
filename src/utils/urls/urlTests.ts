@@ -1,6 +1,5 @@
 import Logger from "electron-log";
 import { getConfig } from "../config";
-import { logURL } from "../logs";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
 export const getSessionID = (url: string) => {
@@ -75,7 +74,6 @@ export const isUpsellURL = (host: string) => {
 
 export const isHostAllowed = (host: string) => {
     try {
-        logURL("isHostAllowed", host);
         const urls = getConfig().url;
         let finalURL = host;
         if (!finalURL.startsWith("https://")) {

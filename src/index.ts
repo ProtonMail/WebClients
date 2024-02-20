@@ -10,7 +10,6 @@ import { hasTrialEnded } from "./store/trialStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
 import { isMac, isWindows } from "./utils/helpers";
-import { logURL } from "./utils/logs";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
 import {
@@ -84,14 +83,12 @@ app.whenReady().then(() => {
 
     app.on("activate", () => {
         if (isMac && areAllWindowsClosedOrHidden()) {
-            Logger.info("Activate app, all windows hidden");
             window.show();
         }
     });
 
     // Normally this only works on macOS and is not required for Windows
     app.on("open-url", (_e, url) => {
-        logURL("open-url", url);
         handleMailToUrls(url);
     });
 
@@ -185,20 +182,19 @@ app.on("web-contents-created", (_ev, contents) => {
             // Upsell links should be opened in browser to avoid 3D secure issues
             Logger.info("Account link");
             if (isAccoutLite(url) || isUpsellURL(url)) {
-                logURL("Upsell link or lite account, open in browser", url);
                 shell.openExternal(url);
                 return { action: "deny" };
             }
             updateView("account");
             return { action: "deny" };
         } else if (isHostAllowed(url)) {
-            logURL("Open internal link", url);
+            Logger.info("Open link in app");
             return { action: "allow" };
         } else if (global.oauthProcess) {
-            logURL("OAuth Process", url);
+            Logger.info("Open OAuth link in app");
             return { action: "allow" };
         } else {
-            logURL("Open external link", url);
+            Logger.info("Open link in browser");
             shell.openExternal(url);
         }
 
