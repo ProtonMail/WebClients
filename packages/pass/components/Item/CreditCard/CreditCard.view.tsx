@@ -11,6 +11,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
     const { revision, handleHistoryClick } = itemViewProps;
     const { createTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
+    const modifiedCount = revisionNumber - 1;
 
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
@@ -25,11 +26,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
                     {
                         label: c('Label').t`Modified`,
                         values: [
-                            c('Info').ngettext(
-                                msgid`${revisionNumber} time`,
-                                `${revisionNumber} times`,
-                                revisionNumber
-                            ),
+                            c('Info').ngettext(msgid`${modifiedCount} time`, `${modifiedCount} times`, modifiedCount),
                         ],
                     },
                     {
