@@ -4045,9 +4045,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Der akzeptierte Mindestzahlbetrag beträgt ${ price }"
       ],
@@ -5996,6 +5993,10 @@
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
       ],
+      "Affected user is on row": [
+        "Betroffener Benutzer ist in Zeile",
+        "Betroffene Benutzer sind in Zeilen"
+      ],
       "Align left": [
         "Linksbündig"
       ],
@@ -6157,6 +6158,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Kopiere dein Passwort und bewahre es an einem sicheren Ort auf."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Vor dem Aktivieren dieses Benutzers musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die neuen Adressen erstellen."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Vor dem Anlegen dieser Adresse musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die Adresse erstellen."
@@ -6680,6 +6684,9 @@
       "Key deletion is irreversible!": [
         "Das Löschen eines Schlüssels kann nicht rückgängig gemacht werden!"
       ],
+      "Keys created": [
+        "Schlüssel erstellt"
+      ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
       ],
@@ -6979,6 +6986,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen.",
+        "Bitte verwende ein Passwort mit mehr als ${ MIN_PASSWORD_LENGTH } Zeichen."
       ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
@@ -7383,6 +7394,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dies ersetzt dein vorläufiges Passwort. Du benötigst es, um zukünftig auf dein ${ BRAND_NAME }-Konto zuzugreifen."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dadurch wirst du von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
       ],
@@ -7550,6 +7564,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Verwende die gewählte E-Mail-Adresse als SMTP-Benutzername im externen Dienst und das generierte Token als SMTP-Passwort."
+      ],
+      "User activated": [
+        "Benutzer aktiviert"
       ],
       "Users": [
         "Benutzer"
@@ -9321,9 +9338,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-Willkommens-E-Mails"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } neue Funktionen"
       ]
     },
     "Label in domain modal": {
@@ -9634,6 +9648,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Benutzer aktivieren"
+      ],
       "Change password": [
         "Passwort ändern"
       ],
@@ -12835,6 +12852,12 @@
       "Get more storage": [
         "Mehr Speicherplatz erhalten"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "Probiere ${ app } in vollem Umfang aus"
       ],
@@ -13517,6 +13540,9 @@
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
       ],
+      "Activate user": [
+        "Benutzer aktivieren"
+      ],
       "Add address": [
         "E-Mail-Adr. hinzufügen"
       ],
@@ -13594,6 +13620,9 @@
       ],
       "Are you sure you want to close?": [
         "Wirklich schließen?"
+      ],
+      "Are you sure?": [
+        "Bist du sicher?"
       ],
       "Authentication security": [
         "Sicherheit der Authentifizierung"
@@ -13703,6 +13732,9 @@
       ],
       "Create multiple user accounts": [
         "Mehrere Benutzerkonten erstellen"
+      ],
+      "Create organization key": [
+        "Organisationsschlüssel erstellen"
       ],
       "Create public link": [
         "Öffentlichen Link erstellen"
@@ -14810,6 +14842,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"

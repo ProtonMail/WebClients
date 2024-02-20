@@ -50,6 +50,9 @@
       "activate": [
         "aktivovat"
       ],
+      "Activate": [
+        "Aktivovat"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Zrušit předplatné"
+      ],
+      "Change keys": [
+        "Změnit klíče"
       ],
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
@@ -3135,6 +3141,9 @@
       "Access to the desktop app is limited": [
         "Přístup k aplikaci pro stolní PC je omezený"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Beta verze aplikace ${ MAIL_APP_NAME } pro počítače je v současné době k dispozici všem uživatelům s placeným tarifem ${ MAIL_APP_NAME }. Chcete-li získat přístup, navyšte tarif ještě dnes."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
       ]
@@ -3751,6 +3760,9 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Nelze načíst faktury. Zkuste to prosím později."
+      ],
       "Could not save preference": [
         "Nelze uložit předvolbu"
       ],
@@ -3919,6 +3931,9 @@
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
+      "Organization key must be activated to create non-private users": [
+        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
+      ],
       "Password is required": [
         "Heslo je povinná položka"
       ],
@@ -3939,6 +3954,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Provádět platby není momentálně dostupné, zkuste to prosím později"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Před přidáním adres nastavte vlastní doménu."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
@@ -4060,9 +4078,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimální částka, kterou lze darovat, je ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Minimální platba, kterou přijímáme je ${ price }"
       ],
@@ -4095,6 +4110,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, musíte obnovit oprávnění správce."
       ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
@@ -6251,6 +6269,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Nezapomeňte si heslo zkopírovat a uložit na bezpečné místo."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Před aktivováním uživatelů je třeba zadat heslo a vytvořit šifrovací klíče pro adresy."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Před vytvořením této adresy je třeba zadat heslo a vytvořit pro ni šifrovací klíče."
       ],
@@ -6773,6 +6794,9 @@
       "Key deletion is irreversible!": [
         "Smazání klíče je nevratné!"
       ],
+      "Keys created": [
+        "Klíče vytvořeny"
+      ],
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
       ],
@@ -7081,6 +7105,12 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Zkuste to prosím znovu, použijte jinou platební metodu, nebo požádejte PayPal o pomoc."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znak.",
+        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znaky.",
+        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znaků.",
+        "Použijte prosím heslo delší než ${ MIN_PASSWORD_LENGTH } znaků."
       ],
       "Please use another browser or download the file.": [
         "Použijte jiný prohlížeč nebo si soubor stáhněte."
@@ -7658,6 +7688,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Vybranou e-mailovou adresu použijte jako uživatelské jméno SMTP v externí službě a vygenerovaný token jako heslo SMTP."
       ],
+      "User activated": [
+        "Uživatel aktivován"
+      ],
       "Users": [
         "Uživatelé"
       ],
@@ -8177,6 +8210,9 @@
       "Credit": [
         "Kredit"
       ],
+      "Currency conversion": [
+        "Převod měn"
+      ],
       "Donation": [
         "Finanční příspěvky"
       ],
@@ -8540,6 +8576,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Administrators": [
+        "Správci"
       ],
       "ALL": [
         "VŠE"
@@ -9318,6 +9357,9 @@
       "Username": [
         "Uživatelské jméno"
       ],
+      "VAT": [
+        "DPH"
+      ],
       "Verification code": [
         "Ověřovací kód"
       ],
@@ -9436,9 +9478,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítací e-maily"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nové funkce ${ MAIL_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9765,6 +9804,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktivovat uživatele"
+      ],
       "Change password": [
         "Změnit heslo"
       ],
@@ -10051,6 +10093,9 @@
       "Back to inbox": [
         "Zpět do Doručené pošty"
       ],
+      "Back to vaults": [
+        "Zpět do trezorů"
+      ],
       "Block": [
         "Blokovat"
       ],
@@ -10059,6 +10104,9 @@
       ],
       "Inbox": [
         "Doručená pošta"
+      ],
+      "Pass vaults": [
+        "Trezory Pass"
       ],
       "Spam": [
         "Spam"
@@ -10268,6 +10316,9 @@
       "Autofill credit cards (coming soon)": [
         "Automatické vyplňování platebních karet (již brzy)"
       ],
+      "Automatic email forwarding": [
+        "Automatické přesměrování e-mailů"
+      ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
       ],
@@ -10409,6 +10460,9 @@
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
       ],
+      "Require 2FA for organization": [
+        "Vyžaduje 2FA pro organizaci"
+      ],
       "Router support": [
         "Podpora routeru"
       ],
@@ -10444,6 +10498,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO integrace (již brzy)"
       ],
       "Start protecting your organization": [
         "Začněte chránit svou organizaci"
@@ -10486,6 +10543,9 @@
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Neomezený počet sdílených trezorů s oprávněním k přístupu"
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
@@ -10677,6 +10737,9 @@
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Jméno organizace bude viditelné vašim uživatelům, když budou přihlášeni."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Chcete-li začít, vyberte si zobrazované jméno. To je to, co lidé uvidí, když jim pošlete e-mail, pozvete je na událost nebo sdílíte soubor."
@@ -10878,6 +10941,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }.\nSprávci mohou uživatelům v organizaci přidělovat různé objemy úložišť"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Úložný prostor je sdílen mezi uživateli napříč ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } a ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
@@ -11447,8 +11513,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Přejděte do svého trezoru a spravujte svá hesla, aliasy a další."
+      ],
       "Set up your organization": [
         "Nastavení organizace"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Začněte přidávat uživatele, abyste jim umožnili přístup k ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Začněte používat ${ PASS_APP_NAME }"
@@ -11485,6 +11557,9 @@
       "Or ${ createANewAccount }": [
         "nebo si ${ createANewAccount }"
       ],
+      "Request trial": [
+        "Vyžádejte testování"
+      ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
       ],
@@ -11518,6 +11593,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Pokračujte pomocí vašeho ${ BRAND_NAME } účtu"
+      ],
+      "Let's talk": [
+        "Promluvme si"
       ],
       "Limited time offer": [
         "Časově omezená nabídka"
@@ -11554,8 +11632,23 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } za měsíc"
       ],
+      "/month /user": [
+        "/měsíc /uživatel"
+      ],
+      "/month /user, billed annually": [
+        "/měsíc /uživatel, účtováno ročně"
+      ],
+      "/month /user, billed biennially": [
+        "/měsíc /uživatel, účtováno jednou za dva roky"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Pokročilá ochrana, která přesahuje průmyslové standardy"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Všechny prémiové služby ${ BRAND_NAME }."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Se sídlem ve Švýcarsku, v souladu s GDPR"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ale můžete získat slevu ${ discount } navýšením na **${ upsellPlanTitle }** — je to jen ${ relativePrice } měsíčně navíc."
@@ -11574,6 +11667,9 @@
       ],
       "Creating your account": [
         "Vytváření vašeho účtu"
+      ],
+      "Current plan": [
+        "Aktuální tarif"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Objevte ${ PASS_APP_NAME },${ br }náš nový šifrovaný správce hesel"
@@ -11596,6 +11692,12 @@
       "End-to-end encryption": [
         "Koncové šifrování"
       ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Základní ochrana a bezpečná spolupráce pro neomezený počet uživatelů"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Vše z ${ planTitle } plus..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup k prémiovému správci hesel od ${ BRAND_NAME }!"
       ],
@@ -11608,14 +11710,29 @@
       "Free forever": [
         "Navždy zdarma"
       ],
+      "From the team that knows encryption": [
+        "Od týmu, který se vyzná v šifrování"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Získat ${ appName } pro ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Získejte ${ appName } pro ${ browserName } již brzy"
       ],
+      "Get in touch with our sales team": [
+        "Kontaktujte náš obchodní tým"
+      ],
+      "Get the security and features your business needs": [
+        "Získejte zabezpečení a funkce, které vaše firma potřebuje"
+      ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy Hide-my-email chrání váš e-mail před únikem dat"
+      ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Beru na vědomí, že v případě ztráty údajů pro obnovení mohu trvale ztratit přístup ke svému účtu."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Pokud dojde k uzamčení vašeho účtu ${ BRAND_NAME }, váš **Nástroj pro obnovení** vám umožní přihlásit se a obnovit vaše data."
       ],
       "Includes:": [
         "Zahrnuje:"
@@ -11632,11 +11749,20 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Připojte se k více než 100 milionům lidí, kteří si zvolili ${ BRAND_NAME }, aby zůstali v bezpečí online."
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Připojte se k více než 50000 organizacím, které důvěřují ${ BRAND_NAME }"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Spuštění ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Časově omezená nabídka: Získejte ${ title } za ${ price } na uživatele měsíčně!"
+      ],
       "One easy subscription.": [
         "Jedno snadné předplatné."
+      ],
+      "Open source and audited": [
+        "Otevřený zdrojový kód a audity"
       ],
       "Open-source and audited": [
         "Open-source a auditováno"
@@ -11670,6 +11796,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Speciální akce při uvedení na trh: Získejte ${ title } za ${ price } navždy!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Řešení na míru pro větší organizace s vlastními potřebami zabezpečení."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Vámi vybraná nabídka není k dispozici pro předplatitele ${ currentPlanTitle }."
@@ -11722,9 +11851,35 @@
         "Zabezpečte svůj účet"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Pro firmy"
+      ],
+      "For invididuals": [
+        "Pro jednotlivce"
+      ]
+    },
     "passwordless": {
+      "Are you sure you want to change your organization key?": [
+        "Jste si jisti, že chcete změnit svůj klíč organizace?"
+      ],
+      "Change organization key": [
+        "Změnit klíč organizace"
+      ],
+      "Organization key activated": [
+        "Klíč organizace byl aktivován"
+      ],
+      "Organization key restored": [
+        "Klíč organizace byl obnoveny"
+      ],
+      "Organization key updated": [
+        "Klíč rganizace byl aktualizován."
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Přístup odepřen, oprávnění správce byla omezena."
+      ],
+      "Reset organization key": [
+        "Obnovit klíč organizace"
       ],
       "The organization key must be activated first.": [
         "Nejprve musí být aktivován klíč organizace."
@@ -11738,12 +11893,35 @@
         "Nová kreditní/debetní karta"
       ]
     },
+    "Payments": {
+      "Card number": [
+        "Číslo karty"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/RR"
+      ],
+      "Timeout exceeded": [
+        "Byl překročen časový limit"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Neplatné číslo karty"
       ],
       "Invalid expiration date": [
         "Neplatné datum expirace"
+      ],
+      "Invalid securiry code": [
+        "Neplatný bezpečnostní kód"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Něco se pokazilo. Zkus to prosím později."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Váš způsob platby se nám nedaří ověřit. Zvolte prosím jiný způsob platby nebo to zkuste znovu."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
@@ -12069,6 +12247,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } správce ve vaší organizaci potřebuje přístup ke klíči organizace.",
+        "${ n } správci ve vaší organizaci potřebují přístup ke klíči organizace.",
+        "${ n } správců ve vaší organizaci potřebuje přístup ke klíči organizace.",
+        "${ n } správců ve vaší organizaci potřebuje přístup ke klíči organizace."
+      ],
       "Changing organization keys": [
         "Změna klíče organizace"
       ],
@@ -12856,6 +13040,17 @@
         "Ponechat ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Úložný prostor pro data generovaná pomocí ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Až ${ totalStorageSize } úložiného prostoru Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Až ${ totalStorageSize } úložného prostoru Mail"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } úložiště"
@@ -12875,8 +13070,20 @@
       "Get more storage": [
         "Získat více úložného prostoru"
       ],
+      "Try out ${ app } to its full potential": [
+        "Vyzkoušejte plný potenciál ${ app }"
+      ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Navyšte svůj tarif a pokračujte v používání účtu bez přerušení."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
+        "V tarifu **${ currentPlanName }** vám zbývají ještě **${ daysRemaining }** dny.",
+        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** dnů.",
+        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** dnů."
       ],
       "Your ${ appStorage } is almost full": [
         "Vaše ${ appStorage } je téměř plné"
@@ -13555,6 +13762,9 @@
       "Activate organization key": [
         "Aktivovat klíč organizace"
       ],
+      "Activate user": [
+        "Aktivovat uživatele"
+      ],
       "Add address": [
         "Přidat adresu"
       ],
@@ -13633,6 +13843,9 @@
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
       ],
+      "Are you sure?": [
+        "Jste si jisti?"
+      ],
       "Authentication security": [
         "Zabezpečení ověření"
       ],
@@ -13699,6 +13912,9 @@
       "Composing": [
         "Psaní"
       ],
+      "Confirm": [
+        "Potvrdit"
+      ],
       "Confirm address": [
         "Potvrdit adresu"
       ],
@@ -13740,6 +13956,9 @@
       ],
       "Create multiple user accounts": [
         "Vytvořit více uživatelských účtů"
+      ],
+      "Create organization key": [
+        "Vytvořit klíč organizace"
       ],
       "Create public link": [
         "Vytvořit veřejný odkaz"
@@ -14127,6 +14346,9 @@
       ],
       "Organization filters": [
         "Filtry organizace"
+      ],
+      "Organization key": [
+        "Klíč organizace"
       ],
       "Organization name": [
         "Název organizace"

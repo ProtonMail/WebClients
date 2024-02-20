@@ -44,6 +44,9 @@
       "activate": [
         "rmed"
       ],
+      "Activate": [
+        "Rmed"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
       ],
@@ -148,6 +151,9 @@
       ],
       "Cancel subscription": [
         "Sefsex ajerred"
+      ],
+      "Change keys": [
+        "Beddel isura"
       ],
       "Change mailbox password": [
         "Snifel awal uffir n tnaka n yimayl"
@@ -3273,9 +3279,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ price }"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Azal amezyan maḍi i izemren ad yettunefk d ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ price }"
