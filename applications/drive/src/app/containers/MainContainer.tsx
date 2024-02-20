@@ -18,7 +18,14 @@ import DriveOnboardingModal from '../components/modals/DriveOnboardingModal';
 import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import { DriveProvider, useDefaultShare, useDriveEventManager, usePhotosFeatureFlag, useSearchControl } from '../store';
+import {
+    DriveProvider,
+    useActivePing,
+    useDefaultShare,
+    useDriveEventManager,
+    usePhotosFeatureFlag,
+    useSearchControl,
+} from '../store';
 import { useShareActions } from '../store/_shares';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
@@ -50,6 +57,7 @@ const InitContainer = () => {
     const driveEventManager = useDriveEventManager();
     const [hasPhotosShare, setHasPhotosShare] = useState(false);
     const isPhotosEnabled = usePhotosFeatureFlag();
+    useActivePing();
 
     useEffect(() => {
         const initPromise = getDefaultShare()
