@@ -749,9 +749,6 @@
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
       ],
-      "Your 500 MB bonus": [
-        "Il tuo bonus di 500 MB"
-      ],
       "Zoom in": [
         "Zoom avanti"
       ],
@@ -2078,10 +2075,10 @@
         "Cancellazione di un evento che inizia il ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invito per un evento il ${ formattedStart }"
+        "Invito per un evento ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Invito per un evento che inizia il ${ formattedStart }"
+        "Invito per un evento che inizia ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Aggiornamento per un evento il ${ formattedStart }"
@@ -2154,7 +2151,7 @@
       "An error occurred while loading alias options": [
         "Si è verificato un errore nel caricamento delle opzioni dell'alias"
       ],
-      "An error occurred while saving alias": [
+      "An error occurred while saving your alias": [
         "Si è verificato un errore nel salvataggio dell'alias"
       ],
       "Authentication canceled.": [
@@ -3609,9 +3606,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questa cartella è stata caricata in modo sicuro da ${ emailAddress }."
       ],
-      "double your storage": [
-        "raddoppia il tuo spazio"
-      ],
       "Download ${ name } app": [
         "Scarica l'app per ${ name }"
       ],
@@ -3759,9 +3753,6 @@
       ],
       "Get the desktop app to sync files from your computer.": [
         "Ottieni l'app desktop per sincronizzare i file dal tuo computer."
-      ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "Vieni a conoscere ${ DRIVE_APP_NAME } ed guadagnati 500 MB di bonus memoria! Agisci ora."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Vai a \"I miei file\" e carica dei file."
@@ -4353,9 +4344,6 @@
       "Warning": [
         "Avviso"
       ],
-      "Way to go, you’ve just doubled your free storage!": [
-        "Ce n'è di strada da percorrere, hai appena raddoppiato il tuo spazio di archiviazione gratuito!"
-      ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Stiamo riscontrando problemi tecnici. Il caricamento di nuove foto è temporaneamente disabilitato."
       ],
@@ -4427,10 +4415,6 @@
       ],
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
-      ],
-      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
-        "Ti restano ${ expiresInDays } giorni per richiedere il tuo bonus di benvenuto di 500 MB e ",
-        "Ti restano ${ expiresInDays } giorni per richiedere il tuo bonus di benvenuto di 500 MB e "
       ],
       "You will lose all unsaved changes.": [
         "Perderai tutte le modifiche non salvate."
@@ -5745,9 +5729,6 @@
       "Create a share link": [
         "Crea un link di condivisione"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "Inizia ad utilizzare ${ DRIVE_APP_NAME } e raddoppieremo il tuo spazio di archiviazione gratuito ad 1GB!"
-      ],
       "Set a recovery method": [
         "Impostare un metodo di recupero"
       ],
@@ -6019,8 +6000,8 @@
       "Used on amazon for shopping, etc.": [
         "Utilizzato su Amazon per shopping, ecc."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Quando ti viene chiesto il tuo indirizzo email, fornisci invece questo alias. Aggiungi un nome e una nota per tenere traccia di dove lo usi."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -7173,9 +7154,6 @@
       "You have no folders yet": [
         "Non ci sono ancora cartelle"
       ],
-      "Your 500 MB bonus": [
-        "Il tuo bonus di 500 MB"
-      ],
       "Your account is protected": [
         "Il tuo account è protetto"
       ],
@@ -7187,9 +7165,6 @@
       ],
       "Your welcome actions": [
         "Le tue azioni di benvenuto"
-      ],
-      "You’ve got 1 GB of storage": [
-        "Hai 1 GB di spazio archiviazione"
       ]
     },
     "Today icon tooltip in mini calendar": {
