@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Rimuovi codice regalo"
       ],
+      "Remove single sign-on": [
+        "Rimuovi il single sign-on"
+      ],
       "Rename": [
         "Rinomina"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Accesso"
+      ],
+      "Stop using single sign-on": [
+        "Interrompi l'utilizzo di single sign-on"
       ],
       "Submit": [
         "Invia"
@@ -2111,9 +2117,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "L'importo minimo che può essere donato è di ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Il pagamento minimo che accettiamo è di ${ price }"
       ],
@@ -2771,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } e dovrai crearli manualmente per aggiungerli nuovamente alla tua organizzazione"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
       ],
@@ -2894,8 +2900,8 @@
         "Allocazione dell'account amministratore"
       ],
       "Affected user is on row": [
-        "L'utente condizionato è nella riga",
-        "Gli utenti condizionati sono sulle righe"
+        "L'utente con una password troppo corta è nella riga",
+        "Gli utenti con una password troppo corta sono sulle righe"
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
@@ -2959,6 +2965,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Assicurati di copiare la tua password e di conservarla in un luogo sicuro."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Prima di attivare l'utente è necessario fornire una password e creare delle chiavi di crittografia per gli indirizzi."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Prima di creare questo indirizzo è necessario fornire una password e creare chiavi di crittografia per essa."
@@ -3271,6 +3280,9 @@
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
       ],
+      "Keys created": [
+        "Chiavi create"
+      ],
       "Lean more about gateways": [
         "Scopri di più sui gateway"
       ],
@@ -3337,6 +3349,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Gli utenti che non usano SSO (creati manualmente, non forniti dal tuo fornitore di identità) possono comunque accedere alla tua organizzazione"
+      ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
       ],
@@ -3348,6 +3363,9 @@
       ],
       "old password": [
         "vecchia password"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Quando single sign-on viene disabilitato per la tua organizzazione:"
       ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
@@ -3541,11 +3559,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "Single sign-on removed": [
+        "Single sign-on rimosso"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Alcuni dei tuoi server disponibili possono essere utilizzati solo in determinati paesi a causa di rimozioni recenti"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specifica il dominio autorizzato all'autenticazione con SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Gli utenti SSO (forniti dal tuo fornitore di identità) verranno eliminati"
       ],
       "Step ${ step }": [
         "Passaggio ${ step }",
@@ -3592,6 +3616,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Grazie per aver sostenuto la nostra missione di realizzare un internet migliore, dove la privacy e la libertà sono al primo posto."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Le credenziali del tuo fornitore di identità verranno eliminate."
       ],
       "The following address is invalid.": [
         "L'indirizzo seguente non è valido.",
@@ -3664,6 +3691,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Questo eliminerà definitivamente il tuo account e tutti i suoi dati. Non potrai riattivare questo account."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Questo rimuoverà SSO per ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Questo sostituirà la tua password temporanea. La userai per accedere al tuo account ${ BRAND_NAME } in futuro."
@@ -3772,6 +3802,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Usa le seguenti credenziali quando ti connetti ai server ${ VPN_APP_NAME } senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
+      ],
+      "User activated": [
+        "Utente attivato"
       ],
       "Users": [
         "Utenti"
@@ -4584,6 +4617,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Aggiornamenti sui prodotti ${ app } e ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Aggiornamenti sul prodotto ${ app }"
       ],
@@ -4610,9 +4646,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Email di benvenuto di ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nuove funzionalità di ${ MAIL_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4736,7 +4769,7 @@
     },
     "Member action": {
       "Activate user": [
-        "Attiva utente"
+        "Attiva l'utente"
       ],
       "Change password": [
         "Cambia la password"
@@ -7357,6 +7390,9 @@
       "Create multiple user accounts": [
         "Crea account utente multipli"
       ],
+      "Create organization key": [
+        "Crea chiave dell'organizzazione"
+      ],
       "Create user accounts": [
         "Crea gli account utente"
       ],
@@ -7590,6 +7626,12 @@
       "Remove domain": [
         "Rimuovi dominio"
       ],
+      "Remove single sign-on": [
+        "Rimuovi il single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Vuoi rimuovere il single sign-on per la tua organizzazione?"
+      ],
       "Remove user?": [
         "Vuoi rimuovere l'utente?"
       ],
@@ -7662,8 +7704,8 @@
       "Signed in to member account": [
         "Accesso all'account membro"
       ],
-      "Single Sign-On": [
-        "Accesso singolo"
+      "Single sign-on": [
+        "Single sign-on"
       ],
       "Status": [
         "Stato"
