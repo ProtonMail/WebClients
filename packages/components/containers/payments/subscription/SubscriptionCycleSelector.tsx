@@ -225,6 +225,28 @@ export const SubscriptionCheckoutCycleItem = ({
     );
 };
 
+export const getAllowedCycles = (
+    subscription: SubscriptionModel | undefined,
+    minimumCycle: CYCLE,
+    planIDs: PlanIDs
+): CYCLE[] => {
+    const currentPlanIds = getPlanIDs(subscription);
+    const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
+    const isSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
+
+    const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => {
+        const isHigherThanCurrentSubscription = cycle > (subscription?.Cycle ?? 0);
+        const isHigherThanUpcoming = cycle > (subscription?.UpcomingSubscription?.Cycle ?? 0);
+
+        const isEligibleForSelection =
+            (isHigherThanCurrentSubscription && isHigherThanUpcoming && isSamePlan) || !isSamePlan;
+
+        return cycle >= minimumCycle && isEligibleForSelection;
+    });
+
+    return [CYCLE.TWO_YEARS, ...filteredCycles];
+};
+
 const SubscriptionCycleSelector = ({
     cycle: cycleSelected,
     minimumCycle = CYCLE.MONTHLY,
@@ -237,21 +259,7 @@ const SubscriptionCycleSelector = ({
     faded,
     subscription,
 }: Props) => {
-    const currentPlanIds = getPlanIDs(subscription);
-    const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
-    const isTheSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
-
-    const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => {
-        const isHigherThanCurrentSubscription = cycle > (subscription?.Cycle ?? 0);
-        const isHigherThanUpcoming = cycle > (subscription?.UpcomingSubscription?.Cycle ?? 0);
-
-        const isEligibleForSelection =
-            (isHigherThanCurrentSubscription && isHigherThanUpcoming && isTheSamePlan) || !isTheSamePlan;
-
-        return cycle >= minimumCycle && isEligibleForSelection;
-    });
-
-    const cycles = [CYCLE.TWO_YEARS, ...filteredCycles];
+    const cycles = getAllowedCycles(subscription, minimumCycle, planIDs);
 
     const monthlySuffix = getMonthlySuffix(planIDs);
 
