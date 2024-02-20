@@ -1,0 +1,1858 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "cs_CZ"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Přidat"
+      ],
+      "Add current URL": [
+        "Přidat aktuální URL adresu"
+      ],
+      "Add more": [
+        "Přidat další"
+      ],
+      "Add new item": [
+        "Přidat novou položku"
+      ],
+      "Advanced": [
+        "Pokročilé"
+      ],
+      "Advanced options": [
+        "Pokročilé nastavení"
+      ],
+      "Authenticate": [
+        "Ověřit"
+      ],
+      "Back": [
+        "Zpět"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Change": [
+        "Změnit"
+      ],
+      "Choose a file or drag it here": [
+        "Vyberte soubor nebo jej sem přetáhněte"
+      ],
+      "Clear": [
+        "Smazat"
+      ],
+      "Clear search": [
+        "Vyčistit vyhledávání"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "Close advanced options": [
+        "Zavřít rozšířené možnosti"
+      ],
+      "Close navigation": [
+        "Zavřít menu"
+      ],
+      "Confirm": [
+        "Potvrdit"
+      ],
+      "Confirm access": [
+        "Potvrdit přístup"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Copy and close": [
+        "Kopírovat a zavřít"
+      ],
+      "Copy to clipboard": [
+        "Zkopírovat do schránky"
+      ],
+      "Create": [
+        "Vytvořit"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create a new vault": [
+        "Vytvořit nový trezor"
+      ],
+      "Create a new vault to share": [
+        "Vytvořit nový trezor ke sdílení"
+      ],
+      "Create alias": [
+        "Vytvořit alias"
+      ],
+      "Create card": [
+        "Vytvořit kartu"
+      ],
+      "Create login": [
+        "Vytvořit přihlášení"
+      ],
+      "Create note": [
+        "Vytvořit poznámku"
+      ],
+      "Create vault": [
+        "Vytvořit trezor"
+      ],
+      "Creating vault": [
+        "Vytvářím trezor"
+      ],
+      "Customize": [
+        "Přizpůsobit"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Delete alias": [
+        "Smazat alias"
+      ],
+      "Delete all": [
+        "Smazat vše"
+      ],
+      "Delete password": [
+        "Smazat heslo"
+      ],
+      "Delete permanently": [
+        "Trvale smazat"
+      ],
+      "Delete vault": [
+        "Smazat trezor"
+      ],
+      "Deselect": [
+        "Zrušit výběr"
+      ],
+      "Discard": [
+        "Zahodit"
+      ],
+      "Dismiss": [
+        "Skrýt"
+      ],
+      "Edit": [
+        "Upravit"
+      ],
+      "Edit vault": [
+        "Upravit trezor"
+      ],
+      "Export": [
+        "Exportovat"
+      ],
+      "Feedback": [
+        "Zpětná vazba"
+      ],
+      "Fill password": [
+        "Vyplnit heslo"
+      ],
+      "Filter vault items": [
+        "Filtrovat položky v trezoru"
+      ],
+      "Generate alias": [
+        "Vygenerovat alias"
+      ],
+      "Generate password": [
+        "Generovat heslo"
+      ],
+      "Generated passwords": [
+        "Vygenerovaná hesla"
+      ],
+      "Get mobile apps": [
+        "Získat mobilní aplikace"
+      ],
+      "Get Started": [
+        "Začínáme"
+      ],
+      "Help us improve": [
+        "Pomozte nám se zlepšit"
+      ],
+      "Hide": [
+        "Skrýt"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Jak mohu exportovat svá data z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importovat"
+      ],
+      "Importing": [
+        "Importuji"
+      ],
+      "Invite others": [
+        "Pozvat ostatní"
+      ],
+      "Join shared vault": [
+        "Připojit ke sdílenému trezoru"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Leave": [
+        "Opustit"
+      ],
+      "Leave vault": [
+        "Opustit trezor"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Uzamknout ${ PASS_APP_NAME }"
+      ],
+      "Make admin": [
+        "Nastavit správcem"
+      ],
+      "Make editor": [
+        "Nastavit editorem"
+      ],
+      "Make viewer": [
+        "Nastavit prohlížejícím"
+      ],
+      "Manage access": [
+        "Spravovat přístup"
+      ],
+      "Manually sync your data": [
+        "Manuálně synchronizovat"
+      ],
+      "More info: ${ safeTitle }": [
+        "Více informací: ${ safeTitle }"
+      ],
+      "More options": [
+        "Více možností"
+      ],
+      "Move": [
+        "Přesun"
+      ],
+      "Move all items": [
+        "Přesunout všechny položky"
+      ],
+      "Move to a shared vault": [
+        "Přesunout do sdíleného trezoru"
+      ],
+      "Move to another vault": [
+        "Přesunout do jiného trezoru"
+      ],
+      "Move to Trash": [
+        "Přesunout do koše"
+      ],
+      "Move to trash": [
+        "Přesunout do koše"
+      ],
+      "Not now": [
+        "Nyní ne"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open navigation": [
+        "Otevřít menu"
+      ],
+      "Pass for Android": [
+        "Proton Pass pro Android"
+      ],
+      "Pass for iOS": [
+        "Proton Pass pro iOS"
+      ],
+      "Pin item": [
+        "Připnout položku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
+      ],
+      "Regenerate": [
+        "Znovu vygenerovat"
+      ],
+      "Reject": [
+        "Odmítnout"
+      ],
+      "Reject invitation": [
+        "Odmítnout pozvánku"
+      ],
+      "Remove access": [
+        "Odebrat přístup"
+      ],
+      "Request a feature": [
+        "Požádejte o funkci"
+      ],
+      "Resend invitation": [
+        "Znovu poslat pozvánku"
+      ],
+      "Restore": [
+        "Obnovit"
+      ],
+      "Restore item": [
+        "Obnovit položku"
+      ],
+      "Retry": [
+        "Opakovat"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Saving": [
+        "Ukládání"
+      ],
+      "See members": [
+        "Zobrazit členy"
+      ],
+      "Send invite": [
+        "Odeslat pozvánku"
+      ],
+      "Send us a message": [
+        "Pošlete nám zprávu"
+      ],
+      "Set access level": [
+        "Nastavit úroveň přístupu"
+      ],
+      "Share": [
+        "Sdílet"
+      ],
+      "Share this vault": [
+        "Sdílet tento trezor"
+      ],
+      "Share vault": [
+        "Sdílet trezor"
+      ],
+      "Show": [
+        "Zobrazit"
+      ],
+      "Sign back in": [
+        "Přihlásit se zpět"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Přihlaste se pomocí ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Odhlásit se"
+      ],
+      "Sort vault items": [
+        "Seřadit položky trezoru"
+      ],
+      "Submit": [
+        "Odeslat"
+      ],
+      "Submitting report...": [
+        "Odesílání hlášení..."
+      ],
+      "Transfer ownership": [
+        "Převod vlastnictví"
+      ],
+      "Unpin item": [
+        "Odepnout položku"
+      ],
+      "Update vault": [
+        "Aktualizovat trezor"
+      ],
+      "Upgrade": [
+        "Přejít na placený tarif"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade now to share with more people": [
+        "Navyšte nyní a sdílejte s více lidmi"
+      ],
+      "Write us on Reddit": [
+        "Napište nám na Reddit"
+      ],
+      "Write us on Twitter": [
+        "Napište nám na Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Váš správce hesel zde není? Požádejte o něj."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Šetřete chytře. Získejte roční předplatné Pass Plus za pouhých ${ relativePrice } měsíčně."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Nabídka pro Black Friday"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Další informace"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Sbalit"
+      ],
+      "Expand": [
+        "Rozbalit"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } soubor se nepodařilo zpracovat. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Možnosti aliasu nelze vyřešit"
+      ],
+      "Authentication error": [
+        "Ověření selhalo"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Ověření selhalo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu"
+      ],
+      "Auto-lock could not be activated": [
+        "Automatické zamykání nelze aktivovat"
+      ],
+      "Auto-lock could not be disabled": [
+        "Automatické zamykání nelze deaktivovat"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Nepodařilo se potvrdit tuto pozvánku v tuto chvíli"
+      ],
+      "Could not leave vault.": [
+        "Nepodařilo se opustit trezor."
+      ],
+      "Could not open created vault": [
+        "Nelze otevřít vytvořený trezor"
+      ],
+      "Could not open invited vault": [
+        "Nepodařilo se otevřít trezor, ke kterému je pozvánka"
+      ],
+      "Could not open updated vault": [
+        "Nelze aktualizovat vytvořený trezor"
+      ],
+      "Could not resolve share members": [
+        "Nepodařilo se vyřešit členy sdílení"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Dešifrování vašeho exportního souboru ${ PASS_APP_NAME } selhalo. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Smazání položky se nezdařilo"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Smazání trezoru \"${ payload.content.name }\" selhalo"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Zjištěn ${ errors.length } poškozený řádek csv",
+        "Zjištěny ${ errors.length } poškozené řádky csv",
+        "Zjištěno ${ errors.length } poškozených řádků csv",
+        "Zjištěno ${ errors.length } poškozených řádků csv"
+      ],
+      "Editing item failed": [
+        "Úprava položky se nezdařila"
+      ],
+      "Empty CSV file": [
+        "Prázdný soubor CSV"
+      ],
+      "Emptying trash failed": [
+        "Vyprázdnění koše selhalo"
+      ],
+      "Encrypted JSON not supported": [
+        "Šifrovaný JSON není podporován"
+      ],
+      "Error reporting problem": [
+        "Chyba při hlášení problému"
+      ],
+      "Failed removing the invite.": [
+        "Odstranění pozvánky selhalo."
+      ],
+      "Failed resending invite.": [
+        "Opětovné zaslání pozvánky selhalo."
+      ],
+      "Failed to edit user's access.": [
+        "Úprava uživatelského přístupu selhala."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Přesunutí všech položek z \"${ payload.content.name }\" selhalo"
+      ],
+      "Failed to move items": [
+        "Přesun položek selhal"
+      ],
+      "Failed to move items to trash": [
+        "Nepodařilo se přesunout do koše"
+      ],
+      "Failed to pin item": [
+        "Připnutí položky selhalo"
+      ],
+      "Failed to remove user's access.": [
+        "Odstranění uživatelského přístupu selhalo."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Nepodařilo se přenést vlastnictví tohoto trezoru."
+      ],
+      "Failed to unpin item": [
+        "Odepnutí položky selhalo"
+      ],
+      "File could not be parsed": [
+        "Soubor nelze analyzovat"
+      ],
+      "File does not match expected format": [
+        "Soubor neodpovídá očekávanému formátu"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Import pro trezor \"${ vaultData.name }\" selhal : ${ description }"
+      ],
+      "Importing items failed": [
+        "Import položek se nezdařil"
+      ],
+      "Invalid password manager": [
+        "Neplatný správce hesel"
+      ],
+      "Invitation could not be accepted": [
+        "Pozvánku nebylo možné přijmout"
+      ],
+      "Invitation could not be rejected": [
+        "Pozvánku nebylo možné odmítnout"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Obsah položky nemůže přesáhnout 40KB"
+      ],
+      "Item creation failed": [
+        "Vytvoření položky se nezdařilo"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "Aplikace LastPass vyexportuje poškozený soubor CSV, pokud některé z polí položek obsahuje neočekávané čárky, uvozovky nebo více řádků"
+      ],
+      "Moving item failed": [
+        "Přesouvání položky selhalo"
+      ],
+      "Passphrase is incorrect": [
+        "Heslo je nesprávné"
+      ],
+      "PIN codes do not match": [
+        "PIN kódy se neshodují"
+      ],
+      "Request timed out": [
+        "Vypršel časový limit žádosti"
+      ],
+      "Requesting alias options failed": [
+        "Vyžádání možností aliasu selhalo"
+      ],
+      "Restoring item failed": [
+        "Obnovení položky se nezdařilo"
+      ],
+      "Restoring trashed items failed": [
+        "Obnovení položek z koše selhalo"
+      ],
+      "Settings update failed": [
+        "Aktualizace nastavení se nezdařila"
+      ],
+      "Signature verification failed": [
+        "Ověření podpisu selhalo"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Některé trezory již nejsou přístupné z důvodu resetování hesla. Chcete-li získat přístup, znovu aktivujte klíče k účtu. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
+      ],
+      "The file you are trying to import is empty": [
+        "Soubor, který se snažíte importovat, je prázdný"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
+      ],
+      "Trashing item failed": [
+        "Přesun do koše selhal"
+      ],
+      "Unable to boot": [
+        "Nelze spustit"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Nelze vygenerovat OTP kód pro tuto položku"
+      ],
+      "Unable to sync": [
+        "Nelze synchronizovat"
+      ],
+      "Unknown invite": [
+        "Neznámá pozvánka"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Neodporovaný formát souboru ${ PASS_APP_NAME }"
+      ],
+      "Unsupported 1Password file format": [
+        "Nepodporovaný formát souboru 1Password"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Aktualizace trezoru \"${ payload.content.name }\" selhala"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Vytvoření trezoru \"${ payload.content.name }\" selhalo"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Trezor \"${ vaultData.name }\" nelze vytvořit"
+      ],
+      "Vault name does not match": [
+        "Název trezoru neodpovídá"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Chybný PIN kód. Zkuste to znovu."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Jejda, něco se pokazilo"
+      ],
+      "Please refresh the page or try again later.": [
+        "Aktualizujte prosím stránku nebo to zkuste znovu později."
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Chcete-li vytvořit více trezorů, přejděte na placený tarif."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Položka \"${ payload.item.data.metadata.name }\" byla odmítnuta"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členové",
+        "${ memberCount } členů",
+        "${ memberCount } členů"
+      ],
+      "${ n } item": [
+        "${ n } položka",
+        "${ n } položky",
+        "${ n } položek",
+        "${ n } položek"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Je dostupná nová verze aplikace ${ PASS_APP_NAME }. Aktualizací získáte nejnovější funkce a opravy chyb."
+      ],
+      "Access successfully confirmed": [
+        "Přístup úspěšně potvrzen"
+      ],
+      "Admin": [
+        "Správce"
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
+      ],
+      "All items successfully moved": [
+        "Všechny položky úspěšně přesunuty"
+      ],
+      "All trashed items permanently deleted": [
+        "Všechny položky z koše trvale smazány"
+      ],
+      "All trashed items successfully restored": [
+        "Všechny položky z koše úspěšně obnoveny"
+      ],
+      "An item previously shared with you was removed": [
+        "Položka dříve sdílená s vámi byla odebrána"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Jste si jisti, že chcete přesunout všechny položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Automatické zamykání bylo úspěšně deaktivováno"
+      ],
+      "Built in 2FA authenticator": [
+        "Vestavěný autentizátor 2FA"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Může udělovat a rušit přístup k tomuto trezoru a smazat ho."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Může udělovat a rušit přístup k tomuto trezoru."
+      ],
+      "Can view items in this vault.": [
+        "Může zobrazovat položky v tomto trezoru."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Blahopřejeme, váš přístup byl potvrzen"
+      ],
+      "Copied to clipboard": [
+        "Zkopírováno do schránky"
+      ],
+      "Decrypting your data": [
+        "Dešifrování vašich dat"
+      ],
+      "Deleted items will be moved here first": [
+        "Smazané položky budou nejprve přesunuty sem"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Mazání \"${ payload.content.name }\""
+      ],
+      "Drop file here to upload": [
+        "Sem přetáhněte soubor pro nahrání"
+      ],
+      "Drop to import": [
+        "Přetažením provedete import"
+      ],
+      "Editor": [
+        "Editor"
+      ],
+      "Emptying trash...": [
+        "Vysypávání koše..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Zadejte ověřovací kód. Číslice ${ digit }."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Z bezpečnostních důvodů musí být váš přístup potvrzen"
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Získejte neomezený počet aliasů, využívejte exkluzivní funkce a podpořte nás předplacením Proton Pass Plus."
+      ],
+      "Import in progress:": [
+        "Import probíhá:"
+      ],
+      "Imported ${ payload.total } item": [
+        "Importována ${ payload.total } položka",
+        "Importovány ${ payload.total } položky",
+        "Importováno ${ payload.total } položek",
+        "Importováno ${ payload.total } položek"
+      ],
+      "Imported on ${ date }": [
+        "Importováno ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Abyste mohli plně využívat rozšíření ${ PASS_APP_NAME }, udělte mu prosím potřebná oprávnění."
+      ],
+      "Internet connection lost": [
+        "Připojení k Internetu bylo ztraceno"
+      ],
+      "Invitation sent": [
+        "Pozvánka odeslána"
+      ],
+      "Invite successfully removed": [
+        "Pozvánka byla úspěšně odebrána"
+      ],
+      "Invite successfully resent": [
+        "Pozvánka byla úspěšně odeslána"
+      ],
+      "Invite successfully sent": [
+        "Pozvánka úspěšně odeslána"
+      ],
+      "invites you to access items in": [
+        "vás zve k přístupu k položkám v"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Zdá se, že jste již přihlášeni do ${ PASS_APP_NAME }. Pokud se snažíte přihlásit pomocí jiného účtu, nejprve se z rozšíření odhlaste."
+      ],
+      "item": [
+        "položka",
+        "položky",
+        "položek",
+        "položek"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Položka \"${ payload.item.data.metadata.name }\" byla vytvořena"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Položka \"${ payload.item.data.metadata.name }\" byla aktualizována"
+      ],
+      "Item moved to trash": [
+        "Položka přesunuta do koše"
+      ],
+      "Item permanently deleted": [
+        "Položka byla trvale smazána"
+      ],
+      "Item restored": [
+        "Položka obnovena"
+      ],
+      "Item successfully moved": [
+        "Položka úspěšně přesunuta"
+      ],
+      "Item successfully pinned": [
+        "Položka úspěšně připnuta"
+      ],
+      "Item successfully unpinned": [
+        "Položka úspěšně odepnuta"
+      ],
+      "Leaving vault...": [
+        "Opouštění trezoru..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Začněte tím, že vytvoříte první položku"
+      ],
+      "Loading": [
+        "Načítání"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Načítání aplikace ${ PASS_APP_NAME }"
+      ],
+      "Locking your session...": [
+        "Zamykání relace..."
+      ],
+      "Logging you out...": [
+        "Odhlašování..."
+      ],
+      "me": [
+        "já"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Přesouvání všech položek z \"${ payload.content.name }\""
+      ],
+      "Moving items": [
+        "Přesouvání položek"
+      ],
+      "Moving items to trash": [
+        "Přesouvání položek do koše"
+      ],
+      "Never": [
+        "Nikdy"
+      ],
+      "None": [
+        "Nic"
+      ],
+      "Owner": [
+        "Vlastník"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Vlastnictví bylo úspěšně převedeno. Již nejste vlastníkem tohoto trezoru."
+      ],
+      "Pass Plus trial": [
+        "Zkušební verze Pass Plus"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN kód byl úspěšně zaregistrován. Použijte jej k odemknutí ${ PASS_APP_NAME }"
+      ],
+      "Pinning item...": [
+        "Připínání položky..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Prosím, potvrďte svůj PIN kód, pro zrušení registrace stávajícího zámku.\n${ PASS_APP_NAME } pak nebude zamykán."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Pro úpravu tohoto nastavení potvrďte PIN kód."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Pro dokončení registrace nastavení automatického zamykání potvrďte PIN kód."
+      ],
+      "Please consider leaving a review.": [
+        "Zvažte prosím zanechání hodnocení."
+      ],
+      "Please enter your current PIN code to continue": [
+        "Pro pokračování zadejte svůj aktuální PIN kód"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Pro předběžný přístup k webové aplikaci ${ PASS_APP_NAME } prosím navyšte svůj tarif"
+      ],
+      "Press Enter to copy": [
+        "Pro kopírování stiskněte Enter"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Velmi nám záleží na ochraně soukromí. Přečtěte si, v čem se ${ PASS_APP_NAME } liší."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
+      ],
+      "Restoring trashed items...": [
+        "Obnovování položek z koše..."
+      ],
+      "Select destination vault": [
+        "Vyberte cílový trezor"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Vyberte, kam chcete importované trezory uložit."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
+      ],
+      "Session timed out": [
+        "Relace vypršela"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Nastavte PIN kód pro snadné zamknutí dat"
+      ],
+      "Settings successfully updated": [
+        "Nastavení bylo úspěšně aktualizováno"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Sdílení přihlašovacích údajů, zabezpečených poznámek, až s 10 lidmi"
+      ],
+      "Signing you in": [
+        "Přihlašujeme vás"
+      ],
+      "Successfully exported all your items": [
+        "Všechny položky byly úspěšně exportovány"
+      ],
+      "Successfully left the vault": [
+        "Trezor úspěšně opuštěn"
+      ],
+      "Successfully synced all vaults": [
+        "Všechny trezory byly úspěšně synchronizovány"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Přejděte do jiného trezoru nebo vytvořte položku v tomto trezoru"
+      ],
+      "Syncing your vaults…": [
+        "Synchronizace trezorů…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Děkujeme, problém byl nahlášen"
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Následující ${ result.ignored.length } položku nelze importovat:",
+        "Následující ${ result.ignored.length } položky nelze importovat:",
+        "Následujících ${ result.ignored.length } položek nelze importovat:",
+        "Následujících ${ result.ignored.length } položek nelze importovat:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Text, který se snažíte vložit, je delší než maximální povolená délka ${ maxLength } znaků."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Uživatel zatím pozvánku nepřijal."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Tento trezor není v současné době s nikým sdílen. Pozvěte ostatní, se kterými chcete trezor sdílet."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Chcete-li si prohlédnout importovaná data, klikněte na ikonu Pass v panelu nástrojů svého prohlížeče."
+      ],
+      "Unable to copy to clipboard": [
+        "Nelze kopírovat do schránky"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomezený počet aliasů Hide-my-email"
+      ],
+      "Unpinning item...": [
+        "Odepínání položky..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
+      ],
+      "Use vaults to share this item with others.": [
+        "Pomocí trezorů můžete tuto položku sdílet s ostatními."
+      ],
+      "User's access removed": [
+        "Přístup uživatele odebrán"
+      ],
+      "User's access sucessfuly updated": [
+        "Přístup uživatele byl úspěšně aktualizován"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Trezor \"${ payload.content.name }\" úspěšně smazán"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Trezor \"${ payload.share.content.name }\" úspěšně vytvořen"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Trezor \"${ payload.share.content.name }\" úspěšně aktualizován"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Trezor \"${ share.content.name }\" byl odebrán"
+      ],
+      "Viewer": [
+        "Prohlížející"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Máme potíže se synchronizací dat do místního úložiště. Ujistěte se prosím, že máte dostatek místa na disku, aby ${ PASS_SHORT_APP_NAME } mohl bez problémů fungovat."
+      ],
+      "You are about to create:": [
+        "Chystáte se vytvořit:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nemůžete měnit e-mailové schránky tohoto aliasu."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } den.",
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývají ${ daysRemaining } dny.",
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } dnů.",
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } dnů."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Položky lze přesunout pouze do vašich prvních dvou trezorů. Chcete-li přesouvat položky mezi všemi trezory, navyšte své předplatné."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Nové položky lze vytvářet pouze ve vašich dvou prvních trezorech. Chcete-li vytvořit nové položky ve všech trezorech, navyšte své předplatné."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Dosáhli jste limitu aliasů, které můžete vytvořit. Při navýšení předplatného si můžete vytvořit neomezený počet aliasů."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Dosáhli jste limitu trezorů, které můžete vytvořit."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Dosáhli jste maximální povolené délky ${ maxLength } znaků."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
+      ],
+      "You're invited to a vault.": [
+        "Jste pozváni do trezoru."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše soubory budou zašifrovány a uloženy"
+      ]
+    },
+    "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znaky",
+        "${ config.options.length } znaků",
+        "${ config.options.length } znaků"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } slovo",
+        "${ config.options.wordCount } slova",
+        "${ config.options.wordCount } slov",
+        "${ config.options.wordCount } slov"
+      ],
+      "1 hour": [
+        "1 hodina"
+      ],
+      "1 minute": [
+        "1 minuta"
+      ],
+      "10 minutes": [
+        "10 minut"
+      ],
+      "15 minutes": [
+        "15 minut"
+      ],
+      "2FA secret key (TOTP)": [
+        "Klíč 2FA secret (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA token (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minut"
+      ],
+      "30 seconds": [
+        "30 sekund"
+      ],
+      "5 minutes": [
+        "5 minut"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Účet"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alias adresa"
+      ],
+      "Aliases": [
+        "Aliasy"
+      ],
+      "All": [
+        "Vše"
+      ],
+      "All vaults": [
+        "Všechny trezory"
+      ],
+      "Alphabetical": [
+        "Abecedně"
+      ],
+      "Application logs": [
+        "Logy aplikace"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Auto uzamčení ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock after": [
+        "Automaticky zamknout po"
+      ],
+      "Capital letters (A-Z)": [
+        "Velká písmena (A-Z)"
+      ],
+      "Capitalise": [
+        "Velká písmena"
+      ],
+      "Card": [
+        "Karta"
+      ],
+      "Card number": [
+        "Číslo karty"
+      ],
+      "Cards": [
+        "Karty"
+      ],
+      "Confirm vault name": [
+        "Potvrdit název trezoru"
+      ],
+      "Create a credit card": [
+        "Vytvořit platební kartu"
+      ],
+      "Create a hide-my-email alias": [
+        "Vytvořit alias hide-my-email"
+      ],
+      "Create a login": [
+        "Vytvořit přihlášení"
+      ],
+      "Create an encrypted note": [
+        "Vytvořit šifrovanou poznámku"
+      ],
+      "Create new vault": [
+        "Vytvořit nový trezor"
+      ],
+      "Created": [
+        "Vytvořeno"
+      ],
+      "Display": [
+        "Zobrazení"
+      ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
+      "Empty trash": [
+        "Vyprázdnit koš"
+      ],
+      "Expiration date": [
+        "Konec platnosti"
+      ],
+      "Export": [
+        "Export"
+      ],
+      "Field name": [
+        "Název pole"
+      ],
+      "Forwards to": [
+        "Přeposílá na"
+      ],
+      "General": [
+        "Obecné"
+      ],
+      "Generic CSV": [
+        "Obyčejný CSV"
+      ],
+      "Grant": [
+        "Udělit"
+      ],
+      "Hidden": [
+        "Skrytý"
+      ],
+      "Hide password": [
+        "Skrýt heslo"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Import passwords": [
+        "Importovat hesla"
+      ],
+      "Imported from : ": [
+        "Importováno z : "
+      ],
+      "Imported on : ": [
+        "Importováno: "
+      ],
+      "Include numbers": [
+        "Zahrnout čísla"
+      ],
+      "Include numbers (0-9)": [
+        "Včetně číslic (0-9)"
+      ],
+      "Invitations": [
+        "Pozvánky"
+      ],
+      "Item ID": [
+        "ID položky"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová zkratka: ${ shortcut }"
+      ],
+      "Language": [
+        "Jazyk"
+      ],
+      "Last 2 weeks": [
+        "Minulé 2 týdny"
+      ],
+      "Last autofill": [
+        "Poslední automatické vyplnění"
+      ],
+      "Last month": [
+        "Minulý měsíc"
+      ],
+      "Last week": [
+        "Minulý týden"
+      ],
+      "Latest import": [
+        "Poslední import"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Login": [
+        "Přihlásit se"
+      ],
+      "Logins": [
+        "Přihlášení"
+      ],
+      "Members": [
+        "Členové"
+      ],
+      "Modified": [
+        "Upraveno"
+      ],
+      "More than a month": [
+        "Více než měsíc"
+      ],
+      "Most recent": [
+        "Nejnovější"
+      ],
+      "Name": [
+        "Jméno"
+      ],
+      "Name on card": [
+        "Jméno na kartě"
+      ],
+      "Need help ?": [
+        "Potřebujete poradit ?"
+      ],
+      "New vault": [
+        "Nový trezor"
+      ],
+      "New-Old": [
+        "Nové-Staré"
+      ],
+      "Newest to oldest": [
+        "Od nejnovějších k nejstarším"
+      ],
+      "No history": [
+        "Žádná historie"
+      ],
+      "Note": [
+        "Poznámka"
+      ],
+      "Notes": [
+        "Poznámky"
+      ],
+      "Old-New": [
+        "Staré-Nové"
+      ],
+      "Oldest to newest": [
+        "Od nejstarších k nejnovějším"
+      ],
+      "Passphrase": [
+        "Heslo"
+      ],
+      "Password": [
+        "Heslo"
+      ],
+      "Password history": [
+        "Historie hesel"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "Předpona"
+      ],
+      "Rate us": [
+        "Ohodnoťte nás"
+      ],
+      "Recent": [
+        "Nedávné"
+      ],
+      "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "Restore all items": [
+        "Obnovit všechny položky"
+      ],
+      "Reveal password": [
+        "Zobrazit heslo"
+      ],
+      "Security": [
+        "Zabezpečení"
+      ],
+      "Security code": [
+        "Bezpečnostní kód"
+      ],
+      "Select an email address": [
+        "Zvolit e-mailovou adresu"
+      ],
+      "Select preferred language": [
+        "Vyberte preferovaný jazyk"
+      ],
+      "Select your password manager": [
+        "Zvolte si svého správce hesel"
+      ],
+      "Selected": [
+        "Vybráno"
+      ],
+      "Session locking": [
+        "Zamykání relace"
+      ],
+      "Set PIN code": [
+        "Nastavit PIN kód"
+      ],
+      "Show website favicons": [
+        "Zobrazit ikony webových stránek"
+      ],
+      "Special characters (!&*)": [
+        "Speciální znaky (!&*)"
+      ],
+      "Suffix": [
+        "Přípona"
+      ],
+      "Support": [
+        "Podpora"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Title": [
+        "Název"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Total imported items : ": [
+        "Celkem importovaných položek: "
+      ],
+      "Total items : ": [
+        "Celkem položek: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Koš"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Unnamed Credit Card": [
+        "Nepojmenovaná platební karta"
+      ],
+      "Unnamed item": [
+        "Nepojmenovaná položka"
+      ],
+      "Unnamed note": [
+        "Nepojmenovaná poznámka"
+      ],
+      "Untitled": [
+        "Bez názvu"
+      ],
+      "Update": [
+        "Aktualizovat"
+      ],
+      "Username": [
+        "Uživatelské jméno"
+      ],
+      "Username (alias)": [
+        "Uživatelské jméno (alias)"
+      ],
+      "Username (new alias)": [
+        "Uživatelské jméno (nový alias)"
+      ],
+      "Vault": [
+        "Trezor"
+      ],
+      "Vault ID": [
+        "ID trezoru"
+      ],
+      "Vaults": [
+        "Trezory"
+      ],
+      "View details": [
+        "Zobrazit podrobnosti"
+      ],
+      "View logs": [
+        "Zobrazit logy"
+      ],
+      "Websites": [
+        "Webové stránky"
+      ],
+      "You are about to create": [
+        "Chystáte se vytvořit"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Zadejte PIN kód"
+      ],
+      "Sign in to your account": [
+        "Přihlaste se ke svému účtu"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Odemknout ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Vítejte v ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položek",
+        "${ count } položek"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Čárky"
+      ],
+      "Hyphens": [
+        "Pomlčky"
+      ],
+      "Memorable Password": [
+        "Zapamatovatelné heslo"
+      ],
+      "Numbers": [
+        "Čísla"
+      ],
+      "Numbers and Symbols": [
+        "Čísla a symboly"
+      ],
+      "Periods": [
+        "Tečky"
+      ],
+      "Random Password": [
+        "Náhodné heslo"
+      ],
+      "Spaces": [
+        "Mezery"
+      ],
+      "Underscores": [
+        "Podtržítka"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Přidat klíč 2FA secret"
+      ],
+      "Add hidden text": [
+        "Přidat skrytý text"
+      ],
+      "Add note": [
+        "Přidat poznámku"
+      ],
+      "Add text": [
+        "Přidat text"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
+      "Enter a note...": [
+        "Zadejte poznámku..."
+      ],
+      "Enter a prefix": [
+        "Zadejte předponu"
+      ],
+      "Enter email or username": [
+        "Zadejte e-mail nebo uživatelské jméno"
+      ],
+      "Enter password": [
+        "Zadejte heslo"
+      ],
+      "Full Name": [
+        "Celé jméno"
+      ],
+      "MM/YY": [
+        "MM/RR"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Password": [
+        "Heslo"
+      ],
+      "Pick a vault": [
+        "Vyberte si trezor"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Popište prosím problém a uveďte jakékoli chybové zprávy"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Znovu napište \"${ vaultName }\" pro potvrzení smazání"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Hledat ${ pluralItemType } v ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Hledat ${ pluralItemType } ve všech trezorech"
+      ],
+      "Search in ${ vaultName }": [
+        "Hledat v ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Hledat ve všech trezorech"
+      ],
+      "Search in Trash": [
+        "Hledat v koši"
+      ],
+      "Select a suffix": [
+        "Vyberte příponu"
+      ],
+      "Shared vault": [
+        "Sdílený trezor"
+      ],
+      "Unknown origin": [
+        "Neznámý původ"
+      ],
+      "Untitled": [
+        "Bez názvu"
+      ],
+      "Used on ${ url }": [
+        "Použito na ${ url }"
+      ],
+      "Write your note": [
+        "Napište svoji poznámku"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Aktualizace automatického uzamčení"
+      ],
+      "Confirm PIN code": [
+        "Potvrdit PIN kód"
+      ],
+      "Create PIN code": [
+        "Vytvořit PIN kód"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Smazat trezor \"${ vaultName }\"?"
+      ],
+      "Discard changes?": [
+        "Zahodit změny?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Užíváte si ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Zadejte Vaše heslo"
+      ],
+      "Enter your PIN": [
+        "Zadejte svůj PIN"
+      ],
+      "Grant permissions": [
+        "Udělit oprávnění"
+      ],
+      "Import - ${ date }": [
+        "Importováno - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importovat do trezoru(ů)"
+      ],
+      "Leave vault ?": [
+        "Opustit trezor ?"
+      ],
+      "Low disk space": [
+        "Málo místa na disku"
+      ],
+      "Member limit": [
+        "Limit počtu členů"
+      ],
+      "Move all items ?": [
+        "Přesunout všechny položky?"
+      ],
+      "No items selected": [
+        "Žádné vybrané položky"
+      ],
+      "Our welcome gift to you": [
+        "Náš dárek na přivítanou pro vás"
+      ],
+      "Pending access to the shared data": [
+        "Čekání na přístup ke sdíleným datům"
+      ],
+      "Permanently remove all items ?": [
+        "Trvale smazat všechny položky?"
+      ],
+      "Pinned (${ items.length })": [
+        "Připnuto (${ items.length })"
+      ],
+      "Review and share": [
+        "Zkontrolovat a sdílet"
+      ],
+      "Secure your data": [
+        "Zabezpečte svá data"
+      ],
+      "Set access level": [
+        "Nastavit úroveň přístupu"
+      ],
+      "Settings": [
+        "Nastavení"
+      ],
+      "Share with": [
+        "Sdílet s"
+      ],
+      "Transfer ownership": [
+        "Převod vlastnictví"
+      ],
+      "Trash empty": [
+        "Koš je prázdný"
+      ],
+      "Update available": [
+        "Aktualizace k dispozici"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Přejděte na vyšší tarif pro odemčení prémiových funkcí"
+      ],
+      "Vault shared with you": [
+        "Trezor sdílený s vámi"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Proč ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Váš trezor je prázdný"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Duplicitní URL adresa"
+      ],
+      "Field name is required": [
+        "Název pole je povinný"
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP secret nebo URI jsou neplatné"
+      ],
+      "OTP secret or URI required": [
+        "Vyžadováno OTP secret nebo URI"
+      ],
+      "Url already exists": [
+        "URL již existuje"
+      ],
+      "URL cannot be empty": [
+        "URL adresa nemůže být prázdná"
+      ],
+      "Url is invalid": [
+        "Adresa URL je neplatná"
+      ],
+      "URL is invalid": [
+        "URL adresa je neplatná"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Je vyžadován popis problému"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Alias \"${ name }\" je aktuálně použit v přihlašovací položce \"${ relatedLoginName }\". Přestanete také dostávat e-maily zaslané na adresu \"${ aliasEmail }\""
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Všechny položky v koši budou trvale smazány. Tuto akci nelze vrátit zpět."
+      ],
+      "An error occured while exporting your data": [
+        "Při exportu dat došlo k chybě"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Pro tento alias nelze nyní načíst e-mailové schránky"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Nelze vytvořit trezor \"${ vaultName }\""
+      ],
+      "Empty note": [
+        "Prázdná poznámka"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Datum konce platnosti není ve formátu MM/RR"
+      ],
+      "Invalid alias prefix": [
+        "Nesprávná předpona aliasu"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximální délka je ${ maxLength } znak",
+        "Maximální délka jsou ${ maxLength } znaky",
+        "Maximální délka je ${ maxLength } znaků",
+        "Maximální délka je ${ maxLength } znaků"
+      ],
+      "Missing alias prefix": [
+        "Chybějící předpona aliasu"
+      ],
+      "Missing alias suffix": [
+        "Chybějící přípona aliasu"
+      ],
+      "No items": [
+        "Žádné položky"
+      ],
+      "No items in trash matching": [
+        "Žádná položka v koši neodpovídá"
+      ],
+      "No items matching": [
+        "Žadné položky se neshodují"
+      ],
+      "No password manager selected": [
+        "Není vybrán žádný správce hesel"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
+      ],
+      "Passphrase is required": [
+        "Je vyžadováno heslo"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Ověřte prosím svou e-mailovou adresu, abyste mohli používat sdílení trezoru"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Předpona aliasu nesmí být delší než 40 znaků"
+      ],
+      "Title is required": [
+        "Název je povinný"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Převést vlastnictví tohoto trezoru na ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Smazat alias?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Nelze se přihlásit do ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Trezor \"${ vaultName }\" a všechny jeho položky budou trvale smazány. Tuto akci nelze vrátit zpět."
+      ],
+      "Vault name is required": [
+        "Název trezoru je povinný"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Dosáhli jste limitu členů, kteří mají přístup k tomuto trezoru."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Dosáhli jste limitu uživatelů v tomto trezoru. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Dosáhli jste limitu počtu trezorů, které můžete mít ve svém tarifu."
+      ],
+      "You have unsaved changes.": [
+        "Máte neuložené změny."
+      ],
+      "You must select at least one mailbox": [
+        "Musíte vybrat nejméně jednu e-mailovou schránku"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "K tomuto trezoru již nebudete mít přístup. Chcete-li do něj znovu vstoupit, budete potřebovat novou pozvánku."
+      ],
+      "Your session could not be authorized.": [
+        "Vaše relace nemohla být autorizována."
+      ],
+      "Your session could not be resumed.": [
+        "Vaše relace nemohla být obnovena."
+      ],
+      "Your session is inactive.": [
+        "Vaše relace je neaktivní."
+      ],
+      "Your session was locked.": [
+        "Vaše relace byla uzamčena."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
+      ]
+    }
+  }
+}

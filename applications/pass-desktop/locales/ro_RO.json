@@ -1,0 +1,2022 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);",
+    "language": "ro_RO"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Adăugare"
+      ],
+      "Add current URL": [
+        "Adăugare URL curent"
+      ],
+      "Add more": [
+        "Adăugare"
+      ],
+      "Add new item": [
+        "Adăugare articol"
+      ],
+      "Admin panel": [
+        "Panou administrare"
+      ],
+      "Advanced": [
+        "Avansat"
+      ],
+      "Advanced options": [
+        "Opțiuni avansate"
+      ],
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Back": [
+        "Înapoi"
+      ],
+      "Bulk delete items from trash": [
+        "Ștergere grup de articole din gunoi"
+      ],
+      "Bulk move items to another vault": [
+        "Mutare grup de articole în alt seif"
+      ],
+      "Bulk move items to trash": [
+        "Mutare grup de articole în gunoi"
+      ],
+      "Bulk restore items from trash": [
+        "Restaurare grup de articole din gunoi"
+      ],
+      "Bulk select items": [
+        "Selectare grup de articole"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Change": [
+        "Schimbare"
+      ],
+      "Choose a file or drag it here": [
+        "Alegeți un fișier sau trageți-l aici"
+      ],
+      "Clear": [
+        "Eliminare"
+      ],
+      "Clear search": [
+        "Golire căutare"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Close advanced options": [
+        "Închidere opțiuni avansate"
+      ],
+      "Close navigation": [
+        "Închidere navigare"
+      ],
+      "Confirm": [
+        "Confirmare"
+      ],
+      "Confirm access": [
+        "Confirmare acces"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
+      "Copy and close": [
+        "Copiere și închidere"
+      ],
+      "Copy to clipboard": [
+        "Copiere în memorie"
+      ],
+      "Create": [
+        "Creare"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Creare cont ${ BRAND_NAME }"
+      ],
+      "Create a new vault": [
+        "Creare seif"
+      ],
+      "Create a new vault to share": [
+        "Creați un seif nou pentru partajare"
+      ],
+      "Create alias": [
+        "Creare alias"
+      ],
+      "Create card": [
+        "Creare card"
+      ],
+      "Create login": [
+        "Creare autentificare"
+      ],
+      "Create new items": [
+        "Creați un articol"
+      ],
+      "Create note": [
+        "Creare notă"
+      ],
+      "Create vault": [
+        "Creare seif"
+      ],
+      "Creating vault": [
+        "Se creează seiful"
+      ],
+      "Customize": [
+        "Personalizare"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Delete alias": [
+        "Ștergere alias"
+      ],
+      "Delete all": [
+        "Ștergere toate"
+      ],
+      "Delete password": [
+        "Ștergere parolă"
+      ],
+      "Delete permanently": [
+        "Ștergere permanentă"
+      ],
+      "Delete vault": [
+        "Ștergere seif"
+      ],
+      "Deselect": [
+        "Deselectare"
+      ],
+      "Discard": [
+        "Renunțare"
+      ],
+      "Dismiss": [
+        "Renunțare"
+      ],
+      "Download this CSV template": [
+        "Descărcați acest șablon de fișier CSV"
+      ],
+      "Edit": [
+        "Editare"
+      ],
+      "Edit vault": [
+        "Editare seif"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Fill password": [
+        "Completare parolă"
+      ],
+      "Filter vault items": [
+        "Filtrare articole seif"
+      ],
+      "Generate alias": [
+        "Generare alias"
+      ],
+      "Generate password": [
+        "Generare parolă"
+      ],
+      "Generated passwords": [
+        "Parola generate"
+      ],
+      "Get mobile apps": [
+        "Obținere aplicați mobil"
+      ],
+      "Get Started": [
+        "Începeți"
+      ],
+      "Help us improve": [
+        "Ajutați-ne să se îmbunătățim"
+      ],
+      "Hide": [
+        "Ascundere"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Cum se pot exporta datele din ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importare"
+      ],
+      "Importing": [
+        "Se importă"
+      ],
+      "Install extension": [
+        "Instalare extensie"
+      ],
+      "Invite others": [
+        "Invitare alții"
+      ],
+      "Join shared vault": [
+        "Alăturare la seif partajat"
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Leave": [
+        "Lăsați"
+      ],
+      "Leave vault": [
+        "Părăsire seif"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Blocare ${ PASS_APP_NAME }"
+      ],
+      "Make admin": [
+        "Stabilire administrator"
+      ],
+      "Make editor": [
+        "Stabilire editor"
+      ],
+      "Make viewer": [
+        "Stabilire cititor"
+      ],
+      "Manage access": [
+        "Gestionare acces"
+      ],
+      "Manually sync your data": [
+        "Sincronizare manuală date"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mai multe informații: ${ safeTitle }"
+      ],
+      "More options": [
+        "Mai multe opțiuni"
+      ],
+      "Move": [
+        "Mutare"
+      ],
+      "Move all items": [
+        "Mutare toate articolele"
+      ],
+      "Move to a shared vault": [
+        "Mutare într-un seif partajat"
+      ],
+      "Move to another vault": [
+        "Mutare în alt seif"
+      ],
+      "Move to Trash": [
+        "Mutare în «Gunoi»"
+      ],
+      "Move to trash": [
+        "Mutare în «Gunoi»"
+      ],
+      "Not now": [
+        "Nu acum"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open navigation": [
+        "Deschidere navigare"
+      ],
+      "Pass for Android": [
+        "Proton Pass pentru Android"
+      ],
+      "Pass for iOS": [
+        "Proton Pass pentru iOS"
+      ],
+      "Pin item": [
+        "Fixare"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
+      ],
+      "Regenerate": [
+        "Regenerare"
+      ],
+      "Reject": [
+        "Respingere"
+      ],
+      "Reject invitation": [
+        "Refuzare invitație"
+      ],
+      "Remove access": [
+        "Eliminare acces"
+      ],
+      "Remove member": [
+        "Eliminare membru"
+      ],
+      "Request a feature": [
+        "Solicitare funcție"
+      ],
+      "Resend invitation": [
+        "Retrimitere invitație"
+      ],
+      "Restore": [
+        "Restaurare"
+      ],
+      "Restore item": [
+        "Restabilire articol"
+      ],
+      "Retry": [
+        "Reîncercare"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Saving": [
+        "Se salvează"
+      ],
+      "See members": [
+        "Afișare membri"
+      ],
+      "Send invite": [
+        "Trimitere invitație"
+      ],
+      "Send us a message": [
+        "Trimiteți-ne un mesaj"
+      ],
+      "Set access level": [
+        "Setare nivel de acces"
+      ],
+      "Share": [
+        "Partajare"
+      ],
+      "Share this vault": [
+        "Partajare acest seif"
+      ],
+      "Share vault": [
+        "Partajare seif"
+      ],
+      "Show": [
+        "Afișare"
+      ],
+      "Sign back in": [
+        "Reconectare"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Conectare cu ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Sort vault items": [
+        "Sortare articole seif"
+      ],
+      "Submit": [
+        "Trimitere"
+      ],
+      "Submitting report...": [
+        "Se trimite raportul…"
+      ],
+      "Transfer ownership": [
+        "Transfer proprietar"
+      ],
+      "Unpin item": [
+        "Anulare fixare"
+      ],
+      "Update vault": [
+        "Actualizare seif"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade now to share with more people": [
+        "Schimbați planul acum pentru a partaja cu mai mulți oameni"
+      ],
+      "Write us on Reddit": [
+        "Scrieți-ne pe Reddit"
+      ],
+      "Write us on Twitter": [
+        "Scrieți-ne pe Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Salvați inteligent. Obțineți un an de Proton Pass Plus pentru încă doar ${ relativePrice } pe lună."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Ofertă de Vinerea neagră"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicați ${ MAIL_APP_NAME } Desktop"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Detalii"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Restrângere"
+      ],
+      "Expand": [
+        "Extindere"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } nu a putut fi analizat. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Opțiunile pentru alias nu au putu fi rezolvate."
+      ],
+      "Authentication error": [
+        "Eroare autentificare."
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Autentificare eșuată. Confirmați-vă parola ${ BRAND_NAME } pentru a continua exportarea."
+      ],
+      "Auto-lock could not be activated": [
+        "Autoblocarea nu poate fi activată."
+      ],
+      "Auto-lock could not be disabled": [
+        "Autoblocarea nu poate fi dezactivată."
+      ],
+      "Cannot send invitation at the moment": [
+        "Invitația nu poate fi trimisă momentan.",
+        "Invitațiile nu se pot trimite momentan.",
+        "Invitațiile nu se pot trimite momentan."
+      ],
+      "Cannot send invitations at the moment": [
+        "Momentan nu se pot trimite invitații."
+      ],
+      "Could not confirm this invite at the moment": [
+        "Nu s-a putut confirma această invitație momentan."
+      ],
+      "Could not leave vault.": [
+        "Nu s-a putut părăsi seiful."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Recomandările nu s-au putut încărca momentan."
+      ],
+      "Could not open created vault": [
+        "Nu s-a putut deschide seiful creat."
+      ],
+      "Could not open invited vault": [
+        "Nu s-a putut deschide seiful la care ați fost invitat."
+      ],
+      "Could not open updated vault": [
+        "Nu s-a putut deschide seiful actualizat."
+      ],
+      "Could not resolve share members": [
+        "Nu s-au putut determina membrii partajării."
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Din fișierul CSV lipsesc antetele așteptate: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Decriptarea fișierului ${ PASS_APP_NAME } exportat a eșuat. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Ștergerea articolelor a eșuat."
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Ștergerea seifului „${ payload.content.name }” a eșuat."
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "S-a detectat ${ errors.length } rând cu erori în csv.",
+        "S-au detectat ${ errors.length } rânduri cu erori în csv.",
+        "S-au detectat ${ errors.length } de rânduri cu erori în csv."
+      ],
+      "Editing item failed": [
+        "Editarea articolelor a eșuat."
+      ],
+      "Empty CSV file": [
+        "Fișierul CSV este gol."
+      ],
+      "Emptying trash failed": [
+        "Golirea gunoiului a eșuat."
+      ],
+      "Encrypted JSON not supported": [
+        "Fișierele JSON criptate nu sunt suportate."
+      ],
+      "Error reporting problem": [
+        "Problemă de raportare a erorii."
+      ],
+      "Failed removing the invite.": [
+        "Eșuare eliminare invitație."
+      ],
+      "Failed resending invite.": [
+        "Eșuare retrimitere invitație."
+      ],
+      "Failed to delete selected items": [
+        "Ștergerea articolelor selectate a eșuat."
+      ],
+      "Failed to edit user's access.": [
+        "Eșuare editare acces utilizator."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Eșuare mutare toate articolele din „${ payload.content.name }”."
+      ],
+      "Failed to move items": [
+        "Mutarea articolelor a eșuat."
+      ],
+      "Failed to move items to trash": [
+        "Mutarea articolelor în gunoi a eșuat."
+      ],
+      "Failed to pin item": [
+        "Fixarea articolului a eșuat."
+      ],
+      "Failed to remove user's access.": [
+        "Eșuare eliminare acces utilizator."
+      ],
+      "Failed to restore items from trash": [
+        "Restaurarea articolelor din gunoi a eșuat."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Eșuare transfer proprietar pentru acest seif."
+      ],
+      "Failed to unpin item": [
+        "Anularea fixării articolului a eșuat."
+      ],
+      "File could not be parsed": [
+        "Fișierul nu a putut fi analizat."
+      ],
+      "File does not match expected format": [
+        "Fișierul nu are formatul așteptat."
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Importarea eșuată pentru seiful „${ vaultData.name }”: ${ description }"
+      ],
+      "Importing items failed": [
+        "Importarea articolelor a eșuat."
+      ],
+      "Invalid password manager": [
+        "Manager de parole nevalid"
+      ],
+      "Invitation could not be accepted": [
+        "Invitația nu a putut fi acceptată."
+      ],
+      "Invitation could not be rejected": [
+        "Invitația nu a putut fi refuzată."
+      ],
+      "Item content cannot exceed 40KB": [
+        "Conținutul articolului nu poate depăși 40 KiB."
+      ],
+      "Item creation failed": [
+        "Crearea articolelor a eșuat."
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass va exporta un fișier CSV corupt dacă oricare dintre câmpurile articolului conține virgule, ghilimele sau linii multiple neașteptate."
+      ],
+      "Moving item failed": [
+        "Mutarea articolelor a eșuat."
+      ],
+      "Passphrase is incorrect": [
+        "Fraza de acces nu este corectă."
+      ],
+      "PIN codes do not match": [
+        "Codurile PIN nu coincid."
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Treceți la un plan superior pentru a avea acces timpuriu la aplicația ${ PASS_APP_NAME } pentru desktop."
+      ],
+      "Request timed out": [
+        "Solicitarea a expirat"
+      ],
+      "Requesting alias options failed": [
+        "Solicitarea opțiunilor pentru alias a eșuat."
+      ],
+      "Restoring item failed": [
+        "Restaurarea articolelor a eșuat."
+      ],
+      "Restoring trashed items failed": [
+        "Restaurarea fișierelor din gunoi a eșuat."
+      ],
+      "Settings update failed": [
+        "Actualizarea setărilor a eșuat."
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Unele seifuri nu mai sunt accesibile din cauza resetării parolei. Reactivați cheile contului pentru a redobândi accesul. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
+      ],
+      "The file you are trying to import is empty": [
+        "Fișierul pe care încercați să îl importați este gol."
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Prea multe încercări eșuate. Reconectați-vă."
+      ],
+      "Trashing item failed": [
+        "Punerea în gunoi a articolelor a eșuat."
+      ],
+      "Unable to boot": [
+        "Nu se poate porni."
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Nu se poate genera un cod OTP pentru acest articol."
+      ],
+      "Unable to sync": [
+        "Nu se poate sincroniza."
+      ],
+      "Unknown invite": [
+        "Invitație necunoscută."
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Formatul fișierului ${ PASS_APP_NAME } nu este suportat."
+      ],
+      "Unsupported 1Password file format": [
+        "Format de fișier 1Password neacceptat."
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Actualizarea seifului „${ payload.content.name }” a eșuat."
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Crearea seifului „${ payload.content.name }” a eșuat."
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Nu s-a putut crea seiful „${ vaultData.name }”."
+      ],
+      "Vault name does not match": [
+        "Numele seifului nu se potrivește."
+      ],
+      "Wrong PIN code. Try again.": [
+        "Cod PIN greșit. Reîncercați."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Hopa, ceva nu a mers bine!"
+      ],
+      "Please refresh the page or try again later.": [
+        "Reîmprospătați pagina sau reîncercați mai târziu."
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
+      "GB": [
+        "GiB"
+      ],
+      "KB": [
+        "KiB"
+      ],
+      "MB": [
+        "MiB"
+      ],
+      "TB": [
+        "TiB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Treceți la un plan cu plată pentru a putea crea seifuri multiple."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Articolul „${ payload.item.data.metadata.name }” a fost respins."
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
+      ],
+      "${ count } invites successfully sent": [
+        "Invitații trimise: ${ count }"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membru",
+        "${ memberCount } membri",
+        "${ memberCount } de membri"
+      ],
+      "${ n } item": [
+        "${ n } articol",
+        "${ n } articole",
+        "${ n } de articole"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } va importa doar autentificări, note și carduri de plată."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } dată",
+        "de ${ revisionNumber } ori",
+        "de ${ revisionNumber } de ori"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
+      ],
+      "Access successfully confirmed": [
+        "Acces confirmat."
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "După inactivitate, accesul la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea. După 3 încercări nereușite se va deconecta din cont."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Aliasul „${ item.aliasEmail }” a fost mutat în gunoi - nu va mai redirecționa mesajele către adresa principală de e-mail."
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "S-au mutat toate articolele din „${ payload.content.name }”."
+      ],
+      "All items successfully moved": [
+        "S-au mutat toate articolele."
+      ],
+      "All trashed items permanently deleted": [
+        "Toate articolele din gunoi au fost șterse permanent."
+      ],
+      "All trashed items successfully restored": [
+        "Toate articolele din gunoi au fost restaurate."
+      ],
+      "An item previously shared with you was removed": [
+        "Un articol care v-a fost partajat a fost eliminat."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Sigur doriți să mutați toate articolele din „${ fromVaultName }” în „${ toVaultName }”?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Blocare automată s-a dezactivat."
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Aduceți-vă parolele actuale în ${ BRAND_NAME }."
+      ],
+      "Built in 2FA authenticator": [
+        "Autentificator A2F încorporat."
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Poate crea, edita, șterge și exporta articole din acest seif."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Poate acorda și revoca accesul la acest seif și îl poate șterge."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Poate acorda și anul accesul la acest seif."
+      ],
+      "Can view items in this vault.": [
+        "Poate vizualiza articolele din acest seif."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Accesul v-a fost confirmat."
+      ],
+      "Copied to clipboard": [
+        "Copiat în memorie"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV oferă un format convenabil pentru a vă vizualiza datele. Cu toate acestea, datorită simplității sale, unele date nu vor fi incluse (câmpuri personale, structura seifului...). Pentru o exportare completă, vă recomandăm să utilizați un alt format."
+      ],
+      "Decrypting your data": [
+        "Se decriptează datele"
+      ],
+      "Deleted items will be moved here first": [
+        "Articolele șterse vor fi mai întâi mutate aici"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Se șterge ”${ payload.content.name }”"
+      ],
+      "Drop file here to upload": [
+        "Plasați fișiere aici pentru încărcare"
+      ],
+      "Drop to import": [
+        "Plasare pentru importare"
+      ],
+      "Editor": [
+        "Editor"
+      ],
+      "Emptying trash...": [
+        "Se golește gunoiul..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduceți codul de verificare. ${ digit } cifre."
+      ],
+      "Fill in the CSV with your data": [
+        "Completați fișierul CSV cu datele necesare."
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Urmați acești pași pentru a importa datele dintr-un fișier CSV generic:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Din motive de securitate, accesul trebuie să vă fie confirmat."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Obțineți maximum din Proton Pass creând un seif pentru fiecare echipă sau proiect."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Obțineți pseudonime nelimitate, bucurați-vă de funcții exclusive și sprijiniți-ne abonându-vă la Pass Plus."
+      ],
+      "Import in progress:": [
+        "Importare în derulare:"
+      ],
+      "Import the CSV file below.": [
+        "Importați mai jos fișierul CSV."
+      ],
+      "Imported ${ payload.total } item": [
+        "S-a importat ${ payload.total } element.",
+        "S-au importat ${ payload.total } articole.",
+        "S-au importat ${ payload.total } de articole."
+      ],
+      "Imported on ${ date }": [
+        "Importat la ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Pentru a obține cea mai bună experiență cu ${ PASS_APP_NAME }, acordați permisiunile de extensie necesare."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Instalați ${ PASS_APP_NAME } pentru ${ browser.title } pentru a vă completa automat datele de autentificare pe site-uri."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Instalați ${ PASS_APP_NAME } pentru ${ browser.title } pentru a vă completa automat datele de autentificare pe site-uri."
+      ],
+      "Internet connection lost": [
+        "Conexiunea la internet s-a întrerupt"
+      ],
+      "Invitation sent": [
+        "Invitația a fost trimisă."
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Invitați anumite persoane și setați-le permisiunile dorite."
+      ],
+      "Invite successfully removed": [
+        "Invitația a fost eliminată."
+      ],
+      "Invite successfully resent": [
+        "Invitația a fost retrimisă."
+      ],
+      "Invite successfully sent": [
+        "Invitația a fost trimisă."
+      ],
+      "invites you to access items in": [
+        "vă invită să accesați articolele din"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
+      ],
+      "item": [
+        "element",
+        "articole",
+        "de articole"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Articolul „${ payload.item.data.metadata.name }” a fost creat."
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Articolul „${ payload.item.data.metadata.name }” a fost actualizat."
+      ],
+      "Item moved to trash": [
+        "Articolul s-a mutat în gunoi."
+      ],
+      "Item permanently deleted": [
+        "Articolul s-a șters definitiv."
+      ],
+      "Item restored": [
+        "Articolul s-a restaurat."
+      ],
+      "Item successfully moved": [
+        "Articolul s-a mutat."
+      ],
+      "Item successfully pinned": [
+        "Elementul a fost fixat."
+      ],
+      "Item successfully unpinned": [
+        "Fixarea elementului s-a anulat."
+      ],
+      "Leaving vault...": [
+        "Se părăsește seiful..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Începeți să creați primul articol"
+      ],
+      "Loading": [
+        "Se încarcă"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Se încarcă ${ PASS_APP_NAME }"
+      ],
+      "Locking your session...": [
+        "Se blochează sesiunea…"
+      ],
+      "Logging you out...": [
+        "Se deconectează…"
+      ],
+      "me": [
+        "Eu"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate în ambele sensuri și doar dvs. le puteți accesa."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving items": [
+        "Se mută articolele."
+      ],
+      "Moving items to trash": [
+        "Se mută articolele în gunoi."
+      ],
+      "Never": [
+        "Niciodată"
+      ],
+      "None": [
+        "Fără"
+      ],
+      "Owner": [
+        "Proprietar"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Dreptul de proprietatea a fost transferat cu succes. Nu mai sunteți proprietarul acestui seif."
+      ],
+      "Pass Plus trial": [
+        "Încercare Proton Pass Plus"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
+      ],
+      "Permanently deleting selected items": [
+        "Articolele selectate se șterg permanent."
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "S-a reușit înregistrarea codului PIN. Folosiți-l pentru a debloca ${ PASS_APP_NAME }."
+      ],
+      "Pinning item...": [
+        "Se fixează articolul..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Confirmați codul PIN pentru anularea înregistrării blocării actuale.\n${ PASS_APP_NAME } nu se va mai bloca."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Confirmați codul PIN pentru a edita această setare."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Confirmați codul PIN pentru a finaliza înregistrarea setării de autoblocare."
+      ],
+      "Please consider leaving a review.": [
+        "Luați în considerare scrierea unei recenzii."
+      ],
+      "Please enter your current PIN code to continue": [
+        "Introduceți codul PIN curent pentru a continua"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Treceți la un plan superior pentru a avea acces timpuriu la aplicația web ${ PASS_APP_NAME }."
+      ],
+      "Press Enter to copy": [
+        "Apăsați Enter pentru copiere"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Confidențialitatea este o mare preocupare pentru noi. Aflați de ce ${ PASS_APP_NAME } este diferit."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
+      ],
+      "Restoring items from trash": [
+        "Se restaurează articolele din gunoi."
+      ],
+      "Restoring trashed items...": [
+        "Se restaurează articolele din gunoi..."
+      ],
+      "Select destination vault": [
+        "Selectare seif destinație"
+      ],
+      "Select vault to share": [
+        "Selectați seiful de partajat"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Selectați unde doriți să fie salvate seifurile importate."
+      ],
+      "Selected items permanently deleted": [
+        "Articolele selectate s-au șters permanent."
+      ],
+      "Selected items successfully moved to trash": [
+        "Articolele selectate s-au mutat în gunoi."
+      ],
+      "Selected items successfully restored from trash": [
+        "Articolele selectate s-au restaurat din gunoi."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
+      ],
+      "Session timed out": [
+        "Sesiunea a expirat"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Setați un cod PIN pentru a vă bloca ușor datele"
+      ],
+      "Settings successfully updated": [
+        "Setările s-au actualizat."
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Partajați-vă datele de conectare și notele securizate, cu până la 10 persoane"
+      ],
+      "Signing you in": [
+        "Conectare la"
+      ],
+      "Successfully exported all your items": [
+        "Toate articole au fost exportate."
+      ],
+      "Successfully left the vault": [
+        "Ați părăsit seiful."
+      ],
+      "Successfully synced all vaults": [
+        "Toate seifurile au fost actualizate."
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Comutare la alt seif sau creare alt articol în acest seif."
+      ],
+      "Syncing your vaults…": [
+        "Se sincronizează seifurile…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Mulțumim, problema a fost raportată."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Fișierul exportat va fi criptat folosind PGP și necesită o frază de acces puternică."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Nu s-a putut importa ${ result.ignored.length } articol:",
+        "Nu s-au putut importa ${ result.ignored.length } articole:",
+        "Nu s-au putut importa ${ result.ignored.length } de articole:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Textul pe care încercați să îl lipiți este mai lung decât lungimea maximă permisă de ${ maxLength } de caractere."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Utilizatorul încă nu a acceptat invitația."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Acest seif nu este partajat momentan cu nimeni. Invitați oameni pentru a-l partaja cu ei."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Pentru a revizui datele importate, faceți clic pe pictograma Proton Pass din bara de utilitare a navigatorului."
+      ],
+      "Unable to copy to clipboard": [
+        "Nu se poate copia în memorie."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri nelimitate hide-my-email"
+      ],
+      "Unpinning item...": [
+        "Se anulează fixarea articolului..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Modificați-vă acum contul pentru a debloca funcțiile premium"
+      ],
+      "Use vaults to share this item with others.": [
+        "Folosiți seifurile pentru a partaja acest articol cu alții."
+      ],
+      "User's access removed": [
+        "Accesul utilizatorului a fot eliminat."
+      ],
+      "User's access sucessfuly updated": [
+        "Accesul utilizatorului a fost actualizat."
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Seiful „${ payload.content.name }” a fost șters."
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Seiful „${ payload.share.content.name }” a fost creat."
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Seiful „${ payload.share.content.name }” a fost actualizat."
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Seiful „${ share.content.name }” a fost șters."
+      ],
+      "Viewer": [
+        "Cititor"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Există probleme la sincronizarea datelor cu stocarea locală. Asigurați-vă că aveți suficient spațiu pe disc pentru ca ${ PASS_SHORT_APP_NAME } să funcționeze fără probleme."
+      ],
+      "You are about to create:": [
+        "Sunteți pe cale să creați:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nu se poate modifica adresa reală pentru acest alias."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } zile rămase pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } de zile rămase pentru a încerca aceste funcții premium."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Ați depășit numărul de seifuri incluse în abonament. Articolele pot fi mutate doar în primele două seifuri. Pentru a muta articolele între toate seifurile, modificați-vă abonamentul."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Ați depășit numărul de seifuri incluse în abonament. Articolele noi pot fi create doar în primele două seifuri. Pentru a crea articole în toate seifurile, modificați-vă abonamentul."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Ați atins limita aliasurilor pe care le puteți crea. Puteți creați un număr nelimitat de aliasuri dacă vă modificați abonamentul."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Ați atins limita de seifuri pe care le puteți crea."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Ați atins lungimea maximă permisă de ${ maxLength } de caractere."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Veți folosi acest cod PIN pentru a debloca ${ PASS_APP_NAME } când se va autobloca după o perioadă de inactivitate."
+      ],
+      "You're invited to a vault.": [
+        "Ați primit o invitație la un seif."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Fișierele vor fi criptate și apoi salvate."
+      ]
+    },
+    "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } caracter",
+        "${ config.options.length } caractere",
+        "${ config.options.length } de caractere"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } cuvânt",
+        "${ config.options.wordCount } cuvinte",
+        "${ config.options.wordCount } de cuvinte"
+      ],
+      "1 hour": [
+        "o oră"
+      ],
+      "1 minute": [
+        "1 minut"
+      ],
+      "10 minutes": [
+        "10 minute"
+      ],
+      "15 minutes": [
+        "15 minute"
+      ],
+      "2FA secret key (TOTP)": [
+        "Cheie secretă A2F (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Token A2F (TOTP)"
+      ],
+      "30 minutes": [
+        "30 de minute"
+      ],
+      "30 seconds": [
+        "30 de secunde"
+      ],
+      "5 minutes": [
+        "5 minute"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Cont"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Adresă alias"
+      ],
+      "Aliases": [
+        "Aliasuri"
+      ],
+      "All": [
+        "Toate"
+      ],
+      "All vaults": [
+        "Toate seifurile"
+      ],
+      "Alphabetical": [
+        "Alfabetic"
+      ],
+      "Application logs": [
+        "Jurnale aplicație"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Autoblocare ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock after": [
+        "Autoblocare după"
+      ],
+      "Capital letters (A-Z)": [
+        "Majuscule (A-Z)"
+      ],
+      "Capitalise": [
+        "Scriere cu majuscule"
+      ],
+      "Card": [
+        "Card"
+      ],
+      "Card number": [
+        "Număr card"
+      ],
+      "Cards": [
+        "Carduri"
+      ],
+      "Confirm vault name": [
+        "Confirmare nume seif"
+      ],
+      "Create a credit card": [
+        "Creare card de credit"
+      ],
+      "Create a hide-my-email alias": [
+        "Creare alias hide-my-email"
+      ],
+      "Create a login": [
+        "Creare autentificare"
+      ],
+      "Create an encrypted note": [
+        "Creare notă criptată"
+      ],
+      "Create new vault": [
+        "Creare seif"
+      ],
+      "Created": [
+        "Creat la"
+      ],
+      "Default (recommended)": [
+        "Implicit (recomandat)"
+      ],
+      "Display": [
+        "Afișare"
+      ],
+      "Download logs": [
+        "Descărcare jurnale"
+      ],
+      "Empty trash": [
+        "Golire «Gunoi»"
+      ],
+      "Encrypted (recommended)": [
+        "Criptat (recomandat)"
+      ],
+      "Expiration date": [
+        "Dată expirare"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Field name": [
+        "Nume câmp"
+      ],
+      "File format": [
+        "Format fișier"
+      ],
+      "Forwards to": [
+        "Redirecționare către"
+      ],
+      "General": [
+        "Generale"
+      ],
+      "Generic CSV": [
+        "CSV generic"
+      ],
+      "Grant": [
+        "Permitere"
+      ],
+      "Hidden": [
+        "Ascuns"
+      ],
+      "Hide password": [
+        "Ascundere parolă"
+      ],
+      "Import": [
+        "Importare"
+      ],
+      "Import passwords": [
+        "Importare parole"
+      ],
+      "Imported from : ": [
+        "Importat din : "
+      ],
+      "Imported on : ": [
+        "Importat la data: "
+      ],
+      "Include numbers": [
+        "Includere cifre"
+      ],
+      "Include numbers (0-9)": [
+        "Includere cifre (0-9)"
+      ],
+      "Invitations": [
+        "Invitații"
+      ],
+      "Item ID": [
+        "ID articol"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
+      ],
+      "Language": [
+        "Limba"
+      ],
+      "Last 2 weeks": [
+        "Ultimele două săptămâni"
+      ],
+      "Last autofill": [
+        "Ultima autocompletare"
+      ],
+      "Last month": [
+        "Luna trecută"
+      ],
+      "Last week": [
+        "Săptămâna trecută"
+      ],
+      "Latest import": [
+        "Ultima importare"
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Login": [
+        "Conectare"
+      ],
+      "Logins": [
+        "Conectări"
+      ],
+      "Make all admins": [
+        "Setare toți ca administratori"
+      ],
+      "Make all editors": [
+        "Setare toți acces editare"
+      ],
+      "Make all viewers": [
+        "Setare toți acces citire"
+      ],
+      "Members": [
+        "Membri"
+      ],
+      "Modified": [
+        "Modificat"
+      ],
+      "More than a month": [
+        "Mai mult de o lună"
+      ],
+      "Most recent": [
+        "Cele mai noi"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Name on card": [
+        "Titular card"
+      ],
+      "Need help ?": [
+        "Doriți ajutor ?"
+      ],
+      "New vault": [
+        "Seif nou"
+      ],
+      "New-Old": [
+        "De la noi la vechi"
+      ],
+      "Newest to oldest": [
+        "De la noi la vechi"
+      ],
+      "No history": [
+        "Fără istoric"
+      ],
+      "Note": [
+        "Notă"
+      ],
+      "Notes": [
+        "Note"
+      ],
+      "Old-New": [
+        "De la vechi la noi"
+      ],
+      "Oldest to newest": [
+        "De la vechi la noi"
+      ],
+      "Passphrase": [
+        "Frază de acces"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Password history": [
+        "Istoric parole"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "Prefix"
+      ],
+      "Rate us": [
+        "Evaluați-ne"
+      ],
+      "Recent": [
+        "Recente"
+      ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
+      "Restore all items": [
+        "Restaurare toate articolele"
+      ],
+      "Reveal password": [
+        "Afișare parolă"
+      ],
+      "Security": [
+        "Securitate"
+      ],
+      "Security code": [
+        "Cod de securitate"
+      ],
+      "Select an email address": [
+        "Selectați o adresă de e-mail"
+      ],
+      "Select preferred language": [
+        "Selectați limba preferată"
+      ],
+      "Select your password manager": [
+        "Selectare manager de parole"
+      ],
+      "Selected": [
+        "Selectat"
+      ],
+      "Session locking": [
+        "Blocare sesiune"
+      ],
+      "Set PIN code": [
+        "Setare cod PIN"
+      ],
+      "Show website favicons": [
+        "Afișare pictogramă site web"
+      ],
+      "Special characters (!&*)": [
+        "Caractere speciale (!&*)"
+      ],
+      "Suffix": [
+        "Sufix"
+      ],
+      "Support": [
+        "Asistență"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Title": [
+        "Titlu"
+      ],
+      "Today": [
+        "Astăzi"
+      ],
+      "Total imported items : ": [
+        "Total articole importate : "
+      ],
+      "Total items : ": [
+        "Total articole: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Gunoi"
+      ],
+      "Type": [
+        "Tip"
+      ],
+      "Unnamed Credit Card": [
+        "Card de credit nedenumit"
+      ],
+      "Unnamed item": [
+        "Element fără nume"
+      ],
+      "Unnamed note": [
+        "Notă fără nume"
+      ],
+      "Untitled": [
+        "Fără nume"
+      ],
+      "Update": [
+        "Actualizare"
+      ],
+      "Username": [
+        "Nume utilizator"
+      ],
+      "Username (alias)": [
+        "Nume utilizator (alias)"
+      ],
+      "Username (new alias)": [
+        "Nume utilizator (alias nou)"
+      ],
+      "Vault": [
+        "Seif"
+      ],
+      "Vault ID": [
+        "ID seif"
+      ],
+      "Vaults": [
+        "Seifuri"
+      ],
+      "View details": [
+        "Detalii"
+      ],
+      "View logs": [
+        "Afișare jurnale"
+      ],
+      "Websites": [
+        "Pagini web"
+      ],
+      "You are about to create": [
+        "Sunteți pe cale să creați"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Introduceți codul PIN"
+      ],
+      "Sign in to your account": [
+        "Conectare la cont"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Deblocare ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Bun venit la ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } articole",
+        "${ count } de articole"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Articole selectate în acest seif: ${ semiboldText }"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Virgule"
+      ],
+      "Hyphens": [
+        "Cratime"
+      ],
+      "Memorable Password": [
+        "Parole ușor de reținut"
+      ],
+      "Numbers": [
+        "Cifre"
+      ],
+      "Numbers and Symbols": [
+        "Cifre și simboluri"
+      ],
+      "Periods": [
+        "Puncte"
+      ],
+      "Random Password": [
+        "Parolă aleatorie"
+      ],
+      "Spaces": [
+        "Spații"
+      ],
+      "Underscores": [
+        "Subliniere"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Adăugare cheie secretă A2F"
+      ],
+      "Add hidden text": [
+        "Adăugare text ascuns"
+      ],
+      "Add note": [
+        "Adăugare notă"
+      ],
+      "Add text": [
+        "Adăugare text"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
+      "Enter a note...": [
+        "Introduceți o notă…"
+      ],
+      "Enter a prefix": [
+        "Introduceți un prefix"
+      ],
+      "Enter email or username": [
+        "Introduceți e-mail sau utilizator"
+      ],
+      "Enter password": [
+        "Introduceți parola"
+      ],
+      "Full Name": [
+        "Numele complet"
+      ],
+      "MM/YY": [
+        "LL/AA"
+      ],
+      "Other": [
+        "Altele"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Pick a vault": [
+        "Alegeți un seif"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrieți problema incluzând și mesajele de eroare ce apar"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Rescrieți „${ vaultName }” pentru a confirma ștergerea."
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Căutare ${ pluralItemType } în ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Căutare ${ pluralItemType } în toate seifurile"
+      ],
+      "Search in ${ vaultName }": [
+        "Căutare în ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Căutare în toate seifurile"
+      ],
+      "Search in Trash": [
+        "Căutare în gunoi"
+      ],
+      "Select a suffix": [
+        "Selectați un sufix"
+      ],
+      "Shared vault": [
+        "Seif partajat"
+      ],
+      "Unknown origin": [
+        "Origine necunoscută"
+      ],
+      "Untitled": [
+        "Fără nume"
+      ],
+      "Used on ${ url }": [
+        "Folosit la ${ url }"
+      ],
+      "Write your note": [
+        "Scrieți-vă nota"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizator.",
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizatori.",
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } de utilizatori."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Actualizare autoblocare"
+      ],
+      "Confirm PIN code": [
+        "Confirmare cod PIN"
+      ],
+      "Create a vault": [
+        "Creați un seif"
+      ],
+      "Create PIN code": [
+        "Creare cod PIN"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Ștergeți seiful „${ vaultName }”?"
+      ],
+      "Discard changes?": [
+        "Anulare modificări?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Vă bucurați de ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
+      ],
+      "Enter your PIN": [
+        "Introduceți codul PIN"
+      ],
+      "Get Started": [
+        "Începeți"
+      ],
+      "Grant permissions": [
+        "Acordare permisiuni"
+      ],
+      "Import - ${ date }": [
+        "Importare - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importare în seif(uri)"
+      ],
+      "Import your data": [
+        "Importați-vă datele"
+      ],
+      "Install extension": [
+        "Instalați extensia"
+      ],
+      "Leave vault ?": [
+        "Părăsiți seiful ?"
+      ],
+      "Low disk space": [
+        "Spațiu pe disc redus"
+      ],
+      "Member limit": [
+        "Limită membri"
+      ],
+      "Members": [
+        "Membri"
+      ],
+      "Move all items ?": [
+        "Se mută toate articolele?"
+      ],
+      "No items selected": [
+        "Nu sunt selectate articole"
+      ],
+      "Our welcome gift to you": [
+        "Cadoul nostru de bun venit"
+      ],
+      "Pending access to the shared data": [
+        "În așteptarea accesului la datele partajate"
+      ],
+      "Permanently remove all items ?": [
+        "Ștergeți definitiv toate articolele?"
+      ],
+      "Pinned (${ items.length })": [
+        "Fixate (${ items.length })"
+      ],
+      "Review and share": [
+        "Revizuire și partajare"
+      ],
+      "Secure your data": [
+        "Securizați-vă datele"
+      ],
+      "Set access level": [
+        "Setare nivel de acces"
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Share vaults with your team": [
+        "Partajați seifuri cu echipa proprie"
+      ],
+      "Share with": [
+        "Partajare cu"
+      ],
+      "Suggestions": [
+        "Sugestii"
+      ],
+      "Transfer ownership": [
+        "Transfer proprietar"
+      ],
+      "Trash empty": [
+        "Gunoiul este gol"
+      ],
+      "Update available": [
+        "Actualizare disponibilă"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Modificați-vă contul pentru a debloca funcțiile premium"
+      ],
+      "Vault": [
+        "Seif"
+      ],
+      "Vault shared with you": [
+        "Seif partajat cu dvs."
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "De ce ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Seiful este gol"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Adresă URL duplicată."
+      ],
+      "Field name is required": [
+        "Numele câmpului este obligatoriu."
+      ],
+      "OTP secret or URI is invalid": [
+        "Secretul OTP sau URI nu este valid."
+      ],
+      "OTP secret or URI required": [
+        "Este necesar secretul OTP sau URI."
+      ],
+      "Url already exists": [
+        "Acest URL există deja."
+      ],
+      "URL cannot be empty": [
+        "Adresa URL nu poate fi goală."
+      ],
+      "Url is invalid": [
+        "URL nu este valid."
+      ],
+      "URL is invalid": [
+        "Adresa URL nu este validă."
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Este necesară o descriere a problemei."
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Aliasul „${ name }” este utilizat în prezent în articolul de conectare „${ relatedLoginName }”. De asemenea, nu veți primi mesaje trimise la „${ aliasEmail }”"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Toate articolele trimise în gunoi vor fi șterse definitiv. Nu puteți anula această acțiune."
+      ],
+      "An error occured while exporting your data": [
+        "A apărut o eroare în timpul exportului de date."
+      ],
+      "At least one email address is required": [
+        "Este necesară cel puțin o adresă de e-mail."
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Nu se pot prelua mesajele pentru acest alias chiar acum."
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Nu s-a putut crea seiful „${ vaultName }”."
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Nu s-au putut trimite invitații la următoare adrese:"
+      ],
+      "Duplicate email addresses.": [
+        "Adrese de e-mail duplicate."
+      ],
+      "Empty note": [
+        "Notă goală."
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Data de expirare nu este în format LL/AA."
+      ],
+      "Invalid alias prefix": [
+        "Prefix alias nevalid."
+      ],
+      "Invalid email addresses.": [
+        "Adrese de e-mail nevalide."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Lungimea maximă este de ${ maxLength } caracter.",
+        "Lungimea maximă este de ${ maxLength } caractere.",
+        "Lungimea maximă este de ${ maxLength } de caractere."
+      ],
+      "Missing alias prefix": [
+        "Lipsește prefixul aliasului."
+      ],
+      "Missing alias suffix": [
+        "Lipsește sufixul aliasului."
+      ],
+      "No items": [
+        "Nu există articole."
+      ],
+      "No items in trash matching": [
+        "Nu există articole în gunoi care se potrivesc."
+      ],
+      "No items matching": [
+        "Nu există articole care se potrivesc."
+      ],
+      "No password manager selected": [
+        "Nu a fost selectat niciun manager de parole."
+      ],
+      "No results": [
+        "Nu sunt rezultate"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
+      ],
+      "Passphrase is required": [
+        "Este necesară o frază de acces."
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "Fișierul criptat PGP exportat necesită o frază de acces."
+      ],
+      "Please contact us for investigating the issue": [
+        "Contactați-ne pentru a investiga problema."
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Verificați-vă adresa de e-mail pentru a utiliza aliasurile de e-mail."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verificați-vă adresa de e-mail pentru a utiliza partajarea seifului."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
+      ],
+      "Title is required": [
+        "Titlul este obligatoriu."
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transferați proprietatea acestui seif către ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Trimiteți la gunoi aliasul?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Nu se poate conecta la ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Seiful „${ vaultName }” și toate articolele sale vor fi șterse definitiv. Nu puteți anula această acțiune."
+      ],
+      "Vault name is required": [
+        "Numele seifului este obligatoriu."
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Abonamentul actual nu vă permite să creați mai multe seifuri."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Ați atins limita de membri care pot accesa acest seif."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Ați atins limita de utilizatori pentru acest seif. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Ați atins limita de seifuri pe care le puteți avea în plan."
+      ],
+      "You have unsaved changes.": [
+        "Aveți modificări nesalvate."
+      ],
+      "You must select at least one mailbox": [
+        "Trebuie să selectați cel puțin o adresă de e-mail."
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Nu veți mai avea acces la acest seif. Pentru a vă realătura, veți avea nevoie de o nouă invitație."
+      ],
+      "Your session could not be authorized.": [
+        "Sesiunea nu a putut fi autorizată."
+      ],
+      "Your session could not be resumed.": [
+        "Sesiunea nu a putut fi reluată."
+      ],
+      "Your session is inactive.": [
+        "Sesiunea nu este activă."
+      ],
+      "Your session was locked.": [
+        "Sesiunea a fost blocată."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ]
+    }
+  }
+}
