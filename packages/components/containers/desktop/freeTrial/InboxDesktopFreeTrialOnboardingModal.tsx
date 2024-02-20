@@ -53,7 +53,7 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
                     <ModalTwoFooter className="flex text-sm text-center mb-8 flex-column mt-0">
                         <hr className="mb-4" />
                         <p className="m-0 color-weak">{c('Free trial desktop')
-                            .t`Get unimited acces with paid ${BRAND_NAME} plan`}</p>
+                            .t`Get unlimited access with paid ${BRAND_NAME} plan`}</p>
                         <Button color="norm" shape="underline" className="m-0 p-0" onClick={freeTrialUpgradeClick}>{c(
                             'Free trial desktop'
                         ).t`Upgrade now`}</Button>
