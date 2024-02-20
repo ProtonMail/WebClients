@@ -899,6 +899,9 @@
       "Select all messages": [
         "Alle berichten selecteren"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select date and time": [
         "Selecteer datum en tijd"
       ],
@@ -3233,6 +3236,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } voor <${ email }>. U kunt een andere sleutel toevoegen of de versleuteling voor dit contact uitschakelen om het probleem op te lossen."
       ],
@@ -3248,8 +3254,20 @@
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
+      "Alias is not valid": [
+        "Alias is ongeldig."
+      ],
+      "Alias is required": [
+        "Alias is vereist."
+      ],
       "Alias options could not be resolved": [
         "Alias-opties konden niet worden opgevraagd"
+      ],
+      "Aliases could not be loaded": [
+        "Aliassen konden niet worden geladen."
+      ],
+      "An error occurred while loading alias options": [
+        "Er is een fout opgetreden tijdens het laden van de alias opties"
       ],
       "Attachments are limited to 25 MB": [
         "De limiet van bijlagen is 25 MB"
@@ -3355,6 +3373,9 @@
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
+      "Forward address is required": [
+        "Doorstuuradres is vereist"
+      ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
       ],
@@ -3406,6 +3427,9 @@
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
+      ],
+      "Name is required": [
+        "Naam is vereist."
       ],
       "Network error: Please check your connection and try again.": [
         "Netwerkfout. Controleer uw verbinding en probeer het opnieuw."
@@ -3591,6 +3615,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Onverwachte fout, we kunnen de contacten niet importeren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -5351,6 +5378,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Belangrijke opmerking"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
@@ -6015,6 +6045,9 @@
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
       ],
+      "Warning": [
+        "Waarschuwing"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Onze excuses. Dit zou een vergissing van onze kant kunnen zijn. Kunt u bevestigen dat u deze e-mail als een legitiem e-mailadres wilt markeren?"
       ],
@@ -6159,7 +6192,7 @@
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
         "Je selecteert** ${ elementsCount }bericht**in${ location }",
-        "Je selecteert**${ elementsCount }berichten**in${ location }"
+        "U selecteert**${ elementsCount }berichten**in${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
@@ -6313,6 +6346,9 @@
       ],
       "Expand / contract composer": [
         "Uitvouwen / opvouwen opstelvenster"
+      ],
+      "Filter": [
+        "Filter"
       ],
       "Forward": [
         "Doorsturen"
@@ -7606,7 +7642,7 @@
         "Berichten automatisch doorsturen"
       ],
       "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Email berichten van oplichters permanent blokkeren. ${ kbLinkSender }"
+        "E-mails van oplichters permanent blokkeren. ${ kbLinkSender }"
       ],
       "Block unsavory senders": [
         "Blokkeer ongewenste afzenders"
@@ -7997,14 +8033,28 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Alias aanmaken"
+      ],
+      "Create an alias": [
+        "Alias aanmaken"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
+      ],
+      "New alias": [
+        "Nieuwe alias"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Open ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Logboeken bekijken"
       ]
     },
     "Select files": {
@@ -8396,6 +8446,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } en ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -8698,6 +8751,9 @@
       ],
       "Address verification disabled": [
         "Adresverificatie uitgeschakeld"
+      ],
+      "Alias copied to clipboard": [
+        "Alias gekopieerd naar klembord"
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -9197,6 +9253,9 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
+      "Enable 2FA": [
+        "2FA inschakelen"
+      ],
       "Enable message content search": [
         "Inschakelen van zoeken op berichtinhoud"
       ],
@@ -9223,6 +9282,9 @@
       ],
       "Forward": [
         "Doorsturen"
+      ],
+      "Get advanced protection": [
+        "Kies geavanceerde bescherming"
       ],
       "Groups": [
         "Groepen"
@@ -9329,6 +9391,12 @@
       ],
       "Move all messages": [
         "Verplaats alle berichten"
+      ],
+      "Move all messages to archive": [
+        "Alle berichten naar archief verplaatsen"
+      ],
+      "Move all messages to trash": [
+        "Alle berichten naar prullenbak verplaatsen"
       ],
       "Move to": [
         "Verplaats naar"

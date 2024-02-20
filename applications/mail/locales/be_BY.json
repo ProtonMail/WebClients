@@ -1333,6 +1333,11 @@
         "Новы ліст"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Спампаваць настольную праграму для ${ MAIL_APP_NAME }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
@@ -3364,8 +3369,8 @@
       "An error occurred while loading alias options": [
         "Падчас загрузкі параметраў псеўданіма адбылася памылка"
       ],
-      "An error occurred while saving alias": [
-        "Падчас захавання псеўданіма адбылася памылка"
+      "An error occurred while saving your alias": [
+        "Падчас захавання вашага псеўданіма адбылася памылка"
       ],
       "Attachments are limited to 25 MB": [
         "Максімальны памер далучэнняў складае 25 МБ"
@@ -6214,6 +6219,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Гэта паведамленне падпісана далучаным ключом, які яшчэ не быў давераным."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Гэта паведамленне будзе аўтаматычна выдалена ў ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Гэта паведамленне будзе аўтаматычна выдалена ў ${ value }"
       ],
@@ -8500,8 +8508,8 @@
       "Used on amazon for shopping, etc.": [
         "Выкарыстоўвайце на Amazon для пакупак і г.д."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Замест свайго сапраўднага адраса электроннай пошты паведаміце ім гэты псеўданім. Дадайце загаловак і нататку, каб разумець дзе яго неабходна выкарыстоўваць."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -9103,6 +9111,9 @@
       "Change setting": [
         "Змяніць налады"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Зручны запуск ${ MAIL_APP_NAME } непасрэдна з вашага працоўнага стала."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Стварыць псеўданімы hide-my-email і адсочваць іх тут."
       ],
@@ -9111,6 +9122,9 @@
       ],
       "Faster email management": [
         "Больш хуткае кіраванне лістамі"
+      ],
+      "Get the desktop app": [
+        "Атрымаць настольную праграму"
       ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
