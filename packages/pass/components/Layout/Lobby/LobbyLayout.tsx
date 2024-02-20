@@ -20,7 +20,7 @@ export const LobbyLayout: FC<PropsWithChildren<Props>> = ({ overlay, children })
                 <img
                     src={protonPassIcon}
                     className={clsx(
-                        'pass-lobby--logo w-custom max-w-custom no-pointer-events',
+                        'pass-lobby--logo w-custom max-w-custom pointer-events-none',
                         !overlay && 'pass-lobby--logo-hidden'
                     )}
                     style={{ '--w-custom': '18.25rem' }}
