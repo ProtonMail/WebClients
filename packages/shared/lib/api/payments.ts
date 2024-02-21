@@ -44,15 +44,7 @@ export const queryFreePlan = (params?: QueryPlansParams) => ({
     params,
 });
 
-export const getFreePlan = ({
-    api,
-    currency,
-    storageSplitEnabled,
-}: {
-    api: Api;
-    currency?: Currency;
-    storageSplitEnabled: boolean;
-}) =>
+export const getFreePlan = ({ api, currency }: { api: Api; currency?: Currency }) =>
     api<{ Plans: FreePlanDefault }>(queryFreePlan(currency ? { Currency: currency } : undefined))
         .then(({ Plans }): FreePlanDefault => {
             return {
@@ -61,7 +53,6 @@ export const getFreePlan = ({
                 MaxBaseRewardSpace: Plans.MaxBaseRewardSpace ?? Plans.MaxRewardSpace,
                 MaxDriveSpace: Plans.MaxDriveSpace ?? Plans.MaxSpace,
                 MaxDriveRewardSpace: Plans.MaxDriveRewardSpace ?? Plans.MaxRewardSpace,
-                storageSplitEnabled,
             };
         })
         .catch(() => FREE_PLAN);
