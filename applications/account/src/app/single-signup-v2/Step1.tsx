@@ -18,6 +18,7 @@ import { Vr } from '@proton/atoms/Vr';
 import { Icon, IconName } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText } from '@proton/components/containers';
+import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import {
     getBlackFridayRenewalNoticeText,
     getRenewalNoticeText,
@@ -47,6 +48,7 @@ import {
     Plan,
     PlanIDs,
     SubscriptionPlan,
+    User,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -160,6 +162,7 @@ const Step1 = ({
 }) => {
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
+    const isChargebeeEnabled = useIsChargebeeEnabled();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
@@ -223,8 +226,14 @@ const Step1 = ({
             // If there's a couponCode, we ignore optimistically setting new values because they'll be incorrect.
             setOptimisticDiff(newOptimistic);
 
+            let chargebeeEnabled = undefined;
+            if (model.session?.UID && model.session?.user) {
+                const user: User = model.session.user;
+                chargebeeEnabled = await isChargebeeEnabled(model.session.UID, async () => user);
+            }
+
             const checkResult = await getSubscriptionPrices(
-                getPaymentsApi(silentApi),
+                getPaymentsApi(silentApi, chargebeeEnabled),
                 newPlanIDs,
                 newCurrency,
                 newCycle,
