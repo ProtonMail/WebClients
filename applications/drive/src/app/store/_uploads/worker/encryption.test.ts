@@ -18,6 +18,8 @@ import { createVerifier } from './verifier';
 jest.setTimeout(20000);
 
 describe('block generator', () => {
+    const mockLogCallback = jest.fn();
+
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
     });
@@ -61,7 +63,8 @@ describe('block generator', () => {
             sessionKey,
             noop,
             mockHasher,
-            mockVerifier
+            mockVerifier,
+            mockLogCallback
         );
         const blocks = await asyncGeneratorToArray<EncryptedBlock>(generator);
         expect(blocks.length).toBe(3);
@@ -86,7 +89,12 @@ describe('block generator', () => {
         ];
         const { addressPrivateKey, sessionKey } = await setupPromise();
 
-        const generator = generateThumbnailEncryptedBlocks(thumbnailData, addressPrivateKey, sessionKey);
+        const generator = generateThumbnailEncryptedBlocks(
+            thumbnailData,
+            addressPrivateKey,
+            sessionKey,
+            mockLogCallback
+        );
         const blocks = await asyncGeneratorToArray<ThumbnailEncryptedBlock>(generator);
         expect(blocks.length).toBe(2);
         expect(blocks.map((block) => block.index)).toMatchObject([0, 1]);
@@ -121,7 +129,8 @@ describe('block generator', () => {
             sessionKey,
             notifySentry,
             mockHasher,
-            verifier
+            verifier,
+            mockLogCallback
         );
         const blocks = asyncGeneratorToArray(generator);
 
@@ -166,7 +175,8 @@ describe('block generator', () => {
             sessionKey,
             notifySentry,
             mockHasher,
-            verifier
+            verifier,
+            mockLogCallback
         );
         const blocks = await asyncGeneratorToArray<EncryptedBlock>(generator);
 
@@ -200,7 +210,8 @@ describe('block generator', () => {
             sessionKey,
             noop,
             hasher,
-            mockVerifier
+            mockVerifier,
+            mockLogCallback
         );
 
         const blocks = await asyncGeneratorToArray(generator);
@@ -228,7 +239,8 @@ describe('block generator', () => {
                     sessionKey,
                     noop,
                     mockHasher,
-                    verifier
+                    verifier,
+                    mockLogCallback
                 );
 
                 const blocks = await asyncGeneratorToArray(generator);
@@ -260,7 +272,8 @@ describe('block generator', () => {
                 sessionKey,
                 notifySentry,
                 mockHasher,
-                verifier
+                verifier,
+                mockLogCallback
             );
 
             const blocks = asyncGeneratorToArray(generator);
