@@ -32,9 +32,11 @@ function* cacheWorker({ meta, type }: WithCache<Action>, { getAppState, getAuthS
             const key: CryptoKey = yield getCacheEncryptionKey(cacheSalt, sessionLockToken);
 
             const state = (yield select()) as State;
+
             const whiteListedState = asIfNotOptimistic(state, reducerMap);
 
-            /* keep non-expired request metadata */
+            /** Filter stale request metadata and optimisticIds */
+            whiteListedState.items.byOptimisticId = {};
             whiteListedState.request = objectFilter(
                 whiteListedState.request,
                 (_, request) => request.status === 'success' && request.expiresAt !== undefined
