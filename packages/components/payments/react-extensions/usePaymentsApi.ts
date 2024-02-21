@@ -1,5 +1,6 @@
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { PLANS } from '@proton/shared/lib/constants';
 import { Api, ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
@@ -111,6 +112,12 @@ export const usePaymentsApi = (
 
             if (chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
                 return checkV5(data, signal);
+            }
+
+            const passB2bPlans = [PLANS.PASS_PRO, PLANS.PASS_BUSINESS];
+            const isPassB2b = passB2bPlans.some((plan) => data.Plans[plan] > 0);
+            if (isPassB2b) {
+                return checkV4(data, signal);
             }
 
             try {
