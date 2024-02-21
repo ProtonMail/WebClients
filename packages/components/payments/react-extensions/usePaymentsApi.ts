@@ -28,14 +28,14 @@ export const usePaymentsApi = (
     apiOverride?: Api
 ): {
     paymentsApi: PaymentsApi;
-    getPaymentsApi: (api: Api) => PaymentsApi;
+    getPaymentsApi: (api: Api, chargebeeEnabled?: ChargebeeEnabled) => PaymentsApi;
 } => {
     const regularApi = useApi();
     const apiHook = apiOverride ?? regularApi;
     const { chargebeeKillSwitch } = useChargebeeKillSwitch();
-    const chargebeeEnabled = useChargebeeEnabledCache();
+    const chargebeeEnabledCache = useChargebeeEnabledCache();
 
-    const getPaymentsApi = (api: Api): PaymentsApi => {
+    const getPaymentsApi = (api: Api, chargebeeEnabled: ChargebeeEnabled = chargebeeEnabledCache): PaymentsApi => {
         const statusExtended = async (version: PaymentsVersion): Promise<PaymentMethodStatusExtended> => {
             return api<PaymentMethodStatusExtended | PaymentMethodStatus>(queryPaymentMethodStatus(version)).then(
                 (result) => {
