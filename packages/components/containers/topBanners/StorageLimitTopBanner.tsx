@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import {
     APPS,
     APP_NAMES,
@@ -276,12 +275,11 @@ const PooledStorageLimitTopBanner = ({
 };
 
 const StorageLimitTopBanner = ({ app }: Props) => {
-    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
-    const space = getSpace(user, storageSplitEnabled);
+    const space = getSpace(user);
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -290,7 +288,7 @@ const StorageLimitTopBanner = ({ app }: Props) => {
         fromApp: app,
     });
 
-    return space.splitStorage && storageSplitEnabled ? (
+    return space.splitStorage ? (
         <SplitStorageLimitTopBanner
             app={app}
             space={space}

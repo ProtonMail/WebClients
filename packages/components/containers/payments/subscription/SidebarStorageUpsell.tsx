@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Icon, SettingsLink } from '@proton/components/components';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLocalState, useSubscription } from '@proton/components/hooks';
 import {
     APPS,
@@ -66,16 +65,8 @@ const getBaseWarning = () => {
     };
 };
 
-const getStorageUpsell = ({
-    app,
-    user,
-    storageSplitEnabled,
-}: {
-    app: APP_NAMES;
-    user: UserModel;
-    storageSplitEnabled: boolean;
-}) => {
-    const space = getSpace(user, storageSplitEnabled);
+const getStorageUpsell = ({ app, user }: { app: APP_NAMES; user: UserModel }) => {
+    const space = getSpace(user);
 
     if (!space.splitStorage) {
         return null;
@@ -132,17 +123,16 @@ const getStorageUpsell = ({
 };
 
 const SidebarStorageUpsell = ({ app }: Props) => {
-    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
 
-    if (!storageSplitEnabled || !getCanAddStorage({ user, subscription })) {
+    if (!getCanAddStorage({ user, subscription })) {
         return null;
     }
 
     // Storage upsell is completely hidden in drive.
-    const data = app === APPS.PROTONDRIVE ? undefined : getStorageUpsell({ app, user, storageSplitEnabled });
+    const data = app === APPS.PROTONDRIVE ? undefined : getStorageUpsell({ app, user });
 
     const upsellButton = (
         <ButtonLike
