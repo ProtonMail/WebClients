@@ -10,6 +10,7 @@ import {
     getOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { getVPN2024Renew } from '@proton/shared/lib/helpers/renew';
 import {
     getHas2023OfferCoupon,
     getNormalCycleFromCustomCycle,
@@ -112,6 +113,18 @@ const SubscriptionsSection = () => {
                     </Price>
                 ),
                 renewalLength: getMonths(nextCycle),
+            };
+        }
+
+        if (latestPlanIDs[PLANS.VPN2024]) {
+            const result = getVPN2024Renew({ plansMap, planIDs: latestPlanIDs, cycle: latestSubscription.Cycle })!;
+            return {
+                renewPrice: (
+                    <Price key="renewal-price" currency={latestSubscription.Currency}>
+                        {result.renewPrice}
+                    </Price>
+                ),
+                renewalLength: getMonths(result.renewalLength),
             };
         }
 

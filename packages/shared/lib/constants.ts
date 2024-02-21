@@ -744,6 +744,7 @@ export enum PLANS {
     MAIL = 'mail2022',
     MAIL_PRO = 'mailpro2022',
     VPN = 'vpn2022',
+    VPN2024 = 'vpn2024',
     BUNDLE = 'bundle2022',
     BUNDLE_PRO = 'bundlepro2022',
     ENTERPRISE = 'enterprise2022',
@@ -763,6 +764,7 @@ export const PLAN_NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
     [PLANS.VPNBASIC]: 'Basic',
     [PLANS.VPNPLUS]: 'Plus',
+    [PLANS.VPN2024]: 'Plus',
     [PLANS.DRIVE]: 'Drive Plus',
     [PLANS.DRIVE_PRO]: 'Drive Essentials',
     [PLANS.PASS_PLUS]: 'Pass Plus',
@@ -799,6 +801,10 @@ export enum COUPON_CODES {
     EOY_2023_1M_INTRO = 'EOY1MINTRO',
     PASS_B2B_INTRO = 'PASS2024B2BINTRO',
     MEMBER_DOWNGRADE_TRIAL = 'MEMBER_DOWNGRADE_TRIAL',
+    MARCHSAVINGS24 = 'MARCHSAVINGS24',
+    HONEYPROTONSAVINGS = 'HONEYPROTONSAVINGS',
+    WELCOMEBACK = 'WELCOMEBACK',
+    LOYALTYOFFER = 'LOYALTYOFFER',
 }
 
 export const GIFT_CODE_LENGTH = 16;
