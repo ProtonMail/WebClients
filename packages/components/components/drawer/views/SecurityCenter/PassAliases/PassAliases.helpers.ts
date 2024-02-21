@@ -1,6 +1,5 @@
-import type { PassBridge, PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
+import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { UNIX_DAY, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
 export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
     const filterNonTrashedItems = ({ item }: PassBridgeAliasItem) => !isTrashed(item);
@@ -12,18 +11,4 @@ export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
     };
 
     return aliases.filter(filterNonTrashedItems).sort(sortDesc);
-};
-
-export const fetchPassBridgeInfos = async (PassBridge: PassBridge) => {
-    let userHadVault = false;
-
-    const defaultVault = await PassBridge.vault.getDefault(
-        (hadVault) => {
-            userHadVault = hadVault;
-        },
-        { maxAge: UNIX_DAY * 1 }
-    );
-
-    const aliases = await PassBridge.alias.getAllByShareId(defaultVault.shareId, { maxAge: UNIX_MINUTE * 5 });
-    return { aliases, vault: defaultVault, userHadVault };
 };

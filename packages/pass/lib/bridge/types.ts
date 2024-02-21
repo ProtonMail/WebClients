@@ -11,8 +11,7 @@ export type PassBridgeInitOptions = {
 };
 
 export interface PassBridge {
-    ready: () => Promise<boolean>;
-    hydrate: (options: PassBridgeInitOptions) => Promise<void>;
+    init: (options: PassBridgeInitOptions) => Promise<boolean>;
     user: {
         /**
          * Get the user plan which includes aliases limit

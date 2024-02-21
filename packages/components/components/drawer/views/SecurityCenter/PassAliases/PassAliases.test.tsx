@@ -43,8 +43,7 @@ jest.mock('@proton/pass/lib/bridge/PassBridgeProvider', () => ({
                 getAliasOptions: jest.fn(),
                 getAllByShareId: async () => [],
             },
-            hydrate: async () => undefined,
-            ready: async () => true,
+            init: async () => true,
         };
     },
 }));
