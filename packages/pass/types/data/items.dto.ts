@@ -32,6 +32,7 @@ export type ItemEditIntentDTO = {
     alias: Maybe<{ aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string }>;
     login: never;
     note: never;
+    creditCard: never;
 };
 
 export type ItemImportIntentDTO = {

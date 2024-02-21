@@ -35,25 +35,19 @@ export const ItemHistoryRestore: FC<Props> = ({ previousRevision, currentRevisio
 
     const dispatch = useDispatch();
 
-    const getDataToRestore = <T extends ItemType>(previousRevision: ItemRevision<T>): ItemEditIntent<T> => {
-        const { data: item, itemId, shareId } = previousRevision;
-        const { revision: lastRevision } = currentRevision;
-
-        const data = {
-            itemId,
-            shareId,
-            lastRevision,
-            ...item,
-        };
-
-        return item.type === 'alias' ? { ...data, extraData: undefined } : data;
-    };
-
     const handleRestoreClick = useConfirm(
         useCallback(() => {
             if (previousRevision === null) return;
-            const submit = getDataToRestore(previousRevision);
-            dispatch(itemEditIntent(submit));
+
+            const { data: item, itemId, shareId } = previousRevision;
+            const { revision: lastRevision } = currentRevision;
+
+            const data: ItemEditIntent =
+                item.type === 'alias'
+                    ? { itemId, shareId, lastRevision, ...item, extraData: undefined }
+                    : { itemId, shareId, lastRevision, ...item };
+
+            dispatch(itemEditIntent(data));
             selectItem(currentRevision.shareId, currentRevision.itemId, { mode: 'replace' });
         }, [previousRevision, currentRevision.shareId, currentRevision.itemId])
     );
