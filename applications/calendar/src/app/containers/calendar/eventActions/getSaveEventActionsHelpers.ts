@@ -2,6 +2,7 @@ import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSupportedStringValue } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getHasModifiedNotifications } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -234,6 +235,12 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
         result.attendee = newVevent.attendee;
     }
+    if (getSupportedStringValue(newVevent.color) !== getSupportedStringValue(oldVevent.color)) {
+        result.color = newVevent.color || { value: '' };
+    }
+    if (getHasModifiedNotifications(newVevent, result)) {
+        result.components = newVevent.components;
+    }
 
     return result;
 };
@@ -268,6 +275,12 @@ export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Part
         if (addedOrganizer || removedOrganizer || hasModifiedOrganizer) {
             return true;
         }
+    }
+    if (mergeVevent.color && getSupportedStringValue(vevent.color) !== getSupportedStringValue(mergeVevent.color)) {
+        return true;
+    }
+    if (getHasModifiedNotifications(vevent, mergeVevent)) {
+        return true;
     }
     return false;
 };

@@ -1,5 +1,6 @@
 import { serverTime } from '@proton/crypto';
 import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { DAY } from '../constants';
 import { fromUTCDate, toUTCDate } from '../date/timezone';
@@ -328,4 +329,26 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
         },
         notificationsPart: toApiNotifications(components),
     };
+};
+
+export const getHasModifiedNotifications = (
+    newVevent: VcalVeventComponent,
+    oldVevent: Partial<VcalVeventComponent>
+) => {
+    if (newVevent.components === undefined && oldVevent.components === undefined) {
+        return false;
+    }
+    if (
+        newVevent.components?.length !== oldVevent.components?.length ||
+        newVevent.components === undefined ||
+        oldVevent.components === undefined
+    ) {
+        return true;
+    }
+
+    return !newVevent.components.every((newEventNotification) => {
+        return oldVevent.components?.some((oldEventNotification) =>
+            isDeepEqual(newEventNotification, oldEventNotification)
+        );
+    });
 };
