@@ -51,7 +51,6 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, rev
                     pin: obfuscate(creditCardValues.pin),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                 },
-                extraData: {},
                 extraFields: [],
                 itemId,
                 lastRevision,
