@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { Api, MaybeNull } from '@proton/pass/types';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -109,12 +110,14 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
                       const clientKey = await getKey(key!);
                       const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
 
+                      if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
+
                       return {
-                          keyPassword: decryptedBlob?.keyPassword ?? '',
+                          keyPassword: decryptedBlob.keyPassword,
                           payloadVersion,
                       };
-                  } catch {
-                      throw new InvalidForkConsumeError('Failed to decrypt fork payload');
+                  } catch (err) {
+                      throw new InvalidForkConsumeError(getErrorMessage(err));
                   }
               })();
 
