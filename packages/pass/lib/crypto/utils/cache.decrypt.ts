@@ -1,4 +1,5 @@
 import { deobfuscateItem, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
+import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
@@ -71,14 +72,22 @@ export const decryptCachedState = async (
     }
 };
 
-/** `PassCache` state and snapshot should be in sync : remove any shares
- * from state that have no share manager reference in the crypto snapshot */
+/** Ensures synchronization between the `PassCache` state and its snapshot by removing
+ * shares from the state that lack a corresponding share manager reference in the snapshot.
+ * If removal creates a discrepancy in the item shares, returns undefined to indicate that
+ * a refetch is necessary to reconcile the state and snapshot. */
 export const sanitizeCache = (cache: Maybe<PassCache>): Maybe<PassCache> => {
     if (!cache) return;
 
     const state = { ...cache.state };
-    const shareManagers = Object.fromEntries(cache.snapshot.shareManagers);
 
+    /* Filter out shares that have no corresponding share manager reference */
+    const shareManagers = Object.fromEntries(cache.snapshot.shareManagers);
     state.shares = objectFilter(state.shares, (shareId) => shareId in shareManagers);
-    return { state, snapshot: cache.snapshot };
+
+    /* Check that all item shareIDs have a corresponding share in the sanitized list */
+    const itemShareIds = Object.keys(unwrapOptimisticState(state.items.byShareId));
+    const valid = itemShareIds.every((shareId) => shareId in state.shares);
+
+    return valid ? { state, snapshot: cache.snapshot } : undefined;
 };
