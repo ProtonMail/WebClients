@@ -2,7 +2,12 @@ import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
 import { parse } from '../../lib/calendar/vcal';
-import { getVeventParts, withMandatoryPublishFields, withoutRedundantDtEnd } from '../../lib/calendar/veventHelper';
+import {
+    getHasModifiedNotifications,
+    getVeventParts,
+    withMandatoryPublishFields,
+    withoutRedundantDtEnd,
+} from '../../lib/calendar/veventHelper';
 import { toCRLF } from '../../lib/helpers/string';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
@@ -396,5 +401,84 @@ END:VEVENT`) as VcalVeventComponent;
                 rrule: { value: { freq: 'DAILY' } },
             });
         });
+    });
+});
+
+describe('getHasModifiedNotifications', () => {
+    const alarm1 = {
+        action: { value: 'EMAIL' },
+        component: 'valarm',
+        trigger: {
+            value: {
+                weeks: 0,
+                hours: 0,
+                minutes: 10,
+                seconds: 0,
+                isNegative: false,
+            },
+        },
+    };
+    const alarm2 = {
+        action: { value: 'DISPLAY' },
+        component: 'valarm',
+        trigger: {
+            value: {
+                weeks: 0,
+                hours: 0,
+                minutes: 10,
+                seconds: 0,
+                isNegative: false,
+            },
+        },
+    };
+    const alarm3 = {
+        action: { value: 'DISPLAY' },
+        component: 'valarm',
+        trigger: {
+            value: {
+                weeks: 0,
+                hours: 0,
+                minutes: 5,
+                seconds: 0,
+                isNegative: false,
+            },
+        },
+    };
+
+    it('should not have modified notifications', () => {
+        const event1 = {
+            components: [alarm1, alarm2],
+        } as VcalVeventComponent;
+        const event2 = {
+            components: [alarm2, alarm1],
+        } as VcalVeventComponent;
+
+        const noAlarmEvent = {
+            components: undefined,
+        } as VcalVeventComponent;
+
+        expect(getHasModifiedNotifications(event1, event2)).toBeFalsy();
+        expect(getHasModifiedNotifications(noAlarmEvent, noAlarmEvent)).toBeFalsy();
+    });
+
+    it('should have modified notifications', () => {
+        const event1 = {
+            components: [alarm1, alarm2],
+        } as VcalVeventComponent;
+        const event2 = {
+            components: [alarm2, alarm3],
+        } as VcalVeventComponent;
+        const event3 = {
+            components: [alarm1, alarm2, alarm3],
+        } as VcalVeventComponent;
+
+        const noAlarmEvent = {
+            components: undefined,
+        } as VcalVeventComponent;
+
+        expect(getHasModifiedNotifications(event1, event2)).toBeTruthy();
+        expect(getHasModifiedNotifications(event1, event3)).toBeTruthy();
+        expect(getHasModifiedNotifications(noAlarmEvent, event1)).toBeTruthy();
+        expect(getHasModifiedNotifications(event1, noAlarmEvent)).toBeTruthy();
     });
 });

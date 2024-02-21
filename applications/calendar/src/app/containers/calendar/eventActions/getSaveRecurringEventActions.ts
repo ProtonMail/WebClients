@@ -10,7 +10,7 @@ import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calend
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getHasUpdatedInviteData, getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
-import { getSequence, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { getHasModifiedNotifications, getSequence, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -615,6 +615,35 @@ const getSaveRecurringEventActions = async ({
                     sendPreferencesMap,
                 });
             }
+        } else if (updateAllPossibilities === UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS) {
+            deleteOperations = [];
+            const updateMergeVevent = getUpdateSingleEditMergeVevent(
+                newRecurrentVeventWithSequence,
+                originalVeventComponent
+            );
+            // implement the so-called smart rules for "edit all", namely propagate changed fields to single edits
+            await Promise.all(
+                singleEditRecurrences.filter(getIsPersonalSingleEdit).map(async (event) => {
+                    const { veventComponent } = await getCalendarEventRaw(event);
+                    const hasModifiedNotifications = getHasModifiedNotifications(veventComponent, updateMergeVevent);
+                    if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
+                        return;
+                    }
+                    const updatedSingleEditVevent = {
+                        ...veventComponent,
+                        ...updateMergeVevent,
+                    };
+                    const updateSingleEditOperation = getUpdateSyncOperation({
+                        veventComponent: updatedSingleEditVevent,
+                        calendarEvent: event,
+                        hasDefaultNotifications: hasModifiedNotifications ? false : getHasDefaultNotifications(event),
+                        isAttendee,
+                        isBreakingChange: false,
+                        isPersonalSingleEdit: event.IsPersonalSingleEdit,
+                    });
+                    updateSingleEditOperations.push(updateSingleEditOperation);
+                })
+            );
         }
         const updateOriginalOperation = getUpdateSyncOperation({
             veventComponent: updatedVeventComponent,
