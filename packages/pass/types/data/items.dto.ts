@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
@@ -29,7 +29,7 @@ export type ItemCreateIntentDTO = {
 };
 
 export type ItemEditIntentDTO = {
-    alias: { aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string };
+    alias: Maybe<{ aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string }>;
     login: never;
     note: never;
 };
