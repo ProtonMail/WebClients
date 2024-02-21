@@ -8,6 +8,7 @@ import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { SETTINGS_PASSWORD_MODE, type UserSettings } from '@proton/shared/lib/interfaces';
 
 function* offlineSetupWorker(
@@ -31,7 +32,15 @@ function* offlineSetupWorker(
         if (!verified) throw new Error();
 
         const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
-        const offlineKD: Uint8Array = yield getOfflineKeyDerivation(payload.password, offlineSalt);
+
+        const offlineKD: Uint8Array = yield getOfflineKeyDerivation(payload.password, offlineSalt).catch((error) => {
+            captureMessage('Offline: Argon2 error', {
+                level: 'error',
+                extra: { error, context: OFFLINE_ARGON2_PARAMS },
+            });
+
+            throw error;
+        });
 
         authStore.setOfflineConfig({ salt: uint8ArrayToString(offlineSalt), params: OFFLINE_ARGON2_PARAMS });
         authStore.setOfflineKD(uint8ArrayToString(offlineKD));
