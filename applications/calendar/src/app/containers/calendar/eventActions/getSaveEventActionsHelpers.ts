@@ -2,6 +2,7 @@ import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSupportedStringValue } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getHasModifiedNotifications } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
@@ -238,8 +239,14 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (getSupportedStringValue(newVevent.color) !== getSupportedStringValue(oldVevent.color)) {
         result.color = newVevent.color || { value: '' };
     }
-    if (getHasModifiedNotifications(newVevent, result)) {
+    if (getHasModifiedNotifications(newVevent, oldVevent)) {
         result.components = newVevent.components;
+    }
+    if (getPropertyTzid(newVevent.dtstart) !== getPropertyTzid(oldVevent.dtstart)) {
+        result.dtstart = newVevent.dtstart;
+    }
+    if (newVevent.dtend && oldVevent.dtend && getPropertyTzid(newVevent.dtend) !== getPropertyTzid(oldVevent.dtend)) {
+        result.dtend = newVevent.dtend;
     }
 
     return result;
@@ -280,6 +287,12 @@ export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Part
         return true;
     }
     if (getHasModifiedNotifications(vevent, mergeVevent)) {
+        return true;
+    }
+    if (mergeVevent.dtstart && getPropertyTzid(vevent.dtstart) !== getPropertyTzid(mergeVevent.dtstart)) {
+        return true;
+    }
+    if (vevent.dtend && mergeVevent.dtend && getPropertyTzid(vevent.dtend) !== getPropertyTzid(mergeVevent.dtend)) {
         return true;
     }
     return false;

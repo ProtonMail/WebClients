@@ -405,12 +405,13 @@ END:VEVENT`) as VcalVeventComponent;
 });
 
 describe('getHasModifiedNotifications', () => {
-    const alarm1 = {
+    const valarm1 = {
         action: { value: 'EMAIL' },
         component: 'valarm',
         trigger: {
             value: {
                 weeks: 0,
+                days: 0,
                 hours: 0,
                 minutes: 10,
                 seconds: 0,
@@ -418,12 +419,13 @@ describe('getHasModifiedNotifications', () => {
             },
         },
     };
-    const alarm2 = {
+    const valarm2 = {
         action: { value: 'DISPLAY' },
         component: 'valarm',
         trigger: {
             value: {
                 weeks: 0,
+                days: 0,
                 hours: 0,
                 minutes: 10,
                 seconds: 0,
@@ -431,12 +433,13 @@ describe('getHasModifiedNotifications', () => {
             },
         },
     };
-    const alarm3 = {
+    const valarm3 = {
         action: { value: 'DISPLAY' },
         component: 'valarm',
         trigger: {
             value: {
                 weeks: 0,
+                days: 0,
                 hours: 0,
                 minutes: 5,
                 seconds: 0,
@@ -445,40 +448,40 @@ describe('getHasModifiedNotifications', () => {
         },
     };
 
-    it('should not have modified notifications', () => {
-        const event1 = {
-            components: [alarm1, alarm2],
+    it('should return false when notifications are not modified', () => {
+        const vevent1 = {
+            components: [valarm1, valarm2],
         } as VcalVeventComponent;
-        const event2 = {
-            components: [alarm2, alarm1],
+        const vevent2 = {
+            components: [valarm2, valarm1],
         } as VcalVeventComponent;
 
-        const noAlarmEvent = {
+        const noAlarmVevent = {
             components: undefined,
         } as VcalVeventComponent;
 
-        expect(getHasModifiedNotifications(event1, event2)).toBeFalsy();
-        expect(getHasModifiedNotifications(noAlarmEvent, noAlarmEvent)).toBeFalsy();
+        expect(getHasModifiedNotifications(vevent1, vevent2)).toBeFalsy();
+        expect(getHasModifiedNotifications(noAlarmVevent, noAlarmVevent)).toBeFalsy();
     });
 
-    it('should have modified notifications', () => {
-        const event1 = {
-            components: [alarm1, alarm2],
+    it('should return true when notifications are modified', () => {
+        const vevent1 = {
+            components: [valarm1, valarm2],
         } as VcalVeventComponent;
-        const event2 = {
-            components: [alarm2, alarm3],
+        const vevent2 = {
+            components: [valarm2, valarm3],
         } as VcalVeventComponent;
-        const event3 = {
-            components: [alarm1, alarm2, alarm3],
+        const vevent3 = {
+            components: [valarm1, valarm2, valarm3],
         } as VcalVeventComponent;
 
-        const noAlarmEvent = {
+        const noAlarmVevent = {
             components: undefined,
         } as VcalVeventComponent;
 
-        expect(getHasModifiedNotifications(event1, event2)).toBeTruthy();
-        expect(getHasModifiedNotifications(event1, event3)).toBeTruthy();
-        expect(getHasModifiedNotifications(noAlarmEvent, event1)).toBeTruthy();
-        expect(getHasModifiedNotifications(event1, noAlarmEvent)).toBeTruthy();
+        expect(getHasModifiedNotifications(vevent1, vevent2)).toBeTruthy();
+        expect(getHasModifiedNotifications(vevent1, vevent3)).toBeTruthy();
+        expect(getHasModifiedNotifications(noAlarmVevent, vevent1)).toBeTruthy();
+        expect(getHasModifiedNotifications(vevent1, noAlarmVevent)).toBeTruthy();
     });
 });
