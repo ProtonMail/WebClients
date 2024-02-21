@@ -18,6 +18,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
+import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
@@ -227,6 +228,7 @@ const SingleSignupContainerV2 = ({
 
     const unauthApi = useApi();
     const { getPaymentsApi } = usePaymentsApi();
+    const isChargebeeEnabled = useIsChargebeeEnabled();
     const UID = model.session?.UID;
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
     const silentApi = getSilentApi(normalApi);
@@ -810,10 +812,12 @@ const SingleSignupContainerV2 = ({
                 authSession.User || silentApi<{ User: User }>(getUser()).then(({ User }) => User),
             ]);
 
+            const chargebeeEnabled = await isChargebeeEnabled(authSession.UID, async () => user);
+
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 api: silentApi,
                 audience,
-                paymentsApi: getPaymentsApi(silentApi),
+                paymentsApi: getPaymentsApi(silentApi, chargebeeEnabled),
                 user,
                 plans: model.plans,
                 plansMap: model.plansMap,
