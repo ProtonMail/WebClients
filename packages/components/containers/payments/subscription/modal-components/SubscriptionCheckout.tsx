@@ -36,7 +36,7 @@ import {
 } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
-import { getBlackFridayRenewalNoticeText, getRenewalNoticeText } from '../../RenewalNotice';
+import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText, getRenewalNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { OnBillingAddressChange, WrappedTaxCountrySelector } from '../../TaxCountrySelector';
 import { getTotalBillingText } from '../../helper';
@@ -180,6 +180,11 @@ const SubscriptionCheckout = ({
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const checkout = getCheckout({
+        planIDs,
+        plansMap,
+        checkResult,
+    });
     const {
         planTitle,
         usersTitle,
@@ -189,11 +194,7 @@ const SubscriptionCheckout = ({
         membersPerMonth,
         withDiscountPerMonth,
         addonsPerMonth,
-    } = getCheckout({
-        planIDs,
-        plansMap,
-        checkResult,
-    });
+    } = checkout;
 
     if (!checkResult) {
         return null;
@@ -249,13 +250,21 @@ const SubscriptionCheckout = ({
                 )
             }
             renewNotice={
-                !isFreePlanSelected &&
-                getRenewalNoticeText({
-                    renewCycle: cycle,
-                    isCustomBilling,
-                    isScheduledSubscription,
-                    subscription,
-                })
+                !isFreePlanSelected
+                    ? getCheckoutRenewNoticeText({
+                          cycle,
+                          plansMap,
+                          planIDs,
+                          checkout,
+                          currency,
+                      }) ||
+                      getRenewalNoticeText({
+                          renewCycle: cycle,
+                          isCustomBilling,
+                          isScheduledSubscription,
+                          subscription,
+                      })
+                    : undefined
             }
         >
             <div className="mb-4 flex flex-column">
