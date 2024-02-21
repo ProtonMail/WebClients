@@ -65,7 +65,7 @@ const getRecurringUpdateAllPossibilities = ({
      * For series with attendees and single modifications,
      * when the change is not a breaking one we want to preserve the modifications
      */
-    if (isOrganizer && !hasModifiedDateTimes && isRruleEqual && !isEditingSingleEdit) {
+    if (isOrganizer && !hasModifiedDateTimes && isRruleEqual) {
         return {
             updateAllPossibilities: UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS,
             hasModifiedDateTimes,
