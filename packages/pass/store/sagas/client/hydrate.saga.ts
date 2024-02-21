@@ -72,7 +72,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             user: userState,
         };
 
-        yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot: cache?.snapshot });
+        yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot: cache?.snapshot, clear: true });
         yield put(stateHydrate(state));
 
         return cache?.state !== undefined && cache?.snapshot !== undefined;
