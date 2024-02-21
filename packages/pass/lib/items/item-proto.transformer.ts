@@ -60,16 +60,7 @@ const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
 
     switch (data.oneofKind) {
         case 'login':
-            return {
-                ...base,
-                type: 'login',
-                content: {
-                    ...data.login,
-                    username: data.login.username,
-                    password: data.login.password,
-                    totpUri: data.login.totpUri,
-                },
-            };
+            return { ...base, type: 'login', content: data.login };
         case 'note':
             return { ...base, type: 'note', content: data.note };
         case 'alias':
@@ -124,16 +115,13 @@ const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
     const { platformSpecific, metadata } = item;
 
     const base = {
-        metadata: {
-            ...metadata,
-            note: metadata.note,
-        },
+        metadata: { ...metadata, note: metadata.note },
         extraFields: item.extraFields.map(extraFieldToProtobuf),
         platformSpecific,
     };
 
     switch (item.type) {
-        case 'login':
+        case 'login': {
             return {
                 ...base,
                 content: {
@@ -141,13 +129,15 @@ const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
                         oneofKind: 'login',
                         login: {
                             ...item.content,
-                            username: item.content.username,
-                            password: item.content.password,
-                            totpUri: item.content.totpUri,
+                            /** Make sure the `passkeys` property exists. It can
+                             * happen that we try to generate a protobuf for a cached
+                             * item that was generated before ContentFormat v2 */
+                            passkeys: item.content.passkeys ?? [],
                         },
                     },
                 },
             };
+        }
         case 'note':
             return { ...base, content: { content: { oneofKind: 'note', note: item.content } } };
         case 'alias':

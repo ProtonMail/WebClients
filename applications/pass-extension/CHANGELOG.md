@@ -1,3 +1,8 @@
+### Version 1.13.2
+
+-   Patch content format version v2 on stale cached items
+-   Fix domain images not loading
+
 ### Version 1.13.1
 
 -   Improve file format validation in importer
