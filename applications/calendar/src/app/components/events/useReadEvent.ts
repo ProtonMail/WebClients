@@ -1,8 +1,8 @@
-import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { useMemo } from 'react';
 
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
@@ -31,7 +31,7 @@ const useReadEvent = (
     return useMemo(() => {
         const [
             { veventComponent = DEFAULT_VEVENT, hasDefaultNotifications, verificationStatus, selfAddressData },
-            { IsProtonProtonInvite, Color },
+            { IsProtonProtonInvite },
         ] = value || [
             {
                 veventComponent: DEFAULT_VEVENT,
@@ -50,7 +50,6 @@ const useReadEvent = (
             selfAddressData,
             isAllDay,
             isProtonProtonInvite: !!IsProtonProtonInvite,
-            color: Color ? Color : undefined,
             tzid,
         });
         const notifications =
