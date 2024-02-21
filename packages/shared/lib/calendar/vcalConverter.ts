@@ -213,6 +213,16 @@ export const getHasModifiedDateTimes = (newVevent: VcalVeventComponent, oldVeven
     return !isStartPreserved || !isEndPreserved;
 };
 
+export const getIsEquivalentOrganizer = (newOrganizer: VcalOrganizerProperty, oldOrganizer: VcalOrganizerProperty) => {
+    if (newOrganizer.value !== oldOrganizer.value) {
+        return false;
+    }
+    if (newOrganizer.parameters?.cn !== oldOrganizer.parameters?.cn) {
+        return false;
+    }
+    return true;
+};
+
 export const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
     if (newAttendee.value !== oldAttendee.value) {
         return false;

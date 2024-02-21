@@ -8,7 +8,7 @@ import {
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
-import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getHasUpdatedInviteData, getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { getSequence, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -318,7 +318,11 @@ const getSaveRecurringEventActions = async ({
             getCreateSyncOperation({
                 veventComponent: newRecurrenceVeventWithSequence,
                 hasDefaultNotifications,
-                isPersonalSingleEdit: !isSendInviteType,
+                isPersonalSingleEdit: !getHasUpdatedInviteData({
+                    newVevent: newRecurrenceVeventWithSequence,
+                    oldVevent: oldRecurrenceVeventComponentWithSequence,
+                    hasModifiedDateTimes,
+                }),
             });
 
         return {
