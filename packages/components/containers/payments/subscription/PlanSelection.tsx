@@ -449,8 +449,10 @@ const PlanSelection = ({
                         options={[
                             { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY },
                             { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
-                            { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
-                        ]}
+                            app !== APPS.PROTONPASS
+                                ? { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS }
+                                : undefined,
+                        ].filter(isTruthy)}
                     />
                 )}
             </div>
