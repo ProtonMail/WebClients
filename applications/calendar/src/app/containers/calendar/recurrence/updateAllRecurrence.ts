@@ -45,7 +45,7 @@ const updateAllRecurrence = ({ component, originalComponent, mode, isAttendee }:
 
         return {
             ...veventWithOldUID,
-            dtstart: originalComponent.dtstart,
+            dtstart: mergedDtstart, // TODO: used to be originalDtstart here. To be checked if this works for a time zone change that changes day
             dtend: getEndDateTimeMerged(component.dtstart, getDtendProperty(component), mergedDtstart),
             // Copy over the exdates, if any
             ...(originalComponent.exdate && { exdate: originalComponent.exdate }),
