@@ -86,7 +86,7 @@ const MainSwitch: FC = () => {
 export const Main: FC = () => {
     const freeAccessEnabled = useFeatureFlag(PassFeature.PassEnableDesktopFreePlan);
     const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean }>({ upgrade: false });
-    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const isFreePlan = [UserPassPlan.FREE, UserPassPlan.TRIAL].includes(useSelector(selectPassPlan));
 
     useEffect(() => {
         if (!isElectronApp || freeAccessEnabled) return;
