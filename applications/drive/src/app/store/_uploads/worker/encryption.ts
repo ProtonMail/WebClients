@@ -11,6 +11,8 @@ import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
 import { ThumbnailInfo } from '../media';
 import { Verifier } from './interface';
 
+type LogCallback = (message: string) => void;
+
 /**
  * generateEncryptedBlocks generates blocks for the specified file.
  * Each block is chunked to FILE_CHUNK_SIZE and encrypted, counting index
@@ -23,8 +25,10 @@ export async function* generateEncryptedBlocks(
     sessionKey: SessionKey,
     postNotifySentry: (e: Error) => void,
     hashInstance: ReturnType<typeof sha1.create>,
-    verifier: Verifier
+    verifier: Verifier,
+    log: LogCallback
 ): AsyncGenerator<EncryptedBlock> {
+    log(`Encrypting blocks`);
     let index = 1;
     const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
     while (!reader.isEOF()) {
@@ -32,8 +36,18 @@ export async function* generateEncryptedBlocks(
 
         hashInstance.update(chunk);
 
-        yield await encryptBlock(index++, chunk, addressPrivateKey, privateKey, sessionKey, verifier, postNotifySentry);
+        yield await encryptBlock(
+            index++,
+            chunk,
+            addressPrivateKey,
+            privateKey,
+            sessionKey,
+            verifier,
+            postNotifySentry,
+            log
+        );
     }
+    log(`Encrypting blocks finished`);
 }
 
 /**
@@ -44,14 +58,20 @@ export async function* generateEncryptedBlocks(
 export async function* generateThumbnailEncryptedBlocks(
     thumbnails: ThumbnailInfo[] | undefined,
     addressPrivateKey: PrivateKeyReference,
-    sessionKey: SessionKey
+    sessionKey: SessionKey,
+    log: LogCallback
 ): AsyncGenerator<ThumbnailEncryptedBlock> {
-    if (!!thumbnails?.length) {
-        let index = 0;
-        for (let i = 0; i < thumbnails?.length; i++) {
-            yield await encryptThumbnail(index++, addressPrivateKey, sessionKey, thumbnails[i]);
-        }
+    if (!thumbnails?.length) {
+        log(`No thumbnail to encrypt`);
+        return;
     }
+
+    log(`Encrypting ${thumbnails.length} thumbnails`);
+    let index = 0;
+    for (let i = 0; i < thumbnails.length; i++) {
+        yield await encryptThumbnail(index++, addressPrivateKey, sessionKey, thumbnails[i]);
+    }
+    log(`Encrypting thumbnails finished`);
 }
 
 async function encryptThumbnail(
@@ -86,9 +106,11 @@ async function encryptBlock(
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     verifyBlock: Verifier,
-    postNotifySentry: (e: Error) => void
+    postNotifySentry: (e: Error) => void,
+    log: LogCallback
 ): Promise<EncryptedBlock> {
     const tryEncrypt = async (retryCount: number): Promise<EncryptedBlock> => {
+        log(`Encrypting block ${index}`);
         // Generate the encrypted block
         const { message: encryptedData, signature } = await CryptoProxy.encryptMessage({
             binaryData: chunk,
@@ -116,9 +138,11 @@ async function encryptBlock(
             }
 
             if (retryCount < MAX_BLOCK_VERIFICATION_RETRIES) {
+                log(`Block verification failed, retrying: ${e}`);
                 return tryEncrypt(retryCount + 1);
             }
 
+            log(`Block verification failed: ${e}`);
             // Give up after max retries reached, something's wrong
             throw new EnrichedError('Upload failed: Verification of data failed', { extra: { e } });
         }

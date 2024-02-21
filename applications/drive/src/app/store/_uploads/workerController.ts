@@ -521,7 +521,7 @@ export class UploadWorkerController {
                     onError(convertSafeError(data.error));
                     break;
                 case 'notify_sentry':
-                    log(`Notifying Sentry with: ${data.error}`);
+                    log(`Notifying Sentry with: ${JSON.stringify(data.error)}`);
                     notifySentry(convertSafeError(data.error));
                     break;
                 case 'heartbeat':
