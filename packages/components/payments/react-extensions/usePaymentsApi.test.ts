@@ -252,4 +252,26 @@ describe('usePaymentsApi', () => {
         });
         expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
     });
+
+    it.each([PLANS.PASS_PRO, PLANS.PASS_BUSINESS])(
+        'should call v4 check when user is chargebee allowed calls B2B plans: %s',
+        (plan) => {
+            mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
+            const { result } = renderHook(() => usePaymentsApi(), {
+                wrapper,
+            });
+
+            const data = getCheckSubscriptionData();
+            data.Plans = {
+                [plan]: 1,
+            };
+
+            void result.current.paymentsApi.checkWithAutomaticVersion(data);
+            expect(apiMock).toHaveBeenCalledWith({
+                url: `payments/v4/subscription/check`,
+                method: 'post',
+                data,
+            });
+        }
+    );
 });
