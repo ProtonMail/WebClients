@@ -525,7 +525,10 @@ const getSaveRecurringEventActions = async ({
                             ...veventComponent,
                             ...updateMergeVevent,
                         };
-                        let addedAttendeesPublicKeysMap;
+                        let addedAttendeesSingleEditPublicKeysMap;
+                        let updatedSingleEditInviteActions = {
+                            ...updatedInviteActions,
+                        };
 
                         if (!getIsPersonalSingleEdit(event)) {
                             // attendees need to be notified by email
@@ -534,18 +537,19 @@ const getSaveRecurringEventActions = async ({
                                 getCalendarKeys,
                                 getAddressKeys,
                             });
+                            updatedSingleEditInviteActions = {
+                                ...updatedSingleEditInviteActions,
+                                sharedEventID: event.SharedEventID,
+                                sharedSessionKey,
+                                recurringType: RECURRING_TYPES.ALL,
+                            };
 
                             const {
                                 veventComponent: finalVevent,
                                 inviteActions: finalInviteActions,
                                 sendPreferencesMap,
                             } = await sendIcs({
-                                inviteActions: {
-                                    ...updatedInviteActions,
-                                    sharedEventID: event.SharedEventID,
-                                    sharedSessionKey,
-                                    recurringType: RECURRING_TYPES.ALL,
-                                },
+                                inviteActions: updatedSingleEditInviteActions,
                                 vevent: updatedSingleEditVevent,
                                 cancelVevent: veventComponent,
                                 // Do not re-check send preferences errors for single edits as they were checked for the main event already,
@@ -554,7 +558,7 @@ const getSaveRecurringEventActions = async ({
                                 noCheckSendPrefs: true,
                             });
                             updatedSingleEditVevent = finalVevent;
-                            addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                            addedAttendeesSingleEditPublicKeysMap = getAddedAttendeesPublicKeysMap({
                                 veventComponent: finalVevent,
                                 inviteActions: finalInviteActions,
                                 sendPreferencesMap,
@@ -568,7 +572,10 @@ const getSaveRecurringEventActions = async ({
                             isAttendee: false,
                             isBreakingChange: false,
                             isPersonalSingleEdit: event.IsPersonalSingleEdit,
-                            addedAttendeesPublicKeysMap,
+                            addedAttendeesPublicKeysMap: addedAttendeesSingleEditPublicKeysMap,
+                            removedAttendeesEmails: updatedSingleEditInviteActions.removedAttendees?.map(
+                                unary(getAttendeeEmail)
+                            ),
                         });
                         updateSingleEditOperations.push(updateSingleEditOperation);
                     })
@@ -579,14 +586,14 @@ const getSaveRecurringEventActions = async ({
                         .filter((event) => !getIsPersonalSingleEdit(event))
                         .map(async (event) => {
                             const { veventComponent } = await getCalendarEventRaw(event);
-                            const cancelInviteActions = {
+                            const cancelSingleEditInviteActions = {
                                 ...updatedInviteActions,
                                 type: INVITE_ACTION_TYPES.CANCEL_INVITATION,
                                 sharedEventID: event.SharedEventID,
                                 recurringType: RECURRING_TYPES.ALL,
                             };
                             return sendIcs({
-                                inviteActions: cancelInviteActions,
+                                inviteActions: cancelSingleEditInviteActions,
                                 cancelVevent: veventComponent,
                                 // Do not re-check send preferences errors for single edits as they were checked for the main event already,
                                 // and it's currently not possible to have a different list of attendees in the single edits
