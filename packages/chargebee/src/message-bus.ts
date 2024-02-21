@@ -30,7 +30,7 @@ import {
     threeDsChallengeMessageType,
     unhandledError,
 } from '../lib';
-import { getCheckpoints } from './checkpoints';
+import { chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
 
 function isChargebeeEvent(event: any): boolean {
     return !!event?.cbEvent;
@@ -433,6 +433,7 @@ export class MessageBus {
                 stack: errorObj.stack,
                 name: errorObj.name,
                 checkpoints: getCheckpoints(),
+                chargebeeWrapperVersion,
             };
 
             const message: UnhandledErrorMessage = {
