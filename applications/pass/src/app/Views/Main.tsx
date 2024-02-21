@@ -1,9 +1,12 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
 import { Hamburger } from '@proton/components';
-import { useToggle } from '@proton/components/hooks';
+import { useNotifications, useToggle } from '@proton/components/hooks';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
@@ -20,12 +23,14 @@ import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
+import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClient } from '../Context/ClientProvider';
 import { Header } from './Header/Header';
 import { TopBar } from './Header/TopBar';
@@ -86,11 +91,19 @@ const MainSwitch: FC = () => {
 export const Main: FC = () => {
     const freeAccessEnabled = useFeatureFlag(PassFeature.PassEnableDesktopFreePlan);
     const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean }>({ upgrade: false });
-    const isFreePlan = [UserPassPlan.FREE, UserPassPlan.TRIAL].includes(useSelector(selectPassPlan));
+    const forceUpgrade = [UserPassPlan.FREE, UserPassPlan.TRIAL].includes(useSelector(selectPassPlan));
+    const authService = useAuthService();
+    const { createNotification, clearNotifications } = useNotifications();
+    const enhance = useNotificationEnhancer();
+    const onLogout = useCallback(async () => {
+        createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
+        await authService.logout({ soft: false });
+        clearNotifications();
+    }, []);
 
     useEffect(() => {
         if (!isElectronApp || freeAccessEnabled) return;
-        setUpgradeState({ upgrade: isFreePlan });
+        setUpgradeState({ upgrade: forceUpgrade });
     }, []);
 
     return (
@@ -119,6 +132,10 @@ export const Main: FC = () => {
                     open={upgradeState.upgrade}
                     closable={false}
                     upsellRef={UpsellRef.EARLY_ACCESS}
+                    extraActions={() => [
+                        <Button pill shape="solid" color="weak" onClick={onLogout} key="sign-out">{c('Action')
+                            .t`Sign out`}</Button>,
+                    ]}
                 />
             )}
         </>
