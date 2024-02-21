@@ -38,12 +38,12 @@ import type { State } from '../types';
 
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 export const selectByShareId = (state: State) => state.items.byShareId;
-export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
+export const selectByOptimisticIds = (state: State) => state.items.byOptimisticId;
 
 export const selectItemDrafts = (state: State) => state.items.drafts;
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
-/** Give an itemId, returns wether it is optimistic by checking for
+/** Given an itemId, returns wether it is optimistic by checking for
  * presence in the `byOptimisticId` dictionary state */
 export const selectResolvedOptimisticId = (optimisticId: string) =>
     createSelector(selectByOptimisticIds, (optimisticIds) => optimisticId in optimisticIds);

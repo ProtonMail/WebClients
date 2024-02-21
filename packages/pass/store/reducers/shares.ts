@@ -26,6 +26,7 @@ import {
 import type { Share } from '@proton/pass/types';
 import { ShareRole, type ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 
@@ -71,11 +72,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return fullMerge(state, { [id]: share });
     }
 
-    if (vaultDeleteSuccess.match(action)) {
-        return objectDelete(state, action.payload.shareId);
-    }
-
-    if (shareDeleteSync.match(action)) {
+    if (or(vaultDeleteSuccess.match, shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
         return objectDelete(state, action.payload.shareId);
     }
 
@@ -157,10 +154,6 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (inviteAcceptSuccess.match(action)) {
         return partialMerge(state, { [action.payload.share.shareId]: action.payload.share });
-    }
-
-    if (shareLeaveSuccess.match(action)) {
-        return objectDelete(state, action.payload.shareId);
     }
 
     return state;
