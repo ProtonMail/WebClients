@@ -106,6 +106,8 @@ const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-s
                     const strokeDashOffset =
                         offset - scale * percentOf(runningSumOfAllChunks[i - 1] || 0, circumference);
 
+                    const strokeDashArray = `${arcLength.toFixed(2)} ${(circumference - arcLength).toFixed(2)}`;
+
                     return (
                         <circle
                             key={color}
@@ -115,7 +117,7 @@ const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-s
                             r={radius}
                             stroke={color}
                             strokeWidth={width}
-                            strokeDasharray={`${arcLength} ${circumference - arcLength}`}
+                            strokeDasharray={strokeDashArray}
                             strokeDashoffset={strokeDashOffset}
                         />
                     );
