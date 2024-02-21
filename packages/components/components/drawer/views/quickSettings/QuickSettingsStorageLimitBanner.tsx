@@ -1,7 +1,6 @@
 import { ButtonLike } from '@proton/atoms/Button';
 import { SettingsLink } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import {
     DRIVE_SHORT_APP_NAME,
@@ -44,13 +43,12 @@ const getTitle = (details: ReturnType<typeof getCompleteSpaceDetails>) => {
 };
 
 const QuickSettingsStorageLimitBanner = () => {
-    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const space = getSpace(user, storageSplitEnabled);
+    const space = getSpace(user);
     const { APP_NAME } = useConfig();
 
-    if (!storageSplitEnabled || !space.splitStorage || !getCanAddStorage({ user, subscription })) {
+    if (!space.splitStorage || !getCanAddStorage({ user, subscription })) {
         return null;
     }
 
