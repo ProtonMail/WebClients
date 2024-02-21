@@ -117,16 +117,22 @@ export const createApiProxyService = () => {
 
         /* Proxy path : GET {apiProxyUrl}/{remotePath}
          * Checks SW cache or forwards request to api endpoint */
-        (self as any as ServiceWorkerGlobalScope).onfetch = fetchController.register((event, signal) => {
-            if (event.request.url.startsWith(API_PROXY_URL)) {
-                const remotePath = event.request.url.replace(API_PROXY_URL, '');
-                if (API_PROXY_ENDPOINTS.find((allowedEndpoint) => remotePath.startsWith(allowedEndpoint))) {
-                    return getAPIProxyResponse(remotePath, event.request, signal);
-                }
+        (self as any as ServiceWorkerGlobalScope).onfetch = fetchController.register(
+            (event, signal) => {
+                if (event.request.url.startsWith(API_PROXY_URL)) {
+                    const remotePath = event.request.url.replace(API_PROXY_URL, '');
+                    if (API_PROXY_ENDPOINTS.find((allowedEndpoint) => remotePath.startsWith(allowedEndpoint))) {
+                        return getAPIProxyResponse(remotePath, event.request, signal);
+                    }
 
-                logger.debug(`[CacheProxy]: Refusing to serve non-allowed API endpoint for remote path: `, remotePath);
-            }
-        });
+                    logger.debug(
+                        `[CacheProxy]: Refusing to serve non-allowed API endpoint for remote path: `,
+                        remotePath
+                    );
+                }
+            },
+            { unauthenticated: true }
+        );
 
         return { clean: cleanCache, clear: clearCache };
     }
