@@ -18,6 +18,8 @@ let mailView: undefined | BrowserView = undefined;
 let calendarView: undefined | BrowserView = undefined;
 let accountView: undefined | BrowserView = undefined;
 
+let currentView: "mail" | "calendar" | "account" = "mail";
+
 let mainWindow: undefined | BrowserWindow = undefined;
 
 export const viewCreationAppStartup = (session: Session) => {
@@ -133,14 +135,17 @@ export const loadAccountView = (window: BrowserWindow) => {
 
 export const updateView = (target: VIEW_TARGET) => {
     const window = mainWindow;
-    if (target === "mail") {
+    if (target === "mail" && currentView !== "mail") {
         loadMailView(window);
+        currentView = "mail";
         return;
-    } else if (target === "calendar") {
+    } else if (target === "calendar" && currentView !== "calendar") {
         loadCalendarView(window);
+        currentView = "calendar";
         return;
-    } else if (target === "account") {
+    } else if (target === "account" && currentView !== "account") {
         loadAccountView(window);
+        currentView = "account";
         return;
     }
 
