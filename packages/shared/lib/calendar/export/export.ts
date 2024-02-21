@@ -152,6 +152,8 @@ const decryptEvent = async ({
                 FullDay,
                 CalendarID,
                 ID,
+                // do not export color
+                Color: null,
             },
             calendarSettings,
             sharedSessionKey,
