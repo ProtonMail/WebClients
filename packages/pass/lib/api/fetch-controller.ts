@@ -1,6 +1,7 @@
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 
 export type AbortableFetchHandler = (event: FetchEvent, signal: AbortSignal) => Maybe<Promise<Response>>;
+type FetchHandlerOptions = { unauthenticated?: boolean };
 
 export const getUID = (event: FetchEvent): MaybeNull<string> => {
     const requestHeaders = event.request.headers;
@@ -18,11 +19,13 @@ const fetchControllerFactory = () => {
          * match the underlying abort controller */
         abort: (requestUrl: string) => controllers.get(requestUrl)?.abort?.(),
         /** Registers an abortable fetch event handler. In order to cancel a
-         * request, call the `FetchController::abort` with the absolute request url. */
+         * request, call the `FetchController::abort` with the absolute request url.
+         * By default, fetch handlers will be wrapped with a UID header check - if you
+         * need to handle unauthenticated requests use the `unauthenticated` flag. */
         register:
-            (handler: AbortableFetchHandler) =>
+            (handler: AbortableFetchHandler, options?: FetchHandlerOptions) =>
             (event: FetchEvent): void => {
-                if (getUID(event)) {
+                if (options?.unauthenticated || getUID(event)) {
                     const requestUrl = event.request.url;
                     const controller = new AbortController();
                     controllers.set(requestUrl, controller);
