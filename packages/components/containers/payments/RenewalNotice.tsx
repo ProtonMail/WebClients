@@ -1,8 +1,10 @@
 import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getVPN2024Renew } from '@proton/shared/lib/helpers/renew';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
@@ -63,6 +65,43 @@ export const getBlackFridayRenewalNoticeText = ({
     // translator: The specially discounted price of EUR XX is valid for the first 30 months. Then it will automatically be renewed at the discounted price of EUR XX for 24 months. You can cancel at any time.
     return c('bf2023: renew')
         .jt`The specially discounted price of ${discountedPrice} is valid for ${discountedMonths}. Then it will automatically be renewed at the discounted price of ${nextPrice} for ${nextMonths}. You can cancel at any time.`;
+};
+
+export const getCheckoutRenewNoticeText = ({
+    cycle,
+    planIDs,
+    plansMap,
+    currency,
+}: {
+    cycle: CYCLE;
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    checkout: SubscriptionCheckoutData;
+    currency: Currency;
+}) => {
+    if (planIDs[PLANS.VPN2024]) {
+        const result = getVPN2024Renew({ planIDs, plansMap, cycle })!;
+        const renewCycle = result.renewalLength;
+        if (renewCycle === CYCLE.MONTHLY) {
+            return c('vpn_2024: renew')
+                .t`Subscription auto-renews every 1 month. Your next billing date is in 1 month.`;
+        }
+        const first = c('vpn_2024: renew').ngettext(
+            msgid`Your subscription will automatically renew in ${cycle} month.`,
+            `Your subscription will automatically renew in ${cycle} months.`,
+            cycle
+        );
+        const renewPrice = (
+            <Price key="renewal-price" currency={currency}>
+                {result.renewPrice}
+            </Price>
+        );
+        if (renewCycle !== CYCLE.YEARLY) {
+            throw new Error('Should never happen');
+        }
+        const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
+        return [first, ' ', second];
+    }
 };
 
 export const getRenewalNoticeText = ({
