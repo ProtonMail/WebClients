@@ -23,10 +23,9 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import type { Api } from '@proton/shared/lib/interfaces';
 import unary from '@proton/utils/unary';
 
-import type { PassBridge, PassBridgeAliasItem, PassBridgeInitOptions } from './types';
+import type { PassBridge, PassBridgeAliasItem } from './types';
 
 let passBridgeInstance: PassBridge | undefined;
-let hydrated = false;
 
 export const createPassBridge = (api: Api): PassBridge => {
     return (
@@ -36,12 +35,11 @@ export const createPassBridge = (api: Api): PassBridge => {
             const PassCrypto = exposePassCrypto(createPassCrypto());
 
             passBridgeInstance = {
-                ready: () => waitUntil(() => PassCrypto.ready, 250).then(() => true),
-                hydrate: async ({ user, addresses, authStore }: PassBridgeInitOptions) => {
-                    if (hydrated) return;
-
+                init: async ({ user, addresses, authStore }) => {
                     await PassCrypto.hydrate({ user, addresses, keyPassword: authStore.getPassword(), clear: false });
-                    hydrated = true;
+                    const isReady = await waitUntil(() => PassCrypto.ready, 250).then(() => true);
+
+                    return isReady;
                 },
                 user: {
                     getUserAccess: maxAgeMemoize(async () => {
