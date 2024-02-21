@@ -2,6 +2,8 @@
 
 -   Patch content format version v2 on stale cached items
 -   Fix domain images not loading
+-   Fix share crypto snapshot being cleared on user event
+-   Improve cache hydration sanitization step
 
 ### Version 1.13.1
 
