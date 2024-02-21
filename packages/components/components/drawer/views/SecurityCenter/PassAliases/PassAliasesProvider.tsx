@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,7 +16,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 
 import { filterPassAliases } from './PassAliases.helpers';
 import PassAliasesInitError from './PassAliasesInitError';
@@ -54,9 +53,7 @@ interface PasAliasesProviderReturnedValues {
 
 const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
     const [user] = useUser();
-    const prevUsers = useRef<UserModel>(user);
     const [addresses] = useAddresses();
-    const prevAddresses = useRef<Address[]>(addresses || []);
     const authStore = useAuthentication();
     const PassBridge = usePassBridge();
     const passAliasesUpsellModal = useModalStateObject();
@@ -144,7 +141,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         return options;
     };
 
-    const initPassBridge = async ({ forceFetch }: { forceFetch?: boolean } = {}) => {
+    const initPassBridge = async () => {
         setLoading(true);
         await PassBridge.init({ user, addresses: addresses || [], authStore });
         let userHadVault = false;
@@ -152,12 +149,12 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
             (hadVault) => {
                 userHadVault = hadVault;
             },
-            { maxAge: forceFetch ? 0 : UNIX_DAY * 1 }
+            { maxAge: UNIX_DAY * 1 }
         );
         const aliases = await PassBridge.alias.getAllByShareId(defaultVault.shareId, {
-            maxAge: forceFetch ? 0 : UNIX_MINUTE * 5,
+            maxAge: UNIX_MINUTE * 5,
         });
-        const userAccess = await PassBridge.user.getUserAccess({ maxAge: forceFetch ? 0 : UNIX_MINUTE * 5 });
+        const userAccess = await PassBridge.user.getUserAccess({ maxAge: UNIX_MINUTE * 5 });
         const filteredAliases = filterPassAliases(aliases);
 
         if (isMounted()) {
@@ -172,11 +169,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
     };
 
     useEffect(() => {
-        const forceFetch = prevUsers.current !== user || prevAddresses.current !== addresses;
-        prevUsers.current = user;
-        prevAddresses.current = addresses || prevAddresses.current;
-
-        void initPassBridge({ forceFetch }).catch((error) => {
+        void initPassBridge().catch((error) => {
             createNotification({
                 text: c('Error').t`Aliases could not be loaded`,
                 type: 'error',
