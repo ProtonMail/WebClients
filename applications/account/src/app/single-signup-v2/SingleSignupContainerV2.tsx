@@ -519,10 +519,7 @@ const SingleSignupContainerV2 = ({
             })();
 
             let silentApi = getSilentApi(unauthApi);
-            const silentUnAuthApi = silentApi;
-            const paymentsApi = getPaymentsApi(silentUnAuthApi);
             let resumedSession: ResumedSessionResult | undefined;
-
             if (maybeSession?.persisted.UID) {
                 // Try to resume the session first so that in case it's expired, the rest of the flow is fine.
                 resumedSession = await resumeSession(silentApi, maybeSession?.persisted.localID).catch(noop);
@@ -530,6 +527,13 @@ const SingleSignupContainerV2 = ({
                     silentApi = getUIDApi(resumedSession.UID, silentApi);
                 }
             }
+
+            let chargebeeEnabled = undefined;
+            if (resumedSession?.UID && resumedSession?.User) {
+                const user: User = resumedSession.User;
+                chargebeeEnabled = await isChargebeeEnabled(resumedSession?.UID, async () => user);
+            }
+            const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled);
 
             const forcePaymentsVersion = getMaybeForcePaymentsVersion(resumedSession?.User);
             const plans = await silentApi<{ Plans: Plan[] }>(
