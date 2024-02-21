@@ -32,7 +32,7 @@ export const createPassBridge = (api: Api): PassBridge => {
     return {
         ready: () => waitUntil(() => PassCrypto.ready, 250).then(() => true),
         hydrate: async ({ user, addresses, authStore }: PassBridgeInitOptions) => {
-            await PassCrypto.hydrate({ user, addresses, keyPassword: authStore.getPassword() });
+            await PassCrypto.hydrate({ user, addresses, keyPassword: authStore.getPassword(), clear: false });
         },
         user: {
             getUserAccess,
