@@ -1,6 +1,6 @@
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { VcalValarmComponent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { getUpdateSingleEditMergeVevent } from './getSaveEventActionsHelpers';
 
@@ -22,6 +22,7 @@ describe('getUpdateSingleEditMergeVevent()', () => {
             parameters: { tzid: 'Europe/Oslo' },
         },
         dtstamp: { value: { year: 2023, month: 5, day: 25, hours: 11, minutes: 46, seconds: 41, isUTC: true } },
+        color: { value: ACCENT_COLORS_MAP.strawberry.color },
     };
 
     it('should capture a modified title', () => {
@@ -54,6 +55,72 @@ describe('getUpdateSingleEditMergeVevent()', () => {
         });
     });
 
+    it('should capture a modified color', () => {
+        const newVevent = {
+            ...baseVevent,
+            color: { value: ACCENT_COLORS_MAP.cobalt.color },
+        };
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            color: { value: ACCENT_COLORS_MAP.cobalt.color },
+        });
+    });
+
+    it('should capture a modified notification', () => {
+        const valarm: VcalValarmComponent = {
+            action: { value: 'DISPLAY' },
+            component: 'valarm',
+            trigger: {
+                value: {
+                    weeks: 0,
+                    days: 0,
+                    hours: 0,
+                    minutes: 5,
+                    seconds: 0,
+                    isNegative: false,
+                },
+            },
+        };
+        const newVevent = {
+            ...baseVevent,
+            components: [valarm],
+        };
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            components: [valarm],
+        });
+    });
+
+    it('should capture a modified dtstart timezone', () => {
+        const newVevent = {
+            ...baseVevent,
+            dtstart: {
+                value: { year: 2023, month: 5, day: 31, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Helsinki' },
+            },
+        };
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            dtstart: {
+                value: { year: 2023, month: 5, day: 31, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Helsinki' },
+            },
+        });
+    });
+
+    it('should capture a modified dtend timezone', () => {
+        const newVevent = {
+            ...baseVevent,
+            dtend: {
+                value: { year: 2023, month: 5, day: 31, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Helsinki' },
+            },
+        };
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            dtend: {
+                value: { year: 2023, month: 5, day: 31, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Helsinki' },
+            },
+        });
+    });
+
     it('should capture multiple modified fields', () => {
         const newVevent = {
             ...baseVevent,
@@ -64,6 +131,7 @@ describe('getUpdateSingleEditMergeVevent()', () => {
         expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
             summary: { value: 'new title' },
             description: { value: 'new description' },
+            color: { value: ACCENT_COLORS_MAP.plum.color },
         });
     });
 
