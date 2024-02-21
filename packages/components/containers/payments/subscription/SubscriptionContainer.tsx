@@ -280,7 +280,7 @@ const SubscriptionContainer = ({
 
         const cycle = (() => {
             if (step === SUBSCRIPTION_STEPS.PLAN_SELECTION) {
-                return CYCLE.TWO_YEARS;
+                return app === APPS.PROTONPASS ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
             }
 
             if (maybeCycle) {
@@ -329,6 +329,8 @@ const SubscriptionContainer = ({
 
     const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
 
+    const isPassB2bPlan = !!model.planIDs[PLANS.PASS_PRO] || !!model.planIDs[PLANS.PASS_BUSINESS];
+    const defaultCycles = isPassB2bPlan ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
     const [bitcoinValidated, setBitcoinValidated] = useState(false);
     const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
@@ -925,6 +927,7 @@ const SubscriptionContainer = ({
                                                     disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
                                                     subscription={subscription}
+                                                    defaultCycles={defaultCycles}
                                                 />
                                             </div>
                                         </>
@@ -1077,6 +1080,7 @@ const SubscriptionContainer = ({
                                             faded={blockCycleSelector}
                                             minimumCycle={minimumCycle}
                                             subscription={subscription}
+                                            defaultCycles={defaultCycles}
                                         />
                                     </div>
                                 </>

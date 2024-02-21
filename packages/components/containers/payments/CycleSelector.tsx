@@ -16,7 +16,7 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 interface SharedProps {
     cycle: Cycle;
     onSelect: (newCycle: Cycle) => void;
-    options?: ForwardedSelectProps['options'];
+    options?: { text: string; value: number }[];
     disabled?: boolean;
 }
 
@@ -39,16 +39,29 @@ type Props = ButtonGroupProps | SelectProps | SelectTwoProps;
 const propsToOmit = ['onSelect', 'options', 'cycle', 'disabled'] as const;
 
 const CycleSelector = (props: Props) => {
-    const {
-        onSelect,
-        options = [
-            { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
-            { text: c('Billing cycle option').t`Annually`, value: YEARLY },
-            { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS },
-        ],
-        cycle = DEFAULT_CYCLE,
-        disabled,
-    } = props;
+    const { onSelect, disabled } = props;
+
+    const defaultOptions = [
+        { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
+        { text: c('Billing cycle option').t`Annually`, value: YEARLY },
+        { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS },
+    ];
+
+    const options = (props.options || defaultOptions).sort((a, b) => a.value - b.value);
+
+    const cycle = (() => {
+        const cycleToCheck = props.cycle || DEFAULT_CYCLE;
+
+        // Check cycle is an option
+        const optionValues = options.map(({ value }) => value);
+        const optionsContainCycle = optionValues.includes(cycleToCheck);
+        if (optionsContainCycle) {
+            return cycleToCheck;
+        }
+
+        // If not then default the cycle to the highest option
+        return optionValues[optionValues.length - 1];
+    })();
 
     if (props.mode === 'buttons') {
         const rest = omit(props, propsToOmit);

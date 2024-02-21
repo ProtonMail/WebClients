@@ -16,6 +16,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
+    Cycle,
     PlanIDs,
     PlansMap,
     SubscriptionCheckResponse,
@@ -27,19 +28,6 @@ import { EllipsisLoader, Option, Price, Radio, SelectTwo } from '../../../compon
 import InputField from '../../../components/v2/field/InputField';
 import { getMonthFreeText } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
-
-export interface Props {
-    cycle: CYCLE;
-    minimumCycle?: CYCLE;
-    mode: 'select' | 'buttons';
-    currency: Currency;
-    onChangeCycle: (cycle: CYCLE) => void;
-    plansMap: PlansMap;
-    planIDs: PlanIDs;
-    disabled?: boolean;
-    faded?: boolean;
-    subscription?: SubscriptionModel;
-}
 
 type TotalPricings = {
     [key in CYCLE]: TotalPricing;
@@ -226,18 +214,26 @@ export const SubscriptionCheckoutCycleItem = ({
     );
 };
 
-export const getAllowedCycles = (
-    subscription: SubscriptionModel | undefined,
-    minimumCycle: CYCLE,
-    planIDs: PlanIDs
-): CYCLE[] => {
+export const getAllowedCycles = ({
+    subscription,
+    minimumCycle,
+    planIDs,
+    defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
+}: {
+    subscription: SubscriptionModel | undefined;
+    minimumCycle: CYCLE;
+    planIDs: PlanIDs;
+    defaultCycles?: Cycle[];
+}): CYCLE[] => {
     const currentPlanIds = getPlanIDs(subscription);
     const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
     const isSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
 
     const isTrialSubscription = isTrial(subscription);
 
-    const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => {
+    const [largestCycle, ...restCycles] = defaultCycles.sort((a, b) => b - a);
+
+    const filteredCycles = restCycles.filter((cycle) => {
         if (isTrialSubscription) {
             return true;
         }
@@ -251,8 +247,22 @@ export const getAllowedCycles = (
         return cycle >= minimumCycle && isEligibleForSelection;
     });
 
-    return [CYCLE.TWO_YEARS, ...filteredCycles];
+    return [largestCycle, ...filteredCycles];
 };
+
+export interface Props {
+    cycle: CYCLE;
+    minimumCycle?: CYCLE;
+    mode: 'select' | 'buttons';
+    currency: Currency;
+    onChangeCycle: (cycle: CYCLE) => void;
+    plansMap: PlansMap;
+    planIDs: PlanIDs;
+    disabled?: boolean;
+    faded?: boolean;
+    subscription?: SubscriptionModel;
+    defaultCycles?: CYCLE[];
+}
 
 const SubscriptionCycleSelector = ({
     cycle: selectedCycle,
@@ -265,8 +275,9 @@ const SubscriptionCycleSelector = ({
     plansMap,
     faded,
     subscription,
+    defaultCycles,
 }: Props) => {
-    const cycles = getAllowedCycles(subscription, minimumCycle, planIDs);
+    const cycles = getAllowedCycles({ subscription, minimumCycle, planIDs, defaultCycles });
 
     const monthlySuffix = getMonthlySuffix(planIDs);
 
