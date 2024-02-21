@@ -94,9 +94,10 @@ export const createPassCrypto = (): PassCryptoWorker => {
 
         getContext: () => context,
 
-        async hydrate({ user, addresses, keyPassword, snapshot }) {
+        async hydrate({ user, addresses, keyPassword, snapshot, clear }) {
             logger.info('[PassCrypto] Hydrating crypto state');
-            worker.clear(); /* clear when re-hydrating */
+
+            if (clear) worker.clear();
 
             try {
                 const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
