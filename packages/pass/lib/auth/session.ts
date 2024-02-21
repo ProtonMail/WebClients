@@ -2,6 +2,7 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe } from '@proton/pass/types';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
@@ -124,13 +125,15 @@ export const decryptSessionBlob = async (
         const decryptedBlob = await getDecryptedBlob(clientKey, blob, getSessionEncryptionTag(payloadVersion));
         const parsedValue = JSON.parse(decryptedBlob);
 
+        if (!parsedValue.keyPassword) throw new Error('Missing `keyPassword`');
+
         return {
-            keyPassword: parsedValue?.keyPassword ?? '',
-            offlineKD: parsedValue?.offlineKD,
-            sessionLockToken: parsedValue?.sessionLockToken,
+            keyPassword: parsedValue.keyPassword,
+            offlineKD: parsedValue.offlineKD,
+            sessionLockToken: parsedValue.sessionLockToken,
         };
-    } catch {
-        throw new InvalidPersistentSessionError('Failed to decrypt persisted session blob');
+    } catch (err) {
+        throw new InvalidPersistentSessionError(getErrorMessage(err));
     }
 };
 
