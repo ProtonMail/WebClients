@@ -14,7 +14,12 @@ import {
     getCreateSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
-import { getAddedAttendeesPublicKeysMap, getAttendeesDiff, getCorrectedSaveInviteActions } from './inviteActions';
+import {
+    getAddedAttendeesPublicKeysMap,
+    getAttendeesDiff,
+    getCorrectedSaveInviteActions,
+    getOrganizerDiff,
+} from './inviteActions';
 
 export const getOldDataHasVeventComponent = (
     eventData: EventOldData
@@ -217,10 +222,19 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (getSupportedStringValue(newVevent.description) !== getSupportedStringValue(oldVevent.description)) {
         result.description = newVevent.description || { value: '' };
     }
+    const { addedOrganizer, removedOrganizer, hasModifiedOrganizer } = getOrganizerDiff(newVevent, oldVevent);
+    if (hasModifiedOrganizer || removedOrganizer) {
+        // should not happen
+        throw new Error('Organizer modification detected');
+    }
+    if (addedOrganizer) {
+        result.organizer = newVevent.organizer;
+    }
     const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
     if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
         result.attendee = newVevent.attendee;
     }
+
     return result;
 };
 
@@ -246,6 +260,12 @@ export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Part
     if (mergeVevent.attendee) {
         const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(vevent, mergeVevent);
         if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
+            return true;
+        }
+    }
+    if (mergeVevent.organizer) {
+        const { addedOrganizer, removedOrganizer, hasModifiedOrganizer } = getOrganizerDiff(vevent, mergeVevent);
+        if (addedOrganizer || removedOrganizer || hasModifiedOrganizer) {
             return true;
         }
     }

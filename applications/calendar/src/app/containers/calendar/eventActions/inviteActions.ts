@@ -9,6 +9,7 @@ import {
     generateVtimezonesComponents,
     getHasUpdatedInviteData,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getIsEquivalentOrganizer } from '@proton/shared/lib/calendar/vcalConverter';
 import { getAttendeePartstat, getHasAttendees, getRSVPStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
@@ -83,6 +84,22 @@ export const getRSVPStatusDiff = (
         });
     }
     return false;
+};
+
+export const getOrganizerDiff = (
+    newVevent: Pick<VcalVeventComponent, 'organizer'>,
+    oldVevent?: Pick<VcalVeventComponent, 'organizer'>
+) => {
+    if (!newVevent.organizer && !oldVevent?.organizer) {
+        return {};
+    }
+    if (!oldVevent?.organizer) {
+        return { addedOrganizer: newVevent.organizer };
+    }
+    if (!newVevent.organizer) {
+        return { removedOrganizer: oldVevent.organizer };
+    }
+    return { hasModifiedOrganizer: !getIsEquivalentOrganizer(newVevent.organizer, oldVevent.organizer) };
 };
 
 export const getAttendeesDiff = (
