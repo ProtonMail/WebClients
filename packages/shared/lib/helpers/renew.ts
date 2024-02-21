@@ -1,0 +1,35 @@
+import { PLANS } from '@proton/shared/lib/constants';
+import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { getDowngradedVpn2024Cycle } from '@proton/shared/lib/helpers/subscription';
+import { Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+
+export const getVPN2024Renew = ({
+    planIDs,
+    plansMap,
+    cycle,
+}: {
+    cycle: Cycle;
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+}) => {
+    if (!planIDs[PLANS.VPN2024]) {
+        return;
+    }
+    const nextCycle = getDowngradedVpn2024Cycle(cycle);
+    const latestCheckout = getCheckout({
+        plansMap,
+        planIDs,
+        checkResult: getOptimisticCheckResult({
+            planIDs,
+            plansMap,
+            cycle: nextCycle,
+        }),
+    });
+
+    return {
+        // The API doesn't return the correct next cycle or RenewAmount for the VPN plan since we don't have chargebee
+        // So we calculate it with the cycle discount here
+        renewPrice: latestCheckout.withDiscountPerCycle,
+        renewalLength: nextCycle,
+    };
+};

@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     ADDON_NAMES,
@@ -13,7 +14,7 @@ import {
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { getIpPricePerMonth, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
+import { getIpPricePerMonth, getPlanIDs, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -183,7 +184,12 @@ const PlanSelection = ({
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const renderCycleSelector = isFreeSubscription(subscription);
-    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
+    const enabledProductB2CPlans = [
+        PLANS.MAIL,
+        getVPNPlanToUse(plansMap, getPlanIDs(subscription)),
+        PLANS.DRIVE,
+        PLANS.PASS_PLUS,
+    ].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
@@ -294,7 +300,7 @@ const PlanSelection = ({
             mode === 'settings' || (audience === Audience.B2B && isVpnSettingsApp) ? (
                 <PlanCardFeaturesShort plan={shortPlan} icon />
             ) : (
-                <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
+                <PlanCardFeatures audience={audience} features={features} planName={shortPlan.plan} />
             );
 
         return (

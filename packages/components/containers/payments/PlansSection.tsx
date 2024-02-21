@@ -60,6 +60,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             appName: app,
             plan: searchParams.plan,
             planIDs: getPlanIDs(subscription),
+            plansMap,
         });
     });
     const [open] = useSubscriptionModal();
@@ -116,6 +117,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 appName: app,
                 planIDs: getPlanIDs(subscription),
                 plan: searchParams.plan,
+                plansMap,
             })
         );
     }, [isLoading, subscription, app]);
