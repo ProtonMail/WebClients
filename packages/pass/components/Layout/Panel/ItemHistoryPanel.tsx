@@ -15,10 +15,7 @@ type Props = {
 
 export const ItemHistoryPanel: FC<PropsWithChildren<Props>> = ({ children, title, actions, type }) => {
     return (
-        <Panel
-            className={itemTypeToSubThemeClassName[type]}
-            header={<PanelHeader title={title} className="mb-4" actions={actions} />}
-        >
+        <Panel className={itemTypeToSubThemeClassName[type]} header={<PanelHeader title={title} actions={actions} />}>
             {children}
         </Panel>
     );
