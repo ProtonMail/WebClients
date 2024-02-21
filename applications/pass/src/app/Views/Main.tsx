@@ -1,4 +1,5 @@
-import { type FC } from 'react';
+import { type FC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { Hamburger } from '@proton/components';
@@ -15,8 +16,15 @@ import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { selectPassPlan } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { useClient } from '../Context/ClientProvider';
 import { Header } from './Header/Header';
@@ -75,22 +83,44 @@ const MainSwitch: FC = () => {
     );
 };
 
-export const Main: FC = () => (
-    <ItemsProvider>
-        <BulkSelectProvider>
-            <ItemActionsProvider>
-                <InviteProvider>
-                    <VaultActionsProvider>
-                        <PasswordProvider>
-                            <SpotlightProvider>
-                                <OnboardingProvider>
-                                    <MainSwitch />
-                                </OnboardingProvider>
-                            </SpotlightProvider>
-                        </PasswordProvider>
-                    </VaultActionsProvider>
-                </InviteProvider>
-            </ItemActionsProvider>
-        </BulkSelectProvider>
-    </ItemsProvider>
-);
+export const Main: FC = () => {
+    const freeAccessEnabled = useFeatureFlag(PassFeature.PassEnableDesktopFreePlan);
+    const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean }>({ upgrade: false });
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+
+    useEffect(() => {
+        if (!isElectronApp || freeAccessEnabled) return;
+        setUpgradeState({ upgrade: isFreePlan });
+    }, []);
+
+    return (
+        <>
+            <ItemsProvider>
+                <BulkSelectProvider>
+                    <ItemActionsProvider>
+                        <InviteProvider>
+                            <VaultActionsProvider>
+                                <PasswordProvider>
+                                    <SpotlightProvider>
+                                        <OnboardingProvider>
+                                            <MainSwitch />
+                                        </OnboardingProvider>
+                                    </SpotlightProvider>
+                                </PasswordProvider>
+                            </VaultActionsProvider>
+                        </InviteProvider>
+                    </ItemActionsProvider>
+                </BulkSelectProvider>
+            </ItemsProvider>
+
+            {upgradeState.upgrade && (
+                <UpsellingModal
+                    upsellType="early-access"
+                    open={upgradeState.upgrade}
+                    closable={false}
+                    upsellRef={UpsellRef.EARLY_ACCESS}
+                />
+            )}
+        </>
+    );
+};

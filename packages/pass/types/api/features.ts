@@ -6,6 +6,7 @@ export enum PassFeature {
     PassSharingNewUsers = 'PassSharingNewUsers',
     PassPinningV1 = 'PassPinningV1',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
+    PassEnableDesktopFreePlan = 'PassEnableDesktopFreePlan',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
