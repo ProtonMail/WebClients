@@ -202,7 +202,6 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const storageSplitEnabled = useFlag('SplitStorage');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -593,7 +592,7 @@ const SingleSignupContainerV2 = ({
                     },
                     toApp: product,
                 }),
-                getFreePlan({ api: silentApi, storageSplitEnabled }),
+                getFreePlan({ api: silentApi }),
                 (async () => {
                     const [b2b, b2c] = await Promise.all(
                         ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {

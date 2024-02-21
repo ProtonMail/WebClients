@@ -12,7 +12,6 @@ enum CommonFeatureFlag {
     EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
     CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
-    SplitStorage = 'SplitStorage',
     DrawerSecurityCenter = 'DrawerSecurityCenter',
     DrawerSecurityCenterDisplayPassAliases = 'DrawerSecurityCenterDisplayPassAliases',
     DrawerSecurityCenterDisplaySentinel = 'DrawerSecurityCenterDisplaySentinel',

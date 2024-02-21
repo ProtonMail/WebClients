@@ -56,15 +56,6 @@ export const getStorageFeature = (
 ): PlanCardFeatureDefinition => {
     const { highlight = false, boldStorageSize = false } = options;
     if (bytes === -1) {
-        if (!options.freePlan.storageSplitEnabled) {
-            const freeBaseStorage = options.freePlan.MaxRewardSpace;
-            const totalStorageSize = humanSize({ bytes: freeBaseStorage, fraction: 0 });
-            return {
-                text: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
-                included: true,
-                icon: 'storage',
-            };
-        }
         const freeBaseStorage = options.freePlan.MaxBaseRewardSpace;
         const freeDriveStorage = options.freePlan.MaxDriveRewardSpace;
         const driveStorageSize = humanSize({ bytes: freeDriveStorage, fraction: 0 });
