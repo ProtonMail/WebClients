@@ -2,7 +2,13 @@ import { c } from 'ttag';
 
 import { IconName } from '../../components/icon';
 import { useApi, useAuthentication } from '../../hooks';
-import { AvailablePaymentMethod, PAYMENT_METHOD_TYPES, PaymentMethodFlows, SavedPaymentMethod } from '../core';
+import {
+    AvailablePaymentMethod,
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodFlows,
+    SavedPaymentMethod,
+    isSignupFlow,
+} from '../core';
 import { MethodsHook, Props, useMethods as _useMethods } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
@@ -77,9 +83,6 @@ export function convertMethod(
         };
     }
 
-    const isSignup =
-        flow === 'signup' || flow === 'signup-pass' || flow === 'signup-pass-upgrade' || flow === 'signup-vpn';
-
     if (method.type === PAYMENT_METHOD_TYPES.PAYPAL || method.type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
         return {
             icon: 'brand-paypal' as const,
@@ -114,7 +117,7 @@ export function convertMethod(
 
     return {
         icon: 'credit-card' as const,
-        text: isSignup
+        text: isSignupFlow(flow)
             ? c('Payment method option').t`Credit/debit card`
             : c('Payment method option').t`New credit/debit card`,
         ...method,

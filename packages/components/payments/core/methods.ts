@@ -17,6 +17,7 @@ import {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     extendStatus,
+    isSignupFlow,
 } from './interface';
 
 export class PaymentMethods {
@@ -190,13 +191,7 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        const isSignup =
-            this.flow === 'signup' ||
-            this.flow === 'signup-pass' ||
-            this.flow === 'signup-pass-upgrade' ||
-            this.flow === 'signup-vpn';
-
-        return !isSignup && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
+        return !isSignupFlow(this.flow) && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
     }
 
     private isBitcoinAvailable(): boolean {
