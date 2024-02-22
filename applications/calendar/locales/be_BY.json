@@ -612,6 +612,9 @@
       "Upgrade": [
         "Палепшыць"
       ],
+      "Upgrade Now": [
+        "Палепшыць"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ],
@@ -656,6 +659,15 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца за 2 дні. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца за 5 дзён. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -758,6 +770,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Калі вы выйдзеце цяпер, то ваша падзея будзе страчана."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Спампаваць настольную праграму для ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -6593,8 +6610,14 @@
       "Color-coding is here!": [
         "Прадстаўляем вам кадзіраванне колерам!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Зручны запуск ${ MAIL_APP_NAME } непасрэдна з вашага працоўнага стала."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Лёгка знаходзьце падзею, якую шукаеце з нашай новай функцыяй пошуку."
+      ],
+      "Get the desktop app": [
+        "Атрымаць настольную праграму"
       ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
@@ -7143,6 +7166,9 @@
       ],
       "Get advanced protection": [
         "Атрыманне дадатковай абароны"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Атрыманне праграм ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Групы"

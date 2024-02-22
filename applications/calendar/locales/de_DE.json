@@ -746,6 +746,11 @@
         "Wenn du jetzt beendest, wird dieser Termin verworfen."
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME }-Desktop-App herunterladen"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
@@ -6325,8 +6330,14 @@
       "Color-coding is here!": [
         "Die Farbanpassung ist da!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Starte ${ MAIL_APP_NAME } ganz bequem von deinem Desktop aus."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Mit unserer neuen Suchfunktion findest du ganz einfach den Termin, den du suchst."
+      ],
+      "Get the desktop app": [
+        "Desktop-App herunterladen"
       ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
@@ -6849,6 +6860,9 @@
       ],
       "Get advanced protection": [
         "Erweiterten Schutz erhalten"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Erhalte die ${ appName[APP_NAME] } Anwendungen"
       ],
       "Groups": [
         "Gruppen"
