@@ -765,10 +765,11 @@ const SingleSignupContainerV2 = ({
                 cycle = signupConfiguration.defaults.cycle;
             }
 
-            const { subscriptionData, upsell } = await getUserInfo({
+            const paymentsApi = getPaymentsApi(silentApi);
+            const userInfoPromise = getUserInfo({
                 audience,
                 api: silentApi,
-                paymentsApi: getPaymentsApi(silentApi),
+                paymentsApi,
                 options: {
                     cycle,
                     currency: model.subscriptionData.currency,
@@ -784,6 +785,13 @@ const SingleSignupContainerV2 = ({
                 toApp: product,
             });
 
+            const statusPromise = paymentsApi.statusExtendedAutomatic();
+
+            const [{ subscriptionData, upsell }, paymentMethodStatusExtended] = await Promise.all([
+                userInfoPromise,
+                statusPromise,
+            ]);
+
             measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
 
             setModelDiff({
@@ -792,6 +800,7 @@ const SingleSignupContainerV2 = ({
                 cache: undefined,
                 upsell,
                 subscriptionData,
+                paymentMethodStatusExtended,
             });
         } finally {
             accountRef.current.signingOut = false;
