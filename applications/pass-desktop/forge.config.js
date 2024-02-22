@@ -6,6 +6,7 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
 const path = require('path');
+const pkg = require('./package.json');
 
 /** @type {import('@electron-forge/shared-types').ForgeConfig} */
 const config = {
@@ -24,7 +25,7 @@ const config = {
             iconUrl: path.join(__dirname, 'assets', 'logo.ico'),
             setupIcon: path.join(__dirname, 'assets', 'logo.ico'),
             signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
-            setupExe: `ProtonPass_Setup.exe`,
+            setupExe: `ProtonPass_Setup_${pkg.version}.exe`,
             name: 'ProtonPass',
         }),
     ],
