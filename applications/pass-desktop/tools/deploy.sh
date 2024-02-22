@@ -34,17 +34,31 @@ git config --local user.name "${GIT_COMMIT_AUTHOR}"
 git config --local user.email "${GIT_COMMIT_EMAIL}"
 
 # Copy Windows artefacts
-mkdir -p "${repoDir}/PassDesktop/win32"
-rm -rf "${repoDir}/PassDesktop/win32/x64"
-mv "${PROJECT_ROOT}/out/make/squirrel.windows/x64" "${repoDir}/PassDesktop/win32/"
+mkdir -p "${repoDir}/PassDesktop/win32/x64"
+cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/"* "${repoDir}/PassDesktop/win32/x64/"
+cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup.exe"
 git lfs track "*.exe" "*.nupkg"
 
-# Generate version.json
+# Update version.json
 now=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-echo "{\"releases\": [{\"version\": \"${TAG}\", \"releaseDate\": \"${now}\", \"rolloutPercentage\": 0}]}" > "${repoDir}/PassDesktop/version.json"
+sha=$(sha512sum "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup_${VERSION}.exe" | cut -d " " -f 1)
+if [ ! -f "${repoDir}/PassDesktop/win32/x64/version.json" ]; then
+  echo "{\"Releases\": []}" > "${repoDir}/PassDesktop/win32/x64/version.json"
+fi
+
+if grep -q "$sha" "${repoDir}/PassDesktop/win32/x64/version.json"; then
+  echo "SHA already exists in version.json"
+  exit 1
+fi
+newrelease="{\"CategoryName\":\"EarlyAccess\", \"Version\": \"${VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup_${VERSION}.exe\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
+< "${repoDir}/PassDesktop/win32/x64/version.json" jq ".Releases |= [$newrelease] + ." > version.json.tmp
+mv version.json.tmp "${repoDir}/PassDesktop/win32/x64/version.json"
+
+cat "${repoDir}/PassDesktop/win32/x64/version.json"
 
 # Commit and push
 git add .
+git status
 git commit -m "Pass Desktop ${VERSION}"
 git push -u origin deploy
 
