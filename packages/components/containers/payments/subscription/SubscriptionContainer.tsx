@@ -296,7 +296,7 @@ const SubscriptionContainer = ({
              * e.g. when clicking "explore other plans".
              * The condition also includes the cycle of upcoming subscription. The upcoming cycle must be
              * longer than the current cycle, according to the backend logic. That's why it takes precedence and the
-             * frontend also consdirers it to be longer.
+             * frontend also considers it to be longer.
              * */
             const cycle =
                 getNormalCycleFromCustomCycle(subscription.UpcomingSubscription?.Cycle) ??
