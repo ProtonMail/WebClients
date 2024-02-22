@@ -161,6 +161,12 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES) => {
     );
 };
 
+export const canCheckItem = (subscription: Subscription | undefined) => {
+    return subscription?.Plans?.some(({ Name }) =>
+        [MAIL, DRIVE, FAMILY, BUNDLE, VPN, PASS_PLUS, VPN_PASS_BUNDLE].includes(Name as any)
+    );
+};
+
 export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
