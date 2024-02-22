@@ -286,7 +286,6 @@ export const getExistingEvent = ({
     tzid,
     selfAddressData,
     calendarSettings,
-    color,
 }: GetExistingEventArguments): RequireOnly<EventModel, 'isAllDay' | 'description'> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
@@ -298,7 +297,6 @@ export const getExistingEvent = ({
         isAllDay,
         isProtonProtonInvite,
         tzid,
-        color,
     });
     const strippedDescription = stripAllTags(newModel.description);
 

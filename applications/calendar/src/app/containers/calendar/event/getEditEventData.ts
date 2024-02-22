@@ -23,10 +23,6 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
     }
 
     const { veventComponent } = eventResult?.[0] || {};
-    const { Color } = eventResult?.[1] || {};
-    if (Color && veventComponent) {
-        veventComponent.color = { value: Color };
-    }
     const recurrenceID = getRecurrenceIdDate(mainVeventComponent);
 
     return {
