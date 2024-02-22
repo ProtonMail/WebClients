@@ -118,8 +118,10 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
                 await silentApi(seenCompletedChecklist(checklist));
             }
 
-            await api(updateChecklistDisplay(newState));
-            await call();
+            if (canMarkItemsAsDone) {
+                await api(updateChecklistDisplay(newState));
+                await call();
+            }
         });
     };
 
