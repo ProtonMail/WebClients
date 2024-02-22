@@ -25,12 +25,13 @@ type Props = {
 
 export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError, renderFooter }) => {
     const [timeoutError, setTimeoutError] = useState(false);
+    const [unlocking, setUnlocking] = useState(false);
+
     const stale = clientStale(status);
-    const busy = clientBusy(status);
     const locked = clientLocked(status);
     const offline = clientOfflineLocked(status);
-    const [unlocking, setUnlocking] = useState(false);
-    const canSignOut = !unlocking && (clientErrored(status) || locked || offline);
+    const busy = clientBusy(status);
+    const canSignOut = clientErrored(status) || locked || offline;
 
     useEffect(() => {
         setTimeoutError(false);
@@ -122,21 +123,23 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                     }
                 })()}
 
-                {canSignOut ? (
-                    <Button
-                        className="w-full"
-                        color={'weak'}
-                        onClick={() => onLogout({ soft: true })}
-                        pill
-                        shape={'ghost'}
-                    >
-                        {c('Action').t`Sign out`}
-                    </Button>
-                ) : (
-                    <Button pill shape="solid" color="weak" className="w-full" onClick={onRegister}>
-                        {c('Action').t`Create a ${BRAND_NAME} account`}
-                    </Button>
-                )}
+                {!(busy || unlocking) ? (
+                    canSignOut ? (
+                        <Button
+                            className="w-full"
+                            color={'weak'}
+                            onClick={() => onLogout({ soft: true })}
+                            pill
+                            shape={'ghost'}
+                        >
+                            {c('Action').t`Sign out`}
+                        </Button>
+                    ) : (
+                        <Button pill shape="solid" color="weak" className="w-full" onClick={onRegister}>
+                            {c('Action').t`Create a ${BRAND_NAME} account`}
+                        </Button>
+                    )
+                ) : null}
             </div>
 
             {renderFooter?.()}
