@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { isFreeSubscription } from '@proton/shared/lib/constants';
 import { getHasVpnB2BPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
-import { BillingPlatform } from '@proton/shared/lib/interfaces';
+import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { Loader, useModalTwoStatic } from '../../components';
+import { Loader, Price, useModalTwoStatic } from '../../components';
 import { useModalState } from '../../components/modalTwo';
 import { useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
@@ -17,7 +17,7 @@ const CreditsSection = () => {
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwoStatic(InAppPurchaseModal);
 
-    const [{ Credit }] = useUser();
+    const [{ Credit, Currency, ChargebeeUser }] = useUser();
 
     if (!subscription) {
         return <Loader />;
@@ -36,7 +36,7 @@ const CreditsSection = () => {
             subscription.UpcomingSubscription.Amount - subscription.UpcomingSubscription.Discount;
     }
 
-    let availableCredits = (Credit - upcomingSubscriptionPrice) / 100;
+    let availableCredits = Credit - upcomingSubscriptionPrice;
     if (availableCredits < 0) {
         availableCredits = 0;
     }
@@ -69,7 +69,11 @@ const CreditsSection = () => {
             <div className="px-4 mb-4 flex justify-space-between">
                 <span className="text-bold" data-testid="unused-credits">{c('Credits').t`Available credits`}</span>
                 <span className="text-bold" data-testid="avalaible-credits">
-                    {availableCredits}
+                    {ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED ? (
+                        <Price currency={Currency}>{availableCredits}</Price>
+                    ) : (
+                        availableCredits / 100
+                    )}
                 </span>
             </div>
             <hr />
