@@ -104,6 +104,7 @@ const PassAliases = () => {
                         }
                     }}
                     modalProps={createAliasModal.modalProps}
+                    passAliasesURL={passAliasesURL}
                 />
             )}
             {tryProtonPassModal.render && <TryProtonPass modalProps={tryProtonPassModal.modalProps} />}
