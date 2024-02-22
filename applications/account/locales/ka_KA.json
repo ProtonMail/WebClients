@@ -5738,6 +5738,17 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -6832,9 +6843,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "ჩვენს Android-ის მობილურ აპში ჯერ ხელმისაწვდომი არაა."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "ახლა ხელმისაწვდომია ბეტა ვერსიაში. კომპიუტერის აპი საშუალებას გაძლევთ, ${ MAIL_APP_NAME } სამუშაო მაგიდიდან გაუშვათ და იმუშაოთ ბრაუზერში ისე, რომ ხელი არაფერმა შეგიშალოთ."
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -7935,17 +7943,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13448,9 +13445,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " მიიღეთ ${ MAIL_APP_NAME } Mac-სთვის და Window-სთვის"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13797,9 +13791,6 @@
       ],
       "Delete version history?": [
         "წავშალო ვერსიის ისტორია?"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
       ],
       "Disable ${ email }": [
         "${ email }-ის გამორთვა"

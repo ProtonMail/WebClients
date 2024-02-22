@@ -3902,6 +3902,9 @@
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
+      "Organization key must be activated to create non-private users": [
+        "A chave da organização deve ser ativada para criar usuários não privados"
+      ],
       "Password is required": [
         "A senha é obrigatória"
       ],
@@ -4074,6 +4077,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Para criar e acessar contas de usuário não privadas, será necessário restaurar seus privilégios de administrador."
       ],
       "Trusted keys are not valid for sending": [
         "As chaves de confiança não são válidas para o envio"
@@ -5129,6 +5135,28 @@
         "Muito pequeno"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "aplicativo para web"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "Back to sign in": [
+        "Voltar para o início de sessão"
+      ],
+      "Keep using the desktop app": [
+        "Continue usando o aplicativo para computador"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Abrir ${ MAIL_APP_NAME } no ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Sua avaliação gratuita do aplicativo para computador terminou"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail por mês)"
@@ -5150,6 +5178,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } no App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } na Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "Aplicativo do ${ MAIL_APP_NAME }"
       ],
@@ -5735,6 +5769,17 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -5990,6 +6035,10 @@
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
+      "Affected user is on row": [
+        "O usuário afetado está na fila",
+        "Os usuários afetados estão na fila"
+      ],
       "Align left": [
         "Alinhar à esquerda"
       ],
@@ -6151,6 +6200,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Certifique-se de copiar sua senha e guardá-la em um lugar seguro."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Antes de ativar o usuário, você precisa fornecer uma senha e criar chaves de criptografia para o endereço."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de criar este endereço, você precisa fornecer uma senha e criar chaves de criptografia para ela."
@@ -6467,6 +6519,9 @@
       ],
       "Failed to fetch logs.": [
         "Erro ao buscar os registros."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Veloz e poderoso. E-mail e calendário, direto no seu desktop."
       ],
       "Fill in user details": [
         "Preencha os detalhes do usuário"
@@ -6833,9 +6888,6 @@
       "Not yet available in our Android mobile app.": [
         "Ainda não está disponível em nosso aplicativo móvel para Android."
       ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Disponível agora no beta, o app desktop te deixa iniciar convenientemente o ${ MAIL_APP_NAME } direto do seu desktop, te deixando focado sem distrações do browser"
-      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
@@ -6979,6 +7031,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Use uma senha que com mais de ${ MIN_PASSWORD_LENGTH } caractere.",
+        "Use uma senha que com mais de ${ MIN_PASSWORD_LENGTH } caracteres."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -7382,6 +7438,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta da ${ BRAND_NAME } no futuro."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Isto irá te desconectar de todas as contas atualmente conectadas."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
@@ -7944,17 +8003,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9298,6 +9346,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Atualizações de produto para ${ app } e ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Atualizações de produto da ${ app }"
       ],
@@ -9928,6 +9979,9 @@
       ],
       "Inbox": [
         "Caixa de entrada"
+      ],
+      "Pass vaults": [
+        "Cofres do Pass"
       ],
       "Spam": [
         "Spam"
@@ -10589,6 +10643,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Encaminhe automaticamente os emails enviados para sua conta ${ MAIL_APP_NAME } para qualquer outro endereço de email."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "O envio em massa de e-mails promocionais ou programáticos não tem suporte no momento. Recomendamos o uso de um provedor de serviços de e-mail dedicado para esse caso de uso."
@@ -11270,6 +11327,9 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Comece a adicionar usuários para dar-lhes acesso ao ${ PASS_APP_NAME }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Começar a usar o ${ PASS_APP_NAME }"
       ]
@@ -11389,6 +11449,9 @@
       "/month /user, billed biennially": [
         "/mês /usuário, faturado bienalmente"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "Proteção avançada que vai além dos padrões da indústria"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
@@ -11437,6 +11500,12 @@
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Digite um nome de exibição para **${ username }**. Isso é o que seus usuários verão quando você alterar suas permissões ou compartilhar dados com eles."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Proteção essencial e colaboração segura para usuários ilimitados"
+      ],
       "Everything from ${ planTitle }, plus...": [
         "Tido do ${ planTitle }, plus..."
       ],
@@ -11452,6 +11521,9 @@
       "Free forever": [
         "Gratuito para sempre"
       ],
+      "From the team that knows encryption": [
+        "Da equipe que conhece a criptografia"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Obtenha ${ appName } para ${ browserName }"
       ],
@@ -11460,6 +11532,9 @@
       ],
       "Get in touch with our sales team": [
         "Entre em contato com nossa equipe de vendas"
+      ],
+      "Get the security and features your business needs": [
+        "Obtenha a segurança e os recursos de que sua empresa precisa"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Os aliases hide-my-email protegem seu e-mail contra violações de dados"
@@ -11488,8 +11563,14 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para manter a segurança on-line"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Junte-se a mais de 50.000 organizações que confiam em ${ BRAND_NAME }"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando o ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Oferta de tempo limitado: Obtenha ${ title } por ${ price } por usuário mensalmente!"
       ],
       "One easy subscription.": [
         "Uma assinatura fácil."
@@ -11593,8 +11674,17 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Todos os administradores terão acesso à chave."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Tem certeza de que deseja alterar a chave da sua organização?"
+      ],
       "Change organization key": [
         "Alterar a chave da organização"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Usuários não privados podem ser promovidos a administradores quando configurarem suas chaves"
       ],
       "Organization key activated": [
         "Chave de organização ativada"
@@ -11602,20 +11692,59 @@
       "Organization key does not exist.": [
         "A chave da organização não existe."
       ],
+      "Organization key must be activated to give admin privileges": [
+        "A chave da organização deve ser ativada para conceder privilégios de administrador"
+      ],
       "Organization key restored": [
         "Chave de organização restaurada"
+      ],
+      "Organization key updated": [
+        "Chave da organização atualizada"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Usuários privados podem ser promovidos a administradores quando fizerem login pela primeira vez"
+      ],
       "Reset organization key": [
         "Redefinir a chave da organização"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Os seguintes administradores terão acesso à chave da organização."
       ],
       "The organization key must be activated first.": [
         "A chave da organização deve ser ativada primeiro."
       ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Isso enviará a última chave da organização para os administradores que atualmente não têm acesso a ela."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Para criar e acessar contas de usuário não privadas, você precisará ativar a chave da sua organização."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Para habilitar os direitos de administrador em sua conta, ative a chave da organização."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Utilize um método de recuperação de dados ou redefina a chave da organização para restaurar os privilégios de administrador."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Utilize um método de recuperação de dados, entre em contato com outro administrador ou redefina a chave da organização para restaurar os privilégios de administrador."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Não foi possível verificar a segurança da chave do endereço deste remetente. Às vezes, há um atraso na atualização das informações do remetente. Tente novamente mais tarde. Se você não confia na validade deste convite ou remetente, entre em contato com o Suporte ao Cliente ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Verificamos a autenticidade deste remetente e convite."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Você foi designado administrador da organização **${ organizationName }** por"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Você deve tornar privados todos os usuários antes de gerar uma nova chave de organização."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Você precisa ter acesso à chave da organização para realizar esta operação."
       ]
     },
     "Payment method option": {
@@ -11655,6 +11784,9 @@
       ],
       "Something went wrong. Please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Não conseguimos autenticar seu método de pagamento. Por favor, escolha um método de pagamento diferente ou tente novamente."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
@@ -13385,9 +13517,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Obter ${ MAIL_APP_NAME } para Mac ou Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13644,6 +13773,9 @@
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
       ],
+      "Create organization key": [
+        "Criar chave da organização"
+      ],
       "Create public link": [
         "Criar link público"
       ],
@@ -13741,9 +13873,6 @@
       "Delete version history?": [
         "Excluir histórico de versões?"
       ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
       "Disable ${ email }": [
         "Desativar ${ email }"
       ],
@@ -13767,6 +13896,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixar ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Baixe o aplicativo para computador"
+      ],
+      "Download the mobile apps": [
+        "Baixe os aplicativos móveis"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -13897,6 +14032,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenha o ${ vpnPlus } para acessar todos os servidores"
+      ],
+      "Get the apps": [
+        "Obtenha os aplicativos"
       ],
       "Gift": [
         "Presente"

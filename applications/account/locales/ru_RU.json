@@ -5759,6 +5759,14 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -6906,9 +6914,6 @@
       "Not yet available in our Android mobile app.": [
         "Пока ещё не доступно в нашем мобильном приложении для Android."
       ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Приложение для настольных компьютеров, доступное сейчас в бета-версии, позволяет удобно запускать ${ MAIL_APP_NAME } прямо с вашего компьютера и не отвлекаться на браузер."
-      ],
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
@@ -8027,14 +8032,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -13291,9 +13288,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Получить ${ MAIL_APP_NAME } для Mac или Windows"
-      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Инструмент экспорта ${ MAIL_APP_NAME }"
       ],
@@ -13632,9 +13626,6 @@
       ],
       "Delete version history?": [
         "Очистить историю версий?"
-      ],
-      "Desktop app": [
-        "Приложение для настольного компьютера"
       ],
       "Disable ${ email }": [
         "Отключить ${ email }"
