@@ -11,11 +11,16 @@ type Props = {
     title: ReactNode;
     type: ItemType;
     actions?: ReactElement[];
+    bottom?: ReactNode;
 };
 
-export const ItemHistoryPanel: FC<PropsWithChildren<Props>> = ({ children, title, actions, type }) => {
+export const ItemHistoryPanel: FC<PropsWithChildren<Props>> = ({ children, title, actions, bottom, type }) => {
     return (
-        <Panel className={itemTypeToSubThemeClassName[type]} header={<PanelHeader title={title} actions={actions} />}>
+        <Panel
+            className={itemTypeToSubThemeClassName[type]}
+            header={<PanelHeader title={title} actions={actions} />}
+            bottom={bottom}
+        >
             {children}
         </Panel>
     );
