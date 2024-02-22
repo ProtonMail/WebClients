@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Cambiar de plan"
       ],
+      "Upgrade Now": [
+        "Mejorar ahora"
+      ],
       "Upgrade now": [
         "Cambiar de plan"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Tu prueba gratuita de la aplicación de escritorio finaliza en 2 días. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Tu prueba gratuita de la aplicación de escritorio finaliza en 5 días. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Acercar"
@@ -4389,6 +4401,31 @@
       ],
       "To: ${ toString }": [
         "Para: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Disfruta de un acceso rápido, seguro y libre de distracciones a tu bandeja de entrada y calendario."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Disfruta de un acceso ilimitado con el plan de pago ${ BRAND_NAME }"
+      ],
+      "Introducing the desktop app": [
+        "Presentamos la aplicación de escritorio"
+      ],
+      "No credit card required": [
+        "No se requiere tarjeta de crédito."
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Pruébalo gratis durante 14 días"
       ]
     },
     "Get started checklist instructions": {
