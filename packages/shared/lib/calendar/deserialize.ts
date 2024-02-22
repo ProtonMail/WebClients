@@ -227,6 +227,7 @@ interface ReadCalendarEventArguments {
         | 'FullDay'
         | 'CalendarID'
         | 'ID'
+        | 'Color'
     >;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
     sharedSessionKey?: SessionKey;
@@ -246,6 +247,7 @@ export const readCalendarEvent = async ({
         FullDay,
         CalendarID: calendarID,
         ID: eventID,
+        Color,
     },
     publicKeysMap = {},
     addresses,
@@ -300,6 +302,10 @@ export const readCalendarEvent = async ({
 
     if (veventAttendees.length) {
         vevent.attendee = veventAttendees;
+    }
+
+    if (Color) {
+        vevent.color = { value: Color };
     }
 
     const selfAddressData = getSelfAddressData({
