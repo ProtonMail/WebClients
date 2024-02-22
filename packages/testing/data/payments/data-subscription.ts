@@ -42,6 +42,12 @@ export const subscriptionMock: SubscriptionModel = {
     isManagedByMozilla: false,
 };
 
+export function getSubscriptionMock() {
+    return {
+        ...subscriptionMock,
+    };
+}
+
 export const upcomingSubscriptionMock: Subscription = {
     ID: 'subscriptionId124',
     InvoiceID: 'invoiceId124',
