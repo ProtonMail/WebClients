@@ -606,6 +606,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade Now": [
+        "Effettua l'upgrade ora"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
@@ -648,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina tra 2 giorni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina tra 5 giorni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -744,6 +756,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Uscendo ora, perderai il tuo evento."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Scarica l'applicazione desktop di ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -6334,8 +6351,14 @@
       "Color-coding is here!": [
         "La classificazione per colore è qui!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Avvia ${ MAIL_APP_NAME } direttamente dal tuo desktop."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Trova facilmente l'evento che stai cercando con la nostra nuova funzione di ricerca."
+      ],
+      "Get the desktop app": [
+        "Ottieni l'applicazione desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Guadagna fino a ${ credits } in crediti."
@@ -6858,6 +6881,9 @@
       ],
       "Get advanced protection": [
         "Ottieni la protezione avanzata"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Ottieni le app ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Gruppi"

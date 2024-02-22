@@ -606,6 +606,9 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade Now": [
+        "Passer à l'abonnement supérieur"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ],
@@ -744,6 +747,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "En quittant maintenant, vous perdrez votre événement."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Téléchargez l'application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -6331,8 +6339,14 @@
       "Color-coding is here!": [
         "Vous pouvez utiliser les couleurs pour vos événements !"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Trouvez facilement l'événement que vous recherchez avec notre nouvelle fonctionnalité de recherche."
+      ],
+      "Get the desktop app": [
+        "Téléchargez l'application de bureau"
       ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
@@ -6855,6 +6869,9 @@
       ],
       "Get advanced protection": [
         "Obtenir une protection avancée"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Télécharger les applications ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Groupes"
