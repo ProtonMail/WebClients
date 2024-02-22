@@ -5605,6 +5605,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -6616,9 +6627,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "尚不支援 Android 應用程式。"
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "軟體現處於測試版本。桌面版 ${ MAIL_APP_NAME } 可以在沒有瀏覽器的干擾下從電腦啟動。"
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
@@ -7684,17 +7692,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -12258,6 +12255,9 @@
       "Your ${ storage } is full. ${ cta }.": [
         "您的${ storage }已滿${ cta }。"
       ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
+      ],
       "Your storage is full": [
         "您的儲存空間已滿"
       ],
@@ -12806,9 +12806,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " 取得 Windows 和 Mac 版本的 ${ MAIL_APP_NAME }"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13150,9 +13147,6 @@
       ],
       "Delete version history?": [
         "刪除版本歷史紀錄？"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
       ],
       "Disable ${ email }": [
         "停用 ${ email }"

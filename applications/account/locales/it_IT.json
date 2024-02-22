@@ -5135,6 +5135,25 @@
         "Molto piccolo"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "app web"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "Back to sign in": [
+        "Torna alla pagina di accesso"
+      ],
+      "Keep using the desktop app": [
+        "Continua a utilizzare l'applicazione desktop"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Apri ${ MAIL_APP_NAME } nell'${ webAppMessage }"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email al mese)"
@@ -5156,6 +5175,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } su App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } su Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "app di ${ MAIL_APP_NAME }"
       ],
@@ -5736,6 +5761,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte del contenuto del calendario non è supportata e non sarà importata."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info": {
@@ -6478,6 +6514,9 @@
       "Failed to fetch logs.": [
         "Recupero dei log non riuscito."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Veloce e concentrato. Email e calendario, direttamente sul tuo desktop."
+      ],
       "Fill in user details": [
         "Compila i dettagli dell'utente"
       ],
@@ -6842,9 +6881,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Non ancora disponibile nella nostra app mobile Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "L'app desktop, ora disponibile in beta, ti consente di avviare ${ MAIL_APP_NAME } direttamente dal tuo desktop. Così puoi rimanere concentrato senza le distrazioni dal browser."
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -7961,17 +7997,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13507,9 +13532,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Ottieni ${ MAIL_APP_NAME } per Mac o Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13866,9 +13888,6 @@
       "Delete version history?": [
         "Vuoi eliminare la cronologia delle versioni?"
       ],
-      "Desktop app": [
-        "App desktop"
-      ],
       "Disable ${ email }": [
         "Disattiva ${ email }"
       ],
@@ -13892,6 +13911,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Scarica ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Scarica l’app per desktop"
+      ],
+      "Download the mobile apps": [
+        "Scarica le app per dispositivi mobili"
       ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"
@@ -14022,6 +14047,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Ottieni ${ vpnPlus } per accedere a tutti i server"
+      ],
+      "Get the apps": [
+        "Ottieni le app"
       ],
       "Gift": [
         "Regalo"
