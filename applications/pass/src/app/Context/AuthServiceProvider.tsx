@@ -2,7 +2,10 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
-import { deletePassDB } from 'proton-pass-web/lib/database';
+import type { ServiceWorkerMessageHandler } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
+import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
+import { store } from 'proton-pass-web/app/Store/store';
+import { deletePassDB, getDBCache } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -17,7 +20,8 @@ import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientReady } from '@proton/pass/lib/client';
+import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
+import { clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -32,9 +36,6 @@ import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
-import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
-import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
-import { store } from '../Store/store';
 import { useClientRef } from './ClientProvider';
 
 const STORAGE_PREFIX = 'ps-';
@@ -86,14 +87,36 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onInit: async () => {
                 const pathLocalID = getLocalIDFromPathname(location.pathname);
                 const initialLocalID = pathLocalID ?? getDefaultLocalID();
-                const session = authStore.getSession();
+
+                const handleOffline = async () => {
+                    const persistedSession = await auth.config.getPersistedSession(initialLocalID);
+
+                    if (persistedSession) {
+                        /** configure the authentication store partially in order to
+                         * hydrate the userID and offline salts properties */
+                        authStore.setSession(persistedSession);
+                        const cache = await getDBCache(authStore.getUserID()!);
+
+                        if (canOfflineUnlock(cache, authStore)) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
+                        else if (authStore.hasSession(initialLocalID)) client.current.setStatus(AppStatus.ERROR);
+                        else client.current.setStatus(AppStatus.UNAUTHORIZED);
+                    }
+
+                    const redirect = stripLocalBasenameFromPathname(redirectPath.current);
+                    history.replace((getBasename(initialLocalID) ?? '/') + redirect);
+
+                    return false;
+                };
+
+                if (OFFLINE_SUPPORTED && !navigator.onLine) return handleOffline();
 
                 /* remove any in-memory lock status/tokens to force
                  * session lock revalidation on init */
+                const session = authStore.getSession();
                 authStore.setLockStatus(undefined);
                 authStore.setLockToken(undefined);
 
-                const loggedIn = await (authStore.hasSession(pathLocalID)
+                const loggedIn = await (authStore.hasSession(pathLocalID) && isValidSession(session)
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true }));
 
@@ -101,7 +124,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const hasLocalID = pathLocalID !== undefined;
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
                 const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
+                const apiOffline = api.getState().offline;
 
+                if (OFFLINE_SUPPORTED && apiOffline) return handleOffline();
                 if (autoFork) {
                     /* If the session could not be resumed from the LocalID from path,
                      * we are likely dealing with an app-switch request from another client.
@@ -113,18 +138,22 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onAuthorize: () => {
-                client.current.setStatus(AppStatus.AUTHORIZING);
+                if (clientOfflineUnlocked(client.current.state.status)) return;
+                else client.current.setStatus(AppStatus.AUTHORIZING);
             },
 
             onAuthorized: async (_, localID) => {
-                client.current.setStatus(AppStatus.AUTHORIZED);
+                const bootedOffline = clientOfflineUnlocked(client.current.state.status);
 
-                const redirect = stripLocalBasenameFromPathname(redirectPath.current);
-                history.replace((getBasename(localID) ?? '/') + redirect);
+                if (bootedOffline) client.current.setStatus(AppStatus.READY);
+                else {
+                    const redirect = stripLocalBasenameFromPathname(redirectPath.current);
+                    history.replace((getBasename(localID) ?? '/') + redirect);
+                    client.current.setStatus(AppStatus.AUTHORIZED);
+                    store.dispatch(bootIntent());
+                }
 
                 onboarding.init().catch(noop);
-                client.current.setStatus(AppStatus.BOOTING);
-                store.dispatch(bootIntent());
                 setSentryUID(authStore.getUID());
             },
 
@@ -231,9 +260,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
         if (matchConsumeFork) {
             void authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
-        } else {
-            void authService.init({ forceLock: false });
-        }
+        } else void authService.init({ forceLock: false });
 
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */

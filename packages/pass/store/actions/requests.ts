@@ -3,6 +3,7 @@ import { type EndpointOptions } from './enhancers/endpoint';
 export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';
 export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::wakeup-${endpoint}-${tabId}`;
+export const offlineSetupRequest = `offline::setup`;
 
 export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
 export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;

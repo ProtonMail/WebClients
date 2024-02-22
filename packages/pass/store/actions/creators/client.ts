@@ -7,7 +7,7 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import { withRequest, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import type { AppStatus, Maybe } from '@proton/pass/types';
+import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const startEventPolling = createAction('events::polling::start');
@@ -22,6 +22,7 @@ export const stateHydrate = createAction('state::hydrate', (state: any, options?
 export const cacheRequest = createAction('cache::request', (options: Omit<CacheMeta, 'cache'>) =>
     withCacheOptions(options)({ payload: {} })
 );
+
 export const cacheCancel = createAction('cache::cancel');
 
 export const wakeupIntent = createAction(
@@ -35,8 +36,8 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
-export const bootIntent = createAction('boot::intent', () =>
-    withRequest({ id: bootRequest(), type: 'start' })({ payload: {} })
+export const bootIntent = createAction('boot::intent', (loginPassword?: string) =>
+    withRequest({ id: bootRequest(), type: 'start' })({ payload: { loginPassword } })
 );
 
 export const bootFailure = createAction('boot::failure', (error: unknown) =>
@@ -46,7 +47,7 @@ export const bootFailure = createAction('boot::failure', (error: unknown) =>
     )({ payload: {}, error })
 );
 
-export const bootSuccess = createAction('boot::success', (payload: Maybe<SynchronizationResult>) =>
+export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
     withRequest({ id: bootRequest(), type: 'success' })({ payload })
 );
 

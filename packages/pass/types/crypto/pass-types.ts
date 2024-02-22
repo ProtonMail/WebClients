@@ -2,6 +2,7 @@ import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '@proton/
 
 export enum PassEncryptionTag {
     Cache = 'cache' /* web-only usage */,
+    Offline = 'offline',
     ItemContent = 'itemcontent',
     ItemKey = 'itemkey',
     VaultContent = 'vaultcontent',

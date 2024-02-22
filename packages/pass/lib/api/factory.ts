@@ -1,4 +1,3 @@
-import { defaultApiStatus } from '@proton/components/containers/api/apiStatusContext';
 import { updateServerTime } from '@proton/crypto/lib/serverTime';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type {
@@ -8,7 +7,7 @@ import type {
     ApiOptions,
     ApiResult,
     ApiState,
-    ApiSubscribtionEvent,
+    ApiSubscriptionEvent,
     Maybe,
 } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
@@ -54,7 +53,7 @@ export const getAPIAuth = () => {
 };
 
 export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactoryOptions): Api => {
-    const pubsub = createPubSub<ApiSubscribtionEvent>();
+    const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
     const state: ApiState = {
@@ -88,6 +87,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
 
         const { output = 'json', ...rest } = options;
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
+        const offline = state.offline;
 
         return apiCall(config)
             .then((response) => {
@@ -96,7 +96,10 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                  * back to the local time can result in e.g. unverifiable signatures  */
                 const serverTime = getDateHeader(response.headers);
                 if (!serverTime) throw new Error('Could not fetch server time');
+
+                state.offline = false;
                 state.serverTime = updateServerTime(serverTime);
+                state.unreachable = false;
 
                 return Promise.resolve(
                     (() => {
@@ -118,12 +121,12 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const isOffline = getIsOfflineError(e);
                 const isUnreachable = getIsUnreachableError(e);
 
-                state.serverTime = serverTime ? updateServerTime(serverTime) : state.serverTime;
-                state.unreachable = isUnreachable;
-                state.offline = isOffline || defaultApiStatus.offline;
                 state.appVersionBad = e.name === 'AppVersionBadError';
+                state.offline = isOffline;
+                state.serverTime = serverTime ? updateServerTime(serverTime) : state.serverTime;
                 state.sessionInactive = e.name === 'InactiveSession';
                 state.sessionLocked = e.name === 'LockedSession';
+                state.unreachable = isUnreachable;
 
                 if (state.sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
                 if (state.sessionInactive) pubsub.publish({ type: 'session', status: 'inactive' });
@@ -134,6 +137,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
             .finally(() => {
                 state.pendingCount -= 1;
                 state.queued.shift()?.resolve();
+                if (state.offline !== offline) pubsub.publish({ type: 'network', online: !state.offline });
             });
     };
 

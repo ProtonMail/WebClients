@@ -8,6 +8,7 @@
 		content: '';
 		display: block;
 		block-size: rem(100);
+		flex-shrink: 0;
 	}
 
 	&--content {

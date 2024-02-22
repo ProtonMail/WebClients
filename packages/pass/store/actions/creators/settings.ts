@@ -4,11 +4,13 @@ import { c } from 'ttag';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
-import { settingsEditRequest } from '@proton/pass/store/actions/requests';
+import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
+import { offlineSetupRequest, settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
 import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
 
 export const settingsEditIntent = createAction(
@@ -31,6 +33,7 @@ export const settingsEditSuccess = createAction(
     withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, silent?: boolean, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
+            withSettings,
             silent
                 ? identity
                 : withNotification({
@@ -44,10 +47,57 @@ export const settingsEditSuccess = createAction(
 
 export const updatePauseListItem = createAction(
     'settings::pause-list::update',
-    (payload: { hostname: string; criteria: CriteriaMasks }) => withCache({ payload })
+    (payload: { hostname: string; criteria: CriteriaMasks }) => pipe(withSettings, withCache)({ payload })
 );
 
 export const syncLocalSettings = createAction(
     'settings::local::sync',
     (payload: RecursivePartial<ProxiedSettings>) => ({ payload })
+);
+
+export const offlineSetupIntent = createAction('offline::setup::intent', (password: string) =>
+    pipe(
+        withRequest({ type: 'start', id: offlineSetupRequest }),
+        withNotification({
+            loading: true,
+            text: c('Info').t`Setting up offline mode...`,
+            type: 'info',
+        })
+    )({ payload: { password } })
+);
+
+export const offlineSetupFailure = createAction(
+    'offline::setup::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            error,
+            text: c('Info').t`Offline mode could not be enabled at the moment`,
+            type: 'error',
+        })({ payload: {} })
+    )
+);
+
+export const offlineSetupSuccess = createAction(
+    'offline::setup::success',
+    withRequestSuccess(() =>
+        pipe(
+            withCache,
+            withSettings,
+            withNotification({
+                text: c('Info').t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
+                type: 'info',
+            })
+        )({ payload: {} })
+    )
+);
+
+export const offlineDisable = createAction('offline::disable', () =>
+    pipe(
+        withCache,
+        withSettings,
+        withNotification({
+            text: c('Info').t`Offline support successfully disabled`,
+            type: 'info',
+        })
+    )({ payload: {} })
 );
