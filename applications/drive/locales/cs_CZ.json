@@ -2002,7 +2002,7 @@
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Aktualizujte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
+        "Navyšte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
@@ -2014,7 +2014,7 @@
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Jsou nastaveny metody obnovy účtu a dat a je povolena funkce 2FA."
+        "Váš účet a metody obnovy dat jsou nastaveny a 2FA je povoleno."
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
@@ -2161,7 +2161,7 @@
         "Aliasy se nepodařilo načíst"
       ],
       "An error occurred while loading alias options": [
-        "Při načítání možností aliasů došlo k chybě"
+        "Došlo k chybě při načítání možností aliasu"
       ],
       "Authentication canceled.": [
         "Ověření zrušeno."
@@ -2248,7 +2248,7 @@
         "Název složky nesmí být prázdný."
       ],
       "Forward address is required": [
-        "Adresa předání je povinná"
+        "Adresa přeposílání je vyžadována"
       ],
       "Image upload failed": [
         "Nahrávání obrázku se nezdařilo"
@@ -4212,8 +4212,8 @@
       "Securely downloaded ${ nbFile } file": [
         "${ nbFile } soubor bezpečně stažen",
         "${ nbFile } soubory bezpečně staženy",
-        "${ nbFile } souboů bezpečně staženo",
-        "${ nbFile } souboů bezpečně staženo"
+        "${ nbFile } souborů bezpečně staženo",
+        "${ nbFile } souborů bezpečně staženo"
       ],
       "Securely downloaded all encrypted files": [
         "Všechny zašifrované soubory bezpečně staženy"
@@ -4834,7 +4834,7 @@
         "Nalezeny duplicity"
       ],
       "e.g., Amazon, eBay, Etsy": [
-        "například Amazon, eBay"
+        "například Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-mail"
@@ -5128,7 +5128,7 @@
         "Ano, chci trvale smazat své staré soubory"
       ],
       "Your alias": [
-        "Tvůj alias"
+        "Váš alias"
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
@@ -5312,7 +5312,7 @@
         "Animovaná přenosná síťová grafika (APNG)"
       ],
       "Apple Installer Package": [
-        "Apple instalátor balíčků"
+        "Apple instalační balíček"
       ],
       "Archive document": [
         "Archivovat dokument"
@@ -5327,22 +5327,22 @@
         "Binární data"
       ],
       "Bourne shell script": [
-        "Skript shellu Bourne"
+        "Bourne shell skript"
       ],
       "BZip archive": [
-        "Archiv BZip"
+        "BZip archiv"
       ],
       "BZip2 archive": [
-        "GZip archiv"
+        "BZip2 archiv"
       ],
       "C-Shell script": [
         "C-Shell skript"
       ],
       "Cascading Style Sheets (CSS)": [
-        "CSS"
+        "Kaskádové styly (CSS)"
       ],
       "Comma-separated values (CSV)": [
-        "CSV"
+        "Hodnoty oddělené čárkou (CSV)"
       ],
       "Electronic publication (EPUB)": [
         "Elektronická publikace (EPUB)"
@@ -5354,10 +5354,10 @@
         "Formát pro výměnu grafiky (GIF)"
       ],
       "GZip Compressed Archive": [
-        "GZip archiv"
+        "GZip komprimovaný archiv"
       ],
       "HyperText Markup Language (HTML)": [
-        "HTML"
+        "HyperText Markup Language (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
         "Hypertextový preprocesor (osobní domovská stránka)"
@@ -5381,7 +5381,7 @@
         "MP3 audio"
       ],
       "MPEG transport stream": [
-        "Transportní tok MPEG"
+        "MPEG transport stream"
       ],
       "MPEG Video": [
         "MPEG Video"
@@ -5447,7 +5447,7 @@
         "WEBP obrázek"
       ],
       "Windows OS/2 Bitmap Graphics": [
-        "Windows OS/2 Bitmap Graphics"
+        "Windows OS/2 bitmapová grafika"
       ],
       "ZIP archive": [
         "ZIP archiv"
@@ -6086,10 +6086,10 @@
         "Vytvořit alias"
       ],
       "Hide-my-email aliases": [
-        "Aliasů hide-my-email"
+        "Aliasy Hide-my-email"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "ide-my-email alias vám umožní přihlásit se k online službám, aniž byste museli sdílet svou e-mailovou adresu. ${ learnMoreLink }"
+        "Aliasy Hide-my-email vám umožní zaregistrovat se do online služeb, aniž byste museli sdílet svou hlavní e-mailovou adresu. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nový alias"
@@ -6098,7 +6098,7 @@
         "Otevřít ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Vaše digitální identita je chráněna"
+        "Chraňte svou digitální identitu"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
@@ -6577,19 +6577,19 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } úložiště"
+        "úložiště ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% zaplněno"
+        "${ storage } je zaplněno z ${ percentage }%"
       ],
       "contact your administrator": [
         "kontaktujte svého správce"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte tarif pro větší úložiště."
+        "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pro odesílání nebo přijímání e-mailů uvolněte místo nebo navyšte tarif pro větší úložiště."
+        "Abyste mohli přijímat a odesílat e-maily, uvolněte úložný prostor a nebo navyšte na tarif s větším úložištěm."
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
@@ -6624,7 +6624,7 @@
         "Alias byl zkopírován do schránky"
       ],
       "Alias saved and copied": [
-        "Alias bylvytvořen a zkopírován"
+        "Alias uložen a zkopírován"
       ],
       "Bug reported": [
         "Chyba nahlášena"

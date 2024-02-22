@@ -233,9 +233,6 @@
       "Move to trash": [
         "Přesunout do koše"
       ],
-      "Not now": [
-        "Nyní ne"
-      ],
       "OK": [
         "OK"
       ],
@@ -331,6 +328,9 @@
       ],
       "Transfer ownership": [
         "Převod vlastnictví"
+      ],
+      "Trash": [
+        "Koš"
       ],
       "Unpin item": [
         "Odepnout položku"
@@ -476,7 +476,7 @@
         "Přesun položek selhal"
       ],
       "Failed to move items to trash": [
-        "Nepodařilo se přesunout do koše"
+        "Přesun položek do koše selhal"
       ],
       "Failed to pin item": [
         "Připnutí položky selhalo"
@@ -575,7 +575,7 @@
         "Neznámá pozvánka"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Neodporovaný formát souboru ${ PASS_APP_NAME }"
+        "Nepodporovaný formát souboru ${ PASS_APP_NAME }"
       ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát souboru 1Password"
@@ -1689,6 +1689,9 @@
       ],
       "Upgrade to Unlock Premium Features": [
         "Přejděte na vyšší tarif pro odemčení prémiových funkcí"
+      ],
+      "Vault": [
+        "Trezor"
       ],
       "Vault shared with you": [
         "Trezor sdílený s vámi"

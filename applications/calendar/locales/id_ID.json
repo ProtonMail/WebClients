@@ -603,6 +603,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
@@ -644,6 +647,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir dalam 2 hari. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir dalam 5 hari. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -737,6 +749,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Acara akan dihapus jika Anda keluar."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Unduh aplikasi desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2421,6 +2438,9 @@
       ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
+      ],
+      "An error occurred while saving your alias": [
+        "Terdapat kesalahan pada saat menyimpan alias Anda"
       ],
       "Answer failed to be sent": [
         "Jawaban gagal dikirim"
@@ -6194,8 +6214,14 @@
       "Color-coding is here!": [
         "Kode warna ada di sini!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Luncurkan ${ MAIL_APP_NAME } secara mudah langsung dari desktop Anda."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Cari acara dengan mudah dengan fitur pencarian kami yang baru."
+      ],
+      "Get the desktop app": [
+        "Dapatkan aplikasi desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
@@ -6705,6 +6731,9 @@
       ],
       "Get advanced protection": [
         "Dapatkan perlindungan tingkat lanjut"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Dapatkan aplikasi ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Grup"

@@ -1055,7 +1055,7 @@
         "Zobrazení aplikace kontaktů"
       ],
       "Toggle security center app": [
-        "Přepínání aplikace centra zabezpečení"
+        "Přepnout aplikaci centrum zabezpečení"
       ],
       "Toggle settings": [
         "Otevřít/zavřít nastavení"
@@ -3131,7 +3131,7 @@
         "Navýšením tarifu odemknete neomezený počet složek, štítků a dalších prémiových funkcí."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Aktualizujte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
+        "Navyšte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
@@ -3149,7 +3149,7 @@
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Jsou nastaveny metody obnovy účtu a dat a je povolena funkce 2FA."
+        "Váš účet a metody obnovy dat jsou nastaveny a 2FA je povoleno."
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
@@ -3356,7 +3356,7 @@
         "Aliasy se nepodařilo načíst"
       ],
       "An error occurred while loading alias options": [
-        "Při načítání možností aliasů došlo k chybě"
+        "Došlo k chybě při načítání možností aliasu"
       ],
       "Attachments are limited to 25 MB": [
         "Přílohy jsou omezeny na 25 MB"
@@ -3476,7 +3476,7 @@
         "Název složky nesmí být prázdný."
       ],
       "Forward address is required": [
-        "Adresa předání je povinná"
+        "Adresa přeposílání je vyžadována"
       ],
       "Image upload failed": [
         "Nahrávání obrázku se nezdařilo"
@@ -5759,7 +5759,7 @@
         "Sloučený"
       ],
       "Message actions in progress. This may take a while.": [
-        "Probíhají akce zprávy. To může chvíli trvat."
+        "Probíhají akce zprávy. Může to chvíli trvat."
       ],
       "Message download status:": [
         "Průběh stahování zprávy:"
@@ -6687,6 +6687,9 @@
       "Expand / contract composer": [
         "Rozšířit / zúžit editor"
       ],
+      "Filter": [
+        "Filtr"
+      ],
       "Forward": [
         "Přeposlat"
       ],
@@ -6998,7 +7001,7 @@
         "Příště nezobrazovat"
       ],
       "e.g., Amazon, eBay, Etsy": [
-        "například Amazon, eBay"
+        "například Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-mail"
@@ -7044,6 +7047,9 @@
       ],
       "Frequency": [
         "Frekvence"
+      ],
+      "From": [
+        "Od"
       ],
       "From:": [
         "Od:"
@@ -7304,7 +7310,7 @@
         "Úžasné"
       ],
       "Your alias": [
-        "Tvůj alias"
+        "Váš alias"
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
@@ -8427,10 +8433,10 @@
         "Vytvořit alias"
       ],
       "Hide-my-email aliases": [
-        "Aliasů hide-my-email"
+        "Aliasy Hide-my-email"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "ide-my-email alias vám umožní přihlásit se k online službám, aniž byste museli sdílet svou e-mailovou adresu. ${ learnMoreLink }"
+        "Aliasy Hide-my-email vám umožní zaregistrovat se do online služeb, aniž byste museli sdílet svou hlavní e-mailovou adresu. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nový alias"
@@ -8439,7 +8445,7 @@
         "Otevřít ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Vaše digitální identita je chráněna"
+        "Chraňte svou digitální identitu"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
@@ -9105,19 +9111,19 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } úložiště"
+        "úložiště ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% zaplněno"
+        "${ storage } je zaplněno z ${ percentage }%"
       ],
       "contact your administrator": [
         "kontaktujte svého správce"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte tarif pro větší úložiště."
+        "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pro odesílání nebo přijímání e-mailů uvolněte místo nebo navyšte tarif pro větší úložiště."
+        "Abyste mohli přijímat a odesílat e-maily, uvolněte úložný prostor a nebo navyšte na tarif s větším úložištěm."
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
@@ -9275,7 +9281,7 @@
         "Alias byl zkopírován do schránky"
       ],
       "Alias saved and copied": [
-        "Alias bylvytvořen a zkopírován"
+        "Alias uložen a zkopírován"
       ],
       "Bug reported": [
         "Chyba nahlášena"
@@ -9965,7 +9971,7 @@
         "Přesunout všechny zprávy do archivu"
       ],
       "Move all messages to trash": [
-        "Přesun všech zpráv do Koše"
+        "Přesunout všechny zprávy do koše"
       ],
       "Move to": [
         "Přesunout do"

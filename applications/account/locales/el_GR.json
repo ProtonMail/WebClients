@@ -5738,6 +5738,17 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -6832,9 +6843,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Δεν είναι ακόμα διαθέσιμο στην εφαρμογή μας για κινητά Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Τώρα διαθέσιμη σε έκδοση beta, η εφαρμογή για υπολογιστές σας επιτρέπει να εκκινήσετε εύκολα ${ MAIL_APP_NAME } απευθείας από την επιφάνεια εργασίας σας και να παραμένετε συγκεντρωμένοι χωρίς περισπασμούς του προγράμματος περιήγησης."
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
@@ -7938,17 +7946,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13451,9 +13448,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Αποκτήστε ${ MAIL_APP_NAME } για Mac ή Windows"
-      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Εργαλείο Εξαγωγής ${ MAIL_APP_NAME }"
       ],
@@ -13797,9 +13791,6 @@
       ],
       "Delete version history?": [
         "Διαγραφή ιστορικού εκδόσεων;"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
       ],
       "Disable ${ email }": [
         "Απενεργοποίηση ${ email }"

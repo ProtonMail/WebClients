@@ -5560,6 +5560,14 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -6565,9 +6573,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Android モバイル アプリではまだ利用できません。"
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "現在ベータ版として利用できるデスクトップ アプリを使用すると、デスクトップから ${ MAIL_APP_NAME } を簡単に起動でき、ブラウザに邪魔されることなく集中力を維持できます。"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -7633,14 +7638,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
       ]
     },
     "Info - folder colouring feature": {
@@ -12654,9 +12651,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Mac または Windows 用 ${ MAIL_APP_NAME } を入手"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -12992,9 +12986,6 @@
       ],
       "Delete version history?": [
         "バージョン履歴を削除しますか？"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
       ],
       "Disable ${ email }": [
         "${ email } を無効化"
