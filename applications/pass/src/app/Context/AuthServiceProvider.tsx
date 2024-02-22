@@ -100,7 +100,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         if (canOfflineUnlock(cache, authStore)) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
                         else if (authStore.hasSession(initialLocalID)) client.current.setStatus(AppStatus.ERROR);
                         else client.current.setStatus(AppStatus.UNAUTHORIZED);
-                    }
+                    } else client.current.setStatus(AppStatus.UNAUTHORIZED);
 
                     const redirect = stripLocalBasenameFromPathname(redirectPath.current);
                     history.replace((getBasename(initialLocalID) ?? '/') + redirect);
@@ -127,7 +127,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const apiOffline = api.getState().offline;
 
                 if (OFFLINE_SUPPORTED && apiOffline) return handleOffline();
-                if (autoFork) {
+                if (autoFork && navigator.onLine) {
                     /* If the session could not be resumed from the LocalID from path,
                      * we are likely dealing with an app-switch request from another client.
                      * In this case, redirect to account through a fork request */

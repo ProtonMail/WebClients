@@ -3,6 +3,7 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import { useOnline } from '@proton/components/hooks';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { OfflineUnlock } from '@proton/pass/components/Lock/OfflineUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
@@ -25,12 +26,15 @@ type Props = {
 
 export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError, renderFooter }) => {
     const [timeoutError, setTimeoutError] = useState(false);
-    const stale = clientStale(status);
-    const busy = clientBusy(status);
-    const locked = clientLocked(status);
-    const offline = clientOfflineLocked(status);
     const [unlocking, setUnlocking] = useState(false);
-    const canSignOut = !unlocking && (clientErrored(status) || locked || offline);
+
+    const stale = clientStale(status);
+    const locked = clientLocked(status);
+    const errored = clientErrored(status);
+    const offlineLocked = clientOfflineLocked(status);
+    const busy = clientBusy(status);
+    const canSignOut = errored || locked || offlineLocked;
+    const navigatorOnline = useOnline();
 
     useEffect(() => {
         setTimeoutError(false);
@@ -80,7 +84,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
                 <span className="pass-lobby--heading text-bold text-norm text-no-wrap flex flex-nowrap items-end justify-center user-select-none">
-                    {locked || offline
+                    {locked || offlineLocked
                         ? c('lobby: Title').jt`Unlock ${brandNameJSX}`
                         : c('lobby: Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
@@ -113,30 +117,44 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                             return <OfflineUnlock />;
                         default:
                             return (
-                                <Button pill shape="solid" color="norm" className="w-full" onClick={onLogin}>
-                                    {clientErrored(status)
-                                        ? c('Action').t`Sign back in`
-                                        : c('Action').t`Sign in with ${BRAND_NAME}`}
+                                <Button
+                                    pill
+                                    shape="solid"
+                                    color="norm"
+                                    className="w-full"
+                                    onClick={onLogin}
+                                    disabled={errored ? false : !navigatorOnline}
+                                >
+                                    {errored ? c('Action').t`Sign back in` : c('Action').t`Sign in with ${BRAND_NAME}`}
                                 </Button>
                             );
                     }
                 })()}
 
-                {canSignOut ? (
-                    <Button
-                        className="w-full"
-                        color={'weak'}
-                        onClick={() => onLogout({ soft: true })}
-                        pill
-                        shape={'ghost'}
-                    >
-                        {c('Action').t`Sign out`}
-                    </Button>
-                ) : (
-                    <Button pill shape="solid" color="weak" className="w-full" onClick={onRegister}>
-                        {c('Action').t`Create a ${BRAND_NAME} account`}
-                    </Button>
-                )}
+                {!(busy || unlocking) ? (
+                    canSignOut ? (
+                        <Button
+                            className="w-full"
+                            color={'weak'}
+                            onClick={() => onLogout({ soft: true })}
+                            pill
+                            shape={'ghost'}
+                        >
+                            {c('Action').t`Sign out`}
+                        </Button>
+                    ) : (
+                        <Button
+                            pill
+                            shape="solid"
+                            color="weak"
+                            className="w-full"
+                            onClick={onRegister}
+                            disabled={!navigatorOnline}
+                        >
+                            {c('Action').t`Create a ${BRAND_NAME} account`}
+                        </Button>
+                    )
+                ) : null}
             </div>
 
             {renderFooter?.()}
