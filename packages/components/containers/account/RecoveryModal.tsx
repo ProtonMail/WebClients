@@ -23,7 +23,13 @@ import {
     Tabs,
     useFormErrors,
 } from '../../components';
-import { useApi, useAuthentication, useUser, useUserSettings } from '../../hooks';
+import {
+    useApi,
+    useAuthentication,
+    useIsSessionRecoveryInitiationAvailable,
+    useUser,
+    useUserSettings,
+} from '../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 
@@ -58,6 +64,8 @@ const RecoveryModal = ({
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const currentMethod = availableRecoveryMethods[tabIndex];
+
+    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
 
     if (step === STEP.NEW_PASSWORD) {
         return (
@@ -129,9 +137,11 @@ const RecoveryModal = ({
                                         {codeResetString(userSettings.Email.Value)}
                                     </div>
 
-                                    <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
-                                        {c('Info').t`Can’t access your recovery email?`}
-                                    </InlineLinkButton>
+                                    {isSessionRecoveryInitiationAvailable && (
+                                        <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
+                                            {c('Info').t`Can’t access your recovery email?`}
+                                        </InlineLinkButton>
+                                    )}
                                 </>
                             ),
                         },
@@ -144,9 +154,11 @@ const RecoveryModal = ({
                                         {codeResetString(userSettings.Phone.Value)}
                                     </div>
 
-                                    <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
-                                        {c('Info').t`Can’t access your recovery phone?`}
-                                    </InlineLinkButton>
+                                    {isSessionRecoveryInitiationAvailable && (
+                                        <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
+                                            {c('Info').t`Can’t access your recovery phone?`}
+                                        </InlineLinkButton>
+                                    )}
                                 </>
                             ),
                         },
@@ -170,9 +182,11 @@ const RecoveryModal = ({
                                         )}
                                     />
 
-                                    <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
-                                        {c('Info').t`Don’t know your recovery phrase?`}
-                                    </InlineLinkButton>
+                                    {isSessionRecoveryInitiationAvailable && (
+                                        <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
+                                            {c('Info').t`Don’t know your recovery phrase?`}
+                                        </InlineLinkButton>
+                                    )}
                                 </>
                             ),
                         },
