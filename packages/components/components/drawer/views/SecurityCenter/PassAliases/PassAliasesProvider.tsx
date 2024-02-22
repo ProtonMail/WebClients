@@ -4,19 +4,20 @@ import { c } from 'ttag';
 
 import { ModalStateReturnObj, useModalStateObject } from '@proton/components/components';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
-import { useNotifications } from '@proton/components/hooks';
+import { useAddresses, useAuthentication, useNotifications, useUser } from '@proton/components/hooks';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { AliasOptions } from '@proton/pass/types';
+import { UNIX_DAY, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { fetchPassBridgeInfos, filterPassAliases } from './PassAliases.helpers';
+import { filterPassAliases } from './PassAliases.helpers';
 import PassAliasesInitError from './PassAliasesInitError';
 import type { CreateModalFormState, PassAliasesVault } from './interface';
 
@@ -51,6 +52,9 @@ interface PasAliasesProviderReturnedValues {
 }
 
 const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
+    const [user] = useUser();
+    const [addresses] = useAddresses();
+    const authStore = useAuthentication();
     const PassBridge = usePassBridge();
     const passAliasesUpsellModal = useModalStateObject();
     const isMounted = useIsMounted();
@@ -83,7 +87,9 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
             });
 
             // Refetch aliases and set new state
-            const nextAliases = await PassBridge.alias.getAllByShareId(passAliasVault.shareId);
+            const nextAliases = await PassBridge.alias.getAllByShareId(passAliasVault.shareId, {
+                maxAge: 0,
+            });
             const filteredAliases = filterPassAliases(nextAliases);
 
             if (isMounted()) {
@@ -131,27 +137,38 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         if (!passAliasVault) {
             throw new Error('Vault should be defined');
         }
-        const options = await PassBridge.alias.getAliasOptions(passAliasVault.shareId);
+        const options = await PassBridge.alias.getAliasOptions(passAliasVault.shareId, { maxAge: UNIX_MINUTE * 10 });
         return options;
     };
 
-    useEffect(() => {
-        const initPassBridge = async () => {
-            await PassBridge.ready();
-            const { vault, aliases, userHadVault } = await fetchPassBridgeInfos(PassBridge);
-            const userAccess = await PassBridge.user.getUserAccess();
-            const filteredAliases = filterPassAliases(aliases);
+    const initPassBridge = async () => {
+        setLoading(true);
+        await PassBridge.init({ user, addresses: addresses || [], authStore });
+        let userHadVault = false;
+        const defaultVault = await PassBridge.vault.getDefault(
+            (hadVault) => {
+                userHadVault = hadVault;
+            },
+            { maxAge: UNIX_DAY * 1 }
+        );
+        const aliases = await PassBridge.alias.getAllByShareId(defaultVault.shareId, {
+            maxAge: UNIX_MINUTE * 5,
+        });
+        const userAccess = await PassBridge.user.getUserAccess({ maxAge: UNIX_MINUTE * 5 });
+        const filteredAliases = filterPassAliases(aliases);
 
-            if (isMounted()) {
-                setTotalVaultAliasesCount(aliases.length);
-                setPassAliasVault(vault);
-                setPassAliasesCountLimit(userAccess.plan.AliasLimit ?? Number.MAX_SAFE_INTEGER);
-                setPassAliasesItems(filteredAliases);
-                memoisedPassAliasesItems = filteredAliases;
-                setUserHadVault(userHadVault);
-                setLoading(false);
-            }
-        };
+        if (isMounted()) {
+            setTotalVaultAliasesCount(aliases.length);
+            setPassAliasVault(defaultVault);
+            setPassAliasesCountLimit(userAccess.plan.AliasLimit ?? Number.MAX_SAFE_INTEGER);
+            setPassAliasesItems(filteredAliases);
+            memoisedPassAliasesItems = filteredAliases;
+            setUserHadVault(userHadVault);
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
         void initPassBridge().catch((error) => {
             createNotification({
                 text: c('Error').t`Aliases could not be loaded`,
@@ -160,7 +177,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
 
             throwError(new PassAliasesInitError(error));
         });
-    }, []);
+    }, [user, addresses]);
 
     return {
         hasReachedAliasesCountLimit: totalVaultAliasesCount >= passAliasesCountLimit,
