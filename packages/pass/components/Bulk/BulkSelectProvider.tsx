@@ -10,6 +10,7 @@ import {
 } from 'react';
 
 import type { SelectedItem } from '@proton/pass/types';
+import { hasSelection } from '@proton/pass/utils/dom/selection';
 import noop from '@proton/utils/noop';
 
 export type BulkSelection = Map<string, Set<string>>;
@@ -94,7 +95,7 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
 
         const handleKeyDown = (event: KeyboardEvent) => {
             if (locked.current) return;
-            if (!enabled && (event.ctrlKey || event.metaKey)) context.enable();
+            if (!enabled && (event.ctrlKey || event.metaKey) && !hasSelection()) context.enable();
         };
 
         document.addEventListener('keydown', handleKeyDown);
