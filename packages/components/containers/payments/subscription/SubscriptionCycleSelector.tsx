@@ -255,7 +255,7 @@ export const getAllowedCycles = (
 };
 
 const SubscriptionCycleSelector = ({
-    cycle: cycleSelected,
+    cycle: selectedCycle,
     minimumCycle = CYCLE.MONTHLY,
     mode,
     onChangeCycle,
@@ -286,11 +286,11 @@ const SubscriptionCycleSelector = ({
                     label={c('Label').t`Billing cycle`}
                     as={SelectTwo}
                     bigger
-                    value={cycleSelected}
+                    value={selectedCycle}
                     onValue={(value: any) => onChangeCycle(value)}
                     assistiveText={
                         <Price currency={currency} suffix={monthlySuffix}>
-                            {totals[cycleSelected].perUserPerMonth}
+                            {totals[selectedCycle].perUserPerMonth}
                         </Price>
                     }
                 >
@@ -299,7 +299,7 @@ const SubscriptionCycleSelector = ({
                             <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
                                 <div className="flex justify-space-between">
                                     <span className="shrink-0">{getShortBillingText(cycle)}</span>
-                                    <span className={clsx(['shrink-0', cycle !== cycleSelected && 'color-success'])}>
+                                    <span className={clsx(['shrink-0', cycle !== selectedCycle && 'color-success'])}>
                                         {getDiscountPrice(totals[cycle].discount, currency)}
                                     </span>
                                 </div>
@@ -314,7 +314,7 @@ const SubscriptionCycleSelector = ({
     return (
         <ul className={clsx('unstyled m-0 plan-cycle-selector', fadedClasses)}>
             {cycles.map((cycle) => {
-                const isSelected = cycle === cycleSelected;
+                const isSelected = cycle === selectedCycle;
                 return (
                     <li key={`${cycle}`} className="flex items-stretch mb-4" data-testid={`cycle-${cycle}`}>
                         <button
