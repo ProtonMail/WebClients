@@ -23,7 +23,7 @@ beforeEach(() => {
                 ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
                 ParentMetaPlanID: '',
                 Type: 1,
-                Name: PLANS.PLUS,
+                Name: PLANS.MAIL,
                 Title: 'Mail Plus',
                 MaxDomains: 1,
                 MaxAddresses: 10,

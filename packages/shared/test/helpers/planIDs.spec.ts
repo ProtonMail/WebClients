@@ -320,7 +320,7 @@ describe('hasPlanIDs', () => {
         expect(
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 1,
-                [PLANS.VPNPLUS]: 0,
+                [PLANS.VPN]: 0,
                 [ADDON_NAMES.VPN]: 3,
             })
         ).toBeTrue();
@@ -400,7 +400,7 @@ describe('clearPlanIDs', () => {
     it('should remove useless key', () => {
         const planIDs = {
             [PLANS.MAIL_PRO]: 1,
-            [PLANS.VPNPLUS]: 0,
+            [PLANS.VPN]: 0,
             [ADDON_NAMES.VPN]: 3,
         };
         expect(clearPlanIDs(planIDs)).toEqual({
