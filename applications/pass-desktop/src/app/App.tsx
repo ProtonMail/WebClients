@@ -22,7 +22,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { Localized } from '@proton/pass/components/Core/Localized';
-import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
+import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
@@ -51,94 +51,94 @@ import { i18n } from '../lib/i18n';
 
 import './app.scss';
 
-const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
-const onLink = (url: string) => window.open(url, '_blank');
 const history = createHashHistory();
 
-const getDomainImage: PassCoreContextValue['getDomainImage'] = async (domain, signal) => {
-    const res = await (async () => {
-        const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
-        const cache = await getCache();
-        const cachedResponse = await cache.match(url);
+export const getPassCoreProps = (): PassCoreProviderProps => ({
+    config: PASS_CONFIG,
+    endpoint: 'desktop',
+    i18n: i18n,
 
-        if (cachedResponse && !shouldRevalidate(cachedResponse)) return cachedResponse;
+    exportData: async (options) => {
+        const state = store.getState();
+        const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
+        return transferableToFile(await createPassExport(data, options));
+    },
 
-        /* Forward the abort signal to the service worker. */
-        return api<Response>({ url, output: 'raw', signal })
-            .then(async (res) => {
-                if (API_BODYLESS_STATUS_CODES.includes(res.status)) {
-                    void cache.put(url, res.clone());
-                    return res;
-                } else if (res.status === 422) {
-                    /* When dealing with unprocessable content from the image
-                     * endpoint - cache the error eitherway for now as we want
-                     * to avoid swarming the service-worker with unnecessary
-                     * parallel requests which may block other api calls with
-                     * higher priority */
-                    const response = new Response('Unprocessable Content', {
-                        status: res.status,
-                        statusText: res.statusText,
-                        headers: getMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
-                    });
+    generateOTP: ({ totpUri }) => generateTOTPCode(totpUri),
 
-                    void cache.put(url, response.clone());
-                    return response;
-                } else if (res.ok) {
-                    /* max-age is set to 0 on image responses from BE: this is sub-optimal in
-                     * the context of the extension -> override the max-age header. */
-                    const response = new Response(await res.blob(), {
-                        status: res.status,
-                        statusText: res.statusText,
-                        headers: getMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
-                    });
+    getDomainImage: async (domain, signal) => {
+        const res = await (async () => {
+            const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
+            const cache = await getCache();
+            const cachedResponse = await cache.match(url);
 
-                    void cache.put(url, response.clone());
-                    return response;
-                } else throw new Error();
-            })
-            .catch(
-                () =>
-                    new Response('Network error', {
-                        status: 408,
-                        headers: { 'Content-Type': 'text/plain' },
-                    })
-            );
-    })();
+            if (cachedResponse && !shouldRevalidate(cachedResponse)) return cachedResponse;
 
-    return imageResponsetoDataURL(res);
-};
+            /* Forward the abort signal to the service worker. */
+            return api<Response>({ url, output: 'raw', signal })
+                .then(async (res) => {
+                    if (API_BODYLESS_STATUS_CODES.includes(res.status)) {
+                        void cache.put(url, res.clone());
+                        return res;
+                    } else if (res.status === 422) {
+                        /* When dealing with unprocessable content from the image
+                         * endpoint - cache the error eitherway for now as we want
+                         * to avoid swarming the service-worker with unnecessary
+                         * parallel requests which may block other api calls with
+                         * higher priority */
+                        const response = new Response('Unprocessable Content', {
+                            status: res.status,
+                            statusText: res.statusText,
+                            headers: getMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
+                        });
 
-const openSettings = (page?: string) =>
-    history.push({
-        pathname: getLocalPath('settings'),
-        search: location.search,
-        hash: page,
-    });
+                        void cache.put(url, response.clone());
+                        return response;
+                    } else if (res.ok) {
+                        /* max-age is set to 0 on image responses from BE: this is sub-optimal in
+                         * the context of the extension -> override the max-age header. */
+                        const response = new Response(await res.blob(), {
+                            status: res.status,
+                            statusText: res.statusText,
+                            headers: getMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
+                        });
 
-const exportData: PassCoreContextValue['exportData'] = async (options) => {
-    const state = store.getState();
-    const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
-    return transferableToFile(await createPassExport(data, options));
-};
+                        void cache.put(url, response.clone());
+                        return response;
+                    } else throw new Error();
+                })
+                .catch(
+                    () =>
+                        new Response('Network error', {
+                            status: 408,
+                            headers: { 'Content-Type': 'text/plain' },
+                        })
+                );
+        })();
+
+        return imageResponsetoDataURL(res);
+    },
+
+    onLink: (url) => window.open(url, '_blank'),
+    onboardingAcknowledge: onboarding.acknowledge,
+    onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
+    onTelemetry: telemetry.push,
+
+    openSettings: (page) =>
+        history.push({
+            pathname: getLocalPath('settings'),
+            search: location.search,
+            hash: page,
+        }),
+
+    prepareImport: prepareImport,
+    getLogs: logStore.read,
+    writeToClipboard: window.ctxBridge.writeToClipboard,
+});
 
 export const App = () => {
     return (
-        <PassCoreProvider
-            config={PASS_CONFIG}
-            endpoint="desktop"
-            exportData={exportData}
-            generateOTP={generateOTP}
-            getDomainImage={getDomainImage}
-            i18n={i18n}
-            onLink={onLink}
-            onboardingAcknowledge={onboarding.acknowledge}
-            onboardingCheck={pipe(onboarding.checkMessage, prop('enabled'))}
-            onTelemetry={telemetry.push}
-            openSettings={openSettings}
-            prepareImport={prepareImport}
-            getLogs={logStore.read}
-            writeToClipboard={window.ctxBridge.writeToClipboard}
-        >
+        <PassCoreProvider {...getPassCoreProps()}>
             <Icons />
             <ThemeProvider />
             <ErrorBoundary component={<StandardErrorPage big />}>

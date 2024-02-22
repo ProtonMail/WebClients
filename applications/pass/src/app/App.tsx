@@ -18,7 +18,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { Localized } from '@proton/pass/components/Core/Localized';
-import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
+import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
@@ -49,70 +49,68 @@ import * as config from './config';
 
 sentry({ config });
 
-const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
-
-const onLink: PassCoreContextValue['onLink'] = (url, options) =>
-    window.open(url, options?.replace ? '_self' : '_blank');
-
-/** If service worker support is unavailable, use a fallback caching strategy for
- * domain images. When service worker is enabled, utilize abort message passing to
- * correctly abort intercepted fetch requests. */
-const getDomainImageFactory = (sw: ServiceWorkerContextValue): PassCoreContextValue['getDomainImage'] => {
+export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
-    return async (domain, signal) => {
-        const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
 
-        const cachedImage = cache.get(url);
-        if (cachedImage) return cachedImage;
+    return {
+        config: PASS_CONFIG,
+        endpoint: 'web',
+        i18n: i18n,
 
-        const baseUrl = `${config.API_URL}/${url}`;
-        const requestUrl = (/^https?:\/\//.test(baseUrl) ? baseUrl : new URL(baseUrl, document.baseURI)).toString();
-        signal.onabort = () => sw.send({ type: 'abort', requestUrl });
+        exportData: async (options) => {
+            const state = store.getState();
+            const data = selectExportData({ config, format: options.format })(state);
+            return transferableToFile(await createPassExport(data, options));
+        },
 
-        /* Forward the abort signal to the service worker. */
-        return api<Response>({ url, output: 'raw', signal })
-            .then(async (res) => {
-                const dataURL = await imageResponsetoDataURL(res);
-                if (!sw.enabled) cache.set(url, dataURL);
-                return dataURL;
-            })
-            .catch(noop);
+        generateOTP: ({ totpUri }) => generateTOTPCode(totpUri),
+
+        /** If service worker support is unavailable, use a fallback caching strategy for
+         * domain images. When service worker is enabled, utilize abort message passing to
+         * correctly abort intercepted fetch requests. */
+        getDomainImage: async (domain, signal) => {
+            const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
+
+            const cachedImage = cache.get(url);
+            if (cachedImage) return cachedImage;
+
+            const baseUrl = `${config.API_URL}/${url}`;
+            const requestUrl = (/^https?:\/\//.test(baseUrl) ? baseUrl : new URL(baseUrl, document.baseURI)).toString();
+            signal.onabort = () => sw.send({ type: 'abort', requestUrl });
+
+            /* Forward the abort signal to the service worker. */
+            return api<Response>({ url, output: 'raw', signal })
+                .then(async (res) => {
+                    const dataURL = await imageResponsetoDataURL(res);
+                    if (!sw.enabled) cache.set(url, dataURL);
+                    return dataURL;
+                })
+                .catch(noop);
+        },
+
+        getLogs: logStore.read,
+        onboardingAcknowledge: onboarding.acknowledge,
+        onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
+        onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),
+        onTelemetry: telemetry.push,
+
+        openSettings: (page) =>
+            history.push({
+                pathname: getLocalPath('settings'),
+                search: location.search,
+                hash: page,
+            }),
+
+        prepareImport: prepareImport,
+        writeToClipboard: (value) => navigator.clipboard.writeText(value),
     };
-};
-
-const openSettings: PassCoreContextValue['openSettings'] = (page) =>
-    history.push({
-        pathname: getLocalPath('settings'),
-        search: location.search,
-        hash: page,
-    });
-
-const exportData: PassCoreContextValue['exportData'] = async (options) => {
-    const state = store.getState();
-    const data = selectExportData({ config, format: options.format })(state);
-    return transferableToFile(await createPassExport(data, options));
 };
 
 export const App = () => (
     <ServiceWorkerProvider>
         <ServiceWorkerContext.Consumer>
             {(sw) => (
-                <PassCoreProvider
-                    config={PASS_CONFIG}
-                    endpoint="web"
-                    exportData={exportData}
-                    generateOTP={generateOTP}
-                    getDomainImage={getDomainImageFactory(sw)}
-                    i18n={i18n}
-                    onLink={onLink}
-                    onboardingAcknowledge={onboarding.acknowledge}
-                    onboardingCheck={pipe(onboarding.checkMessage, prop('enabled'))}
-                    onTelemetry={telemetry.push}
-                    openSettings={openSettings}
-                    prepareImport={prepareImport}
-                    getLogs={logStore.read}
-                    writeToClipboard={(value) => navigator.clipboard.writeText(value)}
-                >
+                <PassCoreProvider {...getPassCoreProps(sw)}>
                     <CompatibilityCheck>
                         <Icons />
                         <ThemeProvider />
