@@ -1,4 +1,4 @@
-import { getAliasDetails, getAliasOptions } from '@proton/pass/lib/alias/alias.requests';
+import { getAliasOptions } from '@proton/pass/lib/alias/alias.requests';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
@@ -93,7 +93,6 @@ export const createPassBridge = (api: Api): PassBridge => {
 
                         return {
                             item: { ...item, aliasEmail },
-                            aliasDetails: { aliasEmail, mailboxes: [mailbox] },
                         };
                     },
                     getAliasOptions: getAliasOptions,
@@ -104,14 +103,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                                 .map((item) => parseItemRevision(shareId, item))
                         )) as ItemRevision<'alias'>[];
 
-                        return Promise.all(
-                            aliases.map(
-                                async (item): Promise<PassBridgeAliasItem> => ({
-                                    item,
-                                    aliasDetails: await getAliasDetails(shareId, item.itemId),
-                                })
-                            )
-                        );
+                        return aliases.map((item): PassBridgeAliasItem => ({ item }));
                     }),
                 },
             };
