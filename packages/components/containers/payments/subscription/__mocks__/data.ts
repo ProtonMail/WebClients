@@ -240,7 +240,7 @@ export const mailPlusUpsell = {
         },
         {
             text: 'Proton Pass with 10 hide-my-email aliases',
-            icon: 'pass-all-vaults',
+            icon: 'brand-proton-pass',
             included: true,
             hideInDowngrade: true,
         },
@@ -319,7 +319,7 @@ export const unlimitedUpsell = {
         },
         {
             text: 'Proton Pass with unlimited hide-my-email aliases',
-            icon: 'pass-all-vaults',
+            icon: 'brand-proton-pass',
             included: true,
             hideInDowngrade: true,
         },
@@ -370,7 +370,7 @@ export const familyUpsell = {
         },
         {
             text: 'Proton Pass with unlimited hide-my-email aliases',
-            icon: 'pass-all-vaults',
+            icon: 'brand-proton-pass',
             included: true,
             hideInDowngrade: true,
         },
