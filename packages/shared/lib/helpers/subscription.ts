@@ -6,7 +6,6 @@ import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
     ADDON_NAMES,
     APPS,
-    APP_NAMES,
     COUPON_CODES,
     CYCLE,
     FreeSubscription,
@@ -34,11 +33,6 @@ import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const {
-    PLUS,
-    VPNPLUS,
-    VPNBASIC,
-    PROFESSIONAL,
-    VISIONARY,
     NEW_VISIONARY,
     MAIL,
     MAIL_PRO,
@@ -111,7 +105,6 @@ export const isManagedExternally = (
     return subscription.External === External.Android || subscription.External === External.iOS;
 };
 
-export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasNewVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, NEW_VISIONARY);
 export const hasVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
@@ -124,10 +117,6 @@ export const hasPassPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
-export const hasMailPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLUS);
-export const hasMailProfessional = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PROFESSIONAL);
-export const hasVpnBasic = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPNBASIC);
-export const hasVpnPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPNPLUS);
 export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, FAMILY);
 export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PRO);
 export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_BUSINESS);
@@ -181,10 +170,6 @@ export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) 
     return [VPN, VPN2024, VPN_PASS_BUNDLE].includes(planName as any);
 };
 
-export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
-    return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
-};
-
 export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
@@ -215,23 +200,9 @@ export const getHasVpnOrPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return getHasVpnB2BPlan(subscription) || getHasPassB2BPlan(subscription);
 };
 
-export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
-    return !!subscription?.Plans?.some(({ Name }) => getIsLegacyPlan(Name));
-};
-
-export const getPrimaryPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {
+export const getPrimaryPlan = (subscription: Subscription | undefined) => {
     if (!subscription) {
         return;
-    }
-    if (getHasLegacyPlans(subscription)) {
-        const mailPlan = getPlan(subscription, PLAN_SERVICES.MAIL);
-        const vpnPlan = getPlan(subscription, PLAN_SERVICES.VPN);
-
-        if (app === APPS.PROTONVPN_SETTINGS) {
-            return vpnPlan || mailPlan;
-        }
-
-        return mailPlan || vpnPlan;
     }
 
     return getPlan(subscription);
@@ -446,7 +417,7 @@ export interface AggregatedPricing {
 function isMultiUserPersonalPlan(plan: Plan) {
     // even though Family and Visionary plans can have up to 6 users in the org,
     // for the price displaying purposes we count it as 1 member.
-    return plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY || plan.Name === PLANS.NEW_VISIONARY;
+    return plan.Name === PLANS.FAMILY || plan.Name === PLANS.NEW_VISIONARY;
 }
 
 function getPlanMembers(plan: Plan, quantity: number): number {
