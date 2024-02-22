@@ -26,7 +26,6 @@ import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -35,11 +34,6 @@ import { CreateModalFormState } from '../../interface';
 import useCreateModalForm from './useCreatePassAliasesForm';
 
 import './CreatePassAliasesForm.scss';
-
-interface Props {
-    onSubmit: () => void;
-    modalProps: ModalProps;
-}
 
 const FormGroupFieldWrapper = ({ children, classname }: { children: React.ReactNode; classname?: string }) => (
     <div className={clsx('stacked-field-group', classname)}>{children}</div>
@@ -74,7 +68,13 @@ const FormFieldWrapper = ({
     </div>
 );
 
-const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
+interface Props {
+    onSubmit: () => void;
+    modalProps: ModalProps;
+    passAliasesURL: string;
+}
+
+const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) => {
     const { formValues, setFormValues, blurred, setBlurred, hasErrors, errors, submitted, setSubmitted } =
         useCreateModalForm();
     const { submitNewAlias, getAliasOptions } = usePassAliasesContext();
@@ -144,7 +144,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
     }, []);
 
     const passLink = (
-        <Href key="pass-aliases-support-link" href={getKnowledgeBaseUrl('/addresses-and-aliases')}>
+        <Href key="pass-aliases-support-link" href={passAliasesURL}>
             {PASS_APP_NAME}
         </Href>
     );
