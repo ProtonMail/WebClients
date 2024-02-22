@@ -1135,6 +1135,9 @@
       "Upgrade": [
         "Ulepsz"
       ],
+      "Upgrade Now": [
+        "Ulepsz teraz"
+      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ],
@@ -1203,6 +1206,15 @@
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Darmowa wersja próbna aplikacji desktopowej zakończy się za 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Darmowa wersja próbna aplikacji desktopowej zakończy się za 5 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Powiększ"
@@ -3363,6 +3375,9 @@
       "An error occurred while loading alias options": [
         "Wystąpił błąd podczas ładowania opcji aliasu"
       ],
+      "An error occurred while saving your alias": [
+        "Wystąpił błąd podczas zapisywania aliasu"
+      ],
       "Attachments are limited to 25 MB": [
         "Limit dla załączników to 25 MB"
       ],
@@ -4452,6 +4467,31 @@
       ],
       "To: ${ toString }": [
         "Do: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Ciesz się szybkim i bezpiecznym dostępem do poczty oraz kalendarza."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Uzyskaj nieograniczony dostęp w płatnym planie ${ BRAND_NAME }"
+      ],
+      "Introducing the desktop app": [
+        "Przedstawiamy aplikację desktopową"
+      ],
+      "No credit card required": [
+        "Karta płatnicza nie jest wymagana"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Wypróbuj za darmo przez 14 dni"
       ]
     },
     "Get started checklist instructions": {
@@ -8498,6 +8538,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Używany w Amazon do zakupów itp."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Użyj aliasu, zamiast adresu e-mail. Aliasy dostarcza ${ passLink }."
       ]
     },
     "Security Center - Action": {

@@ -5135,6 +5135,31 @@
         "Muy pequeña"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "app web"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "App de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "Back to sign in": [
+        "Volver al inicio de sesión"
+      ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Continúe disfrutando de una experiencia rápida, enfocada y segura en su computadora. Mejore su plan para desbloquear acceso ilimitado a otras funciones premium. "
+      ],
+      "Keep using the desktop app": [
+        "Continúe usando la app de escritorio"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Abra ${ MAIL_APP_NAME } en la ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Su prueba gratuita de la app de escritorio ha finalizado"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 correo por mes)"
@@ -5156,6 +5181,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } en App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } en Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "App de ${ MAIL_APP_NAME }"
       ],
@@ -5736,6 +5767,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte del contenido de su calendario es incompatible y no será importado."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info": {
@@ -6478,6 +6520,9 @@
       "Failed to fetch logs.": [
         "Error el obtener los registros."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rápido y enfocado. Correo electrónico y calendario en su computadora."
+      ],
       "Fill in user details": [
         "Completar datos del usuario"
       ],
@@ -6842,9 +6887,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Aún no disponible en nuestra app para Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Ahora disponible en versión beta, la app de escritorio le permite iniciar ${ MAIL_APP_NAME } cómodamente desde su escritorio y concentrarse sin distracciones del navegador."
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
@@ -7958,17 +8000,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13477,9 +13508,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Obtenga ${ MAIL_APP_NAME } para Mac o Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13836,9 +13864,6 @@
       "Delete version history?": [
         "¿Eliminar el historial de versiones?"
       ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
       "Disable ${ email }": [
         "Desactivar ${ email }"
       ],
@@ -13862,6 +13887,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Descargue la app de escritorio"
+      ],
+      "Download the mobile apps": [
+        "Descargue las apps para dispositivos móviles"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
@@ -13992,6 +14023,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenga ${ vpnPlus } para acceder a todos los servidores"
+      ],
+      "Get the apps": [
+        "Obtener las apps"
       ],
       "Gift": [
         "Regalía"
@@ -14897,6 +14931,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "La suscripción se renueva automáticamente cada mes. Su próxima fecha de facturación es en un mes."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Se le facturará cada 12 meses por ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Su suscripción se renovará automáticamente en ${ cycle } mes.",
+        "Su suscripción se renovará automáticamente en ${ cycle } meses."
       ]
     },
     "vpn_2step: billing": {

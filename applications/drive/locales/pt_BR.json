@@ -2154,6 +2154,9 @@
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
       ],
+      "An error occurred while saving your alias": [
+        "Ocorreu um erro ao salvar os seus alias"
+      ],
       "Authentication canceled.": [
         "Autenticação cancelada."
       ],
@@ -3794,6 +3797,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
       ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Enquanto isso, cadastre-se para uma conta pessoal no ${ DRIVE_APP_NAME } e proteja seus dados com criptografia de ponta a ponta e o compartilhe em segurança."
+      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando itens ${ esProgress } de ${ totalProgressToShow }"
       ],
@@ -4133,6 +4139,9 @@
       "Shared link not found": [
         "Link compartilhado não encontrado"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Cadastre-se para uma conta pessoal no ${ DRIVE_APP_NAME } e proteja seus dados com criptografia de ponta a ponta e o compartilhe em segurança."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Não é possível validar a assinatura devido a um erro de rede. Tente novamente mais tarde.."
       ],
@@ -4317,6 +4326,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
+      "upgrade your storage": [
+        "faça upgrade de seu armazenamento"
+      ],
       "Uploaded": [
         "Enviado"
       ],
@@ -4340,6 +4352,9 @@
       ],
       "Warning": [
         "Alerta"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Muito bom! Você acaba de aumentar seu armazenamento para 5 GB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Estamos enfrentando problemas técnicos. O envio de novas fotos está temporariamente desativado."
@@ -4412,6 +4427,10 @@
       ],
       "You cannot undo this action.": [
         "Você não pode desfazer está ação."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Você tem ${ expiresInDays } dia restantes para reivindicar seu bônus de boas-vindas de 3 GB e ",
+        "Você tem ${ expiresInDays } dias restantes para reivindicar seu bônus de boas-vindas de 3 GB e "
       ],
       "You will lose all unsaved changes.": [
         "Você perderá todas as alterações não salvas."
@@ -5675,6 +5694,9 @@
       "Create a share link": [
         "Criar um link compartilhável"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Comece a usar o ${ DRIVE_APP_NAME } e faça upgrade do seu espaço para 5GB!"
+      ],
       "Set a recovery method": [
         "Definir um método de recuperação"
       ],
@@ -5945,6 +5967,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Aliases são fornecidos por ${ passLink }"
       ]
     },
     "Security Center - Action": {

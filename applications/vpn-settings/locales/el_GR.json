@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
+      "Remove single sign-on": [
+        "Κατάργηση καθολικής σύνδεσης"
+      ],
       "Rename": [
         "Μετονομασία"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Γίνεται είσοδος"
+      ],
+      "Stop using single sign-on": [
+        "Διακοπή χρήσης καθολικής σύνδεσης"
       ],
       "Submit": [
         "Υποβολή"
@@ -2768,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } και θα πρέπει να τους δημιουργήσετε με μη αυτόματο τρόπο για να τους προσθέσετε ξανά στον οργανισμό σας"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
       ],
@@ -3330,6 +3339,9 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Οι χρήστες που δεν έρχονται από το SSO (δημιουργούνται με μη αυτόματο τρόπο, δεν παρέχονται από την υπηρεσία παροχής ταυτότητάς σας) εξακολουθούν να μπορούν να συνδεθούν στον οργανισμό σας"
+      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -3341,6 +3353,9 @@
       ],
       "old password": [
         "παλαιός κωδικός"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Μόλις απενεργοποιηθεί η μεμονωμένη σύνδεση για τον οργανισμό σας:"
       ],
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
@@ -3527,11 +3542,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
+      "Single sign-on removed": [
+        "Η καθολική σύνδεση καταργήθηκε"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Ορισμένοι από τους διαθέσιμους διακομιστές σας μπορούν να χρησιμοποιηθούν μόνο σε συγκεκριμένες χώρες λόγω πρόσφατων καταργήσεων"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Οι χρήστες SSO (που παρέχονται από τον πάροχο ταυτότητάς σας) θα διαγραφούν"
       ],
       "Step ${ step }": [
         "Βήμα ${ step }",
@@ -3578,6 +3599,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
       ],
       "The following address is invalid.": [
         "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
@@ -3650,6 +3674,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Αυτό θα διαγράψει οριστικά το λογαριασμό σας και όλα τα δεδομένα του. Δεν θα μπορέσετε να επανενεργοποιήσετε αυτόν τον λογαριασμό."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Αυτό θα καταργήσει το SSO για το ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Αυτό θα αντικαταστήσει τον προσωρινό κωδικό πρόσβασης σας. Στο εξής θα τον χρησιμοποιείτε για την πρόσβαση στον λογαριασμό σας στο ${ BRAND_NAME }."
@@ -7537,6 +7564,12 @@
       "Remove domain": [
         "Αφαίρεση τομέα"
       ],
+      "Remove single sign-on": [
+        "Κατάργηση καθολικής σύνδεσης"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Κατάργηση καθολικής σύνδεσης για τον οργανισμό σας;"
+      ],
       "Remove user?": [
         "Κατάργηση χρήστη;"
       ],
@@ -7608,6 +7641,9 @@
       ],
       "Signed in to member account": [
         "Σύνδεση στον λογαριασμό μέλους"
+      ],
+      "Single sign-on": [
+        "Καθολική σύνδεση"
       ],
       "Status": [
         "Κατάσταση"

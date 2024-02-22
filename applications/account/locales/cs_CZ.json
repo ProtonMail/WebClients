@@ -4112,7 +4112,7 @@
         "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, musíte obnovit oprávnění správce."
+        "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, budete muset obnovit svá oprávnění správce."
       ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
@@ -5809,6 +5809,17 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6953,9 +6964,6 @@
       "Not yet available in our Android mobile app.": [
         "V naší mobilní aplikaci pro Android zatím není k dispozici."
       ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Nyní k dispozici v beta verzi, aplikaci ${ MAIL_APP_NAME } pro PC spustíte pohodlně z vaší plochy a nebudete tak rozptylováni internetovým prohlížečem."
-      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
@@ -8091,17 +8099,6 @@
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Když je povoleno, podsložky budou mít stejnou barvu jako nadřazená složka."
@@ -8211,7 +8208,7 @@
         "Kredit"
       ],
       "Currency conversion": [
-        "Převod měn"
+        "Převod měny"
       ],
       "Donation": [
         "Finanční příspěvky"
@@ -8313,6 +8310,9 @@
       ],
       "Expand / contract composer": [
         "Rozšířit / zúžit editor"
+      ],
+      "Filter": [
+        "Filtr"
       ],
       "Forward": [
         "Přeposlat"
@@ -11517,7 +11517,7 @@
         "Přejděte do svého trezoru a spravujte svá hesla, aliasy a další."
       ],
       "Set up your organization": [
-        "Nastavení organizace"
+        "Nastavte svou organizaci"
       ],
       "Start adding users to give them access to ${ PASS_APP_NAME }.": [
         "Začněte přidávat uživatele, abyste jim umožnili přístup k ${ PASS_APP_NAME }."
@@ -11558,7 +11558,7 @@
         "nebo si ${ createANewAccount }"
       ],
       "Request trial": [
-        "Vyžádejte testování"
+        "Vyžádejte zkušební verzi"
       ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
@@ -11642,7 +11642,7 @@
         "/měsíc /uživatel, účtováno jednou za dva roky"
       ],
       "Advanced protection that goes beyond industry standards": [
-        "Pokročilá ochrana, která přesahuje průmyslové standardy"
+        "Pokročilá ochrana, která překonává to, co je na trhu běžné"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Všechny prémiové služby ${ BRAND_NAME }."
@@ -11693,7 +11693,7 @@
         "Koncové šifrování"
       ],
       "Essential protection and secure collaboration for unlimited users": [
-        "Základní ochrana a bezpečná spolupráce pro neomezený počet uživatelů"
+        "Nezbytná ochrana a bezpečná spolupráce neomezeného počtu uživatelů"
       ],
       "Everything from ${ planTitle }, plus...": [
         "Vše z ${ planTitle } plus..."
@@ -11732,7 +11732,7 @@
         "Beru na vědomí, že v případě ztráty údajů pro obnovení mohu trvale ztratit přístup ke svému účtu."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Pokud dojde k uzamčení vašeho účtu ${ BRAND_NAME }, váš **Nástroj pro obnovení** vám umožní přihlásit se a obnovit vaše data."
+        "Pokud dojde k uzamčení vašeho účtu ${ BRAND_NAME }, vaše **Sada pro obnovu** vám umožní přihlásit se a obnovit vaše data."
       ],
       "Includes:": [
         "Zahrnuje:"
@@ -11798,7 +11798,7 @@
         "Speciální akce při uvedení na trh: Získejte ${ title } za ${ price } navždy!"
       ],
       "Tailored made solutions for larger organizations with custom needs.": [
-        "Řešení na míru pro větší organizace s vlastními potřebami zabezpečení."
+        "Řešení na míru pro větší organizace se specifickými potřebami."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Vámi vybraná nabídka není k dispozici pro předplatitele ${ currentPlanTitle }."
@@ -11870,16 +11870,16 @@
         "Klíč organizace byl aktivován"
       ],
       "Organization key restored": [
-        "Klíč organizace byl obnoveny"
+        "Klíč organizace byl resetován"
       ],
       "Organization key updated": [
-        "Klíč rganizace byl aktualizován."
+        "Klíč organizace byl aktualizován"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Přístup odepřen, oprávnění správce byla omezena."
       ],
       "Reset organization key": [
-        "Obnovit klíč organizace"
+        "Resetovat klíč organizace"
       ],
       "The organization key must be activated first.": [
         "Nejprve musí být aktivován klíč organizace."
@@ -11912,16 +11912,16 @@
         "Neplatné číslo karty"
       ],
       "Invalid expiration date": [
-        "Neplatné datum expirace"
+        "Neplatné datum vypršení platnosti"
       ],
       "Invalid securiry code": [
         "Neplatný bezpečnostní kód"
       ],
       "Something went wrong. Please try again later.": [
-        "Něco se pokazilo. Zkus to prosím později."
+        "Něco se pokazilo. Zkuste to prosím později."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Váš způsob platby se nám nedaří ověřit. Zvolte prosím jiný způsob platby nebo to zkuste znovu."
+        "Vaši platební metodu se nám nedaří ověřit. Zvolte prosím jinou platební metodu nebo to zkuste znovu."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
@@ -13045,7 +13045,7 @@
         "Úložný prostor pro data generovaná pomocí ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "Až ${ totalStorageSize } úložiného prostoru Drive"
+        "Až ${ totalStorageSize } úložného prostoru Drive"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "Až ${ totalStorageSize } úložného prostoru Mail"
@@ -13053,10 +13053,10 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } úložiště"
+        "úložiště ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% zaplněno"
+        "${ storage } je zaplněno z ${ percentage }%"
       ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** z ${ humanMaxSpace }"
@@ -13696,9 +13696,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Získejte ${ MAIL_APP_NAME } pro Mac nebo Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -14058,9 +14055,6 @@
       ],
       "Delete version history?": [
         "Smazat historii verzí?"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
       ],
       "Disable ${ email }": [
         "Zakázat ${ email }"
