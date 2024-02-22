@@ -28,7 +28,7 @@ enum AccountFlag {
     ChargebeeFreeToPaid = 'ChargebeeFreeToPaid',
 }
 
-enum CalendarFeatureFlag {}
+// enum CalendarFeatureFlag {}
 // CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
 
 enum DriveFeatureFlag {
@@ -46,9 +46,4 @@ enum MailFeatureFlag {
     SelectAllOptimistic = 'SelectAllOptimistic',
 }
 
-export type FeatureFlag =
-    | `${CommonFeatureFlag}`
-    | `${AccountFlag}`
-    | `${CalendarFeatureFlag}`
-    | `${DriveFeatureFlag}`
-    | `${MailFeatureFlag}`;
+export type FeatureFlag = `${CommonFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}` | `${MailFeatureFlag}`;
