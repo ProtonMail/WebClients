@@ -1,6 +1,7 @@
 import { act } from 'react-dom/test-utils';
 
 import { fireEvent, getAllByText } from '@testing-library/react';
+import { addDays } from 'date-fns';
 import { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
@@ -437,6 +438,7 @@ describe('Sidebar checklist display', () => {
 
     it('Should display the checklist if state is reduced', async () => {
         mockedReturn.mockReturnValue({
+            expiresAt: addDays(new Date(), 10),
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
             items: new Set(),
         } as ContextState);
@@ -452,6 +454,7 @@ describe('Sidebar checklist display', () => {
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
+            expiresAt: addDays(new Date(), 10),
         } as ContextState);
 
         const { queryByTestId, container } = await render(<MailSidebar {...props} />);
@@ -466,6 +469,7 @@ describe('Sidebar checklist display', () => {
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.HIDDEN,
             items: new Set(),
+            expiresAt: addDays(new Date(), 10),
         } as ContextState);
 
         const { queryByTestId, container } = await render(<MailSidebar {...props} />);
@@ -482,6 +486,7 @@ describe('Sidebar checklist display', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
             items: new Set(),
             changeChecklistDisplay: mockedChangeDisplay,
+            expiresAt: addDays(new Date(), 10),
         } as Partial<ContextState>);
 
         const { container, getByTestId } = await render(<MailSidebar {...props} />);

@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import { addDays } from 'date-fns';
 
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
@@ -20,7 +21,11 @@ const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGet
 
 describe('EmptyListPlaceholder', () => {
     it('Should display checklist when no mails are present', async () => {
-        mockedReturn.mockReturnValue({ displayState: CHECKLIST_DISPLAY_TYPE.FULL, items: new Set() } as ContextState);
+        mockedReturn.mockReturnValue({
+            displayState: CHECKLIST_DISPLAY_TYPE.FULL,
+            items: new Set(),
+            expiresAt: addDays(new Date(), 10),
+        } as ContextState);
 
         await render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('onboarding-checklist');
