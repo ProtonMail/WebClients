@@ -774,10 +774,17 @@ const SubscriptionContainer = ({
                             check({
                                 ...model,
                                 planIDs,
-                                step:
-                                    !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]
-                                        ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
-                                        : SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                                step: (() => {
+                                    if (!!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]) {
+                                        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+                                    }
+
+                                    if (!!planIDs[PLANS.PASS_PRO] || !!planIDs[PLANS.PASS_BUSINESS]) {
+                                        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+                                    }
+
+                                    return SUBSCRIPTION_STEPS.CUSTOMIZATION;
+                                })(),
                             })
                         )
                     }
