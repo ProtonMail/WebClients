@@ -72,7 +72,7 @@ function* onUserEvent(
 
         if (keysUpdated) {
             logger.info(`[ServerEvents::User] Detected user keys update`);
-            const keyPassword = getAuthStore().getPassword();
+            const keyPassword = getAuthStore().getPassword() ?? '';
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
             yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */

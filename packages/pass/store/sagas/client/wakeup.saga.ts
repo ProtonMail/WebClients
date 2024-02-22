@@ -1,6 +1,6 @@
 import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
 import { getUserAccessIntent, stateHydrate, wakeupIntent, wakeupSuccess } from '@proton/pass/store/actions';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
@@ -23,7 +23,7 @@ function* wakeupWorker(
     /* synchronise the target client app state */
     yield put(stateHydrate((yield select()) as State, { endpoint, tabId }));
 
-    if (loggedIn && userId && clientReady(status)) {
+    if (loggedIn && userId && clientBooted(status)) {
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
         yield put(maybeRevalidate(getUserAccessIntent(userId)));
 

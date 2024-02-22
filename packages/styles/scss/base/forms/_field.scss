@@ -148,6 +148,7 @@ select:-webkit-autofill {
 	// Trick to replace the background color
 	box-shadow: 0 0 0 1000px var(--field-background-color) inset !important;
 	-webkit-text-fill-color: var(--field-text-color) !important;
+	caret-color: var(--field-text-color) !important;
 }
 
 // Fix datalist display, remove browser default caret

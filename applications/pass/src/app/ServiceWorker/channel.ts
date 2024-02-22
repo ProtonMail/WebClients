@@ -12,13 +12,13 @@ export type ServiceWorkerMessageBase = {
 
 export type ServiceWorkerMessage = ServiceWorkerMessageBase &
     (
-        | { type: 'ping' }
-        | { type: 'unauthorized' }
-        | { type: 'locked' }
-        | { type: 'unlocked' }
-        | { type: 'refresh'; data: RefreshSessionData }
-        | { type: 'action'; action: Action }
         | { type: 'abort'; requestUrl: string }
+        | { type: 'action'; action: Action }
+        | { type: 'locked' }
+        | { type: 'ping' }
+        | { type: 'refresh'; data: RefreshSessionData }
+        | { type: 'unauthorized' }
+        | { type: 'unlocked' }
     );
 
 export type WithOrigin<T> = T & {

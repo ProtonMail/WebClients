@@ -27,12 +27,7 @@ export const TopBar: FC = () => {
     const browser = supportedBrowser ? clients[supportedBrowser] : null;
 
     return supportedBrowser && browser ? (
-        <div
-            className={clsx(
-                'pass-spotlight-panel hidden md:block text-sm',
-                installed && 'pass-spotlight-panel--hidden'
-            )}
-        >
+        <div className={clsx('anime-reveal hidden md:block text-sm', installed && 'anime-reveal--hidden')}>
             <div className="flex gap-2 shrink-0 flex-1 items-center px-3 py-2 pass-spotlight-content weak">
                 <img src={BrowserImages[supportedBrowser]} width="24" height="24" alt="" />
                 <span>

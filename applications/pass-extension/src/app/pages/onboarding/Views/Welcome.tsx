@@ -10,7 +10,6 @@ import { ButtonLike } from '@proton/atoms/Button';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import '@proton/pass/components/Spotlight/Spotlight.scss';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
@@ -64,7 +63,7 @@ export const Welcome: FC = () => {
                             <span>{brandNameJSX}</span>
                         </div>
 
-                        <div className={clsx('pass-spotlight-panel', !pendingAccess && 'pass-spotlight-panel--hidden')}>
+                        <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
                             {pendingAccess && (
                                 <SpotlightContent
                                     className="mb-6"
