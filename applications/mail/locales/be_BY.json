@@ -1135,6 +1135,9 @@
       "Upgrade": [
         "Палепшыць"
       ],
+      "Upgrade Now": [
+        "Палепшыць"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ],
@@ -1203,6 +1206,15 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца за 2 дні. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца за 5 дзён. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Павялічыць"
@@ -4461,6 +4473,31 @@
       ],
       "To: ${ toString }": [
         "Каму: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Атрымлівайце асалоду ад хуткага і бяспечнага доступу без рэкламы да паштовай скрыні і календара."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Атрымлівайце неабмежаваны доступ з платным тарыфным планам ${ BRAND_NAME }"
+      ],
+      "Introducing the desktop app": [
+        "Уводзіны ў настольную праграму"
+      ],
+      "No credit card required": [
+        "Крэдытная картка не патрабуецца"
+      ],
+      "Upgrade now": [
+        "Палепшыць"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Паспрабуйце бясплатна на працягу 14 дзён"
       ]
     },
     "Get started checklist instructions": {

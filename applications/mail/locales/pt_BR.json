@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
+      "Upgrade Now": [
+        "Fazer upgrade agora"
+      ],
       "Upgrade now": [
         "Atualizar agora"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 2 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 5 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Aumentar zoom"
@@ -3335,6 +3347,9 @@
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
       ],
+      "An error occurred while saving your alias": [
+        "Ocorreu um erro ao salvar os seus alias"
+      ],
       "Attachments are limited to 25 MB": [
         "Os anexos estão limitados a 25 MB"
       ],
@@ -4386,6 +4401,31 @@
       ],
       "To: ${ toString }": [
         "Para: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Desfrute de um aceso rápido, seguro e livre de distrações na sua caixa de entrada e calendário."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Obtenha acesso ilimitado com o pano pago da ${ BRAND_NAME }"
+      ],
+      "Introducing the desktop app": [
+        "Apresentamos o aplicativo para computador"
+      ],
+      "No credit card required": [
+        "Não é necessário cartão de crédito"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Experimente gratuitamente por 14 dias"
       ]
     },
     "Get started checklist instructions": {
@@ -6003,6 +6043,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Esta mensagem é assinada pela chave anexa, que ainda não é confiável."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Essa mensagem será automaticamente excluída às ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
         "Essa mensagem será automaticamente excluída em ${ value }"
@@ -8219,6 +8262,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Aliases são fornecidos por ${ passLink }"
       ]
     },
     "Security Center - Action": {
@@ -8773,6 +8819,9 @@
     "Spotlight": {
       "Change setting": [
         "Mudar configuração"
+      ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Inicie ${ MAIL_APP_NAME } com facilidade diretamente do seu computador"
       ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Crie aliases hide-my-email e os monitore por aqui."
@@ -9540,6 +9589,9 @@
       ],
       "Get advanced protection": [
         "Obter proteção avançada"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Obtenha os aplicativos do ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Grupos"
