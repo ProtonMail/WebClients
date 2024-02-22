@@ -49,7 +49,7 @@ const ProtonSentinel = () => {
                 void sendSecurityCenterReport(api, {
                     event: TelemetrySecurityCenterEvents.proton_sentinel_toggle,
                     dimensions: {
-                        action: 'enable',
+                        sentinel_toggle_value: 'enabled',
                     },
                 });
                 createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been enabled` });
@@ -58,7 +58,7 @@ const ProtonSentinel = () => {
                 void sendSecurityCenterReport(api, {
                     event: TelemetrySecurityCenterEvents.proton_sentinel_toggle,
                     dimensions: {
-                        action: 'disable',
+                        sentinel_toggle_value: 'disabled',
                     },
                 });
                 createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been disabled` });

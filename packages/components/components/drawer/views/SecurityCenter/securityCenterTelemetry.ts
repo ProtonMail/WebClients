@@ -6,7 +6,7 @@ type Options =
     | {
           event: TelemetrySecurityCenterEvents.proton_pass_discover_banner;
           dimensions: {
-              action: 'visit' | 'dismiss';
+              clicked_discover_pass: 'yes' | 'no';
           };
       }
     | {
@@ -18,14 +18,14 @@ type Options =
     | {
           event: TelemetrySecurityCenterEvents.proton_sentinel_toggle;
           dimensions: {
-              action: 'enable' | 'disable';
+              sentinel_toggle_value: 'enabled' | 'disabled';
           };
       }
     | {
           event: TelemetrySecurityCenterEvents.account_security_card;
           dimensions: {
               card: 'account_recovery' | 'data_recovery' | 'two_factor_authentication';
-              action: 'clicked' | 'dismissed';
+              card_action: 'clicked' | 'dismissed';
           };
       };
 
