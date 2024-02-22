@@ -19,7 +19,6 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getHasConsumerVpnPlan,
-    getHasLegacyPlans,
     hasBundle,
     hasDrive,
     hasMail,
@@ -485,7 +484,7 @@ export const resolveUpsellsToDisplay = ({
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }): Upsell[] => {
     const resolve = () => {
-        if (!canPay || !subscription || getHasLegacyPlans(subscription)) {
+        if (!canPay || !subscription) {
             return [];
         }
 
