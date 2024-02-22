@@ -1,8 +1,12 @@
-import type { AsyncCallback, Callback } from '@proton/pass/types';
+import type { AsyncCallback } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import lastItem from '@proton/utils/lastItem';
 
-export type MaxAgeMemoizeOptions = { maxAge: number };
+type MaxAgeMemoizeOptions = { maxAge: number };
+
+export type MaxAgeMemoizedFn<F extends AsyncCallback> = (
+    ...args: [...Parameters<F>, options: MaxAgeMemoizeOptions]
+) => ReturnType<F>;
 
 /** Memoizes the result of an asynchronous function with a specified maximum age.
  * Returns a wrapped function that accepts a trailing `maxAge` parameter in seconds */
@@ -22,5 +26,5 @@ export const maxAgeMemoize = <F extends AsyncCallback>(fn: F) => {
             cache.set(memoArgs, { calledAt, result });
             return result;
         }
-    }) as F extends Callback ? (...args: [...Parameters<F>, options: MaxAgeMemoizeOptions]) => ReturnType<F> : never;
+    }) as MaxAgeMemoizedFn<F>;
 };
