@@ -1,3 +1,7 @@
+### Version 1.14.0
+
+-   Fix bulk item edition keyboard shortcut being triggered when text was selected
+
 ### Version 1.13.2
 
 -   Patch content format version v2 on stale cached items
