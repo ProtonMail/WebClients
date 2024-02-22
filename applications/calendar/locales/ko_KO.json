@@ -739,6 +739,11 @@
         "지금 떠나면, 이벤트를 잃게 됩니다."
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME } 데스크톱 애플리케이션 다운로드"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 애플리케이션"
@@ -6194,8 +6199,14 @@
       "Color-coding is here!": [
         "컬러 코딩이 새로 생겼습니다!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "데스크톱에서 바로 ${ MAIL_APP_NAME }을 실행할 수 있습니다."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "새로운 검색 기능을 사용해서 원하는 이벤트를 쉽게 찾아보세요."
+      ],
+      "Get the desktop app": [
+        "데스크톱 앱 다운로드"
       ],
       "Get up to ${ credits } in credits.": [
         "최대 ${ credits }의 크레딧 받기"
@@ -6705,6 +6716,9 @@
       ],
       "Get advanced protection": [
         "향상된 보호 얻기"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } 앱 받기"
       ],
       "Groups": [
         "그룹"
