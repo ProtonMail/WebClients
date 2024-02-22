@@ -78,3 +78,5 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
         withNotification({ type: 'error', text: c('Error').t`Unable to sync`, error })
     )({ payload: {} })
 );
+
+export const offlineResume = createAction('offline::resume', (localID?: number) => ({ payload: { localID } }));
