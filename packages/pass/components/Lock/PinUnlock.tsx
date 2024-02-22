@@ -11,7 +11,7 @@ type Props = {
     onLoading?: (loading: boolean) => void;
 };
 
-export const Unlock: FC<Props> = ({ onLoading }) => {
+export const PinUnlock: FC<Props> = ({ onLoading }) => {
     const [value, setValue] = useState('');
 
     /* Re-render the PIN input with correct input focus */
