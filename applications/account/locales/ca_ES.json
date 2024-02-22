@@ -3408,7 +3408,7 @@
         "Accions"
       ],
       "From": [
-        "Des de"
+        "De"
       ],
       "Status": [
         "Estat"
@@ -4028,7 +4028,7 @@
         "Heu d'establir un nom"
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Heu de tenir una adreça de domini personalitzada per generar un testimoni de tramesa SMTP."
+        "Heu de tenir una adreça de domini personalitzada per a generar un testimoni de tramesa SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Heu arribat al nombre màxim de caràcters. Reduïu el vostre missatge."
@@ -4925,7 +4925,7 @@
     },
     "filter: Label": {
       "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
+        "s'ha enviat el correu electrònic ${ label }"
       ],
       "with attachments": [
         "amb fitxers adjunts"
@@ -4936,7 +4936,7 @@
     },
     "filter: Label, jt": {
       "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
+        "s'ha enviat el correu electrònic ${ label }"
       ]
     },
     "FilterSettings": {
@@ -5615,6 +5615,17 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -5801,7 +5812,7 @@
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Accediu a les vostres contrasenyes i protegiu les vostres identitats en línia fàcilment en tots els vostres dispositius. Baixeu i instal·leu les aplicacions i extensions pertinents de ${ PASS_APP_NAME }."
+        "Accediu a les vostres contrasenyes i protegiu les vostres identitats en línia fàcilment en tots els vostres dispositius. Descarregueu i instal·leu les aplicacions i extensions pertinents de ${ PASS_APP_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
@@ -6020,7 +6031,7 @@
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Abans de poder rebre correus electrònics per a les seves adreces de domini personalitzades a ${ MAIL_APP_NAME }, ha d'afegir els dos registres MX següents a la seva consola DNS (ubicada a la plataforma on va adquirir el domini personalitzat). Pot trobar un exemple i alguns consells útils ${ kbLink }."
+        "Abans de poder rebre correus electrònics per a les vostres adreces de domini personalitzat a ${ MAIL_APP_NAME }, heu d'afegir els dos registres MX següents a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat). Podeu trobar un exemple i alguns consells útils ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
@@ -6159,7 +6170,7 @@
         "DKIM permet a ${ BRAND_NAME } signar criptogràficament els vostres correus electrònics i evitar que els atacants modifiquin el vostre correu electrònic. Assegureu-vos d'afegir els següents tres registres CNAME a la vostra consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del seu domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel seu. La \"p=\" (política) d'aquest registre indica com vol que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Asseguri's d'afegir el següent registre TXT a la seva consola DNS (ubicada a la plataforma on va adquirir el domini personalitzat)."
+        "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del vostre domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel vostre. La \"p=\" (política) d'aquest registre indica com voleu que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Assegureu-vos d'afegir el següent registre TXT a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
@@ -6313,7 +6324,7 @@
         "Per a membres d'organitzacions que utilitzen un inici de sessió únic (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioni la pestanya ${ boldAddresses } i afegeixi totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
+        "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
@@ -6567,7 +6578,7 @@
         "Els registres inclouen els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que empren les vostres credencials de ${ BRAND_NAME_TWO }."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
-        "Els principals serveis de correu electrònic poden rebutjar o filtrar els seus correus electrònics a correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
+        "Els principals serveis de correu electrònic poden rebutjar o filtrar els vostres correus electrònics a correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
@@ -6652,9 +6663,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Encara no està disponible a la nostra aplicació mòbil per a Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Ja disponible en beta, l'aplicació d'escriptori us permet llançar ${ MAIL_APP_NAME } còmodament des de l'escriptori i mantenir-vos centrats sense distraccions del navegador."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
@@ -7348,7 +7356,7 @@
         "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el testimoni generat com a contrasenya SMTP."
       ],
       "User activated": [
-        "L'usuari s'ha activat."
+        "S'ha activat l'usuari."
       ],
       "Users": [
         "Usuaris"
@@ -7717,17 +7725,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8194,7 +8191,7 @@
         "Adreces"
       ],
       "Administrators": [
-        "Administradores"
+        "Administradors"
       ],
       "ALL": [
         "TOT"
@@ -8794,7 +8791,7 @@
         "La frase consta de 12 paraules úniques en un ordre específic"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Afegiu els següents tres registres CNAME. Nota: tingueu en compte que els registres DNS poden trigar diverses hores a actualitzar-se."
+        "Afegiu els 3 registres CNAME següents. Nota: els registres DNS poden trigar diverses hores a actualitzar-se."
       ],
       "Please select files to upload": [
         "Seleccioneu els fitxers que voleu carregar"
@@ -9274,7 +9271,7 @@
         "Inicia la sessió"
       ],
       "switch account": [
-        "canviar de compte"
+        "canvieu de compte"
       ],
       "Terms": [
         "Termes"
@@ -9827,7 +9824,7 @@
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
-        "${ size } d'adjunts"
+        "${ size } en arxius adjunts"
       ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
@@ -10611,7 +10608,7 @@
         "S'ha eliminat la invitació."
       ],
       "Invitation revoked": [
-        "S'ha cancel·lat la invitació."
+        "S'ha revocat la invitació."
       ],
       "Member added": [
         "Membre afegit",
@@ -10846,7 +10843,7 @@
         "Activat"
       ],
       "Organization only": [
-        "Només organització"
+        "Només l'organització"
       ],
       "Permanent": [
         "Permanent"
@@ -12371,10 +12368,10 @@
         "Aconseguiu més emmagatzematge"
       ],
       "upgrade for more storage": [
-        "millorar per obtenir més emmagatzematge"
+        "milloreu per a obtenir més emmagatzematge"
       ],
       "Your ${ appStorage } is full": [
-        "El seu ${ appStorage } és ple."
+        "El vostre ${ appStorage } és ple."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -12882,7 +12879,7 @@
         "Contrasenya"
       ],
       "Role": [
-        "Rol"
+        "Càrrec"
       ],
       "Status": [
         "Estat"
@@ -12936,9 +12933,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Obteniu ${ MAIL_APP_NAME } per a Mac o Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13078,7 +13072,7 @@
         "Segur que voleu tancar?"
       ],
       "Are you sure?": [
-        "Esteu segurs?"
+        "N'esteu segur?"
       ],
       "Authentication security": [
         "Seguretat de l'autenticació"
@@ -13279,9 +13273,6 @@
       ],
       "Delete version history?": [
         "Voleu eliminar l'historial de versions?"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
       ],
       "Disable ${ email }": [
         "Desactivar ${ email }"
@@ -14138,7 +14129,7 @@
         "Quan afegiu una etiqueta a un missatge d'una conversa, aquesta s'aplicarà automàticament a tots els missatges futurs que envieu o rebeu dins d'aquesta conversa."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Quan cliqueu a un enllaç, aquesta característica antipesca us demanarà que confirmeu l'URL de la pàgina web."
+        "Quan cliqueu en un enllaç, aquesta característica antipesca us demanarà que confirmeu l'URL de la pàgina web."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Quan moveu un correu electrònic al correu brossa, automàticament se us cancel·larà la subscripció a les llistes de correu del remitent."

@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade Now": [
+        "Effettua l'upgrade ora"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina tra 2 giorni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina tra 5 giorni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Zoom avanti"
@@ -4389,6 +4401,22 @@
       ],
       "To: ${ toString }": [
         "A: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "No credit card required": [
+        "Nessuna carta di credito richiesta"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Prova gratis per 14 giorni"
       ]
     },
     "Get started checklist instructions": {

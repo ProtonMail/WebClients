@@ -5603,6 +5603,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "請刪除這應用程式所有相關數據, 包括已下載訊息"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
       ],
@@ -5875,6 +5878,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "請移除這程式所有有關數據，包括已下戴訊息。這應用程式將會重新啟動並須要重新登入才能駛用。"
       ],
       "This sender's public key has not been trusted yet.": [
         "此寄件人的公開金鑰尚未信任。"
@@ -8598,6 +8604,9 @@
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的${ storage }已滿${ cta }。"
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
       ],
       "Your storage is full": [
         "您的儲存空間已滿"

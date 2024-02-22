@@ -50,6 +50,9 @@
       "activate": [
         "aktivér"
       ],
+      "Activate": [
+        "Aktiver"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Opsig abonnement"
+      ],
+      "Change keys": [
+        "Skift nøgler"
       ],
       "Change mailbox password": [
         "Skift postkasseadgangskode"
@@ -3109,6 +3115,9 @@
       "Access to the desktop app is limited": [
         "Adgang til skrivebordsappen er begrænset"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Betaversionen af ${ MAIL_APP_NAME }-computerappen er i øjeblikket tilgængelig for alle med et betalt ${ MAIL_APP_NAME }-abonnement. Opgrader i dag for at få adgang."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
       ]
@@ -5726,6 +5735,17 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -6820,9 +6840,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Endnu ikke tilgængelig i vores Android-mobilapp."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Skrivebordsappen er nu tilgængelig i beta og giver dig mulighed for nemt at starte ${ MAIL_APP_NAME } direkte fra dit skrivebord og holde fokus uden at blive distraheret af browseren."
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
@@ -7925,17 +7942,6 @@
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktiveret, arver undermapper farven på den overordnede mappe."
@@ -8039,6 +8045,12 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Credit note": [
+        "Kreditnota"
+      ],
+      "Currency conversion": [
+        "Valuta Omregning"
       ],
       "Donation": [
         "Donation"
@@ -8395,6 +8407,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Administrators": [
+        "Administratorer"
       ],
       "ALL": [
         "ALLE"
@@ -9173,6 +9188,9 @@
       "Username": [
         "Brugernavn"
       ],
+      "VAT": [
+        "Moms"
+      ],
       "Verification code": [
         "Verifikationskode"
       ],
@@ -9878,6 +9896,9 @@
       "Back to inbox": [
         "Tilbage til indbakke"
       ],
+      "Back to vaults": [
+        "Tilbage til boks"
+      ],
       "Block": [
         "Blokér"
       ],
@@ -9886,6 +9907,9 @@
       ],
       "Inbox": [
         "Indbakke"
+      ],
+      "Pass vaults": [
+        "Pass boks"
       ],
       "Spam": [
         "Spam"
@@ -10067,6 +10091,9 @@
       "Autofill credit cards (coming soon)": [
         "Autofyld betalingskort (kommer snart)"
       ],
+      "Automatic email forwarding": [
+        "Automatisk videresendelse af mails"
+      ],
       "Available on all platforms": [
         "Tilgængelig på alle platforme"
       ],
@@ -10204,6 +10231,9 @@
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
       ],
+      "Require 2FA for organization": [
+        "Kræv 2FA for organisation"
+      ],
       "Router support": [
         "Router support"
       ],
@@ -10237,6 +10267,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integration (kommer snart)"
       ],
       "Start protecting your organization": [
         "Begynd at beskytte din organisation"
@@ -10279,6 +10312,9 @@
       ],
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Ubegrænsede delte bokse med adgangstilladelser"
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
@@ -10533,6 +10569,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Videresend automatisk e-mails sendt til din ${ MAIL_APP_NAME }-konto til enhver anden e-mailadresse."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masseudsendelse af salgsfremmende eller programmatiske e-mails understøttes ikke i øjeblikket. Vi anbefaler, at du bruger en dedikeret e-mailtjenesteudbyder til dette formål."
       ],
@@ -10663,8 +10702,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Det specialudviklede NetShield beskytter din enhed og gør din browsing hurtigere ved at blokere reklamer, trackere og malware."
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } og ${ PASS_APP_NAME }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }. Administratorer kan tildele forskellige mængder lagerplads til brugere i deres organisation"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Lagerplads deles mellem brugere på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } og ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
@@ -11195,8 +11240,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Gå til din boks for at administrere dine adgangskoder, aliaser og mere."
+      ],
       "Set up your organization": [
         "Konfigurer din organisation"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Begynd at tilføje brugere for at give dem adgang til ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynd at bruge ${ PASS_APP_NAME }"
@@ -11301,6 +11352,15 @@
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pr. måned"
+      ],
+      "/month /user": [
+        "/måned/bruger"
+      ],
+      "/month /user, billed annually": [
+        "/måned /bruger, faktureres årligt"
+      ],
+      "/month /user, billed biennially": [
+        "/måned /bruger, faktureres hvert andet år"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Alle premium ${ BRAND_NAME }-tjenester"
@@ -11428,6 +11488,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Særligt lanceringstilbud: Få ${ title } for ${ price } for evigt!"
       ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Skræddersyede løsninger til større organisationer med specialbehov."
+      ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Det valgte tilbud er ikke tilgængeligt for ${ currentPlanTitle }-abonnenter."
       ],
@@ -11489,11 +11552,17 @@
       "Change organization key": [
         "Skift organisationsnøgle"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brugere kan forfremmes til admin, når de har opsætningsnøgler"
+      ],
       "Organization key activated": [
         "Organisationsnøglen er aktiveret."
       ],
       "Organization key does not exist.": [
         "Organisationsnøglen findes ikke."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnøgle skal aktiveres for at give administratorrettigheder"
       ],
       "Organization key restored": [
         "Organisationsnøglen er genoprettet"
@@ -11503,6 +11572,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
       ],
       "Reset organization key": [
         "Nulstil organisationsnøglen"
@@ -11516,14 +11588,29 @@
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "Dette vil sende den seneste organisationsnøgle til de administratorer, der ikke har adgang til den i øjeblikket."
       ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "For at oprette ikke-private brugerkonti og få adgang til deres konti, skal du aktivere din organisationsnøgle."
+      ],
       "To enable administrator rights on your account, activate the organization key.": [
         "For at anvende administratorrettigheder på din konto, skal organisationsnøglen aktiveres."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Brug en datagendannelsesmetode, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Brug en datagendannelsesmetode, kontakt en anden administrator, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Vi kunne ikke bekræfte sikkerheden af denne afsenderes adressenøgle. Nogle gange er der en forsinkelse i opdateringen af afsenderens oplysninger. Prøv igen senere. Hvis du ikke har tillid til gyldigheden af denne invitation eller afsender, skal du kontakte ${ BRAND_NAME } kundesupport."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Vi har bekræftet ægtheden af afsender og invitation."
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Du er blevet administrator for denne organisation **${ organizationName }** af"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
       ],
       "You need access to the organization key to perform this operation.": [
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
@@ -11537,12 +11624,35 @@
         "Nyt kredit/debetkort"
       ]
     },
+    "Payments": {
+      "Card number": [
+        "Kortnummer"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
+      ],
+      "Timeout exceeded": [
+        "Timeout overskredet"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "Ugyldigt kortnummer"
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
+      ],
+      "Invalid securiry code": [
+        "Ugyldig sikkerhedskode"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Noget gik galt. Prøv igen senere."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Vi er ikke i stand til at godkende din betalingsmetode. Vælg venligst en anden betalingsmetode, eller prøv igen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
@@ -12615,6 +12725,17 @@
         "Behold ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Lagerplads til data genereret af ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Op til ${ totalStorageSize } Drev-lagerplads"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Op til ${ totalStorageSize } Maillager"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } lagerplads"
@@ -12634,6 +12755,9 @@
       "contact your administrator": [
         "kontakt din administrator"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "For alle ${ BRAND_NAME } tjenester"
+      ],
       "Get more storage": [
         "Få mere lagerplads"
       ],
@@ -12649,6 +12773,9 @@
       "Upgrade your plan to increase your storage.": [
         "Opgrader dit abonnement for at øge din opbevaringsplads."
       ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Vi tilføjer kreditten for den resterende tid til din ${ BRAND_NAME } Konto."
+      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har stadig **${ daysRemaining }** dag tilbage på dit **${ currentPlanName }**-abonnement.",
         "Du har stadig **${ daysRemaining }** dage tilbage på dit **${ currentPlanName }**-abonnement"
@@ -12661,6 +12788,18 @@
       ],
       "Your storage is full": [
         "Dit lager er fuldt"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Du mister adgang til ${ gb } lagerplads og prioriteret support."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Du mister adgang til yderligere lagerplads, e-mailadresser, aliaser, kalendere samt prioriteret support."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Du mister adgang til den højeste VPN-hastighed, beskyttelse til 10 enheder, højhastighedsstreaming, ad-blocker og malware-beskyttelse samt prioriteret support."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Du mister adgang til ubegrænsede logins og noter, ubegrænset hide-my-email aliaser, 20 bokse samt prioriteret support."
       ]
     },
     "Subscribe to calendar modal": {
@@ -12840,6 +12979,9 @@
       ],
       "Address updated": [
         "Adresse opdateret"
+      ],
+      "Administrator privileges restored": [
+        "Administratorrettigheder gendannet"
       ],
       "Auto-reply disabled": [
         "Autosvar deaktiveret"
@@ -13223,9 +13365,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Få ${ MAIL_APP_NAME } til Mac eller Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Gratis"
       ],
@@ -13433,6 +13572,9 @@
       "Composing": [
         "Skrivning"
       ],
+      "Confirm": [
+        "Bekræft"
+      ],
       "Confirm address": [
         "Bekræft adresse"
       ],
@@ -13569,9 +13711,6 @@
       ],
       "Delete version history?": [
         "Slet versionshistorik?"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
       ],
       "Disable ${ email }": [
         "Deaktiver ${ email }"
@@ -13853,6 +13992,9 @@
       ],
       "Organization filters": [
         "Organisationsfiltre"
+      ],
+      "Organization key": [
+        "Organisationsnøgle"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -14743,6 +14885,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Du skal ${ activateLink } organisationsnøglen, før du tilføjer en e-mailadresse til et ikke-privat medlem."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."

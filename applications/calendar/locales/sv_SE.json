@@ -606,6 +606,9 @@
       "Upgrade": [
         "Uppgradera"
       ],
+      "Upgrade Now": [
+        "Uppgradera nu"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ],
@@ -744,6 +747,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Genom att lämna nu kommer du att förlora din händelse."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Ladda ner ${ MAIL_APP_NAME }-applikation för stationär dator"
       ]
     },
     "Apps dropdown": {
@@ -2438,6 +2446,9 @@
       ],
       "An error occurred while loading alias options": [
         "Ett fel uppstod när alternativen för alias skulle laddas"
+      ],
+      "An error occurred while saving your alias": [
+        "Ett fel uppstod när ditt alias skulle sparas"
       ],
       "Answer failed to be sent": [
         "Misslyckades att skicka svar"
@@ -6319,8 +6330,14 @@
       "Color-coding is here!": [
         "Färgkodning är här!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Starta ${ MAIL_APP_NAME } bekvämt direkt från din stationära dator."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Hitta enkelt händelsen du letar efter med vår nya sökfunktion."
+      ],
+      "Get the desktop app": [
+        "Skaffa appen för stationär dator"
       ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
@@ -6843,6 +6860,9 @@
       ],
       "Get advanced protection": [
         "Skaffa avancerat skydd"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Skaffa appen ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Grupper"
