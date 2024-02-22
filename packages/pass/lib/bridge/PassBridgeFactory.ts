@@ -96,7 +96,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                             aliasDetails: { aliasEmail, mailboxes: [mailbox] },
                         };
                     },
-                    getAliasOptions: maxAgeMemoize(getAliasOptions),
+                    getAliasOptions: getAliasOptions,
                     getAllByShareId: maxAgeMemoize(async (shareId) => {
                         const aliases = (await Promise.all(
                             (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
