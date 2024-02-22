@@ -127,46 +127,59 @@ describe('cancel subscription', () => {
         });
     });
 
-    it('should send the API request for subscription cancellation and return the result', async () => {
-        const {
-            hookRef,
-            result: { getByTestId, container, getByText },
-        } = setup({
-            preloadedState: {
-                subscription: getModelState(vpnSubscription),
-                user: getModelState(user),
-                organization: getModelState(organization),
-            },
-        });
+    it.each([PLANS.VPN, PLANS.VPN2024, PLANS.PASS_PLUS])(
+        'should send the API request for subscription cancellation and return the result: %s',
+        async (plan) => {
+            const subscription = {
+                ...vpnSubscription,
+                Plans: [
+                    {
+                        ...vpnSubscription.Plans[0],
+                        Name: plan,
+                    },
+                ],
+            };
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
-        await wait(0);
-
-        await userEvent.click(getByTestId('cancelSubscription'));
-        await wait(0);
-
-        await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
-        await userEvent.click(getByText('I use a different Proton account'));
-        await userEvent.click(getByTestId('submitFeedback'));
-
-        await wait(0);
-
-        expect(apiMock).toHaveBeenCalledWith(
-            changeRenewState({
-                RenewalState: Renew.Disabled,
-                CancellationFeedback: {
-                    Reason: 'DIFFERENT_ACCOUNT',
-                    Feedback: '',
-                    ReasonDetails: '',
-                    Context: 'mail',
+            const {
+                hookRef,
+                result: { getByTestId, container, getByText },
+            } = setup({
+                preloadedState: {
+                    subscription: getModelState(subscription),
+                    user: getModelState(user),
+                    organization: getModelState(organization),
                 },
-            })
-        );
+            });
 
-        await expect(cancelSubscriptionPromise).resolves.toEqual({
-            status: 'cancelled',
-        });
-    });
+            const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+            await wait(0);
+
+            await userEvent.click(getByTestId('cancelSubscription'));
+            await wait(0);
+
+            await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
+            await userEvent.click(getByText('I use a different Proton account'));
+            await userEvent.click(getByTestId('submitFeedback'));
+
+            await wait(0);
+
+            expect(apiMock).toHaveBeenCalledWith(
+                changeRenewState({
+                    RenewalState: Renew.Disabled,
+                    CancellationFeedback: {
+                        Reason: 'DIFFERENT_ACCOUNT',
+                        Feedback: '',
+                        ReasonDetails: '',
+                        Context: 'mail',
+                    },
+                })
+            );
+
+            await expect(cancelSubscriptionPromise).resolves.toEqual({
+                status: 'cancelled',
+            });
+        }
+    );
 });
 
 describe('downgrade subscription', () => {

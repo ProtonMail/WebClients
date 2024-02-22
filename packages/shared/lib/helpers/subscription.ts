@@ -658,7 +658,9 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
 export const hasCancellablePlan = (subscription: Subscription | undefined) => {
-    return hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription);
+    return (
+        hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription) || hasVPN2024(subscription)
+    );
 };
 
 export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {
