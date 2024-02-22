@@ -6,7 +6,18 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 
 import { type WithMeta, withMetaFactory } from './meta';
 
-export type Notification = CreateNotificationOptions & { endpoint?: ClientEndpoint; loading?: boolean };
+export type Notification = CreateNotificationOptions & {
+    /** Specifies the client endpoint for filtering notifications.
+     * Relevant only within the extension context. */
+    endpoint?: ClientEndpoint;
+    /** Indicates whether the notification will display a spinner
+     * and persist indefinitely. */
+    loading?: boolean;
+    /** Determines if the notification should be displayed
+     * when the client is offline. */
+    offline?: boolean;
+};
+
 export type NotificationMeta = { notification: Notification };
 export type NotificationOptions = Notification &
     ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });
@@ -27,6 +38,8 @@ const parseNotification = (notification: NotificationOptions): Notification => {
             const serializedNotification: Notification = {
                 ...notification,
                 text: errorMessage ? `${notification.text} (${errorMessage})` : notification.text,
+                /** Default to offline notifications if not explicitly specified. */
+                offline: notification.offline ?? true,
             };
 
             return serializedNotification;
