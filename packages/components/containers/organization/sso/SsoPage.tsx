@@ -70,8 +70,6 @@ const ConfigureSamlContent = ({
                         id="domainName"
                         value={domain.DomainName}
                         readOnly
-                        inputContainerClassName="rounded w-full"
-                        unstyled
                         assistiveText={<DomainVerificationState domain={domain} />}
                     />
                 </SettingsLayoutRight>
