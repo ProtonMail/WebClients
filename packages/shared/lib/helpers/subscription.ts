@@ -177,6 +177,10 @@ export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     return [VPN, VPN2024, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
 
+export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    return [VPN, VPN2024, VPN_PASS_BUNDLE].includes(planName as any);
+};
+
 export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
 };
