@@ -115,7 +115,9 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
             if (isChecklistFinished && (newState === REDUCED || newState === HIDDEN)) {
                 const checklist = isUserPaid ? 'paying-user' : 'get-started';
-                await silentApi(seenCompletedChecklist(checklist));
+                if (canMarkItemsAsDone) {
+                    await silentApi(seenCompletedChecklist(checklist));
+                }
             }
 
             if (canMarkItemsAsDone) {
