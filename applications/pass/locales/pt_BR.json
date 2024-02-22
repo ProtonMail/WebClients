@@ -260,8 +260,8 @@
       "Move to trash": [
         "Mover para lixeira"
       ],
-      "Not now": [
-        "Agora não"
+      "Multiple select": [
+        "Seleção múltipla"
       ],
       "OK": [
         "OK"
@@ -576,9 +576,6 @@
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
       ],
-      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Faça upgrade para ter acesso antecipado ao aplicativo desktop do ${ PASS_APP_NAME }"
-      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
@@ -743,6 +740,9 @@
       "Admin": [
         "Administrador"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Após inatividade, o acesso ao ${ PASS_APP_NAME } exigirá um código PIN para desbloquear sua sessão. Você será desconectado após 3 tentativas fracassadas."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
@@ -793,6 +793,9 @@
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "O formato CSV oferece uma maneira conveniente de visualizar seus dados. No entanto, devido à sua simplicidade, alguns dados não serão incluídos (campos personalizados, estrutura do cofre...). Para uma exportação completa, recomendamos usar um formato diferente."
       ],
       "Decrypting your data": [
         "Descriptografando seus dados"
@@ -1061,6 +1064,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "O arquivo exportado será criptografado usando PGP e exigirá uma senha forte."
       ],
       "The exported file will not contain the data of shared vaults where you are not the owner": [
         "O arquivo exportado não conterá os dados de cofres compartilhados dos quais você não é o proprietário"
