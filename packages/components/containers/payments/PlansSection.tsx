@@ -86,10 +86,17 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             CouponCode: couponCode,
         });
 
-        const step =
-            newPlanIDs[PLANS.VPN_BUSINESS] || newPlanIDs[PLANS.VPN_PRO]
-                ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
-                : SUBSCRIPTION_STEPS.CUSTOMIZATION;
+        const step = (() => {
+            if (newPlanIDs[PLANS.VPN_BUSINESS] || newPlanIDs[PLANS.VPN_PRO]) {
+                return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+            }
+
+            if (newPlanIDs[PLANS.PASS_PRO] || newPlanIDs[PLANS.PASS_BUSINESS]) {
+                return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+            }
+
+            return SUBSCRIPTION_STEPS.CUSTOMIZATION;
+        })();
 
         open({
             defaultSelectedProductPlans: selectedProductPlans,
