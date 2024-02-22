@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Toggle, useModalStateObject, useSettingsLink } from '@proton/components/components';
+import { useFlag } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
@@ -19,6 +20,7 @@ import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 
 const ProtonSentinel = () => {
     const api = useApi();
+    const canDisplaySentinel = useFlag('DrawerSecurityCenterDisplaySentinel');
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -28,7 +30,7 @@ const ProtonSentinel = () => {
     const isSentinelEligible = isProtonSentinelEligible(userSettings);
     const isProtonSentinelEnabled = userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
 
-    if (loadingUserSettings) {
+    if (loadingUserSettings || !canDisplaySentinel) {
         return null;
     }
 
