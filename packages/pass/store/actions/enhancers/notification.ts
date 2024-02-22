@@ -16,6 +16,7 @@ export type Notification = CreateNotificationOptions & {
     /** Determines if the notification should be displayed
      * when the client is offline. */
     offline?: boolean;
+    errorMessage?: string;
 };
 
 export type NotificationMeta = { notification: Notification };
@@ -35,9 +36,11 @@ const parseNotification = (notification: NotificationOptions): Notification => {
                 notification.error instanceof Error
                     ? getApiErrorMessage(notification.error) ?? notification.error.message
                     : undefined;
+
             const serializedNotification: Notification = {
                 ...notification,
-                text: errorMessage ? `${notification.text} (${errorMessage})` : notification.text,
+                text: notification.text,
+                errorMessage,
                 /** Default to offline notifications if not explicitly specified. */
                 offline: notification.offline ?? true,
             };
