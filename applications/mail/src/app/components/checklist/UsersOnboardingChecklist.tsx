@@ -46,6 +46,8 @@ const UsersOnboardingChecklist = ({
     const { viewportWidth } = useActiveBreakpoint();
     const [user] = useUser();
 
+    // TODO remove once the extended checklist storage split is finished
+    const TO_DELETE_FIX_FOR_CHECKLIST = useFlag('SplitStorageChecklistReopenedNova');
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     const [rewardShowed, setRewardShowed] = useLocalState(false, 'checklist-reward-showed');
@@ -87,7 +89,7 @@ const UsersOnboardingChecklist = ({
         changeChecklistDisplay(newState);
     };
 
-    if (isAfter(new Date(), expiresAt)) {
+    if (isAfter(new Date(), expiresAt) && !TO_DELETE_FIX_FOR_CHECKLIST) {
         return null;
     }
 
@@ -100,7 +102,10 @@ const UsersOnboardingChecklist = ({
                         'w-full flex flex-column shrink-0',
                         // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                         displayOnMobile && 'free-checklist--container',
-                        isColumnMode(mailSettings) && !smallVariant && !viewportWidth['<=small'] && 'justify-center h-full',
+                        isColumnMode(mailSettings) &&
+                            !smallVariant &&
+                            !viewportWidth['<=small'] &&
+                            'justify-center h-full',
                         !viewportWidth['<=small'] && !smallVariant && 'm-auto',
                         smallVariant
                             ? 'px-2 self-end'
