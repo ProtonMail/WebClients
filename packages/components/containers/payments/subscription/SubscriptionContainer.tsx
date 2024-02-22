@@ -22,6 +22,7 @@ import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
     APPS,
+    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
@@ -542,6 +543,11 @@ const SubscriptionContainer = ({
             const checkResult = await paymentsApi.checkWithAutomaticVersion(
                 {
                     Plans: newModel.planIDs,
+                    CouponCode: (() => {
+                        if (isPassB2bPlan) {
+                            return COUPON_CODES.PASS_B2B_INTRO;
+                        }
+                    })(),
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
                     Codes: getCodes(newModel),
