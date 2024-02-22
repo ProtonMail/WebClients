@@ -5135,6 +5135,19 @@
         "Très petit"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "application web"
+      ]
+    },
+    "Free trial desktop": {
+      "Back to sign in": [
+        "Retour à la connexion"
+      ],
+      "Keep using the desktop app": [
+        "Continuer à utiliser l'application de bureau"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 message par mois)"
@@ -5156,6 +5169,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } sur l'App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } sur le Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "application ${ MAIL_APP_NAME }"
       ],
@@ -5736,6 +5755,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info": {
@@ -6842,9 +6872,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Pas encore disponible sur notre application mobile pour Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Désormais disponible en version bêta, l'application de bureau vous permet de lancer ${ MAIL_APP_NAME } directement depuis votre bureau. Vous n'avez plus besoin d'utiliser votre navigateur."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
@@ -7958,17 +7985,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -13477,9 +13493,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        "Télécharger ${ MAIL_APP_NAME } pour Mac ou Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13836,9 +13849,6 @@
       "Delete version history?": [
         "Supprimer l'historique des versions ?"
       ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
       "Disable ${ email }": [
         "Désactiver ${ email }"
       ],
@@ -13862,6 +13872,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Télécharger l'application mobile"
+      ],
+      "Download the mobile apps": [
+        "Télécharger les applications mobiles"
       ],
       "Edit credit/debit card": [
         "Modifier la carte de paiement"
@@ -13992,6 +14008,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenir ${ vpnPlus } pour accéder à tous les serveurs."
+      ],
+      "Get the apps": [
+        "Obtenir les applications"
       ],
       "Gift": [
         "Cadeau"

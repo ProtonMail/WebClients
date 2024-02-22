@@ -5193,6 +5193,31 @@
         "Вельмі маленькі"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "вэб-праграма"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "Back to sign in": [
+        "Вярнуцца да ўваходу"
+      ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Працягвайце атрымліваць асалоду ад хуткай, сканцэнтраванай і бяспечнай настольнай праграмы. Палепшыце, каб разблакіраваць неабмежаваны доступ і іншыя прэміяльныя функцыі. "
+      ],
+      "Keep using the desktop app": [
+        "Працягнуць выкарыстанне настольнай праграмай"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Адкрыць ${ MAIL_APP_NAME } у ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Ваш бясплатны пробны перыяд для настольнай праграмы завяршыўся"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 ліст у месяц)"
@@ -5214,6 +5239,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } у App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } у Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "Праграма ${ MAIL_APP_NAME }"
       ],
@@ -5810,6 +5841,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info": {
@@ -6608,6 +6650,9 @@
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
+      ],
       "Fill in user details": [
         "Запоўніце даныя карыстальніка"
       ],
@@ -6976,9 +7021,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Пакуль недаступна ў нашай мабільнай праграме для Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Цяпер даступна ў бэта-версіі. Настольная праграма дазваляе зручна запускаць ${ MAIL_APP_NAME } наўпрост з вашага працоўнага стала і не рабіць лішніх дзеянняў праз браўзер."
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
@@ -8122,17 +8164,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13819,9 +13850,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Атрымаць ${ MAIL_APP_NAME } для Mac або Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -14182,9 +14210,6 @@
       "Delete version history?": [
         "Выдаліць гісторыю версій?"
       ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
       "Disable ${ email }": [
         "Адключыць ${ email }"
       ],
@@ -14208,6 +14233,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Спампоўванне настольнай праграмы"
+      ],
+      "Download the mobile apps": [
+        "Спампоўванне мабільных праграм"
       ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
@@ -14340,6 +14371,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Атрымаць ${ vpnPlus } для доступу да ўсіх сервераў"
+      ],
+      "Get the apps": [
+        "Атрымаць праграмы"
       ],
       "Gift": [
         "Падарунак"

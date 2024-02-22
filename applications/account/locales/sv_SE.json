@@ -5128,6 +5128,17 @@
         "Väldigt liten"
       ]
     },
+    "Free trial desktop": {
+      "Back to sign in": [
+        "Tillbaka till inloggning"
+      ],
+      "Keep using the desktop app": [
+        "Fortsätt använda appen för stationär dator"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Öppna ${ MAIL_APP_NAME } i ${ webAppMessage }"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-postmeddelande per månad)"
@@ -5149,6 +5160,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } på App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } på Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME }-app"
       ],
@@ -5729,6 +5746,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info": {
@@ -6831,9 +6859,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Ännu inte tillgängligt i vår mobilapp för Android."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Nu tillgänglig i betaversion, med appen för stationär dator kan du enkelt starta ${ MAIL_APP_NAME } direkt från din stationära dator och behålla fokus utan att störa webbläsaren."
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -7950,17 +7975,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9304,6 +9318,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } och ${ additionalApp } produktuppdateringar"
+      ],
       "${ app } product updates": [
         "Produktuppdateringar för ${ app }"
       ],
@@ -13464,9 +13481,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Skaffa ${ MAIL_APP_NAME } för Mac eller Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13823,9 +13837,6 @@
       "Delete version history?": [
         "Ta bort versionshistorik?"
       ],
-      "Desktop app": [
-        "App för stationär dator"
-      ],
       "Disable ${ email }": [
         "Inaktivera ${ email }"
       ],
@@ -13849,6 +13860,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Ladda ner ${ VPN_APP_NAME }"
+      ],
+      "Download the mobile apps": [
+        "Ladda ner mobilapparna"
       ],
       "Edit credit/debit card": [
         "Redigera kredit-/betalkort"
@@ -13979,6 +13993,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Skaffa ${ vpnPlus } för att komma åt alla servrar"
+      ],
+      "Get the apps": [
+        "Skaffa appen"
       ],
       "Gift": [
         "Gåva"

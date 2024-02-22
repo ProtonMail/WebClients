@@ -5386,6 +5386,14 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -6497,9 +6505,6 @@
       "Not yet available in our Android mobile app.": [
         "Наразі недоступний у нашій мобільній програмі для Android."
       ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Відтепер доступна бета-версія програми для комп'ютера, яка дає змогу зручно запускати ${ MAIL_APP_NAME } просто з робочого столу і зосереджуватися на роботі з поштою без відволікань."
-      ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
       ],
@@ -7597,14 +7602,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
       ]
     },
     "Info - folder colouring feature": {
@@ -12558,9 +12555,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Отримайте ${ MAIL_APP_NAME } для Mac або Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -12893,9 +12887,6 @@
       ],
       "Delete version history?": [
         "Видалити історію версій?"
-      ],
-      "Desktop app": [
-        "Настільний застосунок"
       ],
       "Disable ${ email }": [
         "Вимкнути ${ email }"

@@ -5775,6 +5775,17 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -6899,9 +6910,6 @@
       "Not yet available in our Android mobile app.": [
         "Încă nu e disponibilă în aplicația mobilă Android."
       ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Acum disponibilă în versiune beta, aplicația pentru desktop vă permite să lansați în mod convenabil ${ MAIL_APP_NAME } direct de pe desktop și să vă păstrați concentrarea, fără distrageri provenite din navigatorul web."
-      ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
@@ -8021,17 +8029,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13647,9 +13644,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        "Obțineți ${ MAIL_APP_NAME } pentru Mac sau Windows"
-      ],
       "${ appName } Free": [
         "${ appName } gratuit"
       ],
@@ -13998,9 +13992,6 @@
       ],
       "Delete version history?": [
         "Ștergeți istoricul versiunilor?"
-      ],
-      "Desktop app": [
-        "Aplicația desktop"
       ],
       "Disable ${ email }": [
         "Dezactivare ${ email }"

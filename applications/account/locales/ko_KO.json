@@ -5701,6 +5701,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -6772,9 +6783,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "아직 Android 모바일 앱에서 지원하지 않습니다."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "이제 베타로 사용 가능한 데스크탑 앱으로 브라우저로 이동할 필요 없이 간단히 ${ MAIL_APP_NAME } 바로 가기로 실행하고, 항상 집중할 수 있어요."
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
@@ -7870,17 +7878,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13315,9 +13312,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Mac 및 Windows용 ${ MAIL_APP_NAME } 얻기"
-      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -13668,9 +13662,6 @@
       ],
       "Delete version history?": [
         "버전 기록을 삭제하시겠어요?"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
       ],
       "Disable ${ email }": [
         "${ email } 비활성화"
