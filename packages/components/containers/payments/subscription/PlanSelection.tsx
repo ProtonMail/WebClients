@@ -119,6 +119,8 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
     const plansThatMustUseAddonPricing = {
         [PLANS.VPN_PRO]: ADDON_NAMES.MEMBER_VPN_PRO,
         [PLANS.VPN_BUSINESS]: ADDON_NAMES.MEMBER_VPN_BUSINESS,
+        [PLANS.PASS_PRO]: ADDON_NAMES.MEMBER_PASS_PRO,
+        [PLANS.PASS_BUSINESS]: ADDON_NAMES.MEMBER_PASS_BUSINESS,
     };
     type PlanWithAddon = keyof typeof plansThatMustUseAddonPricing;
 
