@@ -38,7 +38,7 @@ const AccountSecurity = () => {
                             onClick={() => {
                                 void sendSecurityCenterReport(api, {
                                     event: TelemetrySecurityCenterEvents.account_security_card,
-                                    dimensions: { action: 'clicked', card: 'account_recovery' },
+                                    dimensions: { card_action: 'clicked', card: 'account_recovery' },
                                 });
                             }}
                         />
@@ -53,7 +53,7 @@ const AccountSecurity = () => {
                             onClick={() => {
                                 void sendSecurityCenterReport(api, {
                                     event: TelemetrySecurityCenterEvents.account_security_card,
-                                    dimensions: { action: 'clicked', card: 'data_recovery' },
+                                    dimensions: { card_action: 'clicked', card: 'data_recovery' },
                                 });
                             }}
                         />
@@ -69,14 +69,14 @@ const AccountSecurity = () => {
                             onClick={() => {
                                 void sendSecurityCenterReport(api, {
                                     event: TelemetrySecurityCenterEvents.account_security_card,
-                                    dimensions: { action: 'clicked', card: 'two_factor_authentication' },
+                                    dimensions: { card_action: 'clicked', card: 'two_factor_authentication' },
                                 });
                             }}
                             onDismiss={() => {
                                 void dismissed2FACardFeature.update(true);
                                 void sendSecurityCenterReport(api, {
                                     event: TelemetrySecurityCenterEvents.account_security_card,
-                                    dimensions: { action: 'dismissed', card: 'two_factor_authentication' },
+                                    dimensions: { card_action: 'dismissed', card: 'two_factor_authentication' },
                                 });
                             }}
                         />
