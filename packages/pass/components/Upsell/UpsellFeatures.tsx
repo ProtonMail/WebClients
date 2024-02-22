@@ -59,8 +59,9 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
             className="w-full m-auto rounded-lg"
             style={{ backgroundColor: 'var(--field-norm)', padding: '0 1rem' }}
         >
+            {/* We do not show aliases, and protected only for free-trial */}
             {features
-                .filter(({ key }) => key !== 'web' || upsellType !== 'free-trial')
+                .filter(({ key }) => !((key === 'aliases' || key === 'protected') && upsellType === 'free-trial'))
                 .map(({ className, icon, label, key }, idx) => (
                     <div
                         className={clsx(
