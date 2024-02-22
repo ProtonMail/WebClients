@@ -16,9 +16,9 @@ type StoreUpdateProperties = {
 };
 
 type RemoteManifestResponse = {
-    releases: {
-        version: string;
-        rollout: number;
+    Releases: {
+        Version: string;
+        RolloutPercentage: number;
     }[];
 };
 
@@ -81,7 +81,7 @@ const validateInput = (opts: UpdateOptions) => {
 
 const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
     // don't attempt to update if rollout % not satisfied
-    const remoteManifestUrl = `https://proton.me/download/PassDesktop/version.json`;
+    const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${process.arch}/version.json`;
     const remoteManifest = await opts.session
         .fetch(remoteManifestUrl)
         .then((r) => r.json())
@@ -89,7 +89,7 @@ const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
         .catch(noop);
 
     const localDistributionPct = store.get('update.distribution') || 0;
-    const remoteDistributionPct = remoteManifest?.releases?.at(0)?.rollout || 0;
+    const remoteDistributionPct = remoteManifest?.Releases?.at(0)?.RolloutPercentage || 0;
     if (remoteDistributionPct < localDistributionPct) {
         logger.log(
             `[Update] Rollout distribution short-circuit triggered, r=${remoteDistributionPct}, l=${localDistributionPct}`
