@@ -9,10 +9,9 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {
     getPlan,
+    hasCancellablePlan,
     hasMigrationDiscount,
     hasNewVisionary,
-    hasVPN,
-    hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
@@ -79,8 +78,14 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plansMap = toMap(plans, 'Name');
 
-    const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<undefined, CancelSubscriptionResult>();
-    const [feedbackDowngradeModal, showFeedbackDowngradeModal] = useModalTwoPromise<undefined, FeedbackDowngradeResult>();
+    const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
+        undefined,
+        CancelSubscriptionResult
+    >();
+    const [feedbackDowngradeModal, showFeedbackDowngradeModal] = useModalTwoPromise<
+        undefined,
+        FeedbackDowngradeResult
+    >();
     const [discountWarningModal, showDiscountWarningModal] = useModalTwoPromise();
     const [newVisionaryWarningModal, showNewVisionaryWarningModal] = useModalTwoPromise();
     const [inAppPurchaseModal, showInAppPurchaseModal] = useModalTwoPromise();
@@ -295,7 +300,8 @@ export const useCancelSubscriptionFlow = ({ app }: { app: ProductParam }) => {
                 createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
                 return SUBSCRIPTION_KEPT;
             }
-            if (hasVPN(subscription) || hasVPNPassBundle(subscription)) {
+
+            if (hasCancellablePlan(subscription)) {
                 if (subscription.Renew === Renew.Disabled) {
                     return SUBSCRIPTION_KEPT;
                 }
