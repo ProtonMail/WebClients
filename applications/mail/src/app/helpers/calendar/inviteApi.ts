@@ -398,6 +398,7 @@ interface UpdateEventArgs {
     attendee?: Participant;
     deleteIds?: string[];
     overwrite: boolean;
+    pmData?: PmInviteData;
 }
 const updateEventApi = async ({
     calendarEvent,
@@ -412,6 +413,7 @@ const updateEventApi = async ({
     attendee,
     overwrite,
     deleteIds = [],
+    pmData,
 }: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
@@ -442,6 +444,7 @@ const updateEventApi = async ({
         calendarEvent: createSingleEdit ? undefined : calendarEvent,
         newAddressKeys: addressKeys,
         newCalendarKeys: calendarKeys,
+        decryptedSharedKeyPacket: pmData?.sharedSessionKey,
     });
     const data = await createCalendarEvent({
         eventComponent: veventWithPmAttendees,
@@ -679,6 +682,19 @@ export const updateEventInvitation = async ({
                     calendarSettings: calendarData.calendarSettings,
                     oldPartstat: partstatApi,
                 });
+                // save attendee answer
+                const vcalAttendeeToSave = {
+                    ...attendeeApi.vcalComponent,
+                    parameters: {
+                        ...attendeeApi.vcalComponent.parameters,
+                        partstat: partstatApi,
+                    },
+                };
+
+                if (pmData) {
+                    // we just need to send the new attendee to the API
+                    updatedVevent.attendee = [vcalAttendeeToSave];
+                }
                 const updatedPmVevent = await withPmAttendees(withDtstamp(updatedVevent), getCanonicalEmailsMap, true);
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
@@ -690,6 +706,7 @@ export const updateEventInvitation = async ({
                     api,
                     getCanonicalEmailsMap,
                     overwrite,
+                    pmData,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedPmVevent, calendarEvent: updatedCalendarEvent },
