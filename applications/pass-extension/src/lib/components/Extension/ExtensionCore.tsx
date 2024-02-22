@@ -6,7 +6,7 @@ import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
-import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
+import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -24,7 +24,7 @@ const getExtensionCoreProps = (
     endpoint: ClientEndpoint,
     config: PassConfig,
     i18n: I18nService
-): Omit<PassCoreContextValue, 'locale'> => {
+): PassCoreProviderProps => {
     const messageFactory = resolveMessageFactory(endpoint);
 
     return {
