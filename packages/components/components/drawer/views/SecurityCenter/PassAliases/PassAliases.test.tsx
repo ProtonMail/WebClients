@@ -43,11 +43,12 @@ jest.mock('@proton/pass/lib/bridge/PassBridgeProvider', () => ({
                 getAliasOptions: jest.fn(),
                 getAllByShareId: async () => [],
             },
-            hydrate: async () => undefined,
-            ready: async () => true,
+            init: async () => true,
         };
     },
 }));
+jest.mock('@proton/components/hooks/useAddresses', () => jest.fn().mockImplementation(() => [[], false]));
+jest.mock('@proton/components/hooks/useAuthentication', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/hooks/useUser', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/hooks/useSubscription', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/components/link/SettingsLink', () => 'string');

@@ -5,8 +5,8 @@ const SecurityCenterDrawerLogo = () => {
         <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none">
             <defs>
                 <linearGradient y2="1.01026" x2="0.33901" y1="0.01025" x1="0.33901" id="paint0_linear_32795_102417">
-                    <stop stop-color="#C4B6FE" />
-                    <stop stop-color="#8669FE" offset="1" />
+                    <stop stopColor="#C4B6FE" />
+                    <stop stopColor="#8669FE" offset="1" />
                 </linearGradient>
             </defs>
             <g>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Loader, useModalStateObject } from '@proton/components/components';
-import { ErrorBoundary, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
+import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
@@ -100,12 +100,11 @@ const PassAliases = () => {
 
                         // Wait for notification to be closed
                         if (!hasUsedProtonPassApp && !hasAliases) {
-                            setTimeout(() => {
-                                tryProtonPassModal.openModal(true);
-                            }, NOTIFICATION_DEFAULT_EXPIRATION_TIME);
+                            tryProtonPassModal.openModal(true);
                         }
                     }}
                     modalProps={createAliasModal.modalProps}
+                    passAliasesURL={passAliasesURL}
                 />
             )}
             {tryProtonPassModal.render && <TryProtonPass modalProps={tryProtonPassModal.modalProps} />}
