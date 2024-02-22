@@ -2140,7 +2140,7 @@
         "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, musíte obnovit oprávnění správce."
+        "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, budete muset obnovit svá oprávnění správce."
       ],
       "Try again later": [
         "Zkuste to znovu později"
@@ -4136,7 +4136,7 @@
         "Kredit"
       ],
       "Currency conversion": [
-        "Převod měn"
+        "Převod měny"
       ],
       "Donation": [
         "Finanční příspěvky"
@@ -5837,7 +5837,7 @@
         "Přejděte do svého trezoru a spravujte svá hesla, aliasy a další."
       ],
       "Set up your organization": [
-        "Nastavení organizace"
+        "Nastavte svou organizaci"
       ],
       "Start adding users to give them access to ${ PASS_APP_NAME }.": [
         "Začněte přidávat uživatele, abyste jim umožnili přístup k ${ PASS_APP_NAME }."
@@ -5943,16 +5943,16 @@
         "Klíč organizace byl aktivován"
       ],
       "Organization key restored": [
-        "Klíč organizace byl obnoveny"
+        "Klíč organizace byl resetován"
       ],
       "Organization key updated": [
-        "Klíč rganizace byl aktualizován."
+        "Klíč organizace byl aktualizován"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Přístup odepřen, oprávnění správce byla omezena."
       ],
       "Reset organization key": [
-        "Obnovit klíč organizace"
+        "Resetovat klíč organizace"
       ],
       "The organization key must be activated first.": [
         "Nejprve musí být aktivován klíč organizace."
@@ -5985,16 +5985,16 @@
         "Neplatné číslo karty"
       ],
       "Invalid expiration date": [
-        "Neplatné datum expirace"
+        "Neplatné datum vypršení platnosti"
       ],
       "Invalid securiry code": [
         "Neplatný bezpečnostní kód"
       ],
       "Something went wrong. Please try again later.": [
-        "Něco se pokazilo. Zkus to prosím později."
+        "Něco se pokazilo. Zkuste to prosím později."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Váš způsob platby se nám nedaří ověřit. Zvolte prosím jiný způsob platby nebo to zkuste znovu."
+        "Vaši platební metodu se nám nedaří ověřit. Zvolte prosím jinou platební metodu nebo to zkuste znovu."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
@@ -6800,7 +6800,7 @@
         "Úložný prostor pro data generovaná pomocí ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "Až ${ totalStorageSize } úložiného prostoru Drive"
+        "Až ${ totalStorageSize } úložného prostoru Drive"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "Až ${ totalStorageSize } úložného prostoru Mail"
@@ -6808,10 +6808,10 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } úložiště"
+        "úložiště ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% zaplněno"
+        "${ storage } je zaplněno z ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Snížením úrovně přijdete o následující výhody. Jste si jisti, že chcete pokračovat?"

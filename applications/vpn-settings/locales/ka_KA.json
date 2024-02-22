@@ -359,6 +359,9 @@
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
       ],
+      "Remove single sign-on": [
+        "SSO-ის წაშლა"
+      ],
       "Rename": [
         "სახელის გადარქმევა"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "შესვლა"
+      ],
+      "Stop using single sign-on": [
+        "SSO-ის გამოყენების შეწყვეტა"
       ],
       "Submit": [
         "დამტკიცება"
@@ -2768,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } და თქვენ მოგიწევთ, ისინი ხელით დაამატოთ ორგანიაციაში"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } თუ გააგრძელებთ, თქვენს დაშიფრულ მონაცემებთან წვდომას სრულად დაკარგავთ."
       ],
@@ -3330,6 +3339,9 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "არა-SSO მომხმარებლებს (შექმნილი ხელით, არა მოწოდებული იდენტიფიკატორის მომწოდებლის მიერ) ორგანიზაციაში შესვლა ჯერ კიდევ შეუძლიათ"
+      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
@@ -3341,6 +3353,9 @@
       ],
       "old password": [
         "ძველი პაროლი"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "როცა თქვენი ორგანიზაციისთვის SSO გაითიშება:"
       ],
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
@@ -3527,11 +3542,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
+      "Single sign-on removed": [
+        "SSO წაიშალა"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "ზოგიერთი თქვენი გამოყოფილი სერვერი, შეიძლება, მხოლოდ, შესაბამის ქვეყნებში იყოს ხელმისაწვდომი უახლესი წაშლების გამო"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO მომხმარებლები (მოწოდებული თქვენი იდენტიფიკატორის მომწოდებლის მიერ) წაიშლება"
       ],
       "Step ${ step }": [
         "ნაბიჯი ${ step }",
@@ -3578,6 +3599,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "მადლობა, რომ მხარი დაგვიჭირეთ ჩვენს მისიაში, ავაგოთ უკეთესი ინტერნეტ, სადაც კონფიდენციალობა და თავისუფლება რიგში პირველია."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
       "The following address is invalid.": [
         "შემდეგი მისამართი არასწორია.",
@@ -3650,6 +3674,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "თქვენი ანგარიში და მონაცემები სამუდამოდ წაიშლება. ანგარიშის რეაქტივაციას ვეღარ შეძლებთ."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "ეს წაშლის SSO-ს დომენისთვის ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "ეს თქვენს დროებით პაროლს ჩაანაცვლებს. შეგიძლიათ გამოიყენოთ მომავალში ${ BRAND_NAME }-ზე წვდომისთვის."
@@ -7540,6 +7567,12 @@
       "Remove domain": [
         "დომენის წაშლა"
       ],
+      "Remove single sign-on": [
+        "SSO-ის წაშლა"
+      ],
+      "Remove single sign-on for your organization?": [
+        "წავშალო SSO თქვენი ორგანიზაციისთვის?"
+      ],
       "Remove user?": [
         "წავშალო მომხმარებელი?"
       ],
@@ -7611,6 +7644,9 @@
       ],
       "Signed in to member account": [
         "შეხვედით სხვის ანგარიშში"
+      ],
+      "Single sign-on": [
+        "SSO"
       ],
       "Status": [
         "სტატუსი"

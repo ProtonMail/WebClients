@@ -5106,6 +5106,11 @@
         "Mungil"
       ]
     },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikasi desktop ${ MAIL_APP_NAME }"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 surel per bulan)"
@@ -5699,6 +5704,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info": {
@@ -6772,9 +6788,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Fitur ini belum tersedia pada aplikasi mobile Android kami."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Kini tersedia dalam versi beta, aplikasi desktop kami memungkinkan Anda untuk meluncurkan ${ MAIL_APP_NAME } secara langsung dari desktop Anda dan membuat Anda tetap terfokus tanpa gangguan dari browser."
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
@@ -7867,17 +7880,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9595,7 +9597,7 @@
         "Buat sebuah Akun ${ BRAND_NAME } untuk menggunakan layanan ${ BRAND_NAME } terenkripsi seperti ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan lainnya, dengan satu login. Dapatkan sebuah Akun ${ BRAND_NAME } Gratis"
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
-        "Buat sebuah Akun ${ BRAND_NAME } | Ambil kembali privasi Anda"
+        "Buat Akun ${ BRAND_NAME } | Raih kembali privasi Anda"
       ],
       "Create a new ${ appName } account": [
         "Buat akun ${ appName } baru"
@@ -10631,7 +10633,7 @@
         "Dapatkan alamat surel yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Kami tidak menyimpan log sesi yang merekam aktivitas daring Anda, dan kami juga tidak merekam informasi metadata yang dapat membahayakan privasi Anda"
+        "Kami tidak menyimpan log sesi yang merekam aktivitas online Anda, dan kami juga tidak mencatat metadata mana pun yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH, yang ditujukan untuk melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Seluruh pelanggan ${ BRAND_NAME } for Business akan dapat menerima Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani."
@@ -13285,9 +13287,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Dapatkan ${ MAIL_APP_NAME } untuk Mac atau Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13641,9 +13640,6 @@
       ],
       "Delete version history?": [
         "Hapus riwayat versi?"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
       ],
       "Disable ${ email }": [
         "Nonaktifkan ${ email }"

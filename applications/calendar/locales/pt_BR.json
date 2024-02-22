@@ -606,6 +606,9 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
+      "Upgrade Now": [
+        "Fazer upgrade agora"
+      ],
       "Upgrade now": [
         "Atualizar agora"
       ],
@@ -648,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 2 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em 5 dias. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -744,6 +756,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ao sair agora, você perderá o seu evento."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Baixe o aplicativo para computador do ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2442,6 +2459,9 @@
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
+      ],
+      "An error occurred while saving your alias": [
+        "Ocorreu um erro ao salvar os seus alias"
       ],
       "Answer failed to be sent": [
         "Não foi possível enviar a resposta."
@@ -5847,6 +5867,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Aliases são fornecidos por ${ passLink }"
       ]
     },
     "Security Center - Action": {
@@ -6325,8 +6348,14 @@
       "Color-coding is here!": [
         "O código de cores está aqui!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Inicie ${ MAIL_APP_NAME } com facilidade diretamente do seu computador"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Encontre facilmente o evento que você procura com nosso novo recurso de pesquisa."
+      ],
+      "Get the desktop app": [
+        "Obter o aplicativo para computador"
       ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
@@ -6849,6 +6878,9 @@
       ],
       "Get advanced protection": [
         "Obter proteção avançada"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Obtenha os aplicativos do ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Grupos"

@@ -4268,7 +4268,7 @@
     },
     "filter: Label": {
       "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
+        "s'ha enviat el correu electrònic ${ label }"
       ],
       "with attachments": [
         "amb fitxers adjunts"
@@ -4279,7 +4279,7 @@
     },
     "filter: Label, jt": {
       "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
+        "s'ha enviat el correu electrònic ${ label }"
       ]
     },
     "Font Face Default": {
@@ -5301,7 +5301,7 @@
         "Data de caducitat"
       ],
       "Expires in ${ formattedDate }": [
-        "Caducitat: ${ formattedDate }"
+        "Caduca en ${ formattedDate }"
       ],
       "Expires in ${ minutesDiff } minute": [
         "Caduca en ${ minutesDiff } minut.",
@@ -8684,10 +8684,10 @@
         "emmagatzematge de ${ app }"
       ],
       "upgrade for more storage": [
-        "millorar per obtenir més emmagatzematge"
+        "milloreu per a obtenir més emmagatzematge"
       ],
       "Your ${ appStorage } is full": [
-        "El seu ${ appStorage } és ple."
+        "El vostre ${ appStorage } és ple."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."

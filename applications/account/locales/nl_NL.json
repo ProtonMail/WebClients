@@ -5698,6 +5698,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -6753,9 +6764,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Nog niet beschikbaar op onze Android mobiele app."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Nu beschikbaar in bèta, met het desktop programma kunt u makkelijk ${ MAIL_APP_NAME } starten direct vanaf uw bureaublad en blijf u gefocust zonder door uw browser afgeleid te worden."
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -7850,17 +7858,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13495,9 +13492,6 @@
       ],
       "Delete version history?": [
         "Versiegeschiedenis verwijderen?"
-      ],
-      "Desktop app": [
-        "Bureaublad app"
       ],
       "Disable ${ email }": [
         "Schakel ${ email } uit"
