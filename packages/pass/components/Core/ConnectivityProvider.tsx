@@ -33,9 +33,11 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
     const checkApiOnline = useCallback(async () => {
         try {
             await onPing?.();
+        } catch {
+        } finally {
             const state = await getApiState?.();
             setApiOnline(!state?.offline);
-        } catch {}
+        }
     }, []);
 
     useEffect(

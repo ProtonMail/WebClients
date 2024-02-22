@@ -26,9 +26,11 @@ import { wait } from '@proton/shared/lib/helpers/promise';
  * If `true` they will be by-passed - else you can pass a custom error
  * generator function that will be triggered */
 type HydrateCacheOptions = {
-    merge: (existing: State, incoming: State) => State;
+    allowFailure: boolean;
     loginPassword?: string;
-} & ({ allowFailure: true } | { allowFailure: false; onError?: () => Generator });
+    merge: (existing: State, incoming: State) => State;
+    onError?: () => Generator;
+};
 
 function* resolveUserState(cache: Maybe<PassCache>) {
     if (cache?.state.user) return cache.state.user;
@@ -86,7 +88,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
 
         return cache?.state !== undefined && cache?.snapshot !== undefined;
     } catch {
-        yield !config.allowFailure && config.onError?.();
+        yield config.onError?.();
         return false;
     }
 }
@@ -107,7 +109,7 @@ function* hydrateWorker(options: RootSagaOptions) {
             allowFailure: false,
             merge: (_, incoming) => incoming,
             onError: function* onError() {
-                /** If hydrating from cache failed during a state sync : encryption
+                /** FIXME: If hydrating from cache failed during a state sync : encryption
                  * scheme may have changed, as such trigger a cache request immediately */
                 yield put(cacheRequest({ throttle: false }));
             },
@@ -117,7 +119,6 @@ function* hydrateWorker(options: RootSagaOptions) {
 
     /* locale may have been updated */
     options.onLocaleUpdated?.(yield select(selectLocale));
-
     yield put(startEventPolling());
 }
 

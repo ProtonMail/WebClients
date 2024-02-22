@@ -11,6 +11,7 @@ import cache from '@proton/pass/store/sagas/client/cache.saga';
 import hydrate from '@proton/pass/store/sagas/client/hydrate.saga';
 import notification from '@proton/pass/store/sagas/client/notification.saga';
 import offlineDisable from '@proton/pass/store/sagas/client/offline-disable.saga';
+import offlineResume from '@proton/pass/store/sagas/client/offline-resume.saga';
 import offlineSetup from '@proton/pass/store/sagas/client/offline-setup.saga';
 import reportProblem from '@proton/pass/store/sagas/client/report-problem.saga';
 import settings from '@proton/pass/store/sagas/client/settings.saga';
@@ -85,6 +86,7 @@ export function* rootSaga(options: RootSagaOptions) {
             newUserInviteRemove,
             notification,
             offlineDisable,
+            offlineResume,
             offlineSetup,
             reportProblem,
             sessionLockDisable,

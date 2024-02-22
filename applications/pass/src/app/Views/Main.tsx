@@ -1,7 +1,7 @@
 import { type FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
 import { EarlyAccess } from 'proton-pass-web/app/Upsell/EarlyAccess';
 import { c } from 'ttag';
@@ -25,6 +25,7 @@ import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightPr
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { offlineResume } from '@proton/pass/store/actions';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { Header } from './Header/Header';
@@ -34,8 +35,8 @@ import { Settings } from './Settings/Settings';
 import { Menu } from './Sidebar/Menu';
 
 const MainSwitch: FC = () => {
+    const dispatch = useDispatch();
     const client = useClient();
-    const auth = useAuthService();
     const offlineUnlocked = clientOfflineUnlocked(client.state.status);
     const { state: expanded, toggle } = useToggle();
 
@@ -45,16 +46,15 @@ const MainSwitch: FC = () => {
         text: offlineUnlocked ? (
             <div className="flex items-center gap-2">
                 <span>{c('Info').t`Offline mode`}</span>
-                {ENV === 'development' && (
-                    <Button
-                        className="text-sm"
-                        onClick={() => auth.resumeSession(authStore.getLocalID(), { retryable: false })}
-                        shape="underline"
-                        size="small"
-                    >
-                        ({c('Info').t`Reconnect`})
-                    </Button>
-                )}
+
+                <Button
+                    className="text-sm"
+                    onClick={() => dispatch(offlineResume(authStore.getLocalID()))}
+                    shape="underline"
+                    size="small"
+                >
+                    ({c('Info').t`Reconnect`})
+                </Button>
             </div>
         ) : undefined,
     }));
