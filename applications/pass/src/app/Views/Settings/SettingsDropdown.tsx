@@ -1,7 +1,9 @@
 import { type FC, useCallback, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { type IconName } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -11,10 +13,11 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
-type SettingAction = { key: string; label: string; icon: IconName };
+type SettingAction = { key: string; label: string; icon: IconName; signaled?: boolean };
 
 export const SettingsDropdown: FC = () => {
     const { navigate } = useNavigation();
@@ -22,16 +25,18 @@ export const SettingsDropdown: FC = () => {
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const offlineEnabled = useSelector(selectOfflineEnabled);
+    const offlineSignaled = OFFLINE_SUPPORTED && !offlineEnabled;
 
     const settings = useMemo<SettingAction[]>(
         () => [
             { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
-            { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
+            { key: 'security', label: c('Label').t`Security`, icon: 'locks', signaled: offlineSignaled },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-up-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-down-line' },
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
         ],
-        []
+        [offlineSignaled]
     );
 
     const onLogout = useCallback(async () => {
@@ -41,15 +46,27 @@ export const SettingsDropdown: FC = () => {
     }, []);
 
     return (
-        <QuickActionsDropdown icon="cog-wheel" size="small" shape="ghost" className="shrink-0 ml-1">
+        <QuickActionsDropdown
+            icon="cog-wheel"
+            size="small"
+            shape="ghost"
+            className="shrink-0 ml-1"
+            signaled={offlineSignaled}
+        >
             {settings.map((setting) => (
                 <DropdownMenuButton
                     key={setting.key}
                     onClick={() => navigate(getLocalPath('settings'), { hash: setting.key })}
-                    label={setting.label}
+                    label={
+                        <div className="flex items-center gap-3">
+                            <span className="flex-1">{setting.label}</span>
+                            {setting.signaled && <NotificationDot className="w-2 h-2" />}
+                        </div>
+                    }
                     ellipsis={false}
                     icon={setting.icon}
-                />
+                    className="relative"
+                ></DropdownMenuButton>
             ))}
             <DropdownMenuButton icon="arrow-out-square" label={c('Label').t`Account`} onClick={navigateToAccount} />
             <DropdownMenuButton icon="arrow-out-from-rectangle" label={c('Action').t`Sign out`} onClick={onLogout} />
