@@ -55,17 +55,17 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     const [freeUserChecklist, loadingFreeChecklist] = useChecklist('get-started') as [
         GetStartedChecklistApiResponse,
-        boolean
+        boolean,
     ];
     const [paidUserChecklist, loadingPaidChecklist] = useChecklist('paying-user') as [
         GetStartedChecklistApiResponse,
-        boolean
+        boolean,
     ];
 
     const isLoading = loadingFreeChecklist || loadingPaidChecklist;
     const isUserPaid = paidUserChecklist.Code === 1000;
     const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
-    const isChecklistFinished = completedChecklist.every((item) => items.includes(item));
+    const isChecklistFinished = completedChecklist?.every((item) => items?.includes(item));
 
     useEffect(() => {
         if (submitting) {
@@ -73,10 +73,10 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         }
 
         if (isUserPaid) {
-            setDoneItems(paidUserChecklist.Items);
+            setDoneItems(paidUserChecklist.Items ?? []);
             setDisplayState(paidUserChecklist.Display);
         } else {
-            setDoneItems(freeUserChecklist.Items);
+            setDoneItems(freeUserChecklist.Items ?? []);
             setDisplayState(freeUserChecklist.Display);
         }
     }, [freeUserChecklist, paidUserChecklist, submitting]);
