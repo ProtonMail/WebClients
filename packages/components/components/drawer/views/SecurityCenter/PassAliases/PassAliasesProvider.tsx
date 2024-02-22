@@ -137,7 +137,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         if (!passAliasVault) {
             throw new Error('Vault should be defined');
         }
-        const options = await PassBridge.alias.getAliasOptions(passAliasVault.shareId, { maxAge: UNIX_MINUTE * 10 });
+        const options = await PassBridge.alias.getAliasOptions(passAliasVault.shareId);
         return options;
     };
 
