@@ -14,7 +14,7 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { GmailSyncModal, useFlag } from '@proton/components/containers';
-import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
+import { useActiveBreakpoint, useLocalState, useUser, useUserSettings } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -45,6 +45,7 @@ const UsersOnboardingChecklist = ({
     const mailSettings = useMailModel('MailSettings');
     const { viewportWidth } = useActiveBreakpoint();
     const [user] = useUser();
+    const [settings] = useUserSettings();
 
     // TODO remove once the extended checklist storage split is finished
     const TO_DELETE_FIX_FOR_CHECKLIST = useFlag('SplitStorageChecklistReopenedNova');
@@ -89,7 +90,10 @@ const UsersOnboardingChecklist = ({
         changeChecklistDisplay(newState);
     };
 
-    if (isAfter(new Date(), expiresAt) && !TO_DELETE_FIX_FOR_CHECKLIST) {
+    if (
+        (isAfter(new Date(), expiresAt) && !TO_DELETE_FIX_FOR_CHECKLIST) ||
+        (user.hasPaidMail && !settings.Checklists?.includes('paying-user'))
+    ) {
         return null;
     }
 
