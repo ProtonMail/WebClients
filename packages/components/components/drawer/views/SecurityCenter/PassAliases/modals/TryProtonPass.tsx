@@ -23,7 +23,7 @@ const TryProtonPass = ({ modalProps }: Props) => {
     const onDismiss = () => {
         void sendSecurityCenterReport(api, {
             event: TelemetrySecurityCenterEvents.proton_pass_discover_banner,
-            dimensions: { action: 'dismiss' },
+            dimensions: { clicked_discover_pass: 'no' },
         });
         modalProps.onClose?.();
     };
@@ -31,7 +31,7 @@ const TryProtonPass = ({ modalProps }: Props) => {
     const onVisit = () => {
         void sendSecurityCenterReport(api, {
             event: TelemetrySecurityCenterEvents.proton_pass_discover_banner,
-            dimensions: { action: 'visit' },
+            dimensions: { clicked_discover_pass: 'yes' },
         });
         modalProps.onClose?.();
     };
