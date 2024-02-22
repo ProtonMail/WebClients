@@ -1,10 +1,9 @@
 import { type FC, type MouseEvent, useCallback, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { useNotifications } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -18,15 +17,15 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { getAliasDetailsIntent } from '@proton/pass/store/actions';
+import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
-    const { createNotification } = useNotifications();
     const { navigate } = useNavigation();
+    const dispatch = useDispatch();
 
     const { revision, vault } = itemViewProps;
     const { data: item, itemId, createTime, modifyTime, revision: revisionNumber, optimistic } = revision;
@@ -43,10 +42,13 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         action: getAliasDetailsIntent,
         initialRequestId: aliasDetailsRequest(aliasEmail),
         onFailure: () => {
-            createNotification({
-                type: 'warning',
-                text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
-            });
+            dispatch(
+                notification({
+                    type: 'warning',
+                    text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
+                    offline: false,
+                })
+            );
         },
     });
 
