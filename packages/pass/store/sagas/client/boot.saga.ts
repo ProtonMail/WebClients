@@ -36,6 +36,9 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
                 /* merge the existing cache to preserve any state that may have been
                  * mutated before the boot sequence (session lock data) */
                 merge: (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true }),
+                onError: function* () {
+                    if (loginPassword) throw new Error(c('Error').t`Wrong password`);
+                },
             },
             options
         );
