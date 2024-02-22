@@ -122,6 +122,7 @@ const transformToExternal = (
             FullDay: +isAllDay,
             CalendarID: 'calendarID',
             ID: 'eventID',
+            Color: null,
         },
         publicKeysMap: {
             me: [publicAddressKey],

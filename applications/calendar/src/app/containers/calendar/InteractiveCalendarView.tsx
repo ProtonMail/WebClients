@@ -366,10 +366,7 @@ const InteractiveCalendarView = ({
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
-        return Promise.all([
-            getCalendarEventRaw(eventData),
-            pick(eventData, ['Permissions', 'IsProtonProtonInvite', 'Color']),
-        ]);
+        return Promise.all([getCalendarEventRaw(eventData), pick(eventData, ['Permissions', 'IsProtonProtonInvite'])]);
     };
 
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
@@ -594,6 +591,9 @@ const InteractiveCalendarView = ({
                 veventComponent.organizer = buildVcalOrganizer(Address.Email, Address.DisplayName);
             }
         }
+        if (shouldDropColor) {
+            veventComponent.color = undefined;
+        }
         const eventResult = getExistingEvent({
             veventComponent,
             hasDefaultNotifications,
@@ -602,7 +602,6 @@ const InteractiveCalendarView = ({
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
             selfAddressData,
             calendarSettings: CalendarSettings,
-            color: eventData.Color && !shouldDropColor ? eventData.Color : undefined,
         });
         if (partstat) {
             // The user attends the event and is changing the partstat
