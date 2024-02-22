@@ -1,10 +1,10 @@
-import { type FC, useCallback } from 'react';
+import { type FC, useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, Icon } from '@proton/components/index';
+import { Alert, ButtonGroup, Icon } from '@proton/components/index';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCardContent';
@@ -16,6 +16,7 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { itemEditIntent } from '@proton/pass/store/actions';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
+import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 type Props = {
     previousRevision: ItemRevision;
@@ -32,8 +33,10 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
 
 export const ItemHistoryRestore: FC<Props> = ({ previousRevision, currentRevision, onClose }) => {
     const { selectItem } = useNavigation();
-
     const dispatch = useDispatch();
+    const [selectedRevision, setSelectedRevision] = useState<ItemRevision>(previousRevision);
+
+    const isPreviousRevisionSelected = previousRevision.revision === selectedRevision.revision;
 
     const handleRestoreClick = useConfirm(
         useCallback(() => {
@@ -71,24 +74,50 @@ export const ItemHistoryRestore: FC<Props> = ({ previousRevision, currentRevisio
                     >
                         <Icon name="cross" alt={c('Action').t`Close`} />
                     </Button>
-                    <h2 className="text-2xl text-bold text-ellipsis mb-0-5">{previousRevision.data.metadata.name}</h2>
+                    <h2 className="text-2xl text-bold text-ellipsis mb-0-5">
+                        {isPreviousRevisionSelected
+                            ? previousRevision.data.metadata.name
+                            : currentRevision.data.metadata.name}
+                    </h2>
                 </div>
             }
-            actions={[
-                <Button
-                    key="restore-button"
-                    className="text-sm"
-                    pill
-                    shape="solid"
-                    color="weak"
-                    onClick={handleRestoreClick.prompt}
-                >
-                    <Icon name="clock-rotate-left" className="mr-1" />
-                    <span>{c('Action').t`Restore`}</span>
-                </Button>,
-            ]}
+            actions={
+                isPreviousRevisionSelected
+                    ? [
+                          <Button
+                              key="restore-button"
+                              className="text-sm"
+                              pill
+                              shape="solid"
+                              color="weak"
+                              onClick={handleRestoreClick.prompt}
+                          >
+                              <Icon name="clock-rotate-left" className="mr-1" />
+                              <span>{c('Action').t`Restore`}</span>
+                          </Button>,
+                      ]
+                    : undefined
+            }
+            bottom={
+                <ButtonGroup shape="solid" pill className="w-full">
+                    <Button
+                        onClick={() => setSelectedRevision(previousRevision)}
+                        selected={isPreviousRevisionSelected}
+                        color="norm"
+                        fullWidth
+                    >
+                        {getFormattedDateFromTimestamp(previousRevision.revisionTime)}
+                    </Button>
+                    <Button
+                        onClick={() => setSelectedRevision(currentRevision)}
+                        selected={!isPreviousRevisionSelected}
+                        color="norm"
+                        fullWidth
+                    >{c('Info').t`Current version`}</Button>
+                </ButtonGroup>
+            }
         >
-            <ItemTypeContentComponent revision={previousRevision} />
+            <ItemTypeContentComponent revision={selectedRevision} />
 
             <ConfirmationModal
                 open={handleRestoreClick.pending}
