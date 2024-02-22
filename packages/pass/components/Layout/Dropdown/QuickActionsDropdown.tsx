@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button';
 import { Button } from '@proton/atoms/Button';
+import { NotificationDot } from '@proton/atoms/NotificationDot';
 import {
     Dropdown,
     DropdownMenu,
@@ -13,6 +14,7 @@ import {
     type PopperPlacement,
     usePopperAnchor,
 } from '@proton/components/index';
+import clsx from '@proton/utils/clsx';
 
 export type QuickActionsDropdownProps = {
     className?: string;
@@ -25,6 +27,7 @@ export type QuickActionsDropdownProps = {
     originalPlacement?: PopperPlacement;
     pill?: boolean;
     shape?: ButtonLikeShape;
+    signaled?: boolean;
     size?: ButtonLikeSize;
     style?: CSSProperties;
 };
@@ -41,6 +44,7 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
     originalPlacement,
     pill = true,
     shape,
+    signaled = false,
     size = 'medium',
     style,
 }) => {
@@ -49,7 +53,7 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
     return (
         <>
             <Button
-                className={className}
+                className={clsx(className, signaled && 'relative')}
                 color={color}
                 disabled={disabled}
                 icon
@@ -62,6 +66,7 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
                 title={c('Action').t`More options`}
             >
                 <Icon name={icon} alt={c('Action').t`More options`} size={iconSize} />
+                {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
             </Button>
 
             <Dropdown
