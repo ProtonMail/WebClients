@@ -1,4 +1,4 @@
-import type { PassBridge, PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
+import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 
 export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
@@ -11,15 +11,4 @@ export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
     };
 
     return aliases.filter(filterNonTrashedItems).sort(sortDesc);
-};
-
-export const fetchPassBridgeInfos = async (PassBridge: PassBridge) => {
-    let userHadVault = false;
-
-    const defaultVault = await PassBridge.vault.getDefault((hadVault) => {
-        userHadVault = hadVault;
-    });
-
-    const aliases = await PassBridge.alias.getAllByShareId(defaultVault.shareId);
-    return { aliases, vault: defaultVault, userHadVault };
 };
