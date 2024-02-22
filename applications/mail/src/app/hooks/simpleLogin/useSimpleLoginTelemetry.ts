@@ -1,6 +1,6 @@
 import { useApi, useSubscription } from '@proton/components/hooks';
 import { TelemetryMeasurementGroups, TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
-import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPrimaryPlan } from '@proton/shared/lib/helpers/subscription';
@@ -10,7 +10,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 export const useSimpleLoginTelemetry = () => {
     const api = useApi();
     const [subscription] = useSubscription();
-    const primaryPlan = getPrimaryPlan(subscription, APPS.PROTONMAIL);
+    const primaryPlan = getPrimaryPlan(subscription);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
     // However, we need to bin the number of message we send to Telemetry

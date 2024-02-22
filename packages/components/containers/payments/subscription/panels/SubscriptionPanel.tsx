@@ -236,7 +236,7 @@ const SubscriptionPanel = ({
     addresses,
     openSubscriptionModal,
 }: Props) => {
-    const primaryPlan = getPrimaryPlan(subscription, app);
+    const primaryPlan = getPrimaryPlan(subscription);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
