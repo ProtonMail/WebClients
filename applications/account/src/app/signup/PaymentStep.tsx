@@ -35,11 +35,10 @@ import { PaymentProcessorHook } from '@proton/components/payments/react-extensio
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
+import { getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
@@ -79,7 +78,7 @@ const PaymentStep = ({
     const [loading, withLoading] = useLoading();
 
     const plansMap = toMap(plans, 'Name') as PlansMap;
-    const hasGuarantee = plan?.Name === PLANS.VPN;
+    const hasGuarantee = getIsConsumerVpnPlan(plan?.Name);
     const hasSomeVpnPlan = getIsVpnPlan(plan?.Name);
 
     const chargebeeContext = useChargebeeContext();
