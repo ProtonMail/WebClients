@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { getPlanTitle, hasVPN, hasVPNPassBundle } from '@proton/shared/lib/helpers/subscription';
+import { getHasConsumerVpnPlan, getPlanTitle } from '@proton/shared/lib/helpers/subscription';
 import { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, Prompt, Time } from '../../../../components';
@@ -29,7 +29,7 @@ export const CancelSubscriptionModal = ({
     };
 
     const planTitle = getPlanTitle(subscription) ?? '';
-    const isVpn = hasVPN(subscription) || hasVPNPassBundle(subscription);
+    const isVpn = getHasConsumerVpnPlan(subscription);
 
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const expiryDate = (

@@ -127,7 +127,7 @@ describe('cancel subscription', () => {
         });
     });
 
-    it.each([PLANS.VPN, PLANS.VPN2024, PLANS.PASS_PLUS])(
+    it.each([PLANS.VPN, PLANS.VPN2024, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE])(
         'should send the API request for subscription cancellation and return the result: %s',
         async (plan) => {
             const subscription = {
