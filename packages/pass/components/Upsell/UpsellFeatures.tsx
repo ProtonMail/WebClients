@@ -22,12 +22,6 @@ const PROTON_SENTINEL_LINK = (
 
 const getFeatures = (): UpsellFeature[] => [
     {
-        key: 'aliases',
-        className: 'ui-teal',
-        icon: 'alias',
-        label: c('Info').t`Unlimited hide-my-email aliases`,
-    },
-    {
         key: '2FA',
         className: 'ui-orange',
         icon: 'pass-circles',

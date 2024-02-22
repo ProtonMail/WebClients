@@ -23,7 +23,7 @@ export type Props = Omit<AdapativeModalProps, 'actions'> & {
 const getContent = (type: UpsellType): UpsellModalContent =>
     ({
         'free-trial': {
-            title: 'Your welcome gift',
+            title: c('Title').t`Your welcome gift`,
             description: undefined,
             upgradeLabel: c('Action').t`Upgrade now`,
         },
