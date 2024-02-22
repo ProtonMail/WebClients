@@ -208,7 +208,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                     type="text"
                                     readOnly
                                     unstyled
-                                    className="rounded-none"
+                                    inputClassName="rounded-none"
                                     onBlur={() => setBlurred({ ...blurred, alias: true })}
                                     onValue={(alias: string) => {
                                         setFormValues({ ...formValues, alias });
