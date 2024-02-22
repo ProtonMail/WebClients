@@ -30,9 +30,10 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
 
     const stale = clientStale(status);
     const locked = clientLocked(status);
-    const offline = clientOfflineLocked(status);
+    const errored = clientErrored(status);
+    const offlineLocked = clientOfflineLocked(status);
     const busy = clientBusy(status);
-    const canSignOut = clientErrored(status) || locked || offline;
+    const canSignOut = errored || locked || offlineLocked;
     const navigatorOnline = useOnline();
 
     useEffect(() => {
@@ -83,7 +84,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
                 <span className="pass-lobby--heading text-bold text-norm text-no-wrap flex flex-nowrap items-end justify-center user-select-none">
-                    {locked || offline
+                    {locked || offlineLocked
                         ? c('lobby: Title').jt`Unlock ${brandNameJSX}`
                         : c('lobby: Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
@@ -122,11 +123,9 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                                     color="norm"
                                     className="w-full"
                                     onClick={onLogin}
-                                    disabled={!navigatorOnline}
+                                    disabled={errored ? false : !navigatorOnline}
                                 >
-                                    {clientErrored(status)
-                                        ? c('Action').t`Sign back in`
-                                        : c('Action').t`Sign in with ${BRAND_NAME}`}
+                                    {errored ? c('Action').t`Sign back in` : c('Action').t`Sign in with ${BRAND_NAME}`}
                                 </Button>
                             );
                     }
