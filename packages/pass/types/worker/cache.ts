@@ -5,8 +5,9 @@ import type { PassCryptoSnapshot, SerializedCryptoContext } from '../crypto';
 export type PassCache = { state: State; snapshot: SerializedCryptoContext<PassCryptoSnapshot> };
 
 export type EncryptedPassCache = {
-    state: string;
-    snapshot: string;
+    encryptedCacheKey?: string;
     salt: string;
+    snapshot: string;
+    state: string;
     version?: string;
 };

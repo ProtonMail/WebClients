@@ -25,7 +25,7 @@ import {
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import { selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
-import { AppStatus, OnboardingMessage } from '@proton/pass/types';
+import { OnboardingMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
@@ -52,6 +52,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 endpoint: 'web',
 
                 getAppState: () => client.current.state,
+                setAppStatus: client.current.setStatus,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: () => getDBCache(authStore.getUserID()!),
@@ -64,8 +65,6 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     const state = store.getState();
 
                     if (res.ok) {
-                        client.current.setStatus(AppStatus.READY);
-
                         telemetry.start().catch(noop);
                         void core.i18n.setLocale(selectLocale(state));
 
@@ -81,10 +80,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         ) {
                             history.replace(getLocalPath('onboarding'));
                         }
-                    } else {
-                        client.current.setStatus(AppStatus.ERROR);
-                        if (res.clearCache) void deletePassDB(userID);
-                    }
+                    } else if (res.clearCache) void deletePassDB(userID);
                 },
 
                 onLocaleUpdated: core.i18n.setLocale,
@@ -92,8 +88,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 onSettingsUpdated: settings.sync,
 
                 setCache: async (encryptedCache) => {
+                    const userID = authStore.getUserID();
                     /** Cache only if the tab is visible to avoid extraneous IDB writes */
-                    if (isDocumentVisible()) return writeDBCache(authStore.getUserID()!, encryptedCache);
+                    if (userID && isDocumentVisible()) return writeDBCache(userID, encryptedCache);
                 },
             })
         );

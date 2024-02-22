@@ -7,7 +7,7 @@ import { TextField, type TextFieldProps } from './TextField';
 
 import './PasswordField.scss';
 
-type Props = { onPasswordGenerated: (password: string) => void } & TextFieldProps;
+type Props = { onPasswordGenerated?: (password: string) => void } & TextFieldProps;
 
 export const PasswordField: FC<Props> = (props) => {
     const { field, form, onPasswordGenerated, ...rest } = props;

@@ -39,7 +39,7 @@ export type Api = {
     getState: () => ApiState;
     idle: () => Promise<void>;
     reset: () => Promise<void>;
-    subscribe: (subscribe: Subscriber<ApiSubscribtionEvent>) => () => void;
+    subscribe: (subscribe: Subscriber<ApiSubscriptionEvent>) => () => void;
     unsubscribe: () => void;
 };
 
@@ -62,7 +62,8 @@ export type ApiResponseMapper<T extends any = void, U extends string = string, M
     (response: T extends void ? ApiResponse<`${U}`, `${M}`> : T) => any
 >;
 
-export type ApiSubscribtionEvent =
-    | { type: 'session'; status: 'inactive' | 'locked' }
+export type ApiSubscriptionEvent =
+    | { type: 'error'; error: string }
+    | { type: 'network'; online: boolean }
     | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
-    | { type: 'error'; error: string };
+    | { type: 'session'; status: 'inactive' | 'locked' };

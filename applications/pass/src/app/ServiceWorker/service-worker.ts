@@ -5,6 +5,7 @@ import noop from '@proton/utils/noop';
 
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
 import { handleImage, matchImageRoute } from './image';
+import { cacheCriticalOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchIndexRoute } from './offline';
 import { handlePolling, matchPollingRoute } from './polling';
 import {
     handleLock,
@@ -18,13 +19,17 @@ import {
 export default null;
 declare let self: ServiceWorkerGlobalScope;
 
-self.addEventListener('install', () => {
-    logger.info('[ServiceWorker] Skip waiting..');
-    return self.skipWaiting();
-});
+self.addEventListener('install', (event) =>
+    event.waitUntil(
+        cacheCriticalOfflineAssets().then(() => {
+            logger.debug(`[ServiceWorker] Skip waiting.. [offline=${OFFLINE_SUPPORTED}]`);
+            return self.skipWaiting();
+        })
+    )
+);
 
 self.addEventListener('activate', (event) => {
-    logger.info('[ServiceWorker] Activation in progress..');
+    logger.debug('[ServiceWorker] Activation in progress..');
     cleanCache().catch(noop);
     event.waitUntil(self.clients.claim());
 });
@@ -38,6 +43,8 @@ self.addEventListener('fetch', (event) => {
     if (matchRefreshRoute(pathname)) return handleRefresh(event);
     if (matchPollingRoute(pathname)) return handlePolling(event);
     if (matchImageRoute(pathname)) return handleImage(event);
+    if (matchAssetRoute(pathname)) return handleAsset(event);
+    if (matchIndexRoute(pathname)) return handleIndex(event);
 });
 
 self.addEventListener('message', (event) => {

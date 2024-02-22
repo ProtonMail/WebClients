@@ -1,12 +1,11 @@
-import { Route, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
+import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Context/AuthServiceProvider';
-import { ClientContext, ClientProvider } from 'proton-pass-web/app/Context/ClientProvider';
+import { ClientProvider } from 'proton-pass-web/app/Context/ClientProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
-import { Lobby } from 'proton-pass-web/app/Views/Lobby';
-import { Main } from 'proton-pass-web/app/Views/Main';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -67,6 +66,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     },
 
     generateOTP: ({ totpUri }) => generateTOTPCode(totpUri),
+
+    getApiState: api.getState,
 
     getDomainImage: async (domain, signal) => {
         const res = await (async () => {
@@ -148,28 +149,21 @@ export const App = () => {
                     <ModalsProvider>
                         <PassExtensionLink>
                             <ClientProvider>
-                                <ClientContext.Consumer>
-                                    {({ state: { loggedIn } }) => (
-                                        <Router history={history}>
-                                            <NavigationProvider>
-                                                <AuthServiceProvider>
-                                                    <StoreProvider>
-                                                        <Localized>
-                                                            <Route
-                                                                path="*"
-                                                                render={() => (loggedIn ? <Main /> : <Lobby />)}
-                                                            />
-                                                        </Localized>
-                                                        <Portal>
-                                                            <ModalsChildren />
-                                                            <NotificationsChildren />
-                                                        </Portal>
-                                                    </StoreProvider>
-                                                </AuthServiceProvider>
-                                            </NavigationProvider>
-                                        </Router>
-                                    )}
-                                </ClientContext.Consumer>
+                                <Router history={history}>
+                                    <NavigationProvider>
+                                        <AuthServiceProvider>
+                                            <StoreProvider>
+                                                <Localized>
+                                                    <AppGuard />
+                                                </Localized>
+                                                <Portal>
+                                                    <ModalsChildren />
+                                                    <NotificationsChildren />
+                                                </Portal>
+                                            </StoreProvider>
+                                        </AuthServiceProvider>
+                                    </NavigationProvider>
+                                </Router>
                             </ClientProvider>
                         </PassExtensionLink>
                     </ModalsProvider>
