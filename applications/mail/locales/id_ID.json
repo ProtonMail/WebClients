@@ -1120,6 +1120,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
@@ -1185,6 +1188,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir dalam 2 hari. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir dalam 5 hari. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Perbesar"
@@ -3318,6 +3330,9 @@
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
       ],
+      "An error occurred while saving your alias": [
+        "Terdapat kesalahan pada saat menyimpan alias Anda"
+      ],
       "Attachments are limited to 25 MB": [
         "Lampiran terbatas hingga 25 MB"
       ],
@@ -4350,6 +4365,11 @@
       ],
       "To: ${ toString }": [
         "Kepada: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikasi desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Get started checklist instructions": {

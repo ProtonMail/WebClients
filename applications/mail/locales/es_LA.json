@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade Now": [
+        "Mejorar ahora"
+      ],
       "Upgrade now": [
         "Actualizar ahora"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contactos."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Su prueba gratuita de la app de escritorio finaliza en 2 días. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Su prueba gratuita de la app de escritorio finaliza en 5 días. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Su prueba gratuita de la app de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Acercar"
@@ -4389,6 +4401,31 @@
       ],
       "To: ${ toString }": [
         "Para: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "App de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Disfrute de un acceso rápido, seguro y libre de distracciones a su buzón y calendario."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Disfrute de un acceso ilimitado con el plan de pago ${ BRAND_NAME }"
+      ],
+      "Introducing the desktop app": [
+        "Presentamos la app de escritorio"
+      ],
+      "No credit card required": [
+        "No se requiere tarjeta de crédito"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Pruebe gratis por 14 días"
       ]
     },
     "Get started checklist instructions": {
