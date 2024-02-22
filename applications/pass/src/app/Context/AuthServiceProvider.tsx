@@ -100,7 +100,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         if (canOfflineUnlock(cache, authStore)) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
                         else if (authStore.hasSession(initialLocalID)) client.current.setStatus(AppStatus.ERROR);
                         else client.current.setStatus(AppStatus.UNAUTHORIZED);
-                    }
+                    } else client.current.setStatus(AppStatus.UNAUTHORIZED);
 
                     const redirect = stripLocalBasenameFromPathname(redirectPath.current);
                     history.replace((getBasename(initialLocalID) ?? '/') + redirect);

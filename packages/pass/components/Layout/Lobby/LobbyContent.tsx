@@ -3,6 +3,7 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import { useOnline } from '@proton/components/hooks';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { OfflineUnlock } from '@proton/pass/components/Lock/OfflineUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
@@ -32,6 +33,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
     const offline = clientOfflineLocked(status);
     const busy = clientBusy(status);
     const canSignOut = clientErrored(status) || locked || offline;
+    const navigatorOnline = useOnline();
 
     useEffect(() => {
         setTimeoutError(false);
@@ -114,7 +116,14 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                             return <OfflineUnlock />;
                         default:
                             return (
-                                <Button pill shape="solid" color="norm" className="w-full" onClick={onLogin}>
+                                <Button
+                                    pill
+                                    shape="solid"
+                                    color="norm"
+                                    className="w-full"
+                                    onClick={onLogin}
+                                    disabled={!navigatorOnline}
+                                >
                                     {clientErrored(status)
                                         ? c('Action').t`Sign back in`
                                         : c('Action').t`Sign in with ${BRAND_NAME}`}
@@ -135,7 +144,14 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                             {c('Action').t`Sign out`}
                         </Button>
                     ) : (
-                        <Button pill shape="solid" color="weak" className="w-full" onClick={onRegister}>
+                        <Button
+                            pill
+                            shape="solid"
+                            color="weak"
+                            className="w-full"
+                            onClick={onRegister}
+                            disabled={!navigatorOnline}
+                        >
                             {c('Action').t`Create a ${BRAND_NAME} account`}
                         </Button>
                     )
