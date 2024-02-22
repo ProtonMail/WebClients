@@ -45,9 +45,8 @@ import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
 import { Lobby } from './Views/Lobby';
 import { Main } from './Views/Main';
-import * as config from './config';
 
-sentry({ config });
+sentry({ config: PASS_CONFIG });
 
 export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
@@ -59,7 +58,7 @@ export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProvide
 
         exportData: async (options) => {
             const state = store.getState();
-            const data = selectExportData({ config, format: options.format })(state);
+            const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
             return transferableToFile(await createPassExport(data, options));
         },
 
@@ -74,7 +73,7 @@ export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProvide
             const cachedImage = cache.get(url);
             if (cachedImage) return cachedImage;
 
-            const baseUrl = `${config.API_URL}/${url}`;
+            const baseUrl = `${PASS_CONFIG.API_URL}/${url}`;
             const requestUrl = (/^https?:\/\//.test(baseUrl) ? baseUrl : new URL(baseUrl, document.baseURI)).toString();
             signal.onabort = () => sw.send({ type: 'abort', requestUrl });
 
