@@ -1,5 +1,5 @@
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
-import type { AliasDetails, AliasMailbox, AliasOptions, ItemRevision, Share, ShareType } from '@proton/pass/types';
+import type { AliasMailbox, AliasOptions, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type { MaxAgeMemoizedFn } from '@proton/pass/utils/fp/memo';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { Address, User } from '@proton/shared/lib/interfaces';
@@ -43,7 +43,6 @@ export interface PassBridge {
 
 export type PassBridgeAliasItem = {
     item: ItemRevision<'alias'>;
-    aliasDetails: AliasDetails;
 };
 
 export type PassBridgeAliasCreate = {
