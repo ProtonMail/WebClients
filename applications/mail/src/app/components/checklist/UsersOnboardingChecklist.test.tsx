@@ -1,4 +1,5 @@
 import { fireEvent } from '@testing-library/react';
+import { addDays } from 'date-fns';
 
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
@@ -42,6 +43,7 @@ describe('OnboardingChecklistWrapper', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
             changeChecklistDisplay: mockedChangeDisplay,
+            expiresAt: addDays(new Date(), 10),
         } as Partial<ContextState>);
 
         const { getByText } = await render(<UsersOnboardingChecklist />);
@@ -59,6 +61,7 @@ describe('OnboardingChecklistWrapper', () => {
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
+            expiresAt: addDays(new Date(), 10),
         } as Partial<ContextState>);
 
         const { queryByText } = await render(<UsersOnboardingChecklist hideDismissButton />);
@@ -70,6 +73,7 @@ describe('OnboardingChecklistWrapper', () => {
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
+            expiresAt: addDays(new Date(), 10),
         } as Partial<ContextState>);
 
         const { getByText } = await render(<UsersOnboardingChecklist smallVariant />);

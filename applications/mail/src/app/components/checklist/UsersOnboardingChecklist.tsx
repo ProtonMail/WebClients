@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import isAfter from 'date-fns/isAfter';
+import { isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation/index';
@@ -14,7 +14,8 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { GmailSyncModal, useFlag } from '@proton/components/containers';
-import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
+import { useActiveBreakpoint, useLocalState, useSubscription, useUser } from '@proton/components/hooks';
+import { canCheckItem } from '@proton/shared/lib/helpers/subscription';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -45,9 +46,10 @@ const UsersOnboardingChecklist = ({
     const mailSettings = useMailModel('MailSettings');
     const { viewportWidth } = useActiveBreakpoint();
     const [user] = useUser();
+    const [subscription] = useSubscription();
 
     // TODO remove once the extended checklist storage split is finished
-    const TO_DELETE_FIX_FOR_CHECKLIST = useFlag('SplitStorageChecklistReopenedNova');
+    const checklistFeatureFlag = useFlag('SplitStorageChecklistReopenedNova');
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     const [rewardShowed, setRewardShowed] = useLocalState(false, 'checklist-reward-showed');
@@ -59,6 +61,9 @@ const UsersOnboardingChecklist = ({
     const [storageRewardProps, setStorageRewardOpen, renderStorageReward] = useModalState();
 
     const { items, changeChecklistDisplay, isChecklistFinished, userWasRewarded, expiresAt } = useGetStartedChecklist();
+    const canDisplayChecklist = checklistFeatureFlag
+        ? canCheckItem(subscription) || user.isFree
+        : isBefore(new Date(), expiresAt);
 
     // This is used to display the reward modal, can only be opened when user is finished and all modals are closed
     const areAllModalsClosed =
@@ -89,7 +94,7 @@ const UsersOnboardingChecklist = ({
         changeChecklistDisplay(newState);
     };
 
-    if (isAfter(new Date(), expiresAt) && !TO_DELETE_FIX_FOR_CHECKLIST) {
+    if (!canDisplayChecklist) {
         return null;
     }
 

@@ -2,7 +2,7 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 
 import { fromUnixTime } from 'date-fns';
 
-import { useApi, useEventManager } from '@proton/components/hooks';
+import { useApi, useEventManager, useSubscription, useUser } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     hidePaidUserChecklist,
@@ -11,6 +11,7 @@ import {
     updateChecklistItem,
 } from '@proton/shared/lib/api/checklist';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { canCheckItem } from '@proton/shared/lib/helpers/subscription';
 import {
     CHECKLIST_DISPLAY_TYPE,
     ChecklistApiResponse,
@@ -48,6 +49,9 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const silentApi = getSilentApi(api);
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
+    const [user] = useUser();
+    const [subscription] = useSubscription();
+    const canMarkItemsAsDone = canCheckItem(subscription) || user.isFree;
 
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
@@ -83,8 +87,10 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     const markItemsAsDone = async (item: ChecklistKeyType) => {
         setDoneItems([...doneItems, item]);
-        await silentApi(updateChecklistItem(item));
-        await call();
+        if (canMarkItemsAsDone) {
+            await silentApi(updateChecklistItem(item));
+            await call();
+        }
     };
 
     const changeChecklistDisplay = (newState: CHECKLIST_DISPLAY_TYPE) => {
@@ -95,7 +101,10 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
                 const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
                 if (!items.includes(ChecklistKey.ProtectInbox)) {
                     setDoneItems([...doneItems, ChecklistKey.ProtectInbox]);
-                    await silentApi(updateChecklistItem('ProtectInbox'));
+                    if (canMarkItemsAsDone) {
+                        await silentApi(updateChecklistItem('ProtectInbox'));
+                        await call();
+                    }
                 }
             }
 
