@@ -199,6 +199,10 @@ export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
     );
 };
 
+export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
+    return hasVPN(subscription) || hasVPN2024(subscription) || hasVPNPassBundle(subscription);
+};
+
 export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasPassPro(subscription) || hasPassBusiness(subscription);
 };
@@ -658,9 +662,7 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
 export const hasCancellablePlan = (subscription: Subscription | undefined) => {
-    return (
-        hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription) || hasVPN2024(subscription)
-    );
+    return getHasConsumerVpnPlan(subscription) || hasPassPlus(subscription);
 };
 
 export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {

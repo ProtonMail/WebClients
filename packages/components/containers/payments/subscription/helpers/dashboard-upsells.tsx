@@ -18,6 +18,7 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import {
+    getHasConsumerVpnPlan,
     getHasLegacyPlans,
     hasBundle,
     hasDrive,
@@ -25,6 +26,7 @@ import {
     hasMailPro,
     hasPassPlus,
     hasVPN,
+    hasVPN2024,
     hasVPNPassBundle,
     hasVpnBusiness,
     hasVpnPro,
@@ -456,7 +458,8 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
         hasDrive(subscription) ||
         hasPassPlus(subscription) ||
         hasVPN(subscription) ||
-        hasVPNPassBundle(subscription)
+        hasVPNPassBundle(subscription) ||
+        hasVPN2024(subscription)
     );
 };
 
@@ -489,7 +492,7 @@ export const resolveUpsellsToDisplay = ({
         const upsellsPayload = {
             app,
             plansMap: toMap(plans, 'Name'),
-            hasVPN: hasVPN(subscription) || hasVPNPassBundle(subscription),
+            hasVPN: getHasConsumerVpnPlan(subscription),
             serversCount,
             freePlan,
             ...rest,
