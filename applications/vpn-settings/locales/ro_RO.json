@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Eliminare cod cadou"
       ],
+      "Remove single sign-on": [
+        "Eliminare conectare unică"
+      ],
       "Rename": [
         "Redenumire"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Conectare"
+      ],
+      "Stop using single sign-on": [
+        "Oprire utilizare conectare unică"
       ],
       "Submit": [
         "Trimitere"
@@ -2785,6 +2791,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } și va trebui să-i creați manual pentru a-i adăuga înapoi la organizație."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
       ],
@@ -3360,6 +3369,9 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Utilizatorii care nu folosesc SSO (creați manual, nu cei furnizați de către furnizorul de identitate) încă pot să se autentifice la organizație."
+      ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
@@ -3371,6 +3383,9 @@
       ],
       "old password": [
         "parola veche"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "După ce conectarea unică (SSO) este dezactivată pentru organizație:"
       ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
@@ -3562,11 +3577,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "Single sign-on removed": [
+        "Autentificarea unică a fost eliminată"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Utilizatorii cu autentificare unică (SSO) (furnizați de către furnizorul de identitate) vor fi eliminați"
       ],
       "Step ${ step }": [
         "Pasul ${ step }",
@@ -3614,6 +3635,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Acreditările de la furnizorul de identitate vă vor fi șterse."
       ],
       "The following address is invalid.": [
         "Următoarea adresă nu este validă.",
@@ -3689,6 +3713,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Această operațiune va șterge permanent contul și toate datele sale. Nu veți mai putea reactiva acest cont."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Aceasta va elimina conectarea unică (SSO) pentru ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aceasta vă va înlocui parola temporară. O veți folosi pentru a vă accesa contul ${ BRAND_NAME } în viitor."
@@ -7675,6 +7702,12 @@
       "Remove domain": [
         "Eliminare domeniu"
       ],
+      "Remove single sign-on": [
+        "Eliminare conectare unică"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Eliminați conectarea unică pentru organizație?"
+      ],
       "Remove user?": [
         "Eliminare utilizator?"
       ],
@@ -7746,6 +7779,9 @@
       ],
       "Signed in to member account": [
         "Conectat în cont de membru"
+      ],
+      "Single sign-on": [
+        "Autentificare unică"
       ],
       "Status": [
         "Stare"

@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
+      "Remove single sign-on": [
+        "Tek oturum açmayı kaldır"
+      ],
       "Rename": [
         "Yeniden adlandır"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Oturum açılıyor"
+      ],
+      "Stop using single sign-on": [
+        "Tek oturum açma kullanmayı bırak"
       ],
       "Submit": [
         "Gönder"
@@ -2768,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } ve kuruluşunuza yeniden eklemek için bunları el ile oluşturmanız gerekecek"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
@@ -3330,6 +3339,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Tek oturum açma ile gelmeyen kullanıcılar (el ile oluşturulan, kimlik hizmeti sağlayıcınız tarafından sağlanmayan) yine de kuruluşunuzda oturum açabilir"
+      ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
@@ -3341,6 +3353,9 @@
       ],
       "old password": [
         "eski parola"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Kuruluşunuz için tek oturum açma kapatıldığında:"
       ],
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
@@ -3527,11 +3542,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Single sign-on removed": [
+        "Tek oturum açma kaldırıldı"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Kullanılabileceğiniz sunuculardan bazıları, son kaldırma işlemleri nedeniyle yalnızca belirli ülkelerde kullanılabilir"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Tek oturum açma kullanıcıları (kimlik hizmeti sağlayıcınız tarafından sağlanan) silinecek"
       ],
       "Step ${ step }": [
         "${ step }. adım",
@@ -3578,6 +3599,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gizlilik ve özgürlüğe öncelik veren daha iyi bir İnternet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
       ],
       "The following address is invalid.": [
         "Şu adres geçersiz.",
@@ -3650,6 +3674,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden kullanıma alamazsınız."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Bu işlem ${ boldDomainName } için tek oturum açmayı kaldıracak."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu bilgi, geçici parolanızın yerini alır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
@@ -7540,6 +7567,12 @@
       "Remove domain": [
         "Etki alanını kaldır"
       ],
+      "Remove single sign-on": [
+        "Tek oturum açmayı kaldır"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Kuruluşunuz için tek oturum açma kaldırılsın mı?"
+      ],
       "Remove user?": [
         "Kullanıcı kaldırılsın mı?"
       ],
@@ -7611,6 +7644,9 @@
       ],
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
+      ],
+      "Single sign-on": [
+        "Tek oturum açma"
       ],
       "Status": [
         "Durum"
