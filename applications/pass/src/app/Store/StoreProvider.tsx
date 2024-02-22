@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
+import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -13,7 +14,7 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientReady } from '@proton/pass/lib/client';
+import { clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
     draftsGarbageCollect,
@@ -26,7 +27,6 @@ import {
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import { selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { useAuthService } from '../Context/AuthServiceProvider';
@@ -84,7 +84,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onLocaleUpdated: core.i18n.setLocale,
-                onNotification: pipe(enhance, createNotification),
+                onNotification: (notification) => {
+                    if (notification.type === 'error' && clientOfflineUnlocked(client.current.state.status)) {
+                        notification.errorMessage = c('Warning').t`Offline`;
+                    }
+
+                    createNotification(enhance(notification));
+                },
                 onSettingsUpdated: settings.sync,
 
                 setCache: async (encryptedCache) => {

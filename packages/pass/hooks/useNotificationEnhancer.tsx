@@ -54,7 +54,7 @@ export const useNotificationEnhancer = () => {
                             {notification.text} <CircleLoader />
                         </>
                     ) : (
-                        notification.text
+                        `${notification.text}${notification.errorMessage ? ` (${notification.errorMessage})` : ''}`
                     ),
                 };
         }
