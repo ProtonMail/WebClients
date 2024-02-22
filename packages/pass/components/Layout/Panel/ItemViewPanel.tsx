@@ -16,6 +16,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -62,6 +63,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const plan = useSelector(selectPassPlan);
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
+    const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
@@ -204,11 +206,13 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     />
                                 )}
 
-                                <DropdownMenuButton
-                                    onClick={handleHistoryClick}
-                                    label={c('Action').t`View history`}
-                                    icon={'clock-rotate-left'}
-                                />
+                                {historyEnabled && isPaidPlan(plan) && (
+                                    <DropdownMenuButton
+                                        onClick={handleHistoryClick}
+                                        label={c('Action').t`View history`}
+                                        icon={'clock-rotate-left'}
+                                    />
+                                )}
 
                                 <DropdownMenuButton
                                     onClick={handleMoveToTrashClick}
