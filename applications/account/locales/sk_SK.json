@@ -5794,6 +5794,17 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6935,9 +6946,6 @@
       "Not yet available in our Android mobile app.": [
         "Zatiaľ nedostupné v našej mobilnej Android aplikácií."
       ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Aplikácia pre počítače, ktorá je teraz k dispozícii v beta verzii, vám umožňuje pohodlne spustiť ${ MAIL_APP_NAME } priamo z počítača a nerozptyľovať sa prácou s prehliadačom."
-      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
@@ -8065,17 +8073,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13489,9 +13486,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Získajte ${ MAIL_APP_NAME } pre Mac alebo Windows"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13833,9 +13827,6 @@
       ],
       "Delete version history?": [
         "Vymazať históriu verzií?"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
       ],
       "Disable ${ email }": [
         "Deaktivovať ${ email }"

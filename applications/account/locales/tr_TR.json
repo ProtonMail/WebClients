@@ -5738,6 +5738,17 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -6832,9 +6843,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Henüz Android mobil uygulamamızda kullanılamıyor."
-      ],
-      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Beta sürümü yayınlanmış olan ${ MAIL_APP_NAME } bilgisayar uygulamasını kullanarak, tarayıcıda dikkatinizi dağıtabilecek şeylerden etkilenmeden odaklanabilirsiniz."
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -7935,17 +7943,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
       ]
     },
     "Info - folder colouring feature": {
@@ -13448,9 +13445,6 @@
       ]
     },
     "Title": {
-      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Mac veya Windows için ${ MAIL_APP_NAME } uygulamasını edinin"
-      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13797,9 +13791,6 @@
       ],
       "Delete version history?": [
         "Sürüm geçmişi silinsin mi?"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
       ],
       "Disable ${ email }": [
         "${ email } adresini kullanımdan kaldır"
