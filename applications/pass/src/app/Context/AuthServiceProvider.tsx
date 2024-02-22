@@ -127,7 +127,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const apiOffline = api.getState().offline;
 
                 if (OFFLINE_SUPPORTED && apiOffline) return handleOffline();
-                if (autoFork) {
+                if (autoFork && navigator.onLine) {
                     /* If the session could not be resumed from the LocalID from path,
                      * we are likely dealing with an app-switch request from another client.
                      * In this case, redirect to account through a fork request */

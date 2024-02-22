@@ -52,7 +52,7 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
-        options.setAppStatus(AppStatus.ERROR);
+        options.setAppStatus(loginPassword ? AppStatus.OFFLINE_LOCKED : AppStatus.ERROR);
         options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
     }
 }
