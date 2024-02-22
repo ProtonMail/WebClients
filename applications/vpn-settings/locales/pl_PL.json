@@ -8170,6 +8170,20 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Subskrypcja odnowi się automatycznie co 1 miesięc. Twoja następna data rozliczeniowa przypada za 1 miesiąc."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
+        "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
+        "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
+        "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Płatne miesięcznie"
