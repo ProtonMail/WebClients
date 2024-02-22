@@ -2154,6 +2154,9 @@
       "An error occurred while loading alias options": [
         "Ett fel uppstod när alternativen för alias skulle laddas"
       ],
+      "An error occurred while saving your alias": [
+        "Ett fel uppstod när ditt alias skulle sparas"
+      ],
       "Authentication canceled.": [
         "Autentiseringen avbröts."
       ],
@@ -3754,6 +3757,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Skaffa appen för stationär dator för att synkronisera filer från din dator."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Lär känna ${ DRIVE_APP_NAME } och tjäna din bonus på 3 GB lagringsutrymme! Passa på idag."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Gå till \"Mina filer\" och ladda upp några filer först."
       ],
@@ -4418,6 +4424,10 @@
       ],
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Du har ${ expiresInDays } dag kvar att göra anspråk på din 3 GB välkomstbonus och ",
+        "Du har ${ expiresInDays } dagar kvar att göra anspråk på din 3 GB välkomstbonus och "
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
