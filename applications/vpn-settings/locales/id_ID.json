@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
+      "Remove single sign-on": [
+        "Hapus single sign-on"
+      ],
       "Rename": [
         "Ubah nama"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Masuk"
+      ],
+      "Stop using single sign-on": [
+        "Berhenti gunakan single sign-on"
       ],
       "Submit": [
         "Kirim"
@@ -3306,6 +3312,9 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Pengguna non-SSO (yang ditetapkan secara manual, bukan yang disediakan oleh Penyedia Identitas Anda) akan tetap dapat masuk ke organisasi Anda"
+      ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
       ],
@@ -3317,6 +3326,9 @@
       ],
       "old password": [
         "kata sandi lama Anda"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Setelah single sign-on dinonaktifkan pada organisasi Anda:"
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
@@ -3501,11 +3513,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "Single sign-on removed": [
+        "Single sign-on dihapus"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sebagian server milik Anda yang tersedia hanya dapat digunakan di negara tertentu karena pemutusan yang berlangsung baru-baru ini"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Pengguna SSO (sebagaimana yang disediakan oleh Penyedia Identitas Anda) akan dihapus"
       ],
       "Step ${ step }": [
         "Langkah ${ step }"
@@ -5478,7 +5496,7 @@
         "Dapatkan alamat surel yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Kami tidak menyimpan log sesi yang merekam aktivitas daring Anda, dan kami juga tidak merekam informasi metadata yang dapat membahayakan privasi Anda"
+        "Kami tidak menyimpan log sesi yang merekam aktivitas online Anda, dan kami juga tidak mencatat metadata mana pun yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH, yang ditujukan untuk melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Seluruh pelanggan ${ BRAND_NAME } for Business akan dapat menerima Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani."
@@ -7444,6 +7462,12 @@
       "Remove domain": [
         "Hapus domain"
       ],
+      "Remove single sign-on": [
+        "Hapus single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Hapus single sign-on pada organisasi Anda?"
+      ],
       "Remove user?": [
         "Keluarkan pengguna?"
       ],
@@ -7515,6 +7539,9 @@
       ],
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
+      ],
+      "Single sign-on": [
+        "Single sign-on"
       ],
       "Status": [
         "Status"
