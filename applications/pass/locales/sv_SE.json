@@ -263,9 +263,6 @@
       "Multiple select": [
         "Välj flera"
       ],
-      "Not now": [
-        "Inte nu"
-      ],
       "OK": [
         "OK"
       ],
@@ -736,6 +733,9 @@
       ],
       "Admin": [
         "Admin"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Efter inaktivitet kommer åtkomst till ${ PASS_APP_NAME } att kräva en PIN-kod för att låsa upp din session. Du kommer att loggas ut efter 3 misslyckade försök."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
