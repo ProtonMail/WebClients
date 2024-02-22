@@ -9,7 +9,7 @@ export const isDocumentFocused = () => document.hasFocus();
 
 export const useVisibleEffect = (effect: (visible: boolean) => void) => {
     const timer = useRef<Maybe<NodeJS.Timeout>>();
-    const active = useRef<boolean>(true);
+    const active = useRef<boolean>(false);
 
     useEffect(() => {
         const handler = () => {
