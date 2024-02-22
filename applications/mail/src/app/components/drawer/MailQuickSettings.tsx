@@ -13,7 +13,7 @@ import DrawerAllSettingsView from '@proton/components/components/drawer/views/qu
 import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
 import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
-import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
+import { MailShortcutsModal, useFlag, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
@@ -56,7 +56,10 @@ const MailQuickSettings = () => {
     const { ktActivation } = useKeyTransparencyContext();
     const showKT = ktActivation === KeyTransparencyActivation.SHOW_UI;
 
-    const hasFreeOnboardingChecklist = Checklists?.includes('get-started');
+    // TODO remove once the extended checklist storage split is
+    const TO_DELETE_FIX_FOR_CHECKLIST = useFlag('SplitStorageChecklistReopenedNova');
+    const hasFreeOnboardingChecklist = TO_DELETE_FIX_FOR_CHECKLIST ? true : Checklists?.includes('get-started');
+
     const { isChecklistFinished } = useGetStartedChecklist();
 
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();
