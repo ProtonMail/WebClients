@@ -234,12 +234,6 @@ const MainContainer: FunctionComponent = () => {
                                     </SubscriptionModalProvider>
                                 </Route>
                             )}
-                            <Route path={routes.general.to}>
-                                <PrivateMainSettingsArea config={routes.general}>
-                                    <LanguageSection locales={locales} />
-                                    <ThemesSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
                             <Route path={routes.account.to}>
                                 <PrivateMainSettingsArea config={routes.account}>
                                     <>
@@ -252,6 +246,11 @@ const MainContainer: FunctionComponent = () => {
                                     <AccountRecoverySection />
                                     <EmailSubscriptionSection />
                                     <DeleteSection />
+                                </PrivateMainSettingsArea>
+                            </Route>
+                            <Route path={routes.appearance.to}>
+                                <PrivateMainSettingsArea config={routes.appearance}>
+                                    <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.downloads.to}>
