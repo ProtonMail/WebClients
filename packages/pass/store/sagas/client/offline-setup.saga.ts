@@ -28,19 +28,21 @@ function* offlineSetupWorker(
         const settings: UserSettings = yield getUserSettings();
         if (settings.Password.Mode !== SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE) throw new Error();
 
-        const verified: boolean = yield auth.confirmPassword(payload.password);
+        const verified: boolean = yield auth.confirmPassword(payload.loginPassword);
         if (!verified) throw new Error();
 
         const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
 
-        const offlineKD: Uint8Array = yield getOfflineKeyDerivation(payload.password, offlineSalt).catch((error) => {
-            captureMessage('Offline: Argon2 error', {
-                level: 'error',
-                extra: { error, context: OFFLINE_ARGON2_PARAMS },
-            });
+        const offlineKD: Uint8Array = yield getOfflineKeyDerivation(payload.loginPassword, offlineSalt).catch(
+            (error) => {
+                captureMessage('Offline: Argon2 error', {
+                    level: 'error',
+                    extra: { error, context: OFFLINE_ARGON2_PARAMS },
+                });
 
-            throw error;
-        });
+                throw error;
+            }
+        );
 
         authStore.setOfflineConfig({ salt: uint8ArrayToString(offlineSalt), params: OFFLINE_ARGON2_PARAMS });
         authStore.setOfflineKD(uint8ArrayToString(offlineKD));
