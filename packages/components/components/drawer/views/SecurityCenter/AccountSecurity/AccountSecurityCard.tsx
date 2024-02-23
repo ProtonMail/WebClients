@@ -42,7 +42,9 @@ const AccountSecurityCard = ({
                     className
                 )}
                 path={path}
-                onClick={onClick}
+                // Sounds that chrome cancels API request triggered on link onClick
+                // Using capture allows to send request before the link is followed
+                onClickCapture={onClick}
             >
                 <span className="flex flex-nowrap items-start">
                     <span className="ratio-square rounded flex security-card-icon-container relative">
