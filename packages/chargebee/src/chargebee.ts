@@ -1,4 +1,5 @@
 import { ChargebeeInstanceConfiguration } from '../lib';
+import { addCheckpoint } from './checkpoints';
 
 let chargebee: any | null = null;
 export function resetChargebee() {
@@ -6,13 +7,23 @@ export function resetChargebee() {
 }
 
 export function createChargebee(config: ChargebeeInstanceConfiguration) {
-    if (chargebee) {
-        return chargebee;
-    }
+    try {
+        if (chargebee) {
+            return chargebee;
+        }
 
-    const instance = (window as any).Chargebee.init(config);
-    chargebee = instance;
-    return instance;
+        addCheckpoint('chargebee.init', config);
+        const instance = (window as any).Chargebee.init(config);
+        addCheckpoint('chargebee.init.done');
+        chargebee = instance;
+        return instance;
+    } catch (error: any) {
+        addCheckpoint('chargebee.init.error', {
+            message: error?.message,
+            stack: error?.stack,
+        });
+        throw error;
+    }
 }
 
 export function getChargebeeInstance() {
