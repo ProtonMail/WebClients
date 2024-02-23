@@ -232,6 +232,11 @@ export const getCorrectedSaveInviteActions = ({
     hasModifiedDateTimes?: boolean;
     hasModifiedRrule?: boolean;
 }) => {
+    if (![NONE, SEND_INVITATION, SEND_UPDATE].includes(inviteActions.type)) {
+        return {
+            ...inviteActions,
+        };
+    }
     const hasNewAttendees = getHasAttendees(newVevent);
     const hasOldAttendees = oldVevent ? getHasAttendees(oldVevent) : false;
     if (!oldVevent) {
