@@ -6,25 +6,29 @@ import { useNotifications } from '@proton/components/hooks';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { WasmAccount, WasmBlockchain, WasmNetwork, WasmPagination, WasmWallet } from '../../pkg';
+import { WasmAccount, WasmPagination, WasmWallet } from '../../pkg';
+import { useBitcoinNetwork } from '../store/hooks';
 import {
-    ApiWallet,
     BlockchainAccountRecord,
     BlockchainWalletRecord,
+    IWasmWallet,
     WalletWithAccountsWithBalanceAndTxs,
 } from '../types';
 import { WalletAccount } from '../types/api';
 import { tryHandleWasmError } from '../utils/wasm/errors';
 
-const syncAccount = async (wasmAccount: WasmAccount) => {
-    const wasmChain = new WasmBlockchain(undefined, 1);
-
-    return wasmChain.fullSync(wasmAccount);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const syncAccount = async (_wasmAccount: WasmAccount) => {
+    // TMP comment this to avoid rate limit on esplora API
+    // const wasmChain = new WasmBlockchain(undefined, 1);
+    // return wasmChain.fullSync(wasmAccount);
 };
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
 
-export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]) => {
+export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
+    const [network] = useBitcoinNetwork();
+
     // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
     const [blockchainWalletRecord, setBlockchainWalletRecord] = useState<BlockchainWalletRecord | undefined>();
     const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<
@@ -112,7 +116,7 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
     );
 
     const initAccountsBlockchainData = useCallback(async () => {
-        if (!wallets) {
+        if (!wallets || !network) {
             return;
         }
 
@@ -121,25 +125,31 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
             try {
                 const tmpAccounts: BlockchainAccountRecord = {};
 
-                // TODO: handle passphrase wallets
-                const wasmWallet = new WasmWallet(network, wallet.Mnemonic, '');
-
-                for (const account of wallet.accounts) {
-                    try {
-                        const accountKey = wasmWallet.addAccount(account.ScriptType, account.Index);
-                        const wasmAccount = wasmWallet.getAccount(accountKey);
-
-                        if (!wasmAccount) {
-                            break;
-                        }
-
-                        tmpAccounts[account.WalletAccountID] = await getAccountData(account, wasmAccount);
-                    } catch (error) {
-                        handleError(error);
-                    }
+                // TODO: support watch-only wallets
+                if (!wallet.Wallet.Mnemonic) {
+                    continue;
                 }
 
-                tmpWallets[wallet.WalletID] = { ...wallet, wasmWallet, accounts: { ...tmpAccounts } };
+                // TODO: handle passphrase wallets
+                const wasmWallet = new WasmWallet(network, wallet.Wallet.Mnemonic, '');
+
+                // TODO: support accounts in next PR
+                // for (const account of wallet.accounts) {
+                //     try {
+                //         const accountKey = wasmWallet.addAccount(account.ScriptType, account.Index);
+                //         const wasmAccount = wasmWallet.getAccount(accountKey);
+
+                //         if (!wasmAccount) {
+                //             break;
+                //         }
+
+                //         tmpAccounts[account.WalletAccountID] = await getAccountData(account, wasmAccount);
+                //     } catch (error) {
+                //         handleError(error);
+                //     }
+                // }
+
+                tmpWallets[wallet.Wallet.ID] = { ...wallet, wasmWallet, accounts: { ...tmpAccounts } };
             } catch (error) {
                 handleError(error);
             }
@@ -149,7 +159,7 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
     }, [handleError, network, wallets]);
 
     const syncSingleWalletAccountBlockchainData = useCallback(
-        async (walletId: number, accountId: number, shouldSync = false) => {
+        async (walletId: string, accountId: number, shouldSync = false) => {
             const account = blockchainWalletRecordRef.current?.[walletId]?.accounts[accountId];
 
             if (!account) {
@@ -158,22 +168,28 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
 
             const updated = await getUpdatedAccountDataWithMaybeSync(account, account.wasmAccount, shouldSync);
 
-            setBlockchainWalletRecord((prev) => ({
-                ...prev,
-                [walletId]: {
-                    ...prev?.[walletId],
-                    accounts: {
-                        ...prev?.[walletId]?.accounts,
-                        [account.WalletAccountID]: updated,
-                    },
-                },
-            }));
+            setBlockchainWalletRecord((prev) => {
+                const prevItem = prev?.[walletId];
+
+                return {
+                    ...prev,
+                    ...(prevItem && {
+                        [walletId]: {
+                            ...prevItem,
+                            accounts: {
+                                ...prev?.[walletId]?.accounts,
+                                [account.WalletAccountID]: updated,
+                            },
+                        },
+                    }),
+                };
+            });
         },
         [getUpdatedAccountDataWithMaybeSync]
     );
 
     const syncAllWalletAccountsBlockchainData = useCallback(
-        async (walletId: number, shouldSync = false) => {
+        async (walletId: string, shouldSync = false) => {
             const wallet = blockchainWalletRecordRef.current?.[walletId];
 
             if (!wallet) {
@@ -190,7 +206,7 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
     const syncAllWalletsBlockchainData = useCallback(
         async (shouldSync = false) => {
             for (const wallet of Object.values(blockchainWalletRecordRef.current ?? {}).filter(isTruthy)) {
-                await syncAllWalletAccountsBlockchainData(wallet.WalletID, shouldSync);
+                await syncAllWalletAccountsBlockchainData(wallet.Wallet.ID, shouldSync);
             }
         },
         [syncAllWalletAccountsBlockchainData]

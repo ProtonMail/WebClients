@@ -53,7 +53,7 @@ export const usePsbt = ({
                 setBroadcastedTxId(txId);
 
                 setTimeout(() => {
-                    void syncSingleWalletAccountBlockchainData(wallet.WalletID, account.WalletAccountID);
+                    void syncSingleWalletAccountBlockchainData(wallet.Wallet.ID, account.WalletAccountID);
                 }, 1 * SECOND);
             } catch (err) {
                 const msg = tryHandleWasmError(err);

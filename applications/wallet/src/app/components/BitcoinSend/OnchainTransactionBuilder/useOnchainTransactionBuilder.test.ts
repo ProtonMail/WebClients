@@ -57,7 +57,7 @@ describe('useOnchainTransactionBuilder', () => {
     describe('when `defaultWalletId` is provided', () => {
         it('should select the associated wallet by default', async () => {
             const { result } = renderHook(() =>
-                useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs[1].WalletID)
+                useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs[1].Wallet.ID)
             );
 
             expect(result.current.walletAndAccount.wallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);

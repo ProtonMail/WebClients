@@ -28,7 +28,7 @@ const WalletSidebar = ({ expanded = false, wallets }: Props) => {
         >
             <SidebarNav className="flex mt-6">
                 <div className="outline-none flex flex-column justify-space-between grow">
-                    <div className="grow">
+                    <div className="grow max-w-full">
                         <SidebarList>
                             <WalletsSidebarList wallets={wallets} />
                             <TransactionsNavItem />

@@ -24,12 +24,12 @@ export const WalletSetupModal = ({ isFirstSetup, isOpen, onClose }: Props) => {
     const {
         currentStep,
         mnemonic,
-        passphrase,
         walletName,
+        fingerprint,
         onSelectSetupMode,
         onMnemonicGenerated,
         onNextStep,
-        onSaveNewWallet,
+        onPassphraseInput,
         onWalletSubmit,
         onMnemonicInput,
     } = useWalletSetupModal({ isOpen, onSetupFinish: onClose });
@@ -47,30 +47,25 @@ export const WalletSetupModal = ({ isFirstSetup, isOpen, onClose }: Props) => {
             case WalletSetupStep.MnemonicBackup:
                 return <MnemonicBackup mnemonic={mnemonic} onContinue={onNextStep} />;
             case WalletSetupStep.PassphraseInput:
-                return <PassphraseInput onContinue={onSaveNewWallet} />;
+                return <PassphraseInput onContinue={onPassphraseInput} />;
             case WalletSetupStep.WalletNameAndFiatInput:
                 return <WalletNameAndFiatInput onContinue={onWalletSubmit} />;
             case WalletSetupStep.Confirmation:
                 return (
-                    <SetupConfirmation
-                        walletName={walletName}
-                        mnemonic={mnemonic}
-                        passphrase={passphrase}
-                        onOpenWallet={onNextStep}
-                    />
+                    <SetupConfirmation walletName={walletName} fingerprint={fingerprint} onOpenWallet={onNextStep} />
                 );
         }
     }, [
-        isFirstSetup,
-        walletName,
         currentStep,
-        mnemonic,
-        passphrase,
+        isFirstSetup,
         onMnemonicInput,
         onMnemonicGenerated,
+        mnemonic,
         onNextStep,
-        onSaveNewWallet,
+        onPassphraseInput,
         onWalletSubmit,
+        walletName,
+        fingerprint,
         onSelectSetupMode,
     ]);
 

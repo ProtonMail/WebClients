@@ -46,7 +46,7 @@ describe('OnchainTransactionBuilder', () => {
             await act(() => userEvent.click(walletSelector));
 
             const options = screen.getAllByTestId('wallet-selector-option');
-            expect(options).toHaveLength(4);
+            expect(options).toHaveLength(3);
             await fireEvent.click(options[1]);
 
             expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledTimes(1);

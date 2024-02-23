@@ -29,11 +29,6 @@ describe('YourWalletsSection', () => {
         expect(within(balanceCards[2]).getByText('Onchain'));
         expect(balanceCards[2]).toHaveTextContent('0.026124 BTC');
         expect(balanceCards[2]).toHaveTextContent('$95.55');
-
-        expect(within(balanceCards[3]).getByRole('heading', { level: 3, name: 'Lightning 01' }));
-        expect(within(balanceCards[3]).getByText('Lightning'));
-        expect(balanceCards[3]).toHaveTextContent('0.088753 BTC');
-        expect(balanceCards[3]).toHaveTextContent('$324.62');
     });
 
     describe('when user clicks on `Add wallet` card', () => {

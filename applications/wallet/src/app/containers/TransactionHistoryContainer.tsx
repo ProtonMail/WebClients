@@ -11,17 +11,17 @@ import { useOnchainWalletContext } from '../contexts';
 export const TransactionHistoryContainer = () => {
     const [params] = useSearchParams();
     const { wallets } = useOnchainWalletContext();
-    const [walletId, setWalletId] = useState<number>();
+    const [walletId, setWalletId] = useState<string>();
 
     useEffect(() => {
         if (params.walletId) {
-            setWalletId(Number(params.walletId));
+            setWalletId(params.walletId);
         } else {
-            setWalletId(wallets?.[0]?.WalletID);
+            setWalletId(wallets?.[0]?.Wallet.ID);
         }
     }, [params.walletId, wallets]);
 
-    const wallet = useMemo(() => wallets?.find(({ WalletID }) => WalletID === Number(walletId)), [walletId, wallets]);
+    const wallet = useMemo(() => wallets?.find(({ Wallet }) => Wallet.ID === walletId), [walletId, wallets]);
 
     if (!wallet) {
         return null;
@@ -50,12 +50,8 @@ export const TransactionHistoryContainer = () => {
                                 {wallets
                                     ? [
                                           <Option key="-" value="-" title="All" disabled />,
-                                          ...wallets?.map((wallet) => (
-                                              <Option
-                                                  key={wallet.WalletID}
-                                                  value={wallet.WalletID}
-                                                  title={wallet.Name}
-                                              />
+                                          ...wallets?.map(({ Wallet: { ID: WalletID, Name } }) => (
+                                              <Option key={WalletID} value={WalletID} title={Name} />
                                           )),
                                       ]
                                     : []}

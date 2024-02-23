@@ -46,13 +46,12 @@ export const WalletsSidebarList = ({ wallets }: Props) => {
                     wallets &&
                     wallets.map((wallet) => {
                         return (
-                            <SidebarListItem key={wallet.WalletID} className="mt-1">
+                            <SidebarListItem key={wallet.Wallet.ID} className="mt-1">
                                 <SidebarItemContent
                                     icon="wallet"
-                                    label={wallet.Name}
-                                    to={`/wallets/${wallet.WalletID}`}
+                                    label={wallet.Wallet.Name}
+                                    to={`/wallets/${wallet.Wallet.ID}`}
                                     data-testid="wallet-sidebar:wallet-item"
-                                    disabled={!wallet.accounts.length}
                                 />
                             </SidebarListItem>
                         );

@@ -19,7 +19,7 @@ export interface UseBitcoinReceiveHelper {
     showAmountInput: () => void;
 }
 
-export const useBitcoinReceive = (defaultWalletId?: number): UseBitcoinReceiveHelper => {
+export const useBitcoinReceive = (defaultWalletId?: string): UseBitcoinReceiveHelper => {
     const [paymentLink, setPaymentLink] = useState<WasmPaymentLink | null>(null);
     const { wallets } = useOnchainWalletContext();
 
@@ -44,7 +44,7 @@ export const useBitcoinReceive = (defaultWalletId?: number): UseBitcoinReceiveHe
 
     useEffect(() => {
         const { account, wallet } = selectedWallet;
-        if (account && wallet?.Type === WalletType.OnChain) {
+        if (account && wallet?.Wallet.Type === WalletType.OnChain) {
             const bitcoinUri = account.wasmAccount.getBitcoinUri(undefined, amount ? BigInt(amount) : undefined);
             setPaymentLink(bitcoinUri);
         }

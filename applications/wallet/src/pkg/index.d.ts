@@ -10,10 +10,45 @@ export function setPanicHook(): void;
 export function getWordsAutocomplete(word_start: string): (string)[];
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
+/**
+*/
+export enum WasmFiatCurrency {
+  USD = 0,
+  EUR = 1,
+  CHF = 2,
+}
+/**
+*/
+export enum WasmBitcoinUnit {
+  BTC = 0,
+  MBTC = 1,
+  SAT = 2,
+}
+/**
+*/
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
 }
 /**
 */
@@ -48,39 +83,35 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
-}
-/**
-*/
 export enum WasmCoinSelection {
   BranchAndBound = 0,
   LargestFirst = 1,
   OldestFirst = 2,
   Manual = 3,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
 /**
 */
@@ -96,29 +127,6 @@ export enum WasmKeychainKind {
 }
 /**
 */
-export enum WasmBitcoinUnit {
-  BTC = 0,
-  MBTC = 1,
-  SAT = 2,
-}
-/**
-*/
-export enum WasmFiatCurrency {
-  USD = 0,
-  EUR = 1,
-  CHF = 2,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
 export enum WasmLanguage {
   English = 0,
   SimplifiedChinese = 1,
@@ -130,14 +138,31 @@ export enum WasmLanguage {
   Korean = 7,
   Spanish = 8,
 }
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
+export interface WasmApiWallet {
+    ID: string;
+    Name: string;
+    IsImported: number;
+    Priority: number;
+    Type: number;
+    HasPassphrase: number;
+    Status: number;
+    Mnemonic: string | null;
+    Fingerprint: string | null;
+    PublicKey: string | null;
 }
+
+export interface WasmWalletKey {
+    UserKeyID: string;
+    WalletKey: string;
+}
+
+export interface WasmWalletSettings {
+    HideAccounts: number;
+    InvoiceDefaultDescription: string | null;
+    InvoiceExpirationTime: number;
+    MaxChannelOpeningFee: number;
+}
+
 
 interface IWasmBlockTime {
     height: BigInt,
@@ -314,38 +339,6 @@ export class WasmAddressInfo {
 }
 /**
 */
-export class WasmApiWallet {
-  free(): void;
-/**
-*/
-  HasPassphrase: number;
-/**
-*/
-  ID: string;
-/**
-*/
-  IsImported: number;
-/**
-*/
-  Mnemonic?: string;
-/**
-*/
-  Name: string;
-/**
-*/
-  Priority: number;
-/**
-*/
-  PublicKey?: string;
-/**
-*/
-  Status: number;
-/**
-*/
-  Type: number;
-}
-/**
-*/
 export class WasmAuthData {
   free(): void;
 /**
@@ -443,35 +436,6 @@ export class WasmCreateWalletAccountRequestBody {
 }
 /**
 */
-export class WasmCreateWalletRequestBody {
-  free(): void;
-/**
-*/
-  HasPassphrase: number;
-/**
-*/
-  IsImported: number;
-/**
-*/
-  Mnemonic?: string;
-/**
-*/
-  Name: string;
-/**
-*/
-  PublicKey?: string;
-/**
-*/
-  Type: number;
-/**
-*/
-  UserKeyId: string;
-/**
-*/
-  WalletKey: string;
-}
-/**
-*/
 export class WasmCreateWalletTransactionRequestBody {
   free(): void;
 /**
@@ -529,7 +493,8 @@ export class WasmLockTime {
 export class WasmMnemonic {
   free(): void;
 /**
-* Generates a Mnemonic with a random entropy based on the given word count.
+* Generates a Mnemonic with a random entropy based on the given word
+* count.
 * @param {WasmWordCount} word_count
 */
   constructor(word_count: WasmWordCount);
@@ -554,9 +519,9 @@ export class WasmMnemonic {
 export class WasmNetworkClient {
   free(): void;
 /**
-* @returns {Promise<number>}
+* @returns {Promise<WasmNetwork>}
 */
-  getNetwork(): Promise<number>;
+  getNetwork(): Promise<WasmNetwork>;
 }
 /**
 */
@@ -1096,10 +1061,18 @@ export class WasmWalletClient {
 */
   getWallets(): Promise<WasmWalletDataArray>;
 /**
-* @param {WasmCreateWalletRequestBody} payload
+* @param {string} name
+* @param {boolean} is_imported
+* @param {number} wallet_type
+* @param {boolean} has_passphrase
+* @param {string} user_key_id
+* @param {string} wallet_key
+* @param {string | undefined} [mnemonic]
+* @param {string | undefined} [fingerprint]
+* @param {string | undefined} [public_key]
 * @returns {Promise<WasmWalletData>}
 */
-  createWallet(payload: WasmCreateWalletRequestBody): Promise<WasmWalletData>;
+  createWallet(name: string, is_imported: boolean, wallet_type: number, has_passphrase: boolean, user_key_id: string, wallet_key: string, mnemonic?: string, fingerprint?: string, public_key?: string): Promise<WasmWalletData>;
 /**
 * @param {string} wallet_id
 * @returns {Promise<WasmWalletAccountArray>}
@@ -1154,6 +1127,13 @@ export class WasmWalletClient {
 export class WasmWalletData {
   free(): void;
 /**
+* @param {WasmApiWallet} wallet
+* @param {WasmWalletKey} key
+* @param {WasmWalletSettings} settings
+* @returns {WasmWalletData}
+*/
+  static from_parts(wallet: WasmApiWallet, key: WasmWalletKey, settings: WasmWalletSettings): WasmWalletData;
+/**
 */
   Wallet: WasmApiWallet;
 /**
@@ -1170,34 +1150,6 @@ export class WasmWalletDataArray {
 /**
 */
   0: (WasmWalletData)[];
-}
-/**
-*/
-export class WasmWalletKey {
-  free(): void;
-/**
-*/
-  UserKeyID: string;
-/**
-*/
-  WalletKey: string;
-}
-/**
-*/
-export class WasmWalletSettings {
-  free(): void;
-/**
-*/
-  HideAccounts: number;
-/**
-*/
-  InvoiceDefaultDescription?: string;
-/**
-*/
-  InvoiceExpirationTime: bigint;
-/**
-*/
-  MaxChannelOpeningFee: bigint;
 }
 /**
 */

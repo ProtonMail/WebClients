@@ -30,11 +30,11 @@ export const BitcoinTransferContainer = () => {
                     tabs={[
                         {
                             title: c('Wallet Transfer').t`Receive bitcoins`,
-                            content: <BitcoinReceive defaultWalletId={Number(params.walletId)} />,
+                            content: <BitcoinReceive defaultWalletId={params.walletId} />,
                         },
                         {
                             title: c('Wallet Transfer').t`Send bitcoins`,
-                            content: <BitcoinSend defaultWalletId={Number(params.walletId)} />,
+                            content: <BitcoinSend defaultWalletId={params.walletId} />,
                         },
                     ]}
                 />

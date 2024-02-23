@@ -31,7 +31,7 @@ describe('useBalanceOverview', () => {
         it("should return the sum of all wallet's balance", () => {
             const { result } = renderHook(() => useBalanceOverview(walletsWithAccountsWithBalanceAndTxs));
 
-            expect(result.current.totalBalance).toBe(31756581);
+            expect(result.current.totalBalance).toBe(22881239);
         });
 
         it('should return the difference between 7-day-ago balance and current one', () => {
@@ -47,7 +47,6 @@ describe('useBalanceOverview', () => {
                 [11884066, '#33FF33', 'Bitcoin 01'],
                 [8384799, '#FF3333', 'Savings on Jade'],
                 [2612374, '#5733FF', 'Savings on Electrum'],
-                [8875342, '#336EFF', 'Lightning 01'],
             ]);
         });
 
@@ -56,14 +55,14 @@ describe('useBalanceOverview', () => {
 
             expect(result.current.balanceEvolutionLineChartData).toStrictEqual({
                 data: [
-                    { x: '11/21/2023', y: 33914751 },
-                    { x: '11/22/2023', y: 33282822 },
-                    { x: '11/23/2023', y: 31756581 },
-                    { x: '11/24/2023', y: 31756581 },
-                    { x: '11/25/2023', y: 31756581 },
-                    { x: '11/26/2023', y: 31756581 },
-                    { x: '11/27/2023', y: 31756581 },
-                    { x: '11/27/2023', y: 31756581 },
+                    { x: '11/21/2023', y: 25039409 },
+                    { x: '11/22/2023', y: 24407480 },
+                    { x: '11/23/2023', y: 22881239 },
+                    { x: '11/24/2023', y: 22881239 },
+                    { x: '11/25/2023', y: 22881239 },
+                    { x: '11/26/2023', y: 22881239 },
+                    { x: '11/27/2023', y: 22881239 },
+                    { x: '11/27/2023', y: 22881239 },
                 ],
             });
         });
