@@ -22,7 +22,7 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
-import { clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
+import { clientBooted, clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -320,12 +320,14 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const registeredLock = authStore.getLockStatus() === SessionLockStatus.REGISTERED;
         const ttl = authStore.getLockTTL();
 
-        if (clientReady(client.current.state.status) && registeredLock && ttl) {
+        if (clientBooted(client.current.state.status) && registeredLock && ttl) {
             const now = getEpoch();
             const diff = now - (authStore.getLockLastExtendTime() ?? 0);
+
+            if (diff > ttl) return authService.lock({ soft: true, broadcast: true });
             if (diff > ttl * 0.5) {
                 logger.info('[AuthServiceProvider] Activity probe extending lock time');
-                await authService.checkLock().catch(noop);
+                return authService.checkLock().catch(noop);
             }
         }
     });

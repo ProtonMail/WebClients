@@ -292,17 +292,20 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
         },
 
-        /* Calling this function when a lock is registered and active
-         * will extend the lock by resetting the ttl server-side */
+        /** Calling this function when a lock is registered and active
+         * will extend the lock by resetting the ttl server-side. Set the
+         * lock extend time regardless of the result of the API call in
+         * order for clients to be able to lock even when offline. */
         checkLock: async () => {
             logger.info('[AuthService] Checking session lock status');
+            authStore.setLockLastExtendTime(getEpoch());
+
             const lock = await checkSessionLock();
 
             authStore.setLockStatus(lock.status);
             authStore.setLockTTL(lock.ttl);
-            authStore.setLockLastExtendTime(getEpoch());
-
             void config.onSessionLockUpdate?.(lock, false);
+
             return lock;
         },
 
