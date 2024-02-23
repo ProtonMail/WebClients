@@ -106,9 +106,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         else client.current.setStatus(AppStatus.UNAUTHORIZED);
                     } else client.current.setStatus(AppStatus.UNAUTHORIZED);
 
-                    const redirect = stripLocalBasenameFromPathname(redirectPath.current);
-                    history.replace((getBasename(initialLocalID) ?? '/') + redirect);
-
                     return false;
                 };
 
@@ -147,7 +144,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
             onAuthorized: async (_, localID) => {
                 const bootedOffline = clientOfflineUnlocked(client.current.state.status);
-
                 if (bootedOffline) client.current.setStatus(AppStatus.READY);
                 else {
                     const redirect = stripLocalBasenameFromPathname(redirectPath.current);
@@ -202,9 +198,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
             },
 
-            onSessionLocked: (localID, broadcast) => {
-                client.current.setStatus(AppStatus.LOCKED);
-                if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
+            onSessionLocked: (localID, offline, broadcast) => {
+                client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED);
+
+                if (broadcast) sw.send({ type: 'locked', localID, offline, broadcast: true });
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
@@ -220,7 +217,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (broadcast) {
                     switch (lock.status) {
                         case SessionLockStatus.REGISTERED:
-                            return sw.send({ type: 'locked', localID, broadcast: true });
+                            return sw.send({ type: 'locked', localID, offline: false, broadcast: true });
                         case SessionLockStatus.NONE:
                             return sw.send({ type: 'unlocked', localID, broadcast: true });
                     }
@@ -276,9 +273,15 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
         };
 
-        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID }) => {
+        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID, offline }) => {
             const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
-            if (authStore.hasSession(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
+            if (authStore.hasSession(localID) && unlocked) {
+                void authService.lock({
+                    soft: true,
+                    broadcast: false,
+                    offline,
+                });
+            }
         };
 
         const handleUnlocked: ServiceWorkerMessageHandler<'unlocked'> = ({ localID }) => {
@@ -319,12 +322,15 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
         const registeredLock = authStore.getLockStatus() === SessionLockStatus.REGISTERED;
         const ttl = authStore.getLockTTL();
+        const status = client.current.state.status;
+        const booted = clientBooted(status);
+        const offline = clientOfflineUnlocked(status);
 
-        if (clientBooted(client.current.state.status) && registeredLock && ttl) {
+        if (booted && registeredLock && ttl) {
             const now = getEpoch();
             const diff = now - (authStore.getLockLastExtendTime() ?? 0);
 
-            if (diff > ttl) return authService.lock({ soft: true, broadcast: true });
+            if (diff > ttl) return authService.lock({ soft: true, broadcast: true, offline });
             if (diff > ttl * 0.5) {
                 logger.info('[AuthServiceProvider] Activity probe extending lock time');
                 return authService.checkLock().catch(noop);
