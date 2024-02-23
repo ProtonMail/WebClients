@@ -44,6 +44,7 @@ describe('OnboardingChecklistWrapper', () => {
             items: new Set(),
             changeChecklistDisplay: mockedChangeDisplay,
             expiresAt: addDays(new Date(), 10),
+            canDisplayChecklist: true,
         } as Partial<ContextState>);
 
         const { getByText } = await render(<UsersOnboardingChecklist />);
@@ -62,6 +63,7 @@ describe('OnboardingChecklistWrapper', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
+            canDisplayChecklist: true,
         } as Partial<ContextState>);
 
         const { queryByText } = await render(<UsersOnboardingChecklist hideDismissButton />);
@@ -74,6 +76,7 @@ describe('OnboardingChecklistWrapper', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
+            canDisplayChecklist: true,
         } as Partial<ContextState>);
 
         const { getByText } = await render(<UsersOnboardingChecklist smallVariant />);

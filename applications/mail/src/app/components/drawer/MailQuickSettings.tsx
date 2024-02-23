@@ -13,9 +13,9 @@ import DrawerAllSettingsView from '@proton/components/components/drawer/views/qu
 import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
 import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
-import { MailShortcutsModal, useFlag, useKeyTransparencyContext } from '@proton/components/containers';
+import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
-import { useApi, useEventManager, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
@@ -47,7 +47,7 @@ const MailQuickSettings = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
-    const [{ Density, Checklists }] = useUserSettings();
+    const [{ Density }] = useUserSettings();
     const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
     const { esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = esStatus;
@@ -57,12 +57,7 @@ const MailQuickSettings = () => {
     const showKT = ktActivation === KeyTransparencyActivation.SHOW_UI;
 
     // TODO remove once the extended checklist storage split is
-    const [user] = useUser();
-    const TO_DELETE_FIX_FOR_CHECKLIST = useFlag('SplitStorageChecklistReopenedNova');
-    const hasFreeOnboardingChecklist =
-        user.isFree && TO_DELETE_FIX_FOR_CHECKLIST ? true : Checklists?.includes('get-started');
-
-    const { isChecklistFinished } = useGetStartedChecklist();
+    const { isChecklistFinished, canDisplayChecklist } = useGetStartedChecklist();
 
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
@@ -300,7 +295,7 @@ const MailQuickSettings = () => {
             <DefaultQuickSettings inAppReminders={mailReminders} />
 
             <QuickSettingsButtonSection>
-                {hasFreeOnboardingChecklist && (
+                {canDisplayChecklist && (
                     <QuickSettingsButton
                         onClick={() => setOnboardingChecklistProps(true)}
                         data-testid="mail-quick-settings:started-checklist-button"

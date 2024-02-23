@@ -25,6 +25,7 @@ describe('MailboxContainerPlaceholder', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
+            canDisplayChecklist: true,
         } as ContextState);
 
         await render(
@@ -44,6 +45,7 @@ describe('MailboxContainerPlaceholder', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
+            canDisplayChecklist: true,
         } as ContextState);
 
         await render(
@@ -63,6 +65,7 @@ describe('MailboxContainerPlaceholder', () => {
             displayState: CHECKLIST_DISPLAY_TYPE.HIDDEN,
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
+            canDisplayChecklist: true,
         } as ContextState);
 
         await render(
