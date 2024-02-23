@@ -6,7 +6,7 @@ import { CryptoProxy } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { Address, DecryptedAddressKey, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, AddressKey, DecryptedAddressKey, UserModel } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { addressesReducer } from '../addresses';
@@ -26,6 +26,11 @@ jest.mock('@proton/crypto', () => {
     return {
         CryptoProxy: {
             clearKey: jest.fn(),
+            getKeyInfo: jest.fn(() =>
+                Promise.resolve({
+                    fingerprint: 'fingerprint',
+                })
+            ),
         },
     };
 });
@@ -43,6 +48,24 @@ const reducer = combineReducers({
     ...addressKeysReducer,
 });
 
+const getTestAddressKey = (id: string, token: string): AddressKey => {
+    return {
+        ID: id,
+        Primary: 1,
+        Active: 1,
+        Flags: 7,
+        Fingerprint: id + 'FP',
+        Fingerprints: [id + 'FP1', id + 'FP2'],
+        PublicKey: id + 'pk',
+        Version: 6,
+        Activation: id + 'activation',
+        PrivateKey: id + 'secret',
+        Token: token,
+        Signature: id + 'signature',
+        AddressForwardingID: null,
+    };
+};
+
 const setup = (preloadedState?: Partial<typeof reducer>) => {
     const actions: any[] = [];
 
@@ -56,7 +79,7 @@ const setup = (preloadedState?: Partial<typeof reducer>) => {
         reducer,
         preloadedState: {
             user: getModelState({ Keys: [{ PrivateKey: '123' }] } as UserModel),
-            addresses: getModelState([{ Keys: [{ PrivateKey: '123' }] }] as Address[]),
+            addresses: getModelState([{ Keys: [getTestAddressKey('123', '123')] }] as Address[]),
             ...preloadedState,
         },
         extraThunkArguments,
@@ -76,7 +99,7 @@ mockedCryptoProxy.clearKey.mockImplementation(async () => {});
 const mockedGetDecryptedAddressKeysHelper = getDecryptedAddressKeysHelper as jest.MockedFunction<any>;
 const mockedGetDecryptedUserKeysHelper = getDecryptedUserKeysHelper as jest.MockedFunction<any>;
 
-const getKey = (id: number) => ({ privateKey: id, publicKey: id }) as unknown as DecryptedAddressKey;
+const getKey = (id: number) => ({ ID: id.toString(), privateKey: id, publicKey: id }) as unknown as DecryptedAddressKey;
 
 describe('address keys keys listener', () => {
     it('should clear address keys when changed', async () => {
@@ -98,13 +121,7 @@ describe('address keys keys listener', () => {
         expect(mockedCryptoProxy.clearKey.mock.calls[1][0]).toEqual({ key: firstKeys[0].publicKey });
     });
 
-    const getAddress = (data: {
-        ID: string;
-        Keys: {
-            PrivateKey: string;
-            Token: string;
-        }[];
-    }) => {
+    const getAddress = (data: { ID: string; Keys: AddressKey[] }) => {
         return {
             ...data,
         } as unknown as Address;
@@ -115,7 +132,7 @@ describe('address keys keys listener', () => {
             '1': getModelState([getKey(1)]),
         };
         const { store } = setup({
-            addresses: getModelState([getAddress({ ID: '1', Keys: [{ PrivateKey: '1', Token: 'a' }] })]),
+            addresses: getModelState([getAddress({ ID: '1', Keys: [getTestAddressKey('1', 'a')] })]),
             addressKeys: initialState,
             userKeys: getModelState([getKey(1)]),
         });
@@ -127,7 +144,7 @@ describe('address keys keys listener', () => {
                     {
                         ID: '2',
                         Action: EVENT_ACTIONS.CREATE,
-                        Address: getAddress({ ID: '2', Keys: [{ PrivateKey: '2', Token: 'b' }] }),
+                        Address: getAddress({ ID: '2', Keys: [getTestAddressKey('2', 'b')] }),
                     },
                 ],
             })
@@ -147,7 +164,7 @@ describe('address keys keys listener', () => {
                     {
                         ID: '3',
                         Action: EVENT_ACTIONS.CREATE,
-                        Address: getAddress({ ID: '3', Keys: [{ PrivateKey: '3', Token: 'b' }] }),
+                        Address: getAddress({ ID: '3', Keys: [getTestAddressKey('3', 'b')] }),
                     },
                 ],
             })
@@ -164,7 +181,7 @@ describe('address keys keys listener', () => {
                     {
                         ID: '2',
                         Action: EVENT_ACTIONS.UPDATE,
-                        Address: getAddress({ ID: '2', Keys: [{ PrivateKey: '4', Token: 'b' }] }),
+                        Address: getAddress({ ID: '2', Keys: [getTestAddressKey('4', 'b')] }),
                     },
                 ],
             })
@@ -180,7 +197,7 @@ describe('address keys keys listener', () => {
                     {
                         ID: '2',
                         Action: EVENT_ACTIONS.UPDATE,
-                        Address: getAddress({ ID: '2', Keys: [{ PrivateKey: '4', Token: 'b' }] }),
+                        Address: getAddress({ ID: '2', Keys: [getTestAddressKey('4', 'b')] }),
                     },
                 ],
             })
