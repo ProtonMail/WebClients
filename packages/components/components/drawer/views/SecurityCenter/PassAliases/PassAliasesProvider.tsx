@@ -14,11 +14,12 @@ import { AliasOptions } from '@proton/pass/types';
 import { UNIX_DAY, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { filterPassAliases } from './PassAliases.helpers';
-import PassAliasesInitError from './PassAliasesInitError';
+import PassAliasesError, { PASS_ALIASES_ERROR_STEP } from './PassAliasesError';
 import type { CreateModalFormState, PassAliasesVault } from './interface';
 
 /**
@@ -103,18 +104,15 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
                 text: c('Success').t`Alias saved and copied`,
                 expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
             });
-        } catch (e: any) {
-            const error = getApiError(e);
-            if (error.code === API_CUSTOM_ERROR_CODES.CANT_CREATE_MORE_PASS_ALIASES) {
-                // This error should occur only when user reaches aliases limit with multiple vaults.
-                // In the following scenario and API error notification is displayed saying user can't create more aliases.
-                // We display the modal 2 seconds after the error notification is displayed
-                setTimeout(() => {
-                    passAliasesUpsellModal.openModal(true);
-                }, 2000);
+        } catch (error: any) {
+            if (
+                error instanceof ApiError &&
+                getApiError(error)?.code === API_CUSTOM_ERROR_CODES.CANT_CREATE_MORE_PASS_ALIASES
+            ) {
+                passAliasesUpsellModal.openModal(true);
             } else {
-                console.error(e);
-                traceInitiativeError('drawer-security-center', e);
+                const formattedError = new PassAliasesError(error, PASS_ALIASES_ERROR_STEP.CREATE_ALIAS);
+                traceInitiativeError('drawer-security-center', formattedError);
 
                 // Because API displays a notification in case of error,
                 // here we manually display a notification in case no API errors are caught
@@ -175,7 +173,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
                 type: 'error',
             });
 
-            throwError(new PassAliasesInitError(error));
+            throwError(new PassAliasesError(error, PASS_ALIASES_ERROR_STEP.INIT_BRIDGE));
         });
     }, [user, addresses]);
 
