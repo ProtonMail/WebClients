@@ -1,6 +1,6 @@
 import createIntervalTree from '@protontech/interval-tree';
 
-import { SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SIGNED_FIELDS, SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
 import { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarEventSharedData, DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar';
@@ -26,6 +26,10 @@ export type EventReadResult = {
 };
 
 export type SharedVcalVeventComponent = Pick<VcalVeventComponent, (typeof SHARED_SIGNED_FIELDS)[number] | 'component'>;
+export type CalendarVcalVeventComponent = Pick<
+    VcalVeventComponent,
+    (typeof CALENDAR_SIGNED_FIELDS)[number] | 'component'
+>;
 export type MetadataVcalVeventComponent = Pick<
     VcalVeventComponent,
     'uid' | 'dtstamp' | 'component' | 'dtstart' | 'dtend' | 'recurrence-id' | 'exdate' | 'rrule'

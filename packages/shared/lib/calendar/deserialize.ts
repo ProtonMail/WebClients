@@ -318,5 +318,6 @@ export const readCalendarEvent = async ({
         sharedSessionKey,
         calendarSessionKey,
     };
+
     return { veventComponent: vevent, hasDefaultNotifications, verificationStatus, selfAddressData, encryptionData };
 };
