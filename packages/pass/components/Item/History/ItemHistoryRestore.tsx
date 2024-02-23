@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, ButtonGroup, Icon } from '@proton/components/index';
+import { Alert, Icon } from '@proton/components/index';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCardContent';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
+import { PassButtonGroup } from '@proton/pass/components/Layout/Button/PassButtonGroup';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
@@ -99,7 +100,7 @@ export const ItemHistoryRestore: FC<Props> = ({ previousRevision, currentRevisio
                     : undefined
             }
             bottom={
-                <ButtonGroup shape="solid" pill className="w-full">
+                <PassButtonGroup>
                     <Button
                         onClick={() => setSelectedRevision(previousRevision)}
                         selected={isPreviousRevisionSelected}
@@ -114,7 +115,7 @@ export const ItemHistoryRestore: FC<Props> = ({ previousRevision, currentRevisio
                         color="norm"
                         fullWidth
                     >{c('Info').t`Current version`}</Button>
-                </ButtonGroup>
+                </PassButtonGroup>
             }
         >
             <ItemTypeContentComponent revision={selectedRevision} />
