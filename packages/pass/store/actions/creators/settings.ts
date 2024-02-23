@@ -55,7 +55,7 @@ export const syncLocalSettings = createAction(
     (payload: RecursivePartial<ProxiedSettings>) => ({ payload })
 );
 
-export const offlineSetupIntent = createAction('offline::setup::intent', (password: string) =>
+export const offlineSetupIntent = createAction('offline::setup::intent', (loginPassword: string) =>
     pipe(
         withRequest({ type: 'start', id: offlineSetupRequest }),
         withNotification({
@@ -63,7 +63,7 @@ export const offlineSetupIntent = createAction('offline::setup::intent', (passwo
             text: c('Info').t`Setting up offline mode...`,
             type: 'info',
         })
-    )({ payload: { password } })
+    )({ payload: { loginPassword } })
 );
 
 export const offlineSetupFailure = createAction(
