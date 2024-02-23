@@ -518,6 +518,10 @@ const getSaveRecurringEventActions = async ({
                 singleEditIcsPromises.push(
                     ...singleEditRecurrences.map(async (event) => {
                         const { veventComponent } = await getCalendarEventRaw(event);
+                        const hasModifiedNotifications = getHasModifiedNotifications(
+                            veventComponent,
+                            updateMergeVevent
+                        );
                         if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
                             return;
                         }
@@ -568,7 +572,9 @@ const getSaveRecurringEventActions = async ({
                         const updateSingleEditOperation = getUpdateSyncOperation({
                             veventComponent: updatedSingleEditVevent,
                             calendarEvent: event,
-                            hasDefaultNotifications: getHasDefaultNotifications(event),
+                            hasDefaultNotifications: hasModifiedNotifications
+                                ? false
+                                : getHasDefaultNotifications(event),
                             isAttendee: false,
                             isBreakingChange: false,
                             isPersonalSingleEdit: event.IsPersonalSingleEdit,
