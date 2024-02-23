@@ -1,11 +1,10 @@
-import { WasmApiWallet, WasmBitcoinUnit, WasmScriptType, WasmWalletKey } from '../../../pkg';
+import { WasmApiWallet, WasmBitcoinUnit, WasmScriptType, WasmWalletAccount, WasmWalletKey } from '../../../pkg';
 import { IWasmWallet } from '../../types';
 import {
     BitcoinUnit,
     FiatCurrency,
     UserWalletSettings,
     Wallet,
-    WalletAccount,
     WalletPassphrase,
     WalletSettings,
     WalletSetupMode,
@@ -132,64 +131,46 @@ export const walletUserSettings: UserWalletSettings = {
     ModifyTime: 1701139393899,
 };
 
-export const walletAccountOneA: WalletAccount = {
-    WalletAccountID: 8,
-    WalletID: 0,
-    Index: 0,
+export const walletAccountOneA: WasmWalletAccount = {
+    ID: '8',
     Label: 'Account 1',
     ScriptType: WasmScriptType.NativeSegwit,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+    DerivationPath: "m/84'/0'/0'",
 };
 
-export const walletAccountOneB: WalletAccount = {
-    WalletAccountID: 9,
-    WalletID: 0,
-    Index: 2,
+export const walletAccountOneB: WasmWalletAccount = {
+    ID: '9',
     Label: 'Account 2',
     ScriptType: WasmScriptType.NativeSegwit,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+    DerivationPath: "m/84'/0'/1'",
 };
 
-export const walletAccountOneC: WalletAccount = {
-    WalletAccountID: 91,
-    WalletID: 0,
-    Index: 0,
+export const walletAccountOneC: WasmWalletAccount = {
+    ID: '91',
     Label: 'Account 2',
     ScriptType: WasmScriptType.Taproot,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+    DerivationPath: "m/86'/0'/0'",
 };
 
-export const walletAccountTwoA: WalletAccount = {
-    WalletAccountID: 10,
-    WalletID: 1,
-    Index: 0,
+export const walletAccountTwoA: WasmWalletAccount = {
+    ID: '10',
     Label: 'Main account',
     ScriptType: WasmScriptType.NestedSegwit,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+    DerivationPath: "m/49'/0'/0'",
 };
 
-export const walletAccountTwoB: WalletAccount = {
-    WalletAccountID: 11,
-    WalletID: 1,
-    Index: 0,
-    Label: 'Segwit Account',
-    ScriptType: WasmScriptType.NativeSegwit,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
-};
-
-export const walletAccountThree: WalletAccount = {
-    WalletAccountID: 12,
-    WalletID: 2,
-    Index: 0,
+export const walletAccountTwoB: WasmWalletAccount = {
+    ID: '11',
     Label: 'Electrum account',
     ScriptType: WasmScriptType.NativeSegwit,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+    DerivationPath: "m/84'/0'/0'",
+};
+
+export const walletAccountThree: WasmWalletAccount = {
+    ID: '12',
+    Label: 'Electrum account',
+    ScriptType: WasmScriptType.NativeSegwit,
+    DerivationPath: "m/84'/0'/0'",
 };
 
 export const wallets: IWasmWallet[] = [
@@ -199,18 +180,21 @@ export const wallets: IWasmWallet[] = [
         // accounts: [walletAccountOneA, walletAccountOneB, walletAccountOneC],
         WalletSettings: walletSettingsOne,
         WalletKey: walletKeyOne,
+        WalletAccounts: [],
     },
     {
         Wallet: walletTwo,
         // accounts: [walletAccountTwoA, walletAccountTwoB],
         WalletSettings: walletSettingsTwo,
         WalletKey: walletKeyTwo,
+        WalletAccounts: [],
     },
     {
         Wallet: walletThree,
         // accounts: [walletAccountThree],
         WalletSettings: walletSettingsThree,
         WalletKey: walletKeyThree,
+        WalletAccounts: [],
     },
 ];
 

@@ -1,8 +1,14 @@
 import { IWasmWallet } from '.';
-import { IWasmSimpleTransactionArray, IWasmUtxoArray, WasmAccount, WasmBalance, WasmWallet } from '../../pkg';
-import { WalletAccount } from './api';
+import {
+    IWasmSimpleTransactionArray,
+    IWasmUtxoArray,
+    WasmAccount,
+    WasmBalance,
+    WasmWallet,
+    WasmWalletAccount,
+} from '../../pkg';
 
-export type AccountWithBlockchainData = WalletAccount & {
+export type AccountWithBlockchainData = WasmWalletAccount & {
     balance: WasmBalance;
     transactions: IWasmSimpleTransactionArray;
     utxos: IWasmUtxoArray;

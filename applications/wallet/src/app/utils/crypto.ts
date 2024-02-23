@@ -39,19 +39,32 @@ export type EncryptedWalletPart = Partial<
     { mnemonic: string; publicKey: undefined } | { mnemonic: undefined; publicKey: string }
 >;
 
+export const decryptWalletKey = async (walletKey: string, keys: DecryptedKey[]) => {
+    const privateUserKeys = keys.map((key) => key.privateKey);
+
+    const encryptedEntropy = base64StringToUint8Array(walletKey);
+
+    const { data: decryptedEntropy } = await CryptoProxy.decryptMessage({
+        binaryMessage: encryptedEntropy,
+        decryptionKeys: privateUserKeys,
+        verificationKeys: privateUserKeys,
+        format: 'binary',
+    });
+
+    return getSymmetricKey(decryptedEntropy);
+};
+
 /**
  * Encrypts a wallet's data with provided key
  *
  * @param dataToEncrypt an array containing the data to encrypt with the provided wallet key
- * @param key entropy to use to encrypt wallet data
+ * @param key key to use to encrypt wallet data
  * @returns an array containing the data encrypted
  */
 export const encryptWalletDataWithWalletKey = async (
     dataToEncrypt: (string | undefined)[],
-    entropy: Uint8Array
+    key: CryptoKey
 ): Promise<(string | undefined)[]> => {
-    const key = await getSymmetricKey(entropy);
-
     const encryptedData = await Promise.all(
         dataToEncrypt.map(async (data) => {
             if (!data) {
@@ -72,27 +85,28 @@ export const encryptWalletDataWithWalletKey = async (
  * Encrypts a wallet's data
  *
  * @param dataToEncrypt an array containing the data to encrypt with the generated wallet key
- * @param key user key to use to encrypt generated wallet key
+ * @param userKey user key to use to encrypt generated wallet key
  * @returns a tupple containing encrypted data and a nested tupple with the encrypted wallet key and the id of the user key used to encrypt the wallet key
  */
 export const encryptWalletData = async (
     dataToEncrypt: (string | undefined)[],
-    key: DecryptedKey
+    userKey: DecryptedKey
 ): Promise<[(string | undefined)[], [string, string]]> => {
     const entropy = generateEntropy(KEY_LENGTH);
+    const key = await getSymmetricKey(entropy);
 
-    const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, entropy);
+    const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
     const { message: encryptedEntropy } = await CryptoProxy.encryptMessage({
         binaryData: entropy,
-        encryptionKeys: [key.privateKey],
-        signingKeys: [key.privateKey],
+        encryptionKeys: [userKey.privateKey],
+        signingKeys: [userKey.privateKey],
         format: 'binary',
     });
 
     const encodedEncryptedEntropy = uint8ArrayToBase64String(encryptedEntropy);
 
-    return [encryptedData, [encodedEncryptedEntropy, key.ID]];
+    return [encryptedData, [encodedEncryptedEntropy, userKey.ID]];
 };
 
 /**
@@ -104,18 +118,7 @@ export const encryptWalletData = async (
  * @returns an array containing wallet's decrypted wallet
  */
 export const decryptWalletData = async (dataToDecrypt: (string | null)[], walletKey: string, keys: DecryptedKey[]) => {
-    const privateUserKeys = keys.map((key) => key.privateKey);
-
-    const encryptedEntropy = base64StringToUint8Array(walletKey);
-
-    const { data: decryptedEntropy } = await CryptoProxy.decryptMessage({
-        binaryMessage: encryptedEntropy,
-        decryptionKeys: privateUserKeys,
-        verificationKeys: privateUserKeys,
-        format: 'binary',
-    });
-
-    const key = await getSymmetricKey(decryptedEntropy);
+    const key = await decryptWalletKey(walletKey, keys);
 
     const decryptedData = await Promise.all(
         dataToDecrypt.map(async (data) => {

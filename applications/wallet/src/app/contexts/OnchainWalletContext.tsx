@@ -13,7 +13,7 @@ export interface OnchainWalletContextValue {
     wallets: WalletWithAccountsWithBalanceAndTxs[] | undefined;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
     fees: Map<string, number>;
-    syncSingleWalletAccountBlockchainData: (walletId: string, accountId: number, shouldSync?: any) => Promise<void>;
+    syncSingleWalletAccountBlockchainData: (walletId: string, accountId: string, shouldSync?: any) => Promise<void>;
     network: WasmNetwork;
 }
 
