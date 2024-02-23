@@ -14,7 +14,13 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { GmailSyncModal, useFlag } from '@proton/components/containers';
-import { useActiveBreakpoint, useLocalState, useSubscription, useUser } from '@proton/components/hooks';
+import {
+    useActiveBreakpoint,
+    useLocalState,
+    useSubscription,
+    useUser,
+    useUserSettings,
+} from '@proton/components/hooks';
 import { canCheckItem } from '@proton/shared/lib/helpers/subscription';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -47,6 +53,7 @@ const UsersOnboardingChecklist = ({
     const { viewportWidth } = useActiveBreakpoint();
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const [userSettings] = useUserSettings();
 
     // TODO remove once the extended checklist storage split is finished
     const checklistFeatureFlag = useFlag('SplitStorageChecklistReopenedNova');
@@ -62,7 +69,7 @@ const UsersOnboardingChecklist = ({
 
     const { items, changeChecklistDisplay, isChecklistFinished, userWasRewarded, expiresAt } = useGetStartedChecklist();
     const canDisplayChecklist = checklistFeatureFlag
-        ? canCheckItem(subscription) || user.isFree
+        ? (canCheckItem(subscription) && userSettings.Checklists?.includes('paying-user')) || user.isFree
         : isBefore(new Date(), expiresAt);
 
     // This is used to display the reward modal, can only be opened when user is finished and all modals are closed
