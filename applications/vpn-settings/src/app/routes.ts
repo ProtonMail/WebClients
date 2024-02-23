@@ -78,7 +78,7 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-subscription',
-                    available: user.hasPaidVpn && cancellablePlan && subscription?.Renew === Renew.Enabled,
+                    available: user.isPaid && cancellablePlan && subscription?.Renew === Renew.Enabled,
                 },
                 {
                     text: c('Title').t`Downgrade account`,
