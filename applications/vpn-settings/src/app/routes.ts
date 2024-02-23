@@ -97,22 +97,6 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
                 },
             ],
         },
-        general: <SectionConfig>{
-            text: c('Title').t`General`,
-            to: '/general',
-            icon: 'cog-wheel',
-            available: !canHaveOrganization,
-            subsections: [
-                {
-                    text: c('Title').t`Language`,
-                    id: 'language',
-                },
-                {
-                    text: c('Themes').t`Themes`,
-                    id: 'themes',
-                },
-            ],
-        },
         account: <SectionConfig>{
             text: c('Title').t`Account`,
             to: '/account',
@@ -124,7 +108,6 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
                 },
                 {
                     id: 'language',
-                    available: canHaveOrganization,
                 },
                 {
                     text: c('Title').t`Two-factor authentication`,
@@ -149,6 +132,17 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
                     text: c('Title').t`Delete`,
                     available: user.canPay && !user.isMember,
                     id: 'delete',
+                },
+            ],
+        },
+        appearance: <SectionConfig>{
+            text: c('Title').t`Appearance`,
+            to: '/appearance',
+            icon: 'paint-roller',
+            subsections: [
+                {
+                    text: c('Themes').t`Themes`,
+                    id: 'themes',
                 },
             ],
         },
