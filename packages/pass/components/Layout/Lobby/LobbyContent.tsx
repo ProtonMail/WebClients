@@ -45,7 +45,8 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
     const brandNameJSX = (
         <img
             src={passBrandText}
-            className="pass-lobby--brand-text ml-2 h-custom shrink-0"
+            // we have margin on both sides because depending on the language this logo may be on the left or right
+            className="pass-lobby--brand-text h-custom shrink-0 mx-2"
             style={{ '--h-custom': '1.5rem' }}
             key="brand"
             alt=""
