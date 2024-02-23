@@ -50,7 +50,6 @@ import {
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsVpnPlan,
-    getLongerCycle,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasNewVisionary,
@@ -304,7 +303,7 @@ const SubscriptionContainer = ({
                 getNormalCycleFromCustomCycle(subscription?.Cycle) ??
                 DEFAULT_CYCLE;
 
-            return getLongerCycle(cycle);
+            return cycle;
         })();
 
         const currency = (() => {
