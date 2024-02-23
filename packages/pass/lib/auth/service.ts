@@ -92,8 +92,9 @@ export interface AuthServiceConfig {
     onSessionEmpty?: () => void;
     /** Called when a session is locked either through user action or when a
      * locked session is detected. The `broadcast` flag indicates wether we should
-     * broadcast the locked session to other clients. */
-    onSessionLocked?: (localID: Maybe<number>, broadcast: boolean) => void;
+     * broadcast the locked session to other clients. Offline flag indicates wether
+     * the lock request was created offline (adapt the effect accordingly) */
+    onSessionLocked?: (localID: Maybe<number>, offline: boolean, broadcast: boolean) => void;
     /** Callback when session lock is created, updated or deleted */
     onSessionLockUpdate?: (data: SessionLock, broadcast: boolean) => MaybePromise<void>;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
@@ -103,7 +104,7 @@ export interface AuthServiceConfig {
     onSessionPersist?: (encryptedSession: string) => MaybePromise<void>;
     /** Called when resuming the session failed for any reason excluding inactive
      * session error. */
-    onSessionFailure?: (options: AuthResumeOptions) => void;
+    onSessionFailure?: (options: AuthResumeOptions) => MaybePromise<void>;
     /** Called when session tokens have been refreshed. The`broadcast` flag indicates
      * wether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
@@ -153,7 +154,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             } catch {
                 logger.warn(`[AuthService] Logging in session failed`);
                 config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` });
-                config?.onSessionFailure?.({ forceLock: true, retryable: true });
+                await config?.onSessionFailure?.({ forceLock: true, retryable: true });
                 return false;
             }
 
@@ -245,9 +246,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
             void authService.persistSession();
         },
 
-        lock: async (options: { soft: boolean; broadcast?: boolean }): Promise<void> => {
-            logger.info(`[AuthService] Locking session [soft: ${options.soft}]`);
-            config.onSessionLocked?.(authStore.getLocalID(), options.broadcast ?? false);
+        lock: async (options: { soft: boolean; broadcast?: boolean; offline?: boolean }): Promise<void> => {
+            const { offline = false, broadcast = false, soft } = options;
+            logger.info(`[AuthService] Locking session [soft: ${soft}, offline: ${offline}]`);
+            config.onSessionLocked?.(authStore.getLocalID(), offline, broadcast);
 
             if (authStore.getLockStatus() !== SessionLockStatus.LOCKED && !options?.soft) {
                 await forceSessionLock().catch(noop);
@@ -282,7 +284,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 authStore.setLockToken(sessionLockToken);
 
                 await authService.checkLock();
-                await authService.persistSession();
+                await authService.persistSession().catch(noop);
                 const loggedIn = await authService.login(authStore.getSession());
 
                 if (loggedIn && sessionLockToken) config.onSessionUnlocked?.(sessionLockToken);
@@ -292,17 +294,20 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
         },
 
-        /* Calling this function when a lock is registered and active
-         * will extend the lock by resetting the ttl server-side */
+        /** Calling this function when a lock is registered and active
+         * will extend the lock by resetting the ttl server-side. Set the
+         * lock extend time regardless of the result of the API call in
+         * order for clients to be able to lock even when offline. */
         checkLock: async () => {
             logger.info('[AuthService] Checking session lock status');
+            authStore.setLockLastExtendTime(getEpoch());
+
             const lock = await checkSessionLock();
 
             authStore.setLockStatus(lock.status);
             authStore.setLockTTL(lock.ttl);
-            authStore.setLockLastExtendTime(getEpoch());
-
             void config.onSessionLockUpdate?.(lock, false);
+
             return lock;
         },
 
@@ -374,8 +379,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             config.onNotification?.({ text });
                         }
 
-                        const { sessionLocked, sessionInactive, offline } = api.getState();
-                        const sessionFailure = sessionLocked || sessionInactive || offline;
+                        const { sessionLocked, sessionInactive, online } = api.getState();
+                        const sessionFailure = sessionLocked || sessionInactive || !online;
 
                         /** if resume failed for any other reason than a locked or
                          * inactive session, trigger the session resume sequence.

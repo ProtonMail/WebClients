@@ -5,6 +5,9 @@ import { isObject } from './is-object';
 type MergeOptions = { excludeEmpty: boolean };
 type Obj = { [key: PropertyKey]: any };
 
+const isEmptyValue = (value: any) =>
+    value === null || value === undefined || value === '' || (typeof value === 'number' && Number.isNaN(value));
+
 const merge = <Original extends Obj, Overwrite extends Obj>(
     original: Original,
     overwrite: Overwrite,
@@ -12,7 +15,7 @@ const merge = <Original extends Obj, Overwrite extends Obj>(
 ): Original & Overwrite => {
     if ((original as any) === (overwrite as any)) return original as any;
     const keys = Object.keys(overwrite);
-    const filteredKeys = options.excludeEmpty ? keys.filter((key) => Boolean(overwrite[key])) : keys;
+    const filteredKeys = options.excludeEmpty ? keys.filter((key) => !isEmptyValue(overwrite[key])) : keys;
 
     return filteredKeys.reduce(
         (overwritten, key) => ({

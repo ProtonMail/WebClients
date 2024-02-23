@@ -16,12 +16,13 @@ import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
+import { isOffline, isOnline } from '@proton/pass/lib/api/utils';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
-import { clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
+import { clientBooted, clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -53,6 +54,11 @@ export const useAuthService = (): AuthService => {
     const authService = useContext(AuthServiceContext);
     if (authService === undefined) throw new Error('authentication service not initialized');
     return authService;
+};
+
+const canResumeOffline = async (): Promise<boolean> => {
+    const cache = await getDBCache(authStore.getUserID()!);
+    return canOfflineUnlock(cache, authStore);
 };
 
 /** The only reason we have to wrap the AuthenticationService to a react context is
@@ -95,20 +101,15 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         /** configure the authentication store partially in order to
                          * hydrate the userID and offline salts properties */
                         authStore.setSession(persistedSession);
-                        const cache = await getDBCache(authStore.getUserID()!);
-
-                        if (canOfflineUnlock(cache, authStore)) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
+                        if (await canResumeOffline()) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
                         else if (authStore.hasSession(initialLocalID)) client.current.setStatus(AppStatus.ERROR);
                         else client.current.setStatus(AppStatus.UNAUTHORIZED);
                     } else client.current.setStatus(AppStatus.UNAUTHORIZED);
 
-                    const redirect = stripLocalBasenameFromPathname(redirectPath.current);
-                    history.replace((getBasename(initialLocalID) ?? '/') + redirect);
-
                     return false;
                 };
 
-                if (OFFLINE_SUPPORTED && !navigator.onLine) return handleOffline();
+                if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
 
                 /* remove any in-memory lock status/tokens to force
                  * session lock revalidation on init */
@@ -124,10 +125,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const hasLocalID = pathLocalID !== undefined;
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
                 const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
-                const apiOffline = api.getState().offline;
 
-                if (OFFLINE_SUPPORTED && apiOffline) return handleOffline();
-                if (autoFork && navigator.onLine) {
+                if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
+                if (autoFork && isOnline()) {
                     /* If the session could not be resumed from the LocalID from path,
                      * we are likely dealing with an app-switch request from another client.
                      * In this case, redirect to account through a fork request */
@@ -144,7 +144,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
             onAuthorized: async (_, localID) => {
                 const bootedOffline = clientOfflineUnlocked(client.current.state.status);
-
                 if (bootedOffline) client.current.setStatus(AppStatus.READY);
                 else {
                     const redirect = stripLocalBasenameFromPathname(redirectPath.current);
@@ -199,9 +198,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
             },
 
-            onSessionLocked: (localID, broadcast) => {
-                client.current.setStatus(AppStatus.LOCKED);
-                if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
+            onSessionLocked: (localID, offline, broadcast) => {
+                client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED);
+
+                if (broadcast) sw.send({ type: 'locked', localID, offline, broadcast: true });
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
@@ -217,7 +217,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (broadcast) {
                     switch (lock.status) {
                         case SessionLockStatus.REGISTERED:
-                            return sw.send({ type: 'locked', localID, broadcast: true });
+                            return sw.send({ type: 'locked', localID, offline: false, broadcast: true });
                         case SessionLockStatus.NONE:
                             return sw.send({ type: 'unlocked', localID, broadcast: true });
                     }
@@ -241,7 +241,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 }
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
-            onSessionFailure: () => client.current.setStatus(AppStatus.ERROR),
+            onSessionFailure: async () => {
+                const offline = OFFLINE_SUPPORTED && isOffline();
+                const resumeOffline = offline && (await canResumeOffline());
+                client.current.setStatus(resumeOffline ? AppStatus.OFFLINE_LOCKED : AppStatus.ERROR);
+            },
             onNotification: (notification) =>
                 createNotification({
                     ...notification,
@@ -269,9 +273,15 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
         };
 
-        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID }) => {
+        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID, offline }) => {
             const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
-            if (authStore.hasSession(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
+            if (authStore.hasSession(localID) && unlocked) {
+                void authService.lock({
+                    soft: true,
+                    broadcast: false,
+                    offline,
+                });
+            }
         };
 
         const handleUnlocked: ServiceWorkerMessageHandler<'unlocked'> = ({ localID }) => {
@@ -312,13 +322,18 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
         const registeredLock = authStore.getLockStatus() === SessionLockStatus.REGISTERED;
         const ttl = authStore.getLockTTL();
+        const status = client.current.state.status;
+        const booted = clientBooted(status);
+        const offline = clientOfflineUnlocked(status);
 
-        if (clientReady(client.current.state.status) && registeredLock && ttl) {
+        if (booted && registeredLock && ttl) {
             const now = getEpoch();
             const diff = now - (authStore.getLockLastExtendTime() ?? 0);
+
+            if (diff > ttl) return authService.lock({ soft: true, broadcast: true, offline });
             if (diff > ttl * 0.5) {
                 logger.info('[AuthServiceProvider] Activity probe extending lock time');
-                await authService.checkLock().catch(noop);
+                return authService.checkLock().catch(noop);
             }
         }
     });

@@ -14,7 +14,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
     (
         | { type: 'abort'; requestUrl: string }
         | { type: 'action'; action: Action }
-        | { type: 'locked' }
+        | { type: 'locked'; offline: boolean }
         | { type: 'ping' }
         | { type: 'refresh'; data: RefreshSessionData }
         | { type: 'unauthorized' }
