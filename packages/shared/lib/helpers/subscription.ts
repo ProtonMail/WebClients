@@ -177,6 +177,10 @@ export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     return [VPN, VPN2024, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
 
+export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    return [VPN, VPN2024, VPN_PASS_BUNDLE].includes(planName as any);
+};
+
 export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
 };
@@ -197,6 +201,10 @@ export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
         hasVpnPro(subscription) ||
         hasVpnBusiness(subscription)
     );
+};
+
+export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
+    return hasVPN(subscription) || hasVPN2024(subscription) || hasVPNPassBundle(subscription);
 };
 
 export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
@@ -658,7 +666,7 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
 export const hasCancellablePlan = (subscription: Subscription | undefined) => {
-    return hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription);
+    return getHasConsumerVpnPlan(subscription) || hasPassPlus(subscription);
 };
 
 export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {

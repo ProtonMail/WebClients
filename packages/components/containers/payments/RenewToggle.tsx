@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Autopay } from '@proton/components/payments/core';
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 
 import { PrimaryButton } from '../../components/button';
 import { ModalProps } from '../../components/modalTwo';
@@ -56,8 +56,7 @@ export interface UseRenewToggleResult {
 
 export const useRenewToggle = ({ initialRenewState = Autopay.ENABLE }: UseRenewToggleOptions): UseRenewToggleResult => {
     const [subscription] = useSubscription();
-    const vpnPlans: (PLANS | ADDON_NAMES)[] = [PLANS.VPN, PLANS.VPNBASIC, PLANS.VPNPLUS];
-    const isVPNPlan = !!subscription?.Plans?.some(({ Name }) => vpnPlans.includes(Name));
+    const isVPNPlan = getHasConsumerVpnPlan(subscription);
 
     const [disableRenewModal, showDisableRenewModal] = useModalTwo(DisableRenewModal);
 
