@@ -96,9 +96,17 @@ export interface UpdatePersonalPartOperation {
     data: {
         calendarID: string;
         eventID: string;
-        addressID?: string;
         eventComponent?: VcalVeventComponent;
         hasDefaultNotifications?: boolean;
         color?: string;
+    };
+}
+
+export interface AttendeeDeleteSingleEditOperation {
+    data: {
+        addressID: string;
+        calendarID: string;
+        eventID: string;
+        eventComponent: VcalVeventComponent;
     };
 }

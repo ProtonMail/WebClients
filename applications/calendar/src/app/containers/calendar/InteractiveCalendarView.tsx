@@ -40,7 +40,12 @@ import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMa
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
-import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
+import {
+    attendeeDeleteSingleEdit,
+    updateAttendeePartstat,
+    updateMember,
+    updatePersonalEventPart,
+} from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
 import {
@@ -78,6 +83,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import {
+    AttendeeDeleteSingleEditResponse,
     AttendeeModel,
     CalendarBootstrap,
     CalendarEvent,
@@ -127,6 +133,7 @@ import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
+    AttendeeDeleteSingleEditOperation,
     InviteActions,
     OnSendPrefsErrors,
     RecurringActionData,
@@ -152,10 +159,12 @@ import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getU
 import getComponentFromCalendarEventUnencryptedPart from './eventStore/cache/getComponentFromCalendarEventUnencryptedPart';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
 import {
+    upsertAttendeeDeleteSingleEditResponses,
     upsertSyncMultiActionsResponses,
     upsertUpdateEventPartResponses,
 } from './eventStore/cache/upsertResponsesArray';
 import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
+import getAttendeeDeleteSingleEditPayload from './getAttendeeDeleteSingleEditPayload';
 import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
 import {
@@ -1239,13 +1248,11 @@ const InteractiveCalendarView = ({
             return [];
         }
         const requests = operations.map(
-            ({ data: { addressID, eventID, calendarID, eventComponent, hasDefaultNotifications, color } }) =>
+            ({ data: { eventID, calendarID, eventComponent, hasDefaultNotifications, color } }) =>
                 async () => {
                     const payload = await getUpdatePersonalEventPayload({
                         eventComponent,
                         hasDefaultNotifications,
-                        addressID,
-                        getAddressKeys,
                         color,
                     });
                     return api<UpdateEventPartApiResponse>({
@@ -1262,6 +1269,23 @@ const InteractiveCalendarView = ({
         } catch (e: any) {
             return [];
         }
+    };
+
+    const handleAttendeeDeleteSingleEditActions = async (operations: AttendeeDeleteSingleEditOperation[] = []) => {
+        if (!operations.length) {
+            return [];
+        }
+        const requests = operations.map(({ data: { addressID, eventID, calendarID, eventComponent } }) => async () => {
+            const payload = await getAttendeeDeleteSingleEditPayload({
+                eventComponent,
+                addressID,
+                getAddressKeys,
+            });
+            return api<AttendeeDeleteSingleEditResponse>(attendeeDeleteSingleEdit(calendarID, eventID, payload));
+        });
+        // the routes called in requests do not have any specific jail limit
+        // the limit per user session is 25k requests / 900s
+        return processApiRequestsSafe(requests, 25000, 900 * SECOND);
     };
 
     const handleEquivalentAttendees = async (equivalentAttendees: string[][]) => {
@@ -1381,6 +1405,7 @@ const InteractiveCalendarView = ({
                 syncActions,
                 updatePartstatActions = [],
                 updatePersonalPartActions = [],
+                attendeeDeleteSingleEditActions = [],
                 texts,
             } = await getDeleteEventActions({
                 targetEvent,
@@ -1396,10 +1421,12 @@ const InteractiveCalendarView = ({
                 sendIcs: handleSendIcs,
             });
             // some operations may refer to the events to be deleted, so we execute those first
-            const [updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
-                handleUpdatePartstatActions(updatePartstatActions),
-                handleUpdatePersonalPartActions(updatePersonalPartActions),
-            ]);
+            const [updatePartstatResponses, updatePersonalPartResponses, attendeeDeleteSingleEditResponses] =
+                await Promise.all([
+                    handleUpdatePartstatActions(updatePartstatActions),
+                    handleUpdatePersonalPartActions(updatePersonalPartActions),
+                    handleAttendeeDeleteSingleEditActions(attendeeDeleteSingleEditActions),
+                ]);
 
             const syncResponses = await handleSyncActions(syncActions);
             const calendarsEventCache = calendarsEventsCacheRef.current;
@@ -1413,6 +1440,12 @@ const InteractiveCalendarView = ({
                 upsertUpdateEventPartResponses(
                     updatePersonalPartActions,
                     updatePersonalPartResponses,
+                    calendarsEventCache,
+                    getOpenedMailEvents
+                );
+                upsertAttendeeDeleteSingleEditResponses(
+                    attendeeDeleteSingleEditActions,
+                    attendeeDeleteSingleEditResponses,
                     calendarsEventCache,
                     getOpenedMailEvents
                 );
