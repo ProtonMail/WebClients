@@ -1,6 +1,7 @@
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -17,6 +18,7 @@ import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProv
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
@@ -36,6 +38,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
     const onboarding = useOnboarding();
+    const client = useClientRef();
 
     const authService = useAuthService();
     const menu = useMenuItems({ onAction: onToggle });
@@ -53,7 +56,13 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
-        await authService.lock({ soft: false, broadcast: true });
+
+        await authService.lock({
+            broadcast: true,
+            offline: clientOfflineUnlocked(client.current.state.status),
+            soft: false,
+        });
+
         clearNotifications();
     }, []);
 
