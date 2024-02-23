@@ -36,7 +36,7 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
         } catch {
         } finally {
             const state = await getApiState?.();
-            setApiOnline(!state?.offline);
+            setApiOnline(state?.online ?? true);
         }
     }, []);
 

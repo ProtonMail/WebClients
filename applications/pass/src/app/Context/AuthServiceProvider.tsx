@@ -16,6 +16,7 @@ import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
+import { isOffline, isOnline } from '@proton/pass/lib/api/utils';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
@@ -53,6 +54,11 @@ export const useAuthService = (): AuthService => {
     const authService = useContext(AuthServiceContext);
     if (authService === undefined) throw new Error('authentication service not initialized');
     return authService;
+};
+
+const canResumeOffline = async (): Promise<boolean> => {
+    const cache = await getDBCache(authStore.getUserID()!);
+    return canOfflineUnlock(cache, authStore);
 };
 
 /** The only reason we have to wrap the AuthenticationService to a react context is
@@ -95,9 +101,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         /** configure the authentication store partially in order to
                          * hydrate the userID and offline salts properties */
                         authStore.setSession(persistedSession);
-                        const cache = await getDBCache(authStore.getUserID()!);
-
-                        if (canOfflineUnlock(cache, authStore)) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
+                        if (await canResumeOffline()) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
                         else if (authStore.hasSession(initialLocalID)) client.current.setStatus(AppStatus.ERROR);
                         else client.current.setStatus(AppStatus.UNAUTHORIZED);
                     } else client.current.setStatus(AppStatus.UNAUTHORIZED);
@@ -108,7 +112,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     return false;
                 };
 
-                if (OFFLINE_SUPPORTED && !navigator.onLine) return handleOffline();
+                if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
 
                 /* remove any in-memory lock status/tokens to force
                  * session lock revalidation on init */
@@ -124,10 +128,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const hasLocalID = pathLocalID !== undefined;
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
                 const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
-                const apiOffline = api.getState().offline;
 
-                if (OFFLINE_SUPPORTED && apiOffline) return handleOffline();
-                if (autoFork && navigator.onLine) {
+                if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
+                if (autoFork && isOnline()) {
                     /* If the session could not be resumed from the LocalID from path,
                      * we are likely dealing with an app-switch request from another client.
                      * In this case, redirect to account through a fork request */
@@ -241,7 +244,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 }
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
-            onSessionFailure: () => client.current.setStatus(AppStatus.ERROR),
+            onSessionFailure: async () => {
+                const offline = OFFLINE_SUPPORTED && isOffline();
+                const resumeOffline = offline && (await canResumeOffline());
+                client.current.setStatus(resumeOffline ? AppStatus.OFFLINE_LOCKED : AppStatus.ERROR);
+            },
             onNotification: (notification) =>
                 createNotification({
                     ...notification,
