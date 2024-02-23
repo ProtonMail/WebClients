@@ -512,6 +512,7 @@ async function cbInit() {
 
 async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig) {
     setConfiguration(configuration);
+    addCheckpoint('configuration_set');
     const cbInstance = createChargebee({
         site: configuration.site,
         publishableKey: configuration.publishableKey,
