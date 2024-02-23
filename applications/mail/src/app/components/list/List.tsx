@@ -283,7 +283,7 @@ const List = (
                             'h-full overflow-auto flex flex-column flex-nowrap w-full'
                         )}
                     >
-                        {elements.length === 0 && displayState !== FULL && !canDisplayTaskRunningBanner && (
+                        {elements.length === 0 && !canDisplayTaskRunningBanner && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
                                 isSearch={isSearch}
