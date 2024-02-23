@@ -11,6 +11,8 @@ export enum TelemetryMeasurementGroups {
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
     mailSimpleLogin = 'mail.web.simplelogin_popups',
+    /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
+    securityCenter = 'any.web.security_center',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -87,6 +89,13 @@ export enum TelemetryChangelog {
     opened = 'opened',
 }
 
+export enum TelemetrySecurityCenterEvents {
+    account_security_card = 'account_security_card',
+    proton_pass_discover_banner = 'proton_pass_discover_banner',
+    proton_pass_create_alias = 'proton_pass_create_alias',
+    proton_sentinel_toggle = 'proton_sentinel_toggle',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
@@ -96,7 +105,8 @@ export type TelemetryEvents =
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailSelectAllEvents
-    | TelemetryChangelog;
+    | TelemetryChangelog
+    | TelemetrySecurityCenterEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

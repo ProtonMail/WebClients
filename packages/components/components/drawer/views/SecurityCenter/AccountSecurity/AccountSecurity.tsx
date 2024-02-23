@@ -2,14 +2,18 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import { baseUseSelector } from '@proton/redux-shared-store';
+import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 
+import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AccountSecurityCard from './AccountSecurityCard';
 import AccountSecuritySuccess from './AccountSecuritySuccess';
 import { selectAccountSecurityElements, selectHasAccountSecurityCardToDisplay } from './slice/accountSecuritySlice';
 
 const AccountSecurity = () => {
+    const api = useApi();
     const { accountRecoverySet, dataRecoverySet, twoFactorAuthSetOrDismissed, twoFactorAuthSet } =
         baseUseSelector(selectAccountSecurityElements);
     const hasCardsToDisplay = baseUseSelector(selectHasAccountSecurityCardToDisplay);
@@ -31,6 +35,12 @@ const AccountSecurity = () => {
                             critical
                             icon="user"
                             path="/recovery#account"
+                            onClick={() => {
+                                void sendSecurityCenterReport(api, {
+                                    event: TelemetrySecurityCenterEvents.account_security_card,
+                                    dimensions: { card_action: 'clicked', card: 'account_recovery' },
+                                });
+                            }}
                         />
                     )}
                     {!dataRecoverySet && (
@@ -40,6 +50,12 @@ const AccountSecurity = () => {
                             critical
                             icon="storage"
                             path="/recovery#data"
+                            onClick={() => {
+                                void sendSecurityCenterReport(api, {
+                                    event: TelemetrySecurityCenterEvents.account_security_card,
+                                    dimensions: { card_action: 'clicked', card: 'data_recovery' },
+                                });
+                            }}
                         />
                     )}
                     {!twoFactorAuthSetOrDismissed && (
@@ -50,8 +66,18 @@ const AccountSecurity = () => {
                             icon="mobile"
                             path="/account-password#two-fa"
                             isDismissible
+                            onClick={() => {
+                                void sendSecurityCenterReport(api, {
+                                    event: TelemetrySecurityCenterEvents.account_security_card,
+                                    dimensions: { card_action: 'clicked', card: 'two_factor_authentication' },
+                                });
+                            }}
                             onDismiss={() => {
                                 void dismissed2FACardFeature.update(true);
+                                void sendSecurityCenterReport(api, {
+                                    event: TelemetrySecurityCenterEvents.account_security_card,
+                                    dimensions: { card_action: 'dismissed', card: 'two_factor_authentication' },
+                                });
                             }}
                         />
                     )}
