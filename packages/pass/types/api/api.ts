@@ -16,7 +16,7 @@ export type ApiAuth = {
 
 export type ApiState = {
     appVersionBad: boolean;
-    offline: boolean;
+    online: boolean;
     pendingCount: number;
     queued: Awaiter<void>[];
     serverTime?: Date;

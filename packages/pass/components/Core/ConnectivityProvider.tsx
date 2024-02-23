@@ -13,14 +13,14 @@ import type { PubSub } from '@proton/pass/utils/pubsub/factory';
 import { usePassCore } from './PassCoreProvider';
 
 type Props = {
+    onChange?: (online: boolean) => void;
     onPing?: () => Promise<void>;
-    onReconnect?: () => void;
     subscribe?: PubSub<ApiSubscriptionEvent>['subscribe'];
 };
 
 const ConnectivityContext = createContext<boolean>(true);
 
-export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, onPing, onReconnect, subscribe }) => {
+export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, onChange, onPing, subscribe }) => {
     const { getApiState } = usePassCore();
 
     const [apiOnline, setApiOnline] = useState<boolean>(true);
@@ -36,7 +36,7 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
         } catch {
         } finally {
             const state = await getApiState?.();
-            setApiOnline(!state?.offline);
+            setApiOnline(state?.online ?? true);
         }
     }, []);
 
@@ -52,9 +52,7 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
         if (wasOffline && navigatorOnline) void checkApiOnline();
     }, [navigatorOnline]);
 
-    useEffect(() => {
-        if (wasOffline && online) onReconnect?.();
-    }, [online]);
+    useEffect(() => onChange?.(online), [online]);
 
     return <ConnectivityContext.Provider value={online}>{children}</ConnectivityContext.Provider>;
 };
