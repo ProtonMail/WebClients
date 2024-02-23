@@ -27,7 +27,7 @@ const formatWalletToDoughnutChart = (
     const chartData = (raw ?? []).reduce((acc: DoughnutChartData, walletOrAccount) => {
         const [label, balance] =
             'accounts' in walletOrAccount
-                ? [walletOrAccount.Name, getWalletBalance(walletOrAccount)]
+                ? [walletOrAccount.Wallet.Name, getWalletBalance(walletOrAccount)]
                 : [walletOrAccount.Label, Number(walletOrAccount.balance.confirmed)];
 
         const color = getNewRandomColor(acc.map(([, color]) => color));

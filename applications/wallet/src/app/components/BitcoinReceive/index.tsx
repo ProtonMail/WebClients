@@ -44,7 +44,7 @@ const CopyPasteButton = ({ value }: { value: string }) => {
 };
 
 interface Props {
-    defaultWalletId?: number;
+    defaultWalletId?: string;
 }
 
 export const BitcoinReceive = ({ defaultWalletId }: Props) => {
@@ -125,7 +125,7 @@ export const BitcoinReceive = ({ defaultWalletId }: Props) => {
                                 className="flex flex-column w-custom justify-space-between"
                                 style={{ '--w-custom': '15rem' }}
                             >
-                                <h3 className="text-lg text-semibold mt-4">{selectedWallet.wallet?.Name}</h3>
+                                <h3 className="text-lg text-semibold mt-4">{selectedWallet.wallet?.Wallet.Name}</h3>
                                 <Href href={paymentLinkUri}>
                                     <Tooltip title={paymentLinkString}>
                                         <p

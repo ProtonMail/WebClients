@@ -8,7 +8,7 @@ import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
 import { getDefaultAccount, getSelectedWallet } from '../../../utils';
 
-export const useOnchainSimpleSend = (defaultWalletId?: number, paymentLink?: WasmPaymentLink) => {
+export const useOnchainSimpleSend = (defaultWalletId?: string, paymentLink?: WasmPaymentLink) => {
     const { wallets } = useOnchainWalletContext();
     const { txBuilder, updateTxBuilder } = useTxBuilder();
 

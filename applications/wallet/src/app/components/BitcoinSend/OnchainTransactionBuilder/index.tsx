@@ -14,7 +14,7 @@ import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 import './index.scss';
 
 interface Props {
-    defaultWalletId?: number;
+    defaultWalletId?: string;
 }
 
 export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
@@ -61,7 +61,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
     if (finalPsbt && account) {
         return (
             <OnchainTransactionReview
-                from={{ accountName: account?.Label ?? '', walletName: wallet?.Name ?? '' }}
+                from={{ accountName: account?.Label ?? '', walletName: wallet?.Wallet.Name ?? '' }}
                 psbt={finalPsbt}
                 account={account?.wasmAccount}
                 onBack={erasePsbt}

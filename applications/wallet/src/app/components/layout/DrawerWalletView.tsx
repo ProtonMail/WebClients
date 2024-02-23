@@ -12,14 +12,13 @@ import { useOnchainWalletContext } from '../../contexts';
 import { TransactionHistoryOverview } from '../TransactionHistoryOverview';
 
 export const DrawerWalletView = () => {
-    const { walletId: strWalletId } = useParams<{ walletId?: string }>();
-    const walletId = Number(strWalletId);
+    const { walletId } = useParams<{ walletId?: string }>();
 
     const { wallets } = useOnchainWalletContext();
 
     const transactions = useMemo(() => {
         if (walletId) {
-            const wallet = wallets?.find(({ WalletID }) => WalletID === Number(walletId));
+            const wallet = wallets?.find(({ Wallet }) => Wallet.ID === walletId);
             return wallet?.accounts.flatMap(({ transactions }) => transactions);
         } else {
             const accounts = wallets?.flatMap(({ accounts }) => accounts);

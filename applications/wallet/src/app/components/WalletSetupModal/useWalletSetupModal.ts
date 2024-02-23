@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import { WasmMnemonic } from '../../../pkg';
+import { c } from 'ttag';
+
+import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+
+import { WasmMnemonic, WasmWallet } from '../../../pkg';
+import { useOnchainWalletContext, useRustApi } from '../../contexts';
+import { WalletType } from '../../types';
+import { encryptWalletData } from '../../utils/crypto';
 import { walletCreationSetupSteps, walletImportSetupSteps } from './constants';
 import { WalletSetupMode, WalletSetupStep } from './type';
 
@@ -13,11 +22,19 @@ const getSetupSteps = (mode: WalletSetupMode) =>
     mode === WalletSetupMode.Creation ? walletCreationSetupSteps : walletImportSetupSteps;
 
 export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
+    const { createNotification } = useNotifications();
+
+    const { network } = useOnchainWalletContext();
+
     const [mnemonic, setMnemonic] = useState<WasmMnemonic>();
     const [passphrase, setPassphrase] = useState<string>();
     const [walletName, setWalletName] = useState<string>('');
+    const [fingerprint, setFingerprint] = useState<string>();
     const [setupMode, setSetupMode] = useState<WalletSetupMode>();
     const [currentStep, setCurrentStep] = useState<WalletSetupStep>(WalletSetupStep.SetupModeChoice);
+    const [userKeys] = useUserKeys();
+
+    const api = useRustApi();
 
     const onNextStep = () => {
         if (!setupMode) {
@@ -53,23 +70,50 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
         onNextStep();
     };
 
-    const onSaveNewWallet = (passphrase: string) => {
+    const onPassphraseInput = (passphrase: string) => {
         setPassphrase(passphrase);
 
         onNextStep();
     };
 
-    const onWalletSubmit = (name: string, fiatCurrency: string) => {
-        // TODO: check and encrypt mnemonic
-        const encryptedMnemonic = mnemonic?.asString();
+    // TODO: use fiatCurrency later
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const onWalletSubmit = async (walletName: string, _fiatCurrency: string) => {
+        await waitUntil(() => !!userKeys, 10);
+
+        const [primaryUserKey] = userKeys as DecryptedKey[];
+
+        const isImported = setupMode === WalletSetupMode.Import;
         const hasPassphrase = !!passphrase;
 
-        // eslint-disable-next-line no-console
-        console.log(encryptedMnemonic, hasPassphrase, name, fiatCurrency);
+        // TODO: add public key support here
+        const [[encryptedMnemonic], [walletKey, userKeyId]] = await encryptWalletData(
+            [mnemonic?.asString()],
+            primaryUserKey
+        );
 
-        // TODO: API req to create wallet
+        const fingerprint = mnemonic && new WasmWallet(network, mnemonic.asString(), passphrase).getFingerprint();
 
-        setWalletName(name);
+        setFingerprint(fingerprint);
+
+        await api
+            .wallet()
+            .createWallet(
+                walletName,
+                isImported,
+                WalletType.OnChain,
+                hasPassphrase,
+                userKeyId,
+                walletKey,
+                encryptedMnemonic,
+                fingerprint,
+                undefined
+            )
+            .catch(() => {
+                createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });
+            });
+
+        setWalletName(walletName);
         onNextStep();
     };
 
@@ -91,13 +135,14 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
         onMnemonicInput,
         onNextStep,
         setMnemonic,
+        onPassphraseInput,
         onWalletSubmit,
-        onSaveNewWallet,
         clear,
         walletName,
         currentStep,
         setupMode,
         mnemonic,
         passphrase,
+        fingerprint,
     };
 };

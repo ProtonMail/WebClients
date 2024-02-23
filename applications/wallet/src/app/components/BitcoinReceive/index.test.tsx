@@ -39,7 +39,7 @@ describe('BitcoinReceive', () => {
             await act(() => userEvent.click(walletSelector));
 
             const options = screen.getAllByTestId('wallet-selector-option');
-            expect(options).toHaveLength(4);
+            expect(options).toHaveLength(3);
             await fireEvent.click(options[1]);
 
             expect(helper.handleSelectWallet).toHaveBeenCalledTimes(1);
@@ -47,7 +47,8 @@ describe('BitcoinReceive', () => {
         });
     });
 
-    describe('when selected wallet is of type `lightning`', () => {
+    // TODO: use fix this test when we support lightning
+    describe.skip('when selected wallet is of type `lightning`', () => {
         beforeEach(() => {
             const [, , , testWallet] = walletsWithAccountsWithBalanceAndTxs;
             const [testAccount] = testWallet.accounts;

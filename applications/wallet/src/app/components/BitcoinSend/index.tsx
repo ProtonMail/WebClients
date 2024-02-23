@@ -6,7 +6,7 @@ import { SendMethodSelector } from './SendMethodSelector';
 import { BitcoinSendViews, useBitcoinSend } from './useBitcoinSend';
 
 interface Props {
-    defaultWalletId: number;
+    defaultWalletId?: string;
 }
 
 export const BitcoinSend = ({ defaultWalletId }: Props) => {

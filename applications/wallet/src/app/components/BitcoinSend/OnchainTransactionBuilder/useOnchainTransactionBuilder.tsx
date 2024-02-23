@@ -7,7 +7,7 @@ import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
 import { getDefaultAccount, getSelectedWallet } from '../../../utils';
 
-export const useOnchainTransactionBuilder = (defaultWalletId?: number) => {
+export const useOnchainTransactionBuilder = (defaultWalletId?: string) => {
     const { wallets } = useOnchainWalletContext();
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);

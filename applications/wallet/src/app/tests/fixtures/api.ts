@@ -1,12 +1,11 @@
-import { WasmBitcoinUnit, WasmScriptType } from '../../../pkg';
+import { WasmApiWallet, WasmBitcoinUnit, WasmScriptType, WasmWalletKey } from '../../../pkg';
+import { IWasmWallet } from '../../types';
 import {
-    ApiWallet,
     BitcoinUnit,
     FiatCurrency,
     UserWalletSettings,
     Wallet,
     WalletAccount,
-    WalletKey,
     WalletPassphrase,
     WalletSettings,
     WalletSetupMode,
@@ -33,78 +32,63 @@ export const emptyWallet: Wallet = {
     ModifyTime: 1701169836899,
 };
 
-const walletOne: Wallet = {
-    WalletID: 0,
-    UserID: 999,
+const walletOne: WasmApiWallet = {
+    ID: '0',
     Name: 'Bitcoin 01',
     // TODO should be encrypted when comin from server
     Mnemonic:
         'category law logic swear involve banner pink room diesel fragile sunset remove whale lounge captain code hobby lesson material current moment funny vast fade',
-    Passphrase: WalletPassphrase.WithoutPassphrase,
-    Imported: WalletSetupMode.Created,
+    HasPassphrase: WalletPassphrase.WithoutPassphrase,
+    IsImported: WalletSetupMode.Created,
     Priority: 1,
     Status: WalletStatus.Active,
     Type: WalletType.OnChain,
-    CreateTime: 1701149748899,
-    ModifyTime: 1701169836899,
+    Fingerprint: null,
+    PublicKey: null,
 };
 
-const walletTwo: Wallet = {
-    WalletID: 1,
-    UserID: 999,
+const walletTwo: WasmApiWallet = {
+    ID: '1',
     Name: 'Savings on Jade',
     // TODO should be encrypted when comin from server
     Mnemonic: 'desk prevent enhance husband hungry idle member vessel room moment simple behave',
-    Passphrase: WalletPassphrase.WithoutPassphrase,
-    Imported: WalletSetupMode.Created,
+    HasPassphrase: WalletPassphrase.WithoutPassphrase,
+    IsImported: WalletSetupMode.Created,
     Priority: 2,
     Status: WalletStatus.Active,
     Type: WalletType.OnChain,
-    CreateTime: 1701159393899,
-    ModifyTime: 1701159355899,
+    Fingerprint: null,
+    PublicKey: null,
 };
 
 // TODO: either support or reject Electrum seeds (BIP39 alternative)
-const walletThree: Wallet = {
-    WalletID: 2,
-    UserID: 999,
+const walletThree: WasmApiWallet = {
+    ID: '2',
     Name: 'Savings on Electrum',
     // TODO should be encrypted when comin from server
     Mnemonic: 'excite escape obscure gesture perfect depth roof until virtual knee garbage moment',
-    Passphrase: WalletPassphrase.WithoutPassphrase,
-    Imported: WalletSetupMode.Created,
+    HasPassphrase: WalletPassphrase.WithoutPassphrase,
+    IsImported: WalletSetupMode.Created,
     Priority: 2,
     Status: WalletStatus.Active,
     Type: WalletType.OnChain,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701153355899,
+    Fingerprint: null,
+    PublicKey: null,
 };
 
-const walletKeyOne: WalletKey = {
-    WalletKeyID: 3,
-    WalletID: 0,
-    WalletKey: '',
-    UserKeyId: 998,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+const walletKeyOne: WasmWalletKey = {
+    UserKeyID: '998',
+    WalletKey: '3',
 };
 
-const walletKeyTwo: WalletKey = {
-    WalletKeyID: 4,
-    WalletID: 1,
-    WalletKey: '',
-    UserKeyId: 998,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+const walletKeyTwo: WasmWalletKey = {
+    UserKeyID: '998',
+    WalletKey: '1',
 };
 
-const walletKeyThree: WalletKey = {
-    WalletKeyID: 5,
-    WalletID: 2,
-    WalletKey: '',
-    UserKeyId: 998,
-    CreateTime: 1701139393899,
-    ModifyTime: 1701139393899,
+const walletKeyThree: WasmWalletKey = {
+    UserKeyID: '998',
+    WalletKey: '2',
 };
 
 const walletSettingsOne: WalletSettings = {
@@ -148,7 +132,7 @@ export const walletUserSettings: UserWalletSettings = {
     ModifyTime: 1701139393899,
 };
 
-const walletAccountOneA: WalletAccount = {
+export const walletAccountOneA: WalletAccount = {
     WalletAccountID: 8,
     WalletID: 0,
     Index: 0,
@@ -158,7 +142,7 @@ const walletAccountOneA: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-const walletAccountOneB: WalletAccount = {
+export const walletAccountOneB: WalletAccount = {
     WalletAccountID: 9,
     WalletID: 0,
     Index: 2,
@@ -168,7 +152,7 @@ const walletAccountOneB: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-const walletAccountOneC: WalletAccount = {
+export const walletAccountOneC: WalletAccount = {
     WalletAccountID: 91,
     WalletID: 0,
     Index: 0,
@@ -178,7 +162,7 @@ const walletAccountOneC: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-const walletAccountTwoA: WalletAccount = {
+export const walletAccountTwoA: WalletAccount = {
     WalletAccountID: 10,
     WalletID: 1,
     Index: 0,
@@ -188,7 +172,7 @@ const walletAccountTwoA: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-const walletAccountTwoB: WalletAccount = {
+export const walletAccountTwoB: WalletAccount = {
     WalletAccountID: 11,
     WalletID: 1,
     Index: 0,
@@ -198,7 +182,7 @@ const walletAccountTwoB: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-const walletAccountThree: WalletAccount = {
+export const walletAccountThree: WalletAccount = {
     WalletAccountID: 12,
     WalletID: 2,
     Index: 0,
@@ -208,16 +192,26 @@ const walletAccountThree: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-export const wallets: ApiWallet[] = [
+export const wallets: IWasmWallet[] = [
     {
-        ...walletOne,
+        Wallet: walletOne,
         // ...emptyWallet,
-        accounts: [walletAccountOneA, walletAccountOneB, walletAccountOneC],
-        settings: walletSettingsOne,
-        key: walletKeyOne,
+        // accounts: [walletAccountOneA, walletAccountOneB, walletAccountOneC],
+        WalletSettings: walletSettingsOne,
+        WalletKey: walletKeyOne,
     },
-    { ...walletTwo, accounts: [walletAccountTwoA, walletAccountTwoB], settings: walletSettingsTwo, key: walletKeyTwo },
-    { ...walletThree, accounts: [walletAccountThree], settings: walletSettingsThree, key: walletKeyThree },
+    {
+        Wallet: walletTwo,
+        // accounts: [walletAccountTwoA, walletAccountTwoB],
+        WalletSettings: walletSettingsTwo,
+        WalletKey: walletKeyTwo,
+    },
+    {
+        Wallet: walletThree,
+        // accounts: [walletAccountThree],
+        WalletSettings: walletSettingsThree,
+        WalletKey: walletKeyThree,
+    },
 ];
 
 const bitcoinUnitA: BitcoinUnit = {

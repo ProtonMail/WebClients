@@ -13,7 +13,7 @@ import { useOnchainSimpleSend } from './useOnchainSimpleSend';
 
 interface Props {
     paymentLink?: WasmPaymentLink;
-    defaultWalletId: number;
+    defaultWalletId?: string;
 }
 
 export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
@@ -57,7 +57,7 @@ export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
     if (finalPsbt && account) {
         return (
             <OnchainTransactionReview
-                from={{ accountName: account?.Label ?? '', walletName: walletAndAccount?.wallet?.Name ?? '' }}
+                from={{ accountName: account?.Label ?? '', walletName: walletAndAccount?.wallet?.Wallet.Name ?? '' }}
                 psbt={finalPsbt}
                 account={account?.wasmAccount}
                 onBack={erasePsbt}

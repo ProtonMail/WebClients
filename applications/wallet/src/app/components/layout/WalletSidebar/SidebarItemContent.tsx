@@ -30,7 +30,7 @@ export const SidebarItemContent = ({ label, to, icon, disabled, ...props }: Prop
             <SidebarListItemContent
                 data-testid={props['data-testid']}
                 left={<SidebarListItemContentIcon name={icon} />}
-                className="flex gap-2"
+                className="flex gap-2 max-w-full"
             >
                 <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
                     <span className="text-ellipsis" title={label}>

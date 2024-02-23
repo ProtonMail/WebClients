@@ -21,8 +21,8 @@ describe('BalanceOverview', () => {
             render(<BalanceOverview wallets={walletsWithAccountsWithBalanceAndTxs} />);
 
             const balanceContent = screen.getByTestId('balance');
-            expect(balanceContent).toHaveTextContent('0.317566 BTC');
-            expect(balanceContent).toHaveTextContent('$1161.53');
+            expect(balanceContent).toHaveTextContent('0.228812 BTC');
+            expect(balanceContent).toHaveTextContent('$836.90');
         });
     });
 

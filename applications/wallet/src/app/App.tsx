@@ -16,7 +16,6 @@ import {
 } from 'chart.js';
 
 import {
-    ApiProvider,
     AuthenticationProvider,
     DelinquentContainer,
     DrawerProvider,
@@ -41,6 +40,7 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { setPanicHook } from '../pkg';
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
+import ExtendedApiProvider from './contexts/ExtendedApiContext/ExtendedApiProvider';
 import locales from './locales';
 import { WalletStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
@@ -105,7 +105,7 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ApiProvider api={extraThunkArguments.api}>
+                            <ExtendedApiProvider api={extraThunkArguments.api} rustApi={extraThunkArguments.rustApi}>
                                 <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <Router history={extraThunkArguments.history}>
@@ -124,7 +124,7 @@ const App = () => {
                                         </Router>
                                     </FlagProvider>
                                 </DrawerProvider>
-                            </ApiProvider>
+                            </ExtendedApiProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );
