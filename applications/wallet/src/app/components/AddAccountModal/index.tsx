@@ -8,25 +8,87 @@ import { Info, ModalTwo, Option, SelectTwo } from '@proton/components/components
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useEventManager, useNotifications, useUserKeys } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
-import { WasmScriptType } from '../../../pkg';
+import { WasmDerivationPath, WasmScriptType } from '../../../pkg';
+import { useRustApi } from '../../contexts';
+import { useBitcoinNetwork } from '../../store/hooks';
+import { IWasmWallet } from '../../types';
 import { getLabelByScriptType } from '../../utils';
+import { decryptWalletKey, encryptWalletDataWithWalletKey } from '../../utils/crypto';
 
 interface Props {
+    wallet: IWasmWallet;
     isOpen: boolean;
     onClose: () => void;
 }
 
+const DEFAULT_INDEX = 0;
 const baseIndexOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'custom'];
 
-export const AddAccountModal = ({ isOpen, onClose }: Props) => {
+const SCRIPT_TYPES = [
+    WasmScriptType.Legacy,
+    WasmScriptType.NestedSegwit,
+    WasmScriptType.NativeSegwit,
+    WasmScriptType.Taproot,
+];
+
+const purposeByScriptType: Record<WasmScriptType, number> = {
+    [WasmScriptType.Legacy]: 44,
+    [WasmScriptType.NestedSegwit]: 48,
+    [WasmScriptType.NativeSegwit]: 84,
+    [WasmScriptType.Taproot]: 86,
+};
+
+export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
     // TODO use different default if 0 is already added
     const [label, setLabel] = useState('');
-    const [selectedIndex, setSelectedIndex] = useState(baseIndexOptions[0]);
-    const [inputIndex, setInputIndex] = useState(baseIndexOptions[0]);
+    const [selectedIndex, setSelectedIndex] = useState<string | number>(DEFAULT_INDEX);
+    const [inputIndex, setInputIndex] = useState<number>(DEFAULT_INDEX);
+    const [loading, withLoading] = useLoading();
+    const [network] = useBitcoinNetwork();
+    const { createNotification } = useNotifications();
+    const [userKeys] = useUserKeys();
+    const { call } = useEventManager();
+
+    const api = useRustApi();
 
     const [selectedScriptType, setSelectedScriptType] = useState(WasmScriptType.NativeSegwit);
+
+    const onAccountCreation = async () => {
+        if (!network || !userKeys) {
+            return;
+        }
+
+        const derivationPath = WasmDerivationPath.fromParts(
+            purposeByScriptType[selectedScriptType],
+            network,
+            Number.isFinite(selectedIndex) ? (selectedIndex as number) : inputIndex
+        );
+
+        // TODO: maybe we should have this in a context
+        const key = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
+        const [encryptedLabel] = await encryptWalletDataWithWalletKey([label], key);
+
+        // Typeguard
+        if (!encryptedLabel) {
+            return;
+        }
+
+        await api
+            .wallet()
+            .createWalletAccount(wallet.Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
+            .then(async () => {
+                await call();
+                createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
+                onClose();
+            })
+            .catch(() => {
+                createNotification({ text: c('Wallet Account').t`Could not add account to wallet`, type: 'error' });
+            });
+    };
 
     return (
         <ModalTwo className="p-0" open={isOpen} onClose={onClose} enableCloseWhenClickOutside>
@@ -46,6 +108,7 @@ export const AddAccountModal = ({ isOpen, onClose }: Props) => {
                             id="account-label-input"
                             placeholder={c('Wallet Account').t`Account label`}
                             value={label}
+                            disabled={loading}
                             onChange={(event) => {
                                 setLabel(event.target.value);
                             }}
@@ -71,16 +134,12 @@ export const AddAccountModal = ({ isOpen, onClose }: Props) => {
                             id="account-script-type-selector"
                             aria-describedby="label-account-script-type"
                             value={selectedScriptType}
+                            disabled={loading}
                             onChange={(event) => {
                                 setSelectedScriptType(event.value);
                             }}
                         >
-                            {[
-                                WasmScriptType.Legacy,
-                                WasmScriptType.NestedSegwit,
-                                WasmScriptType.NativeSegwit,
-                                WasmScriptType.Taproot,
-                            ].map((scriptType) => {
+                            {SCRIPT_TYPES.map((scriptType) => {
                                 return (
                                     <Option
                                         title={getLabelByScriptType(scriptType as WasmScriptType)}
@@ -108,6 +167,7 @@ export const AddAccountModal = ({ isOpen, onClose }: Props) => {
                             id="account-index-selector"
                             aria-describedby="label-account-index"
                             value={baseIndexOptions.includes(selectedIndex) ? selectedIndex : 'custom'}
+                            disabled={loading}
                             onChange={(event) => {
                                 setSelectedIndex(event.value);
                             }}
@@ -130,6 +190,7 @@ export const AddAccountModal = ({ isOpen, onClose }: Props) => {
                                 value={inputIndex}
                                 min={0}
                                 type="number"
+                                disabled={loading}
                                 onChange={(event) => {
                                     setInputIndex(Number(event.target.value));
                                 }}
@@ -140,8 +201,13 @@ export const AddAccountModal = ({ isOpen, onClose }: Props) => {
             </ModalContent>
 
             <ModalTwoFooter>
-                <Button className="ml-auto">{c('Wallet Account').t`Cancel`}</Button>
-                <Button className="ml-3" color="norm">{c('Wallet Account').t`Add`}</Button>
+                <Button disabled={loading} className="ml-auto">{c('Wallet Account').t`Cancel`}</Button>
+                <Button
+                    loading={loading}
+                    className="ml-3"
+                    color="norm"
+                    onClick={() => withLoading(onAccountCreation())}
+                >{c('Wallet Account').t`Add`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

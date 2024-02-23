@@ -113,6 +113,8 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
                 createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });
             });
 
+        // TODO create default account on wallet creation and detect accounts on wallet import
+
         setWalletName(walletName);
         onNextStep();
     };

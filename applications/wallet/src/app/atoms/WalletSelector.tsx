@@ -64,7 +64,7 @@ export const WalletSelector = ({
                     <Selector
                         id="account-selector"
                         label={label.account}
-                        selected={value?.account?.WalletAccountID}
+                        selected={value?.account?.ID}
                         onSelect={(event) => {
                             const account = getSelectedAccount(value.wallet, event.value);
                             if (account) {
@@ -72,7 +72,7 @@ export const WalletSelector = ({
                             }
                         }}
                         options={value?.wallet.accounts.map((account) => ({
-                            value: account.WalletAccountID,
+                            value: account.ID,
                             label: account.Label,
                         }))}
                     />

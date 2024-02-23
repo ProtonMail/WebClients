@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { WasmAccount, WasmPagination, WasmWallet } from '../../pkg';
+import { WasmAccount, WasmDerivationPath, WasmPagination, WasmWallet, WasmWalletAccount } from '../../pkg';
 import { useBitcoinNetwork } from '../store/hooks';
 import {
     BlockchainAccountRecord,
@@ -14,7 +14,6 @@ import {
     IWasmWallet,
     WalletWithAccountsWithBalanceAndTxs,
 } from '../types';
-import { WalletAccount } from '../types/api';
 import { tryHandleWasmError } from '../utils/wasm/errors';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -58,7 +57,7 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
         [createNotification]
     );
 
-    const getAccountData = async (account: WalletAccount, wasmAccount: WasmAccount) => {
+    const getAccountData = async (account: WasmWalletAccount, wasmAccount: WasmAccount) => {
         const balance = await wasmAccount.getBalance();
         const pagination = new WasmPagination(0, 10);
         const transactions = await wasmAccount.getTransactions(pagination);
@@ -73,7 +72,7 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
         };
     };
 
-    const addNewSyncing = useCallback((walletAccountID: number) => {
+    const addNewSyncing = useCallback((walletAccountID: string) => {
         setSyncingMetatadaByAccountId((prev) => ({
             ...prev,
             [walletAccountID]: {
@@ -85,28 +84,34 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
         }));
     }, []);
 
-    const removeSyncing = useCallback((walletAccountID: number) => {
-        setSyncingMetatadaByAccountId((prev) => ({
-            ...prev,
-            [walletAccountID]: {
-                ...prev[walletAccountID],
-                syncing: false,
-            },
-        }));
+    const removeSyncing = useCallback((walletAccountID: string) => {
+        setSyncingMetatadaByAccountId((prev) => {
+            const prevItem = prev[walletAccountID];
+
+            return {
+                ...prev,
+                ...(prevItem && {
+                    [walletAccountID]: {
+                        ...prevItem,
+                        syncing: false,
+                    },
+                }),
+            };
+        });
     }, []);
 
     const getUpdatedAccountDataWithMaybeSync = useCallback(
-        async (account: WalletAccount, wasmAccount: WasmAccount, shouldSync = false) => {
-            const isAlreadySyncing = syncingMetatadaByAccountIdRef.current[account.WalletAccountID]?.syncing;
+        async (account: WasmWalletAccount, wasmAccount: WasmAccount, shouldSync = false) => {
+            const isAlreadySyncing = syncingMetatadaByAccountIdRef.current[account.ID]?.syncing;
             if (shouldSync && !isAlreadySyncing) {
-                addNewSyncing(account.WalletAccountID);
+                addNewSyncing(account.ID);
                 try {
                     await syncAccount(wasmAccount);
                 } catch (error) {
                     handleError(error);
                 }
 
-                removeSyncing(account.WalletAccountID);
+                removeSyncing(account.ID);
             }
 
             return getAccountData(account, wasmAccount);
@@ -133,21 +138,24 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
                 // TODO: handle passphrase wallets
                 const wasmWallet = new WasmWallet(network, wallet.Wallet.Mnemonic, '');
 
-                // TODO: support accounts in next PR
-                // for (const account of wallet.accounts) {
-                //     try {
-                //         const accountKey = wasmWallet.addAccount(account.ScriptType, account.Index);
-                //         const wasmAccount = wasmWallet.getAccount(accountKey);
+                for (const account of wallet.WalletAccounts) {
+                    try {
+                        const accountKey = wasmWallet.addAccount(
+                            account.ScriptType,
+                            WasmDerivationPath.fromString(account.DerivationPath)
+                        );
 
-                //         if (!wasmAccount) {
-                //             break;
-                //         }
+                        const wasmAccount = wasmWallet.getAccount(accountKey);
 
-                //         tmpAccounts[account.WalletAccountID] = await getAccountData(account, wasmAccount);
-                //     } catch (error) {
-                //         handleError(error);
-                //     }
-                // }
+                        if (!wasmAccount) {
+                            break;
+                        }
+
+                        tmpAccounts[account.ID] = await getAccountData(account, wasmAccount);
+                    } catch (error) {
+                        handleError(error);
+                    }
+                }
 
                 tmpWallets[wallet.Wallet.ID] = { ...wallet, wasmWallet, accounts: { ...tmpAccounts } };
             } catch (error) {
@@ -159,7 +167,7 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
     }, [handleError, network, wallets]);
 
     const syncSingleWalletAccountBlockchainData = useCallback(
-        async (walletId: string, accountId: number, shouldSync = false) => {
+        async (walletId: string, accountId: string, shouldSync = false) => {
             const account = blockchainWalletRecordRef.current?.[walletId]?.accounts[accountId];
 
             if (!account) {
@@ -178,7 +186,7 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
                             ...prevItem,
                             accounts: {
                                 ...prev?.[walletId]?.accounts,
-                                [account.WalletAccountID]: updated,
+                                [account.ID]: updated,
                             },
                         },
                     }),
@@ -197,7 +205,7 @@ export const useBlockchainSyncing = (wallets?: IWasmWallet[]) => {
             }
 
             for (const account of Object.values(wallet.accounts).filter(isTruthy)) {
-                await syncSingleWalletAccountBlockchainData(walletId, account.WalletAccountID, shouldSync);
+                await syncSingleWalletAccountBlockchainData(walletId, account.ID, shouldSync);
             }
         },
         [syncSingleWalletAccountBlockchainData]
