@@ -22,6 +22,7 @@ import { clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
+    selectOfflineEnabled,
     selectPassPlan,
     selectPlanDisplayName,
     selectUser,
@@ -51,20 +52,17 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
+    const offlineEnabled = useSelector(selectOfflineEnabled);
 
     const b2bAdmin = user && isAdmin(user) && passPlan === UserPassPlan.BUSINESS;
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
-
-        await authService.lock({
-            broadcast: true,
-            offline: clientOfflineUnlocked(client.current.state.status),
-            soft: false,
-        });
+        const offlineLock = offlineEnabled && clientOfflineUnlocked(client.current.state.status);
+        await authService.lock({ broadcast: true, offline: offlineLock, soft: false });
 
         clearNotifications();
-    }, []);
+    }, [offlineEnabled]);
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto gap-2">
