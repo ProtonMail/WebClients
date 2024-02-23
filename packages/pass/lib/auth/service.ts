@@ -103,7 +103,7 @@ export interface AuthServiceConfig {
     onSessionPersist?: (encryptedSession: string) => MaybePromise<void>;
     /** Called when resuming the session failed for any reason excluding inactive
      * session error. */
-    onSessionFailure?: (options: AuthResumeOptions) => void;
+    onSessionFailure?: (options: AuthResumeOptions) => MaybePromise<void>;
     /** Called when session tokens have been refreshed. The`broadcast` flag indicates
      * wether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
@@ -153,7 +153,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             } catch {
                 logger.warn(`[AuthService] Logging in session failed`);
                 config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` });
-                config?.onSessionFailure?.({ forceLock: true, retryable: true });
+                await config?.onSessionFailure?.({ forceLock: true, retryable: true });
                 return false;
             }
 
@@ -374,8 +374,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             config.onNotification?.({ text });
                         }
 
-                        const { sessionLocked, sessionInactive, offline } = api.getState();
-                        const sessionFailure = sessionLocked || sessionInactive || offline;
+                        const { sessionLocked, sessionInactive, online } = api.getState();
+                        const sessionFailure = sessionLocked || sessionInactive || !online;
 
                         /** if resume failed for any other reason than a locked or
                          * inactive session, trigger the session resume sequence.
