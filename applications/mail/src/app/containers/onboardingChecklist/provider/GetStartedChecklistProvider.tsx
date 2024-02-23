@@ -12,7 +12,7 @@ import {
     updateChecklistItem,
 } from '@proton/shared/lib/api/checklist';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { canCheckItem } from '@proton/shared/lib/helpers/subscription';
+import { canCheckItemGetStarted, canCheckItemPaidChecklist } from '@proton/shared/lib/helpers/subscription';
 import {
     CHECKLIST_DISPLAY_TYPE,
     ChecklistApiResponse,
@@ -56,7 +56,9 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const [subscription] = useSubscription();
     const checklistFeatureFlag = useFlag('SplitStorageChecklistReopenedNova');
     const canMarkItemsAsDone =
-        (canCheckItem(subscription) && userSettings.Checklists?.includes('paying-user')) || user.isFree;
+        (canCheckItemPaidChecklist(subscription) && userSettings.Checklists?.includes('paying-user')) ||
+        (canCheckItemGetStarted(subscription) && userSettings.Checklists?.includes('get-started')) ||
+        user.isFree;
 
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
