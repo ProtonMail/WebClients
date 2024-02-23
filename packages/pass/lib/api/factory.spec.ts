@@ -48,7 +48,7 @@ describe('API factory', () => {
         test('should create initial API state', () => {
             expect(api.getState()).toEqual({
                 appVersionBad: false,
-                offline: false,
+                online: true,
                 pendingCount: 0,
                 queued: [],
                 serverTime: undefined,
@@ -246,7 +246,7 @@ describe('API factory', () => {
         test('should handle offline errors', async () => {
             fetchMock.mockRejectedValueOnce({ ok: false });
             await expect(api({})).rejects.toThrow('No network connection');
-            expect(api.getState().offline).toBe(true);
+            expect(api.getState().online).toBe(false);
         });
 
         test('should handle unavailable service errors', async () => {

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
-import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
+import { useClient, useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
 
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { api } from '@proton/pass/lib/api/api';
@@ -17,15 +17,15 @@ import { Main } from './Views/Main';
 
 export const AppGuard: FC = () => {
     const { state } = useClient();
+    const clientRef = useClientRef();
     const dispatch = useDispatch();
     const auth = useAuthService();
 
     const onPing = async () => api(ping());
 
     const onReconnect = () => {
-        const { status } = state;
         const localID = authStore.getLocalID();
-
+        const status = clientRef.current.state.status;
         /** if the client was offline unlocked and network connectivity
          * resumes, try to silently resume the session in the background */
         if (clientOfflineUnlocked(status)) dispatch(offlineResume(localID));
