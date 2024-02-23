@@ -10,6 +10,5 @@ export const getDefaultAccount = (
 
 export const getSelectedAccount = (
     wallet?: WalletWithAccountsWithBalanceAndTxs,
-    accountId?: number
-): AccountWithBlockchainData | undefined =>
-    wallet?.accounts?.find?.(({ WalletAccountID }) => WalletAccountID === accountId);
+    accountId?: string
+): AccountWithBlockchainData | undefined => wallet?.accounts?.find?.(({ ID }) => ID === accountId);

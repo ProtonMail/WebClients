@@ -1,13 +1,32 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-*/
-export function setPanicHook(): void;
-/**
 * @param {string} word_start
 * @returns {(string)[]}
 */
 export function getWordsAutocomplete(word_start: string): (string)[];
+/**
+*/
+export function setPanicHook(): void;
+/**
+*/
+export enum WasmFiatCurrency {
+  USD = 0,
+  EUR = 1,
+  CHF = 2,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
 /**
 */
 export enum WasmPaymentLinkKind {
@@ -18,10 +37,20 @@ export enum WasmPaymentLinkKind {
 }
 /**
 */
-export enum WasmFiatCurrency {
-  USD = 0,
-  EUR = 1,
-  CHF = 2,
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
 /**
 */
@@ -29,6 +58,26 @@ export enum WasmBitcoinUnit {
   BTC = 0,
   MBTC = 1,
   SAT = 2,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -89,80 +138,6 @@ export enum WasmCoinSelection {
   OldestFirst = 2,
   Manual = 3,
 }
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-export interface WasmApiWallet {
-    ID: string;
-    Name: string;
-    IsImported: number;
-    Priority: number;
-    Type: number;
-    HasPassphrase: number;
-    Status: number;
-    Mnemonic: string | null;
-    Fingerprint: string | null;
-    PublicKey: string | null;
-}
-
-export interface WasmWalletKey {
-    UserKeyID: string;
-    WalletKey: string;
-}
-
-export interface WasmWalletSettings {
-    HideAccounts: number;
-    InvoiceDefaultDescription: string | null;
-    InvoiceExpirationTime: number;
-    MaxChannelOpeningFee: number;
-}
-
 
 interface IWasmBlockTime {
     height: BigInt,
@@ -230,6 +205,38 @@ interface IWasmUtxo {
 type IWasmUtxoArray = IWasmUtxo[]
 
 
+export interface WasmApiWallet {
+    ID: string;
+    Name: string;
+    IsImported: number;
+    Priority: number;
+    Type: number;
+    HasPassphrase: number;
+    Status: number;
+    Mnemonic: string | null;
+    Fingerprint: string | null;
+    PublicKey: string | null;
+}
+
+export interface WasmWalletKey {
+    UserKeyID: string;
+    WalletKey: string;
+}
+
+export interface WasmWalletSettings {
+    HideAccounts: number;
+    InvoiceDefaultDescription: string | null;
+    InvoiceExpirationTime: number;
+    MaxChannelOpeningFee: number;
+}
+
+export interface WasmWalletAccount {
+    ID: string;
+    DerivationPath: string;
+    Label: string;
+    ScriptType: number;
+}
+
 /**
 */
 export class DetailledWasmError {
@@ -280,26 +287,6 @@ export class WasmAccount {
 * @returns {WasmTransactionDetails}
 */
   getTransaction(txid: string): WasmTransactionDetails;
-}
-/**
-*/
-export class WasmAccountConfig {
-  free(): void;
-/**
-* @param {WasmScriptType} script_type
-* @param {WasmNetwork | undefined} [network]
-* @param {number | undefined} [account_index]
-*/
-  constructor(script_type: WasmScriptType, network?: WasmNetwork, account_index?: number);
-/**
-*/
-  account_index: number;
-/**
-*/
-  network: WasmNetwork;
-/**
-*/
-  script_type: WasmScriptType;
 }
 /**
 */
@@ -422,33 +409,6 @@ export class WasmBlockchain {
 }
 /**
 */
-export class WasmCreateWalletAccountRequestBody {
-  free(): void;
-/**
-*/
-  DerivationPath: string;
-/**
-*/
-  Label: string;
-/**
-*/
-  ScriptType: number;
-}
-/**
-*/
-export class WasmCreateWalletTransactionRequestBody {
-  free(): void;
-/**
-* encrypted Base64 encoded binary data
-*/
-  Label: string;
-/**
-* encrypted Base64 encoded binary data
-*/
-  TransactionID: string;
-}
-/**
-*/
 export class WasmDerivationPath {
   free(): void;
 /**
@@ -460,6 +420,18 @@ export class WasmDerivationPath {
 * @returns {WasmDerivationPath}
 */
   static fromRawTs(raw_ts: IWasmDerivationPath): WasmDerivationPath;
+/**
+* @param {number} purpose
+* @param {WasmNetwork} network
+* @param {number} account_index
+* @returns {WasmDerivationPath}
+*/
+  static fromParts(purpose: number, network: WasmNetwork, account_index: number): WasmDerivationPath;
+/**
+* @param {string} str
+* @returns {WasmDerivationPath}
+*/
+  static fromString(str: string): WasmDerivationPath;
 }
 /**
 */
@@ -993,15 +965,15 @@ export class WasmWallet {
 * @param {WasmNetwork} network
 * @param {string} bip39_mnemonic
 * @param {string | undefined} [bip38_passphrase]
-* @param {([WasmScriptType, number])[] | undefined} [accounts]
+* @param {([WasmScriptType, WasmDerivationPath])[] | undefined} [accounts]
 */
-  constructor(network: WasmNetwork, bip39_mnemonic: string, bip38_passphrase?: string, accounts?: ([WasmScriptType, number])[]);
+  constructor(network: WasmNetwork, bip39_mnemonic: string, bip38_passphrase?: string, accounts?: ([WasmScriptType, WasmDerivationPath])[]);
 /**
 * @param {WasmScriptType} script_type
-* @param {number} account_index
+* @param {WasmDerivationPath} derivation_path
 * @returns {WasmDerivationPath}
 */
-  addAccount(script_type: WasmScriptType, account_index: number): WasmDerivationPath;
+  addAccount(script_type: WasmScriptType, derivation_path: WasmDerivationPath): WasmDerivationPath;
 /**
 * @param {WasmDerivationPath} account_key
 * @returns {WasmAccount | undefined}
@@ -1029,28 +1001,19 @@ export class WasmWallet {
 }
 /**
 */
-export class WasmWalletAccount {
-  free(): void;
-/**
-*/
-  DerivationPath: string;
-/**
-*/
-  ID: string;
-/**
-*/
-  Label: string;
-/**
-*/
-  ScriptType: number;
-}
-/**
-*/
 export class WasmWalletAccountArray {
   free(): void;
 /**
 */
-  0: (WasmWalletAccount)[];
+  0: (WasmWalletAccountData)[];
+}
+/**
+*/
+export class WasmWalletAccountData {
+  free(): void;
+/**
+*/
+  Account: WasmWalletAccount;
 }
 /**
 */
@@ -1080,17 +1043,19 @@ export class WasmWalletClient {
   getWalletAccounts(wallet_id: string): Promise<WasmWalletAccountArray>;
 /**
 * @param {string} wallet_id
-* @param {WasmCreateWalletAccountRequestBody} payload
-* @returns {Promise<WasmWalletAccount>}
+* @param {WasmDerivationPath} derivation_path
+* @param {string} label
+* @param {number} script_type
+* @returns {Promise<WasmWalletAccountData>}
 */
-  createWalletAccount(wallet_id: string, payload: WasmCreateWalletAccountRequestBody): Promise<WasmWalletAccount>;
+  createWalletAccount(wallet_id: string, derivation_path: WasmDerivationPath, label: string, script_type: number): Promise<WasmWalletAccountData>;
 /**
 * @param {string} wallet_id
 * @param {string} wallet_account_id
 * @param {string} label
-* @returns {Promise<WasmWalletAccount>}
+* @returns {Promise<WasmWalletAccountData>}
 */
-  updateWalletAccountLabel(wallet_id: string, wallet_account_id: string, label: string): Promise<WasmWalletAccount>;
+  updateWalletAccountLabel(wallet_id: string, wallet_account_id: string, label: string): Promise<WasmWalletAccountData>;
 /**
 * @param {string} wallet_id
 * @param {string} wallet_account_id
@@ -1104,10 +1069,11 @@ export class WasmWalletClient {
   getWalletTransactions(wallet_id: string): Promise<WasmWalletTransactionArray>;
 /**
 * @param {string} wallet_id
-* @param {WasmCreateWalletTransactionRequestBody} payload
+* @param {string} label
+* @param {string} txid
 * @returns {Promise<WasmWalletTransaction>}
 */
-  createWalletTransaction(wallet_id: string, payload: WasmCreateWalletTransactionRequestBody): Promise<WasmWalletTransaction>;
+  createWalletTransaction(wallet_id: string, label: string, txid: string): Promise<WasmWalletTransaction>;
 /**
 * @param {string} wallet_id
 * @param {string} wallet_transaction_id
