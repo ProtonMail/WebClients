@@ -15,7 +15,7 @@ const ContactLabelProperty = ({ field, type, className, ...rest }: Props) => {
         : labels[type || ''] || type || labels[field];
 
     return (
-        <div className={clsx(['text-capitalize text-semibold text-ellipsis', className])} {...rest} title={label}>
+        <div className={clsx(['text-semibold text-ellipsis', className])} {...rest} title={label}>
             {label}
         </div>
     );
