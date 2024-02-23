@@ -210,6 +210,10 @@ export interface UpdateEventPartApiResponse extends ApiResponse {
     Event: CalendarEvent;
 }
 
+export interface AttendeeDeleteSingleEditResponse extends ApiResponse {
+    Event: CalendarEvent;
+}
+
 interface GetCanonicalAddressesSingleApiResponse extends ApiResponse {
     CanonicalEmail: string;
 }
