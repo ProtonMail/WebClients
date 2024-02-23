@@ -252,7 +252,31 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     return result;
 };
 
-export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Partial<VcalVeventComponent>) => {
+export const getHasPersonalMergeUpdate = (
+    vevent: VcalVeventComponent,
+    mergeVevent: Partial<VcalVeventComponent>,
+    hasModifiedNotifications?: boolean
+) => {
+    if (mergeVevent.color && getSupportedStringValue(vevent.color) !== getSupportedStringValue(mergeVevent.color)) {
+        return true;
+    }
+    const hasNotificationsUpdate = hasModifiedNotifications ?? getHasModifiedNotifications(vevent, mergeVevent);
+    if (hasNotificationsUpdate) {
+        return true;
+    }
+    if (mergeVevent.dtstart && getPropertyTzid(vevent.dtstart) !== getPropertyTzid(mergeVevent.dtstart)) {
+        return true;
+    }
+    if (vevent.dtend && mergeVevent.dtend && getPropertyTzid(vevent.dtend) !== getPropertyTzid(mergeVevent.dtend)) {
+        return true;
+    }
+};
+
+export const getHasMergeUpdate = (
+    vevent: VcalVeventComponent,
+    mergeVevent: Partial<VcalVeventComponent>,
+    hasModifiedPersonalPart?: boolean
+) => {
     if (
         mergeVevent.summary &&
         getSupportedStringValue(vevent.summary) !== getSupportedStringValue(mergeVevent.summary)
@@ -283,17 +307,10 @@ export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Part
             return true;
         }
     }
-    if (mergeVevent.color && getSupportedStringValue(vevent.color) !== getSupportedStringValue(mergeVevent.color)) {
+    const hasPersonalMergeUpdate = hasModifiedPersonalPart ?? getHasPersonalMergeUpdate(vevent, mergeVevent);
+    if (hasPersonalMergeUpdate) {
         return true;
     }
-    if (getHasModifiedNotifications(vevent, mergeVevent)) {
-        return true;
-    }
-    if (mergeVevent.dtstart && getPropertyTzid(vevent.dtstart) !== getPropertyTzid(mergeVevent.dtstart)) {
-        return true;
-    }
-    if (vevent.dtend && mergeVevent.dtend && getPropertyTzid(vevent.dtend) !== getPropertyTzid(mergeVevent.dtend)) {
-        return true;
-    }
+
     return false;
 };
