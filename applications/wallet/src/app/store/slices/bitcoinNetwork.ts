@@ -3,12 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import { ModelState } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
+import { WasmNetwork } from '../../../pkg';
 import { WalletThunkArguments } from '../thunk';
 
 const name = 'bitcoinNetwork' as const;
 
 export interface BitcoinNetworkState {
-    [name]: ModelState<Number>;
+    [name]: ModelState<WasmNetwork>;
 }
 
 type SliceState = BitcoinNetworkState[typeof name];

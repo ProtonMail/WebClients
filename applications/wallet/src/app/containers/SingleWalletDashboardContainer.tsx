@@ -9,7 +9,7 @@ export const SingleWalletDashboardContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
 
     const { wallets } = useOnchainWalletContext();
-    const wallet = useMemo(() => wallets?.find(({ WalletID }) => WalletID === Number(walletId)), [walletId, wallets]);
+    const wallet = useMemo(() => wallets?.find(({ Wallet }) => Wallet.ID === walletId), [walletId, wallets]);
 
     if (!wallet) {
         return <Redirect to={'/wallets'} />;

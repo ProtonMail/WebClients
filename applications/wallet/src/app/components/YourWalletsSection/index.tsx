@@ -31,14 +31,14 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                 {wallets?.map((wallet) => {
                     return (
                         <Card
-                            key={wallet.WalletID}
+                            key={wallet.Wallet.ID}
                             data-testid="wallet-balance-card"
                             rounded
                             className="w-full bg-gradient-weak-norm border-weak py-3"
                         >
                             <div className="flex flex-row justify-space-between w-full">
-                                <h3 className="text-lg">{wallet.Name}</h3>
-                                {wallet.Type === WalletType.OnChain ? (
+                                <h3 className="text-lg max-w-3/5 text-ellipsis">{wallet.Wallet.Name}</h3>
+                                {wallet.Wallet.Type === WalletType.OnChain ? (
                                     <Pill color="#12869F">Onchain</Pill>
                                 ) : (
                                     <Pill color="#AD7406">Lightning</Pill>

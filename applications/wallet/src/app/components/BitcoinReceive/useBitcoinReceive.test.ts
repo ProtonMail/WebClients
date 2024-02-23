@@ -81,7 +81,7 @@ describe('useBitcoinReceive', () => {
 
     describe('when `defaultWalletId` is provided', () => {
         it('should select the associated wallet by default', () => {
-            const { result } = renderHook(() => useBitcoinReceive(walletsWithAccountsWithBalanceAndTxs[1].WalletID));
+            const { result } = renderHook(() => useBitcoinReceive(walletsWithAccountsWithBalanceAndTxs[1].Wallet.ID));
 
             expect(result.current.selectedWallet.wallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
         });

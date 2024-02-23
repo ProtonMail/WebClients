@@ -6,13 +6,16 @@ import { Button } from '@proton/atoms/Button';
 import { Input } from '@proton/atoms/Input';
 import { Option, SelectTwo } from '@proton/components/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import useLoading from '@proton/hooks/useLoading';
 
 interface Props {
-    onContinue: (name: string, fiatCurrency: string) => void;
+    onContinue: (name: string, fiatCurrency: string) => Promise<void>;
 }
 
 export const WalletNameAndFiatInput = ({ onContinue }: Props) => {
-    const [name, setName] = useState<string>();
+    const [loading, withLoading] = useLoading();
+
+    const [name, setName] = useState<string>('');
     const [fiatCurrency, setFiatCurrency] = useState<string>('USD');
 
     return (
@@ -30,6 +33,7 @@ export const WalletNameAndFiatInput = ({ onContinue }: Props) => {
                             id="wallet-name-input"
                             placeholder={c('Wallet setup').t`Wallet name`}
                             value={name}
+                            disabled={loading}
                             onChange={(event) => {
                                 setName(event.target.value);
                             }}
@@ -51,6 +55,7 @@ export const WalletNameAndFiatInput = ({ onContinue }: Props) => {
                             id="fiat-currency-selector"
                             aria-describedby="label-fiat-currency"
                             value={fiatCurrency}
+                            disabled={loading}
                             onChange={(event) => {
                                 setFiatCurrency(event.value);
                             }}
@@ -63,13 +68,10 @@ export const WalletNameAndFiatInput = ({ onContinue }: Props) => {
                 </div>
 
                 <Button
+                    loading={loading}
                     color="norm"
                     disabled={!name}
-                    onClick={() => {
-                        if (name) {
-                            onContinue(name, fiatCurrency);
-                        }
-                    }}
+                    onClick={() => withLoading(name ? onContinue(name, fiatCurrency) : Promise.resolve())}
                     className="mt-10"
                 >{c('Wallet setup').t`Continue`}</Button>
             </div>

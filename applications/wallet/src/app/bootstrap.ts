@@ -38,7 +38,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     bootstrap.init({ config, authentication, locales });
 
     // TODO: remove useless arguments when WasmAuthData's contructor signature has changed
-    const authData = new WasmAuthData(authentication.UID, '', '', []);
+    const authData = authentication.UID ? new WasmAuthData(authentication.UID, '', '', []) : undefined;
     const rustApi = new WasmProtonWalletApiClient(authData);
 
     extendStore({ rustApi });

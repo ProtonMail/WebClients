@@ -11,6 +11,6 @@ export const getWalletTransactions = (wallet?: WalletWithAccountsWithBalanceAndT
 
 export const getSelectedWallet = (
     wallets?: WalletWithAccountsWithBalanceAndTxs[],
-    walletId?: number
+    walletId?: string
 ): WalletWithAccountsWithBalanceAndTxs | undefined =>
-    wallets?.find(({ WalletID }) => walletId === WalletID) ?? wallets?.[0];
+    wallets?.find(({ Wallet }) => walletId === Wallet.ID) ?? wallets?.[0];

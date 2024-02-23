@@ -1,10 +1,18 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { vi } from 'vitest';
 
+import { mockUseNotifications, mockUseUser, mockUseUserKey } from '@proton/testing/lib/vitest';
+
 import { WalletSetupMode, WalletSetupStep } from './type';
 import { useWalletSetupModal } from './useWalletSetupModal';
 
 describe('useWalletSetupModal', () => {
+    beforeEach(() => {
+        mockUseNotifications();
+        mockUseUser();
+        mockUseUserKey();
+    });
+
     describe('onSelectSetupMode', () => {
         describe('when Creation is selected', () => {
             it("should set mode and move to mod's first step", () => {

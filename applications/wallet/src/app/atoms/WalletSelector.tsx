@@ -48,18 +48,18 @@ export const WalletSelector = ({
                 <Selector
                     id="wallet-selector"
                     label={label.wallet}
-                    selected={value?.wallet?.WalletID}
+                    selected={value?.wallet?.Wallet.ID}
                     onSelect={(event) => {
-                        const wallet = wallets?.find(({ WalletID }) => WalletID === event.value);
+                        const wallet = wallets?.find(({ Wallet: { ID: WalletID } }) => WalletID === event.value);
                         if (wallet) {
                             onSelect({ wallet });
                         }
                     }}
-                    options={wallets?.map((wallet) => ({ value: wallet.WalletID, label: wallet.Name })) ?? []}
+                    options={wallets?.map(({ Wallet: { Name, ID } }) => ({ value: ID, label: Name })) ?? []}
                 />
             </div>
 
-            {value?.wallet?.Type === WalletType.OnChain && (
+            {value?.wallet?.Wallet.Type === WalletType.OnChain && (
                 <div className="w-1/2">
                     <Selector
                         id="account-selector"
@@ -79,7 +79,7 @@ export const WalletSelector = ({
                 </div>
             )}
 
-            {value?.wallet?.Type === WalletType.Lightning && (
+            {value?.wallet?.Wallet.Type === WalletType.Lightning && (
                 <div className="w-1/2">
                     <Selector
                         id="format-selector"
