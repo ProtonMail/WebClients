@@ -227,7 +227,7 @@ export const getAllowedCycles = ({
 }): CYCLE[] => {
     const currentPlanIds = getPlanIDs(subscription);
     const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
-    const isSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
+    const samePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
 
     const isTrialSubscription = isTrial(subscription);
 
@@ -242,7 +242,7 @@ export const getAllowedCycles = ({
         const isHigherThanUpcoming = cycle > (subscription?.UpcomingSubscription?.Cycle ?? 0);
 
         const isEligibleForSelection =
-            (isHigherThanCurrentSubscription && isHigherThanUpcoming && isSamePlan) || !isSamePlan;
+            (isHigherThanCurrentSubscription && isHigherThanUpcoming && samePlan) || !samePlan;
 
         return cycle >= minimumCycle && isEligibleForSelection;
     });

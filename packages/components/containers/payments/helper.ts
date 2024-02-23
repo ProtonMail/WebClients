@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import { Cycle } from '@proton/shared/lib/interfaces';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { Cycle, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
 
 export const getTotalBillingText = (cycle: Cycle) => {
     const n = cycle;
@@ -10,3 +12,8 @@ export const getTotalBillingText = (cycle: Cycle) => {
 export const getShortBillingText = (n: number) => {
     return c('Label').ngettext(msgid`${n} month`, `${n} months`, n);
 };
+
+export function isSubscriptionUnchanged(subscription: Subscription | null | undefined, planIds: PlanIDs): boolean {
+    const subscriptionPlanIds = getPlanIDs(subscription);
+    return isDeepEqual(subscriptionPlanIds, planIds);
+}
