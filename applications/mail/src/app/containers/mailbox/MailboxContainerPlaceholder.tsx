@@ -14,13 +14,13 @@ interface Props {
 }
 
 const MailboxContainerPlaceholder = ({ showPlaceholder, welcomeFlag, labelID, checkedIDs, handleCheckAll }: Props) => {
-    const { loading: loadingChecklist, displayState } = useGetStartedChecklist();
+    const { loading: loadingChecklist, displayState, canDisplayChecklist } = useGetStartedChecklist();
 
     if (loadingChecklist) {
         return null;
     }
 
-    if (showPlaceholder && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
+    if (showPlaceholder && canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
         return <UsersOnboardingChecklist />;
     }
 
