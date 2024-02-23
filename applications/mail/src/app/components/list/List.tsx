@@ -2,7 +2,14 @@ import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, use
 
 import { c, msgid } from 'ttag';
 
-import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts, useLabels } from '@proton/components';
+import {
+    Breakpoints,
+    useConversationCounts,
+    useFlag,
+    useItemsDraggable,
+    useLabels,
+    useMessageCounts,
+} from '@proton/components';
 import useInboxDesktopBadgeCount from '@proton/components/hooks/useInboxDesktopBadgeCount';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
@@ -147,7 +154,7 @@ const List = (
         hasFilter,
     });
 
-    const { displayState, changeChecklistDisplay } = useGetStartedChecklist();
+    const { displayState, changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
 
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
 
@@ -283,7 +290,9 @@ const List = (
                                 isUnread={filter.Unread === 1}
                             />
                         )}
-                        {elements.length === 0 && displayState === FULL && <UsersOnboardingChecklist />}
+                        {canDisplayChecklist && elements.length === 0 && displayState === FULL && (
+                            <UsersOnboardingChecklist />
+                        )}
                         {elements.length > 0 && (
                             <>
                                 {/* div needed here for focus management */}
@@ -344,7 +353,7 @@ const List = (
 
                                 {!loading && !(total > 1) && (
                                     <>
-                                        {displayState === FULL && (
+                                        {canDisplayChecklist && displayState === FULL && (
                                             <UsersOnboardingChecklist displayOnMobile={isColumnMode(mailSettings)} />
                                         )}
                                     </>

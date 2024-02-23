@@ -1,8 +1,9 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
-import { fromUnixTime } from 'date-fns';
+import { fromUnixTime, isBefore } from 'date-fns';
 
-import { useApi, useEventManager, useSubscription, useUser } from '@proton/components/hooks';
+import { useFlag } from '@proton/components/containers';
+import { useApi, useEventManager, useSubscription, useUser, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     hidePaidUserChecklist,
@@ -40,6 +41,7 @@ export interface ContextState {
     userWasRewarded: GetStartedChecklistApiResponse['UserWasRewarded'];
     changeChecklistDisplay: (display: CHECKLIST_DISPLAY_TYPE) => void;
     markItemsAsDone: (item: ChecklistKeyType) => void;
+    canDisplayChecklist: boolean;
 }
 
 const GetStartedChecklistContext = createContext<ContextState>({} as ContextState);
@@ -50,8 +52,11 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
     const [user] = useUser();
+    const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
-    const canMarkItemsAsDone = canCheckItem(subscription) || user.isFree;
+    const checklistFeatureFlag = useFlag('SplitStorageChecklistReopenedNova');
+    const canMarkItemsAsDone =
+        (canCheckItem(subscription) && userSettings.Checklists?.includes('paying-user')) || user.isFree;
 
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
@@ -130,6 +135,8 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const getExpiredAt = (): Date =>
         isUserPaid ? fromUnixTime(paidUserChecklist.ExpiresAt) : fromUnixTime(freeUserChecklist.ExpiresAt);
 
+    const canDisplayChecklist = checklistFeatureFlag ? canMarkItemsAsDone : isBefore(new Date(), getExpiredAt());
+
     const context: ContextState = {
         isUserPaid,
         loading: isLoading,
@@ -140,6 +147,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         displayState,
         expiresAt: getExpiredAt(),
         markItemsAsDone,
+        canDisplayChecklist,
     };
 
     return <GetStartedChecklistContext.Provider value={context}>{children}</GetStartedChecklistContext.Provider>;
