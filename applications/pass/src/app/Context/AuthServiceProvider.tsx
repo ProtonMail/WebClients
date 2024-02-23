@@ -24,6 +24,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
+import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
@@ -121,7 +122,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true }));
 
-                const notLocked = client.current.state.status !== AppStatus.LOCKED;
+                const notLocked = !api.getState().sessionLocked;
                 const hasLocalID = pathLocalID !== undefined;
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
                 const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
@@ -324,13 +325,14 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const ttl = authStore.getLockTTL();
         const status = client.current.state.status;
         const booted = clientBooted(status);
-        const offline = clientOfflineUnlocked(status);
+        const offlineEnabled = selectOfflineEnabled(store.getState());
+        const offlineLock = offlineEnabled && clientOfflineUnlocked(status);
 
         if (booted && registeredLock && ttl) {
             const now = getEpoch();
             const diff = now - (authStore.getLockLastExtendTime() ?? 0);
 
-            if (diff > ttl) return authService.lock({ soft: true, broadcast: true, offline });
+            if (diff > ttl) return authService.lock({ soft: true, broadcast: true, offline: offlineLock });
             if (diff > ttl * 0.5) {
                 logger.info('[AuthServiceProvider] Activity probe extending lock time');
                 return authService.checkLock().catch(noop);
