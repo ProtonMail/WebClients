@@ -3,7 +3,7 @@ import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/cryp
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils';
 import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { getCacheEncryptionKey, getOfflineKeyDerivation } from './crypto';
 
@@ -33,6 +33,7 @@ export const getCacheKey = async (
             PassEncryptionTag.Offline
         );
 
+        authStore.setOfflineKD(uint8ArrayToString(offlineKD));
         return getSymmetricKey(rawCacheKey);
     }
 
