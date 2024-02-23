@@ -6,14 +6,16 @@ import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Loader, useModalStateObject } from '@proton/components/components';
 import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
-import { useAuthentication } from '@proton/components/hooks';
+import { useApi, useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
+import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { DrawerAppSection } from '../../shared';
+import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AliasesList from './AliasesList';
 import HasNoAliases from './HasNoAliases';
 import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './PassAliasesInitError';
@@ -23,6 +25,7 @@ import PassAliasesUpsellModal from './modals/PassAliasesUpsellModal';
 import TryProtonPass from './modals/TryProtonPass';
 
 const PassAliases = () => {
+    const api = useApi();
     const createAliasModal = useModalStateObject();
     const tryProtonPassModal = useModalStateObject();
     const {
@@ -97,6 +100,11 @@ const PassAliases = () => {
                 <CreatePassAliasesForm
                     onSubmit={() => {
                         createAliasModal.openModal(false);
+
+                        void sendSecurityCenterReport(api, {
+                            event: TelemetrySecurityCenterEvents.proton_pass_create_alias,
+                            dimensions: { first_alias: hasAliases ? 'no' : 'yes' },
+                        });
 
                         // Wait for notification to be closed
                         if (!hasUsedProtonPassApp && !hasAliases) {
