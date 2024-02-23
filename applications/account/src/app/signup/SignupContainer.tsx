@@ -299,7 +299,7 @@ const SignupContainer = ({
                 domains,
                 plans: Plans,
                 freePlan,
-                plansMap: toMap(model.plans, 'Name') as PlansMap,
+                plansMap: toMap(Plans, 'Name') as PlansMap,
                 referralData,
                 subscriptionData,
                 inviteData: location.state?.invite,
