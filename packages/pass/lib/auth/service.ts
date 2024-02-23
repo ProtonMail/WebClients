@@ -3,9 +3,11 @@ import { c } from 'ttag';
 import type { CreateNotificationOptions } from '@proton/components/containers';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
+import { getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
@@ -15,6 +17,7 @@ import { revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
@@ -282,10 +285,20 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 });
 
                 authStore.setLockToken(sessionLockToken);
-
                 await authService.checkLock();
-                await authService.persistSession().catch(noop);
-                const loggedIn = await authService.login(authStore.getSession());
+
+                /** If the unlock request is triggered before the authentication
+                 * store session is fully hydrated, trigger a session resume. */
+                const loggedIn = await (async (): Promise<boolean> => {
+                    const validSession = isValidSession(authStore.getSession());
+                    const localID = authStore.getLocalID();
+
+                    if (!validSession) return authService.resumeSession(localID, { retryable: false });
+                    else {
+                        await authService.persistSession();
+                        return authService.login(authStore.getSession());
+                    }
+                })();
 
                 if (loggedIn && sessionLockToken) config.onSessionUnlocked?.(sessionLockToken);
             } catch (error) {
@@ -351,7 +364,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         config.onAuthorize?.();
 
                         /** Partially configure the auth store before resume sequence. `keyPassword`
-                         * and `sessionLockToken` are still encrypted at this point */
+                         * and `sessionLockToken` may be still encrypted at this point */
                         authStore.setSession(persistedSession);
                         await api.reset();
 
@@ -398,13 +411,38 @@ export const createAuthService = (config: AuthServiceConfig) => {
             )
         ),
 
-        confirmPassword: (password: string): Promise<boolean> =>
-            srpAuth({ api, credentials: { password }, config: { ...queryUnlock(), silence: true } })
-                .then(() => true)
-                .catch((error) => {
-                    config.onNotification?.({ text: getApiErrorMessage(error) ?? error?.message });
-                    return false;
-                }),
+        /** If password confirmation is triggered in offline mode, check
+         * password validity by comparing the offlineKD with the KD derived
+         * from the supplied `loginPassword`. When online, use SRP to verify */
+        confirmPassword: async (loginPassword: string, offline?: boolean): Promise<boolean> => {
+            try {
+                if (offline) {
+                    const offlineKD = authStore.getOfflineKD();
+                    const offlineConfig = authStore.getOfflineConfig();
+
+                    if (!(offlineConfig && offlineKD)) return false;
+
+                    const offlineKDVerify = await getOfflineKeyDerivation(
+                        loginPassword,
+                        stringToUint8Array(offlineConfig.salt),
+                        offlineConfig.params
+                    );
+
+                    return uint8ArrayToString(offlineKDVerify) === offlineKD;
+                } else {
+                    await srpAuth({
+                        api,
+                        credentials: { password: loginPassword },
+                        config: { ...queryUnlock(), silence: true },
+                    });
+
+                    return true;
+                }
+            } catch (error) {
+                logger.warn(`[AuthService] failed password confirmation (${getErrorMessage(error)})`);
+                return false;
+            }
+        },
     };
 
     api.subscribe(async (event) => {
