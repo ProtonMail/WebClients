@@ -31,7 +31,7 @@ export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): Pla
                       `${PASS_APP_NAME} with ${n} hide-my-email aliases`,
                       n
                   ),
-        icon: 'pass-all-vaults',
+        icon: 'brand-proton-pass',
         included: true,
         hideInDowngrade: true,
     };
@@ -314,6 +314,6 @@ export const getPassIdentityFeature = (): PlanCardFeatureDefinition => {
         text: PASS_APP_NAME,
         tooltip: c('new_plans: tooltip').t`Password management and identity protection`,
         included: true,
-        icon: 'pass-all-vaults',
+        icon: 'brand-proton-pass',
     };
 };
