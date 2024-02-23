@@ -11,9 +11,9 @@ interface Props {
 }
 
 const EmptyListPlaceholder = ({ labelID, isSearch, isUnread }: Props) => {
-    const { displayState } = useGetStartedChecklist();
+    const { displayState, canDisplayChecklist } = useGetStartedChecklist();
 
-    if (displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
+    if (canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
         return <UsersOnboardingChecklist />;
     }
 
