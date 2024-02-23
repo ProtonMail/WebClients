@@ -285,10 +285,20 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 });
 
                 authStore.setLockToken(sessionLockToken);
-
                 await authService.checkLock();
-                await authService.persistSession().catch(noop);
-                const loggedIn = await authService.login(authStore.getSession());
+
+                /** If the unlock request is triggered before the authentication
+                 * store session is fully hydrated, trigger a session resume. */
+                const loggedIn = await (async (): Promise<boolean> => {
+                    const validSession = isValidSession(authStore.getSession());
+                    const localID = authStore.getLocalID();
+
+                    if (!validSession) return authService.resumeSession(localID, { retryable: false });
+                    else {
+                        await authService.persistSession();
+                        return authService.login(authStore.getSession());
+                    }
+                })();
 
                 if (loggedIn && sessionLockToken) config.onSessionUnlocked?.(sessionLockToken);
             } catch (error) {
@@ -354,7 +364,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         config.onAuthorize?.();
 
                         /** Partially configure the auth store before resume sequence. `keyPassword`
-                         * and `sessionLockToken` are still encrypted at this point */
+                         * and `sessionLockToken` may be still encrypted at this point */
                         authStore.setSession(persistedSession);
                         await api.reset();
 
