@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { ButtonGroup, Checkbox } from '@proton/components/components';
+import { Checkbox } from '@proton/components/components';
+import { PassButtonGroup } from '@proton/pass/components/Layout/Button/PassButtonGroup';
 import { ShareMemberAvatar } from '@proton/pass/components/Share/ShareMemberAvatar';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useInviteRecommendations } from '@proton/pass/hooks/useInviteRecommendations';
@@ -16,8 +17,6 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
 import { VirtualList } from '../Layout/List/VirtualList';
-
-import './InviteRecommendation.scss';
 
 type Props = {
     autocomplete: string;
@@ -61,12 +60,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
             </h2>
 
             {organization !== null && (
-                <ButtonGroup
-                    shape="solid"
-                    size="small"
-                    className="pass-button-group mb-3 w-full anime-fade-in shrink-0"
-                    color="weak"
-                >
+                <PassButtonGroup className="anime-fade-in shrink-0 mb-3" size="small">
                     <Button
                         onClick={() => setView(null)}
                         selected={view === null}
@@ -86,7 +80,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
                     >
                         {organization.name}
                     </Button>
-                </ButtonGroup>
+                </PassButtonGroup>
             )}
 
             <div
