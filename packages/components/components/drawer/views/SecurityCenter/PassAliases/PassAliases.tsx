@@ -18,7 +18,7 @@ import { DrawerAppSection } from '../../shared';
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AliasesList from './AliasesList';
 import HasNoAliases from './HasNoAliases';
-import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './PassAliasesInitError';
+import { PASS_ALIASES_ERROR_STEP } from './PassAliasesError';
 import { PassAliasesProvider, usePassAliasesContext } from './PassAliasesProvider';
 import CreatePassAliasesForm from './modals/CreatePassAliasesForm/CreatePassAliasesForm';
 import PassAliasesUpsellModal from './modals/PassAliasesUpsellModal';
@@ -127,7 +127,7 @@ export default function PassAliasesWrapper() {
             initiative="drawer-security-center"
             renderFunction={(e) => (
                 <>
-                    {e?.name === FAILED_TO_INIT_PASS_BRIDGE_ERROR ? (
+                    {e?.name === PASS_ALIASES_ERROR_STEP.INIT_BRIDGE ? (
                         <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
                             <div className="text-weak text-sm">
                                 {c('Error message').t`Please refresh the page or try again later.`}
