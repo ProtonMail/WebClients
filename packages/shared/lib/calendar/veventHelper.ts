@@ -331,6 +331,10 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
     };
 };
 
+export const getCalendarSignedPartWithExdate = ({ components, ...properties }: VcalVeventComponent) => {
+    return toResult(pick(properties, [...CALENDAR_SIGNED_FIELDS, 'exdate']));
+};
+
 export const getHasModifiedNotifications = (
     newVevent: VcalVeventComponent,
     oldVevent: Partial<VcalVeventComponent>

@@ -12,6 +12,7 @@ import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendar
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { EventOldData } from '../../../interfaces/EventData';
 import {
+    AttendeeDeleteSingleEditOperation,
     INVITE_ACTION_TYPES,
     InviteActions,
     SendIcs,
@@ -134,6 +135,7 @@ const getDeleteEventActions = async ({
     syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    attendeeDeleteSingleEditActions?: AttendeeDeleteSingleEditOperation[];
     texts: { success: string };
 }> => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
@@ -237,6 +239,7 @@ const getDeleteEventActions = async ({
         inviteActions: deleteInviteActions,
         updatePartstatActions,
         updatePersonalPartActions,
+        attendeeDeleteSingleEditActions,
     } = await getDeleteRecurringEventActions({
         type: deleteType,
         recurrence: actualEventRecurrence,
@@ -254,6 +257,7 @@ const getDeleteEventActions = async ({
         syncActions: multiSyncActions,
         updatePartstatActions,
         updatePersonalPartActions,
+        attendeeDeleteSingleEditActions,
         texts: {
             success: successText,
         },

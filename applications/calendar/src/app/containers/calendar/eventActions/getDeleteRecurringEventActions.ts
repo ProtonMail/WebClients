@@ -6,12 +6,12 @@ import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/ve
 import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
-import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
 import {
+    AttendeeDeleteSingleEditOperation,
     INVITE_ACTION_TYPES,
     InviteActions,
     SendIcs,
@@ -19,6 +19,7 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import {
+    SyncEventActionOperation,
     SyncEventActionOperations,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
@@ -26,6 +27,7 @@ import {
 import createSingleCancelledRecurrence from '../recurrence/createSingleCancelledRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
+import { getAttendeeDeleteSingleEditOperation } from './getAttendeeDeleteSingleEditActions';
 import { getUpdatePartstatOperation } from './getChangePartstatActions';
 import { getHasProtonAttendees } from './inviteActions';
 import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
@@ -65,6 +67,7 @@ export const getDeleteRecurringEventActions = async ({
     inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    attendeeDeleteSingleEditActions?: AttendeeDeleteSingleEditOperation[];
 }> => {
     const { type: inviteType, sendCancellationNotice, deleteSingleEdits } = inviteActions;
     const isDeclineInvitation = inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice;
@@ -101,33 +104,54 @@ export const getDeleteRecurringEventActions = async ({
             updatedInviteActions = cleanInviteActions;
         }
 
-        const updatedVeventComponent = deleteSingleRecurrence(originalVeventComponent, recurrence.localStart);
+        const syncOperations: SyncEventActionOperation[] = [];
+        const attendeeDeleteSingleEditOperations: AttendeeDeleteSingleEditOperation[] = [];
 
-        const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
+        const originalVeventWithUpdatedExdate = deleteSingleRecurrence(originalVeventComponent, recurrence.localStart);
+        const attendeeIsDeletingProtonSingleEdit = isAttendee && isSingleEdit && oldEvent.IsProtonProtonInvite;
 
-        const originalExdateOperation =
-            (isAttendee && originalEvent.IsProtonProtonInvite) || !updatedVeventComponent
-                ? // attendees cannot add EXDATEs (the organizer added it already anyway)
-                  undefined
-                : getUpdateSyncOperation({
-                      veventComponent: updatedVeventComponent,
-                      calendarEvent: originalEvent,
-                      hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
-                      isAttendee,
-                      cancelledOccurrenceVevent: hasCancelledWithProtonAttendees
-                          ? cancelledOccurrenceVevent
-                          : undefined,
-                  });
+        if (isSingleEdit && !attendeeIsDeletingProtonSingleEdit) {
+            // delete single edit (not needed for the case of the attendee deleting it since the BE does it automatically)
+            syncOperations.push(getDeleteSyncOperation(oldEvent));
+        }
+
+        if (originalVeventWithUpdatedExdate) {
+            if (!isAttendee) {
+                // add EXDATE to the main series
+                syncOperations.push(
+                    getUpdateSyncOperation({
+                        veventComponent: originalVeventWithUpdatedExdate,
+                        calendarEvent: originalEvent,
+                        hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
+                        isAttendee,
+                        cancelledOccurrenceVevent: hasCancelledWithProtonAttendees
+                            ? cancelledOccurrenceVevent
+                            : undefined,
+                    })
+                );
+            } else if (attendeeIsDeletingProtonSingleEdit) {
+                attendeeDeleteSingleEditOperations.push(
+                    getAttendeeDeleteSingleEditOperation({
+                        addressID: originalAddressID,
+                        eventComponent: originalVeventWithUpdatedExdate,
+                        event: oldEvent,
+                    })
+                );
+            }
+        }
 
         return {
-            multiSyncActions: [
-                {
-                    calendarID: originalCalendarID,
-                    addressID: originalAddressID,
-                    memberID: originalMemberID,
-                    operations: [singleDeleteOperation, originalExdateOperation].filter(isTruthy),
-                },
-            ],
+            multiSyncActions: syncOperations.length
+                ? [
+                      {
+                          calendarID: originalCalendarID,
+                          addressID: originalAddressID,
+                          memberID: originalMemberID,
+                          operations: syncOperations,
+                      },
+                  ]
+                : [],
+            attendeeDeleteSingleEditActions: attendeeDeleteSingleEditOperations,
             inviteActions: updatedInviteActions,
         };
     }
