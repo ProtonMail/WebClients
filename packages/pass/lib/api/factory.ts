@@ -58,7 +58,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
 
     const state: ApiState = {
         appVersionBad: false,
-        offline: false,
+        online: true,
         pendingCount: 0,
         queued: [],
         serverTime: undefined,
@@ -87,7 +87,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
 
         const { output = 'json', ...rest } = options;
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
-        const offline = state.offline;
+        const wasOnline = state.online;
 
         return apiCall(config)
             .then((response) => {
@@ -97,7 +97,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const serverTime = getDateHeader(response.headers);
                 if (!serverTime) throw new Error('Could not fetch server time');
 
-                state.offline = false;
+                state.online = true;
                 state.serverTime = updateServerTime(serverTime);
                 state.unreachable = false;
 
@@ -122,7 +122,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const isUnreachable = getIsUnreachableError(e);
 
                 state.appVersionBad = e.name === 'AppVersionBadError';
-                state.offline = isOffline;
+                state.online = !isOffline;
                 state.serverTime = serverTime ? updateServerTime(serverTime) : state.serverTime;
                 state.sessionInactive = e.name === 'InactiveSession';
                 state.sessionLocked = e.name === 'LockedSession';
@@ -137,7 +137,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
             .finally(() => {
                 state.pendingCount -= 1;
                 state.queued.shift()?.resolve();
-                if (state.offline !== offline) pubsub.publish({ type: 'network', online: !state.offline });
+                if (state.online !== wasOnline) pubsub.publish({ type: 'network', online: state.online });
             });
     };
 
@@ -161,7 +161,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
         state.queued = [];
         state.serverTime = undefined;
         state.appVersionBad = false;
-        state.offline = false;
+        state.online = true;
         state.unreachable = false;
         state.sessionInactive = false;
         state.sessionLocked = false;

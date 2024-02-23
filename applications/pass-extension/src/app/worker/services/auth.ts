@@ -139,7 +139,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             } catch {}
         }),
 
-        onSessionLocked: withContext((ctx, _) => {
+        onSessionLocked: withContext((ctx, _offline, _broadcast) => {
             ctx.setStatus(AppStatus.LOCKED);
             ctx.service.autofill.clearTabsBadgeCount();
 
