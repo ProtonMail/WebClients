@@ -7,3 +7,4 @@ export { default as SubUserTopBanner } from './SubUserTopBanner';
 export { default as TimeOutOfSyncTopBanner } from './TimeOutOfSyncTopBanner';
 export { default as TopBanners } from './TopBanners';
 export { default as TopBanner } from './TopBanner';
+export { default as LockedStateTopBanner } from './LockedStateTopBanner';
