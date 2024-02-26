@@ -311,6 +311,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         loading={loading}
                         selectedPlan={selectedPlan}
                         hasExtendedCycles={hasExtendedCycles}
+                        isVpn2024Deal={isVpn2024Deal}
                         isB2bPlan={isB2bPlan}
                         background={background}
                         vpnServersCountData={vpnServersCountData}
