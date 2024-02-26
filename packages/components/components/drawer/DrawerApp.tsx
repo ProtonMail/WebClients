@@ -31,9 +31,13 @@ interface Props {
      * Calendar specific
      */
     contactCustomActions?: CustomAction[];
+    /**
+     * To catch clicks on or bubbling to the `aside` element
+     */
+    onContainerClick?: () => void;
 }
 
-const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions }: Props) => {
+const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions, onContainerClick }: Props) => {
     const { appInView, iframeSrcMap } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
 
@@ -58,6 +62,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                     !appInView && 'hidden',
                     !isDisplayedOnMobile && 'drawer-app--hide-on-mobile',
                 ])}
+                onClick={onContainerClick}
             >
                 <ErrorBoundary
                     component={<StandardErrorPage />}
