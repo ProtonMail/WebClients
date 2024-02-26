@@ -346,6 +346,7 @@ const Step1 = ({
     mode,
     selectedPlan,
     hasExtendedCycles,
+    isVpn2024Deal,
     isB2bPlan,
     background,
     onComplete,
@@ -365,6 +366,7 @@ const Step1 = ({
     mode: 'signup' | 'pricing';
     selectedPlan: Plan;
     hasExtendedCycles: boolean;
+    isVpn2024Deal: boolean;
     isB2bPlan: boolean;
     background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
@@ -1031,6 +1033,10 @@ const Step1 = ({
                 <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {(() => {
+                            if (isVpn2024Deal) {
+                                return c('Header').t`Save big with the best deals on ${VPN_APP_NAME}`;
+                            }
+
                             if (isB2bPlan) {
                                 return c('new_plans: feature').t`Start protecting your organization`;
                             }
@@ -1078,6 +1084,10 @@ const Step1 = ({
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
                             title={(() => {
+                                if (isVpn2024Deal) {
+                                    return c('Header').t`Select your deal`;
+                                }
+
                                 if (isBlackFriday) {
                                     if (isBlackFridayPeriod) {
                                         return c('bf2023: header').t`Select your Black Friday offer`;
