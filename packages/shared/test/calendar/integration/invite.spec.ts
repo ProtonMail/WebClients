@@ -354,6 +354,32 @@ describe('generateEmailSubject', () => {
             })
         ).toEqual(expectedSingleFullDay);
     });
+
+    it('should return the expected subject for a single edit', () => {
+        const expected = `Update for an event starting on Wednesday March 4th, 2020 at 8:30 AM (GMT+1)`;
+        expect(
+            generateEmailSubject({
+                vevent: {
+                    ...exampleVevent,
+                    dtstart: {
+                        value: { year: 2020, month: 3, day: 4, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                    dtend: {
+                        value: { year: 2020, month: 3, day: 4, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                    'recurrence-id': {
+                        value: { year: 2020, month: 3, day: 4, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                },
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: true,
+                dateFormatOptions: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
 });
 
 describe('generateEmailBody', () => {
