@@ -13,6 +13,7 @@ import {
     type BitwardenCCItem,
     BitwardenCustomFieldType,
     type BitwardenData,
+    type BitwardenItem,
     type BitwardenLoginItem,
     BitwardenType,
 } from './bitwarden.types';
@@ -68,6 +69,14 @@ const formatCCExpirationDate = (item: BitwardenCCItem) => {
     return `${String(expMonth).padStart(2, '0')}${expYear}`;
 };
 
+const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
+    if (item.fields) {
+        ignored.push(
+            `[${BitwardenTypeMap[item.type]}] ${item.name}: ${c('Warning').t`item was imported without custom fields`}`
+        );
+    }
+};
+
 export const readBitwardenData = (data: string): ImportPayload => {
     try {
         const parsedData = JSON.parse(data) as BitwardenData;
@@ -106,11 +115,13 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                 extraFields: extractExtraFields(item),
                             });
                         case BitwardenType.NOTE:
+                            addCustomFieldsWarning(ignored, item);
                             return importNoteItem({
                                 name: item.name,
                                 note: item.notes,
                             });
                         case BitwardenType.CREDIT_CARD:
+                            addCustomFieldsWarning(ignored, item);
                             return importCreditCardItem({
                                 name: item.name,
                                 note: item.notes,
