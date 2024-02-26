@@ -485,11 +485,16 @@ export const passPlusUpsell = {
             icon: 'eye-slash',
         },
         {
-            text: '20 vaults',
-            tooltip:
-                'Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.',
+            text: '50 vaults',
+            tooltip: 'Like a folder, a vault is a convenient way to organize your items',
             included: true,
             icon: 'vault',
+        },
+        {
+            hideInDowngrade: true,
+            icon: 'arrow-up-from-square',
+            included: true,
+            text: 'Vault sharing (up to 10 people)',
         },
         {
             text: 'Integrated 2FA authenticator',

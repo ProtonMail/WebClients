@@ -22,6 +22,7 @@ import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
     APPS,
+    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
@@ -280,7 +281,7 @@ const SubscriptionContainer = ({
 
         const cycle = (() => {
             if (step === SUBSCRIPTION_STEPS.PLAN_SELECTION) {
-                return CYCLE.TWO_YEARS;
+                return app === APPS.PROTONPASS ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
             }
 
             if (maybeCycle) {
@@ -296,7 +297,7 @@ const SubscriptionContainer = ({
              * e.g. when clicking "explore other plans".
              * The condition also includes the cycle of upcoming subscription. The upcoming cycle must be
              * longer than the current cycle, according to the backend logic. That's why it takes precedence and the
-             * frontend also consdirers it to be longer.
+             * frontend also considers it to be longer.
              * */
             const cycle =
                 getNormalCycleFromCustomCycle(subscription.UpcomingSubscription?.Cycle) ??
@@ -329,6 +330,8 @@ const SubscriptionContainer = ({
 
     const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
 
+    const isPassB2bPlan = !!model.planIDs[PLANS.PASS_PRO] || !!model.planIDs[PLANS.PASS_BUSINESS];
+    const defaultCycles = isPassB2bPlan ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
     const [bitcoinValidated, setBitcoinValidated] = useState(false);
     const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
@@ -540,6 +543,11 @@ const SubscriptionContainer = ({
             const checkResult = await paymentsApi.checkWithAutomaticVersion(
                 {
                     Plans: newModel.planIDs,
+                    CouponCode: (() => {
+                        if (isPassB2bPlan) {
+                            return COUPON_CODES.PASS_B2B_INTRO;
+                        }
+                    })(),
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
                     Codes: getCodes(newModel),
@@ -766,10 +774,17 @@ const SubscriptionContainer = ({
                             check({
                                 ...model,
                                 planIDs,
-                                step:
-                                    !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]
-                                        ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
-                                        : SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                                step: (() => {
+                                    if (!!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]) {
+                                        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+                                    }
+
+                                    if (!!planIDs[PLANS.PASS_PRO] || !!planIDs[PLANS.PASS_BUSINESS]) {
+                                        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+                                    }
+
+                                    return SUBSCRIPTION_STEPS.CUSTOMIZATION;
+                                })(),
                             })
                         )
                     }
@@ -925,6 +940,7 @@ const SubscriptionContainer = ({
                                                     disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
                                                     subscription={subscription}
+                                                    defaultCycles={defaultCycles}
                                                 />
                                             </div>
                                         </>
@@ -1077,6 +1093,7 @@ const SubscriptionContainer = ({
                                             faded={blockCycleSelector}
                                             minimumCycle={minimumCycle}
                                             subscription={subscription}
+                                            defaultCycles={defaultCycles}
                                         />
                                     </div>
                                 </>
