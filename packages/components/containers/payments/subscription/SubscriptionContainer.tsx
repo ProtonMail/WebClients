@@ -121,6 +121,7 @@ export interface Model {
     gift?: string;
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
+    noPaymentNeeded: boolean;
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
@@ -183,6 +184,7 @@ const SubscriptionContainer = ({
     planIDs: maybePlanIDs,
     onSubscribed,
     onUnsubscribed,
+    onCancel,
     onCheck,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
@@ -322,6 +324,7 @@ const SubscriptionContainer = ({
             planIDs,
             initialCheckComplete: false,
             taxBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+            noPaymentNeeded: false,
         };
 
         return model;
@@ -529,6 +532,7 @@ const SubscriptionContainer = ({
         const copyNewModel = {
             ...newModel,
             initialCheckComplete: true,
+            noPaymentNeeded: false,
         };
 
         if (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && !supportAddons(copyNewModel.planIDs)) {
@@ -544,8 +548,36 @@ const SubscriptionContainer = ({
         const dontQueryCheck =
             copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION ||
             (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && isInitialCheck);
+
         if (dontQueryCheck) {
+            setCheckResult({
+                ...getOptimisticCheckResult({
+                    plansMap,
+                    cycle: copyNewModel.cycle,
+                    planIDs: copyNewModel.planIDs,
+                }),
+                Currency: copyNewModel.currency,
+                PeriodEnd: 0,
+            });
             setModel(copyNewModel);
+            return true;
+        }
+
+        if (isSubscriptionUnchanged(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
+            setCheckResult({
+                ...getOptimisticCheckResult({
+                    plansMap,
+                    cycle: copyNewModel.cycle,
+                    planIDs: copyNewModel.planIDs,
+                }),
+                Currency: copyNewModel.currency,
+                PeriodEnd: 0,
+                AmountDue: 0,
+            });
+            setModel({
+                ...copyNewModel,
+                noPaymentNeeded: true,
+            });
             return true;
         }
 
@@ -757,6 +789,11 @@ const SubscriptionContainer = ({
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
+        if (model.noPaymentNeeded) {
+            onCancel?.();
+            return;
+        }
+
         if (model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
             return;
         }
@@ -852,9 +889,9 @@ const SubscriptionContainer = ({
                                     </Button>
                                 }
                                 checkResult={getOptimisticCheckResult({
+                                    plansMap,
                                     cycle: model.cycle,
                                     planIDs: model.planIDs,
-                                    plansMap,
                                 })}
                                 plansMap={plansMap}
                                 vpnServers={vpnServers}
@@ -1016,6 +1053,7 @@ const SubscriptionContainer = ({
                                                 disabled={isFreeUserWithFreePlanSelected}
                                                 chargebeePaypal={paymentFacade.chargebeePaypal}
                                                 iframeHandles={paymentFacade.iframeHandles}
+                                                noPaymentNeeded={model.noPaymentNeeded}
                                             />
                                             {paymentFacade.showInclusiveTax && (
                                                 <InclusiveVatText
@@ -1169,6 +1207,7 @@ const SubscriptionContainer = ({
                                             disabled={isFreeUserWithFreePlanSelected}
                                             chargebeePaypal={paymentFacade.chargebeePaypal}
                                             iframeHandles={paymentFacade.iframeHandles}
+                                            noPaymentNeeded={model.noPaymentNeeded}
                                         />
                                         {paymentFacade.showInclusiveTax && (
                                             <InclusiveVatText

@@ -131,20 +131,6 @@ export type PlansMap = Partial<{
     [planName in PLANS | ADDON_NAMES]: Plan;
 }>;
 
-export interface Additions {
-    [ADDON_NAMES.ADDRESS]?: number;
-    [ADDON_NAMES.DOMAIN]?: number;
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]?: number;
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]?: number;
-    [ADDON_NAMES.MEMBER]?: number;
-    [ADDON_NAMES.SPACE]?: number;
-    [ADDON_NAMES.VPN]?: number;
-    [ADDON_NAMES.MEMBER_MAIL_PRO]?: number;
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]?: number;
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]?: number;
-    [ADDON_NAMES.MEMBER_ENTERPRISE]?: number;
-}
-
 export interface Tax {
     Name: string;
     /**
@@ -182,7 +168,6 @@ export interface SubscriptionCheckResponse {
     Currency: Currency;
     Cycle: Cycle;
     Gift?: number;
-    Additions: null | Additions;
     PeriodEnd: number;
     Taxes?: Tax[];
     TaxInclusive?: TaxInclusive;
