@@ -697,4 +697,30 @@ I am a good description`;
             })
         ).toEqual(expected);
     });
+
+    it('should return the expected body when editing a recurring series to a zero duration event', () => {
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            dtstart: {
+                value: { year: 2020, month: 3, day: 22, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Paris' },
+            },
+            dtend: undefined,
+        };
+
+        const expected = `All events in this series were updated. Here's what changed:
+
+TIME:
+Sunday March 22nd, 2020 at 12:30 PM (GMT+1)`;
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                oldVevent: exampleVevent,
+                recurringType: RECURRING_TYPES.ALL,
+            })
+        ).toEqual(expected);
+    });
 });
