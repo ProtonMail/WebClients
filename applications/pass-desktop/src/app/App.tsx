@@ -13,6 +13,8 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import {
     ErrorBoundary,
     Icons,
+    ModalsChildren,
+    ModalsProvider,
     NotificationsChildren,
     NotificationsProvider,
     StandardErrorPage,
@@ -144,24 +146,27 @@ export const App = () => {
             <ThemeProvider />
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
-                    <PassExtensionLink>
-                        <ClientProvider>
-                            <Router history={history}>
-                                <NavigationProvider>
-                                    <AuthServiceProvider>
-                                        <StoreProvider>
-                                            <Localized>
-                                                <AppGuard />
-                                            </Localized>
-                                            <Portal>
-                                                <NotificationsChildren />
-                                            </Portal>
-                                        </StoreProvider>
-                                    </AuthServiceProvider>
-                                </NavigationProvider>
-                            </Router>
-                        </ClientProvider>
-                    </PassExtensionLink>
+                    <ModalsProvider>
+                        <PassExtensionLink>
+                            <ClientProvider>
+                                <Router history={history}>
+                                    <NavigationProvider>
+                                        <AuthServiceProvider>
+                                            <StoreProvider>
+                                                <Localized>
+                                                    <AppGuard />
+                                                </Localized>
+                                                <Portal>
+                                                    <ModalsChildren />
+                                                    <NotificationsChildren />
+                                                </Portal>
+                                            </StoreProvider>
+                                        </AuthServiceProvider>
+                                    </NavigationProvider>
+                                </Router>
+                            </ClientProvider>
+                        </PassExtensionLink>
+                    </ModalsProvider>
                 </NotificationsProvider>
             </ErrorBoundary>
         </PassCoreProvider>
