@@ -39,10 +39,10 @@ export const getVPNPlanToUse = (_: PlansMap, planIDs: PlanIDs | undefined) => {
     return PLANS.VPN;
 };
 
-export const getHasExtendedCycles = (planName: PLANS, coupon: string | undefined) => {
+export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) => {
     return (
         planName === PLANS.VPN2024 &&
-        [COUPON_CODES.MARCHSAVINGS24, COUPON_CODES.HONEYPROTONSAVINGS].includes(coupon as any)
+        [COUPON_CODES.MARCHSAVINGS24, COUPON_CODES.HONEYPROTONSAVINGS].includes(coupon as COUPON_CODES)
     );
 };
 
