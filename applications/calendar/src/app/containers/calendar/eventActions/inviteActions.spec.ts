@@ -256,7 +256,7 @@ describe('getSendIcsAction', () => {
                 to: [{ Address: 'chtest7@proton.test', Name: 'chtest7@proton.test' }],
                 subject: 'Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
                 plainTextBody:
-                    'You are invited to test 10.\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                    'You are invited to test 10.\n\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
@@ -314,7 +314,7 @@ describe('getSendIcsAction', () => {
                     ],
                     subject: 'Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
                     plainTextBody:
-                        'You are invited to test 10.\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                        'You are invited to test 10.\n\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
                     sendPreferencesMap,
                     contactEmailsMap,
                 });
@@ -413,7 +413,7 @@ describe('getSendIcsAction', () => {
                 to: [{ Address: 'chtest7@proton.test', Name: 'chtest7@proton.test' }],
                 subject: 'Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
                 plainTextBody:
-                    'You are invited to test 10.\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                    'You are invited to test 10.\n\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
