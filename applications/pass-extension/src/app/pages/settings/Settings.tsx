@@ -18,7 +18,12 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
+import {
+    OrganizationProvider,
+    useOrganization,
+} from '@proton/pass/components/Settings/Organization/OrganizationProvider';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -29,11 +34,13 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import { AppStatus, type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Developer } from './Views/Developer';
 import { Export } from './Views/Export';
 import { General } from './Views/General';
+import { Organization } from './Views/Organization';
 import { Security } from './Views/Security';
 import { Support } from './Views/Support';
 
@@ -41,7 +48,10 @@ import './Settings.scss';
 
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
 
-const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
+const getSettingsTabs: (isB2BAdmin: boolean, enableOrganization: boolean) => (Tab & { pathname: string })[] = (
+    isB2BAdmin = false,
+    enableOrganization = false
+) => {
     const tabs = [
         {
             pathname: '/',
@@ -82,6 +92,14 @@ const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
             content: <Developer />,
         });
     }
+    if (enableOrganization && isB2BAdmin) {
+        tabs.push({
+            pathname: '/organization',
+            title: c('Label').t`Organization`,
+            content: <Organization />,
+        });
+    }
+
     return tabs;
 };
 
@@ -91,7 +109,9 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
-    const tabs = useMemo(getSettingsTabs, []);
+    const { isB2BAdmin } = useOrganization();
+    const enableOrganization = useFeatureFlag(PassFeature.PassEnableOrganization) || true;
+    const tabs = useMemo(() => getSettingsTabs(isB2BAdmin, enableOrganization), [isB2BAdmin, enableOrganization]);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
     const pathnameToIndex = (pathname: string) => {
@@ -189,39 +209,45 @@ const SettingsApp: FC = () => {
     }, []);
 
     return (
-        <Localized>
-            <HashRouter>
-                <ExtensionConnect endpoint="page" messageFactory={pageMessage} onWorkerMessage={handleWorkerMessage}>
-                    <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-                    <div
-                        className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
-                        style={{ '--min-h-custom': '100vh' }}
+        <OrganizationProvider>
+            <Localized>
+                <HashRouter>
+                    <ExtensionConnect
+                        endpoint="page"
+                        messageFactory={pageMessage}
+                        onWorkerMessage={handleWorkerMessage}
                     >
-                        <Switch>
-                            <Route
-                                exact
-                                path={'/logs'}
-                                render={() => (
-                                    <div className="max-h-full">
-                                        <ApplicationLogs
-                                            opened
-                                            style={{ '--h-custom': 'max(calc(100vh - 130px), 18.75rem)' }}
-                                        />
-                                    </div>
-                                )}
-                            />
-                            <Route
-                                render={({ location: { pathname } }) => (
-                                    <LockConfirmContextProvider>
-                                        <SettingsTabs pathname={pathname} />
-                                    </LockConfirmContextProvider>
-                                )}
-                            />
-                        </Switch>
-                    </div>
-                </ExtensionConnect>
-            </HashRouter>
-        </Localized>
+                        <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
+                        <div
+                            className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
+                            style={{ '--min-h-custom': '100vh' }}
+                        >
+                            <Switch>
+                                <Route
+                                    exact
+                                    path={'/logs'}
+                                    render={() => (
+                                        <div className="max-h-full">
+                                            <ApplicationLogs
+                                                opened
+                                                style={{ '--h-custom': 'max(calc(100vh - 130px), 18.75rem)' }}
+                                            />
+                                        </div>
+                                    )}
+                                />
+                                <Route
+                                    render={({ location: { pathname } }) => (
+                                        <LockConfirmContextProvider>
+                                            <SettingsTabs pathname={pathname} />
+                                        </LockConfirmContextProvider>
+                                    )}
+                                />
+                            </Switch>
+                        </div>
+                    </ExtensionConnect>
+                </HashRouter>
+            </Localized>
+        </OrganizationProvider>
     );
 };
 

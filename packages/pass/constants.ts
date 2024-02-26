@@ -3,6 +3,7 @@
 export const MIN_CACHE_VERSION = '1.10.0';
 
 export const MAX_BATCH_PER_REQUEST = 100;
+export const MAX_BATCH_ADDRESS_REQUEST = 10;
 export const ALIAS_OPTIONS_MAX_AGE = 10 * 60;
 export const ALIAS_DETAILS_MAX_AGE = 30;
 
