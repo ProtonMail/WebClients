@@ -3,13 +3,7 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { WithExtensionLocale } from 'proton-pass-extension/lib/hooks/useExtensionLocale';
 
-import {
-    Icons,
-    ModalsChildren,
-    ModalsProvider,
-    NotificationsChildren,
-    NotificationsProvider,
-} from '@proton/components';
+import { Icons, NotificationsChildren, NotificationsProvider } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { type ClientEndpoint } from '@proton/pass/types';
@@ -41,13 +35,10 @@ export const ExtensionApp: FC<Props> = ({ endpoint, children }) => {
                 <Icons />
                 <ThemeProvider />
                 <NotificationsProvider>
-                    <ModalsProvider>
-                        {children(ready)}
-                        <Portal>
-                            <ModalsChildren />
-                            <NotificationsChildren />
-                        </Portal>
-                    </ModalsProvider>
+                    {children(ready)}
+                    <Portal>
+                        <NotificationsChildren />
+                    </Portal>
                 </NotificationsProvider>
             </WithExtensionLocale>
         </ExtensionCore>
