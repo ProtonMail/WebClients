@@ -396,6 +396,7 @@ describe('generateEmailBody', () => {
             },
         };
         const expected = `You are invited to (no title).
+
 TIME:
 Monday October 12th, 2020 (all day)
 
@@ -422,6 +423,7 @@ asd`;
             description: { value: 'I am a good description' },
         };
         const expected = `You are invited to Watch movie.
+
 TIME:
 Monday October 12th, 2020 (all day)
 
@@ -450,6 +452,7 @@ I am a good description`;
             },
         };
         const expected = `This event was updated. Here's what changed:
+
 TIME:
 Sunday March 22nd, 2020 - Monday March 23rd, 2020
 
@@ -481,6 +484,7 @@ Removed`;
             description: { value: 'I am a good description' },
         };
         const expected = `This event was updated. Here's what changed:
+
 TITLE:
 Watch movie
 
@@ -507,6 +511,7 @@ I am a good description`;
             description: { value: 'I am a good description' },
         };
         const expected = `This event was updated. Here's what changed:
+
 LOCATION:
 Watch movie
 
@@ -650,6 +655,7 @@ I am a good description`;
         };
 
         const expected = `This event occurrence was updated. Here's what changed:
+
 TITLE:
 Watch movie
 
@@ -674,6 +680,7 @@ I am a good description`;
         };
 
         const expected = `All events in this series were updated. Here's what changed:
+
 TITLE:
 Watch movie
 
