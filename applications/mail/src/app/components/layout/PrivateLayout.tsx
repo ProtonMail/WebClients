@@ -16,7 +16,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { MESSAGE_ACTIONS } from '../../constants';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
@@ -70,6 +70,10 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
                     onCompose={handleContactsCompose}
                     onMailTo={onMailTo}
                     customAppSettings={<MailQuickSettings />}
+                    // when catching click action from drawer close overlay
+                    onContainerClick={() => {
+                        document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));
+                    }}
                 />
             }
         >
