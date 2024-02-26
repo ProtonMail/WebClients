@@ -15,7 +15,7 @@ import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHisto
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useItemHistory } from '@proton/pass/hooks/useItemHistory';
 import type { ItemRevision, SelectedItem } from '@proton/pass/types';
-import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
+import { getRelativeDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 const pageSize = 20;
 
@@ -64,7 +64,7 @@ export const ItemHistoryTimeline: FC<Props> = ({ item, onSelectRevision }) => {
                         title={c('Title').t`Last autofill`}
                         subtitle={
                             // translator: when this login was last used
-                            item.lastUseTime ? getFormattedDateFromTimestamp(item.lastUseTime) : c('Info').t`Never`
+                            item.lastUseTime ? getRelativeDateFromTimestamp(item.lastUseTime) : c('Info').t`Never`
                         }
                     />
 
@@ -81,7 +81,7 @@ export const ItemHistoryTimeline: FC<Props> = ({ item, onSelectRevision }) => {
                         <HistoryItem
                             icon="clock"
                             title={c('Title').t`Current version`}
-                            subtitle={getFormattedDateFromTimestamp(revisions[0].revisionTime)}
+                            subtitle={getRelativeDateFromTimestamp(revisions[0].revisionTime)}
                         />
                     </RevisionsListItem>
                 </div>
@@ -97,7 +97,7 @@ export const ItemHistoryTimeline: FC<Props> = ({ item, onSelectRevision }) => {
                         <HistoryItem
                             icon={item.revision === 1 ? 'bolt' : 'pencil'}
                             title={item.revision === 1 ? c('Title').t`Created` : c('Title').t`Modified`}
-                            subtitle={getFormattedDateFromTimestamp(item.revisionTime)}
+                            subtitle={getRelativeDateFromTimestamp(item.revisionTime)}
                         />
                     </RevisionsListItem>
                 </div>
