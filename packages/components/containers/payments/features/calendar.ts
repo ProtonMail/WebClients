@@ -104,6 +104,10 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                     MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars
                 ),
                 [PLANS.MAIL_PRO]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_PRO]?.MaxCalendars),
+                [PLANS.PASS_PRO]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.PASS_PRO]?.MaxCalendars),
+                [PLANS.PASS_BUSINESS]: getNCalendarsFeature(
+                    MAX_CALENDARS_FREE || plansMap[PLANS.PASS_BUSINESS]?.MaxCalendars
+                ),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -120,6 +124,8 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
+                [PLANS.PASS_PRO]: getEndToEndEncryption(),
+                [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -136,6 +142,8 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
                 [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
                 [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
+                [PLANS.PASS_PRO]: getShareFeature(plansMap, PLANS.PASS_PRO, Audience.B2B),
+                [PLANS.PASS_BUSINESS]: getShareFeature(plansMap, PLANS.PASS_BUSINESS, Audience.B2B),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -152,6 +160,8 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getInvitation(),
                 [PLANS.BUNDLE_PRO]: getInvitation(),
                 [PLANS.MAIL_PRO]: getInvitation(),
+                [PLANS.PASS_PRO]: getInvitation(),
+                [PLANS.PASS_BUSINESS]: getInvitation(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

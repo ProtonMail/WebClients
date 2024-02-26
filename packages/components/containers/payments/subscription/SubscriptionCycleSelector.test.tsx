@@ -375,100 +375,164 @@ it('should display the prices correctly for VPN Plus', () => {
 
 describe('getAllowedCycles', () => {
     it('should return all cycles if there is no subscription', () => {
+        const subscription = undefined;
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(undefined, minimumCycle, {});
+        const planIDs = {};
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     it('should return all cycles if user selects different plan', () => {
+        const subscription = getSubscriptionMock();
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(getSubscriptionMock(), minimumCycle, {
+        const planIDs = {
             family2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     it('should return only 12 and 24 cycles when user has a 1-month subscription', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.MONTHLY;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
     it('should return only 24 cycles when user has a 12-month subscription', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.YEARLY;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.YEARLY;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
 
     it('should return only 24 cycle if user has 24 cycle subscription', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.TWO_YEARS;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.TWO_YEARS;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
 
     it('should return 24 cycle if user has upcoming 1-cycle', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.MONTHLY;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
 
         const upcomingSubscriptionMock = getSubscriptionMock();
         upcomingSubscriptionMock.Cycle = CYCLE.YEARLY;
-        subscriptionMock.UpcomingSubscription = upcomingSubscriptionMock;
+        subscription.UpcomingSubscription = upcomingSubscriptionMock;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
 
     it('should return all cycles if user has referral subscription', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.MONTHLY;
-        subscriptionMock.CouponCode = COUPON_CODES.REFERRAL;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
+        subscription.CouponCode = COUPON_CODES.REFERRAL;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     it('should return all cycles if user was downgraded', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.MONTHLY;
-        subscriptionMock.CouponCode = COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
+        subscription.CouponCode = COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     it('should return all cycles if user has trial subscription', () => {
-        const subscriptionMock = getSubscriptionMock();
-        subscriptionMock.Cycle = CYCLE.MONTHLY;
-        subscriptionMock.IsTrial = true;
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
+        subscription.IsTrial = true;
 
         const minimumCycle = CYCLE.MONTHLY;
-        const result = getAllowedCycles(subscriptionMock, minimumCycle, {
+        const planIDs = {
             bundle2022: 1,
-        });
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    describe('defaultCycles', () => {
+        it('should default defaultCycles to TWO_YEARS, YEARLY, MONTHLY', () => {
+            const subscription = undefined;
+            const minimumCycle = CYCLE.MONTHLY;
+            const planIDs = {};
+            const defaultCycles = [CYCLE.YEARLY, CYCLE.MONTHLY, CYCLE.TWO_YEARS];
+
+            const result = getAllowedCycles({ subscription, minimumCycle, planIDs, defaultCycles });
+
+            expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
+        });
+
+        it('should sort default cycles in descending order', () => {
+            const subscription = undefined;
+            const minimumCycle = CYCLE.MONTHLY;
+            const planIDs = {};
+            const defaultCycles = [CYCLE.YEARLY, CYCLE.MONTHLY, CYCLE.TWO_YEARS];
+
+            const result = getAllowedCycles({ subscription, minimumCycle, planIDs, defaultCycles });
+
+            expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
+        });
+
+        it('should default defaultCycles to TWO_YEARS, YEARLY, MONTHLY', () => {
+            const subscription = undefined;
+            const minimumCycle = CYCLE.MONTHLY;
+            const planIDs = {};
+            const defaultCycles = [CYCLE.THIRTY, CYCLE.MONTHLY, CYCLE.FIFTEEN];
+
+            const result = getAllowedCycles({ subscription, minimumCycle, planIDs, defaultCycles });
+
+            expect(result).toEqual([CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY]);
+        });
     });
 });

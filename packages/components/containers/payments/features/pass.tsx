@@ -41,10 +41,19 @@ export const getLoginsAndNotesText = () => {
     return c('new_plans: feature').t`Unlimited logins and notes`;
 };
 
+export const getGroupManagement = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Group management (coming soon)`,
+        included: true,
+        status: 'coming-soon',
+    };
+};
+
 export const getSSOIntegration = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`SSO integration (coming soon)`,
         included: true,
+        status: 'coming-soon',
     };
 };
 
@@ -54,6 +63,11 @@ export const getRequire2FA = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
+export const get24x7Support = (): PlanCardFeatureDefinition => ({
+    included: true,
+    text: c('new_plans: feature').t`24/7 account management support`,
+});
 
 export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
@@ -75,6 +89,7 @@ export const getCreditCards = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Autofill credit cards (coming soon)`,
         included: true,
+        status: 'coming-soon',
     };
 };
 
@@ -121,11 +136,13 @@ export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureD
     };
 };
 
-export const getVaults = (n: number): PlanCardFeatureDefinition => {
+export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
-        tooltip: c('new_plans: tooltip')
-            .t`Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.`,
+        text:
+            n === 'unlimited'
+                ? c('new_plans: feature').t`Unlimited vaults`
+                : c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
+        tooltip: c('new_plans: tooltip').t`Like a folder, a vault is a convenient way to organize your items`,
         included: true,
         icon: 'vault',
     };
@@ -143,15 +160,17 @@ export const getUnlimitedVaultSharingText = () => {
     return c('new_plans: feature').t`Unlimited shared vaults with access permissions`;
 };
 
-export const getVaultSharingText = (n: number) => {
-    return c('new_plans: feature').ngettext(
-        msgid`Vault sharing (up to ${n} person)`,
-        `Vault sharing (up to ${n} people)`,
-        n
-    );
+export const getVaultSharingText = (n: number | 'unlimited') => {
+    return n === 'unlimited'
+        ? c('new_plans: feature').t`Unlimited vault sharing`
+        : c('new_plans: feature').ngettext(
+              msgid`Vault sharing (up to ${n} person)`,
+              `Vault sharing (up to ${n} people)`,
+              n
+          );
 };
 
-export const getVaultSharing = (n: number): PlanCardFeatureDefinition => {
+export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text: getVaultSharingText(n),
         icon: 'arrow-up-from-square',
@@ -173,8 +192,16 @@ export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeat
 
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
+export const FREE_VAULT_SHARING = 3;
 
-export const PASS_PLUS_VAULTS = 20;
+export const PASS_PLUS_VAULTS = 50;
+export const PASS_PLUS_VAULT_SHARING = 10;
+
+export const PASS_PRO_VAULTS = 'unlimited';
+export const PASS_PRO_VAULT_SHARING = 'unlimited';
+
+export const PASS_BIZ_VAULTS = 'unlimited';
+export const PASS_BIZ_VAULT_SHARING = 'unlimited';
 
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
@@ -190,6 +217,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getLoginsAndNotes(),
                 [PLANS.MAIL_PRO]: getLoginsAndNotes(),
                 [PLANS.BUNDLE_PRO]: getLoginsAndNotes(),
+                [PLANS.PASS_PRO]: getLoginsAndNotes(),
+                [PLANS.PASS_BUSINESS]: getLoginsAndNotes(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -206,6 +235,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDevices(),
                 [PLANS.MAIL_PRO]: getDevices(),
                 [PLANS.BUNDLE_PRO]: getDevices(),
+                [PLANS.PASS_PRO]: getDevices(),
+                [PLANS.PASS_BUSINESS]: getDevices(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -222,6 +253,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
                 [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.PASS_PRO]: getVaults(PASS_PRO_VAULTS),
+                [PLANS.PASS_BUSINESS]: getVaults(PASS_BIZ_VAULTS),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -238,6 +271,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.MAIL_PRO]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.BUNDLE_PRO]: getHideMyEmailAliases('unlimited'),
+                [PLANS.PASS_PRO]: getHideMyEmailAliases('unlimited'),
+                [PLANS.PASS_BUSINESS]: getHideMyEmailAliases('unlimited'),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -245,15 +280,17 @@ export const getPassFeatures = (): PlanCardFeature[] => {
         {
             name: 'vault-and-item-sharing',
             plans: {
-                [PLANS.FREE]: getVaultSharing(3),
-                [PLANS.BUNDLE]: getVaultSharing(10),
-                [PLANS.MAIL]: getVaultSharing(3),
-                [PLANS.VPN]: getVaultSharing(3),
-                [PLANS.DRIVE]: getVaultSharing(3),
-                [PLANS.PASS_PLUS]: getVaultSharing(10),
-                [PLANS.FAMILY]: getVaultSharing(10),
-                [PLANS.MAIL_PRO]: getVaultSharing(3),
-                [PLANS.BUNDLE_PRO]: getVaultSharing(10),
+                [PLANS.FREE]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.BUNDLE]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.MAIL]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.VPN]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.DRIVE]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.PASS_PLUS]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.FAMILY]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.MAIL_PRO]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.BUNDLE_PRO]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.PASS_PRO]: getVaultSharing(PASS_PRO_VAULT_SHARING),
+                [PLANS.PASS_BUSINESS]: getVaultSharing(PASS_BIZ_VAULT_SHARING),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -270,6 +307,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: get2FAAuthenticator(true),
                 [PLANS.MAIL_PRO]: get2FAAuthenticator(),
                 [PLANS.BUNDLE_PRO]: get2FAAuthenticator(true),
+                [PLANS.PASS_PRO]: get2FAAuthenticator(true),
+                [PLANS.PASS_BUSINESS]: get2FAAuthenticator(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -286,6 +325,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getCustomFields(true),
                 [PLANS.MAIL_PRO]: getCustomFields(),
                 [PLANS.BUNDLE_PRO]: getCustomFields(true),
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -302,6 +343,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.MAIL_PRO]: getDataBreachMonitoring(),
                 [PLANS.BUNDLE_PRO]: getDataBreachMonitoring(true),
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

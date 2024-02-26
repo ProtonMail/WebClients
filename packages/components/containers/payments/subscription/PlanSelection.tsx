@@ -119,6 +119,8 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
     const plansThatMustUseAddonPricing = {
         [PLANS.VPN_PRO]: ADDON_NAMES.MEMBER_VPN_PRO,
         [PLANS.VPN_BUSINESS]: ADDON_NAMES.MEMBER_VPN_BUSINESS,
+        [PLANS.PASS_PRO]: ADDON_NAMES.MEMBER_PASS_PRO,
+        [PLANS.PASS_BUSINESS]: ADDON_NAMES.MEMBER_PASS_BUSINESS,
     };
     type PlanWithAddon = keyof typeof plansThatMustUseAddonPricing;
 
@@ -182,6 +184,7 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
+    const isPassSettingsApp = app == APPS.PROTONPASS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [
@@ -232,6 +235,8 @@ const PlanSelection = ({
         getVPNEnterprisePlan(vpnServers),
     ]);
 
+    const passB2BPlans = filterPlans([plansMap[PLANS.PASS_PRO], plansMap[PLANS.PASS_BUSINESS]]);
+
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
     /**
@@ -241,9 +246,12 @@ const PlanSelection = ({
      * Then we should fallback to the usual set of plans. It can happen if backend doesn't return the VPN B2B plans.
      */
     const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0;
+    const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
 
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
+    } else if (isPassB2bPlans) {
+        B2BPlans = passB2BPlans;
     } else {
         B2BPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
@@ -443,8 +451,10 @@ const PlanSelection = ({
                         options={[
                             { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY },
                             { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
-                            { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
-                        ]}
+                            app !== APPS.PROTONPASS
+                                ? { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS }
+                                : undefined,
+                        ].filter(isTruthy)}
                     />
                 )}
             </div>

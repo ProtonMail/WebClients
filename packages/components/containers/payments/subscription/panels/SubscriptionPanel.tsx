@@ -52,6 +52,7 @@ import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
+    FREE_VAULT_SHARING,
     PASS_PLUS_VAULTS,
     get2FAAuthenticator,
     getCustomFields,
@@ -357,28 +358,11 @@ const SubscriptionPanel = ({
     };
 
     const getPassAppFree = () => {
-        /**
-         * To be added when pass endpoint is ready
-         */
-        // const getNumberOfEmailAliases = (usedAliases: number, totalAliases: number) => {
-        //     return c('new_plans: feature').ngettext(
-        //         msgid`${usedAliases} of ${totalAliases} hide-my-email alias`,
-        //         `${usedAliases} of ${totalAliases} hide-my-email aliases`,
-        //         totalAliases
-        //     );
-        // };
-
         const items: Item[] = [
-            /**
-             * To be added when pass endpoint is ready
-             */
-            // {
-            //     icon: 'eye-slash',
-            //     text: getNumberOfEmailAliases(usedAliases, maxAliases),
-            // },
             getLoginsAndNotes(),
             getDevices(),
             getVaults(FREE_VAULTS),
+            getVaultSharing(FREE_VAULT_SHARING),
             getHideMyEmailAliases(FREE_PASS_ALIASES),
         ];
 
