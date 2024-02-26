@@ -1,4 +1,4 @@
-import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_BATCH_ADDRESS_REQUEST, MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
@@ -171,4 +171,24 @@ export const getInviteRecommendations = async (
             signal: signal,
         })
     ).Recommendation!;
+};
+
+/** Check if an address can be invited return allowed addresses */
+export const checkInviteAddresses = async (shareId: string, emails: string[]) => {
+    return (
+        await Promise.all(
+            chunk(emails, MAX_BATCH_ADDRESS_REQUEST).map(async (batch) => {
+                try {
+                    const result: { Code: number; Emails: string[] } = await api({
+                        url: `pass/v1/share/${shareId}/invite/check_address`,
+                        method: 'post',
+                        data: { Emails: batch },
+                    });
+                    return result.Emails;
+                } catch {
+                    return [];
+                }
+            })
+        )
+    ).flat();
 };

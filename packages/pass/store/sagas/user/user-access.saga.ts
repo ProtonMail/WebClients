@@ -18,11 +18,16 @@ function* syncPlan({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeo
 
         const access: HydratedAccessState = yield getUserAccess();
 
-        /* Resolve organisation data only for B2B admins */
-        const b2bAdmin = access.plan?.Type === PlanType.business;
-        const organization: MaybeNull<Organization> = b2bAdmin ? yield getUserOrganization() : null;
+        /* Resolve organisation data only for B2B users */
+        const isB2B = access.plan?.Type === PlanType.business;
+        const organization: MaybeNull<Organization> = isB2B ? yield getUserOrganization() : null;
 
-        yield put(getUserAccessSuccess(meta.request.id, { ...access, organization: organization }));
+        yield put(
+            getUserAccessSuccess(meta.request.id, {
+                ...access,
+                organization: organization,
+            })
+        );
     } catch (error) {
         yield put(getUserAccessFailure(meta.request.id, error));
     }

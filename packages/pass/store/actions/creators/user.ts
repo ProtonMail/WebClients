@@ -29,7 +29,11 @@ export const getUserAccessIntent = createAction('user::access::get::intent', (us
 export const getUserAccessSuccess = createAction(
     'user::access::get::success',
     withRequestSuccess(
-        (payload: HydratedAccessState & { organization: MaybeNull<Organization> }) => withCache({ payload }),
+        (
+            payload: HydratedAccessState & {
+                organization: MaybeNull<Organization>;
+            }
+        ) => withCache({ payload }),
         { maxAge: UNIX_HOUR / 2 }
     )
 );
