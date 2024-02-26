@@ -141,7 +141,15 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const upsellShortPlan = getUpsellShortPlan(model.plansMap[PLANS.VPN], vpnServersCountData);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
-    const background = isB2bPlan ? 'dark' : getHas2023OfferCoupon(signupParameters.coupon) ? 'bf2023' : undefined;
+    const background = (() => {
+        if (isB2bPlan) {
+            return 'dark';
+        }
+
+        if (getHas2023OfferCoupon(signupParameters.coupon)) {
+            return 'bf2023';
+        }
+    })();
 
     useEffect(() => {
         const fetchDependencies = async () => {
