@@ -10,8 +10,6 @@ import {
     CompatibilityCheck,
     ErrorBoundary,
     Icons,
-    ModalsChildren,
-    ModalsProvider,
     NotificationsChildren,
     NotificationsProvider,
     StandardErrorPage,
@@ -116,27 +114,24 @@ export const App = () => (
                         <ThemeProvider />
                         <ErrorBoundary component={<StandardErrorPage big />}>
                             <NotificationsProvider>
-                                <ModalsProvider>
-                                    <PassExtensionLink>
-                                        <ClientProvider>
-                                            <Router history={history}>
-                                                <NavigationProvider>
-                                                    <AuthServiceProvider>
-                                                        <StoreProvider>
-                                                            <Localized>
-                                                                <AppGuard />
-                                                            </Localized>
-                                                            <Portal>
-                                                                <ModalsChildren />
-                                                                <NotificationsChildren />
-                                                            </Portal>
-                                                        </StoreProvider>
-                                                    </AuthServiceProvider>
-                                                </NavigationProvider>
-                                            </Router>
-                                        </ClientProvider>
-                                    </PassExtensionLink>
-                                </ModalsProvider>
+                                <PassExtensionLink>
+                                    <ClientProvider>
+                                        <Router history={history}>
+                                            <NavigationProvider>
+                                                <AuthServiceProvider>
+                                                    <StoreProvider>
+                                                        <Localized>
+                                                            <AppGuard />
+                                                        </Localized>
+                                                        <Portal>
+                                                            <NotificationsChildren />
+                                                        </Portal>
+                                                    </StoreProvider>
+                                                </AuthServiceProvider>
+                                            </NavigationProvider>
+                                        </Router>
+                                    </ClientProvider>
+                                </PassExtensionLink>
                             </NotificationsProvider>
                         </ErrorBoundary>
                     </CompatibilityCheck>

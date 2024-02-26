@@ -1,4 +1,4 @@
-import { type FC, useCallback } from 'react';
+import { type FC, useCallback, useRef } from 'react';
 
 import { PasswordGeneratorButton } from '@proton/pass/components/Password/PasswordGeneratorButton';
 import clsx from '@proton/utils/clsx';
@@ -11,11 +11,17 @@ type Props = { onPasswordGenerated?: (password: string) => void } & TextFieldPro
 
 export const PasswordField: FC<Props> = (props) => {
     const { field, form, onPasswordGenerated, ...rest } = props;
+    const passwordFieldRef = useRef<HTMLInputElement>(null);
+
+    const focusPasswordField = () => {
+        setTimeout(() => passwordFieldRef.current?.focus(), 300);
+    };
 
     const handlePasswordGeneratorDone = useCallback(
         async (password: string) => {
             onPasswordGenerated?.(password);
             await form.setFieldValue(field.name, password);
+            focusPasswordField();
         },
         [form, field.name, onPasswordGenerated]
     );
@@ -37,6 +43,7 @@ export const PasswordField: FC<Props> = (props) => {
             {...rest}
             actions={actions}
             inputClassName={clsx('pass-password-field--input text-monospace', rest.inputClassName)}
+            ref={passwordFieldRef}
         />
     );
 };
