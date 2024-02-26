@@ -1,4 +1,4 @@
-import { type FC, useMemo, useRef, useState } from 'react';
+import { type Dispatch, type FC, type SetStateAction, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { List } from 'react-virtualized';
 
@@ -24,12 +24,13 @@ type Props = {
     selected: Set<string>;
     shareId?: string;
     onToggle: (email: string, selected: boolean) => void;
+    setOrgEmails: Dispatch<SetStateAction<string[]>>;
 };
 
 const pageSize = 50;
 
 export const InviteRecommendations: FC<Props> = (props) => {
-    const { autocomplete, excluded, selected, onToggle } = props;
+    const { autocomplete, excluded, selected, onToggle, setOrgEmails } = props;
     const [view, setView] = useState<MaybeNull<string>>(null);
     const listRef = useRef<List>(null);
 
@@ -48,6 +49,12 @@ export const InviteRecommendations: FC<Props> = (props) => {
             ? displayed
             : displayed.filter((email) => email.toLowerCase().startsWith(startsWith));
     }, [emails, organization, view, autocomplete]);
+
+    const newSetOrgEmails = () => setOrgEmails(organization?.emails || []);
+
+    useEffect(() => {
+        newSetOrgEmails();
+    }, [organization]);
 
     /** Used to compute the virtual list min-height as this component
      * may be wrapped in a scrollable element */

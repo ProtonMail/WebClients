@@ -10,6 +10,7 @@ export enum InviteEmailsError {
     DUPLICATE = 'DUPLICATE',
     INVALID = 'INVALID',
     EMPTY = 'EMPTY',
+    LIMITED = 'LIMITED', // Limited to organization members
 }
 
 export const validateShareInviteValues = (emailFieldRef: RefObject<HTMLInputElement>) => (values: InviteFormValues) => {
@@ -20,6 +21,10 @@ export const validateShareInviteValues = (emailFieldRef: RefObject<HTMLInputElem
     if (values.step === 'members') {
         const emails = values.members.reduce<{ errors: string[]; pass: boolean; seen: Set<string> }>(
             (acc, { value }) => {
+                if (values.orgEmails && values.orgEmails?.indexOf(value.email) === -1) {
+                    acc.errors.push(InviteEmailsError.LIMITED);
+                    acc.pass = false;
+                }
                 if (acc.seen.has(value.email)) {
                     acc.errors.push(InviteEmailsError.DUPLICATE);
                     acc.pass = false;

@@ -13,6 +13,7 @@ import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
+import { OrganizationProvider } from '@proton/pass/components/Settings/Organization/OrganizationProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 
 import { Header } from './Header/Header';
@@ -27,36 +28,38 @@ export const Main: FC = () => {
     useEffect(() => () => clearNotifications(), []);
 
     return (
-        <ItemsProvider>
-            <BulkSelectProvider>
-                <ItemActionsProvider>
-                    <InviteProvider>
-                        <PasswordProvider>
-                            <SpotlightProvider>
-                                <main
-                                    key="main"
-                                    id="main"
-                                    className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
-                                    style={{ '--anime-delay': '50ms' }}
-                                >
-                                    <Header />
-                                    <div
-                                        id="pass-layout"
-                                        className="flex items-center justify-center flex-nowrap w-full h-full"
+        <OrganizationProvider>
+            <ItemsProvider>
+                <BulkSelectProvider>
+                    <ItemActionsProvider>
+                        <InviteProvider>
+                            <PasswordProvider>
+                                <SpotlightProvider>
+                                    <main
+                                        key="main"
+                                        id="main"
+                                        className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
+                                        style={{ '--anime-delay': '50ms' }}
                                     >
-                                        <SubSidebar>
-                                            <ItemsList />
-                                        </SubSidebar>
-                                        <Content>
-                                            <Route component={ItemSwitch} />
-                                        </Content>
-                                    </div>
-                                </main>
-                            </SpotlightProvider>
-                        </PasswordProvider>
-                    </InviteProvider>
-                </ItemActionsProvider>
-            </BulkSelectProvider>
-        </ItemsProvider>
+                                        <Header />
+                                        <div
+                                            id="pass-layout"
+                                            className="flex items-center justify-center flex-nowrap w-full h-full"
+                                        >
+                                            <SubSidebar>
+                                                <ItemsList />
+                                            </SubSidebar>
+                                            <Content>
+                                                <Route component={ItemSwitch} />
+                                            </Content>
+                                        </div>
+                                    </main>
+                                </SpotlightProvider>
+                            </PasswordProvider>
+                        </InviteProvider>
+                    </ItemActionsProvider>
+                </BulkSelectProvider>
+            </ItemsProvider>
+        </OrganizationProvider>
     );
 };
