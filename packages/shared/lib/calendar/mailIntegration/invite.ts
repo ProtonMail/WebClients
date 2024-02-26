@@ -455,13 +455,14 @@ export const generateEmailSubject = ({
     const { REQUEST, CANCEL, REPLY } = ICAL_METHOD;
 
     if (method === REQUEST) {
+        const isSingleEdit = getHasRecurrenceId(vevent);
         if (isSingleAllDay) {
-            return isCreateEvent
+            return isCreateEvent && !isSingleEdit
                 ? c('Email subject').t`Invitation for an event on ${formattedStart}`
                 : c('Email subject').t`Update for an event on ${formattedStart}`;
         }
 
-        return isCreateEvent
+        return isCreateEvent && !isSingleEdit
             ? c('Email subject').t`Invitation for an event starting on ${formattedStart}`
             : c('Email subject').t`Update for an event starting on ${formattedStart}`;
     }
