@@ -93,9 +93,9 @@ export const getDeleteRecurringEventActions = async ({
         }
 
         if (isCancelInvitation) {
-            cancelledOccurrenceVevent = createSingleCancelledRecurrence(
-                getCurrentVevent(oldVeventComponent, recurrence)
-            );
+            cancelledOccurrenceVevent = isSingleEdit
+                ? oldVeventComponent
+                : createSingleCancelledRecurrence(getCurrentVevent(oldVeventComponent, recurrence));
             const { inviteActions: cleanInviteActions, sendPreferencesMap } = await sendIcs({
                 inviteActions,
                 cancelVevent: cancelledOccurrenceVevent,
