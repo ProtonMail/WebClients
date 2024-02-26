@@ -11,7 +11,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getHasExtendedCycles, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
+import { getIsVpn2024Deal, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -178,7 +178,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {}
             );
 
-            const hasExtendedCycles = getHasExtendedCycles(vpnPlanName, signupParameters.coupon);
+            const hasExtendedCycles = getIsVpn2024Deal(vpnPlanName, signupParameters.coupon);
 
             const defaults: SignupDefaults = {
                 plan: vpnPlanName,
@@ -293,6 +293,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
     const loading = loadingDependencies || loadingChallenge;
 
+    const isVpn2024Deal = getIsVpn2024Deal(selectedPlan.Name as PLANS, signupParameters.coupon);
+    const hasExtendedCycles = isVpn2024Deal;
+
     return (
         <>
             <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
@@ -307,7 +310,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         className={loading ? 'visibility-hidden' : undefined}
                         loading={loading}
                         selectedPlan={selectedPlan}
-                        hasExtendedCycles={getHasExtendedCycles(selectedPlan.Name as PLANS, signupParameters.coupon)}
+                        hasExtendedCycles={hasExtendedCycles}
                         isB2bPlan={isB2bPlan}
                         background={background}
                         vpnServersCountData={vpnServersCountData}
