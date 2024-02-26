@@ -1,5 +1,5 @@
 import type { ForwardRefRenderFunction } from 'react';
-import { type FC, forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -76,9 +76,10 @@ export const BaseTextField = forwardRef(BaseTextFieldRender);
 
 export type TextFieldProps = FieldBoxProps & BaseTextFieldProps;
 
-export const TextField: FC<TextFieldProps> = (props) => {
-    const { actions, actionsContainerClassName, className, icon, ...rest } = props;
-
+export const TextFieldRender: ForwardRefRenderFunction<HTMLInputElement, TextFieldProps> = (
+    { actions, actionsContainerClassName, className, icon, ...rest },
+    ref
+) => {
     return (
         <FieldBox
             actions={actions}
@@ -86,7 +87,9 @@ export const TextField: FC<TextFieldProps> = (props) => {
             className={className}
             icon={icon}
         >
-            <BaseTextField {...rest} />
+            <BaseTextField {...rest} ref={ref} />
         </FieldBox>
     );
 };
+
+export const TextField = forwardRef(TextFieldRender);
