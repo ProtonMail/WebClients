@@ -631,9 +631,9 @@ export const generateEmailBody = ({
     if (method === ICAL_METHOD.REQUEST) {
         if (getHasRecurrenceId(vevent)) {
             return hasUpdatedText
-                ? c('Email body for invitation').t`This occurrence was updated. Here's what changed:
+                ? c('Email body for invitation').t`This event occurrence was updated. Here's what changed:
 ${updateEventDetailsText}`
-                : c('Email body for invitation').t`This occurrence was updated.`;
+                : c('Email body for invitation').t`This event occurrence was updated.`;
         }
         if (recurringType === RECURRING_TYPES.ALL) {
             return hasUpdatedText
