@@ -25,7 +25,6 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
             Currency: 'CHF',
             Cycle: CYCLE.MONTHLY,
-            Additions: null,
             PeriodEnd: Math.floor(Date.now() / 1000 + 30 * 24 * 60 * 60),
         };
     });

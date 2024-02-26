@@ -19,6 +19,7 @@ type Props = {
     paymentMethodValue?: PaymentMethodType;
     paypal: PaypalProcessorHook;
     disabled?: boolean;
+    noPaymentNeeded?: boolean;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -33,8 +34,15 @@ const SubscriptionSubmitButton = ({
     onDone,
     chargebeePaypal,
     iframeHandles,
+    noPaymentNeeded,
 }: Props) => {
-    const amountDue = checkResult?.AmountDue || 0;
+    if (noPaymentNeeded) {
+        return (
+            <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
+                {c('Action').t`Close`}
+            </PrimaryButton>
+        );
+    }
 
     if (step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
         return (
@@ -50,6 +58,7 @@ const SubscriptionSubmitButton = ({
         );
     }
 
+    const amountDue = checkResult?.AmountDue || 0;
     if (amountDue === 0) {
         return (
             <PrimaryButton
