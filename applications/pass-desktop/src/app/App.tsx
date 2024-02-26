@@ -44,14 +44,13 @@ import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import sentry from '@proton/shared/lib/helpers/sentry';
 
 import { PASS_CONFIG } from '../lib/core';
 import { i18n } from '../lib/i18n';
+import '../lib/sentry';
 
 import './app.scss';
 
-sentry({ config: PASS_CONFIG });
 const history = createHashHistory();
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
