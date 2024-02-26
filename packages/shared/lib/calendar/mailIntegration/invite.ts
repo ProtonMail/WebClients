@@ -632,21 +632,25 @@ export const generateEmailBody = ({
         if (getHasRecurrenceId(vevent)) {
             return hasUpdatedText
                 ? c('Email body for invitation').t`This event occurrence was updated. Here's what changed:
+
 ${updateEventDetailsText}`
                 : c('Email body for invitation').t`This event occurrence was updated.`;
         }
         if (recurringType === RECURRING_TYPES.ALL) {
             return hasUpdatedText
                 ? c('Email body for invitation').t`All events in this series were updated. Here's what changed:
+
 ${updateEventDetailsText}`
                 : c('Email body for invitation').t`All events in this series were updated.`;
         }
         if (isCreateEvent) {
             return c('Email body for invitation').t`You are invited to ${eventTitle}.
+
 ${eventDetailsText}`;
         }
         return hasUpdatedText
             ? c('Email body for invitation').t`This event was updated. Here's what changed:
+
 ${updateEventDetailsText}`
             : c('Email body for invitation').t`This event was updated.`;
     }
