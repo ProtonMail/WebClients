@@ -61,7 +61,7 @@ export type BitwardenIdentityItem = BitwardenBaseItem & {
 
 export type BitwardenNoteItem = BitwardenBaseItem & { type: BitwardenType.NOTE };
 
-type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem;
+export type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem;
 
 export type BitwardenData = {
     encrypted: boolean;
