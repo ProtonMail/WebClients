@@ -10,7 +10,7 @@ import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
+import { getRelativeDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 type Props = {
     createTime: number;
@@ -31,19 +31,19 @@ export const ItemViewHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUs
                     title={c('Title').t`Last autofill`}
                     subtitle={
                         // translator: when this login was last used
-                        lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`Never`
+                        lastUseTime ? getRelativeDateFromTimestamp(lastUseTime) : c('Info').t`Never`
                     }
                 />
             )}
             <HistoryItem
                 icon="pencil"
                 title={c('Title').t`Last modified`}
-                subtitle={getFormattedDateFromTimestamp(modifyTime)}
+                subtitle={getRelativeDateFromTimestamp(modifyTime)}
             />
             <HistoryItem
                 icon="bolt"
                 title={c('Title').t`Created`}
-                subtitle={getFormattedDateFromTimestamp(createTime)}
+                subtitle={getRelativeDateFromTimestamp(createTime)}
             />
             {handleHistoryClick && historyEnabled && isPaidPlan(passPlan) && (
                 <Button onClick={handleHistoryClick} className="mt-1" color="weak" shape="solid" fullWidth pill>
