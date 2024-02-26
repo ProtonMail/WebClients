@@ -539,7 +539,7 @@ I am a good description`;
                 parameters: { tzid: 'Europe/Zurich' },
             },
         };
-        const expected = 'This occurrence was updated.';
+        const expected = 'This event occurrence was updated.';
         expect(
             generateEmailBody({
                 vevent,
@@ -649,7 +649,7 @@ I am a good description`;
             },
         };
 
-        const expected = `This occurrence was updated. Here's what changed:
+        const expected = `This event occurrence was updated. Here's what changed:
 TITLE:
 Watch movie
 
