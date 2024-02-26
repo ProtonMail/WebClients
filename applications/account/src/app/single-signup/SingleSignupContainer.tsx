@@ -155,7 +155,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         const fetchDependencies = async () => {
             await startUnAuthFlow().catch(noop);
 
-            getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
+            void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [{ Domains: domains }, paymentMethodStatusExtended, Plans, freePlan] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
