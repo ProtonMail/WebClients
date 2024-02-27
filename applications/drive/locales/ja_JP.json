@@ -583,6 +583,9 @@
       "Select all": [
         "すべて選択"
       ],
+      "Select country": [
+        "国を選択"
+      ],
       "Send feedback": [
         "フィードバックを送信"
       ],
@@ -1068,6 +1071,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "連絡先の画像"
       ]
     },
     "Contact type label": {
@@ -2807,6 +2815,9 @@
     "Header": {
       "Contacts": [
         "連絡先"
+      ],
+      "Security Center": [
+        "セキュリティセンター"
       ]
     },
     "Hint": {
@@ -3563,6 +3574,9 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Important note": [
+        "注意事項"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
@@ -3764,6 +3778,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
+      "Please use another browser or download the file.": [
+        "他のブラウザを使用するか、このファイルをダウンロードしてください。"
+      ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
       ],
@@ -3781,6 +3798,9 @@
       ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "この種類のファイルのプレビューは、現在このブラウザではサポートされていません。"
       ],
       "Preview for this file type is not supported": [
         "このファイル形式はサポートされておりません。"
@@ -3949,6 +3969,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
+      ],
+      "This file is too large to preview": [
+        "このファイルは、非常に大きいためプレビューできません"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "このファイルは削除/移動/アクセス不可にされた可能性があります。ファイルのオーナーに確認してください。"
@@ -4222,6 +4245,11 @@
       ],
       "Your previous recovery phrase": [
         "以前の回復フレーズ"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info on errors": {
@@ -4721,6 +4749,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "はい、古いファイルを永久に削除したいです。"
+      ],
+      "Your alias": [
+        "あなたのエイリアス"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
@@ -5453,6 +5484,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } はこのキーを廃止しました。このキーは署名検証のみに使用できます。"
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "外部鍵は、keys.openpgp.org から自動的に取得されました。"
+      ],
+      "External key automatically fetched via WKD.": [
+        "外部鍵は、WKD から自動的に取得されました。"
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "この鍵は、この連絡先宛のメッセージの暗号化に使用されます"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
       ]
@@ -5590,11 +5630,20 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "すべてのエイリアス"
+      ],
       "Create alias": [
+        "エイリアスを作成"
+      ],
+      "Create an alias": [
         "エイリアスを作成"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
+      ],
+      "New alias": [
+        "新しいエイリアス"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を開く"
@@ -6346,6 +6395,9 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
+      "Enable 2FA": [
+        "2要素認証を有効にする"
+      ],
       "Enable drive search": [
         "ドライブ検索を有効にする"
       ],
@@ -6642,6 +6694,9 @@
       ],
       "Your welcome actions": [
         "ウェルカムアクション"
+      ],
+      "You’ve got 5 GB of storage": [
+        "5 GB のストレージを手に入れました"
       ]
     },
     "Today icon tooltip in mini calendar": {

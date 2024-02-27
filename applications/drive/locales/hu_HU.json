@@ -6445,6 +6445,9 @@
       ],
       "Your welcome actions": [
         "Indulási műveletek"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Kapott 5 GB tárhelyet"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6521,6 +6524,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
         "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"

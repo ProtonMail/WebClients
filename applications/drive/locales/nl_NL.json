@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
+      "Create and copy alias": [
+        "Maak en kopieer alias"
+      ],
       "Create link": [
         "Link aanmaken"
       ],
@@ -255,6 +258,9 @@
       ],
       "Download apps": [
         "Apps downloaden"
+      ],
+      "Download logs": [
+        "Logboeken downloaden"
       ],
       "Drive Locked": [
         "Drive versleuteld"
@@ -4983,8 +4989,14 @@
       ]
     },
     "Mimetype": {
+      "7-zip archive": [
+        "7-zip-archief"
+      ],
       "Android Package": [
         "Android-pakket"
+      ],
+      "BZip2 archive": [
+        "BZip2-archief"
       ],
       "iCalendar format": [
         "iCalendar-formaat"
@@ -5415,6 +5427,11 @@
         "U"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Factuur Land"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
@@ -5642,6 +5659,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
@@ -6017,8 +6037,47 @@
       "${ app } storage": [
         "${ app } opslagruimte"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% vol"
+      ],
+      "contact your administrator": [
+        "neem contact op met uw beheerder"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Maak ruimte vrij of upgrade voor meer opslag om bestanden te kunnen blijven uploaden of synchroniseren."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Maak ruimte vrij of upgrade voor meer opslag om mail te blijven verzenden of te ontvangen."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Uw ${ appStorage } is bijna vol"
+      ],
+      "Your ${ appStorage } is full": [
+        "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Uw ${ storage } is vol. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Uw opslag is ${ percentage }% vol. ${ cta }."
+      ],
       "Your storage is full": [
         "Uw opslagruimte is vol"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Uw opslag is vol. ${ cta }."
       ]
     },
     "Success": {
@@ -6472,6 +6531,9 @@
       "Name": [
         "Naam"
       ],
+      "Need more aliases?": [
+        "Meer aliassen nodig?"
+      ],
       "Night theme": [
         "Nacht thema"
       ],
@@ -6549,6 +6611,9 @@
       ],
       "Searching…": [
         "Zoeken…"
+      ],
+      "Security center": [
+        "Beveiligingscentrum"
       ],
       "Select action to take on contact group": [
         "Selecteer actie voor de contactgroep"
@@ -6670,6 +6735,9 @@
       "You have no folders yet": [
         "U hebt nog geen mappen"
       ],
+      "Your account is protected": [
+        "Uw account is beschermd"
+      ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
@@ -6678,6 +6746,9 @@
       ],
       "Your welcome actions": [
         "Uw welkomstacties"
+      ],
+      "You’ve got 5 GB of storage": [
+        "U heeft 5 GB aan opslag"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6754,6 +6825,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"

@@ -751,6 +751,9 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
       ],
+      "Your 3 GB bonus": [
+        "Váš bonus 3 GB"
+      ],
       "Zoom in": [
         "Priblížiť"
       ],
@@ -6053,6 +6056,11 @@
         "Vyskúšať ${ PASS_APP_NAME }"
       ]
     },
+    "Security Center - Action": {
+      "View logs": [
+        "Zobraziť záznamy"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Nahrať"
@@ -7205,6 +7213,9 @@
       "You have no folders yet": [
         "Zatiaľ nemáte žiadne priečinky"
       ],
+      "Your 3 GB bonus": [
+        "Váš bonus 3 GB"
+      ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
       ],
@@ -7213,6 +7224,9 @@
       ],
       "Your welcome actions": [
         "Vaše uvítacie akcie"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Máte k dispozícii 5 GB úložného priestoru"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7289,6 +7303,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Skúste kratšie používateľské meno (max. ${ n } znak)",
         "Skúste kratšie používateľské meno (max. ${ n } znaky)",
