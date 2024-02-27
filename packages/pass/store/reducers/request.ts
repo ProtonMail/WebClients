@@ -9,8 +9,8 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export type RequestEntry<Type extends RequestType = RequestType, Data = any> = Extract<
     | { status: 'start'; progress?: number }
-    | { status: 'success'; expiresAt?: number }
-    | { status: 'failure'; expiresAt?: number },
+    | { status: 'success'; maxAge?: number; requestedAt: number }
+    | { status: 'failure' },
     { status: Type }
 > & { data: Data };
 
@@ -20,14 +20,11 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
     if (isActionWithRequest(action)) {
         const { request } = action.meta;
         const nextState = { ...state };
+        const data = 'data' in request ? request.data : undefined;
 
         switch (request.type) {
             case 'start':
-                nextState[request.id] = {
-                    status: request.type,
-                    progress: 0,
-                    data: 'data' in request ? request.data : undefined,
-                };
+                nextState[request.id] = { data, progress: 0, status: request.type };
                 return nextState;
 
             case 'progress':
@@ -37,12 +34,12 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
                 return nextState;
 
             case 'failure':
+                nextState[request.id] = { data, status: request.type };
+                return nextState;
+
             case 'success':
-                nextState[request.id] = {
-                    status: request.type,
-                    data: 'data' in request ? request.data : undefined,
-                    ...(request.maxAge ? { expiresAt: getEpoch() + request.maxAge } : { expiresAt: undefined }),
-                };
+                const now = getEpoch();
+                nextState[request.id] = { data, requestedAt: now, status: request.type, maxAge: request.maxAge };
                 return nextState;
         }
     }
