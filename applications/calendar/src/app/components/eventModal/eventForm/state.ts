@@ -150,12 +150,14 @@ export const getOrganizerAndSelfAddressModel = ({
     attendees,
     addressID,
     addresses,
+    isAttendee,
 }: {
     attendees: AttendeeModel[];
     addressID: string;
     addresses: Address[];
+    isAttendee: boolean;
 }) => {
-    if (!attendees.length) {
+    if (!attendees.length || isAttendee) {
         return {};
     }
 
@@ -210,6 +212,7 @@ export const getInitialModel = ({
         attendees,
         addressID: memberModel.member.addressID,
         addresses: Addresses,
+        isAttendee: false,
     });
 
     return {
