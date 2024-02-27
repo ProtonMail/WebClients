@@ -3,7 +3,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
-import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
+import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import type {
     RevisionRetentionDaysSetting,
