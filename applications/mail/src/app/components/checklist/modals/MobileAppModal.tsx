@@ -16,9 +16,9 @@ const MobileAppModal = ({ ...rest }: ModalStateProps) => (
                 .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
             <div className="mobile-modal-gradient flex flex-column gap-4 p-8 rounded-lg items-center">
                 <QRCode
-                    className="bg-norm flex p-2 rounded-sm center w-custom"
+                    className="bg-norm flex p-2 rounded-sm mx-auto w-custom"
                     style={{ '--w-custom': '10em' }}
-                    value="https://pm.me/app?type=qr"
+                    value="https://proton.me/mailapp"
                 />
                 <span style={{ color: 'var(--optional-promotion-text-color)' }}>
                     {c('Get started checklist instructions')
