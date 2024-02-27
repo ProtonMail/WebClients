@@ -2724,6 +2724,12 @@
       "Name": [
         "Nome"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Risparmia con le migliori offerte per ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Seleziona la tua offerta"
+      ],
       "Select your pricing plan": [
         "Seleziona il tuo piano tariffario."
       ],
@@ -2900,8 +2906,8 @@
         "Allocazione dell'account amministratore"
       ],
       "Affected user is on row": [
-        "L'utente con una password troppo corta è nella riga",
-        "Gli utenti con una password troppo corta sono sulle righe"
+        "L'utente interessato è nella riga",
+        "Gli utenti interessati sono nelle righe"
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
@@ -4975,6 +4981,9 @@
       "1 user": [
         "1 utente"
       ],
+      "24/7 account management support": [
+        "Supporto 24/7 per la gestione dell'account"
+      ],
       "24/7 support": [
         "Supporto 24/7"
       ],
@@ -4986,6 +4995,9 @@
       ],
       "Admin console": [
         "Console di amministratore"
+      ],
+      "Administration Panel": [
+        "Pannello di controllo"
       ],
       "Advanced network security": [
         "Sicurezza di rete avanzata"
@@ -5088,6 +5100,9 @@
       ],
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Gestione dei gruppi (in arrivo)"
       ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
@@ -5227,6 +5242,12 @@
       "Unlimited shared vaults with access permissions": [
         "Casseforti condivise illimitate con autorizzazioni di accesso"
       ],
+      "Unlimited vault sharing": [
+        "Casseforti condivise illimitate"
+      ],
+      "Unlimited vaults": [
+        "Casseforti illimitate"
+      ],
       "Unlimited volume/bandwidth": [
         "Larghezza di banda/volume illimitati"
       ],
@@ -5288,6 +5309,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Sicurezza avanzata della rete e gestione degli accessi con gateway sicuri dedicati"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Protezione avanzata per i team che va oltre gli standard aziendali."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Tutte le app di ${ BRAND_NAME } e le loro funzionalità premium"
@@ -5484,8 +5508,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi. La condivisione delle casseforti con amici e famigliari è in fase di realizzazione."
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Proteggi le risorse della tua azienda dalla rete Internet pubblica e rendile accessibili solo tramite i tuoi gateway privati"
@@ -7970,6 +7994,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "L'abbonamento si rinnova automaticamente ogni mese. La tua prossima data di fatturazione è tra 1 mese."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
+        "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
       ]
     },
     "vpn_2step: billing": {

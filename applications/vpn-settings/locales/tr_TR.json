@@ -5452,9 +5452,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Bir kasa da bir klasör gibi ögelerinizi düzenlemenin bir yoludur. Kasaları arkadaşlarınızla ve ailenizle paylaşmanız için çalışmalarımız sürüyor."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
@@ -7867,6 +7864,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"

@@ -303,7 +303,7 @@
         "Застосувати"
       ],
       "Ok": [
-        "Гаразд"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -418,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
+      ],
+      "Select country": [
+        "Виберіть країну"
       ],
       "Select file": [
         "Вибрати файл"
@@ -699,8 +702,20 @@
       "3 TB": [
         "3 ТБ"
       ],
+      "3,000+ servers across 65+ countries": [
+        "Більше ніж 3000 серверів у понад 65 країнах"
+      ],
       "6 users": [
         "6 користувачів"
+      ],
+      "Access content worldwide": [
+        "Доступ до контенту по всьому світу"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блокувальник реклами та захист від шкідливих програм"
+      ],
+      "Extended version history": [
+        "Розширена історія версій"
       ],
       "High speed streaming": [
         "Перегляд трансляцій на високій швидкості"
@@ -712,6 +727,9 @@
     "bf2023: Footer": {
       "Discounts are based on standard monthly pricing.": [
         "Знижки відносно стандартної місячної ціни."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша підписка буде автоматично поновлена за стандартною знижкою та тривалістю в кінці вашого платіжного циклу."
       ]
     },
     "bf2023: Offers": {
@@ -720,11 +738,23 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Отримуйте доступ до контенту на стримінгових сервісах, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Обходьте локальні інтернет-блокування та цензуру за допомогою нашої глобальної мережі серверів."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Спеціально розроблений NetShield захищає ваші пристрої та прискорює перегляд контенту, блокуючи рекламу, трекери та шкідливі програми."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Зберігайте до 200 версій кожного файлу протягом 10 років."
       ]
     },
     "Billing cycle": {
@@ -753,6 +783,11 @@
       ],
       "Two-year": [
         "Два роки"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Застосунок ${ MAIL_APP_NAME } на комп'ютері"
       ]
     },
     "Bug category": {
@@ -1801,12 +1836,31 @@
         "Двоетапна перевірка (2FA)"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платні функції ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Включає історію версій у ${ DRIVE_SHORT_APP_NAME }, доступ до тисяч високошвидкісних серверів ${ VPN_SHORT_APP_NAME }, спільний доступ до ${ PASS_SHORT_APP_NAME } тощо."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
       ],
       "6 users": [
         "6 користувачів"
+      ],
+      "Early access to new apps and features": [
+        "Ранній доступ до нових застосунків і функцій"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранній доступ до застосунку ${ MAIL_APP_NAME } на комп'ютері"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платні функції ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -2039,11 +2093,17 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Застосунок наразі недоступний"
+      ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
+      ],
+      "Open in browser": [
+        "Відкрити в браузері"
       ],
       "Please refresh the page or try again later.": [
         "Оновіть сторінку або повторіть спробу пізніше."
@@ -3295,6 +3355,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Будь ласка, спробуйте ще раз, використайте інший спосіб оплати, або зв'яжіться з PayPal для отримання допомоги."
       ],
+      "Please use another browser or download the file.": [
+        "Скористайтеся іншим браузером або завантажте файл."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Підтвердьте платіж у новій вкладці, яку було відкрито."
       ],
@@ -3306,6 +3369,9 @@
       ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Передпоказ для цього типу файлів наразі не підтримується в цьому браузері."
       ],
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
@@ -3501,6 +3567,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Це може тривати деякий час. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
+      ],
+      "This file is too large to preview": [
+        "Цей файл завеликий для передпоказу"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
@@ -3795,6 +3864,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Тепер ви можете отримати доступ і керувати обліковим записом як адміністратор."
+      ],
+      "You can now return to the application to continue": [
+        "Тепер ви можете повернутися до застосунку, щоби продовжити"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Ви можете відкрити одночасно лише один сеанс чату. Будь ласка, закрийте попередні розмови перед початком нової."
@@ -4859,6 +4931,9 @@
       "Custom fields": [
         "Власні поля"
       ],
+      "Custom snooze time": [
+        "Власний час відкладення"
+      ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
       ],
@@ -5074,6 +5149,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ],
@@ -5107,6 +5185,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Ранній доступ до нових застосунків і функцій"
       ],
       "For next-level password management and identity protection.": [
         "Для вдосконаленого керування паролями та захисту особистих даних."
@@ -5274,9 +5355,6 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Мітки – це прості позначки, які можна застосовувати до повідомлень для спрощення пошуку чи створення фільтрів"
-      ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Як і теки, сховище – це зручний спосіб впорядковувати ваші дані. Ми працюємо над тим, щоб невдовзі ви могли ділитися сховищами з друзями та родиною."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Заблокуйте ресурси компанії від загального доступу в інтернеті та зробіть їх доступними лише через ваші приватні мережеві шлюзи"
@@ -5861,6 +5939,9 @@
       "Cancel password reset": [
         "Скасувати скидання пароля"
       ],
+      "Cancel reset": [
+        "Скасувати скидання"
+      ],
       "Reset password": [
         "Скинути пароль"
       ]
@@ -5882,6 +5963,12 @@
         "${ timeRemaining.inHours } години",
         "${ timeRemaining.inHours } годин",
         "${ timeRemaining.inHours } годин"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "Запит на скидання пароля схвалено (${ user.Email })."
+      ],
+      "This permission expires soon": [
+        "Термін дії цього дозволу скоро закінчиться"
       ],
       "You can now reset your password": [
         "Тепер ви можете скинути пароль"
@@ -5937,6 +6024,15 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Скасуйте запит, якщо ви не просили скинути пароль."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Щоб переконатися, що ви справді намагаєтеся скинути пароль, ми чекаємо 72 години, перш ніж схвалювати запити. Ви можете змінити пароль через ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Ми отримали запит на скидання пароля для ${ boldEmail }."
+      ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
         "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годину",
         "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } години",
@@ -6126,8 +6222,14 @@
       "1 year": [
         "1 рік"
       ],
+      "15 months": [
+        "15 місяців"
+      ],
       "2 years": [
         "2 роки"
+      ],
+      "30 months": [
+        "30 місяців"
       ],
       "Billed at ${ amount } for 1 month": [
         "До сплати ${ amount } за 1 місяць"
@@ -7299,6 +7401,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Спробуйте коротше ім'я користувача (до ${ n } символу)",
         "Спробуйте коротше ім'я користувача (до ${ n } символів)",

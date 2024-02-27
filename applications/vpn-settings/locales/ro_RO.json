@@ -5523,9 +5523,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Asemenea unui folder, seiful este o modalitate convenabilă de a vă organiza datele. Partajarea seifurilor cu alte persoane este în lucru."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Blocați resursele companiei de pe internetul public și faceți-le accesibile numai prin porțile de acces private."
       ],
@@ -8003,6 +8000,11 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
