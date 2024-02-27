@@ -600,6 +600,9 @@
       "Upgrade": [
         "Millora"
       ],
+      "Upgrade Now": [
+        "Millora ara"
+      ],
       "Upgrade now": [
         "Millora ara"
       ],
@@ -6317,6 +6320,9 @@
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
+      "Alias copied to clipboard": [
+        "L'àlies s'ha copiat al porta-retalls."
+      ],
       "Alias saved and copied": [
         "S'ha desat i copiat l'àlies."
       ],
@@ -7056,6 +7062,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"

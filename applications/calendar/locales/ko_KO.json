@@ -603,6 +603,9 @@
       "Upgrade": [
         "업그레이드"
       ],
+      "Upgrade Now": [
+        "지금 업그레이드"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ],
@@ -644,6 +647,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "회원님의 데스크톱 앱 무료 체험이 2일 내에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "회원님의 데스크톱 앱 무료 체험이 5일 내에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -2426,6 +2438,9 @@
       ],
       "An error occurred while loading alias options": [
         "별명 옵션 로드 중 오류가 발생했습니다."
+      ],
+      "An error occurred while saving your alias": [
+        "별명을 저장하는 도중 오류가 발생했습니다."
       ],
       "Answer failed to be sent": [
         "대답 전송 실패"
@@ -5739,6 +5754,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "이메일 주소를 누군가 물어본다면, 별명을 대신 제공하세요. 별명이 ${ passLink }에 의해 제공됩니다."
       ]
     },
     "Security Center - Action": {
