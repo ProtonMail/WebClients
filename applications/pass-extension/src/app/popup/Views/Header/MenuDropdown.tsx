@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
@@ -26,11 +26,13 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { AccountPath, PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
+import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import browser from '@proton/pass/lib/globals/browser';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
@@ -43,7 +45,8 @@ import {
 import type { ShareType } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
@@ -55,6 +58,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 export const MenuDropdown: FC = () => {
     const { onLink } = usePassCore();
     const { lock, logout, ready, expanded } = usePopupContext();
+    const { API_URL } = usePassConfig();
     const { filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;
 
@@ -68,7 +72,6 @@ export const MenuDropdown: FC = () => {
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
-
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
     const menu = useMenuItems({
@@ -105,6 +108,12 @@ export const MenuDropdown: FC = () => {
             icon: 'arrow-out-from-rectangle',
         },
     ];
+
+    const passWebAppUrl = useMemo(() => {
+        const appUrl = getAppUrlFromApiUrl(API_URL, APPS.PROTONPASS);
+        appUrl.pathname = getLocalPath();
+        return appUrl.toString();
+    }, []);
 
     return (
         <>
@@ -221,7 +230,7 @@ export const MenuDropdown: FC = () => {
                         )}
 
                         <DropdownMenuButton
-                            onClick={withClose(() => onLink(PASS_WEB_APP_URL))}
+                            onClick={withClose(() => onLink(passWebAppUrl))}
                             label={
                                 <div className="flex items-center flex-nowrap gap-2">
                                     <span>{c('Action').t`Open web app`}</span>
