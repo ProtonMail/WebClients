@@ -5106,6 +5106,31 @@
         "매우 작게"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "웹 앱"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크톱 앱"
+      ],
+      "Back to sign in": [
+        "로그인으로 돌아가기"
+      ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "빠르고 집중화된 안전한 데스크톱 경험을 계속 즐기세요. 제한 없이 모든 기능과 다른 프리미엄 기능들도 사용할 수 있습니다. "
+      ],
+      "Keep using the desktop app": [
+        "데스크톱 앱 계속 사용하기"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "${ webAppMessage }으로 ${ MAIL_APP_NAME } 열기"
+      ],
+      "Your desktop app free trial has ended": [
+        "데스트톱 앱 무료 체험이 종료되었습니다"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(개월 당 1개 이메일)"
@@ -5127,6 +5152,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store에서 ${ appName } 받기"
+      ],
+      "${ appName } on Play Store": [
+        "Play Store에서 ${ appName } 받기"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } 앱"
       ],
@@ -6420,6 +6451,9 @@
       ],
       "Failed to fetch logs.": [
         "로그를 가져오지 못했습니다."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "빠르고 집중할 수 있도록. 데스크톱에서 바로 누리는 이메일과 캘린더."
       ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
@@ -10534,9 +10568,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "폴더처럼, 금고는 당신의 정보를 정리하는 편리한 방법입니다. 친구 및 가족과 금고를 공유할 수 있는 기능은 아직 개발 중입니다."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "공용 인터넷에서 회사 자원을 잠그고 개인 게이트웨이를 통해서만 접근할 수 있도록 하세요."
       ],
@@ -13687,6 +13718,12 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } 다운로드"
       ],
+      "Download the desktop app": [
+        "데스크톱 앱 다운로드하기"
+      ],
+      "Download the mobile apps": [
+        "모바일 앱 다운로드"
+      ],
       "Edit credit/debit card": [
         "신용/체크카드 편집"
       ],
@@ -13815,6 +13852,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus }를 얻어 모든 서버에 접근"
+      ],
+      "Get the apps": [
+        "앱 다운로드"
       ],
       "Gift": [
         "선물"
@@ -14708,6 +14748,14 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "구독은 1개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 1개월입니다."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "12개월마다 ${ renewPrice }가 결제됩니다."
       ]
     },
     "vpn_2step: billing": {

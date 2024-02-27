@@ -713,6 +713,9 @@
       "No, I won't attend": [
         "Não, não estarei presente"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "Not saved": [
         "Não guardado"
       ],
@@ -3176,6 +3179,11 @@
         "Nome de ficheiro de cabeçalhos encriptado"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ]
+    },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } para <${ email }>. Pode adicionar outra chave ou desativar a encriptação para este contacto para resolver o problema."
@@ -4224,6 +4232,16 @@
       ],
       "To: ${ toString }": [
         "Para: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "No credit card required": [
+        "Não é necessário um cartão de crédito"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Experimente gratuitamente por 14 dias"
       ]
     },
     "Get started checklist instructions": {
@@ -6196,6 +6214,9 @@
       "Expand / contract composer": [
         "Expandir/Contrair compositor"
       ],
+      "Filter": [
+        "Filtro"
+      ],
       "Forward": [
         "Encaminhar"
       ],
@@ -6551,6 +6572,9 @@
       "Frequency": [
         "Frequência"
       ],
+      "From": [
+        "De"
+      ],
       "From:": [
         "De:"
       ],
@@ -6813,6 +6837,16 @@
         "A sua palavra-passe (admin)"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Para"
+      ]
+    },
     "Label attach to date input to select a date": {
       "Date": [
         "Data"
@@ -6863,6 +6897,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7480,8 +7517,14 @@
       "For your eyes only": [
         "Só para si"
       ],
+      "Next": [
+        "Seguinte"
+      ],
       "Protection from trackers": [
         "Proteção contra rastreadores"
+      ],
+      "Skip": [
+        "Ignorar"
       ]
     },
     "Onboarding Proton": {
@@ -7842,6 +7885,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Criar um alias"
+      ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
       ],
@@ -9470,6 +9516,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"

@@ -425,6 +425,9 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
+      "Select country": [
+        "Vælg land"
+      ],
       "Select file": [
         "Vælg fil"
       ],
@@ -2887,6 +2890,10 @@
       "Admin account allocation": [
         "Admin-konto tildeling"
       ],
+      "Affected user is on row": [
+        "Berørt bruger er på række",
+        "Berørt brugere er på række"
+      ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
@@ -2949,6 +2956,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Sørg for at kopiere din adgangskode og gemme den et sikkert sted."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Før du aktiverer brugeren, skal du give en adgangskode og oprette krypteringsnøgler til adresserne."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Før du opretter denne adresse, skal du angive en adgangskode og oprette krypteringsnøgler til den."
@@ -3261,6 +3271,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Keys created": [
+        "Nøgle(r) oprettet"
+      ],
       "Lean more about gateways": [
         "Lær mere om gateways"
       ],
@@ -3418,6 +3431,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Venligst brug en kode der er længere end ${ MIN_PASSWORD_LENGTH } tegn.",
+        "Venligst brug en kode der er længere end ${ MIN_PASSWORD_LENGTH } tegn."
       ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
@@ -3755,6 +3772,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
+      ],
+      "User activated": [
+        "Bruger aktiveret"
       ],
       "Users": [
         "Brugere"
@@ -4465,6 +4485,9 @@
       "Recovery phrase": [
         "Gendannelsessætning"
       ],
+      "Reply (ACS) URL": [
+        "Svar (ACS) URL"
+      ],
       "Require 2FA for administrators": [
         "Kræv 2FA for administratorer"
       ],
@@ -4555,6 +4578,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } og ${ additionalApp } produktopdateringer"
+      ],
       "${ app } product updates": [
         "${ app }-produktopdateringer"
       ],
@@ -4703,6 +4729,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktiver bruger"
+      ],
       "Change password": [
         "Skift adgangskode"
       ],
@@ -5413,9 +5442,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle tags, du kan tilføje til beskeder for at gøre dem lettere at finde eller anvende filtre på."
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Ligesom en mappe, er en boks et praktisk måde at organisere dine ting på. At dele bokse med venner og familie er på vej."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Spær adgangen til din virksomheds ressourcer fra det offentlige internet, og gør dem kun tilgængelige via dine private gateways."
       ],
@@ -5741,6 +5767,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Lad os snakke"
+      ],
       "Limited time offer": [
         "Tidsbegrænset tilbud"
       ],
@@ -5764,6 +5793,9 @@
       "Creating your account": [
         "Opretter din konto"
       ],
+      "Current plan": [
+        "Nuværende abonnent"
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
       ],
@@ -5775,6 +5807,9 @@
       ],
       "Free forever": [
         "Gratis for evigt"
+      ],
+      "Get in touch with our sales team": [
+        "Kontakt vores salgsteam"
       ],
       "Includes:": [
         "Inkluderer:"
@@ -5889,6 +5924,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Faktura land"
+      ],
       "Card number": [
         "Kortnummer"
       ],
@@ -6709,6 +6747,12 @@
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME } tjenester"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
+      ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
       ],
@@ -6725,8 +6769,20 @@
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dit ${ storage } er fyldt. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+      ],
       "Your storage is full": [
         "Dit lager er fuldt"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dit drev er fyldt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister adgang til ${ gb } lagerplads og prioriteret support."
@@ -7153,6 +7209,9 @@
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
+      "Activate user": [
+        "Aktiver bruger"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -7264,6 +7323,9 @@
       ],
       "Create multiple user accounts": [
         "Opret flere brugerkonti"
+      ],
+      "Create organization key": [
+        "Lav organisations nøgle"
       ],
       "Create user accounts": [
         "Opret brugerkonti"
@@ -7777,6 +7839,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brugernavn (maks. ${ n } tegn)",
         "Prøv et kortere brugernavn (maks. ${ n } tegn)"
@@ -7817,6 +7883,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } lande"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Abonnementet fornys automatisk hver måned. Din næste faktureringsdato er om en måned."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Du vil blive faktureret ${ renewPrice } hver 12. måned."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Dit abonnement vil automatisk forny i ${ cycle } måned.",
+        "Dit abonnement vil automatisk forny i ${ cycle } måneder."
       ]
     },
     "vpn_2step: billing": {

@@ -4194,6 +4194,11 @@
         "Címzett: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "Nincs szükség bankkártya megadására"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } alkalmazást"
@@ -9366,6 +9371,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
         "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"

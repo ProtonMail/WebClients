@@ -753,6 +753,9 @@
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contacte.",
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } de contacte."
       ],
+      "Your 3 GB bonus": [
+        "Bonusul de 3 GiB"
+      ],
       "Zoom in": [
         "Mărire"
       ],
@@ -2159,6 +2162,9 @@
       ],
       "An error occurred while loading alias options": [
         "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
+      ],
+      "An error occurred while saving your alias": [
+        "A apărut o eroare în timpul salvării aliasului."
       ],
       "Authentication canceled.": [
         "Autentificare anulată."
@@ -3818,6 +3824,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Luați aplicația pentru desktop pentru a sincroniza fișiere din calculator."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Descoperiți ${ DRIVE_APP_NAME } și câștigați 3 GiB spațiu bonus! Acționați astăzi."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Accesați „Fișierele mele” și încărcați mai întâi câteva fișiere."
       ],
@@ -3855,6 +3864,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Între timp, creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "S-au indexat ${ esProgress } articole din ${ totalProgressToShow }"
@@ -4198,6 +4210,9 @@
       "Shared link not found": [
         "Legătură partajată negăsită"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
       ],
@@ -4383,6 +4398,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
+      "upgrade your storage": [
+        "măriți spațiul de stocare"
+      ],
       "Uploaded": [
         "Încărcat"
       ],
@@ -4406,6 +4424,9 @@
       ],
       "Warning": [
         "Avertizare"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Bun, tocmai v-ați mărit spațiul de stocare la 5 GiB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Avem probleme tehnice. Încărcarea de fotografii noi este temporar dezactivată."
@@ -4478,6 +4499,11 @@
       ],
       "You cannot undo this action.": [
         "Nu puteți anula această acțiune."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Mai aveți ${ expiresInDays } zi rămasă pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
+        "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
+        "Mai aveți ${ expiresInDays } de zile rămase pentru a vă revendica bonusul de bun venit de 3 GiB și să vă "
       ],
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
@@ -5770,6 +5796,9 @@
       "Create a share link": [
         "Creare legătură de partajare"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Începeți să folosiți ${ DRIVE_APP_NAME } și vă vom mări spațiul de stocare la 5 GiB!"
+      ],
       "Set a recovery method": [
         "Setați metodă de recuperare"
       ],
@@ -6044,6 +6073,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Folosit pentru cumpărături pe Amazon etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -7232,6 +7264,9 @@
       "You have no folders yet": [
         "Încă nu aveți foldere"
       ],
+      "Your 3 GB bonus": [
+        "Bonusul de 3 GiB"
+      ],
       "Your account is protected": [
         "Contul este protejat"
       ],
@@ -7243,6 +7278,9 @@
       ],
       "Your welcome actions": [
         "Acțiuni de bun venit"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Ați primit 5 GiB spațiu de stocare"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7319,6 +7357,11 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",

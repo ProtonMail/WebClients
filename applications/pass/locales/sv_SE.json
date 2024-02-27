@@ -362,6 +362,9 @@
       "Transfer ownership": [
         "Överför ägarskap"
       ],
+      "Trash": [
+        "Lägg i papperskorg"
+      ],
       "Unpin item": [
         "Lossa objekt"
       ],
@@ -612,6 +615,9 @@
       "Unable to sync": [
         "Kan inte synkronisera"
       ],
+      "Unknown error": [
+        "Okänt fel"
+      ],
       "Unknown invite": [
         "Okänd inbjudan"
       ],
@@ -632,6 +638,9 @@
       ],
       "Vault name does not match": [
         "Valvnamn matchar inte"
+      ],
+      "Wrong password": [
+        "Fel lösenord"
       ],
       "Wrong PIN code. Try again.": [
         "Fel PIN-kod. Försök igen."
@@ -850,6 +859,9 @@
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internetanslutning förlorad. Kontrollera din enhets anslutning."
+      ],
       "Invitation sent": [
         "Inbjudan skickad"
       ],
@@ -935,8 +947,17 @@
       "Never": [
         "Aldrig"
       ],
+      "No network connection": [
+        "Ingen nätverksanslutning"
+      ],
       "None": [
         "Ingen"
+      ],
+      "Offline mode": [
+        "Offlineläge"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Offlineläge kunde inte aktiveras just nu"
       ],
       "Owner": [
         "Ägare"
@@ -990,6 +1011,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
       ],
+      "Reconnect": [
+        "Anslut igen"
+      ],
       "Restoring items from trash": [
         "Återställer objekt från papperskorg"
       ],
@@ -1022,6 +1046,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Ställ in en PIN-kod för att enkelt låsa din data"
+      ],
+      "Setting up offline mode...": [
+        "Ställer in offlineläge …"
       ],
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
@@ -1119,6 +1146,9 @@
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt ${ BRAND_NAME }-lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
@@ -1552,6 +1582,9 @@
       ],
       "Sign in to your account": [
         "Logga in på ditt konto"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Du är för närvarande offline. Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
       ]
     },
     "lobby: Title": {
@@ -1809,6 +1842,9 @@
       ],
       "Your vault is empty": [
         "Ditt valv är tomt"
+      ],
+      "Your welcome gift": [
+        "Din välkomstgåva"
       ]
     },
     "Validation": {
@@ -1868,6 +1904,9 @@
       "Empty note": [
         "Tom anteckning"
       ],
+      "Encryption password is required": [
+        "Krypteringslösenord är obligatoriskt"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
@@ -1901,6 +1940,9 @@
       ],
       "No results": [
         "Inga resultat"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"

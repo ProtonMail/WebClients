@@ -651,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 2 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 5 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -2192,7 +2201,7 @@
         "Suppression des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
       "Designed for users seeking heightened protection for their accounts.": [
-        "Conçu pour les utilisateurs recherchant une protection accrue de leurs comptes."
+        "Conçu pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -5842,7 +5851,7 @@
         "Alias « hide-my-email »"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Les alias hide-my-email vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
+        "Les alias « hide-my-email » vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nouvel alias"
@@ -5870,7 +5879,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Notre solution de sécurité de pointe pilotée par IA a été conçue pour les utilisateurs recherchant une protection accrue de leurs comptes. ${ learnMoreLink }"
+        "Notre solution de sécurité de pointe utilise l'IA et est conçue pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
@@ -6844,7 +6853,7 @@
         "Paramètres du message"
       ],
       "Enable 2FA": [
-        "Activer l'authentification à deux facteurs (2FA)"
+        "Activer l'authentification à deux facteurs (A2F)"
       ],
       "Encrypted event": [
         "Événement chiffré"

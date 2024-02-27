@@ -10792,9 +10792,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ne použili filtre"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Podobne ako priečinok, aj trezor predstavuje pohodlný spôsob usporiadania položiek. Pripravuje sa zdieľanie trezorov s priateľmi a rodinou."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Uzamknite svoje firemné zdroje z verejného internetu a sprístupnite ich len cez vaše súkromné brány"
       ],
@@ -11498,6 +11495,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Pokračovať so svojim ${ BRAND_NAME } účtom"
       ],
+      "Let's talk": [
+        "Porozprávajme sa"
+      ],
       "Limited time offer": [
         "Časovo obmedzená ponuka"
       ],
@@ -11710,6 +11710,11 @@
         "Zabezpečte svoj účet"
       ]
     },
+    "pass_signup_2023: title": {
+      "For invididuals": [
+        "Pre jednotlivcov"
+      ]
+    },
     "passwordless": {
       "Change organization key": [
         "Zmeniť kľúč organizácie"
@@ -11733,6 +11738,11 @@
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Číslo karty"
       ]
     },
     "Payments.Error": {
@@ -14833,6 +14843,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Skúste kratšie používateľské meno (max. ${ n } znak)",
         "Skúste kratšie používateľské meno (max. ${ n } znaky)",

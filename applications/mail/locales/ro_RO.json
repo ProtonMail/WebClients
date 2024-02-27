@@ -1130,6 +1130,9 @@
       "Upgrade": [
         "Modificare"
       ],
+      "Upgrade Now": [
+        "Modificare"
+      ],
       "Upgrade now": [
         "Modificare"
       ],
@@ -1197,6 +1200,15 @@
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contact.",
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contacte.",
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } de contacte."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie peste 2 zile. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie peste 5 zile. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Mărire"
@@ -1322,6 +1334,11 @@
       ],
       "New email": [
         "Mesaj nou"
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Descărcați aplicația pentru desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -3347,6 +3364,9 @@
       "An error occurred while loading alias options": [
         "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
       ],
+      "An error occurred while saving your alias": [
+        "A apărut o eroare în timpul salvării aliasului."
+      ],
       "Attachments are limited to 25 MB": [
         "Atașamentele sunt limitate la 25 MiB."
       ],
@@ -4419,6 +4439,31 @@
         "Către: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Bucurați-vă de accesul la contul de e-mail și calendar, rapid, sigur și fără distrageri."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Obțineți acces nelimitat cu planul ${ BRAND_NAME } cu plată"
+      ],
+      "Introducing the desktop app": [
+        "Vă prezentăm aplicația pentru desktop"
+      ],
+      "No credit card required": [
+        "Nu trebuie card de credit"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Încercați gratuit 14 zile"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "aplicația ${ MAIL_APP_NAME }"
@@ -4460,7 +4505,7 @@
         "Închidere"
       ],
       "Closing this means giving up the free storage bonus.": [
-        "Dacă o închideți renunțați la bonusul de stocare gratuită."
+        "Dacă închideți renunțați la bonusul de stocare gratuită."
       ],
       "Congratulation, you completed all the steps!": [
         "Felicitări, ați completat toți pașii!"
@@ -4469,7 +4514,7 @@
         "Felicitări, ați terminat!"
       ],
       "Continue setting up your email": [
-        "Continuați să vă setați contul de e-mail"
+        "Continuați setarea contului"
       ],
       "Discover how our ${ strongText } protect you": [
         "Descoperiți cum ${ strongText } vă protejează"
@@ -4481,13 +4526,13 @@
         "Dublați-vă stocarea gratuită la 1 GiB după ce executați următoarele:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
-        "Criptarea atât de puternică, încât doar dvs. și destinatarii doriți vă puteți vedea mesajele."
+        "Criptare atât de puternică, încât doar dvs. și destinatarii vizați puteți vedea conținutul mesajelor."
       ],
       "For your eyes only": [
         "Doar pentru dumneavoastră"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
-        "Obțineți aplicația mobilă ${ MAIL_APP_NAME }"
+        "Luați aplicația ${ MAIL_APP_NAME } pentru dispozitive mobile"
       ],
       "Get the ${ strongText } on Android or iOS": [
         "Luați ${ strongText } pentru Android sau iOS"
@@ -4514,7 +4559,7 @@
         "Deschideți lista de sarcini și obțineți spațiu gratuit"
       ],
       "Popular online services": [
-        "Servicii populare online"
+        "Servicii online populare"
       ],
       "privacy features": [
         "funcțiile de confidențialitate"
@@ -6104,6 +6149,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Acest mesaj este semnat cu o cheie atașată care încă nu a fost încă aprobată."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Acest mesaj va fi șters automat la ora ${ value }."
       ],
       "This message will be automatically deleted on ${ value }": [
         "Acest mesaj va fi șters automat la ora ${ value }"
@@ -7917,7 +7965,7 @@
         "Felicitări pentru că ați ales o viață privată"
       ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
-        "Criptare atât de puternică, încât doar dvs. și destinatarii doriți pot vedea conținutul acestora. ${ kbLinkEncryption }"
+        "Criptare atât de puternică, încât doar dvs. și destinatarii vizați puteți vedea conținutul mesajelor. ${ kbLinkEncryption }"
       ],
       "For your eyes only": [
         "Doar pentru dumneavoastră"
@@ -8355,6 +8403,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Folosit pentru cumpărături pe Amazon etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -8933,6 +8984,9 @@
       "Change setting": [
         "Modificare setări"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Lansați convenient ${ MAIL_APP_NAME } chiar de pe desktop."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Creați aliasuri hide-my-email și urmăriți-le aici."
       ],
@@ -8941,6 +8995,9 @@
       ],
       "Faster email management": [
         "Gestionare mesaje mai rapidă"
+      ],
+      "Get the desktop app": [
+        "Luați aplicația pentru desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
@@ -10218,6 +10275,11 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",

@@ -33,7 +33,7 @@
         "Lisävalinnat"
       ],
       "Authenticate": [
-        "Todenna"
+        "Tunnistaudu"
       ],
       "Back": [
         "Takaisin"
@@ -518,7 +518,7 @@
         "Kutsuja ei voi lähettää juuri nyt"
       ],
       "Cannot send invitations at the moment": [
-        "Kutsuja ei voi lähettää juuri nyt"
+        "Kutsuja ei voida tällä hetkellä lähettää"
       ],
       "Could not confirm this invite at the moment": [
         "Kutsun vahvistus ei nyt onnistunut"
@@ -585,7 +585,7 @@
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Osaa sijainnin \"${ payload.content.name }\" kohteista ei voitu siirtää"
+        "Kaikkia sijainnin \"${ payload.content.name }\" kohteita ei voitu siirtää"
       ],
       "Failed to move items": [
         "Kohteiden siirto epäonnistui"
@@ -633,7 +633,7 @@
         "Kieltäytyminen ei onnistunut"
       ],
       "Item content cannot exceed 40KB": [
-        "Kohteen sisältö ei saa ylittää 40 kt"
+        "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
       "Item creation failed": [
         "Kohteen luonti epäonnistui"
@@ -727,6 +727,9 @@
       ],
       "Vault name does not match": [
         "Holvin nimi ei täsmää"
+      ],
+      "Wrong password": [
+        "Väärä salasana"
       ],
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
@@ -861,7 +864,7 @@
         "Kaikki roskakorin kohteet poistettiin pysyvästi"
       ],
       "All trashed items successfully restored": [
-        "Kaikki roskakorin kohteet on palautettu"
+        "Kaikki roskakorin kohteet palautettiin"
       ],
       "An item previously shared with you was removed": [
         "Sinulle aiemmin jaettu kohde on poistettu"
@@ -1073,6 +1076,12 @@
       "None": [
         "Ei mitään"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Yhteydetöntä tilaa ei voitu nyt ottaa käyttöön"
+      ],
+      "Offline support successfully disabled": [
+        "Yhteydetön tila on poistettu käytöstä"
+      ],
       "Open the Extensions menu": [
         "Avaa laajennusvalikko"
       ],
@@ -1108,7 +1117,7 @@
         "Kohdetta kiinnitetään..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Vahvista ${ BRAND_NAME }-salasanasi viedäksesi ${ PASS_APP_NAME } -tietosi"
+        "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi. Sen jälkeen\n${ PASS_APP_NAME } ei enää koskaan lukitu."
@@ -1141,7 +1150,7 @@
         "Kohteita palautetaan roskakorista"
       ],
       "Restoring trashed items...": [
-        "Palautetaan roskakorin kohteita..."
+        "Palautetaan kohteita roskakorista..."
       ],
       "Save login": [
         "Tallenna kirjautumistieto"
@@ -1169,6 +1178,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Suojaa tietosi helposti asettamalla PIN-koodi"
+      ],
+      "Setting up offline mode...": [
+        "Otetaan yhteydetöntä tilaa käyttöön..."
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
@@ -1284,6 +1296,9 @@
       ],
       "You are about to create:": [
         "Luot aliasta:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt avata ${ PASS_SHORT_APP_NAME }in ${ BRAND_NAME }-salasanallasi myös verkkoyhteyden puuttuessa."
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME }-kuvakkeesta."
@@ -1450,7 +1465,7 @@
         "Luotu"
       ],
       "Default (recommended)": [
-        "Oletus (suositeltu)"
+        "Oletus (suositus)"
       ],
       "Display": [
         "Ulkoasu"
@@ -1474,7 +1489,7 @@
         "Tyhjennä roskakori"
       ],
       "Encrypted (recommended)": [
-        "Salattu (suositeltu)"
+        "Salattu (suositus)"
       ],
       "Expiration date": [
         "Voimassaolo päättyy"
@@ -1561,13 +1576,13 @@
         "Kirjautumistiedot"
       ],
       "Make all admins": [
-        "Tee kaikista ylläpitäjiä"
+        "Määritä kaikki ylläpitäjiksi"
       ],
       "Make all editors": [
-        "Tee kaikista muokkaajia"
+        "Määritä kaikki muokkaajiksi"
       ],
       "Make all viewers": [
-        "Tee kaikista katselijoita"
+        "Määritä kaikki tarkastelijoiksi"
       ],
       "Members": [
         "Jäsenet"
@@ -1765,6 +1780,9 @@
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Yhteyttä ei ole. Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi."
       ]
     },
     "lobby: Title": {
@@ -2057,6 +2075,9 @@
       ],
       "Your vault is empty": [
         "Holvisi on tyhjä"
+      ],
+      "Your welcome gift": [
+        "Tervetuliaislahjasi"
       ]
     },
     "Validation": {
@@ -2116,6 +2137,9 @@
       "Empty note": [
         "Tyhjä muistiinpano"
       ],
+      "Encryption password is required": [
+        "Salaussalasana vaaditaan"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"
       ],
@@ -2124,6 +2148,9 @@
       ],
       "Invalid email addresses.": [
         "Virheelliset sähköpostiosoitteet."
+      ],
+      "item was imported without custom fields": [
+        "kohde tuotiin ilman mukautettuja kenttiä"
       ],
       "Maximum length is ${ maxLength } character": [
         "Enimmäispituus on ${ maxLength } merkki",

@@ -6515,6 +6515,9 @@
       ],
       "Your welcome actions": [
         "आपका स्वागत एक्शन"
+      ],
+      "You’ve got 5 GB of storage": [
+        "आपको स्टोरेज का 5 जीबी मिला है"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6582,6 +6585,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
       "Try a shorter username (${ n } character max)": [
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"

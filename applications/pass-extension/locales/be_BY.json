@@ -732,6 +732,9 @@
       "Vault name does not match": [
         "Назва сховішча не супадае"
       ],
+      "Wrong password": [
+        "Няправільны пароль"
+      ],
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
       ],
@@ -810,7 +813,7 @@
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
       "${ count } invites successfully sent": [
-        "${ count } запрашэння(ў) паспяхова адпраўлена"
+        "${ count } запрашэнне(і) паспяхова адпраўлена"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1103,6 +1106,12 @@
       "None": [
         "Няма"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Рэжым па-за сеткай не можа быць уключаны ў дадзены момант"
+      ],
+      "Offline support successfully disabled": [
+        "Падтрымка па-за сеткай паспяхова адключана"
+      ],
       "Open the Extensions menu": [
         "Адкрыць меню з пашырэннямі"
       ],
@@ -1140,7 +1149,7 @@
         "Замацаванне элемента..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Пацвердзіце пароль ${ BRAND_NAME } для таго, каб экспартаваць даныя ${ PASS_APP_NAME }"
+        "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі.\nПасля гэтага дзеяння ${ PASS_APP_NAME } ніколі не будзе блакіравацца."
@@ -1202,6 +1211,9 @@
       "Set up a PIN code to easily lock your data": [
         "Наладзьце PIN-код, каб лёгка блакіраваць свае даныя"
       ],
+      "Setting up offline mode...": [
+        "Наладжванне рэжыму па-за сеткай"
+      ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
       ],
@@ -1236,7 +1248,7 @@
         "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры націску або навядзенні на поле."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і патрабуе надзейнай парольнай фразы."
+        "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і яму спатрэбіцца надзейная парольная фраза."
       ],
       "The exported file will not contain the data of shared vaults where you are not the owner": [
         "Экспартаваны файл не змяшчае даных абагуленых сховішчаў, дзе вы не з'яўляецеся ўладальнікам"
@@ -1318,6 +1330,9 @@
       ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Цяпер вы можаце выкарыстоўваць свой пароль ${ BRAND_NAME } для доступу па-за сеткай ${ PASS_SHORT_APP_NAME }"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Вы можаце хутка аўтазапаўняць свае ўліковыя даныя, націснуўшы на значок ${ PASS_APP_NAME }."
@@ -1805,6 +1820,9 @@
       ],
       "Sign in to your account": [
         "Увайдзіце ў свой уліковы запіс"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Вы знаходзіцеся па-за сеткай. Разблакіруйце ${ PASS_SHORT_APP_NAME } з вашым паролем ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2101,6 +2119,9 @@
       ],
       "Your vault is empty": [
         "Ваша сховішча нічога не змяшчае"
+      ],
+      "Your welcome gift": [
+        "Ваш прывітальны падарунак"
       ]
     },
     "Validation": {
@@ -2160,6 +2181,9 @@
       "Empty note": [
         "Пустая нататка"
       ],
+      "Encryption password is required": [
+        "Патрабуецца шыфраванне пароля"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
@@ -2168,6 +2192,9 @@
       ],
       "Invalid email addresses.": [
         "Памылковыя адрасы электроннай пошты."
+      ],
+      "item was imported without custom fields": [
+        "элемент быў імпартаваны без карыстальніцкіх палёў"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максімальная даўжыня ${ maxLength } сімвал",

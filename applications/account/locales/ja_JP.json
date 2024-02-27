@@ -50,6 +50,9 @@
       "activate": [
         "有効にする"
       ],
+      "Activate": [
+        "有効化"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
       ],
@@ -809,8 +812,14 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
+      "Select a calendar to export": [
+        "エクスポートするカレンダーを選択"
+      ],
       "Select calendar view": [
         "カレンダー表示を選択"
+      ],
+      "Select country": [
+        "国を選択"
       ],
       "Select files": [
         "ファイルの選択"
@@ -5566,6 +5575,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info": {
@@ -6043,6 +6055,9 @@
       "Credits earned": [
         "取得した単位"
       ],
+      "Current plan": [
+        "現在のプラン"
+      ],
       "Custom": [
         "カスタム設定"
       ],
@@ -6112,6 +6127,9 @@
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
       ],
+      "Downgrade": [
+        "ダウングレード"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
       ],
@@ -6156,6 +6174,9 @@
       ],
       "Emailing preference saved": [
         "メール設定が保存されました"
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "このラベル「${ nameDeleted }」が付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
       "Enable this address to join this calendar": [
         "このカレンダーを削除してもよろしいですか?"
@@ -6709,6 +6730,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "再度試すか、別の支払い方法をお試しください。あるいは PayPal にお尋ねください。"
       ],
+      "Please use another browser or download the file.": [
+        "他のブラウザを使用するか、このファイルをダウンロードしてください。"
+      ],
       "Please verify payment at the new tab which was opened.": [
         "新たに開かれたタブで支払いの検証を行ってください。"
       ],
@@ -6720,6 +6744,9 @@
       ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "この種類のファイルのプレビューは、現在このブラウザではサポートされていません。"
       ],
       "Preview for this file type is not supported": [
         "このファイル形式はサポートされておりません。"
@@ -7032,6 +7059,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "時間がかかる場合があります。このページを閉じたり、インターネットから切断したりしないでください。"
+      ],
+      "This file is too large to preview": [
+        "このファイルは、非常に大きいためプレビューできません"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "これは設定するように促された 12 語の語句です。"
@@ -8088,6 +8118,9 @@
       "Addresses": [
         "メールアドレス"
       ],
+      "Administrators": [
+        "管理者"
+      ],
       "ALL": [
         "すべて"
       ],
@@ -8745,6 +8778,9 @@
       "Send crash reports": [
         "クラッシュレポートを送信"
       ],
+      "Send in": [
+        "次の言語で送信:"
+      ],
       "Show secondary time zone": [
         "2 つ目のタイムゾーンを表示"
       ],
@@ -8850,6 +8886,9 @@
       "Username": [
         "ユーザー名"
       ],
+      "VAT": [
+        "付加価値税"
+      ],
       "Verification code": [
         "認証コード"
       ],
@@ -8915,6 +8954,11 @@
       ],
       "Notifications": [
         "通知"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "期間"
       ]
     },
     "Label for new member": {
@@ -9096,6 +9140,9 @@
       ],
       "Help translate": [
         "翻訳を手伝う"
+      ],
+      "here": [
+        "こちら"
       ],
       "How to pay with Bitcoin?": [
         "ビットコインで支払うには？"
@@ -10209,9 +10256,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "フォルダーと同様、ボールトはアイテムを整理するのに便利な方法です。 友人や家族との保管庫の共有は現在開発中です。"
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "企業のリソースを一般インターネットからロックダウンし、プライベートゲートウェイ経由でのみアクセスできるようにする。"
       ],
@@ -10704,6 +10748,9 @@
       "Select who can access...": [
         "アクセスできる人を選択してください..."
       ],
+      "Send to all": [
+        "全員に送信"
+      ],
       "Standard server configs": [
         "標準サーバーの設定ファイル"
       ],
@@ -10925,6 +10972,9 @@
       ],
       "Creating your account": [
         "アカウントの作成"
+      ],
+      "Current plan": [
+        "現在のプラン"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "${ PASS_APP_NAME }、${ br }の新しい暗号化パスワード マネージャーをご覧ください"
@@ -12109,6 +12159,12 @@
       "Get more storage": [
         "ストレージを増やす"
       ],
+      "Try out ${ app } to its full potential": [
+        "${ app } を最大限に活用する"
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "ストレージを増やすため、プランをアップグレードしましょう。"
+      ],
       "Your storage is full": [
         "ストレージがいっぱいです"
       ]
@@ -12852,6 +12908,9 @@
       "Composing": [
         "組版"
       ],
+      "Confirm": [
+        "確認"
+      ],
       "Confirm address": [
         "アドレスの確認"
       ],
@@ -13260,6 +13319,9 @@
       "Organization filters": [
         "組織名"
       ],
+      "Organization key": [
+        "組織の鍵"
+      ],
       "Organization name": [
         "組織名"
       ],
@@ -13467,6 +13529,9 @@
       "Success": [
         "完了"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n }個のユーザーアカウントが正常に作成されました"
+      ],
       "Summary": [
         "概要"
       ],
@@ -13577,6 +13642,9 @@
       ],
       "Your SMTP token": [
         "あなたのSMTPトークン"
+      ],
+      "Your storage": [
+        "あなたのストレージ"
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
