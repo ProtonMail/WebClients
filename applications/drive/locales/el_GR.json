@@ -749,6 +749,9 @@
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
       ],
+      "Your 3 GB bonus": [
+        "Το 3 GB μπόνους σας"
+      ],
       "Zoom in": [
         "Μεγέθυνση"
       ],
@@ -2150,6 +2153,9 @@
       ],
       "An error occurred while loading alias options": [
         "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
+      ],
+      "An error occurred while saving your alias": [
+        "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου σας."
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -3751,6 +3757,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Αποκτήστε την εφαρμογή επιφάνειας εργασίας για συγχρονισμό αρχείων από τον υπολογιστή σας."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Γνωρίστε το ${ DRIVE_APP_NAME } και κερδίστε το 3 GB μπόνους αποθήκευσης σας! Αναλάβετε δράση σήμερα."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
       ],
@@ -3787,6 +3796,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Εν τω μεταξύ, εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με κρυπτογράφηση από άκρο σε άκρο και μοιραστείτε τα με ασφάλεια."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Δεικτοδότηση στοιχείων: ${ esProgress } από ${ totalProgressToShow }"
@@ -4127,6 +4139,9 @@
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δε βρέθηκε"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με κρυπτογράφηση από άκρο σε άκρο και μοιραστείτε τα με ασφάλεια."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
       ],
@@ -4311,6 +4326,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
+      "upgrade your storage": [
+        "να αναβαθμίσετε τον αποθηκευτικό σας χώρο"
+      ],
       "Uploaded": [
         "Ανέβηκε"
       ],
@@ -4334,6 +4352,9 @@
       ],
       "Warning": [
         "Προειδοποίηση"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Συγχαρητήρια, μόλις αυξήσατε τον αποθηκευτικό σας χώρο στα 5 GB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Αντιμετωπίζουμε τεχνικά προβλήματα. Η μεταφόρτωση νέων φωτογραφιών είναι προσωρινά απενεργοποιημένη."
@@ -4406,6 +4427,10 @@
       ],
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Σας απομένουν ${ expiresInDays } ημέρα για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και ",
+        "Σας απομένουν ${ expiresInDays } ημέρες για να διεκδικήσετε το μπόνους καλωσορίσματος 3 GB και "
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
@@ -5939,6 +5964,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -7091,6 +7119,9 @@
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
       ],
+      "Your 3 GB bonus": [
+        "Το 3 GB μπόνους σας"
+      ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
       ],
@@ -7102,6 +7133,9 @@
       ],
       "Your welcome actions": [
         "Οι ευπρόσδεκτες ενέργειές σας"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Έχετε 5 GB αποθηκευτικού χώρου"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7178,6 +7212,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
