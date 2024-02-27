@@ -200,7 +200,7 @@ export const getPassProPlan = (plan: Plan): ShortPlan => {
         plan: PLANS.PASS_PRO,
         title: plan.Title,
         label: '',
-        description: c('new_plans: info').t`For next-level password management and identity protection.`,
+        description: c('new_plans: info').t`Essential protection and secure collaboration for unlimited users.`,
         cta: getCTA(plan.Title),
         features: [
             getLoginsAndNotes(),
