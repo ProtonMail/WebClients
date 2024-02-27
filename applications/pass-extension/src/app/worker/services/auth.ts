@@ -113,10 +113,11 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 
-        onSessionInvalid: withContext((ctx) => {
+        onSessionInvalid: withContext(async (ctx, error, _data) => {
             authStore.clear();
             void ctx.service.storage.local.removeItem('ps');
             void ctx.service.storage.session.clear();
+            throw error;
         }),
 
         onSessionEmpty: withContext((ctx) => ctx.setStatus(AppStatus.UNAUTHORIZED)),
