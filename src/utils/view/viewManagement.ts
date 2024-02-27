@@ -172,6 +172,10 @@ export const setTrialEnded = () => {
     calendarView?.webContents?.loadURL(url);
 };
 
+export const toggleSpellCheck = (enabled: boolean) => {
+    mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
+};
+
 export const getMailView = () => mailView;
 export const getCalendarView = () => calendarView;
 export const getMainWindow = () => mainWindow;

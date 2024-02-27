@@ -1,10 +1,11 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
+import { getSettings, saveSettings } from "../../store/settingsStore";
 import { clearStorage, isMac, isWindows } from "../helpers";
-import { getMainWindow } from "../view/viewManagement";
-import { openLogFolder } from "./openLogFolder";
+import { getMainWindow, toggleSpellCheck } from "../view/viewManagement";
 import { areDevToolsAvailable } from "../view/windowHelpers";
+import { openLogFolder } from "./openLogFolder";
 
 interface MenuInsertProps {
     menu: MenuItemConstructorOptions[];
@@ -33,6 +34,8 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         Menu.setApplicationMenu(null);
         return;
     }
+
+    const settings = getSettings();
 
     const temp: MenuItemConstructorOptions[] = [
         {
@@ -64,6 +67,18 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "paste" },
                 { role: "pasteAndMatchStyle", accelerator: isMac ? "Cmd+Shift+V" : "Ctrl+Shift+V" },
                 { role: "selectAll" },
+                {
+                    label: c("App menu").t`Check spelling while typing`,
+                    type: "checkbox",
+                    checked: settings.spellChecker,
+                    click: (item) => {
+                        toggleSpellCheck(item.checked);
+                        saveSettings({
+                            ...settings,
+                            spellChecker: item.checked,
+                        });
+                    },
+                },
             ],
         },
         {

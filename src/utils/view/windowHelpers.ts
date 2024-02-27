@@ -2,6 +2,7 @@ import { BrowserWindowConstructorOptions, Session, app } from "electron";
 import { getWindowBounds } from "../../store/boundsStore";
 import { getConfig, getIcon, isProdEnv } from "../config";
 import { isMac, isWindows } from "../helpers";
+import { getSettings } from "../../store/settingsStore";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const config = getConfig();
@@ -26,6 +27,7 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
 
 export const getWindowConfig = (session: Session): BrowserWindowConstructorOptions => {
     const { x, y, width, height } = getWindowBounds();
+    const settings = getSettings();
 
     return {
         title: config.appTitle,
@@ -38,7 +40,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
         webPreferences: {
             devTools: areDevToolsAvailable(),
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-            spellcheck: true,
+            spellcheck: settings.spellChecker,
             // Security additions
             session,
             nodeIntegration: false,
