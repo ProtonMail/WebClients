@@ -19,7 +19,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { isOffline, isOnline } from '@proton/pass/lib/api/utils';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
-import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
+import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOfflineUnlocked } from '@proton/pass/lib/client';
@@ -35,8 +35,11 @@ import {
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { useClientRef } from './ClientProvider';
 
@@ -197,6 +200,26 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionEmpty: async () => {
                 history.replace('/');
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
+            },
+
+            /** This retry handling is crucial to handle an edge case where the session might be
+             * mutated by another tab while the same session is resumed multiple times. In the web
+             * app, local key requests always follow a predictable order due to a queuing mechanism.
+             * If the 'getPersistedSessionKey' call was queued by another tab updating the local key
+             * and persisted session, this process prevents retries to ensure decryption of the most
+             * recent session blob */
+            onSessionInvalid: async (error, { localID, invalidSession }) => {
+                await wait(randomIntFromInterval(0, 500)); /* jitter */
+
+                const persistedSession = await authService.config.getPersistedSession(localID);
+                const shouldRetry = persistedSession && !isDeepEqual(persistedSession, invalidSession);
+
+                if (shouldRetry) return resumeSession(persistedSession, localID, authService.config);
+
+                authStore.clear();
+                localStorage.removeItem(getSessionKey(localID));
+
+                throw error;
             },
 
             onSessionLocked: (localID, offline, broadcast) => {
