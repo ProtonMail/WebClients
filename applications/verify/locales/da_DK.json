@@ -1113,6 +1113,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brugernavn (maks. ${ n } tegn)",
         "Prøv et kortere brugernavn (maks. ${ n } tegn)"

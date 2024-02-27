@@ -1072,6 +1072,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lykilorð verður að innihalda að lágmarki ${ MIN_PASSWORD_LENGTH } stafi",
+        "Lykilorð verður að innihalda að lágmarki ${ MIN_PASSWORD_LENGTH } stafi"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Reyndu styttra notendanafn (${ n } stafur að hámarki)",
         "Reyndu styttra notendanafn (${ n } stafir að hámarki)"
