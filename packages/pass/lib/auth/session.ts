@@ -137,31 +137,22 @@ export const decryptSessionBlob = async (
     }
 };
 
+export type ResumeSessionResult = { session: AuthSession; clientKey: CryptoKey };
+
 /** Session resuming sequence responsible for decrypting the encrypted session
  * blob. ⚠️ Ensure the authentication store has been configured with authentication
  * options in order for requests to succeed. Session tokens may be refreshed during
  * this sequence. Returns the plain-text session alongside its encryption key. */
 export const resumeSession = async (
+    persistedSession: EncryptedAuthSession,
     localID: Maybe<number>,
-    config: AuthServiceConfig
-): Promise<{ session: AuthSession; clientKey: CryptoKey }> => {
+    { api, authStore, onSessionInvalid }: AuthServiceConfig
+): Promise<ResumeSessionResult> => {
     try {
-        const { api, authStore } = config;
-
         const [clientKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
             api<{ User: UserType }>(getUser()),
         ]);
-
-        /** Read the persisted session **AFTER** resolving the persisted session key.
-         * This step is crucial to handle an edge case where the session might be mutated
-         * by another tab. In the web app, local key requests always follow a predictable
-         * order due to a queuing mechanism. By reading the persisted session at this point,
-         * we ensure consistency. If the 'getPersistedSessionKey' call above was queued by
-         * another tab updating the local key and persisted session, this process prevents
-         * a race condition and ensures we decrypt the most recent session blob to avoid
-         * decrypting a stale persisted session. */
-        const persistedSession = await config.getPersistedSession(localID);
 
         if (!persistedSession || persistedSession.UserID !== User.ID) throw InactiveSessionError();
 
@@ -174,7 +165,7 @@ export const resumeSession = async (
             session: mergeSessionTokens({ ...session, ...decryptedBlob }, authStore),
         };
     } catch (error: unknown) {
-        if (error instanceof InvalidPersistentSessionError) config.onSessionInvalid?.();
-        throw error;
+        if (onSessionInvalid) return await onSessionInvalid(error, { localID, invalidSession: persistedSession });
+        else throw error;
     }
 };
