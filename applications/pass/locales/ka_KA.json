@@ -618,6 +618,9 @@
       "Unable to sync": [
         "სინქრონიზაცია შეუძლებელია"
       ],
+      "Unknown error": [
+        "უცნობი შეცდომა"
+      ],
       "Unknown invite": [
         "უცნობი მოწვევა"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "საცავის სახელი არ ემთხვევა"
+      ],
+      "Wrong password": [
+        "არასწორი პაროლი"
       ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
@@ -865,6 +871,9 @@
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "ინტერნეტთან კავშირის პრობლემა. შეამოწმეთ თქვენი მოწყობილობა."
+      ],
       "Invitation sent": [
         "მოსაწვევი გაგზავნილია"
       ],
@@ -950,8 +959,20 @@
       "Never": [
         "არასოდეს"
       ],
+      "No network connection": [
+        "ქსელთან კავშირი არ არის"
+      ],
       "None": [
         "არცერთი"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის ჩართვა ამჟამად შეუძლებელია"
+      ],
+      "Offline support successfully disabled": [
+        "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
       ],
       "Owner": [
         "მფლობელი"
@@ -1005,6 +1026,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
       ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
       ],
@@ -1037,6 +1061,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "დააყენეთ PIN კოდი თქვენი მონაცემების ადვილად დასაბლოკად"
+      ],
+      "Setting up offline mode...": [
+        "ქსელის გარეშე მუშაობის რეჟიმის მორგება..."
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
@@ -1134,6 +1161,9 @@
       ],
       "You are about to create:": [
         "აპირებთ, შექმნათ:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "ახლა შეგიძლიათ, თქვენი ${ BRAND_NAME }-ის პაროლი ${ PASS_SHORT_APP_NAME }-ში შესასვლელად ქსელის გარეშეც გამოიყენოთ"
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
@@ -1567,6 +1597,9 @@
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "ამჟამად ინტერნეტთან დაკავშირებული არ ბრძანდებით. განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1857,9 @@
       ],
       "Your vault is empty": [
         "თქვენი საცავი ცარიელია"
+      ],
+      "Your welcome gift": [
+        "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
       ]
     },
     "Validation": {
@@ -1883,6 +1919,9 @@
       "Empty note": [
         "ცარიელი შენიშვნა"
       ],
+      "Encryption password is required": [
+        "დაშიფვრის პაროლი აუცილებელია"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
       ],
@@ -1916,6 +1955,9 @@
       ],
       "No results": [
         "შედეგების გარეშე"
+      ],
+      "Offline": [
+        "გათიშულია"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"

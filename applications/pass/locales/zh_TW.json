@@ -170,6 +170,9 @@
       "Importing": [
         "正在匯入"
       ],
+      "Install extension": [
+        "安裝擴充套件"
+      ],
       "Invite others": [
         "邀請他人"
       ],
@@ -521,6 +524,9 @@
       "Unable to sync": [
         "同步失敗"
       ],
+      "Unknown error": [
+        "未知錯誤"
+      ],
       "Unknown invite": [
         "未知邀請"
       ],
@@ -601,6 +607,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
       ],
+      "${ count } invites successfully sent": [
+        "${ count }邀請成功寄出"
+      ],
       "${ memberCount } member": [
         "${ memberCount } 位成員"
       ],
@@ -630,6 +639,9 @@
       ],
       "All trashed items successfully restored": [
         "全部垃圾項目已成功還原"
+      ],
+      "An item previously shared with you was removed": [
+        "全部於共享的項目已刪除"
       ],
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
@@ -676,6 +688,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
+      "Fill in the CSV with your data": [
+        "CSV格式的檔案"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "基於安全性理由，您的存取需要得到確認"
       ],
@@ -684,6 +699,9 @@
       ],
       "Import in progress:": [
         "匯入進行中:"
+      ],
+      "Import the CSV file below.": [
+        "於底下匯入CSV。"
       ],
       "Imported ${ payload.total } item": [
         "匯入${ payload.total }項目"
@@ -696,6 +714,9 @@
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "網際網路連線中斷。請檢查裝置的連線狀態。"
       ],
       "Invitation sent": [
         "邀請函已寄送"
@@ -763,8 +784,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "移動全部於\"${ payload.content.name }\"的項目"
+      ],
       "Moving items": [
         "正在移動檔案"
+      ],
+      "Moving items to trash": [
+        "將項目丟進回收筒"
       ],
       "Never": [
         "永不"
@@ -780,6 +807,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "個人識別數字代碼已成功登記。使用它解鎖${ PASS_APP_NAME }。"
+      ],
+      "Pinning item...": [
+        "訂選項目..."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "請確認個人識別數字代碼以取消目前的鎖定。${ PASS_APP_NAME }將永久取消鎖定"
@@ -802,6 +832,9 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "隱私是我們最大的擔心。了解與${ PASS_APP_NAME }的不同。"
       ],
+      "Restoring items from trash": [
+        "重垃圾桶垃圾桶還原項目"
+      ],
       "Restoring trashed items...": [
         "還原刪除項目..."
       ],
@@ -810,6 +843,9 @@
       ],
       "Select vault to share": [
         "選擇要共享的保管庫"
+      ],
+      "Selected items successfully restored from trash": [
+        "成功還原垃圾桶的選取項目"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -822,6 +858,9 @@
       ],
       "Settings successfully updated": [
         "設定已成功更新"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "共享您的登入,安全筆記,至多10人"
       ],
       "Signing you in": [
         "將您登入"
@@ -855,6 +894,12 @@
       ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無限制的 hide-my-email 別名"
+      ],
+      "Unpinning item...": [
+        "取消訂選項目..."
       ],
       "User's access removed": [
         "使用者存取權已撤銷"
@@ -1008,6 +1053,9 @@
       "Empty trash": [
         "清空垃圾桶"
       ],
+      "Encrypted (recommended)": [
+        "加密 (建議)"
+      ],
       "Expiration date": [
         "有效期限"
       ],
@@ -1016,6 +1064,9 @@
       ],
       "Field name": [
         "欄位名稱"
+      ],
+      "File format": [
+        "檔案格式"
       ],
       "Forwards to": [
         "轉寄至"
@@ -1458,6 +1509,9 @@
       "Move all items ?": [
         "移動所有項目?"
       ],
+      "No items selected": [
+        "未選擇任何項目"
+      ],
       "Our welcome gift to you": [
         "我們為您準備的迎賓禮"
       ],
@@ -1633,11 +1687,20 @@
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "您已達到此保管庫的使用者數向上限。 ${ upgradeLink }"
       ],
+      "You have unsaved changes.": [
+        "您有未保存的更改。"
+      ],
       "You must select at least one mailbox": [
         "你必須至少選擇一個收件匣"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "您不再擁有保管庫的存取權。若要重新加入，您需要新的邀請。"
+      ],
+      "Your session was locked.": [
+        "您的作業階段以鎖定。"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"
       ]
     }
   }
