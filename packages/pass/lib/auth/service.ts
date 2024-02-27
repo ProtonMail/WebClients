@@ -28,6 +28,8 @@ import {
     consumeFork,
     requestFork,
 } from './fork';
+import type {
+    ResumeSessionResult} from './session';
 import {
     type AuthSession,
     type EncryptedAuthSession,
@@ -88,8 +90,12 @@ export interface AuthServiceConfig {
      * user automatically when requesting a fork from account. */
     onForkRequest?: (result: RequestForkResult) => void;
     /** Called when an invalid persistent session error is thrown during a
-     * session resuming sequence. */
-    onSessionInvalid?: () => void;
+     * session resuming sequence. It will get called with the invalid session
+     * and the localID being resumed for retry mechanisms */
+    onSessionInvalid?: (
+        error: unknown,
+        data: { localID: Maybe<number>; invalidSession: EncryptedAuthSession }
+    ) => MaybePromise<ResumeSessionResult>;
     /* Called when no persisted session or in-memory session can be used to
      * resume a session. */
     onSessionEmpty?: () => void;
@@ -368,7 +374,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         authStore.setSession(persistedSession);
                         await api.reset();
 
-                        const { session, clientKey } = await resumeSession(localID, config);
+                        const { session, clientKey } = await resumeSession(persistedSession, localID, config);
 
                         logger.info(`[AuthService] Session successfuly resumed`);
 
