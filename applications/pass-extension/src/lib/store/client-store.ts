@@ -11,7 +11,7 @@ export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
     const store = configureStore({
         reducer,
         middleware: (mw) =>
-            mw({ serializableCheck: false, thunk: false }).concat(
+            mw({ serializableCheck: false, immutableCheck: false, thunk: false }).concat(
                 requestMiddleware,
                 relayMiddleware({ endpoint, tabId })
             ),
