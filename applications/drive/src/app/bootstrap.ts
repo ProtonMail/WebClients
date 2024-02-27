@@ -10,7 +10,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
-import { queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
+import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
