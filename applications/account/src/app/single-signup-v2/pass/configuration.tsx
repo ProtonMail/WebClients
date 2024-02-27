@@ -17,7 +17,10 @@ import {
     getVaultSharing,
     getVaultSharingText,
 } from '@proton/components/containers/payments/features/pass';
-import { getPassBusinessPlan, getPassEssentialsPlan } from '@proton/components/containers/payments/features/plan';
+import {
+    getPassBusinessSignupPlan,
+    getPassEssentialsSignupPlan,
+} from '@proton/components/containers/payments/features/plan';
 import {
     getAdvancedVPNCustomizations,
     getNetShield,
@@ -206,7 +209,7 @@ export const getPassConfiguration = ({
                         features={
                             <PlanCardFeatureList
                                 {...planCardFeatureProps}
-                                features={getPassEssentialsPlan(plansMap?.[PLANS.PASS_PRO]).features}
+                                features={getPassEssentialsSignupPlan(plansMap?.[PLANS.PASS_PRO]).features}
                             />
                         }
                     />
@@ -234,7 +237,7 @@ export const getPassConfiguration = ({
                                 <PlanCardFeatureList
                                     {...planCardFeatureProps}
                                     tooltip={true}
-                                    features={getPassBusinessPlan(plansMap?.[PLANS.PASS_PRO]).features}
+                                    features={getPassBusinessSignupPlan(plansMap?.[PLANS.PASS_PRO]).features}
                                 />
                             </div>
                         }
