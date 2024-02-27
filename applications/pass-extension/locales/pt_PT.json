@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Conta"
+      ],
       "Account settings": [
         "Definições de conta"
       ],
@@ -122,6 +125,9 @@
       "Delete vault": [
         "Eliminar o cofre"
       ],
+      "Deselect": [
+        "Cancelar a seleção"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -212,6 +218,9 @@
       "Move to trash": [
         "Mover para o lixo"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "OK": [
         "Aceitar"
       ],
@@ -223,6 +232,9 @@
       ],
       "Pass for iOS": [
         "Pass para iOS"
+      ],
+      "Pin item": [
+        "Fixar o item"
       ],
       "Refresh the page": [
         "Actualizar a página"
@@ -302,8 +314,14 @@
       "Transfer ownership": [
         "Transferir a propriedade"
       ],
+      "Trash": [
+        "Lixeira"
+      ],
       "Try again": [
         "Tentar novamente"
+      ],
+      "Unpin item": [
+        "Retirar a fixação do item"
       ],
       "Update": [
         "Actualizar"
@@ -698,11 +716,17 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mais do que um gestor de palavras-passe, o ${ PASS_APP_NAME } protege a sua palavra-passe e o seu endereço de e-mail pessoal através de aliases de e-mail. Com a mesma tecnologia subjacente a ${ MAIL_APP_NAME }, os seus dados são encriptados de ponta a ponta e só podem ser acedidos por si."
       ],
+      "Never": [
+        "Nunca"
+      ],
       "None": [
         "Nenhum"
       ],
       "Open the Extensions menu": [
         "Abrir o menu Extensões"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "Password copied": [
         "Palavra-passe copiada"
@@ -857,6 +881,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Conta"
       ],
       "Alias": [
         "Alias"
@@ -1291,6 +1318,9 @@
       "Full Name": [
         "Nome completo"
       ],
+      "MM/YY": [
+        "MM/AA"
+      ],
       "Other": [
         "Outro"
       ],
@@ -1389,6 +1419,9 @@
       "Low disk space": [
         "Pouco espaço em disco"
       ],
+      "Members": [
+        "Membros"
+      ],
       "Our welcome gift to you": [
         "Aproveite o seu período de teste gratuito"
       ],
@@ -1428,6 +1461,12 @@
       "Update available": [
         "Actualização disponível"
       ],
+      "Use my email": [
+        "Utilizar o meu e-mail"
+      ],
+      "Vault": [
+        "Cofre"
+      ],
       "Vault shared with you": [
         "Cofre partilhado consigo"
       ],
@@ -1436,6 +1475,9 @@
       ],
       "Your vault is empty": [
         "O seu cofre está vazio."
+      ],
+      "Your welcome gift": [
+        "Aproveite o seu período de teste gratuito"
       ]
     },
     "Validation": {
@@ -1501,6 +1543,9 @@
       ],
       "No password manager selected": [
         "Nenhum gestor de palavras-passe selecionado"
+      ],
+      "No results": [
+        "Sem resultados"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos, pontos, hífenes e sublinhados"

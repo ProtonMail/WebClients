@@ -723,6 +723,9 @@
       "Vault name does not match": [
         "금고 이름이 맞지 않습니다."
       ],
+      "Wrong password": [
+        "잘못된 비밀번호입니다"
+      ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
       ],
@@ -1052,6 +1055,12 @@
       "None": [
         "없음"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "오프라인 모드가 현재 활성화할 수 없습니다."
+      ],
+      "Offline support successfully disabled": [
+        "오프라인 지원이 비활성화되었습니다"
+      ],
       "Open the Extensions menu": [
         "확장 메뉴 열기"
       ],
@@ -1144,6 +1153,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "쉽게 데이터를 잠금하도록 PIN 코드를 설정하세요"
+      ],
+      "Setting up offline mode...": [
+        "오프라인 모드로 설정 중..."
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
@@ -1258,6 +1270,9 @@
       ],
       "You are about to create:": [
         "생성하려고 하는 주소:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }의 오프라인 이용이 가능합니다"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "${ PASS_APP_NAME } 아이콘을 클릭하여 빠르게 자격 증명을 자동 완성하실 수 있습니다."
@@ -1730,6 +1745,9 @@
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "현재 오프라인 상태입니다, ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }를 잠금해제 하세요."
       ]
     },
     "lobby: Title": {
@@ -2017,6 +2035,9 @@
       ],
       "Your vault is empty": [
         "금고가 비어있음"
+      ],
+      "Your welcome gift": [
+        "무료 체험을 즐겨보세요"
       ]
     },
     "Validation": {
@@ -2075,6 +2096,9 @@
       ],
       "Empty note": [
         "빈 메모"
+      ],
+      "Encryption password is required": [
+        "암호화 비밀번호가 필요합니다"
       ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
