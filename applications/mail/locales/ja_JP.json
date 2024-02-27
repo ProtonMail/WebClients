@@ -892,6 +892,9 @@
       "Select all messages": [
         "すべてのメッセージを選択"
       ],
+      "Select country": [
+        "国を選択"
+      ],
       "Select date and time": [
         "日時を選択"
       ],
@@ -2062,6 +2065,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "連絡先の画像"
       ]
     },
     "Contact type label": {
@@ -4178,6 +4186,16 @@
         "宛先: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "クレジットカード不要"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "14日間無料のお試し"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } アプリ"
@@ -4352,6 +4370,9 @@
       ],
       "Search": [
         "検索"
+      ],
+      "Security Center": [
+        "セキュリティセンター"
       ]
     },
     "Hint": {
@@ -4827,6 +4848,12 @@
       "and": [
         "と"
       ],
+      "Applying actions to conversations": [
+        "会話に適用する操作"
+      ],
+      "Applying actions to messages": [
+        "メッセージに適用する操作"
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "このフォルダー内のすべてのメッセージを削除してよろしいですか?"
       ],
@@ -5040,6 +5067,9 @@
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
       ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "このラベル「${ nameDeleted }」が付いたメールは削除されず、各フォルダで見つけることができます。"
+      ],
       "embedded image": [
         "個の埋め込み画像"
       ],
@@ -5151,8 +5181,14 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
+      "Important note": [
+        "注意事項"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
+      ],
+      "Include Spam/Trash.": [
+        "迷惑メール・ごみ箱を含める。"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
@@ -5376,6 +5412,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
+      "Please use another browser or download the file.": [
+        "他のブラウザを使用するか、このファイルをダウンロードしてください。"
+      ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
       ],
@@ -5387,6 +5426,9 @@
       ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "この種類のファイルのプレビューは、現在このブラウザではサポートされていません。"
       ],
       "Preview for this file type is not supported": [
         "このファイル形式はサポートされておりません。"
@@ -5594,6 +5636,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "メールのドメイン認証に失敗しました。このメールは不適切に転送されたものか、なりすましの恐れがあります。"
+      ],
+      "This file is too large to preview": [
+        "このファイルは、非常に大きいためプレビューできません"
       ],
       "This invitation is saved in a disabled calendar.": [
         "招待は無効化されたカレンダーに保存されました。"
@@ -5959,6 +6004,9 @@
       ],
       "Optional": [
         "任意"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info on errors": {
@@ -6654,6 +6702,9 @@
       "Wonderful": [
         "すばらしい"
       ],
+      "Your alias": [
+        "あなたのエイリアス"
+      ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ]
@@ -7298,11 +7349,17 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "メールの自動転送"
+      ],
       "Block unsavory senders": [
         "不適切な送信者をブロックする"
       ],
       "For your eyes only": [
         "あなたの目だけに"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Gmail のメッセージを、あなたの受信トレイに転送します。"
       ],
       "Next": [
         "次へ"
@@ -7417,6 +7474,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } はこのキーを廃止しました。このキーは署名検証のみに使用できます。"
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "外部鍵は、keys.openpgp.org から自動的に取得されました。"
+      ],
+      "External key automatically fetched via WKD.": [
+        "外部鍵は、WKD から自動的に取得されました。"
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "この鍵は、この連絡先宛のメッセージの暗号化に使用されます"
       ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
@@ -7665,11 +7731,20 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "すべてのエイリアス"
+      ],
       "Create alias": [
+        "エイリアスを作成"
+      ],
+      "Create an alias": [
         "エイリアスを作成"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
+      ],
+      "New alias": [
+        "新しいエイリアス"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を開く"
@@ -8787,6 +8862,9 @@
       "Email settings": [
         "メールの設定"
       ],
+      "Enable 2FA": [
+        "2要素認証を有効にする"
+      ],
       "Enable message content search": [
         "メッセージ内容の検索を有効化"
       ],
@@ -8816,6 +8894,9 @@
       ],
       "Get advanced protection": [
         "高度な保護を入手"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } アプリを入手"
       ],
       "Groups": [
         "グループ"

@@ -4449,6 +4449,16 @@
         "Komu: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "Platební karta není vyžadována"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Vyzkoušet na 14 dní zdarma"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } aplikace"
@@ -9859,6 +9869,9 @@
       "Get advanced protection": [
         "Získat pokročilou ochranu"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Získat ${ appName[APP_NAME] } aplikace"
+      ],
       "Groups": [
         "Skupiny"
       ],
@@ -10340,6 +10353,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
