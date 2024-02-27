@@ -110,6 +110,9 @@
       "Delete vault": [
         "Eliminar o cofre"
       ],
+      "Deselect": [
+        "Cancelar a seleção"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -209,6 +212,9 @@
       "Pass for iOS": [
         "Pass para iOS"
       ],
+      "Pin item": [
+        "Fixar o item"
+      ],
       "Refresh the page": [
         "Actualizar a página"
       ],
@@ -274,6 +280,12 @@
       ],
       "Transfer ownership": [
         "Transferir a propriedade"
+      ],
+      "Trash": [
+        "Lixeira"
+      ],
+      "Unpin item": [
+        "Retirar a fixação do item"
       ],
       "Upgrade": [
         "Actualizar"
@@ -422,6 +434,9 @@
       ],
       "Unable to sync": [
         "Não é possível sincronizar."
+      ],
+      "Unknown error": [
+        "Erro desconhecido"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato de ficheiro ${ PASS_APP_NAME } não suportado"
@@ -573,6 +588,9 @@
       "Internet connection lost": [
         "Ligação à Internet perdida"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Ligação à Internet perdida. Verifique a ligação do seu dispositivo."
+      ],
       "Invitation sent": [
         "O convite foi enviado."
       ],
@@ -616,8 +634,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mais do que um gestor de palavras-passe, o ${ PASS_APP_NAME } protege a sua palavra-passe e o seu endereço de e-mail pessoal através de aliases de e-mail. Com a mesma tecnologia subjacente a ${ MAIL_APP_NAME }, os seus dados são encriptados de ponta a ponta e só podem ser acedidos por si."
       ],
+      "Never": [
+        "Nunca"
+      ],
       "None": [
         "Nenhum"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registado com sucesso. Utilize-o para desbloquear ${ PASS_APP_NAME }"
@@ -639,6 +663,9 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "A privacidade é uma grande preocupação para nós. Descubra por que ${ PASS_APP_NAME } é diferente."
+      ],
+      "Reconnect": [
+        "Voltar a ligar"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
@@ -748,6 +775,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Conta"
       ],
       "Alias": [
         "Alias"
@@ -1141,6 +1171,9 @@
       "Full Name": [
         "Nome completo"
       ],
+      "MM/YY": [
+        "MM/AA"
+      ],
       "Other": [
         "Outro"
       ],
@@ -1227,6 +1260,9 @@
       "Low disk space": [
         "Pouco espaço em disco"
       ],
+      "Members": [
+        "Membros"
+      ],
       "Our welcome gift to you": [
         "Aproveite o seu período de teste gratuito"
       ],
@@ -1251,6 +1287,9 @@
       "Update available": [
         "Actualização disponível"
       ],
+      "Vault": [
+        "Cofre"
+      ],
       "Vault shared with you": [
         "Cofre partilhado consigo"
       ],
@@ -1259,6 +1298,9 @@
       ],
       "Your vault is empty": [
         "O seu cofre está vazio."
+      ],
+      "Your welcome gift": [
+        "Aproveite o seu período de teste gratuito"
       ]
     },
     "Validation": {
@@ -1324,6 +1366,9 @@
       ],
       "No password manager selected": [
         "Nenhum gestor de palavras-passe selecionado"
+      ],
+      "No results": [
+        "Sem resultados"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos, pontos, hífenes e sublinhados"
