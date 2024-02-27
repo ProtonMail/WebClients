@@ -118,7 +118,7 @@ const TimeGrid = ({
 }: Props) => {
     const attendeeBusyTimeSlots = useCalendarSelector(selectAttendeesBusyTimeSlots);
     const timeGridRef = useRef<HTMLDivElement>(null);
-    const dayGridRef = useRef<HTMLDivElement>(null);
+    const dayGridRef = useRef<HTMLUListElement>(null);
     const nowRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -387,8 +387,8 @@ const TimeGrid = ({
                         )}
                     </div>
                     <div className="flex-1 relative">
-                        <div
-                            className="calendar-time-fullday h-custom"
+                        <ul
+                            className="calendar-time-fullday h-custom unstyled m-0"
                             style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
                             data-row="0"
                             ref={dayGridRef}
@@ -408,7 +408,7 @@ const TimeGrid = ({
                                 targetEventRef={targetEventRef}
                                 targetEventData={targetEventData}
                             />
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
