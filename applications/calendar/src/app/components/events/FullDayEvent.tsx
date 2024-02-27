@@ -108,7 +108,7 @@ const FullDayEvent = ({
     );
 
     return (
-        <div
+        <li
             style={style}
             className={clsx([className, isOutsideStart && 'isOutsideStart', isOutsideEnd && 'isOutsideEnd'])}
             data-ignore-create="1"
@@ -132,7 +132,7 @@ const FullDayEvent = ({
             >
                 {content}
             </div>
-        </div>
+        </li>
     );
 };
 
