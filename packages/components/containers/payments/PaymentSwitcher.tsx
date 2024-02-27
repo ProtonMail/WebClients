@@ -5,11 +5,12 @@ import {
     useChargebeeContext,
 } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
 
 import { useFlag } from '../../containers/unleash';
-import { useAuthentication, useGetUser } from '../../hooks';
+import { useAuthentication, useConfig, useGetUser } from '../../hooks';
 
 const forceEnableChargebeeInDev = (): boolean => {
     const isProd = isProduction(window.location.host);
@@ -29,11 +30,12 @@ const forceInHouseInDev = (): boolean => {
     return localStorage.getItem('inhouseForced') === 'true';
 };
 
-async function isChargebeeEnabledInner(
+export async function isChargebeeEnabledInner(
     UID: string | undefined,
     getUser: () => Promise<User>,
     chargebeeSignupsFlag: boolean,
-    chargebeeFreeToPaidUpgradeFlag: boolean
+    chargebeeFreeToPaidUpgradeFlag: boolean,
+    isAccountLite: boolean
 ) {
     if (forceEnableChargebeeInDev()) {
         return ChargebeeEnabled.CHARGEBEE_FORCED;
@@ -47,15 +49,25 @@ async function isChargebeeEnabledInner(
     if (UID) {
         const user = await getUser();
         const chargebeeUser = user?.ChargebeeUser;
-        if (chargebeeUser === ChargebeeEnabled.CHARGEBEE_ALLOWED && !chargebeeFreeToPaidUpgradeFlag) {
+        if (user?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED) {
+            return ChargebeeEnabled.CHARGEBEE_FORCED;
+        }
+
+        const isInhouseForced =
+            user?.ChargebeeUser === ChargebeeEnabled.INHOUSE_FORCED ||
+            isAccountLite ||
+            (!chargebeeFreeToPaidUpgradeFlag && chargebeeUser === ChargebeeEnabled.CHARGEBEE_ALLOWED);
+
+        if (isInhouseForced) {
             return ChargebeeEnabled.INHOUSE_FORCED;
         }
 
+        // Make sure that the property exists before returning it
         return user?.ChargebeeUser ?? ChargebeeEnabled.INHOUSE_FORCED;
     }
 
     // signups
-    if (!chargebeeSignupsFlag) {
+    if (!chargebeeSignupsFlag || isAccountLite) {
         return ChargebeeEnabled.INHOUSE_FORCED;
     }
 
@@ -65,9 +77,11 @@ async function isChargebeeEnabledInner(
 export const useIsChargebeeEnabled = () => {
     const chargebeeSignupsFlag = useFlag('ChargebeeSignups');
     const chargebeeFreeToPaidUpgradeFlag = useFlag('ChargebeeFreeToPaid');
+    const { APP_NAME } = useConfig();
+    const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
 
     return (UID: string | undefined, getUser: () => Promise<User>) =>
-        isChargebeeEnabledInner(UID, getUser, chargebeeSignupsFlag, chargebeeFreeToPaidUpgradeFlag);
+        isChargebeeEnabledInner(UID, getUser, chargebeeSignupsFlag, chargebeeFreeToPaidUpgradeFlag, isAccountLite);
 };
 
 /**
@@ -80,6 +94,8 @@ export const useChargebeeFeature = () => {
     const chargebeeSignupsFlag = useFlag('ChargebeeSignups');
     const chargebeeFreeToPaidUpgradeFlag = useFlag('ChargebeeFreeToPaid');
     const [chargebeeEnabled, setChargebeeEnabled] = useState(ChargebeeEnabled.INHOUSE_FORCED);
+    const { APP_NAME } = useConfig();
+    const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
 
     useEffect(() => {
         async function run() {
@@ -87,7 +103,8 @@ export const useChargebeeFeature = () => {
                 UID,
                 getUser,
                 chargebeeSignupsFlag,
-                chargebeeFreeToPaidUpgradeFlag
+                chargebeeFreeToPaidUpgradeFlag,
+                isAccountLite
             );
             setChargebeeEnabled(chargebeeEnabled);
             setLoaded(true);
