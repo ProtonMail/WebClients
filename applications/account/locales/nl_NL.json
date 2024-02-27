@@ -5116,6 +5116,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } in de App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } in de Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME }-app"
       ],
@@ -6421,6 +6427,9 @@
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logs."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Snel en gericht. E-mail en agenda, direct op uw bureaublad."
+      ],
       "Fill in user details": [
         "Vul gebruikersgegevens in"
       ],
@@ -7172,7 +7181,7 @@
         "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "De ${ MAIL_APP_NAME } Export Tool stelt u in staat om ontsleutelde e-mail van uw ${ MAIL_APP_NAME } account te exporteren naar uw device . U kunt de berichten daarna bekijken of importeren in een ander e-mail account of email client."
+        "De ${ MAIL_APP_NAME }-Export Tool stelt u in staat om ontsleutelde e-mail van uw ${ MAIL_APP_NAME }-account te exporteren naar uw device. U kunt de berichten daarna bekijken of importeren in een ander e-mailaccount of e-mailclient."
       ],
       "The calendar will be removed from your account.": [
         "De agenda zal verwijderd worden van uw account."
@@ -7878,7 +7887,7 @@
         "Voeg een nieuwe gebruiker toe aan uw organisatie en maak er een adres voor aan."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Om veiligheidsredenen moeten wij verifiëren dat u de eigenaar bent van ${ domainName }. Voeg a.u.b. de volgende TXT record toe in uw DNS console (te vinden op het platform waar u het aangepaste domein heeft gekocht). U vindt een voorbeeld en enkele handige tips ${ kbLink }."
+        "Om veiligheidsredenen moeten wij verifiëren dat u de eigenaar bent van ${ domainName }. Voeg het volgende TXT-record toe in uw DNS-console (te vinden op het platform waar u het aangepaste domein heeft gekocht). U vindt een voorbeeld en enkele handige tips ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -10213,6 +10222,9 @@
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
+      "Unlimited vaults": [
+        "Onbeperkt aantal kluizen"
+      ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
@@ -10470,7 +10482,7 @@
         "Hiermee kunt u automatische antwoorden instellen voor uw ontvangen berichten"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "E-mails verzonden naar uw ${ MAIL_APP_NAME } account kunt u automatisch doorsturen naar elk ander email adres."
+        "E-mails verzonden naar uw ${ MAIL_APP_NAME }-account kunt u automatisch doorsturen naar elk ander e-mailadres."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kunt u een hierin gespecialiseerde e-mailserviceprovider gebruiken."
@@ -10517,9 +10529,6 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
-      ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Net als een map is een kluis een handige manier om uw items te ordenen. Het delen van kluizen met vrienden en familie is in de maak."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Vergrendel uw bedrijfsbronnen van het openbare internet en maak ze alleen toegankelijk via uw private gateways"
@@ -11026,7 +11035,7 @@
         "Sturen aan alle"
       ],
       "Setup incomplete": [
-        "Setup niet voltooid"
+        "Set-up niet voltooid"
       ],
       "Standard server configs": [
         "Standaard server configuraties"
@@ -11314,7 +11323,7 @@
         "Alles van ${ planTitle }, plus..."
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium password manager!"
+        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium wachtwoord manager!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
         "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium VPN service!"
@@ -11368,7 +11377,7 @@
         "Sluit u aan bij meer dan 100 miljoen anderen die ${ BRAND_NAME } kozen om veilig online te zijn"
       ],
       "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Sluit je aan bij meer dan 50 000 organisaties die ${ BRAND_NAME } vertrouwen."
+        "Sluit u aan bij meer dan 50 000 organisaties die ${ BRAND_NAME } vertrouwen."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } opstarten"
@@ -11494,6 +11503,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Factuur Land"
+      ],
       "Card number": [
         "Kaartnummer"
       ],
@@ -11518,7 +11530,7 @@
         "Er ging iets mis. Probeer het later nog eens."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Wij zijn niet in staat om uw betaalmethode te authenticeren. Kies a.u.b. een andere betaalmethode of probeer het opnieuw."
+        "Wij zijn niet in staat om uw betaalmethode te authenticeren. Kies een andere betaalmethode of probeer het opnieuw."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
@@ -11532,7 +11544,7 @@
         "Sturen aan alle"
       ],
       "Setup incomplete": [
-        "Setup niet voltooid"
+        "Set-up niet voltooid"
       ]
     },
     "Personal calendar section description": {
@@ -11943,6 +11955,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
       ],
       "You can now reset your password": [
         "U kunt uw wachtwoord nu opnieuw instellen"
@@ -12572,14 +12587,29 @@
       "${ app } storage": [
         "${ app } opslagruimte"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% vol"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
+      ],
+      "contact your administrator": [
+        "neem contact op met uw beheerder"
       ],
       "For all ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
       ],
       "Get more storage": [
         "Krijg meer opslagruimte"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Upgrade uw abonnement om uw account zonder onderbrekingen te blijven gebruiken."
@@ -12588,8 +12618,26 @@
         "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
         "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
       ],
+      "Your ${ appStorage } is almost full": [
+        "Uw ${ appStorage } is bijna vol"
+      ],
+      "Your ${ appStorage } is full": [
+        "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Uw ${ storage } is vol. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Uw opslag is ${ percentage }% vol. ${ cta }."
+      ],
       "Your storage is full": [
         "Uw opslagruimte is vol"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Uw opslag is vol. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13287,6 +13335,9 @@
       "Are you sure you want to close?": [
         "Weet u zeker dat u wil afsluiten?"
       ],
+      "Are you sure?": [
+        "Weet u het zeker?"
+      ],
       "Authentication security": [
         "Authenticatiebeveiliging"
       ],
@@ -13517,6 +13568,9 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
       ],
+      "Download the desktop app": [
+        "Download de desktop-app"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
@@ -13643,6 +13697,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
+      ],
+      "Get the apps": [
+        "Verkrijg de apps"
       ],
       "Gift": [
         "Geschenk"
@@ -14482,6 +14539,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"

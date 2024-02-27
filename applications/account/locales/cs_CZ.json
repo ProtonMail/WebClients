@@ -6229,6 +6229,9 @@
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Opravdu chcete poskytnout oprávnění správce tomuto uživateli?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Jste si jisti, že chcete trvale odstranit všechny záznamy?"
       ],
@@ -10855,9 +10858,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Stejně jako složka je i trezor praktickým způsobem organizace položek. Sdílení trezorů s přáteli a rodinou se připravuje."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Oddělte své firemní zdroje od veřejného internetu a zpřístupněte je pouze přes své soukromé brány."
       ],
@@ -10938,6 +10938,9 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Úložný prostor je sdílen napříč ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } a ${ PASS_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }.\nSprávci mohou uživatelům v organizaci přidělovat různé objemy úložišť"
@@ -13302,6 +13305,9 @@
       "Address updated": [
         "Adresa aktualizována"
       ],
+      "Administrator privileges restored": [
+        "Oprávnění správce obnovena"
+      ],
       "Auto-reply disabled": [
         "Automatická odpověď vypnuta"
       ],
@@ -15070,6 +15076,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",

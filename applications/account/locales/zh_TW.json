@@ -50,6 +50,9 @@
       "activate": [
         "啟用"
       ],
+      "Activate": [
+        "啟用"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "啟用 ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "取消訂購授權"
+      ],
+      "Change keys": [
+        "變更金鑰"
       ],
       "Change mailbox password": [
         "變更郵箱密碼"
@@ -1317,6 +1323,9 @@
       ],
       "Remove ${ PASS_APP_NAME }": [
         "移除 ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "每月多 ${ priceNoSuffix }，就可以訂閱15個月的 **加密密碼管理器** 。"
       ]
     },
     "bf2023: Deal details": {
@@ -1403,6 +1412,12 @@
       ],
       "the first month": [
         "第一個月"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "${ discountedPrice } 特殊折扣將套用於前 ${ discountedMonths } 。其後將於每月自動以 ${ nextPrice } 續約 ${ nextMonths } 。您可以在任何時候取消。"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
     },
     "bf2023: Title": {
@@ -3217,6 +3232,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "此${ eventTitle }的事件已被取消。"
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
       ]
@@ -3416,6 +3434,9 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "確認電子郵件將寄至${ boldForwardeeEmail }"
       ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "新的加密金鑰將替${ boldForwarderEmail }生成。"
+      ],
       "Automatically forward emails to another email address.": [
         "自動轉寄電子郵件到電郵地址。"
       ],
@@ -3485,6 +3506,9 @@
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "為寄件者位址的端對端加密將重新啟用。"
+      ],
+      "Forwarding to the destination address will end.": [
+        "轉寄至目的地址將停止"
       ]
     },
     "email_forwarding_2023: Status": {
@@ -5010,6 +5034,11 @@
         "非常小"
       ]
     },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }桌面應用程式"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(每月 1 封電郵)"
@@ -5671,6 +5700,9 @@
       "${ n } address": [
         "${ n } 個電郵位址"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: 請求收件者忽略信件的授權狀態。通常僅用於除錯或測試。"
+      ],
       "${ number } city": [
         "${ number } 座城市"
       ],
@@ -5694,6 +5726,12 @@
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter }伺服器正在設定。通常需要接近${ provisioningDuration }。"
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: 請求收件者將未授權的信件標示為垃圾郵件或將其隔離。"
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: 請求收件者拒收未授權的信件。"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 以上"
@@ -5947,6 +5985,9 @@
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "您真的要將管理權限授與此使用者嗎？"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "您確定要永久刪除您的所有記錄嗎？"
       ],
@@ -6003,6 +6044,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
+      ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "在您開始在${ MAIL_APP_NAME }接收自訂網域的信件之前，您需要添加以下兩條 MX 紀錄到您的DNS 中(通常由您的網域註冊商提供)。你可以在以下連結找到一些有用的範例 ${ kbLink }。"
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需創建加密金鑰，才可用來傳送和接收電郵。"
@@ -6100,6 +6144,9 @@
       "Credits earned": [
         "獲得餘額了"
       ],
+      "Current plan": [
+        "當前方案"
+      ],
       "Custom": [
         "自訂"
       ],
@@ -6148,6 +6195,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM 允許 ${ BRAND_NAME } 對電子郵件簽章，可保護郵件不被竄改。確保您已添加下列 CNAME 記錄在您的 DNS 中（通常由您的網域註冊商提供）。"
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DAMRC 檢查信件的 SPF 與 DKIM 來確認郵件來自何方，這可以阻止攻擊者使用其他網域的 SPF 與 DKIM 來冒充您的身份。其中的 \"p=\" (policy)可以指定收件伺服器如何處理不合規的電子郵件，通常我們建議大多數網域使用\"p=quarantine\"，即隔離不合規的信件。確保您有在您的 DNS 中 (通常由網域註冊商提供) 添加以下的 TXT 紀錄。"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
       ],
@@ -6168,6 +6221,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "什麼都看不到嗎？記得關閉彈出視窗攔截程式。"
+      ],
+      "Downgrade": [
+        "降級"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
@@ -6192,6 +6248,9 @@
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "每個網域僅能有一條 SPF (TXT)紀錄，若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
       ],
       "Edit email address": [
         "編輯電子郵件位址"
@@ -6365,7 +6424,7 @@
         "若您遺失您的密碼並需要重設您的帳號，請${ boldImperative }您備妥${ boldAccountRecovery }。"
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "若您遺失您的密碼並需要重設您的帳號，請${ boldImperative }您同時備妥${ boldAccountAndRecovery }，否則您或會無法存取您的任何電子郵件、聯絡人或檔案。"
+        "若您遺失您的密碼並需要重設您的帳號，${ boldImperative }即${ boldAccountAndRecovery }，否則您可能會無法存取您的任何電子郵件、聯絡人或檔案。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "萬一您的兩步驟驗證裝置遺失，這些代碼可代替 6 位數的兩步驟驗證碼用來登入您的帳號。每個代碼只能使用一次。"
@@ -6409,6 +6468,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "重要事項：若您的 DNS 不允許 CNAME 以「.」(英文句點) 結尾，您可以移除這個句點。"
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要：請確認你已將復原代碼儲存到其它地方。否則在你遺失兩步驟驗證裝置時，你將會永久失去你的帳號"
       ],
@@ -6423,6 +6485,9 @@
       ],
       "inactive": [
         "未使用"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "透過驗證您的電子郵件位址來增加您帳號的安全性。"
@@ -6464,7 +6529,7 @@
         "您的某些資料似乎已被加密和鎖定。"
       ],
       "it’s imperative": [
-        "有件至關重要的事"
+        "有件事尤為重要"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "我在用 @ProtonMail，覺得您也會喜歡的。它是一個安全的電子郵件服務，可以保護到您的隱私。用我的推介連結註冊的話，還可以免費獲得 1 個月的尊享功能哦：${ referrerLink }"
@@ -6537,6 +6602,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "紀錄檔包含所有使用 ${ BRAND_NAME_TWO } 憑證的 ${ BRAND_NAME } 服務的驗證嘗試。"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "若無正確設置 SPF/DKIM/DMARC，各大電子郵件服務可能會拒收或過濾您的電子郵件。"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "若無正確設置 SPF/DKIM/DMARC，各大電子郵件服務可能會拒收或過濾您的電子郵件"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
@@ -6958,6 +7029,9 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "因為近期的移除，部份可用的伺服器僅能在特定國家使用"
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF 聲明了誰可以以此網域的名義寄信。確保您添加下列的 TXT 記錄到您的 DNS 中 (通常由您的網域註冊商提供)。"
+      ],
       "Stay tuned for future promotions.": [
         "持續關注未來的促銷活動。"
       ],
@@ -7351,6 +7425,9 @@
       "Version history": [
         "版本歷史紀錄"
       ],
+      "View, download, and manage your invoices.": [
+        "檢視、下載與管理您的收據。"
+      ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
@@ -7488,6 +7565,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "你也可以將匯入的行事曆與現有的 ${ BRAND_NAME } 行事曆合併。"
@@ -7784,6 +7864,9 @@
       ],
       "Credit": [
         "儲值"
+      ],
+      "Currency conversion": [
+        "貨幣轉換"
       ],
       "Donation": [
         "捐款"
@@ -8139,6 +8222,9 @@
       ],
       "Addresses": [
         "電郵位址"
+      ],
+      "Administrators": [
+        "管理員"
       ],
       "ALL": [
         "全部"
@@ -9597,6 +9683,9 @@
       "Back to inbox": [
         "返回收件匣"
       ],
+      "Back to vaults": [
+        "返回保管庫"
+      ],
       "Block": [
         "攔截"
       ],
@@ -9605,6 +9694,9 @@
       ],
       "Inbox": [
         "收件匣"
+      ],
+      "Pass vaults": [
+        "Pass保管庫"
       ],
       "Spam": [
         "垃圾郵件"
@@ -9772,6 +9864,9 @@
       "Autofill credit cards (coming soon)": [
         "自動填入信用卡(近期將到)"
       ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
+      ],
       "Available on all platforms": [
         "適用於所有平台"
       ],
@@ -9907,6 +10002,9 @@
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
       ],
+      "Require 2FA for organization": [
+        "要求組織雙重驗證"
+      ],
       "Router support": [
         "路由器支援"
       ],
@@ -9939,6 +10037,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "單一登入整合 (即將到來)"
       ],
       "Start protecting your organization": [
         "開始保護您的組織"
@@ -9981,6 +10082,9 @@
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "無限共享保管庫與存取權限"
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
@@ -10278,9 +10382,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "如同資料夾，保險櫃是整理您項目的便捷方法。與朋友及家人分享保險櫃正在開發中。"
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "關閉公共網路，改為只能透過私有閘道器取用公司資源"
       ],
@@ -10361,6 +10462,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "帳戶空間將在每位使用者的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }與 ${ PASS_APP_NAME } 之間共用。"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
@@ -10885,6 +10989,9 @@
       "Set up your organization": [
         "設定您的組織"
       ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "開始添加使用者以給予${ PASS_APP_NAME }存取權。"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "開始使用 ${ PASS_APP_NAME }"
       ]
@@ -10920,6 +11027,9 @@
       "Or ${ createANewAccount }": [
         "或${ createANewAccount }"
       ],
+      "Request trial": [
+        "要求試用"
+      ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
       ],
@@ -10953,6 +11063,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "以您的${ BRAND_NAME }帳號繼續"
+      ],
+      "Let's talk": [
+        "來談談"
       ],
       "Limited time offer": [
         "限時促銷"
@@ -10989,6 +11102,12 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }每月"
       ],
+      "/month /user": [
+        "/月 /使用者"
+      ],
+      "/month /user, billed annually": [
+        "/月 /使用者 每年付款"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "全部付費版${ BRAND_NAME }服務。"
       ],
@@ -11000,6 +11119,9 @@
       ],
       "Creating your account": [
         "創建您的帳號"
+      ],
+      "Current plan": [
+        "目前方案"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "探索發掘 ${ PASS_APP_NAME },${ br }全新推出的加密安全密碼管理程式"
@@ -11022,6 +11144,9 @@
       "End-to-end encryption": [
         "端對端加密"
       ],
+      "Everything from ${ planTitle }, plus...": [
+        "全部${ planTitle }，附加..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "**每月${ relativePrice }及更多**，讓您存取付費版密碼管理器${ BRAND_NAME }功能!"
       ],
@@ -11039,6 +11164,9 @@
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "盡快為${ browserName }取得${ appName }。"
+      ],
+      "Get in touch with our sales team": [
+        "與銷售團隊聯繫"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email 別名保護您免於資料外洩的威脅"
@@ -11063,6 +11191,9 @@
       ],
       "One easy subscription.": [
         "一個簡單的訂購授權。"
+      ],
+      "Open source and audited": [
+        "開放原始碼，並經過審核"
       ],
       "Open-source and audited": [
         "經過審核開放原始碼"
@@ -11148,9 +11279,29 @@
         "安全您的帳號"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "商業使用"
+      ],
+      "For invididuals": [
+        "個人使用"
+      ]
+    },
     "passwordless": {
+      "Organization key does not exist.": [
+        "組織金鑰不存在。"
+      ],
+      "Organization key restored": [
+        "組織金鑰已還原"
+      ],
+      "Organization key updated": [
+        "組織金鑰更新"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "權限被拒，系統管理員權限受限。"
+      ],
+      "Reset organization key": [
+        "重設組織金鑰"
       ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
@@ -11164,12 +11315,32 @@
         "加入信用卡/扣帳卡"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "計費國家"
+      ],
+      "Card number": [
+        "卡號"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/YY"
+      ],
+      "Timeout exceeded": [
+        "已經逾時"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "卡號無效"
       ],
       "Invalid expiration date": [
         "到期日無效"
+      ],
+      "Invalid securiry code": [
+        "安全碼無效"
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
@@ -12211,6 +12382,9 @@
       ]
     },
     "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最多至 ${ totalStorageSize } 儲存空間"
+      ],
       "Up to ${ totalStorageSize } Mail storage": [
         "最多至 ${ totalStorageSize } 郵件儲存空間"
       ]
@@ -12228,6 +12402,9 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "若降級，您將失去以下好處。您確定您想要繼續嗎？"
       ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "請考慮升級您的方案來避免您的帳戶被暫停。"
+      ],
       "contact your administrator": [
         "與您的管理員聯絡"
       ],
@@ -12236,6 +12413,12 @@
       ],
       "Get more storage": [
         "取得更多儲存空間"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "要繼續上傳或同步檔案，請釋放一些空間或${ upgrade }"
       ],
       "upgrade for more storage": [
         "升級以增加儲存"
@@ -12252,6 +12435,9 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
+      ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的${ storage }已滿${ cta }。"
       ],
@@ -12266,6 +12452,12 @@
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "您將失去存取${ gb }儲存和優先支援。"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "您將喪失以下功能：儲存空間、電子郵件地址、別名、行事曆與我們的全力支援。"
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
       ]
     },
     "Subscribe to calendar modal": {
@@ -12429,6 +12621,9 @@
       ],
       "Address updated": [
         "已更新電子郵件信箱"
+      ],
+      "Administrator privileges restored": [
+        "復原管理員許可權"
       ],
       "Auto-reply disabled": [
         "自動回覆已停用"
@@ -13013,6 +13208,9 @@
       "Composing": [
         "撰寫郵件"
       ],
+      "Confirm": [
+        "確認"
+      ],
       "Confirm address": [
         "確認電郵位址"
       ],
@@ -13426,6 +13624,9 @@
       ],
       "Organization filters": [
         "機構過濾系統"
+      ],
+      "Organization key": [
+        "組織金鑰"
       ],
       "Organization name": [
         "組織名稱"

@@ -5106,9 +5106,26 @@
         "Mungil"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "aplikasi web"
+      ]
+    },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "Back to sign in": [
+        "Kembali ke layar masuk"
+      ],
+      "Keep using the desktop app": [
+        "Tetap gunakan aplikasi desktop"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Buka ${ MAIL_APP_NAME } di ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Masa uji coba aplikasi desktop Anda telah berakhir"
       ]
     },
     "Frequency of news": {
@@ -5132,6 +5149,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } di App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } di Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "Aplikasi ${ MAIL_APP_NAME }"
       ],
@@ -6425,6 +6448,9 @@
       ],
       "Failed to fetch logs.": [
         "Log gagal diperoleh."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Cepat dan terfokus. Email dan kalender, tersedia langsung pada desktop Anda."
       ],
       "Fill in user details": [
         "Isi rincian pengguna"
@@ -9217,6 +9243,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Pembaruan produk ${ app } dan ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Pembaruan produk ${ app }"
       ],
@@ -9979,6 +10008,9 @@
       "1 user": [
         "1 pengguna"
       ],
+      "24/7 account management support": [
+        "Layanan pengelolaan akun 24/7"
+      ],
       "24/7 support": [
         "Dukungan 24/7"
       ],
@@ -9990,6 +10022,9 @@
       ],
       "Admin console": [
         "Konsol admin"
+      ],
+      "Administration Panel": [
+        "Panel Administrasi"
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
@@ -10092,6 +10127,9 @@
       ],
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Pengelolaan grup (segera hadir)"
       ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
@@ -10228,6 +10266,12 @@
       "Unlimited shared vaults with access permissions": [
         "Brankas terbagi yang tak terbatas dengan perizinan akses"
       ],
+      "Unlimited vault sharing": [
+        "Tanpa batasan jumlah pembagian brankas"
+      ],
+      "Unlimited vaults": [
+        "Tanpa batasan jumlah brankas"
+      ],
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
       ],
@@ -10302,6 +10346,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Keamanan jaringan tingkat lanjut dan pengelolaan akses dengan Gateway terdedikasi yang aman"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Perlindungan tingkat lanjut untuk tim yang melampaui standar industri."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
@@ -10530,8 +10577,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Brankas, seperti folder, merupakan cara yang mudah untuk mengatur item Anda. Fitur pembagian brankas dengan teman dan keluarga saat ini sedang dikembangkan."
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Layaknya folder, brankas merupakan cara yang praktis untuk mengelola item Anda"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Lindungi sumber daya perusahaan Anda dari internet umum dan buat mereka hanya dapat diakses melalui gateway pribadi Anda"
@@ -13665,6 +13712,12 @@
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Unduh aplikasi desktop"
+      ],
+      "Download the mobile apps": [
+        "Unduh aplikasi mobile"
+      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -13793,6 +13846,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
+      ],
+      "Get the apps": [
+        "Dapatkan aplikasinya"
       ],
       "Gift": [
         "Hadiah"
@@ -14686,6 +14742,14 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Paket langganan diperbarui secara otomatis setiap 1 bulan. Anda akan menerima tagihan berikutnya dalam 1 bulan ke depan."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ]
     },
     "vpn_2step: billing": {

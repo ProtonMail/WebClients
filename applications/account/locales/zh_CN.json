@@ -607,7 +607,7 @@
         "预览"
       ],
       "Previous": [
-        "前一页"
+        "上一页"
       ],
       "Previous month": [
         "上个月"
@@ -4548,14 +4548,44 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } 移动应用"
+      ],
+      "account logins": [
+        "注册邮箱"
+      ],
+      "Auto-forward Gmail": [
+        "自动转发 Gmail 邮件"
+      ],
       "auto-forwarding": [
         "自动转发"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "将各类网络账号的${ strongText }改为 ${ BRAND_NAME } 地址"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "了解我们的${ strongText }如何为您提供防护"
+      ],
+      "Discover privacy features": [
+        "探索隐私保护功能"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "在 Android 或 iOS 系统中安装 ${ strongText }"
+      ],
+      "Get the App": [
+        "下载移动应用"
+      ],
+      "privacy features": [
+        "隐私保护功能"
       ],
       "Set up ${ strongText } from Gmail": [
         "设置${ strongText } Gmail 邮件"
       ],
       "This feature is currently unavailable": [
         "此功能当前不可用。"
+      ],
+      "Update your logins": [
+        "更新注册邮箱"
       ]
     },
     "Gmail forwarding": {
@@ -10079,6 +10109,9 @@
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
         "${ PASS_APP_NAME } 采用严格的端到端加密保护您的密码与身份安全。您当前的账户等级已包含所有 ${ PASS_APP_NAME_2 } 高级功能，无需额外付费。"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "超越行业标准的高级保护功能"
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "继续操作即表示您同意我们的${ termsAndConditions }"
       ],
@@ -11096,8 +11129,14 @@
       "Get more storage": [
         "获得更多存储空间"
       ],
+      "Try out ${ app } to its full potential": [
+        "尽情发挥 ${ app } 的完整潜能"
+      ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "升级您的套餐以继续无中断地使用您的账户"
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "升级账户即可进一步扩大存储空间。"
       ],
       "Your storage is full": [
         "你的存储空间满了"
@@ -11218,7 +11257,7 @@
     },
     "Success": {
       "Account deleted. Signing out...": [
-        "账户已删除。登出中..."
+        "账户已删除，正在退出..."
       ],
       "Address added": [
         "地址已添加"
@@ -12149,7 +12188,7 @@
         "网络错误"
       ],
       "Next": [
-        "后一页"
+        "下一页"
       ],
       "Night theme": [
         "夜间模式"
@@ -12209,7 +12248,7 @@
         "预览"
       ],
       "Previous": [
-        "前一页"
+        "上一页"
       ],
       "Privacy and data collection": [
         "隐私与数据收集"
@@ -12477,6 +12516,9 @@
       ],
       "Your SMTP token": [
         "您的 SMTP 专用密码"
+      ],
+      "Your storage": [
+        "您的存储空间"
       ],
       "Your subscriptions": [
         "您的账户等级"
