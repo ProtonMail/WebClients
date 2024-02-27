@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate": [
+        "啟用"
+      ],
       "activate": [
         "啟用"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "取消訂購授權"
+      ],
+      "Change keys": [
+        "變更金鑰"
       ],
       "Change mailbox password": [
         "變更郵箱密碼"
@@ -687,6 +693,9 @@
       ],
       "Remove ${ PASS_APP_NAME }": [
         "移除 ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "每月多 ${ priceNoSuffix }，就可以訂閱15個月的 **加密密碼管理器** 。"
       ]
     },
     "bf2023: Deal details": {
@@ -759,6 +768,12 @@
       ],
       "the first month": [
         "第一個月"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "${ discountedPrice } 特殊折扣將套用於前 ${ discountedMonths } 。其後將於每月自動以 ${ nextPrice } 續約 ${ nextMonths } 。您可以在任何時候取消。"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
     },
     "bf2023: Title": {
@@ -2849,8 +2864,14 @@
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "您真的要將管理權限授與此使用者嗎？"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "您確定要移除這位使用者的管理權限？"
+      ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "您確定要移除網域${ boldDomain }?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "請聯絡貴組織的的管理員以設定閘道。"
@@ -2933,6 +2954,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
       ],
+      "Current plan": [
+        "當前方案"
+      ],
       "Custom email domains": [
         "自訂電郵網域"
       ],
@@ -2960,6 +2984,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
       ],
+      "Domain ownership failed verification.": [
+        "網域擁有全驗證失效。"
+      ],
       "Domain ownership not verified.": [
         "網域所有權未驗證。"
       ],
@@ -2977,6 +3004,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "什麼都看不到嗎？記得關閉彈出視窗攔截程式。"
+      ],
+      "Downgrade": [
+        "降級"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
@@ -3119,6 +3149,9 @@
       "inactive": [
         "未使用"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "透過驗證您的電子郵件位址來增加您帳號的安全性。"
       ],
@@ -3220,6 +3253,9 @@
       ],
       "old password": [
         "舊密碼"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "當於貴組織單一登入關閉:"
       ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
@@ -3403,6 +3439,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
+      ],
+      "Single sign-on removed": [
+        "單一登入移除"
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "因為近期的移除，部份可用的伺服器僅能在特定國家使用"
@@ -3641,6 +3680,9 @@
       "Version ${ version }": [
         "版本 ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "檢視、下載與管理您的收據。"
+      ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
@@ -3742,6 +3784,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
@@ -3916,6 +3961,9 @@
       "Credit": [
         "儲值"
       ],
+      "Currency conversion": [
+        "貨幣轉換"
+      ],
       "Donation": [
         "捐款"
       ],
@@ -3970,6 +4018,9 @@
       ],
       "Addresses": [
         "電郵位址"
+      ],
+      "Administrators": [
+        "管理員"
       ],
       "Allow recovery by email": [
         "允許透過電郵復原"
@@ -4737,6 +4788,9 @@
       "Autofill credit cards (coming soon)": [
         "自動填入信用卡(近期將到)"
       ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
+      ],
       "Available on all platforms": [
         "適用於所有平台"
       ],
@@ -4872,6 +4926,9 @@
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
       ],
+      "Require 2FA for organization": [
+        "要求組織雙重驗證"
+      ],
       "Router support": [
         "路由器支援"
       ],
@@ -4904,6 +4961,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "單一登入整合 (即將到來)"
       ],
       "Start protecting your organization": [
         "開始保護您的組織"
@@ -4946,6 +5006,9 @@
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "無限共享保管庫與存取權限"
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
@@ -5195,9 +5258,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "如同資料夾，保險櫃是整理您項目的便捷方法。與朋友及家人分享保險櫃正在開發中。"
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "關閉公共網路，改為只能透過私有閘道器取用公司資源"
       ],
@@ -5278,6 +5338,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "帳戶空間將在每位使用者的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }與 ${ PASS_APP_NAME } 之間共用。"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
@@ -5488,6 +5551,9 @@
       "Set up your organization": [
         "設定您的組織"
       ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "開始添加使用者以給予${ PASS_APP_NAME }存取權。"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "開始使用 ${ PASS_APP_NAME }"
       ]
@@ -5504,6 +5570,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "來談談"
+      ],
       "Limited time offer": [
         "限時促銷"
       ],
@@ -5515,8 +5584,17 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }每月"
       ],
+      "/month /user": [
+        "/月 /使用者"
+      ],
+      "/month /user, billed annually": [
+        "/月 /使用者 每年付款"
+      ],
       "Creating your account": [
         "創建您的帳號"
+      ],
+      "Current plan": [
+        "目前方案"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "**每月${ relativePrice }及更多**，讓您存取付費版密碼管理器${ BRAND_NAME }功能!"
@@ -5529,6 +5607,9 @@
       ],
       "Free forever": [
         "永久免費"
+      ],
+      "Get in touch with our sales team": [
+        "與銷售團隊聯繫"
       ],
       "Includes:": [
         "包含:"
@@ -5561,8 +5642,20 @@
       ]
     },
     "passwordless": {
+      "Organization key does not exist.": [
+        "組織金鑰不存在。"
+      ],
+      "Organization key restored": [
+        "組織金鑰已還原"
+      ],
+      "Organization key updated": [
+        "組織金鑰更新"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "權限被拒，系統管理員權限受限。"
+      ],
+      "Reset organization key": [
+        "重設組織金鑰"
       ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
@@ -5576,12 +5669,32 @@
         "加入信用卡/扣帳卡"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "計費國家"
+      ],
+      "Card number": [
+        "卡號"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/YY"
+      ],
+      "Timeout exceeded": [
+        "已經逾時"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "卡號無效"
       ],
       "Invalid expiration date": [
         "到期日無效"
+      ],
+      "Invalid securiry code": [
+        "安全碼無效"
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
@@ -6317,6 +6430,9 @@
       ]
     },
     "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最多至 ${ totalStorageSize } 儲存空間"
+      ],
       "Up to ${ totalStorageSize } Mail storage": [
         "最多至 ${ totalStorageSize } 郵件儲存空間"
       ]
@@ -6337,6 +6453,12 @@
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "要繼續上傳或同步檔案，請釋放一些空間或${ upgrade }"
+      ],
       "upgrade for more storage": [
         "升級以增加儲存"
       ],
@@ -6345,6 +6467,9 @@
       ],
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的${ storage }已滿${ cta }。"
@@ -6360,6 +6485,12 @@
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "您將失去存取${ gb }儲存和優先支援。"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "您將喪失以下功能：儲存空間、電子郵件地址、別名、行事曆與我們的全力支援。"
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
       ]
     },
     "Subscription": {
@@ -6502,6 +6633,9 @@
       ],
       "Address added": [
         "電郵位址已加入"
+      ],
+      "Administrator privileges restored": [
+        "復原管理員許可權"
       ],
       "Bug reported": [
         "錯誤已回報"
@@ -6829,6 +6963,9 @@
       ],
       "Change role": [
         "變更角色"
+      ],
+      "Confirm": [
+        "確認"
       ],
       "Confirm address": [
         "確認電郵位址"
