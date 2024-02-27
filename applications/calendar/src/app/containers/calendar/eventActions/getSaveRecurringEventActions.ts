@@ -10,7 +10,8 @@ import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calend
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getHasUpdatedInviteData, getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
-import { getHasModifiedNotifications, getSequence, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { getHasModifiedNotifications, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -48,6 +49,7 @@ import {
     getCorrectedSendInviteData,
     getHasMergeUpdate,
     getUpdateInviteOperationWithIntermediateEvent,
+    getUpdateMainSeriesMergeVevent,
     getUpdateSingleEditMergeVevent,
 } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
@@ -395,8 +397,18 @@ const getSaveRecurringEventActions = async ({
 
     if (type === RECURRING_TYPES.ALL) {
         const isSwitchCalendar = originalCalendarID !== newCalendarID;
+
+        const organizerEditsNonBreakingSingleEdit =
+            isSingleEdit && !isBreakingChange && !isAttendee && getHasAttendees(originalVeventComponent);
+        const updateMainSeriesMergeVevent = getUpdateMainSeriesMergeVevent({
+            newVeventComponent,
+            oldVeventComponent,
+        });
+        const mergedNewRecurrentVevent = organizerEditsNonBreakingSingleEdit
+            ? { ...originalVeventComponent, ...updateMainSeriesMergeVevent }
+            : newVeventComponent;
         const newRecurrentVevent = updateAllRecurrence({
-            component: newVeventComponent,
+            component: mergedNewRecurrentVevent,
             originalComponent: originalVeventComponent,
             mode: updateAllPossibilities,
             isAttendee,
@@ -507,13 +519,12 @@ const getSaveRecurringEventActions = async ({
                 });
             });
             const singleEditIcsPromises = [];
-            const isBreakingChange = getSequence(newRecurrentVeventWithSequence) > getSequence(originalVeventComponent);
             if (!isBreakingChange) {
                 deleteOperations = [];
-                const updateMergeVevent = getUpdateSingleEditMergeVevent(
-                    newRecurrentVeventWithSequence,
-                    originalVeventComponent
-                );
+                const oldVevent = isSingleEdit ? oldVeventComponent : originalVeventComponent;
+                const updateMergeVevent = organizerEditsNonBreakingSingleEdit
+                    ? updateMainSeriesMergeVevent
+                    : getUpdateSingleEditMergeVevent(newRecurrentVeventWithSequence, oldVevent);
                 // implement the so-called smart rules for "edit all", namely propagate changed fields to single edits
                 singleEditIcsPromises.push(
                     ...singleEditRecurrences.map(async (event) => {
