@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει 2 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει 5 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Μεγέθυνση"
@@ -3330,6 +3342,9 @@
       "An error occurred while loading alias options": [
         "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
       ],
+      "An error occurred while saving your alias": [
+        "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου σας."
+      ],
       "Attachments are limited to 25 MB": [
         "Τα συνημμένα περιορίζονται στα 25 MB"
       ],
@@ -4381,6 +4396,31 @@
       ],
       "To: ${ toString }": [
         "Προς: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Απολαύστε γρήγορη, ασφαλή και χωρίς περισπασμούς πρόσβαση στα εισερχόμενα και το ημερολόγιό σας."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Αποκτήστε απεριόριστη πρόσβαση με πλάνο επί πληρωμή ${ BRAND_NAME }"
+      ],
+      "Introducing the desktop app": [
+        "Παρουσίαση της εφαρμογής για υπολογιστές"
+      ],
+      "No credit card required": [
+        "Δεν απαιτείται πιστωτική κάρτα"
+      ],
+      "Upgrade now": [
+        "Αναβαθμίστε τώρα"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Δωρεάν δοκιμή για 14 ημέρες"
       ]
     },
     "Get started checklist instructions": {
@@ -5998,6 +6038,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Αυτό το μήνυμα υπογράφεται από συνημμένο κλειδί που δεν έχει γίνει εμπιστεύσιμο ακόμη."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Αυτό το μήνυμα θα διαγραφεί αυτόματα στις ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
         "Αυτό το μήνυμα θα διαγραφεί αυτόματα στις ${ value }"
@@ -8214,6 +8257,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -8769,6 +8815,9 @@
       "Change setting": [
         "Αλλαγή ρύθμισης"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Εκκινήστε εύκολα το ${ MAIL_APP_NAME } απευθείας από την επιφάνεια εργασίας σας."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Δημιουργήστε hide-my-email ψευδώνυμα και παρακολουθήστε τα εδώ."
       ],
@@ -8777,6 +8826,9 @@
       ],
       "Faster email management": [
         "Ταχύτερη διαχείριση email"
+      ],
+      "Get the desktop app": [
+        "Λήψη της εφαρμογής για υπολογιστές"
       ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
@@ -10011,6 +10063,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"

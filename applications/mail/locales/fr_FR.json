@@ -1195,6 +1195,15 @@
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
       ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 2 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine dans 5 jours. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
       "Zoom in": [
         "Zoom avant"
       ],
@@ -3055,7 +3064,7 @@
         "Suppression des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
       "Designed for users seeking heightened protection for their accounts.": [
-        "Conçu pour les utilisateurs recherchant une protection accrue de leurs comptes."
+        "Conçu pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -4395,6 +4404,15 @@
       ]
     },
     "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Profitez d'un accès rapide, sécurisé et sans distraction à votre boîte de réception et votre calendrier."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Obtenez un accès illimité avec votre forfait payant ${ BRAND_NAME }"
+      ],
       "Introducing the desktop app": [
         "Présentation de l'application de bureau"
       ],
@@ -5835,7 +5853,7 @@
         "Sécurisez vos fichiers avec un stockage cloud chiffré, gratuitement, dès aujourd'hui."
       ],
       "Seems like you are all caught up for now": [
-        "Vous êtes tout à fait à jour pour le moment."
+        "Vous êtes à jour."
       ],
       "Select a service provider to start": [
         "Commencez par sélectionner un service"
@@ -8196,7 +8214,7 @@
     },
     "Search - no results": {
       "No messages found": [
-        "Aucun message n'a été trouvé."
+        "Aucun message"
       ],
       "No messages scheduled": [
         "Aucun message n'est programmé."
@@ -8228,7 +8246,7 @@
         "Alias « hide-my-email »"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Les alias hide-my-email vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
+        "Les alias « hide-my-email » vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nouvel alias"
@@ -8256,7 +8274,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Notre solution de sécurité de pointe pilotée par IA a été conçue pour les utilisateurs recherchant une protection accrue de leurs comptes. ${ learnMoreLink }"
+        "Notre solution de sécurité de pointe utilise l'IA et est conçue pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
@@ -9205,7 +9223,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
+        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Comprend plus de 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
@@ -9537,7 +9555,7 @@
         "Paramètres du message"
       ],
       "Enable 2FA": [
-        "Activer l'authentification à deux facteurs (2FA)"
+        "Activer l'authentification à deux facteurs (A2F)"
       ],
       "Enable message content search": [
         "Activer la recherche dans le contenu dans les messages"
