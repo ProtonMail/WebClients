@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create and copy alias": [
+        "Opret og kopier et alias"
+      ],
       "Create calendar": [
         "Opret kalender"
       ],
@@ -504,6 +507,9 @@
       "Select calendar view": [
         "Vælg kalendervisning"
       ],
+      "Select country": [
+        "Vælg land"
+      ],
       "Select time zone": [
         "Vælg tidszone"
       ],
@@ -600,6 +606,9 @@
       "Upgrade": [
         "Opgradér"
       ],
+      "Upgrade Now": [
+        "Opgradere nu"
+      ],
       "Upgrade now": [
         "Opgradér nu"
       ],
@@ -642,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
         "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter om 2 dage. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter om 5 dage. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
       ]
     },
     "Action subline": {
@@ -738,6 +756,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ved at forlade nu, mister du din begivenhed."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Download ${ MAIL_APP_NAME } desktop applikation."
       ]
     },
     "Apps dropdown": {
@@ -2165,6 +2188,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Øg effektiviteten, og hold styr på din tid ved at farvekode begivenheder efter kategori eller dit energiniveau. Få dette og meget mere med et betalt abonnement."
       ],
@@ -2173,6 +2199,9 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Designet til brugere, der søger øget beskyttelse til deres konto."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -2192,11 +2221,20 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Sæt en data genoprettelsesmetode for at forhindre tab af data."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Sæt en genoprettelsesmetode for at forhindre at blive låst ude af din konto."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Dette kan tage et par minutter. I mellemtiden kan du fortsætte med at bruge Kalender som sædvanligt."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -2421,6 +2459,9 @@
       ],
       "An error occurred while loading alias options": [
         "Der opstod en fejl under indlæsning af alias-indstillinger"
+      ],
+      "An error occurred while saving your alias": [
+        "Det ser ud til, at der opstod en fejl, mens din alias blev gemt."
       ],
       "Answer failed to be sent": [
         "Svaret kunne ikke sendes"
@@ -4575,6 +4616,9 @@
       "Don't ask again": [
         "Spørg ikke igen"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "fx på Amazon, eBay osv."
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5600,6 +5644,11 @@
         "Udvid deltagerliste"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faktura land"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -5792,6 +5841,9 @@
       "Create alias": [
         "Opret alias"
       ],
+      "Create an alias": [
+        "Opret et alias."
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
       ],
@@ -5812,6 +5864,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Se logs."
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel er **aktiv** og beskytter din konto."
       ]
     },
     "Select files": {
@@ -6277,8 +6345,14 @@
       "Color-coding is here!": [
         "Farvekodning er her!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Start nemt ${ MAIL_APP_NAME } direkte fra dit skrivebord."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Find nemt den begivenhed du leder efter, med vores nye søgefunktion."
+      ],
+      "Get the desktop app": [
+        "Få desktop appen."
       ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
@@ -6317,6 +6391,12 @@
       "contact your administrator": [
         "kontakt din administrator"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
+      ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
       ],
@@ -6326,8 +6406,20 @@
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dit ${ storage } er fyldt. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+      ],
       "Your storage is full": [
         "Dit lager er fuldt"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dit drev er fyldt. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -7102,6 +7194,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brugernavn (maks. ${ n } tegn)",
         "Prøv et kortere brugernavn (maks. ${ n } tegn)"

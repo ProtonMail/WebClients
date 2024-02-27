@@ -3791,6 +3791,11 @@
         "I: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "Ulac takarḍa n usmad yettwasran"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "asnas ${ MAIL_APP_NAME }"
@@ -8381,6 +8386,12 @@
       ],
       "Your default font will look like following:": [
         "Tasefsit-ik tamezwert ad d-tban akka:"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
       ]
     },
     "Video control": {

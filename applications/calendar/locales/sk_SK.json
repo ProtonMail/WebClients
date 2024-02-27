@@ -5974,6 +5974,11 @@
         "Vyskúšať ${ PASS_APP_NAME }"
       ]
     },
+    "Security Center - Action": {
+      "View logs": [
+        "Zobraziť záznamy"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Nahrať"
@@ -7290,6 +7295,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Skúste kratšie používateľské meno (max. ${ n } znak)",
         "Skúste kratšie používateľské meno (max. ${ n } znaky)",

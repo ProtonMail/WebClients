@@ -66,7 +66,7 @@
         "Huomiota vaaditaan"
       ],
       "Authenticate": [
-        "Todenna"
+        "Tunnistaudu"
       ],
       "Back": [
         "Takaisin"
@@ -748,6 +748,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
+      ],
+      "Your 3 GB bonus": [
+        "3 Gt bonuksesi"
       ],
       "Zoom in": [
         "Lähennä"
@@ -2034,7 +2037,7 @@
         "${ eventTitle } päivitettiin.\n${ eventDetailsText }"
       ],
       "This occurrence of ${ eventTitle } has been canceled.": [
-        "Ketjun ${ eventTitle } tämä tapahtuma on peruttu."
+        "Ketjun ${ eventTitle } tämä tapahtumakerta on peruttu."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }\n${ eventDetailsText }"
@@ -2151,6 +2154,9 @@
       "An error occurred while loading alias options": [
         "Alias-asetusten lataamisessa tapahtui virhe"
       ],
+      "An error occurred while saving your alias": [
+        "Aliaksesi tallentamisessa tapahtui virhe"
+      ],
       "Authentication canceled.": [
         "Todennus peruttiin."
       ],
@@ -2259,7 +2265,7 @@
         "Virheellinen vahvistuskoodi"
       ],
       "Item content cannot exceed 40KB": [
-        "Kohteen sisältö ei saa ylittää 40 kt"
+        "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -2603,7 +2609,7 @@
         "Ilmoitus on alueen ulkopuolella"
       ],
       "Original recurring event could not be found": [
-        "Ketjun alkuperäistä toistuvaa tapahtumaa ei löytynyt"
+        "Ketjun alkuperäistä tapahtumaa ei löytynyt"
       ],
       "Recurring event has no occurrences": [
         "Toistuva tapahtuma ei sisällä tapahtumakertoja"
@@ -3392,8 +3398,8 @@
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
       "${ skippedCount } skipped": [
-        "${ skippedCount } ohitettu",
-        "${ skippedCount } ohitettu"
+        "${ skippedCount } ohitettiin",
+        "${ skippedCount } ohitettiin"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3751,6 +3757,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Hanki työpöytäsovellus synkronoidaksesi tiedostoja tietokoneeltasi."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 3 Gt tallennustilaetusi! Toimi tänään."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Avaa \"Omat tiedostot\" ja tallenna ensin joitakin tiedostoja."
       ],
@@ -3787,6 +3796,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Sillä välin voit luoda oman ${ DRIVE_APP_NAME } -tilisi, suojata tietosi päästä päähän -salauksella ja jakaa ne turvallisesti."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indeksoidaan kohteita ${ esProgress }/${ totalProgressToShow }"
@@ -4127,6 +4139,9 @@
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Luo oma ${ DRIVE_APP_NAME } -tilisi, suojaa tietosi päästä päähän -salauksella ja jaa ne turvallisesti."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
       ],
@@ -4311,6 +4326,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
+      "upgrade your storage": [
+        "päivitä tallennustilasi"
+      ],
       "Uploaded": [
         "Tallennettu"
       ],
@@ -4334,6 +4352,9 @@
       ],
       "Warning": [
         "Varoitus"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Hienoa! Olet juuri kasvattanut tallennustilasi 5 gigatavuun."
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Kuvien tallennus on tilapäisesti keskeytetty teknisten ongelmien vuoksi."
@@ -4406,6 +4427,10 @@
       ],
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Sinulla on ${ expiresInDays } päivä aikaa lunastaa 3 Gt tervetuliaisetusi ja ",
+        "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 3 Gt tervetuliaisetusi ja "
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
@@ -5669,6 +5694,9 @@
       "Create a share link": [
         "Luo jakolinkki"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin korotamme ilmaisen tallennustilasi 5 gigatavuun!"
+      ],
       "Set a recovery method": [
         "Määritä palautustapa"
       ],
@@ -5939,6 +5967,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Käytetään Amazonissa ostoksiin jne."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Kun sinulta kysytään sähköpostiosoitettasi, anna sen sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -7091,6 +7122,9 @@
       "You have no folders yet": [
         "Kansioita ei vielä ole"
       ],
+      "Your 3 GB bonus": [
+        "3 Gt bonuksesi"
+      ],
       "Your account is protected": [
         "Tilisi on suojattu"
       ],
@@ -7102,6 +7136,9 @@
       ],
       "Your welcome actions": [
         "Tervetuliaistehtäväsi"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Sinulla on 5 Gt tallennustilaa"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7178,6 +7215,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"

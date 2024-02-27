@@ -732,6 +732,9 @@
       "Vault name does not match": [
         "Názov trezoru sa nezhoduje"
       ],
+      "Wrong password": [
+        "Nesprávne heslo"
+      ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
       ],
@@ -1103,6 +1106,12 @@
       "None": [
         "Nezamykať"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Offline režim nie je možné momentálne povoliť"
+      ],
+      "Offline support successfully disabled": [
+        "Podpora offline bola úspešne vypnutá"
+      ],
       "Open the Extensions menu": [
         "Otvorte menu rozšírenia"
       ],
@@ -1201,6 +1210,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Nastavte si PIN kód na jednoduché uzamknutie údajov"
+      ],
+      "Setting up offline mode...": [
+        "Nastavenie offline režimu..."
       ],
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
@@ -1318,6 +1330,9 @@
       ],
       "You are about to create:": [
         "Chystáte sa vytvoriť:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Teraz môžete použiť svoje ${ BRAND_NAME } heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Kliknutím na ikonu ${ PASS_APP_NAME } môžete rýchlo automaticky vyplniť svoje prihlasovacie údaje."
@@ -1805,6 +1820,9 @@
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Momentálne ste offline. Odomknite ${ PASS_SHORT_APP_NAME } pomocou svojho ${ BRAND_NAME } hesla"
       ]
     },
     "lobby: Title": {
@@ -2101,6 +2119,9 @@
       ],
       "Your vault is empty": [
         "Váš trezor je prázdny"
+      ],
+      "Your welcome gift": [
+        "Váš darček na privítanie"
       ]
     },
     "Validation": {
@@ -2159,6 +2180,9 @@
       ],
       "Empty note": [
         "Prázdna poznámka"
+      ],
+      "Encryption password is required": [
+        "Vyžaduje sa šifrovacie heslo"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"

@@ -728,6 +728,9 @@
       "Vault name does not match": [
         "Le nom du coffre-fort ne correspond pas."
       ],
+      "Wrong password": [
+        "Le mot de passe n'est pas correct."
+      ],
       "Wrong PIN code. Try again.": [
         "Le code PIN n'est pas correct. Veuillez réessayer."
       ],
@@ -1073,6 +1076,12 @@
       "None": [
         "Aucun"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Le mode hors ligne n'a pas pu être activé pour le moment."
+      ],
+      "Offline support successfully disabled": [
+        "La prise en charge du mode hors ligne est désactivée."
+      ],
       "Open the Extensions menu": [
         "Ouvrez le menu des extensions"
       ],
@@ -1169,6 +1178,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Définissez un code PIN pour facilement déverrouiller vos données."
+      ],
+      "Setting up offline mode...": [
+        "Configuration du mode hors ligne..."
       ],
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
@@ -1284,6 +1296,9 @@
       ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Vous pouvez maintenant utiliser votre mot de passe ${ BRAND_NAME } pour accéder en mode hors ligne à ${ PASS_SHORT_APP_NAME }."
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Vous pouvez rapidement remplir automatiquement vos identifiants de connexion en cliquant sur l'icône ${ PASS_APP_NAME }."
@@ -1765,6 +1780,9 @@
       ],
       "Sign in to your account": [
         "Connectez-vous à votre compte"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Vous êtes actuellement hors ligne. Déverrouillez ${ PASS_SHORT_APP_NAME } avec votre mot de passe ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2057,6 +2075,9 @@
       ],
       "Your vault is empty": [
         "Votre coffre-fort est vide."
+      ],
+      "Your welcome gift": [
+        "Votre cadeau de bienvenue"
       ]
     },
     "Validation": {
@@ -2116,6 +2137,9 @@
       "Empty note": [
         "Note vide"
       ],
+      "Encryption password is required": [
+        "Le mot de passe chiffré est requis."
+      ],
       "Expiration Date is not in the format MM/YY": [
         "La date d'expiration n'est pas au format MM/AA."
       ],
@@ -2124,6 +2148,9 @@
       ],
       "Invalid email addresses.": [
         "Les adresses électroniques ne sont pas valides."
+      ],
+      "item was imported without custom fields": [
+        "L'élément a été importé sans les champs personnalisés."
       ],
       "Maximum length is ${ maxLength } character": [
         "${ maxLength } caractère maximum",

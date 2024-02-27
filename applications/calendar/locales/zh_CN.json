@@ -409,7 +409,7 @@
         "预览联系人"
       ],
       "Previous": [
-        "前一页"
+        "上一页"
       ],
       "Previous day": [
         "前一天"
@@ -2105,6 +2105,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "双重验证能为您再增添一道安全防线，将试图盗取账户者拒之门外。"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "通过按类别或精力水平对事件进行颜色编码，提高效率并跟踪时间。通过付费计划获得此功能以及更多功能。"
       ],
@@ -2113,6 +2116,9 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
+      ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "专为寻求高等级安全防护的客户打造。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
@@ -2129,11 +2135,20 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "设置数据恢复方式，谨防数据丢失。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "设置账户恢复方式，防止因遗忘密码而丧失账户使用权。"
+      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "这可能需要几分钟的时间。同时，您可以像往常一样继续使用日历。"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "升级账户即可开启 ${ PROTON_SENTINEL_NAME }，体验我们由 AI 驱动的顶尖安全防护体系，享受 7×24 小时独家专业客服。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -3175,6 +3190,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Security Center": [
+        "安全中心"
       ]
     },
     "Hint": {
@@ -5498,14 +5516,28 @@
       ]
     },
     "Security Center": {
+      "Create an alias": [
+        "创建别名"
+      ],
       "Hide-my-email aliases": [
         "个hide-my-email别名"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "您可以使用 hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
       ],
       "Open ${ PASS_APP_NAME }": [
         "打开 ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "保护您的网络身份"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "体验 ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -6375,6 +6407,9 @@
       "Email settings": [
         "邮件设置"
       ],
+      "Enable 2FA": [
+        "开启双重验证"
+      ],
       "Encrypted event": [
         "加密的事件"
       ],
@@ -6395,6 +6430,9 @@
       ],
       "Feedback": [
         "用户反馈"
+      ],
+      "Get advanced protection": [
+        "进一步提升防护等级"
       ],
       "Groups": [
         "群组"
@@ -6485,6 +6523,9 @@
       ],
       "Save changes": [
         "保存更改"
+      ],
+      "Security center": [
+        "安全中心"
       ],
       "Select a day in the month": [
         "选择一个月中的某一天"

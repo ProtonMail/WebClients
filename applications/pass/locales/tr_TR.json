@@ -618,6 +618,9 @@
       "Unable to sync": [
         "Eşitlenemedi"
       ],
+      "Unknown error": [
+        "Bilinmeyen sorun"
+      ],
       "Unknown invite": [
         "Davet bilinmiyor"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "Kasa adı aynı değil"
+      ],
+      "Wrong password": [
+        "Parola yanlış"
       ],
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
@@ -865,6 +871,9 @@
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
+      ],
       "Invitation sent": [
         "Davet gönderildi"
       ],
@@ -950,8 +959,20 @@
       "Never": [
         "Asla"
       ],
+      "No network connection": [
+        "Ağ bağlantısı yok"
+      ],
       "None": [
         "Yok"
+      ],
+      "Offline mode": [
+        "Çevrim dışı kip"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Çevrim dışı kip şu anda kullanıma alınamadı"
+      ],
+      "Offline support successfully disabled": [
+        "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
       "Owner": [
         "Sahibi"
@@ -1005,6 +1026,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
       ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
       ],
@@ -1037,6 +1061,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Verilerinizi kolayca kilitlemek için bir PIN kodu ayarlayın"
+      ],
+      "Setting up offline mode...": [
+        "Çevrim dışı kip ayarlanıyor..."
       ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
@@ -1134,6 +1161,9 @@
       ],
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
@@ -1567,6 +1597,9 @@
       ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Şu anda çevrim dışı durumdasınız. ${ BRAND_NAME } parolanızla ${ PASS_SHORT_APP_NAME } kilidini açın"
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1857,9 @@
       ],
       "Your vault is empty": [
         "Kasanız boş"
+      ],
+      "Your welcome gift": [
+        "Karşılama hediyeniz"
       ]
     },
     "Validation": {
@@ -1883,6 +1919,9 @@
       "Empty note": [
         "Boş not"
       ],
+      "Encryption password is required": [
+        "Şifreleme parolası gereklidir"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
@@ -1916,6 +1955,9 @@
       ],
       "No results": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "Offline": [
+        "Çevrim dışı"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"

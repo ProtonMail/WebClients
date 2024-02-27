@@ -768,10 +768,10 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } свой домен",
-        "${ domains } своих доменов",
-        "${ domains } своих домена",
-        "${ domains } своих домена"
+        "${ domains } пользовательский домен",
+        "${ domains } пользовательских домена",
+        "${ domains } пользовательских доменов",
+        "${ domains } пользовательских доменов"
       ],
       "${ ips } server": [
         "${ ips } сервер",
@@ -4337,6 +4337,9 @@
       "Want to sync files faster?": [
         "Хотите синхронизировать файлы быстрее?"
       ],
+      "Warning": [
+        "Внимание"
+      ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "У нас возникли технические проблемы. Загрузка новых фото временно отключена."
       ],
@@ -5794,6 +5797,12 @@
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -6134,6 +6143,12 @@
       "${ app } storage": [
         "${ app } хранилища"
       ],
+      "contact your administrator": [
+        "свяжитесь с администратором"
+      ],
+      "upgrade for more storage": [
+        "выберите другой тариф для увеличения хранилища"
+      ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
       ]
@@ -6337,7 +6352,7 @@
         "${ emailsCount } адрес электронной почты",
         "${ emailsCount } адреса электронной почты",
         "${ emailsCount } адресов электронной почты",
-        "${ emailsCount } адреса электронной почты"
+        "${ emailsCount } адресов электронной почты"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } неудавшееся скачивание",
@@ -6824,6 +6839,9 @@
       ],
       "Your welcome actions": [
         "Ваши приветственные действия"
+      ],
+      "You’ve got 5 GB of storage": [
+        "У вас 5 ГБ хралинища"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6897,6 +6915,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
         "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",

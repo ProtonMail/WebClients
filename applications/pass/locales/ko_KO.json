@@ -613,6 +613,9 @@
       "Unable to sync": [
         "동기화할 수 없음"
       ],
+      "Unknown error": [
+        "알 수 없는 오류"
+      ],
       "Unknown invite": [
         "알 수 없는 초대"
       ],
@@ -633,6 +636,9 @@
       ],
       "Vault name does not match": [
         "금고 이름이 맞지 않습니다."
+      ],
+      "Wrong password": [
+        "잘못된 비밀번호입니다"
       ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
@@ -846,6 +852,9 @@
       "Internet connection lost": [
         "인터넷 연결 없음"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "인터넷 연결이 끊겼습니다. 기기의 연결을 확인해주세요."
+      ],
       "Invitation sent": [
         "초대장을 보냈습니다"
       ],
@@ -930,8 +939,20 @@
       "Never": [
         "안 함"
       ],
+      "No network connection": [
+        "네트워크가 연결되어 있지 않습니다."
+      ],
       "None": [
         "없음"
+      ],
+      "Offline mode": [
+        "오프라인 모드"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "오프라인 모드가 현재 활성화할 수 없습니다."
+      ],
+      "Offline support successfully disabled": [
+        "오프라인 지원이 비활성화되었습니다"
       ],
       "Owner": [
         "소유자"
@@ -981,6 +1002,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
       ],
+      "Reconnect": [
+        "재연결"
+      ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
       ],
@@ -1013,6 +1037,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "쉽게 데이터를 잠금하도록 PIN 코드를 설정하세요"
+      ],
+      "Setting up offline mode...": [
+        "오프라인 모드로 설정 중..."
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
@@ -1109,6 +1136,9 @@
       ],
       "You are about to create:": [
         "생성하려고 하는 주소:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }의 오프라인 이용이 가능합니다"
       ],
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
@@ -1533,6 +1563,9 @@
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "현재 오프라인 상태입니다, ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }를 잠금해제 하세요."
       ]
     },
     "lobby: Title": {
@@ -1785,6 +1818,9 @@
       ],
       "Your vault is empty": [
         "금고가 비어있음"
+      ],
+      "Your welcome gift": [
+        "무료 체험을 즐겨보세요"
       ]
     },
     "Validation": {
@@ -1844,6 +1880,9 @@
       "Empty note": [
         "빈 메모"
       ],
+      "Encryption password is required": [
+        "암호화 비밀번호가 필요합니다"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
       ],
@@ -1876,6 +1915,9 @@
       ],
       "No results": [
         "결과 없음"
+      ],
+      "Offline": [
+        "오프라인"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."

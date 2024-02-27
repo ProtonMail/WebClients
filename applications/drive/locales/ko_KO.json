@@ -745,6 +745,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
       ],
+      "Your 3 GB bonus": [
+        "나의 3 GB 보너스"
+      ],
       "Zoom in": [
         "확대"
       ],
@@ -2141,6 +2144,9 @@
       ],
       "An error occurred while loading alias options": [
         "별명 옵션 로드 중 오류가 발생했습니다."
+      ],
+      "An error occurred while saving your alias": [
+        "별명을 저장하는 도중 오류가 발생했습니다."
       ],
       "Authentication canceled.": [
         "인증이 취소되었습니다."
@@ -3675,6 +3681,9 @@
       "Get the desktop app to sync files from your computer.": [
         "회원님의 컴퓨터에 있는 파일을 동기화 하려면 데스크탑 앱을 설치하세요."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "${ DRIVE_APP_NAME }에 대하여 알아보면 저장공간 3GB를 드립니다! 오늘 해봅시다."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "먼저 \"내 파일\"로 이동하여 파일을 업로드해보세요."
       ],
@@ -4233,6 +4242,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "upgrade your storage": [
+        "일 남았습니다"
+      ],
       "Uploaded": [
         "업로드 완료"
       ],
@@ -4256,6 +4268,9 @@
       ],
       "Warning": [
         "경고"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "현재 기술적인 문제가 있습니다. 일시적으로 새로운 사진을 업로드할 수 없습니다."
@@ -5562,6 +5577,9 @@
       "Create a share link": [
         "공유 링크 생성"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "${ DRIVE_APP_NAME }를 이용하시면 저장공간을 5GB로 확장해 드립니다!"
+      ],
       "Set a recovery method": [
         "복구 방법 설정"
       ],
@@ -5828,6 +5846,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "이메일 주소를 누군가 물어본다면, 별명을 대신 제공하세요. 별명이 ${ passLink }에 의해 제공됩니다."
       ]
     },
     "Security Center - Action": {
@@ -6944,6 +6965,9 @@
       "You have no folders yet": [
         "아직 폴더가 없습니다"
       ],
+      "Your 3 GB bonus": [
+        "나의 3 GB 보너스"
+      ],
       "Your account is protected": [
         "계정이 보호됩니다."
       ],
@@ -6955,6 +6979,9 @@
       ],
       "Your welcome actions": [
         "환영 보너스"
+      ],
+      "You’ve got 5 GB of storage": [
+        "5GB의 저장공간을 얻으셨습니다"
       ]
     },
     "Today icon tooltip in mini calendar": {

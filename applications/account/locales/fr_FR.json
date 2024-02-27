@@ -5141,11 +5141,23 @@
       ]
     },
     "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Application de bureau ${ MAIL_APP_NAME }"
+      ],
       "Back to sign in": [
         "Retour à la connexion"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Continuez à profiter d'une expérience de bureau rapide, sans distraction et sécurisée. Mettez votre abonnement à niveau afin de déverrouiller un accès illimité et d'autres fonctionnalités premium. "
+      ],
       "Keep using the desktop app": [
         "Continuer à utiliser l'application de bureau"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Ouvrir ${ MAIL_APP_NAME } dans le ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Votre essai gratuit de l'application de bureau est terminé"
       ]
     },
     "Frequency of news": {
@@ -6508,6 +6520,9 @@
       "Failed to fetch logs.": [
         "Les journaux n'ont pas pu être récupérés."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rapide et sans distraction. E-mail et calendrier, directement sur votre bureau."
+      ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
       ],
@@ -7506,7 +7521,7 @@
         "Nombre total de connexions VPN"
       ],
       "two-factor authentication (2FA)": [
-        "authentification à deux facteurs (2FA)"
+        "authentification à deux facteurs (A2F)"
       ],
       "Two-factor authentication disabled": [
         "L'authentification à deux facteurs est désactivée."
@@ -10674,9 +10689,6 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
-      ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments. Le partage des coffres-forts avec vos amis et votre famille est en cours de développement."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Sécurisez les ressources de votre entreprise sur internet et rendez-les accessibles uniquement par le biais de vos passerelles privées."
@@ -14916,6 +14928,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "L'abonnement est automatiquement renouvelé tous les mois. Votre prochaine date de facturation est dans 1 mois."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois."
       ]
     },
     "vpn_2step: billing": {
