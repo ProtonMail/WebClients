@@ -728,6 +728,9 @@
       "Vault name does not match": [
         "El nombre de la caja fuerte no coincide."
       ],
+      "Wrong password": [
+        "La contraseña no es correcta."
+      ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
       ],
@@ -1073,6 +1076,12 @@
       "None": [
         "Ninguno"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "No se ha podido activar el modo sin conexión por ahora."
+      ],
+      "Offline support successfully disabled": [
+        "El modo sin conexión está desactivado."
+      ],
       "Open the Extensions menu": [
         "Abre el menú de extensiones"
       ],
@@ -1169,6 +1178,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Establece un código PIN para bloquear tus datos fácilmente"
+      ],
+      "Setting up offline mode...": [
+        "Configurando el modo sin conexión"
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
@@ -1284,6 +1296,9 @@
       ],
       "You are about to create:": [
         "Vas a crear:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ahora puedes usar tu contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }."
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Puedes rellenar automáticamente tus credenciales al pulsar el icono de ${ PASS_APP_NAME }."
@@ -1765,6 +1780,9 @@
       ],
       "Sign in to your account": [
         "Iniciar sesión en tu cuenta"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Actualmente estás sin conexión. Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2057,6 +2075,9 @@
       ],
       "Your vault is empty": [
         "Tu caja fuerte está vacía."
+      ],
+      "Your welcome gift": [
+        "Tu regalo de bienvenida"
       ]
     },
     "Validation": {
@@ -2116,6 +2137,9 @@
       "Empty note": [
         "Nota vacía"
       ],
+      "Encryption password is required": [
+        "Se requiere la contraseña de cifrado."
+      ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA."
       ],
@@ -2124,6 +2148,9 @@
       ],
       "Invalid email addresses.": [
         "Las direcciones de correo no son válidas."
+      ],
+      "item was imported without custom fields": [
+        "El elemento ha sido importado sin campos personalizados."
       ],
       "Maximum length is ${ maxLength } character": [
         "El número máximo de caracteres es ${ maxLength }.",
