@@ -48,18 +48,29 @@ const CalendarEventDateHeader = ({
         }
         return format(date, 'p', formatOptions);
     };
+    const formatForVocalization = (date: Date) => {
+        return format(date, 'yyyy-MM-dd');
+    };
+
     const dateStart = formatDate(startDate);
     const dateEnd = formatDate(isAllDay && !hasModifiedAllDayEndDate ? addDays(endDate, -1) : endDate);
 
+    const dateStartVoc = formatForVocalization(startDate);
+    const dateEndVoc = formatForVocalization(endDate);
+
     if (isAllDay) {
         if (dateStart === dateEnd) {
-            return <div {...rest}>{dateStart}</div>;
+            return (
+                <div {...rest}>
+                    <time dateTime={dateStartVoc}>{dateStart}</time>
+                </div>
+            );
         }
         return (
             <div {...rest}>
-                {dateStart}
+                <time dateTime={dateStartVoc}>{dateStart}</time>
                 <EnDash />
-                {dateEnd}
+                <time dateTime={dateEndVoc}>{dateEnd}</time>
             </div>
         );
     }
@@ -69,21 +80,21 @@ const CalendarEventDateHeader = ({
     if (dateStart === dateEnd) {
         return (
             <div {...rest}>
-                {dateStart}
+                <time dateTime={dateStartVoc}>{dateStart}</time>
                 {', '}
                 <span className="inline-block">
-                    {timeStart}
+                    <time dateTime={timeStart}>{timeStart}</time>
                     <EnDash />
-                    {timeEnd}
+                    <time dateTime={timeEnd}>{timeEnd}</time>
                 </span>
             </div>
         );
     }
     return (
         <div {...rest}>
-            {dateStart} {timeStart}
+            <time dateTime={dateStartVoc}>{dateStart}</time> <time dateTime={timeStart}>{timeStart}</time>
             <EnDash />
-            {dateEnd} {timeEnd}
+            <time dateTime={dateEndVoc}>{dateEnd}</time> <time dateTime={timeEnd}>{timeEnd}</time>
         </div>
     );
 };
