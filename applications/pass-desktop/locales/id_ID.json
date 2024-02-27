@@ -610,6 +610,9 @@
       "Unable to sync": [
         "Tidak dapat menyinkronkan"
       ],
+      "Unknown error": [
+        "Kesalahan yang tidak diketahui"
+      ],
       "Unknown invite": [
         "Undangan tidak dikenal"
       ],
@@ -630,6 +633,9 @@
       ],
       "Vault name does not match": [
         "Nama brankas tidak sesuai"
+      ],
+      "Wrong password": [
+        "Kata sandi salah"
       ],
       "Wrong PIN code. Try again.": [
         "Kode PIN salah. Coba lagi."
@@ -681,6 +687,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } akan membutuhkan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
@@ -811,6 +820,9 @@
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
+      ],
       "Invitation sent": [
         "Undangan dikirim"
       ],
@@ -892,8 +904,20 @@
       "Never": [
         "Tidak pernah"
       ],
+      "No network connection": [
+        "Tidak ada koneksi jaringan"
+      ],
       "None": [
         "Tidak ada"
+      ],
+      "Offline mode": [
+        "Mode offline"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Mode offline tidak dapat diaktifkan pada saat ini"
+      ],
+      "Offline support successfully disabled": [
+        "Dukungan offline berhasil dinonaktifkan"
       ],
       "Owner": [
         "Pemilik"
@@ -912,6 +936,9 @@
       ],
       "Pinning item...": [
         "Menyematkan item..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
@@ -934,6 +961,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Tingkatkan akun untuk memperoleh akses dini ke aplikasi web ${ PASS_APP_NAME }"
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "Silakan tingkatkan paket Anda untuk mengaktifkan dukungan offline."
+      ],
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
       ],
@@ -942,6 +972,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Terlindung oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+      ],
+      "Reconnect": [
+        "Hubungkan ulang"
       ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
@@ -975,6 +1008,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Tentukan kode PIN agar data Anda dapat terkunci dengan mudah"
+      ],
+      "Setting up offline mode...": [
+        "Menyiapkan mode offline..."
       ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
@@ -1068,6 +1104,9 @@
       ],
       "You are about to create:": [
         "Anda akan membuat:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Anda kini dapat menggunakan kata sandi ${ BRAND_NAME } Anda untuk mengakses ${ PASS_SHORT_APP_NAME } secara offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
@@ -1206,6 +1245,9 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
+      "Enable offline access": [
+        "Aktifkan akses offline"
+      ],
       "Encrypted (recommended)": [
         "Terenkripsi (disarankan)"
       ],
@@ -1340,6 +1382,9 @@
       ],
       "Notes": [
         "Catatan"
+      ],
+      "Offline mode": [
+        "Mode offline"
       ],
       "Old-New": [
         "Lama–Baru"
@@ -1489,6 +1534,9 @@
       ],
       "Sign in to your account": [
         "Masuk ke akun Anda"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Anda sedang offline. Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
       ]
     },
     "lobby: Title": {
@@ -1736,6 +1784,9 @@
       ],
       "Your vault is empty": [
         "Brankas Anda kosong"
+      ],
+      "Your welcome gift": [
+        "Hadiah selamat datang Anda"
       ]
     },
     "Validation": {
@@ -1795,6 +1846,9 @@
       "Empty note": [
         "Catatan kosong"
       ],
+      "Encryption password is required": [
+        "Kata sandi enkripsi dibutuhkan"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
@@ -1824,6 +1878,9 @@
       ],
       "No results": [
         "Tidak ada hasil yang ditemukan"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"

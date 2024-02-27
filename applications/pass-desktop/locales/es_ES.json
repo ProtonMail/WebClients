@@ -618,6 +618,9 @@
       "Unable to sync": [
         "No se puede sincronizar"
       ],
+      "Unknown error": [
+        "Error desconocido"
+      ],
       "Unknown invite": [
         "Invitación desconocida"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "El nombre de la caja fuerte no coincide."
+      ],
+      "Wrong password": [
+        "La contraseña no es correcta."
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
@@ -723,6 +729,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } requerirá tu contraseña de ${ BRAND_NAME } para acceder a datos sin conexión."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",
@@ -865,6 +874,9 @@
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
+      ],
       "Invitation sent": [
         "La invitación ha sido enviada."
       ],
@@ -950,8 +962,20 @@
       "Never": [
         "Nunca"
       ],
+      "No network connection": [
+        "No hay conexión a la red."
+      ],
       "None": [
         "Ninguno"
+      ],
+      "Offline mode": [
+        "Modo sin conexión"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "No se ha podido activar el modo sin conexión por ahora."
+      ],
+      "Offline support successfully disabled": [
+        "El modo sin conexión está desactivado."
       ],
       "Owner": [
         "Propietario"
@@ -975,6 +999,9 @@
       "Pinning item...": [
         "Anclando el elemento..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirma tu contraseña de ${ BRAND_NAME } para activar el modo sin conexión."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
       ],
@@ -996,6 +1023,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Mejora tu plan para obtener un acceso anticipado a la aplicación web de ${ PASS_APP_NAME }."
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "Mejora tu plan para activar el modo sin conexión."
+      ],
       "Press Enter to copy": [
         "Presiona Enter para copiar"
       ],
@@ -1004,6 +1034,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
+      "Reconnect": [
+        "Reconectar"
       ],
       "Restoring items from trash": [
         "Restaurando un grupo de elementos"
@@ -1037,6 +1070,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Establece un código PIN para bloquear tus datos fácilmente"
+      ],
+      "Setting up offline mode...": [
+        "Configurando el modo sin conexión"
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
@@ -1134,6 +1170,9 @@
       ],
       "You are about to create:": [
         "Vas a crear:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ahora puedes usar tu contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "No puedes cambiar los buzones para este alias."
@@ -1284,6 +1323,9 @@
       "Empty trash": [
         "Vaciar la papelera"
       ],
+      "Enable offline access": [
+        "Activar el acceso sin conexión"
+      ],
       "Encrypted (recommended)": [
         "Cifrado (recomendado)"
       ],
@@ -1418,6 +1460,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Offline mode": [
+        "Modo sin conexión"
       ],
       "Old-New": [
         "Antiguo-Reciente"
@@ -1567,6 +1612,9 @@
       ],
       "Sign in to your account": [
         "Iniciar sesión en tu cuenta"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Actualmente estás sin conexión. Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1872,9 @@
       ],
       "Your vault is empty": [
         "Tu caja fuerte está vacía."
+      ],
+      "Your welcome gift": [
+        "Tu regalo de bienvenida"
       ]
     },
     "Validation": {
@@ -1883,6 +1934,9 @@
       "Empty note": [
         "Nota vacía"
       ],
+      "Encryption password is required": [
+        "Se requiere la contraseña de cifrado."
+      ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA."
       ],
@@ -1891,6 +1945,9 @@
       ],
       "Invalid email addresses.": [
         "Las direcciones de correo no son válidas."
+      ],
+      "item was imported without custom fields": [
+        "El elemento ha sido importado sin campos personalizados."
       ],
       "Maximum length is ${ maxLength } character": [
         "El número máximo de caracteres es ${ maxLength }.",
@@ -1916,6 +1973,9 @@
       ],
       "No results": [
         "Sin resultados"
+      ],
+      "Offline": [
+        "Sin conexión"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos."

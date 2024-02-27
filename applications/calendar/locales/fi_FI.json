@@ -80,7 +80,7 @@
         "Huomiota vaaditaan"
       ],
       "Authenticate": [
-        "Todenna"
+        "Tunnistaudu"
       ],
       "Back": [
         "Takaisin"
@@ -606,6 +606,9 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
+      "Upgrade Now": [
+        "Päivitä tilaus nyt"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
@@ -648,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Työpöytäsovelluksen ilmainen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Työpöytäsovelluksen ilmainen kokeilujaksosi päättyy 5 päivän kuluttua. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Työpöytäsovelluksen ilmainen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -744,6 +756,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Poistumalla nyt menetät tapahtumasi."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Lataa ${ MAIL_APP_NAME } -työpöytäsovellus"
       ]
     },
     "Apps dropdown": {
@@ -2310,7 +2327,7 @@
         "${ eventTitle } päivitettiin.\n${ eventDetailsText }"
       ],
       "This occurrence of ${ eventTitle } has been canceled.": [
-        "Ketjun ${ eventTitle } tämä tapahtuma on peruttu."
+        "Ketjun ${ eventTitle } tämä tapahtumakerta on peruttu."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }\n${ eventDetailsText }"
@@ -2442,6 +2459,9 @@
       ],
       "An error occurred while loading alias options": [
         "Alias-asetusten lataamisessa tapahtui virhe"
+      ],
+      "An error occurred while saving your alias": [
+        "Aliaksesi tallentamisessa tapahtui virhe"
       ],
       "Answer failed to be sent": [
         "Vastauksen lähetys epäonnistui"
@@ -2581,7 +2601,7 @@
         "Tapahtumia on mahdollista siirtää vain välillä ${ minDateString } – ${ maxDateString }"
       ],
       "Item content cannot exceed 40KB": [
-        "Kohteen sisältö ei saa ylittää 40 kt"
+        "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -2948,7 +2968,7 @@
         "Ilmoitus on alueen ulkopuolella"
       ],
       "Original recurring event could not be found": [
-        "Ketjun alkuperäistä toistuvaa tapahtumaa ei löytynyt"
+        "Ketjun alkuperäistä tapahtumaa ei löytynyt"
       ],
       "Recurring event has no occurrences": [
         "Toistuva tapahtuma ei sisällä tapahtumakertoja"
@@ -3734,7 +3754,7 @@
         "Poistetuille osallistujille lähetetään perumisilmoitus sähköpostitse."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Tapahtuman osallistujille lähetetään peruutusilmoitus sähköpostitse. Haluatko poistaa ketjun kaikki tapahtumat?"
+        "Tapahtuman osallistujille lähetetään sähköpostitse perumisilmoitus ketjun kaikkiin tapahtumiin. Haluatko poistaa kaikki ketjun tapahtumat?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Tapahtuman osallistujille lähetetään perumisilmoitus sähköpostitse. Haluatko poistaa tapahtuman?"
@@ -4058,10 +4078,10 @@
         "Virheellinen URL"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "Järjestäjän aiemmin päivittämät ketjun tapahtumat säilytetään, mutta osa vastauksistasi menetetään."
+        "Järjestäjän aiemmin päivittämät tapahtumakerrat säilytetään, mutta osa vastauksistasi menetetään."
       ],
       "Occurrences previously updated by the organizer will be kept.": [
-        "Järjestäjän aiemmin päivittämät ketjun tapahtumat säilytetään."
+        "Järjestäjän aiemmin päivittämät tapahtumakerrat säilytetään."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
@@ -4143,7 +4163,7 @@
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Osa vastauksistasi järjestäjän aiemmin päivittämiin ketjun tapahtumiin menetetään."
+        "Osa vastauksistasi järjestäjän aiemmin päivittämiin tapahtumakertoihin menetetään."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
@@ -4359,7 +4379,7 @@
         "Tililläsi on ainakin yksi erääntynyt lasku ja sen toimintaa on rajoitettu. Jatkuvasta maksujen laiminlyönistä seuraa sähköpostiviestien ja jakolinkkien esto. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Osoitteesi on poistettu käytöstä, eikä osallistujille sen vuoksi voida lähettää peruutusviestiä. Haluatko silti poistaa ketjun kaikki tapahtumat?"
+        "Osoitteesi on poistettu käytöstä, eikä osallistujille sen vuoksi voida lähettää perumisilmoitusta sähköpostitse. Haluatko silti poistaa ketjun kaikki tapahtumat?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Osoitteesi on poistettu käytöstä, eikä osallistujille sen vuoksi voida lähettää perusmisilmoitusta. Haluatko silti poistaa tapahtuman?"
@@ -5847,6 +5867,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Käytetään Amazonissa ostoksiin jne."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Kun sinulta kysytään sähköpostiosoitettasi, anna sen sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -6325,8 +6348,14 @@
       "Color-coding is here!": [
         "Värikoodaus on täällä!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Käynnistä ${ MAIL_APP_NAME } kätevästi suoraan työpöydältäsi."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Löydä etsimäsi tapahtuma helposti uudella hakutoiminnollamme."
+      ],
+      "Get the desktop app": [
+        "Hanki työpöytäsovellus"
       ],
       "Get up to ${ credits } in credits.": [
         "Ansaitse jopa ${ credits } krediittiä."
@@ -6415,7 +6444,7 @@
         "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Poistetuille osallistujille lähetetään perumisilmoitus ketjun kaikkiin tapahtumiin sähköpostitse."
+        "Poistetuille osallistujille lähetetään sähköpostitse perumisilmoitus ketjun kaikkiin tapahtumiin."
       ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
@@ -6460,7 +6489,7 @@
         "Perutaan tuontia"
       ],
       "Cancellation sent and all events deleted": [
-        "Peruutus lähetettiin ja ketjun kaikki tapahtumat poistettiin"
+        "Perumisilmoitus lähetettiin ja ketjun kaikki tapahtumat poistettiin"
       ],
       "Cancellation sent and event deleted": [
         "Peruutus lähetettiin ja tapahtuma poistettiin"
@@ -7171,6 +7200,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"

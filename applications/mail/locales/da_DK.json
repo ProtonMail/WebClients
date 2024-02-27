@@ -263,6 +263,9 @@
       "Create a new label": [
         "Opret en ny etiket"
       ],
+      "Create and copy alias": [
+        "Opret og kopier et alias"
+      ],
       "Create folder": [
         "Opret mappe"
       ],
@@ -905,6 +908,9 @@
       "Select all messages": [
         "Vælg alle beskeder"
       ],
+      "Select country": [
+        "Vælg land"
+      ],
       "Select date and time": [
         "Vælg dato og tid"
       ],
@@ -1046,6 +1052,9 @@
       "Toggle Contact app": [
         "Skift Kontakt-app"
       ],
+      "Toggle security center app": [
+        "Slå appen's Sikkerhedscenter til og fra"
+      ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
       ],
@@ -1116,6 +1125,9 @@
       "Upgrade": [
         "Opgradér"
       ],
+      "Upgrade Now": [
+        "Opgradere nu"
+      ],
       "Upgrade now": [
         "Opgradér nu"
       ],
@@ -1182,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
         "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter om 2 dage. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter om 5 dage. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
       ],
       "Zoom in": [
         "Zoom ind"
@@ -1304,6 +1325,11 @@
       ],
       "New email": [
         "Ny e-mail"
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Download ${ MAIL_APP_NAME } desktop applikation."
       ]
     },
     "Apps dropdown": {
@@ -3025,6 +3051,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i indstillinger."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Ryd automatisk op i beskeder, der er ældre end 30 dage, fra papirkurven og spam. Nyd dette og andre fordele når du opgraderer."
       ],
@@ -3033,6 +3062,9 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Designet til brugere, der søger øget beskyttelse til deres konto."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -3065,6 +3097,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Sæt en data genoprettelsesmetode for at forhindre tab af data."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Sæt en genoprettelsesmetode for at forhindre at blive låst ude af din konto."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3082,6 +3120,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Lås op for ubegrænsede mapper, etiketter og flere premium-funktioner når du opgraderer."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -3305,6 +3346,9 @@
       ],
       "An error occurred while loading alias options": [
         "Der opstod en fejl under indlæsning af alias-indstillinger"
+      ],
+      "An error occurred while saving your alias": [
+        "Det ser ud til, at der opstod en fejl, mens din alias blev gemt."
       ],
       "Attachments are limited to 25 MB": [
         "Vedhæftninger er begrænset til 25 MB"
@@ -4359,6 +4403,31 @@
         "Til: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop applikation."
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Nyd hurtig, sikker og distraktion-fri adgang til din indbakke og kalender."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Få ubegrænset adgang med et ${ BRAND_NAME } betalt plan"
+      ],
+      "Introducing the desktop app": [
+        "Introducere desktop applikationen."
+      ],
+      "No credit card required": [
+        "Intet betalingskort påkrævet"
+      ],
+      "Upgrade now": [
+        "Opgradere dit plan nu"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Prøv gratis i 14 dage"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } app"
@@ -5188,6 +5257,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
+      "Clear app data": [
+        "Ryd App-data"
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -5732,6 +5804,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Dette fjerner alt data tilknyttet med denne app, fx downloadede beskeder."
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Rapporteres en besked som et phishing-forsøg videresendes beskeden til os, så vi kan analysere den og forbedre vores filtre. Det betyder, at vi vil kunne se hele beskedindholdet."
       ],
@@ -5969,6 +6044,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Denne besked er signeret med den vedhæftede nøgle, der endnu ikke er betroet."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Denne besked bliver automatisk slettet kl. ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Denne besked bliver automatisk slettet ${ value }"
       ],
@@ -6008,6 +6086,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøgle vil automatisk blive brugt til kryptering af e-mail, der sendes til denne adresse."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Dette fjerner alt data tilknyttet med denne app, fx downloadede beskeder. App'en genstarter, og du skal logge på igen for at bruge app'en."
       ],
       "This sender's public key has not been trusted yet.": [
         "Denne afsenders offentlige nøgle er endnu ikke betroet."
@@ -6431,6 +6512,9 @@
       "Expand / contract composer": [
         "Udvid / sammentræk skrivevinduet"
       ],
+      "Filter": [
+        "Filter"
+      ],
       "Forward": [
         "Videresend"
       ],
@@ -6740,6 +6824,9 @@
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "fx på Amazon, eBay osv."
       ],
       "Email": [
         "E-mail"
@@ -7860,6 +7947,11 @@
         "Dig"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faktura land"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -8144,6 +8236,9 @@
       "Create alias": [
         "Opret alias"
       ],
+      "Create an alias": [
+        "Opret et alias."
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
       ],
@@ -8164,6 +8259,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Se logs."
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel er **aktiv** og beskytter din konto."
       ]
     },
     "Select files": {
@@ -8706,11 +8817,17 @@
       "Change setting": [
         "Ændr indstilling"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Start nemt ${ MAIL_APP_NAME } direkte fra dit skrivebord."
+      ],
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
       ],
       "Faster email management": [
         "Hurtigere håndtering af e-mails"
+      ],
+      "Get the desktop app": [
+        "Få desktop appen."
       ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
@@ -8792,8 +8909,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For at sende eller modtage e-mails, frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
@@ -8804,8 +8927,20 @@
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dit ${ storage } er fyldt. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+      ],
       "Your storage is full": [
         "Dit lager er fuldt"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dit drev er fyldt. ${ cta }."
       ]
     },
     "Success": {
@@ -9924,6 +10059,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brugernavn (maks. ${ n } tegn)",
         "Prøv et kortere brugernavn (maks. ${ n } tegn)"

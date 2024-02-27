@@ -5481,9 +5481,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Som en mappe, er et hvelv en beleilig måte å organisere elementene dine på. Deling av hvelv med venner og familie er på trappene."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
@@ -7964,6 +7961,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } land"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Abonnementet fornyes automatisk hver måned. Neste faktureringsdato er om 1 måned."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Abonnementet ditt fornyes automatisk om ${ cycle } måned.",
+        "Abonnementet ditt fornyes automatisk om ${ cycle } måneder."
       ]
     },
     "vpn_2step: billing": {

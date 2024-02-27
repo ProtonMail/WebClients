@@ -396,6 +396,9 @@
       "No, thanks": [
         "Não, obrigado"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "Ok": [
         "Ok"
       ],
@@ -2273,6 +2276,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Actualização para um evento começando em ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
       ]
     },
     "Error": {
@@ -4708,6 +4716,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5609,6 +5620,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Criar um alias"
+      ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
       ],
@@ -6613,6 +6627,9 @@
       "Reshare your calendars": [
         "Voltar a partilhar os seus calendários"
       ],
+      "Save": [
+        "Salvar"
+      ],
       "Save changes": [
         "Guardar alterações"
       ],
@@ -6828,6 +6845,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"

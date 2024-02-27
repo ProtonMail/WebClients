@@ -622,6 +622,9 @@
       "Unable to sync": [
         "Nie je možné synchronizovať"
       ],
+      "Unknown error": [
+        "Neznáma chyba"
+      ],
       "Unknown invite": [
         "Neznáma pozvánka"
       ],
@@ -642,6 +645,9 @@
       ],
       "Vault name does not match": [
         "Názov trezoru sa nezhoduje"
+      ],
+      "Wrong password": [
+        "Nesprávne heslo"
       ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
@@ -891,6 +897,9 @@
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Pripojenie k internetu sa prerušilo. Skontrolujte prosím pripojenie vašeho zariadenia."
+      ],
       "Invitation sent": [
         "Pozvánka odoslaná"
       ],
@@ -978,8 +987,20 @@
       "Never": [
         "Nikdy"
       ],
+      "No network connection": [
+        "Žiadne sieťové pripojenie"
+      ],
       "None": [
         "Nezamykať"
+      ],
+      "Offline mode": [
+        "Offline režim"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Offline režim nie je možné momentálne povoliť"
+      ],
+      "Offline support successfully disabled": [
+        "Podpora offline bola úspešne vypnutá"
       ],
       "Owner": [
         "Vlastník"
@@ -1035,6 +1056,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
       ],
+      "Reconnect": [
+        "Znovu pripojiť"
+      ],
       "Restoring items from trash": [
         "Obnovenie položiek z koša"
       ],
@@ -1067,6 +1091,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Nastavte si PIN kód na jednoduché uzamknutie údajov"
+      ],
+      "Setting up offline mode...": [
+        "Nastavenie offline režimu..."
       ],
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
@@ -1166,6 +1193,9 @@
       ],
       "You are about to create:": [
         "Chystáte sa vytvoriť:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Teraz môžete použiť svoje ${ BRAND_NAME } heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemôžete zmeniť schránku pre tento alias."
@@ -1605,6 +1635,9 @@
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Momentálne ste offline. Odomknite ${ PASS_SHORT_APP_NAME } pomocou svojho ${ BRAND_NAME } hesla"
       ]
     },
     "lobby: Title": {
@@ -1866,6 +1899,9 @@
       ],
       "Your vault is empty": [
         "Váš trezor je prázdny"
+      ],
+      "Your welcome gift": [
+        "Váš darček na privítanie"
       ]
     },
     "Validation": {
@@ -1925,6 +1961,9 @@
       "Empty note": [
         "Prázdna poznámka"
       ],
+      "Encryption password is required": [
+        "Vyžaduje sa šifrovacie heslo"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
       ],
@@ -1960,6 +1999,9 @@
       ],
       "No results": [
         "Žiadne výsledky"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"

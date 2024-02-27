@@ -620,6 +620,9 @@
       "Unable to sync": [
         "Nu se poate sincroniza."
       ],
+      "Unknown error": [
+        "Eroare necunoscută"
+      ],
       "Unknown invite": [
         "Invitație necunoscută."
       ],
@@ -640,6 +643,9 @@
       ],
       "Vault name does not match": [
         "Numele seifului nu se potrivește."
+      ],
+      "Wrong password": [
+        "Parolă greșită"
       ],
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
@@ -878,6 +884,9 @@
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
+      ],
       "Invitation sent": [
         "Invitația a fost trimisă."
       ],
@@ -964,8 +973,20 @@
       "Never": [
         "Niciodată"
       ],
+      "No network connection": [
+        "Nu există conexiune la rețea."
+      ],
       "None": [
         "Fără"
+      ],
+      "Offline mode": [
+        "Mod deconectat"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Modul deconectat nu a putut fi activat momentan."
+      ],
+      "Offline support successfully disabled": [
+        "Accesul deconectat a fost dezactivat."
       ],
       "Owner": [
         "Proprietar"
@@ -1020,6 +1041,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
+      "Reconnect": [
+        "Reconectare"
+      ],
       "Restoring items from trash": [
         "Se restaurează articolele din gunoi."
       ],
@@ -1052,6 +1076,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Setați un cod PIN pentru a vă bloca ușor datele"
+      ],
+      "Setting up offline mode...": [
+        "Se setează modul deconectat..."
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
@@ -1150,6 +1177,9 @@
       ],
       "You are about to create:": [
         "Sunteți pe cale să creați:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola ${ BRAND_NAME } pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
@@ -1586,6 +1616,9 @@
       ],
       "Sign in to your account": [
         "Conectare la cont"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Sunteți în mod deconectat. Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -1845,6 +1878,9 @@
       ],
       "Your vault is empty": [
         "Seiful este gol"
+      ],
+      "Your welcome gift": [
+        "Bucurați-vă de versiunea de încercare"
       ]
     },
     "Validation": {
@@ -1904,6 +1940,9 @@
       "Empty note": [
         "Notă goală."
       ],
+      "Encryption password is required": [
+        "Este necesară parola de criptare."
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Data de expirare nu este în format LL/AA."
       ],
@@ -1938,6 +1977,9 @@
       ],
       "No results": [
         "Nu sunt rezultate"
+      ],
+      "Offline": [
+        "Deconectat"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."

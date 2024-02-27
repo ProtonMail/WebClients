@@ -728,6 +728,9 @@
       "Vault name does not match": [
         "Hvelvnavn samsvarer ikke"
       ],
+      "Wrong password": [
+        "Feil passord"
+      ],
       "Wrong PIN code. Try again.": [
         "Feil PIN-kode. Prøv igjen."
       ],
@@ -1073,6 +1076,12 @@
       "None": [
         "Ingen"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Frakoblet modus kunne ikke aktiveres for øyeblikket"
+      ],
+      "Offline support successfully disabled": [
+        "Støtte for frakoblet tilgang deaktivert"
+      ],
       "Open the Extensions menu": [
         "Åpne utvidelsesmenyen"
       ],
@@ -1169,6 +1178,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Sett opp en PIN-kode for enkelt å låse dataene dine"
+      ],
+      "Setting up offline mode...": [
+        "Setter opp frakoblet modus..."
       ],
       "Settings successfully updated": [
         "Innstillinger oppdatert"
@@ -1284,6 +1296,9 @@
       ],
       "You are about to create:": [
         "Du er i ferd med å opprette:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke ${ BRAND_NAME }-passordet for å få frakoblet tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Du kan raskt fylle ut påloggingsinformasjonen din automatisk ved å klikke på ${ PASS_APP_NAME }-ikonet."
@@ -1765,6 +1780,9 @@
       ],
       "Sign in to your account": [
         "Logg på kontoen din"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Du er frakoblet akkurat nå. Lås opp ${ PASS_SHORT_APP_NAME } med passordet ditt i ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2057,6 +2075,9 @@
       ],
       "Your vault is empty": [
         "Hvelvet ditt er tomt"
+      ],
+      "Your welcome gift": [
+        "Din velkomstgave"
       ]
     },
     "Validation": {
@@ -2115,6 +2136,9 @@
       ],
       "Empty note": [
         "Tomt notat"
+      ],
+      "Encryption password is required": [
+        "Krypteringspassord kreves"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Utløpsdato er ikke i formatet MM/ÅÅ"

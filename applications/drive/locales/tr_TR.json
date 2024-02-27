@@ -749,6 +749,9 @@
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
       ],
+      "Your 3 GB bonus": [
+        "3 GB hediyeniz"
+      ],
       "Zoom in": [
         "Yakınlaştır"
       ],
@@ -2150,6 +2153,9 @@
       ],
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
+      ],
+      "An error occurred while saving your alias": [
+        "Takma adınız kaydedilirken bir sorun çıktı"
       ],
       "Authentication canceled.": [
         "Kimlik doğrulaması iptal edildi."
@@ -3751,6 +3757,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Bilgisayarınızdaki dosyaları eşitlemek için masaüstü uygulamasını alın."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "${ DRIVE_APP_NAME } uygulamasını tanıyın ve 3 GB depolama alanı hediyenizi kazanın! Bugün harekete geçin."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Önce \"Dosyalarım\" klasörüne gidip bazı dosyalar yükleyin."
       ],
@@ -3787,6 +3796,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Bu sırada kendi ${ DRIVE_APP_NAME } hesabınızı açıp verilerinizi uçtan uca şifreleme ile koruyabilir ve güvenli olarak paylaşabilirsiniz."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } / ${ totalProgressToShow } öge dizine ekleniyor"
@@ -4127,6 +4139,9 @@
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Kendi ${ DRIVE_APP_NAME } hesabınızı açıp verilerinizi uçtan uca şifreleme ile koruyabilir ve güvenli olarak paylaşabilirsiniz."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -4311,6 +4326,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
+      "upgrade your storage": [
+        "depolama alanınızı yükseltin"
+      ],
       "Uploaded": [
         "Yüklendi"
       ],
@@ -4334,6 +4352,9 @@
       ],
       "Warning": [
         "Uyarı"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Tebrikler, depolama alanınızı 5 GB boyutuna artırdınız!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Teknik sorunlar yaşıyoruz. Yeni fotoğraf yükleme özelliği geçici olarak kullanılamıyor."
@@ -4406,6 +4427,10 @@
       ],
       "You cannot undo this action.": [
         "Bu işlemi geri alamazsınız."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "3 GB karşılama hediyenizi ve şunu almak için ${ expiresInDays } gününüz kaldı ",
+        "3 GB karşılama hediyenizi ve şunu almak için ${ expiresInDays } gününüz kaldı "
       ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
@@ -5669,6 +5694,9 @@
       "Create a share link": [
         "Bir paylaşım bağlantısı ekleyin"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "${ DRIVE_APP_NAME } kullanmaya başladığınızda ücretsiz depolama alanınızı 5 GB yapacağız!"
+      ],
       "Set a recovery method": [
         "Bir kurtarma yöntemi ayarlayın"
       ],
@@ -5939,6 +5967,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Amazon alışverişleri için kullanıldı gibi."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
       ]
     },
     "Security Center - Action": {
@@ -7091,6 +7122,9 @@
       "You have no folders yet": [
         "Henüz bir klasörünüz yok"
       ],
+      "Your 3 GB bonus": [
+        "3 GB hediyeniz"
+      ],
       "Your account is protected": [
         "Hesabınız korunuyor"
       ],
@@ -7102,6 +7136,9 @@
       ],
       "Your welcome actions": [
         "Karşılama işlemleriniz"
+      ],
+      "You’ve got 5 GB of storage": [
+        "5 GB depolama alanı kazandınız"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7178,6 +7215,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"

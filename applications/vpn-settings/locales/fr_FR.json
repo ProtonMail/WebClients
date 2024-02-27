@@ -3753,7 +3753,7 @@
         "Nombre total de connexions VPN"
       ],
       "two-factor authentication (2FA)": [
-        "authentification à deux facteurs (2FA)"
+        "authentification à deux facteurs (A2F)"
       ],
       "Two-factor authentication disabled": [
         "L'authentification à deux facteurs est désactivée."
@@ -5474,9 +5474,6 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
-      ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments. Le partage des coffres-forts avec vos amis et votre famille est en cours de développement."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Sécurisez les ressources de votre entreprise sur internet et rendez-les accessibles uniquement par le biais de vos passerelles privées."
@@ -7940,6 +7937,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "L'abonnement est automatiquement renouvelé tous les mois. Votre prochaine date de facturation est dans 1 mois."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois."
       ]
     },
     "vpn_2step: billing": {

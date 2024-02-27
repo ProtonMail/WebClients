@@ -5405,9 +5405,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "폴더처럼, 금고는 당신의 정보를 정리하는 편리한 방법입니다. 친구 및 가족과 금고를 공유할 수 있는 기능은 아직 개발 중입니다."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "공용 인터넷에서 회사 자원을 잠그고 개인 게이트웨이를 통해서만 접근할 수 있도록 하세요."
       ],
@@ -7826,6 +7823,14 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "구독은 1개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 1개월입니다."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "12개월마다 ${ renewPrice }가 결제됩니다."
       ]
     },
     "vpn_2step: billing": {

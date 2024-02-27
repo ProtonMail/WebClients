@@ -199,6 +199,9 @@
       "Close navigation": [
         "关闭导航栏"
       ],
+      "Close the checklist": [
+        "关闭任务清单"
+      ],
       "Close this banner": [
         "关闭此横幅"
       ],
@@ -740,7 +743,7 @@
         "预览联系人"
       ],
       "Previous": [
-        "前一页"
+        "上一页"
       ],
       "Previous conversation": [
         "上一个会话"
@@ -2958,6 +2961,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "在设置中${ manageBlockedAddressesSettingsLink }。"
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "双重验证能为您再增添一道安全防线，将试图盗取账户者拒之门外。"
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "废件箱与垃圾邮件超过 30 天自动为您清理。升级账户即可开启，还能享受更多功能。"
       ],
@@ -2966,6 +2972,9 @@
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
+      ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "专为寻求高等级安全防护的客户打造。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
@@ -2994,6 +3003,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "设置数据恢复方式，谨防数据丢失。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "设置账户恢复方式，防止因遗忘密码而丧失账户使用权。"
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
       ],
@@ -3008,6 +3023,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "升级账户即可使用无限量的文件夹和标签，还有更多功能等您体验。"
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "升级账户即可开启 ${ PROTON_SENTINEL_NAME }，体验我们由 AI 驱动的顶尖安全防护体系，享受 7×24 小时独家专业客服。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -4178,12 +4196,26 @@
         "收件人：${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "无需信用卡"
+      ]
+    },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } 移动应用"
+      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store 上的${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
         "Play Store 上的${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "注册邮箱"
+      ],
+      "Auto-forward Gmail": [
+        "自动转发 Gmail 邮件"
       ],
       "auto-forwarding": [
         "自动转发"
@@ -4197,11 +4229,17 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "太好了，现在您的邮箱将更加安全、更加便捷、更加称心如意。我们已免费为您将邮箱容量升至 1 GB。"
       ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "将各类网络账号的${ strongText }改为 ${ BRAND_NAME } 地址"
+      ],
       "Checklist complete": [
         "清单已完成"
       ],
       "Close": [
         "关闭"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "点击关闭即表示放弃免费扩容机会。"
       ],
       "Congratulation, you completed all the steps!": [
         "恭喜，您已完成所有步骤！"
@@ -4210,7 +4248,13 @@
         "恭喜您，大功告成！"
       ],
       "Continue setting up your email": [
-        "继续设置您的电子邮件"
+        "进一步完善您的邮箱"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "了解我们的${ strongText }如何为您提供防护"
+      ],
+      "Discover privacy features": [
+        "探索隐私保护功能"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
         "完成以下操作后，您的免费存储空间将翻倍至 1 GB："
@@ -4219,10 +4263,16 @@
         "极致的加密技术，只有您和目标收件人能够阅读邮件内容。"
       ],
       "For your eyes only": [
-        "密不透风"
+        "邮件内容密不透风"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "在 Android 或 iOS 系统中安装 ${ strongText }"
+      ],
+      "Get the App": [
+        "下载移动应用"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "继续使用 ${ MAIL_APP_NAME } 来发现 ${ BRAND_NAME } 保护您的隐私和简化电子邮件发送的更多方法。"
@@ -4245,6 +4295,9 @@
       "Popular online services": [
         "热门在线服务"
       ],
+      "privacy features": [
+        "隐私保护功能"
+      ],
       "Protect and simplify your email": [
         "让您的邮箱更加安全便捷"
       ],
@@ -4263,6 +4316,9 @@
       "This feature is currently unavailable": [
         "此功能当前不可用。"
       ],
+      "Update your logins": [
+        "更新注册邮箱"
+      ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "使用您的移动设备扫描此二维码或访问 iOS 或 Android 商店。"
       ],
@@ -4270,7 +4326,7 @@
         "我们阻止广告商和数据收集者对您进行分析。"
       ],
       "You've unlocked 1 GB": [
-        "您已解锁 1 GB"
+        "您已解锁 1 GB 存储空间"
       ]
     },
     "Gmail forwarding": {
@@ -4316,6 +4372,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Security Center": [
+        "安全中心"
       ]
     },
     "Hint": {
@@ -6666,10 +6725,10 @@
     },
     "Layout mode": {
       "Column": [
-        "列"
+        "分列"
       ],
       "Row": [
-        "行"
+        "分行"
       ]
     },
     "Limit of calendars reached": {
@@ -7629,14 +7688,28 @@
       ]
     },
     "Security Center": {
+      "Create an alias": [
+        "创建别名"
+      ],
       "Hide-my-email aliases": [
         "个hide-my-email别名"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "您可以使用 hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
       ],
       "Open ${ PASS_APP_NAME }": [
         "打开 ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "保护您的网络身份"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "体验 ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8118,6 +8191,9 @@
     "Spotlight": {
       "Change setting": [
         "更改设置"
+      ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "在此处即可创建并管理 ide-my-email 邮箱别名。"
       ],
       "Email tracking protection": [
         "邮件追踪防护"
@@ -8726,6 +8802,9 @@
       "Email settings": [
         "邮件设置"
       ],
+      "Enable 2FA": [
+        "开启双重验证"
+      ],
       "Enable message content search": [
         "启用邮件全文搜索"
       ],
@@ -8755,6 +8834,9 @@
       ],
       "Forward": [
         "转发"
+      ],
+      "Get advanced protection": [
+        "进一步提升防护等级"
       ],
       "Groups": [
         "群组"
@@ -8944,6 +9026,9 @@
       ],
       "Schedule send": [
         "定时发送"
+      ],
+      "Security center": [
+        "安全中心"
       ],
       "Select a theme": [
         "选择配色"

@@ -5983,6 +5983,12 @@
         "Beṭṭu iwgelhen si ṭṭerf ɣer ṭṭerf"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Ssit akken ad turareḍ tikkelt-nniḍen tabidyut"

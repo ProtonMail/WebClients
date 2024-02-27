@@ -732,6 +732,9 @@
       "Vault name does not match": [
         "Nazwy sejfów nie pasują do siebie"
       ],
+      "Wrong password": [
+        "Hasło jest nieprawidłowe"
+      ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
       ],
@@ -1100,6 +1103,12 @@
       "None": [
         "Brak"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Tryb offline nie może zostać włączony"
+      ],
+      "Offline support successfully disabled": [
+        "Tryb offline został wyłączony"
+      ],
       "Open the Extensions menu": [
         "Otwórz menu rozszerzenia"
       ],
@@ -1198,6 +1207,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Ustaw kod PIN, aby łatwo zablokować swoje dane"
+      ],
+      "Setting up offline mode...": [
+        "Włączanie trybu offline"
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
@@ -1315,6 +1327,9 @@
       ],
       "You are about to create:": [
         "Utworzysz:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Użyj hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline ${ PASS_SHORT_APP_NAME }"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Automatycznie uzupełniaj dane logowania po kliknięciu ikony ${ PASS_APP_NAME }."
@@ -1799,6 +1814,9 @@
       ],
       "Sign in to your account": [
         "Zaloguj się"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Jesteś w trybie offline. Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2095,6 +2113,9 @@
       ],
       "Your vault is empty": [
         "Sejf jest pusty"
+      ],
+      "Your welcome gift": [
+        "Twój prezent powitalny"
       ]
     },
     "Validation": {
@@ -2154,6 +2175,9 @@
       "Empty note": [
         "Notatka jest pusta"
       ],
+      "Encryption password is required": [
+        "Hasło szyfrowania jest wymagane"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Data wygaśnięcia nie jest w formacie MM/RR"
       ],
@@ -2162,6 +2186,9 @@
       ],
       "Invalid email addresses.": [
         "Adresy e-mail są nieprawidłowe."
+      ],
+      "item was imported without custom fields": [
+        "element został zaimportowany bez pól niestandardowych"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",
