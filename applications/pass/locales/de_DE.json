@@ -618,6 +618,9 @@
       "Unable to sync": [
         "Synchronisation nicht möglich"
       ],
+      "Unknown error": [
+        "Unbekannter Fehler"
+      ],
       "Unknown invite": [
         "Unbekannte Einladung"
       ],
@@ -865,6 +868,9 @@
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
+      ],
       "Invitation sent": [
         "Einladung gesendet"
       ],
@@ -950,8 +956,20 @@
       "Never": [
         "Niemals"
       ],
+      "No network connection": [
+        "Keine Netzwerkverbindung"
+      ],
       "None": [
         "Keine Sperre"
+      ],
+      "Offline mode": [
+        "Offline-Modus"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Fehler beim Aktivieren des Offline-Modus."
+      ],
+      "Offline support successfully disabled": [
+        "Offline-Unterstützung erfolgreich deaktiviert."
       ],
       "Owner": [
         "Besitzer"
@@ -1005,6 +1023,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
       ],
+      "Reconnect": [
+        "Erneut verbinden"
+      ],
       "Restoring items from trash": [
         "Einträge vom Papierkorb wiederherstellen"
       ],
@@ -1037,6 +1058,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Richte einen PIN-Code zum einfachen Sperren deiner Daten ein."
+      ],
+      "Setting up offline mode...": [
+        "Offline-Modus wird eingerichtet..."
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
@@ -1824,6 +1848,9 @@
       ],
       "Your vault is empty": [
         "Dein Tresor ist leer."
+      ],
+      "Your welcome gift": [
+        "Dein Willkommensgeschenk"
       ]
     },
     "Validation": {

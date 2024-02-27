@@ -618,6 +618,9 @@
       "Unable to sync": [
         "Não é possível sincronizar"
       ],
+      "Unknown error": [
+        "Erro desconhecido"
+      ],
       "Unknown invite": [
         "Convite desconhecido"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "O nome do cofre não corresponde"
+      ],
+      "Wrong password": [
+        "Senha incorreta"
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
@@ -865,6 +871,9 @@
       "Internet connection lost": [
         "Perda de conexão com a internet"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Perda de conexão com a internet. Verifique a conexão do seu dispositivo."
+      ],
       "Invitation sent": [
         "Convite enviado"
       ],
@@ -950,8 +959,20 @@
       "Never": [
         "Nunca"
       ],
+      "No network connection": [
+        "Sem conexão com a internet"
+      ],
       "None": [
         "Nenhum"
+      ],
+      "Offline mode": [
+        "Modo off-line"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "O modo off-line não pôde ser ativado no momento"
+      ],
+      "Offline support successfully disabled": [
+        "Modo off-line desativado com sucesso"
       ],
       "Owner": [
         "Proprietário"
@@ -1005,6 +1026,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
       ],
+      "Reconnect": [
+        "Reconectar"
+      ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
       ],
@@ -1038,6 +1062,9 @@
       "Set up a PIN code to easily lock your data": [
         "Configure um código PIN para bloquear facilmente seus dados"
       ],
+      "Setting up offline mode...": [
+        "Configurando o modo off-line..."
+      ],
       "Settings successfully updated": [
         "Configurações atualizadas"
       ],
@@ -1045,7 +1072,7 @@
         "Compartilhe seus logins, notas seguras, com até 10 pessoas"
       ],
       "Signing you in": [
-        "Fazendo seu login"
+        "Iniciando sessão"
       ],
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
@@ -1134,6 +1161,9 @@
       ],
       "You are about to create:": [
         "Você está prestes a criar:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Você agora pode usar a senha da ${ BRAND_NAME } para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Você não pode alterar as caixas de entrada para este alias."
@@ -1567,6 +1597,9 @@
       ],
       "Sign in to your account": [
         "Iniciar sessão em sua conta"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Você está atualmente sem internet. Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1857,9 @@
       ],
       "Your vault is empty": [
         "Seu cofre está vazio"
+      ],
+      "Your welcome gift": [
+        "Seu presente de boas-vindas"
       ]
     },
     "Validation": {
@@ -1883,6 +1919,9 @@
       "Empty note": [
         "Nota vazia"
       ],
+      "Encryption password is required": [
+        "A senha de criptografia é obrigatória"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "A data de expiração não está no formato MM/AA"
       ],
@@ -1891,6 +1930,9 @@
       ],
       "Invalid email addresses.": [
         "Endereços de e-mail inválidos."
+      ],
+      "item was imported without custom fields": [
+        "itens foram importados sem os campos personalizados"
       ],
       "Maximum length is ${ maxLength } character": [
         "O comprimento máximo é ${ maxLength } carácter",
@@ -1916,6 +1958,9 @@
       ],
       "No results": [
         "Sem resultados"
+      ],
+      "Offline": [
+        "Off-line"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"
