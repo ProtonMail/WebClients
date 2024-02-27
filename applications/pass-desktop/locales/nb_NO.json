@@ -618,6 +618,9 @@
       "Unable to sync": [
         "Ikke i stand til å synkronisere"
       ],
+      "Unknown error": [
+        "Ukjent feil"
+      ],
       "Unknown invite": [
         "Ukjent invitasjon"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "Hvelvnavn samsvarer ikke"
+      ],
+      "Wrong password": [
+        "Feil passord"
       ],
       "Wrong PIN code. Try again.": [
         "Feil PIN-kode. Prøv igjen."
@@ -723,6 +729,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater og kredittkort."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } gang",
@@ -865,6 +874,9 @@
       "Internet connection lost": [
         "Mistet internettilkobling"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internettilkobling tapt, vennligst kontroller enhetens tilkobling."
+      ],
       "Invitation sent": [
         "Invitasjon sendt"
       ],
@@ -950,8 +962,20 @@
       "Never": [
         "Aldri"
       ],
+      "No network connection": [
+        "Ingen internettforbindelse"
+      ],
       "None": [
         "Ingen"
+      ],
+      "Offline mode": [
+        "Frakoblet modus"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Frakoblet modus kunne ikke aktiveres for øyeblikket"
+      ],
+      "Offline support successfully disabled": [
+        "Støtte for frakoblet tilgang deaktivert"
       ],
       "Owner": [
         "Eier"
@@ -975,6 +999,9 @@
       "Pinning item...": [
         "Fester element..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vennligst bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
@@ -996,6 +1023,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "Vennligst oppgrader planen din for å aktivere støtte for frakoblet tilgang."
+      ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
       ],
@@ -1004,6 +1034,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet av ${ PROTON_SENTINEL_LINK }, vårt avanserte kontobeskyttelsesprogram"
+      ],
+      "Reconnect": [
+        "Koble til på nytt"
       ],
       "Restoring items from trash": [
         "Gjenoppretter elementer fra papirkurven"
@@ -1037,6 +1070,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Sett opp en PIN-kode for enkelt å låse dataene dine"
+      ],
+      "Setting up offline mode...": [
+        "Setter opp frakoblet modus..."
       ],
       "Settings successfully updated": [
         "Innstillinger oppdatert"
@@ -1134,6 +1170,9 @@
       ],
       "You are about to create:": [
         "Du er i ferd med å opprette:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke ${ BRAND_NAME }-passordet for å få frakoblet tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke endre postboksene for dette aliaset."
@@ -1284,6 +1323,9 @@
       "Empty trash": [
         "Tøm papirkurven"
       ],
+      "Enable offline access": [
+        "Aktiver frakoblet tilgang"
+      ],
       "Encrypted (recommended)": [
         "Kryptert (anbefalt)"
       ],
@@ -1418,6 +1460,9 @@
       ],
       "Notes": [
         "Notater"
+      ],
+      "Offline mode": [
+        "Frakoblet modus"
       ],
       "Old-New": [
         "Gammel-Ny"
@@ -1567,6 +1612,9 @@
       ],
       "Sign in to your account": [
         "Logg på kontoen din"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Du er frakoblet akkurat nå. Lås opp ${ PASS_SHORT_APP_NAME } med passordet ditt i ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1872,9 @@
       ],
       "Your vault is empty": [
         "Hvelvet ditt er tomt"
+      ],
+      "Your welcome gift": [
+        "Din velkomstgave"
       ]
     },
     "Validation": {
@@ -1883,6 +1934,9 @@
       "Empty note": [
         "Tomt notat"
       ],
+      "Encryption password is required": [
+        "Krypteringspassord kreves"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Utløpsdato er ikke i formatet MM/ÅÅ"
       ],
@@ -1916,6 +1970,9 @@
       ],
       "No results": [
         "Ingen resultater"
+      ],
+      "Offline": [
+        "Frakoblet"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
