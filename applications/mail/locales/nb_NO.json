@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Oppgrader"
       ],
+      "Upgrade Now": [
+        "Oppgrader nå"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 5 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Zoom inn"
@@ -4389,6 +4401,31 @@
       ],
       "To: ${ toString }": [
         "Til: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Gled deg over rask, sikker og distraksjonsfri tilgang til innboksen og kalenderen din."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Få ubegrenset tilgang med betalt ${ BRAND_NAME }-plan"
+      ],
+      "Introducing the desktop app": [
+        "Introduserer skrivebordsappen"
+      ],
+      "No credit card required": [
+        "Ingen kredittkort kreves"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Prøv gratis i 14 dager"
       ]
     },
     "Get started checklist instructions": {

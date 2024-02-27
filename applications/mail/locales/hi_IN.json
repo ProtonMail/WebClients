@@ -4083,6 +4083,16 @@
         "को: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "कोई क्रेडिट कार्ड नहीं चाहिए"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "14 दिन के लिए मुफ्त में आज़माएं"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } on App Store": [
         "App Store पर ${ MAIL_APP_NAME }"
@@ -8851,6 +8861,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
       "Try a shorter username (${ n } character max)": [
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
