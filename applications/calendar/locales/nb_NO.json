@@ -606,6 +606,9 @@
       "Upgrade": [
         "Oppgrader"
       ],
+      "Upgrade Now": [
+        "Oppgrader nå"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
       ],
@@ -648,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes om 5 dager ${ upgradeButton }."
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {

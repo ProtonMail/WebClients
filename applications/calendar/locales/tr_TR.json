@@ -606,6 +606,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade Now": [
+        "Şimdi yükselt"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ],
@@ -648,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Masaüstü uygulaması ücretsiz deneme sürümünüz 2 gün içinde sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Masaüstü uygulaması ücretsiz deneme sürümünüz 5 gün içinde sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Masaüstü uygulaması ücretsiz deneme sürümünüz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -744,6 +756,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Şimdi ayrılırsanız, etkinliğinizi kaybedeceksiniz."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasını indirin"
       ]
     },
     "Apps dropdown": {
@@ -2442,6 +2459,9 @@
       ],
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
+      ],
+      "An error occurred while saving your alias": [
+        "Takma adınız kaydedilirken bir sorun çıktı"
       ],
       "Answer failed to be sent": [
         "Yanıt gönderilemedi"
@@ -5847,6 +5867,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Amazon alışverişleri için kullanıldı gibi."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
       ]
     },
     "Security Center - Action": {
@@ -6325,8 +6348,14 @@
       "Color-coding is here!": [
         "Renklendirme burada!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "${ MAIL_APP_NAME } uygulamasını doğrudan masaüstünüzden kolayca başlatın."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Yeni arama özelliğimizle aradığınız etkinliği kolayca bulabilirsiniz."
+      ],
+      "Get the desktop app": [
+        "Masaüstü uygulamasını edinin"
       ],
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
@@ -7171,6 +7200,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"

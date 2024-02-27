@@ -606,6 +606,9 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ],
@@ -648,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει 2 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει 5 ημέρες. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -2442,6 +2454,9 @@
       ],
       "An error occurred while loading alias options": [
         "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
+      ],
+      "An error occurred while saving your alias": [
+        "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου σας."
       ],
       "Answer failed to be sent": [
         "Η απάντηση απέτυχε να σταλεί"
@@ -5847,6 +5862,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -6325,8 +6343,14 @@
       "Color-coding is here!": [
         "Η χρωματική κωδικοποίηση είναι εδώ!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Εκκινήστε εύκολα το ${ MAIL_APP_NAME } απευθείας από την επιφάνεια εργασίας σας."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Βρείτε εύκολα την εκδήλωση που αναζητάτε με τη νέα μας λειτουργία αναζήτησης."
+      ],
+      "Get the desktop app": [
+        "Λήψη της εφαρμογής για υπολογιστές"
       ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
@@ -7171,6 +7195,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
