@@ -300,6 +300,7 @@ const EventForm = ({
             attendees: value,
             addressID: model.member.addressID,
             addresses,
+            isAttendee: false,
         });
 
         setModel({

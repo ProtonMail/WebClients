@@ -102,7 +102,12 @@ const CreateEventCalendarSelect = ({
             ...model,
             calendar: { id: newId, color, permissions, isOwned, isSubscribed, isWritable, isUnknown },
             ...getInitialMemberModel(addresses, Members, Member, address),
-            ...getOrganizerAndSelfAddressModel({ attendees: model.attendees, addresses, addressID: address.ID }),
+            ...getOrganizerAndSelfAddressModel({
+                attendees: model.attendees,
+                addresses,
+                addressID: address.ID,
+                isAttendee: model.isAttendee,
+            }),
             defaultEventDuration,
             partDayNotifications,
             fullDayNotifications,
