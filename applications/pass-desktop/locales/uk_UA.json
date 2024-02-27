@@ -331,6 +331,11 @@
         "Пропозиція з нагоди Чорної П'ятниці"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Застосунок ${ MAIL_APP_NAME } на комп'ютері"
+      ]
+    },
     "Button": {
       "More info": [
         "Докладніше"
@@ -485,6 +490,9 @@
       ],
       "Unable to sync": [
         "Не вдалося синхронізувати"
+      ],
+      "Unknown error": [
+        "Невідома помилка"
       ],
       "Unknown invite": [
         "Невідоме запрошення"
@@ -679,6 +687,9 @@
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Відсутнє з'єднання з інтернетом. Перевірте доступ свого пристрою до мережі."
       ],
       "Invitation sent": [
         "Запрошення надіслано"
@@ -1428,6 +1439,9 @@
       ],
       "Your vault is empty": [
         "Ваше сховище порожнє"
+      ],
+      "Your welcome gift": [
+        "Ваш вітальний подарунок"
       ]
     },
     "Validation": {

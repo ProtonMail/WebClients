@@ -5135,6 +5135,31 @@
         "Veldig liten"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "nettapp"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "Back to sign in": [
+        "Tilbake til pålogging"
+      ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Fortsett å nyte en rask, fokusert og sikker skrivebordsopplevelse. Oppgrader for å låse opp ubegrenset tilgang og andre premiumfunksjoner. "
+      ],
+      "Keep using the desktop app": [
+        "Fortsett å bruke skrivebordsappen"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Åpne ${ MAIL_APP_NAME } i ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Den gratis prøveperioden for skrivebordsappen er avsluttet"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-post per måned)"
@@ -5156,6 +5181,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } på App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } på Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME }-app"
       ],
@@ -6488,6 +6519,9 @@
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rask og fokusert. E-post og kalender, rett på skrivebordet."
       ],
       "Fill in user details": [
         "Fyll ut brukerinformasjon"
@@ -10662,9 +10696,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Som en mappe, er et hvelv en beleilig måte å organisere elementene dine på. Deling av hvelv med venner og familie er på trappene."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
@@ -13878,6 +13909,12 @@
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Last ned skrivebordsappen"
+      ],
+      "Download the mobile apps": [
+        "Last ned mobilappene"
+      ],
       "Edit credit/debit card": [
         "Rediger kreditt-/debetkort"
       ],
@@ -14007,6 +14044,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for å aksessere alle tjenere"
+      ],
+      "Get the apps": [
+        "Få appene"
       ],
       "Gift": [
         "Gave"
@@ -14912,6 +14952,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } land"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Abonnementet fornyes automatisk hver måned. Neste faktureringsdato er om 1 måned."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Abonnementet ditt fornyes automatisk om ${ cycle } måned.",
+        "Abonnementet ditt fornyes automatisk om ${ cycle } måneder."
       ]
     },
     "vpn_2step: billing": {

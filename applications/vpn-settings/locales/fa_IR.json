@@ -3180,6 +3180,9 @@
       "HTML signatures": [
         "امضاهای HTML"
       ],
+      "Integrated 2FA authenticator": [
+        "احراز هویت دو عاملی یکپارچه"
+      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN همیشه روشن"
       ],
@@ -4526,6 +4529,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد"
+      ],
       "Try a shorter username (${ n } character max)": [
         "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
         "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"

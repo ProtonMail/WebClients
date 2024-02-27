@@ -498,6 +498,9 @@
       "Select calendar view": [
         "カレンダー表示を選択"
       ],
+      "Select country": [
+        "国を選択"
+      ],
       "Select time zone": [
         "タイムゾーンを選択"
       ],
@@ -1201,6 +1204,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "連絡先の画像"
       ]
     },
     "Contact type label": {
@@ -3175,6 +3183,9 @@
       ],
       "Search": [
         "検索"
+      ],
+      "Security Center": [
+        "セキュリティセンター"
       ]
     },
     "Hint": {
@@ -3745,6 +3756,9 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Important note": [
+        "注意事項"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
@@ -4158,6 +4172,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info calendar search": {
@@ -4607,6 +4626,9 @@
       ],
       "Wonderful": [
         "すばらしい"
+      ],
+      "Your alias": [
+        "あなたのエイリアス"
       ],
       "Your calendar URL": [
         "カレンダーのURL"
@@ -5346,6 +5368,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } はこのキーを廃止しました。このキーは署名検証のみに使用できます。"
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "外部鍵は、keys.openpgp.org から自動的に取得されました。"
+      ],
+      "External key automatically fetched via WKD.": [
+        "外部鍵は、WKD から自動的に取得されました。"
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "この鍵は、この連絡先宛のメッセージの暗号化に使用されます"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
       ]
@@ -5505,11 +5536,20 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "すべてのエイリアス"
+      ],
       "Create alias": [
+        "エイリアスを作成"
+      ],
+      "Create an alias": [
         "エイリアスを作成"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
+      ],
+      "New alias": [
+        "新しいエイリアス"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を開く"
@@ -6390,6 +6430,9 @@
       "Email settings": [
         "メールの設定"
       ],
+      "Enable 2FA": [
+        "2要素認証を有効にする"
+      ],
       "Encrypted event": [
         "暗号化された予定"
       ],
@@ -6413,6 +6456,9 @@
       ],
       "Get advanced protection": [
         "高度な保護を入手"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } アプリを入手"
       ],
       "Groups": [
         "グループ"

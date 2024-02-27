@@ -263,6 +263,9 @@
       "Create a new label": [
         "Een nieuw label maken"
       ],
+      "Create and copy alias": [
+        "Maak en kopieer alias"
+      ],
       "Create folder": [
         "Map maken"
       ],
@@ -342,6 +345,9 @@
       ],
       "Download ${ attachmentName }": [
         "${ attachmentName } downloaden"
+      ],
+      "Download now": [
+        "Nu downloaden"
       ],
       "Downloading": [
         "Downloaden"
@@ -510,6 +516,9 @@
       ],
       "Import from Outlook": [
         "Importeren uit Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Belangrijke update beschikbaar. Update naar de nieuwste versie om het programma te blijven gebruiken. ${ downloadUpdate }"
       ],
       "In the morning": [
         "'s Ochtends"
@@ -1113,6 +1122,9 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade Now": [
+        "Upgrade Nu"
+      ],
       "Upgrade now": [
         "Nu upgraden"
       ],
@@ -1179,6 +1191,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 2 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 5 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -4309,6 +4330,16 @@
         "Aan: ${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "No credit card required": [
+        "Green kredietkaart vereist"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Probeer 14 dagen gratis"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME }-app"
@@ -5054,6 +5085,12 @@
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Weet u zeker dat u alle berichten in deze locatie wilt archiveren?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Weet u zeker dat u alle berichten in deze locatie naar de prullenbak wilt verplaatsen?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Weet u zeker dat u ${ count } gesprek permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } gesprekken permanent wilt verwijderen?"
@@ -5110,6 +5147,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
+      ],
+      "Clear app data": [
+        "App-gegevens wissen"
       ],
       "Clear data": [
         "Gegevens wissen"
@@ -5652,6 +5692,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Verwijdert alle gegevens die geassocieerd zijn met dit programma, inclusief gedownloade berichten"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Door een bericht als phishing aan te merken, wordt het naar ProtonMail verzonden, zodat het mogelijk is de inhoud te analyseren en de spamfilters te verbeteren. Dit betekent dat we alle inhoud van dit betreffende bericht kunnen zien."
       ],
@@ -5885,6 +5928,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Dit bericht is ondertekend door de bijgevoegde sleutel, die nog niet als vertrouwd is aangemerkt."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Dit bericht wordt automatisch verwijderd op ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Dit bericht wordt automatisch verwijderd op ${ value }"
       ],
@@ -5924,6 +5970,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Dit verwijdert alle gegevens die geassocieerd zijn met dit programma, inclusief gedownloade berichten. Het programma zal herstarten waarna je opnieuw moet inloggen om het programma te gebruiken."
       ],
       "This sender's public key has not been trusted yet.": [
         "De openbare sleutel van de afzender is nog niet vertrouwd."
@@ -7767,6 +7816,11 @@
         "U"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Factuur Land"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
@@ -8193,6 +8247,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
@@ -8653,8 +8710,47 @@
       "${ app } storage": [
         "${ app } opslagruimte"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% vol"
+      ],
+      "contact your administrator": [
+        "neem contact op met uw beheerder"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Maak ruimte vrij of upgrade voor meer opslag om bestanden te kunnen blijven uploaden of synchroniseren."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Maak ruimte vrij of upgrade voor meer opslag om mail te blijven verzenden of te ontvangen."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Uw ${ appStorage } is bijna vol"
+      ],
+      "Your ${ appStorage } is full": [
+        "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Uw ${ storage } is vol. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Uw opslag is ${ percentage }% vol. ${ cta }."
+      ],
       "Your storage is full": [
         "Uw opslagruimte is vol"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Uw opslag is vol. ${ cta }."
       ]
     },
     "Success": {
@@ -9286,6 +9382,9 @@
       "Get advanced protection": [
         "Kies geavanceerde bescherming"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Download de ${ appName[APP_NAME] }-apps"
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -9419,6 +9518,9 @@
       "Moving a snoozed message": [
         "Een gesnoozed bericht verplaatsen"
       ],
+      "Need more aliases?": [
+        "Meer aliassen nodig?"
+      ],
       "New message": [
         "Nieuw bericht"
       ],
@@ -9502,6 +9604,9 @@
       ],
       "Schedule send": [
         "Ingepland versturen"
+      ],
+      "Security center": [
+        "Beveiligingscentrum"
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -9640,6 +9745,9 @@
       "What's new": [
         "Wat is er nieuw"
       ],
+      "Your account is protected": [
+        "Uw account is beschermd"
+      ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
@@ -9749,6 +9857,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"

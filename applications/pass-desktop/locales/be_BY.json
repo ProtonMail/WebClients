@@ -622,6 +622,9 @@
       "Unable to sync": [
         "Немагчыма сінхранізаваць"
       ],
+      "Unknown error": [
+        "Невядомая памылка"
+      ],
       "Unknown invite": [
         "Невядомае запрашэнне"
       ],
@@ -642,6 +645,9 @@
       ],
       "Vault name does not match": [
         "Назва сховішча не супадае"
+      ],
+      "Wrong password": [
+        "Няправільны пароль"
       ],
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
@@ -724,7 +730,7 @@
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
       "${ count } invites successfully sent": [
-        "${ count } запрашэння(ў) паспяхова адпраўлена"
+        "${ count } запрашэнне(і) паспяхова адпраўлена"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -743,6 +749,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } запатрабуе ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
@@ -891,6 +900,9 @@
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Падключэнне да інтэрнэту страчана. Праверце падключэнне вашай прылады."
+      ],
       "Invitation sent": [
         "Запрашэнне адпраўлена"
       ],
@@ -978,8 +990,20 @@
       "Never": [
         "Ніколі"
       ],
+      "No network connection": [
+        "Адсутнічае падключэнне да сеткі"
+      ],
       "None": [
         "Няма"
+      ],
+      "Offline mode": [
+        "Рэжым па-за сеткай"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Рэжым па-за сеткай не можа быць уключаны ў дадзены момант"
+      ],
+      "Offline support successfully disabled": [
+        "Падтрымка па-за сеткай паспяхова адключана"
       ],
       "Owner": [
         "Уладальнік"
@@ -1005,8 +1029,11 @@
       "Pinning item...": [
         "Замацаванне элемента..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Пацвердзіце пароль ${ BRAND_NAME } для таго, каб экспартаваць даныя ${ PASS_APP_NAME }"
+        "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі.\nПасля гэтага дзеяння ${ PASS_APP_NAME } ніколі не будзе блакіравацца."
@@ -1026,6 +1053,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "Палепшыце свой тарыфны план, каб уключыць падтрымку па-за сеткай."
+      ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
       ],
@@ -1034,6 +1064,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
+      ],
+      "Reconnect": [
+        "Перападключыцца"
       ],
       "Restoring items from trash": [
         "Аднаўленне элементаў са сметніцы"
@@ -1068,6 +1101,9 @@
       "Set up a PIN code to easily lock your data": [
         "Наладзьце PIN-код, каб лёгка блакіраваць свае даныя"
       ],
+      "Setting up offline mode...": [
+        "Наладжванне рэжыму па-за сеткай"
+      ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
       ],
@@ -1096,7 +1132,7 @@
         "Дзякуй, што паведамілі аб праблеме"
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і патрабуе надзейнай парольнай фразы."
+        "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і яму спатрэбіцца надзейная парольная фраза."
       ],
       "The exported file will not contain the data of shared vaults where you are not the owner": [
         "Экспартаваны файл не змяшчае даных абагуленых сховішчаў, дзе вы не з'яўляецеся ўладальнікам"
@@ -1166,6 +1202,9 @@
       ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Цяпер вы можаце выкарыстоўваць свой пароль ${ BRAND_NAME } для доступу па-за сеткай ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
@@ -1322,6 +1361,9 @@
       "Empty trash": [
         "Ачысціць сметніцу"
       ],
+      "Enable offline access": [
+        "Уключыць доступ па-за сеткай"
+      ],
       "Encrypted (recommended)": [
         "Зашыфраваны (рэкамендуецца)"
       ],
@@ -1456,6 +1498,9 @@
       ],
       "Notes": [
         "Нататкі"
+      ],
+      "Offline mode": [
+        "Рэжым па-за сеткай"
       ],
       "Old-New": [
         "Ад самых старых"
@@ -1605,6 +1650,9 @@
       ],
       "Sign in to your account": [
         "Увайдзіце ў свой уліковы запіс"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Вы знаходзіцеся па-за сеткай. Разблакіруйце ${ PASS_SHORT_APP_NAME } з вашым паролем ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1866,6 +1914,9 @@
       ],
       "Your vault is empty": [
         "Ваша сховішча нічога не змяшчае"
+      ],
+      "Your welcome gift": [
+        "Ваш прывітальны падарунак"
       ]
     },
     "Validation": {
@@ -1925,6 +1976,9 @@
       "Empty note": [
         "Пустая нататка"
       ],
+      "Encryption password is required": [
+        "Патрабуецца шыфраванне пароля"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
@@ -1933,6 +1987,9 @@
       ],
       "Invalid email addresses.": [
         "Памылковыя адрасы электроннай пошты."
+      ],
+      "item was imported without custom fields": [
+        "элемент быў імпартаваны без карыстальніцкіх палёў"
       ],
       "Maximum length is ${ maxLength } character": [
         "Максімальная даўжыня ${ maxLength } сімвал",
@@ -1960,6 +2017,9 @@
       ],
       "No results": [
         "Няма вынікаў"
+      ],
+      "Offline": [
+        "Па-за сеткай"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"

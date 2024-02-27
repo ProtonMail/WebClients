@@ -4954,6 +4954,9 @@
       "Admin console": [
         "Administratörspanel"
       ],
+      "Administration Panel": [
+        "Administrationspanel"
+      ],
       "Advanced network security": [
         "Avancerad nätverkssäkerhet"
       ],
@@ -5055,6 +5058,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
+      ],
+      "Group management (coming soon)": [
+        "Grupphantering (kommer snart)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
@@ -5193,6 +5199,12 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Obegränsat antal delade valv med åtkomstbehörigheter"
+      ],
+      "Unlimited vault sharing": [
+        "Obegränsat antal valvdelningar"
+      ],
+      "Unlimited vaults": [
+        "Obegränsat antal valv"
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
@@ -5447,9 +5459,6 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter är enkla märken som du kan lägga till i meddelanden för att göra dem lättare att hitta eller att tillämpa filter på"
-      ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Liksom en mapp är ett valv ett bekvämt sätt att organisera dina objekt. Att dela valv med vänner och familj är på gång."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Lås ner dina företagsresurser från det offentliga Internet och gör dem endast tillgängliga via dina privata gateways"
@@ -7925,6 +7934,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Prenumeration förnyas automatiskt varje månad. Ditt nästa faktureringsdatum är om 1 månad."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Du kommer sedan att faktureras var 12:e månad med ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Din prenumeration kommer förnyas automatiskt om ${ cycle } månad.",
+        "Din prenumeration kommer förnyas automatiskt om ${ cycle } månader."
       ]
     },
     "vpn_2step: billing": {

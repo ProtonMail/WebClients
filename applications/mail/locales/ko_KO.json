@@ -1120,6 +1120,9 @@
       "Upgrade": [
         "업그레이드"
       ],
+      "Upgrade Now": [
+        "지금 업그레이드"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ],
@@ -1185,6 +1188,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "회원님의 데스크톱 앱 무료 체험이 2일 내에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "회원님의 데스크톱 앱 무료 체험이 5일 내에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
       ],
       "Zoom in": [
         "확대"
@@ -3318,6 +3330,9 @@
       "An error occurred while loading alias options": [
         "별명 옵션 로드 중 오류가 발생했습니다."
       ],
+      "An error occurred while saving your alias": [
+        "별명을 저장하는 도중 오류가 발생했습니다."
+      ],
       "Attachments are limited to 25 MB": [
         "첨부 파일은 최대 25 MB로 제한되어 있습니다"
       ],
@@ -4350,6 +4365,31 @@
       ],
       "To: ${ toString }": [
         "받는 사람: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크톱 앱"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "받은 편지함과 캘린더로의 빠르고 안전하며 방해없는 접근을 누려보세요."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "유료 ${ BRAND_NAME } 플랜으로 무제한 접근 얻기"
+      ],
+      "Introducing the desktop app": [
+        "데스크톱 앱을 소개합니다."
+      ],
+      "No credit card required": [
+        "신용 카드 필요 없음"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "14일간 무료 사용하기"
       ]
     },
     "Get started checklist instructions": {
@@ -8081,6 +8121,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "이메일 주소를 누군가 물어본다면, 별명을 대신 제공하세요. 별명이 ${ passLink }에 의해 제공됩니다."
       ]
     },
     "Security Center - Action": {

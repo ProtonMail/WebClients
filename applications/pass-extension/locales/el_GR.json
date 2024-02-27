@@ -728,6 +728,9 @@
       "Vault name does not match": [
         "Το όνομα της κρύπτης δεν ταιριάζει"
       ],
+      "Wrong password": [
+        "Λανθασμένος κωδικός πρόσβασης"
+      ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
       ],
@@ -1072,6 +1075,12 @@
       ],
       "None": [
         "Κανένα"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
+      ],
+      "Offline support successfully disabled": [
+        "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
       ],
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Επεκτάσεις\""
@@ -2057,6 +2066,9 @@
       ],
       "Your vault is empty": [
         "Η κρύπτη σας είναι άδεια"
+      ],
+      "Your welcome gift": [
+        "Απολαύστε τη δωρεάν δοκιμή σας"
       ]
     },
     "Validation": {
@@ -2115,6 +2127,9 @@
       ],
       "Empty note": [
         "Κενή σημείωση"
+      ],
+      "Encryption password is required": [
+        "Απαιτείται κωδικός πρόσβασης κρυπτογράφησης"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"

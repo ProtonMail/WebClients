@@ -260,6 +260,9 @@
       "Move to trash": [
         "Flyt til papirkurv"
       ],
+      "Multiple select": [
+        "Markér flere"
+      ],
       "OK": [
         "Ok"
       ],
@@ -358,6 +361,9 @@
       ],
       "Transfer ownership": [
         "Overfør ejerskab"
+      ],
+      "Trash": [
+        "Flyt til papirkurv"
       ],
       "Unpin item": [
         "Frigør element"
@@ -612,6 +618,9 @@
       "Unable to sync": [
         "Synkronisering mislykkedes"
       ],
+      "Unknown error": [
+        "Ukendt fejl"
+      ],
       "Unknown invite": [
         "Ukendt invitation"
       ],
@@ -632,6 +641,9 @@
       ],
       "Vault name does not match": [
         "Boksens navn matcher ikke"
+      ],
+      "Wrong password": [
+        "Forkert adgangskode"
       ],
       "Wrong PIN code. Try again.": [
         "Forkert pinkode. Prøv igen."
@@ -734,6 +746,9 @@
       "Admin": [
         "Admin"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Efter inaktivitet vil adgang til ${ PASS_APP_NAME } kræve en pinkode for at låse din session op. Du vil blive logget ud efter 3 mislykkede forsøg."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
       ],
@@ -784,6 +799,9 @@
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV er et praktisk format til visning af dine data. Men på grund af dets enkelhed vil nogle data ikke blive inkluderet. (brugerdefinerede felter, boksstruktur...). For en komplet eksport anbefaler vi, at du bruger et andet format."
       ],
       "Decrypting your data": [
         "Dekrypterer dine data"
@@ -852,6 +870,9 @@
       ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
       ],
       "Invitation sent": [
         "Invitation sendt"
@@ -938,8 +959,20 @@
       "Never": [
         "Aldrig"
       ],
+      "No network connection": [
+        "Ingen internetforbindelse"
+      ],
       "None": [
         "Ingen"
+      ],
+      "Offline mode": [
+        "Offline-tilstand"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Offline-tilstand kunne ikke aktiveres i øjeblikket"
+      ],
+      "Offline support successfully disabled": [
+        "Offline-tilstand blev deaktiveret"
       ],
       "Owner": [
         "Ejer"
@@ -993,6 +1026,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet af ${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
       ],
+      "Reconnect": [
+        "Genopret forbindelse"
+      ],
       "Restoring items from trash": [
         "Gendanner elementer fra papirkurven"
       ],
@@ -1026,6 +1062,9 @@
       "Set up a PIN code to easily lock your data": [
         "Konfigurer en pinkode for nemt at låse dine data"
       ],
+      "Setting up offline mode...": [
+        "Konfigurerer offline-tilstand..."
+      ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
       ],
@@ -1052,6 +1091,12 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Den eksporterede fil vil blive krypteret med PGP og kræver en stærk adgangssætning."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Den eksporterede fil vil ikke indeholde data fra delte bokse, hvor du ikke er ejeren."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1116,6 +1161,9 @@
       ],
       "You are about to create:": [
         "Du er ved at oprette:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din ${ BRAND_NAME }-adgangskode til at tilgå ${ PASS_SHORT_APP_NAME } offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"
@@ -1254,6 +1302,9 @@
       "Created": [
         "Oprettet"
       ],
+      "Default (recommended)": [
+        "Standard (anbefalet)"
+      ],
       "Display": [
         "Visning"
       ],
@@ -1263,6 +1314,9 @@
       "Empty trash": [
         "Tøm papirkurv"
       ],
+      "Encrypted (recommended)": [
+        "Krypteret (anbefalet)"
+      ],
       "Expiration date": [
         "Udløbsdato"
       ],
@@ -1271,6 +1325,9 @@
       ],
       "Field name": [
         "Feltnavn"
+      ],
+      "File format": [
+        "Filformat"
       ],
       "Forwards to": [
         "Videresender til"
@@ -1540,6 +1597,9 @@
       ],
       "Sign in to your account": [
         "Log ind på din konto"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Du er i øjeblikket offline. Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1797,6 +1857,9 @@
       ],
       "Your vault is empty": [
         "Din boks er tom"
+      ],
+      "Your welcome gift": [
+        "Din velkomstgave"
       ]
     },
     "Validation": {
@@ -1856,6 +1919,9 @@
       "Empty note": [
         "Tom note"
       ],
+      "Encryption password is required": [
+        "Krypteringsadgangskode er påkrævet"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Udløbsdatoen er ikke i formatet MM/ÅÅ"
       ],
@@ -1889,6 +1955,9 @@
       ],
       "No results": [
         "Ingen resultater"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"

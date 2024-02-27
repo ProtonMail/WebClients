@@ -5452,9 +5452,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ჭდეები მარტივი ტეგებია, რომლებიც შეგიძლიათ, დაამატოთ შეტყობინებებს, რათა უფრო ადვილად იპოვოთ ისინი ან გამოიყენოთ ფილტრები"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "საქაღალდეების მსგავსად, საცავი თქვენი ნივთების ორგანიზებისთვის საკმაოდ მოსახერხებელია. საცავის გაზიარების ფუნქცია, ჯერ კიდევ, შემუშავების სტადიაშია."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "დაბლოკეთ თქვენი კომპანიის რესურსები საჯარო ინტერნეტიდან და გახადეთ ისინი წვდომადი, მხოლოდ, ჩვენი რაუტერების გავლით"
       ],
@@ -7867,6 +7864,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
       "Try a shorter username (${ n } character max)": [
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"

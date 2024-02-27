@@ -728,6 +728,9 @@
       "Vault name does not match": [
         "საცავის სახელი არ ემთხვევა"
       ],
+      "Wrong password": [
+        "არასწორი პაროლი"
+      ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
       ],
@@ -1073,6 +1076,12 @@
       "None": [
         "არცერთი"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის ჩართვა ამჟამად შეუძლებელია"
+      ],
+      "Offline support successfully disabled": [
+        "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
+      ],
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
       ],
@@ -1169,6 +1178,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "დააყენეთ PIN კოდი თქვენი მონაცემების ადვილად დასაბლოკად"
+      ],
+      "Setting up offline mode...": [
+        "ქსელის გარეშე მუშაობის რეჟიმის მორგება..."
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
@@ -1284,6 +1296,9 @@
       ],
       "You are about to create:": [
         "აპირებთ, შექმნათ:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "ახლა შეგიძლიათ, თქვენი ${ BRAND_NAME }-ის პაროლი ${ PASS_SHORT_APP_NAME }-ში შესასვლელად ქსელის გარეშეც გამოიყენოთ"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "შეგიძლიათ, თქვენი ავტორიზაციის დეტალები ავტომატურად შეავსოთ, ${ PASS_APP_NAME }-ის ხატულაზე დაწკაპუნებით."
@@ -1765,6 +1780,9 @@
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "ამჟამად ინტერნეტთან დაკავშირებული არ ბრძანდებით. განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ]
     },
     "lobby: Title": {
@@ -2057,6 +2075,9 @@
       ],
       "Your vault is empty": [
         "თქვენი საცავი ცარიელია"
+      ],
+      "Your welcome gift": [
+        "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
       ]
     },
     "Validation": {
@@ -2115,6 +2136,9 @@
       ],
       "Empty note": [
         "ცარიელი შენიშვნა"
+      ],
+      "Encryption password is required": [
+        "დაშიფვრის პაროლი აუცილებელია"
       ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"

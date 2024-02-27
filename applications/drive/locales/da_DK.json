@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create and copy alias": [
+        "Opret og kopier et alias"
+      ],
       "Create link": [
         "Opret link"
       ],
@@ -586,6 +589,9 @@
       "Select all": [
         "Vælg alle"
       ],
+      "Select country": [
+        "Vælg land"
+      ],
       "Send feedback": [
         "Send feedback"
       ],
@@ -742,6 +748,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
         "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
+      ],
+      "Your 3 GB bonus": [
+        "Din 3 GB bonus"
       ],
       "Zoom in": [
         "Zoom ind"
@@ -1944,11 +1953,17 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Designet til brugere, der søger øget beskyttelse til deres konto."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -1968,8 +1983,17 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Sæt en data genoprettelsesmetode for at forhindre tab af data."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Sæt en genoprettelsesmetode for at forhindre at blive låst ude af din konto."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -2129,6 +2153,9 @@
       ],
       "An error occurred while loading alias options": [
         "Der opstod en fejl under indlæsning af alias-indstillinger"
+      ],
+      "An error occurred while saving your alias": [
+        "Det ser ud til, at der opstod en fejl, mens din alias blev gemt."
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -3730,6 +3757,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Hent skrivebordsappen for at synkronisere filer fra din computer."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Lær ${ DRIVE_APP_NAME } at kende og optjen din 3 GB lagerbonus! Tag handling i dag."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"Mine filer\" og upload nogle filer først."
       ],
@@ -3766,6 +3796,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "I mellemtiden kan du tilmelde dig din egen ${ DRIVE_APP_NAME } konto og beskyt dine data med end-to-end-kryptering og dele dem sikkert."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indekserer ${ esProgress } elementer out of ${ totalProgressToShow }"
@@ -4106,6 +4139,9 @@
       "Shared link not found": [
         "Delt link ikke fundet"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Tilmeld dig din egen ${ DRIVE_APP_NAME } konto og beskyt dine data med end-to-end kryptering og dele det sikkert."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
       ],
@@ -4290,6 +4326,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "upgrade your storage": [
+        "opgradere dit drev."
+      ],
       "Uploaded": [
         "Uploadet"
       ],
@@ -4313,6 +4352,9 @@
       ],
       "Warning": [
         "Advarsel"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Du har lige øget din lagringsplads til 5 GB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Vi oplever tekniske problemer. Upload af nye fotos er midlertidigt deaktiveret."
@@ -4385,6 +4427,10 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Du har ${ expiresInDays } dag tilbage til at få dine 3 GB velkomst bonus og ",
+        "Du har ${ expiresInDays } dage tilbage til at få dine 3 GB velkomst bonus og "
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
@@ -4663,6 +4709,9 @@
       ],
       "Duplicate found": [
         "Dublet fundet"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "fx på Amazon, eBay osv."
       ],
       "Email": [
         "E-mail"
@@ -5645,6 +5694,9 @@
       "Create a share link": [
         "Opret et delingslink"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Kom godt i gang med at bruge ${ DRIVE_APP_NAME } og vi vil opgradere din drev lagerplads til 5 GB!"
+      ],
       "Set a recovery method": [
         "Indstil en gendannelsesmetode"
       ],
@@ -5712,6 +5764,11 @@
     "Participant name": {
       "You": [
         "Dig"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Faktura land"
       ]
     },
     "PGP key encryption warning": {
@@ -5884,6 +5941,9 @@
       "Create alias": [
         "Opret alias"
       ],
+      "Create an alias": [
+        "Opret et alias."
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
       ],
@@ -5904,6 +5964,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Se logs."
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel er **aktiv** og beskytter din konto."
       ]
     },
     "Select files": {
@@ -6351,8 +6427,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For at sende eller modtage e-mails, frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
@@ -6363,8 +6445,20 @@
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dit ${ storage } er fyldt. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+      ],
       "Your storage is full": [
         "Dit lager er fuldt"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dit drev er fyldt. ${ cta }."
       ]
     },
     "Success": {
@@ -7025,6 +7119,9 @@
       "You have no folders yet": [
         "Du har ingen mapper endnu"
       ],
+      "Your 3 GB bonus": [
+        "Din 3 GB bonus"
+      ],
       "Your account is protected": [
         "Din konto er beskyttet"
       ],
@@ -7036,6 +7133,9 @@
       ],
       "Your welcome actions": [
         "Dine velkomsthandlinger"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Du har 5 GB lagerplads"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7112,6 +7212,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brugernavn (maks. ${ n } tegn)",
         "Prøv et kortere brugernavn (maks. ${ n } tegn)"

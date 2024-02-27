@@ -1113,6 +1113,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",

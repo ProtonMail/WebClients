@@ -609,6 +609,9 @@
       "Upgrade": [
         "Modificare"
       ],
+      "Upgrade Now": [
+        "Modificare"
+      ],
       "Upgrade now": [
         "Modificare"
       ],
@@ -652,6 +655,15 @@
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contact.",
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contacte.",
         "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } de contacte."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie peste 2 zile. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie peste 5 zile. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -751,6 +763,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Renunțând acum, veți pierde evenimentul."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Descărcați aplicația pentru desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2463,6 +2480,9 @@
       ],
       "An error occurred while loading alias options": [
         "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
+      ],
+      "An error occurred while saving your alias": [
+        "A apărut o eroare în timpul salvării aliasului."
       ],
       "Answer failed to be sent": [
         "Răspunsul nu a putut fi trimis."
@@ -5960,6 +5980,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Folosit pentru cumpărături pe Amazon etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -6456,8 +6479,14 @@
       "Color-coding is here!": [
         "Marcarea prin culori este aici!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Lansați convenient ${ MAIL_APP_NAME } chiar de pe desktop."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Căutați ușor evenimentul dorit cu noua funcție de căutare."
+      ],
+      "Get the desktop app": [
+        "Luați aplicația pentru desktop"
       ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
@@ -7316,6 +7345,11 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",

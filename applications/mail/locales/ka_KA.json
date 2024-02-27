@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
+      "Upgrade Now": [
+        "ახლა გაუმჯობესება"
+      ],
       "Upgrade now": [
         "ტარიფის განახლება"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 2 დღეში დასრულდება. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია 5 დღეში დასრულდება. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "გადიდება"
@@ -1313,6 +1325,11 @@
       ],
       "New email": [
         "ახალი ელფოსტა"
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "გადმოწერეთ ${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ]
     },
     "Apps dropdown": {
@@ -3330,6 +3347,9 @@
       "An error occurred while loading alias options": [
         "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
       ],
+      "An error occurred while saving your alias": [
+        "შეცდომა თქვენი ფსევდონიმის შენახვისას"
+      ],
       "Attachments are limited to 25 MB": [
         "მიმაგრებული ფაილების მაქსიმალური ზომა 25 მბ-ა"
       ],
@@ -4381,6 +4401,31 @@
       ],
       "To: ${ toString }": [
         "მიმღები: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "ისიამოვნეთ სწრაფი, დაცული და ყურადღების გადამტანი ფუნქციების არმქონე წვდომით თქვენს საფოსტო ყუთთან და კალენდართან."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "მიიღეთ შეუზღუდავი წვდომა ფასიან ${ BRAND_NAME } ტარიფთან ერთად"
+      ],
+      "Introducing the desktop app": [
+        "წარმოგიდგენთ კომპიუტერის აპს"
+      ],
+      "No credit card required": [
+        "საკრედიტო ბარათი საჭირო არაა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "მოსინჯეთ 14 დღე უფასოდ"
       ]
     },
     "Get started checklist instructions": {
@@ -5998,6 +6043,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "შეტყობინება ხელმოწერილია მიმაგრებული გასაღებით, რომელიც, ჯერ, სანდო არაა."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "ამ შეტყობინების ავტომატური წაშლის დრო: ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
         "ამ შეტყობინების ავტომატური წაშლის თარიღი: ${ value }"
@@ -8214,6 +8262,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -8769,6 +8820,9 @@
       "Change setting": [
         "პარამეტრის შეცვლა"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "მოხერხებულად გაუშვით ${ MAIL_APP_NAME } პირდაპირ სამუშაო მაგიდიდან."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "შექმენით Hide-my-email-ის ფსევდონიმები და აკონტროლეთ ისინი აქედან."
       ],
@@ -8777,6 +8831,9 @@
       ],
       "Faster email management": [
         "უფრო სწრაფი ელფოსტის მართვა"
+      ],
+      "Get the desktop app": [
+        "მიიღეთ კომპიუტერის აპი"
       ],
       "Get up to ${ credits } in credits.": [
         "მიღეთ ${ credits }-მდე კრედიტი."
@@ -10011,6 +10068,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
       "Try a shorter username (${ n } character max)": [
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"

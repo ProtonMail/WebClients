@@ -622,6 +622,9 @@
       "Unable to sync": [
         "Nie można zsynchronizować"
       ],
+      "Unknown error": [
+        "Wystąpił nieznany błąd"
+      ],
       "Unknown invite": [
         "Nieznane zaproszenie"
       ],
@@ -642,6 +645,9 @@
       ],
       "Vault name does not match": [
         "Nazwy sejfów nie pasują do siebie"
+      ],
+      "Wrong password": [
+        "Hasło jest nieprawidłowe"
       ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
@@ -888,6 +894,9 @@
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
+      ],
       "Invitation sent": [
         "Zaproszenie zostało wysłane"
       ],
@@ -975,8 +984,20 @@
       "Never": [
         "Nigdy"
       ],
+      "No network connection": [
+        "Brak połączenia z Internetem"
+      ],
       "None": [
         "Brak"
+      ],
+      "Offline mode": [
+        "Tryb offline"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Tryb offline nie może zostać włączony"
+      ],
+      "Offline support successfully disabled": [
+        "Tryb offline został wyłączony"
       ],
       "Owner": [
         "Właściciel"
@@ -1032,6 +1053,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
       ],
+      "Reconnect": [
+        "Połącz ponownie"
+      ],
       "Restoring items from trash": [
         "Przywracanie elementów z Kosza"
       ],
@@ -1064,6 +1088,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Ustaw kod PIN, aby łatwo zablokować swoje dane"
+      ],
+      "Setting up offline mode...": [
+        "Włączanie trybu offline"
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
@@ -1163,6 +1190,9 @@
       ],
       "You are about to create:": [
         "Utworzysz:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Użyj hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
@@ -1599,6 +1629,9 @@
       ],
       "Sign in to your account": [
         "Zaloguj się"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Jesteś w trybie offline. Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1860,6 +1893,9 @@
       ],
       "Your vault is empty": [
         "Sejf jest pusty"
+      ],
+      "Your welcome gift": [
+        "Twój prezent powitalny"
       ]
     },
     "Validation": {
@@ -1919,6 +1955,9 @@
       "Empty note": [
         "Notatka jest pusta"
       ],
+      "Encryption password is required": [
+        "Hasło szyfrowania jest wymagane"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Data wygaśnięcia nie jest w formacie MM/RR"
       ],
@@ -1927,6 +1966,9 @@
       ],
       "Invalid email addresses.": [
         "Adresy e-mail są nieprawidłowe."
+      ],
+      "item was imported without custom fields": [
+        "element został zaimportowany bez pól niestandardowych"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",
@@ -1954,6 +1996,9 @@
       ],
       "No results": [
         "Nie znaleziono żadnych wyników"
+      ],
+      "Offline": [
+        "Jesteś w trybie offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"

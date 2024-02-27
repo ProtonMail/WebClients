@@ -1116,6 +1116,9 @@
       "Upgrade": [
         "Millora"
       ],
+      "Upgrade Now": [
+        "Millora ara"
+      ],
       "Upgrade now": [
         "Millora ara"
       ],
@@ -4329,6 +4332,19 @@
       ],
       "To: ${ toString }": [
         "Per a: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "No credit card required": [
+        "No es requereix targeta de crèdit"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "Prova gratuïta durant 14 dies"
       ]
     },
     "Get started checklist instructions": {
@@ -8788,6 +8804,9 @@
       "Address verification disabled": [
         "La verificació de l'adreça deshabilitada"
       ],
+      "Alias copied to clipboard": [
+        "L'àlies s'ha copiat al porta-retalls."
+      ],
       "Alias saved and copied": [
         "S'ha desat i copiat l'àlies."
       ],
@@ -9081,6 +9100,9 @@
       ],
       "(active)": [
         "(actiu)"
+      ],
+      "A filter name is required": [
+        "Es requereix un nom per al filtre."
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -9779,6 +9801,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"

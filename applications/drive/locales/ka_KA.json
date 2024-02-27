@@ -749,6 +749,9 @@
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
       ],
+      "Your 3 GB bonus": [
+        "თქვენი 3 გბ ბონუსი"
+      ],
       "Zoom in": [
         "გადიდება"
       ],
@@ -2150,6 +2153,9 @@
       ],
       "An error occurred while loading alias options": [
         "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
+      ],
+      "An error occurred while saving your alias": [
+        "შეცდომა თქვენი ფსევდონიმის შენახვისას"
       ],
       "Authentication canceled.": [
         "ავთენტიკაცია გაუქმებულია."
@@ -3751,6 +3757,9 @@
       "Get the desktop app to sync files from your computer.": [
         "გადმოწერეთ აპი კომპიუტერისთვის, რათა ფაილების იქიდანაც დაასინქრონოთ."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "გაიცანით ${ DRIVE_APP_NAME } და მიიღეთ 3გბ საცავი დამატებით! იმოქმედეთ დღესვე."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "ჯერ გადადით \"ჩემს ფაილებზე\" და ატვირთეთ რამდენიმე ფაილი."
       ],
@@ -3787,6 +3796,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "ამასობაში დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "მიმდინარეობს ${ esProgress }-ე ჩანაწერის ინდექსირება (${ totalProgressToShow }-დან)"
@@ -4127,6 +4139,9 @@
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
       ],
@@ -4311,6 +4326,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
       ],
+      "upgrade your storage": [
+        "ასწიეთ თქვენი საცავი"
+      ],
       "Uploaded": [
         "ატვირთულია"
       ],
@@ -4334,6 +4352,9 @@
       ],
       "Warning": [
         "გაფრთხილება"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "სწორად იქცევით. თქვენ ახლახანს გაზარდეთ თქვენი საცავი 5 გბ-ით!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "განვიცდით ტექნიკურ სიძნელეებს. ახალი სურათების ატვირთვა დროებით გათიშულია."
@@ -4406,6 +4427,10 @@
       ],
       "You cannot undo this action.": [
         "თქვენ არ შეგიძლიათ ამ ქმედების დაბრუნება."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "დაგრჩათ ${ expiresInDays } დღე, რათა გამოითხოვოთ თქვენი 3გბ ბონუსი და ",
+        "დაგრჩათ ${ expiresInDays } დღე, რათა გამოითხოვოთ თქვენი 3გბ ბონუსი და "
       ],
       "You will lose all unsaved changes.": [
         "დაკარგავთ ყველა შეუნახავ ცვლილებას."
@@ -5669,6 +5694,9 @@
       "Create a share link": [
         "გაზიარების ბმულის შექმნა"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "დაიწყეთ ${ DRIVE_APP_NAME }-ის გამოყენება და ჩვენ თქვენს საცავს 5გბ-მდე ავწევთ!"
+      ],
       "Set a recovery method": [
         "აღდგენის მეთოდის დაყენება"
       ],
@@ -5939,6 +5967,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -7091,6 +7122,9 @@
       "You have no folders yet": [
         "საქაღალდეები ჯერ არ გაქვთ"
       ],
+      "Your 3 GB bonus": [
+        "თქვენი 3 გბ ბონუსი"
+      ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
       ],
@@ -7102,6 +7136,9 @@
       ],
       "Your welcome actions": [
         "თქვენი პირველად შემოსვლის ქმედებები"
+      ],
+      "You’ve got 5 GB of storage": [
+        "გაქვთ 5გბ საცავი"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7178,6 +7215,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
       "Try a shorter username (${ n } character max)": [
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
