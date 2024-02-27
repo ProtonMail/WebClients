@@ -26,12 +26,12 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         component={RadioGroupField}
                         options={[
                             {
-                                value: ExportFormat.ZIP,
-                                label: c('Label').t`Default (recommended)`,
+                                value: ExportFormat.PGP,
+                                label: c('Label').t`PGP-encrypted JSON (recommended)`,
                             },
                             {
-                                value: ExportFormat.PGP,
-                                label: c('Label').t`Encrypted (recommended)`,
+                                value: ExportFormat.ZIP,
+                                label: c('Label').t`JSON`,
                             },
                             {
                                 value: ExportFormat.CSV,
