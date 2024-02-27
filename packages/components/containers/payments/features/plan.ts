@@ -244,7 +244,7 @@ export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
     };
 };
 
-export const getPassEssentialsPlan = (plan?: Plan): ShortPlan => {
+export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
     const title = plan?.Title || '';
     return {
         plan: PLANS.PASS_PRO,
@@ -253,6 +253,18 @@ export const getPassEssentialsPlan = (plan?: Plan): ShortPlan => {
         description: '',
         cta: getCTA(title),
         features: [getLoginsAndNotes(), getHideMyEmailAliases('unlimited'), get2FAAuthenticator(true), getItems()],
+    };
+};
+
+export const getPassBusinessSignupPlan = (plan?: Plan): ShortPlan => {
+    const title = plan?.Title || '';
+    return {
+        plan: PLANS.PASS_BUSINESS,
+        title,
+        label: '',
+        description: '',
+        cta: getCTA(title),
+        features: [getSSOIntegration(), getRequire2FA(), getSentinel(true)],
     };
 };
 
