@@ -30,6 +30,7 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
+import { useBulkLock } from '@proton/pass/hooks/useBulkLock';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -74,6 +75,9 @@ export const MenuDropdown: FC = () => {
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
+
+    useBulkLock([isOpen ?? false]);
+
     const menu = useMenuItems({
         onAction: close,
         extra: {
