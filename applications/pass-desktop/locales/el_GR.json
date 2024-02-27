@@ -618,6 +618,9 @@
       "Unable to sync": [
         "Αδυναμία συγχρονισμού"
       ],
+      "Unknown error": [
+        "Άγνωστο σφάλμα"
+      ],
       "Unknown invite": [
         "Άγνωστη πρόσκληση"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "Το όνομα της κρύπτης δεν ταιριάζει"
+      ],
+      "Wrong password": [
+        "Λανθασμένος κωδικός πρόσβασης"
       ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
@@ -865,6 +871,9 @@
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Απώλεια σύνδεσης στο διαδίκτυο. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
+      ],
       "Invitation sent": [
         "Η πρόσκληση στάλθηκε"
       ],
@@ -950,8 +959,20 @@
       "Never": [
         "Ποτέ"
       ],
+      "No network connection": [
+        "Δεν υπάρχει σύνδεση δικτύου"
+      ],
       "None": [
         "Κανένα"
+      ],
+      "Offline mode": [
+        "Λειτουργία χωρίς σύνδεση"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της λειτουργίας χωρίς σύνδεση αυτήν τη στιγμή"
+      ],
+      "Offline support successfully disabled": [
+        "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -996,6 +1017,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "Αναβαθμίστε το πλάνο σας για να ενεργοποιήσετε την υποστήριξη εκτός σύνδεσης."
+      ],
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
       ],
@@ -1004,6 +1028,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
+      "Reconnect": [
+        "Επανασύνδεση"
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -1284,6 +1311,9 @@
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
       ],
+      "Enable offline access": [
+        "Ενεργοποίηση πρόσβασης εκτός σύνδεσης"
+      ],
       "Encrypted (recommended)": [
         "Κρυπτογραφημένο (προτείνεται)"
       ],
@@ -1418,6 +1448,9 @@
       ],
       "Notes": [
         "Σημειώσεις"
+      ],
+      "Offline mode": [
+        "Λειτουργία χωρίς σύνδεση"
       ],
       "Old-New": [
         "Παλιό-Νέο"
@@ -1824,6 +1857,9 @@
       ],
       "Your vault is empty": [
         "Η κρύπτη σας είναι άδεια"
+      ],
+      "Your welcome gift": [
+        "Απολαύστε τη δωρεάν δοκιμή σας"
       ]
     },
     "Validation": {
@@ -1883,6 +1919,9 @@
       "Empty note": [
         "Κενή σημείωση"
       ],
+      "Encryption password is required": [
+        "Απαιτείται κωδικός πρόσβασης κρυπτογράφησης"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
       ],
@@ -1916,6 +1955,9 @@
       ],
       "No results": [
         "Δεν υπάρχουν αποτελέσματα"
+      ],
+      "Offline": [
+        "Εκτός σύνδεσης"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
