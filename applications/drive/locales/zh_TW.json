@@ -181,6 +181,9 @@
       "Create a new contact group": [
         "創建新連絡人群組"
       ],
+      "Create and copy alias": [
+        "建立及複製別名"
+      ],
       "Create link": [
         "創建連結"
       ],
@@ -741,6 +744,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
+      "Your 3 GB bonus": [
+        "您的 3 GB 獎勵"
       ],
       "Zoom in": [
         "放大"
@@ -1947,6 +1953,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
@@ -1955,6 +1964,9 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "設定救援方法可以避免您再也無法存取您的帳戶。"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
@@ -1967,6 +1979,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
+      ],
+      "Your account and data recovery methods are set.": [
+        "您的帳戶資料復原方法已就緒。"
       ]
     },
     "description": {
@@ -1993,6 +2011,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "此${ eventTitle }的事件已被取消。"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
@@ -2103,6 +2124,9 @@
       ],
       "An error occurred while loading alias options": [
         "載入別名選項時發生錯誤"
+      ],
+      "An error occurred while saving your alias": [
+        "儲存別名時發生錯誤。"
       ],
       "Authentication canceled.": [
         "驗證已取消。"
@@ -2902,6 +2926,9 @@
     "Header": {
       "Contacts": [
         "聯絡人"
+      ],
+      "Security Center": [
+        "安全中心"
       ]
     },
     "Hint": {
@@ -3628,6 +3655,9 @@
       "Get the desktop app to sync files from your computer.": [
         "取得電腦應用程式以從電腦同步檔案。"
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "了解 ${ DRIVE_APP_NAME } 並獲得您的 3 GB 儲存空間獎勵！今天就行動。"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "請先前往「我的檔案」，並上載一些檔案。"
       ],
@@ -3946,6 +3976,12 @@
       "Search Enabled": [
         "搜尋已啟用"
       ],
+      "Securely downloaded all encrypted files": [
+        "安全下載加密檔案"
+      ],
+      "Securely downloaded all files": [
+        "安全下載檔案"
+      ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
       ],
@@ -4053,6 +4089,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "此檔案可能已被刪除、移動或不可用。請嘗試聯絡檔案擁有者。"
+      ],
+      "This item already exists in your library": [
+        "此項目已存在於資料庫"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
@@ -4167,6 +4206,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "upgrade your storage": [
+        "升級您的儲存"
       ],
       "Uploaded": [
         "已上載"
@@ -4976,6 +5018,12 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP 音訊/影片容器"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2 音訊/影片容器"
+      ],
       "7-zip archive": [
         "7-zip 封存檔"
       ],
@@ -4996,6 +5044,9 @@
       ],
       "Audio file": [
         "音訊檔"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 圖片檔案格式 (AVIF)"
       ],
       "AVI video": [
         "AVI 影片"
@@ -5036,6 +5087,9 @@
       "Icon format": [
         "圖標格式"
       ],
+      "Image": [
+        "圖片"
+      ],
       "Java Archive (JAR)": [
         "Java 封存檔 (JAR)"
       ],
@@ -5044,6 +5098,9 @@
       ],
       "MP3 audio": [
         "MP3 音訊"
+      ],
+      "MPEG transport stream": [
+        "MPEG 通訊影音"
       ],
       "MPEG Video": [
         "MPEG 影片"
@@ -5081,8 +5138,14 @@
       "TrueType Font": [
         "TrueType 字型"
       ],
+      "Unknown file": [
+        "未知的檔案"
+      ],
       "Video file": [
         "影片檔"
+      ],
+      "WEBM audio": [
+        "WEBM 音訊"
       ],
       "WEBM video": [
         "WEBM 影片"
@@ -5428,6 +5491,9 @@
       "Create a share link": [
         "創建共享連結"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "開始使用 ${ DRIVE_APP_NAME }，我們會將您儲存空間升級至 5GB！"
+      ],
       "Set a recovery method": [
         "設定備援方法"
       ],
@@ -5494,6 +5560,11 @@
     "Participant name": {
       "You": [
         "您"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "計費國家"
       ]
     },
     "PGP key encryption warning": {
@@ -5663,6 +5734,9 @@
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email 別名可以讓您在註冊帳號時不再需要分享您真實的電子郵件地址。 ${ learnMoreLink }"
+      ],
       "New alias": [
         "新增别名"
       ],
@@ -5674,6 +5748,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "在Amazon血拼時等等…"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "檢視日誌"
+      ]
+    },
+    "Security Center - Info": {
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel 現已 **啟動** 並正在保護你的帳號."
       ]
     },
     "Select files": {
@@ -6101,6 +6191,18 @@
       "contact your administrator": [
         "與您的管理員聯絡"
       ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "要繼續上傳或同步檔案，需要釋放一些空間或生即已取得更多空間。"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或升級以取得更多空間。"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "要繼續上傳或同步檔案，請釋放一些空間或${ upgrade }"
+      ],
       "upgrade for more storage": [
         "升級以增加儲存"
       ],
@@ -6109,6 +6211,9 @@
       ],
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的${ storage }已滿${ cta }。"
@@ -6135,6 +6240,9 @@
       ],
       "Alias copied to clipboard": [
         "已複製別名到剪貼簿"
+      ],
+      "Alias saved and copied": [
+        "已成功儲存及複製別名"
       ],
       "Bug reported": [
         "錯誤已回報"
@@ -6759,6 +6867,12 @@
       "You have no folders yet": [
         "您尚未創建任何資料夾"
       ],
+      "Your 3 GB bonus": [
+        "您的 3 GB 獎勵"
+      ],
+      "Your account is protected": [
+        "你的帳號已被保護"
+      ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
@@ -6767,6 +6881,9 @@
       ],
       "Your welcome actions": [
         "您的歡迎動作"
+      ],
+      "You’ve got 5 GB of storage": [
+        "您已獲得 5 GB 的儲存空間"
       ]
     },
     "Today icon tooltip in mini calendar": {

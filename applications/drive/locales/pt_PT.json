@@ -433,6 +433,9 @@
       "Next month": [
         "Mês seguinte"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "Ok": [
         "Ok"
       ],
@@ -1991,6 +1994,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Actualização para um evento começando em ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
       ]
     },
     "Error": {
@@ -4078,6 +4086,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Infelizmente, parece que o ficheiro ou alguns dos seus dados não podem ser desencriptados."
       ],
+      "Unknown date": [
+        "Data desconhecida"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -4779,6 +4790,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
       ]
     },
     "Landmarks": {
@@ -4887,8 +4901,32 @@
       ]
     },
     "Mimetype": {
+      "7-zip archive": [
+        "Arquivo 7-Zip"
+      ],
+      "BZip archive": [
+        "Arquivo BZIP"
+      ],
+      "BZip2 archive": [
+        "Arquivo BZip2"
+      ],
+      "Flash Video": [
+        "Vídeo flash"
+      ],
       "iCalendar format": [
         "Formato iCalendar"
+      ],
+      "JPEG images": [
+        "Imagens JPEG"
+      ],
+      "RAR archive": [
+        "Arquivo RAR"
+      ],
+      "Unknown file": [
+        "Ficheiro desconhecido"
+      ],
+      "ZIP archive": [
+        "Arquivo ZIP"
       ]
     },
     "Modal title": {
@@ -5455,6 +5493,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Criar um alias"
+      ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
       ],
@@ -6525,6 +6566,9 @@
       ],
       "Your welcome actions": [
         "As suas ações de boas-vindas"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Tem 5 GB de armazenamento."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6598,6 +6642,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
