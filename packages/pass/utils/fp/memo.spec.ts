@@ -60,4 +60,26 @@ describe('maxAgeMemoize', () => {
         await memoizedFunction(1, { maxAge: 5 }); /* request new maxAge */
         expect(asyncFn).toHaveBeenCalledTimes(2);
     });
+
+    it('should not cache a result who throwed error', async () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
+        const memoizedFunction = maxAgeMemoize(asyncFn);
+
+        asyncFn.mockImplementationOnce(async () => {
+            throw new Error('asyncFn error');
+        });
+
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        expect(async () => {
+            await memoizedFunction(1, { maxAge: 10 });
+        }).rejects.toThrow('asyncFn error');
+        expect(asyncFn).toHaveBeenCalledTimes(1);
+
+        await memoizedFunction(1, { maxAge: 10 });
+        expect(asyncFn).toHaveBeenCalledTimes(2);
+        jest.advanceTimersByTime(6_000); /* advance timer below maxAge */
+        await memoizedFunction(1, { maxAge: 10 });
+        expect(asyncFn).toHaveBeenCalledTimes(2);
+    });
 });

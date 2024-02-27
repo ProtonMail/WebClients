@@ -48,7 +48,7 @@ const AccountSecurityCard = ({
             >
                 <span className="flex flex-nowrap items-start">
                     <span className="ratio-square rounded flex security-card-icon-container relative">
-                        <Icon name={icon} className="m-auto security-card-icon" alt={iconAltText} />
+                        <Icon name={icon} className="m-auto color-info" alt={iconAltText} />
                         {critical && (
                             <Icon
                                 name="exclamation-circle-filled"
