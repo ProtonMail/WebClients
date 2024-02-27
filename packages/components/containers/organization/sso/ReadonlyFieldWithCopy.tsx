@@ -4,10 +4,11 @@ import { Input } from '@proton/atoms/Input';
 import { Copy, InputFieldTwo } from '@proton/components/components';
 import { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { useNotifications } from '@proton/components/hooks';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'readonly' | 'unstyled'> {}
 
-const ReadonlyFieldWithCopy = ({ value, ...rest }: Props) => {
+const ReadonlyFieldWithCopy = ({ value, inputContainerClassName, ...rest }: Props) => {
     const { createNotification } = useNotifications();
 
     const onCopy = () => {
@@ -18,6 +19,7 @@ const ReadonlyFieldWithCopy = ({ value, ...rest }: Props) => {
         <InputFieldTwo
             value={value}
             readOnly
+            inputContainerClassName={clsx('w-full', inputContainerClassName)}
             suffix={<Copy size="small" shape="ghost" color="weak" value={`${value}`} onCopy={onCopy} />}
             {...rest}
         />
