@@ -10,7 +10,7 @@ export const selectCachableState = (state: State) => {
     whiteListedState.items.byOptimisticId = {};
     whiteListedState.request = objectFilter(
         whiteListedState.request,
-        (_, request) => request.status === 'success' && request.expiresAt !== undefined
+        (_, request) => request.status === 'success' && request.maxAge !== undefined
     );
 
     return whiteListedState;
