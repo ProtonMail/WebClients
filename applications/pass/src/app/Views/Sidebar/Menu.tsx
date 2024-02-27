@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
 import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
@@ -16,6 +17,7 @@ import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientOfflineUnlocked } from '@proton/pass/lib/client';
@@ -134,6 +136,12 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             <div className="text-sm text-ellipsis">{user?.Email}</div>
                             <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
                                 {planDisplayName}
+                                {passPlan === UserPassPlan.FREE && (
+                                    <>
+                                        {' · '}
+                                        <UpgradeButton upsellRef={UpsellRef.MENU} hideIcon inline />
+                                    </>
+                                )}
                             </div>
                         </span>
                     </span>
