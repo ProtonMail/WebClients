@@ -4,11 +4,11 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import capitalize from '@proton/utils/capitalize';
 
 export const getFormattedDateFromTimestamp = (timestamp: number) => {
-    return `${format(new Date(timestamp * 1000), 'dd MMM yyyy, HH:mmaaa')}`;
+    return `${format(new Date(timestamp * 1000), 'dd MMM yyyy, HH:mm', { locale: dateLocale })}`;
 };
 
 export const getFormattedDayFromTimestamp = (timestamp: number) => {
-    return format(new Date(timestamp * 1000), 'dd MMM yyyy');
+    return format(new Date(timestamp * 1000), 'dd MMM yyyy', { locale: dateLocale });
 };
 
 export const getRelativeDateFromTimestamp = (timestamp: number) => {
