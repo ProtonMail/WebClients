@@ -618,6 +618,9 @@
       "Unable to sync": [
         "Synchronisation impossible"
       ],
+      "Unknown error": [
+        "Erreur inconnue"
+      ],
       "Unknown invite": [
         "Invitation inconnue"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "Le nom du coffre-fort ne correspond pas."
+      ],
+      "Wrong password": [
+        "Le mot de passe n'est pas correct."
       ],
       "Wrong PIN code. Try again.": [
         "Le code PIN n'est pas correct. Veuillez réessayer."
@@ -723,6 +729,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } vous demandera votre mot de passe ${ BRAND_NAME } pour accéder à vos données en mode hors ligne."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } fois",
@@ -865,6 +874,9 @@
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "La connexion internet est perdue. Vérifiez que votre appareil est bien connecté."
+      ],
       "Invitation sent": [
         "L'invitation a été envoyée."
       ],
@@ -950,8 +962,20 @@
       "Never": [
         "Jamais"
       ],
+      "No network connection": [
+        "Aucune connexion réseau"
+      ],
       "None": [
         "Aucun"
+      ],
+      "Offline mode": [
+        "Mode hors ligne"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Le mode hors ligne n'a pas pu être activé pour le moment."
+      ],
+      "Offline support successfully disabled": [
+        "La prise en charge du mode hors ligne est désactivée."
       ],
       "Owner": [
         "Propriétaire"
@@ -975,6 +999,9 @@
       "Pinning item...": [
         "Épinglage de l'élément..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Veuillez confirmer votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
       ],
@@ -996,6 +1023,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application web de ${ PASS_APP_NAME }."
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "Veuillez changer d'abonnement pour activer la prise en charge du mode hors ligne."
+      ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
       ],
@@ -1004,6 +1034,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
+      ],
+      "Reconnect": [
+        "Se reconnecter"
       ],
       "Restoring items from trash": [
         "Restauration des éléments depuis la corbeille"
@@ -1037,6 +1070,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Définissez un code PIN pour facilement déverrouiller vos données."
+      ],
+      "Setting up offline mode...": [
+        "Configuration du mode hors ligne..."
       ],
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
@@ -1134,6 +1170,9 @@
       ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Vous pouvez maintenant utiliser votre mot de passe ${ BRAND_NAME } pour accéder en mode hors ligne à ${ PASS_SHORT_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
@@ -1284,6 +1323,9 @@
       "Empty trash": [
         "Vider la corbeille"
       ],
+      "Enable offline access": [
+        "Activer l’accès hors-ligne"
+      ],
       "Encrypted (recommended)": [
         "Chiffré (recommandé)"
       ],
@@ -1418,6 +1460,9 @@
       ],
       "Notes": [
         "Notes"
+      ],
+      "Offline mode": [
+        "Mode hors ligne"
       ],
       "Old-New": [
         "Du plus ancien au plus récent"
@@ -1567,6 +1612,9 @@
       ],
       "Sign in to your account": [
         "Connectez-vous à votre compte"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Vous êtes actuellement hors ligne. Déverrouillez ${ PASS_SHORT_APP_NAME } avec votre mot de passe ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1872,9 @@
       ],
       "Your vault is empty": [
         "Votre coffre-fort est vide."
+      ],
+      "Your welcome gift": [
+        "Votre cadeau de bienvenue"
       ]
     },
     "Validation": {
@@ -1883,6 +1934,9 @@
       "Empty note": [
         "Note vide"
       ],
+      "Encryption password is required": [
+        "Le mot de passe chiffré est requis."
+      ],
       "Expiration Date is not in the format MM/YY": [
         "La date d'expiration n'est pas au format MM/AA."
       ],
@@ -1891,6 +1945,9 @@
       ],
       "Invalid email addresses.": [
         "Les adresses électroniques ne sont pas valides."
+      ],
+      "item was imported without custom fields": [
+        "L'élément a été importé sans les champs personnalisés."
       ],
       "Maximum length is ${ maxLength } character": [
         "${ maxLength } caractère maximum",
@@ -1916,6 +1973,9 @@
       ],
       "No results": [
         "Aucun résultat"
+      ],
+      "Offline": [
+        "Hors ligne"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
