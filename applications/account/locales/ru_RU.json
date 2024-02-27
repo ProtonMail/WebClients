@@ -69,7 +69,7 @@
         "Добавить адрес"
       ],
       "Add address or domain": [
-        "Добавить адреса или домен"
+        "Добавить адрес или домен"
       ],
       "Add calendar from URL": [
         "Добавить календарь по URL"
@@ -108,7 +108,7 @@
         "Добавить государственные праздники"
       ],
       "Add sieve filter": [
-        "Добавить sieve-фильтр"
+        "Добавить Sieve-фильтр"
       ],
       "Add user": [
         "Добавить пользователя"
@@ -477,7 +477,7 @@
         "Связаться с нами"
       ],
       "Get more": [
-        "Get more"
+        "Получить ещё"
       ],
       "Get more addresses": [
         "Получить больше адресов"
@@ -1097,10 +1097,10 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } свой домен",
-        "${ domains } своих доменов",
-        "${ domains } своих домена",
-        "${ domains } своих домена"
+        "${ domains } пользовательский домен",
+        "${ domains } пользовательских домена",
+        "${ domains } пользовательских доменов",
+        "${ domains } пользовательских доменов"
       ],
       "${ ips } server": [
         "${ ips } сервер",
@@ -1477,10 +1477,10 @@
     },
     "Billing cycle": {
       "${ n } month": [
-        "первый ${ n } месяц",
-        "${ n } месяцев",
+        "${ n } месяц",
         "${ n } месяца",
-        "${ n } месяца"
+        "${ n } месяцев",
+        "${ n } месяцев"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Обновляется автоматически за ${ renewPrice } на ${ renewalLength }"
@@ -4077,7 +4077,7 @@
         "Доверенные ключи недействительны для отправки"
       ],
       "Try again later": [
-        "Попробуйте позже"
+        "Повторите попытку позже"
       ],
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
@@ -5871,10 +5871,10 @@
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } сервер все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
-        "${ provisioningCounter } сервера все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
-        "${ provisioningCounter } серверов все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
-        "${ provisioningCounter } серверов все еще настраивается. Обычно это занимает около ${ provisioningDuration }."
+        "${ provisioningCounter } сервер всё ещё настраивается. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } сервера всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: запрос платформам-получателям пометить неавторизованные письма как спам или поместить их в карантин."
@@ -5913,7 +5913,7 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
       "${ storage } storage": [
-        "${ storage } хранилища"
+        "${ storage } хранилище"
       ],
       "${ userFound } user found": [
         "${ userFound } пользователь найден",
@@ -6045,16 +6045,16 @@
         "Добавить сервер (доступно ${ availableAddedCount })"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Добавление ${ addedServerCount } сервера шлюза",
-        "Добавление ${ addedServerCount } серверов шлюза",
-        "Добавление ${ addedServerCount } серверов шлюза",
-        "Добавление ${ addedServerCount } серверов шлюза"
+        "Добавление ${ addedServerCount } шлюзового сервера",
+        "Добавление ${ addedServerCount } шлюзовых серверов",
+        "Добавление ${ addedServerCount } шлюзовых серверов",
+        "Добавление ${ addedServerCount } шлюзовых серверов"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Добавление сервера шлюза: ${ serverNumber } / ${ total }",
-        "Добавление серверов шлюза: ${ serverNumber } / ${ total }",
-        "Добавление серверов шлюза: ${ serverNumber } / ${ total }",
-        "Добавление серверов шлюза: ${ serverNumber } / ${ total }"
+        "Добавление шлюзового сервера: ${ serverNumber } / ${ total }",
+        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Дополнительные параметры"
@@ -6324,10 +6324,10 @@
         "Создайте свой первый Шлюз"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Создание сервера шлюза: ${ serverNumber } / ${ total }",
-        "Создание серверов шлюза: ${ serverNumber } / ${ total }",
-        "Создание серверов шлюза: ${ serverNumber } / ${ total }",
-        "Создание серверов шлюза: ${ serverNumber } / ${ total }"
+        "Создание шлюзового сервера: ${ serverNumber } / ${ total }",
+        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Создание вашего аккаунта"
@@ -6384,10 +6384,10 @@
         "Удалить ссылку?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Удаление ${ deletedServerCount } сервера шлюза",
-        "Удаление ${ deletedServerCount } серверов шлюза",
-        "Удаление ${ deletedServerCount } серверов шлюза",
-        "Удаление ${ deletedServerCount } серверов шлюза"
+        "Удаление ${ deletedServerCount } шлюзового сервера",
+        "Удаление ${ deletedServerCount } шлюзовых серверов",
+        "Удаление ${ deletedServerCount } шлюзовых серверов",
+        "Удаление ${ deletedServerCount } шлюзовых серверов"
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -6891,7 +6891,7 @@
         "Нет шлюзов"
       ],
       "No Gateways yet": [
-        "Пока нет шлюзов"
+        "Шлюзов пока нет"
       ],
       "No imports or forwarding history.": [
         "Нет истории импорта или пересылки."
@@ -7686,7 +7686,7 @@
         "Мы сгенерировали для вас надежный пароль"
       ],
       "We just sent you a new link.": [
-        "We just sent you a new link."
+        "Мы только что отправили вам новую ссылку."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
@@ -7800,10 +7800,10 @@
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
-        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
-        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
-        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Сейчас вы используете ${ usedMembers } из вашей ${ maxMembers } доступной пользовательской лицензии.",
@@ -8499,6 +8499,9 @@
       ],
       "Addresses": [
         "Адреса"
+      ],
+      "Administrators": [
+        "Администраторы"
       ],
       "ALL": [
         "ВСЁ"
@@ -9270,6 +9273,9 @@
       ],
       "Username": [
         "Имя пользователя"
+      ],
+      "VAT": [
+        "НДС"
       ],
       "Verification code": [
         "Код подтверждения"
@@ -10130,7 +10136,7 @@
         "${ n } псевдоним hide-my-email",
         "${ n } псевдонима hide-my-email",
         "${ n } псевдонимов hide-my-email",
-        "${ n } псевдонима hide-my-email"
+        "${ n } псевдонимов hide-my-email"
       ],
       "${ n } label": [
         "${ n } ярлык",
@@ -10341,9 +10347,9 @@
       ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
-        "Защитите ${ n } устройства за раз",
-        "Защитите ${ n } устройств за раз",
-        "Защитите ${ n } устройства за раз"
+        "Защитите ${ n } устройства одновременно",
+        "Защитите ${ n } устройств одновременно",
+        "Защитите ${ n } устройств одновременно"
       ],
       "Router support": [
         "Поддержка маршрутизаторов"
@@ -10425,6 +10431,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
+      ],
+      "Up to ${ n } user": [
+        "До ${ n } пользователя",
+        "До ${ n } пользователей",
+        "До ${ n } пользователей",
+        "До ${ n } пользователей"
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
@@ -10719,9 +10731,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Хранилище — это удобный способ хранения элементов, как папка. Возможность делиться хранилищами с друзьями и семьей пока в разработке."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Защитите ресурсы вашей компании от публичного Интернета и сделайте их доступными только через ваши личные шлюзы."
       ],
@@ -10921,7 +10930,7 @@
         "Недействительный код"
       ],
       "IP Address copied to clipboard": [
-        "İP-адрес скопирован в буфер обмена"
+        "IP-адрес скопирован в буфер обмена"
       ],
       "Key copied to the clipboard": [
         "Ключ скопирован в буфер обмена"
@@ -11628,6 +11637,14 @@
         "Обезопасьте ваш аккаунт"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Для предприятий"
+      ],
+      "For invididuals": [
+        "Для частных лиц"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
@@ -11642,6 +11659,17 @@
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Номер карты"
+      ],
+      "CVC": [
+        "CVC-код"
+      ],
+      "MM/YY": [
+        "ММ/ГГ"
       ]
     },
     "Payments.Error": {
@@ -12086,6 +12114,12 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "Вы можете сбросить свой пароль до ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -12181,7 +12215,7 @@
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
         "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } час",
         "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
-        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов",
         "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов"
       ]
     },
@@ -12680,8 +12714,14 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
       ],
+      "contact your administrator": [
+        "свяжитесь с администратором"
+      ],
       "Get more storage": [
         "Получите больше дискового пространства"
+      ],
+      "upgrade for more storage": [
+        "выберите другой тариф для увеличения хранилища"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Улучшите ваш тариф, чтобы продолжать пользоваться аккаунтом без перебоев."
@@ -13486,6 +13526,9 @@
       "Composing": [
         "Написание"
       ],
+      "Confirm": [
+        "Подтвердить"
+      ],
       "Confirm address": [
         "Подтвердите адрес"
       ],
@@ -13565,7 +13608,7 @@
         "Настройка импорта календаря"
       ],
       "Customize the number of IP addresses in your plan": [
-        "Настройте количество адресов IP в вашем тарифе"
+        "Настройте количество IP-адресов в вашем тарифе"
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
@@ -13616,10 +13659,10 @@
         "Удалить записи журнала"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дня)",
-        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
-        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
-        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)"
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дня)",
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)"
       ],
       "Delete user?": [
         "Удалить пользователя?"
@@ -13679,7 +13722,7 @@
         "Изменение Sieve-фильтра"
       ],
       "Edit the list of servers of the gateway": [
-        "Изменение списка серверов шлюза"
+        "Изменить список серверов шлюза"
       ],
       "Edit user": [
         "Изменение пользователя"
@@ -13982,7 +14025,7 @@
         "Удалить пользователя?"
       ],
       "Rename the gateway": [
-        "Изменить шлюз"
+        "Переименовать шлюз"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -14229,6 +14272,9 @@
       ],
       "Your SMTP token": [
         "Ваш SMTP токен"
+      ],
+      "Your storage": [
+        "Ваше хранилище"
       ],
       "Your subscriptions": [
         "Ваши подписки"
@@ -14618,6 +14664,12 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
         "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",

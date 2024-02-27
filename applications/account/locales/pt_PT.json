@@ -158,6 +158,9 @@
       "Cancel subscription": [
         "Cancelar subscrição"
       ],
+      "Change keys": [
+        "Alterar a chave"
+      ],
       "Change mailbox password": [
         "Alterar a palavra-passe da caixa de correio"
       ],
@@ -3290,6 +3293,9 @@
       ]
     },
     "email_forwarding_2023: Header": {
+      "Actions": [
+        "Ações"
+      ],
       "From": [
         "De"
       ],
@@ -3435,6 +3441,11 @@
     "Enabled 2FA": {
       "2FA": [
         "A2F"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
       ]
     },
     "Error": {
@@ -4869,6 +4880,11 @@
         "Muito pequeno"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "aplicativo web"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail por mês)"
@@ -5969,6 +5985,9 @@
       ],
       "Credits earned": [
         "Créditos recebidos"
+      ],
+      "Current plan": [
+        "Plano actual"
       ],
       "Custom": [
         "Personalizado"
@@ -7671,6 +7690,9 @@
       "Credit": [
         "Crédito"
       ],
+      "Credit note": [
+        "Nota de crédito"
+      ],
       "Donation": [
         "Donativo"
       ],
@@ -7771,6 +7793,9 @@
       ],
       "Expand / contract composer": [
         "Expandir/Contrair compositor"
+      ],
+      "Filter": [
+        "Filtro"
       ],
       "Forward": [
         "Encaminhar"
@@ -7966,6 +7991,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Aqui está como"
+      ],
+      "Learn more": [
+        "Mais informação"
       ]
     },
     "Label": {
@@ -8786,6 +8814,9 @@
       "Username": [
         "Nome de utilizador"
       ],
+      "VAT": [
+        "IVA"
+      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -8928,6 +8959,9 @@
       ]
     },
     "Label to change density": {
+      "Comfortable": [
+        "Confortável"
+      ],
       "Compact": [
         "Compacto"
       ]
@@ -8973,6 +9007,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -10137,9 +10174,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Pode adicionar etiquetas às suas mensagens para as tornar mais fáceis de encontrar ou para aplicar filtros."
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Tal como uma pasta, um cofre e é uma forma prática de organizar os seus itens. A partilha de cofres com amigos e familiares está a ser preparada."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através dos seus gateways privados"
       ],
@@ -10602,6 +10636,9 @@
       "On": [
         "Ligado"
       ],
+      "Plain text": [
+        "Texto sem formatação"
+      ],
       "Repeat daily": [
         "Repetir diariamente"
       ],
@@ -10634,6 +10671,14 @@
       ],
       "UDP": [
         "UDP"
+      ]
+    },
+    "Option delay send seconds": {
+      "10 seconds": [
+        "10 segundos"
+      ],
+      "20 seconds": [
+        "20 segundos"
       ]
     },
     "Option group": {
@@ -10716,7 +10761,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
-        "Defina a sua organização"
+        "Configure a sua organização"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Começar a utilizar o ${ PASS_APP_NAME }"
@@ -10750,6 +10795,9 @@
       "Start using ${ appName } now": [
         "Começar a utilizar o ${ appName }"
       ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
       "Upgrade my plan": [
         "Atualize o meu plano"
       ]
@@ -10774,6 +10822,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Continue com a sua conta da ${ BRAND_NAME }"
+      ],
+      "Let's talk": [
+        "Vamos conversar"
       ],
       "Limited time offer": [
         "Oferta por tempo limitado"
@@ -10810,6 +10861,9 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
       ],
+      "/month /user": [
+        "/mês /utilizador"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
@@ -10821,6 +10875,9 @@
       ],
       "Creating your account": [
         "A criar a sua conta"
+      ],
+      "Current plan": [
+        "Plano actual"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descubra ${ PASS_APP_NAME },${ br }o nosso novo gestor de palavras-passe encriptadas"
@@ -10960,6 +11017,11 @@
         "Proteja a sua conta"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Para empresas"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
@@ -10974,6 +11036,14 @@
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Número do cartão"
+      ],
+      "CVC": [
+        "CVC"
       ]
     },
     "Payments.Error": {
@@ -11641,6 +11711,9 @@
       ]
     },
     "Settings/labels - table": {
+      "Actions": [
+        "Ações"
+      ],
       "Labels": [
         "Etiquetas"
       ]
@@ -13805,7 +13878,16 @@
         "Administrador principal"
       ]
     },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
