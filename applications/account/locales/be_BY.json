@@ -5246,7 +5246,7 @@
         "${ appName } у Play Store"
       ],
       "${ MAIL_APP_NAME } app": [
-        "Праграма ${ MAIL_APP_NAME }"
+        "праграму ${ MAIL_APP_NAME }"
       ],
       "account logins": [
         "даныя ўваходу ўліковага запісу"
@@ -5255,13 +5255,13 @@
         "Аўтаперасылка Gmail"
       ],
       "auto-forwarding": [
-        "аўтаперасылка"
+        "аўтаперасылку"
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Змяніце ${ strongText } на ваш адрас ${ BRAND_NAME }"
       ],
       "Discover how our ${ strongText } protect you": [
-        "Даведайцеся, як наш ${ strongText } вас абараняе"
+        "Даведайцеся, як нашы ${ strongText } вас абараняюць"
       ],
       "Discover privacy features": [
         "Пазнаёмцеся з функцыямі прыватнасці"
@@ -10359,6 +10359,9 @@
       "1 user": [
         "1 карыстальнік"
       ],
+      "24/7 account management support": [
+        "Падтрымка 24/7 па кіраванні ўліковым запісам"
+      ],
       "24/7 support": [
         "Падтрымка 24/7"
       ],
@@ -10370,6 +10373,9 @@
       ],
       "Admin console": [
         "Кансоль адміністратара"
+      ],
+      "Administration Panel": [
+        "Панэль адміністратара"
       ],
       "Advanced network security": [
         "Пашыраная бяспека сеткі"
@@ -10472,6 +10478,9 @@
       ],
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Кіраванне групай (неўзабаве)"
       ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
@@ -10617,6 +10626,12 @@
       "Unlimited shared vaults with access permissions": [
         "Неабмежаваная колькасць абагуленых сховішчаў з правамі доступу"
       ],
+      "Unlimited vault sharing": [
+        "Неабмежаваная колькасць абагуленняў сховішча"
+      ],
+      "Unlimited vaults": [
+        "Неабмежаваная колькасць сховішчаў"
+      ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
       ],
@@ -10697,6 +10712,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Пашыраная бяспека для каманд, якая выходзіць за рамкі прамысловых стандартаў."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
@@ -10928,8 +10946,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Сховішча, як і папкі, з'яўляюцца зручным спосабам арганізаваць вашы элементы. Абагуленне сховішчаў з сябрамі і сям'ёй знаходзіцца ў стадыі распрацоўкі."
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Ізалюйце рэсурсы сваёй кампаніі ад агульнадаступнага інтэрнэту і зрабіце іх даступнымі толькі праз вашы прыватныя шлюзы"
@@ -14235,10 +14253,10 @@
         "Спампаваць ${ VPN_APP_NAME }"
       ],
       "Download the desktop app": [
-        "Спампоўванне настольнай праграмы"
+        "Спампоўка настольных праграм"
       ],
       "Download the mobile apps": [
-        "Спампоўванне мабільных праграм"
+        "Спампоўка мабільных праграм"
       ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
@@ -15297,6 +15315,20 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Падпіска аўтаматычна падаўжаецца кожны 1 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 1 месяц."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
+        "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
+        "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
+        "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
       ]
     },
     "vpn_2step: billing": {
