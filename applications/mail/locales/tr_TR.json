@@ -1125,6 +1125,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade Now": [
+        "Şimdi yükselt"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ],
@@ -1191,6 +1194,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Masaüstü uygulaması ücretsiz deneme sürümünüz 2 gün içinde sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Masaüstü uygulaması ücretsiz deneme sürümünüz 5 gün içinde sona erecek. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Masaüstü uygulaması ücretsiz deneme sürümünüz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Yakınlaştır"
@@ -1313,6 +1325,11 @@
       ],
       "New email": [
         "Yeni e-posta"
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasını indirin"
       ]
     },
     "Apps dropdown": {
@@ -3330,6 +3347,9 @@
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
       ],
+      "An error occurred while saving your alias": [
+        "Takma adınız kaydedilirken bir sorun çıktı"
+      ],
       "Attachments are limited to 25 MB": [
         "Ek dosyaların boyutu 25 MB ile sınırlıdır"
       ],
@@ -4381,6 +4401,31 @@
       ],
       "To: ${ toString }": [
         "Kime: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Gelen kutunuza ve takviminize hızla, güvenle ve dikkatinizi dağıtmadan erişmenin tadını çıkarın."
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "Ücretli ${ BRAND_NAME } tarifesi ile sınırsız erişim elde edin"
+      ],
+      "Introducing the desktop app": [
+        "Masaüstü uygulamasını yayınladık"
+      ],
+      "No credit card required": [
+        "Kredi kartı gerekmez"
+      ],
+      "Upgrade now": [
+        "Şimdi yükseltin"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "14 gün boyunca ücretsiz olarak deneyin"
       ]
     },
     "Get started checklist instructions": {
@@ -5998,6 +6043,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Bu ileti ${ value } zamanında otomatik olarak silinecek"
       ],
       "This message will be automatically deleted on ${ value }": [
         "Bu ileti ${ value } zamanında otomatik olarak silinecek"
@@ -8214,6 +8262,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Amazon alışverişleri için kullanıldı gibi."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
       ]
     },
     "Security Center - Action": {
@@ -8769,6 +8820,9 @@
       "Change setting": [
         "Ayarı değiştir"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "${ MAIL_APP_NAME } uygulamasını doğrudan masaüstünüzden kolayca başlatın."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Hide-my-email takma adları oluşturun ve bunları buradan yönetin."
       ],
@@ -8777,6 +8831,9 @@
       ],
       "Faster email management": [
         "Daha hızlı e-posta yönetimi"
+      ],
+      "Get the desktop app": [
+        "Masaüstü uygulamasını edinin"
       ],
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
@@ -10011,6 +10068,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"

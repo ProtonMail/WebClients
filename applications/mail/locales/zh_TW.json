@@ -262,6 +262,9 @@
       "Create a new label": [
         "創建新標籤"
       ],
+      "Create and copy alias": [
+        "建立及複製別名"
+      ],
       "Create folder": [
         "創建資料夾"
       ],
@@ -1114,6 +1117,9 @@
       "Upgrade": [
         "升級"
       ],
+      "Upgrade Now": [
+        "請升級"
+      ],
       "Upgrade now": [
         "立即升級"
       ],
@@ -1179,6 +1185,15 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "您的桌面應用程式將於兩天內結束試用。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "您的桌面應用程式將於五日內結束試用。 ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
       ],
       "Zoom in": [
         "放大"
@@ -1298,6 +1313,11 @@
       ],
       "New email": [
         "新電子郵件"
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "下載${ MAIL_APP_NAME }桌面應用程式"
       ]
     },
     "Apps dropdown": {
@@ -3025,6 +3045,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
@@ -3045,6 +3068,9 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "設定救援方法可以避免您再也無法存取您的帳戶。"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
@@ -3078,6 +3104,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
+      ],
+      "Your account and data recovery methods are set.": [
+        "您的帳戶資料復原方法已就緒。"
       ]
     },
     "description": {
@@ -3119,6 +3151,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "此${ eventTitle }的事件已被取消。"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
@@ -3271,6 +3306,9 @@
       ],
       "An error occurred while loading alias options": [
         "載入別名選項時發生錯誤"
+      ],
+      "An error occurred while saving your alias": [
+        "儲存別名時發生錯誤。"
       ],
       "Attachments are limited to 25 MB": [
         "附件大小上限為 25 MB"
@@ -4306,6 +4344,28 @@
         "收件人：${ toString }"
       ]
     },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }桌面應用程式"
+      ],
+      "Get unlimited access with paid ${ BRAND_NAME } plan": [
+        "使用付費${ BRAND_NAME }方案取得無限存取"
+      ],
+      "Introducing the desktop app": [
+        "介紹桌面應用程式"
+      ],
+      "No credit card required": [
+        "毋須信用卡"
+      ],
+      "Upgrade now": [
+        "立刻升级"
+      ]
+    },
+    "Free trial destkop": {
+      "Try free for 14 days": [
+        "免費滿意體驗 14 天"
+      ]
+    },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME }應用程式"
@@ -4480,6 +4540,9 @@
       ],
       "Search": [
         "搜尋"
+      ],
+      "Security Center": [
+        "安全中心"
       ]
     },
     "Hint": {
@@ -4985,6 +5048,9 @@
       "and": [
         "和"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "任何已規劃或延後的訊息將會被取消。"
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "所有附屬資料夾會被刪除。但儲存在 ${ nameDeleted } 資料夾的電子郵件不會被刪除，你可以在所有郵件中找回郵件。"
       ],
@@ -5011,6 +5077,12 @@
       ],
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "您確定要將此處的所有訊息移至封存嗎"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "您確定要將此處的所有訊息移至垃圾桶嗎"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "您確定要永久刪除 ${ count } 則往來對話？"
@@ -5839,6 +5911,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "簽署此郵件的金鑰已隨函附上，惟尚未信任。"
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "此郵件將於 ${ value } 自動刪除"
       ],
       "This message will be automatically deleted on ${ value }": [
         "此郵件將會自動於${ value }刪除"
@@ -7703,6 +7778,11 @@
         "您"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "計費國家"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此金鑰無法用於加密"
@@ -7983,6 +8063,9 @@
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email 別名可以讓您在註冊帳號時不再需要分享您真實的電子郵件地址。 ${ learnMoreLink }"
+      ],
       "New alias": [
         "新增别名"
       ],
@@ -7994,6 +8077,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "在Amazon血拼時等等…"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "檢視日誌"
+      ]
+    },
+    "Security Center - Info": {
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel 現已 **啟動** 並正在保護你的帳號."
       ]
     },
     "Select files": {
@@ -8513,11 +8612,20 @@
       "Change setting": [
         "更改設定"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "方便地從桌面應用程式啟動${ MAIL_APP_NAME }"
+      ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "建立hide-my-email別名將另追蹤者止步"
+      ],
       "Email tracking protection": [
         "電郵追蹤防護"
       ],
       "Faster email management": [
         "更快速的電子郵件管理"
+      ],
+      "Get the desktop app": [
+        "取得桌面應用程式"
       ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
@@ -8593,6 +8701,18 @@
       "contact your administrator": [
         "與您的管理員聯絡"
       ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "要繼續上傳或同步檔案，需要釋放一些空間或生即已取得更多空間。"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或升級以取得更多空間。"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "要繼續上傳或同步檔案，請釋放一些空間或${ upgrade }"
+      ],
       "upgrade for more storage": [
         "升級以增加儲存"
       ],
@@ -8601,6 +8721,9 @@
       ],
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "您已使用 ${ percentage }% 的 ${ storage }。${ cta }"
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "您的${ storage }已滿${ cta }。"
@@ -8690,6 +8813,9 @@
       ],
       "Alias copied to clipboard": [
         "已複製別名到剪貼簿"
+      ],
+      "Alias saved and copied": [
+        "已成功儲存及複製別名"
       ],
       "Bug reported": [
         "錯誤已回報"
@@ -9213,6 +9339,9 @@
       "Get advanced protection": [
         "取得進階保護"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "獲得 ${ appName[APP_NAME] } 應用程式"
+      ],
       "Groups": [
         "群組"
       ],
@@ -9572,6 +9701,9 @@
       ],
       "What's new": [
         "最新功能"
+      ],
+      "Your account is protected": [
+        "你的帳號已被保護"
       ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"
