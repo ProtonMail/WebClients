@@ -314,3 +314,13 @@ export const getHasMergeUpdate = (
 
     return false;
 };
+
+export const getUpdateMainSeriesMergeVevent = ({
+    newVeventComponent,
+    oldVeventComponent,
+}: {
+    newVeventComponent: VcalVeventComponent;
+    oldVeventComponent: VcalVeventComponent;
+}) => {
+    return getUpdateSingleEditMergeVevent(newVeventComponent, oldVeventComponent);
+};
