@@ -2724,6 +2724,12 @@
       "Name": [
         "Nome"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Economize com as melhores ofertas no ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Selecione sua oferta"
+      ],
       "Select your pricing plan": [
         "Selecione o seu plano"
       ],
@@ -4618,7 +4624,7 @@
         "Atualizações de produto para ${ app } e ${ additionalApp }"
       ],
       "${ app } product updates": [
-        "Atualizações de produto da ${ app }"
+        "Atualizações de produto do ${ app }"
       ],
       "${ BRAND_NAME } beta announcements": [
         "Comunicados da ${ BRAND_NAME } beta"
@@ -4972,6 +4978,9 @@
       "1 user": [
         "1 usuário"
       ],
+      "24/7 account management support": [
+        "Suporte de administração de conta 24/7"
+      ],
       "24/7 support": [
         "Suporte 24/7"
       ],
@@ -4983,6 +4992,9 @@
       ],
       "Admin console": [
         "Console de administração"
+      ],
+      "Administration Panel": [
+        "Painel de administração"
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
@@ -5086,6 +5098,9 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
+      "Group management (coming soon)": [
+        "Gerenciamento de grupo (em breve)"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -5140,7 +5155,7 @@
         "Proteja ${ n } dispositivos por vez"
       ],
       "Require 2FA for organization": [
-        "Requer 2FA para a organização"
+        "Requer A2F para a organização"
       ],
       "Router support": [
         "Suporte a roteador"
@@ -5224,6 +5239,12 @@
       "Unlimited shared vaults with access permissions": [
         "Cofres compartilhados ilimitados com permissões de acesso"
       ],
+      "Unlimited vault sharing": [
+        "Compartilhamento de cofre ilimitado"
+      ],
+      "Unlimited vaults": [
+        "Cofres ilimitados"
+      ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
       ],
@@ -5285,6 +5306,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Segurança de rede avançada e gerenciamento de acesso com Gateways seguros dedicados"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Proteção avançada para sua equipe que vai além dos padrões da indústria."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
@@ -5478,8 +5502,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Tal como uma pasta, o Cofre é uma forma conveniente de organizar seus itens. Compartilhamento de Cofres com amigos e família já está sendo desenvolvido."
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através de seus gateways privados"
@@ -5790,6 +5814,9 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Vá para o seu cofre para gerenciar suas senhas, aliases e muito mais."
+      ],
       "Set up your organization": [
         "Configure a sua organização"
       ],
@@ -7949,6 +7976,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "A assinatura se renova automaticamente todo mês. Sua próxima data de cobrança será em 1 mês."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Você então será cobrado ${ renewPrice } a cada 12 meses."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Sua assinatura será renovada automaticamente em ${ cycle } mês.",
+        "Sua assinatura será renovada automaticamente em ${ cycle } meses."
       ]
     },
     "vpn_2step: billing": {

@@ -56,6 +56,9 @@
       "Cancel subscription": [
         "Cancelar subscrição"
       ],
+      "Change keys": [
+        "Alterar a chave"
+      ],
       "Change mailbox password": [
         "Alterar a palavra-passe da caixa de correio"
       ],
@@ -400,6 +403,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
+      ],
+      "Select file": [
+        "Selecionar um ficheiro"
       ],
       "Send code": [
         "Enviar código"
@@ -1776,6 +1782,11 @@
         "A2F"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
@@ -2676,6 +2687,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Adicione outro nível de segurança à sua conta. Terá de se verificar com uma autenticação A2F cada vez que entrar na sua conta."
       ],
+      "Add domain": [
+        "Adicionar um domínio"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Adicionar servidor (${ availableAddedCount } disponível)",
         "Adicionar servidor (${ availableAddedCount } disponíveis)"
@@ -2805,6 +2819,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
+      ],
+      "Current plan": [
+        "Plano actual"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -3788,6 +3805,9 @@
       "Credit": [
         "Crédito"
       ],
+      "Credit note": [
+        "Nota de crédito"
+      ],
       "Donation": [
         "Donativo"
       ],
@@ -4172,6 +4192,9 @@
       ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -5029,9 +5052,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Pode adicionar etiquetas às suas mensagens para as tornar mais fáceis de encontrar ou para aplicar filtros."
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Tal como uma pasta, um cofre e é uma forma prática de organizar os seus itens. A partilha de cofres com amigos e familiares está a ser preparada."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através dos seus gateways privados"
       ],
@@ -5309,7 +5329,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
-        "Defina a sua organização"
+        "Configure a sua organização"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Começar a utilizar o ${ PASS_APP_NAME }"
@@ -5324,6 +5344,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Vamos conversar"
+      ],
       "Limited time offer": [
         "Oferta por tempo limitado"
       ],
@@ -5335,8 +5358,14 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
       ],
+      "/month /user": [
+        "/mês /utilizador"
+      ],
       "Creating your account": [
         "A criar a sua conta"
+      ],
+      "Current plan": [
+        "Plano actual"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Por apenas **${ relativePrice } adicionais por mês**, tem acesso a todos os serviços premium da ${ BRAND_NAME }"
@@ -5388,6 +5417,14 @@
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Número do cartão"
+      ],
+      "CVC": [
+        "CVC"
       ]
     },
     "Payments.Error": {
@@ -7071,7 +7108,16 @@
         "Administrador principal"
       ]
     },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
