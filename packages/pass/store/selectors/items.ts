@@ -29,6 +29,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { invert, truthy } from '@proton/pass/utils/fp/predicates';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
@@ -242,10 +243,11 @@ const autofillCandidatesSelector = createSelector(
                 sortOn: 'lastUseTime',
             })(state),
     ],
-    (domainMatches, subdomainMatches) => [
-        ...subdomainMatches /* push subdomain matches on top */,
-        ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
-    ]
+    (domainMatches, subdomainMatches) =>
+        [
+            ...subdomainMatches /* push subdomain matches on top */,
+            ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
+        ].sort(sortOn('lastUseTime', 'DESC'))
 );
 
 export const selectAutofillCandidates = (options: SelectAutofillCandidatesOptions) => (state: State) => {
