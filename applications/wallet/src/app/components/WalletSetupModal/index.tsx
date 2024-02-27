@@ -15,7 +15,7 @@ import { WalletSetupStep } from './type';
 import { useWalletSetupModal } from './useWalletSetupModal';
 
 interface Props {
-    isFirstSetup?: boolean;
+    isFirstSetup: boolean;
     isOpen: boolean;
     onClose: () => void;
 }
@@ -26,6 +26,7 @@ export const WalletSetupModal = ({ isFirstSetup, isOpen, onClose }: Props) => {
         mnemonic,
         walletName,
         fingerprint,
+        walletId,
         onSelectSetupMode,
         onMnemonicGenerated,
         onNextStep,
@@ -51,9 +52,7 @@ export const WalletSetupModal = ({ isFirstSetup, isOpen, onClose }: Props) => {
             case WalletSetupStep.WalletNameAndFiatInput:
                 return <WalletNameAndFiatInput onContinue={onWalletSubmit} />;
             case WalletSetupStep.Confirmation:
-                return (
-                    <SetupConfirmation walletName={walletName} fingerprint={fingerprint} onOpenWallet={onNextStep} />
-                );
+                return <SetupConfirmation walletName={walletName} fingerprint={fingerprint} walletId={walletId} />;
         }
     }, [
         currentStep,
@@ -67,6 +66,7 @@ export const WalletSetupModal = ({ isFirstSetup, isOpen, onClose }: Props) => {
         walletName,
         fingerprint,
         onSelectSetupMode,
+        walletId,
     ]);
 
     return (

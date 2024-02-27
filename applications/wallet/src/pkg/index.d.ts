@@ -10,10 +10,31 @@ export function getWordsAutocomplete(word_start: string): (string)[];
 export function setPanicHook(): void;
 /**
 */
-export enum WasmFiatCurrency {
-  USD = 0,
-  EUR = 1,
-  CHF = 2,
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
+}
+/**
+*/
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
 }
 /**
 */
@@ -26,38 +47,6 @@ export enum WasmKeychainKind {
 * Internal keychain, used for deriving change addresses.
 */
   Internal = 1,
-}
-/**
-*/
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmBitcoinUnit {
-  BTC = 0,
-  MBTC = 1,
-  SAT = 2,
 }
 /**
 */
@@ -81,23 +70,33 @@ export enum WasmChangeSpendPolicy {
 }
 /**
 */
-export enum WasmNetwork {
+export enum WasmBitcoinUnit {
+  BTC = 0,
+  MBTC = 1,
+  SAT = 2,
+}
 /**
-* Mainnet Bitcoin.
 */
-  Bitcoin = 0,
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
 /**
-* Bitcoin's testnet network.
 */
-  Testnet = 1,
+export enum WasmFiatCurrency {
+  USD = 0,
+  EUR = 1,
+  CHF = 2,
+}
 /**
-* Bitcoin's signet network.
 */
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
 }
 /**
 */
@@ -132,12 +131,45 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
+export interface WasmApiWallet {
+    ID: string;
+    Name: string;
+    IsImported: number;
+    Priority: number;
+    Type: number;
+    HasPassphrase: number;
+    Status: number;
+    Mnemonic: string | null;
+    Fingerprint: string | null;
+    PublicKey: string | null;
+}
+
+export interface WasmWalletKey {
+    UserKeyID: string;
+    WalletKey: string;
+}
+
+export interface WasmWalletSettings {
+    HideAccounts: number;
+    InvoiceDefaultDescription: string | null;
+    InvoiceExpirationTime: number;
+    MaxChannelOpeningFee: number;
+}
+
+export interface WasmWalletAccount {
+    ID: string;
+    DerivationPath: string;
+    Label: string;
+    ScriptType: number;
+}
+
 
 interface IWasmBlockTime {
     height: BigInt,
@@ -204,38 +236,6 @@ interface IWasmUtxo {
 
 type IWasmUtxoArray = IWasmUtxo[]
 
-
-export interface WasmApiWallet {
-    ID: string;
-    Name: string;
-    IsImported: number;
-    Priority: number;
-    Type: number;
-    HasPassphrase: number;
-    Status: number;
-    Mnemonic: string | null;
-    Fingerprint: string | null;
-    PublicKey: string | null;
-}
-
-export interface WasmWalletKey {
-    UserKeyID: string;
-    WalletKey: string;
-}
-
-export interface WasmWalletSettings {
-    HideAccounts: number;
-    InvoiceDefaultDescription: string | null;
-    InvoiceExpirationTime: number;
-    MaxChannelOpeningFee: number;
-}
-
-export interface WasmWalletAccount {
-    ID: string;
-    DerivationPath: string;
-    Label: string;
-    ScriptType: number;
-}
 
 /**
 */
@@ -1036,6 +1036,11 @@ export class WasmWalletClient {
 * @returns {Promise<WasmWalletData>}
 */
   createWallet(name: string, is_imported: boolean, wallet_type: number, has_passphrase: boolean, user_key_id: string, wallet_key: string, mnemonic?: string, fingerprint?: string, public_key?: string): Promise<WasmWalletData>;
+/**
+* @param {string} wallet_id
+* @returns {Promise<void>}
+*/
+  deleteWallet(wallet_id: string): Promise<void>;
 /**
 * @param {string} wallet_id
 * @returns {Promise<WasmWalletAccountArray>}
