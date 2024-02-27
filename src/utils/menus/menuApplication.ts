@@ -4,6 +4,7 @@ import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac, isWindows } from "../helpers";
 import { getMainWindow } from "../view/viewManagement";
 import { openLogFolder } from "./openLogFolder";
+import { areDevToolsAvailable } from "../view/windowHelpers";
 
 interface MenuInsertProps {
     menu: MenuItemConstructorOptions[];
@@ -154,7 +155,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         ],
     });
 
-    if (!isPackaged) {
+    if (areDevToolsAvailable()) {
         insertInMenu({
             menu: temp,
             key: "View",

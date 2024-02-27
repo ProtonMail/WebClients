@@ -10,7 +10,6 @@ export interface URLConfig {
 
 interface Config {
     appTitle: string;
-    devTools: boolean;
     url: URLConfig;
 }
 
@@ -24,13 +23,11 @@ const localUrls = {
 
 const devConfig: Config = {
     appTitle: "DEV - Proton",
-    devTools: true,
     url: localUrls,
 };
 
 const prodConfig: Config = {
     appTitle: "Proton",
-    devTools: false,
     url: getAppURL(),
 };
 
@@ -64,4 +61,8 @@ export const getExtraResource = () => {
         return ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"];
     }
     return [];
+};
+
+export const isProdEnv = (config: Config) => {
+    return config.url.account.endsWith("proton.me");
 };

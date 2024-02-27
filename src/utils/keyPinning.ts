@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import { Request, app } from "electron";
 import { CERT_PROTON_ME } from "../constants";
-import { getConfig } from "./config";
+import { getConfig, isProdEnv } from "./config";
 import { isHostAllowed } from "./urls/urlTests";
 
 const config = getConfig();
@@ -9,7 +9,7 @@ const config = getConfig();
 export const checkKeys = (request: Request) => {
     if (isHostAllowed(request.hostname)) {
         // We dont do any verification for dev and testing environments
-        if (!app.isPackaged || !config.url.account.endsWith("proton.me")) {
+        if (!app.isPackaged || !isProdEnv(config)) {
             return 0;
         }
 

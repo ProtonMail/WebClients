@@ -1,10 +1,14 @@
-import { BrowserWindowConstructorOptions, Session } from "electron";
+import { BrowserWindowConstructorOptions, Session, app } from "electron";
 import { getWindowBounds } from "../../store/boundsStore";
-import { getConfig, getIcon } from "../config";
+import { getConfig, getIcon, isProdEnv } from "../config";
 import { isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const config = getConfig();
+
+export const areDevToolsAvailable = () => {
+    return !app.isPackaged || !isProdEnv(config);
+};
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
@@ -32,7 +36,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
         height,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: config.devTools,
+            devTools: areDevToolsAvailable(),
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             spellcheck: true,
             // Security additions
