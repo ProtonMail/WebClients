@@ -618,6 +618,9 @@
       "Unable to sync": [
         "სინქრონიზაცია შეუძლებელია"
       ],
+      "Unknown error": [
+        "უცნობი შეცდომა"
+      ],
       "Unknown invite": [
         "უცნობი მოწვევა"
       ],
@@ -638,6 +641,9 @@
       ],
       "Vault name does not match": [
         "საცავის სახელი არ ემთხვევა"
+      ],
+      "Wrong password": [
+        "არასწორი პაროლი"
       ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
@@ -723,6 +729,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber }-ჯერ",
@@ -865,6 +874,9 @@
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
       ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "ინტერნეტთან კავშირის პრობლემა. შეამოწმეთ თქვენი მოწყობილობა."
+      ],
       "Invitation sent": [
         "მოსაწვევი გაგზავნილია"
       ],
@@ -950,8 +962,20 @@
       "Never": [
         "არასოდეს"
       ],
+      "No network connection": [
+        "ქსელთან კავშირი არ არის"
+      ],
       "None": [
         "არცერთი"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის ჩართვა ამჟამად შეუძლებელია"
+      ],
+      "Offline support successfully disabled": [
+        "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
       ],
       "Owner": [
         "მფლობელი"
@@ -975,6 +999,9 @@
       "Pinning item...": [
         "ელემენტის მიმაგრება..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
       ],
@@ -996,6 +1023,9 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
       ],
+      "Please upgrade your plan to enable offline support.": [
+        "ასწიეთ სატარიფო გეგმა ქსელის გარეშე მუშაობის ჩასართავად."
+      ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
       ],
@@ -1004,6 +1034,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
+      ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
       ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
@@ -1037,6 +1070,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "დააყენეთ PIN კოდი თქვენი მონაცემების ადვილად დასაბლოკად"
+      ],
+      "Setting up offline mode...": [
+        "ქსელის გარეშე მუშაობის რეჟიმის მორგება..."
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
@@ -1134,6 +1170,9 @@
       ],
       "You are about to create:": [
         "აპირებთ, შექმნათ:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "ახლა შეგიძლიათ, თქვენი ${ BRAND_NAME }-ის პაროლი ${ PASS_SHORT_APP_NAME }-ში შესასვლელად ქსელის გარეშეც გამოიყენოთ"
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
@@ -1284,6 +1323,9 @@
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
       ],
+      "Enable offline access": [
+        "ქსელის გარეშე წვდომის დაშვება"
+      ],
       "Encrypted (recommended)": [
         "დაშიფრული (რეკომენდებულია)"
       ],
@@ -1418,6 +1460,9 @@
       ],
       "Notes": [
         "შენიშვნები"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
       ],
       "Old-New": [
         "ძველი-ახალი"
@@ -1567,6 +1612,9 @@
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "ამჟამად ინტერნეტთან დაკავშირებული არ ბრძანდებით. განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ]
     },
     "lobby: Title": {
@@ -1824,6 +1872,9 @@
       ],
       "Your vault is empty": [
         "თქვენი საცავი ცარიელია"
+      ],
+      "Your welcome gift": [
+        "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
       ]
     },
     "Validation": {
@@ -1883,6 +1934,9 @@
       "Empty note": [
         "ცარიელი შენიშვნა"
       ],
+      "Encryption password is required": [
+        "დაშიფვრის პაროლი აუცილებელია"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
       ],
@@ -1916,6 +1970,9 @@
       ],
       "No results": [
         "შედეგების გარეშე"
+      ],
+      "Offline": [
+        "გათიშულია"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
