@@ -1,4 +1,5 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
+import { c } from "ttag";
 import { uninstallProton } from "../macos/uninstall";
 import { clearStorage, isMac, isWindows, openLogFolder } from "./helpers";
 
@@ -32,15 +33,15 @@ export const setApplicationMenu = (isPackaged: boolean) => {
 
     const temp: MenuItemConstructorOptions[] = [
         {
-            label: "File",
+            label: c("Menu").t`File`,
             submenu: [
                 {
-                    label: "Clear application data",
+                    label: c("Menu").t`Clear application data`,
                     type: "normal",
                     click: () => clearStorage(true),
                 },
                 {
-                    label: "Show logs",
+                    label: c("Menu").t`Show logs`,
                     type: "normal",
                     click: () => openLogFolder(),
                 },
@@ -50,7 +51,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: "Edit",
+            label: c("Menu").t`Edit`,
             submenu: [
                 { role: "undo" },
                 { role: "redo" },
@@ -63,7 +64,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: "View",
+            label: c("Menu").t`View`,
             submenu: [
                 { role: "reload" },
                 { role: "forceReload" },
@@ -76,7 +77,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: "Window",
+            label: c("Menu").t`Window`,
             submenu: [{ role: "minimize" }, { role: "close" }, { role: "zoom" }],
         },
     ];
@@ -92,7 +93,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "unhide" },
                 { type: "separator" },
                 {
-                    label: "Uninstall Proton Mail",
+                    label: c("Menu").t`Uninstall Proton Mail`,
                     type: "normal",
                     click: () => uninstallProton(),
                 },
@@ -117,7 +118,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             { role: "selectAll" },
             { type: "separator" },
             {
-                label: "Speech",
+                label: c("Menu").t`Speech`,
                 submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
             },
         ],
