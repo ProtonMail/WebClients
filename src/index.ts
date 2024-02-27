@@ -177,12 +177,14 @@ app.on("web-contents-created", (_ev, contents) => {
 
         if (isHostCalendar(url)) {
             Logger.info("Open calendar window");
+            _ev.preventDefault();
             updateView("calendar");
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
             Logger.info("Open mail window");
+            _ev.preventDefault();
             updateView("mail");
             return { action: "deny" };
         }

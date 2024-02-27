@@ -105,7 +105,6 @@ const loadMailView = (window: BrowserWindow) => {
     const bounds = adjustBoundsForWindows(window.getBounds());
     mailView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
     window.setBrowserView(mailView);
-    mailView.webContents.toggleDevTools();
 };
 
 const loadCalendarView = (window: BrowserWindow) => {
