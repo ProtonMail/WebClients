@@ -16,12 +16,13 @@ export type EventChannelOnError<T extends {}> = (
 ) => Generator;
 
 export type EventChannelOptions<T extends {}> = EventManagerConfig<T> & {
+    channelId: string;
     onClose?: () => void;
     onEvent: EventChannelOnEvent<T>;
     onError?: EventChannelOnError<T>;
 };
 
 export type EventChannel<T extends {}> = EventChannelOptions<T> & {
-    manager: EventManager<T>;
     channel: ReduxSagaChannel<EventManagerEvent<T>>;
+    manager: EventManager<T>;
 };
