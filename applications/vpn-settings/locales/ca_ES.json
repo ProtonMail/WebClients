@@ -2028,6 +2028,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
       ],
+      "Please upload an xml file": [
+        "Carregueu un arxiu XML"
+      ],
       "Process aborted": [
         "Procés anul·lat"
       ],
@@ -2464,16 +2467,16 @@
         "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
-        "Inseriu la vostra clau de seguretat al port USB del vostre dispositiu."
+        "Inseriu la clau de seguretat al port USB del vostre dispositiu."
       ],
       "Security key": [
         "Clau de seguretat"
       ],
       "Security key removed": [
-        "La clau de seguretat s'ha esborrat."
+        "S'ha esborrat la clau de seguretat."
       ],
       "Security key updated": [
-        "Clau de seguretat actualitzada"
+        "S'ha actualitzat la clau de seguretat"
       ],
       "This will delete all security keys linked to your account.": [
         "Això eliminarà totes les claus de seguretat vinculades al vostre compte."
@@ -2801,6 +2804,10 @@
       "Admin account allocation": [
         "Assignació del compte d'administrador"
       ],
+      "Affected user is on row": [
+        "L'usuari afectat es troba a la fila.",
+        "Els usuaris afectats es troben a les files."
+      ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
@@ -3006,7 +3013,7 @@
         "Introduïu els detalls del vostre compte de ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "Entreu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
+        "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
@@ -3218,6 +3225,9 @@
       "per month": [
         "al mes"
       ],
+      "per month, billed at ${ price }": [
+        "al mes, facturat a ${ price }"
+      ],
       "per month, billed every 12 months": [
         "al mes amb facturació cada 12 mesos"
       ],
@@ -3320,7 +3330,7 @@
         "La configuració SAML s'ha desat."
       ],
       "Save ${ percentage }": [
-        "Deseu ${ percentage }"
+        "Estalvieu el ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Guardeu la vostra contrasenya a un lloc segur."
@@ -3678,7 +3688,7 @@
         "Per què?"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
-        "Amb una adreça de correu xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
+        "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
@@ -4576,7 +4586,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "La velocitat VPN més alta"
+        "Velocitat VPN màxima"
       ],
       "Keep your inbox organized with folders": [
         "Mantingueu la vostra safata d'entrada organitzada amb carpetes."
@@ -4904,6 +4914,9 @@
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
       ],
+      "SSO integration (coming soon)": [
+        "Integració SSO (pròximament)"
+      ],
       "Start protecting your organization": [
         "Comenceu a protegir la vostra organització"
       ],
@@ -5194,9 +5207,6 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
       ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Com una carpeta, una caixa forta és una manera pràctica d'organitzar els vostres elements. La compartició de caixes fortes amb amics i familiars està en desenvolupament."
-      ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Aïlleu els recursos de la vostra empresa de l'internet públic i feu-los accessibles només a través de les vostres passarel·les privades."
       ],
@@ -5274,6 +5284,9 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield, dissenyat especialment, protegeix el vostre dispositiu i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } i ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
@@ -5489,7 +5502,7 @@
         "Configureu la vostra organització"
       ],
       "Start using ${ PASS_APP_NAME }": [
-        "Començar a utilitzar ${ PASS_APP_NAME }"
+        "Comenceu a utilitzar ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -5564,8 +5577,17 @@
       ]
     },
     "passwordless": {
+      "Change organization key": [
+        "Canvia la clau de l'organització"
+      ],
       "Organization key activated": [
         "S'ha activat la clau de l'organització."
+      ],
+      "Organization key does not exist.": [
+        "La clau de l'organització no existeix."
+      ],
+      "Organization key restored": [
+        "S'ha restaurat la clau de l'organització."
       ],
       "Organization key updated": [
         "S'ha actualitzat la clau de l'organització."
@@ -5611,6 +5633,9 @@
       ],
       "Invalid expiration date": [
         "Data de caducitat no vàlida"
+      ],
+      "Invalid securiry code": [
+        "El codi de seguretat no es vàlid."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
@@ -6095,7 +6120,7 @@
     },
     "session_recovery:status:title": {
       "Password reset request": [
-        "Petició de restabliment de la contrasenya"
+        "Sol·licitud de restabliment de la contrasenya"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6346,12 +6371,23 @@
         "Segueix amb ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Fins a ${ totalStorageSize } d'emmagatzematge per a Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Fins a ${ totalStorageSize } d'emmagatzematge per a Mail"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
+        "Si passeu a un pla inferior, perdreu els beneficis següents. Segur que voleu continuar?"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
@@ -6368,10 +6404,10 @@
         "Facturació cada 2 anys"
       ],
       "Billed for 15 months": [
-        "Facturació per 15 mesos"
+        "Facturació per a 15 mesos"
       ],
       "Billed for 30 months": [
-        "Facturació per 30 mesos"
+        "Facturació per a 30 mesos"
       ],
       "Billed monthly": [
         "Facturació mensual"
@@ -6388,6 +6424,10 @@
       "${ n } calendar per user": [
         "${ n } calendari per usuari",
         "${ n } calendaris per usuari"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } connexió VPN gratuïta per usuari",
+        "${ n } connexions VPN gratuïtes per usuari"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } connexió VPN d'alta velocitat",
@@ -6432,7 +6472,7 @@
         "1 connexió VPN"
       ],
       "Access to streaming services globally": [
-        "Accediu a serveis de transmissió en línia globalment"
+        "Accés a serveis de transmissió en línia a tot el món"
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloquejador d'anuncis integrat (NetShield)"
@@ -6472,7 +6512,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "N'estas segur?"
+        "N'esteu segur?"
       ],
       "Auto-pay is disabled": [
         "El pagament automàtic està desactivat."
@@ -6487,13 +6527,13 @@
         "Habilita el suport de pagament automàtic"
       ],
       "Keep auto-pay": [
-        "Mantenir el pagament automàtic"
+        "Mantén el pagament automàtic"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, encara haureu de fer-ho abans del final del període de facturació. No podem baixar-vos de categoria automàticament perquè si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra propera factura de subscripció abans de la data de venciment per evitar la suspensió del compte."
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, encara haureu de fer-ho abans del final del període de facturació. No podem baixar-vos de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -6882,6 +6922,9 @@
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
+      ],
+      "Create organization key": [
+        "Crea la clau de l'organització"
       ],
       "Create user accounts": [
         "Crea comptes d'usuari"
@@ -7348,7 +7391,16 @@
         "Inici de sessió únic (SSO)"
       ]
     },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
+      ]
+    },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"

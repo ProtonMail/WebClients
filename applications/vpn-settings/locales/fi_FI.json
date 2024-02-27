@@ -45,7 +45,7 @@
         "Liitä kuvankaappauksia"
       ],
       "Authenticate": [
-        "Todenna"
+        "Tunnistaudu"
       ],
       "Authenticating": [
         "Varmennetaan"
@@ -2022,7 +2022,7 @@
         "Virheellinen koodi"
       ],
       "Invalid expiration date": [
-        "Virheellinen erääntymisaika"
+        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid invitation link": [
         "Virheellinen kutsulinkki"
@@ -2774,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } ja sinun on luotava ne manuaalisesti palauttaaksesi ne organisaatioosi."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
       ],
@@ -2896,6 +2899,10 @@
       "Admin account allocation": [
         "Varattu ylläpitäjän tilille"
       ],
+      "Affected user is on row": [
+        "Käyttäjä, jota tämä koskee, on rivillä",
+        "Käyttäjät, joita tämä koskee, ovat riveillä"
+      ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
@@ -2958,6 +2965,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Muista kopioida salasanasi ja säilyttää se turvallisessa paikassa."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Ennen käyttäjän aktivointia sinun on annettava salasana ja luotava osoitteille salausavaimet."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Ennen osoitteen luontia sille tulee määrittää salasana ja luoda salausavaimet."
@@ -3270,6 +3280,9 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Keys created": [
+        "Avaimet luotiin"
+      ],
       "Lean more about gateways": [
         "Lue lisää yhdyskäytävistä"
       ],
@@ -3335,6 +3348,9 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Kertakirjautumisen ulkopuoliset, manuaalisesti luodut käyttäjät, jotka eivät ole peräisin identiteettitoimitajasi, voivat edelleen kirjautua organisaatioosi."
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation kohdistettujen palvelinten määrä"
@@ -3402,10 +3418,10 @@
         "Lisää sähköpostiosoitteet riveillä oleville käyttäjille"
       ],
       "Please authenticate your card in the verification tab.": [
-        "Todenna korttisi vahvistusvälilehdellä."
+        "Vahvista korttisi vahvistusvälilehdellä."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Todenna maksusi vahvistusvälilehdellä."
+        "Vahvista maksusi vahvistusvälilehdellä."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Tarkista tiedostosi virheiden varalta tai ota yhteyttä asiakaspalveluun saadaksesi lisätietoja."
@@ -3430,6 +3446,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Käytä salasanaa, joka sisältää enemmän kuin ${ MIN_PASSWORD_LENGTH } merkin.",
+        "Käytä salasanaa, joka sisältää enemmän kuin ${ MIN_PASSWORD_LENGTH } merkkiä."
       ],
       "Please use another browser or download the file.": [
         "Käytä toista selainta tai lataa tiedosto."
@@ -3545,6 +3565,9 @@
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Määritä toimialue, joka saa todentaa SAML SSO:lla."
       ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Identiteetinhallintasi SSO-käyttäjät poistetaan"
+      ],
       "Step ${ step }": [
         "${ step }. vaihe",
         "${ step }. vaihe"
@@ -3590,6 +3613,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Kiitos, että tuet tehtäviämme rakentaa parempaa Internetiä, jossa yksityisyys ja vapaus ovat etusijalla."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Identiteetinhallintasi kirjautumistiedot poistetaan."
       ],
       "The following address is invalid.": [
         "Seuraava osoite on virheellinen.",
@@ -3662,6 +3688,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tämä poistaa tilisi ja kaikki sen tiedot pysyvästi. Et voi aktivoida tiliä uudelleen."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Tämä ottaa SSO:n pois käytöstä verkkotunnukselta ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Tämä korvaa väliaikaisen salasanasi ja jatkossa käytät tätä ${ BRAND_NAME }-tilillesi kirjautumiseen."
@@ -3770,6 +3799,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ilman sovellusta. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
+      ],
+      "User activated": [
+        "Käyttäjä aktivoitiin"
       ],
       "Users": [
         "Käyttäjät"
@@ -4023,7 +4055,7 @@
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
       ],
       "Your next billing date is ${ renewalTime }.": [
-        "Seuraava eräpäivä on ${ renewalTime }."
+        "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
@@ -4579,6 +4611,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } ja ${ additionalApp } -tuotepäivitykset"
+      ],
       "${ app } product updates": [
         "${ app } -tuotepäivitykset"
       ],
@@ -4727,6 +4762,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktivoi käyttäjä"
+      ],
       "Change password": [
         "Vaihda salasana"
       ],
@@ -5436,9 +5474,6 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Voit merkitä viestejä tunnisteilla helpottaaksesi niiden etsintää ja suodatusta."
-      ],
-      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Kansioiden tavoin, holvi on kätevä tapa kohteiden lajitteluun. Holvien jako kavereille ja perheenjäsenille on tulossa."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Sulje yritysresurssisi julkisesta Internetistä ja salli niiden käyttö vain omien yhdyskäytäviesi välityksellä."
@@ -7207,6 +7242,9 @@
       "Activate organization key": [
         "Aktivoi organisaation avain"
       ],
+      "Activate user": [
+        "Aktivoi käyttäjä"
+      ],
       "Add address": [
         "Lisää osoite"
       ],
@@ -7318,6 +7356,9 @@
       ],
       "Create multiple user accounts": [
         "Luo useita käyttäjätilejä"
+      ],
+      "Create organization key": [
+        "Luo organisaatioavain"
       ],
       "Create user accounts": [
         "Luo käyttäjätilejä"
@@ -7852,6 +7893,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
@@ -7892,6 +7937,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
         "${ numberOfServers } ${ numberOfCountries } maassa"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Tilaus uudistuu automaattisesti kuukauden välein ja seuraava laskutuspäivä on kuukauden kuluttua."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua.",
+        "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua."
       ]
     },
     "vpn_2step: billing": {
