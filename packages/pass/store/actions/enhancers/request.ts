@@ -15,7 +15,7 @@ export type RequestOptions<Type extends RequestType = RequestType, Data = undefi
     Extract<
         | { type: 'start'; id: string; revalidate?: boolean }
         | { type: 'success'; id: string; maxAge?: number }
-        | { type: 'failure'; id: string; maxAge?: number }
+        | { type: 'failure'; id: string }
         | { type: 'progress'; id: string; progress?: number },
         { type: Type }
     >,
@@ -40,13 +40,15 @@ const withRequestResult =
     <Type extends 'success' | 'failure'>(type: Type) =>
     <PA extends PrepareAction<any>, Data>(
         prepare: PA,
-        config?: { maxAge?: number; data?: (...args: Parameters<PA>) => Data }
+        config?: Omit<RequestOptions<Type, Data>, 'type' | 'id' | 'revalidate' | 'data'> & {
+            data?: (...args: Parameters<PA>) => Data;
+        }
     ) =>
     <ID extends string>(requestId: ID, ...args: Parameters<PA>) =>
         withRequest<'success' | 'failure', Data>({
             id: requestId,
             type,
-            maxAge: config?.maxAge,
+            ...config,
             data: config?.data?.(...args),
         })(prepare(...args) as ReturnType<PA>) as WithRequest<ReturnType<PA>, Type, Data>;
 

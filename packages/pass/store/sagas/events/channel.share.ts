@@ -3,7 +3,6 @@ import type { Action } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -27,7 +26,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { discardDrafts } from '../items/item-drafts';
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
+import { channelEventsWorker, channelInitWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
 export type ShareEventResponse = { Events: PassEventListResponse };
@@ -113,7 +112,7 @@ const onShareDeleted = (shareId: string) =>
 export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
     eventChannelFactory<ShareEventResponse>({
         api,
-        interval: ACTIVE_POLLING_TIMEOUT,
+        channelId: `share::${shareId}`,
         initialEventID: eventId,
         query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
         getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),
@@ -127,7 +126,7 @@ export const getShareChannelForks = (api: Api, options: RootSagaOptions) => (sha
     logger.info(`[ServerEvents::Share::${logId(share.shareId)}] start polling`);
     const eventsChannel = createShareChannel(api, share);
     const events = fork(channelEventsWorker<ShareEventResponse>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<ShareEventResponse>, eventsChannel);
+    const wakeup = fork(channelInitWorker<ShareEventResponse>, eventsChannel, options);
     const onDelete = fork(onShareDeleted(share.shareId), eventsChannel);
 
     return [events, wakeup, onDelete];
