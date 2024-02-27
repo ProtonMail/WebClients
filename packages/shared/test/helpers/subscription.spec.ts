@@ -9,6 +9,7 @@ import { PLANS_MAP } from '@proton/testing/data';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
     AggregatedPricing,
+    getPlanFromIds,
     getPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
@@ -763,5 +764,34 @@ describe('getTotalFromPricing', () => {
             totalNoDiscountPerMonth: 999,
             perUserPerMonth: 499,
         });
+    });
+});
+
+describe('getPlanFromIds', () => {
+    it('should return the correct plan when it exists in planIDs', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.BUNDLE_PRO]: 1,
+        };
+
+        const result = getPlanFromIds(planIDs);
+        expect(result).toEqual(PLANS.BUNDLE_PRO);
+    });
+
+    it('should return undefined when no plan exists in planIDs', () => {
+        const planIDs: PlanIDs = {};
+
+        const result = getPlanFromIds(planIDs);
+        expect(result).toBeUndefined();
+    });
+
+    it('should choose the plan instead of addons', () => {
+        const planIDs: PlanIDs = {
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 1,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 1,
+            [PLANS.BUNDLE_PRO]: 1,
+        };
+
+        const result = getPlanFromIds(planIDs);
+        expect(result).toEqual(PLANS.BUNDLE_PRO);
     });
 });
