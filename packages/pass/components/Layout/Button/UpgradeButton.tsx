@@ -14,6 +14,7 @@ import noop from '@proton/utils/noop';
 type UpgradeButtonProps = {
     buttonSize?: ButtonLikeSize;
     className?: string;
+    hideIcon?: boolean;
     iconSize?: IconSize;
     inline?: boolean;
     label?: string;
@@ -26,6 +27,7 @@ type UpgradeButtonProps = {
 export const UpgradeButton: FC<UpgradeButtonProps> = ({
     buttonSize,
     className,
+    hideIcon = false,
     iconSize,
     inline = false,
     label,
@@ -56,7 +58,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
             {...(!inline && buttonProps)}
         >
             {label || c('Action').t`Upgrade`}
-            <Icon className="ml-2" name="arrow-out-square" size={iconSize} />
+            {!hideIcon && <Icon className="ml-2" name="arrow-out-square" size={iconSize} />}
         </ButtonComponent>
     );
 };
