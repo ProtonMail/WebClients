@@ -3,7 +3,6 @@ import { all, fork, put, select } from 'redux-saga/effects';
 
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import { syncInvites } from '@proton/pass/store/actions';
@@ -20,7 +19,7 @@ import { logId, logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
+import { channelEventsWorker, channelInitWorker } from './channel.worker';
 
 const NAMESPACE = 'ServerEvents::Invites';
 
@@ -89,7 +88,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
 export const createInvitesChannel = (api: Api) =>
     eventChannelFactory<InvitesGetResponse>({
         api,
-        interval: ACTIVE_POLLING_TIMEOUT,
+        channelId: 'invites',
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
         query: () => ({ url: `pass/v1/invite`, method: 'get' }),
@@ -105,7 +104,7 @@ export function* invitesChannel(api: Api, options: RootSagaOptions) {
 
     const eventsChannel = createInvitesChannel(api);
     const events = fork(channelEventsWorker<InvitesGetResponse>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<InvitesGetResponse>, eventsChannel);
+    const wakeup = fork(channelInitWorker<InvitesGetResponse>, eventsChannel, options);
 
     yield all([events, wakeup]);
 }

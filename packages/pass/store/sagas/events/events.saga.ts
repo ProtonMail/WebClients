@@ -5,10 +5,10 @@ import { all, cancel, fork, take } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
 import { isOnline } from '@proton/pass/lib/api/utils';
+import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { startEventPolling, stopEventPolling } from '../../actions';
 import { invitesChannel } from './channel.invites';
 import { shareChannels } from './channel.share';
 import { sharesChannel } from './channel.shares';

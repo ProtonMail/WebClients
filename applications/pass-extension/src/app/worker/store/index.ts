@@ -17,6 +17,7 @@ import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import { broadcastMiddleware } from './broadcast.middleware';
@@ -59,8 +60,14 @@ const options: RootSagaOptions = {
 
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
-    getEventInterval: () =>
+    getPollingInterval: () =>
         WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
+
+    getPollingDelay: (pollingInterval, lastCalledAt) => {
+        if (!lastCalledAt) return 0;
+        const delta = Math.max(getEpoch() - lastCalledAt, 0);
+        return delta > pollingInterval ? 0 : pollingInterval - delta;
+    },
 
     setCache: withContext((ctx, encryptedCache) =>
         ctx.service.storage.local.setItems({
