@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
+      "Create and copy alias": [
+        "Maak en kopieer alias"
+      ],
       "Create calendar": [
         "Agenda aanmaken"
       ],
@@ -224,6 +227,9 @@
       ],
       "Download": [
         "Downloaden"
+      ],
+      "Download now": [
+        "Nu downloaden"
       ],
       "Edit": [
         "Bewerken"
@@ -317,6 +323,9 @@
       ],
       "Import from Outlook": [
         "Importeren uit Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Belangrijke update beschikbaar. Update naar de nieuwste versie om het programma te blijven gebruiken. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Vervoeg agenda"
@@ -597,6 +606,9 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade Now": [
+        "Upgrade Nu"
+      ],
       "Upgrade now": [
         "Nu upgraden"
       ],
@@ -639,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 2 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt over 5 dagen af. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -5545,6 +5566,11 @@
         "Lijst deelnemers uitbreiden"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Factuur Land"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
@@ -5797,6 +5823,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
@@ -6230,8 +6259,41 @@
       "${ app } storage": [
         "${ app } opslagruimte"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% vol"
+      ],
+      "contact your administrator": [
+        "neem contact op met uw beheerder"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om mail te verzenden of te ontvangen"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Uw ${ appStorage } is bijna vol"
+      ],
+      "Your ${ appStorage } is full": [
+        "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ storage } is ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Uw ${ storage } is vol. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Uw opslag is ${ percentage }% vol. ${ cta }."
+      ],
       "Your storage is full": [
         "Uw opslagruimte is vol"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Uw opslag is vol. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -6685,6 +6747,9 @@
       "Get advanced protection": [
         "Kies geavanceerde bescherming"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Download de ${ appName[APP_NAME] }-apps"
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -6721,6 +6786,9 @@
       ],
       "Minicalendar": [
         "Mini-agenda"
+      ],
+      "Need more aliases?": [
+        "Meer aliassen nodig?"
       ],
       "Night theme": [
         "Nacht thema"
@@ -6778,6 +6846,9 @@
       ],
       "Save changes": [
         "Aanpassingen opslaan"
+      ],
+      "Security center": [
+        "Beveiligingscentrum"
       ],
       "Select a day in the month": [
         "Selecteer een dag in de maand"
@@ -6890,6 +6961,9 @@
       "You have invited participants with equivalent emails": [
         "U heeft deelnemers met gelijkwaardige e-mails uitgenodigd"
       ],
+      "Your account is protected": [
+        "Uw account is beschermd"
+      ],
       "Your calendar link": [
         "Uw agendakoppeling"
       ],
@@ -6994,6 +7068,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
