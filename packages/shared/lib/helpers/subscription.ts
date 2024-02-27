@@ -139,6 +139,7 @@ export const paidPlanList = [
     hasVisionary,
     hasNewVisionary,
     hasVPN,
+    hasVPN2024,
     hasVPNPassBundle,
     hasMail,
     hasMailPro,
