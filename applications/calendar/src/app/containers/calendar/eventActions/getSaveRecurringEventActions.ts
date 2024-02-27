@@ -399,7 +399,10 @@ const getSaveRecurringEventActions = async ({
         const isSwitchCalendar = originalCalendarID !== newCalendarID;
 
         const organizerEditsNonBreakingSingleEdit =
-            isSingleEdit && !isBreakingChange && !isAttendee && getHasAttendees(originalVeventComponent);
+            isSingleEdit &&
+            !isBreakingChange &&
+            !isAttendee &&
+            (getHasAttendees(originalVeventComponent) || getHasAttendees(newVeventComponent));
         const updateMainSeriesMergeVevent = getUpdateMainSeriesMergeVevent({
             newVeventComponent,
             oldVeventComponent,
