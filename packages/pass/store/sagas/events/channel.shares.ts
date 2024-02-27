@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -20,7 +19,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
-import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
+import { channelEventsWorker, channelInitWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
 /** We're only interested in new shares in this effect : Deleted shares will
@@ -95,7 +94,7 @@ function* onSharesEvent(
 export const createSharesChannel = (api: Api) =>
     eventChannelFactory<SharesGetResponse>({
         api,
-        interval: ACTIVE_POLLING_TIMEOUT,
+        channelId: 'shares',
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
         onClose: () => logger.info(`[ServerEvents::Shares] closing channel`),
@@ -115,7 +114,7 @@ export function* sharesChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[ServerEvents::Shares] start polling for new shares`);
     const eventsChannel = createSharesChannel(api);
     const events = fork(channelEventsWorker<SharesGetResponse>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<SharesGetResponse>, eventsChannel);
+    const wakeup = fork(channelInitWorker<SharesGetResponse>, eventsChannel, options);
     const newVault = fork(onNewShare, api, options);
 
     yield all([events, wakeup, newVault]);

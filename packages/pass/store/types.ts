@@ -27,7 +27,11 @@ export interface RootSagaOptions {
 
     /** Fine-tune the event channel polling interval - this will
      * be called after each polling run to set the next value */
-    getEventInterval: () => number;
+    getPollingInterval: () => number;
+    /** Define the initial polling delay : this is especially useful
+     * to avoid immediately spawning the event channels after the
+     * service worker was killed by the browser */
+    getPollingDelay?: (pollingInterval: number, lastCalledAt?: number) => number;
 
     /** Retrieves the encrypted cache from whatever storage
      * the current client is using for persisting data */
