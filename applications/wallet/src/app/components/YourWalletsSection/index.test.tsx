@@ -1,12 +1,18 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { vi } from 'vitest';
 
+import { mockUseNotifications } from '@proton/testing/lib/vitest';
+
 import { YourWalletsSection } from '.';
 import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+
+// TODO: Fix vitest vs @proton/components circular deps to be able to remove this mock
+vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({ ConfirmActionModal: 'div' }));
 
 describe('YourWalletsSection', () => {
     beforeEach(() => {
         mockUseOnchainWalletContext();
+        mockUseNotifications();
     });
 
     it('should display wallets with their balance and their type', () => {

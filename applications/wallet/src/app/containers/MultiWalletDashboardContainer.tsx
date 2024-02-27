@@ -24,7 +24,11 @@ export const MultiWalletDashboardContainer = () => {
                 <ExploreProtonWalletSection />
             </div>
 
-            <WalletSetupModal isOpen={isSetupModalOpenned} onClose={() => setIsSetupModalOpenned(false)} />
+            <WalletSetupModal
+                isFirstSetup={!wallets?.length}
+                isOpen={isSetupModalOpenned}
+                onClose={() => setIsSetupModalOpenned(false)}
+            />
         </>
     );
 };
