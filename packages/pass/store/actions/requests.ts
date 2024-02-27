@@ -2,6 +2,7 @@ import { type EndpointOptions } from './enhancers/endpoint';
 
 export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';
+export const channelRequest = (channelId: string) => `worker::channel::${channelId}`;
 export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::wakeup-${endpoint}-${tabId}`;
 export const offlineSetupRequest = `offline::setup`;
 

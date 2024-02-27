@@ -2,7 +2,6 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { getUserAccessIntent, getUserFeaturesIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
@@ -18,7 +17,7 @@ import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import type { Address, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
+import { channelEventsWorker, channelInitWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
 function* onUserEvent(
@@ -88,7 +87,7 @@ function* onUserEvent(
 export const createUserChannel = (api: Api, eventID: string) =>
     eventChannelFactory<UserEvent>({
         api,
-        interval: ACTIVE_POLLING_TIMEOUT,
+        channelId: 'user',
         initialEventID: eventID,
         query: getEvents,
         getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
@@ -103,7 +102,7 @@ export function* userChannel(api: Api, options: RootSagaOptions) {
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
     const eventsChannel = createUserChannel(api, eventID);
     const events = fork(channelEventsWorker<UserEvent>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<UserEvent>, eventsChannel);
+    const wakeup = fork(channelInitWorker<UserEvent>, eventsChannel, options);
 
     yield all([events, wakeup]);
 }

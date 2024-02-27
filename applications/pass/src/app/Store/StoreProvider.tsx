@@ -56,7 +56,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: () => getDBCache(authStore.getUserID()!),
-                getEventInterval: () => ACTIVE_POLLING_TIMEOUT,
+                getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getSettings: settings.resolve,
                 getTelemetry: () => telemetry,
 
