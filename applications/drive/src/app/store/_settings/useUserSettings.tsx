@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components';
-import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/userSettings';
+import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import {
