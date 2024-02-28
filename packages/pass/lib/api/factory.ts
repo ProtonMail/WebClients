@@ -31,7 +31,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
 import { withApiHandlers } from './handlers';
-import { createRefreshHandler } from './refresh';
+import { refreshHandlerFactory } from './refresh';
 import { getSilenced } from './utils';
 
 export type ApiFactoryOptions = {
@@ -61,6 +61,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
         online: true,
         pendingCount: 0,
         queued: [],
+        refreshing: false,
         serverTime: undefined,
         sessionInactive: false,
         sessionLocked: false,
@@ -69,11 +70,13 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
 
     const call = configureApi({ ...config, clientID, xhr } as any) as ApiCallFn;
 
-    const refreshHandler = createRefreshHandler({
+    const refreshHandler = refreshHandlerFactory({
         call,
         getAuth,
         onRefresh: (data) => pubsub.publishAsync({ type: 'refresh', data }),
+        setRefreshing: (refreshing) => (state.refreshing = refreshing),
     });
+
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
     const api = async (options: ApiOptions): Promise<ApiResult> => {
@@ -84,6 +87,10 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
             state.queued.push(trigger);
             await trigger;
         }
+
+        /** According to the API specification : no requests
+         * should be made if a refresh is ongoing */
+        await waitUntil(() => !state.refreshing, 250, DEFAULT_TIMEOUT);
 
         const { output = 'json', ...rest } = options;
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
