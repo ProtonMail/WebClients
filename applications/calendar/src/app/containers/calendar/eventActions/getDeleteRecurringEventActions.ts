@@ -79,17 +79,31 @@ export const getDeleteRecurringEventActions = async ({
             throw new Error('Cannot delete single occurrence without original or old events');
         }
 
+        const updatePartstatOperations: UpdatePartstatOperation[] = [];
+
         const isSingleEdit = oldEvent.ID !== originalEvent.ID;
         const isCancelInvitation = inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION;
         let cancelledOccurrenceVevent: VcalVeventComponent | undefined;
         let hasCancelledWithProtonAttendees = false;
 
         if (isSingleEdit && isDeclineInvitation) {
-            const { inviteActions: cleanInviteActions } = await sendIcs({
+            const { inviteActions: cleanInviteActions, timestamp } = await sendIcs({
                 inviteActions,
                 vevent: oldVeventComponent,
             });
             updatedInviteActions = cleanInviteActions;
+            // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
+            // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
+            const updatePartstatOperation = getUpdatePartstatOperation({
+                eventComponent: oldVeventComponent,
+                event: oldEvent,
+                timestamp,
+                inviteActions: updatedInviteActions,
+                silence: true,
+            });
+            if (updatePartstatOperation) {
+                updatePartstatOperations.push(updatePartstatOperation);
+            }
         }
 
         if (isCancelInvitation) {
@@ -153,6 +167,7 @@ export const getDeleteRecurringEventActions = async ({
                 : [],
             attendeeDeleteSingleEditActions: attendeeDeleteSingleEditOperations,
             inviteActions: updatedInviteActions,
+            updatePartstatActions: updatePartstatOperations,
         };
     }
 
