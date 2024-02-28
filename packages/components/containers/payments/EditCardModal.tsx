@@ -33,9 +33,10 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;
     renewState?: Autopay;
     paymentMethodId?: string;
+    onMethodAdded?: () => void;
 }
 
-const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...rest }: Props) => {
+const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, onMethodAdded, ...rest }: Props) => {
     const api = useApi();
     const [user] = useUser();
 
@@ -88,6 +89,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
                     createNotification({ text: c('Success').t`Payment method updated` });
                 } else {
                     createNotification({ text: c('Success').t`Payment method added` });
+                    onMethodAdded?.();
                 }
             }).catch(noop);
         },
