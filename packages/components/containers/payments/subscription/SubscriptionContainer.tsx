@@ -129,7 +129,7 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
     [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.CUSTOMIZATION,
 };
 
-const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
+const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
 
 interface RenderProps {
     title: string;
@@ -382,13 +382,27 @@ const SubscriptionContainer = ({
         }
     };
 
+    const getCodesForSubscription = () => {
+        return getCodes({
+            // the gift code is always set by user directly, it can't come from subscription or from
+            // /check endpoint
+            gift: model.gift,
+            // the coupon can come from multiple sources but must be always validated by /check
+            // endpoint. If the endpoint doesn't return the code back then it's invalid and we
+            // should not use it for subscription endpoint.
+            coupon: checkResult?.Coupon?.Code,
+        });
+    };
+
     const processSubscription = async (operationsOrValidToken: Operations | ValidatedBitcoinToken) => {
+        const Codes = getCodesForSubscription();
+
         if (isValidatedBitcoinToken(operationsOrValidToken)) {
             await api(
                 apiSubscribe(
                     {
+                        Codes,
                         Plans: model.planIDs,
-                        Codes: getCodes(model),
                         Cycle: model.cycle,
                         Currency: currency,
                         Amount: amount,
@@ -401,9 +415,9 @@ const SubscriptionContainer = ({
             );
         } else {
             await operationsOrValidToken.subscribe({
+                Codes,
                 Plans: model.planIDs,
                 Cycle: model.cycle,
-                Codes: getCodes(model),
                 product: app,
                 taxBillingAddress: model.taxBillingAddress,
             });
@@ -489,7 +503,7 @@ const SubscriptionContainer = ({
                 Plans: model.planIDs,
                 Cycle: model.cycle,
                 product: app,
-                Codes: getCodes(model),
+                Codes: getCodesForSubscription(),
                 taxBillingAddress: model.taxBillingAddress,
             };
 
@@ -621,7 +635,7 @@ const SubscriptionContainer = ({
             try {
                 paymentFacade.paymentContext.setSubscriptionData({
                     Plans: model.planIDs,
-                    Codes: getCodes(model),
+                    Codes: getCodesForSubscription(),
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
