@@ -29,6 +29,7 @@ import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
     getLocalIDFromPathname,
@@ -209,15 +210,16 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
              * and persisted session, this process prevents retries to ensure decryption of the most
              * recent session blob */
             onSessionInvalid: async (error, { localID, invalidSession }) => {
-                await wait(randomIntFromInterval(0, 500)); /* jitter */
+                if (error instanceof InvalidPersistentSessionError) {
+                    await wait(randomIntFromInterval(0, 500));
 
-                const persistedSession = await authService.config.getPersistedSession(localID);
-                const shouldRetry = persistedSession && !isDeepEqual(persistedSession, invalidSession);
+                    const persistedSession = await authService.config.getPersistedSession(localID);
+                    const shouldRetry = persistedSession && !isDeepEqual(persistedSession, invalidSession);
+                    if (shouldRetry) return resumeSession(persistedSession, localID, authService.config);
 
-                if (shouldRetry) return resumeSession(persistedSession, localID, authService.config);
-
-                authStore.clear();
-                localStorage.removeItem(getSessionKey(localID));
+                    authStore.clear();
+                    localStorage.removeItem(getSessionKey(localID));
+                }
 
                 throw error;
             },
