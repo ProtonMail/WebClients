@@ -2,8 +2,9 @@ import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
 import { resetBadge } from "../../ipc/badge";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
+import { getSettings, saveSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
-import { clearStorage, isLinux, isWindows } from "../helpers";
+import { clearStorage, isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
@@ -13,6 +14,7 @@ import { handleBeforeHandle } from "./beforeUnload";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 
 const config = getConfig();
+const settings = getSettings();
 
 let mailView: undefined | BrowserView = undefined;
 let calendarView: undefined | BrowserView = undefined;
@@ -26,7 +28,12 @@ export const viewCreationAppStartup = (session: Session) => {
     const window = createBrowserWindow(session);
     createViews(session);
     configureViews();
-    loadMailView(mainWindow);
+
+    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
+    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
+    setTimeout(() => {
+        loadMailView(mainWindow);
+    }, delay);
 
     mainWindow.on("close", (ev) => {
         macOSExitEvent(mainWindow, ev);
@@ -172,7 +179,12 @@ export const setTrialEnded = () => {
     calendarView?.webContents?.loadURL(url);
 };
 
+export const getSpellCheckStatus = () => {
+    return mainWindow?.webContents?.session?.spellCheckerEnabled ?? settings.spellChecker;
+};
+
 export const toggleSpellCheck = (enabled: boolean) => {
+    saveSettings({ ...settings, spellChecker: enabled });
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 };
 

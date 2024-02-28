@@ -1,9 +1,8 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
-import { getSettings, saveSettings } from "../../store/settingsStore";
 import { clearStorage, isMac, isWindows } from "../helpers";
-import { getMainWindow, toggleSpellCheck } from "../view/viewManagement";
+import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
 import { areDevToolsAvailable } from "../view/windowHelpers";
 import { openLogFolder } from "./openLogFolder";
 
@@ -34,8 +33,6 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         Menu.setApplicationMenu(null);
         return;
     }
-
-    const settings = getSettings();
 
     const temp: MenuItemConstructorOptions[] = [
         {
@@ -70,13 +67,9 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 {
                     label: c("App menu").t`Check spelling while typing`,
                     type: "checkbox",
-                    checked: settings.spellChecker,
+                    checked: getSpellCheckStatus(),
                     click: (item) => {
                         toggleSpellCheck(item.checked);
-                        saveSettings({
-                            ...settings,
-                            spellChecker: item.checked,
-                        });
                     },
                 },
             ],
@@ -138,6 +131,16 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "hideOthers" },
                 { role: "unhide" },
                 { type: "separator" },
+                {
+                    label: c("App menu").t`Start Proton Mail at login`,
+                    type: "checkbox",
+                    checked: app.getLoginItemSettings().openAtLogin,
+                    click: () => {
+                        app.setLoginItemSettings({
+                            openAtLogin: !app.getLoginItemSettings().openAtLogin,
+                        });
+                    },
+                },
                 {
                     label: c("App menu").t`Uninstall Proton Mail`,
                     type: "normal",
