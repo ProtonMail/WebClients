@@ -26,6 +26,7 @@ import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -114,9 +115,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onSessionInvalid: withContext(async (ctx, error, _data) => {
-            authStore.clear();
-            void ctx.service.storage.local.removeItem('ps');
-            void ctx.service.storage.session.clear();
+            if (error instanceof InvalidPersistentSessionError) {
+                authStore.clear();
+                void ctx.service.storage.local.removeItem('ps');
+                void ctx.service.storage.session.clear();
+            }
+
             throw error;
         }),
 

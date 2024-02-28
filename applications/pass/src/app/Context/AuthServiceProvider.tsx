@@ -29,6 +29,7 @@ import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
     getLocalIDFromPathname,
@@ -125,10 +126,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true }));
 
-                const notLocked = !api.getState().sessionLocked;
+                const locked = authStore.getLockStatus() === SessionLockStatus.LOCKED;
                 const hasLocalID = pathLocalID !== undefined;
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
-                const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
+                const autoFork = !loggedIn && !locked && hasLocalID && !validSession;
 
                 if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
                 if (autoFork && isOnline()) {
@@ -161,7 +162,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
-                if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
+                if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
 
                 onboarding.reset();
@@ -209,23 +210,23 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
              * and persisted session, this process prevents retries to ensure decryption of the most
              * recent session blob */
             onSessionInvalid: async (error, { localID, invalidSession }) => {
-                await wait(randomIntFromInterval(0, 500)); /* jitter */
+                if (error instanceof InvalidPersistentSessionError) {
+                    await wait(randomIntFromInterval(0, 500));
 
-                const persistedSession = await authService.config.getPersistedSession(localID);
-                const shouldRetry = persistedSession && !isDeepEqual(persistedSession, invalidSession);
+                    const persistedSession = await authService.config.getPersistedSession(localID);
+                    const shouldRetry = persistedSession && !isDeepEqual(persistedSession, invalidSession);
+                    if (shouldRetry) return resumeSession(persistedSession, localID, authService.config);
 
-                if (shouldRetry) return resumeSession(persistedSession, localID, authService.config);
-
-                authStore.clear();
-                localStorage.removeItem(getSessionKey(localID));
+                    authStore.clear();
+                    localStorage.removeItem(getSessionKey(localID));
+                }
 
                 throw error;
             },
 
             onSessionLocked: (localID, offline, broadcast) => {
                 client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED);
-
-                if (broadcast) sw.send({ type: 'locked', localID, offline, broadcast: true });
+                if (broadcast) sw?.send({ type: 'locked', localID, offline, broadcast: true });
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
@@ -241,9 +242,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (broadcast) {
                     switch (lock.status) {
                         case SessionLockStatus.REGISTERED:
-                            return sw.send({ type: 'locked', localID, offline: false, broadcast: true });
+                            return sw?.send({ type: 'locked', localID, offline: false, broadcast: true });
                         case SessionLockStatus.NONE:
-                            return sw.send({ type: 'unlocked', localID, broadcast: true });
+                            return sw?.send({ type: 'unlocked', localID, broadcast: true });
                     }
                 }
             },
@@ -251,7 +252,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionRefresh: async (localID, data, broadcast) => {
                 logger.info('[AuthServiceProvider] Session tokens have been refreshed');
                 const persistedSession = await auth.config.getPersistedSession(localID);
-                if (broadcast) sw.send({ type: 'refresh', localID, data, broadcast: true });
+                if (broadcast) sw?.send({ type: 'refresh', localID, data, broadcast: true });
 
                 if (persistedSession) {
                     const { AccessToken, RefreshTime, RefreshToken } = data;
@@ -286,9 +287,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const { key, selector, state, payloadVersion } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 
-        if (matchConsumeFork) {
-            void authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
-        } else void authService.init({ forceLock: false });
+        const run = async () => {
+            if (matchConsumeFork) {
+                authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
+            } else authService.init({ forceLock: false });
+        };
 
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */
@@ -329,15 +332,17 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
-        sw.on('unauthorized', handleUnauthorized);
-        sw.on('locked', handleLocked);
-        sw.on('unlocked', handleUnlocked);
-        sw.on('refresh', handleRefresh);
+        sw?.on('unauthorized', handleUnauthorized);
+        sw?.on('locked', handleLocked);
+        sw?.on('unlocked', handleUnlocked);
+        sw?.on('refresh', handleRefresh);
+
+        run().catch(noop);
 
         return () => {
-            sw.off('unauthorized', handleUnauthorized);
-            sw.off('locked', handleLocked);
-            sw.off('refresh', handleRefresh);
+            sw?.off('unauthorized', handleUnauthorized);
+            sw?.off('locked', handleLocked);
+            sw?.off('refresh', handleRefresh);
         };
     }, []);
 
