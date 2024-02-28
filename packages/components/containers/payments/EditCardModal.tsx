@@ -84,7 +84,11 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
 
                 await call();
                 rest.onClose?.();
-                createNotification({ text: c('Success').t`Payment method updated` });
+                if (existingCard) {
+                    createNotification({ text: c('Success').t`Payment method updated` });
+                } else {
+                    createNotification({ text: c('Success').t`Payment method added` });
+                }
             }).catch(noop);
         },
     });
