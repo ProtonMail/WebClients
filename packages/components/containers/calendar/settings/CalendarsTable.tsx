@@ -65,8 +65,8 @@ const CalendarsTable = ({
             <TableHeader>
                 <TableRow>
                     <TableHeaderCell className="text-left w-1/2">{nameHeader}</TableHeaderCell>
-                    <TableHeaderCell className="w-1/5">{statusHeader}</TableHeaderCell>
-                    <TableHeaderCell>{c('Header').t`Actions`}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/6">{statusHeader}</TableHeaderCell>
+                    <TableHeaderCell className="text-left">{c('Header').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -83,10 +83,7 @@ const CalendarsTable = ({
                             <TableCell label={nameHeader}>
                                 <div key="id">
                                     <div className="grid-align-icon-center">
-                                        <CalendarSelectIcon
-                                            color={Color}
-                                            className="mr-3 shrink-0 keep-left"
-                                        />
+                                        <CalendarSelectIcon color={Color} className="mr-3 shrink-0 keep-left" />
                                         <div className="text-ellipsis" title={Name}>
                                             {Name}
                                         </div>
@@ -116,7 +113,7 @@ const CalendarsTable = ({
                                 </div>
                             </TableCell>
                             <TableCell>
-                                <div className="inline-flex">
+                                <div className="inline-flex flex-nowrap items-center">
                                     {!isSubscribed &&
                                         !isDisabled &&
                                         !isDefault &&
