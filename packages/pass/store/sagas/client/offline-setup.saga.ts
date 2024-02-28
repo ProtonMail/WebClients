@@ -1,4 +1,5 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
+import { c } from 'ttag';
 
 import { CACHE_SALT_LENGTH, OFFLINE_ARGON2_PARAMS, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -26,7 +27,10 @@ function* offlineSetupWorker(
         /** Offline mode can only work for users in ONE_PASSWORD_MODE.
          * Secondary encryption password cannot be verified through SRP */
         const settings: UserSettings = yield getUserSettings();
-        if (settings.Password.Mode !== SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE) throw new Error();
+
+        if (settings.Password.Mode !== SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE) {
+            throw new Error(c('Error').t`Offline mode is currently not available for two password mode.`);
+        }
 
         const verified: boolean = yield auth.confirmPassword(payload.loginPassword);
         if (!verified) throw new Error();

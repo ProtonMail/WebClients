@@ -48,6 +48,7 @@ function* resolveUserState(cache: Maybe<PassCache>) {
         userSettings: {
             Email: { Status: userSettings.Email.Status },
             Telemetry: userSettings.Telemetry,
+            Password: { Mode: userSettings.Password.Mode },
         },
     };
 
