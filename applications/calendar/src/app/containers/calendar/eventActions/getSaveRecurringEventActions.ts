@@ -11,7 +11,7 @@ import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/ke
 import { getHasUpdatedInviteData, getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import { getHasModifiedNotifications, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { getIsAllDay, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -48,6 +48,7 @@ import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import {
     getCorrectedSendInviteData,
     getHasMergeUpdate,
+    getHasModifiedNotifications,
     getUpdateInviteOperationWithIntermediateEvent,
     getUpdateMainSeriesMergeVevent,
     getUpdateSingleEditMergeVevent,
@@ -533,10 +534,9 @@ const getSaveRecurringEventActions = async ({
                 singleEditIcsPromises.push(
                     ...singleEditRecurrences.map(async (event) => {
                         const { veventComponent } = await getCalendarEventRaw(event);
-                        const hasModifiedNotifications = getHasModifiedNotifications(
-                            veventComponent,
-                            updateMergeVevent
-                        );
+                        const hasModifiedNotifications =
+                            getIsAllDay(veventComponent) === getIsAllDay(oldVevent) &&
+                            getHasModifiedNotifications(veventComponent, updateMergeVevent);
                         if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
                             return;
                         }
@@ -638,15 +638,15 @@ const getSaveRecurringEventActions = async ({
             }
         } else if (updateAllPossibilities === UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS) {
             deleteOperations = [];
-            const updateMergeVevent = getUpdateSingleEditMergeVevent(
-                newRecurrentVeventWithSequence,
-                originalVeventComponent
-            );
+            const oldVevent = isSingleEdit ? oldVeventComponent : originalVeventComponent;
+            const updateMergeVevent = getUpdateSingleEditMergeVevent(newVeventComponent, oldVevent);
             // implement the so-called smart rules for "edit all", namely propagate changed fields to single edits
             await Promise.all(
                 singleEditRecurrences.map(async (event) => {
                     const { veventComponent } = await getCalendarEventRaw(event);
-                    const hasModifiedNotifications = getHasModifiedNotifications(veventComponent, updateMergeVevent);
+                    const hasModifiedNotifications =
+                        getIsAllDay(veventComponent) === getIsAllDay(oldVevent) &&
+                        getHasModifiedNotifications(veventComponent, updateMergeVevent);
                     if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
                         return;
                     }
