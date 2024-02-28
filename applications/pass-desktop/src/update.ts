@@ -51,8 +51,7 @@ const store = new Store<StoreUpdateProperties>({
     },
 });
 
-const pkg = require('../package.json');
-const userAgent = `${pkg.name}/${pkg.version} (${os.platform()}: ${os.arch()})`;
+const userAgent = `ProtonPass/${config.APP_VERSION} (${os.platform()}: ${os.arch()})`;
 const supportedPlatforms = ['darwin', 'win32'];
 
 const validateInput = (opts: UpdateOptions) => {
