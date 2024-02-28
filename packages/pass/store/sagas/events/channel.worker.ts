@@ -11,7 +11,7 @@ import { selectRequest } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { msToEpoch } from '@proton/pass/utils/time/epoch';
+import { epochToMs, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
@@ -52,7 +52,7 @@ export function* channelInitWorker<T extends {}>(
         const request: Maybe<RequestEntry<'success'>> = yield select(selectRequest(channelRequest(channelId)));
         const interval = msToEpoch(options.getPollingInterval());
         const delay: number = options.getPollingDelay?.(interval, request?.requestedAt) ?? 0;
-        yield wait(delay);
+        yield wait(epochToMs(delay));
         yield manager.call().catch(noop);
     })) as Task;
 
