@@ -5,7 +5,6 @@ import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { LockedSessionError, PassErrorCode } from './errors';
@@ -72,7 +71,7 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
 
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
                     try {
-                        await refreshHandler(getDateHeader(response?.headers));
+                        await refreshHandler(response);
                         return next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (err: any) {
                         if (err.status >= 400 && err.status <= 499) throw InactiveSessionError();
