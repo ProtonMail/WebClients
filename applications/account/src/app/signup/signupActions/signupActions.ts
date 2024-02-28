@@ -12,7 +12,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
-import { setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
+import { PaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
@@ -354,6 +354,15 @@ export const handleSubscribeUser = async (
     }
 
     try {
+        let paymentsVersion: PaymentsVersion;
+        if (subscriptionData.payment?.paymentsVersion) {
+            paymentsVersion = subscriptionData.payment.paymentsVersion;
+        } else if (referralData) {
+            paymentsVersion = 'v5';
+        } else {
+            paymentsVersion = 'v4';
+        }
+
         await api(
             subscribe(
                 {
@@ -372,9 +381,11 @@ export const handleSubscribeUser = async (
                           }),
                 },
                 productParam,
-                subscriptionData.payment?.paymentsVersion ?? 'v4'
+                paymentsVersion
             )
         );
+
+        reportPaymentSuccess();
 
         if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
             if (
@@ -391,8 +402,6 @@ export const handleSubscribeUser = async (
                 await api(setPaymentMethodV4(subscriptionData.payment));
             }
         }
-
-        reportPaymentSuccess();
     } catch (error: any) {
         reportPaymentFailure();
         throw error;
