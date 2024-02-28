@@ -13,7 +13,7 @@ import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/l
 
 import './LobbyContent.scss';
 
-const ERROR_TIMEOUT = 15_000;
+const ERROR_TIMEOUT = 60_000;
 
 type Props = {
     status: AppStatus;
