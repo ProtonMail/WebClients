@@ -1,12 +1,23 @@
-import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import {
+    type FC,
+    type PropsWithChildren,
+    createContext,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 
+import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
+import type { MaybeNull } from '@proton/pass/types';
+import { awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
-import noop from '@proton/utils/noop';
 
+import type { ServiceWorkerResponse } from './channel';
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type ServiceWorkerMessageType, type WithOrigin } from './channel';
 
 export type ServiceWorkerMessageHandler<T extends ServiceWorkerMessageType = any> = (
@@ -14,8 +25,8 @@ export type ServiceWorkerMessageHandler<T extends ServiceWorkerMessageType = any
 ) => void;
 
 export type ServiceWorkerContextValue = {
-    enabled: boolean;
-    send: (message: ServiceWorkerMessage) => void;
+    send: (message: ServiceWorkerMessage, transfer?: Transferable[]) => void;
+    sendMessage: <T extends ServiceWorkerMessage>(message: T) => Promise<ServiceWorkerResponse<T['type']>>;
     on: <T extends ServiceWorkerMessageType = ServiceWorkerMessageType>(
         type: T,
         handler: ServiceWorkerMessageHandler<T>
@@ -29,47 +40,94 @@ export type ServiceWorkerContextValue = {
 export const ServiceWorkerClientID = uniqueId(16);
 export const ServiceWorkerEnabled = 'serviceWorker' in navigator;
 
-export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({
-    enabled: false,
-    send: noop,
-    on: noop,
-    off: noop,
-});
+export const ServiceWorkerContext = createContext<MaybeNull<ServiceWorkerContextValue>>(null);
 
 export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
+    const [ready, setReady] = useState(false);
     const handlers = useRef<Map<ServiceWorkerMessageType, ServiceWorkerMessageHandler[]>>(new Map());
+    const origin = ServiceWorkerClientID;
 
-    const context = useMemo<ServiceWorkerContextValue>(
-        () => ({
-            enabled: ServiceWorkerEnabled,
-            send: (data) => {
-                const message: WithOrigin<ServiceWorkerMessage> = { ...data, origin: ServiceWorkerClientID };
-                if (ServiceWorkerEnabled) navigator.serviceWorker.controller?.postMessage(message);
-            },
-            on: (type, handler) => {
-                const handlersForType = handlers.current.get(type) ?? [];
-                handlersForType.push(handler);
-                handlers.current.set(type, handlersForType);
-            },
-            off: (type, handler) => {
-                const handlersForType = handlers.current.get(type) ?? [];
-                const filtered = handlersForType.filter((handlerForType) => handlerForType !== handler);
-                handlers.current.set(type, filtered);
-            },
-        }),
+    const sw = useMemo<MaybeNull<ServiceWorkerContextValue>>(
+        () =>
+            ServiceWorkerEnabled
+                ? {
+                      send: (data, transfer) => {
+                          if (ServiceWorkerEnabled) {
+                              const message: WithOrigin<ServiceWorkerMessage> = { ...data, origin };
+                              navigator.serviceWorker.controller?.postMessage(message, { transfer });
+                          }
+                      },
+
+                      sendMessage: (message) =>
+                          new Promise((resolve) => {
+                              const { port1, port2 } = new MessageChannel();
+
+                              port1.onmessage = (event) => {
+                                  resolve(event.data);
+                                  port1.close();
+                                  port2.close();
+                              };
+
+                              sw?.send(message, [port2]);
+                          }),
+
+                      on: (type, handler) => {
+                          const handlersForType = handlers.current.get(type) ?? [];
+                          handlersForType.push(handler);
+                          handlers.current.set(type, handlersForType);
+                      },
+
+                      off: (type, handler) => {
+                          const handlersForType = handlers.current.get(type) ?? [];
+                          const filtered = handlersForType.filter((handlerForType) => handlerForType !== handler);
+                          handlers.current.set(type, filtered);
+                      },
+                  }
+                : null,
         []
     );
 
     useEffect(() => {
         if (ServiceWorkerEnabled) {
+            const activated = awaiter<void>();
+
             navigator.serviceWorker
                 .register(
                     /* webpackChunkName: "pass.service-worker" */
                     new URL('./service-worker', import.meta.url),
                     { scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}` }
                 )
-                .then(() => context.send({ type: 'ping' }))
-                .catch(() => logger.warn('[ServiceWorkerProvider] Could not register service worker'));
+                .then(async (reg) => {
+                    /* If the service worker is active and there's no incoming
+                     * worker, resolve the activation immediately */
+                    const incoming = reg.installing || reg.waiting;
+                    if (reg.active && !incoming) activated.resolve();
+                    else {
+                        /* If the service worker is not yet activated, wait
+                         * for it to change to an `activated` state */
+                        incoming!.onstatechange = (event) => {
+                            const next = event.target as ServiceWorker;
+                            if (next.state === 'activated') {
+                                incoming!.onstatechange = null;
+                                activated.resolve();
+                            }
+                        };
+                    }
+
+                    await activated;
+
+                    /* If the service worker controller is null at this point,
+                     * we are dealing with an uncontrolled window (this may be
+                     * to a hard-refresh) */
+                    if (navigator.serviceWorker.controller === null) {
+                        const { active } = await navigator.serviceWorker.ready;
+                        active?.postMessage({ type: 'claim' });
+                    }
+
+                    sw?.send({ type: 'ping' });
+                })
+                .catch(() => logger.warn('[ServiceWorkerProvider] Could not register service worker'))
+                .finally(() => setReady(true));
 
             const handleChannelMessage = (event: MessageEvent<WithOrigin<ServiceWorkerMessage>>) => {
                 try {
@@ -81,10 +139,14 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
 
             CLIENT_CHANNEL.addEventListener('message', handleChannelMessage);
             return () => CLIENT_CHANNEL.removeEventListener('message', handleChannelMessage);
-        }
+        } else setReady(true);
     }, []);
 
-    return <ServiceWorkerContext.Provider value={context}>{children}</ServiceWorkerContext.Provider>;
+    return (
+        <ServiceWorkerContext.Provider value={sw}>
+            {ready ? children : <LobbyLayout overlay />}
+        </ServiceWorkerContext.Provider>
+    );
 };
 
 export const useServiceWorker = () => useContext(ServiceWorkerContext);
