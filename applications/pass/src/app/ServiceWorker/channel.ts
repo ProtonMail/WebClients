@@ -15,18 +15,23 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'abort'; requestUrl: string }
         | { type: 'action'; action: Action }
         | { type: 'locked'; offline: boolean }
+        | { type: 'claim' }
         | { type: 'ping' }
         | { type: 'refresh'; data: RefreshSessionData }
         | { type: 'unauthorized' }
         | { type: 'unlocked' }
     );
 
+export type ServiceWorkerMessageType = ServiceWorkerMessage['type'];
+export type ServiceWorkerMessageResponseMap = {};
+
+export type ServiceWorkerResponse<MessageType extends ServiceWorkerMessageType> =
+    MessageType extends keyof ServiceWorkerMessageResponseMap ? ServiceWorkerMessageResponseMap[MessageType] : boolean;
+
 export type WithOrigin<T> = T & {
     /** origin of the message, in the case of broadcasted messages
      *  this will be the original `ServiceWorkerClientID` */
     origin: string;
 };
-
-export type ServiceWorkerMessageType = ServiceWorkerMessage['type'];
 
 export const CLIENT_CHANNEL = new BroadcastChannel('pass::clients');

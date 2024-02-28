@@ -1,5 +1,4 @@
-import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
+import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useRef, useState } from 'react';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted } from '@proton/pass/lib/client';
