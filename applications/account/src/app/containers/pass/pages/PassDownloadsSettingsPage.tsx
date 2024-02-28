@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink } from '@proton/components/components';
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import { SettingsParagraph, SettingsSectionWide, useFlag } from '@proton/components/containers';
 import { usePlans, useUser } from '@proton/components/hooks';
 import { PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { clients } from '@proton/shared/lib/pass/constants';
+import { getDownloadablePassClients } from '@proton/shared/lib/pass/constants';
 import clsx from '@proton/utils/clsx';
 
 const UpgradeBanner = ({ className }: { className?: string }) => {
@@ -38,6 +38,10 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
 };
 
 const PassDownloadsSettingsPage = () => {
+    const passWindowsDownloadEnabled = useFlag('PassWindowsDownload');
+
+    const clients = getDownloadablePassClients({ includeWindows: passWindowsDownloadEnabled });
+
     return (
         <SettingsSectionWide>
             <UpgradeBanner className="mb-6" />
@@ -46,15 +50,12 @@ const PassDownloadsSettingsPage = () => {
                     .t`Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${PASS_APP_NAME} apps and extensions.`}
             </SettingsParagraph>
             <div className="flex gap-4 flex-column md:flex-row">
-                {Object.values(clients).map((client) => {
-                    return (
-                        <DownloadClientCard
-                            key={client.title}
-                            title={client.title}
-                            icon={client.icon}
-                            link={client.link}
-                        />
-                    );
+                {Object.values(clients).map(({ title, icon, link }) => {
+                    if (!link) {
+                        return null;
+                    }
+
+                    return <DownloadClientCard key={title} title={title} icon={icon} link={link} />;
                 })}
             </div>
         </SettingsSectionWide>
