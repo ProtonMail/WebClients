@@ -306,7 +306,7 @@ const getBundleUpsell = ({
         getStorageFeature(bundlePlan?.MaxSpace ?? 500, { freePlan }),
         getNAddressesFeature({ n: 15 }),
         getNDomainsFeature({ n: 3 }),
-        getSentinel(),
+        getSentinel(true),
         getFoldersAndLabelsFeature('unlimited'),
         hasPaidMail ? undefined : getNCalendarsFeature(MAX_CALENDARS_PAID),
         hasVPN ? undefined : getHighSpeedVPNConnectionsFeature(),

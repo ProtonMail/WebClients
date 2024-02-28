@@ -13,6 +13,22 @@ export const getTwoFA = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
+export const getRequire2FA = (included: boolean = false): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Require 2FA for organization`,
+        included,
+    };
+};
+
+export const getSSOIntegration = (included: boolean = false): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`SSO integration (coming soon)`,
+        included,
+        status: 'coming-soon',
+    };
+};
+
 export const getConsole = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Admin console`,
@@ -21,6 +37,7 @@ export const getConsole = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
 export const getBilling = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Centralized billing`,
@@ -29,6 +46,7 @@ export const getBilling = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
 export const getAdmins = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Multiple admin roles`,
@@ -37,6 +55,7 @@ export const getAdmins = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
 export const getSignIn = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Sign in as user`,
@@ -52,6 +71,7 @@ export const getCredentials = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
 export const getSessions = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`User session management`,
@@ -80,6 +100,25 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getTwoFA(),
                 [PLANS.VPN_PRO]: getTwoFA(),
                 [PLANS.VPN_BUSINESS]: getTwoFA(),
+            },
+        },
+        {
+            name: 'require-two-fa',
+            target: Audience.B2B,
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.PASS_PRO]: getRequire2FA(),
+                [PLANS.PASS_BUSINESS]: getRequire2FA(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -137,6 +176,25 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getAdmins(),
                 [PLANS.VPN_PRO]: getAdmins(),
                 [PLANS.VPN_BUSINESS]: getAdmins(),
+            },
+        },
+        {
+            name: 'sso',
+            target: Audience.B2B,
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.PASS_PRO]: getSSOIntegration(),
+                [PLANS.PASS_BUSINESS]: getSSOIntegration(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
