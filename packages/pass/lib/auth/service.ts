@@ -28,8 +28,7 @@ import {
     consumeFork,
     requestFork,
 } from './fork';
-import type {
-    ResumeSessionResult} from './session';
+import type { ResumeSessionResult } from './session';
 import {
     type AuthSession,
     type EncryptedAuthSession,
@@ -225,34 +224,28 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
         /** Creates a session lock. Automatically updates the authentication
          * store and immediately persists the session on success. */
-        createLock: async (
-            lockCode: string,
-            ttl: number,
-            options?: { onLockCreated?: (sessionLockToken: string) => MaybePromise<void> }
-        ) => {
+        createLock: async (lockCode: string, ttl: number) => {
             const sessionLockToken = await createSessionLock(lockCode, ttl);
-            await options?.onLockCreated?.(sessionLockToken);
 
             authStore.setLockToken(sessionLockToken);
             authStore.setLockTTL(ttl);
             authStore.setLockStatus(SessionLockStatus.REGISTERED);
-            void config.onSessionLockUpdate?.({ status: SessionLockStatus.REGISTERED, ttl }, true);
 
-            void authService.persistSession();
+            await authService.persistSession().catch(noop);
+            void config.onSessionLockUpdate?.({ status: SessionLockStatus.REGISTERED, ttl }, true);
         },
 
         /** Deletes a registered session lock. Requires the session lock code.
          * Immediately persists the session on success. */
-        deleteLock: async (lockCode: string, options?: { onLockDeleted?: () => MaybePromise<void> }) => {
+        deleteLock: async (lockCode: string) => {
             await deleteSessionLock(lockCode);
-            await options?.onLockDeleted?.();
 
             authStore.setLockToken(undefined);
             authStore.setLockTTL(undefined);
             authStore.setLockStatus(SessionLockStatus.NONE);
-            void config.onSessionLockUpdate?.({ status: SessionLockStatus.NONE }, true);
 
-            void authService.persistSession();
+            await authService.persistSession().catch(noop);
+            void config.onSessionLockUpdate?.({ status: SessionLockStatus.NONE }, true);
         },
 
         lock: async (options: { soft: boolean; broadcast?: boolean; offline?: boolean }): Promise<void> => {
