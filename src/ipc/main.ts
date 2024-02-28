@@ -2,7 +2,7 @@ import { ipcMain, shell } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
 import { setTrialEnded, updateView } from "../utils/view/viewManagement";
-import { handleIPCBadge, resetBadge } from "./badge";
+import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 
 export const handleIPCCalls = () => {
     ipcMain.on("updateNotification", (_e, count: number) => {
@@ -32,4 +32,7 @@ export const handleIPCCalls = () => {
     ipcMain.on("changeView", (_e, target) => {
         updateView(target);
     });
+    ipcMain.on('showNotification', (_e, payload) => {
+        showNotification(payload)
+    })
 };

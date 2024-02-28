@@ -1,7 +1,7 @@
 import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
-import { resetBadge } from "../../ipc/badge";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
+import { resetBadge } from "../../ipc/notification";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
 import { clearStorage, isLinux, isMac, isWindows } from "../helpers";
@@ -91,9 +91,9 @@ const configureViews = () => {
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
     if (isWindows || isLinux) {
-        const windowWidth = isWindows ? 16 : 0
-        const windowHeight = isWindows ? 32 : 24
-        
+        const windowWidth = isWindows ? 16 : 0;
+        const windowHeight = isWindows ? 32 : 24;
+
         return {
             x: bounds.x,
             y: bounds.y,
@@ -146,11 +146,11 @@ export const updateView = (target: VIEW_TARGET) => {
     if (target === "mail" && currentView !== "mail") {
         loadMailView(window);
         currentView = "mail";
-        return;
+        return mailView;
     } else if (target === "calendar" && currentView !== "calendar") {
         loadCalendarView(window);
         currentView = "calendar";
-        return;
+        return calendarView;
     } else if (target === "account" && currentView !== "account") {
         loadAccountView(window);
         currentView = "account";
@@ -193,3 +193,12 @@ export const toggleSpellCheck = (enabled: boolean) => {
 export const getMailView = () => mailView;
 export const getCalendarView = () => calendarView;
 export const getMainWindow = () => mainWindow;
+
+export const getCurrentView = () => {
+    if (currentView === "mail") {
+        return mailView;
+    } else if (currentView === "calendar") {
+        return calendarView;
+    }
+    return accountView;
+};

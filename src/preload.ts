@@ -27,6 +27,9 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
             case "changeView":
                 ipcRenderer.send("changeView", payload);
                 break;
+            case "showNotification":
+                ipcRenderer.send("showNotification", payload);
+                break;
             default:
                 Logger.error(`Unknown IPC message type: ${type}`);
                 break;
