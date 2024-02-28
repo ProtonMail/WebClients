@@ -5,6 +5,7 @@ import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from
 import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
+import { getRequire2FA, getSSOIntegration } from './b2b';
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import {
     getDriveAppFeature,
@@ -13,7 +14,7 @@ import {
     getStorageFeature,
     getStorageFeatureB2B,
 } from './drive';
-import { getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
+import { get24x7Support, getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
 import { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
@@ -35,7 +36,6 @@ import {
     PASS_PRO_VAULTS,
     PASS_PRO_VAULT_SHARING,
     get2FAAuthenticator,
-    get24x7Support,
     getCustomFields,
     getDataBreachMonitoring,
     getDevices,
@@ -45,8 +45,6 @@ import {
     getLoginsAndNotes,
     getPassAppFeature,
     getProtonPassFeature,
-    getRequire2FA,
-    getSSOIntegration,
     getVaultSharing,
     getVaults,
 } from './pass';
@@ -138,7 +136,7 @@ export const getBundlePlan = ({
             getFoldersAndLabelsFeature('unlimited'),
             getNMessagesFeature('unlimited'),
             getNDomainsFeature({ n: plan.MaxDomains }),
-            getSentinel(),
+            getSentinel(true),
             getSupport('priority'),
             getCalendarAppFeature(),
             getDriveAppFeature(),
@@ -189,7 +187,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getVaultSharing(PASS_PLUS_VAULT_SHARING),
             get2FAAuthenticator(true),
             getCustomFields(true),
-            getSentinel(),
+            getSentinel(true),
             getSupport('priority'),
         ],
     };
@@ -233,12 +231,12 @@ export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
             getVaultSharing(PASS_BIZ_VAULT_SHARING),
             get2FAAuthenticator(true),
             getCustomFields(true),
-            getSentinel(),
+            getSentinel(true),
             getAdminPanel(),
             get24x7Support(),
-            getRequire2FA(),
-            getSSOIntegration(),
-            getGroupManagement(),
+            getRequire2FA(true),
+            getSSOIntegration(true),
+            getGroupManagement(true),
             getDataBreachMonitoring(true),
         ],
     };
@@ -264,7 +262,7 @@ export const getPassBusinessSignupPlan = (plan?: Plan): ShortPlan => {
         label: '',
         description: '',
         cta: getCTA(title),
-        features: [getSSOIntegration(), getRequire2FA(), getSentinel(true)],
+        features: [getSSOIntegration(true), getRequire2FA(true), getSentinel(true)],
     };
 };
 
@@ -407,7 +405,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
-            getSentinel(),
+            getSentinel(true),
             getFoldersAndLabelsFeature('unlimited'),
             getContactGroupsManagement(),
             getCalendarAppFeature(),
@@ -466,7 +464,7 @@ export const getFamilyPlan = ({
             getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
             getNMessagesFeature(Number.POSITIVE_INFINITY),
             getNDomainsFeature({ n: plan.MaxDomains }),
-            getSentinel(),
+            getSentinel(true),
             getCalendarAppFeature({ family: true }),
             getDriveAppFeature({ family: true }),
             getVPNAppFeature({
