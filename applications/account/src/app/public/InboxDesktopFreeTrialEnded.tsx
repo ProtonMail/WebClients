@@ -11,9 +11,12 @@ import { resetEndOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHel
 import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
+import inboxPlaceholder from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder.png';
 
 import Layout from './Layout';
 import Main from './Main';
+
+import './InboxDesktopFreeTrialEnded.scss';
 
 const WebAppLink = () => {
     const handleClick = () => {
@@ -44,7 +47,13 @@ const InboxDesktopFreeTrialEnded = () => {
 
     const webAppMessage = <WebAppLink key="web-app" />;
     return (
-        <Layout>
+        <Layout layoutClassName="free-trial-blur" hasDecoration={false}>
+            <img
+                src={inboxPlaceholder}
+                alt=""
+                className="blur-background h-custom w-custom absolute top-0 left-0 z-0 opacity-70"
+                style={{ '--h-custom': '100vh', '--w-custom': '100vw' }}
+            />
             <Main>
                 <div className="self-center my-auto flex justify-center text-center items-center item-start flex-column gap-6">
                     <img src={protonDesktopTrialEnd} alt={c('Free trial desktop').t`${MAIL_APP_NAME} desktop app`} />
