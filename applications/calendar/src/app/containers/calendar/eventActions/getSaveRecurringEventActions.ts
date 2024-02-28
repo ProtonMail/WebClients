@@ -48,7 +48,7 @@ import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import {
     getCorrectedSendInviteData,
     getHasMergeUpdate,
-    getHasModifiedNotifications,
+    getHasNotificationsMergeUpdate,
     getUpdateInviteOperationWithIntermediateEvent,
     getUpdateMainSeriesMergeVevent,
     getUpdateSingleEditMergeVevent,
@@ -534,15 +534,26 @@ const getSaveRecurringEventActions = async ({
                 singleEditIcsPromises.push(
                     ...singleEditRecurrences.map(async (event) => {
                         const { veventComponent } = await getCalendarEventRaw(event);
-                        const hasModifiedNotifications =
-                            getIsAllDay(veventComponent) === getIsAllDay(oldVevent) &&
-                            getHasModifiedNotifications(veventComponent, updateMergeVevent);
-                        if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
+                        const updateSingleEditMergeVevent = {
+                            ...updateMergeVevent,
+                        };
+                        const hasAllDayChanged = getIsAllDay(veventComponent) !== getIsAllDay(oldVevent);
+
+                        if (hasAllDayChanged) {
+                            // Ignore changes to notifications
+                            delete updateSingleEditMergeVevent.components;
+                        }
+
+                        const hasModifiedNotifications = getHasNotificationsMergeUpdate(
+                            veventComponent,
+                            updateSingleEditMergeVevent
+                        );
+                        if (!getHasMergeUpdate(veventComponent, updateSingleEditMergeVevent)) {
                             return;
                         }
                         let updatedSingleEditVevent = {
                             ...veventComponent,
-                            ...updateMergeVevent,
+                            ...updateSingleEditMergeVevent,
                         };
                         let addedAttendeesSingleEditPublicKeysMap;
                         let updatedSingleEditInviteActions = {
@@ -644,15 +655,26 @@ const getSaveRecurringEventActions = async ({
             await Promise.all(
                 singleEditRecurrences.map(async (event) => {
                     const { veventComponent } = await getCalendarEventRaw(event);
-                    const hasModifiedNotifications =
-                        getIsAllDay(veventComponent) === getIsAllDay(oldVevent) &&
-                        getHasModifiedNotifications(veventComponent, updateMergeVevent);
-                    if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
+                    const updateSingleEditMergeVevent = {
+                        ...updateMergeVevent,
+                    };
+                    const hasAllDayChanged = getIsAllDay(veventComponent) !== getIsAllDay(oldVevent);
+
+                    if (hasAllDayChanged) {
+                        // Ignore changes to notifications
+                        delete updateSingleEditMergeVevent.components;
+                    }
+
+                    const hasModifiedNotifications = getHasNotificationsMergeUpdate(
+                        veventComponent,
+                        updateSingleEditMergeVevent
+                    );
+                    if (!getHasMergeUpdate(veventComponent, updateSingleEditMergeVevent)) {
                         return;
                     }
                     const updatedSingleEditVevent = {
                         ...veventComponent,
-                        ...updateMergeVevent,
+                        ...updateSingleEditMergeVevent,
                     };
                     const updateSingleEditOperation = getUpdateSyncOperation({
                         veventComponent: updatedSingleEditVevent,
