@@ -113,6 +113,7 @@ const FullDayEvent = ({
             className={clsx([className, isOutsideStart && 'isOutsideStart', isOutsideEnd && 'isOutsideEnd'])}
             data-ignore-create="1"
         >
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
             <div
                 onClick={onClick}
                 title={expandableTitleString}
