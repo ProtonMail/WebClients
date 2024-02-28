@@ -276,16 +276,21 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     return result;
 };
 
-export const getHasPersonalMergeUpdate = (
+export const getHasNotificationsMergeUpdate = (
     vevent: VcalVeventComponent,
-    mergeVevent: Partial<VcalVeventComponent>,
-    hasModifiedNotifications?: boolean
+    mergeVevent: Partial<VcalVeventComponent>
 ) => {
+    if (!mergeVevent.components) {
+        return false;
+    }
+    return getHasModifiedNotifications(vevent, mergeVevent);
+};
+
+export const getHasPersonalMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Partial<VcalVeventComponent>) => {
     if (mergeVevent.color && getSupportedStringValue(vevent.color) !== getSupportedStringValue(mergeVevent.color)) {
         return true;
     }
-    const hasNotificationsUpdate = hasModifiedNotifications ?? getHasModifiedNotifications(vevent, mergeVevent);
-    if (hasNotificationsUpdate) {
+    if (mergeVevent.components && getHasNotificationsMergeUpdate(vevent, mergeVevent)) {
         return true;
     }
     if (mergeVevent.dtstart && getPropertyTzid(vevent.dtstart) !== getPropertyTzid(mergeVevent.dtstart)) {
@@ -296,11 +301,7 @@ export const getHasPersonalMergeUpdate = (
     }
 };
 
-export const getHasMergeUpdate = (
-    vevent: VcalVeventComponent,
-    mergeVevent: Partial<VcalVeventComponent>,
-    hasModifiedPersonalPart?: boolean
-) => {
+export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Partial<VcalVeventComponent>) => {
     if (
         mergeVevent.summary &&
         getSupportedStringValue(vevent.summary) !== getSupportedStringValue(mergeVevent.summary)
@@ -331,8 +332,7 @@ export const getHasMergeUpdate = (
             return true;
         }
     }
-    const hasPersonalMergeUpdate = hasModifiedPersonalPart ?? getHasPersonalMergeUpdate(vevent, mergeVevent);
-    if (hasPersonalMergeUpdate) {
+    if (getHasPersonalMergeUpdate(vevent, mergeVevent)) {
         return true;
     }
 
