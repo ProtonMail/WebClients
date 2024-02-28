@@ -62,6 +62,14 @@ export interface Passkey {
      * @generated from protobuf field: string note = 10;
      */
     note: string;
+    /**
+     * @generated from protobuf field: bytes credential_id = 11;
+     */
+    credentialId: Uint8Array;
+    /**
+     * @generated from protobuf field: bytes user_handle = 12;
+     */
+    userHandle: Uint8Array;
 }
 /**
  * @generated from protobuf message proton_pass_item_v1.ItemLogin
@@ -368,6 +376,8 @@ class Passkey$Type extends MessageType<Passkey> {
             { no: 8, name: 'user_id', kind: 'scalar', T: 12 /*ScalarType.BYTES*/ },
             { no: 9, name: 'create_time', kind: 'scalar', T: 13 /*ScalarType.UINT32*/ },
             { no: 10, name: 'note', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 11, name: 'credential_id', kind: 'scalar', T: 12 /*ScalarType.BYTES*/ },
+            { no: 12, name: 'user_handle', kind: 'scalar', T: 12 /*ScalarType.BYTES*/ },
         ]);
     }
     create(value?: PartialMessage<Passkey>): Passkey {
@@ -382,6 +392,8 @@ class Passkey$Type extends MessageType<Passkey> {
         message.userId = new Uint8Array(0);
         message.createTime = 0;
         message.note = '';
+        message.credentialId = new Uint8Array(0);
+        message.userHandle = new Uint8Array(0);
         if (value !== undefined) reflectionMergePartial<Passkey>(this, message, value);
         return message;
     }
@@ -421,6 +433,12 @@ class Passkey$Type extends MessageType<Passkey> {
                 case /* string note */ 10:
                     message.note = reader.string();
                     break;
+                case /* bytes credential_id */ 11:
+                    message.credentialId = reader.bytes();
+                    break;
+                case /* bytes user_handle */ 12:
+                    message.userHandle = reader.bytes();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -455,6 +473,10 @@ class Passkey$Type extends MessageType<Passkey> {
         if (message.createTime !== 0) writer.tag(9, WireType.Varint).uint32(message.createTime);
         /* string note = 10; */
         if (message.note !== '') writer.tag(10, WireType.LengthDelimited).string(message.note);
+        /* bytes credential_id = 11; */
+        if (message.credentialId.length) writer.tag(11, WireType.LengthDelimited).bytes(message.credentialId);
+        /* bytes user_handle = 12; */
+        if (message.userHandle.length) writer.tag(12, WireType.LengthDelimited).bytes(message.userHandle);
         let u = options.writeUnknownFields;
         if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
         return writer;
