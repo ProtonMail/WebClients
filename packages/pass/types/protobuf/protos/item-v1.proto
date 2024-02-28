@@ -18,6 +18,8 @@ message Passkey {
 	bytes user_id = 8;
 	uint32 create_time = 9;
 	string note = 10;
+	bytes credential_id = 11;
+	bytes user_handle = 12;
 }
 
 message ItemLogin {
