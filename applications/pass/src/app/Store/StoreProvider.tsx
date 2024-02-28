@@ -105,13 +105,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
             if (authStore.hasSession(localID)) store.dispatch(action);
         };
 
-        sw.on('action', handleAction);
+        sw?.on('action', handleAction);
 
         /** When hot-reloading: this `useEffect` can re-trigger,
          * so cancel the on-going saga runner. */
         return () => {
             runner.cancel();
-            sw.off('action', handleAction);
+            sw?.off('action', handleAction);
         };
     }, []);
 

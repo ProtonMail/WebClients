@@ -30,7 +30,7 @@ import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectExportData } from '@proton/pass/store/selectors/export';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -47,7 +47,7 @@ import { store } from './Store/store';
 
 sentry({ config: PASS_CONFIG });
 
-export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProviderProps => {
+export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
 
     return {
@@ -76,13 +76,13 @@ export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProvide
 
             const baseUrl = `${PASS_CONFIG.API_URL}/${url}`;
             const requestUrl = (/^https?:\/\//.test(baseUrl) ? baseUrl : new URL(baseUrl, document.baseURI)).toString();
-            signal.onabort = () => sw.send({ type: 'abort', requestUrl });
+            signal.onabort = () => sw?.send({ type: 'abort', requestUrl });
 
             /* Forward the abort signal to the service worker. */
             return api<Response>({ url, output: 'raw', signal })
                 .then(async (res) => {
                     const dataURL = await imageResponsetoDataURL(res);
-                    if (!sw.enabled) cache.set(url, dataURL);
+                    if (!sw) cache.set(url, dataURL);
                     return dataURL;
                 })
                 .catch(noop);

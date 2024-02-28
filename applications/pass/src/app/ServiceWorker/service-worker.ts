@@ -3,6 +3,7 @@ import { fetchController } from '@proton/pass/lib/api/fetch-controller';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import type { ServiceWorkerResponse} from './channel';
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
 import { handleImage, matchImageRoute } from './image';
 import { cacheCriticalOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchIndexRoute } from './offline';
@@ -47,9 +48,21 @@ self.addEventListener('fetch', (event) => {
     if (matchIndexRoute(pathname)) return handleIndex(event);
 });
 
-self.addEventListener('message', (event) => {
+self.addEventListener('message', async (event) => {
+    const port = event.ports?.[0];
     const message = event.data as WithOrigin<ServiceWorkerMessage>;
+
+    /* handle unidirectional messages */
+    if (message.type === 'claim') self.clients.claim();
     if (message.type === 'unauthorized') void clearCache().catch(noop);
     if (message.type === 'abort') fetchController.abort(message.requestUrl);
-    if (message.broadcast) CLIENT_CHANNEL.postMessage(event.data);
+    if (message.broadcast) CLIENT_CHANNEL.postMessage(message);
+
+    if (port) {
+        /** If we have a port in the event payload then
+         * we are dealing with a bi-directional message
+         * which requres a `ServiceWorkerResponse` */
+        const response = await (async (): Promise<ServiceWorkerResponse<typeof message.type>> => true)();
+        port.postMessage(response);
+    }
 });
