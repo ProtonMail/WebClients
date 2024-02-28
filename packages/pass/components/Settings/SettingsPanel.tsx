@@ -27,7 +27,7 @@ export const SettingsPanel: FC<PropsWithChildren<Props>> = ({
         style={{ '--max-w-custom': '50em' }}
         background={false}
     >
-        <div className="flex flex-nowrap gap-2 items-center">
+        <div className="flex flex-nowrap gap-2 items-start">
             <strong className="color-norm block mb-1 flex-1 text-ellipsis">{title}</strong>
             <div className="shrink-0">{actions}</div>
         </div>
