@@ -3,6 +3,7 @@ import { getWindowBounds } from "../../store/boundsStore";
 import { getConfig, getIcon, isProdEnv } from "../config";
 import { isMac, isWindows } from "../helpers";
 import { getSettings } from "../../store/settingsStore";
+import {join} from 'path'
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const config = getConfig();
@@ -31,7 +32,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
 
     return {
         title: config.appTitle,
-        icon: `../../../assets/${getIcon()}.png`,
+        icon: join(app.getAppPath(), 'assets/icon.png'),
         x,
         y,
         width,
