@@ -11,18 +11,24 @@ import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineDisable, offlineSetupIntent } from '@proton/pass/store/actions';
-import { selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
     const dispatch = useDispatch();
     const passwordConfirmModal = useAsyncModalHandles<string>();
+
     const supported = useSelector(selectOfflineEnabled);
-    const setup = useActionRequest({ action: offlineSetupIntent });
     const plan = useSelector(selectPassPlan);
-    const disabled = !isPaidPlan(plan);
+    const pwMode = useSelector(selectUserSettings)?.Password.Mode;
+    const setup = useActionRequest({ action: offlineSetupIntent });
+
+    const freeUser = !isPaidPlan(plan);
+    const twoPasswordMode = pwMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+    const disabled = freeUser || twoPasswordMode;
 
     const toggleOffline = async (enable: boolean) => {
         if (enable) {
@@ -40,11 +46,21 @@ export const Offline: FC = () => {
                 title={c('Label').t`Offline mode`}
                 {...(disabled
                     ? {
-                          subTitle: c('Info').t`Please upgrade your plan to enable offline support.`,
                           contentClassname: 'opacity-50 pointer-events-none py-4',
-                          actions: [
-                              <UpgradeButton upsellRef={UpsellRef.SETTING} inline className="text-sm" key="upgrade" />,
-                          ],
+                          actions: freeUser
+                              ? [
+                                    <UpgradeButton
+                                        upsellRef={UpsellRef.SETTING}
+                                        inline
+                                        className="text-sm"
+                                        key="upgrade"
+                                    />,
+                                ]
+                              : [],
+                          subTitle: freeUser
+                              ? c('Error')
+                                    .t`Offline mode isn't currently available for your plan and not compatible with two password mode.`
+                              : c('Error').t`Offline mode is currently not available for two password mode.`,
                       }
                     : {})}
             >
