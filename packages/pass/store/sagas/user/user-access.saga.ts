@@ -1,4 +1,4 @@
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { put, select, takeLeading } from 'redux-saga/effects';
 
 import { getUserAccess, getUserOrganization } from '@proton/pass/lib/user/user.requests';
 import { getUserAccessFailure, getUserAccessIntent, getUserAccessSuccess } from '@proton/pass/store/actions';
@@ -29,5 +29,5 @@ function* syncPlan({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeo
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeEvery(getUserAccessIntent.match, syncPlan, options);
+    yield takeLeading(getUserAccessIntent.match, syncPlan, options);
 }
