@@ -643,7 +643,7 @@ const getSaveRecurringEventActions = async ({
             );
             // implement the so-called smart rules for "edit all", namely propagate changed fields to single edits
             await Promise.all(
-                singleEditRecurrences.filter(getIsPersonalSingleEdit).map(async (event) => {
+                singleEditRecurrences.map(async (event) => {
                     const { veventComponent } = await getCalendarEventRaw(event);
                     const hasModifiedNotifications = getHasModifiedNotifications(veventComponent, updateMergeVevent);
                     if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
