@@ -16,6 +16,7 @@ import {
     getCreateSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
+import { getStartDateTimeMerged } from '../recurrence/getDateTimeMerged';
 import {
     getAddedAttendeesPublicKeysMap,
     getAttendeesDiff,
@@ -318,9 +319,21 @@ export const getHasMergeUpdate = (
 export const getUpdateMainSeriesMergeVevent = ({
     newVeventComponent,
     oldVeventComponent,
+    originalVeventComponent,
 }: {
     newVeventComponent: VcalVeventComponent;
     oldVeventComponent: VcalVeventComponent;
+    originalVeventComponent: VcalVeventComponent;
 }) => {
-    return getUpdateSingleEditMergeVevent(newVeventComponent, oldVeventComponent);
+    const result = getUpdateSingleEditMergeVevent(newVeventComponent, oldVeventComponent);
+
+    // (non-breaking) changes to date-time properties need a merge with the original date-time properties
+    if (result.dtstart) {
+        result.dtstart = getStartDateTimeMerged(result.dtstart, originalVeventComponent.dtstart);
+    }
+    if (result.dtend) {
+        result.dtend = getStartDateTimeMerged(result.dtend, originalVeventComponent.dtstart);
+    }
+
+    return result;
 };
