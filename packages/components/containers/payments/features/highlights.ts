@@ -58,6 +58,11 @@ export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinit
     };
 };
 
+export const get24x7Support = (): PlanCardFeatureDefinition => ({
+    included: true,
+    text: c('new_plans: feature').t`24/7 account management support`,
+});
+
 const getEasySwitch = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Easy Switch import assistant`,
@@ -66,7 +71,7 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getSentinel = (included: boolean = true): PlanCardFeatureDefinition => {
+export const getSentinel = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`${PROTON_SENTINEL_NAME} program`,
         tooltip: c('new_plans: tooltip')
@@ -99,8 +104,8 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.FAMILY]: getSupport('priority'),
                 [PLANS.MAIL_PRO]: getSupport('priority'),
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
-                [PLANS.PASS_PRO]: getSupport('priority'),
-                [PLANS.PASS_BUSINESS]: getSupport('priority'),
+                [PLANS.PASS_PRO]: get24x7Support(),
+                [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
             },
@@ -108,19 +113,19 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
         {
             name: 'sentinel',
             plans: {
-                [PLANS.FREE]: getSentinel(false),
-                [PLANS.BUNDLE]: getSentinel(),
-                [PLANS.MAIL]: getSentinel(false),
-                [PLANS.VPN]: getSentinel(false),
-                [PLANS.DRIVE]: getSentinel(false),
-                [PLANS.PASS_PLUS]: getSentinel(),
-                [PLANS.FAMILY]: getSentinel(),
-                [PLANS.MAIL_PRO]: getSentinel(false),
-                [PLANS.BUNDLE_PRO]: getSentinel(),
-                [PLANS.PASS_PRO]: getSentinel(false),
-                [PLANS.PASS_BUSINESS]: getSentinel(),
-                [PLANS.VPN_PRO]: getSentinel(false),
-                [PLANS.VPN_BUSINESS]: getSentinel(),
+                [PLANS.FREE]: getSentinel(),
+                [PLANS.BUNDLE]: getSentinel(true),
+                [PLANS.MAIL]: getSentinel(),
+                [PLANS.VPN]: getSentinel(),
+                [PLANS.DRIVE]: getSentinel(),
+                [PLANS.PASS_PLUS]: getSentinel(true),
+                [PLANS.FAMILY]: getSentinel(true),
+                [PLANS.MAIL_PRO]: getSentinel(),
+                [PLANS.BUNDLE_PRO]: getSentinel(true),
+                [PLANS.PASS_PRO]: getSentinel(),
+                [PLANS.PASS_BUSINESS]: getSentinel(true),
+                [PLANS.VPN_PRO]: getSentinel(),
+                [PLANS.VPN_BUSINESS]: getSentinel(true),
             },
         },
         {
@@ -137,6 +142,26 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.BUNDLE_PRO]: getEasySwitch(),
                 [PLANS.PASS_PRO]: getEasySwitch(),
                 [PLANS.PASS_BUSINESS]: getEasySwitch(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+
+        {
+            name: 'admin-panel',
+            target: Audience.B2B,
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.PASS_PRO]: getAdminPanel(),
+                [PLANS.PASS_BUSINESS]: getAdminPanel(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

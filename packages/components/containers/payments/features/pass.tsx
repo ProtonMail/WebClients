@@ -41,33 +41,13 @@ export const getLoginsAndNotesText = () => {
     return c('new_plans: feature').t`Unlimited logins and notes`;
 };
 
-export const getGroupManagement = (): PlanCardFeatureDefinition => {
+export const getGroupManagement = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Group management (coming soon)`,
-        included: true,
+        included,
         status: 'coming-soon',
     };
 };
-
-export const getSSOIntegration = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('new_plans: feature').t`SSO integration (coming soon)`,
-        included: true,
-        status: 'coming-soon',
-    };
-};
-
-export const getRequire2FA = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('new_plans: feature').t`Require 2FA for organization`,
-        included: true,
-    };
-};
-
-export const get24x7Support = (): PlanCardFeatureDefinition => ({
-    included: true,
-    text: c('new_plans: feature').t`24/7 account management support`,
-});
 
 export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
@@ -325,8 +305,26 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getCustomFields(true),
                 [PLANS.MAIL_PRO]: getCustomFields(),
                 [PLANS.BUNDLE_PRO]: getCustomFields(true),
-                [PLANS.PASS_PRO]: null,
-                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.PASS_PRO]: getCustomFields(true),
+                [PLANS.PASS_BUSINESS]: getCustomFields(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'group-management',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.PASS_PRO]: getGroupManagement(),
+                [PLANS.PASS_BUSINESS]: getGroupManagement(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -343,8 +341,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.MAIL_PRO]: getDataBreachMonitoring(),
                 [PLANS.BUNDLE_PRO]: getDataBreachMonitoring(true),
-                [PLANS.PASS_PRO]: null,
-                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.PASS_PRO]: getDataBreachMonitoring(true),
+                [PLANS.PASS_BUSINESS]: getDataBreachMonitoring(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
