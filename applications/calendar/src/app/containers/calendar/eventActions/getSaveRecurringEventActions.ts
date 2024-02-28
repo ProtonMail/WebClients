@@ -406,6 +406,7 @@ const getSaveRecurringEventActions = async ({
         const updateMainSeriesMergeVevent = getUpdateMainSeriesMergeVevent({
             newVeventComponent,
             oldVeventComponent,
+            originalVeventComponent,
         });
         const mergedNewRecurrentVevent = organizerEditsNonBreakingSingleEdit
             ? { ...originalVeventComponent, ...updateMainSeriesMergeVevent }
