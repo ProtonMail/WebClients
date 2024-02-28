@@ -126,10 +126,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true }));
 
-                const notLocked = !api.getState().sessionLocked;
+                const locked = authStore.getLockStatus() === SessionLockStatus.LOCKED;
                 const hasLocalID = pathLocalID !== undefined;
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
-                const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
+                const autoFork = !loggedIn && !locked && hasLocalID && !validSession;
 
                 if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
                 if (autoFork && isOnline()) {
@@ -287,9 +287,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const { key, selector, state, payloadVersion } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 
-        if (matchConsumeFork) {
-            void authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
-        } else void authService.init({ forceLock: false });
+        const run = async () => {
+            if (matchConsumeFork) {
+                authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
+            } else authService.init({ forceLock: false });
+        };
 
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */
@@ -334,6 +336,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         sw?.on('locked', handleLocked);
         sw?.on('unlocked', handleUnlocked);
         sw?.on('refresh', handleRefresh);
+
+        run().catch(noop);
 
         return () => {
             sw?.off('unauthorized', handleUnauthorized);
