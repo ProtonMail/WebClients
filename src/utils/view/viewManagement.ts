@@ -90,13 +90,15 @@ const configureViews = () => {
 };
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
-    const padding = { top: 16, right: 8, bottom: 16, left: 8 };
     if (isWindows || isLinux) {
+        const windowWidth = isWindows ? 16 : 0
+        const windowHeight = isWindows ? 32 : 24
+        
         return {
-            x: bounds.x + padding.left,
-            y: bounds.y + padding.top,
-            width: bounds.width - padding.left - padding.right,
-            height: bounds.height - padding.top - padding.bottom,
+            x: bounds.x,
+            y: bounds.y,
+            width: bounds.width - windowWidth,
+            height: bounds.height - windowHeight,
         };
     }
     return bounds;
