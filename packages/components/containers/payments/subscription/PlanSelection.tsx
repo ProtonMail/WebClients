@@ -441,7 +441,7 @@ const PlanSelection = ({
     const currencySelectorRow = (
         <div className="flex justify-space-between flex-column md:flex-row">
             <div className="hidden lg:inline-block visibility-hidden">{currencyItem}</div>
-            <div className="flex justify-center md:justify-start w-full lg:w-auto">
+            <div className="flex justify-center w-full lg:w-auto">
                 {renderCycleSelector && (
                     <CycleSelector
                         mode="buttons"
