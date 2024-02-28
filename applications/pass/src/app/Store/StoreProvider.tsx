@@ -14,14 +14,13 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
+import { clientBooted, clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
     draftsGarbageCollect,
     getUserAccessIntent,
     passwordHistoryGarbageCollect,
     startEventPolling,
-    stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
@@ -95,14 +94,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 setCache: async (encryptedCache) => {
                     const userID = authStore.getUserID();
-                    /** Cache only if the tab is visible to avoid extraneous IDB writes */
-                    if (userID && isDocumentVisible()) return writeDBCache(userID, encryptedCache);
+                    if (userID) return writeDBCache(userID, encryptedCache);
                 },
             })
         );
 
-        const handleAction: ServiceWorkerMessageHandler<'action'> = ({ localID, action }) => {
-            if (authStore.hasSession(localID)) store.dispatch(action);
+        const handleAction: ServiceWorkerMessageHandler<'action'> = ({ action, localID }) => {
+            if (clientBooted(client.current.state.status) && authStore.hasSession(localID)) store.dispatch(action);
         };
 
         sw?.on('action', handleAction);
@@ -116,10 +114,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     useVisibleEffect((visible) => {
-        /** visible will be truthy only when the document goes from an inactive to an
-         * active state. This means the tab came into active focus after being hidden:
-         * In this case, silently synchronize the state in case me missed some actions */
-        if (visible && clientReady(client.current.state.status)) store.dispatch(stateSync());
+        if (visible && clientReady(client.current.state.status)) store.dispatch(startEventPolling());
         else if (!visible) store.dispatch(stopEventPolling());
     });
 
