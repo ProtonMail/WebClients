@@ -161,7 +161,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
-                if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
+                if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
 
                 onboarding.reset();
@@ -224,8 +224,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
             onSessionLocked: (localID, offline, broadcast) => {
                 client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED);
-
-                if (broadcast) sw.send({ type: 'locked', localID, offline, broadcast: true });
+                if (broadcast) sw?.send({ type: 'locked', localID, offline, broadcast: true });
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
@@ -241,9 +240,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (broadcast) {
                     switch (lock.status) {
                         case SessionLockStatus.REGISTERED:
-                            return sw.send({ type: 'locked', localID, offline: false, broadcast: true });
+                            return sw?.send({ type: 'locked', localID, offline: false, broadcast: true });
                         case SessionLockStatus.NONE:
-                            return sw.send({ type: 'unlocked', localID, broadcast: true });
+                            return sw?.send({ type: 'unlocked', localID, broadcast: true });
                     }
                 }
             },
@@ -251,7 +250,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionRefresh: async (localID, data, broadcast) => {
                 logger.info('[AuthServiceProvider] Session tokens have been refreshed');
                 const persistedSession = await auth.config.getPersistedSession(localID);
-                if (broadcast) sw.send({ type: 'refresh', localID, data, broadcast: true });
+                if (broadcast) sw?.send({ type: 'refresh', localID, data, broadcast: true });
 
                 if (persistedSession) {
                     const { AccessToken, RefreshTime, RefreshToken } = data;
@@ -329,15 +328,15 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
-        sw.on('unauthorized', handleUnauthorized);
-        sw.on('locked', handleLocked);
-        sw.on('unlocked', handleUnlocked);
-        sw.on('refresh', handleRefresh);
+        sw?.on('unauthorized', handleUnauthorized);
+        sw?.on('locked', handleLocked);
+        sw?.on('unlocked', handleUnlocked);
+        sw?.on('refresh', handleRefresh);
 
         return () => {
-            sw.off('unauthorized', handleUnauthorized);
-            sw.off('locked', handleLocked);
-            sw.off('refresh', handleRefresh);
+            sw?.off('unauthorized', handleUnauthorized);
+            sw?.off('locked', handleLocked);
+            sw?.off('refresh', handleRefresh);
         };
     }, []);
 
