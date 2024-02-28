@@ -19,6 +19,7 @@ export type ApiState = {
     online: boolean;
     pendingCount: number;
     queued: Awaiter<void>[];
+    refreshing: boolean;
     serverTime?: Date;
     sessionInactive: boolean;
     sessionLocked: boolean;
