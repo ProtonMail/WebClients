@@ -252,7 +252,7 @@ const ExtraEvent = ({
 
                 // If we just updated the event and the calendar app is opened in the drawer,
                 // we want to call the calendar event manager to refresh the view
-                if (!!updatedInvitationApi && appInView === APPS.PROTONCALENDAR) {
+                if (updatedInvitationApi && appInView === APPS.PROTONCALENDAR) {
                     postMessageToIframe(
                         {
                             type: DRAWER_EVENTS.CALL_CALENDAR_EVENT_MANAGER,

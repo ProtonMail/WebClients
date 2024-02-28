@@ -687,7 +687,7 @@ export const updateEventInvitation = async ({
                     ...attendeeApi.vcalComponent,
                     parameters: {
                         ...attendeeApi.vcalComponent.parameters,
-                        partstat: partstatApi,
+                        partstat: partstatIcs,
                     },
                 };
 
