@@ -164,7 +164,7 @@ export const getCustomPassFeatures = () => {
         getHideMyEmailAliases('unlimited'),
         get2FAAuthenticator(true),
         getItems(),
-        getSentinel(),
+        getSentinel(true),
         getVaultSharing(PASS_PLUS_VAULT_SHARING),
     ];
 };
