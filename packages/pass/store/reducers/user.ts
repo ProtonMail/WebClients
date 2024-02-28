@@ -7,11 +7,21 @@ import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import type { Address, Organization, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Organization,
+    SETTINGS_PASSWORD_MODE,
+    SETTINGS_STATUS,
+    User,
+} from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
-export type UserSettingsState = { Email?: { Status: SETTINGS_STATUS }; Telemetry?: 1 | 0 };
+export type UserSettingsState = {
+    Email: { Status: SETTINGS_STATUS };
+    Password: { Mode: SETTINGS_PASSWORD_MODE };
+    Telemetry: 1 | 0;
+};
 
 export type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
@@ -50,7 +60,11 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         const eventId = EventID ?? null;
 
         const userSettings = UserSettings
-            ? { Email: { Status: UserSettings.Email.Status }, Telemetry: UserSettings.Telemetry }
+            ? merge(state.userSettings ?? {}, {
+                  Email: { Status: UserSettings.Email.Status },
+                  Password: { Mode: UserSettings.Password.Mode },
+                  Telemetry: UserSettings.Telemetry,
+              })
             : state.userSettings;
 
         const addresses = Addresses.reduce(
