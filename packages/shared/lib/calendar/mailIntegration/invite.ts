@@ -451,7 +451,7 @@ export const generateEmailSubject = ({
     isCreateEvent?: boolean;
     dateFormatOptions?: Options;
 }) => {
-    const { formattedStart, isSingleAllDay } = getFormattedDateInfo(vevent, dateFormatOptions);
+    const { formattedStart, isSingleAllDay } = getFormattedDateInfo(withoutRedundantDtEnd(vevent), dateFormatOptions);
     const { REQUEST, CANCEL, REPLY } = ICAL_METHOD;
 
     if (method === REQUEST) {
@@ -625,7 +625,11 @@ export const generateEmailBody = ({
     options?: Options;
     recurringType?: RECURRING_TYPES;
 }) => {
-    const { eventTitle, eventDetailsText, updateEventDetailsText } = getEmailBodyTexts(vevent, oldVevent, options);
+    const { eventTitle, eventDetailsText, updateEventDetailsText } = getEmailBodyTexts(
+        withoutRedundantDtEnd(vevent),
+        oldVevent ? withoutRedundantDtEnd(oldVevent) : undefined,
+        options
+    );
     const hasUpdatedText = updateEventDetailsText && updateEventDetailsText !== '';
 
     if (method === ICAL_METHOD.REQUEST) {
