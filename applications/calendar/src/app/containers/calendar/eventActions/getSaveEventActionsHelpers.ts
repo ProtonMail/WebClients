@@ -3,7 +3,8 @@ import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/ke
 import { getSupportedStringValue } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
-import { getHasModifiedNotifications } from '@proton/shared/lib/calendar/veventHelper';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -213,6 +214,28 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
     });
 };
 
+export const getHasModifiedNotifications = (
+    newVevent: VcalVeventComponent,
+    oldVevent: Partial<VcalVeventComponent>
+) => {
+    if (newVevent.components === undefined && oldVevent.components === undefined) {
+        return false;
+    }
+    if (
+        newVevent.components?.length !== oldVevent.components?.length ||
+        newVevent.components === undefined ||
+        oldVevent.components === undefined
+    ) {
+        return true;
+    }
+
+    return !newVevent.components.every((newEventNotification) => {
+        return oldVevent.components?.some((oldEventNotification) =>
+            isDeepEqual(newEventNotification, oldEventNotification)
+        );
+    });
+};
+
 export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     const result: Partial<VcalVeventComponent> = {};
 
@@ -240,7 +263,7 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (getSupportedStringValue(newVevent.color) !== getSupportedStringValue(oldVevent.color)) {
         result.color = newVevent.color || { value: '' };
     }
-    if (getHasModifiedNotifications(newVevent, oldVevent)) {
+    if (getIsAllDay(newVevent) === getIsAllDay(oldVevent) && getHasModifiedNotifications(newVevent, oldVevent)) {
         result.components = newVevent.components;
     }
     if (getPropertyTzid(newVevent.dtstart) !== getPropertyTzid(oldVevent.dtstart)) {
@@ -333,6 +356,10 @@ export const getUpdateMainSeriesMergeVevent = ({
     }
     if (result.dtend) {
         result.dtend = getStartDateTimeMerged(result.dtend, originalVeventComponent.dtstart);
+    }
+
+    if (getIsAllDay(oldVeventComponent) !== getIsAllDay(originalVeventComponent)) {
+        delete result.components;
     }
 
     return result;
