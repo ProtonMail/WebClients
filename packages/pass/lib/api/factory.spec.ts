@@ -14,14 +14,14 @@ const { APP_VERSION_BAD } = API_CUSTOM_ERROR_CODES;
 describe('API factory', () => {
     const config = { APP_NAME: 'proton-pass', APP_VERSION: '0.0.1-test', API_URL: 'https://test.api' } as ProtonConfig;
     const refreshMock = jest.fn(() => Promise.resolve({}));
-    jest.spyOn(refresh, 'createRefreshHandler');
-    const createRefreshSpy = refresh.createRefreshHandler as unknown as jest.SpyInstance;
+    jest.spyOn(refresh, 'refreshHandlerFactory');
+    const refreshHandleFactorySpy = refresh.refreshHandlerFactory as unknown as jest.SpyInstance;
 
     const fetchMock = jest.fn<Promise<Response>, [url: string, options: any], any>(() =>
         Promise.resolve(mockAPIResponse())
     );
 
-    createRefreshSpy.mockImplementation(
+    refreshHandleFactorySpy.mockImplementation(
         ({ onRefresh }) =>
             async () =>
                 onRefresh(await refreshMock())
@@ -51,6 +51,7 @@ describe('API factory', () => {
                 online: true,
                 pendingCount: 0,
                 queued: [],
+                refreshing: false,
                 serverTime: undefined,
                 sessionInactive: false,
                 sessionLocked: false,
@@ -72,8 +73,9 @@ describe('API factory', () => {
             const call2 = api({});
             const call3 = api({});
 
-            expect(api.getState().pendingCount).toEqual(3);
+            await new Promise(process.nextTick);
 
+            expect(api.getState().pendingCount).toEqual(3);
             resolvers[0](mockAPIResponse());
             await call1;
             expect(api.getState().pendingCount).toEqual(2);
@@ -99,6 +101,8 @@ describe('API factory', () => {
             const call1 = backPressuredApi({});
             const call2 = backPressuredApi({});
             const call3 = backPressuredApi({});
+
+            await new Promise(process.nextTick);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(backPressuredApi.getState().pendingCount).toEqual(3);

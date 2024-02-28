@@ -101,13 +101,7 @@ const options: RootSagaOptions = {
              * This step ensures the proper setup of the `SESSION_LOCK_ALARM` based on
              * the current lock status and TTL */
             if (lockStatus && lockTtl) {
-                void ctx.service.auth.config.onSessionLockUpdate?.(
-                    {
-                        status: lockStatus,
-                        ttl: lockTtl,
-                    },
-                    false
-                );
+                void ctx.service.auth.config.onSessionLockUpdate?.({ status: lockStatus, ttl: lockTtl }, false);
             }
         } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
     }),
