@@ -1,3 +1,8 @@
+/** Invalidate local cache for users whose state version is older
+ * than the minimum state version specified by these constants */
+export const MIN_CACHE_VERSION = '1.10.0';
+export const MIN_CACHED_USER_STATE_VERSION = '1.14.2';
+
 export const MAX_BATCH_PER_REQUEST = 100;
 export const ALIAS_OPTIONS_MAX_AGE = 10 * 60;
 export const ALIAS_DETAILS_MAX_AGE = 30;
