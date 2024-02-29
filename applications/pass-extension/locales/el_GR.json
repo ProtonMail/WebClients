@@ -1179,6 +1179,9 @@
       "Set up a PIN code to easily lock your data": [
         "Ρυθμίστε έναν κωδικό PIN για εύκολο κλείδωμα των δεδομένων σας"
       ],
+      "Setting up offline mode...": [
+        "Ρύθμιση λειτουργίας εκτός σύνδεσης..."
+      ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Τώρα μπορείτε να χρησιμοποιήσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Μπορείτε να συμπληρώσετε αυτόματα τα διαπιστευτήριά σας κάνοντας κλικ στο ${ PASS_APP_NAME } εικονίδιο."
@@ -1458,9 +1464,6 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
-      "Default (recommended)": [
-        "Προεπιλεγμένο (προτείνεται)"
-      ],
       "Display": [
         "Προβολή"
       ],
@@ -1481,9 +1484,6 @@
       ],
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
-      ],
-      "Encrypted (recommended)": [
-        "Κρυπτογραφημένο (προτείνεται)"
       ],
       "Expiration date": [
         "Ημερομηνία λήξης"
@@ -1774,6 +1774,9 @@
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον ${ BRAND_NAME } κωδικό πρόσβασης σας"
       ]
     },
     "lobby: Title": {
@@ -2139,6 +2142,9 @@
       ],
       "Invalid email addresses.": [
         "Μη έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "item was imported without custom fields": [
+        "στοιχείο εισήχθη χωρίς προσαρμοσμένα πεδία"
       ],
       "Maximum length is ${ maxLength } character": [
         "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
