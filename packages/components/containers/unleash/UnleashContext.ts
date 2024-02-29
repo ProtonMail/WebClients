@@ -26,7 +26,6 @@ enum AccountFlag {
     ChargebeeSignups = 'ChargebeeSignups',
     ChargebeeMigration = 'ChargebeeMigration',
     ChargebeeFreeToPaid = 'ChargebeeFreeToPaid',
-    PassWindowsDownload = 'PassWindowsDownload',
 }
 
 // enum CalendarFeatureFlag {}
