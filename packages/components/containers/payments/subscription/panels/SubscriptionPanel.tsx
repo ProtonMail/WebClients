@@ -168,7 +168,7 @@ const ActionButtons = ({
     return (
         <>
             {
-                // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
+                // translator: Edit billing cycle is a button when you want to edit the billing details of your current plan, in the dashboard.
                 showEditBillingDetails ? (
                     <Button
                         onClick={handleEditPayment}
@@ -177,7 +177,7 @@ const ActionButtons = ({
                         color="weak"
                         fullWidth
                         data-testid="edit-billing-details"
-                    >{c('Action').t`Edit billing details`}</Button>
+                    >{c('Action').t`Edit billing cycle`}</Button>
                 ) : null
             }
             {showCustomizePlan ? (
