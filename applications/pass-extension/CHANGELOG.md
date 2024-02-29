@@ -1,4 +1,4 @@
-### Version 1.14.0
+### Version 1.14.1
 
 -   Preserve session when opening web-app from extension when possible
 -   Improve event polling triggers to apply back-pressure
