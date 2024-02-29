@@ -1,6 +1,14 @@
 ### Version 1.14.0
 
+-   Improve service-worker registration phase
+-   Auto-scroll when expanding sub menus
+-   Improve cross-tab syncing and caching
 -   Fix bulk item edition keyboard shortcut being triggered when text was selected
+-   Fix bulk selection conflicts with opened modals
+-   Fix TOTP counter flickering on exotic zoom levels
+-   Fix edge-case race condition when refreshing tokens
+-   Fix text alignments on item counters
+-   Fix caching issues with regards to session locking
 
 ### Version 1.13.2
 

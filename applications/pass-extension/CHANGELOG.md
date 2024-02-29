@@ -1,6 +1,15 @@
 ### Version 1.14.0
 
+-   Preserve session when opening web-app from extension when possible
+-   Improve event polling triggers to apply back-pressure
+-   Auto-scroll when expanding sub menus
+-   Fix autofill suggestions ordering with regards to last used time
 -   Fix bulk item edition keyboard shortcut being triggered when text was selected
+-   Fix bulk selection conflicts with opened modals
+-   Fix TOTP counter flickering on exotic zoom levels
+-   Fix settings not being persisted in certain edge-cases
+-   Fix edge-case race condition when refreshing tokens
+-   Fix text alignments on item counters
 
 ### Version 1.13.2
 
