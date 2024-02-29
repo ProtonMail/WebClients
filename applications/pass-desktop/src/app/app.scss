@@ -5,6 +5,7 @@ $header-height: 52;
 
 .app-root {
 	background-color: var(--background-norm);
+	transform: translate3d(0, 0, 0);
 }
 
 :not(input, textarea),

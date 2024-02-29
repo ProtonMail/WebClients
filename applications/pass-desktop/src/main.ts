@@ -99,6 +99,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         show: false,
         width: 960,
         height: 640,
+        opacity: 1,
         webPreferences: {
             session: session,
             sandbox: true,
