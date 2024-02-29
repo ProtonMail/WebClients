@@ -2149,13 +2149,13 @@
         "Não foi possível resolver as opções de alias."
       ],
       "Aliases could not be loaded": [
-        "Não foi possível carregar os alias"
+        "Não foi possível carregar os aliases"
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
       ],
       "An error occurred while saving your alias": [
-        "Ocorreu um erro ao salvar os seus alias"
+        "Ocorreu um erro ao salvar o seu alias"
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -2284,7 +2284,7 @@
         "Assinatura ausente"
       ],
       "Name is required": [
-        "Nome é necessário"
+        "Nome é obrigatório"
       ],
       "No calendars found to import": [
         "Nenhum calendário encontrado para importação"
@@ -3792,7 +3792,7 @@
         "Importar Caixa de Entrada"
       ],
       "Important note": [
-        "Observação importante"
+        "Nota importante"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
@@ -6255,10 +6255,10 @@
         "${ appName1 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "Premium de ${ appName1 } e ${ appName2 }"
+        "${ appName1 } e ${ appName2 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
-        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -6419,7 +6419,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "armazenamento de ${ app }"
+        "armazenamento do ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
