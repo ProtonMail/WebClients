@@ -1,4 +1,4 @@
-### Version 1.14.0
+### Version 1.14.1
 
 -   Improve service-worker registration phase
 -   Auto-scroll when expanding sub menus
