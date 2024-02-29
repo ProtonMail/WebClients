@@ -5147,6 +5147,9 @@
       ],
       "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
         "${ MAIL_APP_NAME } in der ${ webAppMessage } öffnen"
+      ],
+      "Your desktop app free trial has ended": [
+        "Deine kostenlose Testversion der Desktop-App ist beendet."
       ]
     },
     "Frequency of news": {
@@ -5320,6 +5323,9 @@
       ],
       "Protection": [
         "Schutz"
+      ],
+      "Select your deal": [
+        "Wähle dein Angebot"
       ],
       "Select your pricing plan": [
         "Wähle dein Abonnement"
@@ -10230,6 +10236,9 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
+      "Group management (coming soon)": [
+        "Gruppenverwaltung (demnächst verfügbar)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -10368,6 +10377,9 @@
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
       ],
+      "Unlimited vaults": [
+        "Unbegrenzte Tresore"
+      ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
       ],
@@ -10420,6 +10432,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -10445,6 +10468,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Fortschrittlicher Schutz für Teams, der über die Branchenstandards hinausgeht."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
       ],
@@ -10456,6 +10482,9 @@
       ],
       "Early access to new apps and features": [
         "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Unverzichtbarer Schutz und sichere Zusammenarbeit für unbegrenzte Benutzer."
       ],
       "For next-level password management and identity protection.": [
         "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
@@ -10513,17 +10542,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10672,6 +10690,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Wie ein Ordner ist auch ein Tresor eine praktische Möglichkeit, deine Einträge zu organisieren."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Trenne deine Unternehmensressourcen vom öffentlichen Internet und mache sie nur über deine privaten Gateways zugänglich."
@@ -12870,7 +12891,7 @@
         "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "Try out ${ app } to its full potential": [
         "Probiere ${ app } in vollem Umfang aus"
@@ -14911,6 +14932,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Das Abonnement erneuert sich automatisch jeden Monat. Dein nächstes Abrechnungsdatum ist in einem Monat."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Dein Abonnement wird in ${ cycle } Monat automatisch verlängert.",
+        "Dein Abonnement wird in ${ cycle } Monaten automatisch verlängert."
       ]
     },
     "vpn_2step: billing": {

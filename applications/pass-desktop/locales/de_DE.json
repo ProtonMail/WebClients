@@ -570,6 +570,9 @@
       "Moving item failed": [
         "Fehler beim Verschieben des Eintrags."
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Der Offlinemodus ist derzeit nicht für den Zwei-Passwort-Modus verfügbar."
+      ],
       "Passphrase is incorrect": [
         "Passphrase ist falsch"
       ],
@@ -641,6 +644,9 @@
       ],
       "Vault name does not match": [
         "Tresorname stimmt nicht überein"
+      ],
+      "Wrong password": [
+        "Falsches Passwort"
       ],
       "Wrong PIN code. Try again.": [
         "Falscher PIN-Code. Versuche es erneut."
@@ -1020,9 +1026,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Bitte upgrade, um frühen Zugang zur ${ PASS_APP_NAME } Web-App zu erhalten."
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "Bitte upgrade dein Abonnement, um Offline-Unterstützung zu aktivieren."
-      ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
@@ -1305,9 +1308,6 @@
       "Created": [
         "Erstellt"
       ],
-      "Default (recommended)": [
-        "Standard (Empfohlen)"
-      ],
       "Display": [
         "Darstellung"
       ],
@@ -1319,9 +1319,6 @@
       ],
       "Enable offline access": [
         "Offline-Zugriff aktivieren"
-      ],
-      "Encrypted (recommended)": [
-        "Verschlüsselt (empfohlen)"
       ],
       "Expiration date": [
         "Ablaufdatum"
@@ -1472,6 +1469,9 @@
       ],
       "Password history": [
         "Passwortverlauf"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-verschlüsselte JSON (empfohlen)"
       ],
       "PIN": [
         "PIN"
@@ -1925,6 +1925,9 @@
       "Empty note": [
         "Leere Notiz"
       ],
+      "Encryption password is required": [
+        "Verschlüsselungspasswort erforderlich"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."
       ],
@@ -1933,6 +1936,9 @@
       ],
       "Invalid email addresses.": [
         "Ungültige E-Mail-Adressen."
+      ],
+      "item was imported without custom fields": [
+        "Eintrag wurde ohne benutzerdefinierte Felder importiert"
       ],
       "Maximum length is ${ maxLength } character": [
         "Die maximale Länge beträgt ${ maxLength } Zeichen.",
@@ -1958,6 +1964,9 @@
       ],
       "No results": [
         "Keine Ergebnisse"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
