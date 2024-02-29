@@ -1,3 +1,5 @@
+import type {
+    ForwardRefRenderFunction} from 'react';
 import {
     Children,
     type FC,
@@ -5,6 +7,7 @@ import {
     type ReactElement,
     type ReactNode,
     cloneElement,
+    forwardRef,
     isValidElement,
 } from 'react';
 
@@ -80,6 +83,8 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     danger = false,
     labelHCustom = '1.25rem',
 }) => {
+    const strLabel = typeof label === 'string';
+
     return (
         <div
             className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom"
@@ -91,14 +96,8 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
                 ) : (
                     icon
                 )}
-                <div
-                    className={clsx(
-                        'flex flex-nowrap flex-auto gap-1',
-                        ellipsis && 'text-ellipsis',
-                        danger && 'color-danger'
-                    )}
-                >
-                    {label}
+                <div className={clsx('flex flex-nowrap flex-auto gap-1', danger && 'color-danger')}>
+                    {strLabel ? <span className={clsx(ellipsis && 'text-ellipsis')}>{label}</span> : label}
                 </div>
             </div>
             {extra}
@@ -115,27 +114,30 @@ interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownM
     size?: 'small' | 'medium';
 }
 
-export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
-    children,
-    className,
-    parentClassName,
-    isSelected,
-    quickActions,
-    size = 'medium',
-    icon,
-    danger,
-    label,
-    labelClassname,
-    labelHCustom,
-    extra,
-    ellipsis = true,
-    style,
-    ...rest
-}) => {
+const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, DropdownMenuButtonProps> = (
+    {
+        children,
+        className,
+        parentClassName,
+        isSelected,
+        quickActions,
+        size = 'medium',
+        icon,
+        danger,
+        label,
+        labelClassname,
+        labelHCustom,
+        extra,
+        ellipsis = true,
+        style,
+        ...rest
+    },
+    ref
+) => {
     const extraPadding = quickActions !== undefined ? 'pr-3' : '';
 
     return (
-        <div className={clsx('relative shrink-0', parentClassName)} style={style}>
+        <div className={clsx('relative shrink-0', parentClassName)} style={style} ref={ref}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only
@@ -168,3 +170,5 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
         </div>
     );
 };
+
+export const DropdownMenuButton = forwardRef(DropdownMenuButtonRender);
