@@ -1023,9 +1023,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "Faça upgrade do seu plano para ativar o modo off-line."
-      ],
       "Press Enter to copy": [
         "Pressione Enter para copiar"
       ],
@@ -1311,9 +1308,6 @@
       "Created": [
         "Criado"
       ],
-      "Default (recommended)": [
-        "Padrão (recomendado)"
-      ],
       "Display": [
         "Exibição"
       ],
@@ -1325,9 +1319,6 @@
       ],
       "Enable offline access": [
         "Ativar acesso off-line"
-      ],
-      "Encrypted (recommended)": [
-        "Criptografado (recomendado)"
       ],
       "Expiration date": [
         "Data de expiração"
@@ -1478,6 +1469,9 @@
       ],
       "Password history": [
         "Histórico de senhas"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON criptografado con PGP (recomendado)"
       ],
       "PIN": [
         "Código PIN"
@@ -1917,7 +1911,7 @@
         "Ocorreu um erro ao exportar seus dados"
       ],
       "At least one email address is required": [
-        "É necessário pelo menos um endereço de e-mail"
+        "É obrigatório pelo menos um endereço de e-mail"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Não é possível recuperar caixas de correio para este alias no momento"

@@ -1023,9 +1023,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "Vennligst oppgrader planen din for å aktivere støtte for frakoblet tilgang."
-      ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
       ],
@@ -1311,9 +1308,6 @@
       "Created": [
         "Opprettet"
       ],
-      "Default (recommended)": [
-        "Standard (anbefalt)"
-      ],
       "Display": [
         "Vis"
       ],
@@ -1325,9 +1319,6 @@
       ],
       "Enable offline access": [
         "Aktiver frakoblet tilgang"
-      ],
-      "Encrypted (recommended)": [
-        "Kryptert (anbefalt)"
       ],
       "Expiration date": [
         "Utløpsdato"
@@ -1478,6 +1469,9 @@
       ],
       "Password history": [
         "Passordhistorikk"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-kryptert JSON (anbefalt)"
       ],
       "PIN": [
         "PIN"
@@ -1945,6 +1939,9 @@
       ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
+      ],
+      "item was imported without custom fields": [
+        "elementet ble importert uten egendefinerte felt"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",
