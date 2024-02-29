@@ -4,7 +4,12 @@ import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
+import {
+    isElectronApp,
+    isElectronOnLinux,
+    isElectronOnMac,
+    isElectronOnWindows,
+} from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -176,7 +181,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {isElectronOnWindows && (
+                {(isElectronOnWindows || isElectronOnLinux) && (
                     <div className="flex flex-nowrap gap-4 items-center justify-between my-3 px-3">
                         {primary && <div className="shrink-0 flex-1 hidden md:block">{primary}</div>}
                         <div className="shrink-0">{appsDropdown}</div>
@@ -189,9 +194,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary && !isElectronOnMac && !isElectronOnWindows ? (
-                    <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div>
-                ) : null}
+                {primary && !isElectronApp ? <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(
