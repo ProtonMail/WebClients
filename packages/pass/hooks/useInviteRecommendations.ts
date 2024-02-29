@@ -59,7 +59,7 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
     }, []);
 
     useEffect(() => {
-        if (didLoad) {
+        if (didLoad.current) {
             if (emptyBoundary.current && startsWith.startsWith(emptyBoundary.current)) return;
             recommendations.revalidate({ pageSize, shareId, since: null, startsWith }, requestId);
             setState((prev) => ({ ...prev, since: null }));
