@@ -730,6 +730,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
       ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } φορά",
         "${ revisionNumber } φορές"
@@ -996,6 +999,9 @@
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
@@ -1016,9 +1022,6 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
-      ],
-      "Please upgrade your plan to enable offline support.": [
-        "Αναβαθμίστε το πλάνο σας για να ενεργοποιήσετε την υποστήριξη εκτός σύνδεσης."
       ],
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
@@ -1064,6 +1067,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Ρυθμίστε έναν κωδικό PIN για εύκολο κλείδωμα των δεδομένων σας"
+      ],
+      "Setting up offline mode...": [
+        "Ρύθμιση λειτουργίας εκτός σύνδεσης..."
       ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
@@ -1161,6 +1167,9 @@
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Τώρα μπορείτε να χρησιμοποιήσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
@@ -1299,9 +1308,6 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
-      "Default (recommended)": [
-        "Προεπιλεγμένο (προτείνεται)"
-      ],
       "Display": [
         "Προβολή"
       ],
@@ -1313,9 +1319,6 @@
       ],
       "Enable offline access": [
         "Ενεργοποίηση πρόσβασης εκτός σύνδεσης"
-      ],
-      "Encrypted (recommended)": [
-        "Κρυπτογραφημένο (προτείνεται)"
       ],
       "Expiration date": [
         "Ημερομηνία λήξης"
@@ -1600,6 +1603,9 @@
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον ${ BRAND_NAME } κωδικό πρόσβασης σας"
       ]
     },
     "lobby: Title": {
@@ -1930,6 +1936,9 @@
       ],
       "Invalid email addresses.": [
         "Μη έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "item was imported without custom fields": [
+        "στοιχείο εισήχθη χωρίς προσαρμοσμένα πεδία"
       ],
       "Maximum length is ${ maxLength } character": [
         "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
