@@ -1,3 +1,5 @@
+import type {
+    ForwardRefRenderFunction} from 'react';
 import {
     Children,
     type FC,
@@ -5,6 +7,7 @@ import {
     type ReactElement,
     type ReactNode,
     cloneElement,
+    forwardRef,
     isValidElement,
 } from 'react';
 
@@ -111,27 +114,30 @@ interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownM
     size?: 'small' | 'medium';
 }
 
-export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
-    children,
-    className,
-    parentClassName,
-    isSelected,
-    quickActions,
-    size = 'medium',
-    icon,
-    danger,
-    label,
-    labelClassname,
-    labelHCustom,
-    extra,
-    ellipsis = true,
-    style,
-    ...rest
-}) => {
+const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, DropdownMenuButtonProps> = (
+    {
+        children,
+        className,
+        parentClassName,
+        isSelected,
+        quickActions,
+        size = 'medium',
+        icon,
+        danger,
+        label,
+        labelClassname,
+        labelHCustom,
+        extra,
+        ellipsis = true,
+        style,
+        ...rest
+    },
+    ref
+) => {
     const extraPadding = quickActions !== undefined ? 'pr-3' : '';
 
     return (
-        <div className={clsx('relative shrink-0', parentClassName)} style={style}>
+        <div className={clsx('relative shrink-0', parentClassName)} style={style} ref={ref}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only
@@ -164,3 +170,5 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
         </div>
     );
 };
+
+export const DropdownMenuButton = forwardRef(DropdownMenuButtonRender);
