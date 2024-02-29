@@ -5633,7 +5633,7 @@
         "Besked afsendt."
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
-        "Besked vil blive sendt i morgen kl. ${ formattedTime }"
+        "Denne besked vil blive sendt om morgenen kl. ${ formattedTime }."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
@@ -5642,7 +5642,7 @@
         "Besked vil blive sendt i dag kl. ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        "Besked vil blive sendt i morgen kl. ${ formattedTime }"
+        "Denne besked bliver sendt i morgen kl. ${ formattedTime }."
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Beskeder der har været i papirkurven og spam i mere end 30 dage vil blive slettet automatisk."
@@ -6058,7 +6058,7 @@
         "Denne besked flyttes til Kladder, så du kan redigere den. Du skal igen planlægge, hvornår den skal sendes."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Denne besked vil blive sendt i morgen kl. ${ formattedTime }"
+        "Denne besked vil blive sendt om morgenen kl. ${ formattedTime }."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Denne besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
@@ -6070,7 +6070,7 @@
         "Denne besked vil blive sendt i dag kl. ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        "Denne besked vil blive sendt i morgen kl. ${ formattedTime }"
+        "Denne besked bliver sendt i morgen kl. ${ formattedTime }."
       ],
       "This message will expire ${ formattedDate }": [
         "Denne besked udløber ${ formattedDate }"
@@ -8260,6 +8260,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
       ],
+      "Used on amazon for shopping, etc.": [
+        "Bruges på Amazon til shopping osv."
+      ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
       ]
@@ -8819,6 +8822,9 @@
       ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Start nemt ${ MAIL_APP_NAME } direkte fra dit skrivebord."
+      ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Opret hide-my-email-aliasser og hold styr på dem her."
       ],
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
@@ -9583,6 +9589,9 @@
       ],
       "Get advanced protection": [
         "Få avanceret beskyttelse"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Hent ${ appName[APP_NAME] } apps"
       ],
       "Groups": [
         "Grupper"

@@ -3342,13 +3342,13 @@
         "Não foi possível resolver as opções de alias."
       ],
       "Aliases could not be loaded": [
-        "Não foi possível carregar os alias"
+        "Não foi possível carregar os aliases"
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
       ],
       "An error occurred while saving your alias": [
-        "Ocorreu um erro ao salvar os seus alias"
+        "Ocorreu um erro ao salvar o seu alias"
       ],
       "Attachments are limited to 25 MB": [
         "Os anexos estão limitados a 25 MB"
@@ -3520,7 +3520,7 @@
         "Assinatura ausente"
       ],
       "Name is required": [
-        "Nome é necessário"
+        "Nome é obrigatório"
       ],
       "Network error: Please check your connection and try again.": [
         "Erro de conexão: Verifique sua conexão com a internet e tente novamente."
@@ -4985,11 +4985,11 @@
         "As mensagens ${ elementsCount } serão rotuladas como:"
       ],
       "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } mensagens será marcada como lida.",
+        "${ elementsCount } mensagem será marcada como lida.",
         "${ elementsCount } mensagens serão marcadas como lidas."
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } mensagens será marcada como não lida.",
+        "${ elementsCount } mensagem será marcada como não lida.",
         "${ elementsCount } mensagens serão marcadas como não lidas."
       ],
       "${ elementsCount } message will be moved": [
@@ -5198,7 +5198,7 @@
         "Tem certeza que deseja mover todas as mensagens desse local para o arquivo?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Tem certeza que deseja mover todas as mensagens desse local para à lixeira?"
+        "Tem certeza que deseja mover todas as mensagens desse local para a lixeira?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } conversa?",
@@ -5528,7 +5528,7 @@
         "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Important note": [
-        "Observação importante"
+        "Nota importante"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
@@ -6094,7 +6094,7 @@
         "A chave pública deste remetente não é confiável."
       ],
       "to ${ destinationElement } folder.": [
-        "para ${ destinationElement } pasta."
+        "para a pasta ${ destinationElement }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -7535,7 +7535,7 @@
         "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensal ${ onDayString }, ${ timesString }"
+        "Mensalmente ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
@@ -8682,10 +8682,10 @@
         "${ appName1 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "Premium de ${ appName1 } e ${ appName2 }"
+        "${ appName1 } e ${ appName2 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
-        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -8904,7 +8904,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "armazenamento de ${ app }"
+        "armazenamento do ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
