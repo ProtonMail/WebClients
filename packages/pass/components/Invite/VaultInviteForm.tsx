@@ -77,7 +77,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
     const getVaultHeader = (customizable: boolean = false) => (
         <div
             className={clsx(
-                'flex justify-space-between items-center flex-nowrap mb-6 gap-3',
+                'flex justify-space-between items-center flex-nowrap mt-3 mb-6 gap-3',
                 customizable && 'border rounded-xl p-3'
             )}
         >
@@ -160,8 +160,8 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                 <div className="anime-fade-in">
                     {getVaultHeader()}
                     <h2 className="text-xl text-bold mb-2">{c('Title').t`Set access level`}</h2>
-                    <div className="w-full flex items-end justify-between gap-3 mb-3 text-lg">
-                        <div className="flex-1">
+                    <div className="w-full flex flex-nowrap items-center justify-between gap-3 mb-3 text-lg">
+                        <div className="flex-auto shrink-0">
                             <button
                                 className="text-break-all text-left color-weak text-semibold"
                                 onClick={() => form.setFieldValue('step', 'members')}
