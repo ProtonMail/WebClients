@@ -5332,6 +5332,12 @@
       "Protection": [
         "Protección"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Ahorra mucho con las mejores ofertas en ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Elige tu oferta"
+      ],
       "Select your pricing plan": [
         "Selecciona el precio del plan"
       ],
@@ -10133,6 +10139,9 @@
       "1 user": [
         "1 usuario"
       ],
+      "24/7 account management support": [
+        "Soporte de administración de cuenta 24/7"
+      ],
       "24/7 support": [
         "Soporte 24/7"
       ],
@@ -10144,6 +10153,9 @@
       ],
       "Admin console": [
         "Consola de administración"
+      ],
+      "Administration Panel": [
+        "Panel de administración"
       ],
       "Advanced network security": [
         "Seguridad de red avanzada"
@@ -10246,6 +10258,9 @@
       ],
       "GDPR data processing agreement": [
         "Acuerdo para el tratamiento de datos conforme al RGPD"
+      ],
+      "Group management (coming soon)": [
+        "Administración de grupos (muy pronto)"
       ],
       "Hide-my-email aliases": [
         "Alias de Hide-my-email"
@@ -10385,6 +10400,12 @@
       "Unlimited shared vaults with access permissions": [
         "Cajas fuertes compartidas ilimitadas con permisos de acceso"
       ],
+      "Unlimited vault sharing": [
+        "Intercambios ilimitados de cajas fuertes"
+      ],
+      "Unlimited vaults": [
+        "Un número ilimitado de cajas fuertes"
+      ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
       ],
@@ -10437,6 +10458,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ trialPlanName } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10462,6 +10494,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Gestión de acceso y seguridad de red avanzada con puertas de enlace seguras dedicadas"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Protección avanzada para equipos que va más allá del estándar de la industria."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium"
       ],
@@ -10473,6 +10508,9 @@
       ],
       "Early access to new apps and features": [
         "Acceso anticipado a funciones y aplicaciones nuevas"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Protección esencial y colaboración segura para usuarios ilimitados."
       ],
       "For next-level password management and identity protection.": [
         "Para una gestión de contraseñas e identidad del más alto nivel."
@@ -10530,17 +10568,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ trialPlanName } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10689,6 +10716,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Como una carpeta, una caja fuerte es una manera conveniente de organizar tus elementos."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloquea los recursos de su empresa del internet público y hazlos accesibles solo con tus puertas de enlace privadas."
