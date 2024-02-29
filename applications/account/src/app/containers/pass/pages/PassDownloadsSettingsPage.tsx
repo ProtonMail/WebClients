@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink } from '@proton/components/components';
-import { SettingsParagraph, SettingsSectionWide, useFlag } from '@proton/components/containers';
+import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
 import { usePlans, useUser } from '@proton/components/hooks';
 import { PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { getDownloadablePassClients } from '@proton/shared/lib/pass/constants';
+import { clients } from '@proton/shared/lib/pass/constants';
 import clsx from '@proton/utils/clsx';
 
 const UpgradeBanner = ({ className }: { className?: string }) => {
@@ -38,10 +38,6 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
 };
 
 const PassDownloadsSettingsPage = () => {
-    const passWindowsDownloadEnabled = useFlag('PassWindowsDownload');
-
-    const clients = getDownloadablePassClients({ includeWindows: passWindowsDownloadEnabled });
-
     return (
         <SettingsSectionWide>
             <UpgradeBanner className="mb-6" />
