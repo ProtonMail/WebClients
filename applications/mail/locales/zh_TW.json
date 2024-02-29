@@ -1048,6 +1048,9 @@
       "Toggle Contact app": [
         "切換聯絡人應用程式"
       ],
+      "Toggle security center app": [
+        "切換安全中心應用程式"
+      ],
       "Toggle settings": [
         "切換設定"
       ],
@@ -3033,6 +3036,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } 設定。"
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "雙重驗證可以增加一層安全保障，防止盜用。"
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "自動清除垃圾桶與垃圾郵件中超過30天的訊息。您升級後便可享受這個與其他好處。"
       ],
@@ -3069,6 +3075,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "設定資料救援手段以防資料丟失"
+      ],
       "Set a recovery method to prevent losing access to your account.": [
         "設定救援方法可以避免您再也無法存取您的帳戶。"
       ],
@@ -3089,6 +3098,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "升級時解鎖無限資料夾、標籤與更多進階功能。"
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "升級您的帳號以啟動 ${ PROTON_SENTINEL_NAME }，我們最新的 AI 安全方案，包含24小時的專家支援服務。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
@@ -8059,6 +8071,9 @@
       ],
       "Create an alias": [
         "建立一個別名"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "隨時生成信箱別名，輕鬆管理別名與密碼。"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"

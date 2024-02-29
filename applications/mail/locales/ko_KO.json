@@ -320,7 +320,7 @@
         "선택 해제"
       ],
       "Deselect all messages": [
-        "모든 메세지 선택 해제"
+        "모든 메시지 선택 해제"
       ],
       "Details": [
         "세부사항"
@@ -647,10 +647,10 @@
         "이 라벨의 모든 대화 이동"
       ],
       "Move all messages from this folder": [
-        "이 폴더의 모든 메세지 이동"
+        "이 폴더의 모든 메시지 이동"
       ],
       "Move all messages from this label": [
-        "이 라벨의 모든 메세지 이동"
+        "이 라벨의 모든 메시지 이동"
       ],
       "Move all to archive": [
         "모든 항목을 보관함으로 이동"
@@ -692,7 +692,7 @@
         "절대 보여주지 않기"
       ],
       "New message": [
-        "새 메세지"
+        "새 메시지"
       ],
       "Next": [
         "다음"
@@ -701,7 +701,7 @@
         "다음 대화"
       ],
       "Next message": [
-        "다음 메세지"
+        "다음 메시지"
       ],
       "Next month": [
         "다음 달"
@@ -764,7 +764,7 @@
         "이전 대화"
       ],
       "Previous message": [
-        "이전 메세지"
+        "이전 메시지"
       ],
       "Previous month": [
         "지난 달"
@@ -902,7 +902,7 @@
         "모두 선택"
       ],
       "Select all messages": [
-        "모든 메세지 선택"
+        "모든 메시지 선택"
       ],
       "Select country": [
         "국가 선택"
@@ -938,7 +938,7 @@
         "설정"
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
-        "${ MAIL_APP_NAME }을 기본 이메일 애플리케이션으로 설정하기"
+        "${ MAIL_APP_NAME }을 기본 이메일 애플리케이션으로 설정"
       ],
       "Set as default": [
         "기본으로 설정"
@@ -1245,7 +1245,7 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } 개 사용자 지정 이메일 도메인"
+        "사용자 지정 이메일 도메인 ${ domains }개"
       ],
       "${ ips } server": [
         "${ ips }개 서버"
@@ -1358,7 +1358,7 @@
     },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
-        "${ storageSize } 저장공간"
+        "저장공간 ${ storageSize }"
       ],
       "1 user": [
         "사용자 1명"
@@ -4055,7 +4055,7 @@
     },
     "familyOffer_2023:Deal details": {
       "Up to 6 users": [
-        "최대 6명 사용자"
+        "최대 6명의 사용자"
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -4871,7 +4871,7 @@
     },
     "Info": {
       "${ addressCount } email address": [
-        "${ addressCount } 이메일 주소"
+        "이메일 주소 ${ addressCount }개"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -4997,7 +4997,7 @@
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
       "${ total } conversation": [
-        "${ total } 대화"
+        "${ total }개의 대화"
       ],
       "${ total } message": [
         "${ total } 메시지"
@@ -5390,7 +5390,7 @@
         "hide-my-email 별칭 동작 원리"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "${ MAIL_APP_NAME }을 사용하고 있지 않는 유저에게 이 메세지를 보내고 있습니다."
+        "${ MAIL_APP_NAME }을 사용하고 있지 않는 유저에게 이 메시지를 보내고 있습니다."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -5423,7 +5423,7 @@
         "메일함 불러오기"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME } 으로 불러오세요."
+        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME }으로 불러오세요."
       ],
       "Important note": [
         "중요 사항"
@@ -5753,7 +5753,7 @@
         "표시할 메일이 없는 거 같습니다"
       ],
       "Select a service provider to start": [
-        "시작하려면 서비스 제공자를 선택하십시오"
+        "서비스 제공자를 선택해 시작하기"
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location }(에)서 모두 ${ elementsCount } 선택"
@@ -5783,7 +5783,7 @@
         "@pm.me 주소에서 메시지를 보내는 것은 유료 기능입니다. 귀하의 메시지는 기본 주소에서 발송됩니다 ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 로 안전하게 전송되었습니다."
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 안전하게 전송되었습니다."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
@@ -5798,7 +5798,7 @@
         "PGP를 설정하면 PGP 호환 서비스를 사용하는 비 ${ BRAND_NAME } 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
       ],
       "Show original message": [
-        "처음 메세지 보기"
+        "처음 메시지 보기"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin은 ${ BRAND_NAME } 의 서비스로써, 고객님의 ${ BRAND_NAME_TWO } 계정에 '나의 이메일 숨기기 (Hide-my-email)'가 포함되어 있습니다. 이메일을 가리려면 SimpleLogin으로 이동하여 첫번째 별칭을 생성하세요."
@@ -5864,7 +5864,7 @@
         "전달/답장하려고 하는 원본 메시지가 전송 중입니다. 계속하면, 더 이상 원본 메시지의 전송을 취소할 수 없습니다."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        "원전송자의 메세지가 더 이상 유효하지 않습니다. 사용자의 메시지가 곧 일반 ${ defaultEmail } 로 전송됩니다."
+        "원전송자의 메시지가 더 이상 유효하지 않습니다. 사용자의 메시지가 곧 일반 ${ defaultEmail } 로 전송됩니다."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
@@ -6511,7 +6511,7 @@
         "모든 이메일 보기"
       ],
       "Show original message": [
-        "처음 메세지 보기"
+        "처음 메시지 보기"
       ],
       "Show unread emails": [
         "읽지 않은 이메일 보기"
@@ -7542,7 +7542,7 @@
     },
     "new_plans: feature": {
       "${ n } calendar": [
-        "${ n } 캘린더"
+        "캘린더 ${ n }개"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
@@ -9564,7 +9564,7 @@
         "이전 대화"
       ],
       "Previous message": [
-        "이전 메세지"
+        "이전 메시지"
       ],
       "Protect yourself from trackers": [
         "트래커로부터 자신을 보호하기"
