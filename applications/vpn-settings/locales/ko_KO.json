@@ -586,7 +586,7 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } 개 사용자 지정 이메일 도메인"
+        "사용자 지정 이메일 도메인 ${ domains }개"
       ],
       "${ ips } server": [
         "${ ips }개 서버"
@@ -706,7 +706,7 @@
     },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
-        "${ storageSize } 저장공간"
+        "저장공간 ${ storageSize }"
       ],
       "1 user": [
         "사용자 1명"
@@ -836,7 +836,7 @@
         "${ n }개월"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "${ renewalLength }동안 ${ renewPrice }(으)로 갱신됩니다."
+        "${ renewalLength } 이후에 ${ renewPrice }로 자동 갱신됨"
       ]
     },
     "Billing cycle option": {
@@ -2080,10 +2080,10 @@
         "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
       "Please upload an xml file": [
-        "xml 파일을 업로드 하세요."
+        "xml 파일을 업로드하세요"
       ],
       "Please upload only 1 file": [
-        "하나의 파일만 업로드 하세요."
+        "하나의 파일만 업로드하세요"
       ],
       "Process aborted": [
         "과정 중단됨"
@@ -2149,7 +2149,7 @@
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "잘못된 복구 문구. 다시 시도하거나 다른 복구 방법을 사용하세요."
+        "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "현재 요금제에서 가능한 모든 주소를 사용했습니다. 새 주소를 추가하려면 요금제를 업그레이드해 주세요."
@@ -2258,7 +2258,7 @@
     },
     "familyOffer_2023:Deal details": {
       "Up to 6 users": [
-        "최대 6명 사용자"
+        "최대 6명의 사용자"
       ]
     },
     "familyOffer_2023:Error": {
@@ -2707,6 +2707,12 @@
       "Name": [
         "이름"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "할인된 가격으로 ${ VPN_APP_NAME } 사용하기"
+      ],
+      "Select your deal": [
+        "할인 선택하기"
+      ],
       "Select your pricing plan": [
         "요금제를 선택하세요"
       ],
@@ -2797,7 +2803,7 @@
         "${ remainingAddresses.length } 더 많은 주소들"
       ],
       "${ storage } storage": [
-        "${ storage } 저장공간"
+        "저장공간 ${ storage }"
       ],
       "${ userFound } user found": [
         "${ userFound }명 사용자 찾음"
@@ -3748,7 +3754,7 @@
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
       "Upload your completed CSV file to create accounts": [
-        "계정을 생성하려면 완료된 CSV 파일을 업로드 하세요."
+        "계정을 생성하려면 완료된 CSV 파일을 업로드해주세요"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
@@ -4131,7 +4137,7 @@
         "${ nbDay }일"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } 중 ${ UsedAddresses } 이메일 주소"
+        "이메일 주소 ${ MaxAddresses }개 중 ${ UsedAddresses }개 사용 중"
       ],
       "Account storage": [
         "계정 저장공간"
@@ -4158,7 +4164,7 @@
         "허용된 도메인"
       ],
       "Amount": [
-        "양"
+        "금액"
       ],
       "Amount due": [
         "지불할 금액"
@@ -4458,7 +4464,7 @@
         "복구 전화번호"
       ],
       "Recovery phrase": [
-        "복구 문구"
+        "복구 키"
       ],
       "Reply (ACS) URL": [
         "Reply (ACS) URL"
@@ -4846,16 +4852,16 @@
     },
     "new_plans: feature": {
       "${ n } calendar": [
-        "${ n } 캘린더"
+        "캘린더 ${ n }개"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
       ],
       "${ n } custom email domain": [
-        "${ n }개 사용자 지정 이메일 도메인"
+        "사용자 지정 이메일 도메인 ${ n }개"
       ],
       "${ n } email address": [
-        "${ n } 이메일 주소"
+        "이메일 주소 ${ n }개"
       ],
       "${ n } email address per user": [
         "사용자 당 ${ n }개 이메일 주소"
@@ -4905,6 +4911,9 @@
       "1 user": [
         "사용자 1명"
       ],
+      "24/7 account management support": [
+        "24/7 계정 관리 지원"
+      ],
       "24/7 support": [
         "24/7 지원"
       ],
@@ -4916,6 +4925,9 @@
       ],
       "Admin console": [
         "관리자 콘솔"
+      ],
+      "Administration Panel": [
+        "관리 패널"
       ],
       "Advanced network security": [
         "향상된 네트워크 보안"
@@ -5018,6 +5030,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
+      ],
+      "Group management (coming soon)": [
+        "조직 관리 (출시 예정)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
@@ -5154,6 +5169,12 @@
       "Unlimited shared vaults with access permissions": [
         "권한 접근이 포함된 무제한 공유 가능 금고"
       ],
+      "Unlimited vault sharing": [
+        "무제한 금고 공유"
+      ],
+      "Unlimited vaults": [
+        "무제한 금고"
+      ],
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
       ],
@@ -5214,6 +5235,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "전용 보안 게이트웨이를 사용한 고급 네트워크 보안 및 접속 관리"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "업계 표준을 뛰어넘는 팀을 위한 고급 보호."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
       ],
@@ -5225,6 +5249,9 @@
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "무제한 사용자를 위한 필수 보호 및 안전한 협업."
       ],
       "For next-level password management and identity protection.": [
         "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
@@ -5404,6 +5431,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "공용 인터넷에서 회사 자원을 잠그고 개인 게이트웨이를 통해서만 접근할 수 있도록 하세요."
@@ -6773,7 +6803,7 @@
         "사용자 당 ${ n } 캘린더"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } 빠른 속도의 VPN 연결"
+        " 빠른 속도의 VPN 연결 ${ n }대"
       ],
       "${ n } high-speed VPN connection per user": [
         "사용자 당 ${ n }개 빠른 속도로 VPN 연결"
@@ -6788,13 +6818,13 @@
         "${ UsedAddresses } 주소"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } 중 ${ UsedAddresses } 이메일 주소"
+        "이메일 주소 ${ MaxAddresses }개 중 ${ UsedAddresses }개 사용 중"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } 캘린더"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ MaxDomains } 중 ${ UsedDomains } 사용자 지정 도메인"
+        "사용자 지정 도메인 ${ MaxDomains }개 중 ${ UsedDomains }개 사용 중"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ MaxMembers } 중 ${ UsedMembers } 사용자"
@@ -7172,7 +7202,7 @@
         "저장공간 할당"
       ],
       "Amount": [
-        "양"
+        "금액"
       ],
       "Amount due": [
         "지불할 금액"

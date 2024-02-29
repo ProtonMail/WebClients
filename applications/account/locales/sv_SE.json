@@ -5140,6 +5140,9 @@
       ],
       "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
         "Öppna ${ MAIL_APP_NAME } i ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Din gratis provperiod av din app för stationär dator har upphört"
       ]
     },
     "Frequency of news": {
@@ -5313,6 +5316,12 @@
       ],
       "Protection": [
         "Skydd"
+      ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Spara stort med bästa erbjudande på ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Välj ditt erbjudande"
       ],
       "Select your pricing plan": [
         "Välj ditt prispaket"
@@ -10422,6 +10431,17 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10458,6 +10478,9 @@
       ],
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Grundläggande skydd och säkert samarbete för obegränsat antal användare."
       ],
       "For next-level password management and identity protection.": [
         "För nästa nivå av lösenordshantering och identitetsskydd."
@@ -10515,17 +10538,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10674,6 +10686,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter är enkla märken som du kan lägga till i meddelanden för att göra dem lättare att hitta eller att tillämpa filter på"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Liksom en mapp är ett valv ett bekvämt sätt att organisera dina objekt"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Lås ner dina företagsresurser från det offentliga Internet och gör dem endast tillgängliga via dina privata gateways"

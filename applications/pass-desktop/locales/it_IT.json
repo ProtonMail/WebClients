@@ -570,6 +570,12 @@
       "Moving item failed": [
         "Spostamento dell'elemento non riuscito"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "L'accesso offline non è attualmente disponibile con la modalità a doppia password."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "L'accesso offline non è attualmente disponibile con la modalità a doppia password e con il tuo piano."
+      ],
       "Passphrase is incorrect": [
         "Frase d'accesso non corretta"
       ],
@@ -1023,9 +1029,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Effettua l'upgrade per avere l'accesso anticipato all'app web di ${ PASS_APP_NAME }"
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "Effettua l'upgrade per abilitare l'accesso offline."
-      ],
       "Press Enter to copy": [
         "Premi Invio per copiare"
       ],
@@ -1311,9 +1314,6 @@
       "Created": [
         "Creato"
       ],
-      "Default (recommended)": [
-        "Predefinito (consigliato)"
-      ],
       "Display": [
         "Mostra"
       ],
@@ -1325,9 +1325,6 @@
       ],
       "Enable offline access": [
         "Abilita l'accesso offline"
-      ],
-      "Encrypted (recommended)": [
-        "Crittografato (consigliato)"
       ],
       "Expiration date": [
         "Data di scadenza"
@@ -1478,6 +1475,9 @@
       ],
       "Password history": [
         "Cronologia della password"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON crittografato PGP (consigliato)"
       ],
       "PIN": [
         "Codice PIN"

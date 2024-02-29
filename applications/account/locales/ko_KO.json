@@ -1109,7 +1109,7 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } 개 사용자 지정 이메일 도메인"
+        "사용자 지정 이메일 도메인 ${ domains }개"
       ],
       "${ ips } server": [
         "${ ips }개 서버"
@@ -1330,7 +1330,7 @@
     },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
-        "${ storageSize } 저장공간"
+        "저장공간 ${ storageSize }"
       ],
       "1 user": [
         "사용자 1명"
@@ -1483,7 +1483,7 @@
         "${ n }개월"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "${ renewalLength }동안 ${ renewPrice }(으)로 갱신됩니다."
+        "${ renewalLength } 이후에 ${ renewPrice }로 자동 갱신됨"
       ]
     },
     "Billing cycle option": {
@@ -4103,7 +4103,7 @@
         "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "잘못된 복구 문구. 다시 시도하거나 다른 복구 방법을 사용하세요."
+        "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "잘못된 인증 코드입니다. 제대로 인증 코드를 복사했는지 확인하고 다시 시도해보세요. 변경할 때까지 24시간이 걸릴 수도 있습니다."
@@ -4560,7 +4560,7 @@
     },
     "familyOffer_2023:Deal details": {
       "Up to 6 users": [
-        "최대 6명 사용자"
+        "최대 6명의 사용자"
       ]
     },
     "familyOffer_2023:Error": {
@@ -5303,6 +5303,12 @@
       "Protection": [
         "보호"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "할인된 가격으로 ${ VPN_APP_NAME } 사용하기"
+      ],
+      "Select your deal": [
+        "할인 선택하기"
+      ],
       "Select your pricing plan": [
         "요금제를 선택하세요"
       ],
@@ -5734,7 +5740,7 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } 키가 업로드 되었습니다"
@@ -5847,7 +5853,7 @@
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
       "${ storage } storage": [
-        "${ storage } 저장공간"
+        "저장공간 ${ storage }"
       ],
       "${ userFound } user found": [
         "${ userFound }명 사용자 찾음"
@@ -6384,7 +6390,7 @@
         "지원시 외부 서비스의 TLS 및 SSL을 활성화 하십시오."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "문구로 복구를 다시 활성화하면 새로운 복구 문구가 생성됩니다."
+        "복구 키를 다시 활성화하면 새로운 복구 문구가 생성됩니다."
       ],
       "Encryption setting updated": [
         "암호화 설정 업데이트됨"
@@ -6582,7 +6588,7 @@
         "메일함 불러오기"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME } 으로 불러오세요."
+        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME }으로 불러오세요."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
@@ -7026,7 +7032,7 @@
         "복구 구절이 클립보드에 복사되었습니다"
       ],
       "Recovery phrase downloaded": [
-        "복구 문구 다운로드됨"
+        "복구 키 다운로드됨"
       ],
       "Recovery phrase has been disabled": [
         "복구 방법이 비활성화 되었습니다"
@@ -7089,7 +7095,7 @@
         "계정을 보호하는 중"
       ],
       "Select a service provider to start": [
-        "시작하려면 서비스 제공자를 선택하십시오"
+        "서비스 제공자를 선택해 시작하기"
       ],
       "Select what you want to import.": [
         "처리할 파일을 선택하세요."
@@ -7101,7 +7107,7 @@
         "회원들이 2FA로 계정을 보호하도록 이메일을 보내세요."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 로 안전하게 전송되었습니다."
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 안전하게 전송되었습니다."
       ],
       "Server is currently down": [
         "서버가 일시적으로 비활성화 상태에요"
@@ -7128,7 +7134,7 @@
         "설정 업데이트 완료"
       ],
       "Show original message": [
-        "처음 메세지 보기"
+        "처음 메시지 보기"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
@@ -7305,7 +7311,7 @@
         "잠정적으로 저장한 암호화 키일 수 있습니다."
       ],
       "This is the password you used before the password reset.": [
-        "비밀번호를 재설정하기 전에 사용한 비밀번호 입니다."
+        "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
@@ -7392,7 +7398,7 @@
         "암호 재설정 후 잠긴 데이터를 해독하고 보려면 복구 방법을 선택하세요."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "계정에 지속적으로 액세스하려면 계정 복구 방법을 설정하세요"
+        "계정에 지속적으로 접근하기 위해 복구 수단이 필요함"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "중요한 데이터가 손실되지 않도록 하기 위해, ${ DRIVE_APP_NAME }이(가) 사용자와 공동 작업자가 파일을 변경할 때 이전 버전의 파일을 저장합니다. ${ BRAND_NAME }이(가) 이전 버전을 얼마나 오래 유지해야 하는지 선택하세요."
@@ -7509,7 +7515,7 @@
         "사진 업로드"
       ],
       "Upload your completed CSV file to create accounts": [
-        "계정을 생성하려면 완료된 CSV 파일을 업로드 하세요."
+        "계정을 생성하려면 완료된 CSV 파일을 업로드해주세요"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "업로드된 파일이 유효하지 않은 비공개 키입니다. 인증 후 다시 시도하세요."
@@ -7863,7 +7869,7 @@
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
       "Your data recovery method is set": [
-        "데이터 복구 방법이 설정되었습니다."
+        "데이터 복구 수단 설정됨"
       ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
@@ -7905,10 +7911,10 @@
         "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
       ],
       "Your recovery phrase": [
-        "내 복구 문구"
+        "내 복구 키"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "복구 문구는 특정 순서로 된 12단어입니다."
+        "복구 키는 특정 순서로 된 12단어입니다."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
@@ -8247,7 +8253,7 @@
         "모든 이메일 보기"
       ],
       "Show original message": [
-        "처음 메세지 보기"
+        "처음 메시지 보기"
       ],
       "Show unread emails": [
         "읽지 않은 이메일 보기"
@@ -8354,7 +8360,7 @@
         "${ nbYear } 년"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } 중 ${ UsedAddresses } 이메일 주소"
+        "이메일 주소 ${ MaxAddresses }개 중 ${ UsedAddresses }개 사용 중"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
@@ -8399,13 +8405,13 @@
         "스마트폰을 통한 복구 허용"
       ],
       "Allow recovery by recovery phrase": [
-        "복구 문구를 통한 복구 허용"
+        "복구 키를 통한 복구 허용"
       ],
       "Allow recovery using a trusted device": [
         "승인된 기기를 사용한 복구 허용"
       ],
       "Amount": [
-        "양"
+        "금액"
       ],
       "Amount due": [
         "지불할 금액"
@@ -9023,7 +9029,7 @@
         "복구 전화번호"
       ],
       "Recovery phrase": [
-        "복구 문구"
+        "복구 키"
       ],
       "Repeat password": [
         "비밀번호 확인"
@@ -9211,7 +9217,7 @@
         "복구 전화번호"
       ],
       "Recovery phrase": [
-        "복구 문구"
+        "복구 키"
       ],
       "Trusted device recovery": [
         "신뢰하는 기기 복구"
@@ -9958,16 +9964,16 @@
     },
     "new_plans: feature": {
       "${ n } calendar": [
-        "${ n } 캘린더"
+        "캘린더 ${ n }개"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
       ],
       "${ n } custom email domain": [
-        "${ n }개 사용자 지정 이메일 도메인"
+        "사용자 지정 이메일 도메인 ${ n }개"
       ],
       "${ n } email address": [
-        "${ n } 이메일 주소"
+        "이메일 주소 ${ n }개"
       ],
       "${ n } email address per user": [
         "사용자 당 ${ n }개 이메일 주소"
@@ -10017,6 +10023,9 @@
       "1 user": [
         "사용자 1명"
       ],
+      "24/7 account management support": [
+        "24/7 계정 관리 지원"
+      ],
       "24/7 support": [
         "24/7 지원"
       ],
@@ -10028,6 +10037,9 @@
       ],
       "Admin console": [
         "관리자 콘솔"
+      ],
+      "Administration Panel": [
+        "관리 패널"
       ],
       "Advanced network security": [
         "향상된 네트워크 보안"
@@ -10130,6 +10142,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
+      ],
+      "Group management (coming soon)": [
+        "조직 관리 (출시 예정)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
@@ -10266,6 +10281,12 @@
       "Unlimited shared vaults with access permissions": [
         "권한 접근이 포함된 무제한 공유 가능 금고"
       ],
+      "Unlimited vault sharing": [
+        "무제한 금고 공유"
+      ],
+      "Unlimited vaults": [
+        "무제한 금고"
+      ],
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
       ],
@@ -10316,6 +10337,17 @@
         "팀 관리"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10341,6 +10373,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "전용 보안 게이트웨이를 사용한 고급 네트워크 보안 및 접속 관리"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "업계 표준을 뛰어넘는 팀을 위한 고급 보호."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
       ],
@@ -10352,6 +10387,9 @@
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "무제한 사용자를 위한 필수 보호 및 안전한 협업."
       ],
       "For next-level password management and identity protection.": [
         "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
@@ -10409,17 +10447,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -10567,6 +10594,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "공용 인터넷에서 회사 자원을 잠그고 개인 게이트웨이를 통해서만 접근할 수 있도록 하세요."
@@ -12845,7 +12875,7 @@
         "사용자 당 ${ n } 캘린더"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } 빠른 속도의 VPN 연결"
+        " 빠른 속도의 VPN 연결 ${ n }대"
       ],
       "${ n } high-speed VPN connection per user": [
         "사용자 당 ${ n }개 빠른 속도로 VPN 연결"
@@ -12860,13 +12890,13 @@
         "${ UsedAddresses } 주소"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } 중 ${ UsedAddresses } 이메일 주소"
+        "이메일 주소 ${ MaxAddresses }개 중 ${ UsedAddresses }개 사용 중"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } 캘린더"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ MaxDomains } 중 ${ UsedDomains } 사용자 지정 도메인"
+        "사용자 지정 도메인 ${ MaxDomains }개 중 ${ UsedDomains }개 사용 중"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ MaxMembers } 중 ${ UsedMembers } 사용자"
@@ -13461,7 +13491,7 @@
         "저장공간 할당"
       ],
       "Amount": [
-        "양"
+        "금액"
       ],
       "Amount due": [
         "지불할 금액"
@@ -14916,7 +14946,7 @@
         "복구 파일이 오래되었습니다. 계정을 복구할 때 데이터를 복구할 수 없습니다."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "복구 문구가 오래되었습니다. 계정을 복구할 때 데이터를 복구할 수 없습니다."
+        "복구 키가 오래되었습니다. 계정을 복구할 때 데이터를 복구할 수 없습니다."
       ]
     },
     "Warning for domain modal": {

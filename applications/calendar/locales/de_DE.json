@@ -651,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakt enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Deine kostenlose Testversion der Desktop-App endet in 2 Tagen. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Deine kostenlose Testversion der Desktop-App endet in 5 Tagen. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -5858,6 +5867,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Verwendet auf Amazon für Shopping, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Wenn du nach deiner E-Mail-Adresse gefragt wird, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
       ]
     },
     "Security Center - Action": {
@@ -6386,7 +6398,7 @@
         "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."

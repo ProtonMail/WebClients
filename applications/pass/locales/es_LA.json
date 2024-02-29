@@ -570,6 +570,9 @@
       "Moving item failed": [
         "Error al mover el elemento"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "El modo sin conexión no está disponible actualmente para el modo de dos contraseñas."
+      ],
       "Passphrase is incorrect": [
         "La frase contraseña es incorrecta"
       ],
@@ -1302,9 +1305,6 @@
       "Created": [
         "Creado"
       ],
-      "Default (recommended)": [
-        "Por defecto (recomendada)"
-      ],
       "Display": [
         "Mostrar"
       ],
@@ -1313,9 +1313,6 @@
       ],
       "Empty trash": [
         "Vaciar la papelera"
-      ],
-      "Encrypted (recommended)": [
-        "Cifrado (recomendado)"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -1463,6 +1460,9 @@
       ],
       "Password history": [
         "Historial de contraseña"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON cifrado con PGP (recomendado)"
       ],
       "PIN": [
         "Código PIN"

@@ -1293,9 +1293,6 @@
       "Created": [
         "Skapad"
       ],
-      "Default (recommended)": [
-        "Standard (rekommenderad)"
-      ],
       "Display": [
         "Visa"
       ],
@@ -1307,9 +1304,6 @@
       ],
       "Enable offline access": [
         "Aktivera åtkomst offline"
-      ],
-      "Encrypted (recommended)": [
-        "Krypterad (rekommenderad)"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -1460,6 +1454,9 @@
       ],
       "Password history": [
         "Lösenordshistorik"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-krypterad JSON (rekommenderas)"
       ],
       "PIN": [
         "PIN"
@@ -1927,6 +1924,9 @@
       ],
       "Invalid email addresses.": [
         "Ogiltiga e-postadresser."
+      ],
+      "item was imported without custom fields": [
+        "objekt importerades utan anpassade fält"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximal längd är ${ maxLength } tecken",
