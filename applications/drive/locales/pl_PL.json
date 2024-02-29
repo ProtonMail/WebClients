@@ -3490,10 +3490,10 @@
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount }",
-        "${ selectedCount }",
-        "${ selectedCount }",
-        "${ selectedCount }"
+        "${ selectedCount } zaznaczony",
+        "${ selectedCount } zaznaczone",
+        "${ selectedCount } zaznaczonych",
+        "${ selectedCount } zaznaczonych"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } zaznaczony folder",
