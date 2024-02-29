@@ -79,7 +79,7 @@ const CalendarEventDateHeader = ({
 
     if (dateStart === dateEnd) {
         return (
-            <div {...rest}>
+            <div data-testid="calendar-event-header:time-same-day" {...rest}>
                 <time dateTime={dateStartVoc}>{dateStart}</time>
                 {', '}
                 <span className="inline-block">
@@ -91,7 +91,7 @@ const CalendarEventDateHeader = ({
         );
     }
     return (
-        <div {...rest}>
+        <div data-testid="calendar-event-header:time" {...rest}>
             <time dateTime={dateStartVoc}>{dateStart}</time> <time dateTime={timeStart}>{timeStart}</time>
             <EnDash />
             <time dateTime={dateEndVoc}>{dateEnd}</time> <time dateTime={timeEnd}>{timeEnd}</time>
