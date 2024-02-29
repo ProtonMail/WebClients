@@ -563,7 +563,7 @@ const SubscriptionContainer = ({
             return true;
         }
 
-        if (isSubscriptionUnchanged(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
+        if (isSubscriptionUnchanged(subscription, copyNewModel.planIDs, copyNewModel.currency, copyNewModel.cycle)) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,
@@ -741,7 +741,7 @@ const SubscriptionContainer = ({
 
     const handleCustomizationSubmit = () => {
         const run = async () => {
-            const samePlan = isSubscriptionUnchanged(subscription, model.planIDs);
+            const samePlan = isSubscriptionUnchanged(subscription, model.planIDs, model.currency);
             if (samePlan) {
                 createNotification({ text: c('Info').t`No changes made to the current subscription`, type: 'info' });
                 return;
