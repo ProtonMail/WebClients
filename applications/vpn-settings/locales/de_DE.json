@@ -2724,6 +2724,9 @@
       "Name": [
         "Name"
       ],
+      "Select your deal": [
+        "Wähle dein Angebot"
+      ],
       "Select your pricing plan": [
         "Wähle dein Abonnement"
       ],
@@ -5080,6 +5083,9 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
+      "Group management (coming soon)": [
+        "Gruppenverwaltung (demnächst verfügbar)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -5218,6 +5224,9 @@
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
       ],
+      "Unlimited vaults": [
+        "Unbegrenzte Tresore"
+      ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
       ],
@@ -5280,6 +5289,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Fortschrittlicher Schutz für Teams, der über die Branchenstandards hinausgeht."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
       ],
@@ -5291,6 +5303,9 @@
       ],
       "Early access to new apps and features": [
         "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Unverzichtbarer Schutz und sichere Zusammenarbeit für unbegrenzte Benutzer."
       ],
       "For next-level password management and identity protection.": [
         "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
@@ -5471,6 +5486,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Wie ein Ordner ist auch ein Tresor eine praktische Möglichkeit, deine Einträge zu organisieren."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Trenne deine Unternehmensressourcen vom öffentlichen Internet und mache sie nur über deine privaten Gateways zugänglich."
@@ -6781,7 +6799,7 @@
         "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Speicherplatz frei oder ${ upgrade }"
       ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
@@ -7934,6 +7952,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Das Abonnement erneuert sich automatisch jeden Monat. Dein nächstes Abrechnungsdatum ist in einem Monat."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Dein Abonnement wird in ${ cycle } Monat automatisch verlängert.",
+        "Dein Abonnement wird in ${ cycle } Monaten automatisch verlängert."
       ]
     },
     "vpn_2step: billing": {

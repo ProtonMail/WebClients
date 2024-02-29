@@ -5322,6 +5322,9 @@
       "Early access to new apps and features": [
         "Acesso antecipado a novos aplicativos e recursos"
       ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Proteção essencial e colaboração segura para usuários ilimitados."
+      ],
       "For next-level password management and identity protection.": [
         "Para um gerenciamento de senhas e proteção de identidade de nível superior."
       ],
@@ -6626,10 +6629,10 @@
         "${ appName1 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "Premium de ${ appName1 } e ${ appName2 }"
+        "${ appName1 } e ${ appName2 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
-        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -6805,7 +6808,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "armazenamento de ${ app }"
+        "armazenamento do ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
