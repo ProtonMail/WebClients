@@ -1302,9 +1302,6 @@
       "Created": [
         "Opprettet"
       ],
-      "Default (recommended)": [
-        "Standard (anbefalt)"
-      ],
       "Display": [
         "Vis"
       ],
@@ -1313,9 +1310,6 @@
       ],
       "Empty trash": [
         "Tøm papirkurven"
-      ],
-      "Encrypted (recommended)": [
-        "Kryptert (anbefalt)"
       ],
       "Expiration date": [
         "Utløpsdato"
@@ -1463,6 +1457,9 @@
       ],
       "Password history": [
         "Passordhistorikk"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-kryptert JSON (anbefalt)"
       ],
       "PIN": [
         "PIN"
@@ -1930,6 +1927,9 @@
       ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
+      ],
+      "item was imported without custom fields": [
+        "elementet ble importert uten egendefinerte felt"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",
