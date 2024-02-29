@@ -54,7 +54,7 @@ export const VaultInviteFromItemModal: FC<Props> = ({
                     onClick={handleShareVaultClick}
                 >
                     <div className="flex justify-space-between items-center flex-nowrap max-w-full gap-4">
-                        <span className="flex shrink-0 text-no-wrap">{c('Action').t`Share this vault`}</span>
+                        <span className="text-ellipsis text-no-wrap max-w-2/3">{c('Action').t`Share this vault`}</span>
                         <VaultTag
                             title={vault.content.name}
                             color={vault.content.display.color}
@@ -71,20 +71,28 @@ export const VaultInviteFromItemModal: FC<Props> = ({
                 </Button>
 
                 {hasWritableSharedVaults && (
-                    <Button pill size="large" shape="solid" color="norm" onClick={handleMoveToSharedVaultClick}>
-                        {c('Action').t`Move to a shared vault`}
+                    <Button
+                        className="max-w-full"
+                        color="norm"
+                        onClick={handleMoveToSharedVaultClick}
+                        pill
+                        shape="solid"
+                        size="large"
+                    >
+                        <span className="text-ellipsis">{c('Action').t`Move to a shared vault`}</span>
                     </Button>
                 )}
 
                 {!vaultLimitReached && (
                     <Button
-                        pill
-                        size="large"
-                        shape="solid"
+                        className="max-w-full"
                         color={hasWritableSharedVaults ? 'weak' : 'norm'}
                         onClick={handleCreateSharedVaultClick}
+                        pill
+                        shape="solid"
+                        size="large"
                     >
-                        {c('Action').t`Create a new vault to share`}
+                        <span className="text-ellipsis">{c('Action').t`Create a new vault to share`}</span>
                     </Button>
                 )}
             </ModalTwoFooter>
