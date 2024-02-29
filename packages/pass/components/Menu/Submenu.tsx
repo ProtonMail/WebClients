@@ -39,7 +39,7 @@ export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, it
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <DropdownMenuButtonLabel label={<span className="text-ellipsis">{label}</span>} icon={icon} />
+                <DropdownMenuButtonLabel label={label} icon={icon} />
             </CollapsibleHeader>
             <CollapsibleContent as="ul" className={clsx(contentClassname, 'unstyled mx-2 my-1')}>
                 {items.map(({ url, label, icon, onClick }: MenuItem) => (
@@ -48,7 +48,7 @@ export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, it
                         parentClassName="w-full pass-submenu--item text-lg"
                         size="small"
                         key={label}
-                        label={<span className="text-ellipsis">{label}</span>}
+                        label={label}
                         icon={icon}
                     />
                 ))}
