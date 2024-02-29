@@ -30,7 +30,7 @@ import {
     threeDsChallengeMessageType,
     unhandledError,
 } from '../lib';
-import { chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
+import { addCheckpoint, chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
 
 function isChargebeeEvent(event: any): boolean {
     return !!event?.cbEvent;
@@ -168,7 +168,8 @@ export interface ParentMessagesProps {
     onChangeRenderMode?: OnChangeRenderModeHandler;
 }
 
-const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
+// the event handler function must be async to make sure that we catch all errors, sync and async
+const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => {
     try {
         const parseEvent = (data: any) => {
             if (typeof data !== 'string') {
@@ -187,7 +188,8 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
         const event = parseEvent(e.data);
 
         if (isSetConfigurationEvent(event)) {
-            messageBus.onSetConfiguration(event, (result) => {
+            // Do not remove await here or anywhere else in the function. It ensures that all errors are caught
+            await messageBus.onSetConfiguration(event, (result) => {
                 messageBus.sendMessage({
                     type: 'set-configuration-response',
                     correlationId: event.correlationId,
@@ -195,7 +197,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isChargebeeSubmitEvent(event)) {
-            messageBus.onSubmit(event, (result) => {
+            await messageBus.onSubmit(event, (result) => {
                 messageBus.sendMessage({
                     type: 'chargebee-submit-response',
                     correlationId: event.correlationId,
@@ -203,7 +205,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isSetPaypalPaymentIntentEvent(event)) {
-            messageBus.onSetPaypalPaymentIntent(event, (result) => {
+            await messageBus.onSetPaypalPaymentIntent(event, (result) => {
                 messageBus.sendMessage({
                     type: 'set-paypal-payment-intent-response',
                     correlationId: event.correlationId,
@@ -211,7 +213,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isGetHeightEvent(event)) {
-            messageBus.onGetHeight(event, (result) => {
+            await messageBus.onGetHeight(event, (result) => {
                 messageBus.sendMessage({
                     type: 'get-height-response',
                     correlationId: event.correlationId,
@@ -219,7 +221,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isGetBinEvent(event)) {
-            messageBus.onGetBin(event, (result) => {
+            await messageBus.onGetBin(event, (result) => {
                 messageBus.sendMessage({
                     type: 'get-bin-response',
                     correlationId: event.correlationId,
@@ -227,7 +229,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isValidateFormEvent(event)) {
-            messageBus.onValidateForm(event, (result) => {
+            await messageBus.onValidateForm(event, (result) => {
                 messageBus.sendMessage({
                     type: 'validate-form-response',
                     correlationId: event.correlationId,
@@ -235,7 +237,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isVerifySavedCardEvent(event)) {
-            messageBus.onVerifySavedCard(event, (result) => {
+            await messageBus.onVerifySavedCard(event, (result) => {
                 messageBus.sendMessage({
                     type: 'chargebee-verify-saved-card-response',
                     correlationId: event.correlationId,
@@ -243,7 +245,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
                 });
             });
         } else if (isChangeRenderModeEvent(event)) {
-            messageBus.onChangeRenderMode(event, (result) => {
+            await messageBus.onChangeRenderMode(event, (result) => {
                 messageBus.sendMessage({
                     type: 'change-render-mode-response',
                     correlationId: event.correlationId,
@@ -256,8 +258,8 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
             // ignore unknown event
         }
     } catch (error) {
+        addCheckpoint('failed_to_handle_parent_message', { error, event });
         messageBus.sendUnhandledErrorMessage(error);
-        console.error('Failed to handle message from parent', error);
     }
 };
 
