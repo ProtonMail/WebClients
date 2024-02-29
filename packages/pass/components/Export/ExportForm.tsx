@@ -52,8 +52,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
 
                 {hasNonOwnedVaults && (
                     <em className="block text-sm color-weak mb-2">
-                        {c('Info')
-                            .t`The exported file will not contain the data of shared vaults where you are not the owner`}
+                        {c('Info').t`The export will only contain vaults that you own.`}
                     </em>
                 )}
 
