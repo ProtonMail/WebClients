@@ -21,7 +21,7 @@ export const BulkMemberActions: FC<Props> = ({ onRoleChange }) => {
     return (
         <>
             <DropdownButton
-                className="flex text-sm gap-2 text-semibold flex-auto grow-0 shrink-0"
+                className="flex text-sm gap-2 text-semibold flex-nowrap"
                 onClick={toggle}
                 color="norm"
                 ref={anchorRef}
@@ -30,8 +30,8 @@ export const BulkMemberActions: FC<Props> = ({ onRoleChange }) => {
                 title={c('Action').t`Set access level`}
                 style={{ '--text-norm': 'var(--interaction-norm-major-1)' }}
             >
-                <span className="color-norm">{c('Action').t`Set access level`}</span>
-                <Icon name="chevron-down" />
+                <span className="color-norm text-ellipsis">{c('Action').t`Set access level`}</span>
+                <Icon className="shrink-0" name="chevron-down" />
             </DropdownButton>
 
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>

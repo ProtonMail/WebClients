@@ -12,6 +12,7 @@ import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useInviteRecommendations } from '@proton/pass/hooks/useInviteRecommendations';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
 import { VirtualList } from '../Layout/List/VirtualList';
@@ -43,8 +44,11 @@ export const InviteRecommendations: FC<Props> = (props) => {
     const displayedEmails = useMemo(() => {
         const startsWith = autocomplete.toLowerCase();
         const displayed = organization !== null && view === organization.name ? organization.emails : emails;
-        return displayed.filter((email) => email.toLowerCase().startsWith(startsWith));
-    }, [organization, view, autocomplete]);
+
+        return isEmptyString(startsWith)
+            ? displayed
+            : displayed.filter((email) => email.toLowerCase().startsWith(startsWith));
+    }, [emails, organization, view, autocomplete]);
 
     /** Used to compute the virtual list min-height as this component
      * may be wrapped in a scrollable element */
