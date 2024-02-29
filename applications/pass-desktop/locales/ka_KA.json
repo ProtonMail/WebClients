@@ -1023,9 +1023,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "ასწიეთ სატარიფო გეგმა ქსელის გარეშე მუშაობის ჩასართავად."
-      ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
       ],
@@ -1311,9 +1308,6 @@
       "Created": [
         "შექმნილია"
       ],
-      "Default (recommended)": [
-        "ნაგულისხმევი (რეკომენდებულია)"
-      ],
       "Display": [
         "ჩვენება"
       ],
@@ -1325,9 +1319,6 @@
       ],
       "Enable offline access": [
         "ქსელის გარეშე წვდომის დაშვება"
-      ],
-      "Encrypted (recommended)": [
-        "დაშიფრული (რეკომენდებულია)"
       ],
       "Expiration date": [
         "ვადა"
@@ -1945,6 +1936,9 @@
       ],
       "Invalid email addresses.": [
         "არასწორი ელფოსტის მისამართები."
+      ],
+      "item was imported without custom fields": [
+        "ელემენტის შემოტანა მომხმარებლის ველების გარეშე მოხდა"
       ],
       "Maximum length is ${ maxLength } character": [
         "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",

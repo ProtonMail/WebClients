@@ -1023,9 +1023,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } İnternet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "Çevrim dışı desteği kullanabilmek için tarifenizi yükseltin."
-      ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
       ],
@@ -1311,9 +1308,6 @@
       "Created": [
         "Oluşturulma"
       ],
-      "Default (recommended)": [
-        "Varsayılan (önerilen)"
-      ],
       "Display": [
         "Görünüm"
       ],
@@ -1325,9 +1319,6 @@
       ],
       "Enable offline access": [
         "Çevrim dışı erişimi kullanıma al"
-      ],
-      "Encrypted (recommended)": [
-        "Şifrelenmiş (önerilen)"
       ],
       "Expiration date": [
         "Son kullanma tarihi"
@@ -1945,6 +1936,9 @@
       ],
       "Invalid email addresses.": [
         "E-posta adresleri geçersiz."
+      ],
+      "item was imported without custom fields": [
+        "öge özel alanlar olmadan ie aktarılmış"
       ],
       "Maximum length is ${ maxLength } character": [
         "En fazla uzunluk ${ maxLength } karakter",

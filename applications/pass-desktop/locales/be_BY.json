@@ -730,7 +730,7 @@
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
       "${ count } invites successfully sent": [
-        "${ count } запрашэнне(і) паспяхова адпраўлена"
+        "Паспяхова адпраўлена наступная колькасць запрашэнняў: ${ count }"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1053,9 +1053,6 @@
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
       ],
-      "Please upgrade your plan to enable offline support.": [
-        "Палепшыце свой тарыфны план, каб уключыць падтрымку па-за сеткай."
-      ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
       ],
@@ -1349,9 +1346,6 @@
       "Created": [
         "Створана"
       ],
-      "Default (recommended)": [
-        "Прадвызначана (рэкамендуецца)"
-      ],
       "Display": [
         "Адлюстроўваць"
       ],
@@ -1363,9 +1357,6 @@
       ],
       "Enable offline access": [
         "Уключыць доступ па-за сеткай"
-      ],
-      "Encrypted (recommended)": [
-        "Зашыфраваны (рэкамендуецца)"
       ],
       "Expiration date": [
         "Тэрмін дзеяння"
@@ -1516,6 +1507,9 @@
       ],
       "Password history": [
         "Гісторыя пароляў"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON зашыфраваны PGP (рэкамендавана)"
       ],
       "PIN": [
         "PIN"
