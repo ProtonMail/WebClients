@@ -813,7 +813,7 @@
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
       "${ count } invites successfully sent": [
-        "${ count } запрашэнне(і) паспяхова адпраўлена"
+        "Паспяхова адпраўлена наступная колькасць запрашэнняў: ${ count }"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1504,9 +1504,6 @@
       "Created": [
         "Створана"
       ],
-      "Default (recommended)": [
-        "Прадвызначана (рэкамендуецца)"
-      ],
       "Display": [
         "Адлюстроўваць"
       ],
@@ -1527,9 +1524,6 @@
       ],
       "Empty trash": [
         "Ачысціць сметніцу"
-      ],
-      "Encrypted (recommended)": [
-        "Зашыфраваны (рэкамендуецца)"
       ],
       "Expiration date": [
         "Тэрмін дзеяння"
@@ -1683,6 +1677,9 @@
       ],
       "Pause list": [
         "Спіс прыпыненых"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON зашыфраваны PGP (рэкамендавана)"
       ],
       "PIN": [
         "PIN"
