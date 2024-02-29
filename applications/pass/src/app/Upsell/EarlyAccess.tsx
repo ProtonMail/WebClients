@@ -32,9 +32,8 @@ export const EarlyAccess: FC =
               }, []);
 
               useEffect(() => {
-                  if (freeAccessEnabled) return;
-                  setUpgradeState({ upgrade: forceUpgrade });
-              }, []);
+                  setUpgradeState({ upgrade: !freeAccessEnabled && forceUpgrade });
+              }, [freeAccessEnabled, forceUpgrade]);
 
               return upgradeState.upgrade ? (
                   <UpsellingModal
