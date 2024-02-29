@@ -261,7 +261,7 @@
         "접근 관리"
       ],
       "Manually sync your data": [
-        "수동으로 데이터를 동기화"
+        "수동으로 데이터 동기화"
       ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
@@ -366,7 +366,7 @@
         "초대장 보내기"
       ],
       "Send us a message": [
-        "메세지 보내기"
+        "메시지 보내기"
       ],
       "Set access level": [
         "접근 수준 설정"
@@ -1429,9 +1429,6 @@
       "Created": [
         "제작"
       ],
-      "Default (recommended)": [
-        "기본 (권장됨)"
-      ],
       "Display": [
         "표시"
       ],
@@ -1452,9 +1449,6 @@
       ],
       "Empty trash": [
         "휴지통 비우기"
-      ],
-      "Encrypted (recommended)": [
-        "암호화됨 (권장됨)"
       ],
       "Expiration date": [
         "만료 시간"
@@ -1608,6 +1602,9 @@
       ],
       "Pause list": [
         "항목 정지"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP 암호화된 JSON (권장)"
       ],
       "PIN": [
         "PIN"
@@ -2098,7 +2095,7 @@
         "빈 메모"
       ],
       "Encryption password is required": [
-        "암호화 비밀번호가 필요합니다"
+        "암호화된 비밀번호가 필요합니다."
       ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
@@ -2108,6 +2105,9 @@
       ],
       "Invalid email addresses.": [
         "유효하지 않은 이메일 주소들입니다."
+      ],
+      "item was imported without custom fields": [
+        "항목이 커스텀 입력란 없이 불러와졌습니다."
       ],
       "Maximum length is ${ maxLength } character": [
         "최대 길이는 ${ maxLength }자 입니다."
