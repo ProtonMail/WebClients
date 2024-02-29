@@ -2452,7 +2452,7 @@
         "Não foi possível resolver as opções de alias."
       ],
       "Aliases could not be loaded": [
-        "Não foi possível carregar os alias"
+        "Não foi possível carregar os aliases"
       ],
       "Already a member of this calendar": [
         "Já é membro desse calendário"
@@ -2461,7 +2461,7 @@
         "Ocorreu um erro no carregamento de opções de alias"
       ],
       "An error occurred while saving your alias": [
-        "Ocorreu um erro ao salvar os seus alias"
+        "Ocorreu um erro ao salvar o seu alias"
       ],
       "Answer failed to be sent": [
         "Não foi possível enviar a resposta."
@@ -2620,7 +2620,7 @@
         "Assinatura ausente"
       ],
       "Name is required": [
-        "Nome é necessário"
+        "Nome é obrigatório"
       ],
       "Name required": [
         "Nome obrigatório"
@@ -3982,7 +3982,7 @@
         "Importar Caixa de Entrada"
       ],
       "Important note": [
-        "Observação importante"
+        "Nota importante"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
@@ -5116,7 +5116,7 @@
         "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensal ${ onDayString }, ${ timesString }"
+        "Mensalmente ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
@@ -6207,10 +6207,10 @@
         "${ appName1 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "Premium de ${ appName1 } e ${ appName2 }"
+        "${ appName1 } e ${ appName2 } Premium"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
-        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -6386,7 +6386,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "armazenamento de ${ app }"
+        "armazenamento do ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
