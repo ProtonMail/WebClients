@@ -80,6 +80,8 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     danger = false,
     labelHCustom = '1.25rem',
 }) => {
+    const strLabel = typeof label === 'string';
+
     return (
         <div
             className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom"
@@ -91,14 +93,8 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
                 ) : (
                     icon
                 )}
-                <div
-                    className={clsx(
-                        'flex flex-nowrap flex-auto gap-1',
-                        ellipsis && 'text-ellipsis',
-                        danger && 'color-danger'
-                    )}
-                >
-                    {label}
+                <div className={clsx('flex flex-nowrap flex-auto gap-1', danger && 'color-danger')}>
+                    {strLabel ? <span className={clsx(ellipsis && 'text-ellipsis')}>{label}</span> : label}
                 </div>
             </div>
             {extra}

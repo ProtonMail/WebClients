@@ -235,11 +235,7 @@ export const MenuDropdown: FC = () => {
 
                         <DropdownMenuButton
                             onClick={withClose(() => onLink(passWebAppUrl))}
-                            label={
-                                <div className="flex items-center flex-nowrap gap-2">
-                                    <span>{c('Action').t`Open web app`}</span>
-                                </div>
-                            }
+                            label={c('Action').t`Open web app`}
                             icon="arrow-out-square"
                         />
 
