@@ -8,13 +8,14 @@ import { Info, ModalTwo, Option, SelectTwo } from '@proton/components/components
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useEventManager, useNotifications, useUserKeys } from '@proton/components/hooks';
+import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { WasmDerivationPath, WasmScriptType } from '../../../pkg';
 import { useRustApi } from '../../contexts';
-import { useBitcoinNetwork } from '../../store/hooks';
+import { useBitcoinNetwork, useWalletDispatch } from '../../store/hooks';
+import { walletAccountCreation } from '../../store/slices/userWallets';
 import { IWasmWallet } from '../../types';
 import { getLabelByScriptType } from '../../utils';
 import { decryptWalletKey, encryptWalletDataWithWalletKey } from '../../utils/crypto';
@@ -51,7 +52,7 @@ export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
     const [network] = useBitcoinNetwork();
     const { createNotification } = useNotifications();
     const [userKeys] = useUserKeys();
-    const { call } = useEventManager();
+    const dispatch = useWalletDispatch();
 
     const api = useRustApi();
 
@@ -68,6 +69,11 @@ export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
             Number.isFinite(selectedIndex) ? (selectedIndex as number) : inputIndex
         );
 
+        // Typeguard
+        if (!wallet.WalletKey?.WalletKey) {
+            return;
+        }
+
         // TODO: maybe we should have this in a context
         const key = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
         const [encryptedLabel] = await encryptWalletDataWithWalletKey([label], key);
@@ -80,9 +86,9 @@ export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
         await api
             .wallet()
             .createWalletAccount(wallet.Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
-            .then(async () => {
-                await call();
+            .then(async (createdAccount) => {
                 createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
+                dispatch(walletAccountCreation({ walletID: wallet.Wallet.ID, account: createdAccount.Account }));
                 onClose();
             })
             .catch(() => {

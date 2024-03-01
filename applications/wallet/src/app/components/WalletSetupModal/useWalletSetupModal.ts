@@ -3,13 +3,15 @@ import { useEffect, useState } from 'react';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import { useEventManager, useNotifications, useUserKeys } from '@proton/components/hooks';
+import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '../../../pkg';
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
 import { useOnchainWalletContext, useRustApi } from '../../contexts';
+import { useWalletDispatch } from '../../store/hooks';
+import { walletCreation } from '../../store/slices/userWallets';
 import { WalletType } from '../../types';
 import { encryptWalletData } from '../../utils/crypto';
 import { walletCreationSetupSteps, walletImportSetupSteps } from './constants';
@@ -39,7 +41,7 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
     const [userKeys] = useUserKeys();
 
     const api = useRustApi();
-    const { call } = useEventManager();
+    const dispatch = useWalletDispatch();
 
     const onNextStep = () => {
         if (!setupMode) {
@@ -124,21 +126,21 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
                 );
 
                 // Typeguard
-                if (encryptedFirstAccountLabel) {
-                    await api
-                        .wallet()
-                        .createWalletAccount(
-                            walletData.Wallet.ID,
-                            derivationPath,
-                            encryptedFirstAccountLabel,
-                            DEFAULT_SCRIPT_TYPE
-                        )
-                        .catch(noop);
-                }
+                const account = encryptedFirstAccountLabel
+                    ? await api
+                          .wallet()
+                          .createWalletAccount(
+                              walletData.Wallet.ID,
+                              derivationPath,
+                              encryptedFirstAccountLabel,
+                              DEFAULT_SCRIPT_TYPE
+                          )
+                          .catch(noop)
+                    : undefined;
 
                 // TODO: Account detection for imported wallets
 
-                await call();
+                dispatch(walletCreation({ ...walletData, WalletAccounts: account ? [account.Account] : [] }));
             })
             .catch(() => {
                 createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });

@@ -20,37 +20,51 @@ export const useDecryptedWallets = () => {
                 (async () => {
                     const wallets = await Promise.all(
                         encryptedWallets.map(async (walletData) => {
+                            // A wallet normally cannot be created without a wallet key
+                            if (!walletData.WalletKey || !walletData.WalletSettings) {
+                                return null;
+                            }
+
                             const encryptedLabels = walletData.WalletAccounts.map((account) => account.Label);
-                            const [decryptedMnemonic, decryptedPublickey, ...decryptedLabels] = await decryptWalletData(
-                                [walletData.Wallet.Mnemonic, walletData.Wallet.PublicKey, ...encryptedLabels],
-                                walletData.WalletKey.WalletKey,
-                                userKeys
-                            );
 
-                            const decryptedWallet = {
-                                ...walletData.Wallet,
-                                ...(decryptedMnemonic && { Mnemonic: decryptedMnemonic }),
-                                ...(decryptedPublickey && { PublicKey: decryptedPublickey }),
-                            };
+                            try {
+                                const [decryptedMnemonic, decryptedPublickey, ...decryptedLabels] =
+                                    await decryptWalletData(
+                                        [walletData.Wallet.Mnemonic, walletData.Wallet.PublicKey, ...encryptedLabels],
+                                        walletData.WalletKey.WalletKey,
+                                        userKeys
+                                    );
 
-                            const decryptedAccounts = walletData.WalletAccounts.map((account, index) => {
-                                const decryptedLabel = decryptedLabels[index];
-                                return {
-                                    ...account,
-                                    ...(decryptedLabel && { Label: decryptedLabel }),
+                                const decryptedWallet = {
+                                    ...walletData.Wallet,
+                                    ...(decryptedMnemonic && { Mnemonic: decryptedMnemonic }),
+                                    ...(decryptedPublickey && { PublicKey: decryptedPublickey }),
                                 };
-                            });
 
-                            return {
-                                Wallet: decryptedWallet,
-                                WalletAccounts: decryptedAccounts,
-                                WalletKey: walletData.WalletKey,
-                                WalletSettings: walletData.WalletSettings,
-                            };
+                                const decryptedAccounts = walletData.WalletAccounts.map((account, index) => {
+                                    const decryptedLabel = decryptedLabels[index];
+                                    return {
+                                        ...account,
+                                        ...(decryptedLabel && { Label: decryptedLabel }),
+                                    };
+                                });
+
+                                const data: IWasmWallet = {
+                                    Wallet: decryptedWallet,
+                                    WalletAccounts: decryptedAccounts,
+                                    WalletKey: walletData.WalletKey,
+                                    WalletSettings: walletData.WalletSettings,
+                                };
+
+                                return data;
+                            } catch {
+                                // TODO: handle decryption errors
+                                return null;
+                            }
                         })
                     );
 
-                    setDecryptedWallets(wallets);
+                    setDecryptedWallets(wallets.filter((wallet): wallet is IWasmWallet => Boolean(wallet)));
                 })()
             );
         }
