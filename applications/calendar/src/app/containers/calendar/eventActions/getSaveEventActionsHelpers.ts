@@ -258,7 +258,7 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     }
     const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
     if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
-        result.attendee = newVevent.attendee;
+        result.attendee = newVevent.attendee || [];
     }
     if (getSupportedStringValue(newVevent.color) !== getSupportedStringValue(oldVevent.color)) {
         result.color = newVevent.color || { value: '' };
