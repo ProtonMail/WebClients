@@ -1215,11 +1215,11 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Autofyld-menuen åbner automatisk når du trykker eller fokuserer på et felt."
       ],
+      "The export will only contain vaults that you own.": [
+        "Eksporten vil kun indeholde bokse, som du ejer."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Den eksporterede fil vil blive krypteret med PGP og kræver en stærk adgangssætning."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Den eksporterede fil vil ikke indeholde data fra delte bokse, hvor du ikke er ejeren."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1637,6 +1637,9 @@
       ],
       "Pause list": [
         "Pauseliste"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-krypteret JSON (anbefales)"
       ],
       "PIN": [
         "Pinkode"
