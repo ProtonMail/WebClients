@@ -1186,7 +1186,7 @@
         "პარამეტრი წარმატებით განახლდა"
       ],
       "Share your logins, secure notes, with up to 10 people": [
-        "გააზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები, 10 პიროვნებამდე"
+        "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
       ],
       "Sign in or create an account to continue.": [
         "გასაგრძელებლად შედით ან შექმენით ანგარიში."
@@ -1215,11 +1215,11 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "როცა მომხმარებლის სახელის ველს აირჩევთ, მისი შევსების მენიუ გაიხსნება."
       ],
+      "The export will only contain vaults that you own.": [
+        "გატანა, მხოლოდ, იმ მნიშვნელობას შეიცავს, რომელსაც თქვენ ფლობთ."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "გატანილი ფაილი PGP-ით დაიშიფრება და რთულ საკვანძო ფრაზას მოითხოვს."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "გატანილი ფაილი არ შეიცავს იმ გაზიარებული საცავების მონაცემებს, სადაც თქვენ მფლობელი არ ბრძანდებით"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -1637,6 +1637,9 @@
       ],
       "Pause list": [
         "შეჩერებულების სია"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-ით დაშიფრული JSON (რეკომენდებულია)"
       ],
       "PIN": [
         "PIN-კოდი"
@@ -2114,7 +2117,7 @@
         "შეცდომა თქვენი მონაცემების გატანისას"
       ],
       "At least one email address is required": [
-        "აუცილებელია სულ ცოტა ერთი ელფოსტის მისამართი"
+        "აუცილებელია, სულ ცოტა, ერთი ელფოსტის მისამართი"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
