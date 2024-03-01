@@ -1,8 +1,7 @@
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 
+import { SimpleMap } from '../interfaces';
 import { VcalVeventComponent } from '../interfaces/calendar';
-import { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 import {
     createSessionKey,
@@ -59,7 +58,6 @@ export const createCalendarEvent = async ({
         ? getParts(cancelledOccurrenceVevent).sharedPart
         : undefined;
 
-    const isSingleEditCancellation = cancelledOccurrenceVevent ? getHasRecurrenceId(cancelledOccurrenceVevent) : false;
     const isCreateOrSwitchCalendar = isCreateEvent || isSwitchCalendar;
     const isAttendeeSwitchingCalendar = isSwitchCalendar && isAttendee;
     // If there is no encrypted calendar part, a calendar session key is not needed.
@@ -106,7 +104,7 @@ export const createCalendarEvent = async ({
     return formatData({
         sharedSignedPart,
         sharedEncryptedPart,
-        cancelledOccurrenceSignedPart: isSingleEditCancellation ? undefined : cancelledOccurrenceSignedPart,
+        cancelledOccurrenceSignedPart,
         sharedSessionKey: encryptedSharedSessionKey,
         calendarSignedPart,
         calendarEncryptedPart,
