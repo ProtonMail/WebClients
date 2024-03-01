@@ -572,6 +572,9 @@
       "Moving item failed": [
         "Mutarea articolelor a eșuat."
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Modul deconectat nu este momentan disponibil pentru modul cu două parole."
+      ],
       "Passphrase is incorrect": [
         "Fraza de acces nu este corectă."
       ],
@@ -1107,11 +1110,11 @@
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
       ],
+      "The export will only contain vaults that you own.": [
+        "Exportarea va conține doar seifurile pe care le dețineți."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Fișierul exportat va fi criptat folosind PGP și necesită o frază de acces puternică."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
@@ -1476,6 +1479,9 @@
       ],
       "Password history": [
         "Istoric parole"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON cu criptare PGP (recomandat)"
       ],
       "PIN": [
         "PIN"
