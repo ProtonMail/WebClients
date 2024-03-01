@@ -10,6 +10,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import {
     InviteActions,
     ReencryptInviteActionData,
+    SendIcs,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -101,9 +102,7 @@ interface ChangePartstaActionsArguments {
     event: CalendarEvent;
     addressID: string;
     reencryptionCalendarID?: string;
-    sendIcs: (
-        data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
 }
 const getChangePartstatActions = async ({

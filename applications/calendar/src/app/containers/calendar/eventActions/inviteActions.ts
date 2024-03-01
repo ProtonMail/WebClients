@@ -1,7 +1,7 @@
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail, getEquivalentAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_RSVP, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
     generateEmailBody,
@@ -9,7 +9,8 @@ import {
     generateVtimezonesComponents,
     getHasUpdatedInviteData,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
-import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsEquivalentOrganizer } from '@proton/shared/lib/calendar/vcalConverter';
+import { getAttendeePartstat, getHasAttendees, getRSVPStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
@@ -56,22 +57,72 @@ type CreateInvitesReturn =
     | CancelEventInviteIcsAndPmCancelVevent
     | (EventInviteIcsAndPmVevent & CancelEventInviteIcsAndPmCancelVevent);
 
-const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+export const getRSVPStatusDiff = (
+    newVevent: Pick<VcalVeventComponent, 'attendee'>,
+    oldVevent?: Pick<VcalVeventComponent, 'attendee'>
+) => {
+    const newEventAttendees = newVevent.attendee;
+    const oldEventAttendees = oldVevent?.attendee;
+
+    if (newEventAttendees?.length && oldEventAttendees?.length) {
+        const oldEventRSVPMap: Map<string, ICAL_ATTENDEE_RSVP> = new Map();
+
+        oldEventAttendees?.forEach((attendee) => {
+            const canonicalizedEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
+            const eventRSVP = getRSVPStatus(attendee);
+            if (eventRSVP) {
+                oldEventRSVPMap.set(canonicalizedEmail, eventRSVP);
+            }
+        });
+
+        return newEventAttendees.some((attendee) => {
+            const canonicalizedEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
+            const attendeeInNewEventRSVP = getRSVPStatus(attendee);
+
+            const oldEventAttendeeRSVP = oldEventRSVPMap.get(canonicalizedEmail);
+            return !!oldEventAttendeeRSVP && attendeeInNewEventRSVP !== oldEventAttendeeRSVP;
+        });
+    }
+    return false;
+};
+
+export const getOrganizerDiff = (
+    newVevent: Pick<VcalVeventComponent, 'organizer'>,
+    oldVevent?: Pick<VcalVeventComponent, 'organizer'>
+) => {
+    if (!newVevent.organizer && !oldVevent?.organizer) {
+        return {};
+    }
+    if (!oldVevent?.organizer) {
+        return { addedOrganizer: newVevent.organizer };
+    }
+    if (!newVevent.organizer) {
+        return { removedOrganizer: oldVevent.organizer };
+    }
+    return { hasModifiedOrganizer: !getIsEquivalentOrganizer(newVevent.organizer, oldVevent.organizer) };
+};
+
+export const getAttendeesDiff = (
+    newVevent: Pick<VcalVeventComponent, 'attendee'>,
+    oldVevent?: Pick<VcalVeventComponent, 'attendee'>
+) => {
     const normalizedNewEmails = (newVevent.attendee || []).map((attendee) =>
         canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );
-    const normalizedOldEmails = (oldVevent.attendee || []).map((attendee) =>
+    const normalizedOldEmails = (oldVevent?.attendee || []).map((attendee) =>
         canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );
     const addedAttendees = newVevent.attendee?.filter((attendee) => {
         const normalizedNewEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedOldEmails.includes(normalizedNewEmail);
     });
-    const removedAttendees = oldVevent.attendee?.filter((attendee) => {
+    const removedAttendees = oldVevent?.attendee?.filter((attendee) => {
         const normalizedOldEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedNewEmails.includes(normalizedOldEmail);
     });
-    return { addedAttendees, removedAttendees };
+    const hasModifiedRSVPStatus = getRSVPStatusDiff(newVevent, oldVevent);
+
+    return { addedAttendees, removedAttendees, hasModifiedRSVPStatus };
 };
 
 export const getEquivalentAttendeesSend = (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
@@ -168,23 +219,26 @@ export const getAddedAttendeesPublicKeysMap = ({
     }, {});
 };
 
-export const getUpdatedSaveInviteActions = ({
+export const getCorrectedSaveInviteActions = ({
     inviteActions,
     newVevent,
     oldVevent,
     hasModifiedDateTimes,
+    hasModifiedRrule,
 }: {
     inviteActions: InviteActions;
     newVevent: VcalVeventComponent;
     oldVevent?: VcalVeventComponent;
     hasModifiedDateTimes?: boolean;
+    hasModifiedRrule?: boolean;
 }) => {
-    const { type } = inviteActions;
+    if (![NONE, SEND_INVITATION, SEND_UPDATE].includes(inviteActions.type)) {
+        return {
+            ...inviteActions,
+        };
+    }
     const hasNewAttendees = getHasAttendees(newVevent);
     const hasOldAttendees = oldVevent ? getHasAttendees(oldVevent) : false;
-    if (type !== SEND_INVITATION) {
-        return { ...inviteActions };
-    }
     if (!oldVevent) {
         // it's a create event operation
         if (!hasNewAttendees) {
@@ -203,8 +257,13 @@ export const getUpdatedSaveInviteActions = ({
             type: NONE,
         };
     }
-    const hasInviteDataModification = getHasUpdatedInviteData({ newVevent, oldVevent, hasModifiedDateTimes });
-    const { addedAttendees, removedAttendees } = getAttendeesDiff(newVevent, oldVevent);
+    const hasInviteDataModification = getHasUpdatedInviteData({
+        newVevent,
+        oldVevent,
+        hasModifiedDateTimes,
+        hasModifiedRrule,
+    });
+    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
     const hasRemovedAllAttendees = hasRemovedAttendees && removedAttendees?.length === oldVevent.attendee?.length;
@@ -215,6 +274,7 @@ export const getUpdatedSaveInviteActions = ({
             addedAttendees,
             removedAttendees,
             hasRemovedAllAttendees,
+            hasModifiedRSVPStatus,
         };
     }
     if (!hasAddedAttendees && !hasRemovedAttendees) {
@@ -381,6 +441,7 @@ export const getSendIcsAction =
             partstat,
             addedAttendees,
             removedAttendees,
+            recurringType,
         } = inviteActions;
 
         if (type === NONE) {
@@ -467,7 +528,7 @@ export const getSendIcsAction =
             }
         }
 
-        // Organizer cancelation
+        // Organizer cancellation
         if (type === CANCEL_INVITATION) {
             try {
                 if (!sharedEventID) {
@@ -560,7 +621,14 @@ export const getSendIcsAction =
                     const { pmVevent, eventInviteIcs } = eventInvites;
 
                     // it's a new invitation
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                    const params = {
+                        method: ICAL_METHOD.REQUEST,
+                        vevent: pmVevent,
+                        // oldVevent needed when creating a single edit
+                        oldVevent: cancelVevent,
+                        isCreateEvent: true,
+                        recurringType,
+                    };
                     await sendIcs({
                         method: ICAL_METHOD.REQUEST,
                         ics: eventInviteIcs,
@@ -586,7 +654,11 @@ export const getSendIcsAction =
                     if ('eventInviteIcs' in eventInvites) {
                         const { pmVevent, eventInviteIcs } = eventInvites;
 
-                        const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                        const params = {
+                            method: ICAL_METHOD.REQUEST,
+                            vevent: pmVevent,
+                            isCreateEvent: true,
+                        };
                         promises.push(
                             sendIcs({
                                 method: ICAL_METHOD.REQUEST,
@@ -652,7 +724,13 @@ export const getSendIcsAction =
                 ) {
                     const { pmVevent, eventInviteIcs } = eventInvites;
 
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: false };
+                    const params = {
+                        method: ICAL_METHOD.REQUEST,
+                        vevent: pmVevent,
+                        isCreateEvent: false,
+                        oldVevent: cancelVevent,
+                        recurringType,
+                    };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.REQUEST,
@@ -681,7 +759,11 @@ export const getSendIcsAction =
                 ) {
                     const { pmVevent, eventInviteIcs } = eventInvites;
 
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                    const params = {
+                        method: ICAL_METHOD.REQUEST,
+                        vevent: pmVevent,
+                        isCreateEvent: true,
+                    };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.REQUEST,

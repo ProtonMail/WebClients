@@ -1,12 +1,13 @@
 import { enUS } from 'date-fns/locale';
 
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '../../../lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '../../../lib/calendar/constants';
 import { createInviteIcs, generateEmailBody, generateEmailSubject } from '../../../lib/calendar/mailIntegration/invite';
 import { omit } from '../../../lib/helpers/object';
 import { toCRLF } from '../../../lib/helpers/string';
+import { VcalVeventComponent } from '../../../lib/interfaces/calendar';
 import { RE_PREFIX } from '../../../lib/mail/messages';
 
-const exampleVevent = {
+const exampleVevent: VcalVeventComponent = {
     component: 'vevent',
     uid: { value: 'test-event' },
     dtstamp: {
@@ -20,7 +21,7 @@ const exampleVevent = {
         value: { year: 2020, month: 3, day: 12, hours: 9, minutes: 30, seconds: 0, isUTC: false },
         parameters: { tzid: 'America/New_York' },
     },
-    rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
+    rrule: { value: { freq: 'WEEKLY', until: { year: 2030, month: 5, day: 15 } } },
     location: { value: 'asd' },
     sequence: { value: 0 },
     attendee: [
@@ -68,7 +69,7 @@ UID:test-event
 DTSTAMP:20200901T120000Z
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 SEQUENCE:0
 ATTENDEE;CN=Unknown attendee 1;PARTSTAT=ACCEPTED:emailto:name1@proton.me
@@ -106,7 +107,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 DTSTAMP:20200901T120000Z
 X-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE
@@ -138,7 +139,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 SUMMARY:
 DTSTAMP:20200901T120000Z
@@ -204,7 +205,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 DTSTAMP:20200901T120000Z
 ATTENDEE;PARTSTAT=DECLINED:mailto:name@proton.me
@@ -239,7 +240,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 DTSTAMP:20200901T120000Z
 X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
@@ -256,7 +257,7 @@ END:VCALENDAR`;
 
 describe('generateEmailSubject', () => {
     it('should return the expected subject for a new invite to an all-day single-day event', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...exampleVevent,
             dtstart: {
                 value: { year: 2020, month: 10, day: 12 },
@@ -279,7 +280,7 @@ describe('generateEmailSubject', () => {
     });
 
     it('should return the expected subject for an update to an all-day multiple-day event', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...exampleVevent,
             dtstart: {
                 value: { year: 2020, month: 3, day: 22 },
@@ -353,11 +354,37 @@ describe('generateEmailSubject', () => {
             })
         ).toEqual(expectedSingleFullDay);
     });
+
+    it('should return the expected subject for a single edit', () => {
+        const expected = `Update for an event starting on Wednesday March 4th, 2020 at 8:30 AM (GMT+1)`;
+        expect(
+            generateEmailSubject({
+                vevent: {
+                    ...exampleVevent,
+                    dtstart: {
+                        value: { year: 2020, month: 3, day: 4, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                    dtend: {
+                        value: { year: 2020, month: 3, day: 4, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                    'recurrence-id': {
+                        value: { year: 2020, month: 3, day: 4, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                },
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: true,
+                dateFormatOptions: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
 });
 
 describe('generateEmailBody', () => {
     it('should return the expected body for a new invite to an all-day single-day event with no description', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...exampleVevent,
             dtstart: {
                 value: { year: 2020, month: 10, day: 12 },
@@ -368,9 +395,13 @@ describe('generateEmailBody', () => {
                 parameters: { type: 'date' },
             },
         };
-        const expected = `You are invited to (no title)
-When: Monday October 12th, 2020 (all day)
-Where: asd`;
+        const expected = `You are invited to (no title).
+
+TIME:
+Monday October 12th, 2020 (all day)
+
+LOCATION:
+asd`;
         expect(
             generateEmailBody({
                 vevent,
@@ -382,7 +413,7 @@ Where: asd`;
     });
 
     it('should return the expected body for a new invite to an all-day single-day event with no location', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...omit(exampleVevent, ['location', 'dtend']),
             summary: { value: 'Watch movie' },
             dtstart: {
@@ -391,9 +422,13 @@ Where: asd`;
             },
             description: { value: 'I am a good description' },
         };
-        const expected = `You are invited to Watch movie
-When: Monday October 12th, 2020 (all day)
-Description: I am a good description`;
+        const expected = `You are invited to Watch movie.
+
+TIME:
+Monday October 12th, 2020 (all day)
+
+DESCRIPTION:
+I am a good description`;
         expect(
             generateEmailBody({
                 vevent,
@@ -405,7 +440,7 @@ Description: I am a good description`;
     });
 
     it('should return the expected body for an update to an to an all-day multiple-day event with no location nor description', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...omit(exampleVevent, ['location', 'description']),
             dtstart: {
                 value: { year: 2020, month: 3, day: 22 },
@@ -416,20 +451,26 @@ Description: I am a good description`;
                 parameters: { type: 'date' },
             },
         };
-        const expected = `(no title) has been updated.
-When: Sunday March 22nd, 2020 - Monday March 23rd, 2020`;
+        const expected = `This event was updated. Here's what changed:
+
+TIME:
+Sunday March 22nd, 2020 - Monday March 23rd, 2020
+
+LOCATION:
+Removed`;
         expect(
             generateEmailBody({
                 vevent,
                 method: ICAL_METHOD.REQUEST,
                 isCreateEvent: false,
                 options: { locale: enUS },
+                oldVevent: exampleVevent,
             })
         ).toEqual(expected);
     });
 
     it('should return the expected body for an update to an to an all-day multiple-day event with both location and description', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...exampleVevent,
             dtstart: {
                 value: { year: 2020, month: 3, day: 22 },
@@ -442,13 +483,20 @@ When: Sunday March 22nd, 2020 - Monday March 23rd, 2020`;
             summary: { value: 'Watch movie' },
             description: { value: 'I am a good description' },
         };
-        const expected = `Watch movie has been updated.
-When: Sunday March 22nd, 2020 - Monday March 23rd, 2020
-Where: asd
-Description: I am a good description`;
+        const expected = `This event was updated. Here's what changed:
+
+TITLE:
+Watch movie
+
+TIME:
+Sunday March 22nd, 2020 - Monday March 23rd, 2020
+
+DESCRIPTION:
+I am a good description`;
         expect(
             generateEmailBody({
                 vevent,
+                oldVevent: exampleVevent,
                 method: ICAL_METHOD.REQUEST,
                 isCreateEvent: false,
                 options: { locale: enUS },
@@ -457,27 +505,58 @@ Description: I am a good description`;
     });
 
     it('should return the expected body for an update to an to a part-day event with both location and description', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...exampleVevent,
-            summary: { value: 'Watch movie' },
+            location: { value: 'Watch movie' },
             description: { value: 'I am a good description' },
         };
-        const expected = `Watch movie has been updated.
-When: Thursday March 12th, 2020 at 8:30 AM (GMT+1) - Thursday March 12th, 2020 at 9:30 AM (GMT-4)
-Where: asd
-Description: I am a good description`;
+        const expected = `This event was updated. Here's what changed:
+
+LOCATION:
+Watch movie
+
+DESCRIPTION:
+I am a good description`;
         expect(
             generateEmailBody({
                 vevent,
                 method: ICAL_METHOD.REQUEST,
                 isCreateEvent: false,
                 options: { locale: enUS },
+                oldVevent: exampleVevent,
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for an update to a single edit of a part-day recurring event', () => {
+        const vevent: VcalVeventComponent = {
+            ...omit(exampleVevent, ['rrule']),
+            dtstart: {
+                value: { year: 2024, month: 1, day: 17, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2024, month: 1, day: 17, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            'recurrence-id': {
+                value: { year: 2024, month: 1, day: 18, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        const expected = 'This event occurrence was updated.';
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: true,
+                options: { locale: enUS },
             })
         ).toEqual(expected);
     });
 
     it('should return the expected body for a cancellation of a part-day event with location', () => {
-        const expected = '(no title) has been canceled.';
+        const expected = '(no title) was canceled.';
         expect(
             generateEmailBody({
                 vevent: exampleVevent,
@@ -489,7 +568,7 @@ Description: I am a good description`;
     });
 
     it('should return the expected body for a single-cancellation of an all-day event', () => {
-        const vevent = {
+        const vevent: VcalVeventComponent = {
             ...exampleVevent,
             summary: { value: 'A boring recurring meeting' },
             dtstart: {
@@ -511,7 +590,7 @@ Description: I am a good description`;
                 },
             },
         };
-        const expected = 'This occurrence of A boring recurring meeting has been canceled.';
+        const expected = 'This event occurrence was canceled.';
         expect(
             generateEmailBody({
                 vevent,
@@ -524,7 +603,7 @@ Description: I am a good description`;
 
     it('should return the expected body for a reply', () => {
         const emailAddress = 'andy@pm.me';
-        const expected = `${emailAddress} has declined your invitation to (no title)`;
+        const expected = `${emailAddress} declined your invitation to (no title)`;
         expect(
             generateEmailBody({
                 vevent: exampleVevent,
@@ -562,5 +641,86 @@ Description: I am a good description`;
                 partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
             })
         ).toThrow();
+    });
+
+    it('should return the expected body when editing a recurring event', () => {
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Watch movie' },
+            description: { value: 'I am a good description' },
+            'recurrence-id': {
+                value: { year: 2024, month: 1, day: 18, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+
+        const expected = `This event occurrence was updated. Here's what changed:
+
+TITLE:
+Watch movie
+
+DESCRIPTION:
+I am a good description`;
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                oldVevent: exampleVevent,
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body when editing a recurring series', () => {
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            summary: { value: 'Watch movie' },
+            description: { value: 'I am a good description' },
+        };
+
+        const expected = `All events in this series were updated. Here's what changed:
+
+TITLE:
+Watch movie
+
+DESCRIPTION:
+I am a good description`;
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                oldVevent: exampleVevent,
+                recurringType: RECURRING_TYPES.ALL,
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body when editing a recurring series to a zero duration event', () => {
+        const vevent: VcalVeventComponent = {
+            ...exampleVevent,
+            dtstart: {
+                value: { year: 2020, month: 3, day: 22, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Paris' },
+            },
+            dtend: undefined,
+        };
+
+        const expected = `All events in this series were updated. Here's what changed:
+
+TIME:
+Sunday March 22nd, 2020 at 12:30 PM (GMT+1)`;
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+                oldVevent: exampleVevent,
+                recurringType: RECURRING_TYPES.ALL,
+            })
+        ).toEqual(expected);
     });
 });

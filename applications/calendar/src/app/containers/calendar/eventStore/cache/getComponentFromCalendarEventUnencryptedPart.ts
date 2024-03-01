@@ -4,17 +4,26 @@ import { parse } from '@proton/shared/lib/calendar/vcal';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
-import { SharedVcalVeventComponent } from '../interface';
+import { CalendarVcalVeventComponent, SharedVcalVeventComponent } from '../interface';
 
 const { CLEAR_TEXT, SIGNED } = CALENDAR_CARD_TYPE;
 
 const getComponentFromCalendarEventUnencryptedPart = (eventData: CalendarEvent): SharedVcalVeventComponent => {
-    const unencryptedPart = eventData.SharedEvents.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
-    if (!unencryptedPart) {
-        throw new Error('Missing unencrypted part');
+    const unencryptedSharedPart = eventData.SharedEvents.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
+    if (!unencryptedSharedPart) {
+        throw new Error('Missing unencrypted shared part');
     }
+    const unencryptedCalendarPart = eventData.CalendarEvents.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
     try {
-        return parse(unwrap(unencryptedPart.Data)) as SharedVcalVeventComponent;
+        const sharedEvent = parse(unwrap(unencryptedSharedPart.Data)) as SharedVcalVeventComponent;
+        const calendarEvent = unencryptedCalendarPart
+            ? (parse(unwrap(unencryptedCalendarPart.Data)) as CalendarVcalVeventComponent)
+            : {};
+
+        return {
+            ...sharedEvent,
+            ...calendarEvent,
+        };
     } catch (e: any) {
         /**
          * We should always be able to parse events in the DB. If we can't that's bad, and we want to find out as soon as possible.
@@ -23,7 +32,8 @@ const getComponentFromCalendarEventUnencryptedPart = (eventData: CalendarEvent):
         captureMessage('Unparseable clear part of calendar event', {
             level: 'info',
             extra: {
-                ics: unencryptedPart.Data,
+                sharedIcs: unencryptedSharedPart.Data,
+                calendarIcs: unencryptedCalendarPart?.Data,
             },
         });
         if (e instanceof Error) {

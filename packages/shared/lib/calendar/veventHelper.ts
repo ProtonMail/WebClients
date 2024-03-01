@@ -329,3 +329,7 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
         notificationsPart: toApiNotifications(components),
     };
 };
+
+export const getCalendarSignedPartWithExdate = ({ components, ...properties }: VcalVeventComponent) => {
+    return toResult(pick(properties, [...CALENDAR_SIGNED_FIELDS, 'exdate']));
+};

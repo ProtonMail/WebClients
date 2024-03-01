@@ -31,7 +31,6 @@ interface Arguments {
     component: VcalVeventComponent;
     originalComponent: VcalVeventComponent;
     mode: UpdateAllPossibilities;
-    isSingleEdit: boolean;
     isAttendee: boolean;
 }
 const updateAllRecurrence = ({ component, originalComponent, mode, isAttendee }: Arguments): VcalVeventComponent => {

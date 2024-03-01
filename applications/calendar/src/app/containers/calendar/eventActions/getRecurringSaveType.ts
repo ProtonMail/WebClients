@@ -12,6 +12,7 @@ interface Arguments {
     originalEditEventData: EventOldData;
     canOnlySaveAll: boolean;
     canOnlySaveThis: boolean;
+    cannotDeleteThisAndFuture: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
     recurrence: CalendarEventRecurring;
     singleEdits: CalendarEvent[];
@@ -30,6 +31,7 @@ const getRecurringSaveType = async ({
     originalEditEventData,
     canOnlySaveAll,
     canOnlySaveThis,
+    cannotDeleteThisAndFuture,
     onSaveConfirmation,
     recurrence,
     singleEdits,
@@ -43,7 +45,8 @@ const getRecurringSaveType = async ({
     inviteActions,
     selfAttendeeToken,
 }: Arguments) => {
-    const isFutureAllowed = getHasFutureOption(originalEditEventData.mainVeventComponent, recurrence);
+    const isFutureAllowed =
+        getHasFutureOption(originalEditEventData.mainVeventComponent, recurrence) && !cannotDeleteThisAndFuture;
     let saveTypes;
 
     if (canOnlySaveAll) {
