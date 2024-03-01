@@ -178,6 +178,8 @@ app.addListener('web-contents-created', (_ev, contents) => {
     ];
 
     contents.addListener('will-navigate', (e, href) => {
+        if (href.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
+
         const url = new URL(href);
 
         // Prevent opening URLs outside of account
