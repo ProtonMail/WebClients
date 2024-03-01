@@ -508,7 +508,7 @@ const buildUpdatedFieldText = (updatedBodyText: string, updatedFieldText: string
 
     if (updatedBodyText === '') {
         return hasRemovedField
-            ? `${field}
+            ? `${field}:
 ${removedFieldText}`
             : updatedFieldText;
     }
