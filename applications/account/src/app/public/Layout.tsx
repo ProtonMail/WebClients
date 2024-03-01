@@ -28,9 +28,19 @@ export interface Props {
     headerClassName?: string;
     stepper?: ReactNode;
     centeredContent?: boolean;
+    layoutClassName?: string;
 }
 
-const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerClassName, centeredContent }: Props) => {
+const Layout = ({
+    children,
+    stepper,
+    hasDecoration,
+    bottomRight,
+    onBack,
+    headerClassName,
+    centeredContent,
+    layoutClassName,
+}: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
@@ -46,7 +56,12 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
     ); // for the future: color="invert" will change color to white
 
     return (
-        <div className="flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg">
+        <div
+            className={clsx(
+                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg',
+                layoutClassName
+            )}
+        >
             <PublicTopBanners />
             <ElectronDraggeableHeaderWrapper />
             <header
