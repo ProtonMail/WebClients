@@ -690,6 +690,9 @@
       "Vault name does not match": [
         "Název trezoru neodpovídá"
       ],
+      "Wrong password": [
+        "Chybné heslo"
+      ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
       ],
@@ -1034,6 +1037,12 @@
       "None": [
         "Nic"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "Offline režim nelze v tuto chvíli povolit"
+      ],
+      "Offline support successfully disabled": [
+        "Podpora offline byla úspěšně vypnuta"
+      ],
       "Open the Extensions menu": [
         "Otevřít menu rozšíření"
       ],
@@ -1111,6 +1120,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Nastavte PIN kód pro snadné zamknutí dat"
+      ],
+      "Setting up offline mode...": [
+        "Nastavení režimu offline..."
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
@@ -1222,6 +1234,9 @@
       ],
       "You are about to create:": [
         "Chystáte se vytvořit:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete použít své heslo ${ BRAND_NAME } pro přístup k ${ PASS_SHORT_APP_NAME } offline."
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Můžete rychle automaticky vyplnit přihlašovací údaje kliknutím na ikonu ${ PASS_APP_NAME }."
@@ -1691,6 +1706,9 @@
       ],
       "Sign in to your account": [
         "Přihlaste se ke svému účtu"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "V současné době jste offline. Odemkněte ${ PASS_SHORT_APP_NAME } pomocí hesla ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -2030,6 +2048,9 @@
       ],
       "Empty note": [
         "Prázdná poznámka"
+      ],
+      "Encryption password is required": [
+        "Je vyžadováno heslo pro šifrování"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"

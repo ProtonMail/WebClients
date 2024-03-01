@@ -261,7 +261,7 @@
         "Kelola akses"
       ],
       "Manually sync your data": [
-        "Sinkronkan data secara manual"
+        "Sinkronkan data"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -1190,11 +1190,11 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Dropdown isi otomatis akan terbuka setiap kali Anda mengeklik atau mengarahkan kursor Anda pada kolom entri masuk."
       ],
+      "The export will only contain vaults that you own.": [
+        "Ekspor ini hanya akan mengandung brankas yang Anda miliki."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Berkas yang diekspor yang dihasilkan tidak akan mengandung data dari brankas bersama yang bukan milik Anda"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
@@ -1602,6 +1602,9 @@
       ],
       "Pause list": [
         "Domain yang dikecualikan"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON yang terenkripsi PGP (direkomendasikan)"
       ],
       "PIN": [
         "PIN"
@@ -2102,6 +2105,9 @@
       ],
       "Invalid email addresses.": [
         "Terdapat alamat email yang tidak valid."
+      ],
+      "item was imported without custom fields": [
+        "item telah diimpor tanpa kolom kustom"
       ],
       "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"

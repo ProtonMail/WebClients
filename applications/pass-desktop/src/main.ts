@@ -99,6 +99,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         show: false,
         width: 960,
         height: 640,
+        opacity: 1,
         webPreferences: {
             session: session,
             sandbox: true,
@@ -177,6 +178,8 @@ app.addListener('web-contents-created', (_ev, contents) => {
     ];
 
     contents.addListener('will-navigate', (e, href) => {
+        if (href.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
+
         const url = new URL(href);
 
         // Prevent opening URLs outside of account

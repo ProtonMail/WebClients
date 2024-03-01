@@ -15,7 +15,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 export const EarlyAccess: FC =
-    BUILD_TARGET === 'desktop'
+    BUILD_TARGET === 'darwin' || BUILD_TARGET === 'linux'
         ? () => {
               const freeAccessEnabled = useFeatureFlag(PassFeature.PassEnableDesktopFreePlan);
               const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean }>({ upgrade: false });

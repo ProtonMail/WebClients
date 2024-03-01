@@ -19,6 +19,7 @@ type RemoteManifestResponse = {
     Releases: {
         Version: string;
         RolloutPercentage: number;
+        CategoryName: 'Stable' | 'EarlyAccess';
     }[];
 };
 
@@ -87,11 +88,21 @@ const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
         .then((r: RemoteManifestResponse) => r)
         .catch(noop);
 
+    const latestRelease = (() => {
+        if (!Array.isArray(remoteManifest?.Releases)) return;
+        return remoteManifest.Releases.find((r) => r.CategoryName === 'Stable');
+    })();
+
+    if (!latestRelease) {
+        logger.log(`[Update] No stable release found, url=${remoteManifestUrl}`);
+        return;
+    }
+
     const localDistributionPct = store.get('update.distribution') || 0;
-    const remoteDistributionPct = remoteManifest?.Releases?.at(0)?.RolloutPercentage || 0;
+    const remoteDistributionPct = latestRelease.RolloutPercentage || 0;
     if (remoteDistributionPct < localDistributionPct) {
         logger.log(
-            `[Update] Rollout distribution short-circuit triggered, r=${remoteDistributionPct}, l=${localDistributionPct}`
+            `[Update] Rollout distribution short-circuit triggered, r=${remoteDistributionPct}, l=${localDistributionPct}, v=${latestRelease.Version}`
         );
         return;
     }
