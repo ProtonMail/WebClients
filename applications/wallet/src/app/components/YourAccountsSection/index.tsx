@@ -5,12 +5,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { ConfirmActionModal, Icon } from '@proton/components/components';
-import { useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
 import { WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { useRustApi } from '../../contexts';
+import { useWalletDispatch } from '../../store/hooks';
+import { walletAccountDeletion } from '../../store/slices/userWallets';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { getLabelByScriptType } from '../../utils';
 import { AddAccountModal } from '../AddAccountModal';
@@ -28,7 +30,8 @@ export const YourAccountsSection = ({ wallet }: Props) => {
     const [displayedDeleteButton, setDisplayedDeleteButton] = useState<string | null>(null);
     const [accountToDelete, setAccountToDelete] = useState<string | null>(null);
     const isConfirmModalOpen = !!accountToDelete;
-    const { call } = useEventManager();
+
+    const dispatch = useWalletDispatch();
 
     const rust = useRustApi();
     const { createNotification } = useNotifications();
@@ -45,7 +48,7 @@ export const YourAccountsSection = ({ wallet }: Props) => {
             .then(async () => {
                 createNotification({ text: c('Wallet Account').t`Account successfully deleted` });
                 setAccountToDelete(null);
-                await call();
+                dispatch(walletAccountDeletion({ walletID: wallet.Wallet.ID, walletAccountID: accountToDelete }));
             })
             .catch(() => createNotification({ text: c('Wallet Account').t`Could not delete account`, type: 'error' }));
     };

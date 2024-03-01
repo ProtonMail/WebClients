@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { YourWalletsSection } from '.';
-import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseOnchainWalletContext, mockUseWalletDispatch, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 
 // TODO: Fix vitest vs @proton/components circular deps to be able to remove this mock
 vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({ ConfirmActionModal: 'div' }));
@@ -13,6 +13,7 @@ describe('YourWalletsSection', () => {
     beforeEach(() => {
         mockUseOnchainWalletContext();
         mockUseNotifications();
+        mockUseWalletDispatch();
     });
 
     it('should display wallets with their balance and their type', () => {
