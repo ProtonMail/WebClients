@@ -35,6 +35,7 @@ const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
 
 async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) {
+    uploadWorker.postLog(`Generating keys`);
     try {
         const {
             NodeKey: nodeKey,
@@ -97,6 +98,9 @@ async function start(
     parentHashKey: Uint8Array,
     verificationData: VerificationData
 ) {
+    const log = (message: string) => uploadWorker.postLog(message);
+    log(`Uploading started`);
+
     const hashInstance = sha1.create();
     const verifier = createVerifier(verificationData);
 
@@ -109,9 +113,10 @@ async function start(
                 sessionKey,
                 (e) => uploadWorker.postNotifySentry(e),
                 hashInstance,
-                verifier
+                verifier,
+                log
             ),
-            thumbnails && generateThumbnailEncryptedBlocks(thumbnails, addressPrivateKey, sessionKey)
+            thumbnails && generateThumbnailEncryptedBlocks(thumbnails, addressPrivateKey, sessionKey, log)
         )
         .catch((err) => uploadWorker.postError(err));
 
@@ -189,7 +194,7 @@ async function start(
         uploadingBlocksGenerator,
         (progress: number) => uploadWorker.postProgress(progress),
         (error: Error) => uploadWorker.postNetworkError(error),
-        (message: string) => uploadWorker.postLog(message)
+        log
     )
         .then(finish)
         .catch((err) => uploadWorker.postError(err));
