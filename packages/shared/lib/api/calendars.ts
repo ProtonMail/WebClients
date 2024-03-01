@@ -241,6 +241,16 @@ export const updateAttendeePartstat = (
     data,
 });
 
+export const attendeeDeleteSingleEdit = (
+    calendarID: string,
+    eventID: string,
+    data: Pick<CalendarCreateOrUpdateEventBlobData, 'CalendarEventContent'>
+) => ({
+    url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/attendee_delete_single_edit`,
+    method: 'put',
+    data,
+});
+
 export const upgradeP2PInvite = (
     calendarID: string,
     eventID: string,

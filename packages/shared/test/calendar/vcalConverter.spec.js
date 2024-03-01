@@ -1,8 +1,11 @@
+import { buildMailTo } from '@proton/shared/lib/helpers/email';
+
 import {
     dateTimeToProperty,
     dayToNumericDay,
     getDateTimePropertyInDifferentTimezone,
     getHasModifiedDateTimes,
+    getIsEquivalentOrganizer,
     numericDayToDay,
     propertyToLocalDate,
     propertyToUTCDate,
@@ -311,5 +314,66 @@ describe('getHasModifiedDateTimes', () => {
             },
         };
         expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(true);
+    });
+});
+
+describe('getHasEquivalentOrganizer', () => {
+    it('should return true for organizers that only differ by email property (but have same mailto value)', () => {
+        expect(
+            getIsEquivalentOrganizer(
+                {
+                    value: buildMailTo('organizer@proton.me'),
+                    parameters: {
+                        cn: 'ORGO',
+                        email: 'one',
+                    },
+                },
+                {
+                    value: buildMailTo('organizer@proton.me'),
+                    parameters: {
+                        cn: 'ORGO',
+                        email: 'two',
+                    },
+                }
+            )
+        ).toEqual(true);
+    });
+
+    it('should return false for organizers whose emails differ by canonicalization', () => {
+        expect(
+            getIsEquivalentOrganizer(
+                {
+                    value: buildMailTo('organizer@proton.me'),
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                {
+                    value: buildMailTo('Organizer@proton.me'),
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                }
+            )
+        ).toEqual(false);
+    });
+
+    it('should return false for organizers that only differ by cn property', () => {
+        expect(
+            getIsEquivalentOrganizer(
+                {
+                    value: buildMailTo('organizer@proton.me'),
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                {
+                    value: buildMailTo('organizer@proton.me'),
+                    parameters: {
+                        cn: 'orgo',
+                    },
+                }
+            )
+        ).toEqual(false);
     });
 });

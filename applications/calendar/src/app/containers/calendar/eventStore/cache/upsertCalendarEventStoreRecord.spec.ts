@@ -22,6 +22,7 @@ const dummySharedData: CalendarEventSharedData = {
     Permissions: 0,
     IsOrganizer: 0,
     IsProtonProtonInvite: 0,
+    IsPersonalSingleEdit: false,
     Author: 'author',
     Color: null,
 };

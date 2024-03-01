@@ -6,7 +6,11 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 
 import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
-import { UpdatePartstatOperation, UpdatePersonalPartOperation } from '../../../../interfaces/Invite';
+import {
+    AttendeeDeleteSingleEditOperation,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
+} from '../../../../interfaces/Invite';
 import { SyncEventActionOperations, getIsDeleteSyncOperation } from '../../getSyncMultipleEventsPayload';
 import { CalendarsEventsCache } from '../interface';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
@@ -59,22 +63,46 @@ export const upsertSyncMultiActionsResponses = (
 };
 
 export const upsertUpdateEventPartResponses = (
-    operations: (UpdatePartstatOperation | UpdatePersonalPartOperation)[],
+    operations: (UpdatePartstatOperation | UpdatePersonalPartOperation | AttendeeDeleteSingleEditOperation)[],
     responses: UpdateEventPartApiResponse[],
     calendarsEventsCache: CalendarsEventsCache,
     getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
-    for (let i = 0; i < responses.length; ++i) {
-        const operation = operations[i];
-        const { Code, Event } = responses[i];
-        const calendarEventsCache = calendarsEventsCache.calendars[operation.data.calendarID];
+    responses.forEach(({ Code, Event }, index) => {
+        const {
+            data: { calendarID },
+        } = operations[index];
+        const calendarEventsCache = calendarsEventsCache.calendars[calendarID];
 
         if (!calendarEventsCache) {
-            continue;
+            return;
         }
 
         if (Code === API_CODES.SINGLE_SUCCESS) {
             upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
         }
-    }
+    });
+};
+
+export const upsertAttendeeDeleteSingleEditResponses = (
+    operations: (UpdatePartstatOperation | UpdatePersonalPartOperation | AttendeeDeleteSingleEditOperation)[],
+    responses: UpdateEventPartApiResponse[],
+    calendarsEventsCache: CalendarsEventsCache,
+    getOpenedMailEvents: () => OpenedMailEvent[]
+) => {
+    responses.forEach(({ Code, Event }, index) => {
+        const {
+            data: { calendarID, eventID },
+        } = operations[index];
+        const calendarEventsCache = calendarsEventsCache.calendars[calendarID];
+
+        if (!calendarEventsCache) {
+            return;
+        }
+
+        if (Code === API_CODES.SINGLE_SUCCESS) {
+            upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
+            removeCalendarEventStoreRecord(eventID, calendarEventsCache, getOpenedMailEvents);
+        }
+    });
 };

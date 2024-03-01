@@ -123,6 +123,7 @@ export type CalendarCreateEventBlobData = RequireSome<
 interface CalendarCreateOrUpdateEventMetaData {
     Permissions: number;
     IsOrganizer?: 0 | 1;
+    IsPersonalSingleEdit?: boolean;
     RemovedAttendeeAddresses?: string[];
     AddedProtonAttendees?: {
         Email: string;
@@ -206,6 +207,10 @@ export interface SyncMultipleApiResponse extends ApiResponse {
 }
 
 export interface UpdateEventPartApiResponse extends ApiResponse {
+    Event: CalendarEvent;
+}
+
+export interface AttendeeDeleteSingleEditResponse extends ApiResponse {
     Event: CalendarEvent;
 }
 

@@ -17,3 +17,5 @@ export const getIsAutoAddedInvite = (
     event: CalendarEvent
 ): event is CalendarEvent & { AddressKeyPacket: string; AddressID: string } =>
     !!event.AddressKeyPacket && !!event.AddressID;
+
+export const getIsPersonalSingleEdit = ({ IsPersonalSingleEdit }: CalendarEvent) => IsPersonalSingleEdit;
