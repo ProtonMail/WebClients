@@ -3,6 +3,7 @@ import { vi } from 'vitest';
 
 import { mockUseNotifications, mockUseUser, mockUseUserKey } from '@proton/testing/lib/vitest';
 
+import { mockUseWalletDispatch } from '../../tests/mocks';
 import { WalletSetupMode, WalletSetupStep } from './type';
 import { useWalletSetupModal } from './useWalletSetupModal';
 
@@ -11,6 +12,7 @@ describe('useWalletSetupModal', () => {
         mockUseNotifications();
         mockUseUser();
         mockUseUserKey();
+        mockUseWalletDispatch();
     });
 
     describe('onSelectSetupMode', () => {

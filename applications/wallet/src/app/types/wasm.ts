@@ -2,7 +2,7 @@ import { WasmApiWallet, WasmWalletAccount, WasmWalletKey, WasmWalletSettings } f
 
 export interface IWasmWallet {
     Wallet: WasmApiWallet;
-    WalletKey: WasmWalletKey;
-    WalletSettings: WasmWalletSettings;
     WalletAccounts: WasmWalletAccount[];
+    WalletKey?: WasmWalletKey;
+    WalletSettings?: WasmWalletSettings;
 }
