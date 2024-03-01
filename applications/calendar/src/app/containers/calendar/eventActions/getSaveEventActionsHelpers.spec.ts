@@ -12,7 +12,11 @@ describe('getUpdateSingleEditMergeVevent()', () => {
         components: [],
         summary: { value: 'test 10' },
         location: { value: 'THE coffee shop' },
-        organizer: { value: 'mailto:unlimited@proton.test', parameters: { cn: 'unlimited' } },
+        organizer: { value: 'mailto:unlimited@proton.me', parameters: { cn: 'unlimited' } },
+        attendee: [
+            { value: 'mailto:test1@proton.me', parameters: { cn: 'test1' } },
+            { value: 'mailto:test2@proton.me', parameters: { cn: 'test2' } },
+        ],
         dtstart: {
             value: { year: 2023, month: 5, day: 31, hours: 9, minutes: 0, seconds: 0, isUTC: false },
             parameters: { tzid: 'Europe/Oslo' },
@@ -154,7 +158,7 @@ describe('getUpdateSingleEditMergeVevent()', () => {
         });
     });
 
-    it('should capture multiple modified fields', () => {
+    it('should capture multiple modified shared fields', () => {
         const newVevent = {
             ...baseVevent,
             summary: { value: 'new title' },
@@ -173,6 +177,37 @@ describe('getUpdateSingleEditMergeVevent()', () => {
         expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
             summary: { value: '' },
             location: { value: '' },
+        });
+    });
+
+    it('should capture added attendees', () => {
+        const newVevent = {
+            ...baseVevent,
+            attendee: [...baseVevent.attendee!, { value: 'mailto:test3@proton.me', parameters: { cn: 'test3' } }],
+        };
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            attendee: [
+                { value: 'mailto:test1@proton.me', parameters: { cn: 'test1' } },
+                { value: 'mailto:test2@proton.me', parameters: { cn: 'test2' } },
+                { value: 'mailto:test3@proton.me', parameters: { cn: 'test3' } },
+            ],
+        });
+    });
+
+    it('should capture removed attendees', () => {
+        const newVevent = {
+            ...baseVevent,
+            attendee: [{ value: 'mailto:test1@proton.me', parameters: { cn: 'test1' } }],
+        };
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            attendee: [{ value: 'mailto:test1@proton.me', parameters: { cn: 'test1' } }],
+        });
+    });
+
+    it('should capture removed attendees (when removing all)', () => {
+        const newVevent = omit(baseVevent, ['attendee']);
+        expect(getUpdateSingleEditMergeVevent(newVevent, baseVevent)).toEqual({
+            attendee: [],
         });
     });
 });
