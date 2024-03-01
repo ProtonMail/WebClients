@@ -83,6 +83,9 @@
       "Create a new vault": [
         "Crea una caixa forta nova"
       ],
+      "Create a new vault to share": [
+        "Crea una caixa forta per compartir"
+      ],
       "Create alias": [
         "Crea un àlies"
       ],
@@ -898,6 +901,9 @@
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
+      "The export will only contain vaults that you own.": [
+        "L'exportació només contindrà les caixes fortes de la seva propietat."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "No s'ha pogut importar ${ result.ignored.length } element:",
         "No s'han pogut importar els ${ result.ignored.length } elements següents:"
@@ -1582,6 +1588,9 @@
       ],
       "Permanently remove all items ?": [
         "Voleu esborrar els elements de manera permanent?"
+      ],
+      "Pinned (${ items.length })": [
+        "Ancorat (${ items.length })"
       ],
       "Review and share": [
         "Reviseu i comparteu"

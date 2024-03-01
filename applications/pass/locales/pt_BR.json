@@ -570,6 +570,9 @@
       "Moving item failed": [
         "Erro ao mover o item"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Modo off-line está temporariamente indisponível para o modo de duas senhas."
+      ],
       "Passphrase is incorrect": [
         "A frase de acesso está incorreta"
       ],
@@ -1092,11 +1095,11 @@
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
       ],
+      "The export will only contain vaults that you own.": [
+        "A exportação conterá apenas cofres que você possui."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "O arquivo exportado será criptografado usando PGP e exigirá uma senha forte."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "O arquivo exportado não conterá os dados de cofres compartilhados dos quais você não é o proprietário"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",

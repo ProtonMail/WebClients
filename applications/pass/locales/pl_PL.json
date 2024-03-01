@@ -1119,11 +1119,11 @@
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
+      "The export will only contain vaults that you own.": [
+        "Plik eksportu będzie zawierał tylko sejfy należące do użytkownika."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Plik eksportu danych zostanie zaszyfrowany za pomocą PGP i będzie wymagał silnego hasła."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Plik eksportu danych nie będzie zawierał danych udostępnionych sejfów, których nie jesteś właścicielem"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
