@@ -28,6 +28,14 @@ const displayNotification = (
     const title = c('Desktop notification title').t`New email received`;
     const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
     const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+
+    // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
+    const cleanHistoryLocation = { ...history.location, hash: '' };
+    const location = setParamsInLocation(cleanHistoryLocation, {
+        labelID,
+        elementID: isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID,
+    });
+
     return create(
         title,
         {
@@ -35,23 +43,13 @@ const displayNotification = (
             body,
             icon: notificationIcon,
             onClick() {
-                // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
-                const cleanHistoryLocation = { ...history.location, hash: '' };
-
                 window.focus();
-                history.push(
-                    setParamsInLocation(cleanHistoryLocation, {
-                        labelID,
-                        elementID: isConversationMode(labelID, mailSettings, cleanHistoryLocation)
-                            ? ConversationID
-                            : ID,
-                    })
-                );
+                history.push(location);
                 onOpenElement();
             },
         },
         // Used for Electron notifications on the Mail desktop app
-        { title, body, app: 'mail' }
+        { title, body, app: 'mail', link: location.pathname }
     );
 };
 
