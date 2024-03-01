@@ -19,14 +19,19 @@ import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 const MIN_CUTOFF = -MINUTE;
 
 export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
-    return create(title, {
-        body: text,
-        icon: notificationIcon,
-        onClick() {
-            window.focus();
+    return create(
+        title,
+        {
+            body: text,
+            icon: notificationIcon,
+            onClick() {
+                window.focus();
+            },
+            ...rest,
         },
-        ...rest,
-    });
+        // Used for Electron notifications on the Calendar desktop app
+        { title, body: text, app: 'calendar' }
+    );
 };
 
 const getFirstUnseenAlarm = (alarms: CalendarAlarm[] = [], set: Set<string>) => {

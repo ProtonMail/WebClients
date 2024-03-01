@@ -3,6 +3,7 @@ export type ElectronNotification = {
     title: string;
     body: string;
     app: CHANGE_VIEW_TARGET;
+    link?: string;
 };
 
 // This type must be updated in the Electron application as well
