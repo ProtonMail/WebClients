@@ -112,6 +112,8 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
                 passAliasesUpsellModal.openModal(true);
             } else {
                 const formattedError = new PassAliasesError(error, PASS_ALIASES_ERROR_STEP.CREATE_ALIAS);
+                // eslint-disable-next-line no-console
+                console.error(formattedError);
                 traceInitiativeError('drawer-security-center', formattedError);
 
                 // Because API displays a notification in case of error,
