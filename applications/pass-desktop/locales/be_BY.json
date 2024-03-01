@@ -574,6 +574,12 @@
       "Moving item failed": [
         "Збой перамяшчэння элемента"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Рэжым па-за сеткай у цяперашні момант недаступны для рэжыму двух пароляў."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Рэжым па-за сеткай у цяперашні момант недаступны для вашага тарыфнага плана і несумяшчальны з рэжымам двух пароляў."
+      ],
       "Passphrase is incorrect": [
         "Няправільная парольная фраза"
       ],
@@ -1128,11 +1134,11 @@
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
+      "The export will only contain vaults that you own.": [
+        "Экспартаванне будзе змяшчаць толькі тыя сховішчы, якімі вы валодаеце."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і яму спатрэбіцца надзейная парольная фраза."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Экспартаваны файл не змяшчае даных абагуленых сховішчаў, дзе вы не з'яўляецеся ўладальнікам"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",

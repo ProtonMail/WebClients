@@ -1,5 +1,6 @@
 import { type Runtime } from 'webextension-polyfill';
 
+import { MIN_CACHE_VERSION } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
@@ -38,7 +39,6 @@ type ActivationServiceState = {
 
 const RUNTIME_RELOAD_TIME = 10; /* seconds */
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
-const MIN_VERSION_CACHE = '1.10.0';
 
 export const createActivationService = () => {
     const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0, permissionsGranted: false };
@@ -116,8 +116,8 @@ export const createActivationService = () => {
 
             /* clear the cache if the previous cache version does not match
              * this build's minimum cache version validity. FIXME: use migrations */
-            if (!previous || semver(previous) < semver(MIN_VERSION_CACHE)) {
-                logger.info(`[Activation] update requires cache clear [before=${previous},min=${MIN_VERSION_CACHE}]`);
+            if (!previous || semver(previous) < semver(MIN_CACHE_VERSION)) {
+                logger.info(`[Activation] update requires cache clear [before=${previous},min=${MIN_CACHE_VERSION}]`);
                 await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
 
