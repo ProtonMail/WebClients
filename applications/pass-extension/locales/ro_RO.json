@@ -1231,11 +1231,11 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Meniul derulant de autocompletare se va deschide automat când se dă clic sau se focalizează pe un câmp."
       ],
+      "The export will only contain vaults that you own.": [
+        "Exportarea va conține doar seifurile pe care le dețineți."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Fișierul exportat va fi criptat folosind PGP și necesită o frază de acces puternică."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
@@ -1657,6 +1657,9 @@
       ],
       "Pause list": [
         "Listă suspendări"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON cu criptare PGP (recomandat)"
       ],
       "PIN": [
         "PIN"

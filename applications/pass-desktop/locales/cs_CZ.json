@@ -604,6 +604,9 @@
       "Vault name does not match": [
         "Název trezoru neodpovídá"
       ],
+      "Wrong password": [
+        "Chybné heslo"
+      ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
       ],
@@ -701,6 +704,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } bude vyžadovat vaše heslo ${ BRAND_NAME } pro přístup k datům offline."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } krát",
@@ -900,8 +906,20 @@
       "Never": [
         "Nikdy"
       ],
+      "No network connection": [
+        "Bez připojení k síti"
+      ],
       "None": [
         "Nic"
+      ],
+      "Offline mode": [
+        "Režim offline"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Offline režim nelze v tuto chvíli povolit"
+      ],
+      "Offline support successfully disabled": [
+        "Podpora offline byla úspěšně vypnuta"
       ],
       "Owner": [
         "Vlastník"
@@ -917,6 +935,9 @@
       ],
       "Pinning item...": [
         "Připínání položky..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
@@ -948,6 +969,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
       ],
+      "Reconnect": [
+        "Znovu připojit"
+      ],
       "Restoring trashed items...": [
         "Obnovování položek z koše..."
       ],
@@ -965,6 +989,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "Nastavte PIN kód pro snadné zamknutí dat"
+      ],
+      "Setting up offline mode...": [
+        "Nastavení režimu offline..."
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
@@ -1058,6 +1085,9 @@
       ],
       "You are about to create:": [
         "Chystáte se vytvořit:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete použít své heslo ${ BRAND_NAME } pro přístup k ${ PASS_SHORT_APP_NAME } offline."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
@@ -1211,6 +1241,9 @@
       "Empty trash": [
         "Vyprázdnit koš"
       ],
+      "Enable offline access": [
+        "Povolit přístup offline"
+      ],
       "Expiration date": [
         "Konec platnosti"
       ],
@@ -1330,6 +1363,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "Offline mode": [
+        "Režim offline"
       ],
       "Old-New": [
         "Staré-Nové"
@@ -1479,6 +1515,9 @@
       ],
       "Sign in to your account": [
         "Přihlaste se ke svému účtu"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "V současné době jste offline. Odemkněte ${ PASS_SHORT_APP_NAME } pomocí hesla ${ BRAND_NAME }."
       ]
     },
     "lobby: Title": {
@@ -1784,6 +1823,9 @@
       "Empty note": [
         "Prázdná poznámka"
       ],
+      "Encryption password is required": [
+        "Je vyžadováno heslo pro šifrování"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"
       ],
@@ -1813,6 +1855,9 @@
       ],
       "No password manager selected": [
         "Není vybrán žádný správce hesel"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
