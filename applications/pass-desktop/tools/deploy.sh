@@ -48,15 +48,17 @@ git config --local user.email "${GIT_COMMIT_EMAIL}"
 
 # Copy Windows artefacts
 mkdir -p "${repoDir}/PassDesktop/win32/x64"
-cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/"* "${repoDir}/PassDesktop/win32/x64/"
 if [[ "${CATEGORY}" == "Stable" ]]; then
+  cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/"* "${repoDir}/PassDesktop/win32/x64/"
   cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup.exe"
+else
+  cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup_${TAG_VERSION}.exe"
 fi
 git lfs track "*.exe" "*.nupkg"
 
 # Update version.json
 now=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-sha=$(sha512sum "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup_${VERSION}.exe" | cut -d " " -f 1)
+sha=$(sha512sum "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup_${TAG_VERSION}.exe" | cut -d " " -f 1)
 if [ ! -f "${repoDir}/PassDesktop/win32/x64/version.json" ]; then
   echo "{\"Releases\": []}" > "${repoDir}/PassDesktop/win32/x64/version.json"
 fi
@@ -65,7 +67,7 @@ if grep -q "$sha" "${repoDir}/PassDesktop/win32/x64/version.json"; then
   echo "SHA already exists in version.json"
   exit 1
 fi
-newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup_${VERSION}.exe\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
+newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${TAG_VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup_${TAG_VERSION}.exe\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
 < "${repoDir}/PassDesktop/win32/x64/version.json" jq ".Releases |= [$newrelease] + ." > version.json.tmp
 mv version.json.tmp "${repoDir}/PassDesktop/win32/x64/version.json"
 
@@ -74,7 +76,7 @@ cat "${repoDir}/PassDesktop/win32/x64/version.json"
 # Commit and push
 git add .
 git status
-git commit -m "Pass Desktop ${VERSION}"
+git commit -m "Pass Desktop ${TAG_VERSION}"
 git push -u origin deploy
 
 popd
