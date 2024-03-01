@@ -10,8 +10,11 @@ import { DrawerAppHeadline } from '../../shared';
 
 const HasNoAliases = () => {
     const learnMoreLink = (
-        <Href key="pass-aliases-support" href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link')
-            .t`Learn more`}</Href>
+        <Href
+            key="pass-aliases-support"
+            className="inline-block"
+            href={getKnowledgeBaseUrl('/addresses-and-aliases')}
+        >{c('Link').t`Learn more`}</Href>
     );
 
     return (
