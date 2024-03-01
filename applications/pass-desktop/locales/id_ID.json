@@ -234,7 +234,7 @@
         "Kelola akses"
       ],
       "Manually sync your data": [
-        "Sinkronkan data secara manual"
+        "Sinkronkan data"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -561,6 +561,12 @@
       ],
       "Moving item failed": [
         "Item gagal dipindahkan"
+      ],
+      "Offline mode is currently not available for two password mode.": [
+        "Mode offline saat ini tidak tersedia pada mode kata sandi ganda."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Mode offline saat ini tidak tersedia untuk paket Anda dan tidak kompatibel dengan mode kata sandi ganda."
       ],
       "Passphrase is incorrect": [
         "Frasa sandi salah"
@@ -1036,11 +1042,11 @@
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
       ],
+      "The export will only contain vaults that you own.": [
+        "Ekspor ini hanya akan mengandung brankas yang Anda miliki."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Berkas yang diekspor yang dihasilkan tidak akan mengandung data dari brankas bersama yang bukan milik Anda"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
@@ -1391,6 +1397,9 @@
       ],
       "Password history": [
         "Riwayat kata sandi"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON yang terenkripsi PGP (direkomendasikan)"
       ],
       "PIN": [
         "PIN"
@@ -1848,6 +1857,9 @@
       ],
       "Invalid email addresses.": [
         "Terdapat alamat email yang tidak valid."
+      ],
+      "item was imported without custom fields": [
+        "item telah diimpor tanpa kolom kustom"
       ],
       "Missing alias prefix": [
         "Awalan alias hilang"

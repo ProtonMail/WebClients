@@ -570,6 +570,12 @@
       "Moving item failed": [
         "Le déplacement de l'élément n'a pas abouti."
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Le mode hors ligne n'est actuellement pas disponible pour le mode deux mots de passe."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Le mode hors ligne n'est actuellement pas disponible pour votre abonnement et n'est pas compatible avec le mode deux mots de passe."
+      ],
       "Passphrase is incorrect": [
         "La phrase secrète n'est pas correcte."
       ],
@@ -1098,11 +1104,11 @@
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
       ],
+      "The export will only contain vaults that you own.": [
+        "L'exportation ne contiendra que les coffres-forts que vous possédez"
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Le fichier exporté sera chiffré en utilisant PGP et nécessite une phrase de mot de passe forte."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Le fichier exporté ne contiendra pas les données des coffres partagés dont vous n’êtes pas le propriétaire"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } élément n'a pas pu être importé :",
