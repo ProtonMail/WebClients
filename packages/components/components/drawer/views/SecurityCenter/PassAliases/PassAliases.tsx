@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Loader, useModalStateObject } from '@proton/components/components';
+import { Icon, Loader, useModalStateObject } from '@proton/components/components';
 import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useApi, useAuthentication } from '@proton/components/hooks';
@@ -11,7 +11,7 @@ import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { DrawerAppSection } from '../../shared';
@@ -71,14 +71,21 @@ const PassAliases = () => {
                     {hasAliases && (
                         <ButtonLike
                             as="a"
-                            className="mb-4 w-full"
+                            className="mb-4 w-full inline-flex items-center justify-center"
                             shape="underline"
                             color="weak"
                             size="small"
                             href={passAliasesURL}
                             disabled={!passAliasesURL}
                             target="_blank"
-                        >{c('Security Center').t`All aliases`}</ButtonLike>
+                        >
+                            {c('Security Center').t`All aliases`}
+                            <Icon
+                                name="arrow-out-square"
+                                className="ml-1"
+                                alt={c('Security Center (link to Pass App)').t`(will open ${PASS_APP_NAME})`}
+                            />
+                        </ButtonLike>
                     )}
                     <Button
                         onClick={() => {
