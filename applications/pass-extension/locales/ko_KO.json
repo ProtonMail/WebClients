@@ -1056,7 +1056,7 @@
         "없음"
       ],
       "Offline mode could not be enabled at the moment": [
-        "오프라인 모드가 현재 활성화할 수 없습니다."
+        "지금은 오프라인 모드를 활성화할 수 없습니다."
       ],
       "Offline support successfully disabled": [
         "오프라인 지원이 비활성화되었습니다"
@@ -1190,11 +1190,11 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "입력 란을 클릭했을 때 자동 완성 드롭다운이 자동으로 열립니다."
       ],
+      "The export will only contain vaults that you own.": [
+        "내보낼 시 개인이 소유한 금고만 포함됩니다."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "내보낸 파일이 PGP를 통해 암호화되며 강력한 암호가 필요합니다."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "내보내기 파일은 사용자가 소유자가 아닌 공유 금고의 데이터를 포함하지 않습니다."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
