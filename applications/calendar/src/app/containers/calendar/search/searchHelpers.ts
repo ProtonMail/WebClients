@@ -239,6 +239,7 @@ export const getCalendarViewEventWithMetadata = (item: VisualSearchItem): Calend
                 'Permissions',
                 'IsOrganizer',
                 'IsProtonProtonInvite',
+                'IsPersonalSingleEdit',
                 'Author',
                 'Color',
             ]),

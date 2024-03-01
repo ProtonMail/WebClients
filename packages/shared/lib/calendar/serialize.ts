@@ -1,7 +1,7 @@
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
+import { SimpleMap } from '../interfaces';
 import { VcalVeventComponent } from '../interfaces/calendar';
-import { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 import {
     createSessionKey,
@@ -54,7 +54,9 @@ export const createCalendarEvent = async ({
     addedAttendeesPublicKeysMap,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, notificationsPart, attendeesPart } = getParts(eventComponent);
-    const cancelledOccurrenceSharedPart = cancelledOccurrenceVevent ? getParts(cancelledOccurrenceVevent).sharedPart : undefined;
+    const cancelledOccurrenceSharedPart = cancelledOccurrenceVevent
+        ? getParts(cancelledOccurrenceVevent).sharedPart
+        : undefined;
 
     const isCreateOrSwitchCalendar = isCreateEvent || isSwitchCalendar;
     const isAttendeeSwitchingCalendar = isSwitchCalendar && isAttendee;
@@ -75,7 +77,7 @@ export const createCalendarEvent = async ({
         calendarEncryptedPart,
         attendeesEncryptedPart,
         attendeesEncryptedSessionKeysMap,
-        cancelledOccurrenceSignedPart
+        cancelledOccurrenceSignedPart,
     ] = await Promise.all([
         // If we're updating an event (but not switching calendar), no need to encrypt again the session keys
         isCreateOrSwitchCalendar && calendarSessionKey
@@ -96,7 +98,7 @@ export const createCalendarEvent = async ({
             ? undefined
             : encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         getEncryptedSessionKeysMap(sharedSessionKey, addedAttendeesPublicKeysMap),
-        cancelledOccurrenceSharedPart ? signPart(cancelledOccurrenceSharedPart[SIGNED], privateKey) : undefined
+        cancelledOccurrenceSharedPart ? signPart(cancelledOccurrenceSharedPart[SIGNED], privateKey) : undefined,
     ]);
 
     return formatData({
