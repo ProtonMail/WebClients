@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
-import { Copy } from '@proton/components/components';
+import { Copy, Info } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 
@@ -37,7 +37,10 @@ const PassAliasesList = ({ items }: Props) => {
 
     return (
         <>
-            <DrawerAppHeadline className="mb-1">{c('Security Center').t`Hide-my-email aliases`}</DrawerAppHeadline>
+            <DrawerAppHeadline className="mb-1">
+                {c('Security Center').t`Hide-my-email aliases`}{' '}
+                <Info className="mb-1" title={c('Success').t`Last modified aliases stored in your oldest vault`} />
+            </DrawerAppHeadline>
             <div className="flex flex-column flex-nowrap gap-y-2 max-w-full">
                 {aliases.map(({ alias, name }) => (
                     <Card
