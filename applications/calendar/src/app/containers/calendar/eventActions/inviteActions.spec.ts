@@ -1,5 +1,5 @@
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
@@ -12,9 +12,19 @@ import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import { AugmentedSendPreferences } from '../interface';
-import { getHasProtonAttendees, getSendIcsAction } from './inviteActions';
+import { getAttendeesDiff, getHasProtonAttendees, getRSVPStatusDiff, getSendIcsAction } from './inviteActions';
 
-const generateContact = (mail: string, isInternal = false, internalWithEncryptionDisabled = false) =>
+const generateContact = ({
+    mail,
+    isInternal = false,
+    internalWithEncryptionDisabled = false,
+    rsvp = ICAL_ATTENDEE_RSVP.TRUE,
+}: {
+    mail: string;
+    isInternal?: boolean;
+    internalWithEncryptionDisabled?: boolean;
+    rsvp?: ICAL_ATTENDEE_RSVP;
+}) =>
     [
         {
             [mail]: {
@@ -27,15 +37,15 @@ const generateContact = (mail: string, isInternal = false, internalWithEncryptio
         { [mail]: { Email: mail } },
         {
             value: buildMailTo(mail),
-            parameters: { cn: mail, role: 'REQ-PARTICIPANT', rsvp: 'TRUE', partstat: 'NEEDS-ACTION' },
+            parameters: { cn: mail, role: 'REQ-PARTICIPANT', rsvp, partstat: 'NEEDS-ACTION' },
         },
     ] as unknown as [SimpleMap<AugmentedSendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
 
-const contactA = generateContact('plus@proton.test', true);
-const contactB = generateContact('pmtest2@proton.test', true);
-const contactC = generateContact('chtest7@proton.test', false);
-const contactD = generateContact('test@alien.mars', false);
-const contactE = generateContact('plus@proton.test', false, true);
+const contactA = generateContact({ mail: 'plus@proton.test', isInternal: true });
+const contactB = generateContact({ mail: 'pmtest2@proton.test', isInternal: true });
+const contactC = generateContact({ mail: 'chtest7@proton.test' });
+const contactD = generateContact({ mail: 'test@alien.mars' });
+const contactE = generateContact({ mail: 'plus@proton.test', internalWithEncryptionDisabled: true });
 
 const baseVevent: VcalVeventComponent = {
     component: 'vevent',
@@ -56,6 +66,12 @@ const baseVevent: VcalVeventComponent = {
 };
 
 const selfAddress = generateTestAddress();
+
+const getVevent = (pseudoAttendees: { email: string; rsvp: ICAL_ATTENDEE_RSVP }[]) => {
+    return {
+        attendee: pseudoAttendees.map(({ email, rsvp }) => generateContact({ mail: email, rsvp })[2]),
+    } as VcalVeventComponent;
+};
 
 describe('getSendIcsAction', () => {
     let getVTimezonesMapSpy: jest.SpyInstance<GetVTimezonesMap>;
@@ -240,7 +256,7 @@ describe('getSendIcsAction', () => {
                 to: [{ Address: 'chtest7@proton.test', Name: 'chtest7@proton.test' }],
                 subject: 'Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
                 plainTextBody:
-                    'You are invited to test 10\nWhen: Wednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                    'You are invited to test 10.\n\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
@@ -251,7 +267,7 @@ describe('getSendIcsAction', () => {
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'pmtest2@proton.test', Name: 'pmtest2@proton.test' }],
                 subject: 'Cancellation of an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
-                plainTextBody: 'test 10 has been canceled.',
+                plainTextBody: 'test 10 was canceled.',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
@@ -298,7 +314,7 @@ describe('getSendIcsAction', () => {
                     ],
                     subject: 'Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
                     plainTextBody:
-                        'You are invited to test 10\nWhen: Wednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                        'You are invited to test 10.\n\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
                     sendPreferencesMap,
                     contactEmailsMap,
                 });
@@ -385,8 +401,7 @@ describe('getSendIcsAction', () => {
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'plus@proton.test', Name: 'plus@proton.test' }],
                 subject: 'Update for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
-                plainTextBody:
-                    'test 10 has been updated.\nWhen: Wednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                plainTextBody: 'This event was updated.',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
@@ -398,7 +413,7 @@ describe('getSendIcsAction', () => {
                 to: [{ Address: 'chtest7@proton.test', Name: 'chtest7@proton.test' }],
                 subject: 'Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
                 plainTextBody:
-                    'You are invited to test 10\nWhen: Wednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
+                    'You are invited to test 10.\n\nTIME:\nWednesday May 31st, 2023 at 9:00 AM (GMT+2) - Wednesday May 31st, 2023 at 9:30 AM (GMT+2)',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
@@ -409,7 +424,7 @@ describe('getSendIcsAction', () => {
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'pmtest2@proton.test', Name: 'pmtest2@proton.test' }],
                 subject: 'Cancellation of an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
-                plainTextBody: 'test 10 has been canceled.',
+                plainTextBody: 'test 10 was canceled.',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0], ...contactC[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1], ...contactC[1] },
             });
@@ -532,7 +547,7 @@ describe('getSendIcsAction', () => {
                     { Address: 'pmtest2@proton.test', Name: 'pmtest2@proton.test' },
                 ],
                 subject: 'Cancellation of an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
-                plainTextBody: 'test 10 has been canceled.',
+                plainTextBody: 'test 10 was canceled.',
                 sendPreferencesMap: { ...contactA[0], ...contactB[0] },
                 contactEmailsMap: { ...contactA[1], ...contactB[1] },
             });
@@ -636,7 +651,7 @@ describe('getSendIcsAction', () => {
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'unlimited@proton.test', Name: 'unlimited' }],
                 subject: 'Re: Invitation for an event starting on Wednesday May 31st, 2023 at 9:00 AM (GMT+2)',
-                plainTextBody: 'plus@proton.test has accepted your invitation to test 10',
+                plainTextBody: 'plus@proton.test accepted your invitation to test 10',
                 sendPreferencesMap: unlimitedPreferenceMap,
                 contactEmailsMap: {},
             });
@@ -714,5 +729,121 @@ describe('getHasProtonAttendees()', () => {
                 sendPreferencesMap
             )
         ).toEqual(true);
+    });
+});
+
+describe('getRSVPStatusDiff', () => {
+    it('should have no RSVP status diff when events have the same data', () => {
+        const vevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        expect(getRSVPStatusDiff(vevent, vevent)).toBeFalsy();
+    });
+
+    it('should have no RSVP status diff when event has no attendee', () => {
+        const vevent = getVevent([]);
+
+        expect(getRSVPStatusDiff(vevent, vevent)).toBeFalsy();
+    });
+
+    it('should have no RSVP status diff when some attendees have been removed or added', () => {
+        const oldVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const newVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user3@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        expect(getRSVPStatusDiff(newVevent, oldVevent)).toBeFalsy();
+    });
+
+    it('should have RSVP status diff when some RSVP have been updated', () => {
+        const oldVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const newVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        expect(getRSVPStatusDiff(newVevent, oldVevent)).toBeTruthy();
+    });
+});
+
+describe('getAttendeesDiff', () => {
+    it('should have no attendee diff', () => {
+        const vevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(vevent, vevent);
+
+        expect(addedAttendees).toHaveLength(0);
+        expect(removedAttendees).toHaveLength(0);
+        expect(hasModifiedRSVPStatus).toBeFalsy();
+    });
+
+    it('should have a diff when adding attendees', () => {
+        const oldVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const newVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user3@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const addedAttendee = generateContact({ mail: 'user3@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE })[2];
+
+        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+
+        expect(addedAttendees).toEqual([addedAttendee]);
+        expect(removedAttendees).toHaveLength(0);
+        expect(hasModifiedRSVPStatus).toBeFalsy();
+    });
+
+    it('should have a diff when removing attendees', () => {
+        const oldVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const newVevent = getVevent([{ email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE }]);
+
+        const removedAttendee = generateContact({ mail: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE })[2];
+
+        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+
+        expect(addedAttendees).toHaveLength(0);
+        expect(removedAttendees).toEqual([removedAttendee]);
+        expect(hasModifiedRSVPStatus).toBeFalsy();
+    });
+
+    it('should have a diff when updating RSVP status', () => {
+        const oldVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+        ]);
+
+        const newVevent = getVevent([
+            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+        ]);
+
+        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+
+        expect(addedAttendees).toHaveLength(0);
+        expect(removedAttendees).toHaveLength(0);
+        expect(hasModifiedRSVPStatus).toBeTruthy();
     });
 });

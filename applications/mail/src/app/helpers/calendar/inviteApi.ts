@@ -38,13 +38,13 @@ import {
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
     findAttendee,
+    getHasModifiedAttendees,
     getInvitedVeventWithAlarms,
     getResetPartstatActions,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import {
-    getHasModifiedAttendees,
     getHasModifiedDateTimes,
     getHasModifiedDtstamp,
     propertyToUTCDate,
@@ -54,6 +54,7 @@ import {
     getHasRecurrenceId,
     getIsAlarmComponent,
     getIsVeventCancelled,
+    getPmSharedEventID,
 } from '@proton/shared/lib/calendar/vcalHelper';
 import {
     getIsEventCancelled,
@@ -229,8 +230,6 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid,
     if (!parentEvent) {
         return { event, otherEvents };
     }
-    if (event) {
-    }
     /**
      * If recurrenceID is passed, but the single edit is not found, there are two possibilities:
      * * The ICS contained the wrong RECURRENCE-ID. Outlook sends a wrong one for invites to single edits of all-day events,
@@ -399,6 +398,7 @@ interface UpdateEventArgs {
     attendee?: Participant;
     deleteIds?: string[];
     overwrite: boolean;
+    pmData?: PmInviteData;
 }
 const updateEventApi = async ({
     calendarEvent,
@@ -413,6 +413,7 @@ const updateEventApi = async ({
     attendee,
     overwrite,
     deleteIds = [],
+    pmData,
 }: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
@@ -443,6 +444,7 @@ const updateEventApi = async ({
         calendarEvent: createSingleEdit ? undefined : calendarEvent,
         newAddressKeys: addressKeys,
         newCalendarKeys: calendarKeys,
+        decryptedSharedKeyPacket: pmData?.sharedSessionKey,
     });
     const data = await createCalendarEvent({
         eventComponent: veventWithPmAttendees,
@@ -456,9 +458,21 @@ const updateEventApi = async ({
         if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
             throw new Error('Missing shared data');
         }
-        const Events: CreateCalendarEventSyncData[] = [
-            { Event: { Permissions: 1, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 },
-        ];
+        const veventSharedEventID = getPmSharedEventID(vevent);
+        const Events: (CreateCalendarEventSyncData | CreateLinkedCalendarEventsSyncData)[] = !!veventSharedEventID
+            ? [
+                  {
+                      Overwrite: overwrite ? 1 : 0,
+                      Event: {
+                          Permissions: 1,
+                          IsOrganizer: 0,
+                          SharedEventID: veventSharedEventID,
+                          UID: vevent.uid.value,
+                          ...omit(data, ['SharedEventContent', 'AttendeesEventContent']),
+                      },
+                  },
+              ]
+            : [{ Event: { Permissions: 1, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 }];
         const {
             Responses: [
                 {
@@ -668,6 +682,19 @@ export const updateEventInvitation = async ({
                     calendarSettings: calendarData.calendarSettings,
                     oldPartstat: partstatApi,
                 });
+                // save attendee answer
+                const vcalAttendeeToSave = {
+                    ...attendeeApi.vcalComponent,
+                    parameters: {
+                        ...attendeeApi.vcalComponent.parameters,
+                        partstat: partstatIcs,
+                    },
+                };
+
+                if (pmData) {
+                    // we just need to send the new attendee to the API
+                    updatedVevent.attendee = [vcalAttendeeToSave];
+                }
                 const updatedPmVevent = await withPmAttendees(withDtstamp(updatedVevent), getCanonicalEmailsMap, true);
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
@@ -679,6 +706,7 @@ export const updateEventInvitation = async ({
                     api,
                     getCanonicalEmailsMap,
                     overwrite,
+                    pmData,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedPmVevent, calendarEvent: updatedCalendarEvent },

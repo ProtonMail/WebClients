@@ -2,21 +2,20 @@ import { PublicKeyReference } from '@proton/crypto';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
-import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
-import { omit } from '@proton/shared/lib/helpers/object';
-import { Address, SimpleMap } from '@proton/shared/lib/interfaces';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import unary from '@proton/utils/unary';
 
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
-    CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
+    OnSendPrefsErrors,
     ReencryptInviteActionData,
+    SendIcs,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -27,9 +26,10 @@ import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
-import { AugmentedSendPreferences, OnSaveConfirmationCb } from '../interface';
+import { OnSaveConfirmationCb } from '../interface';
 import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
+import { createIntermediateEvent } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 
@@ -39,24 +39,14 @@ interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
     newEditEventData: EventNewData;
     hasDefaultNotifications: boolean;
-    selfAddress?: Address;
     canEditOnlyPersonalPart: boolean;
-    isOrganizer: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
     getCalendarKeys: GetCalendarKeys;
-    sendIcs: (
-        data: SendIcsActionData,
-        calendarID?: string
-    ) => Promise<{
-        veventComponent?: VcalVeventComponent;
-        inviteActions: InviteActions;
-        timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-    }>;
+    sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
-    onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
+    onSendPrefsErrors: OnSendPrefsErrors;
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
@@ -69,7 +59,6 @@ const getSaveSingleEventActions = async ({
         veventComponent: newVeventComponent,
     },
     hasDefaultNotifications,
-    selfAddress,
     canEditOnlyPersonalPart,
     isAttendee,
     inviteActions,
@@ -110,7 +99,7 @@ const getSaveSingleEventActions = async ({
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
-        const updatedVeventComponent = getUpdatedInviteVevent(
+        const updatedVeventComponent = getInviteVeventWithUpdatedParstats(
             veventComponentWithUpdatedDtstamp,
             oldVeventComponent,
             method
@@ -201,7 +190,7 @@ const getSaveSingleEventActions = async ({
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
-        let updatedVeventComponent = getUpdatedInviteVevent(
+        let updatedVeventComponent = getInviteVeventWithUpdatedParstats(
             veventComponentWithUpdatedDtstamp,
             oldVeventComponent,
             method
@@ -263,16 +252,13 @@ const getSaveSingleEventActions = async ({
     }
 
     // it's a new event
-    let updatedVeventComponent = newVeventComponent;
+    let updatedVeventComponent: VcalVeventComponent | undefined = newVeventComponent;
     let updatedInviteActions = inviteActions;
     let intermediateEvent;
+    let sendPreferencesMap;
     let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
     if (inviteType === SEND_INVITATION) {
-        if (!selfAddress) {
-            throw new Error('Cannot create an event without user address');
-        }
-
         await onSaveConfirmation({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
@@ -280,60 +266,25 @@ const getSaveSingleEventActions = async ({
             isOrganizer: true,
             canEditOnlyPersonalPart: false,
         });
-        const { inviteActions: cleanInviteActions, vevent: cleanVevent } = await onSendPrefsErrors({
-            inviteActions,
+        ({
+            intermediateEvent,
             vevent: updatedVeventComponent,
-        });
-
-        if (!cleanVevent) {
-            throw new Error('Failed to clean event component');
-        }
-
-        [updatedInviteActions, updatedVeventComponent] = [cleanInviteActions, cleanVevent];
-
-        // we need to get a SharedEventID before sending out the invitation
-        // for that we will save the event first without attendees
-        const createIntermediateOperation = getCreateSyncOperation({
-            veventComponent: omit(updatedVeventComponent, ['attendee']),
+            inviteActions: updatedInviteActions,
+        } = await createIntermediateEvent({
+            inviteActions: updatedInviteActions,
+            vevent: updatedVeventComponent,
             hasDefaultNotifications,
-        });
-        const syncIntermediateActions = [
-            {
-                calendarID: newCalendarID,
-                addressID: newAddressID,
-                memberID: newMemberID,
-                operations: [createIntermediateOperation],
-            },
-        ];
-
-        const [
-            {
-                Responses: [
-                    {
-                        Response: { Event },
-                    },
-                ],
-            },
-        ] = await handleSyncActions(syncIntermediateActions);
-        intermediateEvent = Event;
-
-        if (!intermediateEvent) {
-            throw new Error('Failed to generate intermediate event');
-        }
-
-        const sharedSessionKey = await getBase64SharedSessionKey({
-            calendarEvent: intermediateEvent,
+            calendarID: newCalendarID,
+            addressID: newAddressID,
+            memberID: newMemberID,
             getCalendarKeys,
-        });
+            onSendPrefsErrors,
+            handleSyncActions,
+        }));
 
-        if (sharedSessionKey) {
-            updatedInviteActions.sharedEventID = intermediateEvent.SharedEventID;
-            updatedInviteActions.sharedSessionKey = sharedSessionKey;
-        }
-
-        const {
-            veventComponent: finalVeventComponent,
-            inviteActions: finalInviteActions,
+        ({
+            veventComponent: updatedVeventComponent,
+            inviteActions: updatedInviteActions,
             sendPreferencesMap,
         } = await sendIcs(
             {
@@ -344,12 +295,7 @@ const getSaveSingleEventActions = async ({
             },
             // we pass the calendarID here as we want to call the event manager in case the operation fails
             newCalendarID
-        );
-
-        if (finalVeventComponent) {
-            updatedVeventComponent = finalVeventComponent;
-            updatedInviteActions = finalInviteActions;
-        }
+        ));
 
         addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
             veventComponent: updatedVeventComponent,

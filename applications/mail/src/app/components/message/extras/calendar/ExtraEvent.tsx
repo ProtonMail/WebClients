@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { Banner, useApi } from '@proton/components';
+import { Banner, useApi, useDrawer } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -11,6 +11,9 @@ import {
     EventInvitationError,
     INVITATION_ERROR_TYPE,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { APPS } from '@proton/shared/lib/constants';
+import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -104,6 +107,7 @@ const ExtraEvent = ({
     const [retryCount, setRetryCount] = useState<number>(0);
     const isMounted = useIsMounted();
     const api = useApi();
+    const { appInView } = useDrawer();
 
     const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs, pmData, invitationApi } = model;
     // setters don't need to be listed as dependencies in a callback
@@ -245,6 +249,19 @@ const ExtraEvent = ({
                     ownAddresses,
                     overwrite: !!hasDecryptionError,
                 });
+
+                // If we just updated the event and the calendar app is opened in the drawer,
+                // we want to call the calendar event manager to refresh the view
+                if (updatedInvitationApi && appInView === APPS.PROTONCALENDAR) {
+                    postMessageToIframe(
+                        {
+                            type: DRAWER_EVENTS.CALL_CALENDAR_EVENT_MANAGER,
+                            payload: { calendarID: invitationApi.calendarEvent.CalendarID },
+                        },
+                        APPS.PROTONCALENDAR
+                    );
+                }
+
                 const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =
                     updateAction !== UPDATE_ACTION.NONE
