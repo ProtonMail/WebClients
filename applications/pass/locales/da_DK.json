@@ -570,6 +570,9 @@
       "Moving item failed": [
         "Flytning af element mislykkedes"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Offline-tilstand er i øjeblikket ikke tilgængelig for to-adgangskode-tilstand."
+      ],
       "Passphrase is incorrect": [
         "Adgangssætning er forkert"
       ],
@@ -1092,11 +1095,11 @@
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
       ],
+      "The export will only contain vaults that you own.": [
+        "Eksporten vil kun indeholde bokse, som du ejer."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Den eksporterede fil vil blive krypteret med PGP og kræver en stærk adgangssætning."
-      ],
-      "The exported file will not contain the data of shared vaults where you are not the owner": [
-        "Den eksporterede fil vil ikke indeholde data fra delte bokse, hvor du ikke er ejeren."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1457,6 +1460,9 @@
       ],
       "Password history": [
         "Adgangskodehistorik"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-krypteret JSON (anbefales)"
       ],
       "PIN": [
         "Pinkode"
