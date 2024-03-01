@@ -26,25 +26,33 @@ const displayNotification = (
     const { Subject, Sender, ID, ConversationID, LabelIDs } = Message;
     const sender = Sender.Name || Sender.Address;
     const title = c('Desktop notification title').t`New email received`;
+    const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
     const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
-    return create(title, {
-        tag: ID,
-        body: c('Desktop notification body').t`From: ${sender} - ${Subject}`,
-        icon: notificationIcon,
-        onClick() {
-            // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
-            const cleanHistoryLocation = { ...history.location, hash: '' };
+    return create(
+        title,
+        {
+            tag: ID,
+            body,
+            icon: notificationIcon,
+            onClick() {
+                // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
+                const cleanHistoryLocation = { ...history.location, hash: '' };
 
-            window.focus();
-            history.push(
-                setParamsInLocation(cleanHistoryLocation, {
-                    labelID,
-                    elementID: isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID,
-                })
-            );
-            onOpenElement();
+                window.focus();
+                history.push(
+                    setParamsInLocation(cleanHistoryLocation, {
+                        labelID,
+                        elementID: isConversationMode(labelID, mailSettings, cleanHistoryLocation)
+                            ? ConversationID
+                            : ID,
+                    })
+                );
+                onOpenElement();
+            },
         },
-    });
+        // Used for Electron notifications on the Mail desktop app
+        { title, body, app: 'mail' }
+    );
 };
 
 const useNewEmailNotification = (onOpenElement: () => void) => {
