@@ -2,6 +2,10 @@ import Push from 'push.js';
 
 import noop from '@proton/utils/noop';
 
+import { ElectronNotification } from '../desktop/desktopTypes';
+import { canInvokeInboxDesktopIPC } from '../desktop/ipcHelpers';
+import { isElectronApp } from './desktop';
+
 Push.config({
     serviceWorker: './assets/serviceWorker.min.js', // Sets a custom service worker script
 });
@@ -45,10 +49,16 @@ export const request = (onGranted: () => void = noop, onDenied: () => void = noo
  * Create a desktop notification
  * @param title
  * @param params https://pushjs.org/docs/options
+ * @param electronNotification used to show notification on Electron apps, optional parameter
  */
-export const create = async (title = '', params = {}) => {
+export const create = async (title = '', params = {}, electronNotification?: ElectronNotification) => {
     if (!isEnabled()) {
         return;
     }
-    return Push.create(title, params);
+    if (isElectronApp && electronNotification) {
+        if (!canInvokeInboxDesktopIPC) {return;}
+        window.ipcInboxMessageBroker?.send('showNotification', electronNotification);
+    } else {
+        return Push.create(title, params);
+    }
 };
