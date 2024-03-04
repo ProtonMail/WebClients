@@ -72,21 +72,21 @@ const MainContainer: FunctionComponent = () => {
                 <SimpleLoginExtensionProvider>
                     <MailContentRefProvider mailContentRef={mailContentRef}>
                         <ChecklistsProvider>
-                            <ComposerContainer breakpoints={breakpoints}>
-                                <CheckAllRefProvider>
-                                    <ModalsChildren />
-                                    <Switch>
-                                        <SubscriptionModalProvider app={APP_NAME}>
+                            <SubscriptionModalProvider app={APP_NAME}>
+                                <ComposerContainer breakpoints={breakpoints}>
+                                    <CheckAllRefProvider>
+                                        <ModalsChildren />
+                                        <Switch>
                                             <Route
                                                 path={MAIN_ROUTE_PATH}
                                                 render={() => (
                                                     <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
                                                 )}
                                             />
-                                        </SubscriptionModalProvider>
-                                    </Switch>
-                                </CheckAllRefProvider>
-                            </ComposerContainer>
+                                        </Switch>
+                                    </CheckAllRefProvider>
+                                </ComposerContainer>
+                            </SubscriptionModalProvider>
                         </ChecklistsProvider>
                     </MailContentRefProvider>
                 </SimpleLoginExtensionProvider>
