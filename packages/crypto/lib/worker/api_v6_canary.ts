@@ -6,6 +6,7 @@
 import {
     SHA256,
     SHA512,
+    argon2,
     armorBytes,
     canKeyEncrypt,
     checkKeyCompatibility,
@@ -41,7 +42,15 @@ import {
     verifyCleartextMessage,
     verifyMessage,
 } from 'pmcrypto-v6-canary';
-import type { AlgorithmInfo as AlgorithmInfoV6, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
+import type {
+    AlgorithmInfo as AlgorithmInfoV6,
+    Argon2Options,
+    Data,
+    Key,
+    PrivateKey,
+    PublicKey,
+} from 'pmcrypto-v6-canary';
+import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
 import { SubkeyOptions, UserID, config, enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
@@ -1052,8 +1061,9 @@ export class Api extends KeyManagementApi {
     /**
      * Compute argon2 hash of the given `password`
      */
-    async computeArgon2() {
-        throw new Error('Not implemented');
+    async computeArgon2({ password, salt, params = ARGON2_PARAMS.RECOMMENDED }: Argon2Options) {
+        const result = await argon2({ password, salt, params });
+        return result;
     }
 
     /**
