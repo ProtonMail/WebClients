@@ -15,6 +15,7 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handleDeleteClick: () => void;
     handleDismissClick: () => void;
     handleEditClick: () => void;
+    handleHistoryClick: () => void;
     handleMoveToTrashClick: () => void;
     handleMoveToVaultClick: () => void;
     handleRestoreClick: () => void;
@@ -23,6 +24,10 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handleManageClick: () => void;
     handlePinClick: () => void;
 };
+
+export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {
+    revision: ItemRevision<T>;
+} & Partial<Extra>;
 
 export type ItemEditViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevision<T>;

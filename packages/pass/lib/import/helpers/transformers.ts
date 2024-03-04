@@ -9,12 +9,12 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
+import { epochToDate } from '@proton/pass/utils/time/format';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 export const getImportedVaultName = (vaultName?: string) => {
     if (!vaultName) {
-        const date = getFormattedDayFromTimestamp(getEpoch());
+        const date = epochToDate(getEpoch());
         // translator: Import - 16/05/2014
         return c('Title').t`Import - ${date}`;
     }
