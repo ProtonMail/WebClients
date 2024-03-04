@@ -342,7 +342,7 @@ export const getPassConfiguration = ({
             {
                 value: Audience.B2C,
                 pathname: SSO_PATHS.PASS_SIGNUP,
-                title: c('pass_signup_2023: title').t`For invididuals`,
+                title: c('pass_signup_2023: title').t`For individuals`,
                 defaultPlan: PLANS.PASS_PLUS,
             },
             {
