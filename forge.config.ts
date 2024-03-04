@@ -82,11 +82,6 @@ const config: ForgeConfig = {
             },
         },
         {
-            name: "@electron-forge/maker-zip",
-            config: {},
-            platforms: ["win32", "darwin", "linux"],
-        },
-        {
             name: "@electron-forge/maker-rpm",
             config: {
                 options: {

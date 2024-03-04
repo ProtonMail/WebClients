@@ -1344,17 +1344,6 @@
   optionalDependencies:
     electron-installer-dmg "^4.0.0"
 
-"@electron-forge/maker-flatpak@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@electron-forge/maker-flatpak/-/maker-flatpak-7.3.0.tgz#7ba8f23965632b9ddfcebe4428a520db62898730"
-  integrity sha512-XR4tfKAfVQZ9FV9beSWZMVBMZ8D9/aqUGxAN/aKSkIzjOg1uZSq4dDkzGw4Yn1sL8iCoXTnQuu6FMRGwkuiErg==
-  dependencies:
-    "@electron-forge/maker-base" "7.3.0"
-    "@electron-forge/shared-types" "7.3.0"
-    fs-extra "^10.0.0"
-  optionalDependencies:
-    "@malept/electron-installer-flatpak" "^0.11.4"
-
 "@electron-forge/maker-rpm@^7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@electron-forge/maker-rpm/-/maker-rpm-7.3.0.tgz#0fa63234fa0e3d4bde4bb31dc76df25efc2f755a"
@@ -1375,17 +1364,6 @@
     fs-extra "^10.0.0"
   optionalDependencies:
     electron-winstaller "^5.0.0"
-
-"@electron-forge/maker-zip@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@electron-forge/maker-zip/-/maker-zip-7.3.0.tgz#064ab2857fdbb183c3226bb0f69b77abdab1e172"
-  integrity sha512-VYYLScDpibVIiMRK7JWeCS9G8VYvPXa1X6p6fNYQoFOWommG9zC7OOnFfNnLBrH1+0ginZRJeLD1zo+cM12JuQ==
-  dependencies:
-    "@electron-forge/maker-base" "7.3.0"
-    "@electron-forge/shared-types" "7.3.0"
-    cross-zip "^4.0.0"
-    fs-extra "^10.0.0"
-    got "^11.8.5"
 
 "@electron-forge/plugin-auto-unpack-natives@^7.3.0":
   version "7.3.0"
@@ -1823,28 +1801,6 @@
   integrity sha512-1DpKU0Z5ThltBwjNySMC14g0CkbyhCaz9FkhxqNsZI6uAPJXFS8cMXlBKo26FJ8ZuW6S9GCMcR9IO5k2X5/9Fg==
   dependencies:
     cross-spawn "^7.0.1"
-
-"@malept/electron-installer-flatpak@^0.11.4":
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/@malept/electron-installer-flatpak/-/electron-installer-flatpak-0.11.4.tgz#420bce6a71ffbeafaf134ef8ee2ba0e0db62f133"
-  integrity sha512-ZdwhT4WeeJWdnsmALUtQ7bn4pzYVh0Vg+4NnF1S3n3OACc9IWg+B+LxI5gT3XSXIrxogouqkjM6gD8S592awyA==
-  dependencies:
-    "@malept/flatpak-bundler" "^0.4.0"
-    debug "^4.1.1"
-    electron-installer-common "^0.10.0"
-    lodash "^4.17.15"
-    semver "^7.1.1"
-    yargs "^16.0.0"
-
-"@malept/flatpak-bundler@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@malept/flatpak-bundler/-/flatpak-bundler-0.4.0.tgz#e8a32c30a95d20c2b1bb635cc580981a06389858"
-  integrity sha512-9QOtNffcOF/c1seMCDnjckb3R9WHcG34tky+FHpNKKCW0wc/scYLwMtO+ptyGUfMW0/b/n4qRiALlaFHc9Oj7Q==
-  dependencies:
-    debug "^4.1.1"
-    fs-extra "^9.0.0"
-    lodash "^4.17.15"
-    tmp-promise "^3.0.2"
 
 "@mapbox/node-pre-gyp@^1.0.5":
   version "1.0.11"
@@ -3748,11 +3704,6 @@ cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cross-zip@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/cross-zip/-/cross-zip-4.0.0.tgz"
-  integrity sha512-MEzGfZo0rqE10O/B+AEcCSJLZsrWuRUvmqJTqHNqBtALhaJc3E3ixLGLJNTRzEA2K34wbmOHC4fwYs9sVsdcCA==
-
 crypto@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/crypto/-/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
@@ -4109,7 +4060,7 @@ ee-first@1.1.1:
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
-electron-installer-common@^0.10.0, electron-installer-common@^0.10.2:
+electron-installer-common@^0.10.2:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/electron-installer-common/-/electron-installer-common-0.10.3.tgz#40f9db644ca60eb28673d545b67ee0113aef4444"
   integrity sha512-mYbP+6i+nHMIm0WZHXgGdmmXMe+KXncl6jZYQNcCF9C1WsNA9C5SZ2VP4TLQMSIoFO+X4ugkMEA5uld1bmyEvA==
@@ -9433,7 +9384,7 @@ yargs@^15.4.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yargs@^16.0.0, yargs@^16.0.2:
+yargs@^16.0.2:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
   integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
