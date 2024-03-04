@@ -16,6 +16,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -44,6 +45,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleDeleteClick,
     handleDismissClick,
     handleEditClick,
+    handleHistoryClick,
     handleInviteClick,
     handleManageClick,
     handleMoveToTrashClick,
@@ -61,6 +63,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const plan = useSelector(selectPassPlan);
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
+    const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
@@ -77,7 +80,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
             className={itemTypeToSubThemeClassName[type]}
             header={
                 <PanelHeader
-                    title={name}
+                    title={<h2 className="text-2xl text-bold text-ellipsis mb-0-5">{name}</h2>}
                     actions={(() => {
                         if (failed) {
                             return [
@@ -200,6 +203,14 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
                                         disabled={optimistic || !canTogglePinned}
                                         loading={!canTogglePinned}
+                                    />
+                                )}
+
+                                {historyEnabled && isPaidPlan(plan) && (
+                                    <DropdownMenuButton
+                                        onClick={handleHistoryClick}
+                                        label={c('Action').t`View history`}
+                                        icon={'clock-rotate-left'}
                                     />
                                 )}
 

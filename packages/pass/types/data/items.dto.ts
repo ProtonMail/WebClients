@@ -1,3 +1,5 @@
+import type { MaybeNull } from '@proton/pass/types';
+
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
 import type { IndexedByShareIdAndItemId, Item, ItemRevision } from './items';
@@ -27,9 +29,10 @@ export type ItemCreateIntentDTO = {
 };
 
 export type ItemEditIntentDTO = {
-    alias: { aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string };
+    alias: MaybeNull<{ aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string }>;
     login: never;
     note: never;
+    creditCard: never;
 };
 
 export type ItemImportIntentDTO = {
@@ -62,3 +65,17 @@ export type ItemMoveDTO = { before: ItemRevision; after: ItemRevision };
 /** This data-structure does not uses lists to avoid
  * iterations when checking for inclusions  */
 export type BulkSelectionDTO = IndexedByShareIdAndItemId<true>;
+
+export type ItemRevisionsIntent = {
+    itemId: string;
+    pageSize: number;
+    shareId: string;
+    since: MaybeNull<string>;
+};
+
+export type ItemRevisionsSuccess = {
+    next: MaybeNull<string>;
+    revisions: ItemRevision[];
+    since: MaybeNull<string>;
+    total: number;
+};

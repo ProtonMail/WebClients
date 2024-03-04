@@ -24,7 +24,7 @@ export type NavigateOptions<LocationState = any> = {
 };
 
 export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationState> & {
-    view?: 'edit' | 'view';
+    view?: 'edit' | 'view' | 'history';
     inTrash?: boolean;
 };
 

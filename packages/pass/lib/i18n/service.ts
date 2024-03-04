@@ -5,9 +5,10 @@ import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
-import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { type TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import noop from '@proton/utils/noop';
 
 type I18nServiceOptions = {
     locales: TtagLocaleMap;
@@ -36,6 +37,7 @@ export const createI18nService = (options: I18nServiceOptions) => {
         try {
             const nextLocale = getClosestLocaleCode(locale ?? (await getLocale()), options.locales);
 
+            await loadDateLocale(nextLocale).catch(noop);
             await loadLocale(nextLocale, options.locales);
             options.onLocaleChange?.(nextLocale);
             pubsub.publish({ locale: nextLocale });

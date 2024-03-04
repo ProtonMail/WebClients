@@ -8,6 +8,7 @@ export const offlineSetupRequest = `offline::setup`;
 
 export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
 export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;
+export const itemRevisionsRequest = (shareId: string, itemId: string) => `item::revisions::${shareId}::${itemId}`;
 export const itemsImportRequest = () => `items::import`;
 export const itemsBulkMoveRequest = () => `items::bulk::move`;
 export const itemsBulkTrashRequest = () => `items::bulk::trash`;
