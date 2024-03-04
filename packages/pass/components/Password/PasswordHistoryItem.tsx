@@ -8,7 +8,7 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
-import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
+import { epochToDateTime } from '@proton/pass/utils/time/format';
 
 import { usePasswordContext } from './PasswordProvider';
 
@@ -35,7 +35,7 @@ export const PasswordHistoryItem: FC<PasswordHistoryEntry> = ({ value, origin, i
                         <Icon name="cross" alt={c('Action').t`Delete password`} />
                     </Button>,
                 ]}
-                extra={<small className="color-weak">{getFormattedDateFromTimestamp(createTime)}</small>}
+                extra={<small className="color-weak">{epochToDateTime(createTime)}</small>}
             >
                 {getCharsGroupedByColor(value)}
             </ValueControl>

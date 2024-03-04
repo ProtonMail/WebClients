@@ -3,18 +3,18 @@ import { format, formatRelative, isThisWeek } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import capitalize from '@proton/utils/capitalize';
 
-export const getFormattedDateFromTimestamp = (timestamp: number) => {
-    return `${format(new Date(timestamp * 1000), 'dd MMM yyyy, HH:mm', { locale: dateLocale })}`;
-};
+import { epochToMs } from './epoch';
 
-export const getFormattedDayFromTimestamp = (timestamp: number) => {
-    return format(new Date(timestamp * 1000), 'dd MMM yyyy', { locale: dateLocale });
-};
+const formatEpoch = (dateFormat: string) => (epoch: number) =>
+    `${format(epochToMs(epoch), dateFormat, { locale: dateLocale })}`;
 
-export const getRelativeDateFromTimestamp = (timestamp: number) => {
-    const date = new Date(timestamp * 1000);
-    if (isThisWeek(date)) {
-        return `${capitalize(formatRelative(date, new Date(), { locale: dateLocale }))}`;
-    }
-    return getFormattedDateFromTimestamp(timestamp);
+export const epochToDateTime = formatEpoch('dd MMM yyyy, HH:mm');
+export const epochToDate = formatEpoch('dd MMM yyyy');
+
+export const epochToRelativeDate = (epoch: number) => {
+    const date = new Date(epochToMs(epoch));
+
+    return isThisWeek(date)
+        ? `${capitalize(formatRelative(date, new Date(), { locale: dateLocale }))}`
+        : epochToDateTime(epoch);
 };

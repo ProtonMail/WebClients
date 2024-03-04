@@ -15,7 +15,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { selectLoginItemByUsername } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
+import { epochToDateTime } from '@proton/pass/utils/time/format';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { navigate } = useNavigation();
@@ -80,10 +80,10 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                         label: c('Label').t`Modified`,
                         values: [
                             c('Info').ngettext(msgid`${modifiedCount} time`, `${modifiedCount} times`, modifiedCount),
-                            getFormattedDateFromTimestamp(modifyTime),
+                            epochToDateTime(modifyTime),
                         ],
                     },
-                    { label: c('Label').t`Created`, values: [getFormattedDateFromTimestamp(createTime)] },
+                    { label: c('Label').t`Created`, values: [epochToDateTime(createTime)] },
                 ]}
             />
             <ConfirmationModal
