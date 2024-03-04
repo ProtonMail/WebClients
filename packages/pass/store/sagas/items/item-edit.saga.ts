@@ -14,6 +14,8 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
 function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
+    if (!aliasEditIntent.extraData) return;
+
     const { itemId, shareId } = aliasEditIntent;
 
     const item: ItemRevision<'alias'> = yield select(selectItemByShareIdAndId(shareId, itemId));
@@ -54,7 +56,9 @@ function* itemEditWorker(
     const telemetry = getTelemetry();
 
     try {
-        if (editIntent.type === 'alias' && editIntent.extraData.aliasOwner) yield call(editMailboxesWorker, editIntent);
+        if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) {
+            yield call(editMailboxesWorker, editIntent);
+        }
 
         const encryptedItem: ItemRevisionContentsResponse = yield editItem(editIntent, lastRevision);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
@@ -62,7 +66,9 @@ function* itemEditWorker(
         const itemEditSuccessAction = itemEditSuccess({ item, itemId, shareId });
         yield put(itemEditSuccessAction);
 
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] }));
+        void telemetry?.push(
+            createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] })
+        );
 
         if (item.data.type === 'login' && editIntent.type === 'login') {
             const prevTotp = deobfuscate(editIntent.content.totpUri);

@@ -1,9 +1,9 @@
-.pass-button-group {
+.pass-button-bar {
 	button {
 		color: var(--text-norm) !important;
 
 		&.is-selected {
-			color: var(--interaction-weak-contrast) !important;
+			color: var(--interaction-norm-contrast) !important;
 			background-color: var(--interaction-norm) !important;
 		}
 	}

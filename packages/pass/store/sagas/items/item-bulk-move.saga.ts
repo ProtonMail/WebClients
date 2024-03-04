@@ -34,10 +34,10 @@ function* itemBulkMoveWorker(
     { payload, meta }: ReturnType<typeof itemBulkMoveIntent>
 ) {
     const requestId = meta.request.id;
-    const { selected, destinationShareId } = payload;
+    const { selected, shareId } = payload;
     const items = (yield select(selectItemsFromBulkSelectionDTO(selected))) as ItemRevision[];
-    const itemsToMove = items.filter(({ shareId }) => shareId !== destinationShareId);
-    const channel = bulkMoveChannel(itemsToMove, destinationShareId);
+    const itemsToMove = items.filter((item) => item.shareId !== shareId);
+    const channel = bulkMoveChannel(itemsToMove, shareId);
 
     while (true) {
         const action: BulkMoveItemsChannel = yield take(channel);
