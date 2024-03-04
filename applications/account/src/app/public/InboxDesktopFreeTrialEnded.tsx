@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/freeTrial/freeTrialUpgradeClick';
+import { useTheme } from '@proton/components/index';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { resetEndOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
@@ -12,6 +13,7 @@ import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers'
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
 import inboxPlaceholder from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder.png';
+import inboxPlaceholderDark from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder_dark.png';
 
 import Layout from './Layout';
 import Main from './Main';
@@ -31,6 +33,7 @@ const WebAppLink = () => {
 
 const InboxDesktopFreeTrialEnded = () => {
     const history = useHistory();
+    const theme = useTheme();
 
     useEffect(() => {
         // The free trial page is only displayed for the electron desktop application
@@ -49,7 +52,7 @@ const InboxDesktopFreeTrialEnded = () => {
     return (
         <Layout layoutClassName="free-trial-blur" hasDecoration={false}>
             <img
-                src={inboxPlaceholder}
+                src={theme.information.dark ? inboxPlaceholderDark : inboxPlaceholder}
                 alt=""
                 className="blur-background h-custom w-custom absolute top-0 left-0 z-0 opacity-70"
                 style={{ '--h-custom': '100vh', '--w-custom': '100vw' }}
