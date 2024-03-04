@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
+import { WasmTxBuilder } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 
-import { WasmTxBuilder } from '../../../../../pkg';
-import { AccountWithBlockchainData } from '../../../../types';
+import { AccountWithChainData } from '../../../../types';
 import { AdvancedOptionsModal } from './AdvancedOptionsModal';
 import { ManualCoinSelectionModal } from './ManualCoinSelectionModal';
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
 interface Props {
-    account?: AccountWithBlockchainData;
+    account?: AccountWithChainData;
     txBuilder: WasmTxBuilder;
     updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void;
 }

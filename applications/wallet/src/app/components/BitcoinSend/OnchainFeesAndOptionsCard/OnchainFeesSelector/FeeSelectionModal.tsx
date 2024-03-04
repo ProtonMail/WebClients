@@ -11,15 +11,15 @@ import { useFeeSelectionModal } from './useFeeSelectionModal';
 
 interface Props {
     isOpen: boolean;
-    feeEstimations: [number, number][];
+    feesEstimations: [number, number][];
     feeRate: number;
     onClose: () => void;
     onFeeRateSelected: (feeRate: number) => void;
 }
 
-export const FeeSelectionModal = ({ isOpen, onClose, feeEstimations, onFeeRateSelected, feeRate }: Props) => {
+export const FeeSelectionModal = ({ isOpen, onClose, feesEstimations, onFeeRateSelected, feeRate }: Props) => {
     const { handleBlockTargetChange, handleFeeRateChange, tmpBlockTarget, tmpFeeRate } = useFeeSelectionModal(
-        feeEstimations,
+        feesEstimations,
         feeRate,
         isOpen
     );

@@ -1,2 +1,2 @@
-export * from './useOnchainWalletContext';
+export * from './useBitcoinBlockchainContext';
 export * from './useWalletDispatch';

@@ -1,4 +1,4 @@
-import { WasmScriptType } from '../../pkg';
+import { WasmScriptType } from '@proton/andromeda';
 
 export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;

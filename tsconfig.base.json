@@ -40,14 +40,15 @@
             "@proton/pack/*": ["./packages/pack/*"],
             "@proton/pass/*": ["./packages/pass/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
-            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
             "@proton/shared/*": ["./packages/shared/*"],
             "@proton/sieve/*": ["./packages/sieve/*"],
             "@proton/srp/*": ["./packages/srp/*"],
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
-            "@proton/utils/*": ["./packages/utils/*"]
+            "@proton/utils/*": ["./packages/utils/*"],
+            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
+            "@proton/andromeda": ["./packages/wasm/andromeda/*"]
         }
     },
     "exclude": ["**/node_modules", "**/.*/"]

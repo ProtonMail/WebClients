@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmBitcoinUnit } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { Pill } from '@proton/atoms/Pill';
 import Alert from '@proton/components/components/alert/Alert';
 import { ConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import Icon from '@proton/components/components/icon/Icon';
-import { useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
-import { WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
-import { useOnchainWalletContext, useRustApi } from '../../contexts';
+import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
+import { useWalletDispatch } from '../../store/hooks';
+import { walletDeletion } from '../../store/slices/apiWalletsData';
 import { WalletType } from '../../types/api';
-import { getWalletBalance } from '../../utils';
+import { getWalletBalance, getWalletUntrustedBalance } from '../../utils';
 
 interface Props {
     onAddWallet: () => void;
@@ -26,12 +28,12 @@ const fiatCurrency = 'USD';
 const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 export const YourWalletsSection = ({ onAddWallet }: Props) => {
-    const { wallets } = useOnchainWalletContext();
+    const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const [displayedDeleteButton, setDisplayedDeleteButton] = useState<string | null>(null);
     const [walletToDelete, setWalletToDelete] = useState<string | null>(null);
     const isConfirmModalOpen = !!walletToDelete;
-    const { call } = useEventManager();
+    const dispatch = useWalletDispatch();
 
     const rust = useRustApi();
     const { createNotification } = useNotifications();
@@ -48,7 +50,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
             .then(async () => {
                 createNotification({ text: c('Wallet').t`Wallet successfully deleted` });
                 setWalletToDelete(null);
-                await call();
+                dispatch(walletDeletion({ walletID: walletToDelete }));
             })
             .catch(() => createNotification({ text: c('Wallet').t`Could not delete wallet`, type: 'error' }));
     };
@@ -59,7 +61,11 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                 <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your wallets`}</h2>
 
                 <div className="grid-auto-fill mt-4 gap-4" style={{ '--min-grid-template-column-size': '16rem' }}>
-                    {wallets?.map((wallet) => {
+                    {decryptedApiWalletsData?.map((wallet) => {
+                        const fingerPrint = walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint();
+
+                        const untrustedBalance = getWalletUntrustedBalance(walletsChainData, wallet.Wallet.ID);
+
                         return (
                             <Card
                                 key={wallet.Wallet.ID}
@@ -81,7 +87,13 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                                 <div className="mt-6 flex flex-row items-center">
                                     <div>
                                         <BitcoinAmount
-                                            bitcoin={getWalletBalance(wallet)}
+                                            bitcoin={getWalletBalance(walletsChainData, wallet.Wallet.ID)}
+                                            info={
+                                                untrustedBalance ? (
+                                                    <span>{c('Wallet Account')
+                                                        .t`${untrustedBalance} SAT pending`}</span>
+                                                ) : null
+                                            }
                                             unit={bitcoinUnit}
                                             fiat={fiatCurrency}
                                             firstClassName="text-2xl"
@@ -89,7 +101,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                                         />
                                     </div>
 
-                                    {displayedDeleteButton === wallet.Wallet.ID && (
+                                    {displayedDeleteButton === wallet.Wallet.ID ? (
                                         <Button
                                             shape="ghost"
                                             className="p-1 ml-auto"
@@ -99,6 +111,8 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                                         >
                                             {<Icon name="eraser" alt={c('Wallet Dashboard').t`an eraser icon`} />}
                                         </Button>
+                                    ) : (
+                                        <div className="text-xs color-hint p-1 ml-auto">{fingerPrint}</div>
                                     )}
                                 </div>
                             </Card>

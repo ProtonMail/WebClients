@@ -36083,6 +36083,7 @@ __metadata:
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
+    "@proton/andromeda": "workspace:packages/wasm/andromeda"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"

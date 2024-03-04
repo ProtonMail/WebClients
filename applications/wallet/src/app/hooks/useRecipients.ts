@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
-import { WasmBitcoinUnit, WasmTxBuilder } from '../../pkg';
+import { WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+
 import { TxBuilderUpdater } from './useTxBuilder';
 
 export type RecipientUpdate = Partial<{ amount: number; address: string; unit: WasmBitcoinUnit }>;

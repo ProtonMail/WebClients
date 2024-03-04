@@ -3,7 +3,7 @@ import { TypedStartListening, configureStore, createListenerMiddleware } from '@
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import { rootReducer } from './rootReducer';
-import { name as userWalletsActionName } from './slices/userWallets';
+import { name as userWalletsActionName } from './slices/apiWalletsData';
 import { type WalletThunkArguments, extraThunkArguments } from './thunk';
 
 export type WalletState = ReturnType<typeof rootReducer>;

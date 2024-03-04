@@ -32,7 +32,7 @@ describe('FeeSelectionModal', () => {
             render(
                 <FeeSelectionModal
                     isOpen={true}
-                    feeEstimations={feesEstimations}
+                    feesEstimations={feesEstimations}
                     feeRate={0}
                     onClose={vi.fn()}
                     onFeeRateSelected={vi.fn()}
@@ -52,7 +52,7 @@ describe('FeeSelectionModal', () => {
             render(
                 <FeeSelectionModal
                     isOpen={true}
-                    feeEstimations={feesEstimations}
+                    feesEstimations={feesEstimations}
                     feeRate={0}
                     onClose={vi.fn()}
                     onFeeRateSelected={vi.fn()}
@@ -76,7 +76,7 @@ describe('FeeSelectionModal', () => {
             render(
                 <FeeSelectionModal
                     isOpen={true}
-                    feeEstimations={feesEstimations}
+                    feesEstimations={feesEstimations}
                     feeRate={0}
                     onClose={onClose}
                     onFeeRateSelected={vi.fn()}
@@ -101,7 +101,7 @@ describe('FeeSelectionModal', () => {
             render(
                 <FeeSelectionModal
                     isOpen={true}
-                    feeEstimations={feesEstimations}
+                    feesEstimations={feesEstimations}
                     feeRate={0}
                     onClose={vi.fn()}
                     onFeeRateSelected={onFeeRateSelected}

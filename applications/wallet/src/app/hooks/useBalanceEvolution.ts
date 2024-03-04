@@ -3,14 +3,25 @@ import { useMemo } from 'react';
 import { format, sub } from 'date-fns';
 import { groupBy } from 'lodash';
 
-import { IWasmSimpleTransactionArray } from '../../pkg';
+import { WasmTransactionDetails } from '@proton/andromeda';
+
 import { sortTransactionsByTime, transactionTime } from '../utils';
 
-export const useBalanceEvolution = (currentBalance: number, lastTransactions: IWasmSimpleTransactionArray) => {
+type BalanceEvolutionByTxChartData = {
+    balance: number;
+    timestamp: number;
+}[];
+
+type BalanceEvolutionByDayChartData = {
+    balance: number;
+    day: number;
+}[];
+
+export const useBalanceEvolution = (currentBalance: number, lastTransactions: WasmTransactionDetails[]) => {
     /**
      * Balance evolution from oldest transaction to newest one
      */
-    const evolutionByTx = useMemo(() => {
+    const evolutionByTx: BalanceEvolutionByTxChartData = useMemo(() => {
         if (!lastTransactions.length) {
             // CHart.js needs to elements in the array to draw the chart
             return new Array(2).fill({ balance: currentBalance, timestamp: new Date().getTime() });
@@ -21,7 +32,7 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: IW
 
         const [mostRecentTx] = sorted;
 
-        const evolByTx: { balance: number; timestamp: number }[] = sorted.reduce(
+        const evolByTx = sorted.reduce(
             (acc, transaction) => {
                 const [lastAccTx] = acc;
 
@@ -49,7 +60,7 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: IW
     /**
      * Balance evolution from oldest transaction day to newest one
      */
-    const evolutionByDay = useMemo(() => {
+    const evolutionByDay: BalanceEvolutionByDayChartData = useMemo(() => {
         if (!lastTransactions.length) {
             // CHart.js needs to elements in the array to draw the chart
             return new Array(2).fill({ balance: currentBalance, day: format(new Date(), 'MM/dd/yyyy') });

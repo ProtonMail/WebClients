@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmMnemonic, WasmWordCount } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { WalletLogo } from '@proton/components/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmMnemonic, WasmWordCount } from '../../../../pkg';
 import { ColorGradientCard } from './ColorGradientCard';
 
 import './MnemonicGeneration.scss';

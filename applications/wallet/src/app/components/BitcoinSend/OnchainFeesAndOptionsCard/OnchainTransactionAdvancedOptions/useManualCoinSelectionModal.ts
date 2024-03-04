@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { WasmOutPoint } from '../../../../../pkg';
-import { AccountWithBlockchainData } from '../../../../types';
+import { WasmOutPoint } from '@proton/andromeda';
+
+import { AccountWithChainData } from '../../../../types';
 
 export const useManualCoinSelectionModal = (
     isOpen: boolean,
     selectedUtxos: WasmOutPoint[],
     onCoinSelected: (utxos: WasmOutPoint[]) => void,
-    account?: AccountWithBlockchainData
+    account?: AccountWithChainData
 ) => {
     const [tmpSelectedUtxos, setTmpSelectedUtxos] = useState<string[]>([]);
     const [activeUtxo, setActiveUtxo] = useState<string>();
@@ -27,7 +28,7 @@ export const useManualCoinSelectionModal = (
     const confirmCoinSelection = () => {
         onCoinSelected(
             tmpSelectedUtxos.map((outpoint) => {
-                return WasmOutPoint.fromRawTs(outpoint);
+                return WasmOutPoint.fromString(outpoint);
             })
         );
     };

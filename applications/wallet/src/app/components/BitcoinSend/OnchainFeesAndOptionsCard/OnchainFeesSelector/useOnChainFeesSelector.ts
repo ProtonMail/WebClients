@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { WasmTxBuilder } from '../../../../../pkg';
-import { useOnchainWalletContext } from '../../../../contexts';
+import { WasmTxBuilder } from '@proton/andromeda';
+
+import { useBitcoinBlockchainContext } from '../../../../contexts';
 import { DEFAULT_TARGET_BLOCK, MAX_BLOCK_TARGET, MIN_FEE_RATE } from './constant';
 import { FeeRateByBlockTarget } from './type';
 import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';
@@ -22,16 +23,16 @@ export const useOnChainFeesSelector = (
     txBuilder: WasmTxBuilder,
     updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void
 ) => {
-    const { fees } = useOnchainWalletContext();
+    const { feesEstimation: contextFeesEstimation } = useBitcoinBlockchainContext();
     const [isRecommended, setIsRecommended] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const feeEstimations = useMemo(() => {
-        return [...fees.entries()]
+    const feesEstimations = useMemo(() => {
+        return [...contextFeesEstimation.entries()]
             .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), feeRate])
             .filter(([block]) => Number.isFinite(block))
             .sort(([a], [b]) => a - b);
-    }, [fees]);
+    }, [contextFeesEstimation]);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -48,20 +49,20 @@ export const useOnChainFeesSelector = (
     );
 
     useEffect(() => {
-        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feeEstimations);
+        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesEstimations);
 
         if (defaultFeeRate && !txBuilder.getFeeRate()) {
             handleFeesSelected(defaultFeeRate, true);
         }
-    }, [feeEstimations, handleFeesSelected, txBuilder]);
+    }, [feesEstimations, handleFeesSelected, txBuilder]);
 
     const blockTarget = useMemo(() => {
         const feeRate = txBuilder.getFeeRate() ?? MIN_FEE_RATE;
-        return findLowestBlockTargetByFeeRate(feeRate, feeEstimations) ?? MAX_BLOCK_TARGET;
-    }, [feeEstimations, txBuilder]);
+        return findLowestBlockTargetByFeeRate(feeRate, feesEstimations) ?? MAX_BLOCK_TARGET;
+    }, [feesEstimations, txBuilder]);
 
     return {
-        feeEstimations,
+        feesEstimations,
         feeRateNote: getFeeRateNote(blockTarget),
         blockTarget,
         isModalOpen,

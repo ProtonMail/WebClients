@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { WasmPaymentLink } from '@proton/andromeda';
 import { Card } from '@proton/atoms/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 
-import { WasmPaymentLink } from '../../../../pkg';
 import { WalletSelector } from '../../../atoms';
+import { IWasmApiWalletData } from '../../../types';
 import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';
@@ -13,13 +14,14 @@ import { useOnchainSimpleSend } from './useOnchainSimpleSend';
 
 interface Props {
     paymentLink?: WasmPaymentLink;
+    wallets: IWasmApiWalletData[];
     defaultWalletId?: string;
 }
 
-export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
+export const OnchainSimpleSend = ({ wallets, paymentLink, defaultWalletId }: Props) => {
     const {
         walletAndAccount,
-        wallets,
+        account,
 
         txBuilder,
         updateTxBuilder,
@@ -31,11 +33,9 @@ export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
         erasePsbt,
         signAndBroadcastPsbt,
 
-        account,
-
         updateRecipient,
         handleSelectWalletAndAccount,
-    } = useOnchainSimpleSend(defaultWalletId, paymentLink);
+    } = useOnchainSimpleSend(wallets, defaultWalletId, paymentLink);
 
     if (loadingBroadcast) {
         return (
@@ -54,12 +54,15 @@ export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
         return <OnchainTransactionBroadcastConfirmation txid={broadcastedTxId} />;
     }
 
-    if (finalPsbt && account) {
+    if (finalPsbt) {
         return (
             <OnchainTransactionReview
-                from={{ accountName: account?.Label ?? '', walletName: walletAndAccount?.wallet?.Wallet.Name ?? '' }}
+                from={{
+                    walletName: walletAndAccount?.apiWalletData?.Wallet.Name ?? '',
+                    accountName: walletAndAccount?.apiAccount?.Label ?? '',
+                }}
                 psbt={finalPsbt}
-                account={account?.wasmAccount}
+                account={account}
                 onBack={erasePsbt}
                 onSignAndSend={signAndBroadcastPsbt}
             />
@@ -69,7 +72,12 @@ export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
     return (
         <div className="pb-6 px-8 h-full flex flex-column flex-nowrap">
             <div className="flex flex-row">
-                <WalletSelector wallets={wallets} value={walletAndAccount} onSelect={handleSelectWalletAndAccount} />
+                <WalletSelector
+                    apiWalletsData={wallets}
+                    value={walletAndAccount}
+                    onSelect={handleSelectWalletAndAccount}
+                    onlyValidWallet
+                />
             </div>
 
             <hr className="mt-4 mb-0" />
@@ -83,8 +91,8 @@ export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
 
             <OnchainFeesAndOptionsCard
                 txBuilder={txBuilder}
+                account={account}
                 updateTxBuilder={updateTxBuilder}
-                account={walletAndAccount.account}
                 createPsbt={createPsbt}
             />
         </div>

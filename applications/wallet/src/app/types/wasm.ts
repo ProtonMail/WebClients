@@ -1,8 +1,10 @@
-import { WasmApiWallet, WasmWalletAccount, WasmWalletKey, WasmWalletSettings } from '../../pkg';
+import { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
 
-export interface IWasmWallet {
-    Wallet: WasmApiWallet;
-    WalletAccounts: WasmWalletAccount[];
-    WalletKey?: WasmWalletKey;
-    WalletSettings?: WasmWalletSettings;
+export type ApiWalletWithPassphraseInput = WasmApiWallet & { Passphrase?: string };
+
+export interface IWasmApiWalletData {
+    Wallet: ApiWalletWithPassphraseInput;
+    WalletAccounts: WasmApiWalletAccount[];
+    WalletKey?: WasmApiWalletKey;
+    WalletSettings?: WasmApiWalletSettings;
 }

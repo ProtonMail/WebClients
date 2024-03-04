@@ -4,7 +4,7 @@ import Card from '@proton/atoms/Card/Card';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { WalletSelector } from '../../../atoms';
-import { useOnchainWalletContext } from '../../../contexts';
+import { IWasmApiWalletData } from '../../../types';
 import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';
@@ -14,14 +14,15 @@ import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 import './index.scss';
 
 interface Props {
+    wallets: IWasmApiWalletData[];
     defaultWalletId?: string;
 }
 
-export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
-    const { wallets } = useOnchainWalletContext();
-
+export const OnchainTransactionBuilder = ({ wallets, defaultWalletId }: Props) => {
     const {
         walletAndAccount,
+        account,
+
         handleSelectWalletAndAccount,
 
         txBuilder,
@@ -37,9 +38,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
         createPsbt,
         erasePsbt,
         signAndBroadcastPsbt,
-    } = useOnchainTransactionBuilder(defaultWalletId);
-
-    const { account, wallet } = walletAndAccount;
+    } = useOnchainTransactionBuilder(wallets, defaultWalletId);
 
     if (loadingBroadcast) {
         return (
@@ -61,9 +60,12 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
     if (finalPsbt && account) {
         return (
             <OnchainTransactionReview
-                from={{ accountName: account?.Label ?? '', walletName: wallet?.Wallet.Name ?? '' }}
+                from={{
+                    accountName: walletAndAccount.apiAccount?.Label ?? '',
+                    walletName: walletAndAccount.apiWalletData?.Wallet.Name ?? '',
+                }}
                 psbt={finalPsbt}
-                account={account?.wasmAccount}
+                account={account}
                 onBack={erasePsbt}
                 onSignAndSend={signAndBroadcastPsbt}
             />
@@ -73,7 +75,12 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
     return (
         <div className="pb-6 px-8 h-full flex flex-column flex-nowrap">
             <div className="flex flex-row">
-                <WalletSelector wallets={wallets} value={walletAndAccount} onSelect={handleSelectWalletAndAccount} />
+                <WalletSelector
+                    apiWalletsData={wallets}
+                    value={walletAndAccount}
+                    onSelect={handleSelectWalletAndAccount}
+                    onlyValidWallet
+                />
             </div>
 
             <hr className="mt-4 mb-0" />
@@ -91,7 +98,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
             <OnchainFeesAndOptionsCard
                 txBuilder={txBuilder}
                 updateTxBuilder={updateTxBuilder}
-                account={walletAndAccount.account}
+                account={account}
                 createPsbt={createPsbt}
             />
         </div>

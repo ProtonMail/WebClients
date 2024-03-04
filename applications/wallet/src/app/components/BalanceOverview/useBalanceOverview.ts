@@ -2,9 +2,18 @@ import { useMemo } from 'react';
 
 import { ChartDataset } from 'chart.js';
 
+import { WasmTransactionDetails } from '@proton/andromeda';
+
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useBalanceEvolution } from '../../hooks/useBalanceEvolution';
-import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
-import { getNewRandomColor, getWalletBalance, getWalletTransactions } from '../../utils';
+import { IWasmApiWalletData, WalletChainDataByWalletId } from '../../types';
+import {
+    getAccountBalance,
+    getAccountWithChainDataFromManyWallets,
+    getNewRandomColor,
+    getWalletBalance,
+    getWalletTransactions,
+} from '../../utils';
 import { DoughnutChartData } from '../charts/DoughnutChart';
 
 type WalletBalanceEvolutionChartDataset = ChartDataset<
@@ -20,41 +29,84 @@ type WalletBalanceEvolutionChartDataset = ChartDataset<
  * When multiple wallets are provided, it returns doughnut data to display distribution accross user's wallets
  */
 const formatWalletToDoughnutChart = (
-    data?: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
+    walletsChainData: WalletChainDataByWalletId,
+    colors: string[],
+    apiData?: IWasmApiWalletData | IWasmApiWalletData[]
 ): DoughnutChartData => {
-    const raw = data && 'accounts' in data ? data.accounts : data;
+    if (!apiData) {
+        return [];
+    }
 
-    const chartData = (raw ?? []).reduce((acc: DoughnutChartData, walletOrAccount) => {
-        const [label, balance] =
-            'accounts' in walletOrAccount
-                ? [walletOrAccount.Wallet.Name, getWalletBalance(walletOrAccount)]
-                : [walletOrAccount.Label, Number(walletOrAccount.balance.confirmed)];
+    if ('WalletAccounts' in apiData) {
+        return apiData.WalletAccounts.reduce((acc: DoughnutChartData, account, index) => {
+            const maybeAccount = getAccountWithChainDataFromManyWallets(
+                walletsChainData,
+                apiData.Wallet.ID,
+                account.ID
+            );
 
-        const color = getNewRandomColor(acc.map(([, color]) => color));
+            return [...acc, [getAccountBalance(maybeAccount), colors[index], account.Label]];
+        }, []);
+    }
 
-        return [...acc, [balance, color, label] as [number, string, string]];
+    return apiData.reduce((acc: DoughnutChartData, wallet, index) => {
+        const balance = Number(getWalletBalance(walletsChainData, wallet.Wallet.ID));
+        return [...acc, [balance, colors[index], wallet.Wallet.Name]];
     }, []);
+};
 
-    return chartData;
+const getBalanceOverviewData = (
+    walletsChainData: WalletChainDataByWalletId,
+    apiData?: IWasmApiWalletData | IWasmApiWalletData[]
+): [WasmTransactionDetails[], number, number] => {
+    if (Array.isArray(apiData)) {
+        return [
+            apiData.flatMap((wallet) => getWalletTransactions(walletsChainData, wallet.Wallet.ID)),
+            apiData.reduce((acc, wallet) => acc + getWalletBalance(walletsChainData, wallet.Wallet.ID), 0),
+            apiData.length ?? 0,
+        ];
+    }
+
+    if (apiData) {
+        return [
+            getWalletTransactions(walletsChainData, apiData.Wallet.ID),
+            getWalletBalance(walletsChainData, apiData.Wallet.ID),
+            apiData?.WalletAccounts.length ?? 0,
+        ];
+    }
+
+    return [[], 0, 0];
+};
+
+const computeColors = (apiData?: IWasmApiWalletData | IWasmApiWalletData[]) => {
+    if (!apiData) {
+        return [];
+    }
+
+    if ('WalletAccounts' in apiData) {
+        return apiData.WalletAccounts.reduce((acc: string[]) => {
+            return [...acc, getNewRandomColor(acc)];
+        }, []);
+    }
+
+    return apiData.reduce((acc: string[]) => {
+        return [...acc, getNewRandomColor(acc)];
+    }, []);
 };
 
 /**
  * Returns balance overview either for Single wallet dashboard or Many wallets ones
  */
-export const useBalanceOverview = (
-    data?: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
-) => {
-    const [transactions, totalBalance, dataCount] = Array.isArray(data)
-        ? [
-              data.flatMap((wallet) => getWalletTransactions(wallet)),
-              data.reduce((acc, wallet) => acc + getWalletBalance(wallet), 0),
-              data.length ?? 0,
-          ]
-        : [getWalletTransactions(data), getWalletBalance(data), data?.accounts.length ?? 0];
+export const useBalanceOverview = (apiData?: IWasmApiWalletData | IWasmApiWalletData[]) => {
+    const { walletsChainData } = useBitcoinBlockchainContext();
+
+    const [transactions, totalBalance, dataCount] = getBalanceOverviewData(walletsChainData, apiData);
+
+    const colors = useMemo(() => computeColors(apiData), [apiData]);
 
     const balanceDistributionDoughnutChartData: DoughnutChartData = useMemo(
-        () => formatWalletToDoughnutChart(data),
-        [data]
+        () => formatWalletToDoughnutChart(walletsChainData, colors, apiData),
+        [walletsChainData, colors, apiData]
     );
 
     const { evolutionByDay, balanceDifference: last7DaysBalanceDifference } = useBalanceEvolution(

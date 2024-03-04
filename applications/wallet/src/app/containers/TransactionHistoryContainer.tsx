@@ -6,26 +6,27 @@ import { Option, SelectTwo } from '@proton/components/components';
 import useSearchParams from '@proton/hooks/useSearchParams';
 
 import { TransactionList } from '../components/TransactionList';
-import { useOnchainWalletContext } from '../contexts';
+import { useBitcoinBlockchainContext } from '../contexts';
 
 export const TransactionHistoryContainer = () => {
     const [params] = useSearchParams();
-    const { wallets } = useOnchainWalletContext();
+
+    const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+
     const [walletId, setWalletId] = useState<string>();
 
     useEffect(() => {
         if (params.walletId) {
             setWalletId(params.walletId);
         } else {
-            setWalletId(wallets?.[0]?.Wallet.ID);
+            setWalletId(decryptedApiWalletsData?.[0]?.Wallet.ID);
         }
-    }, [params.walletId, wallets]);
+    }, [params.walletId, decryptedApiWalletsData]);
 
-    const wallet = useMemo(() => wallets?.find(({ Wallet }) => Wallet.ID === walletId), [walletId, wallets]);
-
-    if (!wallet) {
-        return null;
-    }
+    const wallet = useMemo(
+        () => decryptedApiWalletsData?.find(({ Wallet }) => Wallet.ID === walletId),
+        [walletId, decryptedApiWalletsData]
+    );
 
     return (
         <>
@@ -47,10 +48,10 @@ export const TransactionHistoryContainer = () => {
                                     setWalletId(event.value);
                                 }}
                             >
-                                {wallets
+                                {decryptedApiWalletsData
                                     ? [
                                           <Option key="-" value="-" title="All" disabled />,
-                                          ...wallets?.map(({ Wallet: { ID: WalletID, Name } }) => (
+                                          ...decryptedApiWalletsData?.map(({ Wallet: { ID: WalletID, Name } }) => (
                                               <Option key={WalletID} value={WalletID} title={Name} />
                                           )),
                                       ]
@@ -60,7 +61,7 @@ export const TransactionHistoryContainer = () => {
                     </div>
                 </div>
 
-                {wallet && <TransactionList wallet={wallet} />}
+                {wallet && <TransactionList wallet={walletsChainData[wallet.Wallet.ID]} />}
             </div>
         </>
     );

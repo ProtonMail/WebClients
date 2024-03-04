@@ -1,10 +1,10 @@
+import { apiWalletsDataReducer } from './apiWalletsData';
 import { bitcoinNetworkReducer } from './bitcoinNetwork';
-import { userWalletsReducer } from './userWallets';
 
 export { bitcoinNetworkThunk, selectBitcoinNetwork } from './bitcoinNetwork';
-export { userWalletsThunk, selectUserWallets } from './userWallets';
+export { apiWalletsDataThunk, selectApiWalletsData } from './apiWalletsData';
 
 export const walletReducers = {
     ...bitcoinNetworkReducer,
-    ...userWalletsReducer,
+    ...apiWalletsDataReducer,
 };

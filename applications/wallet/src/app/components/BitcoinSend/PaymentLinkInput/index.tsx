@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { WasmPaymentLink } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
-import { WasmPaymentLink } from '../../../../pkg';
 import { QRCodeReaderModal } from '../../QRCodeReaderModal';
 import { usePaymentLinkInput } from './usePaymentLinkInput';
 

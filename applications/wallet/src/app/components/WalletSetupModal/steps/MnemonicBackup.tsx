@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 
-import { WasmMnemonic, WasmWallet } from '../../../../pkg';
-import { useOnchainWalletContext } from '../../../contexts';
+import { useBitcoinBlockchainContext } from '../../../contexts';
 import { CreditCard } from './CreditCard';
 
 interface Props {
@@ -16,11 +16,17 @@ interface Props {
 }
 
 export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
-    const { network } = useOnchainWalletContext();
+    const { network } = useBitcoinBlockchainContext();
 
     const [showMnemonic, setShowMnemonic] = useState(false);
 
-    const wallet = mnemonic ? new WasmWallet(network, mnemonic.asString(), undefined) : null;
+    const wallet = useMemo(() => {
+        if (mnemonic && network) {
+            return new WasmWallet(network, mnemonic.asString(), undefined);
+        }
+
+        return undefined;
+    }, [mnemonic, network]);
 
     return (
         <ModalContent className="p-0 m-0">

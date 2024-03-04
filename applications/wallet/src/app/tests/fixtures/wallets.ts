@@ -5,15 +5,16 @@ import {
     WasmPaymentLink,
     WasmTransactionDetails,
     WasmWallet,
-} from '../../../pkg';
-import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
+} from '@proton/andromeda';
+
+import { WalletChainDataByWalletId } from '../../types';
 import {
-    wallets as apiWallets,
-    walletAccountOneA,
-    walletAccountOneB,
-    walletAccountThree,
-    walletAccountTwoA,
-    walletAccountTwoB,
+    apiWalletAccountOneA,
+    apiWalletAccountOneB,
+    apiWalletAccountThree,
+    apiWalletAccountTwoA,
+    apiWalletAccountTwoB,
+    apiWalletsData,
 } from '../fixtures/api';
 import { simpleTransactions } from './transactions';
 
@@ -46,58 +47,50 @@ const getMockedWasmAccount = (mocked?: Partial<WasmAccount>) => {
     } as WasmAccount;
 };
 
-export const walletsWithAccountsWithBalanceAndTxs: WalletWithAccountsWithBalanceAndTxs[] = [
-    {
-        ...apiWallets[0],
-        wasmWallet: getMockedWallet(),
-        accounts: [
-            {
-                ...walletAccountOneA,
-                utxos: [],
-                wasmAccount: getMockedWasmAccount(),
+export const walletChainDataByWalletId: WalletChainDataByWalletId = {
+    [apiWalletsData[0].Wallet.ID]: {
+        wallet: getMockedWallet(),
+        accounts: {
+            [apiWalletAccountOneA.ID]: {
+                account: getMockedWasmAccount(),
                 balance: { confirmed: BigInt(100067) } as WasmBalance,
                 transactions: simpleTransactions.slice(0, 4),
-            },
-            {
-                ...walletAccountOneB,
                 utxos: [],
-                wasmAccount: getMockedWasmAccount(),
+            },
+            [apiWalletAccountOneB.ID]: {
+                account: getMockedWasmAccount(),
+                utxos: [],
                 balance: { confirmed: BigInt(11783999) } as WasmBalance,
                 transactions: simpleTransactions.slice(4, 8),
             },
-        ],
+        },
     },
-    {
-        ...apiWallets[1],
-        wasmWallet: getMockedWallet(),
-        accounts: [
-            {
-                ...walletAccountTwoA,
+    [apiWalletsData[1].Wallet.ID]: {
+        wallet: getMockedWallet(),
+        accounts: {
+            [apiWalletAccountTwoA.ID]: {
+                account: getMockedWasmAccount(),
                 utxos: [],
-                wasmAccount: getMockedWasmAccount(),
                 balance: { confirmed: BigInt(8287263) } as WasmBalance,
                 transactions: simpleTransactions.slice(8, 12),
             },
-            {
-                ...walletAccountTwoB,
+            [apiWalletAccountTwoB.ID]: {
+                account: getMockedWasmAccount(),
                 utxos: [],
-                wasmAccount: getMockedWasmAccount(),
                 balance: { confirmed: BigInt(97536) } as WasmBalance,
                 transactions: simpleTransactions.slice(12, 16),
             },
-        ],
+        },
     },
-    {
-        ...apiWallets[2],
-        wasmWallet: getMockedWallet(),
-        accounts: [
-            {
-                ...walletAccountThree,
+    [apiWalletsData[2].Wallet.ID]: {
+        wallet: getMockedWallet(),
+        accounts: {
+            [apiWalletAccountThree.ID]: {
+                account: getMockedWasmAccount(),
                 utxos: [],
-                wasmAccount: getMockedWasmAccount(),
                 balance: { confirmed: BigInt(2612374) } as WasmBalance,
                 transactions: simpleTransactions.slice(16, 20),
             },
-        ],
+        },
     },
-];
+};

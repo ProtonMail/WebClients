@@ -3,7 +3,8 @@ import { act } from 'react-dom/test-utils';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { WasmBitcoinUnit, WasmTxBuilder } from '../../pkg';
+import { WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+
 import { useRecipients } from './useRecipients';
 
 describe('useRecipients', async () => {

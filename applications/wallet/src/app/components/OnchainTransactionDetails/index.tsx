@@ -2,26 +2,24 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmBitcoinUnit, WasmTransactionDetails } from '@proton/andromeda';
 import Href from '@proton/atoms/Href/Href';
 import Pill from '@proton/atoms/Pill/Pill';
 import Copy from '@proton/components/components/button/Copy';
 import Label from '@proton/components/components/label/Label';
-import Price from '@proton/components/components/price/Price';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
-import { WasmAccount, WasmBitcoinUnit, WasmTransactionDetails } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { BLOCKCHAIN_EXPLORER_BASE_URL } from '../../constants';
-import { toFiat } from '../../utils';
 
 export interface OnchainTransactionDetailsProps {
     from?: { walletName: string; accountName: string };
-    account: WasmAccount;
     tx: WasmTransactionDetails;
+    isNotBroadcasted?: boolean;
 }
 
-export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetailsProps) => {
+export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: OnchainTransactionDetailsProps) => {
     const [note, setNode] = useState('');
 
     const recipients = useMemo(() => {
@@ -76,9 +74,13 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
                                             {address}
                                         </span>
                                     </Tooltip>
-                                    <Price className="block w-1/5 color-hint" currency={'USD'}>
-                                        {toFiat(Number(amount)).toFixed(2)}
-                                    </Price>
+
+                                    <BitcoinAmount
+                                        firstClassName="block w-1/5 color-hint"
+                                        fiat={'USD'}
+                                        bitcoin={Number(amount)}
+                                    />
+
                                     <BitcoinAmount
                                         firstClassName="w-1/5 text-right"
                                         unit={WasmBitcoinUnit.SAT}
@@ -94,18 +96,22 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
                     {/* Fees */}
                     <li className="flex flex-row w-full mt-4 py-2 border-bottom border-top">
                         <span className="w-3/5">{c('Wallet Transaction Details').t`Fees`}</span>
-                        <Price className="block w-1/5 color-hint" currency={'USD'}>
-                            {toFiat(txFees).toFixed(2)}
-                        </Price>
+
+                        <BitcoinAmount firstClassName="block w-1/5 color-hint" fiat={'USD'} bitcoin={Number(txFees)} />
+
                         <BitcoinAmount firstClassName="w-1/5 text-right" unit={WasmBitcoinUnit.SAT} bitcoin={txFees} />
                     </li>
 
                     {/* Total */}
                     <li className="flex flex-row w-full mt-4 pt-2 border-bottom">
                         <span className="w-3/5">{c('Wallet Transaction Details').t`Total`}</span>
-                        <Price className="block w-1/5 color-hint" currency={'USD'}>
-                            {toFiat(Number(totalAmount)).toFixed(2)}
-                        </Price>
+
+                        <BitcoinAmount
+                            firstClassName="block w-1/5 color-hint"
+                            fiat={'USD'}
+                            bitcoin={Number(totalAmount)}
+                        />
+
                         <BitcoinAmount
                             firstClassName="w-1/5 text-right"
                             unit={WasmBitcoinUnit.SAT}
@@ -119,13 +125,17 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
                 <span className="text-sm color-hint">{c('Wallet Transaction Details').t`Transaction Id`}</span>
                 <div className="flex flex-row flex-nowrap items-center">
                     <Tooltip title={tx.txid}>
-                        <Href
-                            href={`${BLOCKCHAIN_EXPLORER_BASE_URL}/${tx.txid}`}
-                            target="_blank"
-                            className="block text-ellipsis"
-                        >
-                            {tx.txid}
-                        </Href>
+                        {isNotBroadcasted ? (
+                            <span>{tx.txid}</span>
+                        ) : (
+                            <Href
+                                href={`${BLOCKCHAIN_EXPLORER_BASE_URL}/${tx.txid}`}
+                                target="_blank"
+                                className="block text-ellipsis"
+                            >
+                                {tx.txid}
+                            </Href>
+                        )}
                     </Tooltip>
                     <Copy className="ml-2" value={tx.txid} shape="ghost" />
                 </div>
