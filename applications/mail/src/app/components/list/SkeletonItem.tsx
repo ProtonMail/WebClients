@@ -43,9 +43,7 @@ const SkeletonItem = ({
                 className={clsx([
                     'flex-1 flex flex-nowrap cursor-pointer group-hover-opacity-container unread',
                     loading && 'item-is-loading',
-                    columnLayout
-                        ? 'delight-item-container delight-item-container--column'
-                        : 'delight-item-container delight-item-container--row',
+                    columnLayout ? 'item-container item-container--column' : 'item-container item-container--row',
                 ])}
                 style={{ '--index': index }}
                 data-element-id={element.ID}

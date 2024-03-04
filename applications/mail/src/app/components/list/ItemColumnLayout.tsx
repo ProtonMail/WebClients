@@ -115,12 +115,12 @@ const ItemColumnLayout = ({
 
     return (
         <div
-            className="delight-item-column flex-1 flex flex-nowrap flex-column justify-center item-titlesender"
+            className="item-column flex-1 flex flex-nowrap flex-column justify-center item-titlesender"
             data-testid="message-list:message"
         >
             <div className="flex items-center flex-nowrap">
                 <div className="flex-1">
-                    <div className="flex items-center delight-item-firstline">
+                    <div className="flex items-center item-firstline">
                         <div
                             className={clsx(
                                 'item-senders flex-1 flex items-center flex-nowrap pr-4',
@@ -130,7 +130,7 @@ const ItemColumnLayout = ({
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
-                                className="delight-item-unread-dot sr-only"
+                                className="item-unread-dot sr-only"
                                 isSelected={isSelected}
                             />
                             <ItemAction element={element} className="mr-1 my-auto shrink-0" />
@@ -144,7 +144,7 @@ const ItemColumnLayout = ({
 
                         <span
                             className={clsx(
-                                'delight-item-firstline-infos shrink-0 flex flex-nowrap items-center',
+                                'item-firstline-infos shrink-0 flex flex-nowrap items-center',
                                 isSnoozeDropdownOpen && 'invisible'
                             )}
                         >
@@ -157,7 +157,7 @@ const ItemColumnLayout = ({
                         </span>
                     </div>
 
-                    <div className="flex flex-nowrap items-center delight-item-secondline max-w-full">
+                    <div className="flex flex-nowrap items-center item-secondline max-w-full">
                         <div
                             className={clsx(
                                 'item-subject flex-1 flex flex-nowrap items-center',
@@ -262,7 +262,7 @@ const ItemColumnLayout = ({
                 <>
                     <div
                         className={clsx([
-                            'flex flex-nowrap items-center delight-item-secondline item-es-result max-w-8/10 overflow-hidden',
+                            'flex flex-nowrap items-center item-secondline item-es-result max-w-8/10 overflow-hidden',
                             isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"

@@ -148,6 +148,7 @@ const Item = ({
 
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -156,9 +157,7 @@ const Item = ({
                 onDragEnd={onDragEnd}
                 className={clsx([
                     'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
-                    columnLayout
-                        ? 'delight-item-container delight-item-container--column'
-                        : 'delight-item-container delight-item-container--row',
+                    columnLayout ? 'item-container item-container--column' : 'item-container item-container--row',
                     isSelected && 'item-is-selected',
                     !unread && 'read',
                     unread && 'unread',
@@ -169,6 +168,7 @@ const Item = ({
                 style={{ '--index': index }}
                 ref={elementRef}
                 onFocus={handleFocus}
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
                 tabIndex={0}
                 data-element-id={element.ID}
                 data-shortcut-target="item-container"
