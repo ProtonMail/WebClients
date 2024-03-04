@@ -70,4 +70,8 @@ export interface Domain {
         Config: DKIMConfig[];
     };
     DmarcState: DMARC_STATE; // 0 is default, 1 and 2 means detected record but wrong, 3 is good
+    Flags: {
+        'mail-intent': boolean;
+        'sso-intent': boolean;
+    };
 }
