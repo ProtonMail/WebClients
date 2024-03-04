@@ -35,7 +35,7 @@ export const SidebarDeviceItem = ({
                 isActive={isActive}
                 style={generateSidebarItemStyle(1)}
             >
-                <span className="text-ellipsis" title={device.name}>
+                <span className="text-ellipsis" title={device.name} data-testid="sidebar-device-name">
                     {device.name}
                 </span>
                 <ExpandButton
