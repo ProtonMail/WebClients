@@ -18,12 +18,11 @@ import {
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { forceSend } from '@proton/shared/lib/api/messages';
-import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
-import { SpaceState, getAppSpace, getSpace, getSpaceDetails } from '@proton/shared/lib/user/storage';
 
 import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
@@ -145,7 +144,7 @@ export const useCompose = ({
         []
     );
 
-    const [storageCapacityModalProps, setStorageCapacityModalOpen] = useModalState();
+    const [storageCapacityModalProps] = useModalState();
     const [sendingOriginalMessageModal, handleSendingOriginalMessage] = useModalTwo(SendingOriginalMessageModal);
 
     const upsellRef = getUpsellRef({
@@ -177,7 +176,6 @@ export const useCompose = ({
     );
 
     const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
-        const user = await getUser();
         const addresses = await getAddresses();
 
         const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
@@ -193,14 +191,6 @@ export const useCompose = ({
                     </>
                 ),
             });
-            return;
-        }
-
-        const appSpace = getAppSpace(getSpace(user), APPS.PROTONMAIL);
-        const details = getSpaceDetails(appSpace.usedSpace, appSpace.maxSpace);
-
-        if (details.type === SpaceState.Danger) {
-            setStorageCapacityModalOpen(true);
             return;
         }
 
