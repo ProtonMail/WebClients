@@ -393,7 +393,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     <UserInviteOrEditModal
                         member={tmpMember}
                         organization={organization}
-                        domains={verifiedDomains}
                         {...userInviteOrEditModalProps}
                     />
                 )}
