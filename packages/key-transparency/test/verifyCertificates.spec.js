@@ -75,7 +75,7 @@ describe('certificate transparency', () => {
 
 describe('certificate chain verification', () => {
     it('Should verify 0SSL certificate', async () => {
-        const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1709515033 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(parseCertChain(zeroSSLCertificateChain), KT_CERTIFICATE_ISSUER.ZEROSSL, now);
