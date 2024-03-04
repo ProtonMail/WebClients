@@ -2,13 +2,12 @@ import get from 'lodash/get';
 import { c } from 'ttag';
 import X2JS from 'x2js';
 
+import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import { getImportedVaultName, importLoginItem } from '@proton/pass/lib/import/helpers/transformers';
+import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
-import type { ImportVault } from '../types';
-import { type ImportPayload } from '../types';
 import type { KeePassEntry, KeePassEntryValue, KeePassFile, KeePassGroup, KeePassItem } from './keepass.types';
 
 const getKeePassEntryValue = (Value: KeePassEntryValue): string => (typeof Value === 'string' ? Value : Value.__text);

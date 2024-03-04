@@ -1,19 +1,17 @@
 import fs from 'fs';
 
+import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import * as epochUtils from '@proton/pass/utils/time/epoch';
 
-import type { ImportPayload } from '../types';
 import { readLastPassData } from './lastpass.reader';
-
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    getEpoch: jest.fn(() => 1682585156),
-}));
 
 describe('Import LastPass csv', () => {
     let sourceFiles = [`${__dirname}/mocks/lastpass.csv`, `${__dirname}/mocks/lastpass.crcrlf.terminated.csv`];
     let payloads: Record<string, ImportPayload> = {};
+
+    const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
         for (let sourceFile of sourceFiles) {
@@ -22,7 +20,7 @@ describe('Import LastPass csv', () => {
         }
     });
 
-    afterAll(() => (getEpoch as jest.Mock).mockClear());
+    afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
         await expect(readLastPassData('not-a-csv-file')).rejects.toThrow();
