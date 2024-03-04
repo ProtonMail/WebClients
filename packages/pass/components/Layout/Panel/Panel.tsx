@@ -8,13 +8,13 @@ import './Panel.scss';
 
 type Props = {
     header?: ReactNode;
-    bottom?: ReactNode;
+    footer?: ReactNode;
     children?: ReactNode;
     className?: string;
     loading?: boolean;
 };
 
-export const Panel: FC<Props> = ({ header, bottom, children, className, loading }) => {
+export const Panel: FC<Props> = ({ header, footer, children, className, loading }) => {
     return (
         <article className={clsx('pass-panel flex flex-column flex-nowrap', className)}>
             {header && <div className="shrink-0 px-4 py-3">{header}</div>}
@@ -29,7 +29,7 @@ export const Panel: FC<Props> = ({ header, bottom, children, className, loading 
                     <div className="px-4 pt-1 pb-3">{children}</div>
                 </Scroll>
             </div>
-            {bottom && <div className="shrink-0 px-4 py-3">{bottom}</div>}
+            {footer && <div className="shrink-0 px-4 py-3">{footer}</div>}
         </article>
     );
 };

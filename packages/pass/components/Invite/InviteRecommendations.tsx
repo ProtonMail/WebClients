@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Checkbox } from '@proton/components/components';
-import { PassButtonGroup } from '@proton/pass/components/Layout/Button/PassButtonGroup';
+import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { ShareMemberAvatar } from '@proton/pass/components/Share/ShareMemberAvatar';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useInviteRecommendations } from '@proton/pass/hooks/useInviteRecommendations';
@@ -60,7 +60,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
             </h2>
 
             {organization !== null && (
-                <PassButtonGroup className="anime-fade-in shrink-0 mb-3" size="small">
+                <ButtonBar className="anime-fade-in shrink-0 mb-3" size="small">
                     <Button
                         onClick={() => setView(null)}
                         selected={view === null}
@@ -80,7 +80,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
                     >
                         {organization.name}
                     </Button>
-                </PassButtonGroup>
+                </ButtonBar>
             )}
 
             <div

@@ -8,18 +8,18 @@ import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
 
 type Props = {
+    actions?: ReactElement[];
+    footer?: ReactNode;
     title: ReactNode;
     type: ItemType;
-    actions?: ReactElement[];
-    bottom?: ReactNode;
 };
 
-export const ItemHistoryPanel: FC<PropsWithChildren<Props>> = ({ children, title, actions, bottom, type }) => {
+export const ItemHistoryPanel: FC<PropsWithChildren<Props>> = ({ children, actions, footer, title, type }) => {
     return (
         <Panel
             className={itemTypeToSubThemeClassName[type]}
             header={<PanelHeader title={title} actions={actions} />}
-            bottom={bottom}
+            footer={footer}
         >
             {children}
         </Panel>
