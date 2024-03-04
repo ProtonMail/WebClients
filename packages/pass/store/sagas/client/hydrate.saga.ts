@@ -1,6 +1,5 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
-import { MIN_CACHED_USER_STATE_VERSION } from '@proton/pass/constants';
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -21,7 +20,6 @@ import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
-import { semver } from '@proton/pass/utils/string/semver';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
@@ -34,10 +32,8 @@ type HydrateCacheOptions = {
     onError?: () => Generator;
 };
 
-function* resolveUserState(cache: Maybe<PassCache>, version: Maybe<string>) {
-    /** invalidate if <1.14.2 in order to re-fetch settings */
-    const invalidate = !version || semver(version) < semver(MIN_CACHED_USER_STATE_VERSION);
-    if (!invalidate && cache?.state.user) return cache.state.user;
+function* resolveUserState(cache: Maybe<PassCache>) {
+    if (cache?.state.user) return cache.state.user;
 
     const { access, addresses, eventId, features, organization, user, userSettings }: UserData = yield getUserData();
     yield put(syncLocalSettings({ locale: userSettings.Locale }));
@@ -74,7 +70,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
-        const userState: HydratedUserState = yield call(resolveUserState, cache, encryptedCache.version);
+        const userState: HydratedUserState = yield call(resolveUserState, cache);
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const currentState: State = yield select();
