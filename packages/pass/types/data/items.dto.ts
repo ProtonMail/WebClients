@@ -1,4 +1,4 @@
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
@@ -29,7 +29,7 @@ export type ItemCreateIntentDTO = {
 };
 
 export type ItemEditIntentDTO = {
-    alias: Maybe<{ aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string }>;
+    alias: MaybeNull<{ aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string }>;
     login: never;
     note: never;
     creditCard: never;
@@ -67,17 +67,15 @@ export type ItemMoveDTO = { before: ItemRevision; after: ItemRevision };
 export type BulkSelectionDTO = IndexedByShareIdAndItemId<true>;
 
 export type ItemRevisionsIntent = {
-    shareId: string;
     itemId: string;
+    pageSize: number;
+    shareId: string;
     since: MaybeNull<string>;
-    pageSize: MaybeNull<number>;
 };
 
 export type ItemRevisionsSuccess = {
-    revisions: ItemRevision[];
-    /** Token that was last used */
-    since: MaybeNull<string>;
-    /** Token to use to get next page */
     next: MaybeNull<string>;
+    revisions: ItemRevision[];
+    since: MaybeNull<string>;
     total: number;
 };

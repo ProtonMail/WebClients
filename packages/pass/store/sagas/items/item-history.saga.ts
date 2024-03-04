@@ -2,12 +2,7 @@ import { cancelled, put, takeLatest } from 'redux-saga/effects';
 
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { getItemRevisions } from '@proton/pass/lib/items/item.requests';
-import {
-    itemHistoryAbort,
-    itemHistoryFailure,
-    itemHistoryIntent,
-    itemHistorySuccess,
-} from '@proton/pass/store/actions';
+import { itemHistoryFailure, itemHistoryIntent, itemHistorySuccess } from '@proton/pass/store/actions';
 import type { ItemRevision, ItemRevisionListResponse } from '@proton/pass/types';
 
 function* loadHistoryWorker({ payload, meta: { request } }: ReturnType<typeof itemHistoryIntent>): Generator {
@@ -20,21 +15,11 @@ function* loadHistoryWorker({ payload, meta: { request } }: ReturnType<typeof it
             RevisionsData.map((revision) => parseItemRevision(payload.shareId, revision))
         )) as ItemRevision[];
 
-        yield put(
-            itemHistorySuccess(request.id, {
-                revisions,
-                next: LastToken,
-                total: Total,
-                since: payload.since,
-            })
-        );
+        yield put(itemHistorySuccess(request.id, { revisions, next: LastToken, total: Total, since: payload.since }));
     } catch (error) {
         yield put(itemHistoryFailure(request.id, error));
     } finally {
-        if (yield cancelled()) {
-            yield put(itemHistoryAbort(request.id));
-            ctrl.abort();
-        }
+        if (yield cancelled()) ctrl.abort();
     }
 }
 

@@ -525,8 +525,3 @@ export const itemHistoryFailure = createAction(
         })({ payload: {}, error })
     )
 );
-
-export const itemHistoryAbort = createAction(
-    'item::history::abort',
-    withRequestFailure(() => ({ payload: {} }))
-);

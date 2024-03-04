@@ -25,9 +25,9 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handlePinClick: () => void;
 };
 
-export type ItemContentProps<T extends ItemType = ItemType> = {
+export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {
     revision: ItemRevision<T>;
-} & (T extends 'alias' ? { optimistic: boolean; showCreateLogin?: boolean } : {});
+} & Partial<Extra>;
 
 export type ItemEditViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevision<T>;
