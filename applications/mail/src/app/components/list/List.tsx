@@ -121,7 +121,6 @@ const List = (
     const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
     const isDelightMailListEnabled = useFlag('DelightMailList');
-    const hideUnreadButton = useFlag('DelightMailListHideUnreadButton');
     const showAttachmentThumbnails = useFlag('AttachmentThumbnails');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
@@ -339,7 +338,6 @@ const List = (
                                                         mailSettings={mailSettings}
                                                         labels={labels}
                                                         isDelightMailListEnabled={isDelightMailListEnabled}
-                                                        hideUnreadButton={hideUnreadButton}
                                                         showAttachmentThumbnails={showAttachmentThumbnails}
                                                     />
                                                 )}
