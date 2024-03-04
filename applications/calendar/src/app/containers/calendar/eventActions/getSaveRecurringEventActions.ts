@@ -51,6 +51,7 @@ import {
     getHasNotificationsMergeUpdate,
     getUpdateInviteOperationWithIntermediateEvent,
     getUpdateMainSeriesMergeVevent,
+    getUpdateMergeVeventWithoutMaybeNotifications,
     getUpdateSingleEditMergeVevent,
 } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
@@ -410,7 +411,14 @@ const getSaveRecurringEventActions = async ({
             originalVeventComponent,
         });
         const mergedNewRecurrentVevent = organizerEditsNonBreakingSingleEdit
-            ? { ...originalVeventComponent, ...updateMainSeriesMergeVevent }
+            ? {
+                  ...originalVeventComponent,
+                  ...getUpdateMergeVeventWithoutMaybeNotifications({
+                      newVevent: oldVeventComponent,
+                      oldVevent: originalVeventComponent,
+                      mergeVevent: updateMainSeriesMergeVevent,
+                  }),
+              }
             : newVeventComponent;
         const newRecurrentVevent = updateAllRecurrence({
             component: mergedNewRecurrentVevent,
@@ -534,15 +542,11 @@ const getSaveRecurringEventActions = async ({
                 singleEditIcsPromises.push(
                     ...singleEditRecurrences.map(async (event) => {
                         const { veventComponent } = await getCalendarEventRaw(event);
-                        const updateSingleEditMergeVevent = {
-                            ...updateMergeVevent,
-                        };
-                        const hasAllDayChanged = getIsAllDay(veventComponent) !== getIsAllDay(oldVevent);
-
-                        if (hasAllDayChanged) {
-                            // Ignore changes to notifications
-                            delete updateSingleEditMergeVevent.components;
-                        }
+                        const updateSingleEditMergeVevent = getUpdateMergeVeventWithoutMaybeNotifications({
+                            newVevent: veventComponent,
+                            oldVevent,
+                            mergeVevent: updateMergeVevent,
+                        });
 
                         const hasModifiedNotifications = getHasNotificationsMergeUpdate(
                             veventComponent,
