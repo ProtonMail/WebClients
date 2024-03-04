@@ -2,9 +2,11 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
+import { WasmTxBuilder } from '@proton/andromeda';
+
 import { OnchainTransactionBuilder } from '.';
-import { WasmTxBuilder } from '../../../../pkg';
-import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
+import { mockUseBitcoinBlockchainContext } from '../../../tests';
+import { apiWalletsData } from '../../../tests/fixtures/api';
 import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuilder';
 
 describe('OnchainTransactionBuilder', () => {
@@ -12,14 +14,16 @@ describe('OnchainTransactionBuilder', () => {
 
     const mockUseBitcoinReceive = vi.spyOn(useOnchainTransactionBuilderModule, 'useOnchainTransactionBuilder');
 
-    const [testWallet] = walletsWithAccountsWithBalanceAndTxs;
-    const [testAccount] = testWallet.accounts;
+    const [testWallet] = apiWalletsData;
+    const [testAccount] = testWallet.WalletAccounts;
 
     beforeEach(() => {
-        mockUseOnchainWalletContext();
+        mockUseBitcoinBlockchainContext();
 
         helper = {
-            walletAndAccount: { wallet: testWallet, account: testAccount },
+            walletAndAccount: { apiWalletData: testWallet, apiAccount: testAccount },
+            wallets: apiWalletsData,
+            account: undefined,
             handleSelectWalletAndAccount: vi.fn(),
             addRecipient: vi.fn(),
             updateRecipient: vi.fn(),
@@ -40,7 +44,7 @@ describe('OnchainTransactionBuilder', () => {
 
     describe('when a wallet is selected', () => {
         it('should correctly call handler', async () => {
-            render(<OnchainTransactionBuilder />);
+            render(<OnchainTransactionBuilder wallets={apiWalletsData} />);
 
             const walletSelector = screen.getByTestId('wallet-selector');
             await act(() => userEvent.click(walletSelector));
@@ -51,22 +55,22 @@ describe('OnchainTransactionBuilder', () => {
 
             expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledTimes(1);
             expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledWith({
-                wallet: walletsWithAccountsWithBalanceAndTxs[1],
+                apiWalletData: apiWalletsData[1],
             });
         });
     });
 
     describe('when selected wallet is of type `onchain`', () => {
         beforeEach(() => {
-            const [testWallet] = walletsWithAccountsWithBalanceAndTxs;
-            const [testAccount] = testWallet.accounts;
+            const [testWallet] = apiWalletsData;
+            const [testAccount] = testWallet.WalletAccounts;
 
             mockUseBitcoinReceive.mockReturnValue({
                 ...helper,
-                walletAndAccount: { wallet: testWallet, account: testAccount },
+                walletAndAccount: { apiWalletData: testWallet, apiAccount: testAccount },
             });
 
-            render(<OnchainTransactionBuilder />);
+            render(<OnchainTransactionBuilder wallets={apiWalletsData} />);
         });
 
         it('should display account selector', () => {
@@ -84,7 +88,7 @@ describe('OnchainTransactionBuilder', () => {
 
                 expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledTimes(1);
                 expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledWith({
-                    account: walletsWithAccountsWithBalanceAndTxs[0].accounts[1],
+                    apiAccount: apiWalletsData[0].WalletAccounts[1],
                 });
             });
         });

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { WasmOutPoint } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -14,14 +15,13 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import clsx from '@proton/utils/clsx';
 
-import { WasmOutPoint } from '../../../../../pkg';
 import { BitcoinAmount } from '../../../../atoms';
-import { AccountWithBlockchainData } from '../../../../types';
+import { AccountWithChainData } from '../../../../types';
 import { useManualCoinSelectionModal } from './useManualCoinSelectionModal';
 
 interface Props {
     modalState: ModalStateProps;
-    account?: AccountWithBlockchainData;
+    account?: AccountWithChainData;
     selectedUtxos: WasmOutPoint[];
     onCoinSelected: (coins: WasmOutPoint[]) => void;
 }
@@ -48,7 +48,8 @@ export const ManualCoinSelectionModal = ({ modalState, account, selectedUtxos, o
                             </TableHeader>
                             <TableBody>
                                 {utxos.map((utxo) => {
-                                    const { outpoint } = utxo;
+                                    const outpoint = utxo.outpoint[0];
+
                                     const isSelected = tmpSelectedUtxos.includes(outpoint);
                                     const isActive = activeUtxo === outpoint;
 

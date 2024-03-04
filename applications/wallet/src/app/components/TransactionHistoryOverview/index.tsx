@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import { isNumber } from 'lodash';
 import { c } from 'ttag';
 
+import { WasmBitcoinUnit, WasmTransactionDetails } from '@proton/andromeda';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
-import { IWasmSimpleTransactionArray, WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
 
@@ -15,8 +14,8 @@ const fiatCurrency = 'USD';
 const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 interface Props {
-    walletId?: number;
-    transactions: IWasmSimpleTransactionArray;
+    walletId?: string;
+    transactions: WasmTransactionDetails[];
     max?: number;
 }
 
@@ -36,7 +35,7 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                             >
                                 <div className="flex flex-column">
                                     <span className="block color-weak text-sm">
-                                        {confirmationTimeToHumanReadable(transaction.confirmation_time)}
+                                        {confirmationTimeToHumanReadable(transaction.time)}
                                     </span>
                                     <Tooltip title={transaction.txid}>
                                         <span className="block text-sm">
@@ -45,7 +44,12 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                                     </Tooltip>
                                 </div>
                                 <div>
-                                    <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} bitcoin={Number(txValue)} />
+                                    <BitcoinAmount
+                                        unit={bitcoinUnit}
+                                        fiat={fiatCurrency}
+                                        bitcoin={Number(txValue)}
+                                        showColor
+                                    />
                                 </div>
                             </li>
                         );
@@ -54,10 +58,10 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
 
             <ButtonLike
                 as={Link}
-                to={isNumber(walletId)! ? `/transactions#walletId=${walletId}` : '/transactions'}
+                to={walletId ? `/transactions#walletId=${walletId}` : '/transactions'}
                 shape="underline"
             >
-                {c('Wallet Dashboard').t`See all transactions`}{' '}
+                {c('Wallet Dashboard').t`See all transactions`}
             </ButtonLike>
         </>
     );

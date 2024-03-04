@@ -1,45 +1,60 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-import { WasmBitcoinUnit, WasmPaymentLink } from '../../../../pkg';
+import { WasmBitcoinUnit, WasmPaymentLink } from '@proton/andromeda';
+
 import { WalletAndAccountSelectorValue } from '../../../atoms';
-import { useOnchainWalletContext } from '../../../contexts';
+import { useBitcoinBlockchainContext } from '../../../contexts';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
-import { getDefaultAccount, getSelectedWallet } from '../../../utils';
+import { IWasmApiWalletData } from '../../../types';
+import { getAccountWithChainDataFromManyWallets, getDefaultAccount, getSelectedWallet } from '../../../utils';
 
-export const useOnchainSimpleSend = (defaultWalletId?: string, paymentLink?: WasmPaymentLink) => {
-    const { wallets } = useOnchainWalletContext();
+export const useOnchainSimpleSend = (
+    wallets: IWasmApiWalletData[],
+    defaultWalletId?: string,
+    paymentLink?: WasmPaymentLink
+) => {
+    const { walletsChainData } = useBitcoinBlockchainContext();
+
     const { txBuilder, updateTxBuilder } = useTxBuilder();
 
     const { updateRecipient } = useRecipients(updateTxBuilder);
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
-    const [walletAndAccount, setWalletAndAccount] = useState({
-        wallet: defaultWallet,
-        account: getDefaultAccount(defaultWallet),
+    const [walletAndAccount, setWalletAndAccount] = useState<WalletAndAccountSelectorValue>({
+        apiWalletData: defaultWallet,
+        apiAccount: getDefaultAccount(defaultWallet),
     });
 
     const handleSelectWalletAndAccount = (value: WalletAndAccountSelectorValue) => {
         setWalletAndAccount((prev) => ({ ...prev, ...value }));
     };
 
-    const account = walletAndAccount.account;
     const { finalPsbt, loadingBroadcast, broadcastedTxId, createPsbt, erasePsbt, signAndBroadcastPsbt } = usePsbt({
         walletAndAccount,
         txBuilder,
     });
 
-    useEffect(() => {
-        setWalletAndAccount((prev) => ({ ...prev, account: getDefaultAccount(walletAndAccount.wallet) }));
-    }, [walletAndAccount.wallet]);
+    const account = useMemo(
+        () =>
+            getAccountWithChainDataFromManyWallets(
+                walletsChainData,
+                walletAndAccount.apiWalletData?.Wallet.ID,
+                walletAndAccount.apiAccount?.ID
+            ),
+        [walletAndAccount, walletsChainData]
+    );
 
     useEffect(() => {
-        const account = walletAndAccount.account?.wasmAccount;
+        setWalletAndAccount((prev) => ({ ...prev, account: getDefaultAccount(walletAndAccount.apiWalletData) }));
+    }, [walletAndAccount.apiWalletData]);
+
+    useEffect(() => {
         if (account) {
-            void updateTxBuilder((txBuilder) => txBuilder.setAccount(account));
+            void updateTxBuilder((txBuilder) => txBuilder.setAccount(account.account));
         }
-    }, [walletAndAccount.account, updateTxBuilder]);
+    }, [updateTxBuilder, account]);
 
     useEffect(() => {
         if (!paymentLink) {
@@ -59,6 +74,7 @@ export const useOnchainSimpleSend = (defaultWalletId?: string, paymentLink?: Was
     return {
         walletAndAccount,
         wallets,
+        account,
 
         txBuilder,
         updateTxBuilder,
@@ -69,8 +85,6 @@ export const useOnchainSimpleSend = (defaultWalletId?: string, paymentLink?: Was
         createPsbt,
         erasePsbt,
         signAndBroadcastPsbt,
-
-        account,
 
         updateRecipient,
         handleSelectWalletAndAccount,

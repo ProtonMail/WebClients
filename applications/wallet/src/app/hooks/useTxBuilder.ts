@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { WasmTxBuilder } from '../../pkg';
+import { WasmTxBuilder } from '@proton/andromeda';
 
 export type TxBuilderUpdater = (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>;
 

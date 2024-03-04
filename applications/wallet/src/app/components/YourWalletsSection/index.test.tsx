@@ -4,14 +4,17 @@ import { vi } from 'vitest';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { YourWalletsSection } from '.';
-import { mockUseOnchainWalletContext, mockUseWalletDispatch, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseBitcoinBlockchainContext, mockUseWalletDispatch } from '../../tests';
+import { apiWalletsData } from '../../tests/fixtures/api';
+import { mockUseDecryptedWallets } from '../../tests/mocks/useDecryptedWallet';
 
 // TODO: Fix vitest vs @proton/components circular deps to be able to remove this mock
 vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({ ConfirmActionModal: 'div' }));
 
 describe('YourWalletsSection', () => {
     beforeEach(() => {
-        mockUseOnchainWalletContext();
+        mockUseDecryptedWallets();
+        mockUseBitcoinBlockchainContext();
         mockUseNotifications();
         mockUseWalletDispatch();
     });
@@ -20,7 +23,7 @@ describe('YourWalletsSection', () => {
         render(<YourWalletsSection onAddWallet={vi.fn()} />);
 
         const balanceCards = screen.getAllByTestId('wallet-balance-card');
-        expect(balanceCards).toHaveLength(walletsWithAccountsWithBalanceAndTxs.length);
+        expect(balanceCards).toHaveLength(apiWalletsData.length);
 
         expect(within(balanceCards[0]).getByRole('heading', { level: 3, name: 'Bitcoin 01' }));
         expect(within(balanceCards[0]).getByText('Onchain'));

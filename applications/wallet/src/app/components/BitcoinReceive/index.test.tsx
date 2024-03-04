@@ -1,9 +1,11 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
+
 import { BitcoinReceive } from '.';
-import { WasmNetwork, WasmPaymentLink } from '../../../pkg';
-import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseBitcoinBlockchainContext } from '../../tests';
+import { apiWalletsData } from '../../tests/fixtures/api';
 import { LightningUriFormat } from '../../types';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
@@ -12,15 +14,15 @@ describe('BitcoinReceive', () => {
 
     const mockUseBitcoinReceive = vi.spyOn(useBitcoinReceiveModule, 'useBitcoinReceive');
 
-    const [testWallet] = walletsWithAccountsWithBalanceAndTxs;
-    const [testAccount] = testWallet.accounts;
+    const [testWallet] = apiWalletsData;
+    const [testAccount] = testWallet.WalletAccounts;
 
     beforeEach(() => {
-        mockUseOnchainWalletContext();
+        mockUseBitcoinBlockchainContext();
 
         helper = {
             paymentLink: null,
-            selectedWallet: { wallet: testWallet, account: testAccount, format: LightningUriFormat.UNIFIED },
+            selectedWallet: { apiWalletData: testWallet, apiAccount: testAccount, format: LightningUriFormat.UNIFIED },
             shouldShowAmountInput: false,
             amount: 0,
             handleSelectWallet: vi.fn(),
@@ -33,7 +35,7 @@ describe('BitcoinReceive', () => {
 
     describe('when a wallet is selected', () => {
         it('should correctly call handler', async () => {
-            render(<BitcoinReceive />);
+            render(<BitcoinReceive wallets={apiWalletsData} />);
 
             const walletSelector = screen.getByTestId('wallet-selector');
             await act(() => userEvent.click(walletSelector));
@@ -43,22 +45,22 @@ describe('BitcoinReceive', () => {
             await fireEvent.click(options[1]);
 
             expect(helper.handleSelectWallet).toHaveBeenCalledTimes(1);
-            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ wallet: walletsWithAccountsWithBalanceAndTxs[1] });
+            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ apiWalletData: apiWalletsData[1] });
         });
     });
 
     // TODO: use fix this test when we support lightning
     describe.skip('when selected wallet is of type `lightning`', () => {
         beforeEach(() => {
-            const [, , , testWallet] = walletsWithAccountsWithBalanceAndTxs;
-            const [testAccount] = testWallet.accounts;
+            const [, , , testWallet] = apiWalletsData;
+            const [testAccount] = testWallet.WalletAccounts;
 
             mockUseBitcoinReceive.mockReturnValue({
                 ...helper,
-                selectedWallet: { wallet: testWallet, account: testAccount },
+                selectedWallet: { apiWalletData: testWallet, apiAccount: testAccount },
             });
 
-            render(<BitcoinReceive />);
+            render(<BitcoinReceive wallets={apiWalletsData} />);
         });
 
         it('should display format selector', () => {
@@ -82,7 +84,7 @@ describe('BitcoinReceive', () => {
 
     describe('when selected wallet is of type `onchain`', () => {
         beforeEach(() => {
-            render(<BitcoinReceive />);
+            render(<BitcoinReceive wallets={apiWalletsData} />);
         });
 
         it('should display account selector', () => {
@@ -100,7 +102,7 @@ describe('BitcoinReceive', () => {
 
                 expect(helper.handleSelectWallet).toHaveBeenCalledTimes(1);
                 expect(helper.handleSelectWallet).toHaveBeenCalledWith({
-                    account: walletsWithAccountsWithBalanceAndTxs[0].accounts[1],
+                    apiAccount: apiWalletsData[0].WalletAccounts[1],
                 });
             });
         });
@@ -108,7 +110,7 @@ describe('BitcoinReceive', () => {
 
     describe('when user clicks on `Add amount`', () => {
         it('should call `showAmountInput`', async () => {
-            render(<BitcoinReceive />);
+            render(<BitcoinReceive wallets={apiWalletsData} />);
 
             const button = screen.getByTestId('show-amount-input-button');
             await fireEvent.click(button);
@@ -125,7 +127,7 @@ describe('BitcoinReceive', () => {
                 shouldShowAmountInput: true,
             });
 
-            render(<BitcoinReceive />);
+            render(<BitcoinReceive wallets={apiWalletsData} />);
         });
 
         it('should call `showAmountInput`', async () => {
@@ -156,7 +158,7 @@ describe('BitcoinReceive', () => {
                 paymentLink: bitcoinURI,
             });
 
-            render(<BitcoinReceive />);
+            render(<BitcoinReceive wallets={apiWalletsData} />);
         });
         it('should display QRCode containing serialized payment info', () => {
             const qrcode = screen.getByTestId('serialized-payment-info-qrcode');

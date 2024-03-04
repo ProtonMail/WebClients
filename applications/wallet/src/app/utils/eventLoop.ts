@@ -1,21 +1,21 @@
+import { WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { CreateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 
-import { WasmWalletAccount, WasmWalletKey, WasmWalletSettings } from '../../pkg';
-import { IWasmWallet } from '../types';
+import { IWasmApiWalletData } from '../types';
 import { WalletAccountEvent, WalletEvent, WalletEventLoop } from '../types/eventLoop';
 import { replaceAt } from './array';
 
 const findCreatedWalletKeyFromEvents = (walletID: string, events: WalletEventLoop) => {
     return events.WalletKeys?.find(
-        (walletKeyAction): walletKeyAction is CreateEventItemUpdate<WasmWalletKey, 'WalletKey'> =>
+        (walletKeyAction): walletKeyAction is CreateEventItemUpdate<WasmApiWalletKey, 'WalletKey'> =>
             walletKeyAction.Action === EVENT_ACTIONS.CREATE && walletKeyAction.WalletKey.WalletID === walletID
     )?.WalletKey;
 };
 
 const findCreatedWalletSettingsFromEvents = (walletID: string, events: WalletEventLoop) => {
     return events.WalletSettings?.find(
-        (walletKeyAction): walletKeyAction is CreateEventItemUpdate<WasmWalletSettings, 'WalletSettings'> =>
+        (walletKeyAction): walletKeyAction is CreateEventItemUpdate<WasmApiWalletSettings, 'WalletSettings'> =>
             walletKeyAction.Action === EVENT_ACTIONS.CREATE && walletKeyAction.WalletSettings.WalletID === walletID
     )?.WalletSettings;
 };
@@ -23,7 +23,9 @@ const findCreatedWalletSettingsFromEvents = (walletID: string, events: WalletEve
 const findCreatedWalletAccountsFromEvents = (walletID: string, events: WalletEventLoop) => {
     return (
         events.WalletAccounts?.filter(
-            (walletAccountsAction): walletAccountsAction is CreateEventItemUpdate<WasmWalletAccount, 'WalletAccount'> =>
+            (
+                walletAccountsAction
+            ): walletAccountsAction is CreateEventItemUpdate<WasmApiWalletAccount, 'WalletAccount'> =>
                 walletAccountsAction.Action === EVENT_ACTIONS.CREATE &&
                 walletAccountsAction.WalletAccount.WalletID === walletID
         ).map((walletAccountsAction) => walletAccountsAction.WalletAccount) ?? []
@@ -33,12 +35,12 @@ const findCreatedWalletAccountsFromEvents = (walletID: string, events: WalletEve
 export const stateFromWalletEvent = (
     walletEvent: WalletEvent,
     eventLoop: WalletEventLoop,
-    currentWallets: IWasmWallet[]
+    currentApiWalletsData: IWasmApiWalletData[]
 ) => {
     switch (walletEvent.Action) {
         case EVENT_ACTIONS.CREATE:
-            if (currentWallets.some((data) => data.Wallet.ID === walletEvent.ID)) {
-                return currentWallets;
+            if (currentApiWalletsData.some((data) => data.Wallet.ID === walletEvent.ID)) {
+                return currentApiWalletsData;
             }
 
             const walletKey = findCreatedWalletKeyFromEvents(walletEvent.ID, eventLoop);
@@ -47,7 +49,7 @@ export const stateFromWalletEvent = (
 
             // WalletKey and WalletSettings should be create at the same time
             return [
-                ...currentWallets,
+                ...currentApiWalletsData,
                 {
                     Wallet: walletEvent.Wallet,
                     WalletKey: walletKey,
@@ -56,23 +58,26 @@ export const stateFromWalletEvent = (
                 },
             ];
         case EVENT_ACTIONS.UPDATE:
-            const index = currentWallets.findIndex((wallet) => wallet.Wallet.ID === walletEvent.ID);
+            const index = currentApiWalletsData.findIndex((wallet) => wallet.Wallet.ID === walletEvent.ID);
             if (index && index > -1) {
-                return replaceAt(currentWallets, index, {
-                    ...currentWallets[index],
-                    Wallet: { ...currentWallets[index].Wallet, ...walletEvent.Wallet },
+                return replaceAt(currentApiWalletsData, index, {
+                    ...currentApiWalletsData[index],
+                    Wallet: { ...currentApiWalletsData[index].Wallet, ...walletEvent.Wallet },
                 });
             }
 
-            return currentWallets;
+            return currentApiWalletsData;
         case EVENT_ACTIONS.DELETE:
-            return currentWallets?.filter((walletData) => walletData.Wallet.ID != walletEvent.ID);
+            return currentApiWalletsData?.filter((walletData) => walletData.Wallet.ID != walletEvent.ID);
         default:
-            return currentWallets;
+            return currentApiWalletsData;
     }
 };
 
-export const stateFromWalletAccountEvent = (walletAccountEvent: WalletAccountEvent, currentWallets: IWasmWallet[]) => {
+export const stateFromWalletAccountEvent = (
+    walletAccountEvent: WalletAccountEvent,
+    currentWallets: IWasmApiWalletData[]
+) => {
     switch (walletAccountEvent.Action) {
         case EVENT_ACTIONS.DELETE:
             return currentWallets.map(({ WalletAccounts, ...rest }) => ({

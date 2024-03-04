@@ -5,7 +5,7 @@ import { DrawerSidebar, PrivateAppContainer, PrivateMainArea, TopBanners, useTog
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useOnchainWalletContext } from '../../contexts';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletDrawerApp } from './WalletDrawerApp';
 import WalletHeader from './WalletHeader';
 import WalletSidebar from './WalletSidebar';
@@ -16,15 +16,16 @@ interface Props {
 }
 
 export const PrivateWalletLayout = ({ children }: Props) => {
+    const { isInitialised, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-    const { wallets, isInitialised } = useOnchainWalletContext();
     const { drawerSidebarButtons, showDrawerSidebar } = useWalletDrawer();
 
     return (
         <PrivateAppContainer
             top={<TopBanners app={APPS.PROTONWALLET} />}
             header={<WalletHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />}
-            sidebar={<WalletSidebar expanded={expanded} wallets={wallets} />}
+            sidebar={<WalletSidebar expanded={expanded} apiWalletsData={decryptedApiWalletsData} />}
             drawerApp={<WalletDrawerApp />}
         >
             <PrivateMainArea

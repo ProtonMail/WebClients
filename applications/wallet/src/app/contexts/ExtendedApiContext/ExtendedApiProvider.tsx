@@ -1,9 +1,9 @@
 import { ComponentProps } from 'react';
 
+import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 
 import { ExtendedApiContext } from '.';
-import { WasmProtonWalletApiClient } from '../../../pkg';
 
 const ExtendedApiProvider = ({
     api,

@@ -2,16 +2,9 @@ import { ChangeEvent, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, WasmTxBuilder } from '@proton/andromeda';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-
-import {
-    WasmChangeSpendPolicy,
-    WasmCoinSelection,
-    WasmLockTime,
-    WasmOutPoint,
-    WasmTxBuilder,
-} from '../../../../../pkg';
 
 const getCoinSelectionOptions = () => {
     return [

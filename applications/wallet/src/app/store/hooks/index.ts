@@ -8,4 +8,4 @@ export const useWalletDispatch: () => WalletDispatch = baseUseDispatch;
 export const useWalletSelector: TypedUseSelectorHook<WalletState> = baseUseSelector;
 
 export { useBitcoinNetwork, useGetBitcoinNetwork } from './useBitcoinNetwork';
-export { useUserWallets, useGetUserWallets } from './useUserWallets';
+export { useApiWalletsData, useGetApiWalletsData } from './useApiWalletsData';

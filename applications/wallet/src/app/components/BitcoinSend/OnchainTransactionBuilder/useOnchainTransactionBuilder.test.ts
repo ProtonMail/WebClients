@@ -2,11 +2,13 @@ import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { Mock } from 'vitest';
 
+import { WasmTxBuilder } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
-import { WasmTxBuilder } from '../../../../pkg';
 import * as useTxBuilderModule from '../../../hooks/useTxBuilder';
-import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
+import { mockUseBitcoinBlockchainContext } from '../../../tests';
+import { apiWalletAccountTwoA, apiWalletAccountTwoB, apiWalletsData } from '../../../tests/fixtures/api';
+import { mockUseDecryptedWallets } from '../../../tests/mocks/useDecryptedWallet';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 describe('useOnchainTransactionBuilder', () => {
@@ -14,7 +16,8 @@ describe('useOnchainTransactionBuilder', () => {
 
     beforeEach(() => {
         mockUseNotifications();
-        mockUseOnchainWalletContext();
+        mockUseDecryptedWallets();
+        mockUseBitcoinBlockchainContext();
 
         mockSetAccount = vi.fn();
 
@@ -29,22 +32,23 @@ describe('useOnchainTransactionBuilder', () => {
 
     describe('handleSelectWalletAndAccount', () => {
         it('should set `selectedWallet`', async () => {
-            const { result } = renderHook(() => useOnchainTransactionBuilder());
+            const { result } = renderHook(() => useOnchainTransactionBuilder(apiWalletsData));
 
-            act(() => result.current.handleSelectWalletAndAccount({ wallet: walletsWithAccountsWithBalanceAndTxs[1] }));
+            act(() => result.current.handleSelectWalletAndAccount({ apiWalletData: apiWalletsData[1] }));
             expect(result.current.walletAndAccount).toStrictEqual({
-                wallet: walletsWithAccountsWithBalanceAndTxs[1],
-                account: walletsWithAccountsWithBalanceAndTxs[1].accounts[0],
+                apiWalletData: apiWalletsData[1],
+                apiAccount: apiWalletAccountTwoA,
             });
 
             act(() =>
                 result.current.handleSelectWalletAndAccount({
-                    account: walletsWithAccountsWithBalanceAndTxs[1].accounts[1],
+                    apiAccount: apiWalletAccountTwoB,
                 })
             );
+
             expect(result.current.walletAndAccount).toStrictEqual({
-                wallet: walletsWithAccountsWithBalanceAndTxs[1],
-                account: walletsWithAccountsWithBalanceAndTxs[1].accounts[1],
+                apiWalletData: apiWalletsData[1],
+                apiAccount: apiWalletAccountTwoB,
             });
 
             // setAccount should have been called once at mount, once at wallet change and once at account change
@@ -57,10 +61,10 @@ describe('useOnchainTransactionBuilder', () => {
     describe('when `defaultWalletId` is provided', () => {
         it('should select the associated wallet by default', async () => {
             const { result } = renderHook(() =>
-                useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs[1].Wallet.ID)
+                useOnchainTransactionBuilder(apiWalletsData, apiWalletsData[1].Wallet.ID)
             );
 
-            expect(result.current.walletAndAccount.wallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
+            expect(result.current.walletAndAccount.apiWalletData).toStrictEqual(apiWalletsData[1]);
         });
     });
 });

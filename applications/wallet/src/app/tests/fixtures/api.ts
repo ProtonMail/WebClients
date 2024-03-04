@@ -1,12 +1,13 @@
 import {
     WasmApiWallet,
+    WasmApiWalletAccount,
+    WasmApiWalletKey,
+    WasmApiWalletSettings,
     WasmBitcoinUnit,
     WasmScriptType,
-    WasmWalletAccount,
-    WasmWalletKey,
-    WasmWalletSettings,
-} from '../../../pkg';
-import { IWasmWallet } from '../../types';
+} from '@proton/andromeda';
+
+import { IWasmApiWalletData } from '../../types';
 import {
     BitcoinUnit,
     FiatCurrency,
@@ -37,7 +38,7 @@ export const emptyWallet: Wallet = {
     ModifyTime: 1701169836899,
 };
 
-const walletOne: WasmApiWallet = {
+const apiWalletOne: WasmApiWallet = {
     ID: '0',
     Name: 'Bitcoin 01',
     // TODO should be encrypted when comin from server
@@ -52,7 +53,7 @@ const walletOne: WasmApiWallet = {
     PublicKey: null,
 };
 
-const walletTwo: WasmApiWallet = {
+const apiWalletTwo: WasmApiWallet = {
     ID: '1',
     Name: 'Savings on Jade',
     // TODO should be encrypted when comin from server
@@ -67,7 +68,7 @@ const walletTwo: WasmApiWallet = {
 };
 
 // TODO: either support or reject Electrum seeds (BIP39 alternative)
-const walletThree: WasmApiWallet = {
+const apiWalletThree: WasmApiWallet = {
     ID: '2',
     Name: 'Savings on Electrum',
     // TODO should be encrypted when comin from server
@@ -81,25 +82,25 @@ const walletThree: WasmApiWallet = {
     PublicKey: null,
 };
 
-const walletKeyOne: WasmWalletKey = {
+const apiWalletKeyOne: WasmApiWalletKey = {
     WalletID: '0',
     UserKeyID: '998',
     WalletKey: '3',
 };
 
-const walletKeyTwo: WasmWalletKey = {
+const apiWalletKeyTwo: WasmApiWalletKey = {
     WalletID: '1',
     UserKeyID: '998',
     WalletKey: '1',
 };
 
-const walletKeyThree: WasmWalletKey = {
+const apiWalletKeyThree: WasmApiWalletKey = {
     WalletID: '2',
     UserKeyID: '998',
     WalletKey: '2',
 };
 
-const walletSettingsOne: WasmWalletSettings = {
+const apiWalletSettingsOne: WasmApiWalletSettings = {
     WalletID: '0',
     HideAccounts: 0,
     InvoiceDefaultDescription: '',
@@ -107,7 +108,7 @@ const walletSettingsOne: WasmWalletSettings = {
     MaxChannelOpeningFee: 5000,
 };
 
-const walletSettingsTwo: WasmWalletSettings = {
+const apiWalletSettingsTwo: WasmApiWalletSettings = {
     WalletID: '1',
     HideAccounts: 0,
     InvoiceDefaultDescription: '',
@@ -115,7 +116,7 @@ const walletSettingsTwo: WasmWalletSettings = {
     MaxChannelOpeningFee: 5000,
 };
 
-const walletSettingsThree: WasmWalletSettings = {
+const apiWalletSettingsThree: WasmApiWalletSettings = {
     WalletID: '2',
     HideAccounts: 0,
     InvoiceDefaultDescription: '',
@@ -123,7 +124,7 @@ const walletSettingsThree: WasmWalletSettings = {
     MaxChannelOpeningFee: 5000,
 };
 
-export const walletUserSettings: UserWalletSettings = {
+export const apiWalletUserSettings: UserWalletSettings = {
     UserID: 999,
     TwoFactorAmountThreshold: 100000,
     HideEmptyUsedAddresses: 1,
@@ -134,7 +135,7 @@ export const walletUserSettings: UserWalletSettings = {
     ModifyTime: 1701139393899,
 };
 
-export const walletAccountOneA: WasmWalletAccount = {
+export const apiWalletAccountOneA: WasmApiWalletAccount = {
     ID: '8',
     WalletID: '0',
     Label: 'Account 1',
@@ -142,23 +143,15 @@ export const walletAccountOneA: WasmWalletAccount = {
     DerivationPath: "m/84'/0'/0'",
 };
 
-export const walletAccountOneB: WasmWalletAccount = {
+export const apiWalletAccountOneB: WasmApiWalletAccount = {
     ID: '9',
-    WalletID: '0',
-    Label: 'Account 2',
-    ScriptType: WasmScriptType.NativeSegwit,
-    DerivationPath: "m/84'/0'/1'",
-};
-
-export const walletAccountOneC: WasmWalletAccount = {
-    ID: '91',
     WalletID: '0',
     Label: 'Account 2',
     ScriptType: WasmScriptType.Taproot,
     DerivationPath: "m/86'/0'/0'",
 };
 
-export const walletAccountTwoA: WasmWalletAccount = {
+export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     ID: '10',
     WalletID: '1',
     Label: 'Main account',
@@ -166,7 +159,7 @@ export const walletAccountTwoA: WasmWalletAccount = {
     DerivationPath: "m/49'/0'/0'",
 };
 
-export const walletAccountTwoB: WasmWalletAccount = {
+export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     ID: '11',
     WalletID: '1',
     Label: 'Electrum account',
@@ -174,7 +167,7 @@ export const walletAccountTwoB: WasmWalletAccount = {
     DerivationPath: "m/84'/0'/0'",
 };
 
-export const walletAccountThree: WasmWalletAccount = {
+export const apiWalletAccountThree: WasmApiWalletAccount = {
     ID: '12',
     WalletID: '2',
     Label: 'Electrum account',
@@ -182,28 +175,24 @@ export const walletAccountThree: WasmWalletAccount = {
     DerivationPath: "m/84'/0'/0'",
 };
 
-export const wallets: IWasmWallet[] = [
+export const apiWalletsData: IWasmApiWalletData[] = [
     {
-        Wallet: walletOne,
-        // ...emptyWallet,
-        // accounts: [walletAccountOneA, walletAccountOneB, walletAccountOneC],
-        WalletSettings: walletSettingsOne,
-        WalletKey: walletKeyOne,
-        WalletAccounts: [],
+        Wallet: apiWalletOne,
+        WalletSettings: apiWalletSettingsOne,
+        WalletKey: apiWalletKeyOne,
+        WalletAccounts: [apiWalletAccountOneA, apiWalletAccountOneB],
     },
     {
-        Wallet: walletTwo,
-        // accounts: [walletAccountTwoA, walletAccountTwoB],
-        WalletSettings: walletSettingsTwo,
-        WalletKey: walletKeyTwo,
-        WalletAccounts: [],
+        Wallet: apiWalletTwo,
+        WalletSettings: apiWalletSettingsTwo,
+        WalletKey: apiWalletKeyTwo,
+        WalletAccounts: [apiWalletAccountTwoA, apiWalletAccountTwoB],
     },
     {
-        Wallet: walletThree,
-        // accounts: [walletAccountThree],
-        WalletSettings: walletSettingsThree,
-        WalletKey: walletKeyThree,
-        WalletAccounts: [],
+        Wallet: apiWalletThree,
+        WalletSettings: apiWalletSettingsThree,
+        WalletKey: apiWalletKeyThree,
+        WalletAccounts: [apiWalletAccountThree],
     },
 ];
 

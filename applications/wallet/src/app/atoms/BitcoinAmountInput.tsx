@@ -1,11 +1,11 @@
 import { uniq } from 'lodash';
 import { c } from 'ttag';
 
+import { WasmBitcoinUnit } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 
-import { WasmBitcoinUnit } from '../../pkg';
 import { BITCOIN } from '../constants';
 
 interface Props {

@@ -2,14 +2,14 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmBlockchainClient, WasmPartiallySignedTransaction, WasmTxBuilder } from '@proton/andromeda';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmBlockchain, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../pkg';
 import { WalletAndAccountSelectorValue } from '../atoms';
-import { useOnchainWalletContext } from '../contexts';
-import { tryHandleWasmError } from '../utils';
+import { useBitcoinBlockchainContext } from '../contexts';
+import { getAccountWithChainDataFromManyWallets, tryHandleWasmError } from '../utils';
 
 export const usePsbt = ({
     walletAndAccount,
@@ -18,15 +18,15 @@ export const usePsbt = ({
     walletAndAccount: WalletAndAccountSelectorValue;
     txBuilder: WasmTxBuilder;
 }) => {
-    const { syncSingleWalletAccountBlockchainData, network } = useOnchainWalletContext();
+    const { syncSingleWalletAccount, walletsChainData, network } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
     const [loadingBroadcast, withLoadingBroadcast] = useLoading();
     const [finalPsbt, setFinalPsbt] = useState<WasmPartiallySignedTransaction>();
     const [broadcastedTxId, setBroadcastedTxId] = useState<string>();
 
     const createPsbt = useCallback(async () => {
-        const { account } = walletAndAccount;
-        if (account) {
+        const { apiAccount: account } = walletAndAccount;
+        if (account && network) {
             try {
                 const psbt = await txBuilder.createPsbt(network);
                 setFinalPsbt(psbt);
@@ -41,19 +41,25 @@ export const usePsbt = ({
 
     const signAndBroadcastPsbt = () => {
         void withLoadingBroadcast(async () => {
-            const { wallet, account } = walletAndAccount;
-            if (!finalPsbt || !wallet || !account || !walletAndAccount) {
+            const { apiWalletData: wallet, apiAccount: account } = walletAndAccount;
+            const andromedaAccount = getAccountWithChainDataFromManyWallets(
+                walletsChainData,
+                wallet?.Wallet.ID,
+                account?.ID
+            );
+
+            if (!finalPsbt || !wallet || !account || !andromedaAccount || !network) {
                 return;
             }
 
-            const signed = await finalPsbt.sign(account?.wasmAccount, network);
+            const signed = await finalPsbt.sign(andromedaAccount.account, network);
 
             try {
-                const txId = await new WasmBlockchain().broadcastPsbt(signed);
+                const txId = await new WasmBlockchainClient().broadcastPsbt(signed);
                 setBroadcastedTxId(txId);
 
                 setTimeout(() => {
-                    void syncSingleWalletAccountBlockchainData(wallet.Wallet.ID, account.ID);
+                    void syncSingleWalletAccount(wallet.Wallet.ID, account.ID);
                 }, 1 * SECOND);
             } catch (err) {
                 const msg = tryHandleWasmError(err);

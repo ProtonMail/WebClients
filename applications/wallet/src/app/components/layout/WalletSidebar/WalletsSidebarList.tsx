@@ -9,15 +9,15 @@ import {
     useToggle,
 } from '@proton/components';
 
-import { WalletWithAccountsWithBalanceAndTxs } from '../../../types';
+import { IWasmApiWalletData } from '../../../types';
 import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 
 interface Props {
-    wallets?: WalletWithAccountsWithBalanceAndTxs[];
+    apiWalletsData?: IWasmApiWalletData[];
 }
 
-export const WalletsSidebarList = ({ wallets }: Props) => {
+export const WalletsSidebarList = ({ apiWalletsData }: Props) => {
     const { state: showWallets, toggle: toggleShowWallets } = useToggle(true);
 
     return (
@@ -43,8 +43,7 @@ export const WalletsSidebarList = ({ wallets }: Props) => {
 
             <div className="ml-6">
                 {showWallets &&
-                    wallets &&
-                    wallets.map((wallet) => {
+                    apiWalletsData?.map((wallet) => {
                         return (
                             <SidebarListItem key={wallet.Wallet.ID} className="mt-1">
                                 <SidebarItemContent

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { WasmBitcoinUnit } from '../../pkg';
+import { WasmBitcoinUnit } from '@proton/andromeda';
+
 import { BitcoinAmount } from './BitcoinAmount';
 
 describe('BitcoinAmount', () => {
@@ -45,14 +46,18 @@ describe('BitcoinAmount', () => {
     describe('format', () => {
         describe('when format is not provided', () => {
             it('should display fiat as first content by default', () => {
-                render(<BitcoinAmount bitcoin={500100} unit={WasmBitcoinUnit.BTC} fiat="USD" showColor />);
-                expect(screen.getByTestId('first-content').children[0]).toHaveTextContent('$18.29');
+                const { container } = render(
+                    <BitcoinAmount bitcoin={500100} unit={WasmBitcoinUnit.BTC} fiat="USD" showColor />
+                );
+
+                expect(container).toHaveTextContent('$18.29');
+                expect(screen.getByTestId('first-content')).toHaveTextContent('18.29');
             });
         });
 
         describe('when format is fiatFirst', () => {
             it('should display fiat as first content', () => {
-                render(
+                const { container } = render(
                     <BitcoinAmount
                         bitcoin={500100}
                         unit={WasmBitcoinUnit.BTC}
@@ -61,7 +66,9 @@ describe('BitcoinAmount', () => {
                         showColor
                     />
                 );
-                expect(screen.getByTestId('first-content').children[0]).toHaveTextContent('$18.29');
+
+                expect(container).toHaveTextContent('$18.29');
+                expect(screen.getByTestId('first-content')).toHaveTextContent('18.29');
             });
         });
 
@@ -91,17 +98,34 @@ describe('BitcoinAmount', () => {
     });
 
     describe('when showColor is true', () => {
+        // testing with bitcoinFirst is easier than testing with fiatFirst
         describe('when amount is negative', () => {
             it('should have first content in red', () => {
-                render(<BitcoinAmount bitcoin={-500100} unit={WasmBitcoinUnit.BTC} fiat="USD" showColor />);
-                expect(screen.getByTestId('first-content').children[0]).toHaveClass('color-danger');
+                render(
+                    <BitcoinAmount
+                        format="bitcoinFirst"
+                        bitcoin={-500100}
+                        unit={WasmBitcoinUnit.BTC}
+                        fiat="USD"
+                        showColor
+                    />
+                );
+                expect(screen.getByTestId('first-content')).toHaveClass('color-danger');
             });
         });
 
         describe('when amount is positive', () => {
             it('should have first content in green', () => {
-                render(<BitcoinAmount bitcoin={500100} unit={WasmBitcoinUnit.BTC} fiat="USD" showColor />);
-                expect(screen.getByTestId('first-content').children[0]).toHaveClass('color-success');
+                render(
+                    <BitcoinAmount
+                        format="bitcoinFirst"
+                        bitcoin={500100}
+                        unit={WasmBitcoinUnit.BTC}
+                        fiat="USD"
+                        showColor
+                    />
+                );
+                expect(screen.getByTestId('first-content')).toHaveClass('color-success');
             });
         });
     });

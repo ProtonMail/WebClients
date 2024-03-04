@@ -2,11 +2,10 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmMnemonic, WasmWordCount, getWordsAutocomplete } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Alert, Autocomplete, Icon, Option, SelectTwo } from '@proton/components/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-
-import { WasmMnemonic, WasmWordCount, getWordsAutocomplete } from '../../../../pkg';
 
 import './MnemonicInput.scss';
 

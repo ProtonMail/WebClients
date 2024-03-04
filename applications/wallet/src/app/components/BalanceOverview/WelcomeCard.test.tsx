@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
 
-import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { apiWalletsData } from '../../tests/fixtures/api';
 import { WelcomeCard } from './WelcomeCard';
 
 describe('WelcomeCard', () => {
@@ -34,7 +34,7 @@ describe('WelcomeCard', () => {
 
     describe('when wallet is provided', () => {
         it('should render wallet message', () => {
-            render(<WelcomeCard wallet={walletsWithAccountsWithBalanceAndTxs[1]} />, { wrapper: BrowserRouter });
+            render(<WelcomeCard apiWalletData={apiWalletsData[1]} />, { wrapper: BrowserRouter });
 
             expect(
                 screen.getByText("Start using your wallet 'Savings on Jade' by either buying or transfering bitcoins.")
@@ -42,7 +42,7 @@ describe('WelcomeCard', () => {
         });
 
         it('should render simplelink to wallet transfer', () => {
-            render(<WelcomeCard wallet={walletsWithAccountsWithBalanceAndTxs[1]} />, { wrapper: BrowserRouter });
+            render(<WelcomeCard apiWalletData={apiWalletsData[1]} />, { wrapper: BrowserRouter });
 
             const transferLink = screen.getByRole('link', { name: 'Transfer bitcoins' });
             expect(transferLink).toBeInTheDocument();

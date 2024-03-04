@@ -1,9 +1,11 @@
-import { useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 
+import { WasmBitcoinUnit } from '@proton/andromeda';
+import Info from '@proton/components/components/link/Info';
 import { Price } from '@proton/components/components/price';
+import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { WasmBitcoinUnit } from '../../pkg';
 import { getLabelByUnit, satsToBitcoin, satsToMBitcoin, toFiat } from '../utils';
 
 interface Props {
@@ -14,7 +16,7 @@ interface Props {
     precision?: number;
     unit?: WasmBitcoinUnit;
 
-    fiat?: string;
+    fiat?: Currency;
 
     format?: 'fiatFirst' | 'bitcoinFirst';
 
@@ -29,11 +31,16 @@ interface Props {
      * Display negative amount in red and positive/null amount in green
      */
     showColor?: boolean;
+
+    /**
+     * Additionnal info to display
+     */
+    info?: ReactNode;
 }
 
 export const BitcoinAmount = ({
     bitcoin,
-    unit = WasmBitcoinUnit.BTC,
+    unit,
     precision = 6,
 
     fiat,
@@ -44,6 +51,8 @@ export const BitcoinAmount = ({
     secondClassName,
     showExplicitSign,
     showColor,
+
+    info,
 }: Props) => {
     const colorClassName = bitcoin < 0 ? 'color-danger' : 'color-success';
 
@@ -74,26 +83,39 @@ export const BitcoinAmount = ({
                     className={clsx('block', firstClassName, showColor && colorClassName)}
                 >
                     {sign}
-                    {amount} {getLabelByUnit(unit)}
+                    {amount} {getLabelByUnit(unit ?? WasmBitcoinUnit.SAT)}
                 </span>
-                <Price className={clsx('color-hint m-0 text-sm', secondClassName)} currency={fiat} prefix={sign}>
-                    {toFiat(bitcoin).toFixed(2)}
-                </Price>
+                {info && <Info title={info} />}
+                {fiat && (
+                    <Price
+                        className={clsx('block color-hint m-0 text-sm', secondClassName)}
+                        currency={fiat}
+                        prefix={sign}
+                    >
+                        {toFiat(bitcoin).toFixed(2)}
+                    </Price>
+                )}
             </>
         );
     }
 
     return (
         <>
-            <div data-testid="first-content">
-                <Price className={clsx(firstClassName, showColor && colorClassName)} currency={fiat} prefix={sign}>
-                    {toFiat(bitcoin).toFixed(2)}
-                </Price>
-            </div>
-            <span className={clsx('color-hint m-0 text-sm', secondClassName)}>
-                {sign}
-                {amount} {getLabelByUnit(unit)}
-            </span>
+            <Price
+                data-testid="first-content"
+                className={clsx('block', firstClassName, showColor && colorClassName)}
+                currency={fiat}
+                prefix={sign}
+            >
+                {toFiat(bitcoin).toFixed(2)}
+            </Price>
+            {info && <Info title={info} />}
+            {unit !== undefined && (
+                <span className={clsx('block color-hint m-0 text-sm', secondClassName)}>
+                    {sign}
+                    {amount} {getLabelByUnit(unit)}
+                </span>
+            )}
         </>
     );
 };

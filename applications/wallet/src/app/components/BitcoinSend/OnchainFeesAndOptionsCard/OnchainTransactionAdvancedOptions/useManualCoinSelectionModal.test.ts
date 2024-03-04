@@ -2,8 +2,9 @@ import { act } from 'react-dom/test-utils';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { WasmOutPoint } from '../../../../../pkg';
-import { AccountWithBlockchainData } from '../../../../types';
+import { WasmOutPoint } from '@proton/andromeda';
+
+import { AccountWithChainData } from '../../../../types';
 import { useManualCoinSelectionModal } from './useManualCoinSelectionModal';
 
 const outpointA = '89e48f05368f62c554f5e945d5a337550dbd2387fb74f7437302074feac04455:0';
@@ -16,7 +17,7 @@ describe('useManualCoinSelectionModal', () => {
                 const { result } = renderHook(() =>
                     useManualCoinSelectionModal(true, [], vi.fn(), {
                         utxos: [],
-                    } as unknown as AccountWithBlockchainData)
+                    } as unknown as AccountWithChainData)
                 );
 
                 act(() => result.current.toggleUtxoSelection(outpointA));
@@ -29,7 +30,7 @@ describe('useManualCoinSelectionModal', () => {
                 const { result } = renderHook(() =>
                     useManualCoinSelectionModal(true, [], vi.fn(), {
                         utxos: [],
-                    } as unknown as AccountWithBlockchainData)
+                    } as unknown as AccountWithChainData)
                 );
 
                 act(() => result.current.toggleUtxoSelection(outpointA));
@@ -45,7 +46,7 @@ describe('useManualCoinSelectionModal', () => {
             const { result } = renderHook(() =>
                 useManualCoinSelectionModal(true, [], mockedOnCoinSelected, {
                     utxos: [],
-                } as unknown as AccountWithBlockchainData)
+                } as unknown as AccountWithChainData)
             );
 
             act(() => result.current.toggleUtxoSelection(outpointA));
@@ -57,8 +58,8 @@ describe('useManualCoinSelectionModal', () => {
 
             const serialisedArg = mockedOnCoinSelected.mock.calls[0][0].map((o: [string]) => o[0]);
             expect(serialisedArg).toMatchObject([
-                WasmOutPoint.fromRawTs(outpointA)[0],
-                WasmOutPoint.fromRawTs(outpointB)[0],
+                WasmOutPoint.fromString(outpointA)[0],
+                WasmOutPoint.fromString(outpointB)[0],
             ]);
         });
     });
@@ -69,7 +70,7 @@ describe('useManualCoinSelectionModal', () => {
             const { result, rerender } = renderHook(() =>
                 useManualCoinSelectionModal(isOpen, [], vi.fn(), {
                     utxos: [],
-                } as unknown as AccountWithBlockchainData)
+                } as unknown as AccountWithChainData)
             );
 
             act(() => result.current.toggleUtxoSelection(outpointA));
@@ -86,11 +87,11 @@ describe('useManualCoinSelectionModal', () => {
             const { result, rerender } = renderHook(() =>
                 useManualCoinSelectionModal(
                     isOpen,
-                    [WasmOutPoint.fromRawTs(outpointA), WasmOutPoint.fromRawTs(outpointB)],
+                    [WasmOutPoint.fromString(outpointA), WasmOutPoint.fromString(outpointB)],
                     vi.fn(),
                     {
                         utxos: [],
-                    } as unknown as AccountWithBlockchainData
+                    } as unknown as AccountWithChainData
                 )
             );
 

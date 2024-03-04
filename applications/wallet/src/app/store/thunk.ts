@@ -1,6 +1,5 @@
+import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-
-import { WasmProtonWalletApiClient } from '../../pkg';
 
 export interface WalletThunkArguments extends ProtonThunkArguments {
     rustApi: WasmProtonWalletApiClient;

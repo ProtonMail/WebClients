@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmScriptType } from '../../pkg';
+import { WasmBitcoinUnit, WasmScriptType } from '@proton/andromeda';
+
 import { BITCOIN, mBITCOIN } from '../constants';
 
 export const bitcoinToSats = (btc: number) => {

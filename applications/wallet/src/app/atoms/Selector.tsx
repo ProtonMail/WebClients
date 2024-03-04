@@ -14,6 +14,7 @@ interface Props<TSelectValue extends string | number, TOption extends BaseOption
     selected?: TSelectValue;
     onSelect: (event: SelectChangeEvent<TSelectValue>) => void;
     options: TOption[];
+    disabled?: boolean;
 }
 
 export const Selector = <TSelectValue extends string | number, TOption extends BaseOption<TSelectValue>>({
@@ -22,11 +23,20 @@ export const Selector = <TSelectValue extends string | number, TOption extends B
     selected,
     onSelect,
     options,
+    disabled,
 }: Props<TSelectValue, TOption>) => {
     return (
         <div className="mr-6">
             <Label className="text-semibold">{label}</Label>
-            <SelectTwo title={label} className="mt-2" id={id} data-testid={id} value={selected} onChange={onSelect}>
+            <SelectTwo
+                title={label}
+                className="mt-2"
+                id={id}
+                data-testid={id}
+                value={selected}
+                onChange={onSelect}
+                disabled={disabled}
+            >
                 {options.map((option) => (
                     <Option
                         key={option.value}

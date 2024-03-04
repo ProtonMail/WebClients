@@ -14,7 +14,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 
 import { WalletSelector } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
-import { useOnchainWalletContext } from '../../contexts';
+import { IWasmApiWalletData } from '../../types';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 const CopyPasteButton = ({ value }: { value: string }) => {
@@ -45,20 +45,19 @@ const CopyPasteButton = ({ value }: { value: string }) => {
 
 interface Props {
     defaultWalletId?: string;
+    wallets: IWasmApiWalletData[];
 }
 
-export const BitcoinReceive = ({ defaultWalletId }: Props) => {
-    const { wallets } = useOnchainWalletContext();
-
+export const BitcoinReceive = ({ defaultWalletId, wallets }: Props) => {
     const {
-        handleSelectWallet,
         paymentLink,
         selectedWallet,
         shouldShowAmountInput,
         amount,
+        handleSelectWallet,
         handleChangeAmount,
         showAmountInput,
-    } = useBitcoinReceive(defaultWalletId);
+    } = useBitcoinReceive(wallets, defaultWalletId);
 
     const walletSelectorLabels = {
         wallet: c('Wallet Receive').t`Receive to wallet`,
@@ -74,7 +73,8 @@ export const BitcoinReceive = ({ defaultWalletId }: Props) => {
                     onSelect={handleSelectWallet}
                     value={selectedWallet}
                     label={walletSelectorLabels}
-                    wallets={wallets}
+                    apiWalletsData={wallets}
+                    onlyValidWallet
                 />
 
                 {shouldShowAmountInput ? (
@@ -125,7 +125,9 @@ export const BitcoinReceive = ({ defaultWalletId }: Props) => {
                                 className="flex flex-column w-custom justify-space-between"
                                 style={{ '--w-custom': '15rem' }}
                             >
-                                <h3 className="text-lg text-semibold mt-4">{selectedWallet.wallet?.Wallet.Name}</h3>
+                                <h3 className="text-lg text-semibold mt-4">
+                                    {selectedWallet.apiWalletData?.Wallet.Name}
+                                </h3>
                                 <Href href={paymentLinkUri}>
                                     <Tooltip title={paymentLinkString}>
                                         <p

@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { WalletAndAccountSelectorValue } from '../../../atoms';
-import { useOnchainWalletContext } from '../../../contexts';
+import { useBitcoinBlockchainContext } from '../../../contexts';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
-import { getDefaultAccount, getSelectedWallet } from '../../../utils';
+import { IWasmApiWalletData } from '../../../types';
+import { getAccountWithChainDataFromManyWallets, getDefaultAccount, getSelectedWallet } from '../../../utils';
 
-export const useOnchainTransactionBuilder = (defaultWalletId?: string) => {
-    const { wallets } = useOnchainWalletContext();
+export const useOnchainTransactionBuilder = (wallets: IWasmApiWalletData[], defaultWalletId?: string) => {
+    const { walletsChainData } = useBitcoinBlockchainContext();
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
     const [walletAndAccount, setWalletAndAccount] = useState<WalletAndAccountSelectorValue>({
-        wallet: defaultWallet,
-        account: getDefaultAccount(defaultWallet),
+        apiWalletData: defaultWallet,
+        apiAccount: getDefaultAccount(defaultWallet),
     });
 
     const { txBuilder, updateTxBuilder } = useTxBuilder();
@@ -26,23 +27,41 @@ export const useOnchainTransactionBuilder = (defaultWalletId?: string) => {
         txBuilder,
     });
 
+    const andromedaAccount = useMemo(
+        () =>
+            getAccountWithChainDataFromManyWallets(
+                walletsChainData,
+                walletAndAccount.apiWalletData?.Wallet.ID,
+                walletAndAccount.apiAccount?.ID
+            ),
+        [walletAndAccount, walletsChainData]
+    );
+
     const handleSelectWalletAndAccount = (value: WalletAndAccountSelectorValue) => {
         setWalletAndAccount((prev) => ({ ...prev, ...value }));
     };
 
     useEffect(() => {
-        setWalletAndAccount((prev) => ({ ...prev, account: getDefaultAccount(walletAndAccount.wallet) }));
-    }, [walletAndAccount.wallet]);
+        setWalletAndAccount((prev) => ({ ...prev, apiAccount: getDefaultAccount(walletAndAccount.apiWalletData) }));
+    }, [walletAndAccount.apiWalletData]);
+
+    const { apiWalletData: wallet, apiAccount: account } = walletAndAccount;
 
     useEffect(() => {
-        const account = walletAndAccount.account;
-        if (account) {
-            void updateTxBuilder((txBuilder) => txBuilder.setAccount(account.wasmAccount));
+        if (wallet?.Wallet.ID && account?.ID) {
+            const andromedaAccount = walletsChainData[wallet?.Wallet.ID]?.accounts[account?.ID]?.account;
+
+            if (andromedaAccount) {
+                void updateTxBuilder((txBuilder) => txBuilder.setAccount(andromedaAccount));
+            }
         }
-    }, [walletAndAccount.account, updateTxBuilder]);
+    }, [wallet?.Wallet.ID, account?.ID, updateTxBuilder, walletsChainData]);
 
     return {
         walletAndAccount,
+        wallets,
+        account: andromedaAccount,
+
         handleSelectWalletAndAccount,
 
         addRecipient,

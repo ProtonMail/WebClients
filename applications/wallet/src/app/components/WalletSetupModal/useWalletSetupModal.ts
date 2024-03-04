@@ -3,15 +3,13 @@ import { useEffect, useState } from 'react';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
+import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '../../../pkg';
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
-import { useOnchainWalletContext, useRustApi } from '../../contexts';
+import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { walletCreation } from '../../store/slices/userWallets';
+import { walletCreation } from '../../store/slices/apiWalletsData';
 import { WalletType } from '../../types';
 import { encryptWalletData } from '../../utils/crypto';
 import { walletCreationSetupSteps, walletImportSetupSteps } from './constants';
@@ -28,7 +26,7 @@ const getSetupSteps = (mode: WalletSetupMode) =>
 export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
     const { createNotification } = useNotifications();
 
-    const { network } = useOnchainWalletContext();
+    const { network } = useBitcoinBlockchainContext();
 
     const [mnemonic, setMnemonic] = useState<WasmMnemonic>();
     const [passphrase, setPassphrase] = useState<string>();
@@ -86,9 +84,12 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
     // TODO: use fiatCurrency later
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onWalletSubmit = async (walletName: string, _fiatCurrency: string) => {
-        await waitUntil(() => !!userKeys, 10);
+        // Typeguard
+        if (!userKeys || !network) {
+            return;
+        }
 
-        const [primaryUserKey] = userKeys as DecryptedKey[];
+        const [primaryUserKey] = userKeys;
 
         const isImported = setupMode === WalletSetupMode.Import;
         const hasPassphrase = !!passphrase;
@@ -116,8 +117,8 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
                 fingerprint,
                 undefined
             )
-            .then(async (walletData): Promise<void> => {
-                setWalletId(walletData.Wallet.ID);
+            .then(async ({ Wallet, WalletKey, WalletSettings }): Promise<void> => {
+                setWalletId(Wallet.ID);
 
                 const derivationPath = WasmDerivationPath.fromParts(
                     purposeByScriptType[DEFAULT_SCRIPT_TYPE],
@@ -130,7 +131,7 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
                     ? await api
                           .wallet()
                           .createWalletAccount(
-                              walletData.Wallet.ID,
+                              Wallet.ID,
                               derivationPath,
                               encryptedFirstAccountLabel,
                               DEFAULT_SCRIPT_TYPE
@@ -140,7 +141,14 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
 
                 // TODO: Account detection for imported wallets
 
-                dispatch(walletCreation({ ...walletData, WalletAccounts: account ? [account.Account] : [] }));
+                dispatch(
+                    walletCreation({
+                        Wallet,
+                        WalletKey,
+                        WalletSettings,
+                        WalletAccounts: account ? [account.Account] : [],
+                    })
+                );
             })
             .catch(() => {
                 createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });

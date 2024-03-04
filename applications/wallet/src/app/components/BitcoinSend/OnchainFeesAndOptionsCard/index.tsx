@@ -1,22 +1,22 @@
 import { c } from 'ttag';
 
+import { WasmTxBuilder } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import Card from '@proton/atoms/Card/Card';
 
-import { WasmTxBuilder } from '../../../../pkg';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
-import { AccountWithBlockchainData } from '../../../types';
+import { AccountWithChainData } from '../../../types';
 import { OnChainFeesSelector } from './OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from './OnchainTransactionAdvancedOptions';
 
 interface Props {
     txBuilder: WasmTxBuilder;
+    account?: AccountWithChainData;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
     createPsbt: () => Promise<void>;
-    account?: AccountWithBlockchainData;
 }
 
-export const OnchainFeesAndOptionsCard = ({ txBuilder, updateTxBuilder, account, createPsbt }: Props) => {
+export const OnchainFeesAndOptionsCard = ({ txBuilder, account, updateTxBuilder, createPsbt }: Props) => {
     return (
         <Card
             className="flex flex-column transaction-builder-card bg-norm overflow-y-auto flex-nowrap"

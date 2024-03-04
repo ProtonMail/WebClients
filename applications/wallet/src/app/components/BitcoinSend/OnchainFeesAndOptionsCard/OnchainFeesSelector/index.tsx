@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { WasmTxBuilder } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import Pill from '@proton/atoms/Pill/Pill';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
@@ -8,7 +9,6 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import Icon from '@proton/components/components/icon/Icon';
 
-import { WasmTxBuilder } from '../../../../../pkg';
 import { FeeSelectionModal } from './FeeSelectionModal';
 import { FeeRateNote, useOnChainFeesSelector } from './useOnChainFeesSelector';
 
@@ -31,7 +31,7 @@ interface Props {
 
 export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
     const {
-        feeEstimations,
+        feesEstimations,
         blockTarget,
         isModalOpen,
         isRecommended,
@@ -88,7 +88,7 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
             </div>
             <FeeSelectionModal
                 isOpen={isModalOpen}
-                feeEstimations={feeEstimations}
+                feesEstimations={feesEstimations}
                 feeRate={feeRate}
                 onClose={closeModal}
                 onFeeRateSelected={handleFeesSelected}

@@ -2,11 +2,11 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { WasmBitcoinUnit } from '@proton/andromeda';
 import clsx from '@proton/utils/clsx';
 
-import { WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
-import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { IWasmApiWalletData } from '../../types';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
 import { WelcomeCard } from './WelcomeCard';
@@ -17,17 +17,17 @@ const fiatCurrency = 'USD';
 const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 interface SingleWalletBalanceOverviewProps {
-    wallet?: WalletWithAccountsWithBalanceAndTxs;
+    apiWalletData: IWasmApiWalletData;
 }
 
 interface ManyWalletsBalanceOverviewProps {
-    wallets?: WalletWithAccountsWithBalanceAndTxs[];
+    apiWalletsData: IWasmApiWalletData[];
 }
 
 type Props = SingleWalletBalanceOverviewProps | ManyWalletsBalanceOverviewProps;
 
 export const BalanceOverview = (props: Props) => {
-    const data = 'wallet' in props ? props.wallet : 'wallets' in props ? props.wallets : undefined;
+    const data = 'apiWalletData' in props ? props.apiWalletData : props.apiWalletsData;
 
     const {
         totalBalance,
@@ -38,8 +38,8 @@ export const BalanceOverview = (props: Props) => {
         last7DaysBalanceDifference,
     } = useBalanceOverview(data);
 
-    if (!transactions) {
-        return <WelcomeCard wallet={'wallet' in props ? props.wallet : undefined} />;
+    if (!transactions.length) {
+        return <WelcomeCard apiWalletData={'apiWalletData' in props ? props.apiWalletData : undefined} />;
     }
 
     return (
