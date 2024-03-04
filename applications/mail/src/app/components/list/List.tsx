@@ -233,7 +233,7 @@ const List = (
     return (
         <div
             className={clsx([
-                'relative delight-items-column-list',
+                'relative items-column-list',
                 !show && 'hidden',
                 showContentPanel ? 'is-column' : 'is-row',
             ])}
@@ -246,8 +246,8 @@ const List = (
 
                 <div
                     className={clsx(
-                        'delight-items-column-list-inner--mail',
-                        breakpoints.viewportWidth['>=large'] && 'delight-items-column-list-inner',
+                        'items-column-list-inner--mail',
+                        breakpoints.viewportWidth['>=large'] && 'items-column-list-inner',
                         !columnLayout && 'border-none',
                         'flex flex-nowrap flex-column relative overflow-hidden h-full'
                     )}
@@ -270,7 +270,7 @@ const List = (
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
 
-                    <div className="delight-items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full">
+                    <div className="items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full">
                         {elements.length === 0 && !canDisplayTaskRunningBanner && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
