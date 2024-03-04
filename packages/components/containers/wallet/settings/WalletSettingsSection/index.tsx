@@ -51,7 +51,7 @@ export const WalletSettingsSection = ({ config }: Props) => {
     return (
         <PrivateMainSettingsAreaBase title={wallet.name} description={description}>
             {config.subsections
-                .filter((subsection) => subsections.includes(subsection.id as SubsectionId))
+                ?.filter((subsection) => subsections.includes(subsection.id as SubsectionId))
                 .map((subsection) => {
                     const SubSection = subsectionBySubSectionId[subsection.id as SubsectionId];
 
