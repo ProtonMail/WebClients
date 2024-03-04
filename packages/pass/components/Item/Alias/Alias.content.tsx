@@ -1,14 +1,12 @@
-import { type FC, type MouseEvent, useEffect } from 'react';
+import type { ReactNode} from 'react';
+import { type FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
@@ -16,13 +14,15 @@ import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions'
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 
-export const AliasContent: FC<ItemContentProps<'alias'>> = ({ revision, optimistic, showCreateLogin }) => {
-    const { navigate } = useNavigation();
+export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; actions: ReactNode }>> = ({
+    revision,
+    optimistic = false,
+    actions = [],
+}) => {
     const dispatch = useDispatch();
 
-    const { data: item, itemId, shareId } = revision;
+    const { data: item, shareId, itemId } = revision;
     const aliasEmail = revision.aliasEmail!;
-
     const note = useDeobfuscatedValue(item.metadata.note);
 
     const getAliasDetails = useActionRequest({
@@ -40,18 +40,7 @@ export const AliasContent: FC<ItemContentProps<'alias'>> = ({ revision, optimist
     });
 
     const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
-
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-
-    const createLoginFromAlias = (evt: MouseEvent) => {
-        evt.stopPropagation();
-        evt.preventDefault();
-
-        navigate(getNewItemRoute('login'), {
-            searchParams: { username: aliasEmail },
-            filters: { selectedShareId: shareId },
-        });
-    };
 
     useEffect(() => {
         if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
@@ -65,15 +54,7 @@ export const AliasContent: FC<ItemContentProps<'alias'>> = ({ revision, optimist
                     icon="alias"
                     label={c('Label').t`Alias address`}
                     value={aliasEmail ?? undefined}
-                    {...(showCreateLogin
-                        ? {
-                              extra: (
-                                  <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>{c(
-                                      'Action'
-                                  ).t`Create login`}</InlineLinkButton>
-                              ),
-                          }
-                        : {})}
+                    extra={actions}
                 />
 
                 <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>

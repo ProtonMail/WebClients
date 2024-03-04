@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ItemViewHistoryStats } from '@proton/pass/components/Item/History/ItemViewHistoryStats';
+import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
@@ -17,7 +17,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
         <ItemViewPanel type="login" {...itemViewProps}>
             <LoginContent revision={revision} />
 
-            <ItemViewHistoryStats
+            <ItemHistoryStats
                 lastUseTime={lastUseTime}
                 createTime={createTime}
                 modifyTime={modifyTime}
