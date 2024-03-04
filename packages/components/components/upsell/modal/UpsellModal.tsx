@@ -100,6 +100,7 @@ export interface UpsellModalProps {
     title: string;
     upgradePath: string;
     onClose?: () => void;
+    onUpgrade?: () => void;
     headerType?: UpsellHeaderType;
     hideInfo?: boolean;
     size?: ModalSize;
@@ -114,10 +115,12 @@ const UpsellModal = ({
     upgradePath,
     'data-testid': dataTestid,
     onClose,
+    onUpgrade,
     headerType = 'mail',
     size,
 }: UpsellModalProps) => {
     const handleUpgrade = () => {
+        onUpgrade?.();
         modalProps.onClose();
     };
 
