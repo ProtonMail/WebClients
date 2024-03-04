@@ -25,7 +25,7 @@ const config: ForgeConfig = {
         icon: `${__dirname}/assets/icons/${getIcon()}`,
         asar: true,
         name: getName(),
-        executableName: getName(),
+        executableName: "ProtonMail",
         extraResource: getExtraResource(),
         // Required for macOS mailto protocol
         protocols: [
@@ -49,6 +49,7 @@ const config: ForgeConfig = {
         {
             name: "@electron-forge/maker-squirrel",
             config: {
+                name: "ProtonMail",
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
@@ -99,7 +100,7 @@ const config: ForgeConfig = {
                 options: {
                     bin: getName(),
                     icon: `${__dirname}/assets/icons/${getIcon()}.png`,
-                    maintainer: "Proton AG",
+                    maintainer: "Proton",
                     homepage: "https://proton.me/",
                     categories: ["Utility"],
                     mimeType: ["x-scheme-handler/mailto"],

@@ -54,6 +54,8 @@ if (app.isDefaultProtocolClient("mailto")) {
     Logger.info("App is not default mailto client");
 }
 
+app.setAppUserModelId("com.squirrel.proton_mail.ProtonMail");
+
 const gotTheLock = app.requestSingleInstanceLock();
 if (!gotTheLock) {
     Logger.info("App is already running");
