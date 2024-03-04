@@ -3,6 +3,6 @@
 @import '~@proton/styles/scss/layout/native';
 
 // Specific styles
-@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/list', 'styles/config',
-	'styles/specifics', 'styles/grid', 'styles/monthgrid', 'styles/daygrid', 'styles/eventcell', 'styles/aside',
-	'styles/eventpopover', 'styles/debug', 'styles/loader-container', 'styles/dropzone';
+@import '~@proton/styles/scss/specifics/placeholder-loading', 'styles/config', 'styles/specifics', 'styles/grid',
+	'styles/monthgrid', 'styles/daygrid', 'styles/eventcell', 'styles/aside', 'styles/eventpopover', 'styles/debug',
+	'styles/loader-container', 'styles/dropzone';
