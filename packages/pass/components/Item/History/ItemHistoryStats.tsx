@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { HistoryItem } from '@proton/pass/components/Item/History/HistoryItem';
+import { InfoCard } from '@proton/pass/components/Layout/Card/InfoCard';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -19,14 +19,14 @@ type Props = {
     handleHistoryClick?: () => void;
 };
 
-export const ItemViewHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTime, handleHistoryClick }) => {
+export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTime, handleHistoryClick }) => {
     const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
     const passPlan = useSelector(selectPassPlan);
 
     return (
         <div className="flex flex-column border rounded-xl px-4 py-3 gap-3">
             {lastUseTime !== undefined && (
-                <HistoryItem
+                <InfoCard
                     icon="magic-wand"
                     title={c('Title').t`Last autofill`}
                     subtitle={
@@ -35,8 +35,10 @@ export const ItemViewHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUs
                     }
                 />
             )}
-            <HistoryItem icon="pencil" title={c('Title').t`Last modified`} subtitle={epochToRelativeDate(modifyTime)} />
-            <HistoryItem icon="bolt" title={c('Title').t`Created`} subtitle={epochToRelativeDate(createTime)} />
+
+            <InfoCard icon="pencil" title={c('Title').t`Last modified`} subtitle={epochToRelativeDate(modifyTime)} />
+            <InfoCard icon="bolt" title={c('Title').t`Created`} subtitle={epochToRelativeDate(createTime)} />
+
             {handleHistoryClick && historyEnabled && isPaidPlan(passPlan) && (
                 <Button onClick={handleHistoryClick} className="mt-1" color="weak" shape="solid" fullWidth pill>
                     {c('Action').t`View history`}

@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
-import { ItemViewHistoryStats } from '@proton/pass/components/Item/History/ItemViewHistoryStats';
+import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
@@ -66,9 +67,19 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                 : {})}
             handleMoveToTrashClick={handleMoveToTrashClick}
         >
-            <AliasContent revision={revision} optimistic={optimistic} showCreateLogin={!trashed} />
+            <AliasContent
+                revision={revision}
+                optimistic={optimistic}
+                actions={
+                    !trashed ? (
+                        <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>
+                            {c('Action').t`Create login`}
+                        </InlineLinkButton>
+                    ) : null
+                }
+            />
 
-            <ItemViewHistoryStats
+            <ItemHistoryStats
                 createTime={createTime}
                 modifyTime={modifyTime}
                 handleHistoryClick={revisionNumber > 1 ? handleHistoryClick : undefined}

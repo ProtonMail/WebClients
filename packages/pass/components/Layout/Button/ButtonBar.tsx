@@ -6,15 +6,10 @@ import clsx from '@proton/utils/clsx';
 
 import './ButtonBar.scss';
 
-type Props = {
-    className?: string;
-    size?: Size;
-};
+type Props = { className?: string; size?: Size };
 
-export const ButtonBar: FC<PropsWithChildren<Props>> = ({ children, className, size }) => {
-    return (
-        <ButtonGroup className={clsx('pass-button-bar w-full', className)} color="weak" pill shape="solid" size={size}>
-            {children}
-        </ButtonGroup>
-    );
-};
+export const ButtonBar: FC<PropsWithChildren<Props>> = ({ children, className, size }) => (
+    <ButtonGroup className={clsx('pass-button-bar w-full', className)} color="weak" pill shape="solid" size={size}>
+        {children}
+    </ButtonGroup>
+);

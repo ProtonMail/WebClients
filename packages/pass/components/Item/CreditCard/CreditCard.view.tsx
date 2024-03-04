@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCardContent';
-import { ItemViewHistoryStats } from '@proton/pass/components/Item/History/ItemViewHistoryStats';
+import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
@@ -16,7 +16,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
             <CreditCardContent revision={revision} />
-            <ItemViewHistoryStats
+            <ItemHistoryStats
                 createTime={createTime}
                 modifyTime={modifyTime}
                 handleHistoryClick={revisionNumber > 1 ? handleHistoryClick : undefined}
