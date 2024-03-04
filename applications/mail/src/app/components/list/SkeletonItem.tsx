@@ -18,7 +18,6 @@ interface Props {
     element: Element;
     index: number;
     breakpoints: Breakpoints;
-    isDelightMailListEnabled?: boolean;
 }
 
 const SkeletonItem = ({
@@ -30,7 +29,6 @@ const SkeletonItem = ({
     columnLayout,
     index,
     breakpoints,
-    isDelightMailListEnabled,
 }: Props) => {
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
 
@@ -45,13 +43,9 @@ const SkeletonItem = ({
                 className={clsx([
                     'flex-1 flex flex-nowrap cursor-pointer group-hover-opacity-container unread',
                     loading && 'item-is-loading',
-                    ...(isDelightMailListEnabled
-                        ? [
-                              columnLayout
-                                  ? 'delight-item-container delight-item-container--column'
-                                  : 'delight-item-container delight-item-container--row',
-                          ]
-                        : [columnLayout ? 'item-container item-container-column' : 'item-container-row']),
+                    columnLayout
+                        ? 'delight-item-container delight-item-container--column'
+                        : 'delight-item-container delight-item-container--row',
                 ])}
                 style={{ '--index': index }}
                 data-element-id={element.ID}
@@ -63,10 +57,8 @@ const SkeletonItem = ({
                     ID={element.ID}
                     checked={false}
                     compactClassName="mr-3 stop-propagation"
-                    normalClassName={
-                        isDelightMailListEnabled ? 'mr-3' : clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])
-                    }
-                    variant={isDelightMailListEnabled ? 'small' : undefined}
+                    normalClassName="mr-3"
+                    variant="small"
                 />
                 <ItemLayout
                     isCompactView={isCompactView}
