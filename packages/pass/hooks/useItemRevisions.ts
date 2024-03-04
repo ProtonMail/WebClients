@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
@@ -8,13 +8,8 @@ import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '@proton/pass/typ
 
 type Props = Omit<ItemRevisionsIntent, 'since'>;
 
-export const useItemHistory = ({ shareId, itemId, pageSize }: Props) => {
-    const [state, setState] = useState<ItemRevisionsSuccess>({
-        revisions: [],
-        next: null,
-        total: 0,
-        since: null,
-    });
+export const useItemRevisions = ({ shareId, itemId, pageSize }: Props) => {
+    const [state, setState] = useState<ItemRevisionsSuccess>({ next: null, revisions: [], since: null, total: 0 });
 
     const { loading, revalidate, dispatch } = useActionRequest({
         action: itemHistoryIntent,
@@ -31,12 +26,11 @@ export const useItemHistory = ({ shareId, itemId, pageSize }: Props) => {
         dispatch({ shareId, itemId, pageSize, since: null });
     }, []);
 
-    return {
-        state: { ...state, loading },
-        loadMore: () => {
-            if (!loading && state.next) {
-                revalidate({ shareId, itemId, pageSize, since: state.next });
-            }
-        },
-    };
+    return useMemo(
+        () => ({
+            state: { ...state, loading },
+            loadMore: () => !loading && state.next && revalidate({ shareId, itemId, pageSize, since: state.next }),
+        }),
+        [loading, state, revalidate]
+    );
 };
