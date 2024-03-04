@@ -1,8 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
+import { WasmBitcoinUnit, WasmRecipient } from '@proton/andromeda';
+
 import { RecipientList } from '.';
-import { WasmBitcoinUnit, WasmRecipient } from '../../../../pkg';
 
 const buildWasmRecipient = (uuid: string) => {
     return [uuid, '', BigInt(0)] as unknown as WasmRecipient;

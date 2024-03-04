@@ -1,33 +1,17 @@
-import { IWasmWallet } from '.';
-import {
-    IWasmSimpleTransactionArray,
-    IWasmUtxoArray,
-    WasmAccount,
-    WasmBalance,
-    WasmWallet,
-    WasmWalletAccount,
-} from '../../pkg';
+import { WasmAccount, WasmBalance, WasmTransactionDetails, WasmUtxo, WasmWallet } from '@proton/andromeda';
 
-export type AccountWithBlockchainData = WasmWalletAccount & {
-    balance: WasmBalance;
-    transactions: IWasmSimpleTransactionArray;
-    utxos: IWasmUtxoArray;
-    wasmAccount: WasmAccount;
+export type AccountWithChainData = {
+    account: WasmAccount;
+    balance?: WasmBalance;
+    transactions?: WasmTransactionDetails[];
+    utxos?: WasmUtxo[];
 };
 
-export type WalletWithAccountsWithBalanceAndTxs = IWasmWallet & {
-    wasmWallet: WasmWallet;
-    accounts: AccountWithBlockchainData[];
+export type AccountChainDataByAccountId = Partial<Record<string, AccountWithChainData>>;
+
+export type WalletWithChainData = {
+    wallet: WasmWallet;
+    accounts: AccountChainDataByAccountId;
 };
 
-export type BlockchainAccountRecord = Partial<Record<string, AccountWithBlockchainData>>;
-
-export type BlockchainWalletRecord = Partial<
-    Record<
-        string,
-        IWasmWallet & {
-            wasmWallet: WasmWallet;
-            accounts: BlockchainAccountRecord;
-        }
-    >
->;
+export type WalletChainDataByWalletId = Partial<Record<string, WalletWithChainData>>;

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { WasmRecipient } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Scroll } from '@proton/atoms/Scroll';
 
-import { WasmRecipient } from '../../../../pkg';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { RecipientUpdate } from '../../../hooks/useRecipients';
 

@@ -2,65 +2,66 @@ import { renderHook } from '@testing-library/react-hooks';
 import { format, set } from 'date-fns';
 import { describe } from 'vitest';
 
-import { IWasmSimpleTransactionArray } from '../../pkg';
+import { WasmTransactionDetails } from '@proton/andromeda';
+
 import { BITCOIN } from '../constants';
 import { useBalanceEvolution } from './useBalanceEvolution';
 
 describe('useBalanceEvolution', () => {
-    let simpleTransactions: IWasmSimpleTransactionArray;
+    let transactions: WasmTransactionDetails[];
 
     beforeEach(() => {
         vi.useFakeTimers();
         vi.setSystemTime(new Date('11/23/2023'));
 
         const baseDate = set(new Date(), { year: 2023, month: 10 });
-        simpleTransactions = [
+        transactions = [
             {
                 txid: '1',
-                confirmation_time: {
-                    height: BigInt(0),
-                    timestamp: BigInt(Math.floor(set(baseDate, { date: 22, hours: 13 }).getTime() / 1000)),
+                time: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 13 }).getTime() / 1000)),
                 },
                 sent: BigInt(0.24 * BITCOIN),
                 received: BigInt(0),
             },
             {
                 txid: '2',
-                confirmation_time: {
-                    height: BigInt(1),
-                    timestamp: BigInt(Math.floor(set(baseDate, { date: 22, hours: 6 }).getTime() / 1000)),
+                time: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 6 }).getTime() / 1000)),
                 },
                 received: BigInt(0.04 * BITCOIN),
                 sent: BigInt(0),
             },
             {
                 txid: '3',
-                confirmation_time: {
-                    height: BigInt(2),
-                    timestamp: BigInt(Math.floor(set(baseDate, { date: 21, hours: 7 }).getTime() / 1000)),
+                time: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 7 }).getTime() / 1000)),
                 },
                 received: BigInt(0.8 * BITCOIN),
                 sent: BigInt(0),
             },
             {
                 txid: '4',
-                confirmation_time: {
-                    height: BigInt(3),
-                    timestamp: BigInt(Math.floor(set(baseDate, { date: 21, hours: 8 }).getTime() / 1000)),
+                time: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 8 }).getTime() / 1000)),
                 },
                 sent: BigInt(0.05 * BITCOIN),
                 received: BigInt(0),
             },
             {
                 txid: '5',
-                confirmation_time: {
-                    height: BigInt(4),
-                    timestamp: BigInt(Math.floor(set(baseDate, { date: 21, hours: 9 }).getTime() / 1000)),
+                time: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 9 }).getTime() / 1000)),
                 },
                 sent: BigInt(0.05 * BITCOIN),
                 received: BigInt(0),
             },
-        ];
+        ] as WasmTransactionDetails[];
     });
 
     afterEach(() => {
@@ -85,7 +86,7 @@ describe('useBalanceEvolution', () => {
          * Last day is always repeated twice: once for day when transactions were done (i=1) and the last evolution element representing current balance (i=2)
          */
         it('should return a sorted array', () => {
-            const { result } = renderHook(() => useBalanceEvolution(1 * BITCOIN, simpleTransactions));
+            const { result } = renderHook(() => useBalanceEvolution(1 * BITCOIN, transactions));
 
             expect(result.current.evolutionByDay).toStrictEqual([
                 { balance: 0.5 * BITCOIN, day: '11/17/2023' },
@@ -116,7 +117,7 @@ describe('useBalanceEvolution', () => {
          * Using the evolutionByTx array, we take first element (oldest balance) and last one (newest balance) and compute the difference
          */
         it('should return difference between start and end balance', () => {
-            const { result } = renderHook(() => useBalanceEvolution(1 * BITCOIN, simpleTransactions));
+            const { result } = renderHook(() => useBalanceEvolution(1 * BITCOIN, transactions));
             expect(result.current.balanceDifference).toBe(0.5 * BITCOIN);
         });
     });

@@ -5,6 +5,7 @@
     "workspaces": [
         "applications/*",
         "packages/*",
+        "packages/wasm/*",
         "tests",
         "tests/packages/*",
         "utilities/*"

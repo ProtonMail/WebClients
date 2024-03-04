@@ -6,9 +6,11 @@ import { Tabs } from '@proton/components/components';
 import useSearchParams from '@proton/hooks/useSearchParams';
 
 import { BitcoinReceive, BitcoinSend } from '../components';
+import { useBitcoinBlockchainContext } from '../contexts';
 
 export const BitcoinTransferContainer = () => {
     const [params] = useSearchParams();
+    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const [tabIndex, setTabIndex] = useState(params.mode === 'send' ? 1 : 0);
 
@@ -20,24 +22,33 @@ export const BitcoinTransferContainer = () => {
                 className="w-full max-w-custom rounded overflow-hidden flex flex-column flex-nowrap grow"
                 style={{ '--max-w-custom': '40rem' }}
             >
-                <Tabs
-                    className="w-full flex flex-column flex-nowrap grow pb-4"
-                    fullWidth
-                    value={tabIndex}
-                    onChange={setTabIndex}
-                    variant="modern"
-                    contentClassName="grow"
-                    tabs={[
-                        {
-                            title: c('Wallet Transfer').t`Receive bitcoins`,
-                            content: <BitcoinReceive defaultWalletId={params.walletId} />,
-                        },
-                        {
-                            title: c('Wallet Transfer').t`Send bitcoins`,
-                            content: <BitcoinSend defaultWalletId={params.walletId} />,
-                        },
-                    ]}
-                />
+                {decryptedApiWalletsData && (
+                    <Tabs
+                        className="w-full flex flex-column flex-nowrap grow pb-4"
+                        fullWidth
+                        value={tabIndex}
+                        onChange={setTabIndex}
+                        variant="modern"
+                        contentClassName="grow"
+                        tabs={[
+                            {
+                                title: c('Wallet Transfer').t`Receive bitcoins`,
+                                content: (
+                                    <BitcoinReceive
+                                        defaultWalletId={params.walletId}
+                                        wallets={decryptedApiWalletsData}
+                                    />
+                                ),
+                            },
+                            {
+                                title: c('Wallet Transfer').t`Send bitcoins`,
+                                content: (
+                                    <BitcoinSend defaultWalletId={params.walletId} wallets={decryptedApiWalletsData} />
+                                ),
+                            },
+                        ]}
+                    />
+                )}
             </div>
         </div>
     );

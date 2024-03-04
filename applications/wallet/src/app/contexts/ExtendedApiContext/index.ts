@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { WasmProtonWalletApiClient } from '../../../pkg';
+import { WasmProtonWalletApiClient } from '@proton/andromeda';
 
 export const ExtendedApiContext = createContext<{ rustApi: WasmProtonWalletApiClient }>({
     rustApi: new WasmProtonWalletApiClient(),

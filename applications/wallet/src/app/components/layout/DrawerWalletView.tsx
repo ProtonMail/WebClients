@@ -3,28 +3,30 @@ import { Link, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import DrawerView, { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 
-import { IWasmSimpleTransactionArray } from '../../../pkg';
-import { useOnchainWalletContext } from '../../contexts';
+import { useBitcoinBlockchainContext } from '../../contexts';
+import { getAccountsWithChainDataFromManyWallets, getAccountsWithChainDataFromSingleWallet } from '../../utils';
 import { TransactionHistoryOverview } from '../TransactionHistoryOverview';
 
 export const DrawerWalletView = () => {
     const { walletId } = useParams<{ walletId?: string }>();
 
-    const { wallets } = useOnchainWalletContext();
+    const { walletsChainData } = useBitcoinBlockchainContext();
 
     const transactions = useMemo(() => {
         if (walletId) {
-            const wallet = wallets?.find(({ Wallet }) => Wallet.ID === walletId);
-            return wallet?.accounts.flatMap(({ transactions }) => transactions);
+            return getAccountsWithChainDataFromSingleWallet(walletsChainData, walletId).flatMap(
+                (acc) => acc.transactions ?? []
+            );
         } else {
-            const accounts = wallets?.flatMap(({ accounts }) => accounts);
-            return accounts?.flatMap(({ transactions }) => transactions);
+            return getAccountsWithChainDataFromManyWallets(walletsChainData).flatMap(
+                ({ transactions }) => transactions ?? []
+            );
         }
-    }, [walletId, wallets]);
+    }, [walletId, walletsChainData]);
 
     const tab: SelectedDrawerOption = {
         text: c('Title').t`Quick actions`,
@@ -37,11 +39,7 @@ export const DrawerWalletView = () => {
                 <div className="flex flex-column items-center">
                     <ButtonLike
                         as={Link}
-                        to={
-                            Number.isInteger(walletId)
-                                ? `/transfer#mode=send&walletId=${walletId}`
-                                : '/transfer#mode=send'
-                        }
+                        to={walletId ? `/transfer#mode=send&walletId=${walletId}` : '/transfer#mode=send'}
                         size="large"
                         className="w-full mt-3"
                     >
@@ -49,16 +47,12 @@ export const DrawerWalletView = () => {
                     </ButtonLike>
                     <ButtonLike
                         as={Link}
-                        to={Number.isInteger(walletId) ? `/transfer#walletId=${walletId}` : '/transfer'}
+                        to={walletId ? `/transfer#walletId=${walletId}` : '/transfer'}
                         size="large"
                         className="w-full mt-3"
                     >
                         <Icon name="arrow-down" className="mr-2" /> {c('Wallet Dashboard').t`Receive`}
                     </ButtonLike>
-                    {/* TODO: connect with swap when ready */}
-                    <Button size="large" className="w-full mt-3">
-                        <Icon name="arrow-right-arrow-left" className="mr-2" /> {c('Wallet Dashboard').t`Swap`}
-                    </Button>
                 </div>
 
                 {Boolean(transactions?.length) && (
@@ -67,10 +61,7 @@ export const DrawerWalletView = () => {
                         <div>
                             <h2 className="h4 text-left w-full text-semibold">{c('Wallet Dashboard')
                                 .t`Last transactions`}</h2>
-                            <TransactionHistoryOverview
-                                walletId={Number.isInteger(walletId) ? Number(walletId) : undefined}
-                                transactions={transactions as IWasmSimpleTransactionArray}
-                            />
+                            <TransactionHistoryOverview walletId={walletId} transactions={transactions ?? []} />
                         </div>
                     </>
                 )}

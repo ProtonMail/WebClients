@@ -2,8 +2,9 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { Mock } from 'vitest';
 
-import { WasmTxBuilder } from '../../../../../pkg';
-import { getFeesEstimationMap, mockUseOnchainWalletContext } from '../../../../tests';
+import { WasmTxBuilder } from '@proton/andromeda';
+
+import { getFeesEstimationMap, mockUseBitcoinBlockchainContext } from '../../../../tests';
 import { useOnChainFeesSelector } from './useOnChainFeesSelector';
 
 describe('useOnChainFeesSelector', () => {
@@ -18,7 +19,7 @@ describe('useOnChainFeesSelector', () => {
 
         txBuilder = new WasmTxBuilder();
 
-        mockUseOnchainWalletContext({ fees: getFeesEstimationMap() });
+        mockUseBitcoinBlockchainContext({ feesEstimation: getFeesEstimationMap() });
     });
 
     it('should open modal', () => {

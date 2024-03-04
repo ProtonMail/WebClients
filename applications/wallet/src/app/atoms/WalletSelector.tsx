@@ -1,25 +1,24 @@
 import { c } from 'ttag';
 
-import {
-    AccountWithBlockchainData,
-    LightningUriFormat,
-    WalletType,
-    WalletWithAccountsWithBalanceAndTxs,
-} from '../types';
+import { WasmApiWalletAccount } from '@proton/andromeda';
+
+import { useBitcoinBlockchainContext } from '../contexts';
+import { IWasmApiWalletData, LightningUriFormat, WalletType } from '../types';
 import { getSelectedAccount } from '../utils';
 import { Selector } from './Selector';
 
 export interface WalletAndAccountSelectorValue {
-    wallet?: WalletWithAccountsWithBalanceAndTxs;
-    account?: AccountWithBlockchainData;
+    apiWalletData?: IWasmApiWalletData;
+    apiAccount?: WasmApiWalletAccount;
     format?: LightningUriFormat;
 }
 
 interface Props {
-    wallets?: WalletWithAccountsWithBalanceAndTxs[];
+    apiWalletsData?: IWasmApiWalletData[];
+    onlyValidWallet?: boolean;
     value: WalletAndAccountSelectorValue;
-    onSelect: (value: WalletAndAccountSelectorValue) => void;
     label?: { wallet: string; account: string; format: string };
+    onSelect: (value: WalletAndAccountSelectorValue) => void;
 }
 
 const getLightningFormatOptions: () => { name: string; value: LightningUriFormat }[] = () => [
@@ -31,7 +30,8 @@ const getLightningFormatOptions: () => { name: string; value: LightningUriFormat
 export const getDefaultFormat = () => getLightningFormatOptions()[0];
 
 export const WalletSelector = ({
-    wallets,
+    apiWalletsData,
+    onlyValidWallet,
     value,
     onSelect,
     label = {
@@ -40,6 +40,7 @@ export const WalletSelector = ({
         format: c('Wallet Receive').t`using format`,
     },
 }: Props) => {
+    const { walletsChainData } = useBitcoinBlockchainContext();
     const lightningFormatsOptions = getLightningFormatOptions();
 
     return (
@@ -48,38 +49,51 @@ export const WalletSelector = ({
                 <Selector
                     id="wallet-selector"
                     label={label.wallet}
-                    selected={value?.wallet?.Wallet.ID}
+                    selected={value?.apiWalletData?.Wallet.ID}
                     onSelect={(event) => {
-                        const wallet = wallets?.find(({ Wallet: { ID: WalletID } }) => WalletID === event.value);
-                        if (wallet) {
-                            onSelect({ wallet });
+                        const apiWallet = apiWalletsData?.find(
+                            ({ Wallet: { ID: WalletID } }) => WalletID === event.value
+                        );
+                        if (apiWallet) {
+                            onSelect({ apiWalletData: apiWallet });
                         }
                     }}
-                    options={wallets?.map(({ Wallet: { Name, ID } }) => ({ value: ID, label: Name })) ?? []}
+                    options={
+                        apiWalletsData?.map(({ Wallet: { Name, ID } }) => ({
+                            value: ID,
+                            label: Name,
+                            disabled: onlyValidWallet && !walletsChainData[ID],
+                        })) ?? []
+                    }
                 />
             </div>
 
-            {value?.wallet?.Wallet.Type === WalletType.OnChain && (
+            {value?.apiWalletData?.Wallet.Type === WalletType.OnChain && (
                 <div className="w-1/2">
                     <Selector
                         id="account-selector"
                         label={label.account}
-                        selected={value?.account?.ID}
+                        selected={value?.apiAccount?.ID}
+                        disabled={!value.apiWalletData.WalletAccounts.length}
                         onSelect={(event) => {
-                            const account = getSelectedAccount(value.wallet, event.value);
-                            if (account) {
-                                onSelect({ account });
+                            const apiAccount = getSelectedAccount(value.apiWalletData, event.value);
+                            if (apiAccount) {
+                                onSelect({ apiAccount });
                             }
                         }}
-                        options={value?.wallet.accounts.map((account) => ({
-                            value: account.ID,
-                            label: account.Label,
+                        options={value?.apiWalletData.WalletAccounts.map((apiAccount) => ({
+                            value: apiAccount.ID,
+                            label: apiAccount.Label,
+                            disabled:
+                                onlyValidWallet &&
+                                (!value?.apiWalletData?.Wallet.ID ||
+                                    !walletsChainData[value?.apiWalletData?.Wallet.ID]?.accounts[apiAccount.ID]),
                         }))}
                     />
                 </div>
             )}
 
-            {value?.wallet?.Wallet.Type === WalletType.Lightning && (
+            {value?.apiWalletData?.Wallet?.Type === WalletType.Lightning && (
                 <div className="w-1/2">
                     <Selector
                         id="format-selector"

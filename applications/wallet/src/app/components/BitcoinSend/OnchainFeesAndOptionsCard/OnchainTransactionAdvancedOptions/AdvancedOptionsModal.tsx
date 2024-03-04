@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { WasmCoinSelection, WasmTxBuilder } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -11,7 +12,6 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 
-import { WasmCoinSelection, WasmTxBuilder } from '../../../../../pkg';
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
 interface Props {

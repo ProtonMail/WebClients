@@ -2,16 +2,16 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { QRCode } from 'jsqr';
 
+import { WasmError, WasmPaymentLink } from '@proton/andromeda';
 import { useDebounceInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmError, WasmPaymentLink } from '../../../../pkg';
-import { useOnchainWalletContext } from '../../../contexts';
+import { useBitcoinBlockchainContext } from '../../../contexts';
 import { getHumanReadableErrorFromWasmError, tryHandleWasmError } from '../../../utils';
 
 export const usePaymentLinkInput = () => {
-    const { network } = useOnchainWalletContext();
+    const { network } = useBitcoinBlockchainContext();
 
     const [isOpen, setIsOpen] = useState(false);
     const [parsedPaymentLink, setParsedPaymentLink] = useState<WasmPaymentLink>();
@@ -42,7 +42,7 @@ export const usePaymentLinkInput = () => {
     }, []);
 
     useEffect(() => {
-        if (!debouncedPaymentLinkInput) {
+        if (!debouncedPaymentLinkInput || !network) {
             return;
         }
 

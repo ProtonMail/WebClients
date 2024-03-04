@@ -1,27 +1,27 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
 import { ModelState } from '@proton/account';
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { WasmWalletAccount } from '../../../pkg';
-import { IWasmWallet } from '../../types';
+import { IWasmApiWalletData } from '../../types';
 import { WalletEventLoop } from '../../types/eventLoop';
 import { replaceAt } from '../../utils/array';
 import { stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils/eventLoop';
 import { WalletThunkArguments } from '../thunk';
 
-export const name = 'user_wallets' as const;
+export const name = 'api_wallets_data' as const;
 
-export interface UserWalletsState {
-    [name]: ModelState<IWasmWallet[]>;
+export interface ApiWalletsDataState {
+    [name]: ModelState<IWasmApiWalletData[]>;
 }
 
-type SliceState = UserWalletsState[typeof name];
+type SliceState = ApiWalletsDataState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectUserWallets = (state: UserWalletsState) => state[name];
+export const selectApiWalletsData = (state: ApiWalletsDataState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, UserWalletsState, WalletThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.rustApi
             .wallet()
@@ -30,24 +30,24 @@ const modelThunk = createAsyncModelThunk<Model, UserWalletsState, WalletThunkArg
                 const wallets = payload[0];
 
                 return Promise.all(
-                    wallets.map(async (wallet) => {
-                        const accounts = await extraArgument.rustApi
+                    wallets.map(async ({ Wallet, WalletKey, WalletSettings }) => {
+                        const accounts: WasmApiWalletAccount[] = await extraArgument.rustApi
                             .wallet()
-                            .getWalletAccounts(wallet.Wallet.ID)
+                            .getWalletAccounts(Wallet.ID)
                             .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Account))
                             .catch(() => []);
 
                         return {
-                            Wallet: wallet.Wallet,
-                            WalletKey: wallet.WalletKey,
-                            WalletSettings: wallet.WalletSettings,
+                            Wallet: Wallet,
+                            WalletKey: WalletKey,
+                            WalletSettings: WalletSettings,
                             WalletAccounts: accounts,
                         };
                     })
                 );
             });
     },
-    previous: previousSelector(selectUserWallets),
+    previous: previousSelector(selectApiWalletsData),
 });
 
 const initialState: SliceState = {
@@ -57,20 +57,20 @@ const initialState: SliceState = {
 
 const eventLoopEvent = createAction('server event', (payload: WalletEventLoop) => ({ payload }));
 
-export const walletCreation = createAction('wallet creation', (payload: IWasmWallet) => ({ payload }));
+export const walletCreation = createAction('wallet creation', (payload: IWasmApiWalletData) => ({ payload }));
 export const walletDeletion = createAction('wallet deletion', (payload: { walletID: string }) => ({ payload }));
 // TODO: handle wallet update
 
 export const walletAccountCreation = createAction(
     'wallet account creation',
-    (payload: { walletID: string; account: WasmWalletAccount }) => ({ payload })
+    (payload: { walletID: string; account: WasmApiWalletAccount }) => ({ payload })
 );
 export const walletAccountDeletion = createAction(
     'wallet account deletion',
     (payload: { walletID: string; walletAccountID: string }) => ({ payload })
 );
-// TODO: handle wallet account update
 
+// TODO: handle wallet account update
 // TODO: handle wallet settings update
 
 const slice = createSlice({
@@ -79,7 +79,6 @@ const slice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
-        // TODO: add event loop event here
 
         builder
             .addCase(eventLoopEvent, (state, event) => {
@@ -97,7 +96,7 @@ const slice = createSlice({
                 });
             })
             .addCase(walletCreation, (state, action) => {
-                if (state.value && !state.value.some(({ Wallet: { ID } }) => ID !== action.payload.Wallet.ID)) {
+                if (state.value && !state.value.some(({ Wallet: { ID } }) => ID === action.payload.Wallet.ID)) {
                     state.value.push(action.payload);
                 }
             })
@@ -133,5 +132,5 @@ const slice = createSlice({
     },
 });
 
-export const userWalletsReducer = { [name]: slice.reducer };
-export const userWalletsThunk = modelThunk.thunk;
+export const apiWalletsDataReducer = { [name]: slice.reducer };
+export const apiWalletsDataThunk = modelThunk.thunk;

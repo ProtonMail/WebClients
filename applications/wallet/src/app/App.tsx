@@ -15,6 +15,7 @@ import {
     Tooltip,
 } from 'chart.js';
 
+import { setPanicHook } from '@proton/andromeda';
 import {
     AuthenticationProvider,
     DelinquentContainer,
@@ -37,7 +38,6 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 
-import { setPanicHook } from '../pkg';
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
 import ExtendedApiProvider from './contexts/ExtendedApiContext/ExtendedApiProvider';

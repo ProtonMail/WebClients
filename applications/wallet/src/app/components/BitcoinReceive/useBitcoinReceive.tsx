@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { WasmPaymentLink } from '../../../pkg';
+import { WasmPaymentLink } from '@proton/andromeda';
+
 import { WalletAndAccountSelectorValue, getDefaultFormat } from '../../atoms';
-import { useOnchainWalletContext } from '../../contexts';
+import { useBitcoinBlockchainContext } from '../../contexts';
+import { IWasmApiWalletData } from '../../types';
 import { WalletType } from '../../types/api';
-import { getDefaultAccount, getSelectedWallet } from '../../utils';
+import { getAccountWithChainDataFromManyWallets, getDefaultAccount, getSelectedWallet } from '../../utils';
 
 export interface UseBitcoinReceiveHelper {
     /**
@@ -19,15 +21,16 @@ export interface UseBitcoinReceiveHelper {
     showAmountInput: () => void;
 }
 
-export const useBitcoinReceive = (defaultWalletId?: string): UseBitcoinReceiveHelper => {
+export const useBitcoinReceive = (wallets: IWasmApiWalletData[], defaultWalletId?: string): UseBitcoinReceiveHelper => {
     const [paymentLink, setPaymentLink] = useState<WasmPaymentLink | null>(null);
-    const { wallets } = useOnchainWalletContext();
+
+    const { walletsChainData } = useBitcoinBlockchainContext();
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
 
     const [selectedWallet, setSelectedWallet] = useState<WalletAndAccountSelectorValue>({
-        wallet: defaultWallet,
-        account: getDefaultAccount(defaultWallet),
+        apiWalletData: defaultWallet,
+        apiAccount: getDefaultAccount(defaultWallet),
         format: getDefaultFormat().value,
     });
 
@@ -39,16 +42,24 @@ export const useBitcoinReceive = (defaultWalletId?: string): UseBitcoinReceiveHe
     };
 
     useEffect(() => {
-        setSelectedWallet((prev) => ({ ...prev, account: getDefaultAccount(selectedWallet.wallet) }));
-    }, [selectedWallet.wallet]);
+        setSelectedWallet((prev) => ({ ...prev, apiAccount: getDefaultAccount(selectedWallet.apiWalletData) }));
+    }, [selectedWallet.apiWalletData]);
 
     useEffect(() => {
-        const { account, wallet } = selectedWallet;
-        if (account && wallet?.Wallet.Type === WalletType.OnChain) {
-            const bitcoinUri = account.wasmAccount.getBitcoinUri(undefined, amount ? BigInt(amount) : undefined);
-            setPaymentLink(bitcoinUri);
+        const { apiAccount: account, apiWalletData: wallet } = selectedWallet;
+
+        const andromedaAccount = getAccountWithChainDataFromManyWallets(
+            walletsChainData,
+            wallet?.Wallet.ID,
+            account?.ID
+        );
+
+        setPaymentLink(null);
+
+        if (andromedaAccount && wallet?.Wallet.Type === WalletType.OnChain) {
+            setPaymentLink(andromedaAccount?.account.getBitcoinUri(undefined, amount ? BigInt(amount) : undefined));
         }
-    }, [amount, selectedWallet]);
+    }, [amount, selectedWallet, walletsChainData]);
 
     return {
         selectedWallet,
@@ -62,11 +73,7 @@ export const useBitcoinReceive = (defaultWalletId?: string): UseBitcoinReceiveHe
             const numbered = Number(inputAmount);
             const nonConstrainedAmount = Number.isInteger(numbered) ? numbered : 0;
 
-            if (nonConstrainedAmount < 0) {
-                setAmount(0);
-            } else {
-                setAmount(nonConstrainedAmount);
-            }
+            setAmount(nonConstrainedAmount < 0 ? 0 : nonConstrainedAmount);
         },
     };
 };

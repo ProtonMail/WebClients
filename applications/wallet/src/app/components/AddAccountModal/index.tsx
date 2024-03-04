@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Info, ModalTwo, Option, SelectTwo } from '@proton/components/components';
@@ -12,16 +13,15 @@ import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
-import { WasmDerivationPath, WasmScriptType } from '../../../pkg';
-import { useRustApi } from '../../contexts';
-import { useBitcoinNetwork, useWalletDispatch } from '../../store/hooks';
-import { walletAccountCreation } from '../../store/slices/userWallets';
-import { IWasmWallet } from '../../types';
+import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
+import { useWalletDispatch } from '../../store/hooks';
+import { walletAccountCreation } from '../../store/slices/apiWalletsData';
+import { IWasmApiWalletData } from '../../types';
 import { getLabelByScriptType } from '../../utils';
 import { decryptWalletKey, encryptWalletDataWithWalletKey } from '../../utils/crypto';
 
 interface Props {
-    wallet: IWasmWallet;
+    apiWalletData: IWasmApiWalletData;
     isOpen: boolean;
     onClose: () => void;
 }
@@ -43,13 +43,13 @@ const purposeByScriptType: Record<WasmScriptType, number> = {
     [WasmScriptType.Taproot]: 86,
 };
 
-export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
+export const AddAccountModal = ({ apiWalletData, isOpen, onClose }: Props) => {
     // TODO use different default if 0 is already added
     const [label, setLabel] = useState('');
     const [selectedIndex, setSelectedIndex] = useState<string | number>(DEFAULT_INDEX);
     const [inputIndex, setInputIndex] = useState<number>(DEFAULT_INDEX);
     const [loading, withLoading] = useLoading();
-    const [network] = useBitcoinNetwork();
+    const { network } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
     const [userKeys] = useUserKeys();
     const dispatch = useWalletDispatch();
@@ -70,12 +70,14 @@ export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
         );
 
         // Typeguard
-        if (!wallet.WalletKey?.WalletKey) {
+        if (!apiWalletData.WalletKey?.WalletKey) {
             return;
         }
 
+        const { WalletKey, Wallet } = apiWalletData;
+
         // TODO: maybe we should have this in a context
-        const key = await decryptWalletKey(wallet.WalletKey.WalletKey, userKeys);
+        const key = await decryptWalletKey(WalletKey.WalletKey, userKeys);
         const [encryptedLabel] = await encryptWalletDataWithWalletKey([label], key);
 
         // Typeguard
@@ -85,10 +87,10 @@ export const AddAccountModal = ({ wallet, isOpen, onClose }: Props) => {
 
         await api
             .wallet()
-            .createWalletAccount(wallet.Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
+            .createWalletAccount(Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
             .then(async (createdAccount) => {
                 createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
-                dispatch(walletAccountCreation({ walletID: wallet.Wallet.ID, account: createdAccount.Account }));
+                dispatch(walletAccountCreation({ walletID: Wallet.ID, account: createdAccount.Account }));
                 onClose();
             })
             .catch(() => {
