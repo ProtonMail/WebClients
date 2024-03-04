@@ -75,7 +75,7 @@ describe('certificate transparency', () => {
 
 describe('certificate chain verification', () => {
     it('Should verify 0SSL certificate', async () => {
-        const now = new Date(1687219298 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(parseCertChain(zeroSSLCertificateChain), KT_CERTIFICATE_ISSUER.ZEROSSL, now);
@@ -85,7 +85,7 @@ describe('certificate chain verification', () => {
         expect(error).toBeUndefined();
     });
     it('Should verify LE certificate', async () => {
-        const now = new Date(1687259057 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             await verifyCertChain(parseCertChain(letsEncryptCertificateChain), KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
@@ -95,7 +95,7 @@ describe('certificate chain verification', () => {
         expect(error).toBeUndefined();
     });
     it('Should fail on expiry', async () => {
-        const now = new Date(1687259057 * SECOND + 1 * YEAR); // 1year after epoch was published.
+        const now = new Date(1709529634 * SECOND + 1 * YEAR); // 1year after epoch was published.
         let error;
         try {
             await verifyCertChain(parseCertChain(letsEncryptCertificateChain), KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
@@ -106,7 +106,7 @@ describe('certificate chain verification', () => {
         expect(error.message).toEqual("Epoch certificate did not pass verification against issuer's certificate chain");
     });
     it('Should fail if the certificate is in the future', async () => {
-        const now = new Date(1687259057 * SECOND - 1 * YEAR); // 1year before epoch was published.
+        const now = new Date(1709529634 * SECOND - 1 * YEAR); // 1year before epoch was published.
         let error;
         try {
             await verifyCertChain(parseCertChain(letsEncryptCertificateChain), KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
@@ -117,7 +117,7 @@ describe('certificate chain verification', () => {
         expect(error.message).toEqual("Epoch certificate did not pass verification against issuer's certificate chain");
     });
     it('Should fail if the certificate chain is broken', async () => {
-        const now = new Date(1687259057 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
             const zeroSSLChain = parseCertChain(zeroSSLCertificateChain);
