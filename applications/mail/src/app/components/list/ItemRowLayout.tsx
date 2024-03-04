@@ -42,7 +42,6 @@ interface Props {
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
     isDelightMailListEnabled?: boolean;
-    hideUnreadButton?: boolean;
     showAttachmentThumbnails?: boolean;
 }
 
@@ -60,7 +59,6 @@ const ItemRowLayout = ({
     onBack = () => {},
     attachmentsMetadata = [],
     showAttachmentThumbnails,
-    hideUnreadButton,
     isDelightMailListEnabled,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
@@ -111,11 +109,7 @@ const ItemRowLayout = ({
                         className={clsx(['item-senders flex flex-nowrap shrink-0 w-custom', unread && 'text-semibold'])}
                         style={{ '--w-custom': '15rem' }}
                     >
-                        <ItemUnread
-                            element={element}
-                            labelID={labelID}
-                            className={clsx('delight-item-unread-dot', hideUnreadButton && 'sr-only')}
-                        />
+                        <ItemUnread element={element} labelID={labelID} className="delight-item-unread-dot sr-only" />
                         <ItemAction element={element} className="mr-2 shrink-0 my-auto" />
                         <span
                             className="max-w-full text-ellipsis flex items-center"
