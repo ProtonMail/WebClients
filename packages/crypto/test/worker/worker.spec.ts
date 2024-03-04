@@ -797,6 +797,16 @@ Z3SSOseslp6+4nnQ3zOqnisO
             expect(sha256Fingerprings).to.deep.equal(await getSHA256Fingerprints(key));
         });
 
+        it('getAlgorithmInfo - it returns the expected values', async () => {
+            const keyReference = await CryptoWorker.importPublicKey({ armoredKey: keyWithP256AndCurve25519Subkeys });
+            expect(keyReference.getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdsa', curve: 'p256' });
+            expect(keyReference.subkeys[0].getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdh', curve: 'p256' });
+            expect(keyReference.subkeys[1].getAlgorithmInfo()).to.deep.equal({
+                algorithm: 'ecdh',
+                curve: 'curve25519',
+            });
+        });
+
         it('computeHash', async () => {
             const testHashMD5 = await CryptoWorker.computeHash({
                 algorithm: 'unsafeMD5',
