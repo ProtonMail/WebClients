@@ -358,9 +358,17 @@ export const getUpdateMainSeriesMergeVevent = ({
         result.dtend = getStartDateTimeMerged(result.dtend, originalVeventComponent.dtstart);
     }
 
-    if (getIsAllDay(oldVeventComponent) !== getIsAllDay(originalVeventComponent)) {
-        delete result.components;
-    }
-
     return result;
+};
+
+export const getUpdateMergeVeventWithoutMaybeNotifications = ({
+    newVevent,
+    oldVevent,
+    mergeVevent,
+}: {
+    newVevent: VcalVeventComponent;
+    oldVevent: VcalVeventComponent;
+    mergeVevent: Partial<VcalVeventComponent>;
+}) => {
+    return getIsAllDay(newVevent) !== getIsAllDay(oldVevent) ? omit(mergeVevent, ['components']) : { ...mergeVevent };
 };
