@@ -43,7 +43,6 @@ enum MailFeatureFlag {
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
     DelightMailList = 'DelightMailList',
-    DelightMailListHideUnreadButton = 'DelightMailListHideUnreadButton',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     SplitStorageChecklistReopenedNova = 'SplitStorageChecklistReopenedNova', // TODO remove once the extended checklist storage split is finished

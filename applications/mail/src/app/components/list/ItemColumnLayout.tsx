@@ -45,7 +45,6 @@ interface Props {
     isSelected: boolean;
     attachmentsMetadata?: AttachmentsMetadata[];
     isDelightMailListEnabled?: boolean;
-    hideUnreadButton?: boolean;
     userSettings?: UserSettings;
     showAttachmentThumbnails?: boolean;
 }
@@ -63,7 +62,6 @@ const ItemColumnLayout = ({
     isSelected,
     senders,
     attachmentsMetadata = [],
-    hideUnreadButton,
     userSettings,
     showAttachmentThumbnails,
     isDelightMailListEnabled,
@@ -135,7 +133,7 @@ const ItemColumnLayout = ({
                                 <ItemUnread
                                     element={element}
                                     labelID={labelID}
-                                    className={clsx('delight-item-unread-dot', hideUnreadButton && 'sr-only')}
+                                    className="delight-item-unread-dot sr-only"
                                     isSelected={isSelected}
                                 />
                                 <ItemAction element={element} className="mr-1 my-auto shrink-0" />
