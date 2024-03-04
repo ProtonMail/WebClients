@@ -347,10 +347,7 @@ export const getItemRevisions = async (
     return (
         await api({
             url: `pass/v1/share/${shareId}/item/${itemId}/revision`,
-            params: {
-                ...(pageSize ? { PageSize: pageSize } : {}),
-                ...(since ? { Since: since } : {}),
-            },
+            params: { PageSize: pageSize, ...(since ? { Since: since } : {}) },
             method: 'get',
             signal,
         })
