@@ -1,5 +1,7 @@
 import { MutableRefObject, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useApi, useAuthentication, useHandler, useNotifications } from '@proton/components';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
@@ -11,7 +13,7 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../constants';
 import { UploadResult, checkSizeAndLength, upload } from '../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
@@ -139,6 +141,11 @@ export const useAttachments = ({
         } catch (error: any) {
             if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                 onMessageAlreadySent();
+            } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Sending attachments is restricted until you meet your plan limits or upgrade.`,
+                });
             }
 
             removePendingUpload(pendingUpload, error);
