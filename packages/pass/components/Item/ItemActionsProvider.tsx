@@ -3,9 +3,14 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Alert } from '@proton/components/index';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
+import { WithVault } from '@proton/pass/components/Vault/WithVault';
+import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -41,21 +46,17 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
-    const moveItem = (item: ItemRevision) => (destinationShareId: string) => {
+    const moveItem = useConfirm((options: { item: ItemRevision; shareId: string }) => {
         const optimisticId = uniqueId();
-        dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId }));
-        selectItem(destinationShareId, optimisticId, {
-            mode: 'replace',
-            filters: { selectedShareId: destinationShareId },
-        });
-        closeVaultSelect();
-    };
+        const selectedShareId = options.shareId;
+        dispatch(itemMoveIntent({ ...options, optimisticId }));
+        selectItem(selectedShareId, optimisticId, { mode: 'replace', filters: { selectedShareId } });
+    });
 
-    const moveManyItems = (selected: BulkSelectionDTO) => (destinationShareId: string) => {
-        dispatch(itemBulkMoveIntent({ selected, destinationShareId }));
+    const moveManyItems = useConfirm((options: { selected: BulkSelectionDTO; shareId: string }) => {
+        dispatch(itemBulkMoveIntent(options));
         bulk.disable();
-        closeVaultSelect();
-    };
+    });
 
     const trashItem = (item: ItemRevision) => {
         dispatch(itemTrashIntent({ itemId: item.itemId, shareId: item.shareId, item }));
@@ -90,13 +91,19 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 openVaultSelect({
                     mode,
                     shareId: item.shareId,
-                    onSubmit: moveItem(item),
+                    onSubmit: (shareId) => {
+                        moveItem.prompt({ item, shareId });
+                        closeVaultSelect();
+                    },
                 }),
             moveMany: (selected) =>
                 openVaultSelect({
                     mode: VaultSelectMode.Writable,
                     shareId: '' /* allow all vaults */,
-                    onSubmit: moveManyItems(selected),
+                    onSubmit: (shareId) => {
+                        moveManyItems.prompt({ selected, shareId });
+                        closeVaultSelect();
+                    },
                 }),
             trash: trashItem,
             trashMany: trashManyItems,
@@ -116,6 +123,48 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 onClose={closeVaultSelect}
                 {...modalState}
             />
+
+            <WithVault shareId={moveItem.param?.shareId}>
+                {({ content: { name } }) => (
+                    <ConfirmationModal
+                        open={moveItem.pending}
+                        onClose={moveItem.cancel}
+                        onSubmit={moveItem.confirm}
+                        submitText={c('Action').t`Confirm`}
+                        title={c('Title').t`Move item?`}
+                    >
+                        <Card className="mb-2">{c('Info')
+                            .t`Moving an item to another vault will erase its history`}</Card>
+                        <Alert className="mb-4" type="info">
+                            {
+                                // translator: variable here is the name of the user's vault
+                                c('Info').t`Are you sure you want to move the item to "${name}" ?`
+                            }
+                        </Alert>
+                    </ConfirmationModal>
+                )}
+            </WithVault>
+
+            <WithVault shareId={moveManyItems.param?.shareId}>
+                {({ content: { name } }) => (
+                    <ConfirmationModal
+                        open={moveManyItems.pending}
+                        onClose={moveManyItems.cancel}
+                        onSubmit={moveManyItems.confirm}
+                        submitText={c('Action').t`Confirm`}
+                        title={c('Title').t`Move items?`}
+                    >
+                        <Card className="mb-2">{c('Info')
+                            .t`Moving items to another vault will erase their history`}</Card>
+                        <Alert className="mb-4" type="info">
+                            {
+                                // translator: variable here is the name of the user's vault
+                                c('Info').t`Are you sure you want to move items to "${name}" ?`
+                            }
+                        </Alert>
+                    </ConfirmationModal>
+                )}
+            </WithVault>
         </ItemActionsContext.Provider>
     );
 };

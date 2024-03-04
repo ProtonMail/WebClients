@@ -20,20 +20,25 @@ import type { MaybeNull } from '@proton/pass/types';
  * />
  * ```
  */
-export const useConfirm = <P extends any[], R extends any>(action: (...args: P) => R) => {
-    const [pendingArgs, setPendingArgs] = useState<MaybeNull<P>>(null);
+export const useConfirm = <P extends any, R extends any>(action: (param: P) => R) => {
+    const [param, setParam] = useState<MaybeNull<P>>(null);
 
     const confirm = useCallback(() => {
-        if (pendingArgs === null) {
+        if (param === null) {
             console.warn('No pending action');
             return;
         }
 
-        return action(...pendingArgs);
-    }, [pendingArgs, action]);
+        return action(param);
+    }, [param, action]);
 
-    const prompt = useCallback((...args: P) => setPendingArgs(args), []);
-    const cancel = useCallback(() => setPendingArgs(null), []);
+    const cancel = useCallback(() => setParam(null), []);
 
-    return { pending: pendingArgs !== null, confirm, prompt, cancel };
+    return {
+        param,
+        pending: param !== null,
+        cancel,
+        confirm,
+        prompt: setParam,
+    };
 };

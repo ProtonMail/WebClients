@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 type Props = {
     className?: string;
-    title?: string;
+    title?: ReactNode;
     subtitle?: ReactNode;
     actions?: ReactNode[];
 };
@@ -21,7 +21,7 @@ export const PanelHeader: FC<Props> = ({ className, actions, ...props }) => {
         >
             {title !== undefined && (
                 <div>
-                    <h2 className="text-2xl text-bold text-ellipsis lh-full mb-0-5">{title}</h2>
+                    {title}
                     {subtitle}
                 </div>
             )}

@@ -1,22 +1,22 @@
 import fs from 'fs';
 
+import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
+import * as epochUtils from '@proton/pass/utils/time/epoch';
 
-import type { ImportPayload } from '../types';
 import { readKeeperData } from './keeper.reader';
-
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    getEpoch: jest.fn(() => 1682585156),
-}));
 
 describe('Import Keeper CSV', () => {
     let payload: ImportPayload;
+    const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
         const sourceData = await fs.promises.readFile(__dirname + '/mocks/keeper.csv', 'utf8');
         payload = await readKeeperData(sourceData);
     });
+
+    afterAll(() => dateMock.mockRestore());
 
     it('should handle corrupted files', async () => {
         await expect(readKeeperData('')).rejects.toThrow();

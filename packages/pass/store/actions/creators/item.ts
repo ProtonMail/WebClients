@@ -14,6 +14,7 @@ import {
 } from '@proton/pass/store/actions/enhancers/request';
 import {
     itemPinRequest,
+    itemRevisionsRequest,
     itemUnpinRequest,
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
@@ -29,6 +30,8 @@ import type {
     ItemCreateIntent,
     ItemEditIntent,
     ItemRevision,
+    ItemRevisionsIntent,
+    ItemRevisionsSuccess,
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
@@ -160,7 +163,7 @@ export const itemMoveSuccess = createOptimisticAction(
 
 export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
-    (payload: { selected: BulkSelectionDTO; destinationShareId: string }) =>
+    (payload: { selected: BulkSelectionDTO; shareId: string }) =>
         pipe(
             withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
             withNotification({
@@ -496,6 +499,28 @@ export const itemUnpinFailure = createAction(
         withNotification({
             type: 'error',
             text: c('Error').t`Failed to unpin item`,
+            error,
+        })({ payload: {}, error })
+    )
+);
+
+export const itemHistoryIntent = createAction('item::history::intent', (payload: ItemRevisionsIntent) =>
+    withRequest({ type: 'start', id: itemRevisionsRequest(payload.shareId, payload.itemId) })({ payload })
+);
+
+export const itemHistorySuccess = createAction(
+    'item::history::success',
+    withRequestSuccess((payload: ItemRevisionsSuccess) => ({ payload }), {
+        data: (payload) => payload,
+    })
+);
+
+export const itemHistoryFailure = createAction(
+    'item::history::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to load item history`,
             error,
         })({ payload: {}, error })
     )

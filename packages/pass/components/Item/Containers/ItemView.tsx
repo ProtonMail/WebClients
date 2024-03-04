@@ -70,6 +70,7 @@ export const ItemView: FC = () => {
     }
 
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
+    const handleHistory = () => selectItem(shareId, itemId, { view: 'history' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => itemActions.trash(item);
     const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
@@ -112,6 +113,7 @@ export const ItemView: FC = () => {
                 vault={vault}
                 revision={item}
                 handleEditClick={handleEdit}
+                handleHistoryClick={handleHistory}
                 handleRetryClick={handleRetry}
                 handleMoveToTrashClick={handleTrash}
                 handleMoveToVaultClick={handleMove}

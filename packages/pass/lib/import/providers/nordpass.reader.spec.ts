@@ -1,26 +1,24 @@
 import fs from 'fs';
 
+import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import * as epochUtils from '@proton/pass/utils/time/epoch';
 
-import type { ImportPayload } from '../types';
 import { readNordPassData } from './nordpass.reader';
-
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    getEpoch: jest.fn(() => 1682585156),
-}));
 
 describe('Import NordPass csv', () => {
     let sourceData: string;
     let payload: ImportPayload;
+
+    const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/nordpass.csv', 'utf8');
         payload = await readNordPassData(sourceData);
     });
 
-    afterAll(() => (getEpoch as jest.Mock).mockClear());
+    afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
         await expect(readNordPassData('not-a-csv-file')).rejects.toThrow();

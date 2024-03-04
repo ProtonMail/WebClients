@@ -10,7 +10,7 @@ type Props = { enabled: boolean; percent: number; period?: number };
 
 export const OTPDonut: FC<Props> = ({ enabled, percent, period = 0 }) => (
     <div
-        className={clsx('pass-otp--donut pointer-events-none')}
+        className={clsx('pass-otp--donut pointer-events-none anime-fade-in')}
         style={{ '--countdown-value': `"${Math.round(percent * period)}"` }}
     >
         {enabled && (
