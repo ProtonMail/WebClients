@@ -163,7 +163,7 @@ export const itemMoveSuccess = createOptimisticAction(
 
 export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
-    (payload: { selected: BulkSelectionDTO; destinationShareId: string }) =>
+    (payload: { selected: BulkSelectionDTO; shareId: string }) =>
         pipe(
             withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
             withNotification({
