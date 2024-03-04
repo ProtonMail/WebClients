@@ -7,7 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember } from '@proton/shared/lib/api/members';
 import { GIGA, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain, Member, Organization } from '@proton/shared/lib/interfaces';
+import { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
 import {
@@ -24,11 +24,10 @@ import MemberStorageSelector, { getStorageRange, getTotalStorage } from './Membe
 
 interface Props extends ModalStateProps {
     organization?: Organization;
-    domains: Domain[];
     member: Member | null | undefined;
 }
 
-const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }: Props) => {
+const UserInviteOrEditModal = ({ organization, member, ...modalState }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [submitting, withLoading] = useLoading();
