@@ -1,26 +1,24 @@
 import fs from 'fs';
 
+import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import * as epochUtils from '@proton/pass/utils/time/epoch';
 
-import type { ImportPayload, ImportVault } from '../types';
 import { readKeePassData } from './keepass.reader';
-
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    getEpoch: jest.fn(() => 1682585156),
-}));
 
 describe('Import KeePass xml', () => {
     let sourceData: string;
     let payload: ImportPayload;
+
+    const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/keepass.xml', 'utf8');
         payload = readKeePassData(sourceData);
     });
 
-    afterAll(() => (getEpoch as jest.Mock).mockClear());
+    afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
         expect(() => readKeePassData('not-an-xml-file')).toThrow();

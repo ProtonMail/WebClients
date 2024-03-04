@@ -17,7 +17,7 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { itemEditIntent } from '@proton/pass/store/actions';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
-import { getRelativeDateFromTimestamp } from '@proton/pass/utils/time/format';
+import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
 type Props = {
     previousRevision: ItemRevision;
@@ -107,7 +107,7 @@ export const ItemHistoryRestore: FC<Props> = ({ previousRevision, currentRevisio
                         color="norm"
                         fullWidth
                     >
-                        {getRelativeDateFromTimestamp(previousRevision.revisionTime)}
+                        {epochToRelativeDate(previousRevision.revisionTime)}
                     </Button>
                     <Button
                         onClick={() => setSelectedRevision(currentRevision)}
