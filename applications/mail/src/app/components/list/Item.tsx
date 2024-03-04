@@ -48,7 +48,6 @@ interface Props {
     index: number;
     breakpoints: Breakpoints;
     onFocus: (index: number) => void;
-    hideUnreadButton?: boolean;
     isDelightMailListEnabled?: boolean;
     showAttachmentThumbnails?: boolean;
     userSettings: UserSettings;
@@ -75,7 +74,6 @@ const Item = ({
     index,
     breakpoints,
     onFocus,
-    hideUnreadButton,
     mailSettings,
     userSettings,
     labels,
@@ -222,7 +220,6 @@ const Item = ({
                     onBack={onBack}
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
-                    hideUnreadButton={hideUnreadButton}
                     userSettings={userSettings}
                     showAttachmentThumbnails={showAttachmentThumbnails}
                     isDelightMailListEnabled={isDelightMailListEnabled}
