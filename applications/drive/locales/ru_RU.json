@@ -583,6 +583,9 @@
       "Select all": [
         "Выделить все"
       ],
+      "Select country": [
+        "Выберите страну"
+      ],
       "Send feedback": [
         "Отправить отзыв"
       ],
@@ -741,6 +744,9 @@
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов"
+      ],
+      "Your 3 GB bonus": [
+        "Ваши бонусные 3 ГБ"
       ],
       "Zoom in": [
         "Увеличить масштаб"
@@ -1988,49 +1994,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "В загруженном вами CSV-файле мы обнаружили следующие поля. Отметьте те, которые вы хотите импортировать."
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Описание: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "Событие ${ eventTitle } было отменено."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Когда: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Когда: ${ formattedStart } (весь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Когда: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Где: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -3362,6 +3325,18 @@
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } группы"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } зашифрованный файл",
+        "${ nbFile } зашифрованных файла",
+        "${ nbFile } зашифрованных файлов",
+        "${ nbFile } зашифрованных файлов"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } зашифрованный файл...",
+        "${ nbFile } зашифрованных файла...",
+        "${ nbFile } зашифрованных файлов...",
+        "${ nbFile } зашифрованных файлов..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } приостановлен",
         "${ pausedCount } приостановлены",
@@ -3811,6 +3786,9 @@
       ],
       "Import mailbox": [
         "Импорт почтового ящика"
+      ],
+      "Important note": [
+        "Важное примечание"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -4680,6 +4658,9 @@
       "Download anyway": [
         "Все равно скачать"
       ],
+      "Downloading": [
+        "Скачивание"
+      ],
       "Downloading ${ percentageValue }": [
         "Загрузка ${ percentageValue }"
       ],
@@ -5013,6 +4994,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "От: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Кому: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5131,8 +5115,23 @@
       ]
     },
     "Mimetype": {
+      "Audio file": [
+        "Аудиофайл"
+      ],
       "iCalendar format": [
         "Формат iCalendar"
+      ],
+      "Image": [
+        "Изображение"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "Unknown file": [
+        "Неизвестный файл"
+      ],
+      "Video file": [
+        "Видео файл"
       ]
     },
     "Modal title": {
@@ -5743,6 +5742,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Создать псевдоним"
+      ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
       ],
@@ -6834,6 +6836,9 @@
       "You have no folders yet": [
         "У вас пока что нет папок"
       ],
+      "Your 3 GB bonus": [
+        "Ваши бонусные 3 ГБ"
+      ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
       ],
@@ -6891,6 +6896,9 @@
       ],
       "Hide side panel": [
         "Скрыть боковую панель"
+      ],
+      "Load image": [
+        "Загрузить изображение"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""

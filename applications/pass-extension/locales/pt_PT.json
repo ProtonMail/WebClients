@@ -580,10 +580,6 @@
         " ${ n } item",
         "${ n } itens"
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } vez.",
-        "${ revisionNumber } vezes."
-      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
         "${ trialDaysLeft } dias restantes"
@@ -617,6 +613,9 @@
       ],
       "Creating alias...": [
         "A criar o alias..."
+      ],
+      "Current version": [
+        "Versão atual"
       ],
       "Decrypting your data": [
         "A desencriptar os seus dados"
@@ -1035,9 +1034,6 @@
       "Last 2 weeks": [
         "Últimas 2 semanas"
       ],
-      "Last autofill": [
-        "Último preenchimento automático"
-      ],
       "Last month": [
         "Último mês"
       ],
@@ -1407,6 +1403,9 @@
       "Grant permissions": [
         "Conceda as permissões"
       ],
+      "History": [
+        "Histórico"
+      ],
       "Import - ${ date }": [
         "Importar - ${ date }"
       ],
@@ -1421,6 +1420,9 @@
       ],
       "Members": [
         "Membros"
+      ],
+      "Modified": [
+        "Modificado"
       ],
       "Our welcome gift to you": [
         "Aproveite o seu período de teste gratuito"

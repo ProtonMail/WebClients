@@ -437,6 +437,9 @@
       "Upgrade now to share with more people": [
         "Uppgradera nu för att dela med fler personer"
       ],
+      "View app logs": [
+        "Visa apploggar"
+      ],
       "Write us on Reddit": [
         "Skriv till oss på Reddit"
       ],
@@ -816,10 +819,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } kommer föreslå att skapa starka lösenord på registreringsformulär."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } gång",
-        "${ revisionNumber } gånger"
-      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
@@ -898,6 +897,12 @@
       ],
       "Creating alias...": [
         "Skapar alias..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV erbjuder ett bekvämt format för att visa dina data. Men på grund av dess enkelhet kommer vissa data inte att inkluderas (anpassade fält, valvstruktur …). För en fullständig export rekommenderar vi att du använder ett annat format."
+      ],
+      "Current version": [
+        "Nuvarande version"
       ],
       "Decrypting your data": [
         "Dekrypterar dina data"
@@ -1536,9 +1541,6 @@
       "Last 2 weeks": [
         "Senaste 2 veckorna"
       ],
-      "Last autofill": [
-        "Sista autofyll"
-      ],
       "Last month": [
         "Förra månaden"
       ],
@@ -1959,6 +1961,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "History": [
+        "Historik"
+      ],
       "Import - ${ date }": [
         "Importera – ${ date }"
       ],
@@ -1979,6 +1984,9 @@
       ],
       "Members": [
         "Medlemmar"
+      ],
+      "Modified": [
+        "Ändrad"
       ],
       "Move all items ?": [
         "Flytta alla objekt?"

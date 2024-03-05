@@ -3159,49 +3159,34 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Deskripsi: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESKRIPSI:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } telah dibatalkan."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Acara ${ eventTitle } ini telah dibatalkan."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Anda diundang ke ${ eventTitle }\n${ eventDetailsText }"
+      "This event was updated.": [
+        "Acara ini telah diperbarui."
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Kapan: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "WAKTU:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Kapan: ${ formattedStart } (sepanjang hari)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "WAKTU:\n${ formattedStart } (sepanjang hari)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kapan: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "WAKTU:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Dihapus"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Di mana: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menerima undangan Anda ke ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menolak undangan Anda ke ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah secara tentatif menerima undangan Anda ke ${ eventTitle }"
+      "LOCATION:\n${ eventLocation }": [
+        "LOKASI:\n${ eventLocation }"
       ]
     },
     "Email reminder banner": {
@@ -4371,25 +4356,22 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
+      "14-day destkop app trial.": [
+        "Uji coba aplikasi desktop 14 hari."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Nikmati akses yang cepat, aman, dan bebas gangguan menuju kotak masuk dan kalendar Anda."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Dapatkan akses tanpa batas dengan paket ${ BRAND_NAME } berbayar"
-      ],
-      "Introducing the desktop app": [
-        "Memperkenalkan aplikasi desktop kami"
-      ],
-      "No credit card required": [
-        "Tanpa perlu kartu kredit"
+      "No credit card required.": [
+        "Tanpa perlu kartu kredit."
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "Coba gratis selama 14 hari"
+      "Start free trial": [
+        "Mulai uji coba gratis"
       ]
     },
     "Get started checklist instructions": {
@@ -4478,7 +4460,7 @@
         "Mungkin nanti"
       ],
       "Nice! You've updated all services in this category.": [
-        "Bagus! Anda telah memperbarui seluruh layanan pada kategori ini."
+        "Mantap! Anda telah memperbarui seluruh layanan pada kategori ini."
       ],
       "Open checklist": [
         "Buka daftar centang"
@@ -4514,7 +4496,7 @@
         "Perbarui login Anda"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Dengan perangkat mobile Anda, pindai kode QR berikut atau kunjungi toko aplikasi iOS atau Android."
+        "Dengan perangkat seluler Anda, pindai kode QR berikut atau kunjungi app store iOS atau Android."
       ],
       "We stop advertisers and data collectors from profiling you.": [
         "Kami menghentikan para pengiklan dan pengumpul data untuk dapat memprofil Anda."
@@ -8126,6 +8108,11 @@
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(akan membuka jendela ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Tampilkan catatan"
@@ -8935,6 +8922,9 @@
       ],
       "Labels applied.": [
         "Label berhasil diterapkan."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
       "Mail list unsubscribed": [
         "Berhenti langganan milis"

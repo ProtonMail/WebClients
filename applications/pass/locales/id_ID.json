@@ -720,9 +720,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kali"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
       ],
@@ -791,6 +788,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV menyediakan format yang mudah untuk melihat data Anda. Namun karena kesederhanaannya, beberapa data tidak akan disertakan (kolom kustom, struktur brankas, …). Untuk pengeksporan yang lengkap, kami menyarankan menggunakan format yang lain."
+      ],
+      "Current version": [
+        "Versi saat ini"
       ],
       "Decrypting your data": [
         "Mendekripsi data Anda"
@@ -1343,9 +1343,6 @@
       "Last 2 weeks": [
         "2 minggu terakhir"
       ],
-      "Last autofill": [
-        "Pengisian otomatis terakhir"
-      ],
       "Last month": [
         "Bulan lalu"
       ],
@@ -1732,6 +1729,9 @@
       "Grant permissions": [
         "Berikan izin"
       ],
+      "History": [
+        "Riwayat"
+      ],
       "Import - ${ date }": [
         "Impor - ${ date }"
       ],
@@ -1755,6 +1755,9 @@
       ],
       "Members": [
         "Anggota"
+      ],
+      "Modified": [
+        "Dimodifikasi"
       ],
       "Move all items ?": [
         "Pindahkan semua item?"

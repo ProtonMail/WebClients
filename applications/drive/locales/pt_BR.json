@@ -2025,48 +2025,68 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descrição: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIÇÃO:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } foi cancelado."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Todos os eventos desta série foram atualizados."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Esta ocorrência de ${ eventTitle } foi cancelada."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Todos os eventos desta série foram atualizados. Aqui está o que mudou:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Você foi convidado para ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Esta ocorrência de evento foi cancelada."
+      ],
+      "This event occurrence was updated.": [
+        "Esta ocorrência de evento foi atualizada."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Esta ocorrência de evento foi atualizada. Aqui está o que mudou:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Este evento foi atualizado."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Este evento foi atualizado. Aqui está o que mudou:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Você está convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quando: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "QUANDO:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Quando: ${ formattedStart } (o dia inteiro)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "QUANDO:\n${ formattedStart } (o dia todo)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quando: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "QUANDO:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Removido"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Onde: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "LOCALIZAÇÃO:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou seu convite para ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } recusou seu convite para ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou provisoriamente seu convite para ${ eventTitle }"
       ]
     },
@@ -5972,6 +5992,11 @@
         "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Aliases são fornecidos por ${ passLink }"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(abrirá ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Visualizar registros"
@@ -6513,6 +6538,9 @@
       ],
       "Import record deleted": [
         "Importação de registro excluído"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Últimos pseudônimos modificados armazenados em seu cofre mais antigo"
       ],
       "Phone number copied to clipboard": [
         "Número de telefone copiado para a área de transferência"

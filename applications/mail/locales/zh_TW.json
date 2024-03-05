@@ -3048,8 +3048,14 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "為想要更保護自己帳號的人量身訂做。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
+      ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "要匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
@@ -3153,49 +3159,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
+      "DESCRIPTION:\n${ eventDescription }": [
         "描述：${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "該系列中的所有行程皆已更新。"
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "此${ eventTitle }的事件已被取消。"
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該系列中的所有行程皆已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "該行程已被取消。"
+      ],
+      "This event occurrence was updated.": [
+        "該行程已更新。"
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "該行程已更新。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "您已被邀請至 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "日期：${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "時間：${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "日期 : ${ formattedStart } (全日)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "時間：${ formattedStart }（全天）"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "時間：${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "已移除"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
+      "LOCATION:\n${ eventLocation }": [
         "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲接受"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已接受您對 ${ eventTitle } 的邀請"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已被謝絕"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已謝絕您對 ${ eventTitle } 的邀請"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已暫定接受您對 ${ eventTitle } 的邀請"
       ]
     },
     "Email reminder banner": {
@@ -3266,6 +3292,11 @@
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "包含 ${ DRIVE_SHORT_APP_NAME } 版本歷程、存取 ${ VPN_SHORT_APP_NAME } 數以千計高速伺服器、${ PASS_SHORT_APP_NAME } 的分享功能以及更多。"
       ]
     },
     "eoy2023: Deal details": {
@@ -4360,22 +4391,28 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }桌面應用程式"
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "使用付費${ BRAND_NAME }方案取得無限存取"
+      "14-day destkop app trial.": [
+        "14 天桌面應用程式試用。"
       ],
-      "Introducing the desktop app": [
-        "介紹桌面應用程式"
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "享受快速、安全、心無旁騖存取您的收件匣和行事曆。"
       ],
-      "No credit card required": [
-        "毋須信用卡"
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "使用 ${ MAIL_APP_NAME } 方案取得無限存取。"
+      ],
+      "No credit card required.": [
+        "毋須信用卡."
+      ],
+      "Try the app-new desktop app": [
+        "測試新的應用程式 - 新的桌面應用程式"
       ],
       "Upgrade now": [
         "立刻升级"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "免費滿意體驗 14 天"
+      "Start free trial": [
+        "開始免費試用"
       ]
     },
     "Get started checklist instructions": {
@@ -4392,7 +4429,7 @@
         "帳號登錄"
       ],
       "Auto-forward Gmail": [
-        "自動轉寄至Gmail"
+        "自動轉寄 Gmail"
       ],
       "auto-forwarding": [
         "自動轉寄"
@@ -7578,7 +7615,7 @@
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
       "Snooze messages and get reminded when you want": [
-        "延後訊息急於想要時獲得通知"
+        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -7667,6 +7704,9 @@
       "Automatically forward emails": [
         "自動轉寄信件"
       ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "永久封鎖來自濫發郵件者的電子郵件通訊。${ kbLinkSender }"
+      ],
       "Block unsavory senders": [
         "封鎖不良寄件者"
       ],
@@ -7690,6 +7730,9 @@
       ],
       "Skip": [
         "跳過"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "我們阻止廣告商與數據蒐集者建立您的分析檔案。${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7806,6 +7849,12 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } 已被標記為時效已過。此金鑰僅可用於特徵驗證。"
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "自動由 keys.openpgp.org 取得了外部金鑰。"
+      ],
+      "External key automatically fetched via WKD.": [
+        "自動由 WKD 取得了外部金鑰。"
       ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
@@ -8056,7 +8105,7 @@
         "找不到相符的結果"
       ],
       "No snoozed messages": [
-        "無被延後的信件"
+        "未有緩辦郵件"
       ],
       "No unread messages found": [
         "沒發現有未讀的訊息"
@@ -8100,12 +8149,20 @@
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(轉開 ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "檢視日誌"
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
       ]
@@ -8409,7 +8466,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "延後的郵件"
+        "緩辦郵件"
       ],
       "When should the message reappear in your inbox?": [
         "何時再次顯示這封郵件？"
@@ -8648,6 +8705,9 @@
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "現在，你可以一次對一個資料夾內的全部郵件進行動作。"
+      ],
       "Schedule send": [
         "排程傳送"
       ],
@@ -8791,10 +8851,10 @@
         "${ elementsCount } 則往來對話已移除 ${ labelName } 標籤。"
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount }則往來對話已暫停"
+        "${ elementsCount } 個會話已緩辦"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount }對話內容取消暫停"
+        "${ elementsCount } 個會話已取消緩辦"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } 封郵件已加上 ${ labelName } 標籤。"
@@ -8903,6 +8963,9 @@
       ],
       "Labels applied.": [
         "標籤已套用。"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "最後修改的別名已儲存到您最舊的保險庫"
       ],
       "Mail list unsubscribed": [
         "已從郵寄清單取消訂閱"

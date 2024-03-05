@@ -3245,49 +3245,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "설명: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "설명:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } 이(가) 취소되었습니다."
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle }이(가) 취소되었습니다."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 이(가) 업데이트 되었습니다.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "해당 주제의 모든 이벤트가 업데이트되었습니다."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "${ eventTitle }의 시작이 취소되었습니다."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "해당 주제의 모든 이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "${ eventTitle } 에 초대되었습니다\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "이 이벤트의 개최는 취소되었습니다."
+      ],
+      "This event occurrence was updated.": [
+        "이 이벤트의 개최가 업데이트되었습니다."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "이벤트 변경사항이 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "이 이벤트는 업데이트 되었습니다."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle }에 초대받았습니다.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "어디서: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "시간:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "언제: ${ formattedStart } (매일)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "시간:\n${ formattedStart } (종일)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "언제: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "시간:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "제거됨"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "어디서: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "위치:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 이(가) ${ eventTitle } 의 초대를 수락했습니다"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle } 의 초대를 수락했습니다"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 이(가) ${ eventTitle } 의 초대를 거부했습니다"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle }의 초대를 거부했습니다"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 이(가) ${ eventTitle } 의 초대를 잠정적으로 수락했습니다"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle } 의 초대를 잠정적으로 수락했습니다"
       ]
     },
     "Email spam notification": {
@@ -4686,7 +4706,7 @@
         "*사용자 당 1회 무료 체험"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "기본적으로 우리는 관리자 계정에 ${ formattedStorage }의 저장공간을 할당합니다. 추가 사용자들 사이에 할당된 저장공간을 이후에 관리할 수 있습니다."
+        "기본적으로는 관리자 계정에 ${ formattedStorage } 저장공간을 자동 할당합니다. 추가 사용자들 사이에 할당된 저장공간을 이후에 관리할 수 있습니다."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "가족 구성원을 생성하고 관리하며 ${ DRIVE_APP_NAME } 및 ${ MAIL_APP_NAME } 간에 공유되는 저장 공간을 할당합니다."
@@ -5119,7 +5139,7 @@
         "로그인으로 돌아가기"
       ],
       "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
-        "빠르고 집중화된 안전한 데스크톱 경험을 계속 즐기세요. 제한 없이 모든 기능과 다른 프리미엄 기능들도 사용할 수 있습니다. "
+        "빠르고 집중적이며 안전한 데스크톱 경험을 계속 즐겨보세요. 업그레이드로 제한 없는 접근과 다른 프리미엄 기능까지 이용할 수 있습니다. "
       ],
       "Keep using the desktop app": [
         "데스크톱 앱 계속 사용하기"
@@ -5128,7 +5148,7 @@
         "${ webAppMessage }으로 ${ MAIL_APP_NAME } 열기"
       ],
       "Your desktop app free trial has ended": [
-        "데스트톱 앱 무료 체험이 종료되었습니다"
+        "데스크톱 앱 무료 체험이 종료되었습니다"
       ]
     },
     "Frequency of news": {
@@ -5200,10 +5220,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "자동 포워딩됨"
+        "자동으로 Gmail에서 당신의 받은 편지함으로"
       ],
       "Gmail messages to your inbox": [
-        "Gmail 메시지를 사용자의 받은 편지함으로"
+        "메시지를 가져오세요"
       ],
       "Sign in with Google": [
         "Google로 로그인"
@@ -5304,10 +5324,10 @@
         "보호"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "할인된 가격으로 ${ VPN_APP_NAME } 사용하기"
+        "최고의 특가로 ${ VPN_APP_NAME }을 저렴하게"
       ],
       "Select your deal": [
-        "할인 선택하기"
+        "특가를 골라보세요"
       ],
       "Select your pricing plan": [
         "요금제를 선택하세요"
@@ -7140,7 +7160,7 @@
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
       ],
       "Signed up": [
-        "가입했습니다"
+        "가입 완료"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
@@ -7365,7 +7385,7 @@
         "임시 비밀번호를 대체하게 됩니다. 추후 ${ BRAND_NAME } 계정에 접근하는데 사용할 수 있습니다."
       ],
       "This will sign you out of all accounts currently logged in.": [
-        "이렇게 하면 현재 로그인된 모든 계정에서 로그아웃됩니다."
+        "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "이는 활성 세션에서 로그아웃하고 2단계 인증을 비활성화하게 됩니다."
@@ -8032,7 +8052,7 @@
         "기부"
       ],
       "Modification": [
-        "변형"
+        "수정"
       ],
       "Other": [
         "기타"
@@ -8972,7 +8992,7 @@
         "결제 수단"
       ],
       "Pending": [
-        "명 대기 중"
+        "대기 중"
       ],
       "Phone number": [
         "전화번호"
@@ -10337,17 +10357,6 @@
         "팀 관리"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10389,7 +10398,7 @@
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "무제한 사용자를 위한 필수 보호 및 안전한 협업."
+        "사용자 제한 없이 필수적인 보호와 안전한 협업을."
       ],
       "For next-level password management and identity protection.": [
         "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
@@ -10447,6 +10456,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -11576,9 +11596,6 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "비즈니스용"
-      ],
-      "For invididuals": [
-        "개인용"
       ]
     },
     "passwordless": {
@@ -14319,7 +14336,7 @@
         "무엇을 가져오시겠어요?"
       ],
       "What's new": [
-        "변경 사항"
+        "새로운 사항"
       ],
       "WireGuard configuration": [
         "WireGuard 설정"

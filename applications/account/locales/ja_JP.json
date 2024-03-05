@@ -1335,14 +1335,23 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "65か国以上、3,000台以上のサーバー"
+      ],
       "6 users": [
         "6 ユーザー"
+      ],
+      "Access content worldwide": [
+        "世界中のコンテンツにアクセス"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
       ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "High speed streaming": [
+        "高速ストリーミング"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -1467,6 +1476,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "最新バージョンが見つかりませんでした"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Bug category": {
@@ -3047,6 +3061,9 @@
       ]
     },
     "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "デスクトップアプリへのアクセスが制限されています"
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "今すぐアップグレードするか、2024 年初めに再度アクセスして確認してください。"
       ]
@@ -3181,49 +3198,6 @@
       ],
       "You can safely close this tab.": [
         "このタブは安全に閉じても問題ありません。"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "説明: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } はキャンセルされました。"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } が更新されました。\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "${ eventTitle } に招待されました\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "日時: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "日時: ${ formattedStart } (終日)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "日時: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "場所: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は ${ eventTitle } への招待を承諾しました"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } は ${ eventTitle } への招待を辞退しました"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は ${ eventTitle } への招待を仮承諾しました"
       ]
     },
     "Email spam notification": {
@@ -3562,6 +3536,9 @@
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリへの早期アクセス"
       ]
     },
     "Error": {
@@ -4972,6 +4949,11 @@
       ],
       "Very small": [
         "極小"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Frequency of news": {
@@ -7867,6 +7849,9 @@
       "Expand / contract composer": [
         "作成画面を拡大 / 縮小"
       ],
+      "Filter": [
+        "フィルター"
+      ],
       "Forward": [
         "転送"
       ],
@@ -8198,6 +8183,9 @@
       ],
       "Awarded": [
         "進呈"
+      ],
+      "Beta": [
+        "ベータ版"
       ],
       "Billing address": [
         "ご請求先住所"
@@ -10007,17 +9995,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -10111,6 +10088,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: Label": {
@@ -12155,6 +12143,9 @@
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "ダウングレードすると以下の特典が失われます。続行してよろしいですか?"
+      ],
+      "contact your administrator": [
+        "管理者に連絡してください"
       ],
       "Get more storage": [
         "ストレージを増やす"

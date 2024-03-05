@@ -1944,6 +1944,9 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Призначений для користувачів, які шукають посилений захист для своїх облікових записів."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -1970,6 +1973,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, наше найсучасніше рішення щодо безпеки на базі ШІ з експертною підтримкою 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -1998,49 +2004,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Опис: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } було скасовано."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } було оновлено.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вас запрошено на ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Коли: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Коли: ${ formattedStart } (увесь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Коли: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Де: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } відхиляє ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -2094,6 +2057,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" вже існує"
       ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
@@ -2106,8 +2072,23 @@
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
+      "Alias is not valid": [
+        "Псевдонім недійсний"
+      ],
+      "Alias is required": [
+        "Потрібен псевдонім"
+      ],
       "Alias options could not be resolved": [
         "Не вдалося розв'язати параметри псевдоніма"
+      ],
+      "Aliases could not be loaded": [
+        "Не вдалося завантажити псевдоніми"
+      ],
+      "An error occurred while loading alias options": [
+        "Під час завантаження параметрів псевдоніма сталася помилка"
+      ],
+      "An error occurred while saving your alias": [
+        "Під час збереження вашого псевдоніма сталася помилка"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -2132,6 +2113,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Неможливо ввімкнути пошук вмісту. Перезапустіть застосунок або очистьте дані."
       ],
       "Could not open created vault": [
         "Не вдалося відкрити створене сховище"
@@ -2190,6 +2174,9 @@
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
       ],
+      "Forward address is required": [
+        "Потрібно вказати адресу переадресації"
+      ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
       ],
@@ -2234,6 +2221,9 @@
       ],
       "Missing signature": [
         "Відсутній підпис"
+      ],
+      "Name is required": [
+        "Назва обовʼязкова"
       ],
       "No calendars found to import": [
         "Не знайдено календарів для імпортування"
@@ -2387,6 +2377,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Неочікувана помилка, неможливо імпортувати контакти"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -2616,6 +2609,9 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Щоб використовувати ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }, перейдіть до вебверсії."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
@@ -3453,6 +3449,9 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
+      "All encrypted files": [
+        "Всі зашифровані файли"
+      ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
       ],
@@ -3467,6 +3466,9 @@
       ],
       "An active recovery file": [
         "Активний файл відновлення"
+      ],
+      "An issue occurred during the restore process.": [
+        "Під час процесу відновлення сталася помилка."
       ],
       "and": [
         "та"
@@ -3645,11 +3647,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Завантаження призупинено через проблеми зі з'єднанням; воно відновиться автоматично"
       ],
+      "Download ready": [
+        "Завантаження готово"
+      ],
       "Downloaded": [
         "Завантажено"
       ],
       "Downloading": [
         "Завантаження"
+      ],
+      "Downloading all encrypted files": [
+        "Завантаження всіх зашифрованих файлів"
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -3762,6 +3770,15 @@
       "from the version history?": [
         "з історії версій?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Отримайте застосунок для резервного копіювання фотографій з телефону."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Отримайте настільний застосунок, щоб синхронізувати файли з комп'ютера."
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Познайомтеся з ${ DRIVE_APP_NAME } і отримайте бонус у 3 ГБ сховища! Це можна зробити сьогодні."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Перейдіть у \"Мої файли\" і спочатку завантажте деякі файли."
       ],
@@ -3801,6 +3818,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Тим часом зареєструйте свій обліковий запис ${ DRIVE_APP_NAME } і захистіть свої дані за допомогою наскрізного шифрування та безпечно діліться ними."
+      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Індексування елементів ${ esProgress } з ${ totalProgressToShow }"
       ],
@@ -3827,6 +3847,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Елементи залишатимуться у смітнику, доки ви не видалите їх остаточно"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "Елементи, переміщені в смітник, залишатимуться там, доки їх не буде видалено"
       ],
       "It’s easy and secure": [
         "Це легко та безпечно"
@@ -3957,6 +3980,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
       ],
+      "Or use the \"+ New\" button": [
+        "Або використовуйте кнопку «+»"
+      ],
       "Paused": [
         "Зупинено"
       ],
@@ -3968,6 +3994,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматично надсилає повідомлення, використовуючи поточний режим написання."
+      ],
+      "Photos have been successfully recovered.": [
+        "Фотографії успішно відновлено."
       ],
       "Please enter the password to decrypt and view content.": [
         "Введіть пароль, щоб розшифрувати та переглянути вміст."
@@ -4041,6 +4070,9 @@
       "Queued": [
         "Поставлено в чергу"
       ],
+      "Ready to add some photos?": [
+        "Готові додати кілька фотографій?"
+      ],
       "recommended browser": [
         "рекомендований браузер"
       ],
@@ -4062,8 +4094,17 @@
       "Restore is in progress. This can take a few seconds.": [
         "Відновлюється. Це може тривати кілька секунд."
       ],
+      "Restore Photos": [
+        "Відновити фотографії"
+      ],
       "Restored files ${ formattedDate }": [
         "Відновлені файли ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Відновлення фотографій... Залиште вкладку відкритою"
+      ],
+      "Retry now": [
+        "Повторити зараз"
       ],
       "Search cannot be enabled in this browser": [
         "Неможливо увімкнути пошук у цьому браузері"
@@ -4071,11 +4112,26 @@
       "Search Enabled": [
         "Пошук увімкнено"
       ],
+      "Securely downloaded all encrypted files": [
+        "Безпечно завантажено всі зашифровані файли"
+      ],
+      "Securely downloaded all files": [
+        "Всі файли безпечно завантажені"
+      ],
+      "Select a folder to move to.": [
+        "Виберіть теку для переміщення."
+      ],
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
       ],
+      "Select all items for": [
+        "Виберіть всі елементи для"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
+      ],
+      "Select item": [
+        "Виберіть елемент"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
@@ -4112,6 +4168,9 @@
       ],
       "Signature issue": [
         "Проблема з підписом"
+      ],
+      "Skipped": [
+        "Пропущено"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Не вдалося завантажити деякі файли. Спробуйте завантажити їх ще раз."
@@ -4166,6 +4225,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Можливо, цей файл було видалено, переміщено або він став недоступним. Спробуйте зв'язатися з власником файлу."
+      ],
+      "This item already exists in your library": [
+        "Цей елемент вже існує у вашій бібліотеці"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
@@ -4251,6 +4313,9 @@
       "Trash is empty": [
         "Смітник порожній"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Спробуйте ${ DRIVE_APP_NAME }: Безплатно назавжди"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
@@ -4259,6 +4324,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
+      ],
+      "Unknown date": [
+        "Невідома дата"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -4278,6 +4346,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
+      "upgrade your storage": [
+        "покращте своє сховище"
+      ],
       "Uploaded": [
         "Вивантажено"
       ],
@@ -4296,8 +4367,14 @@
       "Version is restored": [
         "Версію відновлено"
       ],
+      "Want to sync files faster?": [
+        "Бажаєте швидше синхронізувати файли?"
+      ],
       "Warning": [
         "Попередження"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Так тримати, ви щойно збільшили своє сховище до 5 ГБ!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "У зв'язку з технічними проблемами, вивантаження нових фотографій тимчасово вимкнено."
@@ -4328,6 +4405,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "буде відновлено до версії від ${ formattedRevisionDate }. Усі інші версії буде збережено."
+      ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "З ${ DRIVE_APP_NAME } ваші дані захищені наскрізним шифруванням."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -4397,6 +4477,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
+      ],
+      "Your download is in progress": [
+        "Триває завантаження"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -5760,9 +5843,25 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Використовуйте на Amazon для покупок тощо"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Натомість коли вас попросять вказати адресу пошти, вкажіть цей псевдонім. Псевдоніми надаються ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(відкрити ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Переглянути журнали"
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наше передове рішення для забезпечення безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений захист облікових записів. ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **активний** і захищає ваш обліковий запис."
       ]
@@ -6144,8 +6243,47 @@
       "${ app } storage": [
         "${ app } сховища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% заповнено"
+      ],
+      "contact your administrator": [
+        "зв'язатися з адміністратором"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Щоб і надалі завантажувати та синхронізувати файли, звільніть місце або покращте тариф, щоб збільшити сховище."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Щоби надсилати або отримувати листи, звільніть місце або ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Щоби надсилати або отримувати листи, звільніть місце або покращте тариф, щоб збільшити сховище."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
+      ],
+      "upgrade for more storage": [
+        "покращте тариф, щоб збільшити сховище"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } майже повне"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } повне"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ваше ${ storage } заповнено на ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } повне. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнено на ${ percentage }%. ${ cta }."
+      ],
       "Your storage is full": [
         "Ваше сховище заповнене"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ваше сховище заповнено. ${ cta }."
       ]
     },
     "Success": {
@@ -6199,6 +6337,9 @@
       ],
       "Import record deleted": [
         "Запис імпорту видалено"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"
       ],
       "Phone number copied to clipboard": [
         "Номер телефону скопійовано до буфера обміну"

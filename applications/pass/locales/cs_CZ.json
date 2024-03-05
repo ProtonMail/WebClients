@@ -17,6 +17,9 @@
       "Add new item": [
         "Přidat novou položku"
       ],
+      "Admin panel": [
+        "Panel správce"
+      ],
       "Advanced": [
         "Pokročilé"
       ],
@@ -88,6 +91,9 @@
       ],
       "Create login": [
         "Vytvořit přihlášení"
+      ],
+      "Create new items": [
+        "Vytvořit nové položky"
       ],
       "Create note": [
         "Vytvořit poznámku"
@@ -605,7 +611,7 @@
         "Název trezoru neodpovídá"
       ],
       "Wrong password": [
-        "Chybné heslo"
+        "Nesprávné heslo"
       ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
@@ -705,12 +711,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
       ],
@@ -767,6 +767,9 @@
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
+      ],
+      "Current version": [
+        "Současná verze"
       ],
       "Decrypting your data": [
         "Dešifrování vašich dat"
@@ -1295,9 +1298,6 @@
       "Last 2 weeks": [
         "Minulé 2 týdny"
       ],
-      "Last autofill": [
-        "Poslední automatické vyplnění"
-      ],
       "Last month": [
         "Minulý měsíc"
       ],
@@ -1672,8 +1672,14 @@
       "Enter your PIN": [
         "Zadejte svůj PIN"
       ],
+      "Get Started": [
+        "Začínáme"
+      ],
       "Grant permissions": [
         "Udělit oprávnění"
+      ],
+      "History": [
+        "Historie"
       ],
       "Import - ${ date }": [
         "Importováno - ${ date }"
@@ -1695,6 +1701,12 @@
       ],
       "Member limit": [
         "Limit počtu členů"
+      ],
+      "Members": [
+        "Členové"
+      ],
+      "Modified": [
+        "Upraveno"
       ],
       "Move all items ?": [
         "Přesunout všechny položky?"
@@ -1802,11 +1814,17 @@
       "An error occured while exporting your data": [
         "Při exportu dat došlo k chybě"
       ],
+      "At least one email address is required": [
+        "Je vyžadována alespoň jedna e-mailová adresa"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Pro tento alias nelze nyní načíst e-mailové schránky"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
+      ],
+      "Duplicate email addresses.": [
+        "Duplicitní e-mailové adresy."
       ],
       "Empty note": [
         "Prázdná poznámka"
@@ -1819,6 +1837,9 @@
       ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"
+      ],
+      "Invalid email addresses.": [
+        "Neplatné e-mailové adresy."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximální délka je ${ maxLength } znak",
@@ -1843,6 +1864,9 @@
       ],
       "No password manager selected": [
         "Není vybrán žádný správce hesel"
+      ],
+      "No results": [
+        "Žádné výsledky"
       ],
       "Offline": [
         "Offline"

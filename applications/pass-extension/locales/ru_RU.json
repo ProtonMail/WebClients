@@ -768,12 +768,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } будет предлагать создавать надежные пароли в формах регистрации."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } раз",
-        "${ revisionNumber } раза",
-        "${ revisionNumber } раз",
-        "${ revisionNumber } раз"
-      ],
       "${ trialDaysLeft } day left": [
         "Остался ${ trialDaysLeft } день",
         "Осталось ${ trialDaysLeft } дня",
@@ -845,6 +839,9 @@
       ],
       "Creating alias...": [
         "Создание псевдонима..."
+      ],
+      "Current version": [
+        "Текущая версия"
       ],
       "Decrypting your data": [
         "Расшифровка ваших данных"
@@ -1436,9 +1433,6 @@
       "Last 2 weeks": [
         "Последние 2 недели"
       ],
-      "Last autofill": [
-        "Последнее автозаполнение"
-      ],
       "Last month": [
         "Последний месяц"
       ],
@@ -1842,6 +1836,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "History": [
+        "История"
+      ],
       "Import - ${ date }": [
         "Импорт - ${ date }"
       ],
@@ -1859,6 +1856,9 @@
       ],
       "Member limit": [
         "Ограничение количества участников"
+      ],
+      "Modified": [
+        "Изменено"
       ],
       "Move all items ?": [
         "Переместить все элементы?"
@@ -1892,6 +1892,9 @@
       ],
       "Share with": [
         "Поделиться с"
+      ],
+      "Suggestions": [
+        "Рекомендации"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Переключаетесь на ${ PASS_APP_NAME }?"

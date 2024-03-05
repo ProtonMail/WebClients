@@ -574,6 +574,12 @@
       "Moving item failed": [
         "Presun položky zlyhal"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Offline režim momentálne nie je k dispozícii pre režim dvoch hesiel."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Offline režim nie je momentálne k dispozícii pre váš plán a nie je kompatibilný s režimom dvoch hesiel."
+      ],
       "Passphrase is incorrect": [
         "Prístupová fráza je nesprávna"
       ],
@@ -753,12 +759,6 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bude vyžadovať vaše ${ BRAND_NAME } heslo na prístup k údajom offline."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber }-krát",
-        "${ revisionNumber }-krát",
-        "${ revisionNumber }-krát",
-        "${ revisionNumber }-krát"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dní na bezplatné vyskúšanie prémiových funkcií. Len počas vášho prvého týždňa s ${ BRAND_NAME }."
       ],
@@ -827,6 +827,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV ponúka vhodný formát na zobrazenie údajov. Avšak kvôli svojej jednoduchosti, niektoré údaje nebudú zahrnuté (vlastné polia, štruktúra trezoru...). Pre kompletný export odporúčame použiť iný formát."
+      ],
+      "Current version": [
+        "Súčasná verzia"
       ],
       "Decrypting your data": [
         "Dešifrujeme vaše údaje"
@@ -1128,6 +1131,9 @@
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
       ],
+      "The export will only contain vaults that you own.": [
+        "Export bude obsahovať iba trezory, ktoré vlastníte."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný súbor bude šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
@@ -1418,9 +1424,6 @@
       "Last 2 weeks": [
         "Posledné 2 týždne"
       ],
-      "Last autofill": [
-        "Posledné automatické vyplnenie"
-      ],
       "Last month": [
         "Posledný mesiac"
       ],
@@ -1504,6 +1507,9 @@
       ],
       "Password history": [
         "História hesla"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON šifrovaný PGP (odporúča sa)"
       ],
       "PIN": [
         "PIN"
@@ -1816,6 +1822,9 @@
       "Grant permissions": [
         "Udeliť oprávnenia"
       ],
+      "History": [
+        "História"
+      ],
       "Import - ${ date }": [
         "Importované - ${ date }"
       ],
@@ -1839,6 +1848,9 @@
       ],
       "Members": [
         "Členovia"
+      ],
+      "Modified": [
+        "Upravené"
       ],
       "Move all items ?": [
         "Presunúť všetky položky ?"
@@ -1975,6 +1987,9 @@
       ],
       "Invalid email addresses.": [
         "Neplatné emailové adresy."
+      ],
+      "item was imported without custom fields": [
+        "Položka bola importovaná bez vlastných polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximálna dĺžka je ${ maxLength } znak",
