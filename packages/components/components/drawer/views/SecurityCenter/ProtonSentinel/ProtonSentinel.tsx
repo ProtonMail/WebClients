@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms/Button';
+import { Href } from '@proton/atoms/Href';
 import { Toggle, useModalStateObject, useSettingsLink } from '@proton/components/components';
 import { useFlag } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -73,14 +74,7 @@ const ProtonSentinel = () => {
     };
 
     const learnMoreLink = (
-        <ButtonLike
-            as="a"
-            shape="underline"
-            color="norm"
-            key="learn-more"
-            href={getKnowledgeBaseUrl('/proton-sentinel')}
-            target="_blank"
-        >{c('Link').t`Learn more`}</ButtonLike>
+        <Href href={getKnowledgeBaseUrl('/proton-sentinel')} className="inline-block">{c('Link').t`Learn more`}</Href>
     );
 
     return (
