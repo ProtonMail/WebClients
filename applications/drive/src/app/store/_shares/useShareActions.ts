@@ -16,6 +16,7 @@ import chunk from '@proton/utils/chunk';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
+import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
@@ -29,6 +30,7 @@ export default function useShareActions() {
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey } = useLink();
     const { removeLinkForMigration } = useLinksState();
     const { getShareCreatorKeys, getShare, getShareSessionKey } = useShare();
+    const events = useDriveEventManager();
 
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
         const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link, linkPrivateKey] =
@@ -128,6 +130,8 @@ export default function useShareActions() {
                 })
             )
         );
+
+        await events.pollEvents.volumes(volumeId);
 
         return {
             shareId: Share.ID,
