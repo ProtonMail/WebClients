@@ -75,7 +75,7 @@ const HeaderCollapsed = ({
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
         >
-            <div className="flex flex-1 flex-nowrap items-center mr-2">
+            <div className="message-header-recipient-labels flex flex-1 flex-nowrap items-center mr-2">
                 <RecipientItem
                     message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
@@ -94,7 +94,7 @@ const HeaderCollapsed = ({
                 )}
                 {messageLoaded && isExpiringMessage && (
                     <ItemExpiration
-                        className="badge-label-weak ml-2 py-0-5 TOCHECK"
+                        className="badge-label-weak ml-2 py-0-5"
                         expirationTime={message.data?.ExpirationTime}
                         element={message.data as Message}
                         labelID={labelID}
@@ -102,7 +102,10 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && (
-                    <div className="ml-2 flex-1 flex flex-nowrap">
+                    <div
+                        className="message-header-labels ml-2 flex-1 flex flex-nowrap min-w-custom"
+                        style={{ '--min-w-custom': '5em' }}
+                    >
                         <ItemLabels
                             className="hidden md:inline-flex"
                             element={message.data}
