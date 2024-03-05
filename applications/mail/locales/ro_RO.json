@@ -3190,52 +3190,6 @@
         "Descărcare toate"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descriere: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } a fost anulat."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Desfășurarea evenimentului ${ eventTitle } a fost anulată."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Când: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Când: ${ formattedStart } (toată ziua)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Când: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Unde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
-      ]
-    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Evenimentul are loc mâine."
@@ -4446,22 +4400,11 @@
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Bucurați-vă de accesul la contul de e-mail și calendar, rapid, sigur și fără distrageri."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Obțineți acces nelimitat cu planul ${ BRAND_NAME } cu plată"
-      ],
-      "Introducing the desktop app": [
-        "Vă prezentăm aplicația pentru desktop"
-      ],
-      "No credit card required": [
-        "Nu trebuie card de credit"
+      "No credit card required.": [
+        "Nu trebuie card de credit."
       ],
       "Upgrade now": [
         "Modificare"
-      ]
-    },
-    "Free trial destkop": {
-      "Try free for 14 days": [
-        "Încercați gratuit 14 zile"
       ]
     },
     "Get started checklist instructions": {
@@ -8408,6 +8351,11 @@
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(va deschide ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Afișare jurnale"
@@ -9311,6 +9259,9 @@
       ],
       "Labels applied.": [
         "Etichete aplicate."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ultimele aliasuri modificate stocate în cel mai vechi seif"
       ],
       "Mail list unsubscribed": [
         "Dezabonare de la lista de e-mailuri reușită"
