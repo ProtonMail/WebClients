@@ -696,14 +696,23 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "65か国以上、3,000台以上のサーバー"
+      ],
       "6 users": [
         "6 ユーザー"
+      ],
+      "Access content worldwide": [
+        "世界中のコンテンツにアクセス"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
       ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "High speed streaming": [
+        "高速ストリーミング"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -795,6 +804,11 @@
       ],
       "Two-year": [
         "2年払い"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Bug category": {
@@ -1792,6 +1806,9 @@
       ]
     },
     "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "デスクトップアプリへのアクセスが制限されています"
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "今すぐアップグレードするか、2024 年初めに再度アクセスして確認してください。"
       ]
@@ -1846,6 +1863,9 @@
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリへの早期アクセス"
       ]
     },
     "Error": {
@@ -6221,6 +6241,9 @@
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "ダウングレードすると以下の特典が失われます。続行してよろしいですか?"
+      ],
+      "contact your administrator": [
+        "管理者に連絡してください"
       ],
       "Your storage is full": [
         "ストレージがいっぱいです"
