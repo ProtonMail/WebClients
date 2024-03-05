@@ -9,7 +9,7 @@
         "${ BRAND_NAME }-butik"
       ],
       "Activate": [
-        "Aktiver"
+        "Aktivér"
       ],
       "activate": [
         "aktivér"
@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove single sign-on": [
+        "Fjern single sign-on"
+      ],
       "Rename": [
         "Omdøb"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Logger ind"
+      ],
+      "Stop using single sign-on": [
+        "Stop med at bruge single sign-on"
       ],
       "Submit": [
         "Indsend"
@@ -2718,6 +2724,12 @@
       "Name": [
         "Navn"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Spar stort med de bedste tilbud på ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Vælg dit tilbud"
+      ],
       "Select your pricing plan": [
         "Vælg din betalingsplan"
       ],
@@ -2767,6 +2779,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
+      ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation }, og du bliver nødt til at oprette dem manuelt for at føje dem tilbage til din organisation"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
@@ -3340,6 +3355,9 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Ikke-SSO brugere (oprettet manuelt, ikke leveret af din identitetsudbyder) kan stadig logge ind på din organisation"
+      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
       ],
@@ -3351,6 +3369,9 @@
       ],
       "old password": [
         "gammel adgangskode"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Når single sing-on er deaktiveret for din organisation:"
       ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
@@ -3541,11 +3562,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
+      "Single sign-on removed": [
+        "Single sign-on fjernet"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Nogle af dine tilgængelige servere kan kun bruges i specifikke lande på grund af nylige fjernelser"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-brugere (leveret af din identitetsudbyder) slettes"
       ],
       "Step ${ step }": [
         "Trin ${ step }",
@@ -3592,6 +3619,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tak, fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Legitimationsoplysningerne fra din identitetsudbyder vil blive slettet."
       ],
       "The following address is invalid.": [
         "Den følgende adresse er ugyldig.",
@@ -3664,6 +3694,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dette vil permanent slette din konto og alle data, der er knyttet til den. Du vil ikke kunne genaktivere denne konto."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Dette fjerner SSO for ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte din midlertidige adgangskode. Du vil bruge den til at tilgå din ${ BRAND_NAME } konto i fremtiden."
@@ -3917,7 +3950,7 @@
         "Du er logget ind på kontoen ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Du bruger mere opbevaringsplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
+        "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
@@ -4107,7 +4140,7 @@
         "Kreditnota"
       ],
       "Currency conversion": [
-        "Valuta Omregning"
+        "Valutaomregning"
       ],
       "Donation": [
         "Donation"
@@ -4502,6 +4535,12 @@
       ],
       "Select your plan": [
         "Vælg dit abonnement"
+      ],
+      "Single sign-on entity ID": [
+        "Single sign-on enheds-ID"
+      ],
+      "Single sign-on URL": [
+        "Single sign-on URL"
       ],
       "Start date": [
         "Startdato"
@@ -5194,6 +5233,12 @@
       "Unlimited shared vaults with access permissions": [
         "Ubegrænsede delte bokse med adgangstilladelser"
       ],
+      "Unlimited vault sharing": [
+        "Ubegrænset deling af boks"
+      ],
+      "Unlimited vaults": [
+        "Ubegrænsede bokse"
+      ],
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
       ],
@@ -5256,6 +5301,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avanceret netværkssikkerhed og adgangshåndtering med dedikerede sikre Gateways"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Avanceret beskyttelse til teams, der overgår branchestandarderne."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
       ],
@@ -5267,6 +5315,9 @@
       ],
       "Early access to new apps and features": [
         "Tidlig adgang til nye apps og funktioner"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Essentiel beskyttelse og sikkert samarbejde for ubegrænsede brugere."
       ],
       "For next-level password management and identity protection.": [
         "For avanceret adgangskodehåndtering og identitetsbeskyttelse."
@@ -5447,6 +5498,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle tags, du kan tilføje til beskeder for at gøre dem lettere at finde eller anvende filtre på."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Ligesom en mappe, er en boks en praktisk måde, at organisere dine elementer på"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Spær adgangen til din virksomheds ressourcer fra det offentlige internet, og gør dem kun tilgængelige via dine private gateways."
@@ -5788,7 +5842,7 @@
         "+ ${ relativePrice } pr. måned"
       ],
       "/month /user": [
-        "/måned/bruger"
+        "/måned /bruger"
       ],
       "/month /user, billed annually": [
         "/måned /bruger, faktureres årligt"
@@ -6731,10 +6785,10 @@
         "Lagerplads til data genereret af ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "Op til ${ totalStorageSize } Drev-lagerplads"
+        "Op til ${ totalStorageSize } Drive-lagerplads"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
-        "Op til ${ totalStorageSize } Maillager"
+        "Op til ${ totalStorageSize } Mail-lagerplads"
       ]
     },
     "storage_split: info": {
@@ -7433,6 +7487,9 @@
       "Email subscriptions": [
         "E-mail-abonnementer"
       ],
+      "Enter endpoints into your identity provider": [
+        "Angiv slutpunkter i din identitetsudbyder"
+      ],
       "Enter SAML metadata": [
         "Indtast SAML-metadata"
       ],
@@ -7563,6 +7620,12 @@
       "Remove domain": [
         "Fjern domæne"
       ],
+      "Remove single sign-on": [
+        "Fjern single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Fjern single sign-on for din organisation?"
+      ],
       "Remove user?": [
         "Fjern bruger?"
       ],
@@ -7634,6 +7697,9 @@
       ],
       "Signed in to member account": [
         "Logget ind på medlemskonto"
+      ],
+      "Single sign-on": [
+        "Single sign-on"
       ],
       "Status": [
         "Status"
@@ -7772,8 +7838,14 @@
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL-adresse til slutpunkt fra identitetsudbyder (f.eks. https://idp.example.com/sso/saml)"
+      ],
       "Feature in early access": [
         "Funktion i tidlig adgang"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Hent certifikathashen fra din identitetsudbyder."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
@@ -7792,6 +7864,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Normalt en URL-adresse, der indeholder identitetsudbyderens navn i"
       ],
       "Verified email address": [
         "Verificeret e-mailadresse"

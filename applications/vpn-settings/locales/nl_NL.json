@@ -266,6 +266,9 @@
       "Hide plan features": [
         "Verberg abonnementsfuncties"
       ],
+      "Import new SAML metadata": [
+        "Importeer nieuwe SAML metadata"
+      ],
       "Increase": [
         "Verhogen"
       ],
@@ -356,6 +359,9 @@
       "Remove gift code": [
         "Verwijder geschenkcode"
       ],
+      "Remove single sign-on": [
+        "Verwijder single sign-on"
+      ],
       "Rename": [
         "Hernoem"
       ],
@@ -401,11 +407,17 @@
       "Save address": [
         "Adres opslaan"
       ],
+      "Save SAML configuration": [
+        "SAML configuratie opslaan"
+      ],
       "Search": [
         "Zoeken"
       ],
       "Search countries": [
         "Zoek landen"
+      ],
+      "See DNS TXT record": [
+        "Zie DNS TXT-record"
       ],
       "See how": [
         "Zie hoe"
@@ -469,6 +481,9 @@
       ],
       "Signing in": [
         "Aanmelden"
+      ],
+      "Stop using single sign-on": [
+        "Stop met single sign-on"
       ],
       "Submit": [
         "Versturen"
@@ -795,6 +810,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadres, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
@@ -844,6 +863,11 @@
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktop app"
       ]
     },
     "Bug category": {
@@ -1843,6 +1867,12 @@
       ]
     },
     "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Toegang tot de desktop app is beperkt"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "De bètaversie van de ${ MAIL_APP_NAME } desktop app is momenteel beschikbaar voor iedereen met een betaald ${ MAIL_APP_NAME } abonnement. Upgrade vandaag nog om toegang te krijgen."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Voor toegang kunt u vandaag upgraden of begin 2024 nog een keer controleren."
       ]
@@ -1888,6 +1918,16 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betaalde ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- en ${ PASS_SHORT_APP_NAME }-functies"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Bevat versiegeschiedenis in ${ DRIVE_SHORT_APP_NAME }, toegang tot duizenden snelle ${ VPN_SHORT_APP_NAME } servers, delen in ${ PASS_SHORT_APP_NAME } en meer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -1897,6 +1937,12 @@
       ],
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME } desktop app"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
       ]
     },
     "Error": {
@@ -1996,6 +2042,9 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
+      "Organization key must be activated to create non-private users": [
+        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -2038,6 +2087,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
+      "Please upload an xml file": [
+        "Upload een xml-bestand"
+      ],
+      "Please upload only 1 file": [
+        "Upload slechts 1 bestand"
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -2077,11 +2132,17 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Om niet-privé gebruikersaccounts en toegang tot hun accounts aan te maken, moet u uw beheerdersbevoegdheden herstellen."
+      ],
       "Try again later": [
         "Probeer het later opnieuw"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unable to upload file": [
+        "Kan het bestand niet uploaden"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -2663,6 +2724,9 @@
       "Name": [
         "Naam"
       ],
+      "Select your deal": [
+        "Kies uw deal"
+      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
       ],
@@ -2693,6 +2757,11 @@
         "Gebruikersnaam"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Voeg deze record toe aan uw domein in het beheerpaneel van uw domeinnaam register"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mailadres"
@@ -2707,6 +2776,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } en u zult ze handmatig moeten aanmaken om ze weer toe te voegen aan uw organisatie"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
@@ -2872,6 +2944,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
@@ -2923,11 +2998,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "SAML-authenticatie voor de organisatie configureren via een identiteitsprovider (IdP). Dit zal SAML voor de hele organisatie inschakelen."
+      ],
       "Continue with ${ freeName }": [
         "Ga verder met ${ freeName }"
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identity provider"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
       ],
       "Copy the suggested password to clipboard": [
         "Kopieer het voorgestelde wachtwoord naar het klembord"
@@ -2979,8 +3063,20 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DNS TXT record": [
+        "DNS TXT record"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
+      ],
+      "Domain ownership failed verification.": [
+        "Domeineigendom mislukt verificatie."
+      ],
+      "Domain ownership not verified.": [
+        "Domein eigendom niet geverifieerd."
+      ],
+      "Domain ownership verified.": [
+        "Domein eigendom geverifieerd."
       ],
       "Done": [
         "Klaar"
@@ -3023,6 +3119,9 @@
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Endpoint URL ontvangen van uw identity provider (bv. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Verbeter uw netwerkbeveiliging"
@@ -3081,6 +3180,9 @@
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Voor leden van organisaties die een enkel bord gebruiken (SAML SSO)"
+      ],
       "Free forever": [
         "Altijd gratis"
       ],
@@ -3090,8 +3192,14 @@
       "Get ${ upsellPlanName }": [
         "Kies ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Ga naar uw identiteitsprovider, haal de SAML-metadata voor ${ appName } en importeer deze hier."
+      ],
       "here": [
         "hier"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Er moet een plaats zijn om de certificaathash van de identiteitsprovider te downloaden of te kopiëren. Plak gewoon de certificaathash in het tekstveld."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
@@ -3140,6 +3248,9 @@
       ],
       "inactive": [
         "inactief"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Verhoog de beveiliging van uw account door uw e-mailadres te verifiëren."
@@ -3231,6 +3342,9 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Niet-SSO-gebruikers (handmatig gemaakt, niet door uw Identity Provider) kunnen nog steeds inloggen in uw organisatie"
+      ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
@@ -3242,6 +3356,9 @@
       ],
       "old password": [
         "oud wachtwoord"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Zodra single sing-on uitgeschakeld is voor uw organisatie:"
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
@@ -3377,6 +3494,9 @@
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
       ],
+      "SAML configuration saved": [
+        "SAML-configuratie opgeslagen"
+      ],
       "Save ${ percentage }": [
         "Bespaar ${ percentage }"
       ],
@@ -3425,8 +3545,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Single sign-on removed": [
+        "Single sign-on verwijderd"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-gebruikers (verstrekt door uw Identity Provider) worden verwijderd"
       ],
       "Step ${ step }": [
         "Stap ${ step }",
@@ -3473,6 +3602,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Bedankt voor het ondersteunen van onze missie om een beter internet te bouwen waar privacy en vrijheid op de eerste plaats staan."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "De referenties van uw Identity Provider worden verwijderd."
       ],
       "The following address is invalid.": [
         "Het volgende adres is ongeldig.",
@@ -3528,6 +3660,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Deze verificatie kan tot één uur duren. U kunt veilig doorgaan tot de volgende stappen."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
       ],
@@ -3543,6 +3678,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U zult dit account niet kunnen heractiveren."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Dit verwijdert SSO voor ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dit zal uw tijdelijke wachtwoord vervangen. U zult het gebruiken om in de toekomst toegang te krijgen tot uw ${ BRAND_NAME } -account."
       ],
@@ -3554,6 +3692,9 @@
       ],
       "to ${ product } Business": [
         "naar ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Om het domein ${ boldDomainName } toe te staan SAML SSO te gebruiken u moet het eigendom hiervan verifiëren door het volgende DNS-TXT-record toe te voegen aan uw domein in uw DNS-provider."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Om uw abonnement op te zeggen, neem contact met ons op."
@@ -3618,6 +3759,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unieke ID gegenereerd door uw identiteitprovider, meestal in de vorm van een URL die de naam van de identiteitprovider erin bevat (bv. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
       ],
@@ -3656,6 +3800,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
+      ],
+      "Verify domain": [
+        "Domein verifiëren"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Controleer uw identiteit met een tijdgebonden eenmalig wachtwoord van een authenticator app"
@@ -3734,6 +3881,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
@@ -3893,6 +4043,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Uw organisatie maakt gebruik van een enkele aanmelding (SSO). Druk op aanmelden om door te gaan met uw SSO-provider."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
       ],
@@ -3963,6 +4116,9 @@
       "Credit": [
         "Tegoed"
       ],
+      "Credit note": [
+        "Creditnota"
+      ],
       "Currency conversion": [
         "Valuta's omrekenen"
       ],
@@ -4032,6 +4188,12 @@
       ],
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
+      ],
+      "Allowed Domain": [
+        "Toegestaan domein"
       ],
       "Amount": [
         "Bedrag"
@@ -4165,6 +4327,9 @@
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
       ],
+      "e.g. example.com": [
+        "bv. voorbeeld.com"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -4215,6 +4380,12 @@
       ],
       "Main": [
         "Primair"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metagegevens bestand voor ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metagegevens URL voor ${ appName }"
       ],
       "Method for importing metadata": [
         "Importeren metagegevens"
@@ -4315,6 +4486,9 @@
       "Proration": [
         "Verrekening"
       ],
+      "Public certificate (X.509)": [
+        "Openbaar certificaat (X.509)"
+      ],
       "Recovery email address": [
         "E-mailadres voor herstel"
       ],
@@ -4323,6 +4497,9 @@
       ],
       "Recovery phrase": [
         "Herstelzin"
+      ],
+      "Reply (ACS) URL": [
+        "Antwoord (ACS) URL"
       ],
       "Require 2FA for administrators": [
         "2FA vereisen voor beheerders"
@@ -4338,6 +4515,12 @@
       ],
       "Select your plan": [
         "Kies uw abonnement"
+      ],
+      "Single sign-on entity ID": [
+        "Single sign-on entiteit-ID"
+      ],
+      "Single sign-on URL": [
+        "URL voor enkele-teken"
       ],
       "Start date": [
         "Begindatum"
@@ -4365,6 +4548,9 @@
       ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "Value": [
+        "Waarde"
       ],
       "VAT": [
         "BTW"
@@ -4559,6 +4745,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activeer gebruiker"
+      ],
       "Change password": [
         "Wachtwoord wijzigen"
       ],
@@ -4930,6 +5119,9 @@
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
       ],
+      "Require 2FA for organization": [
+        "Tweetrapsauthenticatie vereist voor organisatie"
+      ],
       "Router support": [
         "Routerondersteuning"
       ],
@@ -4963,6 +5155,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integratie (binnenkort beschikbaar)"
       ],
       "Start protecting your organization": [
         "Begin met het beschermen van uw organisatie"
@@ -5005,6 +5200,9 @@
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
       "Unlimited vaults": [
         "Onbeperkt aantal kluizen"
@@ -5344,8 +5542,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Het speciaal ontworpen NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld tussen gebruikers over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
@@ -5499,6 +5703,12 @@
       "No permission": [
         "Geen toestemming"
       ],
+      "Organization only": [
+        "Alleen organisatie"
+      ],
+      "Receive from all": [
+        "Ontvang van alle"
+      ],
       "Router": [
         "Router"
       ],
@@ -5651,11 +5861,77 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Alle beheerders krijgen toegang tot de sleutel."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Weet u zeker dat u uw organisatiesleutel wilt wijzigen?"
+      ],
+      "Change organization key": [
+        "Organisatiesleutel wijzigen"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Niet-privé gebruikers kunnen worden gepromoveerd tot admin wanneer ze de configuratiesleutels hebben"
+      ],
+      "Organization key activated": [
+        "Organisatiesleutel geactiveerd"
+      ],
+      "Organization key does not exist.": [
+        "Organisatiesleutel bestaat niet."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "De organisatiesleutel moet geactiveerd worden om admin rechten te geven"
+      ],
+      "Organization key restored": [
+        "Organisatiesleutel hersteld"
+      ],
+      "Organization key updated": [
+        "Organisatiesleutel bijgewerkt"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
+      ],
+      "Reset organization key": [
+        "Herstel organisatiesleutel"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "De volgende beheerders zullen toegang krijgen tot de organisatiesleutel."
+      ],
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Dit zal de nieuwste organisatiesleutel sturen naar de beheerders die er op dit moment geen toegang toe hebben."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Om niet-privé gebruikers accounts te maken en toegang te krijgen tot hun accounts, moet u uw organisatiesleutel activeren."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Om beheerdersrechten op uw account in te schakelen, activeer de organisatiesleutel."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Gebruik een dataherstel methode of reset de organisatiesleutel om beheerdersbevoegdheden te herstellen."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Gebruik een data recovery methode, neem contact op met een andere beheerder of reset de organisatiesleutel om beheerdersrechten te herstellen."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "De beveiliging van de adressleutel van deze afzender kon niet worden geverifieerd. Soms is er een vertraging in het bijwerken van de gegevens van de afzender. Probeer het later opnieuw. Als u de geldigheid van deze uitnodiging of afzender niet vertrouwt, neem dan contact op met ${ BRAND_NAME } Customer Support."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "We hebben de authenticiteit van deze afzender en uitnodiging geverifieerd."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "U bent administrateur geworden van de organisatie **${ organizationName }** door"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
       ]
     },
     "Payment method option": {
@@ -5668,7 +5944,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Factuur Land"
+        "Land van facturering"
       ],
       "Card number": [
         "Kaartnummer"
@@ -5678,6 +5954,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Timeout exceeded": [
+        "Time-out overschreden"
       ]
     },
     "Payments.Error": {
@@ -5704,6 +5983,12 @@
       "No permission": [
         "Geen toestemming"
       ],
+      "Organization only": [
+        "Alleen organisatie"
+      ],
+      "Receive from all": [
+        "Ontvang van alle"
+      ],
       "Send to all": [
         "Sturen aan alle"
       ],
@@ -5729,6 +6014,15 @@
       ],
       "Confirm": [
         "Bevestig"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "bv. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "bv. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "bv. https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "E-mailadres"
@@ -5873,6 +6167,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } beheerder in uw organisatie heeft toegang nodig tot de organisatiesleutel.",
+        "${ n } beheerders in uw organisatie hebben toegang nodig tot de organisatiesleutel."
+      ],
       "Changing organization keys": [
         "Organisatiesleutels wijzigen"
       ],
@@ -5950,6 +6248,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer de aanvraag dan nu."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
       ],
@@ -5975,6 +6276,10 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "U kan uw wachtwoord resetten tot ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
@@ -6434,6 +6739,17 @@
         "${ currentPlanName } behouden"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Opslag voor gegevens gegenereerd door ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Tot ${ totalStorageSize } Drive opslag"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Tot ${ totalStorageSize } Mail-opslag"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } opslagruimte"
@@ -6459,6 +6775,9 @@
       "upgrade for more storage": [
         "upgrade voor meer opslag"
       ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
+      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
         "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
@@ -6483,6 +6802,18 @@
       ],
       "Your storage is full. ${ cta }.": [
         "Uw opslag is vol. ${ cta }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "U verliest de toegang tot ${ gb } opslag en prioriteitsondersteuning."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "U verliest de toegang tot extra opslagruimte, e-mailadressen, aliassen, agenda's en prioritaire ondersteuning."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "U verliest de toegang tot de hoogste VPN-snelheid, bescherming voor 10 apparaten, snelle streamen, ad-blocker en malware-bescherming, en prioritaire ondersteuning."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
       ]
     },
     "Subscription": {
@@ -6897,6 +7228,9 @@
       "Activate organization key": [
         "Organisatiesleutel activeren"
       ],
+      "Activate user": [
+        "Activeer gebruiker"
+      ],
       "Add address": [
         "E-mailadres toevoegen"
       ],
@@ -7109,6 +7443,12 @@
       "Email subscriptions": [
         "Nieuwsbrieven"
       ],
+      "Enter endpoints into your identity provider": [
+        "Voer eindpunten in bij uw identiteitsprovider"
+      ],
+      "Enter SAML metadata": [
+        "SAML metadata invoeren"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
       ],
@@ -7236,6 +7576,12 @@
       "Remove domain": [
         "Verwijder bestand"
       ],
+      "Remove single sign-on": [
+        "Verwijder single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Verwijder single sign-on voor uw organisatie?"
+      ],
       "Remove user?": [
         "Gebruiker verwijderen?"
       ],
@@ -7262,6 +7608,9 @@
       ],
       "Revoke certificate": [
         "Certificaat intrekken"
+      ],
+      "SAML authentication": [
+        "SAML authenticatie"
       ],
       "Select a plan": [
         "Selecteer een abonnement"
@@ -7304,6 +7653,9 @@
       ],
       "Signed in to member account": [
         "Ingelogd op een gebruikersaccount"
+      ],
+      "Single sign-on": [
+        "Single sign-on"
       ],
       "Status": [
         "Status"
@@ -7436,11 +7788,29 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identity provider"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Eindpunt URL van identiteitsprovider (bv. https://idp.example.com/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Functie in vroegtijdige toegang"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Haal de certificaathash op van uw identiteitsprovider."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Leden die geen 2FA gebruiken zullen een e-mail ontvangen met de vraag om het zo snel mogelijk in te schakelen."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
@@ -7450,6 +7820,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Normaal gesproken een URL die de naam van de identity provider bevat binnen"
       ],
       "Verified email address": [
         "Geverifieerd e-mailadres"
@@ -7495,6 +7868,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO-gebruiker verstrekt door uw identiteitsprovider"
       ]
     },
     "Validation": {
@@ -7631,6 +8009,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "U moet ${ activateLink } de organisatiesleutel hebben voordat u een e-mailadres toevoegt aan een niet-privé lid."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
