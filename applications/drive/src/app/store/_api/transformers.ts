@@ -3,10 +3,12 @@ import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
+import { ShareInvitationPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
+import { ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
-import type { ShareMemberPayload, ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
@@ -14,7 +16,7 @@ import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
 import { ShareMember, ShareURLLEGACY, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
-import type { Share, ShareURL, ShareWithKey } from '../_shares';
+import type { Share, ShareInvitation, ShareURL, ShareWithKey } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
 
 // LinkMetaWithShareURL is used when loading shared links.
@@ -231,18 +233,27 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
 
 export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload): ShareMember => {
     return {
-        shareId: shareMember.ShareID,
-        unlockable: shareMember.Unlockable,
-        addressId: shareMember.AddressID,
         memberId: shareMember.MemberID,
-        addressKeyId: shareMember.AddressKeyID,
+        email: shareMember.Email,
+        inviterEmail: shareMember.InviterEmail,
+        addressId: shareMember.AddressID,
         createTime: shareMember.CreateTime,
-        inviter: shareMember.Inviter,
-        keyPacket: shareMember.KeyPacket,
-        keyPacketSignature: shareMember.KeyPacketSignature,
         modifyTime: shareMember.ModifyTime,
         permissions: shareMember.Permissions,
+        keyPacketSignature: shareMember.KeyPacketSignature,
         sessionKeySignature: shareMember.SessionKeySignature,
-        state: shareMember.State,
+    };
+};
+
+export const shareInvitationPayloadToShareInvitation = (shareInvitation: ShareInvitationPayload): ShareInvitation => {
+    return {
+        invitationId: shareInvitation.InvitationID,
+        inviterEmail: shareInvitation.InviterEmail,
+        inviteeEmail: shareInvitation.InviteeEmail,
+        permissions: shareInvitation.Permissions,
+        keyPacket: shareInvitation.KeyPacket,
+        keyPacketSignature: shareInvitation.KeyPacketSignature,
+        createTime: shareInvitation.CreateTime,
+        state: shareInvitation.State,
     };
 };

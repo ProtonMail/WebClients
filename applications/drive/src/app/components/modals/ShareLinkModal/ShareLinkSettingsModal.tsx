@@ -34,6 +34,7 @@ interface Props {
         password?: string,
         duration?: number | null
     ) => Promise<void | (unknown & { expirationTime: number | null })>;
+    deleteShareEnabled: boolean;
     modificationDisabled: boolean;
     confirmationMessage: string;
     havePublicSharedLink: boolean;
@@ -45,6 +46,7 @@ const ShareLinkSettingsModal = ({
     onSaveLinkClick,
     isDeleting,
     deleteLink,
+    deleteShareEnabled,
     modificationDisabled,
     confirmationMessage,
     havePublicSharedLink,
@@ -206,12 +208,13 @@ const ShareLinkSettingsModal = ({
                     </div>
                     <hr className="my-5" />
                     <div className="flex flex-nowrap justify-space-between items-center">
-                        <div className="flex flex-column flex-1 p-0">
+                        <div className={clsx('flex flex-column flex-1 p-0', !havePublicSharedLink && 'opacity-30')}>
                             <span className="text-semibold">{c('Label').t`Delete link`}</span>
                             <span className="color-weak">{c('Label')
                                 .t`Erase this link and remove everyone with access`}</span>
                         </div>
                         <Button
+                            disabled={!deleteShareEnabled}
                             className="flex items-center"
                             shape="ghost"
                             color="danger"
