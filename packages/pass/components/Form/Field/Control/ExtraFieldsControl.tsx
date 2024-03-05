@@ -16,10 +16,11 @@ import { ValueControl } from './ValueControl';
 type ExtraFieldsControlProps = {
     extraFields: UnsafeItemExtraField[];
     itemId: string;
+    revisionNumber: number;
     shareId: string;
 };
 
-export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
+export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, revisionNumber, shareId }) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
@@ -44,6 +45,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                             payload={{
                                 index,
                                 itemId,
+                                revisionNumber,
                                 shareId,
                                 totpUri: data.totpUri,
                                 type: 'extraField',
