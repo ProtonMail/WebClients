@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms/index';
 import { useLoading } from '@proton/hooks/index';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
-import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
@@ -17,6 +17,7 @@ import { useApi } from '../../../../hooks';
 import { GenericError } from '../../../error';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
+import BusyTimeSlotsCheckbox from '../BusyTimeSlotsCheckbox';
 import {
     getCalendarPayload,
     getCalendarSettingsPayload,
@@ -33,7 +34,7 @@ interface Props {
 const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Props) => {
     const [, setCalendar] = useState<VisualCalendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
-    const [model, setModel] = useState(() => getDefaultModel());
+    const [model, setModel] = useState(() => getDefaultModel(CALENDAR_TYPE.SUBSCRIPTION));
     const [error, setError] = useState(false);
     const [validationError, setValidationError] = useState<CALENDAR_SUBSCRIPTION_STATUS>();
 
@@ -178,6 +179,14 @@ ${kbLink}
                                 setCalendarURL(e.target.value.trim());
                             }}
                             data-testid="input:calendar-subscription"
+                            className="mb-4"
+                        />
+
+                        <BusyTimeSlotsCheckbox
+                            value={model.shareBusyTimeSlots}
+                            onChange={(shareBusyTimeSlots) => {
+                                setModel({ ...model, shareBusyTimeSlots });
+                            }}
                         />
                     </>
                 )

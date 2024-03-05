@@ -1,6 +1,6 @@
 import { CSSProperties, useMemo } from 'react';
 
-import { CalendarViewEvent } from '../../containers/calendar/interface';
+import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
 import { layout } from './layout';
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';
@@ -29,7 +29,7 @@ export interface EventsInRowSummary {
 }
 const useDayGridEventLayout = (
     rows: Date[][],
-    events: CalendarViewEvent[],
+    events: (CalendarViewEvent | CalendarViewBusyEvent)[],
     numberOfRows: number,
     dayEventHeight: number
 ) => {

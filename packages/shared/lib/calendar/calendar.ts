@@ -327,10 +327,13 @@ const getHasChangedCalendarNotifications = (
     );
 };
 
+export type EditableCalendarSettings = Pick<
+    CalendarSettings,
+    'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications' | 'MakesUserBusy'
+>;
+
 const getHasChangedCalendarSettings = (
-    newSettings: Required<
-        Pick<CalendarSettings, 'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'>
-    >,
+    newSettings: Required<EditableCalendarSettings>,
     oldSettings?: CalendarSettings
 ) => {
     if (!oldSettings) {
@@ -341,24 +344,26 @@ const getHasChangedCalendarSettings = (
         DefaultEventDuration: newDuration,
         DefaultPartDayNotifications: newPartDayNotifications,
         DefaultFullDayNotifications: newFullDayNotifications,
+        MakesUserBusy: newMakesUserBusy,
     } = newSettings;
     const {
         DefaultEventDuration: oldDuration,
         DefaultPartDayNotifications: oldPartDayNotifications,
         DefaultFullDayNotifications: oldFullDayNotifications,
+        MakesUserBusy: oldMakesUserBusy,
     } = oldSettings;
+
     return (
         newDuration !== oldDuration ||
         getHasChangedCalendarNotifications(newPartDayNotifications, oldPartDayNotifications) ||
-        getHasChangedCalendarNotifications(newFullDayNotifications, oldFullDayNotifications)
+        getHasChangedCalendarNotifications(newFullDayNotifications, oldFullDayNotifications) ||
+        newMakesUserBusy !== oldMakesUserBusy
     );
 };
 export const updateCalendar = async (
     calendar: VisualCalendar,
     calendarPayload: CalendarCreateData,
-    calendarSettingsPayload: Required<
-        Pick<CalendarSettings, 'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'>
-    >,
+    calendarSettingsPayload: Required<EditableCalendarSettings>,
     readCalendarBootstrap: (calendarID: string) => any,
     getAddresses: GetAddresses,
     api: Api

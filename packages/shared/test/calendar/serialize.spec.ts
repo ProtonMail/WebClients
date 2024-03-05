@@ -4,7 +4,11 @@ import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
-import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
+import {
+    ATTENDEE_STATUS_API,
+    CALENDAR_SHARE_BUSY_TIME_SLOTS,
+    EVENT_VERIFICATION_STATUS,
+} from '../../lib/calendar/constants';
 import { readCalendarEvent, readSessionKeys } from '../../lib/calendar/deserialize';
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
@@ -135,6 +139,7 @@ const transformToExternal = (
             DefaultEventDuration: 30,
             DefaultPartDayNotifications: [],
             DefaultFullDayNotifications: [],
+            MakesUserBusy: CALENDAR_SHARE_BUSY_TIME_SLOTS.YES,
         },
         addresses: [],
     };
