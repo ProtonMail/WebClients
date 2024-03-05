@@ -9,11 +9,13 @@ import {
     DropdownMenuButton,
     SimpleDropdown,
     UpsellModal,
+    getUpsellSubscriptionModalConfig,
     useModalState,
 } from '@proton/components/components';
+import { useSubscriptionModal } from '@proton/components/containers';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
@@ -153,6 +155,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
         },
         ref
     ) => {
+        const [openSubscriptionModal] = useSubscriptionModal();
         const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
         const handleShowUpsellModal = () => {
             handleUpsellModalDisplay(true);
@@ -163,6 +166,11 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             component: UPSELL_COMPONENT.MODAL,
             feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
         });
+
+        const handleUpgrade = () => {
+            console.log(upsellRef);
+            openSubscriptionModal(getUpsellSubscriptionModalConfig());
+        };
 
         return (
             <>
@@ -189,12 +197,13 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                 </SimpleDropdown>
                 {renderUpsellModal && (
                     <UpsellModal
+                        onUpgrade={handleUpgrade}
                         data-testid="composer:schedule-send:upsell-modal"
                         title={c('Title').t`Set your own schedule`}
                         description={c('Description')
                             .t`Unlock custom message scheduling and other benefits when you upgrade your plan.`}
                         modalProps={upsellModalProps}
-                        upgradePath={addUpsellPath(getUpgradePath({}), upsellRef)}
+                        upgradePath="#"
                         features={[
                             'schedule-messages',
                             'auto-delete-trash-and-spam',
