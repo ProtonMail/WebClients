@@ -733,10 +733,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } Mal",
-        "${ revisionNumber } Mal"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
       ],
@@ -805,6 +801,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV bietet ein praktisches Format zur Anzeige deiner Daten. Aufgrund seiner Einfachheit werden jedoch einige Daten nicht einbezogen (benutzerdefinierte Felder, Tresorstruktur...). Für einen vollständigen Export empfehlen wir die Verwendung eines anderen Formats."
+      ],
+      "Current version": [
+        "Aktuelle Version"
       ],
       "Decrypting your data": [
         "Deine Daten werden entschlüsselt"
@@ -1374,9 +1373,6 @@
       "Last 2 weeks": [
         "Letzte 2 Wochen"
       ],
-      "Last autofill": [
-        "Letztes Auto-Ausfüllen"
-      ],
       "Last month": [
         "Letzter Monat"
       ],
@@ -1765,6 +1761,9 @@
       "Grant permissions": [
         "Berechtigungen erteilen"
       ],
+      "History": [
+        "Verlauf"
+      ],
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
@@ -1788,6 +1787,9 @@
       ],
       "Members": [
         "Mitglieder"
+      ],
+      "Modified": [
+        "Geändert"
       ],
       "Move all items ?": [
         "Alle Einträge verschieben?"
