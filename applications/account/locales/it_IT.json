@@ -3258,48 +3258,68 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descrizione: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIZIONE:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } è stato cancellato."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Tutti gli eventi di questa serie sono stati aggiornati."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Questa occorrenza di ${ eventTitle } è stata cancellata."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tutti gli eventi di questa serie sono stati aggiornati. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Questa occorrenza dell'evento è stata cancellata."
+      ],
+      "This event occurrence was updated.": [
+        "Questa occorrenza dell'evento è stata aggiornata."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Questa occorrenza dell'evento è stata aggiornata. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Questo evento è stato aggiornato."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Questo evento è stato aggiornato. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Sei stato inviato a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quando: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "QUANDO:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Quando: ${ formattedStart } (tutto il giorno)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "QUANDO:\n${ formattedStart } (tutto il giorno)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quando: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "QUANDO:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Rimosso"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Dove: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "POSIZIONE:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha accettato il tuo invito a ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } ha rifiutato il tuo invito a ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha accettato provvisoriamente il tuo invito a ${ eventTitle }"
       ]
     },
@@ -10464,17 +10484,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10574,6 +10583,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11717,7 +11737,7 @@
       "For businesses": [
         "Per le aziende"
       ],
-      "For invididuals": [
+      "For individuals": [
         "Per gli individui"
       ]
     },

@@ -3258,48 +3258,59 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Kuvaus: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "KUVAUS:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } on peruttu."
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } peruttiin."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } päivitettiin.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Kaikki tämän sarjan tapahtumat päivitettiin."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Ketjun ${ eventTitle } tämä tapahtumakerta on peruttu."
+      "This event occurrence was canceled.": [
+        "Tämä tapahtuma peruttiin."
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Sinut on kutsuttu tapahtumaan ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was updated.": [
+        "Tämä tapahtuma päivitettiin."
+      ],
+      "This event was updated.": [
+        "Tämä tapahtuma päivitettiin."
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "AIka: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "AIKA:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "AIka: ${ formattedStart } (koko päivä)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "AIKA:\n${ formattedStart } (koko päivä)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "AIka: ${ formattedStart } – ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "AIKA:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Poistettu"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Sijainti: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "SIJAINTI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } hyväksyi kutsusi tapahtumaan ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } kieltäytyi kutsustasi tapahtumaan ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } hyväksyi alustavasti kutsusi tapahtumaan ${ eventTitle }"
       ]
     },
@@ -10437,17 +10448,6 @@
         "Tiimin hallinta"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10541,6 +10541,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11656,9 +11667,6 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Yrityksille"
-      ],
-      "For invididuals": [
-        "Yksityishenkilöille"
       ]
     },
     "passwordless": {
