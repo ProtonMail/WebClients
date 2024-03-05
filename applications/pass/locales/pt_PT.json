@@ -529,10 +529,6 @@
         " ${ n } item",
         "${ n } itens"
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } vez.",
-        "${ revisionNumber } vezes."
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Actualize para desfrutar das funcionalidades e correções de erros mais recentes."
       ],
@@ -553,6 +549,9 @@
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
+      ],
+      "Current version": [
+        "Versão atual"
       ],
       "Decrypting your data": [
         "A desencriptar os seus dados"
@@ -905,9 +904,6 @@
       "Last 2 weeks": [
         "Últimas 2 semanas"
       ],
-      "Last autofill": [
-        "Último preenchimento automático"
-      ],
       "Last month": [
         "Último mês"
       ],
@@ -1248,6 +1244,9 @@
       "Grant permissions": [
         "Conceda as permissões"
       ],
+      "History": [
+        "Histórico"
+      ],
       "Import - ${ date }": [
         "Importar - ${ date }"
       ],
@@ -1262,6 +1261,9 @@
       ],
       "Members": [
         "Membros"
+      ],
+      "Modified": [
+        "Modificado"
       ],
       "Our welcome gift to you": [
         "Aproveite o seu período de teste gratuito"

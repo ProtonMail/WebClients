@@ -822,10 +822,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } tarjoaa vahvan salasanan luontia rekisteröitymislomakkeissa."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kerran",
-        "${ revisionNumber } kertaa"
-      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
         "${ trialDaysLeft } päivää jäljellä"
@@ -907,6 +903,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV tarjoaa kätevän muodon tietojen tarkasteluun. Sen yksinkertaisuuden vuoksi joitain tietoja ei kuitenkaan voida sisällyttää (omat kentät, holvirakenne, jne.). Täydellistä vientiä varten suosittelemme eri tiedostomuodon käyttämistä."
+      ],
+      "Current version": [
+        "Nykyinen versio"
       ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
@@ -1214,6 +1213,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun kenttää klikataan tai se kohdistetaan."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Vienti sisältää vain omistamasi holvit."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
@@ -1545,9 +1547,6 @@
       "Last 2 weeks": [
         "Kahden viikon aikana"
       ],
-      "Last autofill": [
-        "Täytetty"
-      ],
       "Last month": [
         "Neljän viikon aikana"
       ],
@@ -1634,6 +1633,9 @@
       ],
       "Pause list": [
         "Keskeytyslista"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-salattu JSON-tiedosto (suositus)"
       ],
       "PIN": [
         "PIN-koodi"
@@ -1965,6 +1967,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "History": [
+        "Historia"
+      ],
       "Import - ${ date }": [
         "Tuontipäivä - ${ date }"
       ],
@@ -1985,6 +1990,9 @@
       ],
       "Members": [
         "Jäsentä"
+      ],
+      "Modified": [
+        "Muokattu"
       ],
       "Move all items ?": [
         "Siirretäänkö kaikki kohteet?"

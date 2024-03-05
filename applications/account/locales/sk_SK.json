@@ -50,6 +50,9 @@
       "activate": [
         "aktivovať"
       ],
+      "Activate": [
+        "Aktivovať"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Change keys": [
+        "Zmeniť kľúče"
       ],
       "Change mailbox password": [
         "Zmeniť heslo k poštovej schránke"
@@ -3271,52 +3277,6 @@
         "Túto kartu môžete bezpečne zavrieť."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Popis: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } bolo zrušené."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } bolo aktualizované.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Tento výskyt ${ eventTitle } bol zrušený."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Ste pozvaní na ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Kedy: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Kedy: ${ formattedStart } (celý deň)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kedy: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Kde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } prijal vašu pozvánku na ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmietol/odmietla vašu pozvánku na ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } predbežne prijal/a vaše pozvanie na ${ eventTitle }"
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } pridaný"
@@ -3921,6 +3881,9 @@
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný organizačný kľúč"
       ],
       "Password is required": [
         "Heslo je požadované"
@@ -8547,6 +8510,9 @@
       "Addresses": [
         "Adresy"
       ],
+      "Administrators": [
+        "Správcovia"
+      ],
       "ALL": [
         "VŠETKY"
       ],
@@ -9323,6 +9289,9 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "Verification code": [
         "Overovací kód"
@@ -10543,17 +10512,6 @@
         "Tímový manažment"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ trialPlanName } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končiaca na ${ last4 }"
@@ -10647,6 +10605,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ trialPlanName } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11710,14 +11679,18 @@
         "Zabezpečte svoj účet"
       ]
     },
-    "pass_signup_2023: title": {
-      "For invididuals": [
-        "Pre jednotlivcov"
-      ]
-    },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Prístup ku kľúču získajú všetci správcovia."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Naozaj chcete zmeniť kľúč organizácie?"
+      ],
       "Change organization key": [
         "Zmeniť kľúč organizácie"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
       ],
       "Organization key activated": [
         "Kľúč organizácie bol aktivovaný"
@@ -11725,11 +11698,53 @@
       "Organization key does not exist.": [
         "Kľúč organizácie neexistuje."
       ],
+      "Organization key must be activated to give admin privileges": [
+        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
+      ],
+      "Organization key restored": [
+        "Obnovený kľúč organizácie"
+      ],
+      "Organization key updated": [
+        "Aktualizovaný kľúč organizácie"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
+      ],
+      "Reset organization key": [
+        "Obnoviť kľúč organizácie"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Nasledujúci správcovia získajú prístup ku kľúču organizácie."
+      ],
       "The organization key must be activated first.": [
         "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Týmto sa odošle najnovší kľúč organizácie správcom, ktorí k nemu momentálne nemajú prístup."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Na vytvorenie nesúkromných ​používateľských účtov a získanie prístupu k ich účtom, budete musieť aktivovať kľúč organizácie."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Pre povolenie práva správcu vo svojom účte, aktivujte organizačný kľúč."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Použite metódu obnovenia údajov alebo obnovte kľúč organizácie na obnovenie oprávnení správcu."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Použite metódu obnovenia údajov, obráťte sa na iného správcu alebo obnovte kľúč organizácie na obnovenie oprávnení správcu."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Overili sme pravosť tohto odosielateľa a pozvánky."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Boli ste menovaný správcom organizácie **${ organizationName }** používateľom"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
       ]
     },
     "Payment method option": {
@@ -12073,6 +12088,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } správca vo vašej organizácii potrebuje prístup ku kľúču organizácie.",
+        "${ n } správcovia vo vašej organizácii potrebujú prístup ku kľúču organizácie.",
+        "${ n } správcov vo vašej organizácii potrebuje prístup ku kľúču organizácie.",
+        "${ n } správcov vo vašej organizácii potrebuje prístup ku kľúču organizácie."
+      ],
       "Changing organization keys": [
         "Zmena kľúčov organizácie"
       ],
@@ -13102,6 +13123,9 @@
       "Address updated": [
         "Adresa aktualizovaná"
       ],
+      "Administrator privileges restored": [
+        "Obnovené oprávnenia správcu"
+      ],
       "Auto-reply disabled": [
         "Automatická odpoveď vypnutá"
       ],
@@ -13697,6 +13721,9 @@
       "Composing": [
         "Zostavovanie"
       ],
+      "Confirm": [
+        "Potvrdiť"
+      ],
       "Confirm address": [
         "Potvrdiť adresu"
       ],
@@ -14119,6 +14146,9 @@
       ],
       "Organization filters": [
         "Filtre organizácie"
+      ],
+      "Organization key": [
+        "Kľúč organizácie"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -15033,6 +15063,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Zistili sme problém s vašou konfiguráciou DNS. Uistite sa prosím, že sa vaše záznamy zhodujú s nižšie uvedenými inštrukciami. Ak problém pretrváva, budeme musieť DKIM vypnúť."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Pred pridaním emailovej adresy k nesúkromnému členovi musíte ${ activateLink } kľúč organizácie."
       ],
       "You will lose any customization you made so far.": [
         "Prídete o zmeny, ktoré ste doteraz vykonali."

@@ -3175,49 +3175,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivelse: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "Beskrivelse:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } har blitt kansellert."
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } ble kansellert."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } er blitt oppdatert.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Alle hendelsene i denne serien ble oppdatert."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Denne forekomsten av ${ eventTitle } er kansellert."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle hendelsene i denne serien ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du er invitert til ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Denne hendelsesforekomsten ble kansellert."
+      ],
+      "This event occurrence was updated.": [
+        "Hendelsesforekomsten ble oppdatert."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denne hendelsesforekomsten ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Denne hendelsen ble oppdatert."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denne hendelsen ble oppdatert. Her er hva som endret seg:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du er invitert til ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Når: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "Tidspunkt:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Når: ${ formattedStart } (hele dagen)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "Tidspunkt:\n${ formattedStart } (hele dagen)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Når: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "Tidspunkt:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Fjernet"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Hvor: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "Sted:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har akseptert din invitasjon til ${ eventTitle }."
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aksepterte din invitasjon til ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har avslått din invitasjon til ${ eventTitle }."
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } avslo invitasjonen din til ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har foreløpig akseptert invitasjonen til ${ eventTitle }."
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } foreløpig aksepterte invitasjonen din til ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -4410,22 +4430,11 @@
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Gled deg over rask, sikker og distraksjonsfri tilgang til innboksen og kalenderen din."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Få ubegrenset tilgang med betalt ${ BRAND_NAME }-plan"
-      ],
-      "Introducing the desktop app": [
-        "Introduserer skrivebordsappen"
-      ],
-      "No credit card required": [
-        "Ingen kredittkort kreves"
+      "No credit card required.": [
+        "Ingen kredittkort kreves."
       ],
       "Upgrade now": [
         "Oppgrader nå"
-      ]
-    },
-    "Free trial destkop": {
-      "Try free for 14 days": [
-        "Prøv gratis i 14 dager"
       ]
     },
     "Get started checklist instructions": {
@@ -8267,6 +8276,11 @@
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(vil åpne ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Se logger"
@@ -9123,6 +9137,9 @@
       ],
       "Labels applied.": [
         "Etiketter anvendt"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Sist endrede aliaser lagret i ditt eldste hvelv"
       ],
       "Mail list unsubscribed": [
         "E-postliste avmeldt"

@@ -3207,49 +3207,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Апісанне: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "АПІСАННЕ:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } было скасавана."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } было абноўлена.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Усе падзеі ў гэтай серыі былі абноўлены."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Гэта паўтарэнне ${ eventTitle } было скасавана."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Усе падзеі ў гэтай серыі былі абноўлены. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вас запрасілі на ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Паўтарэнне гэтай падзеі было скасавана."
+      ],
+      "This event occurrence was updated.": [
+        "Паўтарэнне гэтай падзеі было абноўлена."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Паўтарэнне гэтай падзеі было абноўлена. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Гэта падзея была абноўлена."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Гэта падзея была абноўлена. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Вас запрасілі на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Калі: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "ЧАС:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Калі: ${ formattedStart } (увесь дзень)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "ЧАС:\n${ formattedStart } (увесь дзень)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Калі: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ЧАС:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Выдалена"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Дзе: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "РАЗМЯШЧЭННЕ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } прымаў(-ла) ваша запрашэнне на ${ eventTitle }"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } адхіляў(-ла) ваша запрашэнне на ${ eventTitle }"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } адхіліў(-ла) ваша запрашэнне на ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } умоўна прымаў(-ла) ваша запрашэнне на ${ eventTitle }"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } умоўна прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -4479,25 +4499,28 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Настольная праграма ${ MAIL_APP_NAME }"
       ],
+      "14-day destkop app trial.": [
+        "Пробны перыяд настольнай праграмы на працягу 14 дзён."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Атрымлівайце асалоду ад хуткага і бяспечнага доступу без рэкламы да паштовай скрыні і календара."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Атрымлівайце неабмежаваны доступ з платным тарыфным планам ${ BRAND_NAME }"
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Атрымлівайце неабмежаваны доступ з любым тарыфным планам ${ MAIL_APP_NAME }."
       ],
-      "Introducing the desktop app": [
-        "Уводзіны ў настольную праграму"
+      "No credit card required.": [
+        "Крэдытная картка не патрабуецца."
       ],
-      "No credit card required": [
-        "Крэдытная картка не патрабуецца"
+      "Try the app-new desktop app": [
+        "Паспрабуйце новую настольную праграму"
       ],
       "Upgrade now": [
         "Палепшыць"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "Паспрабуйце бясплатна на працягу 14 дзён"
+      "Start free trial": [
+        "Пачаць бясплатны пробны перыяд"
       ]
     },
     "Get started checklist instructions": {
@@ -8549,6 +8572,11 @@
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(адкрые ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Паглядзець журнал"
@@ -9499,6 +9527,9 @@
       ],
       "Labels applied.": [
         "Меткі ўжыты."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Апошнія змененыя псеўданімы захоўваюцца ў вашым самым старым сховішчы"
       ],
       "Mail list unsubscribed": [
         "Ваш адрас выдалены са спіса рассылкі"

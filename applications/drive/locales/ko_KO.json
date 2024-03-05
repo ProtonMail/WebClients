@@ -2016,49 +2016,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "설명: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "설명:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } 이(가) 취소되었습니다."
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle }이(가) 취소되었습니다."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 이(가) 업데이트 되었습니다.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "해당 주제의 모든 이벤트가 업데이트되었습니다."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "${ eventTitle }의 시작이 취소되었습니다."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "해당 주제의 모든 이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "${ eventTitle } 에 초대되었습니다\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "이 이벤트의 개최는 취소되었습니다."
+      ],
+      "This event occurrence was updated.": [
+        "이 이벤트의 개최가 업데이트되었습니다."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "이벤트 변경사항이 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "이 이벤트는 업데이트 되었습니다."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "이벤트가 업데이트되었습니다. 변경된 내용은 다음과 같습니다:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle }에 초대받았습니다.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "어디서: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "시간:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "언제: ${ formattedStart } (매일)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "시간:\n${ formattedStart } (종일)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "언제: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "시간:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "제거됨"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "어디서: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "위치:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 이(가) ${ eventTitle } 의 초대를 수락했습니다"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle } 의 초대를 수락했습니다"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 이(가) ${ eventTitle } 의 초대를 거부했습니다"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle }의 초대를 거부했습니다"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 이(가) ${ eventTitle } 의 초대를 잠정적으로 수락했습니다"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle } 의 초대를 잠정적으로 수락했습니다"
       ]
     },
     "Email subject": {
@@ -5851,6 +5871,11 @@
         "이메일 주소를 누군가 물어본다면, 별명을 대신 제공하세요. 별명이 ${ passLink }에 의해 제공됩니다."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME }을 엽니다)"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "로그 보기"
@@ -6371,6 +6396,9 @@
       ],
       "Import record deleted": [
         "불러오기 기록 삭제됨"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "마지막으로 편집한 별명은 가장 오래된 금고에 저장되었습니다"
       ],
       "Phone number copied to clipboard": [
         "휴대전화 번호가 클립보드에 복사되었습니다"
@@ -6954,7 +6982,7 @@
         "무엇을 가져오시겠어요?"
       ],
       "What's new": [
-        "변경 사항"
+        "새로운 사항"
       ],
       "You have inaccessible files": [
         "접근이 불가능한 파일이 있습니다"

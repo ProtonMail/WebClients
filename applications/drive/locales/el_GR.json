@@ -2025,49 +2025,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Περιγραφή: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "ΠΕΡΙΓΡΑΦΗ:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "Το ${ eventTitle } έχει ακυρωθεί."
+      "${ eventTitle } was canceled.": [
+        "Η ${ eventTitle } ακυρώθηκε."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Αυτό το περιστατικό του ${ eventTitle } έχει ακυρωθεί."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Όλες οι εκδηλώσεις αυτής της σειράς ενημερώθηκαν. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Σας προσκαλούμε σε ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Αυτή η εμφάνιση εκδήλωσης ακυρώθηκε."
+      ],
+      "This event occurrence was updated.": [
+        "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Αυτή η εμφάνιση εκδήλωσης ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Αυτή η εκδήλωση ενημερώθηκε."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Αυτή η εκδήλωση ενημερώθηκε. Δείτε τι άλλαξε:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Σας προσκαλούμε στη ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Πότε: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Πότε: ${ formattedStart } (όλη την ημέρα)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "${ formattedStart } (όλη την ημέρα)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Πότε: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Αφαιρέθηκε"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Πού: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "ΤΟΠΟΘΕΣΙΑ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } έχει αποδεχθεί την πρόσκληση σας στο ${ eventTitle }"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } αποδέχτηκε την πρόσκληση σας στο ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } έχει απορρίψει την πρόσκληση σας στο ${ eventTitle }"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } απόρριψε την πρόσκληση σας στο ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } έχει αποδεχτεί προσωρινά την πρόσκληση σας στο ${ eventTitle }"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } αποδέχτηκε προσωρινά την πρόσκληση σας στο ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -5972,6 +5992,11 @@
         "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(θα ανοίξει ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Προβολή αρχείων καταγραφής"
@@ -6513,6 +6538,9 @@
       ],
       "Import record deleted": [
         "Η εισαγωγή εγγραφής διαγράφηκε"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Τελευταία τροποποιημένα ψευδώνυμα που είναι αποθηκευμένα στην παλαιότερη κρύπτη"
       ],
       "Phone number copied to clipboard": [
         "Ο αριθμός τηλεφώνου αντιγράφηκε στο πρόχειρο"

@@ -359,6 +359,9 @@
       "Remove gift code": [
         "移除禮品代碼"
       ],
+      "Remove single sign-on": [
+        "移除單一登入"
+      ],
       "Rename": [
         "重新命名"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "登入"
+      ],
+      "Stop using single sign-on": [
+        "停止使用單一登入"
       ],
       "Submit": [
         "送出"
@@ -739,6 +745,9 @@
       ]
     },
     "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "使用黑色星期五優惠於高速VPN"
+      ],
       "Select your Black Friday offer": [
         "選取您的黑色星期五方案"
       ],
@@ -1897,6 +1906,11 @@
         "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "包含 ${ DRIVE_SHORT_APP_NAME } 版本歷程、存取 ${ VPN_SHORT_APP_NAME } 數以千計高速伺服器、${ PASS_SHORT_APP_NAME } 的分享功能以及更多。"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -1935,6 +1949,9 @@
       ],
       "Code wrong or not valid anymore": [
         "代碼錯誤或不再有效"
+      ],
+      "Coudn't load invoices. Please try again later.": [
+        "無法載入發票。請稍後再試。"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -2435,7 +2452,7 @@
         "新增"
       ],
       "Add (${ numberOfAddedServers })": [
-        "添加(${ numberOfAddedServers })"
+        "新增 (${ numberOfAddedServers } 台)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "多達 ${ plusVpnConnections } 台裝置的連線"
@@ -2702,6 +2719,11 @@
         "使用者名稱"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "請在您的網域名稱註冊機構的控制台中新增此記錄到您的網域中"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "電郵"
@@ -2716,6 +2738,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
+      ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation }，您將需要手動建立以便重新加入至您的組織中"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
@@ -2745,7 +2770,7 @@
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter }伺服器正在設定。通常需要接近${ provisioningDuration }。"
+        "${ provisioningCounter } 台伺服器仍在設置。通常需時約 ${ provisioningDuration }。"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 以上"
@@ -2814,13 +2839,13 @@
         "加入網域"
       ],
       "Add server (${ availableAddedCount } available)": [
-        "添加伺服器(${ availableAddedCount }可用)"
+        "新增伺服器 (${ availableAddedCount } 台可用)"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "添加${ addedServerCount }閘道器伺服器"
+        "正在新增 ${ addedServerCount } 台閘道伺服器"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "添加閘道器伺服器:${ serverNumber } / ${ total }"
+        "正在新增閘道伺服器：${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "額外設定"
@@ -2924,11 +2949,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "透過身分提供者 (IdP) 為您的組織設置 SAML 驗證。這將為整個組織啟用 SAML。"
+      ],
       "Continue with ${ freeName }": [
         "繼續使用 ${ freeName }"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "請複製此 URL 並到您的身分提供者提示的 ACS (判斷提示取用者服務) URL 欄位中貼上"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
       ],
       "Copy the suggested password to clipboard": [
         "複製建議的密碼至剪貼簿"
@@ -2946,7 +2980,7 @@
         "創建您的第一個閘道器"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "創建閘道器伺服器: ${ serverNumber } / ${ total }"
+        "正在建立閘道伺服器：${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "創建您的帳號"
@@ -2973,7 +3007,7 @@
         "具有專用 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制。"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "刪除${ deletedServerCount }閘道器伺服器"
+        "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
@@ -3035,6 +3069,9 @@
       "Emailing preference saved": [
         "電子通訊喜好設定已儲存"
       ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
+      ],
       "Enhance your network security": [
         "強化您的網路安全"
       ],
@@ -3077,6 +3114,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的復原手機號碼，我們將向您發送您的使用者名稱或電郵位址。"
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "請輸入您的復原片語，以便立即更改您的密碼。"
+      ],
       "Expired": [
         "已過期"
       ],
@@ -3098,8 +3138,14 @@
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "請前往您的身分提供者，取得 ${ appName } 的 SAML 中繼資料並在此匯入。"
+      ],
       "here": [
         "這裡"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "身分提供者簽署驗證判斷提示的公開金鑰。身分提供者應在某處備有憑證雜湊可供下載或複製。只需在文字區域欄位中貼上憑證雜湊即可。"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "如果另一位系統管理員更改了此密碼，您將需要向其索取新的組織密碼。"
@@ -3241,6 +3287,9 @@
       ],
       "No results found": [
         "找不到相符的結果"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "(手動建立而非由您的身分提供者提供的) 非 SSO 使用者仍可登入至您的組織中"
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
@@ -3446,6 +3495,12 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "因為近期的移除，部份可用的伺服器僅能在特定國家使用"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "指定允許以 SAML SSO 驗證的網域。"
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "(由您的身分提供者提供的) SSO 使用者將予刪除"
+      ],
       "Step ${ step }": [
         "步驟 ${ step }"
       ],
@@ -3487,6 +3542,9 @@
       ],
       "Thank you": [
         "感謝您"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "您的身分提供者提供的認證將予刪除。"
       ],
       "The following address is invalid.": [
         "下列電子郵件位址無效。"
@@ -3539,6 +3597,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "此驗證或需時長達一小時。您可安心繼續之後的步驟。"
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "此會取消目前訂購授權，您會失去目前使用的福利"
       ],
@@ -3554,6 +3615,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "這將永久刪除您的帳號以及其一切的資料。您將無法重新啟用此帳號。"
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "這將移除 ${ boldDomainName } 的 SSO。"
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "這將取代您的臨時密碼。日後存取您的 ${ BRAND_NAME } 帳號時，您將會使用此密碼。"
       ],
@@ -3565,6 +3629,9 @@
       ],
       "to ${ product } Business": [
         "至${ product }商業版"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "若要允許 ${ boldDomainName } 網域使用 SAML SSO，您必須前往您的 DNS 提供者新增下列 DNS TXT 記錄到您的網域中，以便驗證其為您所有。"
       ],
       "To cancel your subscription, please reach out to us.": [
         "要取消您的訂購授權，請聯絡我們。"
@@ -3628,6 +3695,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很遺憾，此帳號未有儲存任何復原方法。"
+      ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "由您的身分識別者產生的唯一 ID，形式通常是一個包含身分提供者名稱的 URL (範例：https://idp.example.com/XXXXX)。"
       ],
       "Unsaved changes": [
         "未儲存的變更"
@@ -3737,6 +3807,9 @@
       "Welcome": [
         "歡迎"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "我們將發送一個重設代碼到 ${ boldValue }。"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的電郵位址。"
       ],
@@ -3745,6 +3818,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "我們正進行您現有方案升等，除了晉級方案維持原價，還提供更多服務。在系統更新階段時，您可能無法做任何變更。稍後作業完成，我們會立即電郵通知您。"
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "當前往您的身分提供者為 ${ appName } 啟用 SAML 時，可能會提示您使用回呼 (ACS) URL 和簽發者 ID。只需複製下方資料並在您的身分提供者提示的欄位中貼上即可。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
@@ -3960,6 +4036,9 @@
       ],
       "Credit": [
         "儲值"
+      ],
+      "Credit note": [
+        "可用額度附註"
       ],
       "Currency conversion": [
         "貨幣轉換"
@@ -4199,6 +4278,9 @@
       "Interval": [
         "時間間隔"
       ],
+      "Issuer ID": [
+        "簽發者 ID"
+      ],
       "Keep me signed in": [
         "保持登入"
       ],
@@ -4216,6 +4298,12 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Metadata file for ${ appName }": [
+        "${ appName } 的中繼檔"
+      ],
+      "Metadata URL for ${ appName }": [
+        "${ appName } 的中繼資料 URL"
       ],
       "Method for importing metadata": [
         "匯入後設資料方案"
@@ -5043,7 +5131,7 @@
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
       "Snooze messages and get reminded when you want": [
-        "延後訊息急於想要時獲得通知"
+        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -5590,6 +5678,9 @@
       "/month /user, billed annually": [
         "/月 /使用者 每年付款"
       ],
+      "/month /user, billed biennially": [
+        "/月 /使用者 每兩年付款"
+      ],
       "Creating your account": [
         "創建您的帳號"
       ],
@@ -5642,6 +5733,15 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "全部管理員將能存取金鑰。"
+      ],
+      "Change organization key": [
+        "變更組織金鑰"
+      ],
+      "Organization key activated": [
+        "組織金鑰已啟用"
+      ],
       "Organization key does not exist.": [
         "組織金鑰不存在。"
       ],
@@ -5888,6 +5988,9 @@
       ],
       "Changing organization password": [
         "更改組織密碼"
+      ],
+      "Creating or accessing non-private users": [
+        "創建或存取非隱私使用者"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由於密碼變更，您的組織系統管理員權限受到限制。下列動作已不再允許："
@@ -7099,6 +7202,9 @@
       "Email subscriptions": [
         "電子報訂閱"
       ],
+      "Enter endpoints into your identity provider": [
+        "請前往您的身分提供者輸入端點"
+      ],
       "Enter SAML metadata": [
         "輸入 SAML 後設資料"
       ],
@@ -7228,6 +7334,12 @@
       "Remove domain": [
         "移除網域"
       ],
+      "Remove single sign-on": [
+        "移除單一登入"
+      ],
+      "Remove single sign-on for your organization?": [
+        "要為您的組織移除單一登入嗎？"
+      ],
       "Remove user?": [
         "要移除使用者嗎？"
       ],
@@ -7299,6 +7411,9 @@
       ],
       "Signed in to member account": [
         "登入到成員帳號"
+      ],
+      "Single sign-on": [
+        "單一登入"
       ],
       "Status": [
         "狀態"
@@ -7430,17 +7545,29 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "請複製此 URL 並到您的身分提供者提示的 ACS (判斷提示取用者服務) URL 欄位中貼上"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"
       ],
       "Feature in early access": [
         "功能於提早存取"
       ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "身分提供者簽署驗證判斷提示的公開金鑰。金鑰雜湊可從您的身分提供者取得。"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "未使用雙重驗證的成員將收到電子郵件要求它們盡速啟用"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "指定允許以 SAML SSO 驗證的網域"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的訂購授權週期開始在${ formattedTime }"
@@ -7450,6 +7577,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "當您的系統設定為「淺色模式」時，將會啟用選定的布景主題"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "通常是一個包含身分提供者名稱的 URL"
       ],
       "Verified email address": [
         "已驗證的電子郵件位址"
@@ -7617,6 +7747,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "您必須${ activateLink }組織金鑰才可新增電子郵件地址到一個非私密成員。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"

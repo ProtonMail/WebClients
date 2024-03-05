@@ -225,6 +225,9 @@
       "Download": [
         "Transferir"
       ],
+      "Download now": [
+        "Descarregar agora"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -593,6 +596,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -1218,6 +1224,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Imagem do contato"
       ]
     },
     "Contact type label": {
@@ -2212,52 +2223,6 @@
         "Editar o evento"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descrição: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } foi cancelado."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } foi actualizado.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Esta ocorrência de ${ eventTitle } foi cancelada."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Tem um convite para ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quando: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Quando: ${ formattedStart } (o dia todo)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quando: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Onde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } aceitou o seu convite para ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } recusou o seu convite para ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } aceitou provisoriamente o seu convite para ${ eventTitle }"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancelamento de um evento em ${ formattedStart }"
@@ -2281,6 +2246,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "6 users": [
+        "6 utilizadores"
       ]
     },
     "Error": {
@@ -2464,6 +2432,9 @@
       ],
       "Missing signature": [
         "Assinatura em falta"
+      ],
+      "Name is required": [
+        "É necessário um nome."
       ],
       "Name required": [
         "Nome obrigatório"
@@ -3210,6 +3181,9 @@
       ],
       "Search": [
         "Pesquisar"
+      ],
+      "Security Center": [
+        "Centro de segurança"
       ]
     },
     "Hint": {
@@ -4069,6 +4043,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
+      "Warning": [
+        "Aviso"
+      ],
       "We'll notify you when the import is done.": [
         "Vamos avisá-lo quando a importação for concluída."
       ],
@@ -4676,6 +4653,9 @@
       ],
       "Wonderful": [
         "Maravilhoso"
+      ],
+      "Your alias": [
+        "O seu alias"
       ],
       "Your calendar URL": [
         "URL do seu calendário"
@@ -5446,6 +5426,11 @@
         "Expanda a lista de participantes"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "País de faturação"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "A chave não pode ser utilizada para encriptar"
@@ -5623,14 +5608,25 @@
       "Create alias": [
         "Criar um alias"
       ],
+      "Create an alias": [
+        "Criar um alias"
+      ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
+      ],
+      "New alias": [
+        "Novo alias"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Abrir ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Ver os registos"
       ]
     },
     "Select files": {
@@ -6518,6 +6514,9 @@
       "Email settings": [
         "Definições de e-mail"
       ],
+      "Enable 2FA": [
+        "Ativar A2F"
+      ],
       "Encrypted event": [
         "Evento encriptado"
       ],
@@ -6632,6 +6631,9 @@
       ],
       "Save changes": [
         "Guardar alterações"
+      ],
+      "Security center": [
+        "Centro de segurança"
       ],
       "Select a day in the month": [
         "Selecione um dia no mês"
@@ -6810,6 +6812,9 @@
       ],
       "Hide side panel": [
         "Ocultar o painel lateral"
+      ],
+      "Load image": [
+        "Carregar a imagem"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"

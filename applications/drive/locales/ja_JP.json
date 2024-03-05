@@ -181,6 +181,9 @@
       "Create a new contact group": [
         "新規連絡先グループを作成"
       ],
+      "Create and copy alias": [
+        "エイリアスを作成してコピー"
+      ],
       "Create link": [
         "リンクを作成"
       ],
@@ -820,14 +823,23 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "65か国以上、3,000台以上のサーバー"
+      ],
       "6 users": [
         "6 ユーザー"
+      ],
+      "Access content worldwide": [
+        "世界中のコンテンツにアクセス"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
       ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "High speed streaming": [
+        "高速ストリーミング"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -844,6 +856,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Bug category": {
@@ -1933,49 +1950,6 @@
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "説明: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } はキャンセルされました。"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } が更新されました。\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "${ eventTitle } に招待されました\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "日時: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "日時: ${ formattedStart } (終日)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "日時: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "場所: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は ${ eventTitle } への招待を承諾しました"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } は ${ eventTitle } への招待を辞退しました"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は ${ eventTitle } への招待を仮承諾しました"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } の予定のキャンセル"
@@ -2005,6 +1979,9 @@
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリへの早期アクセス"
       ]
     },
     "Error": {
@@ -2026,8 +2003,17 @@
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
+      "Alias is not valid": [
+        "エイリアスが無効です"
+      ],
+      "Alias is required": [
+        "エイリアスは必須です"
+      ],
       "Alias options could not be resolved": [
         "エイリアス オプションを解決できませんでした"
+      ],
+      "Aliases could not be loaded": [
+        "エイリアスを読み込めませんでした"
       ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
@@ -2104,6 +2090,9 @@
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
       ],
+      "Forward address is required": [
+        "転送先アドレスは必須です"
+      ],
       "Image upload failed": [
         "画像のアップロードに失敗しました"
       ],
@@ -2145,6 +2134,9 @@
       ],
       "Missing signature": [
         "署名がありません"
+      ],
+      "Name is required": [
+        "名前は必須です"
       ],
       "No calendars found to import": [
         "インポートするカレンダーが見つかりません"
@@ -5652,6 +5644,11 @@
         "${ PASS_APP_NAME } をお試しください"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } を開きます)"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "ログを表示"
@@ -6052,6 +6049,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "contact your administrator": [
+        "管理者に連絡してください"
+      ],
       "Your storage is full": [
         "ストレージがいっぱいです"
       ]
@@ -6095,6 +6095,9 @@
       ],
       "Import record deleted": [
         "インポート記録が削除されました"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "最も古い保管庫に保存されている、最後に変更されたエイリアス"
       ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました"

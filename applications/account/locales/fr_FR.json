@@ -3258,49 +3258,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Description : ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIPTION :\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } a été annulé."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Tous les événements de cette série ont été mis à jour."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Cette occurrence de ${ eventTitle } a été annulée."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tous les événements de cette série ont été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "L'occurrence de cet événement a été annulée."
+      ],
+      "This event occurrence was updated.": [
+        "L'occurrence de cet événement a été mise à jour."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "L'occurrence de cet événement a été mise à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Cet événement a été mis à jour."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Vous êtes invité à ${ eventTitle }\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quand : ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "HORAIRE : \n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Quand : ${ formattedStart } (toute la journée)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "HORAIRE \n${ formattedStart } (toute la journée)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quand : ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "HORAIRE : \n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Retiré"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Où : ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "LIEU : \n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } a accepté votre invitation à ${ eventTitle }."
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } a refusé votre invitation à ${ eventTitle }."
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } a provisoirement accepté votre invitation à ${ eventTitle }."
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } a accepté provisoirement votre invitation à ${ eventTitle }."
       ]
     },
     "Email spam notification": {
@@ -6208,7 +6228,7 @@
         "Assurez-vous de copier votre mot de passe et de le garder en lieu sûr."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
-        "Avant d'activer l'utilisateur, vous devez fournir un mot de passe et créer les clés de chiffrement associées."
+        "Avant d'activer l'utilisateur, vous devez indiquer un mot de passe et créer les clés de chiffrement associées."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Avant de créer cette adresse, vous devez fournir un mot de passe et créer les clés de chiffrement associées."
@@ -6373,7 +6393,7 @@
         "DKIM permet à ${ BRAND_NAME } de signer par cryptographie vos messages et d'empêcher les attaquants de manipuler votre e-mail. Assurez-vous d'ajouter les trois enregistrements CNAME suivants à votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC vérifie si les enregistrements SPF et DKIM de l'expéditeur proviennent de votre domaine. Cela peut empêcher les attaquants d'utiliser le SPF et le DKIM d'un autre domaine pour usurper l'identité de votre domaine. Le \"p=\" (policy) dans cet enregistrement indique comment vous souhaitez que les plateformes destinataires gèrent les messages non autorisés. Nous recommandons d'utiliser la politique \"p=quarantine\" pour la plupart des domaines. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
+        "DMARC vérifie si les enregistrements SPF et DKIM de l'expéditeur proviennent de votre domaine. Cela peut empêcher les attaquants d'utiliser le SPF et le DKIM d'un autre domaine pour usurper l'identité de votre domaine. Le « p= » (policy) dans cet enregistrement indique comment vous souhaitez que les plateformes destinataires gèrent les messages non autorisés. Nous recommandons d'utiliser la politique « p=quarantine » pour la plupart des domaines. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus gérer votre organisation."
@@ -6527,7 +6547,7 @@
         "Les journaux n'ont pas pu être récupérés."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rapide et sans distraction. E-mail et calendrier, directement sur votre bureau."
+        "Rapide et efficace : vos e-mails et calendriers directement sur votre bureau !"
       ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
@@ -6736,7 +6756,7 @@
         "Attention, la suppression de clé est irréversible."
       ],
       "Keys created": [
-        "Les clés ont été créées"
+        "Les clés ont été créées."
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -7614,7 +7634,7 @@
         "Utilisez l'adresse e-mail sélectionnée comme nom d'utilisateur SMTP pour le service externe et le jeton généré comme mot de passe SMTP."
       ],
       "User activated": [
-        "Utilisateur activé"
+        "L'utilisateur a été activé."
       ],
       "Users": [
         "Utilisateurs"
@@ -10458,17 +10478,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ trialPlanName } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Votre essai se termine le ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -10568,6 +10577,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ trialPlanName } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11687,7 +11707,7 @@
       "For businesses": [
         "Pour les entreprises"
       ],
-      "For invididuals": [
+      "For individuals": [
         "Pour les particuliers"
       ]
     },
