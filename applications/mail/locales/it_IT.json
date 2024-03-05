@@ -3175,48 +3175,68 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descrizione: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIZIONE:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } è stato cancellato."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Tutti gli eventi di questa serie sono stati aggiornati."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Questa occorrenza di ${ eventTitle } è stata cancellata."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tutti gli eventi di questa serie sono stati aggiornati. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Questa occorrenza dell'evento è stata cancellata."
+      ],
+      "This event occurrence was updated.": [
+        "Questa occorrenza dell'evento è stata aggiornata."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Questa occorrenza dell'evento è stata aggiornata. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Questo evento è stato aggiornato."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Questo evento è stato aggiornato. Ecco cosa è cambiato:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Sei stato inviato a ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quando: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "QUANDO:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Quando: ${ formattedStart } (tutto il giorno)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "QUANDO:\n${ formattedStart } (tutto il giorno)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quando: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "QUANDO:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Rimosso"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Dove: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "POSIZIONE:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha accettato il tuo invito a ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } ha rifiutato il tuo invito a ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha accettato provvisoriamente il tuo invito a ${ eventTitle }"
       ]
     },
@@ -4407,25 +4427,28 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Applicazione desktop di ${ MAIL_APP_NAME }"
       ],
+      "14-day destkop app trial.": [
+        "Prova di 14 giorni dell'applicazione desktop."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Accesso rapido, sicuro e senza distrazioni alla posta in arrivo e al calendario."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Ottieni accesso illimitato con il piano a pagamento ${ BRAND_NAME }"
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Ottieni l'accesso illimitato con qualsiasi piano ${ MAIL_APP_NAME }."
       ],
-      "Introducing the desktop app": [
-        "Ti presentiamo la nuova applicazione desktop"
+      "No credit card required.": [
+        "Nessuna carta di credito richiesta."
       ],
-      "No credit card required": [
-        "Nessuna carta di credito richiesta"
+      "Try the app-new desktop app": [
+        "Prova la nuova applicazione desktop"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "Prova gratis per 14 giorni"
+      "Start free trial": [
+        "Inizia la prova gratuita"
       ]
     },
     "Get started checklist instructions": {
@@ -8270,6 +8293,11 @@
         "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(aprirà ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Visualizza i log"
@@ -9126,6 +9154,9 @@
       ],
       "Labels applied.": [
         "Etichette applicate."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ultimi alias modificati memorizzati nella cassaforte più vecchia"
       ],
       "Mail list unsubscribed": [
         "Iscrizione alla mailing list annullata"

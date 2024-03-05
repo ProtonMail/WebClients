@@ -3071,49 +3071,6 @@
         "全部下载"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } 已被取消。"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已更新。\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "您受邀参加 ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "时间：${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "时间：${ formattedStart }（全天）"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "时间：${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "地点：${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 接受了参加 ${ eventTitle } 的邀请"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 拒绝了参加 ${ eventTitle } 的邀请"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 暂时接受了参加 ${ eventTitle } 的邀请"
-      ]
-    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "明天的活动"
@@ -4197,8 +4154,8 @@
       ]
     },
     "Free trial desktop": {
-      "No credit card required": [
-        "无需信用卡"
+      "No credit card required.": [
+        "无需信用卡."
       ]
     },
     "Get started checklist instructions": {
