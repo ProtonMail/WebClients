@@ -10,17 +10,13 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
 
-type Props = {
-    revision: ItemRevision<'login'>;
-};
-
-export const LoginContent: FC<Props> = ({ revision }) => {
+export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
     const { data: item, shareId, itemId } = revision;
 
     const {
