@@ -4,7 +4,7 @@ import { fromUnixTime, getDate, getHours, getMinutes, getMonth, getUnixTime, get
 import { c } from 'ttag';
 
 import { InputProps } from '@proton/atoms/Input';
-import { DateInput, TimeInput } from '@proton/components';
+import { DateInputTwo, TimeInput } from '@proton/components';
 
 interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     expiration: number | null;
@@ -78,7 +78,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
 
     return (
         <>
-            <DateInput
+            <DateInputTwo
                 id="epirationDateInputId"
                 className="flex-1 grow-2"
                 disabled={disabled}
