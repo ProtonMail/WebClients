@@ -2111,6 +2111,9 @@
       "Something went wrong": [
         "Виникла проблема"
       ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Щоб використовувати ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }, перейдіть до вебверсії."
+      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ]
@@ -5178,7 +5181,7 @@
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
-        "Всі програми від ${ BRAND_NAME } з преміумфункціями"
+        "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
@@ -5187,7 +5190,7 @@
         "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
-        "Ранній доступ до нових застосунків і функцій"
+        "Ранній доступ до нових програм і функцій"
       ],
       "For next-level password management and identity protection.": [
         "Для вдосконаленого керування паролями та захисту особистих даних."
@@ -5246,7 +5249,7 @@
         "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
       ],
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ trialPlanName } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Ваш пробний період завершується ${ formattedPeriodEndDate }"
@@ -5696,7 +5699,7 @@
     },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
-        "Доступ заборонено. Права адміністратора було обмежено."
+        "Доступ заборонено. Повноваження адміністратора було обмежено."
       ],
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
@@ -5723,7 +5726,7 @@
         "Недійсний термін дії картки"
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Ваша картка була відхилена. Будь ласка, спробуйте скористатися іншою картою або зверніться у свій банк для авторизації платежу."
+        "Вашу картку відхилено. Спробуйте скористатися іншою картою або зверніться до свого банку, щоб авторизувати платіж."
       ]
     },
     "Placeholder": {
@@ -5815,7 +5818,7 @@
     },
     "Price": {
       "Free": [
-        "Безкоштовно"
+        "Безплатно"
       ]
     },
     "Private Member": {
@@ -6350,11 +6353,44 @@
       "${ app } storage": [
         "${ app } сховища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% заповнено"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Перейшовши на тарифний план нижчого рівня, ви втратите вказані переваги. Ви дійсно хочете продовжити?"
       ],
+      "contact your administrator": [
+        "зв'язатися з адміністратором"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Щоби надсилати або отримувати листи, звільніть місце або ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
+      ],
+      "upgrade for more storage": [
+        "покращте тариф, щоб збільшити сховище"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } майже повне"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } повне"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ваше ${ storage } заповнено на ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } повне. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнено на ${ percentage }%. ${ cta }."
+      ],
       "Your storage is full": [
         "Ваше сховище заповнене"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ваше сховище заповнено. ${ cta }."
       ]
     },
     "Subscription": {

@@ -601,12 +601,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } раз",
-        "${ revisionNumber } рази",
-        "${ revisionNumber } разів",
-        "${ revisionNumber } разів"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
       ],
@@ -636,6 +630,9 @@
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
+      ],
+      "Current version": [
+        "Поточна версія"
       ],
       "Decrypting your data": [
         "Розшифрування ваших даних"
@@ -732,6 +729,12 @@
       ],
       "Item successfully moved": [
         "Елемент успішно переміщено"
+      ],
+      "Item successfully pinned": [
+        "Елемент успішно прикріплено"
+      ],
+      "Item successfully unpinned": [
+        "Елемент успішно відкріплено"
       ],
       "Let's get you started by creating your first item": [
         "Почніть створювати свій перший елемент"
@@ -1031,9 +1034,6 @@
       ],
       "Last 2 weeks": [
         "Останні 2 тижні"
-      ],
-      "Last autofill": [
-        "Останнє автозаповнення"
       ],
       "Last month": [
         "Минулого місяця"
@@ -1383,6 +1383,9 @@
       "Grant permissions": [
         "Надати дозволи"
       ],
+      "History": [
+        "Історія"
+      ],
       "Import - ${ date }": [
         "Імпорт - ${ date }"
       ],
@@ -1394,6 +1397,9 @@
       ],
       "Low disk space": [
         "Бракує місця на диску"
+      ],
+      "Modified": [
+        "Змінено"
       ],
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"

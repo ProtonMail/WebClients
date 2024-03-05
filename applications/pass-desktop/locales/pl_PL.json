@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Ulepsz konto, aby udostępnić elementy użytkownikom"
       ],
+      "View history": [
+        "Pokaż historię"
+      ],
+      "View older history": [
+        "Pokaż starszą historię"
+      ],
       "Write us on Reddit": [
         "Napisz do nas na Reddicie"
       ],
@@ -517,6 +523,9 @@
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
       ],
+      "Failed to load item history": [
+        "Nie udało się załadować historii"
+      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
@@ -573,6 +582,12 @@
       ],
       "Moving item failed": [
         "Przenoszenie elementu nie powiodło się"
+      ],
+      "Offline mode is currently not available for two password mode.": [
+        "Tryb offline nie jest dostępny w trybie podwójnego hasła."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Tryb offline nie jest dostępny w Twoim planie i nie jest kompatybilny z trybem podwójnego hasła."
       ],
       "Passphrase is incorrect": [
         "Hasło jest nieprawidłowe"
@@ -735,6 +750,12 @@
         "${ memberCount } użytkowników",
         "${ memberCount } użytkowników"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } raz",
+        "${ modifiedCount } razy",
+        "${ modifiedCount } razy",
+        "${ modifiedCount } razy"
+      ],
       "${ n } item": [
         "${ n } element",
         "${ n } elementy",
@@ -749,12 +770,6 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } wymaga hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline."
-      ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } raz",
-        "${ revisionNumber } razy",
-        "${ revisionNumber } razy",
-        "${ revisionNumber } razy"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
@@ -795,6 +810,12 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Czy chcesz przenieść wszystkie elementy z sejfu \"${ fromVaultName }\" do \"${ toVaultName }\"?"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Czy na pewno chcesz przenieść elementy do sejfu \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Automatyczna blokada została wyłączona"
       ],
@@ -824,6 +845,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "Plik CSV oferuje wygodny format do przeglądania danych, ale niektóre dane (jak pola niestandardowe, struktura sejfu) nie zostaną uwzględnione. Użyj innego formatu plik, aby wyeksportować wszystkie dane."
+      ],
+      "Current version": [
+        "Obecna wersja"
       ],
       "Decrypting your data": [
         "Odszyfrowywanie danych"
@@ -978,8 +1002,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii"
+      ],
       "Moving items": [
         "Przenoszenie elementów"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii"
       ],
       "Moving items to trash": [
         "Przenoszenie elementów do Kosza"
@@ -1126,7 +1156,7 @@
         "Dziękujemy. Problem został zgłoszony"
       ],
       "The export will only contain vaults that you own.": [
-        "Plik eksportu będzie zawierał tylko sejfy należące do użytkownika."
+        "Plik eksportu będzie zawierał tylko Twoje sejfy."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Plik eksportu danych zostanie zaszyfrowany za pomocą PGP i będzie wymagał silnego hasła."
@@ -1148,6 +1178,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Ta wersja zostanie dodana do historii jako najnowsza wersja."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Aby przenieść dane z innego menedżera haseł, przejdź do menedżera haseł, wyeksportuj dane, a następnie prześlij je do ${ PASS_APP_NAME }. Po zaimportowaniu danych usuń wyeksportowany plik."
@@ -1417,9 +1450,6 @@
       ],
       "Last 2 weeks": [
         "Ostatnie 2 tygodnie"
-      ],
-      "Last autofill": [
-        "Ostatnie autouzupełnianie"
       ],
       "Last month": [
         "Ostatni miesiąc"
@@ -1795,6 +1825,12 @@
       "Create PIN code": [
         "Utwórz kod PIN"
       ],
+      "Created": [
+        "Utworzono"
+      ],
+      "Current version": [
+        "Obecna wersja"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Usunąć sejf \"${ vaultName }\"?"
       ],
@@ -1816,6 +1852,9 @@
       "Grant permissions": [
         "Przyznaj uprawnienia"
       ],
+      "History": [
+        "Historia"
+      ],
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
@@ -1827,6 +1866,12 @@
       ],
       "Install extension": [
         "Zainstaluj rozszerzenie"
+      ],
+      "Last autofill": [
+        "Ostatnie autouzupełnianie"
+      ],
+      "Last modified": [
+        "Zmodyfikowano"
       ],
       "Leave vault ?": [
         "Opuścić sejf?"
@@ -1840,8 +1885,17 @@
       "Members": [
         "Użytkownicy"
       ],
+      "Modified": [
+        "Zmodyfikowano"
+      ],
       "Move all items ?": [
         "Przenieść wszystkie elementy?"
+      ],
+      "Move item?": [
+        "Przenieść element?"
+      ],
+      "Move items?": [
+        "Przenieść elementy?"
       ],
       "No items selected": [
         "Nie zaznaczono elementów"
@@ -1857,6 +1911,9 @@
       ],
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Przywrócić tę wersję?"
       ],
       "Review and share": [
         "Przejrzyj i udostępnij"

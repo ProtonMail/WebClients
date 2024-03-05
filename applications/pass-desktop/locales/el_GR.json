@@ -570,6 +570,12 @@
       "Moving item failed": [
         "Η μετακίνηση στοιχείου απέτυχε"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Η λειτουργία χωρίς σύνδεση δεν είναι προς το παρόν διαθέσιμη για τη λειτουργία δύο κωδικών πρόσβασης."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Η λειτουργία εκτός σύνδεσης δεν είναι προς το παρόν διαθέσιμη για το πλάνο σας και δεν είναι συμβατή με τη λειτουργία δύο κωδικών πρόσβασης."
+      ],
       "Passphrase is incorrect": [
         "Η φράση πρόσβασης είναι εσφαλμένη"
       ],
@@ -733,10 +739,6 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } φορά",
-        "${ revisionNumber } φορές"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
       ],
@@ -805,6 +807,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "Το CSV προσφέρει μια βολική μορφή για την προβολή των δεδομένων σας. Ωστόσο, λόγω της απλότητάς του, ορισμένα δεδομένα δε θα συμπεριληφθούν (προσαρμοσμένα πεδία, δομή κρύπτης...). Για πλήρη εξαγωγή, συνιστάται η χρήση διαφορετικής μορφής."
+      ],
+      "Current version": [
+        "Τρέχουσα έκδοση"
       ],
       "Decrypting your data": [
         "Γίνεται αποκρυπτογράφηση των δεδομένων σας"
@@ -1098,6 +1103,9 @@
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
       ],
+      "The export will only contain vaults that you own.": [
+        "Η εξαγωγή θα περιέχει μόνο κρύπτες που σας ανήκουν."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Το εξαγόμενο αρχείο θα κρυπτογραφηθεί χρησιμοποιώντας PGP και απαιτεί μια ισχυρή φράση πρόσβασης."
       ],
@@ -1380,9 +1388,6 @@
       "Last 2 weeks": [
         "Τελευταίες 2 εβδομάδες"
       ],
-      "Last autofill": [
-        "Τελευταία αυτόματη συμπλήρωση"
-      ],
       "Last month": [
         "Προηγούμενος μήνας"
       ],
@@ -1466,6 +1471,9 @@
       ],
       "Password history": [
         "Ιστορικό κωδικού πρόσβασης"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON με κρυπτογράφηση PGP (συνιστάται)"
       ],
       "PIN": [
         "PIN"
@@ -1774,6 +1782,9 @@
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
       ],
+      "History": [
+        "Ιστορία"
+      ],
       "Import - ${ date }": [
         "Εισαγωγή - ${ date }"
       ],
@@ -1797,6 +1808,9 @@
       ],
       "Members": [
         "Μέλη"
+      ],
+      "Modified": [
+        "Τροποποιήθηκε"
       ],
       "Move all items ?": [
         "Μετακίνηση όλων των στοιχείων ;"

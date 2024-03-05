@@ -667,10 +667,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } vegada",
-        "${ revisionNumber } vegades"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
@@ -700,6 +696,9 @@
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
+      ],
+      "Current version": [
+        "Versió actual"
       ],
       "Decrypting your data": [
         "S'estan desxifrant les dades"
@@ -1013,7 +1012,7 @@
         "Clau secreta A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "Token 2FA (TOTP)"
+        "Testimoni 2FA (TOTP)"
       ],
       "30 minutes": [
         "30 minuts"
@@ -1164,9 +1163,6 @@
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"
-      ],
-      "Last autofill": [
-        "Últim emplenament automàtic"
       ],
       "Last month": [
         "El mes passat"
@@ -1550,6 +1546,9 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
+      "History": [
+        "Historial"
+      ],
       "Import - ${ date }": [
         "Importació - ${ date }"
       ],
@@ -1573,6 +1572,9 @@
       ],
       "Members": [
         "Membres"
+      ],
+      "Modified": [
+        "Modificació"
       ],
       "Move all items ?": [
         "Mou tots els elements ?"

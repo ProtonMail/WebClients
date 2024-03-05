@@ -239,6 +239,9 @@
       "Move to trash": [
         "ごみ箱に移動"
       ],
+      "Multiple select": [
+        "複数選択"
+      ],
       "OK": [
         "OK"
       ],
@@ -338,6 +341,9 @@
       "Transfer ownership": [
         "所有権の移行"
       ],
+      "Trash": [
+        "ごみ箱"
+      ],
       "Unpin item": [
         "アイテムの固定解除"
       ],
@@ -376,6 +382,11 @@
     "bf2023: Title": {
       "Black Friday offer": [
         "ブラック フライデー オファー"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Button": {
@@ -593,6 +604,9 @@
       "Vault name does not match": [
         "保管庫名が一致しません"
       ],
+      "Wrong password": [
+        "パスワードが正しくありません"
+      ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
       ],
@@ -670,9 +684,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } は、ログイン情報、メモ、クレジット カードのみをインポートします。"
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } 回"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "プレミアム機能を 7 日間無料でお試しいただけます。 ${ BRAND_NAME } の最初の 1 週間のみ。"
       ],
@@ -729,6 +740,9 @@
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
+      ],
+      "Current version": [
+        "現在のバージョン"
       ],
       "Decrypting your data": [
         "データの暗号化解除"
@@ -865,8 +879,14 @@
       "Never": [
         "なし"
       ],
+      "No network connection": [
+        "ネットワーク接続がありません"
+      ],
       "None": [
         "なし"
+      ],
+      "Offline mode": [
+        "オフラインモード"
       ],
       "Owner": [
         "所有者"
@@ -910,6 +930,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
       ],
+      "Reconnect": [
+        "再接続"
+      ],
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
       ],
@@ -930,6 +953,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "PINコードを設定してデータを簡単にロックする"
+      ],
+      "Setting up offline mode...": [
+        "オフラインモードを設定中..."
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
@@ -1211,9 +1237,6 @@
       ],
       "Last 2 weeks": [
         "過去 2 週間"
-      ],
-      "Last autofill": [
-        "最後の自動入力"
       ],
       "Last month": [
         "先月"
@@ -1590,6 +1613,9 @@
       "Grant permissions": [
         "権限を付与する"
       ],
+      "History": [
+        "履歴"
+      ],
       "Import - ${ date }": [
         "インポート - ${ date }"
       ],
@@ -1613,6 +1639,9 @@
       ],
       "Members": [
         "メンバー"
+      ],
+      "Modified": [
+        "更新日時"
       ],
       "Move all items ?": [
         "すべてのアイテムを移動しますか?"
@@ -1732,6 +1761,9 @@
       "Empty note": [
         "空のメモ"
       ],
+      "Encryption password is required": [
+        "暗号化パスワードが必要です"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "有効期限が MM/YY の形式ではありません"
       ],
@@ -1764,6 +1796,9 @@
       ],
       "No results": [
         "結果なし"
+      ],
+      "Offline": [
+        "オフライン"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "英数字、ドット、ハイフン、アンダースコアのみが使用できます"

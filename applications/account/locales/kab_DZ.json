@@ -2767,49 +2767,6 @@
         "Tzemreḍ ad tmedleḍ iccer-agi s tɣellist."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Aglam: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } yettwasefsex."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Tettwaɛerḍeḍ ɣer ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Melmi: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Melmi: ${ formattedStart } (akk ass)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Melmi: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Anida: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } yeqbel tinubga-inek·inem ɣer ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } yugi•tugi leɛraḍa-inek•m ɣer ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } yeqbel bizmant tinubga-inek·inem ɣer ${ eventTitle }"
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } yettwarna"
@@ -8018,20 +7975,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: Info": {
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "I ukemmel n useqdec n ${ trialPlanName }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "Most popular": [
         "Ittwassen aṭas"
       ],
       "Popular": [
         "Mucaɛ"
+      ]
+    },
+    "new_plans: Info": {
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "I ukemmel n useqdec n ${ trialPlanName }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {

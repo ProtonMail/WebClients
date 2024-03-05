@@ -3174,52 +3174,6 @@
         "Download alle"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivelse: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } er blevet annulleret."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Denne forekomst af ${ eventTitle } er blevet annulleret."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Hvornår: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Hvornår: ${ formattedStart } (hele dagen)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Hvornår: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Hvor: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har accepteret din invitation til ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
-      ]
-    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Begivenhed er i morgen"
@@ -3564,8 +3518,8 @@
         "Aktiver venligst din søgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Løs venligst den fremhævede konflikt for at fortsætte.",
-        "Løs venligst de fremhævede konflikter for at fortsætte."
+        "Løs den fremhævede konflikt for at fortsætte.",
+        "Løs de fremhævede konflikter for at fortsætte."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Angiv enten et fornavn, et efternavn eller et visningsnavn"
@@ -4410,22 +4364,11 @@
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Nyd hurtig, sikker og distraktion-fri adgang til din indbakke og kalender."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Få ubegrænset adgang med et ${ BRAND_NAME } betalt plan"
-      ],
-      "Introducing the desktop app": [
-        "Introducere desktop applikationen."
-      ],
-      "No credit card required": [
-        "Intet betalingskort påkrævet"
+      "No credit card required.": [
+        "Intet betalingskort påkrævet."
       ],
       "Upgrade now": [
         "Opgradere dit plan nu"
-      ]
-    },
-    "Free trial destkop": {
-      "Try free for 14 days": [
-        "Prøv gratis i 14 dage"
       ]
     },
     "Get started checklist instructions": {
@@ -5735,7 +5678,7 @@
         "Angiv mindst én modtager."
       ],
       "Please fill out this field.": [
-        "Udfyld venligst dette felt."
+        "Udfyld dette felt."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Bemærk at adresser tildelt til disse grupper IKKE vil blive slettet."
@@ -5753,7 +5696,7 @@
         "Vælg venligst de mapper, du ønsker at importere:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Vælg venligst den type link du ønsker at indsætte og udfyld alle felterne."
+        "Vælg den type link du ønsker at indsætte og udfyld alle felterne."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } gruppe.",
@@ -6027,7 +5970,7 @@
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+        "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Denne besked er blevet tilpasset, så den er i overensstemmelse med en mørk baggrund."
@@ -8267,6 +8210,11 @@
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(vil åbne ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Se logs."
@@ -9123,6 +9071,9 @@
       ],
       "Labels applied.": [
         "Etiketter anvendt."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Sidst ændrede aliasser gemt i din ældste boks"
       ],
       "Mail list unsubscribed": [
         "Mailliste afmeldt"

@@ -90,7 +90,7 @@
         "Annullér download"
       ],
       "Cancel upload": [
-        "Annullér overførsel"
+        "Annullér upload"
       ],
       "Change": [
         "Skift"
@@ -132,7 +132,7 @@
         "Luk dette banner"
       ],
       "Close transfers": [
-        "Luk overførsel"
+        "Luk overførsler"
       ],
       "Collapse": [
         "Fold sammen"
@@ -422,7 +422,7 @@
         "Minimér"
       ],
       "Minimize transfers": [
-        "Minimer overførsler"
+        "Minimér overførsler"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
@@ -539,7 +539,7 @@
         "Genstart download"
       ],
       "Restart upload": [
-        "Genstart overførsel"
+        "Genstart upload"
       ],
       "Restore": [
         "Gendan"
@@ -560,7 +560,7 @@
         "Genoptag download"
       ],
       "Resume upload": [
-        "Genoptag overførsel"
+        "Genoptag upload"
       ],
       "Retry": [
         "Prøv igen"
@@ -2024,52 +2024,6 @@
         "Følgende felter er fundet i den CSV-fil, du uploadede. Afkryds dem, du vil importere."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivelse: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } er blevet annulleret."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Denne forekomst af ${ eventTitle } er blevet annulleret."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Hvornår: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Hvornår: ${ formattedStart } (hele dagen)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Hvornår: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Hvor: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har accepteret din invitation til ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annullering af en begivenhed den ${ formattedStart }"
@@ -2322,8 +2276,8 @@
         "Aktiver venligst din søgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Løs venligst den fremhævede konflikt for at fortsætte.",
-        "Løs venligst de fremhævede konflikter for at fortsætte."
+        "Løs den fremhævede konflikt for at fortsætte.",
+        "Løs de fremhævede konflikter for at fortsætte."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Angiv enten et fornavn, et efternavn eller et visningsnavn"
@@ -3304,7 +3258,7 @@
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } annulleret",
-        "${ canceledCount } annulleret"
+        "${ canceledCount } annullerede"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } indeholder adskillige e-mailadresser.",
@@ -3327,7 +3281,7 @@
       ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
-        "${ doneCount } færdig"
+        "${ doneCount } færdige"
       ],
       "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } downloadet",
@@ -3613,22 +3567,22 @@
         "Download ${ name }-app"
       ],
       "Download canceled": [
-        "Overførslen afbrudt"
+        "Download annulleret"
       ],
       "Download failed": [
-        "Overførslen fejlede"
+        "Download mislykkedes"
       ],
       "Download failed due to ${ error }": [
-        "Overførslen fejlede på grund af ${ error }"
+        "Download mislykkedes på grund af ${ error }"
       ],
       "Download finished": [
-        "Overførslen er færdig"
+        "Download er færdig"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Hentning af ${ downloadFileName } vil blive afbrudt"
       ],
       "Download paused due to connection issue; it will resume automatically": [
-        "Overførslen er pauset på grund af forbindelsesproblemer - den vil fortsætte automatisk"
+        "Downloadet er sat på pause på grund af forbindelsesproblemer - det vil fortsætte automatisk"
       ],
       "Download ready": [
         "Download klar"
@@ -4158,7 +4112,7 @@
         "Nogle filer kunne ikke hentes. Prøv at hente dem igen."
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "Nogle filer kunne ikke overføres. Prøv at overføre dem igen."
+        "Nogle filer kunne ikke uploades. Prøv at uploade filerne igen."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ StartRecoveryButton }"
@@ -4218,7 +4172,7 @@
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+        "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linket blev oprettet i en ældre Drive-version og kan ikke ændres. Slet linket og opret et nyt for at ændre indstillingerne."
@@ -4243,7 +4197,7 @@
         "Dette vil erstatte eksisterende fil med mappen"
       ],
       "This will replace the existing folder with the file": [
-        "Dette vil erstatte eksisterende mappe med filen"
+        "Dette vil erstatte den eksisterende mappe med filen"
       ],
       "This will upload a new version of the file": [
         "Dette vil uploade en ny version af filen"
@@ -4375,10 +4329,10 @@
         "Uge"
       ],
       "What do you want to do?": [
-        "Hvad vil du gøre?"
+        "Hvad ønsker du at gøre?"
       ],
       "What would you like to do?": [
-        "Hvad vil du gerne gøre?"
+        "Hvad ønsker du at gøre?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -4484,13 +4438,13 @@
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Dit abonnement er begrænset til 10 version i op til 7 dage"
+        "Dit abonnement er begrænset til 10 versioner i op til 7 dage"
       ],
       "Your previous password": [
-        "Din tidligere adgangskode"
+        "Din forrige adgangskode"
       ],
       "Your previous recovery phrase": [
-        "Din tidligere gendannelsessætning"
+        "Din forrige gendannelsessætning"
       ]
     },
     "info": {
@@ -5176,7 +5130,7 @@
         "Amazon Kindle e-bog format"
       ],
       "Android Package": [
-        "Android Pakke"
+        "Android-pakke"
       ],
       "Animated Portable Network Graphics": [
         "Animeret bærbar netværksgrafik"
@@ -5248,7 +5202,7 @@
         "Java-arkiv (JAR)"
       ],
       "JPEG images": [
-        "JPEG billeder"
+        "JPEG-billeder"
       ],
       "MP3 audio": [
         "MP3-lyd"
@@ -5320,7 +5274,7 @@
         "Videofil"
       ],
       "Waveform Audio Format": [
-        "Bølgeform lydformat"
+        "Waveform Audio Format"
       ],
       "Web Open Font Format (WOFF)": [
         "Åbent Web skrifttype format (WOFF)"
@@ -5972,6 +5926,11 @@
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(vil åbne ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Se logs."
@@ -6514,6 +6473,9 @@
       "Import record deleted": [
         "Importpost slettet"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Sidst ændrede aliasser gemt i din ældste boks"
+      ],
       "Phone number copied to clipboard": [
         "Telefonnummer kopieret til udklipsholder"
       ],
@@ -6650,16 +6612,16 @@
         "${ emailsCount } e-mailadresser"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } fejlende overførsel",
-        "${ numberOfFailedTransfer.total } fejlende overførsler"
+        "${ numberOfFailedTransfer.total } mislykket download",
+        "${ numberOfFailedTransfer.total } mislykkede downloads"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } fejlende overførsel",
-        "${ numberOfFailedTransfer.total } fejlende overførsler"
+        "${ numberOfFailedTransfer.total } mislykket overførsel",
+        "${ numberOfFailedTransfer.total } mislykkede overførsler"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } fejlende overførsel",
-        "${ numberOfFailedTransfer.total } fejlende overførsler"
+        "${ numberOfFailedTransfer.total } mislykket upload",
+        "${ numberOfFailedTransfer.total } mislykkede uploads"
       ],
       "Account recovery": [
         "Kontogendannelse"

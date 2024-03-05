@@ -815,6 +815,9 @@
       "Select calendar view": [
         "Выберите вид календаря"
       ],
+      "Select country": [
+        "Выберите страну"
+      ],
       "Select files": [
         "Выбрать файлы"
       ],
@@ -3260,49 +3263,6 @@
         "Вы можете безопасно закрыть эту вкладку."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Описание: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "Событие ${ eventTitle } было отменено."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Когда: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Когда: ${ formattedStart } (весь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Когда: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Где: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } добавлено"
@@ -5143,6 +5103,11 @@
         "Очень маленький"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "веб-приложение"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 письмо в месяц)"
@@ -5164,6 +5129,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on Play Store": [
+        "${ appName } в Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "приложение ${ MAIL_APP_NAME }"
       ],
@@ -8243,6 +8211,9 @@
       "Expand / contract composer": [
         "Расширить / сжать окно редактора"
       ],
+      "Filter": [
+        "Фильтр"
+      ],
       "Forward": [
         "Переслать"
       ],
@@ -9476,6 +9447,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "От: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Кому: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -10488,17 +10462,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, заканчивающаяся на ${ last4 }"
@@ -10592,6 +10555,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11655,9 +11629,6 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Для предприятий"
-      ],
-      "For invididuals": [
-        "Для частных лиц"
       ]
     },
     "passwordless": {

@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Aktivovať"
+      ],
       "activate": [
         "aktivovať"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Change keys": [
+        "Zmeniť kľúče"
       ],
       "Change mailbox password": [
         "Zmeniť heslo k poštovej schránke"
@@ -2039,6 +2045,9 @@
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný organizačný kľúč"
       ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
@@ -4164,6 +4173,9 @@
       "Addresses": [
         "Adresy"
       ],
+      "Administrators": [
+        "Správcovia"
+      ],
       "Allow recovery by email": [
         "Povoliť obnovenie emailom"
       ],
@@ -4508,6 +4520,9 @@
       ],
       "Value": [
         "Hodnota"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "Verification code": [
         "Overovací kód"
@@ -5817,8 +5832,17 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Prístup ku kľúču získajú všetci správcovia."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Naozaj chcete zmeniť kľúč organizácie?"
+      ],
       "Change organization key": [
         "Zmeniť kľúč organizácie"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
       ],
       "Organization key activated": [
         "Kľúč organizácie bol aktivovaný"
@@ -5826,11 +5850,53 @@
       "Organization key does not exist.": [
         "Kľúč organizácie neexistuje."
       ],
+      "Organization key must be activated to give admin privileges": [
+        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
+      ],
+      "Organization key restored": [
+        "Obnovený kľúč organizácie"
+      ],
+      "Organization key updated": [
+        "Aktualizovaný kľúč organizácie"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
+      ],
+      "Reset organization key": [
+        "Obnoviť kľúč organizácie"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Nasledujúci správcovia získajú prístup ku kľúču organizácie."
+      ],
       "The organization key must be activated first.": [
         "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Týmto sa odošle najnovší kľúč organizácie správcom, ktorí k nemu momentálne nemajú prístup."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Na vytvorenie nesúkromných ​používateľských účtov a získanie prístupu k ich účtom, budete musieť aktivovať kľúč organizácie."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Pre povolenie práva správcu vo svojom účte, aktivujte organizačný kľúč."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Použite metódu obnovenia údajov alebo obnovte kľúč organizácie na obnovenie oprávnení správcu."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Použite metódu obnovenia údajov, obráťte sa na iného správcu alebo obnovte kľúč organizácie na obnovenie oprávnení správcu."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Overili sme pravosť tohto odosielateľa a pozvánky."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Boli ste menovaný správcom organizácie **${ organizationName }** používateľom"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
       ]
     },
     "Payment method option": {
@@ -6049,6 +6115,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } správca vo vašej organizácii potrebuje prístup ku kľúču organizácie.",
+        "${ n } správcovia vo vašej organizácii potrebujú prístup ku kľúču organizácie.",
+        "${ n } správcov vo vašej organizácii potrebuje prístup ku kľúču organizácie.",
+        "${ n } správcov vo vašej organizácii potrebuje prístup ku kľúču organizácie."
+      ],
       "Changing organization keys": [
         "Zmena kľúčov organizácie"
       ],
@@ -6858,6 +6930,9 @@
       "Address added": [
         "Adresa pridaná"
       ],
+      "Administrator privileges restored": [
+        "Obnovené oprávnenia správcu"
+      ],
       "Bug reported": [
         "Chyba nahlásená"
       ],
@@ -7184,6 +7259,9 @@
       ],
       "Change role": [
         "Zmeniť funkciu"
+      ],
+      "Confirm": [
+        "Potvrdiť"
       ],
       "Confirm address": [
         "Potvrdiť adresu"
@@ -7873,6 +7951,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužiaľ nie sme momentálne dostupní. Ak chcete popísať svoj problém, vyplňte nižšie uvedený formulár. Budeme sa ním zaoberať a kontaktovať vás, až budeme opäť online."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Pred pridaním emailovej adresy k nesúkromnému členovi musíte ${ activateLink } kľúč organizácie."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"

@@ -822,10 +822,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } sugerirá crear contraseñas fuertes en formularios de registro."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } vez",
-        "${ revisionNumber } veces"
-      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } día restante",
         "${ trialDaysLeft } días restantes"
@@ -907,6 +903,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "El formato CSV es conveniente para visualizar tus datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, estructura de caja fuerte...). Para exportar datos de manera completa, utiliza otro formato."
+      ],
+      "Current version": [
+        "Versión actual"
       ],
       "Decrypting your data": [
         "Descifrando tus datos"
@@ -1548,9 +1547,6 @@
       "Last 2 weeks": [
         "Últimas 2 semanas"
       ],
-      "Last autofill": [
-        "Último autorellenado"
-      ],
       "Last month": [
         "Último mes"
       ],
@@ -1971,6 +1967,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "History": [
+        "Historial"
+      ],
       "Import - ${ date }": [
         "Importación - ${ date }"
       ],
@@ -1991,6 +1990,9 @@
       ],
       "Members": [
         "Miembros"
+      ],
+      "Modified": [
+        "Modificado"
       ],
       "Move all items ?": [
         "¿Mover todos los elementos?"

@@ -2012,52 +2012,6 @@
         "Vo vami nahranom súbore CSV sme zistili nasledujúce pole. Zaškrtnite tie, ktoré chcete importovať."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Popis: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } bolo zrušené."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } bolo aktualizované.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Tento výskyt ${ eventTitle } bol zrušený."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Ste pozvaní na ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Kedy: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Kedy: ${ formattedStart } (celý deň)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kedy: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Kde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } prijal vašu pozvánku na ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmietol/odmietla vašu pozvánku na ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } predbežne prijal/a vaše pozvanie na ${ eventTitle }"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Zrušenie udalosti na ${ formattedStart }"

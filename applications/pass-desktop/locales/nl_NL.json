@@ -17,6 +17,9 @@
       "Add new item": [
         "Nieuw item toevoegen"
       ],
+      "Admin panel": [
+        "Beheerderspaneel"
+      ],
       "Advanced": [
         "Geavanceerd"
       ],
@@ -28,6 +31,21 @@
       ],
       "Back": [
         "Terug"
+      ],
+      "Bulk delete items from trash": [
+        "Bulk items uit prullenbak verwijderen"
+      ],
+      "Bulk move items to another vault": [
+        "Bulk verplaatsen items naar een andere kluis"
+      ],
+      "Bulk move items to trash": [
+        "Bulk items naar prullenbak verplaatsen"
+      ],
+      "Bulk restore items from trash": [
+        "Bulk herstel items uit de prullenbak"
+      ],
+      "Bulk select items": [
+        "Selecteren van items"
       ],
       "Cancel": [
         "Annuleren"
@@ -89,6 +107,9 @@
       "Create login": [
         "Login aanmaken"
       ],
+      "Create new items": [
+        "Nieuwe items aanmaken"
+      ],
       "Create note": [
         "Notitie aanmaken"
       ],
@@ -127,6 +148,9 @@
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Download this CSV template": [
+        "Download dit CSV-sjabloon"
       ],
       "Edit": [
         "Bewerken"
@@ -175,6 +199,9 @@
       ],
       "Importing": [
         "Importeren"
+      ],
+      "Install extension": [
+        "Extensie installeren"
       ],
       "Invite others": [
         "Nodig anderen uit"
@@ -233,6 +260,9 @@
       "Move to trash": [
         "Naar prullenbak verplaatsen"
       ],
+      "Multiple select": [
+        "Meervoudige selectie"
+      ],
       "OK": [
         "OK"
       ],
@@ -244,6 +274,9 @@
       ],
       "Pass for iOS": [
         "Proton Pass voor iOS"
+      ],
+      "Pin item": [
+        "Item vastpinnen"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
@@ -259,6 +292,9 @@
       ],
       "Remove access": [
         "Toegang verwijderen"
+      ],
+      "Remove member": [
+        "Lid verwijderen"
       ],
       "Request a feature": [
         "Vraag een functie aan"
@@ -369,6 +405,11 @@
         "Black Friday-aanbieding"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktop app"
+      ]
+    },
     "Button": {
       "More info": [
         "Meer informatie"
@@ -392,17 +433,30 @@
       "Authentication error": [
         "Authenticatiefout"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME } wachtwoord om verder te gaan met de export"
+      ],
       "Auto-lock could not be activated": [
         "Auto-vergrendelen kon niet geactiveerd worden"
       ],
       "Auto-lock could not be disabled": [
         "Auto-vergrendeken kon niet uitgeschakeld worden"
       ],
+      "Cannot send invitation at the moment": [
+        "Kan op dit moment geen uitnodiging verzenden",
+        "Kan op dit moment geen uitnodigingen verzenden"
+      ],
+      "Cannot send invitations at the moment": [
+        "Kan op dit moment geen uitnodigingen verzenden"
+      ],
       "Could not confirm this invite at the moment": [
         "Kon de uitnodiging niet bevestigen op dit moment"
       ],
       "Could not leave vault.": [
         "Kon de kluis niet verlaten."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kan momenteel geen aanbevelingen laden."
       ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
@@ -453,20 +507,41 @@
       "Failed resending invite.": [
         "Het opnieuw versturen van de uitnodiging mislukte."
       ],
+      "Failed to delete selected items": [
+        "Fout bij het verwijderen van geselecteerde items"
+      ],
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Het verplaatsen van alle items van \"${ payload.content.name }\" mislukt"
       ],
+      "Failed to move items": [
+        "Items verplaatsen mislukt"
+      ],
+      "Failed to move items to trash": [
+        "Items verplaatsen naar prullenbak is mislukt"
+      ],
+      "Failed to pin item": [
+        "Fout bij vastpinnen item"
+      ],
       "Failed to remove user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker te verwijderen."
+      ],
+      "Failed to restore items from trash": [
+        "Fout bij het herstellen van items uit de prullenbak"
       ],
       "Failed to transfer this vault's ownership.": [
         "Overzetten van eigendom van deze kluis is mislukt."
       ],
+      "Failed to unpin item": [
+        "Kan item niet losmaken"
+      ],
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
+      ],
+      "File does not match expected format": [
+        "Bestand komt niet overeen met verwacht formaat"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Importeren mislukt voor kluis \"${ vaultData.name }\" : ${ description }"
@@ -494,6 +569,12 @@
       ],
       "Moving item failed": [
         "Item verplaatsen mislukt"
+      ],
+      "Offline mode is currently not available for two password mode.": [
+        "Offline-modus is momenteel niet beschikbaar voor twee wachtwoordmodus."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Offline-modus is momenteel niet beschikbaar voor uw abonnement en niet compatibel met twee wachtwoordmodus."
       ],
       "Passphrase is incorrect": [
         "Wachtzin is onjuist"
@@ -567,8 +648,14 @@
       "Vault name does not match": [
         "Kluisnaam komt niet overeen"
       ],
+      "Wrong password": [
+        "Fout wachtwoord"
+      ],
       "Wrong PIN code. Try again.": [
         "Verkeerde pincode. Probeer opnieuw."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
       ]
     },
     "Error message": {
@@ -632,6 +719,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" update is afgewezen"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } uitnodigingen succesvol verzonden"
+      ],
       "${ memberCount } member": [
         "${ memberCount } lid",
         "${ memberCount } leden"
@@ -646,9 +736,8 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } zal enkel logins, notities en kredietkaarten importeren."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } keer",
-        "${ revisionNumber } keer"
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } heeft uw ${ BRAND_NAME } wachtwoord nodig om offline toegang te krijgen tot gegevens."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagens om premium functies gratis te proberen. Enkel tijdens uw eerste week van ${ BRAND_NAME }."
@@ -662,11 +751,23 @@
       "Admin": [
         "Beheerder"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Na inactiviteit, heeft toegang tot ${ PASS_APP_NAME } een pincode nodig om uw sessie te ontgrendelen. U wordt uitgelogd na 3 mislukte pogingen."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" verplaatst naar prullenbak - het zal stoppen met het doorsturen van e-mails naar uw mailbox"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle items uit \"${ payload.content.name }\" succesvol verplaatst"
+      ],
+      "All items successfully moved": [
+        "Alle items zijn succesvol verplaatst"
+      ],
+      "All trashed items permanently deleted": [
+        "Alle verwijderde items permanent verwijderd"
       ],
       "All trashed items successfully restored": [
         "Alle verwijderde items succesvol hersteld"
@@ -679,6 +780,12 @@
       ],
       "Auto-lock successfully disabled": [
         "Auto-vergrendelen succesvol ingeschakeld"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Breng uw bestaande wachtwoorden naar ${ BRAND_NAME }."
+      ],
+      "Built in 2FA authenticator": [
+        "Ingebouwd in 2FA-authenticator"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
@@ -697,6 +804,12 @@
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV biedt een handig formaat om uw gegevens te bekijken. Echter, door de eenvoud ervan worden sommige gegevens niet opgenomen (aangepaste velden, kluisstructuur. .). Voor een volledige export raden we een ander formaat aan."
+      ],
+      "Current version": [
+        "Huidige versie"
       ],
       "Decrypting your data": [
         "Uw data ontsleutelen"
@@ -722,14 +835,30 @@
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
       ],
+      "Fill in the CSV with your data": [
+        "Vul de CSV in met uw gegevens"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Volg deze stappen om je gegevens te importeren met een algemeen CSV-bestand:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.",
+        "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Haal het meeste uit de Pass door een kluis voor elk team of project te maken."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Krijg ongelimiteerde aliassen, geniet van exclusieve functies, en ondersteun ons door te abonneren op Pass Plus."
       ],
       "Import in progress:": [
         "Bezig met importeren:"
+      ],
+      "Import the CSV file below.": [
+        "Importeer het CSV-bestand hieronder."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } item geïmporteerd",
@@ -741,6 +870,12 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Geef de benodigde extensierechten om de beste ervaring uit ${ PASS_APP_NAME } te halen"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Installeer ${ PASS_APP_NAME } voor ${ browser.title } om uw inloggegevens snel automatisch in te vullen."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Installeer ${ PASS_APP_NAME } voor ${ browser.title } om uw inloggegevens snel automatisch in te vullen. "
+      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
@@ -749,6 +884,9 @@
       ],
       "Invitation sent": [
         "Uitnodiging verzonden"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Nodig specifieke mensen uit en stel de juiste machtigingen in."
       ],
       "Invite successfully removed": [
         "Uitnodiging succesvol verwijderd"
@@ -820,11 +958,29 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
+      "Moving items": [
+        "Items verplaatsen"
+      ],
+      "Moving items to trash": [
+        "Items verplaatsen naar prullenbak"
+      ],
       "Never": [
         "Nooit"
       ],
+      "No network connection": [
+        "Geen netwerkverbinding"
+      ],
       "None": [
         "Geen"
+      ],
+      "Offline mode": [
+        "Offline modus"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Offline modus kon momenteel niet worden ingeschakeld"
+      ],
+      "Offline support successfully disabled": [
+        "Offline ondersteuning succesvol uitgeschakeld"
       ],
       "Owner": [
         "Eigenaar"
@@ -835,8 +991,24 @@
       "Pass Plus trial": [
         "Proton Pass Plus-proefversie"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
+        "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken worden automatisch uit de geschiedenis verwijderd."
+      ],
+      "Permanently deleting selected items": [
+        "Geselecteerde items permanent verwijderen"
+      ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pincode succesvol geregistreerd. Gebruik ze om ${ PASS_APP_NAME } te ontgrendelen"
+      ],
+      "Pinning item...": [
+        "Item vastzetten..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Bevestig uw pincode om uw huidige slot af te melden.\n${ PASS_APP_NAME } wordt dan nooit vergrendeld."
@@ -853,14 +1025,23 @@
       "Please enter your current PIN code to continue": [
         "Voer uw huidige pincode in om door te gaan"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Upgrade om Vroegtijdige toegang te hebben ${ PASS_APP_NAME } web app"
+      ],
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Privacy is van groot belang voor ons. Ontdek waarom ${ PASS_APP_NAME } anders is."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
       "Reconnect": [
         "Opnieuw verbinden"
+      ],
+      "Restoring items from trash": [
+        "Items herstellen uit prullenbak"
       ],
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
@@ -868,8 +1049,20 @@
       "Select destination vault": [
         "Kies bestemmingskluis"
       ],
+      "Select vault to share": [
+        "Selecteer kluis om te delen"
+      ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecteren waar u uw geïmporteerde kluizen wil bewaren."
+      ],
+      "Selected items permanently deleted": [
+        "Geselecteerde items permanent verwijderd"
+      ],
+      "Selected items successfully moved to trash": [
+        "Geselecteerde items succesvol verplaatst naar de prullenbak"
+      ],
+      "Selected items successfully restored from trash": [
+        "Geselecteerde items succesvol hersteld uit de prullenbak"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -880,8 +1073,14 @@
       "Set up a PIN code to easily lock your data": [
         "Stel een pincode in om uw data eenvoudig te vergrendelen"
       ],
+      "Setting up offline mode...": [
+        "Offline modus instellen..."
+      ],
       "Settings successfully updated": [
         "Instellingen succesvol bijgewerkt"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Deel uw inloggevens met maximaal 10 personen"
       ],
       "Signing you in": [
         "U wordt ingelogd"
@@ -903,6 +1102,12 @@
       ],
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
+      ],
+      "The export will only contain vaults that you own.": [
+        "De export zal alleen kluizen bevatten die u heeft."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Het geëxporteerde bestand wordt versleuteld met PGP en vereist een sterke wachtwoordzin."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Het volgende ${ result.ignored.length } item kon niet geïmporteerd worden:",
@@ -928,6 +1133,15 @@
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Unpinning item...": [
+        "Item losmaken..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Upgrade nu om premiumfuncties te ontgrendelen"
       ],
       "Use vaults to share this item with others.": [
         "Gebruik kluizen om dit item met anderen te delen."
@@ -958,6 +1172,9 @@
       ],
       "You are about to create:": [
         "U staat op het punt volgende aan te maken:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw ${ BRAND_NAME } wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
       ],
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
@@ -1105,6 +1322,9 @@
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
+      "Enable offline access": [
+        "Offline toegang inschakelen"
+      ],
       "Expiration date": [
         "Vervaldatum"
       ],
@@ -1114,11 +1334,17 @@
       "Field name": [
         "Veldnaam"
       ],
+      "File format": [
+        "Bestandsformaat"
+      ],
       "Forwards to": [
         "Stuurt door na"
       ],
       "General": [
         "Algemeen"
+      ],
+      "Generic CSV": [
+        "Generieke CSV"
       ],
       "Grant": [
         "Verlenen"
@@ -1162,9 +1388,6 @@
       "Last 2 weeks": [
         "Afgelopen 2 weken"
       ],
-      "Last autofill": [
-        "Laatste autom. aanvulling"
-      ],
       "Last month": [
         "Afgelopen maand"
       ],
@@ -1182,6 +1405,15 @@
       ],
       "Logins": [
         "Logins"
+      ],
+      "Make all admins": [
+        "Maak alle admins"
+      ],
+      "Make all editors": [
+        "Maak alle bewerkers"
+      ],
+      "Make all viewers": [
+        "Maak alle lezers"
       ],
       "Members": [
         "Leden"
@@ -1222,6 +1454,9 @@
       "Notes": [
         "Notities"
       ],
+      "Offline mode": [
+        "Offline modus"
+      ],
       "Old-New": [
         "Oud-Nieuw"
       ],
@@ -1236,6 +1471,9 @@
       ],
       "Password history": [
         "Wachtwoordgeschiedenis"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON PGP-versleuteld (aanbevolen)"
       ],
       "PIN": [
         "Pincode"
@@ -1345,6 +1583,9 @@
       "Vault": [
         "Kluis"
       ],
+      "Vault ID": [
+        "Kluis-ID"
+      ],
       "Vaults": [
         "Kluizen"
       ],
@@ -1367,6 +1608,9 @@
       ],
       "Sign in to your account": [
         "Inloggen bij uw account"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "U bent momenteel offline. Ontgrendel ${ PASS_SHORT_APP_NAME } met uw ${ BRAND_NAME } wachtwoord"
       ]
     },
     "lobby: Title": {
@@ -1381,6 +1625,9 @@
       "${ count } item": [
         "${ count } item",
         "${ count } items"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "U heeft ${ semiboldText } geselecteerd in deze kluis"
       ]
     },
     "Option": {
@@ -1413,6 +1660,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Voeg een geheime sleutel van 2FA toe"
+      ],
       "Add hidden text": [
         "Verborgen tekst toevoegen"
       ],
@@ -1532,11 +1782,20 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
+      "History": [
+        "Geschiedenis"
+      ],
       "Import - ${ date }": [
         "Importeren - ${ date }"
       ],
       "Import to vault(s)": [
         "Importeren naar kluis/kluizen"
+      ],
+      "Import your data": [
+        "Uw gegevens importeren"
+      ],
+      "Install extension": [
+        "Extensie installeren"
       ],
       "Leave vault ?": [
         "De kluis verlaten?"
@@ -1550,8 +1809,14 @@
       "Members": [
         "Leden"
       ],
+      "Modified": [
+        "Gewijzigd"
+      ],
       "Move all items ?": [
         "Alle items verplaatsen?"
+      ],
+      "No items selected": [
+        "Geen items geselecteerd"
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
@@ -1561,6 +1826,9 @@
       ],
       "Permanently remove all items ?": [
         "Alle items permanent verwijderen?"
+      ],
+      "Pinned (${ items.length })": [
+        "Vastgemaakt (${ items.length })"
       ],
       "Review and share": [
         "Beoordelen en delen"
@@ -1573,6 +1841,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Share vaults with your team": [
+        "Deel kluizen met uw team"
       ],
       "Share with": [
         "Deel met"
@@ -1589,6 +1860,9 @@
       "Update available": [
         "Update beschikbaar"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Upgrade om premiumfuncties te ontgrendelen"
+      ],
       "Vault": [
         "Kluis"
       ],
@@ -1600,6 +1874,9 @@
       ],
       "Your vault is empty": [
         "Uw kluis is leeg."
+      ],
+      "Your welcome gift": [
+        "Uw welkomstgeschenk"
       ]
     },
     "Validation": {
@@ -1641,17 +1918,38 @@
       "An error occured while exporting your data": [
         "Er is een fout opgetreden bij het exporteren van uw gegevens"
       ],
+      "At least one email address is required": [
+        "Ten minste één e-mailadres is vereist"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan op dit moment geen mailboxen ophalen voor deze alias"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kon kluis \"${ vaultName }\" niet maken"
       ],
+      "Could not send invitations to the following addresses :": [
+        "Kon geen uitnodigingen versturen naar de volgende adressen:"
+      ],
+      "Duplicate email addresses.": [
+        "Dubbele e-mailadressen."
+      ],
       "Empty note": [
         "Lege notitie"
       ],
+      "Encryption password is required": [
+        "Encryptie wachtwoord is vereist"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Vervaldatum is niet in het formaat MM/JJ"
+      ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
+      ],
+      "Invalid email addresses.": [
+        "Ongeldige e-mailadressen."
+      ],
+      "item was imported without custom fields": [
+        "item is geïmporteerd zonder aangepaste velden"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximale lengte is ${ maxLength } teken",
@@ -1689,6 +1987,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"
+      ],
+      "Please contact us for investigating the issue": [
+        "Neem contact met ons op om het probleem te onderzoeken"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifieer alstublieft uw e-mailadressen om uw e-mailaliassen te kunnen gebruiken"
@@ -1740,6 +2041,18 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
+      ],
+      "Your session could not be authorized.": [
+        "Uw sessie kon niet worden geautoriseerd."
+      ],
+      "Your session could not be resumed.": [
+        "Uw sessie kon niet worden hervat."
+      ],
+      "Your session is inactive.": [
+        "Uw sessie is niet actief."
+      ],
+      "Your session was locked.": [
+        "Uw sessie is vergrendeld."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."

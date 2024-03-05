@@ -842,12 +842,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } navrhne vytvorenie silných hesiel v registračných formulároch."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber }-krát",
-        "${ revisionNumber }-krát",
-        "${ revisionNumber }-krát",
-        "${ revisionNumber }-krát"
-      ],
       "${ trialDaysLeft } day left": [
         "Zostáva ${ trialDaysLeft } deň",
         "Zostávajú ${ trialDaysLeft } dni",
@@ -931,6 +925,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV ponúka vhodný formát na zobrazenie údajov. Avšak kvôli svojej jednoduchosti, niektoré údaje nebudú zahrnuté (vlastné polia, štruktúra trezoru...). Pre kompletný export odporúčame použiť iný formát."
+      ],
+      "Current version": [
+        "Súčasná verzia"
       ],
       "Decrypting your data": [
         "Dešifrujeme vaše údaje"
@@ -1246,6 +1243,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Rozbaľovacia ponuka automatického vypĺňania sa automaticky otvorí po kliknutí alebo zvolení poľa."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Export bude obsahovať iba trezory, ktoré vlastníte."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný súbor bude šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
@@ -1585,9 +1585,6 @@
       "Last 2 weeks": [
         "Posledné 2 týždne"
       ],
-      "Last autofill": [
-        "Posledné automatické vyplnenie"
-      ],
       "Last month": [
         "Posledný mesiac"
       ],
@@ -1674,6 +1671,9 @@
       ],
       "Pause list": [
         "Zoznam pozastavených"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON šifrovaný PGP (odporúča sa)"
       ],
       "PIN": [
         "PIN"
@@ -2009,6 +2009,9 @@
       "Hide my email": [
         "Hide my email"
       ],
+      "History": [
+        "História"
+      ],
       "Import - ${ date }": [
         "Importované - ${ date }"
       ],
@@ -2029,6 +2032,9 @@
       ],
       "Members": [
         "Členovia"
+      ],
+      "Modified": [
+        "Upravené"
       ],
       "Move all items ?": [
         "Presunúť všetky položky ?"
@@ -2183,6 +2189,9 @@
       ],
       "Invalid email addresses.": [
         "Neplatné emailové adresy."
+      ],
+      "item was imported without custom fields": [
+        "Položka bola importovaná bez vlastných polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximálna dĺžka je ${ maxLength } znak",

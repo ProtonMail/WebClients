@@ -2349,49 +2349,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Апісанне: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "АПІСАННЕ:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } было скасавана."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } было абноўлена.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Усе падзеі ў гэтай серыі былі абноўлены."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Гэта паўтарэнне ${ eventTitle } было скасавана."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Усе падзеі ў гэтай серыі былі абноўлены. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вас запрасілі на ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Паўтарэнне гэтай падзеі было скасавана."
+      ],
+      "This event occurrence was updated.": [
+        "Паўтарэнне гэтай падзеі было абноўлена."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Паўтарэнне гэтай падзеі было абноўлена. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Гэта падзея была абноўлена."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Гэта падзея была абноўлена. Змены, якія адбыліся:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Вас запрасілі на ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Калі: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "ЧАС:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Калі: ${ formattedStart } (увесь дзень)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "ЧАС:\n${ formattedStart } (увесь дзень)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Калі: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ЧАС:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Выдалена"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Дзе: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "РАЗМЯШЧЭННЕ:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } прымаў(-ла) ваша запрашэнне на ${ eventTitle }"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } адхіляў(-ла) ваша запрашэнне на ${ eventTitle }"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } адхіліў(-ла) ваша запрашэнне на ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } умоўна прымаў(-ла) ваша запрашэнне на ${ eventTitle }"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } умоўна прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -3921,6 +3941,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "Дададзеным удзельнікам будзе адпраўлена запрашэнне."
+      ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "Запрашэнне было адпраўлена ўсім удзельнікам. Якую падзею вы хочаце абнавіць?"
       ],
       "An invitation will be sent to the event participants.": [
         "Удзельнікам падзеі будзе адпраўлена запрашэнне."
@@ -6098,6 +6121,11 @@
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(адкрые ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Паглядзець журнал"
@@ -6826,6 +6854,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Запрашэнне адпраўлена і ўдзельнікі дададзены да ўсіх падзей"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Апошнія змененыя псеўданімы захоўваюцца ў вашым самым старым сховішчы"
       ],
       "Participants notified and all events updated": [
         "Удзельнікі атрымалі апавяшчэнні і ўсе падзеі абноўлены"

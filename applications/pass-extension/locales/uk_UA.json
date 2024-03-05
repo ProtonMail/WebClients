@@ -675,12 +675,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } пропонуватиме створювати надійні паролі у реєстраційних формах."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } раз",
-        "${ revisionNumber } рази",
-        "${ revisionNumber } разів",
-        "${ revisionNumber } разів"
-      ],
       "${ trialDaysLeft } day left": [
         "Залишився ${ trialDaysLeft } день",
         "Залишилось ${ trialDaysLeft } дні",
@@ -725,6 +719,9 @@
       ],
       "Creating alias...": [
         "Створення псевдоніма..."
+      ],
+      "Current version": [
+        "Поточна версія"
       ],
       "Decrypting your data": [
         "Розшифрування ваших даних"
@@ -836,6 +833,12 @@
       ],
       "Item successfully moved": [
         "Елемент успішно переміщено"
+      ],
+      "Item successfully pinned": [
+        "Елемент успішно прикріплено"
+      ],
+      "Item successfully unpinned": [
+        "Елемент успішно відкріплено"
       ],
       "Let's get you started by creating your first item": [
         "Почніть створювати свій перший елемент"
@@ -1201,9 +1204,6 @@
       ],
       "Last 2 weeks": [
         "Останні 2 тижні"
-      ],
-      "Last autofill": [
-        "Останнє автозаповнення"
       ],
       "Last month": [
         "Минулого місяця"
@@ -1585,6 +1585,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "History": [
+        "Історія"
+      ],
       "Import - ${ date }": [
         "Імпорт - ${ date }"
       ],
@@ -1596,6 +1599,9 @@
       ],
       "Low disk space": [
         "Бракує місця на диску"
+      ],
+      "Modified": [
+        "Змінено"
       ],
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"
