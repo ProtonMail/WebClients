@@ -3175,49 +3175,49 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Açıklama: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "Açıklama:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } iptal edildi."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } güncellendi.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Bu serideki tüm etkinlikler güncellendi."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Bu zamandaki ${ eventTitle } etkinliği iptal edildi."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu serideki tüm etkinlikler güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "${ eventTitle } etkinliğine davet edildiniz\n${ eventDetailsText }"
+      "This event was updated.": [
+        "Bu etkinlik güncellendi."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu etkinlik güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Zaman: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "Zaman:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Zaman: ${ formattedStart } (tüm gün)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "ZAMAN:\n${ formattedStart } (tüm gün)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Zaman: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "Zaman:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Kaldırıldı"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Yer: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kabul edildi"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
+      "LOCATION:\n${ eventLocation }": [
+        "Konum:\n${ eventLocation }"
       ]
     },
     "Email reminder banner": {
@@ -4407,25 +4407,28 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
+      "14-day destkop app trial.": [
+        "14 günlük masaüstü uygulama denemesi."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Gelen kutunuza ve takviminize hızla, güvenle ve dikkatinizi dağıtmadan erişmenin tadını çıkarın."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Ücretli ${ BRAND_NAME } tarifesi ile sınırsız erişim elde edin"
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Herhangi bir ${ MAIL_APP_NAME } planı ile sınırsız erişim elde edin."
       ],
-      "Introducing the desktop app": [
-        "Masaüstü uygulamasını yayınladık"
+      "No credit card required.": [
+        "Kredi kartı gerekmez."
       ],
-      "No credit card required": [
-        "Kredi kartı gerekmez"
+      "Try the app-new desktop app": [
+        "Yeni masaüstü uygulamasını deneyin"
       ],
       "Upgrade now": [
         "Şimdi yükseltin"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "14 gün boyunca ücretsiz olarak deneyin"
+      "Start free trial": [
+        "Ücretsiz denemeyi başlatın"
       ]
     },
     "Get started checklist instructions": {
@@ -8267,6 +8270,11 @@
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } açacaktır)"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Günlükleri görüntüle"
@@ -9123,6 +9131,9 @@
       ],
       "Labels applied.": [
         "Etiketler uygulandı."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "En eski kasanızda saklanan son değiştirilen takma adlar"
       ],
       "Mail list unsubscribed": [
         "Posta listesi aboneliğinden ayrıldınız"

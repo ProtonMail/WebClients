@@ -2861,49 +2861,6 @@
         "Sider kullec"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Aglam: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } yettwasefsex."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Tettwaɛerḍeḍ ɣer ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Melmi: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Melmi: ${ formattedStart } (akk ass)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Melmi: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Anida: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } yeqbel tinubga-inek·inem ɣer ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } yugi•tugi leɛraḍa-inek•m ɣer ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } yeqbel bizmant tinubga-inek·inem ɣer ${ eventTitle }"
-      ]
-    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Tadyant ad ttebdu azekka"
@@ -3792,8 +3749,8 @@
       ]
     },
     "Free trial desktop": {
-      "No credit card required": [
-        "Ulac takarḍa n usmad yettwasran"
+      "No credit card required.": [
+        "Ulac takarḍa n usmad yettwasran."
       ]
     },
     "Get started checklist instructions": {
