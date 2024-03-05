@@ -21,15 +21,15 @@ import { getPrimaryPublicKeyForEmail } from './helpers/getPublicKeysForEmail';
  */
 export const useShareInvitees = (existingEmails: string[]) => {
     const api = useApi();
-    const [inviteesMap, setInviteeMap] = useState<Map<string, ShareInvitee>>(new Map());
+    const [inviteesMap, setInviteesMap] = useState<Map<string, ShareInvitee>>(new Map());
     const invitees = [...inviteesMap.values()];
 
     const { createNotification } = useNotifications();
 
     const canonicalizeCurrentEmails = invitees.map(({ email }) => canonicalizeInternalEmail(email));
     const canonicalizeExistingEmails = existingEmails.map(canonicalizeInternalEmail);
-    const showDuplicateNotification = (duplicateInvitee: ShareInvitee[]) => {
-        const joinedInvitee = duplicateInvitee.map((shareMember) => shareMember.email).join(', ');
+    const showDuplicateNotification = (duplicateInvitees: ShareInvitee[]) => {
+        const joinedInvitee = duplicateInvitees.map((duplicateInvitee) => duplicateInvitee.email).join(', ');
 
         // translator: "joinedInvitee" is the invitee list joined by a comma, e.g. "John, Jane, Joe"
         const text = c('Error').ngettext(
@@ -43,19 +43,19 @@ export const useShareInvitees = (existingEmails: string[]) => {
             type: 'warning',
         });
     };
-    const add = (newInvitee: ShareInvitee[]) => {
-        const { filteredInvitee, duplicateInvitee, badInvitee } = newInvitee.reduce<{
-            filteredInvitee: Map<string, ShareInvitee>;
+    const add = async (newInvitee: ShareInvitee[]) => {
+        const { filteredInvitees, duplicateInvitees, badInvitees } = newInvitee.reduce<{
+            filteredInvitees: Map<string, ShareInvitee>;
             addedCanonicalizedAddresses: string[];
-            duplicateInvitee: ShareInvitee[];
-            badInvitee: Map<string, ShareInvitee>;
+            duplicateInvitees: ShareInvitee[];
+            badInvitees: Map<string, ShareInvitee>;
         }>(
             (acc, newRecipient) => {
                 const address = newRecipient.email;
                 const canonicalizedAddress = canonicalizeInternalEmail(address);
 
                 if (!validateEmailAddress(address)) {
-                    acc.badInvitee.set(address, {
+                    acc.badInvitees.set(address, {
                         ...newRecipient,
                         error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
                     });
@@ -63,35 +63,35 @@ export const useShareInvitees = (existingEmails: string[]) => {
                 }
 
                 if (canonicalizeExistingEmails.includes(canonicalizedAddress)) {
-                    acc.badInvitee.set(address, {
+                    acc.badInvitees.set(address, {
                         ...newRecipient,
                         error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.EXISTING_MEMBER),
                     });
                 } else if (
                     [...canonicalizeCurrentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)
                 ) {
-                    acc.duplicateInvitee.push(newRecipient);
+                    acc.duplicateInvitees.push(newRecipient);
                 } else {
-                    acc.filteredInvitee.set(address, { ...newRecipient, isLoading: true });
+                    acc.filteredInvitees.set(address, { ...newRecipient, isLoading: true });
                     acc.addedCanonicalizedAddresses.push(canonicalizedAddress);
                 }
 
                 return acc;
             },
             {
-                filteredInvitee: new Map<string, ShareInvitee>(),
+                filteredInvitees: new Map<string, ShareInvitee>(),
                 addedCanonicalizedAddresses: [],
-                duplicateInvitee: [],
-                badInvitee: new Map<string, ShareInvitee>(),
+                duplicateInvitees: [],
+                badInvitees: new Map<string, ShareInvitee>(),
             }
         );
 
-        setInviteeMap((map) => new Map([...map, ...filteredInvitee, ...badInvitee]));
-        filteredInvitee.forEach(async (filteredInvitee, email) => {
+        setInviteesMap((map) => new Map([...map, ...filteredInvitees, ...badInvitees]));
+        for (let [email, filteredInvitee] of filteredInvitees) {
             // We consider a user as external if this one have no public keys
             const primaryPublicKey = await getPrimaryPublicKeyForEmail(api, email);
             if (!primaryPublicKey) {
-                setInviteeMap((map) => {
+                setInviteesMap((map) => {
                     const copy = new Map(map);
                     copy.set(email, {
                         ...filteredInvitee,
@@ -103,7 +103,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                 return;
             }
             const publicKey = await CryptoProxy.importPublicKey({ armoredKey: primaryPublicKey });
-            setInviteeMap((map) => {
+            setInviteesMap((map) => {
                 const copy = new Map(map);
                 copy.set(email, {
                     ...filteredInvitee,
@@ -113,15 +113,15 @@ export const useShareInvitees = (existingEmails: string[]) => {
                 });
                 return copy;
             });
-        });
+        }
 
-        if (duplicateInvitee.length) {
-            showDuplicateNotification(duplicateInvitee);
+        if (duplicateInvitees.length) {
+            showDuplicateNotification(duplicateInvitees);
         }
     };
 
     const remove = (email: string) => {
-        setInviteeMap((map) => {
+        setInviteesMap((map) => {
             const copy = new Map(map);
             copy.delete(email);
 
@@ -130,7 +130,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
     };
 
     const clean = () => {
-        setInviteeMap(new Map());
+        setInviteesMap(new Map());
     };
 
     return {

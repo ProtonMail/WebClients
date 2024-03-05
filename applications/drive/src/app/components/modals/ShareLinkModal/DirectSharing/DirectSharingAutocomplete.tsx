@@ -18,10 +18,11 @@ import {
     useContactGroups,
     usePopperAnchor,
 } from '@proton/components/index';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
-import { ShareInvitee, ShareMember, useShareMemberView } from '../../../../store';
+import { ShareInvitee, ShareMember } from '../../../../store';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
@@ -33,10 +34,10 @@ interface Props {
     onSubmit: (invitees: ShareInvitee[]) => void;
     hidden: boolean;
     members: ShareMember[];
-    addNewMember: ReturnType<typeof useShareMemberView>['addNewMember'];
+    addNewMembers: (invitees: ShareInvitee[], permissions: SHARE_MEMBER_PERMISSIONS) => Promise<void>;
     isAdding: boolean;
 }
-const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members, addNewMember, isAdding }: Props) => {
+const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members, addNewMembers, isAdding }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [selectedPermissions, setPermissions] = useState<number>(MEMBER_PERMISSIONS.VIEWER);
     const addressesInputText = c('Action').t`Add people or groups to share`;
@@ -44,16 +45,19 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
     const [contactEmails] = useContactEmails();
     const [contactGroups] = useContactGroups();
     const groupsWithContactsMap = getGroupsWithContactsMap(contactEmails || [], contactGroups || []);
-    const existingEmails = [...members].map((member) => member.inviter);
+    const existingEmails = [...members].map((member) => member.inviterEmail);
     const { invitees, count, add, remove, clean } = useShareInvitees(existingEmails);
 
     const inputId = 'direct-sharing';
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
 
     // Here we check if the email address is already in invited members
-    const isSubmitDisabled = invitees.every(
-        (obj, index) => (members.length && obj.email === members[index]?.inviter) || !!obj.error || obj.isLoading
-    );
+    const isSubmitDisabled =
+        !invitees.length ||
+        !!invitees.find(
+            (invitee) =>
+                invitee.isLoading || invitee.error || members.some((member) => invitee.email === member.inviterEmail)
+        );
 
     const permissionsOptions: { icon: IconName; label: string; value: number }[] = [
         {
@@ -69,21 +73,20 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
     ];
 
     const items = invitees.map((invitee) => {
-        const { name, email, isExternal } = invitee;
-        const inputItemAttributes = isExternal ? getAddressInputItemAttributes(invitee) : undefined;
+        const inputItemAttributes = getAddressInputItemAttributes(invitee);
 
         return (
             <AddressesInputItem
-                key={email}
+                key={invitee.email}
                 labelTooltipTitle={inputItemAttributes?.labelTooltip}
-                label={name}
+                label={invitee.name}
                 labelProps={{
                     className: 'py-1',
                 }}
                 icon={inputItemAttributes?.icon}
                 iconTooltipTitle={inputItemAttributes?.iconTooltip}
                 onClick={(event) => event.stopPropagation()}
-                onRemove={() => remove(email)}
+                onRemove={() => remove(invitee.email)}
             />
         );
     });
@@ -168,7 +171,7 @@ const DirectSharingAutocomplete = ({ onFocus, onClose, onSubmit, hidden, members
                         disabled={isSubmitDisabled}
                         loading={isAdding}
                         onClick={async () => {
-                            await addNewMember(invitees, selectedPermissions);
+                            await addNewMembers(invitees, selectedPermissions);
                             clean();
                             onSubmit(invitees);
                         }}

@@ -107,7 +107,7 @@ export interface LockedPhotosForRestore extends LockedShareForRestore {
     shareSessionKey: SessionKey;
 }
 
-export interface ShareMember {
+export interface ShareMemberLEGACY {
     memberId: string;
     shareId: string;
     addressId: string;
@@ -123,12 +123,27 @@ export interface ShareMember {
     unlockable: boolean | null;
 }
 
-export interface InviteShareMember {
+export interface ShareMember {
+    memberId: string;
     email: string;
-    inviter: string;
+    inviterEmail: string;
+    addressId: number;
+    createTime: number;
+    modifyTime: number;
+    permissions: SHARE_MEMBER_PERMISSIONS;
+    keyPacketSignature: string;
+    sessionKeySignature: string;
+}
+
+export interface ShareInvitation {
+    invitationId: string;
+    inviterEmail: string;
+    inviteeEmail: string;
     permissions: SHARE_MEMBER_PERMISSIONS;
     keyPacket: string;
     keyPacketSignature: string;
+    createTime: number;
+    state: SHARE_MEMBER_STATE;
 }
 
 export interface ShareInvitee {

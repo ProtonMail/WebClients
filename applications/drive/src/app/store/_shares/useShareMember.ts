@@ -1,74 +1,51 @@
-import { queryAddShareMember, queryRemoveShareMember, queryShareMembers } from '@proton/shared/lib/api/drive/share';
-import { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
-import { ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import {
+    queryRemoveShareMember,
+    queryShareMemberDetails,
+    queryShareMemberListing,
+    queryUpdateShareMemberPermissions,
+} from '@proton/shared/lib/api/drive/member';
+import { ShareMemberListingPayload, ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/member';
 
 import { shareMemberPayloadToShareMember, useDebouncedRequest } from '../_api';
-import { useDriveEventManager } from '../_events';
-import { useLink } from '../_links';
-import { useVolumesState } from '../_volumes';
-import { InviteShareMember } from './interface';
-import useShare from './useShare';
-import useShareActions from './useShareActions';
+import { ShareMember } from './interface';
 
-const useShareMember = () => {
+export const useShareMember = () => {
     const debouncedRequest = useDebouncedRequest();
-    const { createShare } = useShareActions();
-    const { getShare, getShareSessionKey } = useShare();
-    const { getLink } = useLink();
-    const events = useDriveEventManager();
-    const volumeState = useVolumesState();
-
-    const getShareIdWithSessionkey = async (abortSignal: AbortSignal, rootShareId: string, linkId: string) => {
-        const [share, link] = await Promise.all([
-            getShare(abortSignal, rootShareId),
-            getLink(abortSignal, rootShareId, linkId),
-        ]);
-        if (link.shareId) {
-            return { shareId: link.shareId, sessionKey: await getShareSessionKey(abortSignal, link.shareId) };
-        }
-
-        const createShareResult = await createShare(abortSignal, rootShareId, share.volumeId, linkId);
-        const volumeId = volumeState.findVolumeId(rootShareId);
-        if (volumeId) {
-            // TODO: Volume event is not properly handled for share creation
-            await events.pollEvents.volumes(volumeId);
-        }
-
-        return createShareResult;
-    };
-    const getShareMembers = async (abortSignal: AbortSignal, shareId: string) => {
-        return debouncedRequest<{ Members: ShareMemberPayload[] }>(queryShareMembers(shareId), abortSignal).then(
-            ({ Members }) =>
-                Members.filter((ShareMember) => ShareMember.State !== SHARE_MEMBER_STATE.REMOVED).map((ShareMember) =>
-                    shareMemberPayloadToShareMember(ShareMember)
-                )
-        );
-    };
-
-    const removeShareMember = (abortSignal: AbortSignal, shareId: string, memberId: string) =>
-        debouncedRequest(queryRemoveShareMember(shareId, memberId));
-
-    const addShareMember = (
+    const getShareMembers = async (
         abortSignal: AbortSignal,
-        shareId: string,
-        { email, keyPacket, permissions, inviter, keyPacketSignature }: InviteShareMember
+        { volumeId, shareId }: { volumeId: string; shareId: string }
+    ) => {
+        return debouncedRequest<ShareMemberListingPayload>(queryShareMemberListing(volumeId, shareId), abortSignal)
+            .then(({ MemberIDs }) =>
+                debouncedRequest<{ Members: ShareMemberPayload[] }>(
+                    queryShareMemberDetails(volumeId, shareId, {
+                        MemberIDs,
+                    }),
+                    abortSignal
+                )
+            )
+            .then(({ Members }) => Members.map(shareMemberPayloadToShareMember));
+    };
+
+    const removeShareMember = (
+        abortSignal: AbortSignal,
+        { volumeId, shareId, memberId }: { volumeId: string; shareId: string; memberId: string }
+    ) => debouncedRequest(queryRemoveShareMember(volumeId, shareId, { MemberId: memberId }), abortSignal);
+
+    const updateShareMemberPermissions = (
+        abortSignal: AbortSignal,
+        { volumeId, shareId, members }: { volumeId: string; shareId: string; members: ShareMember[] }
     ) =>
-        debouncedRequest<{ Code: number; ShareMember: ShareMemberPayload }>(
-            queryAddShareMember(shareId, {
-                Email: email,
-                KeyPacket: keyPacket,
-                Permissions: permissions,
-                Inviter: inviter,
-                KeyPacketSignature: keyPacketSignature,
-            })
-        ).then(({ ShareMember }) => shareMemberPayloadToShareMember(ShareMember));
+        debouncedRequest(
+            queryUpdateShareMemberPermissions(volumeId, shareId, {
+                Members: members.map(({ memberId, permissions }) => ({ MemberID: memberId, Permissions: permissions })),
+            }),
+            abortSignal
+        );
 
     return {
         getShareMembers,
-        getShareIdWithSessionkey,
         removeShareMember,
-        addShareMember,
+        updateShareMemberPermissions,
     };
 };
-
-export default useShareMember;

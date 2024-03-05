@@ -176,10 +176,9 @@ export enum SHARE_MEMBER_PERMISSIONS {
 }
 
 export enum SHARE_MEMBER_STATE {
-    ACTIVE = 1,
-    REMOVED = 2,
-    LOCKED = 3,
-    INVITED = 4,
+    PENDING = 1,
+    REJECTED = 2,
+    DELETED = 3,
 }
 export const DS_STORE = '.DS_Store';
 
@@ -193,3 +192,7 @@ export const PHOTOS_ACCEPTED_INPUT = `image/*,video/*,${SupportedMimeTypes.heic}
 
 const HOURS_IN_MS = 60 * 60 * 1000;
 export const ACTIVE_PING_INTERVAL = 6 * HOURS_IN_MS;
+
+export enum DRIVE_SIGNATURE_CONTEXT {
+    SHARE_MEMBER_INVITE = 'drive.share-member.inviter',
+}
