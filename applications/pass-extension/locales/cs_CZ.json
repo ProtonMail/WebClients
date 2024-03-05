@@ -691,7 +691,7 @@
         "Název trezoru neodpovídá"
       ],
       "Wrong password": [
-        "Chybné heslo"
+        "Nesprávné heslo"
       ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
@@ -797,12 +797,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } bude navrhovat vytváření silných hesel v registračních formulářích."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát"
-      ],
       "${ trialDaysLeft } day left": [
         "Zbývá ${ trialDaysLeft } den",
         "Zbývají ${ trialDaysLeft } dny",
@@ -877,6 +871,9 @@
       ],
       "Creating alias...": [
         "Vytváření aliasu..."
+      ],
+      "Current version": [
+        "Současná verze"
       ],
       "Decrypting your data": [
         "Dešifrování vašich dat"
@@ -1489,9 +1486,6 @@
       "Last 2 weeks": [
         "Minulé 2 týdny"
       ],
-      "Last autofill": [
-        "Poslední automatické vyplnění"
-      ],
       "Last month": [
         "Minulý měsíc"
       ],
@@ -1889,6 +1883,9 @@
       "Fill & copy password": [
         "Vyplnit a kopírovat heslo"
       ],
+      "Get Started": [
+        "Začínáme"
+      ],
       "Get the mobile apps": [
         "Získejte mobilní aplikace"
       ],
@@ -1897,6 +1894,9 @@
       ],
       "Hide my email": [
         "Hide-my-email"
+      ],
+      "History": [
+        "Historie"
       ],
       "Import - ${ date }": [
         "Importováno - ${ date }"
@@ -1915,6 +1915,12 @@
       ],
       "Member limit": [
         "Limit počtu členů"
+      ],
+      "Members": [
+        "Členové"
+      ],
+      "Modified": [
+        "Upraveno"
       ],
       "Move all items ?": [
         "Přesunout všechny položky?"
@@ -2040,11 +2046,17 @@
       "An error occured while exporting your data": [
         "Při exportu dat došlo k chybě"
       ],
+      "At least one email address is required": [
+        "Je vyžadována alespoň jedna e-mailová adresa"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Pro tento alias nelze nyní načíst e-mailové schránky"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
+      ],
+      "Duplicate email addresses.": [
+        "Duplicitní e-mailové adresy."
       ],
       "Empty note": [
         "Prázdná poznámka"
@@ -2057,6 +2069,9 @@
       ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"
+      ],
+      "Invalid email addresses.": [
+        "Neplatné e-mailové adresy."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximální délka je ${ maxLength } znak",
@@ -2081,6 +2096,9 @@
       ],
       "No password manager selected": [
         "Není vybrán žádný správce hesel"
+      ],
+      "No results": [
+        "Žádné výsledky"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
