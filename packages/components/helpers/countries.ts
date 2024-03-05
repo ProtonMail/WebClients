@@ -204,6 +204,7 @@ const COUNTRIES = [
     { value: 'SO', label: 'Somalia' },
     { value: 'ZA', label: 'South Africa' },
     { value: 'GS', label: 'South Georgia and the South Sandwich Islands' },
+    { value: 'SS', label: 'South Sudan' },
     { value: 'ES', label: 'Spain' },
     { value: 'LK', label: 'Sri Lanka' },
     { value: 'SD', label: 'Sudan' },
