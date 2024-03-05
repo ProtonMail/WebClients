@@ -116,6 +116,9 @@
       "Delete vault": [
         "刪除保管庫"
       ],
+      "Deselect": [
+        "取消選取"
+      ],
       "Discard": [
         "放棄"
       ],
@@ -389,6 +392,12 @@
       "Auto-lock could not be disabled": [
         "無法停用自動鎖定"
       ],
+      "Cannot send invitations at the moment": [
+        "目前無法發送邀請"
+      ],
+      "Could not confirm this invite at the moment": [
+        "現在無法確認邀請"
+      ],
       "Could not leave vault.": [
         "無法離開保管庫。"
       ],
@@ -434,14 +443,26 @@
       "Failed resending invite.": [
         "重新發送邀請時失敗。"
       ],
+      "Failed to delete selected items": [
+        "無法刪除選擇的項目"
+      ],
       "Failed to edit user's access.": [
         "失敗編輯使用者存取權。"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "項目移至${ payload.content.name }失敗"
       ],
+      "Failed to move items": [
+        "移動項目失敗"
+      ],
+      "Failed to move items to trash": [
+        "移動項目至垃圾桶失敗"
+      ],
       "Failed to remove user's access.": [
         "失敗移除使用者存取權。"
+      ],
+      "Failed to restore items from trash": [
+        "從垃圾桶還原項目失敗"
       ],
       "Failed to transfer this vault's ownership.": [
         "轉移保管庫所有權失敗。"
@@ -490,6 +511,9 @@
       ],
       "Restoring item failed": [
         "還原項目失敗"
+      ],
+      "Restoring trashed items failed": [
+        "還原刪除項目失敗"
       ],
       "Settings update failed": [
         "設定更新失敗"
@@ -599,6 +623,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "全部保管庫${ payload.content.name }已成功移動"
+      ],
       "All items successfully moved": [
         "全部項目已成功移動"
       ],
@@ -631,6 +658,9 @@
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
+      ],
+      "Current version": [
+        "目前版本"
       ],
       "Decrypting your data": [
         "解密您的檔案"
@@ -805,6 +835,12 @@
       ],
       "Select vault to share": [
         "選擇要共享的保管庫"
+      ],
+      "Selected items permanently deleted": [
+        "選取項目永久刪除"
+      ],
+      "Selected items successfully moved to trash": [
+        "選取項目成功移至垃圾桶"
       ],
       "Selected items successfully restored from trash": [
         "成功還原垃圾桶的選取項目"
@@ -1072,9 +1108,6 @@
       "Last 2 weeks": [
         "過去2週"
       ],
-      "Last autofill": [
-        "上次自動填滿"
-      ],
       "Last month": [
         "上個月"
       ],
@@ -1163,7 +1196,7 @@
         "回報問題"
       ],
       "Restore all items": [
-        "項目已還原"
+        "還原所有項目"
       ],
       "Reveal password": [
         "顯示密碼"
@@ -1288,6 +1321,11 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "歡迎使用 ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "You selected ${ semiboldText } in this vault": [
+        "您選取於保管庫的${ semiboldText }"
       ]
     },
     "Option": {
@@ -1433,6 +1471,9 @@
       "Grant permissions": [
         "取得權限"
       ],
+      "History": [
+        "歷程記錄"
+      ],
       "Import - ${ date }": [
         "匯入 - ${ date }"
       ],
@@ -1456,6 +1497,9 @@
       ],
       "Members": [
         "成員"
+      ],
+      "Modified": [
+        "修改日期"
       ],
       "Move all items ?": [
         "移動所有項目?"
@@ -1643,6 +1687,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "您不再擁有保管庫的存取權。若要重新加入，您需要新的邀請。"
+      ],
+      "Your session could not be authorized.": [
+        "您的作業階段無法驗證。"
       ],
       "Your session was locked.": [
         "您的作業階段以鎖定。"

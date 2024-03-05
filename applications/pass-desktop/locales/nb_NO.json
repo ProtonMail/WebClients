@@ -739,10 +739,6 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } gang",
-        "${ revisionNumber } ganger"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
       ],
@@ -811,6 +807,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV tilbyr et praktisk format for å se dataene dine. På grunn av sin enkelhet vil imidlertid noen data ikke bli inkludert (egendefinerte felt, hvelvstruktur ...). For en fullstendig eksport anbefaler vi at du bruker et annet format."
+      ],
+      "Current version": [
+        "Gjeldende versjon"
       ],
       "Decrypting your data": [
         "Dekrypterer dataene dine"
@@ -1389,9 +1388,6 @@
       "Last 2 weeks": [
         "Siste 2 uker"
       ],
-      "Last autofill": [
-        "Siste autofyll"
-      ],
       "Last month": [
         "Siste måned"
       ],
@@ -1786,6 +1782,9 @@
       "Grant permissions": [
         "Gi tillatelser"
       ],
+      "History": [
+        "Historikk"
+      ],
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
@@ -1809,6 +1808,9 @@
       ],
       "Members": [
         "Medlemmer"
+      ],
+      "Modified": [
+        "Endret"
       ],
       "Move all items ?": [
         "Flytte alle elementer?"
