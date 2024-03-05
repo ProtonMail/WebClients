@@ -257,6 +257,9 @@
       "Move to trash": [
         "ごみ箱に移動"
       ],
+      "Multiple select": [
+        "複数選択"
+      ],
       "Not now": [
         "後で"
       ],
@@ -374,6 +377,9 @@
       "Transfer ownership": [
         "所有権の移行"
       ],
+      "Trash": [
+        "ごみ箱"
+      ],
       "Try again": [
         "再試行"
       ],
@@ -421,6 +427,11 @@
     "bf2023: Title": {
       "Black Friday offer": [
         "ブラック フライデー オファー"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Button": {
@@ -664,6 +675,9 @@
       "Vault name does not match": [
         "保管庫名が一致しません"
       ],
+      "Wrong password": [
+        "パスワードが正しくありません"
+      ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
       ],
@@ -747,9 +761,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } は、サインアップ フォームに強力なパスワードを作成することを提案します。"
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } 回"
-      ],
       "${ trialDaysLeft } day left": [
         "残り ${ trialDaysLeft } 日"
       ],
@@ -818,6 +829,9 @@
       ],
       "Creating alias...": [
         "エイリアスを作成中..."
+      ],
+      "Current version": [
+        "現在のバージョン"
       ],
       "Decrypting your data": [
         "データの暗号化解除"
@@ -1040,6 +1054,9 @@
       ],
       "Set up a PIN code to easily lock your data": [
         "PINコードを設定してデータを簡単にロックする"
+      ],
+      "Setting up offline mode...": [
+        "オフラインモードを設定中..."
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
@@ -1378,9 +1395,6 @@
       ],
       "Last 2 weeks": [
         "過去 2 週間"
-      ],
-      "Last autofill": [
-        "最後の自動入力"
       ],
       "Last month": [
         "先月"
@@ -1786,6 +1800,9 @@
       "Hide my email": [
         "メールを非表示にする"
       ],
+      "History": [
+        "履歴"
+      ],
       "Import - ${ date }": [
         "インポート - ${ date }"
       ],
@@ -1806,6 +1823,9 @@
       ],
       "Members": [
         "メンバー"
+      ],
+      "Modified": [
+        "更新日時"
       ],
       "Move all items ?": [
         "すべてのアイテムを移動しますか?"
@@ -1942,6 +1962,9 @@
       ],
       "Empty note": [
         "空のメモ"
+      ],
+      "Encryption password is required": [
+        "暗号化パスワードが必要です"
       ],
       "Expiration Date is not in the format MM/YY": [
         "有効期限が MM/YY の形式ではありません"

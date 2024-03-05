@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "帳號"
+      ],
       "Account settings": [
         "帳號設定"
       ],
@@ -137,6 +140,9 @@
       "Delete vault": [
         "刪除保管庫"
       ],
+      "Deselect": [
+        "取消選取"
+      ],
       "Disable autosave on this website": [
         "在這個網站上關閉自動儲存"
       ],
@@ -164,6 +170,9 @@
       "Export": [
         "匯出"
       ],
+      "Feedback & Help": [
+        "意見反饋和協助"
+      ],
       "Fill password": [
         "填寫密碼"
       ],
@@ -190,6 +199,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "如何從${ PROVIDER_INFO_MAP[form.values.provider].title }匯出資料?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "如何使用${ PASS_APP_NAME }"
       ],
       "Import": [
         "匯入"
@@ -395,6 +407,9 @@
       "Upgrade now to share with more people": [
         "立即升級即可分享給更多人"
       ],
+      "View app logs": [
+        "瀏覽應用程式記錄檔"
+      ],
       "Write us on Reddit": [
         "在 Reddit 上寫上我們"
       ],
@@ -449,6 +464,12 @@
       "Cannot create alias (${ error }).": [
         "無法創建別名 (${ error })。"
       ],
+      "Cannot send invitations at the moment": [
+        "目前無法發送邀請"
+      ],
+      "Could not confirm this invite at the moment": [
+        "現在無法確認邀請"
+      ],
       "Could not leave vault.": [
         "無法離開保管庫。"
       ],
@@ -497,14 +518,26 @@
       "Failed resending invite.": [
         "重新發送邀請時失敗。"
       ],
+      "Failed to delete selected items": [
+        "無法刪除選擇的項目"
+      ],
       "Failed to edit user's access.": [
         "失敗編輯使用者存取權。"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "項目移至${ payload.content.name }失敗"
       ],
+      "Failed to move items": [
+        "移動項目失敗"
+      ],
+      "Failed to move items to trash": [
+        "移動項目至垃圾桶失敗"
+      ],
       "Failed to remove user's access.": [
         "失敗移除使用者存取權。"
+      ],
+      "Failed to restore items from trash": [
+        "從垃圾桶還原項目失敗"
       ],
       "Failed to transfer this vault's ownership.": [
         "轉移保管庫所有權失敗。"
@@ -562,6 +595,9 @@
       ],
       "Restoring item failed": [
         "還原項目失敗"
+      ],
+      "Restoring trashed items failed": [
+        "還原刪除項目失敗"
       ],
       "Settings update failed": [
         "設定更新失敗"
@@ -694,9 +730,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME }將會於註冊時建議密碼"
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber }次數"
-      ],
       "${ trialDaysLeft } day left": [
         "剩下${ trialDaysLeft }天"
       ],
@@ -714,6 +747,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "全部保管庫${ payload.content.name }已成功移動"
       ],
       "All items successfully moved": [
         "全部項目已成功移動"
@@ -756,6 +792,9 @@
       ],
       "Creating alias...": [
         "生成別名..."
+      ],
+      "Current version": [
+        "目前版本"
       ],
       "Decrypting your data": [
         "解密您的檔案"
@@ -972,6 +1011,12 @@
       ],
       "Select destination vault": [
         "選取目標保管庫"
+      ],
+      "Selected items permanently deleted": [
+        "選取項目永久刪除"
+      ],
+      "Selected items successfully moved to trash": [
+        "選取項目成功移至垃圾桶"
       ],
       "Selected items successfully restored from trash": [
         "成功還原垃圾桶的選取項目"
@@ -1293,9 +1338,6 @@
       "Last 2 weeks": [
         "過去2週"
       ],
-      "Last autofill": [
-        "上次自動填滿"
-      ],
       "Last month": [
         "上個月"
       ],
@@ -1393,7 +1435,7 @@
         "回報問題"
       ],
       "Restore all items": [
-        "項目已還原"
+        "還原所有項目"
       ],
       "Reveal password": [
         "顯示密碼"
@@ -1518,6 +1560,11 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "歡迎使用 ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "You selected ${ semiboldText } in this vault": [
+        "您選取於保管庫的${ semiboldText }"
       ]
     },
     "Onboarding": {
@@ -1688,6 +1735,9 @@
       "Hide my email": [
         "隱藏我的電子信箱"
       ],
+      "History": [
+        "歷程記錄"
+      ],
       "Import - ${ date }": [
         "匯入 - ${ date }"
       ],
@@ -1708,6 +1758,9 @@
       ],
       "Members": [
         "成員"
+      ],
+      "Modified": [
+        "修改日期"
       ],
       "Move all items ?": [
         "移動所有項目?"
@@ -1931,6 +1984,9 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "您的方案只允許從主要和次要保自動填入"
+      ],
+      "Your session could not be authorized.": [
+        "您的作業階段無法驗證。"
       ],
       "Your session was locked.": [
         "您的作業階段以鎖定。"
