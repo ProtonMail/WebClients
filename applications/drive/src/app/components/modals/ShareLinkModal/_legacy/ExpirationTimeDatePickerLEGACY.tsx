@@ -3,13 +3,11 @@ import { useState } from 'react';
 import { fromUnixTime, getDate, getHours, getMinutes, getMonth, getUnixTime, getYear } from 'date-fns';
 import { c } from 'ttag';
 
-import { InputProps } from '@proton/atoms/Input';
 import { DateInput, TimeInput } from '@proton/components';
 
-interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
+interface Props {
     expiration: number | null;
     handleExpirationChange: (exp: number) => void;
-    clearButton?: boolean;
     disabled?: boolean;
     allowTime?: boolean;
 }
@@ -20,7 +18,7 @@ const getMaxDate = () => {
     return date;
 };
 
-const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled, allowTime, ...rest }: Props) => {
+const ExpirationTimeDatePickerLEGACY = ({ expiration, handleExpirationChange, disabled, allowTime }: Props) => {
     const initialValue = expiration ? fromUnixTime(expiration) : undefined;
     const [expDate, setExpDate] = useState<Date | undefined>(initialValue);
     const [expTime, setExpTime] = useState<Date | undefined>(initialValue);
@@ -91,7 +89,6 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                 title={c('Title').t`Select link expiration date`}
                 hasToday={false}
                 data-testid="epirationDateInputId"
-                {...rest}
             />
             {allowTime && expTime && (
                 <TimeInput
@@ -103,10 +100,9 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                     max={maxTime}
                     title={c('Title').t`Select link expiration time`}
                     data-testid="epirationTimeInputId"
-                    {...rest}
                 />
             )}
         </>
     );
 };
-export default ExpirationTimeDatePicker;
+export default ExpirationTimeDatePickerLEGACY;

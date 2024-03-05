@@ -1,4 +1,5 @@
-import { SessionKey } from '@proton/crypto';
+import { PublicKeyReference, SessionKey } from '@proton/crypto';
+import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 
 type WithSRPPayload<T extends any> = T & {
     srpModulusID: string;
@@ -39,7 +40,7 @@ export interface ShareWithKey extends Share {
     rootLinkRecoveryPassphrase?: string;
 }
 
-export type ShareURL = WithSRPPayload<{
+export type ShareURLLEGACY = WithSRPPayload<{
     shareId: string;
     shareUrlId: string;
     expirationTime: number | null;
@@ -51,6 +52,23 @@ export type ShareURL = WithSRPPayload<{
     sharePassphraseKeyPacket: string;
     sharePasswordSalt: string;
     hasCustomPassword: boolean;
+    hasGeneratedPasswordIncluded: boolean;
+    numAccesses: number;
+    maxAccesses: number;
+    permissions: number;
+}>;
+
+export type ShareURL = WithSRPPayload<{
+    shareId: string;
+    shareUrlId: string;
+    expirationTime: number | null;
+    creatorEmail: string;
+    password: string;
+    flags: number;
+    token: string;
+    publicUrl: string;
+    sharePassphraseKeyPacket: string;
+    sharePasswordSalt: string;
     hasGeneratedPasswordIncluded: boolean;
     numAccesses: number;
     maxAccesses: number;
@@ -87,4 +105,39 @@ export interface LockedDeviceForRestore extends LockedShareForRestore {
 export interface LockedPhotosForRestore extends LockedShareForRestore {
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
+}
+
+export interface ShareMember {
+    memberId: string;
+    shareId: string;
+    addressId: string;
+    addressKeyId: string;
+    inviter: string;
+    createTime: number;
+    modifyTime: number;
+    permissions: number;
+    keyPacket: string;
+    keyPacketSignature: string | null;
+    sessionKeySignature: string | null;
+    state: SHARE_MEMBER_STATE;
+    unlockable: boolean | null;
+}
+
+export interface InviteShareMember {
+    email: string;
+    inviter: string;
+    permissions: SHARE_MEMBER_PERMISSIONS;
+    keyPacket: string;
+    keyPacketSignature: string;
+}
+
+export interface ShareInvitee {
+    name: string;
+    email: string;
+    contactId?: string;
+    error?: Error;
+    group?: string;
+    isExternal?: boolean;
+    isLoading?: boolean;
+    publicKey?: PublicKeyReference;
 }

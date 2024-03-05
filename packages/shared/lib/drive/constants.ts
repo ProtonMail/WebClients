@@ -38,9 +38,10 @@ export const DOWNLOAD_TIMEOUT = 90000;
 export const DOWNLOAD_RETRIES_ON_TIMEOUT = 3;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 export const MAX_NAME_LENGTH = 255;
-export const MIN_SHARED_URL_PASSWORD_LENGTH = 8;
+export const MAX_SHARED_URL_PASSWORD_LENGTH = 50;
 
 export const SHARE_GENERATED_PASSWORD_LENGTH = 12;
+
 export const DEFAULT_SHARE_MAX_ACCESSES = 0; // Zero means unlimited.
 
 export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
@@ -166,6 +167,20 @@ export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
     ts: 'application/typescript',
 };
 
+export enum SHARE_MEMBER_PERMISSIONS {
+    READ = 4,
+    WRITE = 2,
+    EXEC = 1,
+    ADMIN = 16,
+    SUPER_ADMIN = 32,
+}
+
+export enum SHARE_MEMBER_STATE {
+    ACTIVE = 1,
+    REMOVED = 2,
+    LOCKED = 3,
+    INVITED = 4,
+}
 export const DS_STORE = '.DS_Store';
 
 // Delete once sharing between members is fully implemented.
