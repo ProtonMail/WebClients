@@ -2025,48 +2025,59 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Kuvaus: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "KUVAUS:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } on peruttu."
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } peruttiin."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } päivitettiin.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Kaikki tämän sarjan tapahtumat päivitettiin."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Ketjun ${ eventTitle } tämä tapahtumakerta on peruttu."
+      "This event occurrence was canceled.": [
+        "Tämä tapahtuma peruttiin."
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Sinut on kutsuttu tapahtumaan ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was updated.": [
+        "Tämä tapahtuma päivitettiin."
+      ],
+      "This event was updated.": [
+        "Tämä tapahtuma päivitettiin."
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "AIka: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "AIKA:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "AIka: ${ formattedStart } (koko päivä)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "AIKA:\n${ formattedStart } (koko päivä)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "AIka: ${ formattedStart } – ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "AIKA:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Poistettu"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Sijainti: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "SIJAINTI:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } hyväksyi kutsusi tapahtumaan ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } kieltäytyi kutsustasi tapahtumaan ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } hyväksyi alustavasti kutsusi tapahtumaan ${ eventTitle }"
       ]
     },
@@ -5970,6 +5981,11 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Kun sinulta kysytään sähköpostiosoitettasi, anna sen sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(avaa ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
