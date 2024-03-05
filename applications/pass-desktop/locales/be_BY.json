@@ -759,12 +759,6 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } запатрабуе ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } раз",
-        "${ revisionNumber } разы",
-        "${ revisionNumber } разоў",
-        "${ revisionNumber } разоў"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
       ],
@@ -833,6 +827,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, структура сховішча і г.д.), бо дадзены фармат мае спрошчаную рэалізацыю. Мы рэкамендуем скарыстацца іншым фарматам для поўнага экспартавання."
+      ],
+      "Current version": [
+        "Бягучая версія"
       ],
       "Decrypting your data": [
         "Расшыфроўка вашых даных"
@@ -1427,9 +1424,6 @@
       "Last 2 weeks": [
         "Апошнія 2 тыдні"
       ],
-      "Last autofill": [
-        "Апошняе аўтазапаўненне"
-      ],
       "Last month": [
         "Мінулы месяц"
       ],
@@ -1828,6 +1822,9 @@
       "Grant permissions": [
         "Даць дазволы"
       ],
+      "History": [
+        "Гісторыя"
+      ],
       "Import - ${ date }": [
         "Імпартаванне - ${ date }"
       ],
@@ -1851,6 +1848,9 @@
       ],
       "Members": [
         "Удзельнікі"
+      ],
+      "Modified": [
+        "Зменена"
       ],
       "Move all items ?": [
         "Перамясціць усе элементы?"
