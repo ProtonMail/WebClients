@@ -727,10 +727,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } gång",
-        "${ revisionNumber } gånger"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."
       ],
@@ -796,6 +792,12 @@
       ],
       "Copied to clipboard": [
         "Kopierad till urklipp"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV erbjuder ett bekvämt format för att visa dina data. Men på grund av dess enkelhet kommer vissa data inte att inkluderas (anpassade fält, valvstruktur …). För en fullständig export rekommenderar vi att du använder ett annat format."
+      ],
+      "Current version": [
+        "Nuvarande version"
       ],
       "Decrypting your data": [
         "Dekrypterar dina data"
@@ -1359,9 +1361,6 @@
       "Last 2 weeks": [
         "Senaste 2 veckorna"
       ],
-      "Last autofill": [
-        "Sista autofyll"
-      ],
       "Last month": [
         "Förra månaden"
       ],
@@ -1753,6 +1752,9 @@
       "Grant permissions": [
         "Bevilja behörigheter"
       ],
+      "History": [
+        "Historik"
+      ],
       "Import - ${ date }": [
         "Importera – ${ date }"
       ],
@@ -1776,6 +1778,9 @@
       ],
       "Members": [
         "Medlemmar"
+      ],
+      "Modified": [
+        "Ändrad"
       ],
       "Move all items ?": [
         "Flytta alla objekt?"
