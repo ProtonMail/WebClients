@@ -1,13 +1,16 @@
-import type { PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemRevisions } from '@proton/pass/hooks/useItemRevisions';
-import { selectItemByShareIdAndId } from '@proton/pass/store/selectors';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { selectItemByShareIdAndId, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemRevision, MaybeNull, SelectedItem } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 type ItemHistoryContextValue = {
     item: ItemRevision;
@@ -24,6 +27,10 @@ export const ItemHistoryProvider: FC<PropsWithChildren<SelectedItem>> = ({ itemI
     const { state, loadMore } = useItemRevisions({ shareId, itemId, pageSize: 20 });
     const item = useSelector(selectItemByShareIdAndId(shareId, itemId));
 
+    const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
+    const plan = useSelector(selectPassPlan);
+    const redirect = !(item && historyEnabled && isPaidPlan(plan));
+
     const value = useMemo<MaybeNull<ItemHistoryContextValue>>(
         () =>
             item
@@ -38,10 +45,10 @@ export const ItemHistoryProvider: FC<PropsWithChildren<SelectedItem>> = ({ itemI
         [state, item]
     );
 
-    return item ? (
-        <ItemHistoryContext.Provider value={value}>{children}</ItemHistoryContext.Provider>
-    ) : (
+    return redirect ? (
         <Redirect to={preserveSearch(getLocalPath())} push={false} />
+    ) : (
+        <ItemHistoryContext.Provider value={value}>{children}</ItemHistoryContext.Provider>
     );
 };
 

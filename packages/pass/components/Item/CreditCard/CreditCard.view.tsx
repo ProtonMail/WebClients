@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCardContent';
+import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';

@@ -1,4 +1,4 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { type FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
