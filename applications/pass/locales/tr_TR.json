@@ -570,6 +570,9 @@
       "Moving item failed": [
         "Öge taşınamadı"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Çevrim dışı kipi şu anda iki şifre kipi için mevcut değildir."
+      ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
       ],
@@ -730,10 +733,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kez",
-        "${ revisionNumber } kez"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
       ],
@@ -802,6 +801,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, kasa yapısı...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
+      ],
+      "Current version": [
+        "Güncel sürüm"
       ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
@@ -1092,6 +1094,9 @@
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
+      "The export will only contain vaults that you own.": [
+        "Dışa aktarım yalnızca sahip olduğunuz kasaları içerecektir."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
       ],
@@ -1371,9 +1376,6 @@
       "Last 2 weeks": [
         "Son 2 hafta"
       ],
-      "Last autofill": [
-        "Son otomatik doldurma"
-      ],
       "Last month": [
         "Son bir ay"
       ],
@@ -1454,6 +1456,9 @@
       ],
       "Password history": [
         "Parola geçmişi"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP şifreli JSON (önerilen)"
       ],
       "PIN": [
         "PIN"
@@ -1762,6 +1767,9 @@
       "Grant permissions": [
         "İzinleri ver"
       ],
+      "History": [
+        "Geçmiş"
+      ],
       "Import - ${ date }": [
         "İçe aktarma - ${ date }"
       ],
@@ -1785,6 +1793,9 @@
       ],
       "Members": [
         "Üyeler"
+      ],
+      "Modified": [
+        "Değiştirilme"
       ],
       "Move all items ?": [
         "Tüm ögeler taşınsın mı?"
