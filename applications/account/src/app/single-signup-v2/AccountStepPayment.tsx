@@ -20,10 +20,10 @@ import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/Ch
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
+    ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
     TokenPayment,
-    TokenPaymentWithPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
@@ -64,7 +64,7 @@ interface Props {
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (
-        payment: 'signup-token' | TokenPaymentWithPaymentsVersion | undefined,
+        payment: 'signup-token' | ExtendedTokenPayment | undefined,
         type: 'pp' | 'btc' | 'cc' | undefined
     ) => Promise<void>;
     onValidate: () => boolean;
@@ -156,7 +156,7 @@ const AccountStepPayment = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         api: normalApi,
         chargebeeEnabled: model.session?.user.ChargebeeUser,
-        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion }) => {
+        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
                 if (isFreeSignup) {
@@ -176,9 +176,10 @@ const AccountStepPayment = ({
                     ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
                     : undefined;
 
-                const withVersion: TokenPaymentWithPaymentsVersion = {
+                const withVersion: ExtendedTokenPayment = {
                     ...legacyTokenPayment,
                     paymentsVersion,
+                    paymentProcessorType,
                 };
 
                 await onPay(withVersion, paymentType);
@@ -334,6 +335,7 @@ const AccountStepPayment = ({
                                         {
                                             ...data.Payment,
                                             paymentsVersion: 'v4',
+                                            paymentProcessorType: 'bitcoin',
                                         },
                                         'btc'
                                     )

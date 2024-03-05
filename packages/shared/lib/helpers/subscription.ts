@@ -686,3 +686,8 @@ export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscript
         subscription?.UpcomingSubscription?.Cycle === CYCLE.THIRTY
     );
 }
+
+export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
+    const availableKeys = Object.keys(planIDs);
+    return Object.values(PLANS).find((value) => availableKeys.includes(value));
+}
