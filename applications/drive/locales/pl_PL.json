@@ -2037,49 +2037,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Opis: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "OPIS:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "Wydarzenie ${ eventTitle } zostało anulowane."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "Wydarzenie ${ eventTitle } zostało zaktualizowane.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Wszystkie wydarzenia w tej serii zostały zaktualizowane."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Powtórzenie wydarzenia ${ eventTitle } zostało anulowane."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Wszystkie wydarzenia w tej serii zostały zaktualizowane. Lista zmian:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Zaproszenie na wydarzenie ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "Powtórzenie wydarzenia zostało anulowane."
+      ],
+      "This event occurrence was updated.": [
+        "Powtórzenie wydarzenia zostało zaktualizowane."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Powtórzenie wydarzenia zostało zaktualizowane. Lista zmian:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Wydarzenie zostało zaktualizowane."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Wydarzenie zostało zaktualizowane. Lista zmian:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Zaproszenie na wydarzenie ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Data: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "DATA:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Data: ${ formattedStart } (cały dzień)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "DATA:\n${ formattedStart } (cały dzień)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Data: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "DATA:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Usunięte"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Lokalizacja: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "LOKALIZACJA:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "Uczestnik ${ emailAddress } zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } odrzucił zaproszenie na wydarzenie ${ eventTitle }"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "Uczestnik ${ emailAddress } odrzucił zaproszenie do wydarzenia ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -6235,6 +6255,11 @@
         "Użyj aliasu, zamiast adresu e-mail. Aliasy dostarcza ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otworzy ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Pokaż logi"
@@ -6818,6 +6843,9 @@
       ],
       "Import record deleted": [
         "Rekord importu został usunięty"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ostatnio zmodyfikowane aliasy są przechowywane w najstarszym sejfie"
       ],
       "Phone number copied to clipboard": [
         "Numer telefonu został skopiowany do schowka"
