@@ -6,16 +6,21 @@ import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/vi
 import { areDevToolsAvailable } from "../view/windowHelpers";
 import { openLogFolder } from "./openLogFolder";
 
+type MenuKey = "app" | "file" | "edit" | "view" | "window";
+interface MenuProps extends MenuItemConstructorOptions {
+    key: MenuKey;
+}
+
 interface MenuInsertProps {
-    menu: MenuItemConstructorOptions[];
-    key: MenuItemConstructorOptions["label"];
+    menu: MenuProps[];
+    key: MenuKey;
     otherOsEntries?: MenuItemConstructorOptions[];
     macEntries?: MenuItemConstructorOptions[];
     allOSEntries?: MenuItemConstructorOptions[];
 }
 
 const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: MenuInsertProps) => {
-    const editIndex = menu.findIndex((item) => item.label === key);
+    const editIndex = menu.findIndex((item) => item.key === key);
     if (!editIndex) return;
 
     const submenu = menu[editIndex].submenu as MenuItemConstructorOptions[];
@@ -34,9 +39,10 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         return;
     }
 
-    const temp: MenuItemConstructorOptions[] = [
+    const temp: MenuProps[] = [
         {
-            label: c("App menu").t`File`,
+            label: c("Menu").t`File`,
+            key: "file",
             submenu: [
                 {
                     label: c("App menu").t`Clear application data`,
@@ -54,7 +60,8 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: c("App menu").t`Edit`,
+            label: c("Menu").t`Edit`,
+            key: "edit",
             submenu: [
                 { role: "undo" },
                 { role: "redo" },
@@ -75,7 +82,8 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: c("App menu").t`View`,
+            label: c("Menu").t`View`,
+            key: "view",
             submenu: [
                 {
                     label: c("App menu").t`Reload`,
@@ -116,7 +124,8 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: c("App menu").t`Window`,
+            label: c("Menu").t`Window`,
+            key: "window",
             submenu: [{ role: "minimize" }, { role: "close" }, { role: "zoom" }],
         },
     ];
@@ -124,6 +133,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
     if (isMac) {
         temp.unshift({
             label: app.name,
+            key: "app",
             submenu: [
                 { role: "about" },
                 { type: "separator" },
@@ -159,7 +169,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
 
     insertInMenu({
         menu: temp,
-        key: "Edit",
+        key: "edit",
         otherOsEntries: [{ role: "delete" }, { type: "separator" }, { role: "selectAll" }],
         macEntries: [
             { role: "pasteAndMatchStyle" },
@@ -176,7 +186,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
     if (areDevToolsAvailable()) {
         insertInMenu({
             menu: temp,
-            key: "View",
+            key: "view",
             allOSEntries: [
                 { type: "separator" },
                 {
