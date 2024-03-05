@@ -16,11 +16,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
             <CreditCardContent revision={revision} />
-            <ItemHistoryStats
-                createTime={createTime}
-                modifyTime={modifyTime}
-                handleHistoryClick={revisionNumber > 1 ? handleHistoryClick : undefined}
-            />
+            <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
             <MoreInfoDropdown
                 info={[
                     {

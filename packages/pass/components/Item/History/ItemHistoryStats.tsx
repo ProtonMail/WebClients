@@ -13,10 +13,10 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
 type Props = {
+    handleHistoryClick: () => void;
     createTime: number;
     modifyTime: number;
     lastUseTime?: MaybeNull<number>;
-    handleHistoryClick?: () => void;
 };
 
 export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTime, handleHistoryClick }) => {
@@ -39,9 +39,9 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
             <InfoCard icon="pencil" title={c('Title').t`Last modified`} subtitle={epochToRelativeDate(modifyTime)} />
             <InfoCard icon="bolt" title={c('Title').t`Created`} subtitle={epochToRelativeDate(createTime)} />
 
-            {handleHistoryClick && historyEnabled && isPaidPlan(passPlan) && (
+            {historyEnabled && isPaidPlan(passPlan) && (
                 <Button onClick={handleHistoryClick} className="mt-1" color="weak" shape="solid" fullWidth pill>
-                    {c('Action').t`View history`}
+                    {c('Action').t`View item history`}
                 </Button>
             )}
         </div>
