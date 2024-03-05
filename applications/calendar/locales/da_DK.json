@@ -2314,52 +2314,6 @@
         "Redigér begivenhed"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivelse: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } er blevet annulleret."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Denne forekomst af ${ eventTitle } er blevet annulleret."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Hvornår: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Hvornår: ${ formattedStart } (hele dagen)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Hvornår: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Hvor: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har accepteret din invitation til ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annullering af en begivenhed den ${ formattedStart }"
@@ -2670,8 +2624,8 @@
         "Opret en adresse først."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Løs venligst den fremhævede konflikt for at fortsætte.",
-        "Løs venligst de fremhævede konflikter for at fortsætte."
+        "Løs den fremhævede konflikt for at fortsætte.",
+        "Løs de fremhævede konflikter for at fortsætte."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Angiv enten et fornavn, et efternavn eller et visningsnavn"
@@ -4226,7 +4180,7 @@
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+        "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -5872,6 +5826,11 @@
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(vil åbne ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Se logs."
@@ -6558,6 +6517,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Invitation sendt og deltagere tilføjet til alle begivenheder"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Sidst ændrede aliasser gemt i din ældste boks"
       ],
       "Participants notified and all events updated": [
         "Deltagere underrettet og alle begivenheder opdateret"
