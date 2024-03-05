@@ -2298,49 +2298,34 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Deskripsi: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESKRIPSI:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } telah dibatalkan."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Acara ${ eventTitle } ini telah dibatalkan."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Anda diundang ke ${ eventTitle }\n${ eventDetailsText }"
+      "This event was updated.": [
+        "Acara ini telah diperbarui."
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Kapan: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "WAKTU:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Kapan: ${ formattedStart } (sepanjang hari)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "WAKTU:\n${ formattedStart } (sepanjang hari)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kapan: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "WAKTU:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Dihapus"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Di mana: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menerima undangan Anda ke ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menolak undangan Anda ke ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah secara tentatif menerima undangan Anda ke ${ eventTitle }"
+      "LOCATION:\n${ eventLocation }": [
+        "LOKASI:\n${ eventLocation }"
       ]
     },
     "Email subject": {
@@ -5759,6 +5744,11 @@
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(akan membuka jendela ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Tampilkan catatan"
@@ -6424,6 +6414,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Undangan terkirim dan peserta berhasil ditambahkan ke semua acara"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
       "Participants notified and all events updated": [
         "Peserta diberi tahu dan semua acara berhasil diperbarui"

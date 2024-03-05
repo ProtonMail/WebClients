@@ -2186,49 +2186,6 @@
         "इवेंट बदलें"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "विवरण: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } रद्द कर दिया गया है।"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } को अपडेट कर दिया गया है।\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "आपको ${ eventTitle } में आमंत्रित किया गया है\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "कब: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "कब: ${ formattedStart } (पूरा दिन)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "कब: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "कहां: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ने ${ eventTitle } के लिए आपका आमंत्रण स्वीकार कर लिया है"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } ने ${ eventTitle } के लिए आपका आमंत्रण अस्वीकार कर दिया है"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ने ${ eventTitle } के लिए आपका आमंत्रण अस्थायी रूप से स्वीकार कर लिया है"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } पर किसी ईवेंट को रद्द करना"
