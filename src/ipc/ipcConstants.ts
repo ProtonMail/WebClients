@@ -5,7 +5,8 @@ export type ElectronNotification = {
     title: string;
     body: string;
     app: VIEW_TARGET;
-    link?: string;
+    elementID?: string;
+    labelID?: string;
 };
 
 export type IPCMessage =
