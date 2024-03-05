@@ -25,9 +25,9 @@ import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/Ch
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
+    ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
     TokenPayment,
-    TokenPaymentWithPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
@@ -53,7 +53,7 @@ export interface Props {
     subscriptionData: SubscriptionData;
     plans: Plan[];
     onBack?: () => void;
-    onPay: (payment: TokenPaymentWithPaymentsVersion, type: 'cc' | 'pp') => Promise<void>;
+    onPay: (payment: ExtendedTokenPayment, type: 'cc' | 'pp') => Promise<void>;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
@@ -88,7 +88,7 @@ const PaymentStep = ({
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
         selectedPlanName: plan?.Name,
-        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion }) => {
+        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoading(async () => {
                 let paymentType: 'cc' | 'pp';
                 if (
@@ -105,9 +105,10 @@ const PaymentStep = ({
                     ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
                     : undefined;
 
-                const withVersion: TokenPaymentWithPaymentsVersion = {
+                const withVersion: ExtendedTokenPayment = {
                     ...legacyTokenPayment,
                     paymentsVersion,
+                    paymentProcessorType,
                 };
 
                 await onPay(withVersion, paymentType);

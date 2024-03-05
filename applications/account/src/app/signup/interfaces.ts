@@ -3,7 +3,7 @@ import { VerificationModel } from '@proton/components/containers/api/humanVerifi
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
-import { BillingAddress, TokenPaymentWithPaymentsVersion } from '@proton/components/payments/core/interface';
+import { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -78,7 +78,7 @@ export interface SubscriptionData {
     skipUpsell?: boolean;
     planIDs: PlanIDs;
     checkResult: SubscriptionCheckResponse;
-    payment?: TokenPaymentWithPaymentsVersion;
+    payment?: ExtendedTokenPayment;
     type?: 'cc' | 'pp' | 'btc';
     billingAddress: BillingAddress;
 }

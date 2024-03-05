@@ -4,7 +4,7 @@ import { MAX_CHARS_API } from '@proton/account';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
-import { V5PaymentToken, isTokenPayment } from '@proton/components/payments/core';
+import { V5PaymentToken, isTokenPayment, isWrappedPaymentsVersion } from '@proton/components/payments/core';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -371,7 +371,7 @@ export const handleSubscribeUser = async (
     );
 
     if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
-        if (subscriptionData.payment?.paymentsVersion === 'v5') {
+        if (isWrappedPaymentsVersion(subscriptionData.payment) && subscriptionData.payment.paymentsVersion === 'v5') {
             const v5PaymentToken: V5PaymentToken = {
                 PaymentToken: subscriptionData.payment.Details.Token,
                 v: 5,
@@ -439,11 +439,15 @@ export const handleSetupUser = async ({
     api,
     ignoreVPN,
     setupMnemonic,
+    reportPaymentSuccess,
+    reportPaymentFailure,
 }: {
     cache: SignupCacheResult;
     api: Api;
     ignoreVPN?: boolean;
     setupMnemonic?: SetupMnemonic;
+    reportPaymentSuccess: () => void;
+    reportPaymentFailure: () => void;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -473,8 +477,14 @@ export const handleSetupUser = async ({
         config: auth({ Username: userEmail }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
 
-    // Perform the subscription first to prevent "locked user" while setting up keys.
-    await handleSubscribeUser(api, subscriptionData, referralData, cache.productParam);
+    try {
+        // Perform the subscription first to prevent "locked user" while setting up keys.
+        await handleSubscribeUser(api, subscriptionData, referralData, cache.productParam);
+        reportPaymentSuccess();
+    } catch (error) {
+        reportPaymentFailure();
+        throw error;
+    }
 
     const [{ keyPassword, user, addresses }] = await Promise.all([
         (async () => {

@@ -17,6 +17,7 @@ import {
 import { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
+import { PaymentProcessorType } from '../react-extensions/interface';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 
 export interface CreateCardDetailsBackend {
@@ -44,12 +45,30 @@ export interface TokenPayment {
     };
 }
 
-export type TokenPaymentWithPaymentsVersion = Partial<TokenPayment> & {
+export function isTokenPayment(payment: any): payment is TokenPayment {
+    return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!(payment as any)?.Details?.Token;
+}
+
+export type WrappedPaymentsVersion = {
     paymentsVersion: PaymentsVersion;
 };
 
-export function isTokenPayment(payment: any): payment is TokenPayment {
-    return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!(payment as any)?.Details?.Token;
+export function isWrappedPaymentsVersion(data: any): data is WrappedPaymentsVersion {
+    return !!data && !!data.paymentsVersion;
+}
+
+export type WrappedProcessorType = {
+    paymentProcessorType: PaymentProcessorType;
+};
+
+export function isWrappedProcessorType(data: any): data is WrappedProcessorType {
+    return !!data && !!data.paymentProcessorType;
+}
+
+export type ExtendedTokenPayment = Partial<TokenPayment> & WrappedProcessorType & WrappedPaymentsVersion;
+
+export function isExtendedTokenPayment(data: any): data is ExtendedTokenPayment {
+    return isWrappedProcessorType(data) && isWrappedPaymentsVersion(data);
 }
 
 export interface PaypalPayment {
