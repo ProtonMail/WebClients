@@ -31,10 +31,8 @@ const displayNotification = (
 
     // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
     const cleanHistoryLocation = { ...history.location, hash: '' };
-    const location = setParamsInLocation(cleanHistoryLocation, {
-        labelID,
-        elementID: isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID,
-    });
+    const elementID = isConversationMode(labelID, mailSettings, cleanHistoryLocation) ? ConversationID : ID;
+    const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID });
 
     return create(
         title,
@@ -49,7 +47,7 @@ const displayNotification = (
             },
         },
         // Used for Electron notifications on the Mail desktop app
-        { title, body, app: 'mail', link: location.pathname }
+        { title, body, app: 'mail', elementID, labelID }
     );
 };
 
