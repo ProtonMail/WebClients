@@ -65,6 +65,11 @@ export enum CALENDAR_DISPLAY {
     VISIBLE = 1,
 }
 
+export enum CALENDAR_SHARE_BUSY_TIME_SLOTS {
+    NO = 0,
+    YES = 1,
+}
+
 export enum ICAL_CALSCALE {
     GREGORIAN = 'GREGORIAN',
 }

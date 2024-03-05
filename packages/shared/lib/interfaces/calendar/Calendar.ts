@@ -1,4 +1,10 @@
-import { CALENDAR_DISPLAY, CALENDAR_TYPE, NOTIFICATION_TYPE_API, SETTINGS_VIEW } from '../../calendar/constants';
+import {
+    CALENDAR_DISPLAY,
+    CALENDAR_SHARE_BUSY_TIME_SLOTS,
+    CALENDAR_TYPE,
+    NOTIFICATION_TYPE_API,
+    SETTINGS_VIEW,
+} from '../../calendar/constants';
 import { Nullable } from '../utils';
 import { CalendarKey } from './CalendarKey';
 import { CalendarMember, CalendarOwner } from './CalendarMember';
@@ -50,6 +56,7 @@ export interface CalendarSettings {
     DefaultEventDuration: number;
     DefaultPartDayNotifications: CalendarNotificationSettings[];
     DefaultFullDayNotifications: CalendarNotificationSettings[];
+    MakesUserBusy: CALENDAR_SHARE_BUSY_TIME_SLOTS;
 }
 
 export interface CalendarBootstrap {
@@ -86,6 +93,7 @@ export interface CalendarViewModelFull {
     fullDayNotifications: NotificationModel[];
     url?: string;
     type: CALENDAR_TYPE;
+    shareBusyTimeSlots: CALENDAR_SHARE_BUSY_TIME_SLOTS;
 }
 
 export interface CalendarErrors {

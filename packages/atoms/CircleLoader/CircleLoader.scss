@@ -27,7 +27,9 @@
 	}
 
 	&-circle {
-		stroke-dasharray: #{$looping-length * 1px}, #{($total-length - $looping-length) * 1px};
+		stroke-dasharray:
+			#{$looping-length * 1px},
+			#{($total-length - $looping-length) * 1px};
 		animation: anime-loader-stroke 1s linear infinite;
 
 		@keyframes anime-loader-stroke {
@@ -41,11 +43,11 @@
 		}
 	}
 
-	/*
-	&.is-small {
-		Small is the default
+	/* Small is the default */
+	&.is-tiny {
+		font-size: em(10);
 	}
-	*/
+
 	&.is-medium {
 		--stroke-width: 1.3;
 

@@ -1,5 +1,6 @@
-import { differenceInHours } from 'date-fns';
+import { differenceInHours, fromUnixTime } from 'date-fns';
 
+import generateUID from '@proton/atoms/generateUID';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, max } from '@proton/shared/lib/date-fns-utc';
@@ -14,7 +15,7 @@ import { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
+import { CalendarViewBusyEvent, CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getViewEventDateProperties = (eventComponent: VcalVeventComponent) => {
     const utcStart = propertyToUTCDate(eventComponent.dtstart);
@@ -119,6 +120,35 @@ export const getTemporaryEvent = (
         tmpData: model,
         tmpDataOriginal,
     };
+};
+
+export const getBusyScheduledEvent = (
+    email: string,
+    start: number,
+    end: number,
+    tzid: string,
+    color: string
+): CalendarViewBusyEvent => {
+    const isAllDay = false;
+    const busySlotStart = fromUnixTime(start);
+    const busySlotEnd = fromUnixTime(end);
+
+    const eventStart = fromUTCDateToLocalFakeUTCDate(busySlotStart, isAllDay, tzid);
+    const eventEnd = fromUTCDateToLocalFakeUTCDate(busySlotEnd, isAllDay, tzid);
+    const isAllPartDay = !isAllDay && differenceInHours(busySlotEnd, busySlotStart) >= 24;
+
+    const busyEvent: CalendarViewBusyEvent = {
+        type: 'busy',
+        start: eventStart,
+        end: eventEnd,
+        isAllDay: isAllPartDay || isAllDay,
+        isAllPartDay,
+        uniqueId: generateUID('busy-time-slot'),
+        color,
+        email,
+    };
+
+    return busyEvent;
 };
 
 export const getTimeInTimezone = (fakeUtcDate: Date, fromTzid: string, toTzid: string) => {
