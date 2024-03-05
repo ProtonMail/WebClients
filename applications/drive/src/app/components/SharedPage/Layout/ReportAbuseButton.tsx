@@ -3,10 +3,10 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, Tooltip, useModalTwoStatic } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 
 import { usePublicShare } from '../../../store';
-import ReportAbuseModal from '../../modals/ReportAbuseModal/ReportAbuseModal';
+import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';
 import { LinkInfo } from '../../modals/ReportAbuseModal/types';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default function ReportAbuseButton({ linkInfo, className }: Props) {
-    const [reportAbuseModal, showReportAbuseModal] = useModalTwoStatic(ReportAbuseModal);
+    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { submitAbuseReport } = usePublicShare();
 
     return (

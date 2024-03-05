@@ -17,23 +17,16 @@ const ShareLinkButton = ({ selectedLinks }: Props) => {
         return null;
     }
 
-    const hasSharedLink = !!selectedLinks[0]?.shareUrl;
-
     return (
         <>
             <ToolbarButton
                 disabled={noSelection(selectedLinks) || isMultiSelect(selectedLinks)}
-                title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-                icon={
-                    <Icon
-                        name={hasSharedLink ? 'link-pen' : 'link'}
-                        alt={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-                    />
-                }
+                title={c('Action').t`Share`}
+                icon={<Icon name="user-plus" alt={c('Action').t`Share`} />}
                 onClick={() =>
                     showLinkSharingModal({ shareId: selectedLinks[0].rootShareId, linkId: selectedLinks[0].linkId })
                 }
-                data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
+                data-testid="toolbar-share-link"
             />
             {linkSharingModal}
         </>
