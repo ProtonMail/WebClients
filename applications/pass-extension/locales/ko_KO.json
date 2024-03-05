@@ -809,9 +809,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME }가 로그인 양식에서 강력한 비밀번호 생성을 제안합니다."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } 번"
-      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft }일 남음"
       ],
@@ -892,6 +889,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 금고 구조 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
+      ],
+      "Current version": [
+        "현재 버전"
       ],
       "Decrypting your data": [
         "데이터 복호화 중"
@@ -1513,9 +1513,6 @@
       "Last 2 weeks": [
         "지난 2주"
       ],
-      "Last autofill": [
-        "마지막 자동 완성"
-      ],
       "Last month": [
         "지난 한 달"
       ],
@@ -1931,6 +1928,9 @@
       "Hide my email": [
         "Hide My Email"
       ],
+      "History": [
+        "기록"
+      ],
       "Import - ${ date }": [
         "불러오기 - ${ date }"
       ],
@@ -1951,6 +1951,9 @@
       ],
       "Members": [
         "멤버"
+      ],
+      "Modified": [
+        "수정됨"
       ],
       "Move all items ?": [
         "모든 항목을 이동하시겠어요?"

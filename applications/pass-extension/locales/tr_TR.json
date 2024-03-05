@@ -822,10 +822,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önerecek."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kez",
-        "${ revisionNumber } kez"
-      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
@@ -907,6 +903,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, kasa yapısı...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
+      ],
+      "Current version": [
+        "Güncel sürüm"
       ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
@@ -1214,6 +1213,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Alana tıkladığınızda ya da üzerine geldiğinizde otomatik doldurma penceresi açılır."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Dışa aktarım yalnızca sahip olduğunuz kasaları içerecektir."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
@@ -1545,9 +1547,6 @@
       "Last 2 weeks": [
         "Son 2 hafta"
       ],
-      "Last autofill": [
-        "Son otomatik doldurma"
-      ],
       "Last month": [
         "Son bir ay"
       ],
@@ -1634,6 +1633,9 @@
       ],
       "Pause list": [
         "Duraklatma listesi"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP şifreli JSON (önerilen)"
       ],
       "PIN": [
         "PIN"
@@ -1965,6 +1967,9 @@
       "Hide my email": [
         "Hide my email"
       ],
+      "History": [
+        "Geçmiş"
+      ],
       "Import - ${ date }": [
         "İçe aktarma - ${ date }"
       ],
@@ -1985,6 +1990,9 @@
       ],
       "Members": [
         "Üyeler"
+      ],
+      "Modified": [
+        "Değiştirilme"
       ],
       "Move all items ?": [
         "Tüm ögeler taşınsın mı?"

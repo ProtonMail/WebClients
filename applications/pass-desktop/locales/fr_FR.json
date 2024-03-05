@@ -739,10 +739,6 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vous demandera votre mot de passe ${ BRAND_NAME } pour accéder à vos données en mode hors ligne."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } fois",
-        "${ revisionNumber } fois"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 jours pour essayer gratuitement les fonctionnalités premium, lors de votre première semaine d'utilisation de ${ BRAND_NAME }."
       ],
@@ -811,6 +807,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "Le CSV offre un format pratique pour visualiser vos données. Cependant, en raison de sa simplicité, certaines données ne seront pas incluses (champs personnalisés, structure du coffre-fort...). Pour une exportation complète, nous vous recommandons d’utiliser un format différent."
+      ],
+      "Current version": [
+        "Version actuelle"
       ],
       "Decrypting your data": [
         "Déchiffrement de vos données en cours"
@@ -1389,9 +1388,6 @@
       "Last 2 weeks": [
         "Les 2 dernières semaines"
       ],
-      "Last autofill": [
-        "Dernier remplissage automatique"
-      ],
       "Last month": [
         "Le mois dernier"
       ],
@@ -1786,6 +1782,9 @@
       "Grant permissions": [
         "Accordez les autorisations"
       ],
+      "History": [
+        "Historique"
+      ],
       "Import - ${ date }": [
         "Importation - ${ date }"
       ],
@@ -1809,6 +1808,9 @@
       ],
       "Members": [
         "Membres"
+      ],
+      "Modified": [
+        "Modifié"
       ],
       "Move all items ?": [
         "Déplacer tous les éléments ?"

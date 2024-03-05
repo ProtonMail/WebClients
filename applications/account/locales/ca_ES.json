@@ -3092,7 +3092,7 @@
         "No heu creat un compte?"
       ],
       "I didn't create this account": [
-        "No heu creat aquest compte."
+        "No he creat aquest compte."
       ],
       "sign in": [
         "iniciar la sessió"
@@ -3201,59 +3201,13 @@
     },
     "Email": {
       "Email verified": [
-        "Correu electrònic verificat"
+        "S'ha verificat el correu electrònic"
       ],
       "Thank you for verifying your email address.": [
         "Gràcies per verificar la vostra adreça de correu electrònic."
       ],
       "You can safely close this tab.": [
         "Podeu tancar aquesta pestanya amb seguretat."
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descripció: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } s'ha cancel·lat."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Aquesta ocurrència de ${ eventTitle } ha estat cancel·lada."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quan: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Quan: ${ formattedStart } (tot el dia)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quan: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "On: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha declinat la vostra invitació a ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -3983,7 +3937,7 @@
         "Error desconegut"
       ],
       "Unknown payment token status": [
-        "Estat del token de pagament desconegut"
+        "Estat del testimoni de pagament desconegut"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
@@ -4216,10 +4170,10 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
-        "S'ha produït un error llegint el fitxer \"${ formattedFilename }\". Format de fitxer incorrecte."
+        "S'ha produït un error en llegir el fitxer \"${ formattedFilename }\". El format del fitxer no és correcte."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "S'ha produït un error carregant el vostre fitxer \"${ formattedFilename }\". La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "S'ha produït un error en carregar el vostre fitxer \"${ formattedFilename }\". La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
@@ -4290,13 +4244,13 @@
     },
     "Error message, unsubscribe": {
       "Please ${ signIn } to update your email subscription preferences.": [
-        "Si us plau ${ signIn } per actualitzar les preferències de subscripció de correu."
+        "${ signIn } per actualitzar les preferències de subscripció de correu electrònic."
       ],
       "sign in": [
         "inicia la sessió"
       ],
       "There was a problem unsubscribing you.": [
-        "Hi ha hagut un problema cancel·lant la subscripció."
+        "Hi ha hagut un problema en cancel·lar la subscripció."
       ]
     },
     "Error notification": {
@@ -4755,7 +4709,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Autenticació de dos factors amb clau de seguretat desactivada"
+        "S'ha desactivat l'autenticació de dos factors amb clau de seguretat"
       ],
       "Add a name to identify your security key with.": [
         "Afegiu un nom per identificar la vostra clau de seguretat."
@@ -5018,12 +4972,17 @@
         "Molt petit"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "aplicació web"
+      ]
+    },
     "Free trial desktop": {
       "Back to sign in": [
         "Torna a l'inici de sessió"
       ],
       "Keep using the desktop app": [
-        "Continueu utilitzant l'aplicació d'escriptori"
+        "Continua utilitzant l'aplicació d'escriptori"
       ]
     },
     "Frequency of news": {
@@ -10160,17 +10119,6 @@
         "Gestió d'equips"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -10264,6 +10212,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10405,7 +10364,7 @@
         "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Aïlleu els recursos de la vostra empresa de l'internet públic i feu-los accessibles només a través de les vostres passarel·les privades."
+        "Aïlleu els recursos de la vostra empresa de l'internet públic i feu-los accessibles només a través de passarel·les privades."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gestioneu la vostra subscripció, inclosa la personalització del pla. Els mètodes de pagament acceptats són la targeta de crèdit, PayPal, criptomoneda i transferència bancària."
@@ -10529,7 +10488,7 @@
         "Suport 24/7"
       ],
       "Access advanced VPN features": [
-        "Accedir a funcionalitats de VPN avançades"
+        "Accediu a característiques de VPN avançades"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Afegiu més personalització amb 15 adreces de correu electrònic i suport per a 3 dominis de correu electrònic personalitzats"
@@ -10550,13 +10509,13 @@
         "Extensió del navegador"
       ],
       "Censorship circumvention": [
-        "Contorn de la censura"
+        "Elusió de la censura"
       ],
       "Central control panel": [
         "Panell de control central"
       ],
       "Cover more ground with support for 10 custom email domains": [
-        "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
+        "Obteniu més opcions amb suport per a 10 dominis de correu electrònic personalitzats"
       ],
       "Create up to ${ n } calendar": [
         "Crea fins a ${ n } calendari",
@@ -10575,7 +10534,7 @@
         "Passarel·les privades"
       ],
       "Require 2FA": [
-        "Requereix 2FA"
+        "Requisit de 2FA"
       ]
     },
     "Notification": {
@@ -10988,7 +10947,7 @@
         "El vostre pla inclou un màxim de ${ availableVPNAccess } comptes VPN addicionals."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
-        "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge disponible."
+        "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge."
       ]
     },
     "OS compatibility": {
@@ -11113,7 +11072,7 @@
         "${ PASS_APP_NAME } està disponible com a una extensió del navegador a la Chrome Web Store."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } manté les vostres contrasenyes i la vostra identitat segura amb un xifratge extrem a extrem rigorós."
+        "${ PASS_APP_NAME } manté les vostres contrasenyes i la vostra identitat segures amb un xifratge d'extrem a extrem rigorós."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
         "${ PASS_APP_NAME } manté les vostres contrasenyes i identitat segures amb un xifratge d'extrem a extrem rigorós. Per afegir les característiques prèmium de ${ PASS_APP_NAME_2 } a la vostra subscripció actual, us suggerim millorar al pla ${ upsellPlanName }."
@@ -11143,7 +11102,7 @@
         "Pla actual"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descobriu ${ PASS_APP_NAME },${ br }el nostre nou gestor de contrasenyes xifrat d'extrem a extrem."
+        "Descobriu ${ PASS_APP_NAME },${ br }el nostre nou gestor de contrasenyes xifrat."
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarregueu i instal·leu les aplicacions i extensions pertinents per començar a utilitzar l'aplicació ${ PASS_APP_NAME }."
@@ -11289,9 +11248,6 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Per a empreses"
-      ],
-      "For invididuals": [
-        "Per a particulars"
       ]
     },
     "passwordless": {
@@ -11682,7 +11638,7 @@
         "Canviant la contrasenya de l'organització"
       ],
       "Creating or accessing non-private users": [
-        "S'estan creant o accedint a usuaris no privats"
+        "S'estan creant o s'està accedint a usuaris no privats"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa d'un canvi de contrasenya, els privilegis d'administrador de la seva organització han estat restringits. Les següents accions ja no estan permeses:"
@@ -12437,6 +12393,9 @@
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "L'emmagatzematge és ple. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -12604,7 +12563,7 @@
         "Actiu"
       ],
       "Expiring": [
-        "Caduca"
+        "Caducat"
       ]
     },
     "Success": {
@@ -13369,6 +13328,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Descarregueu l'aplicació d'escriptori"
+      ],
+      "Download the mobile apps": [
+        "Descarregueu les aplicacions mòbils"
       ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
@@ -14229,7 +14194,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Seleccioneu les preferències PGP per defecte utilitzades per a signar o xifrar missatges amb usuaris PGP de fora de ${ BRAND_NAME }. Tingueu en compte que PGP en línia implica missatges de text sense format."
+        "Seleccioneu les preferències PGP per defecte utilitzades per a signar o xifrar missatges amb usuaris PGP de fora de ${ BRAND_NAME }. Tingueu en compte que Inline PGP implica missatges de text sense format."
       ]
     },
     "Tooltip prompt to trust keys": {

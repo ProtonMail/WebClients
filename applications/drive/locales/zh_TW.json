@@ -1953,8 +1953,14 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "為想要更保護自己帳號的人量身訂做。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
+      ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "要匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
@@ -2010,49 +2016,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
+      "DESCRIPTION:\n${ eventDescription }": [
         "描述：${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "該系列中的所有行程皆已更新。"
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "此${ eventTitle }的事件已被取消。"
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該系列中的所有行程皆已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "該行程已被取消。"
+      ],
+      "This event occurrence was updated.": [
+        "該行程已更新。"
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "該行程已更新。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "您已被邀請至 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "日期：${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "時間：${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "日期 : ${ formattedStart } (全日)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "時間：${ formattedStart }（全天）"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "時間：${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "已移除"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
+      "LOCATION:\n${ eventLocation }": [
         "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲接受"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已接受您對 ${ eventTitle } 的邀請"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已被謝絕"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已謝絕您對 ${ eventTitle } 的邀請"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已暫定接受您對 ${ eventTitle } 的邀請"
       ]
     },
     "Email subject": {
@@ -2078,6 +2104,11 @@
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "包含 ${ DRIVE_SHORT_APP_NAME } 版本歷程、存取 ${ VPN_SHORT_APP_NAME } 數以千計高速伺服器、${ PASS_SHORT_APP_NAME } 的分享功能以及更多。"
       ]
     },
     "eoy2023: Deal details": {
@@ -2290,6 +2321,9 @@
       "Passwords do not match": [
         "密碼不一致"
       ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "照片上載暫時停用。請稍後再試"
+      ],
       "Please activate your search again": [
         "請再次啟用搜尋"
       ],
@@ -2325,6 +2359,9 @@
       ],
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "已忽略部份檔案，因「照片」並不支援"
       ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
@@ -3703,6 +3740,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "與此同時，不妨註冊您自己的 ${ DRIVE_APP_NAME } 帳號，以端到端加密保護您的資料並安全地分享。"
+      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "正在索引項目 ${ esProgress } / ${ totalProgressToShow }"
       ],
@@ -3729,6 +3769,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "垃圾桶中的項目都將保留在此處，直到您將它們永久刪除為止"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "移動至垃圾桶的項目將留在此處直至刪除為止"
       ],
       "It’s easy and secure": [
         "既簡單又安全"
@@ -4033,6 +4076,9 @@
       "Shared link not found": [
         "找不到分享的連結"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "註冊您自己的 ${ DRIVE_APP_NAME } 帳號，以端到端加密保護您的資料並安全地分享。"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
       ],
@@ -4242,6 +4288,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "迎新何必送舊，您的儲存空間剛已提升至 5 GB，讓您游刃有餘！"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "我們遇到技術問題。暫時停用上傳新照片的功能。"
@@ -5039,11 +5088,20 @@
       "AAC audio": [
         "AAC 音訊"
       ],
+      "AbiWord document": [
+        "AbiWord 文件"
+      ],
       "Adobe Portable Document Format (PDF)": [
         "Adobe 可攜式文件格式 (PDF)"
       ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook 格式"
+      ],
       "Android Package": [
         "Android 包裝"
+      ],
+      "Animated Portable Network Graphics": [
+        "動態可攜式網路圖形"
       ],
       "Apple Installer Package": [
         "Apple 下載包裝"
@@ -5063,6 +5121,9 @@
       "Binary data": [
         "二進位制資料"
       ],
+      "Bourne shell script": [
+        "Bourne shell 指令碼"
+      ],
       "BZip archive": [
         "BZip 封存檔"
       ],
@@ -5078,6 +5139,9 @@
       "Comma-separated values (CSV)": [
         "逗號分隔值檔案 (CSV)"
       ],
+      "Electronic publication (EPUB)": [
+        "電子出版 (EPUB)"
+      ],
       "Flash Video": [
         "Flash 影片"
       ],
@@ -5089,6 +5153,9 @@
       ],
       "HyperText Markup Language (HTML)": [
         "超文件標示語言 (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "超文字預處理器 (PHP)"
       ],
       "iCalendar format": [
         "iCalendar 格式"
@@ -5114,6 +5181,12 @@
       "MPEG Video": [
         "MPEG 影片"
       ],
+      "MS Embedded OpenType fonts": [
+        "MS 內嵌式 OpenType 字型"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "音樂數位介面 (MIDI)"
+      ],
       "OGG audio": [
         "OGG 音訊"
       ],
@@ -5122,6 +5195,9 @@
       ],
       "OpenDocument presentation document": [
         "OpenDocument 簡報文件"
+      ],
+      "OpenDocument spreadsheet document": [
+        "OpenDocument 試算表文件"
       ],
       "OpenDocument text document": [
         "OpenDocument 文字文件"
@@ -5138,8 +5214,20 @@
       "RAR archive": [
         "RAR 存檔"
       ],
+      "Rich Text Format (RTF)": [
+        "多文字格式 (RTF)"
+      ],
       "Scalable Vector Graphics (SVG)": [
         "可縮放向量圖形(svg)"
+      ],
+      "Small web format (SWF)": [
+        "細 web 格式 (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "標記的影像檔案格式 (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "磁帶歸檔 (TAR)"
       ],
       "Text": [
         "文字"
@@ -5153,6 +5241,12 @@
       "Video file": [
         "影片檔"
       ],
+      "Waveform Audio Format": [
+        "波形音訊格式"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web 開放字型格式 (WOFF)"
+      ],
       "WEBM audio": [
         "WEBM 音訊"
       ],
@@ -5161,6 +5255,9 @@
       ],
       "WEBP image": [
         "WebP 圖片"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 點陣圖圖形"
       ],
       "ZIP archive": [
         "ZIP 存檔"
@@ -5254,7 +5351,7 @@
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
       "Snooze messages and get reminded when you want": [
-        "延後訊息急於想要時獲得通知"
+        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -5588,6 +5685,12 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } 已被標記為時效已過。此金鑰僅可用於特徵驗證。"
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "自動由 keys.openpgp.org 取得了外部金鑰。"
+      ],
+      "External key automatically fetched via WKD.": [
+        "自動由 WKD 取得了外部金鑰。"
+      ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
       ],
@@ -5768,12 +5871,20 @@
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(轉開 ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "檢視日誌"
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel 現已 **啟動** 並正在保護你的帳號."
       ]
@@ -6285,6 +6396,9 @@
       ],
       "Import record deleted": [
         "匯入記錄已刪除"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "最後修改的別名已儲存到您最舊的保險庫"
       ],
       "Phone number copied to clipboard": [
         "手機號碼已複製到剪貼簿"

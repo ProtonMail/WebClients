@@ -3280,52 +3280,6 @@
         "Tuto záložku můžete bezpečně zavřít."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Popis: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } byla zrušena."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } byla aktualizována.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Tento výskyt ${ eventTitle } byl zrušen."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Pozvání k ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Kdy: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Kdy: ${ formattedStart } (celý den)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kdy: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Kde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } přijal(a) pozvání na ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmítl/a pozvání na ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } předběžně přijal(a) pozvání na ${ eventTitle }"
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "E-mailová adresa ${ name } přidána"
@@ -5188,6 +5142,11 @@
       ],
       "Very small": [
         "Velmi malé"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Frequency of news": {
@@ -10606,17 +10565,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -10710,6 +10658,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11857,9 +11816,6 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Pro firmy"
-      ],
-      "For invididuals": [
-        "Pro jednotlivce"
       ]
     },
     "passwordless": {
@@ -11873,7 +11829,7 @@
         "Klíč organizace byl aktivován"
       ],
       "Organization key restored": [
-        "Klíč organizace byl resetován"
+        "Klíč organizace byl obnoven"
       ],
       "Organization key updated": [
         "Klíč organizace byl aktualizován"

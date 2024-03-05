@@ -3251,49 +3251,57 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivning: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESKRIVNING:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } har avbrutits."
+      "All events in this series were updated.": [
+        "Alla händelser i denna serie uppdaterades."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } har uppdaterats. ${ eventDetailsText }"
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alla händelser i denna serie har uppdaterats. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Denna förekomst av ${ eventTitle } har avbrutits."
+      "This event was updated.": [
+        "Denna händelse uppdaterades."
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du är inbjuden till ${ eventTitle } ${ eventDetailsText }"
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denna händelse uppdaterades. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du är inbjuden till ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "När: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "TID:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "När: ${ formattedStart } (hela dagen)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "TID:\n${ formattedStart } (hela dagen)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "När: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TID:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Borttagen"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Var: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "PLATS:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har accepterat din inbjudan till ${ eventTitle }"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } accepterade din inbjudan till ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har avböjt din inbjudan till ${ eventTitle }"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } avböjde din inbjudan till ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har preliminärt accepterat din inbjudan till ${ eventTitle }"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } accepterade preliminärt din inbjudan till ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -5128,12 +5136,20 @@
         "Väldigt liten"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "webbapp"
+      ]
+    },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
       ],
       "Back to sign in": [
         "Tillbaka till inloggning"
+      ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Fortsätt att njuta av en snabb, fokuserad och säker upplevelse för stationär dator. Uppgradera för att låsa upp obegränsad åtkomst och andra premiumfunktioner. "
       ],
       "Keep using the desktop app": [
         "Fortsätt använda appen för stationär dator"
@@ -6025,6 +6041,10 @@
       ],
       "Admin account allocation": [
         "Allokering för administratörskonto"
+      ],
+      "Affected user is on row": [
+        "Berörd användare är på rad",
+        "Berörda användare är på raderna"
       ],
       "Align left": [
         "Vänsterjustera"
@@ -8095,6 +8115,9 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Credit note": [
+        "Kreditfaktura"
       ],
       "Currency conversion": [
         "Valutaomvandling"
@@ -10431,17 +10454,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10466,6 +10478,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Avancerat skydd för team som går utöver branschstandarder."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alla ${ BRAND_NAME }-appar och deras premiumfunktioner"
@@ -10538,6 +10553,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11458,8 +11484,14 @@
       "/month /user, billed biennially": [
         "/månad/användare, faktureras vartannat år"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "Avancerat skydd som går utöver branschstandarder"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Alla premiumtjänster för ${ BRAND_NAME }."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Baserad i Schweiz, GDPR-kompatibel"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan få ${ discount } rabatt genom att uppgradera till **${ upsellPlanTitle }** — det är endast ${ relativePrice } extra per månad."
@@ -11565,6 +11597,9 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli en del av över 100 miljoner människor som har valt ${ BRAND_NAME } för att hålla sig säkra online"
+      ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Gå med och bli en del av över 50 000 organisationer som litar på ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Lanserar ${ PASS_APP_NAME }"
@@ -11679,6 +11714,9 @@
       ],
       "Change organization key": [
         "Ändra organisationsnyckel"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Icke-privata användare kan befordras till admin när de har inställningsnycklar"
       ],
       "Organization key activated": [
         "Organisationsnyckel aktiverad"

@@ -3047,49 +3047,6 @@
         "Összes letöltése"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Leírás: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } törlésre került."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } frissítve.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Meghívták a következő eseményre: ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Ekkor: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Ekkor: ${ formattedStart } (egész nap)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Ekkor: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Hely: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } elfogadta a meghívást az eseményre: ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } elutasította a meghívást az eseményre: ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } feltételesen elfogadta a meghívást az eseményre: ${ eventTitle }"
-      ]
-    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Az esemény holnap lesz"
@@ -4195,8 +4152,8 @@
       ]
     },
     "Free trial desktop": {
-      "No credit card required": [
-        "Nincs szükség bankkártya megadására"
+      "No credit card required.": [
+        "Nincs szükség bankkártya megadására."
       ]
     },
     "Get started checklist instructions": {

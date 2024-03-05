@@ -1369,6 +1369,9 @@
       ]
     },
     "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "使用黑色星期五優惠於高速VPN"
+      ],
       "Select your Black Friday offer": [
         "選取您的黑色星期五方案"
       ],
@@ -1393,6 +1396,9 @@
       ],
       "6 users": [
         "6 位使用者"
+      ],
+      "Exclusive features and early access": [
+        "包含功能和優先存取"
       ],
       "Help us fight for online privacy": [
         "協助我們爭取線上隱私"
@@ -3030,6 +3036,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "要匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "邀請好友至 ${ BRAND_NAME }，賺取高達 ${ credits } 儲值。"
       ],
@@ -3221,49 +3230,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
+      "DESCRIPTION:\n${ eventDescription }": [
         "描述：${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "該系列中的所有行程皆已更新。"
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "此${ eventTitle }的事件已被取消。"
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該系列中的所有行程皆已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "該行程已被取消。"
+      ],
+      "This event occurrence was updated.": [
+        "該行程已更新。"
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "該行程已更新。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "該行程已更新。以下是更新內容：\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "您已被邀請至 ${ eventTitle }。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "日期：${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "時間：${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "日期 : ${ formattedStart } (全日)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "時間：${ formattedStart }（全天）"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "時間：${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "已移除"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
+      "LOCATION:\n${ eventLocation }": [
         "地點：${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲接受"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已接受您對 ${ eventTitle } 的邀請"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已被謝絕"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已謝絕您對 ${ eventTitle } 的邀請"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 已暫定接受您對 ${ eventTitle } 的邀請"
       ]
     },
     "Email spam notification": {
@@ -3452,6 +3481,9 @@
       "Please update your forwarding keys": [
         "請更新您的轉寄金鑰"
       ],
+      "The forwarding is temporarily paused": [
+        "轉寄以永久暫停"
+      ],
       "You can safely close this tab.": [
         "現在您可以安全地關閉此分頁。"
       ]
@@ -3592,6 +3624,11 @@
         "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "包含 ${ DRIVE_SHORT_APP_NAME } 版本歷程、存取 ${ VPN_SHORT_APP_NAME } 數以千計高速伺服器、${ PASS_SHORT_APP_NAME } 的分享功能以及更多。"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3667,6 +3704,9 @@
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "無法載入發票。請稍後再試。"
+      ],
       "Could not save preference": [
         "無法儲存偏好設定"
       ],
@@ -3741,6 +3781,9 @@
       ],
       "Incorrect username": [
         "錯誤的使用者名稱"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "擬收件人不支援行事曆共享"
       ],
       "Invalid ${ name } code": [
         "${ name } 代碼無效"
@@ -4735,7 +4778,7 @@
         "新增"
       ],
       "Add (${ numberOfAddedServers })": [
-        "添加(${ numberOfAddedServers })"
+        "新增 (${ numberOfAddedServers } 台)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "多達 ${ plusVpnConnections } 台裝置的連線"
@@ -5067,7 +5110,7 @@
         "帳號登錄"
       ],
       "Auto-forward Gmail": [
-        "自動轉寄至Gmail"
+        "自動轉寄 Gmail"
       ],
       "auto-forwarding": [
         "自動轉寄"
@@ -5725,7 +5768,7 @@
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter }伺服器正在設定。通常需要接近${ provisioningDuration }。"
+        "${ provisioningCounter } 台伺服器仍在設置。通常需時約 ${ provisioningDuration }。"
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: 請求收件者將未授權的信件標示為垃圾郵件或將其隔離。"
@@ -5866,13 +5909,13 @@
         "一次新增多個使用者到您的組織中。"
       ],
       "Add server (${ availableAddedCount } available)": [
-        "添加伺服器(${ availableAddedCount }可用)"
+        "新增伺服器 (${ availableAddedCount } 台可用)"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "添加${ addedServerCount }閘道器伺服器"
+        "正在新增 ${ addedServerCount } 台閘道伺服器"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "添加閘道器伺服器:${ serverNumber } / ${ total }"
+        "正在新增閘道伺服器：${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "額外設定"
@@ -6133,7 +6176,7 @@
         "創建您的第一個閘道器"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "創建閘道器伺服器: ${ serverNumber } / ${ total }"
+        "正在建立閘道伺服器：${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "創建您的帳號"
@@ -6190,7 +6233,7 @@
         "刪除連結？"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "刪除${ deletedServerCount }閘道器伺服器"
+        "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
@@ -6332,6 +6375,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的復原手機號碼，我們將向您發送您的使用者名稱或電郵位址。"
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "請輸入您的復原片語，以便立即更改您的密碼。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "行程邀請與回函將會以此語言傳送。"
@@ -7500,6 +7546,9 @@
       "Welcome": [
         "歡迎"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "我們將發送一個重設代碼到 ${ boldValue }。"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的電郵位址。"
       ],
@@ -7785,6 +7834,9 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "為您組織的任何一個使用者新增地址。"
+      ],
       "Add a new user to your organization and create an address for it.": [
         "將新使用者加入到您的組織並為其創建位址。"
       ]
@@ -7864,6 +7916,9 @@
       ],
       "Credit": [
         "儲值"
+      ],
+      "Credit note": [
+        "可用額度附註"
       ],
       "Currency conversion": [
         "貨幣轉換"
@@ -10119,7 +10174,7 @@
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
       "Snooze messages and get reminded when you want": [
-        "延後訊息急於想要時獲得通知"
+        "緩辦郵件，容後依時提醒"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
@@ -10134,17 +10189,6 @@
       ],
       "Team management": [
         "團隊管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10240,6 +10284,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11108,8 +11163,14 @@
       "/month /user, billed annually": [
         "/月 /使用者 每年付款"
       ],
+      "/month /user, billed biennially": [
+        "/月 /使用者 每兩年付款"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "全部付費版${ BRAND_NAME }服務。"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "位於瑞士，受歐盟 GDPR 法規管理"
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "但您可以透過升級到 **${ upsellPlanTitle }** 解鎖 **${ unlockPlanTitle }** 與所有進階 ${ BRAND_NAME } 服務 — 僅需每月額外 ${ relativePrice }。"
@@ -11159,6 +11220,9 @@
       "Free forever": [
         "永久免費"
       ],
+      "From the team that knows encryption": [
+        "來自於了解加密的團隊"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "盡快為${ browserName }取得${ appName }。"
       ],
@@ -11185,6 +11249,9 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "加入超過一億人的行列，選擇 ${ BRAND_NAME } 確保上網安全"
+      ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "加入 50 000 組織機構信任的${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "切換至 ${ PASS_APP_NAME }"
@@ -11282,12 +11349,18 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "商業使用"
-      ],
-      "For invididuals": [
-        "個人使用"
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "全部管理員將能存取金鑰。"
+      ],
+      "Change organization key": [
+        "變更組織金鑰"
+      ],
+      "Organization key activated": [
+        "組織金鑰已啟用"
+      ],
       "Organization key does not exist.": [
         "組織金鑰不存在。"
       ],
@@ -11662,6 +11735,9 @@
       ],
       "Changing organization password": [
         "更改組織密碼"
+      ],
+      "Creating or accessing non-private users": [
+        "創建或存取非隱私使用者"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由於密碼變更，您的組織系統管理員權限受到限制。下列動作已不再允許："
@@ -13142,6 +13218,9 @@
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
       ],
+      "Are you sure?": [
+        "您確定嗎？"
+      ],
       "Authentication security": [
         "安全驗證"
       ],
@@ -13369,6 +13448,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "下載 ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "下載桌面應用程式"
       ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
@@ -14500,6 +14582,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "您必須${ activateLink }組織金鑰才可新增電子郵件地址到一個非私密成員。"
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設定將會遺失。"

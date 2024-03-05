@@ -742,10 +742,6 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } suggerirà la creació de contrasenyes fortes als formularis d'inscripció."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } vegada",
-        "${ revisionNumber } vegades"
-      ],
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
@@ -788,6 +784,9 @@
       ],
       "Creating alias...": [
         "S'està creant un àlies..."
+      ],
+      "Current version": [
+        "Versió actual"
       ],
       "Decrypting your data": [
         "S'estan desxifrant les dades"
@@ -1146,7 +1145,7 @@
         "Clau secreta A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "Token 2FA (TOTP)"
+        "Testimoni 2FA (TOTP)"
       ],
       "30 minutes": [
         "30 minuts"
@@ -1327,9 +1326,6 @@
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"
-      ],
-      "Last autofill": [
-        "Últim emplenament automàtic"
       ],
       "Last month": [
         "El mes passat"
@@ -1742,6 +1738,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "History": [
+        "Historial"
+      ],
       "Import - ${ date }": [
         "Importació - ${ date }"
       ],
@@ -1762,6 +1761,9 @@
       ],
       "Members": [
         "Membres"
+      ],
+      "Modified": [
+        "Modificació"
       ],
       "Move all items ?": [
         "Mou tots els elements ?"

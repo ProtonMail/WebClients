@@ -17,6 +17,9 @@
       "Add new item": [
         "Добавить новый элемент"
       ],
+      "Admin panel": [
+        "Панель администратора"
+      ],
       "Advanced": [
         "Продвинутые"
       ],
@@ -679,12 +682,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } раз",
-        "${ revisionNumber } раза",
-        "${ revisionNumber } раз",
-        "${ revisionNumber } раз"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
       ],
@@ -738,6 +735,9 @@
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
+      ],
+      "Current version": [
+        "Текущая версия"
       ],
       "Decrypting your data": [
         "Расшифровка ваших данных"
@@ -915,6 +915,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
+      ],
+      "Reconnect": [
+        "Возобновить соединение"
       ],
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
@@ -1235,9 +1238,6 @@
       ],
       "Last 2 weeks": [
         "Последние 2 недели"
-      ],
-      "Last autofill": [
-        "Последнее автозаполнение"
       ],
       "Last month": [
         "Последний месяц"
@@ -1610,6 +1610,9 @@
       "Grant permissions": [
         "Предоставить разрешения"
       ],
+      "History": [
+        "История"
+      ],
       "Import - ${ date }": [
         "Импорт - ${ date }"
       ],
@@ -1624,6 +1627,9 @@
       ],
       "Member limit": [
         "Ограничение количества участников"
+      ],
+      "Modified": [
+        "Изменено"
       ],
       "Move all items ?": [
         "Переместить все элементы?"
@@ -1654,6 +1660,9 @@
       ],
       "Share with": [
         "Поделиться с"
+      ],
+      "Suggestions": [
+        "Рекомендации"
       ],
       "Transfer ownership": [
         "Передать права владельца"

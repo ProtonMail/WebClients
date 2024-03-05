@@ -570,6 +570,9 @@
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Offline-tila ei ole tällä hetkellä käytettävissä kahden salasanan tilassa."
+      ],
       "Passphrase is incorrect": [
         "Tunnuslauseke on virheellinen"
       ],
@@ -730,10 +733,6 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja maksukortit."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kerran",
-        "${ revisionNumber } kertaa"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
       ],
@@ -802,6 +801,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV tarjoaa kätevän muodon tietojen tarkasteluun. Sen yksinkertaisuuden vuoksi joitain tietoja ei kuitenkaan voida sisällyttää (omat kentät, holvirakenne, jne.). Täydellistä vientiä varten suosittelemme eri tiedostomuodon käyttämistä."
+      ],
+      "Current version": [
+        "Nykyinen versio"
       ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
@@ -1092,6 +1094,9 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
+      "The export will only contain vaults that you own.": [
+        "Vienti sisältää vain omistamasi holvit."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
       ],
@@ -1371,9 +1376,6 @@
       "Last 2 weeks": [
         "Kahden viikon aikana"
       ],
-      "Last autofill": [
-        "Täytetty"
-      ],
       "Last month": [
         "Neljän viikon aikana"
       ],
@@ -1454,6 +1456,9 @@
       ],
       "Password history": [
         "Salasanahistoria"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-salattu JSON-tiedosto (suositus)"
       ],
       "PIN": [
         "PIN-koodi"
@@ -1762,6 +1767,9 @@
       "Grant permissions": [
         "Myönnä käyttöoikeudet"
       ],
+      "History": [
+        "Historia"
+      ],
       "Import - ${ date }": [
         "Tuontipäivä - ${ date }"
       ],
@@ -1785,6 +1793,9 @@
       ],
       "Members": [
         "Jäsentä"
+      ],
+      "Modified": [
+        "Muokattu"
       ],
       "Move all items ?": [
         "Siirretäänkö kaikki kohteet?"
