@@ -46,8 +46,10 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
-    getCTAContent: () => c('Action').t`Upgrade`,
-    shapeButton: 'outline',
+    topButton: {
+        shape: 'outline',
+        getCTAContent: () => c('Action').t`Upgrade`,
+    },
     images: {
         bannerImage,
         bannerImage2x,

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components/hooks';
+import clsx from '@proton/utils/clsx';
 
 import { OfferProps } from '../../../interface';
 import Deal from './Deal';
@@ -13,7 +14,7 @@ import DealPriceInfos from './DealPriceInfos';
 import DealTitle from './DealTitle';
 
 const Deals = (props: OfferProps) => {
-    const { deals } = props.offer;
+    const { deals, hideDealTitle, hideDealPriceInfos } = props.offer;
     const [isExpanded, setIsExpanded] = useState(true);
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -28,18 +29,23 @@ const Deals = (props: OfferProps) => {
     }, [viewportWidth['<=small'], viewportWidth.xlarge]);
 
     return (
-        <div className="offer-wrapper gap-4 flex flex-nowrap justify-center flex-column md:flex-row mt-11">
+        <div
+            className={clsx(
+                'offer-wrapper gap-4 flex flex-nowrap justify-center flex-column md:flex-row',
+                hideDealTitle ? 'mt-6' : 'mt-11'
+            )}
+        >
             {deals.map((deal) => (
                 <Deal key={deal.ref} {...props} deal={deal}>
                     <DealMostPopular />
-                    <DealTitle />
+                    {hideDealTitle ? null : <DealTitle />}
                     <DealPrice />
                     <DealCTA />
                     <DealGuarantee />
-                    <div className="offer-features flex-auto w-full mb-4">
+                    <div className={clsx('offer-features flex-auto w-full', !hideDealPriceInfos && 'mb-4')}>
                         <DealFeatures isExpanded={isExpanded} expand={() => setIsExpanded(true)} />
                     </div>
-                    <DealPriceInfos />
+                    {hideDealPriceInfos ? null : <DealPriceInfos />}
                 </Deal>
             ))}
         </div>
