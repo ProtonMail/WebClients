@@ -1,13 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
+import { Button } from '@proton/atoms/Button';
+import {
+    Icon,
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
+    Tooltip,
+    useModalTwoStatic,
+} from '@proton/components';
 
 import { useShareURLView } from '../../../store';
+import { useDriveSharingFeatureFlag } from '../../../store/_shares/useCollaborativeSharingFeatureFlag';
 import ModalContentLoader from '../ModalContentLoader';
+import DirectSharing from './DirectSharing';
 import ErrorState from './ErrorState';
-import GeneratedLinkState from './GeneratedLinkState';
+import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
+import ShareWithAnyone from './ShareWithAnyone';
+import { ShareLinkModalLEGACY } from './_legacy/ShareLinkModalLEGACY';
 
 interface Props {
     modalTitleID?: string;
@@ -15,110 +28,90 @@ interface Props {
     linkId: string;
 }
 
-export function ShareLinkModal({
-    modalTitleID = 'share-link-modal',
-    shareId,
-    linkId,
-    onClose,
-    ...modalProps
-}: Props & ModalStateProps) {
-    const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
+export function ShareLinkModal({ shareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
     const {
-        isDeleting,
-        isSaving,
-        name,
-        initialExpiration,
         customPassword,
-        sharedLink,
-        confirmationMessage,
-        loadingMessage,
-        errorMessage,
-        sharedInfoMessage,
-        hasCustomPassword,
-        hasGeneratedPasswordIncluded,
-        hasExpirationTime,
-        saveSharedLink,
+        initialExpiration,
+        name,
         deleteLink,
+        sharedLink,
+        errorMessage,
+        loadingMessage,
+        confirmationMessage,
+        hasGeneratedPasswordIncluded,
+        createSharedLink,
+        saveSharedLink,
+        isSaving,
+        isDeleting,
+        isCreating,
+        isShareUrlLoading,
     } = useShareURLView(shareId, linkId);
 
-    const [passwordToggledOn, setPasswordToggledOn] = useState(false);
-    const [expirationToggledOn, setExpirationToggledOn] = useState(false);
+    const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
+    const [isDirectSharingWorkflow, setIsDirectSharingWorkflow] = useState(false);
 
-    const [isSharingFormDirty, setIsSharingFormDirty] = useState(false);
-
-    const handleFormStateChange = ({ isFormDirty }: { isFormDirty: boolean }) => {
-        setIsSharingFormDirty(isFormDirty);
-    };
-
-    useEffect(() => {
-        if (!loadingMessage) {
-            setPasswordToggledOn(hasCustomPassword);
-            setExpirationToggledOn(hasExpirationTime);
-        }
-    }, [loadingMessage]);
-
-    const handleDeleteLink = async () => {
-        void showConfirmActionModal({
-            title: c('Title').t`Stop sharing with everyone?`,
-            submitText: c('Action').t`Stop sharing`,
-            message: confirmationMessage,
-            canUndo: true,
-            onSubmit: () => deleteLink().finally(() => onClose()),
-        });
-    };
-
-    const handleClose = () => {
-        if (!isSharingFormDirty) {
-            onClose?.();
-            return;
-        }
-
-        void showConfirmActionModal({
-            title: c('Title').t`Discard changes?`,
-            submitText: c('Title').t`Discard`,
-            message: c('Info').t`You will lose all unsaved changes.`,
-            onSubmit: async () => onClose?.(),
-            canUndo: true,
-        });
-    };
-
-    const toggleIncludePassword = () => {
-        setPasswordToggledOn((passwordToggledOn) => !passwordToggledOn);
-    };
-
-    const toggleIncludeExpirationTime = () => {
-        setExpirationToggledOn((expirationToggledOn) => !expirationToggledOn);
-    };
-
+    const handleDeleteLink = () => deleteLink().then(() => onClose());
     const renderModalState = () => {
         if (errorMessage) {
             return <ErrorState onClose={onClose}>{errorMessage}</ErrorState>;
         }
 
-        if (loadingMessage) {
+        if (loadingMessage && !isShareUrlLoading) {
             return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
         }
 
         return (
-            <GeneratedLinkState
-                modalTitleID={modalTitleID}
-                passwordToggledOn={passwordToggledOn}
-                expirationToggledOn={expirationToggledOn}
-                itemName={name}
-                sharedInfoMessage={sharedInfoMessage}
-                onClose={handleClose}
-                onIncludePasswordToggle={toggleIncludePassword}
-                onIncludeExpirationTimeToogle={toggleIncludeExpirationTime}
-                onSaveLinkClick={saveSharedLink}
-                onDeleteLinkClick={handleDeleteLink}
-                onFormStateChange={handleFormStateChange}
-                customPassword={customPassword}
-                initialExpiration={initialExpiration}
-                url={sharedLink}
-                modificationDisabled={!hasGeneratedPasswordIncluded}
-                deleting={isDeleting}
-                saving={isSaving}
-            />
+            <div className="mb-4">
+                <ModalTwoHeader
+                    title={c('Title').t`Share ${name}`}
+                    closeButtonProps={{ disabled: isSaving || isDeleting || isCreating }}
+                    actions={[
+                        <Tooltip
+                            disabled={isShareUrlLoading || isSaving || isDeleting || isCreating}
+                            title={c('Info').t`Share via link settings`}
+                        >
+                            <Button
+                                icon
+                                shape="ghost"
+                                onClick={() =>
+                                    showSettingsModal({
+                                        customPassword,
+                                        initialExpiration,
+                                        onSaveLinkClick: saveSharedLink,
+                                        isDeleting,
+                                        deleteLink: handleDeleteLink,
+                                        havePublicSharedLink: !!sharedLink,
+                                        confirmationMessage,
+                                        modificationDisabled: !hasGeneratedPasswordIncluded,
+                                    })
+                                }
+                            >
+                                <Icon name="cog-wheel" />
+                            </Button>
+                        </Tooltip>,
+                    ]}
+                />
+                <ModalTwoContent>
+                    <DirectSharing
+                        shareId={shareId}
+                        linkId={linkId}
+                        isDirectSharingWorkflow={isDirectSharingWorkflow}
+                        onClose={() => setIsDirectSharingWorkflow(false)}
+                        onSubmit={() => setIsDirectSharingWorkflow(false)}
+                        onFocus={() => setIsDirectSharingWorkflow(true)}
+                    />
+                    {!isDirectSharingWorkflow ? (
+                        <ShareWithAnyone
+                            createSharedLink={createSharedLink}
+                            isShareUrlLoading={isShareUrlLoading}
+                            publicSharedLink={sharedLink}
+                            deleteSharedLink={deleteLink}
+                            isDeleting={isDeleting}
+                            isCreating={isCreating}
+                        />
+                    ) : null}
+                </ModalTwoContent>
+            </div>
         );
     };
 
@@ -126,23 +119,24 @@ export function ShareLinkModal({
         <>
             <ModalTwo
                 as="form"
-                onClose={handleClose}
+                onClose={onClose}
                 onReset={(e: any) => {
                     e.preventDefault();
-                    handleClose();
+                    onClose();
                 }}
                 disableCloseOnEscape={isSaving || isDeleting}
                 size="large"
+                fullscreenOnMobile
                 {...modalProps}
             >
                 {renderModalState()}
             </ModalTwo>
-            {confirmActionModal}
+            {settingsModal}
         </>
     );
 }
 
-export default ShareLinkModal;
 export const useLinkSharingModal = () => {
-    return useModalTwoStatic(ShareLinkModal);
+    const driveSharing = useDriveSharingFeatureFlag();
+    return useModalTwoStatic(driveSharing ? ShareLinkModal : ShareLinkModalLEGACY);
 };

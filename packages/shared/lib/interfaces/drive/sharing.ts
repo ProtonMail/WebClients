@@ -1,4 +1,5 @@
 import { SessionKey } from '@proton/crypto';
+import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 
 import { AuthVersion } from '../../authentication/interface';
 import { DriveFileBlock, Thumbnail } from './file';
@@ -134,4 +135,28 @@ export interface AbuseReportPayload {
     ReporterEmail?: string;
     ReporterMessage?: string;
     ResourcePassphrase: string;
+}
+
+export interface ShareMemberPayload {
+    MemberID: string;
+    ShareID: string;
+    AddressID: string;
+    AddressKeyID: string;
+    Inviter: string;
+    CreateTime: number;
+    ModifyTime: number;
+    Permissions: number;
+    KeyPacket: string;
+    KeyPacketSignature: string | null;
+    SessionKeySignature: string | null;
+    State: SHARE_MEMBER_STATE;
+    Unlockable: boolean;
+}
+
+export interface InviteShareMemberPayload {
+    Email: string;
+    Inviter: string;
+    Permissions: SHARE_MEMBER_PERMISSIONS;
+    KeyPacket: string;
+    KeyPacketSignature: string;
 }

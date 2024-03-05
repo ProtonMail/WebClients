@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import {
     Form,
     InputFieldTwo,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -15,6 +16,7 @@ import {
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
+    useModalTwoStatic,
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -54,7 +56,7 @@ const ABUSE_CATEGORIES: AbuseCategory[] = [
 
 const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCateroryType[] = ['copyright', 'stolen-data'];
 
-const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFormProps) => {
+const ReportAbuseModal = ({ onClose, linkInfo, onSubmit, ...modalProps }: AbuseFormProps & ModalStateProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
 
@@ -95,7 +97,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
 
             await onSubmit(payload);
             createNotification({ text: c('Info').t`Report has been sent` });
-            onClose?.();
+            onClose();
         } catch (e) {
             createNotification({ text: c('Error').t`Report failed to be sent`, type: 'error' });
             sendErrorReport(e);
@@ -113,8 +115,8 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
             onClose={onClose}
             onReset={onClose}
             onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
-            open={open}
             size="small"
+            {...modalProps}
         >
             <ModalTwoHeader title={c('Action').t`Submit report`} />
             <ModalTwoContent>
@@ -178,3 +180,6 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
 };
 
 export default ReportAbuseModal;
+export const useReportAbuseModal = () => {
+    return useModalTwoStatic(ReportAbuseModal);
+};

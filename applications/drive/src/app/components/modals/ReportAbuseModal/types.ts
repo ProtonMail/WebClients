@@ -6,7 +6,6 @@ export type ReportAbuseRequestPayload = {
 };
 
 export interface AbuseFormProps {
-    onClose?: () => void;
     linkInfo: LinkInfo;
     onSubmit: (params: {
         linkId: string;
@@ -14,7 +13,6 @@ export interface AbuseFormProps {
         reporterEmail?: string;
         reporterMessage?: string;
     }) => Promise<void>;
-    open?: boolean;
 }
 
 export type AbuseCateroryType = 'spam' | 'copyright' | 'child-abuse' | 'stolen-data' | 'malware' | 'other';

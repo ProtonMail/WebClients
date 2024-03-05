@@ -6,6 +6,7 @@ export * from './shareUrl';
 export { default as useDefaultShare } from './useDefaultShare';
 export { default as usePublicShare } from './usePublicShare';
 export { default as useShare } from './useShare';
+export { default as useShareMember } from './useShareMember';
 export { default as useShareActions } from './useShareActions';
 export { default as useShareUrl } from './useShareUrl';
 export { default as useVolume } from './useVolume';

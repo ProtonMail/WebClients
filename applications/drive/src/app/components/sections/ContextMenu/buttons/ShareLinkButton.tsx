@@ -8,17 +8,16 @@ interface Props {
     shareId: string;
     link: DecryptedLink;
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
+    sharedWithMe?: boolean;
     close: () => void;
 }
 
-const ShareLinkButton = ({ shareId, link, showLinkSharingModal, close }: Props) => {
-    const hasSharedLink = !!link.shareUrl;
-
+const ShareLinkButton = ({ shareId, link, showLinkSharingModal, sharedWithMe, close }: Props) => {
     return (
         <ContextMenuButton
-            name={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-            icon={hasSharedLink ? 'link-pen' : 'link'}
-            testId={hasSharedLink ? 'context-menu-manage-link' : 'context-menu-share-link'}
+            name={c('Action').t`Share`}
+            icon={sharedWithMe ? 'users' : 'user-plus'}
+            testId="context-menu-share-link"
             action={() => showLinkSharingModal({ shareId, linkId: link.linkId })}
             close={close}
         />
