@@ -12,6 +12,7 @@ import {
     useState,
 } from 'react';
 
+import { compareAsc } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -21,8 +22,16 @@ import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/li
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
+import {
+    CalendarViewBusyEvent,
+    CalendarViewEvent,
+    TargetEventData,
+    TargetMoreData,
+} from '../../containers/calendar/interface';
+import { isBusyTimesSlotEvent } from '../../helpers/busyTimeSlots';
 import { getNavigationArrowsText } from '../../helpers/i18n';
+import { selectAttendeesBusyTimeSlots } from '../../store/busyTimeSlots/busyTimeSlotsSelectors';
+import { useCalendarSelector } from '../../store/hooks';
 import { PartDayEventView } from '../events/PartDayEvent';
 import RowEvents from './DayGrid/RowEvents';
 import DayButtons from './TimeGrid/DayButtons';
@@ -107,6 +116,7 @@ const TimeGrid = ({
     children,
     ...rest
 }: Props) => {
+    const attendeeBusyTimeSlots = useCalendarSelector(selectAttendeesBusyTimeSlots);
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLDivElement>(null);
     const nowRef = useRef<HTMLDivElement>(null);
@@ -136,15 +146,25 @@ const TimeGrid = ({
         return hours.map((hourDate) => formatTime(new Date(hourDate.getTime() - secondaryTimezoneOffset)));
     }, [secondaryTimezoneOffset, formatTime]);
 
-    const [timeEvents, dayEvents] = useMemo(() => {
-        return events.reduce<[CalendarViewEvent[], CalendarViewEvent[]]>(
+    let [timeEvents, dayEvents] = useMemo(() => {
+        const result = [...events, ...attendeeBusyTimeSlots].reduce<
+            [(CalendarViewEvent | CalendarViewBusyEvent)[], (CalendarViewEvent | CalendarViewBusyEvent)[]]
+        >(
             (acc, event) => {
-                acc[!event.isAllDay ? 0 : 1].push(event);
+                if (!event.isAllDay) {
+                    acc[0].push(event);
+                }
+                if (event.isAllDay) {
+                    acc[1].push(event);
+                }
                 return acc;
             },
             [[], []]
         );
-    }, [events]);
+
+        // We need to have chronological ordering for the layout to be calculated correctly
+        return [result[0].sort((dateA, dateB) => compareAsc(dateA.start, dateB.start)), result[1]];
+    }, [events, attendeeBusyTimeSlots]);
 
     const daysRows = useMemo(() => {
         if (isSmallViewport) {
@@ -218,7 +238,7 @@ const TimeGrid = ({
                 e,
                 onMouseDown,
                 rows: daysRows,
-                events: dayEvents,
+                events: dayEvents.filter((event): event is CalendarViewEvent => !isBusyTimesSlotEvent(event)),
                 eventsPerRows,
                 dayGridEl: dayGridRef.current,
             });

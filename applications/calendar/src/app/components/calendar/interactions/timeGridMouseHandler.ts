@@ -1,6 +1,7 @@
 import { addMinutes } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewEvent } from '../../../containers/calendar/interface';
+import { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
+import { isBusyTimesSlotEvent } from '../../../helpers/busyTimeSlots';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
 import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
 import { getTargetIndex } from '../mouseHelpers/mathHelpers';
@@ -391,7 +392,7 @@ const createDragMoveEvent = ({
 interface TimeGridMouseHandlerArgs extends SharedArgs {
     e: MouseEvent;
     eventsPerDay: ReturnType<typeof splitTimeGridEventsPerDay>;
-    events: CalendarViewEvent[];
+    events: (CalendarViewEvent | CalendarViewBusyEvent)[];
     days: Date[];
 }
 export default ({
@@ -454,7 +455,7 @@ export default ({
     }
     const { idx } = eventsInDay[targetIndex];
     const event = events[idx];
-    if (!event) {
+    if (!event || isBusyTimesSlotEvent(event)) {
         return;
     }
     // const eventNode = dayContainerNode.childNodes[targetIndex];

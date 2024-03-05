@@ -2,7 +2,9 @@ import { Ref, useMemo } from 'react';
 
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
+import { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
+import { isBusyTimesSlotEvent } from '../../../helpers/busyTimeSlots';
+import PartDayBusyEvent from '../../events/PartDayBusyEvent';
 import PartDayEvent, { EventSize } from '../../events/PartDayEvent';
 import getIsBeforeNow from '../getIsBeforeNow';
 import { LayoutEvent, layout } from '../layout';
@@ -49,7 +51,7 @@ const getSize = (duration: number): EventSize | undefined => {
 interface Props {
     tzid: string;
     now: Date;
-    events: CalendarViewEvent[];
+    events: (CalendarViewEvent | CalendarViewBusyEvent)[];
     eventsInDay: LayoutEvent[];
     totalMinutes: number;
     targetEventData?: TargetEventData;
@@ -125,7 +127,23 @@ const DayEvents = ({
                           partDayEventViewStyleValues.lineHeight
                   );
 
-        return (
+        return isBusyTimesSlotEvent(event) ? (
+            <PartDayBusyEvent
+                event={event}
+                eventPartDuration={eventPartDuration}
+                style={{
+                    ...style,
+                    '--line-number': lineNumber || 1,
+                    '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
+                }}
+                key={event.uniqueId}
+                formatTime={formatTime}
+                eventRef={eventRef}
+                isSelected={isSelected}
+                isBeforeNow={isBeforeNow}
+                size={size}
+            />
+        ) : (
             <PartDayEvent
                 event={event}
                 eventPartDuration={eventPartDuration}

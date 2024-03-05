@@ -20,6 +20,10 @@
 	@include gen-rotate(y, 180);
 }
 
+.rotateZ-45 {
+	@include gen-rotate(z, 45);
+}
+
 .rotateZ-90 {
 	@include gen-rotate(z, 90);
 }
