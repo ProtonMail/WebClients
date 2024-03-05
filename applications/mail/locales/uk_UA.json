@@ -1132,6 +1132,9 @@
       "Upgrade": [
         "Покращити"
       ],
+      "Upgrade Now": [
+        "Покращити зараз"
+      ],
       "Upgrade now": [
         "Покращити"
       ],
@@ -1200,6 +1203,15 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Термін дії безплатної пробної версії настільного застосунку закінчується через 2 днів. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Термін дії безплатної пробної версії настільного застосунку закінчується через 5 днів. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Термін дії безплатної пробної версії настільного застосунку закінчується ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Збільшити"
@@ -3043,6 +3055,9 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Призначений для користувачів, які шукають посилений захист для своїх облікових записів."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -3091,11 +3106,17 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Розблокуйте власний час відкладення після покращення тарифу."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Отримайте доступ до безмежної кількості фільтрів для впорядкування поштової скриньки, передплативши тарифний план."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Отримайте доступ до безмежної кількості тек, міток та інших преміумфункцій, передплативши тарифний план."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, наше найсучасніше рішення щодо безпеки на базі ШІ з експертною підтримкою 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -3145,49 +3166,6 @@
     "Download attachments": {
       "Download all": [
         "Завантажити все"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Опис: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } було скасовано."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } було оновлено.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вас запрошено на ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Коли: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Коли: ${ formattedStart } (увесь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Коли: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Де: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } відхиляє ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -3286,6 +3264,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для <${ email }>. Щоб розв'язати проблему, можете додати інший ключ або вимкнути шифрування для цього контакту."
       ],
@@ -3301,8 +3282,23 @@
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
+      "Alias is not valid": [
+        "Псевдонім недійсний"
+      ],
+      "Alias is required": [
+        "Потрібен псевдонім"
+      ],
       "Alias options could not be resolved": [
         "Не вдалося розв'язати параметри псевдоніма"
+      ],
+      "Aliases could not be loaded": [
+        "Не вдалося завантажити псевдоніми"
+      ],
+      "An error occurred while loading alias options": [
+        "Під час завантаження параметрів псевдоніма сталася помилка"
+      ],
+      "An error occurred while saving your alias": [
+        "Під час збереження вашого псевдоніма сталася помилка"
       ],
       "Attachments are limited to 25 MB": [
         "Розмір вкладень обмежується 25 МБ"
@@ -3342,6 +3338,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Неможливо ввімкнути пошук вмісту. Перезапустіть застосунок або очистьте дані."
       ],
       "Could not open created vault": [
         "Не вдалося відкрити створене сховище"
@@ -3412,6 +3411,9 @@
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
       ],
+      "Forward address is required": [
+        "Потрібно вказати адресу переадресації"
+      ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
       ],
@@ -3445,6 +3447,9 @@
       "Last name is too long": [
         "Прізвище занадто довге"
       ],
+      "Maximum expiration time reached.": [
+        "Досягнуто максимального терміну дії."
+      ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
       ],
@@ -3466,6 +3471,9 @@
       "Missing signature": [
         "Відсутній підпис"
       ],
+      "Name is required": [
+        "Назва обовʼязкова"
+      ],
       "Network error: Please check your connection and try again.": [
         "Мережева помилка: перевірте своє інтернет-з'єднання і спробуйте знову."
       ],
@@ -3480,6 +3488,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Жоден зовнішній ключ, отриманий для користувача, не дійсний для надсилання"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -3661,6 +3672,9 @@
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Неочікувана помилка, неможливо імпортувати контакти"
+      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -3699,6 +3713,9 @@
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Досягнуто максимальної кількості символів. Скоротіть своє повідомлення."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. Якщо ви пам'ятаєте свій попередній пароль, можете ${ reActivateKeyLink }, щоб отримати доступ до своїх повідомлень. ${ learnMoreLink }"
@@ -3929,6 +3946,9 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Щоб використовувати ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }, перейдіть до вебверсії."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
@@ -4360,13 +4380,8 @@
       ]
     },
     "Free trial desktop": {
-      "No credit card required": [
-        "Банківська картка не потрібна"
-      ]
-    },
-    "Free trial destkop": {
-      "Try free for 14 days": [
-        "Спробуйте безплатно протягом 14 днів"
+      "No credit card required.": [
+        "Банківська картка не потрібна."
       ]
     },
     "Get started checklist instructions": {
@@ -6058,6 +6073,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Це повідомлення підписано вкладеним ключем, який ще не був довіреним."
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "Це повідомлення буде автоматично видалено о ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
         "Це повідомлення автоматично видалиться о ${ value }"
@@ -8291,9 +8309,25 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Використовуйте на Amazon для покупок тощо"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Натомість коли вас попросять вказати адресу пошти, вкажіть цей псевдонім. Псевдоніми надаються ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(відкрити ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Переглянути журнали"
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наше передове рішення для забезпечення безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений захист облікових записів. ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **активний** і захищає ваш обліковий запис."
       ]
@@ -8791,6 +8825,9 @@
       "Change setting": [
         "Змінити налаштування"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Створюйте псевдоніми hide-my-email і відстежуйте їх тут."
+      ],
       "Email tracking protection": [
         "Захист від стеження електронної пошти"
       ],
@@ -8859,8 +8896,47 @@
       "${ app } storage": [
         "${ app } сховища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% заповнено"
+      ],
+      "contact your administrator": [
+        "зв'язатися з адміністратором"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Щоб і надалі завантажувати та синхронізувати файли, звільніть місце або покращте тариф, щоб збільшити сховище."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Щоби надсилати або отримувати листи, звільніть місце або ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Щоби надсилати або отримувати листи, звільніть місце або покращте тариф, щоб збільшити сховище."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
+      ],
+      "upgrade for more storage": [
+        "покращте тариф, щоб збільшити сховище"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } майже повне"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } повне"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ваше ${ storage } заповнено на ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } повне. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнено на ${ percentage }%. ${ cta }."
+      ],
       "Your storage is full": [
         "Ваше сховище заповнене"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ваше сховище заповнено. ${ cta }."
       ]
     },
     "Success": {
@@ -9073,6 +9149,9 @@
       ],
       "Labels applied.": [
         "Мітки застосовано."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"
       ],
       "Mail list unsubscribed": [
         "Підписку на розсилку скасовано"

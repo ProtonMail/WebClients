@@ -3175,49 +3175,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "აღწერა: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "აღწერა:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } განახლებულია.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "${ eventTitle }-ის მოხდებნა გაუქმდა."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "ყველა მოვლენა ამ სერიაში განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "მოსაწვევი ${ eventTitle }-ზე\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "ამ მოვლენის მოხდენა გაუქმდა."
+      ],
+      "This event occurrence was updated.": [
+        "ამ მოვლენის მოხდენის დრო განახლდა."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "ამ მოვლენის მოხდენის დრო განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "ეს მოვლენა განახლდა."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "ეს მოვლენა განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "მიწვეული ბრძანდებით მოვლენაზე ${ eventTitle }.\n\nროდის: ${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "როდის: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "როდის:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "როდის: ${ formattedStart } (მთელი დღე)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "როდის:\n${ formattedStart } (მთელი დღე)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "როდის: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "როდის:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "წაიშალა"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "სად: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "მდებარეობა:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } დაეთანხმა ${ eventTitle }-ზე მოსაწვევს"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } უარყო ${ eventTitle }-ზე მოსაწვევი"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ფრთხილად დაეთანხმა ${ eventTitle }-ზე მოსაწვევს"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ფრთხილად დაეთანხმა თქვენს მოსაწვევს მოვლენაზე ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -4407,25 +4427,28 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "14-day destkop app trial.": [
+        "14-დღიანი კომპიუტერი აპის საცდელი ვერსია"
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "ისიამოვნეთ სწრაფი, დაცული და ყურადღების გადამტანი ფუნქციების არმქონე წვდომით თქვენს საფოსტო ყუთთან და კალენდართან."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "მიიღეთ შეუზღუდავი წვდომა ფასიან ${ BRAND_NAME } ტარიფთან ერთად"
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "მიიღეთ შეუზღუდავი წვდომა ნებისმიერ ${ MAIL_APP_NAME } ტარიფთან ერთად."
       ],
-      "Introducing the desktop app": [
-        "წარმოგიდგენთ კომპიუტერის აპს"
+      "No credit card required.": [
+        "საკრედიტო ბარათი საჭირო არაა."
       ],
-      "No credit card required": [
-        "საკრედიტო ბარათი საჭირო არაა"
+      "Try the app-new desktop app": [
+        "სცადეთ ახალი კომპიუტერის აპი"
       ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "მოსინჯეთ 14 დღე უფასოდ"
+      "Start free trial": [
+        "უფასო საცდელი ვერსიის ჩართვა"
       ]
     },
     "Get started checklist instructions": {
@@ -4469,7 +4492,7 @@
         "დახურვა"
       ],
       "Closing this means giving up the free storage bonus.": [
-        "ამის დახურვით უფასო საცავზე უარს იძახით."
+        "ამის დახურვით უფასო საცავზე უარს ამბობთ."
       ],
       "Congratulation, you completed all the steps!": [
         "გილოცავთ! თქვენ ყველა ნაბიჯი დაასრულეთ!"
@@ -6289,7 +6312,7 @@
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
       ],
       "You can now return to the application to continue": [
-        "ახლა გასაგრძელებლად შეგიძლიათ აპლიკაციაზე დაბრუნდეთ"
+        "ახლა გასაგრძელებლად შეგიძლიათ, აპლიკაციაზე დაბრუნდეთ"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -8267,6 +8290,11 @@
         "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(გახსნის ${ PASS_APP_NAME }-ს)"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "ჟურნალის ნახვა"
@@ -9123,6 +9151,9 @@
       ],
       "Labels applied.": [
         "ჭდეები გადატარებულია."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
       ],
       "Mail list unsubscribed": [
         "საფოსტო სიის გამოწერა გაუქმდა"

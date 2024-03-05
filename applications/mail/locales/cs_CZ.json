@@ -1129,6 +1129,9 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
+      "Upgrade Now": [
+        "Navýšit nyní"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ],
@@ -1197,6 +1200,15 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí za 2 dny. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí za 5 dní. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Přiblížit"
@@ -3183,52 +3195,6 @@
         "Stáhnout vše"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Popis: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } byla zrušena."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } byla aktualizována.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Tento výskyt ${ eventTitle } byl zrušen."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Pozvání k ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Kdy: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Kdy: ${ formattedStart } (celý den)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Kdy: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Kde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } přijal(a) pozvání na ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } odmítl/a pozvání na ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } předběžně přijal(a) pozvání na ${ eventTitle }"
-      ]
-    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Událost je zítra"
@@ -4450,13 +4416,17 @@
       ]
     },
     "Free trial desktop": {
-      "No credit card required": [
-        "Platební karta není vyžadována"
-      ]
-    },
-    "Free trial destkop": {
-      "Try free for 14 days": [
-        "Vyzkoušet na 14 dní zdarma"
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Užívejte si rychlý, bezpečný přístup k doručené poště a kalendáři bez rozptylování."
+      ],
+      "No credit card required.": [
+        "Platební karta není vyžadována."
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "Get started checklist instructions": {

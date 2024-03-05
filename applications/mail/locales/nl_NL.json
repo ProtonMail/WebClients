@@ -1052,6 +1052,9 @@
       "Toggle Contact app": [
         "Contact app kiezen"
       ],
+      "Toggle security center app": [
+        "Beveiligingscentrumapp in-/uitschakelen"
+      ],
       "Toggle settings": [
         "Instellingen openen/sluiten"
       ],
@@ -1324,6 +1327,11 @@
         "Nieuwe e-mail"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Download ${ MAIL_APP_NAME } desktop applicatie"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -1412,6 +1420,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadres, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
@@ -1432,6 +1444,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Bewaar tot 200 versies van elk bestand tot wel 10 jaar."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktop app"
       ]
     },
     "Bug category": {
@@ -3034,6 +3051,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } via instellingen."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Verwijder automatisch berichten van de prullenbak of spam die ouder zijn dan 30 dagen. Geniet hiervan en van andere voordelen wanneer u upgrade."
       ],
@@ -3043,11 +3063,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
@@ -3071,6 +3097,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Stel een methode voor gegevensherstel in om gegevensverlies te voorkomen."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Stel een herstelmethode in om te voorkomen dat u de toegang tot uw account verliest."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
@@ -3089,6 +3121,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Krijg onbeperkt mappen, labels en meer premium functies als u upgrade."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Upgrade uw account om ${ PROTON_SENTINEL_NAME }te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -3103,6 +3138,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Uw account en dataherstelmethodes zijn ingesteld."
       ]
     },
     "description": {
@@ -3131,52 +3172,6 @@
     "Download attachments": {
       "Download all": [
         "Alles downloaden"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Omschrijving: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } is geannuleerd."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Het voorvallen van ${ eventTitle } is geannuleerd."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Wanneer: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Wanneer: ${ formattedStart } (hele dag)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Wanneer: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Waar: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging geaccepteerd voor ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging geweigerd voor ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging voorlopig geaccepteerd voor ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -3245,6 +3240,16 @@
         "Bestandsnaam van versleutelde headers"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betaalde ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- en ${ PASS_SHORT_APP_NAME }-functies"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Bevat versiegeschiedenis in ${ DRIVE_SHORT_APP_NAME }, toegang tot duizenden snelle ${ VPN_SHORT_APP_NAME } servers, delen in ${ PASS_SHORT_APP_NAME } en meer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3254,6 +3259,12 @@
       ],
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME } desktop app"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
       ]
     },
     "Error": {
@@ -3290,6 +3301,9 @@
       "An error occurred while loading alias options": [
         "Er is een fout opgetreden tijdens het laden van de alias opties"
       ],
+      "An error occurred while saving your alias": [
+        "Er is een fout opgetreden tijdens het opslaan van uw alias"
+      ],
       "Attachments are limited to 25 MB": [
         "De limiet van bijlagen is 25 MB"
       ],
@@ -3307,6 +3321,10 @@
       ],
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Kies een datum binnen de volgende ${ n } dag.",
+        "Kies een datum binnen de volgende ${ n } dagen."
       ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
@@ -3328,6 +3346,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
       ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
@@ -3430,6 +3451,9 @@
       "Last name is too long": [
         "Achternaam is te lang"
       ],
+      "Maximum expiration time reached.": [
+        "Maximale vervaltijd bereikt."
+      ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
       ],
@@ -3466,6 +3490,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Geen externe sleutel opgehaald voor gebruiker is geldig voor verzenden"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -4331,13 +4358,17 @@
       ]
     },
     "Free trial desktop": {
-      "No credit card required": [
-        "Green kredietkaart vereist"
-      ]
-    },
-    "Free trial destkop": {
-      "Try free for 14 days": [
-        "Probeer 14 dagen gratis"
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop app"
+      ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Geniet van snelle, veilige en afleidingsvrije toegang tot uw inbox en agenda."
+      ],
+      "No credit card required.": [
+        "Green kredietkaart vereist."
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "Get started checklist instructions": {
@@ -4514,6 +4545,9 @@
       ],
       "Search": [
         "Zoeken"
+      ],
+      "Security Center": [
+        "Beveiligingscentrum"
       ]
     },
     "Hint": {
@@ -4873,6 +4907,14 @@
         "${ elementsCount } gesprek wordt gelabeld als:",
         "${ elementsCount } gesprekken wordt gelabeld als:"
       ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } gesprek wordt gemarkeerd als gelezen.",
+        "${ elementsCount } gesprekken worden als gelezen gemarkeerd."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } gesprek wordt gemarkeerd als ongelezen.",
+        "${ elementsCount } gesprekken worden als ongelezen gemarkeerd."
+      ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount }gesprek wordt verplaatst",
         "${ elementsCount }gesprekken worden verplaatst"
@@ -4884,6 +4926,10 @@
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } berichten worden gelabeld als:",
         "${ elementsCount } berichten worden gelabeld als:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } bericht wordt gemarkeerd als gelezen.",
+        "${ elementsCount } berichten worden als gelezen gemarkeerd"
       ],
       "${ elementsCount } message will be marked as unread.": [
         "${ elementsCount } bericht wordt als gelezen gemarkeerd.",
@@ -5066,6 +5112,12 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden gewist. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden gewist en zijn terug te vinden in de map Alle berichten."
+      ],
+      "Applying actions to conversations": [
+        "Acties op gesprekken toepassen"
+      ],
+      "Applying actions to messages": [
+        "Acties op berichten toepassen"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Weet u zeker dat u alle berichten in deze map wilt verwijderen?"
@@ -5505,6 +5557,9 @@
       "Merged": [
         "Samengevoegd"
       ],
+      "Message actions in progress. This may take a while.": [
+        "Bezig met verzenden van berichten. Dit kan een tijdje duren."
+      ],
       "Message download status:": [
         "Bericht download status:"
       ],
@@ -5746,6 +5801,10 @@
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Selecteer alle ${ elementsCount } in ${ location }",
+        "Alles selecteren ${ elementsCount } in ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
@@ -5972,7 +6031,7 @@
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Dit verwijdert alle gegevens die geassocieerd zijn met dit programma, inclusief gedownloade berichten. Het programma zal herstarten waarna je opnieuw moet inloggen om het programma te gebruiken."
+        "Dit verwijdert alle gegevens die geassocieerd zijn met dit programma, inclusief gedownloade berichten. Het programma zal herstarten waarna u opnieuw moet inloggen om het programma te gebruiken."
       ],
       "This sender's public key has not been trusted yet.": [
         "De openbare sleutel van de afzender is nog niet vertrouwd."
@@ -6709,6 +6768,9 @@
       "Don't show this again": [
         "Toon dit niet opnieuw"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "bv. Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -6753,6 +6815,9 @@
       ],
       "Frequency": [
         "Frequentie"
+      ],
+      "From": [
+        "Afzender"
       ],
       "From:": [
         "Van:"
@@ -7012,6 +7077,9 @@
       "Wonderful": [
         "Uitstekend"
       ],
+      "Your alias": [
+        "Uw alias"
+      ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
       ]
@@ -7076,6 +7144,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Van: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7736,6 +7807,9 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "U kunt uw thema altijd wijzigen in uw instellingen."
       ]
     },
     "Online accounts": {
@@ -7818,7 +7892,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Factuur Land"
+        "Land van facturering"
       ]
     },
     "PGP key encryption warning": {
@@ -7832,6 +7906,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } heeft deze sleutel gemarkeerd als verouderd. Deze sleutel kan alleen nog gebruikt worden voor de verificatie van handtekeningen."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Externe sleutel automatisch opgehaald uit keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Externe sleutel wordt automatisch opgehaald via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Deze sleutel wordt gebruikt om berichten naar deze contactpersoon te versleutelen"
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
@@ -7914,6 +7997,9 @@
       ],
       "Search name, email or group": [
         "Zoek op naam, e-mailadres of groep"
+      ],
+      "Search parent folder": [
+        "Zoek in bovenliggende map"
       ],
       "Select": [
         "Selecteer"
@@ -8087,14 +8173,23 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Alle aliassen"
+      ],
       "Create alias": [
         "Alias aanmaken"
       ],
       "Create an alias": [
         "Alias aanmaken"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genereer aliassen in een handomdraai en beheer gemakkelijk uw aliassen en wachtwoorden."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Met Hide-my-email aliassen kunt u zich online aanmelden voor zaken zonder uw e-mailadres te delen. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nieuwe alias"
@@ -8102,13 +8197,35 @@
       "Open ${ PASS_APP_NAME }": [
         "Open ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Bescherm uw online identiteit"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Gebruikt in Amazon voor winkelen enz."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } zal openen)"
       ]
     },
     "Security Center - Action": {
       "View logs": [
         "Logboeken bekijken"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel is **actief** en beschermt uw account."
       ]
     },
     "Select files": {
@@ -8124,6 +8241,11 @@
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "De contacten voor de volgende adressen zijn verwijderd, dus de overeenkomstige versleutelingsvoorkeuren zijn bijgewerkt:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "De contacten voor de volgende adressen hebben end-to-end versleuteling op hun account uitgeschakeld, zodat de overeenkomstige versleutelingsvoorkeuren zijn bijgewerkt:"
       ]
     },
     "Send email with errors": {
@@ -8231,6 +8353,9 @@
         "${ timeRemaining.inHours } uur",
         "${ timeRemaining.inHours } uren"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
       ],
@@ -8250,6 +8375,10 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
@@ -8639,14 +8768,29 @@
       "Change setting": [
         "Wijzig instelling"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Start ${ MAIL_APP_NAME } rechtstreeks vanaf uw bureaublad."
+      ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Maak hide-my-email aliassen en houd ze hier bij."
+      ],
       "Email tracking protection": [
         "Bescherming tegen e-mailtracking"
+      ],
+      "Faster email management": [
+        "Sneller e-mailbeheer"
+      ],
+      "Get the desktop app": [
+        "Download de desktop-app"
       ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Nu kunt u actie ondernemen op alle e-mails in één map in één keer."
       ],
       "Schedule send": [
         "Gepland versturen"
@@ -8807,8 +8951,8 @@
         "${ elementsCount } gesprekken gesnoozed"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } gesprek ontsluimerd",
-        "${ elementsCount } gesprekken uit sluimerstand"
+        "${ elementsCount } gesprek ontsnoozed",
+        "${ elementsCount } gesprekken ontsnoozed"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
@@ -8850,6 +8994,9 @@
       ],
       "Alias copied to clipboard": [
         "Alias gekopieerd naar klembord"
+      ],
+      "Alias saved and copied": [
+        "Alias opgeslagen en gekopieerd"
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -8924,6 +9071,9 @@
       ],
       "Labels applied.": [
         "Labels toegepast."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Laatst gewijzigde aliassen opgeslagen in uw oudste kluis"
       ],
       "Mail list unsubscribed": [
         "Afgemeld van nieuwsbrieven"
@@ -9141,6 +9291,12 @@
       ],
       "(active)": [
         "(actief)"
+      ],
+      "A filter name is required": [
+        "Een filternaam is vereist"
+      ],
+      "A filter with this name already exists": [
+        "Er bestaat al een filter met deze naam"
       ],
       "Account recovery": [
         "Accountherstel"
@@ -9369,6 +9525,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Filternaam mag niet alleen spaties bevatten"
       ],
       "Filter on...": [
         "Filteren op..."
@@ -9692,6 +9851,9 @@
       "This field cannot be empty": [
         "Dit veld mag niet leeg zijn"
       ],
+      "This field cannot contain only spaces": [
+        "Dit veld mag niet alleen spaties bevatten"
+      ],
       "To": [
         "Aan"
       ],
@@ -9897,6 +10059,9 @@
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Vervaldatum is niet in het formaat MM/JJ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
@@ -10058,6 +10223,10 @@
         "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
         "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
       ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Elk ${ interval } week op alle dagen, ${ timesString }",
+        "Elke ${ interval } weken op alle dagen, ${ timesString }"
+      ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "Elke ${ interval } week op vrijdag, ${ timesString }",
         "Elke ${ interval } weken op vrijdag, ${ timesString }"
@@ -10200,11 +10369,19 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Elk ${ interval } jaar, ${ timesString }",
+        "Elke ${ interval } jaar, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Jaarlijks ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Elk ${ interval } jaar, ${ untilString }",
+        "Elke ${ interval } jaar, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
       ]

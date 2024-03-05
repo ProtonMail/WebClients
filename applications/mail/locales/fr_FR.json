@@ -3175,49 +3175,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Description : ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIPTION :\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } a été annulé."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Tous les événements de cette série ont été mis à jour."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Cette occurrence de ${ eventTitle } a été annulée."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tous les événements de cette série ont été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "L'occurrence de cet événement a été annulée."
+      ],
+      "This event occurrence was updated.": [
+        "L'occurrence de cet événement a été mise à jour."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "L'occurrence de cet événement a été mise à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Cet événement a été mis à jour."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Vous êtes invité à ${ eventTitle }\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quand : ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "HORAIRE : \n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Quand : ${ formattedStart } (toute la journée)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "HORAIRE \n${ formattedStart } (toute la journée)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quand : ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "HORAIRE : \n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Retiré"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Où : ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "LIEU : \n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } a accepté votre invitation à ${ eventTitle }."
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } a refusé votre invitation à ${ eventTitle }."
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } a provisoirement accepté votre invitation à ${ eventTitle }."
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } a accepté provisoirement votre invitation à ${ eventTitle }."
       ]
     },
     "Email reminder banner": {
@@ -4407,25 +4427,28 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Application de bureau ${ MAIL_APP_NAME }"
       ],
+      "14-day destkop app trial.": [
+        "14 jours d'essai de l'application de bureau."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Profitez d'un accès rapide, sécurisé et sans distraction à votre boîte de réception et votre calendrier."
       ],
-      "Get unlimited access with paid ${ BRAND_NAME } plan": [
-        "Obtenez un accès illimité avec votre forfait payant ${ BRAND_NAME }"
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Obtenez un accès illimité avec l'un des forfaits payants ${ MAIL_APP_NAME }."
       ],
-      "Introducing the desktop app": [
-        "Présentation de l'application de bureau"
+      "No credit card required.": [
+        "Aucune carte bancaire nécessaire."
       ],
-      "No credit card required": [
-        "Aucune carte de paiement n'est nécessaire."
+      "Try the app-new desktop app": [
+        "Essayez la nouvelle application de bureau"
       ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
     },
     "Free trial destkop": {
-      "Try free for 14 days": [
-        "Essai gratuit de 14 jours"
+      "Start free trial": [
+        "Essayez la nouvelle application"
       ]
     },
     "Get started checklist instructions": {
@@ -8267,6 +8290,11 @@
         "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(ceci ouvrira ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Afficher les journaux"
@@ -9124,6 +9152,9 @@
       "Labels applied.": [
         "Les labels ont été appliqués."
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
+      ],
       "Mail list unsubscribed": [
         "Le désabonnement de la liste de diffusion a été effectué."
       ],
@@ -9727,7 +9758,7 @@
         "Déplacement d'un message mis en attente"
       ],
       "Need more aliases?": [
-        "Besoin d'alias supplémentaires ?"
+        "Besoin de plus d'alias ?"
       ],
       "New message": [
         "Nouveau message"
