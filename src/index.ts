@@ -13,14 +13,23 @@ import { isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
 import {
+    getSessionID,
     isAccoutLite,
     isHostAccount,
     isHostAllowed,
     isHostCalendar,
     isHostMail,
+    isUpgradeURL,
     isUpsellURL,
 } from "./utils/urls/urlTests";
-import { getMailView, getMainWindow, updateView, viewCreationAppStartup } from "./utils/view/viewManagement";
+import {
+    getCalendarView,
+    getMailView,
+    getMainWindow,
+    reloadCalendarWithSession,
+    updateView,
+    viewCreationAppStartup,
+} from "./utils/view/viewManagement";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -154,6 +163,20 @@ app.on("web-contents-created", (_ev, contents) => {
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
         }
+
+        // This is used to redirect users to the external browser for internal upgrade modals
+        if (isHostAccount(url) && isUpgradeURL(url)) {
+            shell.openExternal(url);
+            return preventDefault(ev);
+        }
+
+        const sessionID = getSessionID(url);
+        const calendarView = getCalendarView();
+        const calendarSession = getSessionID(calendarView.webContents.getURL());
+        if (isHostMail(url) && sessionID && !calendarSession && !isNaN(sessionID as unknown as any)) {
+            Logger.info("Refresh calendar session", sessionID);
+            reloadCalendarWithSession(sessionID);
+        }
     });
 
     contents.on("will-attach-webview", preventDefault);
@@ -161,6 +184,12 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-navigate", (details) => {
         Logger.info("will-navigate");
         if (!isHostAllowed(details.url) && !global.oauthProcess) {
+            return preventDefault(details);
+        }
+
+        // This is used to redirect users to the external browser for upsell modals
+        if (isHostAccount(details.url) && isUpgradeURL(details.url)) {
+            shell.openExternal(details.url);
             return preventDefault(details);
         }
 
