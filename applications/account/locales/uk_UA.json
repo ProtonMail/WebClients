@@ -3143,49 +3143,6 @@
         "Тепер ви можете закрити цю вкладку."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Опис: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } було скасовано."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } було оновлено.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вас запрошено на ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Коли: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Коли: ${ formattedStart } (увесь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Коли: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Де: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } відхиляє ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } додано"
@@ -3296,7 +3253,7 @@
         "Дії"
       ],
       "Status": [
-        "Статус"
+        "Стан"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -3339,7 +3296,7 @@
         "Активно"
       ],
       "Paused": [
-        "Зупинено"
+        "Призупинено"
       ],
       "Pending": [
         "У черзі"
@@ -3396,6 +3353,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
@@ -3603,6 +3563,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Жоден зовнішній ключ, отриманий для користувача, не дійсний для надсилання"
+      ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
       ],
@@ -3798,6 +3761,9 @@
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Неочікувана помилка, неможливо імпортувати контакти"
+      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -3851,6 +3817,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Щоб згенерувати токен надсилання SMTP, вам потрібно мати власну адресу домену."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Досягнуто максимальної кількості символів. Скоротіть своє повідомлення."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "У вашому обліковому записі чи вашій організації є прострочений рахунок. Будь ласка, сплатіть усі рахунки."
@@ -4070,6 +4039,9 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Щоб використовувати ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }, перейдіть до вебверсії."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Занадто багато дочірніх сеансів. Будь ласка, очистьте файли cookie та увійдіть знову."
@@ -7846,7 +7818,7 @@
     },
     "Key state badge": {
       "Active": [
-        "Активно"
+        "Активний"
       ],
       "Compromised": [
         "Скомпрометований"
@@ -9303,7 +9275,7 @@
     },
     "mail_signup_2023: Info": {
       "Limited time offer": [
-        "Пропозиція обмежена"
+        "Обмежена пропозиція"
       ]
     },
     "Maintenance mode": {
@@ -10082,17 +10054,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ trialPlanName } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -10119,7 +10080,7 @@
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
-        "Всі програми від ${ BRAND_NAME } з преміумфункціями"
+        "Всі програми від ${ BRAND_NAME } з преміальними функціями"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
@@ -10128,7 +10089,7 @@
         "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
-        "Ранній доступ до нових застосунків і функцій"
+        "Ранній доступ до нових програм і функцій"
       ],
       "For next-level password management and identity protection.": [
         "Для вдосконаленого керування паролями та захисту особистих даних."
@@ -10186,6 +10147,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10782,10 +10754,10 @@
         "Звичайний"
       ],
       "Off": [
-        "Вимкнено"
+        "Вимк"
       ],
       "On": [
-        "Ввімкнено"
+        "Увімк"
       ],
       "Permanent": [
         "Постійно"
@@ -11164,7 +11136,7 @@
     },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
-        "Доступ заборонено. Права адміністратора було обмежено."
+        "Доступ заборонено. Повноваження адміністратора було обмежено."
       ],
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
@@ -11191,7 +11163,7 @@
         "Недійсний термін дії картки"
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Ваша картка була відхилена. Будь ласка, спробуйте скористатися іншою картою або зверніться у свій банк для авторизації платежу."
+        "Вашу картку відхилено. Спробуйте скористатися іншою картою або зверніться до свого банку, щоб авторизувати платіж."
       ]
     },
     "Personal calendar section description": {
@@ -11329,7 +11301,7 @@
     },
     "Price": {
       "Free": [
-        "Безкоштовно"
+        "Безплатно"
       ]
     },
     "Primary timezone": {
@@ -12090,17 +12062,50 @@
       "${ app } storage": [
         "${ app } сховища"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% заповнено"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Перейшовши на тарифний план нижчого рівня, ви втратите вказані переваги. Ви дійсно хочете продовжити?"
+      ],
+      "contact your administrator": [
+        "зв'язатися з адміністратором"
       ],
       "Get more storage": [
         "Збільшити сховище"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Щоби надсилати або отримувати листи, звільніть місце або ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
+      ],
+      "upgrade for more storage": [
+        "покращте тариф, щоб збільшити сховище"
+      ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Оновіть тарифний план, щоб користуватися обліковим записом без перебоїв."
       ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } майже повне"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } повне"
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ваше ${ storage } заповнено на ${ percentage }%. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваше ${ storage } повне. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнено на ${ percentage }%. ${ cta }."
+      ],
       "Your storage is full": [
         "Ваше сховище заповнене"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ваше сховище заповнено. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -12489,7 +12494,7 @@
     },
     "Success message after sorting folders": {
       "Folders sorted": [
-        "Збережено тек"
+        "Теки відсортовано"
       ]
     },
     "Success message after sorting labels": {
@@ -12582,7 +12587,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "Отриманий мною доступ"
+        "Поширено для мене"
       ]
     },
     "TableHeader": {
@@ -13692,10 +13697,10 @@
         "Дії"
       ],
       "Fingerprint": [
-        "Відбиток пальця"
+        "Цифровий відбиток"
       ],
       "Status": [
-        "Статус"
+        "Стан"
       ]
     },
     "Title header for members table": {

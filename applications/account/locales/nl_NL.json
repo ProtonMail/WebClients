@@ -1457,6 +1457,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadres, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
@@ -1516,6 +1520,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "De laatste versie kan niet worden gevonden"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktop app"
       ]
     },
     "Bug category": {
@@ -3106,6 +3115,12 @@
       ]
     },
     "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Toegang tot de desktop app is beperkt"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "De bètaversie van de ${ MAIL_APP_NAME } desktop app is momenteel beschikbaar voor iedereen met een betaald ${ MAIL_APP_NAME } abonnement. Upgrade vandaag nog om toegang te krijgen."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Voor toegang kunt u vandaag upgraden of begin 2024 nog een keer controleren."
       ]
@@ -3240,52 +3255,6 @@
       ],
       "You can safely close this tab.": [
         "U kan dit tabblad veilig sluiten."
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Omschrijving: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } is geannuleerd."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Het voorvallen van ${ eventTitle } is geannuleerd."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Wanneer: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Wanneer: ${ formattedStart } (hele dag)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Wanneer: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Waar: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging geaccepteerd voor ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging geweigerd voor ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging voorlopig geaccepteerd voor ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -3637,6 +3606,16 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betaalde ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- en ${ PASS_SHORT_APP_NAME }-functies"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Bevat versiegeschiedenis in ${ DRIVE_SHORT_APP_NAME }, toegang tot duizenden snelle ${ VPN_SHORT_APP_NAME } servers, delen in ${ PASS_SHORT_APP_NAME } en meer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3646,6 +3625,12 @@
       ],
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME } desktop app"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
       ]
     },
     "Error": {
@@ -3856,6 +3841,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Geen externe sleutel opgehaald voor gebruiker is geldig voor verzenden"
+      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
@@ -3867,6 +3855,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -4040,6 +4031,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Om niet-privé gebruikersaccounts en toegang tot hun accounts aan te maken, moet u uw beheerdersbevoegdheden herstellen."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -5095,6 +5089,19 @@
         "Zeer klein"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "web-app"
+      ]
+    },
+    "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop app"
+      ],
+      "Back to sign in": [
+        "Terug naar aanmelden"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email per maand)"
@@ -5266,6 +5273,9 @@
       ],
       "Protection": [
         "Bescherming"
+      ],
+      "Select your deal": [
+        "Kies uw deal"
       ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
@@ -5773,6 +5783,9 @@
         "${ n } adres",
         "${ n } adressen"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: niet quarantaine of afwijzing van ongeautoriseerde e-mails. Meestal gebruiken mensen dit beleid alleen om problemen te krijgen of te testen."
+      ],
       "${ number } city": [
         "${ number } stad",
         "${ number } steden"
@@ -5802,6 +5815,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
         "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: de geadresseerde platforms vragen de ongeoorloofde e-mails als spam te markeren of ze in quarantaine te plaatsen."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: de geadresseerde platformen vragen de ongeautoriseerde e-mails te verwerpen."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } meer",
@@ -6129,6 +6148,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Voordat u e-mails voor uw eigen domeinnaam in ${ MAIL_APP_NAME }kunt ontvangen, u moet de volgende twee MX-records toevoegen in uw DNS-console (gesitueerd op het platform waar u het eigen domein heeft gekocht). U kunt een voorbeeld en enkele nuttige tips vinden ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
@@ -6279,6 +6301,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM staat ${ BRAND_NAME } toe om uw e-mails te versleutelen en voorkomt dat aanvallers uw e-mail manipuleren. Zorg ervoor dat u de volgende drie CNAME records in uw DNS-console toevoegt (gesitueerd op het platform waar u het aangepaste domein heeft gekocht)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC controleert of de SPF- en DKIM-records van de afzender afkomstig zijn van uw domein. Dit kan voorkomen dat aanvallers een ander domein SPF en DKIM gebruiken om uw domein na te volgen. De \"p=\" (beleid) in deze record geeft aan hoe u wilt dat de geadresseerde platforms onbevoegde e-mails behandelen. We raden het \"p=quarantaine\"-beleid voor de meeste domeinen aan. Zorg ervoor dat u het volgende TXT-record in uw DNS-console toevoegt (op het platform waar u het aangepaste domein heeft aangeschaft)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
       ],
@@ -6327,6 +6355,9 @@
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -6438,6 +6469,12 @@
       ],
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Voor leden van organisaties die een enkel bord gebruiken (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, Selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
@@ -6554,6 +6591,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "BELANGRIJK: Als uw DNS-console CNAME waarden niet toestaat te eindigen met een punt, kunt u de laatste stip in de CNAME waarden verwijderen."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
       ],
@@ -6568,6 +6608,9 @@
       ],
       "inactive": [
         "inactief"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Verhoog de beveiliging van uw account door uw e-mailadres te verifiëren."
@@ -6683,6 +6726,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logboeken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME_TWO }-inloggegevens gebruiken."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Belangrijke e-maildiensten kunnen uw e-mails weigeren of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet correct wordt ingesteld."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Belangrijke e-maildiensten kunnen uw e-mails afwijzen of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet goed wordt ingesteld."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
@@ -7106,6 +7155,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF verduidelijkt wie toegestaan is om e-mail te sturen voor uw domein. Zorg ervoor dat u het volgende TXT-record in uw DNS-console toevoegt (op het platform waar u het aangepaste domein heeft aangeschaft)."
       ],
       "Stay tuned for future promotions.": [
         "Blijf kijken voor toekomstige promoties."
@@ -7847,6 +7899,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Uw organisatie maakt gebruik van een enkele aanmelding (SSO). Druk op aanmelden om door te gaan met uw SSO-provider."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "De e-mails van uw organisatie worden beschermd met end-to-end encryptie met behulp van de organisatiesleutel. Deze vingerafdruk kan worden gebruikt om te controleren of alle beheerders in uw account dezelfde sleutel hebben."
       ],
@@ -7972,6 +8027,9 @@
       ],
       "Credit": [
         "Tegoed"
+      ],
+      "Credit note": [
+        "Creditnota"
       ],
       "Currency conversion": [
         "Valuta's omrekenen"
@@ -8935,6 +8993,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Zin bestaat uit 12 unieke woorden in een specifieke volgorde"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Voeg alle 3 van de volgende CNAME records toe. Let op: DNS-records kunnen enkele uren duren om te updaten."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Voeg de volgende twee MX-records toe. Let op: Het kan enkele uren duren voordat DNS-records zijn bijgewerkt."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Voeg het volgende TXT-record toe. Let op, het updaten van DNS-records kan enige tijd duren."
+      ],
       "Please select files to upload": [
         "Selecteer bestanden die u wil uploaden"
       ],
@@ -9307,6 +9374,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Van: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9531,6 +9601,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activeer gebruiker"
+      ],
       "Change password": [
         "Wachtwoord wijzigen"
       ],
@@ -10146,6 +10219,9 @@
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
       ],
+      "Require 2FA for organization": [
+        "Tweetrapsauthenticatie vereist voor organisatie"
+      ],
       "Router support": [
         "Routerondersteuning"
       ],
@@ -10179,6 +10255,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integratie (binnenkort beschikbaar)"
       ],
       "Start protecting your organization": [
         "Begin met het beschermen van uw organisatie"
@@ -10221,6 +10300,9 @@
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
       "Unlimited vaults": [
         "Onbeperkt aantal kluizen"
@@ -10275,17 +10357,6 @@
       ],
       "Team management": [
         "Teambeheer"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10381,6 +10452,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10611,8 +10693,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Het speciaal ontworpen NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld tussen gebruikers over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
@@ -11004,11 +11092,17 @@
       "On": [
         "Aan"
       ],
+      "Organization only": [
+        "Alleen organisatie"
+      ],
       "Permanent": [
         "Permanent"
       ],
       "Plain text": [
         "Platte tekst"
+      ],
+      "Receive from all": [
+        "Ontvang van alle"
       ],
       "Repeat daily": [
         "Dagelijks herhalen"
@@ -11316,6 +11410,9 @@
       "End-to-end encryption": [
         "End-to-end versleuteling"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Voer een weergavenaam in voor **${ username }**. Dit is wat uw gebruikers zullen zien wanneer u hun rechten wijzigt of gegevens met hen deelt."
+      ],
       "Essential protection and secure collaboration for unlimited users": [
         "Essentiële bescherming en veilige samenwerking voor een onbeperkt aantal gebruikers."
       ],
@@ -11481,17 +11578,80 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Voor bedrijven"
-      ],
-      "For invididuals": [
-        "Voor particulieren"
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Alle beheerders krijgen toegang tot de sleutel."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Weet u zeker dat u uw organisatiesleutel wilt wijzigen?"
+      ],
+      "Change organization key": [
+        "Organisatiesleutel wijzigen"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Niet-privé gebruikers kunnen worden gepromoveerd tot admin wanneer ze de configuratiesleutels hebben"
+      ],
+      "Organization key activated": [
+        "Organisatiesleutel geactiveerd"
+      ],
+      "Organization key does not exist.": [
+        "Organisatiesleutel bestaat niet."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "De organisatiesleutel moet geactiveerd worden om admin rechten te geven"
+      ],
+      "Organization key restored": [
+        "Organisatiesleutel hersteld"
+      ],
+      "Organization key updated": [
+        "Organisatiesleutel bijgewerkt"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
+      ],
+      "Reset organization key": [
+        "Herstel organisatiesleutel"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "De volgende beheerders zullen toegang krijgen tot de organisatiesleutel."
+      ],
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Dit zal de nieuwste organisatiesleutel sturen naar de beheerders die er op dit moment geen toegang toe hebben."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Om niet-privé gebruikers accounts te maken en toegang te krijgen tot hun accounts, moet u uw organisatiesleutel activeren."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Om beheerdersrechten op uw account in te schakelen, activeer de organisatiesleutel."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Gebruik een dataherstel methode of reset de organisatiesleutel om beheerdersbevoegdheden te herstellen."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Gebruik een data recovery methode, neem contact op met een andere beheerder of reset de organisatiesleutel om beheerdersrechten te herstellen."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "De beveiliging van de adressleutel van deze afzender kon niet worden geverifieerd. Soms is er een vertraging in het bijwerken van de gegevens van de afzender. Probeer het later opnieuw. Als u de geldigheid van deze uitnodiging of afzender niet vertrouwt, neem dan contact op met ${ BRAND_NAME } Customer Support."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "We hebben de authenticiteit van deze afzender en uitnodiging geverifieerd."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "U bent administrateur geworden van de organisatie **${ organizationName }** door"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
       ]
     },
     "Payment method option": {
@@ -11504,7 +11664,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Factuur Land"
+        "Land van facturering"
       ],
       "Card number": [
         "Kaartnummer"
@@ -11514,6 +11674,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Timeout exceeded": [
+        "Time-out overschreden"
       ]
     },
     "Payments.Error": {
@@ -11539,6 +11702,12 @@
     "Permission": {
       "No permission": [
         "Geen toestemming"
+      ],
+      "Organization only": [
+        "Alleen organisatie"
+      ],
+      "Receive from all": [
+        "Ontvang van alle"
       ],
       "Send to all": [
         "Sturen aan alle"
@@ -11635,6 +11804,9 @@
       ],
       "Search for a user or address": [
         "Naar gebruiker of adres zoeken"
+      ],
+      "Search parent folder": [
+        "Zoek in bovenliggende map"
       ],
       "Search users": [
         "Zoek gebruikers"
@@ -11843,6 +12015,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } beheerder in uw organisatie heeft toegang nodig tot de organisatiesleutel.",
+        "${ n } beheerders in uw organisatie hebben toegang nodig tot de organisatiesleutel."
+      ],
       "Changing organization keys": [
         "Organisatiesleutels wijzigen"
       ],
@@ -11939,6 +12115,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer de aanvraag dan nu."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
       ],
@@ -11964,6 +12143,10 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "U kan uw wachtwoord resetten tot ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
@@ -12583,6 +12766,17 @@
         "${ currentPlanName } behouden"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Opslag voor gegevens gegenereerd door ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Tot ${ totalStorageSize } Drive opslag"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Tot ${ totalStorageSize } Mail-opslag"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } opslagruimte"
@@ -12590,8 +12784,14 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% vol"
       ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** van de ${ humanMaxSpace }"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Overweeg een upgrade van uw abonnement om uw account zonder onderbrekingen te blijven gebruiken."
       ],
       "contact your administrator": [
         "neem contact op met uw beheerder"
@@ -12608,11 +12808,20 @@
       "To upload or sync files, free up space or ${ upgrade }": [
         "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
       ],
+      "Try out ${ app } to its full potential": [
+        "Probeer ${ app } uit met zijn volledige potentieel"
+      ],
       "upgrade for more storage": [
         "upgrade voor meer opslag"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Upgrade uw abonnement om uw account zonder onderbrekingen te blijven gebruiken."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Upgrade uw abonnement om de opslag te verhogen."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
@@ -12638,6 +12847,18 @@
       ],
       "Your storage is full. ${ cta }.": [
         "Uw opslag is vol. ${ cta }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "U verliest de toegang tot ${ gb } opslag en prioriteitsondersteuning."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "U verliest de toegang tot extra opslagruimte, e-mailadressen, aliassen, agenda's en prioritaire ondersteuning."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "U verliest de toegang tot de hoogste VPN-snelheid, bescherming voor 10 apparaten, snelle streamen, ad-blocker en malware-bescherming, en prioritaire ondersteuning."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13206,6 +13427,9 @@
       "${ appName } Free": [
         "${ appName } Gratis"
       ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } Export Tool"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Sneltoetsen"
       ],
@@ -13233,6 +13457,12 @@
       "4. Select a server to connect to": [
         "4. Selecteer een server om mee te verbinden"
       ],
+      "A filter name is required": [
+        "Een filternaam is vereist"
+      ],
+      "A filter with this name already exists": [
+        "Er bestaat al een filter met deze naam"
+      ],
       "Accessibility": [
         "Toegankelijkheid"
       ],
@@ -13256,6 +13486,9 @@
       ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
+      ],
+      "Activate user": [
+        "Activeer gebruiker"
       ],
       "Add address": [
         "E-mailadres toevoegen"
@@ -13571,6 +13804,9 @@
       "Download the desktop app": [
         "Download de desktop-app"
       ],
+      "Download the mobile apps": [
+        "Download de mobiele apps"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
@@ -13658,6 +13894,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
         "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
+      ],
+      "Filter name cannot contain only spaces": [
+        "Filternaam mag niet alleen spaties bevatten"
       ],
       "Filters": [
         "Filters"
@@ -14066,6 +14305,9 @@
       "This field cannot be empty": [
         "Dit veld mag niet leeg zijn"
       ],
+      "This field cannot contain only spaces": [
+        "Dit veld mag niet alleen spaties bevatten"
+      ],
       "Time zone": [
         "Tijdzone"
       ],
@@ -14155,6 +14397,9 @@
       ],
       "Your SMTP token": [
         "Uw SMTP-token"
+      ],
+      "Your storage": [
+        "Uw opslag"
       ],
       "Your subscriptions": [
         "Uw abonnementen"
@@ -14314,6 +14559,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Inschakelen van geavanceerd logboek recordt het IP-adres van elke gebeurtenis in het beveiligingslogboek."
+      ],
+      "Feature in early access": [
+        "Functie in vroegtijdige toegang"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
@@ -14538,6 +14786,11 @@
         "SSO"
       ]
     },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO-gebruiker verstrekt door uw identiteitsprovider"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -14714,6 +14967,9 @@
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
       ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "U moet ${ activateLink } de organisatiesleutel hebben voordat u een e-mailadres toevoegt aan een niet-privé lid."
+      ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
       ],
@@ -14821,6 +15077,10 @@
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
         "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Elk ${ interval } week op alle dagen, ${ timesString }",
+        "Elke ${ interval } weken op alle dagen, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "Elke ${ interval } week op vrijdag, ${ timesString }",
@@ -14964,11 +15224,19 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Elk ${ interval } jaar, ${ timesString }",
+        "Elke ${ interval } jaar, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Jaarlijks ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Elk ${ interval } jaar, ${ untilString }",
+        "Elke ${ interval } jaar, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
       ]
