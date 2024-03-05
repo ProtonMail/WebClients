@@ -2033,52 +2033,6 @@
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descriere: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } a fost anulat."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Desfășurarea evenimentului ${ eventTitle } a fost anulată."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Când: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Când: ${ formattedStart } (toată ziua)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Când: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Unde: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Anulare eveniment ce are loc ${ formattedStart }"
@@ -6078,6 +6032,11 @@
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(va deschide ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Afișare jurnale"
@@ -6640,6 +6599,9 @@
       ],
       "Import record deleted": [
         "Înregistrare importare ștearsă"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ultimele aliasuri modificate stocate în cel mai vechi seif"
       ],
       "Phone number copied to clipboard": [
         "Numărul de telefon a fost copiat în memorie"
