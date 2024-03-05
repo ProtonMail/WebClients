@@ -1,5 +1,6 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import type { PassCoreService } from '@proton/pass/lib/core/service';
 import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
 
 import type { ActivationService } from '../services/activation';
@@ -29,12 +30,13 @@ export interface WorkerContextInterface {
     status: AppStatus;
     authStore: AuthStore;
     service: {
-        auth: AuthService;
         activation: ActivationService;
         alias: AliasService;
+        apiProxy: APIProxyService;
+        auth: AuthService;
         autofill: AutoFillService;
         autosave: AutoSaveService;
-        apiProxy: APIProxyService;
+        core: PassCoreService;
         export: ExportService;
         formTracker: FormTrackerService;
         i18n: I18NService;
