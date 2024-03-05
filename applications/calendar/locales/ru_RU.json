@@ -507,6 +507,9 @@
       "Select calendar view": [
         "Выберите вид календаря"
       ],
+      "Select country": [
+        "Выберите страну"
+      ],
       "Select time zone": [
         "Выберите часовой пояс"
       ],
@@ -602,6 +605,9 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Upgrade Now": [
+        "Улучшить сейчас"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
@@ -2286,49 +2292,6 @@
     "Edit event button tooltip": {
       "Edit event": [
         "Редактировать событие"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Описание: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "Событие ${ eventTitle } было отменено."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Когда: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Когда: ${ formattedStart } (весь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Когда: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Где: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -4016,6 +3979,9 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
+      "Important note": [
+        "Важное примечание"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
       ],
@@ -4930,6 +4896,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "От: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Кому: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5905,6 +5874,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Создать псевдоним"
+      ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
       ],
@@ -6939,6 +6911,9 @@
       "Reshare your calendars": [
         "Cовместное использование ваших календарей"
       ],
+      "Save": [
+        "Сохранить"
+      ],
       "Save changes": [
         "Сохранить изменения"
       ],
@@ -7119,6 +7094,9 @@
       ],
       "Hide side panel": [
         "Скрыть боковую панель"
+      ],
+      "Load image": [
+        "Загрузить изображение"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""

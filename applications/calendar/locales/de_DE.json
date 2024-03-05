@@ -2314,52 +2314,6 @@
         "Termin bearbeiten"
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beschreibung: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } wurde abgesagt."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } wurde aktualisiert.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Ein Eintrag aus der Terminserie von ${ eventTitle } wurde abgesagt."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du wurdest zu ${ eventTitle } eingeladen\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Wann: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Wann: ${ formattedStart } (ganztägig)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Wann: ${ formattedStart }–${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Wo: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } angenommen"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Absage eines Termins am ${ formattedStart }"
@@ -5872,6 +5826,11 @@
         "Wenn du nach deiner E-Mail-Adresse gefragt wird, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(wird ${ PASS_APP_NAME } öffnen)"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Protokolle anzeigen"
@@ -6558,6 +6517,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Einladung gesendet und Teilnehmer zu allen Terminen hinzugefügt"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Zuletzt geänderte Aliase, die in deinem ältesten Tresor gespeichert sind"
       ],
       "Participants notified and all events updated": [
         "Teilnehmer benachrichtigt und alle Termine aktualisiert"
