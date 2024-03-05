@@ -1,3 +1,4 @@
+import type { ItemDiff } from '@proton/pass/lib/items/item.diff';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type {
     ItemCreateIntent,
@@ -27,6 +28,7 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
 
 export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {
     revision: ItemRevision<T>;
+    diff?: ItemDiff<T>;
 } & Partial<Extra>;
 
 export type ItemEditViewProps<T extends ItemType = ItemType> = {
