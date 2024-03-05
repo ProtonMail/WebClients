@@ -1,5 +1,5 @@
-import { InviteShareMemberPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { InviteProtonUserPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { MoveLink } from '../../interfaces/drive/link';
@@ -64,12 +64,6 @@ export const queryShareMembers = (shareID: string) => ({
     method: 'get',
 });
 
-export const queryAddShareMember = (shareID: string, member: InviteShareMemberPayload) => ({
-    method: 'post',
-    url: `drive/shares/${shareID}/members/invitations`,
-    data: { Member: member },
-});
-
 export const queryRemoveShareMember = (shareID: string, memberID: string) => ({
     method: 'delete',
     url: `drive/shares/${shareID}/members/${memberID}`,
@@ -97,6 +91,15 @@ export const queryAcceptShareInvite = (
     },
 });
 
+/* v2 */
+export const queryInviteProtonUser = (shareID: string, invitation: InviteProtonUserPayload) => ({
+    method: 'post',
+    url: `drive/v2/shares/${shareID}/invitations`,
+    data: {
+        Invitation: invitation,
+    },
+});
+
 /* Shares migration */
 export const queryUnmigratedShares = () => ({
     url: 'drive/migrations/shareaccesswithnode/unmigrated',
@@ -113,4 +116,3 @@ export const queryMigrateLegacyShares = (data: {
     data,
     silence: [HTTP_STATUS_CODE.NOT_FOUND],
 });
-

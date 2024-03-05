@@ -28,7 +28,7 @@ interface Props {
     linkId: string;
 }
 
-export function ShareLinkModal({ shareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
+export function ShareLinkModal({ shareId: rootShareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
     const {
         customPassword,
         initialExpiration,
@@ -45,12 +45,15 @@ export function ShareLinkModal({ shareId, linkId, onClose, ...modalProps }: Prop
         isDeleting,
         isCreating,
         isShareUrlLoading,
-    } = useShareURLView(shareId, linkId);
+    } = useShareURLView(rootShareId, linkId);
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
     const [isDirectSharingWorkflow, setIsDirectSharingWorkflow] = useState(false);
 
-    const handleDeleteLink = () => deleteLink().then(() => onClose());
+    const handleDeleteSharedLink = () => deleteLink().then(() => onClose());
+    // TODO: Add Share deletion
+    const handleDeleteShare = handleDeleteSharedLink;
+
     const renderModalState = () => {
         if (errorMessage) {
             return <ErrorState onClose={onClose}>{errorMessage}</ErrorState>;
@@ -79,7 +82,8 @@ export function ShareLinkModal({ shareId, linkId, onClose, ...modalProps }: Prop
                                         initialExpiration,
                                         onSaveLinkClick: saveSharedLink,
                                         isDeleting,
-                                        deleteLink: handleDeleteLink,
+                                        deleteLink: handleDeleteShare,
+                                        deleteShareEnabled: !!sharedLink, //For now it's only based on sharedLink existance
                                         havePublicSharedLink: !!sharedLink,
                                         confirmationMessage,
                                         modificationDisabled: !hasGeneratedPasswordIncluded,
@@ -93,7 +97,7 @@ export function ShareLinkModal({ shareId, linkId, onClose, ...modalProps }: Prop
                 />
                 <ModalTwoContent>
                     <DirectSharing
-                        shareId={shareId}
+                        rootShareId={rootShareId}
                         linkId={linkId}
                         isDirectSharingWorkflow={isDirectSharingWorkflow}
                         onClose={() => setIsDirectSharingWorkflow(false)}
@@ -105,7 +109,7 @@ export function ShareLinkModal({ shareId, linkId, onClose, ...modalProps }: Prop
                             createSharedLink={createSharedLink}
                             isShareUrlLoading={isShareUrlLoading}
                             publicSharedLink={sharedLink}
-                            deleteSharedLink={deleteLink}
+                            deleteSharedLink={handleDeleteSharedLink}
                             isDeleting={isDeleting}
                             isCreating={isCreating}
                         />
