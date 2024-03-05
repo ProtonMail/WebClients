@@ -21,7 +21,9 @@ import { AuthSession } from '@proton/components/containers/login/interface';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import { PAYMENT_METHOD_TYPES, PaymentMethodFlows } from '@proton/components/payments/core';
+import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
@@ -57,6 +59,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 // import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
@@ -228,6 +231,9 @@ const SingleSignupContainerV2 = ({
     const unauthApi = useApi();
     const { getPaymentsApi } = usePaymentsApi();
     const isChargebeeEnabled = useIsChargebeeEnabled();
+    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
+        flow: 'signup-pass',
+    });
     const UID = model.session?.UID;
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
     const silentApi = getSilentApi(normalApi);
@@ -1010,12 +1016,43 @@ const SingleSignupContainerV2 = ({
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
         const setupMnemonic = await getMnemonicSetup();
 
+        const getTelemetryParams = () => {
+            const subscriptionData = cache.subscriptionData;
+
+            const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
+            const plan = getPlanNameFromIDs(subscriptionData.planIDs);
+
+            const isAuthenticated = !!model.session?.UID;
+            const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
+
+            return {
+                method,
+                overrides: {
+                    plan,
+                    flow,
+                },
+            };
+        };
+
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
                 api: silentApi,
                 ignoreVPN: true,
                 setupMnemonic,
+                reportPaymentSuccess: () => {
+                    const { method, overrides } = getTelemetryParams();
+                    reportPaymentSuccess(method, overrides);
+                },
+                reportPaymentFailure: async () => {
+                    // in case if fails, for example, on the subscription stage, then this page will abort all
+                    // API calls by triggering startUnAuthFlow which in turn calls the abort controller.
+                    // This delay is to ensure that the reportPaymentFailure is called after the abort controller
+                    // is called
+                    await wait(0);
+                    const { method, overrides } = getTelemetryParams();
+                    reportPaymentFailure(method, overrides);
+                },
             }),
             wait(3500),
         ]);

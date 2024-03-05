@@ -12,7 +12,7 @@ import { useChargebeeContext } from '@proton/components/payments/client-extensio
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { BillingAddress, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { Operations, OperationsSubscriptionData } from '@proton/components/payments/react-extensions';
-import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import { PaymentProcessorHook, PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -428,9 +428,9 @@ const SubscriptionContainer = ({
 
     const handleSubscribe = async (
         operationsOrValidToken: Operations | ValidatedBitcoinToken,
-        context: OperationsSubscriptionData
+        { operationsSubscriptionData, paymentProcessorType }: SubscriptionContext
     ) => {
-        if (!hasPlanIDs(context.Plans)) {
+        if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
             const result = await cancelSubscription();
             if (result?.status === 'kept') {
                 return;
@@ -440,14 +440,14 @@ const SubscriptionContainer = ({
         }
 
         try {
-            await handlePlanWarnings(context.Plans);
+            await handlePlanWarnings(operationsSubscriptionData.Plans);
         } catch (e) {
             return;
         }
 
         const shouldCalendarPreventSubscriptionChangePromise = getShouldCalendarPreventSubscripitionChange({
             hasPaidMail: hasPaidMail(user),
-            willHavePaidMail: willHavePaidMail(context.Plans, plans),
+            willHavePaidMail: willHavePaidMail(operationsSubscriptionData.Plans, plans),
             api,
             getCalendars,
         });
@@ -461,7 +461,16 @@ const SubscriptionContainer = ({
         const checkoutStep = model.step;
         try {
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
-            await processSubscription(operationsOrValidToken);
+            try {
+                await processSubscription(operationsOrValidToken);
+
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
+            } catch (error) {
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
+                throw error;
+            }
             await call();
 
             void metrics.payments_subscription_total.increment({
@@ -495,18 +504,26 @@ const SubscriptionContainer = ({
         }
     };
 
+    type SubscriptionContext = {
+        operationsSubscriptionData: OperationsSubscriptionData;
+        paymentProcessorType: PaymentProcessorType;
+    };
+
     const paymentFacade = usePaymentFacade({
         checkResult,
         amount,
         currency,
         selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
-        onChargeable: (operations, { sourceType }) => {
-            const context: OperationsSubscriptionData = {
-                Plans: model.planIDs,
-                Cycle: model.cycle,
-                product: app,
-                Codes: getCodesForSubscription(),
-                taxBillingAddress: model.taxBillingAddress,
+        onChargeable: (operations, { sourceType, paymentProcessorType }) => {
+            const context: SubscriptionContext = {
+                operationsSubscriptionData: {
+                    Plans: model.planIDs,
+                    Cycle: model.cycle,
+                    product: app,
+                    Codes: getCodesForSubscription(),
+                    taxBillingAddress: model.taxBillingAddress,
+                },
+                paymentProcessorType,
             };
 
             const promise = withLoading(handleSubscribe(operations, context));
@@ -1011,10 +1028,13 @@ const SubscriptionContainer = ({
                                         onBitcoinTokenValidated={async (data) => {
                                             setBitcoinValidated(true);
                                             await handleSubscribe(data, {
-                                                Plans: model.planIDs,
-                                                Cycle: model.cycle,
-                                                product: app,
-                                                taxBillingAddress: model.taxBillingAddress,
+                                                operationsSubscriptionData: {
+                                                    Plans: model.planIDs,
+                                                    Cycle: model.cycle,
+                                                    product: app,
+                                                    taxBillingAddress: model.taxBillingAddress,
+                                                },
+                                                paymentProcessorType: 'bitcoin',
                                             }).catch(noop);
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
@@ -1165,10 +1185,13 @@ const SubscriptionContainer = ({
                                     onBitcoinTokenValidated={async (data) => {
                                         setBitcoinValidated(true);
                                         await handleSubscribe(data, {
-                                            Plans: model.planIDs,
-                                            Cycle: model.cycle,
-                                            product: app,
-                                            taxBillingAddress: model.taxBillingAddress,
+                                            operationsSubscriptionData: {
+                                                Plans: model.planIDs,
+                                                Cycle: model.cycle,
+                                                product: app,
+                                                taxBillingAddress: model.taxBillingAddress,
+                                            },
+                                            paymentProcessorType: 'bitcoin',
                                         }).catch(noop);
                                     }}
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}

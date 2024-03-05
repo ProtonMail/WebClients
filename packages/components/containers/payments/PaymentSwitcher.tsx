@@ -1,12 +1,15 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import {
+    CalledKillSwitchString,
     PaymentSwitcherContext,
     useChargebeeContext,
 } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS } from '@proton/shared/lib/constants';
+import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
 
 import { useFlag } from '../../containers/unleash';
@@ -97,6 +100,25 @@ export const useChargebeeFeature = () => {
     const { APP_NAME } = useConfig();
     const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
 
+    // mirroring the feature flags is required by the telemetry
+    useEffect(() => {
+        setCookie({
+            cookieName: 'ChargebeeSignupsFlag',
+            cookieValue: chargebeeSignupsFlag ? '1' : '0',
+            cookieDomain: getSecondLevelDomain(window.location.hostname),
+            path: '/',
+            expirationDate: 'max',
+        });
+
+        setCookie({
+            cookieName: 'ChargebeeFreeToPaidFlag',
+            cookieValue: chargebeeFreeToPaidUpgradeFlag ? '1' : '0',
+            cookieDomain: getSecondLevelDomain(window.location.hostname),
+            path: '/',
+            expirationDate: 'max',
+        });
+    }, []);
+
     useEffect(() => {
         async function run() {
             const chargebeeEnabled = await isChargebeeEnabledInner(
@@ -152,10 +174,13 @@ const InnerPaymentSwitcher = ({ loader, children }: Props) => {
 
 const PaymentSwitcher = (props: Props) => {
     const [enableChargebee, setEnableChargebee] = useState<ChargebeeEnabled>(ChargebeeEnabled.INHOUSE_FORCED);
+    const [calledKillSwitch, setCalledKillSwitch] = useState<CalledKillSwitchString>('not-called');
 
     const chargebeeContext = {
         enableChargebee,
         setEnableChargebee,
+        calledKillSwitch,
+        setCalledKillSwitch,
     };
 
     return (

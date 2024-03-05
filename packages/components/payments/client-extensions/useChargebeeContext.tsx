@@ -7,13 +7,20 @@ import { ChargebeeEnabled, UserModel } from '@proton/shared/lib/interfaces';
 import { ChargebeeKillSwitch, ChargebeeKillSwitchData } from '../core';
 import { useCachedUser } from './data-utils';
 
+export type CalledKillSwitchString = 'called' | 'not-called';
+
 export type ChargebeeContext = {
     enableChargebee: ChargebeeEnabled;
     setEnableChargebee: (value: ChargebeeEnabled) => unknown;
+    calledKillSwitch: CalledKillSwitchString;
+    setCalledKillSwitch: (value: CalledKillSwitchString) => unknown;
 };
+
 export const PaymentSwitcherContext = createContext<ChargebeeContext>({
     enableChargebee: ChargebeeEnabled.INHOUSE_FORCED,
     setEnableChargebee: () => {},
+    calledKillSwitch: 'not-called',
+    setCalledKillSwitch: () => {},
 });
 
 export const useChargebeeContext = () => {
@@ -63,6 +70,7 @@ export const useChargebeeKillSwitch = () => {
         if (chargebeeContext.enableChargebee === ChargebeeEnabled.CHARGEBEE_ALLOWED) {
             chargebeeContext.setEnableChargebee(ChargebeeEnabled.INHOUSE_FORCED);
             setPaymentsVersion('v4');
+            chargebeeContext.setCalledKillSwitch('called');
 
             const sentryError = error ?? reason;
             if (sentryError) {
