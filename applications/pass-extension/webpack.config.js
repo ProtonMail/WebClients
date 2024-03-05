@@ -178,7 +178,7 @@ module.exports = {
                         if (ENV !== 'production' && BUILD_TARGET === 'firefox') {
                             manifest.content_security_policy = {
                                 extension_pages:
-                                    "connect-src 'self' https: ws:; script-src 'self'; object-src 'self'; ",
+                                    "connect-src 'self' https: ws:; script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; ",
                             };
                         }
 
@@ -205,4 +205,7 @@ module.exports = {
             ],
         }),
     ],
+    experiments: {
+        asyncWebAssembly: true,
+    },
 };
