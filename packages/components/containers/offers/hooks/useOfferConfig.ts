@@ -23,10 +23,12 @@ import {
 import { blackFriday2023VPNYearlyConfig, useBlackFriday2023VPNYearly } from '../operations/blackFridayVPN2023Yearly';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
+import { mailTrial2024Config, useMailTrial2024 } from '../operations/mailTrial2024';
 
 const configs: Record<OfferId, OfferConfig> = {
     'go-unlimited-2022': goUnlimited2022Config,
     'mail-trial-2023': mailTrial2023Config,
+    'mail-trial-2024': mailTrial2024Config,
     'black-friday-2023-inbox-free': blackFriday2023InboxFreeConfig,
     'black-friday-2023-inbox-mail': blackFriday2023InboxMailConfig,
     'black-friday-2023-inbox-unlimited': blackFriday2023InboxUnlimitedConfig,
@@ -47,6 +49,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
 
     const goUnlimited2022 = useGoUnlimited2022();
     const mailTrial2023 = useMailTrial2023();
+    const mailTrial2024 = useMailTrial2024();
     const blackFriday2023InboxFree = useBlackFriday2023InboxFree();
     const blackFriday2023InboxMail = useBlackFriday2023InboxMail();
     const blackFriday2023InboxUnlimited = useBlackFriday2023InboxUnlimited();
@@ -72,6 +75,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         blackFriday2023DriveUnlimited,
         goUnlimited2022,
         mailTrial2023,
+        mailTrial2024,
     ];
 
     const validOffer: Operation | undefined = allOffers.find((offer) => !offer.isLoading && offer.isValid);
