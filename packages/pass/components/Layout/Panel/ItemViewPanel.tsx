@@ -64,6 +64,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
+
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
