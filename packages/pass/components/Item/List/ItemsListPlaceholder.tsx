@@ -134,7 +134,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                                 className="absolute left-custom top-0 bottom-0 my-auto"
                                 style={{ '--left-custom': '1rem' }}
                             />
-                            <span className="max-w-full p-8 text-ellipsis">{label}</span>
+                            <span className="max-w-full px-8 text-ellipsis">{label}</span>
                         </Button>
                     ))}
             </div>
