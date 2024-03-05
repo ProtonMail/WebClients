@@ -3258,49 +3258,69 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "აღწერა: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "აღწერა:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } განახლებულია.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "ამ სერიაში ყველა მოვლენა განახლდა."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "${ eventTitle }-ის მოხდებნა გაუქმდა."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "ყველა მოვლენა ამ სერიაში განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "მოსაწვევი ${ eventTitle }-ზე\n${ eventDetailsText }"
+      "This event occurrence was canceled.": [
+        "ამ მოვლენის მოხდენა გაუქმდა."
+      ],
+      "This event occurrence was updated.": [
+        "ამ მოვლენის მოხდენის დრო განახლდა."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "ამ მოვლენის მოხდენის დრო განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "ეს მოვლენა განახლდა."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "ეს მოვლენა განახლდა. ცვლილებები:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "მიწვეული ბრძანდებით მოვლენაზე ${ eventTitle }.\n\nროდის: ${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "როდის: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "როდის:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "როდის: ${ formattedStart } (მთელი დღე)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "როდის:\n${ formattedStart } (მთელი დღე)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "როდის: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "როდის:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "წაიშალა"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "სად: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "მდებარეობა:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } დაეთანხმა ${ eventTitle }-ზე მოსაწვევს"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
         "${ emailAddress } უარყო ${ eventTitle }-ზე მოსაწვევი"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ფრთხილად დაეთანხმა ${ eventTitle }-ზე მოსაწვევს"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ფრთხილად დაეთანხმა თქვენს მოსაწვევს მოვლენაზე ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -7770,7 +7790,7 @@
         "ახლა შეგიძლიათ, დახუროთ ეს ფანჯარა."
       ],
       "You can now return to the application to continue": [
-        "ახლა გასაგრძელებლად შეგიძლიათ აპლიკაციაზე დაბრუნდეთ"
+        "ახლა გასაგრძელებლად შეგიძლიათ, აპლიკაციაზე დაბრუნდეთ"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -10379,17 +10399,6 @@
         "ჯგუფის მართვა"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
@@ -10483,6 +10492,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11598,9 +11618,6 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "ბიზნესებისთვის"
-      ],
-      "For invididuals": [
-        "ინდივიდუალური პირებისთვის"
       ]
     },
     "passwordless": {
@@ -12165,7 +12182,7 @@
         "ახლა შეგიძლიათ, პაროლი შეცვალოთ"
       ],
       "You can reset your password until ${ boldDate }.": [
-        "პაროლის შეცვლა, შეგიძლიათ, თარიღამდე ${ boldDate }"
+        "პაროლის ჩამოყრა, შეგიძლიათ, თარიღამდე ${ boldDate }"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
