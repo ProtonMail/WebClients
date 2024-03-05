@@ -657,6 +657,9 @@
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar om 5 dagar. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -2308,49 +2311,57 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Beskrivning: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESKRIVNING:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } har avbrutits."
+      "All events in this series were updated.": [
+        "Alla händelser i denna serie uppdaterades."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } har uppdaterats. ${ eventDetailsText }"
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alla händelser i denna serie har uppdaterats. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Denna förekomst av ${ eventTitle } har avbrutits."
+      "This event was updated.": [
+        "Denna händelse uppdaterades."
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Du är inbjuden till ${ eventTitle } ${ eventDetailsText }"
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denna händelse uppdaterades. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du är inbjuden till ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "När: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "TID:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "När: ${ formattedStart } (hela dagen)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "TID:\n${ formattedStart } (hela dagen)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "När: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TID:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Borttagen"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Var: ${ eventLocation }"
+      "LOCATION:\n${ eventLocation }": [
+        "PLATS:\n${ eventLocation }"
       ]
     },
     "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har accepterat din inbjudan till ${ eventTitle }"
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } accepterade din inbjudan till ${ eventTitle }"
       ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } har avböjt din inbjudan till ${ eventTitle }"
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } avböjde din inbjudan till ${ eventTitle }"
       ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } har preliminärt accepterat din inbjudan till ${ eventTitle }"
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } accepterade preliminärt din inbjudan till ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -3784,6 +3795,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "En inbjudan kommer att skickas till tillagda deltagare."
+      ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "En inbjudan kommer att skickas till alla deltagare. Vilken händelse vill du uppdatera?"
       ],
       "An invitation will be sent to the event participants.": [
         "En inbjudan kommer att skickas till händelsens deltagare."
@@ -5860,6 +5874,11 @@
         "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(kommer öppna ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Visa loggar"
@@ -6546,6 +6565,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Inbjudan skickad och deltagare tillagda till alla händelser"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Senast ändrade alias lagrade i ditt äldsta valv"
       ],
       "Participants notified and all events updated": [
         "Deltagare aviserade och alla händelser uppdaterade"
