@@ -25,6 +25,7 @@ import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '
 import clsx from '@proton/utils/clsx';
 
 import { getCanChangeCalendarOfEvent } from '../../helpers/event';
+import BusySlotsSpotlight from './BusySlotsSpotlight';
 import createHandlers from './eventForm/createPropFactory';
 import { getOrganizerAndSelfAddressModel } from './eventForm/state';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
@@ -53,6 +54,7 @@ export interface EventFormProps {
     isCalendarWritable?: boolean;
     isDrawerApp?: boolean;
     isSmallViewport: boolean;
+    onDisplayBusySlots?: () => void;
 }
 
 const EventForm = ({
@@ -73,6 +75,7 @@ const EventForm = ({
     isCalendarWritable = true,
     isDrawerApp,
     isSmallViewport,
+    onDisplayBusySlots,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
@@ -313,19 +316,22 @@ const EventForm = ({
     };
 
     const participantsRow = (
-        <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
-            <ParticipantsInput
-                placeholder={c('Placeholder').t`Add participants`}
-                id={PARTICIPANTS_INPUT_ID}
-                value={model.attendees}
-                isOwnedCalendar={model.calendar.isOwned}
-                onChange={handleChangeAttendees}
-                organizer={model.organizer}
-                addresses={addresses}
-                collapsible={!isMinimal}
-                setParticipantError={setParticipantError}
-            />
-        </IconRow>
+        <BusySlotsSpotlight>
+            <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+                <ParticipantsInput
+                    placeholder={c('Placeholder').t`Add participants`}
+                    id={PARTICIPANTS_INPUT_ID}
+                    value={model.attendees}
+                    isOwnedCalendar={model.calendar.isOwned}
+                    onChange={handleChangeAttendees}
+                    organizer={model.organizer}
+                    addresses={addresses}
+                    collapsible={!isMinimal}
+                    setParticipantError={setParticipantError}
+                    onDisplayBusySlots={onDisplayBusySlots}
+                />
+            </IconRow>
+        </BusySlotsSpotlight>
     );
 
     const getCalendarIcon = () => {

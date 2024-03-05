@@ -6,12 +6,16 @@ import { Button } from '@proton/atoms/Button';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useLoading } from '@proton/hooks/index';
-import { removeHolidaysCalendar } from '@proton/shared/lib/api/calendars';
+import { removeHolidaysCalendar, updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import { updateCalendar } from '@proton/shared/lib/calendar/calendar';
-import { DEFAULT_EVENT_DURATION, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
+import { EditableCalendarSettings, updateCalendar } from '@proton/shared/lib/calendar/calendar';
+import {
+    CALENDAR_TYPE,
+    DEFAULT_EVENT_DURATION,
+    MAX_DEFAULT_NOTIFICATIONS,
+} from '@proton/shared/lib/calendar/constants';
 import setupHolidaysCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupHolidaysCalendarHelper';
 import {
     findHolidaysCalendarByCountryCodeAndLanguageTag,
@@ -24,7 +28,6 @@ import { getBrowserLanguageTags } from '@proton/shared/lib/i18n/helper';
 import {
     CalendarBootstrap,
     CalendarCreateData,
-    CalendarSettings,
     HolidaysDirectoryCalendar,
     NotificationModel,
     VisualCalendar,
@@ -56,6 +59,7 @@ import {
 } from '../../../../hooks';
 import { useCalendarModelEventManager } from '../../../eventManager';
 import Notifications from '../../notifications/Notifications';
+import BusyTimeSlotsCheckbox from '../BusyTimeSlotsCheckbox';
 import { getDefaultModel } from '../personalCalendarModal/calendarModalState';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
@@ -134,6 +138,10 @@ const HolidaysCalendarModalWithDirectory = ({
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const readCalendarBootstrap = useReadCalendarBootstrap();
+    const defaultModel = getDefaultModel(CALENDAR_TYPE.HOLIDAYS);
+    const [makesUserBusy, setMakesUserBusy] = useState(
+        calendarBootstrap?.CalendarSettings?.MakesUserBusy ?? defaultModel.shareBusyTimeSlots
+    );
 
     const memoizedHolidaysCalendars = useMemo(() => {
         // Prevent the list of user holidays calendars from changing (via event loop) once the modal opened.
@@ -271,15 +279,11 @@ const HolidaysCalendarModalWithDirectory = ({
                             Color: color,
                             Display: inputHolidaysCalendar.Display,
                         };
-                        const calendarSettingsPayload: Required<
-                            Pick<
-                                CalendarSettings,
-                                'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'
-                            >
-                        > = {
+                        const calendarSettingsPayload: Required<EditableCalendarSettings> = {
                             DefaultEventDuration: DEFAULT_EVENT_DURATION,
                             DefaultFullDayNotifications: formattedNotifications,
                             DefaultPartDayNotifications: [],
+                            MakesUserBusy: makesUserBusy,
                         };
                         await updateCalendar(
                             inputHolidaysCalendar,
@@ -299,7 +303,7 @@ const HolidaysCalendarModalWithDirectory = ({
                         // Use route which does not need password confirmation to remove the calendar
                         await api(removeHolidaysCalendar(inputHolidaysCalendar.ID));
 
-                        await setupHolidaysCalendarHelper({
+                        const calendar = await setupHolidaysCalendarHelper({
                             holidaysCalendar: computedCalendar,
                             addresses,
                             getAddressKeys,
@@ -314,6 +318,12 @@ const HolidaysCalendarModalWithDirectory = ({
                                 text: c('Notification in holidays calendar modal').t`Adding holidays calendar failed`,
                             });
                         });
+
+                        // Make busyness update afterward via setting call
+                        if (calendar && makesUserBusy !== calendar.CalendarSettings.MakesUserBusy) {
+                            await api(updateCalendarSettings(calendar.Calendar.ID, { MakesUserBusy: makesUserBusy }));
+                        }
+
                         await call();
                     }
                     createNotification({
@@ -322,7 +332,7 @@ const HolidaysCalendarModalWithDirectory = ({
                     });
                 } else {
                     // 3 - Joining a holidays calendar
-                    await setupHolidaysCalendarHelper({
+                    const calendar = await setupHolidaysCalendarHelper({
                         holidaysCalendar: computedCalendar,
                         addresses,
                         getAddressKeys,
@@ -330,6 +340,11 @@ const HolidaysCalendarModalWithDirectory = ({
                         notifications: formattedNotifications,
                         api,
                     });
+
+                    // Make busyness update afterward via setting call
+                    if (makesUserBusy !== calendar.CalendarSettings.MakesUserBusy) {
+                        await api(updateCalendarSettings(calendar.Calendar.ID, { MakesUserBusy: makesUserBusy }));
+                    }
                     await call();
 
                     createNotification({
@@ -445,13 +460,19 @@ const HolidaysCalendarModalWithDirectory = ({
                         label={c('Label').t`Notifications`}
                         hasType
                         notifications={notifications}
-                        defaultNotification={getDefaultModel().defaultFullDayNotification}
+                        defaultNotification={defaultModel.defaultFullDayNotification}
                         canAdd={notifications.length < MAX_DEFAULT_NOTIFICATIONS}
                         onChange={(notifications: NotificationModel[]) => {
                             setNotifications(notifications);
                         }}
                     />
                 )}
+                <BusyTimeSlotsCheckbox
+                    onChange={(nextMakesUserBusy) => {
+                        setMakesUserBusy(nextMakesUserBusy);
+                    }}
+                    value={makesUserBusy}
+                />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <>

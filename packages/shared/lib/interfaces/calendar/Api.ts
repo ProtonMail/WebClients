@@ -2,7 +2,7 @@ import { PaginationParams } from '../../api/interface';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
 import { ApiResponse } from '../Api';
 import { Nullable, RequireSome } from '../utils';
-import { CalendarNotificationSettings } from './Calendar';
+import { CalendarNotificationSettings, CalendarSettings } from './Calendar';
 import { CalendarKey, CalendarPassphrase } from './CalendarKey';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
 import { Attendee, CalendarEvent, CalendarEventData } from './Event';
@@ -233,4 +233,48 @@ export interface GetAllMembersApiResponse {
 
 export interface GetCalendarInvitationsResponse {
     Invitations: CalendarMemberInvitation[];
+}
+
+export enum BUSY_TIME_SLOT_TYPE {
+    /** Partial day: event's start time is inside the requested window */
+    PARTIAL_DAY_IN = 0,
+    /** Partial day: event's start time is before the requested window */
+    PARTIAL_DAY_BEFORE = 1,
+    /** Full day: event's start date is inside the requested window */
+    FULL_DAY_IN = 2,
+    /** Full day: event's start date is before the requested window */
+    FULL_DAY_BEFORE = 3,
+}
+
+export interface GetBusyTimeSlotsParams {
+    /** Min 0, Max 100. Defaults to 100 */
+    PageSize?: number;
+    /** 0 based index. Defaults to 0 */
+    Page?: number;
+    Type: BUSY_TIME_SLOT_TYPE;
+    /** Unix timestamp */
+    Start: number;
+    /** Unix timestamp */
+    End: number;
+    /** The timezone currently used on the calendar, will impact which events are returned: "Timezone=Europe/Paris" */
+    Timezone: string;
+}
+
+export interface GetBusyTimeSlotsResponse extends ApiResponse {
+    BusySchedule: {
+        IsDataAccessible: boolean;
+        BusyTimeSlots: { Start: number; End: number }[] | null;
+        More: boolean;
+    };
+}
+
+/**
+ * @warning Not fully typed
+ */
+export interface JoinHolidayCalendarResponse extends ApiResponse {
+    Calendar: {
+        ID: string;
+        Type: CALENDAR_TYPE;
+    };
+    CalendarSettings: CalendarSettings;
 }

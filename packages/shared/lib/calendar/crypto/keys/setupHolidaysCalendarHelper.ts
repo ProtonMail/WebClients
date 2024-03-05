@@ -1,6 +1,10 @@
 import { joinHolidaysCalendar } from '../../../api/calendars';
 import { Address, Api } from '../../../interfaces';
-import { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '../../../interfaces/calendar';
+import {
+    CalendarNotificationSettings,
+    HolidaysDirectoryCalendar,
+    JoinHolidayCalendarResponse,
+} from '../../../interfaces/calendar';
 import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getJoinHolidaysCalendarData } from '../../holidaysCalendar/holidaysCalendar';
 
@@ -30,7 +34,7 @@ const setupHolidaysCalendarHelper = async ({
         notifications,
         priority,
     });
-    return api(joinHolidaysCalendar(calendarID, addressID, payload));
+    return api<JoinHolidayCalendarResponse>(joinHolidaysCalendar(calendarID, addressID, payload));
 };
 
 export default setupHolidaysCalendarHelper;
