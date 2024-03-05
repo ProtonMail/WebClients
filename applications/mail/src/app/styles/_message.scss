@@ -71,6 +71,7 @@ $container-to-width: 4em !default;
 }
 
 .message-header {
+	container-type: inline-size;
 	border-radius: var(--border-radius-md); // Can't overflow 'cause of ::before, so repeat radius
 	padding-block: 1em em(11); // margin of 7 under buttons + 11 = 18, what design wants
 	background-color: var(--email-item-read-background-color);
@@ -170,6 +171,18 @@ $container-to-width: 4em !default;
 // when message is collapsed
 .message-header-collapsed {
 	padding-block: 1em;
+	container-name: message-header-collapsed;
+}
+@container message-header-collapsed (max-inline-size: #{em(450, 16)}) {
+	.message-header-recipient-labels {
+		flex-wrap: wrap;
+	}
+
+	.message-recipient-item,
+	.message-header-labels {
+		inline-size: 100%;
+		margin-inline-start: 0;
+	}
 }
 
 // when message is expanded (details or not)
