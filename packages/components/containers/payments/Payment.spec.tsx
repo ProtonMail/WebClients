@@ -176,6 +176,7 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 hasSomeVpnPlan={false}
+                paymentComponentLoaded={jest.fn()}
             />
         );
     });
@@ -207,6 +208,7 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 hasSomeVpnPlan={false}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
@@ -242,6 +244,7 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 hasSomeVpnPlan={false}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
@@ -311,6 +314,7 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 hasSomeVpnPlan={false}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
@@ -375,6 +379,7 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 hasSomeVpnPlan={false}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 

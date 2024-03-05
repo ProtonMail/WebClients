@@ -25,8 +25,10 @@ import {
     OperationsData,
     usePaymentFacade as useInnerPaymentFacade,
 } from '../react-extensions';
+import { PaymentProcessorType } from '../react-extensions/interface';
 import { useChargebeeEnabledCache, useChargebeeKillSwitch, useChargebeeUserStatusTracker } from './useChargebeeContext';
 import { wrapMethods } from './useMethods';
+import { usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     getDefaultVerifyPayment,
     getDefaultVerifyPaypal,
@@ -59,6 +61,7 @@ type PaymentFacadeProps = {
             sourceType: PlainPaymentMethodType;
             context: OperationsData;
             paymentsVersion: PaymentsVersion;
+            paymentProcessorType: PaymentProcessorType;
         }
     ) => Promise<unknown>;
     /**
@@ -121,14 +124,24 @@ export const usePaymentFacade = ({
     const { chargebeeKillSwitch, forceEnableChargebee } = useChargebeeKillSwitch();
     useChargebeeUserStatusTracker();
 
+    const telemetry = usePaymentsTelemetry({
+        apiOverride: api,
+        plan: selectedPlanName,
+        flow,
+    });
+
+    const { reportPaymentLoad, reportPaymentAttempt, reportPaymentFailure } = telemetry;
+
     const verifyPaymentChargebeeCard = useChargebeeCardVerifyPayment(api);
-    const chargebeePaypalModalHandles = useChargebeePaypalHandles();
+    const chargebeePaypalModalHandles = useChargebeePaypalHandles({
+        onPaymentAttempt: reportPaymentAttempt,
+        onPaymentFailure: reportPaymentFailure,
+    });
 
     const hook = useInnerPaymentFacade(
         {
             amount,
             currency,
-            onChargeable,
             coupon,
             flow,
             onMethodChanged,
@@ -138,6 +151,18 @@ export const usePaymentFacade = ({
             chargebeeKillSwitch,
             forceEnableChargebee,
             selectedPlanName,
+            onProcessPaymentToken: reportPaymentAttempt,
+            onProcessPaymentTokenFailed: (type) => {
+                reportPaymentFailure(type);
+            },
+            onChargeable: async (operations, data) => {
+                try {
+                    return await onChargeable(operations, data);
+                } catch (error) {
+                    reportPaymentFailure(data.paymentProcessorType);
+                    throw error;
+                }
+            },
         },
         {
             api,
@@ -277,5 +302,8 @@ export const usePaymentFacade = ({
         userCanTriggerSelected,
         iframeHandles,
         chargebeeEnabled,
+        selectedPlanName,
+        paymentComponentLoaded: reportPaymentLoad,
+        telemetry,
     };
 };

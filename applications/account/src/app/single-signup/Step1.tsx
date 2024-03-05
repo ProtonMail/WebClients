@@ -58,9 +58,9 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     BillingAddress,
+    ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
     TokenPayment,
-    TokenPaymentWithPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
@@ -603,7 +603,7 @@ const Step1 = ({
         return onComplete({ subscriptionData, accountData, type: 'signup' });
     };
 
-    const onPay = async (payment: TokenPaymentWithPaymentsVersion | undefined, type: 'cc' | 'pp' | undefined) => {
+    const onPay = async (payment: ExtendedTokenPayment, type: 'cc' | 'pp' | undefined) => {
         const subscriptionData: SubscriptionData = {
             ...model.subscriptionData,
             payment,
@@ -654,12 +654,17 @@ const Step1 = ({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
-        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion }) => {
+        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
 
+                const extendedParams: ExtendedTokenPayment = {
+                    paymentsVersion,
+                    paymentProcessorType,
+                };
+
                 if (isFreeSignup) {
-                    await onPay(undefined, undefined);
+                    await onPay(extendedParams, undefined);
                     return;
                 }
 
@@ -679,9 +684,9 @@ const Step1 = ({
                     ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
                     : undefined;
 
-                const withVersion: TokenPaymentWithPaymentsVersion = {
+                const withVersion: ExtendedTokenPayment = {
                     ...legacyTokenPayment,
-                    paymentsVersion,
+                    ...extendedParams,
                 };
 
                 await onPay(withVersion, paymentType);

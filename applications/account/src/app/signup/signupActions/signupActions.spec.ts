@@ -1,5 +1,5 @@
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { PAYMENT_METHOD_TYPES, TokenPaymentWithPaymentsVersion } from '@proton/components/payments/core';
+import { ExtendedTokenPayment, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { APPS, CLIENT_TYPES, CYCLE } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
@@ -72,12 +72,13 @@ describe('signupActions', () => {
         it('should use payment token for human verification if it exists: VPN', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
-            const payment: TokenPaymentWithPaymentsVersion = {
+            const payment: ExtendedTokenPayment = {
                 Type: PAYMENT_METHOD_TYPES.TOKEN,
                 Details: {
                     Token: 'payment-token-123',
                 },
                 paymentsVersion: 'v4',
+                paymentProcessorType: 'card',
             };
 
             const subscriptionData: SubscriptionData = {
@@ -139,12 +140,13 @@ describe('signupActions', () => {
         it('should use payment token for human verification if it exists: Username', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
-            const payment: TokenPaymentWithPaymentsVersion = {
+            const payment: ExtendedTokenPayment = {
                 Type: PAYMENT_METHOD_TYPES.TOKEN,
                 Details: {
                     Token: 'payment-token-123',
                 },
                 paymentsVersion: 'v4',
+                paymentProcessorType: 'card',
             };
 
             const subscriptionData: SubscriptionData = {
