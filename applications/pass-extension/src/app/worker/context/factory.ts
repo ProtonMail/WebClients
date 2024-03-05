@@ -31,6 +31,7 @@ import {
     clientStatusResolved,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
+import { createPassCoreService } from '@proton/pass/lib/core/service';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
@@ -56,12 +57,13 @@ export const createWorkerContext = (config: ProtonConfig) => {
         status: AppStatus.IDLE,
         authStore,
         service: {
-            auth: createAuthService(api, authStore),
             activation: createActivationService(),
             alias: createAliasService(),
             apiProxy: createApiProxyService(),
+            auth: createAuthService(api, authStore),
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
+            core: createPassCoreService(),
             export: createExportService(),
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
