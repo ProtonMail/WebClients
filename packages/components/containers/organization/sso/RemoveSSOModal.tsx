@@ -57,7 +57,7 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
                 </div>
                 <p className="m-0 text-bold">{c('Info')
                     .t`The credentials from your Identity Provider will be deleted.`}</p>
-                <p className="my-4">{c('Info').t`Once single sing-on is disabled for your organization:`}</p>
+                <p className="my-4">{c('Info').t`Once single sign-on is disabled for your organization:`}</p>
                 <ul className="mt-0">
                     <li>
                         {
