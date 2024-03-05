@@ -173,6 +173,18 @@ export const getMailPlusInboxFeatures = () => {
     ];
 };
 
+export const getMailPlus2024InboxFeatures = () => {
+    return [
+        getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true), // true remove the tooltip
+        { name: c('mailtrial2024: Deal details').t`10 email addresses` },
+        { name: c('mailtrial2024: Deal details').t`Unlimited folders, labels and filters` },
+        { name: c('mailtrial2024: Deal details').t`Support for 1 custom email domain` },
+        { name: c('mailtrial2024: Deal details').t`${MAIL_APP_NAME} desktop app` },
+        { name: c('mailtrial2024: Deal details').t`Auto-delete Spam and Trash` },
+        { name: c('mailtrial2024: Deal details').t`Custom schedule send and snooze times` },
+    ];
+};
+
 export const getUnlimitedVPNFeatures = () => [
     getPremiumVPNFeature(),
     getPremiumPasswordManagerFeature(),

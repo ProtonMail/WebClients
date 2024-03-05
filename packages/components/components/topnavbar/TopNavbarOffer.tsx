@@ -90,8 +90,9 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
         setOfferModalOpen(true);
     }, [loading, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone]);
 
-    const CTAText = offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
-    const upgradeIcon = CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.icon || 'bag-percent';
+    const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
+    const upgradeIcon =
+        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
 
     return (
         <>
@@ -102,7 +103,9 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
                     color="norm"
                     size={CTAText.length > 14 ? 'small' : 'medium'}
                     responsive
-                    shape={offerConfig.shapeButton || 'solid'}
+                    shape={offerConfig.topButton?.shape || 'solid'}
+                    buttonGradient={offerConfig.topButton?.gradient}
+                    iconGradient={!!offerConfig.topButton?.iconGradient}
                     iconName={upgradeIcon}
                     onClick={() => {
                         setOfferModalOpen(true);

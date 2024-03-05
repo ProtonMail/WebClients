@@ -76,6 +76,7 @@ export enum FeatureCode {
     OfferFamily2023 = 'OfferFamily2023',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
+    OfferMailTrial2024 = 'OfferMailTrial2024',
     OfferSpecialOffer2022 = 'OfferSpecialOffer2022',
     OfferSummer2023 = 'OfferSummer2023',
     OfferBlackFriday2023InboxFree = 'OfferBlackFriday2023InboxFree',
