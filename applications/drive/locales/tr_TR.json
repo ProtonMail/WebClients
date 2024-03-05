@@ -2025,49 +2025,49 @@
       ]
     },
     "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Açıklama: ${ eventDescription }"
+      "DESCRIPTION:\n${ eventDescription }": [
+        "Açıklama:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
+      "${ eventTitle } was canceled.": [
         "${ eventTitle } iptal edildi."
       ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } güncellendi.\n${ eventDetailsText }"
+      "All events in this series were updated.": [
+        "Bu serideki tüm etkinlikler güncellendi."
       ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Bu zamandaki ${ eventTitle } etkinliği iptal edildi."
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu serideki tüm etkinlikler güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
       ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "${ eventTitle } etkinliğine davet edildiniz\n${ eventDetailsText }"
+      "This event was updated.": [
+        "Bu etkinlik güncellendi."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu etkinlik güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Zaman: ${ formattedStart }"
+      "TIME:\n${ formattedStart }": [
+        "Zaman:\n${ formattedStart }"
       ],
-      "When: ${ formattedStart } (all day)": [
-        "Zaman: ${ formattedStart } (tüm gün)"
+      "TIME:\n${ formattedStart } (all day)": [
+        "ZAMAN:\n${ formattedStart } (tüm gün)"
       ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Zaman: ${ formattedStart } - ${ formattedEnd }"
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "Zaman:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Kaldırıldı"
       ]
     },
     "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Yer: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kabul edildi"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
+      "LOCATION:\n${ eventLocation }": [
+        "Konum:\n${ eventLocation }"
       ]
     },
     "Email subject": {
@@ -5972,6 +5972,11 @@
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } açacaktır)"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Günlükleri görüntüle"
@@ -6513,6 +6518,9 @@
       ],
       "Import record deleted": [
         "İçe aktarma kaydı silindi"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "En eski kasanızda saklanan son değiştirilen takma adlar"
       ],
       "Phone number copied to clipboard": [
         "Telefon numarası panoya kopyalandı"

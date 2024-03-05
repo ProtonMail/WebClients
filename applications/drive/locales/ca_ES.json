@@ -1997,52 +1997,6 @@
         "Hem detectat els següents camps al fitxer CSV que heu carregat. Comproveu els que voleu importar."
       ]
     },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descripció: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        "${ eventTitle } s'ha cancel·lat."
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
-      ],
-      "This occurrence of ${ eventTitle } has been canceled.": [
-        "Aquesta ocurrència de ${ eventTitle } ha estat cancel·lada."
-      ],
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart }": [
-        "Quan: ${ formattedStart }"
-      ],
-      "When: ${ formattedStart } (all day)": [
-        "Quan: ${ formattedStart } (tot el dia)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quan: ${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "On: ${ eventLocation }"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha declinat la vostra invitació a ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -2120,6 +2074,9 @@
       ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
+      ],
+      "Aliases could not be loaded": [
+        "No s'han pogut carregar els àlies."
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -2200,6 +2157,9 @@
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
+      ],
+      "Forward address is required": [
+        "L'adreça de reenviament és obligatòria."
       ],
       "Image upload failed": [
         "No s'ha pogut carregar la imatge."
@@ -4353,6 +4313,10 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Us queda ${ expiresInDays } dia per a reclamar la vostra bonificació de benvinguda de 3 GB i ",
+        "Us queden ${ expiresInDays } dies per a reclamar la vostra bonificació de benvinguda de 3 GB i "
+      ],
       "You will lose all unsaved changes.": [
         "Perdreu tots els canvis sense desar."
       ],
@@ -5797,6 +5761,11 @@
         "Proveu ${ PASS_APP_NAME }"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(obrirà ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Mostra els registres"
@@ -6246,6 +6215,9 @@
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "L'emmagatzematge és ple. ${ cta }."
       ]
     },
     "Success": {
@@ -6297,6 +6269,9 @@
       ],
       "Import record deleted": [
         "S'ha suprimit el registre d'importació"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Els darrers àlies modificats s'emmagatzemen a la vostra caixa forta més antiga"
       ],
       "Phone number copied to clipboard": [
         "Número de telèfon copiat al porta-retalls"
