@@ -739,10 +739,6 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber }-ჯერ",
-        "${ revisionNumber } ჯერ"
-      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
       ],
@@ -811,6 +807,9 @@
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
         "CSV გთავაზობთ მოხერხებულ ფორმატს თქვენი მონაცემების სანახავად. მაგრამ, მისი სიმარტივის გამო, ზოგიერთი მონაცემები (დამატებითი ველები, საცავის სტრუქტურა და ა.შ.) ჩასმული არ იქნება. მონაცემების სრული გატანისთვის, გირჩევთ, სხვა ფორმატი გამოიყენოთ."
+      ],
+      "Current version": [
+        "მიმდინარე ვერსია"
       ],
       "Decrypting your data": [
         "თქვენი მონაცემების გაშიფვრა"
@@ -1389,9 +1388,6 @@
       "Last 2 weeks": [
         "ბოლო 2 კვირა"
       ],
-      "Last autofill": [
-        "უკანასკნელი ავტომატური შევსება"
-      ],
       "Last month": [
         "ბოლო თვის"
       ],
@@ -1786,6 +1782,9 @@
       "Grant permissions": [
         "წვდომების მინიჭება"
       ],
+      "History": [
+        "ისტორია"
+      ],
       "Import - ${ date }": [
         "შემოტანა - ${ date }"
       ],
@@ -1809,6 +1808,9 @@
       ],
       "Members": [
         "წევრები"
+      ],
+      "Modified": [
+        "შეცვლილია"
       ],
       "Move all items ?": [
         "გადავიტანო ყველა ელემენტი?"
