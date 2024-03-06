@@ -13,6 +13,12 @@ export interface AbuseFormProps {
         reporterEmail?: string;
         reporterMessage?: string;
     }) => Promise<void>;
+    prefilled?: {
+        Category?: AbuseCateroryType;
+        Email?: string;
+        Comment?: string;
+    };
+    open?: boolean;
 }
 
 export type AbuseCateroryType = 'spam' | 'copyright' | 'child-abuse' | 'stolen-data' | 'malware' | 'other';

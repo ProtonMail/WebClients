@@ -17,7 +17,11 @@ import { NestedLinkDownload } from './interface';
  * initDownloadLinks prepares controls to download archive of passed `links`.
  * All links are in the root of the generated archive.
  */
-export default function initDownloadLinks(links: LinkDownload[], callbacks: DownloadCallbacks): DownloadStreamControls {
+export default function initDownloadLinks(
+    links: LinkDownload[],
+    callbacks: DownloadCallbacks,
+    options?: { virusScan?: boolean }
+): DownloadStreamControls {
     const folderLoaders: Map<String, FolderTreeLoader> = new Map();
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
@@ -38,7 +42,7 @@ export default function initDownloadLinks(links: LinkDownload[], callbacks: Down
             callbacks.onProgress
         );
         const linksIterator = iterateAllLinks(links, folderLoaders);
-        const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks);
+        const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks, options);
         archiveGenerator
             .writeLinks(linksWithStreamsIterator)
             .then(() => {

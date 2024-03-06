@@ -30,21 +30,26 @@ const SIZE_WAIT_TIME = 5000; // ms
 export default function initDownload(
     name: string,
     links: LinkDownload[],
-    callbacks: DownloadCallbacks
+    callbacks: DownloadCallbacks,
+    options?: { virusScan?: boolean }
 ): DownloadControls {
     let gotErr: any;
     const sizePromise = new SizeTimeoutPromise(SIZE_WAIT_TIME);
-    const controls = getControls(links, {
-        ...callbacks,
-        onInit: (size, linkSizes) => {
-            callbacks.onInit?.(size, linkSizes);
-            sizePromise.set(size);
+    const controls = getControls(
+        links,
+        {
+            ...callbacks,
+            onInit: (size, linkSizes) => {
+                callbacks.onInit?.(size, linkSizes);
+                sizePromise.set(size);
+            },
+            onError: (err) => {
+                callbacks.onError?.(err);
+                gotErr = err;
+            },
         },
-        onError: (err) => {
-            callbacks.onError?.(err);
-            gotErr = err;
-        },
-    });
+        options
+    );
     return {
         ...controls,
         start: async () => {
@@ -77,15 +82,19 @@ export function initDownloadStream(links: LinkDownload[], callbacks: DownloadCal
     return getControls(links, callbacks);
 }
 
-function getControls(links: LinkDownload[], callbacks: DownloadCallbacks): DownloadStreamControls {
+function getControls(
+    links: LinkDownload[],
+    callbacks: DownloadCallbacks,
+    options?: { virusScan?: boolean }
+): DownloadStreamControls {
     if (links.length === 1) {
         const link = links[0];
         if (link.isFile) {
-            return initDownloadLinkFile(link, callbacks);
+            return initDownloadLinkFile(link, callbacks, options);
         }
-        return initDownloadLinkFolder(link, callbacks);
+        return initDownloadLinkFolder(link, callbacks, options);
     }
-    return initDownloadLinks(links, callbacks);
+    return initDownloadLinks(links, callbacks, options);
 }
 
 /**
