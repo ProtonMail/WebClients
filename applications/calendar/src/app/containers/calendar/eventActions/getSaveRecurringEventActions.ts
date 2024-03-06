@@ -567,7 +567,7 @@ const getSaveRecurringEventActions = async ({
                         if (!getIsPersonalSingleEdit(event)) {
                             // attendees need to be notified by email
                             const sharedSessionKey = await getBase64SharedSessionKey({
-                                calendarEvent: originalEvent,
+                                calendarEvent: event,
                                 getCalendarKeys,
                                 getAddressKeys,
                             });
