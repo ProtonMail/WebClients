@@ -10,18 +10,11 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVerificationMessage';
-import { useOrganization } from '@proton/pass/components/Settings/Organization/OrganizationProvider';
 import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
-import {
-    selectOrganizationShareMode,
-    selectUserVerified,
-    selectVaultSharedWithEmails,
-} from '@proton/pass/store/selectors';
+import { selectUserVerified, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -43,8 +36,6 @@ type Props = { form: FormikContextType<InviteFormValues>; autoFocus?: boolean };
 const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ form, autoFocus }, fieldRef) => {
     const [autocomplete, setAutocomplete] = useState('');
     const userVerified = useSelector(selectUserVerified);
-    const shareMode = useSelector(selectOrganizationShareMode);
-    const { isB2B, isOrganizationOnly } = useOrganization();
 
     const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
     const { step, members, withVaultCreation } = form.values;
@@ -52,13 +43,6 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
 
     const shareId = form.values.withVaultCreation ? '' : form.values.shareId;
     const vaultSharedWith = useSelector(selectVaultSharedWithEmails(shareId));
-
-    const [orgEmails, setOrgEmails] = useState<string[]>([]);
-    const enableOrganization = useFeatureFlag(PassFeature.PassEnableOrganization) || true;
-
-    if (enableOrganization && isB2B && isOrganizationOnly(shareMode)) {
-        void form.setFieldValue('orgEmails', orgEmails);
-    }
 
     const createMember = (email: string): ListFieldValue<InviteFormMemberValue> => ({
         value: { email, role: ShareRole.READ },
@@ -127,15 +111,12 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                             disabled={!userVerified}
                             fieldKey="members"
                             fieldRef={fieldRef}
-                            fieldValue={prop('email') as (entry: unknown) => string}
+                            fieldValue={prop('email')}
                             key={`autofocus-email-${autoFocus}`}
                             name="emails"
                             onBlur={onEmailFieldBlur}
                             onPush={createMember}
-                            onReplace={(email, prev) => ({
-                                ...prev,
-                                value: { ...(prev.value as ListFieldValue<unknown>), email },
-                            })}
+                            onReplace={(email, prev) => ({ ...prev, value: { ...prev.value, email } })}
                             placeholder={c('Placeholder').t`Email address`}
                             renderError={(err) => {
                                 const errors = err as string[];
@@ -145,7 +126,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
 
                                 const hasInvalid = errors.includes(InviteEmailsError.INVALID);
                                 const hasDuplicates = errors.includes(InviteEmailsError.DUPLICATE);
-                                const hasOrganizationLimits = errors.includes(InviteEmailsError.LIMITED);
+                                const hasOrganizationLimits = errors.includes(InviteEmailsError.EXTERNAL);
 
                                 return (
                                     <>
@@ -168,7 +149,6 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                             excluded={vaultSharedWith}
                             shareId={!form.values.withVaultCreation ? form.values.shareId : undefined}
                             onToggle={onRecommendationToggle}
-                            setOrgEmails={setOrgEmails}
                         />
                     </div>
                 </div>

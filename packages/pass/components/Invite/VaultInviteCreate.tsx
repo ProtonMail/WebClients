@@ -1,4 +1,5 @@
-import { type FC, type ReactNode, useRef } from 'react';
+import { type FC, type ReactNode, useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -8,14 +9,18 @@ import { Icon, type IconName } from '@proton/components/components';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useValidateInviteAddresses } from '@proton/pass/hooks/useValidateInviteAddress';
 import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
 import type { inviteBatchCreateSuccess } from '@proton/pass/store/actions';
 import { inviteBatchCreateIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { Callback, InviteFormValues, SelectedItem } from '@proton/pass/types';
+import { selectDefaultVault } from '@proton/pass/store/selectors';
+import { BitField, type Callback, type InviteFormValues, type SelectedItem } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
+import noop from '@proton/utils/noop';
 
 import { useInviteContext } from './InviteProvider';
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
@@ -31,6 +36,12 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
+    const org = useOrganization();
+
+    const defaultShareId = useSelector(selectDefaultVault).shareId;
+    const shareId = props.withVaultCreation ? defaultShareId : props.vault.shareId;
+    const addressValidator = useValidateInviteAddresses(shareId);
+    const validateAddresses = org?.settings.ShareMode === BitField.ACTIVE;
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
     const createInvite = useActionRequest({
@@ -66,8 +77,14 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         },
         isInitialValid: false,
         validateOnChange: true,
-        validate: validateShareInviteValues(emailFieldRef),
+        validate: validateShareInviteValues({
+            emailField: emailFieldRef,
+            validateAddresses,
+            validationMap: addressValidator.emails,
+        }),
         onSubmit: (values, { setFieldValue }) => {
+            if (addressValidator.loading) return;
+
             switch (values.step) {
                 case 'members':
                     return setFieldValue('step', 'permissions');
@@ -81,6 +98,17 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
             }
         },
     });
+
+    useEffect(() => {
+        if (validateAddresses) {
+            addressValidator
+                .validate(form.values.members.map(({ value }) => value.email))
+                .then(() => form.validateForm())
+                .catch(noop);
+        }
+    }, [form.values.members, validateAddresses]);
+
+    useEffect(() => org?.syncSettings(), []);
 
     const attributes = ((): {
         submitText: string;
@@ -149,7 +177,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={createInvite.loading || !form.isValid}
+                                    disabled={createInvite.loading || addressValidator.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
                                     loading={createInvite.loading}
