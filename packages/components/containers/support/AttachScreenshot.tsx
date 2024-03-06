@@ -50,7 +50,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                     }))
                 )
             );
-            setScreenshots(uploadedScreenshots);
+            setScreenshots([...screenshots, ...uploadedScreenshots]);
         } finally {
             setUploading(false);
         }
