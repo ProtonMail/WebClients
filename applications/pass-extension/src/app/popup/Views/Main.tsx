@@ -12,8 +12,8 @@ import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
+import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
-import { OrganizationProvider } from '@proton/pass/components/Settings/Organization/OrganizationProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 
 import { Header } from './Header/Header';
