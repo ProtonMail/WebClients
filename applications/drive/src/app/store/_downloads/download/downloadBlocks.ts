@@ -1,6 +1,8 @@
+import { sha1 } from '@openpgp/noble-hashes/sha1';
 import { c } from 'ttag';
 import { ReadableStream } from 'web-streams-polyfill';
 
+import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -31,7 +33,7 @@ export type DownloadBlocksCallbacks = Omit<
             PageSize: number;
         },
         revisionId?: string
-    ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }>;
+    ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }>;
     transformBlockStream: (
         abortSignal: AbortSignal,
         stream: ReadableStream<Uint8Array>,
@@ -41,6 +43,8 @@ export type DownloadBlocksCallbacks = Omit<
         data: ReadableStream<Uint8Array>;
     }>;
     checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => Promise<void>;
+    scanForVirus?: (abortSignal: AbortSignal, encryptedXAttr: string) => Promise<void>;
+    checkFileHash?: (abortSignal: AbortSignal, Hash: string) => Promise<void>;
     onProgress?: (bytes: number) => void;
 };
 
@@ -56,6 +60,8 @@ export default function initDownloadBlocks(
         getBlocks,
         transformBlockStream,
         checkManifestSignature,
+        scanForVirus,
+        checkFileHash,
         onProgress,
         onError,
         onNetworkError,
@@ -88,9 +94,11 @@ export default function initDownloadBlocks(
         let blocks: DriveFileBlock[] = [];
         let activeIndex = 1;
 
+        const hashInstance = checkFileHash ? sha1.create() : undefined;
         const hashes: Uint8Array[] = [];
         let thumbnailHashes: Uint8Array[] = [];
         let manifestSignature: string;
+        let xAttr: string;
 
         const hasMorePages = (currentPageLength: number) => currentPageLength === BATCH_REQUEST_SIZE;
 
@@ -102,6 +110,7 @@ export default function initDownloadBlocks(
                     thumbnailHashes = result.thumbnailHashes.map(base64StringToUint8Array);
                 }
                 manifestSignature = result.manifestSignature;
+                xAttr = result.xAttr;
             } catch (err: any) {
                 // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
                 if (paused && isTransferCancelError(err)) {
@@ -121,6 +130,7 @@ export default function initDownloadBlocks(
                 for (const chunk of currentBuffer.chunks) {
                     await fsWriter.ready;
                     await fsWriter.write(chunk);
+                    hashInstance?.update(chunk);
                 }
                 buffers.delete(Index);
             }
@@ -344,12 +354,21 @@ export default function initDownloadBlocks(
             if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE }))) {
                 return;
             }
+            if (xAttr && scanForVirus) {
+                await scanForVirus(abortController.signal, xAttr);
+            }
 
             await fsWriter.ready;
 
             await startDownload(getBlockQueue());
             if (!(await downloadTheRestOfBlocks())) {
                 return;
+            }
+
+            if (checkFileHash && hashInstance) {
+                const sha1Digest = hashInstance.digest();
+                const fileHash = arrayToHexString(sha1Digest);
+                await checkFileHash(abortController.signal, fileHash);
             }
 
             await checkManifestSignature?.(

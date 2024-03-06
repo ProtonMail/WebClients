@@ -81,7 +81,7 @@ export interface DriveFileRevisionPayload {
     SignatureEmail: string;
     Blocks: DriveFileBlock[];
     Thumbnails: Thumbnail[];
-    XAttr?: string;
+    XAttr: string;
 }
 
 export interface DriveFileRestoreRevisionResult {
@@ -105,4 +105,10 @@ export interface DriveFileRevisionThumbnailResult {
 export interface GetVerificationDataResult {
     VerificationCode: string;
     ContentKeyPacket: string;
+}
+
+export interface ScanResultItem {
+    Hash: string;
+    Error?: string;
+    Safe: boolean;
 }
