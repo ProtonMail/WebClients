@@ -53,7 +53,7 @@ export default function useDownload() {
         linkId: string,
         pagination: Pagination,
         revisionId?: string
-    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }> => {
+    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }> => {
         let link = await getLink(abortSignal, shareId, linkId);
         revisionId ||= link.activeRevision?.id;
         if (!revisionId) {
@@ -69,6 +69,7 @@ export default function useDownload() {
             // We sort hashes to have the Type 1 always at first place. This is necessary for signature verification.
             thumbnailHashes: Revision.Thumbnails.sort((a, b) => a.Type - b.Type).map((Thumbnail) => Thumbnail.Hash),
             manifestSignature: Revision.ManifestSignature,
+            xAttr: Revision.XAttr,
         };
     };
 

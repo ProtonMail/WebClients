@@ -2,7 +2,7 @@ import { SessionKey } from '@proton/crypto';
 import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 
 import { AuthVersion } from '../../authentication/interface';
-import { DriveFileBlock, Thumbnail } from './file';
+import { DriveFileBlock, ScanResultItem, Thumbnail } from './file';
 import { LinkType } from './link';
 
 type WithSRPPayload<T extends any> = T & {
@@ -92,6 +92,15 @@ export interface SharedURLRevision {
     State: number;
     Thumbnails: Thumbnail[];
     XAttr: string;
+}
+
+/**
+ * drive/urls/${token}/security response payload
+ */
+export interface SharedFileScan {
+    Code: number;
+    Errors: ScanResultItem[];
+    Results: ScanResultItem[];
 }
 
 /**
