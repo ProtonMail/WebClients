@@ -1,32 +1,34 @@
 import { BrowserWindow, Notification, app, session, shell } from "electron";
-import log from "electron-log/main";
+import Logger from "electron-log";
+import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
+import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
+import { deleteWindowStore } from "./store/storeMigrations";
+import { hasTrialEnded } from "./store/trialStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
-import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
+import { isMac, isWindows } from "./utils/helpers";
+import { handleMailToUrls } from "./utils/urls/mailtoLinks";
+import { getTrialEndURL } from "./utils/urls/trial";
 import {
-    clearStorage,
+    getSessionID,
     isAccoutLite,
     isHostAccount,
     isHostAllowed,
     isHostCalendar,
     isHostMail,
-    isHostOAuth,
-    isLogginOut,
-    isMac,
     isUpsellURL,
-    isWindows,
-    saveWindowsPosition,
-} from "./utils/helpers";
-import { getSessionID, handleMailToUrls } from "./utils/urlHelpers";
+} from "./utils/urls/urlTests";
 import {
-    handleCalendarWindow,
-    handleMailWindow,
-    initialWindowCreation,
-    refreshCalendarPage,
-} from "./utils/windowManagement";
+    getCalendarView,
+    getMailView,
+    getMainWindow,
+    reloadCalendarWithSession,
+    updateView,
+    viewCreationAppStartup,
+} from "./utils/view/viewManagement";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -40,74 +42,122 @@ saveAppURL();
 saveAppID();
 
 // Log initialization
-log.initialize({ preload: true });
-log.info("App start on mac:", isMac, "is windows: ", isWindows);
+Logger.initialize({ preload: true });
+Logger.info("App start is mac:", isMac, "is windows: ", isWindows);
 
 // Move uninstaller on macOS
 moveUninstaller();
+
+// Store migrations
+deleteWindowStore(); // Introduced in v0.9.4
+// End of store migrations
 
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");
 
 // Detects if the application is default handler for mailto, works on macOS for now
 if (app.isDefaultProtocolClient("mailto")) {
-    log.info("App is default mailto client");
+    Logger.info("App is default mailto client");
 } else {
-    log.info("App is not default mailto client");
+    Logger.info("App is not default mailto client");
 }
 
-app.whenReady().then(() => {
-    const secureSession = session.fromPartition(PARTITION, {
-        cache: false,
-    });
-
-    initialWindowCreation({ session: secureSession, mailVisible: true, calendarVisible: false });
-
-    // Check updates
-    checkForUpdates();
-
-    // Trigger blank notification to force presence in settings
-    new Notification();
-
-    // Handle IPC calls coming from the destkop application
-    handleIPCCalls();
-
-    app.on("activate", () => {
-        if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
-            log.info("Activate app, all windows hidden");
-            const window = BrowserWindow.getAllWindows()[0];
-            handleMailWindow(window.webContents);
-        }
-    });
-
-    // Normally this only works on macOS and is not required for Windows
-    app.on("open-url", (e, url) => {
-        log.info("Opening url", url);
-        handleMailToUrls(url);
-    });
-
-    // Security addition, reject all permissions except notifications
-    secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => {
-        const { host, protocol } = new URL(_webContents.getURL());
-        if (!isHostAllowed(host, app.isPackaged) || protocol !== "https:") {
-            return callback(false);
+const gotTheLock = app.requestSingleInstanceLock();
+if (!gotTheLock) {
+    Logger.info("App is already running");
+    app.quit();
+} else {
+    app.on("second-instance", (_ev, commandLine) => {
+        Logger.info("Second instance called");
+        const mainWindow = getMainWindow();
+        if (mainWindow) {
+            if (mainWindow.isMinimized()) {
+                mainWindow.restore();
+            }
+            mainWindow.focus();
         }
 
-        if (ALLOWED_PERMISSIONS.includes(_permission)) {
-            log.info("Permission request accepted", _permission, host);
-            return callback(true);
+        handleMailToUrls(commandLine.pop());
+    });
+
+    app.whenReady().then(() => {
+        const secureSession = session.fromPartition(PARTITION, {
+            cache: false,
+        });
+
+        viewCreationAppStartup(secureSession);
+        const mailView = getMailView();
+        if (hasTrialEnded() && mailView) {
+            const url = getTrialEndURL();
+            mailView.webContents?.loadURL(url);
         }
 
-        log.info("Permission request rejected", _permission, host);
-        callback(false);
+        // Check updates
+        checkForUpdates();
+
+        // Trigger blank notification to force presence in settings
+        new Notification();
+
+        // Handle IPC calls coming from the destkop application
+        handleIPCCalls();
+
+        app.on("activate", () => {
+            if (isMac) {
+                getMainWindow()?.show();
+                return;
+            }
+
+            if (BrowserWindow.getAllWindows().length === 0) {
+                return viewCreationAppStartup(secureSession);
+            }
+        });
+
+        // Normally this only works on macOS and is not required for Windows
+        app.on("open-url", (_e, url) => {
+            handleMailToUrls(url);
+        });
+
+        // Security addition, reject all permissions except notifications
+        secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
+            try {
+                const { host, protocol } = new URL(webContents.getURL());
+                if (!isHostAllowed(host) || protocol !== "https:") {
+                    return callback(false);
+                }
+
+                if (ALLOWED_PERMISSIONS.includes(permission)) {
+                    return callback(true);
+                }
+
+                Logger.info("Permission request rejected", permission);
+                callback(false);
+            } catch (error) {
+                Logger.error("Permission request error", error);
+                callback(false);
+            }
+        });
     });
+}
+
+app.on("window-all-closed", () => {
+    if (!isMac) {
+        app.quit();
+    }
 });
 
 // Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
-    if (isMac) {
-        saveWindowsPosition(true);
+    const mainWindow = getMainWindow();
+    if (!mainWindow) {
+        return;
     }
+
+    if (!isMac) {
+        return;
+    }
+
+    saveWindowBounds(mainWindow);
+    mainWindow.destroy();
 });
 
 // Security addition
@@ -117,30 +167,25 @@ app.on("web-contents-created", (_ev, contents) => {
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
-        log.info("did-navigate-in-page");
-        if (!isHostAllowed(url, app.isPackaged)) {
+        Logger.info("did-navigate-in-page");
+        if (!isHostAllowed(url)) {
             return preventDefault(ev);
         }
 
         const sessionID = getSessionID(url);
-        if (isHostMail(url) && sessionID && !isNaN(sessionID as unknown as any)) {
-            log.info("Refresh calendar session", sessionID);
-            refreshCalendarPage(+sessionID);
+        const calendarView = getCalendarView();
+        const calendarSession = getSessionID(calendarView.webContents.getURL());
+        if (isHostMail(url) && sessionID && !calendarSession && !isNaN(sessionID as unknown as any)) {
+            Logger.info("Refresh calendar session", sessionID);
+            reloadCalendarWithSession(sessionID);
         }
     });
 
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
-        log.info("will-navigate");
-        if (isLogginOut(details.url)) {
-            log.info("User is login out, clearing application data");
-            // We add a small timeout to let the logout process finish
-            clearStorage(true, 500);
-            return details;
-        }
-
-        if (!isHostAllowed(details.url, app.isPackaged) && !isHostOAuth(details.url)) {
+        Logger.info("will-navigate");
+        if (!isHostAllowed(details.url) && !global.oauthProcess) {
             return preventDefault(details);
         }
 
@@ -151,34 +196,36 @@ app.on("web-contents-created", (_ev, contents) => {
         const { url } = details;
 
         if (isHostCalendar(url)) {
-            log.info("Open calendar window");
-            handleCalendarWindow(contents);
+            Logger.info("Open calendar window");
+            _ev.preventDefault();
+            updateView("calendar");
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
-            log.info("Open mail window");
-            handleMailWindow(contents);
+            Logger.info("Open mail window");
+            _ev.preventDefault();
+            updateView("mail");
             return { action: "deny" };
         }
 
         if (isHostAccount(url)) {
             // Upsell links should be opened in browser to avoid 3D secure issues
-            log.info("Account link");
+            Logger.info("Account link");
             if (isAccoutLite(url) || isUpsellURL(url)) {
-                log.info("Upsell link or lite account, open in browser", url);
                 shell.openExternal(url);
                 return { action: "deny" };
             }
+            updateView("account");
+            return { action: "deny" };
+        } else if (isHostAllowed(url)) {
+            Logger.info("Open link in app");
             return { action: "allow" };
-        } else if (isHostAllowed(url, app.isPackaged)) {
-            log.info("Open internal link", url);
-            return { action: "allow" };
-        } else if (isHostOAuth(url)) {
-            log.info("Open OAuth link", url);
+        } else if (global.oauthProcess) {
+            Logger.info("Open OAuth link in app");
             return { action: "allow" };
         } else {
-            log.info("Open external link", url);
+            Logger.info("Open link in browser");
             shell.openExternal(url);
         }
 

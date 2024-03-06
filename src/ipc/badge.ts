@@ -1,12 +1,16 @@
 import { app } from "electron";
-import log from "electron-log";
+import Logger from "electron-log";
 
 export const handleIPCBadge = (count: number) => {
-    log.info("handleIPCBadge, update badge value", count);
+    Logger.info("handleIPCBadge, update badge value", count);
 
     if (count) {
         app.setBadgeCount(count);
     } else {
         app.setBadgeCount(0);
     }
+};
+
+export const resetBadge = () => {
+    app.setBadgeCount(0);
 };

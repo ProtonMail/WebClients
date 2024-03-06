@@ -1,7 +1,9 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
-import { uninstallProton } from "../macos/uninstall";
-import { clearStorage, isMac, isWindows, openLogFolder } from "./helpers";
+import { uninstallProton } from "../../macos/uninstall";
+import { clearStorage, isMac, isWindows } from "../helpers";
+import { getMainWindow } from "../view/viewManagement";
+import { openLogFolder } from "./openLogFolder";
 
 interface MenuInsertProps {
     menu: MenuItemConstructorOptions[];
@@ -33,15 +35,15 @@ export const setApplicationMenu = (isPackaged: boolean) => {
 
     const temp: MenuItemConstructorOptions[] = [
         {
-            label: c("Menu").t`File`,
+            label: c("App menu").t`File`,
             submenu: [
                 {
-                    label: c("Menu").t`Clear application data`,
+                    label: c("App menu").t`Clear application data`,
                     type: "normal",
                     click: () => clearStorage(true),
                 },
                 {
-                    label: c("Menu").t`Show logs`,
+                    label: c("App menu").t`Show logs`,
                     type: "normal",
                     click: () => openLogFolder(),
                 },
@@ -51,7 +53,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: c("Menu").t`Edit`,
+            label: c("App menu").t`Edit`,
             submenu: [
                 { role: "undo" },
                 { role: "redo" },
@@ -64,10 +66,38 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: c("Menu").t`View`,
+            label: c("App menu").t`View`,
             submenu: [
-                { role: "reload" },
-                { role: "forceReload" },
+                {
+                    label: c("App menu").t`Reload`,
+                    accelerator: isMac ? "Cmd+R" : "Ctrl+R",
+                    click: () => {
+                        const mainWindow = getMainWindow();
+                        if (mainWindow) {
+                            const view = mainWindow.getBrowserView();
+                            if (view) {
+                                view.webContents.reload();
+                            } else {
+                                mainWindow.webContents.reload();
+                            }
+                        }
+                    },
+                },
+                {
+                    label: c("App menu").t`Force Reload`,
+                    accelerator: isMac ? "Cmd+Shift+R" : "Ctrl+Shift+R",
+                    click: () => {
+                        const mainWindow = getMainWindow();
+                        if (mainWindow) {
+                            const view = mainWindow.getBrowserView();
+                            if (view) {
+                                view.webContents.reloadIgnoringCache();
+                            } else {
+                                mainWindow.webContents.reloadIgnoringCache();
+                            }
+                        }
+                    },
+                },
                 { type: "separator" },
                 { role: "resetZoom" },
                 { role: "zoomIn" },
@@ -77,7 +107,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         },
         {
-            label: c("Menu").t`Window`,
+            label: c("App menu").t`Window`,
             submenu: [{ role: "minimize" }, { role: "close" }, { role: "zoom" }],
         },
     ];
@@ -93,7 +123,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "unhide" },
                 { type: "separator" },
                 {
-                    label: c("Menu").t`Uninstall Proton Mail`,
+                    label: c("App menu").t`Uninstall Proton Mail`,
                     type: "normal",
                     click: () => uninstallProton(),
                 },
@@ -118,7 +148,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             { role: "selectAll" },
             { type: "separator" },
             {
-                label: c("Menu").t`Speech`,
+                label: c("App menu").t`Speech`,
                 submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
             },
         ],
@@ -128,7 +158,24 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         insertInMenu({
             menu: temp,
             key: "View",
-            allOSEntries: [{ type: "separator" }, { role: "toggleDevTools" }],
+            allOSEntries: [
+                { type: "separator" },
+                {
+                    label: c("App menu").t`Toggle developers tools`,
+                    accelerator: isMac ? "Cmd+Alt+I" : "Ctrl+Shift+I",
+                    click: () => {
+                        const mainWindow = getMainWindow();
+                        if (mainWindow) {
+                            const view = mainWindow.getBrowserView();
+                            if (view) {
+                                view.webContents.toggleDevTools();
+                            } else {
+                                mainWindow.webContents.toggleDevTools();
+                            }
+                        }
+                    },
+                },
+            ],
         });
     }
 
