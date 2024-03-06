@@ -156,8 +156,6 @@ const MainContainer = () => {
     const app = appFromPathname || getToApp(undefined, user);
     const appSlug = getSlugFromApp(app);
 
-    const isStorageSplitEnabled = useFlag('SplitStorage');
-
     const routes = getRoutes({
         app,
         user,
@@ -180,7 +178,6 @@ const MainContainer = () => {
         isOrgTwoFactorEnabled,
         isEmailForwardingEnabled,
         isNotifInboxDesktopAppOn,
-        isStorageSplitEnabled,
     });
 
     useEffect(() => {

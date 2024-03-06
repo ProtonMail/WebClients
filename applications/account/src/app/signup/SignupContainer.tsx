@@ -8,7 +8,6 @@ import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/cont
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { BillingAddress } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -121,7 +120,6 @@ const SignupContainer = ({
     loginUrl,
 }: Props) => {
     const { APP_NAME } = useConfig();
-    const storageSplitEnabled = useFlag('SplitStorage');
 
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
     const isMailTrial = isMailTrialSignup(location);
@@ -286,7 +284,7 @@ const SignupContainer = ({
                             : undefined
                     )
                 ).then(({ Plans }) => Plans),
-                getFreePlan({ api: silentApi, storageSplitEnabled }),
+                getFreePlan({ api: silentApi }),
             ]);
 
             if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
