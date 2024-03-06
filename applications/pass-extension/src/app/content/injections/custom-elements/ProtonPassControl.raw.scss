@@ -4,6 +4,35 @@ $base-font-size: 14 !default;
 @import '@proton/styles/scss/lib/em';
 @import '../styles/reset';
 
+:host {
+	@include reset;
+
+	pointer-events: none;
+	position: absolute !important;
+
+	/* force reset element */
+	margin: 0 !important;
+	opacity: 1;
+	z-index: unset !important;
+	order: 0 !important;
+	block-size: 0 !important;
+	inline-size: 0 !important;
+	/* stylelint-disable-next-line */
+	float: left !important;
+	animation: none !important;
+
+	/* if parent display: flex */
+	flex: 0 0 0;
+
+	/* if parent display: grid */
+	grid-row: auto / span 1 !important;
+	grid-column: auto / span 1 !important;
+
+	> input {
+		pointer-events: all;
+	}
+}
+
 button {
 	@include reset;
 
