@@ -23,15 +23,12 @@ export default function ExpandButton({ className, expanded, onClick, style }: Pr
             shape="ghost"
             size="small"
             icon
-            className={clsx([
-                'shrink-0 flex items-center drive-sidebar--button-expand',
-                className,
-            ])}
+            className={clsx(['shrink-0 flex items-center drive-sidebar--button-expand', className])}
             onClick={handleClick}
             aria-expanded={expanded}
             title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
             style={style}
-            data-testid="sidebar-expand-folder"
+            data-testid={expanded ? 'sidebar-expanded-folder' : 'sidebar-expand-folder'}
         >
             <Icon
                 name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'}
