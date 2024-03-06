@@ -2,7 +2,11 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
+import {
+    canScheduleOrganizationPhoneCalls,
+    hasOrganizationSetup,
+    hasOrganizationSetupWithKeys,
+} from '@proton/shared/lib/helpers/organization';
 import {
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
@@ -15,9 +19,10 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
+    isScheduleCallsEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ user, organization, subscription }: Props) => {
+export const getOrganizationAppRoutes = ({ user, organization, subscription, isScheduleCallsEnabled }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -27,6 +32,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls(organization, user, isScheduleCallsEnabled);
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
@@ -88,6 +94,10 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                     : (hasActiveOrganizationKey || hasActiveOrganization) && organization && !!organization.RequiresKey,
                 subsections: [
                     {
+                        id: 'schedule-call',
+                        available: canSchedulePhoneCalls,
+                    },
+                    {
                         text: subSectionTitle,
                         id: 'organization',
                     },
@@ -115,6 +125,10 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 icon: 'users',
                 available: isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization,
                 subsections: [
+                    {
+                        id: 'schedule-call',
+                        available: canSchedulePhoneCalls,
+                    },
                     {
                         text: subSectionTitle,
                         id: 'name',
