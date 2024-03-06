@@ -1,17 +1,3 @@
-export const enum SettingMode {
-    UNLIMITED = 0,
-    LIMITED = 1,
-}
+import type { OrganizationGetResponse } from '@proton/pass/types/api/pass';
 
-export interface OrganizationSettings {
-    shareMode: SettingMode;
-    exportMode: SettingMode;
-}
-
-export interface OrganizationSettingsResponse {
-    CanUpdate: boolean;
-    Settings: {
-        ShareMode: SettingMode;
-        ExportMode: SettingMode;
-    };
-}
+export type OrganizationSettings = OrganizationGetResponse['Settings'];
