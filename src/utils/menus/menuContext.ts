@@ -1,7 +1,7 @@
 import { BrowserView, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
 import { c } from "ttag";
-import { isMac } from "../helpers";
-import { getMainWindow } from "../view/viewManagement";
+import { isMac, smartTruncateText } from "../helpers";
+import { getCurrentView, getMainWindow } from "../view/viewManagement";
 
 const getContextMenuSpellCheck = (props: ContextMenuParams, view: BrowserView) => {
     if (!props.dictionarySuggestions || props.dictionarySuggestions.length === 0) {
@@ -39,6 +39,14 @@ const getContextEditFlags = (props: ContextMenuParams) => {
             { role: "redo", enabled: props.editFlags.canRedo },
             { type: "separator" },
         );
+    }
+
+    if (isMac && props.editFlags.canCopy) {
+        const text = smartTruncateText(props.selectionText, 50);
+        template.push({
+            label: `Look Up “${text}”`,
+            click: () => getCurrentView()?.webContents.showDefinitionForSelection(),
+        });
     }
 
     if (props.editFlags.canCut) {
