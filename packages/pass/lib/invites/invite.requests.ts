@@ -173,9 +173,9 @@ export const getInviteRecommendations = async (
     ).Recommendation!;
 };
 
-/** Check if an address can be invited return allowed addresses */
-export const checkInviteAddresses = async (shareId: string, emails: string[]) => {
-    return (
+/** Check if an address can be invited - returns allowed addresses */
+export const checkInviteAddresses = async (shareId: string, emails: string[]) =>
+    (
         await Promise.all(
             chunk(emails, MAX_BATCH_ADDRESS_REQUEST).map(async (batch) => {
                 try {
@@ -191,4 +191,3 @@ export const checkInviteAddresses = async (shareId: string, emails: string[]) =>
             })
         )
     ).flat();
-};

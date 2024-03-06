@@ -1,5 +1,7 @@
 import { all } from 'redux-saga/effects';
 
+import inviteAddressesValidate from '@proton/pass/store/sagas/invites/invite-addresses-validate.saga';
+
 import type { RootSagaOptions } from '../types';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
@@ -65,9 +67,10 @@ export function* workerRootSaga(options: RootSagaOptions) {
             events,
             featureFlags,
             inviteAccept,
+            inviteAddressesValidate,
             inviteCreate,
-            inviteReject,
             inviteRecommendations,
+            inviteReject,
             inviteRemove,
             inviteResend,
             itemAutofilled,

@@ -7,6 +7,7 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import {
     inviteAcceptRequest,
+    inviteAddressesValidateRequest,
     inviteCreateRequest,
     inviteRecommendationsRequest,
     inviteRejectRequest,
@@ -251,6 +252,30 @@ export const inviteRecommendationsFailure = createAction(
         withNotification({
             type: 'error',
             text: c('Error').t`Could not load recommendations at the moment.`,
+            error,
+        })({ payload: {} })
+    )
+);
+
+export const inviteAddressesValidateIntent = createAction(
+    'invite::addresses::validate::intent',
+    (payload: { shareId: string; emails: string[] }, requestId: string) =>
+        withRequest({ type: 'start', id: inviteAddressesValidateRequest(requestId) })({ payload })
+);
+
+export const inviteAddressesValidateSuccess = createAction(
+    'invite::addresses::validate::success',
+    withRequestSuccess((payload: Record<string, boolean>) => ({ payload }), {
+        data: (payload) => payload,
+    })
+);
+
+export const inviteAddressesValidateFailure = createAction(
+    'invite::addresses::validate::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Could not validate addresses at the moment.`,
             error,
         })({ payload: {} })
     )
