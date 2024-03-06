@@ -18,7 +18,6 @@ export const selectUserSettings = ({ user: { userSettings } }: State) => userSet
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
 export const selectUserVerified = ({ user }: State) =>
     user.user?.Type !== UserType.EXTERNAL || user.userSettings?.Email?.Status === SETTINGS_STATUS.VERIFIED;
-export const selectUserOrganization = ({ user: { organization } }: State) => organization;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `business` -> Plan: Business | Trial: null | Limits: none

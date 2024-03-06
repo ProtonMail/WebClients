@@ -3,6 +3,7 @@ import { put, select, takeLatest } from 'redux-saga/effects';
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
@@ -13,10 +14,11 @@ import {
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
+import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import { type Maybe } from '@proton/pass/types';
+import { type Maybe, type MaybeNull, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -49,9 +51,11 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
 
         const snapshot = cache?.snapshot;
         const userState: HydratedUserState = yield cache?.state.user ?? getUserData();
-        const user = userState.user;
-        const addresses = Object.values(userState.addresses);
-        const currentState: State = yield select();
+
+        const b2b = userState.plan.Type === PlanType.business;
+        const organization: MaybeNull<OrganizationState> = b2b
+            ? cache?.state?.organization ?? (yield getOrganization())
+            : null;
 
         /** Note: Settings may have been modified offline, thus they might not align
          * with the cached state settings. Since caching requests cannot be triggered
@@ -59,16 +63,26 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         const settings: Partial<ProxiedSettings> = (yield getSettings()) ?? {};
         settings.locale = cache?.state.settings.locale ?? userState.userSettings?.Locale;
 
+        const currentState: State = yield select();
+
         const state: State = cache?.state
             ? config.merge(currentState, partialMerge(cache?.state, { settings })) /* merge cached state */
-            : partialMerge(currentState, { user: userState, settings }); /* hydrate current state */
+            : partialMerge(currentState, { user: userState, settings, organization }); /* hydrate current state */
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
          * cases, wait for network online in order to resume session */
-        if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
-        yield put(stateHydrate(state));
+        if (keyPassword) {
+            yield PassCrypto.hydrate({
+                user: userState.user,
+                keyPassword,
+                addresses: Object.values(userState.addresses),
+                snapshot,
+                clear: true,
+            });
+        }
 
+        yield put(stateHydrate(state));
         return cache?.state !== undefined && cache?.snapshot !== undefined;
     } catch {
         yield config.onError?.();

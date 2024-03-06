@@ -51,5 +51,5 @@ export const userFeaturesRequest = (userId: string) => `user::features::${userId
 
 export const reportBugRequest = (id: string) => `report::bug::${id}`;
 
-export const organizationSettingsRequest = () => `organizationSettings::get`;
-export const organizationSettingsEditRequest = () => `organizationSettings::edit`;
+export const organizationSettingsRequest = () => `organization::settings::get`;
+export const organizationSettingsEditRequest = () => `organization::settings::edit`;

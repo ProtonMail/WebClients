@@ -9,7 +9,7 @@ import alias from './alias';
 import importReducer from './import';
 import invites from './invites';
 import items from './items';
-import organizationSettings from './organization-settings';
+import organization from './organization';
 import popup from './popup';
 import pwHistory from './pw-history';
 import request from './request';
@@ -32,13 +32,13 @@ export const reducerMap = {
     import: importReducer,
     invites,
     items,
+    organization,
     popup,
     pwHistory,
     request,
     settings,
     shares,
     user,
-    organizationSettings,
 };
 export const rootReducer = combineReducers(reducerMap);
 
