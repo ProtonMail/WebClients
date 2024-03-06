@@ -1,0 +1,36 @@
+{
+    "name": "native",
+    "version": "0.0.0",
+    "license": "MIT",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "artifacts": "napi artifacts",
+        "build": "napi build --release --platform --js false",
+        "build:debug": "napi build --platform --js false",
+        "build:multi": "node build.js",
+        "prepublishOnly": "napi prepublish -t npm",
+        "test": "cargo test",
+        "universal": "napi universal",
+        "version": "napi version"
+    },
+    "devDependencies": {
+        "@napi-rs/cli": "^2.18.0"
+    },
+    "engines": {
+        "node": ">= 10"
+    },
+    "napi": {
+        "name": "native",
+        "triples": {
+            "defaults": false,
+            "additional": [
+                "aarch64-apple-darwin",
+                "universal-apple-darwin",
+                "aarch64-pc-windows-msvc",
+                "x86_64-pc-windows-msvc",
+                "x86_64-apple-darwin"
+            ]
+        }
+    }
+}

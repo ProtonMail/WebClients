@@ -5,8 +5,6 @@ import {
     type Session,
     Tray,
     app,
-    clipboard,
-    ipcMain,
     nativeImage,
     nativeTheme,
     session,
@@ -27,10 +25,13 @@ import { isSquirrelStartup } from './startup';
 import { certificateVerifyProc } from './tls';
 import { SourceType, updateElectronApp } from './update';
 
+import './lib/biometrics';
+import './lib/clipboard';
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (isSquirrelStartup()) app.quit();
 
-let mainWindow: BrowserWindow | null;
+export let mainWindow: BrowserWindow | null;
 let isAppQuitting = false;
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
@@ -287,11 +288,4 @@ app.addListener('window-all-closed', () => {
 const windowsAppId = 'com.squirrel.proton_pass_desktop.ProtonPass';
 app.addListener('will-finish-launching', () => {
     if (process.platform === 'win32') app.setAppUserModelId(windowsAppId);
-});
-
-let clipboardTimer: NodeJS.Timeout;
-ipcMain.handle('clipboard:writeText', (_event, text) => {
-    clearTimeout(clipboardTimer);
-    clipboard.writeText(text);
-    clipboardTimer = setTimeout(clipboard.clear, 30_000);
 });
