@@ -237,7 +237,7 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
             text: c('Title').t`Single sign-on`,
             to: '/single-sign-on',
             icon: 'key',
-            available: hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
+            available: hasVpnBusinessPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
         },
     };
 };
