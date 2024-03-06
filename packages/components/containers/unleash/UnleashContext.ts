@@ -37,6 +37,8 @@ enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
     DriveSharingDevelopment = 'DriveSharingDevelopment',
+    DriveDownloadScan = 'DriveDownloadScan',
+    DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
 }
 
 enum MailFeatureFlag {

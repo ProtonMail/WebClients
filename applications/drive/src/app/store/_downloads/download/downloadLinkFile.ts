@@ -3,8 +3,12 @@ import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
+import { sendErrorReport } from '../../../utils/errorHandling';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
+import { decryptExtendedAttributes } from '../../_links/extendedAttributes';
 import { DecryptFileKeys, DownloadCallbacks, DownloadStreamControls, LinkDownload } from '../interface';
 import initDownloadBlocks from './downloadBlocks';
 
@@ -13,8 +17,13 @@ import initDownloadBlocks from './downloadBlocks';
  * This epxects only file blocks, not thumbnail block, thus detached
  * signature is required. To download thumbnail, use thumbnail helper.
  */
-export default function initDownloadLinkFile(link: LinkDownload, callbacks: DownloadCallbacks): DownloadStreamControls {
+export default function initDownloadLinkFile(
+    link: LinkDownload,
+    callbacks: DownloadCallbacks,
+    options?: { virusScan?: boolean }
+): DownloadStreamControls {
     let keysPromise: Promise<DecryptFileKeys> | undefined;
+    let scanResult: (SharedFileScan & { Hash: string }) | undefined;
 
     const transformBlockStream = async (
         abortSignal: AbortSignal,
@@ -69,10 +78,59 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
         }
     };
 
+    const scanHash = async (abortSignal: AbortSignal, Hash: string) => {
+        const response = await callbacks.scanFilesHash?.(abortSignal, [Hash]);
+        if (response?.Code === 1000) {
+            if (response?.Errors.length > 0 && callbacks?.onScanIssue) {
+                await callbacks.onScanIssue(abortSignal, new Error(response.Errors[0].Error));
+            }
+            scanResult = { ...response, Hash };
+        }
+    };
+
+    const scanForVirus = async (abortSignal: AbortSignal, encryptedXAttr: string) => {
+        if (!keysPromise) {
+            keysPromise = callbacks.getKeys(abortSignal, link);
+        }
+
+        const keys = await keysPromise;
+
+        const { xattrs } = await decryptExtendedAttributes(
+            encryptedXAttr,
+            keys.privateKey,
+            keys.addressPublicKeys || []
+        );
+        const xAttrHash = xattrs?.Common?.Digests?.SHA1;
+        if (xAttrHash) {
+            await scanHash(abortSignal, xAttrHash);
+        }
+    };
+
+    const checkFileHash = async (abortSignal: AbortSignal, Hash: string) => {
+        if (scanResult?.Hash === Hash) {
+            return;
+        }
+
+        // If we have hash from xAttributes which doesn't match computed hash, lets report to Sentry.
+        // Revision is immutable so if hash suddenly differ, there is either some bug we should care about,
+        // or someone messing with our API, maybe 3rd party client.
+        if (!!scanResult?.Hash && scanResult?.Hash !== Hash) {
+            const { shareId, linkId } = link;
+            sendErrorReport(
+                new EnrichedError('Computed hash does not match XAttr', {
+                    tags: { shareId, linkId },
+                })
+            );
+        }
+        await scanHash(abortSignal, Hash);
+    };
+
     const controls = initDownloadBlocks(link.name, {
         ...callbacks,
         getBlocks: (abortSignal, pagination) =>
             callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination, link.revisionId),
+        scanForVirus: options?.virusScan ? scanForVirus : undefined,
+        checkFileHash: options?.virusScan ? checkFileHash : undefined,
         transformBlockStream,
         checkManifestSignature,
         onProgress: (bytes: number) => callbacks.onProgress?.([link.linkId], bytes),

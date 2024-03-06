@@ -56,16 +56,22 @@ const ABUSE_CATEGORIES: AbuseCategory[] = [
 
 const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCateroryType[] = ['copyright', 'stolen-data'];
 
-const ReportAbuseModal = ({ onClose, linkInfo, onSubmit, ...modalProps }: AbuseFormProps & ModalStateProps) => {
+const ReportAbuseModal = ({
+    onClose,
+    linkInfo,
+    onSubmit,
+    prefilled,
+    ...modalProps
+}: AbuseFormProps & ModalStateProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
 
     const { validator, onFormSubmit } = useFormErrors();
     const [model, setModel] = useState(() => {
         return {
-            Category: null as null | AbuseCateroryType,
-            Email: '',
-            Comment: '',
+            Category: prefilled?.Category || (null as null | AbuseCateroryType),
+            Email: prefilled?.Email || '',
+            Comment: prefilled?.Comment || '',
         };
     });
 

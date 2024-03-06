@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/react';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
@@ -33,6 +34,7 @@ const createGetBlocksResponse = (blocks: DriveFileBlock[], manifestSignature = '
         blocks,
         manifestSignature,
         thumbnailHashes: [''],
+        xAttr: 'SomeEncoded',
     };
 };
 
@@ -85,6 +87,10 @@ describe('initDownload', () => {
         responseDelay = 0;
     });
 
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     it('should download data from remote server using block metadata', async () => {
         const downloadControls = initDownloadBlocks(
             'filename',
@@ -117,6 +123,47 @@ describe('initDownload', () => {
         const stream = downloadControls.start();
         const buffer = mergeUint8Arrays(await streamToBuffer(stream));
         expect(buffer).toEqual(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+    });
+
+    it('should call scanForVirus if passed as callback', async () => {
+        const mockScanForVirus = jest.fn();
+        const mockCheckFileHash = jest.fn();
+        const downloadControls = initDownloadBlocks(
+            'filename',
+            {
+                getBlocks: async () =>
+                    createGetBlocksResponse([
+                        {
+                            Index: 1,
+                            BareURL: 'url:1',
+                            Token: '1',
+                            Hash: 'aewdsh',
+                        },
+                        {
+                            Index: 2,
+                            BareURL: 'url:2',
+                            Token: '2',
+                            Hash: 'aewdsh',
+                        },
+                        {
+                            Index: 3,
+                            BareURL: 'url:3',
+                            Token: '3',
+                            Hash: 'aewdsh',
+                        },
+                    ]),
+                transformBlockStream: mockTransformBlockStream,
+                scanForVirus: mockScanForVirus,
+                checkFileHash: mockCheckFileHash,
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        mergeUint8Arrays(await streamToBuffer(stream));
+        await waitFor(() => {
+            expect(mockScanForVirus.mock.calls).toHaveLength(1);
+            expect(mockCheckFileHash.mock.calls).toHaveLength(1);
+        });
     });
 
     it('should discard downloaded data and finish download on cancel', async () => {
