@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { ThemeColorUnion } from '@proton/colors/types';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
-import { DecryptedLink, useDownload } from '../../../store';
+import { DecryptedLink, useDownload, useDownloadScanFlag } from '../../../store';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
@@ -16,11 +17,24 @@ export interface DownloadButtonProps {
     rootItem: DecryptedLink;
     items: PublicLink[];
     className?: string;
+    isScanAndDownload?: boolean;
+    color?: ThemeColorUnion;
+    disabled?: boolean;
+    hideIcon?: boolean;
 }
-export function DownloadButton({ items, className, rootItem }: DownloadButtonProps) {
+export function DownloadButton({
+    items,
+    className,
+    rootItem,
+    isScanAndDownload,
+    color,
+    disabled,
+    hideIcon,
+}: DownloadButtonProps) {
     const { token } = usePublicToken();
     const selectionControls = useSelection();
     const { downloads, download, clearDownloads } = useDownload();
+    const isDownloadScanEnabled = useDownloadScanFlag();
 
     useDownloadNotifications(downloads);
 
@@ -35,30 +49,54 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
             ? selectedItems.map((link) => ({ ...link, shareId: token }))
             : [{ ...rootItem, shareId: token }];
 
-        void download(downloadLinks);
+        const options = isScanAndDownload && isDownloadScanEnabled ? { virusScan: true } : undefined;
+        void download(downloadLinks, options);
     };
 
-    const isDownloading = downloads.some((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
+    const { isDisabled, isDownloading } = downloads.reduce(
+        (acc, transfer) => {
+            const isLoading = isTransferActive(transfer) || isTransferPaused(transfer);
+            if (isLoading) {
+                return {
+                    isDisabled: true,
+                    // The following prop is used to handle Scan and Download.
+                    // we want to show spinner only for the button that has been clicked,
+                    // but the other has to be disabled at the same time
+                    isDownloading: isScanAndDownload ? !!transfer?.options?.virusScan : !transfer?.options?.virusScan,
+                };
+            }
+            return acc;
+        },
+        { isDisabled: false, isDownloading: false }
+    );
 
-    let idleText: string;
+    let buttonText: string = '';
 
     if (rootItem.isFile) {
-        idleText = c('Action').t`Download`;
+        buttonText = isScanAndDownload ? c('Action').t`Scan & Download` : c('Action').t`Download`;
     } else {
-        idleText = count ? c('Action').t`Download (${count})` : c('Action').t`Download all`;
+        if (count) {
+            buttonText = isScanAndDownload
+                ? c('Action').t`Scan & Download (${count})`
+                : c('Action').t`Download (${count})`;
+        } else {
+            buttonText = isScanAndDownload ? c('Action').t`Scan & Download all` : c('Action').t`Download all`;
+        }
     }
 
-    const inProgressText = c('Label').t`Downloading`;
+    const buttonColor = color || (isDownloading ? 'weak' : 'norm');
 
     return (
         <Button
             className={clsx(['self-center my-auto', className])}
-            color={isDownloading ? 'weak' : 'norm'}
+            color={buttonColor}
             onClick={handleDownload}
             loading={isDownloading}
+            data-testid={`${isScanAndDownload ? 'scan-' : ''}download-button`}
+            disabled={isDisabled || disabled}
         >
-            {isDownloading ? inProgressText : idleText}
-            {!isDownloading ? <Icon name="arrow-down-line" className="ml-2" /> : null}
+            {buttonText}
+            {!isDownloading && !hideIcon ? <Icon name="arrow-down-line" className="ml-2" /> : null}
         </Button>
     );
 }

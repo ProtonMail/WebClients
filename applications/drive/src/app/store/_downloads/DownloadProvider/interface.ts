@@ -20,6 +20,8 @@ export interface Download {
     // exactly has the issue.
     signatureIssueLink?: LinkDownload;
     signatureStatus?: VERIFICATION_STATUS;
+    scanIssueError?: Error;
+    options?: { virusScan?: boolean };
 }
 
 export interface DownloadProgresses {
@@ -43,6 +45,7 @@ export type UpdateData = {
     error?: Error;
     signatureIssueLink?: LinkDownload;
     signatureStatus?: VERIFICATION_STATUS;
+    scanIssueError?: Error;
 };
 export type UpdateCallbackParams = {
     id: string;

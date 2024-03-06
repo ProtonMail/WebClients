@@ -29,14 +29,14 @@ export default function useDownloadQueue() {
         return downloads.find((download) => isTransferPending(download));
     }, [downloads]);
 
-    const add = useCallback(async (links: LinkDownload[]): Promise<void> => {
+    const add = useCallback(async (links: LinkDownload[], options?: { virusScan?: boolean }): Promise<void> => {
         return new Promise((resolve, reject) => {
             setDownloads((downloads) => {
                 if (isAlreadyDownloading(downloads, links)) {
                     reject(new DownloadUserError(generateAlreadyDownloadingError(links)));
                     return downloads;
                 }
-                const download = generateDownload(links);
+                const download = generateDownload(links, options);
                 resolve();
                 return [...downloads, download];
             });
@@ -47,7 +47,7 @@ export default function useDownloadQueue() {
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { size, error, signatureIssueLink, signatureStatus }: UpdateData = {},
+            { size, error, signatureIssueLink, signatureStatus, scanIssueError }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -67,6 +67,7 @@ export default function useDownloadQueue() {
                     download.error = error;
                     download.signatureIssueLink = signatureIssueLink;
                     download.signatureStatus = signatureStatus;
+                    download.scanIssueError = scanIssueError;
                 }
                 return download;
             };
@@ -159,13 +160,14 @@ function generateAlreadyDownloadingError(links: LinkDownload[]): string {
     return c('Error').t`File "${name}" is already downloading`;
 }
 
-function generateDownload(links: LinkDownload[]): Download {
+function generateDownload(links: LinkDownload[], options?: { virusScan?: boolean }): Download {
     return {
         id: generateUID(),
         startDate: new Date(),
         state: TransferState.Pending,
         links,
         meta: generateDownloadMeta(links),
+        options,
     };
 }
 

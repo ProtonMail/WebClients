@@ -1,8 +1,8 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { querySharedURLFileRevision } from '@proton/shared/lib/api/drive/sharing';
+import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import { SharedFileScan, SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { usePublicSession } from '../_api';
 import { DecryptedLink, useLink, usePublicLinksListing } from '../_links';
@@ -23,7 +23,7 @@ import {
  * sessions.
  */
 export default function usePublicDownload() {
-    const { request } = usePublicSession();
+    const { request, getSessionInfo } = usePublicSession();
     const { getLinkPrivateKey, getLinkSessionKey } = useLink();
     const { loadChildren, getCachedChildren } = usePublicLinksListing();
 
@@ -38,7 +38,7 @@ export default function usePublicDownload() {
         token: string,
         linkId: string,
         pagination: Pagination
-    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }> => {
+    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }> => {
         const { Revision } = await request<{ Revision: SharedURLRevision }>(
             querySharedURLFileRevision(token, linkId, pagination),
             abortSignal
@@ -47,7 +47,21 @@ export default function usePublicDownload() {
             blocks: Revision.Blocks,
             thumbnailHashes: Revision.Thumbnails.map((Thumbnail) => Thumbnail.Hash),
             manifestSignature: Revision.ManifestSignature,
+            xAttr: Revision.XAttr,
         };
+    };
+
+    const scanFilesHash = async (abortSignal: AbortSignal, hashes: string[]): Promise<SharedFileScan | undefined> => {
+        const sessionInfo = getSessionInfo();
+        if (!sessionInfo) {
+            return;
+        }
+        const checkResult = await request<SharedFileScan>(
+            querySharedURLSecurity(sessionInfo.token, hashes),
+            abortSignal
+        );
+
+        return checkResult;
     };
 
     const getKeys = async (abortSignal: AbortSignal, token: string, linkId: string) => {
@@ -69,20 +83,27 @@ export default function usePublicDownload() {
     const initDownload = (
         name: string,
         list: LinkDownload[],
-        eventCallbacks: DownloadEventCallbacks
+        eventCallbacks: DownloadEventCallbacks,
+        options?: { virusScan?: boolean }
     ): DownloadControls => {
-        return initDownloadPure(name, list, {
-            getChildren,
-            getBlocks,
-            getKeys: (abortSignal: AbortSignal, link: LinkDownload) =>
-                getKeys(
-                    abortSignal,
-                    link.shareId, // Token in this context.
-                    link.linkId
-                ),
-            ...eventCallbacks,
-            onSignatureIssue: undefined,
-        });
+        return initDownloadPure(
+            name,
+            list,
+            {
+                getChildren,
+                getBlocks,
+                getKeys: (abortSignal: AbortSignal, link: LinkDownload) =>
+                    getKeys(
+                        abortSignal,
+                        link.shareId, // Token in this context.
+                        link.linkId
+                    ),
+                scanFilesHash,
+                ...eventCallbacks,
+                onSignatureIssue: undefined,
+            },
+            options
+        );
     };
 
     const downloadThumbnail = async (
@@ -117,6 +138,7 @@ export default function usePublicDownload() {
             getKeys: async (abortSignal: AbortSignal, link: LinkDownload) => {
                 return getKeys(abortSignal, link.shareId, link.linkId);
             },
+            scanFilesHash,
             ...eventCallbacks,
         });
         const stream = controls.start();

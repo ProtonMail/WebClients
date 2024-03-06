@@ -8,6 +8,7 @@ import usePublicDownload from './usePublicDownload';
 export { useDownloadProvider } from './DownloadProvider';
 export { useThumbnailsDownload } from './ThumbnailDownloadProvider';
 export { default as useDownload } from './useDownload';
+export { useDownloadScanFlag } from './useDownloadScanFeatureFlag';
 
 export function DownloadsProvider({ children }: { children: React.ReactNode }) {
     const { initDownload, downloadThumbnail } = useDownload();
