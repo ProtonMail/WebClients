@@ -208,7 +208,7 @@ export const setupMemberKeyV2 = async ({
 };
 
 export const getCanGenerateMemberKeys = (member: tsMember | undefined) => {
-    return member?.Private === MEMBER_PRIVATE.READABLE;
+    return member?.Private === MEMBER_PRIVATE.READABLE && !member.SSO;
 };
 
 export const getShouldSetupMemberKeys = (member: tsMember | undefined) => {
