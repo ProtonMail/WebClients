@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC } from 'react';
 
 import { Logo, PassForBusinessLogo } from '@proton/components/components';
-import { useOrganization } from '@proton/pass/components/Settings/Organization/OrganizationProvider';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -12,7 +12,7 @@ import './Sidebar.scss';
 type Props = { expanded: boolean; onToggle: () => void };
 
 export const Sidebar: FC<PropsWithChildren<Props>> = ({ children, expanded = false, onToggle }) => {
-    const { isB2B } = useOrganization();
+    const organization = useOrganization();
 
     return (
         <>
@@ -23,7 +23,7 @@ export const Sidebar: FC<PropsWithChildren<Props>> = ({ children, expanded = fal
             >
                 <h1 className="sr-only">{getAppName(APPS.PROTONPASS)}</h1>
                 <div className="w-full logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
-                    {isB2B ? <PassForBusinessLogo /> : <Logo appName={APPS.PROTONPASS} />}
+                    {organization ? <PassForBusinessLogo /> : <Logo appName={APPS.PROTONPASS} />}
                 </div>
 
                 <div className="mt-1 md:mt-0" aria-hidden="true" />

@@ -6,18 +6,19 @@ import { c } from 'ttag';
 import { Tabs } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import {
+    type OrganizationContextValue,
+    useOrganization,
+} from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
-import { useOrganization } from '@proton/pass/components/Settings/Organization/OrganizationProvider';
+import { Organization } from '@proton/pass/components/Settings/Organization';
 import { AccountPath } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import { type Unpack } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+import type { MaybeNull, Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Export } from './Tabs/Export';
 import { General } from './Tabs/General';
-import { Organization } from './Tabs/Organization';
 import { Security } from './Tabs/Security';
 import { Support } from './Tabs/Support';
 
@@ -25,7 +26,7 @@ import './Settings.scss';
 
 type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>> & { hash: string };
 
-const getSettingsTabs = (isB2BAdmin: boolean = false, enableOrganization: boolean = false): SettingTab[] => {
+const getSettingsTabs = (organization: MaybeNull<OrganizationContextValue>): SettingTab[] => {
     const tabs = [
         {
             hash: 'general',
@@ -58,7 +59,7 @@ const getSettingsTabs = (isB2BAdmin: boolean = false, enableOrganization: boolea
             content: <></>,
         },
     ];
-    if (enableOrganization && isB2BAdmin) {
+    if (organization?.canUpdate) {
         tabs.push({
             hash: 'organization',
             title: c('Label').t`Organization`,
@@ -79,10 +80,9 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
-    const { isB2BAdmin } = useOrganization();
-    const enableOrganization = useFeatureFlag(PassFeature.PassEnableOrganization) || true;
+    const organization = useOrganization();
 
-    const tabs = useMemo(() => getSettingsTabs(isB2BAdmin, enableOrganization), [isB2BAdmin, enableOrganization]);
+    const tabs = useMemo(() => getSettingsTabs(organization), [organization]);
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
     const handleOnChange = (nextTab: number) => {
