@@ -10,7 +10,7 @@ export { useUserSettings, UserSettingsProvider } from './_settings';
 export { useDefaultShare, usePublicShare, useLockedVolume, useShareUrl } from './_shares';
 export { useUpload, useFileUploadInput, useFolderUploadInput, mimeTypeFromFile } from './_uploads';
 export * from './_uploads/interface';
-export { useDownloadProvider as useDownload, useThumbnailsDownload } from './_downloads';
+export { useDownloadProvider as useDownload, useThumbnailsDownload, useDownloadScanFlag } from './_downloads';
 export * from './_downloads/interface';
 export * from './_links/interface';
 export * from './_shares/interface';

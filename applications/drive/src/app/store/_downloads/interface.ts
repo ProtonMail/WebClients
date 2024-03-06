@@ -2,6 +2,7 @@ import { ReadableStream } from 'web-streams-polyfill';
 
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { DecryptedLink, SignatureIssues } from '../_links';
 
@@ -47,6 +48,7 @@ export type DownloadEventCallbacks = {
     // Called when network error happened.
     // The transfer is paused and it awaits for instructuion to continue.
     onNetworkError?: OnErrorCallback;
+    onScanIssue?: OnScanIssueCallback;
     // Called when the whole transfer is finished.
     onFinish?: () => void;
 };
@@ -55,6 +57,7 @@ export type DownloadBaseCallbacks = {
     getChildren: GetChildrenCallback;
     getBlocks: GetBlocksCallback;
     getKeys: GetKeysCallback;
+    scanFilesHash?: ScanFilesHashCallback;
 };
 
 export type DownloadCallbacks = DownloadEventCallbacks & DownloadBaseCallbacks;
@@ -78,7 +81,8 @@ export type OnSignatureIssueCallback = (
     link: LinkDownload,
     signatureIssues: SignatureIssues
 ) => Promise<void>;
-type OnErrorCallback = (err: Error) => void;
+export type OnScanIssueCallback = (abortSignal: AbortSignal, err: any) => Promise<void>;
+export type OnErrorCallback = (err: Error) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,
@@ -94,9 +98,11 @@ type GetBlocksCallback = (
     shareId: string,
     linkId: string,
     pagination: Pagination,
-    revisionId?: string
-) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }>;
+    revisionId?: string,
+    options?: { virusScan?: boolean }
+) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }>;
 type GetKeysCallback = (abortSignal: AbortSignal, link: LinkDownload) => Promise<DecryptFileKeys>;
+type ScanFilesHashCallback = (abortSignal: AbortSignal, hashes: string[]) => Promise<SharedFileScan | undefined>;
 
 export type Pagination = { FromBlockIndex: number; PageSize: number };
 export type DecryptFileKeys = {
@@ -108,7 +114,8 @@ export type DecryptFileKeys = {
 export type InitDownloadCallback = (
     name: string,
     list: LinkDownload[],
-    eventCallbacks: DownloadEventCallbacks
+    eventCallbacks: DownloadEventCallbacks,
+    options?: { virusScan?: boolean }
 ) => DownloadControls;
 export type DownloadSignatureIssueModal = React.FunctionComponent<DownloadSignatureIssueModalProps>;
 
