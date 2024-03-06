@@ -61,63 +61,83 @@ if (app.isDefaultProtocolClient("mailto")) {
 } else {
     Logger.info("App is not default mailto client");
 }
-app.whenReady().then(() => {
-    const secureSession = session.fromPartition(PARTITION, {
-        cache: false,
-    });
 
-    viewCreationAppStartup(secureSession);
-    const mailView = getMailView();
-    if (hasTrialEnded() && mailView) {
-        const url = getTrialEndURL();
-        mailView.webContents?.loadURL(url);
-    }
-
-    // Check updates
-    checkForUpdates();
-
-    // Trigger blank notification to force presence in settings
-    new Notification();
-
-    // Handle IPC calls coming from the destkop application
-    handleIPCCalls();
-
-    app.on("activate", () => {
-        if (isMac) {
-            getMainWindow()?.show();
-            return;
+const gotTheLock = app.requestSingleInstanceLock();
+if (!gotTheLock) {
+    Logger.info("App is already running");
+    app.quit();
+} else {
+    app.on("second-instance", (_ev, commandLine) => {
+        Logger.info("Second instance called");
+        const mainWindow = getMainWindow();
+        if (mainWindow) {
+            if (mainWindow.isMinimized()) {
+                mainWindow.restore();
+            }
+            mainWindow.focus();
         }
 
-        if (BrowserWindow.getAllWindows().length === 0) {
-            return viewCreationAppStartup(secureSession);
+        handleMailToUrls(commandLine.pop());
+    });
+
+    app.whenReady().then(() => {
+        const secureSession = session.fromPartition(PARTITION, {
+            cache: false,
+        });
+
+        viewCreationAppStartup(secureSession);
+        const mailView = getMailView();
+        if (hasTrialEnded() && mailView) {
+            const url = getTrialEndURL();
+            mailView.webContents?.loadURL(url);
         }
-    });
 
-    // Normally this only works on macOS and is not required for Windows
-    app.on("open-url", (_e, url) => {
-        handleMailToUrls(url);
-    });
+        // Check updates
+        checkForUpdates();
 
-    // Security addition, reject all permissions except notifications
-    secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
-        try {
-            const { host, protocol } = new URL(webContents.getURL());
-            if (!isHostAllowed(host) || protocol !== "https:") {
-                return callback(false);
+        // Trigger blank notification to force presence in settings
+        new Notification();
+
+        // Handle IPC calls coming from the destkop application
+        handleIPCCalls();
+
+        app.on("activate", () => {
+            if (isMac) {
+                getMainWindow()?.show();
+                return;
             }
 
-            if (ALLOWED_PERMISSIONS.includes(permission)) {
-                return callback(true);
+            if (BrowserWindow.getAllWindows().length === 0) {
+                return viewCreationAppStartup(secureSession);
             }
+        });
 
-            Logger.info("Permission request rejected", permission);
-            callback(false);
-        } catch (error) {
-            Logger.error("Permission request error", error);
-            callback(false);
-        }
+        // Normally this only works on macOS and is not required for Windows
+        app.on("open-url", (_e, url) => {
+            handleMailToUrls(url);
+        });
+
+        // Security addition, reject all permissions except notifications
+        secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
+            try {
+                const { host, protocol } = new URL(webContents.getURL());
+                if (!isHostAllowed(host) || protocol !== "https:") {
+                    return callback(false);
+                }
+
+                if (ALLOWED_PERMISSIONS.includes(permission)) {
+                    return callback(true);
+                }
+
+                Logger.info("Permission request rejected", permission);
+                callback(false);
+            } catch (error) {
+                Logger.error("Permission request error", error);
+                callback(false);
+            }
+        });
     });
-});
+}
 
 app.on("window-all-closed", () => {
     if (!isMac) {
