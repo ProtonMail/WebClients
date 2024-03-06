@@ -1,6 +1,7 @@
 import { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
@@ -199,6 +200,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
+
+    const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
+    const canSchedulePhoneCalls = !!organization && user.isAdmin && isScheduleCallsEnabled;
 
     return (
         <>
@@ -449,6 +453,21 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             </a>
                         </div>
 
+                        {canSchedulePhoneCalls && (
+                            <div className="block">
+                                <button
+                                    type="button"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
+                                    onClick={() => {
+                                        close();
+                                    }}
+                                    data-testid="userdropdown:help:button:schedule-call"
+                                >
+                                    {c('Action').t`Schedule a call`}
+                                </button>
+                            </div>
+                        )}
+
                         {onOpenChat && (
                             <div className="block">
                                 <button
@@ -458,7 +477,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                         close();
                                         onOpenChat();
                                     }}
-                                    data-testid="userdropdown:help:button:bugreport"
+                                    data-testid="userdropdown:help:button:chat"
                                 >
                                     {c('Action').t`Chat with us`}
                                 </button>
