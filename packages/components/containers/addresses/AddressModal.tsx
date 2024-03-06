@@ -20,6 +20,7 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import { Address, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
 import {
+    getCanGenerateMemberKeys,
     getShouldSetupMemberKeys,
     missingKeysMemberProcess,
     missingKeysSelfProcess,
@@ -102,7 +103,7 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const shouldGenerateKeys =
-        !selectedMember || selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE;
+        !selectedMember || Boolean(selectedMember.Self) || getCanGenerateMemberKeys(selectedMember);
 
     const shouldSetupMemberKeys = shouldGenerateKeys && getShouldSetupMemberKeys(selectedMember);
 
@@ -123,7 +124,8 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
             });
         }
 
-        const shouldGenerateSelfKeys = selectedMember.Self && selectedMember.Private === MEMBER_PRIVATE.UNREADABLE;
+        const shouldGenerateSelfKeys =
+            Boolean(selectedMember.Self) && selectedMember.Private === MEMBER_PRIVATE.UNREADABLE;
         const shouldGenerateMemberKeys = !shouldGenerateSelfKeys;
         if (shouldGenerateKeys && shouldGenerateMemberKeys && !organizationKey?.privateKey) {
             createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
