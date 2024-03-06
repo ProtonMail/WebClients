@@ -8,7 +8,6 @@ export type InviteFormValues<T extends boolean = boolean> = Extract<
     {
         members: ListFieldValue<InviteFormMemberValue>[];
         step: InviteFormStep;
-        orgEmails?: string[];
     } & VaultFormValues &
         ({ withVaultCreation: true; item?: UniqueItem } | { withVaultCreation: false; shareId: string }),
     { withVaultCreation: T }
