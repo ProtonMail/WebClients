@@ -57,7 +57,7 @@ const PaymentMethodsTable = ({ methods, loading }: Props) => {
                     c('Title for payment methods table').t`Actions`,
                 ]}
             />
-            <TableBody loading={loading} colSpan={5}>
+            <TableBody loading={loading} colSpan={3}>
                 {orderedMethods.map((method, index) => {
                     return (
                         <TableRow
