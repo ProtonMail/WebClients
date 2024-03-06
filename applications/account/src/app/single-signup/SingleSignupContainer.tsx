@@ -12,7 +12,6 @@ import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticat
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getIsVpn2024Deal, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -72,7 +71,6 @@ interface Props {
 }
 
 const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productParam }: Props) => {
-    const storageSplitEnabled = useFlag('SplitStorage');
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -169,7 +167,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                             : undefined
                     )
                 ).then(({ Plans }) => Plans),
-                getFreePlan({ api: silentApi, storageSplitEnabled }),
+                getFreePlan({ api: silentApi }),
             ]);
 
             const plansMap = toMap(Plans, 'Name') as PlansMap;

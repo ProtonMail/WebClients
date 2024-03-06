@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
@@ -227,7 +226,6 @@ const SubscriptionPanel = ({
     addresses,
     openSubscriptionModal,
 }: Props) => {
-    const storageSplitEnabled = useFlag('SplitStorage');
     const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
@@ -235,7 +233,7 @@ const SubscriptionPanel = ({
     const amount = (subscription?.Amount ?? 0) / cycle;
 
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
-    const space = getSpace(user, storageSplitEnabled);
+    const space = getSpace(user);
 
     const {
         UsedDomains = 0,
@@ -261,7 +259,7 @@ const SubscriptionPanel = ({
     }
 
     const storageItem = (() => {
-        if (!space.splitStorage || !storageSplitEnabled) {
+        if (!space.splitStorage) {
             const humanUsedSpace = humanSize({ bytes: UsedSpace });
             const humanMaxSpace = humanSize({ bytes: MaxSpace });
             return (

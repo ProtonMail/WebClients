@@ -25,7 +25,6 @@ const modelThunk = createAsyncModelThunk<Model, PlansState, ProtonThunkArguments
         });
         const freePlan = getFreePlan({
             api: extraArgument.api,
-            storageSplitEnabled: extraArgument.unleashClient.isEnabled('SplitStorage'),
         });
         return {
             plans: await plans,
