@@ -19,6 +19,7 @@ import sync from '@proton/pass/store/sagas/client/sync.saga';
 import events from '@proton/pass/store/sagas/events/events.saga';
 import itemsImport from '@proton/pass/store/sagas/import/import.saga';
 import inviteAccept from '@proton/pass/store/sagas/invites/invite-accept.saga';
+import inviteAddressesValidate from '@proton/pass/store/sagas/invites/invite-addresses-validate.saga';
 import inviteCreate from '@proton/pass/store/sagas/invites/invite-create.saga';
 import inviteRecommendations from '@proton/pass/store/sagas/invites/invite-recommendations.saga';
 import inviteReject from '@proton/pass/store/sagas/invites/invite-reject.saga';
@@ -67,6 +68,7 @@ export function* rootSaga(options: RootSagaOptions) {
             featureFlags,
             hydrate,
             inviteAccept,
+            inviteAddressesValidate,
             inviteCreate,
             inviteRecommendations,
             inviteReject,
