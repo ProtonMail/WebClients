@@ -22,6 +22,7 @@ interface Arguments {
     recoveryNotification?: ThemeColor;
     isProtonSentinelEligible: boolean;
     isNotifInboxDesktopAppOn: boolean;
+    isScheduleCallsEnabled: boolean;
     isBreachesAccountDashboardEnabled: boolean;
 }
 
@@ -37,6 +38,7 @@ export const getRoutes = ({
     recoveryNotification,
     isProtonSentinelEligible,
     isNotifInboxDesktopAppOn,
+    isScheduleCallsEnabled,
     isBreachesAccountDashboardEnabled,
 }: Arguments) => {
     return {
@@ -67,6 +69,7 @@ export const getRoutes = ({
             user,
             organization,
             subscription,
+            isScheduleCallsEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
     };

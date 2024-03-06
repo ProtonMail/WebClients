@@ -137,6 +137,8 @@ const MainContainer = () => {
     const app = appFromPathname || getToApp(undefined, user);
     const appSlug = getSlugFromApp(app);
 
+    const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
+
     const routes = getRoutes({
         app,
         user,
@@ -151,6 +153,7 @@ const MainContainer = () => {
         recoveryNotification: recoveryNotification?.color,
         isProtonSentinelEligible: isProtonSentinelEligible(userSettings),
         isNotifInboxDesktopAppOn,
+        isScheduleCallsEnabled,
         isBreachesAccountDashboardEnabled,
     });
 
