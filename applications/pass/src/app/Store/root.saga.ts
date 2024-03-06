@@ -39,8 +39,8 @@ import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
 import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
-import organizationSettingsEdit from '@proton/pass/store/sagas/organization-settings/organization-settings-edit.saga';
-import getOrganizationSettings from '@proton/pass/store/sagas/organization-settings/organization-settings.saga';
+import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
+import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
 import shareAccessOptions from '@proton/pass/store/sagas/shares/share-access-options.saga';
 import shareEditRole from '@proton/pass/store/sagas/shares/share-edit-role.saga';
 import shareLeave from '@proton/pass/store/sagas/shares/share-leave.saga';
@@ -92,8 +92,8 @@ export function* rootSaga(options: RootSagaOptions) {
             offlineDisable,
             offlineResume,
             offlineSetup,
-            getOrganizationSettings,
             organizationSettingsEdit,
+            organizationSettingsGet,
             reportProblem,
             sessionLockDisable,
             sessionLockEnable,

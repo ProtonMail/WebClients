@@ -7,7 +7,7 @@ export enum PassFeature {
     PassPinningV1 = 'PassPinningV1',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassItemHistoryV1 = 'PassItemHistoryV1',
-    PassEnableOrganization = 'PassOrganizationAllowExternalSharing',
+    PassEnableOrganization = 'PassEnableOrganization',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);

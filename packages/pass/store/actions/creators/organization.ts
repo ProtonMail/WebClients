@@ -5,21 +5,22 @@ import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { organizationSettingsEditRequest, organizationSettingsRequest } from '@proton/pass/store/actions/requests';
-import { type Maybe } from '@proton/pass/types';
-import { type OrganizationSettings } from '@proton/pass/types/data/organization';
+import type { OrganizationGetResponse } from '@proton/pass/types';
+import type { OrganizationSettings } from '@proton/pass/types/data/organization';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
-export const getOrganizationSettingsIntent = createAction('organizationSettings::get', () =>
+export const getOrganizationSettingsIntent = createAction('organization::settings::get::intent', () =>
     withRequest({ type: 'start', id: organizationSettingsRequest() })({ payload: {} })
 );
 
 export const getOrganizationSettingsSuccess = createAction(
-    'organizationSettings::get::success',
-    withRequestSuccess((payload: Maybe<OrganizationSettings>) => withCache({ payload }), { maxAge: UNIX_MINUTE * 2 })
+    'organization::settings::get::success',
+    withRequestSuccess((payload: OrganizationGetResponse) => withCache({ payload }), { maxAge: 15 * UNIX_MINUTE })
 );
 
 export const getOrganizationSettingsFailure = createAction(
-    'organizationSettings::get::failure',
+    'organization::settings::get::failure',
     withRequestFailure((payload: {}, error: unknown) =>
         withNotification({
             type: 'error',
@@ -31,17 +32,27 @@ export const getOrganizationSettingsFailure = createAction(
 
 export const organizationSettingsEditIntent = createAction(
     'organizationSettings::edit',
-    (payload: { organizationSettings: OrganizationSettings }) =>
-        withRequest({ type: 'start', id: organizationSettingsEditRequest() })({ payload })
+    (payload: Partial<OrganizationSettings>) =>
+        pipe(
+            withRequest({ type: 'start', id: organizationSettingsEditRequest() }),
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Updating organization settings`,
+                loading: true,
+            })
+        )({ payload })
 );
 
 export const organizationSettingsEditSuccess = createAction(
     'organizationSettings::edit::success',
-    withRequestSuccess((payload: Maybe<OrganizationSettings>) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`Organization settings successfully edited`,
-        })({ payload })
+    withRequestSuccess((payload: OrganizationGetResponse) =>
+        pipe(
+            withCache,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Organization settings successfully updated`,
+            })
+        )({ payload })
     )
 );
 
