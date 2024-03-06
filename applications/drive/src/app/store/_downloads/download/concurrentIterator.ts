@@ -29,7 +29,8 @@ export default class ConcurrentIterator {
 
     async *iterate(
         links: AsyncGenerator<NestedLinkDownload>,
-        callbacks: DownloadCallbacks
+        callbacks: DownloadCallbacks,
+        options?: { virusScan?: boolean }
     ): AsyncGenerator<StartedNestedLinkDownload> {
         for await (const link of links) {
             if (this.paused) {
@@ -53,19 +54,23 @@ export default class ConcurrentIterator {
                 }
 
                 const uniqueId = generateUID();
-                const controls = initDownloadLinkFile(link, {
-                    ...callbacks,
-                    // onInit and onFinish are ignored per file when downloading
-                    // multiple files - we care only about total onInit or onFinish.
-                    onInit: undefined,
-                    onProgress: (linkIds: string[], bytes: number) => {
-                        callbacks.onProgress?.([...link.parentLinkIds, ...linkIds], bytes);
-                        this.loadSize -= bytes;
+                const controls = initDownloadLinkFile(
+                    link,
+                    {
+                        ...callbacks,
+                        // onInit and onFinish are ignored per file when downloading
+                        // multiple files - we care only about total onInit or onFinish.
+                        onInit: undefined,
+                        onProgress: (linkIds: string[], bytes: number) => {
+                            callbacks.onProgress?.([...link.parentLinkIds, ...linkIds], bytes);
+                            this.loadSize -= bytes;
+                        },
+                        onFinish: () => {
+                            this.fileControlers.delete(uniqueId);
+                        },
                     },
-                    onFinish: () => {
-                        this.fileControlers.delete(uniqueId);
-                    },
-                });
+                    options
+                );
                 this.loadSize += link.size;
                 const stream = controls.start();
                 this.fileControlers.set(uniqueId, controls);

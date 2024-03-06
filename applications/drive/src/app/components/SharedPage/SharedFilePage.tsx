@@ -4,7 +4,7 @@ import { FileNameDisplay } from '@proton/components/components';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
-import { DecryptedLink } from '../../store';
+import { DecryptedLink, useDownloadScanFlag } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import { useUpsellFloatingModal } from '../modals/UpsellFloatingModal';
@@ -23,6 +23,7 @@ interface Props {
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
+    const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
 
     return (
@@ -37,7 +38,11 @@ export default function SharedFilePage({ token, link }: Props) {
                             className="flex md:flex-1 shrink-0 md:gap-4 md:flex-row-reverse md:grow-1 min-w-custom"
                             style={{ '--min-w-custom': 'max-content' }}
                         >
-                            <HeaderSecureLabel className="md:ml-auto" />
+                            {!isDownloadScanEnabled ? (
+                                <HeaderSecureLabel className="md:ml-auto" />
+                            ) : (
+                                <div className="md:ml-auto" />
+                            )}
                             {link.size ? <HeaderSize size={link.size} /> : null}
                         </div>
                     </div>

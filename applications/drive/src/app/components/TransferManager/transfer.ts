@@ -5,6 +5,7 @@ export enum TransferState {
     Pending = 'pending',
     Conflict = 'conflict',
     SignatureIssue = 'signatureIssue',
+    ScanIssue = 'scanIssue',
     Progress = 'progress',
     Finalizing = 'finalizing',
     Done = 'done',
@@ -67,6 +68,7 @@ export interface Download {
     state: TransferState;
     startDate: Date;
     error?: Error;
+    scanIssueError?: Error;
 }
 
 export interface PartialDownload extends Download {
@@ -118,6 +120,7 @@ export const STATE_TO_GROUP_MAP = {
     [TransferState.Finalizing]: TransferGroup.ACTIVE,
     [TransferState.Paused]: TransferGroup.ACTIVE,
     [TransferState.SignatureIssue]: TransferGroup.ACTIVE,
+    [TransferState.ScanIssue]: TransferGroup.ACTIVE,
     [TransferState.Skipped]: TransferGroup.FAILURE,
     [TransferState.Canceled]: TransferGroup.FAILURE,
     [TransferState.NetworkError]: TransferGroup.FAILURE,

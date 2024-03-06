@@ -22,6 +22,7 @@ import { InitDownloadCallback, LinkDownload } from '../interface';
 import { UpdateFilter } from './interface';
 import useDownloadControl from './useDownloadControl';
 import useDownloadQueue from './useDownloadQueue';
+import useDownloadScanIssue from './useDownloadScanIssue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
 export default function useDownloadProvider(initDownload: InitDownloadCallback) {
@@ -38,6 +39,7 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         queue.updateWithData,
         control.cancelDownloads
     );
+    const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
 
     /**
      * download should be considered as main entry point for download files
@@ -45,8 +47,8 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
      * same files are not currently already downloading, and it adds transfer
      * to the queue.
      */
-    const download = async (links: LinkDownload[]) => {
-        await queue.add(links).catch((err: any) => {
+    const download = async (links: LinkDownload[], options?: { virusScan?: boolean }) => {
+        await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({
                     text: err.message,
@@ -100,30 +102,38 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         // Set progress right away to not start the download more than once.
         queue.updateState(nextDownload.id, TransferState.Progress);
 
-        const controls = initDownload(nextDownload.meta.filename, nextDownload.links, {
-            onInit: (size: number, linkSizes: { [linkId: string]: number }) => {
-                // Keep the previous state for cases when the download is paused.
-                queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
-                control.updateLinkSizes(nextDownload.id, linkSizes);
+        const controls = initDownload(
+            nextDownload.meta.filename,
+            nextDownload.links,
+            {
+                onInit: (size: number, linkSizes: { [linkId: string]: number }) => {
+                    // Keep the previous state for cases when the download is paused.
+                    queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
+                    control.updateLinkSizes(nextDownload.id, linkSizes);
 
-                if (FileSaver.isFileTooBig(size)) {
-                    void showDownloadIsTooBigModal({ onCancel: () => control.cancelDownloads(nextDownload.id) });
-                }
+                    if (FileSaver.isFileTooBig(size)) {
+                        void showDownloadIsTooBigModal({ onCancel: () => control.cancelDownloads(nextDownload.id) });
+                    }
+                },
+                onProgress: (linkIds: string[], increment: number) => {
+                    control.updateProgress(nextDownload.id, linkIds, increment);
+                },
+                onNetworkError: (error: any) => {
+                    queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
+                },
+                onScanIssue: async (abortSignal: AbortSignal, error: Error) => {
+                    await handleScanIssue(abortSignal, nextDownload, error);
+                },
+                onSignatureIssue: async (
+                    abortSignal: AbortSignal,
+                    link: LinkDownload,
+                    signatureIssues: SignatureIssues
+                ) => {
+                    await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
+                },
             },
-            onProgress: (linkIds: string[], increment: number) => {
-                control.updateProgress(nextDownload.id, linkIds, increment);
-            },
-            onNetworkError: (error: any) => {
-                queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
-            },
-            onSignatureIssue: async (
-                abortSignal: AbortSignal,
-                link: LinkDownload,
-                signatureIssues: SignatureIssues
-            ) => {
-                await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
-            },
-        });
+            nextDownload.options
+        );
         control.add(nextDownload.id, controls);
         void preventLeave(
             controls
@@ -171,6 +181,7 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         restartDownloads,
         removeDownloads: control.removeDownloads,
         clearDownloads: control.clearDownloads,
+        updateWithData: queue.updateWithData,
         downloadIsTooBigModal,
         signatureIssueModal,
     };
