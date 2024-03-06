@@ -28,6 +28,7 @@ enum AccountFlag {
     ChargebeeSignups = 'ChargebeeSignups',
     ChargebeeMigration = 'ChargebeeMigration',
     ChargebeeFreeToPaid = 'ChargebeeFreeToPaid',
+    ScheduleB2BSupportPhoneCalls = 'ScheduleB2BSupportPhoneCalls',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
 }

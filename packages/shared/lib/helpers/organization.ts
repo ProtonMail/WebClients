@@ -1,5 +1,5 @@
 import { MEMBER_PERMISSIONS, ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
-import { Organization } from '../interfaces';
+import { Organization, UserModel } from '../interfaces';
 import { hasBit } from './bitset';
 
 export const isLoyal = (organization: Partial<Organization> = {}) => {
@@ -101,4 +101,12 @@ export const hasOrganizationSetup = (organization: Partial<Organization> = {}) =
 
 export const hasOrganizationSetupWithKeys = (organization: Partial<Organization> = {}) => {
     return !!organization.RequiresKey && !!organization.HasKeys;
+};
+
+export const canScheduleOrganizationPhoneCalls = (
+    organization: Partial<Organization> = {},
+    user: UserModel,
+    isScheduleCallsEnabled: boolean
+) => {
+    return !!organization && user.isAdmin && isScheduleCallsEnabled;
 };
