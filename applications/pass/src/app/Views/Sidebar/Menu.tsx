@@ -16,7 +16,7 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
-import { useOrganization } from '@proton/pass/components/Settings/Organization/OrganizationProvider';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
@@ -40,10 +40,12 @@ import { SettingsDropdown } from '../Settings/SettingsDropdown';
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
-    const onboarding = useOnboarding();
-    const client = useClientRef();
 
     const authService = useAuthService();
+    const onboarding = useOnboarding();
+    const org = useOrganization();
+    const client = useClientRef();
+
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
@@ -55,7 +57,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
     const offlineEnabled = useSelector(selectOfflineEnabled);
-    const { isB2BAdmin } = useOrganization();
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
@@ -98,7 +99,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 )}
 
                 {onboarding.enabled && <OnboardingButton />}
-                {isB2BAdmin && <AdminPanelButton />}
+                {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
