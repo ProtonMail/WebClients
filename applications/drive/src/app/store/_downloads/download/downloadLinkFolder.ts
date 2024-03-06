@@ -31,7 +31,8 @@ type FolderLoadInfo = {
  */
 export default function initDownloadLinkFolder(
     link: LinkDownload,
-    callbacks: DownloadCallbacks
+    callbacks: DownloadCallbacks,
+    options?: { virusScan?: boolean }
 ): DownloadStreamControls {
     const folderLoader = new FolderTreeLoader(link);
     const concurrentIterator = new ConcurrentIterator();
@@ -49,7 +50,7 @@ export default function initDownloadLinkFolder(
                 archiveGenerator.cancel();
             });
         const childrenIterator = folderLoader.iterateAllChildren();
-        const linksWithStreamsIterator = concurrentIterator.iterate(childrenIterator, callbacks);
+        const linksWithStreamsIterator = concurrentIterator.iterate(childrenIterator, callbacks, options);
         archiveGenerator
             .writeLinks(linksWithStreamsIterator)
             .then(() => {

@@ -20,6 +20,17 @@ export const querySharedURLInformation = (token: string) => {
     };
 };
 
+export const querySharedURLSecurity = (token: string, Hashes: string[]) => {
+    return {
+        method: 'post',
+        url: `drive/urls/${token}/security`,
+        silence: true,
+        data: {
+            Hashes,
+        },
+    };
+};
+
 export const queryShareURLAuth = (token: string) => {
     return {
         method: 'post',

@@ -3,7 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
+import { useToggle } from '@proton/components';
 import { FileIcon, Icon, Tooltip } from '@proton/components/components';
+import { useActiveBreakpoint } from '@proton/components/hooks';
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
@@ -13,7 +15,8 @@ import clsx from '@proton/utils/clsx';
 import { DecryptedLink, useDownload } from '../../../store';
 import { getPercentageFormatter } from '../../../utils/intl/numberFormatter';
 import { isTransferActive } from '../../../utils/transfer';
-import { TransferState } from '../../TransferManager/transfer';
+import { Download, TransferState } from '../../TransferManager/transfer';
+import ReportVirusButton from './ReportVirusButton';
 import Spinner from './Spinner';
 
 import './SharedPageTransferManager.scss';
@@ -22,12 +25,78 @@ interface Props {
     rootItem: DecryptedLink;
 }
 
+const ScanIssueContent = ({
+    isDownloadAll,
+    nbFile,
+    rootItem,
+    mimeType,
+}: {
+    isDownloadAll: boolean;
+    nbFile: number;
+    rootItem: DecryptedLink;
+    mimeType: string;
+}) => {
+    const { downloads, resumeDownloads, cancelDownloads } = useDownload();
+    const { viewportWidth } = useActiveBreakpoint();
+
+    const currentDownload = downloads[0];
+    const handleContinue = () => {
+        resumeDownloads(currentDownload.id);
+    };
+
+    const handleCancel = () => {
+        cancelDownloads(currentDownload.id);
+    };
+
+    let comment = `File "${currentDownload.meta.filename}" is detected as potential malware.`;
+    if (currentDownload.scanIssueError?.message) {
+        comment = `${comment} Message from scanning is "${currentDownload.scanIssueError?.message}"`;
+    }
+
+    const buttonLabel = viewportWidth['<=small'] ? c('Info').t`Download anyway` : c('Info').t`Download`;
+    return (
+        <div className="flex flex-1 sm:flex-row flex-column flex-nowrap items-stretch sm:items-center justify-space-between gap-2">
+            <div className="flex flex-row gap-2 items-center flex-nowrap">
+                <FileIcon size={8} mimeType={mimeType} />
+                <div className="text-ellipsis overflow-hidden">
+                    {isDownloadAll
+                        ? c('Info').t`Downloading all encrypted files`
+                        : c('Info').ngettext(
+                              msgid`${nbFile} encrypted file...`,
+                              `${nbFile} encrypted files...`,
+                              nbFile
+                          )}
+                </div>
+            </div>
+            <div className="flex flex-column-reverse flex-column sm:flex-row flex-nowrap gap-2">
+                <Button
+                    shape="ghost"
+                    color="norm"
+                    size="small"
+                    data-testid="share-transfer-manager:download-anyway"
+                    onClick={handleContinue}
+                >
+                    {buttonLabel}
+                </Button>
+                <ReportVirusButton
+                    className="text-nowrap pr-6"
+                    linkInfo={rootItem}
+                    comment={comment}
+                    reportCallback={handleCancel}
+                />
+            </div>
+        </div>
+    );
+};
+
 const getHeaderText = ({
     transferState,
     percentageValue,
+    currentDownload,
 }: {
     transferState: TransferState;
     percentageValue: string;
+    currentDownload?: Download;
 }) => {
     switch (transferState) {
         case TransferState.Error:
@@ -52,6 +121,15 @@ const getHeaderText = ({
                     <span className="text-bold">{c('Label').jt`Downloading ${percentageValue}`}</span>
                 </>
             );
+        case TransferState.ScanIssue:
+            return (
+                <>
+                    <Icon size={6} name="exclamation-circle-filled" className="color-danger" />
+                    <span className="text-bold">
+                        {currentDownload?.scanIssueError?.message || c('Label').jt`This file is potentially infected`}
+                    </span>
+                </>
+            );
         default:
             return (
                 <>
@@ -67,56 +145,87 @@ const getContentText = ({
     onRetry,
     nbFile,
     isDownloadAll,
+    rootItem,
+    mimeType,
 }: {
     transferState: TransferState;
     onRetry: () => void;
     nbFile: number;
     isDownloadAll: boolean;
+    rootItem: DecryptedLink;
+    mimeType: string;
 }) => {
     switch (transferState) {
         case TransferState.Error:
         case TransferState.NetworkError:
             return (
-                <div className="flex flex-1 items-center justify-space-between">
-                    <span>{c('Info').t`Something went wrong...`}</span>
-                    <Button shape="ghost" color="norm" size="small" onClick={onRetry}>{c('Info').t`Retry now`}</Button>
-                </div>
+                <>
+                    <FileIcon size={8} mimeType={mimeType} />
+                    <div className="flex flex-1 items-center justify-space-between">
+                        <span>{c('Info').t`Something went wrong...`}</span>
+                        <Button shape="ghost" color="norm" size="small" onClick={onRetry}>{c('Info')
+                            .t`Retry now`}</Button>
+                    </div>
+                </>
+            );
+        case TransferState.ScanIssue:
+            return (
+                <ScanIssueContent
+                    isDownloadAll={isDownloadAll}
+                    nbFile={nbFile}
+                    rootItem={rootItem}
+                    mimeType={mimeType}
+                />
             );
         case TransferState.Canceled:
             return (
-                <div className="flex flex-1 items-center justify-space-between">
-                    <span>
-                        {isDownloadAll
-                            ? c('Info').t`All encrypted files`
-                            : c('Info').ngettext(msgid`${nbFile} encrypted file`, `${nbFile} encrypted file.`, nbFile)}
-                    </span>
-                    <Button shape="ghost" color="norm" size="small" onClick={onRetry}>{c('Info').t`Retry now`}</Button>
-                </div>
+                <>
+                    <FileIcon size={8} mimeType={mimeType} />
+                    <div className="flex flex-1 items-center justify-space-between">
+                        <span>
+                            {isDownloadAll
+                                ? c('Info').t`All encrypted files`
+                                : c('Info').ngettext(
+                                      msgid`${nbFile} encrypted file`,
+                                      `${nbFile} encrypted file`,
+                                      nbFile
+                                  )}
+                        </span>
+                        <Button shape="ghost" color="norm" size="small" onClick={onRetry}>{c('Info')
+                            .t`Retry now`}</Button>
+                    </div>
+                </>
             );
         case TransferState.Progress:
             return (
-                <span>
-                    {isDownloadAll
-                        ? c('Info').t`Downloading all encrypted files`
-                        : c('Info').ngettext(
-                              msgid`${nbFile} encrypted file...`,
-                              `${nbFile} encrypted files...`,
-                              nbFile
-                          )}
-                    {}
-                </span>
+                <>
+                    <FileIcon size={8} mimeType={mimeType} />
+                    <span>
+                        {isDownloadAll
+                            ? c('Info').t`Downloading all encrypted files`
+                            : c('Info').ngettext(
+                                  msgid`${nbFile} encrypted file...`,
+                                  `${nbFile} encrypted files...`,
+                                  nbFile
+                              )}
+                        {}
+                    </span>
+                </>
             );
         default:
             return (
-                <span>
-                    {isDownloadAll
-                        ? c('Info').t`Securely downloaded all encrypted files`
-                        : c('Info').ngettext(
-                              msgid`Securely downloaded ${nbFile} file`,
-                              `Securely downloaded ${nbFile} files`,
-                              nbFile
-                          )}
-                </span>
+                <>
+                    <FileIcon size={8} mimeType={mimeType} />
+                    <span>
+                        {isDownloadAll
+                            ? c('Info').t`Securely downloaded all encrypted files`
+                            : c('Info').ngettext(
+                                  msgid`Securely downloaded ${nbFile} file`,
+                                  `Securely downloaded ${nbFile} files`,
+                                  nbFile
+                              )}
+                    </span>
+                </>
             );
     }
 };
@@ -160,10 +269,83 @@ const getNonProtonUserContentText = ({
     );
 };
 
+const ManagerContainer = ({ transferState, children }: { transferState: TransferState; children: React.ReactNode }) => {
+    return (
+        <div
+            className={clsx(
+                'share-transfer-manager fixed bottom-0 right-0 border border-primary w-full md:min-w-custom max-w-custom m-0 md:mr-10 overflow-hidden',
+                transferState === TransferState.Canceled && 'share-transfer-manager--canceled border-norm',
+                (transferState === TransferState.Error ||
+                    transferState === TransferState.NetworkError ||
+                    transferState === TransferState.ScanIssue) &&
+                    'share-transfer-manager--failed border-danger'
+            )}
+            style={{ '--min-w-custom': '27.5em', '--max-w-custom': '33.25em' }}
+            id="share-page-transfer-manager"
+        >
+            {children}
+        </div>
+    );
+};
+
+interface ManagerHeaderProps {
+    transferState: TransferState;
+    isExpanded: boolean;
+    percentageValue: string;
+    onMinimized: () => void;
+    clearDownloads: () => void;
+    currentDownload?: Download;
+}
+const ManagerHeader = ({
+    transferState,
+    isExpanded,
+    percentageValue,
+    onMinimized,
+    clearDownloads,
+    currentDownload,
+}: ManagerHeaderProps) => {
+    const isInProgress = transferState === TransferState.Progress;
+    return isInProgress ? (
+        <button
+            className="share-transfer-manager-header w-full flex items-center justify-space-between"
+            onClick={onMinimized}
+        >
+            <div className="flex items-center gap-2 pl-3" data-testid="share-transfers-manager:header">
+                {getHeaderText({ transferState, percentageValue })}
+            </div>
+            <Tooltip title={isExpanded ? c('Action').t`Minimize` : c('Action').t`Maximize`}>
+                <ButtonLike
+                    className="no-pointer-events"
+                    as="span"
+                    icon
+                    shape="ghost"
+                    data-testid="share-transfer-manager:minimize-maximize"
+                    onClick={onMinimized}
+                >
+                    <Icon
+                        name={isExpanded ? 'chevron-down' : 'chevron-up'}
+                        alt={isExpanded ? c('Action').t`Minimize` : c('Action').t`Maximize`}
+                    />
+                </ButtonLike>
+            </Tooltip>
+        </button>
+    ) : (
+        <div className="share-transfer-manager-header w-full flex flex-nowrap items-center justify-space-between">
+            <div className="flex flex-nowrap items-center gap-2 pl-3" data-testid="share-transfers-manager:header">
+                {getHeaderText({ transferState, percentageValue, currentDownload })}
+            </div>
+            <Tooltip title={c('Action').t`Close`} onClick={clearDownloads}>
+                <Button icon shape="ghost" data-testid="share-transfer-manager:close">
+                    <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                </Button>
+            </Tooltip>
+        </div>
+    );
+};
+
 const SharedPageTransferManager = ({ rootItem }: Props) => {
     const [downloadedSize, setDownloadedSize] = useState<number>(0);
     const [totalSize, setTotalSize] = useState<number>(0);
-    const [isMinimized, setIsMinimized] = useState<boolean>(false);
     const [nbFile, setNbFile] = useState<number>(0);
 
     const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
@@ -201,6 +383,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
         setDownloadedSize(progressInfo.progress);
         setTotalSize(progressInfo.total);
     }, [getDownloadsLinksProgresses, rootItem.linkId]);
+    const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     // Enrich link date with download progress. Downloads changes only when
     // status changes, not the progress, so if download is active, it needs
@@ -233,74 +416,30 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
     const percentageValue = totalSize !== 0 ? Math.round((100 * downloadedSize) / totalSize) / 100 : 0;
 
     const currentDownload = downloads[0];
+    const isInProgress = currentDownload?.state === TransferState.Progress;
+    const isDone = currentDownload?.state === TransferState.Done;
 
     if (!nbFile || !currentDownload) {
         return null;
     }
 
     return (
-        <div
-            className={clsx(
-                'share-transfer-manager fixed bottom-0 right-0 border border-primary w-full md:min-w-custom max-w-custom m-0 md:mr-10 overflow-hidden',
-                currentDownload.state === TransferState.Canceled && 'share-transfer-manager--canceled border-norm',
-                (currentDownload.state === TransferState.Error ||
-                    currentDownload.state === TransferState.NetworkError) &&
-                    'share-transfer-manager--failed border-danger'
-            )}
-            style={{ '--min-w-custom': '27.5em', '--max-w-custom': '31.25em' }}
-        >
-            {currentDownload.state === TransferState.Progress ? (
-                <button
-                    className="share-transfer-manager-header w-full flex items-center justify-space-between"
-                    onClick={() => setIsMinimized(!isMinimized)}
-                >
-                    <div className="flex items-center gap-2 pl-3">
-                        {getHeaderText({
-                            transferState: currentDownload.state,
-                            percentageValue: getPercentageFormatter().format(percentageValue),
-                        })}
-                    </div>
-                    <Tooltip title={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}>
-                        <ButtonLike
-                            className="no-pointer-events"
-                            as="span"
-                            icon
-                            shape="ghost"
-                            data-testid="share-transfer-manager:minimize-maximize"
-                            onClick={() => setIsMinimized(!isMinimized)}
-                        >
-                            <Icon
-                                name={isMinimized ? 'chevron-up' : 'chevron-down'}
-                                alt={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}
-                            />
-                        </ButtonLike>
-                    </Tooltip>
-                </button>
-            ) : (
-                <div className="share-transfer-manager-header w-full flex items-center justify-space-between">
-                    <div className="flex items-center gap-2 pl-3">
-                        {getHeaderText({
-                            transferState: currentDownload.state,
-                            percentageValue: getPercentageFormatter().format(percentageValue),
-                        })}
-                    </div>
-                    <Tooltip title={c('Action').t`Close`} onClick={() => clearDownloads()}>
-                        <Button icon shape="ghost" data-testid="share-transfer-manager:close">
-                            <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
-                        </Button>
-                    </Tooltip>
-                </div>
-            )}
+        <ManagerContainer transferState={currentDownload.state}>
+            <ManagerHeader
+                transferState={currentDownload.state}
+                isExpanded={expanded}
+                percentageValue={getPercentageFormatter().format(percentageValue)}
+                clearDownloads={clearDownloads}
+                onMinimized={toggleExpanded}
+                currentDownload={downloads[0]}
+            />
             <div
                 className={clsx(
                     'share-transfer-manager-content',
-                    isMinimized &&
-                        currentDownload.state === TransferState.Progress &&
-                        'share-transfer-manager-content--minimized'
+                    !expanded && isInProgress && 'share-transfer-manager-content--minimized'
                 )}
             >
-                {!isProtonUser &&
-                (currentDownload.state === TransferState.Progress || currentDownload.state === TransferState.Done) ? (
+                {!isProtonUser && (isInProgress || isDone) ? (
                     <div className="flex flex-nowrap items-center gap-8 px-4 py-5">
                         <div className="flex-1">
                             {getNonProtonUserContentText({
@@ -314,18 +453,19 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                         ).t`Get Started`}</ButtonLike>
                     </div>
                 ) : (
-                    <div className="px-4 py-5 flex items-center gap-2">
-                        <FileIcon size={8} mimeType={currentDownload.meta.mimeType} />
+                    <div className="px-4 py-5 flex items-center gap-2" data-testid="share-transfer-manager:content">
                         {getContentText({
                             transferState: currentDownload.state,
                             onRetry: () => restartDownloads(currentDownload.id),
                             nbFile,
                             isDownloadAll,
+                            rootItem,
+                            mimeType: currentDownload.meta.mimeType,
                         })}
                     </div>
                 )}
             </div>
-        </div>
+        </ManagerContainer>
     );
 };
 

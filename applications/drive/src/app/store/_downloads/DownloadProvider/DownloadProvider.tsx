@@ -9,7 +9,7 @@ import useDownload from './useDownloadProvider';
 interface DownloadProviderState {
     downloads: Download[];
     hasDownloads: boolean;
-    download: (links: LinkDownload[]) => Promise<void>;
+    download: (links: LinkDownload[], options?: { virusScan?: boolean }) => Promise<void>;
     pauseDownloads: (idOrFilter: UpdateFilter) => void;
     resumeDownloads: (idOrFilter: UpdateFilter) => void;
     cancelDownloads: (idOrFilter: UpdateFilter) => void;
