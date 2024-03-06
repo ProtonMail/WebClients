@@ -5070,6 +5070,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@napi-rs/cli@npm:^2.18.0":
+  version: 2.18.0
+  resolution: "@napi-rs/cli@npm:2.18.0"
+  bin:
+    napi: scripts/index.js
+  checksum: 10c0/db00a70212511bf19a5165bb5397af40b8ee8be26345fa0c7fe3f35803216603f6f757dec99bf385e6db377b8eb82d69956e073c315e3e1f8e0452af04a7ce7f
+  languageName: node
+  linkType: hard
+
 "@netlify/binary-info@npm:^1.0.0":
   version: 1.0.0
   resolution: "@netlify/binary-info@npm:1.0.0"
@@ -29714,6 +29723,14 @@ __metadata:
   checksum: 10c0/074df6b5b72698f07b39ca3c448a3fcbaf8e6e78521f0cb3aefd8c2f059d69eae0e3bfe367b4aa3df1976c25e351e4e52a359f22fb2c379eb6781bfa042f582b
   languageName: node
   linkType: hard
+
+"native@workspace:applications/pass-desktop/native":
+  version: 0.0.0-use.local
+  resolution: "native@workspace:applications/pass-desktop/native"
+  dependencies:
+    "@napi-rs/cli": "npm:^2.18.0"
+  languageName: unknown
+  linkType: soft
 
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
