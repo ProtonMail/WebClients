@@ -638,26 +638,33 @@ export const updateEventInvitation = async ({
         if (!veventApi) {
             return { action: NONE };
         }
-        const hasUpdatedDtstamp = getHasModifiedDtstamp(veventIcs, veventApi);
-        const hasUpdatedDateTimes = getHasModifiedDateTimes(veventIcs, veventApi);
-        const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
-        const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
-        const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
-        const hasUpdatedRrule = !getIsRruleEqual(veventIcs.rrule, veventApi.rrule);
-        const hasUpdatedAttendees = getHasModifiedAttendees({ veventIcs, veventApi, attendeeIcs, attendeeApi });
-        const hasBreakingChange = hasUpdatedDtstamp ? sequenceDiff > 0 : false;
-        const hasNonBreakingChange = hasUpdatedDtstamp
-            ? hasUpdatedDateTimes ||
-              hasUpdatedTitle ||
-              hasUpdatedDescription ||
-              hasUpdatedLocation ||
-              hasUpdatedRrule ||
-              hasUpdatedAttendees
-            : false;
-        const action = hasBreakingChange ? RESET_PARTSTAT : hasNonBreakingChange ? KEEP_PARTSTAT : NONE;
+        const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
+        // If veventIcs is a singleEdit and veventApi the parent, always reset the partstat.
+        // TODO: compare veventIcs with the corresponding occurrence of veventApi
+        let action = createSingleEdit ? RESET_PARTSTAT : NONE;
+
+        if (!createSingleEdit) {
+            const hasUpdatedDtstamp = getHasModifiedDtstamp(veventIcs, veventApi);
+            const hasUpdatedDateTimes = getHasModifiedDateTimes(veventIcs, veventApi);
+            const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
+            const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
+            const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
+            const hasUpdatedRrule = !getIsRruleEqual(veventIcs.rrule, veventApi.rrule);
+            const hasUpdatedAttendees = getHasModifiedAttendees({ veventIcs, veventApi, attendeeIcs, attendeeApi });
+            const hasBreakingChange = hasUpdatedDtstamp ? sequenceDiff > 0 : false;
+            const hasNonBreakingChange = hasUpdatedDtstamp
+                ? hasUpdatedDateTimes ||
+                  hasUpdatedTitle ||
+                  hasUpdatedDescription ||
+                  hasUpdatedLocation ||
+                  hasUpdatedRrule ||
+                  hasUpdatedAttendees
+                : false;
+            action = hasBreakingChange ? RESET_PARTSTAT : hasNonBreakingChange ? KEEP_PARTSTAT : NONE;
+        }
+
         if ([KEEP_PARTSTAT, RESET_PARTSTAT].includes(action)) {
             // update the api event by the ics one with the appropriate answer
-            const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
             const canCreateSingleEdit = createSingleEdit ? getCanCreateSingleEdit(veventIcs, veventApi) : undefined;
             if (createSingleEdit && !canCreateSingleEdit) {
                 // The parent has been updated. Nothing to do then
