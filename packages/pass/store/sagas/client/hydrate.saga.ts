@@ -13,12 +13,13 @@ import {
     stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
+import { migrate } from '@proton/pass/store/migrate';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import { type Maybe, type MaybeNull, PlanType } from '@proton/pass/types';
+import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -49,13 +50,14 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
+        const cachedState = cache?.state ? migrate(cache.state) : undefined;
         const snapshot = cache?.snapshot;
-        const userState: HydratedUserState = yield cache?.state.user ?? getUserData();
 
-        const b2b = userState.plan.Type === PlanType.business;
-        const organization: MaybeNull<OrganizationState> = b2b
-            ? cache?.state?.organization ?? (yield getOrganization())
-            : null;
+        const userState: HydratedUserState = yield cache?.state.user ?? getUserData();
+        const organization =
+            userState.plan.Type === PlanType.business
+                ? cachedState?.organization ?? ((yield getOrganization()) as OrganizationState)
+                : null;
 
         /** Note: Settings may have been modified offline, thus they might not align
          * with the cached state settings. Since caching requests cannot be triggered
