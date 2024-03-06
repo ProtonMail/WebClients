@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { ensureTokenChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
@@ -120,8 +119,11 @@ const PayPalV4Modal = ({ onClose, ...rest }: ModalProps) => {
 
 export default PayPalV4Modal;
 
-export const PayPalV5Modal = ({ onClose, ...rest }: ModalProps) => {
-    const pollEventsMultipleTimes = usePollEvents();
+type PaypalV5Props = ModalProps & {
+    onMethodAdded: () => void;
+};
+
+export const PayPalV5Modal = ({ onClose, onMethodAdded, ...rest }: PaypalV5Props) => {
     const { createNotification } = useNotifications();
 
     const paymentFacade = usePaymentFacade({
@@ -132,8 +134,8 @@ export const PayPalV5Modal = ({ onClose, ...rest }: ModalProps) => {
             try {
                 await savePaymentMethod();
 
-                void pollEventsMultipleTimes();
                 onClose?.();
+                onMethodAdded();
                 createNotification({ text: c('Success').t`Payment method added` });
             } catch (error: any) {
                 if (error && error.message && !error.config) {

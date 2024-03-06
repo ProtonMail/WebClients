@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { applyHOCs, withEventManager } from '@proton/testing/index';
 
 import {
     Loader,
@@ -25,6 +26,8 @@ jest.mock('../../components/loader/Loader');
 jest.mock('../account/MozillaInfoPanel');
 jest.mock('./PaymentMethodsTable');
 
+const PaymentMethodsSectionContext = applyHOCs(withEventManager())(PaymentMethodsSection);
+
 describe('PaymentMethodsSection', () => {
     beforeEach(() => {
         jest.resetAllMocks();
@@ -43,7 +46,7 @@ describe('PaymentMethodsSection', () => {
         const usePaymentMethodsMock = jest.mocked(usePaymentMethods);
         usePaymentMethodsMock.mockReturnValue([[], true]);
 
-        const { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSectionContext />);
 
         expect(container).toHaveTextContent('Loader');
     });
@@ -51,7 +54,7 @@ describe('PaymentMethodsSection', () => {
     it('should render <Loading> if subscriptions are loading', () => {
         jest.mocked(useSubscription).mockReturnValue([undefined as any, true]);
 
-        const { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSectionContext />);
 
         expect(container).toHaveTextContent('Loader');
     });
@@ -59,19 +62,19 @@ describe('PaymentMethodsSection', () => {
     it('should render <MozillaInfoPanel> if subscription is managed by mozilla', () => {
         jest.mocked(useSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
 
-        const { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSectionContext />);
 
         expect(container).toHaveTextContent('MozillaInfoPanel');
     });
 
     it('should render the main contanet otherwise', () => {
-        const { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSectionContext />);
 
         expect(container).toHaveTextContent('PaymentMethodsTable');
     });
 
     it('should show the paypal button only if there is not paypal payment yet', () => {
-        const { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSectionContext />);
         expect(container).toHaveTextContent('Add PayPal');
     });
 
@@ -93,7 +96,7 @@ describe('PaymentMethodsSection', () => {
             false,
         ]);
 
-        const { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSectionContext />);
         expect(container).not.toHaveTextContent('Add PayPal');
     });
 });
