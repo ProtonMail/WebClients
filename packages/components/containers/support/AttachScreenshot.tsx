@@ -50,7 +50,21 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                     }))
                 )
             );
-            setScreenshots([...screenshots, ...uploadedScreenshots]);
+
+            const existingScreenshotNames = new Set(screenshots.map((s) => s.name));
+            const uniqueScreenshots = uploadedScreenshots.filter(
+                (screenshot) => !existingScreenshotNames.has(screenshot.name)
+            );
+
+            if (uniqueScreenshots.length < uploadedScreenshots.length) {
+                createNotification({
+                    type: 'warning',
+                    text: c('Error notification in the bug report modal when the user upload file')
+                        .t`Some images were not uploaded due to duplicate filenames.`,
+                });
+            }
+
+            setScreenshots([...screenshots, ...uniqueScreenshots]);
         } finally {
             setUploading(false);
         }
