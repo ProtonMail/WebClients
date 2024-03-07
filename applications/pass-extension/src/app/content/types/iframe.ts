@@ -11,6 +11,7 @@ import type { NotificationActions } from './notification';
 export type IFramePosition = Partial<Rect> & { zIndex?: number };
 
 export type IFrameState<A> = {
+    stale: boolean;
     action: MaybeNull<A>;
     framePort: MaybeNull<string>;
     loaded: boolean;
@@ -36,6 +37,8 @@ export interface IFrameApp<A = any> {
     close: (options?: IFrameCloseOptions) => void;
     destroy: () => void;
     getPosition: () => IFramePosition;
+    ensureLoaded: () => Promise<void>;
+    ensureReady: () => Promise<void>;
     init: (payload: IFrameInitPayload) => void;
     open: (action: A, scrollRef?: HTMLElement) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;

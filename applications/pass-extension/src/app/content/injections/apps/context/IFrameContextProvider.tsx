@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
+import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import type {
     IFrameCloseOptions,
     IFrameEndpoint,
@@ -82,6 +83,14 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         void sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
         window.document?.documentElement?.remove();
     };
+
+    useEffect(() => {
+        /** Notify the parent content-script that the IFrame is ready and
+         * the react app has bootstrapped and rendered. This is essential
+         * to avoid relying on the `load` event which does not account for
+         * react lifecycle */
+        window.parent.postMessage({ type: IFRAME_APP_READY_EVENT, endpoint }, '*');
+    }, []);
 
     /* when processing an `IFRAME_INJECT_PORT` message : verify the
      * `message.key` against the resolved extension key. This avoids

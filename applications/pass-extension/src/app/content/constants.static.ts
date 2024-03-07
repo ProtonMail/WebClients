@@ -8,6 +8,7 @@ export const MIN_DROPDOWN_HEIGHT = 60;
 export const NOTIFICATION_HEIGHT = 335;
 export const NOTIFICATION_HEIGHT_SM = 220;
 export const NOTIFICATION_WIDTH = 320;
+export const IFRAME_APP_READY_EVENT = 'PassIFrameReady';
 
 /* heuristic max detection time duration in ms for sanity checking */
 export const MIN_MAX_DETECTION_TIME = 250;
