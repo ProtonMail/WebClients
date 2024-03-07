@@ -53,19 +53,22 @@ export const createInjectionService = () => {
     };
 
     const updateInjections = async () => {
-        const tabs = await browser.tabs.query({ url: ['https://*/*', 'http://*/*'] }).catch(() => []);
-        await Promise.all(
-            tabs
-                .filter((tab) => !tab.url?.includes('pass.proton.'))
-                .map(async (tab) => {
-                    logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
-                    if (tab.id !== undefined) {
-                        /* FIXME: re-inject in all frames when supporting iframes */
-                        // await inject({ tabId: tab.id, allFrames: false, js: ['elements.js'], world: 'MAIN' });
-                        await inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] });
-                    }
-                })
-        );
+        if (BUILD_TARGET === 'chrome') {
+            const tabs = await browser.tabs.query({ url: ['https://*/*', 'http://*/*'] }).catch(() => []);
+
+            await Promise.all(
+                tabs
+                    .filter((tab) => !tab.url?.includes('pass.proton.'))
+                    .map(async (tab) => {
+                        logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
+                        if (tab.id !== undefined) {
+                            /* FIXME: re-inject in all frames when supporting iframes */
+                            // await inject({ tabId: tab.id, allFrames: false, js: ['elements.js'], world: 'MAIN' });
+                            await inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] });
+                        }
+                    })
+            );
+        }
     };
 
     /** Define the tag names for custom elements upon each `REGISTER_ELEMENTS`
@@ -79,7 +82,10 @@ export const createInjectionService = () => {
         const control = `protonpass-control-${hash}`;
         const elements: PassElementsConfig = { root, control };
 
-        const scriptConfig = { target: { tabId: tab?.id!, allFrames: false }, world: 'MAIN' as any };
+        const scriptConfig = {
+            target: { tabId: tab?.id!, allFrames: false },
+            world: (BUILD_TARGET === 'chrome' ? 'MAIN' : undefined) as any,
+        };
 
         await browser.scripting.executeScript({ ...scriptConfig, files: ['elements.js'] });
         await browser.scripting.executeScript({
