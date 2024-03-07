@@ -116,7 +116,7 @@ const SubUserCreateModal = ({
         password: '',
         confirm: '',
         address: '',
-        domain: verifiedDomains[0]?.DomainName ?? null,
+        domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
         vpn:
             organization &&
             hasVPN &&
@@ -136,7 +136,7 @@ const SubUserCreateModal = ({
     const getNormalizedAddress = () => {
         const address = model.address.trim();
 
-        if (model.domain) {
+        if (model.domain && !useEmail) {
             return { Local: address, Domain: model.domain };
         }
 
