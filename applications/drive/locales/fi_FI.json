@@ -568,6 +568,9 @@
       "Save": [
         "Tallenna"
       ],
+      "Save changes": [
+        "Tallenna muutokset"
+      ],
       "Search": [
         "Hae"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Asetukset"
+      ],
+      "Share": [
+        "Jaa"
       ],
       "Share file": [
         "Jaa tiedosto"
@@ -2036,6 +2042,9 @@
       "All events in this series were updated.": [
         "Kaikki tämän sarjan tapahtumat päivitettiin."
       ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Kaikki sarjan tapahtumat päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+      ],
       "This event occurrence was canceled.": [
         "Tämä tapahtuma peruttiin."
       ],
@@ -2044,6 +2053,9 @@
       ],
       "This event was updated.": [
         "Tämä tapahtuma päivitettiin."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -2146,6 +2158,9 @@
       ],
       "A problem occurred, please try again.": [
         "Ilmeni ongelma, yritä uudelleen."
+      ],
+      "Account does not exist": [
+        "Tiliä ei ole olemassa"
       ],
       "Address primary private key not found": [
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
@@ -2309,6 +2324,9 @@
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Tämä ei ole ${ BRAND_NAME }-tili"
+      ],
       "Not a valid number": [
         "Virheellinen puhelinnumero"
       ],
@@ -2390,6 +2408,9 @@
       "status page": [
         "tilasivu"
       ],
+      "The address might be misspelled": [
+        "Osoite on ehkä kirjoitettu väärin"
+      ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
       ],
@@ -2461,6 +2482,9 @@
       ],
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
+      ],
+      "Validation error": [
+        "Vahvistusvirhe"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -4711,9 +4735,6 @@
       ],
       "Download anyway": [
         "Lataa silti"
-      ],
-      "Downloading": [
-        "Ladataan"
       ],
       "Downloading ${ percentageValue }": [
         "Ladattu ${ percentageValue }"

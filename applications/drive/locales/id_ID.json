@@ -565,6 +565,9 @@
       "Save": [
         "Simpan"
       ],
+      "Save changes": [
+        "Simpan perubahan"
+      ],
       "Search": [
         "Pencarian"
       ],
@@ -597,6 +600,9 @@
       ],
       "Settings": [
         "Pengaturan"
+      ],
+      "Share": [
+        "Bagikan"
       ],
       "Share file": [
         "Bagikan berkas"
@@ -2021,8 +2027,32 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } telah dibatalkan."
+      ],
+      "All events in this series were updated.": [
+        "Semua acara dalam seri ini telah diperbarui."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Kejadian acara ini telah dibatalkan."
+      ],
+      "This event occurrence was updated.": [
+        "Kejadian acara ini telah diperbarui."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Kejadian acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2044,6 +2074,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "LOKASI:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } menerima undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } menolak undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } menerima undangan Anda secara tentatif ke ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -2111,6 +2152,9 @@
       ],
       "A problem occurred, please try again.": [
         "Terdapat suatu masalah, silakan coba lagi."
+      ],
+      "Account does not exist": [
+        "Akun tidak ada"
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -2271,6 +2315,9 @@
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Bukan akun ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Nomor telepon tidak valid"
       ],
@@ -2349,6 +2396,9 @@
       "status page": [
         "halaman status"
       ],
+      "The address might be misspelled": [
+        "Alamat mungkin salah ketik"
+      ],
       "The email addresses do not match": [
         "Alamat surel tidak cocok"
       ],
@@ -2420,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nama pengguna harus diakhiri dengan huruf atau angka"
+      ],
+      "Validation error": [
+        "Kesalahan validasi"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim surel ke lebih dari ${ maxContacts } penerima"
@@ -4482,6 +4535,12 @@
       "Add to group": [
         "Tambah ke grup"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Siapa pun di Internet yang memiliki tautan ini akan dapat melihat"
+      ],
+      "Anyone with the link": [
+        "Siapa pun yang memiliki tautan"
+      ],
       "App password": [
         "Kata sandi aplikasi"
       ],
@@ -4575,6 +4634,9 @@
       "Delete drive?": [
         "Hapus drive?"
       ],
+      "Delete link": [
+        "Hapus tautan"
+      ],
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
       ],
@@ -4593,9 +4655,6 @@
       "Download anyway": [
         "Tetap unduh"
       ],
-      "Downloading": [
-        "Mengunduh"
-      ],
       "Downloading ${ percentageValue }": [
         "Mengunduh ${ percentageValue }"
       ],
@@ -4604,6 +4663,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "mis. Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Penyunting"
       ],
       "Email": [
         "Surel"
@@ -4818,6 +4880,9 @@
       "Set expiration date": [
         "Atur tanggal kedaluwarsa"
       ],
+      "Set link password": [
+        "Atur kata sandi tautan"
+      ],
       "Set recovery method": [
         "Tentukan metode pemulihan"
       ],
@@ -4886,6 +4951,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "Viewer": [
+        "Pengamat"
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -6913,6 +6981,9 @@
       "Settings": [
         "Pengaturan"
       ],
+      "Share ${ name }": [
+        "Bagikan ${ name }"
+      ],
       "Share via link": [
         "Bagikan via tautan"
       ],
@@ -7084,6 +7155,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Shared end-to-end encrypted": [
+        "Dibagikan dengan enkripsi end-to-end"
       ],
       "Show side panel": [
         "Tampilkan panel samping"

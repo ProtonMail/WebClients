@@ -562,6 +562,9 @@
       "Save": [
         "Зберегти"
       ],
+      "Save changes": [
+        "Зберегти зміни"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -594,6 +597,9 @@
       ],
       "Settings": [
         "Налаштування"
+      ],
+      "Share": [
+        "Поділитися"
       ],
       "Share file": [
         "Спільний доступ до файлу"
@@ -2069,6 +2075,9 @@
       "A problem occurred, please try again.": [
         "Виникла проблема. Повторіть спробу."
       ],
+      "Account does not exist": [
+        "Облікового запису не існує"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -2237,6 +2246,9 @@
       "No valid address found": [
         "Не знайдено дійсної адреси"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Обліковий запис поза ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Номер недійсний"
       ],
@@ -2318,6 +2330,9 @@
       "status page": [
         "сторінку стану"
       ],
+      "The address might be misspelled": [
+        "Ймовірно, адреса неправильна"
+      ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
       ],
@@ -2389,6 +2404,9 @@
       ],
       "Username must end with a letter or digit": [
         "Ім'я користувача повинно закінчуватися літерою або цифрою"
+      ],
+      "Validation error": [
+        "Помилка перевірки"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачу",

@@ -571,6 +571,9 @@
       "Save": [
         "Uložiť"
       ],
+      "Save changes": [
+        "Uložiť zmeny"
+      ],
       "Search": [
         "Hľadať"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Share": [
+        "Zdieľať"
       ],
       "Share file": [
         "Zdieľať súbor"
@@ -2078,6 +2084,9 @@
       "A problem occurred, please try again.": [
         "Vyskytol sa problém, skúste to znova."
       ],
+      "Account does not exist": [
+        "Účet neexistuje"
+      ],
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
       ],
@@ -2225,6 +2234,9 @@
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nie je ${ BRAND_NAME } účet"
+      ],
       "Not a valid number": [
         "Neplatné číslo"
       ],
@@ -2312,6 +2324,9 @@
       "status page": [
         "stránka stavu"
       ],
+      "The address might be misspelled": [
+        "Adresa môže obsahovať preklep"
+      ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
       ],
@@ -2383,6 +2398,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "Validation error": [
+        "Chyba overenia"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -4735,9 +4753,6 @@
       ],
       "Download anyway": [
         "Stiahnuť aj tak"
-      ],
-      "Downloading": [
-        "Sťahovanie"
       ],
       "Downloading ${ percentageValue }": [
         "Sťahovanie ${ percentageValue }"
@@ -7259,7 +7274,7 @@
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
       ],

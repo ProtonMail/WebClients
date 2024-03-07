@@ -568,6 +568,9 @@
       "Save": [
         "შენახვა"
       ],
+      "Save changes": [
+        "ცვლილებების შენახვა"
+      ],
       "Search": [
         "ძებნა"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "მორგება"
+      ],
+      "Share": [
+        "გაზიარება"
       ],
       "Share file": [
         "ფაილის გაზიარება"
@@ -2156,6 +2162,9 @@
       "A problem occurred, please try again.": [
         "დაფიქსირდა შეცდომა. თავიდან სცადეთ."
       ],
+      "Account does not exist": [
+        "ანგარიში არ არსებობს"
+      ],
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
@@ -2318,6 +2327,9 @@
       "No valid address found": [
         "სწორი მისამართები ნაპოვნი არაა"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "არა-${ BRAND_NAME }-ის ანგარიში"
+      ],
       "Not a valid number": [
         "არასწორი ნომერი"
       ],
@@ -2399,6 +2411,9 @@
       "status page": [
         "სტატუსის გვერდი"
       ],
+      "The address might be misspelled": [
+        "ალბათ, მისამართი შეგეშალათ"
+      ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"
       ],
@@ -2470,6 +2485,9 @@
       ],
       "Username must end with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
+      ],
+      "Validation error": [
+        "გადამოწმების შეცდომა"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
@@ -4720,9 +4738,6 @@
       ],
       "Download anyway": [
         "მაინც გადმოწერა"
-      ],
-      "Downloading": [
-        "გადმოწერა"
       ],
       "Downloading ${ percentageValue }": [
         "გადმოწერა ${ percentageValue }"
