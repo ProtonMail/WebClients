@@ -46,6 +46,9 @@
       "Add note": [
         "Aggiungi nota"
       ],
+      "Add people or groups to share": [
+        "Aggiungi persone o gruppi con cui condividere"
+      ],
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
@@ -568,6 +571,18 @@
       "Save": [
         "Salva"
       ],
+      "Save changes": [
+        "Salva le modifiche"
+      ],
+      "Scan & Download": [
+        "Scansiona e scarica"
+      ],
+      "Scan & Download (${ count })": [
+        "Scansiona e scarica (${ count })"
+      ],
+      "Scan & Download all": [
+        "Scansiona tutto e scarica"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -600,6 +615,9 @@
       ],
       "Settings": [
         "Impostazioni"
+      ],
+      "Share": [
+        "Condividi"
       ],
       "Share file": [
         "Condividi file"
@@ -2156,6 +2174,9 @@
       "A problem occurred, please try again.": [
         "Si è verificato un problema. Per favore riprova."
       ],
+      "Account does not exist": [
+        "L'account non esiste"
+      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
       ],
@@ -2170,6 +2191,9 @@
       ],
       "Aliases could not be loaded": [
         "Impossibile caricare gli alias"
+      ],
+      "Already a member of this share": [
+        "Già membro di questa condivisione"
       ],
       "An error occurred while loading alias options": [
         "Si è verificato un errore nel caricamento delle opzioni dell'alias"
@@ -2318,6 +2342,9 @@
       "No valid address found": [
         "Nessun indirizzo valido trovato"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Non è un account ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Numero non valido"
       ],
@@ -2356,6 +2383,10 @@
       ],
       "Primary address key is not decrypted.": [
         "Chiave dell'indirizzo principale non decriptata."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Invitato duplicato rimosso: ${ joinedInvitee }",
+        "Invitati duplicati rimossi: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Invio della segnalazione non riuscito"
@@ -2398,6 +2429,9 @@
       ],
       "status page": [
         "pagina di stato"
+      ],
+      "The address might be misspelled": [
+        "L'indirizzo potrebbe esser errato"
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -2470,6 +2504,9 @@
       ],
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
+      ],
+      "Validation error": [
+        "Errore nella convalida"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
@@ -3629,8 +3666,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questa cartella è stata caricata in modo sicuro da ${ emailAddress }."
       ],
+      "Download": [
+        "Scarica"
+      ],
       "Download ${ name } app": [
         "Scarica l'app per ${ name }"
+      ],
+      "Download anyway": [
+        "Scarica comunque"
       ],
       "Download canceled": [
         "Download annullato"
@@ -3692,6 +3735,9 @@
       "End-to-end encrypted": [
         "Crittografato end-to-end"
       ],
+      "End-to-End Encrypted": [
+        "Crittografato end-to-end"
+      ],
       "Enter password": [
         "Inserisci la password"
       ],
@@ -3743,6 +3789,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Firma mancante nel file. Non è stato possibile verificare chi ha caricato ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Scansione dei file su Drive"
       ],
       "File will not be updated": [
         "Il file non verrà aggiornato."
@@ -3841,6 +3890,9 @@
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
       ],
+      "Invited": [
+        "Invitati"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembra che tu abbia recentemente provato a caricare ${ uploadName }. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
       ],
@@ -3900,6 +3952,10 @@
       ],
       "Makes your account safer": [
         "Rendi il tuo account più sicuro"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carattere",
+        "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caratteri"
       ],
       "Merged": [
         "Unito"
@@ -4083,6 +4139,9 @@
       "Report has been sent": [
         "La segnalazione è stata inviata"
       ],
+      "Report link": [
+        "Segnala il link"
+      ],
       "Restore": [
         "Ripristina"
       ],
@@ -4100,6 +4159,9 @@
       ],
       "Retry now": [
         "Riprova ora"
+      ],
+      "Scan issue": [
+        "Problema nella scansione"
       ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
@@ -4152,6 +4214,15 @@
       ],
       "Share files with links": [
         "File condivisi con link"
+      ],
+      "Share via link settings": [
+        "Impostazioni per la condivisione via link"
+      ],
+      "Share with": [
+        "Condividi con"
+      ],
+      "Share with anyone": [
+        "Condividi con chiunque"
       ],
       "Shareable link for ${ boldNameText }": [
         "Link condivisibile per ${ boldNameText }"
@@ -4279,6 +4350,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per contrastare spam e abusi, verifica di essere umano."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Per proteggerti, ${ DRIVE_APP_NAME } può scansionare i file e bloccare quelli dannosi. Dovresti comunque scaricare i file solamente dalle persone di cui ti fidi."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -4612,6 +4686,12 @@
       "Add to group": [
         "Aggiungi a un gruppo"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Chiunque su Internet con questo link può visualizzare"
+      ],
+      "Anyone with the link": [
+        "Chiunque abbia il link"
+      ],
       "App password": [
         "Password app"
       ],
@@ -4706,6 +4786,9 @@
         "Eliminare spazio?",
         "Eliminare spazi?"
       ],
+      "Delete link": [
+        "Elimina il link"
+      ],
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
       ],
@@ -4724,9 +4807,6 @@
       "Download anyway": [
         "Scarica comunque"
       ],
-      "Downloading": [
-        "Scaricamento in corso"
-      ],
       "Downloading ${ percentageValue }": [
         "Scaricamento in corso al ${ percentageValue }"
       ],
@@ -4735,6 +4815,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "Es. Amazon, eBay, Zalando"
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Email": [
         "Email"
@@ -4765,6 +4848,9 @@
       ],
       "Enter device name": [
         "Inserisci il nome del dispositivo"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Elimina questo link e rimuovi chiunque abbia l'accesso"
       ],
       "Expired": [
         "Scaduto"
@@ -4949,6 +5035,9 @@
       "Set expiration date": [
         "Imposta data di scadenza"
       ],
+      "Set link password": [
+        "Imposta la password per il link"
+      ],
       "Set recovery method": [
         "Impostare un metodo di recupero"
       ],
@@ -4985,6 +5074,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Questo file potrebbe essere pericoloso"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Questo eliminerà definitivamente tutti i file nello spazio bloccato."
       ],
@@ -5017,6 +5109,9 @@
       ],
       "Verification code": [
         "Codice di verifica"
+      ],
+      "Viewer": [
+        "Visualizzatore"
       ],
       "What happened?": [
         "Cos'è successo?"
@@ -5876,6 +5971,9 @@
       "A way to contact you": [
         "Un modo per contattarti"
       ],
+      "Choose password": [
+        "Scegli una password"
+      ],
       "E.g., ": [
         "Ad es "
       ],
@@ -5932,6 +6030,9 @@
       ],
       "Select": [
         "Seleziona"
+      ],
+      "Set date": [
+        "Imposta la data"
       ],
       "Start typing an email address": [
         "Inizia a digitare un indirizzo email"
@@ -7099,6 +7200,9 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Share ${ name }": [
+        "Condividi ${ name }"
+      ],
       "Share via link": [
         "Condividi via link"
       ],
@@ -7270,6 +7374,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
+      ],
+      "Shared end-to-end encrypted": [
+        "Condiviso con crittografia end-to-end"
       ],
       "Show side panel": [
         "Mostra pannello laterale"

@@ -262,6 +262,9 @@
       "Download apps": [
         "Скачать приложения"
       ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
       "Drive Locked": [
         "Хранилище заблокировано"
       ],
@@ -562,6 +565,9 @@
       "Save": [
         "Сохранить"
       ],
+      "Save changes": [
+        "Сохранить изменения"
+      ],
       "Search": [
         "Поиск"
       ],
@@ -594,6 +600,9 @@
       ],
       "Settings": [
         "Настройки"
+      ],
+      "Share": [
+        "Поделиться"
       ],
       "Share file": [
         "Поделиться файлом"
@@ -2059,6 +2068,9 @@
       "A problem occurred, please try again.": [
         "Что-то пошло не так. Попробуйте ещё раз."
       ],
+      "Account does not exist": [
+        "Аккаунт не существует"
+      ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
@@ -2206,6 +2218,9 @@
       "No valid address found": [
         "Не найдено действительных адресов"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Не аккаунт ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Номер недействителен"
       ],
@@ -2290,6 +2305,9 @@
       "status page": [
         "страница статуса"
       ],
+      "The address might be misspelled": [
+        "Возможно, адрес указан неверно"
+      ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
       ],
@@ -2361,6 +2379,9 @@
       ],
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
+      "Validation error": [
+        "Ошибка проверки"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Нельзя отправить письмо более чем ${ maxContacts } получателю",
@@ -4657,9 +4678,6 @@
       ],
       "Download anyway": [
         "Все равно скачать"
-      ],
-      "Downloading": [
-        "Скачивание"
       ],
       "Downloading ${ percentageValue }": [
         "Загрузка ${ percentageValue }"

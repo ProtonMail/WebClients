@@ -592,6 +592,12 @@
         "${ memberCount } учасників",
         "${ memberCount } учасників"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } раз",
+        "${ modifiedCount } разів",
+        "${ modifiedCount } рази",
+        "${ modifiedCount } рази"
+      ],
       "${ n } item": [
         "${ n } елемент",
         "Елементів: ${ n }",
@@ -1368,6 +1374,9 @@
       "Create PIN code": [
         "Створіть PIN-код"
       ],
+      "Current version": [
+        "Поточна версія"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Видалити сховище \"${ vaultName }\" ?"
       ],
@@ -1409,6 +1418,9 @@
       ],
       "Permanently remove all items ?": [
         "Остаточно видалити всі елементи ?"
+      ],
+      "Restore this version?": [
+        "Відновити цю версію?"
       ],
       "Review and share": [
         "Перегляд і спільний доступ"

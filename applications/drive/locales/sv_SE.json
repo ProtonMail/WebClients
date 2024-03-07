@@ -568,6 +568,18 @@
       "Save": [
         "Spara"
       ],
+      "Save changes": [
+        "Spara ändringar"
+      ],
+      "Scan & Download": [
+        "Skanna och ladda ner"
+      ],
+      "Scan & Download (${ count })": [
+        "Skanna och ladda ner (${ count })"
+      ],
+      "Scan & Download all": [
+        "Skanna och ladda ner alla"
+      ],
       "Search": [
         "Sök"
       ],
@@ -600,6 +612,9 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Share": [
+        "Dela"
       ],
       "Share file": [
         "Dela fil"
@@ -2144,6 +2159,9 @@
       "A problem occurred, please try again.": [
         "Ett problem uppstod, försök igen."
       ],
+      "Account does not exist": [
+        "Konto finns inte"
+      ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
@@ -2158,6 +2176,9 @@
       ],
       "Aliases could not be loaded": [
         "Alias kunde inte laddas"
+      ],
+      "Already a member of this share": [
+        "Redan medlem av denna delning"
       ],
       "An error occurred while loading alias options": [
         "Ett fel uppstod när alternativen för alias skulle laddas"
@@ -2306,6 +2327,9 @@
       "No valid address found": [
         "Ingen giltig adress hittades"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Inte ett ${ BRAND_NAME }-konto"
+      ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
@@ -2387,6 +2411,9 @@
       "status page": [
         "statussida"
       ],
+      "The address might be misspelled": [
+        "Adressen kan vara felstavad"
+      ],
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
       ],
@@ -2458,6 +2485,9 @@
       ],
       "Username must end with a letter or digit": [
         "Användarnamn måste sluta med en bokstav eller siffra"
+      ],
+      "Validation error": [
+        "Verifieringsfel"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -3617,8 +3647,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ emailAddress }."
       ],
+      "Download": [
+        "Ladda ner"
+      ],
       "Download ${ name } app": [
         "Ladda ner ${ name }-appen"
+      ],
+      "Download anyway": [
+        "Ladda ner ändå"
       ],
       "Download canceled": [
         "Nedladdning avbröts"
@@ -3679,6 +3715,9 @@
       ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
+      ],
+      "End-to-End Encrypted": [
+        "End-to-end krypterad"
       ],
       "Enter password": [
         "Ange lösenord"
@@ -3829,6 +3868,9 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Invited": [
+        "Inbjuden"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det verkar som att du nyligen försökte ladda upp ${ uploadName }. Om uppladdningen misslyckades, ${ replaceFile }. Om uppladdningen fortfarande pågår kommer den pågående uppladdningen att avbrytas om den ersätts."
       ],
@@ -3888,6 +3930,10 @@
       ],
       "Makes your account safer": [
         "Gör ditt konto säkrare"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken",
+        "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken"
       ],
       "Merged": [
         "Sammanslagna"
@@ -4071,6 +4117,9 @@
       "Report has been sent": [
         "Rapport har skickats"
       ],
+      "Report link": [
+        "Rapportera länk"
+      ],
       "Restore": [
         "Återställ"
       ],
@@ -4088,6 +4137,9 @@
       ],
       "Retry now": [
         "Försök igen nu"
+      ],
+      "Scan issue": [
+        "Skanningsproblem"
       ],
       "Search cannot be enabled in this browser": [
         "Sökning kan inte aktiveras i denna webbläsare"
@@ -4140,6 +4192,15 @@
       ],
       "Share files with links": [
         "Dela filer med länkar"
+      ],
+      "Share via link settings": [
+        "Dela via länkinställningar"
+      ],
+      "Share with": [
+        "Dela med"
+      ],
+      "Share with anyone": [
+        "Dela med vem som helst"
       ],
       "Shareable link for ${ boldNameText }": [
         "Delningsbar länk för ${ boldNameText }"
@@ -4267,6 +4328,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "För att skydda dig kan ${ DRIVE_APP_NAME } skanna och blockera skadliga filer. Du bör fortfarande bara ladda ner filer från personer du litar på."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
@@ -4600,6 +4664,12 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Vem som helst på Internet med länken kan visa"
+      ],
+      "Anyone with the link": [
+        "Vem som helst med länken"
+      ],
       "App password": [
         "Applösenord"
       ],
@@ -4694,6 +4764,9 @@
         "Ta bort hårddisk?",
         "Ta bort hårddiskar?"
       ],
+      "Delete link": [
+        "Ta bort länk"
+      ],
       "Delete recovery-related information.": [
         "Ta bort återställningsrelaterad information."
       ],
@@ -4712,9 +4785,6 @@
       "Download anyway": [
         "Ladda ner ändå"
       ],
-      "Downloading": [
-        "Laddar ner"
-      ],
       "Downloading ${ percentageValue }": [
         "Laddar ner ${ percentageValue }"
       ],
@@ -4723,6 +4793,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "t.ex. Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Redaktör"
       ],
       "Email": [
         "E-post"
@@ -4753,6 +4826,9 @@
       ],
       "Enter device name": [
         "Ange enhetsnamn"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Radera denna länk och ta bort alla med åtkomst"
       ],
       "Expired": [
         "Löpt ut"
@@ -4937,6 +5013,9 @@
       "Set expiration date": [
         "Ange utgångsdatum"
       ],
+      "Set link password": [
+        "Ställ in länklösenord"
+      ],
       "Set recovery method": [
         "Ställ in återställningsmetod"
       ],
@@ -4973,6 +5052,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Denna fil är potentiellt infekterad"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Detta tar permanent bort alla filer på din låsta Drive."
       ],
@@ -5005,6 +5087,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Viewer": [
+        "Läsare"
       ],
       "What happened?": [
         "Vad hände?"
@@ -5873,6 +5958,9 @@
       "A way to contact you": [
         "Ett sätt att kontakta dig"
       ],
+      "Choose password": [
+        "Välj lösenord"
+      ],
       "E.g., ": [
         "T.ex., "
       ],
@@ -5929,6 +6017,9 @@
       ],
       "Select": [
         "Välj"
+      ],
+      "Set date": [
+        "Ställ in datum"
       ],
       "Start typing an email address": [
         "Börja skriva en e-postadress"
@@ -7096,6 +7187,9 @@
       "Settings": [
         "Inställningar"
       ],
+      "Share ${ name }": [
+        "Dela ${ name }"
+      ],
       "Share via link": [
         "Dela via länk"
       ],
@@ -7267,6 +7361,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
+      ],
+      "Shared end-to-end encrypted": [
+        "Delad end-to-end krypterad"
       ],
       "Show side panel": [
         "Visa sidopanel"

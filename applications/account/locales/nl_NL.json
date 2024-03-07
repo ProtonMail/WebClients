@@ -1489,7 +1489,7 @@
         "${ n } maanden"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Hernieuwd automatisch aan ${ renewPrice }, voor ${ renewalLength }"
+        "Hernieuwt automatisch aan ${ renewPrice }, voor ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -1524,7 +1524,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME } desktop-app"
       ]
     },
     "Bug category": {
@@ -3257,6 +3257,72 @@
         "U kan dit tabblad veilig sluiten."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHRIJVING:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } werd geannuleerd."
+      ],
+      "All events in this series were updated.": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt. Hier is wat er veranderd is:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Deze afspraakgebeurtenis werd geannuleerd."
+      ],
+      "This event occurrence was updated.": [
+        "Deze afspraakgebeurtenis werd bijgewerkt."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Deze afspraak werd bijgewerkt. Dit is wat er veranderd is:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Deze afspraak werd bijgewerkt."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Deze afspraak is bijgewerkt. Dit is wat is veranderd:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "U bent uitgenodigd voor ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "TIJD:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "TIJD:\n${ formattedStart } (hele dag)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TIJD:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Verwijderd"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCATIE:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } afgewezen"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft voorlopig uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } toegevoegd"
@@ -3627,7 +3693,7 @@
         "Vroegtijdige toegang nieuwe applicaties functies"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME } desktop app"
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME }-desktopapp"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
@@ -5096,10 +5162,13 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME }-desktopapp"
       ],
       "Back to sign in": [
         "Terug naar aanmelden"
+      ],
+      "Your desktop app free trial has ended": [
+        "Uw gratis proefversie van de desktop app is afgelopen."
       ]
     },
     "Frequency of news": {
@@ -7188,13 +7257,13 @@
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
       "Subscription auto-renews every 12 months.": [
-        "Abonnement vernieuwd automatisch elke 12 maanden."
+        "Abonnement vernieuwt automatisch elke 12 maanden."
       ],
       "Subscription auto-renews every 24 months.": [
         "Abonnement vernieuwd automatisch elke 24 maanden."
       ],
       "Subscription auto-renews every month.": [
-        "Abonnement vernieuwd automatisch elke maand."
+        "Abonnement vernieuwt automatisch elke maand."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
@@ -10166,6 +10235,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Group management (coming soon)": [
+        "Groepenbeheer (binnenkort)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -10220,7 +10292,7 @@
         "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Require 2FA for organization": [
-        "Tweetrapsauthenticatie vereist voor organisatie"
+        "Tweestapsauthenticatie vereist voor organisatie"
       ],
       "Router support": [
         "Routerondersteuning"
@@ -10304,6 +10376,9 @@
       "Unlimited shared vaults with access permissions": [
         "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
+      "Unlimited vault sharing": [
+        "Onbeperkt kluizen delen"
+      ],
       "Unlimited vaults": [
         "Onbeperkt aantal kluizen"
       ],
@@ -10357,6 +10432,17 @@
       ],
       "Team management": [
         "Teambeheer"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10452,17 +10538,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11578,6 +11653,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Voor bedrijven"
+      ],
+      "For individuals": [
+        "Voor particulieren"
       ]
     },
     "passwordless": {

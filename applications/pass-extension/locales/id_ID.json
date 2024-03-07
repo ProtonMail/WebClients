@@ -440,6 +440,12 @@
       "View app logs": [
         "Lihat log aplikasi"
       ],
+      "View history": [
+        "Lihat riwayat"
+      ],
+      "View older history": [
+        "Tampilkan riwayat lebih lama"
+      ],
       "Write us on Reddit": [
         "Tulis tentang kami di Reddit"
       ],
@@ -578,6 +584,9 @@
       ],
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
+      ],
+      "Failed to load item history": [
+        "Riwayat item gagal dimuat"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
@@ -854,6 +863,12 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Apakah Anda yakin ingin memindahkan semua item dari \"${ fromVaultName }\" ke \"${ toVaultName }\"?"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Apakah Anda yakin untuk memindahkan rangkaian item ini ke \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Apakah Anda yakin untuk memindahkan item ini ke \"${ name }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Pengunci otomatis berhasil dinonaktifkan"
       ],
@@ -1040,8 +1055,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya"
+      ],
       "Moving items": [
         "Memindahkan item"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya"
       ],
       "Moving items to trash": [
         "Memindahkan item ke sampah"
@@ -1210,6 +1231,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Brankas ini sedang tidak dibagikan dengan siapa pun. Undanglah orang-orang ke brankas ini untuk saling berbagi brankas bersama mereka."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Versi ini akan ditambahkan ke riwayat sebagai versi terbaru."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
@@ -1895,6 +1919,12 @@
       "Create PIN code": [
         "Buat kode PIN"
       ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Current version": [
+        "Versi saat ini"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Hapus brankas \"${ vaultName }\" ?"
       ],
@@ -1937,6 +1967,12 @@
       "Import to vault(s)": [
         "Impor ke brankas"
       ],
+      "Last autofill": [
+        "Pengisian otomatis terakhir"
+      ],
+      "Last modified": [
+        "Terakhir diubah"
+      ],
       "Leave vault ?": [
         "Tinggalkan brankas?"
       ],
@@ -1958,6 +1994,12 @@
       "Move all items ?": [
         "Pindahkan semua item?"
       ],
+      "Move item?": [
+        "Pindahkan item?"
+      ],
+      "Move items?": [
+        "Pindahkan item?"
+      ],
       "No items selected": [
         "Tidak ada item yang dipilih"
       ],
@@ -1978,6 +2020,9 @@
       ],
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Pulihkan versi ini?"
       ],
       "Review and share": [
         "Kaji dan bagikan"

@@ -2133,6 +2133,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "カテゴリ別またはエネルギーレベル別にイベントを色分けすることで、効率を高め、時間を追跡します。 有料プランでは、これだけでなくさらに多くの機能を利用できます。"
       ],
@@ -2157,6 +2160,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "データの損失を防ぐには、データの回復手段を設定します。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "アカウントへのアクセスが失われないように回復手段を設定してください。"
+      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "これには数分かかります。その間は、通常通りカレンダーをお使いいただけます。"
       ],
@@ -2168,6 +2177,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
+      ],
+      "Your account and data recovery methods are set.": [
+        "アカウントとデータの回復手段が設定されています。"
       ]
     },
     "description": {
@@ -5560,14 +5575,23 @@
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
+      ],
       "New alias": [
         "新しいエイリアス"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を開く"
       ],
+      "Protect your online identity": [
+        "あなたをオンラインで守る"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -5578,6 +5602,11 @@
     "Security Center - Action": {
       "View logs": [
         "ログを表示"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -6067,6 +6096,12 @@
       ],
       "Address copied to clipboard": [
         "住所がクリップボードにコピーされました"
+      ],
+      "Alias copied to clipboard": [
+        "エイリアスがクリップボードにコピーされました"
+      ],
+      "Alias saved and copied": [
+        "エイリアスを保存してコピーしました"
       ],
       "All events deleted": [
         "すべての予定が削除されました"
@@ -6692,6 +6727,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "同じ電子メールで参加者を招待しました"
+      ],
+      "Your account is protected": [
+        "あなたのアカウントは保護されています"
       ],
       "Your calendar link": [
         "カレンダーのリンク"

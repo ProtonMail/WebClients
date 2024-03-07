@@ -3176,7 +3176,7 @@
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
-        "Açıklama:\n${ eventDescription }"
+        "AÇIKLAMA:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
@@ -3184,16 +3184,25 @@
         "${ eventTitle } iptal edildi."
       ],
       "All events in this series were updated.": [
-        "Bu serideki tüm etkinlikler güncellendi."
+        "Bu dizideki tüm etkinlikler güncellendi."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu serideki tüm etkinlikler güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+        "Bu dizideki tüm etkinlikler güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Bu etkinlik kopyası iptal edildi."
+      ],
+      "This event occurrence was updated.": [
+        "Bu etkinlik kopyası güncellendi."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu etkinlik kopyası güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+        "Bu etkinlik güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
@@ -3201,13 +3210,13 @@
     },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
-        "Zaman:\n${ formattedStart }"
+        "ZAMAN:\n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
         "ZAMAN:\n${ formattedStart } (tüm gün)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "Zaman:\n${ formattedStart } - ${ formattedEnd }"
+        "ZAMAN:\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -3217,7 +3226,18 @@
     },
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
-        "Konum:\n${ eventLocation }"
+        "KONUM:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi kabul etti"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi reddetti"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi belirsiz olarak kabul etti"
       ]
     },
     "Email reminder banner": {
@@ -4414,7 +4434,7 @@
         "Gelen kutunuza ve takviminize hızla, güvenle ve dikkatinizi dağıtmadan erişmenin tadını çıkarın."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Herhangi bir ${ MAIL_APP_NAME } planı ile sınırsız erişim elde edin."
+        "Herhangi bir ${ MAIL_APP_NAME } tarifesi ile sınırsız erişim elde edin."
       ],
       "No credit card required.": [
         "Kredi kartı gerekmez."
@@ -4428,7 +4448,7 @@
     },
     "Free trial destkop": {
       "Start free trial": [
-        "Ücretsiz denemeyi başlatın"
+        "Ücretsiz deneme süresini başlatın"
       ]
     },
     "Get started checklist instructions": {
@@ -8272,7 +8292,7 @@
     },
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } açacaktır)"
+        "(${ PASS_APP_NAME } açılacak)"
       ]
     },
     "Security Center - Action": {
@@ -9133,7 +9153,7 @@
         "Etiketler uygulandı."
       ],
       "Last modified aliases stored in your oldest vault": [
-        "En eski kasanızda saklanan son değiştirilen takma adlar"
+        "En eski kasanızda bulunan son değiştirilmiş takma adlar"
       ],
       "Mail list unsubscribed": [
         "Posta listesi aboneliğinden ayrıldınız"

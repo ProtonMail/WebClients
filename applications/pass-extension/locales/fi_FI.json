@@ -440,6 +440,12 @@
       "View app logs": [
         "Näytä sovelluksen lokit"
       ],
+      "View history": [
+        "Näytä historia"
+      ],
+      "View older history": [
+        "Näytä aiempi historia"
+      ],
       "Write us on Reddit": [
         "Kirjoita meille Redditissä"
       ],
@@ -583,6 +589,9 @@
       ],
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
+      ],
+      "Failed to load item history": [
+        "Kohdehistorian lataaminen epäonnistui"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kaikkia sijainnin \"${ payload.content.name }\" kohteita ei voitu siirtää"
@@ -803,6 +812,10 @@
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } kerran",
+        "${ modifiedCount } kertaa"
+      ],
       "${ n } item": [
         "${ n } kohde",
         "${ n } kohdetta"
@@ -867,6 +880,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Haluatko varmasti siirtää kaikki holvin \"${ fromVaultName }\" kohteet holviin \"${ toVaultName }\"?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Haluatko varmasti siirtää kohteet holviin \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Haluatko varmasti siirtää kohteen holviin \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
@@ -1060,8 +1079,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its history": [
+        "Kohteen siirtäminen toiseen holviin poistaa sen historian"
+      ],
       "Moving items": [
         "Siirretään kohteita"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Kohteiden siirtäminen toiseen holviin poistaa niiden historian"
       ],
       "Moving items to trash": [
         "Kohteita siirretään roskakoriin"
@@ -1235,6 +1260,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Holvia ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Tämä versio lisätään historiaan uusimpana versiona."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Tuo tietosi muista salasanahallinnoista lataamalla käyttämästäsi palvelusta viemäsi tiedosto ${ PASS_APP_NAME }iin. Kun tietosi on tuotu, poista vientitiedosto."
@@ -1934,6 +1962,12 @@
       "Create PIN code": [
         "Luo PIN-koodi"
       ],
+      "Created": [
+        "Luotu"
+      ],
+      "Current version": [
+        "Nykyinen versio"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Poistetaanko holvi \"${ vaultName }\"?"
       ],
@@ -1976,6 +2010,12 @@
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
       ],
+      "Last autofill": [
+        "Viimeksi automaattitäytetty"
+      ],
+      "Last modified": [
+        "Viimeksi muokattu"
+      ],
       "Leave vault ?": [
         "Poistutaanko holvista?"
       ],
@@ -1997,6 +2037,12 @@
       "Move all items ?": [
         "Siirretäänkö kaikki kohteet?"
       ],
+      "Move item?": [
+        "Siirrä kohde?"
+      ],
+      "Move items?": [
+        "Siirrä kohteet?"
+      ],
       "No items selected": [
         "Kohteita ei ole valittu"
       ],
@@ -2017,6 +2063,9 @@
       ],
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Palautetaanko tämä versio?"
       ],
       "Review and share": [
         "Tarkista ja jaa"
