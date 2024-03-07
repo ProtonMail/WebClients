@@ -1,7 +1,8 @@
-import type { FieldType, FormType } from '@proton/pass/fathom';
-import type { MaybeNull } from '@proton/pass/types';
+import { type AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
 
-import { type AutofillOptions } from '../utils/autofill';
+import type { FieldType, FormType } from '@proton/pass/fathom';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
+
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 
@@ -38,7 +39,7 @@ export interface FieldHandle {
     setAction: (action: MaybeNull<DropdownAction>) => void;
     autofill: (value: string, options?: AutofillOptions) => void;
     focus: (options?: { preventAction?: boolean }) => void;
-    attachIcon: () => FieldIconHandle;
+    attachIcon: () => Maybe<FieldIconHandle>;
     detachIcon: () => void;
     attach: (onSubmit: () => void) => void;
     detach: () => void;

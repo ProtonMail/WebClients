@@ -10,6 +10,7 @@
  * - Failed recovery: extension context change with failed recovery -> destroy.
  * - Error during setup: client encounters an error during setup -> destroy.
  */
+import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
@@ -24,8 +25,6 @@ import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
-
-import { CSContext } from '../context/context';
 
 type CreateContentScriptOptions = {
     scriptId: string;
