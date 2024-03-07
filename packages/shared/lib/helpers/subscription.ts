@@ -262,6 +262,15 @@ export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs 
     }, {});
 };
 
+export function getPlanFromIds(planIDs: PlanIDs): PLANS {
+    return Object.values(PLANS).find((key) => {
+        // If the planIDs object has non-zero value for the plan, then it exists.
+        // There can be at most 1 plan, and others are addons.
+        const planNumber = planIDs[key as PLANS] ?? 0;
+        return planNumber > 0;
+    }) as PLANS;
+}
+
 export const isTrial = (subscription: Subscription | undefined) => {
     const isTrialV4 =
         subscription?.CouponCode === COUPON_CODES.REFERRAL ||

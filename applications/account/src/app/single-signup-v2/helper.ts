@@ -664,7 +664,6 @@ export const getPlanCardSubscriptionData = async ({
                                 ...getOptimisticCheckResult({ planIDs, plansMap, cycle }),
                                 Currency: currency,
                                 PeriodEnd: 0,
-                                Additions: null,
                             },
                             billingAddress,
                         };
