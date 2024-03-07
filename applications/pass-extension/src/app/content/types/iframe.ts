@@ -11,7 +11,6 @@ import type { NotificationActions } from './notification';
 export type IFramePosition = Partial<Rect> & { zIndex?: number };
 
 export type IFrameState<A> = {
-    stale: boolean;
     action: MaybeNull<A>;
     framePort: MaybeNull<string>;
     loaded: boolean;
@@ -39,11 +38,10 @@ export interface IFrameApp<A = any> {
     getPosition: () => IFramePosition;
     ensureLoaded: () => Promise<void>;
     ensureReady: () => Promise<void>;
-    init: (payload: IFrameInitPayload) => void;
+    init: (port: Runtime.Port, payload: IFrameInitPayload) => void;
     open: (action: A, scrollRef?: HTMLElement) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
     sendPortMessage: (message: IFrameMessage) => void;
-    setPort: (port: Runtime.Port) => void;
     updatePosition: () => void;
 }
 
@@ -51,9 +49,8 @@ export interface IFrameAppService<T extends { action: any }> {
     close: () => IFrameAppService<T>;
     destroy: () => void;
     getState: () => IFrameState<T['action']>;
-    init: (payload: IFrameInitPayload) => IFrameAppService<T>;
+    init: (port: Runtime.Port, payload: IFrameInitPayload) => IFrameAppService<T>;
     open: (options: T) => IFrameAppService<T>;
-    setPort: (port: Runtime.Port) => IFrameAppService<T>;
 }
 
 export enum IFrameMessageType {
