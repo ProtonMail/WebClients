@@ -416,6 +416,9 @@
       "View app logs": [
         "Mostra els registres de l'aplicació"
       ],
+      "View history": [
+        "Mostra l'historial"
+      ],
       "Write us on Reddit": [
         "Escriu-nos a Reddit"
       ],
@@ -722,6 +725,10 @@
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
+      ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } vegada",
+        "${ modifiedCount } vegades"
       ],
       "${ n } item": [
         "${ n } element",
@@ -1705,6 +1712,12 @@
       "Create PIN code": [
         "Creeu un codi PIN"
       ],
+      "Created": [
+        "Creació"
+      ],
+      "Current version": [
+        "Versió actual"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Voleu eliminar la caixa forta \"${ vaultName }\"?"
       ],
@@ -1747,6 +1760,12 @@
       "Import to vault(s)": [
         "Importa a les caixes fortes"
       ],
+      "Last autofill": [
+        "Últim emplenament automàtic"
+      ],
+      "Last modified": [
+        "Darrera modificació"
+      ],
       "Leave vault ?": [
         "Deixa la caixa forta?"
       ],
@@ -1768,6 +1787,12 @@
       "Move all items ?": [
         "Mou tots els elements ?"
       ],
+      "Move item?": [
+        "Voleu moure l'element?"
+      ],
+      "Move items?": [
+        "Voleu moure els elements?"
+      ],
       "No items selected": [
         "No s'ha seleccionat cap element."
       ],
@@ -1788,6 +1813,9 @@
       ],
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Voleu restaurar aquesta versió?"
       ],
       "Review and share": [
         "Reviseu i comparteu"

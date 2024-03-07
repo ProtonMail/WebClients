@@ -440,6 +440,12 @@
       "View app logs": [
         "Zobraziť zázmamy aplikácie"
       ],
+      "View history": [
+        "Zobraziť históriu"
+      ],
+      "View older history": [
+        "Zobraziť staršiu históriu"
+      ],
       "Write us on Reddit": [
         "Napíšte nám na Reddite"
       ],
@@ -587,6 +593,9 @@
       ],
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
+      ],
+      "Failed to load item history": [
+        "Nepodarilo sa načítať históriu položky"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Presun všetkých položiek z \"${ payload.content.name }\" zlyhal"
@@ -821,6 +830,12 @@
         "${ memberCount } členov",
         "${ memberCount } členov"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount }-krát",
+        "${ modifiedCount } -krát",
+        "${ modifiedCount } -krát",
+        "${ modifiedCount } -krát"
+      ],
       "${ n } item": [
         "${ n } položka",
         "${ n } položky",
@@ -889,6 +904,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Skutočne chcete presunúť všetky položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Naozaj chcete presunúť položky do \"${ name }\" ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Naozaj chcete presunúť položku do \"${ name }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "Automatické uzamknutie bolo úspešne deaktivované"
@@ -1088,8 +1109,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Presunutím položky do iného trezora sa vymaže jej história"
+      ],
       "Moving items": [
         "Presúvanie položiek"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Presunutím položiek do iného trezora sa vymaže ich história"
       ],
       "Moving items to trash": [
         "Presúvanie položiek do koša"
@@ -1267,6 +1294,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor zatiaľ nie je s nikým zdieľaný. Pozvite ľudí, s ktorými ho chcete zdieľať."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Táto verzia bude pridaná do histórie ako najnovšia verzia."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Ak chcete migrovať údaje z iného správcu hesiel, prejdite do správcu hesiel, exportujte svoje údaje a potom ich nahrajte do ${ PASS_APP_NAME }. Po importovaní údajov odstráňte exportovaný súbor."
@@ -1673,7 +1703,7 @@
         "Zoznam pozastavených"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "JSON šifrovaný PGP (odporúča sa)"
+        "PGP-šifrovaný JSON (odporúča sa)"
       ],
       "PIN": [
         "PIN"
@@ -1976,6 +2006,12 @@
       "Create PIN code": [
         "Vytvoriť PIN kód"
       ],
+      "Created": [
+        "Vytvorené"
+      ],
+      "Current version": [
+        "Súčasná verzia"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Odstrániť trezor \"${ vaultName }\"?"
       ],
@@ -2018,6 +2054,12 @@
       "Import to vault(s)": [
         "Importovať do trezoru(ov)"
       ],
+      "Last autofill": [
+        "Posledné automatické vyplnenie"
+      ],
+      "Last modified": [
+        "Posledná zmena"
+      ],
       "Leave vault ?": [
         "Opustiť trezor ?"
       ],
@@ -2039,6 +2081,12 @@
       "Move all items ?": [
         "Presunúť všetky položky ?"
       ],
+      "Move item?": [
+        "Presunúť položku?"
+      ],
+      "Move items?": [
+        "Presunúť položky?"
+      ],
       "No items selected": [
         "Žiadne vybrané položky"
       ],
@@ -2059,6 +2107,9 @@
       ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Obnoviť túto verziu?"
       ],
       "Review and share": [
         "Skontrolovať a zdieľať"
