@@ -1,16 +1,7 @@
-import {
-    type FC,
-    type PropsWithChildren,
-    createContext,
-    useContext,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useState } from 'react';
 
 import type { SelectedItem } from '@proton/pass/types';
-import { hasSelection } from '@proton/pass/utils/dom/selection';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 export type BulkSelection = Map<string, Set<string>>;
@@ -23,10 +14,8 @@ type BulkSelectContextType = {
     disable: () => void;
     enable: () => void;
     isSelected: (item: { shareId: string; itemId: string }) => boolean;
-    lock: () => () => void;
-    select: ({ shareId, itemId }: SelectedItem) => void;
-    unlock: () => void;
-    unselect: ({ shareId, itemId }: SelectedItem) => void;
+    select: (item: SelectedItem) => void;
+    unselect: (item: SelectedItem) => void;
 };
 
 const BulkSelectContext = createContext<BulkSelectContextType>({
@@ -37,16 +26,13 @@ const BulkSelectContext = createContext<BulkSelectContextType>({
     disable: noop,
     enable: noop,
     isSelected: () => false,
-    lock: () => noop,
     select: noop,
-    unlock: noop,
     unselect: noop,
 });
 
 export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
     const [selection, setSelection] = useState<BulkSelection>(new Map());
     const [enabled, setEnabled] = useState(false);
-    const locked = useRef(false);
 
     const context = useMemo<BulkSelectContextType>(() => {
         const clear = () => setSelection(new Map());
@@ -58,16 +44,7 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
             clear,
 
             enable: () => setEnabled(true),
-            disable: () => {
-                setEnabled(false);
-                clear();
-            },
-
-            unlock: () => (locked.current = false),
-            lock: () => {
-                locked.current = true;
-                return () => (locked.current = false);
-            },
+            disable: pipe(() => setEnabled(false), clear),
 
             isSelected: ({ shareId, itemId }) => selection.get(shareId)?.has(itemId) ?? false,
 
@@ -85,27 +62,6 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
                 }),
         };
     }, [selection, enabled]);
-
-    useEffect(() => {
-        const handleKeyUp = (event: KeyboardEvent) => {
-            if (locked.current) return;
-            if (enabled && context.count === 0) context.disable();
-            if (event.ctrlKey || event.metaKey) document.removeEventListener('keyup', handleKeyUp);
-        };
-
-        const handleKeyDown = (event: KeyboardEvent) => {
-            if (locked.current) return;
-            if (!enabled && (event.ctrlKey || event.metaKey) && !hasSelection()) context.enable();
-        };
-
-        document.addEventListener('keydown', handleKeyDown);
-        document.addEventListener('keyup', handleKeyUp);
-
-        return () => {
-            document.removeEventListener('keydown', handleKeyDown);
-            document.removeEventListener('keyup', handleKeyUp);
-        };
-    }, [enabled, context.count]);
 
     return <BulkSelectContext.Provider value={context}>{children}</BulkSelectContext.Provider>;
 };
