@@ -6,7 +6,7 @@ import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/m
 import { getCurrentTab } from '@proton/pass/lib/extension/utils/tabs';
 import browser from '@proton/pass/lib/globals/browser';
 import { type ClientEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
-import { createSharedContext } from '@proton/pass/utils/context';
+import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
@@ -29,7 +29,7 @@ export type ExtensionContextOptions = {
     onRecycle: (nextCtx: ExtensionContextType) => void;
 };
 
-export const ExtensionContext = createSharedContext<ExtensionContextType>('extension');
+export const ExtensionContext = contextHandlerFactory<ExtensionContextType>('extension');
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
     const { endpoint, onDisconnect, onRecycle } = options;
