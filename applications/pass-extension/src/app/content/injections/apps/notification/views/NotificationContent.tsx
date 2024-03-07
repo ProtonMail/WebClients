@@ -1,12 +1,16 @@
 import { type FC, useCallback, useState } from 'react';
 
+import {
+    useIFrameContext,
+    useRegisterMessageHandler,
+} from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
+import type { IFrameMessage, NotificationActions } from 'proton-pass-extension/app/content/types';
+import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
+
 import { NotificationsChildren } from '@proton/components/containers';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { MaybeNull } from '@proton/pass/types';
 
-import type { NotificationActions } from '../../../../types';
-import { type IFrameMessage, IFrameMessageType } from '../../../../types';
-import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { NotificationSwitch } from '../components/NotificationSwitch';
 
 export const NotificationContent: FC = () => {
