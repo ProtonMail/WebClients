@@ -83,6 +83,7 @@ export const getDeleteRecurringEventActions = async ({
 
         const isSingleEdit = oldEvent.ID !== originalEvent.ID;
         const isCancelInvitation = inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION;
+        const isPersonalSingleEdit = getIsPersonalSingleEdit(oldEvent);
         let cancelledOccurrenceVevent: VcalVeventComponent | undefined;
         let hasCancelledMainSeriesWithProtonAttendees = false;
 
@@ -114,8 +115,9 @@ export const getDeleteRecurringEventActions = async ({
                 inviteActions,
                 cancelVevent: cancelledOccurrenceVevent,
             });
+            const isNonPersonalSingleEdit = isSingleEdit && !isPersonalSingleEdit;
             hasCancelledMainSeriesWithProtonAttendees =
-                !isSingleEdit && getHasProtonAttendees(cancelledOccurrenceVevent, sendPreferencesMap);
+                !isNonPersonalSingleEdit && getHasProtonAttendees(cancelledOccurrenceVevent, sendPreferencesMap);
             updatedInviteActions = cleanInviteActions;
         }
 
