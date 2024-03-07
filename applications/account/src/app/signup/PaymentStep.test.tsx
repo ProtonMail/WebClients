@@ -105,7 +105,6 @@ beforeEach(() => {
                 Currency: 'USD',
                 Cycle: CYCLE.MONTHLY,
                 Gift: 0,
-                Additions: null,
                 PeriodEnd: 1622505600,
             },
             payment: undefined,
