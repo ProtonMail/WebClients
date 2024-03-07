@@ -440,6 +440,12 @@
       "View app logs": [
         "Ver los registros de la aplicación"
       ],
+      "View history": [
+        "Mostrar el historial"
+      ],
+      "View older history": [
+        "Mostrar el historial más antiguo"
+      ],
       "Write us on Reddit": [
         "Escríbenos en Reddit"
       ],
@@ -583,6 +589,9 @@
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
+      ],
+      "Failed to load item history": [
+        "Error al cargar historial del elemento"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
@@ -803,6 +812,10 @@
         "${ memberCount } miembro",
         "${ memberCount } miembros"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } vez",
+        "${ modifiedCount } veces"
+      ],
       "${ n } item": [
         "${ n } elemento",
         "${ n } elementos"
@@ -867,6 +880,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "¿Estás seguro de que quieres mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "¿Estás seguro de que quieres mover los elementos a «${ name }»?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "¿Estás seguro de que quieres mover el elemento a «${ name }»?"
       ],
       "Auto-lock successfully disabled": [
         "Se ha desactivado el bloqueo automático"
@@ -1060,8 +1079,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Mover un elemento a otra caja fuerte eliminará su historial."
+      ],
       "Moving items": [
         "Moviendo elementos"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
         "Moviendo elemento a la papelera"
@@ -1235,6 +1260,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta caja fuerte ya no se comparte con nadie. Invita a personas para compartirla con otros."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Esta versión será añadida al historial como la versión nueva."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, ve al gestor, exporta tus datos y luego cárgalos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimina el archivo exportado."
@@ -1410,10 +1438,10 @@
         "Bloqueo automático después de"
       ],
       "Autofill": [
-        "Autorrelleno"
+        "Relleno automático"
       ],
       "Autofill 2FA": [
-        "Autorrellenar 2FA"
+        "Rellenar automáticamente 2FA"
       ],
       "Automatically open autofill when a login field is focused": [
         "Abrir el completado automático cuando un campo de inicio de sesión está enfocado."
@@ -1934,6 +1962,12 @@
       "Create PIN code": [
         "Crear un código PIN"
       ],
+      "Created": [
+        "Creado"
+      ],
+      "Current version": [
+        "Versión actual"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "¿Eliminar la caja fuerte \"${ vaultName }\"?"
       ],
@@ -1976,6 +2010,12 @@
       "Import to vault(s)": [
         "Importar a las cajas fuertes"
       ],
+      "Last autofill": [
+        "Último relleno automático"
+      ],
+      "Last modified": [
+        "Última modificación"
+      ],
       "Leave vault ?": [
         "¿Dejar la caja fuerte?"
       ],
@@ -1997,6 +2037,12 @@
       "Move all items ?": [
         "¿Mover todos los elementos?"
       ],
+      "Move item?": [
+        "¿Mover el elemento?"
+      ],
+      "Move items?": [
+        "¿Mover los elementos?"
+      ],
       "No items selected": [
         "No hay elementos seleccionados."
       ],
@@ -2017,6 +2063,9 @@
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
+      ],
+      "Restore this version?": [
+        "¿Restaurar esta versión?"
       ],
       "Review and share": [
         "Revisar y compartir"
