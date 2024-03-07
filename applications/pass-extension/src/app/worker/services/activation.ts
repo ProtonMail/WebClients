@@ -121,7 +121,7 @@ export const createActivationService = () => {
                 await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
 
-            if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
+            void ctx.service.injection.updateInjections();
             ctx.service.onboarding.onUpdate();
 
             return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
@@ -138,7 +138,7 @@ export const createActivationService = () => {
 
             void ctx.service.settings.onInstall();
             void ctx.service.onboarding.onInstall();
-            if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
+            void ctx.service.injection.updateInjections();
         }
     });
 

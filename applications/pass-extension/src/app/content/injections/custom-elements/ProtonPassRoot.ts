@@ -14,4 +14,8 @@ export class ProtonPassRoot extends StyledShadowHost {
         const event = new CustomEvent(PASS_ROOT_REMOVED_EVENT, { bubbles: true });
         this.dispatchEvent(event);
     }
+
+    connectedCallback() {
+        this.setAttribute('data-protonpass-role', 'root');
+    }
 }

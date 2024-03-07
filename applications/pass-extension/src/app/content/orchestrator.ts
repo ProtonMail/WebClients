@@ -14,6 +14,8 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 
+import { DOMCleanUp } from './injections/cleanup';
+
 const listeners = createListenerStore();
 let clientLoaded: boolean = false;
 
@@ -25,6 +27,11 @@ const unregister = (err: unknown) => {
     logger.warn(`[ContentScript::orchestrator] invalidation error`, err);
     listeners.removeAll();
 };
+
+/* The `UNLOAD_CONTENT_SCRIPT` message is broadcasted to any client content-scripts
+ * that may be running, instructing them to properly destroy themselves and free up
+ * any resources they are using */
+const unloadClient = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
 
 /** The `registerClient` function ensures that the client content-script is loaded
  * and started within the current frame. This prevents multiple injections of the
@@ -45,11 +52,6 @@ const registerClient = debounce(
     1_000,
     { leading: true }
 );
-
-/* The `UNLOAD_CONTENT_SCRIPT` message is broadcasted to any client content-scripts
- * that may be running, instructing them to properly destroy themselves and free up
- * any resources they are using */
-const unloadClient = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
 
 /* The `handleFrameVisibilityChange` function is registered as a listener for the
  * `visibilitychange` event on the `document` object. This ensures that resources
@@ -88,7 +90,17 @@ void (async () => {
             window.addEventListener('load', () => resolve(), { once: true });
         });
 
-        await unloadClient();
+        /** In Firefox, stale content-scripts are automatically disabled and
+         * new ones are re-injected as needed. Consequently, the destroy sequence
+         * triggered by the disconnection of a stale port will not be executed */
+        if (BUILD_TARGET === 'firefox') {
+            DOMCleanUp({
+                root: '[data-protonpass-role="root"]',
+                control: '[data-protonpass-role="icon"]',
+            });
+        }
+
+        if (BUILD_TARGET === 'chrome') await unloadClient();
 
         if (!isMainFrame()) {
             /* FIXME: apply iframe specific heuristics here :
