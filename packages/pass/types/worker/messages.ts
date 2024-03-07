@@ -8,6 +8,7 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
@@ -92,6 +93,7 @@ export enum WorkerMessageType {
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_TAB = 'RESOLVE_TAB',
     RESOLVE_USER = 'RESOLVE_USER',
+    REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
@@ -145,6 +147,7 @@ export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, P
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
+export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
@@ -200,6 +203,7 @@ export type WorkerMessage =
     | PopupInitMessage
     | PortFrameForwardingMessage
     | PortUnauthorizedMessage
+    | RegisterElementsMessage
     | ResolveExtensionKeyMessage
     | ResolveTabIdMessage
     | ResolveUserDataMessage
@@ -228,9 +232,9 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_INIT]: AppState;
     [WorkerMessageType.AUTH_UNLOCK]: Result<{}, { canRetry: boolean }>;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
-    [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
+    [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
@@ -238,10 +242,11 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
-    [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
+    [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
+    [WorkerMessageType.REGISTER_ELEMENTS]: { elements: PassElementsConfig };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
