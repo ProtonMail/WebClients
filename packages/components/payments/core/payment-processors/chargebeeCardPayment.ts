@@ -164,11 +164,11 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
             return;
         }
 
-        const isChargbeeFormValid = await this.isChargebeeFormValid();
+        const isChargebeeFormValid = await this.isChargebeeFormValid();
         const outerPropsValid = this.isValid();
         this.updateState({ submitted: true });
 
-        if (!isChargbeeFormValid) {
+        if (!isChargebeeFormValid) {
             throw new InvalidChargebeeCardDataError();
         }
 
