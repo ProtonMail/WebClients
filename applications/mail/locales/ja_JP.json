@@ -2986,6 +2986,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink }の設定。"
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "ごみ箱や迷惑メールフォルダーで30日以上経過したメッセージを自動削除します。アップグレードすれば、これだけでなく他の利点も享受できます。"
       ],
@@ -3022,6 +3025,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "データの損失を防ぐには、データの回復手段を設定します。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "アカウントへのアクセスが失われないように回復手段を設定してください。"
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "電子メール トラッカー保護をオンにして、広告主などがあなたの位置情報やオンライン アクティビティを追跡しないようにします。"
       ],
@@ -3048,6 +3057,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
+      ],
+      "Your account and data recovery methods are set.": [
+        "アカウントとデータの回復手段が設定されています。"
       ]
     },
     "description": {
@@ -4720,6 +4735,36 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } のうち ${ currentProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } 件の会話に次のラベルを付けます:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } 件の会話を既読にします。"
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } 件の会話を未読にします。"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } 件の会話を移動します"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } 件の会話から次のラベルを外します:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } 件のメッセージに次のラベルを付けます:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } 件のメッセージを既読にします。"
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } 件のメッセージを未読にします。"
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } 件のメッセージを移動します"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } 件のメッセージから次のラベルを外します:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } 枚の埋め込み画像"
       ],
@@ -5515,6 +5560,9 @@
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ location } 内のすべての ${ elementsCount } を選択"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
@@ -5961,6 +6009,18 @@
       ],
       "You selected **${ count } message** with this label": [
         "このラベルがついた **${ count } 件のメッセージ**を選択中"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "${ location } 内の **${ elementsCount } 件の会話**を選択しました。"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "**${ elementsCount } 件の会話**を選択しました。"
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "${ location } 内の **${ elementsCount } 件のメッセージ**を選択しました。"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "**${ elementsCount } 件のメッセージ**を選択しました。"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
@@ -7762,14 +7822,23 @@
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
+      ],
       "New alias": [
         "新しいエイリアス"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を開く"
       ],
+      "Protect your online identity": [
+        "あなたをオンラインで守る"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7780,6 +7849,11 @@
     "Security Center - Action": {
       "View logs": [
         "ログを表示"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -8417,6 +8491,12 @@
       ],
       "Address verification disabled": [
         "アドレス検証を無効にしました"
+      ],
+      "Alias copied to clipboard": [
+        "エイリアスがクリップボードにコピーされました"
+      ],
+      "Alias saved and copied": [
+        "エイリアスを保存してコピーしました"
       ],
       "Bug reported": [
         "バグの報告が送信されました"
@@ -9260,6 +9340,9 @@
       ],
       "What's new": [
         "更新情報"
+      ],
+      "Your account is protected": [
+        "あなたのアカウントは保護されています"
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
