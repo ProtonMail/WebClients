@@ -6,7 +6,7 @@ import {
     CardFormRenderMode,
     CbCardConfig,
     CbIframeConfig,
-    ChargbeeCssVariable,
+    ChargebeeCssVariable,
     ChargebeeSavedCardAuthorizationSuccess,
     ChargebeeSubmitEventPayload,
     ChargebeeVerifySavedCardEventPayload,
@@ -248,7 +248,7 @@ export function useChargebeeHandles(
         return () => chargebeeConfigurationAbortControllerRef.current?.abort();
     }, []);
 
-    const getCssVariables = (): Record<ChargbeeCssVariable, string> => {
+    const getCssVariables = (): Record<ChargebeeCssVariable, string> => {
         const style = getComputedStyle(document.documentElement);
 
         return chargebeeCssVariables.reduce(
@@ -256,7 +256,7 @@ export function useChargebeeHandles(
                 acc[prop] = style.getPropertyValue(prop);
                 return acc;
             },
-            {} as Record<ChargbeeCssVariable, string>
+            {} as Record<ChargebeeCssVariable, string>
         );
     };
 
