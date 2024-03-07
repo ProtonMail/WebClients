@@ -11,7 +11,7 @@ import type { AppState } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
 export type WorkerStateChangeHandler = (state: AppState) => void;
-export type CSContextState = AppState;
+export type CSContextState = AppState & { stale: boolean };
 export type CSFeatures = 'Autofill' | 'Autofill2FA' | 'AutosuggestAlias' | 'AutosuggestPassword' | 'Autosave';
 export interface ContentScriptContext {
     mainFrame: boolean;

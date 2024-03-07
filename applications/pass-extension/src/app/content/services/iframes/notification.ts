@@ -13,19 +13,20 @@ import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app
 import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
-import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
-export const createNotification = (elements: PassElementsConfig): InjectedNotification => {
+type NotificationOptions = { root: ProtonPassRoot; onDestroy: () => void };
+
+export const createNotification = ({ root, onDestroy }: NotificationOptions): InjectedNotification => {
     const iframe = createIFrameApp<NotificationAction>({
         animation: 'slidein',
         backdropClose: false,
         classNames: ['fixed'],
-        elements,
         id: 'notification',
+        root,
         src: NOTIFICATION_IFRAME_SRC,
-        onError: withContext((ctx, _) => ctx?.service.iframe.detachNotification()),
+        onError: onDestroy,
         onClose: withContext((ctx, { action }, options) => {
             switch (action) {
                 /* stash the form submission if the user discarded
@@ -64,15 +65,14 @@ export const createNotification = (elements: PassElementsConfig): InjectedNotifi
         }),
     });
 
-    const open = async (payload: NotificationActions) => {
-        await iframe
+    const open = (payload: NotificationActions) =>
+        iframe
             .ensureReady()
             .then(() => {
                 iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
                 iframe.open(payload.action);
             })
             .catch(noop);
-    };
 
     iframe.registerMessageHandler(
         IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
@@ -86,11 +86,10 @@ export const createNotification = (elements: PassElementsConfig): InjectedNotifi
 
     const notification: InjectedNotification = {
         close: pipe(iframe.close, () => notification),
-        destroy: iframe.destroy,
+        destroy: pipe(iframe.destroy, onDestroy),
         getState: () => iframe.state,
         init: pipe(iframe.init, () => notification),
         open: pipe(open, () => notification),
-        setPort: pipe(iframe.setPort, () => notification),
     };
 
     return notification;
