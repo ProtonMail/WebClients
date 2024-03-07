@@ -565,6 +565,9 @@
       "Save": [
         "儲存"
       ],
+      "Save changes": [
+        "儲存變更"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -597,6 +600,9 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Share": [
+        "分享"
       ],
       "Share file": [
         "分享檔案"
@@ -2136,7 +2142,7 @@
         "${ BRAND_NAME }無法連接外部帳號"
       ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME }已已更新。請重新整理此頁。"
+        "${ DRIVE_APP_NAME } 已更新。請重新整理此頁。"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
@@ -2146,6 +2152,9 @@
       ],
       "A problem occurred, please try again.": [
         "發生問題，請再試一次。"
+      ],
+      "Account does not exist": [
+        "帳號不存在"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -2306,6 +2315,9 @@
       "No valid address found": [
         "未能找到有效位址"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "不是 ${ BRAND_NAME } 帳號"
+      ],
       "Not a valid number": [
         "號碼無效"
       ],
@@ -2384,6 +2396,9 @@
       "status page": [
         "狀態頁面"
       ],
+      "The address might be misspelled": [
+        "位址可能拼錯了"
+      ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
       ],
@@ -2455,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
+      ],
+      "Validation error": [
+        "驗證錯誤"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
@@ -3345,7 +3363,7 @@
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount }已選取"
+        "已選取 ${ selectedCount } 個"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
@@ -3972,7 +3990,7 @@
         "先前版本會保留 ${ retentionLabel }"
       ],
       "Previous versions are not saved": [
-        "前一個版本並未儲存成功"
+        "先前版本不會儲存"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
@@ -4627,9 +4645,6 @@
       ],
       "Download anyway": [
         "仍要下載"
-      ],
-      "Downloading": [
-        "下載"
       ],
       "Downloading ${ percentageValue }": [
         "正在下載 ${ percentageValue }"

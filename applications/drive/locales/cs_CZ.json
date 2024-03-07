@@ -571,6 +571,9 @@
       "Save": [
         "Uložit"
       ],
+      "Save changes": [
+        "Uložit změny"
+      ],
       "Search": [
         "Vyhledat"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Nastavení"
+      ],
+      "Share": [
+        "Sdílet"
       ],
       "Share file": [
         "Sdílet soubor"
@@ -2099,6 +2105,9 @@
       "A problem occurred, please try again.": [
         "Objevil se problém, prosím zkuste to znovu."
       ],
+      "Account does not exist": [
+        "Účet neexistuje"
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
@@ -2264,6 +2273,9 @@
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nejde o ${ BRAND_NAME } účet"
+      ],
       "Not a valid number": [
         "Neplatné číslo"
       ],
@@ -2351,6 +2363,9 @@
       "status page": [
         "stavová stránka"
       ],
+      "The address might be misspelled": [
+        "Adresa může obsahovat překlep"
+      ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
       ],
@@ -2422,6 +2437,9 @@
       ],
       "Username must end with a letter or digit": [
         "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
+      "Validation error": [
+        "Chyba ověření"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -4777,9 +4795,6 @@
       ],
       "Download anyway": [
         "Přesto stáhnout"
-      ],
-      "Downloading": [
-        "Stahování"
       ],
       "Downloading ${ percentageValue }": [
         "Stahování ${ percentageValue }"

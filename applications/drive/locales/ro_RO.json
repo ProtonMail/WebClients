@@ -571,6 +571,9 @@
       "Save": [
         "Salvare"
       ],
+      "Save changes": [
+        "Salvare modificări"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -603,6 +606,9 @@
       ],
       "Settings": [
         "Setări"
+      ],
+      "Share": [
+        "Partajare"
       ],
       "Share file": [
         "Partajare fişier"
@@ -2033,6 +2039,72 @@
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIERE:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } a fost anulat."
+      ],
+      "All events in this series were updated.": [
+        "Toate evenimentele din serie au fost modificate."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Toate evenimentele au fost modificate. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Acest eveniment a fost anulat."
+      ],
+      "This event occurrence was updated.": [
+        "Acest eveniment a fost modificat."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acest eveniment a fost modificat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Acest eveniment a fost modificat."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acest eveniment a fost actualizat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Invitație la ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "CÂND:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "CÂND:\n${ formattedStart } (toată ziua)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "CÂND:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Eliminat"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOC:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Anulare eveniment ce are loc ${ formattedStart }"
@@ -2098,6 +2170,9 @@
       ],
       "A problem occurred, please try again.": [
         "A apărut o problemă. Reîncercați."
+      ],
+      "Account does not exist": [
+        "Contul nu există."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -2264,6 +2339,9 @@
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nu este un cont ${ BRAND_NAME }."
+      ],
       "Not a valid number": [
         "Nu este un număr valid"
       ],
@@ -2348,6 +2426,9 @@
       "status page": [
         "pagina de stare"
       ],
+      "The address might be misspelled": [
+        "Adresa ar putea fi scrisă greșit"
+      ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
       ],
@@ -2419,6 +2500,9 @@
       ],
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "Validation error": [
+        "Eroare validare."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nu puteți trimite mesaje la mai mult de ${ maxContacts } destinatar.",
@@ -4732,9 +4816,6 @@
       ],
       "Download anyway": [
         "Descărcare așa"
-      ],
-      "Downloading": [
-        "Se descarcă"
       ],
       "Downloading ${ percentageValue }": [
         "Se descarcă ${ percentageValue }"
