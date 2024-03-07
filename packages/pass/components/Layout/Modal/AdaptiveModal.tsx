@@ -9,7 +9,6 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useBulkLock } from '@proton/pass/hooks/useBulkLock';
 import clsx from '@proton/utils/clsx';
 
 import { PassModal } from './PassModal';
@@ -38,7 +37,6 @@ export const AdaptiveModal: FC<PropsWithChildren<AdapativeModalProps>> = ({
     ...props
 }) => {
     const { endpoint } = usePassCore();
-    useBulkLock([props.open ?? false]);
 
     return type === 'overlay' || endpoint === 'web' || endpoint === 'desktop' ? (
         <PassModal {...props} size={size} className="text-center">

@@ -18,7 +18,7 @@ type Props = {
     selectedItem?: SelectedItem;
     totalCount: number;
     onFilter: (update: Partial<ItemFilters>) => void;
-    onSelect: (item: ItemRevision) => void;
+    onSelect: (item: ItemRevision, metaKey: boolean) => void;
     placeholder: () => ReactElement;
 };
 
@@ -64,7 +64,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             search={filters.search}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                onSelect(item);
+                                                onSelect(item, e.ctrlKey || e.metaKey);
                                             }}
                                         />
                                     </div>
