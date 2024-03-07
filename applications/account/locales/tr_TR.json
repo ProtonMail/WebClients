@@ -3259,7 +3259,7 @@
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
-        "Açıklama:\n${ eventDescription }"
+        "AÇIKLAMA:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
@@ -3267,16 +3267,25 @@
         "${ eventTitle } iptal edildi."
       ],
       "All events in this series were updated.": [
-        "Bu serideki tüm etkinlikler güncellendi."
+        "Bu dizideki tüm etkinlikler güncellendi."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu serideki tüm etkinlikler güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+        "Bu dizideki tüm etkinlikler güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Bu etkinlik kopyası iptal edildi."
+      ],
+      "This event occurrence was updated.": [
+        "Bu etkinlik kopyası güncellendi."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu etkinlik kopyası güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+        "Bu etkinlik güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
@@ -3284,13 +3293,13 @@
     },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
-        "Zaman:\n${ formattedStart }"
+        "ZAMAN:\n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
         "ZAMAN:\n${ formattedStart } (tüm gün)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "Zaman:\n${ formattedStart } - ${ formattedEnd }"
+        "ZAMAN:\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -3300,7 +3309,18 @@
     },
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
-        "Konum:\n${ eventLocation }"
+        "KONUM:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi kabul etti"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi reddetti"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi belirsiz olarak kabul etti"
       ]
     },
     "Email spam notification": {
@@ -10379,6 +10399,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -10472,17 +10503,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
