@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
       ],
+      "View history": [
+        "Geçmişi görüntüle"
+      ],
+      "View older history": [
+        "Daha eski geçmişi görüntüle"
+      ],
       "Write us on Reddit": [
         "Bize Reddit üzerinden yazın"
       ],
@@ -513,6 +519,9 @@
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
       ],
+      "Failed to load item history": [
+        "Öge geçmişi yüklenemedi"
+      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
       ],
@@ -571,7 +580,7 @@
         "Öge taşınamadı"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Çevrim dışı kipi şu anda iki şifre kipi için mevcut değildir."
+        "Çevrim dışı kip şu anda iki parola kipinde kullanılamaz."
       ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
@@ -723,6 +732,10 @@
         "${ memberCount } üye",
         "${ memberCount } üye"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } kez",
+        "${ modifiedCount } kez"
+      ],
       "${ n } item": [
         "${ n } öge",
         "${ n } öge"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "\"${ fromVaultName }\" içindeki tüm ögeleri \"${ toVaultName }\" içine taşımak istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Ögeleri \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
       ],
       "Auto-lock successfully disabled": [
         "Otomatik kilitleme kapatıldı"
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
+      "Moving an item to another vault will erase its history": [
+        "Başka bir kasaya taşınan ögenin geçmişi silinir"
+      ],
       "Moving items": [
         "Ögeler taşınıyor"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Başka bir kasaya taşınan ögelerin geçmişi silinir"
       ],
       "Moving items to trash": [
         "Ögeler çöpe atılıyor"
@@ -1095,7 +1120,7 @@
         "Teşekkürler. Sorununuz bildirildi"
       ],
       "The export will only contain vaults that you own.": [
-        "Dışa aktarım yalnızca sahip olduğunuz kasaları içerecektir."
+        "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
@@ -1115,6 +1140,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Bu sürüm geçmişe en yeni sürüm olarak eklenecek."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Başka bir parola yöneticisindeki verileri aktarmak için parola yöneticisine gidin, verilerinizi dışa aktarın ve ardından ${ PASS_APP_NAME } uygulamasına yükleyin. Verileriniz içe aktarıldıktan sonra dışa aktardığınız dosyayı silin."
@@ -1458,7 +1486,7 @@
         "Parola geçmişi"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "PGP şifreli JSON (önerilen)"
+        "PGP ile şifrelenmiş JSON (önerilir)"
       ],
       "PIN": [
         "PIN"
@@ -1746,6 +1774,12 @@
       "Create PIN code": [
         "PIN kodu oluştur"
       ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Current version": [
+        "Güncel sürüm"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "\"${ vaultName }\" kasası silinsin mi?"
       ],
@@ -1782,6 +1816,12 @@
       "Install extension": [
         "Eklentiyi kur"
       ],
+      "Last autofill": [
+        "Son otomatik doldurma"
+      ],
+      "Last modified": [
+        "Son değiştirilme"
+      ],
       "Leave vault ?": [
         "Kasa bırakılsın mı?"
       ],
@@ -1800,6 +1840,12 @@
       "Move all items ?": [
         "Tüm ögeler taşınsın mı?"
       ],
+      "Move item?": [
+        "Öge taşınsın mı?"
+      ],
+      "Move items?": [
+        "Ögeler taşınsın mı?"
+      ],
       "No items selected": [
         "Herhangi bir öge seçilmemiş"
       ],
@@ -1814,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Bu sürüm geri yüklensin mi?"
       ],
       "Review and share": [
         "Gözden geçirip paylaş"
