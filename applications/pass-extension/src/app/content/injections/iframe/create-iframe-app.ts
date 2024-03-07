@@ -3,7 +3,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
+import type { Dimensions, PassElementsConfig, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -26,13 +26,14 @@ import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
 import { createIframeRoot } from './create-iframe-root';
 
 type CreateIFrameAppOptions<A> = {
+    animation: 'slidein' | 'fadein';
+    backdropClose: boolean;
+    classNames?: string[];
+    elements: PassElementsConfig;
     id: IFrameEndpoint;
     src: string;
-    animation: 'slidein' | 'fadein';
-    classNames?: string[];
-    backdropClose: boolean;
     backdropExclude?: () => HTMLElement[];
-    onError?: () => void;
+    onError?: (error: unknown) => void;
     onOpen?: (state: IFrameState<A>) => void;
     onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
     position: (iframeRoot: HTMLElement) => Partial<Rect>;
@@ -40,11 +41,12 @@ type CreateIFrameAppOptions<A> = {
 };
 
 export const createIFrameApp = <A>({
+    animation,
+    backdropClose,
+    classNames = [],
+    elements,
     id,
     src,
-    animation,
-    classNames = [],
-    backdropClose,
     backdropExclude,
     onError,
     onOpen,
@@ -52,17 +54,18 @@ export const createIFrameApp = <A>({
     position,
     dimensions,
 }: CreateIFrameAppOptions<A>): IFrameApp<A> => {
-    const iframeRoot = createIframeRoot();
+    const iframeRoot = createIframeRoot(elements.root);
     const portMessageHandlers: Map<IFrameMessageType, IFramePortMessageHandler> = new Map();
 
     const state: IFrameState<A> = {
-        visible: false,
-        ready: false,
+        action: null,
+        framePort: null,
         loaded: false,
         port: null,
-        framePort: null,
         position: { top: -1, left: -1, right: -1, bottom: -1, zIndex: -1 },
-        action: null,
+        ready: false,
+        stale: false,
+        visible: false,
     };
 
     const listeners = createListenerStore();
