@@ -17,7 +17,7 @@ import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator'
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
-    const { data: item, shareId, itemId } = revision;
+    const { data: item, shareId, itemId, revision: revisionNumber } = revision;
 
     const {
         metadata: { note },
@@ -57,6 +57,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
                             shareId,
                             totpUri,
                             type: 'item',
+                            revisionNumber,
                         }}
                     />
                 )}
@@ -93,7 +94,12 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
             )}
 
             {Boolean(extraFields.length) && (
-                <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
+                <ExtraFieldsControl
+                    extraFields={extraFields}
+                    itemId={itemId}
+                    revisionNumber={revisionNumber}
+                    shareId={shareId}
+                />
             )}
         </>
     );
