@@ -75,6 +75,7 @@ interface AppConfiguration {
     clientID: string;
     windowsClientID?: string;
     macosClientID?: string;
+    linuxClientID?: string;
     icon: string;
     settingsSlug: string;
 }
@@ -97,6 +98,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-account-lite',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
+        linuxClientID: 'linux-mail',
         icon: 'brand-proton',
         settingsSlug: 'account',
     },
@@ -117,6 +119,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-mail',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
+        linuxClientID: 'linux-mail',
         icon: 'brand-proton-mail',
         settingsSlug: 'mail',
     },
@@ -146,6 +149,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-calendar',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
+        linuxClientID: 'linux-mail',
         icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
     },
