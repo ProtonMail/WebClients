@@ -55,7 +55,6 @@ export const getFreeCheckResult = (
         Gift: 0,
         CouponDiscount: 0,
         Coupon: null,
-        Additions: null,
         PeriodEnd: 0,
     };
 };
