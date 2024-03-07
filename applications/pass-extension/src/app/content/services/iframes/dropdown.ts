@@ -1,6 +1,7 @@
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type {
     DropdownActions,
@@ -14,7 +15,6 @@ import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerat
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
-import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { pipe } from '@proton/pass/utils/fp/pipe';

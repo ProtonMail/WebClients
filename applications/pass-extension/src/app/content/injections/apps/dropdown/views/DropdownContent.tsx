@@ -1,11 +1,15 @@
 import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
+import {
+    useIFrameContext,
+    useRegisterMessageHandler,
+} from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
+import { type DropdownActions, type IFrameMessage, IFrameMessageType } from 'proton-pass-extension/app/content/types';
+
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-import { type DropdownActions, type IFrameMessage, IFrameMessageType } from '../../../../types';
-import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { DropdownSwitch } from '../components/DropdownSwitch';
 
 export const DropdownContent: FC = () => {

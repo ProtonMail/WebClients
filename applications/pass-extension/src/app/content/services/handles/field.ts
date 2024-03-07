@@ -27,7 +27,7 @@ type CreateFieldHandlesOptions = {
  * does not match the dropdown's current field : this maybe the case
  * when changing focus with the dropdown open */
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
-    withContext(({ service: { iframe }, getSettings, getState }, evt) => {
+    withContext((ctx, evt) => {
         const { action, element } = field;
         field?.icon?.reposition();
 
@@ -37,16 +37,17 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         requestAnimationFrame(() => {
             const target = evt?.target;
 
-            const current = iframe.dropdown?.getCurrentField()?.element;
-            const opened = iframe.dropdown?.getState().visible;
+            const current = ctx?.service.iframe.dropdown?.getCurrentField()?.element;
+            const opened = ctx?.service.iframe.dropdown?.getState().visible;
 
             const shouldClose = opened && current !== target;
-            const shouldOpen = getState().loggedIn && (!opened || shouldClose) && getSettings().autofill.openOnFocus;
+            const openOnFocus = ctx?.getSettings().autofill.openOnFocus;
+            const shouldOpen = ctx?.getState().loggedIn && (!opened || shouldClose) && openOnFocus;
 
-            if (shouldClose) iframe.dropdown?.close();
+            if (shouldClose) ctx?.service.iframe.dropdown?.close();
             if (shouldOpen) {
-                iframe.attachDropdown();
-                iframe.dropdown?.open({
+                ctx?.service.iframe.attachDropdown();
+                ctx?.service.iframe.dropdown?.open({
                     action,
                     autofocused: true,
                     field,
@@ -58,22 +59,23 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 /* on input change : close the dropdown if it was visible
  * and update the field's handle tracked value */
 const onInputField = (field: FieldHandle): (() => void) =>
-    withContext(({ service: { iframe } }) => {
-        if (iframe.dropdown?.getState().visible && !shouldPreventActions(field.element)) iframe.dropdown?.close();
+    withContext((ctx) => {
+        const dropdown = ctx?.service.iframe.dropdown;
+        if (dropdown?.getState().visible && !shouldPreventActions(field.element)) dropdown?.close();
         field.setValue((field.element as HTMLInputElement).value);
     });
 
 /* when the type attribute of a field changes : detach it from
  * the tracked form and re-trigger the detection */
 const onFieldAttributeChange = (field: FieldHandle): MutationCallback =>
-    withContext<MutationCallback>(({ service: { formManager } }, mutations) => {
+    withContext<MutationCallback>((ctx, mutations) => {
         if ([FieldType.PASSWORD_CURRENT, FieldType.PASSWORD_NEW].includes(field.fieldType)) return;
 
         mutations.forEach((mutation) => {
             const target = mutation.target as HTMLInputElement;
             if (mutation.type === 'attributes' && mutation.oldValue !== target.type) {
                 field.getFormHandle().detachField(mutation.target as HTMLInputElement);
-                void formManager.detect({ reason: 'FieldTypeChange' });
+                void ctx?.service.formManager.detect({ reason: 'FieldTypeChange' });
             }
         });
     });

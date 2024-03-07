@@ -19,7 +19,7 @@ import debounce from '@proton/utils/debounce';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
 
-export type FormManagerContext = {
+export type FormManagerState = {
     /* form manager state flag */
     active: boolean;
     /* ongoing detection flag */
@@ -31,7 +31,7 @@ export type FormManagerContext = {
 };
 
 export const createFormManager = (options: FormManagerOptions) => {
-    const ctx: FormManagerContext = {
+    const state: FormManagerState = {
         active: false,
         busy: false,
         detectionRequest: -1,
@@ -39,11 +39,11 @@ export const createFormManager = (options: FormManagerOptions) => {
     };
 
     const listeners = createListenerStore();
-    const getTrackedForms = () => Array.from(ctx.trackedForms.values());
+    const getTrackedForms = () => Array.from(state.trackedForms.values());
 
     const detachTrackedForm = (formEl: HTMLElement) => {
-        ctx.trackedForms.get(formEl)?.detach();
-        ctx.trackedForms.delete(formEl);
+        state.trackedForms.get(formEl)?.detach();
+        state.trackedForms.delete(formEl);
     };
 
     /* Garbage collection is used to detach tracked forms
@@ -52,7 +52,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * removed : form visibility changes have no effect on detachment
      * for performance reasons (costly `isVisible` check) */
     const garbagecollect = () => {
-        ctx.trackedForms.forEach((form) => {
+        state.trackedForms.forEach((form) => {
             if (form.shouldRemove()) {
                 form.tracker?.submit();
                 detachTrackedForm(form.element);
@@ -69,54 +69,52 @@ export const createFormManager = (options: FormManagerOptions) => {
      * - Returns a boolean flag indicating whether the detection was executed.
      */
     const runDetection = debounce(
-        withContext<(reason: string) => Promise<boolean>>(
-            async ({ destroy, service: { detector, autofill, autosave } }, reason: string) => {
-                garbagecollect();
-                if (await detector.shouldRunDetection()) {
-                    ctx.detectionRequest = requestIdleCallback(async () => {
-                        ctx.busy = true;
+        withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
+            garbagecollect();
+            if (await ctx?.service.detector.shouldRunDetection()) {
+                state.detectionRequest = requestIdleCallback(async () => {
+                    state.busy = true;
 
-                        if (ctx.active) {
-                            logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
+                    if (state.active) {
+                        logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
-                            try {
-                                const forms = detector.runDetection({
-                                    onBottleneck: () => destroy({ reason: 'bottleneck' }),
-                                });
+                        try {
+                            const forms = ctx?.service.detector.runDetection({
+                                onBottleneck: () => ctx?.destroy({ reason: 'bottleneck' }),
+                            });
 
-                                forms.forEach((options) => {
-                                    const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
-                                    ctx.trackedForms.set(options.form, formHandle);
-                                    formHandle.reconciliate(options.formType, options.fields);
-                                    formHandle.attach();
-                                });
+                            forms?.forEach((options) => {
+                                const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
+                                state.trackedForms.set(options.form, formHandle);
+                                formHandle.reconciliate(options.formType, options.fields);
+                                formHandle.attach();
+                            });
 
-                                /* Prompt for 2FA autofill before autosave */
-                                const didPrompt = await autofill.reconciliate();
-                                await (!didPrompt && autosave.reconciliate());
+                            /* Prompt for 2FA autofill before autosave */
+                            const didPrompt = await ctx?.service.autofill.reconciliate();
+                            await (!didPrompt && ctx?.service.autosave.reconciliate());
 
-                                options.onDetection(getTrackedForms());
-                                ctx.busy = false;
-                            } catch (err) {
-                                logger.warn(`[FormTracker::Detector] ${err}`);
-                            }
+                            options.onDetection(getTrackedForms());
+                            state.busy = false;
+                        } catch (err) {
+                            logger.warn(`[FormTracker::Detector] ${err}`);
                         }
-                    });
+                    }
+                });
 
-                    return true;
-                } else clearDetectionCache();
+                return true;
+            } else clearDetectionCache();
 
-                ctx.busy = false;
-                void autosave.reconciliate();
-                return false;
-            }
-        ),
+            state.busy = false;
+            void ctx?.service.autosave.reconciliate();
+            return false;
+        }),
         250
     );
 
     const detect = async (options: { reason: string; flush?: boolean }) => {
-        if (ctx.busy || !ctx.active) return false;
-        cancelIdleCallback(ctx.detectionRequest);
+        if (state.busy || !state.active) return false;
+        cancelIdleCallback(state.detectionRequest);
 
         if (options.flush) {
             void runDetection(options.reason);
@@ -202,8 +200,8 @@ export const createFormManager = (options: FormManagerOptions) => {
     );
 
     const observe = () => {
-        if (!ctx.active) {
-            ctx.active = true;
+        if (!state.active) {
+            state.active = true;
 
             listeners.addObserver(document.body, onMutation, {
                 childList: true,
@@ -218,18 +216,18 @@ export const createFormManager = (options: FormManagerOptions) => {
     };
 
     const destroy = () => {
-        ctx.active = false;
-        ctx.busy = false;
+        state.active = false;
+        state.busy = false;
 
-        cancelIdleCallback(ctx.detectionRequest);
+        cancelIdleCallback(state.detectionRequest);
         runDetection.cancel();
         listeners.removeAll();
 
-        ctx.trackedForms.forEach((form) => detachTrackedForm(form.element));
-        ctx.trackedForms.clear();
+        state.trackedForms.forEach((form) => detachTrackedForm(form.element));
+        state.trackedForms.clear();
     };
 
-    const sync = () => ctx.trackedForms.forEach((form) => form.tracker?.reconciliate());
+    const sync = () => state.trackedForms.forEach((form) => form.tracker?.reconciliate());
 
     return { getTrackedForms, observe, detect, sync, destroy };
 };
