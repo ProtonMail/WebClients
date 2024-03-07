@@ -36,23 +36,16 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
         requestAnimationFrame(() => {
             const target = evt?.target;
-
-            const current = ctx?.service.iframe.dropdown?.getCurrentField()?.element;
-            const opened = ctx?.service.iframe.dropdown?.getState().visible;
+            const dropdown = ctx?.service.iframe.dropdown;
+            const current = dropdown?.getCurrentField()?.element;
+            const opened = dropdown?.getState().visible;
 
             const shouldClose = opened && current !== target;
             const openOnFocus = ctx?.getSettings().autofill.openOnFocus;
             const shouldOpen = ctx?.getState().loggedIn && (!opened || shouldClose) && openOnFocus;
 
-            if (shouldClose) ctx?.service.iframe.dropdown?.close();
-            if (shouldOpen) {
-                ctx?.service.iframe.attachDropdown();
-                ctx?.service.iframe.dropdown?.open({
-                    action,
-                    autofocused: true,
-                    field,
-                });
-            }
+            if (shouldClose) dropdown?.close();
+            if (shouldOpen) ctx?.service.iframe.attachDropdown()?.open({ action, autofocused: true, field });
         });
     });
 
