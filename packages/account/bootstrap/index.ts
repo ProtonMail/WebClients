@@ -13,6 +13,7 @@ import { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { appLink } from '@proton/shared/lib/apps/appLink';
+import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import createAuthenticationStore, {
@@ -344,14 +345,14 @@ export const maybeRedirect = async ({
         await new Promise(noop);
     }
 
-    if (getIsSSOVPNOnlyAccount(user) && ![APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS].includes(appName as any)) {
+    if (getIsSSOVPNOnlyAccount(user) && ![APPS.PROTONACCOUNT, ...getSSOVPNOnlyAccountApps()].includes(appName as any)) {
         appLink({ to: '/vpn', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
         await new Promise(noop);
     }
 
     if (
         getIsPublicUserWithoutProtonAddress(user) &&
-        ![APPS.PROTONACCOUNT, APPS.PROTONPASS, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].includes(appName as any)
+        ![APPS.PROTONACCOUNT, ...getPublicUserProtonAddressApps()].includes(appName as any)
     ) {
         appLink({ to: '/pass', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
         await new Promise(noop);
