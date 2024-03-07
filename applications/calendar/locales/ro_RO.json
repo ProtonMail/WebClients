@@ -2331,6 +2331,72 @@
         "Editare eveniment"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIERE:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } a fost anulat."
+      ],
+      "All events in this series were updated.": [
+        "Toate evenimentele din serie au fost modificate."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Toate evenimentele au fost modificate. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Acest eveniment a fost anulat."
+      ],
+      "This event occurrence was updated.": [
+        "Acest eveniment a fost modificat."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acest eveniment a fost modificat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Acest eveniment a fost modificat."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acest eveniment a fost actualizat. Iată ce s-a modificat:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Invitație la ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "CÂND:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "CÂND:\n${ formattedStart } (toată ziua)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "CÂND:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Eliminat"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOC:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Anulare eveniment ce are loc ${ formattedStart }"
@@ -3810,6 +3876,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "O invitație va fi trimisă participanților adăugați."
+      ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "O invitație va fi trimisă tuturor participanților. Ce eveniment doriți să modificați?"
       ],
       "An invitation will be sent to the event participants.": [
         "O invitație va fi trimisă participanților la eveniment."
