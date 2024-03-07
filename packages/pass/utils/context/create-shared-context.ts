@@ -1,31 +1,39 @@
-import type { Callback, Maybe } from '@proton/pass/types';
+import type { Callback, Maybe, MaybeNull } from '@proton/pass/types';
 
-export interface SharedContext<T = any> {
+export interface ContextHandler<T = any> {
     set: (ctx: T) => T;
     get: () => T;
     read: () => Maybe<T>;
     clear: () => void;
 }
 
-export type SharedContextValue<T extends SharedContext = SharedContext> = T extends SharedContext<infer U> ? U : never;
+export enum InjectionMode {
+    STRICT = 'get',
+    LOOSE = 'read',
+}
 
-/* F extends `Maybe<Callback>` in order to improve automatic inference
- * when using `withContext` on typed optional object methods. This avoids
- * having to hard-cast - ie :
- *   type Obj = { method?: (foo: number) => boolean }
- *   const obj: Foo = { method: withContext((ctx, foo) => foo > 0.5) }
- */
-export type SharedContextInjector<F extends Maybe<Callback>, T extends SharedContext> = F extends Callback
-    ? (ctx: SharedContextValue<T>, ...args: Parameters<F>) => ReturnType<F>
-    : (ctx: SharedContextValue<T>) => void;
+export type ContextValue<T extends ContextHandler = ContextHandler> = T extends ContextHandler<infer U> ? U : never;
 
-/**
- * Creates a generic context with a simple
- * setter/getter mechanism - Useful when you
- * want to create a global singleton context object
- * while avoiding "argument-drilling"
- */
-export const createSharedContext = <T>(id: string): SharedContext<T> => {
+/** The type `F` extends `Maybe<Callback>` to enhance automatic inference
+ * when utilizing `withContext` on typed optional object methods. This avoids
+ * the need for hard-casting. For instance:
+ *
+ * type Obj = { method?: (foo: number) => boolean };
+ * const obj: Foo = { method: withContext((ctx, foo) => foo > 0.5) };
+ *
+ * In this example, `obj.method` benefits from automatic type inference
+ * without requiring explicit casting */
+export type ContextInjector<
+    F extends Maybe<Callback>,
+    T extends ContextHandler,
+    Mode extends InjectionMode,
+    Ctx = Mode extends 'get' ? ContextValue<T> : MaybeNull<ContextValue<T>>,
+> = F extends Callback ? (ctx: Ctx, ...args: Parameters<F>) => ReturnType<F> : (ctx: Ctx) => void;
+
+/** Creates a generic context with a simple setter/getter mechanism.
+ * Useful when you want to create a global singleton context object
+ * while avoiding "argument-drilling" */
+export const contextHandlerFactory = <T>(id: string): ContextHandler<T> => {
     const ref: { ctx?: T } = {};
 
     const set = (ctx: T) => (ref.ctx = ctx);
@@ -47,10 +55,12 @@ export const createSharedContext = <T>(id: string): SharedContext<T> => {
     return { set, get, read, clear };
 };
 
-/**
- * Utility for creating a Higher-order context injector
- * to avoid calling context.get() everywhere. Maintains strong
- * type-safety when used with typed callbacks.
+/** Creates a higher-order context injector utility to streamline access to a
+ * shared context and maintain type safety with typed callbacks. The injection
+ * mode determines how the underlying context will be accessed :
+ *
+ * - `InjectionMode.STRICT`: callbacks will throw errors on empty contexts.
+ * - `InjectionMode.LOOSE`: callbacks will receive a nullable context.
  *
  * usage:
  * ```
@@ -61,12 +71,11 @@ export const createSharedContext = <T>(id: string): SharedContext<T> => {
  * });
  *
  * fn(true);
- * ```
- */
-export const createSharedContextInjector = <T extends SharedContext>(context: T) => {
-    return <F extends Maybe<Callback> = Callback>(fn: SharedContextInjector<F, T>) =>
+ * ``` */
+export const contextInjectorFactory = <T extends ContextHandler, M extends InjectionMode>(context: T, mode: M) => {
+    return <F extends Maybe<Callback> = Callback>(fn: ContextInjector<F, T, M>) =>
         ((...args: any[]) => {
-            const value = context.get();
-            return fn(value, ...(args as any));
+            const value = context[mode]();
+            return fn(value ?? null, ...(args as any));
         }) as F extends Maybe<infer U> ? U : F extends Callback ? F : never;
 };
