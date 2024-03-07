@@ -2,21 +2,20 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { CYCLE, DEFAULT_CURRENCY, MEMBER_ADDON_PREFIX } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
     TotalPricing,
     allCycles,
-    getPlanIDs,
+    getPlan,
+    getPlanFromIds,
     getPricingFromPlanIDs,
     getTotalFromPricing,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
-    Cycle,
     PlanIDs,
     PlansMap,
     SubscriptionCheckResponse,
@@ -223,26 +222,22 @@ export const getAllowedCycles = ({
     subscription: SubscriptionModel | undefined;
     minimumCycle: CYCLE;
     planIDs: PlanIDs;
-    defaultCycles?: Cycle[];
+    defaultCycles?: CYCLE[];
 }): CYCLE[] => {
-    const currentPlanIds = getPlanIDs(subscription);
-    const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
-    const isSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
-
     const isTrialSubscription = isTrial(subscription);
 
     const [largestCycle, ...restCycles] = defaultCycles.sort((a, b) => b - a);
 
-    const filteredCycles = restCycles.filter((cycle) => {
-        if (isTrialSubscription) {
-            return true;
-        }
+    const currentPlanName: PLANS | undefined = getPlan(subscription)?.Name;
+    const newPlanName: PLANS | undefined = getPlanFromIds(planIDs);
+    const isSamePlan = currentPlanName === newPlanName;
 
-        const isHigherThanCurrentSubscription = cycle > (subscription?.Cycle ?? 0);
-        const isHigherThanUpcoming = cycle > (subscription?.UpcomingSubscription?.Cycle ?? 0);
+    const filteredCycles = restCycles.filter((cycle) => {
+        const isHigherThanCurrentSubscription = cycle >= (subscription?.Cycle ?? 0);
+        const isHigherThanUpcoming = cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0);
 
         const isEligibleForSelection =
-            (isHigherThanCurrentSubscription && isHigherThanUpcoming && isSamePlan) || !isSamePlan;
+            (isHigherThanCurrentSubscription && isHigherThanUpcoming) || isTrialSubscription || !isSamePlan;
 
         return cycle >= minimumCycle && isEligibleForSelection;
     });
@@ -277,7 +272,7 @@ const SubscriptionCycleSelector = ({
     subscription,
     defaultCycles,
 }: Props) => {
-    const cycles = getAllowedCycles({ subscription, minimumCycle, planIDs, defaultCycles });
+    const cycles = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
 
     const monthlySuffix = getMonthlySuffix(planIDs);
 
