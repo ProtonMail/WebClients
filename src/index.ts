@@ -5,9 +5,8 @@ import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
-import { deleteWindowStore } from "./store/storeMigrations";
+import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
-import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
 import { isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
@@ -39,7 +38,6 @@ if (require("electron-squirrel-startup")) {
 app.enableSandbox();
 
 // Config initialization
-saveAppURL();
 saveAppID();
 
 // Log initialization
@@ -50,8 +48,7 @@ Logger.info("App start is mac:", isMac, "is windows: ", isWindows);
 moveUninstaller();
 
 // Store migrations
-deleteWindowStore(); // Introduced in v0.9.4
-// End of store migrations
+performStoreMigrations();
 
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");

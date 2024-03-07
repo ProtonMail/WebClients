@@ -1,12 +1,6 @@
 import { app } from "electron";
 import { type } from "os";
-import { getAppURL } from "../store/urlStore";
-
-export interface URLConfig {
-    account: string;
-    mail: string;
-    calendar: string;
-}
+import { URLConfig, getAppURL } from "../store/urlStore";
 
 interface Config {
     appTitle: string;
