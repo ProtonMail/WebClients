@@ -1,6 +1,7 @@
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type {
     DropdownActions,
@@ -13,28 +14,29 @@ import { DropdownAction, IFrameMessageType } from 'proton-pass-extension/app/con
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
 type DropdownFieldRef = { current: MaybeNull<FieldHandle> };
+type DropdownOptions = { root: ProtonPassRoot; onDestroy: () => void };
 
-export const createDropdown = (): InjectedDropdown => {
+export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDropdown => {
     const fieldRef: DropdownFieldRef = { current: null };
     const listeners = createListenerStore();
 
     const iframe = createIFrameApp<DropdownAction>({
-        id: 'dropdown',
-        src: DROPDOWN_IFRAME_SRC,
         animation: 'fadein',
         backdropClose: true,
-        onError: withContext((ctx) => ctx.service.iframe.detachDropdown()),
+        id: 'dropdown',
+        root,
+        src: DROPDOWN_IFRAME_SRC,
+        onError: onDestroy,
         onClose: (_, options) => options?.refocus && fieldRef.current?.focus(),
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {
@@ -70,8 +72,10 @@ export const createDropdown = (): InjectedDropdown => {
             set: () => iframe.updatePosition(),
         });
 
-    const getPayloadForAction = withContext<(action: DropdownAction) => Promise<DropdownActions>>(
+    const getPayloadForAction = withContext<(action: DropdownAction) => Promise<Maybe<DropdownActions>>>(
         async (ctx, action) => {
+            if (!ctx) return;
+
             const { loggedIn } = ctx.getState();
             const { domain, subdomain, displayName } = ctx.getExtensionContext().url;
             const hostname = subdomain ?? domain ?? '';
@@ -103,31 +107,30 @@ export const createDropdown = (): InjectedDropdown => {
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = async ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> => {
-        await waitUntil(() => iframe.state.ready, 50)
+    const open = ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> =>
+        iframe
+            .ensureReady()
             .then(async () => {
                 fieldRef.current = field;
                 const payload = await getPayloadForAction(action);
 
-                /* If the opening action is coming from a focus event for an autofill action and the we
-                 * have no login items that match the current domain, avoid auto-opening  the dropdown */
-                if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
+                if (payload) {
+                    /* If the opening action is coming from a focus event for an autofill action and the we
+                     * have no login items that match the current domain, avoid auto-opening  the dropdown */
+                    if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
 
-                iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
-                iframe.open(action, getScrollParent(field.element));
-
-                updatePosition();
+                    iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+                    iframe.open(action, getScrollParent(field.element));
+                    updatePosition();
+                }
             })
             .catch(noop);
-    };
 
     const sync = async () => {
         const action = fieldRef.current?.action;
         if (action) {
-            iframe.sendPortMessage({
-                type: IFrameMessageType.DROPDOWN_ACTION,
-                payload: await getPayloadForAction(action),
-            });
+            const payload = await getPayloadForAction(action);
+            if (payload) iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
         }
     };
 
@@ -136,11 +139,11 @@ export const createDropdown = (): InjectedDropdown => {
      * field the current dropdown is attached to. */
     iframe.registerMessageHandler(
         IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
-        withContext(({ service }, { payload }) => {
+        withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
 
-            service.autofill.autofillLogin(form, payload);
+            ctx?.service.autofill.autofillLogin(form, payload);
             iframe.close({ refocus: false });
             fieldRef.current?.focus({ preventAction: true });
         })
@@ -151,11 +154,11 @@ export const createDropdown = (): InjectedDropdown => {
      * text through the secure extension port channel */
     iframe.registerMessageHandler(
         IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
-        withContext(({ service }, { payload }) => {
+        withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
 
-            service.autofill.autofillGeneratedPassword(form, payload.password);
+            ctx?.service.autofill.autofillGeneratedPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
             form.tracker?.submit();
         })
@@ -175,6 +178,7 @@ export const createDropdown = (): InjectedDropdown => {
         fieldRef.current = null;
         listeners.removeAll();
         iframe.destroy();
+        onDestroy();
     };
 
     listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
@@ -189,7 +193,6 @@ export const createDropdown = (): InjectedDropdown => {
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
-        setPort: pipe(iframe.setPort, () => dropdown),
         sync,
     };
 

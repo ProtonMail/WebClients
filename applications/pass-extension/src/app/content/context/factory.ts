@@ -10,6 +10,7 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
@@ -17,12 +18,13 @@ import type { CSContextState, ContentScriptContext } from './types';
 export const createContentScriptContext = (options: {
     scriptId: string;
     mainFrame: boolean;
+    elements: PassElementsConfig;
     destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
     const state: CSContextState = {
-        active: true,
         localID: undefined,
         loggedIn: false,
+        stale: false,
         status: AppStatus.IDLE,
         UID: undefined,
     };
@@ -31,23 +33,24 @@ export const createContentScriptContext = (options: {
     const featureFlags: FeatureFlagState = {};
 
     const context: ContentScriptContext = CSContext.set({
+        elements: options.elements,
         mainFrame: options.mainFrame,
+        scriptId: options.scriptId,
+
         service: {
             autofill: createAutofillService(),
             autosave: createAutosaveService(),
             detector: createDetectorService(),
             formManager: createFormManager({
-                /* attach or detach dropdown based on the
-                 * detection results. If forms have been detected
-                 * sync the autofillable items count */
                 onDetection: (forms) => {
+                    /* attach or detach dropdown based on the detection results */
                     const didDetect = forms.length > 0;
-                    context.service.iframe[didDetect ? 'attachDropdown' : 'detachDropdown']();
+                    if (didDetect) context.service.iframe.attachDropdown();
+                    else context.service.iframe.dropdown?.destroy();
                 },
             }),
-            iframe: createIFrameService(),
+            iframe: createIFrameService(options.elements),
         },
-        scriptId: options.scriptId,
 
         destroy: options.destroy,
         getExtensionContext: () => ExtensionContext.get(),
