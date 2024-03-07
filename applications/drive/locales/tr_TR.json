@@ -568,6 +568,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save changes": [
+        "Değişiklikleri kaydet"
+      ],
       "Search": [
         "Arama"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Share": [
+        "Paylaş"
       ],
       "Share file": [
         "Dosya paylaş"
@@ -2026,7 +2032,7 @@
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
-        "Açıklama:\n${ eventDescription }"
+        "AÇIKLAMA:\n${ eventDescription }"
       ]
     },
     "Email body for invitation": {
@@ -2034,16 +2040,25 @@
         "${ eventTitle } iptal edildi."
       ],
       "All events in this series were updated.": [
-        "Bu serideki tüm etkinlikler güncellendi."
+        "Bu dizideki tüm etkinlikler güncellendi."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu serideki tüm etkinlikler güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+        "Bu dizideki tüm etkinlikler güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Bu etkinlik kopyası iptal edildi."
+      ],
+      "This event occurrence was updated.": [
+        "Bu etkinlik kopyası güncellendi."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Bu etkinlik kopyası güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Bu etkinlik güncellendi. İşte değişen şey:\n\n${ updateEventDetailsText }"
+        "Bu etkinlik güncellendi. Şu değişti:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "${ eventTitle } etkinliğine davet edildiniz.\n\n${ eventDetailsText }"
@@ -2051,13 +2066,13 @@
     },
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
-        "Zaman:\n${ formattedStart }"
+        "ZAMAN:\n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
         "ZAMAN:\n${ formattedStart } (tüm gün)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "Zaman:\n${ formattedStart } - ${ formattedEnd }"
+        "ZAMAN:\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -2067,7 +2082,18 @@
     },
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
-        "Konum:\n${ eventLocation }"
+        "KONUM:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi kabul etti"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi reddetti"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi belirsiz olarak kabul etti"
       ]
     },
     "Email subject": {
@@ -2135,6 +2161,9 @@
       ],
       "A problem occurred, please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "Account does not exist": [
+        "Hesap bulunamadı"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -2298,6 +2327,9 @@
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Bir ${ BRAND_NAME } hesabı değil"
+      ],
       "Not a valid number": [
         "Numara geçerli değil"
       ],
@@ -2379,6 +2411,9 @@
       "status page": [
         "durum sayfası"
       ],
+      "The address might be misspelled": [
+        "Adres yanlış yazılmış olabilir"
+      ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
@@ -2450,6 +2485,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "Validation error": [
+        "Doğrulama sorunu"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
@@ -4701,9 +4739,6 @@
       "Download anyway": [
         "Yine de indir"
       ],
-      "Downloading": [
-        "İndiriliyor"
-      ],
       "Downloading ${ percentageValue }": [
         "İndiriliyor ${ percentageValue }"
       ],
@@ -5974,7 +6009,7 @@
     },
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } açacaktır)"
+        "(${ PASS_APP_NAME } açılacak)"
       ]
     },
     "Security Center - Action": {
@@ -6520,7 +6555,7 @@
         "İçe aktarma kaydı silindi"
       ],
       "Last modified aliases stored in your oldest vault": [
-        "En eski kasanızda saklanan son değiştirilen takma adlar"
+        "En eski kasanızda bulunan son değiştirilmiş takma adlar"
       ],
       "Phone number copied to clipboard": [
         "Telefon numarası panoya kopyalandı"

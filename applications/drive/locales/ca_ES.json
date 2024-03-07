@@ -565,6 +565,9 @@
       "Save": [
         "Desa"
       ],
+      "Save changes": [
+        "Desa els canvis"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -597,6 +600,9 @@
       ],
       "Settings": [
         "Preferències"
+      ],
+      "Share": [
+        "Compartir"
       ],
       "Share file": [
         "Comparteix el fitxer"
@@ -1997,6 +2003,21 @@
         "Hem detectat els següents camps al fitxer CSV que heu carregat. Comproveu els que voleu importar."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIPCIÓ:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "This event was updated.": [
+        "S'ha actualitzat aquest esdeveniment."
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Esborrat"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -2062,6 +2083,9 @@
       ],
       "A problem occurred, please try again.": [
         "S'ha produït un problema. Intenteu-ho de nou."
+      ],
+      "Account does not exist": [
+        "El compte no existeix."
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -2219,6 +2243,9 @@
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "No és un compte de ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Número no vàlid"
       ],
@@ -2300,6 +2327,9 @@
       "status page": [
         "pàgina d'estat"
       ],
+      "The address might be misspelled": [
+        "És possible que l'adreça estigui mal escrita."
+      ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
       ],
@@ -2371,6 +2401,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
+      ],
+      "Validation error": [
+        "S'ha produït un error de validació"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -3522,8 +3555,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "S'ha validat la signatura digital. La carpeta va ser carregada de manera segura per ${ emailAddress }."
       ],
+      "Download": [
+        "Descarrega"
+      ],
       "Download ${ name } app": [
         "Descarrega l'aplicació ${ name }"
+      ],
+      "Download anyway": [
+        "Descarrega de tota manera"
       ],
       "Download canceled": [
         "S'ha cancel·lat la baixada"
@@ -4582,9 +4621,6 @@
       ],
       "Download anyway": [
         "Baixa igualment"
-      ],
-      "Downloading": [
-        "S'està descarregant"
       ],
       "Downloading ${ percentageValue }": [
         "S'està descarregant ${ percentageValue } "
@@ -5757,6 +5793,9 @@
       "Open ${ PASS_APP_NAME }": [
         "Obri ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Protegiu la vostra identitat en línia"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
       ]
@@ -6207,8 +6246,14 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ple al ${ percentage }%"
+      ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "El vostre emmagatzematge de ${ appStorage } està gairebé ple."
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."

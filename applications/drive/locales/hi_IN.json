@@ -552,6 +552,9 @@
       "Save": [
         "सेव करें"
       ],
+      "Save changes": [
+        "बदलाव सहेजें"
+      ],
       "Search": [
         "खोजें"
       ],
@@ -581,6 +584,9 @@
       ],
       "Settings": [
         "सेटिंग"
+      ],
+      "Share": [
+        "शेयर करें"
       ],
       "Share file": [
         "फाइल शेयर करें"
@@ -1954,6 +1960,9 @@
       "A problem occurred, please try again.": [
         "कोई गड़बड़ हुई, कृपया फिर से कोशिश करें।"
       ],
+      "Account does not exist": [
+        "खाता मौजूद नहीं हैं"
+      ],
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
@@ -2089,6 +2098,9 @@
       "No valid address found": [
         "कोई मान्य पता नहीं मिला"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } खाता नहीं"
+      ],
       "Not a valid number": [
         "मान्य संख्या नहीं है"
       ],
@@ -2164,6 +2176,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
       ],
+      "The address might be misspelled": [
+        "पता गलत लिखा जा सकता है"
+      ],
       "The email addresses do not match": [
         "ईमेल पते मेल नहीं खाते"
       ],
@@ -2232,6 +2247,9 @@
       ],
       "Username must end with a letter or digit": [
         "यूज़रनेम के आखिर में अक्षर या अंक होना चाहिए"
+      ],
+      "Validation error": [
+        "मान्यता त्रुटि"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
@@ -4343,9 +4361,6 @@
       ],
       "Download anyway": [
         "फिर भी डाउनलोड करें"
-      ],
-      "Downloading": [
-        "डाउनलोड हो रहा है"
       ],
       "Downloading ${ percentageValue }": [
         "डाउनलोड कर रहें ${ percentageValue }"
