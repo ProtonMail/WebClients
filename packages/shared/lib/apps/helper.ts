@@ -2,7 +2,13 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES, EXTENSIONS, VPN_HOSTNAME } from '../constants';
-import { isElectronMail, isElectronOnMac, isElectronOnWindows, isElectronPass } from '../helpers/desktop';
+import {
+    isElectronMail,
+    isElectronOnLinux,
+    isElectronOnMac,
+    isElectronOnWindows,
+    isElectronPass,
+} from '../helpers/desktop';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
 import window from '../window';
 
@@ -62,8 +68,24 @@ export const getAccountSettingsApp = () => APPS.PROTONACCOUNT;
 
 export const getClientID = (appName: APP_NAMES): string => {
     const app = isElectronMail ? APPS.PROTONMAIL : isElectronPass ? APPS.PROTONPASS : appName;
-    const { clientID, windowsClientID = clientID, macosClientID = clientID } = APPS_CONFIGURATION[app];
-    return isElectronOnWindows ? windowsClientID : isElectronOnMac ? macosClientID : clientID;
+
+    const {
+        clientID,
+        windowsClientID = clientID,
+        macosClientID = clientID,
+        linuxClientID = clientID,
+    } = APPS_CONFIGURATION[app];
+
+    if (isElectronOnWindows) {
+        return windowsClientID;
+    }
+    if (isElectronOnMac) {
+        return macosClientID;
+    }
+    if (isElectronOnLinux) {
+        return linuxClientID;
+    }
+    return clientID;
 };
 
 export const getExtension = (appName: APP_NAMES) => {
