@@ -1,6 +1,12 @@
-export const waitUntil = (cb: () => boolean, refresh: number, timeout: number = 5_000): Promise<void> =>
-    new Promise((resolve, reject) => {
-        if (cb()) return resolve();
+type WaitUntilCallback = (() => boolean) | { check: () => boolean; cancel: () => boolean };
+
+export const waitUntil = (cb: WaitUntilCallback, refresh: number, timeout: number = 5_000): Promise<void> => {
+    const check = typeof cb === 'function' ? cb : cb.check;
+    const cancel = typeof cb === 'function' ? undefined : cb.cancel;
+
+    return new Promise((resolve, reject) => {
+        if (cancel?.()) reject();
+        if (check()) return resolve();
 
         let interval: NodeJS.Timeout;
 
@@ -10,8 +16,11 @@ export const waitUntil = (cb: () => boolean, refresh: number, timeout: number = 
         }, timeout);
 
         interval = setInterval(() => {
-            if (!cb()) return;
+            if (cancel?.()) return reject();
+            if (!check()) return;
+
             clearTimeout(timer);
             resolve();
         }, refresh);
     });
+};
