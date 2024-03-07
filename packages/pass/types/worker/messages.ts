@@ -61,11 +61,11 @@ export enum WorkerMessageType {
     AUTH_INIT = 'AUTH_INIT',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
-    AUTOSUGGEST_PASSWORD_CONFIG = 'AUTOSUGGEST_PASSWORD_CONFIG',
     AUTOFILL_QUERY = 'AUTOFILL_QUERY',
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
+    AUTOSUGGEST_PASSWORD_CONFIG = 'AUTOSUGGEST_PASSWORD_CONFIG',
     DEBUG = 'DEBUG',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
@@ -87,13 +87,14 @@ export enum WorkerMessageType {
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PAUSE_WEBSITE = 'PAUSE_WEBSITE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
+    PING = 'PING',
     POPUP_INIT = 'POPUP_INIT',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
+    REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_TAB = 'RESOLVE_TAB',
     RESOLVE_USER = 'RESOLVE_USER',
-    REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
@@ -145,6 +146,7 @@ export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQU
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
+export type PingMessage = { type: WorkerMessageType.PING };
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
@@ -200,6 +202,7 @@ export type WorkerMessage =
     | OTPCodeGenerateMessage
     | PauseWebsiteMessage
     | PermissionsUpdateMessage
+    | PingMessage
     | PopupInitMessage
     | PortFrameForwardingMessage
     | PortUnauthorizedMessage
