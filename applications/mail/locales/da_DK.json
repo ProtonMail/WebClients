@@ -3174,6 +3174,21 @@
         "Download alle"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESKRIVELSE:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Fjernet"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOKATION:\n${ eventLocation }"
+      ]
+    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Begivenhed er i morgen"

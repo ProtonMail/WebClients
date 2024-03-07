@@ -3119,7 +3119,7 @@
         "O acesso ao aplicativo de desktop é limitado"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "A versão beta do aplicativo para desktop ${ MAIL_APP_NAME } está atualmente disponível para qualquer pessoa com um plano pago do ${ MAIL_APP_NAME }. Atualize hoje para obter acesso."
+        "A versão beta do aplicativo para computador ${ MAIL_APP_NAME } está atualmente disponível para qualquer pessoa com um plano pago do ${ MAIL_APP_NAME }. Faça upgrade hoje para obter acesso."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
@@ -5168,7 +5168,7 @@
         "Voltar para o início de sessão"
       ],
       "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
-        "Continue aproveitando uma experiência desktop veloz, poderosa e segura. Faça upgrade para desbloquear acesso ilimitado e outros recursos premium. "
+        "Continue aproveitando uma experiência para computador veloz, poderosa e segura. Faça upgrade para desbloquear acesso ilimitado e outros recursos premium. "
       ],
       "Keep using the desktop app": [
         "Continue usando o aplicativo para computador"
@@ -5202,7 +5202,7 @@
     },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
-        "${ appName } no App Store"
+        "${ appName } na App Store"
       ],
       "${ appName } on Play Store": [
         "${ appName } na Play Store"
@@ -10484,6 +10484,17 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ trialPlanName } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -10585,17 +10596,6 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ trialPlanName } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -10695,7 +10695,7 @@
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Encaminhe automaticamente os emails enviados para sua conta ${ MAIL_APP_NAME } para qualquer outro endereço de email."
+        "Encaminhe automaticamente os e-mails enviados para sua conta do ${ MAIL_APP_NAME } para qualquer outro endereço de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "O envio em massa de e-mails promocionais ou programáticos não tem suporte no momento. Recomendamos o uso de um provedor de serviços de e-mail dedicado para esse caso de uso."
@@ -11776,7 +11776,7 @@
         "Para criar e acessar contas de usuário não privadas, você precisará ativar a chave da sua organização."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Para habilitar os direitos de administrador em sua conta, ative a chave da organização."
+        "Para ativar os direitos de administrador em sua conta, ative a chave da organização."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Utilize um método de recuperação de dados ou redefina a chave da organização para restaurar os privilégios de administrador."
@@ -12970,7 +12970,7 @@
         "Adicionaremos os créditos do tempo restante à sua conta ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Você ainda tem **${ daysRemaining }** dias restantes em seu plano **${ currentPlanName }**.",
+        "Você ainda tem **${ daysRemaining }** dia restante em seu plano **${ currentPlanName }**.",
         "Você ainda tem **${ daysRemaining }** dias restantes em seu plano **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [

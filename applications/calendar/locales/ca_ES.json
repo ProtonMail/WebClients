@@ -2270,6 +2270,21 @@
         "Edita l'esdeveniment"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIPCIÓ:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "This event was updated.": [
+        "S'ha actualitzat aquest esdeveniment."
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Esborrat"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -2724,6 +2739,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "L'adreça convidada no existeix."
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "S'ha produït un error en canviar la resposta."
       ]
     },
     "Error importing calendar": {
@@ -3796,6 +3816,9 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "Display events for calendar ${ Name }": [
+        "Mosta els esdeveniments per al calendari ${ Name }"
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -5737,6 +5760,9 @@
       "Open ${ PASS_APP_NAME }": [
         "Obri ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Protegiu la vostra identitat en línia"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
       ]
@@ -6251,8 +6277,14 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ple al ${ percentage }%"
+      ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "El vostre emmagatzematge de ${ appStorage } està gairebé ple."
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."

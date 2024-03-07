@@ -568,6 +568,9 @@
       "Save": [
         "Gem"
       ],
+      "Save changes": [
+        "Gem ændringer"
+      ],
       "Search": [
         "Søg"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Indstillinger"
+      ],
+      "Share": [
+        "Del"
       ],
       "Share file": [
         "Del fil"
@@ -2024,6 +2030,21 @@
         "Følgende felter er fundet i den CSV-fil, du uploadede. Afkryds dem, du vil importere."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESKRIVELSE:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Fjernet"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOKATION:\n${ eventLocation }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annullering af en begivenhed den ${ formattedStart }"
@@ -2089,6 +2110,9 @@
       ],
       "A problem occurred, please try again.": [
         "Der opstod et problem. Prøv venligst igen."
+      ],
+      "Account does not exist": [
+        "Konto findes ikke"
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -2252,6 +2276,9 @@
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Ikke en ${ BRAND_NAME }-konto"
+      ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
@@ -2333,6 +2360,9 @@
       "status page": [
         "statusside"
       ],
+      "The address might be misspelled": [
+        "Adressen kan være stavet forkert"
+      ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
       ],
@@ -2404,6 +2434,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brugernavn skal ende på et bogstav eller ciffer"
+      ],
+      "Validation error": [
+        "Bekræftelsesfejl"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
@@ -4654,9 +4687,6 @@
       ],
       "Download anyway": [
         "Download alligevel"
-      ],
-      "Downloading": [
-        "Downloader"
       ],
       "Downloading ${ percentageValue }": [
         "Henter ${ percentageValue }"

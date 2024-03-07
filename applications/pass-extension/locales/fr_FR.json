@@ -440,6 +440,12 @@
       "View app logs": [
         "Afficher les journaux de l'application"
       ],
+      "View history": [
+        "Voir l'historique"
+      ],
+      "View older history": [
+        "Afficher l'historique le plus ancien"
+      ],
       "Write us on Reddit": [
         "Écrivez-nous sur Reddit"
       ],
@@ -583,6 +589,9 @@
       ],
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
+      ],
+      "Failed to load item history": [
+        "Le chargement de l'historique de l'élément n'a pas abouti."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
@@ -803,6 +812,10 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } fois",
+        "${ modifiedCount } fois"
+      ],
       "${ n } item": [
         "${ n } élément",
         "${ n } éléments"
@@ -867,6 +880,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Voulez-vous vraiment déplacer tous les éléments depuis « ${ fromVaultName } » vers « ${ toVaultName } » ?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Êtes-vous sûr de vouloir déplacer les éléments vers « ${ name } » ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Êtes-vous sûr de vouloir déplacer l'élément vers « ${ name } » ?"
       ],
       "Auto-lock successfully disabled": [
         "Le verrouillage automatique a été désactivé."
@@ -1060,8 +1079,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
+      "Moving an item to another vault will erase its history": [
+        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique."
+      ],
       "Moving items": [
         "Déplacement des éléments"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique."
       ],
       "Moving items to trash": [
         "Déplacement des éléments vers la corbeille"
@@ -1235,6 +1260,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Cette version sera ajoutée à l'historique comme la version la plus récente."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pour transférer des données depuis un autre gestionnaire de mots de passe, rendez-vous dans ce gestionnaire, exportez vos données, puis importez-les dans ${ PASS_APP_NAME }. Une fois vos données importées, supprimez le fichier qui a servi au transfert."
@@ -1934,6 +1962,12 @@
       "Create PIN code": [
         "Créez un code PIN"
       ],
+      "Created": [
+        "Création"
+      ],
+      "Current version": [
+        "Version actuelle"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Supprimer le coffre-fort « ${ vaultName } » ?"
       ],
@@ -1976,6 +2010,12 @@
       "Import to vault(s)": [
         "Importer dans les coffres-forts"
       ],
+      "Last autofill": [
+        "Dernier remplissage automatique"
+      ],
+      "Last modified": [
+        "Dernière modification"
+      ],
       "Leave vault ?": [
         "Quitter le coffre-fort ?"
       ],
@@ -1997,6 +2037,12 @@
       "Move all items ?": [
         "Déplacer tous les éléments ?"
       ],
+      "Move item?": [
+        "Déplacer l'élément ?"
+      ],
+      "Move items?": [
+        "Déplacer les éléments ?"
+      ],
       "No items selected": [
         "Aucun élément n'est sélectionné."
       ],
@@ -2017,6 +2063,9 @@
       ],
       "Pinned (${ items.length })": [
         "Épinglés (${ items.length }"
+      ],
+      "Restore this version?": [
+        "Restaurer cette version ?"
       ],
       "Review and share": [
         "Vérifier et partager"

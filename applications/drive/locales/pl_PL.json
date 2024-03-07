@@ -46,6 +46,9 @@
       "Add note": [
         "Dodaj notatkę"
       ],
+      "Add people or groups to share": [
+        "Dodaj użytkowników lub grupy"
+      ],
       "Add phone number": [
         "Dodaj numer telefonu"
       ],
@@ -574,6 +577,9 @@
       "Save": [
         "Zapisz"
       ],
+      "Save changes": [
+        "Zapisz zmiany"
+      ],
       "Search": [
         "Szukaj"
       ],
@@ -606,6 +612,9 @@
       ],
       "Settings": [
         "Ustawienia"
+      ],
+      "Share": [
+        "Udostępnij"
       ],
       "Share file": [
         "Udostępnij plik"
@@ -2168,6 +2177,9 @@
       "A problem occurred, please try again.": [
         "Wystąpił problem. Spróbuj ponownie."
       ],
+      "Account does not exist": [
+        "Konto nie istnieje"
+      ],
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
       ],
@@ -2336,6 +2348,9 @@
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "To nie jest konto ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Numer telefonu nie jest prawidłowy"
       ],
@@ -2423,6 +2438,9 @@
       "status page": [
         "stronę statusu"
       ],
+      "The address might be misspelled": [
+        "Adres mógł zostać błędnie wpisany"
+      ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
       ],
@@ -2494,6 +2512,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
+      "Validation error": [
+        "Błąd weryfikacji"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
@@ -3971,6 +3992,9 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "Invited": [
+        "Zaproszony"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Próbujesz przesłać plik ${ uploadName }. ${ replaceFile }, jeśli przesyłanie nie powiodło się. Jeśli przesyłanie jest w toku, zastąpienie pliku spowoduje anulowanie przesyłania."
       ],
@@ -4030,6 +4054,12 @@
       ],
       "Makes your account safer": [
         "Zwiększ bezpieczeństwo konta"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
+        "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaki",
+        "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaków",
+        "Maksymalnie ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaków"
       ],
       "Merged": [
         "Scalony"
@@ -4288,6 +4318,12 @@
       ],
       "Share files with links": [
         "Udostępnij pliki za pomocą linków"
+      ],
+      "Share with": [
+        "Udostępnij"
+      ],
+      "Share with anyone": [
+        "Udostępnij komukolwiek"
       ],
       "Shareable link for ${ boldNameText }": [
         "Link do ${ boldNameText }"
@@ -4757,6 +4793,9 @@
       "Add to group": [
         "Dodaj do grupy"
       ],
+      "Anyone with the link": [
+        "Każdy, kto posiada link"
+      ],
       "App password": [
         "Hasło aplikacji"
       ],
@@ -4853,6 +4892,9 @@
         "Usunąć dyski?",
         "Usunąć dyski?"
       ],
+      "Delete link": [
+        "Usuń link"
+      ],
       "Delete recovery-related information.": [
         "Usuń informacje o odzyskiwaniu."
       ],
@@ -4871,9 +4913,6 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
-      "Downloading": [
-        "Pobieranie"
-      ],
       "Downloading ${ percentageValue }": [
         "Pobieranie ${ percentageValue }"
       ],
@@ -4882,6 +4921,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "np. Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Edycja"
       ],
       "Email": [
         "E-mail"
@@ -4912,6 +4954,9 @@
       ],
       "Enter device name": [
         "Wpisz nazwę urządzenia"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Usuń link i dostęp wszystkim"
       ],
       "Expired": [
         "Wygasł"
@@ -5096,6 +5141,9 @@
       "Set expiration date": [
         "Ustaw datę wygaśnięcia"
       ],
+      "Set link password": [
+        "Ustaw hasło"
+      ],
       "Set recovery method": [
         "Ustaw metodę odzyskiwania"
       ],
@@ -5164,6 +5212,9 @@
       ],
       "Verification code": [
         "Kod weryfikacyjny"
+      ],
+      "Viewer": [
+        "Odczyt"
       ],
       "What happened?": [
         "Co się stało?"
@@ -6082,6 +6133,9 @@
       "A way to contact you": [
         "Preferowana metoda kontaktu"
       ],
+      "Choose password": [
+        "Ustaw hasło"
+      ],
       "E.g., ": [
         "Np. "
       ],
@@ -6138,6 +6192,9 @@
       ],
       "Select": [
         "Wybierz"
+      ],
+      "Set date": [
+        "Ustaw datę"
       ],
       "Start typing an email address": [
         "Wpisz adres e-mail"
@@ -7383,6 +7440,9 @@
       "Settings": [
         "Ustawienia"
       ],
+      "Share ${ name }": [
+        "Udostępnij ${ name }"
+      ],
       "Share via link": [
         "Udostępnij przez link"
       ],
@@ -7554,6 +7614,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
+      ],
+      "Shared end-to-end encrypted": [
+        "Udostępniono z szyfrowaniem end-to-end"
       ],
       "Show side panel": [
         "Pokaż panel boczny"

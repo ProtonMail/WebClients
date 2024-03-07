@@ -392,7 +392,7 @@
         "Enkripsi"
       ],
       "exclude message content": [
-        "tidak mengikutsertakan isi pesan"
+        "kecualikan isi pesan"
       ],
       "Expand composer": [
         "Lebarkan komposer"
@@ -3164,8 +3164,32 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } telah dibatalkan."
+      ],
+      "All events in this series were updated.": [
+        "Semua acara dalam seri ini telah diperbarui."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Kejadian acara ini telah dibatalkan."
+      ],
+      "This event occurrence was updated.": [
+        "Kejadian acara ini telah diperbarui."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Kejadian acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3187,6 +3211,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "LOKASI:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } menerima undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } menolak undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } menerima undangan Anda secara tentatif ke ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -4362,8 +4397,14 @@
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Nikmati akses yang cepat, aman, dan bebas gangguan menuju kotak masuk dan kalendar Anda."
       ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Dapatkan akses tak terbatas dengan langganan ${ MAIL_APP_NAME } apa pun."
+      ],
       "No credit card required.": [
         "Tanpa perlu kartu kredit."
+      ],
+      "Try the app-new desktop app": [
+        "Coba aplikasi baru untuk desktop."
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
@@ -5726,7 +5767,7 @@
         "Opsi pencarian yang memungkinkan Anda untuk mencari berdasarkan kata kunci pada badan surel secara aman."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "Pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
+        "Pencarian memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Amankan berkas Anda dengan layanan penyimpanan berbasis cloud secara gratis sekarang juga."

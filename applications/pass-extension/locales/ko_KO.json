@@ -440,6 +440,12 @@
       "View app logs": [
         "앱 로그 보기"
       ],
+      "View history": [
+        "기록 보기"
+      ],
+      "View older history": [
+        "이전 기록 보기"
+      ],
       "Write us on Reddit": [
         "Reddit에서 작성"
       ],
@@ -578,6 +584,9 @@
       ],
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
+      ],
+      "Failed to load item history": [
+        "항목 내역 불러오기 실패"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\"에서 모든 항목을 이동하는데 실패했습니다."
@@ -854,6 +863,12 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "\"${ fromVaultName }\" 에서 \"${ toVaultName }\"(으)로 모든 항목을 이동하시겠습니까?"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "항목들을 ${ name }으로 이동하시는 것이 맞습니까?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "항목을 ${ name }으로 이동하시는 것이 맞습니까?"
+      ],
       "Auto-lock successfully disabled": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
@@ -1040,8 +1055,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving an item to another vault will erase its history": [
+        "항목을 다른 금고로 이동하면 그 기록이 지워집니다"
+      ],
       "Moving items": [
         "항목 이동 중"
+      ],
+      "Moving items to another vault will erase their history": [
+        "항목들을 다른 금고로 이동하면 그 기록이 지워집니다"
       ],
       "Moving items to trash": [
         "항목을 휴지통으로 이동 중"
@@ -1210,6 +1231,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "이 금고는 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "이 버전이 기록의 가장 최신 버전으로 기록될 것입니다."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
@@ -1895,6 +1919,12 @@
       "Create PIN code": [
         "PIN 코드 생성"
       ],
+      "Created": [
+        "생성함"
+      ],
+      "Current version": [
+        "현재 버전"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "금고 \"${ vaultName }\"을(를) 삭제합니까?"
       ],
@@ -1937,6 +1967,12 @@
       "Import to vault(s)": [
         "금고로 가져오기"
       ],
+      "Last autofill": [
+        "마지막 자동 완성"
+      ],
+      "Last modified": [
+        "마지막 수정"
+      ],
       "Leave vault ?": [
         "금고를 떠납니까?"
       ],
@@ -1958,6 +1994,12 @@
       "Move all items ?": [
         "모든 항목을 이동하시겠어요?"
       ],
+      "Move item?": [
+        "항목을 이동하시겠습니까?"
+      ],
+      "Move items?": [
+        "항목들을 이동하시겠습니까?"
+      ],
       "No items selected": [
         "선택된 항목 없음"
       ],
@@ -1978,6 +2020,9 @@
       ],
       "Pinned (${ items.length })": [
         "고정됨 (${ items.length })"
+      ],
+      "Restore this version?": [
+        "이 버전을 복구하시겠습니까?"
       ],
       "Review and share": [
         "검토 및 공유"
