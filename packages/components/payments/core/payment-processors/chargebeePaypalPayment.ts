@@ -22,8 +22,10 @@ export interface ChargebeePaypalPaymentProcessorState {
 }
 
 export interface ChargebeePaypalModalHandles {
-    showModal: () => void;
-    hideModal: (error?: any) => void;
+    onAuthorize: () => void;
+    onCancel: () => void;
+    onClick: () => void;
+    onFailure: (error: any) => void;
 }
 
 export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeePaypalPaymentProcessorState> {
@@ -105,7 +107,7 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         }
 
         const authorizedListener = this.events.onPaypalAuthorized(async () => {
-            this.paypalModalHandles?.hideModal();
+            this.paypalModalHandles?.onAuthorize();
 
             if (!this.fetchedPaymentToken) {
                 return;
@@ -130,17 +132,17 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         this.removeEventListeners.push(authorizedListener);
 
         const clickListener = this.events.onPaypalClicked(() => {
-            this.paypalModalHandles?.showModal();
+            this.paypalModalHandles?.onClick();
         });
         this.removeEventListeners.push(clickListener);
 
         const failureListener = this.events.onPaypalFailure((error) => {
-            this.paypalModalHandles?.hideModal(error);
+            this.paypalModalHandles?.onFailure(error);
         });
         this.removeEventListeners.push(failureListener);
 
         const cancelListener = this.events.onPaypalCancelled(() => {
-            this.paypalModalHandles?.hideModal();
+            this.paypalModalHandles?.onCancel();
         });
         this.removeEventListeners.push(cancelListener);
 

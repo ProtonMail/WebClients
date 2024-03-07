@@ -12,6 +12,8 @@ import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticat
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getIsVpn2024Deal, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
+import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -26,7 +28,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getHas2023OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2023OfferCoupon, getIsVpnB2BPlan, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -79,6 +81,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const [error, setError] = useState<any>();
     const handleError = useErrorHandler();
     const location = useLocationWithoutLocale();
+    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
+        flow: 'signup-vpn',
+    });
 
     useMetaTags(metaTags);
 
@@ -246,11 +251,33 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     }, []);
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
+        const getTelemetryParams = () => {
+            const subscriptionData = cache.subscriptionData;
+
+            const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
+            const plan = getPlanNameFromIDs(subscriptionData.planIDs);
+
+            return {
+                method,
+                overrides: {
+                    plan,
+                },
+            };
+        };
+
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
                 api: silentApi,
                 ignoreVPN: true,
+                reportPaymentSuccess: () => {
+                    const { method, overrides } = getTelemetryParams();
+                    reportPaymentSuccess(method, overrides);
+                },
+                reportPaymentFailure: () => {
+                    const { method, overrides } = getTelemetryParams();
+                    reportPaymentFailure(method, overrides);
+                },
             }),
             wait(3500),
         ]);
