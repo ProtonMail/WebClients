@@ -9,7 +9,9 @@ import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticat
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
+import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { BillingAddress } from '@proton/components/payments/core';
+import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -35,7 +37,7 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
+import { getNormalCycleFromCustomCycle, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -152,6 +154,9 @@ const SignupContainer = ({
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
     const { getPaymentsApi } = usePaymentsApi();
+    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
+        flow: 'signup',
+    });
     const [loading, withLoading] = useLoading();
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
@@ -881,10 +886,33 @@ const SignupContainer = ({
                              */
                             metrics.stopBatchingProcess();
 
+                            const getTelemetryParams = () => {
+                                const subscriptionData = cache.subscriptionData;
+
+                                const method: PaymentProcessorType | 'n/a' =
+                                    subscriptionData.payment?.paymentProcessorType ?? 'n/a';
+                                const plan = getPlanNameFromIDs(subscriptionData.planIDs);
+
+                                return {
+                                    method,
+                                    overrides: {
+                                        plan,
+                                    },
+                                };
+                            };
+
                             const validateFlow = createFlow();
                             const signupActionResponse = await handleSetupUser({
                                 cache,
                                 api: silentApi,
+                                reportPaymentSuccess: () => {
+                                    const { method, overrides } = getTelemetryParams();
+                                    reportPaymentSuccess(method, overrides);
+                                },
+                                reportPaymentFailure: () => {
+                                    const { method, overrides } = getTelemetryParams();
+                                    reportPaymentFailure(method, overrides);
+                                },
                             });
 
                             /**

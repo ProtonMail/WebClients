@@ -11,6 +11,7 @@ import {
     AggregatedPricing,
     getPlanFromIds,
     getPlanIDs,
+    getPlanNameFromIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
     hasLifetime,
@@ -793,5 +794,22 @@ describe('getPlanFromIds', () => {
 
         const result = getPlanFromIds(planIDs);
         expect(result).toEqual(PLANS.BUNDLE_PRO);
+    });
+});
+
+describe('getPlanNameFromIDs', () => {
+    it('should return the correct plan name', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.VPN_PRO]: 1,
+            [ADDON_NAMES.MEMBER_VPN_PRO]: 12,
+        };
+
+        // these two checks are equivalent. I wanted to add them for expressiveness and readability
+        expect(getPlanNameFromIDs(planIDs)).toEqual('vpnpro2023' as any);
+        expect(getPlanNameFromIDs(planIDs)).toEqual(PLANS.VPN_PRO);
+    });
+
+    it('should return undefined if there are no plan IDs', () => {
+        expect(getPlanNameFromIDs({})).toBeUndefined();
     });
 });

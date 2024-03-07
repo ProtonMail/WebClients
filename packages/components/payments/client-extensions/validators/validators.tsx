@@ -168,14 +168,18 @@ export const ChargebeePaypalValidationModal = (props: any) => {
     );
 };
 
-export function useChargebeePaypalHandles(): ChargebeePaypalModalHandles {
+export function useChargebeePaypalHandles({
+    onPaymentAttempt,
+    onPaymentFailure,
+}: {
+    onPaymentAttempt: (method: 'chargebee-paypal') => void;
+    onPaymentFailure: (method: 'chargebee-paypal') => void;
+}): ChargebeePaypalModalHandles {
     const { createModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
     const modalIdRef = useRef<string | null>(null);
 
-    const hideModal: ChargebeePaypalModalHandles['hideModal'] = (error?: any) => {
-        console.log('hideModal', error);
-
+    const hideModal = (error?: any) => {
         if (!modalIdRef.current) {
             return;
         }
@@ -188,7 +192,11 @@ export function useChargebeePaypalHandles(): ChargebeePaypalModalHandles {
         }
     };
 
-    const showModal: ChargebeePaypalModalHandles['showModal'] = () => {
+    const onCancel = () => {
+        hideModal();
+    };
+
+    const showModal = () => {
         if (modalIdRef.current) {
             hideModal();
         }
@@ -197,8 +205,24 @@ export function useChargebeePaypalHandles(): ChargebeePaypalModalHandles {
         modalIdRef.current = id;
     };
 
+    const onFailure = (error: any) => {
+        onPaymentFailure('chargebee-paypal');
+        hideModal(error);
+    };
+
+    const onAuthorize = () => {
+        hideModal();
+    };
+
+    const onClick = () => {
+        onPaymentAttempt('chargebee-paypal');
+        showModal();
+    };
+
     return {
-        showModal,
-        hideModal,
+        onCancel,
+        onFailure,
+        onAuthorize,
+        onClick,
     };
 }
