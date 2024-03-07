@@ -3257,6 +3257,69 @@
         "Du kannst diesen Tab bedenkenlos schließen."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHREIBUNG:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } wurde abgesagt."
+      ],
+      "All events in this series were updated.": [
+        "Alle Termine in dieser Serie wurden aktualisiert."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was updated.": [
+        "Die Häufigkeit des Termins wurde aktualisiert."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Die Häufigkeit des Termins wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Dieser Termin wurde aktualisiert."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Dieser Termin wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du wurdest zu ${ eventTitle } eingeladen.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ZEIT:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ZEIT:\n${ formattedStart } (ganztägig)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ZEIT:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Entfernt"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "ORT:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } angenommen"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } hinzugefügt"
@@ -4520,7 +4583,7 @@
         "Familiengruppe einrichten"
       ],
       "Switch plans": [
-        "Tarife wechseln"
+        "Abonnement wechseln"
       ],
       "View invitation": [
         "Einladung ansehen"
@@ -4553,13 +4616,13 @@
         "*Nur eine kostenlose Testversion pro Kunde."
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Tarif abschließen."
+        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Abonnement abschließen."
       ],
       "customer support": [
         "Kundendienst"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Wenn du die Einladung annimmst, wechseln wir deinen aktuellen Tarif und schreiben deinem Konto das verbleibende Guthaben gut."
+        "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Einladung von ${ invitation.OrganizationName }"
@@ -4568,7 +4631,7 @@
         "Eingeladen von: ${ inviteEmail }"
       ],
       "Leave family plan": [
-        "Family-Tarif verlassen"
+        "Family-Abonnement verlassen"
       ],
       "Leave visionary plan": [
         "Visionary-Abonnement verlassen"
@@ -4583,7 +4646,7 @@
         "In einem Zeitraum von 6 Monaten sind nur 10 angenommene Einladungen zulässig."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Tarifs mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
+        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Pending": [
         "Ausstehend"
@@ -4595,22 +4658,22 @@
         "Offene Einladungen"
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Du kannst leider derzeit nicht zwischen Tarifen wechseln."
+        "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Dir zugewiesener Speicher: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Tarifs in Rechnung gestellt."
+        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Abonnements in Rechnung gestellt."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Um dir den Übergang zu erleichtern, bieten wir dir eine kostenlose 30-tägige Testversion von ${ BRAND_NAME } Unlimited*."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- und Family-Tarife unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+        "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Mit Visionary- und Family-Tarifen sind derzeit keine lebenslangen Konten verfügbar."
+        "Für Visionary- und Family-Abonnements sind derzeit keine lebenslangen Konten verfügbar."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -4631,7 +4694,7 @@
         "Du hast das Limit von 10 akzeptierten Einladungen in 6 Monaten erreicht. Die Schaltfläche wird wieder anklickbar, wenn du weitere Benutzer einladen kannst."
       ],
       "You have successfully joined the Family plan": [
-        "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+        "Du bist dem Family-Abonnement erfolgreich beigetreten"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
@@ -4643,16 +4706,16 @@
         "Du verlierst den Zugriff auf alle Premium-Funktionen und Speicher, die in ${ BRAND_NAME } Family enthalten sind."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppentarif zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Tarif zur Verfügung stehen. ${ addressSettingsLink }"
+        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Tarif-Administrator, deinen Speicher zu erhöhen."
+        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Mit deinem aktuellen Tarif kannst du kein Visionary- oder Family-Tarif abschließen."
+        "Mit deinem aktuellen Abonnement kannst du kein Visionary- oder Family-Abonnement abschließen."
       ]
     },
     "familyOffer_2023:Info": {
@@ -4672,7 +4735,7 @@
         "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf einen ${ BRAND_NAME } Unlimited-Tarif umgestellt."
+        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf ein ${ BRAND_NAME } Unlimited-Abonnement umgestellt."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Zur Erstellung eines neuen Benutzers ist eine konfigurierte eigene Domain erforderlich."
@@ -4681,7 +4744,7 @@
         "Du kannst den Speicherplatz für diesen Benutzer erhöhen oder verringern."
       ],
       "You left this plan": [
-        "Du hast diesen Tarif storniert"
+        "Du hast dieses Abonnement verlassen"
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -4747,7 +4810,7 @@
         "Family-Name"
       ],
       "Family plan": [
-        "Family-Tarif"
+        "Family-Abonnement"
       ],
       "Invite a user": [
         "Benutzer einladen"
@@ -5089,12 +5152,20 @@
         "Sehr klein"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "Web-App"
+      ]
+    },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
       ],
       "Back to sign in": [
         "Zurück zur Anmeldung"
+      ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Genieße weiterhin ein schnelles, konzentriertes und sicheres Desktop-Erlebnis. Mit dem Upgrade erhältst du unbegrenzten Zugang und weitere Premiumfunktionen. "
       ],
       "Keep using the desktop app": [
         "Weiter die Desktop-App nutzen"
@@ -5277,6 +5348,9 @@
       ],
       "Protection": [
         "Schutz"
+      ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Spare mit den besten Angeboten für ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Wähle dein Angebot"
@@ -6468,6 +6542,9 @@
       ],
       "Failed to fetch logs.": [
         "Abrufen der Protokolle fehlgeschlagen."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Schnell und konzentriert. E-Mail und Kalender, direkt auf deinem Desktop."
       ],
       "Fill in user details": [
         "Daten des Benutzers ausfüllen"
@@ -9289,6 +9366,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Produktaktualisierungen zu ${ app } und ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "${ app }-Produktaktualisierungen"
       ],
@@ -10076,6 +10156,9 @@
       "1 user": [
         "1 Benutzer"
       ],
+      "24/7 account management support": [
+        "24/7-Kundenbetreuung"
+      ],
       "24/7 support": [
         "24/7 Support"
       ],
@@ -10087,6 +10170,9 @@
       ],
       "Admin console": [
         "Adminkonsole"
+      ],
+      "Administration Panel": [
+        "Verwaltungskonsole"
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
@@ -10331,6 +10417,9 @@
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
       ],
+      "Unlimited vault sharing": [
+        "Unbegrenztes Teilen von Tresoren"
+      ],
       "Unlimited vaults": [
         "Unbegrenzte Tresore"
       ],
@@ -10384,6 +10473,17 @@
       ],
       "Team management": [
         "Teamverwaltung"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10485,17 +10585,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11614,6 +11703,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Für Unternehmen"
+      ],
+      "For individuals": [
+        "Für Privatpersonen"
       ]
     },
     "passwordless": {
@@ -13076,7 +13168,7 @@
         "Adresse aktualisiert"
       ],
       "Administrator privileges restored": [
-        "Administrator-Rechte wiederhergestellt"
+        "Administratorrechte wiederhergestellt"
       ],
       "Auto-reply disabled": [
         "Automatische Antwort aktualisiert"
@@ -15019,7 +15111,7 @@
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Du musst ${ activateLink } den Organisationsschlüssel vor dem Hinzufügen einer E-Mail-Adresse zu einem nicht-privaten Mitglied."
+        "Du musst den Organisationsschlüssel ${ activateLink } bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse hinzufügst."
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."
