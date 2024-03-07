@@ -32,6 +32,7 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { useIncomingAddressForwardings } from '@proton/components/hooks';
 import { useIsSessionRecoveryAvailable } from '@proton/components/hooks/useSessionRecovery';
+import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -281,11 +282,11 @@ const MainContainer = () => {
     }
 
     if (getIsSSOVPNOnlyAccount(user)) {
-        if (appFromPathname !== APPS.PROTONVPN_SETTINGS) {
+        if (!getSSOVPNOnlyAccountApps().includes(appFromPathname!)) {
             return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
         }
     } else if (getIsPublicUserWithoutProtonAddress(user)) {
-        if (appFromPathname !== APPS.PROTONPASS) {
+        if (!getPublicUserProtonAddressApps().includes(appFromPathname!)) {
             return <Redirect to={`/${getSlugFromApp(APPS.PROTONPASS)}`} />;
         }
     }
