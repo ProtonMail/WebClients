@@ -10,7 +10,6 @@
  * - Failed recovery: extension context change with failed recovery -> destroy.
  * - Error during setup: client encounters an error during setup -> destroy.
  */
-import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
@@ -21,31 +20,34 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import 'proton-pass-extension/app/content/injections/styles/injection.scss';
+import { CSContext } from '../context/context';
 
-export const createContentScriptClient = (scriptId: string, mainFrame: boolean) => {
+type CreateContentScriptOptions = {
+    scriptId: string;
+    mainFrame: boolean;
+    elements: PassElementsConfig;
+};
+export const createContentScriptClient = ({ scriptId, mainFrame, elements }: CreateContentScriptOptions) => {
     const listeners = createListenerStore();
 
     const context = createContentScriptContext({
-        scriptId,
+        elements,
         mainFrame,
+        scriptId,
         destroy: (options) => {
-            if (context.getState().active) {
-                logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
-                listeners.removeAll();
-                context.setState({ active: false });
-                context.service.formManager.destroy();
-                context.service.iframe.destroy();
+            logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
 
-                CSContext.clear();
-                DOMCleanUp();
+            DOMCleanUp(elements);
+            listeners.removeAll();
+            context.service.formManager.destroy();
+            context.service.iframe.destroy();
 
-                ExtensionContext.read()?.destroy();
-            }
+            ExtensionContext.read()?.destroy();
         },
     });
 
@@ -65,12 +67,12 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         context.setSettings(settings);
-        if (context.getState().active) void reconciliate();
+        void reconciliate();
     };
 
     const onWorkerStateChange = (workerState: AppState) => {
         context.setState(workerState);
-        if (context.getState().active) void reconciliate();
+        void reconciliate();
     };
 
     const onPortMessage = async (message: WorkerMessageWithSender): Promise<void> => {
@@ -98,7 +100,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             })
         );
 
-        if (res.type === 'success' && context.getState().active) {
+        if (res.type === 'success') {
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
             context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
             context.setSettings(res.settings);
@@ -122,27 +124,35 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         }
     };
 
-    const start = async () => {
-        try {
-            const extensionContext = await setupExtensionContext({
-                endpoint: 'contentscript',
-                onDisconnect: () => {
-                    const recycle = context.getState().active;
-                    if (!recycle) context.destroy({ reason: 'port disconnected' });
-                    return { recycle };
-                },
-                onRecycle: handleStart,
-            });
+    return {
+        /** Connects the content-script service to the extension context.
+         * Will automatically try to recycle the extension context if the
+         * port is disconnected if the service worker is killed */
+        start: async () => {
+            try {
+                const extensionContext = await setupExtensionContext({
+                    endpoint: 'contentscript',
+                    onDisconnect: () => {
+                        context.destroy({ reason: 'port disconnected' });
+                        return { recycle: true };
+                    },
+                    onRecycle: handleStart,
+                });
 
-            logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
-            return await handleStart(extensionContext);
-        } catch (e) {
-            logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
-            context.destroy({ reason: 'setup error' });
-        }
+                logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
+                return await handleStart(extensionContext);
+            } catch (e) {
+                logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
+                context.destroy({ reason: 'setup error' });
+            }
+        },
+        /** Full destruction of the content-script and extension
+         * context. Should only be called if we are unloading */
+        destroy: (options: { reason: string }) => {
+            context.destroy(options);
+            CSContext.clear();
+        },
     };
-
-    return { start, destroy: context.destroy };
 };
 
 export type ContentScriptClientService = ReturnType<typeof createContentScriptClient>;
