@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
       ],
+      "View history": [
+        "ისტორიის ნახვა"
+      ],
+      "View older history": [
+        "ძველი ისტორიის ნახვა"
+      ],
       "Write us on Reddit": [
         "მოგვწერეთ Reddit-ზე"
       ],
@@ -512,6 +518,9 @@
       ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
+      ],
+      "Failed to load item history": [
+        "ელემენტის ისტორიის ჩატვირთვა ჩავარდა"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან, ჩავარდა"
@@ -723,6 +732,10 @@
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount }-ჯერ",
+        "${ modifiedCount }-ჯერ"
+      ],
       "${ n } item": [
         "${ n } ელემენტი",
         "${ n } ელემენტი"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ყველა ელემენტი \"${ fromVaultName }\"-დან \"${ toVaultName }\"-ში?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტები \"${ name }\"-ში?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
       ],
       "Auto-lock successfully disabled": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო"
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its history": [
+        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის"
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
+      ],
+      "Moving items to another vault will erase their history": [
+        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის"
       ],
       "Moving items to trash": [
         "ელემენტების გადატანა ნაგვის ყუთში"
@@ -1115,6 +1140,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "ეს ვერსია დაემატება ისტორიაში, როგორც უახლესი ვერსია."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
@@ -1746,6 +1774,12 @@
       "Create PIN code": [
         "PIN-კოდის შექმნა"
       ],
+      "Created": [
+        "შექმნილია"
+      ],
+      "Current version": [
+        "მიმდინარე ვერსია"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "წავშალო საცავი \"${ vaultName }\" ?"
       ],
@@ -1782,6 +1816,12 @@
       "Install extension": [
         "გაფართოების დაყენება"
       ],
+      "Last autofill": [
+        "უკანასკნელი ავტომატური შევსება"
+      ],
+      "Last modified": [
+        "ბოლო ცვლილება"
+      ],
       "Leave vault ?": [
         "გავიდე საცავიდან?"
       ],
@@ -1800,6 +1840,12 @@
       "Move all items ?": [
         "გადავიტანო ყველა ელემენტი?"
       ],
+      "Move item?": [
+        "გადავიტანო ელემენტი?"
+      ],
+      "Move items?": [
+        "გადავიტანო ელემენტები?"
+      ],
       "No items selected": [
         "ელემენტები მონიშნული არაა"
       ],
@@ -1814,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
+      ],
+      "Restore this version?": [
+        "ამ ვერსიის აღდგენა?"
       ],
       "Review and share": [
         "მიმოხილვა და გაზიარება"
