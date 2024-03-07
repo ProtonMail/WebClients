@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Effettua l'upgrade ora per condividere con più persone"
       ],
+      "View history": [
+        "Visualizza la cronologia"
+      ],
+      "View older history": [
+        "Visualizza la cronologia meno recente"
+      ],
       "Write us on Reddit": [
         "Scrivici su Reddit"
       ],
@@ -512,6 +518,9 @@
       ],
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
+      ],
+      "Failed to load item history": [
+        "Caricamento della cronologia degli elementi non riuscito"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" non riuscito"
@@ -723,6 +732,10 @@
         "${ memberCount } membro",
         "${ memberCount } membri"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } volta",
+        "${ modifiedCount } volte"
+      ],
       "${ n } item": [
         "${ n } elemento",
         "${ n } elementi"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Sei sicuro di voler spostare tutti gli elementi di \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Sei sicuro di voler spostare gli elementi nella cassaforte \"${ name }\" ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Sei sicuro di voler spostare l'elemento nella cassaforte \"${ name }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "Blocco automatico disabilitato con successo"
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving an item to another vault will erase its history": [
+        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia"
+      ],
       "Moving items": [
         "Spostamento degli elementi"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia"
       ],
       "Moving items to trash": [
         "Spostamento degli elementi nel cestino"
@@ -1115,6 +1140,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Questa cassaforte non è attualmente condivisa con nessuno. Per condividerla con qualcuno, invita delle persone."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Questa versione verrà aggiunta alla cronologia come versione più recente."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrare i dati provenienti da un altro gestore di password, accedi al gestore di password, esporta i tuoi dati e caricali su ${ PASS_APP_NAME }. Una volta importati i dati, elimina il file esportato."
@@ -1746,6 +1774,12 @@
       "Create PIN code": [
         "Creare codice PIN"
       ],
+      "Created": [
+        "Creazione"
+      ],
+      "Current version": [
+        "Versione attuale"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Eliminare cassaforte \"${ vaultName }\" ?"
       ],
@@ -1782,6 +1816,12 @@
       "Install extension": [
         "Installa l'estensione"
       ],
+      "Last autofill": [
+        "Ultima compilazione automatica"
+      ],
+      "Last modified": [
+        "Ultima modifica"
+      ],
       "Leave vault ?": [
         "Abbandonare la cassaforte?"
       ],
@@ -1800,6 +1840,12 @@
       "Move all items ?": [
         "Spostare tutti gli elementi?"
       ],
+      "Move item?": [
+        "Vuoi spostare l'elemento?"
+      ],
+      "Move items?": [
+        "Vuoi spostare gli elementi?"
+      ],
       "No items selected": [
         "Nessun elemento selezionato"
       ],
@@ -1814,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fissati (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Vuoi ripristinare questa versione?"
       ],
       "Review and share": [
         "Controlla e condividi"

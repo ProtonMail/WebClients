@@ -803,6 +803,10 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } gang",
+        "${ modifiedCount } gange"
+      ],
       "${ n } item": [
         "${ n } element",
         "${ n } elementer"
@@ -1934,6 +1938,9 @@
       "Create PIN code": [
         "Opret pinkode"
       ],
+      "Current version": [
+        "Aktuel version"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Slet boksen \"${ vaultName }\"?"
       ],
@@ -2017,6 +2024,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fastgjorde (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Gendan denne version?"
       ],
       "Review and share": [
         "Gennemgå og del"

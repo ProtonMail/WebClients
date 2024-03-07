@@ -2303,8 +2303,32 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } telah dibatalkan."
+      ],
+      "All events in this series were updated.": [
+        "Semua acara dalam seri ini telah diperbarui."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Semua acara dalam seri ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Kejadian acara ini telah dibatalkan."
+      ],
+      "This event occurrence was updated.": [
+        "Kejadian acara ini telah diperbarui."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Kejadian acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2326,6 +2350,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "LOKASI:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } menerima undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } menolak undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } menerima undangan Anda secara tentatif ke ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -3711,6 +3746,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "Undangan akan dikirim ke peserta yang ditambahkan."
+      ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "Undangan akan dikirim ke seluruh peserta. Acara mana yang ingin Anda perbarui?"
       ],
       "An invitation will be sent to the event participants.": [
         "Undangan akan dikirim ke peserta acara."

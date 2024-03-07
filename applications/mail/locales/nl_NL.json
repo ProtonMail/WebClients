@@ -1448,7 +1448,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME } desktop-app"
       ]
     },
     "Bug category": {
@@ -3174,6 +3174,72 @@
         "Alles downloaden"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHRIJVING:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } werd geannuleerd."
+      ],
+      "All events in this series were updated.": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt. Hier is wat er veranderd is:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Deze afspraakgebeurtenis werd geannuleerd."
+      ],
+      "This event occurrence was updated.": [
+        "Deze afspraakgebeurtenis werd bijgewerkt."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Deze afspraak werd bijgewerkt. Dit is wat er veranderd is:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Deze afspraak werd bijgewerkt."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Deze afspraak is bijgewerkt. Dit is wat is veranderd:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "U bent uitgenodigd voor ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "TIJD:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "TIJD:\n${ formattedStart } (hele dag)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TIJD:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Verwijderd"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCATIE:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } afgewezen"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft voorlopig uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ]
+    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "De afspraak is morgen"
@@ -3261,7 +3327,7 @@
         "Vroegtijdige toegang nieuwe applicaties functies"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME } desktop app"
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME }-desktopapp"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
@@ -4359,16 +4425,30 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "14-day destkop app trial.": [
+        "14-dagen destkop-app proefversie"
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Geniet van snelle, veilige en afleidingsvrije toegang tot uw inbox en agenda."
       ],
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Krijg onbeperkte toegang met een ${ MAIL_APP_NAME } abonnement."
+      ],
       "No credit card required.": [
         "Green kredietkaart vereist."
       ],
+      "Try the app-new desktop app": [
+        "Probeer de app-nieuwe desktop-app"
+      ],
       "Upgrade now": [
         "Upgrade nu"
+      ]
+    },
+    "Free trial destkop": {
+      "Start free trial": [
+        "Start gratis proefperiode"
       ]
     },
     "Get started checklist instructions": {
@@ -8198,7 +8278,7 @@
         "Open ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Bescherm uw online identiteit"
+        "Bescherm uw online-identiteit"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"

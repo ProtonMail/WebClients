@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Палепшыце, каб абагуліць з большай колькасцю людзей"
       ],
+      "View history": [
+        "Праглядзець гісторыю"
+      ],
+      "View older history": [
+        "Паглядзець больш старую гісторыю"
+      ],
       "Write us on Reddit": [
         "Напішыце нам у Reddit"
       ],
@@ -516,6 +522,9 @@
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
+      ],
+      "Failed to load item history": [
+        "Не ўдалося загрузіць элементы гісторыі"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Не ўдалося выдаліць усе элементы з \"${ payload.content.name }\""
@@ -744,6 +753,12 @@
         "${ memberCount } удзельнікаў",
         "${ memberCount } удзельнікаў"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } раз",
+        "${ modifiedCount } разы",
+        "${ modifiedCount } разоў",
+        "${ modifiedCount } разоў"
+      ],
       "${ n } item": [
         "${ n } элемент",
         "${ n } элементы",
@@ -797,6 +812,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Вы сапраўды хочаце перамясціць усе элементы з \"${ fromVaultName }\" у \"${ toVaultName }\"?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Вы ўпэўнены, што хочаце перамясціць элементы ў \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Вы ўпэўнены, што хочаце перамясціць элемент у \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Аўтаблакіроўка паспяхова адключана"
@@ -984,8 +1005,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю"
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю"
       ],
       "Moving items to trash": [
         "Перамяшчэнне элементаў у сметніцу"
@@ -1154,6 +1181,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Гэта версія будзе дададзена ў гісторыю як самая новая."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
@@ -1801,6 +1831,12 @@
       "Create PIN code": [
         "Стварыць PIN-код"
       ],
+      "Created": [
+        "Створана"
+      ],
+      "Current version": [
+        "Бягучая версія"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Выдаліць сховішча \"${ vaultName }\"?"
       ],
@@ -1837,6 +1873,12 @@
       "Install extension": [
         "Усталяваць пашырэнне"
       ],
+      "Last autofill": [
+        "Апошняе аўтазапаўненне"
+      ],
+      "Last modified": [
+        "Апошняе змяненне"
+      ],
       "Leave vault ?": [
         "Выйсці са сховішча?"
       ],
@@ -1855,6 +1897,12 @@
       "Move all items ?": [
         "Перамясціць усе элементы?"
       ],
+      "Move item?": [
+        "Перамясціць элемент?"
+      ],
+      "Move items?": [
+        "Перамясціць элементы?"
+      ],
       "No items selected": [
         "Элементы не выбраны"
       ],
@@ -1869,6 +1917,9 @@
       ],
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Аднавіць гэту версію?"
       ],
       "Review and share": [
         "Прагляд і абагуленне"

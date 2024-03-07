@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Upgrade nu om met meer mensen te delen"
       ],
+      "View history": [
+        "Geschiedenis bekijken"
+      ],
+      "View older history": [
+        "Oudere geschiedenis bekijken"
+      ],
       "Write us on Reddit": [
         "Schrijf ons op Reddit"
       ],
@@ -407,7 +413,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME } desktop-app"
       ]
     },
     "Button": {
@@ -513,6 +519,9 @@
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
       ],
+      "Failed to load item history": [
+        "Fout bij het laden van item geschiedenis"
+      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Het verplaatsen van alle items van \"${ payload.content.name }\" mislukt"
       ],
@@ -523,7 +532,7 @@
         "Items verplaatsen naar prullenbak is mislukt"
       ],
       "Failed to pin item": [
-        "Fout bij vastpinnen item"
+        "Fout bij vastmaken item"
       ],
       "Failed to remove user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker te verwijderen."
@@ -723,6 +732,10 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } keer",
+        "${ modifiedCount } keer"
+      ],
       "${ n } item": [
         "${ n } item",
         "${ n } items"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Weet u zeker dat u alle items wil verplaatsen van \"${ fromVaultName }\" naar \"${ toVaultName }\"?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Weet u zeker dat u items wilt verplaatsen naar \"${ name }\" ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Weet u zeker dat u het item wilt verplaatsen naar \"${ name }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "Auto-vergrendelen succesvol ingeschakeld"
@@ -833,7 +852,7 @@
         "Vul de CSV in met uw gegevens"
       ],
       "Follow those steps to import your data with a generic CSV :": [
-        "Volg deze stappen om je gegevens te importeren met een algemeen CSV-bestand:"
+        "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
+      "Moving an item to another vault will erase its history": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis"
+      ],
       "Moving items": [
         "Items verplaatsen"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis"
       ],
       "Moving items to trash": [
         "Items verplaatsen naar prullenbak"
@@ -1115,6 +1140,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Deze kluis wordt momenteel met niet gedeeld. Nodig mensen uit om deze met anderen te delen."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Deze versie zal aan de geschiedenis worden toegevoegd als de nieuwste versie."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Om gegevens te migreren uit een andere wachtwoordbeheerder, gaat u naar de wachtwoordbeheerder, exporteert u uw gegevens, dan uploadt u het naar ${ PASS_APP_NAME }. Wanneer uw gegevens geïmporteerd zijn, verwijdert u het geëxporteerde bestand."
@@ -1569,7 +1597,7 @@
         "Kluis"
       ],
       "Vault ID": [
-        "Kluis-ID"
+        "Kluis ID"
       ],
       "Vaults": [
         "Kluizen"
@@ -1746,6 +1774,12 @@
       "Create PIN code": [
         "Pincode aanmaken"
       ],
+      "Created": [
+        "Aangemaakt"
+      ],
+      "Current version": [
+        "Huidige versie"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Kluis \"${ vaultName }\" verwijderen?"
       ],
@@ -1782,6 +1816,12 @@
       "Install extension": [
         "Extensie installeren"
       ],
+      "Last autofill": [
+        "Laatste automatische aanvulling"
+      ],
+      "Last modified": [
+        "Laatst gewijzigd"
+      ],
       "Leave vault ?": [
         "De kluis verlaten?"
       ],
@@ -1800,6 +1840,12 @@
       "Move all items ?": [
         "Alle items verplaatsen?"
       ],
+      "Move item?": [
+        "Item verplaatsen?"
+      ],
+      "Move items?": [
+        "Items verplaatsen?"
+      ],
       "No items selected": [
         "Geen items geselecteerd"
       ],
@@ -1814,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "Vastgemaakt (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Deze versie herstellen?"
       ],
       "Review and share": [
         "Beoordelen en delen"
