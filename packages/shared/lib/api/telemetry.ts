@@ -13,6 +13,7 @@ export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
+    paymentsFlow = 'payments.flow',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -96,6 +97,13 @@ export enum TelemetrySecurityCenterEvents {
     proton_sentinel_toggle = 'proton_sentinel_toggle',
 }
 
+export enum TelemetryPaymentsEvents {
+    load_payment = 'load_payment',
+    payment_attempt = 'payment_attempt',
+    payment_success = 'payment_success',
+    payment_failure = 'payment_failure',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
@@ -106,7 +114,8 @@ export type TelemetryEvents =
     | TelemetryMailEvents
     | TelemetryMailSelectAllEvents
     | TelemetryChangelog
-    | TelemetrySecurityCenterEvents;
+    | TelemetrySecurityCenterEvents
+    | TelemetryPaymentsEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
