@@ -1,3 +1,12 @@
+import {
+    ICON_MAX_HEIGHT,
+    ICON_MIN_HEIGHT,
+    ICON_PADDING,
+    INPUT_BASE_STYLES_ATTR,
+} from 'proton-pass-extension/app/content/constants.static';
+import { type ProtonPassControl } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl';
+import type { FieldHandle } from 'proton-pass-extension/app/content/types';
+
 import type { MaybeNull } from '@proton/pass/types';
 import {
     type BoundComputeStyles,
@@ -8,10 +17,6 @@ import {
 } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
 import { repaint } from '@proton/pass/utils/dom/repaint';
-
-import { ICON_MAX_HEIGHT, ICON_MIN_HEIGHT, ICON_PADDING, INPUT_BASE_STYLES_ATTR } from '../../constants.static';
-import type { FieldHandle } from '../../types';
-import type { ProtonPassControl } from '../custom-elements/ProtonPassControl';
 
 type InjectionElements = {
     form: HTMLElement;
@@ -230,15 +235,11 @@ export const applyInjectionStyles = (elements: InjectionElements) => {
     applyIconInjectionStyles(elements, sharedOptions);
 };
 
-export const createIcon = (field: FieldHandle): InjectionElements => {
+export const createIcon = (field: FieldHandle, controlTag: string): InjectionElements => {
     const input = field.element as HTMLInputElement;
     const inputBox = field.boxElement;
 
-    const control = createElement<ProtonPassControl>({ type: 'protonpass-control' });
-
-    control.style.display = 'none';
-    control.addEventListener('ready', () => control.style.removeProperty('display'), { once: true });
-
+    const control = createElement<ProtonPassControl>({ type: controlTag });
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
     icon.tabIndex = -1;

@@ -1,4 +1,5 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { DropdownAction, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { FieldType, FormType } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -14,8 +15,6 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
-import { DropdownAction, type FormHandle, NotificationAction } from '../../types';
-
 type AutofillState = { cache: MaybeNull<AutofillResult> };
 
 export const createAutofillService = () => {
@@ -24,12 +23,12 @@ export const createAutofillService = () => {
     /* on autofill data change : update tracked login field counts &
      * trigger a dropdown sync in order to update the autofill data */
     const onAutofillChange = withContext((ctx) => {
-        const dropdown = ctx.service.iframe.dropdown;
-        const trackedForms = ctx.service.formManager.getTrackedForms();
-        const loginForms = trackedForms.filter((form) => form.formType === FormType.LOGIN);
+        const dropdown = ctx?.service.iframe.dropdown;
+        const trackedForms = ctx?.service.formManager.getTrackedForms();
+        const loginForms = trackedForms?.filter((form) => form.formType === FormType.LOGIN);
         const count = state.cache?.items.length ?? 0;
 
-        loginForms.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
+        loginForms?.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
 
         if (dropdown) {
             const { visible, action } = dropdown.getState();
@@ -47,25 +46,20 @@ export const createAutofillService = () => {
         onAutofillChange();
     };
 
-    const query = asyncLock(
-        withContext<() => Promise<WorkerMessageResponse<WorkerMessageType.AUTOFILL_QUERY>>>(async ({ mainFrame }) => {
-            if (state.cache) return state.cache;
+    const query = asyncLock(async (): Promise<WorkerMessageResponse<WorkerMessageType.AUTOFILL_QUERY>> => {
+        if (state.cache) return state.cache;
 
-            const result = await sendMessage.on(
-                contentScriptMessage({
-                    type: WorkerMessageType.AUTOFILL_QUERY,
-                    payload: { mainFrame },
-                }),
-                (response) =>
-                    response.type === 'success'
-                        ? { items: response.items, needsUpgrade: response.needsUpgrade }
-                        : { items: [], needsUpgrade: false }
-            );
+        const result = await sendMessage.on(
+            contentScriptMessage({ type: WorkerMessageType.AUTOFILL_QUERY }),
+            (response) =>
+                response.type === 'success'
+                    ? { items: response.items, needsUpgrade: response.needsUpgrade }
+                    : { items: [], needsUpgrade: false }
+        );
 
-            sync(result);
-            return result;
-        })
-    );
+        sync(result);
+        return result;
+    });
 
     const autofillTelemetry = (type: '2fa' | 'login') => {
         const event = (() => {
@@ -95,9 +89,10 @@ export const createAutofillService = () => {
     };
 
     const autofillGeneratedPassword = withContext<(form: FormHandle, password: string) => void>(
-        ({ getExtensionContext }, form, password) => {
-            const { domain, subdomain, hostname } = getExtensionContext().url;
+        (ctx, form, password) => {
+            if (!ctx) return;
 
+            const { domain, subdomain, hostname } = ctx.getExtensionContext().url;
             form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
             void sendMessage(
@@ -139,20 +134,19 @@ export const createAutofillService = () => {
     /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
      * the current tab's url & check for any tracked form submissions in order
      * to pick the correct login item from which to derive the OTP code */
-    const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getFeatures, getExtensionContext }) => {
+    const reconciliate = withContext<() => Promise<boolean>>(async (ctx) => {
         query().catch(noop);
 
-        const otpFieldDetected = service.formManager
+        const otpFieldDetected = ctx?.service.formManager
             .getTrackedForms()
             .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
 
-        if (otpFieldDetected && getFeatures().Autofill2FA) {
-            const { subdomain, domain } = getExtensionContext().url;
+        if (otpFieldDetected && ctx?.getFeatures().Autofill2FA) {
+            const { subdomain, domain } = ctx?.getExtensionContext().url;
 
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
-                    service.iframe.attachNotification();
-                    service.iframe.notification?.open({
+                    ctx?.service.iframe.attachNotification()?.open({
                         action: NotificationAction.AUTOFILL_OTP_PROMPT,
                         item: { shareId: res.shareId, itemId: res.itemId },
                         hostname: subdomain ?? domain ?? '',

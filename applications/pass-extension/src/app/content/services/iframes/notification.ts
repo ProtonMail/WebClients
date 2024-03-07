@@ -5,6 +5,7 @@ import {
     NOTIFICATION_WIDTH,
 } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
@@ -13,18 +14,20 @@ import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fat
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import noop from '@proton/utils/noop';
 
-export const createNotification = (): InjectedNotification => {
+type NotificationOptions = { root: ProtonPassRoot; onDestroy: () => void };
+
+export const createNotification = ({ root, onDestroy }: NotificationOptions): InjectedNotification => {
     const iframe = createIFrameApp<NotificationAction>({
-        id: 'notification',
-        src: NOTIFICATION_IFRAME_SRC,
         animation: 'slidein',
         backdropClose: false,
         classNames: ['fixed'],
-        onError: withContext((ctx) => ctx.service.iframe.detachNotification()),
-        onClose: withContext(({ service }, { action }, options) => {
+        id: 'notification',
+        root,
+        src: NOTIFICATION_IFRAME_SRC,
+        onError: onDestroy,
+        onClose: withContext((ctx, { action }, options) => {
             switch (action) {
                 /* stash the form submission if the user discarded
                  * the autosave prompt */
@@ -42,7 +45,7 @@ export const createNotification = (): InjectedNotification => {
                  * OTP autofill prompt */
                 case NotificationAction.AUTOFILL_OTP_PROMPT:
                     if (options?.discard) {
-                        service.formManager
+                        ctx?.service.formManager
                             .getTrackedForms()
                             .filter(({ formType }) => formType === FormType.MFA)
                             .forEach(({ element }) => {
@@ -52,7 +55,7 @@ export const createNotification = (): InjectedNotification => {
                     }
 
                     /* handle OTP -> AutoSave sequence */
-                    return service.autosave.reconciliate().catch(noop);
+                    return ctx?.service.autosave.reconciliate().catch(noop);
             }
         }),
         position: () => ({ top: 15, right: 15 }),
@@ -62,34 +65,31 @@ export const createNotification = (): InjectedNotification => {
         }),
     });
 
-    const open = async (payload: NotificationActions) => {
-        await waitUntil(() => iframe.state.ready, 50)
+    const open = (payload: NotificationActions) =>
+        iframe
+            .ensureReady()
             .then(() => {
-                if (!iframe.state.visible) {
-                    iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
-                    iframe.open(payload.action);
-                }
+                iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
+                iframe.open(payload.action);
             })
             .catch(noop);
-    };
 
     iframe.registerMessageHandler(
         IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
-        withContext(({ service: { formManager, autofill } }, { payload: { code } }) => {
-            const form = formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
+        withContext((ctx, { payload: { code } }) => {
+            const form = ctx?.service.formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
             if (!form) return;
 
-            autofill.autofillOTP(form, code);
+            ctx?.service.autofill.autofillOTP(form, code);
         })
     );
 
     const notification: InjectedNotification = {
         close: pipe(iframe.close, () => notification),
-        destroy: iframe.destroy,
+        destroy: pipe(iframe.destroy, onDestroy),
         getState: () => iframe.state,
         init: pipe(iframe.init, () => notification),
         open: pipe(open, () => notification),
-        setPort: pipe(iframe.setPort, () => notification),
     };
 
     return notification;
