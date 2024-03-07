@@ -6,6 +6,7 @@
  * content-script when the frame becomes hidden, we can free up resources
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
+import { createActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
@@ -19,6 +20,11 @@ import { DOMCleanUp } from './injections/cleanup';
 const listeners = createListenerStore();
 let clientLoaded: boolean = false;
 
+const probe = createActivityProbe(
+    async () => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING })),
+    25_000
+);
+
 /* The `unregister` function is responsible for removing all event listeners
  * that are associated with the orchestrator. This may occur when the extension
  * context is invalidated, such as when the registration or unregistration of the
@@ -26,12 +32,16 @@ let clientLoaded: boolean = false;
 const unregister = (err: unknown) => {
     logger.warn(`[ContentScript::orchestrator] invalidation error`, err);
     listeners.removeAll();
+    probe.cancel();
 };
 
 /* The `UNLOAD_CONTENT_SCRIPT` message is broadcasted to any client content-scripts
  * that may be running, instructing them to properly destroy themselves and free up
  * any resources they are using */
-const unloadClient = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
+const unloadClient = async () => {
+    probe.cancel();
+    await sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
+};
 
 /** The `registerClient` function ensures that the client content-script is loaded
  * and started within the current frame. This prevents multiple injections of the
@@ -40,6 +50,8 @@ const unloadClient = () => sendMessage(contentScriptMessage({ type: WorkerMessag
  * regulate the execution frequency and avoid starting the script unnecessarily */
 const registerClient = debounce(
     asyncLock(async () => {
+        probe.start();
+
         clientLoaded = await Promise.resolve(
             clientLoaded ||
                 sendMessage(contentScriptMessage({ type: WorkerMessageType.LOAD_CONTENT_SCRIPT }))
