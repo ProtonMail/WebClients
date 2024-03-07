@@ -25,7 +25,7 @@ const config: ForgeConfig = {
         icon: `${__dirname}/assets/icons/${getIcon()}`,
         asar: true,
         name: getName(),
-        executableName: "ProtonMail",
+        executableName: getName(),
         extraResource: getExtraResource(),
         // Required for macOS mailto protocol
         protocols: [
