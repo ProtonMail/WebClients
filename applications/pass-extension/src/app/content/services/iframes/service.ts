@@ -7,7 +7,7 @@ import type { IFrameAppService, InjectedDropdown, InjectedNotification } from '.
 import { createDropdown } from './dropdown';
 import { createNotification } from './notification';
 
-type IFrameServiceContext = {
+type IFrameServiceState = {
     apps: {
         dropdown: MaybeNull<InjectedDropdown>;
         notification: MaybeNull<InjectedNotification>;
@@ -15,65 +15,66 @@ type IFrameServiceContext = {
 };
 
 export const createIFrameService = () => {
-    const ctx: IFrameServiceContext = {
-        apps: { dropdown: null, notification: null },
+    const state: IFrameServiceState = {
+        apps: {
+            dropdown: null,
+            notification: null,
+        },
     };
 
     /* only re-init the iframe sub-apps if the extension
      * context port has changed */
-    const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext(
-        ({ getExtensionContext, getFeatureFlags, getState, getSettings }, app) => {
-            const port = getExtensionContext().port;
-            if (app.getState().port !== port) app.setPort(port);
+    const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext((ctx, app) => {
+        if (!ctx) return;
 
-            app.init({
-                features: getFeatureFlags(),
-                settings: getSettings(),
-                workerState: getState(),
-            });
-        }
-    );
+        const port = ctx.getExtensionContext().port;
+        if (app.getState().port !== port) app.setPort(port);
 
-    const attachDropdown = withContext(({ scriptId }) => {
-        if (ctx.apps.dropdown === null) {
-            logger.info(`[ContentScript::${scriptId}] attaching dropdown iframe`);
-            ctx.apps.dropdown = createDropdown();
-        }
-
-        onAttached(ctx.apps.dropdown);
+        app.init({
+            features: ctx.getFeatureFlags(),
+            settings: ctx.getSettings(),
+            workerState: ctx.getState(),
+        });
     });
 
-    const detachDropdown = withContext(({ scriptId }) => {
-        if (ctx.apps.dropdown) {
-            logger.info(`[ContentScript::${scriptId}] detaching dropdown iframe`);
-            ctx.apps.dropdown.destroy();
-            ctx.apps.dropdown = null;
+    const attachDropdown = withContext((ctx) => {
+        if (!ctx) return;
+
+        if (state.apps.dropdown === null) {
+            logger.info(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
+            state.apps.dropdown = createDropdown(ctx.elements);
         }
+
+        onAttached(state.apps.dropdown);
     });
 
-    const attachNotification = withContext(({ scriptId }) => {
-        const iframeRootAttached = isIFrameRootAttached();
+    const detachDropdown = () => {
+        state.apps.dropdown?.destroy();
+        state.apps.dropdown = null;
+    };
 
-        if (ctx.apps.notification === null || !iframeRootAttached) {
+    const attachNotification = withContext((ctx) => {
+        if (!ctx) return;
+
+        const iframeRootAttached = isIFrameRootAttached(ctx.elements.root);
+
+        if (state.apps.notification === null || !iframeRootAttached) {
             if (!iframeRootAttached) detachDropdown();
-            logger.info(`[ContentScript::${scriptId}] attaching notification iframe`);
-            ctx.apps.notification = createNotification();
+            logger.info(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);
+            state.apps.notification = createNotification(ctx.elements);
         }
 
-        onAttached(ctx.apps.notification);
+        onAttached(state.apps.notification);
     });
 
-    const detachNotification = withContext(({ scriptId }) => {
-        if (ctx.apps.notification) {
-            logger.info(`[ContentScript::${scriptId}] detaching notification iframe`);
-            ctx.apps.notification.destroy();
-            ctx.apps.notification = null;
-        }
-    });
+    const detachNotification = () => {
+        state.apps.notification?.destroy();
+        state.apps.notification = null;
+    };
 
     const reset = () => {
-        if (ctx.apps.dropdown) onAttached(ctx.apps.dropdown);
-        if (ctx.apps.notification) onAttached(ctx.apps.notification);
+        if (state.apps.dropdown) onAttached(state.apps.dropdown);
+        if (state.apps.notification) onAttached(state.apps.notification);
     };
 
     const destroy = () => {
@@ -83,10 +84,10 @@ export const createIFrameService = () => {
 
     return {
         get dropdown() {
-            return ctx.apps.dropdown;
+            return state.apps.dropdown;
         },
         get notification() {
-            return ctx.apps.notification;
+            return state.apps.notification;
         },
         attachDropdown,
         attachNotification,

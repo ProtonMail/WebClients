@@ -12,19 +12,20 @@ import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app
 import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import noop from '@proton/utils/noop';
 
-export const createNotification = (): InjectedNotification => {
+export const createNotification = (elements: PassElementsConfig): InjectedNotification => {
     const iframe = createIFrameApp<NotificationAction>({
-        id: 'notification',
-        src: NOTIFICATION_IFRAME_SRC,
         animation: 'slidein',
         backdropClose: false,
         classNames: ['fixed'],
-        onError: withContext((ctx) => ctx.service.iframe.detachNotification()),
-        onClose: withContext(({ service }, { action }, options) => {
+        elements,
+        id: 'notification',
+        src: NOTIFICATION_IFRAME_SRC,
+        onError: withContext((ctx, _) => ctx?.service.iframe.detachNotification()),
+        onClose: withContext((ctx, { action }, options) => {
             switch (action) {
                 /* stash the form submission if the user discarded
                  * the autosave prompt */
@@ -42,7 +43,7 @@ export const createNotification = (): InjectedNotification => {
                  * OTP autofill prompt */
                 case NotificationAction.AUTOFILL_OTP_PROMPT:
                     if (options?.discard) {
-                        service.formManager
+                        ctx?.service.formManager
                             .getTrackedForms()
                             .filter(({ formType }) => formType === FormType.MFA)
                             .forEach(({ element }) => {
@@ -52,7 +53,7 @@ export const createNotification = (): InjectedNotification => {
                     }
 
                     /* handle OTP -> AutoSave sequence */
-                    return service.autosave.reconciliate().catch(noop);
+                    return ctx?.service.autosave.reconciliate().catch(noop);
             }
         }),
         position: () => ({ top: 15, right: 15 }),
@@ -63,23 +64,22 @@ export const createNotification = (): InjectedNotification => {
     });
 
     const open = async (payload: NotificationActions) => {
-        await waitUntil(() => iframe.state.ready, 50)
+        await iframe
+            .ensureReady()
             .then(() => {
-                if (!iframe.state.visible) {
-                    iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
-                    iframe.open(payload.action);
-                }
+                iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
+                iframe.open(payload.action);
             })
             .catch(noop);
     };
 
     iframe.registerMessageHandler(
         IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
-        withContext(({ service: { formManager, autofill } }, { payload: { code } }) => {
-            const form = formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
+        withContext((ctx, { payload: { code } }) => {
+            const form = ctx?.service.formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
             if (!form) return;
 
-            autofill.autofillOTP(form, code);
+            ctx?.service.autofill.autofillOTP(form, code);
         })
     );
 
