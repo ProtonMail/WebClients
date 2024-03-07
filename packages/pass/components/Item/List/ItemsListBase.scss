@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-items-list--placeholder {
+	overflow: hidden;
+
+	.scroll-inner {
+		.scroll-child {
+			block-size: 100%;
+		}
+	}
+}
