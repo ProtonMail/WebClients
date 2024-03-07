@@ -10,7 +10,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import WorkerMessageBroker from '../channel';
-import { PASS_ELEMENTS_KEY } from '../constants';
 
 const withTabEffect =
     (fn: (tabId: TabId, frameId: Maybe<number>) => Promise<void>) =>
@@ -72,23 +71,25 @@ export const createInjectionService = () => {
         );
     };
 
+    /** Define the tag names for custom elements upon each `REGISTER_ELEMENTS`
+     * request. This ensures that each tab can re-register these elements if a
+     * content-script is re-injected due to events like extension updates or hot
+     * -reloads. This re-registration is necessary because custom elements cannot
+     * be updated once defined. A random tag name is used to avoid collisions.*/
     WorkerMessageBroker.registerMessage(WorkerMessageType.REGISTER_ELEMENTS, async (_, { tab }) => {
-        const target = { tabId: tab?.id!, allFrames: false };
-        const world = 'MAIN' as any;
+        const hash = uniqueId(4);
+        const root = `protonpass-root-${hash}`;
+        const control = `protonpass-control-${hash}`;
+        const elements: PassElementsConfig = { root, control };
 
-        const elements: PassElementsConfig = {
-            root: `protonpass-root-${uniqueId(4)}`,
-            control: `protonpass-control-${uniqueId(4)}`,
-        };
+        const scriptConfig = { target: { tabId: tab?.id!, allFrames: false }, world: 'MAIN' as any };
 
+        await browser.scripting.executeScript({ ...scriptConfig, files: ['elements.js'] });
         await browser.scripting.executeScript({
-            target,
-            world,
-            args: [{ [PASS_ELEMENTS_KEY]: elements }],
-            func: (key) => Object.assign(self, key),
+            ...scriptConfig,
+            args: [elements],
+            func: (config: PassElementsConfig) => window.registerPassElements?.(config),
         });
-
-        await browser.scripting.executeScript({ target, world, files: ['elements.js'] });
 
         return { elements };
     });
