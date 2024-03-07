@@ -107,7 +107,6 @@ beforeEach(() => {
                 Gift: 0,
                 PeriodEnd: 1622505600,
             },
-            payment: undefined,
             billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         },
         plans,
@@ -172,6 +171,7 @@ it('should call onPay with the new token', async () => {
             },
             Type: 'token',
             paymentsVersion: 'v4',
+            paymentProcessorType: 'card',
         },
         'cc'
     );

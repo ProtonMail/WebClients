@@ -79,6 +79,7 @@ export interface NoApiProps extends Props {
     currency: Currency;
     amount: number;
     onPaypalCreditClick?: () => void;
+    paymentComponentLoaded: () => void;
 }
 
 export const PaymentsNoApi = ({
@@ -116,6 +117,7 @@ export const PaymentsNoApi = ({
     chargebeeCard,
     chargebeePaypal,
     hasSomeVpnPlan,
+    paymentComponentLoaded,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -131,6 +133,10 @@ export const PaymentsNoApi = ({
         onAwaitingPayment: onAwaitingBitcoinPayment,
         enablePolling: showBitcoinMethod,
     });
+
+    useEffect(() => {
+        paymentComponentLoaded();
+    }, []);
 
     useEffect(() => {
         if (loading) {
