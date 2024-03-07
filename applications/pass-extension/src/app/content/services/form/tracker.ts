@@ -27,16 +27,16 @@ const EXCLUDED_SUBMIT_FORM_TYPES = [FormType.NOOP, FormType.MFA, FormType.RECOVE
 /** Heuristic duration after which we reset the internal `isSubmitting` flag. */
 const SUBMITTING_RESET_TIMEOUT = 500;
 
-const canProcessAction = withContext<(action: DropdownAction) => boolean>(({ getFeatures }, action) => {
-    const features = getFeatures();
+const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
+    const features = ctx?.getFeatures();
 
     switch (action) {
         case DropdownAction.AUTOFILL:
-            return features.Autofill;
+            return features?.Autofill ?? false;
         case DropdownAction.AUTOSUGGEST_ALIAS:
-            return features.AutosuggestAlias;
+            return features?.AutosuggestAlias ?? false;
         case DropdownAction.AUTOSUGGEST_PASSWORD:
-            return features.AutosuggestPassword;
+            return features?.AutosuggestPassword ?? false;
     }
 });
 
@@ -98,8 +98,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         }
     };
 
-    const onSubmitHandler = withContext(async ({ service: { iframe } }) => {
-        iframe.dropdown?.close();
+    const onSubmitHandler = withContext(async (ctx) => {
+        ctx?.service.iframe.dropdown?.close();
         await submit();
     });
 
@@ -139,10 +139,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     /** Reconciliating the form trackers involves syncing the form's trackable fields.*/
-    const reconciliate = withContext<() => Promise<void>>(async ({ getState, service }) => {
-        const { loggedIn } = getState();
+    const reconciliate = withContext<() => Promise<void>>(async (ctx) => {
+        if (!ctx) return;
+
+        const { loggedIn } = ctx.getState();
         const fieldsToTrack = getTrackableFields();
-        const autofillCount = service.autofill.getState()?.items.length ?? 0;
+        const autofillCount = ctx.service.autofill.getState()?.items.length ?? 0;
 
         form.getFields().forEach((field) => {
             const match = fieldsToTrack.get(field);
@@ -155,7 +157,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (!match.attachIcon) return field.detachIcon();
 
             const icon = field.attachIcon();
-            icon.setCount(loggedIn && match.action === DropdownAction.AUTOFILL ? autofillCount : 0);
+            icon?.setCount(loggedIn && match.action === DropdownAction.AUTOFILL ? autofillCount : 0);
         });
 
         /* trigger auto-focus on current active field if value is empty:

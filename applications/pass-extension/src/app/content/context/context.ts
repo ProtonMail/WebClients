@@ -1,7 +1,6 @@
-import { createSharedContext, createSharedContextInjector } from '@proton/pass/utils/context';
+import { InjectionMode, contextHandlerFactory, contextInjectorFactory } from '@proton/pass/utils/context';
 
 import type { ContentScriptContext } from './types';
 
-export const CSContext = createSharedContext<ContentScriptContext>('contentscript');
-
-export const withContext = createSharedContextInjector(CSContext);
+export const CSContext = contextHandlerFactory<ContentScriptContext>('contentscript');
+export const withContext = contextInjectorFactory(CSContext, InjectionMode.LOOSE);

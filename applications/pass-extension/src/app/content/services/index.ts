@@ -21,31 +21,32 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import 'proton-pass-extension/app/content/injections/styles/injection.scss';
-
-export const createContentScriptClient = (scriptId: string, mainFrame: boolean) => {
+type CreateContentScriptOptions = {
+    scriptId: string;
+    mainFrame: boolean;
+    elements: PassElementsConfig;
+};
+export const createContentScriptClient = ({ scriptId, mainFrame, elements }: CreateContentScriptOptions) => {
     const listeners = createListenerStore();
 
     const context = createContentScriptContext({
-        scriptId,
+        elements,
         mainFrame,
+        scriptId,
         destroy: (options) => {
-            if (context.getState().active) {
-                logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
-                listeners.removeAll();
-                context.setState({ active: false });
-                context.service.formManager.destroy();
-                context.service.iframe.destroy();
+            logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
 
-                CSContext.clear();
-                DOMCleanUp();
+            DOMCleanUp(elements);
+            listeners.removeAll();
+            context.service.formManager.destroy();
+            context.service.iframe.destroy();
 
-                ExtensionContext.read()?.destroy();
-            }
+            ExtensionContext.read()?.destroy();
         },
     });
 
@@ -57,7 +58,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             /** If the user is unexpectedly logged out, clear autofill cached
              * data and detach any autosave notification that may be present */
             context.service.autofill.reset();
-            context.service.iframe.detachNotification();
+            context.service.iframe.notification?.destroy();
         } else if (clientReady(status)) await context.service.autofill.reconciliate();
     };
 
@@ -65,12 +66,12 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         context.setSettings(settings);
-        if (context.getState().active) void reconciliate();
+        void reconciliate();
     };
 
     const onWorkerStateChange = (workerState: AppState) => {
         context.setState(workerState);
-        if (context.getState().active) void reconciliate();
+        void reconciliate();
     };
 
     const onPortMessage = async (message: WorkerMessageWithSender): Promise<void> => {
@@ -98,12 +99,13 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             })
         );
 
-        if (res.type === 'success' && context.getState().active) {
+        if (res.type === 'success') {
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
-            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
+            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
-            context.service.iframe.reset();
+            context.service.iframe.init();
+
             await reconciliate();
 
             /* if the user has disabled every injection setting or added the current
@@ -122,27 +124,36 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         }
     };
 
-    const start = async () => {
-        try {
-            const extensionContext = await setupExtensionContext({
-                endpoint: 'contentscript',
-                onDisconnect: () => {
-                    const recycle = context.getState().active;
-                    if (!recycle) context.destroy({ reason: 'port disconnected' });
-                    return { recycle };
-                },
-                onRecycle: handleStart,
-            });
+    return {
+        /** Connects the content-script service to the extension context.
+         * Will automatically try to recycle the extension context if the
+         * port is disconnected if the service worker is killed */
+        start: async () => {
+            try {
+                const extensionContext = await setupExtensionContext({
+                    endpoint: 'contentscript',
+                    onDisconnect: () => {
+                        context.setState({ stale: true });
+                        context.destroy({ reason: 'port disconnected' });
+                        return { recycle: true };
+                    },
+                    onRecycle: handleStart,
+                });
 
-            logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
-            return await handleStart(extensionContext);
-        } catch (e) {
-            logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
-            context.destroy({ reason: 'setup error' });
-        }
+                logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
+                return await handleStart(extensionContext);
+            } catch (e) {
+                logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
+                context.destroy({ reason: 'setup error' });
+            }
+        },
+        /** Full destruction of the content-script and extension
+         * context. Should only be called if we are unloading */
+        destroy: (options: { reason: string }) => {
+            context.destroy(options);
+            CSContext.clear();
+        },
     };
-
-    return { start, destroy: context.destroy };
 };
 
 export type ContentScriptClientService = ReturnType<typeof createContentScriptClient>;

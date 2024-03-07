@@ -1,21 +1,14 @@
+import { type ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
+
 import { createElement } from '@proton/pass/utils/dom/create-element';
 
-import type { ProtonPassRoot } from '../custom-elements/ProtonPassRoot';
+export const getIFrameRoot = (rootTag: string) => document.querySelector<ProtonPassRoot>(rootTag);
+export const isIFrameRootAttached = (rootTag: string) => getIFrameRoot(rootTag) !== null;
 
-export const getIFrameRoot = () => document.querySelector<ProtonPassRoot>('protonpass-root');
-export const isIFrameRootAttached = () => getIFrameRoot() !== null;
+export const createIframeRoot = (rootTag: string) => {
+    const root = getIFrameRoot(rootTag);
+    if (root) return root;
 
-export const createIframeRoot = (): ProtonPassRoot => {
-    const root = getIFrameRoot();
-    if (root !== null) return root;
-
-    const iframeRoot = createElement<ProtonPassRoot>({
-        type: 'protonpass-root',
-        parent: document.body,
-    });
-
-    iframeRoot.style.display = 'none';
-    iframeRoot.addEventListener('ready', () => iframeRoot.style.removeProperty('display'), { once: true });
-
+    const iframeRoot = createElement<ProtonPassRoot>({ type: rootTag, parent: document.body });
     return iframeRoot;
 };

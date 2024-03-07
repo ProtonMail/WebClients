@@ -14,20 +14,21 @@ import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/con
 
 import { clientErrored, clientLocked, clientStale, clientUnauthorized } from '@proton/pass/lib/client';
 import type { AppStatus } from '@proton/pass/types';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import debounce from '@proton/utils/debounce';
 
-type CreateIconOptions = { field: FieldHandle };
+type CreateIconOptions = { field: FieldHandle; elements: PassElementsConfig };
 
-export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHandle => {
+export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): FieldIconHandle => {
     const listeners = createListenerStore();
     let repositionRequest: number = -1; /* track repositioning requests */
 
     const input = field.element as HTMLInputElement;
-    const { icon, control } = createIcon(field);
+    const { icon, control } = createIcon(field, elements.control);
 
     const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
@@ -39,12 +40,14 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
 
-    const setCount = withContext<(count: number) => void>(({ getState }, count: number) => {
+    const setCount = withContext<(count: number) => void>((ctx, count: number) => {
+        if (!ctx) return;
+
         const safeCount = count === 0 || !count ? '' : String(count);
         icon.style.setProperty(`--control-count`, `"${safeCount}"`);
 
         if (count > 0) return icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
-        return setStatus(getState().status);
+        setStatus(ctx?.getState().status);
     });
 
     const reposition = debounce(
@@ -82,15 +85,15 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         reposition.cancel();
     };
 
-    const onClick: (evt: MouseEvent) => void = withContext(({ service: { iframe } }, evt) => {
+    const onClick: (evt: MouseEvent) => void = withContext((ctx, evt) => {
         evt.preventDefault();
         evt.stopPropagation();
 
-        if (field.action) {
-            return iframe.dropdown?.getState().visible
-                ? iframe.dropdown?.close()
-                : iframe.dropdown?.open({ action: field.action, field });
-        }
+        const { action } = field;
+        const dropdown = ctx?.service.iframe.dropdown;
+        const visible = dropdown?.getState().visible;
+
+        if (action) return visible ? dropdown?.close() : dropdown?.open({ action, field });
     });
 
     const detach = safeCall(() => {

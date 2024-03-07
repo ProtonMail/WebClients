@@ -79,9 +79,6 @@ module.exports = {
         orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
         popup: './src/app/popup/index.tsx',
         settings: './src/app/pages/settings/index.tsx',
-        /* custom element styles */
-        'styles.root': './src/app/content/injections/custom-elements/ProtonPassRoot.scss',
-        'styles.control': './src/app/content/injections/custom-elements/ProtonPassControl.scss',
         /* FF account communication fallback */
         ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
     },

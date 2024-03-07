@@ -14,6 +14,7 @@
  * By controlling the lifecycle of the `ContentScriptClientService` instance in this
  * way, we can ensure that only one instance of the client content-script is running
  * at a time, and that it is properly cleaned up when no longer needed */
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
@@ -24,27 +25,32 @@ import noop from '@proton/utils/noop';
 import type { ContentScriptClientService } from './services';
 import { createContentScriptClient } from './services';
 
-const CLIENT_ID = uniqueId(16);
-const MAIN_FRAME = isMainFrame();
+const scriptId = uniqueId(16);
+const mainFrame = isMainFrame();
 
-let script: MaybeNull<ContentScriptClientService> =
-    document.visibilityState === 'visible' ? createContentScriptClient(CLIENT_ID, MAIN_FRAME) : null;
+void (async () =>
+    sendMessage.onSuccess(contentScriptMessage({ type: WorkerMessageType.REGISTER_ELEMENTS }), ({ elements }) => {
+        let script: MaybeNull<ContentScriptClientService> =
+            document.visibilityState === 'visible'
+                ? createContentScriptClient({ scriptId, mainFrame, elements })
+                : null;
 
-Promise.resolve(script?.start())
-    .then(() => {
-        browser.runtime.onMessage.addListener((message: Maybe<WorkerMessageWithSender>) => {
-            if (message?.sender === 'background') {
-                switch (message.type) {
-                    case WorkerMessageType.START_CONTENT_SCRIPT:
-                        script = script ?? createContentScriptClient(CLIENT_ID, MAIN_FRAME);
-                        void script.start();
-                        break;
-                    case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                        script?.destroy({ reason: 'unload' });
-                        script = null;
-                        break;
-                }
-            }
-        });
-    })
-    .catch(noop);
+        Promise.resolve(script?.start())
+            .then(() => {
+                browser.runtime.onMessage.addListener(async (message: Maybe<WorkerMessageWithSender>) => {
+                    if (message?.sender === 'background') {
+                        switch (message.type) {
+                            case WorkerMessageType.START_CONTENT_SCRIPT:
+                                script = script ?? createContentScriptClient({ scriptId, mainFrame, elements });
+                                void script.start();
+                                break;
+                            case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
+                                script?.destroy({ reason: 'unload' });
+                                script = null;
+                                break;
+                        }
+                    }
+                });
+            })
+            .catch(noop);
+    }))();

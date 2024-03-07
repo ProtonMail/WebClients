@@ -8,6 +8,7 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
@@ -60,11 +61,11 @@ export enum WorkerMessageType {
     AUTH_INIT = 'AUTH_INIT',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
-    AUTOSUGGEST_PASSWORD_CONFIG = 'AUTOSUGGEST_PASSWORD_CONFIG',
     AUTOFILL_QUERY = 'AUTOFILL_QUERY',
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
+    AUTOSUGGEST_PASSWORD_CONFIG = 'AUTOSUGGEST_PASSWORD_CONFIG',
     DEBUG = 'DEBUG',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
@@ -86,9 +87,11 @@ export enum WorkerMessageType {
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PAUSE_WEBSITE = 'PAUSE_WEBSITE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
+    PING = 'PING',
     POPUP_INIT = 'POPUP_INIT',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
+    REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_TAB = 'RESOLVE_TAB',
     RESOLVE_USER = 'RESOLVE_USER',
@@ -143,8 +146,10 @@ export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQU
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
+export type PingMessage = { type: WorkerMessageType.PING };
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
+export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
@@ -197,9 +202,11 @@ export type WorkerMessage =
     | OTPCodeGenerateMessage
     | PauseWebsiteMessage
     | PermissionsUpdateMessage
+    | PingMessage
     | PopupInitMessage
     | PortFrameForwardingMessage
     | PortUnauthorizedMessage
+    | RegisterElementsMessage
     | ResolveExtensionKeyMessage
     | ResolveTabIdMessage
     | ResolveUserDataMessage
@@ -228,9 +235,9 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_INIT]: AppState;
     [WorkerMessageType.AUTH_UNLOCK]: Result<{}, { canRetry: boolean }>;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
-    [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
+    [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
@@ -238,10 +245,11 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
-    [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
+    [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
+    [WorkerMessageType.REGISTER_ELEMENTS]: { elements: PassElementsConfig };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
