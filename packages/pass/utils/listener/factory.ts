@@ -1,4 +1,5 @@
 import type { Callback, Maybe } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
 /**
  * Removing every listener from a DOM node
@@ -14,10 +15,10 @@ type EventSource = Window | Document | HTMLElement;
 type EventMap<T extends EventSource> = T extends Window
     ? WindowEventMap
     : T extends Document
-    ? DocumentEventMap
-    : T extends HTMLElement
-    ? HTMLElementEventMap
-    : never;
+      ? DocumentEventMap
+      : T extends HTMLElement
+        ? HTMLElementEventMap
+        : never;
 
 type EventType<T extends EventSource, E extends keyof EventMap<T>> = EventMap<T>[E];
 
@@ -48,11 +49,20 @@ export const createListenerStore = () => {
         element: Maybe<T>,
         type: E,
         fn: (e: EventType<T, E>) => void
-    ) => {
+    ): (() => void) => {
         if (element !== undefined) {
-            listeners.push({ kind: 'listener', element, type, fn });
-            (element as any).addEventListener(type, fn);
+            const listener: Listener = { kind: 'listener', element, type, fn };
+            listeners.push(listener);
+            element.addEventListener(type as string, fn as EventListener);
+
+            return () => {
+                element.removeEventListener(type as string, fn as EventListener);
+                const idx = listeners.indexOf(listener);
+                listeners.splice(idx, 1);
+            };
         }
+
+        return noop;
     };
 
     const addObserver = (target: Node, mutationCb: MutationCallback, options?: MutationObserverInit) => {
