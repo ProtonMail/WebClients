@@ -670,6 +670,12 @@
         "${ memberCount } членов",
         "${ memberCount } член"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } раз",
+        "${ modifiedCount } раз",
+        "${ modifiedCount } раза",
+        "${ modifiedCount } раза"
+      ],
       "${ n } item": [
         "${ n } элемент",
         "${ n } элемента",
@@ -1592,6 +1598,9 @@
       "Create PIN code": [
         "Создать PIN-код"
       ],
+      "Current version": [
+        "Текущая версия"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Удалить хранилище \"${ vaultName }\"?"
       ],
@@ -1607,6 +1616,9 @@
       "Enter your PIN": [
         "Введите свой PIN"
       ],
+      "Get Started": [
+        "Начать"
+      ],
       "Grant permissions": [
         "Предоставить разрешения"
       ],
@@ -1618,6 +1630,12 @@
       ],
       "Import to vault(s)": [
         "Импорт в хранилище"
+      ],
+      "Last autofill": [
+        "Последнее автозаполнение"
+      ],
+      "Last modified": [
+        "Дата последнего изменения"
       ],
       "Leave vault ?": [
         "Оставить хранилище?"
@@ -1645,6 +1663,9 @@
       ],
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Восстановить эту версию?"
       ],
       "Review and share": [
         "Review and share"
