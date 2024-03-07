@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Schimbați planul acum pentru a partaja cu mai mulți oameni"
       ],
+      "View history": [
+        "Afișare istoric"
+      ],
+      "View older history": [
+        "Afișare istoric mai vechi"
+      ],
       "Write us on Reddit": [
         "Scrieți-ne pe Reddit"
       ],
@@ -514,6 +520,9 @@
       ],
       "Failed to edit user's access.": [
         "Eșuare editare acces utilizator."
+      ],
+      "Failed to load item history": [
+        "Încărcarea istoricului articolelor a eșuat."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Eșuare mutare toate articolele din „${ payload.content.name }”."
@@ -732,6 +741,11 @@
         "${ memberCount } membri",
         "${ memberCount } de membri"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } dată",
+        "de ${ modifiedCount } ori",
+        "de ${ modifiedCount } de ori"
+      ],
       "${ n } item": [
         "${ n } articol",
         "${ n } articole",
@@ -781,6 +795,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Sigur doriți să mutați toate articolele din „${ fromVaultName }” în „${ toVaultName }”?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Sigur doriți să mutați articolele în „${ name }” ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Sigur doriți să mutați articolul în „${ name }” ?"
       ],
       "Auto-lock successfully disabled": [
         "Blocare automată s-a dezactivat."
@@ -965,8 +985,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its history": [
+        "Mutarea unui articol în alt seif îi va șterge istoricul."
+      ],
       "Moving items": [
         "Se mută articolele."
+      ],
+      "Moving items to another vault will erase their history": [
+        "Mutarea articolelor în alt seif le va șterge istoricul."
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."
@@ -1130,6 +1156,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Acest seif nu este partajat momentan cu nimeni. Invitați oameni pentru a-l partaja cu ei."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Această versiune va fi adăugată la istoric ca cea mai nouă versiune."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
@@ -1766,6 +1795,12 @@
       "Create PIN code": [
         "Creare cod PIN"
       ],
+      "Created": [
+        "Creat"
+      ],
+      "Current version": [
+        "Versiune curentă"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Ștergeți seiful „${ vaultName }”?"
       ],
@@ -1802,6 +1837,12 @@
       "Install extension": [
         "Instalați extensia"
       ],
+      "Last autofill": [
+        "Ultima autocompletare"
+      ],
+      "Last modified": [
+        "Ultima modificare"
+      ],
       "Leave vault ?": [
         "Părăsiți seiful ?"
       ],
@@ -1820,6 +1861,12 @@
       "Move all items ?": [
         "Se mută toate articolele?"
       ],
+      "Move item?": [
+        "Mutați articolul?"
+      ],
+      "Move items?": [
+        "Mutați articolele?"
+      ],
       "No items selected": [
         "Nu sunt selectate articole"
       ],
@@ -1834,6 +1881,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Restaurați această versiune?"
       ],
       "Review and share": [
         "Revizuire și partajare"

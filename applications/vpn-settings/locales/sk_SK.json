@@ -2047,7 +2047,7 @@
         "Kľúč organizácie nie je dešifrovaný"
       ],
       "Organization key must be activated to create non-private users": [
-        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný organizačný kľúč"
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
       ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
@@ -2129,6 +2129,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Na vytvorenie nesúkromných ​​používateľských účtov a získanie prístupu k ich účtom, budete musieť obnoviť svoje oprávnenia správcu."
       ],
       "Try again later": [
         "Skúste to znova neskôr"
@@ -5789,6 +5792,9 @@
       "Creating your account": [
         "Vytvárame váš účet"
       ],
+      "Current plan": [
+        "Súčasný plán"
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovému správcovi hesiel ${ BRAND_NAME }!"
       ],
@@ -5800,6 +5806,9 @@
       ],
       "Free forever": [
         "Navždy zadarmo"
+      ],
+      "Get in touch with our sales team": [
+        "Spojte sa s naším obchodným tímom"
       ],
       "Includes:": [
         "Obsahuje:"
@@ -5854,7 +5863,7 @@
         "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
       ],
       "Organization key restored": [
-        "Obnovený kľúč organizácie"
+        "Kľúč organizácie obnovený"
       ],
       "Organization key updated": [
         "Aktualizovaný kľúč organizácie"
@@ -5881,19 +5890,25 @@
         "Na vytvorenie nesúkromných ​používateľských účtov a získanie prístupu k ich účtom, budete musieť aktivovať kľúč organizácie."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Pre povolenie práva správcu vo svojom účte, aktivujte organizačný kľúč."
+        "Pre povolenie práva správcu vo svojom účte aktivujte kľúč organizácie."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Použite metódu obnovenia údajov alebo obnovte kľúč organizácie na obnovenie oprávnení správcu."
+        "Použite metódu obnovenia údajov alebo obnovte kľúč organizácie pre obnovenie oprávnení správcu."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Použite metódu obnovenia údajov, obráťte sa na iného správcu alebo obnovte kľúč organizácie na obnovenie oprávnení správcu."
+        "Použite metódu obnovenia údajov, obráťte sa na iného správcu alebo obnovte kľúč organizácie pre obnovenie oprávnení správcu."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Nepodarilo sa overiť zabezpečenie kľúča adresy tohto odosielateľa. Niekedy dochádza k oneskoreniu pri aktualizácii informácií o odosielateľovi. Skúste to znova neskôr. Ak nedôverujete platnosti tejto pozvánky alebo odosielateľovi, kontaktujte zákaznícku podporu ${ BRAND_NAME }."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Overili sme pravosť tohto odosielateľa a pozvánky."
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Boli ste menovaný správcom organizácie **${ organizationName }** používateľom"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
       ],
       "You need access to the organization key to perform this operation.": [
         "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
@@ -5910,6 +5925,12 @@
     "Payments": {
       "Card number": [
         "Číslo karty"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/RR"
       ]
     },
     "Payments.Error": {
@@ -6931,7 +6952,7 @@
         "Adresa pridaná"
       ],
       "Administrator privileges restored": [
-        "Obnovené oprávnenia správcu"
+        "Oprávnenia správcu obnovené"
       ],
       "Bug reported": [
         "Chyba nahlásená"
@@ -7804,7 +7825,7 @@
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
       ],

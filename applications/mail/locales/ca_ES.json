@@ -3127,6 +3127,21 @@
         "Desa tot"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIPCIÓ:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "This event was updated.": [
+        "S'ha actualitzat aquest esdeveniment."
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Esborrat"
+      ]
+    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "L'esdeveniment serà demà"
@@ -3268,6 +3283,10 @@
       ],
       "Choose a date in the future.": [
         "Escolliu una data futura."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Escolliu una data dintre d'${ n } dia.",
+        "Escolliu una data dintre dels pròxims ${ n } dies."
       ],
       "Condition incomplete": [
         "Condició incompleta"
@@ -4834,6 +4853,10 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } conversa s'etiquetarà com a:",
+        "${ elementsCount } converses s'etiquetaran com a:"
+      ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } conversa es marcarà com a llegida.",
         "${ elementsCount } converses es marcaran com a llegides."
@@ -4841,6 +4864,34 @@
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } conversa es marcarà com a no llegida.",
         "${ elementsCount } converses es marcaran com a no llegides."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "Es mourà ${ elementsCount } conversa.",
+        "Es mouran ${ elementsCount } converses."
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } conversa no tindrà aquesta etiqueta:",
+        "${ elementsCount } converses no tindran aquesta etiqueta:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } missatge s'etiquetarà com a:",
+        "${ elementsCount } missatges s'etiquetaran com a:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } missatge es marcarà com a llegit.",
+        "${ elementsCount } missatges es marcaran com a llegits."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } missatge es marcarà com a no llegit.",
+        "${ elementsCount } missatges es marcaran com a no llegits."
+      ],
+      "${ elementsCount } message will be moved": [
+        "Es mourà ${ elementsCount } missatge.",
+        "Es mouran ${ elementsCount } missatges."
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } missatge no tindrà aquesta etiqueta:",
+        "${ elementsCount } missatges no tindran aquesta etiqueta:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imatge encastada",
@@ -5008,6 +5059,12 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
+      ],
+      "Applying actions to conversations": [
+        "S'estan aplicant les accions a les converses"
+      ],
+      "Applying actions to messages": [
+        "S'estan aplicant les accions als missatges"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Segur que voleu eliminar tots els missatges d'aquesta carpeta?"
@@ -5861,6 +5918,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Aquest missatge està signat per una clau que encara no s'ha confiat."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Aquest missatge s'eliminarà automàticament a les ${ value }."
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Aquest missatge s'eliminarà automàticament el ${ value }."
       ],
@@ -6154,6 +6214,22 @@
       "You selected **${ count } message** with this label": [
         "Heu seleccionat **${ count } missatge** amb aquesta etiqueta",
         "Heu seleccionat **${ count } missatges** amb aquesta etiqueta"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Heu seleccionat **${ elementsCount } conversa** a ${ location }.",
+        "Heu seleccionat **${ elementsCount } converses** a ${ location }."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Heu seleccionat **${ elementsCount } conversa**.",
+        "Heu seleccionat **${ elementsCount } converses**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Heu seleccionat **${ elementsCount } missatge** a ${ location }.",
+        "Heu seleccionat **${ elementsCount } missatges** a ${ location }."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Heu seleccionat **${ elementsCount } missatge**.",
+        "Heu seleccionat **${ elementsCount } missatges**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
@@ -8031,6 +8107,9 @@
       "Open ${ PASS_APP_NAME }": [
         "Obri ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Protegiu la vostra identitat en línia"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
       ]
@@ -8659,8 +8738,14 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ple al ${ percentage }%"
+      ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "El vostre emmagatzematge de ${ appStorage } està gairebé ple."
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."
@@ -9070,6 +9155,9 @@
       "A filter name is required": [
         "Es requereix un nom per al filtre."
       ],
+      "A filter with this name already exists": [
+        "Ja hi ha un filtre amb aquest nom."
+      ],
       "Account recovery": [
         "Recuperació de compte"
       ],
@@ -9365,6 +9453,9 @@
       "Mark conversations as read": [
         "Marca les converses com a llegides"
       ],
+      "Mark conversations as unread": [
+        "Marca les converses com a no llegides"
+      ],
       "Mark email as legitimate": [
         "Marca el correu electrònic com a legítim"
       ],
@@ -9409,6 +9500,12 @@
       ],
       "Move all messages": [
         "Mou tots els missatges"
+      ],
+      "Move all messages to archive": [
+        "Mou tots els missatges a Arxiu"
+      ],
+      "Move all messages to trash": [
+        "Mou tots els missatges a la paperera"
       ],
       "Move to": [
         "Mou a"

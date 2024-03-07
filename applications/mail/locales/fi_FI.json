@@ -3186,6 +3186,9 @@
       "All events in this series were updated.": [
         "Kaikki tämän sarjan tapahtumat päivitettiin."
       ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Kaikki sarjan tapahtumat päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+      ],
       "This event occurrence was canceled.": [
         "Tämä tapahtuma peruttiin."
       ],
@@ -3194,6 +3197,9 @@
       ],
       "This event was updated.": [
         "Tämä tapahtuma päivitettiin."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"

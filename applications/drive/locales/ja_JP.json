@@ -565,6 +565,9 @@
       "Save": [
         "保存"
       ],
+      "Save changes": [
+        "変更を保存"
+      ],
       "Search": [
         "検索"
       ],
@@ -597,6 +600,9 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Share": [
+        "共有"
       ],
       "Share file": [
         "ファイルを共有"
@@ -1906,6 +1912,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
       ],
@@ -1927,6 +1936,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "データの損失を防ぐには、データの回復手段を設定します。"
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "アカウントへのアクセスが失われないように回復手段を設定してください。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -1935,6 +1950,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
+      ],
+      "Your account and data recovery methods are set.": [
+        "アカウントとデータの回復手段が設定されています。"
       ]
     },
     "description": {
@@ -1999,6 +2020,9 @@
       ],
       "A problem occurred, please try again.": [
         "問題が発生しました。もう一度お試しください。"
+      ],
+      "Account does not exist": [
+        "アカウントは存在しません"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -2150,6 +2174,9 @@
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントではありません"
+      ],
       "Not a valid number": [
         "無効な番号です"
       ],
@@ -2228,6 +2255,9 @@
       "status page": [
         "ステータスページ"
       ],
+      "The address might be misspelled": [
+        "アドレスの綴りが違う可能性があります"
+      ],
       "The email addresses do not match": [
         "メールアドレスが一致しません"
       ],
@@ -2296,6 +2326,9 @@
       ],
       "Username must end with a letter or digit": [
         "ユーザー名の最後は英字か数字でなければいけません"
+      ],
+      "Validation error": [
+        "検証エラー"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
@@ -4442,9 +4475,6 @@
       "Download anyway": [
         "無視してダウンロード"
       ],
-      "Downloading": [
-        "ダウンロード中"
-      ],
       "Downloading ${ percentageValue }": [
         "ダウンロード中 ${ percentageValue }"
       ],
@@ -5634,14 +5664,23 @@
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
+      ],
       "New alias": [
         "新しいエイリアス"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を開く"
       ],
+      "Protect your online identity": [
+        "あなたをオンラインで守る"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -5652,6 +5691,11 @@
     "Security Center - Action": {
       "View logs": [
         "ログを表示"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
       ]
     },
     "Select files": {
@@ -6065,6 +6109,12 @@
       ],
       "Address copied to clipboard": [
         "住所がクリップボードにコピーされました"
+      ],
+      "Alias copied to clipboard": [
+        "エイリアスがクリップボードにコピーされました"
+      ],
+      "Alias saved and copied": [
+        "エイリアスを保存してコピーしました"
       ],
       "Bug reported": [
         "バグの報告が送信されました"
@@ -6688,6 +6738,9 @@
       ],
       "You have no folders yet": [
         "フォルダーがありません"
+      ],
+      "Your account is protected": [
+        "あなたのアカウントは保護されています"
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"

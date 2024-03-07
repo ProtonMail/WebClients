@@ -46,6 +46,9 @@
       "Add note": [
         "Notiz hinzufügen"
       ],
+      "Add people or groups to share": [
+        "Personen oder Gruppen zum Teilen hinzufügen"
+      ],
       "Add phone number": [
         "Telefonnummer hinzufügen"
       ],
@@ -568,6 +571,18 @@
       "Save": [
         "Speichern"
       ],
+      "Save changes": [
+        "Änderungen speichern"
+      ],
+      "Scan & Download": [
+        "Scannen & herunterladen"
+      ],
+      "Scan & Download (${ count })": [
+        "Scannen und herunterladen (${ count })"
+      ],
+      "Scan & Download all": [
+        "Alle scannen und herunterladen"
+      ],
       "Search": [
         "Suchen"
       ],
@@ -600,6 +615,9 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Share": [
+        "Teilen"
       ],
       "Share file": [
         "Datei teilen"
@@ -1993,7 +2011,7 @@
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Aktualisiere dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
+        "Upgrade dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
@@ -2005,10 +2023,10 @@
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Deine Konto- und Datenwiederherstellungsmethoden sind eingestellt und 2FA ist aktiviert."
+        "Deine Konto- und Datenwiederherstellungsmethoden sind festgelegt und 2FA ist aktiviert."
       ],
       "Your account and data recovery methods are set.": [
-        "Dein Konto und die Methoden zur Datenwiederherstellung sind eingerichtet."
+        "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
       ]
     },
     "description": {
@@ -2022,6 +2040,69 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "In der hochgeladenen CSV-Datei wurden die folgenden Felder erkannt. Wähle diejenigen aus, die du importieren möchtest."
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHREIBUNG:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } wurde abgesagt."
+      ],
+      "All events in this series were updated.": [
+        "Alle Termine in dieser Serie wurden aktualisiert."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was updated.": [
+        "Die Häufigkeit des Termins wurde aktualisiert."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Die Häufigkeit des Termins wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Dieser Termin wurde aktualisiert."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Dieser Termin wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du wurdest zu ${ eventTitle } eingeladen.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ZEIT:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ZEIT:\n${ formattedStart } (ganztägig)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ZEIT:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Entfernt"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "ORT:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } angenommen"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
       ]
     },
     "Email subject": {
@@ -2090,6 +2171,9 @@
       "A problem occurred, please try again.": [
         "Es ist ein Problem aufgetreten, bitte versuche es erneut."
       ],
+      "Account does not exist": [
+        "Konto existiert nicht"
+      ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
@@ -2104,6 +2188,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliasse konnten nicht geladen werden"
+      ],
+      "Already a member of this share": [
+        "Bereits Mitglied dieser Freigabe"
       ],
       "An error occurred while loading alias options": [
         "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
@@ -2252,6 +2339,9 @@
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Kein ${ BRAND_NAME }-Konto"
+      ],
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
@@ -2290,6 +2380,10 @@
       ],
       "Primary address key is not decrypted.": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Doppelten Eingeladenen entfernt: ${ joinedInvitee }",
+        "Doppelte Eingeladene entfernt: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Bericht konnte nicht gesendet werden"
@@ -2332,6 +2426,9 @@
       ],
       "status page": [
         "Statusseite"
+      ],
+      "The address might be misspelled": [
+        "Die E-Mail-Adresse könnte falsch geschrieben sein."
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -2404,6 +2501,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "Validation error": [
+        "Überprüfungsfehler"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
@@ -2719,7 +2819,7 @@
         "Verstanden"
       ],
       "Switch plans": [
-        "Tarife wechseln"
+        "Abonnement wechseln"
       ],
       "View the invitation": [
         "Sieh dir die Einladung an"
@@ -2738,13 +2838,13 @@
         "${ BRAND_NAME }-Gruppen"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Tarif abschließen."
+        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Abonnement abschließen."
       ],
       "customer support": [
         "Kundendienst"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Wenn du die Einladung annimmst, wechseln wir deinen aktuellen Tarif und schreiben deinem Konto das verbleibende Guthaben gut."
+        "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
       ],
       "Invited by: ${ inviteEmail }": [
         "Eingeladen von: ${ inviteEmail }"
@@ -2753,22 +2853,22 @@
         "Adressen verwalten."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Tarifs mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
+        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Du kannst leider derzeit nicht zwischen Tarifen wechseln."
+        "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Dir zugewiesener Speicher: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Tarifs in Rechnung gestellt."
+        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Abonnements in Rechnung gestellt."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- und Family-Tarife unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+        "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Mit Visionary- und Family-Tarifen sind derzeit keine lebenslangen Konten verfügbar."
+        "Für Visionary- und Family-Abonnements sind derzeit keine lebenslangen Konten verfügbar."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -2780,19 +2880,19 @@
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+        "Du bist dem Family-Abonnement erfolgreich beigetreten"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppentarif zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Tarif zur Verfügung stehen. ${ addressSettingsLink }"
+        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Tarif-Administrator, deinen Speicher zu erhöhen."
+        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Mit deinem aktuellen Tarif kannst du kein Visionary- oder Family-Tarif abschließen."
+        "Mit deinem aktuellen Abonnement kannst du kein Visionary- oder Family-Abonnement abschließen."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -3563,8 +3663,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ emailAddress } sicher hochgeladen."
       ],
+      "Download": [
+        "Herunterladen"
+      ],
       "Download ${ name } app": [
         "${ name } herunterladen"
+      ],
+      "Download anyway": [
+        "Trotzdem herunterladen"
       ],
       "Download canceled": [
         "Download abgebrochen"
@@ -3624,6 +3730,9 @@
         "Die verschlüsselte Suche ist da"
       ],
       "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
+      ],
+      "End-to-End Encrypted": [
         "Ende-zu-Ende-verschlüsselt"
       ],
       "Enter password": [
@@ -3775,6 +3884,9 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "Invited": [
+        "Eingeladen"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Es sieht so aus, als hättest du kürzlich versucht, ${ uploadName } hochzuladen. Falls der Upload fehlgeschlagen hat, ersetze bitte ${ replaceFile }. Wenn der Upload noch im Gange ist, bricht das Ersetzen der Datei den laufenden Upload ab."
       ],
@@ -3834,6 +3946,10 @@
       ],
       "Makes your account safer": [
         "Macht dein Konto sicherer"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen",
+        "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen"
       ],
       "Merged": [
         "Zusammengeführt"
@@ -4017,6 +4133,9 @@
       "Report has been sent": [
         "Bericht wurde gesendet"
       ],
+      "Report link": [
+        "Link melden"
+      ],
       "Restore": [
         "Wiederherstellen"
       ],
@@ -4034,6 +4153,9 @@
       ],
       "Retry now": [
         "Jetzt erneut versuchen"
+      ],
+      "Scan issue": [
+        "Scan-Fehler"
       ],
       "Search cannot be enabled in this browser": [
         "Die Suche kann in diesem Browser nicht aktiviert werden"
@@ -4086,6 +4208,15 @@
       ],
       "Share files with links": [
         "Dateien mit Links teilen"
+      ],
+      "Share via link settings": [
+        "Einstellungen für das Teilen via Link"
+      ],
+      "Share with": [
+        "Teilen mit"
+      ],
+      "Share with anyone": [
+        "Mit jedem teilen"
       ],
       "Shareable link for ${ boldNameText }": [
         "Teilbarer Link für ${ boldNameText }"
@@ -4214,6 +4345,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Um dich zu schützen, kann ${ DRIVE_APP_NAME } bösartige Dateien scannen und blockieren. Du solltest trotzdem nur Dateien von Personen herunterladen, denen du vertraust."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Um Termine zu importieren, erstelle zuerst einen Kalender in ${ CALENDAR_APP_NAME }. Dort werden die Termine nach dem Import angezeigt."
       ],
@@ -4279,6 +4413,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
+      ],
+      "upgrade your storage": [
+        "deinen Speicherplatz zu upgraden."
       ],
       "Uploaded": [
         "Hochgeladen"
@@ -4378,6 +4515,10 @@
       ],
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Du hast noch ${ expiresInDays } Tag Zeit, um deinen 3 GB-Willkommensbonus in Anspruch zu nehmen und ",
+        "Du hast noch ${ expiresInDays } Tage Zeit, um deinen 3 GB-Willkommensbonus in Anspruch zu nehmen und "
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
@@ -4536,6 +4677,12 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Für jeden im Internet mit diesem Link sichtbar"
+      ],
+      "Anyone with the link": [
+        "Jeder mit dem Link"
+      ],
       "App password": [
         "App-Passwort"
       ],
@@ -4630,6 +4777,9 @@
         "Laufwerk löschen?",
         "Laufwerke löschen?"
       ],
+      "Delete link": [
+        "Link löschen"
+      ],
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
       ],
@@ -4648,9 +4798,6 @@
       "Download anyway": [
         "Trotzdem herunterladen"
       ],
-      "Downloading": [
-        "Wird heruntergeladen"
-      ],
       "Downloading ${ percentageValue }": [
         "${ percentageValue } heruntergeladen"
       ],
@@ -4659,6 +4806,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "z. B. Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Bearbeiter"
       ],
       "Email": [
         "E-Mail-Adresse"
@@ -4689,6 +4839,9 @@
       ],
       "Enter device name": [
         "Gerätename eingeben"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Diesen Link löschen und jeden mit Zugriff entfernen"
       ],
       "Expired": [
         "Abgelaufen"
@@ -4873,6 +5026,9 @@
       "Set expiration date": [
         "Ablaufdatum festlegen"
       ],
+      "Set link password": [
+        "Link-Passwort festlegen"
+      ],
       "Set recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
@@ -4909,6 +5065,9 @@
       "Theme": [
         "Farbschema"
       ],
+      "This file is potentially infected": [
+        "Diese Datei ist möglicherweise infiziert."
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Dadurch werden alle Dateien auf dem gesperrten Laufwerk dauerhaft gelöscht."
       ],
@@ -4941,6 +5100,9 @@
       ],
       "Verification code": [
         "Verifizierungscode"
+      ],
+      "Viewer": [
+        "Betrachter"
       ],
       "What happened?": [
         "Problembeschreibung"
@@ -5809,6 +5971,9 @@
       "A way to contact you": [
         "Eine Möglichkeit, dich zu kontaktieren"
       ],
+      "Choose password": [
+        "Passwort wählen"
+      ],
       "E.g., ": [
         "Z. B. "
       ],
@@ -5865,6 +6030,9 @@
       ],
       "Select": [
         "Auswählen"
+      ],
+      "Set date": [
+        "Datum festlegen"
       ],
       "Start typing an email address": [
         "E-Mail-Adresse eingeben"
@@ -6677,7 +6845,7 @@
         "Kontowiederherstellung"
       ],
       "Account security": [
-        "Kontensicherheit"
+        "Kontosicherheit"
       ],
       "Active": [
         "Aktiv"
@@ -7032,6 +7200,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Share ${ name }": [
+        "${ name } teilen"
+      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -7203,6 +7374,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
+      ],
+      "Shared end-to-end encrypted": [
+        "Geteilte Ende-zu-Ende-Verschlüsselung"
       ],
       "Show side panel": [
         "Seitenleiste anzeigen"

@@ -3122,7 +3122,7 @@
         "Schalte durch ein Upgrade unbegrenzte Ordner, Kategorien und weitere Premiumfunktionen frei."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Aktualisiere dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
+        "Upgrade dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
@@ -3140,10 +3140,10 @@
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Deine Konto- und Datenwiederherstellungsmethoden sind eingestellt und 2FA ist aktiviert."
+        "Deine Konto- und Datenwiederherstellungsmethoden sind festgelegt und 2FA ist aktiviert."
       ],
       "Your account and data recovery methods are set.": [
-        "Dein Konto und die Methoden zur Datenwiederherstellung sind eingerichtet."
+        "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
       ]
     },
     "description": {
@@ -3172,6 +3172,69 @@
     "Download attachments": {
       "Download all": [
         "Alle herunterladen"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHREIBUNG:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } wurde abgesagt."
+      ],
+      "All events in this series were updated.": [
+        "Alle Termine in dieser Serie wurden aktualisiert."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was updated.": [
+        "Die Häufigkeit des Termins wurde aktualisiert."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Die Häufigkeit des Termins wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Dieser Termin wurde aktualisiert."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Dieser Termin wurde aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du wurdest zu ${ eventTitle } eingeladen.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ZEIT:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ZEIT:\n${ formattedStart } (ganztägig)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ZEIT:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Entfernt"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "ORT:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } angenommen"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
       ]
     },
     "Email reminder banner": {
@@ -4028,7 +4091,7 @@
         "Verstanden"
       ],
       "Switch plans": [
-        "Tarife wechseln"
+        "Abonnement wechseln"
       ],
       "View the invitation": [
         "Sieh dir die Einladung an"
@@ -4047,13 +4110,13 @@
         "${ BRAND_NAME }-Gruppen"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Tarif abschließen."
+        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Abonnement abschließen."
       ],
       "customer support": [
         "Kundendienst"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Wenn du die Einladung annimmst, wechseln wir deinen aktuellen Tarif und schreiben deinem Konto das verbleibende Guthaben gut."
+        "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
       ],
       "Invited by: ${ inviteEmail }": [
         "Eingeladen von: ${ inviteEmail }"
@@ -4062,22 +4125,22 @@
         "Adressen verwalten."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Tarifs mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
+        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Du kannst leider derzeit nicht zwischen Tarifen wechseln."
+        "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Dir zugewiesener Speicher: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Tarifs in Rechnung gestellt."
+        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Abonnements in Rechnung gestellt."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- und Family-Tarife unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+        "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Mit Visionary- und Family-Tarifen sind derzeit keine lebenslangen Konten verfügbar."
+        "Für Visionary- und Family-Abonnements sind derzeit keine lebenslangen Konten verfügbar."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -4089,19 +4152,19 @@
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+        "Du bist dem Family-Abonnement erfolgreich beigetreten"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppentarif zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Tarif zur Verfügung stehen. ${ addressSettingsLink }"
+        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Tarif-Administrator, deinen Speicher zu erhöhen."
+        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Mit deinem aktuellen Tarif kannst du kein Visionary- oder Family-Tarif abschließen."
+        "Mit deinem aktuellen Abonnement kannst du kein Visionary- oder Family-Abonnement abschließen."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4364,8 +4427,11 @@
       "14-day destkop app trial.": [
         "Desktop-App 14 Tage ausprobieren."
       ],
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Genieße schnellen, sicheren und ablenkungsfreien Zugriff auf deinen Posteingang und Kalender."
+      ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Erhalte unbegrenzten Zugang mit jedem ${ MAIL_APP_NAME } Abonnement."
+        "Erhalte unbegrenzten Zugang mit jedem ${ MAIL_APP_NAME }-Abonnement."
       ],
       "No credit card required.": [
         "Keine Kreditkarte erforderlich."
@@ -9313,7 +9379,7 @@
         "Kontowiederherstellung"
       ],
       "Account security": [
-        "Kontensicherheit"
+        "Kontosicherheit"
       ],
       "Action all conversations": [
         "Auf alle Unterhaltungen anwenden"
@@ -9553,7 +9619,7 @@
         "Erweiterten Schutz erhalten"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Erhalte die ${ appName[APP_NAME] } Anwendungen"
+        "Hol dir die ${ appName[APP_NAME] }-Apps"
       ],
       "Groups": [
         "Gruppen"

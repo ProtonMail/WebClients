@@ -776,6 +776,12 @@
         "${ memberCount } členů",
         "${ memberCount } členů"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } krát",
+        "${ modifiedCount }krát",
+        "${ modifiedCount }krát",
+        "${ modifiedCount }krát"
+      ],
       "${ n } item": [
         "${ n } položka",
         "${ n } položky",
@@ -1862,6 +1868,9 @@
       "Create PIN code": [
         "Vytvořit PIN kód"
       ],
+      "Current version": [
+        "Aktuální verze"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Smazat trezor \"${ vaultName }\"?"
       ],
@@ -1945,6 +1954,9 @@
       ],
       "Pinned (${ items.length })": [
         "Připnuto (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Obnovit tuto verzi?"
       ],
       "Review and share": [
         "Zkontrolovat a sdílet"

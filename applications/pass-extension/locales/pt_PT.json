@@ -576,6 +576,10 @@
         "${ memberCount } membro",
         "${ memberCount } membros"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } vez.",
+        "${ modifiedCount } vezes."
+      ],
       "${ n } item": [
         " ${ n } item",
         "${ n } itens"
@@ -1376,6 +1380,9 @@
       "Create PIN code": [
         "Criar o PIN"
       ],
+      "Current version": [
+        "Versão atual"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Eliminar o cofre \"${ vaultName }\"?"
       ],
@@ -1435,6 +1442,9 @@
       ],
       "Pin the extension": [
         "Fixe a extensão"
+      ],
+      "Restore this version?": [
+        "Restaurar esta versão?"
       ],
       "Secure your data": [
         "Proteja os seus dados"
