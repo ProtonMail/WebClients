@@ -5,6 +5,7 @@ import {
     NOTIFICATION_WIDTH,
 } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';

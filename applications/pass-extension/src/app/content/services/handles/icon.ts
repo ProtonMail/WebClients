@@ -40,12 +40,14 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
 
-    const setCount = withContext<(count: number) => void>(({ getState }, count: number) => {
+    const setCount = withContext<(count: number) => void>((ctx, count: number) => {
+        if (!ctx) return;
+
         const safeCount = count === 0 || !count ? '' : String(count);
         icon.style.setProperty(`--control-count`, `"${safeCount}"`);
 
         if (count > 0) return icon.style.setProperty('background-image', `url("${COUNTER_ICON_SRC}")`, 'important');
-        return setStatus(getState().status);
+        setStatus(ctx?.getState().status);
     });
 
     const reposition = debounce(
@@ -83,15 +85,15 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         reposition.cancel();
     };
 
-    const onClick: (evt: MouseEvent) => void = withContext(({ service: { iframe } }, evt) => {
+    const onClick: (evt: MouseEvent) => void = withContext((ctx, evt) => {
         evt.preventDefault();
         evt.stopPropagation();
 
-        if (field.action) {
-            return iframe.dropdown?.getState().visible
-                ? iframe.dropdown?.close()
-                : iframe.dropdown?.open({ action: field.action, field });
-        }
+        const { action } = field;
+        const dropdown = ctx?.service.iframe.dropdown;
+        const visible = dropdown?.getState().visible;
+
+        if (action) return visible ? dropdown?.close() : dropdown?.open({ action, field });
     });
 
     const detach = safeCall(() => {

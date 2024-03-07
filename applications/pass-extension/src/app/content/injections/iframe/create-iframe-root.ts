@@ -1,6 +1,6 @@
-import { createElement } from '@proton/pass/utils/dom/create-element';
+import { type ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 
-import { type ProtonPassRoot } from '../custom-elements/ProtonPassRoot';
+import { createElement } from '@proton/pass/utils/dom/create-element';
 
 export const getIFrameRoot = (rootTag: string) => document.querySelector<ProtonPassRoot>(rootTag);
 export const isIFrameRootAttached = (rootTag: string) => getIFrameRoot(rootTag) !== null;
