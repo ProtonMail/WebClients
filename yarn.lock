@@ -1365,6 +1365,17 @@
   optionalDependencies:
     electron-winstaller "^5.0.0"
 
+"@electron-forge/maker-zip@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@electron-forge/maker-zip/-/maker-zip-7.3.0.tgz#064ab2857fdbb183c3226bb0f69b77abdab1e172"
+  integrity sha512-VYYLScDpibVIiMRK7JWeCS9G8VYvPXa1X6p6fNYQoFOWommG9zC7OOnFfNnLBrH1+0ginZRJeLD1zo+cM12JuQ==
+  dependencies:
+    "@electron-forge/maker-base" "7.3.0"
+    "@electron-forge/shared-types" "7.3.0"
+    cross-zip "^4.0.0"
+    fs-extra "^10.0.0"
+    got "^11.8.5"
+
 "@electron-forge/plugin-auto-unpack-natives@^7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@electron-forge/plugin-auto-unpack-natives/-/plugin-auto-unpack-natives-7.3.0.tgz#277772dc8275143e93cb5955decef1dc2354366c"
@@ -3703,6 +3714,11 @@ cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+cross-zip@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/cross-zip/-/cross-zip-4.0.1.tgz#1bbf5d3b0e5a77b5f5ca130a6d38f770786e1270"
+  integrity sha512-n63i0lZ0rvQ6FXiGQ+/JFCKAUyPFhLQYJIqKaa+tSJtfKeULF/IDNDAbdnSIxgS4NTuw2b0+lj8LzfITuq+ZxQ==
 
 crypto@^1.0.1:
   version "1.0.1"

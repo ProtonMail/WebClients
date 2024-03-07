@@ -3,7 +3,6 @@ import Logger from "electron-log";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
-import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
@@ -132,21 +131,6 @@ app.on("window-all-closed", () => {
     if (!isMac) {
         app.quit();
     }
-});
-
-// Only used on macOS to save the windows position when CMD+Q is used
-app.on("before-quit", () => {
-    const mainWindow = getMainWindow();
-    if (!mainWindow) {
-        return;
-    }
-
-    if (!isMac) {
-        return;
-    }
-
-    saveWindowBounds(mainWindow);
-    mainWindow.destroy();
 });
 
 // Security addition

@@ -1,16 +1,14 @@
+import { autoUpdater } from "electron";
 import Logger from "electron-log";
 import { updateElectronApp } from "update-electron-app";
-import { z } from "zod";
-import { getPlatform } from "./utils/helpers";
 
-const baseURL = `https://proton.me/download/mail/${getPlatform()}`;
-const jsonVersion = `${baseURL}/version.json`;
+export let updateDownloaded = false;
+autoUpdater.on("update-downloaded", () => {
+    updateDownloaded = true;
+});
 
-const versionJSOn = z.object({
-    early: z.object({
-        Version: z.string(),
-        RolloutProportion: z.number(),
-    }),
+autoUpdater.on("before-quit-for-update" as any, () => {
+    updateDownloaded = true;
 });
 
 export const checkForUpdates = () => {
