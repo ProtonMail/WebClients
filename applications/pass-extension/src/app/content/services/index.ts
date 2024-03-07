@@ -58,7 +58,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             /** If the user is unexpectedly logged out, clear autofill cached
              * data and detach any autosave notification that may be present */
             context.service.autofill.reset();
-            context.service.iframe.detachNotification();
+            context.service.iframe.notification?.destroy();
         } else if (clientReady(status)) await context.service.autofill.reconciliate();
     };
 
@@ -101,10 +101,11 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
 
         if (res.type === 'success') {
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
-            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
+            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
-            context.service.iframe.reset();
+            context.service.iframe.init();
+
             await reconciliate();
 
             /* if the user has disabled every injection setting or added the current
@@ -132,6 +133,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
                 const extensionContext = await setupExtensionContext({
                     endpoint: 'contentscript',
                     onDisconnect: () => {
+                        context.setState({ stale: true });
                         context.destroy({ reason: 'port disconnected' });
                         return { recycle: true };
                     },

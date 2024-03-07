@@ -49,10 +49,7 @@ export const createInjectionService = () => {
                     files: options.js,
                     world: options.world as any,
                 }),
-        ]).catch((e) => {
-            console.warn(e);
-            logger.info(`[InjectionService::inject] Injection error on tab ${tabId}`, e);
-        });
+        ]).catch((e) => logger.info(`[InjectionService::inject] Injection error on tab ${tabId}`, e));
     };
 
     const updateInjections = async () => {

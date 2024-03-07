@@ -24,8 +24,9 @@ import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
 type DropdownFieldRef = { current: MaybeNull<FieldHandle> };
+type DropdownOptions = { root: ProtonPassRoot; onDestroy: () => void };
 
-export const createDropdown = (elements: PassElementsConfig): InjectedDropdown => {
+export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDropdown => {
     const fieldRef: DropdownFieldRef = { current: null };
     const listeners = createListenerStore();
 
@@ -33,9 +34,9 @@ export const createDropdown = (elements: PassElementsConfig): InjectedDropdown =
         animation: 'fadein',
         backdropClose: true,
         id: 'dropdown',
-        elements,
+        root,
         src: DROPDOWN_IFRAME_SRC,
-        onError: withContext((ctx, _) => ctx?.service.iframe.detachDropdown()),
+        onError: onDestroy,
         onClose: (_, options) => options?.refocus && fieldRef.current?.focus(),
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {
@@ -106,7 +107,7 @@ export const createDropdown = (elements: PassElementsConfig): InjectedDropdown =
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = async ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> =>
+    const open = ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> =>
         iframe
             .ensureReady()
             .then(async () => {
@@ -177,6 +178,7 @@ export const createDropdown = (elements: PassElementsConfig): InjectedDropdown =
         fieldRef.current = null;
         listeners.removeAll();
         iframe.destroy();
+        onDestroy();
     };
 
     listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
@@ -191,7 +193,6 @@ export const createDropdown = (elements: PassElementsConfig): InjectedDropdown =
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
-        setPort: pipe(iframe.setPort, () => dropdown),
         sync,
     };
 

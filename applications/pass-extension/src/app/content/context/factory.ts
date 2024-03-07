@@ -24,6 +24,7 @@ export const createContentScriptContext = (options: {
     const state: CSContextState = {
         localID: undefined,
         loggedIn: false,
+        stale: false,
         status: AppStatus.IDLE,
         UID: undefined,
     };
@@ -41,15 +42,14 @@ export const createContentScriptContext = (options: {
             autosave: createAutosaveService(),
             detector: createDetectorService(),
             formManager: createFormManager({
-                /* attach or detach dropdown based on the
-                 * detection results. If forms have been detected
-                 * sync the autofillable items count */
                 onDetection: (forms) => {
+                    /* attach or detach dropdown based on the detection results */
                     const didDetect = forms.length > 0;
-                    context.service.iframe[didDetect ? 'attachDropdown' : 'detachDropdown']();
+                    if (didDetect) context.service.iframe.attachDropdown();
+                    else context.service.iframe.dropdown?.destroy();
                 },
             }),
-            iframe: createIFrameService(),
+            iframe: createIFrameService(options.elements),
         },
 
         destroy: options.destroy,

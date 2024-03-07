@@ -146,8 +146,7 @@ export const createAutofillService = () => {
 
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
-                    ctx?.service.iframe.attachNotification();
-                    ctx?.service.iframe.notification?.open({
+                    ctx?.service.iframe.attachNotification()?.open({
                         action: NotificationAction.AUTOFILL_OTP_PROMPT,
                         item: { shareId: res.shareId, itemId: res.itemId },
                         hostname: subdomain ?? domain ?? '',
