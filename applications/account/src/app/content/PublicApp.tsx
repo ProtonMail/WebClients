@@ -61,6 +61,7 @@ import locales from '../locales';
 import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
+import CloseTicketContainer from '../public/CloseTicketContainer';
 import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
@@ -153,6 +154,7 @@ const UNAUTHENTICATED_ROUTES = {
     REMOVE_EMAIL: '/remove-email',
     DISABLE_ACCOUNT: '/disable-account',
     EMAIL_FORWARDING: '/email-forwarding',
+    CLOSE_TICKET: '/close-ticket',
 };
 
 interface Props {
@@ -483,6 +485,13 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     <UnAuthenticated>
                         <EmailForwardingContainer request={EmailForwardingRequest.Decline} />
                     </UnAuthenticated>
+                </Route>
+                <Route path={UNAUTHENTICATED_ROUTES.CLOSE_TICKET}>
+                    <UnAuthenticatedApiProvider loader={loader}>
+                        <UnAuthenticated>
+                            <CloseTicketContainer />
+                        </UnAuthenticated>
+                    </UnAuthenticatedApiProvider>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>
                     <UnAuthenticated>
