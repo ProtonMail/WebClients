@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
       ],
+      "View history": [
+        "Προβολή ιστορικού"
+      ],
+      "View older history": [
+        "Προβολή παλαιότερου ιστορικού"
+      ],
       "Write us on Reddit": [
         "Γράψτε μας στο Reddit"
       ],
@@ -512,6 +518,9 @@
       ],
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
+      ],
+      "Failed to load item history": [
+        "Αποτυχία φόρτωσης ιστορικού στοιχείων"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Αποτυχία μετακίνησης όλων των στοιχείων από το \"${ payload.content.name }\""
@@ -723,6 +732,10 @@
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } φορά",
+        "${ modifiedCount } φορές"
+      ],
       "${ n } item": [
         "${ n } στοιχείο",
         "${ n } στοιχεία"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε όλα τα στοιχεία από το \"${ fromVaultName }\" στο \"${ toVaultName }\";"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε τα στοιχεία στο \"${ name }\";"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
       ],
       "Auto-lock successfully disabled": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του"
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους"
       ],
       "Moving items to trash": [
         "Μετακίνηση στοιχείων στα διαγραμμένα"
@@ -1115,6 +1140,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτή η κρύπτη δεν είναι προς το παρόν κοινόχρηστη με κανέναν. Προσκαλέστε άτομα να τη μοιράστε με άλλους."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Αυτή η έκδοση θα προστεθεί στο ιστορικό ως η νεότερη έκδοση."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Για να μεταφέρετε δεδομένα από έναν άλλο διαχειριστή κωδικών πρόσβασης, μεταβείτε στον διαχειριστή κωδικών πρόσβασης, εξαγάγετε τα δεδομένα σας και, στη συνέχεια, ανεβάστε τα στο ${ PASS_APP_NAME }. Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαγόμενο αρχείο."
@@ -1746,6 +1774,12 @@
       "Create PIN code": [
         "Δημιουργία κωδικού PIN"
       ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
+      "Current version": [
+        "Τρέχουσα έκδοση"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Διαγραφή'η κρύπτης \"${ vaultName }\" ;"
       ],
@@ -1782,6 +1816,12 @@
       "Install extension": [
         "Εγκατάσταση επέκτασης"
       ],
+      "Last autofill": [
+        "Τελευταία αυτόματη συμπλήρωση"
+      ],
+      "Last modified": [
+        "Τελευταία τροποποίηση"
+      ],
       "Leave vault ?": [
         "Αποχώρηση από την κρύπτη;"
       ],
@@ -1800,6 +1840,12 @@
       "Move all items ?": [
         "Μετακίνηση όλων των στοιχείων ;"
       ],
+      "Move item?": [
+        "Μετακίνηση στοιχείου;"
+      ],
+      "Move items?": [
+        "Μετακίνηση στοιχείων;"
+      ],
       "No items selected": [
         "Δεν επιλέχθηκαν αντικείμενα"
       ],
@@ -1814,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Επαναφορά αυτής της έκδοσης?"
       ],
       "Review and share": [
         "Επανεξέταση και κοινή χρήση"

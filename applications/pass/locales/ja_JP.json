@@ -1592,6 +1592,9 @@
       "Create PIN code": [
         "PINコードの作成"
       ],
+      "Current version": [
+        "現在のバージョン"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "保管庫「${ vaultName }」を削除しますか？"
       ],
@@ -1657,6 +1660,9 @@
       ],
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
+      ],
+      "Restore this version?": [
+        "このバージョンを復元?"
       ],
       "Review and share": [
         "レビューして共有"

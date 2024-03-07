@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Oppgrader nå for å dele med flere"
       ],
+      "View history": [
+        "Vis historikk"
+      ],
+      "View older history": [
+        "Vis eldre historikk"
+      ],
       "Write us on Reddit": [
         "Skriv til oss på Reddit"
       ],
@@ -512,6 +518,9 @@
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
+      ],
+      "Failed to load item history": [
+        "Kunne ikke laste inn elementhistorikken"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
@@ -723,6 +732,10 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } gang",
+        "${ modifiedCount } ganger"
+      ],
       "${ n } item": [
         "${ n } element",
         "${ n } elementer"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Er du sikker på at du vil flytte alle elementer fra \"${ fromVaultName }\" til \"${ toVaultName }\"?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Er du sikker på at du ønsker å flytte elementene til \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Er du sikker på at du ønsker å flytte elementet til \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Autolås deaktivert"
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Flytting av et element til et annet hvelv vil slette historikken"
+      ],
       "Moving items": [
         "Flytter elementer"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Flytting av elementer til et annet hvelv vil slette historikken deres"
       ],
       "Moving items to trash": [
         "Flytter elementer til papirkurven"
@@ -1115,6 +1140,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Denne versjonen vil bli lagt til i historikken som den nyeste versjonen."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
@@ -1746,6 +1774,12 @@
       "Create PIN code": [
         "Opprett PIN-kode"
       ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Current version": [
+        "Gjeldende versjon"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Slett hvelv \"${ vaultName }\" ?"
       ],
@@ -1782,6 +1816,12 @@
       "Install extension": [
         "Installer utvidelse"
       ],
+      "Last autofill": [
+        "Siste autofyll"
+      ],
+      "Last modified": [
+        "Sist endret"
+      ],
       "Leave vault ?": [
         "Forlate hvelvet?"
       ],
@@ -1800,6 +1840,12 @@
       "Move all items ?": [
         "Flytte alle elementer?"
       ],
+      "Move item?": [
+        "Flytte element?"
+      ],
+      "Move items?": [
+        "Flytte elementer?"
+      ],
       "No items selected": [
         "Ingen elementer valgt"
       ],
@@ -1814,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Gjenopprette denne versjonen?"
       ],
       "Review and share": [
         "Se over og del"

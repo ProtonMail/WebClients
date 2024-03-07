@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Jetzt upgraden, um mit weiteren Personen zu teilen"
       ],
+      "View history": [
+        "Verlauf anzeigen"
+      ],
+      "View older history": [
+        "Älteren Verlauf anzeigen"
+      ],
       "Write us on Reddit": [
         "Schreibe uns auf Reddit"
       ],
@@ -512,6 +518,9 @@
       ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
+      ],
+      "Failed to load item history": [
+        "Fehler beim Laden des Eintragsverlaufs."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
@@ -723,6 +732,10 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } Mal",
+        "${ modifiedCount } Mal"
+      ],
       "${ n } item": [
         "${ n } Eintrag",
         "${ n } Einträge"
@@ -771,6 +784,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Bist du dir sicher, dass du alle Einträge von \"${ fromVaultName }\" nach \"${ toVaultName }\" verschieben willst?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Bist du sicher, dass du die Einträge nach \"${ name }\" verschieben willst?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Bist du sicher, dass du den Eintrag nach \"${ name }\" verschieben willst?"
       ],
       "Auto-lock successfully disabled": [
         "Automatisches Sperren erfolgreich deaktiviert."
@@ -952,8 +971,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf."
+      ],
       "Moving items": [
         "Einträge verschieben"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf."
       ],
       "Moving items to trash": [
         "Einträge in den Papierkorb verschieben"
@@ -1116,6 +1141,9 @@
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Tresor wird derzeit mit niemandem geteilt. Lade Personen ein, um ihn mit diesen zu teilen."
       ],
+      "This version will be added to the history as the newest version.": [
+        "Diese Version wird als neueste Version in den Verlauf aufgenommen."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."
       ],
@@ -1163,6 +1191,9 @@
       ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst dein ${ BRAND_NAME }-Passwort nun verwenden, um auf ${ PASS_SHORT_APP_NAME } offline zuzugreifen."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
@@ -1590,6 +1621,9 @@
       ],
       "Sign in to your account": [
         "Mit deinem Konto anmelden"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Du bist derzeit offline. Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort."
       ]
     },
     "lobby: Title": {
@@ -1740,6 +1774,12 @@
       "Create PIN code": [
         "PIN-Code erstellen"
       ],
+      "Created": [
+        "Erstellt"
+      ],
+      "Current version": [
+        "Aktuelle Version"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Tresor \"${ vaultName }\" löschen?"
       ],
@@ -1776,6 +1816,12 @@
       "Install extension": [
         "Erweiterung installieren"
       ],
+      "Last autofill": [
+        "Letztes Auto-Ausfüllen"
+      ],
+      "Last modified": [
+        "Zuletzt geändert"
+      ],
       "Leave vault ?": [
         "Tresor verlassen?"
       ],
@@ -1794,6 +1840,12 @@
       "Move all items ?": [
         "Alle Einträge verschieben?"
       ],
+      "Move item?": [
+        "Eintrag verschieben?"
+      ],
+      "Move items?": [
+        "Einträge verschieben?"
+      ],
       "No items selected": [
         "Keine Einträge ausgewählt"
       ],
@@ -1808,6 +1860,9 @@
       ],
       "Pinned (${ items.length })": [
         "Angeheftet (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Diese Version wiederherstellen?"
       ],
       "Review and share": [
         "Überprüfen und teilen"
