@@ -3,19 +3,14 @@
  * or limited in the content-script execution context */
 import { ProtonPassControl } from './injections/custom-elements/ProtonPassControl';
 import { ProtonPassRoot } from './injections/custom-elements/ProtonPassRoot';
-import { StyledShadowHost } from './injections/custom-elements/StyledShadowHost';
 
-export const createCustomElements = () => {
-    const script = document.currentScript;
-    if (!script) throw new Error('Could not reference current script');
-
-    const publicPath = script.getAttribute('public-path');
-    if (!publicPath) throw new Error('Custom elements could not be registered');
-
-    StyledShadowHost.publicPath = publicPath;
-
-    if (!customElements.get('protonpass-root')) customElements.define('protonpass-root', ProtonPassRoot);
-    if (!customElements.get('protonpass-control')) customElements.define('protonpass-control', ProtonPassControl);
+/** The `registerPassElements` function is temporarily exposed on the
+ * global object to facilitate its invocation from an `executeScript`
+ * function within the service worker. This setup enables passing the
+ * `PassElementsConfig` to this script operating in the MAIN world */
+window.registerPassElements = (config) => {
+    const { root, control } = config;
+    if (!customElements.get(root)) customElements.define(root, ProtonPassRoot);
+    if (!customElements.get(control)) customElements.define(control, ProtonPassControl);
+    delete window.registerPassElements;
 };
-
-createCustomElements();
