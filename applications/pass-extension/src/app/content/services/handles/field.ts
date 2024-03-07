@@ -135,7 +135,10 @@ export const createFieldHandles = ({
         autofill: withActionTrap(element, createAutofill(element)),
 
         /* if an icon is already attached recycle it */
-        attachIcon: () => (field.icon = field.icon ?? createFieldIconHandle({ field })),
+        attachIcon: withContext((ctx) => {
+            if (!ctx) return;
+            return (field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements }));
+        }),
 
         detachIcon() {
             field.icon?.detach();

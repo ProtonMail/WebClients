@@ -14,20 +14,21 @@ import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/con
 
 import { clientErrored, clientLocked, clientStale, clientUnauthorized } from '@proton/pass/lib/client';
 import type { AppStatus } from '@proton/pass/types';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import debounce from '@proton/utils/debounce';
 
-type CreateIconOptions = { field: FieldHandle };
+type CreateIconOptions = { field: FieldHandle; elements: PassElementsConfig };
 
-export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHandle => {
+export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): FieldIconHandle => {
     const listeners = createListenerStore();
     let repositionRequest: number = -1; /* track repositioning requests */
 
     const input = field.element as HTMLInputElement;
-    const { icon, control } = createIcon(field);
+    const { icon, control } = createIcon(field, elements.control);
 
     const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
