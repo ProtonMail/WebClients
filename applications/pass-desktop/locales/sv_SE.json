@@ -380,6 +380,12 @@
       "Upgrade now to share with more people": [
         "Uppgradera nu för att dela med fler personer"
       ],
+      "View history": [
+        "Visa historik"
+      ],
+      "View older history": [
+        "Visa äldre historik"
+      ],
       "Write us on Reddit": [
         "Skriv till oss på Reddit"
       ],
@@ -509,6 +515,9 @@
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
+      ],
+      "Failed to load item history": [
+        "Misslyckades att ladda objekthistorik"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
@@ -717,6 +726,10 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
       ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } gång",
+        "${ modifiedCount } gånger"
+      ],
       "${ n } item": [
         "${ n } objekt",
         "${ n } objekt"
@@ -768,6 +781,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Är du säker på att du vill flytta alla objekten från “${ fromVaultName }“ till “${ toVaultName }“?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Är du säker på att du vill flytta objekten till “${ name }“?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Är du säker på att du vill flytta objektet till “${ name }“?"
       ],
       "Auto-lock successfully disabled": [
         "Automatisk låsning inaktiverat"
@@ -943,8 +962,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its history": [
+        "Att flytta ett objekt till annat valv kommer radera dess historik"
+      ],
       "Moving items": [
         "Flyttar objekt"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Att flytta objekt till annat valv kommer radera dess historik"
       ],
       "Moving items to trash": [
         "Flyttar objekt till papperskorg"
@@ -1106,6 +1131,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Denna version kommer att läggas till i historiken som den senaste versionen."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
@@ -1743,6 +1771,12 @@
       "Create PIN code": [
         "Skapa PIN-kod"
       ],
+      "Created": [
+        "Skapad"
+      ],
+      "Current version": [
+        "Nuvarande version"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Ta bort “${ vaultName }“?"
       ],
@@ -1779,6 +1813,12 @@
       "Install extension": [
         "Installera utökning"
       ],
+      "Last autofill": [
+        "Sista autofyll"
+      ],
+      "Last modified": [
+        "Senast ändrad"
+      ],
       "Leave vault ?": [
         "Lämna valv?"
       ],
@@ -1797,6 +1837,12 @@
       "Move all items ?": [
         "Flytta alla objekt?"
       ],
+      "Move item?": [
+        "Flytta objekt?"
+      ],
+      "Move items?": [
+        "Flytta objekt?"
+      ],
       "No items selected": [
         "Inga objekt markerade"
       ],
@@ -1811,6 +1857,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Återställ denna version?"
       ],
       "Review and share": [
         "Granska och dela"
