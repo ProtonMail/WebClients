@@ -2252,7 +2252,7 @@
         "Familiengruppe einrichten"
       ],
       "Switch plans": [
-        "Tarife wechseln"
+        "Abonnement wechseln"
       ],
       "View invitation": [
         "Einladung ansehen"
@@ -2282,13 +2282,13 @@
         "${ BRAND_NAME }-Gruppen"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Tarif abschließen."
+        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Abonnement abschließen."
       ],
       "customer support": [
         "Kundendienst"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Wenn du die Einladung annimmst, wechseln wir deinen aktuellen Tarif und schreiben deinem Konto das verbleibende Guthaben gut."
+        "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Einladung von ${ invitation.OrganizationName }"
@@ -2306,7 +2306,7 @@
         "In einem Zeitraum von 6 Monaten sind nur 10 angenommene Einladungen zulässig."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Tarifs mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
+        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Pending": [
         "Ausstehend"
@@ -2318,19 +2318,19 @@
         "Offene Einladungen"
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Du kannst leider derzeit nicht zwischen Tarifen wechseln."
+        "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Dir zugewiesener Speicher: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Tarifs in Rechnung gestellt."
+        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Abonnements in Rechnung gestellt."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- und Family-Tarife unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+        "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
-        "Mit Visionary- und Family-Tarifen sind derzeit keine lebenslangen Konten verfügbar."
+        "Für Visionary- und Family-Abonnements sind derzeit keine lebenslangen Konten verfügbar."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -2348,22 +2348,22 @@
         "Du hast das Limit von 10 akzeptierten Einladungen in 6 Monaten erreicht. Die Schaltfläche wird wieder anklickbar, wenn du weitere Benutzer einladen kannst."
       ],
       "You have successfully joined the Family plan": [
-        "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+        "Du bist dem Family-Abonnement erfolgreich beigetreten"
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppentarif zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Tarif zur Verfügung stehen. ${ addressSettingsLink }"
+        "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Tarif-Administrator, deinen Speicher zu erhöhen."
+        "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Mit deinem aktuellen Tarif kannst du kein Visionary- oder Family-Tarif abschließen."
+        "Mit deinem aktuellen Abonnement kannst du kein Visionary- oder Family-Abonnement abschließen."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2383,7 +2383,7 @@
         "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf einen ${ BRAND_NAME } Unlimited-Tarif umgestellt."
+        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf ein ${ BRAND_NAME } Unlimited-Abonnement umgestellt."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Zur Erstellung eines neuen Benutzers ist eine konfigurierte eigene Domain erforderlich."
@@ -2724,6 +2724,9 @@
       "Name": [
         "Name"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Spare mit den besten Angeboten für ${ VPN_APP_NAME }"
+      ],
       "Select your deal": [
         "Wähle dein Angebot"
       ],
@@ -2759,7 +2762,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Füge diesen Eintrag im Kontrollpanel deines Domain-Registrars hinzu."
+        "Füge diesen Eintrag in der Verwaltungskonsole deines Domain-Registrars hinzu."
       ]
     },
     "Human verification method": {
@@ -3367,7 +3370,7 @@
       "old password": [
         "altes Passwort"
       ],
-      "Once single sing-on is disabled for your organization:": [
+      "Once single sign-on is disabled for your organization:": [
         "Sobald Single Sign-on für deine Organisation deaktiviert ist:"
       ],
       "Once you reset your password:": [
@@ -4614,6 +4617,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Produktaktualisierungen zu ${ app } und ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "${ app }-Produktaktualisierungen"
       ],
@@ -4969,6 +4975,9 @@
       "1 user": [
         "1 Benutzer"
       ],
+      "24/7 account management support": [
+        "24/7-Kundenbetreuung"
+      ],
       "24/7 support": [
         "24/7 Support"
       ],
@@ -4980,6 +4989,9 @@
       ],
       "Admin console": [
         "Adminkonsole"
+      ],
+      "Administration Panel": [
+        "Verwaltungskonsole"
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
@@ -5223,6 +5235,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
+      ],
+      "Unlimited vault sharing": [
+        "Unbegrenztes Teilen von Tresoren"
       ],
       "Unlimited vaults": [
         "Unbegrenzte Tresore"
@@ -7003,7 +7018,7 @@
         "Adresse hinzugefügt"
       ],
       "Administrator privileges restored": [
-        "Administrator-Rechte wiederhergestellt"
+        "Administratorrechte wiederhergestellt"
       ],
       "Bug reported": [
         "Fehler gemeldet"
@@ -8055,7 +8070,7 @@
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Du musst ${ activateLink } den Organisationsschlüssel vor dem Hinzufügen einer E-Mail-Adresse zu einem nicht-privaten Mitglied."
+        "Du musst den Organisationsschlüssel ${ activateLink } bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse hinzufügst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"
