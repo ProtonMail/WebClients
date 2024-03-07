@@ -568,6 +568,9 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save changes": [
+        "Αποθήκευση αλλαγών"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
+      ],
+      "Share": [
+        "Κοινοποίηση"
       ],
       "Share file": [
         "Κοινοποίηση αρχείου"
@@ -2156,6 +2162,9 @@
       "A problem occurred, please try again.": [
         "Προέκυψε πρόβλημα. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Account does not exist": [
+        "Ο λογαριασμός δεν υπάρχει"
+      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
@@ -2318,6 +2327,9 @@
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Δεν είναι ${ BRAND_NAME } λογαριασμός"
+      ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
@@ -2399,6 +2411,9 @@
       "status page": [
         "σελίδα κατάστασης"
       ],
+      "The address might be misspelled": [
+        "Η διεύθυνση μπορεί να είναι κακογραμμένη"
+      ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
       ],
@@ -2470,6 +2485,9 @@
       ],
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
+      "Validation error": [
+        "Σφάλμα επικύρωσης"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
@@ -4720,9 +4738,6 @@
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
-      ],
-      "Downloading": [
-        "Γίνεται Λήψη"
       ],
       "Downloading ${ percentageValue }": [
         "Λήψη ${ percentageValue }"

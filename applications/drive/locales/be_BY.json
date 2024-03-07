@@ -46,6 +46,9 @@
       "Add note": [
         "Дадаць нататку"
       ],
+      "Add people or groups to share": [
+        "Дадаць людзе або групы для абагулення"
+      ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
@@ -574,6 +577,18 @@
       "Save": [
         "Захаваць"
       ],
+      "Save changes": [
+        "Захаваць змены"
+      ],
+      "Scan & Download": [
+        "Сканіраваць і спампаваць"
+      ],
+      "Scan & Download (${ count })": [
+        "Сканіраваць і спампаваць (${ count })"
+      ],
+      "Scan & Download all": [
+        "Сканіраваць і спампаваць усё"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -606,6 +621,9 @@
       ],
       "Settings": [
         "Налады"
+      ],
+      "Share": [
+        "Абагуліць"
       ],
       "Share file": [
         "Абагуліць файл"
@@ -2174,6 +2192,9 @@
       "A problem occurred, please try again.": [
         "Узнікла праблема. Паспрабуйце яшчэ раз."
       ],
+      "Account does not exist": [
+        "Уліковы запіс не існуе"
+      ],
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
       ],
@@ -2188,6 +2209,9 @@
       ],
       "Aliases could not be loaded": [
         "Немагчыма загрузіць псеўданімы"
+      ],
+      "Already a member of this share": [
+        "Ужо з'яўляецца ўдзельнікам гэтага абагулення"
       ],
       "An error occurred while loading alias options": [
         "Падчас загрузкі параметраў псеўданіма адбылася памылка"
@@ -2342,6 +2366,9 @@
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Не з'яўляецца ўліковым запісам ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Несапраўдны нумар"
       ],
@@ -2387,6 +2414,12 @@
       "Primary address key is not decrypted.": [
         "Ключ асноўнага адраса не расшыфраваны."
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Выдалены дублікат запрошанага: ${ joinedInvitee }",
+        "Выдаленыя дублікаты запрошаных: ${ joinedInvitee }",
+        "Выдаленыя дублікаты запрошаных: ${ joinedInvitee }",
+        "Выдаленыя дублікаты запрошаных: ${ joinedInvitee }"
+      ],
       "Report failed to be sent": [
         "Не ўдалося адправіць справаздачу"
       ],
@@ -2428,6 +2461,9 @@
       ],
       "status page": [
         "статус старонкі"
+      ],
+      "The address might be misspelled": [
+        "Магчыма, што адрас няправільны"
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -2500,6 +2536,9 @@
       ],
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "Validation error": [
+        "Памылка праверкі"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
@@ -3761,8 +3800,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэта папка бяспечна запампавана ${ emailAddress }."
       ],
+      "Download": [
+        "Спампаваць"
+      ],
       "Download ${ name } app": [
         "Спампаваць праграму для ${ name }"
+      ],
+      "Download anyway": [
+        "Усё роўна спампаваць"
       ],
       "Download canceled": [
         "Спампоўванне скасавана"
@@ -3824,6 +3869,9 @@
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
       ],
+      "End-to-End Encrypted": [
+        "Зашыфравана скразным метадам"
+      ],
       "Enter password": [
         "Увядзіце пароль"
       ],
@@ -3877,6 +3925,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Файл не мае подпісу. Мы не можам праверыць хто запампаваў ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Сканіраванне файла ў Drive"
       ],
       "File will not be updated": [
         "Файл не будзе абноўлены"
@@ -3977,6 +4028,9 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
+      "Invited": [
+        "Запрошаныя"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
       ],
@@ -4036,6 +4090,12 @@
       ],
       "Makes your account safer": [
         "Зрабіце свой уліковы запіс больш бяспечным"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвал",
+        "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалы",
+        "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў",
+        "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў"
       ],
       "Merged": [
         "Аб'яднана"
@@ -4223,6 +4283,9 @@
       "Report has been sent": [
         "Скарга была адпраўлена"
       ],
+      "Report link": [
+        "Справаздача спасылкі"
+      ],
       "Restore": [
         "Аднавіць"
       ],
@@ -4240,6 +4303,9 @@
       ],
       "Retry now": [
         "Паўтарыць зараз"
+      ],
+      "Scan issue": [
+        "Сканіраванне праблемы"
       ],
       "Search cannot be enabled in this browser": [
         "Немагчыма ўключыць пошук у гэтым браўзеры"
@@ -4294,6 +4360,15 @@
       ],
       "Share files with links": [
         "Абагуліць файлы з дапамогай спасылак"
+      ],
+      "Share via link settings": [
+        "Налады для абагулення праз спасылку"
+      ],
+      "Share with": [
+        "Абагуліць з дапамогай"
+      ],
+      "Share with anyone": [
+        "Абагуліць з усімі"
       ],
       "Shareable link for ${ boldNameText }": [
         "Агульнадаступная спасылка для ${ boldNameText }"
@@ -4423,6 +4498,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "${ DRIVE_APP_NAME } можа сканіраваць і блакіраваць шкоднасныя файлы, каб дапамагчы абараніць вас. Варта спампоўваць файлы толькі ў тых людзей, якім вы давяраеце."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
@@ -4763,6 +4841,12 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа праглядаць"
+      ],
+      "Anyone with the link": [
+        "Любы карыстальнік са спасылкай"
+      ],
       "App password": [
         "Пароль праграмы"
       ],
@@ -4859,6 +4943,9 @@
         "Выдаліць дыскі?",
         "Выдаліць дыскі?"
       ],
+      "Delete link": [
+        "Выдаліць спасылку"
+      ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
       ],
@@ -4877,9 +4964,6 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
-      "Downloading": [
-        "Спампоўванне"
-      ],
       "Downloading ${ percentageValue }": [
         "Спампавана ${ percentageValue }"
       ],
@@ -4888,6 +4972,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "напрыклад, Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Рэдактар​​"
       ],
       "Email": [
         "Электронная пошта"
@@ -4918,6 +5005,9 @@
       ],
       "Enter device name": [
         "Увядзіце назву прылады"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Сцерці гэту спасылку і выдаліць доступ для ўсіх"
       ],
       "Expired": [
         "Пратэрмінавана"
@@ -5102,6 +5192,9 @@
       "Set expiration date": [
         "Задаць тэрмін дзеяння"
       ],
+      "Set link password": [
+        "Задаць пароль спасылкі"
+      ],
       "Set recovery method": [
         "Задаць спосаб аднаўлення"
       ],
@@ -5138,6 +5231,9 @@
       "Theme": [
         "Тэма"
       ],
+      "This file is potentially infected": [
+        "Гэты файл патэнцыйна інфіцыраваны"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Гэта незваротна выдаліць усе файлы на вашым заблакіраваным дыску."
       ],
@@ -5170,6 +5266,9 @@
       ],
       "Verification code": [
         "Праверачны код"
+      ],
+      "Viewer": [
+        "Праглядальнік"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -6082,6 +6181,9 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Choose password": [
+        "Выберыце пароль"
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -6138,6 +6240,9 @@
       ],
       "Select": [
         "Выбраць"
+      ],
+      "Set date": [
+        "Задаць дату"
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
@@ -7383,6 +7488,9 @@
       "Settings": [
         "Налады"
       ],
+      "Share ${ name }": [
+        "Абагуліць ${ name }"
+      ],
       "Share via link": [
         "Абагуліць праз спасылку"
       ],
@@ -7554,6 +7662,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"
+      ],
+      "Shared end-to-end encrypted": [
+        "Абагулена са скразным шыфраваннем"
       ],
       "Show side panel": [
         "Паказаць бакавую панэль"

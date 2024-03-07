@@ -568,6 +568,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Save changes": [
+        "Wijzigingen opslaan"
+      ],
       "Search": [
         "Zoeken"
       ],
@@ -600,6 +603,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Share": [
+        "Delen"
       ],
       "Share file": [
         "Deel Bestand"
@@ -906,7 +912,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME } desktop-app"
       ]
     },
     "Bug category": {
@@ -2024,6 +2030,72 @@
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHRIJVING:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } werd geannuleerd."
+      ],
+      "All events in this series were updated.": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt. Hier is wat er veranderd is:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Deze afspraakgebeurtenis werd geannuleerd."
+      ],
+      "This event occurrence was updated.": [
+        "Deze afspraakgebeurtenis werd bijgewerkt."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Deze afspraak werd bijgewerkt. Dit is wat er veranderd is:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Deze afspraak werd bijgewerkt."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Deze afspraak is bijgewerkt. Dit is wat is veranderd:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "U bent uitgenodigd voor ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "TIJD:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "TIJD:\n${ formattedStart } (hele dag)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TIJD:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Verwijderd"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCATIE:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } afgewezen"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft voorlopig uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annulering van een afspraak op ${ formattedStart }"
@@ -2065,7 +2137,7 @@
         "Vroegtijdige toegang nieuwe applicaties functies"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME } desktop app"
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME }-desktopapp"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
@@ -2089,6 +2161,9 @@
       ],
       "A problem occurred, please try again.": [
         "Er is een probleem opgetreden, probeer het opnieuw."
+      ],
+      "Account does not exist": [
+        "Account bestaat niet"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -2252,6 +2327,9 @@
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Geen ${ BRAND_NAME }-account"
+      ],
       "Not a valid number": [
         "Geen geldig getal"
       ],
@@ -2333,6 +2411,9 @@
       "status page": [
         "statuspagina"
       ],
+      "The address might be misspelled": [
+        "Het adres is mogelijk verkeerd gespeld"
+      ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
@@ -2404,6 +2485,9 @@
       ],
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
+      "Validation error": [
+        "Validatiefout"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -3313,7 +3397,7 @@
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } versleuteld bestand",
-        "${ nbFile } versleuteld bestanden."
+        "${ nbFile } versleuteld bestanden"
       ],
       "${ nbFile } encrypted file...": [
         "${ nbFile } versleuteld bestand...",
@@ -3709,7 +3793,7 @@
         "Download de app om foto's van uw telefoon te back-uppen."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Download de desktop app om bestanden van uw computer te synchroniseren."
+        "Download de desktopapp om bestanden van uw computer te synchroniseren."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Leer ${ DRIVE_APP_NAME } kennen en verdien uw 3 GB opslagbonus! Neem vandaag actie."
@@ -4655,9 +4739,6 @@
       "Download anyway": [
         "Toch downloaden"
       ],
-      "Downloading": [
-        "Downloaden"
-      ],
       "Downloading ${ percentageValue }": [
         "Downloaden ${ percentageValue }"
       ],
@@ -5109,10 +5190,10 @@
     },
     "Mimetype": {
       "3GPP audio/video container": [
-        "3GPP-audio/video container"
+        "3GPP-audio/videocontainer"
       ],
       "3GPP2 audio/video container": [
-        "3GPP2-audio/video container"
+        "3GPP2-audio/videocontainer"
       ],
       "7-zip archive": [
         "7-zip-archief"
@@ -5914,7 +5995,7 @@
         "Open ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Bescherm uw online identiteit"
+        "Bescherm uw online-identiteit"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
