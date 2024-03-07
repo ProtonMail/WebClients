@@ -48,8 +48,8 @@ export type CbCardConfig = {
     };
 } & ChargebeeInstanceConfiguration;
 
-export type ChargbeeCssVariable = keyof CbCardConfig['cssVariables'];
-export const chargebeeCssVariables: ChargbeeCssVariable[] = [
+export type ChargebeeCssVariable = keyof CbCardConfig['cssVariables'];
+export const chargebeeCssVariables: ChargebeeCssVariable[] = [
     '--signal-danger',
     '--border-radius-md',
     '--border-norm',
