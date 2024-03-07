@@ -1,15 +1,14 @@
 import * as config from 'proton-pass-extension/app/config';
 import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
 
-import { generateKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
+import { EXTENSION_KEY } from './constants';
 import { createWorkerContext } from './context';
 
 if (BUILD_TARGET === 'chrome') {
@@ -32,11 +31,6 @@ if (BUILD_TARGET === 'chrome') {
     };
 }
 
-/* The `EXTENSION_KEY` is a random & unique identifier for the current
- * extension runtime. It is currently used for verifiying the origin of
- * messages sent through unsecure channels (ie: iframe postmessaging).
- * see: `IFrameContextProvider.tsx` */
-const EXTENSION_KEY = uint8ArrayToBase64String(generateKey());
 WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
 if (ENV === 'development') {
