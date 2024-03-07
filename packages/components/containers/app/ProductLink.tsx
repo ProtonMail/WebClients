@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
+import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
@@ -12,23 +13,20 @@ import {
     getIsSSOVPNOnlyAccount,
     getRequiresAddressSetup,
 } from '@proton/shared/lib/keys';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, SettingsLink } from '../../components';
 
 export const apps = (user?: UserModel) => {
     if (getIsSSOVPNOnlyAccount(user)) {
-        return [APPS.PROTONVPN_SETTINGS];
+        return getSSOVPNOnlyAccountApps();
     }
     if (getIsPublicUserWithoutProtonAddress(user)) {
-        return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE];
+        return getPublicUserProtonAddressApps();
     }
     if (isElectronApp) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
     }
-    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].filter(
-        isTruthy
-    );
+    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS];
 };
 
 interface ProductLinkProps {
