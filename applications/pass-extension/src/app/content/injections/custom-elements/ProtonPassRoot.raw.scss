@@ -1,3 +1,18 @@
+@import '../styles/reset';
+
+:host {
+	@include reset;
+
+	position: absolute !important;
+	inline-size: 100% !important;
+	border: 0 !important;
+	z-index: unset !important;
+	inset: unset !important;
+	inset-block-start: 0 !important;
+	inset-inline-start: 0 !important;
+	block-size: 0 !important;
+}
+
 iframe {
 	position: absolute;
 	inline-size: var(--frame-width) !important;

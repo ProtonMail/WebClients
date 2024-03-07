@@ -1,11 +1,12 @@
 import type { FC, ReactNode } from 'react';
 
+import type { IFrameCloseOptions, IFrameMessage, NotificationActions } from 'proton-pass-extension/app/content/types';
+import { NotificationAction } from 'proton-pass-extension/app/content/types';
+
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types';
 
-import type { IFrameCloseOptions, IFrameMessage, NotificationActions } from '../../../../types';
-import { NotificationAction } from '../../../../types';
 import { AutofillOTP } from './AutofillOTP';
 import { Autosave } from './Autosave';
 

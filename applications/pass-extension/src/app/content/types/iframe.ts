@@ -36,11 +36,12 @@ export interface IFrameApp<A = any> {
     close: (options?: IFrameCloseOptions) => void;
     destroy: () => void;
     getPosition: () => IFramePosition;
-    init: (payload: IFrameInitPayload) => void;
+    ensureLoaded: () => Promise<void>;
+    ensureReady: () => Promise<void>;
+    init: (port: Runtime.Port, payload: IFrameInitPayload) => void;
     open: (action: A, scrollRef?: HTMLElement) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
     sendPortMessage: (message: IFrameMessage) => void;
-    setPort: (port: Runtime.Port) => void;
     updatePosition: () => void;
 }
 
@@ -48,9 +49,8 @@ export interface IFrameAppService<T extends { action: any }> {
     close: () => IFrameAppService<T>;
     destroy: () => void;
     getState: () => IFrameState<T['action']>;
-    init: (payload: IFrameInitPayload) => IFrameAppService<T>;
+    init: (port: Runtime.Port, payload: IFrameInitPayload) => IFrameAppService<T>;
     open: (options: T) => IFrameAppService<T>;
-    setPort: (port: Runtime.Port) => IFrameAppService<T>;
 }
 
 export enum IFrameMessageType {

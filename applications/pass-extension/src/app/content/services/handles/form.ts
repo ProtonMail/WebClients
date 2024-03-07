@@ -109,12 +109,12 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
      * and stacked forms effectively without looking for unprocessed fields
      * on the full DOM as this may lead to too many detection triggers */
     const onFormResize = debounce(
-        withContext(({ service: { formManager } }) => {
+        withContext((ctx) => {
             const fields = formHandle.getFields();
             fields.forEach((field) => field.icon?.reposition());
 
             if (options.form.parentElement === null || hasUnprocessedFields(options.form.parentElement)) {
-                void formManager.detect({ reason: 'NewFormFieldsOnResize' });
+                void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
             }
         }),
         50

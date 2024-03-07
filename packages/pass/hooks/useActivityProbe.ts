@@ -4,14 +4,14 @@ export type ActivityProbe = ReturnType<typeof createActivityProbe>;
 
 const ACTIVITY_PROBE_TIMEOUT = 5_000;
 
-const createActivityProbe = (onProbe: () => void) => {
+export const createActivityProbe = (onProbe: () => void, timeout: number = ACTIVITY_PROBE_TIMEOUT) => {
     const timer: { interval?: ReturnType<typeof setInterval> } = {};
 
     const cancel = () => clearInterval(timer?.interval);
 
     const start = () => {
         cancel();
-        timer.interval = setInterval(onProbe, ACTIVITY_PROBE_TIMEOUT);
+        timer.interval = setInterval(onProbe, timeout);
         void onProbe();
     };
 

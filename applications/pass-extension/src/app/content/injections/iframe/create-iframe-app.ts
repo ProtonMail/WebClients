@@ -1,3 +1,17 @@
+import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
+import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
+import type {
+    IFrameApp,
+    IFrameCloseOptions,
+    IFrameEndpoint,
+    IFrameInitPayload,
+    IFrameMessageWithSender,
+    IFramePortMessageHandler,
+    IFramePosition,
+    IFrameSecureMessage,
+    IFrameState,
+} from 'proton-pass-extension/app/content/types/iframe';
+import { type IFrameMessage, IFrameMessageType } from 'proton-pass-extension/app/content/types/iframe';
 import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -11,28 +25,17 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { merge } from '@proton/pass/utils/object/merge';
 
-import type {
-    IFrameApp,
-    IFrameCloseOptions,
-    IFrameEndpoint,
-    IFrameInitPayload,
-    IFrameMessageWithSender,
-    IFramePortMessageHandler,
-    IFramePosition,
-    IFrameSecureMessage,
-    IFrameState,
-} from '../../types/iframe';
-import { type IFrameMessage, IFrameMessageType } from '../../types/iframe';
-import { createIframeRoot } from './create-iframe-root';
+import { withContext } from '../../context/context';
 
 type CreateIFrameAppOptions<A> = {
+    animation: 'slidein' | 'fadein';
+    backdropClose: boolean;
+    classNames?: string[];
     id: IFrameEndpoint;
     src: string;
-    animation: 'slidein' | 'fadein';
-    classNames?: string[];
-    backdropClose: boolean;
+    root: ProtonPassRoot;
     backdropExclude?: () => HTMLElement[];
-    onError?: () => void;
+    onError?: (error: unknown) => void;
     onOpen?: (state: IFrameState<A>) => void;
     onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
     position: (iframeRoot: HTMLElement) => Partial<Rect>;
@@ -40,11 +43,12 @@ type CreateIFrameAppOptions<A> = {
 };
 
 export const createIFrameApp = <A>({
+    animation,
+    backdropClose,
+    classNames = [],
     id,
     src,
-    animation,
-    classNames = [],
-    backdropClose,
+    root,
     backdropExclude,
     onError,
     onOpen,
@@ -52,18 +56,21 @@ export const createIFrameApp = <A>({
     position,
     dimensions,
 }: CreateIFrameAppOptions<A>): IFrameApp<A> => {
-    const iframeRoot = createIframeRoot();
     const portMessageHandlers: Map<IFrameMessageType, IFramePortMessageHandler> = new Map();
 
     const state: IFrameState<A> = {
-        visible: false,
-        ready: false,
+        action: null,
+        framePort: null,
         loaded: false,
         port: null,
-        framePort: null,
         position: { top: -1, left: -1, right: -1, bottom: -1, zIndex: -1 },
-        action: null,
+        ready: false,
+        visible: false,
     };
+
+    const ensureStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
+    const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: ensureStale }, 50);
+    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: ensureStale }, 50);
 
     const listeners = createListenerStore();
 
@@ -71,29 +78,32 @@ export const createIFrameApp = <A>({
         type: 'iframe',
         classNames,
         attributes: { src },
-        parent: iframeRoot,
+        parent: root,
         shadow: true,
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
-    iframe.addEventListener('load', () => (state.loaded = true), { once: true });
+
+    const unlisten = listeners.addListener(window, 'message', (event) => {
+        if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
+            state.loaded = true;
+            unlisten();
+        }
+    });
 
     /* Securing the posted message's allowed target origins.
      * Ensure the iframe has been correctly loaded before sending
      * out any message: the iframe.contentWindow::origin may be
      * incorrect otherwise */
-    const sendSecurePostMessage = async (message: IFrameMessage) => {
-        await sendMessage.onSuccess(
-            contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }),
-            async ({ key }) =>
-                waitUntil(() => state.loaded, 100)
-                    .then(() => {
-                        const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
-                        iframe.contentWindow?.postMessage(secureMessage, iframe.src);
-                    })
-                    .catch(onError)
-        );
-    };
+    const sendSecurePostMessage = (message: IFrameMessage) =>
+        sendMessage
+            .onSuccess(contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }), async ({ key }) =>
+                ensureLoaded().then(() => {
+                    const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
+                    iframe.contentWindow?.postMessage(secureMessage, iframe.src);
+                })
+            )
+            .catch((e) => onError?.(e));
 
     /* In order to communicate with the iframe, we're leveraging
      * the worker's MessageBroker port-forwarding capabilities.
@@ -102,9 +112,9 @@ export const createIFrameApp = <A>({
      * to directly open a port with the current tab */
     const sendPortMessage = (rawMessage: IFrameMessage) => {
         const message: IFrameMessageWithSender = { ...rawMessage, sender: 'contentscript' };
-        void waitUntil(() => state.ready, 100)
+        return ensureReady()
             .then(() => state.port?.postMessage(portForwardingMessage(state.framePort!, message)))
-            .catch(onError);
+            .catch((e) => onError?.(e));
     };
 
     /* As we are now using a single port for the whole content-script,
@@ -137,7 +147,7 @@ export const createIFrameApp = <A>({
         iframe.style.setProperty(`--frame-height`, pixelEncoder(height));
     };
 
-    const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(iframeRoot)));
+    const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(root)));
 
     const close = (options: IFrameCloseOptions = {}) => {
         if (state.visible) {
@@ -151,7 +161,7 @@ export const createIFrameApp = <A>({
                 state.visible = false;
                 state.action = null;
 
-                sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
+                void sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
             }
         }
     };
@@ -168,7 +178,7 @@ export const createIFrameApp = <A>({
                 listeners.addListener(window, 'mousedown', (event) => close({ event, discard: true, refocus: false }));
             }
 
-            sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
+            void sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
 
             iframe.classList.add('visible');
             setIframeDimensions(dimensions(state));
@@ -180,7 +190,8 @@ export const createIFrameApp = <A>({
     const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) =>
         message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message);
 
-    const setPort = (port: Runtime.Port) => {
+    const init = async (port: Runtime.Port, payload: IFrameInitPayload) => {
+        state.port?.disconnect();
         state.port = port;
         state.port.onMessage.addListener(onMessageHandler);
         state.port.onDisconnect.addListener(() => (state.ready = false));
@@ -188,16 +199,19 @@ export const createIFrameApp = <A>({
         void sendSecurePostMessage({
             type: IFrameMessageType.IFRAME_INJECT_PORT,
             payload: { port: port.name },
-        });
+        }).then(() =>
+            sendPortMessage({
+                type: IFrameMessageType.IFRAME_INIT,
+                payload,
+            })
+        );
     };
-
-    const init = (payload: IFrameInitPayload) => sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload });
 
     const destroy = () => {
         close({ discard: false, refocus: false });
         listeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
-        safeCall(() => iframeRoot.removeChild(iframe))();
+        safeCall(() => root.removeChild(iframe))();
         state.port = null;
     };
 
@@ -220,10 +234,11 @@ export const createIFrameApp = <A>({
         destroy,
         getPosition,
         init,
+        ensureLoaded,
+        ensureReady,
         open,
         registerMessageHandler,
         sendPortMessage,
-        setPort,
         updatePosition,
     };
 };
