@@ -64,26 +64,6 @@ const handleFrameVisibilityChange = () => {
     }
 };
 
-const loadCustomElements = async () =>
-    new Promise<void>((resolve, reject) => {
-        const script = document.createElement('script');
-
-        script.src = browser.runtime.getURL('elements.js');
-        script.setAttribute('public-path', browser.runtime.getURL('/'));
-
-        script.addEventListener('load', () => {
-            script.remove();
-            resolve();
-        });
-
-        script.addEventListener('error', () => {
-            script.remove();
-            reject('Could not load custom elements');
-        });
-
-        (document.head || document.documentElement).appendChild(script);
-    });
-
 /* This IIFE is responsible for handling every new content-script injection. It starts
  * by cleaning up the DOM (in case of concurrent scripts running) and unloading any client
  * content-scripts. Depending on the current visibility state, either the client content
@@ -93,7 +73,7 @@ const loadCustomElements = async () =>
  * improving performance (ie: run the form detection assessment here) */
 void (async () => {
     try {
-        // Prevent injection on non-HTML documents, for example XML files
+        /* Prevent injection on non-HTML documents, for example XML files */
         const documentElement = document.ownerDocument || document;
         if (!documentElement?.body) return;
 
@@ -103,9 +83,6 @@ void (async () => {
             window.addEventListener('load', () => resolve(), { once: true });
         });
 
-        DOMCleanUp();
-
-        await loadCustomElements();
         await unloadClient();
 
         if (!isMainFrame()) {
