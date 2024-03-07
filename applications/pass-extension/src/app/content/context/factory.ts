@@ -10,6 +10,7 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
@@ -17,10 +18,10 @@ import type { CSContextState, ContentScriptContext } from './types';
 export const createContentScriptContext = (options: {
     scriptId: string;
     mainFrame: boolean;
+    elements: PassElementsConfig;
     destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
     const state: CSContextState = {
-        active: true,
         localID: undefined,
         loggedIn: false,
         status: AppStatus.IDLE,
@@ -31,7 +32,10 @@ export const createContentScriptContext = (options: {
     const featureFlags: FeatureFlagState = {};
 
     const context: ContentScriptContext = CSContext.set({
+        elements: options.elements,
         mainFrame: options.mainFrame,
+        scriptId: options.scriptId,
+
         service: {
             autofill: createAutofillService(),
             autosave: createAutosaveService(),
@@ -47,7 +51,6 @@ export const createContentScriptContext = (options: {
             }),
             iframe: createIFrameService(),
         },
-        scriptId: options.scriptId,
 
         destroy: options.destroy,
         getExtensionContext: () => ExtensionContext.get(),
