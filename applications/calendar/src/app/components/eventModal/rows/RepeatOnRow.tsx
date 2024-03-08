@@ -52,9 +52,10 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) =
                             id={dayLong}
                             checked={checked}
                             dayAbbreviation={dayAbbreviation}
-                            dayLong={dayLong}
+                            dayLong={day === currentDay ? c('Tooltip').t`Change start date to unselect` : dayLong}
                             onChange={() => handleToggleDay(day)}
                             aria-describedby="label-event-weekly-repeat"
+                            disabled={day === currentDay}
                         />
                     );
                 })}
