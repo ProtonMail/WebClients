@@ -49,7 +49,7 @@ const config: ForgeConfig = {
         {
             name: "@electron-forge/maker-squirrel",
             config: {
-                name: "ProtonMail",
+                name: "proton_mail", // Avoids clash with ProtonMail folder used by Bridge in appData
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
