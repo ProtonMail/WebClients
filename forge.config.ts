@@ -87,7 +87,7 @@ const config: ForgeConfig = {
             config: {
                 options: {
                     bin: getName(),
-                    icon: `${__dirname}/assets/icons/${getIcon()}.png`,
+                    icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
                     homepage: "https://proton.me/",
                     categories: ["Utility"],
                     mimeType: ["x-scheme-handler/mailto"],
@@ -99,7 +99,7 @@ const config: ForgeConfig = {
             config: {
                 options: {
                     bin: getName(),
-                    icon: `${__dirname}/assets/icons/${getIcon()}.png`,
+                    icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
                     maintainer: "Proton",
                     homepage: "https://proton.me/",
                     categories: ["Utility"],
