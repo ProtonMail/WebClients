@@ -1,3 +1,10 @@
+### Version 1.15.0
+
+-   Add item history management
+-   Make bulk item selection only trigger on Ctrl/Cmd + click
+-   Fix empty vault placeholder buttons click area
+-   Improve items list placeholder UX
+
 ### Version 1.14.1
 
 -   Improve service-worker registration phase
