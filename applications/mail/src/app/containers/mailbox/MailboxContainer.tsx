@@ -34,6 +34,7 @@ import clsx from '@proton/utils/clsx';
 import SpotlightEmailForwarding from 'proton-mail/components/header/SpotlightEmailForwarding';
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
+import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
 import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -140,6 +141,9 @@ const MailboxContainer = ({
 
     // Open a composer when the url contains a mailto query
     useMailtoHash({ isSearch });
+
+    // Opens the email details when the url contains a elementID query
+    useInboxDesktopElementId({ isSearch });
 
     const handlePage = useCallback(
         (pageNumber: number) => {
