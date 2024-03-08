@@ -9,7 +9,7 @@ import { type RequestEntryFromAction, useActionRequest } from './useActionReques
 
 export const useValidateInviteAddresses = (shareId: string) => {
     /** keeps track of valid/invalid email addresses in a map
-     * in order to only request new emails to vaslidate*/
+     * in order to only request new emails to validate*/
     const cache = useRef<Map<string, boolean>>(new Map());
     const pending = useRef<Awaiter<void>>();
 
