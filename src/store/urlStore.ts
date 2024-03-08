@@ -1,13 +1,25 @@
 import Logger from "electron-log";
 import Store from "electron-store";
 import { z } from "zod";
+import { getSettings, saveSettings } from "./settingsStore";
 
 const store = new Store();
 
+const settings = getSettings();
+
+const urlValidators = (subdomain: string) => {
+    return z
+        .string()
+        .url()
+        .includes(subdomain)
+        .includes("proton")
+        .refine((value) => !value.endsWith("/"));
+};
+
 const urlSchema = z.object({
-    account: z.string().url().includes("account").includes("proton"),
-    mail: z.string().url().includes("mail").includes("proton"),
-    calendar: z.string().url().includes("calendar").includes("proton"),
+    account: urlValidators("account"),
+    mail: urlValidators("mail"),
+    calendar: urlValidators("calendar"),
 });
 
 export type URLConfig = z.infer<typeof urlSchema>;
@@ -19,6 +31,7 @@ export const defaultAppURL: URLConfig = {
 };
 
 const validateURL = (override?: unknown): null | URLConfig => {
+    saveSettings({ ...settings, overrideError: false });
     if (!override) {
         return null;
     }
@@ -27,6 +40,8 @@ const validateURL = (override?: unknown): null | URLConfig => {
         return urlSchema.parse(override);
     } catch (error) {
         Logger.error("Invalid URL override", error);
+        saveSettings({ ...settings, overrideError: true });
+
         return null;
     }
 };

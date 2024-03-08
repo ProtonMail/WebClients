@@ -10,7 +10,7 @@ import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import { getTrialEndURL } from "../urls/trial";
 import { getWindowConfig } from "../view/windowHelpers";
-import { handleBeforeHandle } from "./beforeUnload";
+import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 
 const config = getConfig();

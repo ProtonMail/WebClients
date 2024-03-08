@@ -4,6 +4,7 @@ import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
+import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
 import { checkForUpdates } from "./update";
@@ -20,6 +21,7 @@ import {
     isUpgradeURL,
     isUpsellURL,
 } from "./utils/urls/urlTests";
+import { urlOverrideError } from "./utils/view/dialogs";
 import {
     getCalendarView,
     getMailView,
@@ -80,6 +82,10 @@ if (!gotTheLock) {
     });
 
     app.whenReady().then(() => {
+        if (getSettings().overrideError) {
+            urlOverrideError();
+        }
+
         const secureSession = session.fromPartition(PARTITION, {
             cache: false,
         });
