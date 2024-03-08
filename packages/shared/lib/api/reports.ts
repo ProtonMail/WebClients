@@ -24,7 +24,7 @@ export const reportBug = (data: BugPayload, input?: 'form') => ({
     data,
 });
 
-export const closeTicket = (ticketID: number, RequesterID: number, CreatedAt: string, BrandID: number) => ({
+export const closeTicket = (ticketID: number, RequesterID: number, CreatedAt: string, BrandID?: number) => ({
     method: 'delete',
     url: `core/v4/reports/bug/${ticketID}`,
     params: {

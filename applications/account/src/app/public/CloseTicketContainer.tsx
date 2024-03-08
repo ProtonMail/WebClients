@@ -37,19 +37,19 @@ const CloseTicketContainer = () => {
         const ticketID = params.get('ticket_id');
         const requesterID = params.get('requester_id');
         const createdAt = params.get('created_at');
-        const brandID = params.get('brand_id');
+        const brandID = params.get('brand_id'); // BrandID is currently not available in the link generation part in Zendesk
 
-        const run = async (ticketID: string, requesterID: string, createdAt: string, brandID: string) => {
+        const run = async (ticketID: string, requesterID: string, createdAt: string, brandID: string | null) => {
             try {
                 // They are all strings but the API expects numbers for ticketID, requesterID, and brandID
-                await silentApi(closeTicket(+ticketID, +requesterID, createdAt, +brandID));
+                await silentApi(closeTicket(+ticketID, +requesterID, createdAt, brandID ? +brandID : undefined));
             } catch (error) {
                 handleError(error);
                 setError({ type: ErrorType.API });
             }
         };
 
-        if (ticketID && requesterID && createdAt && brandID) {
+        if (ticketID && requesterID && createdAt) {
             void withLoading(run(ticketID, requesterID, createdAt, brandID));
         } else {
             setError({ type: ErrorType.MissingParameters });
