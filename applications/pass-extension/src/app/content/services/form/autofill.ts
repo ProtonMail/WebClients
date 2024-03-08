@@ -36,13 +36,8 @@ export const createAutofillService = () => {
         }
     });
 
-    const sync = (data: AutofillResult): void => {
+    const sync = (data: MaybeNull<AutofillResult>): void => {
         state.cache = data;
-        onAutofillChange();
-    };
-
-    const reset = () => {
-        state.cache = null;
         onAutofillChange();
     };
 
@@ -166,7 +161,7 @@ export const createAutofillService = () => {
         autofillOTP,
         getState: () => state.cache,
         reconciliate,
-        reset,
+        reset: () => sync(null),
         sync,
     };
 };
