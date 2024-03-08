@@ -26,11 +26,9 @@ import type {
     UniqueItem,
 } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
-import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { invert, truthy } from '@proton/pass/utils/fp/predicates';
-import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
@@ -244,17 +242,10 @@ const autofillCandidatesSelector = createSelector(
                 sortOn: 'lastUseTime',
             })(state),
     ],
-    (domainMatches, subdomainMatches) => {
-        const [lastUsed, rest] = partition(
-            [
-                ...subdomainMatches /* push subdomain matches on top */,
-                ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
-            ],
-            ({ lastUseTime }) => Boolean(lastUseTime)
-        );
-
-        return lastUsed.sort(sortOn('lastUseTime', 'DESC')).concat(rest);
-    }
+    (domainMatches, subdomainMatches) => [
+        ...subdomainMatches /* push subdomain matches on top */,
+        ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
+    ]
 );
 
 export const selectAutofillCandidates = (options: SelectAutofillCandidatesOptions) => (state: State) => {
