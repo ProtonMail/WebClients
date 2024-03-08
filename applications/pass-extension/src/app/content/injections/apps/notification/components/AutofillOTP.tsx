@@ -30,16 +30,14 @@ export const AutofillOTP: FC<Props> = ({ hostname, item, visible, onMessage, onC
 
     const [otp, percent] = usePeriodicOtpCode({
         generate: generateOTP,
-        payload: { ...item, type: 'item' },
+        payload: { type: 'item', item },
     });
 
     useEffect(() => {
         void sendMessage(
             contentScriptMessage({
                 type: WorkerMessageType.TELEMETRY_EVENT,
-                payload: {
-                    event: createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {}),
-                },
+                payload: { event: createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {}) },
             })
         );
     }, []);

@@ -1,14 +1,14 @@
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
+import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
+import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
+import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { UpsellRef } from '@proton/pass/constants';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { UnsafeItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
-import { TextAreaReadonly } from '../../legacy/TextAreaReadonly';
-import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField';
-import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { OTPValueControl } from './OTPValueControl';
 import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';
@@ -16,11 +16,10 @@ import { ValueControl } from './ValueControl';
 type ExtraFieldsControlProps = {
     extraFields: UnsafeItemExtraField[];
     itemId: string;
-    revisionNumber: number;
     shareId: string;
 };
 
-export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, revisionNumber, shareId }) => {
+export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
@@ -39,18 +38,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                     return isEmptyString(data.totpUri) ? (
                         <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
                     ) : (
-                        <OTPValueControl
-                            key={key}
-                            label={fieldName}
-                            payload={{
-                                index,
-                                itemId,
-                                revisionNumber,
-                                shareId,
-                                totpUri: data.totpUri,
-                                type: 'extraField',
-                            }}
-                        />
+                        <OTPValueControl key={key} label={fieldName} payload={{ totpUri: data.totpUri, type: 'uri' }} />
                     );
                 case 'hidden':
                 case 'text':
