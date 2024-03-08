@@ -89,7 +89,7 @@ const options: RootSagaOptions = {
         if (res.ok) {
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.i18n.setLocale(selectLocale(store.getState())).catch(noop);
-
+            ctx.service.autofill.sync();
             store.dispatch(startEventPolling());
             store.dispatch(draftsGarbageCollect());
             WorkerMessageBroker.buffer.flush();
@@ -115,7 +115,7 @@ const options: RootSagaOptions = {
         ),
 
     /* Update the extension's badge count on every item state change */
-    onItemsUpdated: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
+    onItemsUpdated: withContext((ctx) => ctx.service.autofill.sync()),
 
     onLocaleUpdated: withContext(async (ctx, locale) => ctx.service.i18n.setLocale(locale)),
 
