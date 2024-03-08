@@ -15,6 +15,7 @@ interface Props extends OfferProps {
 
 const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, ref) => {
     const { popular, mobileOrder } = props.deal;
+    const hideDiscountBubble = props.offer?.hideDiscountBubble;
     const discount = getDiscountWithCoupon(props.deal);
     const isMostPopular = popular === 1;
     const isSecondMostPopular = popular === 2;
@@ -40,7 +41,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                     isFourthMostPopularOnMobile && 'offer-plan-container--fourthMostPopularOnMobile',
                 ])}
             >
-                {discount ? (
+                {discount && !hideDiscountBubble ? (
                     <span
                         className={clsx([
                             'text-semibold absolute text-center offer-percentage py-1 px-4',
