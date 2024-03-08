@@ -1,3 +1,12 @@
+### Version 1.15.0
+
+-   Improve performance of autofill/autosuggest/autosave prompts
+-   Fix injected custom elements registration phase breaking certain websites
+-   Add item history management
+-   Make bulk item selection only trigger on Ctrl/Cmd + click
+-   Fix empty vault placeholder buttons click area
+-   Improve items list placeholder UX
+
 ### Version 1.14.1
 
 -   Preserve session when opening web-app from extension when possible
