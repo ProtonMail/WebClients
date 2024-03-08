@@ -109,12 +109,12 @@
 		margin-block: auto;
 	}
 
-	.delight-item-container--row & {
+	.item-container--row & {
 		margin-inline-start: rem(-1);
-		margin-block: rem(-3);
+		margin-block: auto;
 	}
 
-	.delight-item-container--column & {
+	.item-container--column & {
 		margin-inline-start: rem(-2);
 		margin-block: rem(-3);
 	}

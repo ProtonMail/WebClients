@@ -48,7 +48,6 @@ interface Props {
     index: number;
     breakpoints: Breakpoints;
     onFocus: (index: number) => void;
-    isDelightMailListEnabled?: boolean;
     showAttachmentThumbnails?: boolean;
     userSettings: UserSettings;
     mailSettings: MailSettings;
@@ -78,7 +77,6 @@ const Item = ({
     userSettings,
     labels,
     showAttachmentThumbnails,
-    isDelightMailListEnabled,
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
@@ -149,13 +147,8 @@ const Item = ({
     );
 
     return (
-        <div
-            className={clsx(
-                'item-container-wrapper relative',
-                !isDelightMailListEnabled && (isCompactView || !columnLayout) && 'border-bottom border-weak'
-            )}
-            data-shortcut-target="item-container-wrapper"
-        >
+        <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -163,17 +156,8 @@ const Item = ({
                 onDragStart={(event) => onDragStart(event, element)}
                 onDragEnd={onDragEnd}
                 className={clsx([
-                    ...(isDelightMailListEnabled
-                        ? [
-                              'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
-                              columnLayout
-                                  ? 'delight-item-container delight-item-container--column'
-                                  : 'delight-item-container delight-item-container--row',
-                          ]
-                        : [
-                              'flex-1 flex flex-nowrap cursor-pointer',
-                              columnLayout ? 'item-container item-container-column' : 'item-container-row',
-                          ]),
+                    'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
+                    columnLayout ? 'item-container item-container--column' : 'item-container item-container--row',
                     isSelected && 'item-is-selected',
                     !unread && 'read',
                     unread && 'unread',
@@ -184,6 +168,7 @@ const Item = ({
                 style={{ '--index': index }}
                 ref={elementRef}
                 onFocus={handleFocus}
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
                 tabIndex={0}
                 data-element-id={element.ID}
                 data-shortcut-target="item-container"
@@ -200,10 +185,8 @@ const Item = ({
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr-3 stop-propagation"
-                    normalClassName={
-                        isDelightMailListEnabled ? 'mr-3' : clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])
-                    }
-                    variant={isDelightMailListEnabled ? 'small' : undefined}
+                    normalClassName="mr-3"
+                    variant="small"
                 />
                 <ItemLayout
                     isCompactView={isCompactView}
@@ -222,7 +205,6 @@ const Item = ({
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
                     showAttachmentThumbnails={showAttachmentThumbnails}
-                    isDelightMailListEnabled={isDelightMailListEnabled}
                 />
             </div>
         </div>
