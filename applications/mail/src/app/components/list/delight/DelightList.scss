@@ -2,7 +2,7 @@
 
 @import '~@proton/styles/scss/lib';
 
-.delight-items-column-list {
+.items-column-list {
 	contain: content;
 	background-color: var(--background-lowered, var(--bg-weak));
 
@@ -19,28 +19,28 @@
 	}
 }
 
-.delight-items-column-list-inner {
+.items-column-list-inner {
 	border-inline-end: 1px solid var(--border-weak);
 	min-block-size: 100%;
 }
 
-html:not(.feature-scrollbars-off) .delight-items-column-list-container {
+html:not(.feature-scrollbars-off) .items-column-list-container {
 	&::-webkit-scrollbar-track {
 		border-inline-start: 1px solid var(--border-weak);
 	}
 }
 
 // prevent double border on the right
-.main-area--row-mode .delight-items-column-list-inner {
+.main-area--row-mode .items-column-list-inner {
 	margin-inline-end: -1px;
 }
 
-.delight-items-column-list--mobile {
+.items-column-list--mobile {
 	inline-size: 100%;
 }
 
-.delight-items-column-list,
-.delight-items-column-list--mobile,
-.delight-view-column-detail {
+.items-column-list,
+.items-column-list--mobile,
+.view-column-detail {
 	block-size: 100%;
 }
