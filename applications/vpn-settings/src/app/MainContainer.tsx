@@ -307,7 +307,9 @@ const MainContainer: FunctionComponent = () => {
                                         title={routes.sso.title || routes.sso.text}
                                         description={routes.sso.description}
                                     >
-                                        <SsoPage />
+                                        <SubscriptionModalProvider app={app}>
+                                            <SsoPage />
+                                        </SubscriptionModalProvider>
                                     </PrivateMainSettingsAreaBase>
                                 </Route>
                             )}
