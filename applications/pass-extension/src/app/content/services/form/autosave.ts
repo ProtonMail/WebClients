@@ -63,10 +63,12 @@ export const createAutosaveService = () => {
 
             if (isFormEntryPromptable(submission) && formTypeChangedOrRemoved) return promptAutoSave(submission);
 
-            /* if the form type is still detected on the current page :
-             * only stash the form submission if it is not "partial". This
-             * avois losing form data on multi-step forms */
-            if (!formTypeChangedOrRemoved && !partial) {
+            /* Stash the form submission if it meets the following conditions:
+             * - The form type is still detected on the current page.
+             * - The submission is not "partial" or does not have a username value.
+             * This prevents data loss on multi-step forms while properly stashing
+             * when navigating back and forth on such forms. */
+            if (submissionTypeMatch && (!partial || !submission.data.username)) {
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.FORM_ENTRY_STASH,
