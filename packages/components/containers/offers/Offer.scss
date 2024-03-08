@@ -70,6 +70,15 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		@include media('<=small') {
 			margin-inline: 0;
 		}
+
+		// special case when deal title is not displayed
+		&--no-deal-title .offer-main-title {
+			margin-block-start: 1.5em;
+		}
+
+		&--left-banner .offer-plan-container {
+			max-inline-size: 30em; // to use more space for features when only 1 plan with a side image
+		}
 	}
 
 	&-modal:not(.offer-modal--one-deal) {
@@ -90,11 +99,7 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	// side banner offer
 	&-side-image-container,
 	&-side-image {
-		min-inline-size: 400px;
-
-		@include media('<=#{em(1100, 16)}') {
-			min-inline-size: 300px;
-		}
+		min-inline-size: 300px;
 		@include media('<=#{em(900, 16)}') {
 			min-inline-size: 250px;
 		}
@@ -266,6 +271,12 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 					position: static;
 				}
 			}
+		}
+
+		&--suffix-new-line .suffix {
+			margin-inline-start: 0;
+			display: block;
+			inline-size: 100%;
 		}
 	}
 

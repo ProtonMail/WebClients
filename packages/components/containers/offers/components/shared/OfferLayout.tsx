@@ -11,13 +11,15 @@ interface Props extends OfferProps {
 const OfferLayout = ({ children, offer }: Props) => {
     const hasMultipleDeals = offer?.deals?.length > 1;
     const hasFourDeals = offer?.deals?.length > 3;
+    const hideDealTitle = offer?.hideDealTitle;
     const { sideImage, sideImage2x, bannerImage, bannerImage2x } = offer?.images || {};
     return (
         <div
             className={clsx(
                 'offer-main-wrapper',
                 !hasMultipleDeals && 'offer-main-wrapper--left-banner flex flex-row flex-nowrap',
-                hasFourDeals && 'offer-main-wrapper--four-plans'
+                hasFourDeals && 'offer-main-wrapper--four-plans',
+                hideDealTitle && 'offer-main-wrapper--no-deal-title'
             )}
         >
             {hasMultipleDeals ? null : (
