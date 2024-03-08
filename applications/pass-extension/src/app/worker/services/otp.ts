@@ -1,9 +1,9 @@
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectAutofillCandidates, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
-import type { OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
+import type { Maybe, OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
-import { logId, logger } from '@proton/pass/utils/logger';
+import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import type { ParsedSender } from '@proton/pass/utils/url/parser';
 import { parseSender } from '@proton/pass/utils/url/parser';
@@ -20,29 +20,25 @@ import store from '../store';
  * - an invalid string
  * Each of the following OTP-related operations may throw. */
 export const createOTPService = () => {
-    const handleTOTPRequest = (otpRequest: OtpRequest): OtpCode => {
-        const { shareId, itemId, ...request } = otpRequest;
-
+    const handleTOTPRequest = (payload: OtpRequest): OtpCode => {
         try {
-            const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
-
-            if (item?.data.type === 'login') {
-                const extraField = request.type === 'extraField' ? item?.data.extraFields?.[request.index] : undefined;
-
-                const totpUri =
-                    request.type === 'item'
-                        ? item?.data.content.totpUri
-                        : extraField?.type === 'totp' && extraField.data.totpUri;
-
-                if (totpUri) {
-                    const otp = generateTOTPCode(deobfuscate(totpUri));
-                    if (otp) return otp;
+            const totpUri: Maybe<string> = (() => {
+                if (payload.type === 'uri') return payload.totpUri;
+                if (payload.type === 'item') {
+                    const { shareId, itemId } = payload.item;
+                    const item = selectItemByShareIdAndId(shareId, itemId)(store.getState());
+                    if (item?.data.type === 'login') return deobfuscate(item.data.content.totpUri);
                 }
+            })();
+
+            if (totpUri) {
+                const otp = generateTOTPCode(totpUri);
+                if (otp) return otp;
             }
 
             throw new Error('Cannot generate an OTP code from such item');
         } catch (err: unknown) {
-            logger.error(`[Worker::OTP] OTP generation error for item ${logId(itemId)} on share ${logId(shareId)}`);
+            logger.error(`[Worker::OTP] OTP generation error`);
             throw err;
         }
     };
