@@ -120,13 +120,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         const submitText = sharedVault ? c('Action').t`Send invite` : c('Action').t`Share vault`;
 
         switch (form.values.step) {
-            case 'members':
-                return {
-                    closeAction: close,
-                    closeIcon: 'cross-big',
-                    closeLabel: c('Action').t`Close`,
-                    submitText: c('Action').t`Continue`,
-                };
             case 'vault':
                 return {
                     closeAction: () => form.setFieldValue('step', 'members'),
@@ -147,6 +140,14 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     closeIcon: 'chevron-left',
                     closeLabel: c('Action').t`Back`,
                     submitText,
+                };
+            default:
+            case 'members':
+                return {
+                    closeAction: close,
+                    closeIcon: 'cross-big',
+                    closeLabel: c('Action').t`Close`,
+                    submitText: c('Action').t`Continue`,
                 };
         }
     })();
