@@ -24,7 +24,7 @@ import { parseSender, parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export const createAutoFillService = () => {
-    const getAutofillCandidates = (options: SelectAutofillCandidatesOptions): SafeLoginItem[] =>
+    const getCandidates = (options: SelectAutofillCandidatesOptions): SafeLoginItem[] =>
         selectAutofillCandidates(options)(store.getState()).map((item) => ({
             name: item.data.metadata.name,
             username: deobfuscate(item.data.content.username),
@@ -52,7 +52,7 @@ export const createAutoFillService = () => {
         }
     };
 
-    const updateTabsBadgeCount = withContext(({ status }) => {
+    const sync = withContext(({ status }) => {
         if (!clientReady(status)) return;
 
         browser.tabs
@@ -62,7 +62,7 @@ export const createAutoFillService = () => {
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
                             const state = store.getState();
-                            const items = getAutofillCandidates(parseUrl(url));
+                            const items = getCandidates(parseUrl(url));
                             const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
                             const { didDowngrade } = selectVaultLimits(state);
 
@@ -90,10 +90,9 @@ export const createAutoFillService = () => {
             .catch(noop);
     });
 
-    /* Clears badge count for each valid tab
-     * Triggered on logout detection to avoid
-     * showing stale counts */
-    const clearTabsBadgeCount = () => {
+    /* Clears badge count for each valid tab - Triggered on logout
+     * detection to avoid showing stale counts */
+    const clear = () => {
         browser.tabs
             .query({})
             .then((tabs) => Promise.all(tabs.map(({ id: tabId }) => tabId && setPopupIconBadge(tabId, 0))))
@@ -109,17 +108,15 @@ export const createAutoFillService = () => {
             const writableShareIds = selectWritableVaults(store.getState()).map(prop('shareId'));
             const { didDowngrade } = selectVaultLimits(store.getState());
 
-            /* if user has exceeded his vault count limit - this likely means
-             * has downgraded to a free plan : only allow him to autofill from
-             * his writable vaults */
-            const items = getAutofillCandidates({
-                ...url,
-                ...(didDowngrade ? { shareIds: writableShareIds } : {}),
-            });
-
+            /* if user has exceeded his vault count limit - this likely means has downgraded
+             * to a free plan : only allow him to autofill from his writable vaults */
+            const items = getCandidates({ ...url, shareIds: didDowngrade ? writableShareIds : undefined });
             if (tabId) void setPopupIconBadge(tabId, items.length);
 
-            return { items: tabId !== undefined && items.length > 0 ? items : [], needsUpgrade: didDowngrade };
+            return {
+                items: tabId !== undefined && items.length > 0 ? items : [],
+                needsUpgrade: didDowngrade,
+            };
         })
     );
 
@@ -145,14 +142,14 @@ export const createAutoFillService = () => {
             try {
                 await ctx.ensureReady();
                 if (tabId) {
-                    const items = getAutofillCandidates(parseUrl(tab.url));
+                    const items = getCandidates(parseUrl(tab.url));
                     await setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
         })
     );
 
-    return { getAutofillCandidates, updateTabsBadgeCount, clearTabsBadgeCount };
+    return { getCandidates, sync, clear };
 };
 
 export type AutoFillService = ReturnType<typeof createAutoFillService>;
