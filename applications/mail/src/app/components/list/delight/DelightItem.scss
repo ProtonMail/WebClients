@@ -3,7 +3,7 @@
 
 $item-container-height: rem(64);
 
-.delight-item {
+.item {
 	&-container {
 		@extend %appearing-container;
 
@@ -25,6 +25,11 @@ $item-container-height: rem(64);
 
 		.is-comfortable .is-row & {
 			--item-container-padding-block: #{rem(10)};
+
+			// fix for ES results
+			&.es-row-results .item-checkbox-label {
+				margin-block: auto;
+			}
 		}
 
 		.is-compact .is-row & {
@@ -112,25 +117,6 @@ $item-container-height: rem(64);
 		content: ' ';
 	}
 
-	&-unread-dot {
-		.is-compact .is-column &,
-		.is-compact .is-row & {
-			margin-inline-end: var(--space-0-5);
-		}
-
-		.is-comfortable .is-column & {
-			position: absolute;
-			inset-block-start: rem(24);
-			inset-inline-start: rem(2);
-		}
-
-		.is-comfortable .is-row & {
-			position: absolute;
-			inset-block-start: rem(18);
-			inset-inline-start: rem(2);
-		}
-	}
-
 	@include media('mouse', '>small') {
 		.is-column &-hover-action-buttons {
 			margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover
@@ -150,7 +136,7 @@ $item-container-height: rem(64);
 		}
 
 		&-container:hover .item-meta-infos,
-		&-container:hover .delight-item-firstline-infos,
+		&-container:hover .item-firstline-infos,
 		&-container--row:hover .item-senddate-row {
 			display: none;
 		}
@@ -159,6 +145,92 @@ $item-container-height: rem(64);
 	// Used to keep the buttons visible when a dropdown is open regardless of hover state
 	&-hover-action-buttons--dropdown-open {
 		display: inline-flex;
+	}
+
+	// loading state
+	&-is-loading {
+		background-color: var(--background-norm);
+		pointer-events: none;
+
+		.item-checkbox-label::before,
+		.item-icon-compact::before,
+		.item-senders::before,
+		.item-senddate-col::before,
+		.item-senddate-row::before,
+		.item-weight::before,
+		.item-star,
+		.item-subject::before {
+			@extend %placeholder-loading;
+		}
+
+		.item-checkbox-label,
+		.item-icon-compact {
+			position: relative;
+			margin-block: auto;
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				z-index: 1;
+				border-radius: var(--border-radius-md);
+				background-color: currentcolor;
+				opacity: 0;
+			}
+
+			.item-icon,
+			.checkbox-fakecheck {
+				opacity: 0;
+			}
+		}
+
+		.item-checkbox-label {
+			margin-block-start: 0;
+		}
+
+		.item-senders,
+		.item-senddate-col,
+		.item-senddate-row,
+		.item-weight,
+		.item-subject {
+			&::before {
+				@extend %item-loading-pseudo;
+			}
+		}
+
+		.item-senders {
+			&::before {
+				inline-size: 35%;
+			}
+		}
+
+		.item-senddate-col {
+			min-inline-size: 6em;
+
+			&::before {
+				inline-size: 100%;
+			}
+		}
+
+		.item-senddate-row {
+			&::before {
+				inline-size: 70%;
+			}
+		}
+
+		.item-weight {
+			min-inline-size: 4em;
+
+			&::before {
+				inline-size: 100%;
+			}
+		}
+
+		.item-subject {
+			&::before {
+				inline-size: 60%;
+			}
+		}
 	}
 }
 
