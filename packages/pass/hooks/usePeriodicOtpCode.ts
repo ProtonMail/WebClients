@@ -16,7 +16,8 @@ export type UsePeriodOtpCodeOptions = {
 };
 
 export const usePeriodicOtpCode = ({ generate, payload }: UsePeriodOtpCodeOptions): [MaybeNull<OtpCode>, number] => {
-    const { shareId, itemId, type, revisionNumber } = payload;
+    const otpKey = payload.type === 'item' ? `${payload.item.shareId}-${payload.item.itemId}` : payload.totpUri;
+
     const [otp, setOtp] = useState<MaybeNull<OtpCode>>(null);
     const [percentage, setPercentage] = useState<number>(-1);
     const requestAnimationRef = useRef<number>(-1);
@@ -48,7 +49,7 @@ export const usePeriodicOtpCode = ({ generate, payload }: UsePeriodOtpCodeOption
 
             applyCountdown();
         }
-    }, [shareId, itemId, type, revisionNumber]);
+    }, [otpKey]);
 
     /* if countdown has reached the 0 limit, trigger
      * a new OTP Code generation sequence */
@@ -67,7 +68,7 @@ export const usePeriodicOtpCode = ({ generate, payload }: UsePeriodOtpCodeOption
             setPercentage(-1);
             cancelAnimationFrame(requestAnimationRef.current);
         },
-        [shareId, itemId, type, payload.totpUri]
+        [otpKey]
     );
 
     return [otp, percentage];
