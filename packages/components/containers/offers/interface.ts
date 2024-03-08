@@ -8,6 +8,7 @@ import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces'
 export type OfferId =
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
+    | 'mail-trial-2024'
     | 'black-friday-2023-inbox-free'
     | 'black-friday-2023-inbox-mail'
     | 'black-friday-2023-inbox-unlimited'
@@ -53,7 +54,6 @@ export interface OfferImages {
 
 export interface OfferConfig {
     ID: OfferId;
-    icon?: IconName;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
     canBeDisabled?: boolean;
@@ -61,11 +61,21 @@ export interface OfferConfig {
     layout: JSXElementConstructor<OfferLayoutProps>;
     /** Displays countdown if present */
     periodEnd?: Date;
-    getCTAContent?: () => string;
-    shapeButton?: ButtonLikeShape;
+    topButton?: {
+        shape?: ButtonLikeShape;
+        gradient?: boolean;
+        iconGradient?: boolean;
+        icon?: IconName;
+        getCTAContent?: () => string;
+    };
     images?: OfferImages;
     darkBackground?: boolean; // Will use a light close button if true (ghost button with white text)
     enableCycleSelector?: boolean; // Allow the selection of cycles if true in the checkout process
+    /** only make sense for 1 plan offer and IF the plan title is above the plan card */
+    hideDealTitle?: boolean;
+    /** if you want to hide all "save xx%"" in the bubble on top of all plans */
+    hideDiscountBubble?: boolean;
+    hideDealPriceInfos?: boolean;
 }
 
 interface Feature {
@@ -89,6 +99,8 @@ export interface Deal {
     header?: () => string | ReactNode;
     star?: string;
     isGuaranteed?: boolean;
+    dealSuffixPrice?: string;
+    suffixOnNewLine?: boolean;
 }
 
 export interface Prices {

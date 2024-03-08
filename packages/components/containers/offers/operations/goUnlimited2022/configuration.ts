@@ -27,8 +27,10 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
-    getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
-    shapeButton: 'outline',
+    topButton: {
+        shape: 'outline',
+        getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
+    },
     images: {
         sideImage,
         sideImage2x,

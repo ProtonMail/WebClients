@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Price } from '@proton/components/components';
+import clsx from '@proton/utils/clsx';
 
 import { useDealContext } from '../deal/DealContext';
 
 const DealPrice = () => {
     const {
-        deal: { prices, cycle },
+        deal: { prices, cycle, dealSuffixPrice, suffixOnNewLine },
         currency,
     } = useDealContext();
     const { withCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
@@ -15,8 +16,11 @@ const DealPrice = () => {
         <div className="my-4 text-center">
             <Price
                 currency={currency}
-                className="offer-monthly-price color-norm"
-                suffix={c('specialoffer: Offers').t`/ month`}
+                className={clsx(
+                    'offer-monthly-price color-norm',
+                    suffixOnNewLine && 'offer-monthly-price--suffix-new-line'
+                )}
+                suffix={dealSuffixPrice ? dealSuffixPrice : c('specialoffer: Offers').t`/ month`}
                 isDisplayedInSentence
             >
                 {withCoupon / cycle}
