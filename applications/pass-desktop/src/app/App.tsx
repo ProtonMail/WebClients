@@ -64,7 +64,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
         return transferableToFile(await createPassExport(data, options));
     },
 
-    generateOTP: ({ totpUri }) => generateTOTPCode(totpUri),
+    generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
     getApiState: api.getState,
 
