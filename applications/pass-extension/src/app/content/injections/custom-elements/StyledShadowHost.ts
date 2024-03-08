@@ -4,7 +4,7 @@ export class StyledShadowHost extends HTMLElement {
 
         const shadowRoot = this.attachShadow({ mode: 'open' });
         const styleElement = document.createElement('style');
-        styleElement.innerHTML = styles;
+        styleElement.innerText = styles;
 
         shadowRoot.appendChild(styleElement);
     }
