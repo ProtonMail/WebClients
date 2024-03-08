@@ -85,7 +85,6 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         onAuthorized: withContext((ctx, _) => {
             ctx.setStatus(AppStatus.AUTHORIZED);
             ctx.service.activation.boot();
-            ctx.service.autofill.updateTabsBadgeCount();
             void ctx.service.storage.local.removeItem('forceLock');
             setSentryUID(authStore.getUID());
         }),
@@ -105,7 +104,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.service.formTracker.clear();
             ctx.service.onboarding.reset();
             ctx.service.telemetry?.stop();
-            ctx.service.autofill.clearTabsBadgeCount();
+            ctx.service.autofill.clear();
             ctx.service.apiProxy.clear?.().catch(noop);
 
             void ctx.service.storage.session.clear();
@@ -146,7 +145,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onSessionLocked: withContext((ctx, _offline, _broadcast) => {
             ctx.setStatus(AppStatus.LOCKED);
-            ctx.service.autofill.clearTabsBadgeCount();
+            ctx.service.autofill.clear();
 
             store.dispatch(cacheCancel());
             store.dispatch(stopEventPolling());
