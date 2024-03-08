@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Href } from '@proton/atoms/Href';
 import { getSAMLStaticInfo } from '@proton/shared/lib/api/samlSSO';
+import { PLANS } from '@proton/shared/lib/constants';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
+import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
-import { SubSettingsSection } from '../..';
 import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
-import { useApi, useCustomDomains, useSamlSSO } from '../../../hooks';
+import { useApi, useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -16,6 +18,9 @@ import {
     SettingsParagraph,
     SettingsSectionWide,
 } from '../../account';
+import PromotionBanner from '../../banner/PromotionBanner';
+import { SubSettingsSection } from '../../layout';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
 import { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
@@ -131,7 +136,10 @@ const RemoveSSOSettingsSection = ({ domain, ssoConfigs }: { domain: Domain; ssoC
 const SsoPage = () => {
     const [customDomains] = useCustomDomains();
     const [ssoConfigs] = useSamlSSO();
+    const [organization] = useOrganization();
+    const [user] = useUser();
     const api = useApi();
+    const [openSubscriptionModal] = useSubscriptionModal();
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
@@ -149,8 +157,54 @@ const SsoPage = () => {
         void fetchData();
     }, []);
 
-    if (!customDomains || !ssoConfigs || !samlStaticInfo) {
+    if (!customDomains || !ssoConfigs || !samlStaticInfo || !organization) {
         return <Loader />;
+    }
+
+    if (organization.PlanName !== PLANS.VPN_BUSINESS) {
+        return (
+            <SettingsSectionWide>
+                <PromotionBanner
+                    rounded
+                    mode="banner"
+                    contentCentered={false}
+                    icon={<img src={securityUpsellSvg} alt="" width={40} height={40} />}
+                    description={
+                        <div>
+                            <b>{c('Info').t`Enable single sign-on to keep your organization safe`}</b>
+                            <div>
+                                {c('Info')
+                                    .t`Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.`}{' '}
+                                <Href
+                                    href="https://protonvpn.com/support/sso"
+                                    title={c('Info').t`Lean more about single sign-on`}
+                                >{c('Link').t`Learn more`}</Href>
+                            </div>
+                        </div>
+                    }
+                    cta={
+                        user.canPay && (
+                            <Button
+                                color="norm"
+                                fullWidth
+                                onClick={() => {
+                                    openSubscriptionModal({
+                                        metrics: {
+                                            source: 'upsells',
+                                        },
+                                        step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                                        plan: PLANS.VPN_BUSINESS,
+                                    });
+                                }}
+                                title={c('Title').t`Setup dedicated servers by upgrading to Business`}
+                            >
+                                {c('Action').t`Upgrade to Business`}
+                            </Button>
+                        )
+                    }
+                />
+            </SettingsSectionWide>
+        );
     }
 
     return (
