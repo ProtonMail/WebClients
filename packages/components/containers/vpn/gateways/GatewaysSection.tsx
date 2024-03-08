@@ -3,16 +3,19 @@ import React, { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { EmptyViewContainer, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
+import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
 import { Organization } from '@proton/shared/lib/interfaces';
 import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
-import { Loader, Row, Table, TableBody, TableCell, useModalTwoStatic } from '../../../components';
+import { Loader, Table, TableBody, TableCell, useModalTwoStatic } from '../../../components';
+import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
+import { EmptyViewContainer } from '../../../containers/app';
+import PromotionBanner from '../../../containers/banner/PromotionBanner';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../containers/payments';
 import { useApi, useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';
 import { Gateway } from './Gateway';
 import { GatewayLogical } from './GatewayLogical';
@@ -130,7 +133,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const isAdmin = user.isAdmin && !user.isSubUser;
 
-    if (!hasVpnBusiness(subscription) && !(organization && organization.PlanName === PLANS.VPN_BUSINESS)) {
+    if (organization.PlanName !== PLANS.VPN_BUSINESS) {
         const boldDedicatedServers = (
             <b key="bold-dedicated-servers">{
                 // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
@@ -145,47 +148,42 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         );
 
         return (
-            <>
-                <Row className="rounded-lg" style={{ 'background-color': 'var(--interaction-norm-minor-1)' }}>
-                    <div className="m-5 mt-6" style={{ minWidth: '38px' }}>
-                        <img
-                            key="gateway-upgrade-image"
-                            className="h-auto"
-                            src={gatewaySvg}
-                            alt=""
-                            width={96}
-                            height={96}
-                        />
-                    </div>
-                    <div className="m-4">
-                        <p className="mb-2">
+            <SettingsSectionWide>
+                <PromotionBanner
+                    rounded
+                    mode="banner"
+                    contentCentered={false}
+                    icon={<img src={gatewaySvg} alt="" width={40} height={40} />}
+                    description={
+                        <div>
                             <b>{c('Info').t`Enhance your network security`}</b>
-                        </p>
-                        <p className="mt-2">
-                            {
-                                // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
-                                c('Info')
-                                    .jt`With a Business or Enterprise plan, you can purchase ${boldDedicatedServers} for your organization, and set up ${boldGateways} to control which users can access them.`
-                            }{' '}
-                            <Href
-                                href="https://protonvpn.com/support/manage-vpn-servers-organization"
-                                title={c('Info').t`Lean more about gateways`}
-                            >{c('Link').t`Learn more`}</Href>
-                        </p>
-                    </div>
-                    {isAdmin && (
-                        <div className="m-4 mr-6 shrink-0 self-center">
+                            <div>
+                                {
+                                    // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
+                                    c('Info')
+                                        .jt`With a Business or Enterprise plan, you can purchase ${boldDedicatedServers} for your organization, and set up ${boldGateways} to control which users can access them.`
+                                }{' '}
+                                <Href
+                                    href="https://protonvpn.com/support/manage-vpn-servers-organization"
+                                    title={c('Info').t`Lean more about gateways`}
+                                >{c('Link').t`Learn more`}</Href>
+                            </div>
+                        </div>
+                    }
+                    cta={
+                        isAdmin && (
                             <Button
                                 color="norm"
+                                fullWidth
                                 onClick={getCustomizeSubscriptionOpener('upsells')}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
                             </Button>
-                        </div>
-                    )}
-                </Row>
-            </>
+                        )
+                    }
+                />
+            </SettingsSectionWide>
         );
     }
 
