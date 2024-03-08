@@ -26,7 +26,7 @@ const OrganizationContext = createContext<MaybeNull<OrganizationContextValue>>(n
  * which do not belong to an organization. */
 export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
-    const enableOrganization = useFeatureFlag(PassFeature.PassEnableOrganization) || true;
+    const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing);
 
     const passPlan = useSelector(selectPassPlan);
     const user = useSelector(selectUser);
@@ -35,7 +35,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const context = useMemo<MaybeNull<OrganizationContextValue>>(
         () =>
-            enableOrganization && organization
+            enableOrganizationSharing && organization
                 ? {
                       b2bAdmin,
                       syncSettings: () => dispatch(getOrganizationSettingsIntent()),
@@ -43,7 +43,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
                       ...organization,
                   }
                 : null,
-        [b2bAdmin, organization, enableOrganization]
+        [b2bAdmin, organization, enableOrganizationSharing]
     );
 
     return <OrganizationContext.Provider value={context}>{children}</OrganizationContext.Provider>;
