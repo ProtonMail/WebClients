@@ -17,12 +17,15 @@ const useInboxDesktopElementId = ({ isSearch }: { isSearch: boolean }) => {
         }
 
         const { hash } = location;
+        console.log(hash);
 
         try {
             const decodedHash = decodeURIComponent(hash);
-            const hashArray = decodedHash.replace('#', '').split('&');
-            const elementID = hashArray[0].replace('elementID=', '');
-            const labelID = hashArray[1].replace('labelID=', '');
+            // We need to replace the # with ? to use URLSearchParams since it's not supported with #
+            const searchParams = new URLSearchParams(decodedHash.replace(/#/g, '?'));
+            const elementID = searchParams.get('elementID');
+            const labelID = searchParams.get('labelID');
+
             if (elementID && labelID) {
                 const cleanHistoryLocation = { ...history.location, hash: '' };
                 const location = setParamsInLocation(cleanHistoryLocation, {
