@@ -40,6 +40,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         scriptId,
         destroy: (options) => {
             logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
+            context.setState({ stale: true });
 
             DOMCleanUp(elements);
             listeners.removeAll();
@@ -133,7 +134,6 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
                 const extensionContext = await setupExtensionContext({
                     endpoint: 'contentscript',
                     onDisconnect: () => {
-                        context.setState({ stale: true });
                         context.destroy({ reason: 'port disconnected' });
                         return { recycle: true };
                     },
