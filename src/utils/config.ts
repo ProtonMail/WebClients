@@ -60,3 +60,25 @@ export const getExtraResource = () => {
 export const isProdEnv = (config: Config) => {
     return config.url.account.endsWith("proton.me");
 };
+
+const transportSecuirityException = {
+    NSExceptionAllowsInsecureHTTPLoads: false,
+    NSIncludesSubdomains: true,
+    NSThirdPartyExceptionRequiresForwardSecrecy: false,
+    NSThirdPartyExceptionAllowsInsecureHTTPLoads: false,
+};
+
+export const getAppTransportSecuity = () => {
+    return {
+        NSAppTransportSecurity: {
+            NSAllowsArbitraryLoads: true,
+            NSExceptionDomains: {
+                "update.electronjs.org": { ...transportSecuirityException },
+                "proton.me": { ...transportSecuirityException },
+                "mail.proton.me": { ...transportSecuirityException },
+                "account.proton.me": { ...transportSecuirityException },
+                "calendar.proton.me": { ...transportSecuirityException },
+            },
+        },
+    };
+};

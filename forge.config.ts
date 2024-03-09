@@ -4,7 +4,7 @@ import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-nati
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import type { ForgeConfig } from "@electron-forge/shared-types";
-import { getExtraResource, getIco, getIcon, getName, isBetaRelease } from "./src/utils/config";
+import { getAppTransportSecuity, getExtraResource, getIco, getIcon, getName, isBetaRelease } from "./src/utils/config";
 
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { mainConfig } from "./webpack.main.config";
@@ -42,6 +42,9 @@ const config: ForgeConfig = {
             appleId: process.env.APPLE_ID!,
             appleIdPassword: process.env.APPLE_PASSWORD!,
             teamId: process.env.APPLE_TEAM_ID!,
+        },
+        extendInfo: {
+            ...getAppTransportSecuity(),
         },
     },
     rebuildConfig: {},
