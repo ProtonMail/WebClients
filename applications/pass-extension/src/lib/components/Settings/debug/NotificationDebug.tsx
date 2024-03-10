@@ -1,119 +1,103 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import {
+    NOTIFICATION_HEIGHT,
+    NOTIFICATION_HEIGHT_SM,
+    NOTIFICATION_WIDTH,
+} from 'proton-pass-extension/app/content/constants.static';
+import { Notification } from 'proton-pass-extension/app/content/injections/apps/notification/Notification';
+import { NotificationAction } from 'proton-pass-extension/app/content/types';
+
 import { selectItemsByType } from '@proton/pass/store/selectors';
-import { AutoSaveType, FormEntryStatus } from '@proton/pass/types';
+import { AppStatus, AutosaveType, FormEntryStatus } from '@proton/pass/types';
 
-import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../../app/content/constants.static';
-import { NotificationSwitch } from '../../../../app/content/injections/apps/notification/components/NotificationSwitch';
-import { NotificationAction } from '../../../../app/content/types';
 import { SettingsPanel } from '../SettingsPanel';
-
-const MockIFrameContainer: FC<{ children: ReactNode; height?: number }> = ({
-    children,
-    height = NOTIFICATION_HEIGHT,
-}) => (
-    <div
-        style={{
-            width: NOTIFICATION_WIDTH,
-            height,
-            overflow: 'hidden',
-            background: '#191927',
-            boxShadow: '0 2px 10px rgb(0 0 0 / 0.3)',
-            borderRadius: 12,
-            marginBottom: 12,
-        }}
-    >
-        {children}
-    </div>
-);
-
-const MockSettings = { loadDomainImages: true } as ProxiedSettings;
+import { MockIFrameContainer } from './MockIFrameContainer';
 
 export const NotificationDebug: FC = () => {
-    const otpItem = useSelector(selectItemsByType('login')).find((item) => Boolean(item.data.content.totpUri.v));
+    const loginItems = useSelector(selectItemsByType('login'));
+    const otpItem = loginItems.find((item) => Boolean(item.data.content.totpUri.v));
 
     return (
         <SettingsPanel title="Notification">
             <div className="gap-4" style={{ columnCount: 2 }}>
-                <MockIFrameContainer>
-                    <NotificationSwitch state={null} settings={MockSettings} />
+                <MockIFrameContainer
+                    appState={{ loggedIn: false, status: AppStatus.IDLE }}
+                    width={NOTIFICATION_WIDTH}
+                    height={NOTIFICATION_HEIGHT}
+                >
+                    <Notification />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <NotificationSwitch
-                        state={{
-                            action: NotificationAction.AUTOSAVE_PROMPT,
-                            submission: {
-                                status: FormEntryStatus.COMMITTED,
-                                domain: 'proton.me',
-                                subdomain: null,
-                                type: 'login',
-                                partial: false,
-                                autosave: {
-                                    shouldPrompt: true,
-                                    data: { action: AutoSaveType.NEW },
-                                },
-                                data: {
-                                    username: 'nobody@proton.me',
-                                    password: 'proton123',
-                                },
+                <MockIFrameContainer
+                    width={NOTIFICATION_WIDTH}
+                    height={NOTIFICATION_HEIGHT}
+                    payload={{
+                        action: NotificationAction.AUTOSAVE,
+                        submission: {
+                            status: FormEntryStatus.COMMITTED,
+                            domain: 'proton.me',
+                            subdomain: null,
+                            type: 'login',
+                            partial: false,
+                            autosave: {
+                                shouldPrompt: true,
+                                data: { type: AutosaveType.NEW },
                             },
-                        }}
-                        settings={MockSettings}
-                    />
+                            data: {
+                                username: 'nobody@proton.me',
+                                password: 'proton123',
+                            },
+                        },
+                    }}
+                >
+                    <Notification />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <NotificationSwitch
-                        state={{
-                            action: NotificationAction.AUTOSAVE_PROMPT,
-                            submission: {
-                                status: FormEntryStatus.COMMITTED,
-                                domain: 'netflix.com',
-                                subdomain: null,
-                                type: 'login',
-                                partial: false,
-                                autosave: {
-                                    shouldPrompt: true,
-                                    data: {
-                                        action: AutoSaveType.UPDATE,
-                                        item: {
-                                            data: {
-                                                type: 'login',
-                                                metadata: { name: 'netflix.com', note: 'Autosaved', itemUuid: '' },
-                                                content: {
-                                                    username: 'nobody@proton.me',
-                                                    password: '',
-                                                    urls: [],
-                                                    totpUri: '',
-                                                },
-                                                extraFields: [],
-                                            },
-                                        } as any,
+                <MockIFrameContainer
+                    width={NOTIFICATION_WIDTH}
+                    height={NOTIFICATION_HEIGHT}
+                    payload={{
+                        action: NotificationAction.AUTOSAVE,
+                        submission: {
+                            status: FormEntryStatus.COMMITTED,
+                            domain: 'netflix.com',
+                            subdomain: null,
+                            type: 'login',
+                            partial: false,
+                            autosave: {
+                                shouldPrompt: true,
+                                data: {
+                                    type: AutosaveType.UPDATE,
+                                    name: 'netflix.com',
+                                    selectedItem: {
+                                        itemId: 'test-itemId',
+                                        shareId: 'test-shareId',
                                     },
                                 },
-                                data: {
-                                    username: 'nobody@proton.me',
-                                    password: 'password',
-                                },
                             },
-                        }}
-                        settings={MockSettings}
-                    />
+                            data: {
+                                username: 'nobody@proton.me',
+                                password: 'password',
+                            },
+                        },
+                    }}
+                >
+                    <Notification />
                 </MockIFrameContainer>
 
                 {otpItem && (
-                    <MockIFrameContainer height={220}>
-                        <NotificationSwitch
-                            state={{
-                                action: NotificationAction.AUTOFILL_OTP_PROMPT,
-                                item: { shareId: otpItem.shareId, itemId: otpItem.itemId },
-                                hostname: 'proton.me',
-                            }}
-                            settings={MockSettings}
-                        />
+                    <MockIFrameContainer
+                        width={NOTIFICATION_WIDTH}
+                        height={NOTIFICATION_HEIGHT_SM}
+                        payload={{
+                            action: NotificationAction.OTP,
+                            item: { shareId: otpItem.shareId, itemId: otpItem.itemId },
+                            hostname: 'proton.me',
+                        }}
+                    >
+                        <Notification />
                     </MockIFrameContainer>
                 )}
             </div>
