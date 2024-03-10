@@ -1,7 +1,7 @@
 import type { FormType } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types/utils';
 
-import type { WithAutoSavePromptOptions } from './autosave';
+import type { WithAutosavePrompt } from './autosave';
 import type { TabId } from './runtime';
 
 export type FormIdentifier = `${TabId}:${string}`;
@@ -31,13 +31,9 @@ export type FormEntryData = FormEntryBase &
 export type NewFormEntry = Pick<FormEntryData, 'data' | 'action' | 'type'>;
 
 export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = Extract<
-    | ({
-          status: FormEntryStatus.STAGING;
-      } & FormEntryData)
-    | ({
-          status: FormEntryStatus.COMMITTED;
-      } & Extract<FormEntryData, { partial: false }>),
+    | ({ status: FormEntryStatus.STAGING } & FormEntryData)
+    | ({ status: FormEntryStatus.COMMITTED } & Extract<FormEntryData, { partial: false }>),
     { status: T }
 >;
 
-export type FormEntryPrompt = WithAutoSavePromptOptions<FormEntry<FormEntryStatus.COMMITTED>, true>;
+export type FormEntryPrompt = WithAutosavePrompt<FormEntry<FormEntryStatus.COMMITTED>, true>;

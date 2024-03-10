@@ -1,13 +1,13 @@
 import { type FC } from 'react';
 
+import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
+import { DropdownDebug } from 'proton-pass-extension/lib/components/Settings/debug/DropdownDebug';
+import { NotificationDebug } from 'proton-pass-extension/lib/components/Settings/debug/NotificationDebug';
+
 import { Button } from '@proton/atoms/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
-
-import { SettingsPanel } from '../../../../lib/components/Settings/SettingsPanel';
-import { DropdownDebug } from '../../../../lib/components/Settings/debug/DropdownDebug';
-import { NotificationDebug } from '../../../../lib/components/Settings/debug/NotificationDebug';
 
 export const Developer: FC = () => {
     return (
