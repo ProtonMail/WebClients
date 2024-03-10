@@ -1,11 +1,6 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
-import {
-    allowActions,
-    preventActions,
-    shouldPreventActions,
-    withActionTrap,
-} from 'proton-pass-extension/app/content/utils/action-trap';
+import { actionPrevented, actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 
 import type { FormType } from '@proton/pass/fathom';
@@ -34,7 +29,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         if (!action) return;
 
         requestAnimationFrame(() => {
-            if (shouldPreventActions(element)) return allowActions(element);
+            if (actionPrevented(element)) return;
 
             const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
@@ -55,7 +50,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 const onInputField = (field: FieldHandle): (() => void) =>
     withContext((ctx) => {
         const dropdown = ctx?.service.iframe.dropdown;
-        if (dropdown?.getState().visible && !shouldPreventActions(field.element)) dropdown?.close();
+        if (dropdown?.getState().visible && !actionPrevented(field.element)) dropdown?.close();
         field.setValue((field.element as HTMLInputElement).value);
     });
 
@@ -114,7 +109,7 @@ export const createFieldHandles = ({
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
             const isFocusedField = document.activeElement === field.element;
-            if (options?.preventAction) preventActions(field.element);
+            if (options?.preventAction) actionTrap(field.element);
             field.element.focus();
 
             if (isFocusedField) {
