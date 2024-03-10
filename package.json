@@ -17,7 +17,7 @@
         "pretty": "prettier . --write",
         "make-win": "npx electron-forge make",
         "negativity": "electronegativity -i ./src",
-        "create-uninstaller": "appify ./src/macos/uninstall.sh './src/macos/Uninstall Proton Mail.app' ./assets/icons/uninstaller.png"
+        "create-uninstaller": "appify ./src/macos/uninstall.sh './src/macos/Proton Mail Uninstaller.app' ./assets/icons/uninstaller.png"
     },
     "keywords": [],
     "author": {
