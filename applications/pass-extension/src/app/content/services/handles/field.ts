@@ -31,10 +31,11 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         const { action, element } = field;
         field?.icon?.reposition();
 
-        if (shouldPreventActions(element)) return allowActions(element);
         if (!action) return;
 
         requestAnimationFrame(() => {
+            if (shouldPreventActions(element)) return allowActions(element);
+
             const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
             const current = dropdown?.getCurrentField()?.element;
