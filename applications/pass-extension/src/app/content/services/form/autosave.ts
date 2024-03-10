@@ -10,7 +10,7 @@ export const createAutosaveService = () => {
     const promptAutoSave: (submission: FormEntryPrompt) => boolean = withContext((ctx, submission) => {
         if (ctx?.getFeatures().Autosave) {
             ctx.service.iframe.attachNotification()?.open({
-                action: NotificationAction.AUTOSAVE_PROMPT,
+                action: NotificationAction.AUTOSAVE,
                 submission,
             });
 

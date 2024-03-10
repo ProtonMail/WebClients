@@ -1,23 +1,47 @@
-import { type FC } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
-import { IFrameContextProvider } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
-import { ExtensionCore } from 'proton-pass-extension/lib/components/Extension/ExtensionCore';
+import {
+    useIFrameContext,
+    useRegisterMessageHandler,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import type { NotificationActions } from 'proton-pass-extension/app/content/types';
+import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
-import { Icons, NotificationsProvider } from '@proton/components';
-import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { NotificationsChildren } from '@proton/components/containers';
+import { clientBusy } from '@proton/pass/lib/client';
+import type { MaybeNull } from '@proton/pass/types';
 
-import { NotificationContent } from './views/NotificationContent';
+import { AutofillOTP } from './views/AutofillOTP';
+import { Autosave } from './views/Autosave';
 
 import './Notification.scss';
 
-export const Notification: FC = () => (
-    <ExtensionCore endpoint="notification">
-        <IFrameContextProvider endpoint="notification">
-            <Icons />
-            <ThemeProvider />
-            <NotificationsProvider>
-                <NotificationContent />
-            </NotificationsProvider>
-        </IFrameContextProvider>
-    </ExtensionCore>
-);
+export const Notification: FC = () => {
+    const { appState, visible } = useIFrameContext();
+    const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
+    const loading = state === null || clientBusy(appState.status);
+
+    useRegisterMessageHandler(IFrameMessageType.NOTIFICATION_ACTION, ({ payload }) => setState(payload));
+
+    useEffect(() => {
+        if (!visible) setState(null);
+    }, [visible]);
+
+    return (
+        <div className="h-full p-4 bg-norm relative">
+            {(() => {
+                if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
+
+                switch (state.action) {
+                    case NotificationAction.AUTOSAVE:
+                        return <Autosave {...state} />;
+                    case NotificationAction.OTP:
+                        return <AutofillOTP {...state} />;
+                }
+            })()}
+
+            <NotificationsChildren />
+        </div>
+    );
+};
