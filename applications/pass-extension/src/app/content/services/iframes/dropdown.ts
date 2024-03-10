@@ -144,7 +144,6 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             if (!form) return;
 
             ctx?.service.autofill.autofillLogin(form, payload);
-            iframe.close({ refocus: false });
             fieldRef.current?.focus({ preventAction: true });
         })
     );
@@ -168,7 +167,6 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
-        iframe.close();
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
         fieldRef.current?.getFormHandle()?.tracker?.submit();

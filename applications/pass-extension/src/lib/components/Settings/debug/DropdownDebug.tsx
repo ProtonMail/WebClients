@@ -1,14 +1,16 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
+
+import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
+import { Dropdown } from 'proton-pass-extension/app/content/injections/apps/dropdown/Dropdown';
+import { DropdownAction } from 'proton-pass-extension/app/content/types';
 
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SafeLoginItem } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { DROPDOWN_WIDTH } from '../../../../app/content/constants.static';
-import { DropdownSwitch } from '../../../../app/content/injections/apps/dropdown/components/DropdownSwitch';
-import { DropdownAction } from '../../../../app/content/types';
 import { SettingsPanel } from '../SettingsPanel';
+import { MockIFrameContainer } from './MockIFrameContainer';
 
 const LOGIN_ITEMS: SafeLoginItem[] = [
     {
@@ -26,113 +28,95 @@ const LOGIN_ITEMS: SafeLoginItem[] = [
     },
 ];
 
-const MockIFrameContainer: FC<{ children: ReactNode }> = ({ children }) => (
-    <div
-        style={{
-            width: '100%',
-            maxWidth: DROPDOWN_WIDTH,
-            overflow: 'hidden',
-            background: '#191927',
-            boxShadow: '0 2px 10px rgb(0 0 0 / 0.3)',
-            borderRadius: 12,
-            marginBottom: 12,
-        }}
-    >
-        {children}
-    </div>
-);
-
 export const DropdownDebug: FC = () => {
     return (
         <SettingsPanel title="Dropdown">
             <div className="gap-4" style={{ columnCount: 2 }}>
-                <MockIFrameContainer>
-                    <DropdownSwitch loggedIn={false} status={AppStatus.IDLE} state={null} />
+                <MockIFrameContainer appState={{ loggedIn: false, status: AppStatus.IDLE }} width={DROPDOWN_WIDTH}>
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn={false}
-                        status={AppStatus.READY}
-                        state={{
-                            action: DropdownAction.AUTOFILL,
-                            hostname: 'proton.me',
-                            needsUpgrade: false,
-                            items: [],
-                        }}
-                    />
+                <MockIFrameContainer
+                    payload={{
+                        action: DropdownAction.AUTOFILL,
+                        hostname: 'proton.me',
+                        needsUpgrade: false,
+                        items: [],
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn={false}
-                        status={AppStatus.LOCKED}
-                        state={{
-                            action: DropdownAction.AUTOFILL,
-                            hostname: 'proton.me',
-                            needsUpgrade: false,
-                            items: [],
-                        }}
-                    />
+                <MockIFrameContainer
+                    appState={{ status: AppStatus.LOCKED }}
+                    payload={{
+                        action: DropdownAction.AUTOFILL,
+                        hostname: 'proton.me',
+                        needsUpgrade: false,
+                        items: [],
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn
-                        status={AppStatus.READY}
-                        state={{
-                            action: DropdownAction.AUTOFILL,
-                            hostname: 'proton.me',
-                            needsUpgrade: false,
-                            items: [LOGIN_ITEMS[1]],
-                        }}
-                    />
+                <MockIFrameContainer
+                    payload={{
+                        action: DropdownAction.AUTOFILL,
+                        hostname: 'proton.me',
+                        needsUpgrade: false,
+                        items: [LOGIN_ITEMS[1]],
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn
-                        status={AppStatus.READY}
-                        state={{
-                            action: DropdownAction.AUTOFILL,
-                            hostname: 'proton.me',
-                            needsUpgrade: true,
-                            items: [LOGIN_ITEMS[0]],
-                        }}
-                    />
+                <MockIFrameContainer
+                    payload={{
+                        action: DropdownAction.AUTOFILL,
+                        hostname: 'proton.me',
+                        needsUpgrade: true,
+                        items: [LOGIN_ITEMS[0]],
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn
-                        status={AppStatus.READY}
-                        state={{
-                            action: DropdownAction.AUTOFILL,
-                            hostname: 'proton.me',
-                            needsUpgrade: false,
-                            items: LOGIN_ITEMS,
-                        }}
-                    />
+                <MockIFrameContainer
+                    payload={{
+                        action: DropdownAction.AUTOFILL,
+                        hostname: 'proton.me',
+                        needsUpgrade: false,
+                        items: LOGIN_ITEMS,
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn
-                        status={AppStatus.READY}
-                        state={{
-                            action: DropdownAction.AUTOSUGGEST_PASSWORD,
-                            config: DEFAULT_RANDOM_PW_OPTIONS,
-                            hostname: 'proton.me',
-                        }}
-                    />
+                <MockIFrameContainer
+                    payload={{
+                        action: DropdownAction.AUTOSUGGEST_PASSWORD,
+                        config: DEFAULT_RANDOM_PW_OPTIONS,
+                        hostname: 'proton.me',
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
 
-                <MockIFrameContainer>
-                    <DropdownSwitch
-                        loggedIn
-                        status={AppStatus.READY}
-                        state={{ action: DropdownAction.AUTOSUGGEST_ALIAS, hostname: 'proton.me', prefix: 'secret' }}
-                    />
+                <MockIFrameContainer
+                    payload={{
+                        action: DropdownAction.AUTOSUGGEST_ALIAS,
+                        hostname: 'proton.me',
+                        prefix: 'secret',
+                    }}
+                    width={DROPDOWN_WIDTH}
+                >
+                    <Dropdown />
                 </MockIFrameContainer>
             </div>
         </SettingsPanel>

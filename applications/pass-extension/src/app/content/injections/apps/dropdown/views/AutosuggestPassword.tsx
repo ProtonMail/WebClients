@@ -1,9 +1,9 @@
 import { type FC, useEffect, useRef, useState } from 'react';
 
-import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
+import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import { DropdownItem } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItem';
-import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
@@ -23,36 +23,22 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import { type Maybe } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-type Props = {
-    hostname: string;
-    config: GeneratePasswordConfig;
-    visible?: boolean;
-    onClose?: (options?: IFrameCloseOptions) => void;
-    onMessage?: (message: IFrameMessage) => void;
-};
+type Props = { hostname: string; config: GeneratePasswordConfig };
 
-export const PasswordAutoSuggest: FC<Props> = ({ hostname, config: initial, visible, onMessage, onClose }) => {
+export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial }) => {
+    const { visible, forwardMessage, close } = useIFrameContext();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [showAdvanced, setShowAdvanced] = useState(false);
+    const [advanced, setAdvanced] = useState(false);
     const [copied, setCopied] = useState(false);
 
     const generator = usePasswordGenerator({ initial, onConfigChange: noop });
 
     useEffect(() => {
-        if (copied) {
-            timer.current = setTimeout(() => {
-                setCopied(false);
-                onClose?.();
-            }, 1_500);
-        }
-        return () => clearTimeout(timer.current);
-    }, [copied]);
-
-    useEffect(() => {
         setCopied(false);
-        setShowAdvanced(false);
+        setAdvanced(false);
+        return () => clearTimeout(timer.current);
     }, [visible]);
 
     /* FIXME: move away from from `execCommand` and
@@ -61,13 +47,13 @@ export const PasswordAutoSuggest: FC<Props> = ({ hostname, config: initial, visi
         inputRef.current?.select();
         document.execCommand('copy');
 
-        onMessage?.({
+        forwardMessage({
             type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
             payload: { password: generator.password },
         });
 
-        if (immediate) onClose?.();
-        else setCopied(true);
+        timer.current = setTimeout(() => close, immediate ? 0 : 1_500);
+        setCopied(true);
     };
 
     return (
@@ -82,7 +68,7 @@ export const PasswordAutoSuggest: FC<Props> = ({ hostname, config: initial, visi
                             color="weak"
                             shape="solid"
                             pill
-                            onClick={() => setShowAdvanced((prev) => !prev)}
+                            onClick={() => setAdvanced((prev) => !prev)}
                             size="small"
                             title={c('Action').t`Show advanced options`}
                         >
@@ -93,20 +79,18 @@ export const PasswordAutoSuggest: FC<Props> = ({ hostname, config: initial, visi
                             dense
                             hostname={hostname}
                             label={c('Action').t`Do not suggest on this website`}
-                            onClose={onClose}
-                            visible={visible}
                         />
                     </div>
                 }
             />
 
-            <DropdownItem
+            <ListItem
                 subTheme={SubTheme.RED}
                 {...(copied
                     ? {
                           icon: 'checkmark',
                           subTitle: c('Info').t`Password copied`,
-                          onClick: onClose,
+                          onClick: close,
                       }
                     : {
                           icon: 'key',
@@ -118,7 +102,7 @@ export const PasswordAutoSuggest: FC<Props> = ({ hostname, config: initial, visi
                       })}
             />
             <input ref={inputRef} className="invisible" value={generator.password} readOnly />
-            {showAdvanced && (
+            {advanced && (
                 <div className="flex-column flex gap-y-2 px-4 pb-3 text-sm ui-red">
                     <hr className="m-0" />
                     <PasswordTypeSelect dense {...generator} />

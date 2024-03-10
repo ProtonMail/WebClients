@@ -1,17 +1,21 @@
+import { c } from 'ttag';
+
+import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
-import { selectAutosaveCandidate, selectAutosaveVault } from '@proton/pass/store/selectors';
-import type { AutoSavePromptOptions, FormEntry, FormEntryStatus } from '@proton/pass/types';
-import { AutoSaveType, WorkerMessageType } from '@proton/pass/types';
+import { selectAutosaveCandidate, selectAutosaveVault, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
+import type { AutosavePrompt, FormEntry, FormEntryStatus } from '@proton/pass/types';
+import { AutosaveType, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 import WorkerMessageBroker from '../channel';
 import store from '../store';
 
 export const createAutoSaveService = () => {
-    const resolvePromptOptions = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutoSavePromptOptions => {
+    const resolvePromptOptions = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutosavePrompt => {
         const candidates = selectAutosaveCandidate({
             domain: submission.domain,
             subdomain: submission.subdomain,
@@ -20,53 +24,78 @@ export const createAutoSaveService = () => {
 
         /* If no login items found for the current domain & the current
          * username - prompt for autosaving a new entry */
-        if (candidates.length === 0) return { shouldPrompt: true, data: { action: AutoSaveType.NEW } };
+        if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveType.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
          * password then we should prompt for update */
         const match = candidates.filter((item) => deobfuscate(item.data.content.password) === submission.data.password);
+        const { itemId, shareId, data } = first(candidates)!;
+        const { name } = data.metadata;
 
         return match.length > 0
             ? { shouldPrompt: false }
-            : {
-                  shouldPrompt: true,
-                  data: {
-                      action: AutoSaveType.UPDATE,
-                      item: first(candidates)!,
-                  },
-              };
+            : { shouldPrompt: true, data: { type: AutosaveType.UPDATE, selectedItem: { itemId, shareId }, name } };
     };
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOSAVE_REQUEST, async ({ payload }) => {
-        const autosave = payload.submission.autosave.data;
+        const state = store.getState();
+        const { valid, url } = isValidURL(payload.domain);
 
-        if (autosave.action === AutoSaveType.NEW) {
-            const selectedVault = selectAutosaveVault(store.getState());
+        if (payload.type === AutosaveType.NEW) {
+            const selectedVault = selectAutosaveVault(state);
+            const item = itemBuilder('login');
+
+            item.get('metadata')
+                .set('name', payload.name)
+                .set('note', c('Info').t`Autosaved on ${payload.domain}`);
+
+            item.get('content')
+                .set('username', payload.username)
+                .set('password', payload.password)
+                .set('urls', valid ? [url] : []);
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
                     itemCreationIntent(
                         {
-                            ...payload.item,
-                            optimisticId: uniqueId(),
-                            shareId: selectedVault.shareId,
+                            ...item.data,
                             createTime: getEpoch(),
                             extraData: { withAlias: false },
+                            optimisticId: uniqueId(),
+                            shareId: selectedVault.shareId,
                         },
-                        (intentResultAction) =>
-                            itemCreationSuccess.match(intentResultAction) ? resolve(true) : resolve(false)
+                        (action) => resolve(itemCreationSuccess.match(action))
                     )
                 )
             );
         }
 
-        if (autosave.action === AutoSaveType.UPDATE) {
-            const { itemId, shareId, revision: lastRevision } = autosave.item;
+        if (payload.type === AutosaveType.UPDATE) {
+            const { selectedItem } = payload;
+            const { shareId, itemId } = selectedItem;
+
+            const currentItem = selectItemByShareIdAndId<'login'>(shareId, itemId)(state);
+            if (!currentItem) throw new Error(c('Error').t`Item does not exist`);
+
+            const item = itemBuilder('login', currentItem.data);
+
+            item.get('metadata').set('name', payload.name);
+
+            item.get('content')
+                .set('username', payload.username)
+                .set('password', payload.password)
+                .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))));
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
-                    itemEditIntent({ ...payload.item, itemId, shareId, lastRevision }, (intentResultAction) =>
-                        itemEditSuccess.match(intentResultAction) ? resolve(true) : resolve(false)
+                    itemEditIntent(
+                        {
+                            ...item.data,
+                            lastRevision: currentItem.revision,
+                            itemId,
+                            shareId,
+                        },
+                        (action) => resolve(itemEditSuccess.match(action))
                     )
                 )
             );

@@ -1,7 +1,7 @@
 import { type FC, useEffect } from 'react';
 
-import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
-import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
+import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
@@ -10,37 +10,24 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { type SelectedItem, WorkerMessageType } from '@proton/pass/types';
+import { type SelectedItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
-import { NotificationHeader } from './NotificationHeader';
+import { NotificationHeader } from '../components/NotificationHeader';
 
-type Props = {
-    hostname: string;
-    item: SelectedItem;
-    visible?: boolean;
-    onMessage?: (message: IFrameMessage) => void;
-    onClose?: (options?: IFrameCloseOptions) => void;
-};
+type Props = { hostname: string; item: SelectedItem };
 
-export const AutofillOTP: FC<Props> = ({ hostname, item, visible, onMessage, onClose }) => {
-    const { generateOTP } = usePassCore();
+export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
+    const { generateOTP, onTelemetry } = usePassCore();
+    const { close, forwardMessage } = useIFrameContext();
 
     const [otp, percent] = usePeriodicOtpCode({
         generate: generateOTP,
         payload: { type: 'item', item },
     });
 
-    useEffect(() => {
-        void sendMessage(
-            contentScriptMessage({
-                type: WorkerMessageType.TELEMETRY_EVENT,
-                payload: { event: createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {}) },
-            })
-        );
-    }, []);
+    useEffect(() => onTelemetry(createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {})), []);
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between h-full">
@@ -51,11 +38,8 @@ export const AutofillOTP: FC<Props> = ({ hostname, item, visible, onMessage, onC
                         criteria="Autofill2FA"
                         hostname={hostname}
                         label={c('Action').t`Do not show on this website`}
-                        onClose={onClose}
-                        visible={visible}
                     />
                 }
-                onClose={onClose}
             />
             <div className="max-w-full">
                 <div className="flex flex-nowrap items-center justify-center mb-2 gap-4">
@@ -78,11 +62,11 @@ export const AutofillOTP: FC<Props> = ({ hostname, item, visible, onMessage, onC
                     className="flex-auto"
                     onClick={() => {
                         if (otp?.token) {
-                            onMessage?.({
+                            forwardMessage({
                                 type: IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
                                 payload: { code: otp.token },
                             });
-                            onClose?.();
+                            close();
                         }
                     }}
                 >

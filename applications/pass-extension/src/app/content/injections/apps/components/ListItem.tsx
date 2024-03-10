@@ -4,34 +4,31 @@ import { DropdownMenuButton } from '@proton/components/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import clsx from '@proton/utils/clsx';
 
-import { DropdownItemIcon, type DropdownItemIconProps } from './DropdownItemIcon';
+import { ListItemIcon, type ListItemIconProps } from './ListItemIcon';
 
-import './DropdownItem.scss';
+import './ListItem.scss';
 
-export const DROPDOWN_ITEM_HEIGHT = 3.75; /* rem */
+export const LIST_ITEM_HEIGHT = 3.75; /* rem */
 
-export const DropdownItem: FC<
+export const ListItem: FC<
     {
-        onClick?: () => void;
-        title?: string;
-        subTitle: ReactNode;
-        disabled?: boolean;
         autogrow?: boolean;
+        className?: string;
+        disabled?: boolean;
         subTheme?: SubTheme;
-    } & DropdownItemIconProps
-> = ({ onClick, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
+        subTitle: ReactNode;
+        title?: string;
+        onClick?: () => void;
+    } & ListItemIconProps
+> = ({ onClick, className, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
     <DropdownMenuButton
-        className={clsx('pass-injected-dropdown--item text-left min-h-custom h-custom', subTheme)}
-        style={
-            autogrow
-                ? { '--min-h-custom': `${DROPDOWN_ITEM_HEIGHT}rem` }
-                : { '--h-custom': `${DROPDOWN_ITEM_HEIGHT}rem` }
-        }
+        className={clsx('pass-injected-dropdown--item text-left min-h-custom h-custom', subTheme, className)}
+        style={autogrow ? { '--min-h-custom': `${LIST_ITEM_HEIGHT}rem` } : { '--h-custom': `${LIST_ITEM_HEIGHT}rem` }}
         onClick={onClick}
         disabled={disabled}
     >
         <div className="flex items-center gap-3">
-            <DropdownItemIcon {...(url ? { url, icon } : { icon })} />
+            <ListItemIcon {...(url ? { url, icon } : { icon })} />
             <div className="flex-1">
                 {title && <span className="block text-ellipsis">{title}</span>}
                 <span
