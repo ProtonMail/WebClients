@@ -7,15 +7,15 @@ import '../../globals.d';
 export const logId = (id: string) =>
     id.length > 10 ? `[${id.slice(0, 5)}…${id.slice(id.length - 5, id.length)}]` : `[${id}]`;
 
-export const registerLoggerEffect = (effect: (message: string) => void) => {
+export const registerLoggerEffect = (effect: (...args: any[]) => void) => {
     const originalFactory = log.methodFactory;
 
     log.methodFactory = function (methodName, logLevel, loggerName) {
         const originalMethod = originalFactory(methodName, logLevel, loggerName);
 
-        return function (message: string) {
-            effect(message);
-            if (ENV === 'development') originalMethod(message);
+        return function (...args: any[]) {
+            effect(...args);
+            if (ENV === 'development') originalMethod(...args);
         };
     };
 
