@@ -1,25 +1,86 @@
-import { useEffect } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Pill } from '@proton/atoms/Pill';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { FeatureCode, useFeature } from '../..';
-import { Icon, IconName } from '../../components';
+import { Icon, IconName, Option, SelectTwo } from '../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-import useInboxDesktopVersion, { DesktopRelease } from './useInboxDesktopVersion';
+import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion';
 
-interface DownloadSectionProps {
-    release: DesktopRelease;
+interface DownloadSectionProps extends PropsWithChildren {
+    version: string;
     icon: IconName;
-    platform: 'Windows' | 'macOS';
+    platform: 'Windows' | 'macOS' | 'linux';
     isBeta?: boolean;
 }
 
-const DownloadSection = ({ release, icon, platform, isBeta }: DownloadSectionProps) => {
-    const { Version, File } = release;
+const getButtonName = (url: string) => {
+    if (url.includes('.deb')) {
+        return c('Download link').t`.deb for Debian / Ubuntu`;
+    } else if (url.includes('.rpm')) {
+        return c('Download link').t`.rpm for Fedora / Red Hat`;
+    }
+
+    return '';
+};
+
+const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
+    const [value, setValue] = useState(app.File[0].Url);
+
+    const handleClick = () => {
+        if (!value) {
+            return;
+        }
+
+        if (canInvokeInboxDesktopIPC) {
+            window.ipcInboxMessageBroker!.send('openExternal', value);
+        } else {
+            window.open(value, '_self');
+        }
+    };
+
+    return (
+        <div className="flex gap-2 w-full">
+            <SelectTwo value={value} onChange={({ value }) => setValue(value)}>
+                {app.File.map((file) => {
+                    const text = getButtonName(file.Url!);
+                    return (
+                        <Option key={file.Url} value={file.Url} title={text}>
+                            {text}
+                        </Option>
+                    );
+                })}
+            </SelectTwo>
+            <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>
+        </div>
+    );
+};
+
+const DownloadButton = ({ link }: { link?: string }) => {
+    if (isElectronApp && link) {
+        const handleClick = () => {
+            if (canInvokeInboxDesktopIPC) {
+                window.ipcInboxMessageBroker!.send('openExternal', link);
+            }
+        };
+
+        return <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>;
+    }
+
+    return (
+        <ButtonLike as="a" color="norm" shape="solid" fullWidth href={link} target="_self">
+            {c('Action').t`Download`}
+        </ButtonLike>
+    );
+};
+
+const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSectionProps) => {
     return (
         <div className="flex">
             <div className="border p-7 flex-1 rounded flex flex-column items-center">
@@ -27,21 +88,20 @@ const DownloadSection = ({ release, icon, platform, isBeta }: DownloadSectionPro
                 <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`For ${platform}`}</h3>
                 <div className="flex gap-2 items-baseline">
                     {isBeta && <Pill className="mt-2 mb-4">{c('Label').t`Beta`}</Pill>}
-                    <span className="mb-4 text-center">{Version}</span>
+                    <span className="mb-4 text-center">{version}</span>
                 </div>
 
-                <ButtonLike as="a" color="norm" shape="solid" className="w-full mt-auto" href={File.Url} target="_self">
-                    {c('Action').t`Download`}
-                </ButtonLike>
+                {children}
             </div>
         </div>
     );
 };
 
 const InboxDesktopSettingsSection = () => {
-    const { windowsApp, macosApp } = useInboxDesktopVersion();
-    const isWindowsAppOK = windowsApp?.early?.File?.Url && windowsApp?.early?.Version;
-    const isMacosAppOK = macosApp?.early?.File?.Url && macosApp?.early?.Version;
+    const { windowsApp, macosApp, linuxApp } = useInboxDesktopVersion();
+    const isWindowsAppOK = windowsApp && windowsApp.File[0]?.Url && windowsApp.Version;
+    const isMacosAppOK = macosApp && macosApp.File[0]?.Url && macosApp.Version;
+    const isLinuxAppOK = linuxApp && linuxApp.Version && linuxApp.File.every((file) => file.Url);
 
     const { update, feature } = useFeature(FeatureCode.NotificationInboxDesktopApp);
     useEffect(() => {
@@ -62,10 +122,29 @@ const InboxDesktopSettingsSection = () => {
 
             <div className="mt-8 grid-column-2 grid-auto-fill gap-4">
                 {isWindowsAppOK && (
-                    <DownloadSection release={windowsApp.early} icon="brand-windows" platform="Windows" isBeta />
+                    <DownloadCard
+                        version={windowsApp.Version}
+                        icon="brand-windows"
+                        platform="Windows"
+                        isBeta={windowsApp.CategoryName === 'EarlyAccess'}
+                    >
+                        <DownloadButton link={windowsApp.File[0].Url} />
+                    </DownloadCard>
                 )}
                 {isMacosAppOK && (
-                    <DownloadSection release={macosApp.early} icon="brand-apple" platform="macOS" isBeta />
+                    <DownloadCard
+                        version={macosApp.Version}
+                        icon="brand-apple"
+                        platform="macOS"
+                        isBeta={macosApp.CategoryName === 'EarlyAccess'}
+                    >
+                        <DownloadButton link={macosApp.File[0].Url} />
+                    </DownloadCard>
+                )}
+                {isLinuxAppOK && (
+                    <DownloadCard version={linuxApp.Version} icon="brand-linux" platform="linux">
+                        <DownloadDropdown app={linuxApp} />
+                    </DownloadCard>
                 )}
             </div>
         </SettingsSectionWide>
