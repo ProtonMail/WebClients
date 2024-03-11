@@ -104,7 +104,7 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
                             loading={loading}
                             checked={Status === FILTER_STATUS.ENABLED}
                             onChange={handleChange}
-                            className="mr-2"
+                            className="mr-2 align-bottom inline-flex"
                         />
                         {Name}
                     </div>,
