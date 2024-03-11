@@ -9,6 +9,7 @@ import { Pill } from '@proton/atoms/Pill';
 import Alert from '@proton/components/components/alert/Alert';
 import { ConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
@@ -16,6 +17,7 @@ import { BitcoinAmount } from '../../atoms';
 import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { walletDeletion } from '../../store/slices/apiWalletsData';
+import { IWasmApiWalletData } from '../../types';
 import { WalletType } from '../../types/api';
 import { getWalletBalance, getWalletUntrustedBalance } from '../../utils';
 
@@ -26,6 +28,28 @@ interface Props {
 // TODO: change this when wallet settings API is ready
 const fiatCurrency = 'USD';
 const bitcoinUnit = WasmBitcoinUnit.BTC;
+
+const ONCHAIN_COLOR = '#12869F';
+const LIGHTNING_COLOR = '#AD7406';
+
+const getTopRightNode = ({ Wallet, IsNotDecryptable }: IWasmApiWalletData) => {
+    if (IsNotDecryptable) {
+        return (
+            <Tooltip
+                title={c('Wallet decryption')
+                    .t`You need to reactivate the key used to create this wallet to decrypt it.`}
+            >
+                <Icon name="exclamation-circle" className="color-warning" />
+            </Tooltip>
+        );
+    }
+
+    return Wallet.Type === WalletType.OnChain ? (
+        <Pill color={ONCHAIN_COLOR}>Onchain</Pill>
+    ) : (
+        <Pill color={LIGHTNING_COLOR}>Lightning</Pill>
+    );
+};
 
 export const YourWalletsSection = ({ onAddWallet }: Props) => {
     const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
@@ -77,11 +101,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                             >
                                 <div className="flex flex-row justify-space-between w-full">
                                     <h3 className="text-lg max-w-3/5 text-ellipsis">{wallet.Wallet.Name}</h3>
-                                    {wallet.Wallet.Type === WalletType.OnChain ? (
-                                        <Pill color="#12869F">Onchain</Pill>
-                                    ) : (
-                                        <Pill color="#AD7406">Lightning</Pill>
-                                    )}
+                                    {getTopRightNode(wallet)}
                                 </div>
 
                                 <div className="mt-6 flex flex-row items-center">

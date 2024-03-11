@@ -177,10 +177,10 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             }
 
             const wasmWallets = apiWallets.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
-                const { Wallet, WalletAccounts } = apiWallet;
+                const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
 
                 // TODO: support watch-only wallets
-                if (!Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
+                if (IsNotDecryptable || !Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
                     return acc;
                 }
 

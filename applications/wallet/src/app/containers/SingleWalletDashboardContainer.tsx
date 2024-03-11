@@ -27,7 +27,8 @@ export const SingleWalletDashboardContainer = () => {
         return <CircleLoader />;
     }
 
-    if (!wallet) {
+    // TODO: add a reactivation modal similar to calendar's one
+    if (!wallet || wallet.IsNotDecryptable) {
         return <Redirect to={'/wallets'} />;
     }
 

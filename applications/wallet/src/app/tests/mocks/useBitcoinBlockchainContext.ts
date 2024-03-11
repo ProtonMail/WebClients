@@ -12,7 +12,6 @@ export const mockUseBitcoinBlockchainContext = (
     spy.mockReturnValue({
         network: WasmNetwork.Testnet,
 
-        isInitialised: false,
         walletsChainData: walletChainDataByWalletId,
         syncingMetatadaByAccountId: {},
         syncSingleWalletAccount: vi.fn(),
@@ -20,6 +19,7 @@ export const mockUseBitcoinBlockchainContext = (
         syncManyWallets: vi.fn(),
 
         decryptedApiWalletsData: apiWalletsData,
+        loadingApiWalletsData: false,
         setPassphrase: vi.fn(),
 
         feesEstimation: getFeesEstimationMap(),
