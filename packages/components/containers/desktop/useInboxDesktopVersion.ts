@@ -1,23 +1,27 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
+import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
 
 export interface DesktopVersion {
-    CategoryName: 'EarlyAccess' | 'Stable';
+    CategoryName: RELEASE_CATEGORIES;
     Version: string;
     ReleaseDate: string;
     File: {
         Url?: string; // TODO change this to required after destkop app GA
         Sha512CheckSum: string;
     }[];
-    ReleaseNotes?: string[];
+    ReleaseNotes: {
+        Type: string;
+        Notes: string[];
+    }[];
     RolloutProportion?: number;
-    ManualUpdate?: string[];
+    ManualUpdate: string[];
 }
 
 const initialLinuxClients: DesktopVersion = {
-    CategoryName: 'EarlyAccess',
+    CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,
     Version: '1.0.0',
     ReleaseDate: '2024-03-14',
     File: [
@@ -36,7 +40,7 @@ const initialLinuxClients: DesktopVersion = {
 };
 
 const initialWindowsClient: DesktopVersion = {
-    CategoryName: 'Stable',
+    CategoryName: RELEASE_CATEGORIES.STABLE,
     Version: '1.0.0',
     ReleaseDate: '2024-03-14',
     File: [
@@ -51,7 +55,7 @@ const initialWindowsClient: DesktopVersion = {
 };
 
 const initialMacosClient: DesktopVersion = {
-    CategoryName: 'Stable',
+    CategoryName: RELEASE_CATEGORIES.STABLE,
     Version: '1.0.0',
     ReleaseDate: '2024-03-14',
     File: [
@@ -65,7 +69,7 @@ const initialMacosClient: DesktopVersion = {
     ManualUpdate: ['0.9.0', '0.9.1'],
 };
 
-const fetchClientVersion = async (platform: 'macos' | 'windows' | 'linux'): Promise<DesktopVersion[] | undefined> => {
+const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS): Promise<DesktopVersion[] | undefined> => {
     try {
         const response = await fetch(getDownloadUrl(`/mail/${platform}/version.json`));
         if (!response.ok) {
@@ -79,6 +83,8 @@ const fetchClientVersion = async (platform: 'macos' | 'windows' | 'linux'): Prom
     }
 };
 
+const { WINDOWS, MACOS, LINUX } = DESKTOP_PLATFORMS;
+
 const useInboxDesktopVersion = () => {
     const [loading, withLoading] = useLoading(true);
 
@@ -89,7 +95,7 @@ const useInboxDesktopVersion = () => {
 
     useEffect(() => {
         const fetchDesktopVersion = async () => {
-            const promises = [fetchClientVersion('windows'), fetchClientVersion('macos'), fetchClientVersion('linux')];
+            const promises = [fetchDesktopClient(WINDOWS), fetchDesktopClient(MACOS), fetchDesktopClient(LINUX)];
             const [windowsClient, macosClient, linuxClient] = await Promise.all(promises);
 
             if (windowsClient) {
