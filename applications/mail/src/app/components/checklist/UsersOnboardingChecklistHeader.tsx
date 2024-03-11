@@ -23,7 +23,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
         if (isChecklistFinished) {
             return (
                 <p className="m-0 color-weak">{c('Get started checklist instructions')
-                    .t`Congratulation, you completed all the steps!`}</p>
+                    .t`Congratulations, you completed all the steps!`}</p>
             );
         }
 
@@ -37,7 +37,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
         <div className="flex justify-space-between items-center flex-nowrap text-sm px-2 mb-2">
             <p className="m-0">
                 {isChecklistFinished
-                    ? c('Get started checklist instructions').t`Congratulation, you finished!`
+                    ? c('Get started checklist instructions').t`Congratulations, you finished!`
                     : c('Get started checklist instructions').t`Continue setting up your email`}
             </p>
             <Tooltip
