@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { Pill } from '@proton/atoms/Pill';
@@ -12,9 +12,10 @@ import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import { useWalletApi } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
-import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { walletDeletion } from '../../store/slices/apiWalletsData';
 import { IWasmApiWalletData } from '../../types';
@@ -26,8 +27,8 @@ interface Props {
 }
 
 // TODO: change this when wallet settings API is ready
-const fiatCurrency = 'USD';
-const bitcoinUnit = WasmBitcoinUnit.BTC;
+const fiatCurrency: WasmFiatCurrency = 'USD';
+const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 const ONCHAIN_COLOR = '#12869F';
 const LIGHTNING_COLOR = '#AD7406';
@@ -59,7 +60,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
     const isConfirmModalOpen = !!walletToDelete;
     const dispatch = useWalletDispatch();
 
-    const rust = useRustApi();
+    const rust = useWalletApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 

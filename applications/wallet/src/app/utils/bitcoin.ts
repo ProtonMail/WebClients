@@ -18,12 +18,12 @@ export const satsToMBitcoin = (sats: number) => {
 
 export const getLabelByUnit = (unit: WasmBitcoinUnit) => {
     switch (unit) {
-        case WasmBitcoinUnit.BTC:
+        case 'BTC':
             return c('Bitcoin Unit').t`BTC`;
-        case WasmBitcoinUnit.MBTC:
+        case 'MBTC':
             return c('Bitcoin Unit').t`mBTC`;
-        case WasmBitcoinUnit.SAT:
-            return c('Bitcoin Unit').t`SAT`;
+        case 'SATS':
+            return c('Bitcoin Unit').t`SATs`;
     }
 };
 

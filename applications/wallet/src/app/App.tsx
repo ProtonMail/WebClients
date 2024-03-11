@@ -37,10 +37,10 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/ExtendedApiProvider';
 
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
-import ExtendedApiProvider from './contexts/ExtendedApiContext/ExtendedApiProvider';
 import locales from './locales';
 import { WalletStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
@@ -105,7 +105,7 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ExtendedApiProvider api={extraThunkArguments.api} rustApi={extraThunkArguments.rustApi}>
+                            <ExtendedApiProvider api={extraThunkArguments.api} walletApi={extraThunkArguments.walletApi}>
                                 <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <Router history={extraThunkArguments.history}>

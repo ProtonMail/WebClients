@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { ConfirmActionModal, Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import { useWalletApi } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
-import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { walletAccountDeletion } from '../../store/slices/apiWalletsData';
 import { IWasmApiWalletData } from '../../types';
@@ -27,8 +28,8 @@ interface Props {
 }
 
 // TODO: change this when wallet settings API is ready
-const fiatCurrency = 'USD';
-const bitcoinUnit = WasmBitcoinUnit.BTC;
+const fiatCurrency: WasmFiatCurrency = 'USD';
+const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 export const YourAccountsSection = ({ apiWalletData }: Props) => {
     const { walletsChainData } = useBitcoinBlockchainContext();
@@ -40,7 +41,7 @@ export const YourAccountsSection = ({ apiWalletData }: Props) => {
 
     const dispatch = useWalletDispatch();
 
-    const rust = useRustApi();
+    const rust = useWalletApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 

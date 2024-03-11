@@ -25,20 +25,14 @@ interface Props {
     onMaxValue?: () => void;
 }
 
-const bitcoinUnitLabelByWasmBitcoinUnit: Record<WasmBitcoinUnit, string> = {
-    [WasmBitcoinUnit.BTC]: 'BTC',
-    [WasmBitcoinUnit.MBTC]: 'MBTC',
-    [WasmBitcoinUnit.SAT]: 'SAT',
-};
-
 export const BitcoinAmountInput = ({
     value,
     onValueChange,
     onMaxValue,
 
-    unit = WasmBitcoinUnit.SAT,
+    unit = 'SATS',
     onUnitChange,
-    allowedUnits = [WasmBitcoinUnit.SAT, WasmBitcoinUnit.BTC],
+    allowedUnits = ['SATS', 'BTC'],
 
     ['data-testid']: dataTestId = 'recipient-amount-input',
     placeholder = c('Wallet').t`Amount`,
@@ -57,7 +51,7 @@ export const BitcoinAmountInput = ({
                     type="number"
                     value={value}
                     min={min}
-                    step={unit === WasmBitcoinUnit.SAT ? 1 : 1 / BITCOIN}
+                    step={unit === 'SATS' ? 1 : 1 / BITCOIN}
                     disabled={disabled}
                     suffix={suffix}
                     onChange={(event) => {
@@ -72,10 +66,10 @@ export const BitcoinAmountInput = ({
                         <Button
                             key={unitB}
                             data-testid={`${unitB}-amount-input-unit-button`}
-                            selected={unit === unitB}
+                            aria-pressed={unit === unitB}
                             onClick={() => onUnitChange(unitB)}
                         >
-                            {bitcoinUnitLabelByWasmBitcoinUnit[unitB]}
+                            {unitB}
                         </Button>
                     ))}
                 </ButtonGroup>

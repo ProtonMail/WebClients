@@ -23,7 +23,7 @@ export const selectApiWalletsData = (state: ApiWalletsDataState) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
-        return extraArgument.rustApi
+        return extraArgument.walletApi
             .wallet()
             .getWallets()
             .then(async (payload) => {
@@ -31,7 +31,7 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
 
                 return Promise.all(
                     wallets.map(async ({ Wallet, WalletKey, WalletSettings }) => {
-                        const accounts: WasmApiWalletAccount[] = await extraArgument.rustApi
+                        const accounts: WasmApiWalletAccount[] = await extraArgument.walletApi
                             .wallet()
                             .getWalletAccounts(Wallet.ID)
                             .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Account))
