@@ -20,7 +20,6 @@ type CreateRefreshHandlerOptions = {
     call: ApiCallFn;
     getAuth: () => Maybe<ApiAuth>;
     onRefresh: OnRefreshCallback;
-    setRefreshing: (refreshing: boolean) => void;
 };
 
 /**
@@ -62,32 +61,25 @@ const refresh = async (options: {
     }
 };
 
-export const refreshHandlerFactory = ({ call, getAuth, onRefresh, setRefreshing }: CreateRefreshHandlerOptions) =>
+export const refreshHandlerFactory = ({ call, getAuth, onRefresh }: CreateRefreshHandlerOptions) =>
     asyncLock<RefreshHandler>(
         async (response) => {
-            try {
-                const auth = getAuth();
-                if (auth === undefined) throw InactiveSessionError();
-                const responseDate = getDateHeader(response.headers);
+            const auth = getAuth();
+            if (auth === undefined) throw InactiveSessionError();
+            const responseDate = getDateHeader(response.headers);
 
-                const lastRefreshDate = getAuth()?.RefreshTime;
+            const lastRefreshDate = getAuth()?.RefreshTime;
 
-                if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
-                    setRefreshing(true);
-                    const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
-                    const timestamp = getDateHeader(response.headers) ?? new Date();
-                    const result: RefreshSessionResponse = await response.json();
+            if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
+                const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
+                const timestamp = getDateHeader(response.headers) ?? new Date();
+                const result: RefreshSessionResponse = await response.json();
 
-                    logger.info('[API] Successfully refreshed session tokens');
+                logger.info('[API] Successfully refreshed session tokens');
 
-                    await onRefresh({ ...result, RefreshTime: +timestamp });
-                    await wait(randomIntFromInterval(500, 2000));
-                }
-            } finally {
-                setRefreshing(false);
+                await onRefresh({ ...result, RefreshTime: +timestamp });
+                await wait(randomIntFromInterval(500, 2000));
             }
         },
-        {
-            key: () => getAuth()?.UID ?? '',
-        }
+        { key: () => getAuth()?.UID ?? '' }
     );
