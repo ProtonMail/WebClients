@@ -14,13 +14,16 @@ const ExtraEventOrganizerButtons = ({ model, setModel }: Props) => {
     const {
         invitationIcs: { method },
         isPartyCrasher,
+        singleEditData,
     } = model;
+
+    const hasSingleEdits = singleEditData && singleEditData.length > 0;
 
     if (!getHasInvitationApi(model)) {
         return null;
     }
 
-    if (method === ICAL_METHOD.REPLY && isPartyCrasher) {
+    if (method === ICAL_METHOD.REPLY && isPartyCrasher && !hasSingleEdits) {
         return <ExtraEventAddParticipantButton model={model} setModel={setModel} />;
     }
 
