@@ -19,6 +19,7 @@ interface FeatureListProps {
     tooltip?: boolean;
     iconSize?: IconSize;
     className?: string;
+    iconColor?: string;
     itemClassName?: string;
     gapClassName?: string;
 }
@@ -31,6 +32,7 @@ export const PlanCardFeatureList = ({
     margin = true,
     tooltip = true,
     iconSize = 5,
+    iconColor = 'color-success',
     className,
     itemClassName,
 }: FeatureListProps) => {
@@ -66,7 +68,7 @@ export const PlanCardFeatureList = ({
 
                     if (feature.included) {
                         return (
-                            <span className="color-success">
+                            <span className={iconColor}>
                                 {icon && feature.icon ? (
                                     <Icon size={iconSize} name={feature.icon} />
                                 ) : (

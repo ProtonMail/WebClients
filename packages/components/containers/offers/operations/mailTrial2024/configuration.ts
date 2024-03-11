@@ -8,8 +8,9 @@ import { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import sideImage from './mail-trial-400x1200.jpg';
 import sideImage2x from './mail-trial-800x2400.jpg';
+import { getCTAContent } from './text';
 
-const config: OfferConfig = {
+const config = {
     ID: 'mail-trial-2024',
     featureCode: FeatureCode.OfferMailTrial2024,
     autoPopUp: 'one-time',
@@ -24,7 +25,7 @@ const config: OfferConfig = {
             cycle: CYCLE.MONTHLY,
             couponCode: COUPON_CODES.TRYMAILPLUS2024,
             features: getMailPlus2024InboxFeatures,
-            getCTAContent: () => c('mailtrial2024: Action').t`Get the deal`,
+            getCTAContent,
             popular: 1, // to get solid CTA
             dealSuffixPrice: c('mailtrial2024: Info').t`for the first month`,
             suffixOnNewLine: true,
@@ -43,6 +44,6 @@ const config: OfferConfig = {
         sideImage,
         sideImage2x,
     },
-};
+} satisfies OfferConfig;
 
 export default config;

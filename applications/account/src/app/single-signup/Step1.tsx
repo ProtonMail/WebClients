@@ -934,6 +934,7 @@ const Step1 = ({
                           currency: options.currency,
                       })
                     : getCheckoutRenewNoticeText({
+                          coupon: options.checkResult.Coupon?.Code,
                           cycle: options.cycle,
                           plansMap: model.plansMap,
                           planIDs: options.planIDs,

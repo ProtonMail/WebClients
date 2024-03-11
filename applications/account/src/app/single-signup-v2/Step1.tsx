@@ -15,7 +15,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, IconName } from '@proton/components/components';
+import { Icon, IconName, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText } from '@proton/components/containers';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
@@ -30,7 +30,7 @@ import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { BRAND_NAME, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, COUPON_CODES, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -85,6 +85,7 @@ import {
     SignupParameters2,
     UpsellTypes,
 } from './interface';
+import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { getFreePassFeatures } from './pass/configuration';
 
 export interface Step1Rref {
@@ -163,6 +164,7 @@ const Step1 = ({
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
     const isChargebeeEnabled = useIsChargebeeEnabled();
+    const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
@@ -194,7 +196,7 @@ const Step1 = ({
         }));
     };
 
-    const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
+    const handleOptimistic = async (optimistic: Partial<OptimisticOptions & { coupon: string }>) => {
         if (model.session?.state.payable === false) {
             return;
         }
@@ -202,6 +204,7 @@ const Step1 = ({
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
         const newBillingAddress = optimistic.billingAddress || options.billingAddress;
+        const newCoupon = optimistic.coupon;
 
         const optimisticCheckResult = getOptimisticCheckResult({
             plansMap: model.plansMap,
@@ -221,7 +224,7 @@ const Step1 = ({
 
         try {
             const validateFlow = createFlow();
-            const couponCode = model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon;
+            const couponCode = newCoupon || model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon;
 
             // If there's a couponCode, we ignore optimistically setting new values because they'll be incorrect.
             setOptimisticDiff(newOptimistic);
@@ -337,6 +340,7 @@ const Step1 = ({
     const hasPlanSelector =
         (!model.planParameters?.defined || hasUpsellSection) &&
         [SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) &&
+        model.subscriptionData.checkResult.Coupon?.Code !== COUPON_CODES.TRYMAILPLUS2024 &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
 
@@ -358,6 +362,7 @@ const Step1 = ({
                       currency: options.currency,
                   })
                 : getCheckoutRenewNoticeText({
+                      coupon: options.checkResult.Coupon?.Code,
                       cycle: options.cycle,
                       plansMap: model.plansMap,
                       planIDs: options.planIDs,
@@ -390,6 +395,24 @@ const Step1 = ({
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
         >
+            {renderUpsellMailTrialModal && (
+                <MailTrial2024UpsellModal
+                    {...upsellMailTrialModal}
+                    currency={options.currency}
+                    onConfirm={async () => {
+                        await handleOptimistic({
+                            coupon: COUPON_CODES.TRYMAILPLUS2024,
+                            planIDs: { [PLANS.MAIL]: 1 },
+                            cycle: CYCLE.MONTHLY,
+                        });
+                    }}
+                    onContinue={async () => {
+                        withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
+                            noop
+                        );
+                    }}
+                />
+            )}
             <div className="flex items-center flex-column">
                 <div
                     className={clsx(
@@ -750,6 +773,15 @@ const Step1 = ({
                                                 onSubmit={
                                                     hasSelectedFree
                                                         ? () => {
+                                                              if (
+                                                                  app === APPS.PROTONMAIL &&
+                                                                  options.plan.Name === PLANS.FREE &&
+                                                                  !signupParameters.noPromo
+                                                              ) {
+                                                                  setUpsellMailTrialModal(true);
+                                                                  return;
+                                                              }
+
                                                               let subscriptionData = getFreeSubscriptionData(
                                                                   model.subscriptionData
                                                               );
