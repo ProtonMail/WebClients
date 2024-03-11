@@ -1,6 +1,4 @@
-import { ReactNode, useContext, useMemo } from 'react';
-
-import { isEmpty } from 'lodash';
+import { ReactNode, useContext } from 'react';
 
 import { BitcoinBlockchainContext } from '.';
 import { useBitcoinNetwork } from '../../store/hooks';
@@ -14,16 +12,12 @@ interface Props {
 
 export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
     const [network] = useBitcoinNetwork();
-    const { decryptedApiWalletsData, setPassphrase } = useDecryptedApiWalletsData();
+    const { decryptedApiWalletsData, loading: loadingApiWalletsData, setPassphrase } = useDecryptedApiWalletsData();
 
     const { walletsChainData, syncingMetatadaByAccountId, syncManyWallets, syncSingleWallet, syncSingleWalletAccount } =
         useWalletsChainData(decryptedApiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
-
-    const isInitialised = useMemo(() => {
-        return !isEmpty(walletsChainData);
-    }, [walletsChainData]);
 
     return (
         <BitcoinBlockchainContext.Provider
@@ -31,9 +25,9 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
                 network,
 
                 decryptedApiWalletsData,
+                loadingApiWalletsData,
                 setPassphrase,
 
-                isInitialised,
                 walletsChainData,
                 syncingMetatadaByAccountId,
                 syncManyWallets,

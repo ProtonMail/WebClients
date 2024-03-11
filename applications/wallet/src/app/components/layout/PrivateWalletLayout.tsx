@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const PrivateWalletLayout = ({ children }: Props) => {
-    const { isInitialised, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData, loadingApiWalletsData } = useBitcoinBlockchainContext();
 
     const { state: expanded, toggle: toggleExpanded } = useToggle();
     const { drawerSidebarButtons, showDrawerSidebar } = useWalletDrawer();
@@ -35,12 +35,12 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                 drawerVisibilityButton={<DrawerVisibilityButton />}
                 mainBordered={!!showDrawerSidebar}
             >
-                {isInitialised ? (
-                    children
-                ) : (
+                {!decryptedApiWalletsData || loadingApiWalletsData ? (
                     <div className="m-auto">
                         <CircleLoader size="large" className="color-primary" />
                     </div>
+                ) : (
+                    children
                 )}
             </PrivateMainArea>
         </PrivateAppContainer>

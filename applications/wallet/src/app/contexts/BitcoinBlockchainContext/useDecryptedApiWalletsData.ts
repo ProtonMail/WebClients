@@ -8,9 +8,9 @@ import { IWasmApiWalletData } from '../../types';
 import { decryptWalletData } from '../../utils/crypto';
 
 export const useDecryptedApiWalletsData = () => {
-    const [apiWalletsData, loading] = useApiWalletsData();
+    const [apiWalletsData, loadingWalletFetch] = useApiWalletsData();
     const [userKeys] = useUserKeys();
-    const [loadingDecryption, withLoadingDecryption] = useLoading();
+    const [loadingWalletDecryption, withLoadingDecryption] = useLoading();
 
     const [decryptedApiWalletsData, setDecryptedApiWalletsData] = useState<IWasmApiWalletData[]>();
 
@@ -58,9 +58,16 @@ export const useDecryptedApiWalletsData = () => {
                                 };
 
                                 return data;
-                            } catch {
-                                // TODO: handle decryption errors
-                                return null;
+                            } catch (e) {
+                                const data: IWasmApiWalletData = {
+                                    Wallet,
+                                    WalletKey,
+                                    WalletSettings,
+                                    WalletAccounts,
+                                    IsNotDecryptable: true,
+                                };
+
+                                return data;
                             }
                         })
                     );
@@ -92,5 +99,5 @@ export const useDecryptedApiWalletsData = () => {
         });
     }, []);
 
-    return { decryptedApiWalletsData, loading: loading || loadingDecryption, setPassphrase };
+    return { decryptedApiWalletsData, loading: loadingWalletFetch || loadingWalletDecryption, setPassphrase };
 };

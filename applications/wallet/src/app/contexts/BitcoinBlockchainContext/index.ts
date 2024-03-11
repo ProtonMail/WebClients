@@ -9,9 +9,9 @@ export interface BitcoinBlockchainContextValue {
     network: WasmNetwork | undefined;
 
     decryptedApiWalletsData: IWasmApiWalletData[] | undefined;
+    loadingApiWalletsData: boolean;
     setPassphrase: (walletId: string, walletPassphrase: string) => void;
 
-    isInitialised: boolean;
     walletsChainData: WalletChainDataByWalletId;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
     syncSingleWalletAccount: (walletId: string, accountId: string, shouldSync?: any) => Promise<void>;
@@ -26,9 +26,9 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
     network: undefined,
 
     decryptedApiWalletsData: undefined,
+    loadingApiWalletsData: false,
     setPassphrase: () => {},
 
-    isInitialised: false,
     walletsChainData: {},
     syncingMetatadaByAccountId: {},
     syncSingleWalletAccount: async () => {},

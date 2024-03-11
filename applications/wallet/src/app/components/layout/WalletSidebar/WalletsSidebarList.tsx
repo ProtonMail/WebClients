@@ -51,6 +51,7 @@ export const WalletsSidebarList = ({ apiWalletsData }: Props) => {
                                     label={wallet.Wallet.Name}
                                     to={`/wallets/${wallet.Wallet.ID}`}
                                     data-testid="wallet-sidebar:wallet-item"
+                                    disabled={wallet.IsNotDecryptable}
                                 />
                             </SidebarListItem>
                         );

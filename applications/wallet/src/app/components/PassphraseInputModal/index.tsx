@@ -26,7 +26,11 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
 
     const fingerPrint = useMemo(() => {
         if (network && wallet.Wallet.Mnemonic) {
-            return new WasmWallet(network, wallet.Wallet.Mnemonic, passphrase).getFingerprint();
+            try {
+                return new WasmWallet(network, wallet.Wallet.Mnemonic, passphrase).getFingerprint();
+            } catch {
+                return '';
+            }
         }
     }, [network, passphrase, wallet.Wallet.Mnemonic]);
 
