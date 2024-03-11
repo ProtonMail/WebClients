@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -9,25 +10,12 @@ import { type AddressKeysState, addressKeysThunk, getAllAddressKeysAction, selec
 
 const addressKeyEqualityComparator = (a: Key[] | undefined = [], b: Key[] | undefined = []) => {
     return (
+        a &&
+        b &&
         a.length === b.length &&
         a.every((value, index) => {
             const otherKey = b[index];
-            return (
-                otherKey &&
-                value.ID === otherKey.ID &&
-                value.Primary === otherKey.Primary &&
-                value.Active === otherKey.Active &&
-                value.Flags === otherKey.Flags &&
-                value.Version === otherKey.Version &&
-                value.Fingerprint === otherKey.Fingerprint &&
-                value.Activation === otherKey.Activation &&
-                value.PrivateKey === otherKey.PrivateKey &&
-                value.Token === otherKey.Token &&
-                value.Signature === otherKey.Signature &&
-                value.AddressForwardingID === otherKey.AddressForwardingID &&
-                value.Fingerprints.length === otherKey.Fingerprints.length &&
-                value.Fingerprints.every((fingerprint, fpIndex) => fingerprint === otherKey.Fingerprints[fpIndex])
-            );
+            return isDeepEqual(value, otherKey);
         })
     );
 };
