@@ -27,4 +27,12 @@ li.pass-field-text-group--item {
 			color: var(--signal-danger);
 		}
 	}
+	&#{'\\:loading'} {
+		background-color: transparent;
+		border-color: var(--signal-warning);
+
+		button {
+			color: var(--signal-warning);
+		}
+	}
 }

@@ -26,7 +26,7 @@ const OrganizationContext = createContext<MaybeNull<OrganizationContextValue>>(n
  * which do not belong to an organization. */
 export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
-    const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing);
+    const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing) || true;
 
     const passPlan = useSelector(selectPassPlan);
     const user = useSelector(selectUser);
