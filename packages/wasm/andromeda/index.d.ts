@@ -1,13 +1,13 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-*/
-export function setPanicHook(): void;
-/**
 * @param {string} word_start
 * @returns {(string)[]}
 */
 export function getWordsAutocomplete(word_start: string): (string)[];
+/**
+*/
+export function setPanicHook(): void;
 /**
 */
 export enum WasmScriptType {
@@ -15,6 +15,29 @@ export enum WasmScriptType {
   NestedSegwit = 1,
   NativeSegwit = 2,
   Taproot = 3,
+}
+/**
+*/
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -35,46 +58,6 @@ export enum WasmNetwork {
 * Bitcoin's regtest network.
 */
   Regtest = 3,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
 }
 /**
 */
@@ -120,14 +103,6 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
 export enum WasmWordCount {
   Words12 = 0,
   Words15 = 1,
@@ -135,6 +110,43 @@ export enum WasmWordCount {
   Words21 = 3,
   Words24 = 4,
 }
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
+export type WasmFiatCurrency = "USD" | "EUR" | "CHF";
+
+export interface WasmUserSettings {
+    BitcoinUnit: WasmBitcoinUnit;
+    FiatCurrency: WasmFiatCurrency;
+    HideEmptyUsedAddresses: number;
+    ShowWalletRecovery: number;
+    TwoFactorAmountThreshold: number | null;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export interface WasmApiWallet {
     ID: string;
     Name: string;
@@ -169,18 +181,6 @@ export interface WasmApiWalletAccount {
     Label: string;
     ScriptType: number;
 }
-
-export type WasmFiatCurrency = "USD" | "EUR" | "CHF";
-
-export interface WasmUserSettings {
-    BitcoinUnit: WasmBitcoinUnit;
-    FiatCurrency: WasmFiatCurrency;
-    HideEmptyUsedAddresses: number;
-    ShowWalletRecovery: number;
-    TwoFactorAmountThreshold: number | null;
-}
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 /**
 */
@@ -339,13 +339,6 @@ export class WasmApiWalletsData {
 */
 export class WasmAuthData {
   free(): void;
-/**
-* @param {string} uid
-* @param {string} access
-* @param {string} refresh
-* @param {(string)[]} scopes
-*/
-  constructor(uid: string, access: string, refresh: string, scopes: (string)[]);
 /**
 */
   access: string;
@@ -592,13 +585,10 @@ export class WasmPaymentLink {
 export class WasmProtonWalletApiClient {
   free(): void;
 /**
-* @param {WasmAuthData | undefined} [auth]
+* @param {string | undefined} [uid_str]
+* @param {string | undefined} [origin]
 */
-  constructor(auth?: WasmAuthData);
-/**
-* @returns {Promise<void>}
-*/
-  login(): Promise<void>;
+  constructor(uid_str?: string, origin?: string);
 /**
 * Returns a client to use settings API
 * @returns {WasmSettingsClient}
