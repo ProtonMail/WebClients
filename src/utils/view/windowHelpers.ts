@@ -1,9 +1,9 @@
 import { BrowserWindowConstructorOptions, Session, app } from "electron";
-import { getWindowBounds } from "../../store/boundsStore";
-import { getConfig, getIcon, isProdEnv } from "../config";
-import { isMac, isWindows } from "../helpers";
+import { join } from "path";
+import { defaultHeight, defaultWidth, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
-import {join} from 'path'
+import { getConfig, isProdEnv } from "../config";
+import { isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const config = getConfig();
@@ -32,11 +32,13 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
 
     return {
         title: config.appTitle,
-        icon: join(app.getAppPath(), 'assets/icon.png'),
+        icon: join(app.getAppPath(), "assets/icon.png"),
         x,
         y,
         width,
         height,
+        minWidth: defaultWidth,
+        minHeight: defaultHeight,
         ...getOSSpecificConfig(),
         webPreferences: {
             devTools: areDevToolsAvailable(),

@@ -4,11 +4,10 @@ import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 
 const store = new Store();
 
-export const getWindowBounds = () => {
-    // Default width and height
-    const defaultWidth = 1024;
-    const defaultHeight = 768;
+export const defaultWidth = 1024;
+export const defaultHeight = 768;
 
+export const getWindowBounds = () => {
     // Get stored window size and position
     const windowBounds = store.get("windowBounds", {
         width: defaultWidth,
