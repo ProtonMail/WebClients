@@ -13,7 +13,7 @@ const MessageFooter = ({ message, outsideKey }: Props) => {
     const attachments = getAttachments(message.data);
 
     return (
-        <div className={clsx(['message-attachments bg-norm color-norm p-4 mx-3'])} data-testid="message-attachments">
+        <div className={clsx(['message-attachments bg-norm color-norm p-4 px-5'])} data-testid="message-attachments">
             <AttachmentList
                 attachments={attachments}
                 message={message as MessageStateWithData}

@@ -119,7 +119,7 @@ const MessageBody = ({
                 'message-content relative bg-norm color-norm overflow-hidden',
                 plain && 'plain',
                 isPrint && 'message-content-print',
-                isPrint || !isIframeContentSet ? '' : 'p-0 md:py-4 md:px-5',
+                isPrint || !isIframeContentSet ? '' : 'p-0 md:py-4 px-5',
                 !placeholderMode && !hasDarkStyles && theme.information.dark && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
                 hasQuickReply && 'message-content-has-quick-reply',
             ])}
@@ -160,7 +160,7 @@ const MessageBody = ({
                     className={clsx([
                         'message-iframe',
                         !contentModeShow && 'message-iframe--hidden',
-                        !isPrint && isIframeContentSet && 'p-0 md:p-4',
+                        !isPrint && isIframeContentSet && 'p-0',
                     ])}
                 >
                     <MessageBodyIframe
