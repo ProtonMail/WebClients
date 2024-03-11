@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CurrencySelector, Price, useConfig } from '@proton/components';
+import { CurrencySelector, Price, useConfig, useModalState } from '@proton/components';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getCTA,
@@ -15,7 +15,7 @@ import {
 } from '@proton/components/containers/payments/features/plan';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Currency, Cycle, FreePlanDefault, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -25,11 +25,13 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import MailTrial2024UpsellModal from '../single-signup-v2/modals/MailTrial2024UpsellModal';
 import UpsellPlanCard from './UpsellPlanCard';
 import { getSignupApplication } from './helper';
 
 interface Props {
-    onPlan: (planIDs: PlanIDs) => Promise<void>;
+    hasMailTrialUpsell?: boolean;
+    onPlan: (data: { planIDs: PlanIDs; cycle?: Cycle; coupon?: string }) => Promise<void>;
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
     cycle: Cycle;
@@ -68,6 +70,7 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 };
 
 const UpsellStep = ({
+    hasMailTrialUpsell,
     plans,
     vpnServers,
     freePlan,
@@ -83,6 +86,7 @@ const UpsellStep = ({
 
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState('free');
+    const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -164,7 +168,7 @@ const UpsellStep = ({
                                 disabled={loading}
                                 onClick={() => {
                                     setType('popular');
-                                    void withLoading(onPlan({ [mostPopularShortPlan.plan]: 1 }));
+                                    void withLoading(onPlan({ planIDs: { [mostPopularShortPlan.plan]: 1 } }));
                                 }}
                             >
                                 {getCTA(mostPopularShortPlan.title)}
@@ -192,6 +196,26 @@ const UpsellStep = ({
                 mostPopularPlanName ? 'sign-layout-three-columns gap-4' : 'gap-6'
             )}
         >
+            {renderUpsellMailTrialModal && (
+                <MailTrial2024UpsellModal
+                    {...upsellMailTrialModal}
+                    currency={currency}
+                    onConfirm={async () => {
+                        setType('mailtrial');
+                        await withLoading(
+                            onPlan({
+                                planIDs: { [PLANS.MAIL]: 1 },
+                                cycle: CYCLE.MONTHLY,
+                                coupon: COUPON_CODES.TRYMAILPLUS2024,
+                            })
+                        );
+                    }}
+                    onContinue={async () => {
+                        setType('free');
+                        void withLoading(onPlan({ planIDs: {} }));
+                    }}
+                />
+            )}
             {shortFreePlan && (
                 <Main center={false} className="sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
@@ -210,8 +234,12 @@ const UpsellStep = ({
                                     loading={loading && type === 'free'}
                                     disabled={loading}
                                     onClick={() => {
+                                        if (hasMailTrialUpsell) {
+                                            setUpsellMailTrialModal(true);
+                                            return;
+                                        }
                                         setType('free');
-                                        void withLoading(onPlan({}));
+                                        void withLoading(onPlan({ planIDs: {} }));
                                     }}
                                 >{c('new_plans: action').t`Continue with Free`}</Button>
                             }
@@ -254,7 +282,7 @@ const UpsellStep = ({
                                     disabled={loading}
                                     onClick={() => {
                                         setType('bundle');
-                                        void withLoading(onPlan({ [upsellShortPlan.plan]: 1 }));
+                                        void withLoading(onPlan({ planIDs: { [upsellShortPlan.plan]: 1 } }));
                                     }}
                                 >
                                     {upsellPlanName === PLANS.DRIVE
