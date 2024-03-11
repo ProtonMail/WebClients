@@ -37,6 +37,10 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
             if (state.get('sessionLocked')) throw LockedSessionError();
 
             try {
+                /** Check if the request was queued and possibly aborted :
+                 * throw an error early to prevent triggering the API call */
+                if (options.signal?.aborted) throw new Error('Aborted');
+
                 const auth = getAuth();
                 return await call(auth ? withAuthHeaders(auth.UID, auth.AccessToken, options) : options);
             } catch (error: any) {
