@@ -1,7 +1,7 @@
 import { ReactNode, useEffect } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { WasmAuthData, WasmProtonWalletApiClient } from '@proton/andromeda';
+import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import {
     GeneralSettingsSection,
@@ -25,10 +25,7 @@ const WalletSettingsRouter = ({
     const { path } = useRouteMatch();
 
     useEffect(() => {
-        // TODO: remove useless arguments when WasmAuthData's contructor signature has changed
-        const wasmAuth = new WasmAuthData(extraThunkArguments.authentication.UID, '', '', []);
-        const walletApi = new WasmProtonWalletApiClient(wasmAuth);
-
+        const walletApi = new WasmProtonWalletApiClient(extraThunkArguments.authentication.UID, window.location.origin);
         extendStore({ walletApi });
     }, []);
 
