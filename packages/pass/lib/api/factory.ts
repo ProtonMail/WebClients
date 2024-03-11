@@ -13,6 +13,7 @@ import type {
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
+import { objectHandler } from '@proton/pass/utils/object/handler';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import configureApi from '@proton/shared/lib/api';
 import {
@@ -56,7 +57,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
-    const state: ApiState = {
+    const state = objectHandler<ApiState>({
         appVersionBad: false,
         online: true,
         pendingCount: 0,
@@ -66,7 +67,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
         sessionInactive: false,
         sessionLocked: false,
         unreachable: false,
-    };
+    });
 
     const call = configureApi({ ...config, clientID, xhr } as any) as ApiCallFn;
 
@@ -74,27 +75,27 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
         call,
         getAuth,
         onRefresh: (data) => pubsub.publishAsync({ type: 'refresh', data }),
-        setRefreshing: (refreshing) => (state.refreshing = refreshing),
     });
 
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
     const api = async (options: ApiOptions): Promise<ApiResult> => {
-        state.pendingCount += 1;
+        const pending = state.get('pendingCount') + 1;
+        state.set('pendingCount', pending);
 
-        if (threshold && state.pendingCount > threshold) {
+        if (threshold && pending > threshold) {
             const trigger = awaiter<void>();
-            state.queued.push(trigger);
+            state.get('queued').push(trigger);
             await trigger;
         }
 
         /** According to the API specification : no requests
          * should be made if a refresh is ongoing */
-        await waitUntil(() => !state.refreshing, 250, DEFAULT_TIMEOUT);
+        await waitUntil(() => !state.get('refreshing'), 250, DEFAULT_TIMEOUT);
 
         const { output = 'json', ...rest } = options;
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
-        const wasOnline = state.online;
+        const wasOnline = state.get('online');
 
         return apiCall(config)
             .then((response) => {
@@ -104,9 +105,9 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const serverTime = getDateHeader(response.headers);
                 if (!serverTime) throw new Error('Could not fetch server time');
 
-                state.online = true;
-                state.serverTime = updateServerTime(serverTime);
-                state.unreachable = false;
+                state.set('online', true);
+                state.set('serverTime', updateServerTime(serverTime));
+                state.set('unreachable', false);
 
                 return Promise.resolve(
                     (() => {
@@ -127,35 +128,38 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const error = getApiErrorMessage(e);
                 const isOffline = getIsOfflineError(e);
                 const isUnreachable = getIsUnreachableError(e);
+                const sessionLocked = e.name === 'LockedSession';
+                const sessionInactive = e.name === 'InactiveSession';
 
-                state.appVersionBad = e.name === 'AppVersionBadError';
-                state.online = !isOffline;
-                state.serverTime = serverTime ? updateServerTime(serverTime) : state.serverTime;
-                state.sessionInactive = e.name === 'InactiveSession';
-                state.sessionLocked = e.name === 'LockedSession';
-                state.unreachable = isUnreachable;
+                state.set('appVersionBad', e.name === 'AppVersionBadError');
+                state.set('online', !isOffline);
+                state.set('sessionInactive', sessionInactive);
+                state.set('sessionLocked', sessionLocked);
+                state.set('unreachable', isUnreachable);
 
-                if (state.sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
-                if (state.sessionInactive) pubsub.publish({ type: 'session', status: 'inactive' });
+                if (serverTime) state.set('serverTime', updateServerTime(serverTime));
+                if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
+                if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive' });
                 if (error && !getSilenced(e.config, code)) pubsub.publish({ type: 'error', error });
 
                 throw e;
             })
             .finally(() => {
-                state.pendingCount -= 1;
-                state.queued.shift()?.resolve();
-                if (state.online !== wasOnline) pubsub.publish({ type: 'network', online: state.online });
+                const online = state.get('online');
+                state.set('pendingCount', state.get('pendingCount') - 1);
+                state.get('queued').shift()?.resolve();
+                if (online !== wasOnline) pubsub.publish({ type: 'network', online });
             });
     };
 
-    api.getState = () => state;
+    api.getState = () => state.data;
 
     api.idle = async () => {
         /* if API has pending requests - wait for API to be completely idle before
          * resetting state - this allows propagating API error state correctly.
          * For instance, on an inactive session, we want to avoid resetting the state
          * before every ongoing request has terminated (possible retries or refreshes) */
-        if (api.getState().pendingCount > 0) {
+        if (state.get('pendingCount') > 0) {
             logger.info(`[API] Reset deferred until API idle`);
             await waitUntil(() => api.getState().pendingCount === 0, 50, DEFAULT_TIMEOUT).catch(noop);
         }
@@ -164,14 +168,14 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
     api.reset = async () => {
         await api.idle();
 
-        state.pendingCount = 0;
-        state.queued = [];
-        state.serverTime = undefined;
-        state.appVersionBad = false;
-        state.online = true;
-        state.unreachable = false;
-        state.sessionInactive = false;
-        state.sessionLocked = false;
+        state.set('pendingCount', 0);
+        state.set('queued', []);
+        state.set('serverTime', undefined);
+        state.set('appVersionBad', false);
+        state.set('online', true);
+        state.set('unreachable', false);
+        state.set('sessionInactive', false);
+        state.set('sessionLocked', false);
 
         logger.info(`[API] internal api state reset`);
     };

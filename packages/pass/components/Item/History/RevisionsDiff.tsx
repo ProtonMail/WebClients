@@ -32,7 +32,7 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
 
 export const RevisionDiff: FC = () => {
     const dispatch = useDispatch();
-    const { selectItem, navigate } = useNavigation();
+    const { selectItem, matchTrash } = useNavigation();
     const params = useParams<{ revision: string }>();
 
     const { item: currentItem, revisions } = useItemHistory();
@@ -52,11 +52,11 @@ export const RevisionDiff: FC = () => {
                 : { ...item, itemId, shareId, lastRevision: current };
 
         dispatch(itemEditIntent(editIntent));
-        selectItem(shareId, itemId, { mode: 'replace' });
+        selectItem(shareId, itemId, { mode: 'replace', inTrash: matchTrash });
     });
 
     if (!(Number.isFinite(previous) && selectedItem && previousItem)) {
-        return <Redirect to={getItemHistoryRoute(shareId, itemId)} push={false} />;
+        return <Redirect to={getItemHistoryRoute(shareId, itemId, matchTrash)} push={false} />;
     }
 
     const { type, metadata } = selectedItem.data;
@@ -75,7 +75,7 @@ export const RevisionDiff: FC = () => {
                         shape="solid"
                         color="weak"
                         className="shrink-0"
-                        onClick={() => navigate(getItemHistoryRoute(shareId, itemId))}
+                        onClick={() => selectItem(shareId, itemId, { view: 'history', inTrash: matchTrash })}
                         title={c('Action').t`Back`}
                     >
                         <Icon name="chevron-left" alt={c('Action').t`Back`} />

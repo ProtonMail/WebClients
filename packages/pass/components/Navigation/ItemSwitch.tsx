@@ -22,7 +22,7 @@ export const ItemSwitch: FC<RouteChildrenProps> = ({ match }) => {
             <Route exact path={sub('item/new/:type')} component={ItemNew} />
             <Route exact path={sub('(trash/)?share/:shareId/item/:itemId')} component={ItemView} />
             <Route exact path={sub('share/:shareId/item/:itemId/edit')} component={ItemEdit} />
-            <Route path={sub('share/:shareId/item/:itemId/history')} component={ItemHistory} />
+            <Route path={sub('(trash/)?share/:shareId/item/:itemId/history')} component={ItemHistory} />
             <Route component={Autoselect} />
         </Switch>
     ) : null;

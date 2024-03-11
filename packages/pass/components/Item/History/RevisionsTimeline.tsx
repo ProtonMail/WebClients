@@ -18,7 +18,7 @@ import { RevisionItem } from './RevisionItem';
 import './RevisionsTimeline.scss';
 
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
-    const { selectItem, navigate } = useNavigation();
+    const { selectItem, navigate, matchTrash } = useNavigation();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
     const { shareId, itemId } = item;
     const [current, ...history] = revisions;
@@ -35,7 +35,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                         shape="solid"
                         color="weak"
                         className="shrink-0"
-                        onClick={() => selectItem(shareId, itemId)}
+                        onClick={() => selectItem(shareId, itemId, { inTrash: matchTrash })}
                         title={c('Action').t`Close`}
                     >
                         <Icon name="cross" alt={c('Action').t`Close`} />
