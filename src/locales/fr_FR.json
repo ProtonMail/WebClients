@@ -4,7 +4,7 @@
     "language": "fr_FR"
   },
   "contexts": {
-    "Menu": {
+    "App menu": {
       "Clear application data": [
         "Effacer les données de l'application"
       ],
@@ -14,11 +14,20 @@
       "File": [
         "Fichier"
       ],
+      "Force Reload": [
+        "Forcer le rechargement"
+      ],
+      "Reload": [
+        "Recharger"
+      ],
       "Show logs": [
         "Afficher les journaux"
       ],
       "Speech": [
         "Synthèse vocale"
+      ],
+      "Toggle developers tools": [
+        "Activer les outils de développement"
       ],
       "Uninstall Proton Mail": [
         "Désinstaller Proton Mail"
