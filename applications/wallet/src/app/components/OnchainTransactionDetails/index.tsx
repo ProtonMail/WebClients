@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmTransactionDetails } from '@proton/andromeda';
+import { WasmTransactionDetails } from '@proton/andromeda';
 import Href from '@proton/atoms/Href/Href';
 import Pill from '@proton/atoms/Pill/Pill';
 import Copy from '@proton/components/components/button/Copy';
@@ -83,7 +83,7 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
 
                                     <BitcoinAmount
                                         firstClassName="w-1/5 text-right"
-                                        unit={WasmBitcoinUnit.SAT}
+                                        unit={'SATS'}
                                         bitcoin={Number(amount)}
                                     />
                                 </li>
@@ -99,7 +99,7 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
 
                         <BitcoinAmount firstClassName="block w-1/5 color-hint" fiat={'USD'} bitcoin={Number(txFees)} />
 
-                        <BitcoinAmount firstClassName="w-1/5 text-right" unit={WasmBitcoinUnit.SAT} bitcoin={txFees} />
+                        <BitcoinAmount firstClassName="w-1/5 text-right" unit={'SATS'} bitcoin={txFees} />
                     </li>
 
                     {/* Total */}
@@ -112,11 +112,7 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
                             bitcoin={Number(totalAmount)}
                         />
 
-                        <BitcoinAmount
-                            firstClassName="w-1/5 text-right"
-                            unit={WasmBitcoinUnit.SAT}
-                            bitcoin={Number(totalAmount)}
-                        />
+                        <BitcoinAmount firstClassName="w-1/5 text-right" unit={'SATS'} bitcoin={Number(totalAmount)} />
                     </li>
                 </ul>
             </div>

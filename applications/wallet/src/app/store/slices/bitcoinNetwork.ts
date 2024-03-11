@@ -19,7 +19,7 @@ export const selectBitcoinNetwork = (state: BitcoinNetworkState) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, BitcoinNetworkState, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
-        return extraArgument.rustApi
+        return extraArgument.walletApi
             .network()
             .getNetwork()
             .then((network) => network);

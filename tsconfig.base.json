@@ -48,6 +48,7 @@
             "@proton/testing/*": ["./packages/testing/*"],
             "@proton/utils/*": ["./packages/utils/*"],
             "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
+            "@proton/wallet": ["./packages/wallet/*"],
             "@proton/andromeda": ["./packages/wasm/andromeda/*"]
         }
     },

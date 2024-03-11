@@ -9152,6 +9152,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/wallet@workspace:packages/wallet":
+  version: 0.0.0-use.local
+  resolution: "@proton/wallet@workspace:packages/wallet"
+  dependencies:
+    "@proton/account": "workspace:^"
+    "@proton/andromeda": "workspace:packages/wasm/andromeda"
+    "@proton/redux-shared-store": "workspace:^"
+    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@testing-library/jest-dom": "npm:^6.4.2"
+    "@testing-library/react": "npm:^14.2.1"
+    eslint: "npm:^8.56.0"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-redux: "npm:^9.1.0"
+    ts-jest: "npm:^29.1.2"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
 "@protontech/bip39@npm:^1.0.2":
   version: 1.0.2
   resolution: "@protontech/bip39@npm:1.0.2"
@@ -36094,6 +36115,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
+    "@proton/wallet": "workspace:packages/wallet"
     "@testing-library/jest-dom": "npm:^6.1.5"
     "@testing-library/react": "npm:^14.1.2"
     "@testing-library/react-hooks": "npm:^8.0.1"

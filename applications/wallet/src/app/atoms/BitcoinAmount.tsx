@@ -58,9 +58,9 @@ export const BitcoinAmount = ({
 
     const amount = useMemo(() => {
         switch (unit) {
-            case WasmBitcoinUnit.BTC:
+            case 'BTC':
                 return satsToBitcoin(bitcoin).toFixed(precision);
-            case WasmBitcoinUnit.MBTC:
+            case 'MBTC':
                 return satsToMBitcoin(bitcoin).toFixed(precision - 3);
             default:
                 return bitcoin;
@@ -83,7 +83,7 @@ export const BitcoinAmount = ({
                     className={clsx('block', firstClassName, showColor && colorClassName)}
                 >
                     {sign}
-                    {amount} {getLabelByUnit(unit ?? WasmBitcoinUnit.SAT)}
+                    {amount} {getLabelByUnit(unit ?? 'SATS')}
                 </span>
                 {info && <Info title={info} />}
                 {fiat && (
