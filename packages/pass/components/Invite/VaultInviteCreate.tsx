@@ -193,7 +193,12 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                 >
                     <FormikProvider value={form}>
                         <Form id={FORM_ID} className="flex-1">
-                            <VaultInviteForm form={form} autoFocus={didEnter} ref={emailFieldRef} />
+                            <VaultInviteForm
+                                form={form}
+                                autoFocus={didEnter}
+                                ref={emailFieldRef}
+                                addressValidator={addressValidator}
+                            />
                         </Form>
                     </FormikProvider>
                 </Panel>

@@ -37,6 +37,7 @@ type ListFieldProps<Values, FieldKey extends ListFieldKeys<Values>, T = ListFiel
         onPush: (value: string) => ListFieldValue<T>;
         onReplace: (value: string, entry: ListFieldValue<T>) => ListFieldValue<T>;
         renderError?: (errors: FormikErrors<ListFieldValue<T>[]>) => ReactNode;
+        fieldLoading?: (entry: ListFieldValue<T>) => boolean;
     };
 
 export const ListField = <
@@ -57,6 +58,7 @@ export const ListField = <
     onPush,
     onReplace,
     renderError,
+    fieldLoading,
 }: ListFieldProps<Values, FieldKey>) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const ref = useCombinedRefs(fieldRef, inputRef);
@@ -176,7 +178,6 @@ export const ListField = <
                         if (value.trim()) helpers.replace<ListFieldValue<unknown>>(idx, onReplace(value, entry));
                         else helpers.remove(idx);
                     };
-
                     return (
                         <div className="w-full flex-1 relative flex gap-1 max-w-full max-h-full">
                             {values.map((entry, idx) => (
@@ -184,6 +185,7 @@ export const ListField = <
                                     {...entry}
                                     key={entry.id}
                                     error={Boolean(errors?.[idx])}
+                                    loading={fieldLoading ? fieldLoading(entry) : false}
                                     onChange={onChange(idx, entry)}
                                     onMoveLeft={onMoveLeft(idx)}
                                     onMoveRight={onMoveRight(idx)}
