@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Pill } from '@proton/atoms/Pill';
+import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -16,7 +17,7 @@ import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion
 interface DownloadSectionProps extends PropsWithChildren {
     version: string;
     icon: IconName;
-    platform: 'Windows' | 'macOS' | 'linux';
+    platform: DESKTOP_PLATFORMS;
     isBeta?: boolean;
 }
 
@@ -125,7 +126,7 @@ const InboxDesktopSettingsSection = () => {
                     <DownloadCard
                         version={windowsApp.Version}
                         icon="brand-windows"
-                        platform="Windows"
+                        platform={DESKTOP_PLATFORMS.WINDOWS}
                         isBeta={windowsApp.CategoryName === 'EarlyAccess'}
                     >
                         <DownloadButton link={windowsApp.File[0].Url} />
@@ -135,14 +136,14 @@ const InboxDesktopSettingsSection = () => {
                     <DownloadCard
                         version={macosApp.Version}
                         icon="brand-apple"
-                        platform="macOS"
+                        platform={DESKTOP_PLATFORMS.MACOS}
                         isBeta={macosApp.CategoryName === 'EarlyAccess'}
                     >
                         <DownloadButton link={macosApp.File[0].Url} />
                     </DownloadCard>
                 )}
                 {isLinuxAppOK && (
-                    <DownloadCard version={linuxApp.Version} icon="brand-linux" platform="linux">
+                    <DownloadCard version={linuxApp.Version} icon="brand-linux" platform={DESKTOP_PLATFORMS.LINUX}>
                         <DownloadDropdown app={linuxApp} />
                     </DownloadCard>
                 )}
