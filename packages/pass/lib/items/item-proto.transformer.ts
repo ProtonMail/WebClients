@@ -1,3 +1,5 @@
+import { parsePasskey } from '@proton/pass/lib/passkeys/utils';
+import { formatExpirationDateYYYYMM } from '@proton/pass/lib/validation/credit-card';
 import type {
     Item,
     ItemRevision,
@@ -9,9 +11,9 @@ import type {
 } from '@proton/pass/types';
 import { ProtobufItem } from '@proton/pass/types';
 import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
+import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { formatExpirationDateYYYYMM } from '../validation/credit-card';
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
 const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): UnsafeItemExtraField => {
@@ -60,7 +62,11 @@ const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
 
     switch (data.oneofKind) {
         case 'login':
-            return { ...base, type: 'login', content: data.login };
+            return {
+                ...base,
+                type: 'login',
+                content: { ...data.login, passkeys: data.login.passkeys.map(sanitizeBuffers) },
+            };
         case 'note':
             return { ...base, type: 'note', content: data.note };
         case 'alias':
@@ -132,7 +138,7 @@ const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
                             /** Make sure the `passkeys` property exists. It can
                              * happen that we try to generate a protobuf for a cached
                              * item that was generated before ContentFormat v2 */
-                            passkeys: item.content.passkeys ?? [],
+                            passkeys: (item.content.passkeys ?? []).map(parsePasskey),
                         },
                     },
                 },
