@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
@@ -293,6 +293,32 @@ const getCatchAll = (included: boolean): PlanCardFeatureDefinition => {
         text: c('new_plans: feature').t`Catch-all`,
         tooltip: c('new_plans: tooltip')
             .t`Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo`,
+        included,
+    };
+};
+
+const getAutoDeleteSpamAndTrash = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Auto-delete Spam and Trash`,
+        tooltip: c('new_plans: tooltip').t`Automatically clear out messages older than 30 days from Trash and Spam`,
+        included,
+    };
+};
+
+const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Schedule and snooze emails for any time`,
+        tooltip: c('new_plans: tooltip')
+            .t`Choose custom times to be reminded about an email or for your message to arrive`,
+        included,
+    };
+};
+
+const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Desktop app`,
+        tooltip: c('new_plans: tooltip')
+            .t`Access ${MAIL_APP_NAME} and ${CALENDAR_APP_NAME} from the convenience of your desktop`,
         included,
     };
 };
@@ -606,6 +632,60 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.BUNDLE_PRO]: getCatchAll(true),
                 [PLANS.PASS_PRO]: getCatchAll(false),
                 [PLANS.PASS_BUSINESS]: getCatchAll(false),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'auto-delete-spam-and-trash',
+            plans: {
+                [PLANS.FREE]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.BUNDLE]: getAutoDeleteSpamAndTrash(true),
+                [PLANS.MAIL]: getAutoDeleteSpamAndTrash(true),
+                [PLANS.VPN]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.DRIVE]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.PASS_PLUS]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.FAMILY]: getAutoDeleteSpamAndTrash(true),
+                [PLANS.MAIL_PRO]: getAutoDeleteSpamAndTrash(true),
+                [PLANS.BUNDLE_PRO]: getAutoDeleteSpamAndTrash(true),
+                [PLANS.PASS_PRO]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.PASS_BUSINESS]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'schedule-and-snooze',
+            plans: {
+                [PLANS.FREE]: getScheduleAndSnooze(false),
+                [PLANS.BUNDLE]: getScheduleAndSnooze(true),
+                [PLANS.MAIL]: getScheduleAndSnooze(true),
+                [PLANS.VPN]: getScheduleAndSnooze(false),
+                [PLANS.DRIVE]: getScheduleAndSnooze(false),
+                [PLANS.PASS_PLUS]: getScheduleAndSnooze(false),
+                [PLANS.FAMILY]: getScheduleAndSnooze(true),
+                [PLANS.MAIL_PRO]: getScheduleAndSnooze(true),
+                [PLANS.BUNDLE_PRO]: getScheduleAndSnooze(true),
+                [PLANS.PASS_PRO]: getScheduleAndSnooze(false),
+                [PLANS.PASS_BUSINESS]: getScheduleAndSnooze(false),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'desktop-app',
+            plans: {
+                [PLANS.FREE]: getDesktopApp(false),
+                [PLANS.BUNDLE]: getDesktopApp(true),
+                [PLANS.MAIL]: getDesktopApp(true),
+                [PLANS.VPN]: getDesktopApp(false),
+                [PLANS.DRIVE]: getDesktopApp(false),
+                [PLANS.PASS_PLUS]: getDesktopApp(false),
+                [PLANS.FAMILY]: getDesktopApp(true),
+                [PLANS.MAIL_PRO]: getDesktopApp(true),
+                [PLANS.BUNDLE_PRO]: getDesktopApp(true),
+                [PLANS.PASS_PRO]: getDesktopApp(false),
+                [PLANS.PASS_BUSINESS]: getDesktopApp(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
