@@ -7,4 +7,5 @@ export interface IWasmApiWalletData {
     WalletAccounts: WasmApiWalletAccount[];
     WalletKey?: WasmApiWalletKey;
     WalletSettings?: WasmApiWalletSettings;
+    IsNotDecryptable?: boolean;
 }
