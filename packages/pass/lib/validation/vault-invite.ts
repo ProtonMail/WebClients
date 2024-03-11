@@ -27,7 +27,11 @@ export const validateShareInviteValues =
         let errors: FormikErrors<InviteFormValues> = {};
 
         if (values.step === 'members') {
-            const emails = values.members.reduce<{ errors: string[]; pass: boolean; seen: Set<string> }>(
+            const emails = values.members.reduce<{
+                errors: string[];
+                pass: boolean;
+                seen: Set<string>;
+            }>(
                 (acc, { value }) => {
                     if (acc.seen.has(value.email)) {
                         acc.errors.push(InviteEmailsError.DUPLICATE);

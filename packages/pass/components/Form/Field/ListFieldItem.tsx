@@ -2,12 +2,14 @@
 import type { KeyboardEventHandler } from 'react';
 import { useRef } from 'react';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';
 
 export type ListFieldItemProps<T> = ListFieldValue<T> & {
     error?: boolean;
+    loading: boolean;
     onChange: (value: string) => void;
     onMoveLeft: () => void;
     onMoveRight: () => void;
@@ -32,6 +34,7 @@ const getCaretPosition = (el: HTMLElement): number => {
 export const ListFieldItem = <T,>({
     id,
     error,
+    loading,
     value,
     onChange,
     onMoveLeft,
@@ -82,7 +85,8 @@ export const ListFieldItem = <T,>({
         <li
             className={clsx(
                 'pass-field-text-group--item flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation border rounded',
-                error && 'pass-field-text-group--item:error'
+                error && 'pass-field-text-group--item:error',
+                loading && 'pass-field-text-group--item:loading'
             )}
         >
             <button className="pill-remove inline-flex shrink-0 px-2 py-1 max-w-full" type="button" tabIndex={-1}>
@@ -98,6 +102,7 @@ export const ListFieldItem = <T,>({
                     suppressContentEditableWarning
                 >
                     {renderValue(value)}
+                    {loading && <CircleLoader size="small" className="ml-2" />}
                 </span>
             </button>
         </li>
