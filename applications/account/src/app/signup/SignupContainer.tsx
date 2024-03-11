@@ -778,6 +778,7 @@ const SignupContainer = ({
             )}
             {step === Upsell && (
                 <UpsellStep
+                    hasMailTrialUpsell={toApp === APPS.PROTONMAIL && !signupParameters.noPromo}
                     freePlan={model.freePlan}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
@@ -787,23 +788,24 @@ const SignupContainer = ({
                     upsellPlanName={upsellPlanName}
                     onChangeCurrency={handleChangeCurrency}
                     vpnServers={vpnServers}
-                    onPlan={async (planIDs) => {
+                    onPlan={async ({ planIDs, cycle, coupon }) => {
                         try {
                             const validateFlow = createFlow();
+                            const newCycle = cycle || model.subscriptionData.cycle;
                             const checkResult = await getSubscriptionPrices(
                                 getPaymentsApi(silentApi),
                                 planIDs,
                                 model.subscriptionData.currency,
-                                model.subscriptionData.cycle,
+                                newCycle,
                                 model.subscriptionData.billingAddress,
-                                model.subscriptionData.checkResult.Coupon?.Code
+                                coupon || model.subscriptionData.checkResult.Coupon?.Code
                             );
                             if (!checkResult) {
                                 return;
                             }
 
                             if (validateFlow()) {
-                                await handlePlanSelectionCallback({ checkResult, planIDs });
+                                await handlePlanSelectionCallback({ checkResult, planIDs, cycle: newCycle });
                             }
                             metrics.core_signup_upsellStep_planSelection_total.increment({
                                 status: 'success',

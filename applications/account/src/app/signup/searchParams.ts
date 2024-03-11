@@ -95,6 +95,7 @@ export const getSignupSearchParams = (
     const email = searchParams.get('email') || undefined;
     const orgName = searchParams.get('orgName') || undefined;
     const source = searchParams.get('source') || undefined;
+    const noPromo = searchParams.get('noPromo');
 
     return {
         email,
@@ -105,6 +106,7 @@ export const getSignupSearchParams = (
         preSelectedPlan: maybePreSelectedPlan || defaults?.plan,
         product,
         users,
+        noPromo: noPromo !== null && noPromo !== 'false' && noPromo !== '0',
         domains,
         ips,
         referrer,
