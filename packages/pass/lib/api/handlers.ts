@@ -1,4 +1,5 @@
 import type { ApiAuth, ApiCallFn, ApiOptions, ApiState, Maybe } from '@proton/pass/types';
+import type { ObjectHandler } from '@proton/pass/utils/object/handler';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
@@ -14,7 +15,7 @@ type ApiHandlersOptions = {
     call: ApiCallFn;
     getAuth: () => Maybe<ApiAuth>;
     refreshHandler: RefreshHandler;
-    state: ApiState;
+    state: ObjectHandler<ApiState>;
 };
 
 /* Simplified version of withApiHandlers.js :
@@ -31,9 +32,9 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
         } = options ?? {};
 
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
-            if (state.sessionInactive) throw InactiveSessionError();
-            if (state.appVersionBad) throw AppVersionBadError();
-            if (state.sessionLocked) throw LockedSessionError();
+            if (state.get('sessionInactive')) throw InactiveSessionError();
+            if (state.get('appVersionBad')) throw AppVersionBadError();
+            if (state.get('sessionLocked')) throw LockedSessionError();
 
             try {
                 const auth = getAuth();
@@ -71,11 +72,14 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
 
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
                     try {
+                        state.set('refreshing', true);
                         await refreshHandler(response);
-                        return next(attempts + 1, RETRY_ATTEMPTS_MAX);
+                        return await next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (err: any) {
                         if (err.status >= 400 && err.status <= 499) throw InactiveSessionError();
                         throw err;
+                    } finally {
+                        state.set('refreshing', false);
                     }
                 }
 
