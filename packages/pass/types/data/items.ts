@@ -1,7 +1,5 @@
-import { type XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
-
-import type { ItemIDRevision2 } from '../api/pass';
-import type { OpenedItem } from '../crypto';
+import type { ItemIDRevision2 } from '@proton/pass/types/api/pass';
+import type { OpenedItem } from '@proton/pass/types/crypto';
 import type {
     ExtraFieldType,
     ItemType,
@@ -10,9 +8,11 @@ import type {
     ProtobufItemCreditCard,
     ProtobufItemLogin,
     ProtobufItemNote,
-} from '../protobuf';
-import type { ExtraHiddenField, ExtraTotp, PlatformSpecific } from '../protobuf/item-v1';
-import type { MaybeNull } from '../utils';
+} from '@proton/pass/types/protobuf';
+import type { ExtraHiddenField, ExtraTotp, PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
+import type { MaybeNull } from '@proton/pass/types/utils';
+import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
 type Obfuscate<T, K extends keyof T> = Omit<T, K> & { [Obf in K]: XorObfuscation };
 
@@ -37,7 +37,7 @@ type ExtraFieldContent<T extends ExtraFieldType> = {
 export type ItemContent<T extends ItemType> = {
     alias: ProtobufItemAlias;
     note: ProtobufItemNote;
-    login: Obfuscate<ProtobufItemLogin, 'username' | 'password' | 'totpUri'>;
+    login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'username' | 'password' | 'totpUri'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
 }[T];
 
