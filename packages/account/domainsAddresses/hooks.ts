@@ -21,9 +21,9 @@ interface Result {
 
 const selector = createSelector([(state: DomainAddressesState) => selectDomainAddresses(state)], (state): Result => {
     const entries = Object.entries(state);
-    const loading = entries.some(([, entry]) => !entry.value && !entry.error);
+    const loading = entries.some(([, entry]) => !entry?.value && !entry?.error);
     return {
-        value: Object.fromEntries(entries.map(([key, value]) => [key, value.value])),
+        value: Object.fromEntries(entries.map(([key, entry]) => [key, entry?.value])),
         loading,
     };
 });
