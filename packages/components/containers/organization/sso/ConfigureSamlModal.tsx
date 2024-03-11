@@ -200,6 +200,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                 }
 
                 await call();
+                createNotification({ text: c('Info').t`SAML configuration saved` });
                 onClose();
             };
 
