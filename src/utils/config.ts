@@ -16,12 +16,12 @@ const localUrls = {
 };
 
 const devConfig: Config = {
-    appTitle: "DEV - Proton",
+    appTitle: "Proton Mail",
     url: localUrls,
 };
 
 const prodConfig: Config = {
-    appTitle: "Proton",
+    appTitle: "Proton Mail",
     url: getAppURL(),
 };
 

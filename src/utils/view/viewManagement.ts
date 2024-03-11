@@ -145,15 +145,18 @@ export const updateView = (target: VIEW_TARGET) => {
     const window = mainWindow;
     if (target === "mail" && currentView !== "mail") {
         loadMailView(window);
+        mainWindow.title = "Proton Mail";
         currentView = "mail";
         return mailView;
     } else if (target === "calendar" && currentView !== "calendar") {
         loadCalendarView(window);
         currentView = "calendar";
+        mainWindow.title = "Proton Calendar";
         return calendarView;
     } else if (target === "account" && currentView !== "account") {
         loadAccountView(window);
         currentView = "account";
+        mainWindow.title = "Proton";
         return;
     }
 
