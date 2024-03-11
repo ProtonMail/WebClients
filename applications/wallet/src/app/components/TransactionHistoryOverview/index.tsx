@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmTransactionDetails } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmFiatCurrency, WasmTransactionDetails } from '@proton/andromeda';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
@@ -10,8 +10,8 @@ import { BitcoinAmount } from '../../atoms';
 import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
 
 // TODO: change this when wallet settings API is ready
-const fiatCurrency = 'USD';
-const bitcoinUnit = WasmBitcoinUnit.BTC;
+const fiatCurrency: WasmFiatCurrency = 'USD';
+const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 interface Props {
     walletId?: string;

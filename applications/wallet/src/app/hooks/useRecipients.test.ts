@@ -3,7 +3,7 @@ import { act } from 'react-dom/test-utils';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import { WasmTxBuilder } from '@proton/andromeda';
 
 import { useRecipients } from './useRecipients';
 
@@ -60,13 +60,13 @@ describe('useRecipients', async () => {
 
             expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(2, 3, 'tb1...', undefined, undefined);
 
-            await act(() => result.current.updateRecipient(3, { unit: WasmBitcoinUnit.MBTC }));
+            await act(() => result.current.updateRecipient(3, { unit: 'MBTC' }));
 
             await waitFor(() => {
                 expect(txBuilder.updateRecipient).toHaveBeenCalledTimes(3);
             });
 
-            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(3, 3, undefined, undefined, WasmBitcoinUnit.MBTC);
+            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(3, 3, undefined, undefined, 'MBTC');
         });
 
         describe("when recipient doesn't exist at index", () => {
@@ -74,9 +74,7 @@ describe('useRecipients', async () => {
                 const { result } = renderHook(() => useRecipients(mockUpdater));
 
                 // const before = { ...result.current };
-                await act(() =>
-                    result.current.updateRecipient(4, { address: 'bc1....helloworld', unit: WasmBitcoinUnit.SAT })
-                );
+                await act(() => result.current.updateRecipient(4, { address: 'bc1....helloworld', unit: 'SATS' }));
 
                 // FIXME: to replace by spied function on txBuilder when wasm test are fixed
                 // expect(result.current.recipients).toStrictEqual(before.recipients);

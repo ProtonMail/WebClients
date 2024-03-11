@@ -5,9 +5,10 @@ import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import { useWalletApi } from '@proton/wallet';
 
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
-import { useBitcoinBlockchainContext, useRustApi } from '../../contexts';
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { walletCreation } from '../../store/slices/apiWalletsData';
 import { WalletType } from '../../types';
@@ -38,7 +39,7 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
 
     const [userKeys] = useUserKeys();
 
-    const api = useRustApi();
+    const api = useWalletApi();
     const dispatch = useWalletDispatch();
 
     const onNextStep = () => {

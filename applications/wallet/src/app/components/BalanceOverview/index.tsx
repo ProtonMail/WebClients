@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import clsx from '@proton/utils/clsx';
 
 import { BitcoinAmount } from '../../atoms';
@@ -13,8 +13,8 @@ import { WelcomeCard } from './WelcomeCard';
 import { useBalanceOverview } from './useBalanceOverview';
 
 // TODO: change this when wallet settings API is ready
-const fiatCurrency = 'USD';
-const bitcoinUnit = WasmBitcoinUnit.BTC;
+const fiatCurrency: WasmFiatCurrency = 'USD';
+const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 interface SingleWalletBalanceOverviewProps {
     apiWalletData: IWasmApiWalletData;

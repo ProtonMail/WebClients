@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
-import { WasmBitcoinUnit, WasmRecipient } from '@proton/andromeda';
+import { WasmRecipient } from '@proton/andromeda';
 
 import { RecipientList } from '.';
 
@@ -100,14 +100,14 @@ describe('RecipientList', () => {
         it('should call `onRecipientUpdate` callback with correct index and update', () => {
             render(<RecipientList {...baseProps} />);
 
-            const btcButtons = screen.getAllByTestId('0-amount-input-unit-button');
+            const btcButtons = screen.getAllByTestId('BTC-amount-input-unit-button');
 
             expect(btcButtons).toHaveLength(3);
             const [firstBtcButton] = btcButtons;
 
             fireEvent.click(firstBtcButton);
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
-            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: WasmBitcoinUnit.BTC });
+            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: 'BTC' });
         });
     });
 

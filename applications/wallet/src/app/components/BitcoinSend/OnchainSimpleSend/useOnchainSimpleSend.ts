@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { WasmBitcoinUnit, WasmPaymentLink } from '@proton/andromeda';
+import { WasmPaymentLink } from '@proton/andromeda';
 
 import { WalletAndAccountSelectorValue } from '../../../atoms';
 import { useBitcoinBlockchainContext } from '../../../contexts';
@@ -64,10 +64,7 @@ export const useOnchainSimpleSend = (
         const data = paymentLink.assumeOnchain();
 
         void updateTxBuilder((txBuilder) =>
-            txBuilder
-                .clearRecipients()
-                .addRecipient()
-                .updateRecipient(0, data.address, Number(data.amount), WasmBitcoinUnit.SAT)
+            txBuilder.clearRecipients().addRecipient().updateRecipient(0, data.address, Number(data.amount), 'SATS')
         );
     }, [paymentLink, updateTxBuilder]);
 

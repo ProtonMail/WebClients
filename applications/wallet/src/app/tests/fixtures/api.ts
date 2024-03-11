@@ -3,7 +3,6 @@ import {
     WasmApiWalletAccount,
     WasmApiWalletKey,
     WasmApiWalletSettings,
-    WasmBitcoinUnit,
     WasmScriptType,
 } from '@proton/andromeda';
 
@@ -199,19 +198,19 @@ export const apiWalletsData: IWasmApiWalletData[] = [
 const bitcoinUnitA: BitcoinUnit = {
     BitcoinUnitID: 13,
     Name: 'bitcoin',
-    Symbol: WasmBitcoinUnit.BTC,
+    Symbol: 'BTC',
 };
 
 const bitcoinUnitB: BitcoinUnit = {
     BitcoinUnitID: 14,
     Name: 'satoshi',
-    Symbol: WasmBitcoinUnit.SAT,
+    Symbol: 'SATS',
 };
 
 const bitcoinUnitC: BitcoinUnit = {
     BitcoinUnitID: 15,
     Name: 'millibitcoin',
-    Symbol: WasmBitcoinUnit.MBTC,
+    Symbol: 'MBTC',
 };
 
 export const bitcoinUnits = [bitcoinUnitA, bitcoinUnitB, bitcoinUnitC];
