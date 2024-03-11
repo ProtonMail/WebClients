@@ -7,7 +7,7 @@ import {
     welcomeFlagsActions,
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
-import { WasmAuthData, WasmProtonWalletApiClient } from '@proton/andromeda';
+import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -37,10 +37,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
 
-    // TODO: remove useless arguments when WasmAuthData's contructor signature has changed
-    const authData = authentication.UID ? new WasmAuthData(authentication.UID, '', '', []) : undefined;
-    const walletApi = new WasmProtonWalletApiClient(authData);
-
+    const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin);
     extendStore({ walletApi });
 
     setupGuestCrossStorage();
