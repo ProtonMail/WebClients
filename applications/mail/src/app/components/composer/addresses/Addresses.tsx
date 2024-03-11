@@ -60,7 +60,7 @@ const Addresses = ({ messageSendInfo, disabled, addressesBlurRef, addressesFocus
             setEditor(true);
             setTimeout(() => inputFocusRefs.to.current(), 100);
         };
-    }, [composer.recipients.CCList, composer.recipients.BCCList]);
+    }, [composer?.recipients?.CCList, composer?.recipients?.BCCList]);
 
     const handleFocus = () => {
         if (disabled) {
