@@ -3,13 +3,23 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { TopBanner } from '@proton/components';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
-import { freeTrialUpgradeClick } from './freeTrialUpgradeClick';
+import { freeTrialUpgradeClick } from '../openExternalLink';
 import useInboxFreeTrial, { FIRST_REMINDER_DAYS, SECOND_REMINDER_DAYS, THIRD_REMINDER_DAYS } from './useInboxFreeTrial';
 
 const UpgradeButton = () => {
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.INBOX_DESKTOP_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: MAIL_UPSELL_PATHS.TRIAL_BANNER,
+    });
+
     return (
-        <Button shape="underline" onClick={freeTrialUpgradeClick} className="py-0">{c('Action').t`Upgrade Now`}</Button>
+        <Button shape="underline" onClick={() => freeTrialUpgradeClick(upsellRef)} className="py-0 align-baseline">{c(
+            'Action'
+        ).t`Upgrade Now`}</Button>
     );
 };
 

@@ -1,8 +1,12 @@
 import { useCallback } from 'react';
 
 import { useSettingsLink } from '@proton/components/components';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Currency } from '@proton/shared/lib/interfaces';
 
+import { openLinkInBrowser } from '../../desktop/openExternalLink';
 import getOfferRedirectionParams from '../helpers/getOfferRedirectionParams';
 import { Deal, Offer } from '../interface';
 
@@ -13,7 +17,14 @@ const useSelectDeal = (callback?: () => void) => {
         (offer: Offer, deal: Deal, currency: Currency) => {
             const urlSearchParams = getOfferRedirectionParams({ offer, deal, currency });
             callback?.();
-            goToSettingsLink(`/dashboard?${urlSearchParams.toString()}`);
+
+            const url = `/dashboard?${urlSearchParams.toString()}`;
+            if (isElectronApp) {
+                openLinkInBrowser(getAppHref(url, APPS.PROTONACCOUNT));
+                return;
+            } else {
+                goToSettingsLink(url);
+            }
         },
         [callback]
     );
