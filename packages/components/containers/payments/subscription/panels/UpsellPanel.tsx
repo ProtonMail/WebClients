@@ -5,7 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Icon, StripedItem, StripedList } from '@proton/components/components';
+import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useActiveBreakpoint } from '@proton/components/hooks';
+import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonColor, ButtonShape, UpsellCta, UpsellFeature, isUpsellCta } from '../helpers';
@@ -15,6 +18,7 @@ import './UpsellPanel.scss';
 
 export interface UpsellPanelProps {
     title: string;
+    plan?: PLANS;
     children?: ReactNode;
     features: UpsellFeature[];
     isRecommended?: boolean;
@@ -34,7 +38,7 @@ const getButtonColorAndShape: GetButtonColorAndShape = ({ color, shape, isRecomm
     return { color: 'norm', shape: 'solid' };
 };
 
-const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: UpsellPanelProps) => {
+const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended }: UpsellPanelProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleExpand = () => setIsExpanded((prev) => !prev);
     const { viewportWidth } = useActiveBreakpoint();
@@ -94,13 +98,22 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
             <div className="flex column gap-4">
                 {ctas.map((cta) => {
                     if (isUpsellCta(cta)) {
+                        const handleOnClick = () => {
+                            // Open the link in browser on Electron to avoid 3D Secure issues
+                            if (isElectronApp) {
+                                upgradeButtonClick(CYCLE.YEARLY, plan);
+                            } else {
+                                cta.action();
+                            }
+                        };
+
                         return (
                             <Button
                                 key={`upsell-action-${cta.label}`}
                                 data-testid="upsell-cta"
                                 size="large"
                                 {...getButtonColorAndShape({ shape: cta.shape, color: cta.color, isRecommended })}
-                                onClick={cta.action}
+                                onClick={handleOnClick}
                                 fullWidth
                             >
                                 {cta.label}
