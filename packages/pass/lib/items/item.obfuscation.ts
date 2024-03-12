@@ -1,4 +1,4 @@
-import type { Item, ItemExtraField, UnsafeItem, UnsafeItemExtraField } from '@proton/pass/types';
+import type { Item, ItemExtraField, ItemType, UnsafeItem, UnsafeItemExtraField } from '@proton/pass/types';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export const obfuscateExtraFields = (extraFields?: UnsafeItemExtraField[]): ItemExtraField[] =>
@@ -24,7 +24,7 @@ export const deobfuscateExtraFields = (extraFields?: ItemExtraField[]): UnsafeIt
         }
     }) ?? [];
 
-export const obfuscateItem = (item: UnsafeItem): Item => {
+export const obfuscateItem = <T extends ItemType = ItemType>(item: UnsafeItem): Item<T> => {
     const base = {
         metadata: { ...item.metadata, note: obfuscate(item.metadata.note) },
         extraFields: obfuscateExtraFields(item.extraFields),
@@ -41,7 +41,7 @@ export const obfuscateItem = (item: UnsafeItem): Item => {
                     password: obfuscate(item.content.password),
                     totpUri: obfuscate(item.content.totpUri),
                 },
-            };
+            } satisfies Item<'login'> as Item<T>;
         case 'creditCard':
             return {
                 ...item,
@@ -52,16 +52,16 @@ export const obfuscateItem = (item: UnsafeItem): Item => {
                     verificationNumber: obfuscate(item.content.verificationNumber),
                     pin: obfuscate(item.content.pin),
                 },
-            };
+            } satisfies Item<'creditCard'> as Item<T>;
 
         case 'note':
-            return { ...item, ...base };
+            return { ...item, ...base } satisfies Item<'note'> as Item<T>;
         case 'alias':
-            return { ...item, ...base };
+            return { ...item, ...base } satisfies Item<'alias'> as Item<T>;
     }
 };
 
-export const deobfuscateItem = (item: Item): UnsafeItem => {
+export const deobfuscateItem = <T extends ItemType>(item: Item): UnsafeItem<T> => {
     const base = {
         metadata: { ...item.metadata, note: deobfuscate(item.metadata.note) },
         extraFields: deobfuscateExtraFields(item.extraFields),
@@ -78,7 +78,7 @@ export const deobfuscateItem = (item: Item): UnsafeItem => {
                     password: deobfuscate(item.content.password),
                     totpUri: deobfuscate(item.content.totpUri),
                 },
-            };
+            } satisfies UnsafeItem<'login'> as UnsafeItem<T>;
         case 'creditCard':
             return {
                 ...item,
@@ -89,11 +89,11 @@ export const deobfuscateItem = (item: Item): UnsafeItem => {
                     verificationNumber: deobfuscate(item.content.verificationNumber),
                     pin: deobfuscate(item.content.pin),
                 },
-            };
+            } satisfies UnsafeItem<'creditCard'> as UnsafeItem<T>;
 
         case 'note':
-            return { ...item, ...base };
+            return { ...item, ...base } satisfies UnsafeItem<'note'> as UnsafeItem<T>;
         case 'alias':
-            return { ...item, ...base };
+            return { ...item, ...base } satisfies UnsafeItem<'alias'> as UnsafeItem<T>;
     }
 };
