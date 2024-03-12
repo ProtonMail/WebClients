@@ -176,9 +176,6 @@
       "Edit": [
         "Upraviť"
       ],
-      "Edit billing details": [
-        "Upraviť fakturačné údaje"
-      ],
       "Edit display name": [
         "Upraviť zobrazované meno"
       ],
@@ -1877,6 +1874,9 @@
       "Access to the desktop app is limited": [
         "Prístup k desktopovej aplikácii je obmedzený"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Beta verzia aplikácie ${ MAIL_APP_NAME } je momentálne k dispozícii každému, kto má platený plán ${ MAIL_APP_NAME }. Upgradujte ešte dnes a získajte prístup."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Aktualizujte ešte dnes alebo si prístup overte začiatkom roka 2024."
       ]
@@ -2090,6 +2090,12 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
+      ],
+      "Please upload an xml file": [
+        "Nahrajte XML súbor"
+      ],
+      "Please upload only 1 file": [
+        "Nahrajte iba 1 súbor"
       ],
       "Process aborted": [
         "Proces prerušený"
@@ -3016,6 +3022,12 @@
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
       ],
+      "Can’t access your recovery email?": [
+        "Nemáte prístup k emailu na obnovenie?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Nemáte prístup k telefónu na obnovenie?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
@@ -3100,6 +3112,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odoslali sme kód na ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Nepoznáte svoju frázu na obnovenie?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nič nevidíte? Nezabudnite vypnúť blokovanie automaticky otváraných okien."
       ],
@@ -3174,6 +3189,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Zadajte vaše telefónne číslo na obnovenie a my vám pošleme vaše používateľské meno alebo emailovú adresu."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Zadajte frázu na obnovenie a zmeňte si heslo."
       ],
       "Expired": [
         "Platnosť vypršala"
@@ -3862,6 +3880,9 @@
       "Welcome": [
         "Vitajte"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Odošleme resetovací kód na adresu ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Pošleme resetovací kód na emailovú adresu, ktorú ste poskytli pre obnovenie účtu."
       ],
@@ -3870,6 +3891,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Váš aktuálny plán inovujeme na vylepšený plán, ktorý ponúka viac za rovnakú cenu. Počas prebiehajúcej aktualizácii to nebudete môcť zmeniť. Hneď, ako to bude hotové, vám pošleme email."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Pri povolení SAML pre ${ appName } v poskytovateľovi identity sa môže zobraziť výzva na použitie spätného volania (ACS) URL a ID vydavateľa. Stačí skopírovať a vložiť nižšie uvedené údaje do polí poskytovateľa identity."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
@@ -4111,6 +4135,12 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Credit note": [
+        "Dobropis"
+      ],
+      "Currency conversion": [
+        "Prepočet meny"
       ],
       "Donation": [
         "Finančné príspevky"
@@ -4469,6 +4499,9 @@
       ],
       "Proration": [
         "Pomerná časť"
+      ],
+      "Public certificate (X.509)": [
+        "Verejný certifikát (X.509)"
       ],
       "Recovery email address": [
         "Emailová adresa pre obnovenie"
@@ -4978,6 +5011,9 @@
       "Autofill credit cards (coming soon)": [
         "Automatické vypĺňanie platobných údajov (už čoskoro)"
       ],
+      "Automatic email forwarding": [
+        "Automatické preposielanie emailov"
+      ],
       "Available on all platforms": [
         "K dispozícii na všetkých platformách"
       ],
@@ -5119,6 +5155,9 @@
         "Chráňte súčasne ${ n } zariadení",
         "Chráňte súčasne ${ n } zariadení"
       ],
+      "Require 2FA for organization": [
+        "Vyžadovať 2FA pre organizáciu"
+      ],
       "Router support": [
         "Podpora routeru"
       ],
@@ -5154,6 +5193,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android a Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO integrácia (už čoskoro)"
       ],
       "Start protecting your organization": [
         "Začnite chrániť vašu organizáciu"
@@ -5196,6 +5238,9 @@
       ],
       "Unlimited messages per day": [
         "Neobmedzený počet správ za deň"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Neobmedzené zdieľané trezory s prístupovými právami"
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
@@ -5406,6 +5451,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Umožňuje vám nastaviť pre vaše prichádzajúce správy automatické odpovedanie (automatická odpoveď)"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Automaticky preposielajte emaily odoslané na váš ${ MAIL_APP_NAME } účet na akúkoľvek inú emailovú adresu."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Hromadné propagačné alebo programové odosielanie emailov momentálne nie je podporované. Pre tento prípad použitia odporúčame použiť špecializovaného poskytovateľa emailových služieb."
       ],
@@ -5535,8 +5583,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Špeciálne navrhnutý NetShield chráni vaše zariadenie a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } a ${ PASS_APP_NAME }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }. Administrátori môžu používateľom vo svojej organizácii prideliť rôznu veľkosť úložného priestoru"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Úložný priestor sa zdieľa medzi používateľmi v ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } a ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolov na zdieľanie súborov, ako je BitTorrent"
@@ -5756,8 +5810,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Prejdite do trezora a spravujte svoje heslá, aliasy a ďalšie."
+      ],
       "Set up your organization": [
         "Nastavenie organizácie"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Začnite pridávať používateľov pre poskytnutie prístupu k ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Začnite používať ${ PASS_APP_NAME }"
@@ -5788,6 +5848,15 @@
     "pass_signup_2023: Info": {
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } mesačne"
+      ],
+      "/month /user": [
+        "/mesiac /používateľ"
+      ],
+      "/month /user, billed annually": [
+        "/mesiac /používateľ, účtované ročne"
+      ],
+      "/month /user, billed biennially": [
+        "/mesiac /používateľ, účtované každé dva roky"
       ],
       "Creating your account": [
         "Vytvárame váš účet"
@@ -5931,6 +6000,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Timeout exceeded": [
+        "Prekročený časový limit"
       ]
     },
     "Payments.Error": {
@@ -5939,6 +6011,15 @@
       ],
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
+      ],
+      "Invalid securiry code": [
+        "Neplatný bezpečnostný kód"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Niečo sa pokazilo. Skúste to znova neskôr."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Nemôžeme overiť váš spôsob platby. Vyberte si iný spôsob platby alebo to skúste znova."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
@@ -6748,12 +6829,29 @@
         "Ponechať ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Úložisko pre údaje generované ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Až ${ totalStorageSize } úložného priestoru"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Až ${ totalStorageSize } úložisko pošty"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } uložisko"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Znížením predplatného prídete o nasledujúce benefity. Naozaj chcete pokračovať?"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Pre všetky ${ BRAND_NAME } služby"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Kredity za zostávajúci čas pridáme do vášho ${ BRAND_NAME } účtu."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Stále vám zostáva **${ daysRemaining }** deň vo vašom pláne **${ currentPlanName }**.",
@@ -6764,8 +6862,17 @@
       "Your storage is full": [
         "Vaše úložisko je plné"
       ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Stratíte prístup k ${ gb } úložisku a prioritnej podpore."
+      ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Stratíte prístup k ďalšiemu úložisku, emailovým adresám, aliasom, kalendárom a tiež k prioritnej podpore."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Stratíte prístup k najvyššej rýchlosti VPN, ochrane 10 zariadení, vysokorýchlostnému streamovaniu, blokovaniu reklám a malvéru, ako aj prioritnej podpore."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Stratíte prístup k neobmedzenému počtu prihlásení a poznámok, neobmedzenému počtu hide-my-email aliasov, 20 trezorom, ako aj prioritnej podpore."
       ]
     },
     "Subscription": {
@@ -7239,6 +7346,9 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
+      "Appearance": [
+        "Vzhľad"
+      ],
       "Apply gift code": [
         "Použiť darčekový kód"
       ],
@@ -7422,6 +7532,9 @@
       "Email subscriptions": [
         "Zasielanie pravidelných emailov"
       ],
+      "Enter SAML metadata": [
+        "Vložte SAML metadáta"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ak sa chcete zapojiť do beta programu ${ app }, zadajte podrobnosti o svojom účte ${ BRAND_NAME }"
       ],
@@ -7446,9 +7559,6 @@
       "Gateways": [
         "Brány"
       ],
-      "General": [
-        "Všeobecné"
-      ],
       "Generate missing keys": [
         "Generovať chýbajúce kľúče"
       ],
@@ -7472,9 +7582,6 @@
       ],
       "Invoices": [
         "Faktúry"
-      ],
-      "Language": [
-        "Jazyk"
       ],
       "Login password": [
         "Prihlasovacie heslo"
@@ -7578,6 +7685,9 @@
       "Revoke certificate": [
         "Zrušiť certifikát"
       ],
+      "SAML authentication": [
+        "SAML overenie"
+      ],
       "Select a plan": [
         "Vyberte plán"
       ],
@@ -7619,6 +7729,9 @@
       ],
       "Signed in to member account": [
         "Prihlásený do členského účtu"
+      ],
+      "Single sign-on": [
+        "Jednotné prihlásenie"
       ],
       "Status": [
         "Stav"

@@ -176,8 +176,8 @@
       "Edit": [
         "Rediger"
       ],
-      "Edit billing details": [
-        "Rediger betalingsdetaljer"
+      "Edit billing cycle": [
+        "Rediger faktureringssyklus"
       ],
       "Edit display name": [
         "Rediger visningsnavn"
@@ -3343,6 +3343,9 @@
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
+      "No changes made to the current subscription": [
+        "Ingen endringer er gjort i gjeldende abonnement"
+      ],
       "No gateways": [
         "Ingen gatewayer"
       ],
@@ -4771,6 +4774,52 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } organisasjonsmedlem bruker to-faktorautentisering.",
         "${ twoFAMembers.length }/${ members.length } av dine organisasjonsmedlemmer bruker to-faktorautentisering."
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Få avtalen"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Auto-slett søppelpost og papirkurv"
+      ],
+      "Custom schedule send and snooze times": [
+        "Egendefinerte tidsplaner, sende- og utsettelsestider"
+      ],
+      "Support for 1 custom email domain": [
+        "Støtte for 1 egendefinert e-postdomene"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, avbryt når som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "for den første måneden"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Begrenset tidstilbud, utløper 2. april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Member action": {
@@ -7332,6 +7381,9 @@
       "Amount due": [
         "Skyldig beløp"
       ],
+      "Appearance": [
+        "Utseende"
+      ],
       "Apply gift code": [
         "Legg til gavekode"
       ],
@@ -7542,9 +7594,6 @@
       "Gateways": [
         "Gatewayer"
       ],
-      "General": [
-        "Generelt"
-      ],
       "Generate missing keys": [
         "Genererer manglende nøkler"
       ],
@@ -7568,9 +7617,6 @@
       ],
       "Invoices": [
         "Fakturaer"
-      ],
-      "Language": [
-        "Språk"
       ],
       "Login password": [
         "Påloggingspassord"
