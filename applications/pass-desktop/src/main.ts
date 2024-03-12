@@ -1,7 +1,6 @@
 import {
     BrowserWindow,
     type Event,
-    Menu,
     type Session,
     app,
     clipboard,
@@ -100,6 +99,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         width: 960,
         height: 640,
         opacity: 1,
+        autoHideMenuBar: true,
         webPreferences: {
             session: session,
             sandbox: true,
@@ -133,9 +133,6 @@ const onActivate = (secureSession: Session) => async () => {
 };
 
 if (!app.requestSingleInstanceLock()) app.quit();
-
-// Disable default main menu
-if (!Boolean(process.env.PASS_DEBUG) && app.isPackaged) Menu.setApplicationMenu(null);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
