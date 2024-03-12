@@ -6,7 +6,7 @@ export enum TelemetryMeasurementGroups {
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
-    changelogOpened = 'any.web.changelog_opened',
+    changelogOpened = 'any.changelog_opened',
     keyTransparency = 'any.web.key_transparency',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
