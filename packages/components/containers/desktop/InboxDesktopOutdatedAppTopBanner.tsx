@@ -14,7 +14,7 @@ import TopBanner from '../topBanners/TopBanner';
 import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion';
 
 /**
- * Linux is different from Windows and MacOS. There is no auto updates, this means that any user running a verison that is not the latest
+ * Linux is different from Windows and MacOS. There is no auto updates, this means that any user running a version that is not the latest
  * is running an outdated version. A manual update is required if that's the case.
  * The latests version is always the first element in the array, if the current version is not at index 0 then it's outdated.
  *
@@ -85,7 +85,7 @@ const InboxDesktopOutdatedAppTopBanner = () => {
             />
             <DisplayTopBanner
                 displayTopBanner={displayWindows}
-                link={macosApp?.File?.[0].Url}
+                link={windowsApp?.File?.[0].Url}
                 key="download-update-windows"
             />
             <DisplayTopBanner
