@@ -10,6 +10,14 @@ export function getWordsAutocomplete(word_start: string): (string)[];
 export function setPanicHook(): void;
 /**
 */
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
+/**
+*/
 export enum WasmScriptType {
   Legacy = 0,
   NestedSegwit = 1,
@@ -18,11 +26,28 @@ export enum WasmScriptType {
 }
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
 }
 /**
 */
@@ -34,30 +59,19 @@ export enum WasmCoinSelection {
 }
 /**
 */
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
   ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
 }
 /**
 */
@@ -103,38 +117,26 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
 }
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export type WasmFiatCurrency = "USD" | "EUR" | "CHF";
 
 export interface WasmUserSettings {
@@ -144,8 +146,6 @@ export interface WasmUserSettings {
     ShowWalletRecovery: number;
     TwoFactorAmountThreshold: number | null;
 }
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 export interface WasmApiWallet {
     ID: string;
@@ -378,9 +378,11 @@ export class WasmBalance {
 export class WasmBlockchainClient {
   free(): void;
 /**
-* Generates a Mnemonic with a random entropy based on the given word count.
+* Generates a Mnemonic with a random entropy based on the given word
+* count.
+* @param {WasmProtonWalletApiClient} proton_api_client
 */
-  constructor();
+  constructor(proton_api_client: WasmProtonWalletApiClient);
 /**
 * @returns {Promise<Map<string, number>>}
 */
