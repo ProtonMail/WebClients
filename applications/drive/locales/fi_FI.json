@@ -2051,6 +2051,9 @@
       "This event occurrence was updated.": [
         "Tämä tapahtuma päivitettiin."
       ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Tämä tapahtuma päivitettiin."
       ],
@@ -6576,6 +6579,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Palaute lähetettiin"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/kuukausi"
       ]
     },
     "summer2023: Tooltip": {

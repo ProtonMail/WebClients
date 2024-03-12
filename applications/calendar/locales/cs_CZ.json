@@ -3199,7 +3199,7 @@
         "Spravovat adresy."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Majitelé tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
+        "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
@@ -4283,7 +4283,7 @@
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
+        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Tato událost byla aktualizována organizátorem. Chcete změnit svoji odpověď pouze pro tento výskyt v této sérii?"
@@ -4340,7 +4340,7 @@
         "Týden"
       ],
       "Week and month views only apply to desktop.": [
-        "Zobrazení týdne a měsíce platí pouze pro stolní počítače."
+        "Zobrazení týdne a měsíce platí pouze pro desktop."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -4412,7 +4412,7 @@
         "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
-        "Tuto pozvánku jste již dříve odmítli. Požádejte majitele o opětovné zaslání pozvánky"
+        "Tuto pozvánku jste již dříve odmítli. Požádejte vlastníka o opětovné zaslání pozvánky"
       ],
       "You will lose all unsaved changes.": [
         "Ztratíte všechny neuložené změny."
@@ -6746,6 +6746,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/měsíc"
       ]
     },
     "summer2023: Tooltip": {

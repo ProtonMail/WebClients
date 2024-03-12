@@ -4108,7 +4108,7 @@
         "Spravovat adresy."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Majitelé tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
+        "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
@@ -4471,12 +4471,6 @@
       ],
       "Closing this means giving up the free storage bonus.": [
         "Zavřením se vzdáte bezplatného bonusového úložiště."
-      ],
-      "Congratulation, you completed all the steps!": [
-        "Gratulujeme, dokončili jste všechny kroky!"
-      ],
-      "Congratulation, you finished!": [
-        "Gratulujeme k dokončení!"
       ],
       "Continue setting up your email": [
         "Pokračujte v nastavení e-mailu"
@@ -6111,7 +6105,7 @@
         "Nemohou vám zasílat spam, pokud neznají vaši e-mailovou adresu. Chraňte svou e-mailovou schránku pomocí funkce Hide-my-email."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
+        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
@@ -9440,6 +9434,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/měsíc"
       ]
     },
     "summer2023: Tooltip": {

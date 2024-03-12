@@ -176,8 +176,8 @@
       "Edit": [
         "Düzenle"
       ],
-      "Edit billing details": [
-        "Fatura bilgilerini düzenle"
+      "Edit billing cycle": [
+        "Fatura döngüsünü düzenle"
       ],
       "Edit display name": [
         "Görüntülenecek adı düzenle"
@@ -2962,6 +2962,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Parolanızı kopyaladığınızdan ve güvenli bir yerde sakladığınızdan emin olun."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Kullanıcıyı etkinleştirmeden önce, bir parola sağlamanız ve adresler için şifreleme anahtarları oluşturmanız gerekir."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
       ],
@@ -3273,6 +3276,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "Keys created": [
+        "Anahtarlar oluşturuldu"
+      ],
       "Lean more about gateways": [
         "Ağ geçitleri hakkında ayrıntılı bilgi alın"
       ],
@@ -3326,6 +3332,9 @@
       ],
       "No addresses exist": [
         "Herhangi bir adres yok"
+      ],
+      "No changes made to the current subscription": [
+        "Mevcut abonelikte herhangi bir değişiklik yapılmadı"
       ],
       "No gateways": [
         "Henüz bir ağ geçidi yok"
@@ -3785,6 +3794,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+      ],
+      "User activated": [
+        "Kullanıcı ektinleştirildi"
       ],
       "Users": [
         "Kullanıcılar"
@@ -4741,7 +4753,31 @@
         "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Special Offer": [
+        "Özel Teklif"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve filtre"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "ilk ay için"
+      ]
+    },
     "Member action": {
+      "Activate user": [
+        "Kullanıcıyı etkinleştir"
+      ],
       "Change password": [
         "Parolayı değiştir"
       ],
@@ -4946,6 +4982,9 @@
       "1 user": [
         "1 kullanıcı"
       ],
+      "24/7 account management support": [
+        "24/7 hesap yönetimi desteği"
+      ],
       "24/7 support": [
         "7/24 destek"
       ],
@@ -4957,6 +4996,9 @@
       ],
       "Admin console": [
         "Yönetici panosu"
+      ],
+      "Administration Panel": [
+        "Yönetim paneli"
       ],
       "Advanced network security": [
         "Gelişmiş ağ güvenliği"
@@ -5059,6 +5101,9 @@
       ],
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
+      ],
+      "Group management (coming soon)": [
+        "Grup yönetimi (yakında gelecek)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
@@ -7219,6 +7264,9 @@
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
       ],
+      "Activate user": [
+        "Kullanıcıyı etkinleştirin"
+      ],
       "Add address": [
         "Adres ekle"
       ],
@@ -7251,6 +7299,9 @@
       ],
       "Amount due": [
         "Ödenecek tutar"
+      ],
+      "Appearance": [
+        "Görünüm"
       ],
       "Apply gift code": [
         "Hediye kodunu uygula"
@@ -7330,6 +7381,9 @@
       ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
+      ],
+      "Create organization key": [
+        "Kuruluş anahtarı oluştur"
       ],
       "Create user accounts": [
         "Kullanıcı hesapları ekle"
@@ -7459,9 +7513,6 @@
       "Gateways": [
         "Ağ geçitleri"
       ],
-      "General": [
-        "Genel"
-      ],
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
       ],
@@ -7485,9 +7536,6 @@
       ],
       "Invoices": [
         "Faturalar"
-      ],
-      "Language": [
-        "Dil"
       ],
       "Login password": [
         "Oturum açma parolası"
@@ -7908,6 +7956,18 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Abonelik her 1 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 1 ay sonra."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Daha sonra her 12 ayda bir ${ renewPrice } üzerinden faturalandırılacaksınız."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir.",
+        "Aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir."
       ]
     },
     "vpn_2step: billing": {

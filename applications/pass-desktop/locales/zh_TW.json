@@ -125,6 +125,9 @@
       "Dismiss": [
         "忽略"
       ],
+      "Download this CSV template": [
+        "下載此CSV模板"
+      ],
       "Edit": [
         "編輯"
       ],
@@ -341,11 +344,23 @@
       "Upgrade now to share with more people": [
         "立即升級即可分享給更多人"
       ],
+      "View history": [
+        "查看歷史"
+      ],
+      "View item history": [
+        "查看項目歷史"
+      ],
+      "View older history": [
+        "查看較舊的歷史"
+      ],
       "Write us on Reddit": [
         "在 Reddit 上寫上我們"
       ],
       "Write us on Twitter": [
         "在 Twitter 上寫上我們"
+      ],
+      "Your password manager not here? Request it.": [
+        "您的密碼管理器不在此?要求他。"
       ]
     },
     "bf2023: Label": {
@@ -410,6 +425,9 @@
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
       ],
+      "Could not resolve share members": [
+        "無法還原共享成員"
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV檔案失去表頭。${ missingHeaders }"
       ],
@@ -448,6 +466,9 @@
       ],
       "Failed to edit user's access.": [
         "失敗編輯使用者存取權。"
+      ],
+      "Failed to load item history": [
+        "讀取載入項目紀錄失敗"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "項目移至${ payload.content.name }失敗"
@@ -611,6 +632,9 @@
       "${ count } invites successfully sent": [
         "${ count }邀請成功寄出"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "為期 7 天完全免費體驗頂級質子版功能。${ BRAND_NAME } 授權後首週七天內皆可額外享用。"
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
       ],
@@ -637,6 +661,9 @@
       ],
       "An item previously shared with you was removed": [
         "全部於共享的項目已刪除"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "您確定要移動項目至${ name }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
@@ -779,6 +806,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
+      "Moving an item to another vault will erase its history": [
+        "移動項目至其他保管庫將消除紀錄"
+      ],
       "Moving items": [
         "正在移動檔案"
       ],
@@ -895,6 +925,9 @@
       ],
       "Unpinning item...": [
         "取消訂選項目..."
+      ],
+      "Use vaults to share this item with others.": [
+        "使用保管庫以與他人共享此項目。"
       ],
       "User's access removed": [
         "使用者存取權已撤銷"
@@ -1453,6 +1486,9 @@
       "Create PIN code": [
         "創建個人識別數字代碼"
       ],
+      "Created": [
+        "已創建"
+      ],
       "Current version": [
         "目前版本"
       ],
@@ -1489,6 +1525,12 @@
       "Install extension": [
         "安裝擴充套件"
       ],
+      "Last autofill": [
+        "上次自動填滿"
+      ],
+      "Last modified": [
+        "上次修改時間"
+      ],
       "Leave vault ?": [
         "離開保管庫 ?"
       ],
@@ -1506,6 +1548,9 @@
       ],
       "Move all items ?": [
         "移動所有項目?"
+      ],
+      "Move items?": [
+        "移動項目?"
       ],
       "No items selected": [
         "未選擇任何項目"

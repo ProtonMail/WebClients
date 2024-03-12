@@ -46,6 +46,9 @@
       "Add note": [
         "Lägg till anteckning"
       ],
+      "Add people or groups to share": [
+        "Lägg till personer eller grupper till dela"
+      ],
       "Add phone number": [
         "Lägg till telefonnummer"
       ],
@@ -3771,6 +3774,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Fil saknar signatur. Vi kunde inte verifiera vem som laddade upp ${ fileName }."
       ],
+      "File scanning in Drive": [
+        "Filskanning i Drive"
+      ],
       "File will not be updated": [
         "Fil kommer inte att uppdateras"
       ],
@@ -5229,6 +5235,46 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etikett och märk dem som",
         "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Ta automatiskt bort skräppost och papperskorg"
+      ],
+      "Support for 1 custom email domain": [
+        "Stöd för 1 anpassad e-postdomän"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Tidsbegränsat erbjudande, löper ut 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Message": {
@@ -6706,6 +6752,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback skickad"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/månad"
       ]
     },
     "summer2023: Tooltip": {

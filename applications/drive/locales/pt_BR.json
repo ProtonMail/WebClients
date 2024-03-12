@@ -5238,6 +5238,33 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Suporte para 1 domínio de e-mail personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "pelo primeiro mês"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
@@ -5321,7 +5348,7 @@
         "Valores separados por vírgula (CSV)"
       ],
       "Electronic publication (EPUB)": [
-        "Publicação digital (EPUB)"
+        "Publicação eletrônica (EPUB)"
       ],
       "Flash Video": [
         "Vídeo Flash"
@@ -5363,7 +5390,7 @@
         "Vídeo MPEG"
       ],
       "MS Embedded OpenType fonts": [
-        "Fontes OpenType integradas em MS"
+        "Fontes MS OpenType integradas"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "Interface digital de instrumento musical (MIDI)"
@@ -5390,7 +5417,7 @@
         "Áudio Opus"
       ],
       "Portable Network Graphics": [
-        "Gráficos de rede portáteis"
+        "Gráficos de Rede Portáteis (PNG)"
       ],
       "RAR archive": [
         "Arquivo RAR"
@@ -5408,7 +5435,7 @@
         "Formato de arquivo de imagem marcada (TIFF)"
       ],
       "Tape Archive (TAR)": [
-        "Arquivo de fita (TAR)"
+        "Arquivo Tar (TAR)"
       ],
       "Text": [
         "Texto"
@@ -5798,7 +5825,7 @@
         "Criar um link compartilhável"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
-        "Comece a usar o ${ DRIVE_APP_NAME } e faça upgrade do seu espaço para 5GB!"
+        "Comece a usar o ${ DRIVE_APP_NAME } e atualizaremos seu armazenamento para 5 GB!"
       ],
       "Set a recovery method": [
         "Definir um método de recuperação"
@@ -6656,6 +6683,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentário enviado"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mês"
       ]
     },
     "summer2023: Tooltip": {

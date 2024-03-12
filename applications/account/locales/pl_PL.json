@@ -197,6 +197,9 @@
       "Close navigation": [
         "Zamknij nawigację"
       ],
+      "Close tab": [
+        "Zamknij kartę"
+      ],
       "Close this banner": [
         "Zamknij powiadomienie"
       ],
@@ -380,8 +383,8 @@
       "Edit": [
         "Edytuj"
       ],
-      "Edit billing details": [
-        "Edytuj szczegóły płatności"
+      "Edit billing cycle": [
+        "Edytuj cykl rozliczeniowy"
       ],
       "Edit display name": [
         "Edytuj nazwę wyświetlaną"
@@ -504,7 +507,7 @@
         "Uzyskaj więcej serwerów"
       ],
       "Get the deal": [
-        "Uzyskaj ofertę"
+        "Skorzystaj z oferty"
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
@@ -4407,6 +4410,9 @@
       "Invalid URL": [
         "Adres URL jest nieprawidłowy"
       ],
+      "Missing parameters in the URL.": [
+        "Brak parametrów w adresie URL."
+      ],
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
@@ -4418,6 +4424,9 @@
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "Support ticket does not exist.": [
+        "Zgłoszenie nie istnieje."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Otwórz przeglądarkę, aby korzystać z ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }."
@@ -7996,6 +8005,9 @@
       "You can now access and manage the account as an administrator.": [
         "Możesz zarządzać kontem jako administrator."
       ],
+      "You can now close this tab.": [
+        "Możesz zamknąć tę kartę."
+      ],
       "You can now close this window.": [
         "Możesz zamknąć to okno."
       ],
@@ -8184,6 +8196,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9869,6 +9884,36 @@
         "Bezpieczna poczta e-mail, która chroni Twoją prywatność"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adresów e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Support for 1 custom email domain": [
+        "Wsparcie dla 1 niestandardowej domeny"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Spróbuj ponownie za kilka minut."
@@ -10403,6 +10448,9 @@
       "Advanced sharing security": [
         "Zaawansowane bezpieczeństwo udostępniania"
       ],
+      "Auto-delete Spam and Trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
       ],
@@ -10456,6 +10504,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedykowane serwery i adresy IP"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
       ],
       "DNS leak prevention": [
         "Zabezpieczenie przed wyciekiem zapytań DNS"
@@ -10708,17 +10759,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10818,6 +10858,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13080,7 +13131,7 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "Get the deal": [
-        "Uzyskaj ofertę"
+        "Skorzystaj z oferty"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Odnowienie po roku za niższą cenę ${ discountedAmount } zamiast ${ regularAmount } (rabat ${ discount }%)"
@@ -14766,6 +14817,9 @@
       ],
       "Summary": [
         "Podsumowanie"
+      ],
+      "Support ticket closed": [
+        "Zgłoszenie zostało zamknięte"
       ],
       "Switch account": [
         "Przełącz konto"

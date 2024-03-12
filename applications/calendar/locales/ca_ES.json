@@ -2285,6 +2285,11 @@
         "Esborrat"
       ]
     },
+    "Email body for response to invitation": {
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }."
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -3708,6 +3713,9 @@
       "An invitation will be sent to added participants.": [
         "Tots els participants afegits rebran una invitació."
       ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "S'enviarà una invitació a tots els participants. Quin esdeveniment voleu actualitzar?"
+      ],
       "An invitation will be sent to the event participants.": [
         "S'enviarà una invitació als participants de l'esdeveniment."
       ],
@@ -3818,7 +3826,7 @@
         "Voleu descartar els canvis?"
       ],
       "Display events for calendar ${ Name }": [
-        "Mosta els esdeveniments per al calendari ${ Name }"
+        "Mostra els esdeveniments per al calendari ${ Name }"
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -6467,6 +6475,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "S'ha enviat l'opinió"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mes"
       ]
     },
     "summer2023: Tooltip": {

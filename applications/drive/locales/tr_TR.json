@@ -46,6 +46,9 @@
       "Add note": [
         "Not ekle"
       ],
+      "Add people or groups to share": [
+        "Paylaşılacak kişi veya grupları ekleyin"
+      ],
       "Add phone number": [
         "Telefon numarası ekle"
       ],
@@ -570,6 +573,15 @@
       ],
       "Save changes": [
         "Değişiklikleri kaydet"
+      ],
+      "Scan & Download": [
+        "Tara & İndir"
+      ],
+      "Scan & Download (${ count })": [
+        "Tara & İndir (${ count })"
+      ],
+      "Scan & Download all": [
+        "Tara & Hepsini İndir"
       ],
       "Search": [
         "Arama"
@@ -3397,7 +3409,7 @@
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } şifrelenmiş dosya",
-        "${ nbFile } şifrelenmiş dosya."
+        "${ nbFile } şifrelenmiş dosya"
       ],
       "${ nbFile } encrypted file...": [
         "${ nbFile } şifrelenmiş dosya...",
@@ -3647,8 +3659,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
+      "Download": [
+        "İndir"
+      ],
       "Download ${ name } app": [
         "${ name } uygulamasını indir"
+      ],
+      "Download anyway": [
+        "Yine de indir"
       ],
       "Download canceled": [
         "İndirme iptal edildi"
@@ -3708,6 +3726,9 @@
         "Şifrelenmiş aramayı deneyimleyin"
       ],
       "End-to-end encrypted": [
+        "Uçtan uca şifrelenmiş"
+      ],
+      "End-to-End Encrypted": [
         "Uçtan uca şifrelenmiş"
       ],
       "Enter password": [
@@ -3858,6 +3879,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "Invited": [
+        "Davet edildi"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
@@ -4101,6 +4125,9 @@
       "Report has been sent": [
         "Şikayet gönderildi"
       ],
+      "Report link": [
+        "Bağlantıyı raporla"
+      ],
       "Restore": [
         "Geri yükle"
       ],
@@ -4118,6 +4145,9 @@
       ],
       "Retry now": [
         "Yeniden dene"
+      ],
+      "Scan issue": [
+        "Tarama sorunu"
       ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama özelliği açılamaz"
@@ -4170,6 +4200,12 @@
       ],
       "Share files with links": [
         "Dosyaları bağlantı ile paylaş"
+      ],
+      "Share via link settings": [
+        "Bağlantı ayarları aracılığıyla paylaşın"
+      ],
+      "Share with": [
+        "Şununla paylaş"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } için paylaşılabilir bağlantı"
@@ -4627,6 +4663,9 @@
       "Add to group": [
         "Gruba ekle"
       ],
+      "Anyone with the link": [
+        "Bu bağlantıya sahip olan herkes"
+      ],
       "App password": [
         "Uygulama parolası"
       ],
@@ -4721,6 +4760,9 @@
         "Sürücü silinsin mi?",
         "Sürücüler silinsin mi?"
       ],
+      "Delete link": [
+        "Bağlantıyı sil"
+      ],
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
       ],
@@ -4747,6 +4789,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Düzenleyici"
       ],
       "Email": [
         "E-posta"
@@ -4777,6 +4822,9 @@
       ],
       "Enter device name": [
         "Aygıt adını yazın"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -4961,6 +5009,9 @@
       "Set expiration date": [
         "Geçerlilik süresi olsun"
       ],
+      "Set link password": [
+        "Bağlantı parolası ayarla"
+      ],
       "Set recovery method": [
         "Kurtarma yöntemini ayarlayın"
       ],
@@ -4997,6 +5048,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Bu dosya potansiyel olarak virüslü"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Bu işlem, kilitli sürücünüzdeki bütün dosyaları kalıcı olarak silecek."
       ],
@@ -5029,6 +5083,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Viewer": [
+        "Görüntüleyici"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -5168,6 +5225,27 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
         "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Special Offer": [
+        "Özel Teklif"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve filtre"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "ilk ay için"
       ]
     },
     "Message": {
@@ -5840,6 +5918,9 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Choose password": [
+        "Parola seçin"
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -5896,6 +5977,9 @@
       ],
       "Select": [
         "Seçin"
+      ],
+      "Set date": [
+        "Tarihi ayarla"
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
@@ -6584,6 +6668,11 @@
         "Geri bildirim gönderildi"
       ]
     },
+    "Suffix": {
+      "/month": [
+        "/ay"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Tüm aygıtlarınızda güvenli hesap bilgileri oluşturun. Sınırsız takma ad (e-posta adresi), 20 kasa, entegre 2 adımlı doğrulama, kredi kartı otomatik doldurma ve daha fazlasını içerir."
@@ -7234,6 +7323,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+      ],
+      "Shared end-to-end encrypted": [
+        "Uçtan uca şifrelenmiş olarak paylaşıldı"
       ],
       "Show side panel": [
         "Yan panoyu görüntüle"
