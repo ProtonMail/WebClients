@@ -4,13 +4,19 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/freeTrial/freeTrialUpgradeClick';
+import { freeTrialUpgradeClick, openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { useTheme } from '@proton/components/index';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APP_UPSELL_REF_PATH,
+    MAIL_APP_NAME,
+    MAIL_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { resetEndOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
 import inboxPlaceholder from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder.png';
 import inboxPlaceholderDark from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder_dark.png';
@@ -22,9 +28,7 @@ import './InboxDesktopFreeTrialEnded.scss';
 
 const WebAppLink = () => {
     const handleClick = () => {
-        if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker!.send('openExternal', getAppHref('/', APPS.PROTONMAIL));
-        }
+        openLinkInBrowser(getAppHref('/', APPS.PROTONMAIL));
     };
 
     // translator: The whole sentence is "Open Proton Mail in the web app", width is limited since it's displayed in the login screen
@@ -34,6 +38,12 @@ const WebAppLink = () => {
 const InboxDesktopFreeTrialEnded = () => {
     const history = useHistory();
     const theme = useTheme();
+
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.INBOX_DESKTOP_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: MAIL_UPSELL_PATHS.TRIAL_END,
+    });
 
     useEffect(() => {
         // The free trial page is only displayed for the electron desktop application
@@ -68,9 +78,12 @@ const InboxDesktopFreeTrialEnded = () => {
                             .t`Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. `}</p>
                     </div>
                     <div>
-                        <Button color="norm" className="mb-2" onClick={freeTrialUpgradeClick} fullWidth>{c(
-                            'Free trial desktop'
-                        ).t`Keep using the desktop app`}</Button>
+                        <Button
+                            color="norm"
+                            className="mb-2"
+                            onClick={() => freeTrialUpgradeClick(upsellRef)}
+                            fullWidth
+                        >{c('Free trial desktop').t`Keep using the desktop app`}</Button>
                         <Button onClick={backToLogin} shape="outline" fullWidth>{c('Free trial desktop')
                             .t`Back to sign in`}</Button>
                     </div>

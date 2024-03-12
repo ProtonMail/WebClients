@@ -6,7 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS, isStringPLAN } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -21,6 +23,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { Icon, Loader } from '../../components';
 import { useApi, useLoad, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -32,6 +35,7 @@ const getSearchParams = (search: string) => {
     const cycle = getValidCycle(maybeCycle);
     const maybeAudience = params.get('audience');
     const audience = getValidAudience(maybeAudience);
+
     return {
         audience,
         plan: params.get('plan') || undefined,
@@ -114,6 +118,18 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
         });
     };
 
+    // Clicking the "Select Plan" button opens the browser on Electron or the modal on the web
+    const handlePlanChange = (newPlanIDs: PlanIDs) => {
+        const newPlanName = Object.keys(newPlanIDs)[0];
+        const isNewPlanCorrect = isStringPLAN(newPlanName);
+        if (isElectronApp && newPlanName && isNewPlanCorrect) {
+            upgradeButtonClick(cycle, newPlanName);
+            return;
+        }
+
+        withLoading(handleModal(newPlanIDs));
+    };
+
     useEffect(() => {
         if (isLoading) {
             return;
@@ -157,9 +173,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 hasFreePlan={false}
                 hasPlanSelectionComparison={false}
                 subscription={subscription}
-                onChangePlanIDs={(planIDs) => {
-                    void withLoading(handleModal(planIDs));
-                }}
+                onChangePlanIDs={handlePlanChange}
                 onChangeCurrency={setCurrency}
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
@@ -170,6 +184,10 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 shape="ghost"
                 className="flex mx-auto items-center mb-4"
                 onClick={() => {
+                    if (isElectronApp) {
+                        openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
+                        return;
+                    }
                     open({
                         step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                         defaultAudience: audience,
