@@ -141,7 +141,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     closeLabel: c('Action').t`Back`,
                     submitText,
                 };
-            default:
             case 'members':
                 return {
                     closeAction: close,

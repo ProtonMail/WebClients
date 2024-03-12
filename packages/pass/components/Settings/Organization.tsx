@@ -15,8 +15,10 @@ import { SettingsPanel } from './SettingsPanel';
 
 export const Organization: FC = () => {
     const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing);
+    const enableOrganizationExport = useFeatureFlag(PassFeature.PassEnableOrganizationExport);
+
     const { settings, updateSetting } = useOrganization()!;
-    const shareMode = settings.ShareMode;
+    const { ShareMode, ExportMode } = settings;
     const loading = useSelector(selectRequestInFlight(organizationSettingsEditRequest())) !== null;
 
     return (
@@ -25,13 +27,31 @@ export const Organization: FC = () => {
                 <SettingsPanel title={c('Label').t`Sharing policy`}>
                     <Checkbox
                         disabled={loading}
-                        checked={shareMode === BitField.ACTIVE}
-                        onChange={() => updateSetting('ShareMode', Number(!Boolean(shareMode)))}
+                        checked={ShareMode === BitField.ACTIVE}
+                        onChange={() => updateSetting('ShareMode', Number(!Boolean(ShareMode)))}
                     >
                         <span>
                             {c('Label').t`Disable sharing outside the organization`}
                             <span className="block color-weak text-sm">
                                 {c('Info').t`Team members can only share vaults within organization`}
+                            </span>
+                        </span>
+                    </Checkbox>
+                </SettingsPanel>
+            )}
+
+            {enableOrganizationExport && (
+                <SettingsPanel title={c('Label').t`Exporting policy`}>
+                    <Checkbox
+                        disabled={loading}
+                        checked={ExportMode === BitField.ACTIVE}
+                        onChange={() => updateSetting('ExportMode', Number(!Boolean(ExportMode)))}
+                    >
+                        <span>
+                            {c('Label').t`Disable data export for team members`}
+                            <span className="block color-weak text-sm">
+                                {c('Info')
+                                    .t`By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`}
                             </span>
                         </span>
                     </Checkbox>
