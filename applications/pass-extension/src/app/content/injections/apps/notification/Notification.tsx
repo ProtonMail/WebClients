@@ -14,6 +14,8 @@ import type { MaybeNull } from '@proton/pass/types';
 
 import { AutofillOTP } from './views/AutofillOTP';
 import { Autosave } from './views/Autosave';
+import { PasskeyCreate } from './views/PasskeyCreate';
+import { PasskeyGet } from './views/PasskeyGet';
 
 import './Notification.scss';
 
@@ -38,6 +40,10 @@ export const Notification: FC = () => {
                         return <Autosave {...state} />;
                     case NotificationAction.OTP:
                         return <AutofillOTP {...state} />;
+                    case NotificationAction.PASSKEY_CREATE:
+                        return <PasskeyCreate {...state} />;
+                    case NotificationAction.PASSKEY_GET:
+                        return <PasskeyGet {...state} />;
                 }
             })()}
 

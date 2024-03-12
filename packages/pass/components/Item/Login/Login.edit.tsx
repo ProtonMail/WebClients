@@ -20,6 +20,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
@@ -36,6 +37,7 @@ import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { EditLoginItemFormValues } from '@proton/pass/types';
+import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -43,8 +45,6 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
-
-import { usePasswordContext } from '../../Password/PasswordProvider';
 
 const FORM_ID = 'edit-login';
 
@@ -58,24 +58,25 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
     const initialValues: EditLoginItemFormValues = {
+        aliasPrefix: '',
+        aliasSuffix: undefined,
+        extraFields,
+        mailboxes: [],
         name: metadata.name,
-        username: content.username,
-        password: content.password,
         note: metadata.note,
+        passkeys: content.passkeys,
+        password: content.password,
         shareId,
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
+        username: content.username,
         withAlias: false,
-        aliasPrefix: '',
-        aliasSuffix: undefined,
-        mailboxes: [],
-        extraFields,
     };
 
     const form = useFormik<EditLoginItemFormValues>({
         initialValues,
-        onSubmit: ({ name, username, password, totpUri, url, urls, note, extraFields, ...values }) => {
+        onSubmit: ({ name, username, password, totpUri, url, urls, note, extraFields, passkeys, ...values }) => {
             const mutationTime = getEpoch();
 
             const withAlias =
@@ -116,10 +117,11 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 ...uneditable,
                 content: {
                     ...content,
-                    username: obfuscate(username),
+                    passkeys,
                     password: obfuscate(password),
-                    urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: obfuscate(normalizedOtpUri),
+                    urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
+                    username: obfuscate(username),
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
@@ -187,6 +189,34 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                 />
                             </FieldsetCluster>
+
+                            {form.values.passkeys.map((passkey, idx, passkeys) => (
+                                <FieldsetCluster
+                                    mode="read"
+                                    key={passkey.keyId}
+                                    className="pass-fieldset-cluster--standout"
+                                >
+                                    <ValueControl
+                                        icon={'pass-passkey'}
+                                        label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
+                                        value={passkey.userName}
+                                        valueClassName="cursor-default"
+                                        actions={[
+                                            <Button
+                                                className="mt-1"
+                                                shape="ghost"
+                                                pill
+                                                icon
+                                                onClick={() =>
+                                                    form.setFieldValue('passkeys', arrayRemove(passkeys, idx))
+                                                }
+                                            >
+                                                <Icon name="cross" size={3} />
+                                            </Button>,
+                                        ]}
+                                    />
+                                </FieldsetCluster>
+                            ))}
 
                             <FieldsetCluster>
                                 <Field
