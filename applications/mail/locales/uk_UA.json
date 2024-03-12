@@ -263,7 +263,7 @@
         "Створити нову мітку"
       ],
       "Create and copy alias": [
-        "Створити та скопіювати псевдонім"
+        "Створити й копіювати псевдонім"
       ],
       "Create folder": [
         "Створити теку"
@@ -350,7 +350,7 @@
         "Завантажити ${ attachmentName }"
       ],
       "Download now": [
-        "Завантажити зараз"
+        "Завантажити"
       ],
       "Downloading": [
         "Завантаження"
@@ -521,7 +521,7 @@
         "Імпортувати з Outlook"
       ],
       "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Доступне важливе оновлення. Щоб і надалі користуватися застосунком, оновіть його до останньої версії. ${ downloadUpdate }"
+        "Доступне важливе оновлення. Щоб і надалі користуватися програмою, оновіть її до останньої версії. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Зранку"
@@ -563,7 +563,7 @@
         "позначати листи міткою"
       ],
       "Later this week": [
-        "Пізніше на цьому тижні"
+        "Пізніше цього тижня"
       ],
       "Learn more": [
         "Докладніше"
@@ -917,7 +917,7 @@
         "Виберіть країну"
       ],
       "Select date and time": [
-        "Виберіть дату та час"
+        "Виберіть дату й час"
       ],
       "Self-destruct in 7 days": [
         "Знищити через 7 днів"
@@ -1046,7 +1046,7 @@
         "Це повідомлення містить зовнішній вміст."
       ],
       "This weekend": [
-        "На вихідних"
+        "У вихідні"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Для безпечного пошуку листів потрібно завантажити копію повідомлень у ваш браузер. Початкове завантаження може тривати певний час."
@@ -1058,7 +1058,7 @@
         "Відкрити контакти"
       ],
       "Toggle security center app": [
-        "Перемкнути застосунок центра безпеки"
+        "Відкрити програму Центр безпеки"
       ],
       "Toggle settings": [
         "Перемкнути налаштування"
@@ -1133,7 +1133,7 @@
         "Покращити"
       ],
       "Upgrade Now": [
-        "Покращити зараз"
+        "Передплатити"
       ],
       "Upgrade now": [
         "Покращити"
@@ -1205,13 +1205,13 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Термін дії безплатної пробної версії настільного застосунку закінчується через 2 днів. ${ upgradeButton }"
+        "Безплатний пробний період програми для комп'ютера завершується через 2 дні. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Термін дії безплатної пробної версії настільного застосунку закінчується через 5 днів. ${ upgradeButton }"
+        "Безплатний пробний період програми для комп'ютера завершується через 5 днів. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Термін дії безплатної пробної версії настільного застосунку закінчується ${ formattedEndDate }. ${ upgradeButton }"
+        "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Zoom in": [
         "Збільшити"
@@ -1386,22 +1386,22 @@
         "3 ТБ"
       ],
       "3,000+ servers across 65+ countries": [
-        "Більше ніж 3000 серверів у понад 65 країнах"
+        "Більш як 3000 серверів у понад 65 країнах"
       ],
       "6 users": [
         "6 користувачів"
       ],
       "Access content worldwide": [
-        "Доступ до контенту по всьому світу"
+        "Доступ до матеріалів з всього світу"
       ],
       "Ad-blocker and malware protection": [
-        "Блокувальник реклами та захист від шкідливих програм"
+        "Блокування реклами й захист від зловмисних програм"
       ],
       "Extended version history": [
         "Розширена історія версій"
       ],
       "High speed streaming": [
-        "Перегляд трансляцій на високій швидкості"
+        "Високошвидкісна потокова трансляція"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
@@ -3044,7 +3044,7 @@
         "${ manageBlockedAddressesSettingsLink } у налаштуваннях."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
-        "Двоетапна автентифікація додає додатковий рівень безпеки, запобігаючи несанкціонованому доступу."
+        "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Автоматично очищуйте повідомлення зі спаму та смітника через 30 днів. Скористайтеся цими та іншими перевагами після передплати."
@@ -3062,7 +3062,7 @@
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Для імпорту через файли CSV і VCF переконайтеся, що кількість контактів у файлі не перевищує ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на менші. ${ learnMoreLink }."
+        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3092,7 +3092,7 @@
         "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Вкажіть метод відновлення даних, щоб запобігти втраті даних."
+        "Налаштуйте спосіб відновлення, щоб запобігти втраті даних."
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
@@ -3107,7 +3107,7 @@
         "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Розблокуйте власний час відкладення після покращення тарифу."
+        "Після покращення плану ви зможете встановлювати власний час відкладення."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Отримайте доступ до безмежної кількості фільтрів для впорядкування поштової скриньки, передплативши тарифний план."
@@ -3116,7 +3116,7 @@
         "Отримайте доступ до безмежної кількості тек, міток та інших преміумфункцій, передплативши тарифний план."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, наше найсучасніше рішення щодо безпеки на базі ШІ з експертною підтримкою 24/7."
+        "Покращте свій обліковий запис, щоб активувати ${ PROTON_SENTINEL_NAME }, – наше найсучасніше рішення щодо безпеки на базі ШІ з експертною цілодобовою підтримкою."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -3134,10 +3134,10 @@
         "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Ваш обліковий запис і способи відновлення даних налаштовано, а двоетапну автентифікацію ввімкнено."
+        "Ваш обліковий запис і способи відновлення налаштовано, а двоетапну автентифікацію ввімкнено."
       ],
       "Your account and data recovery methods are set.": [
-        "Ваш обліковий запис і методи відновлення даних налаштовано."
+        "Ваш обліковий запис і способи відновлення налаштовано."
       ]
     },
     "description": {
@@ -3286,7 +3286,7 @@
         "Псевдонім недійсний"
       ],
       "Alias is required": [
-        "Потрібен псевдонім"
+        "Необхідно вказати псевдонім"
       ],
       "Alias options could not be resolved": [
         "Не вдалося розв'язати параметри псевдоніма"
@@ -3340,7 +3340,7 @@
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Неможливо ввімкнути пошук вмісту. Перезапустіть застосунок або очистьте дані."
+        "Неможливо ввімкнути пошук вмісту. Перезапустіть програму або очистьте дані."
       ],
       "Could not open created vault": [
         "Не вдалося відкрити створене сховище"
@@ -3412,7 +3412,7 @@
         "Тека не може бути без назви."
       ],
       "Forward address is required": [
-        "Потрібно вказати адресу переадресації"
+        "Необхідно вказати адресу пересилання"
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -3472,7 +3472,7 @@
         "Відсутній підпис"
       ],
       "Name is required": [
-        "Назва обовʼязкова"
+        "Необхідно вказати назву"
       ],
       "Network error: Please check your connection and try again.": [
         "Мережева помилка: перевірте своє інтернет-з'єднання і спробуйте знову."
@@ -3490,7 +3490,7 @@
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Жоден зовнішній ключ, отриманий для користувача, не дійсний для надсилання"
+        "Жоден зовнішній ключ, отриманий для користувача, не придатний для надсилання"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -3924,7 +3924,7 @@
     },
     "Error message": {
       "App currently unavailable": [
-        "Застосунок наразі недоступний"
+        "Програма наразі недоступна"
       ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
@@ -4426,12 +4426,6 @@
       ],
       "Closing this means giving up the free storage bonus.": [
         "Закриття означає відмову від безплатного бонусу до сховища."
-      ],
-      "Congratulation, you completed all the steps!": [
-        "Вітаємо, ви виконали всі кроки!"
-      ],
-      "Congratulation, you finished!": [
-        "Вітаємо, ви впоралися!"
       ],
       "Continue setting up your email": [
         "Продовжити налаштування електронної пошти"
@@ -5169,16 +5163,16 @@
         "та"
       ],
       "Any scheduled or snoozed messages will be cancelled.": [
-        "Будь-які заплановані або відкладені повідомлення буде скасовано."
+        "Усі заплановані або відкладені повідомлення скасуються."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Будь-які підтеки також будуть видалені. Однак листи, що зберігаються в теці ${ nameDeleted }, не будуть видалені та їх можна знайти в теці «Уся пошта»."
+        "Підтеки також будуть видалені. Однак листи, що зберігаються в теці ${ nameDeleted }, не видалятимуться і їх можна знайти в теці \"Уся пошта\"."
       ],
       "Applying actions to conversations": [
-        "Застосувати дії до розмов"
+        "Застосування дій до розмов"
       ],
       "Applying actions to messages": [
-        "Застосувати дії до повідомлень"
+        "Застосування дій до повідомлень"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Ви дійсно хочете видалити всі повідомлення з цієї теки?"
@@ -5187,7 +5181,7 @@
         "Ви дійсно хочете видалити всі повідомлення з цією міткою?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Ви впевнені, що хочете видалити цю теку?"
+        "Ви дійсно хочете видалити цю теку?"
       ],
       "Are you sure you want to delete this label?": [
         "Ви дійсно хочете видалити цю мітку?"
@@ -5199,10 +5193,10 @@
         "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Ви впевнені, що хочете перемістити всі повідомлення звідси в смітник?"
+        "Ви дійсно хочете перемістити всі повідомлення звідси до архіву?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Ви впевнені, що хочете перемістити всі повідомлення звідси в смітник?"
+        "Ви дійсно хочете перемістити всі повідомлення звідси до смітника?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Ви дійсно хочете остаточно видалити ${ count } розмову?",
@@ -5256,7 +5250,7 @@
         "Бічна панель календаря"
       ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
-        "Чогось не знайшли? ${ displayAllMailButton }"
+        "Не вдається знайти те, що шукали? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
@@ -5268,7 +5262,7 @@
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
       "Clear app data": [
-        "Очистити дані застосунку"
+        "Очистити дані програми"
       ],
       "Clear data": [
         "Очистити дані"
@@ -5421,7 +5415,7 @@
         "Електронні листи підписуються автоматично"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Листи, позначені міткою ${ nameDeleted }, не будуть видалені та все ще можуть бути знайдені у відповідній теці."
+        "Листи, позначені міткою ${ nameDeleted }, не видалятимуться. Їх можна знайти у відповідній теці."
       ],
       "embedded image": [
         "вбудоване зображення",
@@ -5562,7 +5556,7 @@
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
       "Include Spam/Trash.": [
-        "Включаючи Спам/Смітник."
+        "Включити теки Спам/Смітник."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -5643,7 +5637,7 @@
         "Об'єднано"
       ],
       "Message actions in progress. This may take a while.": [
-        "Виконуються дії з повідомленнями. Це може зайняти деякий час."
+        "Виконуються дії з повідомленнями. Це може тривати певний час."
       ],
       "Message download status:": [
         "Статус завантаження повідомлення:"
@@ -5808,7 +5802,7 @@
         "Не вдалося завантажити попередній перегляд"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "Передпоказ для цього типу файлів наразі не підтримується в цьому браузері."
+        "Перегляд цього типу файлу наразі не підтримується в цьому браузері."
       ],
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
@@ -5835,7 +5829,7 @@
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Removes all data associated with this app, including downloaded messages": [
-        "Видаляє всі дані, пов'язані з цим застосунком, включаючи завантажені повідомлення"
+        "Видаляє всі дані, пов'язані з цією програмою, зокрема завантажені повідомлення"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Звітуючи про спробу шахрайства, ви надішлете це повідомлення нам, щоб ми змогли його проаналізувати та вдосконалити наші фільтри. Це означає, що ми матимемо змогу переглянути весь вміст цього повідомлення."
@@ -6045,7 +6039,7 @@
         "Цей лист не пройшов вимоги перевірки свого домену. Він міг бути підроблений або неправильно пересланий."
       ],
       "This file is too large to preview": [
-        "Цей файл завеликий для передпоказу"
+        "Цей файл завеликий для перегляду"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Це запрошення збережено у вимкненому календарі."
@@ -6075,10 +6069,10 @@
         "Це повідомлення підписано вкладеним ключем, який ще не був довіреним."
       ],
       "This message will be automatically deleted at ${ value }": [
-        "Це повідомлення буде автоматично видалено о ${ value }"
+        "Це повідомлення автоматично видалиться о ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
-        "Це повідомлення автоматично видалиться о ${ value }"
+        "Це повідомлення автоматично видалиться у ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Це повідомлення буде позначено як спам. Бажаєте також відписатися від майбутніх листів?",
@@ -6120,13 +6114,13 @@
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Це призведе до видалення всіх даних, пов'язаних з цим застосунком, зокрема завантажених повідомлень. Він перезавантажиться, і вам потрібно буде знову ввійти в обліковий запис, щоби продовжити користуватися ним."
+        "Це призведе до видалення всіх даних, пов'язаних з цією програмою, зокрема завантажених повідомлень. Програма перезавантажиться, і вам потрібно буде знову ввійти в обліковий запис, щоб продовжити роботу."
       ],
       "This sender's public key has not been trusted yet.": [
         "Відкритий ключ цього відправника ще не був довіреним."
       ],
       "to ${ destinationElement } folder.": [
-        "до теки «${ destinationElement }»"
+        "до теки ${ destinationElement }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -6183,7 +6177,7 @@
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Покращте до ${ MAIL_APP_NAME } Plus, щоби розблокувати"
+        "Покращте до ${ MAIL_APP_NAME } Plus, щоб розблокувати"
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
@@ -6321,7 +6315,7 @@
         "Ви можете імпортувати один тип даних за один раз."
       ],
       "You can now return to the application to continue": [
-        "Тепер ви можете повернутися до застосунку, щоби продовжити"
+        "Тепер ви можете повернутися до програми для продовження роботи"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
@@ -6471,16 +6465,16 @@
     },
     "Info: partial": {
       "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } вибрана тека",
-        "${ selectedFoldersCount } вибрані теки",
-        "${ selectedFoldersCount } вибраних тек",
-        "${ selectedFoldersCount } вибраних тек"
+        "Вибрано ${ selectedFoldersCount } теку",
+        "Вибрано ${ selectedFoldersCount } теки",
+        "Вибрано ${ selectedFoldersCount } тек",
+        "Вибрано ${ selectedFoldersCount } тек"
       ],
       "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } вибрана мітка",
-        "${ selectedFoldersCount } вибрані мітки",
-        "${ selectedFoldersCount } вибраних міток",
-        "${ selectedFoldersCount } вибраних міток"
+        "Вибрано ${ selectedFoldersCount } мітку",
+        "Вибрано ${ selectedFoldersCount } мітки",
+        "Вибрано ${ selectedFoldersCount } міток",
+        "Вибрано ${ selectedFoldersCount } міток"
       ]
     },
     "Key badge": {
@@ -7375,7 +7369,7 @@
         "Надіслані"
       ],
       "Set up email forwarding": [
-        "Налаштувати пересилання листів"
+        "Налаштувати пересилання пошти"
       ],
       "Sign up for free": [
         "Зареєструватися безплатно"
@@ -8095,7 +8089,7 @@
         "Пошук імені, е-пошти чи групи"
       ],
       "Search parent folder": [
-        "Пошук батьківської теки"
+        "Пошук у теці верхнього рівня"
       ],
       "Select": [
         "Вибрати"
@@ -8278,7 +8272,7 @@
     },
     "Security Center": {
       "All aliases": [
-        "Всі псевдоніми"
+        "Усі псевдоніми"
       ],
       "Create alias": [
         "Створити псевдонім"
@@ -8287,13 +8281,13 @@
         "Створити псевдонім"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Створюйте псевдоніми на льоту та легко керуйте ними та паролями."
+        "Миттєво створюйте псевдоніми, а також легко керуйте ними й паролями."
       ],
       "Hide-my-email aliases": [
         "Псевдоніми Hide-my-email"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email псевдоніми дають змогу реєструватися в мережі без написання своєї реальної адреси. ${ learnMoreLink }"
+        "Псевдоніми Hide-my-email дають змогу реєструватися в Інтернеті без поширення своєї адреси електронної пошти. ${ learnMoreLink }"
       ],
       "New alias": [
         "Новий псевдонім"
@@ -8308,10 +8302,10 @@
         "Спробуйте ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "Використовуйте на Amazon для покупок тощо"
+        "Використовується на Amazon для покупок та ін."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Натомість коли вас попросять вказати адресу пошти, вкажіть цей псевдонім. Псевдоніми надаються ${ passLink }."
+        "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8897,46 +8891,43 @@
         "${ app } сховища"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% заповнено"
+        "${ storage } заповнене на ${ percentage }%"
       ],
       "contact your administrator": [
-        "зв'язатися з адміністратором"
+        "зверніться до адміністратора"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Щоб і надалі завантажувати та синхронізувати файли, звільніть місце або покращте тариф, щоб збільшити сховище."
+        "Для подальшого завантаження й синхронізації файлів звільніть місце або передплатіть тарифний план, щоб збільшити сховище."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Щоби надсилати або отримувати листи, звільніть місце або ${ upgrade }"
+        "Щоб надсилати й отримувати листи, звільніть місце або ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Щоби надсилати або отримувати листи, звільніть місце або покращте тариф, щоб збільшити сховище."
+        "Щоб надсилати й отримувати листи, звільніть місце або передплатіть тарифний план, щоб збільшити сховище."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "покращте тариф, щоб збільшити сховище"
+        "збільште сховище, передплативши тарифний план"
       ],
       "Your ${ appStorage } is almost full": [
-        "Ваше ${ appStorage } майже повне"
+        "Ваше ${ appStorage } майже заповнене"
       ],
       "Your ${ appStorage } is full": [
-        "Ваше ${ appStorage } повне"
+        "Ваше ${ appStorage } заповнене"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваше ${ storage } заповнено на ${ percentage }%. ${ cta }."
+        "Ваше ${ storage } заповнене на ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Ваше ${ storage } повне. ${ cta }."
-      ],
-      "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Ваше сховище заповнено на ${ percentage }%. ${ cta }."
+        "Ваше ${ storage } заповнене. ${ cta }."
       ],
       "Your storage is full": [
         "Ваше сховище заповнене"
       ],
       "Your storage is full. ${ cta }.": [
-        "Ваше сховище заповнено. ${ cta }."
+        "Ваше сховище заповнене. ${ cta }."
       ]
     },
     "Success": {
@@ -9254,6 +9245,11 @@
         "Відгук надіслано"
       ]
     },
+    "Suffix": {
+      "/month": [
+        "/місяць"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Створюйте надійні дані для входу на всіх своїх пристроях з необмеженою кількістю псевдонімів, 20 сховищами, інтегрованою 2FA, автозаповненням кредитних карток та іншими можливостями."
@@ -9391,7 +9387,7 @@
         "(активно)"
       ],
       "A filter name is required": [
-        "Потрібна назва фільтра"
+        "Необхідно вказати назву фільтра"
       ],
       "A filter with this name already exists": [
         "Фільтр з такою назвою вже існує"
@@ -9616,7 +9612,7 @@
         "Налаштування е-пошти"
       ],
       "Enable 2FA": [
-        "Ввімкнути двоетапну автентифікацію"
+        "Увімкнути двоетапну автентифікацію"
       ],
       "Enable message content search": [
         "Увімкнути пошук вмісту повідомлень"
@@ -9649,10 +9645,10 @@
         "Переслати"
       ],
       "Get advanced protection": [
-        "Отримати розширений захист"
+        "Отримайте розширений захист"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Отримати застосунки ${ appName[APP_NAME] }"
+        "Отримайте програми ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Групи"
@@ -10137,7 +10133,7 @@
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
-        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
       ],
