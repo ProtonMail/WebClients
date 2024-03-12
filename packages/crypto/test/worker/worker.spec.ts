@@ -797,6 +797,16 @@ Z3SSOseslp6+4nnQ3zOqnisO
             expect(sha256Fingerprings).to.deep.equal(await getSHA256Fingerprints(key));
         });
 
+        it('getAlgorithmInfo - it returns the expected values', async () => {
+            const keyReference = await CryptoWorker.importPublicKey({ armoredKey: keyWithP256AndCurve25519Subkeys });
+            expect(keyReference.getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdsa', curve: 'p256' });
+            expect(keyReference.subkeys[0].getAlgorithmInfo()).to.deep.equal({ algorithm: 'ecdh', curve: 'p256' });
+            expect(keyReference.subkeys[1].getAlgorithmInfo()).to.deep.equal({
+                algorithm: 'ecdh',
+                curve: 'curve25519',
+            });
+        });
+
         it('computeHash', async () => {
             const testHashMD5 = await CryptoWorker.computeHash({
                 algorithm: 'unsafeMD5',
@@ -863,18 +873,13 @@ Z3SSOseslp6+4nnQ3zOqnisO
             const expected = '6904f1422410f8360c6538300210a2868f5e80cd88606ec7d6e7e93b49983cea';
             const passwordBytes = hexStringToArray('0101010101010101010101010101010101010101010101010101010101010101');
 
-            const promise = CryptoWorker.computeArgon2({
+            const tag = await CryptoWorker.computeArgon2({
                 password: new TextDecoder().decode(passwordBytes),
                 salt: hexStringToArray('0202020202020202020202020202020202020202020202020202020202020202'),
                 params: ARGON2_PARAMS.MINIMUM,
             });
-            // Since v6 is only used for testing, we have yet to add the standalone argon2 support
-            if (v6Canary) {
-                await expect(promise).to.be.rejectedWith(/Not implemented/);
-            } else {
-                const tag = await promise;
-                expect(arrayToHexString(tag)).to.equal(expected);
-            }
+
+            expect(arrayToHexString(tag)).to.equal(expected);
         });
 
         it('replaceUserIDs - the target key user IDs match the source key ones', async () => {
