@@ -3802,6 +3802,9 @@
       "An invitation will be sent to added participants.": [
         "Pridaným účastníkom bude zaslaná pozvánka."
       ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "Všetkým účastníkom bude zaslaná pozvánka. Ktorú udalosť chcete aktualizovať?"
+      ],
       "An invitation will be sent to the event participants.": [
         "Účastníkom udalosti bude zaslaná pozvánka."
       ],
@@ -5928,6 +5931,11 @@
         "Vyskúšať ${ PASS_APP_NAME }"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otvorí ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Zobraziť záznamy"
@@ -6604,6 +6612,9 @@
       "Invitation sent and participants added to all events": [
         "Pozvánka bola odoslaná a účastníci boli pridaní do všetkých udalostí"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy zmenené aliasy uložené v najstaršom trezore"
+      ],
       "Participants notified and all events updated": [
         "Účastníci boli upozornení a všetky udalosti aktualizované"
       ],
@@ -6638,6 +6649,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Spätná väzba bola odoslaná"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mesiac"
       ]
     },
     "summer2023: Tooltip": {

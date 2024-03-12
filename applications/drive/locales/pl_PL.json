@@ -580,6 +580,15 @@
       "Save changes": [
         "Zapisz zmiany"
       ],
+      "Scan & Download": [
+        "Skanuj i pobierz"
+      ],
+      "Scan & Download (${ count })": [
+        "Skanuj i pobierz (${ count })"
+      ],
+      "Scan & Download all": [
+        "Skanuj i pobierz wszystko"
+      ],
       "Search": [
         "Szukaj"
       ],
@@ -2195,6 +2204,9 @@
       "Aliases could not be loaded": [
         "Aliasy nie mogły zostać załadowane"
       ],
+      "Already a member of this share": [
+        "To jest już użytkownik elementu"
+      ],
       "An error occurred while loading alias options": [
         "Wystąpił błąd podczas ładowania opcji aliasu"
       ],
@@ -3776,8 +3788,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Podpis cyfrowy został zweryfikowany. Folder został bezpiecznie przesłany przez adres ${ emailAddress }."
       ],
+      "Download": [
+        "Pobierz"
+      ],
       "Download ${ name } app": [
         "Pobierz aplikację dla systemu ${ name }"
+      ],
+      "Download anyway": [
+        "Pobierz mimo to"
       ],
       "Download canceled": [
         "Pobieranie zostało anulowane"
@@ -3839,6 +3857,9 @@
       "End-to-end encrypted": [
         "Zaszyfrowane end-to-end"
       ],
+      "End-to-End Encrypted": [
+        "Zaszyfrowane end-to-end"
+      ],
       "Enter password": [
         "Wpisz hasło"
       ],
@@ -3892,6 +3913,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Brak podpisu pliku. Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Skanowanie plików Proton Drive"
       ],
       "File will not be updated": [
         "Plik nie zostanie zaktualizowany"
@@ -4247,6 +4271,9 @@
       "Report has been sent": [
         "Raport został wysłany"
       ],
+      "Report link": [
+        "Zgłoś link"
+      ],
       "Restore": [
         "Przywróć"
       ],
@@ -4264,6 +4291,9 @@
       ],
       "Retry now": [
         "Spróbuj ponownie"
+      ],
+      "Scan issue": [
+        "Błąd skanowania"
       ],
       "Search cannot be enabled in this browser": [
         "Nie można włączyć wyszukiwania w tej przeglądarce"
@@ -4453,6 +4483,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "${ DRIVE_APP_NAME } może skanować i blokować złośliwe pliki. Pomimo tego pobieraj pliki tylko od zaufanych użytkowników."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
@@ -4792,6 +4825,9 @@
       ],
       "Add to group": [
         "Dodaj do grupy"
+      ],
+      "Anyone on the Internet with the link can view": [
+        "Każdy, kto posiada link, może zobaczyć zawartość"
       ],
       "Anyone with the link": [
         "Każdy, kto posiada link"
@@ -5180,6 +5216,9 @@
       "Theme": [
         "Motyw"
       ],
+      "This file is potentially infected": [
+        "Plik jest prawdopodobnie zainfekowany"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Spowoduje to trwałe usunięcie wszystkich plików w zablokowanym dysku."
       ],
@@ -5364,6 +5403,36 @@
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adresów e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Support for 1 custom email domain": [
+        "Wsparcie dla 1 niestandardowej domeny"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
       ]
     },
     "Message": {
@@ -6701,7 +6770,7 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "Get the deal": [
-        "Uzyskaj ofertę"
+        "Skorzystaj z oferty"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Odnowienie po roku za niższą cenę ${ discountedAmount } zamiast ${ regularAmount } (rabat ${ discount }%)"
@@ -6929,6 +6998,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/ miesiąc"
       ]
     },
     "summer2023: Tooltip": {

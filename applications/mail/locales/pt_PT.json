@@ -3083,6 +3083,16 @@
         "Transferir tudo"
       ]
     },
+    "Email body for invitation": {
+      "This event occurrence was updated.": [
+        "Esta ocorrência do evento foi atualizada."
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Removido"
+      ]
+    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "O evento é amanhã."
@@ -3153,6 +3163,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } não se consegue conectar à sua conta externa"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } para <${ email }>. Pode adicionar outra chave ou desativar a encriptação para este contacto para resolver o problema."
       ],
@@ -3168,8 +3181,23 @@
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
+      "Alias is not valid": [
+        "O pseudónimo não é válido"
+      ],
+      "Alias is required": [
+        "O pseudónimo é obrigatório"
+      ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."
+      ],
+      "Aliases could not be loaded": [
+        "O pseudónimo não foi carregado"
+      ],
+      "An error occurred while loading alias options": [
+        "Ocorreu um erro ao carregar as opções do pseudónimo"
+      ],
+      "An error occurred while saving your alias": [
+        "Ocorreu um erro ao guardar o seu pseudónimo"
       ],
       "Attachments are limited to 25 MB": [
         "Os anexos estão limitados a 25 MB"
@@ -3209,6 +3237,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "A pesquisa de conteúdo não pode ser ativada neste navegador. Saia do modo de navegação privada ou utilize outro navegador."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "A pesquisa de conteúdo não pode ser ativada. Por favor, reinicie a aplicação, ou limpe os dados."
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -3274,6 +3305,9 @@
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
+      ],
+      "Forward address is required": [
+        "Endereço de encaminhamento é necessário"
       ],
       "Image upload failed": [
         "Erro ao enviar a imagem"
@@ -3514,6 +3548,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Erro inesperado, não podemos importar os contatos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -4255,12 +4292,6 @@
       ],
       "Closing this means giving up the free storage bonus.": [
         "Fechar isto significa desistir do bónus grátis de armazenamento."
-      ],
-      "Congratulation, you completed all the steps!": [
-        "Parabéns! Completou todas as etapas."
-      ],
-      "Congratulation, you finished!": [
-        "Parabéns, terminaste!"
       ],
       "Continue setting up your email": [
         "Continue a configurar o seu email"
@@ -5247,6 +5278,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importe os seus e-mails, calendários e contactos de outro serviço para ${ BRAND_NAME }."
+      ],
+      "Important note": [
+        "Nota importante:"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
@@ -8028,6 +8062,10 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Você tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
+        "Você tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -8738,6 +8776,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentário enviado"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mês"
       ]
     },
     "summer2023: Tooltip": {

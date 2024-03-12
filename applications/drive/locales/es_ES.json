@@ -577,6 +577,9 @@
       "Scan & Download": [
         "Escanear y descargar"
       ],
+      "Scan & Download (${ count })": [
+        "Escanear y descargar (${ count })"
+      ],
       "Scan & Download all": [
         "Escanear y descargar todo"
       ],
@@ -3787,6 +3790,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "No se ha encontrado la firma del archivo. No se ha podido verificar quién ha cargado ${ fileName }."
       ],
+      "File scanning in Drive": [
+        "Escaneo de archivos en Drive"
+      ],
       "File will not be updated": [
         "El archivo no se actualizará."
       ],
@@ -4133,6 +4139,9 @@
       "Report has been sent": [
         "Se ha enviado el informe."
       ],
+      "Report link": [
+        "Denunciar el enlace"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -4150,6 +4159,9 @@
       ],
       "Retry now": [
         "Reintentar ahora"
+      ],
+      "Scan issue": [
+        "Problema de escaneo"
       ],
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador."
@@ -4338,6 +4350,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Para ayudarte a protegerte, ${ DRIVE_APP_NAME } puede escanear y bloquear archivos maliciosos. Solo deberías descargar archivos de personas de confianza."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primero crea un calendario en ${ CALENDAR_APP_NAME }. En este calendario aparecerán los eventos tras la importación."
@@ -5059,6 +5074,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Este archivo está potencialmente infectado."
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Esto elimina permanentemente todos los archivos en tu unidad bloqueada."
       ],
@@ -5233,6 +5251,52 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como",
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Conseguir la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programación de envío y tiempos de pausa personalizados"
+      ],
+      "Support for 1 custom email domain": [
+        "Soporte para 1 dominio de correo electrónico personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtén ${ planName } por solo ${ planPrice }"
       ]
     },
     "Message": {
@@ -6653,6 +6717,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentarios enviados"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mes"
       ]
     },
     "summer2023: Tooltip": {
