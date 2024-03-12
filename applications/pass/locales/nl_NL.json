@@ -383,6 +383,9 @@
       "View history": [
         "Geschiedenis bekijken"
       ],
+      "View item history": [
+        "Bekijk item geschiedenis"
+      ],
       "View older history": [
         "Oudere geschiedenis bekijken"
       ],
@@ -440,7 +443,7 @@
         "Authenticatiefout"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME } wachtwoord om verder te gaan met de export"
+        "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME }-wachtwoord om verder te gaan met de export"
       ],
       "Auto-lock could not be activated": [
         "Auto-vergrendelen kon niet geactiveerd worden"
@@ -1024,7 +1027,7 @@
         "Item vastzetten..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Bevestig uw ${ BRAND_NAME } wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
+        "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Bevestig uw pincode om uw huidige slot af te melden.\n${ PASS_APP_NAME } wordt dan nooit vergrendeld."
@@ -1193,7 +1196,7 @@
         "U staat op het punt volgende aan te maken:"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "U kunt nu uw ${ BRAND_NAME } wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
+        "U kunt nu uw ${ BRAND_NAME }-wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
       ],
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
@@ -1288,7 +1291,7 @@
         "Alfabetisch"
       ],
       "Application logs": [
-        "Toepassingslogboek"
+        "Applicatielogboek"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Auto-vergrendel ${ PASS_APP_NAME }"
@@ -1623,7 +1626,7 @@
         "Inloggen bij uw account"
       ],
       "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "U bent momenteel offline. Ontgrendel ${ PASS_SHORT_APP_NAME } met uw ${ BRAND_NAME } wachtwoord"
+        "U bent momenteel offline. Ontgrendel ${ PASS_SHORT_APP_NAME } met uw ${ BRAND_NAME }-wachtwoord"
       ]
     },
     "lobby: Title": {
