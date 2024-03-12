@@ -46,6 +46,10 @@ export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) =>
     );
 };
 
+export const getIsVpn2024 = (planName: PLANS) => {
+    return planName === PLANS.VPN2024;
+};
+
 export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
