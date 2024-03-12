@@ -276,6 +276,25 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     return result;
 };
 
+export const getUpdatedMainSeriesMergeEvent = (
+    updatedVeventComponent: VcalVeventComponent,
+    updateMainSeriesMergeVevent: Partial<VcalVeventComponent>
+) => {
+    const result: Partial<VcalVeventComponent> = {
+        ...updateMainSeriesMergeVevent,
+    };
+
+    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(
+        updatedVeventComponent,
+        updateMainSeriesMergeVevent
+    );
+    if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
+        result.attendee = updatedVeventComponent.attendee || [];
+    }
+
+    return result;
+};
+
 export const getHasNotificationsMergeUpdate = (
     vevent: VcalVeventComponent,
     mergeVevent: Partial<VcalVeventComponent>
