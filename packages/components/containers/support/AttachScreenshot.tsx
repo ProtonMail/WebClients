@@ -31,6 +31,14 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         setUploading(true);
 
+        const duplicatedFilenamesNotification = () => {
+            createNotification({
+                type: 'warning',
+                text: c('Notification for duplicate filenames in the current upload')
+                    .t`Some images were not uploaded due to duplicate filenames in the current selection.`,
+            });
+        };
+
         try {
             const targetImages = target.files ? [...target.files].filter(({ type }) => /^image\//i.test(type)) : [];
 
@@ -42,15 +50,38 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                 });
             }
 
-            const uploadedScreenshots = await Promise.all(
-                targetImages.map((img) =>
-                    resize(img, MAX_SIZE_SCREENSHOT).then((base64str) => ({
-                        name: img.name,
-                        blob: toBlob(base64str),
-                    }))
+            const filenames = new Set();
+            const uniqueTargetImages = targetImages.filter((image) => {
+                const isUnique = !filenames.has(image.name);
+                filenames.add(image.name);
+                return isUnique;
+            });
+
+            if (uniqueTargetImages.length < targetImages.length) {
+                duplicatedFilenamesNotification();
+            }
+
+            const existingScreenshotNames = new Set(screenshots.map((s) => s.name));
+            const processedScreenshots = (
+                await Promise.all(
+                    uniqueTargetImages.map((img) =>
+                        resize(img, MAX_SIZE_SCREENSHOT).then((base64str) => ({
+                            name: img.name,
+                            blob: toBlob(base64str),
+                        }))
+                    )
                 )
-            );
-            setScreenshots(uploadedScreenshots);
+            ).filter((screenshot) => {
+                const isUniqueAcrossUploads = !existingScreenshotNames.has(screenshot.name);
+                if (!isUniqueAcrossUploads) {
+                    duplicatedFilenamesNotification();
+                }
+                return isUniqueAcrossUploads;
+            });
+
+            if (processedScreenshots.length) {
+                setScreenshots([...screenshots, ...processedScreenshots]);
+            }
         } finally {
             setUploading(false);
         }
