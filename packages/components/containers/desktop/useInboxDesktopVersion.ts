@@ -1,99 +1,121 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
 
-export interface DesktopRelease {
-    Version?: string;
-    RolloutProportion: number;
+export interface DesktopVersion {
+    CategoryName: RELEASE_CATEGORIES;
+    Version: string;
+    ReleaseDate: string;
     File: {
-        Url?: string;
+        Url?: string; // TODO change this to required after destkop app GA
         Sha512CheckSum: string;
-    };
-    ManualUpdate?: string[];
+    }[];
+    ReleaseNotes: {
+        Type: string;
+        Notes: string[];
+    }[];
+    RolloutProportion?: number;
+    ManualUpdate: string[];
 }
 
-export interface DesktopClient {
-    early: DesktopRelease;
-}
-
-const initialWindowsClient = (): DesktopClient => {
-    return {
-        early: {
-            Version: '0.9.0',
-            RolloutProportion: 0.1,
-            File: {
-                Url: getStaticURL('/download/mail/windows/ProtonMail-desktop-beta.exe'),
-                Sha512CheckSum:
-                    '686165d261dc8f940b59656b7b4c4d84ed5b5e9a92d0e97d372ee6e5048433fe59a4b0eac49e559ee41bbacb9bf78c0f40a038c88902b56f8ac87fb1a5791c67',
-            },
+const initialLinuxClients: DesktopVersion = {
+    CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,
+    Version: '1.0.0',
+    ReleaseDate: '2024-03-14',
+    File: [
+        {
+            Url: undefined,
+            Sha512CheckSum: '',
         },
-    };
+        {
+            Url: undefined,
+            Sha512CheckSum: '',
+        },
+    ],
+    ReleaseNotes: [],
+    RolloutProportion: 1,
+    ManualUpdate: [],
 };
 
-const initialMacosClient = (): DesktopClient => {
-    return {
-        early: {
-            Version: '0.9.0',
-            RolloutProportion: 0.1,
-            File: {
-                Url: getStaticURL('/download/mail/macos/ProtonMail-desktop-beta.dmg'),
-                Sha512CheckSum:
-                    '8231c3cbbe1451a293f84de35b58d2a7b0d88d389d2c21e8cbab01777b1cf23ad81039ce9772de54e17a7cda9c7e899123827f9e86ef1485e443564a68bc6174',
-            },
-            ManualUpdate: ['0.9.0', '0.9.1'],
+const initialWindowsClient: DesktopVersion = {
+    CategoryName: RELEASE_CATEGORIES.STABLE,
+    Version: '1.0.0',
+    ReleaseDate: '2024-03-14',
+    File: [
+        {
+            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.exe'),
+            Sha512CheckSum: '',
         },
-    };
+    ],
+    ReleaseNotes: [],
+    RolloutProportion: 1,
+    ManualUpdate: [],
 };
 
-const fetchDesktopClient = async (platform: 'windows' | 'macos'): Promise<DesktopClient | undefined> => {
+const initialMacosClient: DesktopVersion = {
+    CategoryName: RELEASE_CATEGORIES.STABLE,
+    Version: '1.0.0',
+    ReleaseDate: '2024-03-14',
+    File: [
+        {
+            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.exe'),
+            Sha512CheckSum: '',
+        },
+    ],
+    ReleaseNotes: [],
+    RolloutProportion: 1,
+    ManualUpdate: ['0.9.0', '0.9.1'],
+};
+
+const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS): Promise<DesktopVersion[] | undefined> => {
     try {
-        const response = await fetch(getStaticURL(`/download/mail/${platform}/version.json`));
+        const response = await fetch(getDownloadUrl(`/mail/${platform}/version.json`));
         if (!response.ok) {
             throw new Error(response.statusText);
         }
 
         const res = await response.json();
-        const result = {
-            early: {
-                Version: res.early.Version ?? undefined,
-                RolloutProportion: res.early.RolloutProportion ?? '',
-                File: {
-                    Url: res.early.File.Url ?? undefined,
-                    Sha512CheckSum: res.early.File.Sha512CheckSum ?? '',
-                },
-                ManualUpdate: res.early.ManualUpdate ?? [],
-            },
-        };
-        return result;
+        return res.Releases;
     } catch (e: any) {
         return undefined;
     }
 };
 
+const { WINDOWS, MACOS, LINUX } = DESKTOP_PLATFORMS;
+
 const useInboxDesktopVersion = () => {
     const [loading, withLoading] = useLoading(true);
 
-    const [windowsApp, setWindowsApp] = useState<DesktopClient | undefined>(initialWindowsClient());
-    const [macosApp, setMacosApp] = useState<DesktopClient | undefined>(initialMacosClient());
+    const [windowsApp, setWindowsApp] = useState<DesktopVersion | undefined>(initialWindowsClient);
+    const [macosApp, setMacosApp] = useState<DesktopVersion | undefined>(initialMacosClient);
+    const [linuxApp, setLinuxApp] = useState<DesktopVersion | undefined>(initialLinuxClients);
+    const [allLinuxVersions, setAllLinuxVersions] = useState<DesktopVersion[]>([]);
 
     useEffect(() => {
         const fetchDesktopVersion = async () => {
-            const windowsClient = await fetchDesktopClient('windows');
+            const promises = [fetchDesktopClient(WINDOWS), fetchDesktopClient(MACOS), fetchDesktopClient(LINUX)];
+            const [windowsClient, macosClient, linuxClient] = await Promise.all(promises);
+
             if (windowsClient) {
-                setWindowsApp(windowsClient);
+                setWindowsApp(windowsClient[0]);
             }
 
-            const macosClient = await fetchDesktopClient('macos');
             if (macosClient) {
-                setMacosApp(macosClient);
+                setMacosApp(macosClient[0]);
+            }
+
+            if (linuxClient) {
+                setLinuxApp(linuxClient[0]);
+                setAllLinuxVersions(linuxClient);
             }
         };
 
         withLoading(fetchDesktopVersion());
     }, []);
 
-    return { windowsApp, macosApp, loading };
+    return { windowsApp, macosApp, linuxApp, allLinuxVersions, loading };
 };
 
 export default useInboxDesktopVersion;
