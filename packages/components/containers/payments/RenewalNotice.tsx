@@ -88,6 +88,10 @@ export const getCheckoutRenewNoticeText = ({
             return c('vpn_2024: renew')
                 .t`Subscription auto-renews every 1 month. Your next billing date is in 1 month.`;
         }
+        if (renewCycle === CYCLE.THREE) {
+            return c('vpn_2024: renew')
+                .t`Subscription auto-renews every 3 months. Your next billing date is in 3 months.`;
+        }
         const first = c('vpn_2024: renew').ngettext(
             msgid`Your subscription will automatically renew in ${cycle} month.`,
             `Your subscription will automatically renew in ${cycle} months.`,

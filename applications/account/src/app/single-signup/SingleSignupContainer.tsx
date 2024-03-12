@@ -1,9 +1,11 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import {
+    Breakpoints,
     OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
+    useActiveBreakpoint,
     useApi,
     useConfig,
     useErrorHandler,
@@ -11,7 +13,11 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getIsVpn2024Deal, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
+import {
+    getIsVpn2024,
+    getIsVpn2024Deal,
+    getVPNPlanToUse,
+} from '@proton/components/containers/payments/subscription/helpers';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -61,6 +67,41 @@ import onboardingVPNWelcome2 from './illustration.svg';
 import { TelemetryMeasurementData } from './measure';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
+const getCycleData = ({
+    plan,
+    coupon,
+    activeBreakpoint,
+}: {
+    plan: PLANS;
+    coupon?: string;
+    activeBreakpoint: Breakpoints;
+}) => {
+    if (getIsVpn2024Deal(plan, coupon)) {
+        return {
+            upsellCycle: CYCLE.THIRTY,
+            cycles: activeBreakpoint.viewportWidth['>=large']
+                ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
+                : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
+        };
+    }
+
+    if (getIsVpn2024(plan)) {
+        return {
+            upsellCycle: CYCLE.EIGHTEEN,
+            cycles: activeBreakpoint.viewportWidth['>=large']
+                ? [CYCLE.MONTHLY, CYCLE.EIGHTEEN, CYCLE.THREE]
+                : [CYCLE.EIGHTEEN, CYCLE.THREE, CYCLE.MONTHLY],
+        };
+    }
+
+    return {
+        upsellCycle: CYCLE.TWO_YEARS,
+        cycles: activeBreakpoint.viewportWidth['>=large']
+            ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
+            : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
+    };
+};
+
 interface Props {
     loader: ReactNode;
     onLogin: OnLoginCallback;
@@ -84,6 +125,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-vpn',
     });
+    const activeBreakpoint = useActiveBreakpoint();
 
     useMetaTags(metaTags);
 
@@ -181,11 +223,15 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {}
             );
 
-            const hasExtendedCycles = getIsVpn2024Deal(vpnPlanName, signupParameters.coupon);
+            const { cycles, upsellCycle } = getCycleData({
+                plan: vpnPlanName,
+                coupon: signupParameters.coupon,
+                activeBreakpoint,
+            });
 
             const defaults: SignupDefaults = {
                 plan: vpnPlanName,
-                cycle: hasExtendedCycles ? CYCLE.THIRTY : CYCLE.TWO_YEARS,
+                cycle: upsellCycle,
             };
 
             const cycle = signupParameters.cycle || defaults.cycle;
@@ -194,9 +240,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
                 plansMap,
                 planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
-                cycles: hasExtendedCycles
-                    ? [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY]
-                    : [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+                cycles,
                 paymentsApi,
                 currency,
                 coupon: signupParameters.coupon,
@@ -217,7 +261,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             const subscriptionData =
                 subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                subscriptionDataCycleMapping[vpnPlanName]?.[hasExtendedCycles ? CYCLE.THIRTY : CYCLE.TWO_YEARS];
+                subscriptionDataCycleMapping[vpnPlanName]?.[upsellCycle];
 
             setModelDiff({
                 domains,
@@ -317,9 +361,15 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     };
 
     const loading = loadingDependencies || loadingChallenge;
+    const coupon = model.subscriptionData.checkResult.Coupon?.Code;
 
-    const isVpn2024Deal = getIsVpn2024Deal(selectedPlan.Name as PLANS, signupParameters.coupon);
-    const hasExtendedCycles = isVpn2024Deal;
+    const isVpn2024Deal = getIsVpn2024Deal(selectedPlan.Name as PLANS, coupon);
+
+    const cycleData = getCycleData({
+        plan: selectedPlan.Name as PLANS,
+        activeBreakpoint,
+        coupon,
+    });
 
     return (
         <>
@@ -330,12 +380,13 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             <UnAuthenticated>
                 {model.step === Steps.Account && (
                     <Step1
+                        activeBreakpoint={activeBreakpoint}
                         mode={signupParameters.mode}
                         defaultEmail={signupParameters.email}
                         className={loading ? 'visibility-hidden' : undefined}
                         loading={loading}
                         selectedPlan={selectedPlan}
-                        hasExtendedCycles={hasExtendedCycles}
+                        cycleData={cycleData}
                         isVpn2024Deal={isVpn2024Deal}
                         isB2bPlan={isB2bPlan}
                         background={background}
