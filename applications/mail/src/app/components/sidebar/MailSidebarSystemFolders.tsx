@@ -3,21 +3,13 @@ import { DragEvent, DragEventHandler, useEffect, useRef, useState } from 'react'
 import { Location } from 'history';
 import { c } from 'ttag';
 
-import {
-    FeatureCode,
-    SimpleSidebarListItemHeader,
-    useActiveBreakpoint,
-    useFeature,
-    useSpotlightOnFeature,
-    useWelcomeFlags,
-} from '@proton/components';
+import { SimpleSidebarListItemHeader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
-import AlmostAllMailSpotlight from './AlmostAllMailSpotlight';
 import { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
 
@@ -71,18 +63,6 @@ const MailSidebarSystemFolders = ({
     const [draggedElementId, setDraggedElementId] = useState<MAILBOX_LABEL_IDS | undefined>();
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();
-    const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { viewportWidth } = useActiveBreakpoint();
-    const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
-
-    const {
-        show: showAlmostAllMailSpotlight,
-        onDisplayed: onAlmostAllMailSpotlightDisplayed,
-        onClose: onAlmostAllMailSpotlightClose,
-    } = useSpotlightOnFeature(
-        FeatureCode.AlmostAllMailSpotlight,
-        isAlmostAllMailEnabled && !isWelcomeFlow && !viewportWidth['<=small']
-    );
 
     const getCommonProps = (labelID: string) => ({
         currentLabelID,
@@ -277,44 +257,29 @@ const MailSidebarSystemFolders = ({
             {displayMoreItems
                 ? sidebarElements
                       .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MORE)
-                      .map((element) => {
-                          const child = (
-                              <DnDElementWrapper
-                                  isDnDAllowed
-                                  onClick={(e) => e.stopPropagation()}
-                                  key={element.ID}
-                                  onDragStart={handleDragStart(element.labelID)}
-                                  onDragEnd={handleResetDragState}
-                                  onDragOver={handleDragOver(element.labelID)}
-                                  onDrop={handleDrop(element.labelID, draggedElementId)}
-                                  className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
-                              >
-                                  <SidebarItem
-                                      {...getCommonProps(element.labelID)}
-                                      icon={element.icon}
-                                      id={element.ID}
-                                      isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
-                                      hideCountOnHover={false}
-                                      onFocus={setFocusedItem}
-                                      shortcutText={element.shortcutText}
-                                      text={element.text}
-                                  />
-                              </DnDElementWrapper>
-                          );
-
-                          return element.labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL ? (
-                              <AlmostAllMailSpotlight
-                                  key={`spotlight-${element.ID}`}
-                                  show={showAlmostAllMailSpotlight}
-                                  onDisplayed={onAlmostAllMailSpotlightDisplayed}
-                                  onClose={onAlmostAllMailSpotlightClose}
-                              >
-                                  <div>{child}</div>
-                              </AlmostAllMailSpotlight>
-                          ) : (
-                              child
-                          );
-                      })
+                      .map((element) => (
+                          <DnDElementWrapper
+                              isDnDAllowed
+                              onClick={(e) => e.stopPropagation()}
+                              key={element.ID}
+                              onDragStart={handleDragStart(element.labelID)}
+                              onDragEnd={handleResetDragState}
+                              onDragOver={handleDragOver(element.labelID)}
+                              onDrop={handleDrop(element.labelID, draggedElementId)}
+                              className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
+                          >
+                              <SidebarItem
+                                  {...getCommonProps(element.labelID)}
+                                  icon={element.icon}
+                                  id={element.ID}
+                                  isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
+                                  hideCountOnHover={false}
+                                  onFocus={setFocusedItem}
+                                  shortcutText={element.shortcutText}
+                                  text={element.text}
+                              />
+                          </DnDElementWrapper>
+                      ))
                 : null}
         </>
     );
