@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import { WasmBlockchainClient } from '@proton/andromeda';
 import { useCache } from '@proton/components/hooks';
+
+import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 
 const FEES_ESTIMATION_KEY = 'fees_estimation';
 
 export const useBlockchainFeesEstimation = () => {
     const cache = useCache();
+    const blockchainClient = useBlockchainClient();
+
     const [feesEstimation, setFeesEstimation] = useState<Map<string, number>>(new Map());
     const [loading, setLoading] = useState(false);
 
@@ -18,7 +21,7 @@ export const useBlockchainFeesEstimation = () => {
             return;
         } else {
             setLoading(true);
-            new WasmBlockchainClient()
+            blockchainClient
                 .getFeesEstimation()
                 .then((est) => {
                     setFeesEstimation(est);
@@ -29,6 +32,8 @@ export const useBlockchainFeesEstimation = () => {
                     setLoading(false);
                 });
         }
+        // blockchainClient is stable at mount
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cache]);
 
     return { feesEstimation, loading };
