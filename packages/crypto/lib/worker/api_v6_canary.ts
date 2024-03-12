@@ -6,6 +6,7 @@
 import {
     SHA256,
     SHA512,
+    argon2,
     armorBytes,
     canKeyEncrypt,
     checkKeyCompatibility,
@@ -41,7 +42,15 @@ import {
     verifyCleartextMessage,
     verifyMessage,
 } from 'pmcrypto-v6-canary';
-import type { AlgorithmInfo as AlgorithmInfoV6, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
+import type {
+    AlgorithmInfo as AlgorithmInfoV6,
+    Argon2Options,
+    Data,
+    Key,
+    PrivateKey,
+    PublicKey,
+} from 'pmcrypto-v6-canary';
+import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
 import { SubkeyOptions, UserID, config, enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
@@ -113,19 +122,32 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
     const v6Tov5AlgorithmInfo = (algorithmInfo: AlgorithmInfoV6): AlgorithmInfo => {
+        const v6ToV5Curve = (curveName: AlgorithmInfoV6['curve']): AlgorithmInfo['curve'] => {
+            switch (curveName) {
+                case 'curve25519Legacy':
+                    return 'curve25519';
+                case 'ed25519Legacy':
+                    return 'ed25519';
+                case 'nistP256':
+                    return 'p256';
+                case 'nistP384':
+                    return 'p384';
+                case 'nistP521':
+                    return 'p521';
+                default:
+                    return curveName;
+            }
+        };
         switch (algorithmInfo.algorithm) {
             case 'eddsaLegacy':
                 return {
                     algorithm: 'eddsa',
-                    curve: algorithmInfo.curve === 'ed25519Legacy' ? 'ed25519' : 'curve25519',
+                    curve: 'ed25519',
                 };
             case 'ecdh':
                 return {
                     algorithm: 'ecdh',
-                    curve:
-                        algorithmInfo.curve === 'curve25519Legacy'
-                            ? 'curve25519'
-                            : (algorithmInfo.curve as AlgorithmInfo['curve']),
+                    curve: v6ToV5Curve(algorithmInfo.curve),
                 };
             case 'ed448':
             case 'x448':
@@ -133,7 +155,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
             default:
                 const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
                 if (algorithmInfo.curve !== undefined) {
-                    result.curve = algorithmInfo.curve as AlgorithmInfo['curve'];
+                    result.curve = v6ToV5Curve(algorithmInfo.curve);
                 }
                 if (algorithmInfo.bits !== undefined) {
                     result.bits = algorithmInfo.bits;
@@ -303,8 +325,21 @@ class KeyManagementApi {
      * @returns reference to the generated private key
      */
     async generateKey(options: WorkerGenerateKeyOptions) {
-        const v5Tov6CurveOption = (curve: WorkerGenerateKeyOptions['curve']) =>
-            curve === 'ed25519' || curve === 'curve25519' ? 'ed25519Legacy' : curve;
+        const v5Tov6CurveOption = (curve: WorkerGenerateKeyOptions['curve']) => {
+            switch (curve) {
+                case 'ed25519':
+                case 'curve25519':
+                    return 'ed25519Legacy';
+                case 'p256':
+                    return 'nistP256';
+                case 'p384':
+                    return 'nistP384';
+                case 'p521':
+                    return 'nistP521';
+                default:
+                    return curve;
+            }
+        };
 
         const { privateKey } = await generateKey({
             ...options,
@@ -1026,8 +1061,9 @@ export class Api extends KeyManagementApi {
     /**
      * Compute argon2 hash of the given `password`
      */
-    async computeArgon2() {
-        throw new Error('Not implemented');
+    async computeArgon2({ password, salt, params = ARGON2_PARAMS.RECOMMENDED }: Argon2Options) {
+        const result = await argon2({ password, salt, params });
+        return result;
     }
 
     /**
