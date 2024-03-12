@@ -64,6 +64,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     icon,
     label,
     loading = false,
+    onClick,
     value,
     valueClassName,
 }: ValueControlProps<E>) => {
@@ -95,12 +96,16 @@ export const ValueControl = <E extends ElementType = 'div'>({
     }, [value, children, loading, hide, intrinsicEl]);
 
     const canCopy = clickToCopy && value;
+    const interactive = canCopy || onClick;
     const MaybeClickToCopy: ElementType<ClickToCopyProps> = canCopy ? ClickToCopy : 'div';
 
     return (
         <MaybeClickToCopy
-            className={clsx(canCopy && 'pass-value-control--interactive', !loading && error && 'border-danger')}
-            {...(canCopy ? { value: clipboardValue ?? value } : {})}
+            className={clsx(
+                interactive && 'pass-value-control--interactive cursor-pointer',
+                !loading && error && 'border-danger'
+            )}
+            {...(canCopy ? { value: clipboardValue ?? value } : { onClick })}
         >
             <FieldBox
                 actions={

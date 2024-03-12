@@ -64,19 +64,20 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
         const { valid, url } = isValidURL(maybeUrl);
 
         return {
-            shareId,
+            aliasPrefix: '',
+            aliasSuffix: undefined,
+            extraFields: [],
+            mailboxes: [],
             name: maybeUrl,
-            username: searchParams.get('username') ?? '',
-            password: '',
             note: '',
+            passkeys: [],
+            password: '',
+            shareId,
             totpUri: '',
             url: valid ? createNewUrl(url).url : '',
             urls: [],
+            username: searchParams.get('username') ?? '',
             withAlias: false,
-            aliasPrefix: '',
-            aliasSuffix: undefined,
-            mailboxes: [],
-            extraFields: [],
         };
     }, []);
 

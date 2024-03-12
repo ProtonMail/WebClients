@@ -10,32 +10,36 @@
 	// content size, which is especially helpful when the item has a fixed or
 	// percentage-based width that causes issues with the Flexbox layout.
 	min-inline-size: 0;
-}
 
-.pass-fieldset-cluster > * {
-	border: 1px solid var(--border-norm);
-	margin-block-start: -1px;
-	position: relative;
-
-	&:first-child,
-	&:first-child::before {
-		border-start-start-radius: var(--border-radius-xl) !important;
-		border-start-end-radius: var(--border-radius-xl) !important;
-		border-end-start-radius: 0 !important;
-		border-end-end-radius: 0 !important;
+	&--standout {
+		background: linear-gradient(180deg, var(--interaction-norm-major-3) -850%, transparent 150%);
 	}
 
-	&:last-child,
-	&:last-child::before {
-		border-start-start-radius: 0 !important;
-		border-start-end-radius: 0 !important;
-		border-end-start-radius: var(--border-radius-xl) !important;
-		border-end-end-radius: var(--border-radius-xl) !important;
-	}
+	> * {
+		border: 1px solid var(--border-norm);
+		margin-block-start: -1px;
+		position: relative;
 
-	&:only-child,
-	&:only-child::before {
-		border-radius: var(--border-radius-xl) !important;
+		&:first-child,
+		&:first-child::before {
+			border-start-start-radius: var(--border-radius-xl) !important;
+			border-start-end-radius: var(--border-radius-xl) !important;
+			border-end-start-radius: 0 !important;
+			border-end-end-radius: 0 !important;
+		}
+
+		&:last-child,
+		&:last-child::before {
+			border-start-start-radius: 0 !important;
+			border-start-end-radius: 0 !important;
+			border-end-start-radius: var(--border-radius-xl) !important;
+			border-end-end-radius: var(--border-radius-xl) !important;
+		}
+
+		&:only-child,
+		&:only-child::before {
+			border-radius: var(--border-radius-xl) !important;
+		}
 	}
 }
 
