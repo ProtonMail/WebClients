@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -11,6 +12,7 @@ import {
 } from '@proton/shared/lib/helpers/desktop';
 
 import TopBanner from '../topBanners/TopBanner';
+import { openLinkInBrowser } from './openExternalLink';
 import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion';
 
 /**
@@ -45,6 +47,14 @@ const doesEarlyVersionNeedsManualUpdate = (app: DesktopVersion, version: string)
 };
 
 const DownloadButton = ({ link }: { link: string }) => {
+    if (isElectronApp) {
+        return (
+            <Button shape="underline" className="py-0 align-baseline" onClick={() => openLinkInBrowser(link)}>{c(
+                'Action'
+            ).t`Download now`}</Button>
+        );
+    }
+
     return (
         <a target="_blank" rel="noopener noreferrer" className="link align-baseline text-left" href={link}>
             {c('Action').t`Download now`}
