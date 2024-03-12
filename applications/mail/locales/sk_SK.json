@@ -4403,12 +4403,6 @@
       "Closing this means giving up the free storage bonus.": [
         "Zatvorením sa vzdáte bezplatného bonusového úložiska."
       ],
-      "Congratulation, you completed all the steps!": [
-        "Gratulujeme, dokončili ste všetky kroky!"
-      ],
-      "Congratulation, you finished!": [
-        "Gratulujeme k dokončeniu!"
-      ],
       "Continue setting up your email": [
         "Pokračovať v nastavovaní vášho emailu"
       ],
@@ -8338,6 +8332,11 @@
         "Vyskúšať ${ PASS_APP_NAME }"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otvorí ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "Zobraziť záznamy"
@@ -9221,6 +9220,9 @@
       "Labels applied.": [
         "Štítky použité."
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy zmenené aliasy uložené v najstaršom trezore"
+      ],
       "Mail list unsubscribed": [
         "Odhlásené z mailingového zoznamu"
       ],
@@ -9320,6 +9322,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Spätná väzba bola odoslaná"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mesiac"
       ]
     },
     "summer2023: Tooltip": {

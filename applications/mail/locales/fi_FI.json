@@ -3195,6 +3195,9 @@
       "This event occurrence was updated.": [
         "Tämä tapahtuma päivitettiin."
       ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "Tämä tapahtuma päivitettiin."
       ],
@@ -4490,12 +4493,6 @@
       ],
       "Closing this means giving up the free storage bonus.": [
         "Menetät ilmaisen tallennustilaetusi jos suljet tämän."
-      ],
-      "Congratulation, you completed all the steps!": [
-        "Onnittelut, olet suorittanut kaikki vaiheet!"
-      ],
-      "Congratulation, you finished!": [
-        "Onnittelut, olet valmis!"
       ],
       "Continue setting up your email": [
         "Jatka sähköpostisi määrittämistä"
@@ -9244,6 +9241,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Palaute lähetettiin"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/kuukausi"
       ]
     },
     "summer2023: Tooltip": {
