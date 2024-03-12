@@ -4494,12 +4494,6 @@
       "Closing this means giving up the free storage bonus.": [
         "Å lukke dette betyr å si fra deg den gratis lagringsbonusen."
       ],
-      "Congratulation, you completed all the steps!": [
-        "Gratulerer, du fullførte alle trinnene"
-      ],
-      "Congratulation, you finished!": [
-        "Gratulerer, du er ferdig!"
-      ],
       "Continue setting up your email": [
         "Fortsett å konfigurere e-posten"
       ],
@@ -7474,6 +7468,52 @@
         "Papirkurv"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Få avtalen"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Auto-slett søppelpost og papirkurv"
+      ],
+      "Custom schedule send and snooze times": [
+        "Egendefinerte tidsplaner, sende- og utsettelsestider"
+      ],
+      "Support for 1 custom email domain": [
+        "Støtte for 1 egendefinert e-postdomene"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, avbryt når som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "for den første måneden"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Begrenset tidstilbud, utløper 2. april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Vs:"
@@ -9250,6 +9290,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Tilbakemelding sendt"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/måned"
       ]
     },
     "summer2023: Tooltip": {

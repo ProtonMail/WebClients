@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "アカウント"
+      ],
       "Account settings": [
         "アカウントの設定"
       ],
@@ -513,9 +516,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "このCSVは${ errors.length } 行の破損を検知しました"
-      ],
       "Editing item failed": [
         "アイテムの編集に失敗しました"
       ],
@@ -694,9 +694,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "バイト"
-      ],
       "GB": [
         "GB"
       ],
@@ -708,23 +705,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "バイト"
-      ],
-      "Gigabyte": [
-        "ギガバイト"
-      ],
-      "Kilobyte": [
-        "キロバイト"
-      ],
-      "Megabyte": [
-        "メガバイト"
-      ],
-      "Terabyte": [
-        "テラバイト"
       ]
     },
     "Info": {
@@ -740,12 +720,6 @@
       "${ count } invites successfully sent": [
         "${ count } へ正常に招待状が送られました"
       ],
-      "${ memberCount } member": [
-        "${ memberCount }人のメンバー"
-      ],
-      "${ n } item": [
-        "${ n } アイテム"
-      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
       ],
@@ -760,9 +734,6 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } は、サインアップ フォームに強力なパスワードを作成することを提案します。"
-      ],
-      "${ trialDaysLeft } day left": [
-        "残り ${ trialDaysLeft } 日"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "プレミアム機能を 7 日間無料でお試しいただけます。 ${ BRAND_NAME } の最初の 1 週間のみ。"
@@ -890,9 +861,6 @@
       "Import in progress:": [
         "インポートが進行中:"
       ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } 件のアイテムをインポートしました"
-      ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
       ],
@@ -919,9 +887,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "すでに ${ PASS_APP_NAME } にログインしているようです。 別のアカウントでログインしようとしている場合は、まず拡張機能からログアウトしてください。"
-      ],
-      "item": [
-        "アイテム"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "アイテム「${ payload.item.data.metadata.name }」が作成されました"
@@ -1091,9 +1056,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "フィールドをクリックするかフィールドにフォーカスすると、自動入力ドロップダウンが自動的に開きます。"
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
       ],
@@ -1168,9 +1130,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
@@ -1746,11 +1705,6 @@
         "メモを書く"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } の設定"
@@ -1980,9 +1934,6 @@
       ],
       "Invalid email addresses.": [
         "無効なメールアドレスです"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "最大長は ${ maxLength } 文字です"
       ],
       "Missing alias prefix": [
         "エイリアスのプレフィックスがありません"

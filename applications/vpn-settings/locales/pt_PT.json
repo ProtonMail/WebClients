@@ -170,9 +170,6 @@
       "Edit": [
         "Editar"
       ],
-      "Edit billing details": [
-        "Editar detalhes da faturação"
-      ],
       "Edit display name": [
         "Editar o nome a mostrar"
       ],
@@ -5689,6 +5686,10 @@
       ],
       "You can now reset your password": [
         "Pode reinicializar a sua palavra-passe"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Você tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
+        "Você tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -6567,6 +6568,9 @@
       "Amount due": [
         "Quantia devida"
       ],
+      "Appearance": [
+        "Aspeto"
+      ],
       "Apply gift code": [
         "Aplicar código de oferta"
       ],
@@ -6765,9 +6769,6 @@
       "Gateways": [
         "Gateways"
       ],
-      "General": [
-        "Geral"
-      ],
       "Generate missing keys": [
         "Gerar chaves em falta"
       ],
@@ -6791,9 +6792,6 @@
       ],
       "Invoices": [
         "Faturas"
-      ],
-      "Language": [
-        "Idioma"
       ],
       "Login password": [
         "Palavra-passe de início de sessão"

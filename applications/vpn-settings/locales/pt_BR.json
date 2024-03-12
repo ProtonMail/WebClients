@@ -176,8 +176,8 @@
       "Edit": [
         "Editar"
       ],
-      "Edit billing details": [
-        "Editar detalhes de pagamento"
+      "Edit billing cycle": [
+        "Editar ciclo de faturamento"
       ],
       "Edit display name": [
         "Editar nome de exibição"
@@ -2781,7 +2781,7 @@
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } e você terão que criá-los manualmente para adicioná-los de volta à sua organização."
+        "${ boldSSOUserInformation } e você terá que criá-los manualmente para adicioná-los de volta à sua organização"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Você perderá o acesso a todos os dados criptografados atuais em sua conta se continuar."
@@ -2952,7 +2952,7 @@
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Você tem certeza de que deseja remover o domínio ${ boldDomain }?"
+        "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Peça ao administrador da sua organização para configurar Gateways."
@@ -3009,7 +3009,7 @@
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Configure a autenticação SAML para sua organização através de um provedor de identidade (IdP). Isso habilitará o SAML para toda a organização."
+        "Configure a autenticação SAML para sua organização através de um provedor de identidade (PI). Isso habilitará o SAML para toda a organização."
       ],
       "Continue with ${ freeName }": [
         "Continuar com ${ freeName }"
@@ -3018,10 +3018,10 @@
         "Copiado para a área de transferência"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Copie e cole este URL no campo URL AAC (Afirmação de Atendimento ao Consumidor) do seu provedor de identidade"
+        "Copie e cole este URL no campo URL ACS (Serviço ao Consumidor de Asserção) do seu provedor de identidade"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copie e cole esta URL no campo de ID da entidade do seu provedor de identidade"
+        "Copie e cole este URL no campo de ID da entidade do seu provedor de identidade"
       ],
       "Copy the suggested password to clipboard": [
         "Copiar a senha sugerida para a área de transferência"
@@ -3131,7 +3131,7 @@
         "Preferências de e-mail salvas"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
-        "URL do Endpoint URL recebido do seu provedor de identidade (por exemplo, https://idp.example.com/sso/saml)."
+        "URL do endpoint recebido do seu provedor de identidade (por exemplo, https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Melhore sua segurança de rede"
@@ -3566,7 +3566,7 @@
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
       "Single sign-on removed": [
-        "Início de sessão único removido"
+        "Autenticação única removida"
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Alguns dos seus servidores disponíveis só podem ser usados em países específicos devido a remoções recentes"
@@ -3575,7 +3575,7 @@
         "Especifique o domínio com permissão para autenticação SAML SSO."
       ],
       "SSO users (provided by your Identity Provider) will be deleted": [
-        "Usuários SSO (fornecido pelo seu provedor de identidade) serão excluídos"
+        "Usuários SSO (fornecido pelo seu Provedor de Identidade) serão excluídos"
       ],
       "Step ${ step }": [
         "Etapa ${ step }",
@@ -3699,7 +3699,7 @@
         "Isso excluirá permanentemente sua conta e todas as suas informações. Você não conseguirá reativar essa conta."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
-        "Isso removerá SSO para ${ boldDomainName }."
+        "Isso removerá a autenticação única (SSO) para ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta da ${ BRAND_NAME } no futuro."
@@ -4770,6 +4770,33 @@
         "${ twoFAMembers.length }/${ members.length } membros da sua organização usam a autenticação de dois fatores."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Suporte para 1 domínio de e-mail personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "pelo primeiro mês"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Ativar usuário"
@@ -5055,6 +5082,9 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IPs dedicados"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
       ],
       "DNS leak prevention": [
         "Proteção de vazamento de DNS"
@@ -5596,7 +5626,7 @@
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }. Os administradores podem alocar quantidades de armazenamento diferentes aos usuários da organização"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre usuários entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }"
+        "O espaço de armazenamento é compartilhado entre usuários em ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
@@ -6020,10 +6050,10 @@
         "O número do cartão não é válido."
       ],
       "Invalid expiration date": [
-        "A data de validade não é válida."
+        "Data de validade inválida"
       ],
       "Invalid securiry code": [
-        "O código de segurança não é válido."
+        "Código de segurança inválido"
       ],
       "Something went wrong. Please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde."
@@ -6869,7 +6899,7 @@
         "Você perderá acesso à velocidade VPN mais alta, proteção para 10 dispositivos, streaming de alta velocidade, bloqueador de anúncios e proteção contra malware, bem como suporte prioritário."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Você perderá o acesso a logins e notas ilimitados, aliases ilimitados para hide-my-email e a 20 cofres, assim como ao suporte prioritário."
+        "Você perderá o acesso a logins e notas ilimitados, aliases ilimitados do hide-my-email, a 20 cofres, assim como ao suporte prioritário."
       ]
     },
     "Subscription": {
@@ -7320,6 +7350,9 @@
       "Amount due": [
         "Valor a pagar"
       ],
+      "Appearance": [
+        "Aparência"
+      ],
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
@@ -7530,9 +7563,6 @@
       "Gateways": [
         "Gateways"
       ],
-      "General": [
-        "Geral"
-      ],
       "Generate missing keys": [
         "Gerar chaves ausentes"
       ],
@@ -7556,9 +7586,6 @@
       ],
       "Invoices": [
         "Faturas"
-      ],
-      "Language": [
-        "Idioma"
       ],
       "Login password": [
         "Senha de início de sessão"
@@ -7723,8 +7750,8 @@
         "Assinatura"
       ],
       "Successfully created ${ n } user account": [
-        "Conta de usuário ${ n } criada",
-        "Contas de usuário ${ n } criadas"
+        "${ n } conta de usuário criada com sucesso",
+        "${ n } contas de usuário criadas com sucesso"
       ],
       "Summary": [
         "Resumo"

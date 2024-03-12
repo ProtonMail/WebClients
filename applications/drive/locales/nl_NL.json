@@ -1999,7 +1999,7 @@
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Upgrade uw account om ${ PROTON_SENTINEL_NAME }te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
+        "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
@@ -3836,7 +3836,7 @@
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Intussen meld u zich aan voor uw eigen ${ DRIVE_APP_NAME } account en beschermt u uw gegevens met end-to-end versleuteling en deelt u deze veilig."
+        "Intussen meldt u zich aan voor uw eigen ${ DRIVE_APP_NAME }-account en beschermt u uw gegevens met end-to-end versleuteling en deelt u deze veilig."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Items ${ esProgress } van ${ totalProgressToShow } aan het indexeren"
@@ -4178,7 +4178,7 @@
         "Gedeelde link niet gevonden"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Meld u aan voor uw eigen ${ DRIVE_APP_NAME } account en bescherm uw gegevens met end-to-end versleuteling en deel deze veilig."
+        "Meld u aan voor uw eigen ${ DRIVE_APP_NAME }-account en bescherm uw gegevens met end-to-end versleuteling en deel deze veilig."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -6582,6 +6582,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback verzonden"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/maand"
       ]
     },
     "summer2023: Tooltip": {
