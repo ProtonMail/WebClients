@@ -1,7 +1,14 @@
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
-export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS | CYCLE.THIRTY | CYCLE.FIFTEEN;
+export type Cycle =
+    | CYCLE.MONTHLY
+    | CYCLE.YEARLY
+    | CYCLE.TWO_YEARS
+    | CYCLE.THIRTY
+    | CYCLE.FIFTEEN
+    | CYCLE.THREE
+    | CYCLE.EIGHTEEN;
 
 export interface CycleMapping<T> {
     [CYCLE.MONTHLY]?: T;
@@ -10,6 +17,8 @@ export interface CycleMapping<T> {
     // Not always included for all plans
     [CYCLE.THIRTY]?: T;
     [CYCLE.FIFTEEN]?: T;
+    [CYCLE.THREE]?: T;
+    [CYCLE.EIGHTEEN]?: T;
 }
 
 export type Pricing = CycleMapping<number>;
