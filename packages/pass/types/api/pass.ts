@@ -143,6 +143,8 @@ export type PendingShareKeyPromoteRequest = {
 
 export type OrganizationUpdateSettingsRequest = {
     /* Allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
+    ExportMode?: number | null;
+    ForceLockSeconds?: number | null;
     ShareMode?: number | null;
 };
 
@@ -636,6 +638,10 @@ export type PendingShareKeyGetResponse = {
 };
 
 export type OrganizationSettingsGetResponse = {
+    /* Bitfield with allowed ways to exporting from the organization members. 0 means unrestricted, 1 means export is restricted and not allowed */
+    ExportMode: number;
+    /*  Force pass to lock after given seconds of time. 0 means disabled. */
+    ForceLockSeconds: number;
     /* Bitfield with allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
     ShareMode: number;
 };

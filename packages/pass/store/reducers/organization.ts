@@ -12,7 +12,9 @@ import { partialMerge } from '@proton/pass/utils/object/merge';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
+    ExportMode: BitField.DISABLED,
     ShareMode: BitField.DISABLED,
+    ForceLockSeconds: BitField.DISABLED,
 };
 
 export type OrganizationState = {
