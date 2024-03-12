@@ -3809,6 +3809,9 @@
       "Get the desktop app to sync files from your computer.": [
         "Získajte desktopovú aplikáciu na synchronizáciu súborov z vášho počítača."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Zoznámte sa s ${ DRIVE_APP_NAME } a získajte bonus 3 GB úložného priestoru! Začnite ešte dnes."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Prejdite do „Moje súbory“ a najprv nahrajte súbory."
       ],
@@ -3847,6 +3850,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Medzitým si zaregistrujte vlastné konto ${ DRIVE_APP_NAME } a chráňte svoje údaje pomocou šifrovania end-to-end a bezpečne ich zdieľajte."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexovanie ${ esProgress } z ${ totalProgressToShow } položiek"
@@ -4193,6 +4199,9 @@
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Založte si vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
       ],
@@ -4379,6 +4388,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
       ],
+      "upgrade your storage": [
+        "navvýšiť vaše úložisko"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -4402,6 +4414,9 @@
       ],
       "Warning": [
         "Varovanie"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Výborne, práve ste zväčšili svoje úložisko na 5 GB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Máme technické problémy. Nahrávanie nových fotografií je dočasne nedostupné."
@@ -4474,6 +4489,12 @@
       ],
       "You cannot undo this action.": [
         "Túto akciu nie je možné vrátiť späť."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Na získanie uvítacieho bonusu 3 GB vám zostáva ${ expiresInDays } deň a ",
+        "Na získanie uvítacieho bonusu 3 GB vám zostávajú ${ expiresInDays } dni a ",
+        "Na získanie uvítacieho bonusu 3 GB vám zostáva ${ expiresInDays } dní a ",
+        "Na získanie uvítacieho bonusu 3 GB vám zostáva ${ expiresInDays } dní a "
       ],
       "You will lose all unsaved changes.": [
         "Stratíte všetky neuložené zmeny."
@@ -5786,6 +5807,9 @@
       "Create a share link": [
         "Vytvoriť odkaz na zdieľanie"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Začnite používať ${ DRIVE_APP_NAME } a my vám navýšime vaše úložisko na 5 GB!"
+      ],
       "Set a recovery method": [
         "Nastaviť metódu obnovenia"
       ],
@@ -6023,6 +6047,11 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyskúšať ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otvorí ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -6556,6 +6585,9 @@
       "Import record deleted": [
         "Záznam o importe bol zmazaný"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy zmenené aliasy uložené v najstaršom trezore"
+      ],
       "Phone number copied to clipboard": [
         "Telefónne číslo skopírované do schránky"
       ],
@@ -6581,6 +6613,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Spätná väzba bola odoslaná"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mesiac"
       ]
     },
     "summer2023: Tooltip": {

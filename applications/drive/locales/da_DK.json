@@ -2035,6 +2035,46 @@
         "BESKRIVELSE:\n${ eventDescription }"
       ]
     },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } blev annulleret."
+      ],
+      "All events in this series were updated.": [
+        "Alle begivenheder i denne serie er blevet opdateret."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Alle begivenheder i denne serie er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Denne forekomst af begivenheden blev aflyst."
+      ],
+      "This event occurrence was updated.": [
+        "Denne begivenhed er blevet opdateret."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denne begivenhed er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Denne begivenhed er blevet opdateret."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denne begivenhed er blevet opdateret. Her er, hvad der er ændret:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Du er inviteret til ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "TIDSPUNKT:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "TIDSPUNKT:\n${ formattedStart } (hele dagen)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TIDSPUNKT:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
     "Email body for invitation (event details part)": {
       "Removed": [
         "Fjernet"
@@ -2043,6 +2083,17 @@
     "Email body for invitation (location part)": {
       "LOCATION:\n${ eventLocation }": [
         "LOKATION:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } accepterede din invitation til ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -6531,6 +6582,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback sendt"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/måned"
       ]
     },
     "summer2023: Tooltip": {

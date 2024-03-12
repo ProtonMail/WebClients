@@ -2057,6 +2057,9 @@
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Alle Termine in dieser Serie wurden aktualisiert. Folgendes hat sich geändert:\n\n${ updateEventDetailsText }"
       ],
+      "This event occurrence was canceled.": [
+        "Die Häufigkeit des Termins wurde abgebrochen."
+      ],
       "This event occurrence was updated.": [
         "Die Häufigkeit des Termins wurde aktualisiert."
       ],
@@ -5244,6 +5247,49 @@
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop App"
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam und Papierkorb automatisch löschen"
+      ],
+      "Support for 1 custom email domain": [
+        "Unterstützung für eine eigene E-Mail-Domain"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "im ersten Monat"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Befristetes Angebot, gültig bis zum 2. April 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hol dir ${ planName } für nur ${ planPrice }"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
@@ -6719,6 +6765,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback gesendet"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/Monat"
       ]
     },
     "summer2023: Tooltip": {
