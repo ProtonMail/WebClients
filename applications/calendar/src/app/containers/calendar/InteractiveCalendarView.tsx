@@ -932,8 +932,12 @@ const InteractiveCalendarView = ({
         inviteActions,
         vevent,
         cancelVevent,
+        sendPreferencesMap: initialSendPrefsMap,
         noCheckSendPrefs,
     }: any) => {
+        if (initialSendPrefsMap) {
+            return { sendPreferencesMap: initialSendPrefsMap, inviteActions, vevent, cancelVevent };
+        }
         const { Sign } = await getMailSettings();
         const sendPreferencesMap: SimpleMap<AugmentedSendPreferences> = {};
         const emails = extractInviteEmails({ inviteActions, vevent, cancelVevent });
@@ -971,7 +975,7 @@ const InteractiveCalendarView = ({
     };
 
     const handleSendIcs: SendIcs = async (
-        { inviteActions, vevent, cancelVevent, noCheckSendPrefs }: any,
+        { inviteActions, vevent, cancelVevent, noCheckSendPrefs, sendPreferencesMap: initialSendPrefsMap }: any,
         calendarID
     ) => {
         const onRequestError = () => {
@@ -997,7 +1001,13 @@ const InteractiveCalendarView = ({
             inviteActions: cleanInviteActions,
             vevent: cleanVevent,
             cancelVevent: cleanCancelVevent,
-        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent, noCheckSendPrefs });
+        } = await handleSendPrefsErrors({
+            inviteActions,
+            vevent,
+            cancelVevent,
+            sendPreferencesMap: initialSendPrefsMap,
+            noCheckSendPrefs,
+        });
         // generate DTSTAMPs for the ICS
         const currentTimestamp = +serverTime();
         const cleanVeventWithDtstamp = cleanVevent
