@@ -23,9 +23,10 @@ export const updateUsername = (data: { Username: string }) => ({
     data,
 });
 
-export const updatePassword = () => ({
+export const updatePassword = (data: { PersistPasswordScope: boolean }) => ({
     url: 'core/v4/settings/password',
     method: 'put',
+    data,
 });
 
 export const upgradePassword = () => ({
