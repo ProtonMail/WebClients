@@ -170,9 +170,6 @@
       "Edit": [
         "Змінити"
       ],
-      "Edit billing details": [
-        "Змінити платіжні дані"
-      ],
       "Edit display name": [
         "Редагувати ім'я"
       ],
@@ -703,22 +700,22 @@
         "3 ТБ"
       ],
       "3,000+ servers across 65+ countries": [
-        "Більше ніж 3000 серверів у понад 65 країнах"
+        "Більш як 3000 серверів у понад 65 країнах"
       ],
       "6 users": [
         "6 користувачів"
       ],
       "Access content worldwide": [
-        "Доступ до контенту по всьому світу"
+        "Доступ до матеріалів з всього світу"
       ],
       "Ad-blocker and malware protection": [
-        "Блокувальник реклами та захист від шкідливих програм"
+        "Блокування реклами й захист від зловмисних програм"
       ],
       "Extended version history": [
         "Розширена історія версій"
       ],
       "High speed streaming": [
-        "Перегляд трансляцій на високій швидкості"
+        "Високошвидкісна потокова трансляція"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
@@ -2094,7 +2091,7 @@
     },
     "Error message": {
       "App currently unavailable": [
-        "Застосунок наразі недоступний"
+        "Програма наразі недоступна"
       ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
@@ -3374,7 +3371,7 @@
         "Не вдалося завантажити попередній перегляд"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "Передпоказ для цього типу файлів наразі не підтримується в цьому браузері."
+        "Перегляд цього типу файлу наразі не підтримується в цьому браузері."
       ],
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
@@ -3572,7 +3569,7 @@
         "Це може тривати деякий час. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
       ],
       "This file is too large to preview": [
-        "Цей файл завеликий для передпоказу"
+        "Цей файл завеликий для перегляду"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
@@ -3869,7 +3866,7 @@
         "Тепер ви можете отримати доступ і керувати обліковим записом як адміністратор."
       ],
       "You can now return to the application to continue": [
-        "Тепер ви можете повернутися до застосунку, щоби продовжити"
+        "Тепер ви можете повернутися до програми для продовження роботи"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Ви можете відкрити одночасно лише один сеанс чату. Будь ласка, закрийте попередні розмови перед початком нової."
@@ -6354,43 +6351,40 @@
         "${ app } сховища"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% заповнено"
+        "${ storage } заповнене на ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Перейшовши на тарифний план нижчого рівня, ви втратите вказані переваги. Ви дійсно хочете продовжити?"
       ],
       "contact your administrator": [
-        "зв'язатися з адміністратором"
+        "зверніться до адміністратора"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Щоби надсилати або отримувати листи, звільніть місце або ${ upgrade }"
+        "Щоб надсилати й отримувати листи, звільніть місце або ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Щоб завантажити або синхронізувати файли, звільніть місце або ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "покращте тариф, щоб збільшити сховище"
+        "збільште сховище, передплативши тарифний план"
       ],
       "Your ${ appStorage } is almost full": [
-        "Ваше ${ appStorage } майже повне"
+        "Ваше ${ appStorage } майже заповнене"
       ],
       "Your ${ appStorage } is full": [
-        "Ваше ${ appStorage } повне"
+        "Ваше ${ appStorage } заповнене"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ваше ${ storage } заповнено на ${ percentage }%. ${ cta }."
+        "Ваше ${ storage } заповнене на ${ percentage }%. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Ваше ${ storage } повне. ${ cta }."
-      ],
-      "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Ваше сховище заповнено на ${ percentage }%. ${ cta }."
+        "Ваше ${ storage } заповнене. ${ cta }."
       ],
       "Your storage is full": [
         "Ваше сховище заповнене"
       ],
       "Your storage is full. ${ cta }.": [
-        "Ваше сховище заповнено. ${ cta }."
+        "Ваше сховище заповнене. ${ cta }."
       ]
     },
     "Subscription": {
@@ -6855,6 +6849,9 @@
       "Amount due": [
         "До сплати"
       ],
+      "Appearance": [
+        "Зовнішній вигляд"
+      ],
       "Apply gift code": [
         "Застосувати подарунковий код"
       ],
@@ -7065,9 +7062,6 @@
       "Gateways": [
         "Мережеві шлюзи"
       ],
-      "General": [
-        "Загальні"
-      ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
       ],
@@ -7091,9 +7085,6 @@
       ],
       "Invoices": [
         "Рахунки"
-      ],
-      "Language": [
-        "Мова"
       ],
       "Login password": [
         "Пароль входу"
@@ -7439,7 +7430,7 @@
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
-        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
         "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
       ],
