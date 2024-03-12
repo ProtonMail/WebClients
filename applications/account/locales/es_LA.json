@@ -197,6 +197,9 @@
       "Close navigation": [
         "Cerrar navegación"
       ],
+      "Close tab": [
+        "Cerrar pestaña"
+      ],
       "Close this banner": [
         "Cerrar este banner"
       ],
@@ -380,8 +383,8 @@
       "Edit": [
         "Editar"
       ],
-      "Edit billing details": [
-        "Editar detalles de facturación"
+      "Edit billing cycle": [
+        "Editar ciclo de facturación"
       ],
       "Edit display name": [
         "Editar nombre a mostrar"
@@ -4375,6 +4378,9 @@
       "Invalid URL": [
         "URL inválida"
       ],
+      "Missing parameters in the URL.": [
+        "Parámetros faltantes en la URL."
+      ],
       "Oops, something went wrong": [
         "Hubo un problema"
       ],
@@ -4386,6 +4392,9 @@
       ],
       "Something went wrong": [
         "Hubo un problema"
+      ],
+      "Support ticket does not exist.": [
+        "El tiquete de soporte no existe."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
@@ -6878,6 +6887,9 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No changes made to the current subscription": [
+        "No hay cambios realizados a la suscripción actual"
+      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -7844,6 +7856,9 @@
       "You can now access and manage the account as an administrator.": [
         "Ahora puede acceder y gestionar la cuenta como administrador."
       ],
+      "You can now close this tab.": [
+        "Puede cerrar esta pestaña."
+      ],
       "You can now close this window.": [
         "Ahora puede cerrar esta ventana."
       ],
@@ -8026,6 +8041,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Su tiquete de soporte se ha cerrado. Gracias por contactar al soporte de ${ BRAND_NAME }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9687,6 +9705,52 @@
         "Correo electrónico seguro que protege su privacidad"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "App de escritorio ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programación de envío y tiempos de pausa personalizados"
+      ],
+      "Support for 1 custom email domain": [
+        "Soporte para 1 dominio de correo electrónico personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice }, cancele cuando quiera"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenga ${ planName } por solo ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Inténtelo nuevamente en unos minutos."
@@ -10183,6 +10247,9 @@
       "Advanced sharing security": [
         "Seguridad avanzada al compartir archivos"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
       ],
@@ -10236,6 +10303,9 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
+      ],
+      "Desktop app": [
+        "App de escritorio"
       ],
       "DNS leak prevention": [
         "Protección contra filtraciones de DNS"
@@ -10340,6 +10410,9 @@
       ],
       "Router support": [
         "Soporte para enrutadores"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Programar y pausar correos a cualquier hora"
       ],
       "Schedule messages at any time": [
         "Programar mensajes a cualquier hora"
@@ -10478,17 +10551,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ trialPlanName } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Su prueba termina el ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -10590,6 +10652,17 @@
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ trialPlanName } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Su prueba termina el ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -10676,6 +10749,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Acceda a contenidos bloqueados y navegue de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de su escritorio"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video"
       ],
@@ -10688,11 +10764,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Le permite responder automáticamente (autorrespuestas) a los mensajes que recibe"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Elimina automáticamente los mensajes anteriores a 30 días de la papelera y spam"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Reenvíe correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue su mensaje"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controle el acceso a sus archivos compartidos con enlaces con fechas de expiración y contraseña."
@@ -11575,7 +11657,7 @@
         "Obtenga la seguridad y funciones que necesita su negocio"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
-        "Los alias hide-my-email protegen su correo electrónico de las filtraciones de datos."
+        "Los alias hide-my-email protegen su correo electrónico de las vulneraciones de datos."
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Entiendo que al perder mis detalles de recuperación, puedo perder permanentemente el acceso a mi cuenta."
@@ -14420,6 +14502,9 @@
       ],
       "Summary": [
         "Resumen"
+      ],
+      "Support ticket closed": [
+        "Tiquete de soporte cerrado"
       ],
       "Switch account": [
         "Cambiar de cuenta"

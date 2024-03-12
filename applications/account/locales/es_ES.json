@@ -197,6 +197,9 @@
       "Close navigation": [
         "Cerrar la navegación"
       ],
+      "Close tab": [
+        "Cerrar la pestaña"
+      ],
       "Close this banner": [
         "Cerrar este banner"
       ],
@@ -380,8 +383,8 @@
       "Edit": [
         "Editar"
       ],
-      "Edit billing details": [
-        "Editar datos de facturación"
+      "Edit billing cycle": [
+        "Editar el ciclo de facturación"
       ],
       "Edit display name": [
         "Editar Nombre a mostrar"
@@ -4375,6 +4378,9 @@
       "Invalid URL": [
         "URL no válida"
       ],
+      "Missing parameters in the URL.": [
+        "Faltan parámetros en la URL."
+      ],
       "Oops, something went wrong": [
         "Se ha producido un error."
       ],
@@ -4386,6 +4392,9 @@
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "Support ticket does not exist.": [
+        "El tiquete de soporte no existe."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Para utilizar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
@@ -6878,6 +6887,9 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No changes made to the current subscription": [
+        "No se han realizados cambios a la suscripción actual."
+      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -7844,6 +7856,9 @@
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
       ],
+      "You can now close this tab.": [
+        "Puedes cerrar esta pestaña."
+      ],
       "You can now close this window.": [
         "Puedes cerrar esta ventana."
       ],
@@ -8026,6 +8041,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tu suscripción está gestionada por Mozilla. Contacta con el soporte de Mozilla."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Tu tiquete de soporte se ha cerrado. Gracias por contactar al soporte de ${ BRAND_NAME }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9687,6 +9705,52 @@
         "Correo electrónico seguro que protege tu privacidad"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Conseguir la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programación de envío y tiempos de pausa personalizados"
+      ],
+      "Support for 1 custom email domain": [
+        "Soporte para 1 dominio de correo electrónico personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtén ${ planName } por solo ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Inténtalo nuevamente en unos minutos."
@@ -10478,17 +10542,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ trialPlanName } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10588,6 +10641,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ trialPlanName } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -14420,6 +14484,9 @@
       ],
       "Summary": [
         "Resumen"
+      ],
+      "Support ticket closed": [
+        "El tiquete de soporte ha sido cerrado."
       ],
       "Switch account": [
         "Cambiar de cuenta"
