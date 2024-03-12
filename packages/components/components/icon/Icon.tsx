@@ -266,6 +266,7 @@ export type IconName =
     | 'pass-lock'
     | 'pass-mushroom'
     | 'pass-pacman'
+    | 'pass-passkey'
     | 'pass-shield'
     | 'pass-shop'
     | 'pass-shopping-cart'
