@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { addDays, startOfDay } from 'date-fns';
+import { addDays, isBefore, startOfDay } from 'date-fns';
 
 import { useFeature } from '@proton/components/hooks';
 import { InboxDesktopFreeTrialDates, InboxDesktopFreeTrialReminders } from '@proton/shared/lib/desktop/desktopTypes';
@@ -50,6 +50,15 @@ const useInboxFreeTrial = () => {
         updateReminders(flag);
     };
 
+    const isUserInFreeTrial = () => {
+        const today = new Date();
+        return (
+            datesFlag?.Value?.trialStartDate &&
+            datesFlag.Value.trialEndDate &&
+            isBefore(today, new Date(datesFlag.Value.trialEndDate))
+        );
+    };
+
     const firstLogin = datesFlag?.Value && !datesFlag.Value.trialEndDate && !datesFlag.Value.trialStartDate;
 
     const allReminderShown = remindFlag?.Value?.first && remindFlag?.Value?.second && remindFlag?.Value?.third;
@@ -63,6 +72,7 @@ const useInboxFreeTrial = () => {
         displayReminder,
         firstLogin,
         allReminderShown,
+        isUserInFreeTrial,
     };
 };
 

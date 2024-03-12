@@ -513,6 +513,7 @@ export enum APP_UPSELL_REF_PATH {
     DRIVE_UPSELL_REF_PATH = 'upsell_drive-',
     PASS_UPSELL_REF_PATH = 'upsell_pass-',
     VPN_UPSELL_REF_PATH = 'upsell_vpn-',
+    INBOX_DESKTOP_REF_PATH = 'upsell_inbox_desktop-',
 }
 
 export enum UPSELL_COMPONENT {
@@ -542,6 +543,9 @@ export enum MAIL_UPSELL_PATHS {
     SNOOZE_MESSAGE = 'snooze-message',
     PROTON_SENTINEL = 'proton-sentinel',
     PASS_ALIASES = 'pass-aliases',
+    TRIAL_WELCOME = 'trial-welcome',
+    TRIAL_BANNER = 'trial-banner',
+    TRIAL_END = 'trial-end',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
@@ -760,6 +764,8 @@ export enum PLANS {
     PASS_PRO = 'passpro2024',
     PASS_BUSINESS = 'passbiz2024',
 }
+
+export const isStringPLAN = (value: string): value is PLANS => Object.values(PLANS).includes(value as PLANS);
 
 export const PLAN_NAMES = {
     [PLANS.FREE]: 'Free',
