@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { type Paths } from '../content/helper';
@@ -21,9 +21,7 @@ const SignupButton = ({ paths }: Props) => {
 
     if (isElectronApp) {
         const handleSignupDesktop = () => {
-            if (canInvokeInboxDesktopIPC) {
-                window.ipcInboxMessageBroker!.send('openExternal', getAppHref(paths.signup, APPS.PROTONACCOUNT));
-            }
+            openLinkInBrowser(getAppHref(paths.signup, APPS.PROTONACCOUNT));
         };
 
         return (

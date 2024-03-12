@@ -5,16 +5,23 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalState } from '@proton/components/components';
 import { useUser } from '@proton/components/hooks';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import protonDesktop from '@proton/styles/assets/img/illustrations/proton-desktop.svg';
 
-import { freeTrialUpgradeClick } from './freeTrialUpgradeClick';
+import { freeTrialUpgradeClick } from '../openExternalLink';
 import useInboxFreeTrial from './useInboxFreeTrial';
 
 const InboxDesktopFreeTrialOnboardingModal = () => {
     const { firstLogin, startFreeTrial } = useInboxFreeTrial();
     const [user] = useUser();
     const [modalState, setModalState, render] = useModalState();
+
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.INBOX_DESKTOP_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: MAIL_UPSELL_PATHS.TRIAL_WELCOME,
+    });
 
     useEffect(() => {
         if (firstLogin) {
@@ -60,7 +67,7 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
                             color="norm"
                             shape="underline"
                             className="m-0 p-0 text-semibold"
-                            onClick={freeTrialUpgradeClick}
+                            onClick={() => freeTrialUpgradeClick(upsellRef)}
                         >{c('Free trial desktop').t`Upgrade now`}</Button>
                     </ModalTwoFooter>
                 </ModalTwo>
