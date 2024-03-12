@@ -70,12 +70,14 @@ export const selectItemIdByOptimisticId =
     (state: State): Maybe<UniqueItem> =>
         optimisticItemId ? selectByOptimisticIds(state)?.[optimisticItemId] : undefined;
 
-export const selectItemByShareIdAndId = (shareId: string, itemId: string) =>
-    createSelector([selectItems, selectByOptimisticIds], (items, byOptimisticId): Maybe<ItemRevision> => {
+export const selectItemByShareIdAndId = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
+    createSelector([selectItems, selectByOptimisticIds], (items, byOptimisticId): Maybe<ItemRevision<T>> => {
         const idFromOptimisticId = byOptimisticId[itemId]?.itemId;
         const byItemId = items[shareId];
 
-        return idFromOptimisticId ? byItemId?.[idFromOptimisticId] : byItemId?.[itemId];
+        return (idFromOptimisticId
+            ? byItemId?.[idFromOptimisticId]
+            : byItemId?.[itemId]) satisfies Maybe<ItemRevision> as Maybe<ItemRevision<T>>;
     });
 
 /** Unwraps the optimistic item state and hydrates the `failed` and
