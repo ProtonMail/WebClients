@@ -68,6 +68,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                         features={upsell.features}
                         isRecommended={upsell.isRecommended}
                         ctas={ctas}
+                        plan={upsell.plan}
                     >
                         {/* Warning when user is in Trial period for a plan */}
                         {upsell.isTrialEnding ? (

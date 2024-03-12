@@ -306,7 +306,7 @@ const MailQuickSettings = () => {
                     </QuickSettingsButton>
                 )}
 
-                {(isFirefox() || isChromiumBased()) && (
+                {!isElectronApp && (isFirefox() || isChromiumBased()) && (
                     <QuickSettingsButton
                         onClick={() => setDefaultHandlerModalOpen(true)}
                         data-testid="mail-quick-settings:default-mail-app-button"

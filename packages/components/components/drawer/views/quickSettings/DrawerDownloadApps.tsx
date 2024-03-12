@@ -6,6 +6,7 @@ import { useDesktopSpotlight } from '@proton/components/containers';
 import InboxDestktopSpotlight from '@proton/components/containers/desktop/InboxDesktopSpotlight';
 import { useConfig } from '@proton/components/hooks';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 const appName = {
     [APPS.PROTONMAIL]: MAIL_APP_NAME,
@@ -18,6 +19,11 @@ const DrawerDownloadApps = () => {
 
     // Avoid showing the button if not in supported apps, also to make typescript happy
     if (APP_NAME !== APPS.PROTONMAIL && APP_NAME !== APPS.PROTONCALENDAR) {
+        return null;
+    }
+
+    // We return null here instead of the wrapper to still mark spotlight as seen
+    if (isElectronApp) {
         return null;
     }
 
