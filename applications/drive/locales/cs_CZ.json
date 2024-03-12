@@ -2795,7 +2795,7 @@
         "Spravovat adresy."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "Majitelé tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
+        "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
@@ -3849,7 +3849,7 @@
         "Získejte aplikaci pro zálohování fotografií z telefonu."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Získejte aplikaci pro stolní PC k synchronizaci souborů z počítače."
+        "Získejte aplikaci pro desktop k synchronizaci souborů z počítače."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
@@ -4290,7 +4290,7 @@
         "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
+        "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
@@ -6656,6 +6656,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/měsíc"
       ]
     },
     "summer2023: Tooltip": {

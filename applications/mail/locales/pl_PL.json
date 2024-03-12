@@ -4560,11 +4560,11 @@
       "Closing this means giving up the free storage bonus.": [
         "Zamknięcie oznacza rezygnację z bonusowej przestrzeni dyskowej."
       ],
-      "Congratulation, you completed all the steps!": [
-        "Gratulacje zakończenia wszystkich kroków!"
+      "Congratulations, you completed all the steps!": [
+        "Gratulacje. Zakończono wszystkie kroki!"
       ],
-      "Congratulation, you finished!": [
-        "Gratulacje zakończenia!"
+      "Congratulations, you finished!": [
+        "Gratulacje. Zakończono listę kontrolną!"
       ],
       "Continue setting up your email": [
         "Kontynuuj konfigurowanie poczty"
@@ -7728,6 +7728,36 @@
         "Kosz"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adresów e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Support for 1 custom email domain": [
+        "Wsparcie dla 1 niestandardowej domeny"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -9099,7 +9129,7 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "Get the deal": [
-        "Uzyskaj ofertę"
+        "Skorzystaj z oferty"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Odnowienie po roku za niższą cenę ${ discountedAmount } zamiast ${ regularAmount } (rabat ${ discount }%)"
@@ -9624,6 +9654,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/ miesiąc"
       ]
     },
     "summer2023: Tooltip": {

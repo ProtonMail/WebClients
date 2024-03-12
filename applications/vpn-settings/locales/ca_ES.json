@@ -114,7 +114,7 @@
         "Crear"
       ],
       "Create Gateway": [
-        "Crea la passarel·la"
+        "Crea una passarel·la"
       ],
       "Create user": [
         "Crea un usuari"
@@ -176,9 +176,6 @@
       "Edit": [
         "Edita"
       ],
-      "Edit billing details": [
-        "Edita les dades de facturació"
-      ],
       "Edit display name": [
         "Edita el nom a mostrar"
       ],
@@ -210,7 +207,7 @@
         "Edita la subscripció"
       ],
       "Edit users": [
-        "Edita usuaris"
+        "Edita els usuaris"
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
@@ -246,7 +243,7 @@
         "Obteniu més llicències"
       ],
       "Get more servers": [
-        "Obtén més servidors"
+        "Obteniu més servidors"
       ],
       "Get the deal": [
         "Obteniu l’oferta"
@@ -1945,7 +1942,7 @@
         "Error al connectar a l'API de Bitcoin."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Si el temps a la vostra televisió s'ha exhaurit, premeu a refrescar a la vostra televisió i escriviu-hi el codi un altre cop."
+        "Si el temps a la vostra televisió s'ha exhaurit, premeu a Refresca a la vostra televisió i escriviu-hi el codi un altre cop."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
@@ -2614,7 +2611,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "Nou a ${ BRAND_NAME }? ${ signUp }"
+        "Sou nou a ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -3200,6 +3197,9 @@
       ],
       "old password": [
         "contrasenya antiga"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
       ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
@@ -4107,7 +4107,7 @@
         "Teniu algun suggeriment pel nostre equip?"
       ],
       "e.g. example.com": [
-        "per ex. exemple.com"
+        "p. ex. exemple.com"
       ],
       "Email": [
         "Correu electrònic"
@@ -4140,7 +4140,7 @@
         "Interval"
       ],
       "Issuer ID": [
-        "ID del emissor"
+        "ID de l'emissor"
       ],
       "Keep me signed in": [
         "Mantén la sessió iniciada"
@@ -4549,22 +4549,22 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Inicia sessió"
+        "${ appName }: Inicia la sessió"
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Registre"
       ],
       "Create a new ${ appName } account": [
-        "Crear un compte de ${ appName }"
+        "Crea un compte de ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Troba el vostre nom d'usuari del compte ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat la vostra contrasenya del compte ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic, o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
       "Private and secure email, no credit card required": [
         "Correu electrònic privat i segur, no es requereix targeta de crèdit"
@@ -4573,7 +4573,7 @@
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Inicieu sessió al vostre compte ${ appName }"
+        "Inicieu la sessió al vostre compte ${ appName }"
       ],
       "Try ${ planName } for free with this link": [
         "Proveu ${ planName } de forma gratuïta amb aquest enllaç."
@@ -5384,7 +5384,7 @@
         "Passarel·les privades"
       ],
       "Require 2FA": [
-        "Requisit de 2FA"
+        "Requereix 2FA"
       ]
     },
     "Notification": {
@@ -5459,7 +5459,7 @@
         "Rep de tots"
       ],
       "Router": [
-        "Router"
+        "Rúter"
       ],
       "Secure Core configs": [
         "Configuracions Secure Core"
@@ -6425,10 +6425,10 @@
         "Facturació cada 2 anys"
       ],
       "Billed for 15 months": [
-        "Facturació per a 15 mesos"
+        "Facturació per 15 mesos"
       ],
       "Billed for 30 months": [
-        "Facturació per a 30 mesos"
+        "Facturació per 30 mesos"
       ],
       "Billed monthly": [
         "Facturació mensual"
@@ -6865,6 +6865,9 @@
       "Amount due": [
         "Import a deure"
       ],
+      "Appearance": [
+        "Aparença"
+      ],
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
@@ -6933,13 +6936,13 @@
         "Crea ${ selectedUserIds.length } usuaris"
       ],
       "Create a new Gateway": [
-        "Crea una nova passarel·la"
+        "Crea una passarel·la"
       ],
       "Create a new gateway": [
-        "Crea una nova passarel·la"
+        "Crea una passarel·la"
       ],
       "Create Gateway": [
-        "Crea la passarel·la"
+        "Crea una passarel·la"
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
@@ -6985,7 +6988,7 @@
         "Voleu eliminar l'usuari?"
       ],
       "Device connected!": [
-        "Dispositiu connectat"
+        "S'ha connectat el dispositiu"
       ],
       "Disable ${ email }": [
         "Desactivar ${ email }"
@@ -7027,7 +7030,7 @@
         "Edita l'usuari"
       ],
       "Edit users": [
-        "Edita usuaris"
+        "Edita els usuaris"
       ],
       "Email": [
         "Correu electrònic"
@@ -7057,14 +7060,11 @@
       "Gateways": [
         "Passarel·les"
       ],
-      "General": [
-        "General"
-      ],
       "Generate missing keys": [
         "Genera les claus que falten"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        "Obtén ${ vpnPlus } per accedir a tots els servidors"
+        "Obteniu ${ vpnPlus } per accedir a tots els servidors"
       ],
       "Gift": [
         "Regal"
@@ -7083,9 +7083,6 @@
       ],
       "Invoices": [
         "Factures"
-      ],
-      "Language": [
-        "Idioma"
       ],
       "Login password": [
         "Contrasenya d'inici"

@@ -176,8 +176,8 @@
       "Edit": [
         "Modifica"
       ],
-      "Edit billing details": [
-        "Modifica i dettagli di fatturazione"
+      "Edit billing cycle": [
+        "Modifica ciclo di fatturazione"
       ],
       "Edit display name": [
         "Modifica nome visualizzato"
@@ -3011,6 +3011,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configura l'autenticazione SAML per la tua organizzazione tramite un provider di identità (IdP). Sarà possibile utilizzare SAML per l'intera organizzazione."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configura l'autenticazione SAML per la tua organizzazione tramite un provider di identità come Okta, Microsoft Azure o Google Identity Platform. Questo abiliterà SAML per l'intera organizzazione."
+      ],
       "Continue with ${ freeName }": [
         "Continua con ${ freeName }"
       ],
@@ -3129,6 +3132,9 @@
       ],
       "Emailing preference saved": [
         "Preferenze email salvate"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Abilita il Single Sign-On per mantenere la tua organizzazione al sicuro"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ricevuto dal tuo fornitore di identità (es. https://idp.esempio.it/sso/saml)."
@@ -3292,6 +3298,9 @@
       "Lean more about gateways": [
         "Scopri di più sui gateway"
       ],
+      "Lean more about single sign-on": [
+        "Scopri di più sul Single Sign-On"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
       ],
@@ -3342,6 +3351,9 @@
       ],
       "No addresses exist": [
         "Nessun indirizzo esistente"
+      ],
+      "No changes made to the current subscription": [
+        "Non sono state effettuate modifiche all'abbonamento attuale"
       ],
       "No gateways": [
         "Nessun gateway"
@@ -4773,6 +4785,52 @@
         "${ twoFAMembers.length }/${ members.length } membri della tua organizzazione fanno uso dell'autenticazione a due fattori."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 indirizzi email"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminazione automatica dello spam e dal cestino"
+      ],
+      "Custom schedule send and snooze times": [
+        "Pianificazione personalizzata degli orari di invio e posticipazione"
+      ],
+      "Support for 1 custom email domain": [
+        "Supporto per 1 dominio email personalizzato"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Rinnova a ${ renewablePrice }, annulla in qualsiasi momento"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "per il primo mese"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Offerta a tempo limitato, scade il 2 aprile 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Ottieni ${ planName } a soli ${ planPrice }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Attiva l'utente"
@@ -5005,6 +5063,9 @@
       "Advanced sharing security": [
         "Sicurezza di condivisione avanzata"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminazione automatica dello spam e dal cestino"
+      ],
       "Auto-delete spam and trashed messages": [
         "Cancella automaticamente i messaggi indesiderati e cestinati"
       ],
@@ -5058,6 +5119,9 @@
       ],
       "Dedicated servers and IP": [
         "Server e IP dedicati"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
       ],
       "DNS leak prevention": [
         "Prevenzione perdite DNS"
@@ -5162,6 +5226,9 @@
       ],
       "Router support": [
         "Assistenza router"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Pianifica e posticipa le email in qualsiasi momento"
       ],
       "Schedule messages at any time": [
         "Programma i messaggi per qualsiasi momento"
@@ -5450,6 +5517,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accedi a contenuti bloccati e naviga privatamente. Include ${ serversAndCountries }, VPN ad altissima velocità, l'accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, download BitTorrent veloci e molto altro."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Accedi a ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME } comodamente dal tuo desktop"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, ovunque"
       ],
@@ -5462,11 +5532,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Ti permette di impostare risposte automatiche per i messaggi in arrivo"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Cancella automaticamente i messaggi più vecchi di 30 giorni dal Cestino e dallo Spam"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Inoltra automaticamente le email inviate al tuo account ${ MAIL_APP_NAME } a qualsiasi altro indirizzo email."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'invio massiccio di email promozionali o programmatiche non è attualmente supportato. Consigliamo di utilizzare un fornitore di servizi email dedicato per questo caso d'uso."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Scegli orari personalizzati per ricevere un promemoria di un'email o per l'arrivo del tuo messaggio"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controlla l'accesso ai file condivisi aggiungendo una protezione con password e date di scadenza dei link"
@@ -7338,6 +7414,9 @@
       "Amount due": [
         "Importo da pagare"
       ],
+      "Appearance": [
+        "Aspetto"
+      ],
       "Apply gift code": [
         "Applica codice regalo"
       ],
@@ -7548,9 +7627,6 @@
       "Gateways": [
         "Gateway"
       ],
-      "General": [
-        "Generale"
-      ],
       "Generate missing keys": [
         "Genera chiavi mancanti"
       ],
@@ -7574,9 +7650,6 @@
       ],
       "Invoices": [
         "Fatture"
-      ],
-      "Language": [
-        "Lingua"
       ],
       "Login password": [
         "Password di accesso"

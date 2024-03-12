@@ -2018,6 +2018,11 @@
         "Esborrat"
       ]
     },
+    "Email body for response to invitation": {
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }."
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -6343,6 +6348,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "S'ha enviat l'opinió"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mes"
       ]
     },
     "summer2023: Tooltip": {

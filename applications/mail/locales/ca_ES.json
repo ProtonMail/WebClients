@@ -3142,6 +3142,11 @@
         "Esborrat"
       ]
     },
+    "Email body for response to invitation": {
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }."
+      ]
+    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "L'esdeveniment serà demà"
@@ -4314,11 +4319,19 @@
       ]
     },
     "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
       "No credit card required.": [
         "No es requereix targeta de crèdit."
       ],
       "Upgrade now": [
         "Millora ara"
+      ]
+    },
+    "Free trial destkop": {
+      "Start free trial": [
+        "Inicieu la prova gratuïta"
       ]
     },
     "Get started checklist instructions": {
@@ -4363,12 +4376,6 @@
       ],
       "Closing this means giving up the free storage bonus.": [
         "Tancar això significa renunciar a la bonificació d'emmagatzematge gratuït."
-      ],
-      "Congratulation, you completed all the steps!": [
-        "Enhorabona, heu completat tots els passos!"
-      ],
-      "Congratulation, you finished!": [
-        "Felicitats! Heu acabat."
       ],
       "Continue setting up your email": [
         "Continueu configurant el vostre correu electrònic"
@@ -5083,6 +5090,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Segur que voleu moure tots els missatges d'aquesta ubicació a l'arxiu?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Segur que voleu eliminar permanentment aquesta ${ count } conversa?",
@@ -9030,6 +9040,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "S'ha enviat l'opinió"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mes"
       ]
     },
     "summer2023: Tooltip": {

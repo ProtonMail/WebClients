@@ -47,7 +47,7 @@
         "Дадаць нататку"
       ],
       "Add people or groups to share": [
-        "Дадаць людзе або групы для абагулення"
+        "Дадаць людзей або групы для абагулення"
       ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
@@ -3648,7 +3648,7 @@
         "і"
       ],
       "And access it from anywhere": [
-        "І атрымлівайце доступ да яго з любога месца"
+        "І атрымлівайце доступ да яго з любой краіны ў свеце"
       ],
       "Anyone with this link can access your file.": [
         "Любы чалавек з гэтай спасылкай зможа атрымаць доступ да вашага файла."
@@ -4500,7 +4500,7 @@
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "${ DRIVE_APP_NAME } можа сканіраваць і блакіраваць шкоднасныя файлы, каб дапамагчы абараніць вас. Варта спампоўваць файлы толькі ў тых людзей, якім вы давяраеце."
+        "${ DRIVE_APP_NAME } можа сканіраваць і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Варта спампоўваць файлы толькі ў тых людзей, якім вы давяраеце."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
@@ -5418,6 +5418,52 @@
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 адрасоў электроннай пошты"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Аўтаматычна выдаляць спам і смецце"
+      ],
+      "Custom schedule send and snooze times": [
+        "Карыстальніцкае планаванне адпраўкі і адкладання"
+      ],
+      "Support for 1 custom email domain": [
+        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Падаўжаецца ${ renewablePrice }. Скасаваць можна ў любы час"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за першы месяц"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Прапанова абмежаваная па часе (міне 2 красавіка 2024 года)"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Message": {
@@ -6977,6 +7023,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Водгук адпраўлены"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/месяц"
       ]
     },
     "summer2023: Tooltip": {

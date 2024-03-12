@@ -197,6 +197,9 @@
       "Close navigation": [
         "Закрыць панэль навігацыі"
       ],
+      "Close tab": [
+        "Закрыць укладку"
+      ],
       "Close this banner": [
         "Закрыць гэты банер"
       ],
@@ -380,8 +383,8 @@
       "Edit": [
         "Рэдагаваць"
       ],
-      "Edit billing details": [
-        "Рэдагаваць рэквізіты плацяжу"
+      "Edit billing cycle": [
+        "Рэдагаваць перыяд аплаты"
       ],
       "Edit display name": [
         "Рэдагаваць бачнае імя"
@@ -4413,6 +4416,9 @@
       "Invalid URL": [
         "Памылковы URL-адрас"
       ],
+      "Missing parameters in the URL.": [
+        "Параметры адсутнічаюць у URL-адрасе."
+      ],
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
@@ -4424,6 +4430,9 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "Support ticket does not exist.": [
+        "Запыт у службу падтрымкі не існуе."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Пераключыцеся на вэб-версію, каб выкарыстоўваць ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }."
@@ -7012,6 +7021,9 @@
       "No addresses exist": [
         "Няма адрасоў"
       ],
+      "No changes made to the current subscription": [
+        "Для бягучай падпіскі ніякія змены не зроблены"
+      ],
       "No credit card required": [
         "Крэдытная картка не патрабуецца"
       ],
@@ -8002,6 +8014,9 @@
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
       ],
+      "You can now close this tab.": [
+        "Цяпер вы можаце закрыць гэту ўкладку."
+      ],
       "You can now close this window.": [
         "Цяпер вы можаце закрыць гэта акно."
       ],
@@ -8190,6 +8205,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Ваш запыт у службу падтрымкі быў закрыты. Дзякуй, што звярнуліся ў падтрымку ${ BRAND_NAME }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9875,6 +9893,52 @@
         "Бяспечная электронная пошта, якая абараняе вашу прыватнасць"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 адрасоў электроннай пошты"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Аўтаматычна выдаляць спам і смецце"
+      ],
+      "Custom schedule send and snooze times": [
+        "Карыстальніцкае планаванне адпраўкі і адкладання"
+      ],
+      "Support for 1 custom email domain": [
+        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Падаўжаецца ${ renewablePrice }. Скасаваць можна ў любы час"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за першы месяц"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Прапанова абмежаваная па часе (міне 2 красавіка 2024 года)"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Паспрабуйце пераправерыць праз некалькі хвілін."
@@ -10409,6 +10473,9 @@
       "Advanced sharing security": [
         "Дадатковая бяспека пры абагуленні"
       ],
+      "Auto-delete Spam and Trash": [
+        "Аўтаматычнае выдаленне спаму і смецця"
+      ],
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
       ],
@@ -10462,6 +10529,9 @@
       ],
       "Dedicated servers and IP": [
         "Вылучаныя серверы і IP"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -10570,6 +10640,9 @@
       ],
       "Router support": [
         "Падтрымка маршрутызатараў"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Планаванне і адкладанне лістоў у любы час"
       ],
       "Schedule messages at any time": [
         "Заплануйце адпраўку паведамленняў у любы час"
@@ -10714,17 +10787,6 @@
         "Кіраванне камандамі"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -10796,7 +10858,7 @@
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Бяспечны доступ у інтэрнэт, дзе б вы не знаходзіліся, дзякуючы маніторынгу сеткі"
+        "Бяспечны доступ у інтэрнэт з любой краіны ў свеце, дзякуючы маніторынгу сеткі"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
@@ -10824,6 +10886,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10912,6 +10985,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Атрымлівайце доступ да заблакіраванага змесціва і прыватнага прагляду старонак у інтэрнэце. Уключае ${ serversAndCountries }, найвышэйшую хуткасць VPN, доступ да сэрвісаў з трансляцыямі па ўсім свеце, абарону ад шкодных праграм і блакіроўшчык рэкламы, хуткія спампоўванні праз BitTorrent і іншыя функцыі."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Доступ да ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } непасрэдна з працоўнага стала"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце"
       ],
@@ -10924,11 +11000,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Дазваляе вам наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Аўтаматычна выдаленне са сметніцы і спаму паведамленні, якія старэйшыя за 30 дзён"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Аўтаматычна перасылаць лісты адпраўленыя на ваш уліковы запіс ${ MAIL_APP_NAME } на любы іншы адрас электроннай пошты."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Масавая рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Кантралюйце доступ да вашых абагуленых файлаў з дапамогай пароля і спасылак з тэрмінам дзеяння"
@@ -14772,6 +14854,9 @@
       ],
       "Summary": [
         "Зводка"
+      ],
+      "Support ticket closed": [
+        "Запыт у службу падтрымкі закрыты"
       ],
       "Switch account": [
         "Змяніць уліковы запіс"
