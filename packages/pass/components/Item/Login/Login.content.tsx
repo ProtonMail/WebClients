@@ -1,9 +1,10 @@
-import { type FC } from 'react';
+import { type FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { Icon } from '@proton/components/index';
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -14,14 +15,19 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
+import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
+
+import { PasskeyContentModal } from '../Passkey/Passkey.modal';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
     const { data: item, shareId, itemId } = revision;
+    const [passkey, setPasskey] = useState<MaybeNull<SanitizedPasskey>>(null);
 
     const {
         metadata: { note },
-        content: { username, password, urls, totpUri },
+        content: { username, password, urls, totpUri, passkeys },
         extraFields,
     } = useDeobfuscatedItem(item);
 
@@ -30,6 +36,20 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
 
     return (
         <>
+            {passkeys.map((passkey) => (
+                <FieldsetCluster mode="read" key={passkey.keyId} className="pass-fieldset-cluster--standout">
+                    <ValueControl
+                        icon={'pass-passkey'}
+                        label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
+                        value={passkey.userName}
+                        onClick={() => setPasskey(passkey)}
+                        actions={[<Icon className="mt-3" name="chevron-right" size={3} />]}
+                    />
+                </FieldsetCluster>
+            ))}
+
+            {passkey && <PasskeyContentModal passkey={passkey} onClose={() => setPasskey(null)} open size="small" />}
+
             <FieldsetCluster mode="read" as="div">
                 <ValueControl
                     clickToCopy
