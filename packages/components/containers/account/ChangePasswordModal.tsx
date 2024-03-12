@@ -274,7 +274,11 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
                         resetErrors();
                         setLoading(true);
 
-                        await handleChangeLoginPassword({ api, newPassword: inputs.newPassword });
+                        await handleChangeLoginPassword({
+                            api,
+                            newPassword: inputs.newPassword,
+                            persistPasswordScope: true,
+                        });
 
                         setSecondPhase(true);
                         setInputs({
