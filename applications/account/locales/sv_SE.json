@@ -197,6 +197,9 @@
       "Close navigation": [
         "Stäng navigering"
       ],
+      "Close tab": [
+        "Stäng flik"
+      ],
       "Close this banner": [
         "Stäng denna banner"
       ],
@@ -380,8 +383,8 @@
       "Edit": [
         "Redigera"
       ],
-      "Edit billing details": [
-        "Redigera faktureringsdetaljer"
+      "Edit billing cycle": [
+        "Redigera faktureringsperiod"
       ],
       "Edit display name": [
         "Redigera visningsnamn"
@@ -4356,6 +4359,9 @@
       "Invalid URL": [
         "Ogiltig URL"
       ],
+      "Missing parameters in the URL.": [
+        "Saknar parametrar i URL:en."
+      ],
       "Oops, something went wrong": [
         "Hoppsan, något gick fel"
       ],
@@ -4367,6 +4373,9 @@
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "Support ticket does not exist.": [
+        "Supportärende finns inte."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
@@ -6859,6 +6868,9 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
+      "No changes made to the current subscription": [
+        "Inga ändringar gjorda i den nuvarande prenumerationen"
+      ],
       "No credit card required": [
         "Inget kreditkort krävs"
       ],
@@ -7828,6 +7840,9 @@
       "You can now access and manage the account as an administrator.": [
         "Du kan nu komma åt och hantera kontot som en administratör."
       ],
+      "You can now close this tab.": [
+        "Du kan stänga denna flik."
+      ],
       "You can now close this window.": [
         "Du kan nu stänga detta fönster."
       ],
@@ -8010,6 +8025,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Ditt supportärende har stängts. Tack för att du kontaktade supporten för ${ BRAND_NAME }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9674,6 +9692,46 @@
         "Säker e-post som skyddar din integritet"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Ta automatiskt bort skräppost och papperskorg"
+      ],
+      "Support for 1 custom email domain": [
+        "Stöd för 1 anpassad e-postdomän"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Tidsbegränsat erbjudande, löper ut 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Kom tillbaka om några minuter."
@@ -10159,6 +10217,9 @@
       "Advanced sharing security": [
         "Avancerad delningssäkerhet"
       ],
+      "Auto-delete Spam and Trash": [
+        "Ta automatiskt bort skräppost och papperskorg"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
       ],
@@ -10454,17 +10515,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10566,6 +10616,17 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
@@ -10664,11 +10725,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Låter dig ställa in automatiska svar (autosvar) för dina inkommande meddelanden"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Rensa automatiskt bort meddelanden äldre än 30 dagar från papperskorg och skräppost"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Vidarebefordra automatiskt e-post som skickats till ditt ${ MAIL_APP_NAME }-konto till valfri annan e-postadress."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massutskick av reklam eller programmatisk e-post stöds för närvarande inte. Vi rekommenderar att du använder en dedikerad e-postleverantör för detta ändamål."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Välj anpassade tider för att bli påmind om ett e-postmeddelande eller för att ditt meddelande ska komma fram"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontrollera åtkomst till dina delade filer genom att lägga till lösenordsskydd och länkens utgångsdatum"
@@ -14414,6 +14481,9 @@
       ],
       "Summary": [
         "Sammanfattning"
+      ],
+      "Support ticket closed": [
+        "Supportärende stängd"
       ],
       "Switch account": [
         "Byt konto"
