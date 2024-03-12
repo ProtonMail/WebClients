@@ -264,7 +264,7 @@
         "Crear carpeta"
       ],
       "Create Gateway": [
-        "Crea la passarel·la"
+        "Crea una passarel·la"
       ],
       "Create label": [
         "Crear etiqueta"
@@ -380,9 +380,6 @@
       "Edit": [
         "Edita"
       ],
-      "Edit billing details": [
-        "Edita les dades de facturació"
-      ],
       "Edit display name": [
         "Edita el nom a mostrar"
       ],
@@ -420,7 +417,7 @@
         "Edita la subscripció"
       ],
       "Edit users": [
-        "Edita usuaris"
+        "Edita els usuaris"
       ],
       "Emoji": [
         "Emoji"
@@ -501,7 +498,7 @@
         "Obteniu més llicències"
       ],
       "Get more servers": [
-        "Obtén més servidors"
+        "Obteniu més servidors"
       ],
       "Get the deal": [
         "Obteniu l’oferta"
@@ -3086,7 +3083,7 @@
     },
     "Disable account": {
       "Back to ${ signIn }.": [
-        "Tornar a ${ signIn }."
+        "Torna a ${ signIn }."
       ],
       "Didn't create an account?": [
         "No heu creat un compte?"
@@ -3225,6 +3222,11 @@
         "Esborrat"
       ]
     },
+    "Email body for response to invitation": {
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "S'ha afegit ${ name }"
@@ -3279,7 +3281,7 @@
         "Subscripcions per correu electrònic"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        "Quins correus de Proton vols rebre de ${ BRAND_NAME }?"
+        "Quins correus electrònics voleu rebre de ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "T'has tornat a subscriure als correus de ${ categoriesJsx }."
@@ -4239,7 +4241,7 @@
     },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
-        "Contacte ${ BRAND_NAME }"
+        "Contacta amb ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "${ signIn } per tornar a enviar una sol·licitud de verificació del correu electrònic de recuperació."
@@ -4248,24 +4250,24 @@
         "inicia la sessió"
       ],
       "Sign in to verify": [
-        "Autentiqueu-vos per a verificar"
+        "Inicieu la sessió per a verificar"
       ],
       "There was a problem removing your email address.": [
         "Hi ha hagut un problema en esborrar la vostra adreça de correu electrònic."
       ],
       "There was a problem verifying your email address.": [
-        "Hi ha hagut un problema en la verificació de la vostra adreça de correu electrònic."
+        "Hi ha hagut un problema en verificar la vostra adreça de correu electrònic."
       ]
     },
     "Error message, unsubscribe": {
       "Please ${ signIn } to update your email subscription preferences.": [
-        "${ signIn } per actualitzar les preferències de subscripció de correu electrònic."
+        "${ signIn } per a actualitzar les preferències de subscripció de correu electrònic."
       ],
       "sign in": [
         "inicia la sessió"
       ],
       "There was a problem unsubscribing you.": [
-        "Hi ha hagut un problema en cancel·lar la subscripció."
+        "Hi ha hagut un problema en anul·lar la subscripció."
       ]
     },
     "Error notification": {
@@ -4993,6 +4995,9 @@
       ]
     },
     "Free trial desktop": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
       "Back to sign in": [
         "Torna a l'inici de sessió"
       ],
@@ -5082,7 +5087,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "Nou a ${ BRAND_NAME }? ${ signUp }"
+        "Sou nou a ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -8100,7 +8105,7 @@
         "Activa el xifratge amb aquesta clau"
       ],
       "Enable signature verification and encryption with this key": [
-        "Activa la verificació i el xifratge de signatures amb aquesta clau."
+        "Activa la verificació de la signatura i el xifratge amb aquesta clau."
       ],
       "Export private key": [
         "Exportar la clau privada"
@@ -9422,7 +9427,7 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Inicia sessió"
+        "${ appName }: Inicia la sessió"
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Registre"
@@ -9437,16 +9442,16 @@
         "Creeu un compte ${ BRAND_NAME } | Recupereu la vostra privacitat."
       ],
       "Create a new ${ appName } account": [
-        "Crear un compte de ${ appName }"
+        "Crea un compte de ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Troba el vostre nom d'usuari del compte ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat la vostra contrasenya del compte ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic, o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
       "Private and secure email, no credit card required": [
         "Correu electrònic privat i segur, no es requereix targeta de crèdit"
@@ -9455,7 +9460,7 @@
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Inicieu sessió al vostre compte ${ appName }"
+        "Inicieu la sessió al vostre compte ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicieu sessió al vostre compte ${ BRAND_NAME } per accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
@@ -10134,17 +10139,6 @@
         "Gestió d'equips"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -10238,6 +10232,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10549,7 +10554,7 @@
         "Passarel·les privades"
       ],
       "Require 2FA": [
-        "Requisit de 2FA"
+        "Requereix 2FA"
       ]
     },
     "Notification": {
@@ -10874,7 +10879,7 @@
         "Dreta a esquerra"
       ],
       "Router": [
-        "Router"
+        "Rúter"
       ],
       "Secure Core configs": [
         "Configuracions Secure Core"
@@ -11207,7 +11212,7 @@
         "S'està iniciant la sessió a ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta de llançament especial: obtingui ${ title } per sempre per ${ price }!"
+        "Oferta de llançament especial: obtingueu ${ title } per a sempre per ${ price }!"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "L'oferta que heu seleccionat no està disponible per als subscriptors de ${ currentPlanTitle }."
@@ -11237,7 +11242,7 @@
         "Se us ha convidat a unir-vos a ${ PASS_APP_NAME }."
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "La vostra organització té accés a ${ free }. Si voleu accedir a les característiques prèmium de ${ appName }, demaneu a l'administrador de la vostra organització que us millori el pla."
+        "La vostra organització té accés a ${ free }. Si voleu accedir a les característiques prèmium de ${ appName }, demaneu a l'administrador de la vostra organització que millori el pla."
       ]
     },
     "pass_signup_2023: Title": {
@@ -12410,7 +12415,7 @@
         "milloreu per a obtenir més emmagatzematge"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
-        "Actualitzi el seu pla per continuar usant el seu compte sense interrupcions."
+        "Milloreu el vostre pla per a continuar usant el compte sense interrupcions."
       ],
       "Your ${ appStorage } is almost full": [
         "El vostre emmagatzematge de ${ appStorage } està gairebé ple."
@@ -12448,10 +12453,10 @@
         "Facturació cada 2 anys"
       ],
       "Billed for 15 months": [
-        "Facturació per a 15 mesos"
+        "Facturació per 15 mesos"
       ],
       "Billed for 30 months": [
-        "Facturació per a 30 mesos"
+        "Facturació per 30 mesos"
       ],
       "Billed monthly": [
         "Facturació mensual"
@@ -13230,13 +13235,13 @@
         "Crea ${ selectedUserIds.length } usuaris"
       ],
       "Create a new Gateway": [
-        "Crea una nova passarel·la"
+        "Crea una passarel·la"
       ],
       "Create a new gateway": [
-        "Crea una nova passarel·la"
+        "Crea una passarel·la"
       ],
       "Create Gateway": [
-        "Crea la passarel·la"
+        "Crea una passarel·la"
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
@@ -13396,7 +13401,7 @@
         "Edita l'usuari"
       ],
       "Edit users": [
-        "Edita usuaris"
+        "Edita els usuaris"
       ],
       "Email": [
         "Correu electrònic"
@@ -13481,7 +13486,7 @@
         "Genera un testimoni SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        "Obtén ${ vpnPlus } per accedir a tots els servidors"
+        "Obteniu ${ vpnPlus } per accedir a tots els servidors"
       ],
       "Get the apps": [
         "Aconseguiu les aplicacions"
