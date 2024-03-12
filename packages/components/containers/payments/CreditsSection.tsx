@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { isFreeSubscription } from '@proton/shared/lib/constants';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getHasVpnB2BPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
@@ -9,15 +14,26 @@ import { Loader, Price, useModalTwoStatic } from '../../components';
 import { useModalState } from '../../components/modalTwo';
 import { useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
+import { openLinkInBrowser } from '../desktop/openExternalLink';
 import CreditsModal from './CreditsModal';
 import InAppPurchaseModal from './subscription/InAppPurchaseModal';
 
+const redirectFromDesktop = '?open=credit-modal';
+
 const CreditsSection = () => {
+    const location = useLocation();
     const [subscription] = useSubscription();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwoStatic(InAppPurchaseModal);
 
     const [{ Credit, Currency, ChargebeeUser }] = useUser();
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        if (searchParams.get('open') === 'credit-modal') {
+            setCreditModalOpen(true);
+        }
+    }, [location.search]);
 
     if (!subscription) {
         return <Loader />;
@@ -58,6 +74,11 @@ const CreditsSection = () => {
                                 showExternalSubscriptionModal({
                                     subscription,
                                 });
+                                return;
+                            }
+
+                            if (isElectronApp) {
+                                openLinkInBrowser(getAppHref(`/dashboard${redirectFromDesktop}`, APPS.PROTONACCOUNT));
                                 return;
                             }
 
