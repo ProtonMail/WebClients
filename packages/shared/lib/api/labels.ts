@@ -21,6 +21,11 @@ export const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
     data: { LabelIDs, ParentID, Type },
 });
 
+export const orderAllFolders = () => ({
+    method: 'put',
+    url: 'core/v4/labels/order/tree',
+});
+
 interface PartialCreateLabelArgument {
     Name: string;
     Color: string;
