@@ -56,8 +56,8 @@
         "გადატარება"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "თითოეულ კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
-        "თითოეულ კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
+        "თითოეული კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
+        "თითოეული კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
       ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
@@ -1993,7 +1993,7 @@
         "დააყენეთ მონაცემების აღდგენის მეთოდი, მისი დაკარგვის თავიდან ასაცილებლად."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშსზე წვდომის დაკარგვა."
+        "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
@@ -4392,7 +4392,7 @@
         "გაფრთხილება"
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
-        "სწორად იქცევით. თქვენ ახლახანს გაზარდეთ თქვენი საცავი 5 გბ-ით!"
+        "სწორად იქცევით. თქვენ ახლახან გაზარდეთ თქვენი საცავი 5 გბ-ით!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "განვიცდით ტექნიკურ სიძნელეებს. ახალი სურათების ატვირთვა დროებით გათიშულია."
@@ -6172,7 +6172,7 @@
         "იმისათვის, რომ დავრწმუნდეთ, რომ ნამდვილად თქვენ ცდილობთ პაროლის შეცვლას, ჩვენ, მოთხოვნის შესრულებამდე 72 საათს მოვიცდით. პაროლს შეცვლა შეგიძლიათ შემდეგ დროში: ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
-        "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
+        "მივიღეთ პაროლის ჩამოყრის მოთხოვნა ${ boldEmail }-სთვის."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -6582,6 +6582,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "უკუკავშირი გაგზავნილია"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/თვე"
       ]
     },
     "summer2023: Tooltip": {

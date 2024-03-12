@@ -1941,6 +1941,16 @@
         "Encontrámos os seguintes campos no ficheiro CSV que enviou. Marque aqueles que deseja importar."
       ]
     },
+    "Email body for invitation": {
+      "This event occurrence was updated.": [
+        "Esta ocorrência do evento foi atualizada."
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Removido"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancelamento de um evento em ${ formattedStart }"
@@ -1973,6 +1983,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" já existe."
       ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } não se consegue conectar à sua conta externa"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
@@ -1988,8 +2001,23 @@
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
+      "Alias is not valid": [
+        "O pseudónimo não é válido"
+      ],
+      "Alias is required": [
+        "O pseudónimo é obrigatório"
+      ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."
+      ],
+      "Aliases could not be loaded": [
+        "O pseudónimo não foi carregado"
+      ],
+      "An error occurred while loading alias options": [
+        "Ocorreu um erro ao carregar as opções do pseudónimo"
+      ],
+      "An error occurred while saving your alias": [
+        "Ocorreu um erro ao guardar o seu pseudónimo"
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -2014,6 +2042,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "A pesquisa de conteúdo não pode ser ativada neste navegador. Saia do modo de navegação privada ou utilize outro navegador."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "A pesquisa de conteúdo não pode ser ativada. Por favor, reinicie a aplicação, ou limpe os dados."
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -2067,6 +2098,9 @@
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
+      ],
+      "Forward address is required": [
+        "Endereço de encaminhamento é necessário"
       ],
       "Image upload failed": [
         "Erro ao enviar a imagem"
@@ -2269,6 +2303,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Erro inesperado, não podemos importar os contatos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -3594,6 +3631,9 @@
       ],
       "Import mailbox": [
         "Importar caixa de correio"
+      ],
+      "Important note": [
+        "Nota importante:"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
@@ -5562,6 +5602,10 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Você tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
+        "Você tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -5995,6 +6039,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentário enviado"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/mês"
       ]
     },
     "summer2023: Tooltip": {
