@@ -1,23 +1,26 @@
+import { BigIntegerInstance, getBigInteger } from '@proton/crypto/lib/bigInteger';
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AUTH_VERSION, MAX_VALUE_ITERATIONS, SRP_LEN } from './constants';
 import { AuthCredentials, AuthInfo } from './interface';
 import { expandHash, hashPassword } from './passwords';
-import { BigIntegerInstance, getBigInteger, littleEndianArrayToBigInteger } from './utils/bigInteger';
 import { verifyAndGetModulus } from './utils/modulus';
 import { checkUsername } from './utils/username';
 
 export const srpHasher = (arr: Uint8Array) => expandHash(arr);
 
+const littleEndianArrayToBigInteger = async (arr: Uint8Array) => {
+    const BigInteger = await getBigInteger();
+    return new BigInteger(arr.slice().reverse());
+};
+
 /**
  * Generate a random client secret.
  */
-const generateClientSecret = async (length: number) => {
-    const BigInteger = await getBigInteger();
-
+const generateClientSecret = (length: number) => {
     // treating the randomness as little-endian is needed for tests to work with the mocked random values
-    return littleEndianArrayToBigInteger(crypto.getRandomValues(new Uint8Array(length)), BigInteger);
+    return littleEndianArrayToBigInteger(crypto.getRandomValues(new Uint8Array(length)));
 };
 
 interface GenerateParametersArgs {
@@ -28,14 +31,12 @@ interface GenerateParametersArgs {
 }
 
 const generateParameters = async ({ byteLength, generator, modulus, serverEphemeralArray }: GenerateParametersArgs) => {
-    const BigInteger = await getBigInteger();
-
     const clientSecret = await generateClientSecret(byteLength);
     const clientEphemeral = generator.modExp(clientSecret, modulus);
     const clientEphemeralArray = clientEphemeral.toUint8Array('le', byteLength);
 
     const clientServerHash = await srpHasher(mergeUint8Arrays([clientEphemeralArray, serverEphemeralArray]));
-    const scramblingParam = littleEndianArrayToBigInteger(clientServerHash, BigInteger);
+    const scramblingParam = await littleEndianArrayToBigInteger(clientServerHash);
 
     return {
         clientSecret,
@@ -83,7 +84,7 @@ export const generateProofs = async ({
     serverEphemeralArray,
 }: GenerateProofsArgs) => {
     const BigInteger = await getBigInteger();
-    const modulus = littleEndianArrayToBigInteger(modulusArray, BigInteger);
+    const modulus = await littleEndianArrayToBigInteger(modulusArray);
     if (modulus.byteLength() !== byteLength) {
         throw new Error('SRP modulus has incorrect size');
     }
@@ -134,9 +135,9 @@ export const generateProofs = async ({
     const generator = new BigInteger(2);
     const hashedArray = await srpHasher(mergeUint8Arrays([generator.toUint8Array('le', byteLength), modulusArray]));
 
-    const multiplier = littleEndianArrayToBigInteger(hashedArray, BigInteger);
-    const serverEphemeral = littleEndianArrayToBigInteger(serverEphemeralArray, BigInteger);
-    const hashedPassword = littleEndianArrayToBigInteger(hashedPasswordArray, BigInteger);
+    const multiplier = await littleEndianArrayToBigInteger(hashedArray);
+    const serverEphemeral = await littleEndianArrayToBigInteger(serverEphemeralArray);
+    const hashedPassword = await littleEndianArrayToBigInteger(hashedPasswordArray);
 
     const modulusMinusOne = modulus.dec();
     const multiplierReduced = multiplier.mod(modulus);
@@ -219,8 +220,8 @@ const generateVerifier = async (byteLength: number, hashedPasswordBytes: Uint8Ar
 
     const generator = new BigInteger(2);
 
-    const modulus = littleEndianArrayToBigInteger(modulusBytes, BigInteger);
-    const hashedPassword = littleEndianArrayToBigInteger(hashedPasswordBytes, BigInteger);
+    const modulus = await littleEndianArrayToBigInteger(modulusBytes);
+    const hashedPassword = await littleEndianArrayToBigInteger(hashedPasswordBytes);
 
     const verifier = generator.modExp(hashedPassword, modulus);
     return verifier.toUint8Array('le', byteLength);
