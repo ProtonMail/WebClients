@@ -1,5 +1,5 @@
 import { ThemeColor } from '@proton/colors/types';
-import { IconName } from '@proton/components/components';
+import type { IconName } from '@proton/components/components/icon';
 import { APPS } from '@proton/shared/lib/constants';
 import { Environment } from '@proton/shared/lib/interfaces';
 
