@@ -2,7 +2,6 @@ import { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { IconName } from '@proton/components/components';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -20,6 +19,8 @@ import {
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
+
+import type { IconName } from '../../../components/icon';
 
 export const getMonthFreeText = (n: number) => {
     return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
