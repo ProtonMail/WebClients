@@ -1,13 +1,14 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { chain, debounce, set } from 'lodash';
+import { chain, set } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmAccount, WasmBlockchainClient, WasmPagination, WasmWallet } from '@proton/andromeda';
+import { WasmAccount, WasmPagination, WasmWallet } from '@proton/andromeda';
 import { useNotifications } from '@proton/components/hooks';
-import { MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useBitcoinNetwork } from '../../store/hooks';
 import {
     AccountChainDataByAccountId,
@@ -16,19 +17,6 @@ import {
     WalletChainDataByWalletId,
 } from '../../types';
 import { tryHandleWasmError } from '../../utils/wasm/errors';
-
-const syncAccount = async (wasmAccount: WasmAccount) => {
-    const wasmChain = new WasmBlockchainClient();
-
-    const shouldSync = await wasmChain.shouldSync(wasmAccount);
-
-    // TODO: maybe we should remove this in favor of a cooldown timer?
-    if (!shouldSync) {
-        return;
-    }
-
-    return wasmAccount.hasSyncData() ? wasmChain.partialSync(wasmAccount) : wasmChain.fullSync(wasmAccount);
-};
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
 
@@ -45,6 +33,24 @@ const useMirroredRef = <T>(state: T, init: T) => {
  * Returns chain data given API wallets
  */
 export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
+    const blockchainClient = useBlockchainClient();
+
+    const syncAccount = useCallback(async (wasmAccount: WasmAccount) => {
+        const shouldSync = await blockchainClient.shouldSync(wasmAccount);
+
+        // TODO: maybe we should remove this in favor of a cooldown timer?
+        if (!shouldSync) {
+            return;
+        }
+
+        return wasmAccount.hasSyncData()
+            ? blockchainClient.partialSync(wasmAccount)
+            : blockchainClient.fullSync(wasmAccount);
+
+        // blockchainClient is stable at mount
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     const [network] = useBitcoinNetwork();
 
     // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
@@ -118,8 +124,8 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
             return getAccountData(account);
         },
-        // The 3 dependencies are assumed stable at render, so `getUpdatedAccountDataWithMaybeSync` should also be
-        [addNewSyncing, handleError, removeSyncing]
+        // The 4 dependencies are assumed stable at render, so `getUpdatedAccountDataWithMaybeSync` should also be
+        [addNewSyncing, handleError, removeSyncing, syncAccount, syncingMetatadaByAccountIdRef]
     );
 
     const syncSingleWalletAccount = useCallback(
@@ -131,7 +137,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 setWalletsChainData((prev) => set({ ...prev }, [walletId, 'accounts', accountId], updated));
             }
         },
-        [getUpdatedAccountDataWithMaybeSync]
+        [getUpdatedAccountDataWithMaybeSync, walletsChainDataRef]
     );
 
     const syncSingleWallet = useCallback(
@@ -142,7 +148,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 await syncSingleWalletAccount(walletId, accountId);
             }
         },
-        [syncSingleWalletAccount]
+        [syncSingleWalletAccount, walletsChainDataRef]
     );
 
     const syncManyWallets = useCallback(
@@ -158,17 +164,11 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         await syncManyWallets(apiWalletsDataRef.current?.map((w) => w.Wallet.ID) ?? []);
         await wait(10 * MINUTE);
         void pollAccountsBlockchainData();
-    }, [syncManyWallets]);
-
-    const debouncedPoll = useMemo(() => debounce(pollAccountsBlockchainData, 5 * SECOND), [pollAccountsBlockchainData]);
+    }, [apiWalletsDataRef, syncManyWallets]);
 
     useEffect(() => {
-        void debouncedPoll();
-
-        return () => {
-            debouncedPoll.cancel();
-        };
-    }, [debouncedPoll]);
+        void pollAccountsBlockchainData();
+    }, []);
 
     const setWasmWallets = useCallback(
         (apiWallets: IWasmApiWalletData[]) => {

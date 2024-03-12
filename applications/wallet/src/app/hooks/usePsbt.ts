@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBlockchainClient, WasmPartiallySignedTransaction, WasmTxBuilder } from '@proton/andromeda';
+import { WasmPartiallySignedTransaction, WasmTxBuilder } from '@proton/andromeda';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -10,6 +10,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { WalletAndAccountSelectorValue } from '../atoms';
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets, tryHandleWasmError } from '../utils';
+import { useBlockchainClient } from './useBlockchainClient';
 
 export const usePsbt = ({
     walletAndAccount,
@@ -18,6 +19,8 @@ export const usePsbt = ({
     walletAndAccount: WalletAndAccountSelectorValue;
     txBuilder: WasmTxBuilder;
 }) => {
+    const blockchainClient = useBlockchainClient();
+
     const { syncSingleWalletAccount, walletsChainData, network } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
     const [loadingBroadcast, withLoadingBroadcast] = useLoading();
@@ -55,7 +58,7 @@ export const usePsbt = ({
             const signed = await finalPsbt.sign(andromedaAccount.account, network);
 
             try {
-                const txId = await new WasmBlockchainClient().broadcastPsbt(signed);
+                const txId = await blockchainClient.broadcastPsbt(signed);
                 setBroadcastedTxId(txId);
 
                 setTimeout(() => {
