@@ -176,8 +176,8 @@
       "Edit": [
         "Editar"
       ],
-      "Edit billing details": [
-        "Editar datos de facturación"
+      "Edit billing cycle": [
+        "Editar el ciclo de facturación"
       ],
       "Edit display name": [
         "Editar Nombre a mostrar"
@@ -3343,6 +3343,9 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No changes made to the current subscription": [
+        "No se han realizados cambios a la suscripción actual."
+      ],
       "No gateways": [
         "Sin puertas de enlace"
       ],
@@ -4765,6 +4768,52 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } para el miembro de tu organización que utiliza la autenticación de doble factor.",
         "${ twoFAMembers.length }/${ members.length } para los miembros de tu organización que utilizan la autenticación de doble factor."
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Conseguir la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programación de envío y tiempos de pausa personalizados"
+      ],
+      "Support for 1 custom email domain": [
+        "Soporte para 1 dominio de correo electrónico personalizado"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice } y cancela cuando quieras"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtén ${ planName } por solo ${ planPrice }"
       ]
     },
     "Member action": {
@@ -7308,6 +7357,9 @@
       "Amount due": [
         "Importe a pagar"
       ],
+      "Appearance": [
+        "Apariencia"
+      ],
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
@@ -7518,9 +7570,6 @@
       "Gateways": [
         "Puertas de enlace"
       ],
-      "General": [
-        "General"
-      ],
       "Generate missing keys": [
         "Generar claves faltantes"
       ],
@@ -7544,9 +7593,6 @@
       ],
       "Invoices": [
         "Facturas"
-      ],
-      "Language": [
-        "Idioma"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"

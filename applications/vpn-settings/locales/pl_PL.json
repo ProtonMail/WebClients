@@ -176,8 +176,8 @@
       "Edit": [
         "Edytuj"
       ],
-      "Edit billing details": [
-        "Edytuj szczegóły płatności"
+      "Edit billing cycle": [
+        "Edytuj cykl rozliczeniowy"
       ],
       "Edit display name": [
         "Edytuj nazwę wyświetlaną"
@@ -249,7 +249,7 @@
         "Uzyskaj więcej serwerów"
       ],
       "Get the deal": [
-        "Uzyskaj ofertę"
+        "Skorzystaj z oferty"
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
@@ -3186,6 +3186,9 @@
       "Emailing preference saved": [
         "Ustawienia list mailingowych zostały zapisane"
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Włącz logowanie SSO, aby zapewnić swojej organizacji bezpieczeństwo"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adres URL punktu końcowego otrzymany od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)."
       ],
@@ -3347,6 +3350,9 @@
       ],
       "Lean more about gateways": [
         "Dowiedz się więcej o bramach"
+      ],
+      "Lean more about single sign-on": [
+        "Dowiedz się więcej o logowaniu SSO"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Dowiedz się, jak zalogować do usługi ${ VPN_APP_NAME } za pomocą alternatywnych aplikacji."
@@ -4855,6 +4861,36 @@
         "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adresów e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Support for 1 custom email domain": [
+        "Wsparcie dla 1 niestandardowej domeny"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Uzyskaj plan ${ planName } za ${ planPrice }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktywuj użytkownika"
@@ -5115,6 +5151,9 @@
       "Advanced sharing security": [
         "Zaawansowane bezpieczeństwo udostępniania"
       ],
+      "Auto-delete Spam and Trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
       ],
@@ -5168,6 +5207,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedykowane serwery i adresy IP"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
       ],
       "DNS leak prevention": [
         "Zabezpieczenie przed wyciekiem zapytań DNS"
@@ -6864,7 +6906,7 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "Get the deal": [
-        "Uzyskaj ofertę"
+        "Skorzystaj z oferty"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Odnowienie po roku za niższą cenę ${ discountedAmount } zamiast ${ regularAmount } (rabat ${ discount }%)"
@@ -7516,6 +7558,9 @@
       "Amount due": [
         "Do zapłaty"
       ],
+      "Appearance": [
+        "Wygląd"
+      ],
       "Apply gift code": [
         "Zastosuj kod podarunkowy"
       ],
@@ -7732,9 +7777,6 @@
       "Gateways": [
         "Bramy"
       ],
-      "General": [
-        "Ogólne"
-      ],
       "Generate missing keys": [
         "Generuj brakujące klucze"
       ],
@@ -7758,9 +7800,6 @@
       ],
       "Invoices": [
         "Faktury"
-      ],
-      "Language": [
-        "Język"
       ],
       "Login password": [
         "Hasło logowania"

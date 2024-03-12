@@ -176,8 +176,8 @@
       "Edit": [
         "Bearbeiten"
       ],
-      "Edit billing details": [
-        "Zahlungsinformationen bearbeiten"
+      "Edit billing cycle": [
+        "Abrechnungszeitraum bearbeiten"
       ],
       "Edit display name": [
         "Anzeigename bearbeiten"
@@ -3011,6 +3011,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfiguriere die SAML-Authentifizierung für deine Organisation über einen Identitätsanbieter (IdP). Dadurch wird SAML für die gesamte Organisation aktiviert."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfiguriere die SAML-Authentifizierung für dein Unternehmen über einen Identitätsanbieter wie Okta, Microsoft Azure oder Google Identity Platform. Dadurch wird SAML für die gesamte Organisation aktiviert."
+      ],
       "Continue with ${ freeName }": [
         "Mit ${ freeName } fortfahren"
       ],
@@ -3129,6 +3132,9 @@
       ],
       "Emailing preference saved": [
         "E-Mail-Einstellungen gespeichert"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
@@ -3292,6 +3298,9 @@
       "Lean more about gateways": [
         "Mehr über Gateways erfahren"
       ],
+      "Lean more about single sign-on": [
+        "Erfahre mehr über Single Sign-on"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
       ],
@@ -3342,6 +3351,9 @@
       ],
       "No addresses exist": [
         "Keine Adressen vorhanden"
+      ],
+      "No changes made to the current subscription": [
+        "Keine Änderungen am aktuellen Abonnement vorgenommen"
       ],
       "No gateways": [
         "Keine Gateways"
@@ -4765,6 +4777,49 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } Mitglied deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
         "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop App"
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam und Papierkorb automatisch löschen"
+      ],
+      "Support for 1 custom email domain": [
+        "Unterstützung für eine eigene E-Mail-Domain"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Verlängert sich zu ${ renewablePrice }, jederzeit kündbar"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "im ersten Monat"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Befristetes Angebot, gültig bis zum 2. April 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hol dir ${ planName } für nur ${ planPrice }"
       ]
     },
     "Member action": {
@@ -7308,6 +7363,9 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
+      "Appearance": [
+        "Aussehen"
+      ],
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
@@ -7518,9 +7576,6 @@
       "Gateways": [
         "Gateways"
       ],
-      "General": [
-        "Allgemein"
-      ],
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
       ],
@@ -7544,9 +7599,6 @@
       ],
       "Invoices": [
         "Rechnungen"
-      ],
-      "Language": [
-        "Sprache"
       ],
       "Login password": [
         "Anmeldepasswort"

@@ -176,8 +176,8 @@
       "Edit": [
         "Redigera"
       ],
-      "Edit billing details": [
-        "Redigera faktureringsdetaljer"
+      "Edit billing cycle": [
+        "Redigera faktureringsperiod"
       ],
       "Edit display name": [
         "Redigera visningsnamn"
@@ -3329,6 +3329,9 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
+      "No changes made to the current subscription": [
+        "Inga ändringar gjorda i den nuvarande prenumerationen"
+      ],
       "No gateways": [
         "Inga gateways"
       ],
@@ -4744,6 +4747,46 @@
         "${ twoFAMembers.length }/${ members.length } av dina organisationsmedlemmar använder tvåfaktorsautentisering."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Ta automatiskt bort skräppost och papperskorg"
+      ],
+      "Support for 1 custom email domain": [
+        "Stöd för 1 anpassad e-postdomän"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Tidsbegränsat erbjudande, löper ut 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktivera användare"
@@ -4972,6 +5015,9 @@
       ],
       "Advanced sharing security": [
         "Avancerad delningssäkerhet"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Ta automatiskt bort skräppost och papperskorg"
       ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
@@ -5427,11 +5473,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Låter dig ställa in automatiska svar (autosvar) för dina inkommande meddelanden"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Rensa automatiskt bort meddelanden äldre än 30 dagar från papperskorg och skräppost"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Vidarebefordra automatiskt e-post som skickats till ditt ${ MAIL_APP_NAME }-konto till valfri annan e-postadress."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massutskick av reklam eller programmatisk e-post stöds för närvarande inte. Vi rekommenderar att du använder en dedikerad e-postleverantör för detta ändamål."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Välj anpassade tider för att bli påmind om ett e-postmeddelande eller för att ditt meddelande ska komma fram"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontrollera åtkomst till dina delade filer genom att lägga till lösenordsskydd och länkens utgångsdatum"
@@ -7303,6 +7355,9 @@
       "Amount due": [
         "Att betala"
       ],
+      "Appearance": [
+        "Utseende"
+      ],
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
@@ -7513,9 +7568,6 @@
       "Gateways": [
         "Gateways"
       ],
-      "General": [
-        "Allmänt"
-      ],
       "Generate missing keys": [
         "Generera saknade nycklar"
       ],
@@ -7539,9 +7591,6 @@
       ],
       "Invoices": [
         "Fakturor"
-      ],
-      "Language": [
-        "Språk"
       ],
       "Login password": [
         "Inloggningslösenord"
