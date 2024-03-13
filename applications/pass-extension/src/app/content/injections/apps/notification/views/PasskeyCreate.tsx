@@ -133,7 +133,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, publicKey, token }) => {
                         <Scroll>
                             {items.map(({ itemId, shareId, url, username, name }) => (
                                 <ListItem
-                                    key={shareId + itemId}
+                                    key={`${shareId}-${itemId}`}
                                     className="rounded-xl"
                                     icon="pass-passkey"
                                     title={name}
