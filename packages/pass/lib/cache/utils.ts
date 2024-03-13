@@ -17,5 +17,11 @@ type PasswordUnlockOptions = {
 export const canPasswordUnlock = (options: PasswordUnlockOptions): boolean => {
     if (!(options.offlineConfig && options.offlineVerifier)) return false;
     if (options.offline) return OFFLINE_SUPPORTED && options.offlineEnabled;
-    return options.lockMode === LockMode.PASSWORD;
+    return [LockMode.PASSWORD, LockMode.BIOMETRICS].includes(options.lockMode);
+};
+
+export const canBiometricsUnlock = (
+    options: PasswordUnlockOptions & { encryptedOfflineKD: Maybe<string> }
+): boolean => {
+    return Boolean(options.encryptedOfflineKD) && canPasswordUnlock(options);
 };

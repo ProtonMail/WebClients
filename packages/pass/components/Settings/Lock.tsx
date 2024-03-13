@@ -10,13 +10,18 @@ import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
-import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
+import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL, selectUserSettings } from '@proton/pass/store/selectors';
+import { selectLockMode, selectLockTTL, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -37,6 +42,10 @@ export const LockSettings: FC = () => {
     const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
     const canToggleTTL = lockMode !== LockMode.NONE;
+    const biometricsAvailable = useFeatureFlag(PassFeature.PassDesktopBiometrics) && DESKTOP_BUILD;
+    const plan = useSelector(selectPassPlan);
+    const onFreePlan = !isPaidPlan(plan);
+    const spotlight = useSpotlight();
 
     /** When switching locks, the next lock might temporarily
      * be set to `LockMode.NONE` before updating to the new lock.
@@ -54,6 +63,13 @@ export const LockSettings: FC = () => {
     });
 
     const handleLockModeSwitch = async (mode: LockMode) => {
+        if (onFreePlan && mode === LockMode.BIOMETRICS) {
+            return spotlight.setUpselling({
+                type: 'pass-plus',
+                upsellRef: UpsellRef.PASS_BIOMETRICS,
+            });
+        }
+
         const ttl = lockTTL ?? DEFAULT_LOCK_TTL;
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
@@ -70,10 +86,11 @@ export const LockSettings: FC = () => {
                         },
                     });
                 case LockMode.PASSWORD:
+                case LockMode.BIOMETRICS:
                     return confirmPassword({
                         message: c('Info').t`Please confirm your password in order to unregister your current lock.`,
                         onSubmit: async (secret) => {
-                            await unlock({ mode: lockMode, secret });
+                            await unlock({ mode: LockMode.PASSWORD, secret });
                             resolve({ secret });
                         },
                     });
@@ -102,9 +119,15 @@ export const LockSettings: FC = () => {
                 });
 
             case LockMode.PASSWORD:
+            case LockMode.BIOMETRICS:
+                const message =
+                    mode === LockMode.BIOMETRICS
+                        ? c('Info').t`Please confirm your password in order to auto-lock with biometrics.`
+                        : c('Info').t`Please confirm your password in order to auto-lock with your password.`;
+
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
-                    message: c('Info').t`Please confirm your password in order to auto-lock with your password.`,
+                    message,
                 });
 
             case LockMode.NONE:
@@ -120,7 +143,9 @@ export const LockSettings: FC = () => {
                     title: c('Title').t`Auto-lock update`,
                     assistiveText: c('Info').t`Please confirm your PIN code to edit this setting.`,
                 });
+
             case LockMode.PASSWORD:
+            case LockMode.BIOMETRICS:
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode: lockMode, secret, ttl }),
                     message: c('Info').t`Please confirm your password in order to update the auto-lock time.`,
@@ -184,7 +209,25 @@ export const LockSettings: FC = () => {
                                   ),
                                   value: LockMode.PASSWORD,
                               },
-                          ]
+                          ].concat(
+                              biometricsAvailable
+                                  ? [
+                                        {
+                                            label: (
+                                                <span className="flex w-full justify-space-between items-center">
+                                                    <span className="block">
+                                                        {c('Label').t`Biometrics`}
+                                                        <span className="block color-weak text-sm">{c('Info')
+                                                            .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`}</span>
+                                                    </span>
+                                                    {onFreePlan && <PassPlusPromotionButton className="button-xs" />}
+                                                </span>
+                                            ),
+                                            value: LockMode.BIOMETRICS,
+                                        },
+                                    ]
+                                  : []
+                          )
                         : []),
                 ]}
             />
