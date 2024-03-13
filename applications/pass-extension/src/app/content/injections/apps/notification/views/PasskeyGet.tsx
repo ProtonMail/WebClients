@@ -72,9 +72,9 @@ const PasskeyGetView: FC<Props> = ({ publicKey, domain, token }) => {
 
     return passkeys ? (
         <Scroll>
-            {passkeys.map((passkey) => (
+            {passkeys.map((passkey, idx) => (
                 <ListItem
-                    key={passkey.credentialId}
+                    key={`${passkey.credentialId}-${idx}`}
                     className="rounded-xl"
                     icon="pass-passkey"
                     title={passkey.name}
