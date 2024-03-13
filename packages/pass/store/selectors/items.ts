@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isLoginItem, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isLoginItem, isPasskeyItem, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     filterItemsByShareId,
     filterItemsByType,
@@ -70,12 +70,14 @@ export const selectItemIdByOptimisticId =
     (state: State): Maybe<UniqueItem> =>
         optimisticItemId ? selectByOptimisticIds(state)?.[optimisticItemId] : undefined;
 
-export const selectItemByShareIdAndId = (shareId: string, itemId: string) =>
-    createSelector([selectItems, selectByOptimisticIds], (items, byOptimisticId): Maybe<ItemRevision> => {
+export const selectItemByShareIdAndId = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
+    createSelector([selectItems, selectByOptimisticIds], (items, byOptimisticId): Maybe<ItemRevision<T>> => {
         const idFromOptimisticId = byOptimisticId[itemId]?.itemId;
         const byItemId = items[shareId];
 
-        return idFromOptimisticId ? byItemId?.[idFromOptimisticId] : byItemId?.[itemId];
+        return (idFromOptimisticId
+            ? byItemId?.[idFromOptimisticId]
+            : byItemId?.[itemId]) satisfies Maybe<ItemRevision> as Maybe<ItemRevision<T>>;
     });
 
 /** Unwraps the optimistic item state and hydrates the `failed` and
@@ -269,3 +271,12 @@ const autosaveCandidateSelector = createSelector(
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
     autosaveCandidateSelector(state, options);
+
+export const selectPasskeyDomains = createSelector(selectAllItems, (items): string[] => {
+    const domains = items
+        .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
+        .flatMap((item) => item.data.content.passkeys.map(prop('domain')))
+        .filter(truthy);
+
+    return Array.from(new Set(domains)).filter(truthy);
+});

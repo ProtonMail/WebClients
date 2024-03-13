@@ -1,15 +1,15 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
-import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
+import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import { DropdownItem } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItem';
-import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { AliasPreview } from '@proton/pass/components/Alias/legacy/Alias.preview';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
@@ -24,23 +24,19 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-type Props = {
-    hostname: string;
-    prefix: string;
-    visible?: boolean;
-    onClose?: (options?: IFrameCloseOptions) => void;
-    onMessage?: (message: IFrameMessage) => void;
-};
+type Props = { hostname: string; prefix: string };
 
 const isValidAliasOptions = (options: AliasState['aliasOptions']): options is AliasOptions =>
     options !== null && options?.suffixes?.[0] !== undefined;
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: FC<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
-    const ensureMounted = useEnsureMounted();
+export const AutosuggestEmail: FC<Props> = ({ hostname, prefix }) => {
+    const { userEmail, close, forwardMessage } = useIFrameContext();
+    const { onTelemetry } = usePassCore();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
-    const { userEmail } = useIFrameContext();
+    const ensureMounted = useEnsureMounted();
+
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
     const [loadingText, setLoadingText] = useState<MaybeNull<string>>(getInitialLoadingText());
@@ -52,10 +48,10 @@ export const AliasAutoSuggest: FC<Props> = ({ hostname, prefix, visible, onClose
             setError(null);
             await wait(500);
 
-            await sendMessage.onSuccess(
+            await sendMessage.on(
                 contentScriptMessage({ type: WorkerMessageType.ALIAS_OPTIONS }),
                 ensureMounted((response) => {
-                    if (response.ok) {
+                    if (response.type === 'success' && response.ok) {
                         setAliasOptions(response.options);
                         setNeedsUpgrade(response.needsUpgrade);
                     } else setError(response.error ?? c('Error').t`Alias options could not be resolved`);
@@ -89,19 +85,12 @@ export const AliasAutoSuggest: FC<Props> = ({ hostname, prefix, visible, onClose
                     }),
                     ensureMounted((response) => {
                         if (response.ok) {
-                            onMessage?.({
+                            forwardMessage({
                                 type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
                                 payload: { email: aliasEmail },
                             });
 
-                            void sendMessage(
-                                contentScriptMessage({
-                                    type: WorkerMessageType.TELEMETRY_EVENT,
-                                    payload: {
-                                        event: createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}),
-                                    },
-                                })
-                            );
+                            onTelemetry(createTelemetryEvent(TelemetryEventName.AutosuggestAliasCreated, {}, {}));
                         } else setError(response.error);
                     })
                 );
@@ -133,34 +122,32 @@ export const AliasAutoSuggest: FC<Props> = ({ hostname, prefix, visible, onClose
                         dense
                         hostname={hostname}
                         label={c('Action').t`Do not suggest on this website`}
-                        onClose={onClose}
-                        visible={visible}
                     />
                 }
             />
-            <DropdownItem
-                title={c('Title').t`Use my email`}
-                disabled={!userEmail}
-                subTitle={
-                    userEmail ?? (
-                        <span className="block flex items-center">
-                            <CircleLoader className="mr-1" />
-                            <span>{c('Info').t`Loading...`}</span>
-                        </span>
-                    )
-                }
-                icon="envelope"
-                onClick={
-                    userEmail
-                        ? () =>
-                              onMessage?.({
-                                  type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
-                                  payload: { email: userEmail },
-                              })
-                        : noop
-                }
-            />
-            <DropdownItem
+            {userEmail && (
+                <ListItem
+                    title={c('Title').t`Use my email`}
+                    disabled={!userEmail}
+                    subTitle={
+                        userEmail ?? (
+                            <span className="block flex items-center">
+                                <CircleLoader className="mr-1" />
+                                <span>{c('Info').t`Loading...`}</span>
+                            </span>
+                        )
+                    }
+                    icon="envelope"
+                    onClick={() => {
+                        forwardMessage({
+                            type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL,
+                            payload: { email: userEmail },
+                        });
+                        close();
+                    }}
+                />
+            )}
+            <ListItem
                 title={needsUpgrade ? c('Info').t`Upgrade ${PASS_APP_NAME}` : c('Title').t`Hide my email`}
                 autogrow
                 subTitle={(() => {

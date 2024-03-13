@@ -45,7 +45,10 @@ export const createAutofillService = () => {
         if (state.cache) return state.cache;
 
         const result = await sendMessage.on(
-            contentScriptMessage({ type: WorkerMessageType.AUTOFILL_QUERY }),
+            contentScriptMessage({
+                type: WorkerMessageType.AUTOFILL_QUERY,
+                payload: {},
+            }),
             (response) =>
                 response.type === 'success'
                     ? { items: response.items, needsUpgrade: response.needsUpgrade }
@@ -142,7 +145,7 @@ export const createAutofillService = () => {
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
                     ctx?.service.iframe.attachNotification()?.open({
-                        action: NotificationAction.AUTOFILL_OTP_PROMPT,
+                        action: NotificationAction.OTP,
                         item: { shareId: res.shareId, itemId: res.itemId },
                         hostname: subdomain ?? domain ?? '',
                     });

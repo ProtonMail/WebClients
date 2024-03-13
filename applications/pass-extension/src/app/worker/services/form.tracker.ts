@@ -1,4 +1,4 @@
-import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
+import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutosavePrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -193,7 +193,7 @@ export const createFormTrackerService = () => {
                                       autosave: isCommitted
                                           ? ctx.service.autosave.resolvePromptOptions(submission)
                                           : { shouldPrompt: false },
-                                  }) as WithAutoSavePromptOptions<FormEntry>)
+                                  }) as WithAutosavePrompt<FormEntry>)
                                 : submission,
                     };
                 }

@@ -27,6 +27,7 @@ const EXCLUDED_WEBPACK_ENTRIES = [
     'elements',
     'notification',
     'orchestrator',
+    'webauthn',
 ];
 
 const sanitizeWebpackConfig = (config) => {
