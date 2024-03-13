@@ -25,7 +25,7 @@ import identity from '@proton/utils/identity';
 
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
-import { batchByShareId, mapToRevision } from './item.utils';
+import { batchByShareId, intoRevisionID } from './item.utils';
 
 /* Item creation API request for all items
  * except for alias items */
@@ -188,7 +188,7 @@ export const trashItems = async (
 ) =>
     (
         await Promise.all(
-            batchByShareId(items, mapToRevision).map(async ({ shareId, items: Items }) => {
+            batchByShareId(items, intoRevisionID).map(async ({ shareId, items: Items }) => {
                 const response = await api({
                     url: `pass/v1/share/${shareId}/item/trash`,
                     method: 'post',
@@ -208,7 +208,7 @@ export const restoreItems = async (
 ) =>
     (
         await Promise.all(
-            batchByShareId(items, mapToRevision).map(async ({ shareId, items: Items }) => {
+            batchByShareId(items, intoRevisionID).map(async ({ shareId, items: Items }) => {
                 const response = await api({
                     url: `pass/v1/share/${shareId}/item/untrash`,
                     method: 'post',
@@ -228,7 +228,7 @@ export const deleteItems = async (
 ) =>
     (
         await Promise.all(
-            batchByShareId(items, mapToRevision).map(async ({ shareId, items: Items }) => {
+            batchByShareId(items, intoRevisionID).map(async ({ shareId, items: Items }) => {
                 await api({
                     url: `pass/v1/share/${shareId}/item`,
                     method: 'delete',

@@ -79,6 +79,7 @@ module.exports = {
         orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
         popup: './src/app/popup/index.tsx',
         settings: './src/app/pages/settings/index.tsx',
+        webauthn: './src/app/content/webauthn.ts',
         /* FF account communication fallback */
         ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
     },
@@ -178,7 +179,7 @@ module.exports = {
                         if (ENV !== 'production' && BUILD_TARGET === 'firefox') {
                             manifest.content_security_policy = {
                                 extension_pages:
-                                    "connect-src 'self' https: ws:; script-src 'self'; object-src 'self'; ",
+                                    "connect-src 'self' https: ws:; script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; ",
                             };
                         }
 
@@ -205,4 +206,7 @@ module.exports = {
             ],
         }),
     ],
+    experiments: {
+        asyncWebAssembly: true,
+    },
 };

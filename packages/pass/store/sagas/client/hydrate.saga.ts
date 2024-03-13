@@ -1,9 +1,8 @@
-import { call, put, select, takeLatest } from 'redux-saga/effects';
+import { put, select, takeLatest } from 'redux-saga/effects';
 
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { UserData } from '@proton/pass/lib/user/user.requests';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
@@ -15,7 +14,7 @@ import {
     syncLocalSettings,
 } from '@proton/pass/store/actions';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
-import { selectLocale } from '@proton/pass/store/selectors';
+import { selectLocale, selectPasskeyDomains } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
@@ -32,29 +31,6 @@ type HydrateCacheOptions = {
     onError?: () => Generator;
 };
 
-function* resolveUserState(cache: Maybe<PassCache>) {
-    if (cache?.state.user) return cache.state.user;
-
-    const { access, addresses, eventId, features, organization, user, userSettings }: UserData = yield getUserData();
-    yield put(syncLocalSettings({ locale: userSettings.Locale }));
-
-    const userState: HydratedUserState = {
-        ...access,
-        addresses,
-        eventId,
-        features,
-        organization,
-        user,
-        userSettings: {
-            Email: { Status: userSettings.Email.Status },
-            Telemetry: userSettings.Telemetry,
-            Password: { Mode: userSettings.Password.Mode },
-        },
-    };
-
-    return userState;
-}
-
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
@@ -70,7 +46,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
-        const userState: HydratedUserState = yield call(resolveUserState, cache);
+        const userState: HydratedUserState = yield cache?.state.user ?? getUserData();
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const currentState: State = yield select();
@@ -80,6 +56,9 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             ...(cache?.state ? config.merge(currentState, cache.state) : currentState),
             user: userState,
         };
+
+        const passkeyDomains = selectPasskeyDomains(state);
+        yield put(syncLocalSettings({ passkeyDomains, locale: userState.userSettings?.Locale }));
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such

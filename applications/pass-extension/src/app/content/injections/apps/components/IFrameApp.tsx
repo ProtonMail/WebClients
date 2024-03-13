@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { type FC, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import type {
@@ -12,9 +12,11 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
+import { INITIAL_WORKER_STATE } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
+import { Localized } from '@proton/pass/components/Core/Localized';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -28,44 +30,33 @@ import { logger } from '@proton/pass/utils/logger';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
-type IFrameContextValue = {
+export type IFrameContextValue = {
     endpoint: string;
     features: RecursivePartial<FeatureFlagState>;
     port: MaybeNull<Runtime.Port>;
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
     visible: boolean;
-    workerState: Maybe<Omit<AppState, 'UID'>>;
-    closeIFrame: (options?: IFrameCloseOptions) => void;
-    postMessage: (message: IFrameMessage) => void;
+    appState: AppState;
+    close: (options?: IFrameCloseOptions) => void;
+    forwardMessage: (message: IFrameMessage) => void;
+    postMessage: (message: any) => void;
     registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
-    resizeIFrame: (height: number) => void;
+    resize: (height: number) => void;
 };
 
-type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
+export const IFrameContext = createContext<MaybeNull<IFrameContextValue>>(null);
 
-const IFrameContext = createContext<IFrameContextValue>({
-    endpoint: '',
-    features: {},
-    port: null,
-    settings: INITIAL_SETTINGS,
-    userEmail: null,
-    visible: false,
-    workerState: undefined,
-    closeIFrame: noop,
-    postMessage: noop,
-    registerHandler: noop,
-    resizeIFrame: noop,
-});
+type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
 
 /* The IFrameContextProvider is responsible for opening a new
  * dedicated port with the service-worker and sending out port-
  * forwarding messages to the content-script's ports. We retrieve
  * the content-script's parent port name through postMessaging */
-export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({ endpoint, children }) => {
+export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({ endpoint, children }) => {
     const { i18n } = usePassCore();
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
-    const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
+    const [appState, setAppState] = useState<IFrameContextValue['appState']>(INITIAL_WORKER_STATE);
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
     const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
@@ -84,12 +75,14 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         window.document?.documentElement?.remove();
     };
 
+    const postMessage = useCallback((message: any) => window.parent.postMessage(message, '*'), []);
+
     useEffect(() => {
         /** Notify the parent content-script that the IFrame is ready and
          * the react app has bootstrapped and rendered. This is essential
          * to avoid relying on the `load` event which does not account for
          * react lifecycle */
-        window.parent.postMessage({ type: IFRAME_APP_READY_EVENT, endpoint }, '*');
+        postMessage({ type: IFRAME_APP_READY_EVENT, endpoint });
     }, []);
 
     /* when processing an `IFRAME_INJECT_PORT` message : verify the
@@ -126,7 +119,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
     );
 
     useEffect(() => {
-        if (userEmail === null && workerState && clientReady(workerState?.status)) {
+        if (userEmail === null && clientReady(appState.status)) {
             sendMessage
                 .onSuccess(
                     contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
@@ -134,7 +127,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
                 )
                 .catch(noop);
         }
-    }, [workerState, userEmail]);
+    }, [appState, userEmail]);
 
     useEffect(() => {
         setTtagLocales(locales);
@@ -147,7 +140,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
             port.onMessage.addListener((message: Maybe<IFrameMessage | WorkerMessage>) => {
                 switch (message?.type) {
                     case IFrameMessageType.IFRAME_INIT:
-                        setWorkerState(message.payload.workerState);
+                        setAppState(message.payload.workerState);
                         setSettings(message.payload.settings);
                         setFeatures(message.payload.features);
                         /** immediately set the locale on iframe init : the `IFramContextProvider`
@@ -173,7 +166,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
                     case WorkerMessageType.PORT_UNAUTHORIZED:
                         return destroyFrame();
                     case WorkerMessageType.WORKER_STATUS:
-                        return setWorkerState(message.payload.state);
+                        return setAppState(message.payload.state);
                 }
             });
 
@@ -197,7 +190,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
     /* Every message sent will be forwarded to the content-script
      * through the worker's MessageBroker.
      * see `@proton/pass/lib/extension/message/message-broker` */
-    const postMessage = useCallback(
+    const forwardMessage = useCallback(
         (rawMessage: IFrameMessage) => {
             try {
                 port?.postMessage(
@@ -211,16 +204,16 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         [port, forwardTo]
     );
 
-    const closeIFrame = useCallback(
-        (payload: IFrameCloseOptions = {}) => postMessage({ type: IFrameMessageType.IFRAME_CLOSE, payload }),
-        [postMessage]
+    const close = useCallback(
+        (payload: IFrameCloseOptions = {}) => forwardMessage({ type: IFrameMessageType.IFRAME_CLOSE, payload }),
+        [forwardMessage]
     );
 
-    const resizeIFrame = useCallback(
+    const resize = useCallback(
         (height: number) => {
-            if (height > 0) postMessage({ type: IFrameMessageType.IFRAME_DIMENSIONS, payload: { height } });
+            if (height > 0) forwardMessage({ type: IFrameMessageType.IFRAME_DIMENSIONS, payload: { height } });
         },
-        [postMessage]
+        [forwardMessage]
     );
 
     const registerHandler = useCallback(
@@ -241,43 +234,38 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         else activityProbe.cancel();
     }, [visible]);
 
-    const context = useMemo<IFrameContextValue>(
-        () => ({
-            endpoint,
-            features,
-            port,
-            settings,
-            userEmail,
-            visible,
-            workerState,
-            closeIFrame,
-            postMessage,
-            registerHandler,
-            resizeIFrame,
-        }),
-        [
-            features,
-            port,
-            settings,
-            userEmail,
-            visible,
-            workerState,
-            closeIFrame,
-            postMessage,
-            registerHandler,
-            resizeIFrame,
-        ]
+    return (
+        <IFrameContext.Provider
+            value={{
+                endpoint,
+                features,
+                port,
+                settings,
+                userEmail,
+                visible,
+                appState,
+                close,
+                forwardMessage,
+                postMessage,
+                registerHandler,
+                resize,
+            }}
+        >
+            <Localized>{children}</Localized>
+        </IFrameContext.Provider>
     );
-
-    return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;
 };
 
-export const useIFrameContext = () => useContext(IFrameContext);
+export const useIFrameContext = () => {
+    const ctx = useContext(IFrameContext);
+    if (!ctx) throw new Error('IFrameContext not initialized');
+    return ctx;
+};
 
 export const useRegisterMessageHandler = <M extends IFrameMessage['type']>(
     type: M,
     handler: IFramePortMessageHandler<M>
 ) => {
-    const { registerHandler } = useIFrameContext();
-    useEffect(() => registerHandler(type, handler), [type, handler, registerHandler]);
+    const ctx = useIFrameContext();
+    useEffect(() => ctx.registerHandler(type, handler), [type, handler, ctx.registerHandler]);
 };

@@ -31,7 +31,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
             switch (action) {
                 /* stash the form submission if the user discarded
                  * the autosave prompt */
-                case NotificationAction.AUTOSAVE_PROMPT:
+                case NotificationAction.AUTOSAVE:
                     return (
                         options?.discard &&
                         sendMessage(
@@ -43,7 +43,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
                     );
                 /* flag all MFA forms as ignorable on user discards the
                  * OTP autofill prompt */
-                case NotificationAction.AUTOFILL_OTP_PROMPT:
+                case NotificationAction.OTP:
                     if (options?.discard) {
                         ctx?.service.formManager
                             .getTrackedForms()
@@ -61,7 +61,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
         position: () => ({ top: 15, right: 15 }),
         dimensions: ({ action }) => ({
             width: NOTIFICATION_WIDTH,
-            height: action === NotificationAction.AUTOFILL_OTP_PROMPT ? NOTIFICATION_HEIGHT_SM : NOTIFICATION_HEIGHT,
+            height: action === NotificationAction.OTP ? NOTIFICATION_HEIGHT_SM : NOTIFICATION_HEIGHT,
         }),
     });
 
