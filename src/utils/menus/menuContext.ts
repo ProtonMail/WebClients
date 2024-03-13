@@ -1,4 +1,4 @@
-import { BrowserView, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
+import { BrowserView, ContextMenuParams, Menu, MenuItemConstructorOptions, app, clipboard } from "electron";
 import { c } from "ttag";
 import { isMac, smartTruncateText } from "../helpers";
 import { getCurrentView, getMainWindow } from "../view/viewManagement";
@@ -55,6 +55,14 @@ const getContextEditFlags = (props: ContextMenuParams) => {
     if (props.editFlags.canCopy) {
         template.push({ role: "copy" });
     }
+
+    if (props.editFlags.canCopy && props.linkURL) {
+        template.push({
+            label: c("Context menu").t`Copy link`,
+            click: () => clipboard.writeText(props.linkURL),
+        });
+    }
+
     if (props.editFlags.canPaste) {
         template.push({ role: "paste" });
     }
