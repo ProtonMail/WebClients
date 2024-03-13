@@ -16,6 +16,7 @@ import type { InjectionService } from '../services/injection';
 import type { LoggerService } from '../services/logger';
 import type { OnboardingService } from '../services/onboarding';
 import type { OTPService } from '../services/otp';
+import type { Passkeyservice } from '../services/passkey';
 import type { SettingsService } from '../services/settings';
 import type { StorageService } from '../services/storage';
 import type { StoreService } from '../services/store';
@@ -45,6 +46,7 @@ export interface WorkerContextInterface {
         logger: LoggerService;
         onboarding: OnboardingService;
         otp: OTPService;
+        passkey: Passkeyservice;
         settings: SettingsService;
         storage: StorageService;
         store: StoreService;

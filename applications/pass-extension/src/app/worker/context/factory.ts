@@ -8,10 +8,12 @@ import { createAutoSaveService } from 'proton-pass-extension/app/worker/services
 import { createExportService } from 'proton-pass-extension/app/worker/services/export';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
+import { createImportService } from 'proton-pass-extension/app/worker/services/import';
 import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import { createOnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
+import { createPasskeyService } from 'proton-pass-extension/app/worker/services/passkey';
 import { createSettingsService } from 'proton-pass-extension/app/worker/services/settings';
 import { createStorageService } from 'proton-pass-extension/app/worker/services/storage';
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
@@ -43,7 +45,6 @@ import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { createImportService } from '../services/import';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
@@ -72,6 +73,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             logger: createLoggerService(storage.local),
             onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
+            passkey: createPasskeyService(),
             settings: createSettingsService(),
             storage,
             store: createStoreService(),

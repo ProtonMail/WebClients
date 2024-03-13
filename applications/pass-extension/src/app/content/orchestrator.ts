@@ -10,6 +10,7 @@ import { createActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
+import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -96,11 +97,7 @@ void (async () => {
         const documentElement = document.ownerDocument || document;
         if (!documentElement?.body) return;
 
-        await new Promise<void>((resolve) => {
-            const { readyState } = document;
-            if (readyState === 'complete' || readyState === 'interactive') return resolve();
-            window.addEventListener('load', () => resolve(), { once: true });
-        });
+        await waitForPageReady();
 
         /** In Firefox, stale content-scripts are automatically disabled and
          * new ones are re-injected as needed. Consequently, the destroy sequence

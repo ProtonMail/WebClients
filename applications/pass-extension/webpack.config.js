@@ -79,6 +79,7 @@ module.exports = {
         orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
         popup: './src/app/popup/index.tsx',
         settings: './src/app/pages/settings/index.tsx',
+        webauthn: './src/app/content/webauthn.ts',
         /* FF account communication fallback */
         ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
     },
