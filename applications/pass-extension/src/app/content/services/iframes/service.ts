@@ -98,9 +98,10 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                     root: service.root,
                     onDestroy: () => (state.apps.dropdown = null),
                 });
+
+                onAttached(state.apps.dropdown);
             }
 
-            onAttached(state.apps.dropdown);
             return state.apps.dropdown;
         }),
 
@@ -113,9 +114,10 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                     root: service.root,
                     onDestroy: () => (state.apps.notification = null),
                 });
+
+                onAttached(state.apps.notification);
             }
 
-            onAttached(state.apps.notification);
             return state.apps.notification;
         }),
     };

@@ -1,20 +1,22 @@
-import type { Item, ItemRevision } from '../data';
-import type { FormEntryPrompt } from './form';
+import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
+import type { SelectedItem } from '@proton/pass/types/data';
 
-export enum AutoSaveType {
-    NEW,
-    UPDATE,
+export enum AutosaveType {
+    NEW = 'NEW',
+    UPDATE = 'UPDATE',
 }
 
-export type AutoSavePromptOptions =
-    | { shouldPrompt: false }
-    | {
-          shouldPrompt: true;
-          data: { action: AutoSaveType.NEW } | { action: AutoSaveType.UPDATE; item: ItemRevision<'login'> };
-      };
+export type AutosaveData =
+    | { type: AutosaveType.NEW }
+    | { type: AutosaveType.UPDATE; selectedItem: SelectedItem; name: string };
 
-export type WithAutoSavePromptOptions<T, U = boolean> = T & {
-    autosave: Extract<AutoSavePromptOptions, { shouldPrompt: U }>;
+export type AutosavePayload = AutosaveData & {
+    domain: string;
+    name: string;
+    passkey?: SanitizedPasskey;
+    password: string;
+    username: string;
 };
 
-export type AutosavePayload = { item: Item<'login'>; submission: FormEntryPrompt };
+export type AutosavePrompt = { shouldPrompt: false } | { shouldPrompt: true; data: AutosaveData };
+export type WithAutosavePrompt<T, U = boolean> = T & { autosave: Extract<AutosavePrompt, { shouldPrompt: U }> };

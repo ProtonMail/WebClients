@@ -4,6 +4,14 @@ import type { Tabs } from 'webextension-polyfill';
 import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
+import type {
+    PasskeyCreatePayload,
+    PasskeyCreateResponse,
+    PasskeyGetPayload,
+    PasskeyGetResponse,
+    PasskeyQueryPayload,
+    SelectedPasskey,
+} from '@proton/pass/lib/passkeys/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
@@ -20,7 +28,7 @@ import type { AliasCreationDTO, AliasOptions, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillResult } from './autofill';
-import type { AutosavePayload, WithAutoSavePromptOptions } from './autosave';
+import type { AutosavePayload, WithAutosavePrompt } from './autosave';
 import type { FormEntry, FormEntryPrompt, NewFormEntry } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
@@ -85,6 +93,9 @@ export enum WorkerMessageType {
     ONBOARDING_CHECK = 'ONBOARDING_CHECK',
     ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
+    PASSKEY_CREATE = 'PASSKEY_CREATE',
+    PASSKEY_GET = 'PASSKEY_GET',
+    PASSKEY_QUERY = 'PASSKEY_QUERY',
     PAUSE_WEBSITE = 'PAUSE_WEBSITE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
     PING = 'PING',
@@ -112,7 +123,6 @@ export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION 
 export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ForkPayload>;
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
-
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
@@ -121,7 +131,7 @@ export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: Auth
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG };
-export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
+export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY, { domain?: string }>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosavePayload>;
@@ -144,6 +154,9 @@ export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK,
 export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
+export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
+export type PasskeyGetMessage = WithPayload<WorkerMessageType.PASSKEY_GET, PasskeyGetPayload>;
+export type PasskeyQueryMessage = WithPayload<WorkerMessageType.PASSKEY_QUERY, PasskeyQueryPayload>;
 export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
 export type PingMessage = { type: WorkerMessageType.PING };
@@ -200,6 +213,9 @@ export type WorkerMessage =
     | OnboardingCheckMessage
     | OnboardingRequestMessage
     | OTPCodeGenerateMessage
+    | PasskeyCreateMessage
+    | PasskeyGetMessage
+    | PasskeyQueryMessage
     | PauseWebsiteMessage
     | PermissionsUpdateMessage
     | PingMessage
@@ -240,7 +256,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
-    [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
+    [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutosavePrompt<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
@@ -248,6 +264,9 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
+    [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;
+    [WorkerMessageType.PASSKEY_GET]: PasskeyGetResponse;
+    [WorkerMessageType.PASSKEY_QUERY]: { passkeys: SelectedPasskey[] };
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.REGISTER_ELEMENTS]: { elements: PassElementsConfig };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
