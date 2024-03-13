@@ -27,7 +27,7 @@
         "node-gyp": "^10.0.1",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.27.0"
+        "terser": "^5.29.1"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -35,18 +35,18 @@
         "is-ci": "^3.0.1",
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-use-logical-spec": "^5.0.1",
-        "typescript": "^5.3.3"
+        "typescript": "^5.4.2"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
         "@types/jest-when": "^3.5.5",
-        "husky": "^9.0.10",
+        "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
         "prettier": "^3.2.5",
-        "sort-package-json": "^2.7.0"
+        "sort-package-json": "^2.8.0"
     },
-    "packageManager": "yarn@4.1.0",
+    "packageManager": "yarn@4.1.1",
     "engines": {
-        "node": ">= v20.11.0"
+        "node": ">= 20.11.1"
     }
 }
