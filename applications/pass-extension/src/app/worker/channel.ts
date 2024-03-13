@@ -14,15 +14,16 @@ import store from './store';
  * in order to save the latest popup state */
 const WorkerMessageBroker = createMessageBroker({
     allowExternal: [
-        WorkerMessageType.ACCOUNT_FORK,
         WorkerMessageType.ACCOUNT_EXTENSION,
-        WorkerMessageType.ACCOUNT_PROBE,
+        WorkerMessageType.ACCOUNT_FORK,
         WorkerMessageType.ACCOUNT_ONBOARDING,
+        WorkerMessageType.ACCOUNT_PROBE,
     ],
     strictOriginCheck: [
-        WorkerMessageType.AUTH_CHECK,
         WorkerMessageType.ALIAS_CREATE,
         WorkerMessageType.ALIAS_OPTIONS,
+        WorkerMessageType.AUTH_CHECK,
+        WorkerMessageType.AUTH_UNLOCK,
         WorkerMessageType.AUTOFILL_SELECT,
         WorkerMessageType.AUTOSAVE_REQUEST,
         WorkerMessageType.EXPORT_REQUEST,
@@ -31,8 +32,8 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ONBOARDING_ACK,
         WorkerMessageType.ONBOARDING_REQUEST,
         WorkerMessageType.OTP_CODE_GENERATE,
+        WorkerMessageType.PASSKEY_QUERY,
         WorkerMessageType.POPUP_INIT,
-        WorkerMessageType.AUTH_UNLOCK,
     ],
     onError: withContext((ctx, err) => {
         if (err instanceof Error && err.name === 'VersionMismatch') void ctx.service.activation.reload();

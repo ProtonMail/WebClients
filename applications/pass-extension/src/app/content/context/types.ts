@@ -3,6 +3,7 @@ import type { AutosaveService } from 'proton-pass-extension/app/content/services
 import type { DetectorService } from 'proton-pass-extension/app/content/services/form/detector';
 import type { FormManager } from 'proton-pass-extension/app/content/services/form/manager';
 import type { IFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
+import type { WebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
@@ -22,6 +23,7 @@ export interface ContentScriptContext {
         detector: DetectorService;
         formManager: FormManager;
         iframe: IFrameService;
+        webauthn: WebAuthNService;
     };
     scriptId: string;
     destroy: (options: { reason: string; recycle?: boolean }) => void;
