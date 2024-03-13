@@ -79,14 +79,15 @@ export const createAutoSaveService = () => {
             if (!currentItem) throw new Error(c('Error').t`Item does not exist`);
 
             const item = itemBuilder('login', currentItem.data);
+            const { passkey } = payload;
 
             item.get('metadata').set('name', payload.name);
 
             item.get('content')
-                .set('username', payload.username)
-                .set('password', payload.password)
+                .set('username', (username) => (passkey ? username : payload.username))
+                .set('password', (password) => (passkey ? password : ''))
                 .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
-                .set('passkeys', (passkeys) => (payload.passkey ? [...passkeys, payload.passkey] : passkeys));
+                .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
