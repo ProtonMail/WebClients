@@ -4,7 +4,7 @@ import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-nati
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import type { ForgeConfig } from "@electron-forge/shared-types";
-import { getExtraResource, getIco, getIcon, getName, isBetaRelease } from "./src/utils/config";
+import { getAppTransportSecuity, getExtraResource, getIco, getIcon, getName, isBetaRelease } from "./src/utils/config";
 
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { mainConfig } from "./webpack.main.config";
@@ -25,6 +25,7 @@ const config: ForgeConfig = {
         icon: `${__dirname}/assets/icons/${getIcon()}`,
         asar: true,
         name: getName(),
+        executableName: getName(),
         extraResource: getExtraResource(),
         // Required for macOS mailto protocol
         protocols: [
@@ -42,12 +43,16 @@ const config: ForgeConfig = {
             appleIdPassword: process.env.APPLE_PASSWORD!,
             teamId: process.env.APPLE_TEAM_ID!,
         },
+        extendInfo: {
+            ...getAppTransportSecuity(),
+        },
     },
     rebuildConfig: {},
     makers: [
         {
             name: "@electron-forge/maker-squirrel",
             config: {
+                name: "proton_mail", // Avoids clash with ProtonMail folder used by Bridge in appData
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
@@ -81,9 +86,34 @@ const config: ForgeConfig = {
             },
         },
         {
+            name: "@electron-forge/maker-rpm",
+            config: {
+                options: {
+                    bin: getName(),
+                    icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
+                    homepage: "https://proton.me/",
+                    categories: ["Utility"],
+                    mimeType: ["x-scheme-handler/mailto"],
+                },
+            },
+        },
+        {
+            name: "@electron-forge/maker-deb",
+            config: {
+                options: {
+                    bin: getName(),
+                    icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
+                    maintainer: "Proton",
+                    homepage: "https://proton.me/",
+                    categories: ["Utility"],
+                    mimeType: ["x-scheme-handler/mailto"],
+                },
+            },
+        },
+        {
             name: "@electron-forge/maker-zip",
+            platforms: ["win32", "darwin", "linux"],
             config: {},
-            platforms: ["win32", "win64", "darwin"],
         },
     ],
     publishers: [

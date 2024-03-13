@@ -1,18 +1,20 @@
 import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
-import { resetBadge } from "../../ipc/badge";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
+import { resetBadge } from "../../ipc/notification";
+import { getSettings, saveSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
-import { clearStorage, isWindows } from "../helpers";
+import { clearStorage, isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import { getTrialEndURL } from "../urls/trial";
 import { getWindowConfig } from "../view/windowHelpers";
-import { handleBeforeHandle } from "./beforeUnload";
+import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 
 const config = getConfig();
+const settings = getSettings();
 
 let mailView: undefined | BrowserView = undefined;
 let calendarView: undefined | BrowserView = undefined;
@@ -26,7 +28,12 @@ export const viewCreationAppStartup = (session: Session) => {
     const window = createBrowserWindow(session);
     createViews(session);
     configureViews();
-    loadMailView(mainWindow);
+
+    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
+    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
+    setTimeout(() => {
+        loadMailView(mainWindow);
+    }, delay);
 
     mainWindow.on("close", (ev) => {
         macOSExitEvent(mainWindow, ev);
@@ -83,13 +90,15 @@ const configureViews = () => {
 };
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
-    const padding = { top: 16, right: 8, bottom: 16, left: 8 };
-    if (isWindows) {
+    if (isWindows || isLinux) {
+        const windowWidth = isWindows ? 16 : 0;
+        const windowHeight = isWindows ? 32 : 24;
+
         return {
-            x: bounds.x + padding.left,
-            y: bounds.y + padding.top,
-            width: bounds.width - padding.left - padding.right,
-            height: bounds.height - padding.top - padding.bottom,
+            x: bounds.x,
+            y: bounds.y,
+            width: bounds.width - windowWidth,
+            height: bounds.height - windowHeight,
         };
     }
     return bounds;
@@ -136,15 +145,18 @@ export const updateView = (target: VIEW_TARGET) => {
     const window = mainWindow;
     if (target === "mail" && currentView !== "mail") {
         loadMailView(window);
+        mainWindow.title = "Proton Mail";
         currentView = "mail";
-        return;
+        return mailView;
     } else if (target === "calendar" && currentView !== "calendar") {
         loadCalendarView(window);
         currentView = "calendar";
-        return;
+        mainWindow.title = "Proton Calendar";
+        return calendarView;
     } else if (target === "account" && currentView !== "account") {
         loadAccountView(window);
         currentView = "account";
+        mainWindow.title = "Proton";
         return;
     }
 
@@ -172,6 +184,24 @@ export const setTrialEnded = () => {
     calendarView?.webContents?.loadURL(url);
 };
 
+export const getSpellCheckStatus = () => {
+    return mainWindow?.webContents?.session?.spellCheckerEnabled ?? settings.spellChecker;
+};
+
+export const toggleSpellCheck = (enabled: boolean) => {
+    saveSettings({ ...settings, spellChecker: enabled });
+    mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
+};
+
 export const getMailView = () => mailView;
 export const getCalendarView = () => calendarView;
 export const getMainWindow = () => mainWindow;
+
+export const getCurrentView = () => {
+    if (currentView === "mail") {
+        return mailView;
+    } else if (currentView === "calendar") {
+        return calendarView;
+    }
+    return accountView;
+};

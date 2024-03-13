@@ -1,16 +1,9 @@
 import { app } from "electron";
 import { type } from "os";
-import { getAppURL } from "../store/urlStore";
-
-export interface URLConfig {
-    account: string;
-    mail: string;
-    calendar: string;
-}
+import { URLConfig, getAppURL } from "../store/urlStore";
 
 interface Config {
     appTitle: string;
-    devTools: boolean;
     url: URLConfig;
 }
 
@@ -23,14 +16,12 @@ const localUrls = {
 };
 
 const devConfig: Config = {
-    appTitle: "DEV - Proton",
-    devTools: true,
+    appTitle: "Proton Mail",
     url: localUrls,
 };
 
 const prodConfig: Config = {
-    appTitle: "Proton",
-    devTools: false,
+    appTitle: "Proton Mail",
     url: getAppURL(),
 };
 
@@ -61,7 +52,33 @@ export const getName = () => {
 
 export const getExtraResource = () => {
     if (type() === "Darwin") {
-        return ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"];
+        return ["./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
     }
     return [];
+};
+
+export const isProdEnv = (config: Config) => {
+    return config.url.account.endsWith("proton.me");
+};
+
+const transportSecuirityException = {
+    NSExceptionAllowsInsecureHTTPLoads: false,
+    NSIncludesSubdomains: true,
+    NSThirdPartyExceptionRequiresForwardSecrecy: false,
+    NSThirdPartyExceptionAllowsInsecureHTTPLoads: false,
+};
+
+export const getAppTransportSecuity = () => {
+    return {
+        NSAppTransportSecurity: {
+            NSAllowsArbitraryLoads: true,
+            NSExceptionDomains: {
+                "update.electronjs.org": { ...transportSecuirityException },
+                "proton.me": { ...transportSecuirityException },
+                "mail.proton.me": { ...transportSecuirityException },
+                "account.proton.me": { ...transportSecuirityException },
+                "calendar.proton.me": { ...transportSecuirityException },
+            },
+        },
+    };
 };

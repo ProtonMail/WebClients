@@ -58,6 +58,16 @@ export const isAccoutLite = (host: string) => {
     }
 };
 
+export const isUpgradeURL = (host: string) => {
+    try {
+        const hostURl = new URL(host);
+        return hostURl.pathname.includes("/upgrade") && hostURl.searchParams.size > 0;
+    } catch (error) {
+        Logger.error("isUpgradeURL", error);
+        return false;
+    }
+};
+
 export const isUpsellURL = (host: string) => {
     try {
         const hostURl = new URL(host);

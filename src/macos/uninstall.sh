@@ -10,9 +10,10 @@ then
 
   rm -rf $HOME/Library/Application\ Support/Proton\ Mail/
   rm -rf $HOME/Library/Logs/Proton\ Mail/
-  rm -rf Applications/Proton\ Mail.app
+  rm -rf /Applications/Proton\ Mail.app
+  rm -rf /Applications/Proton\ Mail\ Beta.app
 
-  rm -rf Applications/Uninstall\ Proton\ Mail.app
+  rm -rf Applications/Proton\ Mail\ Uninstaller.app
   
   osascript <<EOF
   display dialog "Proton Mail successfully uninstalled." buttons {"Quit"} default button 1 with title "Proton Mail Uninstall"

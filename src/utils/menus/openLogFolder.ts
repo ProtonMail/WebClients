@@ -1,7 +1,7 @@
 import { app, shell } from "electron";
 import Logger from "electron-log";
 import { join } from "path";
-import { isMac, isWindows } from "../helpers";
+import { isLinux, isMac, isWindows } from "../helpers";
 
 export const openLogFolder = () => {
     try {
@@ -12,6 +12,9 @@ export const openLogFolder = () => {
         } else if (isWindows) {
             Logger.info("openLogFolder Windows");
             shell.openPath(join(home, "/AppData/Roaming/Proton Mail/logs"));
+        } else if (isLinux) {
+            Logger.info("openLogFolder Windows");
+            shell.openPath(join(home, "/.config/Proton Mail/logs"));
         }
         Logger.info("openLogFolder, not macOS or Windows");
     } catch (error) {

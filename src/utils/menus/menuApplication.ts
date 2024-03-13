@@ -2,7 +2,8 @@ import { app, Menu, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac, isWindows } from "../helpers";
-import { getMainWindow } from "../view/viewManagement";
+import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
+import { areDevToolsAvailable } from "../view/windowHelpers";
 import { openLogFolder } from "./openLogFolder";
 
 interface MenuInsertProps {
@@ -63,6 +64,14 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "paste" },
                 { role: "pasteAndMatchStyle", accelerator: isMac ? "Cmd+Shift+V" : "Ctrl+Shift+V" },
                 { role: "selectAll" },
+                {
+                    label: c("App menu").t`Check spelling while typing`,
+                    type: "checkbox",
+                    checked: getSpellCheckStatus(),
+                    click: (item) => {
+                        toggleSpellCheck(item.checked);
+                    },
+                },
             ],
         },
         {
@@ -123,6 +132,16 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "unhide" },
                 { type: "separator" },
                 {
+                    label: c("App menu").t`Start Proton Mail at login`,
+                    type: "checkbox",
+                    checked: app.getLoginItemSettings().openAtLogin,
+                    click: () => {
+                        app.setLoginItemSettings({
+                            openAtLogin: !app.getLoginItemSettings().openAtLogin,
+                        });
+                    },
+                },
+                {
                     label: c("App menu").t`Uninstall Proton Mail`,
                     type: "normal",
                     click: () => uninstallProton(),
@@ -154,7 +173,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         ],
     });
 
-    if (!isPackaged) {
+    if (areDevToolsAvailable()) {
         insertInMenu({
             menu: temp,
             key: "View",

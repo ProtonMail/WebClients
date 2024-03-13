@@ -1,4 +1,4 @@
-import { BrowserView, dialog } from "electron";
+import { BrowserView, app, dialog } from "electron";
 import Logger from "electron-log";
 import { c } from "ttag";
 
@@ -23,4 +23,18 @@ export const handleBeforeHandle = (view: BrowserView) => {
             ev.preventDefault();
         }
     });
+};
+
+export const urlOverrideError = () => {
+    const choice = dialog.showMessageBoxSync({
+        type: "error",
+        title: "Invalid URL override",
+        message: "The URL override is invalid, please check the logs for more information.",
+        buttons: ["OK"],
+        defaultId: 0,
+    });
+
+    if (choice === 0) {
+        app.quit();
+    }
 };

@@ -1,7 +1,28 @@
+import Logger from "electron-log";
 import Store from "electron-store";
-import { URLConfig } from "../utils/config";
+import { z } from "zod";
+import { getSettings, saveSettings } from "./settingsStore";
 
 const store = new Store();
+
+const settings = getSettings();
+
+const urlValidators = (subdomain: string) => {
+    return z
+        .string()
+        .url()
+        .includes(subdomain)
+        .includes("proton")
+        .refine((value) => !value.endsWith("/"));
+};
+
+const urlSchema = z.object({
+    account: urlValidators("account"),
+    mail: urlValidators("mail"),
+    calendar: urlValidators("calendar"),
+});
+
+export type URLConfig = z.infer<typeof urlSchema>;
 
 export const defaultAppURL: URLConfig = {
     account: "https://account.proton.me",
@@ -9,12 +30,25 @@ export const defaultAppURL: URLConfig = {
     calendar: "https://calendar.proton.me",
 };
 
-export const saveAppURL = () => {
-    if (!store.has("appURL")) {
-        store.set("appURL", defaultAppURL);
+const validateURL = (override?: unknown): null | URLConfig => {
+    saveSettings({ ...settings, overrideError: false });
+    if (!override) {
+        return null;
+    }
+
+    try {
+        return urlSchema.parse(override);
+    } catch (error) {
+        Logger.error("Invalid URL override", error);
+        saveSettings({ ...settings, overrideError: true });
+
+        return null;
     }
 };
 
 export const getAppURL = (): URLConfig => {
-    return (store.get("appURL") as URLConfig) ?? defaultAppURL;
+    const override = store.get("overrideURL");
+    const validatedOverride = validateURL(override);
+
+    return validatedOverride ?? defaultAppURL;
 };
