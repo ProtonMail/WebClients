@@ -10,6 +10,7 @@ export const NOTIFICATION_HEIGHT_SM = 220;
 export const NOTIFICATION_WIDTH = 320;
 
 export const IFRAME_APP_READY_EVENT = 'PassIFrameReady';
+export const CLIENT_SCRIPT_READY_EVENT = 'PassClientScriptReady';
 export const PASS_ROOT_REMOVED_EVENT = 'PassRootRemoved';
 
 /* heuristic max detection time duration in ms for sanity checking */

@@ -3,6 +3,7 @@ import { createAutosaveService } from 'proton-pass-extension/app/content/service
 import { createDetectorService } from 'proton-pass-extension/app/content/services/form/detector';
 import { createFormManager } from 'proton-pass-extension/app/content/services/form/manager';
 import { createIFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
+import { createWebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import { hasCriteria } from '@proton/pass/lib/settings/criteria';
@@ -50,6 +51,7 @@ export const createContentScriptContext = (options: {
                 },
             }),
             iframe: createIFrameService(options.elements),
+            webauthn: createWebAuthNService(),
         },
 
         destroy: options.destroy,
