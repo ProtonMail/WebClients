@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import Card from '@proton/atoms/Card/Card';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { WalletSelector } from '../../../atoms';
-import { IWasmApiWalletData } from '../../../types';
 import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';

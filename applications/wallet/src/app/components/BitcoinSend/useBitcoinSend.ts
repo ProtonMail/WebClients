@@ -1,8 +1,7 @@
 import { useCallback, useState } from 'react';
 
 import { WasmPaymentLink, WasmPaymentLinkKind } from '@proton/andromeda';
-
-import { WalletType } from '../../types';
+import { WalletType } from '@proton/wallet';
 
 export enum BitcoinSendViews {
     PaymentLinkInput,

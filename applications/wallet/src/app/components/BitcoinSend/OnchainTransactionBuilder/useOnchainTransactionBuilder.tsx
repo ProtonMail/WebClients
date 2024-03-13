@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { IWasmApiWalletData } from '@proton/wallet';
+
 import { WalletAndAccountSelectorValue } from '../../../atoms';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
-import { IWasmApiWalletData } from '../../../types';
 import { getAccountWithChainDataFromManyWallets, getDefaultAccount, getSelectedWallet } from '../../../utils';
 
 export const useOnchainTransactionBuilder = (wallets: IWasmApiWalletData[], defaultWalletId?: string) => {

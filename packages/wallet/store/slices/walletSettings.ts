@@ -4,19 +4,20 @@ import { type ModelState, serverEvent } from '@proton/account';
 import { WasmUserSettings as WalletSettings, WasmBitcoinUnit } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { WalletSettingsThunkArguments } from '../thunk';
+import { WalletThunkArguments } from '../thunk';
+
+const name = 'wallet_settings' as const;
 
 interface State {
-    walletSettings: ModelState<WalletSettings>;
+    [name]: ModelState<WalletSettings>;
 }
 
-const name = 'walletSettings';
 type SliceState = State[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
 export const selectWalletSettings = (state: State) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, State, WalletSettingsThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, State, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.walletApi
             .settings()

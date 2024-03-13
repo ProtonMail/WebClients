@@ -11,10 +11,10 @@ import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
 import { Tooltip } from '@proton/components/components/tooltip';
 import { SECOND } from '@proton/shared/lib/constants';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { WalletSelector } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
-import { IWasmApiWalletData } from '../../types';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 const CopyPasteButton = ({ value }: { value: string }) => {
