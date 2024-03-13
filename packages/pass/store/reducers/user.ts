@@ -21,6 +21,7 @@ export type UserSettingsState = {
     Email: { Status: SETTINGS_STATUS };
     Password: { Mode: SETTINGS_PASSWORD_MODE };
     Telemetry: 1 | 0;
+    Locale?: string;
 };
 
 export type UserAccessState = {
