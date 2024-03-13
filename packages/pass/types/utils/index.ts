@@ -5,7 +5,7 @@ export type Maybe<T> = T | undefined;
 export type MaybeNull<T> = T | null;
 export type MaybeArray<T> = T | T[];
 export type MaybePromise<T> = T | Promise<T>;
-export type Unpack<T> = T extends (infer U)[] ? U : never;
+export type Unpack<T> = T extends (infer U)[] ? U : T extends readonly (infer U)[] ? U : never;
 
 export type RequiredNonNull<T, K extends keyof T = keyof T> = Omit<T, K> & {
     [P in K]-?: P extends K ? NonNullable<T[P]> : T[P];

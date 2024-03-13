@@ -1,3 +1,4 @@
+import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { AliasMailbox } from '@proton/pass/types';
 
 import type { ExtraFieldGroupValues, UrlGroupValues } from './fields';
@@ -12,11 +13,12 @@ export type NoteFormValues = {
 
 export type LoginItemFormValues = {
     name: string;
-    shareId: string;
-    username: string;
-    password: string;
     note: string;
+    passkeys: SanitizedPasskey[];
+    password: string;
+    shareId: string;
     totpUri: string;
+    username: string;
     withAlias: boolean;
 } & AliasFormValues &
     UrlGroupValues &

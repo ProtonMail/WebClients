@@ -7,9 +7,9 @@ import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import type { DropdownIcon } from '@proton/pass/types/data/pass-icon';
 import { isPassIcon } from '@proton/pass/types/data/pass-icon';
 
-export type DropdownItemIconProps = { url: string; icon: IconName } | { url?: never; icon: DropdownIcon };
+export type ListItemIconProps = { url: string; icon: IconName } | { url?: never; icon: DropdownIcon };
 
-export const DropdownItemIcon: FC<DropdownItemIconProps> = ({ url, icon }) =>
+export const ListItemIcon: FC<ListItemIconProps> = ({ url, icon }) =>
     isPassIcon(icon) ? (
         <IconBox size={5} mode="transparent">
             <PassIcon status={icon} size={6} className="absolute inset-center" />

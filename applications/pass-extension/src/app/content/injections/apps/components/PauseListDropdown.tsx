@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { type IFrameCloseOptions } from 'proton-pass-extension/app/content/types/iframe';
+import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -13,10 +13,10 @@ type Props = {
     dense?: boolean;
     hostname: string;
     label: string;
-    visible?: boolean;
-    onClose?: (options?: IFrameCloseOptions) => void;
 };
-export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label, visible, onClose }) => {
+export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label }) => {
+    const { close, visible } = useIFrameContext();
+
     const addToPauseList = () => {
         if (hostname) {
             void sendMessage(
@@ -27,7 +27,7 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label,
             );
         }
 
-        onClose?.();
+        close();
     };
 
     return (

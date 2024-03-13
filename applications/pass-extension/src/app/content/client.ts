@@ -22,8 +22,8 @@ import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
-import type { ContentScriptClientService } from './services';
-import { createContentScriptClient } from './services';
+import type { ContentScriptClientService } from './services/script';
+import { createContentScriptClient } from './services/script';
 
 const scriptId = uniqueId(16);
 const mainFrame = isMainFrame();

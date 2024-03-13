@@ -37,6 +37,7 @@ export type SettingsState = {
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
     offlineEnabled?: boolean;
+    passkeyDomains?: string[];
 };
 
 /* proxied settings will also be copied on local
