@@ -768,19 +768,26 @@ export class Api extends KeyManagementApi {
      * @param options.forwarderPrivateKey - private key of original recipient, initiating the forwarding
      * @param options.userIDsForForwardeeKey - userIDs to attach to forwardee key
      * @param options.passphrase - passphrase to encrypt the generated forwardee key with
+     * @param options.date - date to use as key creation time, instead of server time
      */
     async generateE2EEForwardingMaterial({
         forwarderKey,
         userIDsForForwardeeKey,
         passphrase,
+        date,
     }: {
         forwarderKey: PrivateKeyReference;
         userIDsForForwardeeKey: MaybeArray<UserID>;
         passphrase: string | null;
+        date?: Date;
     }) {
         const originalKey = this.keyStore.get(forwarderKey._idx) as PrivateKey;
 
-        const { proxyInstances, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
+        const { proxyInstances, forwardeeKey } = await generateForwardingMaterial(
+            originalKey,
+            userIDsForForwardeeKey,
+            date
+        );
 
         const maybeEncryptedKey = passphrase
             ? await encryptKey({ privateKey: forwardeeKey, passphrase })
@@ -795,12 +802,18 @@ export class Api extends KeyManagementApi {
     /**
      * Check whether a key can be used as input to `generateE2EEForwardingMaterial` to setup E2EE forwarding.
      */
-    async doesKeySupportE2EEForwarding({ forwarderKey: keyReference }: { forwarderKey: PrivateKeyReference }) {
+    async doesKeySupportE2EEForwarding({
+        forwarderKey: keyReference,
+        date,
+    }: {
+        forwarderKey: PrivateKeyReference;
+        date?: Date;
+    }) {
         const key = this.keyStore.get(keyReference._idx);
         if (!key.isPrivate()) {
             return false;
         }
-        const supportsForwarding = await doesKeySupportForwarding(key);
+        const supportsForwarding = await doesKeySupportForwarding(key, date);
         return supportsForwarding;
     }
 
@@ -812,14 +825,14 @@ export class Api extends KeyManagementApi {
      * private key is imported (not the corresponding public key).
      * @throws if a PublicKeyReference containing a public key is given
      */
-    async isE2EEForwardingKey({ key: keyReference }: { key: KeyReference }) {
+    async isE2EEForwardingKey({ key: keyReference, date }: { key: KeyReference; date?: Date }) {
         // We support PublicKeyReference to determine the status of inactive/undecryptable address keys.
         // A PublicKeyReference can contain an encrypted private key.
         const key = this.keyStore.get(keyReference._idx);
         if (!key.isPrivate()) {
             throw new Error('Unexpected public key');
         }
-        const forForwarding = await isForwardingKey(key);
+        const forForwarding = await isForwardingKey(key, date);
         return forForwarding;
     }
 
