@@ -1,5 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
-import type { FeatureFlagState, HydratedAccessState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, HydratedAccessState, HydratedUserState } from '@proton/pass/store/reducers';
 import { type ApiOptions, type MaybeNull, PlanType } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
@@ -59,7 +59,7 @@ export type UserData = {
 };
 
 /** Resolves all necessary user data to build up the user state */
-export const getUserData = async (): Promise<UserData> => {
+export const getUserData = async (): Promise<HydratedUserState> => {
     const [user, eventId, userSettings, addresses, access, features] = await Promise.all([
         getUserModel(),
         getUserLatestEventID(),
@@ -72,12 +72,17 @@ export const getUserData = async (): Promise<UserData> => {
     const organization = access.plan?.Type === PlanType.business ? await getUserOrganization() : null;
 
     return {
-        access,
+        ...access,
         addresses,
         eventId,
         features,
-        user,
-        userSettings,
         organization,
+        user,
+        userSettings: {
+            Locale: userSettings.Locale,
+            Email: { Status: userSettings.Email.Status },
+            Telemetry: userSettings.Telemetry,
+            Password: { Mode: userSettings.Password.Mode },
+        },
     };
 };
