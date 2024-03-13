@@ -11,7 +11,9 @@ type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => Pr
 const itemListPresenter: ItemListPresenterMap = {
     note: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: isEmptyString(data.metadata.note.v) ? c('Warning').t`Empty note` : deobfuscate(data.metadata.note),
+        subheading: isEmptyString(data.metadata.note.v)
+            ? c('Warning').t`Empty note`
+            : deobfuscate(data.metadata.note).split('\n')[0],
     }),
     login: ({ data }) => ({
         heading: data.metadata.name,
