@@ -2,9 +2,9 @@ import { memo } from 'react';
 
 import { AppVersion, AppsDropdown, MainLogo, Sidebar, SidebarList, SidebarNav } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import changelog from '../../../../../CHANGELOG.md';
-import { IWasmApiWalletData } from '../../../types';
 import { BitcoinMovementNavItems } from './BitcoinMovementNavItems';
 import { SecurityChecklist } from './SecurityChecklist';
 import { TransactionsNavItem } from './TransactionsNavItem';

@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { WasmPaymentLink } from '@proton/andromeda';
 import { Card } from '@proton/atoms/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { WalletSelector } from '../../../atoms';
-import { IWasmApiWalletData } from '../../../types';
 import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';

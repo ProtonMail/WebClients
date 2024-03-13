@@ -8,7 +8,7 @@ interface Props extends ReturnType<typeof getWalletAppRoutes> {
     prefix: string;
 }
 
-export const WalletSettingsSidebar = ({ header, routes, prefix }: Props) => {
+const WalletSettingsSidebar = ({ header, routes, prefix }: Props) => {
     return (
         <SidebarList>
             <SidebarListItem className="navigation-link-header-group">
@@ -44,3 +44,5 @@ export const WalletSettingsSidebar = ({ header, routes, prefix }: Props) => {
         </SidebarList>
     );
 };
+
+export default WalletSettingsSidebar;

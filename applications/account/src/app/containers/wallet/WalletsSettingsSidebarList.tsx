@@ -12,6 +12,7 @@ import {
     useToggle,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { useApiWalletsData } from '@proton/wallet';
 
 interface Props {
     prefix: string;
@@ -19,11 +20,7 @@ interface Props {
 }
 
 export const WalletsSettingsSidebarList = ({ prefix, config }: Props) => {
-    // TODO: Connect this to API a5f253e4
-    const wallets: any[] = [
-        { kind: 'lightning', name: 'Lightning 01', id: 0 },
-        { kind: 'onchain', name: 'Bitcoin 01', id: 1 },
-    ];
+    const [wallets] = useApiWalletsData();
 
     const headerId = generateUID('WalletsListHeader');
     const contentId = generateUID('WalletsListContent');
@@ -65,14 +62,14 @@ export const WalletsSettingsSidebarList = ({ prefix, config }: Props) => {
                 <section aria-labelledby={headerId} aria-hidden={!expanded}>
                     <ul className="unstyled" id={contentId} hidden={!expanded}>
                         {wallets.map((wallet) => (
-                            <SidebarListItem key={wallet.id}>
+                            <SidebarListItem key={wallet.Wallet.ID}>
                                 <SidebarListItemLink
-                                    to={`${sectionPath}/${wallet.id}`}
+                                    to={`${sectionPath}/${wallet.Wallet.ID}`}
                                     className="navigation-link-child"
                                 >
                                     <SidebarListItemContent left={<Icon name="wallet" />}>
-                                        <span title={wallet.name} className="text-ellipsis">
-                                            {wallet.name}
+                                        <span title={wallet.Wallet.Name} className="text-ellipsis">
+                                            {wallet.Wallet.Name}
                                         </span>
                                     </SidebarListItemContent>
                                 </SidebarListItemLink>

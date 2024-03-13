@@ -4,51 +4,53 @@ import { ModelState } from '@proton/account';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { IWasmApiWalletData } from '../../types';
-import { WalletEventLoop } from '../../types/eventLoop';
-import { replaceAt } from '../../utils/array';
-import { stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils/eventLoop';
+import { IWasmApiWalletData, WalletEventLoop } from '../../types';
+import { replaceAt, stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils';
 import { WalletThunkArguments } from '../thunk';
 
-export const name = 'api_wallets_data' as const;
+export const apiWalletsDataSliceName = 'api_wallets_data' as const;
 
 export interface ApiWalletsDataState {
-    [name]: ModelState<IWasmApiWalletData[]>;
+    [apiWalletsDataSliceName]: ModelState<IWasmApiWalletData[]>;
 }
 
-type SliceState = ApiWalletsDataState[typeof name];
+type SliceState = ApiWalletsDataState[typeof apiWalletsDataSliceName];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectApiWalletsData = (state: ApiWalletsDataState) => state[name];
+export const selectApiWalletsData = (state: ApiWalletsDataState) => state[apiWalletsDataSliceName];
 
-const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunkArguments>(`${name}/fetch`, {
-    miss: ({ extraArgument }) => {
-        return extraArgument.walletApi
-            .wallet()
-            .getWallets()
-            .then(async (payload) => {
-                const wallets = payload[0];
+const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunkArguments>(
+    `${apiWalletsDataSliceName}/fetch`,
+    {
+        miss: ({ extraArgument }) => {
+            console.log('extraArgument.walletApi', extraArgument.walletApi);
+            return extraArgument.walletApi
+                .wallet()
+                .getWallets()
+                .then(async (payload) => {
+                    const wallets = payload[0];
 
-                return Promise.all(
-                    wallets.map(async ({ Wallet, WalletKey, WalletSettings }) => {
-                        const accounts: WasmApiWalletAccount[] = await extraArgument.walletApi
-                            .wallet()
-                            .getWalletAccounts(Wallet.ID)
-                            .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Account))
-                            .catch(() => []);
+                    return Promise.all(
+                        wallets.map(async ({ Wallet, WalletKey, WalletSettings }) => {
+                            const accounts: WasmApiWalletAccount[] = await extraArgument.walletApi
+                                .wallet()
+                                .getWalletAccounts(Wallet.ID)
+                                .then((accounts) => accounts[0].map((accountPayload) => accountPayload.Account))
+                                .catch(() => []);
 
-                        return {
-                            Wallet: Wallet,
-                            WalletKey: WalletKey,
-                            WalletSettings: WalletSettings,
-                            WalletAccounts: accounts,
-                        };
-                    })
-                );
-            });
-    },
-    previous: previousSelector(selectApiWalletsData),
-});
+                            return {
+                                Wallet: Wallet,
+                                WalletKey: WalletKey,
+                                WalletSettings: WalletSettings,
+                                WalletAccounts: accounts,
+                            };
+                        })
+                    );
+                });
+        },
+        previous: previousSelector(selectApiWalletsData),
+    }
+);
 
 const initialState: SliceState = {
     value: undefined,
@@ -74,7 +76,7 @@ export const walletAccountDeletion = createAction(
 // TODO: handle wallet settings update
 
 const slice = createSlice({
-    name,
+    name: apiWalletsDataSliceName,
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -132,5 +134,5 @@ const slice = createSlice({
     },
 });
 
-export const apiWalletsDataReducer = { [name]: slice.reducer };
+export const apiWalletsDataReducer = { [apiWalletsDataSliceName]: slice.reducer };
 export const apiWalletsDataThunk = modelThunk.thunk;

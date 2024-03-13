@@ -1,2 +1,2 @@
-export * from './walletSettings';
-export { useGetWalletSettings, useWalletSettings } from './walletSettings/hooks';
+export * from './slices';
+export * from './hooks';

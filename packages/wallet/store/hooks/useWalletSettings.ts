@@ -1,6 +1,6 @@
 import { createHooks } from '@proton/redux-utilities';
 
-import { selectWalletSettings, walletSettingsThunk } from './index';
+import { selectWalletSettings, walletSettingsThunk } from '../slices/walletSettings';
 
 const hooks = createHooks(walletSettingsThunk, selectWalletSettings);
 

@@ -1,8 +1,9 @@
 import { createContext, useContext } from 'react';
 
 import { WasmNetwork } from '@proton/andromeda';
+import { IWasmApiWalletData } from '@proton/wallet';
 
-import { IWasmApiWalletData, WalletChainDataByWalletId } from '../../types';
+import { WalletChainDataByWalletId } from '../../types';
 import { SyncingMetadata } from './useWalletsChainData';
 
 export interface BitcoinBlockchainContextValue {

@@ -3,10 +3,11 @@ import { useMemo } from 'react';
 import { ChartDataset } from 'chart.js';
 
 import { WasmTransactionDetails } from '@proton/andromeda';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useBalanceEvolution } from '../../hooks/useBalanceEvolution';
-import { IWasmApiWalletData, WalletChainDataByWalletId } from '../../types';
+import { WalletChainDataByWalletId } from '../../types';
 import {
     getAccountBalance,
     getAccountWithChainDataFromManyWallets,

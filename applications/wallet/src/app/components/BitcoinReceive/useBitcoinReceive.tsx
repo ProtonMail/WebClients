@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { WasmPaymentLink } from '@proton/andromeda';
+import { IWasmApiWalletData, WalletType } from '@proton/wallet';
 
 import { WalletAndAccountSelectorValue, getDefaultFormat } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { IWasmApiWalletData } from '../../types';
-import { WalletType } from '../../types/api';
 import { getAccountWithChainDataFromManyWallets, getDefaultAccount, getSelectedWallet } from '../../utils';
 
 export interface UseBitcoinReceiveHelper {

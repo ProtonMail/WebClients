@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import clsx from '@proton/utils/clsx';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
-import { IWasmApiWalletData } from '../../types';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
 import { WelcomeCard } from './WelcomeCard';

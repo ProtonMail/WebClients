@@ -1,4 +1,5 @@
-import { IWasmApiWalletData } from '../../types';
+import { IWasmApiWalletData } from '@proton/wallet';
+
 import { LightningSimpleSend } from './LightningSimpleSend';
 import { OnchainSimpleSend } from './OnchainSimpleSend';
 import { OnchainTransactionBuilder } from './OnchainTransactionBuilder';

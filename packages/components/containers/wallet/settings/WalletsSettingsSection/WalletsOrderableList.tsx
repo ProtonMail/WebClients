@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ContainerGetter, SortEndHandler, arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import {
     Badge,
     OrderableTable,
@@ -14,41 +15,39 @@ import {
 } from '@proton/components/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { WALLET_SETTINGS_ROUTE } from '@proton/shared/lib/wallet';
+import { IWasmApiWalletData, WalletType, useApiWalletsData } from '@proton/wallet';
 
 interface Props {}
 
-// TODO: Connect this to API a5f253e4
-const WALLETS: any[] = [
-    { kind: 'onchain', name: 'Bitcoin 02', id: 1, priority: 0 },
-    { kind: 'onchain', name: 'Bitcoin 01', id: 2, priority: 1 },
-    { kind: 'lightning', name: 'Lightning 01', id: 0, priority: 2 },
-    { kind: 'onchain', name: 'Bitcoin 03', id: 3, priority: 3 },
-    { kind: 'onchain', name: 'Bitcoin 04', id: 4, priority: 4 },
-    { kind: 'onchain', name: 'Bitcoin 05', id: 5, priority: 5 },
-];
-
-const sWallets = WALLETS.sort(({ priority: priorityA }, { priority: priorityB }) => priorityA - priorityB);
-
 export const WalletsOrderableList = ({}: Props) => {
-    const [wallets, setWallets] = useState(
-        // wallets should be sorted by priority before
-        sWallets
-    );
+    const [tmpWallets, setTmpWallets] = useState<IWasmApiWalletData[]>([]);
 
-    if (!wallets.length) {
+    const [wallets, loadingWallets] = useApiWalletsData();
+
+    useEffect(() => {
+        const cloned = [...(wallets ?? [])];
+        cloned.sort((a, b) => a.Wallet.Priority - b.Wallet.Priority);
+        return setTmpWallets(cloned);
+    }, [wallets]);
+
+    if (loadingWallets) {
+        return <CircleLoader />;
+    }
+
+    if (!tmpWallets.length) {
         return null;
     }
 
-    const defaultOnchainWalletId = wallets.find(({ kind }) => kind === 'onchain').id;
-    const defaultLightningWalletId = wallets.find(({ kind }) => kind === 'lightning').id;
+    const defaultOnchainWalletId = tmpWallets.find((data) => data.Wallet.Type === WalletType.OnChain)?.Wallet.ID;
+    const defaultLightningWalletId = tmpWallets.find((data) => data.Wallet.Type === WalletType.Lightning)?.Wallet.ID;
 
     const getScrollContainer: ContainerGetter = () => document.querySelector('.main-area') as HTMLElement;
 
     const onSortEnd: SortEndHandler = async ({ oldIndex, newIndex }) => {
         try {
-            const nextWallets: any[] = arrayMove(wallets, oldIndex, newIndex);
+            const nextWallets: any[] = arrayMove(tmpWallets, oldIndex, newIndex);
 
-            setWallets(nextWallets);
+            setTmpWallets(nextWallets);
 
             // todo: send this to server
             // const walletsToSave = nextWallets.map((wallet, index) => ({
@@ -77,20 +76,20 @@ export const WalletsOrderableList = ({}: Props) => {
                 </tr>
             </OrderableTableHeader>
             <OrderableTableBody colSpan={0}>
-                {wallets.map((wallet, index) => (
+                {tmpWallets.map((wallet, index) => (
                     <OrderableTableRow
                         index={index}
-                        key={`wallet_${wallet.id}_${wallet.priority}`}
+                        key={`wallet_${wallet.Wallet.ID}_${wallet.Wallet.Priority}`}
                         cells={[
-                            <div key="name" className="text-ellipsis max-w-full" title={wallet.name}>
-                                {wallet.name}
+                            <div key="name" className="text-ellipsis max-w-full" title={wallet.Wallet.Name}>
+                                {wallet.Wallet.Name}
                             </div>,
                             <div>
-                                {wallet.id === defaultLightningWalletId && (
+                                {wallet.Wallet.ID === defaultLightningWalletId && (
                                     <Badge type="warning">{c('Wallet Settings').t`Default lightning`}</Badge>
                                 )}
 
-                                {wallet.id === defaultOnchainWalletId && (
+                                {wallet.Wallet.ID === defaultOnchainWalletId && (
                                     <Badge type="primary">{c('Wallet Settings').t`Default onchain`}</Badge>
                                 )}
                             </div>,
@@ -98,7 +97,7 @@ export const WalletsOrderableList = ({}: Props) => {
                                 color="weak"
                                 as={SettingsLink}
                                 size="small"
-                                path={`${WALLET_SETTINGS_ROUTE.WALLETS}/${wallet.id}`}
+                                path={`${WALLET_SETTINGS_ROUTE.WALLETS}/${wallet.Wallet.ID}`}
                             >
                                 {c('Action').t`Settings`}
                             </ButtonLike>,

@@ -2,9 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import { IWasmApiWalletData, useApiWalletsData } from '@proton/wallet';
 
-import { useApiWalletsData } from '../../store/hooks';
-import { IWasmApiWalletData } from '../../types';
 import { decryptWalletData } from '../../utils/crypto';
 
 export const useDecryptedApiWalletsData = () => {

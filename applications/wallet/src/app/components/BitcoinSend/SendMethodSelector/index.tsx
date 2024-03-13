@@ -2,8 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill';
-
-import { WalletType } from '../../../types';
+import { WalletType } from '@proton/wallet';
 
 const AvailableAccount = ({ count }: { count: number }) => {
     if (!count) {

@@ -7,15 +7,11 @@ import { WasmAccount, WasmPagination, WasmWallet } from '@proton/andromeda';
 import { useNotifications } from '@proton/components/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useBitcoinNetwork } from '../../store/hooks';
-import {
-    AccountChainDataByAccountId,
-    AccountWithChainData,
-    IWasmApiWalletData,
-    WalletChainDataByWalletId,
-} from '../../types';
+import { AccountChainDataByAccountId, AccountWithChainData, WalletChainDataByWalletId } from '../../types';
 import { tryHandleWasmError } from '../../utils/wasm/errors';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
