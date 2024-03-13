@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isLoginItem, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isLoginItem, isPasskeyItem, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     filterItemsByShareId,
     filterItemsByType,
@@ -271,3 +271,12 @@ const autosaveCandidateSelector = createSelector(
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
     autosaveCandidateSelector(state, options);
+
+export const selectPasskeyDomains = createSelector(selectAllItems, (items): string[] => {
+    const domains = items
+        .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
+        .flatMap((item) => item.data.content.passkeys.map(prop('domain')))
+        .filter(truthy);
+
+    return Array.from(new Set(domains)).filter(truthy);
+});
