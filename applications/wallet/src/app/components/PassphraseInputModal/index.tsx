@@ -9,9 +9,9 @@ import { Alert, ModalTwo } from '@proton/components/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { IWasmApiWalletData } from '../../types';
 
 interface Props {
     wallet: IWasmApiWalletData;

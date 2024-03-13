@@ -5,8 +5,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-
-import { IWasmApiWalletData } from '../../types';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 interface Props {
     apiWalletData?: IWasmApiWalletData;

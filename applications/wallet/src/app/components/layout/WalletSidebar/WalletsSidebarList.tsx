@@ -8,8 +8,8 @@ import {
     SidebarListItemLink,
     useToggle,
 } from '@proton/components';
+import { IWasmApiWalletData } from '@proton/wallet';
 
-import { IWasmApiWalletData } from '../../../types';
 import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 

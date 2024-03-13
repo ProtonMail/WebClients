@@ -5,18 +5,17 @@ import {
     WasmApiWalletSettings,
     WasmScriptType,
 } from '@proton/andromeda';
-
-import { IWasmApiWalletData } from '../../types';
 import {
     BitcoinUnit,
     FiatCurrency,
+    IWasmApiWalletData,
     UserWalletSettings,
     Wallet,
     WalletPassphrase,
     WalletSetupMode,
     WalletStatus,
     WalletType,
-} from '../../types/api';
+} from '@proton/wallet';
 
 /**
  * Fixtures used to mock api while it is being implemented

@@ -8,13 +8,11 @@ import { Card } from '@proton/atoms/Card';
 import { ConfirmActionModal, Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { useWalletApi } from '@proton/wallet';
+import { IWasmApiWalletData, useWalletApi, walletAccountDeletion } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { walletAccountDeletion } from '../../store/slices/apiWalletsData';
-import { IWasmApiWalletData } from '../../types';
 import {
     getAccountBalance,
     getAccountUntrustedBalance,

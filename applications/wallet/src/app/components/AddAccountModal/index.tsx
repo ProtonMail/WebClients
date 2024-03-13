@@ -12,12 +12,10 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import { useWalletApi } from '@proton/wallet';
+import { IWasmApiWalletData, useWalletApi, walletAccountCreation } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { walletAccountCreation } from '../../store/slices/apiWalletsData';
-import { IWasmApiWalletData } from '../../types';
 import { getLabelByScriptType } from '../../utils';
 import { decryptWalletKey, encryptWalletDataWithWalletKey } from '../../utils/crypto';
 

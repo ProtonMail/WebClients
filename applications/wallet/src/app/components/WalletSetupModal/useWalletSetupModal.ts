@@ -5,13 +5,11 @@ import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
-import { useWalletApi } from '@proton/wallet';
+import { WalletType, useWalletApi, walletCreation } from '@proton/wallet';
 
 import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { walletCreation } from '../../store/slices/apiWalletsData';
-import { WalletType } from '../../types';
 import { encryptWalletData } from '../../utils/crypto';
 import { walletCreationSetupSteps, walletImportSetupSteps } from './constants';
 import { WalletSetupMode, WalletSetupStep } from './type';

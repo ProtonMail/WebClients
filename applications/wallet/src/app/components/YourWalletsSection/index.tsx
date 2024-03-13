@@ -12,14 +12,11 @@ import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { useWalletApi } from '@proton/wallet';
+import { IWasmApiWalletData, WalletType, useWalletApi, walletDeletion } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { walletDeletion } from '../../store/slices/apiWalletsData';
-import { IWasmApiWalletData } from '../../types';
-import { WalletType } from '../../types/api';
 import { getWalletBalance, getWalletUntrustedBalance } from '../../utils';
 
 interface Props {

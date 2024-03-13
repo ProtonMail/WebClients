@@ -2,8 +2,9 @@ import { pick } from 'lodash';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
+import { IWasmApiWalletData } from '@proton/wallet';
 
-import { AccountWithChainData, IWasmApiWalletData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
+import { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
 
 export const getAccountBalance = (account?: AccountWithChainData) => {
     const confirmed = Number(account?.balance?.confirmed ?? 0);

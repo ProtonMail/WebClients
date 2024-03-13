@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
+import { IWasmApiWalletData, WalletType } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
-import { IWasmApiWalletData, LightningUriFormat, WalletType } from '../types';
+import { LightningUriFormat } from '../types';
 import { getSelectedAccount } from '../utils';
 import { Selector } from './Selector';
 
