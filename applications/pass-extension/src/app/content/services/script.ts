@@ -16,15 +16,17 @@ import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { clientReady } from '@proton/pass/lib/client';
+import { clientLocked, clientReady, clientUnauthorized } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
+import { NotificationAction } from '../types';
 
 type CreateContentScriptOptions = {
     scriptId: string;
@@ -32,8 +34,6 @@ type CreateContentScriptOptions = {
     elements: PassElementsConfig;
 };
 export const createContentScriptClient = ({ scriptId, mainFrame, elements }: CreateContentScriptOptions) => {
-    const listeners = createListenerStore();
-
     const context = createContentScriptContext({
         elements,
         mainFrame,
@@ -43,9 +43,9 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             context.setState({ stale: true });
 
             DOMCleanUp(elements);
-            listeners.removeAll();
             context.service.formManager.destroy();
             context.service.iframe.destroy();
+            context.service.webauthn.destroy();
 
             ExtensionContext.read()?.destroy();
         },
@@ -55,12 +55,20 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         const { status, loggedIn } = context.getState();
         context.service.formManager.sync();
 
-        if (!loggedIn) {
-            /** If the user is unexpectedly logged out, clear autofill cached
-             * data and detach any autosave notification that may be present */
-            context.service.autofill.reset();
-            context.service.iframe.notification?.destroy();
-        } else if (clientReady(status)) await context.service.autofill.reconciliate();
+        const ready = clientReady(status);
+        const locked = clientLocked(status);
+        const unauthorized = clientUnauthorized(status);
+
+        /** If the user is unexpectedly logged out, clear autofill cached
+         * data and detach any autosave notification that may be present */
+        if (!loggedIn || locked) context.service.autofill.reset();
+        if (ready) await context.service.autofill.reconciliate();
+        else if (unauthorized) {
+            const action = context.service.iframe.notification?.getState().action;
+            const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
+            const shouldDestroy = !locked || (action && !unlockable.includes(action));
+            if (shouldDestroy) context.service.iframe.notification?.destroy();
+        }
     };
 
     const onFeatureFlagsChange = (features: FeatureFlagState) => context.setFeatureFlags(features);
@@ -93,6 +101,14 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
     };
 
     const handleStart = async ({ tabId, port }: ExtensionContextType) => {
+        /** init the webauthn service optimistically even if the
+         * initialization of the content-script fails. As we are injecting
+         * the webauthn interceptors in the main-world on `document_start` we
+         * need to avoid missing on events of the MessageBridge */
+        context.service.iframe.init();
+        context.service.webauthn.init();
+        window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT }, '*');
+
         const res = await sendMessage(
             contentScriptMessage({
                 type: WorkerMessageType.WORKER_WAKEUP,
@@ -105,7 +121,6 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
-            context.service.iframe.init();
 
             await reconciliate();
 
@@ -122,7 +137,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             context.service.formManager.observe();
 
             await context.service.formManager.detect({ reason: 'InitialLoad', flush: true }).catch(noop);
-        }
+        } else context.destroy({ reason: 'Start failure' });
     };
 
     return {

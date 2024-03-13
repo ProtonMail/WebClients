@@ -52,7 +52,8 @@ export const createAutoSaveService = () => {
             item.get('content')
                 .set('username', payload.username)
                 .set('password', payload.password)
-                .set('urls', valid ? [url] : []);
+                .set('urls', valid ? [url] : [])
+                .set('passkeys', payload.passkey ? [payload.passkey] : []);
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
@@ -84,7 +85,8 @@ export const createAutoSaveService = () => {
             item.get('content')
                 .set('username', payload.username)
                 .set('password', payload.password)
-                .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))));
+                .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
+                .set('passkeys', (passkeys) => (payload.passkey ? [...passkeys, payload.passkey] : passkeys));
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
