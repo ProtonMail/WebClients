@@ -92,9 +92,9 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
     };
 };
 
-export const handleAsyncModel = <Returned, State, Extra>(
+export const handleAsyncModel = <Returned, State, Extra, Options>(
     builder: ActionReducerMapBuilder<ReducerValue<Returned>>,
-    cases: ReturnType<typeof createAsyncModelThunk<Returned, State, Extra>>
+    cases: ReturnType<typeof createAsyncModelThunk<Returned, State, Extra, Options>>
 ) => {
     return builder
         .addCase(cases.pending, (state) => {
