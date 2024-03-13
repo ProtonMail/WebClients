@@ -3,7 +3,7 @@ import { join } from "path";
 import { defaultHeight, defaultWidth, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
 import { getConfig, isProdEnv } from "../config";
-import { isMac, isWindows } from "../helpers";
+import { isLinux, isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const config = getConfig();
@@ -21,6 +21,8 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
             trafficLightPosition: { x: 12, y: 18 },
         };
     } else if (isWindows) {
+        return {};
+    } else if (isLinux) {
         return {};
     }
     return {};

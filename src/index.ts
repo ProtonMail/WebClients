@@ -8,7 +8,7 @@ import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
 import { checkForUpdates } from "./update";
-import { isMac, isWindows } from "./utils/helpers";
+import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
 import {
@@ -43,7 +43,7 @@ saveAppID();
 
 // Log initialization
 Logger.initialize({ preload: true });
-Logger.info("App start is mac:", isMac, "is windows: ", isWindows);
+Logger.info("App start is mac:", isMac, "is windows:", isWindows, "isLinux:", isLinux);
 
 // Move uninstaller on macOS
 moveUninstaller();

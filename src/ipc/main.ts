@@ -32,7 +32,7 @@ export const handleIPCCalls = () => {
     ipcMain.on("changeView", (_e, target) => {
         updateView(target);
     });
-    ipcMain.on('showNotification', (_e, payload) => {
-        showNotification(payload)
-    })
+    ipcMain.on("showNotification", (_e, payload) => {
+        showNotification(payload);
+    });
 };
