@@ -15,6 +15,7 @@ import { type RouteErrorState, getBootRedirectPath, getRouteError } from '@proto
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
+import { biometricsLockAdapterFactory } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -22,7 +23,7 @@ import { createAuthService as createCoreAuthService } from '@proton/pass/lib/aut
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
+import { canBiometricsUnlock, canPasswordUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
@@ -154,6 +155,15 @@ export const createAuthService = ({
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
+                const biometricsUnlockable = canBiometricsUnlock({
+                    lockMode: authStore.getLockMode(),
+                    offline: !getOnline(),
+                    offlineConfig: authStore.getOfflineConfig(),
+                    offlineVerifier: authStore.getOfflineVerifier(),
+                    offlineEnabled: (await getOfflineEnabled?.()) ?? false,
+                    encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
+                });
+
                 const passwordUnlockable = canPasswordUnlock({
                     lockMode: authStore.getLockMode(),
                     offline: !getOnline(),
@@ -162,9 +172,9 @@ export const createAuthService = ({
                     offlineEnabled: (await getOfflineEnabled?.()) ?? false,
                 });
 
-                if (passwordUnlockable) {
+                if (biometricsUnlockable || passwordUnlockable) {
                     authStore.setPassword(undefined);
-                    client.setStatus(AppStatus.PASSWORD_LOCKED);
+                    client.setStatus(biometricsUnlockable ? AppStatus.BIOMETRICS_LOCKED : AppStatus.PASSWORD_LOCKED);
                     return false;
                 }
             }
@@ -245,7 +255,7 @@ export const createAuthService = ({
         },
 
         onForkConsumed: async (session, { state }) => {
-            const { offlineConfig, offlineKD, UserID, LocalID } = session;
+            const { offlineConfig, offlineKD, UserID, LocalID, encryptedOfflineKD } = session;
             history.replace({ hash: '' }); /** removes selector from hash */
 
             try {
@@ -275,7 +285,7 @@ export const createAuthService = ({
 
             if (offlineConfig && offlineKD) {
                 logger.info('[AuthServiceProvider] Automatically creating password lock');
-                session.lockMode = LockMode.PASSWORD;
+                session.lockMode = encryptedOfflineKD ? LockMode.BIOMETRICS : LockMode.PASSWORD;
                 session.lockTTL = DEFAULT_LOCK_TTL;
                 session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                 authStore.setLockLastExtendTime(getEpoch());
@@ -342,7 +352,7 @@ export const createAuthService = ({
                 else await auth.login(authStore.getSession(), { unlocked: true });
             }
 
-            if (mode === LockMode.PASSWORD) {
+            if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(mode)) {
                 const offlineEnabled = (await getOfflineEnabled?.()) ?? false;
                 if (!getOnline() && offlineEnabled) store.dispatch(bootIntent({ offline: true }));
                 else {
@@ -360,6 +370,7 @@ export const createAuthService = ({
             if (broadcast) {
                 switch (lock.mode) {
                     case LockMode.PASSWORD:
+                    case LockMode.BIOMETRICS:
                     case LockMode.SESSION:
                         return sw?.send({ broadcast, localID, mode: lock.mode, type: 'locked' });
                     case LockMode.NONE:
@@ -414,6 +425,7 @@ export const createAuthService = ({
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
+    auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth));
 
     return auth;
 };

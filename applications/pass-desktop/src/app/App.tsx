@@ -32,10 +32,11 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { BIOMETRICS_KEY } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
-import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { createPassExport } from '@proton/pass/lib/export/export';
@@ -48,6 +49,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import locales from './locales';
@@ -103,6 +105,16 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     prepareImport: prepareImport,
     getLogs: logStore.read,
     writeToClipboard: window.ctxBridge.writeToClipboard,
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+    onSetupBiometrics: async (authStore: AuthStore) => {
+        throw new Error('TODO: Not implemented - see biometrics lock adapter instead');
+    },
+    getBiometricsKey: async (authStore: AuthStore) => {
+        const encryptedKD = authStore.getEncryptedOfflineKD();
+        if (!encryptedKD) return;
+        const biometricsKey = await window.ctxBridge.getSecret(BIOMETRICS_KEY).catch(noop);
+        return biometricsKey;
+    },
 });
 
 export const App = () => {

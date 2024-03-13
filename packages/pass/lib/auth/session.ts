@@ -26,6 +26,7 @@ export type AuthSession = {
     AccessToken: string;
     cookies?: boolean;
     extraPassword?: boolean;
+    encryptedOfflineKD?: string;
     keyPassword: string;
     LocalID?: number;
     lockMode: LockMode;
