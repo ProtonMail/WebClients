@@ -13,7 +13,6 @@ import {
     DropdownMenu,
     DropdownSizeUnit,
     FeatureCode,
-    InboxDesktopFreeTrialConfirmLogoutModal,
     Logo,
     ReferralSpotlight,
     SettingsLink,
@@ -70,7 +69,6 @@ import clsx from '@proton/utils/clsx';
 import ProductLink, { apps } from '../../containers/app/ProductLink';
 import { generateUID } from '../../helpers';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
-import useInboxFreeTrial from '../desktop/freeTrial/useInboxFreeTrial';
 import { AuthenticatedBugModal } from '../support';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 
@@ -108,13 +106,11 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
-    const [confirmFreeTrialModal, setConfirmFreeTrialModal, renderConfirmFreeTrialModal] = useModalState();
     const [
         sessionRecoverySignOutConfirmPrompt,
         setSessionRecoverySignOutConfirmPrompt,
         renderSessionRecoverySignOutConfirmPrompt,
     ] = useModalState();
-    const { isUserInFreeTrial } = useInboxFreeTrial();
 
     const sessionRecoveryState = useSessionRecoveryState();
     const sessionRecoveryInitiated =
@@ -148,20 +144,10 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         dispatch(signoutAction({ clearDeviceRecovery }));
     };
 
-    const handleFreeTrialWarning = () => {
-        if (shouldShowConfirmSignOutModal({ user, authentication })) {
-            setConfirmSignOutModal(true);
-        } else {
-            handleSignout(false);
-        }
-    };
-
     const handleSignOutClick = () => {
         close();
         if (sessionRecoveryInitiated) {
             setSessionRecoverySignOutConfirmPrompt(true);
-        } else if (isElectronApp && isUserInFreeTrial()) {
-            setConfirmFreeTrialModal(true);
         } else if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
         } else {
@@ -232,12 +218,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                 />
             )}
             {renderConfirmSignOutModal && <ConfirmSignOutModal onSignOut={handleSignout} {...confirmSignOutModal} />}
-            {renderConfirmFreeTrialModal && (
-                <InboxDesktopFreeTrialConfirmLogoutModal
-                    onSignOut={handleFreeTrialWarning}
-                    {...confirmFreeTrialModal}
-                />
-            )}
             <ReferralSpotlight
                 show={shouldShowSpotlight}
                 anchorRef={anchorRef}
