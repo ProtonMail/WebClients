@@ -11,6 +11,9 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -68,6 +71,7 @@ const MailRecipientItemSingle = ({
 
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
+    const mailSettings = useMailModel('MailSettings');
     const onCompose = useOnCompose();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
@@ -140,7 +144,10 @@ const MailRecipientItemSingle = ({
         event.stopPropagation();
 
         if (recipient.Address) {
-            const humanLabelID = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
+            const humanLabelID =
+                mailSettings.AlmostAllMail === ALMOST_ALL_MAIL.ENABLED
+                    ? getHumanLabelID(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)
+                    : getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
             const newPathname = `/${humanLabelID}`;
 
             history.push(
