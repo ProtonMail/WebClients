@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms';
 import { BasicModal } from '@proton/components';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
+import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -82,6 +83,16 @@ const getCleanSendData = ({
             throw new Error('Cannot create event without vevent component');
         }
         if (!hasAddedAttendees && !hasRemovedAttendees) {
+            if (getHasRecurrenceId(vevent)) {
+                // we're creating a single edit, in that case we want to keep attendees with errors
+                return {
+                    ...cleanData,
+                    inviteActions: {
+                        ...cleanData.inviteActions,
+                    },
+                    emailsWithError: [...invitedEmailsWithError, ...addedEmailsWithError, ...removedEmailsWithError],
+                };
+            }
             // it's a new invitation
             return {
                 ...cleanData,
