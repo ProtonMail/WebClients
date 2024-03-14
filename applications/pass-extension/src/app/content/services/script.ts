@@ -16,7 +16,7 @@ import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { clientLocked, clientReady, clientUnauthorized } from '@proton/pass/lib/client';
+import { clientLocked, clientNeedsSession, clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -52,17 +52,17 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
     });
 
     const reconciliate = async () => {
-        const { loggedIn, status } = context.getState();
+        const { status } = context.getState();
         context.service.formManager.sync();
 
         const ready = clientReady(status);
         const locked = clientLocked(status);
-        const unauthorized = clientUnauthorized(status) || !loggedIn;
+        const loggedOut = clientNeedsSession(status);
 
-        /** If the user is unexpectedly logged out, clear autofill cached
-         * data and detach any autosave notification that may be present */
         if (ready) await context.service.autofill.reconciliate();
-        else if (unauthorized || locked) {
+        else if (loggedOut || locked) {
+            /** If the user is unexpectedly logged out, clear autofill cached
+             * data and detach any autosave notification that may be present */
             context.service.autofill.reset();
             const action = context.service.iframe.notification?.getState().action;
             const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
