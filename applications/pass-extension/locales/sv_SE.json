@@ -125,6 +125,9 @@
       "Create login": [
         "Skapa inloggning"
       ],
+      "Create new login": [
+        "Skapa ny inloggning"
+      ],
       "Create note": [
         "Skapa anteckning"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Spara"
       ],
+      "Save passkey": [
+        "Spara passkey"
+      ],
       "Saving": [
         "Sparar"
+      ],
+      "Saving passkey...": [
+        "Sparar passkey …"
       ],
       "See members": [
         "Se medlemmar"
@@ -647,8 +656,14 @@
       "Item creation failed": [
         "Misslyckades att skapa objekt"
       ],
+      "Item does not exist": [
+        "Objekt finns inte"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass kommer att exportera en korrupt CSV-fil om något av dina objektfält innehåller oväntade kommatecken, citattecken eller flera rader"
+      ],
+      "Missing passkey": [
+        "Saknar passkey"
       ],
       "Moving item failed": [
         "Misslyckades att flytta objekt"
@@ -718,6 +733,12 @@
       ],
       "Unknown invite": [
         "Okänd inbjudan"
+      ],
+      "Unknown item": [
+        "Okänt objekt"
+      ],
+      "Unknown passkey": [
+        "Okänd passkey"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Filformat ${ PASS_APP_NAME } stöds inte"
@@ -890,8 +911,8 @@
       "Auto-lock successfully disabled": [
         "Automatisk låsning inaktiverat"
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Autosparad på ${ submissionURL }"
+      "Autosaved on ${ payload.domain }": [
+        "Autosparad på ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
@@ -908,8 +929,14 @@
       "Can view items in this vault.": [
         "Kan visa objekt i detta valv."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Välj en sparad passkey för att logga in på ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Klicka på ikonen för att öppna den när som helst."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Stäng detta fönster för att använda en säkerhetsnyckel eller annan passkey."
       ],
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
@@ -1176,6 +1203,12 @@
       "Save login": [
         "Spara inloggning"
       ],
+      "Save passkey": [
+        "Spara passkey"
+      ],
+      "Select an existing login or create a new one.": [
+        "Välj en befintlig inloggning eller skapa en ny."
+      ],
       "Select destination vault": [
         "Välj målvalv"
       ],
@@ -1272,6 +1305,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal Hide-my-email-alias"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att komma åt dina passkeys"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att spara denna passkey"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
@@ -1563,6 +1602,9 @@
       "Item ID": [
         "Objekt-ID"
       ],
+      "Key": [
+        "Nyckel"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
       ],
@@ -1643,6 +1685,9 @@
       ],
       "Oldest to newest": [
         "Äldsta till nyaste"
+      ],
+      "Passkey": [
+        "Passkey"
       ],
       "Passphrase": [
         "Lösenfras"
@@ -1784,6 +1829,9 @@
       ],
       "View logs": [
         "Visa loggar"
+      ],
+      "Website": [
+        "Webbplats"
       ],
       "Websites": [
         "Webbplatser"
@@ -2045,6 +2093,9 @@
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
+      ],
+      "Passkey": [
+        "Passkey"
       ],
       "Password": [
         "Lösenord"
