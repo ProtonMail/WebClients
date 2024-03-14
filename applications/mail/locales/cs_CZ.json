@@ -1055,7 +1055,7 @@
         "Zobrazení aplikace kontaktů"
       ],
       "Toggle security center app": [
-        "Přepnout aplikaci centrum zabezpečení"
+        "Přepnout aplikaci bezpečnostní centrum"
       ],
       "Toggle settings": [
         "Otevřít/zavřít nastavení"
@@ -3195,6 +3195,32 @@
         "Stáhnout vše"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "POPIS:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ČAS:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ČAS:\n${ formattedStart } (celý den)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ČAS:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Odstraněno"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "MÍSTO:\n${ eventLocation }"
+      ]
+    },
     "Email reminder banner": {
       "Event is tomorrow": [
         "Událost je zítra"
@@ -3235,10 +3261,10 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Zrušení události na ${ formattedStart }"
+        "Zrušení události ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Zrušení události začínající v ${ formattedStart }"
+        "Zrušení události začínající ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "Pozvání na událost ${ formattedStart }"
@@ -6291,7 +6317,7 @@
         "Navyšte svůj účet pro podporu internetu, kde je soukromí na prvním místě."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Navyšte svůj účet pro podporu našeho poslání, zajistit soukromí všem."
+        "Navýšením tarifu podpoříte naše poslání zajistit soukromí všem."
       ],
       "Upgrade to support privacy and get more features.": [
         "Navyšte svůj tarif pro podporu soukromí a získání více funkcí."
@@ -7610,6 +7636,20 @@
         "Koš"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "Support for 1 custom email domain": [
+        "Podpora 1 vlastní e-mailové domény"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -8118,6 +8158,11 @@
     "Participant name": {
       "You": [
         "Vy"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Země fakturace"
       ]
     },
     "PGP key encryption warning": {
