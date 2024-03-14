@@ -9,8 +9,8 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@pdfme/common": "^3.2.1",
-        "@pdfme/generator": "^3.2.1",
+        "@pdfme/common": "^3.4.0",
+        "@pdfme/generator": "^3.4.0",
         "@proton/utils": "workspace:packages/utils"
     },
     "devDependencies": {
