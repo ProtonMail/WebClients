@@ -10069,7 +10069,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^20.11.26, @types/node@npm:^20.11.27":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^20.11.26, @types/node@npm:^20.11.27, @types/node@npm:^20.9.0":
   version: 20.11.27
   resolution: "@types/node@npm:20.11.27"
   dependencies:
@@ -10082,15 +10082,6 @@ __metadata:
   version: 16.18.2
   resolution: "@types/node@npm:16.18.2"
   checksum: 10c0/babe6ee3409d5e4c1b1ba04c65ab16f156b717f2b5106d04c184897429449bb2838d8bff6e76b1e212f78c2dc9ecf2cf50fc4c78d42f4bc506a0657ff5cba07b
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^18.11.18":
-  version: 18.19.15
-  resolution: "@types/node@npm:18.19.15"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10c0/442e40cbbb75f17c4dbccf0a1a19ffd4b1b6b8cbbcf52ed754c3d3a3992fd1effbe48b9d45b9aae9ac9cebc8717927348b02e009b0a2c0b06b1f813e3b2896e6
   languageName: node
   linkType: hard
 
@@ -18024,16 +18015,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:^28.2.6":
-  version: 28.2.6
-  resolution: "electron@npm:28.2.6"
+"electron@npm:^29.1.4":
+  version: 29.1.4
+  resolution: "electron@npm:29.1.4"
   dependencies:
     "@electron/get": "npm:^2.0.0"
-    "@types/node": "npm:^18.11.18"
+    "@types/node": "npm:^20.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/72ca875dca5c6db8384b6e30cd38f8be0427e7e596585223999140dc7f5891919073f73897fed49c8f6173fbcaa49133f598391c6d190243324697aebf757c74
+  checksum: 10c0/aa74131a22399026e041d2ea2b47827b7707b3f2daba72b4058047b48e88edbb08a472f4babe13b83bc47d269470a8d9bc7dae02cbd3fef64924d347558a32e8
   languageName: node
   linkType: hard
 
@@ -31342,7 +31333,7 @@ __metadata:
     "@proton/pack": "workspace:packages/pack"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
-    electron: "npm:^28.2.6"
+    electron: "npm:^29.1.4"
     electron-log: "npm:^5.1.2"
     electron-store: "npm:^8.2.0"
     eslint: "npm:^8.57.0"
