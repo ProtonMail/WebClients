@@ -4494,6 +4494,12 @@
       "Closing this means giving up the free storage bonus.": [
         "Dit sluiten betekent het opgeven van de gratis opslagbonus."
       ],
+      "Congratulations, you completed all the steps!": [
+        "Gefeliciteerd! U hebt alle stappen voltooid."
+      ],
+      "Congratulations, you finished!": [
+        "Gefeliciteerd! U bent klaar."
+      ],
       "Continue setting up your email": [
         "Ga door met het instellen van uw e-mail"
       ],
@@ -7468,6 +7474,52 @@
         "Prullenbak"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Aangepaste planning en snooze-tijden voor verzenden"
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Beperkte aanbieding, loopt af op 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -7814,6 +7866,11 @@
       ],
       "Senders blocked": [
         "Afzenders geblokkeerd"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
     "Oauth instructions": {
