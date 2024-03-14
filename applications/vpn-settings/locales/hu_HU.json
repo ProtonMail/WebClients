@@ -2515,6 +2515,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfigurálja a SAML-hitelesítést a szervezet számára egy olyan személyazonossági szolgáltatón keresztül, mint az Okta, a Microsoft Azure vagy a Google Identity Platform. Ez lehetővé teszi a SAML-t az egész szervezet számára."
+      ],
       "Continue with ${ freeName }": [
         "Folytatás ezzel: ${ freeName }"
       ],
@@ -2583,6 +2586,9 @@
       ],
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Engedélyezze az egyszeri bejelentkezést szervezete biztonsága érdekében"
       ],
       "Enter key manually instead": [
         "Kulcs megadása manuálisan"
@@ -2709,6 +2715,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Lean more about single sign-on": [
+        "További információ az egyszeri bejelentkezésről"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "További információk arról, hogyan jelentkezhet be más VPN alkalmazásokkal a ${ VPN_APP_NAME }-re."
@@ -3885,6 +3894,17 @@
         "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
       ]
     },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "Support for 1 custom email domain": [
+        "Egy saját e-mail domain név használata"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ]
+    },
     "Member action": {
       "Change password": [
         "Jelszó módosítása"
@@ -4573,6 +4593,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "A kétlépcsős hitelesítés használata már nem szükséges"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Néhány képet nem sikerült feltölteni, mert az aktuális kiválasztásban duplikált fájlnevek voltak."
       ]
     },
     "Onboarding": {

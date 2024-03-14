@@ -2891,6 +2891,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Atur autentikasi SAML untuk organisasi Anda melalui layanan penyedia identitas (IdP). Pengaturan ini akan mengaktifkan SAML untuk seluruh organisasi."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Atur autentikasi SAML untuk organisasi Anda melalui penyedia identitas seperti Okta, Microsoft Azure, atau Google Identity Platform. Ini akan mengaktifkan SAML untuk seluruh organisasi."
+      ],
       "Continue with ${ freeName }": [
         "Lanjutkan dengan ${ freeName }"
       ],
@@ -3001,6 +3004,9 @@
       ],
       "Emailing preference saved": [
         "Preferensi surel disimpan"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
@@ -3164,6 +3170,9 @@
       "Lean more about gateways": [
         "Pelajari lebih lanjut tentang gateway"
       ],
+      "Lean more about single sign-on": [
+        "Pelajari lebih lanjut tentang sistem masuk tunggal"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } melalui aplikasi VPN pihak ketiga."
       ],
@@ -3214,6 +3223,9 @@
       ],
       "No addresses exist": [
         "Tidak ada alamat"
+      ],
+      "No changes made to the current subscription": [
+        "Tidak ada perubahan yang diterapkan bagi paket langganan saat ini"
       ],
       "No gateways": [
         "Tidak ada gateway"
@@ -4082,7 +4094,7 @@
         "Kategori"
       ],
       "Choose a name for the generated certificate file": [
-        "Pilih sebuah nama untuk file sertifikat yang dibuat"
+        "Pilih nama untuk berkas sertifikat yang dihasilkan"
       ],
       "Code": [
         "Kode"
@@ -4795,6 +4807,9 @@
       "Advanced sharing security": [
         "Keamanan berbagi berkas tingkat lanjut"
       ],
+      "Auto-delete Spam and Trash": [
+        "Kosongkan Spam dan Sampah secara otomatis"
+      ],
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
       ],
@@ -4848,6 +4863,9 @@
       ],
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
       ],
       "DNS leak prevention": [
         "Perlindungan terhadap kebocoran DNS"
@@ -4944,6 +4962,9 @@
       ],
       "Router support": [
         "Dukungan router"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Jadwalkan dan tunda email kapan saja"
       ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
@@ -5217,6 +5238,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Akses konten yang terblokir dan jelajahi secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, unduhan BitTorrent yang cepat, dan masih banyak lagi."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Akses ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME } secara langsung dari desktop Anda"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
@@ -5228,6 +5252,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Hapus pesan yang telah berusia lebih dari 30 hari secara otomatis dari Sampah dan Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -5480,6 +5507,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Autentikasi dua faktor tidak lagi dibutuhkan"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
       ]
     },
     "Onboarding": {
@@ -6848,7 +6880,7 @@
         "(aktif)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Beri nama konfigurasi yang akan dibuat"
+        "1. Beri nama konfigurasi yang akan dihasilkan"
       ],
       "1. Select platform": [
         "1. Pilih platform"
