@@ -4,7 +4,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-const FREE_DOWNGRADER_LIMIT = new Date(Date.UTC(2024, 2, 20, 0, 0, 0));
+const FREE_DOWNGRADER_LIMIT = new Date(Date.UTC(2024, 2, 19, 0, 0, 0)); // 2024-03-19
 
 interface Props {
     user: UserModel;
