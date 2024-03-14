@@ -52,11 +52,11 @@ const createViews = (session: Session) => {
     handleBeforeHandle(calendarView);
 
     mailView.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, mailView).popup();
+        createContextMenu(props, mailView)?.popup();
     });
 
     calendarView.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, calendarView).popup();
+        createContextMenu(props, calendarView)?.popup();
     });
 
     mailView.webContents.session.setCertificateVerifyProc((request, callback) => {
