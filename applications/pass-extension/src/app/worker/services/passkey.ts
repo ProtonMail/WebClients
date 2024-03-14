@@ -1,28 +1,17 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { c } from 'ttag';
 
-import { intoAllowedPasskeys } from '@proton/pass/lib/passkeys/utils';
-import { selectItemByShareIdAndId } from '@proton/pass/store/selectors';
+import { selectItemByShareIdAndId, selectPasskeys } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { withContext } from '../context';
 import store from '../store';
 
 export const createPasskeyService = () => {
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.PASSKEY_QUERY,
-        withContext((ctx, { payload: { credentialIds, domain } }) => {
-            const passkeys = ctx.service.autofill
-                .getCandidates(parseUrl(domain))
-                .filter((item) => item.data.content.passkeys.length > 0)
-                .map(intoAllowedPasskeys(credentialIds))
-                .flat();
-
-            return { passkeys };
-        })
-    );
+    WorkerMessageBroker.registerMessage(WorkerMessageType.PASSKEY_QUERY, ({ payload }) => ({
+        passkeys: selectPasskeys(payload)(store.getState()),
+    }));
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.PASSKEY_CREATE,
