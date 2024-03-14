@@ -57,8 +57,8 @@ export const createMessageBridge = () => {
         options?: { timeout?: number; signal?: AbortSignal }
     ): Promise<WorkerResponse<T> | MessageFailure> => {
         const token = uniqueId(16);
-        const response = awaiter<WorkerResponse<T> | MessageFailure>();
         const message: BridgeRequest<T> = { request, token, type: BRIDGE_REQUEST };
+        const response = awaiter<WorkerResponse<T> | MessageFailure>();
 
         const abort = () => window.postMessage(createBridgeAbortSignal(token));
         options?.signal?.addEventListener('abort', abort);
