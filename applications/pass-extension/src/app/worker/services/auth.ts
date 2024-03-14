@@ -24,6 +24,7 @@ import {
 } from '@proton/pass/store/actions';
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -62,7 +63,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
              * return as the authentication store will have been configured */
-            if (clientUnauthorized(ctx.status)) return false;
+            if (or(clientUnauthorized, clientLocked)(ctx.status)) return false;
             if (clientAuthorized(ctx.status)) return true;
             return ctx.service.auth.resumeSession(undefined, options);
         }),
