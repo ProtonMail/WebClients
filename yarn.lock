@@ -5871,22 +5871,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/common@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@pdfme/common@npm:3.2.1"
+"@pdfme/common@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@pdfme/common@npm:3.4.0"
   dependencies:
     "@pdfme/pdf-lib": "npm:^1.18.3"
     antd: "npm:^5.11.2"
     buffer: "npm:^6.0.3"
     form-render: "npm:^2.2.20"
     zod: "npm:^3.20.2"
-  checksum: 10c0/dfb70c4f0905449a8fb7c2cb5478e22d56b730fa60dafc990cae469752775b8dcb77c1084cd0cacacdd54114c1886b29ff8400cff0c197941f9729dcf8204cbb
+  checksum: 10c0/0a635da972f54e7db45d8b94ec1fc5b83fc148aac7ec808e6406fc8871eaaa6703bf2551928bc1a2c1a4a87e1265d3e58b1b0d98f1a632c2f8a65839407507c9
   languageName: node
   linkType: hard
 
-"@pdfme/generator@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@pdfme/generator@npm:3.2.1"
+"@pdfme/generator@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@pdfme/generator@npm:3.4.0"
   dependencies:
     "@pdfme/pdf-lib": "npm:^1.18.3"
     atob: "npm:^2.1.2"
@@ -5894,7 +5894,7 @@ __metadata:
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 10c0/839fbf62f8bbaf3c342b1bfb0fc128e92ca9c3f8ec0217c0a001cd7305ef31b93e50373e0dc8d2205608c5b2e8b5a2cb98b66c550ac944ffdaa3b6eaf198d847
+  checksum: 10c0/b2f78c45165289d1bc2ac6644ee6276635791c7c2d327e21c2ba128c474f132fd4b2d421ca18ba8bd6c463d1e9239beb0f0c47189167d4ef2c71ae33cf3c1640
   languageName: node
   linkType: hard
 
@@ -5911,9 +5911,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/schemas@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@pdfme/schemas@npm:3.2.1"
+"@pdfme/schemas@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@pdfme/schemas@npm:3.4.0"
   dependencies:
     "@pdfme/pdf-lib": "npm:^1.18.3"
     bwip-js: "npm:^4.1.1"
@@ -5921,13 +5921,13 @@ __metadata:
     fontkit: "npm:^2.0.2"
   peerDependencies:
     "@pdfme/common": "*"
-  checksum: 10c0/c0d63c29e8ba2f958b01d613ae1c4c115ded4e246e7c7db725743bd164b546344aac06b8b8ab41050377ed0fccefb3680aea5c3e0992d898177b1279152bc42e
+  checksum: 10c0/910be8699108e9a88dc8720243cd8720adbb47c6e156bad0a7285fcf50541c1ebdf68333ad6146c560a64f04f383ad6f6b2acb27853610094230258f5dd01d2e
   languageName: node
   linkType: hard
 
-"@pdfme/ui@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@pdfme/ui@npm:3.2.1"
+"@pdfme/ui@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@pdfme/ui@npm:3.4.0"
   dependencies:
     "@ant-design/icons": "npm:^5.2.6"
     "@dnd-kit/core": "npm:^6.0.8"
@@ -5936,7 +5936,7 @@ __metadata:
     antd: "npm:^5.9.4"
     form-render: "npm:^2.2.16"
     hotkeys-js: "npm:^3.8.7"
-    pdfjs-dist: "npm:^4.0.189"
+    pdfjs-dist: "npm:^3.11.174"
     react: "npm:^16.14.0"
     react-dom: "npm:^16.14.0"
     react-moveable: "npm:^0.30.3"
@@ -5944,7 +5944,7 @@ __metadata:
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 10c0/385bfee05ba82e0aae1988894c5ceb8014e3828d733a374546c8412f9e08d829c6dc5fc04b2766c4a90279f68f4494b3ee01af527419b19ead2acacfd920ba65
+  checksum: 10c0/3d82b22ca48bb919b6f1e28b52999f49a9b36e739e4bf8a398e90b3438378f9d387375da1e170582e308870321749b4419d78ec23767ec2fa827ec8429c3b7b4
   languageName: node
   linkType: hard
 
@@ -6690,8 +6690,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
-    "@pdfme/common": "npm:^3.2.1"
-    "@pdfme/generator": "npm:^3.2.1"
+    "@pdfme/common": "npm:^3.4.0"
+    "@pdfme/generator": "npm:^3.4.0"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:packages/utils"
     eslint: "npm:^8.57.0"
@@ -29800,9 +29800,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pdf-ui@workspace:applications/pdf-ui"
   dependencies:
-    "@pdfme/common": "npm:^3.2.1"
-    "@pdfme/schemas": "npm:^3.2.1"
-    "@pdfme/ui": "npm:^3.2.1"
+    "@pdfme/common": "npm:^3.4.0"
+    "@pdfme/schemas": "npm:^3.4.0"
+    "@pdfme/ui": "npm:^3.4.0"
     "@types/toastify-js": "npm:^1.12.3"
     eslint: "npm:^8.57.0"
     toastify-js: "npm:^1.12.0"
@@ -29811,9 +29811,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"pdfjs-dist@npm:^4.0.189":
-  version: 4.0.269
-  resolution: "pdfjs-dist@npm:4.0.269"
+"pdfjs-dist@npm:^3.11.174":
+  version: 3.11.174
+  resolution: "pdfjs-dist@npm:3.11.174"
   dependencies:
     canvas: "npm:^2.11.2"
     path2d-polyfill: "npm:^2.0.1"
@@ -29822,7 +29822,7 @@ __metadata:
       optional: true
     path2d-polyfill:
       optional: true
-  checksum: 10c0/75972e736e69ca54f125e36eea7f6cbafbd7d0e47dc5e4516550527a807f7d265c27f64362b56f285f11299c03f1907c02bd52d0992f0bec105a7da443ff1514
+  checksum: 10c0/0cb26561fd9bea90f2c1c8029d4cf972d338838de0f7f7aa3f369b2e555b99a2d8bbf1b81cc682fb26331241201a432726ae356a7ad3a930d86a308ca941d29c
   languageName: node
   linkType: hard
 
