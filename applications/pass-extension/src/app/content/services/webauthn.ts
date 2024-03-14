@@ -1,22 +1,28 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { clientStatusResolved } from '@proton/pass/lib/client';
-import { WorkerMessageType } from '@proton/pass/types';
+import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { objectHandler } from '@proton/pass/utils/object/handler';
 
-import { isBridgeRequest } from '../bridge/message';
+import { createBridgeAbortSignal, isBridgeAbortSignal, isBridgeRequest } from '../bridge/message';
 import { withContext } from '../context/context';
+
+type WebAuthNServiceState = { requestToken: MaybeNull<string> };
 
 export const createWebAuthNService = () => {
     const listeners = createListenerStore();
+    const state = objectHandler<WebAuthNServiceState>({ requestToken: null });
 
     const ensureReady = () =>
         waitUntil(
             {
                 check: withContext<Predicate>((ctx) => (ctx ? clientStatusResolved(ctx.getState().status) : false)),
-                cancel: withContext<Predicate>((ctx) => ctx?.getState()?.stale ?? false),
+                cancel: withContext<Predicate>(
+                    (ctx) => state.get('requestToken') === null || (ctx?.getState()?.stale ?? false)
+                ),
             },
             50
         );
@@ -28,7 +34,13 @@ export const createWebAuthNService = () => {
             withContext(async (ctx, { data }) => {
                 if (!ctx) return;
 
+                if (isBridgeAbortSignal(data) && data.token === state.get('requestToken')) {
+                    ctx?.service.iframe.notification?.close();
+                }
+
                 if (isBridgeRequest(data)) {
+                    state.set('requestToken', data.token);
+
                     switch (data.request.type) {
                         case WorkerMessageType.PASSKEY_CREATE: {
                             await ensureReady();
@@ -58,10 +70,15 @@ export const createWebAuthNService = () => {
         if (webAuthFields) ctx?.service.iframe.attachNotification();
     });
 
-    return {
-        init,
-        destroy: () => listeners.removeAll(),
+    const destroy = () => {
+        const token = state.get('requestToken');
+        if (token) window.postMessage(createBridgeAbortSignal(token), '*');
+
+        listeners.removeAll();
+        state.set('requestToken', null);
     };
+
+    return { init, destroy };
 };
 
 export type WebAuthNService = ReturnType<typeof createWebAuthNService>;
