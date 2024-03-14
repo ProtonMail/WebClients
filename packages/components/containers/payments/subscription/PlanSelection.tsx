@@ -2,7 +2,6 @@ import { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     ADDON_NAMES,
@@ -14,7 +13,7 @@ import {
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { getIpPricePerMonth, getPlanIDs, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
+import { getIpPricePerMonth, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -189,7 +188,7 @@ const PlanSelection = ({
     const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [
         PLANS.MAIL,
-        getVPNPlanToUse(plansMap, getPlanIDs(subscription)),
+        PLANS.VPN /*getVPNPlanToUse(plansMap, getPlanIDs(subscription)),*/,
         PLANS.DRIVE,
         PLANS.PASS_PLUS,
     ].filter(isTruthy);
