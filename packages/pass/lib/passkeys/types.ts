@@ -11,9 +11,10 @@ export type SelectedPasskey = SelectedItem & { name: string; username: string; c
 
 type WebAuthnIntercept<T> = { intercept: false } | { intercept: true; response: T };
 
-export type PasskeyCreatePayload = { domain: string; publicKey: SanitizedPublicKeyCreate };
+export type PasskeyQueryPayload = { credentialIds: string[]; domain: string };
+
+export type PasskeyCreatePayload = { domain: string; request: string };
 export type PasskeyCreateResponse = WebAuthnIntercept<WasmGeneratePasskeyResponse>;
 
-export type PasskeyQueryPayload = { credentialIds: string[]; domain: string };
-export type PasskeyGetPayload = { domain: string; publicKey: SanitizedPublicKeyRequest; passkey?: SelectedPasskey };
+export type PasskeyGetPayload = { domain: string; request: string; passkey?: SelectedPasskey };
 export type PasskeyGetResponse = WebAuthnIntercept<WasmResolvePasskeyChallengeResponse>;
