@@ -257,6 +257,7 @@ const SubscriptionCheckout = ({
                           planIDs,
                           checkout,
                           currency,
+                          coupon: checkResult.Coupon?.Code,
                       }) ||
                       getRenewalNoticeText({
                           renewCycle: cycle,
