@@ -72,7 +72,9 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
         run().catch(close);
     }, []);
 
-    return passkeys ? (
+    if (!passkeys) return null;
+
+    return passkeys.length > 0 ? (
         <Scroll>
             {passkeys.map((passkey, idx) => (
                 <ListItem
@@ -86,7 +88,15 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
                 />
             ))}
         </Scroll>
-    ) : null;
+    ) : (
+        <Card className="flex flex-auto">
+            <div className="flex flex-column justify-center items-center gap-2 mb-2">
+                <Icon name="pass-passkey" size={6} />
+                <span className="text-center block max-w-2/3">{c('Warning')
+                    .t`No passkeys found. Save your passkeys in ${PASS_APP_NAME} to sign-in to ${domain}.`}</span>
+            </div>
+        </Card>
+    );
 };
 
 export const PasskeyGet: FC<Props> = (props) => {
@@ -107,7 +117,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                     {(locked, input) =>
                         locked ? (
                             <Card className="flex flex-auto">
-                                <div className="flex justify-center gap-2 mb-2">
+                                <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                     <Icon name="lock-filled" size={6} />
                                     <span className="text-center block">
                                         {c('Info')
