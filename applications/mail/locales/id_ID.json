@@ -4342,6 +4342,12 @@
       "Closing this means giving up the free storage bonus.": [
         "Dengan menutup daftar ini, Anda tidak akan lagi dapat memperoleh bonus kuota cuma-cuma yang ditawarkan."
       ],
+      "Congratulations, you completed all the steps!": [
+        "Selamat, Anda telah menyelesaikan semua langkah-langkahnya!"
+      ],
+      "Congratulations, you finished!": [
+        "Selamat, Anda sudah selesai!"
+      ],
       "Continue setting up your email": [
         "Lanjutkan pengaturan surel Anda"
       ],
@@ -4638,7 +4644,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Tergantung dari layanan surel Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
+        "Tergantung dari layanan penyedia email Anda sebelumnya, Anda mungkin akan perlu untuk menghasilkan ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengeklik tombol 3 titik (...)."
@@ -7296,6 +7302,11 @@
       ],
       "Senders blocked": [
         "Pengirim diblokir"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
       ]
     },
     "Oauth instructions": {

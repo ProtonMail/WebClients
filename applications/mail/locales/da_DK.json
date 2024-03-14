@@ -4494,6 +4494,12 @@
       "Closing this means giving up the free storage bonus.": [
         "Hvis du lukker dette, giver du afkald på den gratis lagerbonus."
       ],
+      "Congratulations, you completed all the steps!": [
+        "Tillykke, du har gennemført alle trinnene!"
+      ],
+      "Congratulations, you finished!": [
+        "Tillykke, du er færdig!"
+      ],
       "Continue setting up your email": [
         "Fortsæt konfigurationen af din e-mail"
       ],
@@ -7468,6 +7474,23 @@
         "Papirkurv"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop applikation."
+      ],
+      "10 email addresses": [
+        "10 e-mailadresse"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Slet automatisk elementer i Spam og Papirkurven"
+      ],
+      "Support for 1 custom email domain": [
+        "Understøttelse af 1 brugerdefineret e-mail-domæne"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Vs:"
@@ -7814,6 +7837,11 @@
       ],
       "Senders blocked": [
         "Afsendere blokeret"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Nogle billeder blev ikke uploadet grundet duplikerede filnavne i det nuværende valg."
       ]
     },
     "Oauth instructions": {
