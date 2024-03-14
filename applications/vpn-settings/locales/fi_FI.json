@@ -3002,6 +3002,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Määritä SAML-todennus organisaatiollesi identiteetintarjoajan (IdP) kautta. Tämä mahdollistaa SAML:n koko organisaatiolle."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Määritä SAML-todennus organisaatiollesi identiteetintarjoajan, kuten Oktan, Microsoft Azuren, tai Google Identity Platformin kautta. Tämä mahdollistaa SAML:n koko organisaatiolle."
+      ],
       "Continue with ${ freeName }": [
         "Jatka ${ freeName } -tilauksella"
       ],
@@ -3120,6 +3123,9 @@
       ],
       "Emailing preference saved": [
         "Sähköpostiasetukset tallennettiin"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Identiteettipalveluntarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
@@ -3282,6 +3288,9 @@
       ],
       "Lean more about gateways": [
         "Lue lisää yhdyskäytävistä"
+      ],
+      "Lean more about single sign-on": [
+        "Lue lisää kertakirjautumisesta"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lue miten kirjaudut ${ VPN_APP_NAME }:ään kolmannen osapuolen VPN-sovelluksilla."
@@ -4758,6 +4767,49 @@
         "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsentä käyttää kaksivaiheista todennusta."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti"
+      ],
+      "Support for 1 custom email domain": [
+        "1 oma sähköpostiverkkotunnus"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "ensimmäisen kuukauden ajan"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktivoi käyttäjä"
@@ -5679,6 +5731,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Kaksivaiheista todennusta ei enää vaadita"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Joitain kuvia ei lähetetty, koska nykyinen valinta sisältää päällekkäisiä tiedostonimiä."
       ]
     },
     "Onboarding": {

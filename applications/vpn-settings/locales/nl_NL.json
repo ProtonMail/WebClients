@@ -2998,6 +2998,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "SAML-authenticatie voor de organisatie configureren via een identiteitsprovider (IdP). Dit zal SAML voor de hele organisatie inschakelen."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configureer SAML-authenticatie voor uw organisatie via een identiteitsprovider zoals Okta, Microsoft Azure of Google Identity Platform. Dit zal SAML voor de hele organisatie inschakelen."
+      ],
       "Continue with ${ freeName }": [
         "Ga verder met ${ freeName }"
       ],
@@ -3116,6 +3119,9 @@
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ontvangen van uw identiteitsprovider (bv. https://idp.example.com/sso/saml)."
@@ -3275,6 +3281,9 @@
       ],
       "Lean more about gateways": [
         "Meer info over gateways"
+      ],
+      "Lean more about single sign-on": [
+        "Lees meer over eenmalig inloggen"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
@@ -4741,6 +4750,52 @@
         "${ twoFAMembers.length }/${ members.length } organisatieleden gebruiken tweestapsverificatie"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Aangepaste planning en snooze-tijden voor verzenden"
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Beperkte aanbieding, loopt af op 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activeer gebruiker"
@@ -5020,6 +5075,9 @@
       ],
       "Dedicated servers and IP": [
         "Toegewijde servers en IP"
+      ],
+      "Desktop app": [
+        "Desktopapp"
       ],
       "DNS leak prevention": [
         "DNS-lekbescherming"
@@ -5671,6 +5729,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tweestapsverificatie is niet langer vereist"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
     "Onboarding": {
