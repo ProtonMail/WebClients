@@ -156,6 +156,7 @@ interface PartialConfigForV5AndV6
         | 'preferredSymmetricAlgorithm'
         | 'rejectHashAlgorithms'
         | 'constantTimePKCS1DecryptionSupportedSymmetricAlgorithms'
+        | 'rejectCurves'
     > {}
 interface PartialConfigForV5AndV6ForDecryption extends PartialConfigForV5AndV6 {
     constantTimePKCS1DecryptionSupportedSymmetricAlgorithms?: Set<Exclude<enums.symmetric, enums.symmetric.plaintext>>;
