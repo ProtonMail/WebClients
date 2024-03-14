@@ -267,7 +267,7 @@
         "Opprett mappe"
       ],
       "Create Gateway": [
-        "Opprett gateway"
+        "Opprett mellomtjener"
       ],
       "Create label": [
         "Opprett etikett"
@@ -309,7 +309,7 @@
         "Slett og bekreft"
       ],
       "Delete Gateway": [
-        "Slett gateway"
+        "Slett mellomtjener"
       ],
       "Delete link": [
         "Slett kobling"
@@ -393,7 +393,7 @@
         "Rediger e-postadresse"
       ],
       "Edit Gateway": [
-        "Rediger gateway"
+        "Rediger mellomtjener"
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
@@ -3224,6 +3224,14 @@
         "Hjelp oss å bli bedre!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb for Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm for Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Avansert delingssikkerhet"
@@ -3820,13 +3828,13 @@
         "IMAP-tjener kreves"
       ],
       "Impossible to create the gateway": [
-        "Umulig å opprette gatewayen"
+        "Umulig å opprette mellomtjeneren"
       ],
       "Impossible to edit the gateway": [
-        "Umulig å redigere gatewayen"
+        "Umulig å redigere mellomtjeneren"
       ],
       "Impossible to rename the gateway": [
-        "Umulig å gi gatewayen nytt navn"
+        "Umulig å gi mellomtjeneren nytt navn"
       ],
       "Incorrect login credentials. Please try again.": [
         "Feil påloggingsinformasjon. Vennligst prøv på nytt."
@@ -6057,12 +6065,12 @@
         "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Legger til ${ addedServerCount } gatewaytjener",
-        "Legger til ${ addedServerCount } gatewaytjenere"
+        "Legger til ${ addedServerCount } mellomtjener",
+        "Legger til ${ addedServerCount } mellomtjenere"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Legger til gatewaytjener: ${ serverNumber } / ${ total }",
-        "Legger til gatewaytjenere: ${ serverNumber } / ${ total }"
+        "Legger til mellomtjener: ${ serverNumber } / ${ total }",
+        "Legger til mellomtjenere: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Ytterligere alternativer"
@@ -6192,7 +6200,7 @@
         "Er du sikker du ønsker å fjerne administrative rettigheter fra denne brukeren?"
       ],
       "Ask your organisation admin to setup Gateways.": [
-        "Be organisasjonsadministratoren om å konfigurere gatewayer."
+        "Be organisasjonsadministratoren om å konfigurere mellomtjenere."
       ],
       "Attention required": [
         "Oppmerksomhet kreves"
@@ -6331,11 +6339,11 @@
         "Opprett i"
       ],
       "Create your first Gateway": [
-        "Opprett din første gateway"
+        "Opprett din første mellomtjener"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Oppretter gatewaytjener: ${ serverNumber } / ${ total }",
-        "Oppretter gatewaytjenere: ${ serverNumber } / ${ total }"
+        "Oppretter mellomtjener: ${ serverNumber } / ${ total }",
+        "Oppretter mellomtjenere: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Oppretter kontoen din"
@@ -6383,7 +6391,7 @@
         "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private gatewayer for å aktivere finjustert tilgangskontroll."
+        "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
@@ -6392,8 +6400,8 @@
         "Slett kobling?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Sletter ${ deletedServerCount } gatewaytjener",
-        "Sletter ${ deletedServerCount } gatewaytjenere"
+        "Sletter ${ deletedServerCount } mellomtjener",
+        "Sletter ${ deletedServerCount } mellomtjenere"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -6583,7 +6591,7 @@
         "frigjøre plass ved å slette eldre meldinger eller annen data"
       ],
       "Gateways": [
-        "Gatewayer"
+        "Mellomtjenere"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generering av ny gjenopprettingsfrase vil deaktivere den gamle."
@@ -6777,7 +6785,7 @@
         "Store importer kan ta flere dager."
       ],
       "Lean more about gateways": [
-        "Lær mer om gatewayer"
+        "Lær mer om mellomtjenere"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær hvordan å logge inn på ${ VPN_APP_NAME } med tredjeparts VPN-applikasjoner."
@@ -6900,10 +6908,10 @@
         "Ingen mappe valgt"
       ],
       "No gateways": [
-        "Ingen gatewayer"
+        "Ingen mellomtjenere"
       ],
       "No Gateways yet": [
-        "Ingen gatewayer enda"
+        "Ingen mellomtjenere enda"
       ],
       "No imports or forwarding history.": [
         "Ingen importer eller videresendingshistorikk."
@@ -6963,7 +6971,7 @@
         "Organisasjonsstørrelse"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Organiser dine dedikerte tjenere i gatewayer og bestem hvilke medlemmer som kan få tilgang til dem."
+        "Organiser dine dedikerte tjenere i mellomtjenere og bestem hvilke medlemmer som kan få tilgang til dem."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andre administratorer finnes i organisasjonen din, du er ansvarlig for å kommunisere det nye passordet til dem."
@@ -8894,7 +8902,7 @@
         "Fra: ${ fromEmail }"
       ],
       "Gateway name": [
-        "Navn på gateway"
+        "Navn på mellomtjener"
       ],
       "Gift code": [
         "Gavekode"
@@ -10253,6 +10261,9 @@
       "Advanced sharing security": [
         "Avansert delingssikkerhet"
       ],
+      "Auto-delete Spam and Trash": [
+        "Auto-slett søppelpost og papirkurv"
+      ],
       "Auto-delete spam and trashed messages": [
         "Autoslett søppelpost og meldinger i papirkurven"
       ],
@@ -10306,6 +10317,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedikerte tjenere og IP"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
       ],
       "DNS leak prevention": [
         "DNS-lekkasjeforebyggelse"
@@ -10410,6 +10424,9 @@
       ],
       "Router support": [
         "Ruterstøtte"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Planlegg og slumre e-poster når som helst"
       ],
       "Schedule messages at any time": [
         "Planlegg meldinger når som helst"
@@ -10571,7 +10588,7 @@
         "* Med 30 måneders abonnement. Andre abonnementsalternativer tilgjengelig i kassen."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gatewayer"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre mellomtjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -10746,6 +10763,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få tilgang til blokkert innhold og surf privat. Inkluderer ${ serversAndCountries }, høyeste VPN-hastigheter, tilgang til strømmetjenester verden over, skadevare og annonseblokkering, raske BitTorrent-nedlastinger og mer."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Få tilgang til ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME } fra skrivebordets bekvemmelighet."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få tilgang til innhold på strømmetjenester, inkludert Netflix, Disney+ og Prime Video fra hvor som helst."
       ],
@@ -10758,11 +10778,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Lar deg sette opp automatiske svar (autosvar) for dine innkommende meldinger"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Fjern automatisk e-poster som er eldre enn 30 dager, fra papirkurven og søppelposten."
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Videresend automatisk e-postmeldinger sendt til ${ MAIL_APP_NAME }-kontoen din til en hvilken som helst annen e-postadresse."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massesending av salgsfremmende eller programmatisk e-post støttes for øyeblikket ikke. Vi anbefaler at du bruker en dedikert e-postleverandør for dette brukstilfellet."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Velg egendefinerte tidspunkter for å bli påminnet om en e-postmelding eller for når meldingen skal ankomme."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller tilgang til dine delte filer ved å legge til passordbeskyttelse og utløpsdatoer på koblinger."
@@ -10778,7 +10804,7 @@
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private gatewayer for å aktivere finjustert tilgangskontroll."
+        "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -10811,7 +10837,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private mellomtjenere."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -10987,7 +11013,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private gatewayer"
+        "Private mellomtjenere"
       ],
       "Require 2FA": [
         "Krever 2FA"
@@ -11038,6 +11064,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tofaktorautentisering kreves ikke lenger"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -13888,13 +13919,13 @@
         "Opprett ${ selectedUserIds.length } brukere"
       ],
       "Create a new Gateway": [
-        "Opprett en ny gateway"
+        "Opprett en ny mellomtjener"
       ],
       "Create a new gateway": [
-        "Opprett en ny gateway"
+        "Opprett en ny mellomtjener"
       ],
       "Create Gateway": [
-        "Opprett gateway"
+        "Opprett mellomtjener"
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
@@ -14045,7 +14076,7 @@
         "Rediger filter"
       ],
       "Edit Gateway ${ currentName }": [
-        "Rediger gateway ${ currentName }"
+        "Rediger mellomtjener ${ currentName }"
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
@@ -14057,7 +14088,7 @@
         "Rediger Sieve-filter"
       ],
       "Edit the list of servers of the gateway": [
-        "Rediger listen over tjenere for gatewayen"
+        "Rediger listen over tjenere for mellomtjeneren"
       ],
       "Edit user": [
         "Rediger bruker"
@@ -14066,7 +14097,7 @@
         "Rediger brukere"
       ],
       "Edit who can access the gateway": [
-        "Rediger hvem som har tilgang til gatewayen"
+        "Rediger hvem som har tilgang til mellomtjeneren"
       ],
       "Email": [
         "E-post"
@@ -14142,7 +14173,7 @@
         "Videresend e-poster"
       ],
       "Gateways": [
-        "Gatewayer"
+        "Mellomtjenere"
       ],
       "General": [
         "Generelt"
@@ -14365,7 +14396,7 @@
         "Fjern bruker?"
       ],
       "Rename the gateway": [
-        "Gi gateway nytt navn"
+        "Gi mellomtjeneren nytt navn"
       ],
       "Report a problem": [
         "Rapporter et problem"

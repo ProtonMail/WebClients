@@ -3168,6 +3168,14 @@
         "저희를 도와주세요!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu용 .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat용 .rpm"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "향상된 공유 보안"
@@ -6610,6 +6618,9 @@
       ],
       "No addresses exist": [
         "주소 없음"
+      ],
+      "No changes made to the current subscription": [
+        "현재의 구독에 변경이 이루어지지 않았습니다"
       ],
       "No credit card required": [
         "신용 카드 필요 없음"
@@ -10553,6 +10564,11 @@
         "이중 인증이 모두에게 필요하지 않습니다."
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
+      ]
+    },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
         "공유일 캘린더 가져오기 실패"
@@ -13787,6 +13803,9 @@
       ],
       "Summary": [
         "요약"
+      ],
+      "Support ticket closed": [
+        "지원 티켓 닫힘"
       ],
       "Switch account": [
         "계정 전환"

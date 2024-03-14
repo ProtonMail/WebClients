@@ -9678,6 +9678,49 @@
         "Turvallinen sähköposti, joka suojaa yksityisyyttäsi"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti"
+      ],
+      "Support for 1 custom email domain": [
+        "1 oma sähköpostiverkkotunnus"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "ensimmäisen kuukauden ajan"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Yritä muutaman minuutin kuluttua uudelleen."
@@ -10935,6 +10978,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Kaksivaiheista todennusta ei enää vaadita"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Joitain kuvia ei lähetetty, koska nykyinen valinta sisältää päällekkäisiä tiedostonimiä."
       ]
     },
     "Notification in holidays calendar modal": {
