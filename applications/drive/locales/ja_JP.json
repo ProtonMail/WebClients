@@ -1920,6 +1920,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "アカウントへのアクセスが失われないように回復手段を設定してください。"
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -1986,6 +1989,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "「${ name }」はすでに存在します"
+      ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } から外部アカウントに接続できません"
       ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } が更新されました。 ページを更新してください。"
@@ -2470,6 +2476,9 @@
     "Error message": {
       "Access denied": [
         "アクセスが拒否されました。"
+      ],
+      "App currently unavailable": [
+        "アプリは現在利用できません"
       ],
       "Brace yourself till we get the error fixed.": [
         "エラーが解消されるまでお待ちください。"
@@ -3235,6 +3244,9 @@
       "Download ${ name } app": [
         "${ name } アプリをダウンロード"
       ],
+      "Download anyway": [
+        "無視してダウンロード"
+      ],
       "Download canceled": [
         "ダウンロードをキャンセルしました"
       ],
@@ -3732,6 +3744,9 @@
       ],
       "Share files with links": [
         "リンクでファイルを共有"
+      ],
+      "Share with anyone": [
+        "ほかの人に共有"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText }の共有リンク"
@@ -4662,6 +4677,20 @@
         "インポートが開始しました"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "10 email addresses": [
+        "10個のメールアドレス"
+      ],
+      "Support for 1 custom email domain": [
+        "1つのカスタムドメインメールアドレスをサポート"
+      ],
+      "Unlimited folders, labels and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
@@ -5395,6 +5424,9 @@
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinelは**有効**であり、アカウントを保護しています。"
       ]
     },
     "Select files": {
@@ -6408,6 +6440,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Shared end-to-end encrypted": [
+        "エンドツーエンド暗号化された共有"
       ],
       "Show side panel": [
         "サイドパネルを表示"
