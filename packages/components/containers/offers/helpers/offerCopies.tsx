@@ -20,6 +20,8 @@ import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checko
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
 
+import type { IconName } from '../../../components/icon';
+
 export const getMonthFreeText = (n: number) => {
     return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
 };
@@ -173,15 +175,15 @@ export const getMailPlusInboxFeatures = () => {
     ];
 };
 
-export const getMailPlus2024InboxFeatures = () => {
+export const getMailPlus2024InboxFeatures = (): { name: string; icon: IconName }[] => {
     return [
-        getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true), // true remove the tooltip
-        { name: c('mailtrial2024: Deal details').t`10 email addresses` },
-        { name: c('mailtrial2024: Deal details').t`Unlimited folders, labels and filters` },
-        { name: c('mailtrial2024: Deal details').t`Support for 1 custom email domain` },
-        { name: c('mailtrial2024: Deal details').t`${MAIL_APP_NAME} desktop app` },
-        { name: c('mailtrial2024: Deal details').t`Auto-delete Spam and Trash` },
-        { name: c('mailtrial2024: Deal details').t`Custom schedule send and snooze times` },
+        { ...getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true), icon: 'storage' }, // true remove the tooltip
+        { name: c('mailtrial2024: Deal details').t`10 email addresses`, icon: 'envelopes' },
+        { name: c('mailtrial2024: Deal details').t`Unlimited folders, labels and filters`, icon: 'folders' },
+        { name: c('mailtrial2024: Deal details').t`Support for 1 custom email domain`, icon: 'globe' },
+        { name: c('mailtrial2024: Deal details').t`${MAIL_APP_NAME} desktop app`, icon: 'tv' },
+        { name: c('mailtrial2024: Deal details').t`Auto-delete Spam and Trash`, icon: 'trash-clock' },
+        { name: c('mailtrial2024: Deal details').t`Custom schedule send and snooze times`, icon: 'clock-paper-plane' },
     ];
 };
 
