@@ -3218,6 +3218,14 @@
         "Help ons verbeteren!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb voor Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm voor Fedora / Rode Hoed"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Geavanceerde beveiliging voor delen"
@@ -6368,7 +6376,7 @@
         "Discover ProtectBuy logo"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM staat ${ BRAND_NAME } toe om uw e-mails te versleutelen en voorkomt dat aanvallers uw e-mails manipuleren. Zorg ervoor dat u de volgende drie CNAME records in uw DNS-console toevoegt (gesitueerd op het platform waar u het aangepaste domein heeft gekocht)."
+        "DKIM staat ${ BRAND_NAME } toe om uw e-mails te versleutelen en voorkomt dat aanvallers uw e-mails manipuleren. Zorg ervoor dat u de volgende drie CNAME-records in uw DNS-console toevoegt (gesitueerd op het platform waar u het aangepaste domein heeft gekocht)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC controleert of de SPF- en DKIM-records van de afzender afkomstig zijn van uw domein. Dit kan voorkomen dat aanvallers een ander domein SPF en DKIM gebruiken om uw domein na te volgen. De \"p=\" (beleid) in deze record geeft aan hoe u wilt dat de geadresseerde platforms onbevoegde e-mails behandelen. We raden het \"p=quarantaine\"-beleid voor de meeste domeinen aan. Zorg ervoor dat u het volgende TXT-record in uw DNS-console toevoegt (op het platform waar u het aangepaste domein heeft aangeschaft)."
@@ -9646,6 +9654,52 @@
         "Beveiligde e-mail die uw privacy beschermt"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Aangepaste planning en snooze-tijden voor verzenden"
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Beperkte aanbieding, loopt af op 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Probeer het over een paar minuten opnieuw."
@@ -10189,6 +10243,9 @@
       ],
       "Dedicated servers and IP": [
         "Toegewijde servers en IP"
+      ],
+      "Desktop app": [
+        "Desktopapp"
       ],
       "DNS leak prevention": [
         "DNS-lekbescherming"
@@ -10912,6 +10969,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tweestapsverificatie is niet langer vereist"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
     "Notification in holidays calendar modal": {

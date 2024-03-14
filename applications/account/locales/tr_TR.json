@@ -9672,20 +9672,45 @@
         "Tekliften yararlanın"
       ],
       "Special Offer": [
-        "Özel Teklif"
+        "Özel teklif"
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "Auto-delete Spam and Trash": [
+        "Otomatik olarak istenmeyenleri ve çöpü boşaltma"
+      ],
+      "Custom schedule send and snooze times": [
+        "Özel zamanlanmış gönderim ve erteleme süreleri"
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
+      ],
       "Unlimited folders, labels and filters": [
-        "Sınırsız klasör, etiket ve filtre"
+        "Sınırsız klasör, etiket ve süzgeç"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
       ]
     },
     "mailtrial2024: Info": {
       "for the first month": [
         "ilk ay için"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
       ]
     },
     "Maintenance mode": {
@@ -10238,6 +10263,9 @@
       "Dedicated servers and IP": [
         "Size ayrılmış sunucular ve IP adresleri"
       ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
@@ -10420,6 +10448,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Erişim izinleri ile sınırsız sayıda paylaşılan kasa"
+      ],
+      "Unlimited vaults": [
+        "Sınırsız kasa"
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
@@ -10954,6 +10985,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "İki adımlı doğrulama artık zorunlu değil"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Geçerli seçimdeki yinelenen dosya adları nedeniyle bazı görseller yüklenmedi."
       ]
     },
     "Notification in holidays calendar modal": {

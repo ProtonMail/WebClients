@@ -3224,6 +3224,14 @@
         "Aidez-nous à nous améliorer."
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pour Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pour Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Sécurité avancée pour le partage"
@@ -9707,7 +9715,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Profitez de l'offre"
+        "J'en profite"
       ],
       "Special Offer": [
         "Offre spéciale"
@@ -9718,24 +9726,24 @@
         "Application de bureau ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
-        "10 adresse e-mail"
+        "10 adresses e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Suppression automatique des indésirables/spam et de la corbeille"
+        "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
       ],
       "Custom schedule send and snooze times": [
-        "Programmation personnalisée des envois et des mises en attente"
+        "Personnalisation de l'heure d'envoi et de la période de mise en attente"
       ],
       "Support for 1 custom email domain": [
-        "Prise en charge pour 1 domaine de messagerie personnalisé"
+        "Prise en charge d'un domaine de messagerie personnalisé"
       ],
       "Unlimited folders, labels and filters": [
-        "Dossiers, étiquettes et filtres illimités"
+        "Nombre illimité de dossiers, labels et filtres"
       ]
     },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
-        "Renouvellement à ${ renewablePrice } et annulation à tout moment"
+        "Renouvellement au prix de ${ renewablePrice } avec possibilité de résiliation à tout moment"
       ]
     },
     "mailtrial2024: Info": {
@@ -9743,12 +9751,12 @@
         "pour le premier mois"
       ],
       "Limited-time offer, expires April 2 2024": [
-        "Offre à durée limitée qui expire le 2 avril 2024"
+        "Offre à durée limitée qui se termine le 2 avril 2024"
       ]
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Obtenez ${ planName } pour seulement ${ planPrice }"
+        "Obtenez ${ planName } pour seulement ${ planPrice }."
       ]
     },
     "Maintenance mode": {
@@ -10248,7 +10256,7 @@
         "Sécurité avancée pour le partage"
       ],
       "Auto-delete Spam and Trash": [
-        "Suppression automatique du pourriel et de la corbeille"
+        "Suppression automatique des indésirables/spam et de la corbeille"
       ],
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
@@ -10412,7 +10420,7 @@
         "Prise en charge des routeurs"
       ],
       "Schedule and snooze emails for any time": [
-        "Planifier et reporter des messages n'importe quand"
+        "Planifier et mettre en attente les messages à tout moment"
       ],
       "Schedule messages at any time": [
         "Planification de l'envoi de messages quand vous le voulez"
@@ -10750,7 +10758,7 @@
         "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Accédez à ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME } depuis le confort de votre bureau"
+        "Accédez en toute simplicité à ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME } depuis votre bureau."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
@@ -10765,13 +10773,16 @@
         "Configurez des réponses automatiques pour vos messages entrants."
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Suppression automatique des messages se trouvant à la corbeille et pourriels depuis plus de 30 jours."
+        "Supprime automatiquement les messages se trouvant dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Transférez automatiquement les messages envoyés à votre compte ${ MAIL_APP_NAME } vers toute autre adresse e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'envoi en masse de messages promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Choisissez des heures personnalisées pour vous rappeler d'un message ou de son envoi."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Contrôlez l'accès à vos fichiers partagés en ajoutant une protection par mot de passe et des dates d'expiration de lien."
@@ -11047,6 +11058,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Certaines images n'ont pas été importées car la sélection en cours comporte des noms de fichier dupliqués."
       ]
     },
     "Notification in holidays calendar modal": {
