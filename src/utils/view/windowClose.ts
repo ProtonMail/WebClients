@@ -14,6 +14,7 @@ export const macOSExitEvent = (window: BrowserWindow, event: Event) => {
         return;
     }
 
+    event.preventDefault();
     saveWindowBounds(window);
     if (window.isFullScreen()) {
         Logger.info("close, isFullScreen on macOS");
