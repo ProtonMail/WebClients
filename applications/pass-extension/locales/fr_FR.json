@@ -125,6 +125,9 @@
       "Create login": [
         "Créer un identifiant"
       ],
+      "Create new login": [
+        "Créer un nouvel identifiant"
+      ],
       "Create note": [
         "Créer une note"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Enregistrer"
       ],
+      "Save passkey": [
+        "Sauvegarder la clé d'identification"
+      ],
       "Saving": [
         "Enregistrer"
+      ],
+      "Saving passkey...": [
+        "Sauvegarde de la clé d'identification..."
       ],
       "See members": [
         "Afficher les membres"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "L'authentification n'a pas abouti. Confirmez votre mot de passe ${ BRAND_NAME } pour poursuivre l'exportation."
       ],
+      "Authentication failure: ${ message }": [
+        "L'authentification a échoué : ${ message }"
+      ],
+      "Authenticator failure": [
+        "L'authentification a échoué"
+      ],
       "Auto-lock could not be activated": [
         "Le verrouillage automatique n’a pu être activé."
       ],
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "La création de l'élément n'a pas abouti."
       ],
+      "Item does not exist": [
+        "L'objet n'existe pas"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Si l'un des champs comporte des virgules, des guillemets ou des lignes supplémentaires non prévues, LastPass exportera un fichier CSV corrompu."
+      ],
+      "Missing passkey": [
+        "Clé d'authentification manquante"
       ],
       "Moving item failed": [
         "Le déplacement de l'élément n'a pas abouti."
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Épinglez l'extension ou sélectionnez « Continuer sans épingler »."
+      ],
+      "Registration failure: ${ message }": [
+        "L'enregistrement a échoué : ${ message }"
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "Invitation inconnue"
+      ],
+      "Unknown item": [
+        "Objet inconnu"
+      ],
+      "Unknown passkey": [
+        "Clé d'authentification inconnue"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format de fichier ${ PASS_APP_NAME } non pris en charge"
@@ -848,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Une nouvelle version de ${ PASS_APP_NAME } est disponible. Faites la mise à jour pour profiter des dernières fonctionnalités et corrections de bugs."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Une clé d'authentification pour \"${ username }\" seras enregistrée et disponible pour les appareils ou ${ PASS_APP_NAME } est installé."
+      ],
       "Access successfully confirmed": [
         "L'accès a été confirmé."
       ],
@@ -893,8 +926,8 @@
       "Auto-lock successfully disabled": [
         "Le verrouillage automatique a été désactivé."
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Enregistré automatiquement sur ${ submissionURL }"
+      "Autosaved on ${ payload.domain }": [
+        "Enregistré automatiquement sur ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Authentification A2F intégrée"
@@ -911,8 +944,17 @@
       "Can view items in this vault.": [
         "Permet de consulter les éléments de ce coffre-fort."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Choisir une clé d'authentification sauvegardée pour la connexion à ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Quand vous voulez l'ouvrir, cliquez sur l'icône."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Fermez cette fenêtre afin d'utiliser une clé de sécurité ou une autre clé d'identification."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Fermer cette fenêtre afin d'utiliser un autre gestionnaire de clés d'authentification."
       ],
       "Congratulations, your access has been confirmed": [
         "Votre accès a été confirmé."
@@ -1121,6 +1163,9 @@
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Connexion avec une clé d'authentification"
+      ],
       "Password copied": [
         "Le mot de passe a été copié."
       ],
@@ -1181,6 +1226,12 @@
       ],
       "Save login": [
         "Enregistrer l'identifiant"
+      ],
+      "Save passkey": [
+        "Sauvegarder la clé d'identification"
+      ],
+      "Select an existing login or create a new one.": [
+        "Sélectionnez un identifiant existant ou créez-en un nouveau."
       ],
       "Select destination vault": [
         "Sélectionner le coffre-fort de destination"
@@ -1278,6 +1329,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Débloquez ${ PASS_APP_NAME } avec votre code NIP pour accéder a vos clés d'authentifications"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Débloquez ${ PASS_APP_NAME } avec votre code NIP afin de sauvegarder cette clé d'authentification"
       ],
       "Unlock it with your PIN to access the settings": [
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
@@ -1569,6 +1626,9 @@
       "Item ID": [
         "ID de l'élément"
       ],
+      "Key": [
+        "Clé"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Raccourci clavier : ${ shortcut }"
       ],
@@ -1649,6 +1709,9 @@
       ],
       "Oldest to newest": [
         "Du plus ancien au plus récent"
+      ],
+      "Passkey": [
+        "Clé d'identification"
       ],
       "Passphrase": [
         "Phrase secrète"
@@ -1790,6 +1853,9 @@
       ],
       "View logs": [
         "Afficher les journaux"
+      ],
+      "Website": [
+        "Site web"
       ],
       "Websites": [
         "Sites internet"
@@ -2051,6 +2117,9 @@
       ],
       "Our welcome gift to you": [
         "Notre cadeau de bienvenue"
+      ],
+      "Passkey": [
+        "Clé d'identification"
       ],
       "Password": [
         "Mot de passe"

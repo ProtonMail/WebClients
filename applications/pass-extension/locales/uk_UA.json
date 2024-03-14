@@ -381,7 +381,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Застосунок ${ MAIL_APP_NAME } на комп'ютері"
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ]
     },
     "Button": {
@@ -704,9 +704,6 @@
       ],
       "Auto-lock successfully disabled": [
         "Автоблокування успішно вимкнено"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "Автоматично збережено ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."
@@ -1201,6 +1198,9 @@
       ],
       "Invitations": [
         "Запрошення"
+      ],
+      "Key": [
+        "Ключ"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбінація клавіш: ${ shortcut }"
