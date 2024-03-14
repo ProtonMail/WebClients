@@ -52,18 +52,18 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
     });
 
     const reconciliate = async () => {
-        const { status, loggedIn } = context.getState();
+        const { loggedIn, status } = context.getState();
         context.service.formManager.sync();
 
         const ready = clientReady(status);
         const locked = clientLocked(status);
-        const unauthorized = clientUnauthorized(status);
+        const unauthorized = clientUnauthorized(status) || !loggedIn;
 
         /** If the user is unexpectedly logged out, clear autofill cached
          * data and detach any autosave notification that may be present */
-        if (!loggedIn || locked) context.service.autofill.reset();
         if (ready) await context.service.autofill.reconciliate();
-        else if (unauthorized) {
+        else if (unauthorized || locked) {
+            context.service.autofill.reset();
             const action = context.service.iframe.notification?.getState().action;
             const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
             const shouldDestroy = !locked || (action && !unlockable.includes(action));
