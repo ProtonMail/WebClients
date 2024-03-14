@@ -28,8 +28,8 @@ export const createPasskeyService = (): Passkeyservice => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.PASSKEY_CREATE,
-        withContext((ctx, { payload: { publicKey, domain } }) => {
-            const response = ctx.service.core.bindings?.generate_passkey(domain, JSON.stringify(publicKey));
+        withContext((ctx, { payload: { request, domain } }) => {
+            const response = ctx.service.core.bindings?.generate_passkey(domain, request);
             if (!response) throw new Error(c('Error').t`Authenticator failure`);
 
             return { intercept: true, response };
@@ -38,7 +38,7 @@ export const createPasskeyService = (): Passkeyservice => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.PASSKEY_GET,
-        withContext((ctx, { payload: { domain, passkey: selectedPasskey, publicKey } }) => {
+        withContext((ctx, { payload: { domain, passkey: selectedPasskey, request } }) => {
             if (!selectedPasskey) throw new Error(c('Error').t`Missing passkey`);
 
             const { shareId, itemId } = selectedPasskey;
@@ -50,8 +50,8 @@ export const createPasskeyService = (): Passkeyservice => {
             if (!passkey) throw new Error(c('Error').t`Unknown passkey`);
 
             const content = base64StringToUint8Array(passkey.content);
-            const request = JSON.stringify(publicKey);
             const response = ctx.service.core.bindings?.resolve_passkey_challenge(domain, content, request);
+
             if (!response) throw new Error(c('Error').t`Authenticator failure`);
 
             return { intercept: true, response };
