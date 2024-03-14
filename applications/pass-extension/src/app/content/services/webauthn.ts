@@ -6,7 +6,7 @@ import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
-import { isBridgeRequest } from '../bridge/main';
+import { isBridgeRequest } from '../bridge/message';
 import { withContext } from '../context/context';
 
 export const createWebAuthNService = () => {
@@ -35,7 +35,7 @@ export const createWebAuthNService = () => {
                             return ctx?.service.iframe.attachNotification()?.open({
                                 action: NotificationAction.PASSKEY_CREATE,
                                 domain: ctx.getExtensionContext().url.domain!,
-                                publicKey: data.request.payload.publicKey,
+                                request: data.request.payload.request,
                                 token: data.token,
                             });
                         }
@@ -44,7 +44,7 @@ export const createWebAuthNService = () => {
                             return ctx?.service.iframe.attachNotification()?.open({
                                 action: NotificationAction.PASSKEY_GET,
                                 domain: ctx.getExtensionContext().url.domain!,
-                                publicKey: data.request.payload.publicKey,
+                                request: data.request.payload.request,
                                 token: data.token,
                             });
                         }

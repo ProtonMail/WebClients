@@ -1,8 +1,8 @@
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/main';
+import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
@@ -24,6 +24,7 @@ import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { MaybeNull, SafeLoginItem, SelectedItem } from '@proton/pass/types';
@@ -38,12 +39,13 @@ type PasskeyCreateFormValues = { name: string; step: PasskeyCreateStep; selected
 
 const formId = 'create-passkey';
 
-const PasskeyCreateView: FC<Props> = ({ domain, publicKey, token }) => {
+const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
     const { close, postMessage, settings } = useIFrameContext();
     const { createNotification } = useNotifications();
 
     const [items, setItems] = useMountedState<MaybeNull<SafeLoginItem[]>>(null);
     const [loading, setLoading] = useMountedState(false);
+    const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
     const username = publicKey.user.name;
 
     const form = useFormik<PasskeyCreateFormValues>({
@@ -61,7 +63,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, publicKey, token }) => {
                 const result = await sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.PASSKEY_CREATE,
-                        payload: { publicKey, domain },
+                        payload: { request, domain },
                     })
                 );
 

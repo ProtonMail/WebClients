@@ -30,7 +30,8 @@ export const intoAuthenticatorAssertionResponse = (
 
 export const intoPublicKeyCredential = (
     result: WasmPublicKeyCredentialAttestation | WasmPublicKeyCredentialAssertion,
-    response: AuthenticatorAttestationResponse | AuthenticatorAssertionResponse
+    response: AuthenticatorAttestationResponse | AuthenticatorAssertionResponse,
+    clone: <T>(obj: T) => T
 ): PublicKeyCredential =>
     Object.setPrototypeOf(
         {
@@ -39,7 +40,7 @@ export const intoPublicKeyCredential = (
             rawId: new Uint8Array(result.raw_id).buffer,
             response,
             type: result.type,
-            getClientExtensionResults: () => result.client_extension_results ?? {},
+            getClientExtensionResults: () => clone(result.client_extension_results ?? {}),
         },
         PublicKeyCredential.prototype
     );
