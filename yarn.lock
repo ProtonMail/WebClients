@@ -6080,7 +6080,7 @@ __metadata:
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.57.0"
@@ -6105,7 +6105,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/utils": "workspace:packages/utils"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/dom": "npm:^9.3.4"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
@@ -6189,7 +6189,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.57.0"
@@ -6441,7 +6441,7 @@ __metadata:
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
   languageName: unknown
   linkType: soft
 
@@ -6513,7 +6513,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.57.0"
@@ -6626,7 +6626,7 @@ __metadata:
     "@proton/srp": "workspace:packages/srp"
     "@proton/styles": "workspace:^"
     "@protontech/pass-rust-core": "npm:^0.7.0"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6710,7 +6710,7 @@ __metadata:
     "@proton/mail": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     react: "npm:^18.2.0"
     react-redux: "npm:^9.1.0"
   languageName: unknown
@@ -6721,7 +6721,7 @@ __metadata:
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.57.0"
@@ -7173,9 +7173,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@reduxjs/toolkit@npm:2.2.0"
+"@reduxjs/toolkit@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "@reduxjs/toolkit@npm:2.2.1"
   dependencies:
     immer: "npm:^10.0.3"
     redux: "npm:^5.0.1"
@@ -7189,7 +7189,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 10c0/60930b4cf0e3971cce97c58ce613dff759f58dd316ea0f42714bf99efc241cbeeffdc97719a71407850f434a880d1ffc8378be9403279e88cd2969d829e98374
+  checksum: 10c0/675f816b311d6d703259e00c73977c9c5968e41b039d6d149e34e9084d5e6718aff3b692d2b7697974fb57a056687932117da1dd5202d392811d8d4e91d09322
   languageName: node
   linkType: hard
 
@@ -31279,7 +31279,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"
-    "@reduxjs/toolkit": "npm:^2.2.0"
+    "@reduxjs/toolkit": "npm:^2.2.1"
     "@testing-library/dom": "npm:^9.3.4"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
