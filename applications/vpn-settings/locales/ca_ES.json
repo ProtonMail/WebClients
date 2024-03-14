@@ -2895,6 +2895,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configuri l'autenticació SAML per a la seva organització mitjançant un proveïdor d'identitats com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
+      ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
       ],
@@ -2987,6 +2990,9 @@
       ],
       "Emailing preference saved": [
         "Preferència de correu desada"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Activi l'inici de sessió únic per mantenir la seva organització segura"
       ],
       "Enter key manually instead": [
         "Introduir clau manualment"
@@ -3131,6 +3137,9 @@
       ],
       "Lean more about gateways": [
         "Obteniu més informació sobre les passarel·les"
+      ],
+      "Lean more about single sign-on": [
+        "Obtingui més informació sobre l'inici de sessió únic"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
@@ -4512,6 +4521,20 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length } membre de ${ members.length } de la vostra organització usa l'autenticació de dos factors.",
         "${ twoFAMembers.length } membres de ${ members.length } de la vostra organització usen l'autenticació de dos factors."
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adreces de correu electrònic"
+      ],
+      "Support for 1 custom email domain": [
+        "Suport per a 1 domini de correu personalitzat"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetes, etiquetes i filtres il·limitats"
       ]
     },
     "Member action": {
@@ -7480,10 +7503,10 @@
         "30 mesos"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
-        "Obteniu un descompte dec ${ discount } amb una subscripció a ${ billingCycle }"
+        "Obteniu un descompte del ${ discount } amb una subscripció de ${ billingCycle }"
       ],
       "monthly": [
-        "cada mesc"
+        "cada mes"
       ]
     },
     "vpn_2step: feature": {

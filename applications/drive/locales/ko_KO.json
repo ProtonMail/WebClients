@@ -3853,6 +3853,9 @@
       "Retry now": [
         "지금 다시 시도"
       ],
+      "Scan issue": [
+        "스캔 문제 발생"
+      ],
       "Search cannot be enabled in this browser": [
         "이 브라우저에서 검색을 활성화할 수 없습니다"
       ],
@@ -3903,6 +3906,9 @@
       ],
       "Share via link settings": [
         "링크로 공유 설정"
+      ],
+      "Share with anyone": [
+        "모두와 공유"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText }의 공유 가능 링크"
@@ -5365,6 +5371,11 @@
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
       ]
     },
     "Oauth instructions": {

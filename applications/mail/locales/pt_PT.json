@@ -3083,14 +3083,47 @@
         "Transferir tudo"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIÇÃO:\n${ eventDescription }"
+      ]
+    },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } foi cancelado."
+      ],
+      "All events in this series were updated.": [
+        "Todos os eventos desta série foram atualizados."
+      ],
+      "This event occurrence was canceled.": [
+        "A ocorrência deste evento foi cancelada."
+      ],
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
+      ],
+      "This event was updated.": [
+        "Este evento foi actualizado."
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Você foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart } (all day)": [
+        "PERÍODO: ${ formattedStart } (o dia todo)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "PERIODO: ${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCAL:\n${ eventLocation }"
       ]
     },
     "Email reminder banner": {
@@ -3197,7 +3230,7 @@
         "Ocorreu um erro ao carregar as opções do pseudónimo"
       ],
       "An error occurred while saving your alias": [
-        "Ocorreu um erro ao guardar o seu pseudónimo"
+        "Ocorreu um erro ao guardar o seu alias"
       ],
       "Attachments are limited to 25 MB": [
         "Os anexos estão limitados a 25 MB"
@@ -3341,6 +3374,9 @@
       ],
       "Last name is too long": [
         "O último nome é demasiado longo."
+      ],
+      "Maximum expiration time reached.": [
+        "Tempo máximo de expiração atingido."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de anexos (${ attachmentsCountLimit }) excedido"
@@ -3550,7 +3586,7 @@
         "Tente utilizar apenas letras, números e _.-"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Erro inesperado, não podemos importar os contatos"
+        "Erro inesperado, não podemos importar os contactos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -4940,11 +4976,23 @@
       "and": [
         "e"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Todas as mensagens agendadas ou adiadas serão canceladas."
+      ],
+      "Applying actions to conversations": [
+        "A aplicar as ações às conversas"
+      ],
+      "Applying actions to messages": [
+        "A aplicar as ações às mensagens"
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Tem a certeza que deseja apagar todas as mensagens nesta pasta?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Tem a certeza que deseja apagar todas as mensagens com esta etiqueta?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Tem a certeza de que pretende eliminar esta pasta?"
       ],
       "Are you sure you want to delete this label?": [
         "Tem a certeza de que deseja eliminar esta etiqueta?"
@@ -5160,6 +5208,9 @@
       ],
       "Emails are automatically signed": [
         "Os e-mails são assinados automaticamente"
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Os emails marcados com esta etiqueta ${ nameDeleted } não serão excluídos e ainda podem ser encontrados na respetiva pasta."
       ],
       "embedded image": [
         "imagem incorporada",
@@ -5786,6 +5837,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Esta mensagem está assinada pela chave anexada, que ainda não foi confiada."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Esta mensagem será apagada automaticamente em ${ value }"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Esta mensagem será apagada automaticamente em ${ value }"
       ],
@@ -6020,6 +6074,9 @@
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
+      ],
+      "You can now return to the application to continue": [
+        "Pode agora voltar à aplicação e continuar."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -7162,6 +7219,14 @@
         "Lixo"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Apoio ao cliente para 1 domínio de e-mail personalizado"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Enc:"
@@ -8064,8 +8129,8 @@
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Você tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
-        "Você tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+        "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -8304,6 +8369,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -8507,6 +8575,18 @@
     "storage_split: info": {
       "${ app } storage": [
         "${ app } de armazenamento"
+      ],
+      "contact your administrator": [
+        "contacte o seu administrador"
+      ],
+      "upgrade for more storage": [
+        "atualize para obter mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "O seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O seu ${ appStorage } está cheio"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"

@@ -333,7 +333,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Застосунок ${ MAIL_APP_NAME } на комп'ютері"
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ]
     },
     "Button": {
@@ -981,6 +981,9 @@
       "Display": [
         "Показувати"
       ],
+      "Domain": [
+        "Домен"
+      ],
       "Download logs": [
         "Завантажити журнали"
       ],
@@ -1031,6 +1034,9 @@
       ],
       "Invitations": [
         "Запрошення"
+      ],
+      "Key": [
+        "Ключ"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбінація клавіш: ${ shortcut }"

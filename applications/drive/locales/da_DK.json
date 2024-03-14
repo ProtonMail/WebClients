@@ -46,6 +46,9 @@
       "Add note": [
         "Tilføj note"
       ],
+      "Add people or groups to share": [
+        "Tilføj personer eller grupper til deling"
+      ],
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
@@ -570,6 +573,15 @@
       ],
       "Save changes": [
         "Gem ændringer"
+      ],
+      "Scan & Download": [
+        "Scan og download"
+      ],
+      "Scan & Download (${ count })": [
+        "Scan og download (${ count })"
+      ],
+      "Scan & Download all": [
+        "Scan og download alt"
       ],
       "Search": [
         "Søg"
@@ -2180,6 +2192,9 @@
       "Aliases could not be loaded": [
         "Aliasser kunne ikke indlæses"
       ],
+      "Already a member of this share": [
+        "Allerede et medlem af denne deling"
+      ],
       "An error occurred while loading alias options": [
         "Der opstod en fejl under indlæsning af alias-indstillinger"
       ],
@@ -2368,6 +2383,10 @@
       ],
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Fjernede dobbelt inviteret: ${ joinedInvitee }",
+        "Fjernede dobbelt inviterede: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Anmeldelse kunne ikke sendes"
@@ -3647,8 +3666,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
+      "Download": [
+        "Download"
+      ],
       "Download ${ name } app": [
         "Download ${ name }-app"
+      ],
+      "Download anyway": [
+        "Download alligevel"
       ],
       "Download canceled": [
         "Download annulleret"
@@ -3710,6 +3735,9 @@
       "End-to-end encrypted": [
         "End-to-end krypteret"
       ],
+      "End-to-End Encrypted": [
+        "End-to-End Krypteret"
+      ],
       "Enter password": [
         "Angiv adgangskode"
       ],
@@ -3761,6 +3789,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Filen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Filscanning i Drive"
       ],
       "File will not be updated": [
         "Filen vil ikke blive opdateret"
@@ -3859,6 +3890,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Invited": [
+        "Inviteret"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere den igangværende upload, hvis du erstatter den."
       ],
@@ -3918,6 +3952,10 @@
       ],
       "Makes your account safer": [
         "Gør din konto mere sikker"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
+        "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
       ],
       "Merged": [
         "Flettet"
@@ -4101,6 +4139,9 @@
       "Report has been sent": [
         "Anmeldelse sendt"
       ],
+      "Report link": [
+        "Rapportér link"
+      ],
       "Restore": [
         "Gendan"
       ],
@@ -4118,6 +4159,9 @@
       ],
       "Retry now": [
         "Forsøg igen nu"
+      ],
+      "Scan issue": [
+        "Problem med scanning"
       ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
@@ -4170,6 +4214,15 @@
       ],
       "Share files with links": [
         "Del filer med links"
+      ],
+      "Share via link settings": [
+        "Del via link-indstillinger"
+      ],
+      "Share with": [
+        "Del med"
+      ],
+      "Share with anyone": [
+        "Del med enhver"
       ],
       "Shareable link for ${ boldNameText }": [
         "Delbart link til ${ boldNameText }"
@@ -4297,6 +4350,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne og blokere farlige filer. Du bør stadig kun downloade filer fra folk, du stoler på."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
@@ -4627,6 +4683,12 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Enhver på internettet med linket kan se"
+      ],
+      "Anyone with the link": [
+        "Enhver der har linket"
+      ],
       "App password": [
         "App-adgangskode"
       ],
@@ -4721,6 +4783,9 @@
         "Slet drev?",
         "Slet drev?"
       ],
+      "Delete link": [
+        "Slet link"
+      ],
       "Delete recovery-related information.": [
         "Slet gendannelsesrelaterede oplysninger."
       ],
@@ -4747,6 +4812,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "fx på Amazon, eBay osv."
+      ],
+      "Editor": [
+        "Redaktør"
       ],
       "Email": [
         "E-mail"
@@ -4777,6 +4845,9 @@
       ],
       "Enter device name": [
         "Indtast navn på enheden"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Slet dette link, og fjern alle med adgang"
       ],
       "Expired": [
         "Udløbet"
@@ -4961,6 +5032,9 @@
       "Set expiration date": [
         "Angiv en udløbsdato"
       ],
+      "Set link password": [
+        "Angiv link-adgangskode"
+      ],
       "Set recovery method": [
         "Indstil gendannelsesmetode"
       ],
@@ -4997,6 +5071,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Denne fil er muligvis inficeret"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Dette vil slette alle filer på dit låste drev permanent."
       ],
@@ -5029,6 +5106,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Viewer": [
+        "Seer"
       ],
       "What happened?": [
         "Hvad skete der?"
@@ -5168,6 +5248,23 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten",
         "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop applikation."
+      ],
+      "10 email addresses": [
+        "10 e-mailadresse"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Slet automatisk elementer i Spam og Papirkurven"
+      ],
+      "Support for 1 custom email domain": [
+        "Understøttelse af 1 brugerdefineret e-mail-domæne"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ]
     },
     "Message": {
@@ -5697,6 +5794,11 @@
         "Dine indstillinger er blevet ændret"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Nogle billeder blev ikke uploadet grundet duplikerede filnavne i det nuværende valg."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
@@ -5840,6 +5942,9 @@
       "A way to contact you": [
         "En måde at kontakte dig på"
       ],
+      "Choose password": [
+        "Vælg adgangskode"
+      ],
       "E.g., ": [
         "F.eks., "
       ],
@@ -5896,6 +6001,9 @@
       ],
       "Select": [
         "Vælg"
+      ],
+      "Set date": [
+        "Angiv dato"
       ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
@@ -7068,6 +7176,9 @@
       "Settings": [
         "Indstillinger"
       ],
+      "Share ${ name }": [
+        "Del ${ name }"
+      ],
       "Share via link": [
         "Del via link"
       ],
@@ -7239,6 +7350,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Shared end-to-end encrypted": [
+        "Delt end-to-end krypteret"
       ],
       "Show side panel": [
         "Vis sidepanel"

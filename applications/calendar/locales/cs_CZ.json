@@ -2337,12 +2337,38 @@
         "Upravit událost"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "POPIS:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ČAS:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ČAS:\n${ formattedStart } (celý den)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ČAS:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Odstraněno"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "MÍSTO:\n${ eventLocation }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Zrušení události na ${ formattedStart }"
+        "Zrušení události ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Zrušení události začínající v ${ formattedStart }"
+        "Zrušení události začínající ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "Pozvání na událost ${ formattedStart }"
@@ -5106,6 +5132,20 @@
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "Support for 1 custom email domain": [
+        "Podpora 1 vlastní e-mailové domény"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -5802,6 +5842,11 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Rozbalit seznam účastníků"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Země fakturace"
       ]
     },
     "PGP key encryption warning": {
