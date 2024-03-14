@@ -46,6 +46,9 @@
       "Add note": [
         "Tambahkan catatan"
       ],
+      "Add people or groups to share": [
+        "Tambahkan orang atau grup untuk dibagikan"
+      ],
       "Add phone number": [
         "Tambah nomor telepon"
       ],
@@ -564,6 +567,9 @@
       ],
       "Scan & Download (${ count })": [
         "Pindai & Unduh (${ count })"
+      ],
+      "Scan & Download all": [
+        "Pindai & Unduh semua"
       ],
       "Search": [
         "Pencarian"
@@ -3077,7 +3083,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Tergantung dari layanan surel Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
+        "Tergantung dari layanan penyedia email Anda sebelumnya, Anda mungkin akan perlu untuk menghasilkan ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengeklik tombol 3 titik (...)."
@@ -4508,6 +4514,9 @@
       "Enter device name": [
         "Masukkan nama perangkat"
       ],
+      "Erase this link and remove everyone with access": [
+        "Hapus tautan ini dan hapus semua orang yang dapat mengakses"
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -5439,6 +5448,11 @@
         "Pengaturan Anda berhasil diubah"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan ${ BRAND_NAME } izin untuk mengakses data Anda."
@@ -5637,6 +5651,9 @@
       ],
       "Select": [
         "Pilih"
+      ],
+      "Set date": [
+        "Atur tanggal"
       ],
       "Start typing an email address": [
         "Mulai ketik alamat surel"

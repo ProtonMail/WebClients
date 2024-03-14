@@ -5246,6 +5246,9 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
       "10 email addresses": [
         "10 e-postadresser"
       ],
@@ -5859,6 +5862,11 @@
       ],
       "Your settings have been changed successfully": [
         "Dina inställningar har ändrats"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
       ]
     },
     "Oauth instructions": {

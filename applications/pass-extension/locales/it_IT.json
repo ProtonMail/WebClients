@@ -125,6 +125,9 @@
       "Create login": [
         "Crea login"
       ],
+      "Create new login": [
+        "Crea nuovo login"
+      ],
       "Create note": [
         "Crea nota"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Salva"
       ],
+      "Save passkey": [
+        "Salva passkey"
+      ],
       "Saving": [
         "Salvataggio"
+      ],
+      "Saving passkey...": [
+        "Salvataggio della passkey..."
       ],
       "See members": [
         "Visualizza membri"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la password del tuo account ${ BRAND_NAME } per procedere con l'esportazione."
       ],
+      "Authentication failure: ${ message }": [
+        "Errore di autenticazione: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Autenticazione non riuscita"
+      ],
       "Auto-lock could not be activated": [
         "Impossibile attivare il blocco automatico"
       ],
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "Creazione dell'elemento non riuscita"
       ],
+      "Item does not exist": [
+        "L'elemento non esiste"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass esporterà un file CSV corrotto se uno dei campi dei tuoi elementi contiene virgole, apici o righe multiple non previste"
+      ],
+      "Missing passkey": [
+        "Passkey mancante"
       ],
       "Moving item failed": [
         "Spostamento dell'elemento non riuscito"
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fissa l'estensione o seleziona \"Continua senza fissare\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Errore di registrazione: ${ message }"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "Invito sconosciuto"
+      ],
+      "Unknown item": [
+        "Elemento sconosciuto"
+      ],
+      "Unknown passkey": [
+        "Passkey sconosciuta"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato del file ${ PASS_APP_NAME } non supportato"
@@ -848,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "È disponibile una nuova versione di ${ PASS_APP_NAME }. Aggiornala per scoprire le nuove funzionalità e correzioni."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Verrà salvata una passkey per \"${ username }\" e sarà disponibile sui dispositivi in cui è installato ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Accesso confermato con successo"
       ],
@@ -893,8 +926,8 @@
       "Auto-lock successfully disabled": [
         "Blocco automatico disabilitato con successo"
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Salvato automaticamente su ${ submissionURL }"
+      "Autosaved on ${ payload.domain }": [
+        "Salvato automaticamente su ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Autenticazione 2FA integrata"
@@ -911,8 +944,17 @@
       "Can view items in this vault.": [
         "Può visualizzare gli elementi in questa cassaforte."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Scegli una passkey salvata per accedere a ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Clicca sull'icona per aprirlo in qualsiasi momento."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Chiudi questa finestra per utilizzare una chiave di sicurezza o un'altra passkey."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Chiudi questa finestra per utilizzare un altro gestore di passkey."
       ],
       "Congratulations, your access has been confirmed": [
         "Il tuo accesso è stato confermato"
@@ -1121,6 +1163,9 @@
       "Pass Plus trial": [
         "Prova di Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Accesso con passkey"
+      ],
       "Password copied": [
         "Password copiata"
       ],
@@ -1181,6 +1226,12 @@
       ],
       "Save login": [
         "Salva il login"
+      ],
+      "Save passkey": [
+        "Salva passkey"
+      ],
+      "Select an existing login or create a new one.": [
+        "Seleziona un login esistente o creane uno nuovo."
       ],
       "Select destination vault": [
         "Seleziona la cassaforte di destinazione"
@@ -1278,6 +1329,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Sblocca ${ PASS_APP_NAME } con il tuo codice PIN per accedere alle tue passkey"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Sblocca ${ PASS_APP_NAME } con il tuo codice PIN per salvare questa passkey"
       ],
       "Unlock it with your PIN to access the settings": [
         "Sbloccalo con il tuo PIN per accedere alle impostazioni"
@@ -1569,6 +1626,9 @@
       "Item ID": [
         "ID elemento"
       ],
+      "Key": [
+        "Chiave"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Scorciatoia da tastiera: ${ shortcut }"
       ],
@@ -1649,6 +1709,9 @@
       ],
       "Oldest to newest": [
         "Dal meno recente al più recente"
+      ],
+      "Passkey": [
+        "Passkey"
       ],
       "Passphrase": [
         "Frase d'accesso"
@@ -1790,6 +1853,9 @@
       ],
       "View logs": [
         "Visualizza i log"
+      ],
+      "Website": [
+        "Sito web"
       ],
       "Websites": [
         "Siti web"
@@ -2051,6 +2117,9 @@
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
+      ],
+      "Passkey": [
+        "Passkey"
       ],
       "Password": [
         "Password"

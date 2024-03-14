@@ -125,6 +125,9 @@
       "Create login": [
         "Buat entri masuk"
       ],
+      "Create new login": [
+        "Buat entri masuk baru"
+      ],
       "Create note": [
         "Buat catatan"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Simpan"
       ],
+      "Save passkey": [
+        "Simpan passkey"
+      ],
       "Saving": [
         "Menyimpan"
+      ],
+      "Saving passkey...": [
+        "Menyimpan passkey..."
       ],
       "See members": [
         "Lihat anggota"
@@ -645,6 +654,9 @@
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass akan mengekspor file CSV yang rusak apabila terdapat kolom pada item Anda yang mengandung koma, tanda kutip, atau deretan baris yang tidak terduga"
       ],
+      "Missing passkey": [
+        "Passkey hilang"
+      ],
       "Moving item failed": [
         "Item gagal dipindahkan"
       ],
@@ -713,6 +725,12 @@
       ],
       "Unknown invite": [
         "Undangan tidak dikenal"
+      ],
+      "Unknown item": [
+        "Item yang tidak diketahui"
+      ],
+      "Unknown passkey": [
+        "Passkey yang tidak diketahui"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Berkas format ${ PASS_APP_NAME } tidak didukung"
@@ -798,6 +816,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Versi terbaru dari ${ PASS_APP_NAME } tersedia. Perbarui aplikasinya untuk menikmati fitur terbaru dan perbaikan bug."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Passkey untuk \"${ username }\" akan disimpan dan tersedia pada perangkat yang memasang ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
       ],
@@ -843,8 +864,8 @@
       "Auto-lock successfully disabled": [
         "Pengunci otomatis berhasil dinonaktifkan"
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Tersimpan secara otomatis pada ${ submissionURL }"
+      "Autosaved on ${ payload.domain }": [
+        "Tersimpan secara otomatis pada ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -861,8 +882,17 @@
       "Can view items in this vault.": [
         "Dapat melihat item yang terkandung dalam brankas ini."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Pilih passkey yang tersimpan untuk masuk ke ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Klik pada ikon untuk membukanya kapan pun."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Tutup jendela ini untuk menggunakan kunci keamanan atau passkey lainnya."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Tutup jendela ini untuk menggunakan pengelola passkey lainnya."
       ],
       "Congratulations, your access has been confirmed": [
         "Selamat, akses Anda telah dikonfirmasi"
@@ -1059,6 +1089,9 @@
       "Pass Plus trial": [
         "Uji coba Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Masuk dengan passkey"
+      ],
       "Password copied": [
         "Kata sandi disalin"
       ],
@@ -1115,6 +1148,12 @@
       ],
       "Save login": [
         "Tambah entri masuk"
+      ],
+      "Save passkey": [
+        "Simpan passkey"
+      ],
+      "Select an existing login or create a new one.": [
+        "Pilih entri masuk yang telah ada atau buat entri masuk baru."
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
@@ -1208,6 +1247,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk mengakses passkey yang Anda miliki"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk menyimpan passkey ini"
       ],
       "Unlock it with your PIN to access the settings": [
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
@@ -1487,6 +1532,9 @@
       "Item ID": [
         "ID Item"
       ],
+      "Key": [
+        "Kunci"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
       ],
@@ -1567,6 +1615,9 @@
       ],
       "Oldest to newest": [
         "Terlama ke terbaru"
+      ],
+      "Passkey": [
+        "Passkey"
       ],
       "Passphrase": [
         "Frasa sandi"
@@ -1708,6 +1759,9 @@
       ],
       "View logs": [
         "Lihat log"
+      ],
+      "Website": [
+        "Situs web"
       ],
       "Websites": [
         "Situs web"
@@ -1959,6 +2013,9 @@
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
+      ],
+      "Passkey": [
+        "Passkey"
       ],
       "Password": [
         "Kata sandi"

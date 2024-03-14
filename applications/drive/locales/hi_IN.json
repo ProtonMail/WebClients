@@ -3330,6 +3330,9 @@
       "Download ${ name } app": [
         "${ name } ऐप डाउनलोड करें"
       ],
+      "Download anyway": [
+        "फिर भी डाउनलोड करें"
+      ],
       "Download canceled": [
         "डाउनलोड रद्द"
       ],
@@ -3829,6 +3832,9 @@
       ],
       "Share files with links": [
         "लिंक के माध्यम से फ़ाइलें साझा करें"
+      ],
+      "Share with anyone": [
+        "किसी से भी शेयर करें"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } के लिए शेयर लिंक"
@@ -4776,6 +4782,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 ईमेल पते"
+      ],
+      "Support for 1 custom email domain": [
+        "1 कस्टम ईमेल डोमेन के लिए सहायता"
       ]
     },
     "Message": {
@@ -6544,6 +6558,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "उपयोगकर्ता को हस्ताक्षर या एन्क्रिप्ट करते समय उपयोग की जाने वाली PGP योजना का चयन करें। ध्यान दें कि PGP/Inline सादे पाठ संदेशों को बाध्य करता है"
+      ],
+      "Shared end-to-end encrypted": [
+        "शेयर किया शुरु-से-अंत तक एन्क्रिप्ट करके"
       ],
       "Show side panel": [
         "साइड पैनल दिखाएं"

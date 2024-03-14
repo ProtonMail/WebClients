@@ -125,6 +125,9 @@
       "Create login": [
         "Стварыць запіс уваходу"
       ],
+      "Create new login": [
+        "Стварыць новы запіс уваходу"
+      ],
       "Create note": [
         "Стварыць нататку"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Захаваць"
       ],
+      "Save passkey": [
+        "Захаваць ключ доступу"
+      ],
       "Saving": [
         "Захаванне"
+      ],
+      "Saving passkey...": [
+        "Захаванне ключа доступу..."
       ],
       "See members": [
         "Паглядзець удзельнікаў"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
       ],
+      "Authentication failure: ${ message }": [
+        "Збой аўтэнтыфікацыі: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Збой аўтэнтыфікатара"
+      ],
       "Auto-lock could not be activated": [
         "Не атрымалася актываваць аўтаблакіроўку"
       ],
@@ -654,8 +669,14 @@
       "Item creation failed": [
         "Збой стварэння элемента"
       ],
+      "Item does not exist": [
+        "Элемент не існуе"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass экспартуе пашкоджаны файл CSV, калі якое-небудзь поле элемента змяшчае нечаканыя коскі, двукоссі або некалькі радкоў"
+      ],
+      "Missing passkey": [
+        "Адсутнічае ключ доступу"
       ],
       "Moving item failed": [
         "Збой перамяшчэння элемента"
@@ -671,6 +692,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Замацуйце пашырэнне або выберыце \"Працягнуць без замацавання\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Збой рэгістрацыі: ${ message }"
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
@@ -725,6 +749,12 @@
       ],
       "Unknown invite": [
         "Невядомае запрашэнне"
+      ],
+      "Unknown item": [
+        "Невядомы элемент"
+      ],
+      "Unknown passkey": [
+        "Невядомы ключ доступу"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Фармат файла ${ PASS_APP_NAME } не падтрымліваецца"
@@ -872,6 +902,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Ключ доступу для \"${ username }\" будзе захаваны і даступны на прыладах з усталяваным ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Доступ паспяхова пацверджаны"
       ],
@@ -917,8 +950,8 @@
       "Auto-lock successfully disabled": [
         "Аўтаблакіроўка паспяхова адключана"
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Аўтазахавана на ${ submissionURL }"
+      "Autosaved on ${ payload.domain }": [
+        "Аўтазахавана на ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
@@ -935,8 +968,17 @@
       "Can view items in this vault.": [
         "Можа праглядаць элементы ў гэтым сховішчы."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Націсніце па значку, каб адкрыць яго ў любы час."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Закрываць гэта акно ў выпадку выкарыстання ключа бяспекі або іншага ключа доступу."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Закрываць гэта акно ў выпадку выкарыстання іншага менеджара ключоў доступу"
       ],
       "Congratulations, your access has been confirmed": [
         "Віншуем! Вы паспяхова пацвердзілі свой доступ"
@@ -1151,6 +1193,9 @@
       "Pass Plus trial": [
         "Пробны перыяд Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Увайсці з ключом доступу"
+      ],
       "Password copied": [
         "Пароль скапіяваны"
       ],
@@ -1213,6 +1258,12 @@
       ],
       "Save login": [
         "Захаваць запіс уваходу"
+      ],
+      "Save passkey": [
+        "Захаваць ключ доступу"
+      ],
+      "Select an existing login or create a new one.": [
+        "Выберыце бягучы запіс уваходу або стварыце новы."
       ],
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
@@ -1312,6 +1363,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў Hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць вашы ключы доступу"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб захаваць гэты ключ доступу"
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
@@ -1609,6 +1666,9 @@
       "Item ID": [
         "Ідэнтыфікатар элемента"
       ],
+      "Key": [
+        "Ключ"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
       ],
@@ -1689,6 +1749,9 @@
       ],
       "Oldest to newest": [
         "Ад самых старых да самых новых"
+      ],
+      "Passkey": [
+        "Ключ доступу"
       ],
       "Passphrase": [
         "Парольная фраза"
@@ -1830,6 +1893,9 @@
       ],
       "View logs": [
         "Паглядзець журнал"
+      ],
+      "Website": [
+        "Вэб-сайт"
       ],
       "Websites": [
         "Вэб-сайты"
@@ -2095,6 +2161,9 @@
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"
+      ],
+      "Passkey": [
+        "Ключ доступу"
       ],
       "Password": [
         "Пароль"

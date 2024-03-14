@@ -3647,8 +3647,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს საქაღალდე დაცულად ატვირთა ${ emailAddress }-მა."
       ],
+      "Download": [
+        "გადმოწერა"
+      ],
       "Download ${ name } app": [
         "გადმოწერეთ აპი ${ name }"
+      ],
+      "Download anyway": [
+        "მაინც გადმოწერა"
       ],
       "Download canceled": [
         "გადმოწერა გაუქმებულია"
@@ -3858,6 +3864,9 @@
       ],
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
+      ],
+      "Invited": [
+        "მოწვეულია"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "როგორ ჩანს, ახლახან ${ uploadName }-ის ატვირთვა სცადეთ. თუ ატვირთვა წარუმატებლად დასრულდა, გთხოვთ ${ replaceFile }. თუ ატვირთვა ჯერ კიდევ მიმდინარეობს, მისი ჩანაცვლება პროცესს გააუქმებს."
@@ -4170,6 +4179,12 @@
       ],
       "Share files with links": [
         "ფაილების ბმულით გაზიარება"
+      ],
+      "Share with": [
+        "გაზიარება"
+      ],
+      "Share with anyone": [
+        "ყველასთვის გაზიარება"
       ],
       "Shareable link for ${ boldNameText }": [
         "გაზიარებადი ბმული ${ boldNameText }-სთვის"
@@ -4721,6 +4736,9 @@
         "წავშალო დისკი?",
         "წავშალო დისკები?"
       ],
+      "Delete link": [
+        "ბმულის წაშლა"
+      ],
       "Delete recovery-related information.": [
         "აღდგენის ინფორმაციის წაშლა."
       ],
@@ -4747,6 +4765,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "რედაქტორი"
       ],
       "Email": [
         "ელფოსტა"
@@ -5030,6 +5051,9 @@
       "Verification code": [
         "შემოწმების კოდი"
       ],
+      "Viewer": [
+        "მთვალიერებელი"
+      ],
       "What happened?": [
         "რა მოხდა?"
       ],
@@ -5168,6 +5192,25 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც",
         "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "10 email addresses": [
+        "10 ელფოსტის მისამართი"
+      ],
+      "Support for 1 custom email domain": [
+        "1 ხელით მითითებული დომენის მხარდაჭერა"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ]
     },
     "Message": {
@@ -5896,6 +5939,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Set date": [
+        "თარიღის დაყენება"
       ],
       "Start typing an email address": [
         "დაიწყეთ ელფოსტის მისამართის აკრეფა"
@@ -7239,6 +7285,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "აირჩიეთ PGP-ის სქემა, რომელიც გამოყენებული იქნება ხელმოწერისა და შიფრაციისთვის. გაითვალისწინეთ, რომ PGP/Inline-ით ფორმატირებულ ელფოსტებს ვერ გააგზავნით"
+      ],
+      "Shared end-to-end encrypted": [
+        "გაზიარებული გამჭოლად დაშიფრულია"
       ],
       "Show side panel": [
         "გვერდითი პანელის ჩვენება"

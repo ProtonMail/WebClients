@@ -3241,6 +3241,14 @@
         "Pomozte nám se zlepšit!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pro Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pro Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
@@ -3277,6 +3285,32 @@
         "Tuto záložku můžete bezpečně zavřít."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "POPIS:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ČAS:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ČAS:\n${ formattedStart } (celý den)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ČAS:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Odstraněno"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "MÍSTO:\n${ eventLocation }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "E-mailová adresa ${ name } přidána"
@@ -3308,10 +3342,10 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Zrušení události na ${ formattedStart }"
+        "Zrušení události ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Zrušení události začínající v ${ formattedStart }"
+        "Zrušení události začínající ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "Pozvání na událost ${ formattedStart }"
@@ -5167,6 +5201,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } v App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } v Obchodu Play"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } aplikace"
       ],
@@ -9738,6 +9778,20 @@
         "Zabezpečený e-mail, který chrání vaše soukromí"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "Support for 1 custom email domain": [
+        "Podpora 1 vlastní e-mailové domény"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Vraťte se prosím zpět za několik minut."
@@ -10320,6 +10374,9 @@
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
       "DNS leak prevention": [
         "Prevence úniků DNS"
       ],
@@ -10361,6 +10418,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
+      ],
+      "Group management (coming soon)": [
+        "Správa skupiny (již brzy)"
       ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
@@ -10505,6 +10565,12 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Neomezený počet sdílených trezorů s oprávněním k přístupu"
+      ],
+      "Unlimited vault sharing": [
+        "Neomezené sdílení trezorů"
+      ],
+      "Unlimited vaults": [
+        "Neomezené trezory"
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
@@ -11850,6 +11916,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Země fakturace"
+      ],
       "Card number": [
         "Číslo karty"
       ],

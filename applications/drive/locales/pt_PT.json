@@ -1941,14 +1941,47 @@
         "Encontrámos os seguintes campos no ficheiro CSV que enviou. Marque aqueles que deseja importar."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIÇÃO:\n${ eventDescription }"
+      ]
+    },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } foi cancelado."
+      ],
+      "All events in this series were updated.": [
+        "Todos os eventos desta série foram atualizados."
+      ],
+      "This event occurrence was canceled.": [
+        "A ocorrência deste evento foi cancelada."
+      ],
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
+      ],
+      "This event was updated.": [
+        "Este evento foi actualizado."
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Você foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart } (all day)": [
+        "PERÍODO: ${ formattedStart } (o dia todo)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "PERIODO: ${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
       "Removed": [
         "Removido"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCAL:\n${ eventLocation }"
       ]
     },
     "Email subject": {
@@ -2017,7 +2050,7 @@
         "Ocorreu um erro ao carregar as opções do pseudónimo"
       ],
       "An error occurred while saving your alias": [
-        "Ocorreu um erro ao guardar o seu pseudónimo"
+        "Ocorreu um erro ao guardar o seu alias"
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -2305,7 +2338,7 @@
         "Tente utilizar apenas letras, números e _.-"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Erro inesperado, não podemos importar os contatos"
+        "Erro inesperado, não podemos importar os contactos"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -3462,6 +3495,9 @@
       "Download ${ name } app": [
         "Transfira a app ${ name }"
       ],
+      "Download anyway": [
+        "Transferir assim mesmo"
+      ],
       "Download canceled": [
         "A transferência foi cancelada."
       ],
@@ -3955,6 +3991,9 @@
       "Share files with links": [
         "Partilhe ficheiros com ligações"
       ],
+      "Share with anyone": [
+        "Partilhar com o qualquer pessoa"
+      ],
       "Shareable link for ${ boldNameText }": [
         "Ligação partilhável para ${ boldNameText }"
       ],
@@ -4213,6 +4252,9 @@
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
+      ],
+      "You can now return to the application to continue": [
+        "Pode agora voltar à aplicação e continuar."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -4914,6 +4956,14 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Apoio ao cliente para 1 domínio de e-mail personalizado"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "O seu teste gratuito terminou. O acesso à sua conta será desativado em breve. ${ action }"
@@ -5604,8 +5654,8 @@
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Você tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
-        "Você tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+        "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -5805,6 +5855,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -5965,6 +6018,18 @@
     "storage_split: info": {
       "${ app } storage": [
         "${ app } de armazenamento"
+      ],
+      "contact your administrator": [
+        "contacte o seu administrador"
+      ],
+      "upgrade for more storage": [
+        "atualize para obter mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "O seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O seu ${ appStorage } está cheio"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
@@ -6684,6 +6749,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "Shared end-to-end encrypted": [
+        "Partilhado com encriptação de ponta a ponta"
       ],
       "Show side panel": [
         "Mostrar o painel lateral"

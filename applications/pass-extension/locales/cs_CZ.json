@@ -851,9 +851,6 @@
       "Auto-lock successfully disabled": [
         "Automatické zamykání bylo úspěšně deaktivováno"
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Automaticky uloženo na ${ submissionURL }"
-      ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
       ],
@@ -1444,6 +1441,9 @@
       "Field name": [
         "Název pole"
       ],
+      "File format": [
+        "Formát souboru"
+      ],
       "Forwards to": [
         "Přeposílá na"
       ],
@@ -1485,6 +1485,9 @@
       ],
       "Item ID": [
         "ID položky"
+      ],
+      "Key": [
+        "Klíč"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová zkratka: ${ shortcut }"
@@ -1945,6 +1948,9 @@
       ],
       "Move all items ?": [
         "Přesunout všechny položky?"
+      ],
+      "Move item?": [
+        "Přesunout položku?"
       ],
       "Move items?": [
         "Přesunout položky?"

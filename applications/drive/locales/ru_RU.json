@@ -3634,6 +3634,9 @@
       "Download ${ name } app": [
         "Загрузите приложение ${ name }"
       ],
+      "Download anyway": [
+        "Все равно скачать"
+      ],
       "Download canceled": [
         "Скачивание отменено"
       ],
@@ -4134,6 +4137,9 @@
       ],
       "Share files with links": [
         "Делитесь файлами с помощью ссылок"
+      ],
+      "Share with anyone": [
+        "Делитесь с кем угодно"
       ],
       "Shareable link for ${ boldNameText }": [
         "Доступная для обмена ссылка для ${ boldNameText }"
@@ -5112,6 +5118,23 @@
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение ${ MAIL_APP_NAME } для ПК"
+      ],
+      "10 email addresses": [
+        "10 адресов электронной почты"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Автоматическое очищение папок \"Спам\" и \"Корзина\""
+      ],
+      "Support for 1 custom email domain": [
+        "Поддержка 1 пользовательского домена электронной почты"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
       ]
     },
     "Message": {
@@ -6925,6 +6948,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Shared end-to-end encrypted": [
+        "Общий доступ со сквозным шифрованием"
       ],
       "Show side panel": [
         "Показать боковую панель"
