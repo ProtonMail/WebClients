@@ -154,7 +154,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
 
                 {form.values.step === 'passkey' && (
                     <>
-                        <div className="flex flex-nowrap items-center mb-1">
+                        <div className="flex flex-nowrap items-center">
                             <ItemIcon
                                 url={domain}
                                 icon="pass-passkey"
@@ -228,7 +228,7 @@ export const PasskeyCreate: FC<Props> = (props) => {
                                 <div className="shrink-0 py-1 px-2">{`${c('Label').t`Passkey`} • ${domain}`}</div>
 
                                 <Card className="flex flex-auto">
-                                    <div className="flex justify-center gap-2 mb-2">
+                                    <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                         <Icon name="lock-filled" size={6} />
                                         <span className="text-center block">
                                             {c('Info')
