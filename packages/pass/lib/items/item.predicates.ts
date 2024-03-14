@@ -6,7 +6,7 @@ export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 
 export const isNoteItem = (item: Item): item is Item<'note'> => item.type === 'note';
 
 export const isPasskeyItem = (item: Item): item is Item<'login'> =>
-    isLoginItem(item) && item.content.passkeys.length > 0;
+    isLoginItem(item) && (item.content.passkeys ?? []).length > 0;
 
 export const itemEq =
     <T extends UniqueItem>(a: T) =>
