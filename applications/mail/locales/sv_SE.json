@@ -4478,6 +4478,12 @@
       "Closing this means giving up the free storage bonus.": [
         "Att stänga detta innebär att du avstår från gratisbonusen för lagringsutrymme."
       ],
+      "Congratulations, you completed all the steps!": [
+        "Grattis, du har slutfört alla steg!"
+      ],
+      "Congratulations, you finished!": [
+        "Grattis, du är klar!"
+      ],
       "Continue setting up your email": [
         "Fortsätt ställa in din e-post"
       ],
@@ -7464,6 +7470,9 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
       "10 email addresses": [
         "10 e-postadresser"
       ],
@@ -7833,6 +7842,11 @@
       ],
       "Senders blocked": [
         "Avsändare blockerad"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
       ]
     },
     "Oauth instructions": {

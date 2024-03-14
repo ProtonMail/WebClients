@@ -650,6 +650,9 @@
       "Item creation failed": [
         "Öge oluşturulamadı"
       ],
+      "Item does not exist": [
+        "Öğe mevcut değil"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Öge alanlarınızdan herhangi birinde beklenmedik virgüller, tırnak işaretleri veya birkaç satır varsa, LastPass tarafından dışa aktarılan CSV dosyası bozuk olur"
       ],
@@ -721,6 +724,9 @@
       ],
       "Unknown invite": [
         "Davet bilinmiyor"
+      ],
+      "Unknown item": [
+        "Bilinmeyen öğe"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
@@ -892,9 +898,6 @@
       ],
       "Auto-lock successfully disabled": [
         "Otomatik kilitleme kapatıldı"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "${ submissionURL } üzerinden otomatik olarak kaydedildi"
       ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
@@ -1569,6 +1572,9 @@
       "Item ID": [
         "Öge kimliği"
       ],
+      "Key": [
+        "Anahtar"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
       ],
@@ -1790,6 +1796,9 @@
       ],
       "View logs": [
         "Günlükleri görüntüle"
+      ],
+      "Website": [
+        "Site"
       ],
       "Websites": [
         "Siteler"

@@ -3505,6 +3505,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } から外部アカウントに接続できません"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
@@ -4123,6 +4126,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "アプリは現在利用できません"
+      ],
       "Error: ${ errorMessage }": [
         "エラー: ${ errorMessage }"
       ],
@@ -8986,6 +8992,20 @@
       ],
       "Secure email that protects your privacy": [
         "プライバシーを保護する安全なメール"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "10 email addresses": [
+        "10個のメールアドレス"
+      ],
+      "Support for 1 custom email domain": [
+        "1つのカスタムドメインメールアドレスをサポート"
+      ],
+      "Unlimited folders, labels and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
       ]
     },
     "Maintenance mode": {

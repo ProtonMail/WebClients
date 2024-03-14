@@ -3224,6 +3224,14 @@
         "Ajude-nos a melhorar!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm para Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
@@ -7853,6 +7861,9 @@
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
       ],
+      "You can now close this tab.": [
+        "Agora você pode fechar esta guia."
+      ],
       "You can now close this window.": [
         "Agora você pode fechar essa janela."
       ],
@@ -9711,6 +9722,12 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "Auto-delete Spam and Trash": [
+        "Autodeletar Pasta de Spam e Lixeira"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programação personalizada de horários de envio e pausa"
+      ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
       ],
@@ -9718,9 +9735,22 @@
         "Pastas, marcadores e filtros ilimitados"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+      ]
+    },
     "mailtrial2024: Info": {
       "for the first month": [
         "pelo primeiro mês"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } por apenas ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -10219,6 +10249,9 @@
       "Advanced sharing security": [
         "Segurança avançada de compartilhamento"
       ],
+      "Auto-delete Spam and Trash": [
+        "Exclusão automática de pasta de spam e lixeira"
+      ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
       ],
@@ -10715,6 +10748,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Acesse conteúdo bloqueado e navegue com privacidade. ${ serversAndCountries } inclui VPN de altíssima velocidade, acesso a serviços de streaming de todo o mundo, bloqueador de anúncios e malwares, downloads BitTorrent mais rápidos, e muito mais."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Acesse o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME } com facilidade do seu computador"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acesse conteúdo de serviços de streaming, incluindo Netflix, Disney+ e Prime Video, em qualquer lugar"
       ],
@@ -11007,6 +11043,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "A autenticação de dois fatores não é mais necessária"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algumas imagens não foram enviadas devido a nomes de arquivo duplicados na seleção atual."
       ]
     },
     "Notification in holidays calendar modal": {

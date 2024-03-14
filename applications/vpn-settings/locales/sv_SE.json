@@ -3003,6 +3003,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör som Okta, Microsoft Azure eller Google Identity Platform. Detta kommer att aktivera SAML för hela organisationen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsätt med ${ freeName }"
       ],
@@ -3118,6 +3121,9 @@
       ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktivera enkel inloggning för att hålla din organisation säker"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.example.com/sso/saml)."
@@ -3278,6 +3284,9 @@
       "Lean more about gateways": [
         "Lär dig mer om gateways"
       ],
+      "Lean more about single sign-on": [
+        "Lär dig mer om enkel inloggning"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lär dig hur du loggar in på ${ VPN_APP_NAME } med VPN-appar från tredje part."
       ],
@@ -3358,6 +3367,9 @@
       ],
       "old password": [
         "gammalt lösenord"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "När enkel inloggning är inaktiverad för din organisation:"
       ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
@@ -4756,6 +4768,9 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
       "10 email addresses": [
         "10 e-postadresser"
       ],
@@ -5072,6 +5087,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedikerade servrar och IP"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
       ],
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
@@ -5738,6 +5756,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tvåfaktorsautentisering är inte längre obligatoriskt"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
       ]
     },
     "Onboarding": {

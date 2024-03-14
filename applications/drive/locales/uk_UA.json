@@ -862,7 +862,7 @@
         "Знижки відносно стандартної місячної ціни."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша підписка буде автоматично поновлена за стандартною знижкою та тривалістю в кінці вашого платіжного циклу."
+        "Ваша передплата автоматично поновиться за стандартною ціною з урахуванням знижки й тривалості в кінці платіжного циклу."
       ]
     },
     "bf2023: Offers": {
@@ -872,7 +872,7 @@
     },
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Отримуйте доступ до контенту на стримінгових сервісах, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
+        "Отримуйте доступ до сервісів потокової трансляції, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходьте локальні інтернет-блокування та цензуру за допомогою нашої глобальної мережі серверів."
@@ -884,7 +884,7 @@
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Спеціально розроблений NetShield захищає ваші пристрої та прискорює перегляд контенту, блокуючи рекламу, трекери та шкідливі програми."
+        "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Зберігайте до 200 версій кожного файлу протягом 10 років."
@@ -892,7 +892,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Застосунок ${ MAIL_APP_NAME } на комп'ютері"
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ]
     },
     "Bug category": {
@@ -2001,7 +2001,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "скористайтеся помічником імпорту Easy Switch"
+        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2034,7 +2034,7 @@
     },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Платні функції ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }"
+        "Платні функції ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "eof2023: Tooltip": {
@@ -2050,13 +2050,13 @@
         "6 користувачів"
       ],
       "Early access to new apps and features": [
-        "Ранній доступ до нових застосунків і функцій"
+        "Ранній доступ до нових програм і функцій"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Ранній доступ до застосунку ${ MAIL_APP_NAME } на комп'ютері"
+        "Ранній доступ до програми ${ MAIL_APP_NAME } для комп'ютера"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Платні функції ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_APP_NAME }"
+        "Платні функції ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -3647,6 +3647,9 @@
       "Download ${ name } app": [
         "Завантажити програму ${ name }"
       ],
+      "Download anyway": [
+        "Все одно завантажити"
+      ],
       "Download canceled": [
         "Завантаження скасовано"
       ],
@@ -4171,6 +4174,9 @@
       ],
       "Share files with links": [
         "Поділіться файлами за допомогою посилань"
+      ],
+      "Share with anyone": [
+        "Поділіться з ким завгодно"
       ],
       "Shareable link for ${ boldNameText }": [
         "Посилання спільного доступу для ${ boldNameText }"
@@ -5186,6 +5192,17 @@
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 адрес електронної пошти"
+      ],
+      "Support for 1 custom email domain": [
+        "Підтримка 1 власного домену електронної пошти"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
@@ -5678,7 +5695,7 @@
         "Зовнішній ключ автоматично отримується через WKD."
       ],
       "This key is used to encrypt messages to this contact": [
-        "Цей ключ використовується для шифрування повідомлень для цього контакту"
+        "Цей ключ використовується для шифрування повідомлень цьому контакту"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Ми радимо вам не довіряти цим ключам."
@@ -5878,7 +5895,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Наше передове рішення для забезпечення безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений захист облікових записів. ${ learnMoreLink }"
+        "Наше передове рішення з безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений рівень захисту облікових записів. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **активний** і захищає ваш обліковий запис."
@@ -5929,7 +5946,7 @@
     },
     "session_recovery:available:link": {
       "See how": [
-        "Подивитись як"
+        "Дізнатися"
       ]
     },
     "session_recovery:available:notification": {
@@ -5949,7 +5966,7 @@
     },
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
-        "Введіть поточний пароль, щоб скасувати скидання пароля. Ніякі інші зміни не набудуть чинності."
+        "Введіть поточний пароль, щоб скасувати скидання пароля. Жодні інші зміни не набудуть чинності."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -7065,6 +7082,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Shared end-to-end encrypted": [
+        "Наскрізно зашифрований спільний доступ"
       ],
       "Show side panel": [
         "Показати бічну панель"
