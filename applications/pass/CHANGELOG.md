@@ -1,3 +1,7 @@
+### Version 1.16.0
+
+-   Add passkey support
+
 ### Version 1.15.0
 
 -   Add item history management
