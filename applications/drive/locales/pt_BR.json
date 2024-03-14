@@ -580,6 +580,9 @@
       "Scan & Download (${ count })": [
         "Escanear e baixar (${ count })"
       ],
+      "Scan & Download all": [
+        "Escanear e Baixar tudo"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -2188,6 +2191,9 @@
       ],
       "Aliases could not be loaded": [
         "Não foi possível carregar os aliases"
+      ],
+      "Already a member of this share": [
+        "Já é membro deste compartilhamento"
       ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
@@ -4345,6 +4351,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Para ajudar a protegê-lo, ${ DRIVE_APP_NAME } pode escanear e bloquear arquivos maliciosos. Você ainda deve baixar arquivos apenas de pessoas em quem confia."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
       ],
@@ -4837,6 +4846,9 @@
       "Enter device name": [
         "Digite o nome do dispositivo"
       ],
+      "Erase this link and remove everyone with access": [
+        "Apagar este link e remover todos com acesso"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -5253,6 +5265,12 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "Auto-delete Spam and Trash": [
+        "Autodeletar Pasta de Spam e Lixeira"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programação personalizada de horários de envio e pausa"
+      ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
       ],
@@ -5260,9 +5278,22 @@
         "Pastas, marcadores e filtros ilimitados"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renova por ${ renewablePrice }, cancele a qualquer momento"
+      ]
+    },
     "mailtrial2024: Info": {
       "for the first month": [
         "pelo primeiro mês"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenha ${ planName } por apenas ${ planPrice }"
       ]
     },
     "Message": {
@@ -5790,6 +5821,11 @@
       ],
       "Your settings have been changed successfully": [
         "Suas configurações foram alteradas"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algumas imagens não foram enviadas devido a nomes de arquivo duplicados na seleção atual."
       ]
     },
     "Oauth instructions": {

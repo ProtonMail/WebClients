@@ -2997,6 +2997,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "アップグレードすると、フォルダーやラベルを無制限に作成するなどのプレミアム機能が利用できます。"
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -3124,6 +3127,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } から外部アカウントに接続できません"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "<${ email }> は次のエラーを発生しました: ${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
@@ -3685,6 +3691,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "アプリは現在利用できません"
+      ],
       "Error: ${ errorMessage }": [
         "エラー: ${ errorMessage }"
       ],
@@ -6673,6 +6682,20 @@
         "ごみ箱"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "10 email addresses": [
+        "10個のメールアドレス"
+      ],
+      "Support for 1 custom email domain": [
+        "1つのカスタムドメインメールアドレスをサポート"
+      ],
+      "Unlimited folders, labels and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -7418,6 +7441,9 @@
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinelは**有効**であり、アカウントを保護しています。"
       ]
     },
     "Select files": {
@@ -7846,6 +7872,9 @@
     "Spotlight": {
       "Change setting": [
         "設定変更"
+      ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "ここで、Hide-my-emailエイリアスを作成および管理します。"
       ],
       "Email tracking protection": [
         "メールトラッキング防止"

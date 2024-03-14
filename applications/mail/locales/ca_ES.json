@@ -5695,6 +5695,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Elimina totes les dades associades amb aquesta aplicació, incloent-hi els missatges baixats."
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Informar un missatge com a intent de pesca us enviarà el missatge, per poder analitzar-lo i millorar-ne els filtres. Això significa que podrem veure el contingut del missatge complet."
       ],
@@ -5970,6 +5973,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Açò elimina totes les dades associades amb aquesta app, incloent-hi els missatges baixats. L'app es reiniciarà i hauràs de tornar a iniciar sessió per a fer-la servir."
       ],
       "This sender's public key has not been trusted yet.": [
         "La clau pública del aquest remitent no ha tingut confiança encara."
@@ -7327,6 +7333,20 @@
       ],
       "Trash": [
         "Paperera"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adreces de correu electrònic"
+      ],
+      "Support for 1 custom email domain": [
+        "Suport per a 1 domini de correu personalitzat"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetes, etiquetes i filtres il·limitats"
       ]
     },
     "Message": {

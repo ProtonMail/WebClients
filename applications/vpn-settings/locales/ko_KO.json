@@ -3006,7 +3006,7 @@
         "이메일 환경 설정이 저장됨"
       ],
       "Enable single sign-on to keep your organization safe": [
-        "귀하의 조직이 안전하도록 통합 인증을 활성화하십시오"
+        "사용자의 조직이 안전하도록 통합 인증을 활성화하십시오"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
@@ -3223,6 +3223,9 @@
       ],
       "No addresses exist": [
         "주소 없음"
+      ],
+      "No changes made to the current subscription": [
+        "현재의 구독에 변경이 이루어지지 않았습니다"
       ],
       "No gateways": [
         "게이트웨이 없음"
@@ -5507,6 +5510,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "이중 인증이 모두에게 필요하지 않습니다."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
       ]
     },
     "Onboarding": {

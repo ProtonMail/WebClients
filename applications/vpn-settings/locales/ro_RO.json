@@ -3023,6 +3023,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate (IdP). Acest lucru va activa SAML pentru întreaga organizație."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate precum Okta, Microsoft Azure sau Platforma de identitate Google. Acest lucru va activa SAML pentru întreaga organizație."
+      ],
       "Continue with ${ freeName }": [
         "Continuare cu ${ freeName }"
       ],
@@ -3143,6 +3146,9 @@
       ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Activați autentificarea unică pentru a vă menține organizația în siguranță."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
@@ -3302,6 +3308,9 @@
       ],
       "Lean more about gateways": [
         "Aflați mai multe despre porțile de acces"
+      ],
+      "Lean more about single sign-on": [
+        "Aflați mai multe despre autentificarea unică"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aflați cum să vă conectați la ${ VPN_APP_NAME } cu aplicații VPN terțe."
@@ -4787,6 +4796,20 @@
         "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
         "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
         "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori."
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Suport pentru un domeniu de e-mail personal"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
       ]
     },
     "Member action": {

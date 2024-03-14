@@ -1412,7 +1412,7 @@
         "Знижки відносно стандартної місячної ціни."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша підписка буде автоматично поновлена за стандартною знижкою та тривалістю в кінці вашого платіжного циклу."
+        "Ваша передплата автоматично поновиться за стандартною ціною з урахуванням знижки й тривалості в кінці платіжного циклу."
       ]
     },
     "bf2023: Offers": {
@@ -1422,7 +1422,7 @@
     },
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Отримуйте доступ до контенту на стримінгових сервісах, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
+        "Отримуйте доступ до сервісів потокової трансляції, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходьте локальні інтернет-блокування та цензуру за допомогою нашої глобальної мережі серверів."
@@ -1434,7 +1434,7 @@
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Спеціально розроблений NetShield захищає ваші пристрої та прискорює перегляд контенту, блокуючи рекламу, трекери та шкідливі програми."
+        "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Зберігайте до 200 версій кожного файлу протягом 10 років."
@@ -1442,7 +1442,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Застосунок ${ MAIL_APP_NAME } на комп'ютері"
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ]
     },
     "Bug category": {
@@ -3142,7 +3142,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "скористайтеся помічником імпорту Easy Switch"
+        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3228,7 +3228,7 @@
     },
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
-        "Зашифровано нульовим доступом. Одержувач вимкнув наскрізне шифрування у своєму обліковому записі."
+        "Зашифровано з нульовим рівнем доступу. Отримувач вимкнув наскрізне шифрування у своєму обліковому записі."
       ]
     },
     "Encrypted Headers": {
@@ -3238,7 +3238,7 @@
     },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Платні функції ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }"
+        "Платні функції ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "eof2023: Tooltip": {
@@ -3254,13 +3254,13 @@
         "6 користувачів"
       ],
       "Early access to new apps and features": [
-        "Ранній доступ до нових застосунків і функцій"
+        "Ранній доступ до нових програм і функцій"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Ранній доступ до застосунку ${ MAIL_APP_NAME } на комп'ютері"
+        "Ранній доступ до програми ${ MAIL_APP_NAME } для комп'ютера"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Платні функції ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_APP_NAME }"
+        "Платні функції ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -4425,7 +4425,7 @@
         "Закрити"
       ],
       "Closing this means giving up the free storage bonus.": [
-        "Закриття означає відмову від безплатного бонусу до сховища."
+        "Якщо ви це закриєте, то відмовитесь від безплатного бонусу до сховища."
       ],
       "Continue setting up your email": [
         "Продовжити налаштування електронної пошти"
@@ -7499,6 +7499,17 @@
         "Смітник"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 адрес електронної пошти"
+      ],
+      "Support for 1 custom email domain": [
+        "Підтримка 1 власного домену електронної пошти"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -7863,10 +7874,10 @@
     },
     "Onboarding modal": {
       "Automatically forward emails": [
-        "Автоматично пересилати листи"
+        "Автоматично пересилайте листи"
       ],
       "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Назавжди заблокуйте повідомлення на пошту від шахраїв. ${ kbLinkSender }"
+        "Остаточно заблокуйте електронні листи від шахраїв. ${ kbLinkSender }"
       ],
       "Block unsavory senders": [
         "Блокувати небажаних відправників"
@@ -7881,7 +7892,7 @@
         "Ніхто крім вас"
       ],
       "Forward Gmail messages to your inbox.": [
-        "Пересилати повідомлення Gmail у вашу теку."
+        "Пересилайте повідомлення з Gmail на свою поштову скриньку."
       ],
       "Next": [
         "Далі"
@@ -8004,7 +8015,7 @@
         "Зовнішній ключ автоматично отримується через WKD."
       ],
       "This key is used to encrypt messages to this contact": [
-        "Цей ключ використовується для шифрування повідомлень для цього контакту"
+        "Цей ключ використовується для шифрування повідомлень цьому контакту"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Ми радимо вам не довіряти цим ключам."
@@ -8320,7 +8331,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Наше передове рішення для забезпечення безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений захист облікових записів. ${ learnMoreLink }"
+        "Наше передове рішення з безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений рівень захисту облікових записів. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **активний** і захищає ваш обліковий запис."
@@ -8343,7 +8354,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Контакти для наступних адрес вимкнули наскрізне шифрування у своєму обліковому записі, тому відповідні налаштування шифрування були оновлені відповідним чином:"
+        "Контакти для зазначених адрес вимкнули наскрізне шифрування у своєму обліковому записі, тому пов'язані налаштування шифрування оновлено відповідно:"
       ]
     },
     "Send email with errors": {
@@ -8473,7 +8484,7 @@
     },
     "session_recovery:available:link": {
       "See how": [
-        "Подивитись як"
+        "Дізнатися"
       ]
     },
     "session_recovery:available:notification": {
@@ -8493,7 +8504,7 @@
     },
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
-        "Введіть поточний пароль, щоб скасувати скидання пароля. Ніякі інші зміни не набудуть чинності."
+        "Введіть поточний пароль, щоб скасувати скидання пароля. Жодні інші зміни не набудуть чинності."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -8592,7 +8603,7 @@
         "Відкласти повідомлення"
       ],
       "When should the message reappear in your inbox?": [
-        "Коли повідомлення має знову з’явитися у вашій теці «Вхідні»?"
+        "Коли повідомлення має знову з'явитись у вашій теці \"Вхідні\"?"
       ]
     },
     "Sort option": {
@@ -8835,10 +8846,10 @@
         "Запланувати надсилання"
       ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
-        "Вкажіть, коли лист має знову з'явитися у вашій теці «Вхідні» за допомогою нової функції відкладання."
+        "Вкажіть, коли лист має знову з'явитись у вашій теці \"Вхідні\" за допомогою нової функції відкладення."
       ],
       "Snooze it for later": [
-        "Відкласти це на потім"
+        "Відкладіть на потім"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Листи з тек \"Спам\" та \"Смітник\" тепер автоматично виключаються з теки \"Уся пошта\". ${ settingsLink }"

@@ -3716,6 +3716,9 @@
       "Download ${ name } app": [
         "Descărcați aplicația ${ name }"
       ],
+      "Download anyway": [
+        "Descărcare așa"
+      ],
       "Download canceled": [
         "Descărcare anulată."
       ],
@@ -4241,6 +4244,9 @@
       ],
       "Share files with links": [
         "Partajare fișiere prin legături"
+      ],
+      "Share with anyone": [
+        "Partajare cu oricine"
       ],
       "Shareable link for ${ boldNameText }": [
         "Legătură partajabilă pentru ${ boldNameText }"
@@ -5251,6 +5257,20 @@
         "Importare toate mesajele dintr-o etichetă și etichetare cu",
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Suport pentru un domeniu de e-mail personal"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
       ]
     },
     "Message": {
@@ -7381,6 +7401,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
+      ],
+      "Shared end-to-end encrypted": [
+        "Criptat bilateral"
       ],
       "Show side panel": [
         "Afișare panou lateral"
