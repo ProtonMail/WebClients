@@ -3063,6 +3063,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji za pośrednictwem dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
+      ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
       ],
@@ -4877,13 +4880,29 @@
         "10 adresów e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie Spamu i Kosza"
+        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
+      ],
+      "Custom schedule send and snooze times": [
+        "Niestandardowe godziny planowego wysyłania i usypiania"
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Odnowienie za ${ renewablePrice }. Anuluj w dowolnym momencie"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "za pierwszy miesiąc"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta ograniczona czasowo. Wygasa 2 kwietnia 2024 roku"
       ]
     },
     "mailtrial2024: Title": {
@@ -5609,6 +5628,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Uzyskaj dostęp do zablokowanych treści i przeglądaj prywatnie Internet. Zawiera ${ serversAndCountries }, najwyższe prędkości VPN, usługi streamingu na całym świecie, blokowanie reklam i złośliwego oprogramowania, szybkie pobieranie BitTorrent oraz wiele więcej."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Dostęp do ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME } z pulpitu"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Uzyskaj dostęp do usług streamingu, takich jak Netflix, Disney+ i Prime Video, gdziekolwiek jesteś"
       ],
@@ -5620,6 +5642,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Umożliwia skonfigurowanie autorespondera na przychodzące wiadomości"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Automatyczne przekierowanie wiadomości do konta ${ MAIL_APP_NAME } lub na inny adres e-mail."
