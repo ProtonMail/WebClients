@@ -1,7 +1,7 @@
 import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getVPN2024Renew } from '@proton/shared/lib/helpers/renew';
@@ -68,6 +68,7 @@ export const getBlackFridayRenewalNoticeText = ({
 };
 
 export const getCheckoutRenewNoticeText = ({
+    coupon,
     cycle,
     planIDs,
     plansMap,
@@ -78,6 +79,7 @@ export const getCheckoutRenewNoticeText = ({
     plansMap: PlansMap;
     checkout: SubscriptionCheckoutData;
     currency: Currency;
+    coupon?: string;
 }) => {
     if (planIDs[PLANS.VPN2024]) {
         const result = getVPN2024Renew({ planIDs, plansMap, cycle })!;
@@ -101,6 +103,23 @@ export const getCheckoutRenewNoticeText = ({
         }
         const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
         return [first, ' ', second];
+    }
+    if (planIDs[PLANS.MAIL] && coupon === COUPON_CODES.TRYMAILPLUS2024) {
+        const renewablePrice = (
+            <Price key="renewable-price" currency={currency} suffix={c('Suffix').t`/month`} isDisplayedInSentence>
+                {499}
+            </Price>
+        );
+
+        const unixRenewalTime: number = +addMonths(new Date(), cycle) / 1000;
+        const renewTime = (
+            <Time format="P" key="auto-renewal-time">
+                {unixRenewalTime}
+            </Time>
+        );
+
+        return c('mailtrial2024: Info')
+            .jt`Your subscription will auto-renew on ${renewTime} at ${renewablePrice}, cancel anytime`;
     }
 };
 

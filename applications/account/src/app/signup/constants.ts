@@ -29,4 +29,5 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     plansMap: {},
     referralData: undefined,
     vpnServersCountData: defaultVPNServersCountData,
+    offers: {},
 };

@@ -18,6 +18,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
+import { mailTrial2024Config } from '@proton/components/containers/offers/operations/mailTrial2024';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
@@ -25,10 +26,11 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import { PAYMENT_METHOD_TYPES, PaymentMethodFlows } from '@proton/components/payments/core';
 import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import type { Feature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { updateFeatureValue } from '@proton/shared/lib/api/features';
+import { getFeature, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -60,7 +62,6 @@ import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planI
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
-// import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -561,6 +562,7 @@ const SingleSignupContainerV2 = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
+            type Offers = { [key: string]: boolean };
             const [
                 { Domains: domains },
                 paymentMethodStatus,
@@ -568,6 +570,7 @@ const SingleSignupContainerV2 = ({
                 { subscriptionData, upsell, ...userInfo },
                 freePlan,
                 subscriptionDataCycleMapping,
+                offers,
             ] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 paymentsApi.statusExtendedAutomatic(),
@@ -624,6 +627,11 @@ const SingleSignupContainerV2 = ({
                     );
                     return { ...b2b, ...b2c };
                 })(),
+                silentApi<{
+                    Feature: Feature<Offers>;
+                }>(getFeature(FeatureCode.Offers))
+                    .then((result) => result?.Feature?.Value)
+                    .catch(() => ({}) as Offers),
             ]);
 
             let session: SessionData | undefined;
@@ -656,6 +664,9 @@ const SingleSignupContainerV2 = ({
                 if (isMailTrial || isMailRefer) {
                     history.replace(SSO_PATHS.SIGNUP);
                 }
+            }
+            if (!offers[mailTrial2024Config.ID]) {
+                signupParametersDiff.noPromo = true;
             }
             if (Object.keys(signupParametersDiff).length > 0) {
                 setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
