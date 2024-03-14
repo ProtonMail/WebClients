@@ -3395,6 +3395,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
       ],
+      "Download anyway": [
+        "Letöltés mindenképpen"
+      ],
       "Download canceled": [
         "Letöltés megszakítva"
       ],
@@ -3851,6 +3854,9 @@
       ],
       "Share files with links": [
         "Fájlok megosztása hivatkozással"
+      ],
+      "Share with anyone": [
+        "Megosztás bárkivel"
       ],
       "Shareable link for ${ boldNameText }": [
         "Megosztható hivatkozás ehhez: ${ boldNameText }"
@@ -4788,6 +4794,17 @@
         "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "Support for 1 custom email domain": [
+        "Egy saját e-mail domain név használata"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Igyenes próbaideje lejárt. Hozzáférés a fiókjához hamarosan le lesz tiltva. ${ action }"
@@ -5111,6 +5128,11 @@
       ],
       "Your settings have been changed successfully": [
         "A beállítások módosítása sikeresen megtörtént"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Néhány képet nem sikerült feltölteni, mert az aktuális kiválasztásban duplikált fájlnevek voltak."
       ]
     },
     "Oauth instructions": {
@@ -6480,6 +6502,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
+      ],
+      "Shared end-to-end encrypted": [
+        "Megosztva végpontok közti titkosítással"
       ],
       "Show side panel": [
         "Az oldalsó panel megjelenítése"

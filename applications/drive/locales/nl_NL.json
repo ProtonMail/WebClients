@@ -571,6 +571,12 @@
       "Save changes": [
         "Wijzigingen opslaan"
       ],
+      "Scan & Download": [
+        "Scan & Download"
+      ],
+      "Scan & Download (${ count })": [
+        "Scan & Download (${ count })"
+      ],
       "Search": [
         "Zoeken"
       ],
@@ -3647,8 +3653,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
       ],
+      "Download": [
+        "Downloaden"
+      ],
       "Download ${ name } app": [
         "Download ${ name }-app"
+      ],
+      "Download anyway": [
+        "Toch downloaden"
       ],
       "Download canceled": [
         "Download geannuleerd"
@@ -3858,6 +3870,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Invited": [
+        "Uitgenodigd"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
@@ -4170,6 +4185,12 @@
       ],
       "Share files with links": [
         "Bestanden delen met links"
+      ],
+      "Share with": [
+        "Deel met"
+      ],
+      "Share with anyone": [
+        "Delen met iemand"
       ],
       "Shareable link for ${ boldNameText }": [
         "Deelbare koppeling voor ${ boldNameText }"
@@ -4721,6 +4742,9 @@
         "Drive verwijderen?",
         "Drives verwijderen?"
       ],
+      "Delete link": [
+        "Verwijder hyperlink"
+      ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
       ],
@@ -4747,6 +4771,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "bv. Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Bewerker"
       ],
       "Email": [
         "E-mailadres"
@@ -4997,6 +5024,9 @@
       "Theme": [
         "Thema"
       ],
+      "This file is potentially infected": [
+        "Dit bestand is mogelijk geïnfecteerd"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."
       ],
@@ -5029,6 +5059,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Viewer": [
+        "Kijker"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -5168,6 +5201,52 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
         "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Special Offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Aangepaste planning en snooze-tijden voor verzenden"
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Wordt verlengd voor ${ renewablePrice }, altijd opzegbaar"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "voor de eerste maand"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Beperkte aanbieding, loopt af op 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Neem ${ planName } voor slechts ${ planPrice }"
       ]
     },
     "Message": {
@@ -5697,6 +5776,11 @@
         "Uw instellingen zijn succesvol gewijzigd."
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "Vervolgens moet u zich aanmelden bij uw Google-account en ${ BRAND_NAME } toegang geven tot uw gegevens."
@@ -5840,6 +5924,9 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Choose password": [
+        "Kies wachtwoord"
+      ],
       "E.g., ": [
         "Bijv., "
       ],
@@ -5896,6 +5983,9 @@
       ],
       "Select": [
         "Selecteer"
+      ],
+      "Set date": [
+        "Datum instellen"
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
@@ -7239,6 +7329,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
+      ],
+      "Shared end-to-end encrypted": [
+        "End-to-end versleuteld gedeeld"
       ],
       "Show side panel": [
         "Toon zijpaneel"
