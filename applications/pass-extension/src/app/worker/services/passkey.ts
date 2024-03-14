@@ -10,9 +10,7 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { withContext } from '../context';
 import store from '../store';
 
-export interface Passkeyservice {}
-
-export const createPasskeyService = (): Passkeyservice => {
+export const createPasskeyService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.PASSKEY_QUERY,
         withContext((ctx, { payload: { credentialIds, domain } }) => {
@@ -60,3 +58,5 @@ export const createPasskeyService = (): Passkeyservice => {
 
     return {};
 };
+
+export type Passkeyservice = ReturnType<typeof createPasskeyService>;

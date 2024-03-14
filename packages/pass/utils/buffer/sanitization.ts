@@ -14,15 +14,17 @@ export type SanitizedBuffers<T> = T extends ByteArrays
         : T;
 
 const isArrayBuffer = (value: unknown): value is ArrayBuffer =>
-    value instanceof ArrayBuffer || value instanceof window.ArrayBuffer;
+    value instanceof ArrayBuffer || (typeof window !== 'undefined' && value instanceof window.ArrayBuffer);
 
 const isUint8Array = (value: unknown): value is Uint8Array =>
-    value instanceof Uint8Array || value instanceof window.Uint8Array;
+    value instanceof Uint8Array || (typeof window !== 'undefined' && value instanceof window.Uint8Array);
+
+export const SafeUint8Array = typeof window !== 'undefined' ? window.Uint8Array : Uint8Array;
 
 /** If this function is invoked within a content-script, use constructors
  * from the window object to mitigate privilege errors in Firefox add-ons */
 export const sanitizeBuffers = <T>(value: T): SanitizedBuffers<T> => {
-    if (isArrayBuffer(value)) return uint8ArrayToBase64String(new window.Uint8Array(value)) as SanitizedBuffers<T>;
+    if (isArrayBuffer(value)) return uint8ArrayToBase64String(new SafeUint8Array(value)) as SanitizedBuffers<T>;
     else if (isUint8Array(value)) return uint8ArrayToBase64String(value) as SanitizedBuffers<T>;
     else if (Array.isArray(value)) return value.map(sanitizeBuffers) as SanitizedBuffers<T>;
     else if (isObject(value)) return objectMap(value, (_, val) => sanitizeBuffers(val)) as SanitizedBuffers<T>;
