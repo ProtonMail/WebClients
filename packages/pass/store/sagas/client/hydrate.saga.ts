@@ -14,7 +14,7 @@ import {
     syncLocalSettings,
 } from '@proton/pass/store/actions';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
-import { selectLocale, selectPasskeyDomains } from '@proton/pass/store/selectors';
+import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
@@ -57,8 +57,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             user: userState,
         };
 
-        const passkeyDomains = selectPasskeyDomains(state);
-        yield put(syncLocalSettings({ passkeyDomains, locale: userState.userSettings?.Locale }));
+        yield put(syncLocalSettings({ locale: userState.userSettings?.Locale }));
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
