@@ -1,7 +1,7 @@
 {
     "name": "Proton Pass: Free Password Manager",
     "description": "Free and fully encrypted password manager to keep your logins and passwords safe.",
-    "version": "1.15.0",
+    "version": "1.16.0",
     "manifest_version": 3,
     "background": {
         "scripts": ["background.js"]
@@ -34,6 +34,19 @@
             "js": ["account.js"],
             "all_frames": false,
             "run_at": "document_end"
+        },
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "exclude_matches": [
+                "https://pass.proton.me/*",
+                "https://pass.proton.local/*",
+                "https://pass.proton.black/*",
+                "https://pass.proton.pink/*",
+                "https://pass.protontech.ch/*"
+            ],
+            "js": ["webauthn.js"],
+            "all_frames": false,
+            "run_at": "document_start"
         }
     ],
     "permissions": [
