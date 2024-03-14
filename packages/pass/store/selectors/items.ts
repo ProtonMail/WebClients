@@ -7,6 +7,7 @@ import {
     flattenItemsByShareId,
     sortItems,
 } from '@proton/pass/lib/items/item.utils';
+import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import { matchAny } from '@proton/pass/lib/search/match-any';
 import { searchItems } from '@proton/pass/lib/search/match-items';
 import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/search/match-url';
@@ -272,11 +273,23 @@ const autosaveCandidateSelector = createSelector(
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
     autosaveCandidateSelector(state, options);
 
-export const selectPasskeyDomains = createSelector(selectAllItems, (items): string[] => {
-    const domains = items
-        .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
-        .flatMap((item) => item.data.content.passkeys.map(prop('domain')))
-        .filter(truthy);
-
-    return Array.from(new Set(domains)).filter(truthy);
-});
+export const selectPasskeys = ({ credentialIds, domain }: PasskeyQueryPayload) =>
+    createSelector(selectAllItems, (items): SelectedPasskey[] =>
+        items
+            .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
+            .flatMap((item) =>
+                (item.data.content.passkeys ?? [])
+                    .filter(
+                        (passkey) =>
+                            passkey.domain === domain &&
+                            (credentialIds.length === 0 || credentialIds.includes(passkey.credentialId))
+                    )
+                    .map((passkey) => ({
+                        credentialId: passkey.credentialId,
+                        itemId: item.itemId,
+                        name: item.data.metadata.name,
+                        shareId: item.shareId,
+                        username: passkey.userName,
+                    }))
+            )
+    );
