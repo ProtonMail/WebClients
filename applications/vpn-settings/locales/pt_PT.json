@@ -2821,7 +2821,7 @@
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
       ],
       "Current plan": [
-        "Plano actual"
+        "Plano atual"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -3644,6 +3644,9 @@
       "You can now access and manage the account as an administrator.": [
         "Pode agora aceder e gerir a conta como administrador."
       ],
+      "You can now return to the application to continue": [
+        "Pode agora voltar à aplicação e continuar."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
@@ -4383,6 +4386,14 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } membro da sua organização utilize a autenticação de dois factores.",
         "${ twoFAMembers.length }/${ members.length } membros da sua organização utilizam a autenticação de dois factores."
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
+      "Support for 1 custom email domain": [
+        "Apoio ao cliente para 1 domínio de e-mail personalizado"
       ]
     },
     "Member action": {
@@ -5688,8 +5699,8 @@
         "Pode reinicializar a sua palavra-passe"
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Você tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
-        "Você tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
+        "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
+        "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
       ]
     },
     "session_recovery:available:link": {
@@ -5964,6 +5975,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -6131,6 +6145,18 @@
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
+      ],
+      "contact your administrator": [
+        "contacte o seu administrador"
+      ],
+      "upgrade for more storage": [
+        "atualize para obter mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "O seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O seu ${ appStorage } está cheio"
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"

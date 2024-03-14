@@ -4753,6 +4753,20 @@
         "${ twoFAMembers.length }/${ members.length } členů vaší organizace používá dvoufázové ověření."
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "Support for 1 custom email domain": [
+        "Podpora 1 vlastní e-mailové domény"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktivovat uživatele"
@@ -5061,6 +5075,9 @@
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
       "DNS leak prevention": [
         "Prevence úniků DNS"
       ],
@@ -5102,6 +5119,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
+      ],
+      "Group management (coming soon)": [
+        "Správa skupiny (již brzy)"
       ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
@@ -5246,6 +5266,12 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Neomezený počet sdílených trezorů s oprávněním k přístupu"
+      ],
+      "Unlimited vault sharing": [
+        "Neomezené sdílení trezorů"
+      ],
+      "Unlimited vaults": [
+        "Neomezené trezory"
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
@@ -5967,6 +5993,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Země fakturace"
+      ],
       "Card number": [
         "Číslo karty"
       ],

@@ -3011,6 +3011,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configura la autenticación SAML para tu organización mediante un proveedor de identidad (IdP). Esto habilitará SAML para toda la organización."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configura la autenticación SAML para tu organización con un proveedor de identidad como Okta, Microsoft Azure o Google Identity Platform. Esto habilitará SAML para toda la organización."
+      ],
       "Continue with ${ freeName }": [
         "Continuar con ${ freeName }"
       ],
@@ -3129,6 +3132,9 @@
       ],
       "Emailing preference saved": [
         "Preferencias de correo guardadas"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Activa el inicio de sesión único para mantener segura tu organización."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
@@ -3291,6 +3297,9 @@
       ],
       "Lean more about gateways": [
         "Más información sobre puertas de enlace"
+      ],
+      "Lean more about single sign-on": [
+        "Más información acerca del inicio de sesión único"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aprende a iniciar sesión en ${ VPN_APP_NAME } con aplicaciones VPN de terceros."
@@ -5048,6 +5057,9 @@
       "Advanced sharing security": [
         "Seguridad avanzada al compartir archivos"
       ],
+      "Auto-delete Spam and Trash": [
+        "Eliminación automática de spam y papelera"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
       ],
@@ -5101,6 +5113,9 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
       ],
       "DNS leak prevention": [
         "Protección contra filtraciones del DNS"
@@ -5205,6 +5220,9 @@
       ],
       "Router support": [
         "Compatibilidad con enrutadores"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Programar y pausar correos a cualquier hora"
       ],
       "Schedule messages at any time": [
         "Programa mensajes en cualquier momento"
@@ -5490,6 +5508,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accede a contenidos bloqueados y navega de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Accede a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de tu escritorio."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accede desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ y Prime Video."
       ],
@@ -5502,11 +5523,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Te permite responder automáticamente a los mensajes que recibes."
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Elimina automáticamente los mensajes anteriores a 30 días de la papelera y spam."
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Reenvía correos automáticamente enviados a tu cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Te recomendamos que puedes utilizar un proveedor de servicios de correo electrónico dedicado para este caso."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controla el acceso a tus archivos compartidos con enlaces con fechas de expiración y contraseña."
@@ -5761,6 +5788,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "La autenticación de doble factor ya no es requerida."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algunas imágenes no se han cargado debido a archivos duplicados en la selección actual."
       ]
     },
     "Onboarding": {
