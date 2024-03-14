@@ -3168,6 +3168,14 @@
         "Bantu kami untuk berkembang!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".dev untuk Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm untuk Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Keamanan berbagi berkas mutakhir"
@@ -5489,7 +5497,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Tergantung dari layanan surel Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
+        "Tergantung dari layanan penyedia email Anda sebelumnya, Anda mungkin akan perlu untuk menghasilkan ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengeklik tombol 3 titik (...)."
@@ -6607,6 +6615,9 @@
       ],
       "No addresses exist": [
         "Tidak ada alamat"
+      ],
+      "No changes made to the current subscription": [
+        "Tidak ada perubahan yang diterapkan bagi paket langganan saat ini"
       ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
@@ -8283,7 +8294,7 @@
         "Kategori"
       ],
       "Choose a name for the generated certificate file": [
-        "Pilih sebuah nama untuk file sertifikat yang dibuat"
+        "Pilih nama untuk berkas sertifikat yang dihasilkan"
       ],
       "Code": [
         "Kode"
@@ -9773,6 +9784,9 @@
       "Advanced sharing security": [
         "Keamanan berbagi berkas tingkat lanjut"
       ],
+      "Auto-delete Spam and Trash": [
+        "Kosongkan Spam dan Sampah secara otomatis"
+      ],
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
       ],
@@ -9826,6 +9840,9 @@
       ],
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
       ],
       "DNS leak prevention": [
         "Perlindungan terhadap kebocoran DNS"
@@ -9922,6 +9939,9 @@
       ],
       "Router support": [
         "Dukungan router"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Jadwalkan dan tunda email kapan saja"
       ],
       "Schedule messages at any time": [
         "Jadwalkan pesan sesuai keinginan Anda"
@@ -10246,6 +10266,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Akses konten yang terblokir dan jelajahi secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, unduhan BitTorrent yang cepat, dan masih banyak lagi."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Akses ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME } secara langsung dari desktop Anda"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
@@ -10257,6 +10280,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Hapus pesan yang telah berusia lebih dari 30 hari secara otomatis dari Sampah dan Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -10530,6 +10556,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Autentikasi dua faktor tidak lagi dibutuhkan"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -12916,7 +12947,7 @@
         "(aktif)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Beri nama konfigurasi yang akan dibuat"
+        "1. Beri nama konfigurasi yang akan dihasilkan"
       ],
       "1. Select platform": [
         "1. Pilih platform"

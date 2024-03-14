@@ -3217,6 +3217,14 @@
         "Hjälp oss att förbättra!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb för Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm för Fedora/Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Avancerad delningssäkerhet"
@@ -9701,6 +9709,9 @@
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
       "10 email addresses": [
         "10 e-postadresser"
       ],
@@ -10273,6 +10284,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedikerade servrar och IP"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
       ],
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
@@ -11011,6 +11025,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tvåfaktorsautentisering är inte längre obligatoriskt"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
       ]
     },
     "Notification in holidays calendar modal": {
