@@ -2039,12 +2039,38 @@
         "Ve vámi nahraném souboru CSV jsme zjistili následující pole. Zaškrtněte ta, která chcete importovat."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "POPIS:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ČAS:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ČAS:\n${ formattedStart } (celý den)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ČAS:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Odstraněno"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "MÍSTO:\n${ eventLocation }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Zrušení události na ${ formattedStart }"
+        "Zrušení události ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Zrušení události začínající v ${ formattedStart }"
+        "Zrušení události začínající ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "Pozvání na událost ${ formattedStart }"
@@ -3704,6 +3730,9 @@
       "Download ${ name } app": [
         "Stáhnout aplikaci pro ${ name }"
       ],
+      "Download anyway": [
+        "Přesto stáhnout"
+      ],
       "Download canceled": [
         "Stahování zrušeno"
       ],
@@ -4228,6 +4257,9 @@
       ],
       "Share files with links": [
         "Sdílejte soubory pomocí odkazů"
+      ],
+      "Share with anyone": [
+        "Sdílet s kýmkoli"
       ],
       "Shareable link for ${ boldNameText }": [
         "Odkaz ke sdílení ${ boldNameText }"
@@ -5237,6 +5269,20 @@
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktopová aplikace"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
+      "Support for 1 custom email domain": [
+        "Podpora 1 vlastní e-mailové domény"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
@@ -5882,6 +5928,11 @@
     "Participant name": {
       "You": [
         "Vy"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Země fakturace"
       ]
     },
     "PGP key encryption warning": {
@@ -7340,6 +7391,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
+      ],
+      "Shared end-to-end encrypted": [
+        "Sdíleno koncově šifrované"
       ],
       "Show side panel": [
         "Zobrazit postranní panel"

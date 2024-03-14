@@ -575,13 +575,13 @@
         "Değişiklikleri kaydet"
       ],
       "Scan & Download": [
-        "Tara & İndir"
+        "Tara ve indir"
       ],
       "Scan & Download (${ count })": [
-        "Tara & İndir (${ count })"
+        "Tara ve indir (${ count })"
       ],
       "Scan & Download all": [
-        "Tara & Hepsini İndir"
+        "Tara ve tümünü indir"
       ],
       "Search": [
         "Arama"
@@ -2192,6 +2192,9 @@
       "Aliases could not be loaded": [
         "Takma adlar yüklenemedi"
       ],
+      "Already a member of this share": [
+        "Zaten bu paylaşımın bir üyesi"
+      ],
       "An error occurred while loading alias options": [
         "Takma ad seçenekleri yüklenirken bir sorun çıktı"
       ],
@@ -2380,6 +2383,10 @@
       ],
       "Primary address key is not decrypted.": [
         "Birincil adres anahtarının şifresi çözülemedi."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Yinelenen davetli silindi: ${ joinedInvitee }",
+        "Yinelenen davetliler silindi: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Şikayet gönderilemedi"
@@ -3783,6 +3790,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Dosya imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
       ],
+      "File scanning in Drive": [
+        "Drive dosya taraması"
+      ],
       "File will not be updated": [
         "Dosya güncellenmeyecek"
       ],
@@ -3942,6 +3952,10 @@
       ],
       "Makes your account safer": [
         "Hesabınızı daha güvenli kılar"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
+        "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
       "Merged": [
         "Birleştirilmiş"
@@ -4126,7 +4140,7 @@
         "Şikayet gönderildi"
       ],
       "Report link": [
-        "Bağlantıyı raporla"
+        "Bağlantıyı bildir"
       ],
       "Restore": [
         "Geri yükle"
@@ -4202,10 +4216,13 @@
         "Dosyaları bağlantı ile paylaş"
       ],
       "Share via link settings": [
-        "Bağlantı ayarları aracılığıyla paylaşın"
+        "Bağlantı ayarları ile paylaş"
       ],
       "Share with": [
         "Şununla paylaş"
+      ],
+      "Share with anyone": [
+        "Herkes ile paylaş"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } için paylaşılabilir bağlantı"
@@ -4333,6 +4350,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Sizi korumak için ${ DRIVE_APP_NAME } zararlı dosyaları tarayıp engelleyebilir. Gene de yalnızca güvendiğiniz kişilerden gelen dosyaları indirmelisiniz."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
@@ -4663,8 +4683,11 @@
       "Add to group": [
         "Gruba ekle"
       ],
+      "Anyone on the Internet with the link can view": [
+        "İnternet üzerinden bağlantıyı bilen herkes görüntüleyebilir"
+      ],
       "Anyone with the link": [
-        "Bu bağlantıya sahip olan herkes"
+        "Bağlantıya sahip olan herkes"
       ],
       "App password": [
         "Uygulama parolası"
@@ -5049,7 +5072,7 @@
         "Tema"
       ],
       "This file is potentially infected": [
-        "Bu dosya potansiyel olarak virüslü"
+        "Bu dosya virüslü olabilir"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Bu işlem, kilitli sürücünüzdeki bütün dosyaları kalıcı olarak silecek."
@@ -5232,20 +5255,45 @@
         "Tekliften yararlanın"
       ],
       "Special Offer": [
-        "Özel Teklif"
+        "Özel teklif"
       ]
     },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "Auto-delete Spam and Trash": [
+        "Otomatik olarak istenmeyenleri ve çöpü boşaltma"
+      ],
+      "Custom schedule send and snooze times": [
+        "Özel zamanlanmış gönderim ve erteleme süreleri"
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
+      ],
       "Unlimited folders, labels and filters": [
-        "Sınırsız klasör, etiket ve filtre"
+        "Sınırsız klasör, etiket ve süzgeç"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
       ]
     },
     "mailtrial2024: Info": {
       "for the first month": [
         "ilk ay için"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
       ]
     },
     "Message": {
@@ -5773,6 +5821,11 @@
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Geçerli seçimdeki yinelenen dosya adları nedeniyle bazı görseller yüklenmedi."
       ]
     },
     "Oauth instructions": {
@@ -7151,6 +7204,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Share ${ name }": [
+        "${ name } paylaş"
       ],
       "Share via link": [
         "Bağlantı ile paylaş"

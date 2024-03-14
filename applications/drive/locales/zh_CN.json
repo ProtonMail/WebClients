@@ -3188,6 +3188,9 @@
       "Download ${ name } app": [
         "下载 ${ name } app"
       ],
+      "Download anyway": [
+        "仍要下载"
+      ],
       "Download canceled": [
         "下载已取消"
       ],
@@ -3655,6 +3658,9 @@
       ],
       "Share files with links": [
         "通过链接共享文件"
+      ],
+      "Share with anyone": [
+        "与他人分享"
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的共享链接"
@@ -4556,6 +4562,17 @@
       ],
       "Your import is starting": [
         "正在启动导入"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "10 email addresses": [
+        "10 个邮箱地址"
+      ],
+      "Support for 1 custom email domain": [
+        "支持1个自定义域名"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
       ]
     },
     "Message": {
@@ -6072,6 +6089,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Shared end-to-end encrypted": [
+        "共享已经过端到端加密"
       ],
       "Show side panel": [
         "显示侧边栏"

@@ -46,6 +46,9 @@
       "Add note": [
         "Προσθήκη σημείωσης"
       ],
+      "Add people or groups to share": [
+        "Προσθήκη ατόμων ή ομάδων για κοινή χρήση"
+      ],
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
@@ -570,6 +573,15 @@
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
+      ],
+      "Scan & Download": [
+        "Σάρωση & Λήψη"
+      ],
+      "Scan & Download (${ count })": [
+        "Σάρωση & Λήψη (${ count })"
+      ],
+      "Scan & Download all": [
+        "Σάρωση & Λήψη όλων"
       ],
       "Search": [
         "Αναζήτηση"
@@ -2180,6 +2192,9 @@
       "Aliases could not be loaded": [
         "Τα ψευδώνυμα δεν μπορούν να φορτωθούν"
       ],
+      "Already a member of this share": [
+        "Είναι ήδη μέλος στην παρόν κοινοποίηση"
+      ],
       "An error occurred while loading alias options": [
         "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
       ],
@@ -2368,6 +2383,10 @@
       ],
       "Primary address key is not decrypted.": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Αφαιρέθηκε διπλότυπος προσκεκλημένος: ${ joinedInvitee }",
+        "Αφαιρέθηκαν διπλότυποι προσκεκλημένοι: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Αποτυχία αποστολής αναφοράς"
@@ -3647,8 +3666,14 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος ανέβηκε διασφαλισμένα από ${ emailAddress }."
       ],
+      "Download": [
+        "Λήψη"
+      ],
       "Download ${ name } app": [
         "Λήψη ${ name } εφαρμογής"
+      ],
+      "Download anyway": [
+        "Λήψη οπωσδήποτε"
       ],
       "Download canceled": [
         "Η λήψη ακυρώθηκε"
@@ -3710,6 +3735,9 @@
       "End-to-end encrypted": [
         "Διατερματικά κρυπτογραφημένο"
       ],
+      "End-to-End Encrypted": [
+        "Κρυπτογραφημένο από Άκρο-σε-Άκρο"
+      ],
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
       ],
@@ -3761,6 +3789,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος ανέβασε το ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Σάρωση αρχείων στο Drive"
       ],
       "File will not be updated": [
         "Το αρχείο δεν θα ενημερωθεί"
@@ -3859,6 +3890,9 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "Invited": [
+        "Προσκεκλημένοι"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
       ],
@@ -3918,6 +3952,10 @@
       ],
       "Makes your account safer": [
         "Κάνει τον λογαριασμό σας ασφαλέστερο"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρας",
+        "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρες"
       ],
       "Merged": [
         "Συγχωνευμένα"
@@ -4101,6 +4139,9 @@
       "Report has been sent": [
         "Η αναφορά στάλθηκε"
       ],
+      "Report link": [
+        "Αναφορά συνδέσμου"
+      ],
       "Restore": [
         "Επαναφορά"
       ],
@@ -4118,6 +4159,9 @@
       ],
       "Retry now": [
         "Επανάληψη τώρα"
+      ],
+      "Scan issue": [
+        "Πρόβλημα σάρωσης"
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
@@ -4170,6 +4214,15 @@
       ],
       "Share files with links": [
         "Κοινή χρήση αρχείων με συνδέσμους"
+      ],
+      "Share via link settings": [
+        "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
+      ],
+      "Share with": [
+        "Κοινοποίηση με"
+      ],
+      "Share with anyone": [
+        "Κοινοποίηση με οποιονδήποτε"
       ],
       "Shareable link for ${ boldNameText }": [
         "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
@@ -4297,6 +4350,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει και να αποκλείσει κακόβουλα αρχεία. Θα πρέπει να κατεβάζετε αρχεία μόνο από άτομα που εμπιστεύεστε."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Για να εισάγετε εκδηλώσεις, θα πρέπει πρώτα να δημιουργήσετε ένα ημερολόγιο στο ${ CALENDAR_APP_NAME }. Εδώ θα εμφανιστούν οι εκδηλώσεις μετά την εισαγωγή."
@@ -4627,6 +4683,12 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο μπορεί να δει"
+      ],
+      "Anyone with the link": [
+        "Οποιοσδήποτε έχει το σύνδεσμο"
+      ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
@@ -4721,6 +4783,9 @@
         "Διαγραφή αρχειοθήκης;",
         "Διαγραφή αρχειοθηκών;"
       ],
+      "Delete link": [
+        "Διαγραφή συνδέσμου"
+      ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
       ],
@@ -4747,6 +4812,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "π.χ., Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Επεξεργαστής"
       ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -4777,6 +4845,9 @@
       ],
       "Enter device name": [
         "Εισάγετε όνομα συσκευής"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Διαγραφή αυτού του συνδέσμου και κατάργηση όλων των ατόμων με πρόσβαση"
       ],
       "Expired": [
         "Έχει λήξει"
@@ -4961,6 +5032,9 @@
       "Set expiration date": [
         "Ορισμός ημερομηνίας λήξης"
       ],
+      "Set link password": [
+        "Ορισμός συνθηματικού για το σύνδεσμο"
+      ],
       "Set recovery method": [
         "Ορισμός μεθόδου ανάκτησης"
       ],
@@ -4997,6 +5071,9 @@
       "Theme": [
         "Θέμα"
       ],
+      "This file is potentially infected": [
+        "Αυτό το αρχείο ενδέχεται να έχει προσβληθεί"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Αυτό θα διαγράψει οριστικά όλα τα αρχεία στην κλειδωμένη αρχειοθήκη σας."
       ],
@@ -5029,6 +5106,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "Viewer": [
+        "Θεατής"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -5168,6 +5248,52 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
         "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Special Offer": [
+        "Ειδική Προσφορά"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "10 email addresses": [
+        "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
+      ],
+      "Custom schedule send and snooze times": [
+        "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
+      ],
+      "Support for 1 custom email domain": [
+        "Υποστήριξη για 1 προσαρμοσμένο τομέα email"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Ανανεώνει σε ${ renewablePrice }, ακυρώστε ανά πάσα στιγμή"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "για τον πρώτο μήνα"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Προσφορά περιορισμένου χρόνου, λήγει στις 2 Απριλίου 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Λάβετε το ${ planName } μόνο για ${ planPrice }"
       ]
     },
     "Message": {
@@ -5697,6 +5823,11 @@
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Ορισμένες εικόνες δε μεταφορτώθηκαν λόγω διπλότυπων ονομάτων αρχείων στην τρέχουσα επιλογή."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να παραχωρήσετε στο ${ BRAND_NAME } πρόσβαση στα δεδομένα σας."
@@ -5840,6 +5971,9 @@
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
       ],
+      "Choose password": [
+        "Επιλογή κωδικού πρόσβασης"
+      ],
       "E.g., ": [
         "Για παράδειγμα, "
       ],
@@ -5896,6 +6030,9 @@
       ],
       "Select": [
         "Επιλογή"
+      ],
+      "Set date": [
+        "Ορισμός ημερομηνίας"
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -7068,6 +7205,9 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Share ${ name }": [
+        "Κοινοποίηση ${ name }"
+      ],
       "Share via link": [
         "Κοινοποίηση μέσω συνδέσμου"
       ],
@@ -7239,6 +7379,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
+      ],
+      "Shared end-to-end encrypted": [
+        "Κοινοποιημένο, διατερματικά κρυπτογραφημένο"
       ],
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
