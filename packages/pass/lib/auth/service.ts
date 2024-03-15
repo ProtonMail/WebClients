@@ -391,13 +391,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             config.onNotification?.({ text });
                         }
 
+                        /** If a session fails to resume due to reasons other than being locked,
+                         * inactive, or offline, the sessionFailure callback should trigger the
+                         * resuming process. Session errors will be managed by the API listener. */
                         const { sessionLocked, sessionInactive, online } = api.getState();
-                        const sessionFailure = sessionLocked || sessionInactive || !online;
-
-                        /** if resume failed for any other reason than a locked or
-                         * inactive session, trigger the session resume sequence.
-                         * Session errors will be handled by the API listener */
-                        if (!sessionFailure) config.onSessionFailure?.(options);
+                        const sessionFailure = !(online && (sessionLocked || sessionInactive));
+                        if (sessionFailure) await config.onSessionFailure?.(options);
 
                         return false;
                     }
