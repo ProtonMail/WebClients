@@ -16,7 +16,22 @@ export const createWebAuthNService = () => {
     const listeners = createListenerStore();
     const state = objectHandler<WebAuthNServiceState>({ requestToken: null });
 
+    const abort = (browserFallback: boolean) => {
+        const token = state.get('requestToken');
+        state.set('requestToken', null);
+
+        if (token) {
+            window.postMessage(
+                browserFallback
+                    ? createBridgeResponse({ type: 'success', intercept: false }, token)
+                    : createBridgeAbortSignal(token),
+                '*'
+            );
+        }
+    };
+
     const approveRequest = (token: string) => {
+        abort(false); /* abort any on-going requests */
         state.set('requestToken', token);
         return waitUntil(
             {
@@ -30,20 +45,6 @@ export const createWebAuthNService = () => {
             },
             50
         );
-    };
-
-    const abort = (browserFallback: boolean) => {
-        const token = state.get('requestToken');
-        state.set('requestToken', null);
-
-        if (token) {
-            window.postMessage(
-                browserFallback
-                    ? createBridgeResponse({ type: 'success', intercept: false }, token)
-                    : createBridgeAbortSignal(token),
-                '*'
-            );
-        }
     };
 
     const init = withContext((ctx) => {
