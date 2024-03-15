@@ -229,6 +229,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
             authStore.setLockToken(sessionLockToken);
             authStore.setLockTTL(ttl);
+            authStore.setLockLastExtendTime(getEpoch());
             authStore.setLockStatus(SessionLockStatus.REGISTERED);
 
             await authService.persistSession().catch(noop);
@@ -242,6 +243,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
             authStore.setLockToken(undefined);
             authStore.setLockTTL(undefined);
+            authStore.setLockLastExtendTime(undefined);
             authStore.setLockStatus(SessionLockStatus.NONE);
 
             await authService.persistSession().catch(noop);
@@ -315,7 +317,6 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setLockLastExtendTime(getEpoch());
 
             const lock = await checkSessionLock();
-
             authStore.setLockStatus(lock.status);
             authStore.setLockTTL(lock.ttl);
             void config.onSessionLockUpdate?.(lock, false);
