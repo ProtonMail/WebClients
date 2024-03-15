@@ -5,13 +5,14 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { AccountWithChainData } from '../../../../types';
 import { AdvancedOptionsModal } from './AdvancedOptionsModal';
+import { FeeSelectionModal } from './FeeSelectionModal';
 import { ManualCoinSelectionModal } from './ManualCoinSelectionModal';
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
 interface Props {
     account?: AccountWithChainData;
     txBuilder: WasmTxBuilder;
-    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void;
+    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void;
 }
 
 export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTxBuilder }: Props) => {
@@ -20,14 +21,21 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
         handleManualCoinSelection,
         openAdvancedOptionsModal,
         ...otherAdvancedOptionHelpers
-    } = useOnchainTransactionAdvancedOptions(updateTxBuilder);
+    } = useOnchainTransactionAdvancedOptions(txBuilder, updateTxBuilder);
+
+    const { feesSelectorHelpers, feesSelectionModal } = otherAdvancedOptionHelpers;
 
     return (
         <>
             <div className="flex flex-row justify-space-between">
                 <h3 className="text-rg text-semibold flex-1">{c('Wallet Send').t`Advanced options`}</h3>
 
-                <Button className="mr-2 text-sm" size="small" shape="underline" onClick={openAdvancedOptionsModal}>
+                <Button
+                    className="mr-2 text-sm"
+                    size="small"
+                    shape="underline"
+                    onClick={() => openAdvancedOptionsModal()}
+                >
                     {c('Wallet Send').t`Customise`}
                 </Button>
             </div>
@@ -39,6 +47,16 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                 account={account}
                 selectedUtxos={txBuilder.getUtxosToSpend()}
                 onCoinSelected={handleManualCoinSelection}
+            />
+
+            <FeeSelectionModal
+                modalState={feesSelectionModal}
+                feeRate={feesSelectorHelpers.feeRate}
+                feesEstimations={feesSelectorHelpers.feesEstimations}
+                onFeeRateSelected={(feeRate) => {
+                    feesSelectorHelpers.handleFeesSelected(feeRate);
+                    feesSelectionModal.onClose();
+                }}
             />
         </>
     );

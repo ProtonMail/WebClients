@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { WasmTxBuilder } from '@proton/andromeda';
 
+import { DEFAULT_TARGET_BLOCK, MAX_BLOCK_TARGET, MIN_FEE_RATE } from '../../../../constants';
 import { useBitcoinBlockchainContext } from '../../../../contexts';
-import { DEFAULT_TARGET_BLOCK, MAX_BLOCK_TARGET, MIN_FEE_RATE } from './constant';
 import { FeeRateByBlockTarget } from './type';
 import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';
 
@@ -25,7 +25,6 @@ export const useOnChainFeesSelector = (
 ) => {
     const { feesEstimation: contextFeesEstimation } = useBitcoinBlockchainContext();
     const [isRecommended, setIsRecommended] = useState(true);
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const feesEstimations = useMemo(() => {
         return [...contextFeesEstimation.entries()]
@@ -34,14 +33,10 @@ export const useOnChainFeesSelector = (
             .sort(([a], [b]) => a - b);
     }, [contextFeesEstimation]);
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
     const handleFeesSelected = useCallback(
         (feeRate: number, isRecommended = false) => {
             updateTxBuilder((txBuilder) => txBuilder.setFeeRate(feeRate));
             setIsRecommended(isRecommended);
-            closeModal();
         },
         // all references are stable at mount here
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,14 +56,15 @@ export const useOnChainFeesSelector = (
         return findLowestBlockTargetByFeeRate(feeRate, feesEstimations) ?? MAX_BLOCK_TARGET;
     }, [feesEstimations, txBuilder]);
 
+    const feeRate = txBuilder.getFeeRate() ?? 1;
+
     return {
+        feeRate,
         feesEstimations,
+
         feeRateNote: getFeeRateNote(blockTarget),
         blockTarget,
-        isModalOpen,
         isRecommended,
-        openModal,
-        closeModal,
         handleFeesSelected,
     };
 };

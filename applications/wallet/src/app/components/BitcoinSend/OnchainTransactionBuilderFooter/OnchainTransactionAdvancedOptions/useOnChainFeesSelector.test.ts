@@ -22,19 +22,6 @@ describe('useOnChainFeesSelector', () => {
         mockUseBitcoinBlockchainContext({ feesEstimation: getFeesEstimationMap() });
     });
 
-    it('should open modal', () => {
-        const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
-        result.current.openModal();
-        expect(result.current.isModalOpen).toBeTruthy();
-    });
-
-    it('should close modal', () => {
-        const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
-        result.current.openModal();
-        result.current.closeModal();
-        expect(result.current.isModalOpen).toBeFalsy();
-    });
-
     describe('on mount', () => {
         it('should set default fee to target next 5th block', async () => {
             renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));

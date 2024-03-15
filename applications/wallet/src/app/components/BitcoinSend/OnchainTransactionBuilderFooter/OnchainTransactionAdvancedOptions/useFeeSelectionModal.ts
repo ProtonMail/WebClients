@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { MAX_BLOCK_TARGET } from './constant';
+import { MAX_BLOCK_TARGET } from '../../../../constants';
 import { FeeRateByBlockTarget } from './type';
 import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';
 

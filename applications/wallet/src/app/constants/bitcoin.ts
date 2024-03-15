@@ -24,3 +24,10 @@ export const purposeByScriptType: Record<WasmScriptType, number> = {
     [WasmScriptType.NativeSegwit]: 84,
     [WasmScriptType.Taproot]: 86,
 };
+
+export const MIN_FEE_RATE = 1;
+
+export const DEFAULT_TARGET_BLOCK = 5;
+export const MAX_BLOCK_TARGET = 25;
+
+export const AVERAGE_TIMEGAP_BETWEEN_BLOCKS = 10;

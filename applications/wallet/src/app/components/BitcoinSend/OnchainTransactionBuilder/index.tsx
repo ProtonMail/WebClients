@@ -5,8 +5,8 @@ import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { WalletSelector } from '../../../atoms';
-import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
+import { OnchainTransactionBuilderFooter } from '../OnchainTransactionBuilderFooter';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';
 import { RecipientList } from '../RecipientList';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
@@ -95,7 +95,7 @@ export const OnchainTransactionBuilder = ({ wallets, defaultWalletId }: Props) =
                 onRecipientMaxAmount={updateRecipientAmountToMax}
             />
 
-            <OnchainFeesAndOptionsCard
+            <OnchainTransactionBuilderFooter
                 txBuilder={txBuilder}
                 updateTxBuilder={updateTxBuilder}
                 account={account}
