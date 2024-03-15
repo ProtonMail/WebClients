@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
-import { EarlyAccess } from 'proton-pass-web/app/Upsell/EarlyAccess';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -116,7 +115,6 @@ export const Main: FC = () => (
                             <SpotlightProvider>
                                 <OnboardingProvider>
                                     <MainSwitch />
-                                    <EarlyAccess />
                                 </OnboardingProvider>
                             </SpotlightProvider>
                         </PasswordProvider>
