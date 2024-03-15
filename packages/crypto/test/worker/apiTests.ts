@@ -21,12 +21,6 @@ import {
     utf8ArrayToString,
 } from '../../lib/utils';
 import {
-    testMessageEncryptedLegacy,
-    testMessageEncryptedStandard,
-    testMessageResult,
-    testPrivateKeyLegacy,
-} from './decryptMessageLegacy.data';
-import {
     ecc25519Key,
     eddsaElGamalSubkey,
     keyWithP256AndCurve25519Subkeys,
@@ -157,41 +151,6 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             config: { allowForwardedMessages: true },
         });
         expect(data).to.deep.equal('Message for Bob');
-    });
-
-    it('decryptMessageLegacy - it can decrypt a legacy message', async () => {
-        const privateKeyRef = await CryptoApiImplementation.importPrivateKey({
-            armoredKey: testPrivateKeyLegacy,
-            passphrase: '123',
-        });
-
-        const decryptionResult = await CryptoApiImplementation.decryptMessageLegacy({
-            armoredMessage: testMessageEncryptedLegacy,
-            decryptionKeys: privateKeyRef,
-            messageDate: new Date('2015-01-01'),
-        });
-        expect(decryptionResult.data).to.equal(testMessageResult);
-        expect(decryptionResult.signatures).to.have.length(0);
-        expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
-    });
-
-    it('decryptMessageLegacy - it can decrypt a non-legacy armored message', async () => {
-        const privateKeyRef = await CryptoApiImplementation.importPrivateKey({
-            armoredKey: testPrivateKeyLegacy,
-            passphrase: '123',
-        });
-
-        const decryptionResult = await CryptoApiImplementation.decryptMessageLegacy({
-            armoredMessage: testMessageEncryptedStandard,
-            decryptionKeys: privateKeyRef,
-            verificationKeys: privateKeyRef,
-            messageDate: new Date('2015-01-01'),
-        });
-        expect(decryptionResult.data).to.equal(testMessageResult);
-        expect(decryptionResult.signatures).to.have.length(1);
-        expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('encryptMessage - output binary message should be transferred', async () => {
