@@ -122,7 +122,6 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
         encryptMessage: (opts) => getWorker().encryptMessage(opts).catch(errorReporter),
         decryptMessage: (opts) => getWorker().decryptMessage(opts).catch(errorReporter),
-        decryptMessageLegacy: (opts) => getWorker().decryptMessageLegacy(opts).catch(errorReporter),
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
         signMessage: (opts) => getWorker().signMessage(opts).catch(errorReporter),
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
