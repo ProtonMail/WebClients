@@ -134,7 +134,10 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
                         <span className="text-left">
                             <div className="text-sm text-ellipsis">{user?.Email}</div>
-                            <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
+                            <div
+                                className={clsx('text-sm', org && 'text-ellipsis')}
+                                style={{ color: 'var(--interaction-norm)' }}
+                            >
                                 {planDisplayName}
                                 {passPlan === UserPassPlan.FREE && (
                                     <>
@@ -142,6 +145,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                                         <UpgradeButton upsellRef={UpsellRef.MENU} hideIcon inline />
                                     </>
                                 )}
+                                {org && ` · ${org.organization.Name}`}
                             </div>
                         </span>
                     </span>
