@@ -10,6 +10,7 @@ import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/f
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
+import { arch } from './lib/utils/helpers';
 
 type StoreUpdateProperties = {
     'update.distribution': number;
@@ -81,7 +82,7 @@ const validateInput = (opts: UpdateOptions) => {
 
 const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
     // don't attempt to update if rollout % not satisfied
-    const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${process.arch}/version.json`;
+    const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${arch}/version.json`;
     const remoteManifest = await opts.session
         .fetch(remoteManifestUrl)
         .then((r) => r.json())
