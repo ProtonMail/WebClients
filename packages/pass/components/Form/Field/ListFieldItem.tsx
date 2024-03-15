@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import type { KeyboardEventHandler } from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import clsx from '@proton/utils/clsx';
@@ -42,8 +42,10 @@ export const ListFieldItem = <T,>({
     renderValue,
 }: ListFieldItemProps<T>) => {
     const ref = useRef<HTMLSpanElement>(null);
+    const [editing, setEditing] = useState(false);
 
     const handleBlur = () => {
+        setEditing(false);
         const update = ref.current?.innerText?.trim() ?? '';
         if (update !== value) onChange(update);
     };
@@ -89,21 +91,26 @@ export const ListFieldItem = <T,>({
                 loading && 'pass-field-text-group--item:loading'
             )}
         >
-            <button className="pill-remove inline-flex shrink-0 px-2 py-1 max-w-full" type="button" tabIndex={-1}>
+            <button
+                className="pill-remove inline-flex flex-nowrap items-center px-2 py-1 max-w-full gap-2"
+                type="button"
+                tabIndex={-1}
+            >
                 <span
                     id={id}
                     onBlur={handleBlur}
+                    onFocus={() => setEditing(true)}
                     onClick={(e) => e.stopPropagation()}
                     contentEditable
                     onKeyDown={handleKeyDown}
                     ref={ref}
                     spellCheck={false}
-                    className="text-ellipsis"
+                    className={clsx(!editing && 'text-ellipsis')}
                     suppressContentEditableWarning
                 >
                     {renderValue(value)}
-                    {loading && <CircleLoader size="small" className="ml-2" />}
                 </span>
+                {loading && <CircleLoader size="small" className="shrink-0" />}
             </button>
         </li>
     );
