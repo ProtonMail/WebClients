@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components/components';
+import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
@@ -50,7 +51,14 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
             [
                 { label: c('Label').t`Login`, type: 'login' },
                 { label: c('Label').t`Alias`, type: 'alias' },
-                { label: c('Label').t`Card`, type: 'creditCard' },
+                {
+                    label: (
+                        <>
+                            {c('Label').t`Card`} {isFreePlan && <PillBadge label={c('Badge').t`Paid`} />}
+                        </>
+                    ),
+                    type: 'creditCard',
+                },
                 { label: c('Label').t`Note`, type: 'note' },
             ] as const,
         []
