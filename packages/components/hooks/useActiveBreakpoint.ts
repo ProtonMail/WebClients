@@ -23,7 +23,7 @@ const onResize = () => {
         callback(result);
     }
 };
-const onResizeDebounced = debounce(onResize, 250);
+const onResizeDebounced = debounce(onResize, 250, { leading: true });
 
 export interface Breakpoints {
     activeBreakpoint: ActiveBreakpoint;
