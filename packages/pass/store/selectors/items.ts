@@ -32,6 +32,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { invert, truthy } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '../reducers/items';
@@ -273,23 +274,32 @@ const autosaveCandidateSelector = createSelector(
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
     autosaveCandidateSelector(state, options);
 
-export const selectPasskeys = ({ credentialIds, domain }: PasskeyQueryPayload) =>
-    createSelector(selectAllItems, (items): SelectedPasskey[] =>
-        items
-            .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
-            .flatMap((item) =>
-                (item.data.content.passkeys ?? [])
-                    .filter(
-                        (passkey) =>
-                            passkey.domain === domain &&
-                            (credentialIds.length === 0 || credentialIds.includes(passkey.credentialId))
-                    )
-                    .map((passkey) => ({
-                        credentialId: passkey.credentialId,
-                        itemId: item.itemId,
-                        name: item.data.metadata.name,
-                        shareId: item.shareId,
-                        username: passkey.userName,
-                    }))
-            )
-    );
+export const selectPasskeys = (payload: PasskeyQueryPayload) =>
+    createSelector(selectAllItems, (items): SelectedPasskey[] => {
+        const { credentialIds } = payload;
+        const { domain } = parseUrl(payload.domain);
+
+        return domain
+            ? items
+                  .filter((item): item is ItemRevision<'login'> => !isTrashed(item) && isPasskeyItem(item.data))
+                  .flatMap((item) =>
+                      (item.data.content.passkeys ?? [])
+                          .filter((passkey) => {
+                              const passkeyDomain = parseUrl(passkey.domain).domain;
+
+                              return (
+                                  passkeyDomain &&
+                                  domain === passkeyDomain &&
+                                  (credentialIds.length === 0 || credentialIds.includes(passkey.credentialId))
+                              );
+                          })
+                          .map((passkey) => ({
+                              credentialId: passkey.credentialId,
+                              itemId: item.itemId,
+                              name: item.data.metadata.name,
+                              shareId: item.shareId,
+                              username: passkey.userName,
+                          }))
+                  )
+            : [];
+    });
