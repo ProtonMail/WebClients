@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 
 import { BitcoinReceive } from '.';
-import { mockUseBitcoinBlockchainContext } from '../../tests';
+import { mockUseBitcoinBlockchainContext, mockUseUserExchangeRate } from '../../tests';
 import { apiWalletsData } from '../../tests/fixtures/api';
 import { LightningUriFormat } from '../../types';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
@@ -19,6 +19,7 @@ describe('BitcoinReceive', () => {
 
     beforeEach(() => {
         mockUseBitcoinBlockchainContext();
+        mockUseUserExchangeRate(null);
 
         helper = {
             paymentLink: null,

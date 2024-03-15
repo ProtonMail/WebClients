@@ -23,6 +23,7 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.CreateTxError]: () => c('Wasm Error').t`Cannot create transaction`,
     [WasmError.DerivationError]: () => c('Wasm Error').t`Could derive extended key`,
     [WasmError.DescriptorError]: () => c('Wasm Error').t`An error occured with descriptor`,
+    [WasmError.InsufficientFunds]: () => c('Wasm Error').t`Funds are insufficient to create transaction`,
     [WasmError.InvalidAccountIndex]: () => c('Wasm Error').t`Provided account index is invalid`,
     [WasmError.InvalidAddress]: () => c('Wasm Error').t`The provided address is invalid`,
     [WasmError.InvalidData]: () => c('Wasm Error').t`Invalid data provided`,

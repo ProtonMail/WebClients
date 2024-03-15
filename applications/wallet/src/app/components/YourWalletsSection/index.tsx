@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { Pill } from '@proton/atoms/Pill';
@@ -12,20 +11,17 @@ import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { IWasmApiWalletData, WalletType, useWalletApi, walletDeletion } from '@proton/wallet';
+import { IWasmApiWalletData, WalletType, useWalletApi, useWalletSettings, walletDeletion } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { useWalletDispatch } from '../../store/hooks';
 import { getWalletBalance, getWalletUntrustedBalance } from '../../utils';
 
 interface Props {
     onAddWallet: () => void;
 }
-
-// TODO: change this when wallet settings API is ready
-const fiatCurrency: WasmFiatCurrency = 'USD';
-const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 const ONCHAIN_COLOR = '#12869F';
 const LIGHTNING_COLOR = '#AD7406';
@@ -50,6 +46,9 @@ const getTopRightNode = ({ Wallet, IsNotDecryptable }: IWasmApiWalletData) => {
 };
 
 export const YourWalletsSection = ({ onAddWallet }: Props) => {
+    const [walletSettings, loadingSettings] = useWalletSettings();
+    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const [displayedDeleteButton, setDisplayedDeleteButton] = useState<string | null>(null);
@@ -112,8 +111,8 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                                                         .t`${untrustedBalance} SAT pending`}</span>
                                                 ) : null
                                             }
-                                            unit={bitcoinUnit}
-                                            fiat={fiatCurrency}
+                                            unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                                            exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                                             firstClassName="text-2xl"
                                             secondClassName="mb-1"
                                         />

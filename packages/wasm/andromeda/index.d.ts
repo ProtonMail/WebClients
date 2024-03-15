@@ -1,13 +1,13 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+*/
+export function setPanicHook(): void;
+/**
 * @param {string} word_start
 * @returns {(string)[]}
 */
 export function getWordsAutocomplete(word_start: string): (string)[];
-/**
-*/
-export function setPanicHook(): void;
 /**
 */
 export enum WasmPaymentLinkKind {
@@ -15,14 +15,6 @@ export enum WasmPaymentLinkKind {
   BitcoinURI = 1,
   LightningURI = 2,
   UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 0,
-  NestedSegwit = 1,
-  NativeSegwit = 2,
-  Taproot = 3,
 }
 /**
 */
@@ -35,19 +27,6 @@ export enum WasmKeychainKind {
 * Internal keychain, used for deriving change addresses.
 */
   Internal = 1,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
 }
 /**
 */
@@ -65,13 +44,6 @@ export enum WasmWordCount {
   Words18 = 2,
   Words21 = 3,
   Words24 = 4,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
 }
 /**
 */
@@ -96,24 +68,25 @@ export enum WasmError {
   CreateTxError = 17,
   DerivationError = 18,
   DescriptorError = 19,
-  InvalidAccountIndex = 20,
-  InvalidAddress = 21,
-  InvalidData = 22,
-  InvalidDescriptor = 23,
-  InvalidDerivationPath = 24,
-  InvalidNetwork = 25,
-  InvalidTxId = 26,
-  InvalidScriptType = 27,
-  InvalidSecretKey = 28,
-  InvalidMnemonic = 29,
-  LoadError = 30,
-  NewWalletError = 31,
-  NoWindowContext = 32,
-  OutpointParsingError = 33,
-  SignerError = 34,
-  SyncError = 35,
-  TransactionNotFound = 36,
-  WriteError = 37,
+  InsufficientFunds = 20,
+  InvalidAccountIndex = 21,
+  InvalidAddress = 22,
+  InvalidData = 23,
+  InvalidDescriptor = 24,
+  InvalidDerivationPath = 25,
+  InvalidNetwork = 26,
+  InvalidTxId = 27,
+  InvalidScriptType = 28,
+  InvalidSecretKey = 29,
+  InvalidMnemonic = 30,
+  LoadError = 31,
+  NewWalletError = 32,
+  NoWindowContext = 33,
+  OutpointParsingError = 34,
+  SignerError = 35,
+  SyncError = 36,
+  TransactionNotFound = 37,
+  WriteError = 38,
 }
 /**
 */
@@ -135,18 +108,34 @@ export enum WasmNetwork {
 */
   Regtest = 3,
 }
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
-
-export type WasmFiatCurrency = "USD" | "EUR" | "CHF";
-
-export interface WasmUserSettings {
-    BitcoinUnit: WasmBitcoinUnit;
-    FiatCurrency: WasmFiatCurrency;
-    HideEmptyUsedAddresses: number;
-    ShowWalletRecovery: number;
-    TwoFactorAmountThreshold: number | null;
+/**
+*/
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
 }
-
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
 export interface WasmApiWallet {
     ID: string;
     Name: string;
@@ -180,6 +169,27 @@ export interface WasmApiWalletAccount {
     DerivationPath: string;
     Label: string;
     ScriptType: number;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
+export interface WasmApiExchangeRate {
+    ID: string;
+    BitcoinUnit: WasmBitcoinUnit;
+    FiatCurrency: WasmFiatCurrency;
+    ExchangeRateTime: string;
+    ExchangeRate: number;
+    Cents: number;
+}
+
+export type WasmFiatCurrency = "USD" | "EUR" | "CHF";
+
+export interface WasmUserSettings {
+    BitcoinUnit: WasmBitcoinUnit;
+    FiatCurrency: WasmFiatCurrency;
+    HideEmptyUsedAddresses: number;
+    ShowWalletRecovery: number;
+    TwoFactorAmountThreshold: number | null;
 }
 
 /**
@@ -272,6 +282,14 @@ export class WasmAddressInfo {
 /**
 */
   readonly index: number;
+}
+/**
+*/
+export class WasmApiExchangeRateData {
+  free(): void;
+/**
+*/
+  0: WasmApiExchangeRate;
 }
 /**
 */
@@ -428,6 +446,17 @@ export class WasmDerivationPath {
 * @returns {WasmDerivationPath}
 */
   static fromString(str: string): WasmDerivationPath;
+}
+/**
+*/
+export class WasmExchangeRateClient {
+  free(): void;
+/**
+* @param {WasmFiatCurrency} fiat
+* @param {bigint} time
+* @returns {Promise<WasmApiExchangeRateData>}
+*/
+  getExchangeRate(fiat: WasmFiatCurrency, time: bigint): Promise<WasmApiExchangeRateData>;
 }
 /**
 */
@@ -592,6 +621,11 @@ export class WasmProtonWalletApiClient {
 */
   constructor(uid_str?: string, origin?: string);
 /**
+* Returns a client to use exchange rate API
+* @returns {WasmExchangeRateClient}
+*/
+  exchange_rate(): WasmExchangeRateClient;
+/**
 * Returns a client to use settings API
 * @returns {WasmSettingsClient}
 */
@@ -630,10 +664,7 @@ export class WasmRecipient {
   1: string;
 /**
 */
-  2: number;
-/**
-*/
-  3: WasmBitcoinUnit;
+  2: bigint;
 }
 /**
 */
@@ -767,11 +798,10 @@ export class WasmTxBuilder {
 /**
 * @param {number} index
 * @param {string | undefined} [address_str]
-* @param {number | undefined} [amount]
-* @param {WasmBitcoinUnit | undefined} [unit]
+* @param {bigint | undefined} [amount]
 * @returns {Promise<WasmTxBuilder>}
 */
-  updateRecipient(index: number, address_str?: string, amount?: number, unit?: WasmBitcoinUnit): Promise<WasmTxBuilder>;
+  updateRecipient(index: number, address_str?: string, amount?: bigint): Promise<WasmTxBuilder>;
 /**
 * @param {number} index
 * @returns {Promise<WasmTxBuilder>}

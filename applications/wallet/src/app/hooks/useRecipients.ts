@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 
-import { WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import { WasmTxBuilder } from '@proton/andromeda';
 
 import { TxBuilderUpdater } from './useTxBuilder';
 
-export type RecipientUpdate = Partial<{ amount: number; address: string; unit: WasmBitcoinUnit }>;
+export type RecipientUpdate = Partial<{ amount: number; address: string }>;
 
 export const useRecipients = (updateTxBuilder: (updater: TxBuilderUpdater) => void) => {
     const addRecipient = useCallback(async () => {
@@ -24,8 +24,7 @@ export const useRecipients = (updateTxBuilder: (updater: TxBuilderUpdater) => vo
                 return txBuilder.updateRecipient(
                     index,
                     update.address,
-                    update.amount ? Number(update.amount) : undefined,
-                    update.unit
+                    update.amount ? BigInt(update.amount) : undefined
                 );
             });
         },

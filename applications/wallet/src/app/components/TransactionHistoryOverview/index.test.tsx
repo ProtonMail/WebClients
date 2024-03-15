@@ -3,9 +3,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { render, screen, within } from '@testing-library/react';
 
 import { TransactionHistoryOverview } from '.';
-import { simpleTransactions } from '../../tests';
+import { mockUseUserExchangeRate, mockUseWalletSettings, simpleTransactions } from '../../tests';
 
 describe('TransactionHistoryOverview', () => {
+    beforeEach(() => {
+        mockUseUserExchangeRate();
+        mockUseWalletSettings();
+    });
+
     it('should display 7 last transactions by default, sorted from newest to oldest', () => {
         render(<TransactionHistoryOverview transactions={simpleTransactions} />, { wrapper: BrowserRouter });
 

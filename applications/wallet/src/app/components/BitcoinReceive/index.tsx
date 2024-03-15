@@ -11,10 +11,12 @@ import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
 import { Tooltip } from '@proton/components/components/tooltip';
 import { SECOND } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { WalletSelector } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 const CopyPasteButton = ({ value }: { value: string }) => {
@@ -49,6 +51,8 @@ interface Props {
 }
 
 export const BitcoinReceive = ({ defaultWalletId, wallets }: Props) => {
+    const [exchangeRate] = useUserExchangeRate();
+
     const {
         paymentLink,
         selectedWallet,
@@ -78,13 +82,13 @@ export const BitcoinReceive = ({ defaultWalletId, wallets }: Props) => {
                 />
 
                 {shouldShowAmountInput ? (
-                    <div className="w-3/10 mt-7">
+                    <div className="flex flex-row flex-nowrap mt-7">
                         <BitcoinAmountInput
                             data-testid="amount-input"
                             title={c('Wallet Receive').t`Amount`}
                             value={amount}
                             onValueChange={(amount: number) => handleChangeAmount(amount)}
-                            suffix="SAT"
+                            exchangeRates={[exchangeRate].filter(isTruthy)}
                         />
                     </div>
                 ) : (

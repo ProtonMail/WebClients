@@ -4,6 +4,7 @@ import { vi } from 'vitest';
 import { WasmRecipient } from '@proton/andromeda';
 
 import { RecipientList } from '.';
+import { mockUseUserExchangeRate, mockUseWalletSettings } from '../../../tests';
 
 const buildWasmRecipient = (uuid: string) => {
     return [uuid, '', BigInt(0)] as unknown as WasmRecipient;
@@ -23,6 +24,10 @@ describe('RecipientList', () => {
             onRecipientRemove: vi.fn(),
             onRecipientMaxAmount: vi.fn(),
         };
+
+        mockUseWalletSettings();
+        // prevents using fiat currency in amount input
+        mockUseUserExchangeRate(null);
     });
 
     describe('on recipient addition', () => {
@@ -47,7 +52,7 @@ describe('RecipientList', () => {
 
             const removeRecipientButtons = screen.getAllByText('Remove recipient');
 
-            expect(removeRecipientButtons).toHaveLength(2);
+            expect(removeRecipientButtons).toHaveLength(3);
             const [, secondRemoveRecipientButton] = removeRecipientButtons;
 
             fireEvent.click(secondRemoveRecipientButton);
@@ -56,12 +61,12 @@ describe('RecipientList', () => {
         });
 
         describe('when there is less than 2 recipient', () => {
-            it('should not have any remove button', () => {
+            it('should remove button disabled', () => {
                 const props = { ...baseProps, recipients: [recipients[0]] };
                 render(<RecipientList {...props} />);
 
                 const removeRecipientButton = screen.queryByText('Remove recipient');
-                expect(removeRecipientButton).not.toBeInTheDocument();
+                expect(removeRecipientButton).toBeDisabled();
             });
         });
     });
@@ -88,26 +93,11 @@ describe('RecipientList', () => {
             const amountInputs = screen.getAllByTestId('recipient-amount-input');
 
             expect(amountInputs).toHaveLength(3);
-            const [, , thirdAddressInput] = amountInputs;
+            const [, , thirdAmountInput] = amountInputs;
 
-            fireEvent.change(thirdAddressInput, { target: { value: 10087 } });
+            fireEvent.change(thirdAmountInput, { target: { value: 10087 } });
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(2, { amount: 10087 });
-        });
-    });
-
-    describe('on recipient unit display change', () => {
-        it('should call `onRecipientUpdate` callback with correct index and update', () => {
-            render(<RecipientList {...baseProps} />);
-
-            const btcButtons = screen.getAllByTestId('BTC-amount-input-unit-button');
-
-            expect(btcButtons).toHaveLength(3);
-            const [firstBtcButton] = btcButtons;
-
-            fireEvent.click(firstBtcButton);
-            expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
-            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: 'BTC' });
         });
     });
 

@@ -16,3 +16,25 @@
 		var(--signal-warning) 100%
 	);
 }
+
+.skeleton-loader {
+	color: transparent;
+	inline-size: 100%;
+	block-size: 100%;
+	background: var(--background-weak);
+	background: linear-gradient(
+		110deg,
+		var(--interaction-weak-minor-1) 8%,
+		var(--interaction-weak-minor-2) 18%,
+		var(--interaction-weak-minor-1) 33%
+	);
+	border-radius: 5px;
+	background-size: 200% 100%;
+	animation: 1.5s shine linear infinite;
+}
+
+@keyframes shine {
+	to {
+		background-position-x: -200%;
+	}
+}

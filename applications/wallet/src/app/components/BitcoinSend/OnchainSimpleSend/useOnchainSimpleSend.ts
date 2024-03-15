@@ -64,7 +64,7 @@ export const useOnchainSimpleSend = (
         const data = paymentLink.assumeOnchain();
 
         void updateTxBuilder((txBuilder) =>
-            txBuilder.clearRecipients().addRecipient().updateRecipient(0, data.address, Number(data.amount), 'SATS')
+            txBuilder.clearRecipients().addRecipient().updateRecipient(0, data.address, data.amount)
         );
     }, [paymentLink, updateTxBuilder]);
 

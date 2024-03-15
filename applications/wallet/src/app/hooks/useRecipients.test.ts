@@ -50,7 +50,7 @@ describe('useRecipients', async () => {
                 expect(txBuilder.updateRecipient).toHaveBeenCalledTimes(1);
             });
 
-            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(1, 3, undefined, 89283, undefined);
+            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(1, 3, undefined, BigInt(89283));
 
             await act(() => result.current.updateRecipient(3, { address: 'tb1...' }));
 
@@ -58,15 +58,7 @@ describe('useRecipients', async () => {
                 expect(txBuilder.updateRecipient).toHaveBeenCalledTimes(2);
             });
 
-            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(2, 3, 'tb1...', undefined, undefined);
-
-            await act(() => result.current.updateRecipient(3, { unit: 'MBTC' }));
-
-            await waitFor(() => {
-                expect(txBuilder.updateRecipient).toHaveBeenCalledTimes(3);
-            });
-
-            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(3, 3, undefined, undefined, 'MBTC');
+            expect(txBuilder.updateRecipient).toHaveBeenNthCalledWith(2, 3, 'tb1...', undefined);
         });
 
         describe("when recipient doesn't exist at index", () => {
@@ -74,7 +66,7 @@ describe('useRecipients', async () => {
                 const { result } = renderHook(() => useRecipients(mockUpdater));
 
                 // const before = { ...result.current };
-                await act(() => result.current.updateRecipient(4, { address: 'bc1....helloworld', unit: 'SATS' }));
+                await act(() => result.current.updateRecipient(4, { address: 'bc1....helloworld' }));
 
                 // FIXME: to replace by spied function on txBuilder when wasm test are fixed
                 // expect(result.current.recipients).toStrictEqual(before.recipients);
