@@ -2,19 +2,15 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, useWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
 import { WelcomeCard } from './WelcomeCard';
 import { useBalanceOverview } from './useBalanceOverview';
-
-// TODO: change this when wallet settings API is ready
-const fiatCurrency: WasmFiatCurrency = 'USD';
-const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 interface SingleWalletBalanceOverviewProps {
     apiWalletData: IWasmApiWalletData;
@@ -27,6 +23,9 @@ interface ManyWalletsBalanceOverviewProps {
 type Props = SingleWalletBalanceOverviewProps | ManyWalletsBalanceOverviewProps;
 
 export const BalanceOverview = (props: Props) => {
+    const [walletSettings, loadingSettings] = useWalletSettings();
+    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     const data = 'apiWalletData' in props ? props.apiWalletData : props.apiWalletsData;
 
     const {
@@ -51,8 +50,8 @@ export const BalanceOverview = (props: Props) => {
                     <p className="color-weak text-sm m-0">{c('Wallet Dashboard').t`My assets`}</p>
                     <BitcoinAmount
                         bitcoin={totalBalance}
-                        unit={bitcoinUnit}
-                        fiat={fiatCurrency}
+                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                         firstClassName="my-0.5 text-xl"
                     />
                 </div>
@@ -67,8 +66,8 @@ export const BalanceOverview = (props: Props) => {
                     <p className="color-weak m-0 text-sm">{c('Wallet Dashboard').t`Last 7 days`}</p>
                     <BitcoinAmount
                         bitcoin={last7DaysBalanceDifference}
-                        unit={bitcoinUnit}
-                        fiat={fiatCurrency}
+                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                         firstClassName={clsx('my-0.5 text-xl')}
                         showColor
                         showExplicitSign

@@ -9,9 +9,11 @@ import Copy from '@proton/components/components/button/Copy';
 import Label from '@proton/components/components/label/Label';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { useWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
 import { BLOCKCHAIN_EXPLORER_BASE_URL } from '../../constants';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 
 export interface OnchainTransactionDetailsProps {
     from?: { walletName: string; accountName: string };
@@ -20,6 +22,9 @@ export interface OnchainTransactionDetailsProps {
 }
 
 export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: OnchainTransactionDetailsProps) => {
+    const [walletSettings, loadingSettings] = useWalletSettings();
+    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     const [note, setNode] = useState('');
 
     const recipients = useMemo(() => {
@@ -77,13 +82,13 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
 
                                     <BitcoinAmount
                                         firstClassName="block w-1/5 color-hint"
-                                        fiat={'USD'}
+                                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                                         bitcoin={Number(amount)}
                                     />
 
                                     <BitcoinAmount
                                         firstClassName="w-1/5 text-right"
-                                        unit={'SATS'}
+                                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
                                         bitcoin={Number(amount)}
                                     />
                                 </li>
@@ -97,9 +102,17 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
                     <li className="flex flex-row w-full mt-4 py-2 border-bottom border-top">
                         <span className="w-3/5">{c('Wallet Transaction Details').t`Fees`}</span>
 
-                        <BitcoinAmount firstClassName="block w-1/5 color-hint" fiat={'USD'} bitcoin={Number(txFees)} />
+                        <BitcoinAmount
+                            firstClassName="block w-1/5 color-hint"
+                            exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
+                            bitcoin={Number(txFees)}
+                        />
 
-                        <BitcoinAmount firstClassName="w-1/5 text-right" unit={'SATS'} bitcoin={txFees} />
+                        <BitcoinAmount
+                            firstClassName="w-1/5 text-right"
+                            unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                            bitcoin={txFees}
+                        />
                     </li>
 
                     {/* Total */}
@@ -108,11 +121,15 @@ export const OnchainTransactionDetails = ({ from, tx, isNotBroadcasted }: Onchai
 
                         <BitcoinAmount
                             firstClassName="block w-1/5 color-hint"
-                            fiat={'USD'}
+                            exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                             bitcoin={Number(totalAmount)}
                         />
 
-                        <BitcoinAmount firstClassName="w-1/5 text-right" unit={'SATS'} bitcoin={Number(totalAmount)} />
+                        <BitcoinAmount
+                            firstClassName="w-1/5 text-right"
+                            unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                            bitcoin={Number(totalAmount)}
+                        />
                     </li>
                 </ul>
             </div>

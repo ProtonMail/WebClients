@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmFiatCurrency } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { ConfirmActionModal, Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { IWasmApiWalletData, useWalletApi, walletAccountDeletion } from '@proton/wallet';
+import { IWasmApiWalletData, useWalletApi, useWalletSettings, walletAccountDeletion } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { useWalletDispatch } from '../../store/hooks';
 import {
     getAccountBalance,
@@ -25,11 +25,10 @@ interface Props {
     apiWalletData: IWasmApiWalletData;
 }
 
-// TODO: change this when wallet settings API is ready
-const fiatCurrency: WasmFiatCurrency = 'USD';
-const bitcoinUnit: WasmBitcoinUnit = 'BTC';
-
 export const YourAccountsSection = ({ apiWalletData }: Props) => {
+    const [walletSettings, loadingSettings] = useWalletSettings();
+    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     const { walletsChainData } = useBitcoinBlockchainContext();
 
     const [isAddWalletModalOpenned, setIsAddWalletModalOpenned] = useState(false);
@@ -93,8 +92,8 @@ export const YourAccountsSection = ({ apiWalletData }: Props) => {
                                                 <span>{c('Wallet Account').t`${untrustedBalance} SAT pending`}</span>
                                             ) : null
                                         }
-                                        unit={bitcoinUnit}
-                                        fiat={fiatCurrency}
+                                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                                         firstClassName="text-2xl"
                                     />
                                 </div>

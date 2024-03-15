@@ -1,12 +1,13 @@
 import { ReactNode, useMemo } from 'react';
 
-import { WasmBitcoinUnit } from '@proton/andromeda';
+import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import Info from '@proton/components/components/link/Info';
 import { Price } from '@proton/components/components/price';
-import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { getLabelByUnit, satsToBitcoin, satsToMBitcoin, toFiat } from '../utils';
+import { getLabelByUnit, satsToBitcoin, satsToFiat, satsToMBitcoin } from '../utils';
+
+export const loadingIfUnset = <T,>(v: T) => !v;
 
 interface Props {
     /**
@@ -14,9 +15,9 @@ interface Props {
      */
     bitcoin: number;
     precision?: number;
-    unit?: WasmBitcoinUnit;
 
-    fiat?: Currency;
+    unit?: { value?: WasmBitcoinUnit; loading?: boolean };
+    exchangeRate?: { value?: WasmApiExchangeRate; loading?: boolean };
 
     format?: 'fiatFirst' | 'bitcoinFirst';
 
@@ -40,12 +41,12 @@ interface Props {
 
 export const BitcoinAmount = ({
     bitcoin,
-    unit,
     precision = 6,
 
-    fiat,
+    unit,
+    exchangeRate,
 
-    format = fiat ? 'fiatFirst' : 'bitcoinFirst',
+    format = exchangeRate ? 'fiatFirst' : 'bitcoinFirst',
 
     firstClassName,
     secondClassName,
@@ -57,7 +58,7 @@ export const BitcoinAmount = ({
     const colorClassName = bitcoin < 0 ? 'color-danger' : 'color-success';
 
     const amount = useMemo(() => {
-        switch (unit) {
+        switch (unit?.value) {
             case 'BTC':
                 return satsToBitcoin(bitcoin).toFixed(precision);
             case 'MBTC':
@@ -80,19 +81,35 @@ export const BitcoinAmount = ({
             <>
                 <span
                     data-testid="first-content"
-                    className={clsx('block', firstClassName, showColor && colorClassName)}
+                    className={clsx(
+                        'block mb-1',
+                        firstClassName,
+                        showColor && colorClassName,
+                        unit?.loading === undefined && 'skeleton-loader'
+                    )}
                 >
-                    {sign}
-                    {amount} {getLabelByUnit(unit ?? 'SATS')}
+                    {unit?.value ? (
+                        <>
+                            {sign}
+                            {amount} {getLabelByUnit(unit.value)}
+                        </>
+                    ) : (
+                        '-'
+                    )}
                 </span>
+
                 {info && <Info title={info} />}
-                {fiat && (
+                {exchangeRate && (
                     <Price
-                        className={clsx('block color-hint m-0 text-sm', secondClassName)}
-                        currency={fiat}
+                        className={clsx(
+                            'block color-hint m-0 text-sm',
+                            secondClassName,
+                            exchangeRate.loading && 'skeleton-loader'
+                        )}
+                        currency={exchangeRate.value?.FiatCurrency}
                         prefix={sign}
                     >
-                        {toFiat(bitcoin).toFixed(2)}
+                        {exchangeRate.value ? satsToFiat(bitcoin, exchangeRate.value).toFixed(2) : '-'}
                     </Price>
                 )}
             </>
@@ -103,17 +120,35 @@ export const BitcoinAmount = ({
         <>
             <Price
                 data-testid="first-content"
-                className={clsx('block', firstClassName, showColor && colorClassName)}
-                currency={fiat}
+                className={clsx(
+                    'block mb-1',
+                    firstClassName,
+                    showColor && colorClassName,
+                    exchangeRate?.loading && 'skeleton-loader'
+                )}
+                currency={exchangeRate?.value?.FiatCurrency}
                 prefix={sign}
             >
-                {toFiat(bitcoin).toFixed(2)}
+                {exchangeRate?.value ? satsToFiat(bitcoin, exchangeRate.value).toFixed(2) : '-'}
             </Price>
+
             {info && <Info title={info} />}
-            {unit !== undefined && (
-                <span className={clsx('block color-hint m-0 text-sm', secondClassName)}>
-                    {sign}
-                    {amount} {getLabelByUnit(unit)}
+            {unit && (
+                <span
+                    className={clsx(
+                        'block color-hint m-0 text-sm',
+                        secondClassName,
+                        unit?.loading && 'skeleton-loader'
+                    )}
+                >
+                    {unit?.value ? (
+                        <>
+                            {sign}
+                            {amount} {getLabelByUnit(unit.value)}
+                        </>
+                    ) : (
+                        '-'
+                    )}
                 </span>
             )}
         </>

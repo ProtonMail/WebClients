@@ -4,9 +4,14 @@ import { vi } from 'vitest';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { YourWalletsSection } from '.';
-import { mockUseBitcoinBlockchainContext, mockUseWalletDispatch } from '../../tests';
+import {
+    mockUseBitcoinBlockchainContext,
+    mockUseDecryptedWallets,
+    mockUseUserExchangeRate,
+    mockUseWalletDispatch,
+    mockUseWalletSettings,
+} from '../../tests';
 import { apiWalletsData } from '../../tests/fixtures/api';
-import { mockUseDecryptedWallets } from '../../tests/mocks/useDecryptedWallet';
 
 // TODO: Fix vitest vs @proton/components circular deps to be able to remove this mock
 vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({ ConfirmActionModal: 'div' }));
@@ -17,6 +22,8 @@ describe('YourWalletsSection', () => {
         mockUseBitcoinBlockchainContext();
         mockUseNotifications();
         mockUseWalletDispatch();
+        mockUseUserExchangeRate();
+        mockUseWalletSettings();
     });
 
     it('should display wallets with their balance and their type', () => {
