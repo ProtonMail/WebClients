@@ -57,7 +57,8 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             user: userState,
         };
 
-        yield put(syncLocalSettings({ locale: userState.userSettings?.Locale }));
+        const locale = state.settings.locale ?? userState.userSettings?.Locale;
+        yield put(syncLocalSettings({ locale }));
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
