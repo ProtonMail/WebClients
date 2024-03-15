@@ -1,4 +1,5 @@
 import {
+    WasmApiExchangeRate,
     WasmApiWallet,
     WasmApiWalletAccount,
     WasmApiWalletKey,
@@ -233,3 +234,12 @@ const fiatCurrencyC: FiatCurrency = {
 };
 
 export const fiatCurrencies = [fiatCurrencyA, fiatCurrencyB, fiatCurrencyC];
+
+export const exchangeRate: WasmApiExchangeRate = {
+    ID: 'o-xIOVxd5mY7mOZz4UC9eZ70uSBWTSRwHxLPgoAMv5W9CSvp--SVhzZHL_8Id3YCgPV_RiUzVRNoV7K0gaOPeA==',
+    BitcoinUnit: 'BTC',
+    FiatCurrency: 'USD',
+    ExchangeRateTime: '2024-03-07T07:01:06+00:00',
+    ExchangeRate: 365760,
+    Cents: 100,
+};

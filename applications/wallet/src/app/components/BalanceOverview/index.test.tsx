@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe } from 'vitest';
 
 import { BalanceOverview } from '.';
-import { mockUseBitcoinBlockchainContext } from '../../tests';
+import { mockUseBitcoinBlockchainContext, mockUseUserExchangeRate, mockUseWalletSettings } from '../../tests';
 import { apiWalletsData } from '../../tests/fixtures/api';
 
 vi.mock('react-chartjs-2', () => ({ Doughnut: 'div', Line: 'div' }));
@@ -13,6 +13,8 @@ describe('BalanceOverview', () => {
         vi.setSystemTime(new Date('11/27/2023'));
 
         mockUseBitcoinBlockchainContext();
+        mockUseUserExchangeRate();
+        mockUseWalletSettings();
     });
 
     afterEach(() => {

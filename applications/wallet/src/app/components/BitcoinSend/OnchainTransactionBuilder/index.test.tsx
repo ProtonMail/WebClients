@@ -5,7 +5,7 @@ import { vi } from 'vitest';
 import { WasmTxBuilder } from '@proton/andromeda';
 
 import { OnchainTransactionBuilder } from '.';
-import { mockUseBitcoinBlockchainContext } from '../../../tests';
+import { mockUseBitcoinBlockchainContext, mockUseUserExchangeRate, mockUseWalletSettings } from '../../../tests';
 import { apiWalletsData } from '../../../tests/fixtures/api';
 import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuilder';
 
@@ -19,6 +19,8 @@ describe('OnchainTransactionBuilder', () => {
 
     beforeEach(() => {
         mockUseBitcoinBlockchainContext();
+        mockUseWalletSettings();
+        mockUseUserExchangeRate();
 
         helper = {
             walletAndAccount: { apiWalletData: testWallet, apiAccount: testAccount },

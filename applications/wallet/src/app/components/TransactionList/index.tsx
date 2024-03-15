@@ -13,10 +13,12 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { EmptyViewContainer } from '@proton/components/containers';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
+import { useWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, SimplePaginator } from '../../atoms';
 import { ITEMS_PER_PAGE } from '../../constants';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { WalletWithChainData } from '../../types';
 import { confirmationTimeToHumanReadable } from '../../utils';
 import { OnchainTransactionDetailsProps } from '../OnchainTransactionDetails';
@@ -27,6 +29,9 @@ interface Props {
 }
 
 export const TransactionList = ({ wallet }: Props) => {
+    const [walletSettings, loadingSettings] = useWalletSettings();
+    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     const [transactions, setTransactions] = useState<WasmTransactionDetails[]>();
     const [modalData, setModalData] = useState<OnchainTransactionDetailsProps>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -125,8 +130,9 @@ export const TransactionList = ({ wallet }: Props) => {
                                         <div className="flex flex-column text-right">
                                             <BitcoinAmount
                                                 bitcoin={Number(txValue)}
-                                                fiat="USD"
-                                                firstClassName="text-lg"
+                                                unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                                                exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
+                                                firstClassName="text-lg ml-auto"
                                                 secondClassName="ml-auto"
                                                 showColor
                                                 showExplicitSign
@@ -151,7 +157,15 @@ export const TransactionList = ({ wallet }: Props) => {
                 {c('Wallet Transaction List').t`You don't have transaction yet on this wallet`}
             </EmptyViewContainer>
         );
-    }, [handleClickRow, isLoading, transactions]);
+    }, [
+        exchangeRate,
+        handleClickRow,
+        isLoading,
+        loadingExchangeRate,
+        loadingSettings,
+        transactions,
+        walletSettings?.BitcoinUnit,
+    ]);
 
     return (
         <>

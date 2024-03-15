@@ -2,16 +2,14 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { WasmBitcoinUnit, WasmFiatCurrency, WasmTransactionDetails } from '@proton/andromeda';
+import { WasmTransactionDetails } from '@proton/andromeda';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount } from '../../atoms';
+import { useUserExchangeRate } from '../../hooks/useUserExchangeRate';
 import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
-
-// TODO: change this when wallet settings API is ready
-const fiatCurrency: WasmFiatCurrency = 'USD';
-const bitcoinUnit: WasmBitcoinUnit = 'BTC';
 
 interface Props {
     walletId?: string;
@@ -20,6 +18,9 @@ interface Props {
 }
 
 export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: Props) => {
+    const [walletSettings, loadingSettings] = useWalletSettings();
+    const [exchangeRate, loadingExchangeRate] = useUserExchangeRate();
+
     return (
         <>
             <ul className="p-0 mt-2">
@@ -45,8 +46,8 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                                 </div>
                                 <div>
                                     <BitcoinAmount
-                                        unit={bitcoinUnit}
-                                        fiat={fiatCurrency}
+                                        unit={{ value: walletSettings?.BitcoinUnit, loading: loadingSettings }}
+                                        exchangeRate={{ value: exchangeRate, loading: loadingExchangeRate }}
                                         bitcoin={Number(txValue)}
                                         showColor
                                     />

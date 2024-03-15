@@ -4,6 +4,8 @@ export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
 export const mBITCOIN = BITCOIN / 1000;
 
+export const CENTS_IN_ONE_DOLLAR = 100;
+
 export const DEFAULT_INDEX = 0;
 
 export const DEFAULT_ACCOUNT_LABEL = 'Standard';
