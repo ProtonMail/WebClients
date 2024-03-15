@@ -1,5 +1,6 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { DropdownAction, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
+import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 
 import { FieldType, FormType } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -68,14 +69,8 @@ export const createAutofillService = () => {
                     return createTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {});
             }
         })();
-        void sendMessage(
-            contentScriptMessage({
-                type: WorkerMessageType.TELEMETRY_EVENT,
-                payload: {
-                    event,
-                },
-            })
-        );
+
+        sendTelemetryEvent(event);
     };
 
     const autofillLogin = (form: FormHandle, data: { username: string; password: string }) => {
