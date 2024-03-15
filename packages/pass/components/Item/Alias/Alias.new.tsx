@@ -140,15 +140,12 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     return (
         <ItemCreatePanel
-            type="alias"
+            discardable={!form.dirty}
             formId={FORM_ID}
             handleCancelClick={onCancel}
+            submitButton={needsUpgrade && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} />}
+            type="alias"
             valid={ready && form.isValid && userVerified && !needsUpgrade}
-            discardable={!form.dirty}
-            /* if user has reached his alias limit: disable submit and prompt for upgrade */
-            renderSubmitButton={
-                needsUpgrade ? <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} /> : undefined
-            }
         >
             {({ didEnter }) => (
                 <>
