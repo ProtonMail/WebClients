@@ -74,7 +74,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
         };
 
         run().catch(close);
-    }, []);
+    }, [token]);
 
     if (!passkeys) return null;
 
