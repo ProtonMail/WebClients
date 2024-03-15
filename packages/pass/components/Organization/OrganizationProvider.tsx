@@ -2,7 +2,6 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import {
     getOrganizationSettingsIntent,
@@ -11,7 +10,6 @@ import {
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 
 export type OrganizationContextValue = OrganizationState & {
@@ -26,7 +24,6 @@ const OrganizationContext = createContext<MaybeNull<OrganizationContextValue>>(n
  * which do not belong to an organization. */
 export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
-    const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing) || true;
 
     const passPlan = useSelector(selectPassPlan);
     const user = useSelector(selectUser);
@@ -35,7 +32,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const context = useMemo<MaybeNull<OrganizationContextValue>>(
         () =>
-            enableOrganizationSharing && organization
+            organization
                 ? {
                       b2bAdmin,
                       syncSettings: () => dispatch(getOrganizationSettingsIntent()),
@@ -43,7 +40,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
                       ...organization,
                   }
                 : null,
-        [b2bAdmin, organization, enableOrganizationSharing]
+        [b2bAdmin, organization]
     );
 
     return <OrganizationContext.Provider value={context}>{children}</OrganizationContext.Provider>;
