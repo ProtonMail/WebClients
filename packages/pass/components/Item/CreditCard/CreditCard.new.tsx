@@ -16,13 +16,16 @@ import {
     cardNumberMask,
     expDateMask,
 } from '@proton/pass/components/Form/Field/masks/credit-card';
+import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -74,18 +77,27 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
     });
 
     useItemDraft<CreditCardItemFormValues>(form, { mode: 'new', type: 'creditCard' });
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     return (
         <ItemCreatePanel
-            type="creditCard"
-            formId={FORM_ID}
-            valid={form.isValid}
-            handleCancelClick={onCancel}
             discardable={!form.dirty}
+            formId={FORM_ID}
+            handleCancelClick={onCancel}
+            submitButton={isFreePlan && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_CC} />}
+            type="creditCard"
+            valid={form.isValid}
         >
             {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
+                        {isFreePlan && (
+                            <Card className="mb-2">
+                                {c('Info')
+                                    .t`You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.`}
+                            </Card>
+                        )}
+
                         <FieldsetCluster>
                             {vaultTotalCount > 1 && (
                                 <Field component={VaultSelectField} label={c('Label').t`Vault`} name="shareId" />
