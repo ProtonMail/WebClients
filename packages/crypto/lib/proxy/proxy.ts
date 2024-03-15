@@ -115,8 +115,6 @@ export const CryptoProxy: CryptoProxyInterface = {
         assertNotNull(endpoint).encryptMessage({ ...opts, date }),
     decryptMessage: async ({ date = serverTime(), ...opts }) =>
         assertNotNull(endpoint).decryptMessage({ ...opts, date }),
-    decryptMessageLegacy: async ({ date = serverTime(), ...opts }) =>
-        assertNotNull(endpoint).decryptMessageLegacy({ ...opts, date }),
     signMessage: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).signMessage({ ...opts, date }),
     verifyMessage: async ({ date = serverTime(), ...opts }) => verifyMessageWithFallback({ ...opts, date }),
     verifyCleartextMessage: async ({ date = serverTime(), ...opts }) =>
