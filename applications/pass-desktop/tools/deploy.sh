@@ -92,6 +92,10 @@ if grep -q "$sha" "${path}/version.json"; then
   echo "SHA already exists in version.json"
   exit 1
 fi
+if jq -e ".Releases[] | select(.Version == \"${TAG_VERSION}\")" "${path}/version.json"; then
+  echo "Version ${TAG_VERSION} already exists in version.json"
+  exit 1
+fi
 
 newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${TAG_VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/${subpath}/${executable_filename}\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
 < "${repoDir}/${subpath}/version.json" jq ".Releases |= [$newrelease] + ." > version.json.tmp
