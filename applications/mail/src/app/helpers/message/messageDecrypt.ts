@@ -7,26 +7,17 @@ import {
     PublicKeyReference,
     WorkerDecryptionResult,
 } from '@proton/crypto';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import {
-    getDate,
-    getParsedHeadersFirstValue,
-    getSender,
-    isAutoForwardee,
-    isMIME,
-} from '@proton/shared/lib/mail/messages';
+import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
 
 import { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
-
-// decrypted data is always a string for legacy message, regardless of 'format' input option
-interface MaybeLegacyDecryptResult extends WorkerDecryptionResult<string | Uint8Array> {}
 
 const binaryToString = (data: Uint8Array) =>
     utf8ArrayToString(data)
@@ -54,29 +45,26 @@ const decryptMimeMessage = async (
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    let decryption: MaybeLegacyDecryptResult;
+    let decryption: WorkerDecryptionResult<Uint8Array>;
     let processing: MimeProcessResult;
 
     try {
         if (!password) {
-            decryption = await CryptoProxy.decryptMessageLegacy({
+            decryption = await CryptoProxy.decryptMessage({
                 armoredMessage: message.Body,
-                messageDate: getDate(message),
                 decryptionKeys: privateKeys,
                 verificationKeys: [],
                 format: 'binary',
             });
         } else {
-            decryption = await CryptoProxy.decryptMessageLegacy({
+            decryption = await CryptoProxy.decryptMessage({
                 armoredMessage: message.Body,
-                messageDate: getDate(message),
-                passwords: [...password],
+                passwords: [...password], // TODO is this correct?
                 format: 'binary',
             });
         }
 
-        const decryptedStringData =
-            decryption.data instanceof Uint8Array ? binaryToString(decryption.data) : decryption.data;
+        const decryptedStringData = binaryToString(decryption.data);
         try {
             processing = await CryptoProxy.processMIME({
                 data: decryptedStringData,
@@ -88,8 +76,7 @@ const decryptMimeMessage = async (
             throw e;
         }
 
-        const decryptedRawContent =
-            decryption.data instanceof Uint8Array ? decryption.data : stringToUtf8Array(decryption.data);
+        const decryptedRawContent = decryption.data;
         return {
             decryptedBody: processing.body,
             decryptedRawContent,
@@ -112,18 +99,17 @@ const decryptMimeMessage = async (
     }
 };
 
-const decryptLegacyMessage = async (
+const decryptNonMimeMessage = async (
     message: Message,
     privateKeys: PrivateKeyReference[],
     password?: string
 ): Promise<DecryptMessageResult> => {
-    let result: MaybeLegacyDecryptResult;
+    let result: WorkerDecryptionResult<Uint8Array>;
 
     try {
         if (!password) {
-            result = await CryptoProxy.decryptMessageLegacy({
+            result = await CryptoProxy.decryptMessage({
                 armoredMessage: message.Body,
-                messageDate: getDate(message),
                 decryptionKeys: privateKeys,
                 verificationKeys: [],
                 format: 'binary',
@@ -132,22 +118,19 @@ const decryptLegacyMessage = async (
                 },
             });
         } else {
-            result = await CryptoProxy.decryptMessageLegacy({
+            result = await CryptoProxy.decryptMessage({
                 armoredMessage: message.Body,
-                messageDate: getDate(message),
                 passwords: [password],
                 format: 'binary',
             });
         }
 
         const {
-            data,
+            data: decryptedRawContent,
             signatures: [signature],
         } = result;
 
-        // Very old messages outputs as string
-        const decryptedBody = data instanceof Uint8Array ? binaryToString(data) : data;
-        const decryptedRawContent = data instanceof Uint8Array ? data : stringToUtf8Array(data);
+        const decryptedBody = binaryToString(decryptedRawContent);
 
         return { decryptedBody, decryptedRawContent, signature };
     } catch (error: any) {
@@ -176,7 +159,7 @@ export const decryptMessage = async (
     if (isMIME(message)) {
         return decryptMimeMessage(message, privateKeys, getAttachment, onUpdateAttachment, password);
     }
-    return decryptLegacyMessage(message, privateKeys, password);
+    return decryptNonMimeMessage(message, privateKeys, password);
 };
 
 /**

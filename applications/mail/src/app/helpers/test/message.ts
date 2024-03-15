@@ -45,9 +45,6 @@ const readBlob = async (blob: Blob) =>
         fileReader.readAsArrayBuffer(blob);
     });
 
-/**
- * Decrypt non-legacy message.
- */
 export const decryptMessage = async (pack: any, privateKeys: PrivateKeyReference[], sessionKey: SessionKey) => {
     const decryptResult = await CryptoProxy.decryptMessage({
         binaryMessage: await readBlob(pack.Body),
