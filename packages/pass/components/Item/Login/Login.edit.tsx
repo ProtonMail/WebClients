@@ -191,11 +191,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                             </FieldsetCluster>
 
                             {form.values.passkeys.map((passkey, idx, passkeys) => (
-                                <FieldsetCluster
-                                    mode="read"
-                                    key={passkey.keyId}
-                                    className="pass-fieldset-cluster--standout"
-                                >
+                                <FieldsetCluster key={passkey.keyId}>
                                     <ValueControl
                                         icon={'pass-passkey'}
                                         label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
