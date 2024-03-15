@@ -12,11 +12,14 @@ import { c } from 'ttag';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { SanitizedPublicKeyRequest, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -24,8 +27,10 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_GET }>;
 
 const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
+    const { onTelemetry } = usePassCore();
     const { postMessage, close } = useIFrameContext();
     const { createNotification } = useNotifications();
+
     const [passkeys, setPasskeys] = useMountedState<MaybeNull<SelectedPasskey[]>>(null);
 
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyRequest, [request]);
@@ -36,14 +41,12 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
                 contentScriptMessage({ type: WorkerMessageType.PASSKEY_GET, payload: { domain, passkey, request } }),
                 async (result) => {
                     if (result.type !== 'success') throw new Error(result.error);
+                    if (!result.intercept) return createBridgeResponse({ type: 'success', intercept: false }, token);
 
-                    if (result.intercept) {
-                        const { response } = result;
-                        postMessage(createBridgeResponse({ type: 'success', intercept: true, response }, token));
-                    } else {
-                        postMessage(createBridgeResponse({ type: 'success', intercept: false }, token));
-                    }
+                    const { response } = result;
 
+                    postMessage(createBridgeResponse({ type: 'success', intercept: true, response }, token));
+                    onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeyAuthSuccess, {}, {}));
                     close();
                 }
             )
@@ -67,6 +70,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
             );
 
             setPasskeys(response.type === 'success' ? response.passkeys : []);
+            onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeysSuggestionsDisplay, {}, {}));
         };
 
         run().catch(close);

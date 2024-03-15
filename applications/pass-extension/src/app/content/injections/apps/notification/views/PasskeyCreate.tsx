@@ -15,6 +15,7 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -26,9 +27,11 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { MaybeNull, SafeLoginItem, SelectedItem } from '@proton/pass/types';
 import { AutosaveType, WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -40,6 +43,7 @@ type PasskeyCreateFormValues = { name: string; step: PasskeyCreateStep; selected
 const formId = 'create-passkey';
 
 const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
+    const { onTelemetry } = usePassCore();
     const { close, postMessage, settings } = useIFrameContext();
     const { createNotification } = useNotifications();
 
@@ -90,6 +94,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                 })();
 
                 postMessage(response);
+                onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeyCreated, {}, {}));
                 close();
             } catch (err) {
                 const message = getErrorMessage(err);
@@ -116,6 +121,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
             const candidates = response.type === 'success' ? response.items : [];
             await form.setFieldValue('step', candidates.length > 0 ? 'items' : 'passkey');
             setItems(candidates);
+            onTelemetry(createTelemetryEvent(TelemetryEventName.PasskeyCreateDisplay, {}, {}));
         };
 
         run().catch(close);
