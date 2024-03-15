@@ -289,8 +289,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
         const run = async () => {
             if (matchConsumeFork) {
-                authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
-            } else authService.init({ forceLock: false });
+                return authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
+            } else return authService.init({ forceLock: false });
         };
 
         /* setup listeners on the service worker's broadcasting channel in order to
