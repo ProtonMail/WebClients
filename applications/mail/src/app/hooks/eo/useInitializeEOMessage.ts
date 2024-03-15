@@ -60,7 +60,7 @@ export const useInitializeEOMessage = () => {
 
         try {
             // Decryption
-            decryption = await decryptMessage(getData(), [] as PrivateKeyReference[], undefined, undefined, password);
+            decryption = await decryptMessage(getData(), [] as PrivateKeyReference[], undefined, password);
 
             if (decryption.mimetype) {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };
