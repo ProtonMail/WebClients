@@ -19,7 +19,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
     });
 
     it('should return correct coinSelectionOptions', () => {
-        const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+        const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
         expect(result.current.coinSelectionOptions).toStrictEqual([
             { label: 'Minimized Fees', value: 0 },
@@ -31,7 +31,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
     describe('handleCoinSelectionOptionSelect', () => {
         it('update txBuilder coinSelection', async () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() => {
                 result.current.handleCoinSelectionOptionSelect(WasmCoinSelection.OldestFirst);
@@ -44,7 +44,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
     });
 
     it('should return correct changePolicyOptions', () => {
-        const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+        const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
         expect(result.current.changePolicyOptions).toStrictEqual([
             { label: 'Only use non-change outputs', value: 2 },
@@ -55,7 +55,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
     describe('handleChangePolicySelect', () => {
         it('should set selectedChangePolicy', async () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() =>
                 result.current.handleChangePolicySelect({
@@ -83,7 +83,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
     describe('handleManualCoinSelection', () => {
         it('should set coins with provided ones', async () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() => {
                 void result.current.handleManualCoinSelection([
@@ -103,7 +103,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
     describe('toggleEnableRBF', () => {
         it('should set enableRBF', async () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() => result.current.toggleEnableRBF());
             // true by default
@@ -120,14 +120,14 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
     describe('toggleUseLocktime', () => {
         it('should turn useLocktime to true', () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() => result.current.toggleUseLocktime());
             expect(result.current.useLocktime).toBeTruthy();
         });
 
         it('should turn useLocktime to false and remove locktime previously set', async () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() => result.current.toggleUseLocktime());
             txBuilder = txBuilder.addLocktime(WasmLockTime.fromHeight(26));
@@ -142,7 +142,7 @@ describe('useOnchainTransactionAdvancedOptions', () => {
 
     describe('handleLocktimeValueChange', () => {
         it('should change locktime value', async () => {
-            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(updater));
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
 
             act(() => result.current.toggleUseLocktime());
             act(() =>
@@ -154,6 +154,21 @@ describe('useOnchainTransactionAdvancedOptions', () => {
             await waitFor(() => {
                 expect(txBuilder.getLocktime()?.toConsensusU32()).toBe(13);
             });
+        });
+    });
+
+    describe('fees', () => {
+        it('should open fee selection modal', () => {
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
+            result.current.switchToFeesSelectionModal();
+            expect(result.current.feesSelectionModal.open).toBeTruthy();
+        });
+
+        it('should close fee selection modal', () => {
+            const { result } = renderHook(() => useOnchainTransactionAdvancedOptions(txBuilder, updater));
+            result.current.switchToFeesSelectionModal();
+            result.current.feesSelectionModal.onClose();
+            expect(result.current.feesSelectionModal.open).toBeFalsy();
         });
     });
 });

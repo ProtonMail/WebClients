@@ -12,6 +12,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 
+import { OnChainFeesSelector } from './OnChainFeesSelector';
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
 interface Props {
@@ -27,6 +28,8 @@ export const AdvancedOptionsModal = ({ txBuilder, helpers }: Props) => {
         advancedOptionsModal,
         coinSelectionOptions,
         switchToCoinSelectionModal,
+        feesSelectorHelpers,
+        switchToFeesSelectionModal,
         handleCoinSelectionOptionSelect,
         toggleEnableRBF,
         useLocktime,
@@ -45,6 +48,12 @@ export const AdvancedOptionsModal = ({ txBuilder, helpers }: Props) => {
             <ModalHeader title={title} />
 
             <ModalContent className="mt-2 pt-2">
+                {/* Fees selection */}
+                <OnChainFeesSelector
+                    feesSelectorHelpers={feesSelectorHelpers}
+                    switchToFeesSelectionModal={switchToFeesSelectionModal}
+                />
+
                 {/* Coin selection */}
                 <div className="flex flex-column items-start">
                     <label htmlFor="enable-rbf" className="text-semibold text-sm mb-1">
