@@ -25,7 +25,6 @@ const MainContainer: FunctionComponent = () => {
         FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
         FeatureCode.UsedMailMobileApp,
-        FeatureCode.LegacyMessageMigrationEnabled,
         FeatureCode.ESUserInterface,
     ]);
 

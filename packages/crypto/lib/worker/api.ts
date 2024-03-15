@@ -13,7 +13,6 @@ import {
     checkKeyStrength,
     decryptKey,
     decryptMessage,
-    decryptMessageLegacy,
     decryptSessionKey,
     doesKeySupportForwarding,
     encryptKey,
@@ -58,7 +57,6 @@ import {
     PublicKeyReference,
     SessionKeyWithoutPlaintextAlgo,
     SignatureInfo,
-    WorkerDecryptLegacyOptions,
     WorkerDecryptionOptions,
     WorkerEncryptOptions,
     WorkerEncryptSessionKeyOptions,
@@ -641,44 +639,6 @@ export class Api extends KeyManagementApi {
         // the decrypted signatures after decryption.
         // Note: asking the apps to call `verifyMessage` separately is not an option, since
         // the verification result is to be considered invalid outside of the encryption context if the intended recipient is present, see: https://datatracker.ietf.org/doc/html/draft-ietf-openpgp-crypto-refresh#section-5.2.3.32
-    }
-
-    /**
-     * Backwards-compatible decrypt message function, to be only used for email messages that might be of legacy format.
-     * For all other cases, use `decryptMessage`.
-     */
-    async decryptMessageLegacy<FormatType extends WorkerDecryptLegacyOptions['format'] = 'utf8'>({
-        decryptionKeys: decryptionKeyRefs = [],
-        verificationKeys: verificationKeyRefs = [],
-        armoredMessage,
-        armoredSignature,
-        binarySignature,
-        ...options
-    }: WorkerDecryptLegacyOptions & { format?: FormatType }) {
-        const decryptionKeys = toArray(decryptionKeyRefs).map(
-            (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
-        );
-        const verificationKeys = toArray(verificationKeyRefs).map((keyReference) =>
-            this.keyStore.get(keyReference._idx)
-        );
-
-        const signature =
-            binarySignature || armoredSignature ? await getSignature({ binarySignature, armoredSignature }) : undefined;
-
-        const { signatures: signatureObjects, ...decryptionResultWithoutSignatures } =
-            await decryptMessageLegacy<FormatType>({
-                ...options,
-                armoredMessage,
-                signature,
-                decryptionKeys,
-                verificationKeys,
-            });
-
-        const serialisedResult = {
-            ...decryptionResultWithoutSignatures,
-            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
-        };
-        return serialisedResult;
     }
 
     /**

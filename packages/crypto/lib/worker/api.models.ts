@@ -1,7 +1,6 @@
 import type {
     AlgorithmInfo,
     Data,
-    DecryptLegacyOptions,
     DecryptOptionsPmcrypto,
     DecryptResultPmcrypto,
     DecryptSessionKeyOptionsPmcrypto,
@@ -53,18 +52,6 @@ export interface WorkerDecryptionOptions
 }
 export interface WorkerDecryptionResult<T extends Data> extends Omit<DecryptResultPmcrypto<T>, 'signatures'> {
     signatures: Uint8Array[];
-}
-
-export interface WorkerDecryptLegacyOptions
-    extends Omit<
-        DecryptLegacyOptions,
-        'message' | 'signature' | 'encryptedSignature' | 'verificationKeys' | 'decryptionKeys'
-    > {
-    armoredMessage: string;
-    armoredSignature?: string;
-    binarySignature?: Uint8Array;
-    verificationKeys?: MaybeArray<PublicKeyReference>;
-    decryptionKeys?: MaybeArray<PrivateKeyReference>;
 }
 
 // TODO to make Option interfaces easy to use for the user, might be best to set default param types (e.g. T extends Data = Data).
