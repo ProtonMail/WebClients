@@ -15,7 +15,7 @@ export const FieldsetCluster: FC<Props> = ({ as = 'fieldset', children, classNam
     return (
         <Component
             className={clsx(
-                'pass-fieldset-cluster border-none rounded-xl p-0 m-0 mb-2',
+                'pass-fieldset-cluster max-w-full border-none rounded-xl p-0 m-0 mb-2',
                 mode === 'write' ? 'pass-fieldset-cluster--write' : 'pass-fieldset-cluster--read',
                 className
             )}
