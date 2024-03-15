@@ -6,7 +6,6 @@ import Card from '@proton/atoms/Card/Card';
 
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { AccountWithChainData } from '../../../types';
-import { OnChainFeesSelector } from './OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from './OnchainTransactionAdvancedOptions';
 
 interface Props {
@@ -16,7 +15,7 @@ interface Props {
     createPsbt: () => Promise<void>;
 }
 
-export const OnchainFeesAndOptionsCard = ({ txBuilder, account, updateTxBuilder, createPsbt }: Props) => {
+export const OnchainTransactionBuilderFooter = ({ txBuilder, account, updateTxBuilder, createPsbt }: Props) => {
     return (
         <Card
             className="flex flex-column transaction-builder-card bg-norm overflow-y-auto flex-nowrap"
@@ -24,9 +23,6 @@ export const OnchainFeesAndOptionsCard = ({ txBuilder, account, updateTxBuilder,
             background={false}
             rounded
         >
-            <OnChainFeesSelector txBuilder={txBuilder} updateTxBuilder={updateTxBuilder} />
-            <hr className="my-2 bg-weak" />
-
             <OnchainTransactionAdvancedOptions
                 txBuilder={txBuilder}
                 updateTxBuilder={updateTxBuilder}

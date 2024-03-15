@@ -1,12 +1,18 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { DEFAULT_TARGET_BLOCK, MIN_FEE_RATE } from '../../../../constants';
 import { feesEstimations } from '../../../../tests';
 import { FeeSelectionModal } from './FeeSelectionModal';
-import { DEFAULT_TARGET_BLOCK, MIN_FEE_RATE } from './constant';
 import * as useFeeSelectionModalModule from './useFeeSelectionModal';
 
 describe('FeeSelectionModal', () => {
+    let modalState = {
+        open: true,
+        onClose: vi.fn(),
+        onExit: vi.fn(),
+    };
+
     let helper = {
         handleBlockTargetChange: vi.fn(),
         handleFeeRateChange: vi.fn(),
@@ -31,10 +37,9 @@ describe('FeeSelectionModal', () => {
         it('should call `handleBlockTargetChange`', async () => {
             render(
                 <FeeSelectionModal
-                    isOpen={true}
+                    modalState={modalState}
                     feesEstimations={feesEstimations}
                     feeRate={0}
-                    onClose={vi.fn()}
                     onFeeRateSelected={vi.fn()}
                 />
             );
@@ -51,10 +56,9 @@ describe('FeeSelectionModal', () => {
         it('should call `handleFeeRateChange`', async () => {
             render(
                 <FeeSelectionModal
-                    isOpen={true}
+                    modalState={modalState}
                     feesEstimations={feesEstimations}
                     feeRate={0}
-                    onClose={vi.fn()}
                     onFeeRateSelected={vi.fn()}
                 />
             );
@@ -72,13 +76,11 @@ describe('FeeSelectionModal', () => {
 
     describe('when user clicks on close button', () => {
         it('should call `onClose`', () => {
-            const onClose = vi.fn();
             render(
                 <FeeSelectionModal
-                    isOpen={true}
                     feesEstimations={feesEstimations}
                     feeRate={0}
-                    onClose={onClose}
+                    modalState={modalState}
                     onFeeRateSelected={vi.fn()}
                 />
             );
@@ -88,8 +90,8 @@ describe('FeeSelectionModal', () => {
 
             fireEvent.click(btn);
 
-            expect(onClose).toHaveBeenCalledTimes(1);
-            expect(onClose).toHaveBeenCalledWith();
+            expect(modalState.onClose).toHaveBeenCalledTimes(1);
+            expect(modalState.onClose).toHaveBeenCalledWith();
         });
     });
 
@@ -100,10 +102,9 @@ describe('FeeSelectionModal', () => {
             const onFeeRateSelected = vi.fn();
             render(
                 <FeeSelectionModal
-                    isOpen={true}
+                    modalState={modalState}
                     feesEstimations={feesEstimations}
                     feeRate={0}
-                    onClose={vi.fn()}
                     onFeeRateSelected={onFeeRateSelected}
                 />
             );

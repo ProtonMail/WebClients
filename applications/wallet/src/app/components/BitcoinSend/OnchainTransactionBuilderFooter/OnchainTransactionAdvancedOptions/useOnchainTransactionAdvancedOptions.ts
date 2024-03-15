@@ -6,6 +6,8 @@ import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, W
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
+import { useOnChainFeesSelector } from './useOnChainFeesSelector';
+
 const getCoinSelectionOptions = () => {
     return [
         { label: c('Wallet Send').t`Minimized Fees`, value: WasmCoinSelection.BranchAndBound },
@@ -25,14 +27,14 @@ const getChangePolicyOptions = () => {
 };
 
 export const useOnchainTransactionAdvancedOptions = (
-    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void
+    txBuilder: WasmTxBuilder,
+    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void
 ) => {
     const coinSelectionOptions = getCoinSelectionOptions();
     const [advancedOptionsModal, setAdvancedOptionsModalOpened] = useModalState();
-    const openAdvancedOptionsModal = useCallback(
-        () => setAdvancedOptionsModalOpened(true),
-        [setAdvancedOptionsModalOpened]
-    );
+    const openAdvancedOptionsModal = useCallback(() => {
+        setAdvancedOptionsModalOpened(true);
+    }, [setAdvancedOptionsModalOpened]);
 
     const [manualCoinSelectionModal, setManualCoinSelectionModal] = useModalState({
         onClose: openAdvancedOptionsModal,
@@ -51,6 +53,17 @@ export const useOnchainTransactionAdvancedOptions = (
 
         manualCoinSelectionModal.onClose();
     };
+
+    const [feesSelectionModal, setFeesSelectionModal] = useModalState({
+        onClose: openAdvancedOptionsModal,
+    });
+
+    const feesSelectorHelpers = useOnChainFeesSelector(txBuilder, updateTxBuilder);
+
+    const switchToFeesSelectionModal = useCallback(() => {
+        advancedOptionsModal.onClose();
+        setFeesSelectionModal(true);
+    }, [advancedOptionsModal, setFeesSelectionModal]);
 
     const toggleEnableRBF = () => {
         updateTxBuilder((txBuilder: WasmTxBuilder) =>
@@ -90,6 +103,10 @@ export const useOnchainTransactionAdvancedOptions = (
         coinSelectionOptions,
         manualCoinSelectionModal,
         switchToCoinSelectionModal,
+
+        feesSelectorHelpers,
+        feesSelectionModal,
+        switchToFeesSelectionModal,
 
         changePolicyOptions,
         handleChangePolicySelect,

@@ -6,8 +6,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { WalletSelector } from '../../../atoms';
-import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
+import { OnchainTransactionBuilderFooter } from '../OnchainTransactionBuilderFooter';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';
 import { RecipientList } from '../RecipientList';
 import { useOnchainSimpleSend } from './useOnchainSimpleSend';
@@ -89,7 +89,7 @@ export const OnchainSimpleSend = ({ wallets, paymentLink, defaultWalletId }: Pro
                 onRecipientUpdate={updateRecipient}
             />
 
-            <OnchainFeesAndOptionsCard
+            <OnchainTransactionBuilderFooter
                 txBuilder={txBuilder}
                 account={account}
                 updateTxBuilder={updateTxBuilder}

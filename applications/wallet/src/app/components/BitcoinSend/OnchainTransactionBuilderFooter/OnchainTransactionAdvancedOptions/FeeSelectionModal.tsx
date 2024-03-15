@@ -6,26 +6,31 @@ import Slider from '@proton/atoms/Slider/Slider';
 import Label from '@proton/components/components/label/Label';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import { useFeeSelectionModal } from './useFeeSelectionModal';
 
 interface Props {
-    isOpen: boolean;
+    modalState: ModalStateProps;
     feesEstimations: [number, number][];
     feeRate: number;
-    onClose: () => void;
     onFeeRateSelected: (feeRate: number) => void;
 }
 
-export const FeeSelectionModal = ({ isOpen, onClose, feesEstimations, onFeeRateSelected, feeRate }: Props) => {
+export const FeeSelectionModal = ({ modalState, feesEstimations, onFeeRateSelected, feeRate }: Props) => {
     const { handleBlockTargetChange, handleFeeRateChange, tmpBlockTarget, tmpFeeRate } = useFeeSelectionModal(
         feesEstimations,
         feeRate,
-        isOpen
+        modalState.open
     );
 
+    const title = c('Wallet Send').t`Select fees`;
+
     return (
-        <ModalTwo title={c('Wallet Send').t`Select fees`} open={isOpen} onClose={onClose} enableCloseWhenClickOutside>
+        <ModalTwo {...modalState} title={title} size="large" enableCloseWhenClickOutside>
+            <ModalHeader title={title} />
+
             <ModalContent className="pt-2">
                 <span className="block h4 my-4 text-semibold">{c('Wallet Send').t`Select fees`}</span>
 
@@ -67,7 +72,8 @@ export const FeeSelectionModal = ({ isOpen, onClose, feesEstimations, onFeeRateS
                 </div>
 
                 <div className="my-3 flex w-full items-end">
-                    <Button className="ml-auto" onClick={() => onClose()}>{c('Wallet Send').t`Cancel`}</Button>
+                    <Button className="ml-auto" onClick={() => modalState.onClose()}>{c('Wallet Send')
+                        .t`Cancel`}</Button>
                     <Button
                         color="norm"
                         className="ml-3"
