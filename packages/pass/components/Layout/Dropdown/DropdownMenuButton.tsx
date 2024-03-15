@@ -1,5 +1,4 @@
-import type {
-    ForwardRefRenderFunction} from 'react';
+import type { ForwardRefRenderFunction } from 'react';
 import {
     Children,
     type FC,
