@@ -18,7 +18,7 @@ type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boole
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
     const org = useOrganization();
-    const organizationExportLimit = org?.settings.ExportMode === BitField.ACTIVE;
+    const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
 
     return (
         <FormikProvider value={form}>
@@ -44,7 +44,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         ]}
                         checked={form.values.format}
                         label={c('Label').t`File format`}
-                        disabled={organizationExportLimit}
+                        disabled={orgExportDisabled}
                     />
                 </div>
 
@@ -81,7 +81,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     </em>
                 )}
 
-                {organizationExportLimit && (
+                {orgExportDisabled && (
                     <Card className="mb-4 p-1">
                         <div>{c('Info').t`This setting is disabled on the organization level`}</div>
                     </Card>
@@ -91,7 +91,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     type="submit"
                     color="norm"
                     loading={loading}
-                    disabled={!form.isValid || loading || organizationExportLimit}
+                    disabled={!form.isValid || loading || orgExportDisabled}
                     className="mt-3 w-full"
                 >
                     {c('Action').t`Export`}
