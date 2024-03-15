@@ -65,6 +65,7 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
                   Email: { Status: UserSettings.Email.Status },
                   Password: { Mode: UserSettings.Password.Mode },
                   Telemetry: UserSettings.Telemetry,
+                  Locale: UserSettings.Locale,
               })
             : state.userSettings;
 
