@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components/components';
+import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
@@ -87,13 +88,26 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                         >
                             <DropdownMenuButtonLabel
                                 label={label}
-                                extra={
-                                    type === 'alias' && aliasLimited ? (
-                                        <span
-                                            className={needsUpgrade ? 'color-danger' : 'color-weak'}
-                                        >{`(${aliasTotalCount}/${aliasLimit})`}</span>
-                                    ) : undefined
-                                }
+                                labelClassname="text-left"
+                                extra={(() => {
+                                    if (type === 'alias' && aliasLimited) {
+                                        return (
+                                            <PillBadge
+                                                label={`${aliasTotalCount}/${aliasLimit}`}
+                                                {...(needsUpgrade
+                                                    ? {
+                                                          color: 'var(--signal-danger-contrast)',
+                                                          backgroundColor: 'var(--signal-danger)',
+                                                      }
+                                                    : {})}
+                                            />
+                                        );
+                                    }
+
+                                    if (type === 'creditCard' && isFreePlan) {
+                                        return <Icon name="pass-lock" size={3.5} className="mr-1.5" />;
+                                    }
+                                })()}
                                 icon={
                                     <span
                                         className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
