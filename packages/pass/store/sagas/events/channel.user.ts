@@ -30,6 +30,7 @@ function* onUserEvent(
 
     const currentEventId = (yield select(selectLatestEventId)) as MaybeNull<string>;
     const userId = getAuthStore().getUserID()!;
+    const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
 
     /* dispatch only if there was a change */
     if (currentEventId !== event.EventID) {
@@ -41,20 +42,16 @@ function* onUserEvent(
 
     if (event.UserSettings && telemetry) {
         const { Telemetry } = event.UserSettings;
-        const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
         if (Telemetry !== userSettings?.Telemetry) telemetry[Telemetry === 1 ? 'start' : 'stop']();
     }
 
     if (event.UserSettings?.Locale) {
         const { Locale } = event.UserSettings;
-        const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
         if (Locale !== userSettings?.Locale) yield onLocaleUpdated?.(Locale);
     }
 
     /* if the subscription/invoice changes, refetch the user Plan and check Organization */
-    if (event.Subscription || event.Invoices) {
-        yield put(withRevalidate(getUserAccessIntent(userId)));
-    }
+    if (event.Subscription || event.Invoices) yield put(withRevalidate(getUserAccessIntent(userId)));
 
     /* if we get the user model from the event, check if
      * any new active user keys are available. We might be
