@@ -51,14 +51,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
             [
                 { label: c('Label').t`Login`, type: 'login' },
                 { label: c('Label').t`Alias`, type: 'alias' },
-                {
-                    label: (
-                        <>
-                            {c('Label').t`Card`} {isFreePlan && <PillBadge label={c('Badge').t`Paid`} />}
-                        </>
-                    ),
-                    type: 'creditCard',
-                },
+                { label: c('Label').t`Card`, type: 'creditCard' },
                 { label: c('Label').t`Note`, type: 'note' },
             ] as const,
         []
@@ -95,13 +88,26 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                         >
                             <DropdownMenuButtonLabel
                                 label={label}
-                                extra={
-                                    type === 'alias' && aliasLimited ? (
-                                        <span
-                                            className={needsUpgrade ? 'color-danger' : 'color-weak'}
-                                        >{`(${aliasTotalCount}/${aliasLimit})`}</span>
-                                    ) : undefined
-                                }
+                                labelClassname="text-left"
+                                extra={(() => {
+                                    if (type === 'alias' && aliasLimited) {
+                                        return (
+                                            <PillBadge
+                                                label={`${aliasTotalCount}/${aliasLimit}`}
+                                                {...(needsUpgrade
+                                                    ? {
+                                                          color: 'var(--signal-danger-contrast)',
+                                                          backgroundColor: 'var(--signal-danger)',
+                                                      }
+                                                    : {})}
+                                            />
+                                        );
+                                    }
+
+                                    if (type === 'creditCard' && isFreePlan) {
+                                        return <Icon name="pass-lock" size={3.5} className="mr-1.5" />;
+                                    }
+                                })()}
                                 icon={
                                     <span
                                         className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
