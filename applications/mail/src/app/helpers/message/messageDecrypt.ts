@@ -38,33 +38,21 @@ export interface DecryptMessageResult {
 const decryptMimeMessage = async (
     message: Message,
     privateKeys: PrivateKeyReference[],
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
-    password?: string
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    let decryption: WorkerDecryptionResult<Uint8Array>;
-    let processing: MimeProcessResult;
-
     try {
-        if (!password) {
-            decryption = await CryptoProxy.decryptMessage({
-                armoredMessage: message.Body,
-                decryptionKeys: privateKeys,
-                verificationKeys: [],
-                format: 'binary',
-            });
-        } else {
-            decryption = await CryptoProxy.decryptMessage({
-                armoredMessage: message.Body,
-                passwords: [...password], // TODO is this correct?
-                format: 'binary',
-            });
-        }
+        const decryption = await CryptoProxy.decryptMessage({
+            armoredMessage: message.Body,
+            decryptionKeys: privateKeys,
+            verificationKeys: [],
+            format: 'binary',
+        });
 
         const decryptedStringData = binaryToString(decryption.data);
+        let processing: MimeProcessResult;
         try {
             processing = await CryptoProxy.processMIME({
                 data: decryptedStringData,
@@ -80,9 +68,9 @@ const decryptMimeMessage = async (
         return {
             decryptedBody: processing.body,
             decryptedRawContent,
-            attachments: !onUpdateAttachment
-                ? undefined
-                : convert(message, processing.attachments, 0, onUpdateAttachment),
+            attachments: onUpdateAttachment
+                ? convert(message, processing.attachments, 0, onUpdateAttachment)
+                : undefined,
             decryptedSubject: processing.encryptedSubject,
             signature: decryption.signatures[0],
             mimetype: processing.mimeType as MIME_TYPES,
@@ -99,36 +87,37 @@ const decryptMimeMessage = async (
     }
 };
 
-const decryptNonMimeMessage = async (
+/**
+ * Decrypt a message body of any kind: plaintext/html, multipart/simple, as well as EO.
+ * Willingly not dealing with public keys and signature verification
+ * It will be done separately when public keys will be ready
+ */
+export const decryptMessage = async (
     message: Message,
     privateKeys: PrivateKeyReference[],
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     password?: string
 ): Promise<DecryptMessageResult> => {
-    let result: WorkerDecryptionResult<Uint8Array>;
+    if (isMIME(message)) {
+        return decryptMimeMessage(message, privateKeys, onUpdateAttachment);
+    }
 
     try {
-        if (!password) {
-            result = await CryptoProxy.decryptMessage({
-                armoredMessage: message.Body,
-                decryptionKeys: privateKeys,
-                verificationKeys: [],
-                format: 'binary',
-                config: {
-                    allowForwardedMessages: isAutoForwardee(message),
-                },
-            });
-        } else {
-            result = await CryptoProxy.decryptMessage({
-                armoredMessage: message.Body,
-                passwords: [password],
-                format: 'binary',
-            });
-        }
+        const decryption = await CryptoProxy.decryptMessage({
+            armoredMessage: message.Body,
+            decryptionKeys: privateKeys,
+            verificationKeys: [],
+            passwords: password, // EO messages
+            format: 'binary',
+            config: {
+                allowForwardedMessages: isAutoForwardee(message),
+            },
+        });
 
         const {
             data: decryptedRawContent,
             signatures: [signature],
-        } = result;
+        } = decryption;
 
         const decryptedBody = binaryToString(decryptedRawContent);
 
@@ -142,24 +131,6 @@ const decryptNonMimeMessage = async (
             },
         };
     }
-};
-
-/**
- * Decrypt a message body of any kind: plaintext/html multipart/simple
- * Willingly not dealing with public keys and signature verification
- * It will be done separately when public keys will be ready
- */
-export const decryptMessage = async (
-    message: Message,
-    privateKeys: PrivateKeyReference[],
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
-    password?: string
-): Promise<DecryptMessageResult> => {
-    if (isMIME(message)) {
-        return decryptMimeMessage(message, privateKeys, getAttachment, onUpdateAttachment, password);
-    }
-    return decryptNonMimeMessage(message, privateKeys, password);
 };
 
 /**
