@@ -3,9 +3,7 @@ import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import {
     Breakpoints,
-    FeatureCode,
     MailShortcutsModal,
-    useFeatures,
     useFolders,
     useLabels,
     useModalState,
@@ -29,7 +27,6 @@ import useIncomingDefaultsEvents from '../hooks/incomingDefaults/useIncomingDefa
 import useIncomingDefaultsLoad from '../hooks/incomingDefaults/useIncomingDefaultsLoad';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
-import LegacyMessagesMigrationContainer from './LegacyMessagesMigrationContainer';
 import MailStartupModals from './MailStartupModals';
 import MailboxContainer from './mailbox/MailboxContainer';
 
@@ -45,10 +42,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     const [welcomeFlags] = useWelcomeFlags();
 
     useOpenDrawerOnLoad();
-    const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
-    const { feature: runLegacyMessageFeature } = getFeature(FeatureCode.LegacyMessageMigrationEnabled);
-
-    const runLegacyMessageMigration = runLegacyMessageFeature?.Value;
 
     useContactsListener();
     useConversationsEvent();
@@ -73,7 +66,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     return (
         <PrivateLayout ref={ref} labelID={labelID} elementID={elementID} breakpoints={breakpoints}>
             <MailStartupModals onboardingOpen={onboardingOpen} />
-            {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
             <LabelActionsContextProvider>
                 <MailboxContainer
                     labelID={labelID}
