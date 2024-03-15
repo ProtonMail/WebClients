@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,7 +18,7 @@ type Props = {
     formId: string;
     valid: boolean;
     handleCancelClick: () => void;
-    renderSubmitButton?: ReactElement;
+    submitButton?: ReactNode;
 } & Omit<DiscardableModalProps, 'onDiscard'>;
 
 function getItemTypeSubmitButtonLabel(type: ItemType) {
@@ -37,13 +37,13 @@ function getItemTypeSubmitButtonLabel(type: ItemType) {
 }
 
 export const ItemCreatePanel = ({
-    type,
-    formId,
-    valid,
     discardable,
-    handleCancelClick,
-    renderSubmitButton,
+    formId,
+    submitButton,
+    type,
+    valid,
     children,
+    handleCancelClick,
 }: Props) => {
     useSaveShortcut(() => {
         if (valid && !discardable) {
@@ -71,7 +71,7 @@ export const ItemCreatePanel = ({
                                 >
                                     <Icon name="cross" alt={c('Action').t`Cancel`} />
                                 </Button>,
-                                renderSubmitButton || (
+                                submitButton || (
                                     <Tooltip
                                         key="submit-button"
                                         openDelay={500}
