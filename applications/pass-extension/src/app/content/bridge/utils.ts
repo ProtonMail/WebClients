@@ -1,16 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
-
-declare global {
-    interface Window {
-        wrappedJSObject?: Window;
-    }
-
-    var cloneInto: Maybe<CloneInto>;
-    var exportFunction: Maybe<ExportFunction>;
-}
-
-type ExportFunction = (fn: Function, target: any, options: { defineAs: string }) => void;
-type CloneInto = <T>(obj: T, target: any, options: { cloneFunctions?: boolean; wrapReflectors?: boolean }) => T;
+import type { ExportFunction } from 'applications/pass-extension/globals';
 
 /** Exports a function defined within the content-script to
 the scope of the page script. This is necessary for Firefox.
