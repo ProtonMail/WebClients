@@ -32,7 +32,6 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
     const { createNotification } = useNotifications();
 
     const [passkeys, setPasskeys] = useMountedState<MaybeNull<SelectedPasskey[]>>(null);
-
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyRequest, [request]);
 
     const authenticate = (passkey: SelectedPasskey) => {

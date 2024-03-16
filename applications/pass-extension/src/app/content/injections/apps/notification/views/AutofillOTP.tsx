@@ -27,7 +27,9 @@ export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
         payload: { type: 'item', item },
     });
 
-    useEffect(() => onTelemetry(createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {})), []);
+    useEffect(() => {
+        onTelemetry(createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {}));
+    }, []);
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between h-full">
@@ -70,7 +72,7 @@ export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
                         }
                     }}
                 >
-                    {c('Action').t`Copy & fill in`}
+                    <span className="text-ellipsis">{c('Action').t`Copy & fill in`}</span>
                 </Button>
             </div>
         </div>
