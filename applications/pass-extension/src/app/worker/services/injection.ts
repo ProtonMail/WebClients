@@ -5,7 +5,6 @@ import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
 import { type TabId, WorkerMessageType } from '@proton/pass/types';
-import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -78,23 +77,32 @@ export const createInjectionService = () => {
      * be updated once defined. A random tag name is used to avoid collisions.*/
     WorkerMessageBroker.registerMessage(WorkerMessageType.REGISTER_ELEMENTS, async (_, { tab }) => {
         const hash = uniqueId(4);
-        const root = `protonpass-root-${hash}`;
-        const control = `protonpass-control-${hash}`;
-        const elements: PassElementsConfig = { root, control };
 
         const scriptConfig = {
             target: { tabId: tab?.id!, allFrames: false },
             world: (BUILD_TARGET === 'chrome' ? 'MAIN' : undefined) as any,
         };
 
-        await browser.scripting.executeScript({ ...scriptConfig, files: ['elements.js'] });
+        if (BUILD_TARGET === 'chrome') {
+            /** In Chrome, we can directly register custom elements via injection in the MAIN
+             * world. Firefox isolates custom elements from this realm, which can have unintended
+             * side effects in page-scripts. For Firefox, we leverage the injected script trick.
+             * See `applications/pass-extension/src/app/content/client.ts` for details */
+            await browser.scripting.executeScript({ ...scriptConfig, files: ['elements.js'] });
+        }
+
         await browser.scripting.executeScript({
             ...scriptConfig,
-            args: [elements],
-            func: (config: PassElementsConfig) => window.registerPassElements?.(config),
+            args: [hash],
+            func: (hash: string) => {
+                /** In Firefox, content scripts need to use `window.wrappedJSObject`
+                 * to see the "expando" properties defined on the global object */
+                const self = window?.wrappedJSObject ?? window;
+                self.registerPassElements?.(hash);
+            },
         });
 
-        return { elements };
+        return { hash };
     });
 
     WorkerMessageBroker.registerMessage(
