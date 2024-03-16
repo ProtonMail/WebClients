@@ -189,7 +189,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                             <ValueControl icon={'earth'} label={c('Label').t`Website`} value={domain} />
                         </FieldsetCluster>
 
-                        <div className="shrink-0 px-2 py-1 text-xs color-weak">{c('Info')
+                        <div className="px-2 py-1 text-xs color-weak">{c('Info')
                             .t`A passkey for "${username}" will be saved and available on devices where ${PASS_APP_NAME} is installed.`}</div>
                     </>
                 )}
@@ -204,11 +204,13 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                     loading={loading}
                     disabled={loading}
                 >
-                    {(() => {
-                        if (loading) return c('Action').t`Saving passkey...`;
-                        if (form.values.step === 'items') return c('Action').t`Create new login`;
-                        if (form.values.step === 'passkey') return c('Action').t`Save passkey`;
-                    })()}
+                    <span className="text-ellipsis">
+                        {(() => {
+                            if (loading) return c('Action').t`Saving passkey...`;
+                            if (form.values.step === 'items') return c('Action').t`Create new login`;
+                            if (form.values.step === 'passkey') return c('Action').t`Save passkey`;
+                        })()}
+                    </span>
                 </Button>
             </div>
         </FormikProvider>
