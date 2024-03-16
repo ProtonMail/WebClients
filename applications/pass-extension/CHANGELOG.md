@@ -1,6 +1,9 @@
 ### Version 1.16.0
 
 -   Add passkey support
+-   Fix custom-elements disruptions in firefox content-scripts
+-   Fix note items preview in items list
+-   Improve credit-card items UX for free users
 
 ### Version 1.15.0
 

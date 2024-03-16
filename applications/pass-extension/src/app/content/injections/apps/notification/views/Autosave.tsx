@@ -127,14 +127,16 @@ export const Autosave: FC<Props> = ({ submission }) => {
                     <Button pill color="norm" shape="outline" onClick={() => close({ discard: true })}>{c('Action')
                         .t`Not now`}</Button>
                     <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
-                        {(() => {
-                            switch (data.type) {
-                                case AutosaveType.NEW:
-                                    return busy ? c('Action').t`Saving` : c('Action').t`Add`;
-                                case AutosaveType.UPDATE:
-                                    return busy ? c('Action').t`Updating` : c('Action').t`Update`;
-                            }
-                        })()}
+                        <span className="text-ellipsis">
+                            {(() => {
+                                switch (data.type) {
+                                    case AutosaveType.NEW:
+                                        return busy ? c('Action').t`Saving` : c('Action').t`Add`;
+                                    case AutosaveType.UPDATE:
+                                        return busy ? c('Action').t`Updating` : c('Action').t`Update`;
+                                }
+                            })()}
+                        </span>
                     </Button>
                 </div>
             </Form>
