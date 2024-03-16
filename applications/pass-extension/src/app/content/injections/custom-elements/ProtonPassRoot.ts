@@ -6,6 +6,8 @@ import { StyledShadowHost } from './StyledShadowHost';
 import styles from './ProtonPassRoot.raw.scss';
 
 export class ProtonPassRoot extends StyledShadowHost {
+    static getTagName = (hash: string) => `protonpass-control-${hash}`;
+
     constructor() {
         super(styles);
     }
