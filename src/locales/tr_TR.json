@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "Check spelling while typing": [
+        "Yazarken yazım denetimi yap"
+      ],
       "Clear application data": [
         "Uygulama verilerini temizle"
       ],
@@ -14,14 +17,23 @@
       "File": [
         "Dosya"
       ],
+      "Force Reload": [
+        "Yeniden yüklemeye zorla"
+      ],
       "Reload": [
-        "Yenile"
+        "Yeniden yükle"
       ],
       "Show logs": [
         "Günlüğü görüntüle"
       ],
       "Speech": [
         "Konuşma"
+      ],
+      "Start Proton Mail at login": [
+        "Girişte Proton Mail'i başlatın"
+      ],
+      "Toggle developers tools": [
+        "Geliştirici araçlarını aç/kapat"
       ],
       "Uninstall Proton Mail": [
         "Proton Mail uygulamasını kaldır"
@@ -31,6 +43,28 @@
       ],
       "Window": [
         "Pencere"
+      ]
+    },
+    "Conext menu": {
+      "Save image as…": [
+        "Resmi farklı kaydet..."
+      ],
+      "Speech": [
+        "Konuşma"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Sözlüğe ekle"
+      ],
+      "Copy image": [
+        "Resmi kopyala"
+      ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
+      "Emoji and Symbols": [
+        "Emoji ve Semboller"
       ]
     },
     "Unload warning": {
