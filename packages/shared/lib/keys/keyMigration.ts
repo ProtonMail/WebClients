@@ -25,7 +25,7 @@ import {
 } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
-import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
+import { getDecryptedOrganizationKeyHelper } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import { OnSKLPublishSuccess, createSignedKeyListForMigration } from './signedKeyList';
@@ -236,10 +236,11 @@ export async function migrateAddressKeys({
         return getAddressKeysMigration(addressesKeys, primaryUserKey, keyTransparencyVerify, keyMigrationKTVerifier);
     }
 
-    const decryptedOrganizationKeyResult = await getDecryptedOrganizationKey(
-        organizationKey?.PrivateKey || '',
-        keyPassword
-    ).catch(noop);
+    const decryptedOrganizationKeyResult = await getDecryptedOrganizationKeyHelper({
+        userKeys,
+        Key: organizationKey,
+        keyPassword,
+    }).catch(noop);
     if (!decryptedOrganizationKeyResult) {
         const error = new Error('Failed to decrypt organization key');
         (error as any).ignore = true;
@@ -289,11 +290,13 @@ export async function migrateMemberAddressKeys({
     }
 
     const organizationKey = await api<OrganizationKey>(getOrganizationKeys());
+    const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
     // Ensure that the organization key can be decrypted...
-    const decryptedOrganizationKeyResult = await getDecryptedOrganizationKey(
-        organizationKey?.PrivateKey ?? '',
-        keyPassword
-    ).catch(noop);
+    const decryptedOrganizationKeyResult = await getDecryptedOrganizationKeyHelper({
+        userKeys,
+        Key: organizationKey,
+        keyPassword,
+    }).catch(noop);
     if (!decryptedOrganizationKeyResult?.privateKey) {
         return;
     }

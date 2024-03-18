@@ -34,7 +34,7 @@ export interface Member {
     Private: MEMBER_PRIVATE;
     Type: MEMBER_TYPE;
     AccessToOrgKey: MEMBER_ORG_KEY_STATE;
-    ToMigrate: 0 | 1;
+    ToMigrate: 0 | 1 | 2;
     MaxSpace: number;
     MaxVPN: number;
     Name: string;

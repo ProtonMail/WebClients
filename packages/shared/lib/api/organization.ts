@@ -99,6 +99,21 @@ export const updatePasswordlessOrganizationKeys = (data: UpdatePasswordlessOrgan
     method: 'put',
 });
 
+interface MigratePasswordlessOrganizationKeysPayload
+    extends Omit<UpdatePasswordlessOrganizationKeysPayload, 'Members' | 'AdminInvitations'> {
+    AdminInvitations: {
+        MemberID: string;
+        TokenKeyPacket: string;
+        Signature: string;
+    }[];
+}
+
+export const migratePasswordlessOrganizationKey = (data: MigratePasswordlessOrganizationKeysPayload) => ({
+    url: 'core/v4/organizations/keys/migrate',
+    method: 'post',
+    data,
+});
+
 export interface UpdateOrganizationKeysPayloadV2 {
     PrivateKey: string;
     BackupPrivateKey: string;
