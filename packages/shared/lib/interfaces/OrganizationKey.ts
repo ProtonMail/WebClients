@@ -3,6 +3,7 @@ import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { MEMBER_ORG_KEY_STATE } from './Member';
 
 export interface OrganizationKey {
+    LegacyPrivateKey?: string;
     PrivateKey?: string;
     Token?: string;
     Signature?: string;

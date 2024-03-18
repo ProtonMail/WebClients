@@ -53,6 +53,9 @@ export const getDecryptedOrganizationKeyHelper = async ({
     if (!Key.PrivateKey) {
         throw new Error('Missing key');
     }
+    if (Key.LegacyPrivateKey) {
+        return getDecryptedOrganizationKey(Key.LegacyPrivateKey, keyPassword);
+    }
     return getDecryptedOrganizationKey(Key.PrivateKey, await getOrganizationKeyToken({ userKeys, Key, keyPassword }));
 };
 

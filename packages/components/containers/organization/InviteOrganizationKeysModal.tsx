@@ -35,7 +35,10 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
             setResult(null);
             const result = await dispatch(
                 getMemberKeyPayloads({
-                    verifyOutboundPublicKeys,
+                    mode: {
+                        type: 'email',
+                        verifyOutboundPublicKeys,
+                    },
                     members,
                     api: silentApi,
                 })
