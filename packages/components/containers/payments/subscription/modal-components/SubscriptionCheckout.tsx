@@ -93,8 +93,12 @@ const BilledText = ({ cycle }: { cycle: Cycle }) => {
                 return c('Subscription').t`Billed yearly`;
             case CYCLE.MONTHLY:
                 return c('Subscription').t`Billed monthly`;
+            case CYCLE.THREE:
+                return c('Subscription').t`Billed for 3 months`;
             case CYCLE.FIFTEEN:
                 return c('Subscription').t`Billed for 15 months`;
+            case CYCLE.EIGHTEEN:
+                return c('Subscription').t`Billed for 18 months`;
             case CYCLE.THIRTY:
                 return c('Subscription').t`Billed for 30 months`;
         }
