@@ -46,11 +46,14 @@ export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) =>
     );
 };
 
+export const getIsVpn2024 = (planName: PLANS) => {
+    return planName === PLANS.VPN2024;
+};
+
 export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
     planIDs,
-    plansMap,
 }: {
     appName: ProductParam;
     plan?: string;
@@ -59,13 +62,13 @@ export const getDefaultSelectedProductPlans = ({
 }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = getVPNPlanToUse(plansMap, planIDs);
+        defaultB2CPlan = PLANS.VPN; /*getVPNPlanToUse(plansMap, planIDs);*/
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
         defaultB2CPlan = PLANS.PASS_PLUS;
     }
-    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.VPN2024, PLANS.DRIVE].find(
+    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, /*PLANS.VPN2024, */ PLANS.DRIVE].find(
         (planName) => plan === planName || planIDs[planName]
     );
     const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find(

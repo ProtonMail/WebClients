@@ -24,6 +24,7 @@ import {
     getHasPassB2BPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
+    getIsCustomCycle,
     getPrimaryPlan,
     getVPNDedicatedIPs,
     hasMaximumCycle,
@@ -169,7 +170,8 @@ const ActionButtons = ({
             metrics,
         });
 
-    const showEditBillingDetails = user.isPaid && user.canPay && !hasMaximumCycle(subscription) && !hasPassB2B;
+    const showEditBillingDetails =
+        user.isPaid && user.canPay && !hasMaximumCycle(subscription) && !hasPassB2B && !getIsCustomCycle(subscription);
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
     const showExploreOtherPlans = user.canPay;
 
