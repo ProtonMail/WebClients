@@ -31,12 +31,14 @@ import type {
 import { getIsPasswordless, setupMemberKeys } from '@proton/shared/lib/keys';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
 
 import { addressesThunk } from '../addresses';
 import { organizationThunk } from '../organization';
 import { OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { MemberKeyPayload, getMemberKeyPayload, getPrivateAdminError, setAdminRoles } from '../organizationKey/actions';
 import { userKeysThunk } from '../userKeys';
+import { membersThunk } from './index';
 import validateAddUser from './validateAddUser';
 
 class ValidationError extends Error {
@@ -134,12 +136,24 @@ export const createMember = ({
     api: Api;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const [userKeys, ownerAddresses, organizationKey, organization] = await Promise.all([
+        const [userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
             dispatch(userKeysThunk()),
             dispatch(addressesThunk()),
             dispatch(organizationKeyThunk()),
             dispatch(organizationThunk()),
+            dispatch(membersThunk()),
         ]);
+
+        const self = members.find((member) => Boolean(member.Self));
+        if (
+            organization.MaxVPN > 0 &&
+            self &&
+            self.MaxVPN !== VPN_CONNECTIONS &&
+            self.MaxVPN === organization.MaxVPN &&
+            model.vpn
+        ) {
+            await api(updateVPN(self.ID, VPN_CONNECTIONS)).catch(noop);
+        }
 
         const error = validateAddUser({
             privateUser: model.private,
