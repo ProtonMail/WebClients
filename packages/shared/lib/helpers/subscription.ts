@@ -322,8 +322,16 @@ export const hasMailBlackFridayDiscount = (subscription: Subscription | undefine
     return subscription?.CouponCode === COUPON_CODES.MAIL_BLACK_FRIDAY_2022;
 };
 
-export const allCycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS, CYCLE.FIFTEEN, CYCLE.THIRTY];
-export const customCycles = [CYCLE.FIFTEEN, CYCLE.THIRTY];
+export const allCycles = [
+    CYCLE.MONTHLY,
+    CYCLE.THREE,
+    CYCLE.YEARLY,
+    CYCLE.TWO_YEARS,
+    CYCLE.FIFTEEN,
+    CYCLE.EIGHTEEN,
+    CYCLE.THIRTY,
+];
+export const customCycles = [CYCLE.THREE, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY];
 export const regularCycles = allCycles.filter((cycle) => !customCycles.includes(cycle));
 
 export const getValidCycle = (cycle: number): CYCLE | undefined => {
@@ -339,7 +347,7 @@ export const getIsCustomCycle = (subscription?: Subscription) => {
 };
 
 export const getDowngradedVpn2024Cycle = (cycle: Cycle): CYCLE => {
-    if (cycle === CYCLE.MONTHLY || cycle === CYCLE.YEARLY) {
+    if (cycle === CYCLE.MONTHLY || cycle === CYCLE.THREE || cycle === CYCLE.YEARLY) {
         return cycle;
     }
     // 15,24,30 all renew at yearly.
@@ -403,7 +411,9 @@ export const hasThirty = (subscription?: Subscription) => {
 
 interface PricingForCycles {
     [CYCLE.MONTHLY]: number;
+    [CYCLE.THREE]: number;
     [CYCLE.YEARLY]: number;
+    [CYCLE.EIGHTEEN]: number;
     [CYCLE.TWO_YEARS]: number;
     [CYCLE.FIFTEEN]: number;
     [CYCLE.THIRTY]: number;
@@ -516,6 +526,8 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): Agg
     const initial = {
         [CYCLE.MONTHLY]: 0,
         [CYCLE.YEARLY]: 0,
+        [CYCLE.THREE]: 0,
+        [CYCLE.EIGHTEEN]: 0,
         [CYCLE.TWO_YEARS]: 0,
         [CYCLE.FIFTEEN]: 0,
         [CYCLE.THIRTY]: 0,
@@ -631,8 +643,10 @@ export const getPlanOffer = (plan: Plan) => {
             pricing: {
                 [CYCLE.MONTHLY]: 0,
                 [CYCLE.YEARLY]: 0,
+                [CYCLE.THREE]: 0,
                 [CYCLE.TWO_YEARS]: 0,
                 [CYCLE.FIFTEEN]: 0,
+                [CYCLE.EIGHTEEN]: 0,
                 [CYCLE.THIRTY]: 0,
             },
         }
