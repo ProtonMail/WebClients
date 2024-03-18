@@ -52,7 +52,7 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
-import { useActiveBreakpoint, useApi } from '@proton/components/hooks';
+import { Breakpoints, useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -342,10 +342,11 @@ type HasBeenCountedState = {
 };
 
 const Step1 = ({
+    activeBreakpoint,
     defaultEmail,
     mode,
     selectedPlan,
-    hasExtendedCycles,
+    cycleData,
     isVpn2024Deal,
     isB2bPlan,
     background,
@@ -362,10 +363,11 @@ const Step1 = ({
     className,
     loading,
 }: {
+    activeBreakpoint: Breakpoints;
     defaultEmail?: string;
     mode: 'signup' | 'pricing';
     selectedPlan: Plan;
-    hasExtendedCycles: boolean;
+    cycleData: { cycles: Cycle[]; upsellCycle: Cycle };
     isVpn2024Deal: boolean;
     isB2bPlan: boolean;
     background?: Background;
@@ -387,7 +389,6 @@ const Step1 = ({
     loading: boolean;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
-    const { viewportWidth } = useActiveBreakpoint();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
@@ -395,6 +396,7 @@ const Step1 = ({
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
+    const { viewportWidth } = activeBreakpoint;
 
     const createFlow = useFlowRef();
 
@@ -757,7 +759,9 @@ const Step1 = ({
         }
         return {
             [CYCLE.MONTHLY]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.MONTHLY),
+            [CYCLE.THREE]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.THREE),
             [CYCLE.YEARLY]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.YEARLY),
+            [CYCLE.EIGHTEEN]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.EIGHTEEN),
             [CYCLE.TWO_YEARS]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.TWO_YEARS),
             [CYCLE.FIFTEEN]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.FIFTEEN),
             [CYCLE.THIRTY]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.THIRTY),
@@ -769,24 +773,6 @@ const Step1 = ({
         plansMap,
         checkResult: options.checkResult,
     });
-
-    const { cycles, upsellCycle } = (() => {
-        if (hasExtendedCycles) {
-            return {
-                upsellCycle: CYCLE.THIRTY,
-                cycles: viewportWidth['>=large']
-                    ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
-                    : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
-            };
-        }
-
-        return {
-            upsellCycle: CYCLE.TWO_YEARS,
-            cycles: viewportWidth['>=large']
-                ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
-                : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
-        };
-    })();
 
     const iconColorClassName = background === 'bf2023' ? 'color-norm' : 'color-primary';
     const features = [
@@ -825,7 +811,10 @@ const Step1 = ({
             return;
         }
         if (options.cycle === CYCLE.MONTHLY) {
-            if (cycles.includes(CYCLE.FIFTEEN)) {
+            if (cycleData.cycles.includes(CYCLE.EIGHTEEN)) {
+                return CYCLE.EIGHTEEN;
+            }
+            if (cycleData.cycles.includes(CYCLE.FIFTEEN)) {
                 return CYCLE.FIFTEEN;
             }
             return CYCLE.YEARLY;
@@ -840,13 +829,13 @@ const Step1 = ({
 
     const handleCloseUpsellModal = () => {
         handleUpdate('plan');
-        if (!(options.planIDs[PLANS.VPN] || options.planIDs[PLANS.VPN_PASS_BUNDLE])) {
+        if (![PLANS.VPN, PLANS.VPN_PASS_BUNDLE, PLANS.VPN2024].some((plan) => options.planIDs[plan])) {
             withLoadingPaymentDetails(
                 handleOptimistic({
                     planIDs: {
                         [PLANS.VPN]: 1,
                     },
-                    cycle: cycles[0] || DEFAULT_CYCLE,
+                    cycle: cycleData.cycles[0] || DEFAULT_CYCLE,
                 })
             ).catch(noop);
         }
@@ -1125,10 +1114,10 @@ const Step1 = ({
                                             withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
                                             accountDetailsRef.current?.scrollInto('email');
                                         }}
-                                        upsellCycle={upsellCycle}
+                                        upsellCycle={cycleData.upsellCycle}
                                         cycle={options.cycle}
                                         currency={options.currency}
-                                        cycles={cycles}
+                                        cycles={cycleData.cycles}
                                         onChangeCycle={(cycle, upsellFrom) => {
                                             handleUpdate('plan');
                                             setToggleUpsell(undefined);

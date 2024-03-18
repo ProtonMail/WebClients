@@ -590,7 +590,9 @@ export const VPN_CONNECTIONS = 10;
 
 export enum CYCLE {
     MONTHLY = 1,
+    THREE = 3,
     YEARLY = 12,
+    EIGHTEEN = 18,
     TWO_YEARS = 24,
     THIRTY = 30,
     FIFTEEN = 15,
