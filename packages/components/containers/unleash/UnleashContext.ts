@@ -6,7 +6,6 @@ enum CommonFeatureFlag {
     ColorPerEventWeb = 'ColorPerEventWeb',
     AutoReloadPage = 'AutoReloadPage',
     DisableElectronMail = 'DisableElectronMail',
-    SignedInAccountRecovery = 'SignedInAccountRecovery',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
