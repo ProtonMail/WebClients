@@ -14,17 +14,9 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
-    isOrgSpamBlockListEnabled: boolean;
-    isOrgTwoFactorEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({
-    user,
-    organization,
-    subscription,
-    isOrgSpamBlockListEnabled,
-    isOrgTwoFactorEnabled,
-}: Props) => {
+export const getOrganizationAppRoutes = ({ user, organization, subscription }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -130,7 +122,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Organization filters`,
                 to: '/organization-filters',
                 icon: 'filter',
-                available: !hasVpnOrPassB2BPlan && (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
+                available: !hasVpnOrPassB2BPlan && (hasOrganizationKey || hasOrganization),
                 subsections: [
                     {
                         text: c('Title').t`Spam, block, and allow lists`,
@@ -142,11 +134,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Authentication security`,
                 to: '/authentication-security',
                 icon: 'shield',
-                available:
-                    (hasOrganizationKey || hasOrganization) &&
-                    organization &&
-                    organization.MaxMembers > 1 &&
-                    isOrgTwoFactorEnabled,
+                available: (hasOrganizationKey || hasOrganization) && organization && organization.MaxMembers > 1,
                 subsections: [
                     {
                         id: 'two-factor-authentication-users',
