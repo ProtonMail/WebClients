@@ -451,6 +451,9 @@
       "No": [
         "Ne"
       ],
+      "No, thanks": [
+        "Ne, hvala"
+      ],
       "OK": [
         "U redu"
       ],
@@ -3198,6 +3201,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } na App Storeu"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } na Play Storeu"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } aplikacija"
       ]
@@ -6402,6 +6411,11 @@
         "Stvorite svoj ${ BRAND_NAME } račun"
       ]
     },
+    "pass_signup_2023: title": {
+      "For individuals": [
+        "Za pojedince"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Pristup odbijen, administratorske ovlasti su ograničene."
@@ -6983,6 +6997,12 @@
       ],
       "Billed for 15 months": [
         "Naplaćuje se svakih 15 mjeseci"
+      ],
+      "Billed for 18 months": [
+        "Naplaćuje se svakih 18 mjeseci"
+      ],
+      "Billed for 3 months": [
+        "Naplaćuje se svakih 3 mjeseci"
       ],
       "Billed for 30 months": [
         "Naplaćuje se svakih 30 mjeseci"
