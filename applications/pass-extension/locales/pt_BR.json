@@ -125,6 +125,9 @@
       "Create login": [
         "Criar login"
       ],
+      "Create new login": [
+        "Criar início de sessão"
+      ],
       "Create note": [
         "Criar nota"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Salvar"
       ],
+      "Save passkey": [
+        "Salvar chave de acesso"
+      ],
       "Saving": [
         "Salvando"
+      ],
+      "Saving passkey...": [
+        "Salvando chave de acesso"
       ],
       "See members": [
         "Ver membros"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua senha do ${ BRAND_NAME } para prosseguir com a exportação"
       ],
+      "Authentication failure: ${ message }": [
+        "Falha na autenticação: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Falha no autenticador"
+      ],
       "Auto-lock could not be activated": [
         "Não foi possível ativar o bloqueio automático"
       ],
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "Erro na criação do item"
       ],
+      "Item does not exist": [
+        "Item não existe"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "O LastPass exportará um arquivo CSV corrompido se algum campo do item contiver vírgulas, aspas ou várias linhas inesperadas."
+      ],
+      "Missing passkey": [
+        "Chave de acesso ausente"
       ],
       "Moving item failed": [
         "Erro ao mover o item"
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixe a extensão ou selecione \"Continuar sem fixar\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Falha no registro: ${ message }"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "Convite desconhecido"
+      ],
+      "Unknown item": [
+        "Item desconhecido"
+      ],
+      "Unknown passkey": [
+        "Chave de acesso desconhecida"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato de arquivo do ${ PASS_APP_NAME } não suportado"
@@ -848,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "A chave de acesso de \"${ username }\" será salva e disponibilizada em dispositivos que tenham ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Acesso confirmado com sucesso"
       ],
@@ -893,6 +926,9 @@
       "Auto-lock successfully disabled": [
         "Bloqueio automático desativado"
       ],
+      "Autosaved on ${ payload.domain }": [
+        "Salvo automaticamente em ${ payload.domain }"
+      ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
@@ -908,8 +944,17 @@
       "Can view items in this vault.": [
         "Pode ver itens para esse cofre."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Escolha uma chave de acesso salva para iniciar sessão em ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Clique no ícone em qualquer momento para abrir."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Feche esta janela para usar uma chave de segurança ou outra chave de acesso."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Feche esta janela para usar outro gerenciador de chaves de acesso."
       ],
       "Congratulations, your access has been confirmed": [
         "Parabéns, seu acesso foi confirmado."
@@ -1118,6 +1163,9 @@
       "Pass Plus trial": [
         "Avaliação do Proton Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Iniciar sessão com chave de acesso"
+      ],
       "Password copied": [
         "Senha copiada"
       ],
@@ -1178,6 +1226,12 @@
       ],
       "Save login": [
         "Salvar início de sessão"
+      ],
+      "Save passkey": [
+        "Salvar chave de acesso"
+      ],
+      "Select an existing login or create a new one.": [
+        "Selecione uma seção existente ou crie uma nova."
       ],
       "Select destination vault": [
         "Selecione o cofre de destino"
@@ -1276,6 +1330,12 @@
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para acessar as chaves de acesso"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar a chave de acesso"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
       ],
@@ -1345,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Você atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases ao fazer upgrade da sua assinatura."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Você atingiu o limite de cartões de crédito que pode criar. Crie um número ilimitado de cartões de crédito ao fazer upgrade da sua assinatura."
       ],
       "You have reached the limit of vaults you can create.": [
         "Você atingiu o limite de cofres que pode criar."
@@ -1650,6 +1713,9 @@
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
       ],
+      "Passkey": [
+        "Chave de acesso"
+      ],
       "Passphrase": [
         "Frase secreta"
       ],
@@ -1790,6 +1856,9 @@
       ],
       "View logs": [
         "Visualizar registros"
+      ],
+      "Website": [
+        "Site"
       ],
       "Websites": [
         "Sites"
@@ -2052,6 +2121,9 @@
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
       ],
+      "Passkey": [
+        "Chave de acesso"
+      ],
       "Password": [
         "Senha"
       ],
@@ -2221,6 +2293,9 @@
       ],
       "No items matching": [
         "Nenhum item correspondente"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Não foram encontradas chaves de acesso. Salve suas chaves de acesso no ${ PASS_APP_NAME } para se conectar a ${ domain }."
       ],
       "No password manager selected": [
         "Nenhum gerenciador de senhas selecionado"

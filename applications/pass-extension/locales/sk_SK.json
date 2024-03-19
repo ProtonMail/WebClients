@@ -125,6 +125,9 @@
       "Create login": [
         "Vytvoriť prihlásenie"
       ],
+      "Create new login": [
+        "Vytvoriť nové prihlásenie"
+      ],
       "Create note": [
         "Vytvoriť poznámku"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Uložiť"
       ],
+      "Save passkey": [
+        "Uložiť prístupový kľúč"
+      ],
       "Saving": [
         "Ukladanie"
+      ],
+      "Saving passkey...": [
+        "Ukladá sa prístupový kľúč..."
       ],
       "See members": [
         "Zobraziť členov"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli pokračovať v exporte"
       ],
+      "Authentication failure: ${ message }": [
+        "Zlyhanie overenia: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Zlyhanie overenia"
+      ],
       "Auto-lock could not be activated": [
         "Automatické uzamknutie nebolo možné aktivovať"
       ],
@@ -654,8 +669,14 @@
       "Item creation failed": [
         "Vytvorenie položky zlyhalo"
       ],
+      "Item does not exist": [
+        "Položka neexistuje"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass vyexportuje poškodený CSV súbor, ak niektoré z polí položky obsahuje neočakávané čiarky, úvodzovky alebo viac riadkov."
+      ],
+      "Missing passkey": [
+        "Chýbajúci prístupový kľúč"
       ],
       "Moving item failed": [
         "Presun položky zlyhal"
@@ -671,6 +692,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Pripnite rozšírenie alebo vyberte možnosť „Pokračovať bez pripnutia“, prosím."
+      ],
+      "Registration failure: ${ message }": [
+        "Zlyhanie registrácie: ${ message }"
       ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
@@ -725,6 +749,12 @@
       ],
       "Unknown invite": [
         "Neznáma pozvánka"
+      ],
+      "Unknown item": [
+        "Neznáma položka"
+      ],
+      "Unknown passkey": [
+        "Neznámy prístupový kľúč"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nepodporovaný formát súboru ${ PASS_APP_NAME }"
@@ -837,7 +867,7 @@
         "${ modifiedCount }-krát",
         "${ modifiedCount } -krát",
         "${ modifiedCount } -krát",
-        "${ modifiedCount } -krát"
+        "${ modifiedCount } krát"
       ],
       "${ n } item": [
         "${ n } položka",
@@ -871,6 +901,9 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "K dispozícii je nová verzia ${ PASS_APP_NAME }. Aktualizujte a využívajte najnovšie funkcie a opravy chýb."
+      ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Prístupový kľúč pre \"${ username }\" sa uloží a bude k dispozícii na zariadeniach, kde je nainštalovaný ${ PASS_APP_NAME }."
       ],
       "Access successfully confirmed": [
         "Prístup bol úspešne potvrdený"
@@ -917,6 +950,9 @@
       "Auto-lock successfully disabled": [
         "Automatické uzamknutie bolo úspešne deaktivované"
       ],
+      "Autosaved on ${ payload.domain }": [
+        "Automaticky uložené na ${ payload.domain }"
+      ],
       "Built in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
       ],
@@ -932,8 +968,17 @@
       "Can view items in this vault.": [
         "Môže zobraziť položky v tomto trezore"
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Vyberte uložený prístupový kľúč na prihlásenie do ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Kliknutím na ikonu ju kedykoľvek otvoríte."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Zatvorte toto okno pre použitie bezpečnostného kľúča alebo iného prístupového kľúča."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Zatvorte toto okno pre použitie iného správcu prístupových kľúčov."
       ],
       "Congratulations, your access has been confirmed": [
         "Blahoželáme, váš prístup bol potvrdený"
@@ -1148,6 +1193,9 @@
       "Pass Plus trial": [
         "Skúšobná verzia Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Prihlásenie prístupovým kľúčom"
+      ],
       "Password copied": [
         "Heslo skopírované"
       ],
@@ -1210,6 +1258,12 @@
       ],
       "Save login": [
         "Uložiť prihlásenie"
+      ],
+      "Save passkey": [
+        "Uložiť prístupový kľúč"
+      ],
+      "Select an existing login or create a new one.": [
+        "Vyberte existujúce prihlásenie alebo vytvorte nové."
       ],
       "Select destination vault": [
         "Vyberte cieľový trezor"
@@ -1309,6 +1363,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre prístup k svojim prístupovým kľúčom"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre uloženie tohto prístupového kľúča"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
@@ -1690,6 +1750,9 @@
       "Oldest to newest": [
         "Od najstaršieho po najnovšie"
       ],
+      "Passkey": [
+        "Prístupový kľúč"
+      ],
       "Passphrase": [
         "Prístupová fráza"
       ],
@@ -1830,6 +1893,9 @@
       ],
       "View logs": [
         "Zobraziť záznamy"
+      ],
+      "Website": [
+        "Webová stránka"
       ],
       "Websites": [
         "Webové stránky"
@@ -2095,6 +2161,9 @@
       ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
+      ],
+      "Passkey": [
+        "Prístupový kľúč"
       ],
       "Password": [
         "Heslo"

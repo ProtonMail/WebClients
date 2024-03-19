@@ -125,6 +125,9 @@
       "Create login": [
         "შესვლის ჩანაწერის შექმნა"
       ],
+      "Create new login": [
+        "ახალი მომხმარებლის შექმნა"
+      ],
       "Create note": [
         "შექმენით ჩანაწერი"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "შენახვა"
       ],
+      "Save passkey": [
+        "წვდომის გასაღების შენახვა"
+      ],
       "Saving": [
         "დაზოგვა"
+      ],
+      "Saving passkey...": [
+        "წვდომის გასაღების შენახვა..."
       ],
       "See members": [
         "წევრების ნახვა"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი ${ BRAND_NAME }-ის, პაროლი, რომ გატანა გაგრძელდეს"
       ],
+      "Authentication failure: ${ message }": [
+        "ავთენტიკაცია ჩავარდა: ${ message }"
+      ],
+      "Authenticator failure": [
+        "ავთენტიკატორის ჩავარდნა"
+      ],
       "Auto-lock could not be activated": [
         "ავტომატური დაბლოკვის ჩართვა შეუძლებელია"
       ],
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "ელემენტის შექმნის შეცდომა"
       ],
+      "Item does not exist": [
+        "ელემენტი არ არსებობს"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "თუ რომელიმე თქვენი ჩანაწერის ველი შეიცავს ისეთ სიმბოლოებს, როგორიცაა მძიმე, წერტილი, ბრჭყალები ან ერთზე მეტი ხაზი, LastPass დაზიანებულ CSV ფაილს ჩაწერს"
+      ],
+      "Missing passkey": [
+        "წვდომის გასაღები მითითებული არაა"
       ],
       "Moving item failed": [
         "ელემენტის გადატანის შეცდომა"
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "მიამაგრეთ გაფართოება ან აირჩიეთ \"გაგრძელება მიმაგრების გარეშე\"."
+      ],
+      "Registration failure: ${ message }": [
+        "რეგისტრაცია ჩავარდა: ${ message }"
       ],
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "უცნობი მოწვევა"
+      ],
+      "Unknown item": [
+        "უცნობი ელემენტი"
+      ],
+      "Unknown passkey": [
+        "უცნობი წვდომის გასაღები"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
@@ -848,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "წვდომის გასაღები \"${ username }\" შენახული და ხელმისაწვდომი იქნება მოწყობილობებზე, სადაც ${ PASS_APP_NAME }-ია დაყენებული."
+      ],
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
       ],
@@ -893,6 +926,9 @@
       "Auto-lock successfully disabled": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო"
       ],
+      "Autosaved on ${ payload.domain }": [
+        "ავტომატურად შენახულია ბმულზე ${ payload.domain }"
+      ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -908,8 +944,17 @@
       "Can view items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების დათვალიერება."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "აირჩიეთ შენახული წვდომის გასაღები ${ domain }-ში შესასვლელად"
+      ],
       "Click the icon to open it anytime.": [
         "მის გასახსნელად ნებისმიერ დროს შეგიძლიათ, ხატულაზე დააწკაპუნოთ."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "დახურეთ ეს ფანჯარა წვდომის უსაფრთხოების გასაღების ან სხვა წვდომის გასაღების გამოსაყენებლად."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "დახურეთ ეს ფანჯარა, რომ სხვა საკვანძო გასაღების მმართველი გამოიყენოთ."
       ],
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
@@ -1118,6 +1163,9 @@
       "Pass Plus trial": [
         "Pass Plus-ის საცდელი"
       ],
+      "Passkey sign-in": [
+        "შესვლა წვდომის გასაღებით"
+      ],
       "Password copied": [
         "პაროლი დაკოპირდა"
       ],
@@ -1178,6 +1226,12 @@
       ],
       "Save login": [
         "შესვლის დეტალების დამახსოვრება"
+      ],
+      "Save passkey": [
+        "წვდომის გასაღების შენახვა"
+      ],
+      "Select an existing login or create a new one.": [
+        "აირჩიეთ არსებული შესვლის დეტალი ან შექმენით ახალი."
       ],
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
@@ -1276,6 +1330,12 @@
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით თქვენს წვდომის გასაღებთან წვდომისთვის"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით, რომ შეინახოთ ეს წვდომის გასაღები"
+      ],
       "Unlock it with your PIN to access the settings": [
         "პარამეტრებთან წვდომისთვის საჭიროა მისი განბლოკვა PIN კოდით"
       ],
@@ -1345,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "მიაღწიეთ შესაძლო ფსევდონიმების რაოდენობს ზღვარს. სატარიფო გეგმის აწევის შემთხვევაში ფსევდონიმების რაოდენობა უსაზღვროა."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "მიაღწიეთ შესაძლო საკრედიტო ბარათების რაოდენობის ზღვარს. სატარიფო გეგმის აწევის შემთხვევაში საკრედიტო ბარათების რაოდენობა უსაზღვროა."
       ],
       "You have reached the limit of vaults you can create.": [
         "მიაღწიეთ თქვენთვის შესაძლო საცავების რაოდენობის ლიმიტს."
@@ -1650,6 +1713,9 @@
       "Oldest to newest": [
         "უძველესიდან ახლისკენ"
       ],
+      "Passkey": [
+        "წვდომის გასაღები"
+      ],
       "Passphrase": [
         "საკვანძო ფრაზა"
       ],
@@ -1790,6 +1856,9 @@
       ],
       "View logs": [
         "ჟურნალის ნახვა"
+      ],
+      "Website": [
+        "საიტი"
       ],
       "Websites": [
         "ვებსაიტები"
@@ -2052,6 +2121,9 @@
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
       ],
+      "Passkey": [
+        "წვდომის გასაღები"
+      ],
       "Password": [
         "პაროლი"
       ],
@@ -2221,6 +2293,9 @@
       ],
       "No items matching": [
         "ელემენტები არ ემთხვევა"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "შესვლის გასაღებების გარეშე. შეინახეთ თქვენი შესვლის გასაღებები ${ PASS_APP_NAME }-ში, ${ domain }-ში შესასვლელად."
       ],
       "No password manager selected": [
         "პაროლების მმართველი არჩეული არაა"

@@ -1,800 +1,809 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "sv_SE"
+    "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
+    "language": "sl_SL"
   },
   "contexts": {
     "Action": {
       "Account": [
-        "Konto"
+        "Račun"
       ],
       "Account settings": [
-        "Kontoinställningar"
+        "Nastavitve računa"
       ],
       "Add": [
-        "Lägg till"
+        "Dodaj"
       ],
       "Add current URL": [
-        "Lägg till nuvarande URL"
+        "Dodajte trenutni URL"
       ],
       "Add domain to pause list": [
-        "Lägg till domän i pauslista"
+        "Dodajte domeno na seznam za zaustavitev"
       ],
       "Add more": [
-        "Lägg till fler"
+        "Dodaj več"
       ],
       "Add new item": [
-        "Lägg till nytt objekt"
+        "Dodaj nov predmet"
       ],
       "Advanced": [
-        "Avancerad"
+        "Napredno"
       ],
       "Advanced options": [
-        "Avancerade alternativ"
+        "Napredne nastavitve"
       ],
       "Authenticate": [
-        "Autentisera"
+        "Preverjanje pristnosti"
       ],
       "Back": [
-        "Tillbaka"
+        "Nazaj"
       ],
       "Bulk delete items from trash": [
-        "Massradera objekt från papperskorg"
+        "Množično brisanje predmetov iz smetnjaka"
       ],
       "Bulk move items to another vault": [
-        "Massflytta objekt till annat valv"
+        "Množično premikanje predmetov v drug trezor"
       ],
       "Bulk move items to trash": [
-        "Massflytta objekt till papperskorg"
+        "Množično premikanje predmetov v koš"
       ],
       "Bulk restore items from trash": [
-        "Massåterställ objekt från papperskorg"
+        "Množična obnovitev elementov iz smetnjaka"
       ],
       "Bulk select items": [
-        "Välj flera objekt"
+        "Množično izberite predmete"
       ],
       "Cancel": [
-        "Avbryt"
+        "Prekliči"
       ],
       "Change": [
-        "Ändra"
+        "Spremeni"
       ],
       "Choose a file or drag it here": [
-        "Välj en fil eller dra den hit"
+        "Izberite datoteko ali jo povlecite sem"
       ],
       "Clear": [
-        "Rensa"
+        "Počisti"
       ],
       "Clear search": [
-        "Rensa sök"
+        "Počisti iskanje"
       ],
       "Close": [
-        "Stäng"
+        "Zapri"
       ],
       "Close advanced options": [
-        "Stäng avancerade alternativ"
+        "Zapri napredne možnosti"
       ],
       "Close navigation": [
-        "Stäng navigering"
+        "Zapri krmarjenje"
       ],
       "Confirm": [
-        "Bekräfta"
+        "Potrdi"
       ],
       "Confirm access": [
-        "Bekräfta åtkomst"
+        "Potrdite dostop"
       ],
       "Connect your ${ BRAND_NAME } Account": [
-        "Anslut ditt ${ BRAND_NAME }-konto"
+        "Povežite svoj račun ${ BRAND_NAME }"
       ],
       "Continue": [
-        "Fortsätt"
+        "Nadaljuj"
       ],
       "Continue without pinning": [
-        "Fortsätt utan att fästa"
+        "Nadaljujte brez pripenjanja"
       ],
       "Copy & fill in": [
-        "Kopiera och fyll i"
+        "Kopirajte in izpolnite"
       ],
       "Copy and close": [
-        "Kopiera och stäng"
+        "Kopiraj in zapri"
       ],
       "Copy to clipboard": [
-        "Kopiera till urklipp"
+        "Kopiraj v odložišče"
       ],
       "Create": [
-        "Skapa"
+        "Ustvari"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Skapa ett ${ BRAND_NAME }-konto"
+        "Ustvarite svoj račun ${ BRAND_NAME }."
       ],
       "Create a ${ BRAND_NAME } Account": [
-        "Skapa ett ${ BRAND_NAME }-konto"
+        "Ustvarite račun ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
-        "Skapa ett nytt valv att dela"
+        "Ustvarite nov trezor za skupno rabo"
       ],
       "Create alias": [
-        "Skapa alias"
+        "Ustvari vzdevek"
       ],
       "Create an account": [
-        "Skapa ett konto"
+        "Ustvarite račun"
       ],
       "Create card": [
-        "Skapa kort"
+        "Ustvari kartico"
       ],
       "Create login": [
-        "Skapa inloggning"
+        "Ustvarite prijavo"
       ],
       "Create new login": [
-        "Skapa ny inloggning"
+        "Ustvarite novo prijavo"
       ],
       "Create note": [
-        "Skapa anteckning"
+        "Ustvari opombo"
       ],
       "Create vault": [
-        "Skapa valv"
+        "Ustvari nov trezor"
       ],
       "Creating vault": [
-        "Skapar valv"
+        "Ustvari trezor"
       ],
       "Customize": [
-        "Anpassa"
+        "Prilagodi"
       ],
       "Delete": [
-        "Ta bort"
+        "Izbriši"
       ],
       "Delete alias": [
-        "Ta bort alias"
+        "Izbriši vzdevek"
       ],
       "Delete all": [
-        "Ta bort alla"
+        "Izbriši vse"
       ],
       "Delete password": [
-        "Ta bort lösenord"
+        "Izbriši geslo"
       ],
       "Delete permanently": [
-        "Ta bort permanent"
+        "Trajno izbriši"
       ],
       "Delete vault": [
-        "Ta bort valv"
+        "Izbriši trezor"
       ],
       "Deselect": [
-        "Avmarkera"
+        "Prekliči izbor"
       ],
       "Disable autosave on this website": [
-        "Inaktivera spara automatiskt på denna webbplats"
+        "Onemogoči samodejno shranjevanje na tem spletnem mestu"
       ],
       "Discard": [
-        "Avfärda"
+        "Zavrzi"
       ],
       "Dismiss": [
-        "Avfärda"
+        "Opusti"
       ],
       "Do not show on this website": [
-        "Visa inte på denna webbplats"
+        "Ne prikaži na tej spletni strani"
       ],
       "Do not suggest on this website": [
-        "Föreslå inte på denna webbplats"
+        "Ne predlagaj na tem spletnem mestu"
       ],
       "Done": [
-        "Klar"
+        "Opravljeno"
       ],
       "Download this CSV template": [
-        "Ladda ner denna CSV-mall"
+        "Prenesite to predlogo CSV"
       ],
       "Edit": [
-        "Redigera"
+        "Uredi"
       ],
       "Edit vault": [
-        "Redigera valv"
+        "Uredi trezor"
       ],
       "Export": [
-        "Exportera"
+        "Izvozi"
       ],
       "Feedback & Help": [
-        "Feedback och hjälp"
+        "Povratne informacije in pomoč"
       ],
       "Fill password": [
-        "Fyll lösenord"
+        "Izpolni geslo"
       ],
       "Filter vault items": [
-        "Filtrera valvobjekt"
+        "Filtrirajte predmete v trezorju"
       ],
       "Generate alias": [
-        "Generera alias"
+        "Ustvarjanje vzdevka"
       ],
       "Generate password": [
-        "Generera lösenord"
+        "Ustvari geslo"
       ],
       "Generated passwords": [
-        "Genererade lösenord"
+        "Generiraj geslo"
       ],
       "Get mobile apps": [
-        "Skaffa mobilappar"
+        "Priskrbite si mobilno aplikacijo"
       ],
       "Help us improve": [
-        "Hjälp oss att förbättra"
+        "Pomagajte nam izboljšati"
       ],
       "Hide": [
-        "Dölj"
+        "Skrij"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "Hur exporterar jag mina data från ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+        "Kako izvozim svoje podatke iz ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Hur man använder ${ PASS_APP_NAME }"
+        "Kako uporabljati ${ PASS_APP_NAME }"
       ],
       "Import": [
-        "Importera"
+        "Uvoz"
       ],
       "Import your passwords": [
-        "Importera dina lösenord"
+        "Uvozi gesla"
       ],
       "Importing": [
-        "Importerar"
+        "Uvažanje"
       ],
       "Invite others": [
-        "Bjud in andra"
+        "Povabi druge"
       ],
       "Join shared vault": [
-        "Gå med delat valv"
+        "Pridružite se skupnemu trezorju"
       ],
       "Learn more": [
-        "Lär dig mer"
+        "Več o tem"
       ],
       "Leave": [
-        "Lämna"
+        "Zapusti"
       ],
       "Leave vault": [
-        "Lämna valv"
+        "Zapusti trezor"
       ],
       "Lock extension": [
-        "Lås tillägg"
+        "Podaljšek ključavnice"
       ],
       "Make admin": [
-        "Gör till admin"
+        "Ustvari administratorja"
       ],
       "Make editor": [
-        "Gör till redaktör"
+        "Ustvari urednika"
       ],
       "Make viewer": [
-        "Gör till läsare"
+        "Ustvari obiskovalca"
       ],
       "Manage access": [
-        "Hantera åtkomst"
+        "Upravljanje dostopa"
       ],
       "Manually sync your data": [
-        "Synkronisera dina data manuellt"
+        "Ročno sinhroniziraj vaše podatke"
       ],
       "More info: ${ safeTitle }": [
-        "Mer information: ${ safeTitle }"
+        "Več informacij: ${ safeTitle }"
       ],
       "More options": [
-        "Fler alternativ"
+        "Več možnosti"
       ],
       "Move": [
-        "Flytta"
+        "Premakni"
       ],
       "Move all items": [
-        "Flytta alla objekt"
+        "Premakni vse predmete"
       ],
       "Move to a shared vault": [
-        "Flytta till ett delat valv"
+        "Premakni v skupni trezor"
       ],
       "Move to another vault": [
-        "Flytta till annat valv"
+        "Premakni se v drug trezor"
       ],
       "Move to Trash": [
-        "Flytta till papperskorg"
+        "Premakni v smetnjak"
       ],
       "Move to trash": [
-        "Flytta till papperskorg"
+        "Premakni v smetnjak"
       ],
       "Multiple select": [
-        "Välj flera"
+        "Več izbir"
       ],
       "Not now": [
-        "Inte nu"
+        "Ne zdaj"
       ],
       "OK": [
-        "OK"
+        "V redu"
       ],
       "Open in a window": [
-        "Öppna i ett fönster"
+        "Odprite v oknu"
       ],
       "Open navigation": [
-        "Öppna navigering"
+        "Odpri krmarjenje"
       ],
       "Open web app": [
-        "Öppna webbapp"
+        "Odpri spletno aplikacijo"
       ],
       "Pass for Android": [
-        "Pass för Android"
+        "Pass za Android"
       ],
       "Pass for iOS": [
-        "Pass för iOS"
+        "ProtonPass za iOS"
       ],
       "Pin item": [
-        "Fäst objekt"
+        "Pripni predmet"
       ],
       "Refresh the page": [
-        "Uppdatera sidan"
+        "Osveži stran"
       ],
       "Regenerate": [
-        "Generera igen"
+        "Regeneriraj"
       ],
       "Reject": [
-        "Avvisa"
+        "Zavrni"
       ],
       "Reject invitation": [
-        "Avböj inbjudan"
+        "Zavrni povabilo"
       ],
       "Reload extension": [
-        "Ladda om tillägg"
+        "Ponovno naloži razširitev"
       ],
       "Remove": [
-        "Ta bort"
+        "Odstrani"
       ],
       "Remove access": [
-        "Ta bort åtkomst"
+        "Odstrani dostop"
       ],
       "Remove member": [
-        "Ta bort medlem"
+        "Odstrani člana"
       ],
       "Request a feature": [
-        "Begär en funktion"
+        "Zahtevaj funkcijo"
       ],
       "Resend invitation": [
-        "Skicka inbjudan igen"
+        "Ponovno pošlji povabilo"
       ],
       "Restore": [
-        "Återställ"
+        "Obnovi"
       ],
       "Restore item": [
-        "Återställ objekt"
+        "Obnovi predmet"
       ],
       "Retry": [
-        "Försök igen"
+        "Poskusite znova"
       ],
       "Save": [
-        "Spara"
+        "Shrani"
       ],
       "Save passkey": [
-        "Spara passkey"
+        "Shrani identifikacijski ključ"
       ],
       "Saving": [
-        "Sparar"
+        "Shranjeno"
       ],
       "Saving passkey...": [
-        "Sparar passkey …"
+        "Shranjevanje identifikacijskega ključa ..."
       ],
       "See members": [
-        "Se medlemmar"
+        "Ogled članov"
       ],
       "Send invite": [
-        "Skicka inbjudan"
+        "Pošlji povabilo"
       ],
       "Send us a message": [
-        "Skicka oss ett meddelande"
+        "Pošlji sporočilo"
       ],
       "Set access level": [
-        "Ställ in åtkomstnivå"
+        "Nastavite raven dostopa"
       ],
       "Share": [
-        "Dela"
+        "Deli"
       ],
       "Share this vault": [
-        "Dela detta valv"
+        "Delite ta trezor"
       ],
       "Share vault": [
-        "Dela valv"
+        "Skupni trezor"
       ],
       "Show": [
-        "Visa"
+        "Pokaži"
       ],
       "Show advanced options": [
-        "Visa avancerade alternativ"
+        "Prikaži napredne možnosti"
       ],
       "Sign back in": [
-        "Logga in igen"
+        "Ponovno se prijavite"
       ],
       "Sign in": [
-        "Logga in"
+        "Prijava"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Logga in med ${ BRAND_NAME }"
+        "Prijavljeni ste z ${ BRAND_NAME }."
       ],
       "Sign out": [
-        "Logga ut"
+        "Odjava"
       ],
       "Sort vault items": [
-        "Sortera valvobjekt"
+        "Sortiraj predmete v trezorju"
       ],
       "Submit": [
-        "Skicka"
+        "Pošlji"
       ],
       "Submitting report...": [
-        "Skickar rapport..."
+        "Pošiljanje poročila..."
       ],
       "Transfer ownership": [
-        "Överför ägarskap"
+        "Prenos lastništva"
       ],
       "Trash": [
-        "Lägg i papperskorg"
+        "Smeti"
       ],
       "Try again": [
-        "Försök igen"
+        "Poskusi znova"
       ],
       "Unpin item": [
-        "Lossa objekt"
+        "Odpni predmet"
       ],
       "Update": [
-        "Uppdatera"
+        "Posodobi"
       ],
       "Update vault": [
-        "Uppdatera valv"
+        "Posodobi trezor"
       ],
       "Updating": [
-        "Uppdaterar"
+        "Posodabljanje"
       ],
       "Upgrade": [
-        "Uppgradera"
+        "Nadgradi"
       ],
       "Upgrade now": [
-        "Uppgradera nu"
+        "Nadgradi zdaj"
       ],
       "Upgrade now to share with more people": [
-        "Uppgradera nu för att dela med fler personer"
+        "Nadgradite zdaj za skupno rabo z več ljudmi"
       ],
       "View app logs": [
-        "Visa apploggar"
+        "Oglejte si dnevnike aplikacij"
       ],
       "View history": [
-        "Visa historik"
+        "Pokaži zgodovino"
       ],
       "View item history": [
-        "Visa objekthistorik"
+        "Prikaži zgodovino predmeta"
       ],
       "View older history": [
-        "Visa äldre historik"
+        "Prikaži starejšo zgodovino"
       ],
       "Write us on Reddit": [
-        "Skriv till oss på Reddit"
+        "Pišite nam na Reddit"
       ],
       "Write us on Twitter": [
-        "Skriv till oss på Twitter"
+        "Pišite nam na X (Twitter)"
       ],
       "Your password manager not here? Request it.": [
-        "Är din lösenordshanterare inte här? Begär det."
+        "Vašega upravitelj gesel ni tukaj? Zahtevajte ga."
       ]
     },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Spara Smart. Få ett års Pass Plus för endast ${ relativePrice } per månad."
+        "Varčuj pametno. Pridobite leto Pass Plus za samo ${ relativePrice } na mesec."
       ]
     },
     "bf2023: Label": {
       "Get the deal": [
-        "Ta del av erbjudandet"
+        "Izkoristite posebno ponudbo"
       ]
     },
     "bf2023: Title": {
       "Black Friday offer": [
-        "Black Friday-erbjudande"
+        "Ponudba črni petek"
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME } Namizna aplikacija"
       ]
     },
     "Button": {
       "More info": [
-        "Mer info"
+        "Več informacij"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Mimimera"
+        "Strni"
       ],
       "Expand": [
-        "Expandera"
+        "Razširi"
       ]
     },
     "Description": {
       "A checked box means the feature is disabled.": [
-        "En ikryssad ruta betyder att funktionen är inaktiverad."
+        "Potrjeno polje pomeni, da je funkcija onemogočena."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
+        "Seznam domen, kjer se nekatere samodejne funkcije v ${ PASS_SHORT_APP_NAME } (samodejno izpolnjevanje, samodejni predlogi, samodejno shranjevanje) ne smejo izvajati.${ infoText }"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
+        "Datoteke ${ provider } ni bilo mogoče razčleniti. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Alternativ för alias kunde inte lösas"
+        "Možnosti vzdevka ni bilo mogoče razrešiti"
       ],
       "Authentication error": [
-        "Autentiseringsfel"
+        "Napaka pri preverjanju pristnosti"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Autentisering misslyckades. Bekräfta ditt lösenord för ${ BRAND_NAME } för att fortsätta med exporten"
+        "Preverjanje ni uspelo. Če želite nadaljevati z izvozom, potrdite svoje geslo ${ BRAND_NAME }"
       ],
       "Authentication failure: ${ message }": [
-        "Autentiseringsfel: ${ message }"
+        "Neuspešno preverjanje pristnosti: ${ message }"
       ],
       "Authenticator failure": [
-        "Autentiseringsfel"
+        "Napaka pri preverjanju pristnosti"
       ],
       "Auto-lock could not be activated": [
-        "Automatisk låsning kunde inte aktiveras"
+        "Samodejnega zaklepanja ni bilo mogoče aktivirati"
       ],
       "Auto-lock could not be disabled": [
-        "Automatisk låsning kunde inte inaktiveras"
+        "Samodejnega zaklepanja ni bilo mogoče onemogočiti"
       ],
       "Cannot create alias (${ error }).": [
-        "Kan inte skapa alias (${ error })."
+        "Vzdevka ni mogoče ustvariti (${ error })."
       ],
       "Cannot send invitation at the moment": [
-        "Kan inte skicka inbjudan just nu",
-        "Kan inte skicka inbjudningar just nu"
+        "Trenutno ni mogoče poslati povabila",
+        "Trenutno ni mogoče poslati povabil\n​",
+        "Trenutno ni mogoče poslati povabil",
+        "Trenutno ni mogoče poslati povabil"
       ],
       "Cannot send invitations at the moment": [
-        "Kan inte skicka inbjudan just nu"
+        "Trenutno ni mogoče poslati povabil\n​"
       ],
       "Could not confirm this invite at the moment": [
-        "Kunde inte bekräfta denna inbjudan just nu"
+        "Tega povabila trenutno ni bilo mogoče potrditi"
       ],
       "Could not leave vault.": [
-        "Kunde inte lämna valv."
+        "Ni bilo mogoče zapustiti trezorja."
       ],
       "Could not load recommendations at the moment.": [
-        "Kunde inte ladda rekommendationer just nu."
+        "Priporočil trenutno ni bilo mogoče naložiti."
       ],
       "Could not open created vault": [
-        "Kunde inte öppna skapat valv"
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
       ],
       "Could not open invited vault": [
-        "Kunde inte öppna inbjudet valv"
+        "Trezorja s povabil ni bilo mogoče odpreti"
       ],
       "Could not open updated vault": [
-        "Kunde inte öppna uppdaterat valv"
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
+      ],
+      "Could not resolve share members": [
+        "Članov v skupni rabi ni bilo mogoče razrešiti"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "CSV-fil saknar förväntade rubriker: ${ missingHeaders }"
+        "Datoteka CSV ne vsebuje pričakovanih glav: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Misslyckades dekryptera din exportfil för ${ PASS_APP_NAME }. ${ errorDetail }"
+        "Dešifriranje vaše izvozne datoteke ${ PASS_APP_NAME } ni uspelo. ${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Misslyckades att ta bort objekt"
+        "Brisanje predmeta ni uspelo"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Misslyckades att ta bort valv ”${ payload.content.name }”"
+        "Brisanje trezorja »${ payload.content.name }« ni uspelo"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "Upptäckte ${ errors.length } skadad CSV-rad",
-        "Upptäckte ${ errors.length } skadade CSV-rader"
+        "Odkrita ${ errors.length } poškodovana vrstica CSV",
+        "Odkriti ${ errors.length } poškodovani vrstici CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV"
       ],
       "Editing item failed": [
-        "Misslyckades att redigera objekt"
+        "Urejanje predmeta ni uspelo"
       ],
       "Empty CSV file": [
-        "Tom CSV-fil"
+        "Prazna datoteka CSV"
       ],
       "Emptying trash failed": [
-        "Tömning av papperskorgen misslyckades"
+        "Praznjenje smetnjaka ni uspelo"
       ],
       "Encrypted JSON not supported": [
-        "Krypterad JSON stöds inte"
+        "Šifrirani JSON ni podprt"
       ],
       "Error reporting problem": [
-        "Gick inte rapportera problem"
+        "Napaka pri prijavi težave"
       ],
       "Failed removing the invite.": [
-        "Misslyckades ta bort inbjudan."
+        "Odstranjevanje povabila ni uspelo."
       ],
       "Failed resending invite.": [
-        "Misslyckades skicka inbjudan igen."
+        "Ponovno pošiljanje povabila ni uspelo."
       ],
       "Failed to delete selected items": [
-        "Misslyckades att ta bort markerade objekt"
+        "Izbranih predmetov ni bilo mogoče izbrisati"
       ],
       "Failed to edit user's access.": [
-        "Misslyckades att redigera användaråtkomst."
+        "Uporabnikovega dostopa ni bilo mogoče urediti."
       ],
       "Failed to load item history": [
-        "Misslyckades att ladda objekthistorik"
+        "Neuspešno nalaganje zgodovine predmetov"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
+        "Ni bilo mogoče premakniti vseh elementov iz »${ payload.content.name }«"
       ],
       "Failed to move items": [
-        "Misslyckades att flytta objekt"
+        "Predmetov ni bilo mogoče premakniti"
       ],
       "Failed to move items to trash": [
-        "Misslyckades att flytta objekt till papperskorg"
+        "Predmetov ni bilo mogoče premakniti v smetnjak"
       ],
       "Failed to pin item": [
-        "Misslyckades att fästa objekt"
+        "Predmeta ni bilo mogoče pripeti"
       ],
       "Failed to remove user's access.": [
-        "Misslyckades att ta bort användaråtkomst."
+        "Uporabnikovega dostopa ni bilo mogoče odstraniti."
       ],
       "Failed to restore items from trash": [
-        "Misslyckades att återställa objekt från papperskorg"
+        "Predmetov ni bilo mogoče obnoviti iz smetnjaka"
       ],
       "Failed to transfer this vault's ownership.": [
-        "Misslyckades att överföra detta valvs äganderätt."
+        "Prenos lastništva tega trezorja ni uspel."
       ],
       "Failed to unpin item": [
-        "Misslyckades att lossa objekt"
+        "Predmeta ni bilo mogoče odpeti"
       ],
       "File could not be parsed": [
-        "Fil kunde inte analyseras"
+        "Datoteke ni bilo mogoče razčleniti"
       ],
       "File does not match expected format": [
-        "Fil matchar inte förväntat format"
+        "Datoteka se ne ujema s pričakovano obliko"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import misslyckades för valv “${ vaultData.name }“: ${ description }"
+        "Uvoz za trezor \"${ vaultData.name }\" : ${ description } ni uspel"
       ],
       "Importing items failed": [
-        "Misslyckades att importera objekt"
+        "Uvoz predmetov ni uspel"
       ],
       "Invalid password manager": [
-        "Ogiltig lösenordshanterare"
+        "Neveljaven upravitelj gesel"
       ],
       "Invalid URL": [
-        "Ogiltig URL"
+        "Neveljaven URL"
       ],
       "Invitation could not be accepted": [
-        "Inbjudan kan inte accepteras"
+        "Povabila ni bilo mogoče sprejeti"
       ],
       "Invitation could not be rejected": [
-        "Inbjudan kunde inte avvisas"
+        "Povabila ni bilo mogoče zavrniti"
       ],
       "Item content cannot exceed 40KB": [
-        "Objektinnehåll får inte överstiga 40 kB"
+        "Vsebina predmeta ne sme presegati 40 KB"
       ],
       "Item creation failed": [
-        "Misslyckades att skapa objekt"
+        "Ustvarjanje predmeta ni uspelo"
       ],
       "Item does not exist": [
-        "Objekt finns inte"
+        "Predmet ne obstaja"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass kommer att exportera en korrupt CSV-fil om något av dina objektfält innehåller oväntade kommatecken, citattecken eller flera rader"
+        "LastPass bo izvozil poškodovano datoteko CSV, če katero od polj vašega elementa vsebuje nepričakovane vejice, narekovaje ali več vrstic"
       ],
       "Missing passkey": [
-        "Saknar passkey"
+        "Manjka identifikacijski ključ"
       ],
       "Moving item failed": [
-        "Misslyckades att flytta objekt"
+        "Premikanje predmeta ni uspelo"
       ],
       "Passphrase is incorrect": [
-        "Lösenfras är fel"
+        "Geslo ni pravilno"
       ],
       "PIN codes do not match": [
-        "PIN-koder matchar inte"
+        "Kodi PIN se ne ujemata"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Bevilja ${ PASS_APP_NAME } de nödvändiga tilläggsbehörigheterna för att fortsätta"
+        "Če želite nadaljevati, podelite ${ PASS_APP_NAME } potrebna dovoljenja za razširitev"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Fäst tillägget eller välj “Fortsätt utan att fästa“."
+        "Pripnite razširitev ali izberite »Nadaljuj brez pripenjanja«."
       ],
       "Registration failure: ${ message }": [
-        "Registreringsfel: ${ message }"
+        "Neuspešna registracija: ${ message }"
       ],
       "Request timed out": [
-        "Förfrågan gjorde timeout"
+        "Zahteva se je iztekla"
       ],
       "Requesting alias options failed": [
-        "Misslyckades begära aliasalternativ"
+        "Zahtevanje možnosti vzdevka ni uspelo"
       ],
       "Restoring item failed": [
-        "Misslyckades att återställa objekt"
+        "Obnavljanje predmeta ni uspelo"
       ],
       "Restoring trashed items failed": [
-        "Misslyckades återställa kastade objekt"
+        "Obnovitev elementov v smetnjaku ni uspela"
       ],
       "Settings update failed": [
-        "Misslyckades att uppdatera inställningar"
+        "Napaka pri posodobitvi nastavitev"
       ],
       "Signature verification failed": [
-        "Signaturverifiering misslyckades"
+        "Preverjanje podpisa ni uspelo"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Några valv är inte längre åtkomliga på grund av en lösenordsåterställning. Återaktivera dina kontonycklar för att få åtkomst igen. ${ reactivateLink }"
+        "Nekateri trezorji niso več dostopni zaradi ponastavitve gesla. Ponovno aktivirajte ključe računa, da ponovno pridobite dostop. ${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Något gick fel"
+        "Nekaj je šlo narobe"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Något gick fel. Ladda om tillägget ${ PASS_APP_NAME }. Detta problem har loggats"
+        "Nekaj ​​je šlo narobe. Znova naložite razširitev ${ PASS_APP_NAME }. Ta težava je bila zabeležena"
       ],
       "The file you are trying to import is empty": [
-        "Filen du försöker importera är tom"
+        "Datoteko, ki jo poskušate uvoziti, je prazna"
       ],
       "The URL is in the list": [
-        "URL:en finns i listan"
+        "URL je na seznamu"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "För många misslyckade försök. Logga in igen."
+        "Preveč neuspešnih poskusov. Prosimo, prijavite se znova."
       ],
       "Trashing item failed": [
-        "Borttagning av objekt misslyckades"
+        "Premeščanje elementa v smetnjak ni uspelo"
       ],
       "Unable to boot": [
-        "Kan inte starta om"
+        "Ni mogoče zagnati"
       ],
       "Unable to generate an OTP code for this item": [
-        "Kan inte generera en OTP-kod för detta objekt"
+        "Za ta element ni mogoče ustvariti kode OTP"
       ],
       "Unable to sync": [
-        "Kan inte synkronisera"
+        "Ni mogoče sinhronizirati"
       ],
       "Unknown error": [
-        "Okänt fel"
+        "Neznana napaka"
       ],
       "Unknown invite": [
-        "Okänd inbjudan"
+        "Neznano povabilo"
       ],
       "Unknown item": [
-        "Okänt objekt"
+        "Neznan predmet"
       ],
       "Unknown passkey": [
-        "Okänd passkey"
+        "Neznan identifikacijski ključ"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Filformat ${ PASS_APP_NAME } stöds inte"
+        "Nepodprta oblika datoteke ${ PASS_APP_NAME }"
       ],
       "Unsupported 1Password file format": [
-        "1Password-filformat stöds inte"
+        "Nepodprt format datoteke 1Password"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Misslyckades att uppdatera valv ”${ payload.content.name }”"
+        "Posodabljanje trezorja »${ payload.content.name }« ni uspelo"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Misslyckades att skapa valv ”${ payload.content.name }”"
+        "Ustvarjanje trezorja »${ payload.content.name }« ni uspelo"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "Valv “${ vaultData.name }“ kunde inte skapas"
+        "Trezorja »${ vaultData.name }« ni bilo mogoče ustvariti"
       ],
       "Vault name does not match": [
-        "Valvnamn matchar inte"
+        "Ime trezorja se ne ujema"
       ],
       "Wrong password": [
-        "Fel lösenord"
+        "Napačno geslo"
       ],
       "Wrong PIN code. Try again.": [
-        "Fel PIN-kod. Försök igen."
+        "Napačna koda PIN. Poskusi ponovno."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+        "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Uppdatera sidan eller försök igen senare."
+        "Osvežite stran ali poskusite znova pozneje."
       ],
       "Something went wrong": [
-        "Något gick fel"
+        "Nekaj je šlo narobe"
       ]
     },
     "file size format": {
       "byte": [
-        "byte",
-        "byte"
+        "bajt",
+        "bajta",
+        "bajti",
+        "bajtov"
       ],
       "GB": [
         "GB"
       ],
       "KB": [
-        "KB"
+        "kB"
       ],
       "MB": [
         "MB"
@@ -805,1587 +814,1624 @@
     },
     "file size format, long": {
       "Byte": [
-        "Byte",
-        "Byte"
+        "Bajt",
+        "Bajta",
+        "Bajti",
+        "Bajtov"
       ],
       "Gigabyte": [
-        "Gigabyte",
-        "Gigabyte"
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajti",
+        "Gigabajtov"
       ],
       "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajti",
+        "Kilobajtov"
       ],
       "Megabyte": [
-        "Kilobyte",
-        "Megabyte"
+        "Megabajt",
+        "Megabajta",
+        "Megabajti",
+        "Megabajtov"
       ],
       "Terabyte": [
-        "Terabyte",
-        "Terabyte"
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
       ]
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Uppgradera till ett betalt paket för att skapa flera valv."
+        " Nadgradite na plačljivi načrt, da ustvarite več trezorjev."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Objekt ”${ payload.item.data.metadata.name }” avfärdades"
+        "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
+        "Posodobitev »${ payload.item.data.metadata.name }« je bila opuščena"
       ],
       "${ count } invites successfully sent": [
-        "${ count } inbjudningar skickat"
+        "${ count } povabil je bilo uspešno poslanih"
       ],
       "${ memberCount } member": [
-        "${ memberCount } medlem",
-        "${ memberCount } medlemmar"
+        "${ memberCount } član",
+        "${ memberCount } člani",
+        "${ memberCount } člana",
+        "${ memberCount } člana"
       ],
       "${ modifiedCount } time": [
-        "${ modifiedCount } gång",
-        "${ modifiedCount } gånger"
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat"
       ],
       "${ n } item": [
-        "${ n } objekt",
-        "${ n } objekt"
+        "${ n } predmet",
+        "${ n } predmeti",
+        "${ n } predmeta",
+        "${ n } predmeta"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
+        "${ PASS_APP_NAME } bo prikazal priljubljeno ikono predmeta prek proxyja anonimizirane slike ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
+        "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in kreditne kartice."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
-        "${ PASS_APP_NAME } kommer uppmana dig att spara eller uppdatera inloggningsuppgifter."
+        "${ PASS_APP_NAME } vas bo pozval, da shranite ali posodobite poverilnice."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } kommer föreslå att skapa ett e-postalias på registreringsformulär."
+        "${ PASS_APP_NAME } bo predlagal ustvarjanje e-poštnega vzdevka na obrazcih za prijavo."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } kommer föreslå att skapa starka lösenord på registreringsformulär."
+        "${ PASS_APP_NAME } bo predlagal ustvarjanje močnih gesel na obrazcih za prijavo."
       ],
       "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } dag kvar",
-        "${ trialDaysLeft } dagar kvar"
+        "Še ${ trialDaysLeft } dan",
+        "Še ${ trialDaysLeft } dneva",
+        "Še ${ trialDaysLeft } dni",
+        "Še ${ trialDaysLeft } dni"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."
+        "7 dni, da brezplačno preizkusite vrhunske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
+        "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "En passkey för “${ username }“ kommer att sparas och vara tillgänglig på enheter där ${ PASS_APP_NAME } är installerat."
+        "Identifikacijski ključ za \"${ username }\" bo shranjen in na voljo v napravah, kjer je nameščen ${ PASS_APP_NAME }."
       ],
       "Access successfully confirmed": [
-        "Åtkomst bekräftad"
+        "Dostop je uspešno potrjen"
       ],
       "Access your passwords on the go with our mobile apps.": [
-        "Kom åt dina lösenord när du är på språng med våra mobilappar."
+        "Z našimi mobilnimi aplikacijami dostopajte do svojih gesel na poti."
       ],
       "Admin": [
-        "Admin"
+        "Administrator"
       ],
       "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Efter inaktivitet kommer åtkomst till ${ PASS_APP_NAME } att kräva en PIN-kod för att låsa upp din session. Du kommer att loggas ut efter 3 misslyckade försök."
+        "Po nedejavnosti bo za dostop do ${ PASS_APP_NAME } potrebna koda PIN za odklepanje vaše seje. Po 3 neuspelih poskusih boste odjavljeni."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
+        "Po uspešnem uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
+        "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Alla objekt från “${ payload.content.name }“ flyttades"
+        "Vsi premeti iz »${ payload.content.name }« so bili uspešno premaknjeni"
       ],
       "All items successfully moved": [
-        "Alla objekt flyttades"
+        "Vsi predmeti so uspešno premaknjeni"
       ],
       "All trashed items permanently deleted": [
-        "Alla kastade objekt borttagna permanent"
+        "Vse predmete v smetnjaku trajno izbrisanti"
       ],
       "All trashed items successfully restored": [
-        "Alla kastade objekt återställda"
+        "Vsi predmeti v smetnjaku so bili uspešno obnovljeni"
       ],
       "An item previously shared with you was removed": [
-        "Ett objekt som tidigare delats med dig togs bort"
+        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen"
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Är du säker på att du vill flytta alla objekten från “${ fromVaultName }“ till “${ toVaultName }“?"
+        "Ali ste prepričani, da želite premakniti vse predmete iz »${ fromVaultName }« v »${ toVaultName }«?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "Är du säker på att du vill flytta objekten till “${ name }“?"
+        "Ali ste prepričani, da želite premakniti predmete v \"${ name }\"?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Är du säker på att du vill flytta objektet till “${ name }“?"
+        "Ali ste prepričani, da želite premakniti predmet v \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
-        "Automatisk låsning inaktiverat"
+        "Samodejno zaklepanje je uspešno onemogočeno"
       ],
       "Autosaved on ${ payload.domain }": [
-        "Autosparad på ${ payload.domain }"
+        "Samodejno shranjeno na ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
-        "Inbyggd 2FA-autentisering"
+        "Vgrajen 2FA autentifikator"
       ],
       "Can create, edit, delete, and export items in this vault.": [
-        "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
+        "Lahko ustvarja, ureja, briše in izvaža elemente v tem trezorju."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Kan bevilja och återkalla åtkomst till detta valv, och ta bort det."
+        "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
       ],
       "Can grant and revoke access to this vault.": [
-        "Kan bevilja och återkalla åtkomst till detta valv."
+        "Lahko odobri in prekliče dostop do tega trezorja."
       ],
       "Can view items in this vault.": [
-        "Kan visa objekt i detta valv."
+        "Lahko si ogleda predmete v tem trezorju."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Välj en sparad passkey för att logga in på ${ domain }"
+        "Za prijavo v ${ domain } izberite shranjen identifikacijski ključ"
       ],
       "Click the icon to open it anytime.": [
-        "Klicka på ikonen för att öppna den när som helst."
+        "Kliknite ikono, da jo odprete kadar koli."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Stäng detta fönster för att använda en säkerhetsnyckel eller annan passkey."
+        "Če želite uporabiti varnostni ali drug identifikacijski ključ, zaprite to okno."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Stäng detta fönster för att använda en annan passkey-hanterare."
+        "Za uporabo drugega upravljalca identifikacijskih ključev najprej zaprite to okno."
       ],
       "Congratulations, your access has been confirmed": [
-        "Grattis, din åtkomst har bekräftats"
+        "Čestitamo, vaš dostop je potrjen"
       ],
       "Copied to clipboard": [
-        "Kopierad till urklipp"
+        "Kopirano v odložišče"
       ],
       "Creating alias...": [
-        "Skapar alias..."
+        "Ustvarjanje vzdevka..."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV erbjuder ett bekvämt format för att visa dina data. Men på grund av dess enkelhet kommer vissa data inte att inkluderas (anpassade fält, valvstruktur …). För en fullständig export rekommenderar vi att du använder ett annat format."
+        "CSV ponuja priročno obliko za ogled vaših podatkov. Vendar zaradi enostavnosti nekateri podatki ne bodo vključeni (polja po meri, struktura trezorja ...). Za celoten izvoz priporočamo uporabo drugega formata."
       ],
       "Current version": [
-        "Nuvarande version"
+        "Trenutna različica"
       ],
       "Decrypting your data": [
-        "Dekrypterar dina data"
+        "Dešifriranje vaših podatkov"
       ],
       "Deleted items will be moved here first": [
-        "Borttagna objekt kommer att flyttas hit först"
+        "Izbrisani predmeti bodo najprej premaknjeni sem"
       ],
       "Deleting \"${ payload.content.name }\"": [
-        "Tar bort “${ payload.content.name }“"
+        "Brisanje »${ payload.content.name }«"
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Upptäck ${ PASS_APP_NAME } YouTube-video"
+        "Odkrijte ${ PASS_APP_NAME } Youtube Video"
       ],
       "Drop file here to upload": [
-        "Släpp filer här för att ladda upp"
+        "Spusti datoteko tukaj za nalaganje."
       ],
       "Drop to import": [
-        "Släpp för att importera"
+        "Spusti za uvoz."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Importera enkelt dina befintliga lösenord in till ${ PASS_APP_NAME }."
+        "Preprosto uvozite obstoječa gesla v ${ PASS_APP_NAME }."
       ],
       "Editor": [
-        "Redaktör"
+        "Urejevalnik"
       ],
       "Emptying trash...": [
-        "Tömmer papperskorg..."
+        "Izprazni smetnjak..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Aktivera ${ PASS_APP_NAME } genom att ansluta ditt ${ BRAND_NAME }-konto"
+        "Omogočite ${ PASS_APP_NAME } tako, da povežete svoj račun ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ange verifieringskod. Siffra ${ digit }."
+        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your PIN code": [
-        "Ange din PIN-kod"
+        "Vnesi svojo PIN kodo."
       ],
       "Fill in the CSV with your data": [
-        "Fyll i CSV med dina data"
+        "Izpolnite CSV s svojimi podatki"
       ],
       "Follow those steps to import your data with a generic CSV :": [
-        "Följ dessa steg för att importera dina data med en generisk CSV:"
+        "Za uvoz podatkov z generičnim CSV sledite tem korakom:"
       ],
       "For easy access to your passwords and more.": [
-        "För enkel åtkomst till dina lösenord och mer."
+        "Za enostaven dostop do vaših gesel in več."
       ],
       "For security reason, your access needs to be confirmed": [
-        "Av säkerhetsskäl måste din åtkomst bekräftas"
+        "Iz varnostnih razlogov mora biti vaš dostop potrjen"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Av säkerhetsskäl måste din åtkomst bekräftas"
+        "Iz varnostnih razlogov mora biti vaš dostop potrjen"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
-        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne."
       ],
       "Generating alias...": [
-        "Genererar alias..."
+        "Ustvarjanje vzdevka..."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Få obegränsade alias, njut av exklusiva funktioner och stöd oss ​​genom att prenumerera på Pass Plus."
+        "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Här hittar du all nödvändig information för att komma igång."
+        "Tukaj boste našli vse potrebne informacije za začetek."
       ],
       "Import in progress:": [
-        "Import pågår:"
+        "Uvoz v teku:"
       ],
       "Import the CSV file below.": [
-        "Importera CSV-filen nedan."
+        "Uvozite spodnjo datoteko CSV."
       ],
       "Imported ${ payload.total } item": [
-        "Importerade ${ payload.total } objekt",
-        "Importerade ${ payload.total } objekt"
+        "Uvožen ${ payload.total } predmet",
+        "Uvožena ${ payload.total } predmeta",
+        "Uvoženi ${ payload.total } predmeti",
+        "Uvoženi ${ payload.total } predmeti"
       ],
       "Imported on ${ date }": [
-        "Importerad den ${ date }"
+        "Uvoženo dne ${ date }"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "För att få ut den bästa upplevelsen av ${ PASS_APP_NAME }, bevilja de nödvändiga tilläggsbehörigheterna"
+        "Za najboljšo izkušnjo aplikacije ${ PASS_APP_NAME } podelite potrebna dovoljenja za razširitev"
       ],
       "Internet connection lost": [
-        "Internetanslutning förlorades"
+        "Internetna povezava je prekinjena"
       ],
       "Invitation sent": [
-        "Inbjudan skickad"
+        "Povabilo poslano."
       ],
       "Invite successfully removed": [
-        "Inbjudan borttagen"
+        "Vabilo je bilo uspešno odstranjen"
       ],
       "Invite successfully resent": [
-        "Inbjudan skickad"
+        "Povabilo uspešno ponovno poslano"
       ],
       "Invite successfully sent": [
-        "Inbjudan skickad"
+        "Vabilo uspešno poslano"
       ],
       "invites you to access items in": [
-        "bjöd in dig för att komma åt objekt i detta valv"
+        "vas vabi k dostopu do predmetov v"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Det verkar som att du redan är inloggad på ${ PASS_APP_NAME }. Om du försöker logga in med ett annat konto, logga ut från tillägget först."
+        "Videti je, da ste že prijavljeni v ${ PASS_APP_NAME }. Če se poskušate prijaviti z drugim računom, se najprej odjavite iz razširitve."
       ],
       "item": [
-        "objekt",
-        "objekt"
+        "predmet",
+        "predmeta",
+        "predmeti",
+        "predmeti"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "Objekt ”${ payload.item.data.metadata.name }” skapat"
+        "Predmet »${ payload.item.data.metadata.name }« je ustvarjen"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
-        "Objekt ”${ payload.item.data.metadata.name }” uppdaterades"
+        "Predmet »${ payload.item.data.metadata.name }« je posodobljen"
       ],
       "Item moved to trash": [
-        "Objekt flyttat till papperskorg"
+        "Predmet premaknjen v smetnjak"
       ],
       "Item permanently deleted": [
-        "Objekt borttagen permanent"
+        "Predmet je trajno izbrisan"
       ],
       "Item restored": [
-        "Objekt återställt"
+        "Predmet je bil obnovljen."
       ],
       "Item successfully moved": [
-        "Objekt flyttades"
+        "Predmet je bil uspešno premaknjen"
       ],
       "Item successfully pinned": [
-        "Lyckades fästa objekt"
+        "Predmet je bil uspešno pripet"
       ],
       "Item successfully unpinned": [
-        "Objekt lossat"
+        "Predmet je bil uspešno odpet"
       ],
       "Leaving vault...": [
-        "Lämnar valv..."
+        "Zapuščam trezor..."
       ],
       "Let's get you started by creating your first item": [
-        "Kom igång genom att skapa ditt första objekt"
+        "Začnimo z ustvarjanjem vašega prvega predmeta"
       ],
       "Loading": [
-        "Laddar"
+        "Nalaganje"
       ],
       "Loading ${ PASS_APP_NAME }": [
-        "Laddar in ${ PASS_APP_NAME }"
+        "${ PASS_APP_NAME } se nalaga"
       ],
       "Loading...": [
-        "Laddar..."
+        "Nalaganje ..."
       ],
       "me": [
-        "jag"
+        "jaz"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
+        "Več kot upravitelj gesel, ${ PASS_APP_NAME } ščiti vaše geslo in vaš osebni e-poštni naslov prek e-poštnih vzdevkov. Vaši podatki, ki jih poganja ista tehnologija za ${ MAIL_APP_NAME }, so šifrirani od konca do konca in dostopni samo vam."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Flyttar alla objekt från “${ payload.content.name }“"
+        "Premikanje vseh predmetov iz »${ payload.content.name }«"
       ],
       "Moving an item to another vault will erase its history": [
-        "Att flytta ett objekt till annat valv kommer radera dess historik"
+        "Premikanje predmeta v drug trezor bo izbrisalo njegovo zgodovino."
       ],
       "Moving items": [
-        "Flyttar objekt"
+        "Premikanje predmetov"
       ],
       "Moving items to another vault will erase their history": [
-        "Att flytta objekt till annat valv kommer radera dess historik"
+        "Premikanje predmetov v drug trezor bo izbrisalo njihovo zgodovino."
       ],
       "Moving items to trash": [
-        "Flyttar objekt till papperskorg"
+        "Premikanje predmetov v smetnjak"
       ],
       "Never": [
-        "Aldrig"
+        "Nikoli"
       ],
       "No login found": [
-        "Ingen inloggning hittades"
+        "Ni prijave"
       ],
       "None": [
-        "Ingen"
+        "Brez"
       ],
       "Offline mode could not be enabled at the moment": [
-        "Offlineläge kunde inte aktiveras just nu"
+        "Način brez povezave trenutno ne more biti vključen"
+      ],
+      "Offline support successfully disabled": [
+        "Način brez povezave je onemogočen"
       ],
       "Open the Extensions menu": [
-        "Öppna tilläggsmenyn"
+        "Odprite meni Razširitve"
       ],
       "Owner": [
-        "Ägare"
+        "Lastnik"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Äganderätten har överförts. Du är inte längre ägare till detta valv."
+        "Lastništvo uspešno preneseno. Niste več lastnik tega trezorja."
       ],
       "Pass Plus trial": [
-        "Pass Plus provperiod"
+        "Pass Plus preizkus"
       ],
       "Passkey sign-in": [
-        "Passkey-inloggning"
+        "Prijava z indentifikacijskim ključem"
       ],
       "Password copied": [
-        "Lösenord kopierat"
+        "Geslo je bilo kopirano"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
-        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine."
       ],
       "Pending access to the shared data": [
-        "Väntar på åtkomst till delade data"
+        "Čakanje na dostop do podatkov v skupni rabi"
       ],
       "Permanently deleting selected items": [
-        "Tar bort markerade objekt permanent"
+        "Trajno brisanje izbranih predmetov"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fäst ${ PASS_APP_NAME } till ditt verktygsfält"
+        "Pripni ${ PASS_APP_NAME } v orodno vrstico"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN-kod registrerad. Använd den för att låsa upp ${ PASS_APP_NAME }"
+        "PIN koda uspešno registrirana. Uporabite ga za odklepanje ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Fäster objekt..."
+        "Pripenjanje predmeta..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
+        "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Bekräfta din PIN-kod för att avregistrera ditt nuvarande lås.\n${ PASS_APP_NAME } kommer då aldrig att låsas."
+        "Prosimo, potrdite kodo PIN, če želite odjaviti trenutno ključavnico.\n${ PASS_APP_NAME } se potem ne bo nikoli zaklenila."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Bekräfta din PIN-kod för att redigera denna inställning."
+        "Za urejanje te nastavitve potrdite kodo PIN."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Bekräfta din PIN-kod för att slutföra din inställning för automatisk låsning."
+        "Potrdite kodo PIN, da dokončate registracijo za nastavitev samodejnega zaklepanja."
       ],
       "Please consider leaving a review.": [
-        "Överväg att lämna en recension."
+        "Prosimo, razmislite o pisanju ocene."
       ],
       "Please enter your current PIN code to continue": [
-        "Ange din nuvarande PIN-kod för att fortsätta"
+        "Za nadaljevanje vnesite veljaven PIN"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
+        "Nadgradite za zgodnji dostop do spletne aplikacije ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
-        "Tryck på Enter för att kopiera"
+        "Pritisnite Enter za kopiranje"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Integritet är en stor angelägenhet för oss. Lär dig varför ${ PASS_APP_NAME } är annorlunda."
+        "Zasebnost je za nas velika skrb. Preberite, zakaj je ${ PASS_APP_NAME } drugačna."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+        "Račun je zaščiten z ${ PROTON_SENTINEL_LINK }, našim naprednim programom"
       ],
       "Restoring items from trash": [
-        "Återställer objekt från papperskorg"
+        "Obnavljanje predmetov iz smetnjaka"
       ],
       "Restoring trashed items...": [
-        "Återställer kastade objekt..."
+        "Obnovitev predmetov v smetnjaku..."
       ],
       "Save login": [
-        "Spara inloggning"
+        "Shrani prijavo"
       ],
       "Save passkey": [
-        "Spara passkey"
+        "Shrani identifikacijski ključ"
       ],
       "Select an existing login or create a new one.": [
-        "Välj en befintlig inloggning eller skapa en ny."
+        "Izberite obstoječo prijavo ali ustvarite novo."
       ],
       "Select destination vault": [
-        "Välj målvalv"
+        "Izberite ciljni trezor"
       ],
       "Select where you want your imported vault(s) to be saved.": [
-        "Välj var du vill att dina importerade valv ska sparas."
+        "Izberite, kam želite shraniti uvožene trezorje."
       ],
       "Selected items permanently deleted": [
-        "Markerade objekt togs bort permanent"
+        "Izbrani predmeti so trajno izbrisani"
       ],
       "Selected items successfully moved to trash": [
-        "Markerade objekt flyttades till papperskorg"
+        "Izbrani predmeti so bili uspešno premaknjeni v semtnjak"
       ],
       "Selected items successfully restored from trash": [
-        "Markerade objekt återställda från papperskorg"
+        "Izbrani elementi so bili uspešno obnovljeni iz smetnjaka"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Servrarna kan inte nås. Försök igen om några minuter"
+        "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
       ],
       "Session timed out": [
-        "Session timeout"
+        "Seja je potekla"
       ],
       "Set up a PIN code to easily lock your data": [
-        "Ställ in en PIN-kod för att enkelt låsa din data"
+        "Nastavite kodo PIN za enostavno zaklepanje podatkov"
       ],
       "Setting up offline mode...": [
-        "Ställer in offlineläge …"
+        "Pripravljanje načina brez povezave"
       ],
       "Settings successfully updated": [
-        "Inställningarna har uppdaterats"
+        "Nastavitve so bile uspešno posodobljene"
       ],
       "Share your logins, secure notes, with up to 10 people": [
-        "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
+        "Delite svoje prijave, varne zapiske z do 10 osebami"
       ],
       "Sign in or create an account to continue.": [
-        "Logga in eller skapa ett konto för att fortsätta."
+        "Za nadaljevanje se vpišite ali ustvarite račun."
       ],
       "Signing you in": [
-        "Loggar in dig"
+        "Vpisujem vas"
       ],
       "Successfully exported all your items": [
-        "Alla dina objekt har exporterats"
+        "Vsi vaši predmeti so bili uspešno izvoženi"
       ],
       "Successfully left the vault": [
-        "Valv har lämnats"
+        "Uspešno ste zapustil trezor"
       ],
       "Successfully synced all vaults": [
-        "Alla valv synkroniserade"
+        "Uspešno so sinhronizirani vsi trezorji"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Byt till ett annat valv eller skapa ett objekt i detta valv"
+        "Preklopite v drug trezor ali ustvarite predmet v tem trezorju"
       ],
       "Syncing your vaults…": [
-        "Synkroniserar dina valv…"
+        "Sinhronizacija vaših trezorjev …"
       ],
       "Thank you, the problem has been reported": [
-        "Tack, problemet har rapporterats"
+        "Hvala, težava je bila prijavljena"
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Rullgardinsmenyn för automatisk ifyllnad kommer öppnas automatiskt när du klickar eller fokuserar på fältet."
+        "Spustni meni za samodejno izpolnjevanje se samodejno odpre, ko kliknete ali se osredotočite na polje."
       ],
       "The export will only contain vaults that you own.": [
-        "Exporten kommer endast innehålla valv som du äger."
+        "Izvoz bo vseboval le trezorje, ki so v vaši lasti."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Den exporterade filen kommer att krypteras med PGP och kräver en stark lösenfras."
+        "Izvožena datoteka bo šifrirana s PGP in zahteva močno geslo."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
-        "Följande ${ result.ignored.length } objekt kunde inte importeras:",
-        "Följande ${ result.ignored.length } objekt kunde inte importeras:"
+        "Tega predmeta ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh dveh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."
+        "Besedilo, ki ga poskušate prilepiti, presega največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
       "The user did not accept the invitation yet.": [
-        "Användaren har inte accepterat inbjudan ännu."
+        "Uporabnik še ni sprejel vabila."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
+        "Ta izvoz bo nešifriran in vsak, ki ima dostop do vaše izvožene datoteke, bo lahko videl vaša gesla. Zaradi varnosti ga izbrišite, ko ga nehate uporabljati."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
+        "Ta trezor trenutno ni v skupni rabi z nikomer. Povabite ljudi, da to delijo z drugimi."
       ],
       "This version will be added to the history as the newest version.": [
-        "Denna version kommer att läggas till i historiken som den senaste versionen."
+        "Ta različica bo dodana v zgodovino kot najnovejša različica."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
+        "Izberite, kam želite shraniti svoje uvožene trezorje. Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "För att granska dina importerade data, klicka på Pass-ikonen i webbläsarens verktygsfält."
+        "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
       ],
       "Unable to copy to clipboard": [
-        "Kan inte kopiera till urklipp"
+        "Kopiranja v odložišče ni mogoče"
       ],
       "Unlimited hide-my-email aliases": [
-        "Obegränsat antal Hide-my-email-alias"
+        "Neomejeno število vzdevkov ide-my-email"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att komma åt dina passkeys"
+        "Za dostop do identifikacijskih ključev odklenite ${ PASS_APP_NAME } z vašo PIN kodo"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att spara denna passkey"
+        "Odklenite ${ PASS_APP_NAME } z vašo PIN kodo in shranili boste identifikacijski ključ"
       ],
       "Unlock it with your PIN to access the settings": [
-        "Lås upp den med din PIN-kod för att komma åt inställningarna"
+        "Odklenite ga s kodo PIN za dostop do nastavitev"
       ],
       "Unpinning item...": [
-        "Lossar objekt..."
+        "Odpenjanje predmeta..."
       ],
       "Update login": [
-        "Uppdatera inloggning"
+        "Ustvarite prijavo"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Uppgradera ${ PASS_APP_NAME }"
+        "Nadgradi na ${ PASS_APP_NAME }."
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Uppgradera nu för att låsa upp premiumfunktioner"
+        "Nadgradite zdaj, da odklenete Premium funkcije"
       ],
       "Use vaults to share this item with others.": [
-        "Använd valv för att dela detta objekt med andra."
+        "Uporabite trezorje za skupno rabo predmetov z drugimi."
       ],
       "User's access removed": [
-        "Användaråtkomst borttagen"
+        "Uporabnikov dostop odstranjen"
       ],
       "User's access sucessfuly updated": [
-        "Användaråtkomst uppdaterad"
+        "Uporabnikov dostop je bil uspešno posodobljen"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Valv “${ payload.content.name }“ borttaget"
+        "Trezor \"${ payload.content.name }\" je uspešno izbrisan"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Valv ”${ payload.share.content.name }” skapades"
+        "Trezor \"${ payload.share.content.name }\" je bil uspešno ustvarjen"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Valv ”${ payload.share.content.name }” uppdaterades"
+        "Trezor \"${ payload.share.content.name }\" je bil uspešno posodobljen"
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "Valv “${ share.content.name }“ togs bort"
+        "Trezor \"${ share.content.name }\" je bil odstranjen"
       ],
       "Verification code": [
-        "Verifieringskod"
+        "Koda za preverjanje"
       ],
       "Viewer": [
-        "Läsare"
+        "Preglednik"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
+        "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
       ],
       "You are about to create:": [
-        "Du är på väg att skapa:"
+        "Ustvarili boste:"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Du kan nu använda ditt ${ BRAND_NAME }-lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+        "Sedaj lahko uporabljate ${ BRAND_NAME } geslo za dostop do ${ PASS_SHORT_APP_NAME } v načinu brez povezave"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Du kan snabbt fylla i dina inloggningsuppgifter automatiskt genom att klicka på ${ PASS_APP_NAME }-ikonen."
+        "Svoje poverilnice lahko hitro samodejno izpolnite s klikom na ikono ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
-        "Du kan inte ändra brevlådorna för detta alias."
+        "Nabiralnikov za ta vzdevek ne morete spremeniti."
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
-        "Du har ${ daysRemaining } dagar kvar att prova dessa och andra premiumfunktioner."
+        "Imate še ${ daysRemaining } dan, da preizkusite te in druge vrhunske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till dina två första valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje elementov med vsemi trezorji nadgradite svojo naročnino."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Du har överskridit antalet valv inkluderat i din prenumeration. Nya objekt kan endast skapas i dina två första valv. För att skapa nya objekt i alla valv, uppgradera din prenumeration."
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Da ustvarite nov predmet v trezorjih nadgradite svojo naročnino."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Du har nått gränsen för alias du kan skapa. Skapa ett obegränsat antal alias när du uppgraderar din prenumeration."
-      ],
-      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Du har nått gränsen för antalet kreditkort du kan skapa. Skapa ett obegränsat antal kreditkort när du uppgraderar din prenumeration."
+        "Dosegli ste omejitev vzdevkov, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število vzdevkov."
       ],
       "You have reached the limit of vaults you can create.": [
-        "Du har nått gränsen för valv du kan skapa."
+        "Dosegli ste omejitev trezorjev, ki jih lahko ustvarite."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "Du har nått den högsta tillåtna längden på ${ maxLength } tecken."
+        "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Du kommer använda denna PIN-kod för att låsa upp ${ PASS_APP_NAME } när den låses automatiskt efter en period av inaktivitet."
+        "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
       ],
       "You're about to create": [
-        "Du är på väg att skapa"
+        "Ustvarjali boste"
       ],
       "You're invited to a vault.": [
-        "Du är inbjuden till ett valv."
+        "Vabljeni ste v trezor."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
-        "Din ${ PASS_APP_NAME }-session är låst"
+        "Vaša seja ${ PASS_APP_NAME } je zaklenjena"
       ],
       "Your files will be encrypted and then saved": [
-        "Dina filer kommer att krypteras och sedan sparas"
+        "Vaše datoteke bodo šifrirane in nato shranjene."
       ]
     },
     "Label": {
       "${ config.options.length } character": [
-        "${ config.options.length } tecken",
-        "${ config.options.length } tecken"
+        "${ config.options.length }/ znak",
+        "${ config.options.length }/ znaka",
+        "${ config.options.length } znakov",
+        "${ config.options.length } znakov"
       ],
       "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } ord",
-        "${ config.options.wordCount } ord"
+        "${ config.options.wordCount } beseda",
+        "${ config.options.wordCount } besedi",
+        "${ config.options.wordCount } besed",
+        "${ config.options.wordCount } besed"
       ],
       "1 hour": [
-        "1 timme"
+        "1 ura"
       ],
       "1 minute": [
-        "1 minut"
+        "1 minuta"
       ],
       "10 minutes": [
-        "10 minuter"
+        "10 minut"
       ],
       "15 minutes": [
-        "15 minuter"
+        "15 minut"
       ],
       "2FA secret key (TOTP)": [
-        "Hemlig nyckel för 2FA (TOTP)"
+        "Skrivni ključ 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA-token (TOTP)"
+        "Koda 2FA (TOTP)"
       ],
       "30 minutes": [
-        "30 minuter"
+        "30 minut"
       ],
       "30 seconds": [
-        "30 sekunder"
+        "30 sekund"
       ],
       "5 minutes": [
-        "5 minuter"
+        "5 minut"
       ],
       "A-Z": [
-        "A-Ö"
+        "A-Z"
       ],
       "Account": [
-        "Konto"
+        "Račun"
       ],
       "Alias": [
-        "Alias"
+        "Vzdevek"
       ],
       "Alias address": [
-        "Alias-adress"
+        "Vzdevek naslova"
       ],
       "Aliases": [
-        "Alias"
+        "Vzdevki"
       ],
       "All": [
-        "Alla"
+        "Vse"
       ],
       "All vaults": [
-        "Alla valv"
+        "Vsi trezorji"
       ],
       "Alphabetical": [
-        "Alfabetiskt"
+        "Po abecednem redu"
       ],
       "Application logs": [
-        "Applikationsloggar"
+        "Dnevniki aplikacij"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
-        "Lås ${ PASS_APP_NAME } automatiskt"
+        "Samodejno zaklepanje ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
-        "Lås automatiskt efter"
+        "Samodejno zaklepanje po"
       ],
       "Autofill": [
-        "Fyll automatiskt"
+        "Samodejno izpolnjevanje"
       ],
       "Autofill 2FA": [
-        "Autofyll 2FA"
+        "Samodejno izpolnjevanje 2FA"
       ],
       "Automatically open autofill when a login field is focused": [
-        "Öppna autofyll automatiskt när ett inloggningsfält är fokuserat"
+        "Samodejno odpri samodejno izpolnjevanje, ko je izbrano polje za prijavo"
       ],
       "Autosave": [
-        "Spara automatiskt"
+        "Samodejno shranjevanje"
       ],
       "Autosave vault": [
-        "Spara valv automatiskt"
+        "Samodejno shranjevanje trezorja"
       ],
       "Autosuggest": [
-        "Föreslå automatiskt"
+        "Samodejni predlog"
       ],
       "Capital letters (A-Z)": [
-        "Versaler (A–Ö)"
+        "Velike črke (A-Z)"
       ],
       "Capitalise": [
-        "Versaler"
+        "Napiši veliko začetnico"
       ],
       "Card": [
-        "Kort"
+        "Kartica"
       ],
       "Card number": [
-        "Kortnummer"
+        "Številka kartice"
       ],
       "Cards": [
-        "Kort"
+        "Kartice"
       ],
       "Confirm vault name": [
-        "Bekräfta valvnamn"
+        "Potrdite ime trezorja"
       ],
       "Create a credit card": [
-        "Skapa ett kreditkort"
+        "Ustvarite kreditno kartico"
       ],
       "Create a hide-my-email alias": [
-        "Skapa ett hide-my-email-alias"
+        "Ustvari vzdevek Hide-my-email"
       ],
       "Create a login": [
-        "Skapa en inloggning"
+        "Ustvarite prijavo"
       ],
       "Create an encrypted note": [
-        "Skapa en krypterad anteckning"
+        "Ustvarite šifrirano opombo"
       ],
       "Create new vault": [
-        "Skapa nytt valv"
+        "Ustvari nov trezor"
       ],
       "Created": [
-        "Skapad"
+        "Ustvarjeno"
       ],
       "Display": [
-        "Visa"
+        "Zaslon"
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Visa ikon ${ PASS_APP_NAME } på inloggningsfält"
+        "Prikaži ikono ${ PASS_APP_NAME } v poljih za prijavo"
       ],
       "Domain": [
-        "Domän"
+        "Domena"
       ],
       "Domains": [
-        "Domäner"
+        "Domene"
       ],
       "Download logs": [
-        "Ladda ner loggar"
+        "Prenesite dnevnike"
       ],
       "Email aliases": [
-        "E-postalias"
+        "E-poštni vzdevki"
       ],
       "Empty trash": [
-        "Töm papperskorg"
+        "Izprazni smetnjak"
       ],
       "Expiration date": [
-        "Utgångsdatum"
+        "Datum poteka"
       ],
       "Export": [
-        "Exportera"
+        "Izvozi"
       ],
       "Field name": [
-        "Fältnamn"
+        "Ime polja"
       ],
       "File format": [
-        "Filformat"
+        "Format datoteke"
       ],
       "Forwards to": [
-        "Vidarebefordras till"
+        "Posreduje na"
       ],
       "General": [
-        "Allmänt"
+        "Splošno"
       ],
       "Generic CSV": [
-        "Generisk CSV"
+        "Generični CSV"
       ],
       "Grant": [
-        "Bevilja"
+        "Odobri"
       ],
       "Hidden": [
-        "Dolt"
+        "Skrito"
       ],
       "Hide password": [
-        "Dölj lösenord"
+        "Skrij geslo"
       ],
       "Import": [
-        "Importera"
+        "Uvoz"
       ],
       "Import passwords": [
-        "Importera lösenord"
+        "Uvozi gesla"
       ],
       "Imported from : ": [
-        "Importerad från: "
+        "Uvoćeno iz : "
       ],
       "Imported on : ": [
-        "Importerad den : "
+        "Uvoženo dne : "
       ],
       "Include numbers": [
-        "Inkludera nummer"
+        "Vključi številke"
       ],
       "Include numbers (0-9)": [
-        "Inkludera nummer (0-9)"
+        "Vključi številke (0-9)"
       ],
       "Invitations": [
-        "Inbjudningar"
+        "Vabila"
       ],
       "Item ID": [
-        "Objekt-ID"
+        "ID predmeta"
       ],
       "Key": [
-        "Nyckel"
+        "Ključ"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Tangentbordsgenväg: ${ shortcut }"
+        "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Language": [
-        "Språk"
+        "Jezik"
       ],
       "Last 2 weeks": [
-        "Senaste 2 veckorna"
+        "Zadnja 2 tedna"
       ],
       "Last month": [
-        "Förra månaden"
+        "Prejšnji mesec"
       ],
       "Last week": [
-        "Förra veckan"
+        "Prejšnji teden"
       ],
       "Latest import": [
-        "Senaste import"
+        "Zadnji uvoz"
       ],
       "Learn more": [
-        "Lär dig mer"
+        "Več informacij"
       ],
       "Login": [
-        "Logga in"
+        "Prijava"
       ],
       "Logins": [
-        "Inloggningar"
+        "Prijave"
       ],
       "Make all admins": [
-        "Gör alla till administratörer"
+        "Omogoči vsem adminstratorja"
       ],
       "Make all editors": [
-        "Gör alla till redaktörer"
+        "Omogoči vsem urejanje"
       ],
       "Make all viewers": [
-        "Gör alla till visare"
+        "Omogoči ogled vsem"
       ],
       "Members": [
-        "Medlemmar"
+        "Člani"
       ],
       "Modified": [
-        "Ändrad"
+        "Spremenjeno"
       ],
       "More than a month": [
-        "Mer än en månad"
+        "Več kot mesec dni"
       ],
       "Most recent": [
-        "Senaste"
+        "Najnovejši"
       ],
       "Name": [
-        "Namn"
+        "Ime"
       ],
       "Name on card": [
-        "Namn på kort"
+        "Ime na kartici"
       ],
       "Need help ?": [
-        "Behöver du hjälp ?"
+        "Potrebujete pomoč?"
       ],
       "New vault": [
-        "Nytt valv"
+        "Nov trezor"
       ],
       "New-Old": [
-        "Nytt-gammalt"
+        "Novo-staro"
       ],
       "Newest to oldest": [
-        "Nyaste till äldsta"
+        "Od najnovejšega do najstarejšega"
       ],
       "No history": [
-        "Ingen historik"
+        "Brez zgodovine"
       ],
       "Note": [
-        "Anteckning"
+        "Opomba"
       ],
       "Notes": [
-        "Anteckningar"
+        "Opombe"
       ],
       "Old-New": [
-        "Gammalt-nytt"
+        "Staro-novo"
       ],
       "Oldest to newest": [
-        "Äldsta till nyaste"
+        "Od starejšega do najnovejšega"
       ],
       "Passkey": [
-        "Passkey"
+        "Identifikacijski ključ"
       ],
       "Passphrase": [
-        "Lösenfras"
+        "Geslo"
       ],
       "Password": [
-        "Lösenord"
+        "Geslo"
       ],
       "Password history": [
-        "Lösenordshistorik"
+        "Zgodovina gesel"
       ],
       "Passwords": [
-        "Lösenord"
+        "Gesla"
       ],
       "Pause list": [
-        "Pauslista"
+        "Zaustavi seznam"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "PGP-krypterad JSON (rekommenderas)"
+        "PGP šifriran JSON (priporočeno)"
       ],
       "PIN": [
-        "PIN"
+        "PIN koda"
       ],
       "Prefix": [
-        "Prefix"
+        "Predpona"
       ],
       "Prompt for auto-save": [
-        "Uppmana för autospara"
+        "Poziv za samodejno shranjevanje"
       ],
       "Rate us": [
-        "Betygsätt oss"
+        "Ocenite nas"
       ],
       "Recent": [
-        "Senaste"
+        "Nedavno"
       ],
       "Report a problem": [
-        "Rapportera ett problem"
+        "Prijavi težavo"
       ],
       "Restore all items": [
-        "Återställ alla objekt"
+        "Obnovi vse predmete"
       ],
       "Reveal password": [
-        "Visa lösenord"
+        "Razkrij geslo"
       ],
       "Security": [
-        "Säkerhet"
+        "Varnost"
       ],
       "Security code": [
-        "Säkerhetskod"
+        "Varnostna koda"
       ],
       "Select an email address": [
-        "Välj en e-postadress"
+        "Izberite e-poštni naslov"
       ],
       "Select preferred language": [
-        "Välj föredraget språk"
+        "Izberite želeni jezik"
       ],
       "Select your password manager": [
-        "Välj din lösenordshanterare"
+        "Izberite upravitelja gesel"
       ],
       "Selected": [
-        "Valda"
+        "Izbrano"
       ],
       "Session locking": [
-        "Sessionslåsning"
+        "Zaklepanje seje"
       ],
       "Set PIN code": [
-        "Ställ in PIN-kod"
+        "Nastavi kodo PIN"
       ],
       "Settings": [
-        "Inställningar"
+        "Nastavitve"
       ],
       "Show website favicons": [
-        "Visa webbplatsens favicon"
+        "Pokaži ikone spletnega mesta"
       ],
       "Special characters (!&*)": [
-        "Specialtecken (!&*)"
+        "Posebni znaki (!&*)"
       ],
       "Suffix": [
-        "Suffix"
+        "Pripona"
       ],
       "Support": [
-        "Support"
+        "Podpora"
       ],
       "Text": [
-        "Text"
+        "Besedilo"
       ],
       "Title": [
-        "Rubrik"
+        "Naslov"
       ],
       "Today": [
-        "Idag"
+        "Danes"
       ],
       "Total imported items : ": [
-        "Totalt antal importerade objekt: "
+        "Skupaj uvoženih predmetov : "
       ],
       "Total items : ": [
-        "Totalt antal objekt: "
+        "Skupaj predmetov : "
       ],
       "TOTP": [
         "TOTP"
       ],
       "Trash": [
-        "Papperskorg"
+        "Smeti"
       ],
       "Type": [
-        "Typ"
+        "Vrsta"
       ],
       "Unnamed Credit Card": [
-        "Namnlöst kreditkort"
+        "Neimenovana kreditna kartica"
       ],
       "Unnamed item": [
-        "Namnlöst objekt"
+        "Neimenovan predmet"
       ],
       "Unnamed note": [
-        "Namnlös anteckning"
+        "Neimenovan predmet"
       ],
       "Untitled": [
-        "Ingen rubrik"
+        "Brez naslova"
       ],
       "Update": [
-        "Uppdatera"
+        "Posodobi"
       ],
       "Username": [
-        "Användarnamn"
+        "Uporabniško ime"
       ],
       "Username (alias)": [
-        "Användarnamn (alias)"
+        "Uporabniško ime (vzdevek)"
       ],
       "Username (new alias)": [
-        "Användarnamn (nytt alias)"
+        "Uporabniško ime (nov vzdevek)"
       ],
       "Vault": [
-        "Valv"
+        "Trezor"
       ],
       "Vault ID": [
-        "Valv-ID"
+        "ID trezorja"
       ],
       "View details": [
-        "Visa detaljer"
+        "Prikaži podrobnosti"
       ],
       "View logs": [
-        "Visa loggar"
+        "Prikaži dnevnik"
       ],
       "Website": [
-        "Webbplats"
+        "Spletna stran"
       ],
       "Websites": [
-        "Webbplatser"
+        "Spletne strani"
       ],
       "You are about to create": [
-        "Du är på väg att skapa"
+        "Ustvarili boste"
       ]
     },
     "lobby: Info": {
       "Enter your PIN code": [
-        "Ange din PIN-kod"
+        "Vnesi svojo PIN kodo."
       ],
       "Sign in to your account": [
-        "Logga in på ditt konto"
+        "Vpišite se v svoj račun"
       ],
       "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Du är för närvarande offline. Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
+        "Trenutno ste brez povezave. Odklenite ${ PASS_SHORT_APP_NAME } z vašim ${ BRAND_NAME } geslom"
       ]
     },
     "lobby: Title": {
       "Unlock ${ brandNameJSX }": [
-        "Lås upp ${ brandNameJSX }"
+        "Odkleni ${ brandNameJSX }"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "Välkommen till ${ brandNameJSX }"
+        "Dobrodošli v ${ brandNameJSX }"
       ]
     },
     "Message": {
       "${ count } item": [
-        "${ count } objekt",
-        "${ count } objekt"
+        "${ count } predmet",
+        "${ count } predmeti",
+        "${ count } predmeti",
+        "${ count } predmeti"
       ],
       "You selected ${ semiboldText } in this vault": [
-        "Du markerade ${ semiboldText } i detta valv"
+        "V tem trezorju ste izbrali ${ semiboldText }"
       ]
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Välkommen till ${ appName }"
+        "Dobrodošli v ${ appName }"
       ]
     },
     "Option": {
       "Commas": [
-        "Kommatecken"
+        "Vejice"
       ],
       "Hyphens": [
-        "Bindestreck"
+        "Vezaji"
       ],
       "Memorable Password": [
-        "Minnesvärt lösenord"
+        "Geslo, ki si ga je mogoče zapomniti"
       ],
       "Numbers": [
-        "Nummer"
+        "Številke"
       ],
       "Numbers and Symbols": [
-        "Nummer och symboler"
+        "Številke in simboli"
       ],
       "Periods": [
-        "Punkter"
+        "Pike"
       ],
       "Random Password": [
-        "Slumpmässigt lösenord"
+        "Naključno geslo"
       ],
       "Spaces": [
-        "Mellanslag"
+        "Presledki"
       ],
       "Underscores": [
-        "Understreck"
+        "Podčrtaji"
       ]
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Lägg till hemlig nyckel för 2FA"
+        "Dodajte skrivni ključ 2FA"
       ],
       "Add hidden text": [
-        "Lägg till dold text"
+        "Dodajte skrito besedilo"
       ],
       "Add note": [
-        "Lägg till anteckning"
+        "Dodaj opombo"
       ],
       "Add text": [
-        "Lägga till text"
+        "Dodaj tekst"
       ],
       "Email address": [
-        "E-postadress"
+        "E-poštni naslov"
       ],
       "Enter a note...": [
-        "Ange en anteckning..."
+        "Vnesite opombe..."
       ],
       "Enter a prefix": [
-        "Ange ett prefix"
+        "Vnesite pripono"
       ],
       "Enter email or username": [
-        "Ange e-post eller användarnamn"
+        "Vnesite e-pošto ali uporabniško ime"
       ],
       "Enter password": [
-        "Ange lösenord"
+        "Vnesite geslo"
       ],
       "Full Name": [
-        "Fullständigt namn"
+        "Polno ime"
       ],
       "MM/YY": [
-        "MM/ÅÅ"
+        "MM/LL"
       ],
       "Other": [
-        "Annat"
+        "Ostalo"
       ],
       "Password": [
-        "Lösenord"
+        "Geslo"
       ],
       "Pick a vault": [
-        "Välj ett valv"
+        "Izberite trezor"
       ],
       "Please describe the problem and include any error messages": [
-        "Beskriv problemet och inkludera eventuella felmeddelanden"
+        "Opišite težavo in vključite morebitna sporočila o napakah"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Skriv ”${ vaultName }” igen för att bekräfta borttagning"
+        "Znova vnesite \"${ vaultName }\", da potrdite izbris"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
-        "Sök ${ pluralItemType } i ${ vaultName }"
+        "Iskanje ${ pluralItemType } v ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
-        "Sök ${ pluralItemType } i alla valv"
+        "Išči ${ pluralItemType } v vseh trezorjih"
       ],
       "Search in ${ vaultName }": [
-        "Sök i ${ vaultName }"
+        "Iskanje ${ vaultName }"
       ],
       "Search in all vaults": [
-        "Sök i alla valv"
+        "Iskanje v vseh trezorjih"
       ],
       "Search in Trash": [
-        "Sök i papperskorg"
+        "Iskanje v smetnjaku"
       ],
       "Select a suffix": [
-        "Välj ett suffix"
+        "Izberite pripono"
       ],
       "Shared vault": [
-        "Delat valv"
+        "Skupni trezor"
       ],
       "Unknown origin": [
-        "Okänt ursprung"
+        "Neznanega izvora"
       ],
       "Untitled": [
-        "Ingen rubrik"
+        "Brez naslova"
       ],
       "Used on ${ url }": [
-        "Används på ${ url }"
+        "Uporabljeno na ${ url }"
       ],
       "Write your note": [
-        "Skriv din anteckning"
+        "Napišite svojo opombo"
       ]
     },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare.",
-        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov."
       ]
     },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
-        "Inställningar för ${ PASS_APP_NAME }"
+        "${ PASS_APP_NAME } Nastavitve"
       ],
       "Auto-lock update": [
-        "Uppdatering av autolås"
+        "Posodobitev samodejnega zaklepanja"
       ],
       "Confirm PIN code": [
-        "Bekräfta PIN-kod"
+        "Potrdi PIN kodo"
       ],
       "Connect your ${ BRAND_NAME } Account": [
-        "Anslut ditt ${ BRAND_NAME }-konto"
+        "Povežite svoj račun ${ BRAND_NAME }"
       ],
       "Create PIN code": [
-        "Skapa PIN-kod"
+        "Ustvari PIN kodo"
       ],
       "Created": [
-        "Skapad"
+        "Ustvarjeno"
       ],
       "Current version": [
-        "Nuvarande version"
+        "Trenutna različica"
       ],
       "Delete vault \"${ vaultName }\" ?": [
-        "Ta bort “${ vaultName }“?"
+        "Želite izbrisati trezor \"${ vaultName }\"?"
       ],
       "Discard changes?": [
-        "Ignorera ändringar?"
+        "Zavrzi spremembe?"
       ],
       "Email": [
-        "E-post"
+        "E-pošta"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "Gillar du ${ PASS_APP_NAME }?"
+        "Uživate v ${ PASS_APP_NAME }?"
       ],
       "Enter your password": [
-        "Ange ditt lösenord"
+        "Vnesite geslo"
       ],
       "Enter your PIN": [
-        "Ange din PIN-kod"
+        "Vnesite PIN"
       ],
       "Fill & copy password": [
-        "Fyll i och kopiera lösenord"
+        "Izpolni in kopiraj geslo"
       ],
       "Get Started": [
-        "Kom igång"
+        "Začnite"
       ],
       "Get the mobile apps": [
-        "Skaffa mobilapparna"
+        "Pridobite mobilne aplikacije"
       ],
       "Grant permissions": [
-        "Bevilja behörigheter"
+        "Odobrite dovoljenja"
       ],
       "Hide my email": [
         "Hide-my-email"
       ],
       "History": [
-        "Historik"
+        "Zgodovina"
       ],
       "Import - ${ date }": [
-        "Importera – ${ date }"
+        "Uvoz - ${ date }"
       ],
       "Import to vault(s)": [
-        "Importera till valv"
+        "Uvozi v trezor(je)"
       ],
       "Last autofill": [
-        "Sista autofyll"
+        "Zadnje samodejno izpolnjevanje"
       ],
       "Last modified": [
-        "Senast ändrad"
+        "Zadnjič spremenjeno"
       ],
       "Leave vault ?": [
-        "Lämna valv?"
+        "Zapuščate trezor ?"
       ],
       "Log in as...": [
-        "Logga in som..."
+        "Prijavite se kot ..."
       ],
       "Low disk space": [
-        "Lågt diskutrymme"
+        "Malo prostora na disku"
       ],
       "Member limit": [
-        "Medlemsgräns"
+        "Omejitev članov"
       ],
       "Members": [
-        "Medlemmar"
+        "Člani"
       ],
       "Modified": [
-        "Ändrad"
+        "Spremenjeno"
       ],
       "Move all items ?": [
-        "Flytta alla objekt?"
+        "Premaknem vse predmete?"
       ],
       "Move item?": [
-        "Flytta objekt?"
+        "Premaknem predmet?"
       ],
       "Move items?": [
-        "Flytta objekt?"
+        "Premaknem predmete?"
       ],
       "No items selected": [
-        "Inga objekt markerade"
+        "Izbran ni noben predmet"
       ],
       "Our welcome gift to you": [
-        "Vår välkomstgåva till dig"
+        "Naše darilo dobrodošlice za vas"
       ],
       "Passkey": [
-        "Passkey"
+        "Identifikacijski ključ"
       ],
       "Password": [
-        "Lösenord"
+        "Geslo"
       ],
       "Pending access to the shared data": [
-        "Väntar på åtkomst till delade data"
+        "Čakanje na dostop do podatkov v skupni rabi"
       ],
       "Permanently remove all items ?": [
-        "Ta bort alla objekt permanent?"
+        "Ali želite trajno odstraniti vse elemente ?"
       ],
       "Pin the extension": [
-        "Fäst tillägget"
+        "Pripnite razširitev"
       ],
       "Pinned (${ items.length })": [
-        "Fäst (${ items.length })"
+        "Pripeto (${ items.length })"
       ],
       "Restore this version?": [
-        "Återställ denna version?"
+        "Obnovi to različico?"
       ],
       "Review and share": [
-        "Granska och dela"
+        "Preglejte in delite"
       ],
       "Secure your data": [
-        "Säkra dina data"
+        "Zavarujte svoje podatke"
       ],
       "Set access level": [
-        "Ställ in åtkomstnivå"
+        "Nastavite raven dostopa"
       ],
       "Share with": [
-        "Dela med"
+        "Deli z"
       ],
       "Suggestions": [
-        "Förslag"
+        "Predlogi"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "Byta till ${ PASS_APP_NAME }?"
+        "Preklopite na ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
-        "Tack för att du installerar ${ PASS_APP_NAME }"
+        "Hvala, ker ste namestili ${ PASS_APP_NAME }"
       ],
       "The extension is now ready to use.": [
-        "Tillägget är nu redo att användas."
+        "Razširitev je zdaj pripravljena za uporabo."
       ],
       "Transfer ownership": [
-        "Överför ägarskap"
+        "Prenos lastništva"
       ],
       "Trash empty": [
-        "Papperskorg tom"
+        "Smetnjak je prazen"
       ],
       "Unlock ${ PASS_APP_NAME }": [
-        "Lås upp ${ PASS_APP_NAME }"
+        "Odkleni ${ PASS_APP_NAME }"
       ],
       "Update available": [
-        "Uppdatering tillgänglig"
+        "Na voljo je nadgradnja!"
       ],
       "Upgrade to Unlock Premium Features": [
-        "Uppgradera för att låsa upp premiumfunktioner"
+        "Nadgradite za odklepanje Premium funkcij"
       ],
       "Use my email": [
-        "Använd min e-post"
+        "Uporabi mojo e-pošto"
       ],
       "Vault": [
-        "Valv"
+        "Trezor"
       ],
       "Vault shared with you": [
-        "Valv delade med dig"
+        "Trezor v skupni rabi z vami"
       ],
       "Welcome to your new password manager!": [
-        "Välkommen till din nya lösenordshanterare!"
+        "Dobrodošli v svojem novem upravitelju gesel!"
       ],
       "Why ${ PASS_APP_NAME }?": [
-        "Varför ${ PASS_APP_NAME }?"
+        "Zakaj ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
-        "Ditt valv är tomt"
+        "Vaša košarica je prazna"
       ],
       "Your welcome gift": [
-        "Din välkomstgåva"
+        "Vaš bonus za dobrodošlico"
       ]
     },
     "Validation": {
       "Duplicated URL": [
-        "Duplicerad URL"
+        "Podvojeni URL-ji"
       ],
       "Field name is required": [
-        "Fältnamn är obligatoriskt"
+        "Ime polja je obvezno"
       ],
       "OTP secret or URI is invalid": [
-        "OTP-hemlighet eller URI är ogiltig"
+        "Skrivnost OTP ali URI ni veljaven"
       ],
       "OTP secret or URI required": [
-        "OTP-hemlighet eller URI krävs"
+        "Zahtevana je skrivnost OTP ali URI"
       ],
       "Url already exists": [
-        "URL finns redan"
+        "Url že obstaja"
       ],
       "URL cannot be empty": [
-        "URL kan inte vara tom"
+        "URL vnos ne sme biti prazen."
       ],
       "Url is invalid": [
-        "URL är ogiltig"
+        "Naslov Url ni veljaven"
       ],
       "URL is invalid": [
-        "URL är ogiltig"
+        "Naslov URL ni veljaven."
       ]
     },
     "Warning": {
       "A description of the problem is required": [
-        "En beskrivning av problemet är obligatoriskt"
+        "Potreben je opis težave"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias ”${ name }” används för närvarande i inloggningsobjekt ”${ relatedLoginName }”. Du kommer också sluta ta emot e-post som skickas till ”${ aliasEmail }”"
+        "Vzdevek »${ name }« se trenutno uporablja v elementu prijave »${ relatedLoginName }«. Prav tako ne boste več prejemali e-poštnih sporočil, poslanih na »${ aliasEmail }«"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Alla dina kastade objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
+        "Vsi vaši predmeti v smeti bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
       "An error occured while exporting your data": [
-        "Ett fel uppstod när din data skulle exporteras"
+        "Med izvozom vaših podatkov je prišlo do napake"
       ],
       "At least one email address is required": [
-        "Minst en e-postadress är obligatoriskt"
+        "Potreben je vsaj en e-poštni naslov"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "Kan inte hämta brevlådor för detta alias just nu"
+        "Nabiralnikov za ta vzdevek trenutno ni mogoče pridobiti"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "Kunde inte skapa valv “${ vaultName }“"
+        "Ni bilo mogoče ustvariti trezorja »${ vaultName }«"
       ],
       "Could not send invitations to the following addresses :": [
-        "Kunde inte skicka inbjudningar till följande adresser:"
+        "Povabil ni bilo mogoče poslati na naslednje naslove:"
       ],
       "Duplicate email addresses.": [
-        "Dubbletter av e-postadresser."
+        "Podvojeni e-poštni naslovi."
       ],
       "Empty note": [
-        "Tom anteckning"
+        "Prazna opomba"
       ],
       "Encryption password is required": [
-        "Krypteringslösenord är obligatoriskt"
+        "Zahtevano je geslo za šifriranje"
       ],
       "Expiration Date is not in the format MM/YY": [
-        "Utgångsdatum är inte i formatet MM/ÅÅ"
+        "Datum poteka ni v obliki MM/LL"
       ],
       "Invalid alias prefix": [
-        "Ogiltigt alias-prefix"
+        "Neveljavna predpona vzdevka"
       ],
       "Invalid email addresses.": [
-        "Ogiltiga e-postadresser."
+        "Neveljavni e-poštni naslovi."
       ],
       "item was imported without custom fields": [
-        "objekt importerades utan anpassade fält"
+        "element je bil uvožen brez polj po meri"
       ],
       "Maximum length is ${ maxLength } character": [
-        "Maximal längd är ${ maxLength } tecken",
-        "Maximal längd är ${ maxLength } tecken"
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }"
       ],
       "Missing alias prefix": [
-        "Alias-prefix saknas"
+        "Manjka pripona vzdevka"
       ],
       "Missing alias suffix": [
-        "Alias-suffix saknas"
+        "Manjka pripona vzdevka"
       ],
       "No items": [
-        "Inga objekt"
+        "Ni predmetov"
       ],
       "No items in trash matching": [
-        "Inga objekt i papperskorgen matchar"
+        "Noben predmet v košu se ne ujema"
       ],
       "No items matching": [
-        "Inga objekt matchar"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Inga passkeys hittades. Spara dina passkeys i ${ PASS_APP_NAME } för att logga in på ${ domain }."
+        "Noben predmet se ne ujema"
       ],
       "No password manager selected": [
-        "Ingen lösenordshanterare vald"
+        "Izbran ni noben upravitelj gesel"
       ],
       "No results": [
-        "Inga resultat"
+        "Ni rezultatov"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"
+        "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
       ],
       "Passphrase is required": [
-        "Lösenfras är obligatoriskt"
+        "Zahtevano je geslo"
       ],
       "PGP encrypted export file requires passphrase": [
-        "PGP-krypterad exportfil kräver lösenfras"
+        "PGP šifrirana izvozna datoteka zahteva geslo"
       ],
       "Please contact us for investigating the issue": [
-        "Kontakta oss för att undersöka problemet"
+        "Prosimo kontaktirajte nas, da raziščemo težavo"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Verifiera din e-postadress för att kunna använda e-postalias"
+        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"
       ],
       "Please verify your email address in order to use vault sharing": [
-        "Verifiera din e-postadress för att använda valvdelning"
+        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati skupno rabo trezorja"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
+        "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "Något gick fel när ${ PASS_APP_NAME } startades. Prova att uppdatera eller ladda om tillägget"
+        "Med zagonom ${ PASS_APP_NAME } je šlo nekaj narobe. Poskusite osvežiti ali znova naložiti razširitev"
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Alias-prefixet får inte vara längre än 40 tecken"
+        "Predpona vzdevka ne sme biti daljša od 40 znakov"
       ],
       "Title is required": [
-        "Rubrik är obligatoriskt"
+        "Naslov je obvezen"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Vill du överföra äganderätten till detta valv till ${ email }?"
+        "Želite prenesti lastništvo tega trezorja na ${ email }?"
       ],
       "Trash alias ?": [
-        "Kasta alias?"
+        "Vzdevke v smetnjak?"
       ],
       "Unable to save": [
-        "Kan inte spara"
+        "Ni mogoče shraniti."
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
-        "Kan inte logga in på ${ PASS_APP_NAME }. ${ additionalMessage }"
+        "Ni se mogoče prijaviti v ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Valv ”${ vaultName }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
+        "Trezor \"${ vaultName }\" in vsi njegovi elementi bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
       "Vault name is required": [
-        "Valvnamn är obligatoriskt"
+        "Zahtevano je ime trezorja"
       ],
       "You cannot create more vaults than your subscription allows.": [
-        "Du kan inte skapa fler valv än vad din prenumeration tillåter."
+        "Ne morete ustvariti več trezorjev, kot dovoljuje vaša naročnina."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Du har nått gränsen för medlemmar som kan komma åt detta valv."
+        "Dosegli ste omejitev članov, ki lahko dostopajo do tega trezorja."
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Du har nått gränsen för användare i detta valv. ${ upgradeLink }"
+        "Dosegli ste omejitev uporabnikov v tem trezorju. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Du har nått gränsen för valven du kan ha i ditt paket."
+        "Dosegli ste omejitev trezorjev, ki jih lahko imate v načrtu."
       ],
       "You have unsaved changes.": [
-        "Du har osparade ändringar."
+        "Imate neshranjene spremembe."
       ],
       "You must select at least one mailbox": [
-        "Du måste välja minst en brevlåda"
+        "Izbrati morate vsaj en poštni nabiralnik"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Du kommer inte längre att ha åtkomst till detta valv. För att gå med igen behöver du en ny inbjudan."
+        "Ne boste več imeli dostopa do tega trezorja. Če se mu želite ponovno pridružiti, potrebujete novo povabilo."
       ],
       "Your plan does not allow you to create more aliases": [
-        "Ditt paket tillåter dig inte att skapa fler alias"
+        "Vaš načrt vam ne dovoljuje ustvarjanja več vzdevkov"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "Ditt paket tillåter dig endast att fylla i automatiskt från dina två första valv"
+        "Vaš načrt vam omogoča samo samodejno izpolnjevanje iz prvih dveh trezorjev"
       ],
       "Your session could not be authorized.": [
-        "Din session kunde inte auktoriseras."
+        "Vaše povezave ni mogoče avtorizirati"
       ],
       "Your session could not be resumed.": [
-        "Din session kunde inte återupptas."
+        "Vaše povezave ni mogoče nadaljevati."
       ],
       "Your session is inactive.": [
-        "Din session är inaktiv."
+        "Vaša seja je neaktivna."
       ],
       "Your session was locked.": [
-        "Din session var låst."
+        "Vaša povezava je zaklenjena."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+        "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi elementi bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
       ]
     }
   }
