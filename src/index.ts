@@ -8,7 +8,7 @@ import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
-import { checkForUpdates } from "./update";
+import { checkForUpdates, updateDownloaded } from "./update";
 import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
@@ -148,7 +148,7 @@ if (!gotTheLock) {
 // Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
     const mainWindow = getMainWindow();
-    if (!mainWindow || !isMac) {
+    if (!mainWindow || !isMac || updateDownloaded) {
         return;
     }
 
