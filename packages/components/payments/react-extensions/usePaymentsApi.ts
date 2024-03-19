@@ -1,9 +1,9 @@
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { PLANS } from '@proton/shared/lib/constants';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { Api, ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
-import { useApi } from '../../hooks';
+import { useApi, useConfig } from '../../hooks';
 import { useChargebeeEnabledCache, useChargebeeKillSwitch } from '../client-extensions/useChargebeeContext';
 import {
     PaymentMethodStatus,
@@ -34,11 +34,14 @@ export const usePaymentsApi = (
     const apiHook = apiOverride ?? regularApi;
     const { chargebeeKillSwitch } = useChargebeeKillSwitch();
     const chargebeeEnabledCache = useChargebeeEnabledCache();
+    const { APP_NAME } = useConfig();
 
     const getPaymentsApi = (api: Api, chargebeeEnabled: ChargebeeEnabled = chargebeeEnabledCache): PaymentsApi => {
-        const statusExtended = async (version: PaymentsVersion): Promise<PaymentMethodStatusExtended> => {
-            return api<PaymentMethodStatusExtended | PaymentMethodStatus>(queryPaymentMethodStatus(version)).then(
-                (result) => {
+        const statusExtended = (version: PaymentsVersion): Promise<PaymentMethodStatusExtended> => {
+            return api<PaymentMethodStatusExtended | PaymentMethodStatus>(queryPaymentMethodStatus(version))
+                .then((result) => {
+                    // If that's already the extended status, aka v5 status, then we just return it,
+                    // or set the country code to the default one if it's missing
                     if (isPaymentMethodStatusExtended(result)) {
                         if (!result.CountryCode) {
                             result.CountryCode = DEFAULT_TAX_BILLING_ADDRESS.CountryCode;
@@ -47,9 +50,36 @@ export const usePaymentsApi = (
                         return result;
                     }
 
+                    // if that's the v4 status, we extend it to mimic the v5 status.
+                    // It will simplify all further interactions with the status.
                     return extendStatus(result);
-                }
-            );
+                })
+                .then((status) => {
+                    const keys = Object.keys(
+                        status.VendorStates
+                    ) as (keyof PaymentMethodStatusExtended['VendorStates'])[];
+
+                    // Normalizing the boolean values, converting them from 0 or 1 to false or true
+                    for (const key of keys) {
+                        status.VendorStates[key] = !!status.VendorStates[key];
+                    }
+
+                    // The backend doesn't return the Cash key. We still use it in the frontend,
+                    // so we synthetize it here.
+                    if (!Object.hasOwn(status.VendorStates, 'Cash')) {
+                        status.VendorStates.Cash = true;
+                    }
+
+                    return status;
+                })
+                .then((status) => {
+                    // ProtonAccountLite doesn't support cash payments
+                    if (APP_NAME === APPS.PROTONACCOUNTLITE) {
+                        status.VendorStates.Cash = false;
+                    }
+
+                    return status;
+                });
         };
 
         const statusExtendedAutomatic = async (): Promise<PaymentMethodStatusExtended> => {

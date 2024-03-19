@@ -191,7 +191,11 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        return !isSignupFlow(this.flow) && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
+        return (
+            this.statusExtended.VendorStates.Cash &&
+            !isSignupFlow(this.flow) &&
+            this.coupon !== BLACK_FRIDAY.COUPON_CODE
+        );
     }
 
     private isBitcoinAvailable(): boolean {
