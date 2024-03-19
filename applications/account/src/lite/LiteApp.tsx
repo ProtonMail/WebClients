@@ -48,7 +48,7 @@ const bootstrapApp = () => {
     initSafariFontFixClassnames();
 
     const cache = createCache<string, any>();
-    const store = setupStore();
+    const store = setupStore({ mode: 'lite' });
 
     extendStore({ api, config, authentication });
 
