@@ -26,7 +26,6 @@ export const userKeysListener = (startListening: SharedStartListening<UserKeysSt
             return false;
         },
         effect: async (action, listenerApi) => {
-            listenerApi.cancelActiveListeners();
             await listenerApi.dispatch(userKeysThunk({ forceFetch: true }));
         },
     });
