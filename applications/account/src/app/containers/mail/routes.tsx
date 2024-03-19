@@ -30,7 +30,6 @@ export const getMailAppRoutes = ({
     addresses,
     organization,
     isSmtpTokenEnabled,
-    isEmailForwardingEnabled,
     isNotifInboxDesktopAppOn,
 }: {
     app: APP_NAMES;
@@ -38,7 +37,6 @@ export const getMailAppRoutes = ({
     addresses?: Address[];
     organization?: Organization;
     isSmtpTokenEnabled: boolean;
-    isEmailForwardingEnabled: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
@@ -148,11 +146,11 @@ export const getMailAppRoutes = ({
                 ],
             },
             autoReply: {
-                text: isEmailForwardingEnabled ? c('Title').t`Forward and auto-reply` : c('Title').t`Auto-reply`,
+                text: c('Title').t`Forward and auto-reply`,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
                 subsections: [
-                    { text: c('Title').t`Forward emails`, id: 'forward', available: isEmailForwardingEnabled },
+                    { text: c('Title').t`Forward emails`, id: 'forward' },
                     { text: c('Title').t`Auto-reply`, id: 'auto-reply' },
                 ],
             },

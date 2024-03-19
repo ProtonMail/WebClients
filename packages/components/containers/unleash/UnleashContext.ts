@@ -42,7 +42,6 @@ enum DriveFeatureFlag {
 enum MailFeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
-    EmailForwarding = 'EmailForwarding',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     SplitStorageChecklistReopenedNova = 'SplitStorageChecklistReopenedNova', // TODO remove once the extended checklist storage split is finished
