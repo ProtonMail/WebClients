@@ -1024,6 +1024,9 @@
       "Toggle Contact app": [
         "連絡先アプリを切り替え"
       ],
+      "Toggle security center app": [
+        "セキュリティセンターアプリを切り替える"
+      ],
       "Toggle settings": [
         "設定を切り替え"
       ],
@@ -4116,8 +4119,14 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
+      "14-day destkop app trial.": [
+        "14 日間のデスクトップアプリのトライアルです。"
+      ],
       "No credit card required.": [
         "クレジットカード不要."
+      ],
+      "Try the app-new desktop app": [
+        "新しいデスクトップアプリを試す"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
@@ -4655,6 +4664,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してもよろしいですか?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "この場所にあるすべてのメッセージをごみ箱に移動してもよろしいですか？"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "この会話を完全に削除してよろしいですか？"
@@ -6103,6 +6115,9 @@
       "Don't show this again": [
         "次回から表示しない"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "例: Amazon、eBay"
+      ],
       "Email": [
         "メールアドレス"
       ],
@@ -6682,6 +6697,14 @@
         "ごみ箱"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Special Offer": [
+        "特別オファー"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -6689,11 +6712,32 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "Auto-delete Spam and Trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "2024 年 4 月 2 日までの期間限定オファー"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Message": {
@@ -7424,6 +7468,9 @@
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
       ],
+      "Used on amazon for shopping, etc.": [
+        "例: Amazonでの買い物に使用"
+      ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
       ]
@@ -7898,7 +7945,7 @@
         "スヌーズで再通知する"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "スパムメールとゴミ箱メールがすべてのメールから自動的に除外されるようになりました。 ${ settingsLink }"
+        "スパムメールとごみ箱メールがすべてのメールから自動的に除外されるようになりました。 ${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "デフォルトで画像を読み込みつつ、送信者があなたをトラッキングするのを防ぎます。これは ${ settingsLink } で変更できます。"
@@ -8525,6 +8572,9 @@
       ],
       "More selections": [
         "選択方法を指定"
+      ],
+      "Move all messages to trash": [
+        "すべてのメッセージをごみ箱へ移動"
       ],
       "Move to": [
         "移動先"
