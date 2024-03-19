@@ -3408,6 +3408,9 @@
       "No addresses exist": [
         "Brak adresów e-mail"
       ],
+      "No changes made to the current subscription": [
+        "Brak zmian w obecnej subskrypcji"
+      ],
       "No gateways": [
         "Brak bram"
       ],
@@ -3436,7 +3439,7 @@
         "starego hasła"
       ],
       "Once single sign-on is disabled for your organization:": [
-        "Opcja jednorazowego logowania jest wyłączona dla twojej organizacji:"
+        "Logowanie SSO jest wyłączone dla Twojej organizacji:"
       ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
@@ -4880,13 +4883,13 @@
         "10 adresów e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
+        "Automatyczne usuwanie spamu i opróżnianie kosza"
       ],
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny planowego wysyłania i usypiania"
       ],
       "Support for 1 custom email domain": [
-        "Wsparcie dla 1 niestandardowej domeny"
+        "Wsparcie dla 1 niestandardowej domeny e-mail"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -5338,6 +5341,9 @@
       "Router support": [
         "Wsparcie routerów"
       ],
+      "Schedule and snooze emails for any time": [
+        "Planowanie i usypianie wiadomości na dowolną porę"
+      ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
       ],
@@ -5426,7 +5432,7 @@
         "Nieograniczona liczba sejfów"
       ],
       "Unlimited volume/bandwidth": [
-        "Nielimitowana przepustowość"
+        "Nieograniczona przepustowość"
       ],
       "Up to ${ n } user": [
         "${ n } użytkownik",
@@ -5909,6 +5915,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Niektóre obrazy nie zostały przesłane z powodu powtarzających się nazw zaznaczonych plików."
       ]
     },
     "Onboarding": {
@@ -7116,6 +7127,12 @@
       "Billed for 15 months": [
         "Płatne za 15 miesięcy"
       ],
+      "Billed for 18 months": [
+        "Płatne za 18 miesięcy"
+      ],
+      "Billed for 3 months": [
+        "Płatne za 3 miesiące"
+      ],
       "Billed for 30 months": [
         "Płatne za 30 miesięcy"
       ],
@@ -8265,6 +8282,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Subskrypcja odnowi się automatycznie co 1 miesiąc. Twoja następna data rozliczeniowa przypada za 1 miesiąc."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Subskrypcja odnowi się automatycznie co 3 miesięce. Twoja następna data rozliczeniowa przypada za 3 miesiące."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
       ],
@@ -8287,8 +8307,14 @@
       "15-month": [
         "na 15 miesięcy"
       ],
+      "18-month": [
+        "na 18 miesięcy"
+      ],
       "2-year": [
         "dwuletnią"
+      ],
+      "3-month": [
+        "na 3 miesięce"
       ],
       "30-month": [
         "na 30 miesięcy"

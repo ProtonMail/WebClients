@@ -1798,6 +1798,9 @@
       "Access to the desktop app is limited": [
         "デスクトップアプリへのアクセスが制限されています"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "${ MAIL_APP_NAME } デスクトップ アプリのベータ版は現在、有料の ${ MAIL_APP_NAME } プランを持っている人なら誰でも利用できます。 今すぐアップグレードしてアクセスしてください。"
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "今すぐアップグレードするか、2024 年初めに再度アクセスして確認してください。"
       ]
@@ -1879,6 +1882,9 @@
       "Code wrong or not valid anymore": [
         "コードが間違っているか有効なコードではありません"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "請求書を読み込めませんでした。 後でもう一度試してください。"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -1951,6 +1957,9 @@
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
+      "Organization key must be activated to create non-private users": [
+        "非プライベート ユーザーを作成するには、組織キーをアクティブ化する必要があります"
+      ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
@@ -1968,6 +1977,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "お支払いは現在ご利用になれません。後ほど再度お試しください。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "アドレスを追加する前にカスタム ドメインを構成してください。"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "ユーザーを組織に追加する前に、独自ドメインを設定してください。"
@@ -2028,6 +2040,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "非プライベート ユーザー アカウントを作成し、そのアカウントにアクセスするには、管理者権限を復元する必要があります。"
       ],
       "Try again later": [
         "後ほどお試しください"
@@ -2738,6 +2753,9 @@
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "このユーザーに管理者権限を与えてもよろしいですか?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "このユーザーから管理者権限を削除してもよろしいですか？"
       ],
@@ -2767,6 +2785,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
+      ],
+      "Beta": [
+        "ベータ"
       ],
       "Billed at ${ price }": [
         "${ price }で請求されます"
@@ -3148,6 +3169,9 @@
       ],
       "per month": [
         "月あたり"
+      ],
+      "per month, billed at ${ price }": [
+        "月額、${ price } で請求されます"
       ],
       "per month, billed every 12 months": [
         "月額、12ヶ月ごとに請求"
@@ -3620,6 +3644,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "アカウント ${ memberAddress } でサインインしました"
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
       ],
@@ -3788,6 +3815,12 @@
       ],
       "Credit": [
         "クレジット"
+      ],
+      "Credit note": [
+        "クレジットメモ"
+      ],
+      "Currency conversion": [
+        "通貨レート"
       ],
       "Donation": [
         "寄付"
@@ -3972,6 +4005,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "私たちのチームに対する提案はありますか?"
+      ],
+      "e.g. example.com": [
+        "例: example.com"
       ],
       "Email": [
         "メールアドレス"
@@ -4363,6 +4399,14 @@
         "アップグレードしてチャットによるサポートやその他プレミアム機能を解放するか、無料のサポートフォームで問題をご報告ください。"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Special Offer": [
+        "特別オファー"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -4370,11 +4414,32 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "Auto-delete Spam and Trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "2024 年 4 月 2 日までの期間限定オファー"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Member action": {
@@ -4544,6 +4609,9 @@
       "Advanced sharing security": [
         "高度な共有セキュリティ"
       ],
+      "Auto-delete Spam and Trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
       ],
@@ -4682,6 +4750,9 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
+      "Require 2FA for organization": [
+        "組織には 2FA が必要です"
+      ],
       "Router support": [
         "ルーター対応"
       ],
@@ -4711,6 +4782,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO 統合 (近日公開予定)"
       ],
       "Start protecting your organization": [
         "組織の保護を開始する"
@@ -4753,6 +4827,12 @@
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "アクセス権限のある無制限の共有コンテナー"
+      ],
+      "Unlimited vaults": [
+        "無制限の保管庫"
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
@@ -4819,6 +4899,9 @@
       ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "無制限のユーザーに対する必須の保護と安全なコラボレーション."
       ],
       "For next-level password management and identity protection.": [
         "次のレベルのパスワード管理とアイデンティティ保護のために。"
@@ -5005,6 +5088,9 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "営業日であれば、リクエストから 24 時間以内に ${ BRAND_NAME } カスタマー サポート チームからのサポートを受けられます"
       ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "1 つの VPN 接続により、いつでも 1 つのデバイスが ${ VPN_APP_NAME } に接続できます。 たとえば、電話とラップトップを ${ VPN_APP_NAME } に同時に接続するには、2 つの VPN 接続が必要です。"
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "完全なメッセージと連絡先の詳細を含む、非プライベート ユーザーの受信箱をユーザーと同じように表示するオプション"
       ],
@@ -5074,8 +5160,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "特別に設計された NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }、${ PASS_APP_NAME } で共有されます"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "ストレージ スペースは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。 管理者は、組織内のユーザーに異なるストレージ容量を割り当てることができます"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "ストレージ容量は、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }、${ PASS_APP_NAME } のユーザー間で共有されます。"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent などのファイル共有プロトコルに対応します"
@@ -5228,6 +5320,9 @@
       "Organization only": [
         "組織のみ"
       ],
+      "Receive from all": [
+        "全員から受け取る"
+      ],
       "Router": [
         "ルーター"
       ],
@@ -5239,6 +5334,9 @@
       ],
       "Send to all": [
         "全員に送信"
+      ],
+      "Setup incomplete": [
+        "セットアップが完了していません"
       ],
       "Standard server configs": [
         "標準サーバーの設定ファイル"
@@ -5265,8 +5363,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "保管庫に移動して、パスワードやエイリアスなどを管理します。"
+      ],
       "Set up your organization": [
         "組織のための設定"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } へのアクセスを許可するには、ユーザーの追加を開始します。"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を使ってみる"
@@ -5284,6 +5388,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "話しましょう"
+      ],
       "Limited time offer": [
         "期間限定オファー"
       ],
@@ -5312,6 +5419,9 @@
       ],
       "Free forever": [
         "永久無料"
+      ],
+      "Get in touch with our sales team": [
+        "当社の営業チームにお問い合わせください"
       ],
       "Includes:": [
         "含まれるもの:"
@@ -5344,14 +5454,26 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "すべての管理者がキーにアクセスできるようになります。"
+      ],
+      "Are you sure you want to change your organization key?": [
+        "組織キーを変更してもよろしいですか?"
+      ],
       "Change organization key": [
         "組織の鍵を変更"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "プライベート以外のユーザーは、セットアップ キーを持っている場合に管理者に昇格できます"
       ],
       "Organization key activated": [
         "組織の鍵が有効になりました"
       ],
       "Organization key does not exist.": [
         "組織の鍵が存在しません。"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "管理者権限を付与するには、組織キーをアクティブ化する必要があります"
       ],
       "Organization key restored": [
         "組織の鍵が復元されました"
@@ -5362,11 +5484,47 @@
       "Permission denied, administrator privileges have been restricted.": [
         "アクセスが拒否されました。管理者権限は制限されています。"
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "プライベート ユーザーは、初めてサインインしたときに管理者に昇格できます"
+      ],
       "Reset organization key": [
         "組織の鍵をリセット"
       ],
+      "The following administrators will get access to the organization key.": [
+        "次の管理者は組織キーにアクセスできます。"
+      ],
       "The organization key must be activated first.": [
         "組織の鍵を最初に有効にする必要があります。"
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "これにより、現在アクセス権のない管理者に最新の組織キーが送信されます。"
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "非プライベート ユーザー アカウントを作成し、そのアカウントにアクセスするには、組織キーをアクティブ化する必要があります。"
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "アカウントの管理者権限を有効にするには、組織キーをアクティブ化します。"
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "データ回復方法を使用するか、組織キーをリセットして管理者権限を復元します。"
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "データ回復方法を使用するか、別の管理者に連絡するか、組織キーをリセットして管理者権限を復元してください。"
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "この送信者のアドレス キーの安全性を確認できませんでした。 送信者情報の更新に遅れが生じる場合がございます。 あとでもう一度試してみてください。 この招待状または送信者の有効性が信頼できない場合は、${ BRAND_NAME } カスタマー サポートにお問い合わせください。"
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "この送信者と招待状が本物であることを確認しました。"
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "あなたは組織 **${ organizationName }** によって管理者に任命されました"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "この操作を実行するには、組織キーにアクセスする必要があります。"
       ]
     },
     "Payment method option": {
@@ -5377,17 +5535,55 @@
         "新しいクレジットカード/デビットカード"
       ]
     },
+    "Payments": {
+      "Card number": [
+        "カード番号"
+      ],
+      "CVC": [
+        "CVC (セキュリティコード)"
+      ],
+      "MM/YY": [
+        "MM/YY (月/年)"
+      ],
+      "Timeout exceeded": [
+        "タイムアウトを超えました"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "無効なカード番号です"
       ],
       "Invalid expiration date": [
         "無効な有効期限です"
+      ],
+      "Invalid securiry code": [
+        "無効なセキュリティコード"
+      ],
+      "Something went wrong. Please try again later.": [
+        "何か問題が発生しました。 後でもう一度試してください。"
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "お支払い方法を認証できません。 別のお支払い方法を選択するか、もう一度お試しください。"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
     "Permission": {
+      "No permission": [
+        "権限がありません"
+      ],
       "Organization only": [
         "組織のみ"
+      ],
+      "Receive from all": [
+        "全員から受け取る"
+      ],
+      "Send to all": [
+        "全員に送信"
+      ],
+      "Setup incomplete": [
+        "セットアップが完了していません"
       ]
     },
     "Placeholder": {
@@ -6029,6 +6225,17 @@
         "${ currentPlanName } を使い続ける"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ CONTACTS_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } によって生成されたデータのストレージ"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最大 ${ totalStorageSize } ドライブ ストレージ"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最大 ${ totalStorageSize } メール ストレージ"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } ストレージ"
@@ -6039,8 +6246,26 @@
       "contact your administrator": [
         "管理者に連絡してください"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "すべての ${ BRAND_NAME } サービス向け"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
+      ],
       "Your storage is full": [
         "ストレージがいっぱいです"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "${ gb } のストレージと優先サポートにアクセスできなくなります。"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "追加のストレージ、電子メール アドレス、エイリアス、カレンダー、および優先サポートにアクセスできなくなります。"
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "最高の VPN 速度、10 台のデバイスの保護、高速ストリーミング、広告ブロッカーとマルウェアからの保護、および優先サポートへのアクセスが失われます。"
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
       ]
     },
     "Subscription": {
@@ -6049,6 +6274,12 @@
       ],
       "Billed for 15 months": [
         "15 か月分の請求"
+      ],
+      "Billed for 18 months": [
+        "18 か月分の請求"
+      ],
+      "Billed for 3 months": [
+        "3 か月分の請求"
       ],
       "Billed for 30 months": [
         "30 か月分の請求"
@@ -6932,6 +7163,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL（例：https://idp.example.com/sso/saml）"
       ],
+      "Feature in early access": [
+        "早期アクセスの機能"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "認証アサーションに署名するための、ユーザー情報プロバイダの公開鍵。ユーザー情報プロバイダから証明書ハッシュを取得する。"
       ],
@@ -7000,6 +7234,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "VPN B2B cancellation reason": {
@@ -7100,6 +7339,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "電子メール アドレスを非公開メンバーに追加する前に、組織キーを ${ activateLink } する必要があります。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"
