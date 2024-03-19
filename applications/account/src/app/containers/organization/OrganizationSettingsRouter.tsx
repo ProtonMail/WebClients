@@ -27,15 +27,11 @@ const OrganizationSettingsRouter = ({
     redirect,
     path,
     organizationAppRoutes,
-    isOrgSpamBlockListEnabled,
-    isOrgTwoFactorEnabled,
 }: {
     app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
-    isOrgSpamBlockListEnabled: boolean;
-    isOrgTwoFactorEnabled: boolean;
 }) => {
     const onceRef = useRef(false);
     const [organization] = useOrganization();
@@ -98,14 +94,14 @@ const OrganizationSettingsRouter = ({
                     </SubscriptionModalProvider>
                 </Route>
             )}
-            {getIsSectionAvailable(filter) && isOrgSpamBlockListEnabled && (
+            {getIsSectionAvailable(filter) && (
                 <Route path={getSectionPath(path, filter)}>
                     <PrivateMainSettingsArea config={filter}>
                         <OrganizationSpamFiltersSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
-            {getIsSectionAvailable(security) && isOrgTwoFactorEnabled && (
+            {getIsSectionAvailable(security) && (
                 <Route path={getSectionPath(path, security)}>
                     <PrivateMainSettingsArea config={security}>
                         <OrganizationTwoFAHeader organization={organization} />
