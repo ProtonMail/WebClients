@@ -5036,6 +5036,9 @@
     "mailtrial2024: Action": {
       "Get the deal": [
         "ფასდაკლების მიღება"
+      ],
+      "Special Offer": [
+        "სპეციალური შეთავაზება"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -5045,11 +5048,35 @@
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
       ],
+      "Auto-delete Spam and Trash": [
+        "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
+      ],
+      "Custom schedule send and snooze times": [
+        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
+      ],
       "Support for 1 custom email domain": [
         "1 ხელით მითითებული დომენის მხარდაჭერა"
       ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Message": {
@@ -5405,6 +5432,11 @@
       ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
       ]
     },
     "Notification in holidays calendar modal": {
