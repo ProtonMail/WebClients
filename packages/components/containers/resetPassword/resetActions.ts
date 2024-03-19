@@ -147,7 +147,8 @@ export const handleNewPassword = async ({
                 );
 
                 if (userSettings.DeviceRecovery) {
-                    if (await storeDeviceRecovery({ api, user, userKeys })) {
+                    const deviceRecoveryUpdated = await storeDeviceRecovery({ api, user, userKeys }).catch(noop);
+                    if (deviceRecoveryUpdated) {
                         // Storing device recovery (when setting a new recovery secret) modifies the user object
                         user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
                     }
