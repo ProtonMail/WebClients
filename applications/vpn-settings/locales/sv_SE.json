@@ -4795,6 +4795,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Tidsbegränsat erbjudande, löper ut 2 april 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Din prenumeration kommer förnyas automatiskt den ${ renewTime } med ${ renewablePrice }, avbryt när som helst"
       ]
     },
     "mailtrial2024: Title": {
@@ -5194,6 +5197,9 @@
       ],
       "Router support": [
         "Router-stöd"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Schemalägg och snooza e-post när som helst"
       ],
       "Schedule messages at any time": [
         "Schemalägg meddelanden när som helst"
@@ -6937,6 +6943,12 @@
       "Billed for 15 months": [
         "Fakturerad med för 15 månader"
       ],
+      "Billed for 18 months": [
+        "Fakturerad för 18 månader"
+      ],
+      "Billed for 3 months": [
+        "Fakturerad för 3 månader"
+      ],
       "Billed for 30 months": [
         "Fakturerad för 30 månader"
       ],
@@ -8034,6 +8046,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Prenumeration förnyas automatiskt varje månad. Ditt nästa faktureringsdatum är om 1 månad."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Prenumeration förnyas automatiskt var 3:e månad. Ditt nästa faktureringsdatum är om 3 månader."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du kommer sedan att faktureras var 12:e månad med ${ renewPrice }."
       ],
@@ -8054,8 +8069,14 @@
       "15-month": [
         "15 månader"
       ],
+      "18-month": [
+        "18 månader"
+      ],
       "2-year": [
         "2-årig"
+      ],
+      "3-month": [
+        "3 månader"
       ],
       "30-month": [
         "30 månader"

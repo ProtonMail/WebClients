@@ -3134,6 +3134,9 @@
       "Lean more about gateways": [
         "取得更多關於閘道的資訊"
       ],
+      "Lean more about single sign-on": [
+        "了解單一登入"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "瞭解如何以第三方 VPN 應用程式登入 ${ VPN_APP_NAME }。"
       ],
@@ -4340,6 +4343,9 @@
       "Value": [
         "值"
       ],
+      "VAT": [
+        "增值稅"
+      ],
       "Verification code": [
         "驗證碼"
       ],
@@ -4523,6 +4529,14 @@
         "升級以解鎖聊天支援與其他進階功能，或是使用我們的免費支援表單來回報您的問題。"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
@@ -4538,6 +4552,11 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "更新價 ${ renewablePrice }，任何時間都可取消"
       ]
     },
     "mailtrial2024: Info": {
@@ -4719,6 +4738,9 @@
       ],
       "Advanced sharing security": [
         "進階的共享安全性"
+      ],
+      "Auto-delete Spam and Trash": [
+        "自動清理垃圾郵件及垃圾桶"
       ],
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
@@ -5562,6 +5584,9 @@
       "Change organization key": [
         "變更組織金鑰"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
+      ],
       "Organization key activated": [
         "組織金鑰已啟用"
       ],
@@ -5580,8 +5605,14 @@
       "Reset organization key": [
         "重設組織金鑰"
       ],
+      "The following administrators will get access to the organization key.": [
+        "以下管理員將可以存取組織機構金鑰"
+      ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
       ]
     },
     "Payment method option": {
@@ -5618,6 +5649,12 @@
       ],
       "Invalid securiry code": [
         "安全碼無效"
+      ],
+      "Something went wrong. Please try again later.": [
+        "發生錯誤。請稍後再試。"
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "我們無法驗證您的繳款方式. 請選擇別種繳款方式或者再試一次."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
@@ -6358,6 +6395,12 @@
       ],
       "Billed for 15 months": [
         "15個月的費用為"
+      ],
+      "Billed for 18 months": [
+        "18個月的費用為"
+      ],
+      "Billed for 3 months": [
+        "3個月的費用為"
       ],
       "Billed for 30 months": [
         "30個月的費用為"

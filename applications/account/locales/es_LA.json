@@ -638,6 +638,9 @@
       "No": [
         "No"
       ],
+      "No, thanks": [
+        "No, gracias"
+      ],
       "OK": [
         "OK"
       ],
@@ -4812,7 +4815,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "Agregar un usuario a su cuenta de ${ PLAN_NAMES.visionary2022 }"
+        "Añadir un usuario a su cuenta de ${ PLAN_NAMES.visionary2022 }"
       ],
       "Change family name": [
         "Cambiar nombre de la familia"
@@ -5735,7 +5738,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "¿En verdad desea importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
+        "¿Está seguro de que quiere importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
       ]
     },
     "Import provider": {
@@ -6158,22 +6161,22 @@
         "¿Está seguro que quiere eliminar esta dirección?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "¿En verdad desea eliminar este calendario?"
+        "¿Está seguro de que quiere eliminar este calendario?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "¿En verdad desea eliminar este calendario? Todas las direcciones a las que compartió este calendario perderán acceso a él."
+        "¿Está seguro de que quiere eliminar este calendario? Todas las direcciones a las que compartió este calendario perderán acceso a él."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "¿En verdad desea eliminar este calendario? Todos los eventos en él serán eliminados."
+        "¿Está seguro de que quiere eliminar este calendario? Todos los eventos en él serán eliminados."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "¿En verdad desea eliminar este calendario? Puede añadir el calendario de días festivos después."
+        "¿Está seguro de que quiere eliminar este calendario? Puede añadir el calendario de días festivos después."
       ],
       "Are you sure you want to delete this domain?": [
         "¿Está seguro de que quiere eliminar este dominio?"
       ],
       "Are you sure you want to delete this filter?": [
-        "¿En verdad desea eliminar este filtro?"
+        "¿Está seguro de que quiere eliminar este filtro?"
       ],
       "Are you sure you want to delete this folder?": [
         "¿En verdad eliminar esta carpeta?"
@@ -6191,13 +6194,13 @@
         "¿Está seguro de que quiere descartar su importación?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
-        "¿En verdad desea otorgar privilegios administrativos a este usuario?"
+        "¿Está seguro de que quiere otorgar privilegios administrativos a este usuario?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "¿Está seguro de que quiere eliminar permanentemente todos sus registros?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿En verdad desea borrar los privilegios administrativos de este usuario?"
+        "¿Está seguro de que quiere borrar los privilegios administrativos de este usuario?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Pregunte al administrador de su organización para configurar puertas de enlace."
@@ -8185,10 +8188,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la cuenta se cargue más lentamente. ¿En verdad desea continuar?"
+        "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la cuenta se cargue más lentamente. ¿Está seguro de que quiere continuar?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave causará una carga lenta de la cuenta y el borrado de la misma puede causar problemas. Si está generando una clave nueva porque su clave anterior fue comprometida, marque la clave como comprometida. ¿En verdad desea continuar?"
+        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave causará una carga lenta de la cuenta y el borrado de la misma puede causar problemas. Si está generando una clave nueva porque su clave anterior fue comprometida, marque la clave como comprometida. ¿Está seguro de que quiere continuar?"
       ],
       "Generate key": [
         "Generar una clave"
@@ -9750,8 +9753,17 @@
       "for the first month": [
         "por el primer mes"
       ],
+      "for your first month": [
+        "en su primer mes"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Obtener ${ planName } por ${ price }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Su suscripción se renovará automáticamente en ${ renewTime } por ${ renewablePrice }, cancele en cualquier momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -11811,7 +11823,7 @@
         "Todos los administradores tendrán acceso a la clave."
       ],
       "Are you sure you want to change your organization key?": [
-        "¿En verdad desea cambiar la clave de la organización?"
+        "¿Está seguro de que quiere cambiar la clave de la organización?"
       ],
       "Change organization key": [
         "Cambie la clave de la organización"
@@ -13014,7 +13026,7 @@
         "**${ humanUsedSpace }** de ${ humanMaxSpace }"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al bajar de plan perderá los siguientes beneficios. ¿En verdad desea continuar?"
+        "Al bajar de plan perderá los siguientes beneficios. ¿Está seguro de que quiere continuar?"
       ],
       "Consider upgrading your plan to continue to use your account without interruptions.": [
         "Considere mejorar su plan para continuar usando su cuenta sin interrupciones."
@@ -13111,6 +13123,12 @@
       ],
       "Billed for 15 months": [
         "Facturación por 15 meses"
+      ],
+      "Billed for 18 months": [
+        "Facturación para 18 meses"
+      ],
+      "Billed for 3 months": [
+        "Facturación para 3 meses"
       ],
       "Billed for 30 months": [
         "Facturación por 30 meses"
@@ -15082,6 +15100,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "La suscripción se renueva automáticamente cada mes. Su próxima fecha de facturación es en un mes."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "La suscripción se renueva automáticamente cada 3 meses. Su próxima fecha de facturación es en 3 meses."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se le facturará cada 12 meses por ${ renewPrice }."
       ],
@@ -15102,8 +15123,14 @@
       "15-month": [
         "15 meses"
       ],
+      "18-month": [
+        "18 meses"
+      ],
       "2-year": [
         "2 años"
+      ],
+      "3-month": [
+        "3 meses"
       ],
       "30-month": [
         "30 meses"

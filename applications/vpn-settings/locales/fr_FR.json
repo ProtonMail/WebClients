@@ -4818,6 +4818,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Offre à durée limitée qui se termine le 2 avril 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Votre abonnement se renouvellera le ${ renewTime } à ${ renewablePrice }. Vous pouvez l'annuler à tout moment."
       ]
     },
     "mailtrial2024: Title": {
@@ -5792,7 +5795,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Certaines images n'ont pas été importées car la sélection en cours comporte des noms de fichier dupliqués."
+        "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
       ]
     },
     "Onboarding": {
@@ -6371,7 +6374,7 @@
         "Vous n'êtes pas à l'origine de cette demande ?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez la demande maintenant."
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez-la immédiatement."
       ],
       "Password reset request approved (${ user.Email }).": [
         "La demande de réinitialisation du mot de passe a été approuvée (${ user.Email })."
@@ -6487,7 +6490,7 @@
         "Vous n'êtes pas à l'origine de cette demande ?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez-la immédiatement."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez cette demande maintenant."
@@ -6898,7 +6901,7 @@
         "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."
@@ -6947,6 +6950,12 @@
       ],
       "Billed for 15 months": [
         "Facturé pour 15 mois"
+      ],
+      "Billed for 18 months": [
+        "Facturé pour 18 mois"
+      ],
+      "Billed for 3 months": [
+        "Facturé pour 3 mois"
       ],
       "Billed for 30 months": [
         "Facturé pour 30 mois"
@@ -8051,6 +8060,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "L'abonnement est automatiquement renouvelé tous les mois. Votre prochaine date de facturation est dans 1 mois."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "L'abonnement est automatiquement renouvelé tous les 3 mois. Votre prochaine date de facturation est dans 3 mois."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."
       ],
@@ -8071,8 +8083,14 @@
       "15-month": [
         "15 mois"
       ],
+      "18-month": [
+        "18 mois"
+      ],
       "2-year": [
         "2 ans"
+      ],
+      "3-month": [
+        "3 mois"
       ],
       "30-month": [
         "30 mois"

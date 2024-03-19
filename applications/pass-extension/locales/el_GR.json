@@ -125,6 +125,9 @@
       "Create login": [
         "Δημιουργία σύνδεσης"
       ],
+      "Create new login": [
+        "Δημιουργία νέας σύνδεσης"
+      ],
       "Create note": [
         "Δημιουργία σημείωσης"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save passkey": [
+        "Αποθήκευση κλειδιού πρόσβασης"
+      ],
       "Saving": [
         "Αποθήκευση"
+      ],
+      "Saving passkey...": [
+        "Αποθήκευση κλειδιού πρόσβασης..."
       ],
       "See members": [
         "Προβολή μελών"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να προχωρήσετε στην εξαγωγή"
       ],
+      "Authentication failure: ${ message }": [
+        "Αποτυχία ελέγχου ταυτότητας: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Αποτυχία ελέγχου ταυτότητας"
+      ],
       "Auto-lock could not be activated": [
         "Δεν ήταν δυνατή η ενεργοποίηση του αυτόματου κλειδώματος"
       ],
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "Η δημιουργία του στοιχείου απέτυχε"
       ],
+      "Item does not exist": [
+        "Το στοιχείο δεν υπάρχει"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Το LastPass θα εξαγάγει ένα κατεστραμμένο αρχείο CSV εάν κάποιο από τα πεδία στοιχείων σας περιέχει μην αναμενόμενα κόμματα, εισαγωγικά ή πολλές γραμμές"
+      ],
+      "Missing passkey": [
+        "Κλειδί πρόσβασης λείπει"
       ],
       "Moving item failed": [
         "Η μετακίνηση στοιχείου απέτυχε"
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Παρακαλούμε καρφιτσώστε την επέκταση ή επιλέξτε \"Συνέχεια χωρίς καρφίτσωμα\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Αποτυχία εγγραφής: ${ message }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "Άγνωστη πρόσκληση"
+      ],
+      "Unknown item": [
+        "Άγνωστο αντικείμενο"
+      ],
+      "Unknown passkey": [
+        "Άγνωστο κλειδί πρόσβασης"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Μη υποστηριζόμενη μορφή αρχείου ${ PASS_APP_NAME }"
@@ -848,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Μια νέα έκδοση του ${ PASS_APP_NAME } είναι διαθέσιμη. Ενημερώστε το για να απολαύσετε τις πιο πρόσφατες δυνατότητες και διορθώσεις σφαλμάτων."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Ένα κλειδί πρόσβασης για το \"${ username }\" θα αποθηκευτεί και θα είναι διαθέσιμο σε συσκευές όπου είναι εγκατεστημένο το ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
       ],
@@ -893,6 +926,9 @@
       "Auto-lock successfully disabled": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
       ],
+      "Autosaved on ${ payload.domain }": [
+        "Αυτόματη αποθήκευση στο ${ payload.domain }"
+      ],
       "Built in 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής ταυτότητας 2FA"
       ],
@@ -908,8 +944,17 @@
       "Can view items in this vault.": [
         "Μπορεί να προβάλει στοιχεία σε αυτή την κρύπτη."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Κάντε κλικ στο εικονίδιο για να το ανοίξετε ανά πάσα στιγμή."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Κλείστε αυτό το παράθυρο για να χρησιμοποιήσετε κλειδί ασφαλείας ή άλλο κλειδί πρόσβασης."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Κλείστε αυτό το παράθυρο για να χρησιμοποιήσετε έναν άλλο διαχειριστή κλειδιών πρόσβασης."
       ],
       "Congratulations, your access has been confirmed": [
         "Συγχαρητήρια, η πρόσβασή σας επιβεβαιώθηκε"
@@ -1118,6 +1163,9 @@
       "Pass Plus trial": [
         "Δοκιμή Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Είσοδος με κλειδί πρόσβασης"
+      ],
       "Password copied": [
         "Ο κωδικός πρόσβασης αντιγράφηκε"
       ],
@@ -1178,6 +1226,12 @@
       ],
       "Save login": [
         "Αποθήκευση διαπιστευτηρίων"
+      ],
+      "Save passkey": [
+        "Αποθήκευση κλειδιού πρόσβασης"
+      ],
+      "Select an existing login or create a new one.": [
+        "Επιλέξτε μια υπάρχουσα σύνδεση ή δημιουργήστε μια νέα."
       ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
@@ -1276,6 +1330,12 @@
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN για πρόσβαση στα κλειδιά πρόσβασής σας"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN σας για να αποθηκεύσετε αυτό το κλειδί πρόσβασης"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
       ],
@@ -1345,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Έχετε φτάσει στο όριο των ψευδωνύμων που μπορείτε να δημιουργήσετε. Δημιουργήστε ένα απεριόριστο αριθμό ψευδωνύμων κατά την αναβάθμιση της συνδρομής σας."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Έχετε φτάσει στο όριο των πιστωτικών καρτών που μπορείτε να δημιουργήσετε. Δημιουργήστε ένα απεριόριστο αριθμό πιστωτικών καρτών κατά την αναβάθμιση της συνδρομής σας."
       ],
       "You have reached the limit of vaults you can create.": [
         "Έχετε φτάσει στο όριο των κρυπτών που μπορείτε να δημιουργήσετε."
@@ -1650,6 +1713,9 @@
       "Oldest to newest": [
         "Από το παλαιότερο στο νεότερο"
       ],
+      "Passkey": [
+        "Κλειδί πρόσβασης"
+      ],
       "Passphrase": [
         "Συνθηματικό"
       ],
@@ -1790,6 +1856,9 @@
       ],
       "View logs": [
         "Προβολή αρχείων καταγραφής"
+      ],
+      "Website": [
+        "Ιστοσελίδα"
       ],
       "Websites": [
         "Ιστοσελίδες"
@@ -2052,6 +2121,9 @@
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
       ],
+      "Passkey": [
+        "Κλειδί πρόσβασης"
+      ],
       "Password": [
         "Κωδικός"
       ],
@@ -2221,6 +2293,9 @@
       ],
       "No items matching": [
         "Δεν υπάρχουν στοιχεία που να ταιριάζουν"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Δε βρέθηκαν κλειδιά πρόσβασης. Αποθηκεύστε τα κλειδιά πρόσβασης στο ${ PASS_APP_NAME } για να συνδεθείτε στο ${ domain }."
       ],
       "No password manager selected": [
         "Δεν έχει επιλεγεί διαχειριστής κωδικών πρόσβασης"

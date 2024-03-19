@@ -638,6 +638,9 @@
       "No": [
         "No"
       ],
+      "No, thanks": [
+        "No, gracias"
+      ],
       "OK": [
         "Aceptar"
       ],
@@ -9750,8 +9753,17 @@
       "for the first month": [
         "por el primer mes"
       ],
+      "for your first month": [
+        "en tu primer mes"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Obtén ${ planName } por ${ price }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Tu suscripción se renovará automáticamente en ${ renewTime } por ${ renewablePrice }. Puedes cancelar en cualquier momento."
       ]
     },
     "mailtrial2024: Title": {
@@ -13112,6 +13124,12 @@
       "Billed for 15 months": [
         "Facturación para 15 meses"
       ],
+      "Billed for 18 months": [
+        "Facturación para 18 meses"
+      ],
+      "Billed for 3 months": [
+        "Facturación para 3 meses"
+      ],
       "Billed for 30 months": [
         "Facturación para 30 meses"
       ],
@@ -14034,7 +14052,7 @@
         "Descarga la aplicación de escritorio"
       ],
       "Download the mobile apps": [
-        "Descarga las aplicaciiones para dispositivos móviles"
+        "Descarga las aplicaciones para dispositivos móviles"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
@@ -15082,6 +15100,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "La suscripción se renueva automáticamente cada mes. Tu próxima fecha de facturación es en un mes."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "La suscripción se renueva automáticamente cada 3 meses. Tu próxima fecha de facturación es en 3 meses."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se te facturará cada 12 meses por ${ renewPrice }."
       ],
@@ -15102,8 +15123,14 @@
       "15-month": [
         "15 meses"
       ],
+      "18-month": [
+        "18 meses"
+      ],
       "2-year": [
         "2 años"
+      ],
+      "3-month": [
+        "3 meses"
       ],
       "30-month": [
         "30 meses"

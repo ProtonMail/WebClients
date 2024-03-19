@@ -632,6 +632,9 @@
       "No": [
         "否"
       ],
+      "No, thanks": [
+        "不用了，謝謝"
+      ],
       "OK": [
         "好"
       ],
@@ -5010,6 +5013,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store的${ appName }"
+      ],
+      "${ appName } on Play Store": [
+        "Play 商店的${ appName }"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME }應用程式"
       ],
@@ -8109,9 +8118,6 @@
       "Awarded": [
         "獲得獎勵"
       ],
-      "Beta": [
-        "測試版"
-      ],
       "Billing address": [
         "帳單位址"
       ],
@@ -8808,6 +8814,9 @@
       "Username": [
         "使用者名稱"
       ],
+      "VAT": [
+        "增值稅"
+      ],
       "Verification code": [
         "驗證碼"
       ],
@@ -8878,6 +8887,11 @@
     "Label for default event settings": {
       "Duration": [
         "為期"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "請加入以下 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
       ]
     },
     "Label for new member": {
@@ -9181,6 +9195,14 @@
         "安全防護的電子郵件保護隱私"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
@@ -9198,9 +9220,17 @@
         "資料夾、標籤與篩選器無上限"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "更新價 ${ renewablePrice }，任何時間都可取消"
+      ]
+    },
     "mailtrial2024: Info": {
       "for the first month": [
         "首月"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "盡快為${ price }取得${ planName }。"
       ],
       "Limited-time offer, expires April 2 2024": [
         "限時優惠，只到2024年4月2日"
@@ -9618,6 +9648,9 @@
       "Advanced sharing security": [
         "進階的共享安全性"
       ],
+      "Auto-delete Spam and Trash": [
+        "自動清理垃圾郵件及垃圾桶"
+      ],
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
       ],
@@ -10018,6 +10051,9 @@
       ],
       "terms and conditions": [
         "條款及細則"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "您的使用者只能在登入才看見組織機構的名字."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "若要開始使用，請選擇一個顯示名稱。這是您傳送電子郵件、邀請別人參與事件，又或分享檔案時，對方會看見的名字。"
@@ -11012,6 +11048,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "商業使用"
+      ],
+      "For individuals": [
+        "個人使用"
       ]
     },
     "passwordless": {
@@ -11020,6 +11059,9 @@
       ],
       "Change organization key": [
         "變更組織金鑰"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
       ],
       "Organization key activated": [
         "組織金鑰已啟用"
@@ -11039,8 +11081,14 @@
       "Reset organization key": [
         "重設組織金鑰"
       ],
+      "The following administrators will get access to the organization key.": [
+        "以下管理員將可以存取組織機構金鑰"
+      ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
       ]
     },
     "Payment method option": {
@@ -11077,6 +11125,12 @@
       ],
       "Invalid securiry code": [
         "安全碼無效"
+      ],
+      "Something went wrong. Please try again later.": [
+        "發生錯誤。請稍後再試。"
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "我們無法驗證您的繳款方式. 請選擇別種繳款方式或者再試一次."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
@@ -12151,6 +12205,12 @@
       ],
       "Billed for 15 months": [
         "15個月的費用為"
+      ],
+      "Billed for 18 months": [
+        "18個月的費用為"
+      ],
+      "Billed for 3 months": [
+        "3個月的費用為"
       ],
       "Billed for 30 months": [
         "30個月的費用為"

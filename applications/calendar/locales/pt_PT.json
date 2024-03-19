@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
+      "Create and copy alias": [
+        "Criar e colar pseudónimo"
+      ],
       "Create calendar": [
         "Criar um calendário"
       ],
@@ -500,6 +503,9 @@
       ],
       "Select calendar view": [
         "Selecionar vista de calendário"
+      ],
+      "Select country": [
+        "Seleccionar país"
       ],
       "Select time zone": [
         "Seleccionar o fuso horário"
@@ -1228,7 +1234,7 @@
     },
     "Contact image": {
       "Contact image": [
-        "Imagem do contato"
+        "Imagem do contacto"
       ]
     },
     "Contact type label": {
@@ -2242,10 +2248,10 @@
         "Esta ocorrência do evento foi atualizada."
       ],
       "This event was updated.": [
-        "Este evento foi actualizado."
+        "Este evento foi atualizado."
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Você foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2330,22 +2336,22 @@
         "Chave privada primária do endereço não encontrada"
       ],
       "Alias is not valid": [
-        "O pseudónimo não é válido"
+        "O alias não é válido"
       ],
       "Alias is required": [
-        "O pseudónimo é obrigatório"
+        "O alias é obrigatório"
       ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."
       ],
       "Aliases could not be loaded": [
-        "O pseudónimo não foi carregado"
+        "Não foi possível carregar os aliases"
       ],
       "Already a member of this calendar": [
         "Já é membro deste calendário."
       ],
       "An error occurred while loading alias options": [
-        "Ocorreu um erro ao carregar as opções do pseudónimo"
+        "Ocorreu um erro ao carregar as opções do alias"
       ],
       "An error occurred while saving your alias": [
         "Ocorreu um erro ao guardar o seu alias"
@@ -5704,6 +5710,9 @@
       "Open ${ PASS_APP_NAME }": [
         "Abrir ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Proteja a sua identidade digital"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
       ]
@@ -6223,6 +6232,9 @@
       "Address copied to clipboard": [
         "Endereço copiado para a área de transferência"
       ],
+      "Alias saved and copied": [
+        "Pseudónimo guardado e copiado"
+      ],
       "All events deleted": [
         "Todos os eventos eliminados"
       ],
@@ -6683,6 +6695,9 @@
       "Minicalendar": [
         "Minicalendário"
       ],
+      "Need more aliases?": [
+        "Necessita de mais pseudónimos?"
+      ],
       "Night theme": [
         "Tema noturno"
       ],
@@ -6853,6 +6868,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Convidou participantes com endereços equivalentes"
+      ],
+      "Your account is protected": [
+        "A sua conta está protegida"
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"
