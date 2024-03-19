@@ -1,7 +1,7 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
-import { clearStorage, isMac, isWindows } from "../helpers";
+import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
 import { areDevToolsAvailable } from "../view/windowHelpers";
 import { openLogFolder } from "./openLogFolder";
@@ -33,12 +33,7 @@ const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: M
     menu[editIndex].submenu = [...submenu, ...(allOSEntries ?? [])];
 };
 
-export const setApplicationMenu = (isPackaged: boolean) => {
-    if (isWindows) {
-        Menu.setApplicationMenu(null);
-        return;
-    }
-
+export const setApplicationMenu = () => {
     const temp: MenuProps[] = [
         {
             label: c("Menu").t`File`,
@@ -161,7 +156,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
             ],
         });
 
-        if (!isPackaged) {
+        if (!app.isPackaged) {
             const submenu = temp[0].submenu as MenuItemConstructorOptions[];
             temp[0].submenu = [...submenu, { type: "separator" }, { role: "services" }];
         }

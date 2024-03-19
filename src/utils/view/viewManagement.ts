@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
+import { BrowserView, BrowserWindow, Input, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { resetBadge } from "../../ipc/notification";
@@ -68,12 +68,30 @@ const createViews = (session: Session) => {
         const callbackValue = checkKeys(request);
         callback(callbackValue);
     });
+
+    if (isWindows) {
+        mainWindow.setMenuBarVisibility(false);
+
+        const keyPressHandling = (input: Input) => {
+            if (input.key === "Alt" && input.type === "keyDown") {
+                mainWindow.setMenuBarVisibility(!mainWindow.isMenuBarVisible());
+            }
+        };
+
+        mailView.webContents.on("before-input-event", (_e, input) => {
+            keyPressHandling(input);
+        });
+
+        calendarView.webContents.on("before-input-event", (_e, input) => {
+            keyPressHandling(input);
+        });
+    }
 };
 
 const createBrowserWindow = (session: Session) => {
     mainWindow = new BrowserWindow({ ...getWindowConfig(session) });
 
-    setApplicationMenu(app.isPackaged);
+    setApplicationMenu();
 
     mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
