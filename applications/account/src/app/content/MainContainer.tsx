@@ -120,32 +120,16 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { featuresFlags, getFeature } = useFeatures([
-        FeatureCode.ReferralProgram,
-        FeatureCode.SmtpToken,
+    const { getFeature } = useFeatures([
         FeatureCode.MailDisableE2EE,
-        FeatureCode.HolidaysCalendars,
         FeatureCode.EasySwitch,
-        FeatureCode.OrgSpamBlockList,
-        FeatureCode.ProtonSentinel,
-        FeatureCode.ProtonSentinelUpsell,
-        FeatureCode.OrgTwoFactor,
         FeatureCode.NotificationInboxDesktopApp,
     ]);
 
-    const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
-
-    const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
-    const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
-    const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
-    const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
-    const isProtonSentinelUpsellEnabled = getFeature(FeatureCode.ProtonSentinelUpsell).feature?.Value === true;
-    const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
     const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const loadingFeatures = featuresFlags.some(({ loading }) => loading);
     const recoveryNotification = useRecoveryNotification(false);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
@@ -158,20 +142,13 @@ const MainContainer = () => {
         addresses,
         organization,
         subscription,
-        isReferralProgramEnabled:
-            referralProgramFeature?.feature?.Value &&
-            userSettings.Referral?.Eligible &&
-            user?.ChargebeeUser !== ChargebeeEnabled.CHARGEBEE_FORCED,
-        isSmtpTokenEnabled,
+        isReferralProgramEnabled: Boolean(
+            userSettings.Referral?.Eligible && user?.ChargebeeUser !== ChargebeeEnabled.CHARGEBEE_FORCED
+        ),
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
-        isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
-        isOrgSpamBlockListEnabled,
         isProtonSentinelEligible: isProtonSentinelEligible(userSettings),
-        isProtonSentinelFeatureEnabled,
-        isProtonSentinelUpsellEnabled,
-        isOrgTwoFactorEnabled,
         isNotifInboxDesktopAppOn,
     });
 
@@ -247,7 +224,6 @@ const MainContainer = () => {
     const redirect = (() => {
         if (
             loadingOrganization ||
-            loadingFeatures ||
             loadingSubscription ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable
@@ -302,8 +278,6 @@ const MainContainer = () => {
                         path={prefixPath}
                         organizationAppRoutes={routes.organization}
                         redirect={redirect}
-                        isOrgSpamBlockListEnabled={isOrgSpamBlockListEnabled}
-                        isOrgTwoFactorEnabled={isOrgTwoFactorEnabled}
                     />
                 </Route>
                 <Route path={`/${mailSlug}`}>
@@ -317,7 +291,6 @@ const MainContainer = () => {
                             <CalendarSettingsRouter
                                 user={user}
                                 subscription={subscription}
-                                loadingFeatures={loadingFeatures}
                                 calendarAppRoutes={routes.calendar}
                                 redirect={redirect}
                             />

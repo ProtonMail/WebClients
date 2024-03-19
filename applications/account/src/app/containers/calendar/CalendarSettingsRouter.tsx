@@ -37,13 +37,12 @@ import type { getCalendarAppRoutes } from './routes';
 
 interface Props {
     user: UserModel;
-    loadingFeatures: boolean;
     calendarAppRoutes: ReturnType<typeof getCalendarAppRoutes>;
     redirect: ReactNode;
     subscription?: Subscription;
 }
 
-const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarAppRoutes, redirect }: Props) => {
+const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirect }: Props) => {
     const { path } = useRouteMatch();
 
     const [addresses, loadingAddresses] = useAddresses();
@@ -89,13 +88,7 @@ const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarA
 
     useCalendarsInfoListener(allCalendarIDs);
 
-    if (
-        loadingAddresses ||
-        loadingCalendars ||
-        loadingCalendarUserSettings ||
-        loadingFeatures ||
-        loadingSubscribedCalendars
-    ) {
+    if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings || loadingSubscribedCalendars) {
         return <PrivateMainAreaLoading />;
     }
 
