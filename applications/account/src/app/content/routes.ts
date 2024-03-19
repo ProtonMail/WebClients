@@ -17,16 +17,10 @@ interface Arguments {
     subscription: Subscription | undefined;
     organization: Organization | undefined;
     isReferralProgramEnabled: boolean;
-    isSmtpTokenEnabled: boolean;
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
-    isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
-    isOrgSpamBlockListEnabled: boolean;
     isProtonSentinelEligible: boolean;
-    isProtonSentinelFeatureEnabled: boolean;
-    isProtonSentinelUpsellEnabled: boolean;
-    isOrgTwoFactorEnabled: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }
 
@@ -39,14 +33,8 @@ export const getRoutes = ({
     isDataRecoveryAvailable,
     isSessionRecoveryAvailable,
     isReferralProgramEnabled,
-    isSmtpTokenEnabled,
-    isGmailSyncEnabled,
     recoveryNotification,
-    isOrgSpamBlockListEnabled,
     isProtonSentinelEligible,
-    isProtonSentinelFeatureEnabled,
-    isProtonSentinelUpsellEnabled,
-    isOrgTwoFactorEnabled,
     isNotifInboxDesktopAppOn,
 }: Arguments) => {
     return {
@@ -59,18 +47,14 @@ export const getRoutes = ({
             isSessionRecoveryAvailable,
             isReferralProgramEnabled,
             recoveryNotification,
-            isGmailSyncEnabled,
             organization,
             isProtonSentinelEligible,
-            isProtonSentinelFeatureEnabled,
-            isProtonSentinelUpsellEnabled,
         }),
         mail: getMailAppRoutes({
             app,
             user,
             addresses,
             organization,
-            isSmtpTokenEnabled,
             isNotifInboxDesktopAppOn,
         }),
         calendar: getCalendarAppRoutes({ app, isNotifInboxDesktopAppOn }),
@@ -80,8 +64,6 @@ export const getRoutes = ({
             user,
             organization,
             subscription,
-            isOrgSpamBlockListEnabled,
-            isOrgTwoFactorEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
     };
