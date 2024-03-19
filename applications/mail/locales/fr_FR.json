@@ -1053,7 +1053,7 @@
         "Afficher les contacts"
       ],
       "Toggle security center app": [
-        "Activer/Désactiver l'application du centre de sécurité"
+        "Activer l'application du centre de sécurité"
       ],
       "Toggle settings": [
         "Afficher ou masquer les paramètres"
@@ -3205,7 +3205,7 @@
         "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }\n\n${ eventDetailsText }"
+        "Vous êtes invité à ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3213,7 +3213,7 @@
         "HORAIRE : \n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "HORAIRE \n${ formattedStart } (toute la journée)"
+        "HORAIRE :\n${ formattedStart } (toute la journée)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "HORAIRE : \n${ formattedStart } - ${ formattedEnd }"
@@ -3362,13 +3362,13 @@
         "Les options d'alias n'ont pas pu être obtenues."
       ],
       "Aliases could not be loaded": [
-        "Les alias n'ont pas pu être chargés."
+        "Les alias n'ont pu être chargés."
       ],
       "An error occurred while loading alias options": [
         "Une erreur s’est produite lors du chargement des options de l'alias."
       ],
       "An error occurred while saving your alias": [
-        "Une erreur est survenue lors de l'enregistrement de votre alias"
+        "Une erreur s'est produite lors de l'enregistrement de votre alias."
       ],
       "Attachments are limited to 25 MB": [
         "La taille des pièces jointes est limitée à 25 Mo."
@@ -3482,7 +3482,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Forward address is required": [
-        "Le champ adresse e-mail de transfert est requis."
+        "Veuillez indiquer une adresse de transfert."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -3540,7 +3540,7 @@
         "Il manque la signature."
       ],
       "Name is required": [
-        "Le champ Nom est requis."
+        "Veuillez indiquer un nom."
       ],
       "Network error: Please check your connection and try again.": [
         "Erreur réseau : nous vous invitons à vérifier votre connexion et à réessayer."
@@ -5218,10 +5218,10 @@
         "Voulez-vous vraiment abandonner votre importation ?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Archives ?"
+        "Voulez-vous vraiment déplacer tous les messages de cet emplacement vers le dossier Archives ?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Corbeille ?"
+        "Voulez-vous vraiment envoyer tous les messages de cet emplacement vers la corbeille ?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } conversation ?",
@@ -6068,7 +6068,7 @@
         "Ce message est signé avec une clé attachée qui n'a pas encore été approuvée."
       ],
       "This message will be automatically deleted at ${ value }": [
-        "Ce message sera automatiquement supprimé à ${ value }."
+        "Ce message sera supprimé automatiquement à ${ value }."
       ],
       "This message will be automatically deleted on ${ value }": [
         "Ce message sera automatiquement supprimé à ${ value }."
@@ -7870,7 +7870,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Certaines images n'ont pas été importées car la sélection en cours comporte des noms de fichier dupliqués."
+        "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
       ]
     },
     "Oauth instructions": {
@@ -9004,7 +9004,7 @@
         "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "Your ${ appStorage } is almost full": [
         "Votre ${ appStorage } est presque plein."

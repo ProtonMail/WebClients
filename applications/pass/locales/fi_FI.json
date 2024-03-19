@@ -452,8 +452,8 @@
         "Automaattilukitusta ei voitu poistaa käytöstä"
       ],
       "Cannot send invitation at the moment": [
-        "Kutsua ei voi lähettää juuri nyt",
-        "Kutsuja ei voi lähettää juuri nyt"
+        "Kutsua ei voida lähettää juuri nyt",
+        "Kutsuja ei voida lähettää juuri nyt"
       ],
       "Cannot send invitations at the moment": [
         "Kutsuja ei voida tällä hetkellä lähettää"
@@ -729,7 +729,7 @@
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
       "${ count } invites successfully sent": [
-        "${ count } kutsun lähetys onnistui"
+        "${ count } kutsua lähetettiin"
       ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -862,7 +862,7 @@
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
-        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan."
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Ota kaikki hyöty irti Passista luomalla kullekin tiimille tai projektille oma holvi."
@@ -1014,8 +1014,8 @@
         "Pass Plus -kokeilu"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikko sitten poistetaan automaattisesti historiasta.",
-        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa sitten poistetaan automaattisesti historiasta."
+        "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti.",
+        "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti."
       ],
       "Permanently deleting selected items": [
         "Valittuja kohteita poistetaan pysyvästi"
@@ -1213,6 +1213,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Et voi lisätä enempää luottokortteja. Päivitä tilauksesi lisätäksesi rajoittamattoman määrän luottokortteja."
       ],
       "You have reached the limit of vaults you can create.": [
         "Luotujen holvien enimmäismäärä on saavutettu."
@@ -1484,6 +1487,9 @@
       ],
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
+      ],
+      "Passkey": [
+        "Avainkoodi"
       ],
       "Passphrase": [
         "Tunnuslauseke"
@@ -1860,6 +1866,9 @@
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
+      ],
+      "Passkey": [
+        "Avainkoodi"
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"

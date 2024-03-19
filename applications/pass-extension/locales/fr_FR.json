@@ -126,7 +126,7 @@
         "Créer un identifiant"
       ],
       "Create new login": [
-        "Créer un nouvel identifiant"
+        "Créer un identifiant"
       ],
       "Create note": [
         "Créer une note"
@@ -360,13 +360,13 @@
         "Enregistrer"
       ],
       "Save passkey": [
-        "Sauvegarder la clé d'identification"
+        "Enregistrer la clé d'identification"
       ],
       "Saving": [
         "Enregistrer"
       ],
       "Saving passkey...": [
-        "Sauvegarde de la clé d'identification..."
+        "Enregistrement de la clé d'identification..."
       ],
       "See members": [
         "Afficher les membres"
@@ -523,10 +523,10 @@
         "L'authentification n'a pas abouti. Confirmez votre mot de passe ${ BRAND_NAME } pour poursuivre l'exportation."
       ],
       "Authentication failure: ${ message }": [
-        "L'authentification a échoué : ${ message }"
+        "L'authentification n'a pas abouti : ${ message }"
       ],
       "Authenticator failure": [
-        "L'authentification a échoué"
+        "L'authentification n'a pas abouti."
       ],
       "Auto-lock could not be activated": [
         "Le verrouillage automatique n’a pu être activé."
@@ -666,13 +666,13 @@
         "La création de l'élément n'a pas abouti."
       ],
       "Item does not exist": [
-        "L'objet n'existe pas"
+        "L'élément n'existe pas."
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Si l'un des champs comporte des virgules, des guillemets ou des lignes supplémentaires non prévues, LastPass exportera un fichier CSV corrompu."
       ],
       "Missing passkey": [
-        "Clé d'authentification manquante"
+        "La clé d'authentification est manquante."
       ],
       "Moving item failed": [
         "Le déplacement de l'élément n'a pas abouti."
@@ -690,7 +690,7 @@
         "Épinglez l'extension ou sélectionnez « Continuer sans épingler »."
       ],
       "Registration failure: ${ message }": [
-        "L'enregistrement a échoué : ${ message }"
+        "L'enregistrement n'a pas abouti : ${ message }"
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -879,7 +879,7 @@
         "Une nouvelle version de ${ PASS_APP_NAME } est disponible. Faites la mise à jour pour profiter des dernières fonctionnalités et corrections de bugs."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Une clé d'authentification pour \"${ username }\" seras enregistrée et disponible pour les appareils ou ${ PASS_APP_NAME } est installé."
+        "Une clé d'authentification pour « ${ username } » seras enregistrée et disponible sur les appareils où ${ PASS_APP_NAME } est installé."
       ],
       "Access successfully confirmed": [
         "L'accès a été confirmé."
@@ -927,7 +927,7 @@
         "Le verrouillage automatique a été désactivé."
       ],
       "Autosaved on ${ payload.domain }": [
-        "Enregistré automatiquement sur ${ payload.domain }"
+        "Enregistrement automatique sur ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Authentification A2F intégrée"
@@ -945,16 +945,16 @@
         "Permet de consulter les éléments de ce coffre-fort."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Choisir une clé d'authentification sauvegardée pour la connexion à ${ domain }"
+        "Choisir une clé d'authentification enregistrée pour la connexion à ${ domain }"
       ],
       "Click the icon to open it anytime.": [
         "Quand vous voulez l'ouvrir, cliquez sur l'icône."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Fermez cette fenêtre afin d'utiliser une clé de sécurité ou une autre clé d'identification."
+        "Fermez cette fenêtre pour utiliser une clé de sécurité ou clé d'identification."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Fermer cette fenêtre afin d'utiliser un autre gestionnaire de clés d'authentification."
+        "Veuillez fermer cette fenêtre pour utiliser un autre gestionnaire de clés d'authentification."
       ],
       "Congratulations, your access has been confirmed": [
         "Votre accès a été confirmé."
@@ -1228,7 +1228,7 @@
         "Enregistrer l'identifiant"
       ],
       "Save passkey": [
-        "Sauvegarder la clé d'identification"
+        "Enregistrer la clé d'identification"
       ],
       "Select an existing login or create a new one.": [
         "Sélectionnez un identifiant existant ou créez-en un nouveau."
@@ -1331,10 +1331,10 @@
         "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Débloquez ${ PASS_APP_NAME } avec votre code NIP pour accéder a vos clés d'authentifications"
+        "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour accéder a vos clés d'authentifications."
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Débloquez ${ PASS_APP_NAME } avec votre code NIP afin de sauvegarder cette clé d'authentification"
+        "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour enregistrer cette clé d'authentification."
       ],
       "Unlock it with your PIN to access the settings": [
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
@@ -1405,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Vous avez atteint le nombre maximum d'alias que vous pouvez créer. Changez d'abonnement pour créer un nombre illimité d'alias."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Vous avez atteint le nombre maximum de cartes bancaires que vous pouvez créer. Changez d'abonnement pour créer un nombre illimité de cartes bancaires."
       ],
       "You have reached the limit of vaults you can create.": [
         "Vous avez atteint la limite de coffres-forts que vous pouvez créer."
@@ -2290,6 +2293,9 @@
       ],
       "No items matching": [
         "Aucun élément ne correspond."
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Aucune clé d'identification n'a été trouvée. Enregistrez vos clés d'identification dans ${ PASS_APP_NAME } pour vous connecter à ${ domain }."
       ],
       "No password manager selected": [
         "Aucun gestionnaire de mot de passe n'est sélectionné."

@@ -110,6 +110,9 @@
       "Create login": [
         "創建登入"
       ],
+      "Create new login": [
+        "創建新登入"
+      ],
       "Create note": [
         "創建備註"
       ],
@@ -335,8 +338,14 @@
       "Save": [
         "儲存"
       ],
+      "Save passkey": [
+        "儲存密碼金鑰"
+      ],
       "Saving": [
         "儲存中..."
+      ],
+      "Saving passkey...": [
+        "儲存Passkey..."
       ],
       "See members": [
         "檢視成員"
@@ -470,6 +479,9 @@
       "Authentication error": [
         "認證錯誤"
       ],
+      "Authenticator failure": [
+        "驗證失敗"
+      ],
       "Auto-lock could not be activated": [
         "無法啟用自動鎖定"
       ],
@@ -587,8 +599,14 @@
       "Item creation failed": [
         "項目新增失敗"
       ],
+      "Item does not exist": [
+        "項目無法刪除"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "如果項目欄位包含多餘的逗號、引號、欄位，LastPass 匯出的CSV會發生錯誤"
+      ],
+      "Missing passkey": [
+        "缺少 Passkey"
       ],
       "Moving item failed": [
         "移動項目失敗"
@@ -659,6 +677,12 @@
       "Unknown invite": [
         "未知邀請"
       ],
+      "Unknown item": [
+        "未知項目"
+      ],
+      "Unknown passkey": [
+        "未知 Passkey"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "不支援${ PASS_APP_NAME }檔案格式"
       ],
@@ -716,6 +740,9 @@
       "${ count } invites successfully sent": [
         "${ count }邀請成功寄出"
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME }將僅匯入登入，筆記和信用。"
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME }將會提醒儲存或更新資料。"
       ],
@@ -755,11 +782,17 @@
       "An item previously shared with you was removed": [
         "全部於共享的項目已刪除"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "您確定要移動項目至${ name }\" ?"
+      ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "您確定要移動項目至${ name }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
+      ],
+      "Autosaved on ${ payload.domain }": [
+        "於${ payload.domain }自動存取"
       ],
       "Built in 2FA authenticator": [
         "內建雙重驗證機制"
@@ -826,6 +859,9 @@
       ],
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "跟隨這些步驟以CSV匯入資料:"
       ],
       "For easy access to your passwords and more.": [
         "容易存取密碼及更多。"
@@ -950,6 +986,9 @@
       "Owner": [
         "擁有者"
       ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "擁有權成功轉移。您將不再永有保管庫。"
+      ],
       "Pass Plus trial": [
         "Pass Plus 滿意體驗期"
       ],
@@ -958,6 +997,9 @@
       ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
+      ],
+      "Permanently deleting selected items": [
+        "永久刪除選取項目"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "固定${ PASS_APP_NAME }到工具列"
@@ -982,6 +1024,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "輸入 PIN 碼以繼續"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "請升級以提早存取${ PASS_APP_NAME }網頁"
       ],
       "Press Enter to copy": [
         "按 Enter 以複製"
@@ -1054,6 +1099,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "此匯出將會解密，所有能存取匯出檔案者皆可以看到密碼。為了安全請與使用後刪除。"
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "以接收匯入資料，點擊於瀏覽器工具列的Pass標示。"
       ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
@@ -1201,6 +1249,9 @@
       "Autofill 2FA": [
         "自動填入雙重驗證"
       ],
+      "Automatically open autofill when a login field is focused": [
+        "自動開啟自動填入當登入欄位被使用"
+      ],
       "Autosave": [
         "自動儲存"
       ],
@@ -1284,6 +1335,9 @@
       ],
       "General": [
         "一般"
+      ],
+      "Generic CSV": [
+        "通用 CSV"
       ],
       "Grant": [
         "授予"
@@ -1531,6 +1585,9 @@
       "View logs": [
         "檢視記錄檔"
       ],
+      "Website": [
+        "網站"
+      ],
       "Websites": [
         "網頁"
       ],
@@ -1764,6 +1821,9 @@
       "Move all items ?": [
         "移動所有項目?"
       ],
+      "Move item?": [
+        "移動項目?"
+      ],
       "Move items?": [
         "移動項目?"
       ],
@@ -1823,6 +1883,9 @@
       ],
       "Update available": [
         "有可用更新"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "升級解鎖頂級功能"
       ],
       "Use my email": [
         "使用我的電子信箱"
@@ -1989,6 +2052,9 @@
       ],
       "Your session could not be authorized.": [
         "您的作業階段無法驗證。"
+      ],
+      "Your session could not be resumed.": [
+        "您的作業階段無法復原"
       ],
       "Your session was locked.": [
         "您的作業階段以鎖定。"

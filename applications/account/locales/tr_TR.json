@@ -638,6 +638,9 @@
       "No": [
         "Hayır"
       ],
+      "No, thanks": [
+        "Hayır, teşekkürler"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -3224,6 +3227,14 @@
         "Kendimizi geliştirmemize yardımcı olun!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu için .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat için .rpm"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Gelişmiş paylaşım güvenliği"
@@ -4378,6 +4389,9 @@
       "Invalid URL": [
         "Adres geçersiz"
       ],
+      "Missing parameters in the URL.": [
+        "URL'de eksik parametreler."
+      ],
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
@@ -5179,6 +5193,9 @@
       "Keep using the desktop app": [
         "Masaüstü uygulamasını kullanmaya devam edin"
       ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "${ webAppMessage } içinde ${ MAIL_APP_NAME } öğesini açın"
+      ],
       "Your desktop app free trial has ended": [
         "Masaüstü uygulaması ücretsiz deneme sürümünüz sona erdi"
       ]
@@ -5204,6 +5221,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store'da ${ appName }"
+      ],
+      "${ appName } on Play Store": [
+        "Play Store'da ${ appName }"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } uygulaması"
       ],
@@ -5348,6 +5371,12 @@
       ],
       "Protection": [
         "Koruma"
+      ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "En iyi ${ VPN_APP_NAME } fırsatlarıyla büyük tasarruf edin"
+      ],
+      "Select your deal": [
+        "Teklifinizi seçin"
       ],
       "Select your pricing plan": [
         "Ücret tarifenizi seçin"
@@ -6052,6 +6081,10 @@
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
       ],
+      "Affected user is on row": [
+        "Etkilenen kullanıcı satırda",
+        "Etkilenen kullanıcı satırlarda"
+      ],
       "Align left": [
         "Sola hizala"
       ],
@@ -6532,6 +6565,9 @@
       ],
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan masaüstünüzde."
       ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
@@ -7042,6 +7078,10 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Lütfen ${ MIN_PASSWORD_LENGTH } karakterden daha uzun bir parola kullanın.",
+        "Lütfen ${ MIN_PASSWORD_LENGTH } karakterden daha uzun bir parola kullanın."
+      ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
       ],
@@ -7221,6 +7261,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP gönderimi, 3. taraf hizmetlerin veya cihazların özel alan adı adresleriniz için ${ MAIL_APP_NAME } üzerinden e-posta göndermesine olanak tanır. Bu özellik yalnızca özel alan adlarına sahip iş kullanıcıları için ${ BRAND_NAME } tarafından kullanılabilir."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP gönderim özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
@@ -8009,6 +8052,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Destek talebiniz kapatıldı. ${ BRAND_NAME } destek birimiyle iletişime geçtiğiniz için teşekkür ederiz."
       ]
     },
     "Info - folder colouring feature": {
@@ -8560,9 +8606,6 @@
       ],
       "Awarded": [
         "Hediye edilen"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Fatura adresi"
@@ -9352,6 +9395,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } ve ${ additionalApp } ürün güncellemeleri"
+      ],
       "${ app } product updates": [
         "${ app } ürün güncellemeleri"
       ],
@@ -9704,8 +9750,17 @@
       "for the first month": [
         "ilk ay için"
       ],
+      "for your first month": [
+        "ilk ayınız için"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "${ price } için ${ planName } alın"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Aboneliğiniz ${ renewTime } tarihinde ${ renewablePrice } fiyatından otomatik olarak yenilenecektir, istediğiniz zaman iptal edebilirsiniz"
       ]
     },
     "mailtrial2024: Title": {
@@ -10209,6 +10264,9 @@
       "Advanced sharing security": [
         "Gelişmiş paylaşım güvenliği"
       ],
+      "Auto-delete Spam and Trash": [
+        "Spam ve Çöp Kutusunu Otomatik Silme"
+      ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
@@ -10370,6 +10428,9 @@
       "Router support": [
         "Yöneltici desteği"
       ],
+      "Schedule and snooze emails for any time": [
+        "E-postaları istediğiniz zaman için planlayın ve erteleyin"
+      ],
       "Schedule messages at any time": [
         "İletileri istediğiniz zamanda gönderin"
       ],
@@ -10448,6 +10509,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Erişim izinleri ile sınırsız sayıda paylaşılan kasa"
+      ],
+      "Unlimited vault sharing": [
+        "Sınırsız kasa paylaşımı"
       ],
       "Unlimited vaults": [
         "Sınırsız kasa"
@@ -10529,6 +10593,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Size ayrılmış güvenli ağ geçitleri ile gelişmiş ağ güvenliği ve erişim yönetimi"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Ekipler için endüstri standartlarının ötesine geçen gelişmiş koruma."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
       ],
@@ -10540,6 +10607,9 @@
       ],
       "Early access to new apps and features": [
         "Yeni uygulama ve özelliklere erken erişim"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Sınırsız kullanıcılar için temel koruma ve güvenli işbirliği."
       ],
       "For next-level password management and identity protection.": [
         "Gelecek nesil parola yönetimi ve kimlik koruması için."
@@ -10696,6 +10766,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Masaüstünüzün rahatlığından ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }'e erişin"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
       ],
@@ -10708,11 +10781,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Çöp Kutusu ve Spam'den 30 günden eski mesajları otomatik olarak temizleyin"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "${ MAIL_APP_NAME } hesabınıza gönderilen e-postaları otomatik olarak başka bir e-posta adresine iletin."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Bir e-posta hakkında hatırlatılmak veya mesajınızın ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
@@ -10756,6 +10835,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Klasör gibi kasa da öğelerinizi düzenlemenin kullanışlı bir yoludur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
@@ -13038,6 +13120,12 @@
       ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
+      ],
+      "Billed for 18 months": [
+        "18 aylık olarak faturalanır"
+      ],
+      "Billed for 3 months": [
+        "3 aylık olarak faturalanır"
       ],
       "Billed for 30 months": [
         "30 aylık olarak faturalanır"

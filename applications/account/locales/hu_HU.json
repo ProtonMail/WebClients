@@ -578,6 +578,9 @@
       "No": [
         "Nem"
       ],
+      "No, thanks": [
+        "Köszönöm, nem"
+      ],
       "OK": [
         "OK"
       ],
@@ -4361,6 +4364,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } az App Store-ban"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } a Play Áruházban"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } alkalmazást"
       ],
@@ -7317,9 +7326,6 @@
       "Awarded": [
         "Megszerezve"
       ],
-      "Beta": [
-        "Béta"
-      ],
       "Billing address": [
         "Számlázási cím"
       ],
@@ -9832,6 +9838,11 @@
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } fiók létrehozása"
+      ]
+    },
+    "pass_signup_2023: title": {
+      "For individuals": [
+        "Magánszemélyeknek"
       ]
     },
     "passwordless": {

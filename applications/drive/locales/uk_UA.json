@@ -46,6 +46,9 @@
       "Add note": [
         "Додати нотатку"
       ],
+      "Add people or groups to share": [
+        "Додати людей або групи до спільного доступу"
+      ],
       "Add phone number": [
         "Додати номер телефону"
       ],
@@ -117,6 +120,9 @@
       ],
       "Clear query": [
         "Очистити запит"
+      ],
+      "Clear selection": [
+        "Очистити вибране"
       ],
       "Click here.": [
         "Клацніть тут."
@@ -262,6 +268,9 @@
       "Download apps": [
         "Завантажити програми"
       ],
+      "Download logs": [
+        "Завантажити журнали"
+      ],
       "Drive Locked": [
         "Сховище заблоковано"
       ],
@@ -406,6 +415,9 @@
       "Mark for deletion": [
         "Позначити для видалення"
       ],
+      "Maximize": [
+        "Розгорнути"
+      ],
       "Maximize transfers": [
         "Розгорнути передавання"
       ],
@@ -414,6 +426,9 @@
       ],
       "Merge contacts": [
         "Об'єднати контакти"
+      ],
+      "Minimize": [
+        "Згорнути"
       ],
       "Minimize transfers": [
         "Згорнути передачі"
@@ -565,6 +580,15 @@
       "Save changes": [
         "Зберегти зміни"
       ],
+      "Scan & Download": [
+        "Сканувати та завантажити"
+      ],
+      "Scan & Download (${ count })": [
+        "Сканувати та завантажити (${ count })"
+      ],
+      "Scan & Download all": [
+        "Сканувати та завантажити все"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -715,6 +739,9 @@
       "Upload folder": [
         "Вивантажити теку"
       ],
+      "Upload photos": [
+        "Вивантажити фото"
+      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -747,6 +774,9 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
+      "Your 3 GB bonus": [
+        "Ваш бонус 3 ГБ"
       ],
       "Zoom in": [
         "Збільшити"
@@ -871,6 +901,9 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Отримайте доступ до заблокованого вмісту та переглядайте сторінки приватно. Містить понад 3000 серверів у 65+ країнах, найвищі швидкості VPN, доступ до всесвітніх стримінгових сервісів, блокувальник шкідливих програм і реклами, швидке завантаження BitTorrent тощо."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Отримуйте доступ до сервісів потокової трансляції, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
       ],
@@ -880,11 +913,20 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
       ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Безпечний вхід на всіх ваших пристроях. Включає необмежену кількість псевдонімів, спільний доступ, інтеграція двоетапної перевірки тощо."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Захистіть свої листи та графік за допомогою наскрізного шифрування. Містить підтримку власних доменів пошти, 15 адрес пошти, необмежену кількість псевдонімів hide-my-email, спільний доступ до календаря тощо."
+      ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Простір сховища є спільним для всіх застосунків ${ BRAND_NAME }."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Зберігайте до 200 версій кожного файлу протягом 10 років."
@@ -2012,6 +2054,69 @@
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "ОПИС:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } було скасовано."
+      ],
+      "All events in this series were updated.": [
+        "Усі події в цій серії оновлено."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Усі події в цій серії оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Цю подію скасовано."
+      ],
+      "This event occurrence was updated.": [
+        "Цю подію оновлено."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Цю подію оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Цю подію оновлено."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Цю подію оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Вас запрошено на ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ЧАС: \n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ЧАС:\n${ formattedStart } (весь день)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ЧАС:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Видалено"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "РОЗТАШУВАННЯ:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } прийняв(-ла) ваше запрошення на ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } попередньо прийняв(-ла) ваше запрошення на ${ eventTitle }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Скасування події ${ formattedStart }"
@@ -2066,6 +2171,9 @@
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } оновлено. Будь ласка, оновіть сторінку."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
@@ -2092,6 +2200,9 @@
       ],
       "Aliases could not be loaded": [
         "Не вдалося завантажити псевдоніми"
+      ],
+      "Already a member of this share": [
+        "Вже є учасником цього спільного доступу"
       ],
       "An error occurred while loading alias options": [
         "Під час завантаження параметрів псевдоніма сталася помилка"
@@ -2211,7 +2322,7 @@
         "Недійсний код підтвердження"
       ],
       "Item content cannot exceed 40KB": [
-        "Вміст елемента не може перевищувати 40 Кб"
+        "Вміст елемента не може перевищувати 40 кБ"
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
@@ -2270,6 +2381,9 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Завантаження фотографій тимчасово вимкнено. Будь ласка, спробуйте пізніше"
+      ],
       "Please activate your search again": [
         "Повторно активуйте пошук"
       ],
@@ -2308,6 +2422,9 @@
       ],
       "Some contacts could not be deleted": [
         "Не вдалося видалити деякі контакти"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Деякі файли було проігноровано, оскільки вони не підтримуються у «Фотографії»."
       ],
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
@@ -3644,6 +3761,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цю теку безпечно вивантажено ${ emailAddress }."
       ],
+      "Download": [
+        "Завантажити"
+      ],
       "Download ${ name } app": [
         "Завантажити програму ${ name }"
       ],
@@ -3710,6 +3830,9 @@
       "End-to-end encrypted": [
         "Наскрізно зашифровано"
       ],
+      "End-to-End Encrypted": [
+        "Зашифровано наскрізним шифруванням"
+      ],
       "Enter password": [
         "Введіть пароль"
       ],
@@ -3763,6 +3886,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "У файлі відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Сканування файлів у диску"
       ],
       "File will not be updated": [
         "Файл не буде оновлено"
@@ -3862,6 +3988,9 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
+      ],
+      "Invited": [
+        "Запрошено"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
@@ -4109,6 +4238,9 @@
       "Report has been sent": [
         "Звіт надіслано"
       ],
+      "Report link": [
+        "Посилання на звіт"
+      ],
       "Restore": [
         "Відновити"
       ],
@@ -4126,6 +4258,9 @@
       ],
       "Retry now": [
         "Повторити зараз"
+      ],
+      "Scan issue": [
+        "Сканувати проблему"
       ],
       "Search cannot be enabled in this browser": [
         "Неможливо увімкнути пошук у цьому браузері"
@@ -4175,6 +4310,12 @@
       "Share files with links": [
         "Поділіться файлами за допомогою посилань"
       ],
+      "Share via link settings": [
+        "Поділитись через налаштування посилань"
+      ],
+      "Share with": [
+        "Поділитися з"
+      ],
       "Share with anyone": [
         "Поділіться з ким завгодно"
       ],
@@ -4183,6 +4324,9 @@
       ],
       "Shared link not found": [
         "Спільне посилання не знайдено"
+      ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Зареєструйте свій власний обліковий запис ${ DRIVE_APP_NAME } і захистіть свої дані за допомогою наскрізного шифрування та безпечно ними діліться."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
@@ -4303,6 +4447,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Щоб захистити вас, ${ DRIVE_APP_NAME } може сканувати та блокувати шкідливі файли. Ви повинні завантажувати файли лише від людей, яким довіряєте."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Для імпорту подій спочатку створіть календар у ${ CALENDAR_APP_NAME }. Саме тут будуть показані події після імпорту."
@@ -4637,6 +4784,12 @@
       "Add to group": [
         "Додати до групи"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Переглядати можуть всі, хто має посилання"
+      ],
+      "Anyone with the link": [
+        "Будь-хто з посиланням"
+      ],
       "App password": [
         "Пароль програми"
       ],
@@ -4733,6 +4886,9 @@
         "Видалити сховища?",
         "Видалити сховища?"
       ],
+      "Delete link": [
+        "Видалити посилання"
+      ],
       "Delete recovery-related information.": [
         "Видалити інформацію повʼязану з відновленням."
       ],
@@ -4759,6 +4915,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "наприклад, Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Редактор"
       ],
       "Email": [
         "Е-пошта"
@@ -4789,6 +4948,9 @@
       ],
       "Enter device name": [
         "Уведіть назву пристрою"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Стерти це посилання і вилучити всіх з доступом"
       ],
       "Expired": [
         "Термін дії завершився"
@@ -4973,6 +5135,9 @@
       "Set expiration date": [
         "Вказати термін дії"
       ],
+      "Set link password": [
+        "Встановити пароль посилання"
+      ],
       "Set recovery method": [
         "Налаштуйте спосіб відновлення"
       ],
@@ -5009,6 +5174,9 @@
       "Theme": [
         "Тема"
       ],
+      "This file is potentially infected": [
+        "Цей файл потенційно заражений"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Це остаточно видалить усі файли у вашому сховищі."
       ],
@@ -5041,6 +5209,9 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Viewer": [
+        "Переглядач"
       ],
       "What happened?": [
         "Що сталося?"
@@ -5192,15 +5363,50 @@
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Special Offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настільний застосунок ${ MAIL_APP_NAME }"
+      ],
       "10 email addresses": [
         "10 адрес електронної пошти"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Автоматичне видалення спаму та смітника"
+      ],
+      "Custom schedule send and snooze times": [
+        "Користувацький час відправки та відкладення"
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену електронної пошти"
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Подовження за ${ renewablePrice }, можна скасувати в будь-який час"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за перший місяць"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Термін дії обмеженої пропозиції закінчується 2 квітня 2024 року"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Отримайте ${ planName } всього за ${ planPrice }"
       ]
     },
     "Message": {
@@ -5222,14 +5428,125 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "Аудіо/відео контейнер 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Аудіо/відео контейнер 3GPP2"
+      ],
+      "7-zip archive": [
+        "Архів 7-zip"
+      ],
+      "AAC audio": [
+        "Аудіо AAC"
+      ],
+      "AbiWord document": [
+        "Документ AbiWord"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Формат портативного документа Adobe (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Формат Amazon Kindle eBook"
+      ],
+      "Android Package": [
+        "Пакунок Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "Анімована портативна мережева графіка"
+      ],
+      "Apple Installer Package": [
+        "Пакет встановлювача Apple"
+      ],
+      "Archive document": [
+        "Архівувати документ"
+      ],
+      "AVI video": [
+        "Відео AVI"
+      ],
+      "Binary data": [
+        "Двійкові дані"
+      ],
+      "Bourne shell script": [
+        "Bourne shell скрипт"
+      ],
+      "BZip archive": [
+        "Архів BZip"
+      ],
+      "BZip2 archive": [
+        "Архів BZip2"
+      ],
+      "C-Shell script": [
+        "C-Shell скрипт"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Каскадні таблиці стилів (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Значення розділені комами (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Електронна публікація (EPUB)"
+      ],
+      "Flash Video": [
+        "Відео Flash"
+      ],
+      "GZip Compressed Archive": [
+        "Стиснутий архів GZip"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "Мова розмітки гіпертексту (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Попередня обробка гіпертексту (Персональна головна сторінка)"
+      ],
       "iCalendar format": [
         "Формат iCalendar"
+      ],
+      "Icon format": [
+        "Формат значка"
       ],
       "Image": [
         "Зображення"
       ],
+      "Java Archive (JAR)": [
+        "Архів Java (JAR)"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Музичний інструмент цифрового інтерфейсу (MIDI)"
+      ],
+      "OpenDocument presentation document": [
+        "Документ презентації OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Документ електронної таблиці OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Текстовий документ OpenDocument"
+      ],
+      "RAR archive": [
+        "Архів RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "Розширений текстовий формат (RTF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Архів стрічки (TAR)"
+      ],
       "Text": [
         "Текст"
+      ],
+      "WEBM audio": [
+        "Аудіо WEBM"
+      ],
+      "WEBM video": [
+        "Відео WEBM"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Растрова графіка Windows OS/2"
+      ],
+      "ZIP archive": [
+        "Архів ZIP"
       ]
     },
     "Modal title": {
@@ -5614,6 +5931,9 @@
       "Create a share link": [
         "Створіть спільне посилання"
       ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Почніть користуватися ${ DRIVE_APP_NAME } і ми збільшимо ваше сховище до 5 ГБ!"
+      ],
       "Set a recovery method": [
         "Налаштуйте спосіб відновлення"
       ],
@@ -5637,8 +5957,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ознайомитися з усіма службами ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Виберіть тему"
+      ],
       "Set up your organization": [
         "Налаштуйте свою організацію"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Використовуйте вибір застосунків у верхньому лівому куті, щоб отримати доступ до всіх сервісів ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Ви зможете будь-коли змінити тему в налаштуваннях."
       ]
     },
     "Onboarding Title": {
@@ -5676,6 +6005,11 @@
         "Ви"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Країна платника"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна використовувати для шифрування"
@@ -5709,6 +6043,9 @@
     "Placeholder": {
       "A way to contact you": [
         "Спосіб зв'язку з вами"
+      ],
+      "Choose password": [
+        "Оберіть пароль"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -5766,6 +6103,9 @@
       ],
       "Select": [
         "Вибрати"
+      ],
+      "Set date": [
+        "Встановити дату"
       ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
@@ -5920,6 +6260,9 @@
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Відновлення облікового запису недоступне для старих ключів адреси"
+      ],
       "Please generate keys before you try to change your password": [
         "Згенеруйте ключі, перш ніж змінювати пароль"
       ]
@@ -5942,6 +6285,12 @@
       ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }, ви маєте ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }."
       ]
     },
     "session_recovery:available:link": {
@@ -6025,11 +6374,28 @@
         "${ gracePeriodHoursRemaining } години",
         "${ gracePeriodHoursRemaining } годин",
         "${ gracePeriodHoursRemaining } годин"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } тепер доступно."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Якщо ви вийдете до скидання пароля, ви можете втратити доступ до свого облікового запису."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Якщо ви вийдете, не скинувши пароль, ви можете втратити доступ до свого облікового запису."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Ви зможете скинути пароль через ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Скидання пароля"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Вийти без скидання пароля?"
       ]
     },
     "Signing preference for emails": {
@@ -6114,6 +6480,12 @@
       ],
       "Premium ${ appName1 }": [
         "Преміум ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Преміум ${ appName1 } та ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Преміум ${ appName1 }, ${ appName2 } та ${ appName3 }"
       ],
       "Premium early access": [
         "Ранній преміумдоступ"
@@ -6914,6 +7286,9 @@
       "Settings": [
         "Налаштування"
       ],
+      "Share ${ name }": [
+        "Поділитися ${ name }"
+      ],
       "Share via link": [
         "Спільний доступ за посиланням"
       ],
@@ -7015,6 +7390,9 @@
       ],
       "You have no folders yet": [
         "У вас поки немає тек"
+      ],
+      "Your 3 GB bonus": [
+        "Ваш бонус 3 ГБ"
       ],
       "Your account is protected": [
         "Ваш обліковий запис захищено"

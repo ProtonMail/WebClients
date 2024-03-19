@@ -718,7 +718,7 @@
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
       "Extended version history": [
-        "Riwayat versi lebih mendalam"
+        "Riwayat versi yang terperinci"
       ],
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
@@ -2012,7 +2012,7 @@
         "Kunci organisasi harus diaktifkan untuk membuat pengguna non-privat"
       ],
       "Passwords do not match": [
-        "Kata sandi tidak cocok"
+        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -2952,7 +2952,7 @@
         "Rekaman TXT DNS"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
-        "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
+        "JANGAN lupakan kata sandi ini. Apabila Anda lupa, Anda tidak lagi akan dapat mengelola organisasi Anda."
       ],
       "Domain ownership failed verification.": [
         "Kemilikan domain tidak berhasil diverifikasi."
@@ -4118,7 +4118,7 @@
         "Konfirmasi kata sandi baru"
       ],
       "Confirm organization password": [
-        "Konfirmasi sandi organisasi"
+        "Konfirmasi kata sandi organisasi"
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
@@ -4262,7 +4262,7 @@
         "Kata sandi kotak surat baru"
       ],
       "New organization password": [
-        "Sandi organisasi baru"
+        "Kata sandi organisasi baru"
       ],
       "New password": [
         "Kata sandi baru"
@@ -4624,6 +4624,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Penawaran terbatas, berlaku hingga 2 April 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Langganan Anda akan diperbarui secara otomatis pada ${ renewTime } dengan harga ${ renewablePrice }. Anda dapat membatalkan langganan ini kapan saja."
       ]
     },
     "mailtrial2024: Title": {
@@ -5261,6 +5264,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Pengiriman surel secara massal atau terprogram saat ini tidak didukung. Kami menyarankan Anda untuk menggunakan layanan surel yang secara khusus diperuntukkan bagi keperluan tersebut."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
@@ -6067,7 +6073,7 @@
         "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
       "This permission expires soon": [
-        "Izin ini akan segera kedaluwarsa"
+        "Perizinan ini akan segera kedaluwarsa"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Anda kini dapat mengubah kata sandi untuk akun ${ boldEmail } secara bebas selama ${ boldDaysRemaining }."
@@ -6559,6 +6565,12 @@
       "Billed for 15 months": [
         "Tertagih selama 15 bulan"
       ],
+      "Billed for 18 months": [
+        "Tertagih selama 18 bulan"
+      ],
+      "Billed for 3 months": [
+        "Tertagih selama 3 bulan"
+      ],
       "Billed for 30 months": [
         "Tertagih selama 30 bulan"
       ],
@@ -6718,7 +6730,7 @@
         "Kata sandi disalin ke papan klip"
       ],
       "Password updated": [
-        "Kata sandi berhasil diperbarui"
+        "Kata sandi diperbarui"
       ],
       "Payment method added": [
         "Metode pembayaran ditambahkan"
@@ -7339,7 +7351,7 @@
         "Ikhtisar"
       ],
       "Switch to one-password mode": [
-        "Beralih ke mode satu kata sandi"
+        "Beralih ke mode kata sandi tunggal"
       ],
       "Switch to two-password mode": [
         "Beralih ke mode kata sandi ganda"
@@ -7566,6 +7578,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Paket langganan diperbarui secara otomatis setiap 1 bulan. Anda akan menerima tagihan berikutnya dalam 1 bulan ke depan."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Paket langganan diperbarui secara otomatis setiap 3 bulan. Anda akan menerima tagihan berikutnya dalam 3 bulan ke depan."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ]
@@ -7582,8 +7597,14 @@
       "15-month": [
         "15 bulan"
       ],
+      "18-month": [
+        "18 bulan"
+      ],
       "2-year": [
         "2 tahun"
+      ],
+      "3-month": [
+        "3 bulan"
       ],
       "30-month": [
         "30 bulan"

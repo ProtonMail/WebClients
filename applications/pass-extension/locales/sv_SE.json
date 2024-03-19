@@ -522,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt lösenord för ${ BRAND_NAME } för att fortsätta med exporten"
       ],
+      "Authentication failure: ${ message }": [
+        "Autentiseringsfel: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Autentiseringsfel"
+      ],
       "Auto-lock could not be activated": [
         "Automatisk låsning kunde inte aktiveras"
       ],
@@ -679,6 +685,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fäst tillägget eller välj “Fortsätt utan att fästa“."
+      ],
+      "Registration failure: ${ message }": [
+        "Registreringsfel: ${ message }"
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
@@ -866,6 +875,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "En passkey för “${ username }“ kommer att sparas och vara tillgänglig på enheter där ${ PASS_APP_NAME } är installerat."
+      ],
       "Access successfully confirmed": [
         "Åtkomst bekräftad"
       ],
@@ -937,6 +949,9 @@
       ],
       "Close this window in order to use a security key or another passkey.": [
         "Stäng detta fönster för att använda en säkerhetsnyckel eller annan passkey."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Stäng detta fönster för att använda en annan passkey-hanterare."
       ],
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
@@ -1141,6 +1156,9 @@
       ],
       "Pass Plus trial": [
         "Pass Plus provperiod"
+      ],
+      "Passkey sign-in": [
+        "Passkey-inloggning"
       ],
       "Password copied": [
         "Lösenord kopierat"
@@ -1381,6 +1399,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du har nått gränsen för alias du kan skapa. Skapa ett obegränsat antal alias när du uppgraderar din prenumeration."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Du har nått gränsen för antalet kreditkort du kan skapa. Skapa ett obegränsat antal kreditkort när du uppgraderar din prenumeration."
       ],
       "You have reached the limit of vaults you can create.": [
         "Du har nått gränsen för valv du kan skapa."
@@ -2266,6 +2287,9 @@
       ],
       "No items matching": [
         "Inga objekt matchar"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Inga passkeys hittades. Spara dina passkeys i ${ PASS_APP_NAME } för att logga in på ${ domain }."
       ],
       "No password manager selected": [
         "Ingen lösenordshanterare vald"

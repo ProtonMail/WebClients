@@ -632,6 +632,9 @@
       "No": [
         "Όχι"
       ],
+      "No, thanks": [
+        "Όχι, ευχαριστώ"
+      ],
       "OK": [
         "ΟΚ"
       ],
@@ -5178,6 +5181,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } στο App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } στο Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "Εφαρμογή ${ MAIL_APP_NAME }"
       ],
@@ -8520,9 +8529,6 @@
       "Awarded": [
         "Βραβευμένα"
       ],
-      "Beta": [
-        "Beta (Δοκιμαστική)"
-      ],
       "Billing address": [
         "Διεύθυνση χρέωσης"
       ],
@@ -9663,6 +9669,9 @@
       "for the first month": [
         "για τον πρώτο μήνα"
       ],
+      "Get ${ planName } for ${ price }": [
+        "Λάβετε το ${ planName } για ${ price }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Προσφορά περιορισμένου χρόνου, λήγει στις 2 Απριλίου 2024"
       ]
@@ -10159,6 +10168,9 @@
       "Advanced sharing security": [
         "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
+      "Auto-delete Spam and Trash": [
+        "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
+      ],
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
       ],
@@ -10481,6 +10493,9 @@
       ],
       "Early access to new apps and features": [
         "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Βασική προστασία και ασφαλής συνεργασία για απεριόριστους χρήστες."
       ],
       "For next-level password management and identity protection.": [
         "Για διαχείριση κωδικών πρόσβασης και προστασία ταυτότητας επόμενου επιπέδου."
@@ -11669,6 +11684,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Για επιχειρήσεις"
+      ],
+      "For individuals": [
+        "Για ιδιώτες"
       ]
     },
     "passwordless": {
@@ -12976,6 +12994,12 @@
       ],
       "Billed for 15 months": [
         "Χρέωση για 15 μήνες"
+      ],
+      "Billed for 18 months": [
+        "Χρέωση για 18 μήνες"
+      ],
+      "Billed for 3 months": [
+        "Χρέωση για 3 μήνες"
       ],
       "Billed for 30 months": [
         "Χρέωση για 30 μήνες"

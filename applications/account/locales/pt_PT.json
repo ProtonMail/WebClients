@@ -626,6 +626,9 @@
       "No": [
         "Não"
       ],
+      "No, thanks": [
+        "Não, obrigado"
+      ],
       "OK": [
         "Aceitar"
       ],
@@ -808,6 +811,9 @@
       ],
       "Select calendar view": [
         "Selecionar vista de calendário"
+      ],
+      "Select country": [
+        "Seleccionar país"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -3122,10 +3128,10 @@
         "Esta ocorrência do evento foi atualizada."
       ],
       "This event was updated.": [
-        "Este evento foi actualizado."
+        "Este evento foi atualizado."
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Você foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+        "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4909,6 +4915,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } na App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } na Play Store"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } app"
       ],
@@ -9221,6 +9233,11 @@
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
       ]
     },
+    "mailtrial2024: Info": {
+      "Get ${ planName } for ${ price }": [
+        "Obtenha ${ planName } para ${ price }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Por favor, consulte novamente dentro de alguns minutos."
@@ -11040,6 +11057,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Para empresas"
+      ],
+      "For individuals": [
+        "Para indivíduos"
       ]
     },
     "passwordless": {

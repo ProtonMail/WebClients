@@ -113,6 +113,9 @@
       "Create login": [
         "Crea un inici de sessió"
       ],
+      "Create new login": [
+        "Creï un inici de sessió nou"
+      ],
       "Create note": [
         "Crea una nota"
       ],
@@ -335,8 +338,14 @@
       "Save": [
         "Desa"
       ],
+      "Save passkey": [
+        "Desi la calau de pas"
+      ],
       "Saving": [
         "Desant"
+      ],
+      "Saving passkey...": [
+        "S'està desant la contrasenya..."
       ],
       "See members": [
         "Mostra els membres"
@@ -417,10 +426,13 @@
         "Mostra els registres de l'aplicació"
       ],
       "View history": [
-        "Mostra l'historial"
+        "Visualitza l'historial"
       ],
       "View item history": [
         "Veure l'historial d'elements"
+      ],
+      "View older history": [
+        "Veure l'historial més antic"
       ],
       "Write us on Reddit": [
         "Escriu-nos a Reddit"
@@ -466,6 +478,12 @@
       ],
       "Authentication error": [
         "Error d'autenticació"
+      ],
+      "Authentication failure: ${ message }": [
+        "Error d'autenticació: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Error de l'autenticador"
       ],
       "Auto-lock could not be activated": [
         "No s'ha pogut activar el bloqueig automàtic"
@@ -531,6 +549,9 @@
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
       ],
+      "Failed to load item history": [
+        "No s'ha pogut carregar l'historial d'elements"
+      ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
       ],
@@ -573,8 +594,14 @@
       "Item creation failed": [
         "No s'ha pogut crear l'element"
       ],
+      "Item does not exist": [
+        "L'element no existeix"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass exportarà un fitxer CSV corromput si qualsevol dels camps de l'element conté comes, cometes o línies múltiples inesperades"
+      ],
+      "Missing passkey": [
+        "Falta la clau d'accés"
       ],
       "Moving item failed": [
         "No s'ha pogut moure l'element"
@@ -590,6 +617,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixeu l'extensió o seleccioneu Continuar sense fixar."
+      ],
+      "Registration failure: ${ message }": [
+        "Error de registre: ${ message }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -641,6 +671,12 @@
       ],
       "Unknown invite": [
         "Invitació desconeguda"
+      ],
+      "Unknown item": [
+        "Element desconegut"
+      ],
+      "Unknown passkey": [
+        "Clau de d'accés desconeguda"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format de fitxer de ${ PASS_APP_NAME } no admès"
@@ -759,6 +795,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Es desarà una clau d'accés per a \"${ username }\" i estarà disponible als dispositius on estigui instal·lat ${ PASS_APP_NAME }."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
       ],
@@ -771,8 +810,17 @@
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "N'està segur, de voler moure elements a \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Està segur que vol moure l'element a \"${ name }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
+      ],
+      "Autosaved on ${ payload.domain }": [
+        "S'ha desat automàticament en ${ payload.domain }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
@@ -785,6 +833,15 @@
       ],
       "Can view items in this vault.": [
         "Permet veure els elements d'aquesta caixa forte."
+      ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Triï una contrasenya desada per iniciar la sessió a ${ domain }"
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Tanqui aquesta finestra per utilitzar una clau de seguretat o una altra contrasenya."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Tanqui aquesta finestra per tal d'utilitzar un altre gestor de contrasenyes."
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
@@ -917,8 +974,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
+      "Moving an item to another vault will erase its history": [
+        "Si mou un element a una altra caixa forta, se n'esborrarà l'historial"
+      ],
       "Moving items": [
         "S'estan movent elements"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Si mou els elements a una altra caixa forta, se n'esborrarà l'historial"
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
@@ -943,6 +1006,9 @@
       ],
       "Pass Plus trial": [
         "Prova Pass Plus"
+      ],
+      "Passkey sign-in": [
+        "Inici de sessió amb contrasenya"
       ],
       "Password copied": [
         "S'ha copiat la contrasenya."
@@ -982,6 +1048,12 @@
       ],
       "Save login": [
         "Desa l'inici de sessió"
+      ],
+      "Save passkey": [
+        "Desi la clau de pas"
+      ],
+      "Select an existing login or create a new one.": [
+        "Seleccioni un inici de sessió existent o creï'n un de nou."
       ],
       "Select destination vault": [
         "Selecciona la caixa forta de destinació"
@@ -1038,11 +1110,20 @@
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
+      "This version will be added to the history as the newest version.": [
+        "Aquesta versió s'afegirà a l'historial com a versió més nova."
+      ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Desbloquegi ${ PASS_APP_NAME } amb el seu codi PIN per accedir a les seves claus d'accés"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Desbloquegi ${ PASS_APP_NAME } amb el seu codi PIN per desar aquesta clau d'accés"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
@@ -1104,6 +1185,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Ha arribat al límit de targetes de crèdit que pot crear. Creï un nombre il·limitat de targetes de crèdit quan millori la seva subscripció."
       ],
       "You have reached the limit of vaults you can create.": [
         "Heu arribat al límit de caixes fortes que podeu crear."
@@ -1409,6 +1493,9 @@
       "Oldest to newest": [
         "De més antic a més recent"
       ],
+      "Passkey": [
+        "Contrasenya"
+      ],
       "Passphrase": [
         "Frase de pas"
       ],
@@ -1546,6 +1633,9 @@
       ],
       "View logs": [
         "Mostra els registres"
+      ],
+      "Website": [
+        "Lloc web"
       ],
       "Websites": [
         "Llocs web"
@@ -1716,7 +1806,7 @@
         "Creeu un codi PIN"
       ],
       "Created": [
-        "Creació"
+        "Creat"
       ],
       "Current version": [
         "Versió actual"
@@ -1764,7 +1854,7 @@
         "Importa a les caixes fortes"
       ],
       "Last autofill": [
-        "Últim emplenament automàtic"
+        "Darrer emplenament automàtic"
       ],
       "Last modified": [
         "Darrera modificació"
@@ -1791,16 +1881,19 @@
         "Mou tots els elements ?"
       ],
       "Move item?": [
-        "Voleu moure l'element?"
+        "Vol moure l'element?"
       ],
       "Move items?": [
-        "Voleu moure els elements?"
+        "Vol moure els elements?"
       ],
       "No items selected": [
         "No s'ha seleccionat cap element."
       ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vostè."
+      ],
+      "Passkey": [
+        "Contrasenya"
       ],
       "Password": [
         "Contrasenya"
@@ -1818,7 +1911,7 @@
         "Ancorat (${ items.length })"
       ],
       "Restore this version?": [
-        "Voleu restaurar aquesta versió?"
+        "Vol restaurar aquesta versió?"
       ],
       "Review and share": [
         "Reviseu i comparteu"
@@ -1947,6 +2040,9 @@
       ],
       "No items matching": [
         "No hi ha cap element coincident"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "No s'han trobat claus d'accés. Desi les seves claus d'accés a ${ PASS_APP_NAME } per iniciar la sessió a ${ domain }."
       ],
       "No password manager selected": [
         "No s'ha seleccionat cap gestor de contrasenyes"
