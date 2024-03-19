@@ -680,13 +680,13 @@
     },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
-        "**Agregue nuestro administrador de contraseñas cifradas** solo por ${ price }"
+        "**Añade nuestro administrador de contraseñas cifradas** solo por ${ price }"
       ],
       "Add ${ PASS_APP_NAME }": [
-        "Agregue ${ PASS_APP_NAME }"
+        "Añade ${ PASS_APP_NAME }"
       ],
       "Add ${ plan } for ${ price } per month": [
-        "Agregue ${ plan } por ${ price } al mes"
+        "Añade ${ plan } por ${ price } al mes"
       ],
       "Cancel": [
         "Cancelar"
@@ -2432,7 +2432,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "Agregar un usuario a su cuenta de ${ PLAN_NAMES.visionary2022 }"
+        "Añadir un usuario a su cuenta de ${ PLAN_NAMES.visionary2022 }"
       ],
       "Change family name": [
         "Cambiar nombre de la familia"
@@ -2946,13 +2946,13 @@
         "¿Está seguro que quiere descartar los cambios?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
-        "¿En verdad desea otorgar privilegios administrativos a este usuario?"
+        "¿Está seguro de que quiere otorgar privilegios administrativos a este usuario?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿En verdad desea borrar los privilegios administrativos de este usuario?"
+        "¿Está seguro de que quiere borrar los privilegios administrativos de este usuario?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "¿En verdad desea quitar el dominio ${ boldDomain }?"
+        "¿Está seguro de que quiere quitar el dominio ${ boldDomain }?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Pregunte al administrador de su organización para configurar puertas de enlace."
@@ -4818,6 +4818,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Su suscripción se renovará automáticamente en ${ renewTime } por ${ renewablePrice }, cancele en cualquier momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -5990,7 +5993,7 @@
         "Todos los administradores tendrán acceso a la clave."
       ],
       "Are you sure you want to change your organization key?": [
-        "¿En verdad desea cambiar la clave de la organización?"
+        "¿Está seguro de que quiere cambiar la clave de la organización?"
       ],
       "Change organization key": [
         "Cambie la clave de la organización"
@@ -6883,7 +6886,7 @@
         "${ storage } lleno al ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al bajar de plan perderá los siguientes beneficios. ¿En verdad desea continuar?"
+        "Al bajar de plan perderá los siguientes beneficios. ¿Está seguro de que quiere continuar?"
       ],
       "contact your administrator": [
         "contacte con su administrador"
@@ -6947,6 +6950,12 @@
       ],
       "Billed for 15 months": [
         "Facturación por 15 meses"
+      ],
+      "Billed for 18 months": [
+        "Facturación para 18 meses"
+      ],
+      "Billed for 3 months": [
+        "Facturación para 3 meses"
       ],
       "Billed for 30 months": [
         "Facturación por 30 meses"
@@ -8051,6 +8060,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "La suscripción se renueva automáticamente cada mes. Su próxima fecha de facturación es en un mes."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "La suscripción se renueva automáticamente cada 3 meses. Su próxima fecha de facturación es en 3 meses."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se le facturará cada 12 meses por ${ renewPrice }."
       ],
@@ -8071,8 +8083,14 @@
       "15-month": [
         "15 meses"
       ],
+      "18-month": [
+        "18 meses"
+      ],
       "2-year": [
         "2 años"
+      ],
+      "3-month": [
+        "3 meses"
       ],
       "30-month": [
         "30 meses"

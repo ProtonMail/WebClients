@@ -176,6 +176,9 @@
       "Edit": [
         "Editare"
       ],
+      "Edit billing cycle": [
+        "Editare clicu de facturare"
+      ],
       "Edit display name": [
         "Editare nume afișat"
       ],
@@ -2738,6 +2741,12 @@
       "Name": [
         "Nume"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Economisiți cu cea mai bună ofertă pentru ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Selectați oferta"
+      ],
       "Select your pricing plan": [
         "Selectați planul de prețuri"
       ],
@@ -2924,6 +2933,11 @@
       "Admin account allocation": [
         "Alocare cont admin"
       ],
+      "Affected user is on row": [
+        "Utilizatorul afectat este pe rândul",
+        "Utilizatorii afectați sunt pe rândurile",
+        "Utilizatorii afectați sunt pe rândurile"
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -2986,6 +3000,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Asigurați-vă că ați copiat parola și stocați-o undeva în siguranță."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Înainte de a activa utilizatorul, trebuie să furnizați o parolă și să creați chei de criptare pentru adrese."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Înainte de a crea această adresă trebuie să furnizați o parolă și să creați o cheie de criptare pentru ea."
@@ -3306,6 +3323,9 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "Keys created": [
+        "Cheile au fost create."
+      ],
       "Lean more about gateways": [
         "Aflați mai multe despre porțile de acces"
       ],
@@ -3362,6 +3382,9 @@
       ],
       "No addresses exist": [
         "Nu există adrese"
+      ],
+      "No changes made to the current subscription": [
+        "Nu s-au efectuat modificări la abonamentul actual."
       ],
       "No gateways": [
         "Nu există porți de acces"
@@ -3477,6 +3500,11 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } caracter.",
+        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } caractere.",
+        "Folosiți o parolă de cel puțin ${ MIN_PASSWORD_LENGTH } de caractere."
       ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
@@ -3830,6 +3858,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
+      ],
+      "User activated": [
+        "Utilizator activat"
       ],
       "Users": [
         "Utilizatori"
@@ -4650,6 +4681,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualizări produse ${ app } și ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Actualizări ale produsului ${ app }"
       ],
@@ -4798,12 +4832,26 @@
         "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
         "10 adrese de e-mail"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Ștergere automată mesaje nedorite și din gunoi"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
       ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
@@ -4812,7 +4860,31 @@
         "Foldere, etichete și filtre nelimitate"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Reînnoire cu ${ renewablePrice }, anulați oricând"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "pentru prima lună"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Ofertă limitată, expiră la 2 aprilie 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Abonamentul se va reînnoi automat peste ${ renewTime } cu ${ renewablePrice }. Puteți anula oricând."
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Luați ${ planName } cu doar ${ planPrice }"
+      ]
+    },
     "Member action": {
+      "Activate user": [
+        "Activare utilizator"
+      ],
       "Change password": [
         "Schimbare parolă"
       ],
@@ -5031,6 +5103,9 @@
       "1 user": [
         "Un utilizator"
       ],
+      "24/7 account management support": [
+        "Asistență pentru gestionarea contului 24/7"
+      ],
       "24/7 support": [
         "Asistență 24/7"
       ],
@@ -5043,11 +5118,17 @@
       "Admin console": [
         "Consolă administrare"
       ],
+      "Administration Panel": [
+        "Panou de administrare"
+      ],
       "Advanced network security": [
         "Securitate avansată a rețelei"
       ],
       "Advanced sharing security": [
         "Securitate avansată partajări"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Ștergere automată mesaje nedorite și din gunoi"
       ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -5103,6 +5184,9 @@
       "Dedicated servers and IP": [
         "Servere și IP dedicate"
       ],
+      "Desktop app": [
+        "Aplicația desktop"
+      ],
       "DNS leak prevention": [
         "Prevenire breșe DNS"
       ],
@@ -5144,6 +5228,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Gestionare grup (în curând)"
       ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
@@ -5205,6 +5292,9 @@
       ],
       "Router support": [
         "Suport ruter"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Programați și amânați mesaje pentru orice moment"
       ],
       "Schedule messages at any time": [
         "Programați mesajele oricând"
@@ -5286,6 +5376,12 @@
       "Unlimited shared vaults with access permissions": [
         "Seifuri partajate nelimitate cu permisiuni de acces"
       ],
+      "Unlimited vault sharing": [
+        "Partajare nelimitată de seifuri"
+      ],
+      "Unlimited vaults": [
+        "Seifuri nelimitate"
+      ],
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
       ],
@@ -5350,6 +5446,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Securitate avansată a rețelei și management al accesului cu porțile de acces securizate dedicate"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Protecție avansată pentru echipe care depășește standardele din industrie."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
       ],
@@ -5361,6 +5460,9 @@
       ],
       "Early access to new apps and features": [
         "Acces timpuriu la aplicațiile și funcțiile noi"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Protecție esențială și colaborare sigură pentru utilizatori nelimitați."
       ],
       "For next-level password management and identity protection.": [
         "Pentru gestionarea parolelor și protejării identității la un nivel superior."
@@ -5481,6 +5583,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Accesați ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME } convenient de pe desktop."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
       ],
@@ -5493,11 +5598,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Vă permite să configurați răspunsuri automate pentru mesajele primite când nu puteți răspunde."
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Redirecționați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controlați accesul la fișierele partajate adăugând protecția cu parolă și dată de expirare la legături."
@@ -5542,6 +5653,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Ca și un folder, un seif este un mod convenient de a vă organiza articolele."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Blocați resursele companiei de pe internetul public și faceți-le accesibile numai prin porțile de acces private."
@@ -5751,6 +5865,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Autentificarea cu doi factori nu mai este obligatorie."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
       ]
     },
     "Onboarding": {
@@ -6953,6 +7072,12 @@
       "Billed for 15 months": [
         "Facturat pentru 15 luni"
       ],
+      "Billed for 18 months": [
+        "Facturat pentru 18 de luni"
+      ],
+      "Billed for 3 months": [
+        "Facturat pentru 3 de luni"
+      ],
       "Billed for 30 months": [
         "Facturat pentru 30 de luni"
       ],
@@ -7371,6 +7496,9 @@
       "Activate organization key": [
         "Activare chei organizație"
       ],
+      "Activate user": [
+        "Activare utilizator"
+      ],
       "Add address": [
         "Adăugare adresă"
       ],
@@ -7486,6 +7614,9 @@
       ],
       "Create multiple user accounts": [
         "Creare conturi multiple de utilizatori"
+      ],
+      "Create organization key": [
+        "Creare cheie organizație"
       ],
       "Create user accounts": [
         "Creare conturi de utilizator"
@@ -8069,6 +8200,22 @@
         "${ numberOfServers } în ${ numberOfCountries } de țări"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Abonamentul se reînnoiește automat în fiecare lună. Următoarea dată de facturare este peste o lună."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonamentul se reînnoiește automat la fiecare 3 luni. Următoarea dată de facturare este peste 3 luni."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Abonamentul vi se va reînnoi automat peste ${ cycle } lună.",
+        "Abonamentul vi se va reînnoi automat peste ${ cycle } luni.",
+        "Abonamentul vi se va reînnoi automat peste ${ cycle } de luni."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Facturat lunar"
@@ -8081,8 +8228,14 @@
       "15-month": [
         "15 luni"
       ],
+      "18-month": [
+        "18 luni"
+      ],
       "2-year": [
         "2 ani"
+      ],
+      "3-month": [
+        "3 luni"
       ],
       "30-month": [
         "30 de luni"
