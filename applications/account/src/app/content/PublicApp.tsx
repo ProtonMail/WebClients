@@ -93,7 +93,7 @@ const bootstrapApp = () => {
     initElectronClassnames();
     initSafariFontFixClassnames();
     extendStore({ config, api, authentication });
-    const store = setupStore();
+    const store = setupStore({ mode: 'public' });
     return {
         authentication,
         store,
