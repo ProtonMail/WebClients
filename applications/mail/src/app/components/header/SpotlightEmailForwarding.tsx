@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
+import { ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { SettingsLink, Spotlight, useSpotlightShow } from '@proton/components/components';
-import { FeatureCode, useFlag } from '@proton/components/containers';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
+import { FeatureCode } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 /**
@@ -20,7 +20,6 @@ const SpotlightEmailForwarding = ({ children }: Props) => {
     const ref = useRef<HTMLDivElement>(null);
     const [user] = useUser();
     const isPayingForMail = hasPaidMail(user);
-    const isEmailForwardingEnabled = useFlag('EmailForwarding');
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { viewportWidth } = useActiveBreakpoint();
     const releaseUTCDate = Date.UTC(2023, 10, 1, 12); // 1st November 2023 at 12:00 UTC
@@ -30,7 +29,7 @@ const SpotlightEmailForwarding = ({ children }: Props) => {
         onClose,
     } = useSpotlightOnFeature(
         FeatureCode.EmailForwardingSpotlight,
-        !isWelcomeFlow && !viewportWidth['<=small'] && isEmailForwardingEnabled && isPayingForMail,
+        !isWelcomeFlow && !viewportWidth['<=small'] && isPayingForMail,
         {
             alpha: 0,
             beta: releaseUTCDate,

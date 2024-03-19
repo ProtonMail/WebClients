@@ -27,7 +27,6 @@ interface Arguments {
     isProtonSentinelFeatureEnabled: boolean;
     isProtonSentinelUpsellEnabled: boolean;
     isOrgTwoFactorEnabled: boolean;
-    isEmailForwardingEnabled: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }
 
@@ -48,7 +47,6 @@ export const getRoutes = ({
     isProtonSentinelFeatureEnabled,
     isProtonSentinelUpsellEnabled,
     isOrgTwoFactorEnabled,
-    isEmailForwardingEnabled,
     isNotifInboxDesktopAppOn,
 }: Arguments) => {
     return {
@@ -73,7 +71,6 @@ export const getRoutes = ({
             addresses,
             organization,
             isSmtpTokenEnabled,
-            isEmailForwardingEnabled,
             isNotifInboxDesktopAppOn,
         }),
         calendar: getCalendarAppRoutes({ app, isNotifInboxDesktopAppOn }),
