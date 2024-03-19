@@ -1,0 +1,1703 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "vi_VI"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Thêm"
+      ],
+      "Add current URL": [
+        "Thêm URL hiện tại"
+      ],
+      "Add more": [
+        "Bổ sung thêm"
+      ],
+      "Add new item": [
+        "Thêm nội dung mới"
+      ],
+      "Advanced": [
+        "Nâng cao"
+      ],
+      "Advanced options": [
+        "Tùy chọn nâng cao"
+      ],
+      "Authenticate": [
+        "Xác thực"
+      ],
+      "Back": [
+        "Quay lại"
+      ],
+      "Bulk delete items from trash": [
+        "Xóa nhiều nội dung khỏi thùng rác"
+      ],
+      "Bulk move items to another vault": [
+        "Chuyển nhiều nội dung tới kho lưu trữ khác"
+      ],
+      "Bulk move items to trash": [
+        "Chuyển nhiều nội dung tới thùng rác"
+      ],
+      "Bulk restore items from trash": [
+        "Khôi phục nhiều nội dung từ thùng rác"
+      ],
+      "Cancel": [
+        "Hủy"
+      ],
+      "Clear": [
+        "Dọn sạch"
+      ],
+      "Close": [
+        "Đóng"
+      ],
+      "Close advanced options": [
+        "Đóng tùy chọn nâng cao"
+      ],
+      "Close navigation": [
+        "Đóng điều hướng"
+      ],
+      "Confirm": [
+        "Xác nhận"
+      ],
+      "Confirm access": [
+        "Xác nhận truy cập"
+      ],
+      "Continue": [
+        "Tiếp tục"
+      ],
+      "Copy and close": [
+        "Sao chép và đóng"
+      ],
+      "Copy to clipboard": [
+        "Sao chép vào bộ nhớ tạm"
+      ],
+      "Create": [
+        "Tạo"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Tạo một tài khoản ${ BRAND_NAME }"
+      ],
+      "Create a new vault": [
+        "Tạo một kho lưu trữ mới"
+      ],
+      "Create a new vault to share": [
+        "Tạo một kho lưu trữ mới để chia sẻ"
+      ],
+      "Create alias": [
+        "Tạo bí danh"
+      ],
+      "Create card": [
+        "Tạo thẻ"
+      ],
+      "Create login": [
+        "Tạo đăng nhập"
+      ],
+      "Create note": [
+        "Tạo ghi chú"
+      ],
+      "Create vault": [
+        "Tạo kho lưu trữ"
+      ],
+      "Creating vault": [
+        "Đang tạo kho lưu trữ"
+      ],
+      "Delete": [
+        "Xóa"
+      ],
+      "Delete alias": [
+        "Xóa bí danh"
+      ],
+      "Delete all": [
+        "Xóa tất"
+      ],
+      "Delete password": [
+        "Xóa mật khẩu"
+      ],
+      "Delete permanently": [
+        "Xóa vĩnh viễn"
+      ],
+      "Delete vault": [
+        "Xóa kho lưu trữ"
+      ],
+      "Discard": [
+        "Bỏ"
+      ],
+      "Dismiss": [
+        "Bỏ qua"
+      ],
+      "Edit": [
+        "Sửa"
+      ],
+      "Edit vault": [
+        "Sửa kho lưu trữ"
+      ],
+      "Export": [
+        "Xuất"
+      ],
+      "Feedback": [
+        "Phản hồi"
+      ],
+      "Fill password": [
+        "Điền mật khẩu"
+      ],
+      "Filter vault items": [
+        "Phân loại nội dung kho lưu trữ"
+      ],
+      "Generate alias": [
+        "Tạo bí danh"
+      ],
+      "Generate password": [
+        "Tạo mật khẩu"
+      ],
+      "Generated passwords": [
+        "Mật khẩu đã tạo"
+      ],
+      "Get mobile apps": [
+        "Tải ứng dụng di động"
+      ],
+      "Help us improve": [
+        "Giúp chúng tôi cải thiện"
+      ],
+      "Hide": [
+        "Ẩn"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Làm sao để tôi xuất dữ liệu của mình từ ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Nhập"
+      ],
+      "Importing": [
+        "Đang nhập"
+      ],
+      "Invite others": [
+        "Mời người khác"
+      ],
+      "Join shared vault": [
+        "Tham gia kho lưu trữ được chia sẽ"
+      ],
+      "Learn more": [
+        "Tìm hiểu thêm"
+      ],
+      "Leave": [
+        "Rời khỏi"
+      ],
+      "Leave vault": [
+        "Rời kho lưu trữ"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Khóa ${ PASS_APP_NAME }"
+      ],
+      "Make admin": [
+        "Làm quản trị viên"
+      ],
+      "Make editor": [
+        "Làm biên tập viên"
+      ],
+      "Make viewer": [
+        "Làm người xem"
+      ],
+      "Manage access": [
+        "Quản lý truy cập"
+      ],
+      "Manually sync your data": [
+        "Đồng bộ dữ liệu của bạn bằng tay"
+      ],
+      "More info: ${ safeTitle }": [
+        "Thông tin thêm: ${ safeTitle }"
+      ],
+      "More options": [
+        "Nhiều tùy chọn hơn"
+      ],
+      "Move all items": [
+        "Chuyển tất cả nội dung"
+      ],
+      "Move to a shared vault": [
+        "Chuyển đến một kho lưu trữ được chia sẻ"
+      ],
+      "Move to another vault": [
+        "Chuyển đến kho lưu trữ khác"
+      ],
+      "Move to Trash": [
+        "Chuyển tới thùng rác"
+      ],
+      "Move to trash": [
+        "Di chuyển vào thùng rác"
+      ],
+      "OK": [
+        "Đồng ý"
+      ],
+      "Open navigation": [
+        "Mở điều hướng"
+      ],
+      "Pass for Android": [
+        "Pass cho Android"
+      ],
+      "Pass for iOS": [
+        "Pass cho iOS"
+      ],
+      "Refresh the page": [
+        "Làm mới trang"
+      ],
+      "Regenerate": [
+        "Tạo lại"
+      ],
+      "Reject": [
+        "Từ chối"
+      ],
+      "Reject invitation": [
+        "Từ chối lời mời"
+      ],
+      "Remove access": [
+        "Xóa quyền truy cập"
+      ],
+      "Request a feature": [
+        "Yêu cầu một tính năng"
+      ],
+      "Resend invitation": [
+        "Gửi lại lời mời"
+      ],
+      "Restore item": [
+        "Khôi phục nội dung"
+      ],
+      "Retry": [
+        "Thử lại"
+      ],
+      "Save": [
+        "Lưu"
+      ],
+      "Saving": [
+        "Lưu"
+      ],
+      "See members": [
+        "Xem thành viên"
+      ],
+      "Send invite": [
+        "Gửi lời mời"
+      ],
+      "Send us a message": [
+        "Gửi tin nhắn cho chúng tôi"
+      ],
+      "Set access level": [
+        "Thiết lập cấp độ truy cập"
+      ],
+      "Share": [
+        "Chia sẻ"
+      ],
+      "Share this vault": [
+        "Chia sẽ kho lưu trữ này"
+      ],
+      "Share vault": [
+        "Chia sẽ kho lưu trữ"
+      ],
+      "Show": [
+        "Hiện"
+      ],
+      "Sign back in": [
+        "Đăng nhập lại"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Đăng nhập bằng ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Đăng xuất"
+      ],
+      "Sort vault items": [
+        "Phân loại nội dung kho lưu trữ"
+      ],
+      "Submit": [
+        "Gửi đi"
+      ],
+      "Submitting report...": [
+        "Đang nộp báo cáo..."
+      ],
+      "Transfer ownership": [
+        "Chuyển quyền sở hữu"
+      ],
+      "Update vault": [
+        "Cập nhật kho lưu trữ"
+      ],
+      "Upgrade": [
+        "Nâng cấp"
+      ],
+      "Upgrade now": [
+        "Nâng cấp ngay"
+      ],
+      "Upgrade now to share with more people": [
+        "Nâng cấp ngay để chia sẻ với nhiều người hơn"
+      ],
+      "Write us on Reddit": [
+        "Gửi cho chúng tôi trên Reddit"
+      ],
+      "Write us on Twitter": [
+        "Viết cho chúng tôi trên Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Trình quản lý mật khẩu của bạn không có ở đây sao? Hãy yêu cầu nó."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Tiết kiệm thông minh. Nhận một năm Pass Plus chỉ với ${ relativePrice } hàng tháng."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Nhận ưu đãi"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Ưu đãi Black Friday"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Thông tin thêm"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Thu gọn"
+      ],
+      "Expand": [
+        "Mở rộng"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Tệp ${ provider } không thể phân tích cú pháp được. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Không thể lấy được tùy chọn bí danh"
+      ],
+      "Authentication error": [
+        "Lỗi xác thực"
+      ],
+      "Auto-lock could not be activated": [
+        "Không thể kích hoạt Tự động khóa"
+      ],
+      "Auto-lock could not be disabled": [
+        "Không thể vô hiệu hóa Tự động khóa"
+      ],
+      "Cannot send invitations at the moment": [
+        "Hiện tại không thể gửi lời mời"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Không thể xác nhận lời mời lúc này"
+      ],
+      "Could not leave vault.": [
+        "Không thể rời khỏi kho lưu trữ."
+      ],
+      "Could not open created vault": [
+        "Không thể mở kho lưu trữ đã tạo"
+      ],
+      "Could not open invited vault": [
+        "Không thể mở kho lưu trữ đã được mời"
+      ],
+      "Could not open updated vault": [
+        "Không thể mở kho lưu trữ đã cập nhật"
+      ],
+      "Could not resolve share members": [
+        "Không thể lấy thông tin chia sẻ của thành viên"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Tệp CSV bị thiếu tiêu đề mong đợi: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Giải mã tệp được xuất từ ${ PASS_APP_NAME } của bạn thất bại. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Xóa nội dung thất bại"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Xóa kho lưu trữ ${ payload.content.name } thất bại"
+      ],
+      "Editing item failed": [
+        "Chỉnh sửa nội dung thất bại"
+      ],
+      "Empty CSV file": [
+        "File CSV trống"
+      ],
+      "Emptying trash failed": [
+        "Làm sạch thùng rác thất bại"
+      ],
+      "Encrypted JSON not supported": [
+        "Tệp JSON được mã hóa không được hỗ trợ"
+      ],
+      "Error reporting problem": [
+        "Lỗi khi báo cáo vấn đề"
+      ],
+      "Failed removing the invite.": [
+        "Lỗi khi gỡ lời mời."
+      ],
+      "Failed resending invite.": [
+        "Lỗi khi gửi lại lời mời."
+      ],
+      "Failed to delete selected items": [
+        "Lỗi khi xóa các nội dung được chọn"
+      ],
+      "Failed to edit user's access.": [
+        "Lỗi khi chỉnh sửa quyền truy cập của người dùng."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Thất bại khi chuyển toàn bộ nội dung từ \"${ payload.content.name }\""
+      ],
+      "Failed to move items": [
+        "Lỗi khi di chuyển nội dung"
+      ],
+      "Failed to move items to trash": [
+        "Lỗi khi chuyển nội dung tới thùng rác"
+      ],
+      "Failed to remove user's access.": [
+        "Lỗi khi gỡ quyền truy cập của người dùng."
+      ],
+      "Failed to restore items from trash": [
+        "Lỗi khi khôi phục nội dung từ thùng rác"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Không thể chuyển chủ sở hửu của kho lưu trữ."
+      ],
+      "File could not be parsed": [
+        "Không thể phân tích cú pháp tệp."
+      ],
+      "File does not match expected format": [
+        "Tệp không khớp với định dạng được mong chờ"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Nhập dữ liệu thất bại cho kho lưu trữ \"${ vaultData.name }\" : ${ description }"
+      ],
+      "Importing items failed": [
+        "Nhập nội dung thất bại"
+      ],
+      "Invalid password manager": [
+        "Trình quản lý mật khẩu không hợp lệ"
+      ],
+      "Invitation could not be accepted": [
+        "Lời mời không thể chấp nhận"
+      ],
+      "Invitation could not be rejected": [
+        "Lời mời không thể từ chối"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Nội dung không được vượt quá 40KB"
+      ],
+      "Item creation failed": [
+        "Tạo nội dung thất bại"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass sẽ xuất ra một tập tin CSV bị hỏng nếu bất kỳ trường nội dung nào bạn chứa các dấu phẩy, dấu ngoặc kép hoặc nhiều dòng không mong đợi."
+      ],
+      "Moving item failed": [
+        "Dời nội dung thất bại"
+      ],
+      "Passphrase is incorrect": [
+        "Đăng nhập không chính xác"
+      ],
+      "PIN codes do not match": [
+        "Mã PIN không khớp"
+      ],
+      "Requesting alias options failed": [
+        "Yêu cầu tùy chọn bí danh thất bại"
+      ],
+      "Restoring item failed": [
+        "Khôi phục nội dung thất bại"
+      ],
+      "Restoring trashed items failed": [
+        "Khôi phục nội dung đã đưa vào thùng rác thật bại"
+      ],
+      "Settings update failed": [
+        "Cập nhật cài đặt thất bại"
+      ],
+      "Signature verification failed": [
+        "Xác thực chữ ký thất bại"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Một số kho lưu trữ không thể truy cập được do việc đặt lại mật khẩu. Để khôi phục quyền truy cập, vui lòng kích hoạt lại các khóa tài khoản của bạn. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Đã xảy ra sự cố"
+      ],
+      "The file you are trying to import is empty": [
+        "Tệp mà bạn đang cố gắng nhập vào là trống"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Quá nhiều lần thử thất bại. Vui lòng đăng nhập lại."
+      ],
+      "Trashing item failed": [
+        "Đưa nội dung vào thùng rác thất bại"
+      ],
+      "Unable to boot": [
+        "Không thể mở"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Không thể tạo mã OTP cho nội dung này"
+      ],
+      "Unable to sync": [
+        "Không thể đồng bộ"
+      ],
+      "Unknown error": [
+        "Không rõ lỗi"
+      ],
+      "Unknown invite": [
+        "Lời mời không xác định"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Định dạng tệp ${ PASS_APP_NAME } không được hỗ trợ"
+      ],
+      "Unsupported 1Password file format": [
+        "Định dạng tệp 1Password không được hỗ trợ"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Cập nhật kho lưu trữ ${ payload.content.name } thất bại"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Tạo kho lưu trữ ${ payload.content.name } thất bại"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Kho lưu trữ \"${ vaultData.name }\" không thể tạo được"
+      ],
+      "Vault name does not match": [
+        "Tên kho lưu trữ không khớp"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Sai mã PIN. Hãy thử lại."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Mã PIN của bạn đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ôi, có gì đó sai sai"
+      ],
+      "Something went wrong": [
+        "Đã xảy ra sự cố"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Nâng cấp lên một gói trả tiền để tạo nhiều kho lưu trữ."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Cập nhật nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } sẽ hiển thị biểu tượng của nội dung qua các máy chủ hình ảnh ẩn danh của ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } sẽ chỉ nhập các đăng nhập, ghi chú và thẻ."
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 ngày miễn phí để dùng thử các tính năng cao cấp. Chỉ trong tuần đầu của bạn với ${ BRAND_NAME }"
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Một phiên bản mới của ${ PASS_APP_NAME } đã có. Cập nhật nó để tận hưởng các tính năng mới nhất và các bản sửa lỗi."
+      ],
+      "Access successfully confirmed": [
+        "Xác thực truy cập thành công"
+      ],
+      "Admin": [
+        "Quản trị viên"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Khi không hoạt động, việc vào ${ PASS_APP_NAME } sẽ cần mã PIN để mở khóa phiên làm việc của bạn. Bạn sẽ bị đăng xuất sau 3 lần thử thất bại."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Bí danh \"${ item.aliasEmail }\" đã được chuyển vào thùng rác - nó sẽ dừng chuyển tiếp email đến hộp thư đến của bạn"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Tất cả nội dung từ \"${ payload.content.name }\" đã được chuyển"
+      ],
+      "All items successfully moved": [
+        "Tất cả nội dung đã được chuyển thành công"
+      ],
+      "All trashed items permanently deleted": [
+        "Tất cả nội dung trong thùng rác đã được xóa"
+      ],
+      "All trashed items successfully restored": [
+        "Tất cả nội dung trong thùng rác đã được khôi phục"
+      ],
+      "An item previously shared with you was removed": [
+        "Một nội dung đã được chia sẽ cho bạn trước đây đã bị gỡ bỏ"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Bạn có muốn chuyển tất cả nội dung từ \"${ fromVaultName }\" tới \"${ toVaultName }\" không?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Đã vô hiệu hóa Tự động khóa thành công"
+      ],
+      "Built in 2FA authenticator": [
+        "Trình xác thực 2 bước tích hợp"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Cho phép tạo, chỉnh sửa, xóa và xuất nội dung trong kho lưu trữ này."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Cho phép cấp, thu hồi quyền truy cập và xóa kho lưu trữ này."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Cho phép cấp và thu hồi quyền truy cập vào kho lưu trữ này."
+      ],
+      "Can view items in this vault.": [
+        "Cho phép xem nội dung trong kho lưu trữ này."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Chúc mừng, truy cập của bạn đã được xác nhận"
+      ],
+      "Copied to clipboard": [
+        "Đã sao chép vào bảng ghi tạm"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV cung cấp định dạng thuận tiện để xem dữ liệu của bạn. Tuy nhiên do tính đơn giản nên một số dữ liệu sẽ không được đưa vào (trường tùy chỉnh, cấu trúc kho lưu trữ...). Để xuất hoàn chỉnh, chúng tôi khuyên bạn nên sử dụng định dạng khác."
+      ],
+      "Current version": [
+        "Phiên bản hiện tại"
+      ],
+      "Decrypting your data": [
+        "Đang giải mã dữ liệu của bạn"
+      ],
+      "Deleted items will be moved here first": [
+        "Các nội dung bị xóa sẽ chuyển đến đây trước"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Đang xóa \"${ payload.content.name }\""
+      ],
+      "Editor": [
+        "Biên tập viên"
+      ],
+      "Emptying trash...": [
+        "Đang dọn sạch thùng rác..."
+      ],
+      "Fill in the CSV with your data": [
+        "Điền vào tệp CSV bằng dữ liệu của bạn"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Hãy làm theo các bước sau để nhập dữ liệu của bạn bằng CSV mặc định:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Vì lý do bảo mật, truy cập của bạn cần được xác nhận"
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Nhận không giới hạn bí danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
+      ],
+      "Import in progress:": [
+        "Đang nhập:"
+      ],
+      "Import the CSV file below.": [
+        "Nhập tệp CSV vào bên dưới."
+      ],
+      "Imported on ${ date }": [
+        "Đã nhập vào ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Để có được trải nghiệm tốt nhất từ ${ PASS_APP_NAME }, vui lòng cấp quyền phần mở rộng cần thiết"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Mất kết nối Internet. Vui lòng kiểm tra tình trạng kết nối của thiết bị."
+      ],
+      "Invitation sent": [
+        "Đã gửi lời mời"
+      ],
+      "Invite successfully removed": [
+        "Đã gỡ lời mời thành công"
+      ],
+      "Invite successfully resent": [
+        "Đã gửi lại lời mời thành công"
+      ],
+      "Invite successfully sent": [
+        "Đã gửi lời mời thành công"
+      ],
+      "invites you to access items in": [
+        "mời bạn truy cập nội dung trong"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu bạn đang muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi trình mở rộng này trước nhé."
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Nội dung \"${ payload.item.data.metadata.name }\" đã được tạo"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Nội dung \"${ payload.item.data.metadata.name }\" đã được cập nhật"
+      ],
+      "Item moved to trash": [
+        "Đã chuyển nội dung vào thùng rác"
+      ],
+      "Item permanently deleted": [
+        "Đã xóa vĩnh viễn nội dung"
+      ],
+      "Item restored": [
+        "Đã khôi phục nội dung"
+      ],
+      "Item successfully moved": [
+        "Đã di chuyển nội dung thành công"
+      ],
+      "Leaving vault...": [
+        "Đang rời kho lưu trữ..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Bắt đầu bằng việc tạo nội dung đầu tiên của bạn"
+      ],
+      "Loading": [
+        "Đang tải"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Đang tải ${ PASS_APP_NAME }"
+      ],
+      "Locking your session...": [
+        "Đang khóa phiên làm việc của bạn...."
+      ],
+      "Logging you out...": [
+        "Đang đăng xuất bạn..."
+      ],
+      "me": [
+        "tôi"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Hơn cả một trình quản lý mật khẩu, ${ PASS_APP_NAME } còn bảo vệ mật khẩu của bạn và cả địa chỉ email cá nhân qua các email bí danh. Sử dụng công nghệ đằng sau ${ MAIL_APP_NAME }, dữ liệu của bạn được mã hóa đầu cuối và chỉ có thể truy cập bởi bạn."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
+      ],
+      "Moving items": [
+        "Đang chuyển nội dung"
+      ],
+      "Moving items to trash": [
+        "Đang chuyển nội dung tới thùng rác"
+      ],
+      "Never": [
+        "Không bao giờ"
+      ],
+      "None": [
+        "Không"
+      ],
+      "Owner": [
+        "Chủ sở hữu"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Đã chuyển chủ sở hữu thành công. Bạn không còn là chủ sở hữu của kho lưu trữ này nữa."
+      ],
+      "Pass Plus trial": [
+        "Dùng thử Pass Plus"
+      ],
+      "Permanently deleting selected items": [
+        "Đang xóa vĩnh viễn những nội dung được chọn"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại.\nLúc đó ${ PASS_APP_NAME } sẽ không bao giờ khóa nữa."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Vui lòng xác nhận mã PIN của bạn để chỉnh sửa cài đặt này."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Vui lòng xác nhận lại mã PIN của bạn để hoàn thành thiết lập tính năng tự động khóa."
+      ],
+      "Please consider leaving a review.": [
+        "Vui lòng xem xét việc để lại đánh giá nhé."
+      ],
+      "Please enter your current PIN code to continue": [
+        "Vui lòng nhập mã PIN hiện tại để tiếp tục"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Vui lòng nâng cấp để được truy cập sớm ứng dụng ${ PASS_APP_NAME } trên web"
+      ],
+      "Press Enter to copy": [
+        "Nhấn Enter để sao chép"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Quyền riêng tư là một vấn đề lớn với chúng tôi. Tìm hiểu xem ${ PASS_APP_NAME } khác biệt ở đâu."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Được bảo vệ bởi ${ PROTON_SENTINEL_LINK }, phần mềm bảo vệ tài khoản nâng cao của chúng tôi"
+      ],
+      "Restoring items from trash": [
+        "Đang khôi phục nội dung từ thùng rác"
+      ],
+      "Restoring trashed items...": [
+        "Đang khôi phục nội dung trong thùng rác..."
+      ],
+      "Select destination vault": [
+        "Chọn kho lưu trữ đến"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Chọn nơi bạn muốn (các) kho lưu trữ đã nhập vào được lưu."
+      ],
+      "Selected items permanently deleted": [
+        "Các nội dung được chọn đã được xóa vĩnh viễn"
+      ],
+      "Selected items successfully moved to trash": [
+        "Các nội dung được chọn đã được chuyển tới thùng rác"
+      ],
+      "Selected items successfully restored from trash": [
+        "Các nội dung được chọn đã được khôi phục từ thùng rác"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Thiết lập mã PIN để dễ dàng khóa dữ liệu của bạn"
+      ],
+      "Settings successfully updated": [
+        "Đã cập nhật cài đặt"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Chia sẻ phiên đăng nhập và ghi chú an toàn với lên tới 10 người"
+      ],
+      "Signing you in": [
+        "Đang đăng nhập"
+      ],
+      "Successfully exported all your items": [
+        "Đã xuất thành công tất cả nội dung của bạn"
+      ],
+      "Successfully left the vault": [
+        "Rời khỏi kho lưu trữ thành công"
+      ],
+      "Successfully synced all vaults": [
+        "Đã đồng bộ hóa tất cả kho lưu trữ"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Chuyển sang kho lưu trữ khác hoặc tạo một nội dung trong kho lưu trữ này"
+      ],
+      "Syncing your vaults…": [
+        "Đang đồng bộ hóa kho lưu trữ…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Cảm ơn bạn, vấn đề này đã được báo cáo"
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Tệp xuất của bạn được mã hóa bằng PGP và cần một mật khẩu mạnh."
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Người dùng hiện chưa chấp nhận lời mời."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "File xuất này sẽ không được mã hóa và tất cả những người có thể truy cập vào file xuất này sẽ thấy được mật khẩu của bạn. Vì lý do an toàn, vui lòng xóa file này khi bạn đã sử dụng xong."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Kho lưu trữ này hiện chưa được chia sẻ với ai. Để chia sẻ, hãy mời thêm người."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu của bạn và tải nó lên ${ PASS_APP_NAME }. Khi dữ liệu của bạn đã được nhập vào, xóa tệp đã xuất ban đầu."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Để xem lại dữ liệu đã nhập của bạn, nhấn vào biểu trượng Pass trên thanh công cụ trình duyệt của bạn."
+      ],
+      "Unable to copy to clipboard": [
+        "Không thể sao chép vào bộ nhớ tạm"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Nâng cấp bây giờ để mở khóa các tính năng cao cấp"
+      ],
+      "Use vaults to share this item with others.": [
+        "Dùng kho lưu trữ để chia sẻ nội dung này với những người khác."
+      ],
+      "User's access removed": [
+        "Đã gỡ quyền truy cập của người dùng"
+      ],
+      "User's access sucessfuly updated": [
+        "Đã cập nhật quyền truy cập của người dùng"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Kho lưu trữ \"${ payload.content.name }\" đã được xóa"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Kho lưu trữ \"${ payload.share.content.name }\" đã được tạo"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Kho lưu trữ \"${ payload.share.content.name }\" đã được cập nhật"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Kho lưu trữ \"${ share.content.name }\" đã gỡ bỏ"
+      ],
+      "Viewer": [
+        "Người xem"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Chúng tôi gặp sự cố khi đồng bộ dữ liệu vào bộ nhớ của bạn. Vui lòng đảm bảo bạn có đủ bộ nhớ trống để ${ PASS_SHORT_APP_NAME } hoạt động mượt mà."
+      ],
+      "You are about to create:": [
+        "Bạn đang chuẩn bị tạo:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Bạn không thể đổi địa chỉ email nhận cho bí danh này."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để chuyển nội dung giữa tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung mới chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để tạo nội dung mới trong tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Bạn đã đạt giới hạn bí danh bạn có thể tạo. Tạo không giới hạn bí danh khi bạn nâng cấp gói đăng ký của mình."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Bạn đã đạt đến giới hạn số lượng kho lưu trữ có thể tạo."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Bạn đã đạt đến độ dài tối đa cho phép là ${ maxLength } ký tự."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Bạn sẽ sử dụng mã PIN này để mở khóa ${ PASS_APP_NAME } một khi nó tự động khóa sau một khoảng thời gian không sử dụng."
+      ],
+      "You're invited to a vault.": [
+        "Bạn được mời vào một kho lưu trữ."
+      ]
+    },
+    "Label": {
+      "1 hour": [
+        "1 giờ"
+      ],
+      "1 minute": [
+        "1 phút"
+      ],
+      "10 minutes": [
+        "10 phút"
+      ],
+      "15 minutes": [
+        "15 phút"
+      ],
+      "2FA secret key (TOTP)": [
+        "Mã bảo mật 2FA (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Mã bảo mật 2FA (TOTP)"
+      ],
+      "30 minutes": [
+        "30 phút"
+      ],
+      "30 seconds": [
+        "30 giây"
+      ],
+      "5 minutes": [
+        "5 phút"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Alias": [
+        "Bí danh"
+      ],
+      "Alias address": [
+        "Địa chỉ bí danh"
+      ],
+      "Aliases": [
+        "Bí danh"
+      ],
+      "All": [
+        "Tất cả"
+      ],
+      "All vaults": [
+        "Tất cả kho lưu trữ"
+      ],
+      "Alphabetical": [
+        "Thứ tự chữ cái"
+      ],
+      "Application logs": [
+        "Nhật ký ứng dụng"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Tự động khóa ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock after": [
+        "Tự động khóa sau"
+      ],
+      "Capital letters (A-Z)": [
+        "Chữ cái in hoa (A–Z)"
+      ],
+      "Capitalise": [
+        "In hoa"
+      ],
+      "Card": [
+        "Thẻ"
+      ],
+      "Card number": [
+        "Số thẻ"
+      ],
+      "Cards": [
+        "Thẻ"
+      ],
+      "Confirm vault name": [
+        "Xác nhận tên kho lưu trữ"
+      ],
+      "Create a credit card": [
+        "Tạo thẻ"
+      ],
+      "Create a hide-my-email alias": [
+        "Tạo bí danh ide-my-email"
+      ],
+      "Create a login": [
+        "Tạo đăng nhập"
+      ],
+      "Create an encrypted note": [
+        "Tạo ghi chú được mã hóa"
+      ],
+      "Create new vault": [
+        "Tạo kho lưu trữ mới"
+      ],
+      "Created": [
+        "Đã tạo"
+      ],
+      "Display": [
+        "Hiển thị"
+      ],
+      "Domain": [
+        "Tên miền"
+      ],
+      "Download logs": [
+        "Tải xuống nhật ký"
+      ],
+      "Empty trash": [
+        "Làm trống thùng rác"
+      ],
+      "Expiration date": [
+        "Ngày hết hạn"
+      ],
+      "Export": [
+        "Xuất"
+      ],
+      "Field name": [
+        "Tên trường"
+      ],
+      "File format": [
+        "Định dạng tệp tin"
+      ],
+      "Forwards to": [
+        "Chuyển tiếp đến"
+      ],
+      "General": [
+        "Chung"
+      ],
+      "Generic CSV": [
+        "CSV mặc định"
+      ],
+      "Grant": [
+        "Cấp phép"
+      ],
+      "Hidden": [
+        "Ẩn"
+      ],
+      "Hide password": [
+        "Ẩn mật khẩu"
+      ],
+      "Import": [
+        "Nhập"
+      ],
+      "Import passwords": [
+        "Nhập mật khẩu"
+      ],
+      "Imported from : ": [
+        "Nhập từ: "
+      ],
+      "Imported on : ": [
+        "Đã nhập vào: "
+      ],
+      "Include numbers": [
+        "Bao gồm cả số"
+      ],
+      "Include numbers (0-9)": [
+        "Thêm số (0–9)"
+      ],
+      "Invitations": [
+        "Lời mời"
+      ],
+      "Item ID": [
+        "ID nội dung"
+      ],
+      "Key": [
+        "Chìa khóa"
+      ],
+      "Last 2 weeks": [
+        "2 tuần trước"
+      ],
+      "Last month": [
+        "Tháng trước"
+      ],
+      "Last week": [
+        "Tuần trước"
+      ],
+      "Latest import": [
+        "Lần nhập gần nhất"
+      ],
+      "Learn more": [
+        "Tìm hiểu thêm"
+      ],
+      "Login": [
+        "Đăng nhập"
+      ],
+      "Logins": [
+        "Đăng nhập"
+      ],
+      "Members": [
+        "Thành viên"
+      ],
+      "Modified": [
+        "Đã chỉnh sửa"
+      ],
+      "More than a month": [
+        "Hơn 1 tháng"
+      ],
+      "Most recent": [
+        "Gần đây nhất"
+      ],
+      "Name": [
+        "Tên"
+      ],
+      "Name on card": [
+        "Danh thiếp"
+      ],
+      "Need help ?": [
+        "Cần sự trợ giúp ?"
+      ],
+      "New vault": [
+        "Kho lưu trữ mới"
+      ],
+      "New-Old": [
+        "Mới-Cũ"
+      ],
+      "Newest to oldest": [
+        "Mới nhất đến cũ nhất"
+      ],
+      "No history": [
+        "Không có lịch sử"
+      ],
+      "Note": [
+        "Ghi chú"
+      ],
+      "Notes": [
+        "Ghi chú"
+      ],
+      "Old-New": [
+        "Cũ-Mới"
+      ],
+      "Oldest to newest": [
+        "Cũ nhất đến mới nhất"
+      ],
+      "Passphrase": [
+        "Cụm từ mật khẩu"
+      ],
+      "Password": [
+        "Mật khẩu"
+      ],
+      "Password history": [
+        "Lịch sử mật khẩu"
+      ],
+      "PIN": [
+        "Mã PIN"
+      ],
+      "Prefix": [
+        "Tiền tố"
+      ],
+      "Rate us": [
+        "Đánh giá chúng tôi"
+      ],
+      "Recent": [
+        "Gần đây"
+      ],
+      "Report a problem": [
+        "Báo cáo vấn đề"
+      ],
+      "Restore all items": [
+        "Khôi phục tất cả nội dung"
+      ],
+      "Reveal password": [
+        "Hiện mật khẩu"
+      ],
+      "Security": [
+        "Bảo mật"
+      ],
+      "Security code": [
+        "Mã bảo mật"
+      ],
+      "Select an email address": [
+        "Chọn một địa chỉ email"
+      ],
+      "Select preferred language": [
+        "Chọn ngôn ngữ ưa thích"
+      ],
+      "Select your password manager": [
+        "Chọn trình quản lý mật khẩu của bạn"
+      ],
+      "Selected": [
+        "Đã chọn"
+      ],
+      "Session locking": [
+        "Khóa phiên sử dụng"
+      ],
+      "Set PIN code": [
+        "Đặt mã PIN"
+      ],
+      "Show website favicons": [
+        "Hiển thị biểu tượng trang web"
+      ],
+      "Special characters (!&*)": [
+        "Ký tự đặc biệt (!&*)"
+      ],
+      "Suffix": [
+        "Hậu tố"
+      ],
+      "Support": [
+        "Hỗ trợ"
+      ],
+      "Text": [
+        "Văn bản"
+      ],
+      "Title": [
+        "Tiêu đề"
+      ],
+      "Today": [
+        "Hôm nay"
+      ],
+      "Total imported items : ": [
+        "Tổng số nội dung đã nhập : "
+      ],
+      "Total items : ": [
+        "Tổng số nội dung: "
+      ],
+      "TOTP": [
+        "Mã TOTP"
+      ],
+      "Trash": [
+        "Thùng rác"
+      ],
+      "Type": [
+        "Dạng"
+      ],
+      "Unnamed Credit Card": [
+        "Thẻ chưa đặt tên"
+      ],
+      "Unnamed item": [
+        "Nội dung không có tên"
+      ],
+      "Unnamed note": [
+        "Ghi chú không có tên"
+      ],
+      "Untitled": [
+        "Không có tiêu đề"
+      ],
+      "Update": [
+        "Cập nhật"
+      ],
+      "Username": [
+        "Tên người dùng"
+      ],
+      "Username (alias)": [
+        "Tên đăng nhập (bí danh)"
+      ],
+      "Username (new alias)": [
+        "Tên đăng nhập (bí danh)"
+      ],
+      "Vault": [
+        "Kho lưu trữ"
+      ],
+      "Vault ID": [
+        "ID kho lưu trữ"
+      ],
+      "Vaults": [
+        "Kho lưu trữ"
+      ],
+      "View details": [
+        "Xem chi tiết"
+      ],
+      "View logs": [
+        "Xem nhật kí"
+      ],
+      "Websites": [
+        "Trang web"
+      ],
+      "You are about to create": [
+        "Bạn đang chuẩn bị tạo"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Nhập mã PIN của bạn"
+      ],
+      "Sign in to your account": [
+        "Đăng nhập vào tài khoản của bạn"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Mở khóa ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Chào mừng tới ${ brandNameJSX }"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Dấu phẩy"
+      ],
+      "Hyphens": [
+        "Dấu gạch ngang"
+      ],
+      "Memorable Password": [
+        "Mật khẩu dễ nhớ"
+      ],
+      "Numbers": [
+        "Số"
+      ],
+      "Numbers and Symbols": [
+        "Số và Ký tự"
+      ],
+      "Periods": [
+        "Dấu chấm"
+      ],
+      "Random Password": [
+        "Mật khẩu ngẫu nhiên"
+      ],
+      "Spaces": [
+        "Khoảng trắng"
+      ],
+      "Underscores": [
+        "Dấu gạch dưới"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Thêm mã bảo mật 2FA"
+      ],
+      "Add hidden text": [
+        "Thêm văn bản ẩn"
+      ],
+      "Add note": [
+        "Thêm ghi chú"
+      ],
+      "Add text": [
+        "Thêm văn bản"
+      ],
+      "Email address": [
+        "Địa chỉ email"
+      ],
+      "Enter a note...": [
+        "Nhập ghi chú..."
+      ],
+      "Enter a prefix": [
+        "Nhập tiền tố"
+      ],
+      "Enter email or username": [
+        "Nhập email hoặc tên người dùng"
+      ],
+      "Enter password": [
+        "Nhập mật khẩu"
+      ],
+      "Full Name": [
+        "Tên đầy đủ"
+      ],
+      "Other": [
+        "Khác"
+      ],
+      "Password": [
+        "Mật khẩu"
+      ],
+      "Pick a vault": [
+        "Chọn một kho lưu trữ"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Vui lòng miêu tả vấn đề đó và gộp mọi thông điệp lỗi"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Nhập lại \"${ vaultName }\" để xác nhận xóa"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Tìm ${ pluralItemType } trong ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Tìm ${ pluralItemType } trong tất cả kho lưu trữ"
+      ],
+      "Search in ${ vaultName }": [
+        "Tìm trong ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Tìm trong tất cả kho lưu trữ"
+      ],
+      "Search in Trash": [
+        "Tìm trong thùng rác"
+      ],
+      "Select a suffix": [
+        "Chọn một hậu tố"
+      ],
+      "Shared vault": [
+        "Kho lưu trữ được chia sẻ"
+      ],
+      "Unknown origin": [
+        "Không rõ nguồn"
+      ],
+      "Untitled": [
+        "Không có tiêu đề"
+      ],
+      "Used on ${ url }": [
+        "Sử dụng cho ${ url }"
+      ],
+      "Write your note": [
+        "Viết ghi chú của bạn"
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Cập nhật tự động khóa"
+      ],
+      "Confirm PIN code": [
+        "Xác nhận mã PIN"
+      ],
+      "Create PIN code": [
+        "Tạo mã PIN"
+      ],
+      "Current version": [
+        "Phiên bản hiện tại"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Xóa kho lưu trữ \"${ vaultName }\" ?"
+      ],
+      "Discard changes?": [
+        "Hủy các thay đổi?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Đang tận hưởng ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Nhập mật khẩu của bạn"
+      ],
+      "Enter your PIN": [
+        "Nhập mã PIN của bạn"
+      ],
+      "Grant permissions": [
+        "Cấp quyền"
+      ],
+      "Import - ${ date }": [
+        "Nhập - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Nhập vào (các) kho lưu trữ"
+      ],
+      "Leave vault ?": [
+        "Rời kho lưu trữ ?"
+      ],
+      "Low disk space": [
+        "Dung lượng ổ đĩa thấp"
+      ],
+      "Member limit": [
+        "Giới hạn thành viên"
+      ],
+      "Modified": [
+        "Đã chỉnh sửa"
+      ],
+      "Move all items ?": [
+        "Chuyển tất cả nội dung ?"
+      ],
+      "No items selected": [
+        "Không có nội dung nào được chọn"
+      ],
+      "Our welcome gift to you": [
+        "Quà tặng chào mừng của chúng tôi"
+      ],
+      "Pending access to the shared data": [
+        "Đang chờ truy cập vào dữ liệu được chia sẻ"
+      ],
+      "Permanently remove all items ?": [
+        "Xóa vĩnh viễn tất cả nội dung?"
+      ],
+      "Review and share": [
+        "Xem lại và chia sẻ"
+      ],
+      "Secure your data": [
+        "Bảo vệ dữ liệu của bạn"
+      ],
+      "Set access level": [
+        "Thiết lập cấp độ truy cập"
+      ],
+      "Settings": [
+        "Các cài đặt"
+      ],
+      "Share with": [
+        "Chia sẻ với"
+      ],
+      "Transfer ownership": [
+        "Chuyển quyền sở hữu"
+      ],
+      "Trash empty": [
+        "Thùng rác trống"
+      ],
+      "Update available": [
+        "Có bản cập nhật"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Nâng cấp để mở khóa các tính năng cao cấp"
+      ],
+      "Vault shared with you": [
+        "Kho lưu trữ được chia sẽ với bạn"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Lý do chọn ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Kho lưu trữ của bạn trống"
+      ],
+      "Your welcome gift": [
+        "Tận hưởng bản dùng thử miễn phí của bạn"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "URL bị trùng lập"
+      ],
+      "Field name is required": [
+        "Tên trường là bắt buộc"
+      ],
+      "OTP secret or URI is invalid": [
+        "Mã bí mật OTP hoặc URI không hợp lệ"
+      ],
+      "OTP secret or URI required": [
+        "Mã bí mật OTP hay URI là bắt buộc"
+      ],
+      "Url already exists": [
+        "URL đã tồn tại"
+      ],
+      "URL cannot be empty": [
+        "URL không thể để trống"
+      ],
+      "Url is invalid": [
+        "URL không hợp lệ"
+      ],
+      "URL is invalid": [
+        "URL không hợp lệ"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Yêu cầu mô tả về vấn đề"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Bí danh \"${ name }\" đang được dùng trong thông tin đăng nhập \"${ relatedLoginName }\". Bạn sẽ ngừng nhận các email được gửi tới \"${ aliasEmail }\""
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Tất cả nội dung trong thùng rác của bạn sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác hành động này."
+      ],
+      "An error occured while exporting your data": [
+        "Có lỗi xảy ra trong khi xuất dữ liệu của bạn"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Không thể lấy hộp thư đến cho bí danh này bây giờ"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Không thể tạo kho lưu trữ \"${ vaultName }\""
+      ],
+      "Empty note": [
+        "Ghi chú trống"
+      ],
+      "Invalid alias prefix": [
+        "Tiền tố bí danh không hợp lệ"
+      ],
+      "Missing alias prefix": [
+        "Thiếu tiền tố bí danh"
+      ],
+      "Missing alias suffix": [
+        "Thiếu hậu tố bí danh"
+      ],
+      "No items": [
+        "Không có nội dung nào"
+      ],
+      "No items in trash matching": [
+        "Không có nội dung nào trong rác phù hợp"
+      ],
+      "No items matching": [
+        "Không có nội dung phù hợp"
+      ],
+      "No password manager selected": [
+        "Không có trình quản lý mật khẩu nào được chọn"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Chỉ các ký tự chữ và số, dấu chấm, dấu gạch ngang và dấu gạch dưới được cho phép"
+      ],
+      "Passphrase is required": [
+        "Mật khẩu là bắt buộc"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "Xuất file mã hóa bằng PGP yêu cầu mật khẩu"
+      ],
+      "Please contact us for investigating the issue": [
+        "Vui lòng liên hệ chúng tôi để điều tra vấn đề này"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Vui lòng xác nhận địa chỉ email của bạn để sử dụng tính năng bí danh email"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Vui lòng xác nhận địa chỉ email của bạn để sử dụng tính năng chia sẻ kho lưu trữ"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Tiền tố bí danh không thể dài hơn 40 ký tự"
+      ],
+      "Title is required": [
+        "Yêu cầu có tiêu đề"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Chuyển quyền sở hữu của kho lưu trữ này cho ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Chuyển bí danh vào thùng rác?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Không thể đăng nhập vào ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Kho lưu trữ \"${ vaultName }\" và tất cả nội dung của nó sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác hành động này."
+      ],
+      "Vault name is required": [
+        "Tên kho lưu trữ là bắt buộc"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Bạn không thể tạo nhiều kho lưu trữ hơn gói đăng ký của mình cho phép."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Bạn đã đạt đến số lượng thành viên có thể truy cập tối đa trong kho lưu trữ này."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Bạn đã đạt đến số lượng người dùng tối đa trong kho lưu trữ này. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Bạn đã đạt đến giới hạn số lượng kho lưu trữ trong gói của mình."
+      ],
+      "You have unsaved changes.": [
+        "Bạn có những thay đổi chưa được lưu."
+      ],
+      "You must select at least one mailbox": [
+        "Bạn phải chọn ít nhất một hộp thư đến"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Bạn sẽ không thể truy cập kho lưu trữ này nữa. Để tham gia lại, bạn cần một lời mời mới."
+      ],
+      "Your session could not be authorized.": [
+        "Phiên làm việc của bạn không thể xác thực được."
+      ],
+      "Your session could not be resumed.": [
+        "Phiên làm việc của bạn không thể tiếp tục được."
+      ],
+      "Your session was locked.": [
+        "Phiên làm việc của bạn đã bị khóa."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Gói đăng ký của bạn không cho phép tạo nhiều kho lưu trữ. Tất cả nội dung sẽ được nhập vào kho lưu trữ chính của bạn. Để nhập vào nhiều kho lưu trữ hay nâng cấp gói đăng ký của bạn."
+      ]
+    }
+  }
+}

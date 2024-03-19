@@ -757,7 +757,7 @@
         "${ modifiedCount }-krát",
         "${ modifiedCount } -krát",
         "${ modifiedCount } -krát",
-        "${ modifiedCount } -krát"
+        "${ modifiedCount } krát"
       ],
       "${ n } item": [
         "${ n } položka",
@@ -1523,6 +1523,9 @@
       "Oldest to newest": [
         "Od najstaršieho po najnovšie"
       ],
+      "Passkey": [
+        "Prístupový kľúč"
+      ],
       "Passphrase": [
         "Prístupová fráza"
       ],
@@ -1902,6 +1905,9 @@
       ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
+      ],
+      "Passkey": [
+        "Prístupový kľúč"
       ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"

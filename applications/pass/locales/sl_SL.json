@@ -1,693 +1,699 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n > 1);",
-    "language": "tr_TR"
+    "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
+    "language": "sl_SL"
   },
   "contexts": {
     "Action": {
       "Add": [
-        "Ekle"
+        "Dodaj"
       ],
       "Add current URL": [
-        "Geçerli adresi ekle"
+        "Dodajte trenutni URL"
       ],
       "Add more": [
-        "Başka ekle"
+        "Dodaj več"
       ],
       "Add new item": [
-        "Yeni öge ekle"
+        "Dodaj nov predmet"
       ],
       "Admin panel": [
-        "Yönetim panosu"
+        "Administratorska plošča"
       ],
       "Advanced": [
-        "Gelişmiş"
+        "Napredno"
       ],
       "Advanced options": [
-        "Gelişmiş seçenekler"
+        "Napredne nastavitve"
       ],
       "Authenticate": [
-        "Kimliği doğrula"
+        "Preverjanje pristnosti"
       ],
       "Back": [
-        "Geri"
+        "Nazaj"
       ],
       "Bulk delete items from trash": [
-        "Çöpteki ögeleri toplu olarak sil"
+        "Množično brisanje predmetov iz smetnjaka"
       ],
       "Bulk move items to another vault": [
-        "Ögeleri toplu olarak başka bir kasaya taşı"
+        "Množično premikanje predmetov v drug trezor"
       ],
       "Bulk move items to trash": [
-        "Ögeleri toplu olarak çöpe at"
+        "Množično premikanje predmetov v koš"
       ],
       "Bulk restore items from trash": [
-        "Çöpteki ögeleri toplu olarak çıkar"
+        "Množična obnovitev elementov iz smetnjaka"
       ],
       "Bulk select items": [
-        "Ögeleri toplu olarak seç"
+        "Množično izberite predmete"
       ],
       "Cancel": [
-        "İptal"
+        "Prekliči"
       ],
       "Change": [
-        "Değiştir"
+        "Spremeni"
       ],
       "Choose a file or drag it here": [
-        "Bir dosya seçin ya da sürükleyip buraya bırakın"
+        "Izberite datoteko ali jo povlecite sem"
       ],
       "Clear": [
-        "Temizle"
+        "Počisti"
       ],
       "Clear search": [
-        "Aramayı temizle"
+        "Počisti iskanje"
       ],
       "Close": [
-        "Kapat"
+        "Zapri"
       ],
       "Close advanced options": [
-        "Gelişmiş seçenekleri kapat"
+        "Zapri napredne možnosti"
       ],
       "Close navigation": [
-        "Gezinmeyi kapat"
+        "Zapri krmarjenje"
       ],
       "Confirm": [
-        "Onayla"
+        "Potrdi"
       ],
       "Confirm access": [
-        "Erişimi onayla"
+        "Potrdite dostop"
       ],
       "Continue": [
-        "İlerle"
+        "Nadaljuj"
       ],
       "Copy and close": [
-        "Kopyala ve kapat"
+        "Kopiraj in zapri"
       ],
       "Copy to clipboard": [
-        "Panoya kopyala"
+        "Kopiraj v odložišče"
       ],
       "Create": [
-        "Ekle"
+        "Ustvari"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Bir ${ BRAND_NAME } hesabı açın"
+        "Ustvarite svoj račun ${ BRAND_NAME }."
       ],
       "Create a new vault": [
-        "Yeni bir kasa oluştur"
+        "Ustvari nov trezor"
       ],
       "Create a new vault to share": [
-        "Paylaşılacak yeni bir kasa oluştur"
+        "Ustvarite nov trezor za skupno rabo"
       ],
       "Create alias": [
-        "Takma ad oluştur"
+        "Ustvari vzdevek"
       ],
       "Create card": [
-        "Kart ekle"
+        "Ustvari kartico"
       ],
       "Create login": [
-        "Oturum açma kaydı oluştur"
+        "Ustvarite prijavo"
       ],
       "Create new items": [
-        "Yeni ögeler oluştur"
+        "Ustvari nov predmet"
       ],
       "Create note": [
-        "Not oluştur"
+        "Ustvari opombo"
       ],
       "Create vault": [
-        "Kasa oluştur"
+        "Ustvari nov trezor"
       ],
       "Creating vault": [
-        "Kasa oluşturuluyor"
+        "Ustvari trezor"
       ],
       "Customize": [
-        "Özelleştir"
+        "Prilagodi"
       ],
       "Delete": [
-        "Sil"
+        "Izbriši"
       ],
       "Delete alias": [
-        "Takma adı sil"
+        "Izbriši vzdevek"
       ],
       "Delete all": [
-        "Tümünü sil"
+        "Izbriši vse"
       ],
       "Delete password": [
-        "Parolayı sil"
+        "Izbriši geslo"
       ],
       "Delete permanently": [
-        "Kalıcı olarak sil"
+        "Trajno izbriši"
       ],
       "Delete vault": [
-        "Kasayı sil"
+        "Izbriši trezor"
       ],
       "Deselect": [
-        "Bırak"
+        "Prekliči izbor"
       ],
       "Discard": [
-        "Sil"
+        "Zavrzi"
       ],
       "Dismiss": [
-        "Yok say"
+        "Opusti"
       ],
       "Download this CSV template": [
-        "Bu CSV kalıbını indir"
+        "Prenesite to predlogo CSV"
       ],
       "Edit": [
-        "Düzenle"
+        "Uredi"
       ],
       "Edit vault": [
-        "Kasayı düzenle"
+        "Uredi trezor"
       ],
       "Export": [
-        "Dışa aktar"
+        "Izvozi"
       ],
       "Feedback": [
-        "Geri bildirim"
+        "Povratne informacije"
       ],
       "Fill password": [
-        "Parolayı doldur"
+        "Izpolni geslo"
       ],
       "Filter vault items": [
-        "Kasa ögelerini süz"
+        "Filtrirajte predmete v trezorju"
       ],
       "Generate alias": [
-        "Takma ad üret"
+        "Ustvarjanje vzdevka"
       ],
       "Generate password": [
-        "Parola üret"
+        "Ustvari geslo"
       ],
       "Generated passwords": [
-        "Oluşturulmuş parolalar"
+        "Generiraj geslo"
       ],
       "Get mobile apps": [
-        "Mobil uygulamaları edinin"
+        "Priskrbite si mobilno aplikacijo"
       ],
       "Get Started": [
-        "Başlayalım"
+        "Začnite"
       ],
       "Help us improve": [
-        "Kendimizi geliştirmemize yardımcı olun"
+        "Pomagajte nam izboljšati"
       ],
       "Hide": [
-        "Gizle"
+        "Skrij"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "${ PROVIDER_INFO_MAP[form.values.provider].title } üzerindeki verilerimi nasıl dışa aktarabilirim?"
+        "Kako izvozim svoje podatke iz ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "Import": [
-        "İçe aktar"
+        "Uvoz"
       ],
       "Importing": [
-        "İçe aktarılıyor"
+        "Uvažanje"
       ],
       "Install extension": [
-        "Eklentiyi kur"
+        "Namestite razširitev"
       ],
       "Invite others": [
-        "Başkalarını davet edin"
+        "Povabi druge"
       ],
       "Join shared vault": [
-        "Paylaşılan kasaya eriş"
+        "Pridružite se skupnemu trezorju"
       ],
       "Learn more": [
-        "Ayrıntılı bilgi alın"
+        "Več o tem"
       ],
       "Leave": [
-        "Ayrıl"
+        "Zapusti"
       ],
       "Leave vault": [
-        "Kasayı bırak"
+        "Zapusti trezor"
       ],
       "Lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını kilitle"
+        "Zakleni ${ PASS_APP_NAME }"
       ],
       "Make admin": [
-        "Yönetici yap"
+        "Ustvari administratorja"
       ],
       "Make editor": [
-        "Düzenleyici yap"
+        "Ustvari urednika"
       ],
       "Make viewer": [
-        "Görüntüleyici yap"
+        "Ustvari obiskovalca"
       ],
       "Manage access": [
-        "Erişim yönetimi"
+        "Upravljanje dostopa"
       ],
       "Manually sync your data": [
-        "Verilerinizi el ile eşitleyin"
+        "Ročno sinhroniziraj vaše podatke"
       ],
       "More info: ${ safeTitle }": [
-        "Ayrıntılı bilgi: ${ safeTitle }"
+        "Več informacij: ${ safeTitle }"
       ],
       "More options": [
-        "Diğer seçenekler"
+        "Več možnosti"
       ],
       "Move": [
-        "Taşı"
+        "Premakni"
       ],
       "Move all items": [
-        "Tüm ögeleri taşı"
+        "Premakni vse predmete"
       ],
       "Move to a shared vault": [
-        "Paylaşılan bir kasaya taşı"
+        "Premakni v skupni trezor"
       ],
       "Move to another vault": [
-        "Başka bir kasaya taşı"
+        "Premakni se v drug trezor"
       ],
       "Move to Trash": [
-        "Çöpe at"
+        "Premakni v smetnjak"
       ],
       "Move to trash": [
-        "Çöpe at"
+        "Premakni v smetnjak"
       ],
       "Multiple select": [
-        "Çoklu seçim"
+        "Več izbir"
       ],
       "OK": [
-        "Tamam"
+        "V redu"
       ],
       "Open navigation": [
-        "Gezinmeyi aç"
+        "Odpri krmarjenje"
       ],
       "Pass for Android": [
-        "Android için Proton Pass"
+        "Pass za Android"
       ],
       "Pass for iOS": [
-        "iOS için Proton Pass"
+        "ProtonPass za iOS"
       ],
       "Pin item": [
-        "Ögeyi sabitle"
+        "Pripni predmet"
       ],
       "Refresh the page": [
-        "Sayfayı yenile"
+        "Osveži stran"
       ],
       "Regenerate": [
-        "Yeniden üret"
+        "Regeneriraj"
       ],
       "Reject": [
-        "Reddet"
+        "Zavrni"
       ],
       "Reject invitation": [
-        "Daveti reddet"
+        "Zavrni povabilo"
       ],
       "Remove access": [
-        "Erişimi kaldır"
+        "Odstrani dostop"
       ],
       "Remove member": [
-        "Üyeyi kaldır"
+        "Odstrani člana"
       ],
       "Request a feature": [
-        "Bir özellik istiyorum"
+        "Zahtevaj funkcijo"
       ],
       "Resend invitation": [
-        "Daveti yeniden gönder"
+        "Ponovno pošlji povabilo"
       ],
       "Restore": [
-        "Geri yükle"
+        "Obnovi"
       ],
       "Restore item": [
-        "Ögeyi geri yükle"
+        "Obnovi predmet"
       ],
       "Retry": [
-        "Yeniden dene"
+        "Poskusite znova"
       ],
       "Save": [
-        "Kaydet"
+        "Shrani"
       ],
       "Saving": [
-        "Kaydediliyor"
+        "Shranjeno"
       ],
       "See members": [
-        "Üyeleri görüntüle"
+        "Ogled članov"
       ],
       "Send invite": [
-        "Davet gönder"
+        "Pošlji povabilo"
       ],
       "Send us a message": [
-        "Bize ileti gönderin"
+        "Pošlji sporočilo"
       ],
       "Set access level": [
-        "Erişim düzeyini ayarla"
+        "Nastavite raven dostopa"
       ],
       "Share": [
-        "Paylaş"
+        "Deli"
       ],
       "Share this vault": [
-        "Bu kasayı paylaş"
+        "Delite ta trezor"
       ],
       "Share vault": [
-        "Kasayı paylaş"
+        "Skupni trezor"
       ],
       "Show": [
-        "Görüntüle"
+        "Pokaži"
       ],
       "Sign back in": [
-        "Yeniden oturum aç"
+        "Ponovno se prijavite"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "${ BRAND_NAME } ile oturum aç"
+        "Prijavljeni ste z ${ BRAND_NAME }."
       ],
       "Sign out": [
-        "Oturumu kapat"
+        "Odjava"
       ],
       "Sort vault items": [
-        "Kasa ögelerini sırala"
+        "Sortiraj predmete v trezorju"
       ],
       "Submit": [
-        "Gönder"
+        "Pošlji"
       ],
       "Submitting report...": [
-        "Rapor gönderiliyor..."
+        "Pošiljanje poročila..."
       ],
       "Transfer ownership": [
-        "Sahipliği aktar"
+        "Prenos lastništva"
       ],
       "Trash": [
-        "Çöpe at"
+        "Smeti"
       ],
       "Unpin item": [
-        "Ögenin sabitlemesini kaldır"
+        "Odpni predmet"
       ],
       "Update vault": [
-        "Kasayı güncelle"
+        "Posodobi trezor"
       ],
       "Upgrade": [
-        "Yükselt"
+        "Nadgradi"
       ],
       "Upgrade now": [
-        "Şimdi yükselt"
+        "Nadgradi zdaj"
       ],
       "Upgrade now to share with more people": [
-        "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
+        "Nadgradite zdaj za skupno rabo z več ljudmi"
       ],
       "View history": [
-        "Geçmişi görüntüle"
+        "Pokaži zgodovino"
       ],
       "View item history": [
-        "Öge geçmişini görüntüle"
+        "Prikaži zgodovino predmeta"
       ],
       "View older history": [
-        "Daha eski geçmişi görüntüle"
+        "Prikaži starejšo zgodovino"
       ],
       "Write us on Reddit": [
-        "Bize Reddit üzerinden yazın"
+        "Pišite nam na Reddit"
       ],
       "Write us on Twitter": [
-        "Bize Twitter üzerinden yazın"
+        "Pišite nam na X (Twitter)"
       ],
       "Your password manager not here? Request it.": [
-        "Parola yöneticiniz burada yok mu? İstekte bulunun."
+        "Vašega upravitelj gesel ni tukaj? Zahtevajte ga."
       ]
     },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "İndirimli alın. Ayda tarifenize yalnızca ${ relativePrice } ek ödeme ile bir yıllık Pass Plus edinin."
+        "Varčuj pametno. Pridobite leto Pass Plus za samo ${ relativePrice } na mesec."
       ]
     },
     "bf2023: Label": {
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Izkoristite posebno ponudbo"
       ]
     },
     "bf2023: Title": {
       "Black Friday offer": [
-        "Muhteşem Cuma teklifi"
+        "Ponudba črni petek"
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } Namizna aplikacija"
       ]
     },
     "Button": {
       "More info": [
-        "Diğer bilgiler"
+        "Več informacij"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Daralt"
+        "Strni"
       ],
       "Expand": [
-        "Genişlet"
+        "Razširi"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider } dosyası işlenemedi. ${ errorDetail }"
+        "Datoteke ${ provider } ni bilo mogoče razčleniti. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Takma ad seçenekleri çözümlenemedi"
+        "Možnosti vzdevka ni bilo mogoče razrešiti"
       ],
       "Authentication error": [
-        "Kimlik doğrulayıcı sorunu"
+        "Napaka pri preverjanju pristnosti"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
+        "Preverjanje ni uspelo. Če želite nadaljevati z izvozom, potrdite svoje geslo ${ BRAND_NAME }"
       ],
       "Auto-lock could not be activated": [
-        "Otomatik kilit özelliği açılamadı"
+        "Samodejnega zaklepanja ni bilo mogoče aktivirati"
       ],
       "Auto-lock could not be disabled": [
-        "Otomatik kilitleme kapatılamadı"
+        "Samodejnega zaklepanja ni bilo mogoče onemogočiti"
       ],
       "Cannot send invitation at the moment": [
-        "Davetiye şu anda gönderilemiyor",
-        "Davetiyeler şu anda gönderilemiyor"
+        "Trenutno ni mogoče poslati povabila",
+        "Trenutno ni mogoče poslati povabil\n​",
+        "Trenutno ni mogoče poslati povabil",
+        "Trenutno ni mogoče poslati povabil"
       ],
       "Cannot send invitations at the moment": [
-        "Şu anda davetiye gönderilemiyor"
+        "Trenutno ni mogoče poslati povabil\n​"
       ],
       "Could not confirm this invite at the moment": [
-        "Bu davet şu anda onaylanamıyor"
+        "Tega povabila trenutno ni bilo mogoče potrditi"
       ],
       "Could not leave vault.": [
-        "Kasa bırakılamadı."
+        "Ni bilo mogoče zapustiti trezorja."
       ],
       "Could not load recommendations at the moment.": [
-        "Öneriler şu anda yüklenemiyor."
+        "Priporočil trenutno ni bilo mogoče naložiti."
       ],
       "Could not open created vault": [
-        "Oluşturulan kasa açılamadı"
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
       ],
       "Could not open invited vault": [
-        "Davet edilen kasa açılamadı"
+        "Trezorja s povabil ni bilo mogoče odpreti"
       ],
       "Could not open updated vault": [
-        "Güncellenen kasa açılamadı"
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
       ],
       "Could not resolve share members": [
-        "Paylaşım üyeleri çözümlenemedi"
+        "Članov v skupni rabi ni bilo mogoče razrešiti"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
+        "Datoteka CSV ne vsebuje pričakovanih glav: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "${ PASS_APP_NAME } dış aktarma dosyanızın şifresi çözülemedi. ${ errorDetail }"
+        "Dešifriranje vaše izvozne datoteke ${ PASS_APP_NAME } ni uspelo. ${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Öge silinemedi"
+        "Brisanje predmeta ni uspelo"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "\"${ payload.content.name }\" kasası silinemedi"
+        "Brisanje trezorja »${ payload.content.name }« ni uspelo"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } bozuk CSV satırı bulundu",
-        "${ errors.length } bozuk CSV satırı bulundu"
+        "Odkrita ${ errors.length } poškodovana vrstica CSV",
+        "Odkriti ${ errors.length } poškodovani vrstici CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV"
       ],
       "Editing item failed": [
-        "Öge düzenlenemedi"
+        "Urejanje predmeta ni uspelo"
       ],
       "Empty CSV file": [
-        "CSV dosyası boş"
+        "Prazna datoteka CSV"
       ],
       "Emptying trash failed": [
-        "Çöp kutusu boşaltılamadı"
+        "Praznjenje smetnjaka ni uspelo"
       ],
       "Encrypted JSON not supported": [
-        "Şifrelenmiş JSON desteklenmiyor"
+        "Šifrirani JSON ni podprt"
       ],
       "Error reporting problem": [
-        "Sorun bildirilirken sorun çıktı"
+        "Napaka pri prijavi težave"
       ],
       "Failed removing the invite.": [
-        "Davet silinemedi."
+        "Odstranjevanje povabila ni uspelo."
       ],
       "Failed resending invite.": [
-        "Davet yeniden gönderilemedi."
+        "Ponovno pošiljanje povabila ni uspelo."
       ],
       "Failed to delete selected items": [
-        "Seçilmiş ögeler silinemedi"
+        "Izbranih predmetov ni bilo mogoče izbrisati"
       ],
       "Failed to edit user's access.": [
-        "Kullanıcının erişimi düzenlenemedi."
+        "Uporabnikovega dostopa ni bilo mogoče urediti."
       ],
       "Failed to load item history": [
-        "Öge geçmişi yüklenemedi"
+        "Neuspešno nalaganje zgodovine predmetov"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
+        "Ni bilo mogoče premakniti vseh elementov iz »${ payload.content.name }«"
       ],
       "Failed to move items": [
-        "Ögeler taşınamadı"
+        "Predmetov ni bilo mogoče premakniti"
       ],
       "Failed to move items to trash": [
-        "Ögeler çöpe atılamadı"
+        "Predmetov ni bilo mogoče premakniti v smetnjak"
       ],
       "Failed to pin item": [
-        "Öge sabitlenemedi"
+        "Predmeta ni bilo mogoče pripeti"
       ],
       "Failed to remove user's access.": [
-        "Kullanıcının erişimi kaldırılamadı."
+        "Uporabnikovega dostopa ni bilo mogoče odstraniti."
       ],
       "Failed to restore items from trash": [
-        "Ögeler çöpten çıkarılamadı"
+        "Predmetov ni bilo mogoče obnoviti iz smetnjaka"
       ],
       "Failed to transfer this vault's ownership.": [
-        "Bu kasanın sahipliği aktarılamadı"
+        "Prenos lastništva tega trezorja ni uspel."
       ],
       "Failed to unpin item": [
-        "Ögenin sabitlemesi kaldırılamadı"
+        "Predmeta ni bilo mogoče odpeti"
       ],
       "File could not be parsed": [
-        "Dosya işlenemedi"
+        "Datoteke ni bilo mogoče razčleniti"
       ],
       "File does not match expected format": [
-        "Dosya beklenen biçimde değil"
+        "Datoteka se ne ujema s pričakovano obliko"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
+        "Uvoz za trezor \"${ vaultData.name }\" : ${ description } ni uspel"
       ],
       "Importing items failed": [
-        "Ögeler içe aktarılamadı"
+        "Uvoz predmetov ni uspel"
       ],
       "Invalid password manager": [
-        "Parola yöneticisi geçersiz"
+        "Neveljaven upravitelj gesel"
       ],
       "Invitation could not be accepted": [
-        "Davet kabul edilemedi"
+        "Povabila ni bilo mogoče sprejeti"
       ],
       "Invitation could not be rejected": [
-        "Davet reddedilemedi"
+        "Povabila ni bilo mogoče zavrniti"
       ],
       "Item content cannot exceed 40KB": [
-        "Öge içeriği 40KB boyutundan büyük olamaz"
+        "Vsebina predmeta ne sme presegati 40 KB"
       ],
       "Item creation failed": [
-        "Öge oluşturulamadı"
+        "Ustvarjanje predmeta ni uspelo"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "Öge alanlarınızdan herhangi birinde beklenmedik virgüller, tırnak işaretleri veya birkaç satır varsa, LastPass tarafından dışa aktarılan CSV dosyası bozuk olur"
+        "LastPass bo izvozil poškodovano datoteko CSV, če katero od polj vašega elementa vsebuje nepričakovane vejice, narekovaje ali več vrstic"
       ],
       "Moving item failed": [
-        "Öge taşınamadı"
+        "Premikanje predmeta ni uspelo"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Çevrim dışı kip şu anda iki parola kipinde kullanılamaz."
+        "Način brez povezave trenutno ni na voljo za način z dvema gesloma."
       ],
       "Passphrase is incorrect": [
-        "Parola ifadesi doğru değil"
+        "Geslo ni pravilno"
       ],
       "PIN codes do not match": [
-        "PIN kodu ile onayı aynı değil"
+        "Kodi PIN se ne ujemata"
       ],
       "Request timed out": [
-        "İstek zaman aşımına uğradı"
+        "Zahteva se je iztekla"
       ],
       "Requesting alias options failed": [
-        "Takma ad seçenekleri istenemedi"
+        "Zahtevanje možnosti vzdevka ni uspelo"
       ],
       "Restoring item failed": [
-        "Öge geri yüklenemedi"
+        "Obnavljanje predmeta ni uspelo"
       ],
       "Restoring trashed items failed": [
-        "Çöpe atılmış ögeler geri yüklenemedi"
+        "Obnovitev elementov v smetnjaku ni uspela"
       ],
       "Settings update failed": [
-        "Ayarlar güncellenemedi"
+        "Napaka pri posodobitvi nastavitev"
       ],
       "Signature verification failed": [
-        "İmza doğrulanamadı"
+        "Preverjanje podpisa ni uspelo"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Parola sıfırlandığı için bazı kasalara artık erişilemiyor. Yeniden erişebilmek için hesap anahtarlarınızı yeniden kullanıma alın. ${ reactivateLink }"
+        "Nekateri trezorji niso več dostopni zaradi ponastavitve gesla. Ponovno aktivirajte ključe računa, da ponovno pridobite dostop. ${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Bir sorun çıktı"
+        "Nekaj je šlo narobe"
       ],
       "The file you are trying to import is empty": [
-        "İçe aktarmak istediğiniz dosya boş"
+        "Datoteko, ki jo poskušate uvoziti, je prazna"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
+        "Preveč neuspešnih poskusov. Prosimo, prijavite se znova."
       ],
       "Trashing item failed": [
-        "Öge çöpe atılamadı"
+        "Premeščanje elementa v smetnjak ni uspelo"
       ],
       "Unable to boot": [
-        "Başlatılamadı"
+        "Ni mogoče zagnati"
       ],
       "Unable to generate an OTP code for this item": [
-        "Bu öge için tek kullanımlık parola üretilemedi"
+        "Za ta element ni mogoče ustvariti kode OTP"
       ],
       "Unable to sync": [
-        "Eşitlenemedi"
+        "Ni mogoče sinhronizirati"
       ],
       "Unknown error": [
-        "Bilinmeyen sorun"
+        "Neznana napaka"
       ],
       "Unknown invite": [
-        "Davet bilinmiyor"
+        "Neznano povabilo"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
+        "Nepodprta oblika datoteke ${ PASS_APP_NAME }"
       ],
       "Unsupported 1Password file format": [
-        "Desteklenmeyen 1Password dosya biçimi"
+        "Nepodprt format datoteke 1Password"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "\"${ payload.content.name }\" kasası güncellenemedi"
+        "Posodabljanje trezorja »${ payload.content.name }« ni uspelo"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "\"${ payload.content.name }\" kasası oluşturulamadı"
+        "Ustvarjanje trezorja »${ payload.content.name }« ni uspelo"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "\"${ vaultData.name }\" kasası oluşturulamadı"
+        "Trezorja »${ vaultData.name }« ni bilo mogoče ustvariti"
       ],
       "Vault name does not match": [
-        "Kasa adı aynı değil"
+        "Ime trezorja se ne ujema"
       ],
       "Wrong password": [
-        "Parola yanlış"
+        "Napačno geslo"
       ],
       "Wrong PIN code. Try again.": [
-        "PIN kodu yanlış. Yeniden deneyin."
+        "Napačna koda PIN. Poskusi ponovno."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+        "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
       "Oops, something went wrong": [
-        "Bir şeyler ters gitti"
+        "Ups, nekaj je šlo narobe"
       ],
       "Please refresh the page or try again later.": [
-        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
+        "Osvežite stran ali poskusite znova pozneje."
       ],
       "Something went wrong": [
-        "Bir şeyler ters gitti"
+        "Nekaj je šlo narobe"
       ]
     },
     "file size format": {
       "byte": [
-        "bayt",
-        "bayt"
+        "bajt",
+        "bajta",
+        "bajti",
+        "bajtov"
       ],
       "GB": [
         "GB"
       ],
       "KB": [
-        "KB"
+        "kB"
       ],
       "MB": [
         "MB"
@@ -698,1416 +704,1451 @@
     },
     "file size format, long": {
       "Byte": [
-        "Bayt",
-        "Bayt"
+        "Bajt",
+        "Bajta",
+        "Bajti",
+        "Bajtov"
       ],
       "Gigabyte": [
-        "Gigabayt",
-        "Gigabayt"
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajti",
+        "Gigabajtov"
       ],
       "Kilobyte": [
-        "Kilobayt",
-        "Kilobayt"
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajti",
+        "Kilobajtov"
       ],
       "Megabyte": [
-        "Megabayt",
-        "Megabayt"
+        "Megabajt",
+        "Megabajta",
+        "Megabajti",
+        "Megabajtov"
       ],
       "Terabyte": [
-        "Terabayt",
-        "Terabayt"
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
       ]
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
+        " Nadgradite na plačljivi načrt, da ustvarite več trezorjev."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" ögesi yok sayıldı"
+        "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
+        "Posodobitev »${ payload.item.data.metadata.name }« je bila opuščena"
       ],
       "${ count } invites successfully sent": [
-        "${ count } davetiye gönderildi"
+        "${ count } povabil je bilo uspešno poslanih"
       ],
       "${ memberCount } member": [
-        "${ memberCount } üye",
-        "${ memberCount } üye"
+        "${ memberCount } član",
+        "${ memberCount } člani",
+        "${ memberCount } člana",
+        "${ memberCount } člana"
       ],
       "${ modifiedCount } time": [
-        "${ modifiedCount } kez",
-        "${ modifiedCount } kez"
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat"
       ],
       "${ n } item": [
-        "${ n } öge",
-        "${ n } öge"
+        "${ n } predmet",
+        "${ n } predmeti",
+        "${ n } predmeta",
+        "${ n } predmeta"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
+        "${ PASS_APP_NAME } bo prikazal priljubljeno ikono predmeta prek proxyja anonimizirane slike ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
+        "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in kreditne kartice."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
+        "7 dni, da brezplačno preizkusite vrhunske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
+        "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
       ],
       "Access successfully confirmed": [
-        "Erişim onaylandı"
+        "Dostop je uspešno potrjen"
       ],
       "Admin": [
-        "Yönetici"
+        "Administrator"
       ],
       "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Oturumunuz aık değilken ${ PASS_APP_NAME } erişimi için bir PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+        "Po nedejavnosti bo za dostop do ${ PASS_APP_NAME } potrebna koda PIN za odklepanje vaše seje. Po 3 neuspelih poskusih boste odjavljeni."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
+        "Po uspešnem uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
+        "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
+        "Vsi premeti iz »${ payload.content.name }« so bili uspešno premaknjeni"
       ],
       "All items successfully moved": [
-        "Tüm ögeler taşındı"
+        "Vsi predmeti so uspešno premaknjeni"
       ],
       "All trashed items permanently deleted": [
-        "Çöpe atılmış tüm ögeler kalıcı olarak silindi"
+        "Vse predmete v smetnjaku trajno izbrisanti"
       ],
       "All trashed items successfully restored": [
-        "Çöpe atılmış tüm ögeler geri yüklendi"
+        "Vsi predmeti v smetnjaku so bili uspešno obnovljeni"
       ],
       "An item previously shared with you was removed": [
-        "Daha önce sizinle paylaşılan bir öge kullanımdan kaldırıldı"
+        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen"
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "\"${ fromVaultName }\" içindeki tüm ögeleri \"${ toVaultName }\" içine taşımak istediğinize emin misiniz?"
+        "Ali ste prepričani, da želite premakniti vse predmete iz »${ fromVaultName }« v »${ toVaultName }«?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "Ögeleri \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
+        "Ali ste prepričani, da želite premakniti predmete v \"${ name }\"?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
+        "Ali ste prepričani, da želite premakniti predmet v \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
-        "Otomatik kilitleme kapatıldı"
+        "Samodejno zaklepanje je uspešno onemogočeno"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Var olan parolalarınızı ${ BRAND_NAME } üzerine aktarın."
+        "Prenesite svoja obstoječa gesla v ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Vgrajen 2FA autentifikator"
       ],
       "Can create, edit, delete, and export items in this vault.": [
-        "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
+        "Lahko ustvarja, ureja, briše in izvaža elemente v tem trezorju."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Bu kasaya erişme izni verebilir, geri alabilir ya da silebilir."
+        "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
       ],
       "Can grant and revoke access to this vault.": [
-        "Bu kasaya erişme izni verebilir ya da geri alabilir."
+        "Lahko odobri in prekliče dostop do tega trezorja."
       ],
       "Can view items in this vault.": [
-        "Bu kasadaki ögeleri görüntüleyebilir."
+        "Lahko si ogleda predmete v tem trezorju."
       ],
       "Congratulations, your access has been confirmed": [
-        "Tebrikler erişiminiz onaylandı"
+        "Čestitamo, vaš dostop je potrjen"
       ],
       "Copied to clipboard": [
-        "Panoya kopyalandı"
+        "Kopirano v odložišče"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
-        "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, kasa yapısı...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
+        "CSV ponuja priročno obliko za ogled vaših podatkov. Vendar zaradi enostavnosti nekateri podatki ne bodo vključeni (polja po meri, struktura trezorja ...). Za celoten izvoz priporočamo uporabo drugega formata."
       ],
       "Current version": [
-        "Güncel sürüm"
+        "Trenutna različica"
       ],
       "Decrypting your data": [
-        "Verilerinizin şifresi çözülüyor"
+        "Dešifriranje vaših podatkov"
       ],
       "Deleted items will be moved here first": [
-        "Silinen ögeler önce buraya taşınır"
+        "Izbrisani predmeti bodo najprej premaknjeni sem"
       ],
       "Deleting \"${ payload.content.name }\"": [
-        "\"${ payload.content.name }\" siliniyor"
+        "Brisanje »${ payload.content.name }«"
       ],
       "Drop file here to upload": [
-        "Yüklemek için dosyayı buraya bırakın"
+        "Spusti datoteko tukaj za nalaganje."
       ],
       "Drop to import": [
-        "İçe aktarmak için bırakın"
+        "Spusti za uvoz."
       ],
       "Editor": [
-        "Düzenleyici"
+        "Urejevalnik"
       ],
       "Emptying trash...": [
-        "Çöp kutusu boşaltılıyor..."
+        "Izprazni smetnjak..."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Fill in the CSV with your data": [
-        "CSV dosyasına verilerinizi ekleyin"
+        "Izpolnite CSV s svojimi podatki"
       ],
       "Follow those steps to import your data with a generic CSV :": [
-        "Verilerinizi bir CSV dosyasından içe aktarmak için şu adımları izleyin:"
+        "Za uvoz podatkov z generičnim CSV sledite tem korakom:"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
+        "Iz varnostnih razlogov mora biti vaš dostop potrjen"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak.",
-        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak."
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
-        "Her ekip veya proje için bir kasa oluşturarak Pass uygulamasından en iyi şekilde yararlanın."
+        "Kar najbolje izkoristite Pass tako, da ustvarite trezor za vsako ekipo ali projekt."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
+        "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
       ],
       "Import in progress:": [
-        "İçe aktarılıyor:"
+        "Uvoz v teku:"
       ],
       "Import the CSV file below.": [
-        "Aşağıdan CSV dosyasını içe aktarın."
+        "Uvozite spodnjo datoteko CSV."
       ],
       "Imported ${ payload.total } item": [
-        "${ payload.total } öge içe aktarıldı",
-        "${ payload.total } öge içe aktarıldı"
+        "Uvožen ${ payload.total } predmet",
+        "Uvožena ${ payload.total } predmeta",
+        "Uvoženi ${ payload.total } predmeti",
+        "Uvoženi ${ payload.total } predmeti"
       ],
       "Imported on ${ date }": [
-        "${ date } tarihinde içe aktarıldı"
+        "Uvoženo dne ${ date }"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "En iyi ${ PASS_APP_NAME } deneyimine ulaşmak için lütfen gerekli eklenti izinlerini verin"
+        "Za najboljšo izkušnjo aplikacije ${ PASS_APP_NAME } podelite potrebna dovoljenja za razširitev"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "Oturum açma kayıtlarınızı hızla otomatik olarak doldurmak için ${ browser.title } için ${ PASS_APP_NAME } kurun."
+        "Namestite ${ PASS_APP_NAME } za ${ browser.title } za hitro samodejno izpolnjevanje vaših prijav."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "Oturum açma kayıtlarınızı hızla otomatik olarak doldurmak için ${ browser.title } için ${ PASS_APP_NAME } kurun. "
+        "Namestite ${ PASS_APP_NAME } za ${ browser.title } za hitro samodejno izpolnjevanje vaših prijav. "
       ],
       "Internet connection lost": [
-        "İnternet bağlantısı kesildi"
+        "Internetna povezava je prekinjena"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
+        "Internetna povezava je izgubljena. Preverite povezavo naprave."
       ],
       "Invitation sent": [
-        "Davet gönderildi"
+        "Povabilo poslano."
       ],
       "Invite specific people and set the right permissions.": [
-        "Belirli kişileri davet edin ve doğru izinleri ayarlayın."
+        "Povabite določene ljudi in nastavite prava dovoljenja."
       ],
       "Invite successfully removed": [
-        "Davet silindi"
+        "Vabilo je bilo uspešno odstranjen"
       ],
       "Invite successfully resent": [
-        "Davet yeniden gönderildi"
+        "Povabilo uspešno ponovno poslano"
       ],
       "Invite successfully sent": [
-        "Davet gönderildi"
+        "Vabilo uspešno poslano"
       ],
       "invites you to access items in": [
-        "sizi şu kasadaki ögelere erişmeye davet ediyor:"
+        "vas vabi k dostopu do predmetov v"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
+        "Videti je, da ste že prijavljeni v ${ PASS_APP_NAME }. Če se poskušate prijaviti z drugim računom, se najprej odjavite iz razširitve."
       ],
       "item": [
-        "öge",
-        "öge"
+        "predmet",
+        "predmeta",
+        "predmeti",
+        "predmeti"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "\"${ payload.item.data.metadata.name }\" ögesi oluşturuldu"
+        "Predmet »${ payload.item.data.metadata.name }« je ustvarjen"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
-        "\"${ payload.item.data.metadata.name }\" ögesi güncellendi"
+        "Predmet »${ payload.item.data.metadata.name }« je posodobljen"
       ],
       "Item moved to trash": [
-        "Öge çöpe atıldı"
+        "Predmet premaknjen v smetnjak"
       ],
       "Item permanently deleted": [
-        "Öge kalıcı olarak silindi"
+        "Predmet je trajno izbrisan"
       ],
       "Item restored": [
-        "Öge geri yüklendi"
+        "Predmet je bil obnovljen."
       ],
       "Item successfully moved": [
-        "Öge taşındı"
+        "Predmet je bil uspešno premaknjen"
       ],
       "Item successfully pinned": [
-        "Öge sabitlendi"
+        "Predmet je bil uspešno pripet"
       ],
       "Item successfully unpinned": [
-        "Ögenin sabitlemesi kaldırıldı"
+        "Predmet je bil uspešno odpet"
       ],
       "Leaving vault...": [
-        "Kasa bırakılıyor..."
+        "Zapuščam trezor..."
       ],
       "Let's get you started by creating your first item": [
-        "İlk ögenizi ekleyerek başlayalım"
+        "Začnimo z ustvarjanjem vašega prvega predmeta"
       ],
       "Loading": [
-        "Yükleniyor"
+        "Nalaganje"
       ],
       "Loading ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } yükleniyor"
+        "${ PASS_APP_NAME } se nalaga"
       ],
       "Locking your session...": [
-        "Oturumunuz kilitleniyor..."
+        "Zaklepam vašo sejo..."
       ],
       "Logging you out...": [
-        "Oturumunuz kapatılıyor..."
+        "Izpisujem..."
       ],
       "me": [
-        "benim"
+        "jaz"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
+        "Več kot upravitelj gesel, ${ PASS_APP_NAME } ščiti vaše geslo in vaš osebni e-poštni naslov prek e-poštnih vzdevkov. Vaši podatki, ki jih poganja ista tehnologija za ${ MAIL_APP_NAME }, so šifrirani od konca do konca in dostopni samo vam."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+        "Premikanje vseh predmetov iz »${ payload.content.name }«"
       ],
       "Moving an item to another vault will erase its history": [
-        "Başka bir kasaya taşınan ögenin geçmişi silinir"
+        "Premikanje predmeta v drug trezor bo izbrisalo njegovo zgodovino."
       ],
       "Moving items": [
-        "Ögeler taşınıyor"
+        "Premikanje predmetov"
       ],
       "Moving items to another vault will erase their history": [
-        "Başka bir kasaya taşınan ögelerin geçmişi silinir"
+        "Premikanje predmetov v drug trezor bo izbrisalo njihovo zgodovino."
       ],
       "Moving items to trash": [
-        "Ögeler çöpe atılıyor"
+        "Premikanje predmetov v smetnjak"
       ],
       "Never": [
-        "Asla"
+        "Nikoli"
       ],
       "No network connection": [
-        "Ağ bağlantısı yok"
+        "Ni omrežne povezave"
       ],
       "None": [
-        "Yok"
+        "Brez"
       ],
       "Offline mode": [
-        "Çevrim dışı kip"
+        "Način brez povezave"
       ],
       "Offline mode could not be enabled at the moment": [
-        "Çevrim dışı kip şu anda kullanıma alınamadı"
+        "Način brez povezave trenutno ne more biti vključen"
       ],
       "Offline support successfully disabled": [
-        "Çevrim dışı desteği kullanımdan kaldırıldı"
+        "Način brez povezave je onemogočen"
       ],
       "Owner": [
-        "Sahibi"
+        "Lastnik"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Sahiplik aktarıldı. Artık bu kasanın sahibi değilsiniz."
+        "Lastništvo uspešno preneseno. Niste več lastnik tega trezorja."
       ],
       "Pass Plus trial": [
-        "Proton Pass Plus denemesi"
+        "Pass Plus preizkus"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine."
       ],
       "Permanently deleting selected items": [
-        "Seçilmiş ögeler kalıcı olarak siliniyor"
+        "Trajno brisanje izbranih predmetov"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
+        "PIN koda uspešno registrirana. Uporabite ga za odklepanje ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Öge sabitleniyor..."
+        "Pripenjanje predmeta..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
+        "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın.\nBu durumda ${ PASS_APP_NAME } asla kilitlenmez."
+        "Prosimo, potrdite kodo PIN, če želite odjaviti trenutno ključavnico.\n${ PASS_APP_NAME } se potem ne bo nikoli zaklenila."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Bu ayarı düzenleyebilmek için lütfen PIN kodunuzu yazın."
+        "Za urejanje te nastavitve potrdite kodo PIN."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Otomatik kilitleme ayarlarınızı kaydetmek için lütfen PIN kodunuzu yazın."
+        "Potrdite kodo PIN, da dokončate registracijo za nastavitev samodejnega zaklepanja."
       ],
       "Please consider leaving a review.": [
-        "Lütfen bir yorum yazmayı değerlendirin."
+        "Prosimo, razmislite o pisanju ocene."
       ],
       "Please enter your current PIN code to continue": [
-        "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
+        "Za nadaljevanje vnesite veljaven PIN"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } İnternet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
+        "Nadgradite za zgodnji dostop do spletne aplikacije ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
-        "Kopyalamak için Enter tuşuna basın"
+        "Pritisnite Enter za kopiranje"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Gizliliğe çok önem veriyoruz. ${ PASS_APP_NAME } neden farklı öğrenin."
+        "Zasebnost je za nas velika skrb. Preberite, zakaj je ${ PASS_APP_NAME } drugačna."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
+        "Račun je zaščiten z ${ PROTON_SENTINEL_LINK }, našim naprednim programom"
       ],
       "Reconnect": [
-        "Yeniden bağlan"
+        "Ponovno vzpostavite povezavo"
       ],
       "Restoring items from trash": [
-        "Ögeler çöpten çıkarılıyor"
+        "Obnavljanje predmetov iz smetnjaka"
       ],
       "Restoring trashed items...": [
-        "Çöpe atılmış ögeler geri yükleniyor..."
+        "Obnovitev predmetov v smetnjaku..."
       ],
       "Select destination vault": [
-        "Hedef kasayı seçin"
+        "Izberite ciljni trezor"
       ],
       "Select vault to share": [
-        "Paylaşılacak kasayı seçin"
+        "Izberite trezor za skupno rabo"
       ],
       "Select where you want your imported vault(s) to be saved.": [
-        "İçe aktarılan kasaların kaydedileceği yeri seçin."
+        "Izberite, kam želite shraniti uvožene trezorje."
       ],
       "Selected items permanently deleted": [
-        "Seçilmiş ögeler kalıcı olarak silindi"
+        "Izbrani predmeti so trajno izbrisani"
       ],
       "Selected items successfully moved to trash": [
-        "Seçilmiş ögeler çöpe atıldı"
+        "Izbrani predmeti so bili uspešno premaknjeni v semtnjak"
       ],
       "Selected items successfully restored from trash": [
-        "Seçilmiş ögeler çöpten çıkarıldı"
+        "Izbrani elementi so bili uspešno obnovljeni iz smetnjaka"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+        "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
       ],
       "Session timed out": [
-        "Oturum zaman aşımına uğradı"
+        "Seja je potekla"
       ],
       "Set up a PIN code to easily lock your data": [
-        "Verilerinizi kolayca kilitlemek için bir PIN kodu ayarlayın"
+        "Nastavite kodo PIN za enostavno zaklepanje podatkov"
       ],
       "Setting up offline mode...": [
-        "Çevrim dışı kip ayarlanıyor..."
+        "Pripravljanje načina brez povezave"
       ],
       "Settings successfully updated": [
-        "Ayarlar güncellendi"
+        "Nastavitve so bile uspešno posodobljene"
       ],
       "Share your logins, secure notes, with up to 10 people": [
-        "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
+        "Delite svoje prijave, varne zapiske z do 10 osebami"
       ],
       "Signing you in": [
-        "Oturumunuz açılıyor"
+        "Vpisujem vas"
       ],
       "Successfully exported all your items": [
-        "Tüm ögeleriniz dışa aktarıldı"
+        "Vsi vaši predmeti so bili uspešno izvoženi"
       ],
       "Successfully left the vault": [
-        "Kasa bırakıldı"
+        "Uspešno ste zapustil trezor"
       ],
       "Successfully synced all vaults": [
-        "Tüm kasalar eşitlendi"
+        "Uspešno so sinhronizirani vsi trezorji"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Başka bir kasaya geçin ya da bu kasa içine bir öge ekleyin"
+        "Preklopite v drug trezor ali ustvarite predmet v tem trezorju"
       ],
       "Syncing your vaults…": [
-        "Kasalarınız eşitleniyor…"
+        "Sinhronizacija vaših trezorjev …"
       ],
       "Thank you, the problem has been reported": [
-        "Teşekkürler. Sorununuz bildirildi"
+        "Hvala, težava je bila prijavljena"
       ],
       "The export will only contain vaults that you own.": [
-        "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."
+        "Izvoz bo vseboval le trezorje, ki so v vaši lasti."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
+        "Izvožena datoteka bo šifrirana s PGP in zahteva močno geslo."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
-        "Şu ${ result.ignored.length } öge içe aktarılamadı:",
-        "Şu ${ result.ignored.length } öge içe aktarılamadı:"
+        "Tega predmeta ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh dveh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
+        "Besedilo, ki ga poskušate prilepiti, presega največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
       "The user did not accept the invitation yet.": [
-        "Kullanıcı henüz daveti kabul etmedi."
+        "Uporabnik še ni sprejel vabila."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
+        "Ta izvoz bo nešifriran in vsak, ki ima dostop do vaše izvožene datoteke, bo lahko videl vaša gesla. Zaradi varnosti ga izbrišite, ko ga nehate uporabljati."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
+        "Ta trezor trenutno ni v skupni rabi z nikomer. Povabite ljudi, da to delijo z drugimi."
       ],
       "This version will be added to the history as the newest version.": [
-        "Bu sürüm geçmişe en yeni sürüm olarak eklenecek."
+        "Ta različica bo dodana v zgodovino kot najnovejša različica."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Başka bir parola yöneticisindeki verileri aktarmak için parola yöneticisine gidin, verilerinizi dışa aktarın ve ardından ${ PASS_APP_NAME } uygulamasına yükleyin. Verileriniz içe aktarıldıktan sonra dışa aktardığınız dosyayı silin."
+        "Izberite, kam želite shraniti svoje uvožene trezorje. Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki Proton Pass simgesine tıklayın."
+        "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
       ],
       "Unable to copy to clipboard": [
-        "Panoya kopyalanamadı"
+        "Kopiranja v odložišče ni mogoče"
       ],
       "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
+        "Neomejeno število vzdevkov ide-my-email"
       ],
       "Unpinning item...": [
-        "Ögenin sabitlemesi kaldırılıyor..."
+        "Odpenjanje predmeta..."
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
+        "Nadgradite zdaj, da odklenete Premium funkcije"
       ],
       "Use vaults to share this item with others.": [
-        "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
+        "Uporabite trezorje za skupno rabo predmetov z drugimi."
       ],
       "User's access removed": [
-        "Kullanıcının erişimi kaldırıldı"
+        "Uporabnikov dostop odstranjen"
       ],
       "User's access sucessfuly updated": [
-        "Kullanıcının erişimi güncellendi"
+        "Uporabnikov dostop je bil uspešno posodobljen"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "\"${ payload.content.name }\" kasası silindi"
+        "Trezor \"${ payload.content.name }\" je uspešno izbrisan"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "\"${ payload.share.content.name }\" kasası oluşturuldu"
+        "Trezor \"${ payload.share.content.name }\" je bil uspešno ustvarjen"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "\"${ payload.share.content.name }\" kasası güncellendi"
+        "Trezor \"${ payload.share.content.name }\" je bil uspešno posodobljen"
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "\"${ share.content.name }\" kasası kaldırıldı"
+        "Trezor \"${ share.content.name }\" je bil odstranjen"
       ],
       "Viewer": [
-        "Görüntüleyici"
+        "Preglednik"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Verileri yerel depolamanızla eşitlerken sorun çıktı. ${ PASS_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için lütfen yeterli boş disk alanınızın olduğundan emin olun."
+        "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
       ],
       "You are about to create:": [
-        "Şunu oluşturmak üzeresiniz:"
+        "Ustvarili boste:"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
+        "Sedaj lahko uporabljate ${ BRAND_NAME } geslo za dostop do ${ PASS_SHORT_APP_NAME } v načinu brez povezave"
       ],
       "You cannot change the mailboxes for this alias.": [
-        "Bu takma adın e-posta kutularını değiştiremezsiniz."
+        "Nabiralnikov za ta vzdevek ne morete spremeniti."
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
-        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
+        "Imate še ${ daysRemaining } dan, da preizkusite te in druge vrhunske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje elementov med vsemi trezorji nadgradite svojo naročnino."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Yeni ögeler yalnızca ilk iki kasanızda oluşturulabilir. Tüm kasalarınızda yeni ögeler oluşturabilmek için abonelik tarifenizi yükseltin."
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Da ustvarite nov predmet v trezorjih nadgradite svojo naročnino."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
-      ],
-      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Oluşturabileceğiniz kredi kartı sınırına ulaştınız. Aboneliğinizi yükselttiğinizde sınırsız sayıda kredi kartı oluşturun."
+        "Dosegli ste omejitev vzdevkov, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število vzdevkov."
       ],
       "You have reached the limit of vaults you can create.": [
-        "Oluşturabileceğiniz kasa sayısı sınırına ulaştınız."
+        "Dosegli ste omejitev trezorjev, ki jih lahko ustvarite."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
+        "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Belirli bir süre kullanılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
+        "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
       ],
       "You're invited to a vault.": [
-        "Bir kasaya davet edildiniz."
+        "Vabljeni ste v trezor."
       ],
       "Your files will be encrypted and then saved": [
-        "Dosyalarınız şifrelendikten sonra kaydedilir"
+        "Vaše datoteke bodo šifrirane in nato shranjene."
       ]
     },
     "Label": {
       "${ config.options.length } character": [
-        "${ config.options.length } karakter",
-        "${ config.options.length } karakter"
+        "${ config.options.length }/ znak",
+        "${ config.options.length }/ znaka",
+        "${ config.options.length } znakov",
+        "${ config.options.length } znakov"
       ],
       "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } sözcük",
-        "${ config.options.wordCount } sözcük"
+        "${ config.options.wordCount } beseda",
+        "${ config.options.wordCount } besedi",
+        "${ config.options.wordCount } besed",
+        "${ config.options.wordCount } besed"
       ],
       "1 hour": [
-        "1 saat"
+        "1 ura"
       ],
       "1 minute": [
-        "1 dakika"
+        "1 minuta"
       ],
       "10 minutes": [
-        "10 dakika"
+        "10 minut"
       ],
       "15 minutes": [
-        "15 dakika"
+        "15 minut"
       ],
       "2FA secret key (TOTP)": [
-        "İki adımlı doğrulama gizli anahtarı (tek kullanımlık)"
+        "Skrivni ključ 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "İki adımlı doğrulama kodu (tek kullanımlık)"
+        "Koda 2FA (TOTP)"
       ],
       "30 minutes": [
-        "30 dakika"
+        "30 minut"
       ],
       "30 seconds": [
-        "30 saniye"
+        "30 sekund"
       ],
       "5 minutes": [
-        "5 dakika"
+        "5 minut"
       ],
       "A-Z": [
         "A-Z"
       ],
       "Account": [
-        "Hesap"
+        "Račun"
       ],
       "Alias": [
-        "Takma ad"
+        "Vzdevek"
       ],
       "Alias address": [
-        "Takma ad adresi"
+        "Vzdevek naslova"
       ],
       "Aliases": [
-        "Takma adlar"
+        "Vzdevki"
       ],
       "All": [
-        "Tümü"
+        "Vse"
       ],
       "All vaults": [
-        "Tüm kasalar"
+        "Vsi trezorji"
       ],
       "Alphabetical": [
-        "Alfabetik"
+        "Po abecednem redu"
       ],
       "Application logs": [
-        "Uygulama günlükleri"
+        "Dnevniki aplikacij"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } otomatik kilitleme"
+        "Samodejno zaklepanje ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
-        "Otomatik kilitleme süresi"
+        "Samodejno zaklepanje po"
       ],
       "Capital letters (A-Z)": [
-        "Büyük harfler (A-Z)"
+        "Velike črke (A-Z)"
       ],
       "Capitalise": [
-        "Büyüt"
+        "Napiši veliko začetnico"
       ],
       "Card": [
-        "Kart"
+        "Kartica"
       ],
       "Card number": [
-        "Kart numarası"
+        "Številka kartice"
       ],
       "Cards": [
-        "Kartlar"
+        "Kartice"
       ],
       "Confirm vault name": [
-        "Kasa adı onayı"
+        "Potrdite ime trezorja"
       ],
       "Create a credit card": [
-        "Kredi kartı ekle"
+        "Ustvarite kreditno kartico"
       ],
       "Create a hide-my-email alias": [
-        "Bir hide-my-email takma adı oluştur"
+        "Ustvari vzdevek Hide-my-email"
       ],
       "Create a login": [
-        "Oturum açma kaydı oluştur"
+        "Ustvarite prijavo"
       ],
       "Create an encrypted note": [
-        "Şifrelenmiş bir not oluştur"
+        "Ustvarite šifrirano opombo"
       ],
       "Create new vault": [
-        "Yeni kasa oluştur"
+        "Ustvari nov trezor"
       ],
       "Created": [
-        "Oluşturulma"
+        "Ustvarjeno"
       ],
       "Display": [
-        "Görünüm"
+        "Zaslon"
       ],
       "Domain": [
-        "Etki alanı"
+        "Domena"
       ],
       "Download logs": [
-        "Günlükleri indir"
+        "Prenesite dnevnike"
       ],
       "Empty trash": [
-        "Çöp kutusunu boşalt"
+        "Izprazni smetnjak"
       ],
       "Expiration date": [
-        "Son kullanma tarihi"
+        "Datum poteka"
       ],
       "Export": [
-        "Dışa aktar"
+        "Izvozi"
       ],
       "Field name": [
-        "Alan adı"
+        "Ime polja"
       ],
       "File format": [
-        "Dosya biçimi"
+        "Format datoteke"
       ],
       "Forwards to": [
-        "Şuraya iletiyor"
+        "Posreduje na"
       ],
       "General": [
-        "Genel"
+        "Splošno"
       ],
       "Generic CSV": [
-        "CSV dosyası"
+        "Generični CSV"
       ],
       "Grant": [
-        "İzin ver"
+        "Odobri"
       ],
       "Hidden": [
-        "Gizli"
+        "Skrito"
       ],
       "Hide password": [
-        "Parolayı gizle"
+        "Skrij geslo"
       ],
       "Import": [
-        "İçe aktar"
+        "Uvoz"
       ],
       "Import passwords": [
-        "Parolaları içe aktar"
+        "Uvozi gesla"
       ],
       "Imported from : ": [
-        "Şuradan içe aktarıldı: "
+        "Uvoćeno iz : "
       ],
       "Imported on : ": [
-        "Şu zamanda içe aktarıldı: "
+        "Uvoženo dne : "
       ],
       "Include numbers": [
-        "Sayılar katılsın"
+        "Vključi številke"
       ],
       "Include numbers (0-9)": [
-        "Sayılar katılsın (0-9)"
+        "Vključi številke (0-9)"
       ],
       "Invitations": [
-        "Davetler"
+        "Vabila"
       ],
       "Item ID": [
-        "Öge kimliği"
+        "ID predmeta"
       ],
       "Key": [
-        "Anahtar"
+        "Ključ"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Klavye kısayolu: ${ shortcut }"
+        "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Language": [
-        "Dil"
+        "Jezik"
       ],
       "Last 2 weeks": [
-        "Son 2 hafta"
+        "Zadnja 2 tedna"
       ],
       "Last month": [
-        "Son bir ay"
+        "Prejšnji mesec"
       ],
       "Last week": [
-        "Son bir hafta"
+        "Prejšnji teden"
       ],
       "Latest import": [
-        "Son içe aktarma"
+        "Zadnji uvoz"
       ],
       "Learn more": [
-        "Ayrıntılı bilgi alın"
+        "Več informacij"
       ],
       "Login": [
-        "Oturum açma"
+        "Prijava"
       ],
       "Logins": [
-        "Oturum açma kayıtları"
+        "Prijave"
       ],
       "Make all admins": [
-        "Tümünü yönetici yap"
+        "Omogoči vsem adminstratorja"
       ],
       "Make all editors": [
-        "Tümünü düzenleyici yap"
+        "Omogoči vsem urejanje"
       ],
       "Make all viewers": [
-        "Tümünü izleyici yap"
+        "Omogoči ogled vsem"
       ],
       "Members": [
-        "Üyeler"
+        "Člani"
       ],
       "Modified": [
-        "Değiştirilme"
+        "Spremenjeno"
       ],
       "More than a month": [
-        "Bir aydan fazla"
+        "Več kot mesec dni"
       ],
       "Most recent": [
-        "Son kullanıma göre"
+        "Najnovejši"
       ],
       "Name": [
-        "Ad"
+        "Ime"
       ],
       "Name on card": [
-        "Kart üzerindeki isim"
+        "Ime na kartici"
       ],
       "Need help ?": [
-        "Yardım mı gerekiyor ?"
+        "Potrebujete pomoč?"
       ],
       "New vault": [
-        "Yeni kasa"
+        "Nov trezor"
       ],
       "New-Old": [
-        "Yeniden eskiye"
+        "Novo-staro"
       ],
       "Newest to oldest": [
-        "Yeniden eskiye"
+        "Od najnovejšega do najstarejšega"
       ],
       "No history": [
-        "Geçmiş yok"
+        "Brez zgodovine"
       ],
       "Note": [
-        "Not"
+        "Opomba"
       ],
       "Notes": [
-        "Notlar"
+        "Opombe"
       ],
       "Old-New": [
-        "Eskiden yeniye"
+        "Staro-novo"
       ],
       "Oldest to newest": [
-        "Eskiden yeniye"
+        "Od starejšega do najnovejšega"
       ],
       "Passkey": [
-        "Geçiş anahtarı"
+        "Identifikacijski ključ"
       ],
       "Passphrase": [
-        "Parola ifadesi"
+        "Geslo"
       ],
       "Password": [
-        "Parola"
+        "Geslo"
       ],
       "Password history": [
-        "Parola geçmişi"
+        "Zgodovina gesel"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "PGP ile şifrelenmiş JSON (önerilir)"
+        "PGP šifriran JSON (priporočeno)"
       ],
       "PIN": [
-        "PIN"
+        "PIN koda"
       ],
       "Prefix": [
-        "Ön ek"
+        "Predpona"
       ],
       "Rate us": [
-        "Bizi değerlendirin"
+        "Ocenite nas"
       ],
       "Recent": [
-        "Son"
+        "Nedavno"
       ],
       "Report a problem": [
-        "Bir sorun bildireceğim"
+        "Prijavi težavo"
       ],
       "Restore all items": [
-        "Tüm ögeleri geri yükle"
+        "Obnovi vse predmete"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Razkrij geslo"
       ],
       "Security": [
-        "Güvenlik"
+        "Varnost"
       ],
       "Security code": [
-        "Güvenlik kodu"
+        "Varnostna koda"
       ],
       "Select an email address": [
-        "Bir e-posta adresi seçin"
+        "Izberite e-poštni naslov"
       ],
       "Select preferred language": [
-        "Kullanılacak dili seçin"
+        "Izberite želeni jezik"
       ],
       "Select your password manager": [
-        "Parola yöneticinizi seçin"
+        "Izberite upravitelja gesel"
       ],
       "Selected": [
-        "Seçilmiş"
+        "Izbrano"
       ],
       "Session locking": [
-        "Oturum kilitleme"
+        "Zaklepanje seje"
       ],
       "Set PIN code": [
-        "PIN kodu ayarla"
+        "Nastavi kodo PIN"
       ],
       "Show website favicons": [
-        "Site simgeleri görüntülensin"
+        "Pokaži ikone spletnega mesta"
       ],
       "Special characters (!&*)": [
-        "Özel karakterler (!&*)"
+        "Posebni znaki (!&*)"
       ],
       "Suffix": [
-        "Son ek"
+        "Pripona"
       ],
       "Support": [
-        "Destek"
+        "Podpora"
       ],
       "Text": [
-        "Metin"
+        "Besedilo"
       ],
       "Title": [
-        "Başlık"
+        "Naslov"
       ],
       "Today": [
-        "Bugün"
+        "Danes"
       ],
       "Total imported items : ": [
-        "Toplam içe aktarılan öge: "
+        "Skupaj uvoženih predmetov : "
       ],
       "Total items : ": [
-        "Toplam öge: "
+        "Skupaj predmetov : "
       ],
       "TOTP": [
-        "Tek kullanımlık parola"
+        "TOTP"
       ],
       "Trash": [
-        "Çöp kutusu"
+        "Smeti"
       ],
       "Type": [
-        "Tür"
+        "Vrsta"
       ],
       "Unnamed Credit Card": [
-        "Adsız kredi kartı"
+        "Neimenovana kreditna kartica"
       ],
       "Unnamed item": [
-        "Adsız öge"
+        "Neimenovan predmet"
       ],
       "Unnamed note": [
-        "Adsız not"
+        "Neimenovan predmet"
       ],
       "Untitled": [
-        "Adsız"
+        "Brez naslova"
       ],
       "Update": [
-        "Güncelle"
+        "Posodobi"
       ],
       "Username": [
-        "Kullanıcı adı"
+        "Uporabniško ime"
       ],
       "Username (alias)": [
-        "Kullanıcı adı (takma ad)"
+        "Uporabniško ime (vzdevek)"
       ],
       "Username (new alias)": [
-        "Kullanıcı adı (yeni takma ad)"
+        "Uporabniško ime (nov vzdevek)"
       ],
       "Vault": [
-        "Kasa"
+        "Trezor"
       ],
       "Vault ID": [
-        "Kasa kimliği"
+        "ID trezorja"
       ],
       "Vaults": [
-        "Kasalar"
+        "Trezorji"
       ],
       "View details": [
-        "Bilgileri görüntüle"
+        "Prikaži podrobnosti"
       ],
       "View logs": [
-        "Günlükleri görüntüle"
+        "Prikaži dnevnik"
       ],
       "Websites": [
-        "Siteler"
+        "Spletne strani"
       ],
       "You are about to create": [
-        "Şunu oluşturmak üzeresiniz"
+        "Ustvarili boste"
       ]
     },
     "lobby: Info": {
       "Enter your PIN code": [
-        "PIN kodunuzu yazın"
+        "Vnesi svojo PIN kodo."
       ],
       "Sign in to your account": [
-        "Hesabınızda oturum açın"
+        "Vpišite se v svoj račun"
       ],
       "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Şu anda çevrim dışı durumdasınız. ${ BRAND_NAME } parolanızla ${ PASS_SHORT_APP_NAME } kilidini açın"
+        "Trenutno ste brez povezave. Odklenite ${ PASS_SHORT_APP_NAME } z vašim ${ BRAND_NAME } geslom"
       ]
     },
     "lobby: Title": {
       "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } kilidini aç"
+        "Odkleni ${ brandNameJSX }"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } uygulamasına hoş geldiniz"
+        "Dobrodošli v ${ brandNameJSX }"
       ]
     },
     "Message": {
       "${ count } item": [
-        "${ count } öge",
-        "${ count } öge"
+        "${ count } predmet",
+        "${ count } predmeti",
+        "${ count } predmeti",
+        "${ count } predmeti"
       ],
       "You selected ${ semiboldText } in this vault": [
-        "Bu kasadaki ${ semiboldText } ögeyi seçtiniz"
+        "V tem trezorju ste izbrali ${ semiboldText }"
       ]
     },
     "Option": {
       "Commas": [
-        "Virgül"
+        "Vejice"
       ],
       "Hyphens": [
-        "Tire"
+        "Vezaji"
       ],
       "Memorable Password": [
-        "Hatırlanabilir parola"
+        "Geslo, ki si ga je mogoče zapomniti"
       ],
       "Numbers": [
-        "Rakamlar"
+        "Številke"
       ],
       "Numbers and Symbols": [
-        "Rakamlar ve simgeler"
+        "Številke in simboli"
       ],
       "Periods": [
-        "Nokta"
+        "Pike"
       ],
       "Random Password": [
-        "Rastgele parola"
+        "Naključno geslo"
       ],
       "Spaces": [
-        "Boşluk"
+        "Presledki"
       ],
       "Underscores": [
-        "Alt çizgi"
+        "Podčrtaji"
       ]
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "İki adımlı doğrulama gizli anahtarı ekle"
+        "Dodajte skrivni ključ 2FA"
       ],
       "Add hidden text": [
-        "Gizli metin ekle"
+        "Dodajte skrito besedilo"
       ],
       "Add note": [
-        "Not ekle"
+        "Dodaj opombo"
       ],
       "Add text": [
-        "Metin ekle"
+        "Dodaj tekst"
       ],
       "Email address": [
-        "E-posta adresi"
+        "E-poštni naslov"
       ],
       "Enter a note...": [
-        "Bir not yazın..."
+        "Vnesite opombe..."
       ],
       "Enter a prefix": [
-        "Bir ön ek yazın"
+        "Vnesite pripono"
       ],
       "Enter email or username": [
-        "E-posta adresi ya da kullanıcı adı yazın"
+        "Vnesite e-pošto ali uporabniško ime"
       ],
       "Enter password": [
-        "Parolayı yazın"
+        "Vnesite geslo"
       ],
       "Full Name": [
-        "Ad Soyad"
+        "Polno ime"
       ],
       "MM/YY": [
-        "AA/YY"
+        "MM/LL"
       ],
       "Other": [
-        "Diğer"
+        "Ostalo"
       ],
       "Password": [
-        "Parola"
+        "Geslo"
       ],
       "Pick a vault": [
-        "Bir kasa seçin"
+        "Izberite trezor"
       ],
       "Please describe the problem and include any error messages": [
-        "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+        "Opišite težavo in vključite morebitna sporočila o napakah"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Silinmesini onaylamak için yeniden \"${ vaultName }\" yazın"
+        "Znova vnesite \"${ vaultName }\", da potrdite izbris"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
-        "${ vaultName } içinde ${ pluralItemType } ara"
+        "Iskanje ${ pluralItemType } v ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
-        "Tüm kasalarda ${ pluralItemType } ara"
+        "Išči ${ pluralItemType } v vseh trezorjih"
       ],
       "Search in ${ vaultName }": [
-        "${ vaultName } içinde ara"
+        "Iskanje ${ vaultName }"
       ],
       "Search in all vaults": [
-        "Tüm kasalarda ara"
+        "Iskanje v vseh trezorjih"
       ],
       "Search in Trash": [
-        "Çöp kutusunda ara"
+        "Iskanje v smetnjaku"
       ],
       "Select a suffix": [
-        "Bir son ek yazın"
+        "Izberite pripono"
       ],
       "Shared vault": [
-        "Paylaşılan kasa"
+        "Skupni trezor"
       ],
       "Unknown origin": [
-        "Kaynak bilinmiyor"
+        "Neznanega izvora"
       ],
       "Untitled": [
-        "Adsız"
+        "Brez naslova"
       ],
       "Used on ${ url }": [
-        "${ url } üzerinde kullanılmış"
+        "Uporabljeno na ${ url }"
       ],
       "Write your note": [
-        "Notunuzu yazın"
+        "Napišite svojo opombo"
       ]
     },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
-        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov."
       ]
     },
     "Title": {
       "Auto-lock update": [
-        "Ootmatik kilitleme güncellemesi"
+        "Posodobitev samodejnega zaklepanja"
       ],
       "Confirm PIN code": [
-        "PIN kodu onayı"
+        "Potrdi PIN kodo"
       ],
       "Create a vault": [
-        "Bir kasa oluşturun"
+        "Ustvari nov trezor"
       ],
       "Create PIN code": [
-        "PIN kodu oluştur"
+        "Ustvari PIN kodo"
       ],
       "Created": [
-        "Oluşturulma"
+        "Ustvarjeno"
       ],
       "Current version": [
-        "Güncel sürüm"
+        "Trenutna različica"
       ],
       "Delete vault \"${ vaultName }\" ?": [
-        "\"${ vaultName }\" kasası silinsin mi?"
+        "Želite izbrisati trezor \"${ vaultName }\"?"
       ],
       "Discard changes?": [
-        "Değişiklikler silinsin mi?"
+        "Zavrzi spremembe?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME } hoşunuza gitti mi?"
+        "Uživate v ${ PASS_APP_NAME }?"
       ],
       "Enter your password": [
-        "Parolanızı yazın"
+        "Vnesite geslo"
       ],
       "Enter your PIN": [
-        "PIN kodunuzu yazın"
+        "Vnesite PIN"
       ],
       "Get Started": [
-        "Başlayalım"
+        "Začnite"
       ],
       "Grant permissions": [
-        "İzinleri ver"
+        "Odobrite dovoljenja"
       ],
       "History": [
-        "Geçmiş"
+        "Zgodovina"
       ],
       "Import - ${ date }": [
-        "İçe aktarma - ${ date }"
+        "Uvoz - ${ date }"
       ],
       "Import to vault(s)": [
-        "Kasaların içine aktar"
+        "Uvozi v trezor(je)"
       ],
       "Import your data": [
-        "Verinizi içe aktarın"
+        "Uvozi svoje podatke"
       ],
       "Install extension": [
-        "Eklentiyi kur"
+        "Namestite razširitev"
       ],
       "Last autofill": [
-        "Son otomatik doldurma"
+        "Zadnje samodejno izpolnjevanje"
       ],
       "Last modified": [
-        "Son değiştirilme"
+        "Zadnjič spremenjeno"
       ],
       "Leave vault ?": [
-        "Kasa bırakılsın mı?"
+        "Zapuščate trezor ?"
       ],
       "Low disk space": [
-        "Boş disk alanı azaldı"
+        "Malo prostora na disku"
       ],
       "Member limit": [
-        "Üye sayısı sınırı"
+        "Omejitev članov"
       ],
       "Members": [
-        "Üyeler"
+        "Člani"
       ],
       "Modified": [
-        "Değiştirilme"
+        "Spremenjeno"
       ],
       "Move all items ?": [
-        "Tüm ögeler taşınsın mı?"
+        "Premaknem vse predmete?"
       ],
       "Move item?": [
-        "Öge taşınsın mı?"
+        "Premaknem predmet?"
       ],
       "Move items?": [
-        "Ögeler taşınsın mı?"
+        "Premaknem predmete?"
       ],
       "No items selected": [
-        "Herhangi bir öge seçilmemiş"
+        "Izbran ni noben predmet"
       ],
       "Our welcome gift to you": [
-        "Karşılama hediyemiz"
+        "Naše darilo dobrodošlice za vas"
       ],
       "Passkey": [
-        "Geçiş anahtarı"
+        "Identifikacijski ključ"
       ],
       "Pending access to the shared data": [
-        "Paylaşılmış verilere erişilmesi bekleniyor"
+        "Čakanje na dostop do podatkov v skupni rabi"
       ],
       "Permanently remove all items ?": [
-        "Tüm ögeler kalıcı olarak silinsin mi?"
+        "Ali želite trajno odstraniti vse elemente ?"
       ],
       "Pinned (${ items.length })": [
-        "Sabitlenmiş (${ items.length })"
+        "Pripeto (${ items.length })"
       ],
       "Restore this version?": [
-        "Bu sürüm geri yüklensin mi?"
+        "Obnovi to različico?"
       ],
       "Review and share": [
-        "Gözden geçirip paylaş"
+        "Preglejte in delite"
       ],
       "Secure your data": [
-        "Verilerinizi koruyun"
+        "Zavarujte svoje podatke"
       ],
       "Set access level": [
-        "Erişim düzeyini ayarla"
+        "Nastavite raven dostopa"
       ],
       "Settings": [
-        "Ayarlar"
+        "Nastavitve"
       ],
       "Share vaults with your team": [
-        "Kasaları ekibinizle paylaşın"
+        "Delite trezorje s svojo ekipo"
       ],
       "Share with": [
-        "Şununla paylaş"
+        "Deli z"
       ],
       "Suggestions": [
-        "Öneriler"
+        "Predlogi"
       ],
       "Transfer ownership": [
-        "Sahipliği aktar"
+        "Prenos lastništva"
       ],
       "Trash empty": [
-        "Çöp kutusu boş"
+        "Smetnjak je prazen"
       ],
       "Update available": [
-        "Güncelleme yayınlanmış"
+        "Na voljo je nadgradnja!"
       ],
       "Upgrade to Unlock Premium Features": [
-        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
+        "Nadgradite za odklepanje Premium funkcij"
       ],
       "Vault": [
-        "Kasa"
+        "Trezor"
       ],
       "Vault shared with you": [
-        "Sizinle bir kasa paylaşıldı"
+        "Trezor v skupni rabi z vami"
       ],
       "Why ${ PASS_APP_NAME }?": [
-        "Neden ${ PASS_APP_NAME }?"
+        "Zakaj ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
-        "Kasanız boş"
+        "Vaša košarica je prazna"
       ],
       "Your welcome gift": [
-        "Karşılama hediyeniz"
+        "Vaš bonus za dobrodošlico"
       ]
     },
     "Validation": {
       "Duplicated URL": [
-        "Çift adres"
+        "Podvojeni URL-ji"
       ],
       "Field name is required": [
-        "Alan adının yazılması zorunludur"
+        "Ime polja je obvezno"
       ],
       "OTP secret or URI is invalid": [
-        "Tek kullanımlık parola kodu ya da adresi geçersiz"
+        "Skrivnost OTP ali URI ni veljaven"
       ],
       "OTP secret or URI required": [
-        "Tek kullanımlık parola kodu ya da adresi gerekli"
+        "Zahtevana je skrivnost OTP ali URI"
       ],
       "Url already exists": [
-        "Adres zaten var"
+        "Url že obstaja"
       ],
       "URL cannot be empty": [
-        "Adres boş olamaz"
+        "URL vnos ne sme biti prazen."
       ],
       "Url is invalid": [
-        "Adres geçersiz"
+        "Naslov Url ni veljaven"
       ],
       "URL is invalid": [
-        "Adres geçersiz"
+        "Naslov URL ni veljaven."
       ]
     },
     "Warning": {
       "A description of the problem is required": [
-        "Sorunun açıklamasının yazılması zorunludur"
+        "Potreben je opis težave"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "\"${ name }\" e-posta takma adı şu anda \"${ relatedLoginName }\" oturum açma ögesi için kullanılıyor. \"${ aliasEmail }\" adresine gönderilen e-postaların alınmasını da durdurabilirsiniz"
+        "Vzdevek »${ name }« se trenutno uporablja v elementu prijave »${ relatedLoginName }«. Prav tako ne boste več prejemali e-poštnih sporočil, poslanih na »${ aliasEmail }«"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Çöpe attığınız tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
+        "Vsi vaši predmeti v smeti bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
       "An error occured while exporting your data": [
-        "Verileriniz dışa aktarılırken bir sorun çıktı"
+        "Med izvozom vaših podatkov je prišlo do napake"
       ],
       "At least one email address is required": [
-        "En az bir e-posta adresi gereklidir"
+        "Potreben je vsaj en e-poštni naslov"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "Bu takma adın e-posta kutuları şu anda alınamadı"
+        "Nabiralnikov za ta vzdevek trenutno ni mogoče pridobiti"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "\"${ vaultName }\" kasası oluşturulamadı"
+        "Ni bilo mogoče ustvariti trezorja »${ vaultName }«"
       ],
       "Could not send invitations to the following addresses :": [
-        "Şu adreslere davetiye gönderilemedi :"
+        "Povabil ni bilo mogoče poslati na naslednje naslove:"
       ],
       "Duplicate email addresses.": [
-        "E-posta adresleri yineleniyor."
+        "Podvojeni e-poštni naslovi."
       ],
       "Empty note": [
-        "Boş not"
+        "Prazna opomba"
       ],
       "Encryption password is required": [
-        "Şifreleme parolası gereklidir"
+        "Zahtevano je geslo za šifriranje"
       ],
       "Expiration Date is not in the format MM/YY": [
-        "Geçerlilik süresi AA/YY biçiminde değil"
+        "Datum poteka ni v obliki MM/LL"
       ],
       "Invalid alias prefix": [
-        "Takma ad ön eki geçersiz"
+        "Neveljavna predpona vzdevka"
       ],
       "Invalid email addresses.": [
-        "E-posta adresleri geçersiz."
+        "Neveljavni e-poštni naslovi."
       ],
       "item was imported without custom fields": [
-        "öge özel alanlar olmadan ie aktarılmış"
+        "element je bil uvožen brez polj po meri"
       ],
       "Maximum length is ${ maxLength } character": [
-        "En fazla uzunluk ${ maxLength } karakter",
-        "En fazla uzunluk ${ maxLength } karakter"
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }"
       ],
       "Missing alias prefix": [
-        "Takma ad ön eki eksik"
+        "Manjka pripona vzdevka"
       ],
       "Missing alias suffix": [
-        "Takma ad son eki eksik"
+        "Manjka pripona vzdevka"
       ],
       "No items": [
-        "Herhangi bir öge yok"
+        "Ni predmetov"
       ],
       "No items in trash matching": [
-        "Çöp kutusunda eşleşen bir öge bulunamadı"
+        "Noben predmet v košu se ne ujema"
       ],
       "No items matching": [
-        "Eşleşen bir öge bulunamadı"
+        "Noben predmet se ne ujema"
       ],
       "No password manager selected": [
-        "Herhangi bir parola yöneticisi seçilmemiş"
+        "Izbran ni noben upravitelj gesel"
       ],
       "No results": [
-        "Herhangi bir sonuç bulunamadı"
+        "Ni rezultatov"
       ],
       "Offline": [
-        "Çevrim dışı"
+        "Brez povezave"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
+        "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
       ],
       "Passphrase is required": [
-        "Parola ifadesinin yazılması zorunludur"
+        "Zahtevano je geslo"
       ],
       "PGP encrypted export file requires passphrase": [
-        "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
+        "PGP šifrirana izvozna datoteka zahteva geslo"
       ],
       "Please contact us for investigating the issue": [
-        "Sorunu inceleyebilmemiz için lütfen bizimle görüşün"
+        "Prosimo kontaktirajte nas, da raziščemo težavo"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Lütfen e-posta takma adlarını kullanabilmek için e-posta adresinizi doğrulayın"
+        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"
       ],
       "Please verify your email address in order to use vault sharing": [
-        "Lütfen kasa paylaşımını kullanabilmek için e-posta adresinizi doğrulayın"
+        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati skupno rabo trezorja"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+        "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Takma ad ön ekiniz 40 karakterden uzun olamaz"
+        "Predpona vzdevka ne sme biti daljša od 40 znakov"
       ],
       "Title is required": [
-        "Başlığın yazılması zorunludur"
+        "Naslov je obvezen"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Bu kasanın sahipliğini ${ email } kişisine aktarmak istediğinize emin misiniz?"
+        "Želite prenesti lastništvo tega trezorja na ${ email }?"
       ],
       "Trash alias ?": [
-        "Takma ad çöpe atılsın mı?"
+        "Vzdevke v smetnjak?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
-        "${ PASS_APP_NAME } oturumu açılamadı. ${ additionalMessage }"
+        "Ni se mogoče prijaviti v ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "\"${ vaultName }\" kasası ve içindeki tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
+        "Trezor \"${ vaultName }\" in vsi njegovi elementi bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
       "Vault name is required": [
-        "Kasa adının yazılması zorunludur"
+        "Zahtevano je ime trezorja"
       ],
       "You cannot create more vaults than your subscription allows.": [
-        "Abonelik tarifenizde sunulan kasa sayısından daha fazla kasa oluşturamazsınız."
+        "Ne morete ustvariti več trezorjev, kot dovoljuje vaša naročnina."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Bu kasaya erişebilecek en fazla üye sayısı sınırına ulaştınız."
+        "Dosegli ste omejitev članov, ki lahko dostopajo do tega trezorja."
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Bu kasada olabilecek en fazla kullanıcı sayısı sınırına ulaştınız. ${ upgradeLink }"
+        "Dosegli ste omejitev uporabnikov v tem trezorju. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Tarifenizle oluşturabileceğiniz en fazla kasa sayısı sınırına ulaştınız."
+        "Dosegli ste omejitev trezorjev, ki jih lahko imate v načrtu."
       ],
       "You have unsaved changes.": [
-        "Kaydedilmemiş değişiklikleriniz var."
+        "Imate neshranjene spremembe."
       ],
       "You must select at least one mailbox": [
-        "En az bir e-posta kutusu seçmelisiniz"
+        "Izbrati morate vsaj en poštni nabiralnik"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
+        "Ne boste več imeli dostopa do tega trezorja. Če se mu želite ponovno pridružiti, potrebujete novo povabilo."
       ],
       "Your session could not be authorized.": [
-        "Oturumunuza yetki verilemedi."
+        "Vaše povezave ni mogoče avtorizirati"
       ],
       "Your session could not be resumed.": [
-        "Oturumunuz sürdürülemiyor."
+        "Vaše povezave ni mogoče nadaljevati."
       ],
       "Your session is inactive.": [
-        "Oturumunuz etkin değil."
+        "Vaša seja je neaktivna."
       ],
       "Your session was locked.": [
-        "Oturumunuz kilitlenmiş."
+        "Vaša povezava je zaklenjena."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+        "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi elementi bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
       ]
     }
   }
