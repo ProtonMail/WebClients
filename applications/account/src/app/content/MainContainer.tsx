@@ -19,7 +19,6 @@ import {
     useAddresses,
     useDeviceRecovery,
     useFeatures,
-    useFlag,
     useIsDataRecoveryAvailable,
     useOrganization,
     useRecoveryNotification,
@@ -30,7 +29,6 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { useIncomingAddressForwardings } from '@proton/components/hooks';
 import { useIsSessionRecoveryAvailable } from '@proton/components/hooks/useSessionRecovery';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -118,7 +116,6 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwardings();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
@@ -145,8 +142,6 @@ const MainContainer = () => {
     const isProtonSentinelUpsellEnabled = getFeature(FeatureCode.ProtonSentinelUpsell).feature?.Value === true;
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
     const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
-
-    const isEmailForwardingEnabled = useFlag('EmailForwarding') || incomingAddressForwardings.length > 0;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -177,7 +172,6 @@ const MainContainer = () => {
         isProtonSentinelFeatureEnabled,
         isProtonSentinelUpsellEnabled,
         isOrgTwoFactorEnabled,
-        isEmailForwardingEnabled,
         isNotifInboxDesktopAppOn,
     });
 
@@ -256,7 +250,6 @@ const MainContainer = () => {
             loadingFeatures ||
             loadingSubscription ||
             loadingDataRecovery ||
-            loadingIncomingAddressForwardings ||
             loadingIsSessionRecoveryAvailable
         ) {
             return <PrivateMainAreaLoading />;
