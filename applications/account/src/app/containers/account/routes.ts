@@ -29,11 +29,8 @@ export const getAccountAppRoutes = ({
     isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
-    isGmailSyncEnabled,
     organization,
     isProtonSentinelEligible,
-    isProtonSentinelFeatureEnabled,
-    isProtonSentinelUpsellEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -42,12 +39,9 @@ export const getAccountAppRoutes = ({
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
-    isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: Organization;
     isProtonSentinelEligible: boolean;
-    isProtonSentinelFeatureEnabled: boolean;
-    isProtonSentinelUpsellEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -256,10 +250,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: PROTON_SENTINEL_NAME,
                         id: 'sentinel',
-                        available:
-                            isProtonSentinelFeatureEnabled &&
-                            (isProtonSentinelEligible || isProtonSentinelUpsellEnabled) &&
-                            !isSSOUser,
+                        available: isProtonSentinelEligible && !isSSOUser,
                     },
                     {
                         text: c('Title').t`Session management`,
@@ -298,15 +289,12 @@ export const getAccountAppRoutes = ({
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
                 available: showEasySwitchSection,
-                description: isGmailSyncEnabled
-                    ? c('Settings description')
-                          .t`Complete the transition to privacy with our secure importing and forwarding tools.`
-                    : c('Settings description').t`Complete the transition to privacy with our secure importing tools.`,
+                description: c('Settings description')
+                    .t`Complete the transition to privacy with our secure importing and forwarding tools.`,
                 subsections: [
                     {
                         text: c('Title').t`Set up forwarding`,
                         id: 'start-forward',
-                        available: isGmailSyncEnabled,
                     },
                     {
                         text: c('Title').t`Import messages`,
