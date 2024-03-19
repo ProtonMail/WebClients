@@ -46,6 +46,9 @@
       "Add note": [
         "메모 추가"
       ],
+      "Add people or groups to share": [
+        "공유하려면 사람 및 그룹을 추가하세요."
+      ],
       "Add phone number": [
         "휴대전화 번호 추가"
       ],
@@ -2149,6 +2152,9 @@
       "Aliases could not be loaded": [
         "별명을 불러올 수 없습니다."
       ],
+      "Already a member of this share": [
+        "이미 이 공유의 구성원입니다"
+      ],
       "An error occurred while loading alias options": [
         "별명 옵션 로드 중 오류가 발생했습니다."
       ],
@@ -3598,6 +3604,9 @@
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
       ],
+      "Invited": [
+        "초대됨"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
       ],
@@ -3906,6 +3915,9 @@
       ],
       "Share via link settings": [
         "링크로 공유 설정"
+      ],
+      "Share with": [
+        "공유 대상:"
       ],
       "Share with anyone": [
         "모두와 공유"
@@ -4469,6 +4481,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
       ],
+      "Editor": [
+        "편집자"
+      ],
       "Email": [
         "이메일"
       ],
@@ -4759,6 +4774,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Viewer": [
+        "뷰어"
       ],
       "What happened?": [
         "무슨 일인가요?"
@@ -5517,6 +5535,9 @@
       "A way to contact you": [
         "사용자에게 연락할 방법"
       ],
+      "Choose password": [
+        "비밀번호 선택"
+      ],
       "E.g., ": [
         "예, "
       ],
@@ -5573,6 +5594,9 @@
       ],
       "Select": [
         "선택"
+      ],
+      "Set date": [
+        "날짜 설정"
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
@@ -5651,7 +5675,7 @@
         "Hide-my-email 별칭"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hiide-my-email 별명은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
+        "Hide-my-email 별명은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
       ],
       "New alias": [
         "새 별칭"
@@ -6580,6 +6604,9 @@
       ],
       "Settings": [
         "설정"
+      ],
+      "Share ${ name }": [
+        "${ name } 공유"
       ],
       "Share via link": [
         "링크로 공유"

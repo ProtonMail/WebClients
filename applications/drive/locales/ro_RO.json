@@ -46,6 +46,9 @@
       "Add note": [
         "Adăugare notă"
       ],
+      "Add people or groups to share": [
+        "Adăugare persoane sau grupuri pentru partajare"
+      ],
       "Add phone number": [
         "Adăugare număr de telefon"
       ],
@@ -573,6 +576,15 @@
       ],
       "Save changes": [
         "Salvare modificări"
+      ],
+      "Scan & Download": [
+        "Scanare și descărcare"
+      ],
+      "Scan & Download (${ count })": [
+        "Scanare și descărcare (${ count })"
+      ],
+      "Scan & Download all": [
+        "Scanare și descărcare toate"
       ],
       "Search": [
         "Căutare"
@@ -2189,6 +2201,9 @@
       "Aliases could not be loaded": [
         "Aliasurile nu au putut fi salvate."
       ],
+      "Already a member of this share": [
+        "Deja este membru al acestei partajări"
+      ],
       "An error occurred while loading alias options": [
         "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
       ],
@@ -2383,6 +2398,11 @@
       ],
       "Primary address key is not decrypted.": [
         "Cheia primară a adresei nu este decriptată."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Invitat duplicat eliminat: ${ joinedInvitee }",
+        "Invitați duplicați eliminați: ${ joinedInvitee }",
+        "Invitați duplicați eliminați: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Raportul nu a putut fi trimis."
@@ -3713,6 +3733,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ emailAddress }."
       ],
+      "Download": [
+        "Descărcare"
+      ],
       "Download ${ name } app": [
         "Descărcați aplicația ${ name }"
       ],
@@ -3779,6 +3802,9 @@
       "End-to-end encrypted": [
         "Criptat bilateral"
       ],
+      "End-to-End Encrypted": [
+        "Criptat bilateral"
+      ],
       "Enter password": [
         "Introduceți parola"
       ],
@@ -3831,6 +3857,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Lipsește semnătura fișierului. Nu am putut verifica cine a încărcat ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "Scanare fișiere din Drive"
       ],
       "File will not be updated": [
         "Fișierul nu va fi actualizat."
@@ -3930,6 +3959,9 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "Invited": [
+        "Invitat"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Se pare că ați încercat recent să încărcați ${ uploadName }. Dacă încărcarea a eșuat, ${ replaceFile }. Dacă încă este în desfășurare, înlocuirea va anula încărcarea în desfășurare."
       ],
@@ -3989,6 +4021,11 @@
       ],
       "Makes your account safer": [
         "Vă face contul mai sigur"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
+        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
+        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } de caractere"
       ],
       "Merged": [
         "Îmbinat"
@@ -4174,6 +4211,9 @@
       "Report has been sent": [
         "Raportul a fost trimis."
       ],
+      "Report link": [
+        "Raportare legătură"
+      ],
       "Restore": [
         "Restaurare"
       ],
@@ -4191,6 +4231,9 @@
       ],
       "Retry now": [
         "Reîncercare"
+      ],
+      "Scan issue": [
+        "Probleme scanare"
       ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
@@ -4244,6 +4287,12 @@
       ],
       "Share files with links": [
         "Partajare fișiere prin legături"
+      ],
+      "Share via link settings": [
+        "Setări partajare prin legătură web"
+      ],
+      "Share with": [
+        "Partajare cu"
       ],
       "Share with anyone": [
         "Partajare cu oricine"
@@ -4375,6 +4424,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Pentru a vă proteja, ${ DRIVE_APP_NAME } poate scana și bloca fișierele rău intenționate. Totuși, ar trebui să descărcați fișiere numai de la persoane în care aveți încredere."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
@@ -4710,6 +4762,12 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Poate vizualiza oricine de pe internet care are legătura web"
+      ],
+      "Anyone with the link": [
+        "Oricine cu legătura web"
+      ],
       "App password": [
         "Parola aplicației"
       ],
@@ -4805,6 +4863,9 @@
         "Ștergeți unitățile?",
         "Ștergeți unitățile?"
       ],
+      "Delete link": [
+        "Ștergere legătură web"
+      ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
       ],
@@ -4831,6 +4892,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "ex. Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Email": [
         "E-mail"
@@ -4861,6 +4925,9 @@
       ],
       "Enter device name": [
         "Introduceți numele dispozitivului"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Ștergere această legătură web și eliminare toate persoanele care au acces"
       ],
       "Expired": [
         "Expirat"
@@ -5045,6 +5112,9 @@
       "Set expiration date": [
         "Setare dată de expirare"
       ],
+      "Set link password": [
+        "Setare parolă legătură web"
+      ],
       "Set recovery method": [
         "Setați metoda de recuperare"
       ],
@@ -5081,6 +5151,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Acest fișier este potențial infectat"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Acest lucru va șterge definitiv toate fișierele de pe unitatea blocată."
       ],
@@ -5113,6 +5186,9 @@
       ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "Viewer": [
+        "Vizualizator"
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
@@ -5259,6 +5335,14 @@
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
@@ -5266,11 +5350,35 @@
       "10 email addresses": [
         "10 adrese de e-mail"
       ],
+      "Auto-delete Spam and Trash": [
+        "Ștergere automată mesaje nedorite și din gunoi"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
+      ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Reînnoire cu ${ renewablePrice }, anulați oricând"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "pentru prima lună"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Ofertă limitată, expiră la 2 aprilie 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Luați ${ planName } cu doar ${ planPrice }"
       ]
     },
     "Message": {
@@ -5819,6 +5927,11 @@
         "Setările au fost modificate cu succes."
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să acceseze datele."
@@ -5963,6 +6076,9 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
+      "Choose password": [
+        "Alegere parolă"
+      ],
       "E.g., ": [
         "Ex.: "
       ],
@@ -6019,6 +6135,9 @@
       ],
       "Select": [
         "Selectare"
+      ],
+      "Set date": [
+        "Setare dată"
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
@@ -7230,6 +7349,9 @@
       "Settings": [
         "Setări"
       ],
+      "Share ${ name }": [
+        "Partajare ${ name }"
+      ],
       "Share via link": [
         "Partajare prin legătură"
       ],
@@ -7403,7 +7525,7 @@
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
       "Shared end-to-end encrypted": [
-        "Criptat bilateral"
+        "Partajat de la un capăt la altul criptat"
       ],
       "Show side panel": [
         "Afișare panou lateral"

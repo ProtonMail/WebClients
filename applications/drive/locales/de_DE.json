@@ -3790,6 +3790,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht überprüfen, wer ${ fileName } hochgeladen hat."
       ],
+      "File scanning in Drive": [
+        "Dateisuche in Drive"
+      ],
       "File will not be updated": [
         "Datei wird nicht aktualisiert."
       ],
@@ -5265,6 +5268,9 @@
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
+      "Custom schedule send and snooze times": [
+        "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
+      ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
       ],
@@ -5872,6 +5878,11 @@
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
       ]
     },
     "Oauth instructions": {
