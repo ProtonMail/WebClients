@@ -6450,6 +6450,12 @@
       "Billed for 15 months": [
         "Facturació per 15 mesos"
       ],
+      "Billed for 18 months": [
+        "Facturació per 18 mesos"
+      ],
+      "Billed for 3 months": [
+        "Facturació per 3 mesos"
+      ],
       "Billed for 30 months": [
         "Facturació per 30 mesos"
       ],
@@ -7484,6 +7490,11 @@
         "${ numberOfServers } a ${ numberOfCountries } països"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Facturat cada mesc"
@@ -7496,8 +7507,14 @@
       "15-month": [
         "15 mesos"
       ],
+      "18-month": [
+        "18-mesos"
+      ],
       "2-year": [
         "2 any"
+      ],
+      "3-month": [
+        "3-mesos"
       ],
       "30-month": [
         "30 mesos"

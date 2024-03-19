@@ -4797,6 +4797,9 @@
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
+      "Custom schedule send and snooze times": [
+        "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
+      ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
       ],
@@ -4815,6 +4818,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Befristetes Angebot, gültig bis zum 2. April 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Dein Abonnement verlängert sich am ${ renewTime } automatisch zum Preis von ${ renewablePrice }, du kannst es jederzeit beenden"
       ]
     },
     "mailtrial2024: Title": {
@@ -5526,6 +5532,9 @@
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Werbe-E-Mails oder programmtechnisch verschickte Nachrichten können derzeit nicht in größeren Mengen versandt werden. Hierzu empfehlen wir speziell dafür ausgelegte E-Mail-Dienstanbieter."
       ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Wähle individuelle Zeiten, zu denen du an eine E-Mail erinnert werden möchtest oder zu denen deine Nachricht ankommen soll."
+      ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Steuere den Zugriff auf deine geteilten Dateien mittels Passwortschutz und Ablaufdaten für Links."
       ],
@@ -5779,6 +5788,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Die Zwei-Faktor-Authentifizierung ist nicht mehr erforderlich."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
       ]
     },
     "Onboarding": {
@@ -6934,6 +6948,12 @@
       "Billed for 15 months": [
         "Bezahlt für 15 Monate"
       ],
+      "Billed for 18 months": [
+        "Bezahlt für 18 Monate"
+      ],
+      "Billed for 3 months": [
+        "Bezahlt für 3 Monate"
+      ],
       "Billed for 30 months": [
         "Bezahlt für 30 Monate"
       ],
@@ -8036,6 +8056,9 @@
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Das Abonnement erneuert sich automatisch jeden Monat. Dein nächstes Abrechnungsdatum ist in einem Monat."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Das Abonnement erneuert sich automatisch alle 3 Monate. Dein nächstes Abrechnungsdatum ist in drei Monaten."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
