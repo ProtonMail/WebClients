@@ -3,9 +3,11 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { activatePasswordlessKey, updateRolePasswordless } from '@proton/shared/lib/api/members';
 import {
     createPasswordlessOrganizationKeys as createPasswordlessOrganizationKeysConfig,
+    migratePasswordlessOrganizationKey,
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
     updatePasswordlessOrganizationKeys as updatePasswordlessOrganizationKeysConfig,
@@ -13,16 +15,18 @@ import {
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type {
+import {
     Address,
     Api,
     CachedOrganizationKey,
     EnhancedMember,
+    MEMBER_ORG_KEY_STATE,
     Member,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 import {
     acceptInvitation,
+    generateOrganizationKeyToken,
     generateOrganizationKeys,
     generatePasswordlessOrganizationKey,
     generatePrivateMemberInvitation,
@@ -34,6 +38,7 @@ import {
     getPrimaryKey,
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
+    getSentryError,
     getVerifiedPublicKeys,
     splitKeys,
 } from '@proton/shared/lib/keys';
@@ -108,12 +113,20 @@ class ConstraintError extends Error {}
 export const getMemberKeyPayload = async ({
     organizationKey,
     api,
-    verifyOutboundPublicKeys,
+    mode,
     member,
     memberAddresses,
 }: {
     organizationKey: CachedOrganizationKey;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    mode:
+        | {
+              type: 'email';
+              verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+          }
+        | {
+              type: 'org-key';
+              publicKey: PublicKeyReference;
+          };
     api: Api;
     member: Member;
     memberAddresses: Address[];
@@ -144,6 +157,16 @@ export const getMemberKeyPayload = async ({
         };
     }
 
+    if (mode.type === 'org-key') {
+        return {
+            type: 1,
+            member,
+            address: {} as any, // Unused
+            email: 'unused',
+            publicKey: mode.publicKey,
+        };
+    }
+
     if (!address) {
         throw new ConstraintError(getPrivateAdminError());
     }
@@ -151,7 +174,7 @@ export const getMemberKeyPayload = async ({
     const memberPublicKey = (
         await getVerifiedPublicKeys({
             api,
-            verifyOutboundPublicKeys,
+            verifyOutboundPublicKeys: mode.verifyOutboundPublicKeys,
             email,
         })
     )[0]?.publicKey;
@@ -294,7 +317,10 @@ export const getMemberEditPayload = ({
         if (role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
             const payload = await getMemberKeyPayload({
                 organizationKey,
-                verifyOutboundPublicKeys,
+                mode: {
+                    type: 'email',
+                    verifyOutboundPublicKeys,
+                },
                 api,
                 member,
                 memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
@@ -321,12 +347,12 @@ export const getMemberEditPayload = ({
 };
 
 export const getMemberKeyPayloads = ({
-    verifyOutboundPublicKeys,
+    mode,
     members,
     api,
     ignorePasswordlessValidation,
 }: {
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    mode: Parameters<typeof getMemberKeyPayload>[0]['mode'];
     members: EnhancedMember[];
     api: Api;
     ignorePasswordlessValidation?: boolean;
@@ -346,7 +372,7 @@ export const getMemberKeyPayloads = ({
                         return await getMemberKeyPayload({
                             member,
                             memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
-                            verifyOutboundPublicKeys,
+                            mode,
                             api,
                             organizationKey,
                         });
@@ -442,7 +468,10 @@ export const getKeyRotationPayload = ({
             dispatch(
                 getMemberKeyPayloads({
                     api,
-                    verifyOutboundPublicKeys,
+                    mode: {
+                        type: 'email',
+                        verifyOutboundPublicKeys,
+                    },
                     members: otherAdminMembers,
                     ignorePasswordlessValidation,
                 })
@@ -775,8 +804,11 @@ export const prepareAcceptOrganizationKeyInvite = ({
                 state: 'verified',
                 result,
             };
-        } catch (error: any) {
-            captureMessage('Passwordless: Error accepting invite', { level: 'error', extra: { error } });
+        } catch (e: any) {
+            const error = getSentryError(e);
+            if (error) {
+                captureMessage('Passwordless: Error accepting invite', { level: 'error', extra: { error } });
+            }
             return {
                 state: 'unverified',
                 result: null,
@@ -802,6 +834,149 @@ export const acceptOrganizationKeyInvite = ({
             );
             // Warning: Force a refetch of the org key because it's not present in the event manager.
             await dispatch(organizationKeyThunk({ forceFetch: true }));
+        }
+    };
+};
+
+export const migrateOrganizationKeyPasswordless = (): ThunkAction<
+    Promise<void>,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _, { api, eventManager }) => {
+        const userKeys = await dispatch(userKeysThunk());
+        const organizationKey = await dispatch(organizationKeyThunk());
+        if (getIsPasswordless(organizationKey?.Key)) {
+            throw new Error('Only used on non-passwordless organizations');
+        }
+        if (!organizationKey?.privateKey) {
+            throw new Error('Organization key must be decryptable to migrate');
+        }
+        const userKey = userKeys[0]?.privateKey;
+        if (!userKey) {
+            throw new Error('Missing primary user key');
+        }
+        const [primaryAddress] = await dispatch(addressesThunk());
+        if (!primaryAddress) {
+            throw new Error('Missing primary address');
+        }
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        if (!primaryAddressKey) {
+            throw new Error('Missing primary address key');
+        }
+        const { token, encryptedToken, signature } = await generateOrganizationKeyToken(userKey);
+        const PrivateKey = await CryptoProxy.exportPrivateKey({
+            privateKey: organizationKey.privateKey,
+            passphrase: token,
+        });
+
+        const members = await dispatch(membersThunk());
+        const otherAdminMembersToMigrate = members.filter((member) => {
+            return (
+                member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN &&
+                !member.Self &&
+                (member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Active || member.Private === MEMBER_PRIVATE.READABLE)
+            );
+        });
+
+        const silentApi = getSilentApi(api);
+
+        try {
+            const memberKeyPayloads = await dispatch(
+                getMemberKeyPayloads({
+                    api: silentApi,
+                    mode: {
+                        // Encrypting the generated token to the organization public key (instead of the invited user's primary address key)
+                        type: 'org-key',
+                        publicKey: organizationKey.publicKey,
+                    },
+                    members: otherAdminMembersToMigrate,
+                    ignorePasswordlessValidation: true,
+                })
+            );
+
+            const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+                armoredMessage: encryptedToken,
+                decryptionKeys: [userKey],
+                // Signing the token signature with the organization private key
+                address: { ID: primaryAddress.ID, privateKey: organizationKey.privateKey },
+                memberKeyPayloads,
+            });
+
+            await silentApi(
+                migratePasswordlessOrganizationKey({
+                    PrivateKey,
+                    Token: encryptedToken,
+                    Signature: signature,
+                    AdminActivations: publicAdminActivations,
+                    AdminInvitations: privateAdminInvitations.map((invitation) => ({
+                        MemberID: invitation.MemberID,
+                        TokenKeyPacket: invitation.TokenKeyPacket,
+                        Signature: invitation.Signature,
+                    })),
+                })
+            );
+
+            await eventManager.call();
+        } catch (e: any) {
+            const error = getSentryError(e);
+            if (error) {
+                captureMessage('Passwordless: Error migrating organization', { level: 'error', extra: { error } });
+            }
+        }
+    };
+};
+
+export const migrateOrganizationKeyPasswordlessPrivateAdmin = (): ThunkAction<
+    Promise<void>,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _, { api, eventManager }) => {
+        const userKeys = await dispatch(userKeysThunk());
+        const organizationKey = await dispatch(organizationKeyThunk());
+        if (!getIsPasswordless(organizationKey?.Key) || !organizationKey.privateKey) {
+            throw new Error('Only used on passwordless organizations');
+        }
+        const primaryUserKey = userKeys[0];
+        if (!primaryUserKey) {
+            throw new Error('Missing primary user key');
+        }
+        const [primaryAddress] = await dispatch(addressesThunk());
+        if (!primaryAddress) {
+            throw new Error('Missing primary address');
+        }
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        if (!primaryAddressKey) {
+            throw new Error('Missing primary address key');
+        }
+
+        const silentApi = getSilentApi(api);
+        try {
+            const result = await acceptInvitation({
+                Token: organizationKey.Key.Token,
+                Signature: organizationKey.Key.Signature,
+                decryptionKeys: [organizationKey.privateKey],
+                verificationKeys: [organizationKey.privateKey],
+                encryptionKey: primaryUserKey.privateKey,
+            });
+            await dispatch(
+                acceptOrganizationKeyInvite({
+                    api: silentApi,
+                    payload: {
+                        state: 'verified',
+                        result,
+                    },
+                })
+            );
+            await eventManager.call();
+        } catch (e: any) {
+            const error = getSentryError(e);
+            if (error) {
+                captureMessage('Passwordless: Error accepting migration invite', { level: 'error', extra: { error } });
+            }
         }
     };
 };

@@ -225,7 +225,10 @@ export const createMember = ({
                         organizationKey,
                         member: memberWithKeys,
                         memberAddresses,
-                        verifyOutboundPublicKeys,
+                        mode: {
+                            type: 'email',
+                            verifyOutboundPublicKeys,
+                        },
                         api,
                     });
                     await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
