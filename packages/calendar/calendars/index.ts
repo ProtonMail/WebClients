@@ -18,9 +18,14 @@ export const selectCalendars = (state: CalendarsState) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, CalendarsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
-        return extraArgument.api<{ Calendars: CalendarWithOwnMembers[] }>(queryCalendars()).then(({ Calendars }) => {
-            return Calendars;
-        });
+        return extraArgument
+            .api<{ Calendars: CalendarWithOwnMembers[] }>({
+                ...queryCalendars(),
+                silence: true,
+            })
+            .then(({ Calendars }) => {
+                return Calendars;
+            });
     },
     previous: previousSelector(selectCalendars),
 });
