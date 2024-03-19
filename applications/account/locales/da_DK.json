@@ -197,6 +197,9 @@
       "Close navigation": [
         "Luk navigation"
       ],
+      "Close tab": [
+        "Luk fane"
+      ],
       "Close this banner": [
         "Luk dette banner"
       ],
@@ -631,6 +634,9 @@
       ],
       "No": [
         "Nej"
+      ],
+      "No, thanks": [
+        "Nej tak"
       ],
       "OK": [
         "Ok"
@@ -3216,6 +3222,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Hjælp os med at blive bedre!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb til Debian/Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm for Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6875,6 +6889,9 @@
       "No addresses exist": [
         "Ingen adresser findes"
       ],
+      "No changes made to the current subscription": [
+        "Ingen ændringer er lavet til din nuværende abonnement"
+      ],
       "No credit card required": [
         "Intet betalingskort påkrævet"
       ],
@@ -7841,6 +7858,9 @@
       "You can now access and manage the account as an administrator.": [
         "Du kan nu få adgang til og administrere kontoen som administrator."
       ],
+      "You can now close this tab.": [
+        "Du kan lukke denne fane nu."
+      ],
       "You can now close this window.": [
         "Du kan nu lukke dette vindue."
       ],
@@ -8023,6 +8043,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Din supportsag er blevet lukket. Tak for at kontakte ${ BRAND_NAME } support."
       ]
     },
     "Info - folder colouring feature": {
@@ -8574,9 +8597,6 @@
       ],
       "Awarded": [
         "Belønnet"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing address": [
         "Faktureringsadresse"
@@ -9684,6 +9704,14 @@
         "Sikker e-mail, der beskytter dit privatliv"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
@@ -9699,6 +9727,27 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, annuller når som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "den første måned"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Få ${ planName } til ${ price }"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Tidsbegrænset tilbud, udløber den 2. april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -10197,6 +10246,9 @@
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
       ],
+      "Auto-delete Spam and Trash": [
+        "Slet automatisk elementer i Spam og Papirkurven"
+      ],
       "Auto-delete spam and trashed messages": [
         "Slet automatisk spam og beskeder i papirkurven"
       ],
@@ -10251,6 +10303,9 @@
       "Dedicated servers and IP": [
         "Dedikerede servere og IP"
       ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
       "DNS leak prevention": [
         "Forebyggelse af DNS-lækage"
       ],
@@ -10292,6 +10347,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
+      ],
+      "Group management (coming soon)": [
+        "Gruppe administration (kommer snart)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
@@ -10351,6 +10409,9 @@
       ],
       "Router support": [
         "Router support"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Planlæg og snooze e-mails til enhver tid"
       ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
@@ -11722,6 +11783,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Til erhverv"
+      ],
+      "For individuals": [
+        "Til enkeltpersoner"
       ]
     },
     "passwordless": {
@@ -13029,6 +13093,12 @@
       ],
       "Billed for 15 months": [
         "Faktureret for 15 måneder"
+      ],
+      "Billed for 18 months": [
+        "Faktureret for 18 måneder"
+      ],
+      "Billed for 3 months": [
+        "Faktureret for 3 måneder"
       ],
       "Billed for 30 months": [
         "Faktureret for 30 måneder"
@@ -14433,6 +14503,9 @@
       ],
       "Summary": [
         "Sammenfatning"
+      ],
+      "Support ticket closed": [
+        "Supportsag lukket"
       ],
       "Switch account": [
         "Skift konto"

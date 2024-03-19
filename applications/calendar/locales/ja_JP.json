@@ -4193,6 +4193,9 @@
       "Don't ask again": [
         "今後表示しない"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "例: Amazon、eBay"
+      ],
       "Email": [
         "メールアドレス"
       ],
@@ -4555,6 +4558,14 @@
         "インポートが開始しました"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Special Offer": [
+        "特別オファー"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -4562,11 +4573,32 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "Auto-delete Spam and Trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "2024 年 4 月 2 日までの期間限定オファー"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Message": {
@@ -5259,6 +5291,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "例: Amazonでの買い物に使用"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"

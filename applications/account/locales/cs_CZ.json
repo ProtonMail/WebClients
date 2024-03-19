@@ -632,6 +632,9 @@
       "No": [
         "Ne"
       ],
+      "No, thanks": [
+        "Ne, děkuji"
+      ],
       "OK": [
         "OK"
       ],
@@ -801,7 +804,7 @@
         "Vyhledat země"
       ],
       "Search settings": [
-        "Nastavení vyhledávání"
+        "Hledat v nastavení"
       ],
       "See how": [
         "Podívejte se, jak"
@@ -8657,9 +8660,6 @@
       "Awarded": [
         "Uděleno"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Fakturační adresa"
       ],
@@ -9792,6 +9792,11 @@
         "Neomezený počet složek, štítků a filtrů"
       ]
     },
+    "mailtrial2024: Info": {
+      "Get ${ planName } for ${ price }": [
+        "Získat ${ planName } pro ${ price }"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Vraťte se prosím zpět za několik minut."
@@ -10664,6 +10669,9 @@
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Nezbytná ochrana a bezpečná spolupráce neomezeného počtu uživatelů."
       ],
       "For next-level password management and identity protection.": [
         "Pro pokročilou správu hesel a ochranu identity."
@@ -11879,6 +11887,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Pro firmy"
+      ],
+      "For individuals": [
+        "Pro jednotlivce"
       ]
     },
     "passwordless": {
@@ -13147,6 +13158,12 @@
       ],
       "Billed for 15 months": [
         "Účtováno za 15 měsíců"
+      ],
+      "Billed for 18 months": [
+        "Účtováno za 18 měsíců"
+      ],
+      "Billed for 3 months": [
+        "Účtováno za 3 měsíců"
       ],
       "Billed for 30 months": [
         "Účtováno za 30 měsíců"

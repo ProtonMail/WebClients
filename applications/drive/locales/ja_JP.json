@@ -46,6 +46,9 @@
       "Add note": [
         "メモを追加"
       ],
+      "Add people or groups to share": [
+        "共有する人またはグループを追加"
+      ],
       "Add phone number": [
         "電話番号を追加"
       ],
@@ -558,6 +561,15 @@
       ],
       "Save changes": [
         "変更を保存"
+      ],
+      "Scan & Download": [
+        "スキャンしてダウンロード"
+      ],
+      "Scan & Download (${ count })": [
+        "スキャンしてダウンロード (${ count })"
+      ],
+      "Scan & Download all": [
+        "すべてをスキャンしてダウンロード"
       ],
       "Search": [
         "検索"
@@ -3241,6 +3253,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "デジタル署名が検証されました。このフォルダーは ${ emailAddress } によって安全にアップロードされました。"
       ],
+      "Download": [
+        "ダウンロード"
+      ],
       "Download ${ name } app": [
         "${ name } アプリをダウンロード"
       ],
@@ -3305,6 +3320,9 @@
         "暗号化検索が利用できます"
       ],
       "End-to-end encrypted": [
+        "エンドツーエンド暗号化"
+      ],
+      "End-to-End Encrypted": [
         "エンドツーエンド暗号化"
       ],
       "Enter password": [
@@ -3452,7 +3470,7 @@
         "完全に削除しない限り、アイテムはごみ箱に残ります"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "ゴミ箱に移動されたアイテムは削除されるまでここに残ります"
+        "ごみ箱に移動されたアイテムは削除されるまでここに残ります"
       ],
       "It’s easy and secure": [
         "簡単に使用でき安全で"
@@ -3679,6 +3697,9 @@
       "Report has been sent": [
         "レポートは送信されました"
       ],
+      "Report link": [
+        "リンクを報告"
+      ],
       "Restore": [
         "復元"
       ],
@@ -3896,7 +3917,7 @@
         "ごみ箱"
       ],
       "Trash is empty": [
-        "ゴミ箱が空です"
+        "ごみ箱が空です"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "${ DRIVE_APP_NAME } をお試しください: 永久無料"
@@ -4256,6 +4277,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete link": [
+        "リンクを削除"
+      ],
       "Delete recovery-related information.": [
         "回復に関する情報を削除"
       ],
@@ -4279,6 +4303,12 @@
       ],
       "Duplicate found": [
         "重複が見つかりました"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "例: Amazon、eBay"
+      ],
+      "Editor": [
+        "編集者"
       ],
       "Email": [
         "メールアドレス"
@@ -4493,6 +4523,9 @@
       "Set expiration date": [
         "有効期限を設定"
       ],
+      "Set link password": [
+        "リンクパスワードを設定"
+      ],
       "Set recovery method": [
         "回復手段を設定"
       ],
@@ -4561,6 +4594,9 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Viewer": [
+        "閲覧者"
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
@@ -4677,6 +4713,14 @@
         "インポートが開始しました"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Special Offer": [
+        "特別オファー"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -4684,11 +4728,32 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "Auto-delete Spam and Trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "最初の 1 か月"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "2024 年 4 月 2 日までの期間限定オファー"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } を ${ planPrice } で入手"
       ]
     },
     "Message": {
@@ -5265,6 +5330,9 @@
       "A way to contact you": [
         "連絡手段"
       ],
+      "Choose password": [
+        "パスワードを選択"
+      ],
       "E.g., ": [
         "例: "
       ],
@@ -5318,6 +5386,9 @@
       ],
       "Select": [
         "選択してください"
+      ],
+      "Set date": [
+        "日付を設定"
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
@@ -5406,6 +5477,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "例: Amazonでの買い物に使用"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"

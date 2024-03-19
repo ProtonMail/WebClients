@@ -638,6 +638,9 @@
       "No": [
         "아니오"
       ],
+      "No, thanks": [
+        "아니요, 괜찮아요"
+      ],
       "OK": [
         "확인"
       ],
@@ -9368,8 +9371,17 @@
       "for the first month": [
         "첫 한달간"
       ],
+      "for your first month": [
+        "첫 달 동안"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "${ planName }를 ${ price }으로 만나다"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "2024년 04월 02일에 만료되는 기간 한정 특가입니다."
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "구독이 ${ renewTime }에 ${ renewablePrice }으로 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ]
     },
     "mailtrial2024: Title": {
@@ -9793,6 +9805,9 @@
       "Advanced sharing security": [
         "향상된 공유 보안"
       ],
+      "Auto-delete Spam and Trash": [
+        "스팸과 휴지통을 자동으로 삭제합니다"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
@@ -9945,6 +9960,9 @@
       ],
       "Router support": [
         "라우터 지원"
+      ],
+      "Schedule and snooze emails for any time": [
+        "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
       "Schedule messages at any time": [
         "언제든지 메시지를 예약하세요"
@@ -12503,6 +12521,12 @@
       "Billed for 15 months": [
         "15개월 마다 결제됨"
       ],
+      "Billed for 18 months": [
+        "18개월 마다 청구됨"
+      ],
+      "Billed for 3 months": [
+        "3개월 마다 청구됨"
+      ],
       "Billed for 30 months": [
         "30개월 마다 청구됨"
       ],
@@ -13331,7 +13355,7 @@
         "${ VPN_APP_NAME } 다운로드"
       ],
       "Download the desktop app": [
-        "데스크톱 앱 다운로드하기"
+        "데스크톱 앱 다운로드"
       ],
       "Download the mobile apps": [
         "모바일 앱 다운로드"
@@ -14338,6 +14362,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "구독은 1개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 1개월입니다."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "구독은 3개월 단위로 자동 갱신됩니다. 다음 갱신 주기는 3개월입니다."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "12개월마다 ${ renewPrice }가 결제됩니다."
       ]
@@ -14354,8 +14381,14 @@
       "15-month": [
         "15개월"
       ],
+      "18-month": [
+        "18개월"
+      ],
       "2-year": [
         "2년"
+      ],
+      "3-month": [
+        "3개월"
       ],
       "30-month": [
         "30개월"

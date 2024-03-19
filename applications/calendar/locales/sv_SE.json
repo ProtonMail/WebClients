@@ -2316,11 +2316,23 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } blev inställd."
+      ],
       "All events in this series were updated.": [
         "Alla händelser i denna serie uppdaterades."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Alla händelser i denna serie har uppdaterats. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Denna händelseförekomst blev inställd."
+      ],
+      "This event occurrence was updated.": [
+        "Denna händelseförekomst uppdaterades."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Denna händelseförekomst uppdaterades. Här är vad som ändrades:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Denna händelse uppdaterades."

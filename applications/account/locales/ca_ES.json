@@ -632,6 +632,9 @@
       "No": [
         "No"
       ],
+      "No, thanks": [
+        "No, gràcies"
+      ],
       "OK": [
         "D'acord"
       ],
@@ -3174,6 +3177,14 @@
         "Ajudeu-nos a millorar!"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb per a Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm per a Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Seguretat avançada per a la compartició"
@@ -5026,6 +5037,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } a l'App Store"
+      ],
       "${ appName } on Play Store": [
         "${ appName } a Play Store"
       ],
@@ -6310,6 +6324,9 @@
       ],
       "Failed to fetch logs.": [
         "No s'han pogut trobar els registres."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Ràpid i concentrat. Correu electrònic i calendari, directament al teu escriptori."
       ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
@@ -9378,6 +9395,11 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "Get ${ planName } for ${ price }": [
+        "Obtingueu ${ planName } per a ${ price }."
       ]
     },
     "Maintenance mode": {
@@ -12469,6 +12491,12 @@
       "Billed for 15 months": [
         "Facturació per 15 mesos"
       ],
+      "Billed for 18 months": [
+        "Facturació per 18 mesos"
+      ],
+      "Billed for 3 months": [
+        "Facturació per 3 mesos"
+      ],
       "Billed for 30 months": [
         "Facturació per 30 mesos"
       ],
@@ -14388,6 +14416,11 @@
         "${ numberOfServers } a ${ numberOfCountries } països"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "La subscripció es renova automàticament cada tres mesos. La següent data de facturació és d'aquí a tres mesos."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Facturat cada mesc"
@@ -14400,8 +14433,14 @@
       "15-month": [
         "15 mesos"
       ],
+      "18-month": [
+        "18-mesos"
+      ],
       "2-year": [
         "2 any"
+      ],
+      "3-month": [
+        "3-mesos"
       ],
       "30-month": [
         "30 mesos"

@@ -629,6 +629,9 @@
       "No": [
         "Нет"
       ],
+      "No, thanks": [
+        "Нет, спасибо"
+      ],
       "OK": [
         "OK"
       ],
@@ -5126,6 +5129,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } в App Store"
+      ],
       "${ appName } on Play Store": [
         "${ appName } в Play Store"
       ],
@@ -8555,9 +8561,6 @@
       "Awarded": [
         "Присуждено"
       ],
-      "Beta": [
-        "Бета"
-      ],
       "Billing address": [
         "Адрес для выставления счета"
       ],
@@ -9662,21 +9665,53 @@
         "Защищенная электронная почта, обеспечивающая неприкосновенность частной жизни"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Получить"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
       "10 email addresses": [
-        "10 адресов электронной почты"
+        "10 адресов электронной почты"
       ],
       "Auto-delete Spam and Trash": [
-        "Автоматическое очищение папок \"Спам\" и \"Корзина\""
+        "Автоудаление спама и сообщений в корзине"
+      ],
+      "Custom schedule send and snooze times": [
+        "Пользовательское планирование и откладывание писем на любое время"
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за первый месяц"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Получить ${ planName } для ${ price }"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Срок действия ограниченного предложения истекает 2 апреля 2024 г."
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Получите тариф ${ planName } всего за ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -10198,6 +10233,9 @@
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
       ],
+      "Auto-delete Spam and Trash": [
+        "Автоудаление спама и сообщений в корзине"
+      ],
       "Auto-delete spam and trashed messages": [
         "Автоудаление спама и удаленных сообщений"
       ],
@@ -10245,6 +10283,9 @@
       ],
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
+      ],
+      "Desktop app": [
+        "Приложение для настольного компьютера"
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
@@ -12766,6 +12807,12 @@
       ],
       "Billed for 15 months": [
         "Оплата за 15 месяцев."
+      ],
+      "Billed for 18 months": [
+        "Счет выставлен за 18 месяцев"
+      ],
+      "Billed for 3 months": [
+        "Счет выставлен за 3 месяцев"
       ],
       "Billed for 30 months": [
         "Счет выставлен за 30 месяцев"

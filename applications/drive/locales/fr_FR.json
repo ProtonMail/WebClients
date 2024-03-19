@@ -2073,7 +2073,7 @@
         "Cet événement a été mis à jour. Voici ce qui a été modifié :\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }\n\n${ eventDetailsText }"
+        "Vous êtes invité à ${ eventTitle }.\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2081,7 +2081,7 @@
         "HORAIRE : \n${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "HORAIRE \n${ formattedStart } (toute la journée)"
+        "HORAIRE :\n${ formattedStart } (toute la journée)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "HORAIRE : \n${ formattedStart } - ${ formattedEnd }"
@@ -2190,7 +2190,7 @@
         "Les options d'alias n'ont pas pu être obtenues."
       ],
       "Aliases could not be loaded": [
-        "Les alias n'ont pas pu être chargés."
+        "Les alias n'ont pu être chargés."
       ],
       "Already a member of this share": [
         "Vous êtes déjà membre de ce partage."
@@ -2199,7 +2199,7 @@
         "Une erreur s’est produite lors du chargement des options de l'alias."
       ],
       "An error occurred while saving your alias": [
-        "Une erreur est survenue lors de l'enregistrement de votre alias"
+        "Une erreur s'est produite lors de l'enregistrement de votre alias."
       ],
       "Authentication canceled.": [
         "L'authentification a été annulée."
@@ -2282,7 +2282,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Forward address is required": [
-        "Le champ adresse e-mail de transfert est requis."
+        "Veuillez indiquer une adresse de transfert."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -2328,7 +2328,7 @@
         "Il manque la signature."
       ],
       "Name is required": [
-        "Le champ Nom est requis."
+        "Veuillez indiquer un nom."
       ],
       "No calendars found to import": [
         "Aucun calendrier n'a été trouvé pour l'importation."
@@ -5825,7 +5825,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Certaines images n'ont pas été importées car la sélection en cours comporte des noms de fichier dupliqués."
+        "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
       ]
     },
     "Oauth instructions": {
@@ -6617,7 +6617,7 @@
         "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "Your ${ appStorage } is almost full": [
         "Votre ${ appStorage } est presque plein."
