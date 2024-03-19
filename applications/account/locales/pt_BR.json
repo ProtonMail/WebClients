@@ -638,6 +638,9 @@
       "No": [
         "Não"
       ],
+      "No, thanks": [
+        "Não, obrigado"
+      ],
       "OK": [
         "OK"
       ],
@@ -4386,6 +4389,9 @@
       "Invalid URL": [
         "O URL não é válido."
       ],
+      "Missing parameters in the URL.": [
+        "Parâmetros ausentes na URL."
+      ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
       ],
@@ -4397,6 +4403,9 @@
       ],
       "Something went wrong": [
         "Algo deu errado"
+      ],
+      "Support ticket does not exist.": [
+        "O ticket de suporte não existe."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Para usar o ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME } mude para a versão web."
@@ -6892,6 +6901,9 @@
       "No addresses exist": [
         "Não existem endereços"
       ],
+      "No changes made to the current subscription": [
+        "Nenhuma alteração feita à assinatura atual"
+      ],
       "No credit card required": [
         "Não é necessário cartão de crédito"
       ],
@@ -8046,6 +8058,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Seu ticket de suporte foi fechado. Agradecemos o contato com o suporte da ${ BRAND_NAME }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9717,13 +9732,13 @@
     },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+        "Aplicativo ${ MAIL_APP_NAME } para desktop"
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Autodeletar Pasta de Spam e Lixeira"
+        "Excluir conteúdo de spam e lixeira de forma automática"
       ],
       "Custom schedule send and snooze times": [
         "Programação personalizada de horários de envio e pausa"
@@ -9744,8 +9759,17 @@
       "for the first month": [
         "pelo primeiro mês"
       ],
+      "for your first month": [
+        "no seu primeiro mês"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Obtenha ${ planName } por ${ price }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Sua assinatura irá se autorrenovar em ${ renewTime } por ${ renewablePrice }, cancele a qualquer momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -10413,6 +10437,9 @@
       "Router support": [
         "Suporte a roteador"
       ],
+      "Schedule and snooze emails for any time": [
+        "Agendar e adiar e-mails para quando você quiser"
+      ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
       ],
@@ -10763,11 +10790,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Limpar automaticamente as mensagens com mais de 30 dias da lixeira e do spam"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Encaminhe automaticamente os e-mails enviados para sua conta do ${ MAIL_APP_NAME } para qualquer outro endereço de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "O envio em massa de e-mails promocionais ou programáticos não tem suporte no momento. Recomendamos o uso de um provedor de serviços de e-mail dedicado para esse caso de uso."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Personalize o horário para receber lembretes sobre um e-mail ou enviar sua mensagem"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controle o acesso aos seus arquivos compartilhados adicionando proteção por senha e datas de expiração de links"
@@ -13106,6 +13139,12 @@
       "Billed for 15 months": [
         "Cobrança a cada 15 meses"
       ],
+      "Billed for 18 months": [
+        "Cobrança a cada 18 meses"
+      ],
+      "Billed for 3 months": [
+        "Cobrança a cada 3 meses"
+      ],
       "Billed for 30 months": [
         "Cobrança a cada 30 meses"
       ],
@@ -14510,6 +14549,9 @@
       "Summary": [
         "Resumo"
       ],
+      "Support ticket closed": [
+        "Ticket de suporte fechado"
+      ],
       "Switch account": [
         "Alternar de conta"
       ],
@@ -15073,6 +15115,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "A assinatura se renova automaticamente todo mês. Sua próxima data de cobrança será em 1 mês."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "A assinatura é renovada automaticamente a cada 3 meses. Sua próxima data de faturamento será em 3 meses."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você então será cobrado ${ renewPrice } a cada 12 meses."
       ],
@@ -15093,8 +15138,14 @@
       "15-month": [
         "15 meses"
       ],
+      "18-month": [
+        "18 meses"
+      ],
       "2-year": [
         "2 anos"
+      ],
+      "3-month": [
+        "3 meses"
       ],
       "30-month": [
         "30 meses"
