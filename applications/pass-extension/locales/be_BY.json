@@ -1365,7 +1365,7 @@
         "Неабмежаваная колькасць псеўданімаў Hide-my-email"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць вашы ключы доступу"
+        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць доступ да сваіх ключоў"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб захаваць гэты ключ доступу"
@@ -1441,6 +1441,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы дасягнулі абмежавання па колькасці псеўданімаў, якія вы можаце стварыць. Неабмежаваная колькасць псеўданімаў стане даступна пасля паляпшэння вашай падпіскі."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Вы дасягнулі абмежавання па колькасці крэдытных картак, якія можна стварыць. Неабмежаваная колькасць крэдытных картак стане даступна пасля паляпшэння вашай падпіскі."
       ],
       "You have reached the limit of vaults you can create.": [
         "Перавышана абмежаванне колькасці сховішчаў, якія вам дазволена стварыць."
@@ -2336,6 +2339,9 @@
       ],
       "No items matching": [
         "Няма адпаведных элементаў"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Ключы доступу не знойдзены. Захавайце свае ключы доступу ў ${ PASS_APP_NAME }, каб увайсці ў ${ domain }."
       ],
       "No password manager selected": [
         "Не выбраны менеджар пароляў"

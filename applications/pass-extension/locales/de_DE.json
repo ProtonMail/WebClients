@@ -125,6 +125,9 @@
       "Create login": [
         "Login erstellen"
       ],
+      "Create new login": [
+        "Neuen Login erstellen"
+      ],
       "Create note": [
         "Notiz erstellen"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Speichern"
       ],
+      "Save passkey": [
+        "Passkey speichern"
+      ],
       "Saving": [
         "Wird gespeichert"
+      ],
+      "Saving passkey...": [
+        "Passkey wird gespeichert..."
       ],
       "See members": [
         "Mitglieder anzeigen"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein ${ BRAND_NAME }-Passwort, um mit dem Export fortzufahren."
       ],
+      "Authentication failure: ${ message }": [
+        "Registrierung fehlgeschlagen: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Authentifizierungsfehler"
+      ],
       "Auto-lock could not be activated": [
         "Automatisches Sperren konnte nicht aktiviert werden."
       ],
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "Fehler beim Erstellen des Eintrags."
       ],
+      "Item does not exist": [
+        "Eintrag existiert nicht"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass exportiert eine beschädigte CSV-Datei, wenn eines deiner Elementfelder unerwartete Kommas, Anführungszeichen oder mehrere Zeilen enthält."
+      ],
+      "Missing passkey": [
+        "Fehlender Passkey"
       ],
       "Moving item failed": [
         "Fehler beim Verschieben des Eintrags."
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Bitte hefte die Erweiterung an oder wähle \"Ohne Anheften fortsetzen\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Registrierung fehlgeschlagen: ${ message }"
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "Unbekannte Einladung"
+      ],
+      "Unknown item": [
+        "Unbekannter Eintrag"
+      ],
+      "Unknown passkey": [
+        "Unbekannter Passkey"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
@@ -848,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Ein Passkey für \"${ username }\" wird gespeichert und ist auf Geräten verfügbar, auf denen ${ PASS_APP_NAME } installiert ist."
+      ],
       "Access successfully confirmed": [
         "Zugriff erfolgreich bestätigt"
       ],
@@ -893,6 +926,9 @@
       "Auto-lock successfully disabled": [
         "Automatisches Sperren erfolgreich deaktiviert."
       ],
+      "Autosaved on ${ payload.domain }": [
+        "Auf ${ payload.domain } automatisch gespeichert"
+      ],
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
       ],
@@ -908,8 +944,17 @@
       "Can view items in this vault.": [
         "Darf Einträge in diesem Tresor anzeigen."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Wähle einen gespeicherten Passkey für die Anmeldung bei ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Klicke auf das Symbol, um es jederzeit zu öffnen."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Schließe dieses Fenster, um einen Sicherheitsschlüssel oder einen anderen Passkey zu verwenden."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Schließe dieses Fenster, um einen anderen Passkey-Manager zu verwenden."
       ],
       "Congratulations, your access has been confirmed": [
         "Gratulation, dein Zugriff wurde bestätigt."
@@ -1118,6 +1163,9 @@
       "Pass Plus trial": [
         "Pass Plus-Testversion"
       ],
+      "Passkey sign-in": [
+        "Passkey-Anmeldung"
+      ],
       "Password copied": [
         "Passwort kopiert"
       ],
@@ -1178,6 +1226,12 @@
       ],
       "Save login": [
         "Anmeldedaten speichern"
+      ],
+      "Save passkey": [
+        "Passkey speichern"
+      ],
+      "Select an existing login or create a new one.": [
+        "Wähle einen vorhandenen Login oder erstelle einen neuen."
       ],
       "Select destination vault": [
         "Zieltresor auswählen:"
@@ -1276,6 +1330,12 @@
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte Hide-my-email-Aliasse"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code für den Zugang zu deinen Passkeys"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code, um diesen Passkey zu speichern."
+      ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
       ],
@@ -1345,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du hast das Limit an Aliassen erreicht, die du erstellen kannst. Ein Upgrade deines Abonnements ermöglicht dir das Erstellen von unbegrenzten Aliassen."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Du hast das Limit an Kreditkarten erreicht, die du erfassen kannst. Ein Upgrade deines Abonnements ermöglicht dir das Erfassen von unbegrenzten Kreditkarten."
       ],
       "You have reached the limit of vaults you can create.": [
         "Du hast die maximale Anzahl an Tresoren erreicht, die du erstellen kannst."
@@ -1650,6 +1713,9 @@
       "Oldest to newest": [
         "Älteste nach neueste"
       ],
+      "Passkey": [
+        "Passkey"
+      ],
       "Passphrase": [
         "Passphrase"
       ],
@@ -1790,6 +1856,9 @@
       ],
       "View logs": [
         "Protokolle anzeigen"
+      ],
+      "Website": [
+        "Website"
       ],
       "Websites": [
         "Websites"
@@ -2052,6 +2121,9 @@
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
       ],
+      "Passkey": [
+        "Passkey"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -2221,6 +2293,9 @@
       ],
       "No items matching": [
         "Keine zutreffenden Einträge"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Keine Passkeys gefunden. Speichere deine Passkeys in ${ PASS_APP_NAME }, um dich bei ${ domain } anzumelden."
       ],
       "No password manager selected": [
         "Kein Passwort-Manager ausgewählt."
