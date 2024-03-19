@@ -29,14 +29,12 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
-    isSmtpTokenEnabled,
     isNotifInboxDesktopAppOn,
 }: {
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
     organization?: Organization;
-    isSmtpTokenEnabled: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
@@ -202,7 +200,6 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`SMTP submission`,
                         id: 'smtp-tokens',
-                        available: isSmtpTokenEnabled,
                     },
                 ],
             },
