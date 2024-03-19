@@ -5051,6 +5051,9 @@
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
+      "Custom schedule send and snooze times": [
+        "Benutzerdefinierter Plan für Sende- und Zurückstellungszeiten"
+      ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
       ],
@@ -5429,6 +5432,11 @@
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -6959,7 +6967,7 @@
         "Erweiterten Schutz erhalten"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Hol dir die ${ appName[APP_NAME] }-Apps"
+        "${ appName[APP_NAME] }-Apps herunterladen"
       ],
       "Groups": [
         "Gruppen"
