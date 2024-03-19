@@ -27,7 +27,7 @@ const config = {
             features: getMailPlus2024InboxFeatures,
             getCTAContent,
             popular: 1, // to get solid CTA
-            dealSuffixPrice: c('mailtrial2024: Info').t`for the first month`,
+            dealSuffixPrice: () => c('mailtrial2024: Info').t`for the first month`,
             suffixOnNewLine: true,
         },
     ],
