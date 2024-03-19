@@ -14,7 +14,7 @@ export const authenticationListener = (startListening: SharedStartListening<Stat
         actionCreator: signoutAction,
         effect: async (action, listenerApi) => {
             try {
-                listenerApi.cancelActiveListeners();
+                listenerApi.unsubscribe();
                 listenerApi.extra.eventManager.stop();
                 await listenerApi.extra.api({ ...revoke(), silence: true });
             } finally {
