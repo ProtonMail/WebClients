@@ -12,6 +12,8 @@ const DealPrice = () => {
     } = useDealContext();
     const { withCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
 
+    const dealSuffixPriceString = dealSuffixPrice?.();
+
     return (
         <div className="my-4 text-center">
             <Price
@@ -20,7 +22,7 @@ const DealPrice = () => {
                     'offer-monthly-price color-norm',
                     suffixOnNewLine && 'offer-monthly-price--suffix-new-line'
                 )}
-                suffix={dealSuffixPrice ? dealSuffixPrice : c('specialoffer: Offers').t`/ month`}
+                suffix={dealSuffixPriceString ? dealSuffixPriceString : c('specialoffer: Offers').t`/ month`}
                 isDisplayedInSentence
             >
                 {withCoupon / cycle}
