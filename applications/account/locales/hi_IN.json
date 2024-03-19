@@ -563,6 +563,9 @@
       "No": [
         "नहीं"
       ],
+      "No, thanks": [
+        "नहीं, शुक्रिया"
+      ],
       "OK": [
         "ठीक है"
       ],
@@ -4352,6 +4355,14 @@
         "(आपके पहले महीने में)"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store पर ${ appName }"
+      ],
+      "${ appName } on Play Store": [
+        "Play Store पर ${ appName }"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "अपनेआप फॉरवर्ड"
@@ -7167,9 +7178,6 @@
       "Awarded": [
         "इनाम"
       ],
-      "Beta": [
-        "बीटा"
-      ],
       "Billing cycle": [
         "बिल चक्र"
       ],
@@ -8736,6 +8744,9 @@
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
       ],
+      "Unlimited vaults": [
+        "असीम तिजोरी"
+      ],
       "Unlimited volume/bandwidth": [
         "असीमित वॉल्युम/बैंडविड्थ"
       ],
@@ -9557,6 +9568,11 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "आपके संगठन के पास ${ free } तक पहुंच है। यदि आप प्रीमियम ${ appName } सुविधाओं का उपयोग करना चाहते हैं, तो कृपया अपने संगठन के व्यवस्थापक से अपग्रेड करने के लिए कहें।"
+      ]
+    },
+    "pass_signup_2023: title": {
+      "For individuals": [
+        "अकेले लोगों के लिए"
       ]
     },
     "passwordless": {

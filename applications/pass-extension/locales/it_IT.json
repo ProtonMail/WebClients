@@ -360,13 +360,13 @@
         "Salva"
       ],
       "Save passkey": [
-        "Salva passkey"
+        "Salva la passkey"
       ],
       "Saving": [
         "Salvataggio"
       ],
       "Saving passkey...": [
-        "Salvataggio della passkey..."
+        "Salvataggio della passkey in corso"
       ],
       "See members": [
         "Visualizza membri"
@@ -523,7 +523,7 @@
         "Autenticazione non riuscita. Conferma la password del tuo account ${ BRAND_NAME } per procedere con l'esportazione."
       ],
       "Authentication failure: ${ message }": [
-        "Errore di autenticazione: ${ message }"
+        "Autenticazione non riuscita: ${ message }"
       ],
       "Authenticator failure": [
         "Autenticazione non riuscita"
@@ -690,7 +690,7 @@
         "Fissa l'estensione o seleziona \"Continua senza fissare\"."
       ],
       "Registration failure: ${ message }": [
-        "Errore di registrazione: ${ message }"
+        "Registrazione non riuscita: ${ message }"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -1228,7 +1228,7 @@
         "Salva il login"
       ],
       "Save passkey": [
-        "Salva passkey"
+        "Salva la passkey"
       ],
       "Select an existing login or create a new one.": [
         "Seleziona un login esistente o creane uno nuovo."
@@ -1405,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Hai raggiunto il numero massimo di alias che puoi creare. Crea un numero illimitato di alias effettuando l'aggiornamento del tuo piano di abbonamento."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Hai raggiunto il limite di carte di credito che puoi creare. Crea un numero illimitato di carte di credito effettuando l'upgrade del tuo piano."
       ],
       "You have reached the limit of vaults you can create.": [
         "Hai raggiunto il limite di casseforti che puoi creare."
@@ -2290,6 +2293,9 @@
       ],
       "No items matching": [
         "Nessun elemento corrispondente"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Nessuna passkey trovata. Salva le tue passkey in ${ PASS_APP_NAME } per accedere a ${ domain }."
       ],
       "No password manager selected": [
         "Nessun gestore di password selezionato"

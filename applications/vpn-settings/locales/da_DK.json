@@ -3008,6 +3008,9 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-godkendelse for din organisation via en identitetsudbyder (IdP). Dette vil aktivere SAML for hele organisationen."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Konfigurer SAML-godkendelse for din organisation via en identitetsudbyder som Okta, Microsoft Azure eller Google identitet platform. Dette vil aktivere SAML for hele organisationen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsæt med ${ freeName }"
       ],
@@ -3126,6 +3129,9 @@
       ],
       "Emailing preference saved": [
         "E-mail-afsendelsespræference gemt"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "Aktivér single sign-on for at holde din organisation sikker"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
@@ -3289,6 +3295,9 @@
       "Lean more about gateways": [
         "Lær mere om gateways"
       ],
+      "Lean more about single sign-on": [
+        "Lær mere om single sign-on"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær, hvordan du logger på ${ VPN_APP_NAME } med tredjeparts VPN-applikationer."
       ],
@@ -3340,6 +3349,9 @@
       "No addresses exist": [
         "Ingen adresser findes"
       ],
+      "No changes made to the current subscription": [
+        "Ingen ændringer er lavet til din nuværende abonnement"
+      ],
       "No gateways": [
         "Ingen gateways"
       ],
@@ -3366,6 +3378,9 @@
       ],
       "old password": [
         "gammel adgangskode"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Når single sing-on er deaktiveret for din organisation:"
       ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
@@ -4761,6 +4776,14 @@
         "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger to-faktor-godkendelse."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
@@ -4776,6 +4799,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Fornyes til ${ renewablePrice }, annuller når som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "den første måned"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Tidsbegrænset tilbud, udløber den 2. april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Få ${ planName } for kun ${ planPrice }"
       ]
     },
     "Member action": {
@@ -5010,6 +5051,9 @@
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
       ],
+      "Auto-delete Spam and Trash": [
+        "Slet automatisk elementer i Spam og Papirkurven"
+      ],
       "Auto-delete spam and trashed messages": [
         "Slet automatisk spam og beskeder i papirkurven"
       ],
@@ -5064,6 +5108,9 @@
       "Dedicated servers and IP": [
         "Dedikerede servere og IP"
       ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
       "DNS leak prevention": [
         "Forebyggelse af DNS-lækage"
       ],
@@ -5105,6 +5152,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
+      ],
+      "Group management (coming soon)": [
+        "Gruppe administration (kommer snart)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
@@ -5164,6 +5214,9 @@
       ],
       "Router support": [
         "Router support"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Planlæg og snooze e-mails til enhver tid"
       ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
@@ -6879,6 +6932,12 @@
       ],
       "Billed for 15 months": [
         "Faktureret for 15 måneder"
+      ],
+      "Billed for 18 months": [
+        "Faktureret for 18 måneder"
+      ],
+      "Billed for 3 months": [
+        "Faktureret for 3 måneder"
       ],
       "Billed for 30 months": [
         "Faktureret for 30 måneder"

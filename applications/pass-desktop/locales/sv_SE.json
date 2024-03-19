@@ -883,6 +883,12 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "För att få ut den bästa upplevelsen av ${ PASS_APP_NAME }, bevilja de nödvändiga tilläggsbehörigheterna"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Installera ${ PASS_APP_NAME } för ${ browser.title } för att snabbt fylla i dina inloggningar automatiskt."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Installera ${ PASS_APP_NAME } för ${ browser.title } för att snabbt fylla i dina inloggningar automatiskt. "
+      ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
@@ -1204,6 +1210,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du har nått gränsen för alias du kan skapa. Skapa ett obegränsat antal alias när du uppgraderar din prenumeration."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Du har nått gränsen för antalet kreditkort du kan skapa. Skapa ett obegränsat antal kreditkort när du uppgraderar din prenumeration."
       ],
       "You have reached the limit of vaults you can create.": [
         "Du har nått gränsen för valv du kan skapa."

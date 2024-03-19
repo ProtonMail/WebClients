@@ -786,13 +786,13 @@
         "Se borró un elemento previamente compartido con usted."
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "¿En verdad desea mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+        "¿Está seguro de que quiere mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "¿En verdad desea mover los elementos a «${ name }»?"
+        "¿Está seguro de que quiere mover los elementos a «${ name }»?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
-        "¿En verdad desea mover el elemento a «${ name }»?"
+        "¿Está seguro de que quiere mover el elemento a «${ name }»?"
       ],
       "Auto-lock successfully disabled": [
         "Bloqueo automático desactivado con éxito"
@@ -1214,6 +1214,9 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar su suscripción."
       ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Ha alcanzado el límite de tarjetas de crédito que puede crear. Cree una cantidad de tarjetas de crédito ilimitadas al mejorar su suscripción."
+      ],
       "You have reached the limit of vaults you can create.": [
         "Ha alcanzado el límite de bóvedas que puede crear."
       ],
@@ -1486,7 +1489,7 @@
         "De más antiguo a más reciente"
       ],
       "Passkey": [
-        "Clave de paso"
+        "Clave de acceso"
       ],
       "Passphrase": [
         "Frase de contraseña"
@@ -1865,7 +1868,7 @@
         "Nuestro regalo de bienvenida para usted"
       ],
       "Passkey": [
-        "Clave de paso"
+        "Clave de acceso"
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"

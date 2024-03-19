@@ -7329,6 +7329,9 @@
       "Snooze": [
         "Приглушение"
       ],
+      "Snoozed": [
+        "Отложенные"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -7448,21 +7451,50 @@
         "Корзина"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Получить"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
       "10 email addresses": [
-        "10 адресов электронной почты"
+        "10 адресов электронной почты"
       ],
       "Auto-delete Spam and Trash": [
-        "Автоматическое очищение папок \"Спам\" и \"Корзина\""
+        "Автоудаление спама и сообщений в корзине"
+      ],
+      "Custom schedule send and snooze times": [
+        "Пользовательское планирование и откладывание писем на любое время"
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за первый месяц"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Срок действия ограниченного предложения истекает 2 апреля 2024 г."
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Получите тариф ${ planName } всего за ${ planPrice }"
       ]
     },
     "Message": {
@@ -8236,6 +8268,11 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Попробуйте ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Просмотр журналов"
       ]
     },
     "Select files": {

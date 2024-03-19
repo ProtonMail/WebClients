@@ -638,6 +638,9 @@
       "No": [
         "Nie"
       ],
+      "No, thanks": [
+        "Nie, dziękuję"
+      ],
       "OK": [
         "OK"
       ],
@@ -3242,6 +3245,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomóż nam ulepszyć usługę!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb dla Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm dla Fedora / openSUSE"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6329,7 +6340,7 @@
         "Autoresponder jest zawsze aktywny w wybranych dniach tygodnia i godzinach."
       ],
       "Available on macOS, Windows, and Linux.": [
-        "Dostępna na macOS, Windowsa i Linuksa."
+        "Aplikacja dostępna na macOS, Windowsa i Linuksa."
       ],
       "Awaiting transaction": [
         "Transakcja oczekująca"
@@ -7014,6 +7025,9 @@
       ],
       "No addresses exist": [
         "Brak adresów e-mail"
+      ],
+      "No changes made to the current subscription": [
+        "Brak zmian w obecnej subskrypcji"
       ],
       "No credit card required": [
         "Karta płatnicza nie jest wymagana"
@@ -9900,13 +9914,13 @@
         "10 adresów e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
+        "Automatyczne usuwanie spamu i opróżnianie kosza"
       ],
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny planowego wysyłania i usypiania"
       ],
       "Support for 1 custom email domain": [
-        "Wsparcie dla 1 niestandardowej domeny"
+        "Wsparcie dla 1 niestandardowej domeny e-mail"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -9920,6 +9934,12 @@
     "mailtrial2024: Info": {
       "for the first month": [
         "za pierwszy miesiąc"
+      ],
+      "for your first month": [
+        "za pierwszy miesiąc"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Wybierz plan ${ planName } za ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta ograniczona czasowo. Wygasa 2 kwietnia 2024 roku"
@@ -10632,6 +10652,9 @@
       "Router support": [
         "Wsparcie routerów"
       ],
+      "Schedule and snooze emails for any time": [
+        "Planowanie i usypianie wiadomości na dowolną porę"
+      ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
       ],
@@ -10720,7 +10743,7 @@
         "Nieograniczona liczba sejfów"
       ],
       "Unlimited volume/bandwidth": [
-        "Nielimitowana przepustowość"
+        "Nieograniczona przepustowość"
       ],
       "Up to ${ n } user": [
         "${ n } użytkownik",
@@ -11277,6 +11300,11 @@
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Niektóre obrazy nie zostały przesłane z powodu powtarzających się nazw zaznaczonych plików."
+      ]
+    },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
         "Dodawanie kalendarza świąt nie powiodło się"
@@ -11661,7 +11689,7 @@
     },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
-        ".deb (dla Debian/Ubuntu)"
+        ".deb (dla Debian / Ubuntu)"
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 lub nowszy)"
@@ -11670,7 +11698,7 @@
         ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
-        ".rpm (dla Fedora/openSUSE)"
+        ".rpm (dla Fedora / openSUSE)"
       ],
       "PKGBUILD (for other distributions)": [
         "PKGBUILD (inne dystrybucje)"
@@ -13387,6 +13415,12 @@
       ],
       "Billed for 15 months": [
         "Płatne za 15 miesięcy"
+      ],
+      "Billed for 18 months": [
+        "Płatne za 18 miesięcy"
+      ],
+      "Billed for 3 months": [
+        "Płatne za 3 miesiące"
       ],
       "Billed for 30 months": [
         "Płatne za 30 miesięcy"
@@ -15420,6 +15454,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Subskrypcja odnowi się automatycznie co 1 miesiąc. Twoja następna data rozliczeniowa przypada za 1 miesiąc."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Subskrypcja odnowi się automatycznie co 3 miesięce. Twoja następna data rozliczeniowa przypada za 3 miesiące."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
       ],
@@ -15442,8 +15479,14 @@
       "15-month": [
         "na 15 miesięcy"
       ],
+      "18-month": [
+        "na 18 miesięcy"
+      ],
       "2-year": [
         "dwuletnią"
+      ],
+      "3-month": [
+        "na 3 miesięce"
       ],
       "30-month": [
         "na 30 miesięcy"

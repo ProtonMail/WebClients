@@ -176,6 +176,9 @@
       "Edit": [
         "Muokkaa"
       ],
+      "Edit billing cycle": [
+        "Muokkaa laskutuskautta"
+      ],
       "Edit display name": [
         "Muokkaa näyttönimeä"
       ],
@@ -2721,6 +2724,12 @@
       "Name": [
         "Nimi"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }:n huipputarjouksilla säästät selvää rahaa"
+      ],
+      "Select your deal": [
+        "Valitse tarjouksesi"
+      ],
       "Select your pricing plan": [
         "Valitse maksusuunnitelma:"
       ],
@@ -3342,6 +3351,9 @@
       ],
       "No addresses exist": [
         "Osoitteita ei ole"
+      ],
+      "No changes made to the current subscription": [
+        "Nykyiseen tilaukseen ei ole tehty muutoksia"
       ],
       "No gateways": [
         "Yhdyskäytäviä ei ole"
@@ -4785,6 +4797,9 @@
       "Auto-delete Spam and Trash": [
         "Tyhjennä roskaposti ja roskakori automaattisesti"
       ],
+      "Custom schedule send and snooze times": [
+        "Aseta mukautetut lähetys- ja torkutusajat"
+      ],
       "Support for 1 custom email domain": [
         "1 oma sähköpostiverkkotunnus"
       ],
@@ -4803,6 +4818,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Tilauksesi uudistuu automaattisesti ${ renewTime } hintaan ${ renewablePrice }, peruuta koska tahansa"
       ]
     },
     "mailtrial2024: Title": {
@@ -5018,6 +5036,9 @@
       "1 user": [
         "1 käyttäjä"
       ],
+      "24/7 account management support": [
+        "24/7 tilin hallinnan tuki"
+      ],
       "24/7 support": [
         "24/7-asiakaspalvelu"
       ],
@@ -5030,11 +5051,17 @@
       "Admin console": [
         "Hallintapaneeli"
       ],
+      "Administration Panel": [
+        "Hallintapaneeli"
+      ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
       ],
       "Advanced sharing security": [
         "Edistynyt jakojen suojaus"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -5090,6 +5117,9 @@
       "Dedicated servers and IP": [
         "Kohdistetut palvelimet ja IP-osoitteet"
       ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
       "DNS leak prevention": [
         "DNS-vuotosuojaus"
       ],
@@ -5131,6 +5161,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
+      ],
+      "Group management (coming soon)": [
+        "Ryhmähallinta (tulossa pian)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
@@ -5190,6 +5223,9 @@
       ],
       "Router support": [
         "Reititintuki"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Ajoita ja torkuta sähköpostit milloin tahansa"
       ],
       "Schedule messages at any time": [
         "Ajoita viestit lähtemään milloin tahansa"
@@ -5270,6 +5306,12 @@
       "Unlimited shared vaults with access permissions": [
         "Rajattomasti jaettuja holveja käyttöoikeuksilla"
       ],
+      "Unlimited vault sharing": [
+        "Rajattomasti holvin jakoja"
+      ],
+      "Unlimited vaults": [
+        "Rajattomasti holveja"
+      ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
       ],
@@ -5332,6 +5374,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Kehittynyt verkkoturvallisuus ja pääsynhallinta dedikoitujen turvallisten yhdyskäytävien avulla"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Kehittynyt ja alan standardit ylittävä suojaus ryhmille."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
       ],
@@ -5343,6 +5388,9 @@
       ],
       "Early access to new apps and features": [
         "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Välttämätön suojaus ja turvallinen yhteistoiminta rajoittamattomille käyttäjille."
       ],
       "For next-level password management and identity protection.": [
         "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
@@ -5463,6 +5511,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää ${ serversAndCountries } suurimmat VPN-nopeudet, pääsyn maailmanlaajuisiin suoratoistopalveluihin, haittaohjelmat ja mainosten eston, nopeat BitTorrent-lataukset ja muuta."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Käytä ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -sovelluksia suoraan työpöydältäsi"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
       ],
@@ -5475,11 +5526,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Voit määrittää saapuville viesteillesi automaattivaustauksia"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Poista automaattisesti yli 30 päivää vanhat viestit roskakorista ja roskapostista"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Mukauta aikoja, jolloin sinua muistutetaan sähköpostista tai viestisi saapumisesta"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkeille erääntymisajat"
@@ -5523,6 +5580,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Voit merkitä viestejä tunnisteilla helpottaaksesi niiden etsintää ja suodatusta."
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Kuten kansio, holvi on kätevä tapa järjestellä kohteitasi."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Sulje yritysresurssisi julkisesta Internetistä ja salli niiden käyttö vain omien yhdyskäytäviesi välityksellä."
@@ -6891,6 +6951,12 @@
       "Billed for 15 months": [
         "Laskutetaan 15 kuukauden välein"
       ],
+      "Billed for 18 months": [
+        "Laskutetaan 18 kuukauden välein"
+      ],
+      "Billed for 3 months": [
+        "Laskutetaan 3 kuukauden välein"
+      ],
       "Billed for 30 months": [
         "Laskutetaan 30 kuukauden välein"
       ],
@@ -7994,6 +8060,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Tilaus uudistuu automaattisesti kuukauden välein ja seuraava laskutuspäivä on kuukauden kuluttua."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Tilauksesi uusiutuu automaattisesti kolmen kuukauden välein. Seuraava veloitusajankohta on kolmen kuukauden kuluttua."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
       ],
@@ -8014,8 +8083,14 @@
       "15-month": [
         "15 kuukauden"
       ],
+      "18-month": [
+        "18 kuukauden"
+      ],
       "2-year": [
         "2 vuoden"
+      ],
+      "3-month": [
+        "3 kuukauden"
       ],
       "30-month": [
         "30 kuukauden"

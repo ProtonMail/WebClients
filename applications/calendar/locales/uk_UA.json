@@ -772,6 +772,11 @@
         "Якщо ви зараз вийдете, подія не збережеться."
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Завантажити настільний застосунок ${ MAIL_APP_NAME }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Програми ${ BRAND_NAME }"
@@ -848,6 +853,9 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Отримайте доступ до заблокованого вмісту та переглядайте сторінки приватно. Містить понад 3000 серверів у 65+ країнах, найвищі швидкості VPN, доступ до всесвітніх стримінгових сервісів, блокувальник шкідливих програм і реклами, швидке завантаження BitTorrent тощо."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Отримуйте доступ до сервісів потокової трансляції, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
       ],
@@ -857,11 +865,20 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
       ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Безпечний вхід на всіх ваших пристроях. Включає необмежену кількість псевдонімів, спільний доступ, інтеграція двоетапної перевірки тощо."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Захистіть свої листи та графік за допомогою наскрізного шифрування. Містить підтримку власних доменів пошти, 15 адрес пошти, необмежену кількість псевдонімів hide-my-email, спільний доступ до календаря тощо."
+      ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Простір сховища є спільним для всіх застосунків ${ BRAND_NAME }."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Зберігайте до 200 версій кожного файлу протягом 10 років."
@@ -2313,6 +2330,69 @@
         "Змінити подію"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "ОПИС:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } було скасовано."
+      ],
+      "All events in this series were updated.": [
+        "Усі події в цій серії оновлено."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Усі події в цій серії оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "Цю подію скасовано."
+      ],
+      "This event occurrence was updated.": [
+        "Цю подію оновлено."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Цю подію оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Цю подію оновлено."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Цю подію оновлено. Ось що змінилося:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Вас запрошено на ${ eventTitle }.\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ЧАС: \n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ЧАС:\n${ formattedStart } (весь день)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ЧАС:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Видалено"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "РОЗТАШУВАННЯ:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } прийняв(-ла) ваше запрошення на ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } попередньо прийняв(-ла) ваше запрошення на ${ eventTitle }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Скасування події ${ formattedStart }"
@@ -2566,7 +2646,7 @@
         "Можливо переміщувати події лише між ${ minDateString } - ${ maxDateString }"
       ],
       "Item content cannot exceed 40KB": [
-        "Вміст елемента не може перевищувати 40 Кб"
+        "Вміст елемента не може перевищувати 40 кБ"
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
@@ -3823,6 +3903,9 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Усі учасники отримають лист про скасування. Яку подію ви хочете видалити?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
@@ -3831,6 +3914,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "Запрошення буде надіслано доданим учасникам."
+      ],
+      "An invitation will be sent to all participants. Which event would you like to update?": [
+        "Усім учасникам буде надіслано запрошення. Яку подію ви б хотіли оновити?"
       ],
       "An invitation will be sent to the event participants.": [
         "Запрошення буде надіслано учасникам події."
@@ -5076,15 +5162,50 @@
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Special Offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настільний застосунок ${ MAIL_APP_NAME }"
+      ],
       "10 email addresses": [
         "10 адрес електронної пошти"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Автоматичне видалення спаму та смітника"
+      ],
+      "Custom schedule send and snooze times": [
+        "Користувацький час відправки та відкладення"
       ],
       "Support for 1 custom email domain": [
         "Підтримка 1 власного домену електронної пошти"
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Подовження за ${ renewablePrice }, можна скасувати в будь-який час"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за перший місяць"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Термін дії обмеженої пропозиції закінчується 2 квітня 2024 року"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Отримайте ${ planName } всього за ${ planPrice }"
       ]
     },
     "Message": {
@@ -5663,8 +5784,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ознайомитися з усіма службами ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Виберіть тему"
+      ],
       "Set up your organization": [
         "Налаштуйте свою організацію"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Використовуйте вибір застосунків у верхньому лівому куті, щоб отримати доступ до всіх сервісів ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Ви зможете будь-коли змінити тему в налаштуваннях."
       ]
     },
     "Option": {
@@ -5759,6 +5889,11 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Розгорнути список учасників"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Країна платника"
       ]
     },
     "PGP key encryption warning": {
@@ -6030,6 +6165,9 @@
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Відновлення облікового запису недоступне для старих ключів адреси"
+      ],
       "Please generate keys before you try to change your password": [
         "Згенеруйте ключі, перш ніж змінювати пароль"
       ]
@@ -6052,6 +6190,12 @@
       ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }, ви маєте ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }."
       ]
     },
     "session_recovery:available:link": {
@@ -6135,11 +6279,28 @@
         "${ gracePeriodHoursRemaining } години",
         "${ gracePeriodHoursRemaining } годин",
         "${ gracePeriodHoursRemaining } годин"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } тепер доступно."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Якщо ви вийдете до скидання пароля, ви можете втратити доступ до свого облікового запису."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Якщо ви вийдете, не скинувши пароль, ви можете втратити доступ до свого облікового запису."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Ви зможете скинути пароль через ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Скидання пароля"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Вийти без скидання пароля?"
       ]
     },
     "Settings update growler warning": {
@@ -6275,6 +6436,12 @@
       ],
       "Premium ${ appName1 }": [
         "Преміум ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Преміум ${ appName1 } та ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Преміум ${ appName1 }, ${ appName2 } та ${ appName3 }"
       ],
       "Premium early access": [
         "Ранній преміумдоступ"
@@ -6414,8 +6581,14 @@
       "Color-coding is here!": [
         "Презентуємо кольорове кодування!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Зручно запускайте ${ MAIL_APP_NAME } прямо зі свого робочого столу."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Легко знаходьте подію яку ви шукаєте з нашою новою функцією пошуку."
+      ],
+      "Get the desktop app": [
+        "Отримати настільний застосунок"
       ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."

@@ -125,6 +125,9 @@
       "Create login": [
         "로그인 생성"
       ],
+      "Create new login": [
+        "새 로그인 생성"
+      ],
       "Create note": [
         "메모 생성"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "저장"
       ],
+      "Save passkey": [
+        "패스키 저장"
+      ],
       "Saving": [
         "저장 중"
+      ],
+      "Saving passkey...": [
+        "패스키 저장 중..."
       ],
       "See members": [
         "회원 보기"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
+      "Authentication failure: ${ message }": [
+        "인증 실패: ${ message }"
+      ],
+      "Authenticator failure": [
+        "인증 실패"
+      ],
       "Auto-lock could not be activated": [
         "자동 잠금을 활성화 할 수 없습니다."
       ],
@@ -642,8 +657,14 @@
       "Item creation failed": [
         "항목 생성 실패"
       ],
+      "Item does not exist": [
+        "항목이 존재하지 않습니다."
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "항목 필드에 예상치 못한 쉼표, 따옴표 또는 여러 줄이 포함된 경우 LastPass가 손상된 CSV 파일을 내보낼 수 있습니다."
+      ],
+      "Missing passkey": [
+        "패스키 없음"
       ],
       "Moving item failed": [
         "항목 이동 실패"
@@ -659,6 +680,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "확장 프로그램을 고정하거나 '고정하지 않고 계속하기'를 선택하세요."
+      ],
+      "Registration failure: ${ message }": [
+        "등록 실패: ${ message }"
       ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
@@ -713,6 +737,12 @@
       ],
       "Unknown invite": [
         "알 수 없는 초대"
+      ],
+      "Unknown item": [
+        "알 수 없는 항목"
+      ],
+      "Unknown passkey": [
+        "알 수 없는 패스키"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "지원되지 않는 ${ PASS_APP_NAME } 파일 포맷"
@@ -798,6 +828,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "새로운 버전의 ${ PASS_APP_NAME }가 사용 가능합니다. 새로운 기능과 버그 수정을 누리기 위해 업데이트 하세요."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "패스키 \"${ username }\" 이(가) 저장되며 ${ PASS_APP_NAME }가 설치된 모든 기기에서 사용 가능합니다."
+      ],
       "Access successfully confirmed": [
         "접근을 성공적으로 수락했습니다."
       ],
@@ -843,6 +876,9 @@
       "Auto-lock successfully disabled": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
+      "Autosaved on ${ payload.domain }": [
+        "${ payload.domain }에 자동 저장됨"
+      ],
       "Built in 2FA authenticator": [
         "내장형 2FA 인증기"
       ],
@@ -858,8 +894,17 @@
       "Can view items in this vault.": [
         "이 금고에서 항목을 확인 가능합니다."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "${ domain }에 로그인하려면 저장한 패스키 중 선택하세요."
+      ],
       "Click the icon to open it anytime.": [
         "언제든지 열 수 있도록 아이콘을 선택하세요."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "다른 보안 키 및 패스키를 사용하려면 이 창을 닫으십시오."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "타 패스키 관리자를 사용하려면 이 윈도우를 닫으십시오."
       ],
       "Congratulations, your access has been confirmed": [
         "축하합니다! 접근이 수락되었습니다."
@@ -1056,6 +1101,9 @@
       "Pass Plus trial": [
         "Pass Plus 체험"
       ],
+      "Passkey sign-in": [
+        "패스키 로그인"
+      ],
       "Password copied": [
         "비밀번호 복사됨"
       ],
@@ -1112,6 +1160,12 @@
       ],
       "Save login": [
         "로그인 저장"
+      ],
+      "Save passkey": [
+        "패스키 저장"
+      ],
+      "Select an existing login or create a new one.": [
+        "기존의 로그인을 선택하거나 새 로그인을 만드십시오."
       ],
       "Select destination vault": [
         "대상 금고 선택"
@@ -1206,6 +1260,12 @@
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "이 패스키에 접근하려면 PIN 코드로 ${ PASS_APP_NAME }를 잠금 해제하세요."
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "이 패스키를 저장하려면 사용자의 PIN 코드로 ${ PASS_APP_NAME }를 잠금 해제하세요."
+      ],
       "Unlock it with your PIN to access the settings": [
         "설정에 접근하기 위해 PIN으로 잠금 해제 하세요."
       ],
@@ -1271,6 +1331,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "사용자가 생성할 수 있는 최대 별명 수에 도달했습니다. 구독을 업그레이드하여 무제한 별명을 생성하세요."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "사용자가 생성할 수 있는 최대 신용카드 수에 도달했습니다. 구독을 업그레이드하여 무제한 신용카드를 생성하세요."
       ],
       "You have reached the limit of vaults you can create.": [
         "최대 수의 금고를 생성했습니다."
@@ -1568,6 +1631,9 @@
       "Oldest to newest": [
         "오래된 항목 순"
       ],
+      "Passkey": [
+        "패스키"
+      ],
       "Passphrase": [
         "암호"
       ],
@@ -1708,6 +1774,9 @@
       ],
       "View logs": [
         "로그 보기"
+      ],
+      "Website": [
+        "웹 사이트"
       ],
       "Websites": [
         "웹 사이트"
@@ -1960,6 +2029,9 @@
       "Our welcome gift to you": [
         "당신께 드리는 웰컴 기프트"
       ],
+      "Passkey": [
+        "패스키"
+      ],
       "Password": [
         "비밀번호"
       ],
@@ -2125,6 +2197,9 @@
       ],
       "No items matching": [
         "매칭되는 항목 없음"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "패스키를 찾을 수 없습니다. ${ PASS_APP_NAME }에 패스키를 저장해서 ${ domain }에 로그인하세요."
       ],
       "No password manager selected": [
         "선택된 비밀번호 관리자 없음"

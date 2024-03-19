@@ -125,6 +125,9 @@
       "Create login": [
         "Oturum açma kaydı oluştur"
       ],
+      "Create new login": [
+        "Yeni oturum açma kaydı oluştur"
+      ],
       "Create note": [
         "Not oluştur"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Kaydet"
       ],
+      "Save passkey": [
+        "Geçiş anahtarını kaydet"
+      ],
       "Saving": [
         "Kaydediliyor"
+      ],
+      "Saving passkey...": [
+        "Geçiş anahtarı kaydediliyor..."
       ],
       "See members": [
         "Üyeleri görüntüle"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
       ],
+      "Authentication failure: ${ message }": [
+        "Kimlik doğrulanamadı: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Auto-lock could not be activated": [
         "Otomatik kilit özelliği açılamadı"
       ],
@@ -651,10 +666,13 @@
         "Öge oluşturulamadı"
       ],
       "Item does not exist": [
-        "Öğe mevcut değil"
+        "Öge bulunamadı"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Öge alanlarınızdan herhangi birinde beklenmedik virgüller, tırnak işaretleri veya birkaç satır varsa, LastPass tarafından dışa aktarılan CSV dosyası bozuk olur"
+      ],
+      "Missing passkey": [
+        "Geçiş anahtarı eksik"
       ],
       "Moving item failed": [
         "Öge taşınamadı"
@@ -670,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Lütfen eklentiyi sabitleyin ya da \"Sabitlemeden ilerle\" olarak seçin."
+      ],
+      "Registration failure: ${ message }": [
+        "Kayıt yapılamadı: ${ message }"
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
@@ -726,7 +747,10 @@
         "Davet bilinmiyor"
       ],
       "Unknown item": [
-        "Bilinmeyen öğe"
+        "Öge bilinmiyor"
+      ],
+      "Unknown passkey": [
+        "Geçiş anahtarı bilinmiyor"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
@@ -854,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "\"${ username }\" için bir geçiş anahtarı kaydedilecek ve ${ PASS_APP_NAME } kurulu olan aygıtlarda kullanılabilecek."
+      ],
       "Access successfully confirmed": [
         "Erişim onaylandı"
       ],
@@ -899,6 +926,9 @@
       "Auto-lock successfully disabled": [
         "Otomatik kilitleme kapatıldı"
       ],
+      "Autosaved on ${ payload.domain }": [
+        "${ payload.domain } üzerinden otomatik olarak kaydedildi"
+      ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
@@ -914,8 +944,17 @@
       "Can view items in this vault.": [
         "Bu kasadaki ögeleri görüntüleyebilir."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
+      ],
       "Click the icon to open it anytime.": [
         "İstediğiniz zaman açmak için simgeye tıklayın."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Bir güvenlik anahtarı ya da başka bir geçiş anahtarı kullanmak için bu pencereyi kapatın."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Başka bir geçiş anahtarı yöneticisi kullanmak için bu pencereyi kapatın."
       ],
       "Congratulations, your access has been confirmed": [
         "Tebrikler erişiminiz onaylandı"
@@ -1124,6 +1163,9 @@
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
+      "Passkey sign-in": [
+        "Geçiş anahtarı ile oturum açma"
+      ],
       "Password copied": [
         "Parola kopyalandı"
       ],
@@ -1184,6 +1226,12 @@
       ],
       "Save login": [
         "Oturum açmayı kaydet"
+      ],
+      "Save passkey": [
+        "Geçiş anahtarını kaydet"
+      ],
+      "Select an existing login or create a new one.": [
+        "Var olan bir oturum açma kaydı seçin ya da yeni bir tane oluşturun."
       ],
       "Select destination vault": [
         "Hedef kasayı seçin"
@@ -1282,6 +1330,12 @@
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Geçiş anahtarlarınıza erişmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Bu geçiş anahtarını kaydetmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
       ],
@@ -1351,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Oluşturabileceğiniz kredi kartı sınırına ulaştınız. Aboneliğinizi yükselttiğinizde sınırsız sayıda kredi kartı oluşturun."
       ],
       "You have reached the limit of vaults you can create.": [
         "Oluşturabileceğiniz kasa sayısı sınırına ulaştınız."
@@ -1655,6 +1712,9 @@
       ],
       "Oldest to newest": [
         "Eskiden yeniye"
+      ],
+      "Passkey": [
+        "Geçiş anahtarı"
       ],
       "Passphrase": [
         "Parola ifadesi"
@@ -2061,6 +2121,9 @@
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
       ],
+      "Passkey": [
+        "Geçiş anahtarı"
+      ],
       "Password": [
         "Parola"
       ],
@@ -2230,6 +2293,9 @@
       ],
       "No items matching": [
         "Eşleşen bir öge bulunamadı"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Geçiş anahtarı bulunamadı. ${ domain } 'de oturum açmak için geçiş anahtarlarınızı ${ PASS_APP_NAME } 'e kaydedin."
       ],
       "No password manager selected": [
         "Herhangi bir parola yöneticisi seçilmemiş"

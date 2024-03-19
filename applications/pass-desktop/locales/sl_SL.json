@@ -1,0 +1,2170 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
+    "language": "sl_SL"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Dodaj"
+      ],
+      "Add current URL": [
+        "Dodajte trenutni URL"
+      ],
+      "Add more": [
+        "Dodaj več"
+      ],
+      "Add new item": [
+        "Dodaj nov predmet"
+      ],
+      "Admin panel": [
+        "Administratorska plošča"
+      ],
+      "Advanced": [
+        "Napredno"
+      ],
+      "Advanced options": [
+        "Napredne nastavitve"
+      ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
+      ],
+      "Back": [
+        "Nazaj"
+      ],
+      "Bulk delete items from trash": [
+        "Množično brisanje predmetov iz smetnjaka"
+      ],
+      "Bulk move items to another vault": [
+        "Množično premikanje predmetov v drug trezor"
+      ],
+      "Bulk move items to trash": [
+        "Množično premikanje predmetov v koš"
+      ],
+      "Bulk restore items from trash": [
+        "Množična obnovitev elementov iz smetnjaka"
+      ],
+      "Bulk select items": [
+        "Množično izberite predmete"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Change": [
+        "Spremeni"
+      ],
+      "Choose a file or drag it here": [
+        "Izberite datoteko ali jo povlecite sem"
+      ],
+      "Clear": [
+        "Počisti"
+      ],
+      "Clear search": [
+        "Počisti iskanje"
+      ],
+      "Close": [
+        "Zapri"
+      ],
+      "Close advanced options": [
+        "Zapri napredne možnosti"
+      ],
+      "Close navigation": [
+        "Zapri krmarjenje"
+      ],
+      "Confirm": [
+        "Potrdi"
+      ],
+      "Confirm access": [
+        "Potrdite dostop"
+      ],
+      "Continue": [
+        "Nadaljuj"
+      ],
+      "Copy and close": [
+        "Kopiraj in zapri"
+      ],
+      "Copy to clipboard": [
+        "Kopiraj v odložišče"
+      ],
+      "Create": [
+        "Ustvari"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Ustvarite svoj račun ${ BRAND_NAME }."
+      ],
+      "Create a new vault": [
+        "Ustvari nov trezor"
+      ],
+      "Create a new vault to share": [
+        "Ustvarite nov trezor za skupno rabo"
+      ],
+      "Create alias": [
+        "Ustvari vzdevek"
+      ],
+      "Create card": [
+        "Ustvari kartico"
+      ],
+      "Create login": [
+        "Ustvarite prijavo"
+      ],
+      "Create new items": [
+        "Ustvari nov predmet"
+      ],
+      "Create note": [
+        "Ustvari opombo"
+      ],
+      "Create vault": [
+        "Ustvari nov trezor"
+      ],
+      "Creating vault": [
+        "Ustvari trezor"
+      ],
+      "Customize": [
+        "Prilagodi"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Delete alias": [
+        "Izbriši vzdevek"
+      ],
+      "Delete all": [
+        "Izbriši vse"
+      ],
+      "Delete password": [
+        "Izbriši geslo"
+      ],
+      "Delete permanently": [
+        "Trajno izbriši"
+      ],
+      "Delete vault": [
+        "Izbriši trezor"
+      ],
+      "Deselect": [
+        "Prekliči izbor"
+      ],
+      "Discard": [
+        "Zavrzi"
+      ],
+      "Dismiss": [
+        "Opusti"
+      ],
+      "Download this CSV template": [
+        "Prenesite to predlogo CSV"
+      ],
+      "Edit": [
+        "Uredi"
+      ],
+      "Edit vault": [
+        "Uredi trezor"
+      ],
+      "Export": [
+        "Izvozi"
+      ],
+      "Feedback": [
+        "Povratne informacije"
+      ],
+      "Fill password": [
+        "Izpolni geslo"
+      ],
+      "Filter vault items": [
+        "Filtrirajte predmete v trezorju"
+      ],
+      "Generate alias": [
+        "Ustvarjanje vzdevka"
+      ],
+      "Generate password": [
+        "Ustvari geslo"
+      ],
+      "Generated passwords": [
+        "Generiraj geslo"
+      ],
+      "Get mobile apps": [
+        "Priskrbite si mobilno aplikacijo"
+      ],
+      "Get Started": [
+        "Začnite"
+      ],
+      "Help us improve": [
+        "Pomagajte nam izboljšati"
+      ],
+      "Hide": [
+        "Skrij"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Kako izvozim svoje podatke iz ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Uvoz"
+      ],
+      "Importing": [
+        "Uvažanje"
+      ],
+      "Install extension": [
+        "Namestite razširitev"
+      ],
+      "Invite others": [
+        "Povabi druge"
+      ],
+      "Join shared vault": [
+        "Pridružite se skupnemu trezorju"
+      ],
+      "Learn more": [
+        "Več o tem"
+      ],
+      "Leave": [
+        "Zapusti"
+      ],
+      "Leave vault": [
+        "Zapusti trezor"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Zakleni ${ PASS_APP_NAME }"
+      ],
+      "Make admin": [
+        "Ustvari administratorja"
+      ],
+      "Make editor": [
+        "Ustvari urednika"
+      ],
+      "Make viewer": [
+        "Ustvari obiskovalca"
+      ],
+      "Manage access": [
+        "Upravljanje dostopa"
+      ],
+      "Manually sync your data": [
+        "Ročno sinhroniziraj vaše podatke"
+      ],
+      "More info: ${ safeTitle }": [
+        "Več informacij: ${ safeTitle }"
+      ],
+      "More options": [
+        "Več možnosti"
+      ],
+      "Move": [
+        "Premakni"
+      ],
+      "Move all items": [
+        "Premakni vse predmete"
+      ],
+      "Move to a shared vault": [
+        "Premakni v skupni trezor"
+      ],
+      "Move to another vault": [
+        "Premakni se v drug trezor"
+      ],
+      "Move to Trash": [
+        "Premakni v smetnjak"
+      ],
+      "Move to trash": [
+        "Premakni v smetnjak"
+      ],
+      "Multiple select": [
+        "Več izbir"
+      ],
+      "OK": [
+        "V redu"
+      ],
+      "Open navigation": [
+        "Odpri krmarjenje"
+      ],
+      "Pass for Android": [
+        "Pass za Android"
+      ],
+      "Pass for iOS": [
+        "ProtonPass za iOS"
+      ],
+      "Pin item": [
+        "Pripni predmet"
+      ],
+      "Refresh the page": [
+        "Osveži stran"
+      ],
+      "Regenerate": [
+        "Regeneriraj"
+      ],
+      "Reject": [
+        "Zavrni"
+      ],
+      "Reject invitation": [
+        "Zavrni povabilo"
+      ],
+      "Remove access": [
+        "Odstrani dostop"
+      ],
+      "Remove member": [
+        "Odstrani člana"
+      ],
+      "Request a feature": [
+        "Zahtevaj funkcijo"
+      ],
+      "Resend invitation": [
+        "Ponovno pošlji povabilo"
+      ],
+      "Restore": [
+        "Obnovi"
+      ],
+      "Restore item": [
+        "Obnovi predmet"
+      ],
+      "Retry": [
+        "Poskusite znova"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Saving": [
+        "Shranjeno"
+      ],
+      "See members": [
+        "Ogled članov"
+      ],
+      "Send invite": [
+        "Pošlji povabilo"
+      ],
+      "Send us a message": [
+        "Pošlji sporočilo"
+      ],
+      "Set access level": [
+        "Nastavite raven dostopa"
+      ],
+      "Share": [
+        "Deli"
+      ],
+      "Share this vault": [
+        "Delite ta trezor"
+      ],
+      "Share vault": [
+        "Skupni trezor"
+      ],
+      "Show": [
+        "Pokaži"
+      ],
+      "Sign back in": [
+        "Ponovno se prijavite"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Prijavljeni ste z ${ BRAND_NAME }."
+      ],
+      "Sign out": [
+        "Odjava"
+      ],
+      "Sort vault items": [
+        "Sortiraj predmete v trezorju"
+      ],
+      "Submit": [
+        "Pošlji"
+      ],
+      "Submitting report...": [
+        "Pošiljanje poročila..."
+      ],
+      "Transfer ownership": [
+        "Prenos lastništva"
+      ],
+      "Trash": [
+        "Smeti"
+      ],
+      "Unpin item": [
+        "Odpni predmet"
+      ],
+      "Update vault": [
+        "Posodobi trezor"
+      ],
+      "Upgrade": [
+        "Nadgradi"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade now to share with more people": [
+        "Nadgradite zdaj za skupno rabo z več ljudmi"
+      ],
+      "View history": [
+        "Pokaži zgodovino"
+      ],
+      "View item history": [
+        "Prikaži zgodovino predmeta"
+      ],
+      "View older history": [
+        "Prikaži starejšo zgodovino"
+      ],
+      "Write us on Reddit": [
+        "Pišite nam na Reddit"
+      ],
+      "Write us on Twitter": [
+        "Pišite nam na X (Twitter)"
+      ],
+      "Your password manager not here? Request it.": [
+        "Vašega upravitelj gesel ni tukaj? Zahtevajte ga."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Varčuj pametno. Pridobite leto Pass Plus za samo ${ relativePrice } na mesec."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Ponudba črni petek"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Namizna aplikacija"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Več informacij"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Strni"
+      ],
+      "Expand": [
+        "Razširi"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Datoteke ${ provider } ni bilo mogoče razčleniti. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Možnosti vzdevka ni bilo mogoče razrešiti"
+      ],
+      "Authentication error": [
+        "Napaka pri preverjanju pristnosti"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Preverjanje ni uspelo. Če želite nadaljevati z izvozom, potrdite svoje geslo ${ BRAND_NAME }"
+      ],
+      "Auto-lock could not be activated": [
+        "Samodejnega zaklepanja ni bilo mogoče aktivirati"
+      ],
+      "Auto-lock could not be disabled": [
+        "Samodejnega zaklepanja ni bilo mogoče onemogočiti"
+      ],
+      "Cannot send invitation at the moment": [
+        "Trenutno ni mogoče poslati povabila",
+        "Trenutno ni mogoče poslati povabil\n​",
+        "Trenutno ni mogoče poslati povabil",
+        "Trenutno ni mogoče poslati povabil"
+      ],
+      "Cannot send invitations at the moment": [
+        "Trenutno ni mogoče poslati povabil\n​"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Tega povabila trenutno ni bilo mogoče potrditi"
+      ],
+      "Could not leave vault.": [
+        "Ni bilo mogoče zapustiti trezorja."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Priporočil trenutno ni bilo mogoče naložiti."
+      ],
+      "Could not open created vault": [
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
+      ],
+      "Could not open invited vault": [
+        "Trezorja s povabil ni bilo mogoče odpreti"
+      ],
+      "Could not open updated vault": [
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
+      ],
+      "Could not resolve share members": [
+        "Članov v skupni rabi ni bilo mogoče razrešiti"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Datoteka CSV ne vsebuje pričakovanih glav: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Dešifriranje vaše izvozne datoteke ${ PASS_APP_NAME } ni uspelo. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Brisanje predmeta ni uspelo"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Brisanje trezorja »${ payload.content.name }« ni uspelo"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Odkrita ${ errors.length } poškodovana vrstica CSV",
+        "Odkriti ${ errors.length } poškodovani vrstici CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV"
+      ],
+      "Editing item failed": [
+        "Urejanje predmeta ni uspelo"
+      ],
+      "Empty CSV file": [
+        "Prazna datoteka CSV"
+      ],
+      "Emptying trash failed": [
+        "Praznjenje smetnjaka ni uspelo"
+      ],
+      "Encrypted JSON not supported": [
+        "Šifrirani JSON ni podprt"
+      ],
+      "Error reporting problem": [
+        "Napaka pri prijavi težave"
+      ],
+      "Failed removing the invite.": [
+        "Odstranjevanje povabila ni uspelo."
+      ],
+      "Failed resending invite.": [
+        "Ponovno pošiljanje povabila ni uspelo."
+      ],
+      "Failed to delete selected items": [
+        "Izbranih predmetov ni bilo mogoče izbrisati"
+      ],
+      "Failed to edit user's access.": [
+        "Uporabnikovega dostopa ni bilo mogoče urediti."
+      ],
+      "Failed to load item history": [
+        "Neuspešno nalaganje zgodovine predmetov"
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Ni bilo mogoče premakniti vseh elementov iz »${ payload.content.name }«"
+      ],
+      "Failed to move items": [
+        "Predmetov ni bilo mogoče premakniti"
+      ],
+      "Failed to move items to trash": [
+        "Predmetov ni bilo mogoče premakniti v smetnjak"
+      ],
+      "Failed to pin item": [
+        "Predmeta ni bilo mogoče pripeti"
+      ],
+      "Failed to remove user's access.": [
+        "Uporabnikovega dostopa ni bilo mogoče odstraniti."
+      ],
+      "Failed to restore items from trash": [
+        "Predmetov ni bilo mogoče obnoviti iz smetnjaka"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Prenos lastništva tega trezorja ni uspel."
+      ],
+      "Failed to unpin item": [
+        "Predmeta ni bilo mogoče odpeti"
+      ],
+      "File could not be parsed": [
+        "Datoteke ni bilo mogoče razčleniti"
+      ],
+      "File does not match expected format": [
+        "Datoteka se ne ujema s pričakovano obliko"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Uvoz za trezor \"${ vaultData.name }\" : ${ description } ni uspel"
+      ],
+      "Importing items failed": [
+        "Uvoz predmetov ni uspel"
+      ],
+      "Invalid password manager": [
+        "Neveljaven upravitelj gesel"
+      ],
+      "Invitation could not be accepted": [
+        "Povabila ni bilo mogoče sprejeti"
+      ],
+      "Invitation could not be rejected": [
+        "Povabila ni bilo mogoče zavrniti"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Vsebina predmeta ne sme presegati 40 KB"
+      ],
+      "Item creation failed": [
+        "Ustvarjanje predmeta ni uspelo"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass bo izvozil poškodovano datoteko CSV, če katero od polj vašega elementa vsebuje nepričakovane vejice, narekovaje ali več vrstic"
+      ],
+      "Moving item failed": [
+        "Premikanje predmeta ni uspelo"
+      ],
+      "Offline mode is currently not available for two password mode.": [
+        "Način brez povezave trenutno ni na voljo za način z dvema gesloma."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Način brez povezave trenutno ni na voljo za vaš paket in ni združljiv z načinom z dvema gesloma."
+      ],
+      "Passphrase is incorrect": [
+        "Geslo ni pravilno"
+      ],
+      "PIN codes do not match": [
+        "Kodi PIN se ne ujemata"
+      ],
+      "Request timed out": [
+        "Zahteva se je iztekla"
+      ],
+      "Requesting alias options failed": [
+        "Zahtevanje možnosti vzdevka ni uspelo"
+      ],
+      "Restoring item failed": [
+        "Obnavljanje predmeta ni uspelo"
+      ],
+      "Restoring trashed items failed": [
+        "Obnovitev elementov v smetnjaku ni uspela"
+      ],
+      "Settings update failed": [
+        "Napaka pri posodobitvi nastavitev"
+      ],
+      "Signature verification failed": [
+        "Preverjanje podpisa ni uspelo"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Nekateri trezorji niso več dostopni zaradi ponastavitve gesla. Ponovno aktivirajte ključe računa, da ponovno pridobite dostop. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
+      ],
+      "The file you are trying to import is empty": [
+        "Datoteko, ki jo poskušate uvoziti, je prazna"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "Preveč neuspešnih poskusov. Prosimo, prijavite se znova."
+      ],
+      "Trashing item failed": [
+        "Premeščanje elementa v smetnjak ni uspelo"
+      ],
+      "Unable to boot": [
+        "Ni mogoče zagnati"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Za ta element ni mogoče ustvariti kode OTP"
+      ],
+      "Unable to sync": [
+        "Ni mogoče sinhronizirati"
+      ],
+      "Unknown error": [
+        "Neznana napaka"
+      ],
+      "Unknown invite": [
+        "Neznano povabilo"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Nepodprta oblika datoteke ${ PASS_APP_NAME }"
+      ],
+      "Unsupported 1Password file format": [
+        "Nepodprt format datoteke 1Password"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Posodabljanje trezorja »${ payload.content.name }« ni uspelo"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Ustvarjanje trezorja »${ payload.content.name }« ni uspelo"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Trezorja »${ vaultData.name }« ni bilo mogoče ustvariti"
+      ],
+      "Vault name does not match": [
+        "Ime trezorja se ne ujema"
+      ],
+      "Wrong password": [
+        "Napačno geslo"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Napačna koda PIN. Poskusi ponovno."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }"
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "Ups, nekaj je šlo narobe"
+      ],
+      "Please refresh the page or try again later.": [
+        "Osvežite stran ali poskusite znova pozneje."
+      ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajti",
+        "bajtov"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "kB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajti",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajti",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajti",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajti",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Nadgradite na plačljivi načrt, da ustvarite več trezorjev."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "Posodobitev »${ payload.item.data.metadata.name }« je bila opuščena"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } povabil je bilo uspešno poslanih"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } člani",
+        "${ memberCount } člana",
+        "${ memberCount } člana"
+      ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat",
+        "${ modifiedCount }-krat"
+      ],
+      "${ n } item": [
+        "${ n } predmet",
+        "${ n } predmeti",
+        "${ n } predmeta",
+        "${ n } predmeta"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } bo prikazal priljubljeno ikono predmeta prek proxyja anonimizirane slike ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in kreditne kartice."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } bo zahteval ${ BRAND_NAME } geslo za dostop do podatkov v načinu brez povezave."
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dni, da brezplačno preizkusite vrhunske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
+      ],
+      "Access successfully confirmed": [
+        "Dostop je uspešno potrjen"
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Po nedejavnosti bo za dostop do ${ PASS_APP_NAME } potrebna koda PIN za odklepanje vaše seje. Po 3 neuspelih poskusih boste odjavljeni."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Po uspešnem uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Vsi premeti iz »${ payload.content.name }« so bili uspešno premaknjeni"
+      ],
+      "All items successfully moved": [
+        "Vsi predmeti so uspešno premaknjeni"
+      ],
+      "All trashed items permanently deleted": [
+        "Vse predmete v smetnjaku trajno izbrisanti"
+      ],
+      "All trashed items successfully restored": [
+        "Vsi predmeti v smetnjaku so bili uspešno obnovljeni"
+      ],
+      "An item previously shared with you was removed": [
+        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Ali ste prepričani, da želite premakniti vse predmete iz »${ fromVaultName }« v »${ toVaultName }«?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Ali ste prepričani, da želite premakniti predmete v \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Ali ste prepričani, da želite premakniti predmet v \"${ name }\"?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Samodejno zaklepanje je uspešno onemogočeno"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Prenesite svoja obstoječa gesla v ${ BRAND_NAME }."
+      ],
+      "Built in 2FA authenticator": [
+        "Vgrajen 2FA autentifikator"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Lahko ustvarja, ureja, briše in izvaža elemente v tem trezorju."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Lahko odobri in prekliče dostop do tega trezorja."
+      ],
+      "Can view items in this vault.": [
+        "Lahko si ogleda predmete v tem trezorju."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Čestitamo, vaš dostop je potrjen"
+      ],
+      "Copied to clipboard": [
+        "Kopirano v odložišče"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV ponuja priročno obliko za ogled vaših podatkov. Vendar zaradi enostavnosti nekateri podatki ne bodo vključeni (polja po meri, struktura trezorja ...). Za celoten izvoz priporočamo uporabo drugega formata."
+      ],
+      "Current version": [
+        "Trenutna različica"
+      ],
+      "Decrypting your data": [
+        "Dešifriranje vaših podatkov"
+      ],
+      "Deleted items will be moved here first": [
+        "Izbrisani predmeti bodo najprej premaknjeni sem"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Brisanje »${ payload.content.name }«"
+      ],
+      "Drop file here to upload": [
+        "Spusti datoteko tukaj za nalaganje."
+      ],
+      "Drop to import": [
+        "Spusti za uvoz."
+      ],
+      "Editor": [
+        "Urejevalnik"
+      ],
+      "Emptying trash...": [
+        "Izprazni smetnjak..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Vnesite potrditveno kodo. Števka ${ digit }."
+      ],
+      "Fill in the CSV with your data": [
+        "Izpolnite CSV s svojimi podatki"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Za uvoz podatkov z generičnim CSV sledite tem korakom:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Iz varnostnih razlogov mora biti vaš dostop potrjen"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Kar najbolje izkoristite Pass tako, da ustvarite trezor za vsako ekipo ali projekt."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
+      ],
+      "Import in progress:": [
+        "Uvoz v teku:"
+      ],
+      "Import the CSV file below.": [
+        "Uvozite spodnjo datoteko CSV."
+      ],
+      "Imported ${ payload.total } item": [
+        "Uvožen ${ payload.total } predmet",
+        "Uvožena ${ payload.total } predmeta",
+        "Uvoženi ${ payload.total } predmeti",
+        "Uvoženi ${ payload.total } predmeti"
+      ],
+      "Imported on ${ date }": [
+        "Uvoženo dne ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Za najboljšo izkušnjo aplikacije ${ PASS_APP_NAME } podelite potrebna dovoljenja za razširitev"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Namestite ${ PASS_APP_NAME } za ${ browser.title } za hitro samodejno izpolnjevanje vaših prijav."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Namestite ${ PASS_APP_NAME } za ${ browser.title } za hitro samodejno izpolnjevanje vaših prijav. "
+      ],
+      "Internet connection lost": [
+        "Internetna povezava je prekinjena"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internetna povezava je izgubljena. Preverite povezavo naprave."
+      ],
+      "Invitation sent": [
+        "Povabilo poslano."
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Povabite določene ljudi in nastavite prava dovoljenja."
+      ],
+      "Invite successfully removed": [
+        "Vabilo je bilo uspešno odstranjen"
+      ],
+      "Invite successfully resent": [
+        "Povabilo uspešno ponovno poslano"
+      ],
+      "Invite successfully sent": [
+        "Vabilo uspešno poslano"
+      ],
+      "invites you to access items in": [
+        "vas vabi k dostopu do predmetov v"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Videti je, da ste že prijavljeni v ${ PASS_APP_NAME }. Če se poskušate prijaviti z drugim računom, se najprej odjavite iz razširitve."
+      ],
+      "item": [
+        "predmet",
+        "predmeta",
+        "predmeti",
+        "predmeti"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Predmet »${ payload.item.data.metadata.name }« je ustvarjen"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Predmet »${ payload.item.data.metadata.name }« je posodobljen"
+      ],
+      "Item moved to trash": [
+        "Predmet premaknjen v smetnjak"
+      ],
+      "Item permanently deleted": [
+        "Predmet je trajno izbrisan"
+      ],
+      "Item restored": [
+        "Predmet je bil obnovljen."
+      ],
+      "Item successfully moved": [
+        "Predmet je bil uspešno premaknjen"
+      ],
+      "Item successfully pinned": [
+        "Predmet je bil uspešno pripet"
+      ],
+      "Item successfully unpinned": [
+        "Predmet je bil uspešno odpet"
+      ],
+      "Leaving vault...": [
+        "Zapuščam trezor..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Začnimo z ustvarjanjem vašega prvega predmeta"
+      ],
+      "Loading": [
+        "Nalaganje"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } se nalaga"
+      ],
+      "Locking your session...": [
+        "Zaklepam vašo sejo..."
+      ],
+      "Logging you out...": [
+        "Izpisujem..."
+      ],
+      "me": [
+        "jaz"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Več kot upravitelj gesel, ${ PASS_APP_NAME } ščiti vaše geslo in vaš osebni e-poštni naslov prek e-poštnih vzdevkov. Vaši podatki, ki jih poganja ista tehnologija za ${ MAIL_APP_NAME }, so šifrirani od konca do konca in dostopni samo vam."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Premikanje vseh predmetov iz »${ payload.content.name }«"
+      ],
+      "Moving an item to another vault will erase its history": [
+        "Premikanje predmeta v drug trezor bo izbrisalo njegovo zgodovino."
+      ],
+      "Moving items": [
+        "Premikanje predmetov"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Premikanje predmetov v drug trezor bo izbrisalo njihovo zgodovino."
+      ],
+      "Moving items to trash": [
+        "Premikanje predmetov v smetnjak"
+      ],
+      "Never": [
+        "Nikoli"
+      ],
+      "No network connection": [
+        "Ni omrežne povezave"
+      ],
+      "None": [
+        "Brez"
+      ],
+      "Offline mode": [
+        "Način brez povezave"
+      ],
+      "Offline mode could not be enabled at the moment": [
+        "Način brez povezave trenutno ne more biti vključen"
+      ],
+      "Offline support successfully disabled": [
+        "Način brez povezave je onemogočen"
+      ],
+      "Owner": [
+        "Lastnik"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Lastništvo uspešno preneseno. Niste več lastnik tega trezorja."
+      ],
+      "Pass Plus trial": [
+        "Pass Plus preizkus"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine."
+      ],
+      "Permanently deleting selected items": [
+        "Trajno brisanje izbranih predmetov"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN koda uspešno registrirana. Uporabite ga za odklepanje ${ PASS_APP_NAME }"
+      ],
+      "Pinning item...": [
+        "Pripenjanje predmeta..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potrdite svoje ${ BRAND_NAME } geslo, da omogočite način brez povezave"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Prosimo, potrdite kodo PIN, če želite odjaviti trenutno ključavnico.\n${ PASS_APP_NAME } se potem ne bo nikoli zaklenila."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Za urejanje te nastavitve potrdite kodo PIN."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Potrdite kodo PIN, da dokončate registracijo za nastavitev samodejnega zaklepanja."
+      ],
+      "Please consider leaving a review.": [
+        "Prosimo, razmislite o pisanju ocene."
+      ],
+      "Please enter your current PIN code to continue": [
+        "Za nadaljevanje vnesite veljaven PIN"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Nadgradite za zgodnji dostop do spletne aplikacije ${ PASS_APP_NAME }"
+      ],
+      "Press Enter to copy": [
+        "Pritisnite Enter za kopiranje"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Zasebnost je za nas velika skrb. Preberite, zakaj je ${ PASS_APP_NAME } drugačna."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Račun je zaščiten z ${ PROTON_SENTINEL_LINK }, našim naprednim programom"
+      ],
+      "Reconnect": [
+        "Ponovno vzpostavite povezavo"
+      ],
+      "Restoring items from trash": [
+        "Obnavljanje predmetov iz smetnjaka"
+      ],
+      "Restoring trashed items...": [
+        "Obnovitev predmetov v smetnjaku..."
+      ],
+      "Select destination vault": [
+        "Izberite ciljni trezor"
+      ],
+      "Select vault to share": [
+        "Izberite trezor za skupno rabo"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Izberite, kam želite shraniti uvožene trezorje."
+      ],
+      "Selected items permanently deleted": [
+        "Izbrani predmeti so trajno izbrisani"
+      ],
+      "Selected items successfully moved to trash": [
+        "Izbrani predmeti so bili uspešno premaknjeni v semtnjak"
+      ],
+      "Selected items successfully restored from trash": [
+        "Izbrani elementi so bili uspešno obnovljeni iz smetnjaka"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
+      ],
+      "Session timed out": [
+        "Seja je potekla"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Nastavite kodo PIN za enostavno zaklepanje podatkov"
+      ],
+      "Setting up offline mode...": [
+        "Pripravljanje načina brez povezave"
+      ],
+      "Settings successfully updated": [
+        "Nastavitve so bile uspešno posodobljene"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Delite svoje prijave, varne zapiske z do 10 osebami"
+      ],
+      "Signing you in": [
+        "Vpisujem vas"
+      ],
+      "Successfully exported all your items": [
+        "Vsi vaši predmeti so bili uspešno izvoženi"
+      ],
+      "Successfully left the vault": [
+        "Uspešno ste zapustil trezor"
+      ],
+      "Successfully synced all vaults": [
+        "Uspešno so sinhronizirani vsi trezorji"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Preklopite v drug trezor ali ustvarite predmet v tem trezorju"
+      ],
+      "Syncing your vaults…": [
+        "Sinhronizacija vaših trezorjev …"
+      ],
+      "Thank you, the problem has been reported": [
+        "Hvala, težava je bila prijavljena"
+      ],
+      "The export will only contain vaults that you own.": [
+        "Izvoz bo vseboval le trezorje, ki so v vaši lasti."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Izvožena datoteka bo šifrirana s PGP in zahteva močno geslo."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Tega predmeta ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh dveh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
+        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Besedilo, ki ga poskušate prilepiti, presega največjo dovoljeno dolžino ${ maxLength } znakov."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Uporabnik še ni sprejel vabila."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Ta izvoz bo nešifriran in vsak, ki ima dostop do vaše izvožene datoteke, bo lahko videl vaša gesla. Zaradi varnosti ga izbrišite, ko ga nehate uporabljati."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Ta trezor trenutno ni v skupni rabi z nikomer. Povabite ljudi, da to delijo z drugimi."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Ta različica bo dodana v zgodovino kot najnovejša različica."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Izberite, kam želite shraniti svoje uvožene trezorje. Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
+      ],
+      "Unable to copy to clipboard": [
+        "Kopiranja v odložišče ni mogoče"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomejeno število vzdevkov ide-my-email"
+      ],
+      "Unpinning item...": [
+        "Odpenjanje predmeta..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Nadgradite zdaj, da odklenete Premium funkcije"
+      ],
+      "Use vaults to share this item with others.": [
+        "Uporabite trezorje za skupno rabo predmetov z drugimi."
+      ],
+      "User's access removed": [
+        "Uporabnikov dostop odstranjen"
+      ],
+      "User's access sucessfuly updated": [
+        "Uporabnikov dostop je bil uspešno posodobljen"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Trezor \"${ payload.content.name }\" je uspešno izbrisan"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Trezor \"${ payload.share.content.name }\" je bil uspešno ustvarjen"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Trezor \"${ payload.share.content.name }\" je bil uspešno posodobljen"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Trezor \"${ share.content.name }\" je bil odstranjen"
+      ],
+      "Viewer": [
+        "Preglednik"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You are about to create:": [
+        "Ustvarili boste:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Sedaj lahko uporabljate ${ BRAND_NAME } geslo za dostop do ${ PASS_SHORT_APP_NAME } v načinu brez povezave"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nabiralnikov za ta vzdevek ne morete spremeniti."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Imate še ${ daysRemaining } dan, da preizkusite te in druge vrhunske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premium funkcije."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje elementov med vsemi trezorji nadgradite svojo naročnino."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Da ustvarite nov predmet v trezorjih nadgradite svojo naročnino."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Dosegli ste omejitev vzdevkov, ki jih lahko ustvarite. Ko nadgradite svojo naročnino, ustvarite neomejeno število vzdevkov."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Dosegli ste omejitev trezorjev, ki jih lahko ustvarite."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
+      ],
+      "You're invited to a vault.": [
+        "Vabljeni ste v trezor."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše datoteke bodo šifrirane in nato shranjene."
+      ]
+    },
+    "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length }/ znak",
+        "${ config.options.length }/ znaka",
+        "${ config.options.length } znakov",
+        "${ config.options.length } znakov"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } beseda",
+        "${ config.options.wordCount } besedi",
+        "${ config.options.wordCount } besed",
+        "${ config.options.wordCount } besed"
+      ],
+      "1 hour": [
+        "1 ura"
+      ],
+      "1 minute": [
+        "1 minuta"
+      ],
+      "10 minutes": [
+        "10 minut"
+      ],
+      "15 minutes": [
+        "15 minut"
+      ],
+      "2FA secret key (TOTP)": [
+        "Skrivni ključ 2FA (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Koda 2FA (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minut"
+      ],
+      "30 seconds": [
+        "30 sekund"
+      ],
+      "5 minutes": [
+        "5 minut"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Račun"
+      ],
+      "Alias": [
+        "Vzdevek"
+      ],
+      "Alias address": [
+        "Vzdevek naslova"
+      ],
+      "Aliases": [
+        "Vzdevki"
+      ],
+      "All": [
+        "Vse"
+      ],
+      "All vaults": [
+        "Vsi trezorji"
+      ],
+      "Alphabetical": [
+        "Po abecednem redu"
+      ],
+      "Application logs": [
+        "Dnevniki aplikacij"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Samodejno zaklepanje ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock after": [
+        "Samodejno zaklepanje po"
+      ],
+      "Capital letters (A-Z)": [
+        "Velike črke (A-Z)"
+      ],
+      "Capitalise": [
+        "Napiši veliko začetnico"
+      ],
+      "Card": [
+        "Kartica"
+      ],
+      "Card number": [
+        "Številka kartice"
+      ],
+      "Cards": [
+        "Kartice"
+      ],
+      "Confirm vault name": [
+        "Potrdite ime trezorja"
+      ],
+      "Create a credit card": [
+        "Ustvarite kreditno kartico"
+      ],
+      "Create a hide-my-email alias": [
+        "Ustvari vzdevek Hide-my-email"
+      ],
+      "Create a login": [
+        "Ustvarite prijavo"
+      ],
+      "Create an encrypted note": [
+        "Ustvarite šifrirano opombo"
+      ],
+      "Create new vault": [
+        "Ustvari nov trezor"
+      ],
+      "Created": [
+        "Ustvarjeno"
+      ],
+      "Display": [
+        "Zaslon"
+      ],
+      "Domain": [
+        "Domena"
+      ],
+      "Download logs": [
+        "Prenesite dnevnike"
+      ],
+      "Empty trash": [
+        "Izprazni smetnjak"
+      ],
+      "Enable offline access": [
+        "Omogoči način brez povezave"
+      ],
+      "Expiration date": [
+        "Datum poteka"
+      ],
+      "Export": [
+        "Izvozi"
+      ],
+      "Field name": [
+        "Ime polja"
+      ],
+      "File format": [
+        "Format datoteke"
+      ],
+      "Forwards to": [
+        "Posreduje na"
+      ],
+      "General": [
+        "Splošno"
+      ],
+      "Generic CSV": [
+        "Generični CSV"
+      ],
+      "Grant": [
+        "Odobri"
+      ],
+      "Hidden": [
+        "Skrito"
+      ],
+      "Hide password": [
+        "Skrij geslo"
+      ],
+      "Import": [
+        "Uvoz"
+      ],
+      "Import passwords": [
+        "Uvozi gesla"
+      ],
+      "Imported from : ": [
+        "Uvoćeno iz : "
+      ],
+      "Imported on : ": [
+        "Uvoženo dne : "
+      ],
+      "Include numbers": [
+        "Vključi številke"
+      ],
+      "Include numbers (0-9)": [
+        "Vključi številke (0-9)"
+      ],
+      "Invitations": [
+        "Vabila"
+      ],
+      "Item ID": [
+        "ID predmeta"
+      ],
+      "Key": [
+        "Ključ"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Bližnjica na tipkovnici: ${ shortcut }"
+      ],
+      "Language": [
+        "Jezik"
+      ],
+      "Last 2 weeks": [
+        "Zadnja 2 tedna"
+      ],
+      "Last month": [
+        "Prejšnji mesec"
+      ],
+      "Last week": [
+        "Prejšnji teden"
+      ],
+      "Latest import": [
+        "Zadnji uvoz"
+      ],
+      "Learn more": [
+        "Več informacij"
+      ],
+      "Login": [
+        "Prijava"
+      ],
+      "Logins": [
+        "Prijave"
+      ],
+      "Make all admins": [
+        "Omogoči vsem adminstratorja"
+      ],
+      "Make all editors": [
+        "Omogoči vsem urejanje"
+      ],
+      "Make all viewers": [
+        "Omogoči ogled vsem"
+      ],
+      "Members": [
+        "Člani"
+      ],
+      "Modified": [
+        "Spremenjeno"
+      ],
+      "More than a month": [
+        "Več kot mesec dni"
+      ],
+      "Most recent": [
+        "Najnovejši"
+      ],
+      "Name": [
+        "Ime"
+      ],
+      "Name on card": [
+        "Ime na kartici"
+      ],
+      "Need help ?": [
+        "Potrebujete pomoč?"
+      ],
+      "New vault": [
+        "Nov trezor"
+      ],
+      "New-Old": [
+        "Novo-staro"
+      ],
+      "Newest to oldest": [
+        "Od najnovejšega do najstarejšega"
+      ],
+      "No history": [
+        "Brez zgodovine"
+      ],
+      "Note": [
+        "Opomba"
+      ],
+      "Notes": [
+        "Opombe"
+      ],
+      "Offline mode": [
+        "Način brez povezave"
+      ],
+      "Old-New": [
+        "Staro-novo"
+      ],
+      "Oldest to newest": [
+        "Od starejšega do najnovejšega"
+      ],
+      "Passkey": [
+        "Identifikacijski ključ"
+      ],
+      "Passphrase": [
+        "Geslo"
+      ],
+      "Password": [
+        "Geslo"
+      ],
+      "Password history": [
+        "Zgodovina gesel"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP šifriran JSON (priporočeno)"
+      ],
+      "PIN": [
+        "PIN koda"
+      ],
+      "Prefix": [
+        "Predpona"
+      ],
+      "Rate us": [
+        "Ocenite nas"
+      ],
+      "Recent": [
+        "Nedavno"
+      ],
+      "Report a problem": [
+        "Prijavi težavo"
+      ],
+      "Restore all items": [
+        "Obnovi vse predmete"
+      ],
+      "Reveal password": [
+        "Razkrij geslo"
+      ],
+      "Security": [
+        "Varnost"
+      ],
+      "Security code": [
+        "Varnostna koda"
+      ],
+      "Select an email address": [
+        "Izberite e-poštni naslov"
+      ],
+      "Select preferred language": [
+        "Izberite želeni jezik"
+      ],
+      "Select your password manager": [
+        "Izberite upravitelja gesel"
+      ],
+      "Selected": [
+        "Izbrano"
+      ],
+      "Session locking": [
+        "Zaklepanje seje"
+      ],
+      "Set PIN code": [
+        "Nastavi kodo PIN"
+      ],
+      "Show website favicons": [
+        "Pokaži ikone spletnega mesta"
+      ],
+      "Special characters (!&*)": [
+        "Posebni znaki (!&*)"
+      ],
+      "Suffix": [
+        "Pripona"
+      ],
+      "Support": [
+        "Podpora"
+      ],
+      "Text": [
+        "Besedilo"
+      ],
+      "Title": [
+        "Naslov"
+      ],
+      "Today": [
+        "Danes"
+      ],
+      "Total imported items : ": [
+        "Skupaj uvoženih predmetov : "
+      ],
+      "Total items : ": [
+        "Skupaj predmetov : "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Smeti"
+      ],
+      "Type": [
+        "Vrsta"
+      ],
+      "Unnamed Credit Card": [
+        "Neimenovana kreditna kartica"
+      ],
+      "Unnamed item": [
+        "Neimenovan predmet"
+      ],
+      "Unnamed note": [
+        "Neimenovan predmet"
+      ],
+      "Untitled": [
+        "Brez naslova"
+      ],
+      "Update": [
+        "Posodobi"
+      ],
+      "Username": [
+        "Uporabniško ime"
+      ],
+      "Username (alias)": [
+        "Uporabniško ime (vzdevek)"
+      ],
+      "Username (new alias)": [
+        "Uporabniško ime (nov vzdevek)"
+      ],
+      "Vault": [
+        "Trezor"
+      ],
+      "Vault ID": [
+        "ID trezorja"
+      ],
+      "Vaults": [
+        "Trezorji"
+      ],
+      "View details": [
+        "Prikaži podrobnosti"
+      ],
+      "View logs": [
+        "Prikaži dnevnik"
+      ],
+      "Websites": [
+        "Spletne strani"
+      ],
+      "You are about to create": [
+        "Ustvarili boste"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Vnesi svojo PIN kodo."
+      ],
+      "Sign in to your account": [
+        "Vpišite se v svoj račun"
+      ],
+      "You are currently offline. Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Trenutno ste brez povezave. Odklenite ${ PASS_SHORT_APP_NAME } z vašim ${ BRAND_NAME } geslom"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Odkleni ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Dobrodošli v ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } predmet",
+        "${ count } predmeti",
+        "${ count } predmeti",
+        "${ count } predmeti"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "V tem trezorju ste izbrali ${ semiboldText }"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Vejice"
+      ],
+      "Hyphens": [
+        "Vezaji"
+      ],
+      "Memorable Password": [
+        "Geslo, ki si ga je mogoče zapomniti"
+      ],
+      "Numbers": [
+        "Številke"
+      ],
+      "Numbers and Symbols": [
+        "Številke in simboli"
+      ],
+      "Periods": [
+        "Pike"
+      ],
+      "Random Password": [
+        "Naključno geslo"
+      ],
+      "Spaces": [
+        "Presledki"
+      ],
+      "Underscores": [
+        "Podčrtaji"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Dodajte skrivni ključ 2FA"
+      ],
+      "Add hidden text": [
+        "Dodajte skrito besedilo"
+      ],
+      "Add note": [
+        "Dodaj opombo"
+      ],
+      "Add text": [
+        "Dodaj tekst"
+      ],
+      "Email address": [
+        "E-poštni naslov"
+      ],
+      "Enter a note...": [
+        "Vnesite opombe..."
+      ],
+      "Enter a prefix": [
+        "Vnesite pripono"
+      ],
+      "Enter email or username": [
+        "Vnesite e-pošto ali uporabniško ime"
+      ],
+      "Enter password": [
+        "Vnesite geslo"
+      ],
+      "Full Name": [
+        "Polno ime"
+      ],
+      "MM/YY": [
+        "MM/LL"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Password": [
+        "Geslo"
+      ],
+      "Pick a vault": [
+        "Izberite trezor"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Opišite težavo in vključite morebitna sporočila o napakah"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Znova vnesite \"${ vaultName }\", da potrdite izbris"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Iskanje ${ pluralItemType } v ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Išči ${ pluralItemType } v vseh trezorjih"
+      ],
+      "Search in ${ vaultName }": [
+        "Iskanje ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Iskanje v vseh trezorjih"
+      ],
+      "Search in Trash": [
+        "Iskanje v smetnjaku"
+      ],
+      "Select a suffix": [
+        "Izberite pripono"
+      ],
+      "Shared vault": [
+        "Skupni trezor"
+      ],
+      "Unknown origin": [
+        "Neznanega izvora"
+      ],
+      "Untitled": [
+        "Brez naslova"
+      ],
+      "Used on ${ url }": [
+        "Uporabljeno na ${ url }"
+      ],
+      "Write your note": [
+        "Napišite svojo opombo"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov.",
+        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Posodobitev samodejnega zaklepanja"
+      ],
+      "Confirm PIN code": [
+        "Potrdi PIN kodo"
+      ],
+      "Create a vault": [
+        "Ustvari nov trezor"
+      ],
+      "Create PIN code": [
+        "Ustvari PIN kodo"
+      ],
+      "Created": [
+        "Ustvarjeno"
+      ],
+      "Current version": [
+        "Trenutna različica"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Želite izbrisati trezor \"${ vaultName }\"?"
+      ],
+      "Discard changes?": [
+        "Zavrzi spremembe?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Uživate v ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Vnesite geslo"
+      ],
+      "Enter your PIN": [
+        "Vnesite PIN"
+      ],
+      "Get Started": [
+        "Začnite"
+      ],
+      "Grant permissions": [
+        "Odobrite dovoljenja"
+      ],
+      "History": [
+        "Zgodovina"
+      ],
+      "Import - ${ date }": [
+        "Uvoz - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Uvozi v trezor(je)"
+      ],
+      "Import your data": [
+        "Uvozi svoje podatke"
+      ],
+      "Install extension": [
+        "Namestite razširitev"
+      ],
+      "Last autofill": [
+        "Zadnje samodejno izpolnjevanje"
+      ],
+      "Last modified": [
+        "Zadnjič spremenjeno"
+      ],
+      "Leave vault ?": [
+        "Zapuščate trezor ?"
+      ],
+      "Low disk space": [
+        "Malo prostora na disku"
+      ],
+      "Member limit": [
+        "Omejitev članov"
+      ],
+      "Members": [
+        "Člani"
+      ],
+      "Modified": [
+        "Spremenjeno"
+      ],
+      "Move all items ?": [
+        "Premaknem vse predmete?"
+      ],
+      "Move item?": [
+        "Premaknem predmet?"
+      ],
+      "Move items?": [
+        "Premaknem predmete?"
+      ],
+      "No items selected": [
+        "Izbran ni noben predmet"
+      ],
+      "Our welcome gift to you": [
+        "Naše darilo dobrodošlice za vas"
+      ],
+      "Passkey": [
+        "Identifikacijski ključ"
+      ],
+      "Pending access to the shared data": [
+        "Čakanje na dostop do podatkov v skupni rabi"
+      ],
+      "Permanently remove all items ?": [
+        "Ali želite trajno odstraniti vse elemente ?"
+      ],
+      "Pinned (${ items.length })": [
+        "Pripeto (${ items.length })"
+      ],
+      "Restore this version?": [
+        "Obnovi to različico?"
+      ],
+      "Review and share": [
+        "Preglejte in delite"
+      ],
+      "Secure your data": [
+        "Zavarujte svoje podatke"
+      ],
+      "Set access level": [
+        "Nastavite raven dostopa"
+      ],
+      "Settings": [
+        "Nastavitve"
+      ],
+      "Share vaults with your team": [
+        "Delite trezorje s svojo ekipo"
+      ],
+      "Share with": [
+        "Deli z"
+      ],
+      "Suggestions": [
+        "Predlogi"
+      ],
+      "Transfer ownership": [
+        "Prenos lastništva"
+      ],
+      "Trash empty": [
+        "Smetnjak je prazen"
+      ],
+      "Update available": [
+        "Na voljo je nadgradnja!"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Nadgradite za odklepanje Premium funkcij"
+      ],
+      "Vault": [
+        "Trezor"
+      ],
+      "Vault shared with you": [
+        "Trezor v skupni rabi z vami"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Zakaj ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Vaša košarica je prazna"
+      ],
+      "Your welcome gift": [
+        "Vaš bonus za dobrodošlico"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Podvojeni URL-ji"
+      ],
+      "Field name is required": [
+        "Ime polja je obvezno"
+      ],
+      "OTP secret or URI is invalid": [
+        "Skrivnost OTP ali URI ni veljaven"
+      ],
+      "OTP secret or URI required": [
+        "Zahtevana je skrivnost OTP ali URI"
+      ],
+      "Url already exists": [
+        "Url že obstaja"
+      ],
+      "URL cannot be empty": [
+        "URL vnos ne sme biti prazen."
+      ],
+      "Url is invalid": [
+        "Naslov Url ni veljaven"
+      ],
+      "URL is invalid": [
+        "Naslov URL ni veljaven."
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "Potreben je opis težave"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Vzdevek »${ name }« se trenutno uporablja v elementu prijave »${ relatedLoginName }«. Prav tako ne boste več prejemali e-poštnih sporočil, poslanih na »${ aliasEmail }«"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Vsi vaši predmeti v smeti bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
+      ],
+      "An error occured while exporting your data": [
+        "Med izvozom vaših podatkov je prišlo do napake"
+      ],
+      "At least one email address is required": [
+        "Potreben je vsaj en e-poštni naslov"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Nabiralnikov za ta vzdevek trenutno ni mogoče pridobiti"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Ni bilo mogoče ustvariti trezorja »${ vaultName }«"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Povabil ni bilo mogoče poslati na naslednje naslove:"
+      ],
+      "Duplicate email addresses.": [
+        "Podvojeni e-poštni naslovi."
+      ],
+      "Empty note": [
+        "Prazna opomba"
+      ],
+      "Encryption password is required": [
+        "Zahtevano je geslo za šifriranje"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Datum poteka ni v obliki MM/LL"
+      ],
+      "Invalid alias prefix": [
+        "Neveljavna predpona vzdevka"
+      ],
+      "Invalid email addresses.": [
+        "Neveljavni e-poštni naslovi."
+      ],
+      "item was imported without custom fields": [
+        "element je bil uvožen brez polj po meri"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }"
+      ],
+      "Missing alias prefix": [
+        "Manjka pripona vzdevka"
+      ],
+      "Missing alias suffix": [
+        "Manjka pripona vzdevka"
+      ],
+      "No items": [
+        "Ni predmetov"
+      ],
+      "No items in trash matching": [
+        "Noben predmet v košu se ne ujema"
+      ],
+      "No items matching": [
+        "Noben predmet se ne ujema"
+      ],
+      "No password manager selected": [
+        "Izbran ni noben upravitelj gesel"
+      ],
+      "No results": [
+        "Ni rezultatov"
+      ],
+      "Offline": [
+        "Brez povezave"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
+      ],
+      "Passphrase is required": [
+        "Zahtevano je geslo"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP šifrirana izvozna datoteka zahteva geslo"
+      ],
+      "Please contact us for investigating the issue": [
+        "Prosimo kontaktirajte nas, da raziščemo težavo"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati skupno rabo trezorja"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Predpona vzdevka ne sme biti daljša od 40 znakov"
+      ],
+      "Title is required": [
+        "Naslov je obvezen"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Želite prenesti lastništvo tega trezorja na ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Vzdevke v smetnjak?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Ni se mogoče prijaviti v ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Trezor \"${ vaultName }\" in vsi njegovi elementi bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
+      ],
+      "Vault name is required": [
+        "Zahtevano je ime trezorja"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Ne morete ustvariti več trezorjev, kot dovoljuje vaša naročnina."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Dosegli ste omejitev članov, ki lahko dostopajo do tega trezorja."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Dosegli ste omejitev uporabnikov v tem trezorju. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Dosegli ste omejitev trezorjev, ki jih lahko imate v načrtu."
+      ],
+      "You have unsaved changes.": [
+        "Imate neshranjene spremembe."
+      ],
+      "You must select at least one mailbox": [
+        "Izbrati morate vsaj en poštni nabiralnik"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Ne boste več imeli dostopa do tega trezorja. Če se mu želite ponovno pridružiti, potrebujete novo povabilo."
+      ],
+      "Your session could not be authorized.": [
+        "Vaše povezave ni mogoče avtorizirati"
+      ],
+      "Your session could not be resumed.": [
+        "Vaše povezave ni mogoče nadaljevati."
+      ],
+      "Your session is inactive.": [
+        "Vaša seja je neaktivna."
+      ],
+      "Your session was locked.": [
+        "Vaša povezava je zaklenjena."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi elementi bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
+      ]
+    }
+  }
+}
