@@ -60,6 +60,8 @@ const createSession = () => {
                 return config.windowsClientID || config.clientID;
             case 'darwin':
                 return config.macosClientID || config.clientID;
+            case 'linux':
+                return config.linuxClientID || config.clientID;
             default:
                 return config.clientID;
         }
