@@ -4530,6 +4530,12 @@
       "Closing this means giving up the free storage bonus.": [
         "Dacă închideți renunțați la bonusul de stocare gratuită."
       ],
+      "Congratulations, you completed all the steps!": [
+        "Felicitări, ați completat toți pașii!"
+      ],
+      "Congratulations, you finished!": [
+        "Felicitări, ați terminat!"
+      ],
       "Continue setting up your email": [
         "Continuați setarea contului"
       ],
@@ -7598,6 +7604,14 @@
         "Gunoi"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
@@ -7605,11 +7619,35 @@
       "10 email addresses": [
         "10 adrese de e-mail"
       ],
+      "Auto-delete Spam and Trash": [
+        "Ștergere automată mesaje nedorite și din gunoi"
+      ],
+      "Custom schedule send and snooze times": [
+        "Programări personale și amânări"
+      ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Reînnoire cu ${ renewablePrice }, anulați oricând"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "pentru prima lună"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Ofertă limitată, expiră la 2 aprilie 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Luați ${ planName } cu doar ${ planPrice }"
       ]
     },
     "Message": {
@@ -7965,6 +8003,11 @@
       ],
       "Senders blocked": [
         "Expeditori blocați"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
       ]
     },
     "Oauth instructions": {
