@@ -86,7 +86,6 @@ export const addressKeysListener = (startListening: SharedStartListening<Address
             if (!changedAddresses.length) {
                 return;
             }
-            listenerApi.cancelActiveListeners();
             await Promise.all(
                 changedAddresses.map((address) =>
                     listenerApi.dispatch(
