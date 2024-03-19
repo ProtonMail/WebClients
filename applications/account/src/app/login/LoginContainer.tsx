@@ -5,14 +5,11 @@ import { c } from 'ttag';
 
 import {
     AbuseModal,
-    DesktopAppLoginErrorUpsell,
     OnLoginCallback,
     useApi,
     useConfig,
     useErrorHandler,
-    useFlag,
     useIsInboxElectronApp,
-    useModalState,
 } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
@@ -25,11 +22,11 @@ import {
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { isElectronApp, isElectronPass } from '@proton/shared/lib/helpers/desktop';
+import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
 
 import type { Paths } from '../content/helper';
 import Content from '../public/Content';
@@ -114,10 +111,6 @@ const LoginContainer = ({
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const createFlow = useFlowRef();
-
-    // Used to display upsell modal while the beta of the destkop app is running
-    const visionaryUpsellEnabled = useFlag('DesktopAppUpsellModal');
-    const [displayUpsellDesktop, handleDisplayUpsellDesktop, renderDisplayUpsellDesktop] = useModalState();
 
     useEffect(() => {
         // Preparing login improvements
@@ -207,7 +200,6 @@ const LoginContainer = ({
 
             {step === AuthStep.LOGIN && (
                 <>
-                    {renderDisplayUpsellDesktop && <DesktopAppLoginErrorUpsell {...displayUpsellDesktop} />}
                     {render({
                         title: titles.title,
                         subTitle: titles.subTitle,
@@ -254,19 +246,8 @@ const LoginContainer = ({
                                                 return await handleResult(result);
                                             }
                                         } catch (e) {
-                                            const error = getApiError(e);
-
-                                            // This is required to display and upsell modal while the beta of the desktop app is running
-                                            if (
-                                                isElectronApp &&
-                                                error.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED &&
-                                                visionaryUpsellEnabled
-                                            ) {
-                                                handleDisplayUpsellDesktop(true);
-                                            } else {
-                                                handleError(e);
-                                                handleCancel();
-                                            }
+                                            handleError(e);
+                                            handleCancel();
                                         }
                                     }}
                                 />

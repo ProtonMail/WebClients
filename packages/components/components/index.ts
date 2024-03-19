@@ -26,7 +26,6 @@ export * from './dropdown';
 export * from './dropzone';
 export * from './editableText';
 export * from './editor';
-export * from './electron';
 export * from './ellipsis';
 export * from './fileIcon';
 export * from './fileNameDisplay';
