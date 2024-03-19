@@ -46,6 +46,9 @@
       "Add note": [
         "შენიშვნის დამატება"
       ],
+      "Add people or groups to share": [
+        "დაამატეთ ხალხი ან ჯგუფები გასაზიარებლად"
+      ],
       "Add phone number": [
         "ტელეფონის ნომრის დამატება"
       ],
@@ -570,6 +573,15 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Scan & Download": [
+        "სკანირება & გადმოწერა"
+      ],
+      "Scan & Download (${ count })": [
+        "სკანირება და გადმოწერა (${ count })"
+      ],
+      "Scan & Download all": [
+        "სკანირება & ყველას გადმოწერა"
       ],
       "Search": [
         "ძებნა"
@@ -2180,6 +2192,9 @@
       "Aliases could not be loaded": [
         "ფსევდონიმების ჩატვირთვა შეუძლებელია"
       ],
+      "Already a member of this share": [
+        "უკვე წარმოადგენს ამ გაზიარების წევრს"
+      ],
       "An error occurred while loading alias options": [
         "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
       ],
@@ -2368,6 +2383,10 @@
       ],
       "Primary address key is not decrypted.": [
         "ძირითადი მისამართის გასაღები გაშიფრული არაა."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "წაშლილია გამეორებადი მოსაწვევი: ${ joinedInvitee }",
+        "წაშლილია გამეორებადი მოსაწვევი: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "ანგარიშის გაგზავნის შეცდომა"
@@ -3716,6 +3735,9 @@
       "End-to-end encrypted": [
         "გამჭოლი შიფრაცია"
       ],
+      "End-to-End Encrypted": [
+        "გამჭოლად დაშიფრული"
+      ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
       ],
@@ -3767,6 +3789,9 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "ფაილს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ვინ ატვირთა ${ fileName }."
+      ],
+      "File scanning in Drive": [
+        "ფაილის სკანირება Drive-ში"
       ],
       "File will not be updated": [
         "ფაილი არ განახლდება"
@@ -3927,6 +3952,10 @@
       ],
       "Makes your account safer": [
         "თქვენს ანგარიშს უფრო უსაფრთხოს გახდის"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
+        "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
       ],
       "Merged": [
         "შერწყმული"
@@ -4110,6 +4139,9 @@
       "Report has been sent": [
         "ანგარიში გაგზავნილია"
       ],
+      "Report link": [
+        "ბმულის დარეპორტება"
+      ],
       "Restore": [
         "აღდგენა"
       ],
@@ -4127,6 +4159,9 @@
       ],
       "Retry now": [
         "თავიდან ცდა ახლავე"
+      ],
+      "Scan issue": [
+        "სკანირების შეცდომა"
       ],
       "Search cannot be enabled in this browser": [
         "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
@@ -4179,6 +4214,9 @@
       ],
       "Share files with links": [
         "ფაილების ბმულით გაზიარება"
+      ],
+      "Share via link settings": [
+        "ბმულით გაზიარების მორგება"
       ],
       "Share with": [
         "გაზიარება"
@@ -4312,6 +4350,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "იმისათვის, რომ დაგიცვათ, ${ DRIVE_APP_NAME }-ს მავნე ფაილების სკანირება და დაბლოკვა შეუძლია. ამის მიუხედავად, ფაილები, მხოლოდ, სანდო ხალხისგან უნდა გადმოწეროთ."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "მოვლენების შემოსატანად ჯერ შექმენით კალენდარი ${ CALENDAR_APP_NAME }-ში. შემოტანილი მოვლენები ამ კალენდარში გამოჩნდება."
@@ -4642,6 +4683,12 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
+      "Anyone on the Internet with the link can view": [
+        "ნახვა შეუძლია ყველას, ვისაც ინტერნეტი და ეს ბმული აქვს"
+      ],
+      "Anyone with the link": [
+        "ბულის მქონე ყველა"
+      ],
       "App password": [
         "აპის პაროლი"
       ],
@@ -4798,6 +4845,9 @@
       ],
       "Enter device name": [
         "შეიყვანეთ მოწყობილობის სახელი"
+      ],
+      "Erase this link and remove everyone with access": [
+        "ამ ბმულის წაშლა და წვდომის მქონეები მოცილება"
       ],
       "Expired": [
         "ვადაგასულია"
@@ -4982,6 +5032,9 @@
       "Set expiration date": [
         "ვადის დაყენება"
       ],
+      "Set link password": [
+        "ბმულის პაროლის დაყენება"
+      ],
       "Set recovery method": [
         "აღდგენის მეთოდის დაყენება"
       ],
@@ -5017,6 +5070,9 @@
       ],
       "Theme": [
         "თემა"
+      ],
+      "This file is potentially infected": [
+        "ეს ფაილი პოტენციურად დასნებოვნებულია"
       ],
       "This will permanently delete all files in your locked drive.": [
         "თქვენს ჩაკეტილ დისკზე ყველა ფაილი სამუდამოდ წაიშლება."
@@ -5197,6 +5253,9 @@
     "mailtrial2024: Action": {
       "Get the deal": [
         "ფასდაკლების მიღება"
+      ],
+      "Special Offer": [
+        "სპეციალური შეთავაზება"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -5206,11 +5265,35 @@
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
       ],
+      "Auto-delete Spam and Trash": [
+        "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
+      ],
+      "Custom schedule send and snooze times": [
+        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
+      ],
       "Support for 1 custom email domain": [
         "1 ხელით მითითებული დომენის მხარდაჭერა"
       ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Message": {
@@ -5740,6 +5823,11 @@
         "პარამეტრები წარმატებით შეიცვალა"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "შემდეგ დაგჭირდებათ, შეხვიდეთ თქვენი Google-ის ანგარიშში და ${ BRAND_NAME }-ს თქვენს მონაცემებზე მისცეთ წვდომა."
@@ -5882,6 +5970,9 @@
     "Placeholder": {
       "A way to contact you": [
         "თქვენთან დაკავშირების საშუალება"
+      ],
+      "Choose password": [
+        "აირჩიეთ პაროლი"
       ],
       "E.g., ": [
         "მაგ. "
@@ -7113,6 +7204,9 @@
       ],
       "Settings": [
         "მორგება"
+      ],
+      "Share ${ name }": [
+        "${ name }-ის გაზიარება"
       ],
       "Share via link": [
         "ბმულით გაზიარება"
