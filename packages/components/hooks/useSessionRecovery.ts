@@ -9,7 +9,6 @@ import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSessionRecoveryLocalStorage } from '../containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
-import { useFlag } from '../containers/unleash';
 import useAddresses from './useAddresses';
 import useAuthentication from './useAuthentication';
 import useConfig from './useConfig';
@@ -66,11 +65,10 @@ export const useIsSessionRecoveryAvailable = () => {
     const { APP_NAME } = useConfig();
 
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
-    const feature = useFlag('SignedInAccountRecovery');
     const isPrivateUser = user?.isPrivate;
 
     return [
-        APP_NAME !== APPS.PROTONVPN_SETTINGS && !loadingAddresses && hasMigratedKeys && feature && isPrivateUser,
+        APP_NAME !== APPS.PROTONVPN_SETTINGS && !loadingAddresses && hasMigratedKeys && isPrivateUser,
         loadingAddresses,
     ];
 };
