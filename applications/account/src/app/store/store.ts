@@ -8,7 +8,7 @@ import { type AccountThunkArguments, extraThunkArguments } from './thunk';
 
 export type AccountState = ReturnType<typeof rootReducer>;
 
-export const setupStore = () => {
+export const setupStore = ({ mode }: { mode: 'public' | 'lite' | 'default' }) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
@@ -25,13 +25,13 @@ export const setupStore = () => {
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start(startListening);
+    start({ startListening, mode });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start(startListening);
+            start({ startListening, mode });
         });
     }
 
