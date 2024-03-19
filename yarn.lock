@@ -2445,6 +2445,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@electron-forge/maker-deb@npm:^7.3.1":
+  version: 7.3.1
+  resolution: "@electron-forge/maker-deb@npm:7.3.1"
+  dependencies:
+    "@electron-forge/maker-base": "npm:7.3.1"
+    "@electron-forge/shared-types": "npm:7.3.1"
+    electron-installer-debian: "npm:^3.2.0"
+  dependenciesMeta:
+    electron-installer-debian:
+      optional: true
+  checksum: 10c0/a9fce08792c34a2f73460dc95b6ed8909b3436e387cc1d6c261ab10549c65276cf3f428ba36ad60da1abc90e19d84a71048dd82e734a616229b8b269fb275a44
+  languageName: node
+  linkType: hard
+
 "@electron-forge/maker-dmg@npm:^7.3.1":
   version: 7.3.1
   resolution: "@electron-forge/maker-dmg@npm:7.3.1"
@@ -4335,7 +4349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@malept/cross-spawn-promise@npm:^1.1.0":
+"@malept/cross-spawn-promise@npm:^1.0.0, @malept/cross-spawn-promise@npm:^1.1.0":
   version: 1.1.1
   resolution: "@malept/cross-spawn-promise@npm:1.1.1"
   dependencies:
@@ -9638,6 +9652,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fs-extra@npm:^9.0.1":
+  version: 9.0.13
+  resolution: "@types/fs-extra@npm:9.0.13"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/576d4e9d382393316ed815c593f7f5c157408ec5e184521d077fcb15d514b5a985245f153ef52142b9b976cb9bd8f801850d51238153ebd0dc9e96b7a7548588
+  languageName: node
+  linkType: hard
+
 "@types/get-params@npm:^0.1.2":
   version: 0.1.2
   resolution: "@types/get-params@npm:0.1.2"
@@ -12219,6 +12242,24 @@ __metadata:
   version: 2.0.6
   resolution: "asap@npm:2.0.6"
   checksum: 10c0/c6d5e39fe1f15e4b87677460bd66b66050cd14c772269cee6688824c1410a08ab20254bb6784f9afb75af9144a9f9a7692d49547f4d19d715aeb7c0318f3136d
+  languageName: node
+  linkType: hard
+
+"asar@npm:^3.0.0":
+  version: 3.2.0
+  resolution: "asar@npm:3.2.0"
+  dependencies:
+    "@types/glob": "npm:^7.1.1"
+    chromium-pickle-js: "npm:^0.2.0"
+    commander: "npm:^5.0.0"
+    glob: "npm:^7.1.6"
+    minimatch: "npm:^3.0.4"
+  dependenciesMeta:
+    "@types/glob":
+      optional: true
+  bin:
+    asar: bin/asar.js
+  checksum: 10c0/1eea9686e3df8102251b911951d374c4bb758ce2881471c94c3999f7c473c96be6036ac09aafbd9453ba43b901e96ad0082d7e1bafc12f6768571353297c516f
   languageName: node
   linkType: hard
 
@@ -14933,6 +14974,13 @@ __metadata:
   version: 1.0.3
   resolution: "chrome-trace-event@npm:1.0.3"
   checksum: 10c0/080ce2d20c2b9e0f8461a380e9585686caa768b1c834a464470c9dc74cda07f27611c7b727a2cd768a9cecd033297fdec4ce01f1e58b62227882c1059dec321c
+  languageName: node
+  linkType: hard
+
+"chromium-pickle-js@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "chromium-pickle-js@npm:0.2.0"
+  checksum: 10c0/0a95bd280acdf05b0e08fa1a0e1db58c815dd24e92d639add8f494d23a8a49c26e4829721224d68f2f0e57a69047714db29bcff6deb5d029332321223416cb29
   languageName: node
   linkType: hard
 
@@ -17920,6 +17968,45 @@ __metadata:
   bin:
     ejs: bin/cli.js
   checksum: 10c0/f0e249c79128810f5f6d5cbf347fc906d86bb9384263db0b2a9004aea649f2bc2d112736de5716c509c80afb4721c47281bd5b57c757d3b63f1bf5ac5f885893
+  languageName: node
+  linkType: hard
+
+"electron-installer-common@npm:^0.10.2":
+  version: 0.10.3
+  resolution: "electron-installer-common@npm:0.10.3"
+  dependencies:
+    "@malept/cross-spawn-promise": "npm:^1.0.0"
+    "@types/fs-extra": "npm:^9.0.1"
+    asar: "npm:^3.0.0"
+    debug: "npm:^4.1.1"
+    fs-extra: "npm:^9.0.0"
+    glob: "npm:^7.1.4"
+    lodash: "npm:^4.17.15"
+    parse-author: "npm:^2.0.0"
+    semver: "npm:^7.1.1"
+    tmp-promise: "npm:^3.0.2"
+  dependenciesMeta:
+    "@types/fs-extra":
+      optional: true
+  checksum: 10c0/c52c0f2d59f66fea9bf4d1009895d0df5790ed5c1796fb4b6a689c4bb9de1a31518cb8f6c6b3506e73bd39da89b0547b08a373a3ded897bb26d6108a9c3d7258
+  languageName: node
+  linkType: hard
+
+"electron-installer-debian@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "electron-installer-debian@npm:3.2.0"
+  dependencies:
+    "@malept/cross-spawn-promise": "npm:^1.0.0"
+    debug: "npm:^4.1.1"
+    electron-installer-common: "npm:^0.10.2"
+    fs-extra: "npm:^9.0.0"
+    get-folder-size: "npm:^2.0.1"
+    lodash: "npm:^4.17.4"
+    word-wrap: "npm:^1.2.3"
+    yargs: "npm:^16.0.2"
+  bin:
+    electron-installer-debian: src/cli.js
+  conditions: (os=darwin | os=linux)
   languageName: node
   linkType: hard
 
@@ -21088,6 +21175,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gar@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "gar@npm:1.0.4"
+  checksum: 10c0/25683a9d4af9b34a1b13f823d46e9bfc379873044c89ef33728ecc882b39a0f64d29a06564c41f2f78c0872c69b04957d391ac29a5ebafbe2fd8e121051cb025
+  languageName: node
+  linkType: hard
+
 "gauge@npm:^3.0.0":
   version: 3.0.2
   resolution: "gauge@npm:3.0.2"
@@ -21205,6 +21299,18 @@ __metadata:
   version: 1.2.0
   resolution: "get-east-asian-width@npm:1.2.0"
   checksum: 10c0/914b1e217cf38436c24b4c60b4c45289e39a45bf9e65ef9fd343c2815a1a02b8a0215aeec8bf9c07c516089004b6e3826332481f40a09529fcadbf6e579f286b
+  languageName: node
+  linkType: hard
+
+"get-folder-size@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "get-folder-size@npm:2.0.1"
+  dependencies:
+    gar: "npm:^1.0.4"
+    tiny-each-async: "npm:2.0.3"
+  bin:
+    get-folder-size: bin/get-folder-size
+  checksum: 10c0/7d1c9436cbe5c921ade3437b71ad00ce45fcbb79259490753ffcf10fdc19c7cc7e1aa2bdd1586f321fc0ab81e6d835334e24c37e3127e33ebb427ed7742a8229
   languageName: node
   linkType: hard
 
@@ -31404,6 +31510,7 @@ __metadata:
   resolution: "proton-pass-desktop@workspace:applications/pass-desktop"
   dependencies:
     "@electron-forge/cli": "npm:^7.3.1"
+    "@electron-forge/maker-deb": "npm:^7.3.1"
     "@electron-forge/maker-dmg": "npm:^7.3.1"
     "@electron-forge/maker-squirrel": "npm:^7.3.1"
     "@electron-forge/maker-zip": "npm:^7.3.1"
@@ -37139,6 +37246,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-each-async@npm:2.0.3":
+  version: 2.0.3
+  resolution: "tiny-each-async@npm:2.0.3"
+  checksum: 10c0/0a16a8d2527f56716b563a8a1004a7faa68e8c002a924e88d446b253f4909b74cc888c91329d4a3ce499c04fbc80e4fbd3c561510a8a41167cc89764c4e59715
+  languageName: node
+  linkType: hard
+
 "tiny-emitter@npm:^2.1.0":
   version: 2.1.0
   resolution: "tiny-emitter@npm:2.1.0"
@@ -40007,6 +40121,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"word-wrap@npm:^1.2.3":
+  version: 1.2.5
+  resolution: "word-wrap@npm:1.2.5"
+  checksum: 10c0/e0e4a1ca27599c92a6ca4c32260e8a92e8a44f4ef6ef93f803f8ed823f486e0889fc0b93be4db59c8d51b3064951d25e43d434e95dc8c960cc3a63d65d00ba20
+  languageName: node
+  linkType: hard
+
 "wordwrap@npm:0.0.2":
   version: 0.0.2
   resolution: "wordwrap@npm:0.0.2"
@@ -40616,7 +40737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^16.1.1, yargs@npm:^16.2.0":
+"yargs@npm:^16.0.2, yargs@npm:^16.1.1, yargs@npm:^16.2.0":
   version: 16.2.0
   resolution: "yargs@npm:16.2.0"
   dependencies:
