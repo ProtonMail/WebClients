@@ -99,7 +99,7 @@ export interface Deal {
     header?: () => string | ReactNode;
     star?: string;
     isGuaranteed?: boolean;
-    dealSuffixPrice?: string;
+    dealSuffixPrice?: () => string;
     suffixOnNewLine?: boolean;
 }
 
