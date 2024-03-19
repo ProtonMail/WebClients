@@ -366,10 +366,13 @@
         "Millora ara"
       ],
       "View history": [
-        "Mostra l'historial"
+        "Visualitza l'historial"
       ],
       "View item history": [
         "Veure l'historial d'elements"
+      ],
+      "View older history": [
+        "Veure l'historial més antic"
       ],
       "Write us on Reddit": [
         "Escriu-nos a Reddit"
@@ -476,6 +479,9 @@
       ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
+      ],
+      "Failed to load item history": [
+        "No s'ha pogut carregar l'historial d'elements"
       ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
@@ -689,6 +695,12 @@
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "N'està segur, de voler moure elements a \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Està segur que vol moure l'element a \"${ name }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
       ],
@@ -817,8 +829,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
+      "Moving an item to another vault will erase its history": [
+        "Si mou un element a una altra caixa forta, se n'esborrarà l'historial"
+      ],
       "Moving items": [
         "S'estan movent elements"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Si mou els elements a una altra caixa forta, se n'esborrarà l'historial"
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
@@ -929,6 +947,9 @@
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
+      "This version will be added to the history as the newest version.": [
+        "Aquesta versió s'afegirà a l'historial com a versió més nova."
+      ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
@@ -980,6 +1001,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Ha arribat al límit de targetes de crèdit que pot crear. Creï un nombre il·limitat de targetes de crèdit quan millori la seva subscripció."
       ],
       "You have reached the limit of vaults you can create.": [
         "Heu arribat al límit de caixes fortes que podeu crear."
@@ -1251,6 +1275,9 @@
       ],
       "Oldest to newest": [
         "De més antic a més recent"
+      ],
+      "Passkey": [
+        "Contrasenya"
       ],
       "Passphrase": [
         "Frase de pas"
@@ -1542,7 +1569,7 @@
         "Creeu un codi PIN"
       ],
       "Created": [
-        "Creació"
+        "Creat"
       ],
       "Current version": [
         "Versió actual"
@@ -1584,7 +1611,7 @@
         "Instal·la l'extensió"
       ],
       "Last autofill": [
-        "Últim emplenament automàtic"
+        "Darrer emplenament automàtic"
       ],
       "Last modified": [
         "Darrera modificació"
@@ -1608,16 +1635,19 @@
         "Mou tots els elements ?"
       ],
       "Move item?": [
-        "Voleu moure l'element?"
+        "Vol moure l'element?"
       ],
       "Move items?": [
-        "Voleu moure els elements?"
+        "Vol moure els elements?"
       ],
       "No items selected": [
         "No s'ha seleccionat cap element."
       ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vostè."
+      ],
+      "Passkey": [
+        "Contrasenya"
       ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
@@ -1629,7 +1659,7 @@
         "Ancorat (${ items.length })"
       ],
       "Restore this version?": [
-        "Voleu restaurar aquesta versió?"
+        "Vol restaurar aquesta versió?"
       ],
       "Review and share": [
         "Reviseu i comparteu"

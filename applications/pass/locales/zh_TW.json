@@ -632,6 +632,9 @@
       "${ count } invites successfully sent": [
         "${ count }邀請成功寄出"
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME }將僅匯入登入，筆記和信用。"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "為期 7 天完全免費體驗頂級質子版功能。${ BRAND_NAME } 授權後首週七天內皆可額外享用。"
       ],
@@ -661,6 +664,9 @@
       ],
       "An item previously shared with you was removed": [
         "全部於共享的項目已刪除"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "您確定要移動項目至${ name }\" ?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "您確定要移動項目至${ name }\" ?"
@@ -715,6 +721,9 @@
       ],
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "跟隨這些步驟以CSV匯入資料:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "基於安全性理由，您的存取需要得到確認"
@@ -824,8 +833,14 @@
       "Owner": [
         "擁有者"
       ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "擁有權成功轉移。您將不再永有保管庫。"
+      ],
       "Pass Plus trial": [
         "Pass Plus 滿意體驗期"
+      ],
+      "Permanently deleting selected items": [
+        "永久刪除選取項目"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "個人識別數字代碼已成功登記。使用它解鎖${ PASS_APP_NAME }。"
@@ -847,6 +862,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "輸入 PIN 碼以繼續"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "請升級以提早存取${ PASS_APP_NAME }網頁"
       ],
       "Press Enter to copy": [
         "按 Enter 以複製"
@@ -916,6 +934,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "此匯出將會解密，所有能存取匯出檔案者皆可以看到密碼。為了安全請與使用後刪除。"
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "以接收匯入資料，點擊於瀏覽器工具列的Pass標示。"
       ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
@@ -1101,6 +1122,9 @@
       ],
       "General": [
         "一般"
+      ],
+      "Generic CSV": [
+        "通用 CSV"
       ],
       "Grant": [
         "授予"
@@ -1555,6 +1579,9 @@
       "Move all items ?": [
         "移動所有項目?"
       ],
+      "Move item?": [
+        "移動項目?"
+      ],
       "Move items?": [
         "移動項目?"
       ],
@@ -1599,6 +1626,9 @@
       ],
       "Update available": [
         "有可用更新"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "升級解鎖頂級功能"
       ],
       "Vault": [
         "保管庫"
@@ -1747,6 +1777,9 @@
       ],
       "Your session could not be authorized.": [
         "您的作業階段無法驗證。"
+      ],
+      "Your session could not be resumed.": [
+        "您的作業階段無法復原"
       ],
       "Your session was locked.": [
         "您的作業階段以鎖定。"
