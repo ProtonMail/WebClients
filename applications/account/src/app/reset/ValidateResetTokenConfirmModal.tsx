@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components/modalTwo';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 interface ModalProps {
     onClose: () => void;
@@ -13,44 +15,32 @@ interface ModalProps {
 }
 
 const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open, address, recoveryMethods }: ModalProps) => {
-    const oldPassword = (
-        <span className="text-bold" key="lose-access">{
-            // translator: full sentence "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your old password."
-            c('Info').t`old password`
-        }</span>
-    );
-
-    const twoFa = (
-        <span className="text-bold" key="lose-access">{
-            // translator: full sentence "Any two-factor authentication (2FA) method on your account will be disabled."
-            c('Info').t`two-factor authentication (2FA)`
-        }</span>
-    );
-
     return (
-        <ModalTwo open={open} onClose={onClose}>
+        <ModalTwo open={open} onClose={onClose} size="small">
             <ModalTwoHeader title={c('Title').t`Reset password?`} subline={address} />
             <ModalTwoContent>
-                <div>{c('Info').jt`Once you reset your password:`}</div>
+                <div>{c('Info').t`Once you reset your password:`}</div>
                 <ul>
-                    <li className="mb-2">
+                    <li>
                         {(() => {
                             if (recoveryMethods.includes('mnemonic')) {
-                                // translator: full sentence "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your old password."
-                                return c('Info')
-                                    .jt`Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${oldPassword}.`;
+                                return getBoldFormattedText(
+                                    c('password_reset: info')
+                                        .t`**All your existing data** (emails, events, contacts, files, ${PASS_APP_NAME} entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.`
+                                );
                             }
 
-                            // translator: full sentence "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your old password."
-                            return c('Info')
-                                .jt`Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${oldPassword}.`;
+                            return getBoldFormattedText(
+                                c('password_reset: info')
+                                    .t`**All your existing data** (emails, events, contacts, files, ${PASS_APP_NAME} entries, etc.) **will be locked** and can only be unlocked with your **old password**.`
+                            );
                         })()}
                     </li>
                     <li>
-                        {
-                            // translator: full sentence "Any two-factor authentication (2FA) method on your account will be disabled."
-                            c('Info').jt`Any ${twoFa} method on your account will be disabled.`
-                        }
+                        {getBoldFormattedText(
+                            c('password_reset: info')
+                                .t`Any **two-factor authentication (2FA)** method on your account will be disabled.`
+                        )}
                     </li>
                 </ul>
             </ModalTwoContent>
