@@ -1,3 +1,5 @@
+import noop from '@proton/utils/noop';
+
 import { PLAN_SERVICES, PLAN_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { Api, Plan, PlanIDs } from '../interfaces';
@@ -29,7 +31,7 @@ export const getShouldCalendarPreventSubscripitionChange = async ({
         // We only prevent subscription change when downgrading the paid-mail condition
         return false;
     }
-    const calendars = (await getCalendars()) || [];
+    const calendars = (await getCalendars().catch(noop)) || [];
 
     const hasSharedCalendars = await getHasSharedCalendars({ calendars, api, catchErrors: true });
 
