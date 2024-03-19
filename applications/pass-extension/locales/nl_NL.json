@@ -125,6 +125,9 @@
       "Create login": [
         "Login aanmaken"
       ],
+      "Create new login": [
+        "Login aanmaken"
+      ],
       "Create note": [
         "Notitie aanmaken"
       ],
@@ -513,6 +516,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME }-wachtwoord om verder te gaan met de export"
       ],
+      "Authentication failure: ${ message }": [
+        "Authenticatiefout: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Authenticatiefout"
+      ],
       "Auto-lock could not be activated": [
         "Auto-vergrendelen kon niet geactiveerd worden"
       ],
@@ -650,8 +659,14 @@
       "Item creation failed": [
         "Item aanmaken mislukt"
       ],
+      "Item does not exist": [
+        "Item bestaat niet"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass zal een corrupt csv-bestand exporteren als een van uw velden onverwachte komma's, aanhalingstekens of meerdere lijnen bevat."
+      ],
+      "Missing passkey": [
+        "Toegangssleutel ontbreekt"
       ],
       "Moving item failed": [
         "Item verplaatsen mislukt"
@@ -667,6 +682,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Pin de extensie vast of kies \"Doorgaan zonder vastpinnen\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Registratie mislukt: ${ message }"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -721,6 +739,12 @@
       ],
       "Unknown invite": [
         "Onbekende uitnodiging"
+      ],
+      "Unknown item": [
+        "Onbekend object"
+      ],
+      "Unknown passkey": [
+        "Onbekende toegangssleutel"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Niet-ondersteund ${ PASS_APP_NAME }-bestandsformaat"
@@ -892,6 +916,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Auto-vergrendelen succesvol ingeschakeld"
+      ],
+      "Autosaved on ${ payload.domain }": [
+        "Automatisch bewaard op ${ payload.domain }"
       ],
       "Built in 2FA authenticator": [
         "Ingebouwd in 2FA-authenticator"
@@ -1178,6 +1205,12 @@
       ],
       "Save login": [
         "Bewaar login"
+      ],
+      "Save passkey": [
+        "Passkey opslaan"
+      ],
+      "Select an existing login or create a new one.": [
+        "Selecteer een bestaande login of maak een nieuwe aan."
       ],
       "Select destination vault": [
         "Kies bestemmingskluis"
@@ -1790,6 +1823,9 @@
       ],
       "View logs": [
         "Logboeken bekijken"
+      ],
+      "Website": [
+        "Website"
       ],
       "Websites": [
         "Websites"

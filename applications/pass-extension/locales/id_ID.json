@@ -520,7 +520,13 @@
         "Kesalahan autentikasi"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Autentikasi gagal. Konfirmasi kata sandi ${ BRAND_NAME } Anda untuk melanjutkan pengeksporan"
+        "Autentikasi gagal. Konfirmasi kata sandi ${ BRAND_NAME } Anda untuk melanjutkan ekspor"
+      ],
+      "Authentication failure: ${ message }": [
+        "Autentikasi gagal: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Kesalahan pengautentikasi"
       ],
       "Auto-lock could not be activated": [
         "Kunci otomatis tidak dapat diaktifkan"
@@ -651,6 +657,9 @@
       "Item creation failed": [
         "Item gagal dibuat"
       ],
+      "Item does not exist": [
+        "Item tidak ada"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass akan mengekspor file CSV yang rusak apabila terdapat kolom pada item Anda yang mengandung koma, tanda kutip, atau deretan baris yang tidak terduga"
       ],
@@ -671,6 +680,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Silakan sematkan ekstensi atau pilih \"Lanjutkan tanpa menyemat\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Pendaftaran gagal: ${ message }"
       ],
       "Request timed out": [
         "Waktu permintaan habis"
@@ -1319,6 +1331,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Anda telah mencapai batas jumlah alias yang dapat Anda buat. Dapatkan kemampuan untuk membuat berbagai macam alias tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Anda telah mencapai batas jumlah kartu kredit yang dapat Anda buat. Dapatkan kemampuan untuk membuat kartu kredit tanpa batasan jumlah dengan meningkatkan paket Anda."
       ],
       "You have reached the limit of vaults you can create.": [
         "Anda telah mencapai batas jumlah brankas yang dapat Anda buat."
@@ -2182,6 +2197,9 @@
       ],
       "No items matching": [
         "Tidak ada item yang cocok"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Tidak ada passkey yang ditemukan. Simpan passkey Anda di ${ PASS_APP_NAME } untuk melanjutkan ke ${ domain }."
       ],
       "No password manager selected": [
         "Tidak ada pengelola kata sandi yang dipilih"

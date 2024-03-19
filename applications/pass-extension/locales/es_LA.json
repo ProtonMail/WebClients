@@ -360,13 +360,13 @@
         "Guardar"
       ],
       "Save passkey": [
-        "Guardar clave de paso"
+        "Guardar clave de acceso"
       ],
       "Saving": [
         "Guardando"
       ],
       "Saving passkey...": [
-        "Guardando clave de paso..."
+        "Guardando clave de acceso..."
       ],
       "See members": [
         "Ver miembros"
@@ -672,7 +672,7 @@
         "LastPass exportará un archivo CSV corrupto si alguno de los campos contienen comas inesperadas, citas o líneas múltiples"
       ],
       "Missing passkey": [
-        "Falta la clave de paso"
+        "Falta la clave de acceso"
       ],
       "Moving item failed": [
         "Error al mover el elemento"
@@ -750,7 +750,7 @@
         "Elemento desconocido"
       ],
       "Unknown passkey": [
-        "Clave de paso desconocida"
+        "Clave de acceso desconocida"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato de archivo de ${ PASS_APP_NAME } no soportado"
@@ -879,7 +879,7 @@
         "Hay una versión nueva disponible de ${ PASS_APP_NAME }. Actualícela para disfrutar de las últimas funciones y errores corregidos."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Se guardará una clave de paso para \"${ username }\" y estará disponible en dispositivos donde ${ PASS_APP_NAME } está instalado."
+        "Se guardará una clave de acceso para \"${ username }\" y estará disponible en dispositivos donde ${ PASS_APP_NAME } está instalado."
       ],
       "Access successfully confirmed": [
         "El acceso fue confirmado."
@@ -915,13 +915,13 @@
         "Se borró un elemento previamente compartido con usted."
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "¿En verdad desea mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+        "¿Está seguro de que quiere mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "¿En verdad desea mover los elementos a «${ name }»?"
+        "¿Está seguro de que quiere mover los elementos a «${ name }»?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
-        "¿En verdad desea mover el elemento a «${ name }»?"
+        "¿Está seguro de que quiere mover el elemento a «${ name }»?"
       ],
       "Auto-lock successfully disabled": [
         "Bloqueo automático desactivado con éxito"
@@ -945,13 +945,13 @@
         "Permite ver los elementos en esta bóveda."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Seleccione una clave de paso guardada para iniciar sesión en ${ domain }"
+        "Seleccione una clave de acceso guardada para iniciar sesión en ${ domain }"
       ],
       "Click the icon to open it anytime.": [
         "Pulse el ícono para abrirlo en cualquier momento."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Cierre esta ventana para usar una clave de seguridad u otra clave de paso."
+        "Cierre esta ventana para usar una clave de seguridad u otra clave de acceso."
       ],
       "Close this window in order to use another passkey manager.": [
         "Cierre esta ventana para usar otro gestor de claves de paso."
@@ -1164,7 +1164,7 @@
         "Prueba de Proton Pass Plus"
       ],
       "Passkey sign-in": [
-        "Inicio de sesión con clave de paso"
+        "Inicio de sesión con clave de acceso"
       ],
       "Password copied": [
         "La contraseña fue copiada."
@@ -1228,7 +1228,7 @@
         "Guardar el inicio de sesión"
       ],
       "Save passkey": [
-        "Guardar clave de paso"
+        "Guardar clave de acceso"
       ],
       "Select an existing login or create a new one.": [
         "Seleccione un inicio de sesión existente o cree uno."
@@ -1334,7 +1334,7 @@
         "Desbloquee ${ PASS_APP_NAME } con su código PIN para acceder a sus claves de paso"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquee ${ PASS_APP_NAME } con su código PIN para guardar esta clave de paso"
+        "Desbloquee ${ PASS_APP_NAME } con su código PIN para guardar esta clave de acceso"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloquéela con su PIN para acceder a los ajustes"
@@ -1405,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar su suscripción."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Ha alcanzado el límite de tarjetas de crédito que puede crear. Cree una cantidad de tarjetas de crédito ilimitadas al mejorar su suscripción."
       ],
       "You have reached the limit of vaults you can create.": [
         "Ha alcanzado el límite de bóvedas que puede crear."
@@ -1711,7 +1714,7 @@
         "De más antiguo a más reciente"
       ],
       "Passkey": [
-        "Clave de paso"
+        "Clave de acceso"
       ],
       "Passphrase": [
         "Frase de contraseña"
@@ -2119,7 +2122,7 @@
         "Nuestro regalo de bienvenida para usted"
       ],
       "Passkey": [
-        "Clave de paso"
+        "Clave de acceso"
       ],
       "Password": [
         "Contraseña"
@@ -2290,6 +2293,9 @@
       ],
       "No items matching": [
         "No hay elementos que coincidan"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "No se encontró ninguna clave de acceso. Guarde sus claves de acceso en ${ PASS_APP_NAME } para iniciar sesión en ${ domain }."
       ],
       "No password manager selected": [
         "Ningún gestor de contraseñas seleccionado"

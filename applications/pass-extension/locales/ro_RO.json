@@ -125,6 +125,9 @@
       "Create login": [
         "Creare autentificare"
       ],
+      "Create new login": [
+        "Crearea unei noi autentificări"
+      ],
       "Create note": [
         "Creare notă"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Salvare"
       ],
+      "Save passkey": [
+        "Salvare cheie de acces"
+      ],
       "Saving": [
         "Se salvează"
+      ],
+      "Saving passkey...": [
+        "Salvarea cheii de acces..."
       ],
       "See members": [
         "Afișare membri"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați-vă parola ${ BRAND_NAME } pentru a continua exportarea."
       ],
+      "Authentication failure: ${ message }": [
+        "Eșec de autentificare: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Eșec al autentificatorului"
+      ],
       "Auto-lock could not be activated": [
         "Autoblocarea nu poate fi activată."
       ],
@@ -652,8 +667,14 @@
       "Item creation failed": [
         "Crearea articolelor a eșuat."
       ],
+      "Item does not exist": [
+        "Elementul nu există"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass va exporta un fișier CSV corupt dacă oricare dintre câmpurile articolului conține virgule, ghilimele sau linii multiple neașteptate."
+      ],
+      "Missing passkey": [
+        "Lipsește cheia de acces"
       ],
       "Moving item failed": [
         "Mutarea articolelor a eșuat."
@@ -669,6 +690,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixați extensia sau selectați „Continuare fără fixare”."
+      ],
+      "Registration failure: ${ message }": [
+        "Eșec de înregistrare: ${ message }"
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -723,6 +747,12 @@
       ],
       "Unknown invite": [
         "Invitație necunoscută."
+      ],
+      "Unknown item": [
+        "Element necunoscut"
+      ],
+      "Unknown passkey": [
+        "Cheie de acces necunoscută"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formatul fișierului ${ PASS_APP_NAME } nu este suportat."
@@ -860,6 +890,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Va fi salvată o cheie de acces pentru „${ username }” și va fi disponibilă pe dispozitivele pe care este instalat ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Acces confirmat."
       ],
@@ -905,6 +938,9 @@
       "Auto-lock successfully disabled": [
         "Blocare automată s-a dezactivat."
       ],
+      "Autosaved on ${ payload.domain }": [
+        "Autosalvat la ${ payload.domain }"
+      ],
       "Built in 2FA authenticator": [
         "Autentificator A2F încorporat."
       ],
@@ -920,8 +956,17 @@
       "Can view items in this vault.": [
         "Poate vizualiza articolele din acest seif."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Alegeți o cheie de acces salvată pentru a vă conecta la ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Faceți clic pe pictogramă pentru a-l deschide."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Închideți această fereastră pentru a utiliza o cheie de securitate sau o altă cheie de acces."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Închideți această fereastră pentru a utiliza un alt manager de chei de acces."
       ],
       "Congratulations, your access has been confirmed": [
         "Accesul v-a fost confirmat."
@@ -1133,6 +1178,9 @@
       "Pass Plus trial": [
         "Încercare Proton Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Autentificare cu cheia de acces"
+      ],
       "Password copied": [
         "Parola a fost copiată."
       ],
@@ -1194,6 +1242,12 @@
       ],
       "Save login": [
         "Salvare autentificare"
+      ],
+      "Save passkey": [
+        "Salvare cheie de acces"
+      ],
+      "Select an existing login or create a new one.": [
+        "Selectați o autentificare existentă sau creați alta."
       ],
       "Select destination vault": [
         "Selectare seif destinație"
@@ -1293,6 +1347,12 @@
       "Unlimited hide-my-email aliases": [
         "Aliasuri nelimitate hide-my-email"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a accesa parolele dvs."
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a salva această cheie de acces"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Deblocați-o cu codul PIN pentru a accesa setările."
       ],
@@ -1363,6 +1423,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ați atins limita aliasurilor pe care le puteți crea. Puteți creați un număr nelimitat de aliasuri dacă vă modificați abonamentul."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Ați atins limita de carduri pe care le puteți stoca. Puteți stoca un număr nelimitat de carduri dacă vă modificați abonamentul."
       ],
       "You have reached the limit of vaults you can create.": [
         "Ați atins limita de seifuri pe care le puteți crea."
@@ -1670,6 +1733,9 @@
       "Oldest to newest": [
         "De la vechi la noi"
       ],
+      "Passkey": [
+        "Cheie de acces"
+      ],
       "Passphrase": [
         "Frază de acces"
       ],
@@ -1810,6 +1876,9 @@
       ],
       "View logs": [
         "Afișare jurnale"
+      ],
+      "Website": [
+        "Site web"
       ],
       "Websites": [
         "Pagini web"
@@ -2074,6 +2143,9 @@
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
       ],
+      "Passkey": [
+        "Cheie de acces"
+      ],
       "Password": [
         "Parola"
       ],
@@ -2244,6 +2316,9 @@
       ],
       "No items matching": [
         "Nu există articole care se potrivesc."
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Nu s-au găsit chei de acces. Salvați-vă cheile de acces în ${ PASS_APP_NAME } pentru a vă autentifica pe ${ domain }."
       ],
       "No password manager selected": [
         "Nu a fost selectat niciun manager de parole."
