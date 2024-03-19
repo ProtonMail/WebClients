@@ -638,6 +638,9 @@
       "No": [
         "Nei"
       ],
+      "No, thanks": [
+        "Nei, takk"
+      ],
       "OK": [
         "OK"
       ],
@@ -8607,9 +8610,6 @@
       "Awarded": [
         "Belønnet"
       ],
-      "Beta": [
-        "Testversjon"
-      ],
       "Billing address": [
         "Fakturaadresse"
       ],
@@ -9756,8 +9756,17 @@
       "for the first month": [
         "for den første måneden"
       ],
+      "for your first month": [
+        "for din første måned"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Få ${ planName } for ${ price }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Begrenset tidstilbud, utløper 2. april 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Abonnementet ditt fornyes automatisk ${ renewTime } til ${ renewablePrice }, avbryt når som helst."
       ]
     },
     "mailtrial2024: Title": {
@@ -13138,6 +13147,12 @@
       ],
       "Billed for 15 months": [
         "Faktureres for 15 måneder"
+      ],
+      "Billed for 18 months": [
+        "Faktureres for 18 måneder"
+      ],
+      "Billed for 3 months": [
+        "Faktureres for 3 måneder"
       ],
       "Billed for 30 months": [
         "Faktureres for 30 måneder"

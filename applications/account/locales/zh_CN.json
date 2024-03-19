@@ -573,6 +573,9 @@
       "No": [
         "否"
       ],
+      "No, thanks": [
+        "不，谢谢"
+      ],
       "OK": [
         "确定"
       ],
@@ -4423,6 +4426,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store 上的${ appName }"
+      ],
+      "${ appName } on Play Store": [
+        "Play Store 上的${ appName }"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } 移动应用"
       ],
@@ -7306,9 +7315,6 @@
       "Awarded": [
         "已奖励"
       ],
-      "Beta": [
-        "测试版"
-      ],
       "Billing address": [
         "账单地址"
       ],
@@ -9758,6 +9764,11 @@
       ],
       "Create your ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
+      ]
+    },
+    "pass_signup_2023: title": {
+      "For individuals": [
+        "面向个人"
       ]
     },
     "passwordless": {

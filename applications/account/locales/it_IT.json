@@ -638,6 +638,9 @@
       "No": [
         "No"
       ],
+      "No, thanks": [
+        "No, grazie"
+      ],
       "OK": [
         "OK"
       ],
@@ -9735,7 +9738,7 @@
         "10 indirizzi email"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminazione automatica dello spam e dal cestino"
+        "Eliminazione automatica del contenuto dallo Spam e dal Cestino"
       ],
       "Custom schedule send and snooze times": [
         "Pianificazione personalizzata degli orari di invio e posticipazione"
@@ -9756,8 +9759,17 @@
       "for the first month": [
         "per il primo mese"
       ],
+      "for your first month": [
+        "per il tuo primo mese"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "Ottieni ${ planName } per ${ price }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Offerta a tempo limitato, scade il 2 aprile 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Il tuo abbonamento si rinnoverà automaticamente il giorno ${ renewTime } a ${ renewablePrice } potrai annullarlo in qualsiasi momento"
       ]
     },
     "mailtrial2024: Title": {
@@ -11071,7 +11083,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Alcune immagini non sono state caricate per nomi dei file duplicati nella selezione corrente."
+        "Alcune immagini non sono state caricate a causa di nomi di file duplicati nell'attuale selezione."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -13142,6 +13154,12 @@
       "Billed for 15 months": [
         "Addebitato per 15 mesi"
       ],
+      "Billed for 18 months": [
+        "Addebitato per 18 mesi"
+      ],
+      "Billed for 3 months": [
+        "Addebitato per 3 mesi"
+      ],
       "Billed for 30 months": [
         "Addebitato per 30 mesi"
       ],
@@ -15112,6 +15130,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "L'abbonamento si rinnova automaticamente ogni mese. La tua prossima data di fatturazione è tra 1 mese."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "L'abbonamento si rinnova automaticamente ogni 3 mesi. La tua prossima data di fatturazione è tra 3 mesi."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."
       ],
@@ -15132,8 +15153,14 @@
       "15-month": [
         "15 mesi"
       ],
+      "18-month": [
+        "18 mesi"
+      ],
       "2-year": [
         "2 anni"
+      ],
+      "3-month": [
+        "3 mesi"
       ],
       "30-month": [
         "30 mesi"

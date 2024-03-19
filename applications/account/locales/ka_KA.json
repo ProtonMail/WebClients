@@ -197,6 +197,9 @@
       "Close navigation": [
         "ნავიგაციის დახურვა"
       ],
+      "Close tab": [
+        "ჩანართის დახურვა"
+      ],
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
@@ -631,6 +634,9 @@
       ],
       "No": [
         "არა"
+      ],
+      "No, thanks": [
+        "არა, მადლობა"
       ],
       "OK": [
         "დიახ"
@@ -5152,9 +5158,17 @@
         "ძალიან პატარა"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "ვებ-აპლიკაცია"
+      ]
+    },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "Back to sign in": [
+        "შესვლის გვერდზე დაბრუნება"
       ]
     },
     "Frequency of news": {
@@ -5178,6 +5192,12 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName }-ი App Store-ში"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName }-ი Play Store-ში"
+      ],
       "${ MAIL_APP_NAME } app": [
         "${ MAIL_APP_NAME } აპი"
       ],
@@ -5322,6 +5342,9 @@
       ],
       "Protection": [
         "დაცვა"
+      ],
+      "Select your deal": [
+        "აირჩიეთ ტარიფი"
       ],
       "Select your pricing plan": [
         "აირჩიეთ თქვენი ტარიფი"
@@ -9626,6 +9649,9 @@
     "mailtrial2024: Action": {
       "Get the deal": [
         "ფასდაკლების მიღება"
+      ],
+      "Special Offer": [
+        "სპეციალური შეთავაზება"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -9635,11 +9661,38 @@
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
       ],
+      "Auto-delete Spam and Trash": [
+        "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
+      ],
+      "Custom schedule send and snooze times": [
+        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
+      ],
       "Support for 1 custom email domain": [
         "1 ხელით მითითებული დომენის მხარდაჭერა"
       ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ],
+      "Get ${ planName } for ${ price }": [
+        "დააყენეთ ${ planName } ${ price }-სთვის"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -9663,6 +9716,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "მომხმარებლის გააქტიურება"
+      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -10123,11 +10179,17 @@
       "Admin console": [
         "ადმინისტრირების კონსოლი"
       ],
+      "Administration Panel": [
+        "ადმინისტრატორის პანელი"
+      ],
       "Advanced network security": [
         "დამატებითი ქსელის უსაფრთხოება"
       ],
       "Advanced sharing security": [
         "გაზიარების გაუმჯობესებული უსაფრთხოება"
+      ],
+      "Auto-delete Spam and Trash": [
+        "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
@@ -10182,6 +10244,9 @@
       ],
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
       ],
       "DNS leak prevention": [
         "DNS გაპარების თავიდან აცილება"
@@ -10363,6 +10428,9 @@
       "Unlimited shared vaults with access permissions": [
         "განუსაზღვრელი გაზიარებული საცავები წვდომის შეზღუდვებით"
       ],
+      "Unlimited vaults": [
+        "საცავების ულიმიტო როდენობა"
+      ],
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
       ],
@@ -10451,6 +10519,9 @@
       ],
       "Early access to new apps and features": [
         "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "ძირითადი დაცვა და უსაფრთხო კოლაბორაცია განუსაზღვრელი მომხმარებლებისთვის."
       ],
       "For next-level password management and identity protection.": [
         "პაროლების მართვისა და პირადი მონაცემების დაცვის შემდეგი დონე."
@@ -10896,6 +10967,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2FA ავთენტიკაცია აუცილებელი აღარაა"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11634,6 +11710,9 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "ბიზნესებისთვის"
+      ],
+      "For individuals": [
+        "ინდივიდუალური პირებისთვის"
       ]
     },
     "passwordless": {
@@ -12942,6 +13021,12 @@
       "Billed for 15 months": [
         "გადაიხადეთ 15 თვისთვის"
       ],
+      "Billed for 18 months": [
+        "გადაიხადეთ 18 თვისთვის"
+      ],
+      "Billed for 3 months": [
+        "გადაიხადეთ 3 თვისთვის"
+      ],
       "Billed for 30 months": [
         "გადაიხადეთ 30 თვისთვის"
       ],
@@ -13543,6 +13628,9 @@
       "Activate organization key": [
         "ორგანიზაციის გასაღების აქტივაცია"
       ],
+      "Activate user": [
+        "მომხმარებლის გააქტიურება"
+      ],
       "Add address": [
         "მისამართის დამატება"
       ],
@@ -13620,6 +13708,9 @@
       ],
       "Are you sure you want to close?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ?"
+      ],
+      "Are you sure?": [
+        "დარწმუნებული ბრძანდებით?"
       ],
       "Authentication security": [
         "ავთენტიკაციის უსაფრთხოება"
@@ -14896,8 +14987,14 @@
       "15-month": [
         "15 თვე"
       ],
+      "18-month": [
+        "18 თვე"
+      ],
       "2-year": [
         "2-წლიანი"
+      ],
+      "3-month": [
+        "3 თვე"
       ],
       "30-month": [
         "30 თვე"
