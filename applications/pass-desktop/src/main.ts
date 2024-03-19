@@ -89,6 +89,9 @@ const createSession = () => {
         callback({ cancel: true });
         const nextUrl = `${MAIN_WINDOW_WEBPACK_ENTRY}#/login${url.hash}`;
         await mainWindow.loadURL(nextUrl);
+        secureSession
+            .clearStorageData({ storages: ['cookies'] })
+            .catch((e) => logger.warn(`[Cookies] Could not clear cookies after SSO login`, e));
     });
 
     return secureSession;
