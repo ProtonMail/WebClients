@@ -494,7 +494,7 @@
         "Не вдалося відхилити запрошення"
       ],
       "Item content cannot exceed 40KB": [
-        "Вміст елемента не може перевищувати 40 Кб"
+        "Вміст елемента не може перевищувати 40 кБ"
       ],
       "Item creation failed": [
         "Не вдалося створити елемент"
@@ -704,6 +704,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Автоблокування успішно вимкнено"
+      ],
+      "Autosaved on ${ payload.domain }": [
+        "Автоматично збережено ${ payload.domain }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."

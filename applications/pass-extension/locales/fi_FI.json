@@ -125,6 +125,9 @@
       "Create login": [
         "Luo kirjautumistieto"
       ],
+      "Create new login": [
+        "Luo uusi kirjautumistieto"
+      ],
       "Create note": [
         "Luo muistiinpano"
       ],
@@ -356,8 +359,14 @@
       "Save": [
         "Tallenna"
       ],
+      "Save passkey": [
+        "Tallenna avainkoodi"
+      ],
       "Saving": [
         "Tallennetaan"
+      ],
+      "Saving passkey...": [
+        "Tallennetaan avainkoodia..."
       ],
       "See members": [
         "Näytä jäsenet"
@@ -513,6 +522,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Jatka vientiä vahvistamalla ${ BRAND_NAME } -salasanasi"
       ],
+      "Authentication failure: ${ message }": [
+        "Todennusvirhe: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Todentajavirhe"
+      ],
       "Auto-lock could not be activated": [
         "Automaattilukitusta ei voitu ottaa käyttöön"
       ],
@@ -523,8 +538,8 @@
         "Aliasta ei voida luoda (${ error })."
       ],
       "Cannot send invitation at the moment": [
-        "Kutsua ei voi lähettää juuri nyt",
-        "Kutsuja ei voi lähettää juuri nyt"
+        "Kutsua ei voida lähettää juuri nyt",
+        "Kutsuja ei voida lähettää juuri nyt"
       ],
       "Cannot send invitations at the moment": [
         "Kutsuja ei voida tällä hetkellä lähettää"
@@ -650,8 +665,14 @@
       "Item creation failed": [
         "Kohteen luonti epäonnistui"
       ],
+      "Item does not exist": [
+        "Kohdetta ei ole olemassa"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass vie virheellisen CSV-tiedoston, jos yksikin kohteidesi kentistäsi sisältää odottamattomia pilkkuja, lainausmerkkejä tai useita rivejä"
+      ],
+      "Missing passkey": [
+        "Puuttuva avaikoodi"
       ],
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
@@ -667,6 +688,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Rekisteröintivirhe: ${ message }"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -721,6 +745,12 @@
       ],
       "Unknown invite": [
         "Tuntematon kutsu"
+      ],
+      "Unknown item": [
+        "Tuntematon kohde"
+      ],
+      "Unknown passkey": [
+        "Tuntematon avainkoodi"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
@@ -809,7 +839,7 @@
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
       "${ count } invites successfully sent": [
-        "${ count } kutsun lähetys onnistui"
+        "${ count } kutsua lähetettiin"
       ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -847,6 +877,9 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
+      ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Käyttäjätunnuksen \"${ username }\" avainkoodi tallennetaan ja se on käytettävissä laitteissa, joihin on asennettu ${ PASS_APP_NAME }."
       ],
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
@@ -893,6 +926,9 @@
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
       ],
+      "Autosaved on ${ payload.domain }": [
+        "Automaattitallennettiin osoitteesta ${ payload.domain }"
+      ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu 2FA-todentaja"
       ],
@@ -908,8 +944,17 @@
       "Can view items in this vault.": [
         "Voi tarkastella holvin kohteita."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Valitse tallennettu avainkoodi, jolla kirjaudut verkkotunnukseen ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Avaa se koska tahansa klikkaamalla kuvaketta."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Sulje tämä ikkuna käyttääksesi suojausavainta tai toista avainkoodia."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Sulje tämä ikkuna käyttääksesi toista avainkoodihallintaa."
       ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
@@ -979,7 +1024,7 @@
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
-        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan."
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa."
       ],
       "Generating alias...": [
         "Luodaan aliasta..."
@@ -1118,12 +1163,15 @@
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
+      "Passkey sign-in": [
+        "Avainkoodilla kirjautuminen"
+      ],
       "Password copied": [
         "Salasana kopioitiin"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikko sitten poistetaan automaattisesti historiasta.",
-        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa sitten poistetaan automaattisesti historiasta."
+        "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti.",
+        "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti."
       ],
       "Pending access to the shared data": [
         "Odotetaan pääsyä jaettuihin tietoihin"
@@ -1178,6 +1226,12 @@
       ],
       "Save login": [
         "Tallenna kirjautumistieto"
+      ],
+      "Save passkey": [
+        "Tallenna avainkoodi"
+      ],
+      "Select an existing login or create a new one.": [
+        "Valitse olemassa oleva kirjautumistieto tai luo uusi."
       ],
       "Select destination vault": [
         "Valitse kohdeholvi"
@@ -1276,6 +1330,12 @@
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
       ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Avaa ${ PASS_APP_NAME } PIN-koodilla päästäksesi käsiksi avainkoodeihisi."
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Avaa ${ PASS_APP_NAME } PIN-koodilla tallentaaksesi tämän avainkoodin."
+      ],
       "Unlock it with your PIN to access the settings": [
         "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
       ],
@@ -1345,6 +1405,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Et voi lisätä enempää luottokortteja. Päivitä tilauksesi lisätäksesi rajoittamattoman määrän luottokortteja."
       ],
       "You have reached the limit of vaults you can create.": [
         "Luotujen holvien enimmäismäärä on saavutettu."
@@ -1650,6 +1713,9 @@
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
+      "Passkey": [
+        "Avainkoodi"
+      ],
       "Passphrase": [
         "Tunnuslauseke"
       ],
@@ -1790,6 +1856,9 @@
       ],
       "View logs": [
         "Näytä lokitiedot"
+      ],
+      "Website": [
+        "Verkkosivusto"
       ],
       "Websites": [
         "Verkkosivustot"
@@ -2051,6 +2120,9 @@
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
+      ],
+      "Passkey": [
+        "Avainkoodi"
       ],
       "Password": [
         "Salasana"
