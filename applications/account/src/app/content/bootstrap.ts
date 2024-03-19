@@ -43,7 +43,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
-        const store = setupStore();
+        const store = setupStore({ mode: 'default' });
         const dispatch = store.dispatch;
         extendStore({ config, api, authentication, history, unleashClient });
 

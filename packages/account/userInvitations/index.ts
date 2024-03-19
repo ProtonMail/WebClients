@@ -72,7 +72,6 @@ export const userInvitationsListener = (startListening: SharedStartListening<Use
             return false;
         },
         effect: async (action, listenerApi) => {
-            listenerApi.cancelActiveListeners();
             await listenerApi.dispatch(userInvitationsThunk({ forceFetch: true }));
         },
     });
