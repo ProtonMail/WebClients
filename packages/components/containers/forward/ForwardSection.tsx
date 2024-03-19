@@ -14,7 +14,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import { MailUpsellButton, Tabs, UpsellModal, useModalState, useModalTwoStatic } from '../../components';
 import { useAddresses, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
-import { useFlag } from '../unleash';
 import ForwardModal from './ForwardModal';
 import IncomingForwardTable from './IncomingForwardTable';
 import OutgoingForwardTable from './OutgoingForwardTable';
@@ -25,11 +24,10 @@ const ForwardSection = () => {
     const hash = location.hash;
     const [user] = useUser();
     const [addresses = [], loadingAddresses] = useAddresses();
-    const isEmailForwardingEnabled = useFlag('EmailForwarding');
     const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwardings();
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
     const isIncomingTableAvailable = incomingAddressForwardings.length > 0;
-    const isOutgoingTableAvailable = isEmailForwardingEnabled && outgoingAddressForwardings.length > 0;
+    const isOutgoingTableAvailable = outgoingAddressForwardings.length > 0;
     const chainedEmails = useMemo(() => {
         if (
             incomingAddressForwardings.length === 0 ||
@@ -70,20 +68,18 @@ const ForwardSection = () => {
                         .t`Learn more`}</Href>
                 </SettingsParagraph>
 
-                {isEmailForwardingEnabled ? (
-                    <div className="mb-4">
-                        {user.hasPaidMail ? (
-                            <Button color="norm" onClick={() => showForwardModal({})}>
-                                {c('email_forwarding_2023: Action').t`Add forwarding rule`}
-                            </Button>
-                        ) : (
-                            <MailUpsellButton
-                                onClick={() => handleUpsellModalDisplay(true)}
-                                text={c('email_forwarding_2023: Action').t`Set up email forwarding`}
-                            />
-                        )}
-                    </div>
-                ) : null}
+                <div className="mb-4">
+                    {user.hasPaidMail ? (
+                        <Button color="norm" onClick={() => showForwardModal({})}>
+                            {c('email_forwarding_2023: Action').t`Add forwarding rule`}
+                        </Button>
+                    ) : (
+                        <MailUpsellButton
+                            onClick={() => handleUpsellModalDisplay(true)}
+                            text={c('email_forwarding_2023: Action').t`Set up email forwarding`}
+                        />
+                    )}
+                </div>
                 <Tabs
                     tabs={[
                         isOutgoingTableAvailable && {
