@@ -53,13 +53,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import {
-    getHasLegacyPlans,
-    getPlan,
-    getPrimaryPlan,
-    hasLifetime,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasLifetime, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
@@ -72,14 +66,11 @@ import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/Sess
 import { AuthenticatedBugModal } from '../support';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 
-const getPlanTitle = (subscription: Subscription | undefined, app: APP_NAMES) => {
+const getPlanTitle = (subscription: Subscription | undefined) => {
     if (hasLifetime(subscription)) {
         return 'Lifetime';
     }
-    const primaryPlan = getPrimaryPlan(subscription, app);
-    if (getHasLegacyPlans(subscription)) {
-        return primaryPlan?.Name || '';
-    }
+
     return getPlan(subscription)?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 };
 
@@ -155,7 +146,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         }
     };
 
-    const planName = isMember ? '' : getPlanTitle(subscription, APP_NAME);
+    const planName = isMember ? '' : getPlanTitle(subscription);
 
     const handleBugReportClick = () => {
         setBugReportModal(true);

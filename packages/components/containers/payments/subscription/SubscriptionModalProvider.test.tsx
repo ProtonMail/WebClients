@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getModelState } from '@proton/account/test';
@@ -44,42 +44,6 @@ it('should render', async () => {
     await waitFor(() => {
         expect(container).toHaveTextContent('My content');
     });
-});
-
-it('should render <SubscriptionModalDisabled> if there are legacy plans', async () => {
-    const subscription = cloneDeep(subscriptionDefaultResponse);
-    subscription.Subscription.Plans = [
-        {
-            Name: PLANS.VPNBASIC, // that's a legacy plan
-        } as any,
-    ];
-
-    let openSubscriptionModal!: OpenSubscriptionModalCallback;
-    const ContextReaderComponent = () => {
-        const modal = useSubscriptionModal();
-        openSubscriptionModal = modal[0];
-
-        return null;
-    };
-
-    const { container } = renderWithProviders(
-        <SubscriptionModalProvider app="proton-account">
-            <ContextReaderComponent />
-        </SubscriptionModalProvider>,
-        {
-            preloadedState: {
-                subscription: getModelState(format(subscription.Subscription, subscription.UpcomingSubscription)),
-            },
-        }
-    );
-
-    await waitFor(() => {
-        expect(openSubscriptionModal).toBeDefined();
-    });
-
-    openSubscriptionModal({} as any);
-
-    expect(container).toHaveTextContent('We’re upgrading your current plan to an improved plan');
 });
 
 it('should render <SubscriptionContainer> if there is no legacy plans', async () => {
@@ -249,7 +213,7 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
         return null;
     };
 
-    const { getByTestId } = renderWithProviders(
+    renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
         </SubscriptionModalProvider>,
@@ -265,5 +229,5 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
     });
     openSubscriptionModal({} as any);
 
-    expect(await waitFor(() => getByTestId('InAppPurchaseModal/text'))).not.toBeEmptyDOMElement();
+    expect(await screen.findByTestId('InAppPurchaseModal/text')).not.toBeEmptyDOMElement();
 });
