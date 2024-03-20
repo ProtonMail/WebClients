@@ -150,8 +150,8 @@ export const loadAccountView = (window: BrowserWindow) => {
     Logger.info("Loading account view");
     if (!accountView) {
         Logger.info("accountView not created");
-        const congif = getWindowConfig(window.webContents.session);
-        accountView = new BrowserView({ ...congif });
+        const config = getWindowConfig(window.webContents.session);
+        accountView = new BrowserView({ ...config });
     }
 
     const bounds = adjustBoundsForWindows(window.getBounds());
