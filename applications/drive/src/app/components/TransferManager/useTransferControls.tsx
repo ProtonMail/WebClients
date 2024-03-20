@@ -3,7 +3,14 @@ import { isTransferPaused } from '../../utils/transfer';
 import { Download, TransferType, Upload } from './transfer';
 
 function useTransferControls() {
-    const { pauseDownloads, resumeDownloads, restartDownloads, cancelDownloads, removeDownloads } = useDownload();
+    const {
+        pauseDownloads,
+        resumeDownloads,
+        restartDownloads,
+        cancelDownloads,
+        removeDownloads,
+        downloadDownloadLogs,
+    } = useDownload();
     const { pauseUploads, resumeUploads, restartUploads, cancelUploads, removeUploads, downloadUploadLogs } =
         useUpload();
 
@@ -72,6 +79,7 @@ function useTransferControls() {
 
     const downloadLogs = () => {
         downloadUploadLogs();
+        downloadDownloadLogs();
     };
 
     return {

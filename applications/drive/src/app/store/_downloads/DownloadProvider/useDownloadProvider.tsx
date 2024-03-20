@@ -16,6 +16,7 @@ import {
     isTransferProgress,
 } from '../../../utils/transfer';
 import { SignatureIssues } from '../../_links';
+import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
 import { InitDownloadCallback, LinkDownload } from '../interface';
@@ -31,7 +32,8 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
     const { preventLeave } = usePreventLeave();
     const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
 
-    const queue = useDownloadQueue();
+    const { log, downloadLogs, clearLogs } = useTransferLog('download');
+    const queue = useDownloadQueue((id, message) => log(id, `queue: ${message}`));
     const control = useDownloadControl(queue.downloads, queue.updateWithCallback, queue.remove, queue.clear);
     const { handleSignatureIssue, signatureIssueModal } = useDownloadSignatureIssue(
         queue.downloads,
@@ -107,6 +109,8 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
             nextDownload.links,
             {
                 onInit: (size: number, linkSizes: { [linkId: string]: number }) => {
+                    log(nextDownload.id, `loaded size: ${size}, number of links: ${Object.keys(linkSizes).length}`);
+
                     // Keep the previous state for cases when the download is paused.
                     queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
                     control.updateLinkSizes(nextDownload.id, linkSizes);
@@ -119,9 +123,11 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
                     control.updateProgress(nextDownload.id, linkIds, increment);
                 },
                 onNetworkError: (error: any) => {
+                    log(nextDownload.id, `network issue: ${error}`);
                     queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
                 },
                 onScanIssue: async (abortSignal: AbortSignal, error: Error) => {
+                    log(nextDownload.id, `scan issue: ${error}`);
                     await handleScanIssue(abortSignal, nextDownload, error);
                 },
                 onSignatureIssue: async (
@@ -129,9 +135,11 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
                     link: LinkDownload,
                     signatureIssues: SignatureIssues
                 ) => {
+                    log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);
                     await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
                 },
             },
+            (message: string) => log(nextDownload.id, message),
             nextDownload.options
         );
         control.add(nextDownload.id, controls);
@@ -153,6 +161,7 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
                     // with other downloads in the queue and fail fast, otherwise
                     // it just triggers more strict jails and leads to nowhere.
                     if (error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                        log(nextDownload.id, `Got 429, canceling ongoing uploads`);
                         control.cancelDownloads(isTransferOngoing);
                     }
                 })
@@ -180,8 +189,12 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         cancelDownloads: control.cancelDownloads,
         restartDownloads,
         removeDownloads: control.removeDownloads,
-        clearDownloads: control.clearDownloads,
+        clearDownloads: () => {
+            control.clearDownloads();
+            clearLogs();
+        },
         updateWithData: queue.updateWithData,
+        downloadDownloadLogs: downloadLogs,
         downloadIsTooBigModal,
         signatureIssueModal,
     };

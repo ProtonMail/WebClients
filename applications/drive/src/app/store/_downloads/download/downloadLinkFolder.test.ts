@@ -87,10 +87,12 @@ function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
 }
 
 describe('FolderTreeLoader', () => {
+    const mockLog = jest.fn();
+
     const linkDownload = { shareId: 'shareId', linkId: 'linkId' } as LinkDownload;
 
     it('calculates size', async () => {
-        const folderTreeLoader = new FolderTreeLoader(linkDownload);
+        const folderTreeLoader = new FolderTreeLoader(linkDownload, mockLog);
         const promise = folderTreeLoader.load(stubGetChildren);
         await expect(promise).resolves.toMatchObject({
             size: expectedTotalSize,
@@ -98,7 +100,7 @@ describe('FolderTreeLoader', () => {
     });
 
     it('iterates all childs', async () => {
-        const folderTreeLoader = new FolderTreeLoader(linkDownload);
+        const folderTreeLoader = new FolderTreeLoader(linkDownload, mockLog);
         void folderTreeLoader.load(stubGetChildren);
         const items = [];
         for await (const item of folderTreeLoader.iterateAllChildren()) {
