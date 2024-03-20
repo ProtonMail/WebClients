@@ -1,26 +1,19 @@
-import { createIframeRoot } from 'proton-pass-extension/app/content//injections/iframe/create-iframe-root';
-import type {
-    IFrameAppService,
-    InjectedDropdown,
-    InjectedNotification,
-} from 'proton-pass-extension/app/content//types';
+import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
+import { createIframeRoot } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-root';
+import type { IFrameAppService, InjectedDropdown, InjectedNotification } from 'proton-pass-extension/app/content/types';
 
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 
-import { PASS_ROOT_REMOVED_EVENT } from '../../constants.static';
 import { createDropdown } from './dropdown';
 import { createNotification } from './notification';
 
 type IFrameServiceState = {
+    apps: { dropdown: MaybeNull<InjectedDropdown>; notification: MaybeNull<InjectedNotification> };
     root: MaybeNull<ProtonPassRoot>;
-    apps: {
-        dropdown: MaybeNull<InjectedDropdown>;
-        notification: MaybeNull<InjectedNotification>;
-    };
 };
 export interface IFrameService {
     dropdown: MaybeNull<InjectedDropdown>;
@@ -34,11 +27,8 @@ export interface IFrameService {
 
 export const createIFrameService = (elements: PassElementsConfig) => {
     const state: IFrameServiceState = {
+        apps: { dropdown: null, notification: null },
         root: null,
-        apps: {
-            dropdown: null,
-            notification: null,
-        },
     };
 
     /* only re-init the iframe sub-apps if the extension context port has changed */
