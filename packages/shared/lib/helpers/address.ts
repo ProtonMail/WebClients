@@ -3,6 +3,7 @@ import unary from '@proton/utils/unary';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
 import { Address, Domain, Member, Recipient, UserModel } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
+import { getIsDomainActive } from '../organization/helper';
 import { canonicalizeInternalEmail } from './email';
 
 export const getIsAddressEnabled = (address: Address) => {
@@ -87,7 +88,9 @@ export const getAvailableAddressDomains = ({
 
     return [
         ...(hasProtonDomains ? protonDomains : []),
-        ...(Array.isArray(customDomains) ? customDomains.map(({ DomainName }) => DomainName) : []),
+        ...(Array.isArray(customDomains)
+            ? customDomains.filter(getIsDomainActive).map(({ DomainName }) => DomainName)
+            : []),
         ...(hasProtonDomains && user.hasPaidMail && Array.isArray(premiumDomains) ? premiumDomains : []),
     ];
 };

@@ -24,7 +24,9 @@ import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/
 import noop from '@proton/utils/noop';
 
 import {
+    Badge,
     InputFieldTwo,
+    LoaderIcon,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -50,25 +52,66 @@ import {
     useNotifications,
 } from '../../../hooks';
 import { useKTVerifier } from '../../keyTransparency';
-import MissingKeysStatus from './MissingKeysStatus';
-import { AddressWithStatus, Status } from './interface';
-import { updateAddress } from './state';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
     addressesToGenerate: Address[];
 }
 
+export enum StatusEnum {
+    QUEUED,
+    DONE,
+    FAILURE,
+    LOADING,
+}
+
 const getStatus = (text: 'ok' | 'loading' | 'error') => {
     switch (text) {
         case 'ok':
-            return Status.DONE;
+            return StatusEnum.DONE;
         case 'loading':
-            return Status.LOADING;
+            return StatusEnum.LOADING;
         default:
         case 'error':
-            return Status.FAILURE;
+            return StatusEnum.FAILURE;
     }
+};
+
+export interface Status {
+    type: StatusEnum;
+    tooltip?: string;
+}
+
+const defaultStatus: Status = {
+    type: StatusEnum.QUEUED,
+};
+
+type AddressState = { [key: string]: Status };
+
+export const updateAddress = (oldAddresses: AddressState, ID: string, diff: Status) => {
+    return {
+        ...oldAddresses,
+        [ID]: diff,
+    };
+};
+
+const MissingKeysStatus = ({ type, tooltip }: Status) => {
+    if (type === StatusEnum.QUEUED) {
+        return <Badge type="default">{c('Info').t`Queued`}</Badge>;
+    }
+
+    if (type === StatusEnum.DONE) {
+        return <Badge type="success">{c('Info').t`Done`}</Badge>;
+    }
+
+    if (type === StatusEnum.FAILURE) {
+        return <Badge type="error" tooltip={tooltip}>{c('Error').t`Error`}</Badge>;
+    }
+
+    if (type === StatusEnum.LOADING) {
+        return <LoaderIcon />;
+    }
+    return null;
 };
 
 const encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG];
@@ -90,14 +133,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
-    const [formattedAddresses, setFormattedAddresses] = useState<AddressWithStatus[]>(() =>
-        addressesToGenerate.map((address) => ({
-            ...address,
-            status: {
-                type: Status.QUEUED,
-            },
-        }))
-    );
+    const [formattedAddresses, setFormattedAddresses] = useState<AddressState>({});
 
     const shouldSetupMemberKeys = getShouldSetupMemberKeys(member);
 
@@ -126,10 +162,8 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             ) => {
                 setFormattedAddresses((oldState) => {
                     return updateAddress(oldState, addressID, {
-                        status: {
-                            type: getStatus(event.status),
-                            tooltip: event.result,
-                        },
+                        type: getStatus(event.status),
+                        tooltip: event.result,
                     });
                 });
             };
@@ -180,10 +214,8 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                 onUpdate: (addressID, event) => {
                     setFormattedAddresses((oldState) => {
                         return updateAddress(oldState, addressID, {
-                            status: {
-                                type: getStatus(event.status),
-                                tooltip: event.result,
-                            },
+                            type: getStatus(event.status),
+                            tooltip: event.result,
                         });
                     });
                 },
@@ -260,7 +292,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                         />
                     </>
                 )}
-                {!!formattedAddresses.length && (
+                {addressesToGenerate.length > 0 && (
                     <Table>
                         <TableHeader
                             cells={[
@@ -269,14 +301,19 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                             ]}
                         />
                         <TableBody colSpan={2}>
-                            {formattedAddresses.map((address) => (
+                            {addressesToGenerate.map((address) => (
                                 <TableRow
                                     key={address.ID}
                                     cells={[
                                         <span key={0} className="text-ellipsis block pr-4" title={address.Email}>
                                             {address.Email}
                                         </span>,
-                                        <MissingKeysStatus key={1} {...address.status} />,
+                                        <MissingKeysStatus
+                                            key={1}
+                                            {...(formattedAddresses[address.ID]
+                                                ? formattedAddresses[address.ID]
+                                                : defaultStatus)}
+                                        />,
                                     ]}
                                 />
                             ))}

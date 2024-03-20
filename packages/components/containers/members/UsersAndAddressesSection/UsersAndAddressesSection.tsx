@@ -20,7 +20,7 @@ import {
     hasNewVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { EnhancedMember, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
+import { Address, EnhancedMember, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
 import {
     getIsDomainActive,
     getOrganizationKeyInfo,
@@ -84,7 +84,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [addresses] = useAddresses();
     const [user] = useUser();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
+    const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
     const [keywords, setKeywords] = useState('');
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const api = useApi();
@@ -168,6 +168,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleSetupUser = (member: EnhancedMember) => {
         setTmpMemberID(member.ID);
+        retry([member]);
         setUserSetupModal(true);
     };
 
@@ -192,7 +193,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setUserInviteOrEditModalOpen(true);
     };
 
-    const handleAddAddress = () => {
+    const handleAddAddress = (member?: EnhancedMember) => {
+        setTmpMemberID(member?.ID || null);
         setAddAddressModalOpen(true);
     };
 
@@ -345,10 +347,29 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             </SettingsParagraph>
             <Block className="flex items-start">
                 {renderUserSetupModal && (
-                    <CreateMissingKeysAddressModal member={tmpMember} addressesToGenerate={[]} {...userSetupModal} />
+                    <CreateMissingKeysAddressModal
+                        member={tmpMember}
+                        addressesToGenerate={(() => {
+                            if (!tmpMember) {
+                                return [];
+                            }
+                            const addresses = memberAddressesMap[tmpMember.ID];
+                            return (
+                                addresses?.filter((address): address is Address => {
+                                    return 'HasKeys' in address && !address.HasKeys;
+                                }) ?? []
+                            );
+                        })()}
+                        {...userSetupModal}
+                    />
                 )}
                 {renderAddAddressModal && filteredMembers && (
-                    <AddressModal members={filteredMembers} {...addAddressModalProps} />
+                    <AddressModal
+                        useEmail={useEmail}
+                        member={members?.find((member) => tmpMemberID === member.ID)}
+                        members={filteredMembers}
+                        {...addAddressModalProps}
+                    />
                 )}
                 {renderSubUserDeleteModal && (
                     <SubUserDeleteModal
@@ -450,7 +471,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     />
                                 ))}
 
-                            <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
+                            <Button shape="outline" disabled={loadingAddAddresses} onClick={() => handleAddAddress()}>
                                 {c('Action').t`Add address`}
                             </Button>
                         </>
@@ -570,6 +591,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     <MemberActions
                                         user={user}
                                         organizationKey={organizationKey}
+                                        onAddAddress={(member) => handleAddAddress(member)}
                                         onEdit={handleEditUser}
                                         onDelete={handleDeleteUser}
                                         onSetup={handleSetupUser}

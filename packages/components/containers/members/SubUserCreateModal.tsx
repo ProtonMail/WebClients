@@ -11,6 +11,7 @@ import { APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/li
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
+    emailValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
@@ -270,7 +271,7 @@ const SubUserCreateModal = ({
                 <InputFieldTwo
                     id="address"
                     value={model.address}
-                    error={validator([requiredValidator(model.address)])}
+                    error={validator([requiredValidator(model.address), useEmail ? emailValidator(model.address) : ''])}
                     onValue={handleChange('address')}
                     label={useEmail ? c('Label').t`Email` : c('Label').t`Address`}
                     suffix={useEmail ? undefined : addressSuffix}
