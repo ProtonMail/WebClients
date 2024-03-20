@@ -2,8 +2,8 @@ import { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { useLoading } from '@proton/hooks';
+import { Button, Href } from '@proton/atoms/index';
+import { useLoading } from '@proton/hooks/index';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
@@ -12,12 +12,16 @@ import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { BasicModal, Form, InputFieldTwo, Loader } from '../../../components';
-import { useApi } from '../../../hooks';
-import { GenericError } from '../../error';
-import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
-import useGetCalendarActions from '../hooks/useGetCalendarActions';
-import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
+import { BasicModal, Form, InputFieldTwo, Loader } from '../../../../components';
+import { useApi } from '../../../../hooks';
+import { GenericError } from '../../../error';
+import useGetCalendarActions from '../../hooks/useGetCalendarActions';
+import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
+import {
+    getCalendarPayload,
+    getCalendarSettingsPayload,
+    getDefaultModel,
+} from '../personalCalendarModal/calendarModalState';
 
 interface Props {
     open: boolean;
