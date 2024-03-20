@@ -7,7 +7,7 @@ import Logger from "electron-log";
 import { IPCMessage } from "./ipcConstants";
 
 function isValidMessage(message: unknown): message is IPCMessage {
-    return message && typeof message === "object" && "type" in message && "payload" in message;
+    return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
 }
 
 export const handleIPCCalls = () => {

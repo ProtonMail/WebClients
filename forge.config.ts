@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config();
 
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";

@@ -3,6 +3,10 @@ import { getConfig } from "../config";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
 export const getSessionID = (url?: string) => {
+    if (!url) {
+        return null;
+    }
+
     try {
         const pathName = new URL(url).pathname;
 

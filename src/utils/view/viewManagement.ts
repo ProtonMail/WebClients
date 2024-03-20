@@ -29,22 +29,22 @@ const views: Record<ViewID, BrowserView | undefined> = {
 let mainWindow: undefined | BrowserWindow = undefined;
 
 export const viewCreationAppStartup = (session: Session) => {
-    const window = createBrowserWindow(session);
+    mainWindow = createBrowserWindow(session);
     createViews(session);
     configureViews();
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
     setTimeout(() => {
-        loadMailView(mainWindow);
+        loadMailView(mainWindow!);
     }, delay);
 
     mainWindow.on("close", (ev) => {
-        macOSExitEvent(mainWindow, ev);
-        windowsExitEvent(mainWindow, ev);
+        macOSExitEvent(mainWindow!, ev);
+        windowsExitEvent(mainWindow!, ev);
     });
 
-    return window;
+    return mainWindow;
 };
 
 const createViews = (session: Session) => {
@@ -56,11 +56,11 @@ const createViews = (session: Session) => {
     handleBeforeHandle(views.calendar);
 
     views.mail.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, views.mail)?.popup();
+        createContextMenu(props, views.mail!)?.popup();
     });
 
     views.calendar.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, views.calendar)?.popup();
+        createContextMenu(props, views.calendar!)?.popup();
     });
 
     views.mail.webContents.session.setCertificateVerifyProc((request, callback) => {
@@ -74,11 +74,11 @@ const createViews = (session: Session) => {
     });
 
     if (isWindows) {
-        mainWindow.setMenuBarVisibility(false);
+        mainWindow!.setMenuBarVisibility(false);
 
         const keyPressHandling = (input: Input) => {
             if (input.key === "Alt" && input.type === "keyDown") {
-                mainWindow.setMenuBarVisibility(!mainWindow.isMenuBarVisible());
+                mainWindow!.setMenuBarVisibility(!mainWindow!.isMenuBarVisible());
             }
         };
 
@@ -101,14 +101,16 @@ const createBrowserWindow = (session: Session) => {
         const callbackValue = checkKeys(request);
         callback(callbackValue);
     });
+
+    return mainWindow;
 };
 
 const configureViews = () => {
-    views.mail.setAutoResize({ width: true, height: true });
-    views.mail.webContents.loadURL(config.url.mail);
+    views.mail!.setAutoResize({ width: true, height: true });
+    views.mail!.webContents.loadURL(config.url.mail);
 
-    views.calendar.setAutoResize({ width: true, height: true });
-    views.calendar.webContents.loadURL(config.url.calendar);
+    views.calendar!.setAutoResize({ width: true, height: true });
+    views.calendar!.webContents.loadURL(config.url.calendar);
 };
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
@@ -164,19 +166,22 @@ export const loadAccountView = (window: BrowserWindow) => {
 };
 
 export const updateView = (target: VIEW_TARGET) => {
-    const window = mainWindow;
+    if (!mainWindow) {
+        throw new Error("mainWindow is undefined");
+    }
+
     if (target === "mail" && currentViewID !== "mail") {
-        loadMailView(window);
+        loadMailView(mainWindow);
         mainWindow.title = "Proton Mail";
         currentViewID = "mail";
         return views.mail;
     } else if (target === "calendar" && currentViewID !== "calendar") {
-        loadCalendarView(window);
+        loadCalendarView(mainWindow);
         currentViewID = "calendar";
         mainWindow.title = "Proton Calendar";
         return views.calendar;
     } else if (target === "account" && currentViewID !== "account") {
-        loadAccountView(window);
+        loadAccountView(mainWindow);
         currentViewID = "account";
         mainWindow.title = "Proton";
         return;
@@ -189,8 +194,7 @@ export const reloadCalendarWithSession = (session: string) => {
     Logger.info("Reloading calendar with session", session);
     if (!views.calendar) {
         Logger.error("calendarView not created");
-        const window = mainWindow;
-        const config = getWindowConfig(window.webContents.session);
+        const config = getWindowConfig(mainWindow!.webContents.session);
         views.calendar = new BrowserView({ ...config });
     }
 
@@ -215,9 +219,9 @@ export const toggleSpellCheck = (enabled: boolean) => {
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 };
 
-export const getMailView = () => views.mail;
-export const getCalendarView = () => views.calendar;
-export const getMainWindow = () => mainWindow;
+export const getMailView = () => views.mail!;
+export const getCalendarView = () => views.calendar!;
+export const getMainWindow = () => mainWindow!;
 
 export const getCurrentView = () => {
     return views[currentViewID];

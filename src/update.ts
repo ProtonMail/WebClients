@@ -7,7 +7,7 @@ autoUpdater.on("update-downloaded", () => {
     updateDownloaded = true;
 });
 
-autoUpdater.on("before-quit-for-update" as any, () => {
+autoUpdater.on("before-quit-for-update", () => {
     updateDownloaded = true;
 });
 

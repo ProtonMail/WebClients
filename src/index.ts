@@ -83,7 +83,7 @@ if (!gotTheLock) {
             mainWindow.focus();
         }
 
-        handleMailToUrls(commandLine.pop());
+        handleMailToUrls(commandLine?.pop() || "");
     });
 
     app.whenReady().then(() => {
