@@ -36,6 +36,7 @@ export interface OpenCallbackProps
     fullscreen?: boolean;
     onSubscribed?: () => void;
     onUnsubscribed?: () => void;
+    mode?: 'upsell-modal';
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -52,6 +53,7 @@ interface Props {
     children: ReactNode;
     app: APP_NAMES;
     onClose?: () => void;
+    // mode?: string
 }
 
 const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
@@ -80,6 +82,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 fullscreen,
                 onSubscribed,
                 onUnsubscribed,
+                mode,
                 ...rest
             } = subscriptionProps.current;
             const handleClose = () => {
@@ -104,6 +107,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                         onUnsubscribed?.();
                     }}
                     onCancel={handleClose}
+                    mode={mode}
                     {...rest}
                     render={({ onSubmit, title, content, footer, step }) => {
                         return (
