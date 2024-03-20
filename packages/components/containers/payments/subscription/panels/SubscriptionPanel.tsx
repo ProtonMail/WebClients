@@ -25,6 +25,7 @@ import {
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsCustomCycle,
+    getIsPassB2BPlan,
     getPrimaryPlan,
     getVPNDedicatedIPs,
     hasMaximumCycle,
@@ -238,6 +239,7 @@ const SubscriptionPanel = ({
 }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
+    const isPassB2bPlan = getIsPassB2BPlan(primaryPlan?.Name);
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
@@ -482,14 +484,16 @@ const SubscriptionPanel = ({
                               MaxAddresses
                           ),
             },
-            !!MaxDomains && {
-                icon: 'globe',
-                text: c('Subscription attribute').ngettext(
-                    msgid`${UsedDomains} of ${MaxDomains} custom domain`,
-                    `${UsedDomains} of ${MaxDomains} custom domains`,
-                    MaxDomains
-                ),
-            },
+            !!MaxDomains &&
+                // we need to hide the custom domains section for Pass B2B plans until SSO is implemented
+                !isPassB2bPlan && {
+                    icon: 'globe',
+                    text: c('Subscription attribute').ngettext(
+                        msgid`${UsedDomains} of ${MaxDomains} custom domain`,
+                        `${UsedDomains} of ${MaxDomains} custom domains`,
+                        MaxDomains
+                    ),
+                },
             {
                 icon: 'calendar-checkmark',
                 text: (() => {
