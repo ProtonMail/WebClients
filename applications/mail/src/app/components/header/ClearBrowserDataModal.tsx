@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ModalProps, Prompt } from '@proton/components';
 import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
@@ -12,7 +12,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
     const { esDelete } = useEncryptedSearchContext();
 
     const handleClear = () => {
-        if (!isElectronApp) {
+        if (!isElectronMail) {
             void esDelete();
             onClose?.();
         } else if (canInvokeInboxDesktopIPC) {
@@ -20,8 +20,8 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
         }
     };
 
-    const title = isElectronApp ? c('Info').t`Clear app data` : c('Info').t`Disable message content search`;
-    const description = isElectronApp
+    const title = isElectronMail ? c('Info').t`Clear app data` : c('Info').t`Disable message content search`;
+    const description = isElectronMail
         ? c('Info')
               .t`This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.`
         : c('Info')

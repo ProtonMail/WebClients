@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
@@ -35,7 +35,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     }, []);
 
     return (
-        <div className={clsx('h-full flex items-center pb-4 overflow-auto', isElectronApp && 'bg-norm')}>
+        <div className={clsx('h-full flex items-center pb-4 overflow-auto', isElectronMail && 'bg-norm')}>
             <GenericError isNetworkError>
                 <div
                     className="text-weak text-sm text-center max-w-custom"

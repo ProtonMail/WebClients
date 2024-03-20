@@ -23,7 +23,7 @@ import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/end
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -54,7 +54,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     const appName = config.APP_NAME;
 
-    if (isElectronApp) {
+    if (isElectronMail) {
         listenFreeTrialSessionExpiration(api);
     }
 

@@ -6,7 +6,7 @@ import { useConfig, useUser } from '@proton/components/hooks';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
-import { isElectronApp, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -45,7 +45,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 ref={ref}
                 as="button"
             >
-                <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectronApp ? '2' : '3' }}>
+                <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectronMail ? '2' : '3' }}>
                     {availableApps.map((appToLinkTo) => {
                         const appToLinkToName = getAppShortName(appToLinkTo);
                         const current = app && appToLinkTo === app;
