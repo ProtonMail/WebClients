@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useAddressesKeys } from '@proton/components';
 import {
     CryptoProxy,
     PrivateKeyReference,
@@ -15,8 +14,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { LockedDeviceForRestore, LockedShareForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
+import { AddressesKeysResult } from './useLockedVolume';
 
-export const getPossibleAddressPrivateKeys = (addressesKeys: ReturnType<typeof useAddressesKeys>[0]) => {
+export const getPossibleAddressPrivateKeys = (addressesKeys: AddressesKeysResult) => {
     if (!addressesKeys?.length) {
         return [];
     }
