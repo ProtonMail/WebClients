@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Alert, SettingsLink } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
+import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
@@ -68,8 +69,8 @@ const ExtraEventAlert = ({ model }: Props) => {
                 </Alert>
             );
         }
-        const singleAnswersSupported = !veventIcs['recurrence-id'] && invitationApi?.vevent['recurrence-id'];
-        if (isPartyCrasher && singleAnswersSupported) {
+        const singleAnswersNotSupported = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(invitationApi?.vevent);
+        if (isPartyCrasher && !singleAnswersNotSupported) {
             const participantName = attendeeIcs.displayName;
             return (
                 <Alert className={alertClassName} type="warning">
