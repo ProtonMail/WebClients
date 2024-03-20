@@ -48,8 +48,11 @@ if [ "$1" = "windows" ]; then
 elif [ "$1" = "macos" ]; then
   subpath="PassDesktop/darwin/universal"
   executable_filename="ProtonPass_${TAG_VERSION}.dmg"
+elif [ "$1" = "linux" ]; then
+  subpath="PassDesktop/linux/x64"
+  executable_filename="ProtonPass_${TAG_VERSION}.deb"
 else
-  echo "Invalid argument provided (must be 'windows' or 'macos')"
+  echo "Invalid argument provided (must be 'windows', 'macos' or 'linux')"
   exit 1
 fi
 path="${repoDir}/${subpath}"
@@ -78,6 +81,12 @@ elif [ "$1" = "macos" ]; then
     cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/Proton Pass-darwin-universal-${VERSION}.zip" "${path}/Proton Pass-darwin-universal-${VERSION}.zip"
   fi
   git lfs track "*.dmg" "PassDesktop/**/*.zip"
+elif [ "$1" = "linux" ]; then
+  cp "${PROJECT_ROOT}/out/make/deb/x64/proton-pass_${VERSION}_amd64.deb" "${path}/${executable_filename}"
+  if [[ "${CATEGORY}" == "Stable" ]]; then
+    cp "${PROJECT_ROOT}/out/make/deb/x64/proton-pass_${VERSION}_amd64.deb" "${path}/ProtonPass.deb"
+  fi
+  git lfs track "*.deb"
 fi
 
 # Update version.json
