@@ -1,15 +1,15 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { useAddressesKeys, usePreventLeave } from '@proton/components';
+import { useGetAddressKeys, useGetAddresses, usePreventLeave } from '@proton/components';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { queryDeleteLockedVolumes, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Address } from '@proton/shared/lib/interfaces';
+import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -30,17 +30,39 @@ type LockedShares = {
     photos: ShareWithKey[];
 }[];
 
+export type AddressesKeysResult = { address: Address; keys: DecryptedAddressKey[] }[] | undefined;
 /**
  * useLockedVolume provides actions to delete or recover files from locked volumes.
  */
 export default function useLockedVolume() {
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
+    const [addressesKeys, setAddressesKeys] = useState<AddressesKeysResult>(undefined);
+    const getAddressKeys = useGetAddressKeys();
+    const getAddresses = useGetAddresses();
+
+    // Fetch and store the keys associated with each address
+    // It first fetches all addresses, and then fetch all keys for each address.
+    // We wait for all the keys to be loaded before setting them into the state.
+    // This prevent unexpected issue during recovery when an user have multiple addresses and all keys are not yet loaded.
+    useEffect(() => {
+        void getAddresses().then((addresses) => {
+            void Promise.all(
+                addresses.map(async (address) => {
+                    const addressKeys = await getAddressKeys(address.ID);
+                    return {
+                        address,
+                        keys: addressKeys,
+                    };
+                })
+            ).then(setAddressesKeys);
+        });
+    }, [getAddressKeys, getAddresses]);
 
     return useLockedVolumeInner({
         sharesState: useSharesState(),
         getShareWithKey: useShare().getShareWithKey,
         getDefaultShare: useDefaultShare().getDefaultShare,
-        addressesKeys: useAddressesKeys()[0],
+        addressesKeys,
         getOwnAddressAndPrimaryKeys: useDriveCrypto().getOwnAddressAndPrimaryKeys,
         prepareVolumeForRestore,
         getLinkHashKey,
@@ -51,7 +73,7 @@ export default function useLockedVolume() {
 type LockedVolumesCallbacks = {
     sharesState: ReturnType<typeof useSharesState>;
     getShareWithKey: ReturnType<typeof useShare>['getShareWithKey'];
-    addressesKeys: ReturnType<typeof useAddressesKeys>[0];
+    addressesKeys: AddressesKeysResult;
     getDefaultShare: ReturnType<typeof useDefaultShare>['getDefaultShare'];
     getOwnAddressAndPrimaryKeys: ReturnType<typeof useDriveCrypto>['getOwnAddressAndPrimaryKeys'];
     prepareVolumeForRestore: typeof prepareVolumeForRestore;
