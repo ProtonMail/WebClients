@@ -30,7 +30,7 @@ export interface InviteActions {
     addedAttendees?: VcalAttendeeProperty[];
     removedAttendees?: VcalAttendeeProperty[];
     hasRemovedAllAttendees?: boolean;
-    hasModifiedRSVPStatus?: boolean;
+    hasModifiedRole?: boolean;
     recurringType?: RECURRING_TYPES;
 }
 
