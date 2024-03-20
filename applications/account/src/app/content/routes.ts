@@ -22,6 +22,7 @@ interface Arguments {
     recoveryNotification?: ThemeColor;
     isProtonSentinelEligible: boolean;
     isNotifInboxDesktopAppOn: boolean;
+    isBreachesAccountDashboardEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -36,6 +37,7 @@ export const getRoutes = ({
     recoveryNotification,
     isProtonSentinelEligible,
     isNotifInboxDesktopAppOn,
+    isBreachesAccountDashboardEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -49,6 +51,7 @@ export const getRoutes = ({
             recoveryNotification,
             organization,
             isProtonSentinelEligible,
+            isBreachesAccountDashboardEnabled,
         }),
         mail: getMailAppRoutes({
             app,

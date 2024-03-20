@@ -170,6 +170,7 @@ export interface SubscriptionContainerProps {
     organization: Organization;
     plans: Plan[];
     freePlan: FreePlanDefault;
+    mode?: 'upsell-modal';
 }
 
 const SubscriptionContainer = ({
@@ -197,6 +198,7 @@ const SubscriptionContainer = ({
     organization,
     plans,
     freePlan,
+    mode,
 }: SubscriptionContainerProps) => {
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -825,6 +827,9 @@ const SubscriptionContainer = ({
     const hasSomeVpnPlan =
         getHasSomeVpnPlan(subscription) || getIsVpnPlan(getPlanFromPlanIDs(plansMap, model.planIDs)?.Name);
 
+    const modeType = mode ? mode : 'modal';
+    const showFreePlan = modeType === 'upsell-modal' ? false : undefined;
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -840,7 +845,8 @@ const SubscriptionContainer = ({
                     currency={model.currency}
                     cycle={model.cycle}
                     planIDs={model.planIDs}
-                    mode="modal"
+                    mode={modeType}
+                    hasFreePlan={showFreePlan}
                     subscription={subscription}
                     onChangePlanIDs={(planIDs) =>
                         withLoadingCheck(

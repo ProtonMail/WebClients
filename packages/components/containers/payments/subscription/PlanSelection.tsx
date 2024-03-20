@@ -96,7 +96,7 @@ interface Props {
     freePlan: FreePlanDefault;
     vpnServers: VPNServersCountData;
     loading?: boolean;
-    mode: 'signup' | 'settings' | 'modal';
+    mode: 'signup' | 'settings' | 'modal' | 'upsell-modal';
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
     onChangeCurrency: (newCurrency: Currency) => void;
     onChangeCycle: (newCyle: Cycle) => void;
@@ -304,7 +304,7 @@ const PlanSelection = ({
         }
 
         const featuresElement =
-            mode === 'settings' || (audience === Audience.B2B && isVpnSettingsApp) ? (
+            mode === 'settings' || mode === 'upsell-modal' || (audience === Audience.B2B && isVpnSettingsApp) ? (
                 <PlanCardFeaturesShort plan={shortPlan} icon />
             ) : (
                 <PlanCardFeatures audience={audience} features={features} planName={shortPlan.plan} />

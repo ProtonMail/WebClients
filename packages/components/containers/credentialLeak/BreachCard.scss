@@ -1,0 +1,17 @@
+.breach-icon-bg {
+	&-warning {
+		background-color: var(--signal-warning-minor-1);
+	}
+
+	&-danger {
+		background-color: var(--signal-danger-minor-2);
+	}
+
+	&-info {
+		background-color: var(--signal-info-minor-2);
+	}
+
+	&-success {
+		background-color: var(--signal-success-minor-2);
+	}
+}
