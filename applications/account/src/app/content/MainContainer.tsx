@@ -19,6 +19,7 @@ import {
     useAddresses,
     useDeviceRecovery,
     useFeatures,
+    useFlag,
     useIsDataRecoveryAvailable,
     useOrganization,
     useRecoveryNotification,
@@ -127,7 +128,7 @@ const MainContainer = () => {
     ]);
 
     const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
-
+    const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false);
@@ -150,6 +151,7 @@ const MainContainer = () => {
         recoveryNotification: recoveryNotification?.color,
         isProtonSentinelEligible: isProtonSentinelEligible(userSettings),
         isNotifInboxDesktopAppOn,
+        isBreachesAccountDashboardEnabled,
     });
 
     useEffect(() => {
@@ -222,12 +224,7 @@ const MainContainer = () => {
     );
 
     const redirect = (() => {
-        if (
-            loadingOrganization ||
-            loadingSubscription ||
-            loadingDataRecovery ||
-            loadingIsSessionRecoveryAvailable
-        ) {
+        if (loadingOrganization || loadingSubscription || loadingDataRecovery || loadingIsSessionRecoveryAvailable) {
             return <PrivateMainAreaLoading />;
         }
 
