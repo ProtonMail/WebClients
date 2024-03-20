@@ -13,6 +13,7 @@ import {
     DownloadEventCallbacks,
     DownloadStreamControls,
     LinkDownload,
+    LogCallback,
     Pagination,
 } from './interface';
 
@@ -84,6 +85,7 @@ export default function usePublicDownload() {
         name: string,
         list: LinkDownload[],
         eventCallbacks: DownloadEventCallbacks,
+        log: LogCallback,
         options?: { virusScan?: boolean }
     ): DownloadControls => {
         return initDownloadPure(
@@ -102,6 +104,7 @@ export default function usePublicDownload() {
                 ...eventCallbacks,
                 onSignatureIssue: undefined,
             },
+            log,
             options
         );
     };

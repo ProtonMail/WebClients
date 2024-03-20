@@ -4,6 +4,7 @@ import {
     DownloadStreamControls,
     GetChildrenCallback,
     LinkDownload,
+    LogCallback,
     OnInitCallback,
     OnProgressCallback,
     OnSignatureIssueCallback,
@@ -20,6 +21,7 @@ import { NestedLinkDownload } from './interface';
 export default function initDownloadLinks(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
+    log: LogCallback,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
     const folderLoaders: Map<String, FolderTreeLoader> = new Map();
@@ -36,13 +38,14 @@ export default function initDownloadLinks(
         loadTotalSize(
             links,
             folderLoaders,
+            log,
             callbacks.getChildren,
             callbacks.onInit,
             callbacks.onSignatureIssue,
             callbacks.onProgress
         );
         const linksIterator = iterateAllLinks(links, folderLoaders);
-        const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks, options);
+        const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks, log, options);
         archiveGenerator
             .writeLinks(linksWithStreamsIterator)
             .then(() => {
@@ -70,6 +73,7 @@ export default function initDownloadLinks(
 function loadTotalSize(
     links: LinkDownload[],
     folderLoaders: Map<String, FolderTreeLoader>,
+    log: LogCallback,
     getChildren: GetChildrenCallback,
     onInit?: OnInitCallback,
     onSignatureIssue?: OnSignatureIssueCallback,
@@ -79,7 +83,7 @@ function loadTotalSize(
         if (link.isFile) {
             return { size: link.size, linkSizes: Object.fromEntries([[link.linkId, link.size]]) };
         }
-        const folderLoader = new FolderTreeLoader(link);
+        const folderLoader = new FolderTreeLoader(link, log);
         folderLoaders.set(link.shareId + link.linkId, folderLoader);
         const result = await folderLoader.load(getChildren, onSignatureIssue, onProgress);
         result.linkSizes[link.linkId] = result.size;
