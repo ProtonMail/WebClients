@@ -6318,7 +6318,7 @@ __metadata:
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.6"
     typescript: "npm:^5.4.2"
-    unleash-proxy-client: "npm:^3.3.1"
+    unleash-proxy-client: "npm:^3.3.2"
   peerDependencies:
     "@proton/cross-storage": "*"
     "@proton/crypto": "*"
@@ -38379,13 +38379,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unleash-proxy-client@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "unleash-proxy-client@npm:3.3.1"
+"unleash-proxy-client@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "unleash-proxy-client@npm:3.3.2"
   dependencies:
     tiny-emitter: "npm:^2.1.0"
     uuid: "npm:^9.0.1"
-  checksum: 10c0/0ea2181cc2477b0bb05b12ea3ff19da911e765a9590128895171586eeefe1ab4f444c401839a4ab702ccdb5337128519c176f156d1231554885d8c0dc87df000
+  checksum: 10c0/43c089fc2ef14294e11e8af4d14c053d7faac9bf56c3635a3723bbeacc3607c89604c24e6c2f86c8ef93d48d16e972e3219ef278465b481967cdf4322443ecf0
   languageName: node
   linkType: hard
 
