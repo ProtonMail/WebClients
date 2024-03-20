@@ -19,11 +19,11 @@ import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication
 
 import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 
-jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', () => ({
+jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
-    CalendarModal: jest.fn(() => <span>CalendarModal</span>),
+    PersonalCalendarModal: jest.fn(() => <span>PersonalCalendarModal</span>),
     // It's not great having to mock this export manually, but the only alternative would be
-    // to move the enum definition somewhere else. Ideally we shouldn't mock CalendarModal at all
+    // to move the enum definition somewhere else. Ideally we shouldn't mock PersonalCalendarModal at all
     CALENDAR_MODAL_TYPE: {
         COMPLETE: 0,
         SHARED: 1,
@@ -346,7 +346,7 @@ describe('CalendarSidebarListItems', () => {
         expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars/id2`);
         expect(getImportButton()).toBeInTheDocument();
 
-        const getCalendarModal = () => screen.queryByText(/CalendarModal/);
+        const getCalendarModal = () => screen.queryByText(/PersonalCalendarModal/);
 
         expect(getCalendarModal()).not.toBeInTheDocument();
         expect(getImportModal()).not.toBeInTheDocument();
