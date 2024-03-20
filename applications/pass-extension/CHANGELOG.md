@@ -1,3 +1,7 @@
+### Version 1.16.1
+
+-   Fix injection bottlenecks on docusign.com
+
 ### Version 1.16.0
 
 -   Add passkey support
