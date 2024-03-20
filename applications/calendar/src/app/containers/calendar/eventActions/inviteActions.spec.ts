@@ -1,5 +1,5 @@
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
-import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
@@ -12,18 +12,20 @@ import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import { AugmentedSendPreferences } from '../interface';
-import { getAttendeesDiff, getHasProtonAttendees, getRSVPStatusDiff, getSendIcsAction } from './inviteActions';
+import { getAttendeesDiff, getHasProtonAttendees, getRoleDiff, getSendIcsAction } from './inviteActions';
 
 const generateContact = ({
     mail,
     isInternal = false,
     internalWithEncryptionDisabled = false,
     rsvp = ICAL_ATTENDEE_RSVP.TRUE,
+    role = ICAL_ATTENDEE_ROLE.REQUIRED,
 }: {
     mail: string;
     isInternal?: boolean;
     internalWithEncryptionDisabled?: boolean;
     rsvp?: ICAL_ATTENDEE_RSVP;
+    role?: ICAL_ATTENDEE_ROLE;
 }) =>
     [
         {
@@ -37,7 +39,7 @@ const generateContact = ({
         { [mail]: { Email: mail } },
         {
             value: buildMailTo(mail),
-            parameters: { cn: mail, role: 'REQ-PARTICIPANT', rsvp, partstat: 'NEEDS-ACTION' },
+            parameters: { cn: mail, role, rsvp, partstat: 'NEEDS-ACTION' },
         },
     ] as unknown as [SimpleMap<AugmentedSendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
 
@@ -67,9 +69,9 @@ const baseVevent: VcalVeventComponent = {
 
 const selfAddress = generateTestAddress();
 
-const getVevent = (pseudoAttendees: { email: string; rsvp: ICAL_ATTENDEE_RSVP }[]) => {
+const getVevent = (pseudoAttendees: { email: string; rsvp?: ICAL_ATTENDEE_RSVP; role?: ICAL_ATTENDEE_ROLE }[]) => {
     return {
-        attendee: pseudoAttendees.map(({ email, rsvp }) => generateContact({ mail: email, rsvp })[2]),
+        attendee: pseudoAttendees.map(({ email, rsvp, role }) => generateContact({ mail: email, rsvp, role })[2]),
     } as VcalVeventComponent;
 };
 
@@ -732,48 +734,48 @@ describe('getHasProtonAttendees()', () => {
     });
 });
 
-describe('getRSVPStatusDiff', () => {
-    it('should have no RSVP status diff when events have the same data', () => {
+describe('getRoleDiff', () => {
+    it('should have no role diff when events have the same data', () => {
         const vevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
-            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user2@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
         ]);
 
-        expect(getRSVPStatusDiff(vevent, vevent)).toBeFalsy();
+        expect(getRoleDiff(vevent, vevent)).toBeFalsy();
     });
 
-    it('should have no RSVP status diff when event has no attendee', () => {
+    it('should have no role status diff when event has no attendee', () => {
         const vevent = getVevent([]);
 
-        expect(getRSVPStatusDiff(vevent, vevent)).toBeFalsy();
+        expect(getRoleDiff(vevent, vevent)).toBeFalsy();
     });
 
-    it('should have no RSVP status diff when some attendees have been removed or added', () => {
+    it('should have no role diff when some attendees have been removed or added', () => {
         const oldVevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
-            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user2@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
         ]);
 
         const newVevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
-            { email: 'user3@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user3@proton.me', role: ICAL_ATTENDEE_ROLE.OPTIONAL },
         ]);
 
-        expect(getRSVPStatusDiff(newVevent, oldVevent)).toBeFalsy();
+        expect(getRoleDiff(newVevent, oldVevent)).toBeFalsy();
     });
 
-    it('should have RSVP status diff when some RSVP have been updated', () => {
+    it('should have role status diff when some roles have been updated', () => {
         const oldVevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
-            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user2@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
         ]);
 
         const newVevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
-            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user2@proton.me', role: ICAL_ATTENDEE_ROLE.OPTIONAL },
         ]);
 
-        expect(getRSVPStatusDiff(newVevent, oldVevent)).toBeTruthy();
+        expect(getRoleDiff(newVevent, oldVevent)).toBeTruthy();
     });
 });
 
@@ -784,11 +786,11 @@ describe('getAttendeesDiff', () => {
             { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
         ]);
 
-        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(vevent, vevent);
+        const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(vevent, vevent);
 
         expect(addedAttendees).toHaveLength(0);
         expect(removedAttendees).toHaveLength(0);
-        expect(hasModifiedRSVPStatus).toBeFalsy();
+        expect(hasModifiedRole).toBeFalsy();
     });
 
     it('should have a diff when adding attendees', () => {
@@ -805,11 +807,11 @@ describe('getAttendeesDiff', () => {
 
         const addedAttendee = generateContact({ mail: 'user3@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE })[2];
 
-        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+        const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
 
         expect(addedAttendees).toEqual([addedAttendee]);
         expect(removedAttendees).toHaveLength(0);
-        expect(hasModifiedRSVPStatus).toBeFalsy();
+        expect(hasModifiedRole).toBeFalsy();
     });
 
     it('should have a diff when removing attendees', () => {
@@ -822,28 +824,28 @@ describe('getAttendeesDiff', () => {
 
         const removedAttendee = generateContact({ mail: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE })[2];
 
-        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+        const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
 
         expect(addedAttendees).toHaveLength(0);
         expect(removedAttendees).toEqual([removedAttendee]);
-        expect(hasModifiedRSVPStatus).toBeFalsy();
+        expect(hasModifiedRole).toBeFalsy();
     });
 
-    it('should have a diff when updating RSVP status', () => {
+    it('should have a diff when updating role', () => {
         const oldVevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
-            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.FALSE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user2@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
         ]);
 
         const newVevent = getVevent([
-            { email: 'user1@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
-            { email: 'user2@proton.me', rsvp: ICAL_ATTENDEE_RSVP.TRUE },
+            { email: 'user1@proton.me', role: ICAL_ATTENDEE_ROLE.REQUIRED },
+            { email: 'user2@proton.me', role: ICAL_ATTENDEE_ROLE.OPTIONAL },
         ]);
 
-        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+        const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
 
         expect(addedAttendees).toHaveLength(0);
         expect(removedAttendees).toHaveLength(0);
-        expect(hasModifiedRSVPStatus).toBeTruthy();
+        expect(hasModifiedRole).toBeTruthy();
     });
 });
