@@ -413,11 +413,9 @@ const getSaveEventActions = async ({
         hasModifiedDateTimes,
         hasModifiedRrule,
     });
-    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = correctedInviteActions;
+    const { addedAttendees, removedAttendees } = correctedInviteActions;
     const hasAttendeesUpdates =
-        !!(addedAttendees && addedAttendees.length > 0) ||
-        !!(removedAttendees && removedAttendees.length > 0) ||
-        !!hasModifiedRSVPStatus;
+        !!(addedAttendees && addedAttendees.length > 0) || !!(removedAttendees && removedAttendees.length > 0);
 
     const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
         correctedInviteActions.type

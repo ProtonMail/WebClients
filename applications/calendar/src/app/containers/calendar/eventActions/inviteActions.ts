@@ -1,7 +1,7 @@
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail, getEquivalentAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_RSVP, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
     generateEmailBody,
@@ -10,7 +10,7 @@ import {
     getHasUpdatedInviteData,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getIsEquivalentOrganizer } from '@proton/shared/lib/calendar/vcalConverter';
-import { getAttendeePartstat, getHasAttendees, getRSVPStatus } from '@proton/shared/lib/calendar/vcalHelper';
+import { getAttendeePartstat, getAttendeeRole, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
@@ -57,7 +57,7 @@ type CreateInvitesReturn =
     | CancelEventInviteIcsAndPmCancelVevent
     | (EventInviteIcsAndPmVevent & CancelEventInviteIcsAndPmCancelVevent);
 
-export const getRSVPStatusDiff = (
+export const getRoleDiff = (
     newVevent: Pick<VcalVeventComponent, 'attendee'>,
     oldVevent?: Pick<VcalVeventComponent, 'attendee'>
 ) => {
@@ -65,22 +65,20 @@ export const getRSVPStatusDiff = (
     const oldEventAttendees = oldVevent?.attendee;
 
     if (newEventAttendees?.length && oldEventAttendees?.length) {
-        const oldEventRSVPMap: Map<string, ICAL_ATTENDEE_RSVP> = new Map();
+        const oldEventRoleMap: Map<string, ICAL_ATTENDEE_ROLE> = new Map();
 
         oldEventAttendees?.forEach((attendee) => {
             const canonicalizedEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
-            const eventRSVP = getRSVPStatus(attendee);
-            if (eventRSVP) {
-                oldEventRSVPMap.set(canonicalizedEmail, eventRSVP);
-            }
+            const eventRole = getAttendeeRole(attendee);
+            oldEventRoleMap.set(canonicalizedEmail, eventRole);
         });
 
         return newEventAttendees.some((attendee) => {
             const canonicalizedEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
-            const attendeeInNewEventRSVP = getRSVPStatus(attendee);
+            const attendeeInNewEventRole = getAttendeeRole(attendee);
 
-            const oldEventAttendeeRSVP = oldEventRSVPMap.get(canonicalizedEmail);
-            return !!oldEventAttendeeRSVP && attendeeInNewEventRSVP !== oldEventAttendeeRSVP;
+            const oldEventAttendeeRole = oldEventRoleMap.get(canonicalizedEmail);
+            return !!oldEventAttendeeRole && attendeeInNewEventRole !== oldEventAttendeeRole;
         });
     }
     return false;
@@ -120,9 +118,9 @@ export const getAttendeesDiff = (
         const normalizedOldEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedNewEmails.includes(normalizedOldEmail);
     });
-    const hasModifiedRSVPStatus = getRSVPStatusDiff(newVevent, oldVevent);
+    const hasModifiedRole = getRoleDiff(newVevent, oldVevent);
 
-    return { addedAttendees, removedAttendees, hasModifiedRSVPStatus };
+    return { addedAttendees, removedAttendees, hasModifiedRole };
 };
 
 export const getEquivalentAttendeesSend = (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
@@ -263,7 +261,7 @@ export const getCorrectedSaveInviteActions = ({
         hasModifiedDateTimes,
         hasModifiedRrule,
     });
-    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
+    const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
     const hasRemovedAllAttendees = hasRemovedAttendees && removedAttendees?.length === oldVevent.attendee?.length;
@@ -274,7 +272,7 @@ export const getCorrectedSaveInviteActions = ({
             addedAttendees,
             removedAttendees,
             hasRemovedAllAttendees,
-            hasModifiedRSVPStatus,
+            hasModifiedRole,
         };
     }
     if (!hasAddedAttendees && !hasRemovedAttendees) {
