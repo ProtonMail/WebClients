@@ -5,7 +5,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     electronAppVersion,
-    isElectronApp,
+    isElectronMail,
     isElectronOnLinux as isLinux,
     isElectronOnMac as isMac,
     isElectronOnWindows as isWindows,
@@ -47,7 +47,7 @@ const doesEarlyVersionNeedsManualUpdate = (app: DesktopVersion, version: string)
 };
 
 const DownloadButton = ({ link }: { link: string }) => {
-    if (isElectronApp) {
+    if (isElectronMail) {
         return (
             <Button shape="underline" className="py-0 align-baseline" onClick={() => openLinkInBrowser(link)}>{c(
                 'Action'
@@ -78,7 +78,7 @@ const InboxDesktopOutdatedAppTopBanner = () => {
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, allLinuxVersions, loading } = useInboxDesktopVersion();
 
-    if (!isElectronApp || !version || loading) {
+    if (!isElectronMail || !version || loading) {
         return null;
     }
 

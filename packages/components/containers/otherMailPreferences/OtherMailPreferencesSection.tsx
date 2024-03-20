@@ -1,4 +1,4 @@
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { FeatureCode, useFeature } from '../..';
 import { SenderImages } from './SenderImages';
@@ -10,7 +10,7 @@ export const OtherMailPreferencesSection = () => {
     return (
         <div className="mt-8">
             <SenderImages />
-            {isUnreadFaviconEnabled && !isElectronApp && <UnreadFaviconCounter />}
+            {isUnreadFaviconEnabled && !isElectronMail && <UnreadFaviconCounter />}
         </div>
     );
 };
