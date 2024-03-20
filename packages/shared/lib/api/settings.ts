@@ -251,3 +251,8 @@ export const updateCrashReports = (data: { CrashReports: number }) => ({
     method: 'put',
     data,
 });
+
+export const getBreaches = () => ({
+    url: 'account/v4/breaches',
+    method: 'get',
+});

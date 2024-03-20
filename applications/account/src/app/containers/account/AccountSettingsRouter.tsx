@@ -10,6 +10,7 @@ import {
     AutomaticSubscriptionModal,
     CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
+    CredentialLeakSection,
     CreditsSection,
     DataRecoverySection,
     DeleteSection,
@@ -143,12 +144,16 @@ const AccountSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, security)}>
-                <PrivateMainSettingsArea config={security}>
-                    <SentinelSection app={app} />
-                    <SessionsSection />
-                    <LogsSection />
-                    <PrivacySection />
-                </PrivateMainSettingsArea>
+                <SubscriptionModalProvider app={app}>
+                    <AutomaticSubscriptionModal />
+                    <PrivateMainSettingsArea config={security}>
+                        <SentinelSection app={app} />
+                        <CredentialLeakSection />
+                        <SessionsSection />
+                        <LogsSection />
+                        <PrivacySection />
+                    </PrivateMainSettingsArea>
+                </SubscriptionModalProvider>
             </Route>
             {getIsSectionAvailable(referral) && (
                 <Route path={getSectionPath(path, referral)}>
