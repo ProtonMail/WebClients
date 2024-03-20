@@ -8,6 +8,21 @@ import {
     Icon,
 } from '@proton/components/components';
 
+export const AdministratorItem = ({ name, email }: { name: string; email: string }) => {
+    return (
+        <div className="w-full flex flex-column gap-1">
+            <div className="w-full text-ellipsis">
+                <span className="text-bold" title={name}>
+                    {name}
+                </span>
+            </div>
+            <div className="w-full text-ellipsis text-sm" title={email}>
+                {email}
+            </div>
+        </div>
+    );
+};
+
 const AdministratorList = ({
     members,
     expandByDefault,
@@ -35,18 +50,7 @@ const AdministratorList = ({
             <CollapsibleContent>
                 <div className="flex flex-column gap-2">
                     {members.map(({ member, email }) => {
-                        return (
-                            <div key={member.ID} className="w-full flex flex-column gap-1">
-                                <div className="w-full text-ellipsis">
-                                    <span className="text-bold" title={member.Name}>
-                                        {member.Name}
-                                    </span>
-                                </div>
-                                <div className="w-full text-ellipsis text-sm" title={email}>
-                                    {email}
-                                </div>
-                            </div>
-                        );
+                        return <AdministratorItem key={member.ID} name={member.Name} email={email} />;
                     })}
                 </div>
             </CollapsibleContent>
