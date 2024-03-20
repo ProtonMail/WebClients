@@ -1,13 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import {
-    APPS,
-    CALENDAR_APP_NAME,
-    MAIL_APP_NAME,
-    PLANS,
-    PLAN_SERVICES,
-    VPN_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
@@ -41,13 +34,8 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
         if (!plan) {
             return `${service} Free`;
         }
-        if (plan.Name === PLANS.VISIONARY) {
-            // For visionary plan, Title equals "Visionary"
-            return `${service} Visionary`;
-        }
-        if (plan.Title) {
-            return plan.Title;
-        }
+
+        return plan.Title;
     };
 
     const closestLocale = getClosestLocaleCode(userSettings?.Locale, LOCALES);

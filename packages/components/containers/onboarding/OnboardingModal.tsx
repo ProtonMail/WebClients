@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
-import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -75,8 +75,7 @@ const OnboardingModal = ({
         (organization?.MaxMembers || 0) > 1 &&
         organization?.UsedMembers === 1 &&
         !organization?.HasKeys &&
-        !hasNewVisionary(subscription) &&
-        !hasVisionary(subscription);
+        !hasNewVisionary(subscription);
 
     const [step, setStep] = useState(0);
 
