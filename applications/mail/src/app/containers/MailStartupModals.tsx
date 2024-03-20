@@ -14,7 +14,7 @@ import {
     useWelcomeFlags,
 } from '@proton/components';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 
@@ -38,7 +38,7 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
 
     const onceRef = useRef(false);
     useEffect(() => {
-        if (onceRef.current || isElectronApp) {
+        if (onceRef.current || isElectronMail) {
             return;
         }
 
@@ -59,7 +59,7 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
 
     return (
         <>
-            {isElectronApp && !user.hasPaidMail && <InboxDesktopFreeTrialOnboardingModal />}
+            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialOnboardingModal />}
             {renderOnboardingModal && (
                 <EasySwitchProvider>
                     <MailOnboardingModal

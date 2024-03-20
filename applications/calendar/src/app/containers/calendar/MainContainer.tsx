@@ -16,7 +16,7 @@ import { useInstance } from '@proton/hooks/index';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useCalendarFavicon from '../../hooks/useCalendarFavicon';
@@ -103,7 +103,7 @@ const MainContainer = () => {
         return <CalendarSetupContainer calendars={calendarsToSetup} onDone={() => setCalendarsToSetup([])} />;
     }
 
-    if (!isDone && !isElectronApp) {
+    if (!isDone && !isElectronMail) {
         return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
     }
 

@@ -10,7 +10,7 @@ import {
     useSubscription,
 } from '@proton/components';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 interface Props {
     setStartupModalState: Dispatch<SetStateAction<{ hasModal?: boolean; isOpen: boolean }>>;
@@ -36,7 +36,7 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
             return;
         }
 
-        if (isElectronApp) {
+        if (isElectronMail) {
             setStartupModalState({ hasModal: false, isOpen: false });
             return;
         }
