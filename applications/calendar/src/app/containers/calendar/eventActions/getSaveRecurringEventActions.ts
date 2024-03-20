@@ -244,6 +244,11 @@ const getSaveRecurringEventActions = async ({
                 });
             }
 
+            const hasUpdatedInviteData = getHasUpdatedInviteData({
+                newVevent: newVeventWithSequence,
+                oldVevent: oldVeventWithSequence,
+                hasModifiedDateTimes,
+            });
             const updateOperation = getUpdateSyncOperation({
                 veventComponent: correctedVevent,
                 calendarEvent: oldEvent,
@@ -252,7 +257,7 @@ const getSaveRecurringEventActions = async ({
                 addedAttendeesPublicKeysMap,
                 // we only need to specify isPersonalSingleEdit when we need to change its value
                 // here that is in case the existing single edit was a personal one, but we're now propagating the change to attendees
-                isPersonalSingleEdit: isSendInviteType && oldEvent.IsPersonalSingleEdit ? false : undefined,
+                isPersonalSingleEdit: hasUpdatedInviteData && oldEvent.IsPersonalSingleEdit ? false : undefined,
             });
 
             return {
