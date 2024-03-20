@@ -1,0 +1,6 @@
+.breach-list-item-selected {
+	border-color: var(--button-active-border-color, transparent);
+	background-color: var(--button-active-background-color, transparent);
+	color: var(--button-active-text-color, inherit);
+	opacity: 1;
+}
