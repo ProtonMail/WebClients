@@ -162,6 +162,10 @@ export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
 
+export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
+    return [PASS_PRO, PASS_BUSINESS].includes(planName as any);
+};
+
 export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     return [VPN, VPN2024, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
