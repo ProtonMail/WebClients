@@ -31,6 +31,7 @@ export const getAccountAppRoutes = ({
     recoveryNotification,
     organization,
     isProtonSentinelEligible,
+    isBreachesAccountDashboardEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -42,6 +43,7 @@ export const getAccountAppRoutes = ({
     recoveryNotification?: ThemeColor;
     organization?: Organization;
     isProtonSentinelEligible: boolean;
+    isBreachesAccountDashboardEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -251,6 +253,12 @@ export const getAccountAppRoutes = ({
                         text: PROTON_SENTINEL_NAME,
                         id: 'sentinel',
                         available: isProtonSentinelEligible && !isSSOUser,
+                    },
+
+                    {
+                        text: c('Title').t`Breach Alerts`,
+                        id: 'breaches',
+                        available: isBreachesAccountDashboardEnabled && !isSSOUser,
                     },
                     {
                         text: c('Title').t`Session management`,

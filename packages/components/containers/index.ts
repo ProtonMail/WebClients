@@ -67,3 +67,4 @@ export * from './topBanners';
 export * from './unleash';
 export * from './verification';
 export * from './vpn';
+export * from './credentialLeak';
