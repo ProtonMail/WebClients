@@ -9,10 +9,10 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { EnhancedMember } from '@proton/shared/lib/interfaces';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { Icon, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
-import AdministratorList from './AdministratorList';
+import AdministratorList, { AdministratorItem } from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
     members: EnhancedMember[];
@@ -26,7 +26,10 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const { createNotification } = useNotifications();
-    const [result, setResult] = useState<null | MemberKeyPayload[]>(null);
+    const [result, setResult] = useState<null | {
+        payload: MemberKeyPayload[];
+        map: { [id: string]: MemberKeyPayload };
+    }>(null);
     const errorHandler = useErrorHandler();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
@@ -43,7 +46,16 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                     api: silentApi,
                 })
             );
-            setResult(result);
+            setResult({
+                payload: result,
+                map: result.reduce<{ [id: string]: MemberKeyPayload }>(
+                    (acc, cur) => ({
+                        ...acc,
+                        [cur.member.ID]: cur,
+                    }),
+                    {}
+                ),
+            });
         };
         withLoadingInit(run()).catch(errorHandler);
     }, []);
@@ -64,6 +76,8 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
         }
     };
 
+    const membersWithoutPayload = result ? members.filter((member) => !result.map[member.ID]) : [];
+
     return (
         <ModalTwo open {...rest}>
             <ModalTwoHeader title={c('Title').t`Restore administrator privileges`} {...rest} />
@@ -79,17 +93,57 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                         );
                     }
 
-                    if (!result?.length) {
+                    if (!result) {
                         return null;
                     }
 
+                    const n = membersWithoutPayload.length;
+
                     return (
                         <div>
-                            <div className="mb-4">
-                                {c('passwordless')
-                                    .t`The following administrators will get access to the organization key.`}
-                            </div>
-                            <AdministratorList members={result} expandByDefault={true} />
+                            {n > 0 && (
+                                <div className="mt-4">
+                                    <div className="mb-4 bg-weak w-full border pl-3 pr-4 py-3 rounded-lg ">
+                                        <div className="flex items-start flex-nowrap gap-2">
+                                            <div className="flex justify-start items-start shrink-0 pt-0.5">
+                                                <Icon
+                                                    name="exclamation-circle-filled"
+                                                    className="color-danger shrink-0"
+                                                />
+                                            </div>
+                                            <span>
+                                                {c('passwordless')
+                                                    .t`The following administrators could not be restored.`}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <div className="flex flex-column gap-2 mt-2">
+                                                {membersWithoutPayload.map((member) => (
+                                                    <AdministratorItem
+                                                        key={member.ID}
+                                                        name={member.Name}
+                                                        email={member.Addresses?.[0]?.Email || member.Name}
+                                                    />
+                                                ))}
+                                            </div>
+
+                                            <div className="mt-2">
+                                                {c('passwordless')
+                                                    .t`Please ensure they have an enabled address and invite them separately later.`}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            {result.payload.length > 0 && (
+                                <>
+                                    <div className="mt-4 mb-4">
+                                        {c('passwordless')
+                                            .t`The following administrators will get access to the organization key.`}
+                                    </div>
+                                    <AdministratorList members={result.payload} expandByDefault={true} />
+                                </>
+                            )}
                         </div>
                     );
                 })()}
@@ -104,10 +158,14 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                         if (!result) {
                             return;
                         }
-                        withLoading(handleSubmit(result));
+                        if (!result.payload.length) {
+                            rest.onClose?.();
+                            return;
+                        }
+                        withLoading(handleSubmit(result.payload));
                     }}
                 >
-                    {c('Title').t`Confirm`}
+                    {result && !result.payload.length ? c('Title').t`Close` : c('Title').t`Confirm`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
