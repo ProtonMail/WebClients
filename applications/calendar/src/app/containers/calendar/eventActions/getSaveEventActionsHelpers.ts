@@ -256,8 +256,8 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
     if (addedOrganizer) {
         result.organizer = newVevent.organizer;
     }
-    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
-    if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
+    const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(newVevent, oldVevent);
+    if (addedAttendees?.length || removedAttendees?.length || hasModifiedRole) {
         result.attendee = newVevent.attendee || [];
     }
     if (getSupportedStringValue(newVevent.color) !== getSupportedStringValue(oldVevent.color)) {
@@ -321,8 +321,8 @@ export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Part
         return true;
     }
     if (mergeVevent.attendee) {
-        const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(vevent, mergeVevent);
-        if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
+        const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(vevent, mergeVevent);
+        if (addedAttendees?.length || removedAttendees?.length || hasModifiedRole) {
             return true;
         }
     }
