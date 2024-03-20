@@ -68,7 +68,8 @@ const ExtraEventAlert = ({ model }: Props) => {
                 </Alert>
             );
         }
-        if (isPartyCrasher && !veventIcs['recurrence-id']) {
+        const singleAnswersSupported = !veventIcs['recurrence-id'] && invitationApi?.vevent['recurrence-id'];
+        if (isPartyCrasher && singleAnswersSupported) {
             const participantName = attendeeIcs.displayName;
             return (
                 <Alert className={alertClassName} type="warning">
