@@ -19,7 +19,7 @@ import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES } from '../constants';
-import { DownloadCallbacks, DownloadStreamControls } from '../interface';
+import { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
 import downloadBlock from './downloadBlock';
 
 export type DownloadBlocksCallbacks = Omit<
@@ -67,6 +67,7 @@ export default function initDownloadBlocks(
         onNetworkError,
         onFinish,
     }: DownloadBlocksCallbacks,
+    log: LogCallback,
     downloadBlockCallback = downloadBlock
 ) {
     const fileStream = new ObserverStream();
@@ -104,6 +105,7 @@ export default function initDownloadBlocks(
 
         const getBlocksPaged = async (pagination: { FromBlockIndex: number; PageSize: number }) => {
             try {
+                log(`Getting next blocks from index ${pagination.FromBlockIndex}`);
                 const result = await getBlocks(abortController.signal, pagination);
                 blocks = result.blocks;
                 if (result.thumbnailHashes) {
@@ -204,6 +206,7 @@ export default function initDownloadBlocks(
                             throw new TransferCancel({ message: `Transfer canceled` });
                         }
 
+                        log(`block ${Index}: downloading`);
                         const blockStream = await downloadBlockCallback(abortController, BareURL, Token);
 
                         const progressStream = new ObserverStream((value) => {
@@ -232,6 +235,7 @@ export default function initDownloadBlocks(
                                 buffers.set(Index, { done: false, chunks: [data] });
                             }
                         });
+                        log(`block ${Index}: downloaded`);
 
                         const currentBuffer = buffers.get(Index);
 
@@ -269,6 +273,7 @@ export default function initDownloadBlocks(
                      * from the active index
                      */
                     if (e.status === HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+                        log(`block ${activeIndex}: blocks might have expired, retry num: ${numRetries}`);
                         console.warn(`Blocks for download might have expired. Retry num: ${numRetries}`);
                         // Wait for all blocks to be finished to have proper activeIndex.
                         await waitUntil(() => ongoingNumberOfDownloads === 0);
@@ -291,6 +296,7 @@ export default function initDownloadBlocks(
                         // the full block data, but only part of the block.
                         e.message === 'Unexpected end of packet';
                     if (isSlightIssue && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+                        log(`block ${activeIndex}: Connection issue, retry num: ${numRetries}, error: ${e}`);
                         console.warn(
                             `Connection issue for block #${activeIndex} download. Retry num: ${numRetries}. Error:`,
                             e
@@ -320,8 +326,10 @@ export default function initDownloadBlocks(
                         // downloads are aborted. Therefore, first we need to
                         // wait for all downloads to be done to avoid flushing
                         // the same buffer more than once.
+                        log(`block ${activeIndex}: Connection issue, paused, error: ${e}`);
                         await waitUntil(() => paused === false && ongoingNumberOfDownloads === 0);
                         await startDownload(getBlockQueue(activeIndex));
+                        log(`block ${activeIndex}: Resuming download`);
                         return;
                     }
 

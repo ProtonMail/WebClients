@@ -3,7 +3,7 @@ import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { waitUntil } from '../../../utils/async';
 import { MAX_DOWNLOADING_BLOCKS_LOAD, MAX_DOWNLOADING_FILES_LOAD } from '../constants';
-import { DownloadCallbacks, DownloadStreamControls } from '../interface';
+import { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
 import initDownloadLinkFile from './downloadLinkFile';
 import { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
 
@@ -30,6 +30,7 @@ export default class ConcurrentIterator {
     async *iterate(
         links: AsyncGenerator<NestedLinkDownload>,
         callbacks: DownloadCallbacks,
+        log: LogCallback,
         options?: { virusScan?: boolean }
     ): AsyncGenerator<StartedNestedLinkDownload> {
         for await (const link of links) {
@@ -69,6 +70,7 @@ export default class ConcurrentIterator {
                             this.fileControlers.delete(uniqueId);
                         },
                     },
+                    log,
                     options
                 );
                 this.loadSize += link.size;
