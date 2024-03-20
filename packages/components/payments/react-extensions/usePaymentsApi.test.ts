@@ -1,41 +1,19 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
-import { PLANS } from '@proton/shared/lib/constants';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { addApiMock, apiMock, hookWrapper, withApi } from '@proton/testing/index';
+import { addApiMock, apiMock, defaultProtonConfig, hookWrapper, withApi, withConfig } from '@proton/testing/index';
 
 import { useChargebeeEnabledCache, useChargebeeKillSwitch } from '../client-extensions/useChargebeeContext';
 import { usePaymentsApi } from './usePaymentsApi';
 
-const wrapper = hookWrapper(withApi());
+const wrapper = hookWrapper(withApi(), withConfig());
 
 const mockInhouseForced = ChargebeeEnabled.INHOUSE_FORCED;
 
 const mockUseChargebeeEnabledCache = useChargebeeEnabledCache as jest.Mock;
 const mockUseChargebeeKillSwitch = useChargebeeKillSwitch as jest.Mock;
-
-const mockV5StatusResponse = {
-    Code: 1000,
-    CountryCode: 'CH',
-    ZipCode: '3001',
-    State: null,
-    VendorStates: {
-        Apple: 1,
-        Bitcoin: 1,
-        Card: 1,
-        InApp: 0,
-        Paypal: 1,
-    },
-};
-
-const mockV4StatusResponse = {
-    Apple: 1,
-    Bitcoin: 1,
-    Card: 1,
-    InApp: 0,
-    Paypal: 1,
-};
 
 jest.mock('../client-extensions/useChargebeeContext', () => ({
     __esModule: true,
@@ -46,8 +24,26 @@ jest.mock('../client-extensions/useChargebeeContext', () => ({
 beforeEach(() => {
     jest.clearAllMocks();
 
-    addApiMock('payments/v5/status', () => mockV5StatusResponse);
-    addApiMock('payments/v4/status', () => mockV4StatusResponse);
+    addApiMock('payments/v5/status', () => ({
+        Code: 1000,
+        CountryCode: 'CH',
+        ZipCode: '3001',
+        State: null,
+        VendorStates: {
+            Apple: 1,
+            Bitcoin: 1,
+            Card: 1,
+            InApp: 0,
+            Paypal: 1,
+        },
+    }));
+    addApiMock('payments/v4/status', () => ({
+        Apple: 1,
+        Bitcoin: 1,
+        Card: 1,
+        InApp: 0,
+        Paypal: 1,
+    }));
 });
 
 describe('usePaymentsApi', () => {
@@ -107,11 +103,13 @@ describe('usePaymentsApi', () => {
 
         await expect(result.current.paymentsApi.statusExtendedAutomatic()).resolves.toEqual({
             VendorStates: {
-                Apple: 1,
-                Bitcoin: 1,
-                Card: 1,
-                InApp: 0,
-                Paypal: 1,
+                Apple: true,
+                Bitcoin: true,
+                Card: true,
+                InApp: false,
+                Paypal: true,
+                Cash: true, // the Cash property is synthetically added after fetching the status
+                // other props are converted from 0s and 1s to booleans
             },
         });
         expect(apiMock).toHaveBeenCalledWith({
@@ -274,4 +272,31 @@ describe('usePaymentsApi', () => {
             });
         }
     );
+
+    it.each([
+        {
+            appName: APPS.PROTONACCOUNTLITE,
+            expectedCashValue: false,
+        },
+        {
+            appName: APPS.PROTONACCOUNT,
+            expectedCashValue: true,
+        },
+    ])('should switch Cash to $expectedCashValue when it is $appName', async ({ appName, expectedCashValue }) => {
+        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
+
+        const { result } = renderHook(() => usePaymentsApi(), {
+            wrapper: hookWrapper(
+                withApi(),
+                withConfig({
+                    ...defaultProtonConfig,
+                    APP_NAME: appName,
+                })
+            ),
+        });
+
+        const status = await result.current.paymentsApi.statusExtendedAutomatic();
+
+        expect(status.VendorStates.Cash).toEqual(expectedCashValue);
+    });
 });
