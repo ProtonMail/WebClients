@@ -12,7 +12,7 @@ const VpnUpgradeSection = () => {
     const { result } = useUserVPN();
     const userVPN = result?.VPN;
     const currentPlanName = userVPN?.PlanName;
-    const shouldUpgrade = currentPlanName === PLANS.VPNBASIC || currentPlanName === PLANS.FREE;
+    const shouldUpgrade = currentPlanName === PLANS.FREE;
 
     if (loadingPlans || !shouldUpgrade || !vpnPlan) {
         return null;

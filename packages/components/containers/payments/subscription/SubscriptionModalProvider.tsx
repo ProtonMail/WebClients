@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
-import { getHasLegacyPlans, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
@@ -11,7 +11,6 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalStat
 import { useOrganization, usePlans, useSubscription } from '../../../hooks';
 import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionContainer, { SubscriptionContainerProps } from './SubscriptionContainer';
-import SubscriptionModalDisabled from './SubscriptionModalDisabled';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 
 export interface OpenCallbackProps
@@ -72,8 +71,6 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     if (organization && subscription && render && subscriptionProps.current) {
         if (isManagedExternally(subscription)) {
             subscriptionModal = <InAppPurchaseModal subscription={subscription} {...modalState} />;
-        } else if (getHasLegacyPlans(subscription)) {
-            subscriptionModal = <SubscriptionModalDisabled {...modalState} />;
         } else {
             const {
                 hasClose,

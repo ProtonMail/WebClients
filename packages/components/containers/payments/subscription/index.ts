@@ -3,7 +3,6 @@ export { default as DowngradeSubscriptionSection } from './DowngradeSubscription
 export { default as PlanCustomization } from './PlanCustomization';
 export { default as PlanSelection } from './PlanSelection';
 export { SubscriptionCheckoutCycleItem, default as SubscriptionCycleSelector } from './SubscriptionCycleSelector';
-export { default as SubscriptionModalDisabled } from './SubscriptionModalDisabled';
 export * from './SubscriptionModalProvider';
 export { default as SubscriptionModalProvider } from './SubscriptionModalProvider';
 export { default as UpgradeVpnSection } from './UpgradeVpnSection';
