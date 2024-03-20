@@ -16,11 +16,15 @@ import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 const config = getConfig();
 const settings = getSettings();
 
-let mailView: undefined | BrowserView = undefined;
-let calendarView: undefined | BrowserView = undefined;
-let accountView: undefined | BrowserView = undefined;
+type ViewID = "mail" | "calendar" | "account";
 
-let currentView: "mail" | "calendar" | "account" = "mail";
+let currentViewID: ViewID = "mail";
+
+const views: Record<ViewID, BrowserView | undefined> = {
+    mail: undefined,
+    calendar: undefined,
+    account: undefined,
+};
 
 let mainWindow: undefined | BrowserWindow = undefined;
 
@@ -45,26 +49,26 @@ export const viewCreationAppStartup = (session: Session) => {
 
 const createViews = (session: Session) => {
     const config = getWindowConfig(session);
-    mailView = new BrowserView({ ...config });
-    calendarView = new BrowserView({ ...config });
+    views.mail = new BrowserView({ ...config });
+    views.calendar = new BrowserView({ ...config });
 
-    handleBeforeHandle(mailView);
-    handleBeforeHandle(calendarView);
+    handleBeforeHandle(views.mail);
+    handleBeforeHandle(views.calendar);
 
-    mailView.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, mailView)?.popup();
+    views.mail.webContents.on("context-menu", (_e, props) => {
+        createContextMenu(props, views.mail)?.popup();
     });
 
-    calendarView.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, calendarView)?.popup();
+    views.calendar.webContents.on("context-menu", (_e, props) => {
+        createContextMenu(props, views.calendar)?.popup();
     });
 
-    mailView.webContents.session.setCertificateVerifyProc((request, callback) => {
+    views.mail.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
         callback(callbackValue);
     });
 
-    calendarView.webContents.session.setCertificateVerifyProc((request, callback) => {
+    views.calendar.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
         callback(callbackValue);
     });
@@ -78,11 +82,11 @@ const createViews = (session: Session) => {
             }
         };
 
-        mailView.webContents.on("before-input-event", (_e, input) => {
+        views.mail.webContents.on("before-input-event", (_e, input) => {
             keyPressHandling(input);
         });
 
-        calendarView.webContents.on("before-input-event", (_e, input) => {
+        views.calendar.webContents.on("before-input-event", (_e, input) => {
             keyPressHandling(input);
         });
     }
@@ -100,11 +104,11 @@ const createBrowserWindow = (session: Session) => {
 };
 
 const configureViews = () => {
-    mailView.setAutoResize({ width: true, height: true });
-    mailView.webContents.loadURL(config.url.mail);
+    views.mail.setAutoResize({ width: true, height: true });
+    views.mail.webContents.loadURL(config.url.mail);
 
-    calendarView.setAutoResize({ width: true, height: true });
-    calendarView.webContents.loadURL(config.url.calendar);
+    views.calendar.setAutoResize({ width: true, height: true });
+    views.calendar.webContents.loadURL(config.url.calendar);
 };
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
@@ -124,56 +128,56 @@ const adjustBoundsForWindows = (bounds: Rectangle) => {
 
 const loadMailView = (window: BrowserWindow) => {
     Logger.info("Loading mail view");
-    if (!mailView) {
+    if (!views.mail) {
         Logger.info("mailView not created");
         return;
     }
 
     const bounds = adjustBoundsForWindows(window.getBounds());
-    mailView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-    window.setBrowserView(mailView);
+    views.mail.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
+    window.setBrowserView(views.mail);
 };
 
 const loadCalendarView = (window: BrowserWindow) => {
     Logger.info("Loading calendar view");
-    if (!calendarView) {
+    if (!views.calendar) {
         Logger.info("calendarView not created");
         return;
     }
 
     const bounds = adjustBoundsForWindows(window.getBounds());
-    calendarView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-    window.setBrowserView(calendarView);
+    views.calendar.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
+    window.setBrowserView(views.calendar);
 };
 
 export const loadAccountView = (window: BrowserWindow) => {
     Logger.info("Loading account view");
-    if (!accountView) {
+    if (!views.account) {
         Logger.info("accountView not created");
         const config = getWindowConfig(window.webContents.session);
-        accountView = new BrowserView({ ...config });
+        views.account = new BrowserView({ ...config });
     }
 
     const bounds = adjustBoundsForWindows(window.getBounds());
-    accountView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-    window.setBrowserView(accountView);
+    views.account.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
+    window.setBrowserView(views.account);
 };
 
 export const updateView = (target: VIEW_TARGET) => {
     const window = mainWindow;
-    if (target === "mail" && currentView !== "mail") {
+    if (target === "mail" && currentViewID !== "mail") {
         loadMailView(window);
         mainWindow.title = "Proton Mail";
-        currentView = "mail";
-        return mailView;
-    } else if (target === "calendar" && currentView !== "calendar") {
+        currentViewID = "mail";
+        return views.mail;
+    } else if (target === "calendar" && currentViewID !== "calendar") {
         loadCalendarView(window);
-        currentView = "calendar";
+        currentViewID = "calendar";
         mainWindow.title = "Proton Calendar";
-        return calendarView;
-    } else if (target === "account" && currentView !== "account") {
+        return views.calendar;
+    } else if (target === "account" && currentViewID !== "account") {
         loadAccountView(window);
-        currentView = "account";
+        currentViewID = "account";
         mainWindow.title = "Proton";
         return;
     }
@@ -183,14 +187,14 @@ export const updateView = (target: VIEW_TARGET) => {
 
 export const reloadCalendarWithSession = (session: string) => {
     Logger.info("Reloading calendar with session", session);
-    if (!calendarView) {
+    if (!views.calendar) {
         Logger.error("calendarView not created");
         const window = mainWindow;
         const config = getWindowConfig(window.webContents.session);
-        calendarView = new BrowserView({ ...config });
+        views.calendar = new BrowserView({ ...config });
     }
 
-    calendarView.webContents.loadURL(`${config.url.calendar}/u/${session}`);
+    views.calendar.webContents.loadURL(`${config.url.calendar}/u/${session}`);
 };
 
 export const setTrialEnded = () => {
@@ -198,8 +202,8 @@ export const setTrialEnded = () => {
     clearStorage(true);
     resetBadge();
 
-    mailView?.webContents?.loadURL(url);
-    calendarView?.webContents?.loadURL(url);
+    views.mail?.webContents?.loadURL(url);
+    views.calendar?.webContents?.loadURL(url);
 };
 
 export const getSpellCheckStatus = () => {
@@ -211,15 +215,10 @@ export const toggleSpellCheck = (enabled: boolean) => {
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 };
 
-export const getMailView = () => mailView;
-export const getCalendarView = () => calendarView;
+export const getMailView = () => views.mail;
+export const getCalendarView = () => views.calendar;
 export const getMainWindow = () => mainWindow;
 
 export const getCurrentView = () => {
-    if (currentView === "mail") {
-        return mailView;
-    } else if (currentView === "calendar") {
-        return calendarView;
-    }
-    return accountView;
+    return views[currentViewID];
 };
