@@ -32,7 +32,17 @@ const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ..
 
     const close = (
         <Tooltip title={c('Action').t`Close`}>
-            <Button className="shrink-0" icon shape="ghost" data-testid="modal:close" onClick={onClose} size="small">
+            <Button
+                className="shrink-0"
+                icon
+                shape="ghost"
+                data-testid="modal:close"
+                onClick={() => {
+                    onContinue();
+                    onClose?.();
+                }}
+                size="small"
+            >
                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
             </Button>
         </Tooltip>
