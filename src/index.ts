@@ -186,8 +186,8 @@ app.on("web-contents-created", (_ev, contents) => {
 
         const sessionID = getSessionID(url);
         const calendarView = getCalendarView();
-        const calendarSession = getSessionID(calendarView.webContents.getURL());
-        if (isHostMail(url) && sessionID && !calendarSession && !isNaN(sessionID as unknown as any)) {
+        const calendarSessionID = getSessionID(calendarView.webContents.getURL());
+        if (isHostMail(url) && sessionID && !calendarSessionID) {
             Logger.info("Refresh calendar session", sessionID);
             reloadCalendarWithSession(sessionID);
         }
