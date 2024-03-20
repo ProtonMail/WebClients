@@ -41,6 +41,7 @@ import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+import unique from '@proton/utils/unique';
 
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
@@ -240,7 +241,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
                 plansMap,
                 planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
-                cycles,
+                cycles: unique([cycle, ...cycles]),
                 paymentsApi,
                 currency,
                 coupon: signupParameters.coupon,
