@@ -1,7 +1,7 @@
 import { ipcMain, shell } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
-import { setTrialEnded, updateView } from "../utils/view/viewManagement";
+import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { IPCMessage } from "./ipcConstants";
@@ -50,8 +50,11 @@ export const handleIPCCalls = () => {
             case "showNotification":
                 showNotification(payload);
                 break;
+            case "updateLocale":
+                refreshHiddenViews();
+                break;
             default:
-                Logger.error(`unknown message type: ${message}`);
+                Logger.error(`unknown message type: ${type}`);
                 break;
         }
     });

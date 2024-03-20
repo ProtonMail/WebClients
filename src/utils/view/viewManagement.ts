@@ -190,6 +190,14 @@ export const updateView = (target: VIEW_TARGET) => {
     Logger.info("unsupported view", target);
 };
 
+export const refreshHiddenViews = () => {
+    for (const [viewID, view] of Object.entries(views)) {
+        if (viewID !== currentViewID && view) {
+            view.webContents.reload();
+        }
+    }
+};
+
 export const reloadCalendarWithSession = (session: string) => {
     Logger.info("Reloading calendar with session", session);
     if (!views.calendar) {

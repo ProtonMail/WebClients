@@ -17,7 +17,8 @@ export type IPCMessage =
     | { type: "openExternal"; payload: string }
     | { type: "trialEnd"; payload: TrialStatus }
     | { type: "changeView"; payload: VIEW_TARGET }
-    | { type: "showNotification"; payload: ElectronNotification };
+    | { type: "showNotification"; payload: ElectronNotification }
+    | { type: "updateLocale"; payload: string };
 
 export type IPCMessageType = IPCMessage["type"];
 export type IPCMessagePayload<T extends IPCMessageType> = Extract<IPCMessage, { type: T }>["payload"];
