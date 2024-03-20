@@ -18,7 +18,6 @@ import {
     hasFamily,
     hasMailPro,
     hasNewVisionary,
-    hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { EnhancedMember, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
@@ -215,7 +214,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleAddUser = () => {
         // Visionary can either create a sub user or invite existing users
-        if (hasVisionary(subscription) || hasNewVisionary(subscription) || hasFamily(subscription)) {
+        if (hasNewVisionary(subscription) || hasFamily(subscription)) {
             setInviteOrCreateUserModalOpen(true);
             return;
         }

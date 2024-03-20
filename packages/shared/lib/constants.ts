@@ -741,13 +741,6 @@ export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
 
 export enum PLANS {
     FREE = 'free',
-    // Old plans
-    PLUS = 'plus',
-    PROFESSIONAL = 'professional',
-    VISIONARY = 'visionary',
-    VPNBASIC = 'vpnbasic',
-    VPNPLUS = 'vpnplus',
-    // New plans
     DRIVE = 'drive2022',
     DRIVE_PRO = 'drivepro2022',
     PASS_PLUS = 'pass2023',
@@ -771,11 +764,6 @@ export const isStringPLAN = (value: string): value is PLANS => Object.values(PLA
 
 export const PLAN_NAMES = {
     [PLANS.FREE]: 'Free',
-    [PLANS.PLUS]: 'Plus',
-    [PLANS.PROFESSIONAL]: 'Professional',
-    [PLANS.VISIONARY]: 'Visionary',
-    [PLANS.VPNBASIC]: 'Basic',
-    [PLANS.VPNPLUS]: 'Plus',
     [PLANS.VPN2024]: 'Plus',
     [PLANS.DRIVE]: 'Drive Plus',
     [PLANS.DRIVE_PRO]: 'Drive Essentials',
