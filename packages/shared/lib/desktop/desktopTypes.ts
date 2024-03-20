@@ -16,7 +16,8 @@ export type IPCInboxMessage =
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
     | { type: 'trialEnd'; payload: 'trialEnded' | 'resetTrialEnded' }
-    | { type: 'showNotification'; payload: ElectronNotification };
+    | { type: 'showNotification'; payload: ElectronNotification }
+    | { type: 'updateLocale'; payload: string };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**
