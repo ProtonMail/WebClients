@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { ModalStateProps, UpsellModal } from '@proton/components/components';
+import { ModalStateProps, UpsellModal, useUpsellConfig } from '@proton/components/components';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 const SnoozeDurationSelection = (props: ModalStateProps) => {
     const upsellRef = getUpsellRef({
@@ -10,6 +10,7 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.SNOOZE_MESSAGE,
     });
+    const upsellConfig = useUpsellConfig(upsellRef);
 
     return (
         <div onClick={(e) => e.stopPropagation()}>
@@ -18,7 +19,6 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
                 title={c('Title').t`Want to snooze any time?`}
                 description={c('Description').t`Unlock custom snooze times when you upgrade your plan.`}
                 modalProps={props}
-                upgradePath={addUpsellPath(getUpgradePath({}), upsellRef)}
                 features={[
                     'snooze-messages',
                     'more-storage',
@@ -26,6 +26,7 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
                     'unlimited-folders-and-labels',
                     'custom-email-domains',
                 ]}
+                {...upsellConfig}
             />
         </div>
     );
