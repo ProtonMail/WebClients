@@ -3137,17 +3137,6 @@
         "Vo vami nahranom súbore CSV sme zistili nasledujúce pole. Zaškrtnite tie, ktoré chcete importovať."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Prístup k desktopovej aplikácii je obmedzený"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Beta verzia aplikácie ${ MAIL_APP_NAME } je momentálne k dispozícii každému, kto má platený plán ${ MAIL_APP_NAME }. Upgradujte ešte dnes a získajte prístup."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Aktualizujte ešte dnes alebo si prístup overte začiatkom roka 2024."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Späť na ${ signIn }."
@@ -5769,17 +5758,6 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6137,9 +6115,6 @@
       ],
       "and": [
         "a"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Akékoľvek ${ twoFa } bude na vašom účte vypnuté."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
@@ -6942,9 +6917,6 @@
       "of": [
         "z"
       ],
-      "old password": [
-        "staré heslo"
-      ],
       "Once you reset your password:": [
         "Po resete vašeho hesla:"
       ],
@@ -7572,9 +7544,6 @@
       "Total VPN connections": [
         "Celkom VPN pripojení"
       ],
-      "two-factor authentication (2FA)": [
-        "dvojstupňové overenie (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Dvojstupňové overenie vypnuté"
       ],
@@ -7769,9 +7738,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na telefónne číslo, ktoré ste uviedli v prípade obnovenia účtu odošleme kód pre obnovenie."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Váš aktuálny plán inovujeme na vylepšený plán, ktorý ponúka viac za rovnakú cenu. Počas prebiehajúcej aktualizácii to nebudete môcť zmeniť. Hneď, ako to bude hotové, vám pošleme email."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokiaľ je vypnuté, zabraňuje sa načítaniu obrázkov na tomto zariadení bez vašeho vedomia."
@@ -8016,12 +7982,6 @@
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Vaše existujúce správy, kalendáre alebo kontakty budú uzamknuté. Na obnovenie týchto údajov budete potrebovať ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Vaše existujúce správy, kalendáre alebo kontakty budú uzamknuté. Na obnovenie týchto údajov budete potrebovať obnovovaciu frázu alebo ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
@@ -8063,6 +8023,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10143,9 +10114,6 @@
       "Get ${ planName }": [
         "Získať ${ planName }"
       ],
-      "Got it": [
-        "Rozumiem"
-      ],
       "Keep ${ plan }": [
         "Ponechať ${ plan }"
       ],
@@ -10727,15 +10695,20 @@
         "Váš zvolený plán: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
       ],
       "Downgrade account?": [
         "Prejsť na nižšiu verziu účtu?"
-      ],
-      "Improved plans coming soon!": [
-        "Vylepšené plány už čoskoro!"
       ],
       "Review subscription and pay": [
         "Skontrolujte predplatné a zaplaťte"
@@ -10748,14 +10721,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -12662,9 +12627,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Dokončite prechod k súkromiu pomocou našich nástrojov na bezpečný import a preposielanie."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Dokončite prechod k súkromiu pomocou našich nástrojov bezpečného importu."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov a štítkov. ${ learnMoreLink }"
       ]
@@ -14301,6 +14263,9 @@
       ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
+      ],
+      "Location": [
+        "Umiestnenie"
       ],
       "Login password": [
         "Prihlasovacie heslo"

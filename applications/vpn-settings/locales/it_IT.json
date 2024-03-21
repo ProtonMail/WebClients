@@ -1866,17 +1866,6 @@
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "L'accesso all'app desktop è limitato"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Effettua l'upgrade per ottenere l'accesso."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Effettua l'upgrade oggi o torna qui all'inizio del 2024 per l'accesso."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bug o problemi di qualità"
@@ -2933,9 +2922,6 @@
       "Amount due": [
         "Importo da pagare"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Qualsiasi metodo di ${ twoFa } sul tuo account verrà disattivato."
-      ],
       "Are you sure you want to delete this address?": [
         "Sei sicuro di voler eliminare questo indirizzo?"
       ],
@@ -3379,9 +3365,6 @@
       "of": [
         "di"
       ],
-      "old password": [
-        "vecchia password"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Quando single sign-on viene disabilitato per la tua organizzazione:"
       ],
@@ -3773,9 +3756,6 @@
       "Total VPN connections": [
         "Totale connessioni VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "autenticazione a due fattori (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Autenticazione a due fattori disabilitata"
       ],
@@ -3913,9 +3893,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Invieremo un codice di recupero al numero di telefono fornito per il recupero dell'account."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai cambiarlo. Ti invieremo un'email non appena verrà terminato."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
@@ -4062,12 +4039,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "I tuoi messaggi, calendari o contatti esistenti saranno bloccati. Per recuperare questi dati, avrai bisogno della tua ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "I tuoi messaggi, calendari o contatti esistenti saranno bloccati. Per recuperare questi dati, avrai bisogno della tua frase di recupero o la tua ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -4954,9 +4925,6 @@
       "Get ${ planName }": [
         "Ottieni ${ planName }"
       ],
-      "Got it": [
-        "Ho capito"
-      ],
       "Keep ${ plan }": [
         "Mantieni ${ plan }"
       ],
@@ -5485,9 +5453,6 @@
       ],
       "Downgrade account?": [
         "Vuoi effettuare il downgrade dell'account?"
-      ],
-      "Improved plans coming soon!": [
-        "Piani migliorati saranno presto disponibili!"
       ],
       "Review subscription and pay": [
         "Controlla abbonamento e paga"
@@ -6018,6 +5983,17 @@
         "Tutti i servizi Plus di ${ BRAND_NAME }.${ br }Un semplice abbonamento."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Tutti i tuoi dati esistenti** (email, eventi, contatti, file, voci di ${ PASS_APP_NAME }, ecc.) **saranno bloccati** e potranno essere sbloccati solo con la tua **vecchia password**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Tutti i tuoi dati esistenti** (email, eventi, contatti, file, voci di ${ PASS_APP_NAME }, ecc.) **saranno bloccati** e potranno essere sbloccati solo con la tua **frase di recupero** o la tua ** vecchia password**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Qualsiasi metodo di **autenticazione a due fattori (2FA)** sul tuo account verrà disabilitato."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Tutti gli amministratori avranno accesso alla chiave."
@@ -6049,11 +6025,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Assicurati che abbiano un indirizzo abilitato e invitali separatamente in seguito."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Gli utenti privati possono essere promossi ad amministratore quando effettuano l'accesso per la prima volta"
       ],
       "Reset organization key": [
         "Reimposta la chiave dell'organizzazione"
+      ],
+      "The following administrators could not be restored.": [
+        "Impossibile ripristinare i seguenti amministratori."
       ],
       "The following administrators will get access to the organization key.": [
         "I seguenti amministratori avranno accesso alla chiave dell'organizzazione."
@@ -7472,6 +7454,9 @@
       ],
       "Change role": [
         "Modifica privilegi"
+      ],
+      "Close": [
+        "Chiudi"
       ],
       "Confirm": [
         "Conferma"

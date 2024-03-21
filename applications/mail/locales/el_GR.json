@@ -8021,6 +8021,20 @@
         "Εσείς"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Οι μη ιδιωτικοί χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν έχουν κλειδιά εγκατάστασης"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για να εκχωρήσει δικαιώματα διαχειριστή"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Οι ιδιώτες χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν συνδεθούν για πρώτη φορά"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Πρέπει να ιδιωτικοποιήσετε όλους τους χρήστες πριν δημιουργήσετε ένα νέο κλειδί οργανισμού"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Χώρα χρέωσης"

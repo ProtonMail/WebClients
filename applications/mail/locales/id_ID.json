@@ -7457,6 +7457,20 @@
         "Anda"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Pengguna non-privat dapat dipromosikan sebagai admin pada saat mereka memiliki kunci setup"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Kunci organisasi harus diaktifkan untuk memberikan hak admin"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Pengguna privat dapat diangkat sebagai admin pada saat mereka memasuki akun untuk yang pertama kalinya"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Anda harus menetapkan seluruh pengguna sebagai pengguna privat sebelum membuat kunci organisasi baru"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Negara Penagihan"

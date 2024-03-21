@@ -1866,14 +1866,6 @@
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Åtkomst till app för stationär dator är begränsat"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
@@ -2652,6 +2644,11 @@
         "Väldigt liten"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Integritet som standard."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-postmeddelande per månad)"
@@ -2758,6 +2755,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-post"
       ],
@@ -2766,6 +2766,9 @@
       ],
       "No verification method available": [
         "Ingen verifieringsmetod tillgänglig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -2924,9 +2927,6 @@
       ],
       "Amount due": [
         "Att betala"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Alla ${ twoFa }-metoder på ditt konto kommer att inaktiveras."
       ],
       "Are you sure you want to delete this address?": [
         "Är du säker på att du vill ta bort denna adress?"
@@ -3365,9 +3365,6 @@
       "of": [
         "av"
       ],
-      "old password": [
-        "gammalt lösenord"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "När enkel inloggning är inaktiverad för din organisation:"
       ],
@@ -3759,9 +3756,6 @@
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
       ],
-      "two-factor authentication (2FA)": [
-        "tvåfaktorsautentisering (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Tvåfaktorsautentisering inaktiverad"
       ],
@@ -3899,9 +3893,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi kommer skicka en återställningskod till det telefonnummer som du angav för kontoåterställning."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Vi uppgraderar ditt nuvarande paket till ett förbättrat paket som erbjuder mer för samma pris. Medan våra system uppdateras kommer du inte att kunna ändra det. Vi skickar e-post till dig så fort det är klart."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
@@ -4045,12 +4036,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Dina befintliga meddelanden, kalendrar eller kontakter kommer att låsas. För att återställa dessa data behöver du ditt ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Dina befintliga meddelanden, kalendrar eller kontakter kommer att låsas. För att återställa dessa data behöver du din återställningsfras eller ditt ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
@@ -4925,9 +4910,6 @@
       "Get ${ planName }": [
         "Skaffa ${ planName }"
       ],
-      "Got it": [
-        "Jag förstår"
-      ],
       "Keep ${ plan }": [
         "Behåll ${ plan }"
       ],
@@ -5454,9 +5436,6 @@
       "Downgrade account?": [
         "Nedgradera konto?"
       ],
-      "Improved plans coming soon!": [
-        "Förbättrade paket kommer snart!"
-      ],
       "Review subscription and pay": [
         "Granska prenumeration och betala"
       ],
@@ -5467,6 +5446,9 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ],
       "Your account's usage": [
         "Ditt kontos användning"
@@ -5980,6 +5962,14 @@
         "Alla ${ BRAND_NAME } Plus-tjänster.${ br }En enkel prenumeration."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med ditt ** gamla lösenord**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med din **återställningsfras** eller ditt ** gamla lösenord**."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Alla administratörer kommer få åtkomst till nyckeln."
@@ -6011,11 +6001,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Åtkomst nekad, administratörsrättigheter har begränsats."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Se till att de har en aktiverad adress och bjud in dem separat senare."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Privata användare kan befordras till admin när de har loggat in för första gången"
       ],
       "Reset organization key": [
         "Återställ organisationsnyckel"
+      ],
+      "The following administrators could not be restored.": [
+        "Följande administratörer kunde inte återställas."
       ],
       "The following administrators will get access to the organization key.": [
         "Följande administratörer kommer få åtkomst till organisationsnyckeln."
@@ -6055,11 +6051,17 @@
       ]
     },
     "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -7434,6 +7436,9 @@
       ],
       "Change role": [
         "Ändra roll"
+      ],
+      "Close": [
+        "Stäng"
       ],
       "Confirm": [
         "Bekräfta"

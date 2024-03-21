@@ -1876,17 +1876,6 @@
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Dostęp do aplikacji desktopowej jest ograniczony"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników płatnych planów ${ MAIL_APP_NAME }. Ulepsz konto, aby uzyskać do niej dostęp."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Błędy lub problemy z jakością usługi"
@@ -2985,9 +2974,6 @@
       "Amount due": [
         "Do zapłaty"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "${ twoFa } zostanie wyłączone na koncie."
-      ],
       "Are you sure you want to delete this address?": [
         "Czy na pewno chcesz usunąć ten adres?"
       ],
@@ -3435,9 +3421,6 @@
       "of": [
         "z"
       ],
-      "old password": [
-        "starego hasła"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Logowanie SSO jest wyłączone dla Twojej organizacji:"
       ],
@@ -3840,9 +3823,6 @@
       "Total VPN connections": [
         "Połączenia VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "Uwierzytelnianie dwustopniowe"
-      ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
       ],
@@ -3980,9 +3960,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Wyślemy kod resetowania na numer pomocniczy."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Zmieniamy Twój obecny plan do ulepszonego, który oferuje więcej funkcji za tę samą cenę. Gdy nasze systemy rozpoczną aktualizację, nie będziesz mógł już go zmienić. Wyślemy wiadomość, kiedy proces zostanie zakończony."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Po włączeniu uwierzytelniania SAML dla ${ appName } może być koniecznie użycie adresu URL odpowiedzi usługi ACS i identyfikatora dostawcy. Kopiuj i wklej poniższe dane do pól dostawcy tożsamości."
@@ -4139,12 +4116,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
@@ -4906,6 +4877,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta ograniczona czasowo. Wygasa 2 kwietnia 2024 roku"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Subskrypcja odnowi się automatycznie ${ renewTime } za ${ renewablePrice }. Anuluj w dowolnym momencie"
       ]
     },
     "mailtrial2024: Title": {
@@ -5032,9 +5006,6 @@
       ],
       "Get ${ planName }": [
         "Wybierz plan ${ planName }"
-      ],
-      "Got it": [
-        "Ok"
       ],
       "Keep ${ plan }": [
         "Zachowaj plan ${ plan }"
@@ -5342,7 +5313,7 @@
         "Wsparcie routerów"
       ],
       "Schedule and snooze emails for any time": [
-        "Planowanie i usypianie wiadomości na dowolną porę"
+        "Planowanie i usypianie wiadomości o dowolnej porze"
       ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
@@ -5603,9 +5574,6 @@
       "Downgrade account?": [
         "Obniżyć plan?"
       ],
-      "Improved plans coming soon!": [
-        "Ulepszone plany będą dostępne wkrótce!"
-      ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
       ],
@@ -5657,6 +5625,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masowe wysyłanie promocyjnych lub zaprogramowanych wiadomości nie jest obsługiwane. W tym celu zalecamy skorzystanie z dedykowanego dostawcy poczty e-mail."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Wybierz niestandardowe godziny powiadomień o wiadomościach i zaplanowanych wysyłkach"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
@@ -6116,6 +6087,17 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji Plus.${ br }Jedna prosta subskrypcja."
+      ]
+    },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Wszystkie dane ** (wiadomości, wydarzenia, kontakty, pliki, wpisy ${ PASS_APP_NAME } itp.) **zostaną zablokowane** i będą możliwe do odczytania tylko za pomocą **starego hasła**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Wszystkie dane ** (wiadomości, wydarzenia, kontakty, pliki, wpisy ${ PASS_APP_NAME } itp.) **zostaną zablokowane** i będą możliwe do odczytania tylko za pomocą **hasła odzyskiwania** lub **starego hasła**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "**Uwierzytelnianie dwustopniowe** konta zostanie wyłączone."
       ]
     },
     "passwordless": {

@@ -5718,6 +5718,20 @@
         "Utvid deltakerlisten"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brukere kan forfremmes til administrator når de har installasjonsnøkler."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisasjonsnøkkelen må aktiveres for å gi administratorrettigheter."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du må privatisere alle brukere før genererering av en ny organisasjonsnøkkel."
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Faktureringsland"

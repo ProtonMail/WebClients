@@ -3133,17 +3133,6 @@
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Accesul la aplicația pentru desktop este limitat"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Versiunea beta a aplicației ${ MAIL_APP_NAME } pentru desktop este disponibilă în prezent pentru oricine are un plan cu plată ${ MAIL_APP_NAME }. Achiziționați un cont cu plată pentru a avea acces."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Înapoi la ${ signIn }."
@@ -5852,17 +5841,6 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -6202,9 +6180,6 @@
       ],
       "and": [
         "și"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Orice metodă de ${ twoFa } din cont va fi dezactivată."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
@@ -7013,9 +6988,6 @@
       "of": [
         "din"
       ],
-      "old password": [
-        "parola veche"
-      ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
       ],
@@ -7647,9 +7619,6 @@
       "Total VPN connections": [
         "Total conexiuni VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "autentificare cu doi factori (A2F)"
-      ],
       "Two-factor authentication disabled": [
         "Autentificare cu doi factori dezactivată"
       ],
@@ -7847,9 +7816,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Veți primi un cod de resetare la numărul de telefon pe care l-ați furnizat pentru recuperarea contului."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Vă modificăm planul actual la un plan îmbunătățit care oferă mai mult pentru același preț. În timp ce sistemele noastre se actualizează, nu veți putea să îl schimbați. Vă vom trimite un e-mail imediat după finalizare."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
@@ -8091,12 +8057,6 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Mesajele, calendarele sau contactele existente vor fi blocate. Pentru a recupera aceste date, veți avea nevoie de ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Mesajele, calendarele sau contactele existente vor fi blocate. Pentru a recupera aceste date, veți avea nevoie de fraza de recuperare sau de ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
@@ -8140,6 +8100,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tichetul de asistență a fost închis. Vă mulțumim că ați contactat asistența de la ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10257,9 +10228,6 @@
       "Get ${ planName }": [
         "Luați ${ planName }"
       ],
-      "Got it": [
-        "Am înțeles"
-      ],
       "Keep ${ plan }": [
         "Păstrare ${ plan }"
       ],
@@ -10849,15 +10817,20 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
       ],
       "Downgrade account?": [
         "Retrogradare cont?"
-      ],
-      "Improved plans coming soon!": [
-        "Planuri îmbunătățite sosesc în curând!"
       ],
       "Review subscription and pay": [
         "Revizuire abonament și plată"
@@ -10870,14 +10843,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12802,9 +12767,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Completați tranziția la confidențialitate cu ajutorul uneltelor de importare și redirecționare sigure."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Completați tranziția la confidențialitate cu ajutorul uneltelor de importare sigure."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Păstrați-vă mesajele organizate cu foldere și etichete. ${ learnMoreLink }"
       ]
@@ -14470,6 +14432,9 @@
       ],
       "Link confirmation": [
         "Legătură de confirmare"
+      ],
+      "Location": [
+        "Amplasare"
       ],
       "Login password": [
         "Parolă conectare"

@@ -3140,17 +3140,6 @@
         "Wykryliśmy następujące pola w pliku CSV. Zaznacz te, które chcesz zaimportować."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Dostęp do aplikacji desktopowej jest ograniczony"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników płatnych planów ${ MAIL_APP_NAME }. Ulepsz konto, aby uzyskać do niej dostęp."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Powrót do ${ signIn }."
@@ -5883,17 +5872,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -6257,9 +6235,6 @@
       ],
       "and": [
         "i"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "${ twoFa } zostanie wyłączone na koncie."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
@@ -7074,9 +7049,6 @@
       "of": [
         "z"
       ],
-      "old password": [
-        "starego hasła"
-      ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
       ],
@@ -7713,9 +7685,6 @@
       "Total VPN connections": [
         "Połączenia VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "Uwierzytelnianie dwustopniowe"
-      ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
       ],
@@ -7913,9 +7882,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Wyślemy kod resetowania na numer pomocniczy."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Zmieniamy Twój obecny plan do ulepszonego, który oferuje więcej funkcji za tę samą cenę. Gdy nasze systemy rozpoczną aktualizację, nie będziesz mógł już go zmienić. Wyślemy wiadomość, kiedy proces zostanie zakończony."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Jeśli funkcja jest wyłączona, osadzone obrazy nie zostaną załadowane bez Twojej wiedzy."
@@ -8163,12 +8129,6 @@
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
@@ -8213,6 +8173,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9943,6 +9914,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta ograniczona czasowo. Wygasa 2 kwietnia 2024 roku"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Subskrypcja odnowi się automatycznie ${ renewTime } za ${ renewablePrice }. Anuluj w dowolnym momencie"
       ]
     },
     "mailtrial2024: Title": {
@@ -10341,9 +10315,6 @@
       "Get ${ planName }": [
         "Wybierz plan ${ planName }"
       ],
-      "Got it": [
-        "Ok"
-      ],
       "Keep ${ plan }": [
         "Zachowaj plan ${ plan }"
       ],
@@ -10653,7 +10624,7 @@
         "Wsparcie routerów"
       ],
       "Schedule and snooze emails for any time": [
-        "Planowanie i usypianie wiadomości na dowolną porę"
+        "Planowanie i usypianie wiadomości o dowolnej porze"
       ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
@@ -10952,15 +10923,20 @@
         "Wybrany plan: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
       ],
       "Downgrade account?": [
         "Obniżyć plan?"
-      ],
-      "Improved plans coming soon!": [
-        "Ulepszone plany będą dostępne wkrótce!"
       ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
@@ -10973,14 +10949,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -11019,6 +10987,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masowe wysyłanie promocyjnych lub zaprogramowanych wiadomości nie jest obsługiwane. W tym celu zalecamy skorzystanie z dedykowanego dostawcy poczty e-mail."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Wybierz niestandardowe godziny powiadomień o wiadomościach i zaplanowanych wysyłkach"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
@@ -12062,6 +12033,17 @@
         "Dla Ciebie"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Wszystkie dane ** (wiadomości, wydarzenia, kontakty, pliki, wpisy ${ PASS_APP_NAME } itp.) **zostaną zablokowane** i będą możliwe do odczytania tylko za pomocą **starego hasła**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Wszystkie dane ** (wiadomości, wydarzenia, kontakty, pliki, wpisy ${ PASS_APP_NAME } itp.) **zostaną zablokowane** i będą możliwe do odczytania tylko za pomocą **hasła odzyskiwania** lub **starego hasła**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "**Uwierzytelnianie dwustopniowe** konta zostanie wyłączone."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Wszyscy administratorzy uzyskają dostęp do klucza."
@@ -12906,9 +12888,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Ukończ przejście na prywatność za pomocą naszych narzędzi do importowania danych i przekierowania poczty."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Ukończ przejście na prywatność za pomocą naszych narzędzi do importowania danych."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Uporządkuj swoją skrzynkę odbiorczą za pomocą folderów i etykiet. ${ learnMoreLink }"
@@ -14606,6 +14585,9 @@
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
+      ],
+      "Location": [
+        "Lokalizacja"
       ],
       "Login password": [
         "Hasło logowania"

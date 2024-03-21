@@ -156,7 +156,7 @@
         "Descartar"
       ],
       "Don't know your password?": [
-        "¿No sabes tu contraseña?"
+        "¿Has olvidado tu contraseña?"
       ],
       "Done": [
         "Hecho"
@@ -1866,17 +1866,6 @@
         "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium al actualizar tu plan."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "El acceso a la aplicación de escritorio está limitado."
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } está disponible para quienes tienen un plan de pago de ${ MAIL_APP_NAME }. Mejora ahora para obtener acceso."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Mejora ahora o comprueba de nuevo a inicios de 2024 para su acceso."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
@@ -2933,9 +2922,6 @@
       "Amount due": [
         "Importe a pagar"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Se desactivará cualquier método ${ twoFa } de tu cuenta."
-      ],
       "Are you sure you want to delete this address?": [
         "¿Estás seguro de que quieres eliminar esta dirección?"
       ],
@@ -3379,9 +3365,6 @@
       "of": [
         "de"
       ],
-      "old password": [
-        "contraseña antigua"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Una vez que el inicio de sesión único esté desactivado para tu organización:"
       ],
@@ -3770,9 +3753,6 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
-      "two-factor authentication (2FA)": [
-        "autenticación de doble factor (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Autenticación de doble factor desactivada"
       ],
@@ -3910,9 +3890,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Te enviaremos un código de restablecimiento al número de teléfono que nos has proporcionado para recuperar la cuenta."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Se está actualizando tu plan actual a un plan que ofrece más por el mismo precio. Mientras el sistema se actualiza, no podrás cambiarlo. Se te enviará un correo electrónico en cuanto esté listo."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Al habilitar SAML para ${ appName } en tu proveedor de identidad, es posible que se te solicite que uses la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copia y pega los datos a continuación en los campos de tu proveedor de identidad."
@@ -4059,12 +4036,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Se bloquearán tus mensajes, calendarios o contactos existentes. Para recuperar estos datos necesitarás tu ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu frase de recuperación o tu ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
@@ -4948,9 +4919,6 @@
       "Get ${ planName }": [
         "Obtén ${ planName }"
       ],
-      "Got it": [
-        "Entendido"
-      ],
       "Keep ${ plan }": [
         "Seguir con ${ plan }"
       ],
@@ -5480,9 +5448,6 @@
       "Downgrade account?": [
         "¿Pasar a un plan con menos funciones?"
       ],
-      "Improved plans coming soon!": [
-        "¡Pronto habrá planes mejores!"
-      ],
       "Review subscription and pay": [
         "Verificar suscripción y pagar"
       ],
@@ -5986,6 +5951,17 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos los servicios Plus de ${ BRAND_NAME }.${ br }Suscripción sencilla."
+      ]
+    },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Toda tu información existente** (correos, eventos, contactos, archivos, entradas de ${ PASS_APP_NAME }, etc.) **se bloqueará** y solo podrá desbloquearse con tu **contraseña anterior**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Toda tu información existente** (correos, eventos, contactos, archivos, entradas de ${ PASS_APP_NAME }, etc.) **se bloqueará** y solo podrá desbloquearse con tu **frase de recuperación** o su **contraseña anterior**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Cualquier método de **autenticación de dos factores (2FA)** en tu cuenta se desactivará."
       ]
     },
     "passwordless": {

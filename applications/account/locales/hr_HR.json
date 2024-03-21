@@ -4071,9 +4071,6 @@
       "of": [
         "od"
       ],
-      "old password": [
-        "stara lozinka"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ${ BRAND_NAME }."
       ],
@@ -5863,9 +5860,6 @@
       "Get ${ planName }": [
         "Nabavite ${ planName }"
       ],
-      "Got it": [
-        "Shvaćam"
-      ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
       ]
@@ -6046,6 +6040,11 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6055,11 +6054,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
-      ]
-    },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7710,6 +7704,9 @@
       ],
       "Link confirmation": [
         "Potvrda poveznice"
+      ],
+      "Location": [
+        "Lokacija"
       ],
       "Login password": [
         "Lozinka za prijavu"

@@ -101,8 +101,8 @@
         "როგორც დაგეგმილია"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "თითოეული კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
-        "თითოეული კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
+        "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
+        "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
       ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
@@ -7940,7 +7940,7 @@
         "გამოიყენეთ აპის ამრჩევი ზედა მარცხენა კუთხეში ${ BRAND_NAME }-ის ყველა სერვისთან წვდომისთვის: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "თქვენი თემის შეცვლა ნებისმიერ დროს შეგიძლიათ, მორგების ფანჯარაში."
+        "თქვენი თემის შეცვლა ნებისმიერ დროს შეგიძლიათ მორგების ფანჯარაში."
       ]
     },
     "Online accounts": {
@@ -8019,6 +8019,20 @@
     "Participant name": {
       "You": [
         "თქვენ"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "არა-კონფიდენციალური მომხმარებლები შეიძლება, ადმინისტრატორამდე ასწიოთ, თუ მათ გასაღებები მორგებული აქვთ"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "ადმინისტრატორის უფლებების მისაცემად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
       ]
     },
     "Payments": {
@@ -8505,7 +8519,7 @@
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
-        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
+        "ახლა შეგიძლიათ, შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",

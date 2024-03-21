@@ -4893,14 +4893,6 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -5778,9 +5770,6 @@
       "of": [
         "का"
       ],
-      "old password": [
-        "पुराना पासवर्ड"
-      ],
       "Once you reset your password:": [
         "आप एक बार अपना पासवर्ड बदलते है तो:"
       ],
@@ -6277,9 +6266,6 @@
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
       ],
-      "two-factor authentication (2FA)": [
-        "दो-फैक्टर सत्यापन (2-एफए)"
-      ],
       "Two-factor authentication disabled": [
         "दो-कारक प्रमाणीकरण अक्षम"
       ],
@@ -6435,9 +6421,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "खाता पुनर्प्राप्ति के लिए आपके द्वारा प्रदान किए गए फ़ोन नंबर पर हम एक रीसेट कोड भेजेंगे।"
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "हम आपकी वर्तमान योजना को एक बेहतर योजना में अपग्रेड कर रहे हैं जो समान मूल्य पर अधिक ऑफ़र करती है। जबकि हमारे सिस्टम अपडेट हो रहे हैं, आप इसे बदल नहीं पाएंगे। जैसे ही यह हो जाएगा हम आपको ईमेल करेंगे।"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "अक्षम होने पर, यह छवि फ़ाइलों को आपकी जानकारी के बिना आपके डिवाइस पर लोड होने से रोकता है।"
@@ -6628,9 +6611,6 @@
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "आपके मौजूदा संदेश, कैलेंडर या संपर्क लॉक कर दिए जाएंगे। इस डेटा को पुनर्प्राप्त करने के लिए, आपको अपने पुनर्प्राप्ति वाक्यांश या अपने ${ oldPassword } की आवश्यकता होगी।"
-      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "आपका ${ accounts } से आयात कुछ देर से होगा।",
         "आपके ${ accounts } से आयात कुछ देर से होंगे।"
@@ -6658,6 +6638,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "आपकी सदस्यता का प्रबंधन मोज़िला द्वारा किया जाता है। कृपया मोज़िला समर्थन से संपर्क करें।"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8470,9 +8458,6 @@
       "Get ${ planName }": [
         "${ planName } लें"
       ],
-      "Got it": [
-        "समझ लिया"
-      ],
       "Keep ${ plan }": [
         "${ plan } रखे"
       ],
@@ -8903,15 +8888,20 @@
         "आपका चुना गया प्लान: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
       ],
       "Downgrade account?": [
         "खाता डाउनग्रेड करें?"
-      ],
-      "Improved plans coming soon!": [
-        "बेहतर प्लान जल्द ही।"
       ],
       "Review subscription and pay": [
         "सदस्यता देख लें और भुगतान करें"
@@ -8924,14 +8914,6 @@
       ],
       "Unlock premium features by upgrading": [
         "प्रीमियम सुविधाओं इस्तेमाल करे अपग्रेड करके"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -10011,9 +9993,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "हमारे सुरक्षित आयात और फॉरवर्ड प्रोडक्ट के साथ अपने ज़िंदगी को निजी करने के सफर को पूरा करें।"
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "हमारे सुरक्षित आयात प्रोडक्ट के साथ अपने ज़िंदगी को निजी करने के सफर को पूरा करें"
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "अपने इनबॉक्स को फ़ोल्डर्स और लेबल के साथ व्यवस्थित रखें। ${ learnMoreLink }"
@@ -11334,6 +11313,9 @@
       ],
       "Link confirmation": [
         "लिंक की पुष्टि"
+      ],
+      "Location": [
+        "स्थान"
       ],
       "Login password": [
         "लॉग इन पासवर्ड"
