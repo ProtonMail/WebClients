@@ -1004,6 +1004,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to view all": [
+        "Uppgradera för att visa alla"
+      ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Work": [
         "Arbete"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3081,6 +3087,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "För att ta bort ${ MAIL_APP_NAME } i sidfoten, uppgradera och lås upp ännu fler premiumfunktioner."
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "För att se hela rapporten inklusive personifierade rekommendationer, uppgradera till ett betalt paket."
+      ],
       "Track the status and activity of your referrals.": [
         "Spåra status och aktivitet för dina hänvisningar."
       ],
@@ -3114,14 +3123,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
-      ]
-    },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Åtkomst till app för stationär dator är begränsat"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
       ]
     },
     "Disable account": {
@@ -5168,6 +5169,11 @@
         "Väldigt liten"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Integritet som standard."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webbapp"
@@ -5470,6 +5476,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-post"
       ],
@@ -5478,6 +5487,9 @@
       ],
       "No verification method available": [
         "Ingen verifieringsmetod tillgänglig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -5716,6 +5728,9 @@
       ],
       "ICS file": [
         "ICS-fil"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5806,17 +5821,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
       ]
     },
     "Info": {
@@ -6135,9 +6139,6 @@
       "and": [
         "och"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Alla ${ twoFa }-metoder på ditt konto kommer att inaktiveras."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuella undermappar kommer också att raderas. E-post som finns i mappen ${ nameDeleted } kommer inte att raderas, de finns i mappen All e-post."
       ],
@@ -6287,6 +6288,9 @@
       ],
       "Center": [
         "Centrera"
+      ],
+      "Change your password": [
+        "Ändra ditt lösenord"
       ],
       "Check the status of imports and forwarding.": [
         "Kontrollera status för importer och vidarebefordran."
@@ -6469,6 +6473,9 @@
       "Edit link": [
         "Redigera länk"
       ],
+      "email": [
+        "e-post"
+      ],
       "Email address": [
         "E-postadress"
       ],
@@ -6568,6 +6575,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
@@ -6609,6 +6619,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Döljer identifierande information genom att ladda fjärrinnehåll via en proxy. Möjlighet att lagra innehåll som bilagor."
+      ],
+      "High Priority": [
+        "Hög prioritet"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
@@ -6831,6 +6844,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Loggar inkluderar autentiseringsförsök för alla ${ BRAND_NAME }-tjänster som använder dina ${ BRAND_NAME_TWO }-inloggningsuppgifter."
       ],
+      "Low Priority": [
+        "Låg prioritet"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
       ],
@@ -6846,6 +6862,9 @@
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Medium prioritet"
+      ],
       "Member": [
         "Medlem"
       ],
@@ -6854,6 +6873,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Monitor accounts": [
+        "Övervaka konton"
       ],
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
@@ -6939,9 +6961,6 @@
       "of": [
         "av"
       ],
-      "old password": [
-        "gammalt lösenord"
-      ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
       ],
@@ -6993,6 +7012,9 @@
       ],
       "Paid for a monthly plan": [
         "Betalade för ett månadspaket"
+      ],
+      "password": [
+        "lösenord"
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
@@ -7565,9 +7587,6 @@
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
       ],
-      "two-factor authentication (2FA)": [
-        "tvåfaktorsautentisering (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Tvåfaktorsautentisering inaktiverad"
       ],
@@ -7640,6 +7659,9 @@
       "URL link": [
         "URL-länk"
       ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Använd ${ VPN_APP_NAME } med Netshield aktiverat för att skydda dig från nätfiske och skadlig kod"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
       ],
@@ -7654,6 +7676,9 @@
       ],
       "User activated": [
         "Användare aktiverad"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -7765,9 +7790,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi kommer skicka en återställningskod till det telefonnummer som du angav för kontoåterställning."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Vi uppgraderar ditt nuvarande paket till ett förbättrat paket som erbjuder mer för samma pris. Medan våra system uppdateras kommer du inte att kunna ändra det. Vi skickar e-post till dig så fort det är klart."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
@@ -8003,12 +8025,6 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Dina befintliga meddelanden, kalendrar eller kontakter kommer att låsas. För att återställa dessa data behöver du ditt ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Dina befintliga meddelanden, kalendrar eller kontakter kommer att låsas. För att återställa dessa data behöver du din återställningsfras eller ditt ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
@@ -8051,6 +8067,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ditt supportärende har stängts. Tack för att du kontaktade supporten för ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9559,6 +9586,9 @@
       "Create account": [
         "Skapa konto"
       ],
+      "Create an alias": [
+        "Skapa ett alias"
+      ],
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
@@ -9567,6 +9597,12 @@
       ],
       "General": [
         "Allmänt"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Skaffa ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Skaffa ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Hjälp till att översätta"
@@ -10072,6 +10108,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Inbox": [
         "Inkorg"
       ],
@@ -10139,9 +10178,6 @@
       ],
       "Get ${ planName }": [
         "Skaffa ${ planName }"
-      ],
-      "Got it": [
-        "Jag förstår"
       ],
       "Keep ${ plan }": [
         "Behåll ${ plan }"
@@ -10710,15 +10746,23 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
       ],
       "Downgrade account?": [
         "Nedgradera konto?"
-      ],
-      "Improved plans coming soon!": [
-        "Förbättrade paket kommer snart!"
       ],
       "Review subscription and pay": [
         "Granska prenumeration och betala"
@@ -10731,14 +10775,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -11821,6 +11857,14 @@
         "För individer"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med ditt ** gamla lösenord**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med din **återställningsfras** eller ditt ** gamla lösenord**."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Alla administratörer kommer få åtkomst till nyckeln."
@@ -11852,11 +11896,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Åtkomst nekad, administratörsrättigheter har begränsats."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Se till att de har en aktiverad adress och bjud in dem separat senare."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Privata användare kan befordras till admin när de har loggat in för första gången"
       ],
       "Reset organization key": [
         "Återställ organisationsnyckel"
+      ],
+      "The following administrators could not be restored.": [
+        "Följande administratörer kunde inte återställas."
       ],
       "The following administrators will get access to the organization key.": [
         "Följande administratörer kommer få åtkomst till organisationsnyckeln."
@@ -11896,11 +11946,17 @@
       ]
     },
     "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
+      ],
+      "PayPal": [
+        "PayPal"
       ]
     },
     "Payments": {
@@ -12633,9 +12689,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Slutför övergången till integritet med våra säkra verktyg för import och vidarebefordran."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Slutför övergången till integritet med våra säkra importverktyg."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Håll din inkorg organiserad med mappar och etiketter. ${ learnMoreLink }"
@@ -13674,6 +13727,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportverktyg för ${ MAIL_APP_NAME }"
       ],
@@ -13880,6 +13936,9 @@
       ],
       "Clear out the junk": [
         "Rensa bort skräpet"
+      ],
+      "Close": [
+        "Stäng"
       ],
       "Composing": [
         "Komponera"
@@ -14099,6 +14158,9 @@
       "Email": [
         "E-post"
       ],
+      "Email address": [
+        "E-postadress"
+      ],
       "Email composer": [
         "Redigeringsfönstret för e-post"
       ],
@@ -14211,6 +14273,9 @@
       "Identity and addresses": [
         "Identitet och adresser"
       ],
+      "IMAP/SMTP": [
+        "IMAP/SMTP"
+      ],
       "Import": [
         "Importera"
       ],
@@ -14272,6 +14337,9 @@
       "Link confirmation": [
         "Länkbekräftelse"
       ],
+      "Location": [
+        "Plats"
+      ],
       "Login password": [
         "Inloggningslösenord"
       ],
@@ -14310,6 +14378,9 @@
       ],
       "Open pagination": [
         "Öppna sidnumrering"
+      ],
+      "OpenVPN / IKEv2": [
+        "OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
@@ -14370,6 +14441,9 @@
       ],
       "Recommended": [
         "Rekommenderad"
+      ],
+      "Recommended actions": [
+        "Rekommenderade åtgärder"
       ],
       "Reconnect your account": [
         "Återanslut ditt konto"
@@ -14629,6 +14703,9 @@
       ],
       "What's new": [
         "Vad som är nytt"
+      ],
+      "WireGuard": [
+        "WireGuard"
       ],
       "WireGuard configuration": [
         "WireGuard-konfiguration"

@@ -197,6 +197,9 @@
       "Close navigation": [
         "Navigatie sluiten"
       ],
+      "Close tab": [
+        "Tabblad sluiten"
+      ],
       "Close this banner": [
         "Sluit deze banner"
       ],
@@ -379,6 +382,9 @@
       ],
       "Edit": [
         "Bewerken"
+      ],
+      "Edit billing cycle": [
+        "Wijzig de facturatiecyclus"
       ],
       "Edit display name": [
         "Wijzig weergavenaam"
@@ -3114,17 +3120,6 @@
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Toegang tot de desktop app is beperkt"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "De bètaversie van de ${ MAIL_APP_NAME }-desktopapp is momenteel beschikbaar voor iedereen met een betaald ${ MAIL_APP_NAME } abonnement. Upgrade vandaag nog om toegang te krijgen."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Voor toegang kunt u vandaag upgraden of begin 2024 nog een keer controleren."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Terug naar ${ signIn }."
@@ -3226,7 +3221,7 @@
         ".deb voor Debian / Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm voor Fedora / Rode Hoed"
+        ".rpm voor Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -4383,6 +4378,9 @@
       "Invalid URL": [
         "Ongeldige URL"
       ],
+      "Missing parameters in the URL.": [
+        "Ontbrekende parameters in de URL."
+      ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
@@ -4394,6 +4392,9 @@
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "Support ticket does not exist.": [
+        "Het supportticket bestaat niet."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
@@ -5175,6 +5176,15 @@
       "Back to sign in": [
         "Terug naar aanmelden"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "Blijf genieten van een snelle, gefocuste en veilige desktopervaring. Upgrade om onbeperkte toegang en andere premiumfuncties te verkrijgen. "
+      ],
+      "Keep using the desktop app": [
+        "Blijf gebruik maken van de desktopapp"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Open ${ MAIL_APP_NAME } in de ${ webAppMessage }"
+      ],
       "Your desktop app free trial has ended": [
         "Uw gratis proefversie van de desktop app is afgelopen."
       ]
@@ -5350,6 +5360,9 @@
       ],
       "Protection": [
         "Bescherming"
+      ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Bespaar veel met de beste deals van ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Kies uw deal"
@@ -5791,17 +5804,6 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -6057,6 +6059,10 @@
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
       ],
+      "Affected user is on row": [
+        "Deze gebruiker staat op rij",
+        "Deze gebruikers staan op rijen"
+      ],
       "Align left": [
         "Links uitlijnen"
       ],
@@ -6113,9 +6119,6 @@
       ],
       "and": [
         "en"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Alle ${ twoFa }methodes op uw account worden uitgeschakeld."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden gewist. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden gewist en zijn terug te vinden in de map Alle berichten."
@@ -6218,6 +6221,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Zorg ervoor dat u uw wachtwoord kopieert en op een veilige plek bewaart."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Voordat u de account inschakelt, moet u een wachtwoord opgeven en encryptiesleutels voor de nieuwe adressen aanmaken."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Voordat u dit adres aanmaakt, moet u een wachtwoord opgeven en er encryptiesleutels voor aanmaken."
@@ -6744,6 +6750,9 @@
       "Key deletion is irreversible!": [
         "Het verwijderen van een sleutel is onomkeerbaar!"
       ],
+      "Keys created": [
+        "Sleutels aangemaakt"
+      ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
       ],
@@ -6864,6 +6873,9 @@
       "No addresses exist": [
         "Adressen bestaan niet"
       ],
+      "No changes made to the current subscription": [
+        "Er zijn geen wijzigingen aangebracht aan het huidige abonnement"
+      ],
       "No credit card required": [
         "Green kredietkaart vereist"
       ],
@@ -6908,9 +6920,6 @@
       ],
       "of": [
         "van"
-      ],
-      "old password": [
-        "oud wachtwoord"
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
@@ -7040,6 +7049,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Gebruik een wachtwoord van meer dan ${ MIN_PASSWORD_LENGTH } tekens.",
+        "Gebruik een wachtwoord van meer dan ${ MIN_PASSWORD_LENGTH } tekens."
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -7220,6 +7233,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Versturen via SMTP laat derde partijen of apparaten toe om e-mail te sturen via ${ MAIL_APP_NAME } voor uw eigen domeinnamen. Deze functie is enkel beschikbaar voor ${ BRAND_NAME } voor zakelijke gebruikers met eigen domeinnamen."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Met SMTP-indiening kunnen services of apparaten van derden e-mail verzenden via ${ MAIL_APP_NAME } voor uw aangepaste domeinadressen. Om toegang aan te vragen, ${ createTicket } met een beschrijving van uw gebruiksscenario's, welke aangepaste domeinen u wilt gebruiken en verwachte e-mailvolumes per uur en per dag."
@@ -7441,6 +7457,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dit zal uw tijdelijke wachtwoord vervangen. U zult het gebruiken om in de toekomst toegang te krijgen tot uw ${ BRAND_NAME } -account."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
       ],
@@ -7521,9 +7540,6 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
-      ],
-      "two-factor authentication (2FA)": [
-        "tweestapsverificatie (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Tweestapsverificatie uitgeschakeld"
@@ -7608,6 +7624,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Gebruik het geselecteerde e-mailadres als de SMTP-gebruikersnaam bij de externe dienst, en het gegenereerde token als het SMTP-wachtwoord."
+      ],
+      "User activated": [
+        "Gebruiker geactiveerd"
       ],
       "Users": [
         "Gebruikers"
@@ -7720,9 +7739,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "We sturen een resetcode naar het telefoonnummer dat u hebt opgegeven voor het herstel van uw account."
       ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder dat u het weet."
       ],
@@ -7816,6 +7832,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "U heeft nu toegang tot het account als administrator en kan deze beheren."
+      ],
+      "You can now close this tab.": [
+        "U kunt dit tabblad nu sluiten."
       ],
       "You can now close this window.": [
         "U mag dit venster nu sluiten."
@@ -7954,12 +7973,6 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Uw bestaande berichten, agenda's of contacten worden vergrendeld. Om deze gegevens te herstellen, heeft u uw ${ oldPassword } nodig."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Uw bestaande berichten, agenda's of contacten worden vergrendeld. Om deze gegevens te herstellen, heeft u uw herstelzin of uw ${ oldPassword } nodig."
-      ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
@@ -7999,6 +8012,20 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Uw supportticket werd afgesloten. Bedankt om contact op te nemen met ${ BRAND_NAME }-ondersteuning."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8550,6 +8577,9 @@
       ],
       "Awarded": [
         "Toegekend"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Facturatie adres"
@@ -9339,6 +9369,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } en ${ additionalApp } productupdates"
+      ],
       "${ app } product updates": [
         "${ app } productupdates"
       ],
@@ -9691,11 +9724,17 @@
       "for the first month": [
         "voor de eerste maand"
       ],
+      "for your first month": [
+        "voor uw eerste maand"
+      ],
       "Get ${ planName } for ${ price }": [
         "Download ${ planName } voor ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Beperkte aanbieding, loopt af op 2 april 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Uw abonnement wordt automatisch verlengd op ${ renewTime } tegen ${ renewablePrice }, annuleer op elk moment."
       ]
     },
     "mailtrial2024: Title": {
@@ -10084,9 +10123,6 @@
       "Get ${ planName }": [
         "Kies ${ planName }"
       ],
-      "Got it": [
-        "Begrepen"
-      ],
       "Keep ${ plan }": [
         "${ plan } behouden"
       ],
@@ -10175,6 +10211,9 @@
       "1 user": [
         "1 gebruiker"
       ],
+      "24/7 account management support": [
+        "24/7 ondersteuning voor accountbeheer"
+      ],
       "24/7 support": [
         "24/7 ondersteuning"
       ],
@@ -10186,6 +10225,9 @@
       ],
       "Admin console": [
         "Beheerdersconsole"
+      ],
+      "Administration Panel": [
+        "Beheerderspaneel"
       ],
       "Advanced network security": [
         "Geavanceerde netwerkbeveiliging"
@@ -10251,7 +10293,7 @@
         "Toegewijde servers en IP"
       ],
       "Desktop app": [
-        "Desktopapp"
+        "Desktop-app"
       ],
       "DNS leak prevention": [
         "DNS-lekbescherming"
@@ -10356,6 +10398,9 @@
       ],
       "Router support": [
         "Routerondersteuning"
+      ],
+      "Schedule and snooze emails for any time": [
+        "E-mails plannen en snoozen wanneer u wilt"
       ],
       "Schedule messages at any time": [
         "Plan berichten in op ieder moment"
@@ -10519,6 +10564,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Geavanceerde bescherming voor teams die verder reikt dan de industriestandaarden."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps en hun premium functies"
       ],
@@ -10530,6 +10578,9 @@
       ],
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Essentiële bescherming en veilige samenwerking voor een onbeperkt aantal gebruikers."
       ],
       "For next-level password management and identity protection.": [
         "Voor wachtwoordbeheer en identiteitsbescherming op een hoger niveau."
@@ -10642,15 +10693,20 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
       ],
       "Downgrade account?": [
         "Account downgraden?"
-      ],
-      "Improved plans coming soon!": [
-        "Binnenkort zijn er verbeterde abonnementen beschikbaar!"
       ],
       "Review subscription and pay": [
         "Abonnement controleren en betalen"
@@ -10663,14 +10719,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -10686,6 +10734,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Krijg toegang tot geblokkeerde inhoud en browse privé. Dit is inclusief ${ serversAndCountries }, hoogste VPN-snelheden, toegang tot wereldwijde streaming services, malware en advertentie-blokkers, snelle BitTorrent downloads en meer."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Krijg toegang tot ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } via het gemak van uw desktop"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
@@ -10698,11 +10749,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Hiermee kunt u automatische antwoorden instellen voor uw ontvangen berichten"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Verwijder automatisch berichten ouder dan 30 dagen uit de Prullenbak en Spam"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "E-mails verzonden naar uw ${ MAIL_APP_NAME }-account kunt u automatisch doorsturen naar elk ander e-mailadres."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kunt u een hierin gespecialiseerde e-mailserviceprovider gebruiken."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Kies aangepaste tijden om herinnerd te worden aan een e-mail of om uw bericht te ontvangen"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Beheer toegang tot uw gedeelde bestanden door wachtwoordbeveiliging en verloopdatums voor koppelingen toe te voegen"
@@ -10746,6 +10803,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Zoals een map, is een kluis een handige manier om uw items te organiseren"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Vergrendel uw bedrijfsbronnen van het openbare internet en maak ze alleen toegankelijk via uw private gateways"
@@ -12536,9 +12596,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Voltooi de transitie naar privacy met onze veilige importeer- en doorstuurtools."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Voltooi de transitie naar privacy met onze veilige importeertools."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Houd uw inbox georganiseerd met mappen en labels. ${ learnMoreLink }"
       ]
@@ -13829,6 +13886,9 @@
       "Create multiple user accounts": [
         "Meerdere gebruikersaccounts aanmaken"
       ],
+      "Create organization key": [
+        "Maak een organisatiesleutel"
+      ],
       "Create public link": [
         "Maak een publieke link"
       ],
@@ -14171,6 +14231,9 @@
       "Link confirmation": [
         "Link bevestigen"
       ],
+      "Location": [
+        "Locatie"
+      ],
       "Login password": [
         "Inlogwachtwoord"
       ],
@@ -14435,6 +14498,9 @@
       ],
       "Summary": [
         "Overzicht"
+      ],
+      "Support ticket closed": [
+        "Support ticket gesloten"
       ],
       "Switch account": [
         "Account wisselen"
@@ -14995,6 +15061,21 @@
         "${ numberOfServers } in ${ numberOfCountries } landen"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Abonnement wordt elke maand automatisch verlengd. Uw volgende facturatiedatum is over 1 maand."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonnement wordt elke 3 maanden automatisch verlengd. Uw volgende facturatiedatum is over 3 maanden."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -15007,8 +15088,14 @@
       "15-month": [
         "15 maand"
       ],
+      "18-month": [
+        "18-maandelijks"
+      ],
       "2-year": [
         "2-jarig"
+      ],
+      "3-month": [
+        "3-maandelijks"
       ],
       "30-month": [
         "30 maand"

@@ -3120,17 +3120,6 @@
         "In der hochgeladenen CSV-Datei wurden die folgenden Felder erkannt. Wähle diejenigen aus, die du importieren möchtest."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Zugang zur Desktop-App ist beschränkt"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Die Betaversion der ${ MAIL_APP_NAME }-Desktop-App ist derzeit für jeden mit einem kostenpflichtigen ${ MAIL_APP_NAME }-Abonnement verfügbar. Upgrade jetzt, um Zugriff zu erhalten."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Upgrade noch heute oder schaue Anfang 2024 nochmal vorbei, um Zugang zu erhalten."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Zurück zur ${ signIn }."
@@ -5815,17 +5804,6 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6141,9 +6119,6 @@
       ],
       "and": [
         "und"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Alle ${ twoFa }-Methoden deines Kontos werden deaktiviert."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
@@ -6946,9 +6921,6 @@
       "of": [
         "von"
       ],
-      "old password": [
-        "altes Passwort"
-      ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
       ],
@@ -7569,9 +7541,6 @@
       "Total VPN connections": [
         "Anzahl VPN‐Verbindungen"
       ],
-      "two-factor authentication (2FA)": [
-        "Zwei-Faktor-Authentifizierung (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Zwei‐Faktor‐Authentifizierung deaktiviert"
       ],
@@ -7769,9 +7738,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Du erhältst dann einen Rücksetzungscode an die Telefonnummer, die du für die Wiederherstellung deines Kontos angegeben hast."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Wir aktualisieren dein aktuelles Abonnement auf ein verbessertes Abonnement, das mehr für den gleichen Preis bietet. Während unsere Systeme aktualisiert werden, kannst du es nicht ändern. Wir werden dich per E-Mail informieren, sobald die Aktualisierung abgeschlossen ist."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
@@ -8007,12 +7973,6 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Deine vorhandenen Nachrichten, Kalender oder Kontakte werden gesperrt. Um diese Daten wiederherzustellen, brauchst du dein ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Deine vorhandenen Nachrichten, Kalender oder Kontakte werden gesperrt. Um diese Daten wiederherzustellen, brauchst du deine Wiederherstellungsphrase oder dein ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
@@ -8055,6 +8015,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Dein Support-Ticket wurde geschlossen. Vielen Dank, dass du den Support von ${ BRAND_NAME } kontaktiert hast."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10152,9 +10123,6 @@
       "Get ${ planName }": [
         "${ planName } holen"
       ],
-      "Got it": [
-        "Verstanden"
-      ],
       "Keep ${ plan }": [
         "${ plan } behalten"
       ],
@@ -10722,15 +10690,20 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
       ],
       "Downgrade account?": [
         "Konto downgraden?"
-      ],
-      "Improved plans coming soon!": [
-        "Verbesserte Abonnements in Kürze verfügbar!"
       ],
       "Review subscription and pay": [
         "Abonnement prüfen und bezahlen"
@@ -10743,14 +10716,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -12628,9 +12593,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Schließe den Wechsel zur Privatsphäre mit unseren sicheren Import- und Weiterleitungstools ab."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Schließe den Wechsel zur Privatsphäre mit unseren sicheren Importtools ab."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Halte deinen Posteingang mit Ordnern und Kategorien ordentlich. ${ learnMoreLink }"
       ]
@@ -14266,6 +14228,9 @@
       "Link confirmation": [
         "Linkbestätigung"
       ],
+      "Location": [
+        "Speicherort"
+      ],
       "Login password": [
         "Anmeldepasswort"
       ],
@@ -15120,8 +15085,14 @@
       "15-month": [
         "15-Monats"
       ],
+      "18-month": [
+        "18-monatigen"
+      ],
       "2-year": [
         "2-Jahres"
+      ],
+      "3-month": [
+        "3-monatigen"
       ],
       "30-month": [
         "30-Monats"
