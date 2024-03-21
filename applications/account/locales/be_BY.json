@@ -960,7 +960,7 @@
         "Паспрабуйце яшчэ раз"
       ],
       "Try another method": [
-        "Паспрабуйце іншы метад"
+        "Паспрабуйце іншы спосаб"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
@@ -1271,7 +1271,7 @@
         "Памылковы файл ICS"
       ],
       "Invalid method": [
-        "Памылковы метад"
+        "Памылковы спосаб"
       ],
       "Unsupported calendar component": [
         "Кампанент календара не падтрымліваецца"
@@ -3146,17 +3146,6 @@
         "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Доступ да настольнай праграмы абмежаваны"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } цяпер даступна любому карыстальніку з платным тарыфным планам ${ MAIL_APP_NAME }. Палепшыце свой тарыфны план, каб атрымаць доступ."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Палепшыце свой тарыфны план сёння або праверце даступнасць на пачатку 2024 года."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Вярнуцца ў ${ signIn }."
@@ -4256,7 +4245,7 @@
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } мае памылковы метад і яго немагчыма імпартаваць."
+        "Ваш файл ${ formattedFilename } мае памылковы спосаб і яго немагчыма імпартаваць."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае падзей для імпартавання."
@@ -5889,17 +5878,6 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -6263,9 +6241,6 @@
       ],
       "and": [
         "і"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Любы метад ${ twoFa } на вашым уліковым запісе будзе адключаны."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted } не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
@@ -7080,9 +7055,6 @@
       "of": [
         "з"
       ],
-      "old password": [
-        "стары пароль"
-      ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
       ],
@@ -7719,9 +7691,6 @@
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "двухфактарнай праверкі сапраўднасці (2ФА)"
-      ],
       "Two-factor authentication disabled": [
         "Двухфактарная аўтэнтыфікацыя адключана"
       ],
@@ -7920,9 +7889,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі нумар тэлефона."
       ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Мы паляпшаем ваш бягучы тарыфны план на больш прасунуты, які прапануе больш функцый за тую ж самую плату. Пакуль наша сістэма абнаўляе тарыфны план, вы не зможаце яго змяніць. Мы адправім вам ліст, як толькі ўсё будзе гатова."
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
       ],
@@ -7957,7 +7923,7 @@
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
+        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
       ],
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
@@ -8056,7 +8022,7 @@
         "Гэта дзеянне немагчыма адрабіць."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Вы не задалі спосаб для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
+        "Вы не задалі спосаб для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без спосабу аднаўлення?"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Вам даступны ${ availableCount } вылучаны сервер.",
@@ -8169,12 +8135,6 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Вашы існуючыя паведамленні, календары, або кантакты будуць заблакіраваны. Вам неабходны ${ oldPassword }, каб аднавіць гэтыя даныя."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Вашы існуючыя паведамленні, календары, або кантакты будуць заблакіраваны. Вам неабходна фраза аднаўлення або ${ oldPassword }, каб аднавіць гэтыя даныя."
-      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
@@ -8219,6 +8179,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваш запыт у службу падтрымкі быў закрыты. Дзякуй, што звярнуліся ў падтрымку ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8551,7 +8522,7 @@
         "Выбраць / скасаваць выбар"
       ],
       "Select / unselect all": [
-        "Выбраць / скасаваць выбар усяго"
+        "Выбраць / скасаваць выбар усіх"
       ],
       "Send email": [
         "Адправіць ліст"
@@ -10350,9 +10321,6 @@
       "Get ${ planName }": [
         "Атрымаць ${ planName }"
       ],
-      "Got it": [
-        "Зразумела"
-      ],
       "Keep ${ plan }": [
         "Пакінуць ${ plan }"
       ],
@@ -10961,15 +10929,20 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
       ],
       "Downgrade account?": [
         "Панізіць уліковы запіс?"
-      ],
-      "Improved plans coming soon!": [
-        "Неўзабаве чакайце абноўленыя тарыфныя планы!"
       ],
       "Review subscription and pay": [
         "Прагледзець падпіску і аплату"
@@ -10982,14 +10955,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -12074,6 +12039,17 @@
         "Асабісты"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Усе вашы існуючыя даныя** (лісты, падзеі, кантакты, файлы, запісы ${ PASS_APP_NAME } і г.д.) **будуць заблакіраваны** і іх можна будзе разблакіраваць толькі з дапамогай вашага **старога пароля**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Усе вашы існуючыя даныя** (лісты, падзеі, кантакты, файлы, запісы ${ PASS_APP_NAME } і г.д.) **будуць заблакіраваны** і іх можна будзе разблакіраваць толькі з дапамогай вашай **фразы аднаўлення** або вашага **старога пароля**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Любы спосаб **двухфактарнай аўтэнтыфікацыі (2ФА)** на ў вашым уліковым запісе будзе адключаны."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Усе адміністратары атрымаюць доступ да ключа."
@@ -12918,9 +12894,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Завяршыце пераход да прыватнасці з нашым бяспечнымі інструментамі імпартавання і перасылкі."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Завяршыце пераход да прыватнасці з нашым бяспечнымі інструментамі імпартавання."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Падтрымлівайце парадак у сваёй паштовай скрыні пры дапамозе папак і метак. ${ learnMoreLink }"
@@ -14619,6 +14592,9 @@
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
+      "Location": [
+        "Размяшчэнне"
+      ],
       "Login password": [
         "Пароль уваходу"
       ],
@@ -15020,7 +14996,7 @@
         "Дзеянні"
       ],
       "Method": [
-        "Метад"
+        "Спосаб"
       ],
       "Status": [
         "Статус"
@@ -15318,10 +15294,10 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "Абагулена са скразным шыфраваннем"
+        "Абагулена з дапамогай скразнога шыфравання"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Абагулена са скразным шыфраваннем з правераным кантактам"
+        "Абагулена з дапамогай скразнога шыфравання з правераным кантактам"
       ]
     },
     "Tor out of date": {
@@ -15584,7 +15560,7 @@
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны адразу. Мы абновім яго толькі пасля пацвярджэння аплаты."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Справаздачы не шыфруюцца. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
+        "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
       "Skip verification?": [
         "Прапусціць праверку?"

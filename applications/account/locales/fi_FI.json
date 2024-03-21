@@ -3120,17 +3120,6 @@
         "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Pääsy työpöytäsovellukseen on rajoitettu"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } -työpöytäsovelluksen betaversio on tällä hetkellä niiden, joilla on maksullinen ${ MAIL_APP_NAME } -tilaus, saatavilla. Päivitä tilauksesi tänään ja pääset käyttämään sitä."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Päivitä tilauksesi tänään tai tarkista tilanne uudelleen vuoden 2024 alussa."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Palaa ${ signIn }."
@@ -5815,17 +5804,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -6141,9 +6119,6 @@
       ],
       "and": [
         "ja"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Kaikki tilillesi määritetyt ${ twoFa } poistetaan käytöstä."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansioon ${ nameDeleted } tallennettuja sähköpostiviestejä ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
@@ -6946,9 +6921,6 @@
       "of": [
         "/"
       ],
-      "old password": [
-        "vanhan salasanasi"
-      ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
@@ -7569,9 +7541,6 @@
       "Total VPN connections": [
         "VPN-yhteyksiä yhteensä"
       ],
-      "two-factor authentication (2FA)": [
-        "kaksivaiheiset todennustavat (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Kaksivaiheinen todennus poistettiin käytöstä"
       ],
@@ -7769,9 +7738,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Lähetämme palautuskoodin tilin palautusta varten ilmoittamaasi puhelinnumeroon."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Nykyinen tilauksesi päivitetään parempaan tilaukseen, joka tarjoaa enemmän samaan hintaan. Järjestelmiemme päivittyessä et voi muuttaa sitä. Saat sähköposti-ilmoituksen heti sen valmistuttua."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kun ei käytössä, estää kuvatiedostoja latautumasta laitteellesi ilman tietoasi."
@@ -8007,12 +7973,6 @@
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Olemassa olevat viestisi, kalenterisi tai yhteystietosi lukitaan. Tarvitset näiden tietojen palauttamiseksi ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Olemassa olevat viestisi, kalenterisi tai yhteystietosi lukitaan. Tarvitset näiden tietojen palautukseen palautuslausekkeesi tai ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
       ],
@@ -8055,6 +8015,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10152,9 +10123,6 @@
       "Get ${ planName }": [
         "Hanki ${ planName }"
       ],
-      "Got it": [
-        "Selvä"
-      ],
       "Keep ${ plan }": [
         "Säilytä ${ plan }"
       ],
@@ -10725,15 +10693,20 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
       ],
       "Downgrade account?": [
         "Alennetaanko tili?"
-      ],
-      "Improved plans coming soon!": [
-        "Paremmat tilaukset tulossa pian!"
       ],
       "Review subscription and pay": [
         "Tarkista tilaus ja maksa"
@@ -10746,14 +10719,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -12631,9 +12596,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Viimeistele siirtyminen yksityisyyteen turvallisilla tuonti- ja ohjaustyökaluillamme."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Viimeistele siirtyminen yksityisyyteen meidän turvallisilla tuontityökaluilla."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Pidä postilaatikkosi järjestyksessä kansioiden ja tunnisteiden avulla. ${ learnMoreLink }"
       ]
@@ -14268,6 +14230,9 @@
       ],
       "Link confirmation": [
         "Linkin vahvistus"
+      ],
+      "Location": [
+        "Sijainti"
       ],
       "Login password": [
         "Kirjautumisen salasana"

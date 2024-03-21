@@ -5625,17 +5625,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -5935,9 +5924,6 @@
       ],
       "and": [
         "i"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Qualsevol mètode ${ twoFa } del vostre compte es desactivarà."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
@@ -6687,9 +6673,6 @@
       "of": [
         "de"
       ],
-      "old password": [
-        "contrasenya antiga"
-      ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
       ],
@@ -7288,9 +7271,6 @@
       "Total VPN connections": [
         "Connexions VPN totals"
       ],
-      "two-factor authentication (2FA)": [
-        "autenticació de dos factors (A2F)"
-      ],
       "Two-factor authentication disabled": [
         "Autenticació de dos factors desactivada"
       ],
@@ -7479,9 +7459,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviarem un codi de restabliment al número de telèfon que heu proporcionat per a la recuperació del compte."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Estem actualitzant el vostre pla actual a un de millorat que ofereix més pel mateix preu. Mentre els nostres sistemes s'estan actualitzant, no podreu canviar-lo. Us enviarem un correu electrònic tan aviat com estigui llest."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Si s'inhabilita, s'evita que els arxius d'imatge es carreguin al vostre dispositiu sense el vostre coneixement.\t"
@@ -7700,12 +7677,6 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Els vostres missatges, calendaris o contactes existents es bloquejaran. Per recuperar aquestes dades, necessitareu la vostra ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Els vostres missatges, calendaris o contactes existents es bloquejaran. Per recuperar aquestes dades, necessitareu la vostra frase de recuperació o la vostra ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
@@ -7745,6 +7716,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9783,9 +9765,6 @@
       "Get ${ planName }": [
         "Obteniu ${ planName }"
       ],
-      "Got it": [
-        "Entesos"
-      ],
       "Keep ${ plan }": [
         "Segueix amb ${ plan }"
       ],
@@ -10320,15 +10299,20 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
       ],
       "Downgrade account?": [
         "Voleu passar a un pla inferior?"
-      ],
-      "Improved plans coming soon!": [
-        "Aviat arribaran plans millorats!"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -10341,14 +10325,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -12050,9 +12026,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Completeu la transició a la privacitat amb les nostres eines segures d'importació i reenviament."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Completeu la transició a la privacitat amb les nostres eines segures d'importació."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organitzeu la safata d'entrada amb carpetes i etiquetes. ${ learnMoreLink }"
       ]
@@ -13614,6 +13587,9 @@
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
+      ],
+      "Location": [
+        "Ubicació"
       ],
       "Login password": [
         "Contrasenya d'inici"

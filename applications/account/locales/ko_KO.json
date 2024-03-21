@@ -3064,17 +3064,6 @@
         "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "데스크톱 앱에 접근할 수 없습니다"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } 데스크톱 앱 베타 버전은 현재 ${ MAIL_APP_NAME } 유료 플랜을 사용 중인 모든 사람들이 이용 가능합니다. 접근하려면 오늘 업그레이드 하세요."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "접근을 위해선 오늘 업그레이드 하거나 2024년 초까지 기다려 주세요."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "${ signIn }으(로) 돌아가기"
@@ -5659,17 +5648,6 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -5889,9 +5867,6 @@
       ],
       "and": [
         "그리고"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "사용자 계정의 어떠한 ${ twoFa } 수단이 비활성화 됩니다."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted } 에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
@@ -6299,7 +6274,7 @@
         "로그를 가져오지 못했습니다."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "빠르고 집중할 수 있도록. 데스크톱에서 바로 누리는 이메일과 캘린더."
+        "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
       ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
@@ -6669,9 +6644,6 @@
       ],
       "of": [
         "의"
-      ],
-      "old password": [
-        "이전 암호"
       ],
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
@@ -7264,9 +7236,6 @@
       "Total VPN connections": [
         "총 VPN 연결"
       ],
-      "two-factor authentication (2FA)": [
-        "2단계 인증 (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "2단계 인증이 비활성화 되었습니다"
       ],
@@ -7464,9 +7433,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "계정 복구를 위해 제공하신 휴대폰 번호로 재설정 코드를 보내드립니다."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "우리는 현재 플랜에서 같은 가격에 더 많은 것을 제공하도록 업그레이드하고 있습니다. 시스템이 업데이트되는 동안, 플랜을 변경할 수 없습니다. 완료되는 대로 이메일을 보내드리겠습니다."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "비활성화시, 사용자가 알아차리기 전 이미지가 다운로드 되는 것을 방지해 줍니다."
@@ -7678,12 +7644,6 @@
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "사용자의 존재하는 메시지, 캘린더 및 연락처가 잠깁니다. 이 데이터를 복구하려면, ${ oldPassword }가 필요합니다."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "사용자의 존재하는 메시지, 캘린더 및 연락처가 잠깁니다. 이 데이터를 복구하려면, 복구 방법이나 ${ oldPassword }가 필요합니다."
-      ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
@@ -7722,6 +7682,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "귀하의 지원 티켓이 종료되었습니다. ${ BRAND_NAME } 지원을 이용해주셔서 감사합니다."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9746,9 +9717,6 @@
       "Get ${ planName }": [
         "${ planName } 받기"
       ],
-      "Got it": [
-        "알겠습니다"
-      ],
       "Keep ${ plan }": [
         "${ plan }  유지"
       ],
@@ -10243,15 +10211,20 @@
         "${ planName } 플랜을 선택하셨습니다"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
       ],
       "Downgrade account?": [
         "계정을 다운그레이드할까요?"
-      ],
-      "Improved plans coming soon!": [
-        "향상된 플랜이 출시됩니다!"
       ],
       "Review subscription and pay": [
         "구독 및 결제 검토"
@@ -10264,14 +10237,6 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -12066,9 +12031,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "안전한 가져오기 도구로 개인 정보 보호로의 전환을 완료하세요."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "안전한 가져오기 도구로 개인 정보 보호로의 전환을 완료하세요."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "폴더와 라벨로 편지함을 정리하세요. ${ learnMoreLink }"
       ]
@@ -13566,6 +13528,9 @@
       ],
       "Link confirmation": [
         "링크 확인"
+      ],
+      "Location": [
+        "위치"
       ],
       "Login password": [
         "로그인 비밀번호"

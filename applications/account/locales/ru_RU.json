@@ -3123,14 +3123,6 @@
         "В загруженном вами CSV-файле мы обнаружили следующие поля. Отметьте те, которые вы хотите импортировать."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Доступ к приложению для настольных компьютеров ограничен"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Обновитесь сегодня или проверьте снова в начале 2024 года для получения доступа."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Обратно к ${ signIn }."
@@ -5733,14 +5725,6 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -6098,9 +6082,6 @@
       ],
       "and": [
         "и"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Все ${ twoFa } методы на Вашем аккаунте будут отключены."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
@@ -6897,9 +6878,6 @@
       "of": [
         "из"
       ],
-      "old password": [
-        "старый пароль"
-      ],
       "Once you reset your password:": [
         "После изменения пароля:"
       ],
@@ -7521,9 +7499,6 @@
       "Total VPN connections": [
         "Всего подключений к VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "двухфакторная аутентификация (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Двухфакторная аутентификация отключена"
       ],
@@ -7718,9 +7693,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Мы переводим ваш текущий тариф на улучшенный, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
@@ -7959,12 +7931,6 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Ваши сообщения, календари или контакты будут заблокированы. Чтобы восстановить эти данные, вам ваш ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Ваши сообщения, календари или контакты будут заблокированы. Чтобы восстановить эти данные, вам понадобится фраза восстановления или ваш ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
       ],
@@ -8006,6 +7972,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -10096,9 +10070,6 @@
       "Get ${ planName }": [
         "Получить ${ planName }"
       ],
-      "Got it": [
-        "ОК"
-      ],
       "Keep ${ plan }": [
         "Сохранить ${ plan }"
       ],
@@ -10665,15 +10636,20 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
       ],
       "Downgrade account?": [
         "Перейти на более дешевую версию аккаунта?"
-      ],
-      "Improved plans coming soon!": [
-        "Скоро появятся улучшенные тарифы!"
       ],
       "Review subscription and pay": [
         "Выберите подписку и оплатите"
@@ -10686,14 +10662,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -12376,9 +12344,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Завершите переход к конфиденциальности с нашими безопасными инструментами импорта и пересылки."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Завершите переход к конфиденциальности с нашими безопасными инструментами импорта."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Упорядочивайте свой почтовый ящик с помощью папок и ярлыков. ${ learnMoreLink }"
       ]
@@ -13968,6 +13933,9 @@
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
+      ],
+      "Location": [
+        "Местоположение"
       ],
       "Login password": [
         "Пароль для входа"

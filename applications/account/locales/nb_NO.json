@@ -3120,17 +3120,6 @@
         "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Tilgang til skrivebordsappen er begrenset"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket tilgjengelig for alle med en betalt ${ MAIL_APP_NAME }-plan. Oppgrader i dag for å få tilgang."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Tilbake til ${ signIn }."
@@ -5815,17 +5804,6 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -6141,9 +6119,6 @@
       ],
       "and": [
         "og"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Hvilken som helst ${ twoFa }-metode på kontoen din blir deaktivert."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
@@ -6946,9 +6921,6 @@
       "of": [
         "av"
       ],
-      "old password": [
-        "gammelt passord"
-      ],
       "Once you reset your password:": [
         "Når du har tilbakestilt passordet:"
       ],
@@ -7572,9 +7544,6 @@
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
       ],
-      "two-factor authentication (2FA)": [
-        "to-faktorautentisering (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Tofaktorautentisering deaktivert"
       ],
@@ -7772,9 +7741,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi vil sende en tilbakestillingskode til telefonnummeret du oppga for kontogjenoppretting."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Vi oppgraderer din gjeldende plan til en forbedret plan som tilbyr mer for samme pris. Mens våres systemer oppdateres, vil du ikke være i stand til å endre den. Vi sender e-post straks det er gjort."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Når deaktivert, vil dette forhindre bildefiler fra å laste på enheten din uten din viten."
@@ -8010,12 +7976,6 @@
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Dine eksisterende meldinger, kalendere eller kontakter vil bli låst. For å gjenopprette denne dataen, vil du trenge ditt ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Dine eksisterende meldinger, kalendere eller kontakter vil bli låst. For å gjenopprette denne dataen, vil du trenge din gjenoppretingsfrase eller ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
@@ -8058,6 +8018,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Støttesaken din er stengt. Takk for at du kontaktet kundestøtte for ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8609,6 +8580,9 @@
       ],
       "Awarded": [
         "Belønnet"
+      ],
+      "Beta": [
+        "Testversjon"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -10155,9 +10129,6 @@
       "Get ${ planName }": [
         "Få ${ planName }"
       ],
-      "Got it": [
-        "Forstått"
-      ],
       "Keep ${ plan }": [
         "Behold ${ plan }"
       ],
@@ -10728,15 +10699,20 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
       ],
       "Downgrade account?": [
         "Nedgrader kontoen?"
-      ],
-      "Improved plans coming soon!": [
-        "Forbedrede planer kommer snart!"
       ],
       "Review subscription and pay": [
         "Se gjennom abonnement og betal"
@@ -10749,14 +10725,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -11842,6 +11810,17 @@
         "For enkeltpersoner"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Alle dine eksisterende data** (e-post, hendelser, kontakter, filer, ${ PASS_APP_NAME }-oppføringer, osv.) **vil bli låst** og kan bare låses opp med ditt **gamle passord**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Alle dine eksisterende data** (e-post, hendelser, kontakter, filer, ${ PASS_APP_NAME }-oppføringer, osv.) **vil bli låst** og kan bare låses opp med din **gjenopprettingsfrase** eller ditt **gamle passord**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Alle **tofaktorautentiseringsmetoder (2FA)** på kontoen din deaktiveres."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Alle administratorer vil få tilgang til nøkkelen."
@@ -12654,9 +12633,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Fullfør overgangen til personvern med våre sikre import- og videresendingsverktøy."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Fullfør overgangen til personvern med våre sikre importverktøy."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Hold innboksen din organisert med mapper og etiketter. ${ learnMoreLink }"
@@ -14290,6 +14266,9 @@
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
+      "Location": [
+        "Plassering"
+      ],
       "Login password": [
         "Påloggingspassord"
       ],
@@ -15121,6 +15100,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Abonnementet fornyes automatisk hver måned. Neste faktureringsdato er om 1 måned."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonnementet fornyes automatisk hver 3. måned. Neste faktureringsdato er om 3 måneder."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."
       ],
@@ -15141,8 +15123,14 @@
       "15-month": [
         "15-måneders"
       ],
+      "18-month": [
+        "18-måneders"
+      ],
       "2-year": [
         "2-års"
+      ],
+      "3-month": [
+        "3-måneders"
       ],
       "30-month": [
         "30-måneders"

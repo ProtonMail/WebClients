@@ -5500,17 +5500,6 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -5809,9 +5798,6 @@
       ],
       "and": [
         "e"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Qualquer método ${ twoFa } na sua conta será desativado."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Qualquer um com esta ligação pode ver todas as informações do evento, como título, localização ou participantes."
@@ -6545,9 +6531,6 @@
       "of": [
         "de"
       ],
-      "old password": [
-        "palavra-passe antiga"
-      ],
       "Once you reset your password:": [
         "Uma vez a sua palavra-passe redefinida:"
       ],
@@ -7146,9 +7129,6 @@
       "Total VPN connections": [
         "Total de ligações VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "autenticação de dois factores (A2F)"
-      ],
       "Two-factor authentication disabled": [
         "Autenticação de dois fatores desativada"
       ],
@@ -7340,9 +7320,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de reposição para o número de telefone que forneceu para a recuperação da conta."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Estamos a atualizar o seu plano atual para um plano melhorado que oferece mais pelo mesmo preço. Enquanto os nossos sistemas estiverem a ser atualizados, não será possível alterar o plano. Enviar-lhe-emos um e-mail assim que a atualização estiver concluída."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
@@ -7572,12 +7549,6 @@
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou da sua ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
@@ -7614,6 +7585,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9607,9 +9589,6 @@
       "Get ${ planName }": [
         "Obter ${ planName }"
       ],
-      "Got it": [
-        "Entendido"
-      ],
       "Keep ${ plan }": [
         "Conservar ${ plan }"
       ],
@@ -10118,15 +10097,20 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
       ],
       "Downgrade account?": [
         "Mudar para uma conta com menos funcionalidades?"
-      ],
-      "Improved plans coming soon!": [
-        "Planos melhorados em breve!"
       ],
       "Review subscription and pay": [
         "Reveja a subscrição e pague"
@@ -10139,14 +10123,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -11716,9 +11692,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Complete a transição para a privacidade com as nossas ferramentas seguras de importação e encaminhamento."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Conclua a transição para a privacidade com as nossas ferramentas de importação seguras."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Mantenha a sua caixa de entrada organizada com pastas e etiquetas. ${ learnMoreLink }"
       ]
@@ -13219,6 +13192,9 @@
       ],
       "Link confirmation": [
         "Confirmação de hiperligação"
+      ],
+      "Location": [
+        "Localização"
       ],
       "Login password": [
         "Palavra-passe de início de sessão"
