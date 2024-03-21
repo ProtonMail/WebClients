@@ -1,3 +1,8 @@
+### Version 1.16.2
+
+-   Fix injected notification overlay indexing (fixes coinbase passkey setup)
+-   Fix inline style CSP policies for firefox shadow elements (fixes bitwarden & mastodon)
+
 ### Version 1.16.1
 
 -   Fix injection bottlenecks on docusign.com
