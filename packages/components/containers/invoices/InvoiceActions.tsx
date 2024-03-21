@@ -7,6 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';
 import { useModals, useNotifications } from '../../hooks';
+import { redirectToAccountApp } from '../desktop/openExternalLink';
 import PayInvoiceModal from './PayInvoiceModal';
 import { Invoice } from './interface';
 
@@ -29,6 +30,10 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
             text: c('Action').t`Pay`,
             'data-testid': 'payInvoice',
             async onClick() {
+                if (redirectToAccountApp()) {
+                    return;
+                }
+
                 const status = await paymentsApi.statusExtendedAutomatic();
                 const canPay = status.VendorStates.Card || status.VendorStates.Paypal;
 

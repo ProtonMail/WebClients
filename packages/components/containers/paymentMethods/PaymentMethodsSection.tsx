@@ -13,6 +13,7 @@ import { Icon, Loader, useModalState } from '../../components';
 import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { redirectToAccountApp } from '../desktop/openExternalLink';
 import EditCardModal from '../payments/EditCardModal';
 import { default as PayPalV4Modal, PayPalV5Modal } from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
@@ -80,16 +81,40 @@ const PaymentMethodsSection = () => {
                     shape="outline"
                     className="mr-4"
                     disabled={pollingEvents}
-                    onClick={() => setCreditCardModalOpen(true)}
+                    onClick={() => {
+                        if (redirectToAccountApp()) {
+                            return;
+                        }
+
+                        setCreditCardModalOpen(true);
+                    }}
                 >
                     <Icon name="credit-card" className="mr-2" />
                     <span>{c('Action').t`Add credit / debit card`}</span>
                 </Button>
                 {canAddPaypalV4 && (
-                    <AddPaypalButton disabled={pollingEvents} onClick={() => setPaypalV4ModalOpen(true)} />
+                    <AddPaypalButton
+                        disabled={pollingEvents}
+                        onClick={() => {
+                            if (redirectToAccountApp()) {
+                                return;
+                            }
+
+                            setPaypalV4ModalOpen(true);
+                        }}
+                    />
                 )}
                 {canAddPaypalV5 && (
-                    <AddPaypalButton disabled={pollingEvents} onClick={() => setPaypalV5ModalOpen(true)} />
+                    <AddPaypalButton
+                        disabled={pollingEvents}
+                        onClick={() => {
+                            if (redirectToAccountApp()) {
+                                return;
+                            }
+
+                            setPaypalV5ModalOpen(true);
+                        }}
+                    />
                 )}
             </div>
             <PaymentMethodsTable loading={pollingEvents} methods={paymentMethods} />
