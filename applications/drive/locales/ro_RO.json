@@ -6037,6 +6037,20 @@
         "Dvs."
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Utilizatorii neprivați pot fi promovați la funcția de administrator atunci când au chei de configurare."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Cheia organizației trebuie activată pentru a acorda drepturi administrative."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Utilizatorii privați pot fi promovați la funcția de administrator atunci când s-au conectat pentru prima dată."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Trebuie să faceți privați toți utilizatorii înainte de a genera o cheie nouă pentru organizație."
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Țara de facturare"

@@ -5932,6 +5932,20 @@
         "Vous"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Les utilisateurs non privés peuvent être promus comme administrateur lorsqu'ils disposent de clés de configuration."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clé de l'organisation doit être activée pour accorder des droits administrateur."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Les utilisateurs privés peuvent être promus administrateurs lorsqu'ils se connectent pour la première fois."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vous devez rendre tous les utilisateurs privés avant de créer une nouvelle clé d'organisation."
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Pays de facturation"
