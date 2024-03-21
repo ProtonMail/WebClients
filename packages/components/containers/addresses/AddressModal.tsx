@@ -122,6 +122,9 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
         return { Local, Domain };
     };
 
+    const emailAddressParts = getNormalizedAddress();
+    const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
+
     const handleSubmit = async () => {
         if (!selectedMember || !addresses) {
             throw new Error('Missing member');
@@ -129,12 +132,10 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
         const organizationKey = await getOrganizationKey();
         const DisplayName = model.name;
 
-        const { Local, Domain } = getNormalizedAddress();
-
-        if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === `${Local}@${Domain}`.toLowerCase()) {
+        if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === emailAddress.toLowerCase()) {
             return createNotification({
                 text: c('Error')
-                    .t`${Local} is your username. To create ${Local}@${Domain}, please go to Settings > Messages and composing > Short domain (pm.me)`,
+                    .t`${user.Name} is your username. To create ${emailAddress}, please go to Settings > Messages and composing > Short domain (pm.me)`,
                 type: 'error',
             });
         }
@@ -150,8 +151,8 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
         const { Address } = await api<{ Address: Address }>(
             createAddress({
                 MemberID: selectedMember.ID,
-                Local,
-                Domain,
+                Local: emailAddressParts.Local,
+                Domain: emailAddressParts.Domain,
                 DisplayName,
             })
         );
@@ -260,7 +261,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                     id="address"
                     autoFocus
                     value={model.address}
-                    error={validator([requiredValidator(model.address), useEmail ? emailValidator(model.address) : ''])}
+                    error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
                     aria-describedby="user-domain-selected"
                     onValue={(address: string) => setModel({ ...model, address })}
                     label={useEmail ? c('Label').t`Email` : c('Label').t`Address`}
@@ -306,14 +307,16 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                         );
                     })()}
                 />
-                <InputFieldTwo
-                    id="name"
-                    value={model.name}
-                    onValue={(name: string) => setModel({ ...model, name })}
-                    label={c('Label').t`Display name`}
-                    placeholder={c('Placeholder').t`Choose display name`}
-                    data-testid="settings:identity-section:add-address:display-name"
-                />
+                {!useEmail && (
+                    <InputFieldTwo
+                        id="name"
+                        value={model.name}
+                        onValue={(name: string) => setModel({ ...model, name })}
+                        label={c('Label').t`Display name`}
+                        placeholder={c('Placeholder').t`Choose display name`}
+                        data-testid="settings:identity-section:add-address:display-name"
+                    />
+                )}
                 {shouldSetupMemberKeys && (
                     <>
                         <div className="mb-4 color-weak">
