@@ -17,7 +17,7 @@ import { CardFieldStatus } from '@proton/components/payments/react-extensions/us
 import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
@@ -79,6 +79,7 @@ export interface NoApiProps extends Props {
     themeCode?: ThemeCode;
     bitcoinInhouse: BitcoinHook;
     bitcoinChargebee: BitcoinHook;
+    isChargebeeEnabled: () => ChargebeeEnabled;
 }
 
 export const PaymentsNoApi = ({
@@ -117,6 +118,7 @@ export const PaymentsNoApi = ({
     themeCode,
     bitcoinInhouse,
     bitcoinChargebee,
+    isChargebeeEnabled,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -188,6 +190,13 @@ export const PaymentsNoApi = ({
         !isSingleSignup &&
         APP_NAME !== APPS.PROTONVPN_SETTINGS &&
         !hasSomeVpnPlan;
+
+    const renderSavedChargebeeIframe =
+        savedMethod?.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
+        // CARD must use the Chargebee iframe if we are in migration mode. The migration mode can be detected
+        // by having a saved v4 payment method and the chargebeeEnabled flag being set to CHARGEBEE_ALLOWED.
+        (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD &&
+            isChargebeeEnabled() === ChargebeeEnabled.CHARGEBEE_ALLOWED);
 
     return (
         <>
@@ -271,9 +280,7 @@ export const PaymentsNoApi = ({
                             )}
                             {(savedMethod.Type === PAYMENT_METHOD_TYPES.CARD ||
                                 savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) && <Alert3DS />}
-                            {savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
-                                <ChargebeeSavedCardWrapper {...sharedCbProps} />
-                            )}
+                            {renderSavedChargebeeIframe && <ChargebeeSavedCardWrapper {...sharedCbProps} />}
                         </>
                     )}
                     {children}
