@@ -8024,6 +8024,20 @@
         "Tu"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Gli utenti non privati possono essere promossi ad amministratore quando dispongono delle chiavi di configurazione"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La chiave dell'organizzazione deve essere attivata per poter concedere i privilegi di amministratore"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Gli utenti privati possono essere promossi ad amministratore quando effettuano l'accesso per la prima volta"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Devi rendere privati tutti gli utenti prima di poter generare una nuova chiave dell’organizzazione"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Paese di fatturazione"
