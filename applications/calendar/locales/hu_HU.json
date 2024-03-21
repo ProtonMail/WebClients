@@ -225,6 +225,9 @@
       "Download": [
         "Letöltés"
       ],
+      "Download now": [
+        "Letöltés most"
+      ],
       "Edit": [
         "Szerkesztés"
       ],
@@ -317,6 +320,9 @@
       ],
       "Import from Outlook": [
         "Importálás az Outlookból"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Fontos frissítés érhető el. Az alkalmazás használatának folytatásához, kérjük frissítsen a legfrissebb verzióra. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Csatlakozás a naptárhoz"
@@ -594,6 +600,9 @@
       "Upgrade": [
         "Csomagváltás"
       ],
+      "Upgrade Now": [
+        "Váltás nagyobb csomagra"
+      ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
@@ -636,6 +645,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának 2 nap múlva vége. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának 5 nap múlva vége. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -734,6 +752,11 @@
         "Ha most kilép, elveszíti az eseményt."
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME } asztali alkalmazás letöltése"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } alkalmazások"
@@ -797,6 +820,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
       ]
     },
     "Bug category": {
@@ -2225,6 +2253,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Korai hozzáférés a ${ MAIL_APP_NAME } asztali alkalmazáshoz"
       ]
     },
     "Error": {
@@ -3894,7 +3925,7 @@
         "Elsődleges"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "A helyreállítási információ megmarad ezen az eszközön, kivéve ha törli."
+        "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -4748,7 +4779,15 @@
         "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ajánlat elfogadása"
+      ]
+    },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
       "10 email addresses": [
         "10 e-mail cím"
       ],
@@ -5101,7 +5140,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Néhány képet nem sikerült feltölteni, mert az aktuális kiválasztásban duplikált fájlnevek voltak."
+        "Néhány képet nem sikerült feltölteni, mert a kiválasztott elemek közt duplikált fájlnevek voltak."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5987,8 +6026,14 @@
       "Add your country's public holidays to your calendar.": [
         "Vegye fel az országa szerinti munkaszüneti napokat a naptárába."
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Használja kényelmesen a ${ MAIL_APP_NAME } alkalmazást közvetlenül a számítógépén."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Találja meg könnyen az eseményt, amit keres, az új keresés funkcióval."
+      ],
+      "Get the desktop app": [
+        "Töltse le az asztali alkalmazást"
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
@@ -6465,6 +6510,9 @@
       ],
       "Feedback": [
         "Visszajelzés"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } alkalmazások"
       ],
       "Groups": [
         "Csoportok"
