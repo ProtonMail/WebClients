@@ -3120,17 +3120,6 @@
         "Yüklediğiniz CSV dosyasında aşağıdaki alanlar algılandı. İçe aktarmak istediklerinizi işaretleyin."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Masaüstü uygulamasına erişim kısıtlı"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } masaüstü uygulamasının beta sürümü, şu anda ücretli ${ MAIL_APP_NAME } tarifesi kullanıcılarına sunuluyor. Erişmek için tarifenizi yükseltin."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "${ signIn }maya dön."
@@ -5815,17 +5804,6 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -6083,7 +6061,7 @@
       ],
       "Affected user is on row": [
         "Etkilenen kullanıcı satırda",
-        "Etkilenen kullanıcı satırlarda"
+        "Etkilenen kullanıcılar satırlarda"
       ],
       "Align left": [
         "Sola hizala"
@@ -6141,9 +6119,6 @@
       ],
       "and": [
         "ve"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Hesabınızda kullanılan tüm ${ twoFa } yöntemleri kapatılacak."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
@@ -6248,7 +6223,7 @@
         "Parolanızı kopyaladığınızdan ve güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
-        "Kullanıcıyı etkinleştirmeden önce, bir parola sağlamanız ve adresler için şifreleme anahtarları oluşturmanız gerekir."
+        "Kullanıcıyı etkinleştirmeden önce bir parola belirtmeli ve adresler için şifreleme anahtarları oluşturmalısınız."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
@@ -6294,6 +6269,9 @@
       ],
       "Center": [
         "Ortaya hizala"
+      ],
+      "Change your password": [
+        "Parolanızı değiştirin"
       ],
       "Check the status of imports and forwarding.": [
         "İçe aktarma ve iletme durumunu denetleyin."
@@ -6476,6 +6454,9 @@
       "Edit link": [
         "Bağlantıyı düzenle"
       ],
+      "email": [
+        "e-posta"
+      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -6575,6 +6556,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
@@ -6616,6 +6600,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Uzak içeriği bir vekil sunucu aracılığıyla yükleyerek tanımlayıcı bilgileri gizler. İçeriği ek dosya olarak kaydetme seçeneği."
+      ],
+      "High Priority": [
+        "Yüksek öncelik"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Bu parolayı başka bir yönetici değiştirdiyse, ondan yeni kuruluş parolasını istemeniz gerekecek."
@@ -6838,6 +6825,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Günlük kayıtlarında, ${ BRAND_NAME_TWO } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetlerinin kimlik doğrulama girişimleri bulunur."
       ],
+      "Low Priority": [
+        "Düşük Öncelik"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "SPF/DKIM/DMARC ayarları doğru değilse, büyük e-posta hizmeti sağlayıcıları e-postalarınızı istenmeyen olarak algılayarak reddebilir ya da süzebilir."
       ],
@@ -6852,6 +6842,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
+      ],
+      "Medium Priority": [
+        "Orta öncelik"
       ],
       "Member": [
         "Üye"
@@ -6899,7 +6892,7 @@
         "Herhangi bir adres yok"
       ],
       "No changes made to the current subscription": [
-        "Mevcut abonelikte herhangi bir değişiklik yapılmadı"
+        "Var olan abonelikte herhangi bir değişiklik yapılmadı"
       ],
       "No credit card required": [
         "Kredi kartı gerekmez"
@@ -6945,9 +6938,6 @@
       ],
       "of": [
         "/"
-      ],
-      "old password": [
-        "eski parola"
       ],
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
@@ -6997,6 +6987,9 @@
       ],
       "Paid for a monthly plan": [
         "Bir aylık tarife ödemesi yaptı"
+      ],
+      "password": [
+        "parola"
       ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
@@ -7569,9 +7562,6 @@
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
       ],
-      "two-factor authentication (2FA)": [
-        "iki adımlı doğrulama (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "İki adımlı doğrulama kapatıldı"
       ],
@@ -7658,6 +7648,9 @@
       ],
       "User activated": [
         "Kullanıcı ektinleştirildi"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -7769,9 +7762,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Hesap kurtarma için ayarladığınız telefon numarasına bir sıfırlama kodu göndereceğiz."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Geçerli tarifenizi aynı ücrete daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kapatıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
@@ -8007,12 +7997,6 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için ${ oldPassword }nıza gerek duyacaksınız."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için kurtarma ifadenize veya ${ oldPassword }nıza gerek duyacaksınız."
-      ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
@@ -8055,6 +8039,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Destek talebiniz kapatıldı. ${ BRAND_NAME } destek birimiyle iletişime geçtiğiniz için teşekkür ederiz."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8606,6 +8601,9 @@
       ],
       "Awarded": [
         "Hediye edilen"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fatura adresi"
@@ -9557,6 +9555,9 @@
       "Create account": [
         "Hesap ekle"
       ],
+      "Create an alias": [
+        "Takma ad oluştur"
+      ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
       ],
@@ -10149,9 +10150,6 @@
       "Get ${ planName }": [
         "${ planName } alın"
       ],
-      "Got it": [
-        "Anladım"
-      ],
       "Keep ${ plan }": [
         "${ plan } tarifesinde kal"
       ],
@@ -10722,15 +10720,20 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
       ],
       "Downgrade account?": [
         "Hesap tarifesi düşürülsün mü?"
-      ],
-      "Improved plans coming soon!": [
-        "Yakında geliştirilmiş tarifeler geliyor!"
       ],
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
@@ -10743,14 +10746,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -12628,9 +12623,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Güvenli içe aktarma ve iletme araçlarımızla gizliliğe geçişinizi tamamlayın."
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Güvenli içe aktarma araçlarımızla gizliliğe geçişinizi tamamlayın."
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Klasör ve etiketleri kullanarak gelen kutunuzu düzenli tutun. ${ learnMoreLink }"
       ]
@@ -13729,7 +13721,7 @@
         "Kuruluş anahtarını kullanıma al"
       ],
       "Activate user": [
-        "Kullanıcıyı etkinleştirin"
+        "Kullanıcıyı etkinleştir"
       ],
       "Add address": [
         "Adres ekle"
@@ -13810,7 +13802,7 @@
         "Oturumu kapatmak istediğinize emin misiniz?"
       ],
       "Are you sure?": [
-        "Emin misiniz?"
+        "Emin misin?"
       ],
       "Authentication security": [
         "Kimlik doğrulama güvenliği"
@@ -13826,6 +13818,9 @@
       ],
       "Billing cycle": [
         "Fatura dönemi"
+      ],
+      "Breach Date": [
+        "Ele geçirilme tarihi"
       ],
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
@@ -13874,6 +13869,9 @@
       ],
       "Clear out the junk": [
         "Çöpleri temizleyin"
+      ],
+      "Close": [
+        "Kapat"
       ],
       "Composing": [
         "İleti oluşturma"
@@ -14093,6 +14091,9 @@
       "Email": [
         "E-posta"
       ],
+      "Email address": [
+        "E-posta adresi"
+      ],
       "Email composer": [
         "E-posta oluşturucu"
       ],
@@ -14182,7 +14183,7 @@
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
       ],
       "Get the apps": [
-        "Uygulamaları edinin"
+        "Uygulamaları edin"
       ],
       "Gift": [
         "Hediye"
@@ -14265,6 +14266,9 @@
       ],
       "Link confirmation": [
         "Bağlantı onayı"
+      ],
+      "Location": [
+        "Konum"
       ],
       "Login password": [
         "Oturum açma parolası"
@@ -14532,7 +14536,7 @@
         "Özet"
       ],
       "Support ticket closed": [
-        "Destek talebi kapatıldı"
+        "Destek bileti kapatıldı"
       ],
       "Switch account": [
         "Hesabı değiştir"
@@ -15097,6 +15101,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Abonelik her 1 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 1 ay sonra."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 3 ay sonra."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra her 12 ayda bir ${ renewPrice } üzerinden faturalandırılacaksınız."
       ],
@@ -15117,8 +15124,14 @@
       "15-month": [
         "15 ay"
       ],
+      "18-month": [
+        "18 aylık"
+      ],
       "2-year": [
         "2 yıl"
+      ],
+      "3-month": [
+        "3 aylık"
       ],
       "30-month": [
         "30 ay"

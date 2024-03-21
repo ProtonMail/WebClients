@@ -528,7 +528,7 @@
         "改用另一張卡"
       ],
       "Use a different payment method": [
-        "改用另一個付款方法"
+        "改用另一個繳款方式"
       ],
       "Use authentication code": [
         "使用驗證代碼"
@@ -999,12 +999,12 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "您確定要刪除此付款方法嗎？"
+        "您確定要刪除此繳款方式嗎？"
       ]
     },
     "Confirmation title": {
       "Delete payment method": [
-        "刪除付款方法"
+        "刪除繳款方式"
       ]
     },
     "Country name": {
@@ -1821,14 +1821,6 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
-      ]
-    },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "存取桌面應用程式為限定"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "現在升級或等到2024年初再來看看。"
       ]
     },
     "Downgrade account reason": {
@@ -2733,7 +2725,7 @@
         "一個好記且讓您很快辨識它用在何處，如此一來就可輕鬆將其撤銷或是延展。"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
+        "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
@@ -2788,9 +2780,6 @@
       ],
       "Amount due": [
         "應付金額"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "您的帳號將會停用任何${ twoFa }方法。"
       ],
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電郵位址嗎？"
@@ -3212,9 +3201,6 @@
       "of": [
         "/"
       ],
-      "old password": [
-        "舊密碼"
-      ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
       ],
@@ -3282,10 +3268,10 @@
         "請提供一個電郵位址，萬一有需要時，我們也可以聯絡到您。"
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "諘換另一個付款方法再試一次，或聯絡您的銀行尋求協助。"
+        "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "諘再試一次，您也可換另一個付款方法，或聯絡 PayPal 尋求協助。"
+        "諘再試一次，您也可換另一個繳款方式，或聯絡 PayPal 尋求協助。"
       ],
       "Please use another browser or download the file.": [
         "請使用其他瀏覽器或下載檔案。"
@@ -3549,7 +3535,7 @@
         "繼續處理，你必須驗證要求。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "為了保護您的網路連線，下載並安裝 ${ VPN_APP_NAME } 軟體到您的裝置上，並連接至伺服器。"
+        "為保護網路連線安全，下載並安裝 ${ VPN_APP_NAME } 軟體到您的裝置上，並連接至伺服器。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "為您的帳號儲值，以便訂購授新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳號餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
@@ -3568,9 +3554,6 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
-      ],
-      "two-factor authentication (2FA)": [
-        "雙重認證 (2FA)"
       ],
       "Two-factor authentication disabled": [
         "兩步驟驗證已停用"
@@ -3666,7 +3649,7 @@
         "我們為您產生了強密碼"
       ],
       "We need to authenticate your payment method with your bank.": [
-        "我們需要與您的銀行認證您的付款方法。"
+        "我們需要與您的銀行認證您的繳款方式。"
       ],
       "We need to authenticate your payment with your bank.": [
         "我們需要與您的銀行認證您的付款。"
@@ -3706,9 +3689,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的手機號碼。"
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "我們正進行您現有方案升等，除了晉級方案維持原價，還提供更多服務。在系統更新階段時，您可能無法做任何變更。稍後作業完成，我們會立即電郵通知您。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "當前往您的身分提供者為 ${ appName } 啟用 SAML 時，可能會提示您使用回呼 (ACS) URL 和簽發者 ID。只需複製下方資料並在您的身分提供者提示的欄位中貼上即可。"
@@ -3786,7 +3766,7 @@
         "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "您的 PayPal 帳號須先連結信用卡或銀行賬戶，才能加入為付款方法。"
+        "您的 PayPal 帳號須先連結信用卡或銀行賬戶，才能加入為繳款方式。"
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
@@ -3835,12 +3815,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "您現有的郵件、行事曆或聯絡人將會鎖定。若要還原此資料，您將需要您的${ oldPassword }。"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "您現有的郵件、行事曆或聯絡人將會鎖定。若要還原此資料，您將需要您的還原短語或您的${ oldPassword }。"
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
@@ -4398,7 +4372,7 @@
         "${ BRAND_NAME } 商業通訊"
       ],
       "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME }重要通知"
+        "${ BRAND_NAME } 重要通知"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } 通訊"
@@ -4688,9 +4662,6 @@
       ],
       "Get ${ planName }": [
         "取得 ${ planName }"
-      ],
-      "Got it": [
-        "了解"
       ],
       "Keep ${ plan }": [
         "保留 ${ plan }"
@@ -5118,9 +5089,6 @@
       "Downgrade account?": [
         "確定要換成精簡功能的帳號？"
       ],
-      "Improved plans coming soon!": [
-        "改進後的方案即將來臨！"
-      ],
       "Review subscription and pay": [
         "檢視訂購授權與繳款"
       ],
@@ -5207,7 +5175,7 @@
         "關閉公共網路，改為只能透過私有閘道器取用公司資源"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "管理您的訂購授權，包括自訂化您的方案。接受的付款方法包括信用卡、PayPal、加密貨幣及電匯。"
+        "管理您的訂購授權，包括自訂化您的方案。接受的繳款方式包括信用卡、PayPal、加密貨幣及電匯。"
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "凡工作天，於提出需求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
@@ -5807,10 +5775,10 @@
         "取消"
       ],
       "Phone number has been verified.": [
-        "電話號碼已曾驗證."
+        "電話號碼已驗證"
       ],
       "Phone number not yet verified.": [
-        "電話號碼尚未驗證過。"
+        "電話號碼尚未驗證"
       ],
       "Verify by SMS": [
         "簡訊驗證"
@@ -5822,7 +5790,7 @@
         "驗證用於帳戶救援的手機號碼？"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即驗證此備援電話號碼：${ phone.Value }"
+        "立即驗證此復原電話號碼：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"
@@ -6741,7 +6709,7 @@
         "3. 選擇 VPN 選項"
       ],
       "4. Select a server to connect to": [
-        "4. 選取要連接的服務器"
+        "4. 選取要連接的伺服器"
       ],
       "Account": [
         "帳號"
@@ -6768,7 +6736,7 @@
         "新增使用者"
       ],
       "Add PayPal payment method": [
-        "加入 PayPal 付款方法"
+        "加入 PayPal 繳款方式"
       ],
       "Add servers": [
         "新增伺服器"
@@ -7053,7 +7021,7 @@
         "付款失敗"
       ],
       "Payment methods": [
-        "付款方法"
+        "繳款方式"
       ],
       "Payment verification": [
         "付款驗證"
@@ -7170,7 +7138,7 @@
         "狀態"
       ],
       "Subscription": [
-        "訂閲"
+        "訂購授權"
       ],
       "Summary": [
         "總結"
@@ -7460,7 +7428,7 @@
         "停用此電郵位址後，您將不能再以此電郵位址傳送或接收電郵，而且所有已連結的 ${ BRAND_NAME } 產品亦將隨之停用。您確定要停用此電郵位址嗎？"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "請注意：選取此付款方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
+        "請注意：選取此繳款方式時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"

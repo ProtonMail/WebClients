@@ -3026,17 +3026,6 @@
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "デスクトップアプリへのアクセスが制限されています"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } デスクトップ アプリのベータ版は現在、有料の ${ MAIL_APP_NAME } プランを持っている人なら誰でも利用できます。 今すぐアップグレードしてアクセスしてください。"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "今すぐアップグレードするか、2024 年初めに再度アクセスして確認してください。"
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "${ signIn } に戻ります。"
@@ -5468,17 +5457,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -5698,9 +5676,6 @@
       ],
       "and": [
         "と"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "アカウント上の ${ twoFa } メソッドは無効になります。"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "このリンクを持っている人は誰でもタイトル、場所、参加者など、このカレンダーに登録されているすべての予定の詳細を見ることができます。"
@@ -6455,9 +6430,6 @@
       "of": [
         " / "
       ],
-      "old password": [
-        "古いパスワード"
-      ],
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
       ],
@@ -7043,9 +7015,6 @@
       "Total VPN connections": [
         "総VPN接続数"
       ],
-      "two-factor authentication (2FA)": [
-        "2要素認証(2FA)"
-      ],
       "Two-factor authentication disabled": [
         "2 要素認証が無効になりました"
       ],
@@ -7240,9 +7209,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "リセットコードをアカウント回復に設定した電話番号に送信しました。"
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "現在ご利用のプランを、同じ料金でより多くのサービスを提供する改良型プランにアップグレードします。システムの更新中は、変更することはできません。アップデートが完了したら、すぐにメールでお知らせします。"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "無効にすると、知らないうちに画像ファイルがデバイスに読み込まれるのを防ぎます。"
@@ -7448,12 +7414,6 @@
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "既存のメッセージ、カレンダー、連絡先はロックされます。 このデータを復元するには、${ oldPassword } が必要です。"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "既存のメッセージ、カレンダー、連絡先はロックされます。 このデータを回復するには、回復フレーズまたは ${ oldPassword } が必要です。"
-      ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
@@ -7489,6 +7449,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9489,9 +9460,6 @@
       "Get ${ planName }": [
         "${ planName } を入手"
       ],
-      "Got it": [
-        "はい"
-      ],
       "Keep ${ plan }": [
         "${ plan } を使い続ける"
       ],
@@ -9962,15 +9930,20 @@
         "選択中のプラン: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
       ],
       "Downgrade account?": [
         "アカウントをダウングレードしますか?"
-      ],
-      "Improved plans coming soon!": [
-        "改善されたプランが近日登場します!"
       ],
       "Review subscription and pay": [
         "サブスクリプションを見なおして決済"
@@ -9983,14 +9956,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -11723,9 +11688,6 @@
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "安全なインポート・転送ツールで、プライバシーに移行しましょう。"
       ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "安全なインポートツールを使って、プライバシーへの移行を完了しましょう。"
-      ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "フォルダーとラベルで受信トレイを整理できます。${ learnMoreLink }"
       ]
@@ -13163,6 +13125,9 @@
       ],
       "Link confirmation": [
         "リンクの確認"
+      ],
+      "Location": [
+        "場所"
       ],
       "Login password": [
         "ログインパスワード"

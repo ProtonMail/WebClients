@@ -5718,6 +5718,20 @@
         "Laajenna osallistujalista"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisaation avain on aktivoitava, jotta voit antaa ylläpitäjän oikeudet"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Laskutusmaa"

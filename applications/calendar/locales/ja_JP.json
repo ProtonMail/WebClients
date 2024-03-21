@@ -5094,6 +5094,20 @@
         "参加者一覧を展開"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "プライベート以外のユーザーは、セットアップ キーを持っている場合に管理者に昇格できます"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "管理者権限を付与するには、組織キーをアクティブ化する必要があります"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "プライベート ユーザーは、初めてサインインしたときに管理者に昇格できます"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "鍵は暗号化に使用できません"

@@ -698,7 +698,7 @@
         "Давяраць"
       ],
       "Try another method": [
-        "Паспрабуйце іншы метад"
+        "Паспрабуйце іншы спосаб"
       ],
       "Try for free": [
         "Паспрабуйце бясплатна"
@@ -846,7 +846,7 @@
         "Памылковы файл ICS"
       ],
       "Invalid method": [
-        "Памылковы метад"
+        "Памылковы спосаб"
       ],
       "Unsupported calendar component": [
         "Кампанент календара не падтрымліваецца"
@@ -2585,7 +2585,7 @@
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } мае памылковы метад і яго немагчыма імпартаваць."
+        "Ваш файл ${ formattedFilename } мае памылковы спосаб і яго немагчыма імпартаваць."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае падзей для імпартавання."
@@ -4356,7 +4356,7 @@
         "Сеанс завяршыўся"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Наладжванне PGP дазваляе вам адпраўляць зашыфраваныя лісты карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя з PGP сэрвісы."
+        "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
       "Share files with links": [
         "Абагуліць файлы з дапамогай спасылак"
@@ -4632,7 +4632,7 @@
         "З ${ DRIVE_APP_NAME } вашы даныя абаронены з дапамогай скразнога шыфравання."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
+        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
       ],
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
@@ -6193,6 +6193,20 @@
         "Вы"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры наладжванні ключоў"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры першым уваходзе ў сістэму"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Краіна выстаўлення рахунка"
@@ -7720,7 +7734,7 @@
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"
       ],
       "Shared end-to-end encrypted": [
-        "Абагулена са скразным шыфраваннем"
+        "Абагулена з дапамогай скразнога шыфравання"
       ],
       "Show side panel": [
         "Паказаць бакавую панэль"
@@ -7738,7 +7752,7 @@
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Запампуйце публічны ключ, каб уключыць адпраўку лістоў са скразным шыфраваннем на гэты адрас электроннай пошты"
+        "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
       "You do not have any contacts to export": [
         "У вас няма кантактаў для экспартавання"
@@ -7821,7 +7835,7 @@
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Справаздачы не шыфруюцца. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
+        "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
       "Skip verification?": [
         "Прапусціць праверку?"

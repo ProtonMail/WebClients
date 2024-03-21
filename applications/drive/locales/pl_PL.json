@@ -6190,6 +6190,20 @@
         "Ty"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Służbowi użytkownicy mogą uzyskać uprawnienia administratora po skonfigurowaniu kluczy"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Musisz aktywować klucz organizacji, aby przyznać uprawnienia administratora"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Prywatni użytkownicy mogą uzyskać uprawnienia administratora po pierwszym zalogowaniu się."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Musisz zmienić służbowych użytkowników na prywatnych przed wygenerowaniem nowego klucza organizacji"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Kraj rozliczeniowy"

@@ -176,6 +176,9 @@
       "Edit": [
         "ჩასწორება"
       ],
+      "Edit billing cycle": [
+        "გადახდის ციკლის ჩასწორება"
+      ],
       "Edit display name": [
         "საჩვენებელი სახელის ჩასწორება"
       ],
@@ -1863,17 +1866,6 @@
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "კომპიუტერის აპთან წვდომა შეზღუდულია"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპის ბეტა ვერსია ხელმისაწვდომია ყველასთვის, ვისაც ${ MAIL_APP_NAME }-ის ფასიანი სატარიფო გეგმა აქვს. ასწიეთ ტარიფი დღეს, წვდომის მისაღებად."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
@@ -2899,6 +2891,10 @@
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
       ],
+      "Affected user is on row": [
+        "შეცვლადი მომხმარებელი არის ხაზზე",
+        "შეცვლადი მომხმარებლები არიან ხაზზე"
+      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
@@ -2922,9 +2918,6 @@
       ],
       "Amount due": [
         "გადასახდელი თანხა"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "თქვენი ანგარიშის ${ twoFa }-ის მეთოდი გაითიშება."
       ],
       "Are you sure you want to delete this address?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ მისამართის წაშლა?"
@@ -3279,6 +3272,9 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "Keys created": [
+        "გასაღებები შექმნა"
+      ],
       "Lean more about gateways": [
         "შეიტყვეთ მეტი რაუტერების შესახებ"
       ],
@@ -3359,9 +3355,6 @@
       ],
       "of": [
         "-დან"
-      ],
-      "old password": [
-        "ძველი პაროლი"
       ],
       "Once single sign-on is disabled for your organization:": [
         "როცა თქვენი ორგანიზაციისთვის SSO გაითიშება:"
@@ -3747,9 +3740,6 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
-      "two-factor authentication (2FA)": [
-        "2FA"
-      ],
       "Two-factor authentication disabled": [
         "2FA გამორთულია"
       ],
@@ -3794,6 +3784,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერებთან აპლიკაციის გარეშე მიერთებისას გამოიყენეთ შემდეგი მომხმარებელი და პაროლი. მაგალითად, თუ იყენებთ Tunnelblick-ს macOS-ზე ან OpenVPN -ს GNU/Linux-ზე."
+      ],
+      "User activated": [
+        "მომხმრებელი გააქტიურდა"
       ],
       "Users": [
         "მომხმარებლები"
@@ -3884,9 +3877,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "პაროლის შეცვლის კოდი გაიგზავნება ტელეფონის ნომერზე, რომელიც თქვენ აღდგენისთვის მოგვაწოდეთ."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "ჩვენ ვაახლებთ თქვენს მიმდინარე ტარიფს გაუმჯობესებულ ვერსიამდე, რომელიც იმავე ფასში მეტ ფუნქციას გთავაზობთ. სანამ მიმდინარეობს ჩვენი სისტემების განახლება, თქვენ ამის შეცვლა არ შეგიძლიათ. როცა ყველაფერი დასრულდება, ელფოსტას მიიღებთ."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName }-სთვის თქვენს იდენტიფიკატორის მომწოდებელში SAML-ის ჩართვისას, შეიძლება გკითხონ, გნებავთ თუ არა უკუკავშირის (ACS) ბმული და გამომცემლის ID გამოიყენოთ. უბრალოდ დააკოპირეთ ქვემოთ მოყვანილი მონაცემები და ჩასვით ისინი იდენტიფიკატორის მომწოდებლის შესაბამის ველებში."
@@ -4033,12 +4023,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "თქვენი არსებული შეტყობინებები, კალენდარები და კონტაქტები დაიბლოკება. მონაცემების აღსადგენად თქვენი ${ oldPassword } დაგჭირდებათ."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "თქვენი არსებული შეტყობინებები, კალენდრები და კონტაქტები დაიბლოკება. მონაცემების აღსადგენად თქვენი ${ oldPassword } ან აღდგენის ფრაზა დაგჭირდებათ."
       ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
@@ -4916,9 +4900,6 @@
       "Get ${ planName }": [
         "${ planName }-ის მიღება"
       ],
-      "Got it": [
-        "გავიგე"
-      ],
       "Keep ${ plan }": [
         "${ plan }-ის დატოვება"
       ],
@@ -5003,6 +4984,9 @@
       ],
       "1 user": [
         "1 მომხმარებელი"
+      ],
+      "24/7 account management support": [
+        "24/7 ანგარიშის მართვის მხარდაჭერა."
       ],
       "24/7 support": [
         "24/7 მხარდაჭერა"
@@ -5126,6 +5110,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
+      ],
+      "Group management (coming soon)": [
+        "ჯგუფების მართვა (მალე)"
       ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
@@ -5264,6 +5251,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "განუსაზღვრელი გაზიარებული საცავები წვდომის შეზღუდვებით"
+      ],
+      "Unlimited vault sharing": [
+        "განუსაზღვრელი საცავის გაზიარება"
       ],
       "Unlimited vaults": [
         "საცავების ულიმიტო როდენობა"
@@ -5432,9 +5422,6 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
-      ],
-      "Improved plans coming soon!": [
-        "მალე გაუმჯობესებული გეგმები გვექნება!"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -6338,7 +6325,7 @@
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
-        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
+        "ახლა შეგიძლიათ, შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
       ],
       "You can now reset your password": [
         "ახლა შეგიძლიათ, პაროლი შეცვალოთ"
@@ -6450,8 +6437,8 @@
         "მივიღეთ პაროლის ჩამოყრის მოთხოვნა ${ boldEmail }-სთვის."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ",
-        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ"
+        "პაროლი შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ",
+        "პაროლი შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -7420,6 +7407,9 @@
       ],
       "Create multiple user accounts": [
         "მრავალი მომხმარებლის ანგარიშის შექმნა"
+      ],
+      "Create organization key": [
+        "ორგანიზაციის გასაღებების შექმნა"
       ],
       "Create user accounts": [
         "შექმენით მოხმხმარებლის ანგარიშები"
