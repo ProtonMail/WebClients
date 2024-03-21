@@ -228,6 +228,8 @@ export const usePaymentFacade = (
         [amount, currency]
     );
 
+    const isChargebeeAllowed = isChargebeeEnabled() === ChargebeeEnabled.CHARGEBEE_ALLOWED;
+
     const paymentContext = usePaymentContext();
     const { paymentsApi } = usePaymentsApi(api);
 
@@ -254,7 +256,9 @@ export const usePaymentFacade = (
     const savedMethod = useSavedMethod(
         {
             amountAndCurrency,
-            savedMethod: methods.savedInternalSelectedMethod,
+            // If Chargebee is allowed and there is a saved internal payment method, then we are in migration mode.
+            // It means that we should go with useSavedChargebeeMethod instead of useSavedMethod.
+            savedMethod: isChargebeeAllowed ? undefined : methods.savedInternalSelectedMethod,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
@@ -279,7 +283,13 @@ export const usePaymentFacade = (
     const savedChargebeeMethod = useSavedChargebeeMethod(
         {
             amountAndCurrency,
-            savedMethod: methods.savedExternalSelectedMethod,
+            // If we are in migration mode (there is a saved payment internal method and Chargebee is allowed),
+            // the we prefer to use the saved internal payment method. There shouldn't be any saved external payment
+            // method in this case, but we still keep it as a fallback.
+            // If Chargebee is not allowed, then we use the saved external payment method.
+            savedMethod: isChargebeeAllowed
+                ? methods.savedInternalSelectedMethod ?? methods.savedExternalSelectedMethod
+                : methods.savedExternalSelectedMethod,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
@@ -485,13 +495,19 @@ export const usePaymentFacade = (
     const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
         if (isExistingPaymentMethod(paymentMethodValue)) {
-            if (paymentMethodType === PAYMENT_METHOD_TYPES.CARD || paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
-                return savedMethod;
-            } else if (
+            if (
+                // If Chargebee is allowed and the saved method is internal (migration mode), then we use the
+                // saved Chargebee method processor.
+                isChargebeeAllowed ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             ) {
                 return savedChargebeeMethod;
+            } else if (
+                paymentMethodType === PAYMENT_METHOD_TYPES.CARD ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL
+            ) {
+                return savedMethod;
             }
         }
 
