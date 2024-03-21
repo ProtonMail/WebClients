@@ -19,6 +19,7 @@ import { DropdownActions } from '../../components';
 interface Props {
     member: EnhancedMember;
     onLogin: (member: EnhancedMember) => void;
+    onAddAddress?: (member: EnhancedMember) => void;
     onChangePassword: (member: EnhancedMember) => void;
     onEdit: (member: EnhancedMember) => void;
     onDelete: (member: EnhancedMember) => void;
@@ -34,6 +35,7 @@ interface Props {
 const MemberActions = ({
     member,
     organizationKey,
+    onAddAddress,
     onEdit,
     onDelete,
     onLogin,
@@ -54,7 +56,9 @@ const MemberActions = ({
     const canRevokeSessions = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
 
     const canSetupMember =
-        getCanGenerateMemberKeysPermissions(user, organizationKey) && getShouldSetupMemberKeys(member);
+        getCanGenerateMemberKeysPermissions(user, organizationKey) &&
+        getShouldSetupMemberKeys(member) &&
+        addresses?.length;
 
     const canLogin =
         !disableMemberSignIn &&
@@ -85,6 +89,12 @@ const MemberActions = ({
             text: c('Member action').t`Sign in`,
             onClick: () => {
                 onLogin(member);
+            },
+        },
+        onAddAddress && {
+            text: c('Member action').t`Add address`,
+            onClick: () => {
+                onAddAddress(member);
             },
         },
         canSetupMember && {
