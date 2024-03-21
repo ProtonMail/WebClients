@@ -33,7 +33,7 @@ export const createPasskeyService = () => {
             if (!item) throw new Error(c('Error').t`Unknown item`);
 
             const { passkeys } = item.data.content;
-            const passkey = passkeys.find(({ credentialId }) => selectedPasskey.credentialId === credentialId);
+            const passkey = passkeys?.find(({ credentialId }) => selectedPasskey.credentialId === credentialId);
             if (!passkey) throw new Error(c('Error').t`Unknown passkey`);
 
             const content = base64StringToUint8Array(passkey.content);

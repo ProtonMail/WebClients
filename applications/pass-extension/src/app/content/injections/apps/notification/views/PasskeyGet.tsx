@@ -77,7 +77,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
 
     if (!passkeys) return null;
 
-    return passkeys.length > 0 ? (
+    return (passkeys?.length ?? 0) > 0 ? (
         <Scroll>
             {passkeys.map((passkey, idx) => (
                 <ListItem
