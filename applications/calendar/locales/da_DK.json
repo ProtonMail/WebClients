@@ -5715,6 +5715,20 @@
         "Udvid deltagerliste"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brugere kan forfremmes til admin, når de har opsætningsnøgler"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnøgle skal aktiveres for at give administratorrettigheder"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brugere kan blive forfremmet til administrator, når de har logget ind for første gang"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du skal privatisere alle brugere, før du genererer en ny organisationsnøgle"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Faktura land"
