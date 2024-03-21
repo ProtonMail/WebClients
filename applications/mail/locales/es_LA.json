@@ -335,7 +335,7 @@
         "Descartar"
       ],
       "Don't know your password?": [
-        "¿No sabe su contraseña?"
+        "¿Ha olvidado su contraseña?"
       ],
       "Done": [
         "Hecho"
@@ -8022,6 +8022,20 @@
     "Participant name": {
       "You": [
         "Usted"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clave de seguridad de la organización debe activarse para otorgar privilegios de administración"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Los usuarios privados podrán ser administradores una vez que ingresen a su cuenta por primera vez"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Debe privatizar todos los usuarios antes de generar una clave nueva de la organización"
       ]
     },
     "Payments": {

@@ -46,6 +46,9 @@
       "Add note": [
         "Notitie toevoegen"
       ],
+      "Add people or groups to share": [
+        "Voeg personen of groepen toe om te delen"
+      ],
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
@@ -576,6 +579,9 @@
       ],
       "Scan & Download (${ count })": [
         "Scan & Download (${ count })"
+      ],
+      "Scan & Download all": [
+        "Alles scannen & downloaden"
       ],
       "Search": [
         "Zoeken"
@@ -2186,6 +2192,9 @@
       "Aliases could not be loaded": [
         "Aliassen konden niet worden geladen."
       ],
+      "Already a member of this share": [
+        "Al lid van deze share"
+      ],
       "An error occurred while loading alias options": [
         "Er is een fout opgetreden tijdens het laden van de alias opties"
       ],
@@ -2374,6 +2383,10 @@
       ],
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet ontsleuteld."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Dubbele genodigden verwijderd: ${ joinedInvitee }",
+        "Dubbele genodigden verwijderd: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Rapport kon niet verzonden worden"
@@ -3722,6 +3735,9 @@
       "End-to-end encrypted": [
         "End-to-end versleuteld"
       ],
+      "End-to-End Encrypted": [
+        "End-to-end versleuteld"
+      ],
       "Enter password": [
         "Vul login wachtwoord in"
       ],
@@ -4660,6 +4676,12 @@
       "Add to group": [
         "Toevoegen aan groep"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Iedereen op het Internet kan het met deze link bekijken"
+      ],
+      "Anyone with the link": [
+        "Iedereen met de link"
+      ],
       "App password": [
         "App-wachtwoord"
       ],
@@ -4816,6 +4838,9 @@
       ],
       "Enter device name": [
         "Apparaatnaam invoeren"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Wis deze link en verwijder iedereen met toegang"
       ],
       "Expired": [
         "Verlopen"
@@ -4999,6 +5024,9 @@
       ],
       "Set expiration date": [
         "Vervaldatum instellen"
+      ],
+      "Set link password": [
+        "Wachtwoord voor link instellen"
       ],
       "Set recovery method": [
         "Herstelmethode instellen"
@@ -5895,6 +5923,20 @@
     "Participant name": {
       "You": [
         "U"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Niet-privé gebruikers kunnen worden gepromoveerd tot admin wanneer ze de configuratiesleutels hebben"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "De organisatiesleutel moet geactiveerd worden om admin rechten te geven"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
       ]
     },
     "Payments": {
@@ -7169,6 +7211,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Share ${ name }": [
+        "Deel ${ name }"
       ],
       "Share via link": [
         "Deel via link"

@@ -846,6 +846,11 @@
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Probléma az alkalmazással"
@@ -1955,6 +1960,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Korai hozzáférés a ${ MAIL_APP_NAME } asztali alkalmazáshoz"
       ]
     },
     "Error": {
@@ -3395,6 +3403,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
       ],
+      "Download ${ name } app": [
+        "${ name } alkalmazás letöltése"
+      ],
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
@@ -3527,6 +3538,9 @@
       ],
       "from the version history?": [
         "az előző változatok közül?"
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Töltse le az asztali alkalmazást a számítógépén lévő fájlok szinkronizálásához."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Nyissa meg a Saját fájlokat és töltsön fel néhány fájlt."
@@ -3796,7 +3810,7 @@
         "ajánlott böngésző"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "A helyreállítási információ megmarad ezen az eszközön, kivéve ha törli."
+        "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
       "Recovery process might take some time.": [
         "A helyreállítás eltarthat egy ideig."
@@ -4794,7 +4808,15 @@
         "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ajánlat elfogadása"
+      ]
+    },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
       "10 email addresses": [
         "10 e-mail cím"
       ],
@@ -5132,7 +5154,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Néhány képet nem sikerült feltölteni, mert az aktuális kiválasztásban duplikált fájlnevek voltak."
+        "Néhány képet nem sikerült feltölteni, mert a kiválasztott elemek közt duplikált fájlnevek voltak."
       ]
     },
     "Oauth instructions": {

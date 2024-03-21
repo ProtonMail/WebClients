@@ -3036,17 +3036,6 @@
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Доступ до програми для комп'ютера обмежено"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Бета-версія програми ${ MAIL_APP_NAME } для комп'ютера наразі доступна для всіх з тарифним планом ${ MAIL_APP_NAME }. Покращте сьогодні, щоб отримати доступ."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Покращте сьогодні або перевірте доступ ще раз на початку 2024 року."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Повернутися до ${ signIn }."
@@ -3339,6 +3328,9 @@
       ],
       "Save": [
         "Зберегти"
+      ],
+      "Set up email forwarding": [
+        "Налаштувати пересилання пошти"
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5554,17 +5546,6 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -5922,9 +5903,6 @@
       ],
       "and": [
         "та"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Будь-який метод ${ twoFa } вашого облікового запису буде вимкнено."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Підтеки також будуть видалені. Однак листи, що зберігаються в теці ${ nameDeleted }, не видалятимуться і їх можна знайти в теці \"Уся пошта\"."
@@ -6709,9 +6687,6 @@
       "of": [
         "з"
       ],
-      "old password": [
-        "старий пароль"
-      ],
       "Once you reset your password:": [
         "Після скидання пароля:"
       ],
@@ -7336,9 +7311,6 @@
       "Total VPN connections": [
         "Усього VPN-з'єднань"
       ],
-      "two-factor authentication (2FA)": [
-        "двоетапна перевірка (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Двоетапну перевірку вимкнено"
       ],
@@ -7533,9 +7505,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказаний номер телефону."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Ми змінюємо ваш поточний тарифний план на кращий, з більшими можливостями за таку саму ціну. Поки наші системи оновлюються, ви не зможете його змінити. Ми надішлемо вам повідомлення одразу після завершення."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Якщо вимкнено, це запобігатиме завантаженню файлів зображень на вашому пристрої без вашої згоди."
@@ -7777,12 +7746,6 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Ваші наявні повідомлення, календарі або контакти будуть заблоковані. Щоб відновити ці дані, вам знадобиться ваш ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Ваші наявні повідомлення, календарі або контакти будуть заблоковані. Щоб відновити ці дані, вам знадобиться ваша фраза для відновлення або ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
       ],
@@ -7824,6 +7787,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9894,9 +9868,6 @@
       "Get ${ planName }": [
         "Отримати ${ planName }"
       ],
-      "Got it": [
-        "Зрозуміло"
-      ],
       "Keep ${ plan }": [
         "Залишити ${ plan }"
       ],
@@ -10472,15 +10443,20 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
       ],
       "Downgrade account?": [
         "Понизити обліковий запис?"
-      ],
-      "Improved plans coming soon!": [
-        "Незабаром стануть доступні вдосконалені тарифні плани!"
       ],
       "Review subscription and pay": [
         "Перегляньте передплату й сплатіть"
@@ -10493,14 +10469,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -12079,9 +12047,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Перейдіть на новий рівень приватності завдяки нашим інструментам безпечного імпортування і пересилання."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Перейдіть на новий рівень приватності завдяки нашим інструментам безпечного імпортування."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Впорядковуйте свою поштову скриньку за допомогою тек і міток. ${ learnMoreLink }"
@@ -13702,6 +13667,9 @@
       ],
       "Link confirmation": [
         "Підтвердження посилання"
+      ],
+      "Location": [
+        "Розташування"
       ],
       "Login password": [
         "Пароль входу"

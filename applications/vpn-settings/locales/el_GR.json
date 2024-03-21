@@ -176,6 +176,9 @@
       "Edit": [
         "Επεξεργασία"
       ],
+      "Edit billing cycle": [
+        "Επεξεργασία κύκλου χρέωσης"
+      ],
       "Edit display name": [
         "Επεξεργασία εμφανιζόμενου ονόματος"
       ],
@@ -1863,17 +1866,6 @@
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } είναι προς το παρόν διαθέσιμη σε οποιονδήποτε έχει ${ MAIL_APP_NAME } πλάνο επί πληρωμή,. Αναβαθμίστε σήμερα για να αποκτήσετε πρόσβαση."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Σφάλματα ή ζητήματα ποιότητας"
@@ -2721,6 +2713,12 @@
       "Name": [
         "Όνομα"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Εξοικονομήστε χρήματα με τις καλύτερες προσφορές στο ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Επιλέξτε την προσφορά σας"
+      ],
       "Select your pricing plan": [
         "Επιλέξτε το πρόγραμμα χρέωσης:"
       ],
@@ -2896,6 +2894,10 @@
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
       ],
+      "Affected user is on row": [
+        "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
+        "Οι χρήστες που επηρεάζεται βρίσκονται στις γραμμές"
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
@@ -2919,9 +2921,6 @@
       ],
       "Amount due": [
         "Οφειλόμενο ποσό"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Τυχόν μέθοδος ${ twoFa } στον λογαριασμό σας θα απενεργοποιηθεί."
       ],
       "Are you sure you want to delete this address?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
@@ -2958,6 +2957,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Φροντίστε να αντιγράψετε τον κωδικό πρόσβασής σας και να τον αποθηκεύσετε κάπου ασφαλή."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Πριν ενεργοποιήσετε τον χρήστη, πρέπει να δώσετε έναν κωδικό πρόσβασης και να δημιουργήσετε κλειδιά κρυπτογράφησης για τις διευθύνσεις."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Πρωτού να δημιουργήσετε αυτήν τη διεύθυνση, πρέπει να δώσετε έναν κωδικό πρόσβασης και να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτήν."
@@ -3276,6 +3278,9 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "Keys created": [
+        "Τα κλειδιά δημιουργήθηκαν"
+      ],
       "Lean more about gateways": [
         "Μάθετε περισσότερα σχετικά με τις πύλες"
       ],
@@ -3333,6 +3338,9 @@
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
       ],
+      "No changes made to the current subscription": [
+        "Δεν έγιναν αλλαγές στην τρέχουσα συνδρομή"
+      ],
       "No gateways": [
         "Δεν υπάρχουν πύλες"
       ],
@@ -3356,9 +3364,6 @@
       ],
       "of": [
         "από"
-      ],
-      "old password": [
-        "παλαιός κωδικός"
       ],
       "Once single sign-on is disabled for your organization:": [
         "Μόλις απενεργοποιηθεί η καθολική σύνδεση για τον οργανισμό σας:"
@@ -3442,6 +3447,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Χρησιμοποιήστε έναν κωδικό πρόσβασης περισσότερο από ${ MIN_PASSWORD_LENGTH } χαρακτήρα.",
+        "Χρησιμοποιήστε έναν κωδικό πρόσβασης περισσότερο από ${ MIN_PASSWORD_LENGTH } χαρακτήρες."
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
@@ -3744,9 +3753,6 @@
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "ταυτοποίηση δύο παραγόντων (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Έλεγχος ταυτότητας δύο παραγόντων απενεργοποιημένος"
       ],
@@ -3791,6 +3797,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
+      ],
+      "User activated": [
+        "Ο χρήστης ενεργοποιήθηκε"
       ],
       "Users": [
         "Χρήστες"
@@ -3881,9 +3890,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στον αριθμό τηλεφώνου που καθορίσατε για ανακτήσεις λογαριασμού."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Αναβαθμίζουμε το τρέχον πρόγραμμά σας με ένα βελτιωμένο πρόγραμμα που προσφέρει περισσότερα με το ίδιο κόστος. Κατά τη διάρκεια της αναβάθμισης των συστημάτων μας, δεν θα μπορείτε να πραγματοποιήσετε αλλαγές σε αυτό. Θα σας ειδοποιήσουμε μέσω email μόλις ολοκληρωθεί."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -4030,12 +4036,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Τα υπάρχοντα μηνύματα, ημερολόγια ή επαφές σας θα κλειδωθούν. Για να ανακτήσετε αυτά τα δεδομένα, θα χρειαστείτε το ${ oldPassword } σας."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Τα υπάρχοντα μηνύματα, ημερολόγια ή επαφές σας θα κλειδωθούν. Για να ανακτήσετε αυτά τα δεδομένα, θα χρειαστείτε τη φράση ανάκτησης ή το ${ oldPassword } σας."
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
@@ -4600,6 +4600,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } και ${ additionalApp } ενημερώσεις προϊόντων"
+      ],
       "${ app } product updates": [
         "${ app } ενημερώσεις προϊόντων"
       ],
@@ -4786,6 +4789,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Προσφορά περιορισμένου χρόνου, λήγει στις 2 Απριλίου 2024"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewTime } στα ${ renewablePrice }, θα ακυρωθεί ανά πάσα στιγμή"
       ]
     },
     "mailtrial2024: Title": {
@@ -4794,6 +4800,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Ενεργοποίηση χρήστη"
+      ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
@@ -4910,9 +4919,6 @@
       "Get ${ planName }": [
         "Απόκτηση ${ planName }"
       ],
-      "Got it": [
-        "Το κατάλαβα"
-      ],
       "Keep ${ plan }": [
         "Διατήρηση ${ plan }"
       ],
@@ -4998,6 +5004,9 @@
       "1 user": [
         "1 χρήστης"
       ],
+      "24/7 account management support": [
+        "24/7 υποστήριξη διαχείρισης λογαριασμού"
+      ],
       "24/7 support": [
         "Υποστήριξη 24/7"
       ],
@@ -5009,6 +5018,9 @@
       ],
       "Admin console": [
         "Κονσόλα διαχειριστή"
+      ],
+      "Administration Panel": [
+        "Πίνακας Διαχείρισης"
       ],
       "Advanced network security": [
         "Προχωρημένη ασφάλεια δικτύου"
@@ -5073,6 +5085,9 @@
       "Dedicated servers and IP": [
         "Αποκλειστικοί διακομιστές και IP"
       ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
       "DNS leak prevention": [
         "Αποτροπή διαρροής DNS"
       ],
@@ -5114,6 +5129,9 @@
       ],
       "GDPR data processing agreement": [
         "Συμφωνία επεξεργασίας δεδομένων GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Διαχείριση ομάδας (σύντομα κοντά σας)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
@@ -5173,6 +5191,9 @@
       ],
       "Router support": [
         "Υποστήριξη δρομολογητή"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Προγραμματίστε και αναβάλλετε μηνύματα ηλεκτρονικού ταχυδρομείου για οποιαδήποτε στιγμή"
       ],
       "Schedule messages at any time": [
         "Προγραμματισμός μηνυμάτων ανά πάσα στιγμή"
@@ -5253,6 +5274,12 @@
       "Unlimited shared vaults with access permissions": [
         "Απεριόριστες κοινόχρηστες θυρίδες αποθήκευσης με δικαιώματα πρόσβασης"
       ],
+      "Unlimited vault sharing": [
+        "Απεριόριστη κοινή κρυπτών"
+      ],
+      "Unlimited vaults": [
+        "Απεριόριστες κρύπτες"
+      ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
       ],
@@ -5314,6 +5341,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Προηγμένη ασφάλεια δικτύου και διαχείριση πρόσβασης με αποκλειστικές ασφαλείς Πύλες"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Προηγμένη προστασία για ομάδες που υπερβαίνει τα βιομηχανικά πρότυπα."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Όλες οι εφαρμογές ${ BRAND_NAME } και οι premium δυνατότητές τους"
@@ -5418,9 +5448,6 @@
       "Downgrade account?": [
         "Υποβάθμιση λογαριασμού;"
       ],
-      "Improved plans coming soon!": [
-        "Βελτιωμένα προγράμματα έρχονται σύντομα!"
-      ],
       "Review subscription and pay": [
         "Ανασκόπηση συνδρομής και πληρωμή"
       ],
@@ -5449,6 +5476,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει ${ serversAndCountries }, υψηλότερες ταχύτητες VPN, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, κακόβουλο λογισμικό και πρόγραμμα αποκλεισμού διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Αποκτήστε πρόσβαση στα ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME } από την άνεση της επιφάνειας εργασίας σας"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+ και Prime Video, από οπουδήποτε"
       ],
@@ -5461,11 +5491,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Σας επιτρέπει να ρυθμίσετε αυτόματες απαντήσεις (αυτόματη απάντηση) για τα εισερχόμενα μηνύματά σας"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Αυτόματη εκκαθάριση μηνυμάτων παλαιότερων των 30 ημερών από τον Κάδο απορριμμάτων και τα Ανεπιθύμητα"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Προωθήστε αυτόματα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον λογαριασμό σας ${ MAIL_APP_NAME } σε οποιαδήποτε άλλη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Η μαζική διαφημιστική ή προγραμματική αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου δεν υποστηρίζεται προς το παρόν. Συνιστούμε να χρησιμοποιήσετε έναν αποκλειστικό παροχό υπηρεσιών ηλεκτρονικού ταχυδρομείου για αυτήν την περίπτωση χρήσης."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Επιλέξτε προσαρμοσμένες ώρες για υπενθύμιση σχετικά με ένα μήνυμα ηλεκτρονικού ταχυδρομείου ή για την άφιξη του μηνύματός σας"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Ελέγξτε την πρόσβαση στα κοινόχρηστα αρχεία σας προσθέτοντας προστασία με κωδικό πρόσβασης και ημερομηνίες λήξης συνδέσμου"
@@ -5509,6 +5545,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Οι ετικέτες είναι απλό κείμενο που μπορείτε να προσθέσετε στα μηνύματα για να διευκολύνετε την εύρεση ή την εφαρμογή φίλτρων"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Όπως ένας φάκελος, μια θυρίδα αποθήκευσης είναι ένας βολικός τρόπος για να οργανώσετε τα στοιχεία σας"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Κλειδώστε τους πόρους της εταιρείας σας από το δημόσιο διαδίκτυο και κάντε τους προσβάσιμους μόνο μέσω των ιδιωτικών πυλών σας"
@@ -7285,6 +7324,9 @@
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
       ],
+      "Activate user": [
+        "Ενεργοποίηση χρήστη"
+      ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
@@ -7399,6 +7441,9 @@
       ],
       "Create multiple user accounts": [
         "Δημιουργία πολλαπλών λογαριασμών χρηστών"
+      ],
+      "Create organization key": [
+        "Δημιουργία κλειδιού οργανισμού"
       ],
       "Create user accounts": [
         "Δημιουργία λογαριασμών χρηστών"
@@ -7973,6 +8018,21 @@
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε 1 μήνα. Η επόμενη ημερομηνία χρέωσης είναι σε 1 μήνα."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε 3 μήνες. Η επόμενη ημερομηνία χρέωσης είναι σε 3 μήνες."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνα.",
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνες."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Μηνιαία χρέωση"
@@ -7985,8 +8045,14 @@
       "15-month": [
         "15μηνη"
       ],
+      "18-month": [
+        "18μηνη"
+      ],
       "2-year": [
         "2ετής"
+      ],
+      "3-month": [
+        "3μηνη"
       ],
       "30-month": [
         "30μηνη"

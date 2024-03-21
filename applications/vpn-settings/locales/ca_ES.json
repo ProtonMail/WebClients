@@ -2835,9 +2835,6 @@
       "Amount due": [
         "Import pendent"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Qualsevol mètode ${ twoFa } del vostre compte es desactivarà."
-      ],
       "Are you sure you want to delete this address?": [
         "Segur que voleu eliminar aquesta adreça?"
       ],
@@ -3204,9 +3201,6 @@
       "of": [
         "de"
       ],
-      "old password": [
-        "contrasenya antiga"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
       ],
@@ -3558,9 +3552,6 @@
       "Total VPN connections": [
         "Connexions VPN totals"
       ],
-      "two-factor authentication (2FA)": [
-        "autenticació de dos factors (A2F)"
-      ],
       "Two-factor authentication disabled": [
         "Autenticació de dos factors desactivada"
       ],
@@ -3686,9 +3677,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviarem un codi de restabliment al número de telèfon que heu proporcionat per a la recuperació del compte."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Estem actualitzant el vostre pla actual a un de millorat que ofereix més pel mateix preu. Mentre els nostres sistemes s'estan actualitzant, no podreu canviar-lo. Us enviarem un correu electrònic tan aviat com estigui llest."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
@@ -3818,12 +3806,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Els vostres missatges, calendaris o contactes existents es bloquejaran. Per recuperar aquestes dades, necessitareu la vostra ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Els vostres missatges, calendaris o contactes existents es bloquejaran. Per recuperar aquestes dades, necessitareu la vostra frase de recuperació o la vostra ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
@@ -4657,9 +4639,6 @@
       "Get ${ planName }": [
         "Obteniu ${ planName }"
       ],
-      "Got it": [
-        "Entesos"
-      ],
       "Keep ${ plan }": [
         "Segueix amb ${ plan }"
       ],
@@ -5155,9 +5134,6 @@
       ],
       "Downgrade account?": [
         "Voleu passar a un pla inferior?"
-      ],
-      "Improved plans coming soon!": [
-        "Aviat arribaran plans millorats!"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"

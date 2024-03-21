@@ -4776,7 +4776,7 @@
         "(無收件人)"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
+        "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "取消訂閱此郵遞論壇的需求將會被傳送到電子報的傳送者並自動處理。"
@@ -7447,6 +7447,14 @@
     "Participant name": {
       "You": [
         "您"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
       ]
     },
     "Payments": {

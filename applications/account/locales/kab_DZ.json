@@ -4556,11 +4556,6 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5319,9 +5314,6 @@
       "of": [
         "si"
       ],
-      "old password": [
-        "awal uffir aqdim"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
       ],
@@ -5662,9 +5654,6 @@
       "Total VPN connections": [
         "Asemday n tuqqniwin VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "tangalt n usesteb (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Asesteb s snat n tarrayin yensa"
       ],
@@ -5928,6 +5917,11 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
+      ]
+    },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -7733,9 +7727,6 @@
       "Get ${ planName }": [
         "Awi ${ planName }"
       ],
-      "Got it": [
-        "Gziɣ-t"
-      ],
       "Keep account": [
         "Eǧǧ amiḍan"
       ],
@@ -8034,6 +8025,14 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8043,14 +8042,6 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -10278,6 +10269,9 @@
       ],
       "Link confirmation": [
         "Aseɣwen n usentem"
+      ],
+      "Location": [
+        "Amḍiq"
       ],
       "Login password": [
         "Awal uffir n tuqqna"

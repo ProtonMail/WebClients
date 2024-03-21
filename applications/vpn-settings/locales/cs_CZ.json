@@ -1870,17 +1870,6 @@
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Přístup k aplikaci pro desktop je omezený"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Beta verze aplikace ${ MAIL_APP_NAME } pro počítače je v současné době k dispozici všem uživatelům s placeným tarifem ${ MAIL_APP_NAME }. Chcete-li získat přístup, navyšte tarif ještě dnes."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
@@ -2964,9 +2953,6 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Jakákoliv metoda ${ twoFa } bude na vašem účtu deaktivována."
-      ],
       "Are you sure you want to delete this address?": [
         "Opravdu chcete smazat tuto adresu?"
       ],
@@ -3369,9 +3355,6 @@
       "of": [
         "z"
       ],
-      "old password": [
-        "staré heslo"
-      ],
       "Once you reset your password:": [
         "Po resetu vašeho hesla:"
       ],
@@ -3756,9 +3739,6 @@
       "Total VPN connections": [
         "Celkem VPN připojení"
       ],
-      "two-factor authentication (2FA)": [
-        "dvoufázové ověření (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Dvoufázové ověřování je vypnuto"
       ],
@@ -3890,9 +3870,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na zadané telefonní číslo zašleme kód pro obnovení účtu."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Váš současný tarif aktualizujeme na vylepšený tarif, který nabízí více za stejnou cenu. Během aktualizace našich systémů jej nebudete moci změnit. Jakmile to bude hotové, pošleme vám e-mail."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
@@ -4046,12 +4023,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Vaše současné zprávy, kalendáře nebo kontakty budou uzamčeny. Pro obnovení těchto dat budete potřebovat vaše ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Vaše současné zprávy, kalendáře nebo kontakty budou uzamčeny. Pro obnovení těchto dat budete potřebovat vaši obnovovací frázi nebo vaše ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
@@ -4887,9 +4858,6 @@
       "Get ${ planName }": [
         "Získejte ${ planName }"
       ],
-      "Got it": [
-        "Rozumím"
-      ],
       "Keep ${ plan }": [
         "Ponechat ${ plan }"
       ],
@@ -5441,9 +5409,6 @@
       ],
       "Downgrade account?": [
         "Snížit účet na nižší úroveň?"
-      ],
-      "Improved plans coming soon!": [
-        "Vylepšené tarify již brzy!"
       ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"

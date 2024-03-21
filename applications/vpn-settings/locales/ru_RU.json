@@ -1859,14 +1859,6 @@
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Доступ к приложению для настольных компьютеров ограничен"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Обновитесь сегодня или проверьте снова в начале 2024 года для получения доступа."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Ошибки или проблемы с качеством"
@@ -2927,9 +2919,6 @@
       "Amount due": [
         "Сумма к оплате"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Все ${ twoFa } методы на Вашем аккаунте будут отключены."
-      ],
       "Are you sure you want to delete this address?": [
         "Вы уверены, что хотите удалить этот адрес?"
       ],
@@ -3338,9 +3327,6 @@
       "of": [
         "из"
       ],
-      "old password": [
-        "старый пароль"
-      ],
       "Once you reset your password:": [
         "После изменения пароля:"
       ],
@@ -3716,9 +3702,6 @@
       "Total VPN connections": [
         "Всего подключений к VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "двухфакторная аутентификация (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Двухфакторная аутентификация отключена"
       ],
@@ -3850,9 +3833,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Мы переводим ваш текущий тариф на улучшенный, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
@@ -4000,12 +3980,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Ваши сообщения, календари или контакты будут заблокированы. Чтобы восстановить эти данные, вам ваш ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Ваши сообщения, календари или контакты будут заблокированы. Чтобы восстановить эти данные, вам понадобится фраза восстановления или ваш ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
@@ -4870,9 +4844,6 @@
       "Get ${ planName }": [
         "Получить ${ planName }"
       ],
-      "Got it": [
-        "ОК"
-      ],
       "Keep ${ plan }": [
         "Сохранить ${ plan }"
       ],
@@ -5400,9 +5371,6 @@
       ],
       "Downgrade account?": [
         "Перейти на более дешевую версию аккаунта?"
-      ],
-      "Improved plans coming soon!": [
-        "Скоро появятся улучшенные тарифы!"
       ],
       "Review subscription and pay": [
         "Выберите подписку и оплатите"
