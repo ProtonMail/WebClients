@@ -64,7 +64,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         mailboxes: [],
         name: metadata.name,
         note: metadata.note,
-        passkeys: content.passkeys,
+        passkeys: content.passkeys ?? [],
         password: content.password,
         shareId,
         totpUri: getSecretOrUri(content.totpUri),
