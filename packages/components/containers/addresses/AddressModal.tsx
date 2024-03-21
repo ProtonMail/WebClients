@@ -13,8 +13,10 @@ import {
     MEMBER_PRIVATE,
 } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
+    emailValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
@@ -59,9 +61,10 @@ import SelectEncryption from '../keys/addKey/SelectEncryption';
 interface Props extends ModalProps<'form'> {
     member?: Member;
     members: Member[];
+    useEmail?: boolean;
 }
 
-const AddressModal = ({ member, members, ...rest }: Props) => {
+const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
     const { call } = useEventManager();
     const [user] = useUser();
     const [addresses] = useAddresses();
@@ -107,19 +110,32 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
 
     const shouldSetupMemberKeys = shouldGenerateKeys && getShouldSetupMemberKeys(selectedMember);
 
+    const getNormalizedAddress = () => {
+        const address = model.address.trim();
+
+        if (selectedDomain && !useEmail) {
+            return { Local: address, Domain: selectedDomain };
+        }
+
+        const [Local, Domain] = getEmailParts(address);
+
+        return { Local, Domain };
+    };
+
+    const emailAddressParts = getNormalizedAddress();
+    const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
+
     const handleSubmit = async () => {
         if (!selectedMember || !addresses) {
             throw new Error('Missing member');
         }
         const organizationKey = await getOrganizationKey();
-        const { name: DisplayName, address: Local } = model;
+        const DisplayName = model.name;
 
-        const Domain = selectedDomain;
-
-        if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === `${Local}@${Domain}`.toLowerCase()) {
+        if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === emailAddress.toLowerCase()) {
             return createNotification({
                 text: c('Error')
-                    .t`${Local} is your username. To create ${Local}@${Domain}, please go to Settings > Messages and composing > Short domain (pm.me)`,
+                    .t`${user.Name} is your username. To create ${emailAddress}, please go to Settings > Messages and composing > Short domain (pm.me)`,
                 type: 'error',
             });
         }
@@ -135,8 +151,8 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
         const { Address } = await api<{ Address: Address }>(
             createAddress({
                 MemberID: selectedMember.ID,
-                Local,
-                Domain,
+                Local: emailAddressParts.Local,
+                Domain: emailAddressParts.Domain,
                 DisplayName,
             })
         );
@@ -245,13 +261,16 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
                     id="address"
                     autoFocus
                     value={model.address}
-                    error={validator([requiredValidator(model.address)])}
+                    error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
                     aria-describedby="user-domain-selected"
                     onValue={(address: string) => setModel({ ...model, address })}
-                    label={c('Label').t`Address`}
+                    label={useEmail ? c('Label').t`Email` : c('Label').t`Address`}
                     placeholder={c('Placeholder').t`Address`}
                     data-testid="settings:identity-section:add-address:address"
                     suffix={(() => {
+                        if (useEmail) {
+                            return null;
+                        }
                         if (loadingDomains) {
                             return <CircleLoader />;
                         }
@@ -288,14 +307,16 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
                         );
                     })()}
                 />
-                <InputFieldTwo
-                    id="name"
-                    value={model.name}
-                    onValue={(name: string) => setModel({ ...model, name })}
-                    label={c('Label').t`Display name`}
-                    placeholder={c('Placeholder').t`Choose display name`}
-                    data-testid="settings:identity-section:add-address:display-name"
-                />
+                {!useEmail && (
+                    <InputFieldTwo
+                        id="name"
+                        value={model.name}
+                        onValue={(name: string) => setModel({ ...model, name })}
+                        label={c('Label').t`Display name`}
+                        placeholder={c('Placeholder').t`Choose display name`}
+                        data-testid="settings:identity-section:add-address:display-name"
+                    />
+                )}
                 {shouldSetupMemberKeys && (
                     <>
                         <div className="mb-4 color-weak">
@@ -328,7 +349,7 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
                         />
                     </>
                 )}
-                {shouldGenerateKeys && (
+                {!useEmail && shouldGenerateKeys && (
                     <div className="mb-6">
                         <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
