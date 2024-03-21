@@ -348,7 +348,7 @@
         "Descartar"
       ],
       "Don't know your password?": [
-        "¿No sabes tu contraseña?"
+        "¿Has olvidado tu contraseña?"
       ],
       "Don't show again": [
         "No mostrar de nuevo"
@@ -3120,17 +3120,6 @@
         "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "El acceso a la aplicación de escritorio está limitado."
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } está disponible para quienes tienen un plan de pago de ${ MAIL_APP_NAME }. Mejora ahora para obtener acceso."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Mejora ahora o comprueba de nuevo a inicios de 2024 para su acceso."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Volver a ${ signIn }."
@@ -5815,17 +5804,6 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -6141,9 +6119,6 @@
       ],
       "and": [
         "y"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Se desactivará cualquier método ${ twoFa } de tu cuenta."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en esta carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
@@ -6946,9 +6921,6 @@
       "of": [
         "de"
       ],
-      "old password": [
-        "contraseña antigua"
-      ],
       "Once you reset your password:": [
         "Después de restablecer tu contraseña:"
       ],
@@ -7498,7 +7470,7 @@
         "a ${ product }·Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Para evitar la pérdida de datos, solo bórralo si sabes qué estás haciendo o si has exportado una copia."
+        "Para evitar la pérdida de datos, elimínalos solo si sabes lo que está haciendo o has exportado una copia."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Contáctanos para cancelar la suscripción."
@@ -7568,9 +7540,6 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
-      ],
-      "two-factor authentication (2FA)": [
-        "autenticación de doble factor (2FA)"
       ],
       "Two-factor authentication disabled": [
         "Autenticación de doble factor desactivada"
@@ -7769,9 +7738,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Te enviaremos un código de restablecimiento al número de teléfono que nos has proporcionado para recuperar la cuenta."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Se está actualizando tu plan actual a un plan que ofrece más por el mismo precio. Mientras el sistema se actualiza, no podrás cambiarlo. Se te enviará un correo electrónico en cuanto esté listo."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Cuando está desactivado, esto evita que los archivos de imagen se carguen en tu dispositivo sin tu conocimiento.\t"
@@ -8007,12 +7973,6 @@
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Se bloquearán tus mensajes, calendarios o contactos existentes. Para recuperar estos datos necesitarás tu ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu frase de recuperación o tu ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
       ],
@@ -8055,6 +8015,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tu tiquete de soporte se ha cerrado. Gracias por contactar al soporte de ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10152,9 +10123,6 @@
       "Get ${ planName }": [
         "Obtén ${ planName }"
       ],
-      "Got it": [
-        "Entendido"
-      ],
       "Keep ${ plan }": [
         "Seguir con ${ plan }"
       ],
@@ -10725,15 +10693,20 @@
         "Has seleccionado el plan ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
       ],
       "Downgrade account?": [
         "¿Pasar a un plan con menos funciones?"
-      ],
-      "Improved plans coming soon!": [
-        "¡Pronto habrá planes mejores!"
       ],
       "Review subscription and pay": [
         "Verificar suscripción y pagar"
@@ -10746,14 +10719,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquea funciones premium al actualizar"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -11818,6 +11783,17 @@
         "Para particulares"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Toda tu información existente** (correos, eventos, contactos, archivos, entradas de ${ PASS_APP_NAME }, etc.) **se bloqueará** y solo podrá desbloquearse con tu **contraseña anterior**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Toda tu información existente** (correos, eventos, contactos, archivos, entradas de ${ PASS_APP_NAME }, etc.) **se bloqueará** y solo podrá desbloquearse con tu **frase de recuperación** o su **contraseña anterior**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Cualquier método de **autenticación de dos factores (2FA)** en tu cuenta se desactivará."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Todos los administradores tendrán acceso a la clave."
@@ -12630,9 +12606,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Termina tu transición a la privacidad con nuestras herramientas seguras de importación y reenvío."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Termina tu transición a la privacidad con nuestras herramientas seguras de importación."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organiza tu bandeja de entrada con carpetas y etiquetas. ${ learnMoreLink }"
@@ -14268,6 +14241,9 @@
       ],
       "Link confirmation": [
         "Confirmación de enlace"
+      ],
+      "Location": [
+        "Ubicación"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"

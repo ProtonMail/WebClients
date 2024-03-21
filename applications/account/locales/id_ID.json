@@ -3064,17 +3064,6 @@
         "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Akses ke aplikasi desktop tengah dibatasi"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Aplikasi desktop ${ MAIL_APP_NAME } versi beta saat ini hanya tersedia bagi pelanggan paket ${ MAIL_APP_NAME } berbayar. Tingkatkan akun Anda sekarang juga untuk memperoleh akses ke aplikasi ini."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Tingkatkan akun Anda sekarang juga atau periksa kembali di awal 2024 untuk memperoleh akses."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Kembali ke ${ signIn }."
@@ -5659,17 +5648,6 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -5890,9 +5868,6 @@
       "and": [
         "dan"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Metode ${ twoFa } apa pun dalam akun Anda akan dinonaktifkan."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
       ],
@@ -6042,6 +6017,9 @@
       ],
       "Center": [
         "Rata tengah"
+      ],
+      "Change your password": [
+        "Ubah kata sandi Anda"
       ],
       "Check the status of imports and forwarding.": [
         "Periksa status proses impor dan penerusan yang sedang berlangsung."
@@ -6208,6 +6186,9 @@
       "Edit link": [
         "Sunting tautan"
       ],
+      "email": [
+        "email"
+      ],
       "Email address": [
         "Alamat surel"
       ],
@@ -6306,6 +6287,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter dapat diterapkan pada seluruh pesan yang ada, termasuk pesan yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi, dan tindakan."
+      ],
+      "finance": [
+        "keuangan"
       ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
@@ -6586,6 +6570,9 @@
       "MM/YY": [
         "BB/TT"
       ],
+      "Monitor accounts": [
+        "Monitor akun"
+      ],
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
       ],
@@ -6670,9 +6657,6 @@
       "of": [
         "dari"
       ],
-      "old password": [
-        "kata sandi lama Anda"
-      ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
       ],
@@ -6717,6 +6701,9 @@
       ],
       "Paid for a monthly plan": [
         "Terbayar dalam bentuk paket berlangganan bulanan"
+      ],
+      "password": [
+        "kata sandi"
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
@@ -6798,6 +6785,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus ${ numOfBreaches } kebocoran lainnya"
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
@@ -7261,9 +7251,6 @@
       "Total VPN connections": [
         "Total koneksi VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "autentikasi dua faktor (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Autentikasi dua faktor dinonaktifkan"
       ],
@@ -7336,6 +7323,12 @@
       "URL link": [
         "Tautan URL"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Gunakan ${ BRAND_NAME } Pass untuk menghasilkan kata sandi yang kuat dan menghindari pemakaian ulang kata sandi"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Gunakan ${ VPN_APP_NAME } dengan NetShield untuk melindungi Anda dari upaya phishing dan serangan malware"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
@@ -7350,6 +7343,9 @@
       ],
       "User activated": [
         "Pengguna diaktifkan"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -7461,9 +7457,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke nomor telpon yang telah Anda tentukan sebelumnya."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Kami tengah meningkatkan paket Anda ke paket yang berharga sama namun lebih kaya akan fitur. Selama proses ini berlangsung, Anda tidak akan dapat mengubah status berlangganan Anda. Kami akan memberitahukan Anda melalui surel ketika proses ini telah selesai."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Ketika dinonaktifkan, opsi ini akan mencegah gambar yang ada untuk dapat dimuat pada perangkat Anda tanpa Anda ketahui."
@@ -7675,12 +7668,6 @@
       "Your email will only be used for this one-time verification.": [
         "Surel Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Pesan, kalender, atau kontak Anda yang masih ada akan dikunci. Untuk memulihkan data ini, Anda memerlukan ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Pesan, kalender, atau kontak Anda yang masih ada akan dikunci. Untuk memulihkan data ini, Anda memerlukan frasa pemulihan atau ${ oldPassword }."
-      ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
@@ -7719,6 +7706,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tiket layanan dukungan Anda telah ditutup. Terima kasih telah menghubungi layanan dukungan ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9043,7 +9041,7 @@
         "Pembaruan produk ${ app }"
       ],
       "${ BRAND_NAME } beta announcements": [
-        "Pengumuman akses beta ${ BRAND_NAME }"
+        "Pengumuman ${ BRAND_NAME } versi Beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Buletin ${ BRAND_NAME } for Business"
@@ -9740,9 +9738,6 @@
       "Get ${ planName }": [
         "Dapatkan ${ planName }"
       ],
-      "Got it": [
-        "Mengerti"
-      ],
       "Keep ${ plan }": [
         "Pertahankan ${ plan }"
       ],
@@ -10237,15 +10232,20 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
       ],
       "Downgrade account?": [
         "Turunkan jenis akun?"
-      ],
-      "Improved plans coming soon!": [
-        "Paket lainnya yang menawarkan lebih akan segera hadir!"
       ],
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
@@ -10258,14 +10258,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -11290,6 +11282,17 @@
         "Untuk individu"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Seluruh data Anda** (email, acara, kontak, berkas, entri ${ PASS_APP_NAME }, dll.) **akan dikunci** dan hanya akan dapat dibuka kembali dengan **kata sandi lama** Anda"
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Seluruh data Anda** (email, acara, kontak, berkas, entri ${ PASS_APP_NAME }, dll.) **akan dikunci** dan hanya akan dapat dibuka kembali dengan **frasa keamanan** atau **kata sandi lama** Anda"
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Seluruh metode **autentikasi dua-faktor (2FA)** pada akun Anda akan dinonaktifkan."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Seluruh administrator akan memperoleh akses ke kunci ini."
@@ -12038,9 +12041,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Selesaikan transisi menuju privasi dengan perangkat impor dan penerusan pesan aman kami."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Selesaikan transisi menuju privasi dengan perangkat impor aman kami."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Jaga agar kotak masuk Anda tetap teratur dengan folder dan label. ${ learnMoreLink }"
@@ -13120,6 +13120,15 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
+      "Breach Date": [
+        "Tanggal Kebocoran"
+      ],
+      "Breach Information": [
+        "Informasi Kebocoran"
+      ],
+      "Breach Size": [
+        "Ukuran Kebocoran"
+      ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
       ],
@@ -13378,6 +13387,9 @@
       "Email": [
         "Surel"
       ],
+      "Email address": [
+        "Alamat email"
+      ],
       "Email composer": [
         "Komposer surel"
       ],
@@ -13416,6 +13428,9 @@
       ],
       "Export public key": [
         "Ekspor kunci publik"
+      ],
+      "Exposed info": [
+        "Informasi yang terpapar"
       ],
       "External PGP settings": [
         "Pengaturan PGP eksternal"
@@ -13543,6 +13558,9 @@
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
+      "Location": [
+        "Lokasi"
+      ],
       "Login password": [
         "Kata sandi masuk"
       ],
@@ -13572,6 +13590,9 @@
       ],
       "Night theme": [
         "Tema malam"
+      ],
+      "No account information was found in any data breaches": [
+        "Tidak ada informasi akun yang ditemukan pada kebocoran data mana pun"
       ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
@@ -13641,6 +13662,9 @@
       ],
       "Recommended": [
         "Direkomendasikan"
+      ],
+      "Recommended actions": [
+        "Tindakan yang direkomendasikan"
       ],
       "Reconnect your account": [
         "Hubungkan ulang akun Anda"
@@ -13905,6 +13929,9 @@
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
+      ],
+      "Your Exposed Information": [
+        "Informasi Anda Yang Terpapar"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"

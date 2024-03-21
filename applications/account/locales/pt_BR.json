@@ -974,6 +974,12 @@
       "Unlock": [
         "Desbloquear"
       ],
+      "Unlock Breach Report": [
+        "Desbloquear relatório de violação"
+      ],
+      "Unlock breach reports": [
+        "Desbloquear relatórios de violação"
+      ],
       "Unlock data": [
         "Desbloquear dados"
       ],
@@ -1003,6 +1009,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Atualize para ver todos"
       ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
@@ -3085,6 +3094,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para remover o ${ MAIL_APP_NAME } rodapé, faça o upgrade do seu plano para conseguir ainda mais funcionalidades premium"
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Para ver o relatório completo incluindo recomendações personalizadas, atualize para o plano pago"
+      ],
       "Track the status and activity of your referrals.": [
         "Acompanhe o status e a atividade de suas referências."
       ],
@@ -3118,17 +3130,6 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Detectamos os seguintes campos no arquivo CSV que você carregou. Marque os que você deseja importar."
-      ]
-    },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "O acesso ao aplicativo de desktop é limitado"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "A versão beta do aplicativo para computador ${ MAIL_APP_NAME } está atualmente disponível para qualquer pessoa com um plano pago do ${ MAIL_APP_NAME }. Faça upgrade hoje para obter acesso."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
       ]
     },
     "Disable account": {
@@ -5818,17 +5819,6 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -6145,9 +6135,6 @@
       "and": [
         "e"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Qualquer método ${ twoFa } em sua conta será desativado."
-      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
@@ -6297,6 +6284,9 @@
       ],
       "Center": [
         "Centralizar"
+      ],
+      "Change your password": [
+        "Mudar sua senha"
       ],
       "Check the status of imports and forwarding.": [
         "Verificar o status das importações e encaminhamento."
@@ -6479,6 +6469,9 @@
       "Edit link": [
         "Editar link"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email address": [
         "Endereço de e-mail"
       ],
@@ -6578,6 +6571,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
+      "finance": [
+        "finança"
+      ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
       ],
@@ -6619,6 +6615,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Oculta informações de identificação ao carregar conteúdo remoto por meio de um proxy. Opção para armazenar conteúdo como anexos."
+      ],
+      "High Priority": [
+        "Alta prioridade"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta senha, você precisará perguntar a nova senha da organização."
@@ -6841,6 +6840,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Os registros incluem tentativas de autenticação para todos os serviços da ${ BRAND_NAME } que usam suas credenciais da ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Baixa prioridade"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Os principais serviços de e-mail podem rejeitar ou filtrar seus e-mails para spam se o SPF/DKIM/DMARC estiver faltando ou não estiver configurado corretamente."
       ],
@@ -6856,6 +6858,9 @@
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
+      "Medium Priority": [
+        "Média prioridade"
+      ],
       "Member": [
         "Membro"
       ],
@@ -6864,6 +6869,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Monitorar contas"
       ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
@@ -6949,9 +6957,6 @@
       "of": [
         "de"
       ],
-      "old password": [
-        "senha antiga"
-      ],
       "Once you reset your password:": [
         "Depois de redefinir sua senha:"
       ],
@@ -7003,6 +7008,9 @@
       ],
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
+      ],
+      "password": [
+        "senha"
       ],
       "Password copied to clipboard": [
         "Senha copiada para a área de transferências"
@@ -7575,9 +7583,6 @@
       "Total VPN connections": [
         "Conexões VPN adicionais"
       ],
-      "two-factor authentication (2FA)": [
-        "Autenticação de dois fatores (A2F)"
-      ],
       "Two-factor authentication disabled": [
         "Autenticação de dois fatores desativada"
       ],
@@ -7664,6 +7669,9 @@
       ],
       "User activated": [
         "Usuário ativado"
+      ],
+      "username": [
+        "Nome de usuário"
       ],
       "Users": [
         "Usuários"
@@ -7775,9 +7783,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de redefinição para o número de telefone que você forneceu para a recuperação da conta."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Estamos atualizando seu plano atual para um plano aprimorado que oferece mais pelo mesmo preço. Enquanto nossos sistemas estiverem sendo atualizados, você não poderá alterá-los. Enviaremos um e-mail assim que estiver pronto."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, isso impede que arquivos de imagem sejam carregados no seu dispositivo sem seu conhecimento."
@@ -8013,12 +8018,6 @@
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Suas mensagens, calendários ou contatos existentes serão bloqueados. Para recuperar esses dados, você precisará de sua frase de recuperação ou sua ${ oldPassword }"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Suas mensagens, calendários ou contatos existentes serão bloqueados. Para recuperar esses dados, você precisará de sua frase de recuperação ou sua ${ oldPassword }"
-      ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
@@ -8061,6 +8060,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Seu ticket de suporte foi fechado. Agradecemos o contato com o suporte da ${ BRAND_NAME }."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9566,6 +9576,9 @@
       "Create account": [
         "Criar conta"
       ],
+      "Create an alias": [
+        "Criar um alias"
+      ],
       "Encryption and keys": [
         "Criptografia e chaves"
       ],
@@ -9574,6 +9587,12 @@
       ],
       "General": [
         "Geral"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Obter ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Obter ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Ajude a traduzir"
@@ -10158,9 +10177,6 @@
       "Get ${ planName }": [
         "Obter o ${ planName }"
       ],
-      "Got it": [
-        "Entendi"
-      ],
       "Keep ${ plan }": [
         "Manter o ${ plan }"
       ],
@@ -10731,15 +10747,20 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
       ],
       "Downgrade account?": [
         "Fazer downgrade da conta?"
-      ],
-      "Improved plans coming soon!": [
-        "Planos melhores em breve!"
       ],
       "Review subscription and pay": [
         "Revisar assinatura e pagar"
@@ -10752,14 +10773,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -11833,6 +11846,11 @@
         "Para indivíduos"
       ]
     },
+    "password_reset: info": {
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Qualquer método de **autenticação de dois fatores (A2F)** na sua conta será desativado."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Todos os administradores terão acesso à chave."
@@ -11869,6 +11887,9 @@
       ],
       "Reset organization key": [
         "Redefinir a chave da organização"
+      ],
+      "The following administrators could not be restored.": [
+        "Os seguintes administrados não puderam ser recuperados."
       ],
       "The following administrators will get access to the organization key.": [
         "Os seguintes administradores terão acesso à chave da organização."
@@ -12645,9 +12666,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Conclua a transição para a privacidade com nossas ferramentas seguras de importação e encaminhamento."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "Conclua a transição para a privacidade com nossas ferramentas seguras de importação."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Mantenha sua caixa de entrada organizada com pastas e marcadores. ${ learnMoreLink }"
@@ -13845,6 +13863,18 @@
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
+      "Breach Alerts": [
+        "Alerta de violação"
+      ],
+      "Breach Date": [
+        "Data da violação"
+      ],
+      "Breach Information": [
+        "Informação de violação"
+      ],
+      "Breach Size": [
+        "Tamanho da violação"
+      ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
@@ -13892,6 +13922,9 @@
       ],
       "Clear out the junk": [
         "Limpe o lixo"
+      ],
+      "Close": [
+        "Fechar"
       ],
       "Composing": [
         "Composição"
@@ -14111,6 +14144,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
       "Email composer": [
         "Compositor de e-mail"
       ],
@@ -14149,6 +14185,9 @@
       ],
       "Export public key": [
         "Exportar chave pública"
+      ],
+      "Exposed info": [
+        "Informação da exposição"
       ],
       "External PGP settings": [
         "Configurações externas do PGP"
@@ -14284,6 +14323,9 @@
       "Link confirmation": [
         "Confirmar redirecionamento"
       ],
+      "Location": [
+        "Localização"
+      ],
       "Login password": [
         "Senha de início de sessão"
       ],
@@ -14313,6 +14355,9 @@
       ],
       "Night theme": [
         "Tema noturno"
+      ],
+      "No account information was found in any data breaches": [
+        "Nenhuma informação da conta foi encontrada em quaisquer violações de dados"
       ],
       "No recovery method": [
         "Nenhum método de recuperação"
@@ -14382,6 +14427,9 @@
       ],
       "Recommended": [
         "Recomendado"
+      ],
+      "Recommended actions": [
+        "Ações recomendadas"
       ],
       "Reconnect your account": [
         "Reconecte sua conta"
@@ -14650,6 +14698,9 @@
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
+      ],
+      "Your Exposed Information": [
+        "Sua informação exposta"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
