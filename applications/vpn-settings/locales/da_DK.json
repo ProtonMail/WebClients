@@ -1863,17 +1863,6 @@
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Adgang til skrivebordsappen er begrænset"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Betaversionen af ${ MAIL_APP_NAME }-computerappen er i øjeblikket tilgængelig for alle med et betalt ${ MAIL_APP_NAME }-abonnement. Opgrader i dag for at få adgang."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fejl eller kvalitetsproblem"
@@ -2930,9 +2919,6 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Enhver ${ twoFa } metode på in konto vil blive deaktiveret."
-      ],
       "Are you sure you want to delete this address?": [
         "Er du sikker på, at du vil slette denne adresse?"
       ],
@@ -3376,9 +3362,6 @@
       "of": [
         "af"
       ],
-      "old password": [
-        "gammel adgangskode"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Når single sing-on er deaktiveret for din organisation:"
       ],
@@ -3767,9 +3750,6 @@
       "Total VPN connections": [
         "Samlet antal VPN-forbindelser"
       ],
-      "two-factor authentication (2FA)": [
-        "to-faktor-godkendelse (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "To-faktor-godkendelse deaktiveret"
       ],
@@ -3907,9 +3887,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Vi sender en nulstillingskode til det telefonnummer, du angav til kontogendannelse."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Vi opgraderer dit nuværende abonnement til et forbedret abonnement, der giver mere for den samme pris. Mens vores systemer opdateres, vil du ikke kunne ændre det. Vi sender dig en e-mail, så snart det er gjort."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i din identitetsudbyder, bliver du muligvis bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Du skal blot kopiere og indsætte nedenstående data i din identitetsudbyders felter."
@@ -4056,12 +4033,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Dine eksisterende beskeder, kalender eller kontakter vil blive låst. For at gendanne disse data, har du brug for din ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Dine eksisterende beskeder, kalender eller kontakter vil blive låst. For at gendanne disse data, har du brug for din gendannelsessætning eller din ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
@@ -4939,9 +4910,6 @@
       "Get ${ planName }": [
         "Få ${ planName }"
       ],
-      "Got it": [
-        "Forstået"
-      ],
       "Keep ${ plan }": [
         "Behold ${ plan }"
       ],
@@ -5470,9 +5438,6 @@
       ],
       "Downgrade account?": [
         "Nedgradér konto?"
-      ],
-      "Improved plans coming soon!": [
-        "Forbedrede abonnementer kommer snart!"
       ],
       "Review subscription and pay": [
         "Gennemgå abonnement og betal"
@@ -8062,8 +8027,14 @@
       "15-month": [
         "15 måneders"
       ],
+      "18-month": [
+        "18 måneders"
+      ],
       "2-year": [
         "2 år"
+      ],
+      "3-month": [
+        "3 måneders"
       ],
       "30-month": [
         "30 måneders"

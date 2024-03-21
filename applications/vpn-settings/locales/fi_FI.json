@@ -1866,17 +1866,6 @@
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Pääsy työpöytäsovellukseen on rajoitettu"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } -työpöytäsovelluksen betaversio on tällä hetkellä niiden, joilla on maksullinen ${ MAIL_APP_NAME } -tilaus, saatavilla. Päivitä tilauksesi tänään ja pääset käyttämään sitä."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Päivitä tilauksesi tänään tai tarkista tilanne uudelleen vuoden 2024 alussa."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
@@ -2933,9 +2922,6 @@
       "Amount due": [
         "Veloitettava summa"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Kaikki tilillesi määritetyt ${ twoFa } poistetaan käytöstä."
-      ],
       "Are you sure you want to delete this address?": [
         "Haluatko varmasti poistaa osoitteen?"
       ],
@@ -3379,9 +3365,6 @@
       "of": [
         "/"
       ],
-      "old password": [
-        "vanhan salasanasi"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Kun kertakirjautuminen on poistettu käytöstä organisaatioltasi:"
       ],
@@ -3770,9 +3753,6 @@
       "Total VPN connections": [
         "VPN-yhteyksiä yhteensä"
       ],
-      "two-factor authentication (2FA)": [
-        "kaksivaiheiset todennustavat (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Kaksivaiheinen todennus poistettiin käytöstä"
       ],
@@ -3910,9 +3890,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Lähetämme palautuskoodin tilin palautusta varten ilmoittamaasi puhelinnumeroon."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Nykyinen tilauksesi päivitetään parempaan tilaukseen, joka tarjoaa enemmän samaan hintaan. Järjestelmiemme päivittyessä et voi muuttaa sitä. Saat sähköposti-ilmoituksen heti sen valmistuttua."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetinhallintaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetinhallintasi soveltuviin tietokenttiin."
@@ -4059,12 +4036,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Olemassa olevat viestisi, kalenterisi tai yhteystietosi lukitaan. Tarvitset näiden tietojen palauttamiseksi ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Olemassa olevat viestisi, kalenterisi tai yhteystietosi lukitaan. Tarvitset näiden tietojen palautukseen palautuslausekkeesi tai ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -4948,9 +4919,6 @@
       "Get ${ planName }": [
         "Hanki ${ planName }"
       ],
-      "Got it": [
-        "Selvä"
-      ],
       "Keep ${ plan }": [
         "Säilytä ${ plan }"
       ],
@@ -5479,9 +5447,6 @@
       ],
       "Downgrade account?": [
         "Alennetaanko tili?"
-      ],
-      "Improved plans coming soon!": [
-        "Paremmat tilaukset tulossa pian!"
       ],
       "Review subscription and pay": [
         "Tarkista tilaus ja maksa"
