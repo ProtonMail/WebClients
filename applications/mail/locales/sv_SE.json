@@ -481,6 +481,9 @@
       "Hide messages": [
         "Dölj meddelanden"
       ],
+      "Hide my email": [
+        "Hide my email"
+      ],
       "hide-my-email aliases": [
         "hide-my-email-alias"
       ],
@@ -1300,6 +1303,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Konversation"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -2188,6 +2196,9 @@
       ],
       "Work": [
         "Arbete"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -4405,6 +4416,11 @@
         "Väldigt liten"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Integritet som standard."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Datum: den ${ date }"
@@ -4636,6 +4652,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-post"
       ],
@@ -4644,6 +4663,9 @@
       ],
       "No verification method available": [
         "Ingen verifieringsmetod tillgänglig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4894,6 +4916,9 @@
       ],
       "ICS file": [
         "ICS-fil"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6483,6 +6508,9 @@
       ],
       "Trusted": [
         "Betrodd"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8007,6 +8035,20 @@
     "Participant name": {
       "You": [
         "Du"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Icke-privata användare kan befordras till admin när de har inställningsnycklar"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnyckel måste aktiveras för att ge administratörsrättigheter"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privata användare kan befordras till admin när de har loggat in för första gången"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
       ]
     },
     "Payments": {
