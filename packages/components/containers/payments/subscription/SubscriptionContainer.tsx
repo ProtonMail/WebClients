@@ -166,6 +166,7 @@ export interface SubscriptionContainerProps {
     ) => void;
     metrics: {
         source: Source;
+        upsellRef?: string;
     };
     render: (renderProps: RenderProps) => ReactNode;
     subscription: SubscriptionModel;
