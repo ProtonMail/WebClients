@@ -44,6 +44,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                     },
                     members,
                     api: silentApi,
+                    ignoreErrors: true,
                 })
             );
             setResult({
@@ -82,8 +83,10 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
         <ModalTwo open {...rest}>
             <ModalTwoHeader title={c('Title').t`Restore administrator privileges`} {...rest} />
             <ModalTwoContent>
-                <div>{c('passwordless')
-                    .t`This will send the latest organization key to the administrators that currently don't have access to it.`}</div>
+                <div className="mb-4">
+                    {c('passwordless')
+                        .t`This will send the latest organization key to the administrators that currently don't have access to it.`}
+                </div>
                 {(() => {
                     if (loadingInit) {
                         return (
@@ -102,8 +105,8 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                     return (
                         <div>
                             {n > 0 && (
-                                <div className="mt-4">
-                                    <div className="mb-4 bg-weak w-full border pl-3 pr-4 py-3 rounded-lg ">
+                                <div className="mb-4">
+                                    <div className="bg-weak w-full border pl-3 pr-4 py-3 rounded-lg ">
                                         <div className="flex items-start flex-nowrap gap-2">
                                             <div className="flex justify-start items-start shrink-0 pt-0.5">
                                                 <Icon
@@ -137,7 +140,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                             )}
                             {result.payload.length > 0 && (
                                 <>
-                                    <div className="mt-4 mb-4">
+                                    <div className="mb-4">
                                         {c('passwordless')
                                             .t`The following administrators will get access to the organization key.`}
                                     </div>

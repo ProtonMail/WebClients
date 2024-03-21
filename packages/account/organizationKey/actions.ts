@@ -351,11 +351,13 @@ export const getMemberKeyPayloads = ({
     members,
     api,
     ignorePasswordlessValidation,
+    ignoreErrors,
 }: {
     mode: Parameters<typeof getMemberKeyPayload>[0]['mode'];
     members: EnhancedMember[];
     api: Api;
     ignorePasswordlessValidation?: boolean;
+    ignoreErrors?: boolean;
 }): ThunkAction<Promise<MemberKeyPayload[]>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const organizationKey = await dispatch(organizationKeyThunk());
@@ -378,6 +380,9 @@ export const getMemberKeyPayloads = ({
                         });
                     } catch (e) {
                         if (e instanceof ConstraintError) {
+                            return undefined;
+                        }
+                        if (ignoreErrors) {
                             return undefined;
                         }
                         throw e;
