@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@babel/plugin-transform-runtime": "^7.24.3",
+        "@mlc-ai/web-llm": "^0.2.29",
         "@proton/account": "workspace:^",
         "@proton/calendar": "workspace:^",
         "@proton/components": "workspace:packages/components",
