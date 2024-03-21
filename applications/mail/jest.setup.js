@@ -72,3 +72,18 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
 jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
+
+jest.mock('./src/app/genie/useGenieModel.ts', () => {
+    return {
+        __esModule: true,
+        default: jest.fn(() => ({
+            genieModelStatus: 'unloaded',
+            genieModelDownloadProgress: 0,
+            genieWish: '',
+            setGenieWish: jest.fn(),
+            startLoadingGenieModel: jest.fn(),
+            stopLoadingGenieModel: jest.fn(),
+            handleGenieKeyDown: jest.fn(),
+        })),
+    };
+});
