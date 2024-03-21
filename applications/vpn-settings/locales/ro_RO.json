@@ -1874,17 +1874,6 @@
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Accesul la aplicația pentru desktop este limitat"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Versiunea beta a aplicației ${ MAIL_APP_NAME } pentru desktop este disponibilă în prezent pentru oricine are un plan cu plată ${ MAIL_APP_NAME }. Achiziționați un cont cu plată pentru a avea acces."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Erori sau probleme de calitate."
@@ -2962,9 +2951,6 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Orice metodă de ${ twoFa } din cont va fi dezactivată."
-      ],
       "Are you sure you want to delete this address?": [
         "Sigur doriți ștergerea acestei adrese?"
       ],
@@ -3410,9 +3396,6 @@
       "of": [
         "din"
       ],
-      "old password": [
-        "parola veche"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "După ce conectarea unică (SSO) este dezactivată pentru organizație:"
       ],
@@ -3811,9 +3794,6 @@
       "Total VPN connections": [
         "Total conexiuni VPN"
       ],
-      "two-factor authentication (2FA)": [
-        "autentificare cu doi factori (A2F)"
-      ],
       "Two-factor authentication disabled": [
         "Autentificare cu doi factori dezactivată"
       ],
@@ -3951,9 +3931,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Veți primi un cod de resetare la numărul de telefon pe care l-ați furnizat pentru recuperarea contului."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Vă modificăm planul actual la un plan îmbunătățit care oferă mai mult pentru același preț. În timp ce sistemele noastre se actualizează, nu veți putea să îl schimbați. Vă vom trimite un e-mail imediat după finalizare."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
@@ -4105,12 +4082,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Mesajele, calendarele sau contactele existente vor fi blocate. Pentru a recupera aceste date, veți avea nevoie de ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Mesajele, calendarele sau contactele existente vor fi blocate. Pentru a recupera aceste date, veți avea nevoie de fraza de recuperare sau de ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -5001,9 +4972,6 @@
       "Get ${ planName }": [
         "Luați ${ planName }"
       ],
-      "Got it": [
-        "Am înțeles"
-      ],
       "Keep ${ plan }": [
         "Păstrare ${ plan }"
       ],
@@ -5551,9 +5519,6 @@
       ],
       "Downgrade account?": [
         "Retrogradare cont?"
-      ],
-      "Improved plans coming soon!": [
-        "Planuri îmbunătățite sosesc în curând!"
       ],
       "Review subscription and pay": [
         "Revizuire abonament și plată"
