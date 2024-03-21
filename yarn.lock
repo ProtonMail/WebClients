@@ -4540,6 +4540,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mlc-ai/web-llm@npm:^0.2.29":
+  version: 0.2.29
+  resolution: "@mlc-ai/web-llm@npm:0.2.29"
+  checksum: 10c0/228f432dd35461f80ae3e084aba9e4ce0083fb3ebc44b18a55445edfffb73ed65e8f75c956b761237e2972f880beab98b631b06a2dae6c79343485d6acf10ba1
+  languageName: node
+  linkType: hard
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -31466,6 +31473,7 @@ __metadata:
   resolution: "proton-mail@workspace:applications/mail"
   dependencies:
     "@babel/plugin-transform-runtime": "npm:^7.24.3"
+    "@mlc-ai/web-llm": "npm:^0.2.29"
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/components": "workspace:packages/components"
