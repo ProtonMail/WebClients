@@ -11,6 +11,7 @@ import { APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/li
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
+    emailValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
@@ -145,13 +146,16 @@ const SubUserCreateModal = ({
         return { Local, Domain };
     };
 
+    const emailAddressParts = getNormalizedAddress();
+    const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
+
     const save = async () => {
         return dispatch(
             createMember({
                 api: silentApi,
                 member: {
                     ...model,
-                    address: getNormalizedAddress(),
+                    address: emailAddressParts,
                     role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
                 },
                 verifiedDomains,
@@ -270,7 +274,7 @@ const SubUserCreateModal = ({
                 <InputFieldTwo
                     id="address"
                     value={model.address}
-                    error={validator([requiredValidator(model.address)])}
+                    error={validator([requiredValidator(model.address), emailValidator(emailAddress)])}
                     onValue={handleChange('address')}
                     label={useEmail ? c('Label').t`Email` : c('Label').t`Address`}
                     suffix={useEmail ? undefined : addressSuffix}

@@ -3,13 +3,14 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
-import { getDomainAdressError } from '@proton/account/members/validateAddUser';
+import { getDomainAddressError } from '@proton/account/members/validateAddUser';
 import { Button, Href } from '@proton/atoms';
 import { GenericError } from '@proton/components/containers';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 import { Alert, Loader, SettingsLink, useModalState } from '../../components';
 import {
@@ -91,9 +92,14 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     }, [memberIndex, members]);
 
     const handleAddAddress = (member: Member) => {
-        if (member.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey) {
-            createNotification({ type: 'error', text: c('Error').t`The organization key must be activated first` });
-            return;
+        if (member.Private === MEMBER_PRIVATE.READABLE) {
+            const orgKeyError = validateOrganizationKey(
+                getOrganizationKeyInfo(organization, organizationKey, addresses)
+            );
+            if (orgKeyError) {
+                createNotification({ type: 'error', text: orgKeyError });
+                return;
+            }
         }
         const domains = getAvailableAddressDomains({
             member,
@@ -103,7 +109,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
             protonDomains,
         });
         if (!domains.length) {
-            createNotification({ type: 'error', text: getDomainAdressError() });
+            createNotification({ type: 'error', text: getDomainAddressError() });
             return;
         }
         setTmpMember(member);
