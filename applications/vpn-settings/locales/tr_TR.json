@@ -1866,17 +1866,6 @@
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Masaüstü uygulamasına erişim kısıtlı"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } masaüstü uygulamasının beta sürümü, şu anda ücretli ${ MAIL_APP_NAME } tarifesi kullanıcılarına sunuluyor. Erişmek için tarifenizi yükseltin."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
@@ -2907,7 +2896,7 @@
       ],
       "Affected user is on row": [
         "Etkilenen kullanıcı satırda",
-        "Etkilenen kullanıcı satırlarda"
+        "Etkilenen kullanıcılar satırlarda"
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -2932,9 +2921,6 @@
       ],
       "Amount due": [
         "Ödenecek tutar"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Hesabınızda kullanılan tüm ${ twoFa } yöntemleri kapatılacak."
       ],
       "Are you sure you want to delete this address?": [
         "Bu adresi silmek istediğinize emin misiniz?"
@@ -2973,7 +2959,7 @@
         "Parolanızı kopyaladığınızdan ve güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
-        "Kullanıcıyı etkinleştirmeden önce, bir parola sağlamanız ve adresler için şifreleme anahtarları oluşturmanız gerekir."
+        "Kullanıcıyı etkinleştirmeden önce bir parola belirtmeli ve adresler için şifreleme anahtarları oluşturmalısınız."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
@@ -3353,7 +3339,7 @@
         "Herhangi bir adres yok"
       ],
       "No changes made to the current subscription": [
-        "Mevcut abonelikte herhangi bir değişiklik yapılmadı"
+        "Var olan abonelikte herhangi bir değişiklik yapılmadı"
       ],
       "No gateways": [
         "Henüz bir ağ geçidi yok"
@@ -3378,9 +3364,6 @@
       ],
       "of": [
         "/"
-      ],
-      "old password": [
-        "eski parola"
       ],
       "Once single sign-on is disabled for your organization:": [
         "Kuruluşunuz için tek oturum açma kapatıldığında:"
@@ -3770,9 +3753,6 @@
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
       ],
-      "two-factor authentication (2FA)": [
-        "iki adımlı doğrulama (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "İki adımlı doğrulama kapatıldı"
       ],
@@ -3910,9 +3890,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Hesap kurtarma için ayarladığınız telefon numarasına bir sıfırlama kodu göndereceğiz."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Geçerli tarifenizi aynı ücrete daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
@@ -4059,12 +4036,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için ${ oldPassword }nıza gerek duyacaksınız."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için kurtarma ifadenize veya ${ oldPassword }nıza gerek duyacaksınız."
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
@@ -4948,9 +4919,6 @@
       "Get ${ planName }": [
         "${ planName } alın"
       ],
-      "Got it": [
-        "Anladım"
-      ],
       "Keep ${ plan }": [
         "${ plan } tarifesinde kal"
       ],
@@ -5479,9 +5447,6 @@
       ],
       "Downgrade account?": [
         "Hesap tarifesi düşürülsün mü?"
-      ],
-      "Improved plans coming soon!": [
-        "Yakında geliştirilmiş tarifeler geliyor!"
       ],
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
@@ -7363,7 +7328,7 @@
         "Kuruluş anahtarını kullanıma al"
       ],
       "Activate user": [
-        "Kullanıcıyı etkinleştirin"
+        "Kullanıcıyı etkinleştir"
       ],
       "Add address": [
         "Adres ekle"
@@ -7442,6 +7407,9 @@
       ],
       "Change role": [
         "Rolü değiştir"
+      ],
+      "Close": [
+        "Kapat"
       ],
       "Confirm": [
         "Onayla"
@@ -8060,6 +8028,9 @@
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
         "Abonelik her 1 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 1 ay sonra."
       ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 3 ay sonra."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra her 12 ayda bir ${ renewPrice } üzerinden faturalandırılacaksınız."
       ],
@@ -8080,8 +8051,14 @@
       "15-month": [
         "15 ay"
       ],
+      "18-month": [
+        "18 aylık"
+      ],
       "2-year": [
         "2 yıl"
+      ],
+      "3-month": [
+        "3 aylık"
       ],
       "30-month": [
         "30 ay"

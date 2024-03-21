@@ -1794,17 +1794,6 @@
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "デスクトップアプリへのアクセスが制限されています"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME } デスクトップ アプリのベータ版は現在、有料の ${ MAIL_APP_NAME } プランを持っている人なら誰でも利用できます。 今すぐアップグレードしてアクセスしてください。"
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "今すぐアップグレードするか、2024 年初めに再度アクセスして確認してください。"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "バグまたは品質の問題"
@@ -2741,9 +2730,6 @@
       "Amount due": [
         "支払額"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "アカウント上の ${ twoFa } メソッドは無効になります。"
-      ],
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
       ],
@@ -3134,9 +3120,6 @@
       "of": [
         " / "
       ],
-      "old password": [
-        "古いパスワード"
-      ],
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
       ],
@@ -3470,9 +3453,6 @@
       "Total VPN connections": [
         "総VPN接続数"
       ],
-      "two-factor authentication (2FA)": [
-        "2要素認証(2FA)"
-      ],
       "Two-factor authentication disabled": [
         "2 要素認証が無効になりました"
       ],
@@ -3605,9 +3585,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "リセットコードをアカウント回復に設定した電話番号に送信しました。"
       ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "現在ご利用のプランを、同じ料金でより多くのサービスを提供する改良型プランにアップグレードします。システムの更新中は、変更することはできません。アップデートが完了したら、すぐにメールでお知らせします。"
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
@@ -3727,12 +3704,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "既存のメッセージ、カレンダー、連絡先はロックされます。 このデータを復元するには、${ oldPassword } が必要です。"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "既存のメッセージ、カレンダー、連絡先はロックされます。 このデータを回復するには、回復フレーズまたは ${ oldPassword } が必要です。"
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
@@ -4559,9 +4530,6 @@
       "Get ${ planName }": [
         "${ planName } を入手"
       ],
-      "Got it": [
-        "はい"
-      ],
       "Keep ${ plan }": [
         "${ plan } を使い続ける"
       ],
@@ -4990,9 +4958,6 @@
       ],
       "Downgrade account?": [
         "アカウントをダウングレードしますか?"
-      ],
-      "Improved plans coming soon!": [
-        "改善されたプランが近日登場します!"
       ],
       "Review subscription and pay": [
         "サブスクリプションを見なおして決済"

@@ -1811,17 +1811,6 @@
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "Доступ до програми для комп'ютера обмежено"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "Бета-версія програми ${ MAIL_APP_NAME } для комп'ютера наразі доступна для всіх з тарифним планом ${ MAIL_APP_NAME }. Покращте сьогодні, щоб отримати доступ."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "Покращте сьогодні або перевірте доступ ще раз на початку 2024 року."
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
@@ -2899,9 +2888,6 @@
       "Amount due": [
         "До сплати"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Будь-який метод ${ twoFa } вашого облікового запису буде вимкнено."
-      ],
       "Are you sure you want to delete this address?": [
         "Ви дійсно хочете видалити цю адресу?"
       ],
@@ -3328,9 +3314,6 @@
       "of": [
         "з"
       ],
-      "old password": [
-        "старий пароль"
-      ],
       "Once single sign-on is disabled for your organization:": [
         "Після вимкнення єдиного входу для вашої організації:"
       ],
@@ -3727,9 +3710,6 @@
       "Total VPN connections": [
         "Усього VPN-з'єднань"
       ],
-      "two-factor authentication (2FA)": [
-        "двоетапна перевірка (2FA)"
-      ],
       "Two-factor authentication disabled": [
         "Двоетапну перевірку вимкнено"
       ],
@@ -3864,9 +3844,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказаний номер телефону."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Ми змінюємо ваш поточний тарифний план на кращий, з більшими можливостями за таку саму ціну. Поки наші системи оновлюються, ви не зможете його змінити. Ми надішлемо вам повідомлення одразу після завершення."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Увімкнувши SAML для ${ appName } у свого провайдера ідентифікації, ви можете отримати запит на використання URL-адреси для зворотного виклику (ACS) та ID видавця. Просто скопіюйте і вставте наведені нижче дані в поля вашого провайдера ідентифікації."
@@ -4020,12 +3997,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "Ваші наявні повідомлення, календарі або контакти будуть заблоковані. Щоб відновити ці дані, вам знадобиться ваш ${ oldPassword }."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "Ваші наявні повідомлення, календарі або контакти будуть заблоковані. Щоб відновити ці дані, вам знадобиться ваша фраза для відновлення або ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
@@ -4891,9 +4862,6 @@
       "Get ${ planName }": [
         "Отримати ${ planName }"
       ],
-      "Got it": [
-        "Зрозуміло"
-      ],
       "Keep ${ plan }": [
         "Залишити ${ plan }"
       ],
@@ -5430,9 +5398,6 @@
       ],
       "Downgrade account?": [
         "Понизити обліковий запис?"
-      ],
-      "Improved plans coming soon!": [
-        "Незабаром стануть доступні вдосконалені тарифні плани!"
       ],
       "Review subscription and pay": [
         "Перегляньте передплату й сплатіть"
