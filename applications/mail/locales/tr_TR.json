@@ -8021,6 +8021,20 @@
         "Siz"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Korunmayan kullanıcılar, kurulum anahtarlarına sahip olduklarında yöneticiliğe yükseltilebilir"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Yönetici yetkileri vermek için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Korunan kullanıcılar ilk kez oturum açtıklarında yöneticiliğe yükseltilebilir"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm kullanıcıları korunan olarak güncellemeniz gerekir"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Faturalanacak ülke"
