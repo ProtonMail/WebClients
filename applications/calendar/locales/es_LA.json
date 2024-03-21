@@ -220,7 +220,7 @@
         "Descartar"
       ],
       "Don't know your password?": [
-        "¿No sabe su contraseña?"
+        "¿Ha olvidado su contraseña?"
       ],
       "Done": [
         "Hecho"
@@ -5721,6 +5721,20 @@
         "Expandir lista de participantes"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clave de seguridad de la organización debe activarse para otorgar privilegios de administración"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Los usuarios privados podrán ser administradores una vez que ingresen a su cuenta por primera vez"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Debe privatizar todos los usuarios antes de generar una clave nueva de la organización"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "País de facturación"
@@ -7219,6 +7233,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"
+      ],
+      "Change start date to unselect": [
+        "Cambie la fecha de inicio para anular la selección"
       ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"

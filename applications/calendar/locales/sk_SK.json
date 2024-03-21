@@ -5752,6 +5752,20 @@
         "Rozbaliť zoznam účastníkov"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nesúkromní používatelia môžu byť povýšení na správcu, ak majú inštalačné kľúče"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Na udelenie oprávnení správcu musí byť aktivovaný organizačný kľúč"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Súkromní používatelia môžu byť po prvom prihlásení povýšení na správcu"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kľúč nie je možné použiť na šifrovanie"
