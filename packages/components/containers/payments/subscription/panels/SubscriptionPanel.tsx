@@ -3,8 +3,6 @@ import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
@@ -18,7 +16,6 @@ import {
     PLAN_NAMES,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
     getHasPassB2BPlan,
@@ -154,11 +151,6 @@ const ActionButtons = ({
         });
     };
     const handleExplorePlans = () => {
-        if (isElectronApp) {
-            openLinkInBrowser(getAppHref('/mail/dashbard', APPS.PROTONACCOUNT));
-            return;
-        }
-
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
