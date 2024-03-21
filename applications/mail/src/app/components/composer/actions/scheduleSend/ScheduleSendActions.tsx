@@ -9,10 +9,9 @@ import {
     DropdownMenuButton,
     SimpleDropdown,
     UpsellModal,
-    getUpsellSubscriptionModalConfig,
     useModalState,
+    useUpsellConfig,
 } from '@proton/components/components';
-import { useSubscriptionModal } from '@proton/components/containers';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -155,7 +154,6 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
         },
         ref
     ) => {
-        const [openSubscriptionModal] = useSubscriptionModal();
         const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
         const handleShowUpsellModal = () => {
             handleUpsellModalDisplay(true);
@@ -167,10 +165,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
         });
 
-        const handleUpgrade = () => {
-            console.log(upsellRef);
-            openSubscriptionModal(getUpsellSubscriptionModalConfig());
-        };
+        const upsellConfig = useUpsellConfig(upsellRef);
 
         return (
             <>
@@ -197,13 +192,11 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                 </SimpleDropdown>
                 {renderUpsellModal && (
                     <UpsellModal
-                        onUpgrade={handleUpgrade}
                         data-testid="composer:schedule-send:upsell-modal"
                         title={c('Title').t`Set your own schedule`}
                         description={c('Description')
                             .t`Unlock custom message scheduling and other benefits when you upgrade your plan.`}
                         modalProps={upsellModalProps}
-                        upgradePath="#"
                         features={[
                             'schedule-messages',
                             'auto-delete-trash-and-spam',
@@ -214,6 +207,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                             'custom-email-domains',
                             'email-aliases',
                         ]}
+                        {...upsellConfig}
                     />
                 )}
             </>

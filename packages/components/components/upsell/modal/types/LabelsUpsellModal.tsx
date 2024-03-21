@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { ModalStateProps, UpsellModal } from '@proton/components/components';
+import { ModalStateProps, UpsellModal, useUpsellConfig } from '@proton/components/components';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -21,15 +21,17 @@ const LabelsUpsellModal = ({ modalProps, onCloseCustomAction, feature, isSetting
         isSettings,
     });
 
+    const upsellConfig = useUpsellConfig(upsellRef);
+
     return (
         <UpsellModal
             title={c('Title').t`Keep your inbox organized`}
             description={c('Description')
                 .t`Unlock unlimited folders, labels and more premium features when you upgrade.`}
             modalProps={modalProps}
-            upgradePath={addUpsellPath(getUpgradePath({}), upsellRef)}
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
             onClose={onCloseCustomAction}
+            {...upsellConfig}
         />
     );
 };

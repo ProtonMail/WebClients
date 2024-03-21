@@ -40,7 +40,7 @@ type UpsellBoxProps = Partial<Pick<UpsellModalProps, 'hideInfo'>> &
 const UpsellBox = ({ description, handleUpgrade, title, features, hideInfo, headerType, path }: UpsellBoxProps) => {
     const UpgradeButton = (
         <ButtonLike
-            as={SettingsLink}
+            as={path ? SettingsLink : undefined}
             path={path}
             onClick={handleUpgrade}
             size="large"
