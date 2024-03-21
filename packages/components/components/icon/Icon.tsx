@@ -67,6 +67,7 @@ export type IconName =
     | 'bag-percent'
     | 'bell'
     | 'bolt'
+    | 'bolt-filled'
     | 'bookmark'
     | 'brand-amex'
     | 'brand-android'
