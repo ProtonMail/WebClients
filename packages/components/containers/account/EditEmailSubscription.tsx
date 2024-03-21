@@ -26,6 +26,9 @@ const EditEmailSubscription = () => {
 
     const filteredEmailSubscription = getEmailSubscriptions().filter(({ flag }) => {
         switch (flag) {
+            case NEWSLETTER_SUBSCRIPTIONS_BITS.NEW_EMAIL_NOTIF:
+                // Daily email notifications are currently in a separate setting. Should they be migrated?
+                return false;
             case NEWSLETTER_SUBSCRIPTIONS_BITS.FEATURES:
                 // We don't want to display toggle for FEATURES news subscription as manual switch has been deprecated for this option.
                 // INBOX_NEWS, DRIVE_NEWS & VPN_NEWS should be used instead
