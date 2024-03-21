@@ -1181,6 +1181,9 @@
       ],
       "Work": [
         "Arbete"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3048,6 +3051,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-post"
       ],
@@ -3056,6 +3062,9 @@
       ],
       "No verification method available": [
         "Ingen verifieringsmetod tillgänglig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -3289,6 +3298,9 @@
       ],
       "ICS file": [
         "ICS-fil"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4654,6 +4666,9 @@
       ],
       "Trusted": [
         "Betrodd"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5989,6 +6004,20 @@
         "Du"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Icke-privata användare kan befordras till admin när de har inställningsnycklar"
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnyckel måste aktiveras för att ge administratörsrättigheter"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privata användare kan befordras till admin när de har loggat in för första gången"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Faktureringsland"
@@ -7037,6 +7066,9 @@
       ],
       "Download unverified folder?": [
         "Ladda ner overifierad mapp?"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Drop to upload": [
         "Släpp för att ladda upp"
