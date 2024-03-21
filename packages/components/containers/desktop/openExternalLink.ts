@@ -30,7 +30,7 @@ export const openLinkInBrowser = (url: string) => {
 
 export function redirectToAccountApp() {
     if (isElectronApp) {
-        openLinkInBrowser(getAppHref('/mail/dashbard', APPS.PROTONACCOUNT));
+        openLinkInBrowser(getAppHref('/mail/dashboard', APPS.PROTONACCOUNT));
         return true;
     }
 
