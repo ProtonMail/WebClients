@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 .file-preview {
 	position: fixed;
@@ -16,7 +16,7 @@
 		inline-size: 100%;
 		overflow: auto;
 		flex-flow: column wrap;
-		flex: 1 1 auto;
+		flex: 1 1 0;
 	}
 
 	&-filename {
