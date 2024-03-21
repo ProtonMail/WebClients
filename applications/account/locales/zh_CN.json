@@ -4966,17 +4966,6 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -5184,9 +5173,6 @@
       ],
       "and": [
         "并"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "您账户上的任何 ${ twoFa } 方法都将被禁用。"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "只要持有此链接就能查看所有日程的详细信息，包括标题、地点、参与者等。"
@@ -5851,9 +5837,6 @@
       "of": [
         "，共"
       ],
-      "old password": [
-        "旧密码"
-      ],
       "Once you reset your password:": [
         "当你重置密码后："
       ],
@@ -6403,9 +6386,6 @@
       "Total VPN connections": [
         "VPN 同时在线设备总数"
       ],
-      "two-factor authentication (2FA)": [
-        "双重认证(2FA)"
-      ],
       "Two-factor authentication disabled": [
         "双重验证已关闭"
       ],
@@ -6592,9 +6572,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "我们会将重置代码发送到您先前提供的密保手机。"
       ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "我们正在为您准备更加优越的账户等级，并且价格不变。系统升级过程中您暂时无法予以调整，升级结束后我们会通过邮件通知您。"
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
       ],
@@ -6778,12 +6755,6 @@
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "您现有的邮件、日历或联系人将被锁定。要恢复此数据，您需要 ${ oldPassword } 。"
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "您现有的邮件、日历或联系人将被锁定。要恢复此数据，您需要恢复短语或 ${ oldPassword }。"
-      ],
       "Your files will be encrypted and then saved": [
         "您的文件将被加密保存。"
       ],
@@ -6816,6 +6787,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {
@@ -8649,9 +8631,6 @@
       "Get ${ planName }": [
         "开通 ${ planName }"
       ],
-      "Got it": [
-        "知道了"
-      ],
       "Keep ${ plan }": [
         "保持计划 ${ plan }"
       ],
@@ -9056,15 +9035,20 @@
         "您所选的账户等级：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
       ],
       "Downgrade account?": [
         "降级账户？"
-      ],
-      "Improved plans coming soon!": [
-        "账户等级优化即将上线！"
       ],
       "Review subscription and pay": [
         "确认订单并支付"
@@ -9077,14 +9061,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -11643,6 +11619,9 @@
       ],
       "Link confirmation": [
         "确认打开链接"
+      ],
+      "Location": [
+        "位置"
       ],
       "Login password": [
         "登录密码"

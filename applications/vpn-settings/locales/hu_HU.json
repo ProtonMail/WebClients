@@ -661,6 +661,11 @@
         "Kétévente"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Probléma az alkalmazással"
@@ -1701,6 +1706,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Korai hozzáférés a ${ MAIL_APP_NAME } asztali alkalmazáshoz"
       ]
     },
     "Error": {
@@ -2467,9 +2475,6 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "Minden ${ twoFa } a fiókján le lesz tiltva."
-      ],
       "Are you sure you want to delete this address?": [
         "Biztosan törli ezt a címet?"
       ],
@@ -2767,9 +2772,6 @@
       "of": [
         "/"
       ],
-      "old password": [
-        "régi jelszó"
-      ],
       "Once you reset your password:": [
         "Ha visszaállítja a jelszavát:"
       ],
@@ -2869,7 +2871,7 @@
         "Megbízható eszközökön javasolt. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "A helyreállítási információ megmarad ezen az eszközön, kivéve ha törli."
+        "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -3061,9 +3063,6 @@
       "Total VPN connections": [
         "Összes VPN kapcsolat"
       ],
-      "two-factor authentication (2FA)": [
-        "kétlépcsős hitelesítés"
-      ],
       "Two-factor authentication disabled": [
         "Kétlépcsős azonosítás kikapcsolva"
       ],
@@ -3171,9 +3170,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "A fiók helyreállítási célra megadott telefonszámára fog kapni egy visszaállító kódot."
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Folyamatban van a csomagjának egy nagyobb csomagra átállítása, változatlan áron. Amíg a rendszer ezen dolgozik, addig nem tud változtatni. E-mailben értesítjük, amint elkészült."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
@@ -3285,12 +3281,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "A meglévő üzenetei, naptárai, névjegyei lezárásra kerülnek. Ezen adatok visszaszerzéséhez szüksége lesz ${ oldPassword }ra."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "A meglévő üzenetei, naptárai, névjegyei lezárásra kerülnek. Ezen adatok visszaszerzéséhez szüksége lesz ${ oldPassword } visszaállítási jelmondatára."
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
@@ -3894,7 +3884,15 @@
         "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ajánlat elfogadása"
+      ]
+    },
     "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
       "10 email addresses": [
         "10 e-mail cím"
       ],
@@ -3986,9 +3984,6 @@
       ],
       "Get ${ planName }": [
         "${ planName } megszerzése"
-      ],
-      "Got it": [
-        "Értem"
       ],
       "Keep ${ plan }": [
         "Maradjon ${ plan }"
@@ -4110,6 +4105,9 @@
       ],
       "Custom fields": [
         "Egyéni mezők"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
       ],
       "DNS leak prevention": [
         "DNS szivárgás elleni védelem"
@@ -4386,9 +4384,6 @@
       "Downgrade account?": [
         "Váltás kisebb csomagra?"
       ],
-      "Improved plans coming soon!": [
-        "Hamarosan új csomagok érkeznek!"
-      ],
       "Review subscription and pay": [
         "Előfizetés áttekintése és fizetés"
       ],
@@ -4405,6 +4400,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Használja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } alkalmazásokat kényelmesen a számítógépén"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akárhonnan elérhet videós szolgáltatásokat, mint például Netflix, Disney+ vagy Prime Video"
       ],
@@ -4597,7 +4595,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Néhány képet nem sikerült feltölteni, mert az aktuális kiválasztásban duplikált fájlnevek voltak."
+        "Néhány képet nem sikerült feltölteni, mert a kiválasztott elemek közt duplikált fájlnevek voltak."
       ]
     },
     "Onboarding": {
@@ -5367,6 +5365,12 @@
       ]
     },
     "Subscription": {
+      "Billed for 18 months": [
+        "18 havonta számlázva"
+      ],
+      "Billed for 3 months": [
+        "3 havonta számlázva"
+      ],
       "Billed monthly": [
         "Havonta számlázva"
       ]
@@ -6258,9 +6262,22 @@
         "${ numberOfServers } ${ numberOfCountries } országban"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Az előfizetés 3 havonta automatikusan megújul. A következő számlázási időpont 3 hónap múlva lesz."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Havonta számlázva"
+      ]
+    },
+    "vpn_2step: discount": {
+      "18-month": [
+        "18 hónap"
+      ],
+      "3-month": [
+        "3 hónap"
       ]
     },
     "vpn_2step: feature": {

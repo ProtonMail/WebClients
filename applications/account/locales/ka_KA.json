@@ -383,6 +383,9 @@
       "Edit": [
         "ჩასწორება"
       ],
+      "Edit billing cycle": [
+        "გადახდის ციკლის ჩასწორება"
+      ],
       "Edit display name": [
         "საჩვენებელი სახელის ჩასწორება"
       ],
@@ -3117,17 +3120,6 @@
         "თქვენს მიერ ატვირთულ CSV ფაილში ამოჩენილია შემდეგი ველები. მონიშნეთ ისინი, რომლების შემოტანაც გსურთ."
       ]
     },
-    "Desktop app upsell": {
-      "Access to the desktop app is limited": [
-        "კომპიუტერის აპთან წვდომა შეზღუდულია"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპის ბეტა ვერსია ხელმისაწვდომია ყველასთვის, ვისაც ${ MAIL_APP_NAME }-ის ფასიანი სატარიფო გეგმა აქვს. ასწიეთ ტარიფი დღეს, წვდომის მისაღებად."
-      ],
-      "Upgrade today or check again in early 2024 for access.": [
-        "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
-      ]
-    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "${ signIn }-ზე დაბრუნება."
@@ -3222,6 +3214,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "დაგვეხმარეთ გავუმჯობესდეთ!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debian/Ubuntu-სთვის"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedora / Red Hat-სთვის"
       ]
     },
     "drive_signup_2023: Info": {
@@ -4378,6 +4378,9 @@
       "Invalid URL": [
         "არასწორი URL"
       ],
+      "Missing parameters in the URL.": [
+        "ბმულს პარამეტრები აკლია."
+      ],
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
       ],
@@ -4389,6 +4392,9 @@
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "Support ticket does not exist.": [
+        "მხარდაჭერის ბილეთი არ არსებობს."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
@@ -5169,6 +5175,9 @@
       ],
       "Back to sign in": [
         "შესვლის გვერდზე დაბრუნება"
+      ],
+      "Keep using the desktop app": [
+        "კომპიუტერის აპის გამოყენების გაგრძელება"
       ]
     },
     "Frequency of news": {
@@ -5783,17 +5792,6 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -6049,6 +6047,10 @@
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
       ],
+      "Affected user is on row": [
+        "შეცვლადი მომხმარებელი არის ხაზზე",
+        "შეცვლადი მომხმარებლები არიან ხაზზე"
+      ],
       "Align left": [
         "მარცხნივ სწორება"
       ],
@@ -6105,9 +6107,6 @@
       ],
       "and": [
         "და"
-      ],
-      "Any ${ twoFa } method on your account will be disabled.": [
-        "თქვენი ანგარიშის ${ twoFa }-ის მეთოდი გაითიშება."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "წაშლება ასევე ყველა ქვესაქაღალდეც. მაგრამ ელფოსტა, რომელიც დამახსოვრებულია საქაღალდეში ${ nameDeleted }, არ წაიშლება და შეგიძლიათ, ყველა ელფოსტის საქაღალდეში იპოვოთ."
@@ -6733,6 +6732,9 @@
       "Key deletion is irreversible!": [
         "გასაღების წაშლა შეუქცევადი პროცესია!"
       ],
+      "Keys created": [
+        "გასაღებები შექმნა"
+      ],
       "Label all imported messages as": [
         "ყველა შემოტანილ შეტყობინებაზე ჭდის დადება"
       ],
@@ -6897,9 +6899,6 @@
       ],
       "of": [
         "-დან"
-      ],
-      "old password": [
-        "ძველი პაროლი"
       ],
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
@@ -7511,9 +7510,6 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
-      "two-factor authentication (2FA)": [
-        "2FA"
-      ],
       "Two-factor authentication disabled": [
         "2FA გამორთულია"
       ],
@@ -7597,6 +7593,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "გარე სერვისში SMTP მომხმარებლის სახელად მონიშნული ელფოსტის მისამართი გამოიყენეთ, პაროლად კი გენერირებული კოდი."
+      ],
+      "User activated": [
+        "მომხმრებელი გააქტიურდა"
       ],
       "Users": [
         "მომხმარებლები"
@@ -7709,9 +7708,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "პაროლის შეცვლის კოდი გაიგზავნება ტელეფონის ნომერზე, რომელიც თქვენ აღდგენისთვის მოგვაწოდეთ."
       ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "ჩვენ ვაახლებთ თქვენს მიმდინარე ტარიფს გაუმჯობესებულ ვერსიამდე, რომელიც იმავე ფასში მეტ ფუნქციას გთავაზობთ. სანამ მიმდინარეობს ჩვენი სისტემების განახლება, თქვენ ამის შეცვლა არ შეგიძლიათ. როცა ყველაფერი დასრულდება, ელფოსტას მიიღებთ."
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "თუ გამორთულია, თქვენს მოწყობილობებზე გამოსახულებები თქვენი უფლების გარეშე არ ჩაიტვირთება."
       ],
@@ -7805,6 +7801,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "ახლა შეგიძლიათ, შეხვიდეთ და მართოთ ანგარიში, როგორც ადმინისტრატორმა."
+      ],
+      "You can now close this tab.": [
+        "ახლა ეს ჩანართი შეგიძლიათ, დახუროთ."
       ],
       "You can now close this window.": [
         "ახლა შეგიძლიათ, დახუროთ ეს ფანჯარა."
@@ -7943,12 +7942,6 @@
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
       ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "თქვენი არსებული შეტყობინებები, კალენდარები და კონტაქტები დაიბლოკება. მონაცემების აღსადგენად თქვენი ${ oldPassword } დაგჭირდებათ."
-      ],
-      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "თქვენი არსებული შეტყობინებები, კალენდრები და კონტაქტები დაიბლოკება. მონაცემების აღსადგენად თქვენი ${ oldPassword } ან აღდგენის ფრაზა დაგჭირდებათ."
-      ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
       ],
@@ -7988,6 +7981,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9683,6 +9687,9 @@
       "for the first month": [
         "პირველი თვისთვის"
       ],
+      "for your first month": [
+        "თქვენი პირველი თვისთვის"
+      ],
       "Get ${ planName } for ${ price }": [
         "დააყენეთ ${ planName } ${ price }-სთვის"
       ],
@@ -10076,9 +10083,6 @@
       "Get ${ planName }": [
         "${ planName }-ის მიღება"
       ],
-      "Got it": [
-        "გავიგე"
-      ],
       "Keep ${ plan }": [
         "${ plan }-ის დატოვება"
       ],
@@ -10166,6 +10170,9 @@
       ],
       "1 user": [
         "1 მომხმარებელი"
+      ],
+      "24/7 account management support": [
+        "24/7 ანგარიშის მართვის მხარდაჭერა."
       ],
       "24/7 support": [
         "24/7 მხარდაჭერა"
@@ -10289,6 +10296,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
+      ],
+      "Group management (coming soon)": [
+        "ჯგუფების მართვა (მალე)"
       ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
@@ -10427,6 +10437,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "განუსაზღვრელი გაზიარებული საცავები წვდომის შეზღუდვებით"
+      ],
+      "Unlimited vault sharing": [
+        "განუსაზღვრელი საცავის გაზიარება"
       ],
       "Unlimited vaults": [
         "საცავების ულიმიტო როდენობა"
@@ -10634,15 +10647,20 @@
         "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
-      ],
-      "Improved plans coming soon!": [
-        "მალე გაუმჯობესებული გეგმები გვექნება!"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -10655,14 +10673,6 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -12271,7 +12281,7 @@
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
-        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
+        "ახლა შეგიძლიათ, შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
       ],
       "You can now reset your password": [
         "ახლა შეგიძლიათ, პაროლი შეცვალოთ"
@@ -12401,8 +12411,8 @@
         "მივიღეთ პაროლის ჩამოყრის მოთხოვნა ${ boldEmail }-სთვის."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ",
-        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ"
+        "პაროლი შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ",
+        "პაროლი შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -12527,9 +12537,6 @@
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "დაასრულეთ მიგრაცია კონფიდენციალობაზე ჩვენი დაცული შემოტანის და გადაგზავნის პროგრამებით."
-      ],
-      "Complete the transition to privacy with our secure importing tools.": [
-        "დაასრულეთ მიგრაცია კონფიდენციალობაზე ჩვენი დაცული შემოტანის პროგრამებით."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "დაალაგეთ თქვენი საფოსტო ყუთი საქაღალდეებითა და ჭდეებით. ${ learnMoreLink }"
@@ -13821,6 +13828,9 @@
       "Create multiple user accounts": [
         "მრავალი მომხმარებლის ანგარიშის შექმნა"
       ],
+      "Create organization key": [
+        "ორგანიზაციის გასაღებების შექმნა"
+      ],
       "Create public link": [
         "საჯარო ბმულის შექმნა"
       ],
@@ -13941,6 +13951,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }-ის გადმოწერა"
+      ],
+      "Download the desktop app": [
+        "გადმოწერეთ კომპიუტერის აპები"
+      ],
+      "Download the mobile apps": [
+        "გადმოწერეთ მობილური აპები"
       ],
       "Edit credit/debit card": [
         "საკრედიტო/სადებეტო ბარათის ჩასწორება"
@@ -14072,6 +14088,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "ყველა სერვერთან წვდომისთვის შეიძინეთ ${ vpnPlus }"
       ],
+      "Get the apps": [
+        "აპების გადმოწერა"
+      ],
       "Gift": [
         "საჩუქარი"
       ],
@@ -14153,6 +14172,9 @@
       ],
       "Link confirmation": [
         "ბმულის დადასტურება"
+      ],
+      "Location": [
+        "მდებარეობა"
       ],
       "Login password": [
         "მომხმარებლის პაროლი"
@@ -14415,6 +14437,9 @@
       ],
       "Summary": [
         "შეჯამება"
+      ],
+      "Support ticket closed": [
+        "მხარდაჭერის ბილეთი დაიხურა"
       ],
       "Switch account": [
         "ანგარიშის გადართვა"
