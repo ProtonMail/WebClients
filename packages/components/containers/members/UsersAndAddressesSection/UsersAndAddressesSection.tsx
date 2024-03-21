@@ -2,12 +2,12 @@ import { MutableRefObject, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useMemberAddresses } from '@proton/account';
+import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { APP_NAMES, MEMBER_ROLE, MEMBER_SUBSCRIBER, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { APP_NAMES, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
@@ -193,7 +193,34 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setUserInviteOrEditModalOpen(true);
     };
 
-    const handleAddAddress = (member?: EnhancedMember) => {
+    const handleAddAddress = async (member?: EnhancedMember) => {
+        if (member) {
+            if (member.Private === MEMBER_PRIVATE.READABLE) {
+                const organizationKey = await getOrganizationKey();
+                const orgKeyError = validateOrganizationKey(
+                    getOrganizationKeyInfo(organization, organizationKey, addresses)
+                );
+                if (orgKeyError) {
+                    createNotification({ type: 'error', text: orgKeyError });
+                    return;
+                }
+            }
+
+            if (!useEmail) {
+                const domains = getAvailableAddressDomains({
+                    member,
+                    user,
+                    premiumDomains,
+                    customDomains,
+                    protonDomains,
+                });
+                if (!domains.length) {
+                    createNotification({ type: 'error', text: getDomainAddressError() });
+                    return;
+                }
+            }
+        }
+
         setTmpMemberID(member?.ID || null);
         setAddAddressModalOpen(true);
     };
@@ -231,9 +258,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleLoginUser = async (member: EnhancedMember) => {
         const organizationKey = await getOrganizationKey();
-        const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
-        if (error) {
-            return createNotification({ type: 'error', text: error });
+        const orgKeyError = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
+        if (orgKeyError) {
+            return createNotification({ type: 'error', text: orgKeyError });
         }
         setTmpMemberID(member.ID);
         setLoginMemberModalOpen(true);
@@ -241,9 +268,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleChangeMemberPassword = async (member: EnhancedMember) => {
         const organizationKey = await getOrganizationKey();
-        const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
-        if (error) {
-            return createNotification({ type: 'error', text: error });
+        const orgKeyError = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
+        if (orgKeyError) {
+            return createNotification({ type: 'error', text: orgKeyError });
         }
         setTmpMemberID(member.ID);
         setChangeMemberPasswordModalOpen(true);
@@ -366,7 +393,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 {renderAddAddressModal && filteredMembers && (
                     <AddressModal
                         useEmail={useEmail}
-                        member={members?.find((member) => tmpMemberID === member.ID)}
+                        member={filteredMembers?.find((member) => tmpMemberID === member.ID)}
                         members={filteredMembers}
                         {...addAddressModalProps}
                     />
@@ -499,15 +526,18 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 <TableBody loading={loadingMembers} colSpan={showFeaturesColumn ? 5 : 4}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                        const isInvitationPending = !!(member.State === MEMBER_STATE.STATUS_INVITED);
+                        const isInvitationPending = member.State === MEMBER_STATE.STATUS_INVITED;
 
                         const memberName = (() => {
                             if (hasFamily(subscription) && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-                                return member?.Addresses?.[0]?.Email || member.Name;
+                                return memberAddresses[0]?.Email || member.Name;
                             }
 
                             return member.Name;
                         })();
+
+                        const canAddAddress = memberAddresses.length === 0;
+
                         return (
                             <TableRow
                                 key={member.ID}
@@ -591,7 +621,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     <MemberActions
                                         user={user}
                                         organizationKey={organizationKey}
-                                        onAddAddress={(member) => handleAddAddress(member)}
+                                        onAddAddress={canAddAddress ? (member) => handleAddAddress(member) : undefined}
                                         onEdit={handleEditUser}
                                         onDelete={handleDeleteUser}
                                         onSetup={handleSetupUser}
