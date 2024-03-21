@@ -4,7 +4,7 @@ import { StyledShadowHost } from './StyledShadowHost';
 import styles from './ProtonPassControl.raw.scss';
 
 export class ProtonPassControl extends StyledShadowHost {
-    static getTagName = (hash: string) => `protonpass-root-${hash}`;
+    static getTagName = (hash: string) => `protonpass-control-${hash}`;
 
     constructor() {
         super(styles);
