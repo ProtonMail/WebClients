@@ -36,7 +36,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
 
     return (
         <>
-            {passkeys.map((passkey) => (
+            {(passkeys ?? []).map((passkey) => (
                 <FieldsetCluster mode="read" key={passkey.keyId} className="pass-fieldset-cluster--standout">
                     <ValueControl
                         icon={'pass-passkey'}
