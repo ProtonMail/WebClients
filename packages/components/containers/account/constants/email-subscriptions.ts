@@ -68,6 +68,11 @@ export const getEmailSubscriptions: () => EmailSubscription[] = () => [
         frequency: c('Frequency of news').t`(1 email per quarter)`,
     },
     {
+        id: 'daily-emails',
+        flag: NEWSLETTER_SUBSCRIPTIONS_BITS.NEW_EMAIL_NOTIF,
+        title: c('Label for news').t`Daily email notifications`,
+    },
+    {
         id: 'onboarding',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.ONBOARDING,
         title: c('Label for news').t`${BRAND_NAME} welcome emails`,
