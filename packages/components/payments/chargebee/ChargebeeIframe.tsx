@@ -267,7 +267,7 @@ export function useChargebeeHandles(
             cardCvcPlaceholder: c('Payments').t`CVC`,
             invalidCardNumberMessage: c('Payments.Error').t`Invalid card number`,
             invalidCardExpiryMessage: c('Payments.Error').t`Invalid expiration date`,
-            invalidCardCvcMessage: c('Payments.Error').t`Invalid securiry code`,
+            invalidCardCvcMessage: c('Payments.Error').t`Invalid security code`,
         };
     };
 
