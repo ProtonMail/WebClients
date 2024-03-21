@@ -65,7 +65,7 @@ const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
             return {
                 ...base,
                 type: 'login',
-                content: { ...data.login, passkeys: data.login.passkeys.map(sanitizeBuffers) },
+                content: { ...data.login, passkeys: (data.login.passkeys ?? []).map(sanitizeBuffers) },
             };
         case 'note':
             return { ...base, type: 'note', content: data.note };
