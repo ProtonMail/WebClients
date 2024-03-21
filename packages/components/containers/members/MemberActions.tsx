@@ -19,7 +19,7 @@ import { DropdownActions } from '../../components';
 interface Props {
     member: EnhancedMember;
     onLogin: (member: EnhancedMember) => void;
-    onAddAddress: (member: EnhancedMember) => void;
+    onAddAddress?: (member: EnhancedMember) => void;
     onChangePassword: (member: EnhancedMember) => void;
     onEdit: (member: EnhancedMember) => void;
     onDelete: (member: EnhancedMember) => void;
@@ -60,8 +60,6 @@ const MemberActions = ({
         getShouldSetupMemberKeys(member) &&
         addresses?.length;
 
-    const canAddAddressMember = addresses && addresses.length === 0;
-
     const canLogin =
         !disableMemberSignIn &&
         APP_NAME !== APPS.PROTONVPN_SETTINGS &&
@@ -93,7 +91,7 @@ const MemberActions = ({
                 onLogin(member);
             },
         },
-        canAddAddressMember && {
+        onAddAddress && {
             text: c('Member action').t`Add address`,
             onClick: () => {
                 onAddAddress(member);
