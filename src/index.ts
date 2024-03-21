@@ -3,11 +3,12 @@ import Logger from "electron-log";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
+import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
-import { checkForUpdates } from "./update";
+import { checkForUpdates, updateDownloaded } from "./update";
 import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
@@ -90,6 +91,17 @@ if (!gotTheLock) {
             cache: false,
         });
 
+        app.on("activate", () => {
+            if (isMac) {
+                getMainWindow()?.show();
+                return;
+            }
+
+            if (!getMainWindow()) {
+                return viewCreationAppStartup(secureSession);
+            }
+        });
+
         viewCreationAppStartup(secureSession);
         const mailView = getMailView();
         if (hasTrialEnded() && mailView) {
@@ -132,6 +144,17 @@ if (!gotTheLock) {
         });
     });
 }
+
+// Only used on macOS to save the windows position when CMD+Q is used
+app.on("before-quit", () => {
+    const mainWindow = getMainWindow();
+    if (!mainWindow || !isMac || updateDownloaded) {
+        return;
+    }
+
+    saveWindowBounds(mainWindow);
+    mainWindow.destroy();
+});
 
 app.on("window-all-closed", () => {
     if (!isMac) {

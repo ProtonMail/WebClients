@@ -1,6 +1,7 @@
 import { BrowserWindow, Rectangle } from "electron";
 import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
+import { updateDownloaded } from "../update";
 
 const store = new Store();
 
@@ -21,7 +22,7 @@ export const getWindowBounds = () => {
 };
 
 export const saveWindowBounds = (window?: BrowserWindow) => {
-    if (!window || window.isFullScreen()) {
+    if (!window || window.isFullScreen() || window.isDestroyed() || updateDownloaded) {
         return;
     }
 

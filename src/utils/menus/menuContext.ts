@@ -106,7 +106,7 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
     return template;
 };
 
-export const createContextMenu = (props: ContextMenuParams, view: BrowserView) => {
+export const createContextMenu = (props: ContextMenuParams, view: BrowserView): Menu | undefined => {
     const spellCheckTemplate = getContextMenuSpellCheck(props, view);
     const flagsTemplate = getContextEditFlags(props);
     const context = getContextMenu(props, spellCheckTemplate.length > 0 || flagsTemplate.length > 0);
@@ -117,5 +117,5 @@ export const createContextMenu = (props: ContextMenuParams, view: BrowserView) =
         return Menu.buildFromTemplate(template);
     }
 
-    return new Menu();
+    return undefined;
 };
