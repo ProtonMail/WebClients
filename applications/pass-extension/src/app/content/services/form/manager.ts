@@ -17,16 +17,16 @@ import type { MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
+import throttle from '@proton/utils/throttle';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
 
 export type FormManagerState = {
     /* form manager state flag */
     active: boolean;
-    /* ongoing detection flag */
-    busy: boolean;
     /* detection request */
     detectionRequest: number;
+    /* mutation observer watching the DOM tree */
     observer: MaybeNull<MutationObserver>;
     /* mutations counter for sanity checks */
     staleMutationsCount: number;
@@ -35,6 +35,7 @@ export type FormManagerState = {
 };
 
 const ATTRIBUTES_FILTER = ['style', 'class'];
+
 const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => ({
     childList: true,
     subtree: true,
@@ -46,7 +47,6 @@ const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => (
 export const createFormManager = (options: FormManagerOptions) => {
     const state: FormManagerState = {
         active: false,
-        busy: false,
         detectionRequest: -1,
         observer: null,
         staleMutationsCount: 0,
@@ -76,20 +76,22 @@ export const createFormManager = (options: FormManagerOptions) => {
     };
 
     /**
-     * Run form detection asynchronously in an idle callback to prevent UI blocking.
-     * - Trigger garbage collection on each detection run to ensure accurate autosave &
-     *   autofill reconciliation against the current page state.
-     * - Recycle/create form handles and reconcile their fields for each detected form.
-     * - Reconcile autosave on each detection run.
-     * - Returns a boolean flag indicating whether the detection was executed.
+     * Asynchronously runs form detection with throttling to optimize performance.
+     * Uses a combination of throttle, leading/trailing edge, and requestIdleCallback
+     * mechanisms to prevent UI blocking and efficiently manage detection tasks.
+     * - Recycles and/or creates form handles for each detected form and reconciliates accordingly.
+     * - Performs autosave reconciliation on each detection run to capture any changes made to form data.
+     * - Returns a boolean flag indicating whether the detection was executed successfully
      */
-    const runDetection = debounce(
+    const runDetection = throttle(
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
             garbagecollect();
+
+            /* if there is an on-going detection, early return */
+            if (state.detectionRequest !== -1) return false;
+
             if (await ctx?.service.detector.shouldRunDetection()) {
                 state.detectionRequest = requestIdleCallback(async () => {
-                    state.busy = true;
-
                     if (state.active) {
                         logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
@@ -110,33 +112,32 @@ export const createFormManager = (options: FormManagerOptions) => {
                             await (!didPrompt && ctx?.service.autosave.reconciliate());
 
                             options.onDetection(getTrackedForms());
-                            state.busy = false;
                         } catch (err) {
                             logger.warn(`[FormTracker::Detector] ${err}`);
                         }
                     }
+
+                    /* reset detection state when finished */
+                    state.detectionRequest = -1;
                 });
 
                 return true;
             } else clearDetectionCache();
 
-            state.busy = false;
             void ctx?.service.autosave.reconciliate();
             return false;
         }),
-        250
+        250,
+        { leading: true, trailing: true }
     );
 
-    const detect = async (options: { reason: string; flush?: boolean }) => {
-        if (state.busy || !state.active) return false;
-        cancelIdleCallback(state.detectionRequest);
-
-        if (options.flush) {
-            void runDetection(options.reason);
-            return Boolean(await runDetection.flush());
+    const detect = async (options: { reason: string }) => {
+        if (!state.active) {
+            cancelIdleCallback(state.detectionRequest);
+            state.detectionRequest = -1;
         }
 
-        return Boolean(await runDetection(options.reason));
+        return runDetection(options.reason);
     };
 
     /* if a new field was added to a currently ignored form :
@@ -243,13 +244,15 @@ export const createFormManager = (options: FormManagerOptions) => {
     };
 
     const destroy = () => {
+        cancelIdleCallback(state.detectionRequest);
+        runDetection.cancel();
+        onTransition.cancel();
+
         state.active = false;
-        state.busy = false;
+        state.detectionRequest = -1;
         state.observer = null;
         state.staleMutationsCount = 0;
 
-        cancelIdleCallback(state.detectionRequest);
-        runDetection.cancel();
         listeners.removeAll();
 
         state.trackedForms.forEach((form) => detachTrackedForm(form.element));
