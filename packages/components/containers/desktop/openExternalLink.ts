@@ -1,6 +1,7 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 export const freeTrialUpgradeClick = (upsellRef: string) => {
@@ -26,3 +27,12 @@ export const openLinkInBrowser = (url: string) => {
         window.ipcInboxMessageBroker!.send('openExternal', url);
     }
 };
+
+export function redirectToAccountApp() {
+    if (isElectronApp) {
+        openLinkInBrowser(getAppHref('/mail/dashboard', APPS.PROTONACCOUNT));
+        return true;
+    }
+
+    return false;
+}
