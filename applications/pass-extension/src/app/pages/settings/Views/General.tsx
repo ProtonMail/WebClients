@@ -5,4 +5,8 @@ import { Behaviors } from 'proton-pass-extension/lib/components/Settings/Behavio
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Locale } from '@proton/pass/components/Settings/Locale';
 
-export const General: FC = () => [<Locale />, <Behaviors />, <ApplicationLogs style={{ '--h-custom': '18.75rem' }} />];
+export const General: FC = () => [
+    <Locale key="locale" />,
+    <Behaviors key="behaviors" />,
+    <ApplicationLogs key="logs" style={{ '--h-custom': '18.75rem' }} />,
+];
