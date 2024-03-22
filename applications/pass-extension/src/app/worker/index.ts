@@ -26,8 +26,8 @@ if (BUILD_TARGET === 'chrome') {
         /* In order to alleviate MV3 service worker potentially ending up
          * in a broken state after an update or a manual refresh, force the
          * incoming service worker to skip its waiting state
-         * https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66
-         * return globalScope.skipWaiting(); // fixed in chrome v117 */
+         * https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
+        return globalScope.skipWaiting();
     };
 }
 

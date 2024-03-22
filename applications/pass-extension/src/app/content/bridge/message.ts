@@ -1,6 +1,5 @@
 import type { MessageFailure, WorkerResponse } from '@proton/pass/types';
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -76,7 +75,7 @@ export const createMessageBridge = () => {
             window.addEventListener('message', handleMessage);
             return await response;
         } catch (err: unknown) {
-            return { type: 'error', error: getErrorMessage(err) };
+            return { type: 'error', error: err instanceof Error ? err.message : 'Unknown error' };
         } finally {
             window.removeEventListener('message', handleMessage);
             options?.signal?.removeEventListener('abort', abort);
