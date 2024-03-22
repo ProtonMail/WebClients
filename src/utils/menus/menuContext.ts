@@ -96,10 +96,6 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
             label: c("Conext menu").t`Save image as…`,
             click: () => getMainWindow()?.webContents.downloadURL(props.srcURL),
         });
-        template.push({
-            label: c("Context menu").t`Copy image`,
-            click: () => getMainWindow()?.webContents.copyImageAt(props.x, props.y),
-        });
         template.push({ type: "separator" });
     }
 
