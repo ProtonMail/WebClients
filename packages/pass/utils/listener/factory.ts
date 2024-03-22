@@ -65,7 +65,11 @@ export const createListenerStore = () => {
         return noop;
     };
 
-    const addObserver = (target: Node, mutationCb: MutationCallback, options?: MutationObserverInit) => {
+    const addObserver = (
+        target: Node,
+        mutationCb: MutationCallback,
+        options?: MutationObserverInit
+    ): MutationObserver => {
         const observer = new MutationObserver(mutationCb);
 
         const disconnect = observer.disconnect;
@@ -77,6 +81,8 @@ export const createListenerStore = () => {
 
         listeners.push({ kind: 'observer', observer });
         observer.observe(target, options);
+
+        return observer;
     };
 
     const addResizeObserver = (target: Element, resizeCb: ResizeObserverCallback) => {
