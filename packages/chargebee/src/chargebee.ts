@@ -33,3 +33,30 @@ export function getChargebeeInstance() {
 
     return chargebee;
 }
+
+export function isChargebeeLoaded(): boolean {
+    return !!(window as any).Chargebee;
+}
+
+export async function wait(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export async function pollUntilLoaded(): Promise<void> {
+    const timeStep = 500;
+    const maxTime = 55000;
+
+    let timeElapsed = 0;
+    while (timeElapsed < maxTime) {
+        if (isChargebeeLoaded()) {
+            addCheckpoint('chargebee.loaded', {
+                timeElapsed,
+            });
+            return;
+        }
+        await wait(timeStep);
+        timeElapsed += timeStep;
+    }
+
+    throw new Error('Chargebee did not load');
+}
