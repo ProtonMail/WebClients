@@ -1,3 +1,10 @@
+### Version 1.16.3
+
+-   Detect if navigator credentials API is available before intercepting
+-   Fix corejs conflicts in webauthn content-script
+-   Reduce webauthn content-script size
+-   Improve autofill edge-cases (ie: idmobile.co.uk)
+
 ### Version 1.16.2
 
 -   Fix injected notification overlay indexing (fixes coinbase passkey setup)
