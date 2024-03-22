@@ -136,7 +136,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             port.onMessage.addListener(onPortMessage);
             context.service.formManager.observe();
 
-            await context.service.formManager.detect({ reason: 'InitialLoad', flush: true }).catch(noop);
+            await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
         } else context.destroy({ reason: 'Start failure' });
     };
 
