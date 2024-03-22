@@ -983,6 +983,21 @@ const SingleSignupContainerV2 = ({
         };
     };
 
+    const getTelemetryParams = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
+        const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
+        const plan = getPlanNameFromIDs(subscriptionData.planIDs);
+
+        const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
+
+        return {
+            method,
+            overrides: {
+                plan,
+                flow,
+            },
+        };
+    };
+
     const handleSetupExistingUser = async (cache: UserCacheResult) => {
         const setupMnemonic = await getMnemonicSetup();
 
@@ -1003,7 +1018,21 @@ const SingleSignupContainerV2 = ({
         };
 
         const run = async () => {
-            await handleSubscribeUser(silentApi, cache.subscriptionData, undefined, productParam);
+            await handleSubscribeUser(
+                silentApi,
+                cache.subscriptionData,
+                undefined,
+                productParam,
+                () => {
+                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
+                    reportPaymentSuccess(method, overrides);
+                },
+                async () => {
+                    await wait(0);
+                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
+                    reportPaymentFailure(method, overrides);
+                }
+            );
 
             if (cache.setupData) {
                 return cache.setupData;
@@ -1027,24 +1056,6 @@ const SingleSignupContainerV2 = ({
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
         const setupMnemonic = await getMnemonicSetup();
 
-        const getTelemetryParams = () => {
-            const subscriptionData = cache.subscriptionData;
-
-            const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
-            const plan = getPlanNameFromIDs(subscriptionData.planIDs);
-
-            const isAuthenticated = !!model.session?.UID;
-            const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
-
-            return {
-                method,
-                overrides: {
-                    plan,
-                    flow,
-                },
-            };
-        };
-
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
@@ -1052,7 +1063,7 @@ const SingleSignupContainerV2 = ({
                 ignoreVPN: true,
                 setupMnemonic,
                 reportPaymentSuccess: () => {
-                    const { method, overrides } = getTelemetryParams();
+                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
                     reportPaymentSuccess(method, overrides);
                 },
                 reportPaymentFailure: async () => {
@@ -1061,7 +1072,7 @@ const SingleSignupContainerV2 = ({
                     // This delay is to ensure that the reportPaymentFailure is called after the abort controller
                     // is called
                     await wait(0);
-                    const { method, overrides } = getTelemetryParams();
+                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
                     reportPaymentFailure(method, overrides);
                 },
             }),
