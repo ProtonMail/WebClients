@@ -13,6 +13,7 @@ import {
     getParentFormPrediction,
     removeClassifierFlags,
 } from '@proton/pass/fathom';
+import type { MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
@@ -26,15 +27,29 @@ export type FormManagerState = {
     busy: boolean;
     /* detection request */
     detectionRequest: number;
+    observer: MaybeNull<MutationObserver>;
+    /* mutations counter for sanity checks */
+    staleMutationsCount: number;
     /* tracked forms have been detected */
     trackedForms: Map<HTMLElement, FormHandle>;
 };
+
+const ATTRIBUTES_FILTER = ['style', 'class'];
+const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => ({
+    childList: true,
+    subtree: true,
+    attributeFilter,
+    attributes: true,
+    attributeOldValue: true,
+});
 
 export const createFormManager = (options: FormManagerOptions) => {
     const state: FormManagerState = {
         active: false,
         busy: false,
         detectionRequest: -1,
+        observer: null,
+        staleMutationsCount: 0,
         trackedForms: new Map(),
     };
 
@@ -163,6 +178,8 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onMutation = (mutations: MutationRecord[]) => {
         const triggerFormChange = mutations.some((mutation) => {
             if (mutation.type === 'childList') {
+                state.staleMutationsCount = 0;
+
                 const deletedFields = Array.from(mutation.removedNodes).some(isNodeOfInterest);
                 const addedFields = Array.from(mutation.addedNodes).some(isNodeOfInterest);
 
@@ -173,8 +190,25 @@ export const createFormManager = (options: FormManagerOptions) => {
             }
 
             if (mutation.type === 'attributes') {
+                const { oldValue, attributeName } = mutation;
                 const target = mutation.target as HTMLElement;
-                return mutation.type === 'attributes' && hasUnprocessedFields(target);
+                const current = attributeName ? target?.getAttribute(attributeName) : null;
+
+                if (oldValue !== null && oldValue === current) state.staleMutationsCount++;
+                else state.staleMutationsCount = 0;
+
+                /** If we've detected 25 consecutive attribute mutations without changes,
+                 * it suggests a potential loop scenario with the MutationObserver. In such
+                 * cases, we filter out the specific attribute from further observation to
+                 * prevent the loop from continuing. This is a precautionary measure to address
+                 * certain configurations that can trigger mutation observer loops */
+                if (state.staleMutationsCount > 25) {
+                    const config = getObserverConfig(ATTRIBUTES_FILTER.filter((attr) => attr !== attributeName));
+                    state.observer?.disconnect();
+                    state.observer = listeners.addObserver(document.body, onMutation, config);
+                }
+
+                return hasUnprocessedFields(target);
             }
 
             return false;
@@ -202,14 +236,7 @@ export const createFormManager = (options: FormManagerOptions) => {
     const observe = () => {
         if (!state.active) {
             state.active = true;
-
-            listeners.addObserver(document.body, onMutation, {
-                childList: true,
-                subtree: true,
-                attributeFilter: ['style', 'class'],
-                attributes: true,
-            });
-
+            state.observer = listeners.addObserver(document.body, onMutation, getObserverConfig(ATTRIBUTES_FILTER));
             listeners.addListener(document.body, 'transitionend', onTransition);
             listeners.addListener(document.body, 'animationend', onTransition);
         }
@@ -218,6 +245,8 @@ export const createFormManager = (options: FormManagerOptions) => {
     const destroy = () => {
         state.active = false;
         state.busy = false;
+        state.observer = null;
+        state.staleMutationsCount = 0;
 
         cancelIdleCallback(state.detectionRequest);
         runDetection.cancel();
