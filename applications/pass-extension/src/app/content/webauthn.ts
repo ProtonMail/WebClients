@@ -14,18 +14,21 @@ import { clone, exporter, promise } from './bridge/utils';
 type CredentialsGet = typeof navigator.credentials.get;
 type CredentialsCreate = typeof navigator.credentials.create;
 
-/** In Firefox, DOM objects in content scripts receive an additional
- * property called `wrappedJSObject`. This property contains an "unwrapped"
- * version of the object, including any modifications made by page scripts.
- * This override is necessary to intercept and manipulate navigator APIs */
-const self = window.wrappedJSObject ?? window;
-const credentials = self.navigator.credentials;
-
-const create = credentials.create.bind(navigator.credentials);
-const get = credentials.get.bind(navigator.credentials);
-const Exception = window.DOMException;
-
 (() => {
+    /** In Firefox, DOM objects in content scripts receive an additional
+     * property called `wrappedJSObject`. This property contains an "unwrapped"
+     * version of the object, including any modifications made by page scripts.
+     * This override is necessary to intercept and manipulate navigator APIs */
+    const self = window.wrappedJSObject ?? window;
+    const credentials = self.navigator.credentials;
+    const webauthnSupported = typeof credentials?.get === 'function' && typeof credentials?.create === 'function';
+
+    if (!webauthnSupported) return;
+
+    const create = credentials.create.bind(navigator.credentials);
+    const get = credentials.get.bind(navigator.credentials);
+    const Exception = window.DOMException;
+
     const bridge = createMessageBridge();
     bridge.init();
 
