@@ -6,7 +6,7 @@ import {
     MessageBusResponse,
     PaymentIntent,
 } from '../lib';
-import { createChargebee, getChargebeeInstance } from './chargebee';
+import { createChargebee, getChargebeeInstance, pollUntilLoaded } from './chargebee';
 import { addCheckpoint } from './checkpoints';
 import { getConfiguration, setConfiguration } from './configuration';
 import {
@@ -511,6 +511,10 @@ async function cbInit() {
 }
 
 async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig) {
+    addCheckpoint('checking chargebee');
+    await pollUntilLoaded();
+    addCheckpoint('chargebee_loaded');
+
     setConfiguration(configuration);
     addCheckpoint('configuration_set');
     const cbInstance = createChargebee({
@@ -530,12 +534,6 @@ export async function initialize() {
     try {
         addCheckpoint('initialize_started');
 
-        window.addEventListener('error', (event) => {
-            addCheckpoint('window_error');
-            event.preventDefault();
-            getMessageBus().sendUnhandledErrorMessage(event.error);
-        });
-
         let promiseResolve!: (value: unknown) => void;
         let promiseReject!: (reason?: any) => void;
         const cbInstancePromise = new Promise<any>((resolve, reject) => {
@@ -543,7 +541,7 @@ export async function initialize() {
             promiseReject = reject;
         });
 
-        const rejectInterval = setInterval(() => {
+        const rejectTimeout = setTimeout(() => {
             promiseReject(new Error("Chargebee wasn't initialized"));
         }, 60000);
 
@@ -551,7 +549,7 @@ export async function initialize() {
             onSetConfiguration: async (configuration, sendResponseToParent) => {
                 addCheckpoint('set_configuration_started', configuration);
                 const cbInstance = await setConfigurationAndCreateChargebee(configuration);
-                clearInterval(rejectInterval);
+                clearTimeout(rejectTimeout);
                 promiseResolve(cbInstance);
                 sendResponseToParent({
                     status: 'success',
@@ -574,7 +572,7 @@ export async function initialize() {
 
         return await cbInstancePromise;
     } catch (error: any) {
-        addCheckpoint('sync_error');
+        addCheckpoint('sync_error', { error });
         getMessageBus().sendUnhandledErrorMessage(error);
     }
 }
