@@ -7,6 +7,7 @@ const presetEnvOpts = {
     bugfixes: true,
     useBuiltIns: 'usage',
     corejs: '3.29',
+    exclude: ['transform-typeof-symbol'],
 };
 
 module.exports = {

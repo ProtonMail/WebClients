@@ -28,6 +28,8 @@ export const createAutofill = (input: HTMLInputElement) => (data: string, option
             }),
         ]);
     } else {
+        input.value = data;
+
         dispatch([
             new KeyboardEvent('keydown', { bubbles: true }),
             /* `keypress` event for legacy websites support */
@@ -35,7 +37,7 @@ export const createAutofill = (input: HTMLInputElement) => (data: string, option
             new KeyboardEvent('keyup', { bubbles: true }),
         ]);
 
-        input.value = data;
+        if (input.value !== data) input.value = data;
 
         dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
     }
