@@ -30,6 +30,10 @@ export const hasPhoneSupport = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.PHONE_SUPPORT);
 };
 
+export const hasToMigrateOrgKey = (organization: Partial<Organization> = {}) => {
+    return hasBit(organization.Flags, ORGANIZATION_FLAGS.TO_MIGRATE_ORG_KEY);
+};
+
 export const hasBonuses = (organization: Partial<Organization> = {}) => {
     return !!organization.Flags || !!organization.LoyaltyCounter;
 };
@@ -63,9 +67,11 @@ export const humanReadableFlags = (organization: Partial<Organization> = {}) => 
     if (isProtoneer(organization)) {
         flags.push('Proton');
     }
-
     if (hasPhoneSupport(organization)) {
         flags.push('Phone Support');
+    }
+    if (hasToMigrateOrgKey(organization)) {
+        flags.push('Passwordless migration enabled');
     }
 
     return flags.length > 0 ? flags.join(', ') : '-';
