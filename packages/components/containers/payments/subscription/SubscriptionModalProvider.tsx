@@ -9,6 +9,7 @@ import noop from '@proton/utils/noop';
 
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../components';
 import { useOrganization, usePlans, useSubscription } from '../../../hooks';
+import { redirectToAccountApp } from '../../desktop/openExternalLink';
 import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionContainer, { SubscriptionContainerProps } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
@@ -151,6 +152,10 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             <SubscriptionModalContext.Provider
                 value={[
                     (props) => {
+                        if (redirectToAccountApp()) {
+                            return;
+                        }
+
                         if (loading || render) {
                             return;
                         }
