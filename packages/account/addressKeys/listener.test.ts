@@ -15,9 +15,8 @@ import { getModelState } from '../test';
 import { userReducer } from '../user';
 import { userKeysReducer } from '../userKeys';
 import * as addressKeysModule from './index';
-import { addressKeysReducer, addressKeysThunk, selectAddressKeys } from './index';
+import { addressKeysFulfilledAction, addressKeysReducer, addressKeysThunk, selectAddressKeys } from './index';
 import { addressKeysListener } from './listener';
-import { addressKeysModelThunk } from './thunk';
 
 const mockedAddressKeysThunk = jest.spyOn(addressKeysModule, 'addressKeysThunk');
 
@@ -112,7 +111,7 @@ describe('address keys keys listener', () => {
             addressKeys: initialState,
         });
         const newResult = [getKey(4), getKey(5)];
-        store.dispatch(addressKeysModelThunk.fulfilled(newResult, '1'));
+        store.dispatch(addressKeysFulfilledAction({ id: '1', value: newResult }));
         expect(selectAddressKeys(store.getState())['1'].value).toEqual(newResult);
         expect(selectAddressKeys(store.getState())['2'].value).toBe(initialState['2'].value);
 
@@ -154,7 +153,7 @@ describe('address keys keys listener', () => {
 
         const result = [getKey(3)];
         mockedGetDecryptedAddressKeysHelper.mockReturnValue(result);
-        await store.dispatch(addressKeysThunk({ thunkArg: '2' }));
+        await store.dispatch(addressKeysThunk({ addressID: '2' }));
         expect(mockedAddressKeysThunk).toHaveBeenCalledTimes(1);
         expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': { value: result } });
 

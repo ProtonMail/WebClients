@@ -11,7 +11,7 @@ import { type AddressKeysState, addressKeysThunk, getAllAddressKeysAction, selec
 
 export const useGetAddressKeys = () => {
     const dispatch = baseUseDispatch<ThunkDispatch<AddressKeysState, ProtonThunkArguments, Action>>();
-    return useCallback((addressID: string) => dispatch(addressKeysThunk({ thunkArg: addressID })), [dispatch]);
+    return useCallback((addressID: string) => dispatch(addressKeysThunk({ addressID })), [dispatch]);
 };
 
 type Result = { value: { address: Address; keys: DecryptedAddressKey[] }[] | undefined; loading: boolean };

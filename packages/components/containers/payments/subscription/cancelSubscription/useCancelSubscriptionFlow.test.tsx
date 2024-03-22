@@ -192,7 +192,10 @@ describe('downgrade subscription', () => {
                 subscription: getModelState(mailSubscription),
                 user: getModelState({ ...user, hasPaidMail: true, Subscribed: PRODUCT_BIT.Mail }),
                 organization: getModelState(organization),
-                plans: getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
+                plans: {
+                    ...getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
+                    meta: { fetchedAt: Date.now() },
+                },
             },
         });
 

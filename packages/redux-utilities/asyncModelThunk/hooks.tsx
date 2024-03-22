@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useEffect, useRef } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
@@ -7,11 +7,12 @@ import type { ThunkAction } from 'redux-thunk';
 import {
     baseUseDispatch as useDispatch,
     baseUseSelector as useSelector,
+    baseUseStore as useStore,
 } from '@proton/redux-shared-store/sharedContext';
 
 import type { ReducerValue } from './interface';
 
-const createQueue = <T>() => {
+const createQueue = <T,>() => {
     let queue: T[] = [];
     const enqueue = (value: T) => {
         return queue.push(value);
@@ -33,12 +34,28 @@ const createQueue = <T>() => {
     };
 };
 
-const queue = createQueue();
+export type Queue = ReturnType<typeof createQueue>;
+export const ModelQueueContext = createContext<Queue | null>(null);
 
-export const useModelThunkDispatcher = (store: any) => {
+export const ModelThunkDispatcher = ({ children }: { children: ReactNode }) => {
+    const store = useStore();
+    const state = useRef<Queue | null>(null);
+
+    if (!state.current) {
+        state.current = createQueue();
+    }
+
+    const queue = state.current;
+
     useEffect(() => {
+        if (!queue) {
+            return;
+        }
+
         const dispatchAll = () => {
-            queue.consume((thunk: any) => store.dispatch(thunk()));
+            queue.consume((thunk: any) => {
+                store.dispatch(thunk());
+            });
         };
 
         let queued = false;
@@ -84,7 +101,9 @@ export const useModelThunkDispatcher = (store: any) => {
             queue.resetId();
             cancel();
         };
-    }, [store]);
+    }, [store, queue]);
+
+    return <ModelQueueContext.Provider value={queue}>{children}</ModelQueueContext.Provider>;
 };
 
 export const createHooks = <State, Extra, Returned, ThunkArg = void>(
@@ -96,17 +115,18 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
         return useCallback((arg?: ThunkArg) => dispatch(thunk(arg)), []);
     };
 
-    let queued = {
+    let queueRef: { state: boolean; queue: Queue | null; id: null | any } = {
         state: false,
-        id: queue.getId(),
+        queue: null,
+        id: null,
     };
 
     const hookSelector = createSelector(selector, (result): [Returned | undefined, boolean] => {
         const { error, value } = result;
 
-        if ((error !== undefined || value !== undefined) && queued.state) {
+        if ((error !== undefined || value !== undefined) && queueRef.state) {
             // Reset the queued state when the thunk has resolved.
-            queued.state = false;
+            queueRef.state = false;
         }
 
         if (error) {
@@ -116,13 +136,13 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
             throw thrownError;
         }
 
-        if (queued.state && queue.getId() !== queued.id) {
-            queued.state = false;
+        if (queueRef.state && queueRef.queue?.getId() !== queueRef.id) {
+            queueRef.state = false;
         }
 
-        if (value === undefined && !queued.state) {
-            queued.state = true;
-            queue.enqueue(thunk);
+        if (value === undefined && !queueRef.state && queueRef.queue) {
+            queueRef.state = true;
+            queueRef.queue.enqueue(thunk);
         }
 
         const loading = value === undefined;
@@ -130,6 +150,7 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
     });
 
     const useValue = (): [Returned | undefined, boolean] => {
+        queueRef.queue = useContext(ModelQueueContext);
         return useSelector(hookSelector);
     };
 
