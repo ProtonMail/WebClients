@@ -190,24 +190,39 @@ function getChargebeeErrorCode(error: any) {
     return error?.error?.code;
 }
 
-export function getChargebeeErrorMessage(error: any) {
-    const errorCode = getChargebeeErrorCode(error);
+function getErrorMessageByCode(errorCode: string): string | undefined {
+    switch (errorCode) {
+        case 'card_declined':
+            return c('Payments.Error')
+                .t`Your card was declined. Please try a different card or contact your bank to authorize the charge.`;
 
-    const errors: Record<string, string> = {
-        card_declined: c('Payments.Error')
-            .t`Your card was declined. Please try a different card or contact your bank to authorize the charge.`,
-        payment_intent_authentication_failure: c('Payments.Error')
-            .t`We are unable to authenticate your payment method. Please choose a different payment method or try again.`,
-    };
+        case 'payment_intent_authentication_failure':
+        case 'payment_authentication_failed':
+            return c('Payments.Error')
+                .t`We are unable to authenticate your payment method. Please choose a different payment method or try again.`;
+
+        default:
+            return undefined;
+    }
+}
+
+function getErrorMessage(error: any) {
+    return getErrorMessageByCode(getChargebeeErrorCode(error));
+}
+
+export function getChargebeeErrorMessage(error: any) {
+    const errorMessage = getErrorMessage(error);
 
     const defaultError = c('Payments.Error').t`Something went wrong. Please try again later.`;
 
+    // We are using || instead of ?? because the error might be an empty string, and we want to skip it in this case
+    // It's better to show some error than an empty string
     return (
-        errors[errorCode] ??
-        error?.displayMessage ??
-        error?.error?.displayMessage ??
-        error?.message ??
-        error?.error?.message ??
+        errorMessage ||
+        error?.displayMessage ||
+        error?.error?.displayMessage ||
+        error?.message ||
+        error?.error?.message ||
         defaultError
     );
 }
