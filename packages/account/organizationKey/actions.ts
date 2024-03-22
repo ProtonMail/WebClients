@@ -460,7 +460,7 @@ export const getKeyRotationPayload = ({
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
-        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: primaryAddress.ID }));
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
@@ -513,7 +513,7 @@ export const setAdminRoles = ({
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
-        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: primaryAddress.ID }));
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
@@ -651,7 +651,7 @@ export const createPasswordlessOrganizationKeys = ({
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
-        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: primaryAddress.ID }));
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
@@ -704,7 +704,7 @@ export const rotatePasswordlessOrganizationKeys = ({
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
-        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: primaryAddress.ID }));
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
@@ -777,7 +777,7 @@ export const prepareAcceptOrganizationKeyInvite = ({
             throw new Error('Missing encryption address');
         }
 
-        const addressKeys = await dispatch(addressKeysThunk({ thunkArg: targetAddress.ID }));
+        const addressKeys = await dispatch(addressKeysThunk({ addressID: targetAddress.ID }));
         if (!addressKeys.length) {
             throw new Error('Missing address keys');
         }
@@ -866,7 +866,7 @@ export const migrateOrganizationKeyPasswordless = (): ThunkAction<
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
-        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: primaryAddress.ID }));
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
@@ -953,7 +953,7 @@ export const migrateOrganizationKeyPasswordlessPrivateAdmin = (): ThunkAction<
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
-        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ addressID: primaryAddress.ID }));
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }

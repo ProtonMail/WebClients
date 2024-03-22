@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
-import { render, waitFor } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 
@@ -104,10 +104,10 @@ describe('hooks', () => {
             </ProtonStoreProvider>
         );
 
-        expect(spy).toHaveBeenCalledTimes(1);
-
+        expect(spy).toHaveBeenCalledTimes(0);
         const div = getByTestId('result');
         expect(div).toHaveTextContent('undefined, true');
+
         await waitFor(() => expect(div).toHaveTextContent('42, false'));
 
         expect(spy).toHaveBeenCalledTimes(1);
@@ -138,7 +138,7 @@ describe('hooks', () => {
             </ProtonStoreProvider>
         );
 
-        expect(spy).toHaveBeenCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(0);
 
         const div = getByTestId('result');
         expect(div).toHaveTextContent('undefined, true');
@@ -154,7 +154,9 @@ describe('hooks', () => {
 
         expect(spy).toHaveBeenCalledTimes(1);
 
-        store.dispatch(slice.actions.reset());
+        act(() => {
+            store.dispatch(slice.actions.reset());
+        });
 
         render(
             <ProtonStoreProvider store={store}>
@@ -162,8 +164,8 @@ describe('hooks', () => {
             </ProtonStoreProvider>
         );
 
+        expect(spy).toHaveBeenCalledTimes(1);
         expect(div).toHaveTextContent('undefined, true');
-        expect(spy).toHaveBeenCalledTimes(2);
         await waitFor(() => expect(div).toHaveTextContent('42, false'));
 
         expect(spy).toHaveBeenCalledTimes(2);
