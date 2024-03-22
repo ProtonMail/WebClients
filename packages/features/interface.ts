@@ -31,7 +31,6 @@ export enum FeatureCode {
     AccountSecurityDismissed2FACard = 'AccountSecurityDismissed2FACard',
     AliasPromotion = 'AliasPromotion',
     AlmostAllMail = 'AlmostAllMail',
-    AlmostAllMailSpotlight = 'AlmostAllMailSpotlight',
     AutoAddHolidaysCalendars = 'AutoAddHolidaysCalendars',
     AutoDelete = 'AutoDelete',
     BlackFridayPromoShown = 'BlackFridayPromoShown',
