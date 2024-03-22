@@ -998,6 +998,25 @@ const SingleSignupContainerV2 = ({
         };
     };
 
+    const getReportPaymentSuccess = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
+        return () => {
+            const { method, overrides } = getTelemetryParams(subscriptionData, isAuthenticated);
+            reportPaymentSuccess(method, overrides);
+        };
+    };
+
+    const getReportPaymentFailure = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
+        return async () => {
+            // in case if fails, for example, on the subscription stage, then this page will abort all
+            // API calls by triggering startUnAuthFlow which in turn calls the abort controller.
+            // This delay is to ensure that the reportPaymentFailure is called after the abort controller
+            // is called
+            await wait(0);
+            const { method, overrides } = getTelemetryParams(subscriptionData, isAuthenticated);
+            reportPaymentFailure(method, overrides);
+        };
+    };
+
     const handleSetupExistingUser = async (cache: UserCacheResult) => {
         const setupMnemonic = await getMnemonicSetup();
 
@@ -1023,15 +1042,8 @@ const SingleSignupContainerV2 = ({
                 cache.subscriptionData,
                 undefined,
                 productParam,
-                () => {
-                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
-                    reportPaymentSuccess(method, overrides);
-                },
-                async () => {
-                    await wait(0);
-                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
-                    reportPaymentFailure(method, overrides);
-                }
+                getReportPaymentSuccess(cache.subscriptionData, !!model.session?.UID),
+                getReportPaymentFailure(cache.subscriptionData, !!model.session?.UID)
             );
 
             if (cache.setupData) {
@@ -1062,19 +1074,8 @@ const SingleSignupContainerV2 = ({
                 api: silentApi,
                 ignoreVPN: true,
                 setupMnemonic,
-                reportPaymentSuccess: () => {
-                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
-                    reportPaymentSuccess(method, overrides);
-                },
-                reportPaymentFailure: async () => {
-                    // in case if fails, for example, on the subscription stage, then this page will abort all
-                    // API calls by triggering startUnAuthFlow which in turn calls the abort controller.
-                    // This delay is to ensure that the reportPaymentFailure is called after the abort controller
-                    // is called
-                    await wait(0);
-                    const { method, overrides } = getTelemetryParams(cache.subscriptionData, !!model.session?.UID);
-                    reportPaymentFailure(method, overrides);
-                },
+                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, !!model.session?.UID),
+                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, !!model.session?.UID),
             }),
             wait(3500),
         ]);
