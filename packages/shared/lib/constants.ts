@@ -161,6 +161,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-pass',
         windowsClientID: 'windows-pass',
         macosClientID: 'macos-pass',
+        linuxClientID: 'linux-pass',
         icon: 'brand-proton-pass',
         settingsSlug: 'pass',
     },
