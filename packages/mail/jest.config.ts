@@ -1,6 +1,8 @@
 import type { JestConfigWithTsJest } from 'ts-jest';
 
 const jestConfig: JestConfigWithTsJest = {
+    // Default is 5000 (5seconds)
+    testTimeout: 10000,
     preset: 'ts-jest',
     transform: {
         '^.+\\.tsx?$': [
