@@ -88,12 +88,7 @@ export const addressKeysListener = (startListening: SharedStartListening<Address
             }
             await Promise.all(
                 changedAddresses.map((address) =>
-                    listenerApi.dispatch(
-                        addressKeysThunk({
-                            thunkArg: address.ID,
-                            forceFetch: true,
-                        })
-                    )
+                    listenerApi.dispatch(addressKeysThunk({ addressID: address.ID, forceFetch: true }))
                 )
             );
         },
@@ -137,7 +132,7 @@ export const addressKeysListener = (startListening: SharedStartListening<Address
             const addresses = await listenerApi.dispatch(addressesThunk());
             await Promise.all(
                 addresses.map((address) => {
-                    return listenerApi.dispatch(addressKeysThunk({ thunkArg: address.ID }));
+                    return listenerApi.dispatch(addressKeysThunk({ addressID: address.ID }));
                 })
             );
         },
