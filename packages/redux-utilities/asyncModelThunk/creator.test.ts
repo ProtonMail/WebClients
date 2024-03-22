@@ -91,12 +91,12 @@ describe('creator', () => {
 
         expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined });
         const promise = store.dispatch(thunkActionCreator.thunk());
-        expect(actions[1]).toEqual(thunkActionCreator.pending('default'));
+        expect(actions[1]).toEqual(thunkActionCreator.pending());
 
         await expect(promise).resolves.toEqual(value);
 
         expect(selectState(store.getState())).toEqual({ value: value, error: undefined });
-        expect(actions[2]).toEqual(thunkActionCreator.fulfilled(value, 'default'));
+        expect(actions[2]).toEqual(thunkActionCreator.fulfilled(value));
     });
 
     test("successfully returns previous promise when it's pending", async () => {
@@ -137,7 +137,7 @@ describe('creator', () => {
 
         expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined });
         const promise = store.dispatch(thunkActionCreator.thunk());
-        expect(actions[1]).toEqual(thunkActionCreator.pending('default'));
+        expect(actions[1]).toEqual(thunkActionCreator.pending());
 
         await expect(promise).rejects.toThrow(error);
 
@@ -146,7 +146,7 @@ describe('creator', () => {
             value: undefined,
             error: serializedError,
         });
-        expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError, 'default'));
+        expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError));
     });
 
     test('successfully retries after a failure', async () => {
@@ -164,7 +164,7 @@ describe('creator', () => {
 
         expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined });
         const promise = store.dispatch(thunkActionCreator.thunk());
-        expect(actions[1]).toEqual(thunkActionCreator.pending('default'));
+        expect(actions[1]).toEqual(thunkActionCreator.pending());
 
         await expect(promise).rejects.toThrow(error);
 
@@ -173,15 +173,15 @@ describe('creator', () => {
             value: undefined,
             error: serializedError,
         });
-        expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError, 'default'));
+        expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError));
 
         const successfulPromise = store.dispatch(thunkActionCreator.thunk());
         expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined });
-        expect(actions[4]).toEqual(thunkActionCreator.pending('default'));
+        expect(actions[4]).toEqual(thunkActionCreator.pending());
 
         await expect(successfulPromise).resolves.toEqual(value);
 
         expect(selectState(store.getState())).toEqual({ value: value, error: undefined });
-        expect(actions[5]).toEqual(thunkActionCreator.fulfilled(value, 'default'));
+        expect(actions[5]).toEqual(thunkActionCreator.fulfilled(value));
     });
 });
