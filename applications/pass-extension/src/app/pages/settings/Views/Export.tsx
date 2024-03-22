@@ -30,15 +30,13 @@ const confirmPassword = async (password: string) => {
     return result.type === 'success' && result.ok;
 };
 
-export const Export: FC = () => {
-    return (
-        <SettingsPanel title={c('Label').t`Export`}>
-            <Exporter
-                onConfirm={async (password) => {
-                    if (!(await confirmPassword(password))) throwError({ message: 'Session not confirmed' });
-                    if (!(await checkLock())) throwError({ message: 'Session is locked' });
-                }}
-            />
-        </SettingsPanel>
-    );
-};
+export const Export: FC = () => (
+    <SettingsPanel title={c('Label').t`Export`}>
+        <Exporter
+            onConfirm={async (password) => {
+                if (!(await confirmPassword(password))) throwError({ message: 'Session not confirmed' });
+                if (!(await checkLock())) throwError({ message: 'Session is locked' });
+            }}
+        />
+    </SettingsPanel>
+);
