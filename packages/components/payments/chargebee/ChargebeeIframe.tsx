@@ -339,9 +339,20 @@ export function useChargebeeHandles(
             return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
         },
         validateSavedCreditCard: async (payload: ChargebeeVerifySavedCardEventPayload) => {
-            return iframeAction('chargebee-verify-saved-card', payload, iframeRef, targetOrigin, signal, {
-                timeout: 600000,
-            });
+            try {
+                return await iframeAction('chargebee-verify-saved-card', payload, iframeRef, targetOrigin, signal, {
+                    timeout: 600000,
+                });
+            } catch (error) {
+                const errorMessage = getChargebeeErrorMessage(error);
+
+                createNotification({
+                    type: 'error',
+                    text: errorMessage,
+                });
+
+                throw error;
+            }
         },
         initializePaypal: async () => {
             const chargebeeInstanceConfig = await getConfig();
