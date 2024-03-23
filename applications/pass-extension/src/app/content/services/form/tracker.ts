@@ -2,6 +2,7 @@ import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle, FormHandle, FormTracker, FormTrackerState } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
+import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 
 import { FieldType, FormType, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -99,7 +100,14 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     const onSubmitHandler = withContext(async (ctx) => {
-        ctx?.service.iframe.dropdown?.close();
+        /** Certain websites (ie: login.live.com) will refocus input
+         * fields on form submit. This could potentially result in
+         * dropdown actions being triggered, so we create a trap */
+        form.getFields().forEach(({ element }) => actionTrap(element));
+
+        const dropdown = ctx?.service.iframe.dropdown;
+        if (dropdown?.getState().visible) dropdown?.close();
+
         await submit();
     });
 
