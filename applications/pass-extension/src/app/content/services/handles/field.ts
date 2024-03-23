@@ -33,7 +33,8 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
             const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
-            const current = dropdown?.getCurrentField()?.element;
+            const attachedField = dropdown?.getCurrentField();
+            const current = attachedField?.element;
             const opened = dropdown?.getState().visible;
 
             const shouldClose = opened && current !== target;
