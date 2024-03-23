@@ -30,7 +30,7 @@ type PredictionBestSelector<T extends string> = (a: PredictionResult<T>, b: Pred
  *
  * To keep track of these we leverage the `PROCESSED_INPUT_ATTR`
  * attribute which is added to processed fields. Run in async
- * `requestAnimationFrame` to avoid blocking the UI on costly
+ * `requestIdleCallback` to avoid blocking the UI on costly
  * visibility checks
  *
  * When considering dangling fields, only look
