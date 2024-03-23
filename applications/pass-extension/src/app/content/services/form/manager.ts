@@ -5,6 +5,7 @@ import {
     hasUnprocessedFields,
     hasUnprocessedForms,
     isNodeOfInterest,
+    purgeStaleSeenFields,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
@@ -102,6 +103,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
+
                                 state.trackedForms.set(options.form, formHandle);
                                 formHandle.reconciliate(options.formType, options.fields);
                                 formHandle.attach();
@@ -225,11 +227,17 @@ export const createFormManager = (options: FormManagerOptions) => {
      * event as we are listening for them on the `document.body` and will
      * catch all bubbling events. The function is debounced to ensure it runs
      * only when necessary, and only if there are unprocessed forms in the DOM.
+     * · Remove stale seen fields in case the transition would have affected the
+     *   underlying field features
      * · The detection is executed only if there are unprocessed forms
      * · The purpose is to catch appearing forms that may have been previously
      *   filtered out by the ML algorithm when it was first triggered */
     const onTransition = debounce(
-        () => requestAnimationFrame(() => hasUnprocessedForms() && detect({ reason: 'TransitionEnd' })),
+        ({ target }: Event) =>
+            requestAnimationFrame(() => {
+                if (target !== document.body) purgeStaleSeenFields(target as HTMLElement);
+                if (hasUnprocessedForms()) void detect({ reason: 'TransitionEnd' });
+            }),
         250,
         { leading: true }
     );
