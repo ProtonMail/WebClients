@@ -1,9 +1,11 @@
 ### Version 1.16.3
 
 -   Detect if navigator credentials API is available before intercepting
--   Fix corejs conflicts in webauthn content-script
 -   Reduce webauthn content-script size
 -   Improve autofill edge-cases (ie: idmobile.co.uk)
+-   Fine-tune form/field detection triggers
+-   Fix stalling injected dropdown on SPA multi-step forms
+-   Fix corejs conflicts in webauthn content-script
 
 ### Version 1.16.2
 
