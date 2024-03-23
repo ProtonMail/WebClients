@@ -135,9 +135,10 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (!state.active) {
             cancelIdleCallback(state.detectionRequest);
             state.detectionRequest = -1;
+            return;
         }
 
-        return runDetection(options.reason);
+        void runDetection(options.reason);
     };
 
     /* if a new field was added to a currently ignored form :
@@ -186,7 +187,6 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                 if (addedFields) onNewField(mutation.target as HTMLElement);
                 if (deletedFields) onDeletedField(mutation.target as HTMLElement);
-
                 return addedFields || deletedFields;
             }
 
