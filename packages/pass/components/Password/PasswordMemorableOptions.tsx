@@ -5,8 +5,9 @@ import { c, msgid } from 'ttag';
 import { Slider } from '@proton/atoms/Slider';
 import { Option, SelectTwo, Toggle } from '@proton/components/components';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+import { SeperatorOptions } from '@proton/pass/lib/password/constants';
 import type { MemorablePasswordOptions } from '@proton/pass/lib/password/memorable';
-import { SeperatorOptions, getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
+import { getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
 import clsx from '@proton/utils/clsx';
 
 type Props = UsePasswordGeneratorResult<'memorable'> & { advanced: boolean; dense?: boolean };

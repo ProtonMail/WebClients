@@ -11,8 +11,8 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, IFrameMessageType } from 'proton-pass-extension/app/content/types';
 
-import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
