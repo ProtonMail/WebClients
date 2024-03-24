@@ -5,9 +5,9 @@ const PRODUCTION = ENV === 'production';
 
 const presetEnvOpts = {
     bugfixes: true,
-    useBuiltIns: 'usage',
     corejs: '3.29',
-    exclude: ['transform-typeof-symbol'],
+    exclude: ['transform-typeof-symbol', 'es.array.push', 'web.dom-exception.stack'],
+    useBuiltIns: 'usage',
 };
 
 module.exports = {
