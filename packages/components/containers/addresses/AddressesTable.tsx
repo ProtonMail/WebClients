@@ -15,6 +15,7 @@ interface AddressesTableProps {
     members: Member[];
     memberAddressesMap?: { [key: string]: (Address | PartialMemberAddress)[] | undefined };
     organizationKey?: CachedOrganizationKey;
+    allowAddressDeletion: boolean;
 }
 
 const AddressesTable = ({
@@ -24,6 +25,7 @@ const AddressesTable = ({
     members,
     memberAddressesMap,
     organizationKey,
+    allowAddressDeletion,
 }: AddressesTableProps) => {
     return (
         <Table responsive="cards" hasActions>
@@ -82,6 +84,7 @@ const AddressesTable = ({
                                             user,
                                             organizationKey,
                                         })}
+                                        allowAddressDeletion={allowAddressDeletion}
                                     />,
                                 ].filter(Boolean)}
                             />
