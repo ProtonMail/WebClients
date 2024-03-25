@@ -43,7 +43,7 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         private events: ChargebeeIframeEvents,
         private isCredit: boolean,
         private chargebeeKillSwitch: ChargebeeKillSwitch,
-        private paypalModalHandles: ChargebeePaypalModalHandles | undefined,
+        public paypalModalHandles: ChargebeePaypalModalHandles | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
         super(
