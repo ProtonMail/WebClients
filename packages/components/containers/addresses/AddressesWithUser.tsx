@@ -33,9 +33,10 @@ interface Props {
     member?: Member;
     organizationKey?: CachedOrganizationKey;
     hasDescription?: boolean;
+    allowAddressDeletion: boolean;
 }
 
-const AddressesUser = ({ user, organizationKey, member, hasDescription = true }: Props) => {
+const AddressesUser = ({ user, organizationKey, member, hasDescription = true, allowAddressDeletion }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
@@ -176,6 +177,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true }:
                                                 user,
                                                 organizationKey,
                                             })}
+                                            allowAddressDeletion={allowAddressDeletion}
                                         />,
                                     ]}
                                 />
