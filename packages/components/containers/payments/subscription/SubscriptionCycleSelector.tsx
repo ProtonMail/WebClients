@@ -18,6 +18,7 @@ import {
     Currency,
     PlanIDs,
     PlansMap,
+    PriceType,
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
@@ -257,6 +258,7 @@ export interface Props {
     faded?: boolean;
     subscription?: SubscriptionModel;
     defaultCycles?: CYCLE[];
+    priceType?: PriceType;
 }
 
 const SubscriptionCycleSelector = ({
@@ -271,12 +273,13 @@ const SubscriptionCycleSelector = ({
     faded,
     subscription,
     defaultCycles,
+    priceType,
 }: Props) => {
     const cycles = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
 
     const monthlySuffix = getMonthlySuffix(planIDs);
 
-    const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+    const pricing = getPricingFromPlanIDs(planIDs, plansMap, priceType);
 
     const totals = allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
         acc[cycle] = getTotalFromPricing(pricing, cycle);

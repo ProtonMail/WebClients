@@ -13,7 +13,11 @@ import {
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { getIpPricePerMonth, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
+import {
+    getIpPricePerMonth,
+    getOverriddenPricePerCycle,
+    hasMaximumCycle,
+} from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -23,6 +27,7 @@ import {
     Plan,
     PlanIDs,
     PlansMap,
+    PriceType,
     SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
@@ -112,8 +117,8 @@ interface Props {
     vpnIntroPricingVariant: VPNIntroPricingVariant;
 }
 
-export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
-    const price = plan.Pricing[cycle];
+export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap, priceType?: PriceType): number | null => {
+    const price = getOverriddenPricePerCycle(plan, cycle, priceType);
     if (price === undefined) {
         return null;
     }
@@ -135,7 +140,7 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
 
         const addonName = plansThatMustUseAddonPricing[planWithAddon];
         const memberAddon = plansMap[addonName];
-        const memberPrice = memberAddon?.Pricing[cycle];
+        const memberPrice = memberAddon ? getOverriddenPricePerCycle(memberAddon, cycle, priceType) : undefined;
         if (memberPrice === undefined) {
             continue;
         }
