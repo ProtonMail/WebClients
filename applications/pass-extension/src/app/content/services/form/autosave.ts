@@ -40,9 +40,10 @@ export const createAutosaveService = () => {
              * The submit state is checked to avoid stashing form submission
              * data for `FORM_TYPE_PRESENT` in case reconciliation happens
              * as a result of a form submission. */
-            const submissionTypeMatch = ctx?.service.formManager
-                .getTrackedForms()
-                .some(({ formType, tracker }) => formType === type && !tracker?.getState().isSubmitting);
+            const forms = ctx?.service.formManager.getTrackedForms() ?? [];
+            const typedForms = forms.filter(({ formType }) => formType === type);
+            const submissionTypeMatch = typedForms.length > 0;
+            const submitting = typedForms?.some(({ tracker }) => tracker?.getState().isSubmitting);
 
             const formTypeChangedOrRemoved = !submissionTypeMatch;
             const canCommit = domainmatch && formTypeChangedOrRemoved;
@@ -65,10 +66,11 @@ export const createAutosaveService = () => {
 
             /* Stash the form submission if it meets the following conditions:
              * - The form type is still detected on the current page.
+             * - The form is not current submitting
              * - The submission is not "partial" or does not have a username value.
              * This prevents data loss on multi-step forms while properly stashing
              * when navigating back and forth on such forms. */
-            if (submissionTypeMatch && (!partial || !submission.data.username)) {
+            if (submissionTypeMatch && !submitting && (!partial || !submission.data.username)) {
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.FORM_ENTRY_STASH,
