@@ -11,6 +11,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { isSystemLabel } from 'proton-mail/helpers/labels';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
@@ -59,7 +60,7 @@ export const applyMarkAsChangesOnConversation = (
         status === MARK_AS_STATUS.UNREAD ? NumUnread + 1 : Math.max(NumUnread - ContextNumUnread, 0);
     const updatedContextNumUnread = status === MARK_AS_STATUS.UNREAD ? ContextNumUnread + 1 : 0;
     const updatedLabels = Labels.map((label) =>
-        label.ID === labelID
+        label.ID === labelID || isSystemLabel(label.ID)
             ? {
                   ...label,
                   ContextNumUnread: updatedContextNumUnread,
@@ -88,7 +89,7 @@ const applyMarkAsChangesOnConversationWithMessages = (
     const updatedContextNumUnread =
         status === MARK_AS_STATUS.UNREAD ? ContextNumUnread + 1 : Math.max(ContextNumUnread - 1, 0);
     const updatedLabels = Labels.map((label) =>
-        label.ID === labelID
+        label.ID === labelID || isSystemLabel(label.ID)
             ? {
                   ...label,
                   ContextNumUnread: updatedContextNumUnread,
