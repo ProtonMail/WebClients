@@ -14,13 +14,15 @@ import {
     ChargebeeKillSwitch,
     PaymentVerificatorV5,
 } from '../core';
-import { PaymentProcessorHook } from './interface';
+import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
     onChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>;
     verifyOnly?: boolean;
+    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
+    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 export interface Dependencies {
@@ -48,7 +50,7 @@ export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overri
 } & Overrides;
 
 export const useChargebeeCard = (
-    { amountAndCurrency, onChargeable, verifyOnly }: Props,
+    { amountAndCurrency, onChargeable, verifyOnly, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
     { api, verifyPayment, handles, events, chargebeeKillSwitch }: Dependencies
 ): ChargebeeCardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -122,6 +124,8 @@ export const useChargebeeCard = (
     };
 
     const processPaymentToken = async () => {
+        onProcessPaymentToken?.('chargebee-card');
+
         if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -130,6 +134,7 @@ export const useChargebeeCard = (
             const token = await verifyPaymentToken();
             return token;
         } catch (error) {
+            onProcessPaymentTokenFailed?.('chargebee-card');
             reset();
             throw error;
         }
