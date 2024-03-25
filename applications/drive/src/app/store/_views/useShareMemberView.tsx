@@ -1,120 +1,114 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { PublicKeyReference } from '@proton/crypto';
-import { encodeBase64 } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
-import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
+import { useDriveEventManager } from '..';
 import { useLink } from '../_links';
-import { ShareInvitee, ShareMember, useShare, useShareMember } from '../_shares';
+import { ShareInvitation, ShareInvitee, ShareMember, useShare, useShareActions, useShareInvitation } from '../_shares';
+import { useVolumesState } from '../_volumes';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
-    const { removeShareMember, addShareMember, getShareMembers, getShareIdWithSessionkey } = useShareMember();
-    const [shareId, setShareId] = useState<string>();
+    const { inviteProtonUser } = useShareInvitation();
     const { getLink } = useLink();
-    const [isLoading, withLoading] = useLoading();
-    const [isDeleting, withDeleting] = useLoading();
+    const [isLoading /*,withLoading */] = useLoading();
     const [isAdding, withAdding] = useLoading();
-    const { getShare, getSharePrivateKey, getShareSessionKey } = useShare();
-    const [members, setMembers] = useState<ShareMember[]>([]);
+    const { getShare, getSharePrivateKey, getShareWithKey, getShareSessionKey } = useShare();
+    const [members /*,setMembers */] = useState<ShareMember[]>([]);
+    const [invitations, setInvitations] = useState<ShareInvitation[]>([]);
+    const { createShare } = useShareActions();
+    const events = useDriveEventManager();
+    const volumeState = useVolumesState();
 
-    useEffect(() => {
-        const abortController = new AbortController();
-        void withLoading(async () => {
-            const link = await getLink(abortController.signal, rootShareId, linkId);
-            if (!link.shareId) {
-                return;
-            }
+    // TODO: Uncomment this when listing Shared by me will be available
+    // useEffect(() => {
+    //     const abortController = new AbortController();
+    //     void withLoading(async () => {
+    //         const link = await getLink(abortController.signal, rootShareId, linkId);
+    //         if (!link.shareId) {
+    //             return;
+    //         }
+    //         const share = await getShare(abortController.signal, link.shareId);
 
-            setShareId(link.shareId);
+    //         await getShareMembers(abortController.signal, {
+    //             volumeId: share.volumeId,
+    //             shareId: share.shareId,
+    //         }).then((members) => {
+    //             if (members) {
+    //                 setMembers(members);
+    //             }
+    //         });
+    //     });
 
-            await getShareMembers(abortController.signal, link.shareId).then((members) => {
-                if (members) {
-                    setMembers(members);
-                }
-            });
-        });
+    //     return () => {
+    //         abortController.abort();
+    //     };
+    // }, [rootShareId, linkId, getLink]);
 
-        return () => {
-            abortController.abort();
-        };
-    }, [rootShareId, linkId]);
-
-    const removeMember = async (memberId: string) => {
-        if (!shareId) {
-            return;
+    const getShareIdWithSessionkey = async (abortSignal: AbortSignal, rootShareId: string, linkId: string) => {
+        const [share, link] = await Promise.all([
+            getShareWithKey(abortSignal, rootShareId),
+            getLink(abortSignal, rootShareId, linkId),
+        ]);
+        if (link.shareId) {
+            const sessionKey = await getShareSessionKey(abortSignal, rootShareId);
+            return { shareId: link.shareId, sessionKey, passphrase: share.passphrase };
         }
-        const abortSignal = new AbortController().signal;
-        await withDeleting(removeShareMember(abortSignal, shareId, memberId));
-        setMembers(members.filter((member) => member.memberId !== memberId));
+
+        const createShareResult = await createShare(abortSignal, rootShareId, share.volumeId, linkId);
+        const volumeId = volumeState.findVolumeId(rootShareId);
+        if (volumeId) {
+            // TODO: Volume event is not properly handled for share creation
+            await events.pollEvents.volumes(volumeId);
+        }
+
+        return createShareResult;
     };
 
-    const addNewMember = async (invitees: ShareInvitee[], permissions: SHARE_MEMBER_PERMISSIONS) => {
-        const memberPublicKeys = invitees.reduce<{ [email: string]: PublicKeyReference }>(
-            (acc, { email, publicKey }) => {
-                if (!publicKey) {
-                    throw new Error('No public key for member');
-                }
-                acc[email] = publicKey;
-
-                return acc;
-            },
-            {}
-        );
-
+    const addNewMember = async (invitee: ShareInvitee, permissions: SHARE_MEMBER_PERMISSIONS) => {
         const abortSignal = new AbortController().signal;
 
-        await withAdding(async () => {
-            const { shareId: linkShareId, sessionKey } = shareId
-                ? { shareId, sessionKey: await getShareSessionKey(abortSignal, rootShareId) }
-                : await getShareIdWithSessionkey(abortSignal, rootShareId, linkId);
-            const primaryAddressKey = await getSharePrivateKey(abortSignal, linkShareId);
+        const { shareId: linkShareId, sessionKey } = await getShareIdWithSessionkey(abortSignal, rootShareId, linkId);
+        const primaryAddressKey = await getSharePrivateKey(abortSignal, linkShareId);
 
-            if (!primaryAddressKey) {
-                throw new Error('Could not find primary address key for calendar owner');
-            }
+        if (!primaryAddressKey) {
+            throw new Error('Could not find primary address key for share owner');
+        }
 
-            const share = await getShare(abortSignal, linkShareId);
-            const { armoredSignature, encryptedSessionKeyMap } = await encryptPassphraseSessionKey({
+        if (!invitee.publicKey) {
+            // TODO: Do logic for external user
+            throw new Error('User is not a proton user');
+        }
+
+        const share = await getShare(abortSignal, linkShareId);
+        return inviteProtonUser(abortSignal, {
+            share: {
+                shareId: linkShareId,
                 sessionKey,
-                memberPublicKeys,
-                signingKey: primaryAddressKey,
-            });
-
-            const newMembers = await Promise.all(
-                Object.keys(memberPublicKeys).map(async (email) => {
-                    const keyPacket = encryptedSessionKeyMap[email];
-                    if (!keyPacket) {
-                        throw new Error('No passphrase key packet for member');
-                    }
-                    return addShareMember(abortSignal, linkShareId, {
-                        email,
-                        keyPacket,
-                        permissions,
-                        inviter: share.creator,
-                        keyPacketSignature: encodeBase64(armoredSignature),
-                    });
-                })
-            );
-
-            // Because initially when there is no share we don't have the list of share members.
-            // After creating the share and adding the new members we want to retrieve the full list with also the owner
-            // In the other case we just add the new members to the existing list
-            if (!members.length) {
-                const allMembers = await getShareMembers(abortSignal, linkShareId);
-                if (allMembers) {
-                    setMembers(allMembers);
-                }
-            } else {
-                setMembers((prevMembers) => {
-                    return [...prevMembers, ...newMembers];
-                });
-            }
+            },
+            invitee: {
+                inviteeEmail: invitee.email,
+                publicKey: invitee.publicKey,
+            },
+            inviter: {
+                inviterEmail: share.creator,
+                addressKey: primaryAddressKey,
+            },
+            permissions,
         });
     };
 
-    return { members, isLoading, isAdding, isDeleting, addNewMember, removeMember };
+    const addNewMembers = async (invitees: ShareInvitee[], permissions: SHARE_MEMBER_PERMISSIONS) => {
+        await withAdding(async () => {
+            const newInvitations: ShareInvitation[] = [];
+            for (let invitee of invitees) {
+                await addNewMember(invitee, permissions).then((invitation) => newInvitations.push(invitation));
+            }
+            setInvitations((oldInvitations: ShareInvitation[]) => [...oldInvitations, ...newInvitations]);
+        });
+    };
+
+    return { members, invitations, isLoading, isAdding, addNewMember, addNewMembers };
 };
 
 export default useShareMemberView;
