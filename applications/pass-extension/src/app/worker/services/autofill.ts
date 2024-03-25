@@ -4,10 +4,10 @@ import store from 'proton-pass-extension/app/worker/store';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup-icon';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
-import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
+import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
 import {

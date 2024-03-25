@@ -9,6 +9,7 @@ import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsChildren } from '@proton/components/containers';
+import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
 
@@ -31,23 +32,25 @@ export const Notification: FC = () => {
     }, [visible]);
 
     return (
-        <div className="h-full p-4 bg-norm relative">
-            {(() => {
-                if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
+        <Localized>
+            <div className="h-full p-4 bg-norm relative anime-fade-in" style={{ '--anime-delay': '0s' }}>
+                {(() => {
+                    if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
-                switch (state.action) {
-                    case NotificationAction.AUTOSAVE:
-                        return <Autosave {...state} />;
-                    case NotificationAction.OTP:
-                        return <AutofillOTP {...state} />;
-                    case NotificationAction.PASSKEY_CREATE:
-                        return <PasskeyCreate {...state} />;
-                    case NotificationAction.PASSKEY_GET:
-                        return <PasskeyGet {...state} />;
-                }
-            })()}
+                    switch (state.action) {
+                        case NotificationAction.AUTOSAVE:
+                            return <Autosave {...state} />;
+                        case NotificationAction.OTP:
+                            return <AutofillOTP {...state} />;
+                        case NotificationAction.PASSKEY_CREATE:
+                            return <PasskeyCreate {...state} />;
+                        case NotificationAction.PASSKEY_GET:
+                            return <PasskeyGet {...state} />;
+                    }
+                })()}
 
-            <NotificationsChildren />
-        </div>
+                <NotificationsChildren />
+            </div>
+        </Localized>
     );
 };

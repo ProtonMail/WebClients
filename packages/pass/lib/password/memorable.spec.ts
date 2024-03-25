@@ -1,6 +1,6 @@
-import { digitChars, specialChars } from './constants';
+import { SeperatorOptions, digitChars, specialChars } from './constants';
 import type { MemorablePasswordOptions } from './memorable';
-import { SeperatorOptions, generateMemorablePassword } from './memorable';
+import { generateMemorablePassword } from './memorable';
 import WORD_LIST from './wordlist.json';
 
 const WORDS = Object.values(WORD_LIST);

@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars } from '@proton/pass/lib/password/constants';
+import {
+    DEFAULT_MEMORABLE_PW_OPTIONS,
+    DEFAULT_RANDOM_PW_OPTIONS,
+    alphabeticChars,
+    digitChars,
+} from '@proton/pass/lib/password/constants';
 import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/generator';
 import { generatePassword } from '@proton/pass/lib/password/generator';
-import { SeperatorOptions } from '@proton/pass/lib/password/memorable';
 import type { MaybeNull } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import debounce from '@proton/utils/debounce';
@@ -53,26 +57,6 @@ export const getCharsGroupedByColor = (password: string) => {
                 {content}
             </span>
         ));
-};
-
-export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordConfig<'memorable'> = {
-    type: 'memorable',
-    options: {
-        wordCount: 4,
-        seperator: SeperatorOptions.HYPHEN,
-        capitalize: true,
-        extraNumbers: true,
-    },
-};
-
-export const DEFAULT_RANDOM_PW_OPTIONS: GeneratePasswordConfig<'random'> = {
-    type: 'random',
-    options: {
-        length: DEFAULT_PASSWORD_LENGTH,
-        useDigits: true,
-        useSpecialChars: true,
-        useUppercase: true,
-    },
 };
 
 type UsePasswordGeneratorOptions = {

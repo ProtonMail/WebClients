@@ -6,6 +6,7 @@
 -   Fine-tune form/field detection triggers
 -   Fix stalling injected dropdown on SPA multi-step forms
 -   Fix corejs conflicts in webauthn content-script
+-   Fix stale injected iframe state due to deferred locale change
 
 ### Version 1.16.2
 
