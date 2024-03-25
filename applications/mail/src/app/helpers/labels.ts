@@ -48,6 +48,9 @@ interface FolderMap {
 }
 
 const alwaysMessageLabels = [DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
+const SYSTEM_LABELS = [STARRED, SNOOZED, ALL_MAIL, ALMOST_ALL_MAIL, SCHEDULED, ALL_SENT, ALL_DRAFTS, OUTBOX];
+
+export const isSystemLabel = (labelID: string) => SYSTEM_LABELS.includes(labelID as MAILBOX_LABEL_IDS);
 
 export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
 
