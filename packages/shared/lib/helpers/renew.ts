@@ -1,7 +1,7 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getDowngradedVpn2024Cycle } from '@proton/shared/lib/helpers/subscription';
-import { Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Cycle, PlanIDs, PlansMap, PriceType } from '@proton/shared/lib/interfaces';
 
 export const getVPN2024Renew = ({
     planIDs,
@@ -23,7 +23,9 @@ export const getVPN2024Renew = ({
             planIDs,
             plansMap,
             cycle: nextCycle,
+            priceType: PriceType.default,
         }),
+        priceType: PriceType.default,
     });
 
     return {
