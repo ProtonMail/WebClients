@@ -9,7 +9,7 @@ import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { decryptExtendedAttributes } from '../../_links/extendedAttributes';
-import { DecryptFileKeys, DownloadCallbacks, DownloadStreamControls, LinkDownload } from '../interface';
+import { DecryptFileKeys, DownloadCallbacks, DownloadStreamControls, LinkDownload, LogCallback } from '../interface';
 import initDownloadBlocks from './downloadBlocks';
 
 /**
@@ -20,10 +20,13 @@ import initDownloadBlocks from './downloadBlocks';
 export default function initDownloadLinkFile(
     link: LinkDownload,
     callbacks: DownloadCallbacks,
+    logCallback: LogCallback,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
     let keysPromise: Promise<DecryptFileKeys> | undefined;
     let scanResult: (SharedFileScan & { Hash: string }) | undefined;
+
+    const log = (message: string) => logCallback(`file ${link.linkId}: ${message}`);
 
     const transformBlockStream = async (
         abortSignal: AbortSignal,
@@ -116,6 +119,7 @@ export default function initDownloadLinkFile(
         // or someone messing with our API, maybe 3rd party client.
         if (!!scanResult?.Hash && scanResult?.Hash !== Hash) {
             const { shareId, linkId } = link;
+            log('Computed hash does not match XAttr');
             sendErrorReport(
                 new EnrichedError('Computed hash does not match XAttr', {
                     tags: { shareId, linkId },
@@ -125,16 +129,23 @@ export default function initDownloadLinkFile(
         await scanHash(abortSignal, Hash);
     };
 
-    const controls = initDownloadBlocks(link.name, {
-        ...callbacks,
-        getBlocks: (abortSignal, pagination) =>
-            callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination, link.revisionId),
-        scanForVirus: options?.virusScan ? scanForVirus : undefined,
-        checkFileHash: options?.virusScan ? checkFileHash : undefined,
-        transformBlockStream,
-        checkManifestSignature,
-        onProgress: (bytes: number) => callbacks.onProgress?.([link.linkId], bytes),
-    });
+    const controls = initDownloadBlocks(
+        link.name,
+        {
+            ...callbacks,
+            getBlocks: (abortSignal, pagination) =>
+                callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination, link.revisionId),
+            scanForVirus: options?.virusScan ? scanForVirus : undefined,
+            checkFileHash: options?.virusScan ? checkFileHash : undefined,
+            transformBlockStream,
+            checkManifestSignature,
+            onProgress: (bytes: number) => {
+                log(`progress: download ${bytes} bytes`);
+                callbacks.onProgress?.([link.linkId], bytes);
+            },
+        },
+        log
+    );
     return {
         ...controls,
         start: () => {

@@ -18,7 +18,9 @@ import {
     UpdateState,
 } from './interface';
 
-export default function useDownloadQueue() {
+type LogCallback = (id: string, message: string) => void;
+
+export default function useDownloadQueue(log: LogCallback) {
     const [downloads, setDownloads] = useState<Download[]>([]);
 
     const hasDownloads = useMemo((): boolean => {
@@ -37,6 +39,10 @@ export default function useDownloadQueue() {
                     return downloads;
                 }
                 const download = generateDownload(links, options);
+                log(
+                    download.id,
+                    `Added item to the queue (type: ${download.meta.mimeType}, size: ${download.meta.size} bytes)`
+                );
                 resolve();
                 return [...downloads, download];
             });
@@ -68,6 +74,10 @@ export default function useDownloadQueue() {
                     download.signatureIssueLink = signatureIssueLink;
                     download.signatureStatus = signatureStatus;
                     download.scanIssueError = scanIssueError;
+                    log(
+                        download.id,
+                        `Updated queue (state: ${newState} ${size !== undefined ? `, size: ${size}` : ''} ${error ? `, error: ${error}` : ''})`
+                    );
                 }
                 return download;
             };

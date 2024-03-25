@@ -77,6 +77,8 @@ const mockDownloadBlock = jest.fn(
 );
 
 describe('initDownload', () => {
+    const mockLog = jest.fn();
+
     beforeAll(() => {
         jest.spyOn(global.console, 'warn').mockReturnValue();
     });
@@ -118,6 +120,7 @@ describe('initDownload', () => {
                     ]),
                 transformBlockStream: mockTransformBlockStream,
             },
+            mockLog,
             mockDownloadBlock
         );
         const stream = downloadControls.start();
@@ -156,6 +159,7 @@ describe('initDownload', () => {
                 scanForVirus: mockScanForVirus,
                 checkFileHash: mockCheckFileHash,
             },
+            mockLog,
             mockDownloadBlock
         );
         const stream = downloadControls.start();
@@ -184,6 +188,7 @@ describe('initDownload', () => {
                     onError: reject,
                     onFinish: () => resolve(),
                 },
+                mockLog,
                 mockDownloadBlock
             );
             downloadControls.start();
@@ -235,6 +240,7 @@ describe('initDownload', () => {
                     downloadControls.resume();
                 },
             },
+            mockLog,
             mockDownloadBlock
         );
         const stream = downloadControls.start();
@@ -290,6 +296,7 @@ describe('initDownload', () => {
                 },
                 transformBlockStream: mockTransformBlockStream,
             },
+            mockLog,
             mockDownloadBlock
         );
         const stream = downloadControls.start();
@@ -330,6 +337,7 @@ describe('initDownload', () => {
                 },
                 transformBlockStream: mockTransformBlockStream,
             },
+            mockLog,
             mockDownloadBlock
         );
         const stream = downloadControls.start();
@@ -358,6 +366,7 @@ describe('initDownload', () => {
                 },
                 transformBlockStream: mockTransformBlockStream,
             },
+            mockLog,
             mockDownloadBlock
         );
         const stream = downloadControls.start();
