@@ -1,7 +1,9 @@
+import { VPNIntroPricingVariant } from '@proton/components/containers';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     APPS,
     COUPON_CODES,
+    CYCLE,
     DEFAULT_CURRENCY,
     FreeSubscription,
     PLANS,
@@ -26,14 +28,20 @@ export const getCurrency = (
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
 
-export const getVPNPlanToUse = (_: PlansMap, planIDs: PlanIDs | undefined) => {
+export const getVPNPlanToUse = (
+    _: PlansMap,
+    planIDs: PlanIDs | undefined,
+    options?: {
+        vpnIntroPricingVariant?: VPNIntroPricingVariant;
+    }
+) => {
     /*
     Can enable this when this should be the new default
     if (plansMap[PLANS.VPN2024]) {
         return PLANS.VPN2024;
     }
      */
-    if (planIDs?.[PLANS.VPN2024]) {
+    if (options?.vpnIntroPricingVariant === VPNIntroPricingVariant.New2024 || planIDs?.[PLANS.VPN2024]) {
         return PLANS.VPN2024;
     }
     return PLANS.VPN;
@@ -54,15 +62,18 @@ export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
     planIDs,
+    plansMap,
+    vpnIntroPricingVariant,
 }: {
     appName: ProductParam;
     plan?: string;
     planIDs: PlanIDs;
     plansMap: PlansMap;
+    vpnIntroPricingVariant: VPNIntroPricingVariant;
 }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = PLANS.VPN; /*getVPNPlanToUse(plansMap, planIDs);*/
+        defaultB2CPlan = getVPNPlanToUse(plansMap, planIDs, { vpnIntroPricingVariant });
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
@@ -146,3 +157,17 @@ export function subscriptionExpires(
         };
     }
 }
+
+export const getAutoCoupon = ({ planIDs, cycle, coupon }: { planIDs: PlanIDs; cycle: CYCLE; coupon?: string }) => {
+    if (!coupon && [PLANS.PASS_BUSINESS, PLANS.PASS_PRO].some((plan) => planIDs?.[plan])) {
+        return COUPON_CODES.PASS_B2B_INTRO;
+    }
+
+    if (
+        !coupon &&
+        [PLANS.VPN2024].some((plan) => planIDs?.[plan]) &&
+        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any)
+    ) {
+        return COUPON_CODES.VPN_INTRO_2024;
+    }
+};

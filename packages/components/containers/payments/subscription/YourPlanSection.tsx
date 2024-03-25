@@ -1,3 +1,4 @@
+import { getVPNIntroPricingVariant } from '@proton/components/containers';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
@@ -44,6 +45,7 @@ const YourPlanSection = ({ app }: Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const [invites = []] = usePendingUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
 
     useLoad();
 
@@ -68,6 +70,7 @@ const YourPlanSection = ({ app }: Props) => {
         freePlan,
         serversCount,
         openSubscriptionModal,
+        vpnIntroPricingVariant,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
