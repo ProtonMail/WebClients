@@ -1,4 +1,5 @@
 import { APPS } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 import { useConfig, useFlag, useSubscriptionModal } from '../..';
@@ -12,7 +13,7 @@ const useUpsellConfig = (upsellRef: string) => {
     // Make sure the new upsell flow is never enabled for the account app in case the modal is used in multiple places
     const isAccount = APP_NAME === APPS.PROTONACCOUNT;
 
-    if (!isAccount && inboxUpsellFlowEnabled) {
+    if (!isAccount && !isElectronMail && inboxUpsellFlowEnabled) {
         // The subscription modal will open in inbox app
         return {
             upgradePath: '',
