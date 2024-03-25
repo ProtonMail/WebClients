@@ -50,7 +50,6 @@ enum MailFeatureFlag {
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
-    SplitStorageChecklistReopenedNova = 'SplitStorageChecklistReopenedNova', // TODO remove once the extended checklist storage split is finished
 }
 
 export type FeatureFlag =

@@ -2,7 +2,6 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import { useFlag } from '@proton/components/containers';
 import { useApi, useEventManager, useSubscription, useUser, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
@@ -54,7 +53,6 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
-    const checklistFeatureFlag = useFlag('SplitStorageChecklistReopenedNova');
     const canMarkItemsAsDone =
         (canCheckItemPaidChecklist(subscription) && userSettings.Checklists?.includes('paying-user')) ||
         (canCheckItemGetStarted(subscription) && userSettings.Checklists?.includes('get-started')) ||
@@ -137,7 +135,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const getExpiredAt = (): Date =>
         isUserPaid ? fromUnixTime(paidUserChecklist.ExpiresAt) : fromUnixTime(freeUserChecklist.ExpiresAt);
 
-    const canDisplayChecklist = checklistFeatureFlag ? canMarkItemsAsDone : isBefore(new Date(), getExpiredAt());
+    const canDisplayChecklist = isBefore(new Date(), getExpiredAt());
 
     const context: ContextState = {
         isUserPaid,
