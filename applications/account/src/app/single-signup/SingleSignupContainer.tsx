@@ -306,6 +306,8 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 method,
                 overrides: {
                     plan,
+                    cycle: subscriptionData.cycle,
+                    amount: subscriptionData.checkResult.AmountDue,
                 },
             };
         };
