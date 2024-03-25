@@ -24,6 +24,7 @@ import {
     DownloadEventCallbacks,
     DownloadStreamControls,
     LinkDownload,
+    LogCallback,
     OnSignatureIssueCallback,
     Pagination,
 } from './interface';
@@ -143,18 +144,24 @@ export default function useDownload() {
     const initDownload = (
         name: string,
         list: LinkDownload[],
-        eventCallbacks: DownloadEventCallbacks
+        eventCallbacks: DownloadEventCallbacks,
+        log: LogCallback
     ): DownloadControls => {
-        return initDownloadPure(name, list, {
-            getChildren,
-            getBlocks,
-            getKeys: getKeysGenerator(eventCallbacks.onSignatureIssue),
-            ...eventCallbacks,
-            onSignatureIssue: async (abortSignal, link, signatureIssues) => {
-                await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
-                return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
+        return initDownloadPure(
+            name,
+            list,
+            {
+                getChildren,
+                getBlocks,
+                getKeys: getKeysGenerator(eventCallbacks.onSignatureIssue),
+                ...eventCallbacks,
+                onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                    await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
+                    return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
+                },
             },
-        });
+            log
+        );
     };
 
     const downloadStream = (
@@ -220,7 +227,8 @@ export default function useDownload() {
                         await setSignatureIssues(abortSignal, shareId, linkId, signatureIssues);
                         resolve(signatureIssues);
                     },
-                }
+                },
+                () => {} // We do not support logging for thumnbails just yet.
             );
             abortSignal.addEventListener('abort', () => {
                 controls.cancel();

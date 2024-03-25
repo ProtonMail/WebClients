@@ -16,6 +16,7 @@ interface DownloadProviderState {
     restartDownloads: (idOrFilter: UpdateFilter) => void;
     removeDownloads: (idOrFilter: UpdateFilter) => void;
     clearDownloads: () => void;
+    downloadDownloadLogs: () => void;
     getDownloadsProgresses: () => TransferProgresses;
     getDownloadsLinksProgresses: () => DownloadLinksProgresses;
 }
@@ -41,6 +42,7 @@ export const DownloadProvider = ({
         restartDownloads,
         removeDownloads,
         clearDownloads,
+        downloadDownloadLogs,
         downloadIsTooBigModal,
         signatureIssueModal,
     } = useDownload(initDownload);
@@ -57,6 +59,7 @@ export const DownloadProvider = ({
                 restartDownloads,
                 removeDownloads,
                 clearDownloads,
+                downloadDownloadLogs,
                 getDownloadsProgresses: getProgresses,
                 getDownloadsLinksProgresses: getLinksProgress,
             }}

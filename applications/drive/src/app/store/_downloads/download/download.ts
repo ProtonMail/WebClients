@@ -2,7 +2,7 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import fileSaver from '../fileSaver/fileSaver';
-import { DownloadCallbacks, DownloadControls, DownloadStreamControls, LinkDownload } from '../interface';
+import { DownloadCallbacks, DownloadControls, DownloadStreamControls, LinkDownload, LogCallback } from '../interface';
 import initDownloadLinkFile from './downloadLinkFile';
 import initDownloadLinkFolder from './downloadLinkFolder';
 import initDownloadLinks from './downloadLinks';
@@ -31,6 +31,7 @@ export default function initDownload(
     name: string,
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
+    log: LogCallback,
     options?: { virusScan?: boolean }
 ): DownloadControls {
     let gotErr: any;
@@ -48,6 +49,7 @@ export default function initDownload(
                 gotErr = err;
             },
         },
+        log,
         options
     );
     return {
@@ -79,22 +81,25 @@ export default function initDownload(
 }
 
 export function initDownloadStream(links: LinkDownload[], callbacks: DownloadCallbacks) {
-    return getControls(links, callbacks);
+    // Stream is used in direct preview. There we do not support logs just yet.
+    const noLog = () => {};
+    return getControls(links, callbacks, noLog);
 }
 
 function getControls(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
+    log: LogCallback,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
     if (links.length === 1) {
         const link = links[0];
         if (link.isFile) {
-            return initDownloadLinkFile(link, callbacks, options);
+            return initDownloadLinkFile(link, callbacks, log, options);
         }
-        return initDownloadLinkFolder(link, callbacks, options);
+        return initDownloadLinkFolder(link, callbacks, log, options);
     }
-    return initDownloadLinks(links, callbacks, options);
+    return initDownloadLinks(links, callbacks, log, options);
 }
 
 /**
