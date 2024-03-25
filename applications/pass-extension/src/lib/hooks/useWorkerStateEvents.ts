@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
@@ -12,7 +12,9 @@ import type {
     WorkerMessageWithSender,
 } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 type WakeupOptions = { tabId: TabId; endpoint: ClientEndpoint; messageFactory: MessageWithSenderFactory };
 type UseWorkerStateEventsOptions = WakeupOptions & { onWorkerStateChange: (state: AppState) => void };
@@ -33,10 +35,12 @@ const wakeup = (options: WakeupOptions): Promise<WorkerMessageResponse<WorkerMes
     );
 
 export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWorkerStateEventsOptions) => {
+    const ready = useRef<Awaiter<void>>(awaiter());
+
     useEffect(() => {
         const onMessage = (message: WorkerMessageWithSender) => {
             if (message.sender === 'background' && message.type === WorkerMessageType.WORKER_STATUS) {
-                onWorkerStateChange(message.payload.state);
+                ready.current.then(() => onWorkerStateChange(message.payload.state)).catch(noop);
             }
         };
 
@@ -51,7 +55,8 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
                     status: AppStatus.ERROR,
                     UID: undefined,
                 })
-            );
+            )
+            .finally(ready.current.resolve);
 
         return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
     }, []);
