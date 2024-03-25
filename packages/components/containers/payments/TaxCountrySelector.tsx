@@ -175,12 +175,18 @@ const TaxCountrySelector = ({
     federalStateCode,
     className,
 }: TaxCountrySelectorProps) => {
-    const [collapsed, setCollapsed] = useState(true);
+    const showStateCode = countriesWithStates.includes(selectedCountryCode);
+
+    // If there is no state selection, then we collapse the component by default
+    // if there is state selection and state **is** specified, then we **collapse** the component by default
+    // If there is state selection and state **is not** specified, then we **expand** the component by default
+    const initialCollapsedState: boolean = !showStateCode || (showStateCode && !!federalStateCode);
+
+    const [collapsed, setCollapsed] = useState(initialCollapsedState);
     const { getCountryByCode } = useCountries();
     const selectedCountry = getCountryByCode(selectedCountryCode);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const showStateCode = countriesWithStates.includes(selectedCountryCode);
     const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
 
     const collapsedText = (() => {
@@ -208,6 +214,7 @@ const TaxCountrySelector = ({
                                 setCollapsed(false);
                                 setIsDropdownOpen(true);
                             }}
+                            data-testid="billing-country-collapsed"
                         >
                             {collapsedText}
                         </InlineLinkButton>
@@ -223,6 +230,7 @@ const TaxCountrySelector = ({
                         isOpen={isDropdownOpen}
                         onOpen={() => setIsDropdownOpen(true)}
                         onClose={() => setIsDropdownOpen(false)}
+                        data-testid="tax-country-dropdown"
                     />
                     {showStateCode && (
                         <SelectTwo
@@ -232,6 +240,8 @@ const TaxCountrySelector = ({
                             value={federalStateCode ?? ''}
                             id="tax-state"
                             className="mt-1"
+                            data-testid="tax-state-dropdown"
+                            placeholder={c('Placeholder').t`Select state`}
                         >
                             {states.map(({ stateName, stateCode }) => {
                                 return (
