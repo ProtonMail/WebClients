@@ -9,22 +9,19 @@ import DirectSharingAutocomplete from './DirectSharingAutocomplete';
 import DirectSharingListing from './DirectSharingListing';
 
 interface Props {
-    shareId: string;
+    rootShareId: string;
     linkId: string;
     isDirectSharingWorkflow: boolean;
     onSubmit: () => void;
     onClose: () => void;
     onFocus: () => void;
 }
-const DirectSharing = ({ shareId, linkId, isDirectSharingWorkflow, onSubmit, onClose, onFocus }: Props) => {
-    const { members, isLoading, isAdding, isDeleting, addNewMember, removeMember } = useShareMemberView(
-        shareId,
-        linkId
-    );
+const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit, onClose, onFocus }: Props) => {
+    const { members, invitations, isLoading, isAdding, addNewMembers } = useShareMemberView(rootShareId, linkId);
     const [directSharingList, setDirectSharingList] = useState<ShareInvitee[]>(
         members.map((member) => ({
-            email: member.inviter,
-            name: member.inviter,
+            email: member.email,
+            name: member.email,
         }))
     );
 
@@ -42,18 +39,13 @@ const DirectSharing = ({ shareId, linkId, isDirectSharingWorkflow, onSubmit, onC
                 onSubmit={handleSubmit}
                 members={members}
                 hidden={!isDirectSharingWorkflow}
-                addNewMember={addNewMember}
+                addNewMembers={addNewMembers}
             />
 
             {!isDirectSharingWorkflow && (
                 <>
                     <h2 className="text-lg text-semibold">{c('Info').t`Share with`}</h2>
-                    <DirectSharingListing
-                        isLoading={isLoading}
-                        members={members}
-                        removeMember={removeMember}
-                        isDeleting={isDeleting}
-                    />
+                    <DirectSharingListing isLoading={isLoading} members={members} invitations={invitations} />
                 </>
             )}
         </ContactEmailsProvider>
