@@ -307,6 +307,7 @@ export type IconName =
     | 'servers'
     | 'shield'
     | 'shield-2'
+    | 'shield-2-bolt'
     | 'shield-2-check-filled'
     | 'shield-filled'
     | 'shield-half-filled'
