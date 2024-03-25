@@ -12,6 +12,7 @@ import {
     DownloadStreamControls,
     GetChildrenCallback,
     LinkDownload,
+    LogCallback,
     OnProgressCallback,
     OnSignatureIssueCallback,
 } from '../interface';
@@ -32,9 +33,10 @@ type FolderLoadInfo = {
 export default function initDownloadLinkFolder(
     link: LinkDownload,
     callbacks: DownloadCallbacks,
+    log: LogCallback,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
-    const folderLoader = new FolderTreeLoader(link);
+    const folderLoader = new FolderTreeLoader(link, log);
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
 
@@ -50,7 +52,7 @@ export default function initDownloadLinkFolder(
                 archiveGenerator.cancel();
             });
         const childrenIterator = folderLoader.iterateAllChildren();
-        const linksWithStreamsIterator = concurrentIterator.iterate(childrenIterator, callbacks, options);
+        const linksWithStreamsIterator = concurrentIterator.iterate(childrenIterator, callbacks, log, options);
         archiveGenerator
             .writeLinks(linksWithStreamsIterator)
             .then(() => {
@@ -88,11 +90,14 @@ export class FolderTreeLoader {
 
     private abortController: AbortController;
 
-    constructor(link: LinkDownload) {
+    private log: LogCallback;
+
+    constructor(link: LinkDownload, log: LogCallback) {
         this.rootLink = link;
         this.done = false;
         this.links = [];
         this.abortController = new AbortController();
+        this.log = log;
     }
 
     async load(
@@ -128,12 +133,17 @@ export class FolderTreeLoader {
         }
 
         const shareId = link.shareId;
+        this.log(`Fetching children for ${link.linkId}`);
         const children = await getChildren(this.abortController.signal, link.shareId, link.linkId).catch((err) => {
             if (err?.data?.Code === RESPONSE_CODE.NOT_FOUND) {
+                this.log(`Folder ${link.linkId} was deleted during download`);
                 err = new ValidationError(c('Info').t`Folder "${link.name}" was deleted during download`);
             }
             throw err;
         });
+        this.log(
+            `Folder ${link.linkId} has ${children.length} items including ${children.filter(({ isFile }) => !isFile).length} folders`
+        );
         this.links = [
             ...this.links,
             ...children.map((link) => ({
