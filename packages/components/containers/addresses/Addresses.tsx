@@ -1,3 +1,4 @@
+import { useAllowAddressDeletion } from '@proton/components';
 import { Organization } from '@proton/shared/lib/interfaces';
 
 import { useUser } from '../../hooks';
@@ -12,11 +13,18 @@ interface AddressesProps {
 
 const Addresses = ({ isOnlySelf, organization, memberID }: AddressesProps) => {
     const [user] = useUser();
+    const [allowAddressDeletion] = useAllowAddressDeletion();
 
     return user.isAdmin && user.hasPaidMail ? (
-        <AddressesWithMembers isOnlySelf={isOnlySelf} user={user} memberID={memberID} organization={organization} />
+        <AddressesWithMembers
+            isOnlySelf={isOnlySelf}
+            user={user}
+            memberID={memberID}
+            organization={organization}
+            allowAddressDeletion={allowAddressDeletion ?? false}
+        />
     ) : (
-        <AddressesWithUser user={user} />
+        <AddressesWithUser user={user} allowAddressDeletion={allowAddressDeletion ?? false} />
     );
 };
 

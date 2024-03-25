@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import {
+    allowAddressDeletionReducer,
     domainsAddressesReducer,
     domainsReducer,
     inactiveKeysReducer,
@@ -27,5 +28,6 @@ export const rootReducer = combineReducers({
     ...calendarsReducer,
     ...holidaysDirectoryReducer,
     ...samlReducer,
+    ...allowAddressDeletionReducer,
     inactiveKeys: inactiveKeysReducer,
 });
