@@ -342,45 +342,57 @@ export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData,
     referralData: ReferralData | undefined,
-    productParam: ProductParam
+    productParam: ProductParam,
+    reportPaymentSuccess: () => void,
+    reportPaymentFailure: () => void
 ) => {
     if (!hasPlanIDs(subscriptionData.planIDs)) {
         return;
     }
 
-    await api(
-        subscribe(
-            {
-                Plans: subscriptionData.planIDs,
-                Currency: subscriptionData.currency,
-                Cycle: subscriptionData.cycle,
-                BillingAddress: subscriptionData.billingAddress,
-                ...(referralData
-                    ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                    : {
-                          Payment: subscriptionData.payment,
-                          Amount: subscriptionData.checkResult.AmountDue,
-                          ...(subscriptionData.checkResult.Coupon?.Code
-                              ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                              : undefined),
-                      }),
-            },
-            productParam,
-            subscriptionData.payment?.paymentsVersion ?? 'v4'
-        )
-    );
+    try {
+        await api(
+            subscribe(
+                {
+                    Plans: subscriptionData.planIDs,
+                    Currency: subscriptionData.currency,
+                    Cycle: subscriptionData.cycle,
+                    BillingAddress: subscriptionData.billingAddress,
+                    ...(referralData
+                        ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
+                        : {
+                              Payment: subscriptionData.payment,
+                              Amount: subscriptionData.checkResult.AmountDue,
+                              ...(subscriptionData.checkResult.Coupon?.Code
+                                  ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                                  : undefined),
+                          }),
+                },
+                productParam,
+                subscriptionData.payment?.paymentsVersion ?? 'v4'
+            )
+        );
 
-    if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
-        if (isWrappedPaymentsVersion(subscriptionData.payment) && subscriptionData.payment.paymentsVersion === 'v5') {
-            const v5PaymentToken: V5PaymentToken = {
-                PaymentToken: subscriptionData.payment.Details.Token,
-                v: 5,
-            };
+        if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
+            if (
+                isWrappedPaymentsVersion(subscriptionData.payment) &&
+                subscriptionData.payment.paymentsVersion === 'v5'
+            ) {
+                const v5PaymentToken: V5PaymentToken = {
+                    PaymentToken: subscriptionData.payment.Details.Token,
+                    v: 5,
+                };
 
-            await api(setPaymentMethodV5({ ...subscriptionData.payment, ...v5PaymentToken }));
-        } else {
-            await api(setPaymentMethodV4(subscriptionData.payment));
+                await api(setPaymentMethodV5({ ...subscriptionData.payment, ...v5PaymentToken }));
+            } else {
+                await api(setPaymentMethodV4(subscriptionData.payment));
+            }
         }
+
+        reportPaymentSuccess();
+    } catch (error: any) {
+        reportPaymentFailure();
+        throw error;
     }
 };
 
@@ -477,14 +489,15 @@ export const handleSetupUser = async ({
         config: auth({ Username: userEmail }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
 
-    try {
-        // Perform the subscription first to prevent "locked user" while setting up keys.
-        await handleSubscribeUser(api, subscriptionData, referralData, cache.productParam);
-        reportPaymentSuccess();
-    } catch (error) {
-        reportPaymentFailure();
-        throw error;
-    }
+    // Perform the subscription first to prevent "locked user" while setting up keys.
+    await handleSubscribeUser(
+        api,
+        subscriptionData,
+        referralData,
+        cache.productParam,
+        reportPaymentSuccess,
+        reportPaymentFailure
+    );
 
     const [{ keyPassword, user, addresses }] = await Promise.all([
         (async () => {

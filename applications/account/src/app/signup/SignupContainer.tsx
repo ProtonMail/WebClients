@@ -910,6 +910,8 @@ const SignupContainer = ({
                                     method,
                                     overrides: {
                                         plan,
+                                        cycle: subscriptionData.cycle,
+                                        amount: subscriptionData.checkResult.AmountDue,
                                     },
                                 };
                             };

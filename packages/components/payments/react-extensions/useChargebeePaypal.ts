@@ -84,6 +84,10 @@ export const useChargebeePaypal = (
     }, [onChargeable]);
 
     useEffect(() => {
+        paymentProcessor.paypalModalHandles = chargebeePaypalModalHandles;
+    }, [chargebeePaypalModalHandles]);
+
+    useEffect(() => {
         return () => paymentProcessor.destroy();
     }, []);
 

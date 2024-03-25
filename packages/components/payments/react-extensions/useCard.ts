@@ -13,7 +13,7 @@ import {
     PaymentVerificator,
     getErrors,
 } from '../core';
-import { PaymentProcessorHook } from './interface';
+import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export type CardFieldStatus = {
@@ -44,6 +44,8 @@ export interface Props {
     initialCard?: CardModel;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
     verifyOnly?: boolean;
+    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
+    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 export type CardProcessorHook = PaymentProcessorHook & {
@@ -61,7 +63,14 @@ export type CardProcessorHook = PaymentProcessorHook & {
  * the credit card component.
  */
 export const useCard = (
-    { amountAndCurrency, initialCard, verifyOnly, onChargeable }: Props,
+    {
+        amountAndCurrency,
+        initialCard,
+        verifyOnly,
+        onChargeable,
+        onProcessPaymentToken,
+        onProcessPaymentTokenFailed,
+    }: Props,
     { api, verifyPayment }: Dependencies
 ): CardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -123,6 +132,8 @@ export const useCard = (
     };
 
     const processPaymentToken = async () => {
+        onProcessPaymentToken?.('card');
+
         if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -130,6 +141,7 @@ export const useCard = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
+            onProcessPaymentTokenFailed?.('card');
             reset();
             throw error;
         }

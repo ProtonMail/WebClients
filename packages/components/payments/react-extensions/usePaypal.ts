@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import { AmountAndCurrency, ChargeablePaymentParameters, PaymentVerificator } from '../core';
 import { PaypalPaymentProcessor } from '../core/payment-processors/paypalPayment';
-import { PaymentProcessorHook } from './interface';
+import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 interface Props {
@@ -14,6 +14,8 @@ interface Props {
     isCredit: boolean;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
     ignoreAmountCheck?: boolean;
+    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
+    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 interface Dependencies {
@@ -37,7 +39,14 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
  * like `processPaymentToken` method that supposed to be the main action.
  */
 export const usePaypal = (
-    { amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck }: Props,
+    {
+        amountAndCurrency,
+        isCredit,
+        onChargeable,
+        ignoreAmountCheck,
+        onProcessPaymentToken,
+        onProcessPaymentTokenFailed,
+    }: Props,
     { api, verifyPayment }: Dependencies
 ): PaypalProcessorHook => {
     const paymentProcessor = usePaymentProcessor(
@@ -89,7 +98,11 @@ export const usePaypal = (
         withVerifyingToken(tokenPromise).catch(noop);
         return tokenPromise;
     };
+
+    const metaType: PaymentProcessorType = isCredit ? 'paypal-credit' : 'paypal';
     const processPaymentToken = async () => {
+        onProcessPaymentToken?.(metaType);
+
         if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -97,6 +110,7 @@ export const usePaypal = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
+            onProcessPaymentTokenFailed?.(metaType);
             reset();
             throw error;
         }
@@ -116,7 +130,7 @@ export const usePaypal = (
         disabled,
         isInitialState,
         meta: {
-            type: isCredit ? 'paypal-credit' : 'paypal',
+            type: metaType,
         },
     };
 };

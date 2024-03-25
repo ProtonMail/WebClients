@@ -128,6 +128,8 @@ export const usePaymentFacade = ({
         apiOverride: api,
         plan: selectedPlanName,
         flow,
+        amount,
+        cycle: checkResult?.Cycle,
     });
 
     const { reportPaymentLoad, reportPaymentAttempt, reportPaymentFailure } = telemetry;

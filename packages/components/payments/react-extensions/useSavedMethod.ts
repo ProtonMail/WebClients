@@ -12,12 +12,14 @@ import {
     SavedPaymentMethodInternal,
 } from '../core';
 import { SavedPaymentProcessor } from '../core/payment-processors/savedPayment';
-import { PaymentProcessorHook } from './interface';
+import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
     savedMethod?: SavedPaymentMethodInternal;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
+    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
+    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 export interface Dependencies {
@@ -35,7 +37,7 @@ export interface SavedMethodProcessorHook extends PaymentProcessorHook {
  * or PayPal (not paypal-credit which can't be saved by design, as it supposed to provide one-time payment).
  */
 export const useSavedMethod = (
-    { amountAndCurrency, savedMethod, onChargeable }: Props,
+    { amountAndCurrency, savedMethod, onChargeable, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
     { verifyPayment, api }: Dependencies
 ): SavedMethodProcessorHook => {
     const paymentProcessorRef = useRef<SavedPaymentProcessor>();
@@ -88,6 +90,7 @@ export const useSavedMethod = (
         return tokenPromise;
     };
     const processPaymentToken = async () => {
+        onProcessPaymentToken?.('saved');
         if (!paymentProcessor?.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -95,6 +98,7 @@ export const useSavedMethod = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
+            onProcessPaymentTokenFailed?.('saved');
             reset();
             throw error;
         }
