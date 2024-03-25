@@ -1,10 +1,12 @@
 import { FormEvent, ReactNode, RefObject, useEffect, useMemo, useRef, useState } from 'react';
 
+import { useVariant } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { ExperimentCode, getVPNIntroPricingVariant } from '@proton/components/containers';
 import { getShortBillingText, isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -268,8 +270,11 @@ const SubscriptionContainer = ({
 
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant(useVariant(ExperimentCode.VpnIntroPricing));
+
     const [selectedProductPlans, setSelectedProductPlans] = useState(
-        defaultSelectedProductPlans || getDefaultSelectedProductPlans({ appName: app, planIDs, plansMap })
+        defaultSelectedProductPlans ||
+            getDefaultSelectedProductPlans({ appName: app, planIDs, plansMap, vpnIntroPricingVariant })
     );
 
     const [model, setModel] = useState<Model>(() => {
@@ -836,6 +841,7 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
             {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
                 <PlanSelection
+                    vpnIntroPricingVariant={vpnIntroPricingVariant}
                     app={app}
                     freePlan={freePlan}
                     loading={loadingCheck}

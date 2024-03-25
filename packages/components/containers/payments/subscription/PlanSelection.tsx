@@ -41,6 +41,7 @@ import {
     Tabs,
     VpnLogo,
 } from '../../../components';
+import { VPNIntroPricingVariant } from '../../unleash/vpnIntroPricing';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -49,6 +50,7 @@ import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
+import { getVPNPlanToUse } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -107,6 +109,7 @@ interface Props {
     subscription?: SubscriptionModel | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
+    vpnIntroPricingVariant: VPNIntroPricingVariant;
 }
 
 export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
@@ -181,6 +184,7 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     filter,
+    vpnIntroPricingVariant,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
@@ -188,7 +192,7 @@ const PlanSelection = ({
     const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [
         PLANS.MAIL,
-        PLANS.VPN /*getVPNPlanToUse(plansMap, getPlanIDs(subscription)),*/,
+        getVPNPlanToUse(plansMap, {}, { vpnIntroPricingVariant }),
         PLANS.DRIVE,
         PLANS.PASS_PLUS,
     ].filter(isTruthy);
