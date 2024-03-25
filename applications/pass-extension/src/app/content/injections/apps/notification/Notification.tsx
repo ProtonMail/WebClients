@@ -33,7 +33,7 @@ export const Notification: FC = () => {
 
     return (
         <Localized>
-            <div className="h-full p-4 bg-norm relative anime-fade-in" style={{ '--anime-delay': '0s' }}>
+            <div className="h-full p-4 bg-norm relative" style={{ '--anime-delay': '0s' }}>
                 {(() => {
                     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 

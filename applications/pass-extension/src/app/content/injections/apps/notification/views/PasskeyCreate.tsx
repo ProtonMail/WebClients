@@ -222,7 +222,7 @@ export const PasskeyCreate: FC<Props> = (props) => {
     const { token, domain } = props;
 
     return (
-        <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2">
+        <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
             <NotificationHeader
                 title={c('Info').t`Save passkey`}
                 onClose={() => postMessage(createBridgeResponse({ type: 'success', intercept: false }, token))}
