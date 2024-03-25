@@ -135,7 +135,7 @@ export const createFormManager = (options: FormManagerOptions) => {
             void ctx?.service.autosave.reconciliate();
             return false;
         }),
-        500,
+        250,
         { leading: true, trailing: true }
     );
 
