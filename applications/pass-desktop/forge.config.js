@@ -5,6 +5,7 @@ const { MakerSquirrel } = require('@electron-forge/maker-squirrel');
 const { MakerZIP } = require('@electron-forge/maker-zip');
 const { MakerDMG } = require('@electron-forge/maker-dmg');
 const { MakerDeb } = require('@electron-forge/maker-deb');
+const { MakerRpm } = require('@electron-forge/maker-rpm');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
@@ -83,6 +84,17 @@ const config = {
             homepage: 'https://proton.me/pass',
             icon: path.join(__dirname, 'assets', 'logo.svg'),
             maintainer: 'Proton',
+        }),
+        // Linux Fedora
+        new MakerRpm({
+            name: 'proton-pass',
+            categories: ['Utility'],
+            productName: 'Proton Pass',
+            bin: 'Proton Pass',
+            genericName: 'Password Manager',
+            productDescription: 'Open-source and secure identity manager.',
+            homepage: 'https://proton.me/pass',
+            icon: path.join(__dirname, 'assets', 'logo.svg'),
         }),
     ],
     plugins: [

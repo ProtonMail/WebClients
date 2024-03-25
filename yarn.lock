@@ -2474,6 +2474,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@electron-forge/maker-rpm@npm:^7.3.1":
+  version: 7.3.1
+  resolution: "@electron-forge/maker-rpm@npm:7.3.1"
+  dependencies:
+    "@electron-forge/maker-base": "npm:7.3.1"
+    "@electron-forge/shared-types": "npm:7.3.1"
+    electron-installer-redhat: "npm:^3.2.0"
+  dependenciesMeta:
+    electron-installer-redhat:
+      optional: true
+  checksum: 10c0/b82b28d85adfed1311be628d72b11dd64253fcf52b7fb672ce7bdfd0b98620aca4e8301c77d14eb7731b3b4806a3a7e8fd33b039ccef6bc5a08eccc6c9e03d60
+  languageName: node
+  linkType: hard
+
 "@electron-forge/maker-squirrel@npm:^7.3.1":
   version: 7.3.1
   resolution: "@electron-forge/maker-squirrel@npm:7.3.1"
@@ -18026,6 +18040,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-installer-redhat@npm:^3.2.0":
+  version: 3.4.0
+  resolution: "electron-installer-redhat@npm:3.4.0"
+  dependencies:
+    "@malept/cross-spawn-promise": "npm:^1.0.0"
+    debug: "npm:^4.1.1"
+    electron-installer-common: "npm:^0.10.2"
+    fs-extra: "npm:^9.0.0"
+    lodash: "npm:^4.17.15"
+    word-wrap: "npm:^1.2.3"
+    yargs: "npm:^16.0.2"
+  bin:
+    electron-installer-redhat: src/cli.js
+  conditions: (os=darwin | os=linux)
+  languageName: node
+  linkType: hard
+
 "electron-log@npm:^5.1.2":
   version: 5.1.2
   resolution: "electron-log@npm:5.1.2"
@@ -31512,6 +31543,7 @@ __metadata:
     "@electron-forge/cli": "npm:^7.3.1"
     "@electron-forge/maker-deb": "npm:^7.3.1"
     "@electron-forge/maker-dmg": "npm:^7.3.1"
+    "@electron-forge/maker-rpm": "npm:^7.3.1"
     "@electron-forge/maker-squirrel": "npm:^7.3.1"
     "@electron-forge/maker-zip": "npm:^7.3.1"
     "@electron-forge/plugin-auto-unpack-natives": "npm:^7.3.1"
