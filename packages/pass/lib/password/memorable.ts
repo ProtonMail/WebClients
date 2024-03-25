@@ -2,18 +2,15 @@ import { c } from 'ttag';
 
 import capitalize from '@proton/utils/capitalize';
 
-import { digitChars, specialChars } from './constants';
+import { SeperatorOptions, digitChars, specialChars } from './constants';
 import WORD_LIST from './wordlist.json';
 
-export enum SeperatorOptions {
-    HYPHEN = '-',
-    SPACE = ' ',
-    PERIOD = '.',
-    COMMA = ',',
-    UNDERSCORE = '_',
-    NUMBER = 'NUMBER',
-    NUMBER_OR_SYMBOL = 'NUMBER_OR_SYMBOL',
-}
+export type MemorablePasswordOptions = {
+    wordCount: number;
+    seperator: SeperatorOptions;
+    capitalize: boolean;
+    extraNumbers: boolean;
+};
 
 export const getSeperatorTranslation = (seperator: SeperatorOptions) =>
     ({
@@ -25,13 +22,6 @@ export const getSeperatorTranslation = (seperator: SeperatorOptions) =>
         [SeperatorOptions.NUMBER]: c('Option').t`Numbers`,
         [SeperatorOptions.NUMBER_OR_SYMBOL]: c('Option').t`Numbers and Symbols`,
     })[seperator];
-
-export type MemorablePasswordOptions = {
-    wordCount: number;
-    seperator: SeperatorOptions;
-    capitalize: boolean;
-    extraNumbers: boolean;
-};
 
 const getRandomCharacter = (characters: string) => {
     const seed = Array.from(crypto.getRandomValues(new Uint8Array(1)));
