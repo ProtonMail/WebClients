@@ -75,7 +75,7 @@ export const Autosave: FC<Props> = ({ submission }) => {
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full">
+            <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full anime-fadein">
                 <NotificationHeader
                     title={(() => {
                         switch (submission.autosave.data.type) {

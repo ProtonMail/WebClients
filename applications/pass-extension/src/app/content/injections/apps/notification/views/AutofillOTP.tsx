@@ -32,7 +32,7 @@ export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
     }, []);
 
     return (
-        <div className="flex flex-column flex-nowrap justify-space-between h-full">
+        <div className="flex flex-column flex-nowrap justify-space-between h-full anime-fade-in">
             <NotificationHeader
                 title={c('Info').t`Verification code`}
                 extra={
