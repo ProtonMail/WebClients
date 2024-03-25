@@ -994,6 +994,8 @@ const SingleSignupContainerV2 = ({
             overrides: {
                 plan,
                 flow,
+                cycle: subscriptionData.cycle,
+                amount: subscriptionData.checkResult.AmountDue,
             },
         };
     };
