@@ -42,9 +42,10 @@ interface Props {
     organization?: Organization;
     isOnlySelf?: boolean;
     memberID?: string;
+    allowAddressDeletion: boolean;
 }
 
-const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Props) => {
+const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf, allowAddressDeletion }: Props) => {
     const [members, loadingMembers] = useMembers();
     const [addresses, loadingAddresses] = useAddresses();
     const [customDomains] = useCustomDomains();
@@ -175,6 +176,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                             member={currentMember}
                             organizationKey={organizationKey}
                             hasDescription={false}
+                            allowAddressDeletion={allowAddressDeletion}
                         />
                     );
                 }
@@ -195,6 +197,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                         members={selectedMembers}
                         memberAddressesMap={memberAddressesMap}
                         organizationKey={organizationKey}
+                        allowAddressDeletion={allowAddressDeletion}
                     />
                 );
             })()}
