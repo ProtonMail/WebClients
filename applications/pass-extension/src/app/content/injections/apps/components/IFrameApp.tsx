@@ -16,7 +16,6 @@ import { INITIAL_WORKER_STATE } from 'proton-pass-extension/lib/components/Exten
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
-import { Localized } from '@proton/pass/components/Core/Localized';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -251,7 +250,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                 resize,
             }}
         >
-            <Localized>{children}</Localized>
+            {children}
         </IFrameContext.Provider>
     );
 };
