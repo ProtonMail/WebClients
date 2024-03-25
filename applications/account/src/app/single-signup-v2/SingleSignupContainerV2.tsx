@@ -48,7 +48,6 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
-    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
@@ -606,20 +605,12 @@ const SingleSignupContainerV2 = ({
                     const [b2b, b2c] = await Promise.all(
                         ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
                             const planIDs = planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
-                            let couponToFetch = coupon;
-                            // Assumes the coupon is only valid for the specified audience.
-                            if (audienceToFetch !== audience) {
-                                couponToFetch = undefined;
-                            }
-                            if (toApp === APPS.PROTONPASS && !couponToFetch && audienceToFetch === Audience.B2B) {
-                                couponToFetch = COUPON_CODES.PASS_B2B_INTRO;
-                            }
                             return getPlanCardSubscriptionData({
                                 planIDs,
                                 plansMap,
                                 cycles: signupConfiguration.cycles,
                                 paymentsApi,
-                                coupon: couponToFetch,
+                                coupon,
                                 currency,
                                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
                             });
