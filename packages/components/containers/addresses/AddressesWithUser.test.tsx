@@ -10,6 +10,7 @@ import {
     useFlag,
     useKTVerifier,
     useNotifications,
+    useOrganizationKey,
     useUser,
 } from '@proton/components';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
@@ -45,6 +46,11 @@ const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVer
 
 jest.mock('@proton/components/containers/unleash/useFlag');
 const mockedUseFlag = useFlag as jest.MockedFunction<any>;
+
+jest.mock('@proton/components/hooks/useOrganizationKey');
+const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeof useOrganizationKey>;
+
+jest.mock('@proton/redux-shared-store');
 
 describe('addresses with user', () => {
     const user = {
@@ -96,6 +102,7 @@ describe('addresses with user', () => {
     mockedUseUser.mockReturnValue([{}] as any);
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
     mockedUseKTVerifier.mockReturnValue({} as any);
+    mockedUseOrganizationKey.mockReturnValue([{}] as any);
     mockedUseFlag.mockReturnValue(true);
     mockUseFeature({ feature: { Value: true } as any });
 
@@ -107,7 +114,9 @@ describe('addresses with user', () => {
         const mockApi = jest.fn();
         mockedUseApi.mockReturnValue(mockApi);
 
-        const { getByTestId, getByText, container } = render(<AddressesWithUser user={user} />);
+        const { getByTestId, getByText, container } = render(
+            <AddressesWithUser user={user} allowAddressDeletion={false} />
+        );
 
         // Assumes that "Make default" is displayed on the address we're interested in
         fireEvent.click(getByTestId('dropdownActions:dropdown'));
@@ -133,7 +142,7 @@ describe('addresses with user', () => {
 
         it('should not be able to set an external address as default', () => {
             const { onSortEnd, createNotification } = setup();
-            const { container } = render(<AddressesWithUser user={user} />);
+            const { container } = render(<AddressesWithUser user={user} allowAddressDeletion={false} />);
 
             onSortEnd({ newIndex: 0, oldIndex: 2 } as any, {} as any);
             expect(createNotification).toHaveBeenCalledWith({
@@ -145,7 +154,7 @@ describe('addresses with user', () => {
 
         it('should not be able to set a disabled address as default', () => {
             const { onSortEnd, createNotification } = setup();
-            const { container } = render(<AddressesWithUser user={user} />);
+            const { container } = render(<AddressesWithUser user={user} allowAddressDeletion={false} />);
 
             onSortEnd({ newIndex: 0, oldIndex: 3 } as any, {} as any);
             expect(createNotification).toHaveBeenCalledWith({
