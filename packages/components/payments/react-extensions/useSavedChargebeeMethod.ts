@@ -14,12 +14,14 @@ import {
     SavedPaymentMethodExternal,
 } from '../core';
 import { SavedChargebeePaymentProcessor } from '../core/payment-processors/savedChargebeePayment';
-import { PaymentProcessorHook } from './interface';
+import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
     savedMethod?: SavedPaymentMethodExternal;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
+    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
+    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 export interface Dependencies {
@@ -34,7 +36,7 @@ export interface SavedChargebeeMethodProcessorHook extends PaymentProcessorHook 
 }
 
 export const useSavedChargebeeMethod = (
-    { amountAndCurrency, savedMethod, onChargeable }: Props,
+    { amountAndCurrency, savedMethod, onChargeable, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
     { verifyPayment, api, handles, events }: Dependencies
 ): SavedChargebeeMethodProcessorHook => {
     const paymentProcessorRef = useRef<SavedChargebeePaymentProcessor>();
@@ -89,6 +91,8 @@ export const useSavedChargebeeMethod = (
         return tokenPromise;
     };
     const processPaymentToken = async () => {
+        onProcessPaymentToken?.('saved-chargebee');
+
         if (!paymentProcessor?.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -96,6 +100,7 @@ export const useSavedChargebeeMethod = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
+            onProcessPaymentTokenFailed?.('saved-chargebee');
             reset();
             throw error;
         }

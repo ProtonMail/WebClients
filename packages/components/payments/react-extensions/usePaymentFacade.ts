@@ -246,6 +246,8 @@ export const usePaymentFacade = (
         {
             amountAndCurrency,
             savedMethod: methods.savedInternalSelectedMethod,
+            onProcessPaymentToken,
+            onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
@@ -269,6 +271,8 @@ export const usePaymentFacade = (
         {
             amountAndCurrency,
             savedMethod: methods.savedExternalSelectedMethod,
+            onProcessPaymentToken,
+            onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
@@ -293,6 +297,8 @@ export const usePaymentFacade = (
     const card = useCard(
         {
             amountAndCurrency,
+            onProcessPaymentToken,
+            onProcessPaymentTokenFailed,
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
@@ -318,6 +324,8 @@ export const usePaymentFacade = (
         {
             amountAndCurrency,
             isCredit: false,
+            onProcessPaymentToken,
+            onProcessPaymentTokenFailed,
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
@@ -342,6 +350,8 @@ export const usePaymentFacade = (
         {
             amountAndCurrency,
             isCredit: true,
+            onProcessPaymentToken,
+            onProcessPaymentTokenFailed,
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
@@ -365,6 +375,8 @@ export const usePaymentFacade = (
     const chargebeeCard = useChargebeeCard(
         {
             amountAndCurrency,
+            onProcessPaymentToken,
+            onProcessPaymentTokenFailed,
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
@@ -418,61 +430,47 @@ export const usePaymentFacade = (
     const paymentMethodValue: PaymentMethodType | undefined = methods.selectedMethod?.value;
     const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
-        const processor = (() => {
-            if (isExistingPaymentMethod(paymentMethodValue)) {
-                if (
-                    paymentMethodType === PAYMENT_METHOD_TYPES.CARD ||
-                    paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL
-                ) {
-                    return savedMethod;
-                } else if (
-                    paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
-                    paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-                ) {
-                    return savedChargebeeMethod;
-                }
+        if (isExistingPaymentMethod(paymentMethodValue)) {
+            if (paymentMethodType === PAYMENT_METHOD_TYPES.CARD || paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
+                return savedMethod;
+            } else if (
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            ) {
+                return savedChargebeeMethod;
             }
-
-            if (paymentMethodValue === PAYMENT_METHOD_TYPES.CARD) {
-                return card;
-            }
-
-            if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
-                return paypal;
-            }
-
-            if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
-                return paypalCredit;
-            }
-
-            if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-                return chargebeeCard;
-            }
-
-            if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-                return chargebeePaypal;
-            }
-        })();
-
-        if (!processor) {
-            return processor;
         }
 
-        const processPaymentToken = async () => {
-            onProcessPaymentToken(processor.meta.type);
-            try {
-                return await processor.processPaymentToken();
-            } catch (error) {
-                onProcessPaymentTokenFailed(processor.meta.type);
-                throw error;
-            }
-        };
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CARD) {
+            return card;
+        }
 
-        return {
-            ...processor,
-            processPaymentToken,
-        };
-    }, [paymentMethodValue, paymentMethodType, card, savedMethod, paypal, paypalCredit, savedChargebeeMethod]);
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
+            return paypal;
+        }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+            return paypalCredit;
+        }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+            return chargebeeCard;
+        }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+            return chargebeePaypal;
+        }
+    }, [
+        paymentMethodValue,
+        paymentMethodType,
+        card,
+        savedMethod,
+        paypal,
+        paypalCredit,
+        savedChargebeeMethod,
+        chargebeeCard,
+        chargebeePaypal,
+    ]);
 
     return {
         methods,
