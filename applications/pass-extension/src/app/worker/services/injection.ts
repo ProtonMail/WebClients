@@ -62,7 +62,6 @@ export const createInjectionService = () => {
                         logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
                         if (tab.id !== undefined) {
                             /* FIXME: re-inject in all frames when supporting iframes */
-                            // await inject({ tabId: tab.id, allFrames: false, js: ['elements.js'], world: 'MAIN' });
                             await inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] });
                         }
                     })
