@@ -25,6 +25,10 @@ type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
 export type FormManagerState = {
     /* form manager state flag */
     active: boolean;
+    /** last detection run */
+    detectionAt: number;
+    /** number of detections executed */
+    detectionCount: number;
     /* detection request */
     detectionRequest: number;
     /* mutation observer watching the DOM tree */
@@ -48,6 +52,8 @@ const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => (
 export const createFormManager = (options: FormManagerOptions) => {
     const state: FormManagerState = {
         active: false,
+        detectionAt: 0,
+        detectionCount: 0,
         detectionRequest: -1,
         observer: null,
         staleMutationsCount: 0,
@@ -103,7 +109,6 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
-
                                 state.trackedForms.set(options.form, formHandle);
                                 formHandle.reconciliate(options.formType, options.fields);
                                 formHandle.attach();
@@ -121,6 +126,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                     /* reset detection state when finished */
                     state.detectionRequest = -1;
+                    state.detectionCount++;
                 });
 
                 return true;
@@ -129,16 +135,26 @@ export const createFormManager = (options: FormManagerOptions) => {
             void ctx?.service.autosave.reconciliate();
             return false;
         }),
-        250,
+        500,
         { leading: true, trailing: true }
     );
 
     const detect = async (options: { reason: string }) => {
-        if (!state.active) {
+        /* If `detect` calls are inundated due to concurrent DOM mutations or transition events,
+         * this function cancels ongoing detection requests if they occur too closely together—
+         * set heuristically to 15ms. This prevents triggering detectors on a transitioning page,
+         * which may still have DOM nodes affecting final prediction results. This condition only
+         * applies to subsequent detection runs, prioritizing the speed of the initial detection. */
+        const now = Date.now();
+        const cancel = !state.active || (state.detectionCount > 0 && now - state.detectionAt < 15);
+        state.detectionAt = now;
+
+        if (cancel) {
             cancelIdleCallback(state.detectionRequest);
             state.detectionRequest = -1;
-            return;
         }
+
+        if (!state.active) return;
 
         void runDetection(options.reason);
     };
@@ -232,7 +248,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * · The detection is executed only if there are unprocessed forms
      * · The purpose is to catch appearing forms that may have been previously
      *   filtered out by the ML algorithm when it was first triggered */
-    const onTransition = debounce(
+    const onTransitionEnd = debounce(
         ({ target }: Event) =>
             requestAnimationFrame(() => {
                 if (target !== document.body) purgeStaleSeenFields(target as HTMLElement);
@@ -246,20 +262,21 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (!state.active) {
             state.active = true;
             state.observer = listeners.addObserver(document.body, onMutation, getObserverConfig(ATTRIBUTES_FILTER));
-            listeners.addListener(document.body, 'transitionend', onTransition);
-            listeners.addListener(document.body, 'animationend', onTransition);
+            listeners.addListener(document.body, 'transitionend', onTransitionEnd);
+            listeners.addListener(document.body, 'animationend', onTransitionEnd);
         }
     };
 
     const destroy = () => {
         cancelIdleCallback(state.detectionRequest);
         runDetection.cancel();
-        onTransition.cancel();
+        onTransitionEnd.cancel();
 
         state.active = false;
         state.detectionRequest = -1;
         state.observer = null;
         state.staleMutationsCount = 0;
+        state.detectionCount = 0;
 
         listeners.removeAll();
 
