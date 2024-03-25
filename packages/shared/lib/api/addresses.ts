@@ -136,3 +136,8 @@ export const switchAddressesOrganizationPermissions = ({
     method: 'put',
     data: { Ids, Permissions },
 });
+
+export const getAllowAddressDeletion = () => ({
+    url: `core/v4/addresses/allowAddressDeletion`,
+    method: 'get',
+});

@@ -30,3 +30,4 @@ export * from './welcomeFlags';
 export * from './samlSSO';
 export * from './vpn/serversCount';
 export * from './vpn/hooks';
+export * from './allowAddressDeletion';
