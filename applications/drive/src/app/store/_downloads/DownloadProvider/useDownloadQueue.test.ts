@@ -33,12 +33,14 @@ describe('useDownloadQueue', () => {
         };
     };
 
+    const mockLog = jest.fn();
+
     let fileTransferId: string;
     let folderTransferId: string;
     let singleTransferIds: string[];
 
     beforeEach(async () => {
-        const { result } = renderHook(() => useDownloadQueue());
+        const { result } = renderHook(() => useDownloadQueue(mockLog));
         hook = result;
 
         await act(async () => {

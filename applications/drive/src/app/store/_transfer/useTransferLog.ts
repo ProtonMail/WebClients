@@ -21,6 +21,9 @@ export default function useTransferLog(transferType: TransferType) {
 
     const downloadLogs = () => {
         const logData = getLogs();
+        if (!logData) {
+            return;
+        }
 
         var elm = document.createElement('a');
         elm.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(logData));

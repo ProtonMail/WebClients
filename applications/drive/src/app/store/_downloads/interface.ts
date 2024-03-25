@@ -6,6 +6,8 @@ import { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { DecryptedLink, SignatureIssues } from '../_links';
 
+export type LogCallback = (message: string) => void;
+
 export interface LinkDownload {
     isFile: boolean;
     shareId: string;
@@ -115,6 +117,7 @@ export type InitDownloadCallback = (
     name: string,
     list: LinkDownload[],
     eventCallbacks: DownloadEventCallbacks,
+    log: LogCallback,
     options?: { virusScan?: boolean }
 ) => DownloadControls;
 export type DownloadSignatureIssueModal = React.FunctionComponent<DownloadSignatureIssueModalProps>;

@@ -26,6 +26,7 @@ async function* generateLinks(count: number, size = 123) {
 describe('ConcurrentIterator', () => {
     const mockStart = jest.fn();
     const mockCancel = jest.fn();
+    const mockLog = jest.fn();
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -63,21 +64,21 @@ describe('ConcurrentIterator', () => {
 
     it('pauses when reaching MAX_DOWNLOADING_FILES_LOAD', async () => {
         const c = new ConcurrentIterator();
-        const g = c.iterate(generateLinks(MAX_DOWNLOADING_FILES_LOAD * 2), {} as DownloadCallbacks);
+        const g = c.iterate(generateLinks(MAX_DOWNLOADING_FILES_LOAD * 2), {} as DownloadCallbacks, mockLog);
         await checkPausingGeneratingLinks(g, MAX_DOWNLOADING_FILES_LOAD, MAX_DOWNLOADING_FILES_LOAD * 2);
     });
 
     it('pauses when reaching MAX_DOWNLOADING_BLOCKS_LOAD', async () => {
         const bigFileSize = FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS_LOAD * 2;
         const c = new ConcurrentIterator();
-        const g = c.iterate(generateLinks(2, bigFileSize), {} as DownloadCallbacks);
+        const g = c.iterate(generateLinks(2, bigFileSize), {} as DownloadCallbacks, mockLog);
         await checkPausingGeneratingLinks(g, 1, 2);
     });
 
     it('cancels from pause', async () => {
         const bigFileSize = FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS_LOAD * 2;
         const c = new ConcurrentIterator();
-        const g = c.iterate(generateLinks(5, bigFileSize), {} as DownloadCallbacks);
+        const g = c.iterate(generateLinks(5, bigFileSize), {} as DownloadCallbacks, mockLog);
 
         // Start consuming so we it can generate links and hit the pause.
         const linksPromise = asyncGeneratorToArray(g);
