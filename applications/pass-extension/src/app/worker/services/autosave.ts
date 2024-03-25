@@ -85,7 +85,7 @@ export const createAutoSaveService = () => {
 
             item.get('content')
                 .set('username', (username) => (passkey ? username : payload.username))
-                .set('password', (password) => (passkey ? password : ''))
+                .set('password', (password) => (passkey ? password : payload.password))
                 .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
                 .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
 
