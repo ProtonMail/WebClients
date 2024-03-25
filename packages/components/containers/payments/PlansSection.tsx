@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useVariant } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ExperimentCode, getVPNIntroPricingVariant } from '@proton/components/containers';
+import { getVPNIntroPricingVariant } from '@proton/components/containers';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -46,7 +45,7 @@ const getSearchParams = (search: string) => {
 };
 
 const PlansSection = ({ app }: { app: APP_NAMES }) => {
-    const vpnIntroPricingVariant = getVPNIntroPricingVariant(useVariant(ExperimentCode.VpnIntroPricing));
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();

@@ -1,12 +1,11 @@
 import { FormEvent, ReactNode, RefObject, useEffect, useMemo, useRef, useState } from 'react';
 
-import { useVariant } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { ExperimentCode, getVPNIntroPricingVariant } from '@proton/components/containers';
+import { getVPNIntroPricingVariant } from '@proton/components/containers';
 import { getShortBillingText, isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -65,6 +64,7 @@ import {
     Organization,
     Plan,
     PlanIDs,
+    PriceType,
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
@@ -103,7 +103,7 @@ import SubscriptionCycleSelector, {
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { SelectedProductPlans, getCurrency, getDefaultSelectedProductPlans } from './helpers';
+import { SelectedProductPlans, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
@@ -270,7 +270,7 @@ const SubscriptionContainer = ({
 
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
-    const vpnIntroPricingVariant = getVPNIntroPricingVariant(useVariant(ExperimentCode.VpnIntroPricing));
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -609,17 +609,14 @@ const SubscriptionContainer = ({
             abortControllerRef.current?.abort();
             abortControllerRef.current = new AbortController();
 
+            const coupon = getAutoCoupon({ coupon: newModel.coupon, planIDs: newModel.planIDs, cycle: newModel.cycle });
+
             const checkResult = await paymentsApi.checkWithAutomaticVersion(
                 {
                     Plans: newModel.planIDs,
-                    CouponCode: (() => {
-                        if (isPassB2bPlan) {
-                            return COUPON_CODES.PASS_B2B_INTRO;
-                        }
-                    })(),
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
-                    Codes: getCodes(newModel),
+                    Codes: getCodes({ gift: newModel.gift, coupon }),
                     BillingAddress: {
                         CountryCode: newModel.taxBillingAddress.CountryCode,
                         State: newModel.taxBillingAddress.State,
@@ -1021,6 +1018,14 @@ const SubscriptionContainer = ({
                                                     planIDs={model.planIDs}
                                                     cycle={model.cycle}
                                                     currency={model.currency}
+                                                    priceType={
+                                                        model.planIDs[PLANS.VPN2024] &&
+                                                        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) &&
+                                                        couponCode !== COUPON_CODES.VPN_INTRO_2024 &&
+                                                        model.initialCheckComplete
+                                                            ? PriceType.default
+                                                            : undefined
+                                                    }
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
@@ -1104,30 +1109,33 @@ const SubscriptionContainer = ({
                                     subscription={subscription}
                                     cycle={model.cycle}
                                     planIDs={model.planIDs}
-                                    gift={
-                                        <>
-                                            {couponCode && (
-                                                <div className="flex items-center mb-1">
-                                                    <Icon name="gift" className="mr-2 mb-1" />
-                                                    <Tooltip title={couponDescription}>
-                                                        <code>{couponCode.toUpperCase()}</code>
-                                                    </Tooltip>
-                                                </div>
-                                            )}
-                                            {!getHas2023OfferCoupon(couponCode) && (
-                                                <PaymentGiftCode
-                                                    giftCodeRef={giftCodeRef}
-                                                    key={
-                                                        /* Reset the toggle state when a coupon code gets applied */
-                                                        couponCode
-                                                    }
-                                                    giftCode={model.gift}
-                                                    onApply={handleGift}
-                                                    loading={loadingGift}
-                                                />
-                                            )}
-                                        </>
-                                    }
+                                    gift={(() => {
+                                        return (
+                                            <>
+                                                {couponCode && (
+                                                    <div className="flex items-center mb-1">
+                                                        <Icon name="gift" className="mr-2 mb-1" />
+                                                        <Tooltip title={couponDescription}>
+                                                            <code>{couponCode.toUpperCase()}</code>
+                                                        </Tooltip>
+                                                    </div>
+                                                )}
+                                                {couponCode !== COUPON_CODES.VPN_INTRO_2024 &&
+                                                    !getHas2023OfferCoupon(couponCode) && (
+                                                        <PaymentGiftCode
+                                                            giftCodeRef={giftCodeRef}
+                                                            key={
+                                                                /* Reset the toggle state when a coupon code gets applied */
+                                                                couponCode
+                                                            }
+                                                            giftCode={model.gift}
+                                                            onApply={handleGift}
+                                                            loading={loadingGift}
+                                                        />
+                                                    )}
+                                            </>
+                                        );
+                                    })()}
                                     onChangeCurrency={handleChangeCurrency}
                                     nextSubscriptionStart={subscription.PeriodEnd}
                                     showTaxCountry={paymentFacade.showTaxCountry}

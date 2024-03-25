@@ -158,7 +158,15 @@ export function subscriptionExpires(
     }
 }
 
-export const getAutoCoupon = ({ planIDs, cycle, coupon }: { planIDs: PlanIDs; cycle: CYCLE; coupon?: string }) => {
+export const getAutoCoupon = ({
+    planIDs,
+    cycle,
+    coupon,
+}: {
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+    coupon?: string | null;
+}) => {
     if (!coupon && [PLANS.PASS_BUSINESS, PLANS.PASS_PRO].some((plan) => planIDs?.[plan])) {
         return COUPON_CODES.PASS_B2B_INTRO;
     }
@@ -170,4 +178,6 @@ export const getAutoCoupon = ({ planIDs, cycle, coupon }: { planIDs: PlanIDs; cy
     ) {
         return COUPON_CODES.VPN_INTRO_2024;
     }
+
+    return coupon || undefined;
 };

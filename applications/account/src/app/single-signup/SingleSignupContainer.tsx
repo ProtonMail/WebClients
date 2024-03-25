@@ -1,10 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { useVariant } from '@unleash/proxy-client-react';
-
 import {
     Breakpoints,
-    ExperimentCode,
     OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
@@ -140,7 +137,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         flow: 'signup-vpn',
     });
     const activeBreakpoint = useActiveBreakpoint();
-    const vpnIntroPricingVariant = getVPNIntroPricingVariant(useVariant(ExperimentCode.VpnIntroPricing));
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
 
     useMetaTags(metaTags);
 
