@@ -88,16 +88,15 @@ describe('useShareInvitees', () => {
                 result.current.add([invitee, invitee]);
             });
 
-            expect(mockedCreateNotification).toHaveBeenCalledWith({
-                type: 'warning',
-                text: `Removed duplicate invitees: ${invitee.email}`,
-            });
-
             await waitFor(() =>
                 expect(result.current.invitees).toEqual([
                     { ...invitee, publicKey, isExternal: false, isLoading: false, error: undefined },
                 ])
             );
+            expect(mockedCreateNotification).toHaveBeenCalledWith({
+                type: 'warning',
+                text: `Removed duplicate invitees: ${invitee.email}`,
+            });
         });
 
         it('adding an existing invitee should add it with an error', async () => {
