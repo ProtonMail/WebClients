@@ -1,16 +1,20 @@
 import { c } from 'ttag';
 
+import { disableAllowAddressDeletion } from '@proton/account';
+import { useApi, useFlag } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
-import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
-import { useAddressFlags, useApi, useEventManager, useNotifications } from '../../hooks';
+import { useAddressFlags, useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
 import DeleteAddressModal from './DeleteAddressModal';
+import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
 import { AddressPermissions } from './helper';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
@@ -23,6 +27,7 @@ interface Props {
     savingIndex?: number;
     addressIndex?: number;
     permissions: AddressPermissions;
+    allowAddressDeletion: boolean;
 }
 
 const useAddressFlagsActionsList = (address: Address, user: UserModel, member: Member | undefined) => {
@@ -67,15 +72,27 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
     return actions;
 };
 
-const AddressActions = ({ address, member, user, onSetDefault, savingIndex, addressIndex, permissions }: Props) => {
+const AddressActions = ({
+    address,
+    member,
+    user,
+    onSetDefault,
+    savingIndex,
+    addressIndex,
+    permissions,
+    allowAddressDeletion,
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const addressFlagsActionsList = useAddressFlagsActionsList(address, user, member);
+    const dispatch = useDispatch();
+    const [organizationKey] = useOrganizationKey();
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
-    const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
+    const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
+    const [deleteAddressModalProps, setDeleteAddressModalOpen, renderDeleteAddressModal] = useModalState();
     const [disableAddressProps, setDisableAddressModalOpen, renderDisableAddress] = useModalState();
     const [editInternalAddressProps, setEditInternalAddressOpen, renderEditInternalAddressModal] = useModalState();
     const [editExternalAddressProps, setEditExternalAddressOpen, renderEditExternalAddressModal] = useModalState();
@@ -89,6 +106,11 @@ const AddressActions = ({ address, member, user, onSetDefault, savingIndex, addr
         createNotification({ text: c('Success notification').t`Address deleted` });
     };
 
+    const handleDeleteOncePerYear = async () => {
+        await handleDelete();
+        dispatch(disableAllowAddressDeletion());
+    };
+
     const handleEnable = async () => {
         await api(enableAddress(address.ID));
         await call();
@@ -100,6 +122,9 @@ const AddressActions = ({ address, member, user, onSetDefault, savingIndex, addr
         await call();
         createNotification({ text: c('Success notification').t`Address disabled` });
     };
+
+    const addressDeletionEnabled = useFlag('AddressDeletion');
+    const mustActivateOrganizationKey = member?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
 
     const list =
         savingIndex !== undefined
@@ -130,11 +155,24 @@ const AddressActions = ({ address, member, user, onSetDefault, savingIndex, addr
                       text: c('Address action').t`Disable`,
                       onClick: () => setDisableAddressModalOpen(true),
                   },
-                  permissions.canDelete &&
+                  permissions.canDeleteAddress &&
                       ({
-                          text: c('Address action').t`Delete`,
+                          text: c('Address action').t`Delete address`,
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
+                      } as const),
+                  addressDeletionEnabled &&
+                      permissions.canDeleteAddressOncePerYear &&
+                      !mustActivateOrganizationKey &&
+                      ({
+                          text: c('Address action').t`Delete address`,
+                          actionType: 'delete',
+                          onClick: () => setDeleteAddressPromptOpen(true),
+                          tooltip: allowAddressDeletion
+                              ? c('Delete address tooltip').t`You can only delete 1 address per year`
+                              : c('Delete address tooltip')
+                                    .t`You've reached the limit of address deletions for this user.`,
+                          disabled: !allowAddressDeletion,
                       } as const),
                   ...addressFlagsActionsList,
               ].filter(isTruthy);
@@ -150,8 +188,11 @@ const AddressActions = ({ address, member, user, onSetDefault, savingIndex, addr
             {renderEditExternalAddressModal && (
                 <EditExternalAddressModal address={address} {...editExternalAddressProps} />
             )}
-            {renderDeleteAddress && (
-                <DeleteAddressModal email={address.Email} onDeleteAddress={handleDelete} {...deleteAddressProps} />
+            {renderDeleteAddressPrompt && (
+                <DeleteAddressPrompt onDeleteAddress={handleDeleteOncePerYear} {...deleteAddressPromptProps} />
+            )}
+            {renderDeleteAddressModal && (
+                <DeleteAddressModal email={address.Email} onDeleteAddress={handleDelete} {...deleteAddressModalProps} />
             )}
             {renderDisableAddress && (
                 <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />

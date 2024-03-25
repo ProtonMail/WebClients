@@ -108,6 +108,9 @@ export const getPermissions = ({
         ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED &&
         isSelf;
 
+    // Takes into account disabling permissions since it does that automatically. canPay to simulate the "payments" scope for delete route.
+    const adminCanDeleteCustom = ((isEnabled && canDisable) || !isEnabled) && Type === TYPE_CUSTOM_DOMAIN && canPay;
+
     return {
         canMakeDefault,
         canGenerate,
@@ -115,8 +118,8 @@ export const getPermissions = ({
         canEditExternalAddress,
         canDisable,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
-        // Takes into account disabling permissions since it does that automatically. canPay to simulate the "payments" scope for delete route.
-        canDelete: ((isEnabled && canDisable) || !isEnabled) && Type === TYPE_CUSTOM_DOMAIN && canPay,
+        canDeleteAddress: adminCanDeleteCustom,
+        canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
     };
 };
