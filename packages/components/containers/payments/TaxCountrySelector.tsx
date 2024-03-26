@@ -190,8 +190,8 @@ const TaxCountrySelector = ({
     const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
 
     const collapsedText = (() => {
-        if (selectedCountry?.text) {
-            let text = selectedCountry.text;
+        if (selectedCountry?.label) {
+            let text = selectedCountry.label;
             if (federalStateCode && showStateCode) {
                 text += `, ${getStateName(selectedCountryCode, federalStateCode)}`;
             }
