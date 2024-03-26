@@ -59,6 +59,9 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
+      "Change keys": [
+        "Изменить ключи"
+      ],
       "Change mailbox password": [
         "Изменить пароль почтового ящика"
       ],
@@ -172,6 +175,9 @@
       ],
       "Edit": [
         "Изменить"
+      ],
+      "Edit billing cycle": [
+        "Изменить платежный цикл"
       ],
       "Edit display name": [
         "Редактировать отображаемое имя"
@@ -602,9 +608,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Удалить"
-      ],
       "Disable": [
         "Отключить"
       ],
@@ -1931,9 +1934,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } — ваше имя пользователя. Чтобы создать ${ Local }@${ Domain }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
       ],
@@ -1949,6 +1949,9 @@
       "Code wrong or not valid anymore": [
         "Неверный или недействительный код"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Не удалось загрузить счета-фактуры. Повторите попытку позже."
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -1960,9 +1963,6 @@
       ],
       "Enter 6 digits": [
         "Введите 6 цифр"
-      ],
-      "Error": [
-        "Ошибка"
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
@@ -2039,6 +2039,9 @@
       "Payments are currently not available, please try again later": [
         "Платежи в настоящее время недоступны, пожалуйста, повторите попытку позже"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перед добавлением адресов настройте пользовательский домен."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
       ],
@@ -2092,9 +2095,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Минимальный платеж, который мы принимаем, составляет ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Сначала должен быть активирован ключ организации"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Длина этого поля превысила максимальные ${ maximumLength } символов."
@@ -3063,9 +3063,6 @@
       "Domain ownership verified.": [
         "Владение доменом подтверждено."
       ],
-      "Done": [
-        "Готово"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Мы отправили код на ${ destination }."
       ],
@@ -3252,6 +3249,9 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "Keys created": [
+        "Ключи созданы"
+      ],
       "Lean more about gateways": [
         "Узнайте больше о шлюзах"
       ],
@@ -3292,7 +3292,7 @@
         "ММ/ГГ"
       ],
       "Must be between 3 and 20 characters long.": [
-        "Должен быть длиной от 3 до 20 символов."
+        "Должно быть длиной от 3 до 20 символов."
       ],
       "Must contain only letters, digits, and dashes (-).": [
         "Должно содержать только буквы, цифры и тире (-)."
@@ -3301,7 +3301,7 @@
         "Не должно содержать пробелов."
       ],
       "Must start with a letter.": [
-        "Должен начинаться с буквы."
+        "Должно начинаться с буквы."
       ],
       "No addresses exist": [
         "Нет адресов"
@@ -3435,9 +3435,6 @@
       "Protected by Swiss privacy laws": [
         "Защищен швейцарскими законами о конфиденциальности"
       ],
-      "Queued": [
-        "Поставлено в очередь"
-      ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
@@ -3512,6 +3509,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
+      ],
+      "Single sign-on removed": [
+        "SSO удалён"
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некоторые из доступных вам серверов могут быть использованы только в определенных странах из-за недавних удалений"
@@ -3743,6 +3743,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учетные данные при подключении к серверам ${ VPN_APP_NAME } без приложения. Примеры использования включают: Tunnelblick на macOS, OpenVPN на GNU/Linux."
+      ],
+      "User activated": [
+        "Пользователь активирован"
       ],
       "Users": [
         "Пользователи"
@@ -4558,6 +4561,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Приветственные письма ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Ежедневные уведомления по электронной почте"
       ]
     },
     "Label on payment method": {
@@ -4728,6 +4734,9 @@
       ]
     },
     "Member action": {
+      "Add address": [
+        "Добавить адрес"
+      ],
       "Change password": [
         "Изменить пароль"
       ],
@@ -4969,6 +4978,9 @@
       "Admin console": [
         "Панель администратора"
       ],
+      "Administration Panel": [
+        "Панель администратора"
+      ],
       "Advanced network security": [
         "Передовая сетевая безопасность"
       ],
@@ -4986,6 +4998,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Автозаполнение кредитных карт (скоро)"
+      ],
+      "Automatic email forwarding": [
+        "Автоматическая пересылка электронной почты"
       ],
       "Available on all platforms": [
         "Доступно на всех платформах"
@@ -5128,6 +5143,9 @@
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
       ],
+      "Require 2FA for organization": [
+        "Требуется двухфакторная идентификация для организации"
+      ],
       "Router support": [
         "Поддержка маршрутизаторов"
       ],
@@ -5163,6 +5181,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Интеграция с SSO (скоро появится)"
       ],
       "Start protecting your organization": [
         "Начните защищать свою организацию"
@@ -5412,6 +5433,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Позволяет настраивать автоматические ответы (автоответчик) для входящих сообщений"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Автоматически пересылайте письма, отправленные на ваш аккаунт ${ MAIL_APP_NAME }, на любой другой адрес электронной почты."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Массовая рекламная или программная рассылка электронной почты в настоящее время не поддерживается. Мы рекомендуем использовать специального поставщика услуг электронной почты для этого случая."
       ],
@@ -5540,6 +5564,9 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Специально разработанная функция NetShield защищает ваше устройство и ускоряет просмотр страниц, блокируя рекламу, трекеры и вредоносные программы"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Место хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } и ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
@@ -6082,6 +6109,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } администратору в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации."
+      ],
       "Changing organization keys": [
         "Изменение ключей организации"
       ],
@@ -6621,6 +6654,12 @@
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
+      ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
       ]
@@ -6813,6 +6852,9 @@
       ],
       "Address added": [
         "Адрес добавлен"
+      ],
+      "Administrator privileges restored": [
+        "Права администратора восстановлены"
       ],
       "Bug reported": [
         "Отчёт об ошибке отправлен"
@@ -7063,6 +7105,9 @@
       "Activate organization key": [
         "Активация ключа организации"
       ],
+      "Activate user": [
+        "Активировать пользователя"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -7179,6 +7224,9 @@
       ],
       "Create multiple user accounts": [
         "Создать несколько пользовательских аккаунтов"
+      ],
+      "Create organization key": [
+        "Создать ключ организации"
       ],
       "Create user accounts": [
         "Создать пользовательские аккаунты"
@@ -7408,6 +7456,12 @@
       "Remove domain": [
         "Удалить домен"
       ],
+      "Remove single sign-on": [
+        "Удалить SSO"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Удалить SSO для вашей организации?"
+      ],
       "Remove user?": [
         "Удалить пользователя?"
       ],
@@ -7480,11 +7534,20 @@
       "Signed in to member account": [
         "Выполнен вход в аккаунт пользователя"
       ],
+      "Single sign-on": [
+        "SSO"
+      ],
       "Status": [
         "Состояние"
       ],
       "Subscription": [
         "Подписка"
+      ],
+      "Successfully created ${ n } user account": [
+        "Успешно создана ${ n } учетная запись пользователя",
+        "Успешно созданы ${ n } учетных записи пользователя",
+        "Успешно созданы ${ n } учетных записи пользователя",
+        "Успешно созданы ${ n } учетных записи пользователя"
       ],
       "Summary": [
         "Сводка"

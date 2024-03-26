@@ -608,9 +608,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Verwijderen"
-      ],
       "Disable": [
         "Uitschakelen"
       ],
@@ -1938,8 +1935,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } is uw gebruikersnaam. Om ${ Local }@${ Domain } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
@@ -1970,9 +1967,6 @@
       ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
-      ],
-      "Error": [
-        "Fout"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
@@ -2108,9 +2102,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "De minimale betaling die we accepteren is ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "De organisatiesleutel moet eerst geactiveerd worden"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -3077,9 +3068,6 @@
       "Domain ownership verified.": [
         "Domein eigendom geverifieerd."
       ],
-      "Done": [
-        "Klaar"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
       ],
@@ -3478,9 +3466,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
-      ],
-      "Queued": [
-        "In wachtrij"
       ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
@@ -4629,6 +4614,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } welkomst-e-mail"
+      ],
+      "Daily email notifications": [
+        "Dagelijkse e-mailmeldingen"
       ]
     },
     "Label on payment method": {
@@ -4802,6 +4790,9 @@
     "Member action": {
       "Activate user": [
         "Activeer gebruiker"
+      ],
+      "Add address": [
+        "E-mailadres toevoegen"
       ],
       "Change password": [
         "Wachtwoord wijzigen"
@@ -6058,9 +6049,6 @@
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
-      ],
-      "Invalid securiry code": [
-        "Ongeldige beveiligingscode"
       ],
       "Something went wrong. Please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
