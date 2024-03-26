@@ -359,8 +359,14 @@
       "Save": [
         "Opslaan"
       ],
+      "Save passkey": [
+        "Toegangssleutel opslaan"
+      ],
       "Saving": [
         "Bezig met opslaan"
+      ],
+      "Saving passkey...": [
+        "Toeganssleutel opslaan..."
       ],
       "See members": [
         "Bekijk leden"
@@ -872,6 +878,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Een nieuwe versie van ${ PASS_APP_NAME } is beschikbaar. Update het om te genieten van de laatste functies en bugfixes."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Een toegangssleutel voor \"${ username }\" zal worden opgeslagen en is beschikbaar op apparaten waarop ${ PASS_APP_NAME } is geïnstalleerd."
+      ],
       "Access successfully confirmed": [
         "Toegang succesvol bevestigd"
       ],
@@ -935,8 +944,17 @@
       "Can view items in this vault.": [
         "Kan items bekijken in deze kluis."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Kies een opgeslagen toegangssleutel om aan te melden bij ${ domain }"
+      ],
       "Click the icon to open it anytime.": [
         "Klik op het icoon om het op eender welk moment te openen"
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Sluit dit venster om een beveiligingssleutel of een andere toegangssleutel te gebruiken."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Sluit dit venster om een andere toegangscodemanager te gebruiken."
       ],
       "Congratulations, your access has been confirmed": [
         "Gefeliciteerd, uw toegang werd bevestigd"
@@ -1145,6 +1163,9 @@
       "Pass Plus trial": [
         "Proton Pass Plus-proefversie"
       ],
+      "Passkey sign-in": [
+        "Aanmelden met toegangssleutel"
+      ],
       "Password copied": [
         "Wachtwoord gekopieerd"
       ],
@@ -1308,6 +1329,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Ontgrendel ${ PASS_APP_NAME } met uw pincode om toegang te krijgen tot uw toegangssleutels"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Ontgrendel ${ PASS_APP_NAME } met uw pincode om deze toegangscode op te slaan"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ontgrendel het met uw pincode om toegang te krijgen tot de instellingen"
@@ -1685,6 +1712,9 @@
       ],
       "Oldest to newest": [
         "Van oud naar nieuw"
+      ],
+      "Passkey": [
+        "Toegangssleutel"
       ],
       "Passphrase": [
         "Wachtzin"
@@ -2091,6 +2121,9 @@
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
       ],
+      "Passkey": [
+        "Toegangssleutel"
+      ],
       "Password": [
         "Wachtwoord"
       ],
@@ -2260,6 +2293,9 @@
       ],
       "No items matching": [
         "Geen overeenkomende items"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Geen toegangssleutels gevonden. Sla uw toegangssleutels op in ${ PASS_APP_NAME } om in te loggen op ${ domain }."
       ],
       "No password manager selected": [
         "Geen wachtwoordbeheerder geselecteerd"
