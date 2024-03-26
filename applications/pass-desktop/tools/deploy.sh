@@ -42,36 +42,69 @@ repoDir=$(mktemp -d)
 git clone --depth 1 "${PASS_DESKTOP_DEPLOY_REPO}" "$repoDir"
 pushd "$repoDir" || exit 1
 
+if [ "$1" = "windows" ]; then
+  subpath="PassDesktop/win32/x64"
+  executable_filename="ProtonPass_Setup_${TAG_VERSION}.exe"
+elif [ "$1" = "macos" ]; then
+  subpath="PassDesktop/darwin/universal"
+  executable_filename="ProtonPass_${TAG_VERSION}.dmg"
+else
+  echo "Invalid argument provided (must be 'windows' or 'macos')"
+  exit 1
+fi
+path="${repoDir}/${subpath}"
+
 # Configure git
 git config --local user.name "${GIT_COMMIT_AUTHOR}"
 git config --local user.email "${GIT_COMMIT_EMAIL}"
 
-# Copy Windows artefacts
-mkdir -p "${repoDir}/PassDesktop/win32/x64"
-if [[ "${CATEGORY}" == "Stable" ]]; then
-  cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/"* "${repoDir}/PassDesktop/win32/x64/"
-  cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup.exe"
-else
-  cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup_${TAG_VERSION}.exe"
+mkdir -p "${path}"
+# Copy artefacts
+if [ "$1" = "windows" ]; then
+  if [[ "${CATEGORY}" == "Stable" ]]; then
+    cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/"* "${path}/"
+    cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${path}/ProtonPass_Setup.exe"
+  else
+    cp "${PROJECT_ROOT}/out/make/squirrel.windows/x64/ProtonPass_Setup_${VERSION}.exe" "${path}/${executable_filename}"
+  fi
+  git lfs track "*.exe" "*.nupkg"
+elif [ "$1" = "macos" ]; then
+  cp "${PROJECT_ROOT}/out/make/Proton Pass.dmg" "${path}/${executable_filename}"
+  # RELEASES.json follows the format detailed here: https://github.com/Squirrel/Squirrel.Mac#update-file-json-format
+  cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/RELEASES.json" "${path}/RELEASES.json"
+  if [[ "${CATEGORY}" == "Stable" ]]; then
+    cp "${PROJECT_ROOT}/out/make/Proton Pass.dmg" "${path}/ProtonPass.dmg"
+    # zip file name must match what is defined in RELEASES.json
+    cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/Proton Pass-darwin-universal-${VERSION}.zip" "${path}/Proton Pass-darwin-universal-${VERSION}.zip"
+  fi
+  git lfs track "*.dmg" "Proton Pass-darwin-universal-${VERSION}.zip"
 fi
-git lfs track "*.exe" "*.nupkg"
 
 # Update version.json
 now=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-sha=$(sha512sum "${repoDir}/PassDesktop/win32/x64/ProtonPass_Setup_${TAG_VERSION}.exe" | cut -d " " -f 1)
-if [ ! -f "${repoDir}/PassDesktop/win32/x64/version.json" ]; then
-  echo "{\"Releases\": []}" > "${repoDir}/PassDesktop/win32/x64/version.json"
+sha=$(sha512sum "${path}/${executable_filename}" | cut -d " " -f 1)
+if [ ! -f "${path}/version.json" ]; then
+  echo "{\"Releases\": []}" > "${path}/version.json"
 fi
 
-if grep -q "$sha" "${repoDir}/PassDesktop/win32/x64/version.json"; then
+# Exit if this same version already exists
+if grep -q "$sha" "${path}/version.json"; then
   echo "SHA already exists in version.json"
   exit 1
 fi
-newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${TAG_VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/PassDesktop/win32/x64/ProtonPass_Setup_${TAG_VERSION}.exe\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
-< "${repoDir}/PassDesktop/win32/x64/version.json" jq ".Releases |= [$newrelease] + ." > version.json.tmp
-mv version.json.tmp "${repoDir}/PassDesktop/win32/x64/version.json"
+if jq -e ".Releases[] | select(.Version == \"${TAG_VERSION}\")" "${path}/version.json"; then
+  echo "Version ${TAG_VERSION} already exists in version.json"
+  exit 1
+fi
 
-cat "${repoDir}/PassDesktop/win32/x64/version.json"
+newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${TAG_VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/${subpath}/${executable_filename}\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
+< "${repoDir}/${subpath}/version.json" jq ".Releases |= [$newrelease] + ." > version.json.tmp
+mv version.json.tmp "${repoDir}/${subpath}/version.json"
+
+cat "${path}/version.json"
+if [ "$1" = "macos" ]; then
+  cat "${path}/RELEASES.json"
+fi
 
 # Commit and push
 git add .
