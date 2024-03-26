@@ -2,6 +2,8 @@ const { AutoUnpackNativesPlugin } = require('@electron-forge/plugin-auto-unpack-
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { WebpackPlugin } = require('@electron-forge/plugin-webpack');
 const { MakerSquirrel } = require('@electron-forge/maker-squirrel');
+const { MakerZIP } = require('@electron-forge/maker-zip');
+const { MakerDMG } = require('@electron-forge/maker-dmg');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
@@ -16,6 +18,13 @@ const config = {
         extraResource: 'assets',
         appBundleId: 'me.proton.pass.electron',
         executableName: 'ProtonPass',
+        appCategoryType: 'public.app-category.productivity',
+        osxSign: {},
+        osxNotarize: {
+            appleId: process.env.PASS_DESKTOP_APPLE_ID,
+            appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD,
+            teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID,
+        },
     },
     rebuildConfig: {},
     makers: [
@@ -28,6 +37,38 @@ const config = {
             setupExe: `ProtonPass_Setup_${pkg.version}.exe`,
             name: 'ProtonPass',
         }),
+        // macOS
+        new MakerDMG((arch) => ({
+            name: 'Proton Pass',
+            background: path.join(__dirname, 'assets', 'dmg-background.png'),
+            icon: path.join(__dirname, 'assets', 'volume-icon.icns'),
+            contents: () => {
+                return [
+                    {
+                        x: 150,
+                        y: 180,
+                        type: 'file',
+                        path: `${process.cwd()}/out/Proton Pass-darwin-${arch}/Proton Pass.app`,
+                    },
+                    { x: 350, y: 180, type: 'link', path: '/Applications' },
+                ];
+            },
+            additionalDMGOptions: {
+                window: {
+                    size: {
+                        width: 500,
+                        height: 345,
+                    },
+                },
+            },
+        })),
+        // ZIP for macOS updates
+        new MakerZIP(
+            {
+                macUpdateManifestBaseUrl: 'https://proton.me/download/PassDesktop/darwin/universal',
+            },
+            ['darwin']
+        ),
     ],
     plugins: [
         new AutoUnpackNativesPlugin({}),
@@ -58,8 +99,8 @@ const config = {
             version: FuseVersion.V1,
             // Disables ELECTRON_RUN_AS_NODE
             [FuseV1Options.RunAsNode]: false,
-            // Enables cookie encryption
-            [FuseV1Options.EnableCookieEncryption]: true,
+            // To remove the Keychain Access prompt on Intel Mac
+            [FuseV1Options.EnableCookieEncryption]: false,
             // Disables the NODE_OPTIONS environment variable
             [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
             // Disables the --inspect and --inspect-brk family of CLI options
