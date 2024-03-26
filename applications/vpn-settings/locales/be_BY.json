@@ -134,6 +134,9 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete address": [
+        "Выдаліць адрас"
+      ],
       "Delete Gateway": [
         "Выдаліць шлюз"
       ],
@@ -614,8 +617,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Выдаліць"
+      "Delete address": [
+        "Выдаліць адрас"
       ],
       "Disable": [
         "Адключыць"
@@ -1872,6 +1875,25 @@
         "/карыстальнікаў у месяц"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Вы або іншы карыстальнік больш не зможаце выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Наступны актыўны адрас у вашым спісе будзе зададзены ў якасці прадвызначанага."
+      ],
+      "You can only delete 1 address per year.": [
+        "Вы можаце выдаліць толькі адзін адрас у год."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Вы можаце выдаліць толькі адзін адрас у год"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Вы дасягнулі абмежавання па колькасці адрасоў, якія можна выдаліць для гэтага карыстальніка."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Пратэрмінаваны рахунак"
@@ -1954,8 +1976,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } ваша імя карыстальніка. Каб стварыць ${ Local }@${ Domain }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
@@ -1986,9 +2008,6 @@
       ],
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
-      ],
-      "Error": [
-        "Памылка"
       ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
@@ -2124,9 +2143,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Мінімальная аплата, якую мы прымаем, складае ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Спачатку неабходна актываваць ключ арганізацыі"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
@@ -3139,9 +3155,6 @@
       "Domain ownership verified.": [
         "Уладальнік дамена правераны."
       ],
-      "Done": [
-        "Гатова"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Гатова! Мы адправілі код на ${ destination }."
       ],
@@ -3546,9 +3559,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
-      ],
-      "Queued": [
-        "У чарзе"
       ],
       "read our two-factor authentication guide first": [
         "спачатку прачытайце наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
@@ -4721,6 +4731,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Штодзённыя апавяшчэнні па электроннай пошце"
       ]
     },
     "Label on payment method": {
@@ -4896,6 +4909,9 @@
     "Member action": {
       "Activate user": [
         "Актываваць карыстальніка"
+      ],
+      "Add address": [
+        "Дадаць адрас"
       ],
       "Change password": [
         "Змяніць пароль"
@@ -6137,11 +6153,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "У доступе адмоўлена, прывілеі адміністратара абмежаваны."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Пераканайцеся, што ў іх ёсць актыўны адрас, а потым запрасіце іх паасобку."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры першым уваходзе ў сістэму"
       ],
       "Reset organization key": [
         "Скінуць ключ арганізацыі"
+      ],
+      "The following administrators could not be restored.": [
+        "Наступных адміністратараў не атрымалася аднавіць."
       ],
       "The following administrators will get access to the organization key.": [
         "Наступныя адміністратары атрымаюць доступ да ключа арганізацыі."
@@ -6212,7 +6234,7 @@
       "Invalid expiration date": [
         "Памылковая дата заканчэння тэрміну дзеяння карткі"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Памылковы код бяспекі"
       ],
       "Something went wrong. Please try again later.": [
@@ -7633,6 +7655,9 @@
       "Change role": [
         "Змяніць ролю"
       ],
+      "Close": [
+        "Закрыць"
+      ],
       "Confirm": [
         "Пацвердзіць"
       ],
@@ -7710,6 +7735,9 @@
       ],
       "Delete account": [
         "Выдаліць уліковы запіс"
+      ],
+      "Delete address permanently?": [
+        "Выдаліць адрас незваротна?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дня)",
@@ -8271,7 +8299,7 @@
         "Падпіска аўтаматычна падаўжаецца кожны 1 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 1 месяц."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Падпіска аўтаматычна падаўжаецца кожны 3 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
+        "Падпіска аўтаматычна падаўжаецца кожны 3 месяцы. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
@@ -8296,13 +8324,13 @@
         "15 месяцаў"
       ],
       "18-month": [
-        "18-месячную"
+        "18-месячнай"
       ],
       "2-year": [
         "2 гады"
       ],
       "3-month": [
-        "3-месячную"
+        "3-месячнай"
       ],
       "30-month": [
         "30 месяцаў"

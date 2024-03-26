@@ -134,6 +134,9 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete address": [
+        "Ta bort adress"
+      ],
       "Delete Gateway": [
         "Ta bort gateway"
       ],
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Ta bort"
+      "Delete address": [
+        "Ta bort adress"
       ],
       "Disable": [
         "Inaktivera"
@@ -1856,6 +1859,25 @@
         "/användare per månad"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "När den har tagits bort kan den inte användas igen av dig eller någon annan."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Nästa aktiva adress på din lista kommer att ställas in som standard."
+      ],
+      "You can only delete 1 address per year.": [
+        "Du kan bara ta bort 1 adress per år."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kan bara ta bort 1 adress per år"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du har nått gränsen för borttagning av adresser för denna användare."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Försenad faktura"
@@ -1938,9 +1960,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } är ditt användarnamn. För att skapa ${ Local }@${ Domain } går du till Inställningar > Meddelanden och komponera > Kort domän (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
       ],
@@ -1970,9 +1989,6 @@
       ],
       "Enter 6 digits": [
         "Ange 6 siffror"
-      ],
-      "Error": [
-        "Fel"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
@@ -2108,9 +2124,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minsta betalningen vi accepterar är ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Organisationsnyckeln måste aktiveras först"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
@@ -3080,9 +3093,6 @@
       "Domain ownership verified.": [
         "Domänens äganderätt verifierad."
       ],
-      "Done": [
-        "Klar"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Klart! Vi skickade en kod till ${ destination }."
       ],
@@ -3481,9 +3491,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
-      ],
-      "Queued": [
-        "Köad"
       ],
       "read our two-factor authentication guide first": [
         "läs vår guide om tvåfaktorsautentisering först"
@@ -4623,6 +4630,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-välkomstmeddelande"
+      ],
+      "Daily email notifications": [
+        "Dagliga e-postaviseringar"
       ]
     },
     "Label on payment method": {
@@ -4793,6 +4803,9 @@
     "Member action": {
       "Activate user": [
         "Aktivera användare"
+      ],
+      "Add address": [
+        "Lägg till adress"
       ],
       "Change password": [
         "Ändra lösenord"
@@ -4994,6 +5007,9 @@
       ],
       "1 user": [
         "1 användare"
+      ],
+      "24/7 account management support": [
+        "24/7 support för kontohantering"
       ],
       "24/7 support": [
         "Support dygnet runt"
@@ -6088,7 +6104,7 @@
       "Invalid expiration date": [
         "Ogiltigt förfallodatum"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Ogiltig säkerhetskod"
       ],
       "Something went wrong. Please try again later.": [
@@ -7515,6 +7531,9 @@
       ],
       "Delete account": [
         "Ta bort konto"
+      ],
+      "Delete address permanently?": [
+        "Ta bort adress permanent?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dag)",

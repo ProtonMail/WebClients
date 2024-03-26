@@ -423,9 +423,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "حذف"
-      ],
       "Disable": [
         "غیرفعال"
       ],
@@ -1519,9 +1516,6 @@
       "Enter 6 digits": [
         "6 رقم وارد کنید"
       ],
-      "Error": [
-        "خطا"
-      ],
       "Error connecting to the Bitcoin API.": [
         "در اتصال به Bitcoin API خطایی رخ داد."
       ],
@@ -1623,9 +1617,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "حداقل پرداختی که می‌پذیریم ${ price } است"
-      ],
-      "The organization key must be activated first": [
-        "کلید سازمان باید ابتدا فعال شود"
       ],
       "This field is required": [
         "این قسمت الزامی است"
@@ -1999,9 +1990,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "این گذرواژه را فراموش نکنید اگر آن را فراموش کنید، نمی‌توانید سازمان خود را مدیریت کنید."
       ],
-      "Done": [
-        "انجام شد"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
       ],
@@ -2193,9 +2181,6 @@
       ],
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
-      ],
-      "Queued": [
-        "در صف"
       ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
@@ -2885,6 +2870,9 @@
     "Label for news": {
       "${ BRAND_NAME } offers and promotions": [
         "$پیشنهادات و تبلیغات ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "اعلان‌های رایانامه‌ای روزانه"
       ]
     },
     "Label on payment method": {

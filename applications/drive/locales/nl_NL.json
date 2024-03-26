@@ -3890,9 +3890,6 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
-      "Invited": [
-        "Uitgenodigd"
-      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
       ],
@@ -3952,6 +3949,10 @@
       ],
       "Makes your account safer": [
         "Maakt uw account veiliger"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
+        "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
       ],
       "Merged": [
         "Samengevoegd"
@@ -4346,6 +4347,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Om u te helpen beschermen kan ${ DRIVE_APP_NAME } kwaadaardige bestanden scannen en blokkeren. Download enkel en alleen bestanden van mensen die u vertrouwt."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."

@@ -1137,9 +1137,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Видалити"
-      ],
       "Disable": [
         "Вимкнути"
       ],
@@ -3447,9 +3444,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } – ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -3536,9 +3530,6 @@
       ],
       "Enter 6 digits": [
         "Введіть 6 цифр"
-      ],
-      "Error": [
-        "Помилка"
       ],
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
@@ -3818,9 +3809,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Найменший платіж, який ми приймаємо — ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Спочатку необхідно активувати ключ організації"
       ],
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
@@ -6048,6 +6036,9 @@
       "Center": [
         "По центру"
       ],
+      "Change your password": [
+        "Змініть свій пароль"
+      ],
       "Check the status of imports and forwarding.": [
         "Перевірити стан імпортування та пересилання."
       ],
@@ -6182,9 +6173,6 @@
         "домени використовуються",
         "доменів використовуються",
         "доменів використовуються"
-      ],
-      "Done": [
-        "Виконано"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Ми надіслали код на ${ destination }."
@@ -6863,9 +6851,6 @@
       ],
       "purchase additional storage": [
         "придбати додатковий простір"
-      ],
-      "Queued": [
-        "Поставлено в чергу"
       ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
@@ -9151,6 +9136,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Вітальні листи ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Щоденні сповіщення електронною поштою"
       ]
     },
     "Label in domain modal": {
@@ -9284,6 +9272,9 @@
       "Create account": [
         "Зареєструватися"
       ],
+      "Create an alias": [
+        "Створити псевдонім"
+      ],
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
@@ -9292,6 +9283,9 @@
       ],
       "General": [
         "Загальні"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Отримати ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Допоможіть з перекладом"

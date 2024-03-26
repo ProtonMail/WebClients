@@ -1009,9 +1009,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "मिटाए"
-      ],
       "Disable": [
         "डिसेबल"
       ],
@@ -3082,9 +3079,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } आपका यूज़रनाम है। ${ Local }@${ Domain } बनाने कि लिए, कृपया जाए सेटिंग > संदेश और बनाना > छोटा डोमेन (pm.me)"
-      ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
       ],
@@ -3161,9 +3155,6 @@
       ],
       "Enter 6 digits": [
         "6 अंक दर्ज करें"
-      ],
-      "Error": [
-        "गड़बड़"
       ],
       "Error connecting to the Bitcoin API.": [
         "बिटकॉइन एपीआई से जुड़ने में त्रुटि।"
@@ -3416,9 +3407,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "हम ${ price } से कम रकम नहीं लेते"
-      ],
-      "The organization key must be activated first": [
-        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
       ],
       "The sending key is not valid": [
         "भेजने की कुंजी मान्य नहीं है"
@@ -5268,6 +5256,9 @@
       "Center": [
         "केंद्र"
       ],
+      "Change your password": [
+        "अपना पासवर्ड बदलें"
+      ],
       "Check the status of imports and forwarding.": [
         "आयात और फॉरवर्ड की स्थिती देखें।"
       ],
@@ -5359,9 +5350,6 @@
       "domain used": [
         "डोमेन का उपयोग किया",
         "डोमेन का उपयोग किया"
-      ],
-      "Done": [
-        "हो गया"
       ],
       "Done! We sent a code to ${ destination }.": [
         "किया हुआ! हमने ${ destination } पर एक कोड भेजा है।"
@@ -5913,9 +5901,6 @@
       ],
       "purchase additional storage": [
         "अतिरिक्त भंडारण खरीद"
-      ],
-      "Queued": [
-        "कतार में"
       ],
       "read our two-factor authentication guide first": [
         "पहले हमारे दो-फैक्टर सत्यापन गाइड को पढ़े"
@@ -7867,6 +7852,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } स्वागत ईमेल"
+      ],
+      "Daily email notifications": [
+        "दैनिक ईमेल सूचनाएं"
       ]
     },
     "Label in domain modal": {
@@ -7999,6 +7987,9 @@
       ],
       "General": [
         "सामान्य"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } लें"
       ],
       "Help translate": [
         "हमें अनुवाद करने में मदद करें"

@@ -453,9 +453,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Izbriši"
-      ],
       "Disable": [
         "Onemogući"
       ],
@@ -1533,9 +1530,6 @@
       "Enter 6 digits": [
         "Unesite 6 znamenki"
       ],
-      "Error": [
-        "Pogreška"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
@@ -1610,9 +1604,6 @@
       ],
       "Tab closed": [
         "Kartica zatvorena"
-      ],
-      "The organization key must be activated first": [
-        "Prvo se mora aktivirati organizacijski ključ"
       ],
       "This field is required": [
         "Ovo polje je obavezno"
@@ -2019,9 +2010,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći upravljati vašom organizacijom."
       ],
-      "Done": [
-        "Gotovo"
-      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
       ],
@@ -2186,9 +2174,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
-      ],
-      "Queued": [
-        "Na čekanju"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
@@ -2741,6 +2726,11 @@
       ],
       "VPN connections": [
         "VPN veza"
+      ]
+    },
+    "Label for news": {
+      "Daily email notifications": [
+        "Dnevne obavijesti e-pošte"
       ]
     },
     "Label on payment method": {

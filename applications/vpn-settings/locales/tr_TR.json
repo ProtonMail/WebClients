@@ -134,6 +134,9 @@
       "Delete": [
         "Sil"
       ],
+      "Delete address": [
+        "Adresi sil"
+      ],
       "Delete Gateway": [
         "Ağ geçidini sil"
       ],
@@ -177,7 +180,7 @@
         "Düzenle"
       ],
       "Edit billing cycle": [
-        "Fatura döngüsünü düzenle"
+        "Fatura dönemini düzenle"
       ],
       "Edit display name": [
         "Görüntülenecek adı düzenle"
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Sil"
+      "Delete address": [
+        "Adresi sil"
       ],
       "Disable": [
         "Kullanımdan kaldır"
@@ -1856,6 +1859,25 @@
         "/kullanıcı aylık"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Bu adres silindikten sonra siz ya da bir başkası tarafından yeniden kullanılamaz."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Listenizdeki bir sonraki etkin adres varsayılan olarak ayarlanacak."
+      ],
+      "You can only delete 1 address per year.": [
+        "Bir yıl içinde yalnızca 1 adres silebilirsiniz."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Bir yıl içinde yalnızca 1 adres silebilirsiniz"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Bu kullanıcı için adres silme sayısı sınırına ulaştınız."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Süresi geçmiş fatura"
@@ -1938,8 +1960,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } kullanıcı adınızdır. ${ Local }@${ Domain } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
@@ -1970,9 +1992,6 @@
       ],
       "Enter 6 digits": [
         "6 rakam yazın"
-      ],
-      "Error": [
-        "Hata"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -2108,9 +2127,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Kabul ettiğimiz en az ödeme: ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Önce kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -2714,7 +2730,7 @@
         "Ad"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "En iyi ${ VPN_APP_NAME } fırsatlarıyla büyük tasarruf edin"
+        "En iyi ${ VPN_APP_NAME } teklifleriyle büyük kazanç sağlayın"
       ],
       "Select your deal": [
         "Teklifinizi seçin"
@@ -2895,8 +2911,8 @@
         "Yönetici hesabına ayrılan"
       ],
       "Affected user is on row": [
-        "Etkilenen kullanıcı satırda",
-        "Etkilenen kullanıcılar satırlarda"
+        "Etkilenen kullanıcı şu satırda",
+        "Etkilenen kullanıcılar şu satırlarda"
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -3076,9 +3092,6 @@
       ],
       "Domain ownership verified.": [
         "Etki alanının sahipliği doğrulanmış."
-      ],
-      "Done": [
-        "Tamamlandı"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Tamam! ${ destination } alıcısına bir kod gönderdik."
@@ -3478,9 +3491,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
-      ],
-      "Queued": [
-        "Sıraya alındı"
       ],
       "read our two-factor authentication guide first": [
         "önce iki adımlı doğrulama rehberimizi okuyun"
@@ -4629,6 +4639,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } karşılama e-postaları"
+      ],
+      "Daily email notifications": [
+        "Günlük e-posta bildirimleri"
       ]
     },
     "Label on payment method": {
@@ -4791,7 +4804,7 @@
         "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
       ],
       "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
-        "Aboneliğiniz ${ renewTime } tarihinde ${ renewablePrice } fiyatından otomatik olarak yenilenecektir, istediğiniz zaman iptal edebilirsiniz"
+        "Aboneliğiniz ${ renewTime } tarihinde ${ renewablePrice } fiyatından otomatik olarak yenilenecek. İstediğiniz zaman iptal edebilirsiniz"
       ]
     },
     "mailtrial2024: Title": {
@@ -4802,6 +4815,9 @@
     "Member action": {
       "Activate user": [
         "Kullanıcıyı etkinleştir"
+      ],
+      "Add address": [
+        "Adres ekle"
       ],
       "Change password": [
         "Parolayı değiştir"
@@ -5005,7 +5021,7 @@
         "1 kullanıcı"
       ],
       "24/7 account management support": [
-        "24/7 hesap yönetimi desteği"
+        "7/24 hesap yönetimi desteği"
       ],
       "24/7 support": [
         "7/24 destek"
@@ -5020,7 +5036,7 @@
         "Yönetici panosu"
       ],
       "Administration Panel": [
-        "Yönetim paneli"
+        "Yönetim panosu"
       ],
       "Advanced network security": [
         "Gelişmiş ağ güvenliği"
@@ -5029,7 +5045,7 @@
         "Gelişmiş paylaşım güvenliği"
       ],
       "Auto-delete Spam and Trash": [
-        "Spam ve Çöp Kutusunu Otomatik Silme"
+        "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
@@ -5193,7 +5209,7 @@
         "Yöneltici desteği"
       ],
       "Schedule and snooze emails for any time": [
-        "E-postaları istediğiniz zaman için planlayın ve erteleyin"
+        "İletileri istediğiniz zamana planlayın veya erteleyin"
       ],
       "Schedule messages at any time": [
         "İletileri istediğiniz zamanda gönderin"
@@ -5477,7 +5493,7 @@
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Masaüstünüzün rahatlığından ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }'e erişin"
+        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
@@ -5492,7 +5508,7 @@
         "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Çöp Kutusu ve Spam'den 30 günden eski mesajları otomatik olarak temizleyin"
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "${ MAIL_APP_NAME } hesabınıza gönderilen e-postaları otomatik olarak başka bir e-posta adresine iletin."
@@ -5501,7 +5517,7 @@
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Bir e-posta hakkında hatırlatılmak veya mesajınızın ulaşması için özelleştirilmiş zamanlar seçin"
+        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
@@ -5547,7 +5563,7 @@
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
-        "Klasör gibi kasa da öğelerinizi düzenlemenin kullanışlı bir yoludur"
+        "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
@@ -5953,6 +5969,17 @@
         "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Var olan tüm verileriniz** (e-postalar, etkinlikler, kişiler, dosyalar, ${ PASS_APP_NAME } kayıtları vb.) **kilitlenecek** ve kilidi yalnızca **eski parolanız** ile açılabilecek ."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Var olan tüm verileriniz** (e-postalar, etkinlikler, kişiler, dosyalar, ${ PASS_APP_NAME } kayıtları vb.) **kilitlenecek** ve kilidi yalnızca **kurtarma ifadeniz** ya da **eski parolanız** ile açılabilecek ."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Hesabınızdaki **iki adımlı doğrulama (2FA)** yöntemlerinin tümü kullanımdan kaldırılacak."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Tüm yöneticiler anahtara erişebilecek."
@@ -5984,11 +6011,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "İzin verilmedi, yönetici yetkileri kısıtlandı."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Lütfen etkin bir adreslerinin olduklarından emin olduktan sonra ayrı ayrı davet edin."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Korunan kullanıcılar ilk kez oturum açtıklarında yöneticiliğe yükseltilebilir"
       ],
       "Reset organization key": [
         "Kuruluş anahtarını sıfırla"
+      ],
+      "The following administrators could not be restored.": [
+        "Şu yöneticiler geri yüklenemedi."
       ],
       "The following administrators will get access to the organization key.": [
         "Şu yöneticiler kuruluş anahtarına erişebilecek."
@@ -6059,7 +6092,7 @@
       "Invalid expiration date": [
         "Son kullanma tarihi geçersiz"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Güvenlik kodu geçersiz"
       ],
       "Something went wrong. Please try again later.": [
@@ -7487,6 +7520,9 @@
       "Delete account": [
         "Hesabı sil"
       ],
+      "Delete address permanently?": [
+        "Adres kalıcı olarak silinsin mi?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
         "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
@@ -8026,17 +8062,17 @@
     },
     "vpn_2024: renew": {
       "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
-        "Abonelik her 1 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 1 ay sonra."
+        "Abonelik her ay otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 1 ay sonra."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki faturalandırma tarihiniz 3 ay sonra."
+        "Abonelik her 3 ayda bir otomatik olarak yenilenir. Bir sonraki fatura tarihiniz 3 ay sonra."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Daha sonra her 12 ayda bir ${ renewPrice } üzerinden faturalandırılacaksınız."
+        "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir.",
-        "Aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir."
+        "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
       ]
     },
     "vpn_2step: billing": {

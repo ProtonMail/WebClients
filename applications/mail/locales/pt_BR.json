@@ -481,6 +481,9 @@
       "Hide messages": [
         "Ocultar mensagens"
       ],
+      "Hide my email": [
+        "Hide my email"
+      ],
       "hide-my-email aliases": [
         "aliases do Hide-my-email"
       ],
@@ -8910,9 +8913,6 @@
       ]
     },
     "Spotlight": {
-      "Change setting": [
-        "Mudar configuração"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Inicie ${ MAIL_APP_NAME } com facilidade diretamente do seu computador"
       ],
@@ -8945,9 +8945,6 @@
       ],
       "Snooze it for later": [
         "Adiar para mais tarde"
-      ],
-      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Os e-mails nas pastas Spam e Lixo agora são removidos automaticamente da pasta Todos os e-mails. ${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
