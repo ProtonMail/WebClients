@@ -4723,6 +4723,9 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
       ],
@@ -4816,7 +4819,7 @@
         "如何從 Yahoo 匯入行事曆"
       ],
       "How to import contacts from another service": [
-        "如何從其它服務匯入聯絡人"
+        "如何從其它郵件服務業者平台匯入通訊錄"
       ],
       "How to import contacts from Yahoo": [
         "如何從 Yahoo 匯入聯絡人"
@@ -5071,6 +5074,11 @@
       ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
       ]
     },
     "Notification in holidays calendar modal": {

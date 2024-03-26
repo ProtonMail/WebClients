@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create and copy alias": [
+        "Crea i copia un àlies"
+      ],
       "Create calendar": [
         "Crea un calendari"
       ],
@@ -320,6 +323,9 @@
       ],
       "Import from Outlook": [
         "Importa des d'Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualització important disponible. Per continuar utilitzant l'aplicació, actualitzeu a la versió més recent. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Uneix-me al calendari"
@@ -645,6 +651,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza en dos dies. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza en cinc dies. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -741,6 +756,11 @@
       ],
       "By leaving now, you will lose your event.": [
         "Si surts ara, perdreu el vostre esdeveniment."
+      ]
+    },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Baixa l'aplicació d'escriptori ${ MAIL_APP_NAME }"
       ]
     },
     "Apps dropdown": {
@@ -2168,6 +2188,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Augmenteu l'eficiència i feu un seguiment del vostre temps codificant amb colors els esdeveniments per categoria o segons les vostres prioritats. Obtingueu aquest servei i molt més amb un pla de pagament."
       ],
@@ -2177,11 +2200,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Dissenyat per a usuaris que busquen una major protecció per als seus comptes."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -2192,11 +2221,20 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora (una característica prèmium entre moltes altres). Milloreu avui."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Establiu un mètode de recuperació de dades per evitar la pèrdua de dades."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Això pot trigar uns minuts. Mentrestant, podeu continuar utilitzant el calendari com de costum."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
@@ -2206,6 +2244,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està habilitat."
+      ],
+      "Your account and data recovery methods are set.": [
+        "El compte i els mètodes de recuperació de dades estan definits."
       ]
     },
     "description": {
@@ -2276,8 +2320,43 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "S'ha cancel·lat ${ eventTitle }."
+      ],
+      "All events in this series were updated.": [
+        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "S'ha cancel·lat aquesta ocurrència d'esdeveniment."
+      ],
+      "This event occurrence was updated.": [
+        "Aquesta ocurrència d'esdeveniment s'ha actualitzat."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Aquesta ocurrència d'esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Aquest esdeveniment s'ha actualitzat. Això és el que s'ha canviat:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Esteu convidat a ${ eventTitle }\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "HORA:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "HORA:\n${ formattedStart } (tot el dia)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "HORA:\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -2285,7 +2364,18 @@
         "Esborrat"
       ]
     },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "UBICACIÓ:\n${ eventLocation }"
+      ]
+    },
     "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha rebutjat la vostra invitació a ${ eventTitle }"
+      ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }."
       ]
@@ -2386,6 +2476,12 @@
       ],
       "Already a member of this calendar": [
         "Ja sou membre d'aquest calendari"
+      ],
+      "An error occurred while loading alias options": [
+        "S'ha produït un error en carregar les opcions de l'àlies"
+      ],
+      "An error occurred while saving your alias": [
+        "S'ha produït un error en desar l'àlies"
       ],
       "Answer failed to be sent": [
         "No s'ha pogut enviar la resposta."
@@ -2557,6 +2653,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "No s'han trobat correus electrònics per a importar. El compte no té una safata d'entrada"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "No hi ha cap clau externa recuperada per l'usuari vàlida per a enviar"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -4934,6 +5033,14 @@
         "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obteniu l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
@@ -4941,11 +5048,35 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "Auto-delete Spam and Trash": [
+        "Suprimeix automàticament la brossa i la paperera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Horaris personalitzats d'enviament i posposa"
+      ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "per al primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta limitada, caduca el 2 d'abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
       ]
     },
     "Message": {
@@ -5303,6 +5434,11 @@
         "S'ha copiat l'enllaç al porta-retalls."
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
+      ]
+    },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
         "No s'ha pogut afegir el calendari de festius"
@@ -5582,6 +5718,14 @@
         "Desplega la llista de participants"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "País de facturació"
@@ -5598,6 +5742,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } ha marcat aquesta clau com a obsoleta. Aquesta clau només es pot fer servir per a verificar signatures."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Clau externa obtinguda automàticament des de key.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Clau externa obtinguda automàticament mitjançant WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
@@ -5773,8 +5926,14 @@
       "Create an alias": [
         "Crea un àlies"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genera àlies sobre la marxa i gestiona fàcilment els àlies i contrasenyes."
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Els àlies de Hide-my-email us permeten registrar-vos per a llocs en línia sense compartir l'adreça de correu electrònic. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nou àlies"
@@ -5787,6 +5946,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "S'utilitza a l'Amazon per anar a comprar, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -5797,6 +5962,14 @@
     "Security Center - Action": {
       "View logs": [
         "Mostra els registres"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel està **actiu** i salvaguardant el vostre compte."
       ]
     },
     "Select files": {
@@ -6262,6 +6435,9 @@
       "Color-coding is here!": [
         "Ja ha arribat la classificació per colors!"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Llança còmodament ${ MAIL_APP_NAME } des de l'escriptori."
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Trobeu fàcilment l'esdeveniment que busqueu amb la nostra nova funció de cerca."
       ],
@@ -6302,6 +6478,15 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
+      "contact your administrator": [
+        "contacteu amb l'administrador"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
       ],
@@ -6310,6 +6495,15 @@
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "L'${ storage } és ple. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -6777,6 +6971,12 @@
       "Feedback": [
         "Comentaris"
       ],
+      "Get advanced protection": [
+        "Obteniu protecció avançada"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Obteniu les aplicacions ${ appName[APP_NAME] }"
+      ],
       "Groups": [
         "Grups"
       ],
@@ -6987,6 +7187,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Heu convidat participants amb correus electrònics idèntics"
+      ],
+      "Your account is protected": [
+        "El compte està protegit"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
