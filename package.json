@@ -24,10 +24,10 @@
         "@types/prettier": "^3.0.0",
         "json5": "^2.2.3",
         "merge": "^2.1.1",
-        "node-gyp": "^10.0.1",
+        "node-gyp": "^10.1.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.29.1"
+        "terser": "^5.29.2"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -35,7 +35,7 @@
         "is-ci": "^3.0.1",
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-use-logical-spec": "^5.0.1",
-        "typescript": "^5.4.2"
+        "typescript": "^5.4.3"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
