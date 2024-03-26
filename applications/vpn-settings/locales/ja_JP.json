@@ -587,9 +587,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "削除"
-      ],
       "Disable": [
         "無効にする"
       ],
@@ -1853,9 +1850,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } はあなたのユーザー名です。${ Local }@${ Domain } を作成するには、設定 > メッセージと作成 > 短縮ドメイン (pm.me) に移動してください。"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
@@ -1885,9 +1879,6 @@
       ],
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
-      ],
-      "Error": [
-        "エラーが発生しました"
       ],
       "Error connecting to the Bitcoin API.": [
         "ビットコインAPIへの接続中にエラーが発生しました。"
@@ -2017,9 +2008,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "最低 ${ price } より受け付けています。"
-      ],
-      "The organization key must be activated first": [
-        "組織の鍵を最初に有効にする必要があります"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
@@ -2859,9 +2847,6 @@
       "Domain ownership verified.": [
         "ドメイン所有権は検証済みです。"
       ],
-      "Done": [
-        "完了"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "完了! ${ destination } にコードを送信しました!"
       ],
@@ -3218,9 +3203,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "スイスの個人情報保護法により保護されています。"
-      ],
-      "Queued": [
-        "順番待ち"
       ],
       "read our two-factor authentication guide first": [
         "はじめに 2 要素認証ガイドをお読みください"
@@ -4255,6 +4237,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } ウェルカムメール"
+      ],
+      "Daily email notifications": [
+        "毎日のメール通知"
       ]
     },
     "Label on payment method": {
@@ -5520,9 +5505,6 @@
       ],
       "Invalid expiration date": [
         "無効な有効期限です"
-      ],
-      "Invalid securiry code": [
-        "無効なセキュリティコード"
       ],
       "Something went wrong. Please try again later.": [
         "何か問題が発生しました。 後でもう一度試してください。"

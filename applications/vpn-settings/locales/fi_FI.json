@@ -134,6 +134,9 @@
       "Delete": [
         "Poista"
       ],
+      "Delete address": [
+        "Poista osoite"
+      ],
       "Delete Gateway": [
         "Oletusyhdyskäytävä"
       ],
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Poista"
+      "Delete address": [
+        "Poista osoite"
       ],
       "Disable": [
         "Poista käytöstä"
@@ -1856,6 +1859,16 @@
         "kuukaudessa/käyttäjä"
       ]
     },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Voit poistaa vain yhden osoitteen vuodessa."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Voit poistaa vain yhden osoitteen vuodessa"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Erääntynyt lasku"
@@ -1938,8 +1951,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ Local }@${ Domain }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
@@ -1970,9 +1983,6 @@
       ],
       "Enter 6 digits": [
         "Syötä 6-numeroa"
-      ],
-      "Error": [
-        "Virhe"
       ],
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
@@ -2108,9 +2118,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Hyväksymämme vähimmäismaksu on ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Organisaation avain on ensin aktivoitava"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
@@ -3077,9 +3084,6 @@
       "Domain ownership verified.": [
         "Verkkotunnuksen omistajuus on vahvistettu."
       ],
-      "Done": [
-        "Valmis"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Valmis! Koodi lähetettiin kohteeseen ${ destination }."
       ],
@@ -3478,9 +3482,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
-      ],
-      "Queued": [
-        "Jonossa"
       ],
       "read our two-factor authentication guide first": [
         "luet ensin oppaamme kaksivaiheiseen todennukseen"
@@ -4629,6 +4630,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }in tervetuloviestit"
+      ],
+      "Daily email notifications": [
+        "Päivittäiset sähköposti-ilmoitukset"
       ]
     },
     "Label on payment method": {
@@ -4802,6 +4806,9 @@
     "Member action": {
       "Activate user": [
         "Aktivoi käyttäjä"
+      ],
+      "Add address": [
+        "Lisää osoite"
       ],
       "Change password": [
         "Vaihda salasana"
@@ -5953,6 +5960,17 @@
         "Kaikki ${ BRAND_NAME }in Plus-palvelut.${ br }Yksi helppo tilaus."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **vanhalla salasanallasi**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **palautuslausekkeellasi** tai **vanhalla salasanallasi**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Kaikki tilillesi määritetyt **kaksivaiheiset todennusmenetelmät (2FA)** poistetaan käytöstä."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Kaikki ylläpitäjät saavat käyttöoikeuden avaimeen."
@@ -5984,11 +6002,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Varmista, että heidän osoitteensa on otettu käyttöön ja kutsu heidät myöhemmin erikseen."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
       ],
       "Reset organization key": [
         "Nollaa organisaation avain"
+      ],
+      "The following administrators could not be restored.": [
+        "Seuraavia ylläpitäjiä ei voitu palauttaa"
       ],
       "The following administrators will get access to the organization key.": [
         "Seuraavat ylläpitäjät saavat organisaation avaimen käyttöoikeuden."
@@ -6059,7 +6083,7 @@
       "Invalid expiration date": [
         "Virheellinen voimassaolon päättymisaika"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Virheellinen turvakoodi"
       ],
       "Something went wrong. Please try again later.": [
@@ -7408,6 +7432,9 @@
       "Change role": [
         "Muuta roolia"
       ],
+      "Close": [
+        "Sulje"
+      ],
       "Confirm": [
         "Vahvista"
       ],
@@ -7483,6 +7510,9 @@
       ],
       "Delete account": [
         "Poista tili"
+      ],
+      "Delete address permanently?": [
+        "Poistetaanko osoite pysyvästi?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)",

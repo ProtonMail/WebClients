@@ -611,9 +611,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Видалити"
-      ],
       "Disable": [
         "Вимкнути"
       ],
@@ -1883,9 +1880,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } – ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
       ],
@@ -1915,9 +1909,6 @@
       ],
       "Enter 6 digits": [
         "Введіть 6 цифр"
-      ],
-      "Error": [
-        "Помилка"
       ],
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
@@ -2053,9 +2044,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Найменший платіж, який ми приймаємо — ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Спочатку необхідно активувати ключ організації"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "У цьому полі перевищено обмеження ${ maximumLength } символів."
@@ -3038,9 +3026,6 @@
       "Domain ownership verified.": [
         "Володіння доменом засвідчено."
       ],
-      "Done": [
-        "Виконано"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Ми надіслали код на ${ destination }."
       ],
@@ -3427,9 +3412,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Захищено швейцарським законодавством про приватність"
-      ],
-      "Queued": [
-        "Поставлено в чергу"
       ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
@@ -4579,6 +4561,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Вітальні листи ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Щоденні сповіщення електронною поштою"
       ]
     },
     "Label on payment method": {
