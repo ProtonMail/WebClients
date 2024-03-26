@@ -465,7 +465,7 @@
         "Holvista ei voitu poistua."
       ],
       "Could not load recommendations at the moment.": [
-        "Suosituksia ei voi ladata juuri nyt."
+        "Suosituksia ei voida ladata juuri nyt."
       ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
@@ -583,7 +583,7 @@
         "Kohteen siirto epäonnistui"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Offline-tila ei ole tällä hetkellä käytettävissä kahden salasanan tilassa."
+        "Yhteydetön tila ei ole tällä hetkellä käytettävissä kahden salasanan tilassa."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
         "Offline-tila ei ole tällä hetkellä käytettävissä tilauksessasi, eikä se ole yhteensopiva kahden salasanan tilan kanssa."
@@ -804,7 +804,7 @@
         "Automaattilukitus poistettiin käytöstä"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Tuo olemassa olevat salasanasi palveluun ${ BRAND_NAME }."
+        "Tuo olemassa olevat salasanasi ${ BRAND_NAME }iin."
       ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu 2FA-todentaja"
@@ -871,7 +871,7 @@
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
-        "Ota kaikki hyöty irti Passista luomalla kullekin tiimille tai projektille oma holvi."
+        "Ota Passista kaikki irti luomalla jokaiselle tiimille tai projektille oma holvi."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
@@ -1224,7 +1224,7 @@
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Et voi lisätä enempää luottokortteja. Päivitä tilauksesi lisätäksesi rajoittamattoman määrän luottokortteja."
+        "Et voi lisätä enempää maksukortteja. Lisää maksukortteja rajoittamasti päivittämällä tilauksesi."
       ],
       "You have reached the limit of vaults you can create.": [
         "Luotujen holvien enimmäismäärä on saavutettu."
@@ -1862,7 +1862,7 @@
         "Jäsenrajoitus"
       ],
       "Members": [
-        "Jäsentä"
+        "Jäsenet"
       ],
       "Modified": [
         "Muokattu"
@@ -1910,7 +1910,7 @@
         "Asetukset"
       ],
       "Share vaults with your team": [
-        "Jaa holvisi tiimisi kanssa"
+        "Jaa holveja tiimillesi"
       ],
       "Share with": [
         "Jaa henkilölle"
@@ -1998,7 +1998,7 @@
         "Kutsujen lähetys seuraaviin osoitteisiin ei onnistunut:"
       ],
       "Duplicate email addresses.": [
-        "Sähköpostiosoitteet on jo olemassa."
+        "Sähköpostiosoitteiden kaksoiskappaleita."
       ],
       "Empty note": [
         "Tyhjä muistiinpano"
@@ -2013,7 +2013,7 @@
         "Virheellinen aliaksen etuliite"
       ],
       "Invalid email addresses.": [
-        "Virheelliset sähköpostiosoitteet."
+        "Virheellisiä sähköpostiosoitteita."
       ],
       "item was imported without custom fields": [
         "kohde tuotiin ilman mukautettuja kenttiä"
