@@ -1,4 +1,4 @@
-import { ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
+import { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
 
 export interface Organization {
     Name: string;
@@ -39,4 +39,5 @@ export interface Organization {
     BonusMembers: number;
     BonusVPN: number;
     Permissions: number;
+    State: ORGANIZATION_STATE;
 }
