@@ -11,6 +11,7 @@ export enum TelemetryMeasurementGroups {
     subscriptionModal = 'any.web.subscription_modal',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
+    mailSnooze = 'mail.web.snooze',
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
@@ -79,6 +80,7 @@ export enum TelemetryKeyTransparencyErrorEvents {
 
 export enum TelemetryMailEvents {
     privacy_dropdown_opened = 'privacy_dropdown_opened',
+    snooze_open_dropdown = 'snooze_open_dropdown',
 }
 
 export enum TelemetryMailSelectAllEvents {
