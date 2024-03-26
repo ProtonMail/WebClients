@@ -1,14 +1,15 @@
 import { useMemo, useState } from 'react';
 
-import { Option, SelectTwo } from '@proton/components/components';
+import { Option } from '@proton/components/components';
+import SearchableSelect, {
+    Props as SearchableSelectProps,
+} from '@proton/components/components/selectTwo/SearchableSelect';
+import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { DEFAULT_SEPARATOR, getFullList } from '@proton/components/helpers/countries';
+import { CountryItem, DEFAULT_SEPARATOR, getFullList } from '@proton/components/helpers/countries';
 
 export const useCountries = () => {
-    const countries = useMemo(
-        () => getFullList().map(({ key, value, label: text, disabled }) => ({ key, value, text, disabled })),
-        []
-    );
+    const countries = useMemo(() => getFullList(), []);
 
     const [country, innerSetCountry] = useState(countries[0]);
 
@@ -41,28 +42,43 @@ interface Props {
 }
 
 const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) => {
-    const { countries } = useCountries();
+    const { countries, getCountryByCode } = useCountries();
+    const selectedCountryItem = getCountryByCode(selectedCountryCode);
 
-    return (
-        <SelectTwo
-            onChange={({ value }: SelectChangeEvent<string>) => {
-                if (value === DEFAULT_SEPARATOR.value) {
-                    return;
-                }
-                onChange?.(value);
-            }}
-            value={selectedCountryCode}
-            {...rest}
-        >
-            {countries.map(({ key, value, text, disabled }) => {
-                return (
-                    <Option key={key} value={value} title={text} disabled={disabled} data-testid={`country-${value}`}>
-                        {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : text}
-                    </Option>
-                );
-            })}
-        </SelectTwo>
-    );
+    const searchableSelectProps: SearchableSelectProps<CountryItem> = {
+        onChange: ({ value: countryItem }: SelectChangeEvent<CountryItem>) => {
+            if (countryItem.value === DEFAULT_SEPARATOR.value) {
+                return;
+            }
+            onChange?.(countryItem.value);
+        },
+        value: selectedCountryItem,
+        search: (option, keyword) => {
+            if (option.value.isTop) {
+                return false;
+            }
+
+            return defaultFilterFunction(option, keyword);
+        },
+        children: countries.map((countryItem) => {
+            const { key, value, label, disabled } = countryItem;
+
+            return (
+                <Option
+                    key={key}
+                    value={countryItem}
+                    title={label}
+                    disabled={disabled}
+                    data-testid={`country-${value}`}
+                >
+                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : label}
+                </Option>
+            );
+        }),
+        ...rest,
+    };
+
+    return <SearchableSelect {...searchableSelectProps} />;
 };
 
 export default CountriesDropdown;
