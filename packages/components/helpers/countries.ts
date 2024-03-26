@@ -289,19 +289,24 @@ export const getLocalizedCountryByAbbr = (
 
 export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
 
-interface CountryItem {
+export interface CountryItem {
     value: string;
     key: string;
     label: string;
     disabled: boolean;
+    isTop?: boolean;
 }
 
 export const getFullList = (): CountryItem[] =>
-    TOP_COUNTRIES.map((country) => ({
-        ...country,
-        key: `${country.value}-top`,
-        disabled: false,
-    })).concat(
+    TOP_COUNTRIES.map(
+        (country) =>
+            ({
+                ...country,
+                key: `${country.value}-top`,
+                disabled: false,
+                isTop: true,
+            }) as CountryItem
+    ).concat(
         [DEFAULT_SEPARATOR],
         COUNTRIES.map((country) => ({ ...country, disabled: false, key: country.value }))
     );
