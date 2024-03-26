@@ -8,7 +8,7 @@ index e6172113a7e261703acb929592f25a6882c9fc75..2413a1cb91181386bdcc11c55eabfd5d
 +// Warning:
 +// This is a patch to allow this script to continue executing in Safari <=13 since it causes it to crash on import.
 +// *BigInt support detection must be made from the consumer*.
-+const BigInt = typeof window.BigInt !== 'undefined' ? window.BigInt : (() => 0);
++const BigInt = typeof globalThis.BigInt !== 'undefined' ? globalThis.BigInt : (() => 0);
  const _0n = BigInt(0);
  const _1n = BigInt(1);
  const _2n = BigInt(2);
