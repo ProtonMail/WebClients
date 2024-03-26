@@ -25,14 +25,14 @@
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/tidy-url": "^1.10.1",
         "@protontech/timezone-support": "^3.0.0",
-        "@sentry/browser": "^7.106.1",
+        "@sentry/browser": "^7.108.0",
         "@types/dompurify": "^3.0.5",
-        "@types/node": "^20.11.27",
+        "@types/node": "^20.11.30",
         "@types/papaparse": "^5.3.14",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.4",
         "date-fns": "^2.30.0",
-        "dompurify": "^3.0.9",
+        "dompurify": "^3.0.11",
         "file-saver": "^2.0.5",
         "hi-base32": "^0.5.1",
         "ical.js": "^1.5.0",
@@ -45,7 +45,7 @@
         "web-streams-polyfill": "^3.3.3"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.24.0",
+        "@babel/plugin-transform-runtime": "^7.24.3",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@types/jasmine": "^5.1.4",
@@ -62,7 +62,7 @@
         "prettier": "^3.2.5",
         "ts-loader": "^9.5.1",
         "ttag": "^1.8.6",
-        "typescript": "^5.4.2",
-        "webpack": "^5.90.3"
+        "typescript": "^5.4.3",
+        "webpack": "^5.91.0"
     }
 }
