@@ -4022,9 +4022,6 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
-      "Invited": [
-        "Zaproszony"
-      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Próbujesz przesłać plik ${ uploadName }. ${ replaceFile }, jeśli przesyłanie nie powiodło się. Jeśli przesyłanie jest w toku, zastąpienie pliku spowoduje anulowanie przesyłania."
       ],
@@ -4354,6 +4351,9 @@
       ],
       "Share files with links": [
         "Udostępnij pliki za pomocą linków"
+      ],
+      "Share via link settings": [
+        "Ustawienia linku"
       ],
       "Share with": [
         "Udostępnij"
@@ -5427,7 +5427,7 @@
         "10 adresów e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie spamu i opróżnianie kosza"
+        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny planowego wysyłania i usypiania"
