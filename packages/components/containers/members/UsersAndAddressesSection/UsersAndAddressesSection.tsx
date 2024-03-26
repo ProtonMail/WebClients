@@ -7,7 +7,14 @@ import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { APP_NAMES, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import {
+    APP_NAMES,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+    MEMBER_SUBSCRIBER,
+    MEMBER_TYPE,
+    ORGANIZATION_STATE,
+} from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
@@ -90,8 +97,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const api = useApi();
     const { call } = useEventManager();
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
-    const hasSetupOrganization = hasOrganizationSetup(organization);
-    const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
+    const hasSetupActiveOrganization =
+        organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetup(organization);
+    const hasSetupActiveOrganizationWithKeys =
+        organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
     const organizationModals = useOrganizationModals(onceRef);
 
     const {
@@ -461,7 +470,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 <div className="flex items-center mb-2 gap-2 mr-4">
                     {hasVpnOrPassB2BPlan ? (
                         <>
-                            {hasSetupOrganizationWithKeys && (
+                            {hasSetupActiveOrganizationWithKeys && (
                                 <SetupOrgSpotlight app={app}>
                                     <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
                                         {c('Action').t`Add user`}
@@ -471,13 +480,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         </>
                     ) : (
                         <>
-                            {hasSetupOrganization && (
+                            {hasSetupActiveOrganization && (
                                 <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                                     {c('Action').t`Invite user`}
                                 </Button>
                             )}
 
-                            {hasSetupOrganizationWithKeys && (
+                            {hasSetupActiveOrganizationWithKeys && (
                                 <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
                                     {c('Action').t`Add user`}
                                 </Button>
