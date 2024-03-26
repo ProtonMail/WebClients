@@ -492,9 +492,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "मिटाए"
-      ],
       "Disable": [
         "डिसेबल"
       ],
@@ -1683,9 +1680,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } आपका यूज़रनाम है। ${ Local }@${ Domain } बनाने कि लिए, कृपया जाए सेटिंग > संदेश और बनाना > छोटा डोमेन (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
       ],
@@ -1712,9 +1706,6 @@
       ],
       "Enter 6 digits": [
         "6 अंक दर्ज करें"
-      ],
-      "Error": [
-        "गड़बड़"
       ],
       "Error connecting to the Bitcoin API.": [
         "बिटकॉइन एपीआई से जुड़ने में त्रुटि।"
@@ -1826,9 +1817,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "हम ${ price } से कम रकम नहीं लेते"
-      ],
-      "The organization key must be activated first": [
-        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
@@ -2540,9 +2528,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "इस पासवर्ड को न भूलें। यदि आप इसे भूल जाते हैं, तो आप अपने संगठन का प्रबंधन नहीं कर पाएंगे।"
       ],
-      "Done": [
-        "हो गया"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "किया हुआ! हमने ${ destination } पर एक कोड भेजा है।"
       ],
@@ -2823,9 +2808,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "स्विस निजता कानूनो से सुरक्षित रखा गया"
-      ],
-      "Queued": [
-        "कतार में"
       ],
       "read our two-factor authentication guide first": [
         "पहले हमारे दो-फैक्टर सत्यापन गाइड को पढ़े"
@@ -3675,6 +3657,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } स्वागत ईमेल"
+      ],
+      "Daily email notifications": [
+        "दैनिक ईमेल सूचनाएं"
       ]
     },
     "Label on payment method": {

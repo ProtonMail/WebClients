@@ -159,7 +159,7 @@
         "Cancelar subscrição"
       ],
       "Change keys": [
-        "Alterar a chave"
+        "Alterar chaves"
       ],
       "Change mailbox password": [
         "Alterar a palavra-passe da caixa de correio"
@@ -813,7 +813,7 @@
         "Selecionar vista de calendário"
       ],
       "Select country": [
-        "Seleccionar país"
+        "Selecionar país"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -1122,9 +1122,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Eliminar"
-      ],
       "Disable": [
         "Desativar"
       ],
@@ -3458,9 +3455,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } é o seu nome de utilizador. Para criar ${ Local }@${ Domain }, vá a Definições > Mensagens e composição > Domínio curto (pm.me)"
-      ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
@@ -3540,9 +3534,6 @@
       ],
       "Enter 6 digits": [
         "Introduza 6 algarismos"
-      ],
-      "Error": [
-        "Erro"
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
@@ -3804,9 +3795,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Tem de ativar a chave da organização primeiro"
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
@@ -5928,6 +5916,9 @@
       "Center": [
         "Centrar"
       ],
+      "Change your password": [
+        "Altere a sua palavra-passe"
+      ],
       "Check the status of imports and forwarding.": [
         "Verificar o estado das importações e do reencaminhamento."
       ],
@@ -6051,9 +6042,6 @@
       "domain used": [
         "domínio utilizado",
         "domínios utilizados"
-      ],
-      "Done": [
-        "Concluído"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Já está! Enviámos um código para ${ destination }."
@@ -6698,9 +6686,6 @@
       ],
       "purchase additional storage": [
         "comprar armazenamento adicional"
-      ],
-      "Queued": [
-        "Em espera"
       ],
       "read our two-factor authentication guide first": [
         "leia primeiro o nosso guia de autenticação de dois fatores"
@@ -8933,6 +8918,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas de ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificações diárias por e-mail"
       ]
     },
     "Label in domain modal": {
@@ -9063,6 +9051,9 @@
       "Create account": [
         "Criar uma conta"
       ],
+      "Create an alias": [
+        "Criar um alias"
+      ],
       "Encryption and keys": [
         "Encriptação e chaves"
       ],
@@ -9071,6 +9062,9 @@
       ],
       "General": [
         "Geral"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Obtenha o ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Ajude a traduzir"
@@ -11165,6 +11159,9 @@
       "Search for a user or address": [
         "Pesquisar por um utilizador ou endereço"
       ],
+      "Search parent folder": [
+        "Pesquisar pasta inicial"
+      ],
       "Search users": [
         "Pesquisar utilizadores"
       ],
@@ -12084,6 +12081,9 @@
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "O seu armazenamento está cheio. ${ cta }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -12661,6 +12661,12 @@
       "4. Select a server to connect to": [
         "4. Selecione o servidor para ligar"
       ],
+      "A filter name is required": [
+        "O nome do filtro é obrigatório"
+      ],
+      "A filter with this name already exists": [
+        "Já existe um filtro com este nome"
+      ],
       "Accessibility": [
         "Acessibilidade"
       ],
@@ -13075,6 +13081,9 @@
         "Erro na criação da conta de utilizador ${ failedUsers.length }.",
         "Erro na criação das contas de utilizador ${ failedUsers.length }."
       ],
+      "Filter name cannot contain only spaces": [
+        "O nome do filtro não pode conter apenas espaços"
+      ],
       "Filters": [
         "Filtros"
       ],
@@ -13465,6 +13474,9 @@
       ],
       "This field cannot be empty": [
         "Este campo não pode estar vazio."
+      ],
+      "This field cannot contain only spaces": [
+        "Este campo não pode conter apenas espaços"
       ],
       "Time zone": [
         "Fuso horário"

@@ -176,6 +176,9 @@
       "Edit": [
         "編輯"
       ],
+      "Edit billing cycle": [
+        "修改帳單週期"
+      ],
       "Edit display name": [
         "編輯顯示名稱"
       ],
@@ -593,9 +596,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "刪除"
-      ],
       "Disable": [
         "停用"
       ],
@@ -1895,9 +1895,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } 是您的使用者名稱。如要創建 ${ Local }@${ Domain }，請前往「設定」 > 「郵件與撰寫」 > 「短域名 (pm.me)」"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
@@ -1927,9 +1924,6 @@
       ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
-      ],
-      "Error": [
-        "錯誤"
       ],
       "Error connecting to the Bitcoin API.": [
         "連線到比特幣 API 時發生錯誤。"
@@ -1988,6 +1982,9 @@
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
+      ],
       "Passwords do not match": [
         "密碼不一致"
       ],
@@ -2005,6 +2002,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "付款目前無法使用，請稍後再試"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "請先設置一個自訂網域，然後才加入使用者到您的組織。"
@@ -2059,9 +2059,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "付款的最低金額為 ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "必須先啟用組織機構的金鑰"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
@@ -2626,6 +2623,9 @@
       "Name": [
         "名稱"
       ],
+      "Select your deal": [
+        "請選擇您的優惠"
+      ],
       "Select your pricing plan": [
         "選擇您的定價方案"
       ],
@@ -2922,9 +2922,6 @@
       "Domain ownership verified.": [
         "網域所有權驗證。"
       ],
-      "Done": [
-        "已完成"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "完成！我們已將代碼傳送至 ${ destination }."
       ],
@@ -3120,6 +3117,9 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "Keys created": [
+        "金鑰已更新"
+      ],
       "Lean more about gateways": [
         "取得更多關於閘道的資訊"
       ],
@@ -3299,9 +3299,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "受瑞士隱私法律保障"
-      ],
-      "Queued": [
-        "待處理"
       ],
       "read our two-factor authentication guide first": [
         "先閱讀我們的兩步驟驗證指南"
@@ -4388,6 +4385,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "Daily email notifications": [
+        "每日電子郵件通知"
       ]
     },
     "Label on payment method": {
@@ -4520,6 +4520,9 @@
       ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
+      ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
       ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
@@ -4692,6 +4695,9 @@
       "1 user": [
         "1 位使用者"
       ],
+      "24/7 account management support": [
+        "24/7 帳戶管理支援"
+      ],
       "24/7 support": [
         "24/7 全天支援"
       ],
@@ -4703,6 +4709,9 @@
       ],
       "Admin console": [
         "管理員主控台"
+      ],
+      "Administration Panel": [
+        "管理介面"
       ],
       "Advanced network security": [
         "進階網路安全"
@@ -4766,6 +4775,9 @@
       ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
       ],
       "DNS leak prevention": [
         "DNS 外洩預防"
@@ -4934,6 +4946,12 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "無限共享保管庫與存取權限"
+      ],
+      "Unlimited vault sharing": [
+        "無上限分享保管庫"
+      ],
+      "Unlimited vaults": [
+        "無限保管庫"
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
@@ -5370,6 +5388,11 @@
         "雙重身份驗證已無需繼續使用"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "歡迎來到 ${ appName }"
@@ -5614,9 +5637,6 @@
       ],
       "Invalid expiration date": [
         "到期日無效"
-      ],
-      "Invalid securiry code": [
-        "安全碼無效"
       ],
       "Something went wrong. Please try again later.": [
         "發生錯誤。請稍後再試。"
@@ -6691,7 +6711,7 @@
         "(啟用)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. 為生成的設定檔取一個名稱"
+        "1. 替生成的組態檔取一個名稱"
       ],
       "1. Select platform": [
         "1. 選擇平台"

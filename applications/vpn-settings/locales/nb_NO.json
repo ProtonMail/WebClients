@@ -134,6 +134,9 @@
       "Delete": [
         "Slett"
       ],
+      "Delete address": [
+        "Slett adresse"
+      ],
       "Delete Gateway": [
         "Slett mellomtjener"
       ],
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Slett"
+      "Delete address": [
+        "Slett adresse"
       ],
       "Disable": [
         "Deaktiver"
@@ -1856,6 +1859,25 @@
         "/bruker per måned"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Når den er slettet, kan ikke denne adressen brukes igjen av deg eller noen andre."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Den neste aktive adressen på listen din vil bli angitt som standard."
+      ],
+      "You can only delete 1 address per year.": [
+        "Du kan bare slette 1 adresse per år."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kan bare slette 1 adresse per år"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du har nådd grensen for sletting av adresser for denne brukeren."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalt faktura"
@@ -1938,8 +1960,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } er ditt brukernavn. For å opprette ${ Local }@${ Domain }, vennligst gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, vennligst gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "All lagringsplass er tildelt. Vennligst reduser lagringsplass tildelt andre brukere."
@@ -1970,9 +1992,6 @@
       ],
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
-      ],
-      "Error": [
-        "Feil"
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
@@ -2108,9 +2127,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimumsbetalingen vi aksepterer er ${ price }."
-      ],
-      "The organization key must be activated first": [
-        "Organisasjonsnøkkelen må aktiveres først"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
@@ -3077,9 +3093,6 @@
       "Domain ownership verified.": [
         "Domeneeierskap er verifisert."
       ],
-      "Done": [
-        "Ferdig"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Ferdig! Vi sendte en kode til ${ destination }."
       ],
@@ -3481,9 +3494,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet av sveitsiske personvernlover"
-      ],
-      "Queued": [
-        "I kø"
       ],
       "read our two-factor authentication guide first": [
         "les vår tofaktorautentiseringsguide først"
@@ -4635,6 +4645,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } velkommen e-post"
+      ],
+      "Daily email notifications": [
+        "Daglige e-postvarslinger"
       ]
     },
     "Label on payment method": {
@@ -4808,6 +4821,9 @@
     "Member action": {
       "Activate user": [
         "Aktiver bruker"
+      ],
+      "Add address": [
+        "Legg til adresse"
       ],
       "Change password": [
         "Endre passord"
@@ -6022,11 +6038,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Vennligst sørg for at de har en aktivert adresse, og inviter dem separat senere."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
       ],
       "Reset organization key": [
         "Tilbakestill organisasjonsnøkkel"
+      ],
+      "The following administrators could not be restored.": [
+        "Følgende administratorer kan ikke gjenopprettes."
       ],
       "The following administrators will get access to the organization key.": [
         "Følgende administratorer får tilgang til organisasjonsnøkkelen."
@@ -6097,7 +6119,7 @@
       "Invalid expiration date": [
         "Ugyldig utløpsdato"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Ugyldig sikkerhetskode"
       ],
       "Something went wrong. Please try again later.": [
@@ -7443,6 +7465,9 @@
       "Change role": [
         "Endre rolle"
       ],
+      "Close": [
+        "Lukk"
+      ],
       "Confirm": [
         "Bekreft"
       ],
@@ -7518,6 +7543,9 @@
       ],
       "Delete account": [
         "Slett konto"
+      ],
+      "Delete address permanently?": [
+        "Slette adressen permanent?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",

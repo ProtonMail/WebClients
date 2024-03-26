@@ -974,6 +974,12 @@
       "Unlock": [
         "Membuka"
       ],
+      "Unlock Breach Report": [
+        "Dapatkan akses Laporan Kebocoran"
+      ],
+      "Unlock breach reports": [
+        "Dapatkan akses laporan kebocoran"
+      ],
       "Unlock data": [
         "Buka kunci data"
       ],
@@ -1003,6 +1009,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Tingkatkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Tingkatkan paket untuk melihat semua"
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
@@ -1125,9 +1134,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Hapus"
-      ],
       "Disable": [
         "Nonaktifkan"
       ],
@@ -3029,6 +3035,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Untuk menghilangkan footer ${ MAIL_APP_NAME }, tingkatkan akun Anda dan dapatkan berbagai fitur premium lainnya."
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Untuk melihat laporan ini secara penuh beserta dengan rekomendasi yang dikhususkan untuk Anda, tingkatkan paket Anda ke paket berbayar."
+      ],
       "Track the status and activity of your referrals.": [
         "Lacak status dan aktivitas rujukan Anda."
       ],
@@ -3653,8 +3662,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } merupakan nama pengguna Anda. Untuk membuat alamat khusus ${ Local }@${ Domain }, silakan kunjungi Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
@@ -3730,9 +3739,6 @@
       ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
-      ],
-      "Error": [
-        "Galat"
       ],
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
@@ -3994,9 +4000,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Kunci organisasi harus diaktifkan terlebih dahulu"
       ],
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
@@ -5997,6 +6000,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Mencegah pengirim pesan untuk dapat mengetahui apakah Anda telah membuka pesan yang mereka kirim."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Peringatan Kebocoran diberdayakan oleh set data milik ${ BRAND_NAME }, set data open-source, dan Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
@@ -6134,9 +6140,6 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
-      ],
-      "Done": [
-        "Selesai"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
@@ -6332,6 +6335,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Menyembunyikan informasi pribadi dengan memuat remote content melalui proxy. Remote content yang ada akan tetap dapat dilihat dan disimpan sebagai lampiran."
+      ],
+      "High Priority": [
+        "Prioritas Tinggi"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Apabila administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata Sandi Organisasi yang baru kepada mereka."
@@ -6546,6 +6552,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Log keamanan mencakup berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
       ],
+      "Low Priority": [
+        "Prioritas Rendah"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Layanan email terkemuka tertentu dapat menolak atau menyaring email Anda sebagai spam apabila SPF/DKIM/DRC Anda tidak ada atatu tidak diatur dengan benar."
       ],
@@ -6560,6 +6569,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
+      ],
+      "Medium Priority": [
+        "Prioritas Menengah"
       ],
       "Member": [
         "Anggota"
@@ -6821,9 +6833,6 @@
       ],
       "purchase additional storage": [
         "membeli kuota penyimpanan tambahan"
-      ],
-      "Queued": [
-        "Ditempatkan dalam antrian"
       ],
       "read our two-factor authentication guide first": [
         "baca panduan autentikasi dua faktor kami terlebih dahulu"
@@ -7329,6 +7338,9 @@
       "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
         "Gunakan ${ VPN_APP_NAME } dengan NetShield untuk melindungi Anda dari upaya phishing dan serangan malware"
       ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Gunakan alias untuk mendaftarkan diri Anda ke layanan online. Tindakan ini akan melindungi alamat email dan identitas asli Anda, yang membatasi dampak kebocoran data."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
@@ -7389,6 +7401,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Peringatan: penghapusan bersifat permanen. Hal ini juga menghapus akses ke semua layanan yang terhubung dan menghapus semua kontak Anda."
       ],
+      "Ways you can minimize your breach risks": [
+        "Berbagai cara untuk meminimalkan risiko kebocoran data Anda"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
       ],
@@ -7400,6 +7415,9 @@
       ],
       "We just sent you a new link.": [
         "Kami telah mengirimkan Anda tautan yang baru."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Kami memonitor kemunculan alamat email, kata sandi, dan data pribadi Anda pada dark web dan memberitahukan Anda apabila data Anda telah bocor."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
@@ -8130,7 +8148,7 @@
         " dan ${ l }"
       ],
       "${ BRAND_NAME } username": [
-        "Pengguna ${ BRAND_NAME }"
+        "Nama pengguna ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -9063,6 +9081,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } surel datang"
+      ],
+      "Daily email notifications": [
+        "Notifikasi email harian"
       ]
     },
     "Label in domain modal": {
@@ -9196,6 +9217,9 @@
       "Create account": [
         "Buat akun"
       ],
+      "Create an alias": [
+        "Buat alias"
+      ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
       ],
@@ -9204,6 +9228,12 @@
       ],
       "General": [
         "Umum"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Dapatkan ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Dapatkan ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Bantu terjemahkan"
@@ -9392,6 +9422,9 @@
     "Member action": {
       "Activate user": [
         "Aktifkan pengguna"
+      ],
+      "Add address": [
+        "Tambah alamat"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -11324,11 +11357,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Izin ditolak. Hak administrator telah dibatasi."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Pastikan mereka telah memliki alamat yang aktif, dan undang mereka satu per satu apabila sudah."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Pengguna privat dapat diangkat sebagai admin pada saat mereka memasuki akun untuk yang pertama kalinya"
       ],
       "Reset organization key": [
         "Atur ulang kunci organisasi"
+      ],
+      "The following administrators could not be restored.": [
+        "Para administrator berikut tidak dapat dipulihkan."
       ],
       "The following administrators will get access to the organization key.": [
         "Para administrator berikut akan memperoleh akses ke kunci organisasi."
@@ -11399,7 +11438,7 @@
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Kode keamanan tidak valid"
       ],
       "Something went wrong. Please try again later.": [
@@ -11441,7 +11480,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Cara menghubungi Anda"
+        "Cara untuk menghubungi Anda"
       ],
       "Add a calendar description": [
         "Masukkan keterangan kalender"
@@ -13120,6 +13159,9 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
+      "Breach Alerts": [
+        "Peringatan Kebocoran"
+      ],
       "Breach Date": [
         "Tanggal Kebocoran"
       ],
@@ -13176,6 +13218,9 @@
       ],
       "Clear out the junk": [
         "Hapus sampah yang ada"
+      ],
+      "Close": [
+        "Tutup"
       ],
       "Composing": [
         "Penulisan"

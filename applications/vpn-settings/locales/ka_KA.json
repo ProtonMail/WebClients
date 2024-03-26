@@ -608,9 +608,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "წაშლა"
-      ],
       "Disable": [
         "გათიშვა"
       ],
@@ -1938,9 +1935,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } თქვენი მომხმარებლის სახელია. ${ Local }@${ Domain }-ის შესაქმნელად გადადით მორგება > შეტყობინებები > გაგზავნა მოკლე დომენით (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
       ],
@@ -1970,9 +1964,6 @@
       ],
       "Enter 6 digits": [
         "შეიყვანეთ 6 ციფრი"
-      ],
-      "Error": [
-        "შეცდომა"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin-ის API-თან მიერთების შეცდომა."
@@ -2108,9 +2099,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "გადახდის მინიმალური თანხაა ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "ჯერ ორგანიზაცია უნდა გაააქტიუროთ"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
@@ -2713,6 +2701,9 @@
       "Name": [
         "სახელი"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "დაზოგეთ თანხა ${ VPN_APP_NAME }-ზე"
+      ],
       "Select your deal": [
         "აირჩიეთ ტარიფი"
       ],
@@ -3071,9 +3062,6 @@
       "Domain ownership verified.": [
         "დომენის მფლობელი გადამოწმებულია."
       ],
-      "Done": [
-        "დასრულებული"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "მზადაა! კოდი გაგზავნილია ${ destination }-ზე."
       ],
@@ -3332,6 +3320,9 @@
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
       ],
+      "No changes made to the current subscription": [
+        "მიმდინარე სატარიფო გეგმაში ცვლილებები არ შესულა"
+      ],
       "No gateways": [
         "რაუტერების გარეშე"
       ],
@@ -3465,9 +3456,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
-      ],
-      "Queued": [
-        "რიგშია"
       ],
       "read our two-factor authentication guide first": [
         "გთხოვთ, ჯერ თვალი გადაავლოთ ჩვენს 2FA-ის დოკუმენტაციას"
@@ -4587,6 +4575,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app }-ის და ${ additionalApp }-ის განახლებები"
+      ],
       "${ app } product updates": [
         "${ app }-ის პროდუქტის განახლებები"
       ],
@@ -4613,6 +4604,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-ის მისალმების ელფოსტები"
+      ],
+      "Daily email notifications": [
+        "ელფოსტის დღიური გაფრთხილებები"
       ]
     },
     "Label on payment method": {
@@ -4783,6 +4777,9 @@
     "Member action": {
       "Activate user": [
         "მომხმარებლის გააქტიურება"
+      ],
+      "Add address": [
+        "მისამართის დამატება"
       ],
       "Change password": [
         "პაროლის შეცვლა"
@@ -5173,6 +5170,9 @@
       "Router support": [
         "რაუტერის მხარდაჭერა"
       ],
+      "Schedule and snooze emails for any time": [
+        "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
+      ],
       "Schedule messages at any time": [
         "შეტყობინებების განრიგში ნებისმიერ დროს ჩასმა"
       ],
@@ -5319,6 +5319,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "დამატებითი დაცვა ჯგუფებისთვის, რომელიც ინდუსტრიის სტანდარტებს მიღმაც კი გადის."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
@@ -5511,6 +5514,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ჭდეები მარტივი ტეგებია, რომლებიც შეგიძლიათ, დაამატოთ შეტყობინებებს, რათა უფრო ადვილად იპოვოთ ისინი ან გამოიყენოთ ფილტრები"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "საქაღალდის მსგავსად, საცავი თქვენი ელემენტების დალაგების მისაღები გზაა"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "დაბლოკეთ თქვენი კომპანიის რესურსები საჯარო ინტერნეტიდან და გახადეთ ისინი წვდომადი, მხოლოდ, ჩვენი რაუტერების გავლით"
@@ -6021,9 +6027,6 @@
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
-      ],
-      "Invalid securiry code": [
-        "უსაფრთხოების არასწორი კოდი"
       ],
       "Something went wrong. Please try again later.": [
         "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -7982,6 +7985,15 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
+      ]
+    },
+    "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
+        "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
       ]
     },
     "vpn_2step: billing": {

@@ -1134,9 +1134,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Odstranit"
-      ],
       "Disable": [
         "Deaktivovat"
       ],
@@ -3686,9 +3683,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } je vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
-      ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
@@ -3775,9 +3769,6 @@
       ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
-      ],
-      "Error": [
-        "Chyba"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
@@ -4057,9 +4048,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimální platba, kterou přijímáme je ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Nejprve musí být aktivován klíč organizace"
       ],
       "The sending key is not valid": [
         "Klíč pro odesílání je neplatný"
@@ -6299,6 +6287,9 @@
       "Center": [
         "Zarovnat na střed"
       ],
+      "Change your password": [
+        "Změňte své heslo"
+      ],
       "Check the status of imports and forwarding.": [
         "Zkontrolujte stav importování a přeposílání."
       ],
@@ -6436,9 +6427,6 @@
         "použité domény",
         "použitých domén",
         "použitých domén"
-      ],
-      "Done": [
-        "Hotovo"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odeslali jsme kód na adresu ${ destination }."
@@ -7135,9 +7123,6 @@
       ],
       "purchase additional storage": [
         "nákup dalšího úložiště"
-      ],
-      "Queued": [
-        "Ve frontě"
       ],
       "read our two-factor authentication guide first": [
         "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
@@ -9448,6 +9433,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítací e-maily"
+      ],
+      "Daily email notifications": [
+        "Denní e-mailová upozornění"
       ]
     },
     "Label in domain modal": {
@@ -9589,6 +9577,9 @@
       ],
       "General": [
         "Obecné"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Získat ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Pomoc s překladem"
@@ -9765,7 +9756,7 @@
     },
     "mailtrial2024: Info": {
       "Get ${ planName } for ${ price }": [
-        "Získat ${ planName } pro ${ price }"
+        "Získat ${ planName } za ${ price }"
       ]
     },
     "Maintenance mode": {
@@ -11915,9 +11906,6 @@
       "Invalid expiration date": [
         "Neplatné datum vypršení platnosti"
       ],
-      "Invalid securiry code": [
-        "Neplatný bezpečnostní kód"
-      ],
       "Something went wrong. Please try again later.": [
         "Něco se pokazilo. Zkuste to prosím později."
       ],
@@ -13125,7 +13113,7 @@
         "Účtováno za 18 měsíců"
       ],
       "Billed for 3 months": [
-        "Účtováno za 3 měsíců"
+        "Účtováno za 3 měsíce"
       ],
       "Billed for 30 months": [
         "Účtováno za 30 měsíců"

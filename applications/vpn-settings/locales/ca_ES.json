@@ -176,6 +176,9 @@
       "Edit": [
         "Edita"
       ],
+      "Edit billing cycle": [
+        "Edita el cicle de facturació"
+      ],
       "Edit display name": [
         "Edita el nom a mostrar"
       ],
@@ -593,9 +596,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Elimina"
-      ],
       "Disable": [
         "Desactiva"
       ],
@@ -733,6 +733,9 @@
       ]
     },
     "bf2023: header": {
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Aprofiteu amb les ofertes de final d'any i obteniu una VPN suïssa d'alta velocitat"
+      ],
       "Select your Black Friday offer": [
         "Seleccioneu la vostra oferta de Black Friday"
       ],
@@ -1905,9 +1908,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } és el vostre nom d'usuari. Per a crear ${ Local }@${ Domain }, aneu a Preferències > Missatges i redacció > Domini curt (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
       ],
@@ -1923,6 +1923,9 @@
       "Code wrong or not valid anymore": [
         "El codi és incorrecte o ja no és vàlid."
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "No s'han pogut pujar les factures. Torneu-ho a provar més tard."
+      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
@@ -1934,9 +1937,6 @@
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
-      ],
-      "Error": [
-        "Error"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
@@ -2054,9 +2054,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "El pagament mínim que acceptem és ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Cal activar primer la clau de l'organització"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -2653,6 +2650,9 @@
       "Name": [
         "Nom"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Estalvieu amb les millors ofertes en ${ VPN_APP_NAME }"
+      ],
       "Select your deal": [
         "Seleccioneu la vostra oferta"
       ],
@@ -2949,9 +2949,6 @@
       "Domain ownership verified.": [
         "S'ha verificat la propietat del domini."
       ],
-      "Done": [
-        "Fet"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Fet! Hem enviat un codi a ${ destination }."
       ],
@@ -3183,6 +3180,9 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
+      "No changes made to the current subscription": [
+        "No s'ha fet cap canvi a la subscripció actual"
+      ],
       "No gateways": [
         "Sense passarel·les"
       ],
@@ -3307,9 +3307,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
-      ],
-      "Queued": [
-        "En cua"
       ],
       "read our two-factor authentication guide first": [
         "llegir primer la nostra guia d’autenticació de dos factors"
@@ -4358,6 +4355,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualitzacions del producte per a ${ app } i ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Actualitzacions del producte ${ app }"
       ],
@@ -4384,6 +4384,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificacions diàries per correu electrònic"
       ]
     },
     "Label on payment method": {
@@ -4505,12 +4508,26 @@
         "${ twoFAMembers.length } membres de ${ members.length } de la vostra organització usen l'autenticació de dos factors."
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obteniu l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
       "10 email addresses": [
         "10 adreces de correu electrònic"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Suprimeix automàticament la brossa i la paperera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Horaris personalitzats d'enviament i posposa"
       ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
@@ -4519,9 +4536,30 @@
         "Carpetes, etiquetes i filtres il·limitats"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "per al primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta limitada, caduca el 2 d'abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activa l'usuari"
+      ],
+      "Add address": [
+        "Afegeix una adreça"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -4724,6 +4762,9 @@
       "1 user": [
         "1 usuari"
       ],
+      "24/7 account management support": [
+        "Suport per a la gestió de comptes 24/7"
+      ],
       "24/7 support": [
         "Suport 24/7"
       ],
@@ -4744,6 +4785,9 @@
       ],
       "Advanced sharing security": [
         "Seguretat avançada en la compartició"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Suprimeix automàticament la brossa i neteja la paperera"
       ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -4799,6 +4843,9 @@
       "Dedicated servers and IP": [
         "Servidors i IP dedicats"
       ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
@@ -4840,6 +4887,9 @@
       ],
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
+      ],
+      "Group management (coming soon)": [
+        "Gestió del grup (aviat)"
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
@@ -4894,8 +4944,14 @@
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
       ],
+      "Require 2FA for organization": [
+        "Requereix 2FA per a l'organització"
+      ],
       "Router support": [
         "Suport per a router"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Planifiqueu i posposeu els correus electrònics per a qualsevol moment"
       ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
@@ -4921,6 +4977,9 @@
       ],
       "SMTP submission": [
         "Tramesa SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Enviament SMTP per a les organitzacions seleccionades"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
@@ -4969,6 +5028,12 @@
       ],
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Caixes fortes compartides il·limitades amb permisos d'accés"
+      ],
+      "Unlimited vault sharing": [
+        "Compartició il·limitada de la caixa forta"
       ],
       "Unlimited vaults": [
         "Caixes fortes il·limitades"
@@ -5035,6 +5100,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Seguretat avançada de la xarxa i gestió d'accessos amb passarel·les segures dedicades"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Protecció avançada per a equips que va més enllà dels estàndards de la indústria."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Totes les aplicacions de ${ BRAND_NAME } i les seves característiques prèmium"
       ],
@@ -5046,6 +5114,9 @@
       ],
       "Early access to new apps and features": [
         "Accés anticipat a noves aplicacions i característiques"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Protecció essencial i col·laboració segura per a usuaris il·limitats."
       ],
       "For next-level password management and identity protection.": [
         "Per a una gestió de contrasenyes i protecció de la identitat de nivell superior."
@@ -5175,6 +5246,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permet configurar respostes automàtiques per als missatges entrants"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Neteja automàticament les carpetes de paperera i brossa els missatges amb més de 30 dies d'antiguitat."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'enviament massiu de correus electrònics promocionals o programàtics no està suportat actualment. Recomanem utilitzar un proveïdor de serveis de correu electrònic dedicat per a aquesta finalitat."
       ],
@@ -5217,6 +5291,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Podeu afegir etiquetes als missatges per facilitar-ne la cerca o l'aplicació de filtres"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Com una carpeta, una caixa forta és una manera còmoda d'organitzar els elements"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Aïlleu els recursos de la vostra empresa de l'internet públic i feu-los accessibles només a través de passarel·les privades."
@@ -5373,6 +5450,9 @@
       "Dedicated Account manager": [
         "Gestor de comptes dedicat"
       ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Ubicacions del servidor dedicades a ${ numberOfCountries }+ països"
+      ],
       "Dedicated server locations in North America and Europe": [
         "Ubicacions de servidors dedicats a Amèrica del Nord i Europa"
       ],
@@ -5416,6 +5496,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'autenticació de dos factors ja no és necessària"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
       ]
     },
     "Onboarding": {
@@ -5545,6 +5630,12 @@
       "/month /user": [
         "/mes /usuari"
       ],
+      "/month /user, billed annually": [
+        "/mes /usuari, facturat anualment"
+      ],
+      "/month /user, billed biennially": [
+        "/mes /usuari, facturat biennalment"
+      ],
       "Creating your account": [
         "S'està creant el compte"
       ],
@@ -5556,6 +5647,9 @@
       ],
       "Free forever": [
         "Gratuït per sempre"
+      ],
+      "Get in touch with our sales team": [
+        "Poseu-vos en contacte amb el nostre equip comercial"
       ],
       "Includes:": [
         "Inclou:"
@@ -5588,8 +5682,14 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Tots els administradors tindran accés a la clau."
+      ],
       "Change organization key": [
         "Canvia la clau de l'organització"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
       ],
       "Organization key activated": [
         "S'ha activat la clau de l'organització."
@@ -5609,8 +5709,20 @@
       "Reset organization key": [
         "Restableix la clau de l'organització"
       ],
+      "The following administrators will get access to the organization key.": [
+        "Els administradors següents tindran accés a la clau de l'organització."
+      ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau de l'organització."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Hem verificat l'autenticitat d'aquest remitent i la invitació."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
       ]
     },
     "Payment method option": {
@@ -5645,8 +5757,8 @@
       "Invalid expiration date": [
         "La data de caducitat no és vàlida"
       ],
-      "Invalid securiry code": [
-        "El codi de seguretat no es vàlid."
+      "Something went wrong. Please try again later.": [
+        "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
@@ -6066,6 +6178,11 @@
         "Utilitza un mètode de recuperació"
       ]
     },
+    "session_recovery:initiation:info": {
+      "We will contact you again when the password reset is available.": [
+        "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
+      ]
+    },
     "session_recovery:initiation:link": {
       "account and password section": [
         "secció de compte i contrasenya"
@@ -6400,8 +6517,17 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Si passeu a un pla inferior, perdreu els beneficis següents. Segur que voleu continuar?"
       ],
+      "contact your administrator": [
+        "contacteu amb l'administrador"
+      ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
@@ -6411,6 +6537,15 @@
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "L'${ storage } és ple. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -6581,6 +6716,9 @@
       ],
       "Address added": [
         "Adreça afegida"
+      ],
+      "Administrator privileges restored": [
+        "S'han restaurat els privilegis de l'administrador"
       ],
       "Bug reported": [
         "Error notificat"
@@ -6914,6 +7052,9 @@
       ],
       "Change role": [
         "Canvia privilegis"
+      ],
+      "Close": [
+        "Tanca"
       ],
       "Confirm": [
         "Confirma"

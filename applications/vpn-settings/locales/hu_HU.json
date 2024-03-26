@@ -519,9 +519,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Törlés"
-      ],
       "Disable": [
         "Letiltás"
       ],
@@ -1715,8 +1712,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Az Ön felhasználóneve: ${ Local }. A ${ Local }@${ Domain } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
@@ -1744,9 +1741,6 @@
       ],
       "Enter 6 digits": [
         "6 számjegyet írjon be"
-      ],
-      "Error": [
-        "Hiba"
       ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
@@ -1861,9 +1855,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Legalacsonyabb elfogadható összeg: ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Először a szervezeti kulcs aktiválása szükséges"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
@@ -2559,9 +2550,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem lesz képes menedzselni a szervezetét."
       ],
-      "Done": [
-        "Kész"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Kész! Elküldtük a kódot ide: ${ destination }."
       ],
@@ -2860,9 +2848,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
-      ],
-      "Queued": [
-        "Sorba állítva"
       ],
       "read our two-factor authentication guide first": [
         "először olvassa el a kétlépcsős hitelesítésről szóló útmutatót"
@@ -3777,6 +3762,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } termékekkel kapcsolatos hírek"
+      ],
+      "Daily email notifications": [
+        "Napi e-mail értesítések"
       ]
     },
     "Label on payment method": {
@@ -3904,6 +3892,9 @@
       ]
     },
     "Member action": {
+      "Add address": [
+        "Cím hozzáadása"
+      ],
       "Change password": [
         "Jelszó módosítása"
       ],
