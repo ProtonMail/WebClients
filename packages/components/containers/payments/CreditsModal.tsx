@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button, ButtonLike, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
@@ -101,11 +101,14 @@ const CreditsModal = (props: ModalProps) => {
         await call();
     };
 
-    const method = paymentFacade.selectedMethodValue;
+    const methodValue = paymentFacade.selectedMethodValue;
 
     const submit = (() => {
         const bitcoinAmountInRange = debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT;
-        if (debouncedAmount < MIN_CREDIT_AMOUNT || (method === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinAmountInRange)) {
+        if (
+            debouncedAmount < MIN_CREDIT_AMOUNT ||
+            (methodValue === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinAmountInRange)
+        ) {
             return null;
         }
 
@@ -123,7 +126,15 @@ const CreditsModal = (props: ModalProps) => {
             );
         }
 
-        if (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+            if (loading) {
+                return (
+                    <ButtonLike disabled loading={true}>
+                        {c('Payments').t`Processing payment`}
+                    </ButtonLike>
+                );
+            }
+
             return (
                 <div className="flex justify-end">
                     <div className="w-1/2 mr-1">
@@ -137,7 +148,7 @@ const CreditsModal = (props: ModalProps) => {
         }
 
         const topUpText = c('Action').t`Top up`;
-        if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+        if (methodValue === PAYMENT_METHOD_TYPES.BITCOIN) {
             return (
                 <PrimaryButton
                     loading={!bitcoinValidated && awaitingBitcoinPayment}
