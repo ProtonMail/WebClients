@@ -24,7 +24,10 @@ export const selectAllowAddressDeletion = (state: AllowAddressDeletionState) => 
 
 const modelThunk = createAsyncModelThunk<boolean, AllowAddressDeletionState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
-        return extraArgument.api(getAllowAddressDeletion()).then((response) => response.AddressDeletion.Allow);
+        return extraArgument
+            .api(getAllowAddressDeletion())
+            .then((response) => response.AddressDeletion.Allow)
+            .catch(() => false);
     },
     previous: previousSelector(selectAllowAddressDeletion),
 });
