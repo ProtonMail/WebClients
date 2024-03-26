@@ -51,6 +51,7 @@ elif [ "$1" = "macos" ]; then
 elif [ "$1" = "linux" ]; then
   subpath="PassDesktop/linux/x64"
   executable_filename="ProtonPass_${TAG_VERSION}.deb"
+  executable_filename_rpm="ProtonPass_${TAG_VERSION}.rpm"
 else
   echo "Invalid argument provided (must be 'windows', 'macos' or 'linux')"
   exit 1
@@ -83,15 +84,21 @@ elif [ "$1" = "macos" ]; then
   git lfs track "*.dmg" "PassDesktop/**/*.zip"
 elif [ "$1" = "linux" ]; then
   cp "${PROJECT_ROOT}/out/make/deb/x64/proton-pass_${VERSION}_amd64.deb" "${path}/${executable_filename}"
+  cp "${PROJECT_ROOT}/out/make/rpm/x64/proton-pass-${TAG_VERSION}-1.x86_64.rpm" "${path}/${executable_filename_rpm}"
   if [[ "${CATEGORY}" == "Stable" ]]; then
     cp "${PROJECT_ROOT}/out/make/deb/x64/proton-pass_${VERSION}_amd64.deb" "${path}/ProtonPass.deb"
+    cp "${PROJECT_ROOT}/out/make/rpm/x64/proton-pass-${TAG_VERSION}-1.x86_64.rpm" "${path}/ProtonPass.rpm"
   fi
-  git lfs track "*.deb"
+  git lfs track "*.deb" "*.rpm"
 fi
 
 # Update version.json
 now=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 sha=$(sha512sum "${path}/${executable_filename}" | cut -d " " -f 1)
+if [ "$1" = "linux" ]; then
+  sha_rpm=$(sha512sum "${path}/${executable_filename_rpm}" | cut -d " " -f 1)
+fi
+
 if [ ! -f "${path}/version.json" ]; then
   echo "{\"Releases\": []}" > "${path}/version.json"
 fi
@@ -106,7 +113,16 @@ if jq -e ".Releases[] | select(.Version == \"${TAG_VERSION}\")" "${path}/version
   exit 1
 fi
 
-newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${TAG_VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": { \"Url\": \"https://proton.me/download/${subpath}/${executable_filename}\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }}"
+if [ "$1" = "linux" ]; then
+  file="[
+    { \"Url\": \"https://proton.me/download/${subpath}/${executable_filename}\", \"Sha512CheckSum\": \"${sha}\", \"Identifier\": \".deb (Ubuntu/Debian)\" },
+    { \"Url\": \"https://proton.me/download/${subpath}/${executable_filename_rpm}\", \"Sha512CheckSum\": \"${sha_rpm}\", \"Identifier\": \".rpm (Fedora/RHEL)\" }
+  ]"
+else
+  file="[{ \"Url\": \"https://proton.me/download/${subpath}/${executable_filename}\", \"Sha512CheckSum\": \"${sha}\", \"Args\": \"\" }]"
+fi
+
+newrelease="{\"CategoryName\":\"${CATEGORY}\", \"Version\": \"${TAG_VERSION}\", \"ReleaseDate\": \"${now}\", \"RolloutPercentage\": 0, \"File\": ${file}}"
 < "${repoDir}/${subpath}/version.json" jq ".Releases |= [$newrelease] + ." > version.json.tmp
 mv version.json.tmp "${repoDir}/${subpath}/version.json"
 
