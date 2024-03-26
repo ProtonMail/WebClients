@@ -1,15 +1,12 @@
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, useModalState, useSpotlightShow } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
-import { useSpotlightOnFeature } from '@proton/components/hooks';
+import { Icon, useModalState } from '@proton/components/components';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
-import SnoozeSpotlight from '../components/SnoozeSpotlight';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
@@ -25,11 +22,6 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
     const { selectAll } = useSelectAll({ labelID });
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
-    const { show: showSpotlight, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightSnooze, canSnooze);
-    const show = useSpotlightShow(showSpotlight);
-
-    // The title is set to undefined when the spotlight is present to avoid having the tooltip displayed when hovering the spotlight
-    const tooltipTitle = show ? undefined : c('Title').t`Snooze`;
 
     if (!selectedIDs.length || (!canSnooze && !canUnsnooze)) {
         return null;
@@ -40,13 +32,8 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
             <Vr />
             <ToolbarDropdown
                 disabled={!selectedIDs || !selectedIDs.length || selectAll}
-                content={
-                    <SnoozeSpotlight show={show} onDisplayed={onDisplayed} onClose={onClose}>
-                        <Icon className="toolbar-icon flex" name="clock" alt={c('Title').t`Snooze`} />
-                    </SnoozeSpotlight>
-                }
-                title={tooltipTitle}
-                clickCallback={onClose}
+                content={<Icon className="toolbar-icon flex" name="clock" alt={c('Title').t`Snooze`} />}
+                title={c('Title').t`Snooze`}
                 data-testid="toolbar:snooze"
                 hasCaret={false}
                 autoClose={false}
