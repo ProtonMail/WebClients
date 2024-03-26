@@ -160,7 +160,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
         };
 
         void withLoadingLinks(getAllLinks());
-    }, []);
+    }, [calendarID]);
 
     const maxLinksReached = links.length === MAX_LINKS_PER_CALENDAR;
 
