@@ -551,7 +551,7 @@
         "Holvista ei voitu poistua."
       ],
       "Could not load recommendations at the moment.": [
-        "Suosituksia ei voi ladata juuri nyt."
+        "Suosituksia ei voida ladata juuri nyt."
       ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
@@ -1407,7 +1407,7 @@
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Et voi lisätä enempää luottokortteja. Päivitä tilauksesi lisätäksesi rajoittamattoman määrän luottokortteja."
+        "Et voi lisätä enempää maksukortteja. Lisää maksukortteja rajoittamasti päivittämällä tilauksesi."
       ],
       "You have reached the limit of vaults you can create.": [
         "Luotujen holvien enimmäismäärä on saavutettu."
@@ -2101,7 +2101,7 @@
         "Jäsenrajoitus"
       ],
       "Members": [
-        "Jäsentä"
+        "Jäsenet"
       ],
       "Modified": [
         "Muokattu"
@@ -2255,7 +2255,7 @@
         "Kutsujen lähetys seuraaviin osoitteisiin ei onnistunut:"
       ],
       "Duplicate email addresses.": [
-        "Sähköpostiosoitteet on jo olemassa."
+        "Sähköpostiosoitteiden kaksoiskappaleita."
       ],
       "Empty note": [
         "Tyhjä muistiinpano"
@@ -2270,7 +2270,7 @@
         "Virheellinen aliaksen etuliite"
       ],
       "Invalid email addresses.": [
-        "Virheelliset sähköpostiosoitteet."
+        "Virheellisiä sähköpostiosoitteita."
       ],
       "item was imported without custom fields": [
         "kohde tuotiin ilman mukautettuja kenttiä"
@@ -2293,6 +2293,9 @@
       ],
       "No items matching": [
         "Kohteita ei löydy haulla"
+      ],
+      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
+        "Suojausavaimia ei löytynyt. Tallenna suojausavaimesi ${ PASS_APP_NAME }iin kirjautuaksesi kohteeseen ${ domain }."
       ],
       "No password manager selected": [
         "Salasanahallintaa ei ole valittu"
