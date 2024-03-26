@@ -6958,6 +6958,9 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
       ],
@@ -7040,7 +7043,7 @@
         "如何從 Yahoo 匯入行事曆"
       ],
       "How to import contacts from another service": [
-        "如何從其它服務匯入聯絡人"
+        "如何從其它郵件服務業者平台匯入通訊錄"
       ],
       "How to import contacts from Yahoo": [
         "如何從 Yahoo 匯入聯絡人"
@@ -7301,6 +7304,11 @@
         "寄件者已攔截"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "接下來，您將必須登入您的 Google 帳號，並同意 ${ BRAND_NAME } 存取您的資料。"
@@ -7373,7 +7381,7 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "您是否有以下服務的帳號?按變更電子郵件位址至您的${ MAIL_APP_NAME }位址。"
+        "您是否有以下郵件平台的帳號？僅需點擊幾下，即可將您的電郵變更為 ${ MAIL_APP_NAME } 的位址。"
       ]
     },
     "Online Accounts Name": {
@@ -8220,9 +8228,6 @@
       ]
     },
     "Spotlight": {
-      "Change setting": [
-        "更改設定"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "方便地從桌面應用程式啟動${ MAIL_APP_NAME }"
       ],
@@ -8255,9 +8260,6 @@
       ],
       "Snooze it for later": [
         "往後挪一下"
-      ],
-      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "垃圾郵件與垃圾桶中的電子郵件會自動從所有郵件中排除。${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"

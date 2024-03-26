@@ -264,7 +264,7 @@
         "Criar uma etiqueta"
       ],
       "Create and copy alias": [
-        "Criar e colar pseudónimo"
+        "Criar e colar alias"
       ],
       "Create folder": [
         "Criar pasta"
@@ -906,7 +906,7 @@
         "Selecionar todas as mensagens"
       ],
       "Select country": [
-        "Seleccionar país"
+        "Selecionar país"
       ],
       "Select date and time": [
         "Selecione data e hora"
@@ -6608,6 +6608,9 @@
       "Don't show this again": [
         "Não mostrar novamente"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "ex.: Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -7813,6 +7816,9 @@
       "Search name, email or group": [
         "Pesquisar nome, e-mail ou grupo"
       ],
+      "Search parent folder": [
+        "Pesquisar pasta inicial"
+      ],
       "Select": [
         "Selecionar"
       ],
@@ -7982,6 +7988,9 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Todos os pseudónimos"
+      ],
       "Create alias": [
         "Criar um alias"
       ],
@@ -8517,9 +8526,6 @@
       ]
     },
     "Spotlight": {
-      "Change setting": [
-        "Alterar a configuração"
-      ],
       "Email tracking protection": [
         "Proteção contra rastreamento de e-mail"
       ],
@@ -8537,9 +8543,6 @@
       ],
       "Snooze it for later": [
         "Adiar para mais tarde"
-      ],
-      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Os e-mails nas pastas Spam e Lixo agora são removidos automaticamente da pasta Todos os e-mails. ${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por predefinição e impedimos que os remetentes o rastreiem. Isto pode ser alterado em ${ settingsLink }."
@@ -8594,6 +8597,12 @@
       "contact your administrator": [
         "contacte o seu administrador"
       ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Para continuar a carregar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
+      ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
       ],
@@ -8605,6 +8614,9 @@
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "O seu armazenamento está cheio. ${ cta }"
       ]
     },
     "Success": {
@@ -8702,8 +8714,11 @@
       "Address verification disabled": [
         "Verificação de endereço desativada"
       ],
+      "Alias copied to clipboard": [
+        "Alias copiado para a área de transferência"
+      ],
       "Alias saved and copied": [
-        "Pseudónimo guardado e copiado"
+        "Alias guardado e copiado"
       ],
       "Bug reported": [
         "Erro reportado"
@@ -9001,6 +9016,12 @@
       "(active)": [
         "(ativo)"
       ],
+      "A filter name is required": [
+        "O nome do filtro é obrigatório"
+      ],
+      "A filter with this name already exists": [
+        "Já existe um filtro com este nome"
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -9223,6 +9244,9 @@
       "Feedback": [
         "Comentários"
       ],
+      "Filter name cannot contain only spaces": [
+        "O nome do filtro não pode conter apenas espaços"
+      ],
       "Filter on...": [
         "Filtrar por..."
       ],
@@ -9231,6 +9255,9 @@
       ],
       "Forward": [
         "Reencaminhar"
+      ],
+      "Get advanced protection": [
+        "Obtenha proteção avançada"
       ],
       "Groups": [
         "Grupos"
@@ -9287,11 +9314,20 @@
       "Mark as unread": [
         "Marcar como não lido"
       ],
+      "Mark conversations as read": [
+        "Marcar conversas como lidas"
+      ],
       "Mark conversations as unread": [
         "Marcar conversas como não lidas"
       ],
       "Mark email as legitimate": [
         "Marcar o e-mail como legítimo"
+      ],
+      "Mark messages as read": [
+        "Marcar mensagens como lidas"
+      ],
+      "Mark messages as unread": [
+        "Marcar mensagens como não lidas"
       ],
       "Merge contacts": [
         "Unir contactos"
@@ -9323,6 +9359,18 @@
       "More selections": [
         "Mais seleções"
       ],
+      "Move all conversations": [
+        "Mover todas as conversas"
+      ],
+      "Move all messages": [
+        "Mover todas as mensagens"
+      ],
+      "Move all messages to archive": [
+        "Mover todas as mensagens para o Arquivo"
+      ],
+      "Move all messages to trash": [
+        "Mover todas as mensagens para o Lixo"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -9345,7 +9393,7 @@
         "A mover uma mensagem adiada"
       ],
       "Need more aliases?": [
-        "Necessita de mais pseudónimos?"
+        "Necessita de mais aliases?"
       ],
       "New message": [
         "Nova mensagem"
@@ -9517,6 +9565,9 @@
       ],
       "This field cannot be empty": [
         "Este campo não pode estar vazio."
+      ],
+      "This field cannot contain only spaces": [
+        "Este campo não pode conter apenas espaços"
       ],
       "To": [
         "Para"

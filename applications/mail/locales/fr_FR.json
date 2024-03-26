@@ -5221,7 +5221,7 @@
         "Voulez-vous vraiment déplacer tous les messages de cet emplacement vers le dossier Archives ?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Voulez-vous vraiment envoyer tous les messages de cet emplacement vers la corbeille ?"
+        "Voulez-vous vraiment déplacer tous les messages de cet emplacement vers la corbeille ?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } conversation ?",
@@ -8910,9 +8910,6 @@
       ]
     },
     "Spotlight": {
-      "Change setting": [
-        "Modifier le paramètre"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
       ],
@@ -8945,9 +8942,6 @@
       ],
       "Snooze it for later": [
         "Reportez-le à plus tard"
-      ],
-      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Le dossier Tous les messages exclut automatiquement les messages des dossiers Indésirables/spam et Corbeille. ${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
