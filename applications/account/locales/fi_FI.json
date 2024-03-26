@@ -305,6 +305,9 @@
       "Delete": [
         "Poista"
       ],
+      "Delete address": [
+        "Poista osoite"
+      ],
       "Delete and confirm": [
         "Poista ja vahvista"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Avaa"
       ],
+      "Unlock Breach Report": [
+        "Avaa tietovuotoraportti"
+      ],
+      "Unlock breach reports": [
+        "Avaa tietovuotoraportit"
+      ],
       "Unlock data": [
         "Avaa tiedot"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
+      ],
+      "Upgrade to view all": [
+        "Näytä kaikki päivittämällä tilauksesi"
       ],
       "Upgrade your plan": [
         "Päivitä tilauksesi"
@@ -1137,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Poista"
+      "Delete address": [
+        "Poista osoite"
       ],
       "Disable": [
         "Poista käytöstä"
@@ -3035,6 +3047,16 @@
         "Tuntematon"
       ]
     },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Voit poistaa vain yhden osoitteen vuodessa."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Voit poistaa vain yhden osoitteen vuodessa"
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Kaikki kalenterin tapahtumat poistetaan."
@@ -3084,6 +3106,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Poista ${ MAIL_APP_NAME }in alatunniste ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi ."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Tarkastellaksesi täyttä henkilökohtaisia suosituksia sisältävää raporttia, päivitä maksulliseen tilaukseen."
       ],
       "Track the status and activity of your referrals.": [
         "Seuraa suositustesi tilaa ja tapahtumia."
@@ -3709,8 +3734,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ Local }@${ Domain }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
       ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
@@ -3794,9 +3819,6 @@
       ],
       "Enter 6 digits": [
         "Syötä 6-numeroa"
-      ],
-      "Error": [
-        "Virhe"
       ],
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
@@ -4070,9 +4092,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Hyväksymämme vähimmäismaksu on ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Organisaation avain on ensin aktivoitava"
       ],
       "The sending key is not valid": [
         "Lähetysavain ei kelpaa"
@@ -6249,6 +6268,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Estää lähettäjiä näkemästä, jos ja koska avasit viestin."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Tietovuotosuojauksen perustana ovat ${ BRAND_NAME }in ja avoimen lähdekoodin tietojoukot, sekä Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -6269,6 +6291,9 @@
       ],
       "Center": [
         "Keskitä"
+      ],
+      "Change your password": [
+        "Vaihda salasanasi"
       ],
       "Check the status of imports and forwarding.": [
         "Tarkista tuontien ja edelleenlähetyksen tila."
@@ -6400,9 +6425,6 @@
         "verkkotunnus käytetty",
         "verkkotunnusta käytetty"
       ],
-      "Done": [
-        "Valmis"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Valmis! Koodi lähetettiin kohteeseen ${ destination }."
       ],
@@ -6450,6 +6472,9 @@
       ],
       "Edit link": [
         "Muokkaa linkkiä"
+      ],
+      "email": [
+        "sähköpostiosoite"
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -6550,6 +6575,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Suodattimet koskevat kaikkia viestejä, saapuvat ja lähetetyt mukaan lukien. Jokaisen suodattimen tulee sisältää ainakin nimi, ehto ja toiminto."
       ],
+      "finance": [
+        "rahoitus"
+      ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
@@ -6591,6 +6619,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Piilottaa tunnistetiedot lataamalla ulkoisen sisällön välityspalvelimen kautta. Mahdollistuus säilyttää sisältö liitteinä."
+      ],
+      "High Priority": [
+        "Korkea tärkeys"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä heitä toimittamaan organisaation uusi salasana."
@@ -6813,6 +6844,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Lokitietoihin sisältyvät todennusyritykset kaikkiin ${ BRAND_NAME }-tunnustasi käyttäviin ${ BRAND_NAME_TWO }-palveluihin."
       ],
+      "Low Priority": [
+        "Alhainen tärkeys"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Monet sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostiksi, jos SPF/DKIM/DMARC puuttuvat tai niitä ei ole määritetty oikein."
       ],
@@ -6828,6 +6862,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
+      "Medium Priority": [
+        "Keskitason tärkeys"
+      ],
       "Member": [
         "Jäsen"
       ],
@@ -6836,6 +6873,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Monitor accounts": [
+        "Valvo tilejä"
       ],
       "Monthly ${ onDayString }": [
         "Kuukausittain ${ onDayString }"
@@ -6970,6 +7010,9 @@
       "Paid for a monthly plan": [
         "Maksettu kuukausittainen tilaus"
       ],
+      "password": [
+        "salasana"
+      ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
       ],
@@ -7063,6 +7106,9 @@
       "Please wait till your changes are synced with the server.": [
         "Odota kun muutoksesi synkronoidaan palvelimen kanssa."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Sekä ${ numOfBreaches } muuta"
+      ],
       "Plus or Visionary subscription required": [
         "Edellyttää Plus- tai Visionary-tilausta"
       ],
@@ -7095,9 +7141,6 @@
       ],
       "purchase additional storage": [
         "osta lisää tallennustilaa"
-      ],
-      "Queued": [
-        "Jonossa"
       ],
       "read our two-factor authentication guide first": [
         "luet ensin oppaamme kaksivaiheiseen todennukseen"
@@ -7613,6 +7656,15 @@
       "URL link": [
         "URL-linkki"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Luo vahvoja salasanoja ja vältä salasanojen toistuvaa käyttöä ${ BRAND_NAME } Passilla."
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Suojaudu tietojenkalastelulta ja haittalliselta sisällöltä käyttämällä ${ VPN_APP_NAME }:ää Netshieldin kanssa."
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Rekisteröidy verkkopalveluihin aliaksilla. Tämä suojaa todellista sähköpostiosoitettasi ja henkilöllisyyttäsi rajoittaen mahdollisten tietovuotojen seurauksia."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
       ],
@@ -7627,6 +7679,9 @@
       ],
       "User activated": [
         "Käyttäjä aktivoitiin"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -7670,6 +7725,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Varoitus: poisto on pysyvää. Tämä poistaa pääsyn myös kaikkiin yhdistettyihin palveluihin ja poistaa kaikki yhteystietosi."
       ],
+      "Ways you can minimize your breach risks": [
+        "Tapoja tietovuotoalttiutesi minimointiin"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Suosittelemme aina virallisten ${ VPN_APP_NAME } -sovellusten käyttöä, jos mahdollista."
       ],
@@ -7681,6 +7739,9 @@
       ],
       "We just sent you a new link.": [
         "Lähetimme sinulle juuri uuden linkin."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Valvomme sähköpostiosoitteidesi, salasanojesi ja henkilötietojesi esiintyvyyttä pimeässä verkossa ja ilmoitamme sinulle, jos tietosi ovat vaarantuneet."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -9398,6 +9459,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }in tervetuloviestit"
+      ],
+      "Daily email notifications": [
+        "Päivittäiset sähköposti-ilmoitukset"
       ]
     },
     "Label in domain modal": {
@@ -9531,6 +9595,9 @@
       "Create account": [
         "Luo tili"
       ],
+      "Create an alias": [
+        "Luo alias"
+      ],
       "Encryption and keys": [
         "Salaus ja avaimet"
       ],
@@ -9539,6 +9606,12 @@
       ],
       "General": [
         "Yleiset"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Hanki ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Hanki ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Osallistu käännökseen"
@@ -9765,6 +9838,9 @@
     "Member action": {
       "Activate user": [
         "Aktivoi käyttäjä"
+      ],
+      "Add address": [
+        "Lisää osoite"
       ],
       "Change password": [
         "Vaihda salasana"
@@ -11783,6 +11859,17 @@
         "Yksityishenkilöille"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **vanhalla salasanallasi**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Kaikki olemassa olevat tietosi** (viestit, tapahtumat, yhteystiedot, tiedostot, ${ PASS_APP_NAME } -tietueet, yms.) **lukitaan** ja voidaan avata vain **palautuslausekkeellasi** tai **vanhalla salasanallasi**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Kaikki tilillesi määritetyt **kaksivaiheiset todennusmenetelmät (2FA)** poistetaan käytöstä."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Kaikki ylläpitäjät saavat käyttöoikeuden avaimeen."
@@ -11814,11 +11901,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Varmista, että heidän osoitteensa on otettu käyttöön ja kutsu heidät myöhemmin erikseen."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
       ],
       "Reset organization key": [
         "Nollaa organisaation avain"
+      ],
+      "The following administrators could not be restored.": [
+        "Seuraavia ylläpitäjiä ei voitu palauttaa"
       ],
       "The following administrators will get access to the organization key.": [
         "Seuraavat ylläpitäjät saavat organisaation avaimen käyttöoikeuden."
@@ -11889,7 +11982,7 @@
       "Invalid expiration date": [
         "Virheellinen voimassaolon päättymisaika"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Virheellinen turvakoodi"
       ],
       "Something went wrong. Please try again later.": [
@@ -13792,6 +13885,18 @@
       "Billing cycle": [
         "Laskutusjakso"
       ],
+      "Breach Alerts": [
+        "Tietovuotohälytykset"
+      ],
+      "Breach Date": [
+        "Vuodon päiväys"
+      ],
+      "Breach Information": [
+        "Tietoja vuodosta"
+      ],
+      "Breach Size": [
+        "Vuodon koko"
+      ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform }-alustalle"
       ],
@@ -13839,6 +13944,9 @@
       ],
       "Clear out the junk": [
         "Tyhjennä roskat"
+      ],
+      "Close": [
+        "Sulje"
       ],
       "Composing": [
         "Kirjoitus"
@@ -13958,6 +14066,9 @@
       "Delete account": [
         "Poista tili"
       ],
+      "Delete address permanently?": [
+        "Poistetaanko osoite pysyvästi?"
+      ],
       "Delete calendar": [
         "Poista kalenteri"
       ],
@@ -14058,6 +14169,9 @@
       "Email": [
         "Sähköposti"
       ],
+      "Email address": [
+        "Sähköpostiosoite"
+      ],
       "Email composer": [
         "Sähköpostin kirjoitusikkuna"
       ],
@@ -14096,6 +14210,9 @@
       ],
       "Export public key": [
         "Vie julkinen avain"
+      ],
+      "Exposed info": [
+        "Vuotaneet tiedot"
       ],
       "External PGP settings": [
         "Ulkoisen PGP-järjestelmän asetukset"
@@ -14264,6 +14381,9 @@
       "Night theme": [
         "Yöteema"
       ],
+      "No account information was found in any data breaches": [
+        "Tilitietoja ei löytynyt mistään tietovuodoista"
+      ],
       "No recovery method": [
         "Palautustapoja ei ole"
       ],
@@ -14332,6 +14452,9 @@
       ],
       "Recommended": [
         "Suositus"
+      ],
+      "Recommended actions": [
+        "Suositellut toimenpiteet"
       ],
       "Reconnect your account": [
         "Yhdistä tilisi uudelleen"
@@ -14600,6 +14723,9 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
+      ],
+      "Your Exposed Information": [
+        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"

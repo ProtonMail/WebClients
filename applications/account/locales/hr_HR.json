@@ -832,9 +832,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Izbriši"
-      ],
       "Disable": [
         "Onemogući"
       ],
@@ -2475,9 +2472,6 @@
       "Enter 6 digits": [
         "Unesite 6 znamenki"
       ],
-      "Error": [
-        "Pogreška"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
@@ -2615,9 +2609,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Naziv mape je predugačak. Odaberite drugi naziv."
-      ],
-      "The organization key must be activated first": [
-        "Prvo se mora aktivirati organizacijski ključ"
       ],
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
@@ -3778,6 +3769,9 @@
       "Center": [
         "Sredina"
       ],
+      "Change your password": [
+        "Promijenite vašu lozinku"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
@@ -3830,9 +3824,6 @@
         "iskorištena domena",
         "iskorištene domene",
         "iskorištenih domena"
-      ],
-      "Done": [
-        "Gotovo"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
@@ -4124,9 +4115,6 @@
       ],
       "purchase additional storage": [
         "kupite dodatni prostor za pohranu"
-      ],
-      "Queued": [
-        "Na čekanju"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
@@ -5426,6 +5414,11 @@
         "VPN veza"
       ]
     },
+    "Label for news": {
+      "Daily email notifications": [
+        "Dnevne obavijesti e-pošte"
+      ]
+    },
     "Label in domain modal": {
       "Addresses": [
         "Adrese"
@@ -5542,6 +5535,9 @@
       ],
       "General": [
         "Općenito"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Nabavite ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Pomozite prevesti"

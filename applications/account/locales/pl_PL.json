@@ -305,6 +305,9 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete address": [
+        "Usuń adres"
+      ],
       "Delete and confirm": [
         "Usuń i potwierdź"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Odblokuj"
       ],
+      "Unlock Breach Report": [
+        "Odblokuj raport wycieku"
+      ],
+      "Unlock breach reports": [
+        "Odblokuj raporty wycieków"
+      ],
       "Unlock data": [
         "Odblokuj dane"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ulepsz plan, aby włączyć ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Ulepsz konto, aby zobaczyć wszystko"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -1143,8 +1155,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Usuń"
+      "Delete address": [
+        "Usuń adres"
       ],
       "Disable": [
         "Wyłącz"
@@ -3055,6 +3067,25 @@
         "Nieznany"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Kiedy usuniesz ten adres, ty ani inna osoba nie będzie mogła go użyć."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Następny aktywny adres zostanie ustawiony domyślnie."
+      ],
+      "You can only delete 1 address per year.": [
+        "Możesz usunąć tylko 1 adres rocznie."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Możesz usunąć tylko 1 adres rocznie."
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Osiągnąłeś limit usuwania adresów dla tego użytkownika."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Wszystkie wydarzenia w tym kalendarzu zostaną usunięte."
@@ -3729,8 +3760,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Twoja nazwa użytkownika to ${ Local }. Aby utworzyć adres ${ Local }@${ Domain }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (@pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -3818,9 +3849,6 @@
       ],
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
-      ],
-      "Error": [
-        "Błąd"
       ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
@@ -4100,9 +4128,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimalna kwota akceptowanej płatności wynosi ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Najpierw musisz aktywować klucz organizacji"
       ],
       "The sending key is not valid": [
         "Klucz przeznaczony do wysyłania wiadomości nie jest prawidłowy"
@@ -6365,6 +6390,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokuje nadawcom możliwość sprawdzenia, czy i kiedy otwierasz wiadomość."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Alerty wycieków obejmują dane zastrzeżone przez ${ BRAND_NAME }, ogólnodostępne wycieki danych oraz dane firmy Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
@@ -6385,6 +6413,9 @@
       ],
       "Center": [
         "Wyśrodkuj"
+      ],
+      "Change your password": [
+        "Zmień hasło"
       ],
       "Check the status of imports and forwarding.": [
         "Sprawdź status importów i przekierowania."
@@ -6524,9 +6555,6 @@
         "użytych domen",
         "użytych domen"
       ],
-      "Done": [
-        "Gotowe"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Gotowe! Kod został wysłany do ${ destination }."
       ],
@@ -6574,6 +6602,9 @@
       ],
       "Edit link": [
         "Edytuj link"
+      ],
+      "email": [
+        "adres e-mail"
       ],
       "Email address": [
         "Adres e-mail"
@@ -6674,6 +6705,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
       ],
+      "finance": [
+        "finanse"
+      ],
       "for choosing ${ product }": [
         "za wybranie ${ product }"
       ],
@@ -6715,6 +6749,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Ukrywa informacje identyfikujące poprzez ładowanie zawartości zdalnej przez proxy. Zawartość zostanie przechowana jako załączniki."
+      ],
+      "High Priority": [
+        "Wysoki priorytet"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
@@ -6941,6 +6978,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logi obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Niski priorytet"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Większość usług pocztowych może odrzucać lub oznaczać jako spam wiadomości niezabezpieczone prawidłowymi rekordami SPF / DKIM / DMARC."
       ],
@@ -6956,6 +6996,9 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Średni priorytet"
+      ],
       "Member": [
         "Użytkownik"
       ],
@@ -6964,6 +7007,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Monitor accounts": [
+        "Monitoring kont"
       ],
       "Monthly ${ onDayString }": [
         "Co miesiąc ${ onDayString }"
@@ -7100,6 +7146,9 @@
       "Paid for a monthly plan": [
         "Opłacony plan miesięczny"
       ],
+      "password": [
+        "hasło"
+      ],
       "Password copied to clipboard": [
         "Hasło zostało skopiowane do schowka"
       ],
@@ -7199,6 +7248,9 @@
       "Please wait till your changes are synced with the server.": [
         "Poczekaj na synchronizację zmian z serwerem."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "+${ numOfBreaches } więcej"
+      ],
       "Plus or Visionary subscription required": [
         "Subskrypcja planu Plus lub Visionary jest wymagana"
       ],
@@ -7231,9 +7283,6 @@
       ],
       "purchase additional storage": [
         "kupić dodatkową przestrzeń dyskową"
-      ],
-      "Queued": [
-        "W kolejce"
       ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
@@ -7772,6 +7821,9 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
+      "username": [
+        "nazwa użytkownika"
+      ],
       "Users": [
         "Użytkownicy"
       ],
@@ -7814,6 +7866,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Ostrzeżenie: Usunięcia nie możesz cofnąć. Ta czynność spowoduje również utratę dostępu do wszystkich usług i usunięcie kontaktów."
       ],
+      "Ways you can minimize your breach risks": [
+        "Sposoby na zminimalizowanie ryzyka wycieku"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
       ],
@@ -7825,6 +7880,9 @@
       ],
       "We just sent you a new link.": [
         "Wysłaliśmy nowy link."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Monitorujemy adresy e-mail, hasła i dane osobowe użytkowników pod kątem ich obecności w sieci dark web i powiadamiamy o naruszeniach bezpieczeństwa danych."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
@@ -9568,6 +9626,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Wiadomość powitalna ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Codzienne powiadomienia e-mail"
       ]
     },
     "Label in domain modal": {
@@ -9701,6 +9762,9 @@
       "Create account": [
         "Utwórz konto"
       ],
+      "Create an alias": [
+        "Utwórz alias"
+      ],
       "Encryption and keys": [
         "Szyfrowanie i klucze"
       ],
@@ -9709,6 +9773,12 @@
       ],
       "General": [
         "Ogólne"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Uzyskaj ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Uzyskaj ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Pomóż w tłumaczeniu"
@@ -9885,7 +9955,7 @@
         "10 adresów e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie spamu i opróżnianie kosza"
+        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny planowego wysyłania i usypiania"
@@ -9951,6 +10021,9 @@
     "Member action": {
       "Activate user": [
         "Aktywuj użytkownika"
+      ],
+      "Add address": [
+        "Dodaj adres"
       ],
       "Change password": [
         "Zmień hasło"
@@ -12075,11 +12148,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Upewnij się, że ich adresy są włączone i zaproś ich później osobno."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Prywatni użytkownicy mogą uzyskać uprawnienia administratora po pierwszym zalogowaniu się."
       ],
       "Reset organization key": [
         "Resetuj klucz organizacji"
+      ],
+      "The following administrators could not be restored.": [
+        "Następujący administratorzy nie mogą zostać przywróceni."
       ],
       "The following administrators will get access to the organization key.": [
         "Następujący administratorzy uzyskają dostęp do klucza organizacji."
@@ -12150,7 +12229,7 @@
       "Invalid expiration date": [
         "Data wygaśnięcia jest nieprawidłowa"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Kod zabezpieczający jest nieprawidłowy"
       ],
       "Something went wrong. Please try again later.": [
@@ -14139,6 +14218,18 @@
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
+      "Breach Alerts": [
+        "Alerty wycieków"
+      ],
+      "Breach Date": [
+        "Dane wycieku"
+      ],
+      "Breach Information": [
+        "Informacje o wycieku"
+      ],
+      "Breach Size": [
+        "Rozmiar wycieku"
+      ],
       "Bridge for ${ platform }": [
         "Aplikacja Bridge na ${ platform }"
       ],
@@ -14186,6 +14277,9 @@
       ],
       "Clear out the junk": [
         "Opróżnij Kosz"
+      ],
+      "Close": [
+        "Zamknij"
       ],
       "Composing": [
         "Edytor"
@@ -14307,6 +14401,9 @@
       "Delete account": [
         "Usuń konto"
       ],
+      "Delete address permanently?": [
+        "Usunąć trwale adres?"
+      ],
       "Delete calendar": [
         "Usuń kalendarz"
       ],
@@ -14409,6 +14506,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email address": [
+        "Adres e-mail"
+      ],
       "Email composer": [
         "Edytor wiadomości"
       ],
@@ -14447,6 +14547,9 @@
       ],
       "Export public key": [
         "Eksportuj klucz publiczny"
+      ],
+      "Exposed info": [
+        "Ujawnione informacje"
       ],
       "External PGP settings": [
         "Ustawienia zewnętrzne PGP"
@@ -14619,6 +14722,9 @@
       "Night theme": [
         "Ciemny motyw"
       ],
+      "No account information was found in any data breaches": [
+        "Brak informacji o koncie w wyciekach danych"
+      ],
       "No recovery method": [
         "Brak metody odzyskiwania"
       ],
@@ -14687,6 +14793,9 @@
       ],
       "Recommended": [
         "Zalecany"
+      ],
+      "Recommended actions": [
+        "Zalecane kroki"
       ],
       "Reconnect your account": [
         "Połącz ponownie ze swoim kontem"
@@ -14957,6 +15066,9 @@
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
+      ],
+      "Your Exposed Information": [
+        "Twoje ujawnione informacje"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"

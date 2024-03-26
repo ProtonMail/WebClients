@@ -1134,9 +1134,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Slet"
-      ],
       "Disable": [
         "Deaktivér"
       ],
@@ -3706,8 +3703,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } er dit brugernavn. For at oprette ${ Local }@${ Domain }, gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -3791,9 +3788,6 @@
       ],
       "Enter 6 digits": [
         "Indtast 6 cifre"
-      ],
-      "Error": [
-        "Fejl"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
@@ -4067,9 +4061,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Den mindste betaling vi accepterer er ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Organisationsnøglen skal først aktiveres"
       ],
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
@@ -6261,6 +6252,9 @@
       "Center": [
         "Centrér"
       ],
+      "Change your password": [
+        "Skift din adgangskode"
+      ],
       "Check the status of imports and forwarding.": [
         "Kontrollér status for import og videresendelse."
       ],
@@ -6390,9 +6384,6 @@
       "domain used": [
         "anvendt domæne",
         "anvendte domæner"
-      ],
-      "Done": [
-        "Udført"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Færdig! Vi sendte en kode til ${ destination }."
@@ -7086,9 +7077,6 @@
       ],
       "purchase additional storage": [
         "tilkøbe mere lagerplads"
-      ],
-      "Queued": [
-        "Sat i kø"
       ],
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
@@ -9389,6 +9377,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-velkomstmails"
+      ],
+      "Daily email notifications": [
+        "Daglige e-mailnotifikationer"
       ]
     },
     "Label in domain modal": {
@@ -9522,6 +9513,9 @@
       "Create account": [
         "Opret konto"
       ],
+      "Create an alias": [
+        "Opret et alias."
+      ],
       "Encryption and keys": [
         "Kryptering og nøgler"
       ],
@@ -9530,6 +9524,9 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Få ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Hjælp med at oversætte"
@@ -9696,6 +9693,9 @@
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
       ],
+      "Custom schedule send and snooze times": [
+        "Brugerdefineret tidsplan for afsendelse og udsættelse"
+      ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
@@ -9747,6 +9747,9 @@
     "Member action": {
       "Activate user": [
         "Aktiver bruger"
+      ],
+      "Add address": [
+        "Tilføj adresse"
       ],
       "Change password": [
         "Skift adgangskode"
@@ -11862,9 +11865,6 @@
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
       ],
-      "Invalid securiry code": [
-        "Ugyldig sikkerhedskode"
-      ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
       ],
@@ -12976,10 +12976,10 @@
         "Få mere lagerplads"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
+        "For at uploade eller synkronisere filer, frigør plads eller ${ upgrade }"
       ],
       "Try out ${ app } to its full potential": [
         "Prøv det fulde potentiale af ${ app }"

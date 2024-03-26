@@ -305,6 +305,9 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete address": [
+        "Ta bort adress"
+      ],
       "Delete and confirm": [
         "Ta bort och bekräfta"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Lås upp"
       ],
+      "Unlock Breach Report": [
+        "Lås upp intrångsrapport"
+      ],
+      "Unlock breach reports": [
+        "Lås upp intrångsrapporter"
+      ],
       "Unlock data": [
         "Lås upp data"
       ],
@@ -1140,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Ta bort"
+      "Delete address": [
+        "Ta bort adress"
       ],
       "Disable": [
         "Inaktivera"
@@ -3037,6 +3046,25 @@
         "Okänd"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "När den har tagits bort kan den inte användas igen av dig eller någon annan."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Nästa aktiva adress på din lista kommer att ställas in som standard."
+      ],
+      "You can only delete 1 address per year.": [
+        "Du kan bara ta bort 1 adress per år."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kan bara ta bort 1 adress per år"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du har nått gränsen för borttagning av adresser för denna användare."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Alla händelser i denna kalender kommer att tas bort."
@@ -3714,9 +3742,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } är ditt användarnamn. För att skapa ${ Local }@${ Domain } går du till Inställningar > Meddelanden och komponera > Kort domän (pm.me)"
-      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -3799,9 +3824,6 @@
       ],
       "Enter 6 digits": [
         "Ange 6 siffror"
-      ],
-      "Error": [
-        "Fel"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
@@ -4075,9 +4097,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minsta betalningen vi accepterar är ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Organisationsnyckeln måste aktiveras först"
       ],
       "The sending key is not valid": [
         "Den skickande nyckeln är inte giltig"
@@ -6410,7 +6429,7 @@
         "DKIM tillåter ${ BRAND_NAME } att kryptografiskt signera din e-post och förhindra angripare från att manipulera din e-post. Se till att du lägger till följande tre CNAME-poster i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC kontrollerar att avsändarens SPF och DKIM uppgifter härstammar från din domän. Detta kan förhindra attackerare från att använda en annan domäns SPF och DKIM uppgifter för att utge sig för att vara din domän. \"p=\" (policy) i denna uppgift indikerar hur du vill att mottagarens platform hanterar obehörig e-post. Vi rekommenderar användningen av \"p=quarantine\"-policyn för de flesta domäner. Säkerställ att du lägger till följande TXT-uppgift i din DNS konsol (finns på den plattform där du köpte din domän)."
+        "DMARC kontrollerar om avsändarens SPF- och DKIM-poster kommer från din domän. Detta kan förhindra angripare från att använda en annan domäns SPF och DKIM för att imitera din domän. ”p=” (policy) i denna post indikerar hur du vill att mottagarplattformarna ska hantera obehöriga e-postmeddelanden. Vi rekommenderar att använda policyn ”p=quarantine” för de flesta domäner. Se till att du lägger till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
@@ -6421,9 +6440,6 @@
       "domain used": [
         "domän används",
         "domäner används"
-      ],
-      "Done": [
-        "Klar"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klart! Vi skickade en kod till ${ destination }."
@@ -7109,6 +7125,9 @@
       "Please wait till your changes are synced with the server.": [
         "Vänta tills dina ändringar har synkroniserats med servern."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus ${ numOfBreaches } till"
+      ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary-prenumeration krävs"
       ],
@@ -7141,9 +7160,6 @@
       ],
       "purchase additional storage": [
         "köp ytterligare lagring"
-      ],
-      "Queued": [
-        "Köad"
       ],
       "read our two-factor authentication guide first": [
         "läs vår guide om tvåfaktorsautentisering först"
@@ -7659,8 +7675,14 @@
       "URL link": [
         "URL-länk"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Använd ${ BRAND_NAME } Pass för att generera starka lösenord och undvika återanvändning av lösenord"
+      ],
       "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
         "Använd ${ VPN_APP_NAME } med Netshield aktiverat för att skydda dig från nätfiske och skadlig kod"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Använd alias för att registrera dig för tjänster online. Detta skyddar din riktiga e-postadress och identitet och minskar omfattningen av ett intrång."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
@@ -7722,6 +7744,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Varning: borttagning är permanent. Detta tar också bort åtkomst till alla anslutna tjänster och tar bort alla dina kontakter."
       ],
+      "Ways you can minimize your breach risks": [
+        "Sätt du kan minimera dina intrångsrisker"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi rekommenderar att du använder officiella ${ VPN_APP_NAME }-applikationer när det är möjligt."
       ],
@@ -7733,6 +7758,9 @@
       ],
       "We just sent you a new link.": [
         "Vi har precis skickat en ny länk till dig."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Vi övervakar dina e-postadresser, lösenord och personuppgifter för att upptäcka om de förekommer på ”Dark web” och aviserar dig om din data är komprometterat."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi måste autentisera din betalningsmetod med din bank."
@@ -9453,6 +9481,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-välkomstmeddelande"
+      ],
+      "Daily email notifications": [
+        "Dagliga e-postaviseringar"
       ]
     },
     "Label in domain modal": {
@@ -9826,6 +9857,9 @@
     "Member action": {
       "Activate user": [
         "Aktivera användare"
+      ],
+      "Add address": [
+        "Lägg till adress"
       ],
       "Change password": [
         "Ändra lösenord"
@@ -10266,6 +10300,9 @@
       ],
       "1 user": [
         "1 användare"
+      ],
+      "24/7 account management support": [
+        "24/7 support för kontohantering"
       ],
       "24/7 support": [
         "Support dygnet runt"
@@ -11983,7 +12020,7 @@
       "Invalid expiration date": [
         "Ogiltigt förfallodatum"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Ogiltig säkerhetskod"
       ],
       "Something went wrong. Please try again later.": [
@@ -13889,6 +13926,18 @@
       "Billing cycle": [
         "Faktureringscykel"
       ],
+      "Breach Alerts": [
+        "Intrångsvarningar"
+      ],
+      "Breach Date": [
+        "Intrångsdatum"
+      ],
+      "Breach Information": [
+        "Intrångsinformation"
+      ],
+      "Breach Size": [
+        "Storlek på intrång"
+      ],
       "Bridge for ${ platform }": [
         "Bridge för ${ platform }"
       ],
@@ -14058,6 +14107,9 @@
       "Delete account": [
         "Ta bort konto"
       ],
+      "Delete address permanently?": [
+        "Ta bort adress permanent?"
+      ],
       "Delete calendar": [
         "Ta bort kalender"
       ],
@@ -14199,6 +14251,9 @@
       ],
       "Export public key": [
         "Exportera offentlig nyckel"
+      ],
+      "Exposed info": [
+        "Exponeringsinformation"
       ],
       "External PGP settings": [
         "Externa PGP-inställningar"
@@ -14369,6 +14424,9 @@
       ],
       "Night theme": [
         "Natt-tema"
+      ],
+      "No account information was found in any data breaches": [
+        "Ingen kontoinformation hittades i några dataintrång"
       ],
       "No recovery method": [
         "Ingen återställningsmetod"
@@ -14715,6 +14773,9 @@
       ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
+      ],
+      "Your Exposed Information": [
+        "Din exponeringsinformation"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
