@@ -9,6 +9,7 @@ import { deletePassDB, getDBCache } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
+import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -22,10 +23,11 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
-import { clientBooted, clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientBooted, clientOfflineUnlocked, isTaggedBuild } from '@proton/pass/lib/client';
+import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
-import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
+import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -35,7 +37,8 @@ import {
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
@@ -180,8 +183,17 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 setSentryUID(undefined);
             },
 
-            onForkConsumed: async (_, state) => {
+            onForkConsumed: async ({ UID, AccessToken }, state) => {
                 history.replace({ hash: '' }); /** removes selector from hash */
+
+                if ((BUILD_TARGET === 'darwin' || BUILD_TARGET === 'linux') && isTaggedBuild(config)) {
+                    const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
+                    if (plan.Type === PlanType.free || Boolean(plan.TrialEnd)) {
+                        throw new Error(
+                            c('Error').t`Please upgrade to have early access to ${PASS_APP_NAME} desktop app`
+                        );
+                    }
+                }
 
                 try {
                     const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
