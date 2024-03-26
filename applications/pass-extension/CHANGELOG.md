@@ -1,3 +1,8 @@
+### Version 1.16.4
+
+-   Fix settings persistence shadowed by locale sync
+-   Fine-tune extension menu items alignment
+
 ### Version 1.16.3
 
 -   Detect if navigator credentials API is available before intercepting
