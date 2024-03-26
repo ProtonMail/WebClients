@@ -9,7 +9,7 @@ describe('ed25519 library', () => {
     it('should polyfill bigint', () => {
         const file = fs.readFileSync(path.resolve(`${require.resolve('@noble/ed25519')}/../esm/index.js`)).toString();
         expect(
-            file.includes(`const BigInt = typeof window.BigInt !== 'undefined' ? window.BigInt : (() => 0);`)
+            file.includes(`const BigInt = typeof globalThis.BigInt !== 'undefined' ? globalThis.BigInt : (() => 0);`)
         ).toBeTruthy();
     });
 });
