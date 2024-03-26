@@ -77,7 +77,7 @@ elif [ "$1" = "macos" ]; then
     # zip file name must match what is defined in RELEASES.json
     cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/Proton Pass-darwin-universal-${VERSION}.zip" "${path}/Proton Pass-darwin-universal-${VERSION}.zip"
   fi
-  git lfs track "*.dmg" "Proton Pass-darwin-universal-${VERSION}.zip"
+  git lfs track "*.dmg" "PassDesktop/**/*.zip"
 fi
 
 # Update version.json
@@ -109,7 +109,7 @@ fi
 # Commit and push
 git add .
 git status
-git commit -m "Pass Desktop ${TAG_VERSION}"
+git commit -m "Pass Desktop ${TAG_VERSION} $1"
 git push -u origin deploy
 
 popd
