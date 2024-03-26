@@ -6,8 +6,16 @@ const PRODUCTION = ENV === 'production';
 const presetEnvOpts = {
     bugfixes: true,
     corejs: '3.29',
-    exclude: ['transform-typeof-symbol', 'es.array.push', 'web.dom-exception.stack'],
+    exclude: [
+        'es.array.push',
+        'esnext.array-buffer.detached',
+        'esnext.array-buffer.transfer-to-fixed-length',
+        'esnext.array-buffer.transfer',
+        'transform-typeof-symbol',
+        'web.dom-exception.stack',
+    ],
     useBuiltIns: 'usage',
+    debug: false,
 };
 
 module.exports = {
