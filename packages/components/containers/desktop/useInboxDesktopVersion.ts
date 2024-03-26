@@ -9,7 +9,8 @@ export interface DesktopVersion {
     Version: string;
     ReleaseDate: string;
     File: {
-        Url?: string; // TODO change this to required after destkop app GA
+        Identifier?: string;
+        Url: string;
         Sha512CheckSum: string;
     }[];
     ReleaseNotes: {
@@ -22,16 +23,20 @@ export interface DesktopVersion {
 
 const initialLinuxClients: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,
-    Version: '1.0.0',
-    ReleaseDate: '2024-03-14',
+    Version: '1.0.1',
+    ReleaseDate: '2024-03-21',
     File: [
         {
-            Url: undefined,
-            Sha512CheckSum: '',
+            Identifier: '.deb (Ubuntu/Debian)',
+            Url: getDownloadUrl('/mail/linux/ProtonMail-desktop-setup.deb'),
+            Sha512CheckSum:
+                'cc772a801ba6086ace8b313215c46352a88aea6627287b5219ae2963fde1d5d434f8d6ac9fd469a971693ec0d0813b387de8c94af021f41bad993d145937f293',
         },
         {
-            Url: undefined,
-            Sha512CheckSum: '',
+            Identifier: '.rpm (Fedora/RHEL)',
+            Url: getDownloadUrl('/mail/linux/ProtonMail-desktop-setup.rpm'),
+            Sha512CheckSum:
+                'de38e6f11b91ab3ff5e987fe6b14d430a8911ec45b94ed7f95b758cb3d542b73cc0551142e4f94950209fa445bc8fdfd9ac3d13d50aafc183be829a0c01298e2',
         },
     ],
     ReleaseNotes: [],
@@ -41,12 +46,13 @@ const initialLinuxClients: DesktopVersion = {
 
 const initialWindowsClient: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.STABLE,
-    Version: '1.0.0',
-    ReleaseDate: '2024-03-14',
+    Version: '1.0.1',
+    ReleaseDate: '2024-03-19',
     File: [
         {
             Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.exe'),
-            Sha512CheckSum: '',
+            Sha512CheckSum:
+                '85aec07d7b4d4fe0fd5283c2beb3c70483e1ca16ca2f402afd9de36881d276d49bb0a3ae0a7236e7fc8601b6c813cc9310c8324812c6dd9d1078c1d691d9f49f',
         },
     ],
     ReleaseNotes: [],
@@ -56,12 +62,13 @@ const initialWindowsClient: DesktopVersion = {
 
 const initialMacosClient: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.STABLE,
-    Version: '1.0.0',
-    ReleaseDate: '2024-03-14',
+    Version: '1.0.1',
+    ReleaseDate: '2024-03-19',
     File: [
         {
-            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.exe'),
-            Sha512CheckSum: '',
+            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.dmg'),
+            Sha512CheckSum:
+                '8351dae67cc059c832c47c268ad37d1c4d4712513766fa2d6bbfeb5ecfea83916f09808c9df2aa3a288e3fcaf076e2e42a56d7f360ca615d94b27e3f0086cf4b',
         },
     ],
     ReleaseNotes: [],
