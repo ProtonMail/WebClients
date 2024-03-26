@@ -611,9 +611,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Ștergere"
-      ],
       "Disable": [
         "Dezactivare"
       ],
@@ -1946,8 +1943,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Mesaje și compunere > Domeniu scurt (pm.me)."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
@@ -1978,9 +1975,6 @@
       ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
-      ],
-      "Error": [
-        "Eroare"
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
@@ -2116,9 +2110,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Plata minimă acceptată este de ${ price }."
-      ],
-      "The organization key must be activated first": [
-        "Cheia organizației trebuie mai întâi activată."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
@@ -3108,9 +3099,6 @@
       "Domain ownership verified.": [
         "Dovada deținerii domeniului este verificată."
       ],
-      "Done": [
-        "Gata"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Gata! S-a trimis un cod către ${ destination }."
       ],
@@ -3515,9 +3503,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
-      ],
-      "Queued": [
-        "În așteptare"
       ],
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
@@ -4681,6 +4666,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Mesaje de bun venit ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificări zilnice pe e-mail"
       ]
     },
     "Label on payment method": {
@@ -4855,6 +4843,9 @@
     "Member action": {
       "Activate user": [
         "Activare utilizator"
+      ],
+      "Add address": [
+        "Adăugare adresă"
       ],
       "Change password": [
         "Schimbare parolă"
@@ -6156,9 +6147,6 @@
       ],
       "Invalid expiration date": [
         "Data expirării nu este validă."
-      ],
-      "Invalid securiry code": [
-        "Cod de securitate nevalid"
       ],
       "Something went wrong. Please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."

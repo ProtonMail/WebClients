@@ -608,9 +608,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Excluir"
-      ],
       "Disable": [
         "Desativar"
       ],
@@ -1938,8 +1935,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } é o seu nome de usuário. Para criar ${ Local }@${ Domain }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Todo o espaço de armazenamento foi alocado. Reduza o armazenamento alocado para outros usuários."
@@ -1970,9 +1967,6 @@
       ],
       "Enter 6 digits": [
         "Insira 6 dígitos"
-      ],
-      "Error": [
-        "Erro"
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
@@ -2108,9 +2102,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }."
-      ],
-      "The organization key must be activated first": [
-        "A chave da organização deve ser ativada primeiro"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -3077,9 +3068,6 @@
       "Domain ownership verified.": [
         "Propriedade do domínio verificada."
       ],
-      "Done": [
-        "Concluído"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Pronto! Enviamos um código para ${ destination }."
       ],
@@ -3481,9 +3469,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
-      ],
-      "Queued": [
-        "Na fila"
       ],
       "read our two-factor authentication guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
@@ -4632,6 +4617,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas da ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificações diárias por e-mail"
       ]
     },
     "Label on payment method": {
@@ -4805,6 +4793,9 @@
     "Member action": {
       "Activate user": [
         "Ativar usuário"
+      ],
+      "Add address": [
+        "Adicionar endereço"
       ],
       "Change password": [
         "Alterar senha"
@@ -5966,6 +5957,12 @@
       ]
     },
     "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Todos os seus dados existentes** (e-mails, eventos, contatos, arquivos, entradas do ${ PASS_APP_NAME }, etc.) **serão bloqueados** e só poderão ser desbloqueados com sua **senha antiga**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Todos os seus dados existentes** (e-mails, eventos, contatos, arquivos, entradas do ${ PASS_APP_NAME }, etc.) **serão bloqueados** e só poderão ser desbloqueados com sua **frase de recuperação** ou com sua **senha antiga**."
+      ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
         "Qualquer método de **autenticação de dois fatores (A2F)** na sua conta será desativado."
       ]
@@ -6000,6 +5997,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Certifique-se de que eles tenham um endereço ativo e os convide depois, separadamente."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Usuários privados podem ser promovidos a administradores quando fizerem login pela primeira vez"
@@ -6079,7 +6079,7 @@
       "Invalid expiration date": [
         "Data de validade inválida"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Código de segurança inválido"
       ],
       "Something went wrong. Please try again later.": [

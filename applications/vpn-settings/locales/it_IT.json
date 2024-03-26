@@ -134,6 +134,9 @@
       "Delete": [
         "Elimina"
       ],
+      "Delete address": [
+        "Elimina indirizzo"
+      ],
       "Delete Gateway": [
         "Elimina gateway"
       ],
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Elimina"
+      "Delete address": [
+        "Elimina indirizzo"
       ],
       "Disable": [
         "Disabilita"
@@ -1856,6 +1859,25 @@
         "/utente al mese"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Una volta eliminato, questo indirizzo non potrà essere utilizzato nuovamente né da te né da nessun altro."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Il successivo indirizzo attivo nell'elenco verrà impostato come predefinito."
+      ],
+      "You can only delete 1 address per year.": [
+        "Puoi eliminare solo 1 indirizzo all'anno."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Puoi eliminare solo 1 indirizzo all'anno"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Hai raggiunto il limite di eliminazioni di indirizzi per questo utente."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fattura scaduta"
@@ -1938,8 +1960,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } è il tuo nome utente. Per creare ${ Local }@${ Domain }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
@@ -1970,9 +1992,6 @@
       ],
       "Enter 6 digits": [
         "Inserisci 6 cifre"
-      ],
-      "Error": [
-        "Errore"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -2108,9 +2127,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Il pagamento minimo che accettiamo è di ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "La chiave dell'organizzazione deve essere prima attivata"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
@@ -3077,9 +3093,6 @@
       "Domain ownership verified.": [
         "Possesso del dominio verificato"
       ],
-      "Done": [
-        "Fatto"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Fatto! Abbiamo inviato un codice a ${ destination }."
       ],
@@ -3481,9 +3494,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protezione dalle leggi svizzere sulla privacy"
-      ],
-      "Queued": [
-        "Accodato"
       ],
       "read our two-factor authentication guide first": [
         "leggere la nostra guida sull'autenticazione a due fattori"
@@ -4635,6 +4645,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Email di benvenuto di ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notifiche email giornaliere"
       ]
     },
     "Label on payment method": {
@@ -4808,6 +4821,9 @@
     "Member action": {
       "Activate user": [
         "Attiva l'utente"
+      ],
+      "Add address": [
+        "Aggiungi indirizzo"
       ],
       "Change password": [
         "Cambia la password"
@@ -6106,7 +6122,7 @@
       "Invalid expiration date": [
         "Data di scadenza non valida"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Codice di sicurezza non valido"
       ],
       "Something went wrong. Please try again later.": [
@@ -7533,6 +7549,9 @@
       ],
       "Delete account": [
         "Elimina account"
+      ],
+      "Delete address permanently?": [
+        "Vuoi eliminare l'indirizzo in modo permanente?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorno)",
