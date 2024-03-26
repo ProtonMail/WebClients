@@ -509,6 +509,11 @@ export enum ORGANIZATION_TWOFA_SETTING {
     REQUIRED_ALL = 2,
 }
 
+export enum ORGANIZATION_STATE {
+    ACTIVE = 1,
+    DELINQUENT = 2,
+}
+
 export enum APP_UPSELL_REF_PATH {
     MAIL_UPSELL_REF_PATH = 'upsell_mail-',
     CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-',
