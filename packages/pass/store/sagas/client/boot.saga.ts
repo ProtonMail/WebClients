@@ -26,7 +26,10 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
     try {
         options.setAppStatus(AppStatus.BOOTING);
 
+        /* Force sync the proxied settings from local storage */
+        yield put(syncLocalSettings(yield options.getSettings()));
         yield put(stopEventPolling());
+
         yield loadCryptoWorker();
 
         const hydratedFromCache: boolean = yield hydrate(
@@ -43,8 +46,6 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
             options
         );
 
-        /* Force sync the proxied settings from local storage */
-        yield put(syncLocalSettings(yield options.getSettings()));
         yield put(bootSuccess(hydratedFromCache ? undefined : yield synchronize(SyncType.FULL)));
 
         options.setAppStatus(loginPassword ? AppStatus.OFFLINE_UNLOCKED : AppStatus.READY);
