@@ -3,7 +3,8 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownButton, Icon, Tooltip, useModalState, usePopperAnchor } from '@proton/components/components';
-import { useUser } from '@proton/components/hooks';
+import { useApi, useUser } from '@proton/components/hooks';
+import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -14,6 +15,7 @@ import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
+import { sendSnoozeReport } from '../helpers/snoozeTelemetry';
 
 interface Props {
     elements: Element[];
@@ -22,6 +24,7 @@ interface Props {
 }
 
 const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
+    const api = useApi();
     const dispatch = useMailDispatch();
     const [{ hasPaidMail }] = useUser();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
@@ -66,6 +69,13 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
         // We want to reset state when the dropdown is open
         const action = isOpen ? onClose : toggle;
         if (!isOpen) {
+            void sendSnoozeReport(api, {
+                event: TelemetryMailEvents.snooze_open_dropdown,
+                dimensions: {
+                    snooze_open_dropdown: 'hover',
+                },
+            });
+
             dispatch(
                 snoozeActions.setSnoozeDropdown({
                     dropdownState: true,
