@@ -134,6 +134,9 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete address": [
+        "Usuń adres"
+      ],
       "Delete Gateway": [
         "Usuń bramę"
       ],
@@ -614,8 +617,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Usuń"
+      "Delete address": [
+        "Usuń adres"
       ],
       "Disable": [
         "Wyłącz"
@@ -1866,6 +1869,25 @@
         "/ użytkownika miesięcznie"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Kiedy usuniesz ten adres, ty ani inna osoba nie będzie mogła go użyć."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Następny aktywny adres zostanie ustawiony domyślnie."
+      ],
+      "You can only delete 1 address per year.": [
+        "Możesz usunąć tylko 1 adres rocznie."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Możesz usunąć tylko 1 adres rocznie."
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Osiągnąłeś limit usuwania adresów dla tego użytkownika."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Zaległa faktura"
@@ -1948,8 +1970,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Twoja nazwa użytkownika to ${ Local }. Aby utworzyć adres ${ Local }@${ Domain }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (@pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
@@ -1980,9 +2002,6 @@
       ],
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
-      ],
-      "Error": [
-        "Błąd"
       ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
@@ -2118,9 +2137,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimalna kwota akceptowanej płatności wynosi ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Najpierw musisz aktywować klucz organizacji"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
@@ -3133,9 +3149,6 @@
       "Domain ownership verified.": [
         "Domena została zweryfikowana"
       ],
-      "Done": [
-        "Gotowe"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Gotowe! Kod został wysłany do ${ destination }."
       ],
@@ -3540,9 +3553,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
-      ],
-      "Queued": [
-        "W kolejce"
       ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
@@ -4715,6 +4725,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Wiadomość powitalna ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Codzienne powiadomienia e-mail"
       ]
     },
     "Label on payment method": {
@@ -4854,7 +4867,7 @@
         "10 adresów e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie spamu i opróżnianie kosza"
+        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
         "Niestandardowe godziny planowego wysyłania i usypiania"
@@ -4890,6 +4903,9 @@
     "Member action": {
       "Activate user": [
         "Aktywuj użytkownika"
+      ],
+      "Add address": [
+        "Dodaj adres"
       ],
       "Change password": [
         "Zmień hasło"
@@ -6131,11 +6147,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Upewnij się, że ich adresy są włączone i zaproś ich później osobno."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Prywatni użytkownicy mogą uzyskać uprawnienia administratora po pierwszym zalogowaniu się."
       ],
       "Reset organization key": [
         "Resetuj klucz organizacji"
+      ],
+      "The following administrators could not be restored.": [
+        "Następujący administratorzy nie mogą zostać przywróceni."
       ],
       "The following administrators will get access to the organization key.": [
         "Następujący administratorzy uzyskają dostęp do klucza organizacji."
@@ -6206,7 +6228,7 @@
       "Invalid expiration date": [
         "Data wygaśnięcia jest nieprawidłowa"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Kod zabezpieczający jest nieprawidłowy"
       ],
       "Something went wrong. Please try again later.": [
@@ -7627,6 +7649,9 @@
       "Change role": [
         "Zmień rolę"
       ],
+      "Close": [
+        "Zamknij"
+      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -7704,6 +7729,9 @@
       ],
       "Delete account": [
         "Usuń konto"
+      ],
+      "Delete address permanently?": [
+        "Usunąć trwale adres?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Usuń serwer (możliwy do odzyskania przez ${ days } dzień)",

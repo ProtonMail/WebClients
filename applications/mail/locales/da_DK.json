@@ -7492,6 +7492,9 @@
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
       ],
+      "Custom schedule send and snooze times": [
+        "Brugerdefineret tidsplan for afsendelse og udsættelse"
+      ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
@@ -8907,9 +8910,6 @@
       ]
     },
     "Spotlight": {
-      "Change setting": [
-        "Ændr indstilling"
-      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Start nemt ${ MAIL_APP_NAME } direkte fra dit skrivebord."
       ],
@@ -8942,9 +8942,6 @@
       ],
       "Snooze it for later": [
         "Udsæt den til senere"
-      ],
-      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "E-mails fra spam og papirkurven udelukkes nu automatisk fra Alle e-mails. ${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
@@ -9006,13 +9003,13 @@
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "For at sende eller modtage e-mails, frigøre plads eller opgradere til mere lagerplads."
+        "For at sende eller modtage e-mails, frigør plads eller opgrader til mere lagerplads."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
+        "For at uploade eller synkronisere filer, frigør plads eller ${ upgrade }"
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"

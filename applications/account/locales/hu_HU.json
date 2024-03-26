@@ -1043,9 +1043,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Törlés"
-      ],
       "Disable": [
         "Letiltás"
       ],
@@ -3158,8 +3155,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Az Ön felhasználóneve: ${ Local }. A ${ Local }@${ Domain } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -3240,9 +3237,6 @@
       ],
       "Enter 6 digits": [
         "6 számjegyet írjon be"
-      ],
-      "Error": [
-        "Hiba"
       ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
@@ -3498,9 +3492,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Legalacsonyabb elfogadható összeg: ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Először a szervezeti kulcs aktiválása szükséges"
       ],
       "The sending key is not valid": [
         "A küldő kulcs érvénytelen"
@@ -5365,6 +5356,9 @@
       "Center": [
         "Középre"
       ],
+      "Change your password": [
+        "Jelszó megváltoztatása"
+      ],
       "Check the status of imports and forwarding.": [
         "Importálások és továbbítások helyzetének ellenőrzése."
       ],
@@ -5465,9 +5459,6 @@
       "domain used": [
         "domain név használatban",
         "domain név használatban"
-      ],
-      "Done": [
-        "Kész"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Kész! Elküldtük a kódot ide: ${ destination }."
@@ -6046,9 +6037,6 @@
       ],
       "purchase additional storage": [
         "vásároljon további tárhelyet"
-      ],
-      "Queued": [
-        "Sorba állítva"
       ],
       "read our two-factor authentication guide first": [
         "először olvassa el a kétlépcsős hitelesítésről szóló útmutatót"
@@ -8122,6 +8110,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } termékekkel kapcsolatos hírek"
+      ],
+      "Daily email notifications": [
+        "Napi e-mail értesítések"
       ]
     },
     "Label in domain modal": {
@@ -8260,6 +8251,9 @@
       ],
       "General": [
         "Általános"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } beszerzése"
       ],
       "Help translate": [
         "Segítsen a fordításban"
@@ -8436,6 +8430,9 @@
       ]
     },
     "Member action": {
+      "Add address": [
+        "Cím hozzáadása"
+      ],
       "Change password": [
         "Jelszó módosítása"
       ],
@@ -12357,7 +12354,7 @@
         "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
       ],
       "This feature is only available for paid users": [
-        "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
+        "Ez a lehetőség csak előfizetéses csomagokban érhető el"
       ],
       "This key cannot be used for encryption": [
         "Ez a kulcs nem használható titkosításhoz"

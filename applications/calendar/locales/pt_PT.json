@@ -173,7 +173,7 @@
         "Criar novo grupo de contactos"
       ],
       "Create and copy alias": [
-        "Criar e colar pseudónimo"
+        "Criar e colar alias"
       ],
       "Create calendar": [
         "Criar um calendário"
@@ -505,7 +505,7 @@
         "Selecionar vista de calendário"
       ],
       "Select country": [
-        "Seleccionar país"
+        "Selecionar país"
       ],
       "Select time zone": [
         "Seleccionar o fuso horário"
@@ -4489,6 +4489,9 @@
       "Don't ask again": [
         "Não perguntar novamente"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "ex.: Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5609,6 +5612,9 @@
       "Search for name or email": [
         "Pesquisar por nome ou e-mail"
       ],
+      "Search parent folder": [
+        "Pesquisar pasta inicial"
+      ],
       "Select": [
         "Selecionar"
       ],
@@ -5695,6 +5701,9 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Todos os pseudónimos"
+      ],
       "Create alias": [
         "Criar um alias"
       ],
@@ -6206,6 +6215,9 @@
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "O seu armazenamento está cheio. ${ cta }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -6232,8 +6244,11 @@
       "Address copied to clipboard": [
         "Endereço copiado para a área de transferência"
       ],
+      "Alias copied to clipboard": [
+        "Alias copiado para a área de transferência"
+      ],
       "Alias saved and copied": [
-        "Pseudónimo guardado e copiado"
+        "Alias guardado e copiado"
       ],
       "All events deleted": [
         "Todos os eventos eliminados"
@@ -6658,6 +6673,9 @@
       "Feedback": [
         "Comentários"
       ],
+      "Get advanced protection": [
+        "Obtenha proteção avançada"
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -6696,7 +6714,7 @@
         "Minicalendário"
       ],
       "Need more aliases?": [
-        "Necessita de mais pseudónimos?"
+        "Necessita de mais aliases?"
       ],
       "Night theme": [
         "Tema noturno"
@@ -6750,7 +6768,7 @@
         "Voltar a partilhar os seus calendários"
       ],
       "Save": [
-        "Salvar"
+        "Guardar"
       ],
       "Save changes": [
         "Guardar alterações"

@@ -300,7 +300,7 @@
         "Potrebujete pomoc?"
       ],
       "Next": [
-        "Ďalší"
+        "Ďalej"
       ],
       "OK": [
         "OK"
@@ -602,9 +602,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Odstrániť"
-      ],
       "Disable": [
         "Vypnúť"
       ],
@@ -1942,9 +1939,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } je vaše používateľské meno. Ak chcete vytvoriť doménu ${ Local }@${ Domain }, prejdite do časti Nastavenia > Správy a písanie > Krátka doména (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
       ],
@@ -1974,9 +1968,6 @@
       ],
       "Enter 6 digits": [
         "Zadajte 6 číslic"
-      ],
-      "Error": [
-        "Chyba"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
@@ -2112,9 +2103,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimálna platba, ktorú akceptujeme, je ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Najprv musí byť aktivovaný kľúč organizácie"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
@@ -3092,9 +3080,6 @@
       "Domain ownership verified.": [
         "Vlastníctvo domény je overené."
       ],
-      "Done": [
-        "Hotovo"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odoslali sme kód na ${ destination }."
       ],
@@ -3162,7 +3147,7 @@
         "Zadajte overovací kód. Číslice ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Zadajte podrobnosti o svojom účte ${ BRAND_NAME }."
+        "Zadajte podrobnosti o svojom ${ BRAND_NAME } účte."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadajte emailovú adresu alebo používateľské meno vášho ${ BRAND_NAME } účtu."
@@ -3469,9 +3454,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
-      ],
-      "Queued": [
-        "V poradí"
       ],
       "read our two-factor authentication guide first": [
         "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
@@ -4599,6 +4581,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítacie emaily"
+      ],
+      "Daily email notifications": [
+        "Denné emailové notifikácie"
       ]
     },
     "Label on payment method": {
@@ -5990,9 +5975,6 @@
       ],
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
-      ],
-      "Invalid securiry code": [
-        "Neplatný bezpečnostný kód"
       ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
@@ -7521,7 +7503,7 @@
         "Vložte SAML metadáta"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Ak sa chcete zapojiť do beta programu ${ app }, zadajte podrobnosti o svojom účte ${ BRAND_NAME }"
+        "Zadajte údaje svojho ${ BRAND_NAME } účtu pre vstup do ${ app } beta programu."
       ],
       "Enter your password": [
         "Zadajte Vaše heslo"
