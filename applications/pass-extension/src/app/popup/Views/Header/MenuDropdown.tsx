@@ -166,7 +166,7 @@ export const MenuDropdown: FC = () => {
                             </div>
                         )}
 
-                        <hr className="dropdown-item-hr my-1 mx-4" aria-hidden="true" />
+                        <hr className="dropdown-item-hr mb-2 mx-4" aria-hidden="true" />
 
                         <VaultMenu
                             dense
@@ -219,6 +219,7 @@ export const MenuDropdown: FC = () => {
                             onClick={withClose(() => openSettings())}
                             label={c('Label').t`Settings`}
                             icon={'cog-wheel'}
+                            className="pt-1.5 pb-1.5"
                         />
 
                         {canLock && (
@@ -227,6 +228,7 @@ export const MenuDropdown: FC = () => {
                                 disabled={!ready}
                                 label={c('Action').t`Lock extension`}
                                 icon="lock"
+                                className="pt-1.5 pb-1.5"
                             />
                         )}
 
@@ -234,6 +236,7 @@ export const MenuDropdown: FC = () => {
                             onClick={withClose(() => onLink(passWebAppUrl))}
                             label={c('Action').t`Open web app`}
                             icon="arrow-out-square"
+                            className="pt-1.5 pb-1.5"
                         />
 
                         <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
