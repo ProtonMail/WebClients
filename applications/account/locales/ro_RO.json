@@ -1140,9 +1140,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Ștergere"
-      ],
       "Disable": [
         "Dezactivare"
       ],
@@ -3722,8 +3719,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Mesaje și compunere > Domeniu scurt (pm.me)."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -3809,9 +3806,6 @@
       ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
-      ],
-      "Error": [
-        "Eroare"
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
@@ -4088,9 +4082,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Plata minimă acceptată este de ${ price }."
-      ],
-      "The organization key must be activated first": [
-        "Cheia organizației trebuie mai întâi activată."
       ],
       "The sending key is not valid": [
         "Cheia de trimitere nu este validă"
@@ -6331,6 +6322,9 @@
       "Center": [
         "Centrare"
       ],
+      "Change your password": [
+        "Schimbare parolă"
+      ],
       "Check the status of imports and forwarding.": [
         "Verificați starea importărilor și redirecționărilor."
       ],
@@ -6464,9 +6458,6 @@
         "domeniu utilizat",
         "domenii utilizate",
         "de domenii utilizate"
-      ],
-      "Done": [
-        "Gata"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Gata! S-a trimis un cod către ${ destination }."
@@ -7170,9 +7161,6 @@
       "purchase additional storage": [
         "cumpărați spațiu suplimentar"
       ],
-      "Queued": [
-        "În așteptare"
-      ],
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
       ],
@@ -7821,7 +7809,7 @@
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Când sunt activate notificările, veți primi o alertă la adresa e-mail de recuperare dacă aveți mesaje noi în contul ${ MAIL_APP_NAME }."
+        "Când sunt activate notificările, veți primi o alertă la adresa de e-mail de recuperare dacă aveți mesaje noi în contul ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Atunci când se abonează la un plan, veți primi credite pe care le puteți folosi pentru abonamentul personal."
@@ -9492,6 +9480,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Mesaje de bun venit ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificări zilnice pe e-mail"
       ]
     },
     "Label in domain modal": {
@@ -9625,6 +9616,9 @@
       "Create account": [
         "Creare cont"
       ],
+      "Create an alias": [
+        "Creați un alias"
+      ],
       "Encryption and keys": [
         "Criptare și chei"
       ],
@@ -9633,6 +9627,9 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Luați ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Ajutați la traducere"
@@ -9867,6 +9864,9 @@
     "Member action": {
       "Activate user": [
         "Activare utilizator"
+      ],
+      "Add address": [
+        "Adăugare adresă"
       ],
       "Change password": [
         "Schimbare parolă"
@@ -12043,9 +12043,6 @@
       ],
       "Invalid expiration date": [
         "Data expirării nu este validă."
-      ],
-      "Invalid securiry code": [
-        "Cod de securitate nevalid"
       ],
       "Something went wrong. Please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."

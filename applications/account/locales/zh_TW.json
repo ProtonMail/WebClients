@@ -383,6 +383,9 @@
       "Edit": [
         "編輯"
       ],
+      "Edit billing cycle": [
+        "修改帳單週期"
+      ],
       "Edit display name": [
         "編輯顯示名稱"
       ],
@@ -1122,9 +1125,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "刪除"
-      ],
       "Disable": [
         "停用"
       ],
@@ -3145,6 +3145,11 @@
         "協助我們改善！"
       ]
     },
+    "Download link": {
+      ".rpm for Fedora / Red Hat": [
+        ".rpm 給 Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "進階的共享安全性"
@@ -3605,9 +3610,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } 是您的使用者名稱。如要創建 ${ Local }@${ Domain }，請前往「設定」 > 「郵件與撰寫」 > 「短域名 (pm.me)」"
-      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -3682,9 +3684,6 @@
       ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
-      ],
-      "Error": [
-        "錯誤"
       ],
       "Error connecting to the Bitcoin API.": [
         "連線到比特幣 API 時發生錯誤。"
@@ -3809,6 +3808,9 @@
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
+      ],
       "Password is required": [
         "密碼為必填"
       ],
@@ -3829,6 +3831,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "付款目前無法使用，請稍後再試"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "請先設置一個自訂網域，然後才加入使用者到您的組織。"
@@ -3940,9 +3945,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "付款的最低金額為 ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "必須先啟用組織機構的金鑰"
       ],
       "The sending key is not valid": [
         "寄送金鑰無效"
@@ -5159,6 +5161,9 @@
       "Protection": [
         "安全"
       ],
+      "Select your deal": [
+        "請選擇您的優惠"
+      ],
       "Select your pricing plan": [
         "選擇您的定價方案"
       ],
@@ -5929,6 +5934,9 @@
       "Center": [
         "置中"
       ],
+      "Change your password": [
+        "變更您的密碼"
+      ],
       "Check the status of imports and forwarding.": [
         "查看匯入和轉寄的狀況。"
       ],
@@ -6042,9 +6050,6 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其它工作階段嗎？"
-      ],
-      "Done": [
-        "已完成"
       ],
       "Done! We sent a code to ${ destination }.": [
         "完成！我們已將代碼傳送至 ${ destination }."
@@ -6376,6 +6381,9 @@
       "Key deletion is irreversible!": [
         "密鑰刪除是無法還原的！"
       ],
+      "Keys created": [
+        "金鑰已更新"
+      ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
       ],
@@ -6699,9 +6707,6 @@
       ],
       "purchase additional storage": [
         "購買額外的儲存空間"
-      ],
-      "Queued": [
-        "待處理"
       ],
       "read our two-factor authentication guide first": [
         "先閱讀我們的兩步驟驗證指南"
@@ -8095,6 +8100,9 @@
       "Awarded": [
         "獲得獎勵"
       ],
+      "Beta": [
+        "測試版"
+      ],
       "Billing address": [
         "帳單位址"
       ],
@@ -8909,6 +8917,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "Daily email notifications": [
+        "每日電子郵件通知"
       ]
     },
     "Label in domain modal": {
@@ -9042,6 +9053,9 @@
       "Create account": [
         "創建帳號"
       ],
+      "Create an alias": [
+        "建立一個別名"
+      ],
       "Encryption and keys": [
         "加密與金鑰"
       ],
@@ -9050,6 +9064,9 @@
       ],
       "General": [
         "一般"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "取得 ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "協助翻譯"
@@ -9190,6 +9207,9 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
       ],
@@ -9323,7 +9343,7 @@
         "如何從 Yahoo 匯入行事曆"
       ],
       "How to import contacts from another service": [
-        "如何從其它服務匯入聯絡人"
+        "如何從其它郵件服務業者平台匯入通訊錄"
       ],
       "How to import contacts from Yahoo": [
         "如何從 Yahoo 匯入聯絡人"
@@ -9604,6 +9624,9 @@
       "1 user": [
         "1 位使用者"
       ],
+      "24/7 account management support": [
+        "24/7 帳戶管理支援"
+      ],
       "24/7 support": [
         "24/7 全天支援"
       ],
@@ -9615,6 +9638,9 @@
       ],
       "Admin console": [
         "管理員主控台"
+      ],
+      "Administration Panel": [
+        "管理介面"
       ],
       "Advanced network security": [
         "進階網路安全"
@@ -9678,6 +9704,9 @@
       ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
       ],
       "DNS leak prevention": [
         "DNS 外洩預防"
@@ -9846,6 +9875,12 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "無限共享保管庫與存取權限"
+      ],
+      "Unlimited vault sharing": [
+        "無上限分享保管庫"
+      ],
+      "Unlimited vaults": [
+        "無限保管庫"
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
@@ -10352,6 +10387,11 @@
       ],
       "Two-factor authentication is not required anymore": [
         "雙重身份驗證已無需繼續使用"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -11093,9 +11133,6 @@
       ],
       "Invalid expiration date": [
         "到期日無效"
-      ],
-      "Invalid securiry code": [
-        "安全碼無效"
       ],
       "Something went wrong. Please try again later.": [
         "發生錯誤。請稍後再試。"
@@ -12651,7 +12688,7 @@
         "(啟用)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. 為生成的設定檔取一個名稱"
+        "1. 替生成的組態檔取一個名稱"
       ],
       "1. Select platform": [
         "1. 選擇平台"
@@ -13006,6 +13043,9 @@
       ],
       "Download the desktop app": [
         "下載桌面應用程式"
+      ],
+      "Download the mobile apps": [
+        "下載行動 app"
       ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
@@ -13474,6 +13514,9 @@
       ],
       "Summary": [
         "總結"
+      ],
+      "Support ticket closed": [
+        "支援單已關閉"
       ],
       "Switch account": [
         "切換帳號"

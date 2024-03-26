@@ -161,6 +161,9 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
+      "Change keys": [
+        "Изменить ключи"
+      ],
       "Change mailbox password": [
         "Изменить пароль почтового ящика"
       ],
@@ -193,6 +196,9 @@
       ],
       "Close navigation": [
         "Закрыть панель навигации"
+      ],
+      "Close tab": [
+        "Закрыть вкладку"
       ],
       "Close this banner": [
         "Закрыть этот баннер"
@@ -376,6 +382,9 @@
       ],
       "Edit": [
         "Изменить"
+      ],
+      "Edit billing cycle": [
+        "Изменить платежный цикл"
       ],
       "Edit display name": [
         "Редактировать отображаемое имя"
@@ -812,6 +821,9 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Выбрать календарь для экспорта"
+      ],
       "Select calendar view": [
         "Выберите вид календаря"
       ],
@@ -1131,9 +1143,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Удалить"
-      ],
       "Disable": [
         "Отключить"
       ],
@@ -3638,9 +3647,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } — ваше имя пользователя. Чтобы создать ${ Local }@${ Domain }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -3689,6 +3695,9 @@
       "Contact signature not verified": [
         "Подпись контакта не подтверждена"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Не удалось загрузить счета-фактуры. Повторите попытку позже."
+      ],
       "Could not save preference": [
         "Не удалось сохранить предпочтение"
       ],
@@ -3724,9 +3733,6 @@
       ],
       "Enter 6 digits": [
         "Введите 6 цифр"
-      ],
-      "Error": [
-        "Ошибка"
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
@@ -3875,6 +3881,9 @@
       "Payments are currently not available, please try again later": [
         "Платежи в настоящее время недоступны, пожалуйста, повторите попытку позже"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перед добавлением адресов настройте пользовательский домен."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
       ],
@@ -3997,9 +4006,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Минимальный платеж, который мы принимаем, составляет ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Сначала должен быть активирован ключ организации"
       ],
       "The sending key is not valid": [
         "Недействительный ключ отправки"
@@ -6227,6 +6233,9 @@
       "Center": [
         "Центрировать"
       ],
+      "Change your password": [
+        "Измените пароль"
+      ],
       "Check the status of imports and forwarding.": [
         "Проверить статус импорта и пересылки."
       ],
@@ -6364,9 +6373,6 @@
         "домена использовано",
         "доменов использовано",
         "доменов использовано"
-      ],
-      "Done": [
-        "Готово"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Мы отправили код на ${ destination }."
@@ -6713,6 +6719,9 @@
       "Key deletion is irreversible!": [
         "Удаление ключа необратимо!"
       ],
+      "Keys created": [
+        "Ключи созданы"
+      ],
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
       ],
@@ -6804,7 +6813,7 @@
         "Многопользовательский режим не включён."
       ],
       "Must be between 3 and 20 characters long.": [
-        "Должен быть длиной от 3 до 20 символов."
+        "Должно быть длиной от 3 до 20 символов."
       ],
       "Must contain only letters, digits, and dashes (-).": [
         "Должно содержать только буквы, цифры и тире (-)."
@@ -6813,7 +6822,7 @@
         "Не должно содержать пробелов."
       ],
       "Must start with a letter.": [
-        "Должен начинаться с буквы."
+        "Должно начинаться с буквы."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
@@ -7051,9 +7060,6 @@
       ],
       "purchase additional storage": [
         "приобрести дополнительное место"
-      ],
-      "Queued": [
-        "Поставлено в очередь"
       ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
@@ -7582,6 +7588,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Используйте выбранный адрес электронной почты в качестве имени пользователя SMTP во внешней службе и сгенерированный токен в качестве пароля SMTP."
+      ],
+      "User activated": [
+        "Пользователь активирован"
       ],
       "Users": [
         "Пользователи"
@@ -8535,6 +8544,9 @@
       "Awarded": [
         "Присуждено"
       ],
+      "Beta": [
+        "Бета"
+      ],
       "Billing address": [
         "Адрес для выставления счета"
       ],
@@ -9054,6 +9066,12 @@
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
         "Добавьте все 3 из следующих записей CNAME. Примечание: обновление записей DNS может занять несколько часов."
       ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Добавьте следующие две записи MX. Примечание: обновление записей DNS может занять несколько часов."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Добавьте следующую запись TXT. Примечание: обновление записей DNS может занять несколько часов."
+      ],
       "Please select files to upload": [
         "Пожалуйста, выберите файлы для загрузки"
       ],
@@ -9338,6 +9356,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Приветственные письма ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Ежедневные уведомления по электронной почте"
       ]
     },
     "Label in domain modal": {
@@ -9479,6 +9500,9 @@
       ],
       "General": [
         "Основные"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Перейти на тариф ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Помочь с переводом"
@@ -9713,6 +9737,9 @@
       ]
     },
     "Member action": {
+      "Add address": [
+        "Добавить адрес"
+      ],
       "Change password": [
         "Изменить пароль"
       ],
@@ -10198,6 +10225,9 @@
       "Admin console": [
         "Панель администратора"
       ],
+      "Administration Panel": [
+        "Панель администратора"
+      ],
       "Advanced network security": [
         "Передовая сетевая безопасность"
       ],
@@ -10215,6 +10245,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Автозаполнение кредитных карт (скоро)"
+      ],
+      "Automatic email forwarding": [
+        "Автоматическая пересылка электронной почты"
       ],
       "Available on all platforms": [
         "Доступно на всех платформах"
@@ -10357,6 +10390,9 @@
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
       ],
+      "Require 2FA for organization": [
+        "Требуется двухфакторная идентификация для организации"
+      ],
       "Router support": [
         "Поддержка маршрутизаторов"
       ],
@@ -10392,6 +10428,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Интеграция с SSO (скоро появится)"
       ],
       "Start protecting your organization": [
         "Начните защищать свою организацию"
@@ -10689,6 +10728,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Позволяет настраивать автоматические ответы (автоответчик) для входящих сообщений"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Автоматически пересылайте письма, отправленные на ваш аккаунт ${ MAIL_APP_NAME }, на любой другой адрес электронной почты."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Массовая рекламная или программная рассылка электронной почты в настоящее время не поддерживается. Мы рекомендуем использовать специального поставщика услуг электронной почты для этого случая."
       ],
@@ -10817,6 +10859,9 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Специально разработанная функция NetShield защищает ваше устройство и ускоряет просмотр страниц, блокируя рекламу, трекеры и вредоносные программы"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Место хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } и ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
@@ -12021,6 +12066,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } администратору в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации."
+      ],
       "Changing organization keys": [
         "Изменение ключей организации"
       ],
@@ -12744,6 +12795,12 @@
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Улучшите ваш тариф, чтобы продолжать пользоваться аккаунтом без перебоев."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
+      ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
       ]
@@ -12957,6 +13014,9 @@
       ],
       "Address updated": [
         "Адрес обновлён"
+      ],
+      "Administrator privileges restored": [
+        "Права администратора восстановлены"
       ],
       "Auto-reply disabled": [
         "Автоответчик выключен"
@@ -13406,6 +13466,9 @@
       "Activate organization key": [
         "Активация ключа организации"
       ],
+      "Activate user": [
+        "Активировать пользователя"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -13598,6 +13661,9 @@
       "Create multiple user accounts": [
         "Создать несколько пользовательских аккаунтов"
       ],
+      "Create organization key": [
+        "Создать ключ организации"
+      ],
       "Create public link": [
         "Создать публичную ссылку"
       ],
@@ -13720,6 +13786,12 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Скачать приложение для настольных компьютеров"
+      ],
+      "Download the mobile apps": [
+        "Скачать мобильные приложения"
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
@@ -13849,6 +13921,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
+      ],
+      "Get the apps": [
+        "Получить приложения"
       ],
       "Gift": [
         "Подарок"
@@ -13981,6 +14056,9 @@
       ],
       "Organization filters": [
         "Название организации"
+      ],
+      "Organization key": [
+        "Ключ организации"
       ],
       "Organization name": [
         "Название организации"
@@ -14191,6 +14269,12 @@
       ],
       "Success": [
         "Успешно"
+      ],
+      "Successfully created ${ n } user account": [
+        "Успешно создана ${ n } учетная запись пользователя",
+        "Успешно созданы ${ n } учетных записи пользователя",
+        "Успешно созданы ${ n } учетных записи пользователя",
+        "Успешно созданы ${ n } учетных записи пользователя"
       ],
       "Summary": [
         "Сводка"

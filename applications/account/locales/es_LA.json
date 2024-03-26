@@ -305,6 +305,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete address": [
+        "Eliminar dirección"
+      ],
       "Delete and confirm": [
         "Eliminar y confirmar"
       ],
@@ -1146,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Eliminar"
+      "Delete address": [
+        "Eliminar dirección"
       ],
       "Disable": [
         "Desactivar"
@@ -3044,6 +3047,25 @@
         "Desconocido"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Una vez eliminada, esta dirección no puede ser usada nuevamente por usted u otra persona."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "La siguiente dirección activa en su lista será establecida como la dirección por defecto."
+      ],
+      "You can only delete 1 address per year.": [
+        "Solo puede eliminar 1 dirección por año."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Solo puede eliminar 1 dirección por año"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ha alcanzado el límite de eliminación de dirección para este usuario."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Todos los eventos en este calendario se eliminarán."
@@ -3721,8 +3743,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } es su usuario. Para crear ${ Local }@${ Domain }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -3806,9 +3828,6 @@
       ],
       "Enter 6 digits": [
         "Ingrese 6 dígitos"
-      ],
-      "Error": [
-        "Error"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -4082,9 +4101,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "La clave de la organización debe activarse primero"
       ],
       "The sending key is not valid": [
         "La clave para enviar no es válida"
@@ -6418,9 +6434,6 @@
         "dominio usado",
         "dominios usados"
       ],
-      "Done": [
-        "Hecho"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "¡Listo! Le enviamos un código a ${ destination }."
       ],
@@ -7137,9 +7150,6 @@
       ],
       "purchase additional storage": [
         "comprar almacenamiento adicional"
-      ],
-      "Queued": [
-        "En espera"
       ],
       "read our two-factor authentication guide first": [
         "leer primero nuestra guía de autenticación de dos factores"
@@ -9458,6 +9468,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correos de bienvenida de ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificaciones diarias por correo electrónico"
       ]
     },
     "Label in domain modal": {
@@ -9834,6 +9847,9 @@
     "Member action": {
       "Activate user": [
         "Activar el usuario"
+      ],
+      "Add address": [
+        "Añadir dirección"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -11975,8 +11991,8 @@
       "Invalid expiration date": [
         "Fecha de expiración inválida"
       ],
-      "Invalid securiry code": [
-        "Código de seguridad inválido"
+      "Invalid security code": [
+        "El código de seguridad no es válido."
       ],
       "Something went wrong. Please try again later.": [
         "Hubo un problema. Intente de nuevo más tarde."
@@ -14058,6 +14074,9 @@
       ],
       "Delete account": [
         "Eliminar cuenta"
+      ],
+      "Delete address permanently?": [
+        "¿Eliminar dirección permanentemente?"
       ],
       "Delete calendar": [
         "Eliminar el calendario"

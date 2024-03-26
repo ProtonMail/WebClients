@@ -1059,9 +1059,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Kkes"
-      ],
       "Disable": [
         "Sens"
       ],
@@ -2942,9 +2939,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Tzemreḍ daɣen ad tesneqdeḍ ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } d isem-ik·im n useqdac. I tmerna n ${ Local }@${ Domain }, ttxil-k·m rzu ɣer yiɣewwaren > Iznan d tira > Taɣult wezzilen (pm.me)"
-      ],
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agi"
       ],
@@ -3010,9 +3004,6 @@
       ],
       "Enter 6 digits": [
         "Sekcem 6 n izwilen"
-      ],
-      "Error": [
-        "Anezri"
       ],
       "Error connecting to the Bitcoin API.": [
         "Tuccḍa di tuqqna ar API Bitcoin."
@@ -3239,9 +3230,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed"
       ],
       "The sending key is not valid": [
         "Tasarut n tuzna ur d tameɣtut"
@@ -4872,6 +4860,9 @@
       "Center": [
         "Slemmes"
       ],
+      "Change your password": [
+        "Senfel awal uffir"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
       ],
@@ -4960,9 +4951,6 @@
       "domain used": [
         "taɣult tettwaseqdec",
         "tiɣula ttwasqedcent"
-      ],
-      "Done": [
-        "Yekfa"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Ifukk! Nuzen tangalt ɣer ${ destination }."
@@ -5412,9 +5400,6 @@
       ],
       "purchase additional storage": [
         "aɣ-d aklas n zzyada"
-      ],
-      "Queued": [
-        "Yettwarna ar udras"
       ],
       "read our two-factor authentication guide first": [
         "taɣuri n umnir amezwaru n usesteb s snat n tarrayin"
@@ -7138,6 +7123,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Imaylen n unsuf ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Ilɣa imayl imezwar"
       ]
     },
     "Label in domain modal": {
@@ -7260,6 +7248,9 @@
       ],
       "General": [
         "Amatu"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Awi ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Ttekki di tsuqilt"

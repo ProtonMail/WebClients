@@ -305,6 +305,9 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete address": [
+        "Adresse löschen"
+      ],
       "Delete and confirm": [
         "Löschen und bestätigen"
       ],
@@ -1004,6 +1007,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
       ],
+      "Upgrade to view all": [
+        "Upgraden, um alle anzusehen"
+      ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
       ],
@@ -1137,8 +1143,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Löschen"
+      "Delete address": [
+        "Adresse löschen"
       ],
       "Disable": [
         "Deaktivieren"
@@ -3035,6 +3041,25 @@
         "Unbekannt"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Einmal gelöscht, kann diese Adresse nicht mehr benutzt werden, weder von dir noch von jemand anderem."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Die nächste aktive Adresse auf deiner Liste wird als Standardadresse festgelegt."
+      ],
+      "You can only delete 1 address per year.": [
+        "Du kannst jährlich nur eine Adresse löschen."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kannst jährlich nur eine Adresse löschen"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du hast das Limit für das Löschen von Adressen für diesen Benutzer erreicht."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Alle Termine in diesem Kalender werden gelöscht."
@@ -3084,6 +3109,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Führe ein Upgrade durch, um die ${ MAIL_APP_NAME }-Fußzeile zu entfernen und weitere Premiumfunktionen freizuschalten."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Um den vollständigen Bericht mit personalisierten Empfehlungen anzuzeigen, musst du ein Upgrade auf ein kostenpflichtiges Abonnement durchführen."
       ],
       "Track the status and activity of your referrals.": [
         "Verfolge den Status und die Aktivität deiner Empfehlungen."
@@ -3709,8 +3737,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } ist dein Benutzername. Um ${ Local }@${ Domain } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
@@ -3794,9 +3822,6 @@
       ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
-      ],
-      "Error": [
-        "Fehler"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
@@ -4070,9 +4095,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Der akzeptierte Mindestzahlbetrag beträgt ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Der Organisationsschlüssel muss zunächst aktiviert werden"
       ],
       "The sending key is not valid": [
         "Der Sendeschlüssel ist ungültig"
@@ -6270,6 +6292,9 @@
       "Center": [
         "Zentriert"
       ],
+      "Change your password": [
+        "Passwort ändern"
+      ],
       "Check the status of imports and forwarding.": [
         "Sieh dir den Status deiner Imports und Weiterleitungen an."
       ],
@@ -6399,9 +6424,6 @@
       "domain used": [
         "Domain verwendet",
         "Domains verwendet"
-      ],
-      "Done": [
-        "Fertig"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Fertig! Es wurde ein Code an „${ destination }“ gesendet."
@@ -6591,6 +6613,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Verbirgt identifizierende Informationen durch das Laden externer Inhalte über einen Proxy. Option zum Speichern von Inhalten als Anhänge."
+      ],
+      "High Priority": [
+        "Hohe Priorität"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wenn ein anderer Administrator dieses Passwort geändert hat, musst du ihn um das neue Organisationspasswort bitten."
@@ -6813,6 +6838,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Protokolle enthalten Authentifizierungsversuche aller ${ BRAND_NAME }-Dienste die deine ${ BRAND_NAME_TWO }-Anmeldedaten verwenden."
       ],
+      "Low Priority": [
+        "Niedrige Priorität"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Große E-Mail-Dienste können deine E-Mails zurückweisen oder als Spam filtern, wenn SPF/DKIM/DMARC fehlen oder nicht richtig eingerichtet sind."
       ],
@@ -6828,6 +6856,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
       ],
+      "Medium Priority": [
+        "Mittlere Priorität"
+      ],
       "Member": [
         "Mitglied"
       ],
@@ -6836,6 +6867,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Monitor accounts": [
+        "Konten überwachen"
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
@@ -6970,6 +7004,9 @@
       "Paid for a monthly plan": [
         "Bezahlt für ein monatliches Abonnement"
       ],
+      "password": [
+        "Passwort"
+      ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
       ],
@@ -7063,6 +7100,9 @@
       "Please wait till your changes are synced with the server.": [
         "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus ${ numOfBreaches } weitere"
+      ],
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
@@ -7095,9 +7135,6 @@
       ],
       "purchase additional storage": [
         "zusätzlichen Speicher kaufen"
-      ],
-      "Queued": [
-        "Eingereiht"
       ],
       "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
@@ -7628,6 +7665,9 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
+      "username": [
+        "Benutzername"
+      ],
       "Users": [
         "Benutzer"
       ],
@@ -7681,6 +7721,9 @@
       ],
       "We just sent you a new link.": [
         "Wir haben dir gerade einen neuen Link gesendet."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Wir überwachen deine E-Mail-Adressen, Passwörter und persönlichen Daten auf das Auftauchen im Dark Web und benachrichtigen dich, falls deine Daten gefährdet sind."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
@@ -9398,6 +9441,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-Willkommens-E-Mails"
+      ],
+      "Daily email notifications": [
+        "Tägliche E-Mail-Benachrichtigungen"
       ]
     },
     "Label in domain modal": {
@@ -9531,6 +9577,9 @@
       "Create account": [
         "Konto erstellen"
       ],
+      "Create an alias": [
+        "Alias erstellen"
+      ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
@@ -9539,6 +9588,12 @@
       ],
       "General": [
         "Allgemein"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Hol dir ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } holen"
       ],
       "Help translate": [
         "Beim Übersetzen helfen"
@@ -9765,6 +9820,9 @@
     "Member action": {
       "Activate user": [
         "Benutzer aktivieren"
+      ],
+      "Add address": [
+        "Adresse hinzufügen"
       ],
       "Change password": [
         "Passwort ändern"
@@ -10398,6 +10456,9 @@
       ],
       "Router support": [
         "Router-Unterstützung"
+      ],
+      "Schedule and snooze emails for any time": [
+        "E-Mails für einen beliebigen Zeitpunkt planen und zurückstellen"
       ],
       "Schedule messages at any time": [
         "Nachrichten zu jeder Zeit planen"
@@ -11811,11 +11872,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Bitte stelle sicher, dass sie eine aktivierte Adresse haben und lade sie später separat ein."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben"
       ],
       "Reset organization key": [
         "Schlüssel der Organisation zurücksetzen"
+      ],
+      "The following administrators could not be restored.": [
+        "Die folgenden Administratoren konnten nicht wiederhergestellt werden."
       ],
       "The following administrators will get access to the organization key.": [
         "Die folgenden Administratoren erhalten Zugriff auf den Organisationsschlüssel."
@@ -11886,7 +11953,7 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Ungültiger Sicherheitscode"
       ],
       "Something went wrong. Please try again later.": [
@@ -13837,6 +13904,9 @@
       "Clear out the junk": [
         "Unnötige Nachrichten bereinigen"
       ],
+      "Close": [
+        "Schließen"
+      ],
       "Composing": [
         "Verfassen"
       ],
@@ -13955,6 +14025,9 @@
       "Delete account": [
         "Konto löschen"
       ],
+      "Delete address permanently?": [
+        "Adresse dauerhaft löschen?"
+      ],
       "Delete calendar": [
         "Kalender löschen"
       ],
@@ -14054,6 +14127,9 @@
       ],
       "Email": [
         "E-Mail-Adresse"
+      ],
+      "Email address": [
+        "E‐Mail‐Adresse"
       ],
       "Email composer": [
         "Fenster zum Verfassen von E-Mails"
@@ -14329,6 +14405,9 @@
       ],
       "Recommended": [
         "Empfohlen"
+      ],
+      "Recommended actions": [
+        "Empfohlene Aktionen"
       ],
       "Reconnect your account": [
         "Erneut mit deinem Konto verbinden"
