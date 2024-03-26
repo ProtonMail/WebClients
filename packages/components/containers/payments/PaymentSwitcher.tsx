@@ -8,6 +8,7 @@ import {
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
@@ -152,21 +153,27 @@ const InnerPaymentSwitcher = ({ loader, children }: Props) => {
     const chargebeeContext = useChargebeeContext();
 
     useEffect(() => {
-        if (!chargebeeFeatureLoaded) {
-            return;
-        }
-        setLoaded(true);
+        async function run() {
+            if (!chargebeeFeatureLoaded) {
+                return;
+            }
 
-        const isAllowed = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_ALLOWED;
-        const isForced = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
+            const isAllowed = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_ALLOWED;
+            const isForced = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
-        if ((isAllowed || isForced) && chargebeeContext) {
-            chargebeeContext.setEnableChargebee(chargebeeEnabled);
+            if ((isAllowed || isForced) && chargebeeContext) {
+                chargebeeContext.setEnableChargebee(chargebeeEnabled);
+            }
+
+            if (isForced) {
+                setPaymentsVersion('v5');
+            }
+
+            await wait(0);
+            setLoaded(true);
         }
 
-        if (isForced) {
-            setPaymentsVersion('v5');
-        }
+        void run();
     }, [chargebeeFeatureLoaded, chargebeeEnabled]);
 
     return <>{loaded ? children : loader}</>;
