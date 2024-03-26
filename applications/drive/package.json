@@ -31,7 +31,7 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
-        "@types/react": "^18.2.65",
+        "@types/react": "^18.2.71",
         "@types/react-dom": "^18.2.22",
         "@types/react-router-dom": "^5.3.3",
         "client-zip": "^2.4.4",
@@ -46,13 +46,13 @@
         "react-window": "^1.8.10",
         "ttag": "^1.8.6",
         "web-streams-polyfill": "^3.3.3",
-        "webpack": "^5.90.3"
+        "webpack": "^5.91.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^14.2.1",
+        "@testing-library/react": "^14.2.2",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
         "@types/react-window": "^1.8.8",
@@ -66,7 +66,7 @@
         "jest-when": "3.6.0",
         "prettier": "^3.2.5",
         "pretty-format": "^29.7.0",
-        "typescript": "^5.4.2"
+        "typescript": "^5.4.3"
     },
     "exifreader": {
         "exclude": {
