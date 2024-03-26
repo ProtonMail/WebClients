@@ -183,7 +183,7 @@
         "Criar novo grupo de contactos"
       ],
       "Create and copy alias": [
-        "Criar e colar pseudónimo"
+        "Criar e colar alias"
       ],
       "Create link": [
         "Criar ligação"
@@ -578,7 +578,7 @@
         "Seleccionar tudo"
       ],
       "Select country": [
-        "Seleccionar país"
+        "Selecionar país"
       ],
       "Send feedback": [
         "Enviar comentários"
@@ -4540,6 +4540,9 @@
       "Duplicate found": [
         "Duplicado encontrado"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "ex.: Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4999,7 +5002,7 @@
         "Arquivo BZip2"
       ],
       "Flash Video": [
-        "Vídeo flash"
+        "Flash Video"
       ],
       "iCalendar format": [
         "Formato iCalendar"
@@ -5510,6 +5513,9 @@
       "Search for name or email": [
         "Pesquisar por nome ou e-mail"
       ],
+      "Search parent folder": [
+        "Pesquisar pasta inicial"
+      ],
       "Select": [
         "Selecionar"
       ],
@@ -5586,6 +5592,9 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Todos os pseudónimos"
+      ],
       "Create alias": [
         "Criar um alias"
       ],
@@ -6031,6 +6040,12 @@
       "contact your administrator": [
         "contacte o seu administrador"
       ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Para continuar a carregar e a sincronizar ficheiros, liberte espaço ou atualize para obter mais espaço de armazenamento."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Para enviar ou receber e-mails, liberte espaço ou atualize para obter mais espaço de armazenamento."
+      ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
       ],
@@ -6042,6 +6057,9 @@
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "O seu armazenamento está cheio. ${ cta }"
       ]
     },
     "Success": {
@@ -6056,8 +6074,11 @@
       "Address copied to clipboard": [
         "Endereço copiado para a área de transferência"
       ],
+      "Alias copied to clipboard": [
+        "Alias copiado para a área de transferência"
+      ],
       "Alias saved and copied": [
-        "Pseudónimo guardado e copiado"
+        "Alias guardado e copiado"
       ],
       "Bug reported": [
         "Erro reportado"
@@ -6439,6 +6460,9 @@
         "${ searchView.numberOfResults } resultado encontrado",
         "${ searchView.numberOfResults } resultados encontrados"
       ],
+      "Get advanced protection": [
+        "Obtenha proteção avançada"
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -6498,7 +6522,7 @@
         "Nome"
       ],
       "Need more aliases?": [
-        "Necessita de mais pseudónimos?"
+        "Necessita de mais aliases?"
       ],
       "Night theme": [
         "Tema noturno"

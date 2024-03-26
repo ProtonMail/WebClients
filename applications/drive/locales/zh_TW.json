@@ -3604,9 +3604,6 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
-      "Invited": [
-        "已被邀請"
-      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎嘗試上傳 ${ uploadName }。若上傳失敗，請 ${ replaceFile }。若上傳仍在進行中，取代它將會取消進行中的上傳。"
       ],
@@ -4044,6 +4041,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "為保護您，${ DRIVE_APP_NAME } 可以掃描並封鎖惡意檔案。建議您只下載來自可信寄件者的郵件附檔。"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
@@ -4911,6 +4911,9 @@
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
       ],
@@ -5150,7 +5153,7 @@
         "如何從 Yahoo 匯入行事曆"
       ],
       "How to import contacts from another service": [
-        "如何從其它服務匯入聯絡人"
+        "如何從其它郵件服務業者平台匯入通訊錄"
       ],
       "How to import contacts from Yahoo": [
         "如何從 Yahoo 匯入聯絡人"
@@ -5383,6 +5386,11 @@
       ],
       "Your settings have been changed successfully": [
         "您的設定已成功變更。"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
       ]
     },
     "Oauth instructions": {
