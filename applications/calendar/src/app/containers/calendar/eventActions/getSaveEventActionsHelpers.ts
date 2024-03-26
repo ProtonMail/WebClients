@@ -284,11 +284,11 @@ export const getUpdatedMainSeriesMergeEvent = (
         ...updateMainSeriesMergeVevent,
     };
 
-    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(
+    const { addedAttendees, removedAttendees, hasModifiedRole } = getAttendeesDiff(
         updatedVeventComponent,
         updateMainSeriesMergeVevent
     );
-    if (addedAttendees?.length || removedAttendees?.length || hasModifiedRSVPStatus) {
+    if (addedAttendees?.length || removedAttendees?.length || hasModifiedRole) {
         result.attendee = updatedVeventComponent.attendee || [];
     }
 
