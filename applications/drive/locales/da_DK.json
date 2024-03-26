@@ -3890,9 +3890,6 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
-      "Invited": [
-        "Inviteret"
-      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere den igangværende upload, hvis du erstatter den."
       ],
@@ -5268,6 +5265,9 @@
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
       ],
+      "Custom schedule send and snooze times": [
+        "Brugerdefineret tidsplan for afsendelse og udsættelse"
+      ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
@@ -6619,13 +6619,13 @@
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "For at sende eller modtage e-mails, frigøre plads eller ${ upgrade }."
+        "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "For at sende eller modtage e-mails, frigøre plads eller opgradere til mere lagerplads."
+        "For at sende eller modtage e-mails, frigør plads eller opgrader til mere lagerplads."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "For at uploade eller synkronisere filer, frigøre plads eller ${ upgrade }."
+        "For at uploade eller synkronisere filer, frigør plads eller ${ upgrade }"
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
