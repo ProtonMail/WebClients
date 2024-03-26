@@ -305,6 +305,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete address": [
+        "Borrar la dirección"
+      ],
       "Delete and confirm": [
         "Eliminar y confirmar"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Desbloquear"
       ],
+      "Unlock Breach Report": [
+        "Desbloquear el reporte de vulneraciones"
+      ],
+      "Unlock breach reports": [
+        "Desbloquear los reportes de vulneraciones"
+      ],
       "Unlock data": [
         "Desbloquear datos"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Mejora para activar ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to view all": [
+        "Mejorar para ver todo"
       ],
       "Upgrade your plan": [
         "Mejora tu plan"
@@ -1137,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Eliminar"
+      "Delete address": [
+        "Borrar la dirección"
       ],
       "Disable": [
         "Desactivar"
@@ -3035,6 +3047,25 @@
         "Desconocido"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Una vez eliminada, esta dirección no puede ser usada nuevamente por ti u otra persona."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "La siguiente dirección activa en tu lista será establecida como la dirección por defecto."
+      ],
+      "You can only delete 1 address per year.": [
+        "Solo puedes eliminar 1 dirección por año."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Solo puedes eliminar 1 dirección por año."
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Has alcanzado el límite de eliminación de dirección para este usuario."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Todos los eventos en este calendario se eliminarán."
@@ -3084,6 +3115,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para borrar el pie de página de ${ MAIL_APP_NAME }, mejora y desbloquea aún más funciones premium."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Para ver el reporte completo, incluida las recomendaciones, mejora a un plan de pago."
       ],
       "Track the status and activity of your referrals.": [
         "Sigue el estado y la actividad de tus referidos."
@@ -3709,8 +3743,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } es tu nombre de usuario. Para crear ${ Local }@${ Domain }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
@@ -3794,9 +3828,6 @@
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
-      ],
-      "Error": [
-        "Error"
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
@@ -4070,9 +4101,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Tienes que activar primero la clave de la organización."
       ],
       "The sending key is not valid": [
         "La clave de envío no es válida."
@@ -6249,6 +6277,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Impide que los remitentes vean si has abierto un mensaje y cuándo lo has hecho."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Las alertas de vulneraciones están impulsadas por conjuntos de datos privados de ${ BRAND_NAME }, conjuntos de datos de código abierto, y Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
@@ -6269,6 +6300,9 @@
       ],
       "Center": [
         "Centrar"
+      ],
+      "Change your password": [
+        "Cambia tu contraseña"
       ],
       "Check the status of imports and forwarding.": [
         "Verifica el estado de las importaciones y de los reenvíos."
@@ -6400,9 +6434,6 @@
         "dominio utilizado",
         "dominios utilizados"
       ],
-      "Done": [
-        "Hecho"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "¡Listo! Se ha enviado un código a ${ destination }."
       ],
@@ -6450,6 +6481,9 @@
       ],
       "Edit link": [
         "Editar enlace"
+      ],
+      "email": [
+        "correo"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -6550,6 +6584,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos electrónicos, incluidos los entrantes o enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
       ],
+      "finance": [
+        "finanzas"
+      ],
       "for choosing ${ product }": [
         "por elegir ${ product }"
       ],
@@ -6591,6 +6628,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Oculta la información de identificación cargando el contenido remoto a través de un proxy. Existe una opción para almacenar el contenido como archivos adjuntos."
+      ],
+      "High Priority": [
+        "Prioridad alta"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador ha cambiado esta contraseña, necesitarás pedir la nueva contraseña de la organización."
@@ -6813,6 +6853,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Los registros incluyen los intentos de autenticación para todos los servicios de ${ BRAND_NAME } que utilizan tus credenciales de ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Prioridad baja"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "La mayoría de servicios de correo podrían rechazar o filtrar tus correos como spam si faltan SPF/DKIM/DMARC o no están bien configurados."
       ],
@@ -6828,6 +6871,9 @@
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioridad media"
+      ],
       "Member": [
         "Miembro"
       ],
@@ -6836,6 +6882,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Monitoreo de cuentas"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -6970,6 +7019,9 @@
       "Paid for a monthly plan": [
         "Pagado por un plan mensual"
       ],
+      "password": [
+        "contraseña"
+      ],
       "Password copied to clipboard": [
         "Contraseña copiada en el portapapeles"
       ],
@@ -7063,6 +7115,9 @@
       "Please wait till your changes are synced with the server.": [
         "Espera hasta que tus cambios estén sincronizados con el servidor."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Y ${ numOfBreaches } más"
+      ],
       "Plus or Visionary subscription required": [
         "Se requiere una suscripción Plus o Visionary"
       ],
@@ -7095,9 +7150,6 @@
       ],
       "purchase additional storage": [
         "comprar almacenamiento adicional"
-      ],
-      "Queued": [
-        "En espera"
       ],
       "read our two-factor authentication guide first": [
         "lee primero nuestra guía de autenticación de doble factor"
@@ -7613,6 +7665,15 @@
       "URL link": [
         "Enlace del URL"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Usa ${ BRAND_NAME } Pass para generar contraseñas fuertes y evitar la reutilización de contraseñas."
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Usa ${ VPN_APP_NAME } con NetShield activado para protegerte de suplantaciones y malware."
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Usa alias para registrarte en servicios en línea. Esto protege tu dirección de correo electrónico real y tu identidad, limitando la magnitud de una vulneración."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
       ],
@@ -7627,6 +7688,9 @@
       ],
       "User activated": [
         "El usuario ha sido activado."
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -7670,6 +7734,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Advertencia: la eliminación es permanente. Esto también borra el acceso a todos los servicios conectados y elimina todos tus contactos."
       ],
+      "Ways you can minimize your breach risks": [
+        "Maneras en la que puedes minimizar riesgos de vulneraciones"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Te aconsejamos utilizar las aplicaciones oficiales de ${ VPN_APP_NAME } cuando sea posible."
       ],
@@ -7681,6 +7748,9 @@
       ],
       "We just sent you a new link.": [
         "Acabamos de enviarte un nuevo enlace."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Monitoreamos tus direcciones de correo, contraseñas y datos personales que aparecen en la dark web y te notificamos en caso de que tus datos estén comprometidos."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar el método de pago con tu banco."
@@ -9398,6 +9468,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correos electrónicos de bienvenida ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificaciones diarias por correo electrónico"
       ]
     },
     "Label in domain modal": {
@@ -9531,6 +9604,9 @@
       "Create account": [
         "Crear cuenta"
       ],
+      "Create an alias": [
+        "Crear un alias"
+      ],
       "Encryption and keys": [
         "Cifrado y claves"
       ],
@@ -9539,6 +9615,12 @@
       ],
       "General": [
         "General"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Obtener ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Obtener ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Ayúdanos a traducir"
@@ -9765,6 +9847,9 @@
     "Member action": {
       "Activate user": [
         "Activar el usuario"
+      ],
+      "Add address": [
+        "Añadir una dirección"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -11825,11 +11910,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "El permiso ha sido denegado. Los privilegios de administrador se han limitado."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Asegúrate de que tienen una dirección activada e invítalos separadamente después."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Los usuarios privados podrán ser administradores una vez que entran a su cuenta por primera vez"
       ],
       "Reset organization key": [
         "Restablecer la clave de la organización"
+      ],
+      "The following administrators could not be restored.": [
+        "No se han podido restaurar los siguientes administradores."
       ],
       "The following administrators will get access to the organization key.": [
         "Los siguientes administradores obtendrán acceso a la clave de la organización."
@@ -11900,7 +11991,7 @@
       "Invalid expiration date": [
         "La fecha de expiración no es válida."
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "El código de seguridad no es válido."
       ],
       "Something went wrong. Please try again later.": [
@@ -13803,6 +13894,18 @@
       "Billing cycle": [
         "Ciclo de facturación"
       ],
+      "Breach Alerts": [
+        "Alertas de vulneraciones"
+      ],
+      "Breach Date": [
+        "Fecha de la vulneración"
+      ],
+      "Breach Information": [
+        "Información de la vulneración"
+      ],
+      "Breach Size": [
+        "Tamaño de la vulneración"
+      ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
@@ -13850,6 +13953,9 @@
       ],
       "Clear out the junk": [
         "Deshazte de los mensajes no deseados"
+      ],
+      "Close": [
+        "Cerrar"
       ],
       "Composing": [
         "Redacción"
@@ -13969,6 +14075,9 @@
       "Delete account": [
         "Eliminar cuenta"
       ],
+      "Delete address permanently?": [
+        "¿Eliminar la dirección permanentemente?"
+      ],
       "Delete calendar": [
         "Eliminar el calendario"
       ],
@@ -14069,6 +14178,9 @@
       "Email": [
         "Correo electrónico"
       ],
+      "Email address": [
+        "Dirección de correo"
+      ],
       "Email composer": [
         "Editor de correo"
       ],
@@ -14107,6 +14219,9 @@
       ],
       "Export public key": [
         "Exportar la clave pública"
+      ],
+      "Exposed info": [
+        "Información expuesta"
       ],
       "External PGP settings": [
         "Configuración PGP externa"
@@ -14275,6 +14390,9 @@
       "Night theme": [
         "Tema de noche"
       ],
+      "No account information was found in any data breaches": [
+        "No se ha encontrado información para la cuenta en ninguna vulneración de datos."
+      ],
       "No recovery method": [
         "No hay ningún método de recuperación."
       ],
@@ -14343,6 +14461,9 @@
       ],
       "Recommended": [
         "Recomendado"
+      ],
+      "Recommended actions": [
+        "Acciones recomendadas"
       ],
       "Reconnect your account": [
         "Reconectar tu cuenta"
@@ -14611,6 +14732,9 @@
       ],
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
+      ],
+      "Your Exposed Information": [
+        "Tu información expuesta"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Tu prueba gratuita de Mail Plus termina el ${ textDate }."

@@ -305,6 +305,9 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete address": [
+        "Supprimer une adresse"
+      ],
       "Delete and confirm": [
         "Supprimer et confirmer"
       ],
@@ -975,10 +978,10 @@
         "Déverrouiller"
       ],
       "Unlock Breach Report": [
-        "Accéder au rapport de fuite de données"
+        "Débloquer le rapport de fuites de données"
       ],
       "Unlock breach reports": [
-        "Accéder aux rapports de fuites de données"
+        "Débloquer les rapports de fuites de données"
       ],
       "Unlock data": [
         "Déverrouiller les données"
@@ -1011,7 +1014,7 @@
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to view all": [
-        "Mettre à niveau afin de tout voir"
+        "Changer d'abonnement pour tout voir"
       ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
@@ -1146,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Supprimer"
+      "Delete address": [
+        "Supprimer une adresse"
       ],
       "Disable": [
         "Désactiver"
@@ -3044,6 +3047,25 @@
         "Inconnu"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Une fois supprimée, cette adresse ne peut pas être réutilisée par vous ou qui que ce soit."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "La prochaine adresse active de votre liste sera définie comme adresse par défaut."
+      ],
+      "You can only delete 1 address per year.": [
+        "Vous pouvez supprimer uniquement 1 adresse par an."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Vous pouvez supprimer uniquement 1 adresse par an."
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Vous avez atteint la limite de suppressions d'adresses pour cet utilisateur."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Tous les événements de ce calendrier seront supprimés."
@@ -3095,7 +3117,7 @@
         "Pour retirer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement. Vous disposerez aussi de bien plus de fonctionnalités premium."
       ],
       "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Afin d'accéder au rapport complet, incluant les recommandations personnalisées, veuillez mettre votre compte à niveau."
+        "Pour accéder au rapport complet contenant des recommandations personnalisées, vous devez passer un abonnement payant."
       ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
@@ -3721,8 +3743,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } est votre nom d'utilisateur. Pour créer ${ Local }@${ Domain }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, visitez les Paramètres > Messages et rédaction > Domaine court (pm.me)"
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -3806,9 +3828,6 @@
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
-      ],
-      "Error": [
-        "Erreur"
       ],
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
@@ -4082,9 +4101,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Le paiement minimum accepté est de ${ price }."
-      ],
-      "The organization key must be activated first": [
-        "La clé de l'organisation doit d'abord être activée."
       ],
       "The sending key is not valid": [
         "La clé d'envoi n'est pas valide."
@@ -6418,9 +6434,6 @@
         "domaine utilisé",
         "domaines utilisés"
       ],
-      "Done": [
-        "Terminé"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "C'est fait, nous avons envoyé un code à ${ destination }."
       ],
@@ -6470,7 +6483,7 @@
         "Modifier le lien"
       ],
       "email": [
-        "email"
+        "e-mail"
       ],
       "Email address": [
         "Adresse e-mail"
@@ -7007,7 +7020,7 @@
         "Payé pour un abonnement mensuel"
       ],
       "password": [
-        "mots de passe"
+        "mot de passe"
       ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
@@ -7103,7 +7116,7 @@
         "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
       ],
       "Plus ${ numOfBreaches } more": [
-        "Et ${ numOfBreaches } supplémentaires"
+        "Et ${ numOfBreaches } en plus"
       ],
       "Plus or Visionary subscription required": [
         "Un abonnement Plus ou Visionary est nécessaire."
@@ -7137,9 +7150,6 @@
       ],
       "purchase additional storage": [
         "acheter de l'espace de stockage supplémentaire"
-      ],
-      "Queued": [
-        "En file d'attente"
       ],
       "read our two-factor authentication guide first": [
         "lire d'abord notre guide sur l'authentification à deux facteurs"
@@ -9458,6 +9468,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Messages de bienvenue ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notifications quotidiennes par e-mail"
       ]
     },
     "Label in domain modal": {
@@ -9592,7 +9605,7 @@
         "Créer un compte"
       ],
       "Create an alias": [
-        "Création d'alias"
+        "Créer un alias"
       ],
       "Encryption and keys": [
         "Chiffrement et clés"
@@ -9604,10 +9617,10 @@
         "Général"
       ],
       "Get ${ BRAND_NAME } Pass": [
-        "Obtenez ${ BRAND_NAME } Pass"
+        "Obtenir ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
-        "Obtenez ${ VPN_APP_NAME }"
+        "Obtenir ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Contribuez à la traduction"
@@ -9834,6 +9847,9 @@
     "Member action": {
       "Activate user": [
         "Autoriser l'utilisateur"
+      ],
+      "Add address": [
+        "Ajouter une adresse"
       ],
       "Change password": [
         "Changer le mot de passe"
@@ -11975,8 +11991,8 @@
       "Invalid expiration date": [
         "La date d'expiration n’est pas valide."
       ],
-      "Invalid securiry code": [
-        "Le code de sécurité n'est pas valide."
+      "Invalid security code": [
+        "Code de sécurité invalide"
       ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
@@ -13885,7 +13901,7 @@
         "Date de la fuite de données"
       ],
       "Breach Information": [
-        "Information sur la fuite de données"
+        "Informations sur la fuite de données"
       ],
       "Breach Size": [
         "Ampleur de la fuite de données"
@@ -14059,6 +14075,9 @@
       "Delete account": [
         "Supprimer le compte"
       ],
+      "Delete address permanently?": [
+        "Voulez-vous supprimer l'adresse définitivement ?"
+      ],
       "Delete calendar": [
         "Supprimer le calendrier"
       ],
@@ -14160,7 +14179,7 @@
         "Adresse e-mail"
       ],
       "Email address": [
-        "Adresse email"
+        "Adresse e-mail"
       ],
       "Email composer": [
         "Éditeur de messages"
@@ -14372,7 +14391,7 @@
         "Thème nuit"
       ],
       "No account information was found in any data breaches": [
-        "Vos informations n'ont été exposés dans aucune fuite de données"
+        "Vos informations n'ont été exposées dans aucune fuite de données."
       ],
       "No recovery method": [
         "Aucune méthode de récupération"
@@ -15182,7 +15201,7 @@
         "L'abonnement est automatiquement renouvelé tous les mois. Votre prochaine date de facturation est dans 1 mois."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "L'abonnement est automatiquement renouvelé tous les 3 mois. Votre prochaine date de facturation est dans 3 mois."
+        "L'abonnement est renouvelé automatiquement tous les 3 mois. Votre prochaine date de facturation est dans 3 mois."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé tous les 12 mois à ${ renewPrice }."

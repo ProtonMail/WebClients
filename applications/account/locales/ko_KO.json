@@ -974,6 +974,12 @@
       "Unlock": [
         "잠금 해제"
       ],
+      "Unlock Breach Report": [
+        "침해 보고서 잠금해제"
+      ],
+      "Unlock breach reports": [
+        "침해 보고서 해금하기"
+      ],
       "Unlock data": [
         "데이터 잠금 해제"
       ],
@@ -1003,6 +1009,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
+      ],
+      "Upgrade to view all": [
+        "업그레이드하여 모두 보기"
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
@@ -1125,9 +1134,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "삭제"
-      ],
       "Disable": [
         "비활성화"
       ],
@@ -3029,6 +3035,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME } 바닥글을 지우기 위해 업그레이드 하고, 다른 프리미엄 기능들도 함께 잠금 해제하세요."
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "맞춤형 권장사항을 포함하는 완전한 보고서를 확인하려면 유료 요금제로 업그레이드하십시오."
+      ],
       "Track the status and activity of your referrals.": [
         "사용자의 리퍼럴 상태와 활동을 추적하세요."
       ],
@@ -3653,8 +3662,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local }이 사용자 이름입니다. ${ Local }@${ Domain }를 만들기 위해서는 설정 > 메시지 및 메일 쓰기 > 짧은 도메인 (pm.me)로 이동하세요."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }을(를) 생성하려면, 일반 > 메시지 및 작성 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
@@ -3730,9 +3739,6 @@
       ],
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
-      ],
-      "Error": [
-        "오류"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
@@ -3994,9 +4000,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "허용되는 최소 결제 금액은 ${ price } 입니다."
-      ],
-      "The organization key must be activated first": [
-        "조직 키가 먼저 활성화되어야 합니다"
       ],
       "The sending key is not valid": [
         "전송 키가 유효하지 않음"
@@ -5997,6 +6000,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "전송자가 메시지를 열었는지 그리고 언제 열었는지 확인할 수 없도록 차단합니다."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "침해 경고는 ${ BRAND_NAME }의 독자적인 데이터셋, 오픈소스 데이터셋, Constella Intelligence를 사용합니다. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -6017,6 +6023,9 @@
       ],
       "Center": [
         "가운데 정렬"
+      ],
+      "Change your password": [
+        "비밀번호를 변경하십시오"
       ],
       "Check the status of imports and forwarding.": [
         "불러오기 및 포워딩 상태를 확인하세요."
@@ -6132,9 +6141,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 취소하시겠습니까?"
       ],
-      "Done": [
-        "완료"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "완료! ${ destination } 로 코드를 전송했습니다."
       ],
@@ -6182,6 +6188,9 @@
       ],
       "Edit link": [
         "링크 편집"
+      ],
+      "email": [
+        "이메일"
       ],
       "Email address": [
         "이메일 주소"
@@ -6282,6 +6291,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "필터는 수신과 발신을 포함한 모든 이메일에서 작동합니다. 각 필터는 적어도 이름, 조건 및 작업을 포함해야 합니다."
       ],
+      "finance": [
+        "금융정보"
+      ],
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서 진심으로 감사드립니다."
       ],
@@ -6323,6 +6335,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "프록시를 통해 서버 콘텐츠를 로드하여 식별 정보를 숨깁니다. 콘텐츠를 첨부 파일로 저장하는 옵션입니다."
+      ],
+      "High Priority": [
+        "중요도 높음"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
@@ -6406,7 +6421,7 @@
         "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실형 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
+        "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실한 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
@@ -6537,6 +6552,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "로그는 ${ BRAND_NAME_TWO } 자격 증명을 사용하는 모든 ${ BRAND_NAME } 서비스의 인증 시도를 포함합니다."
       ],
+      "Low Priority": [
+        "중요도 낮음"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
       ],
@@ -6551,6 +6569,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
+      ],
+      "Medium Priority": [
+        "중요도 보통"
       ],
       "Member": [
         "회원"
@@ -6693,6 +6714,9 @@
       "Paid for a monthly plan": [
         "매달 플랜 결제"
       ],
+      "password": [
+        "비밀번호"
+      ],
       "Password copied to clipboard": [
         "비밀번호 복사됨"
       ],
@@ -6806,9 +6830,6 @@
       ],
       "purchase additional storage": [
         "추가 용량 구매"
-      ],
-      "Queued": [
-        "대기열에 추가됨"
       ],
       "read our two-factor authentication guide first": [
         "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
@@ -7308,6 +7329,15 @@
       "URL link": [
         "URL 링크"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "${ BRAND_NAME } Pass를 사용하여 강력한 비밀번호를 생성하고 재사용을 피하십시오"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Netshield가 활성화된 ${ VPN_APP_NAME }을 사용하여 피싱과 멀웨어로부터 보호받으십시오"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "온라인 서비스 가입시에는 별칭을 사용하십시오. 이러하면 실제 이메일 주소와 신원을 보호하여 침해의 파장을 제한할 수 있습니다."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
       ],
@@ -7322,6 +7352,9 @@
       ],
       "User activated": [
         "사용자 활성화됨"
+      ],
+      "username": [
+        "사용자 이름"
       ],
       "Users": [
         "사용자"
@@ -7365,6 +7398,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "경고: 삭제는 영구적입니다. 이렇게 하면 연결된 모든 서비스에 더 이상 접근할 수 없게 되고, 저장된 모든 연락처가 삭제됩니다."
       ],
+      "Ways you can minimize your breach risks": [
+        "침해 리스크를 최소화할 수 있는 방법"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "가능하면 ${ VPN_APP_NAME } 공식 애플리케이션 사용을 권장합니다."
       ],
@@ -7376,6 +7412,9 @@
       ],
       "We just sent you a new link.": [
         "방금 새 링크를 보내드렸습니다."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "저희는 당신의 이메일 주소, 비밀번호 그리고 개인정보가 다크 웹에 나타나는지를 감시하고 데이터가 노출된 경우에는 안내해드립니다."
       ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
@@ -9042,6 +9081,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 환영 이메일"
+      ],
+      "Daily email notifications": [
+        "일일 이메일 알림"
       ]
     },
     "Label in domain modal": {
@@ -9175,6 +9217,9 @@
       "Create account": [
         "계정 생성"
       ],
+      "Create an alias": [
+        "별칭 만들기"
+      ],
       "Encryption and keys": [
         "암호화 및 키"
       ],
@@ -9183,6 +9228,12 @@
       ],
       "General": [
         "일반"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "${ BRAND_NAME } Pass 받기"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } 받기"
       ],
       "Help translate": [
         "번역 돕기"
@@ -9371,6 +9422,9 @@
     "Member action": {
       "Activate user": [
         "사용자 활성화"
+      ],
+      "Add address": [
+        "주소 추가"
       ],
       "Change password": [
         "비밀번호 변경"
@@ -11282,6 +11336,17 @@
         "개인용"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **이전 패스워드**로만 잠금해제할 수 있습니다."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **복구 문구** 또는 **이전 비밀번호**로만 잠금해제할 수 있습니다."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "모든 **2단계 인증 (2FA)** 방법이 비활성화됩니다."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "모든 관리자가 키에 접근할 수 있습니다."
@@ -11313,11 +11378,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "권한이 거부되었으며 관리자 권한이 제한되었습니다."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "활성화된 주소를 갖고 있는지 확인하시고 이후에 따로 초대하시기 바랍니다."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "개인 사용자는 처음 로그인하면 관리자로 승격할 수 있습니다."
       ],
       "Reset organization key": [
         "조직 키 재설정"
+      ],
+      "The following administrators could not be restored.": [
+        "다음의 관리자를 복구할 수 없었습니다."
       ],
       "The following administrators will get access to the organization key.": [
         "다음 관리자는 조직 키에 접근할 수 있게 됩니다."
@@ -11388,8 +11459,8 @@
       "Invalid expiration date": [
         "올바르지 않은 만료 기한"
       ],
-      "Invalid securiry code": [
-        "잘못된 보안 코드"
+      "Invalid security code": [
+        "유효하지 않은 보안 코드"
       ],
       "Something went wrong. Please try again later.": [
         "문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -13106,6 +13177,18 @@
       "Billing cycle": [
         "결제 주기"
       ],
+      "Breach Alerts": [
+        "침해 알림"
+      ],
+      "Breach Date": [
+        "침해 일자"
+      ],
+      "Breach Information": [
+        "침해 정보"
+      ],
+      "Breach Size": [
+        "침해 규모"
+      ],
       "Bridge for ${ platform }": [
         "${ platform }용 Bridge"
       ],
@@ -13153,6 +13236,9 @@
       ],
       "Clear out the junk": [
         "정크 삭제"
+      ],
+      "Close": [
+        "닫기"
       ],
       "Composing": [
         "작성 중"
@@ -13364,6 +13450,9 @@
       "Email": [
         "이메일"
       ],
+      "Email address": [
+        "이메일 주소"
+      ],
       "Email composer": [
         "이메일 작성"
       ],
@@ -13402,6 +13491,9 @@
       ],
       "Export public key": [
         "공개 키 내보내기"
+      ],
+      "Exposed info": [
+        "노출된 정보"
       ],
       "External PGP settings": [
         "외부 PGP 설정"
@@ -13562,6 +13654,9 @@
       "Night theme": [
         "야간 테마"
       ],
+      "No account information was found in any data breaches": [
+        "어떠한 데이터 침해사례에서도 계정의 정보를 찾을 수 없습니다"
+      ],
       "No recovery method": [
         "복구 방법 없음"
       ],
@@ -13630,6 +13725,9 @@
       ],
       "Recommended": [
         "추천됨"
+      ],
+      "Recommended actions": [
+        "권장하는 조치"
       ],
       "Reconnect your account": [
         "계정 재연결"
@@ -13894,6 +13992,9 @@
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
+      ],
+      "Your Exposed Information": [
+        "노출된 나의 정보"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus 무료 체험판이 ${ textDate }에 종료됩니다"
