@@ -596,9 +596,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "삭제"
-      ],
       "Disable": [
         "비활성화"
       ],
@@ -1904,8 +1901,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local }이 사용자 이름입니다. ${ Local }@${ Domain }를 만들기 위해서는 설정 > 메시지 및 메일 쓰기 > 짧은 도메인 (pm.me)로 이동하세요."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }을(를) 생성하려면, 일반 > 메시지 및 작성 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
@@ -1936,9 +1933,6 @@
       ],
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
-      ],
-      "Error": [
-        "오류"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
@@ -2074,9 +2068,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "허용되는 최소 결제 금액은 ${ price } 입니다."
-      ],
-      "The organization key must be activated first": [
-        "조직 키가 먼저 활성화되어야 합니다"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
@@ -2949,9 +2940,6 @@
       "Domain ownership verified.": [
         "도메인 소유권이 인증되었습니다."
       ],
-      "Done": [
-        "완료"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "완료! ${ destination } 로 코드를 전송했습니다."
       ],
@@ -3115,7 +3103,7 @@
         "만약 이 계정을 다른 계정과 합치려는 경우, 절대로 삭제하지 마세요."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실형 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
+        "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실한 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
@@ -3341,9 +3329,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
-      ],
-      "Queued": [
-        "대기열에 추가됨"
       ],
       "read our two-factor authentication guide first": [
         "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
@@ -4447,6 +4432,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 환영 이메일"
+      ],
+      "Daily email notifications": [
+        "일일 이메일 알림"
       ]
     },
     "Label on payment method": {
@@ -4614,6 +4602,9 @@
     "Member action": {
       "Activate user": [
         "사용자 활성화"
+      ],
+      "Add address": [
+        "주소 추가"
       ],
       "Change password": [
         "비밀번호 변경"
@@ -5690,6 +5681,17 @@
         "모든 ${ BRAND_NAME } Plus 서비스. ${ br }쉬운 구독."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **이전 패스워드**로만 잠금해제할 수 있습니다."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**기존의 모든 데이터**(이메일, 이벤트, 연락처, 파일, ${ PASS_APP_NAME } 입력사항 외 기타)가 **잠길 것이고** 내 **복구 문구** 또는 **이전 비밀번호**로만 잠금해제할 수 있습니다."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "모든 **2단계 인증 (2FA)** 방법이 비활성화됩니다."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "모든 관리자가 키에 접근할 수 있습니다."
@@ -5721,11 +5723,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "권한이 거부되었으며 관리자 권한이 제한되었습니다."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "활성화된 주소를 갖고 있는지 확인하시고 이후에 따로 초대하시기 바랍니다."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "개인 사용자는 처음 로그인하면 관리자로 승격할 수 있습니다."
       ],
       "Reset organization key": [
         "조직 키 재설정"
+      ],
+      "The following administrators could not be restored.": [
+        "다음의 관리자를 복구할 수 없었습니다."
       ],
       "The following administrators will get access to the organization key.": [
         "다음 관리자는 조직 키에 접근할 수 있게 됩니다."
@@ -5796,8 +5804,8 @@
       "Invalid expiration date": [
         "올바르지 않은 만료 기한"
       ],
-      "Invalid securiry code": [
-        "잘못된 보안 코드"
+      "Invalid security code": [
+        "유효하지 않은 보안 코드"
       ],
       "Something went wrong. Please try again later.": [
         "문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -6993,6 +7001,9 @@
       ],
       "Change role": [
         "역할 변경"
+      ],
+      "Close": [
+        "닫기"
       ],
       "Confirm": [
         "확인"

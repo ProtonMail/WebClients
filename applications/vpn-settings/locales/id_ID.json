@@ -596,9 +596,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Hapus"
-      ],
       "Disable": [
         "Nonaktifkan"
       ],
@@ -1904,8 +1901,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } merupakan nama pengguna Anda. Untuk membuat alamat khusus ${ Local }@${ Domain }, silakan kunjungi Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
@@ -1936,9 +1933,6 @@
       ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
-      ],
-      "Error": [
-        "Galat"
       ],
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
@@ -2074,9 +2068,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Kunci organisasi harus diaktifkan terlebih dahulu"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
@@ -2949,9 +2940,6 @@
       "Domain ownership verified.": [
         "Kemilikan domain diverifikasi."
       ],
-      "Done": [
-        "Selesai"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
       ],
@@ -3338,9 +3326,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh undang-undang privasi Swiss"
-      ],
-      "Queued": [
-        "Ditempatkan dalam antrian"
       ],
       "read our two-factor authentication guide first": [
         "baca panduan autentikasi dua faktor kami terlebih dahulu"
@@ -3978,7 +3963,7 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Pengguna ${ BRAND_NAME }"
+        "Nama pengguna ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -4441,6 +4426,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } surel datang"
+      ],
+      "Daily email notifications": [
+        "Notifikasi email harian"
       ]
     },
     "Label on payment method": {
@@ -4608,6 +4596,9 @@
     "Member action": {
       "Activate user": [
         "Aktifkan pengguna"
+      ],
+      "Add address": [
+        "Tambah alamat"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -5705,11 +5696,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Izin ditolak. Hak administrator telah dibatasi."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Pastikan mereka telah memliki alamat yang aktif, dan undang mereka satu per satu apabila sudah."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Pengguna privat dapat diangkat sebagai admin pada saat mereka memasuki akun untuk yang pertama kalinya"
       ],
       "Reset organization key": [
         "Atur ulang kunci organisasi"
+      ],
+      "The following administrators could not be restored.": [
+        "Para administrator berikut tidak dapat dipulihkan."
       ],
       "The following administrators will get access to the organization key.": [
         "Para administrator berikut akan memperoleh akses ke kunci organisasi."
@@ -5780,7 +5777,7 @@
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Kode keamanan tidak valid"
       ],
       "Something went wrong. Please try again later.": [
@@ -5812,7 +5809,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Cara menghubungi Anda"
+        "Cara untuk menghubungi Anda"
       ],
       "Add gift code": [
         "Tambah kode hadiah"
@@ -6980,6 +6977,9 @@
       ],
       "Change role": [
         "Ubah peran"
+      ],
+      "Close": [
+        "Tutup"
       ],
       "Confirm": [
         "Konfirmasi"

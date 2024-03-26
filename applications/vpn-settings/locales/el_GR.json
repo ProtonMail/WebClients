@@ -134,6 +134,9 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete address": [
+        "Διαγραφή διεύθυνσης"
+      ],
       "Delete Gateway": [
         "Διαγραφή Πύλης"
       ],
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Διαγραφή"
+      "Delete address": [
+        "Διαγραφή διεύθυνσης"
       ],
       "Disable": [
         "Απενεργοποίηση"
@@ -1856,6 +1859,25 @@
         "/χρήστη ανά μήνα"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Αφού διαγραφεί, αυτή η διεύθυνση δεν μπορεί να χρησιμοποιηθεί ξανά από εσάς ή οποιονδήποτε άλλο."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Η επόμενη ενεργή διεύθυνση στη λίστα σας θα οριστεί ως προεπιλεγμένη."
+      ],
+      "You can only delete 1 address per year.": [
+        "Μπορείτε να διαγράψετε μόνο 1 διεύθυνση ανά έτος."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Μπορείτε να διαγράψετε μόνο 1 διεύθυνση ανά έτος"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Έχετε συμπληρώσει το όριο των διαγραφών διευθύνσεων για αυτόν τον χρήστη."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Καθυστερημένο τιμολόγιο"
@@ -1938,8 +1960,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } είναι το όνομα χρήστη σας. Για να δημιουργήσετε ${ Local }@${ Domain }, παρακαλούμε πηγαίνετε Ρυθμίσεις > Μηνύματα και σύνταξη > Σύντομο domain (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
@@ -1970,9 +1992,6 @@
       ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
-      ],
-      "Error": [
-        "Σφάλμα"
       ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
@@ -2108,9 +2127,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Η ελάχιστη αποδεκτή πληρωμή είναι ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
@@ -3077,9 +3093,6 @@
       "Domain ownership verified.": [
         "Επαληθεύτηκε η ιδιοκτησία τομέα."
       ],
-      "Done": [
-        "Ολοκληρώθηκε"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
@@ -3478,9 +3491,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
-      ],
-      "Queued": [
-        "Σε αναμονή"
       ],
       "read our two-factor authentication guide first": [
         "διαβάστε πρώτα τον οδηγό μας ταυτοποίησης δύο παραγόντων"
@@ -4629,6 +4639,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Emails καλωσορίσματος ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Label on payment method": {
@@ -4802,6 +4815,9 @@
     "Member action": {
       "Activate user": [
         "Ενεργοποίηση χρήστη"
+      ],
+      "Add address": [
+        "Προσθήκη διεύθυνσης"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -5953,6 +5969,17 @@
         "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τον **παλιό κωδικό πρόσβασης** σας."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τη **φράση ανάκτησης** ή τον **παλιό κωδικό πρόσβασης** σας."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Οποιαδήποτε μέθοδος **ελέγχου ταυτότητας δύο παραγόντων (2FA)** στον λογαριασμό σας θα απενεργοποιηθεί."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Όλοι οι διαχειριστές θα έχουν πρόσβαση στο κλειδί."
@@ -5984,11 +6011,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Βεβαιωθείτε ότι έχουν ενεργοποιημένη διεύθυνση και προσκαλέστε τους ξεχωριστά αργότερα."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Οι ιδιώτες χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν συνδεθούν για πρώτη φορά"
       ],
       "Reset organization key": [
         "Επαναφορά κλειδιού οργανισμού"
+      ],
+      "The following administrators could not be restored.": [
+        "Δεν ήταν δυνατή η επαναφορά των ακόλουθων διαχειριστών."
       ],
       "The following administrators will get access to the organization key.": [
         "Οι ακόλουθοι διαχειριστές θα έχουν πρόσβαση στο κλειδί οργανισμού."
@@ -6059,7 +6092,7 @@
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Μη έγκυρος κωδικός ασφαλείας"
       ],
       "Something went wrong. Please try again later.": [
@@ -7405,6 +7438,9 @@
       "Change role": [
         "Αλλαγή ρόλου"
       ],
+      "Close": [
+        "Κλείσιμο"
+      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -7480,6 +7516,9 @@
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
+      ],
+      "Delete address permanently?": [
+        "Οριστική διαγραφή διεύθυνσης;"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρα)",
