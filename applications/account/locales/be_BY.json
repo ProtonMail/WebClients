@@ -305,6 +305,9 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete address": [
+        "Выдаліць адрас"
+      ],
       "Delete and confirm": [
         "Выдаліць і пацвердзіць"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Разблакіраваць"
       ],
+      "Unlock Breach Report": [
+        "Разблакіраваць справаздачу ўцечкі"
+      ],
+      "Unlock breach reports": [
+        "Разблакіраваць справаздачы ўцечкі"
+      ],
       "Unlock data": [
         "Разблакіраваць даныя"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Палепшыць, каб паглядзець усё"
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
@@ -1143,8 +1155,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Выдаліць"
+      "Delete address": [
+        "Выдаліць адрас"
       ],
       "Disable": [
         "Адключыць"
@@ -1271,7 +1283,7 @@
         "Памылковы файл ICS"
       ],
       "Invalid method": [
-        "Памылковы спосаб"
+        "Памылковы метад"
       ],
       "Unsupported calendar component": [
         "Кампанент календара не падтрымліваецца"
@@ -3061,6 +3073,25 @@
         "Невядома"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Вы або іншы карыстальнік больш не зможаце выкарыстоўваць гэта адрас паўторна, калі яго выдаліць."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Наступны актыўны адрас у вашым спісе будзе зададзены ў якасці прадвызначанага."
+      ],
+      "You can only delete 1 address per year.": [
+        "Вы можаце выдаліць толькі адзін адрас у год."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Вы можаце выдаліць толькі адзін адрас у год"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Вы дасягнулі абмежавання па колькасці адрасоў, якія можна выдаліць для гэтага карыстальніка."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Усе падзеі ў гэтым календары будуць выдалены."
@@ -3110,6 +3141,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Палепшыце бягучы тарыфны план і разблакіруйце магчымасць выдалення ніжняга калонтытула ${ MAIL_APP_NAME }, а таксама іншыя прэміяльныя функцыі."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Набудзьце платны тарыфны план для прагляду поўнай справаздачы, якая ўключае персаналізаваныя рэкамендацыі."
       ],
       "Track the status and activity of your referrals.": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак."
@@ -3735,8 +3769,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } ваша імя карыстальніка. Каб стварыць ${ Local }@${ Domain }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
       ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
@@ -3824,9 +3858,6 @@
       ],
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
-      ],
-      "Error": [
-        "Памылка"
       ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
@@ -4106,9 +4137,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Мінімальная аплата, якую мы прымаем, складае ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Спачатку неабходна актываваць ключ арганізацыі"
       ],
       "The sending key is not valid": [
         "Несапраўдны ключ адпраўкі"
@@ -6392,6 +6420,9 @@
       "Center": [
         "Па цэнтры"
       ],
+      "Change your password": [
+        "Змяніць свой пароль"
+      ],
       "Check the status of imports and forwarding.": [
         "Праверыць статус імпартавання і перасылкі."
       ],
@@ -6530,9 +6561,6 @@
         "даменаў выкарыстоўваецца",
         "дамены выкарыстоўваюцца"
       ],
-      "Done": [
-        "Гатова"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Гатова! Мы адправілі код на ${ destination }."
       ],
@@ -6580,6 +6608,9 @@
       ],
       "Edit link": [
         "Рэдагаваць спасылку"
+      ],
+      "email": [
+        "электронная пошта"
       ],
       "Email address": [
         "Адрас электроннай пошты"
@@ -6680,6 +6711,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсёй пошты, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
+      "finance": [
+        "фінансы"
+      ],
       "for choosing ${ product }": [
         "для выбару ${ product }"
       ],
@@ -6721,6 +6755,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Хавае ідэнтыфікацыйную інфармацыю шляхам загрузкі аддаленага змесціва праз проксі-сервер. Магчымасць захавання змесціва ў якасці далучэнняў."
+      ],
+      "High Priority": [
+        "Высокі прыярытэт"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -6947,6 +6984,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "У журнале пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Нізкі прыярытэт"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або наладжаны не адпаведным чынам."
       ],
@@ -6962,6 +7002,9 @@
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Сярэдні прыярытэт"
+      ],
       "Member": [
         "Удзельнік"
       ],
@@ -6970,6 +7013,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "Monitor accounts": [
+        "Назіранне за ўліковымі запісамі"
       ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
@@ -7106,6 +7152,9 @@
       "Paid for a monthly plan": [
         "Памесячная аплата тарыфнага плана"
       ],
+      "password": [
+        "пароль"
+      ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
@@ -7205,6 +7254,9 @@
       "Please wait till your changes are synced with the server.": [
         "Пачакайце, пакуль вашы змены сінхранізуюцца з серверам."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Плюс яшчэ ${ numOfBreaches }"
+      ],
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
       ],
@@ -7237,9 +7289,6 @@
       ],
       "purchase additional storage": [
         "набыць дадатковае сховішча"
-      ],
-      "Queued": [
-        "У чарзе"
       ],
       "read our two-factor authentication guide first": [
         "спачатку прачытайце наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
@@ -7763,6 +7812,15 @@
       "URL link": [
         "URL-спасылка"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Выкарыстоўвайце ${ BRAND_NAME } Pass для генерацыі надзейных пароляў і пазбягайце паўторнага выкарыстання пароляў"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Выкарыстоўвайце ${ VPN_APP_NAME } з уключаным Netshield, які абараняе ад фішынга і шкодных праграм"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Выкарыстоўвайце псеўданімы для рэгістрацыі на сэрвісы ў інтэрнэце. Гэта абароніць ваш рэальны адрас электроннай пошты і асабістыя даныя, а таксама скараціць імавернасць уцечкі."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Выкарыстоўвайце лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
       ],
@@ -7777,6 +7835,9 @@
       ],
       "User activated": [
         "Карыстальнік актываваны"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -7820,6 +7881,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падключаных сэрвісаў і выдаліць усе вашы кантакты."
       ],
+      "Ways you can minimize your breach risks": [
+        "Спосабы для мінімізацыі рызыкі ўцечкі"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
       ],
@@ -7831,6 +7895,9 @@
       ],
       "We just sent you a new link.": [
         "Мы адправілі вам новую спасылку."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Мы назіраем за вашымі адрасамі электроннай пошты, паролямі і персанальнымі данымі на прадмет таго, каб яны не з'явіліся ў цёмнай павуціне і апавяшчаем вас у выпадку кампраметацыі вашых даных."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -8583,7 +8650,7 @@
         "Экспартаваць прыватны ключ"
       ],
       "Export public key": [
-        "Экспартаванне публічнага ключа"
+        "Экспартаваць публічны ключ"
       ],
       "Make primary": [
         "Зрабіць асноўным"
@@ -9574,6 +9641,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Штодзённыя апавяшчэнні па электроннай пошце"
       ]
     },
     "Label in domain modal": {
@@ -9707,6 +9777,9 @@
       "Create account": [
         "Стварыць уліковы запіс"
       ],
+      "Create an alias": [
+        "Стварыць псеўданім"
+      ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
       ],
@@ -9715,6 +9788,12 @@
       ],
       "General": [
         "Агульныя"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Атрымаць ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Атрымаць ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Дапамагчы з перакладам"
@@ -9957,6 +10036,9 @@
     "Member action": {
       "Activate user": [
         "Актываваць карыстальніка"
+      ],
+      "Add address": [
+        "Дадаць адрас"
       ],
       "Change password": [
         "Змяніць пароль"
@@ -12081,11 +12163,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "У доступе адмоўлена, прывілеі адміністратара абмежаваны."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Пераканайцеся, што ў іх ёсць актыўны адрас, а потым запрасіце іх паасобку."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры першым уваходзе ў сістэму"
       ],
       "Reset organization key": [
         "Скінуць ключ арганізацыі"
+      ],
+      "The following administrators could not be restored.": [
+        "Наступных адміністратараў не атрымалася аднавіць."
       ],
       "The following administrators will get access to the organization key.": [
         "Наступныя адміністратары атрымаюць доступ да ключа арганізацыі."
@@ -12156,7 +12244,7 @@
       "Invalid expiration date": [
         "Памылковая дата заканчэння тэрміну дзеяння карткі"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Памылковы код бяспекі"
       ],
       "Something went wrong. Please try again later.": [
@@ -14145,6 +14233,18 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Breach Alerts": [
+        "Папярэджанні ўцечкі"
+      ],
+      "Breach Date": [
+        "Дата ўцечкі"
+      ],
+      "Breach Information": [
+        "Звесткі аб уцечках"
+      ],
+      "Breach Size": [
+        "Памер уцечкі"
+      ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
@@ -14192,6 +14292,9 @@
       ],
       "Clear out the junk": [
         "Ачысціць непажаданую пошту"
+      ],
+      "Close": [
+        "Закрыць"
       ],
       "Composing": [
         "Напісанне"
@@ -14313,6 +14416,9 @@
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
+      "Delete address permanently?": [
+        "Выдаліць адрас незваротна?"
+      ],
       "Delete calendar": [
         "Выдаліць каляндар"
       ],
@@ -14415,6 +14521,9 @@
       "Email": [
         "Электронная пошта"
       ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Email composer": [
         "Рэдактар электронных лістоў"
       ],
@@ -14452,7 +14561,10 @@
         "Экспартаваць прыватны ключ"
       ],
       "Export public key": [
-        "Экспартаванне публічнага ключа"
+        "Экспартаваць публічны ключ"
+      ],
+      "Exposed info": [
+        "Звесткі кампраметацыі"
       ],
       "External PGP settings": [
         "Налады знешняга PGP"
@@ -14625,6 +14737,9 @@
       "Night theme": [
         "Начная тэма"
       ],
+      "No account information was found in any data breaches": [
+        "Звесткі пра ўліковы запіс не былі знойдзены ў ніякіх скампраметаваных даных"
+      ],
       "No recovery method": [
         "Адсутнічае спосаб аднаўлення"
       ],
@@ -14693,6 +14808,9 @@
       ],
       "Recommended": [
         "Рэкамендавана"
+      ],
+      "Recommended actions": [
+        "Рэкамендаваныя дзеянні"
       ],
       "Reconnect your account": [
         "Перападключыць свой уліковы запіс"
@@ -14963,6 +15081,9 @@
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
+      ],
+      "Your Exposed Information": [
+        "Вашы скампраметаваныя звесткі"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
@@ -15443,7 +15564,7 @@
         "Падпіска аўтаматычна падаўжаецца кожны 1 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 1 месяц."
       ],
       "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
-        "Падпіска аўтаматычна падаўжаецца кожны 3 месяц. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
+        "Падпіска аўтаматычна падаўжаецца кожны 3 месяцы. Наступная дата спагнання грашовых сродкаў адбудзецца праз 3 месяцы."
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
@@ -15468,13 +15589,13 @@
         "15 месяцаў"
       ],
       "18-month": [
-        "18-месячную"
+        "18-месячнай"
       ],
       "2-year": [
         "2 гады"
       ],
       "3-month": [
-        "3-месячную"
+        "3-месячнай"
       ],
       "30-month": [
         "30 месяцаў"

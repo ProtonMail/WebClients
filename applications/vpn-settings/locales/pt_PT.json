@@ -57,7 +57,7 @@
         "Cancelar subscrição"
       ],
       "Change keys": [
-        "Alterar a chave"
+        "Alterar chaves"
       ],
       "Change mailbox password": [
         "Alterar a palavra-passe da caixa de correio"
@@ -402,7 +402,7 @@
         "Selecionar ${ planTitle }"
       ],
       "Select country": [
-        "Seleccionar país"
+        "Selecionar país"
       ],
       "Select file": [
         "Selecionar um ficheiro"
@@ -578,9 +578,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Eliminar"
-      ],
       "Disable": [
         "Desativar"
       ],
@@ -1794,9 +1791,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } é o seu nome de utilizador. Para criar ${ Local }@${ Domain }, vá a Definições > Mensagens e composição > Domínio curto (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
       ],
@@ -1823,9 +1817,6 @@
       ],
       "Enter 6 digits": [
         "Introduza 6 algarismos"
-      ],
-      "Error": [
-        "Erro"
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
@@ -1949,9 +1940,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Tem de ativar a chave da organização primeiro"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -2848,9 +2836,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
       ],
-      "Done": [
-        "Concluído"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Já está! Enviámos um código para ${ destination }."
       ],
@@ -3203,9 +3188,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
-      ],
-      "Queued": [
-        "Em espera"
       ],
       "read our two-factor authentication guide first": [
         "leia primeiro o nosso guia de autenticação de dois fatores"
@@ -4252,6 +4234,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas de ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Notificações diárias por e-mail"
       ]
     },
     "Label on payment method": {
@@ -6139,6 +6124,9 @@
       ],
       "Your storage is full": [
         "O seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "O seu armazenamento está cheio. ${ cta }"
       ]
     },
     "Subscription": {

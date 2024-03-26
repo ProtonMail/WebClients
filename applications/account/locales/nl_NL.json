@@ -1137,9 +1137,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Verwijderen"
-      ],
       "Disable": [
         "Uitschakelen"
       ],
@@ -3709,8 +3706,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } is uw gebruikersnaam. Om ${ Local }@${ Domain } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
       ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
@@ -3794,9 +3791,6 @@
       ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
-      ],
-      "Error": [
-        "Fout"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
@@ -4070,9 +4064,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "De minimale betaling die we accepteren is ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "De organisatiesleutel moet eerst geactiveerd worden"
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
@@ -6270,6 +6261,9 @@
       "Center": [
         "Centreren"
       ],
+      "Change your password": [
+        "Wijzig uw wachtwoord"
+      ],
       "Check the status of imports and forwarding.": [
         "Controleer de status van uw import- en doorstuuropdrachten."
       ],
@@ -6399,9 +6393,6 @@
       "domain used": [
         "domein gebruikt",
         "domeinen gebruikt"
-      ],
-      "Done": [
-        "Klaar"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
@@ -6591,6 +6582,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Verbergt identificeerbare informatie door inhoud op afstand via een proxy te laden. Optie om inhoud als bijlagen op te slaan."
+      ],
+      "High Priority": [
+        "Hoge Prioriteit"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
@@ -6813,6 +6807,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logboeken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME_TWO }-inloggegevens gebruiken."
       ],
+      "Low Priority": [
+        "Lage Prioriteit"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Belangrijke e-maildiensten kunnen uw e-mails weigeren of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet correct wordt ingesteld."
       ],
@@ -6970,6 +6967,9 @@
       "Paid for a monthly plan": [
         "Betaald voor een maandelijks abonnement"
       ],
+      "password": [
+        "wachtwoord"
+      ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
@@ -7095,9 +7095,6 @@
       ],
       "purchase additional storage": [
         "extra opslagruimte aanschaffen"
-      ],
-      "Queued": [
-        "In wachtrij"
       ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
@@ -7627,6 +7624,9 @@
       ],
       "User activated": [
         "Gebruiker geactiveerd"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -8579,7 +8579,7 @@
         "Toegekend"
       ],
       "Beta": [
-        "Beta"
+        "Bèta"
       ],
       "Billing address": [
         "Facturatie adres"
@@ -9398,6 +9398,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } welkomst-e-mail"
+      ],
+      "Daily email notifications": [
+        "Dagelijkse e-mailmeldingen"
       ]
     },
     "Label in domain modal": {
@@ -9531,6 +9534,9 @@
       "Create account": [
         "Account aanmaken"
       ],
+      "Create an alias": [
+        "Alias aanmaken"
+      ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
       ],
@@ -9539,6 +9545,9 @@
       ],
       "General": [
         "Algemeen"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Kies ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Help met vertalen"
@@ -9765,6 +9774,9 @@
     "Member action": {
       "Activate user": [
         "Activeer gebruiker"
+      ],
+      "Add address": [
+        "E-mailadres toevoegen"
       ],
       "Change password": [
         "Wachtwoord wijzigen"
@@ -11888,9 +11900,6 @@
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
-      ],
-      "Invalid securiry code": [
-        "Ongeldige beveiligingscode"
       ],
       "Something went wrong. Please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."

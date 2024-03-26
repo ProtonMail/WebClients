@@ -134,6 +134,9 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete address": [
+        "Adresse löschen"
+      ],
       "Delete Gateway": [
         "Gateway löschen"
       ],
@@ -608,8 +611,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Löschen"
+      "Delete address": [
+        "Adresse löschen"
       ],
       "Disable": [
         "Deaktivieren"
@@ -1856,6 +1859,25 @@
         "/Benutzer pro Monat"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Einmal gelöscht, kann diese Adresse nicht mehr benutzt werden, weder von dir noch von jemand anderem."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Die nächste aktive Adresse auf deiner Liste wird als Standardadresse festgelegt."
+      ],
+      "You can only delete 1 address per year.": [
+        "Du kannst jährlich nur eine Adresse löschen."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kannst jährlich nur eine Adresse löschen"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du hast das Limit für das Löschen von Adressen für diesen Benutzer erreicht."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Überfällige Rechnung"
@@ -1938,8 +1960,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } ist dein Benutzername. Um ${ Local }@${ Domain } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
@@ -1970,9 +1992,6 @@
       ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
-      ],
-      "Error": [
-        "Fehler"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
@@ -2108,9 +2127,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Der akzeptierte Mindestzahlbetrag beträgt ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Der Organisationsschlüssel muss zunächst aktiviert werden"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
@@ -3077,9 +3093,6 @@
       "Domain ownership verified.": [
         "Inhaberschaft der Domain bestätigt."
       ],
-      "Done": [
-        "Fertig"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Fertig! Es wurde ein Code an „${ destination }“ gesendet."
       ],
@@ -3478,9 +3491,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
-      ],
-      "Queued": [
-        "Eingereiht"
       ],
       "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
@@ -4629,6 +4639,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-Willkommens-E-Mails"
+      ],
+      "Daily email notifications": [
+        "Tägliche E-Mail-Benachrichtigungen"
       ]
     },
     "Label on payment method": {
@@ -4802,6 +4815,9 @@
     "Member action": {
       "Activate user": [
         "Benutzer aktivieren"
+      ],
+      "Add address": [
+        "Adresse hinzufügen"
       ],
       "Change password": [
         "Passwort ändern"
@@ -5191,6 +5207,9 @@
       ],
       "Router support": [
         "Router-Unterstützung"
+      ],
+      "Schedule and snooze emails for any time": [
+        "E-Mails für einen beliebigen Zeitpunkt planen und zurückstellen"
       ],
       "Schedule messages at any time": [
         "Nachrichten zu jeder Zeit planen"
@@ -5981,11 +6000,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Bitte stelle sicher, dass sie eine aktivierte Adresse haben und lade sie später separat ein."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private Benutzer können zum Administrator befördert werden, wenn sie sich zum ersten Mal angemeldet haben"
       ],
       "Reset organization key": [
         "Schlüssel der Organisation zurücksetzen"
+      ],
+      "The following administrators could not be restored.": [
+        "Die folgenden Administratoren konnten nicht wiederhergestellt werden."
       ],
       "The following administrators will get access to the organization key.": [
         "Die folgenden Administratoren erhalten Zugriff auf den Organisationsschlüssel."
@@ -6056,7 +6081,7 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Ungültiger Sicherheitscode"
       ],
       "Something went wrong. Please try again later.": [
@@ -7405,6 +7430,9 @@
       "Change role": [
         "Rolle ändern"
       ],
+      "Close": [
+        "Schließen"
+      ],
       "Confirm": [
         "Bestätigen"
       ],
@@ -7480,6 +7508,9 @@
       ],
       "Delete account": [
         "Konto löschen"
+      ],
+      "Delete address permanently?": [
+        "Adresse dauerhaft löschen?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",

@@ -602,9 +602,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Odstranit"
-      ],
       "Disable": [
         "Deaktivovat"
       ],
@@ -1942,9 +1939,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } je vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
       ],
@@ -1974,9 +1968,6 @@
       ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
-      ],
-      "Error": [
-        "Chyba"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
@@ -2112,9 +2103,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimální platba, kterou přijímáme je ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Nejprve musí být aktivován klíč organizace"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
@@ -3094,9 +3082,6 @@
       "Domain ownership verified.": [
         "Vlastnictví domény ověřeno."
       ],
-      "Done": [
-        "Hotovo"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odeslali jsme kód na adresu ${ destination }."
       ],
@@ -3474,9 +3459,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
-      ],
-      "Queued": [
-        "Ve frontě"
       ],
       "read our two-factor authentication guide first": [
         "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
@@ -4601,6 +4583,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítací e-maily"
+      ],
+      "Daily email notifications": [
+        "Denní e-mailová upozornění"
       ]
     },
     "Label on payment method": {
@@ -5984,9 +5969,6 @@
       "Invalid expiration date": [
         "Neplatné datum vypršení platnosti"
       ],
-      "Invalid securiry code": [
-        "Neplatný bezpečnostní kód"
-      ],
       "Something went wrong. Please try again later.": [
         "Něco se pokazilo. Zkuste to prosím později."
       ],
@@ -6849,7 +6831,7 @@
         "Účtováno za 18 měsíců"
       ],
       "Billed for 3 months": [
-        "Účtováno za 3 měsíců"
+        "Účtováno za 3 měsíce"
       ],
       "Billed for 30 months": [
         "Účtováno za 30 měsíců"

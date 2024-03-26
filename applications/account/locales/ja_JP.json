@@ -1119,9 +1119,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "削除"
-      ],
       "Disable": [
         "無効にする"
       ],
@@ -3506,9 +3503,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } はあなたのユーザー名です。${ Local }@${ Domain } を作成するには、設定 > メッセージと作成 > 短縮ドメイン (pm.me) に移動してください。"
-      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -3583,9 +3577,6 @@
       ],
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
-      ],
-      "Error": [
-        "エラーが発生しました"
       ],
       "Error connecting to the Bitcoin API.": [
         "ビットコインAPIへの接続中にエラーが発生しました。"
@@ -3844,9 +3835,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "最低 ${ price } より受け付けています。"
-      ],
-      "The organization key must be activated first": [
-        "組織の鍵を最初に有効にする必要があります"
       ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
@@ -5818,6 +5806,9 @@
       "Center": [
         "中央揃え"
       ],
+      "Change your password": [
+        "パスワードを変更"
+      ],
       "Check the status of imports and forwarding.": [
         "インポートと転送のステータスを確認します。"
       ],
@@ -5931,9 +5922,6 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "現在のセッション以外のすべてのセッションを失効させますか？"
-      ],
-      "Done": [
-        "完了"
       ],
       "Done! We sent a code to ${ destination }.": [
         "完了! ${ destination } にコードを送信しました!"
@@ -6588,9 +6576,6 @@
       ],
       "purchase additional storage": [
         "追加ストレージを購入する"
-      ],
-      "Queued": [
-        "順番待ち"
       ],
       "read our two-factor authentication guide first": [
         "はじめに 2 要素認証ガイドをお読みください"
@@ -8800,6 +8785,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } ウェルカムメール"
+      ],
+      "Daily email notifications": [
+        "毎日のメール通知"
       ]
     },
     "Label in domain modal": {
@@ -8930,6 +8918,9 @@
       "Create account": [
         "アカウントを作成"
       ],
+      "Create an alias": [
+        "エイリアスを作成"
+      ],
       "Encryption and keys": [
         "暗号化と鍵"
       ],
@@ -8938,6 +8929,9 @@
       ],
       "General": [
         "一般"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } を取得"
       ],
       "Help translate": [
         "翻訳を手伝う"
@@ -11056,9 +11050,6 @@
       ],
       "Invalid expiration date": [
         "無効な有効期限です"
-      ],
-      "Invalid securiry code": [
-        "無効なセキュリティコード"
       ],
       "Something went wrong. Please try again later.": [
         "何か問題が発生しました。 後でもう一度試してください。"
