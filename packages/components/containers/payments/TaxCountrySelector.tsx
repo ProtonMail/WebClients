@@ -7,7 +7,8 @@ import { SelectChangeEvent } from '@proton/components/components/selectTwo/selec
 import { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
-import { Option, SelectTwo } from '../../components';
+import { Option } from '../../components';
+import SearchableSelect, { Props as SearchableSelectProps } from '../../components/selectTwo/SearchableSelect';
 import CountriesDropdown, { useCountries } from './CountriesDropdown';
 
 function getStateList(countryCode: string) {
@@ -168,6 +169,33 @@ export type TaxCountrySelectorProps = HookResult & {
     className?: string;
 };
 
+type StateSelectorProps = {
+    onStateChange: (stateCode: string) => void;
+    federalStateCode: string | null;
+    selectedCountryCode: string;
+};
+
+const StateSelector = ({ onStateChange, federalStateCode, selectedCountryCode }: StateSelectorProps) => {
+    const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
+
+    const props: SearchableSelectProps<string> = {
+        onChange: ({ value: stateCode }: SelectChangeEvent<string>) => onStateChange?.(stateCode),
+        value: federalStateCode ?? '',
+        id: 'tax-state',
+        className: 'mt-1',
+        placeholder: c('Placeholder').t`Select state`,
+        children: states.map(({ stateName, stateCode }) => {
+            return (
+                <Option key={stateCode} value={stateCode} title={stateName} data-testid={`state-${stateCode}`}>
+                    {stateName}
+                </Option>
+            );
+        }),
+    };
+
+    return <SearchableSelect {...props} data-testid="tax-state-dropdown" />;
+};
+
 const TaxCountrySelector = ({
     selectedCountryCode,
     setSelectedCountry,
@@ -175,17 +203,21 @@ const TaxCountrySelector = ({
     federalStateCode,
     className,
 }: TaxCountrySelectorProps) => {
-    const [collapsed, setCollapsed] = useState(true);
+    const showStateCode = countriesWithStates.includes(selectedCountryCode);
+
+    // If there is no state selection, then we collapse the component by default
+    // if there is state selection and state **is** specified, then we **collapse** the component by default
+    // If there is state selection and state **is not** specified, then we **expand** the component by default
+    const initialCollapsedState: boolean = !showStateCode || (showStateCode && !!federalStateCode);
+
+    const [collapsed, setCollapsed] = useState(initialCollapsedState);
     const { getCountryByCode } = useCountries();
     const selectedCountry = getCountryByCode(selectedCountryCode);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const showStateCode = countriesWithStates.includes(selectedCountryCode);
-    const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
-
     const collapsedText = (() => {
-        if (selectedCountry?.text) {
-            let text = selectedCountry.text;
+        if (selectedCountry?.label) {
+            let text = selectedCountry.label;
             if (federalStateCode && showStateCode) {
                 text += `, ${getStateName(selectedCountryCode, federalStateCode)}`;
             }
@@ -208,6 +240,7 @@ const TaxCountrySelector = ({
                                 setCollapsed(false);
                                 setIsDropdownOpen(true);
                             }}
+                            data-testid="billing-country-collapsed"
                         >
                             {collapsedText}
                         </InlineLinkButton>
@@ -223,29 +256,14 @@ const TaxCountrySelector = ({
                         isOpen={isDropdownOpen}
                         onOpen={() => setIsDropdownOpen(true)}
                         onClose={() => setIsDropdownOpen(false)}
+                        data-testid="tax-country-dropdown"
                     />
                     {showStateCode && (
-                        <SelectTwo
-                            onChange={({ value }: SelectChangeEvent<string>) => {
-                                setFederalStateCode?.(value);
-                            }}
-                            value={federalStateCode ?? ''}
-                            id="tax-state"
-                            className="mt-1"
-                        >
-                            {states.map(({ stateName, stateCode }) => {
-                                return (
-                                    <Option
-                                        key={stateCode}
-                                        value={stateCode}
-                                        title={stateName}
-                                        data-testid={`state-${stateCode}`}
-                                    >
-                                        {stateName}
-                                    </Option>
-                                );
-                            })}
-                        </SelectTwo>
+                        <StateSelector
+                            onStateChange={setFederalStateCode}
+                            federalStateCode={federalStateCode}
+                            selectedCountryCode={selectedCountryCode}
+                        />
                     )}
                 </>
             )}
