@@ -305,6 +305,9 @@
       "Delete": [
         "Slett"
       ],
+      "Delete address": [
+        "Slett adresse"
+      ],
       "Delete and confirm": [
         "Slett og bekreft"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Lås opp"
       ],
+      "Unlock Breach Report": [
+        "Lås opp rapport om datainnbrudd"
+      ],
+      "Unlock breach reports": [
+        "Lås opp rapporter om datainnbrudd"
+      ],
       "Unlock data": [
         "Lås opp data"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Oppgrader for å vise alle"
       ],
       "Upgrade your plan": [
         "Oppgrader planen din"
@@ -1137,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Slett"
+      "Delete address": [
+        "Slett adresse"
       ],
       "Disable": [
         "Deaktiver"
@@ -3035,6 +3047,25 @@
         "Ukjent"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Når den er slettet, kan ikke denne adressen brukes igjen av deg eller noen andre."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Den neste aktive adressen på listen din vil bli angitt som standard."
+      ],
+      "You can only delete 1 address per year.": [
+        "Du kan bare slette 1 adresse per år."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Du kan bare slette 1 adresse per år"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Du har nådd grensen for sletting av adresser for denne brukeren."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Alle hendelser i denne kalenderen vil bli slettet."
@@ -3084,6 +3115,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "For å fjerne ${ MAIL_APP_NAME }-bunnteksten, oppgrader og lås opp enda flere premiumfunksjoner."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "For å se hele rapporten inkludert personlige anbefalinger, oppgrader til en betalt plan."
       ],
       "Track the status and activity of your referrals.": [
         "Spor statusen og aktiviteten til vervingene dine."
@@ -3709,8 +3743,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } er ditt brukernavn. For å opprette ${ Local }@${ Domain }, vennligst gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, vennligst gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
@@ -3794,9 +3828,6 @@
       ],
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
-      ],
-      "Error": [
-        "Feil"
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
@@ -4070,9 +4101,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimumsbetalingen vi aksepterer er ${ price }."
-      ],
-      "The organization key must be activated first": [
-        "Organisasjonsnøkkelen må aktiveres først"
       ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
@@ -6249,6 +6277,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkerer sendere fra å se hvis og når du åpnet en melding."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Varsel om datainnbrudd drives av ${ BRAND_NAME }s proprietære datasett, åpen kildekode-datasett og Constella Intelligence. ${ dataBreachLink }."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -6269,6 +6300,9 @@
       ],
       "Center": [
         "Midtstill"
+      ],
+      "Change your password": [
+        "Endre passordet ditt"
       ],
       "Check the status of imports and forwarding.": [
         "Sjekk statusen på importer og videresending."
@@ -6400,9 +6434,6 @@
         "domene brukt",
         "domener brukt"
       ],
-      "Done": [
-        "Ferdig"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Ferdig! Vi sendte en kode til ${ destination }."
       ],
@@ -6450,6 +6481,9 @@
       ],
       "Edit link": [
         "Rediger kobling"
+      ],
+      "email": [
+        "e-post"
       ],
       "Email address": [
         "E-postadresse"
@@ -6550,6 +6584,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre fungerer på alle e-poster, inkludert innkommende så vel som sendte e-poster. Hvert filter må inneholde minst et navn, et vilkår og en handling."
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "for at du velger ${ product }"
       ],
@@ -6591,6 +6628,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifiserende informasjon ved å laste fjerninnhold gjennom en proxy. Mulighet for å lagre innhold som vedlegg."
+      ],
+      "High Priority": [
+        "Høy prioritet"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dersom en administrator endret dette passordet, må du be om det nye organisasjonspassordet."
@@ -6813,6 +6853,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logger inkluderer autentiseringsforsøk for alle ${ BRAND_NAME }s tjenester som bruker din ${ BRAND_NAME_TWO }-identifikasjon."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
       ],
@@ -6828,6 +6871,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Medium Priority": [
+        "Middels prioritet"
+      ],
       "Member": [
         "Medlem"
       ],
@@ -6836,6 +6882,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Monitor accounts": [
+        "Overvåk kontoer"
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
@@ -6973,6 +7022,9 @@
       "Paid for a monthly plan": [
         "Betalt for en måneds plan"
       ],
+      "password": [
+        "passord"
+      ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
@@ -7066,6 +7118,9 @@
       "Please wait till your changes are synced with the server.": [
         "Vennligst vent til endringene dine er synkronisert med tjeneren."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Pluss ${ numOfBreaches } til"
+      ],
       "Plus or Visionary subscription required": [
         "Plus eller Visionary-abonnement kreves"
       ],
@@ -7098,9 +7153,6 @@
       ],
       "purchase additional storage": [
         "kjøpe ekstra lagringsplass"
-      ],
-      "Queued": [
-        "I kø"
       ],
       "read our two-factor authentication guide first": [
         "les vår tofaktorautentiseringsguide først"
@@ -7616,6 +7668,15 @@
       "URL link": [
         "Kobling til nettadresse"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Bruk ${ BRAND_NAME } Pass for å generere sterke passord og unngå gjenbruk av passord"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Bruk ${ VPN_APP_NAME } med NetShield aktivert for å beskytte deg mot nettfisking og skadelig programvare"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Bruk aliaser for å registrere deg for nettjenester. Dette beskytter din virkelige e-postadresse og identitet, og begrenser eksplosjonsradiusen til et datainnbrudd."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
       ],
@@ -7630,6 +7691,9 @@
       ],
       "User activated": [
         "Bruker aktivert"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -7673,6 +7737,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Advarsel: sletting er permanent. Dette fjerner også tilgang til alle tilkoblede tjenester og sletter alle dine kontakter."
       ],
+      "Ways you can minimize your breach risks": [
+        "Måter du kan minimere datainnbruddrisikoen på"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder deg til å bruke offisielle ${ VPN_APP_NAME }-applikasjoner når mulig."
       ],
@@ -7684,6 +7751,9 @@
       ],
       "We just sent you a new link.": [
         "Vi sendte deg nettopp en kobling."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Vi overvåker e-postadressene, passordene og personopplysningene dine for opptredener på det mørke nettet og varsler deg i tilfelle dataene dine blir kompromittert."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
@@ -9404,6 +9474,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } velkommen e-post"
+      ],
+      "Daily email notifications": [
+        "Daglige e-postvarslinger"
       ]
     },
     "Label in domain modal": {
@@ -9537,6 +9610,9 @@
       "Create account": [
         "Opprett konto"
       ],
+      "Create an alias": [
+        "Opprett et alias"
+      ],
       "Encryption and keys": [
         "Kryptering og nøkler"
       ],
@@ -9545,6 +9621,12 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Få ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Få ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Hjelp med å oversette"
@@ -9771,6 +9853,9 @@
     "Member action": {
       "Activate user": [
         "Aktiver bruker"
+      ],
+      "Add address": [
+        "Legg til adresse"
       ],
       "Change password": [
         "Endre passord"
@@ -11852,11 +11937,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Vennligst sørg for at de har en aktivert adresse, og inviter dem separat senere."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
       ],
       "Reset organization key": [
         "Tilbakestill organisasjonsnøkkel"
+      ],
+      "The following administrators could not be restored.": [
+        "Følgende administratorer kan ikke gjenopprettes."
       ],
       "The following administrators will get access to the organization key.": [
         "Følgende administratorer får tilgang til organisasjonsnøkkelen."
@@ -11927,7 +12018,7 @@
       "Invalid expiration date": [
         "Ugyldig utløpsdato"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Ugyldig sikkerhetskode"
       ],
       "Something went wrong. Please try again later.": [
@@ -13827,6 +13918,18 @@
       "Billing cycle": [
         "Faktureringssyklus"
       ],
+      "Breach Alerts": [
+        "Varsler om datainnbrudd"
+      ],
+      "Breach Date": [
+        "Dato for datainnbrudd"
+      ],
+      "Breach Information": [
+        "Informasjon om datainnbrudd"
+      ],
+      "Breach Size": [
+        "Størrelse for datainnbrudd"
+      ],
       "Bridge for ${ platform }": [
         "Bridge for ${ platform }"
       ],
@@ -13874,6 +13977,9 @@
       ],
       "Clear out the junk": [
         "Fjern søppelet"
+      ],
+      "Close": [
+        "Lukk"
       ],
       "Composing": [
         "Skriving"
@@ -13993,6 +14099,9 @@
       "Delete account": [
         "Slett konto"
       ],
+      "Delete address permanently?": [
+        "Slette adressen permanent?"
+      ],
       "Delete calendar": [
         "Slett kalender"
       ],
@@ -14093,6 +14202,9 @@
       "Email": [
         "E-post"
       ],
+      "Email address": [
+        "E-postadresse"
+      ],
       "Email composer": [
         "Redigeringsvindu for e-post"
       ],
@@ -14131,6 +14243,9 @@
       ],
       "Export public key": [
         "Eksporter offentlig nøkkel"
+      ],
+      "Exposed info": [
+        "Eksponert info"
       ],
       "External PGP settings": [
         "Eksterne PGP-innstillinger"
@@ -14299,6 +14414,9 @@
       "Night theme": [
         "Natt-tema"
       ],
+      "No account information was found in any data breaches": [
+        "Ingen kontoinformasjon ble funnet i noen datainnbrudd"
+      ],
       "No recovery method": [
         "Ingen gjenopprettingsmetode"
       ],
@@ -14367,6 +14485,9 @@
       ],
       "Recommended": [
         "Anbefalt"
+      ],
+      "Recommended actions": [
+        "Anbefalte tiltak"
       ],
       "Reconnect your account": [
         "Koble til kontoen din på nytt"
@@ -14635,6 +14756,9 @@
       ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
+      ],
+      "Your Exposed Information": [
+        "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."

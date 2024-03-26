@@ -624,7 +624,7 @@
         "Potrebujete pomoc?"
       ],
       "Next": [
-        "Ďalší"
+        "Ďalej"
       ],
       "Next month": [
         "Budúci mesiac"
@@ -1134,9 +1134,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Odstrániť"
-      ],
       "Disable": [
         "Vypnúť"
       ],
@@ -3652,9 +3649,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } je vaše používateľské meno. Ak chcete vytvoriť doménu ${ Local }@${ Domain }, prejdite do časti Nastavenia > Správy a písanie > Krátka doména (pm.me)"
-      ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
@@ -3741,9 +3735,6 @@
       ],
       "Enter 6 digits": [
         "Zadajte 6 číslic"
-      ],
-      "Error": [
-        "Chyba"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
@@ -4023,9 +4014,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimálna platba, ktorú akceptujeme, je ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Najprv musí byť aktivovaný kľúč organizácie"
       ],
       "The sending key is not valid": [
         "Kľúč na odosielanie je neplatný"
@@ -6263,6 +6251,9 @@
       "Center": [
         "Vycentrovať"
       ],
+      "Change your password": [
+        "Zmeňte si heslo"
+      ],
       "Check the status of imports and forwarding.": [
         "Skontrolujte stav importov a preposielania."
       ],
@@ -6401,9 +6392,6 @@
         "využitých domén",
         "využitých domén"
       ],
-      "Done": [
-        "Hotovo"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odoslali sme kód na ${ destination }."
       ],
@@ -6510,7 +6498,7 @@
         "Zadajte overovací kód. Číslice ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Zadajte podrobnosti o svojom účte ${ BRAND_NAME }."
+        "Zadajte podrobnosti o svojom ${ BRAND_NAME } účte."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadajte emailovú adresu alebo používateľské meno vášho ${ BRAND_NAME } účtu."
@@ -7093,9 +7081,6 @@
       ],
       "purchase additional storage": [
         "zakúpiť rozšírenie úložiska"
-      ],
-      "Queued": [
-        "V poradí"
       ],
       "read our two-factor authentication guide first": [
         "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
@@ -9409,6 +9394,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítacie emaily"
+      ],
+      "Daily email notifications": [
+        "Denné emailové notifikácie"
       ]
     },
     "Label in domain modal": {
@@ -9550,6 +9538,9 @@
       ],
       "General": [
         "Všeobecné"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Získať ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Pomôžte s prekladom"
@@ -11891,9 +11882,6 @@
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
       ],
-      "Invalid securiry code": [
-        "Neplatný bezpečnostný kód"
-      ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
       ],
@@ -14109,7 +14097,7 @@
         "Šifrovanie a kľúče"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Ak sa chcete zapojiť do beta programu ${ app }, zadajte podrobnosti o svojom účte ${ BRAND_NAME }"
+        "Zadajte údaje svojho ${ BRAND_NAME } účtu pre vstup do ${ app } beta programu."
       ],
       "Enter your password": [
         "Zadajte Vaše heslo"

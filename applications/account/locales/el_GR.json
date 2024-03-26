@@ -305,6 +305,9 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete address": [
+        "Διαγραφή διεύθυνσης"
+      ],
       "Delete and confirm": [
         "Διαγραφή και επιβεβαίωση"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Ξεκλείδωμα"
       ],
+      "Unlock Breach Report": [
+        "Ξεκλείδωμα Αναφοράς Παραβίασης"
+      ],
+      "Unlock breach reports": [
+        "Ξεκλείδωμα αναφορών παραβίασης"
+      ],
       "Unlock data": [
         "Ξεκλείδωμα δεδομένων"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Αναβάθμιση για προβολή όλων"
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
@@ -1137,8 +1149,8 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "Διαγραφή"
+      "Delete address": [
+        "Διαγραφή διεύθυνσης"
       ],
       "Disable": [
         "Απενεργοποίηση"
@@ -3035,6 +3047,25 @@
         "Άγνωστο"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Αφού διαγραφεί, αυτή η διεύθυνση δεν μπορεί να χρησιμοποιηθεί ξανά από εσάς ή οποιονδήποτε άλλο."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Η επόμενη ενεργή διεύθυνση στη λίστα σας θα οριστεί ως προεπιλεγμένη."
+      ],
+      "You can only delete 1 address per year.": [
+        "Μπορείτε να διαγράψετε μόνο 1 διεύθυνση ανά έτος."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Μπορείτε να διαγράψετε μόνο 1 διεύθυνση ανά έτος"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Έχετε συμπληρώσει το όριο των διαγραφών διευθύνσεων για αυτόν τον χρήστη."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Όλες οι εκδηλώσεις σε αυτό το ημερολόγιο θα διαγραφούν."
@@ -3084,6 +3115,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Για να καταργήσετε το υποσέλιδο ${ MAIL_APP_NAME }, αναβαθμίστε και ξεκλειδώστε ακόμη περισσότερες premium λειτουργίες."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Για να δείτε την πλήρη αναφορά, συμπεριλαμβανομένων εξατομικευμένων προτάσεων, κάντε αναβάθμιση σε πρόγραμμα επί πληρωμή."
       ],
       "Track the status and activity of your referrals.": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας."
@@ -3709,8 +3743,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } είναι το όνομα χρήστη σας. Για να δημιουργήσετε ${ Local }@${ Domain }, παρακαλούμε πηγαίνετε Ρυθμίσεις > Μηνύματα και σύνταξη > Σύντομο domain (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
@@ -3794,9 +3828,6 @@
       ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
-      ],
-      "Error": [
-        "Σφάλμα"
       ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
@@ -4070,9 +4101,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Η ελάχιστη αποδεκτή πληρωμή είναι ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
       ],
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
@@ -6249,6 +6277,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Αποκλείει στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Η Ειδοποίηση Παραβίασης τροφοδοτείται από τα ιδιοκτησιακά σύνολα δεδομένων του ${ BRAND_NAME }, τα σύνολα δεδομένων ανοιχτού κώδικα και τις Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -6269,6 +6300,9 @@
       ],
       "Center": [
         "Κέντρο"
+      ],
+      "Change your password": [
+        "Αλλάξτε τον κωδικό πρόσβασής σας"
       ],
       "Check the status of imports and forwarding.": [
         "Ελέγξτε την κατάσταση των εισαγωγών και της προώθησης."
@@ -6400,9 +6434,6 @@
         "το domain χρησιμοποιείται",
         "τα domain χρησιμοποιούνται"
       ],
-      "Done": [
-        "Ολοκληρώθηκε"
-      ],
       "Done! We sent a code to ${ destination }.": [
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
@@ -6450,6 +6481,9 @@
       ],
       "Edit link": [
         "Επεξεργασία συνδέσμου"
+      ],
+      "email": [
+        "ηλεκτρονικό ταχυδρομείο"
       ],
       "Email address": [
         "Διεύθυνση E-mail"
@@ -6550,6 +6584,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
       ],
+      "finance": [
+        "οικονομικά"
+      ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
@@ -6591,6 +6628,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Κρύβει τις πληροφορίες ταυτοποίησης μέσω φόρτωσης του απομακρυσμένου περιεχομένου από διαμεσολαβητή. Επιλογή αποθήκευσης περιεχομένου ως συνημμένα."
+      ],
+      "High Priority": [
+        "Υψηλή προτεραιότητα"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
@@ -6813,6 +6853,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Χαμηλή προτεραιότητα"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Οι μεγάλες υπηρεσίες ηλεκτρονικού ταχυδρομείου ενδέχεται να απορρίψουν ή να φιλτράρουν τα μηνύματα ηλεκτρονικού ταχυδρομείου σας σε ανεπιθύμητα μηνύματα εάν λείπουν ή δεν έχουν ρυθμιστεί σωστά τα SPF / DKIM / DMARC."
       ],
@@ -6828,6 +6871,9 @@
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Μεσαία προτεραιότητα"
+      ],
       "Member": [
         "Μέλος"
       ],
@@ -6836,6 +6882,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
+      ],
+      "Monitor accounts": [
+        "Παρακολούθηση λογαριασμών"
       ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
@@ -6970,6 +7019,9 @@
       "Paid for a monthly plan": [
         "Πλήρωσε για μηνιαίο πρόγραμμα"
       ],
+      "password": [
+        "κωδικός πρόσβασης"
+      ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
@@ -7063,6 +7115,9 @@
       "Please wait till your changes are synced with the server.": [
         "Παρακαλούμε να περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
       ],
+      "Plus ${ numOfBreaches } more": [
+        "Συν ${ numOfBreaches } περισσότερα"
+      ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
       ],
@@ -7095,9 +7150,6 @@
       ],
       "purchase additional storage": [
         "αγοράσετε πρόσθετο χώρου αποθήκευσης"
-      ],
-      "Queued": [
-        "Σε αναμονή"
       ],
       "read our two-factor authentication guide first": [
         "διαβάστε πρώτα τον οδηγό μας ταυτοποίησης δύο παραγόντων"
@@ -7613,6 +7665,15 @@
       "URL link": [
         "Σύνδεσμος URL"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Χρησιμοποιήστε το ${ BRAND_NAME } Pass για να δημιουργήσετε ισχυρούς κωδικούς πρόσβασης και να αποφύγετε την επαναχρησιμοποίηση κωδικού πρόσβασης"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Χρησιμοποιήστε ${ VPN_APP_NAME } με το Netshield ενεργοποιημένο για να σας προστατεύσει από phishing και κακόβουλο λογισμικό"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Χρησιμοποιήστε ψευδώνυμα για να εγγραφείτε σε ηλεκτρονικές υπηρεσίες. Αυτό προστατεύει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας, περιορίζοντας την ακτίνα έκρηξης μιας παραβίασης."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
       ],
@@ -7627,6 +7688,9 @@
       ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -7670,6 +7734,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Προειδοποίηση: Η διαγραφή είναι μόνιμη. Αυτό επίσης αφαιρεί την πρόσβαση σε όλες τις συνδεδεμένες υπηρεσίες και διαγράφει όλες τις επαφές σας."
       ],
+      "Ways you can minimize your breach risks": [
+        "Τρόποι με τους οποίους μπορείτε να ελαχιστοποιήσετε τους κινδύνους παραβίασης"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Σας συμβουλεύουμε όταν είναι δυνατόν να χρησιμοποιείτε επίσημες εφαρμογές ${ VPN_APP_NAME }."
       ],
@@ -7681,6 +7748,9 @@
       ],
       "We just sent you a new link.": [
         "Μόλις σας στείλαμε έναν νέο σύνδεσμο."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Παρακολουθούμε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου, τους κωδικούς πρόσβασης και τα προσωπικά σας δεδομένα για εμφανίσεις στον σκοτεινό ιστό και σας ειδοποιούμε σε περίπτωση παραβίασης των δεδομένων σας."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
@@ -9398,6 +9468,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Emails καλωσορίσματος ${ BRAND_NAME }"
+      ],
+      "Daily email notifications": [
+        "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Label in domain modal": {
@@ -9531,6 +9604,9 @@
       "Create account": [
         "Δημιουργία λογαριασμού"
       ],
+      "Create an alias": [
+        "Δημιουργία ψευδωνύμου"
+      ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
       ],
@@ -9539,6 +9615,12 @@
       ],
       "General": [
         "Γενικά"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Αποκτήστε το ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Απόκτηση ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "Βοηθήστε στη μετάφραση"
@@ -9765,6 +9847,9 @@
     "Member action": {
       "Activate user": [
         "Ενεργοποίηση χρήστη"
+      ],
+      "Add address": [
+        "Προσθήκη διεύθυνσης"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -11783,6 +11868,17 @@
         "Για ιδιώτες"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τον **παλιό κωδικό πρόσβασης** σας."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τη **φράση ανάκτησης** ή τον **παλιό κωδικό πρόσβασης** σας."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Οποιαδήποτε μέθοδος **ελέγχου ταυτότητας δύο παραγόντων (2FA)** στον λογαριασμό σας θα απενεργοποιηθεί."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Όλοι οι διαχειριστές θα έχουν πρόσβαση στο κλειδί."
@@ -11814,11 +11910,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Βεβαιωθείτε ότι έχουν ενεργοποιημένη διεύθυνση και προσκαλέστε τους ξεχωριστά αργότερα."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Οι ιδιώτες χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν συνδεθούν για πρώτη φορά"
       ],
       "Reset organization key": [
         "Επαναφορά κλειδιού οργανισμού"
+      ],
+      "The following administrators could not be restored.": [
+        "Δεν ήταν δυνατή η επαναφορά των ακόλουθων διαχειριστών."
       ],
       "The following administrators will get access to the organization key.": [
         "Οι ακόλουθοι διαχειριστές θα έχουν πρόσβαση στο κλειδί οργανισμού."
@@ -11889,7 +11991,7 @@
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
       ],
-      "Invalid securiry code": [
+      "Invalid security code": [
         "Μη έγκυρος κωδικός ασφαλείας"
       ],
       "Something went wrong. Please try again later.": [
@@ -13789,6 +13891,18 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
+      "Breach Alerts": [
+        "Ειδοποιήσεις Παραβίασης"
+      ],
+      "Breach Date": [
+        "Ημερομηνία παραβίασης"
+      ],
+      "Breach Information": [
+        "Πληροφορίες παραβίασης"
+      ],
+      "Breach Size": [
+        "Μέγεθος παραβίασης"
+      ],
       "Bridge for ${ platform }": [
         "Bridge για ${ platform }"
       ],
@@ -13836,6 +13950,9 @@
       ],
       "Clear out the junk": [
         "Ξεφορτωθείτε τη σαβούρα"
+      ],
+      "Close": [
+        "Κλείσιμο"
       ],
       "Composing": [
         "Σύνταξη"
@@ -13955,6 +14072,9 @@
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
+      "Delete address permanently?": [
+        "Οριστική διαγραφή διεύθυνσης;"
+      ],
       "Delete calendar": [
         "Διαγραφή ημερολογίου"
       ],
@@ -14055,6 +14175,9 @@
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Email composer": [
         "Συντάκτης μηνύματος"
       ],
@@ -14093,6 +14216,9 @@
       ],
       "Export public key": [
         "Εξαγωγή δημόσιου κλειδιού"
+      ],
+      "Exposed info": [
+        "Εκτεθειμένες πληροφορίες"
       ],
       "External PGP settings": [
         "Εξωτερικές ρυθμίσεις PGP"
@@ -14261,6 +14387,9 @@
       "Night theme": [
         "Σκούρο θέμα"
       ],
+      "No account information was found in any data breaches": [
+        "Δεν βρέθηκαν πληροφορίες λογαριασμού σε παραβιάσεις δεδομένων"
+      ],
       "No recovery method": [
         "Χωρίς μέθοδο ανάκτησης"
       ],
@@ -14329,6 +14458,9 @@
       ],
       "Recommended": [
         "Προτεινόμενο"
+      ],
+      "Recommended actions": [
+        "Συνιστώμενες ενέργειες"
       ],
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
@@ -14597,6 +14729,9 @@
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
+      ],
+      "Your Exposed Information": [
+        "Οι Εκτεθειμένες Πληροφορίες σας"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"

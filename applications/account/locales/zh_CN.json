@@ -1037,9 +1037,6 @@
       ]
     },
     "Address action": {
-      "Delete": [
-        "刪除"
-      ],
       "Disable": [
         "禁用"
       ],
@@ -3232,9 +3229,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } 是您的用户名。要创建 ${ Local }@${ Domain }，请进入设置 > 邮件与编辑 > 短域名 (pm.me)"
-      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -3306,9 +3300,6 @@
       ],
       "Enter 6 digits": [
         "请输入 6 位验证码"
-      ],
-      "Error": [
-        "错误"
       ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
@@ -3552,9 +3543,6 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "支付金额不能低于 ${ price }"
-      ],
-      "The organization key must be activated first": [
-        "必须先激活机构密钥"
       ],
       "The sending key is not valid": [
         "发送密钥无效"
@@ -5294,6 +5282,9 @@
       "Center": [
         "居中"
       ],
+      "Change your password": [
+        "更改密码"
+      ],
       "Check the status of imports and forwarding.": [
         "检查导入和转发的状态。"
       ],
@@ -5395,9 +5386,6 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
-      ],
-      "Done": [
-        "完成"
       ],
       "Done! We sent a code to ${ destination }.": [
         "搞定！我们向 ${ destination } 发送了一个验证码。"
@@ -5980,9 +5968,6 @@
       ],
       "purchase additional storage": [
         "付费扩容"
-      ],
-      "Queued": [
-        "等待中"
       ],
       "read our two-factor authentication guide first": [
         "首先阅读我们的双重认证指南"
@@ -8077,6 +8062,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 欢迎信"
+      ],
+      "Daily email notifications": [
+        "每日邮件提醒"
       ]
     },
     "Label in domain modal": {
@@ -8204,6 +8192,9 @@
       "Create account": [
         "创建账户"
       ],
+      "Create an alias": [
+        "创建别名"
+      ],
       "Encryption and keys": [
         "加密与密钥"
       ],
@@ -8212,6 +8203,9 @@
       ],
       "General": [
         "常规"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "开通 ${ VPN_APP_NAME }"
       ],
       "Help translate": [
         "协助翻译"
