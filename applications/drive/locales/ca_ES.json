@@ -46,6 +46,9 @@
       "Add note": [
         "Afegeix una nota"
       ],
+      "Add people or groups to share": [
+        "Afegeix persones o grups per compartir"
+      ],
       "Add phone number": [
         "Afegeix número de telèfon"
       ],
@@ -181,6 +184,9 @@
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
+      ],
+      "Create and copy alias": [
+        "Crea i copia un àlies"
       ],
       "Create link": [
         "Crear enllaç"
@@ -567,6 +573,15 @@
       ],
       "Save changes": [
         "Desa els canvis"
+      ],
+      "Scan & Download": [
+        "Escaneja i baixa"
+      ],
+      "Scan & Download (${ count })": [
+        "Escaneja i baixa (${ count })"
+      ],
+      "Scan & Download all": [
+        "Escaneja i baixa-ho tot"
       ],
       "Search": [
         "Cerca"
@@ -1956,17 +1971,26 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Dissenyat per a usuaris que busquen una major protecció per als seus comptes."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -1977,8 +2001,17 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora (una característica prèmium entre moltes altres). Milloreu avui."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Establiu un mètode de recuperació de dades per evitar la pèrdua de dades."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
@@ -1988,6 +2021,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està habilitat."
+      ],
+      "Your account and data recovery methods are set.": [
+        "El compte i els mètodes de recuperació de dades estan definits."
       ]
     },
     "description": {
@@ -2009,8 +2048,43 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "S'ha cancel·lat ${ eventTitle }."
+      ],
+      "All events in this series were updated.": [
+        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat."
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Tots els esdeveniments d'aquesta sèrie s'han actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was canceled.": [
+        "S'ha cancel·lat aquesta ocurrència d'esdeveniment."
+      ],
+      "This event occurrence was updated.": [
+        "Aquesta ocurrència d'esdeveniment s'ha actualitzat."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Aquesta ocurrència d'esdeveniment s'ha actualitzat. Això és el que ha canviat:\n\n${ updateEventDetailsText }"
+      ],
       "This event was updated.": [
         "S'ha actualitzat aquest esdeveniment."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Aquest esdeveniment s'ha actualitzat. Això és el que s'ha canviat:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Esteu convidat a ${ eventTitle }\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "HORA:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "HORA:\n${ formattedStart } (tot el dia)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "HORA:\n${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -2018,7 +2092,18 @@
         "Esborrat"
       ]
     },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "UBICACIÓ:\n${ eventLocation }"
+      ]
+    },
     "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha rebutjat la vostra invitació a ${ eventTitle }"
+      ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }."
       ]
@@ -2106,6 +2191,15 @@
       ],
       "Aliases could not be loaded": [
         "No s'han pogut carregar els àlies."
+      ],
+      "Already a member of this share": [
+        "Ja és membre d'aquesta compartició"
+      ],
+      "An error occurred while loading alias options": [
+        "S'ha produït un error en carregar les opcions de l'àlies"
+      ],
+      "An error occurred while saving your alias": [
+        "S'ha produït un error en desar l'àlies"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -3320,6 +3414,10 @@
         "${ nbFile } fitxer xifrat",
         "${ nbFile } fitxers xifrats"
       ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } fitxer xifrat...",
+        "${ nbFile } fitxers xifrats..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } en pausa",
         "${ pausedCount } en pausa"
@@ -3351,6 +3449,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } omès",
+        "${ skippedCount } omesos"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3596,6 +3698,9 @@
       "Downloading": [
         "S'està descarregant"
       ],
+      "Downloading all encrypted files": [
+        "S'estan descarregant tots els fitxers xifrats"
+      ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
@@ -3625,6 +3730,9 @@
       ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
+      ],
+      "End-to-End Encrypted": [
+        "Xifratge d'extrem a extrem"
       ],
       "Enter password": [
         "Introduïu la contrasenya"
@@ -3678,6 +3786,9 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "El fitxer no està signat. No podem verificar qui va carregar ${ fileName }."
       ],
+      "File scanning in Drive": [
+        "Escaneig de fitxers al Drive"
+      ],
       "File will not be updated": [
         "El fitxer no s'actualitzarà"
       ],
@@ -3710,6 +3821,9 @@
       ],
       "Get the desktop app to sync files from your computer.": [
         "Obteniu l'aplicació d'escriptori per sincronitzar fitxers des del vostre ordinador."
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Coneixeu ${ DRIVE_APP_NAME } i guanyeu una bonificació d'emmagatzematge de 3 GB! Fes-ho avui."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Aneu a \"Els meus fitxers\" i pengeu alguns fitxers primer."
@@ -3747,6 +3861,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Mentrestant, registreu-vos al compte ${ DRIVE_APP_NAME } i protegiu les vostres dades amb el xifratge d'extrem a extrem i compartiu-les de manera segura."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "S'estan indexant ${ esProgress } elements de ${ totalProgressToShow }"
@@ -4011,6 +4128,9 @@
       "Report has been sent": [
         "S'ha enviat l'informe"
       ],
+      "Report link": [
+        "Informar sobre l'enllaç"
+      ],
       "Restore": [
         "Restaura"
       ],
@@ -4029,11 +4149,20 @@
       "Retry now": [
         "Reintenta ara"
       ],
+      "Scan issue": [
+        "Problema d'escaneig"
+      ],
       "Search cannot be enabled in this browser": [
         "La cerca no es pot activar en aquest navegador"
       ],
       "Search Enabled": [
         "Cerca activa"
+      ],
+      "Securely downloaded all encrypted files": [
+        "S'han descarregat de forma segura tots els fitxers xifrats"
+      ],
+      "Securely downloaded all files": [
+        "S'han descarregat de forma segura els fitxers"
       ],
       "Select a folder to move to.": [
         "Seleccioneu la carpeta de destinació."
@@ -4071,6 +4200,9 @@
       "Share files with links": [
         "Compartiu fitxers amb enllaços"
       ],
+      "Share with": [
+        "Comparteix amb"
+      ],
       "Share with anyone": [
         "Comparteix amb tothom"
       ],
@@ -4079,6 +4211,9 @@
       ],
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
+      ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Registreu-vos al vostre compte ${ DRIVE_APP_NAME } i protegiu les vostres dades amb el xifratge d'extrem a extrem i compartiu-les de manera segura."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
@@ -4146,6 +4281,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "És possible que aquest fitxer s'hagi eliminat, mogut o que ja no estigui disponible. Contacteu amb el propietari del fitxer."
       ],
+      "This item already exists in your library": [
+        "Aquest element ja existeix a la biblioteca"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
@@ -4194,6 +4332,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Per ajudar-vos a protegir-vos, ${ DRIVE_APP_NAME } pot escanejar i bloquejar fitxers maliciosos. Només hauríeu de baixar fitxers de persones de confiança."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
@@ -4287,6 +4428,9 @@
       ],
       "Warning": [
         "Advertència"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Heu augmentat l'emmagatzematge a 5 GB!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Estem experimentant problemes tècnics. La càrrega d'imatges noves no està disponible temporalment."
@@ -4393,6 +4537,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
+      ],
+      "Your download is in progress": [
+        "La descàrrega és en curs"
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -4518,6 +4665,12 @@
       "Add to group": [
         "Afegeix al grup"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Qualsevol persona a Internet amb l'enllaç pot visualitzar-ho"
+      ],
+      "Anyone with the link": [
+        "Qualsevol persona amb l'enllaç"
+      ],
       "App password": [
         "Contrasenya de l'aplicació"
       ],
@@ -4612,6 +4765,9 @@
         "Eliminar unitat?",
         "Eliminar unitats?"
       ],
+      "Delete link": [
+        "Elimina l'enllaç"
+      ],
       "Delete recovery-related information.": [
         "Elimina la informació de recuperació."
       ],
@@ -4638,6 +4794,9 @@
       ],
       "e.g., Amazon, eBay, Etsy": [
         "per exemple, Amazon, eBay, Etsy"
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Email": [
         "Correu electrònic"
@@ -4852,6 +5011,9 @@
       "Set expiration date": [
         "Definir data d'expiració"
       ],
+      "Set link password": [
+        "Estableix la contrasenya de l'enllaç"
+      ],
       "Set recovery method": [
         "Estableix un mètode de recuperació"
       ],
@@ -4888,6 +5050,9 @@
       "Theme": [
         "Tema"
       ],
+      "This file is potentially infected": [
+        "Aquest fitxer està potencialment infectat"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Això eliminarà de manera permanent tots els fitxers de la vostra unitat bloquejada."
       ],
@@ -4920,6 +5085,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Viewer": [
+        "Visualitzador"
       ],
       "What happened?": [
         "Què ha passat?"
@@ -5061,6 +5229,14 @@
         "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obteniu l'oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
@@ -5068,11 +5244,35 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "Auto-delete Spam and Trash": [
+        "Suprimeix automàticament la brossa i la paperera"
+      ],
+      "Custom schedule send and snooze times": [
+        "Horaris personalitzats d'enviament i posposa"
+      ],
       "Support for 1 custom email domain": [
         "Suport per a 1 domini de correu personalitzat"
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Renovacions a ${ renewablePrice }, cancel·leu en qualsevol moment"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "per al primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta limitada, caduca el 2 d'abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obteniu ${ planName } per tan sols ${ planPrice }"
       ]
     },
     "Message": {
@@ -5136,6 +5336,9 @@
       "C-Shell script": [
         "Script C-Shell"
       ],
+      "Cascading Style Sheets (CSS)": [
+        "Fulls d'estil en cascada (CSS)"
+      ],
       "Flash Video": [
         "Video Flash"
       ],
@@ -5169,6 +5372,12 @@
       "OGG video": [
         "Vídeo OGG"
       ],
+      "OpenDocument presentation document": [
+        "Document de presentació d'OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "document de full de càlcul d'OpenDocument"
+      ],
       "OpenDocument text document": [
         "Document de text OpenDocument"
       ],
@@ -5183,6 +5392,9 @@
       ],
       "Rich Text Format (RTF)": [
         "Format de text enriquit (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Gràfics vectorials escalables (SVG)"
       ],
       "Small web format (SWF)": [
         "Format de web petit (SWF)"
@@ -5536,6 +5748,11 @@
         "La configuració s'ha modificat correctament"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "A continuació, haureu d'iniciar la sessió al vostre compte de Google i autoritzar ${ BRAND_NAME } per accedir a les vostres dades."
@@ -5567,6 +5784,9 @@
     "Onboarding Info": {
       "Create a share link": [
         "Crea un enllaç per a compartir"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "Comenceu a utilitzar ${ DRIVE_APP_NAME } i millorarem el vostre emmagatzematge a 5 GB!"
       ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
@@ -5637,6 +5857,14 @@
         "Vós"
       ]
     },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Els usuaris no privats es poden promocionar a administrador quan tenen claus de configuració"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "País de facturació"
@@ -5654,6 +5882,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } ha marcat aquesta clau com a obsoleta. Aquesta clau només es pot fer servir per a verificar signatures."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Clau externa obtinguda automàticament des de key.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Clau externa obtinguda automàticament mitjançant WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
       ]
@@ -5666,6 +5903,9 @@
     "Placeholder": {
       "A way to contact you": [
         "Una manera de contactar amb tu"
+      ],
+      "Choose password": [
+        "Trieu la contrasenya"
       ],
       "E.g., ": [
         "Ex., "
@@ -5723,6 +5963,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Set date": [
+        "Establiu una data"
       ],
       "Start typing an email address": [
         "Començi a escriure una adreça de correu electrònic"
@@ -5806,8 +6049,14 @@
       "Create an alias": [
         "Crea un àlies"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genera àlies sobre la marxa i gestiona fàcilment els àlies i contrasenyes."
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Els àlies de Hide-my-email us permeten registrar-vos per a llocs en línia sense compartir l'adreça de correu electrònic. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nou àlies"
@@ -5820,6 +6069,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "S'utilitza a l'Amazon per anar a comprar, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -5830,6 +6085,14 @@
     "Security Center - Action": {
       "View logs": [
         "Mostra els registres"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel està **actiu** i salvaguardant el vostre compte."
       ]
     },
     "Select files": {
@@ -6271,6 +6534,21 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
+      "contact your administrator": [
+        "contacteu amb l'administrador"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a més emmagatzematge."
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per enviar o rebre correus electrònics, allibereu espai o ${ upgrade }"
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Per enviar o rebre correus electrònics, allibereu espai o milloreu per a més emmagatzematge."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Per a carregar o sincronitzar fitxers, allibereu espai o ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
       ],
@@ -6279,6 +6557,15 @@
       ],
       "Your ${ appStorage } is full": [
         "El vostre ${ appStorage } és ple."
+      ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "L'${ storage } és ${ percentage }% ple. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "L'${ storage } és ple. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "L'emmagatzematge és ${ percentage }% ple. ${ cta }."
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -6688,6 +6975,9 @@
         "Trobat ${ searchView.numberOfResults } resultat",
         "Trobats ${ searchView.numberOfResults } resultats"
       ],
+      "Get advanced protection": [
+        "Obteniu protecció avançada"
+      ],
       "Groups": [
         "Grups"
       ],
@@ -6848,6 +7138,9 @@
       "Settings": [
         "Preferències"
       ],
+      "Share ${ name }": [
+        "Compartiu amb ${ name }"
+      ],
       "Share via link": [
         "Comparteix mitjançant un enllaç"
       ],
@@ -6952,6 +7245,9 @@
       ],
       "Your 3 GB bonus": [
         "La vostra bonificació de 3 GB"
+      ],
+      "Your account is protected": [
+        "El compte està protegit"
       ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"

@@ -46,6 +46,9 @@
       "Add note": [
         "Pridať poznámku"
       ],
+      "Add people or groups to share": [
+        "Pre zdieľanie pridajte ľudí alebo skupiny"
+      ],
       "Add phone number": [
         "Pridať telefónne číslo"
       ],
@@ -449,7 +452,7 @@
         "Nová správa"
       ],
       "Next": [
-        "Ďalší"
+        "Ďalej"
       ],
       "Next month": [
         "Budúci mesiac"
@@ -573,6 +576,15 @@
       ],
       "Save changes": [
         "Uložiť zmeny"
+      ],
+      "Scan & Download": [
+        "Skenovať a stiahnuť"
+      ],
+      "Scan & Download (${ count })": [
+        "Skenovať a stiahnuť (${ count })"
+      ],
+      "Scan & Download all": [
+        "Skenovať a stiahnuť všetko"
       ],
       "Search": [
         "Hľadať"
@@ -2093,6 +2105,9 @@
       "Alias options could not be resolved": [
         "Možnosti aliasu sa nepodarilo vyriešiť"
       ],
+      "Already a member of this share": [
+        "Už ste členom tohto zdieľania"
+      ],
       "Authentication canceled.": [
         "Prihlásenie zrušené."
       ],
@@ -2281,6 +2296,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Kľúč primárnej adresy nie je dešifrovaný."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Duplicitný pozývateľ odstránený: ${ joinedInvitee }",
+        "Duplicitní pozývatelia odstránení: ${ joinedInvitee }",
+        "Duplicitní pozývatelia odstránení: ${ joinedInvitee }",
+        "Duplicitní pozývatelia odstránení: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Hlásenie sa nepodarilo odoslať"
@@ -3659,6 +3680,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitálny podpis overený. Tento priečinok bol bezpečne nahraný prostredníctvom ${ emailAddress }."
       ],
+      "Download": [
+        "Stiahnuť"
+      ],
       "Download ${ name } app": [
         "Prevziať aplikáciu ${ name }"
       ],
@@ -3723,6 +3747,9 @@
         "Vyhľadávanie v šifrovaných dátach je tu"
       ],
       "End-to-end encrypted": [
+        "End-to-end šifrované"
+      ],
+      "End-to-End Encrypted": [
         "End-to-end šifrované"
       ],
       "Enter password": [
@@ -3938,6 +3965,12 @@
       "Makes your account safer": [
         "Robí váš účet bezpečnejším"
       ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
+        "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaky",
+        "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov",
+        "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov"
+      ],
       "Merged": [
         "Zlúčený"
       ],
@@ -4124,6 +4157,9 @@
       "Report has been sent": [
         "Hlásenie bolo odoslané"
       ],
+      "Report link": [
+        "Nahlásiť odkaz"
+      ],
       "Restore": [
         "Obnoviť"
       ],
@@ -4141,6 +4177,9 @@
       ],
       "Retry now": [
         "Skúsiť teraz"
+      ],
+      "Scan issue": [
+        "Problém so skenovaním"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie"
@@ -4195,6 +4234,9 @@
       ],
       "Share files with links": [
         "Zdieľajte súbory pomocou odkazov"
+      ],
+      "Share with": [
+        "Zdieľať s"
       ],
       "Share with anyone": [
         "Zdieľať s kýmkoľvek"
@@ -4667,6 +4709,12 @@
       "Add to group": [
         "Pridať do skupiny"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Ktokoľvek na internete s odkazom môže zobraziť"
+      ],
+      "Anyone with the link": [
+        "Ktokoľvek s odkazom"
+      ],
       "App password": [
         "Heslo aplikácie"
       ],
@@ -4763,6 +4811,9 @@
         "Vymazať disky?",
         "Vymazať disky?"
       ],
+      "Delete link": [
+        "Vymazať odkaz"
+      ],
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
       ],
@@ -4786,6 +4837,9 @@
       ],
       "Duplicate found": [
         "Nájdený duplikát"
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Email": [
         "Email"
@@ -4816,6 +4870,9 @@
       ],
       "Enter device name": [
         "Zadajte názov zariadenia"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Vymazať tento odkaz a odstrániť všetkých s prístupom"
       ],
       "Expired": [
         "Vypršal"
@@ -5000,6 +5057,9 @@
       "Set expiration date": [
         "Nastaviť koniec platnosti"
       ],
+      "Set link password": [
+        "Nastavte si heslo odkazu"
+      ],
       "Set recovery method": [
         "Nastaviť metódu obnovenia"
       ],
@@ -5036,6 +5096,9 @@
       "Theme": [
         "Motív"
       ],
+      "This file is potentially infected": [
+        "Tento súbor môže byť infikovaný"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "Týmto sa trvalo zmažú všetky súbory na vašom zamknutom disku."
       ],
@@ -5068,6 +5131,9 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Viewer": [
+        "Zobrazovač"
       ],
       "What happened?": [
         "Čo sa stalo?"
@@ -5814,7 +5880,7 @@
     },
     "Onboarding Action": {
       "Next": [
-        "Ďalší"
+        "Ďalej"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Začnite používať ${ DRIVE_APP_NAME }"
@@ -5937,6 +6003,9 @@
       "A way to contact you": [
         "Spôsob, ako vás kontaktovať"
       ],
+      "Choose password": [
+        "Zvoľte si heslo"
+      ],
       "E.g., ": [
         "Napr., "
       ],
@@ -5990,6 +6059,9 @@
       ],
       "Select": [
         "Vybrať"
+      ],
+      "Set date": [
+        "Nastaviť dátum"
       ],
       "Start typing an email address": [
         "Začnite písať emailovú adresu"
@@ -7147,6 +7219,9 @@
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Share ${ name }": [
+        "Zdieľa ${ name }"
       ],
       "Share via link": [
         "Zdieľať cez odkaz"
