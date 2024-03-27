@@ -134,6 +134,9 @@
       "Delete": [
         "삭제"
       ],
+      "Delete address": [
+        "주소 삭제"
+      ],
       "Delete Gateway": [
         "게이트웨이 삭제"
       ],
@@ -596,6 +599,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "주소 삭제"
+      ],
       "Disable": [
         "비활성화"
       ],
@@ -1817,6 +1823,25 @@
       ],
       "/user per month": [
         "/월 사용자 당"
+      ]
+    },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "한 번 삭제하면 누구도 이 주소를 다시는 사용할 수 없습니다."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "목록의 다음 활성 주소가 기본으로 설정됩니다."
+      ],
+      "You can only delete 1 address per year.": [
+        "매년 1개의 주소만 삭제할 수 있습니다."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "1년에 최대 한 개의 주소만 지울 수 있습니다."
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "이 사용자의 최대 주소 삭제 제한 횟수에 도달했습니다."
       ]
     },
     "Delinquent modal title": {
@@ -6026,6 +6051,11 @@
         "CSV 파일 업로드"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "결과를 찾을 수 없음"
+      ]
+    },
     "Server-Info": {
       "active": [
         "활성"
@@ -7076,6 +7106,9 @@
       ],
       "Delete account": [
         "계정 삭제"
+      ],
+      "Delete address permanently?": [
+        "주소를 영구적으로 삭제합니까?"
       ],
       "Delete user?": [
         "사용자를 삭제합니까?"
