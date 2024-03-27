@@ -305,6 +305,9 @@
       "Delete": [
         "წაშლა"
       ],
+      "Delete address": [
+        "მისამართის წაშლა"
+      ],
       "Delete and confirm": [
         "წაშლა და დადასტურება"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "განბლოკვა"
       ],
+      "Unlock Breach Report": [
+        "განბლოკეთ გაჟონვის ანგარიში"
+      ],
+      "Unlock breach reports": [
+        "განბლოკეთ გაჟონვის ანგარიში"
+      ],
       "Unlock data": [
         "ბლოკის მოხსნა"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }-ის ჩასართავად ტრაფიკი ასწიეთ"
+      ],
+      "Upgrade to view all": [
+        "ასწიეთ სატარიფო გეგმა ყველას სანახავად"
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
@@ -1137,6 +1149,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "მისამართის წაშლა"
+      ],
       "Disable": [
         "გათიშვა"
       ],
@@ -3030,6 +3045,25 @@
     "Default display name vcard": {
       "Unknown": [
         "უცნობი"
+      ]
+    },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "წაშლის შემთხვევაში ამ მისამართს ვეღარც თქვენ გამოიყენებთ და ვეღარავინ სხვა."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "თქვენი სიის შემდეგი აქტიური მისამართი ნაგულისხმევად მოინიშნება."
+      ],
+      "You can only delete 1 address per year.": [
+        "თქვენ წელიწადში, მხოლოდ, 1 მისამართის წაშლა შეგიძლიათ."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "თქვენ წელიწადში, მხოლოდ, 1 მისამართის წაშლა შეგიძლიათ"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "მიაღწიეთ მისამართების წაშლის ზღვარს ამ მომხმარებლისთვის."
       ]
     },
     "Delete calendar section description": {
@@ -6433,6 +6467,9 @@
       "Edit link": [
         "ბმულის ჩასწორება"
       ],
+      "email": [
+        "ელფოსტა"
+      ],
       "Email address": [
         "ელ-ფოსტის მისამართი"
       ],
@@ -6532,6 +6569,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "ფილტრები ყველა ელფოსტაზე მუშაობს, შემოსულებს და გაგზავნილების ჩათვლით. თითოეული ფილტრი უნდა შეიცავდეს 1 სახელს, პირობას და ქმედებას მაინც."
       ],
+      "finance": [
+        "ფინანსები"
+      ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
@@ -6573,6 +6613,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "იდენტიფიკაციის ინფორმაციის დამალვა დაშორებული შემცველობის პროქსის გავლით გადმოწერის საშუალებით. შემცველობის მიმაგრებულ ფაილად დამახსოვრები შესაძლებლობა."
+      ],
+      "High Priority": [
+        "მაღალი პრიორიტეტი"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "თუ პაროლს სხვა ადმინისტრატორი შეცვლის, ორგანიზაციის ახალი პაროლი მას უნდა სთხოვოთ."
@@ -6795,6 +6838,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "ჟურნალი შეიცავს ავთენტიკაციის მცდელობებს ${ BRAND_NAME }-ის სერვისებთან, სადაც ${ BRAND_NAME_TWO }-ის მომხმარებელს და პაროლს იყენებთ."
       ],
+      "Low Priority": [
+        "დაბალი პრიორიტეტი"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "ელფოსტის ძირითადი სერვისები უარყოფებ ან გაფილტრავენ თქვენ ელფოსტას სპამში, თუ SPF/DKIM/DMARC აკლია ან არასწორია."
       ],
@@ -6810,6 +6856,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
+      "Medium Priority": [
+        "საშუალო პრიორიტეტი"
+      ],
       "Member": [
         "წევრი"
       ],
@@ -6818,6 +6867,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Monitor accounts": [
+        "ანგარიშების მონიტორი"
       ],
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
@@ -6952,6 +7004,9 @@
       "Paid for a monthly plan": [
         "თვიური გადახდის გეგმა"
       ],
+      "password": [
+        "პაროლი"
+      ],
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -7032,6 +7087,10 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი.",
+        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი."
+      ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
       ],
@@ -7040,6 +7099,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "მოითმინეთ, მიმდინარეობს თქვენი ცვლილებების სერვერთან სინქრონიზაცია."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "და კიდევ ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "საჭიროა Plus ან Visionary გამოწერა"
@@ -7585,6 +7647,12 @@
       "URL link": [
         "URL ბმული"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "გამოიყენეთ ${ BRAND_NAME } Pass ძლიერი პაროლების შესაქმნელად და პაროლების თავიდან გამოყენების თავიდან ასაცილებლად"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "გამოიყენეთ ${ VPN_APP_NAME } ჩართული Netshield-ით ფიშინგისა და მავნე პროგრამებისგან თავის დასაცავად"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
       ],
@@ -7599,6 +7667,9 @@
       ],
       "User activated": [
         "მომხმრებელი გააქტიურდა"
+      ],
+      "username": [
+        "მომხმარებლის სახელი"
       ],
       "Users": [
         "მომხმარებლები"
@@ -7641,6 +7712,9 @@
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "გაფრთხილება: წაშლა სამუდამოა. ასევე წაიშლება წვდომა ყველა მიერთებულ სერვისთან და ყველა თქვენი კონტაქტი."
+      ],
+      "Ways you can minimize your breach risks": [
+        "გზები, რომლითაც გაჟონვის რისკები შეგიძლიათ, შეამციროთ"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "გირჩევთ, როცა ეს შესაძლებელია, ${ VPN_APP_NAME }-ის ოფიცალური აპლიკაციები გამოიყენოთ ."
@@ -9515,6 +9589,9 @@
       "General": [
         "საერთო"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "მიიღეთ ${ BRAND_NAME } Pass"
+      ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }-ის მიღება"
       ],
@@ -10724,11 +10801,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "შემოსული შეტყობინებებისთვის ავტომოპასუხის დაყენება"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "30 დღეზე ძველი შეტყობინებების ავტომატური გასუფთავება ნაგვის ყუთიდან და სპამიდან"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "გადაამისამართეთ ავტომატურ თქვენს ${ MAIL_APP_NAME }-ზე გამოგზავნილი ელფოსტები ნებისმიერ სხვა ელფოსტის მისამართზე."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "სარეკლამო ან პროგრამული ელფოსტის მასიური გაგზავნა ამჟამად მხარდაუჭერელია. ამ მიზნისთვის გირჩევთ, ელფოსტის გამოყოფილი სერვისი აირჩიოთ."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "აირჩიტ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "გააკონტროლეთ წვდომა თქვენს გაზიარებულ ფაილებზე მათზე პაროლებისა და ბმულების ვადის დამატების საშუალებით"
@@ -11783,11 +11866,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "დარწმუნდით, რომ მათ ჩართული მისამართი აქვთ და ისინი მოგვიანებით, ცალკე მოიწვიეთ."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
       ],
       "Reset organization key": [
         "ორგანიზაციის გასაღების ჩამოყრა"
+      ],
+      "The following administrators could not be restored.": [
+        "შემდეგი ადმინისტრატორების აღდგენა შეუძლებელია."
       ],
       "The following administrators will get access to the organization key.": [
         "შემდეგი ადმინისტრატორები მიიღებენ წვდომას ორგანიზაციის გასაღებზე."
@@ -11857,6 +11946,9 @@
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
+      ],
+      "Invalid security code": [
+        "უსაფრთხოების არასწორი კოდი"
       ],
       "Something went wrong. Please try again later.": [
         "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -13758,6 +13850,18 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Breach Alerts": [
+        "გაჟონვის განგაშები"
+      ],
+      "Breach Date": [
+        "გაჟონვის თარიღი"
+      ],
+      "Breach Information": [
+        "გაჟონვის ინფორმაცია"
+      ],
+      "Breach Size": [
+        "გაჟონვის ზომა"
+      ],
       "Bridge for ${ platform }": [
         "ხიდი ${ platform }-თვის"
       ],
@@ -13805,6 +13909,9 @@
       ],
       "Clear out the junk": [
         "ნაგვის მოსუფთავება"
+      ],
+      "Close": [
+        "დახურვა"
       ],
       "Composing": [
         "შედგენა"
@@ -13924,6 +14031,9 @@
       "Delete account": [
         "ანგარიშის წაშლა"
       ],
+      "Delete address permanently?": [
+        "წავშალო მისამართი სამუდამოდ?"
+      ],
       "Delete calendar": [
         "კალენდრის წაშლა"
       ],
@@ -14024,6 +14134,9 @@
       "Email": [
         "ელ-ფოსტა"
       ],
+      "Email address": [
+        "ელფოსტის მისამართი"
+      ],
       "Email composer": [
         "ელფოსტის შემქმნელი"
       ],
@@ -14063,6 +14176,9 @@
       "Export public key": [
         "საჯარო გასაღების გატანა"
       ],
+      "Exposed info": [
+        "გაჟონილი ინფორმაცია"
+      ],
       "External PGP settings": [
         "გარე PGP-ის მორგება"
       ],
@@ -14084,9 +14200,6 @@
       ],
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
-      ],
-      "For ${ platform }": [
-        "${ platform }-თვის"
       ],
       "Forward and auto-reply": [
         "გადაგზავნა და ავტომოპასუხე"
@@ -14230,6 +14343,9 @@
       "Night theme": [
         "ღამის თემა"
       ],
+      "No account information was found in any data breaches": [
+        "გაჟონვებში ანგარიშის ინფორმაცია აღმოჩენილი არაა"
+      ],
       "No recovery method": [
         "აღდგენის მეთოდის გარეშე"
       ],
@@ -14295,6 +14411,9 @@
       ],
       "Recommended": [
         "რეკომენდებულია"
+      ],
+      "Recommended actions": [
+        "რეკომენდებული ქმედებები"
       ],
       "Reconnect your account": [
         "თქვენი ანგარიშის თავიდან დაკავშირება"
@@ -14563,6 +14682,9 @@
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
+      ],
+      "Your Exposed Information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
@@ -15025,6 +15147,12 @@
       ]
     },
     "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "გამოწერა ავტომატურად განახლდება ყოველ 1 თვეში. შემდეგი გადახდის თარიღი 1 თვეშია."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],
