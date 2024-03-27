@@ -39,7 +39,7 @@ export const sendMessage = async <T extends WorkerMessageWithSender>(
     try {
         return (await browser.runtime.sendMessage(browser.runtime.id, message)) as WorkerResponse<typeof message>;
     } catch (error: any) {
-        return { type: 'error', error };
+        return { type: 'error', error: error instanceof Error ? error.message : 'Unknown error' };
     }
 };
 
