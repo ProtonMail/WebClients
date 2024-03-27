@@ -1,3 +1,4 @@
+import { NativeTheme, nativeTheme } from "electron";
 import { getSettings, saveSettings } from "../store/settingsStore";
 
 export enum ThemeTypes {
@@ -20,6 +21,12 @@ const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Dark]: "dark",
     [ThemeModeSetting.Light]: "light",
 } as const satisfies Record<ThemeModeSetting, string>;
+
+const NATIVE_THEME_MODE = {
+    [ThemeModeSetting.Auto]: "system",
+    [ThemeModeSetting.Dark]: "dark",
+    [ThemeModeSetting.Light]: "light",
+} as const satisfies Record<ThemeModeSetting, NativeTheme["themeSource"]>;
 
 export type SerializedTheme = {
     mode?: (typeof SERIALIZED_THEME_MODE)[ThemeModeSetting];
@@ -49,6 +56,8 @@ export function getTheme() {
 }
 
 export function setTheme(theme: ThemeSetting) {
+    nativeTheme.themeSource = NATIVE_THEME_MODE[theme.Mode];
+
     saveSettings({
         ...getSettings(),
         theme: { mode: SERIALIZED_THEME_MODE[theme.Mode] },
