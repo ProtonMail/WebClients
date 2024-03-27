@@ -228,14 +228,12 @@ export const getAllowedCycles = ({
     defaultCycles?: CYCLE[];
 }): CYCLE[] => {
     const isTrialSubscription = isTrial(subscription);
-
-    const [largestCycle, ...restCycles] = defaultCycles.sort((a, b) => b - a);
-
+    const sortedCycles = defaultCycles.sort((a, b) => b - a);
     const currentPlanName: PLANS | undefined = getPlan(subscription)?.Name;
     const newPlanName: PLANS | undefined = getPlanFromIds(planIDs);
     const isSamePlan = currentPlanName === newPlanName;
 
-    const filteredCycles = restCycles.filter((cycle) => {
+    return sortedCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription = cycle >= (subscription?.Cycle ?? 0);
         const isHigherThanUpcoming = cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0);
 
@@ -244,8 +242,6 @@ export const getAllowedCycles = ({
 
         return cycle >= minimumCycle && cycle <= maximumCycle && isEligibleForSelection;
     });
-
-    return [largestCycle, ...filteredCycles];
 };
 
 export interface Props {
