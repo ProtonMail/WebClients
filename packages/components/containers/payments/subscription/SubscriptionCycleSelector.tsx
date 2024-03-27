@@ -217,11 +217,13 @@ export const SubscriptionCheckoutCycleItem = ({
 export const getAllowedCycles = ({
     subscription,
     minimumCycle,
+    maximumCycle,
     planIDs,
     defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
 }: {
     subscription: SubscriptionModel | undefined;
     minimumCycle: CYCLE;
+    maximumCycle: CYCLE;
     planIDs: PlanIDs;
     defaultCycles?: CYCLE[];
 }): CYCLE[] => {
@@ -240,7 +242,7 @@ export const getAllowedCycles = ({
         const isEligibleForSelection =
             (isHigherThanCurrentSubscription && isHigherThanUpcoming) || isTrialSubscription || !isSamePlan;
 
-        return cycle >= minimumCycle && isEligibleForSelection;
+        return cycle >= minimumCycle && cycle <= maximumCycle && isEligibleForSelection;
     });
 
     return [largestCycle, ...filteredCycles];
@@ -249,6 +251,7 @@ export const getAllowedCycles = ({
 export interface Props {
     cycle: CYCLE;
     minimumCycle?: CYCLE;
+    maximumCycle?: CYCLE;
     mode: 'select' | 'buttons';
     currency: Currency;
     onChangeCycle: (cycle: CYCLE) => void;
@@ -264,6 +267,7 @@ export interface Props {
 const SubscriptionCycleSelector = ({
     cycle: selectedCycle,
     minimumCycle = CYCLE.MONTHLY,
+    maximumCycle = CYCLE.TWO_YEARS,
     mode,
     onChangeCycle,
     currency,
@@ -275,7 +279,7 @@ const SubscriptionCycleSelector = ({
     defaultCycles,
     priceType,
 }: Props) => {
-    const cycles = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+    const cycles = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
 
     const monthlySuffix = getMonthlySuffix(planIDs);
 
