@@ -134,6 +134,9 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete address": [
+        "Excluir endereço"
+      ],
       "Delete Gateway": [
         "Excluir gateway"
       ],
@@ -608,6 +611,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Excluir endereço"
+      ],
       "Disable": [
         "Desativar"
       ],
@@ -1851,6 +1857,16 @@
       ],
       "/user per month": [
         "/usuário por mês"
+      ]
+    },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Você somente pode excluir 1 endereço por ano."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Você somente pode excluir 1 endereço por ano"
       ]
     },
     "Delinquent modal title": {
@@ -6313,6 +6329,11 @@
         "Enviar arquivo CSV"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ]
+    },
     "Server-Info": {
       "active": [
         "ativo"
@@ -7506,6 +7527,9 @@
       ],
       "Delete account": [
         "Excluir conta"
+      ],
+      "Delete address permanently?": [
+        "Excluir endereço permanentemente?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Excluir o servidor (você ainda poderá recuperá-lo por ${ days } dia)",

@@ -134,6 +134,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete address": [
+        "Удалить адрес"
+      ],
       "Delete Gateway": [
         "Удалить Шлюз"
       ],
@@ -4726,6 +4729,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "Срок действия ограниченного предложения истекает 2 апреля 2024 г."
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Ваша подписка будет автоматически продлеваться в ${ renewTime } по ${ renewablePrice }, вы можете это отменить ее в любое время"
       ]
     },
     "mailtrial2024: Title": {
@@ -5293,6 +5299,9 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Используйте продвинутую систему сетевой безопасности и управляйте доступом с помощью выделенных защищённых шлюзов"
       ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Передовая защита для команд, превосходящих отраслевые стандарты."
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Все приложения ${ BRAND_NAME } и их платные функции"
       ],
@@ -5433,6 +5442,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Позволяет настраивать автоматические ответы (автоответчик) для входящих сообщений"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Автоматически удалять сообщения старше 30 дней из Корзины и Спама"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Автоматически пересылайте письма, отправленные на ваш аккаунт ${ MAIL_APP_NAME }, на любой другой адрес электронной почты."
       ],
@@ -5570,6 +5582,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Место хранилища распределяется между пользователями ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } и ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
@@ -5874,11 +5889,44 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Все администраторы получат доступ к ключу."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Вы уверены, что хотите изменить ключ организации?"
+      ],
+      "Change organization key": [
+        "Изменить ключ организации"
+      ],
+      "Organization key activated": [
+        "Ключ организации активирован"
+      ],
+      "Organization key updated": [
+        "Ключ организации обновлен"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
       ],
+      "Reset organization key": [
+        "Сбросить ключ организации"
+      ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Это отправит самый новый ключ организации администраторам, которые в данный момент не имеют к нему доступа."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Чтобы включить права администратора в своем аккаунте, активируйте ключ организации."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Мы не смогли проверить безопасность ключа адреса этого отправителя. Иногда бывает задержка обновления информации об отправителе. Повторите попытку позже. Если вы не доверяете достоверности этого приглашения или отправителя, обратитесь в Службу Поддержки ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Мы проверили подлинность этого отправителя и приглашения."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Вас назначили администратором организации **${ organizationName }**"
       ]
     },
     "Payment method option": {
@@ -5910,8 +5958,14 @@
       "Invalid expiration date": [
         "Неверный срок годности"
       ],
+      "Invalid security code": [
+        "Недействительный код безопасности"
+      ],
       "Something went wrong. Please try again later.": [
         "Что-то пошло не так. Повторите попытку позже."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Мы не можем проверить подлинность вашего способа оплаты. Выберите другой способ оплаты или попробуйте еще раз."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
@@ -6142,6 +6196,11 @@
     "Select file": {
       "Upload CSV file": [
         "Загрузить файл CSV"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Результаты не найдены"
       ]
     },
     "Server-Info": {
@@ -7186,6 +7245,9 @@
       "Change role": [
         "Изменить должность"
       ],
+      "Close": [
+        "Закрыть"
+      ],
       "Confirm": [
         "Подтвердить"
       ],
@@ -7794,6 +7856,17 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Подписка автоматически продлевается каждый месяц. Следующая дата выставления счета - через месяц."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Подписка автоматически продлевается каждые 3 месяца. Следующая дата выставления счета наступит через 3 месяца."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ]
     },
     "vpn_2step: billing": {
