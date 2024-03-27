@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { getVPNIntroPricingVariant } from '@proton/components/containers';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -44,6 +45,7 @@ const getSearchParams = (search: string) => {
 };
 
 const PlansSection = ({ app }: { app: APP_NAMES }) => {
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -65,6 +67,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             plan: searchParams.plan,
             planIDs: getPlanIDs(subscription),
             plansMap,
+            vpnIntroPricingVariant,
         });
     });
     const [open] = useSubscriptionModal();
@@ -141,6 +144,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 planIDs: getPlanIDs(subscription),
                 plan: searchParams.plan,
                 plansMap,
+                vpnIntroPricingVariant,
             })
         );
     }, [isLoading, subscription, app]);
@@ -178,6 +182,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
+                vpnIntroPricingVariant={vpnIntroPricingVariant}
             />
             <Button
                 color="norm"

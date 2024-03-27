@@ -5,13 +5,14 @@ import {
     Plan,
     PlanIDs,
     PlansMap,
+    PriceType,
     Pricing,
     Subscription,
     SubscriptionCheckResponse,
     getPlanMaxIPs,
 } from '../interfaces';
 import { getPlanFromCheckout } from './planIDs';
-import { INCLUDED_IP_PRICING, customCycles, getPricingPerMember } from './subscription';
+import { INCLUDED_IP_PRICING, customCycles, getOverriddenPricePerCycle, getPricingPerMember } from './subscription';
 
 export const getDiscountText = () => {
     return c('Info')
@@ -88,10 +89,10 @@ export type RequiredCheckResponse = Pick<
     | 'TaxInclusive'
 >;
 
-export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
+export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceType?: PriceType) => {
     const plan = getPlanFromCheckout(planIDs, plansMap);
     let users = plan?.MaxMembers || 1;
-    const usersPricing = plan ? getPricingPerMember(plan) : null;
+    const usersPricing = plan ? getPricingPerMember(plan, priceType) : null;
 
     const memberAddonsNumber = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
         const planOrAddon = plansMap[planName as keyof typeof plansMap];
@@ -163,12 +164,14 @@ export const getCheckout = ({
     planIDs,
     plansMap,
     checkResult,
+    priceType,
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
     checkResult?: RequiredCheckResponse;
+    priceType?: PriceType;
 }): SubscriptionCheckoutData => {
-    const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
+    const usersAndAddons = getUsersAndAddons(planIDs, plansMap, priceType);
 
     const amount = checkResult?.Amount || 0;
     const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
@@ -179,7 +182,7 @@ export const getCheckout = ({
         const plan = plansMap[planName as keyof typeof plansMap];
 
         const defaultMonthly = plan?.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
-        const monthly = plan?.Pricing?.[CYCLE.MONTHLY] ?? 0;
+        const monthly = getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0;
 
         // Offers might affect Pricing both ways, increase and decrease.
         // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
@@ -246,15 +249,17 @@ export const getOptimisticCheckResult = ({
     planIDs,
     plansMap,
     cycle,
+    priceType,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs;
     plansMap: PlansMap;
+    priceType?: PriceType;
 }): RequiredCheckResponse => {
     const { amount } = Object.entries(planIDs).reduce(
         (acc, [planName, quantity]) => {
             const plan = plansMap?.[planName as keyof typeof plansMap];
-            const price = plan?.Pricing?.[cycle];
+            const price = getOverriddenPricePerCycle(plan, cycle, priceType);
             if (!plan || !price) {
                 return acc;
             }
