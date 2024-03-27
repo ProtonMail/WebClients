@@ -819,6 +819,11 @@ const Step1 = ({
             }
             return CYCLE.YEARLY;
         }
+        if (options.cycle === CYCLE.THREE) {
+            if (cycleData.cycles.includes(CYCLE.EIGHTEEN)) {
+                return CYCLE.EIGHTEEN;
+            }
+        }
         if (options.cycle === CYCLE.YEARLY) {
             return CYCLE.TWO_YEARS;
         }
