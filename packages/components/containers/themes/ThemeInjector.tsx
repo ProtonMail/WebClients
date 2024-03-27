@@ -2,11 +2,16 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateTheme } from '@proton/shared/lib/api/settings';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getIsDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { ThemeSetting, electronAppTheme, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
+import {
+    ThemeSetting,
+    electronAppTheme as defaultElectronAppTheme,
+    getDefaultThemeSetting,
+} from '@proton/shared/lib/themes/themes';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
@@ -43,16 +48,28 @@ export const ThemeInjector = () => {
     const themeSetting = userSettings.Theme && 'Mode' in userSettings.Theme ? userSettings.Theme : legacyThemeSettings;
 
     useLayoutEffect(() => {
-        const theme = isElectronApp
-            ? {
-                  ...electronAppTheme,
-                  FontSize: themeSetting.FontSize,
-                  FontFace: themeSetting.FontFace,
-                  Features: themeSetting.Features,
-              }
-            : themeSetting;
+        const updateThemeSetting = async () => {
+            let theme = themeSetting;
 
-        setThemeSetting(theme);
+            if (isElectronApp) {
+                let electronAppTheme = defaultElectronAppTheme;
+
+                if (canInvokeInboxDesktopIPC) {
+                    electronAppTheme = window.ipcInboxMessageBroker!.getTheme();
+                }
+
+                theme = {
+                    ...electronAppTheme,
+                    FontSize: themeSetting.FontSize,
+                    FontFace: themeSetting.FontFace,
+                    Features: themeSetting.Features,
+                };
+            }
+
+            setThemeSetting(theme);
+        };
+
+        void updateThemeSetting();
     }, [themeSetting]);
 
     useEffect(() => {

@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
@@ -198,11 +199,6 @@ const ThemeProvider = ({ children, appName }: Props) => {
     };
 
     const setTheme = (themeType: ThemeTypes, mode?: ThemeModeSetting) => {
-        // Electron app cannot change theme
-        if (appName && isElectronOnSupportedApps(appName)) {
-            return;
-        }
-
         if (mode) {
             syncThemeSettingValue({
                 ...themeSetting,
@@ -329,6 +325,12 @@ const ThemeProvider = ({ children, appName }: Props) => {
         };
 
         syncToCookie();
+    }, [themeSetting]);
+
+    useEffect(() => {
+        if (appName && isElectronOnSupportedApps(appName) && canInvokeInboxDesktopIPC) {
+            window.ipcInboxMessageBroker!.send('setTheme', themeSetting);
+        }
     }, [themeSetting]);
 
     return (
