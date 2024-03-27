@@ -44,10 +44,10 @@ const NoBreachesView = () => {
     return (
         <div className="flex flex-column items-center gap-3 md:gap-5 rounded-lg border-weak shadow-norm ml-2 p-10 text-center max-h-full">
             <span
-                className="block ratio-square rounded flex w-custom breach-icon-bg-success"
+                className="ratio-square rounded flex w-custom breach-icon-bg-success"
                 style={{ '--w-custom': '4rem' }}
             >
-                <Icon name="checkmark" size={14} className="m-auto block color-success mb-2" />
+                <Icon name="checkmark" size={14} className="m-auto color-success" />
             </span>
             <h3 className="color-success">{c('Title').t`No account information was found in any data breaches`}</h3>
             <p className="text-md text-bold">{c('Info').t`Ways you can minimize your breach risks`}</p>
