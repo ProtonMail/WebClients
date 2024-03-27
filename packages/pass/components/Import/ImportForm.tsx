@@ -161,9 +161,9 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                         />
                     )}
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
-                        <em className="block text-sm color-weak mb-2">
+                        <Card className="mb-4">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes and credit cards.`}
-                        </em>
+                        </Card>
                     )}
                 </>
             )}
