@@ -53,6 +53,7 @@ import {
     getIsVpnPlan,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
+    getPlanNameFromIDs,
     hasNewVisionary,
     hasPassPlus,
 } from '@proton/shared/lib/helpers/subscription';
@@ -489,7 +490,7 @@ const SubscriptionContainer = ({
                 void reportSubscriptionModalPayment({
                     cycle: model.cycle,
                     currency: model.currency,
-                    plan: Object.keys(model.planIDs)[0],
+                    plan: getPlanNameFromIDs(model.planIDs) || 'n/a',
                 });
             } catch (error) {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define

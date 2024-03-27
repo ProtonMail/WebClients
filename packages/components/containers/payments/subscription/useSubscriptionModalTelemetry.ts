@@ -15,7 +15,7 @@ export const getInitialStep = (step?: SUBSCRIPTION_STEPS) => {
         case SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION:
             return 'checkout_with_customization';
         default:
-            return '';
+            return 'n/a';
     }
 };
 
