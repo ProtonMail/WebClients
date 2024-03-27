@@ -606,7 +606,7 @@ describe('getAllowedCycles', () => {
         };
 
         const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
-        expect(result).toEqual([CYCLE.MONTHLY, CYCLE.YEARLY]);
+        expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     describe('defaultCycles', () => {
@@ -641,7 +641,7 @@ describe('getAllowedCycles', () => {
         it('should default defaultCycles to TWO_YEARS, YEARLY, MONTHLY', () => {
             const subscription = undefined;
             const minimumCycle = CYCLE.MONTHLY;
-            const maximumCycle = CYCLE.TWO_YEARS;
+            const maximumCycle = CYCLE.THIRTY;
             const defaultCycles = [CYCLE.THIRTY, CYCLE.MONTHLY, CYCLE.FIFTEEN];
             const planIDs: PlanIDs = {
                 [PLANS.BUNDLE]: 1,
