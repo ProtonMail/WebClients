@@ -2,6 +2,7 @@ import { ReactNode, useEffect, useReducer, useState } from 'react';
 
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
+import { UNPAID_STATE } from '@proton/shared/lib/constants';
 
 import { useAuthentication, useConfig, useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
@@ -49,6 +50,8 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
                 if (scopes.includes('nondelinquent')) {
                     createModal(
                         <DelinquentModal
+                            // When the API returns a nondelinquent scope the user is in the NO_RECEIVE variant
+                            delinquent={UNPAID_STATE.NO_RECEIVE}
                             onClose={() => {
                                 error.cancel = true;
                                 reject(error);

@@ -5,19 +5,24 @@ import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { BRAND_NAME, UNPAID_STATE } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt, SettingsLink } from '../../components';
-import { useUser } from '../../hooks';
 
-const DelinquentModal = (props: ModalProps) => {
-    const [user] = useUser();
+interface Props extends ModalProps {
+    delinquent?: UNPAID_STATE;
+}
+
+/**
+ * This modal may be triggered by the API provider and as such it cannot use model hooks.
+ */
+const DelinquentModal = ({ delinquent, ...props }: Props) => {
     const title = c('Delinquent modal title').t`Overdue invoice`;
 
     const delinquentMessage = c('Info')
         .t`Your ${BRAND_NAME} account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.`;
 
     let message: string = '';
-    if (user.Delinquent === UNPAID_STATE.DELINQUENT) {
+    if (delinquent === UNPAID_STATE.DELINQUENT) {
         message = delinquentMessage;
-    } else if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
+    } else if (delinquent === UNPAID_STATE.NO_RECEIVE) {
         message = c('Info')
             .t`Your ${BRAND_NAME} account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.`;
     } else {
