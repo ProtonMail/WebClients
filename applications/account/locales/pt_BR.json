@@ -305,6 +305,9 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete address": [
+        "Excluir endereço"
+      ],
       "Delete and confirm": [
         "Excluir e confirmar"
       ],
@@ -1146,6 +1149,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Excluir endereço"
+      ],
       "Disable": [
         "Desativar"
       ],
@@ -3039,6 +3045,16 @@
     "Default display name vcard": {
       "Unknown": [
         "Desconhecido"
+      ]
+    },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Você somente pode excluir 1 endereço por ano."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Você somente pode excluir 1 endereço por ano"
       ]
     },
     "Delete calendar section description": {
@@ -14065,6 +14081,9 @@
       "Delete account": [
         "Excluir conta"
       ],
+      "Delete address permanently?": [
+        "Excluir endereço permanentemente?"
+      ],
       "Delete calendar": [
         "Excluir calendário"
       ],
@@ -14231,9 +14250,6 @@
       ],
       "Folders and labels": [
         "Pastas e marcadores"
-      ],
-      "For ${ platform }": [
-        "Para ${ platform }"
       ],
       "Forward and auto-reply": [
         "Encaminhamento e resposta automática"
