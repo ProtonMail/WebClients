@@ -233,6 +233,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const vpnPlanName = getVPNPlanToUse(
                 plansMap,
                 signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {},
+                CYCLE.TWO_YEARS, // TWO_YEARS as a cycle to land in the vpn2024 condition in case it's the preSelectedPlan
                 { vpnIntroPricingVariant }
             );
 
