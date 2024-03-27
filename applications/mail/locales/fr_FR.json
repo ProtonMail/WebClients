@@ -347,7 +347,7 @@
         "Télécharger ${ attachmentName }"
       ],
       "Download now": [
-        "Télécharger maintenant"
+        "Télécharger"
       ],
       "Downloading": [
         "Téléchargement en cours"
@@ -8149,6 +8149,9 @@
       "Select": [
         "Sélectionnez"
       ],
+      "Select state": [
+        "Sélectionnez l'état"
+      ],
       "Start date": [
         "Date de début"
       ],
@@ -8346,7 +8349,7 @@
         "Protégez votre identité en ligne"
       ],
       "Try ${ PASS_APP_NAME }": [
-        "Essayez ${ PASS_APP_NAME }"
+        "Essayer ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
         "Par exemple, à utiliser sur des sites marchands comme Amazon pour vos achats, etc."
@@ -8914,7 +8917,7 @@
         "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
       ],
       "Create hide-my-email aliases and keep track of them here.": [
-        "Créez des alias hide-my-email et suivez-les ici."
+        "Créez des alias « hide-my-email » et suivez-les ici."
       ],
       "Email tracking protection": [
         "Protection contre le suivi des e-mails"
@@ -8936,12 +8939,6 @@
       ],
       "Schedule send": [
         "Programmer l'envoi"
-      ],
-      "Set when an email should reappear in your inbox with the new snooze feature.": [
-        "Définissez à quel moment un message doit réapparaître dans votre boite de réception grâce à la nouvelle fonctionnalité de mise en attente."
-      ],
-      "Snooze it for later": [
-        "Reportez-le à plus tard"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
@@ -9000,7 +8997,7 @@
         "contactez votre administrateur"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pour continuer à importer ou synchroniser vos fichiers, libérez de l'espace ou changer d'abonnement pour en obtenir davantage."
+        "Pour continuer à importer ou synchroniser vos fichiers, libérez de l'espace ou changez d'abonnement pour en obtenir davantage."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
@@ -9437,7 +9434,7 @@
         "(actif)"
       ],
       "A filter name is required": [
-        "Un nom de filtre est requis"
+        "Le nom du filtre est requis."
       ],
       "A filter with this name already exists": [
         "Un filtre portant ce nom existe déjà."
@@ -9671,7 +9668,7 @@
         "Votre avis"
       ],
       "Filter name cannot contain only spaces": [
-        "Le nom du filtre ne doit pas contenir uniquement des espaces"
+        "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
       "Filter on...": [
         "Filtrer"
