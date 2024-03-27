@@ -8,12 +8,12 @@ const ASSET_ROUTE = globToRegExp('/assets/*');
 
 const getOfflineCache = () => caches.open(OFFLINE_CACHE_KEY);
 
-export const matchAssetRoute = (pathname: string): boolean => OFFLINE_SUPPORTED && ASSET_ROUTE.test(pathname);
+export const matchAssetRoute = (pathname: string): boolean => ASSET_ROUTE.test(pathname);
 
 export const matchIndexRoute = (pathname: string): boolean => {
     const offline = !navigator.onLine;
     const match = pathname === '/' || pathname.startsWith('/u/');
-    return OFFLINE_SUPPORTED && offline && match;
+    return offline && match;
 };
 
 export const clearOfflineCache = async () => {
@@ -31,8 +31,6 @@ export const getCriticalOfflineAssets = async (): Promise<string[]> =>
  * cache all critical offline assets. This should be
  * done in the install phase of the service-worker */
 export const cacheCriticalOfflineAssets = async () => {
-    if (!OFFLINE_SUPPORTED) return;
-
     try {
         if (ENV !== 'development') await clearOfflineCache();
         const cache = await getOfflineCache();
