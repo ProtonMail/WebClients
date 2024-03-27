@@ -1,3 +1,4 @@
+import { ThemeSetting } from "../utils/themes";
 import { TrialStatus } from "../store/trialStore";
 
 export type VIEW_TARGET = "mail" | "calendar" | "account";
@@ -18,7 +19,8 @@ export type IPCMessage =
     | { type: "trialEnd"; payload: TrialStatus }
     | { type: "changeView"; payload: VIEW_TARGET }
     | { type: "showNotification"; payload: ElectronNotification }
-    | { type: "updateLocale"; payload: string };
+    | { type: "updateLocale"; payload: string }
+    | { type: "setTheme"; payload: ThemeSetting };
 
 export type IPCMessageType = IPCMessage["type"];
 export type IPCMessagePayload<T extends IPCMessageType> = Extract<IPCMessage, { type: T }>["payload"];

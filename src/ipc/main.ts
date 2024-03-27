@@ -5,12 +5,17 @@ import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/vie
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
 import { IPCMessage } from "./ipcConstants";
+import { getTheme, setTheme } from "../utils/themes";
 
 function isValidMessage(message: unknown): message is IPCMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
 }
 
 export const handleIPCCalls = () => {
+    ipcMain.on("getTheme", (event) => {
+        event.returnValue = getTheme();
+    });
+
     ipcMain.on("clientUpdate", (_e, message: unknown) => {
         if (!isValidMessage(message)) {
             Logger.error(`Invalid clientUpdate message: ${message}`);
@@ -52,6 +57,9 @@ export const handleIPCCalls = () => {
                 break;
             case "updateLocale":
                 refreshHiddenViews();
+                break;
+            case "setTheme":
+                setTheme(payload);
                 break;
             default:
                 Logger.error(`unknown message type: ${type}`);
