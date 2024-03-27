@@ -31,6 +31,7 @@ export const getCurrency = (
 export const getVPNPlanToUse = (
     _: PlansMap,
     planIDs: PlanIDs | undefined,
+    cycle: CYCLE | undefined,
     options?: {
         vpnIntroPricingVariant?: VPNIntroPricingVariant;
     }
@@ -41,7 +42,11 @@ export const getVPNPlanToUse = (
         return PLANS.VPN2024;
     }
      */
-    if (options?.vpnIntroPricingVariant === VPNIntroPricingVariant.New2024 || planIDs?.[PLANS.VPN2024]) {
+    // If the user is on the vpn2024 plan on these cycles, we keep showing it
+    if (planIDs?.[PLANS.VPN2024] && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any)) {
+        return PLANS.VPN2024;
+    }
+    if (options?.vpnIntroPricingVariant === VPNIntroPricingVariant.New2024) {
         return PLANS.VPN2024;
     }
     return PLANS.VPN;
@@ -62,18 +67,20 @@ export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
     planIDs,
+    cycle,
     plansMap,
     vpnIntroPricingVariant,
 }: {
     appName: ProductParam;
     plan?: string;
     planIDs: PlanIDs;
+    cycle: CYCLE | undefined;
     plansMap: PlansMap;
     vpnIntroPricingVariant: VPNIntroPricingVariant;
 }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = getVPNPlanToUse(plansMap, planIDs, { vpnIntroPricingVariant });
+        defaultB2CPlan = getVPNPlanToUse(plansMap, planIDs, cycle, { vpnIntroPricingVariant });
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
