@@ -3069,10 +3069,10 @@
     },
     "Delete address prompt": {
       "Once deleted, this address can't be used again by you or anyone else.": [
-        "Kiedy usuniesz ten adres, ty ani inna osoba nie będzie mogła go użyć."
+        "Usuniętego adresu nie będzie mógł nikt użyć, również Ty."
       ],
       "The next active address on your list will be set as the default.": [
-        "Następny aktywny adres zostanie ustawiony domyślnie."
+        "Następny aktywny adres zostanie ustawiony jako domyślny."
       ],
       "You can only delete 1 address per year.": [
         "Możesz usunąć tylko 1 adres rocznie."
@@ -3083,7 +3083,7 @@
         "Możesz usunąć tylko 1 adres rocznie."
       ],
       "You've reached the limit of address deletions for this user.": [
-        "Osiągnąłeś limit usuwania adresów dla tego użytkownika."
+        "Osiągnięto maksymalną liczbę usuniętych adresów."
       ]
     },
     "Delete calendar section description": {
@@ -14574,9 +14574,6 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
-      ],
-      "For ${ platform }": [
-        "${ platform }"
       ],
       "Forward and auto-reply": [
         "Przekierowanie i autoresponder"

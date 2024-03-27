@@ -305,6 +305,9 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete address": [
+        "Ștergere adresă"
+      ],
       "Delete and confirm": [
         "Ștergere și confirmare"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Deblocare"
       ],
+      "Unlock Breach Report": [
+        "Deblocare raport breșe"
+      ],
+      "Unlock breach reports": [
+        "Deblocare rapoarte breșe"
+      ],
       "Unlock data": [
         "Deblocare date"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Schimbați planul pentru a le vedea pe toate"
       ],
       "Upgrade your plan": [
         "Modificare plan"
@@ -1140,6 +1152,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Ștergere adresă"
+      ],
       "Disable": [
         "Dezactivare"
       ],
@@ -3045,6 +3060,25 @@
         "Necunoscut"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "După ștergere, această adresă nu mai poate fi refolosită de nimeni."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Următoarea adresă activă din listă va fi setată ca implicită."
+      ],
+      "You can only delete 1 address per year.": [
+        "Puteți șterge o singură adresă pe an."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Puteți șterge o singură adresă pe an"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ați atins limita de adrese șterse pentru acest utilizator."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Toate evenimentele din acest calendar vor fi șterse."
@@ -3094,6 +3128,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Pentru a elimina subsolul mesajelor din ${ MAIL_APP_NAME }, modernizați contul și deblocați și mai multe funcții premium."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Pentru a vizualiza raportul complet, inclusiv recomandări personalizate, treceți la un plan cu plată."
       ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
@@ -6301,6 +6338,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Împiedică expeditorii să vadă dacă și când ați deschis un mesaj."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Alerta de breșă este alimentată de seturile de date proprietare ale ${ BRAND_NAME }, seturile de date cu sursa publică și Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
@@ -6507,6 +6547,9 @@
       "Edit link": [
         "Editare legătură"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -6606,6 +6649,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
+      "finance": [
+        "finanțe"
+      ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
@@ -6647,6 +6693,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Ascunde informațiile de identificare prin încărcarea conținutului de la distanță prin intermediul unui proxy. Opțiunea de stocare a conținutului ca atașament."
+      ],
+      "High Priority": [
+        "Prioritate înaltă"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
@@ -6871,6 +6920,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Jurnalele conțin încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care folosesc informațiile dvs. de autentificare ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Prioritate scăzută"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Serviciile de e-mail majore v-ar putea refuza sau considera mesajele ca fiind nedorite dacă SPF/DKIM/DMARC/ lipsesc sau nu sunt setate corespunzător."
       ],
@@ -6886,6 +6938,9 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioritate medie"
+      ],
       "Member": [
         "Membru"
       ],
@@ -6894,6 +6949,9 @@
       ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "Monitor accounts": [
+        "Monitorizare conturi"
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
@@ -7032,6 +7090,9 @@
       "Paid for a monthly plan": [
         "Plătit pentru un plan lunar"
       ],
+      "password": [
+        "parola"
+      ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
       ],
@@ -7127,6 +7188,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Așteptați până când modificările se sincronizează cu serverul."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus încă ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
@@ -7679,6 +7743,15 @@
       "URL link": [
         "URL legătură"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Utilizați ${ BRAND_NAME } Pass pentru a genera parole puternice și pentru a evita reutilizarea acestora"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Utilizați ${ VPN_APP_NAME } cu NetShield activat pentru a vă proteja de înșelăciuni și malware"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Utilizați aliasuri pentru a vă înscrie la servicii online. Acest lucru vă protejează adresa de e-mail și identitatea reală, limitând raza de acțiune a unei breșe."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
       ],
@@ -7693,6 +7766,9 @@
       ],
       "User activated": [
         "Utilizator activat"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -7736,6 +7812,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Atenție: ștergerea este permanentă. Se elimină și accesul la toate serviciile conectate și se șterg toate contactele dvs."
       ],
+      "Ways you can minimize your breach risks": [
+        "Modalități prin care puteți reduce riscul breșelor"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vă sfătuim să utilizați aplicațiile oficiale ${ VPN_APP_NAME } atunci când este posibil."
       ],
@@ -7747,6 +7826,9 @@
       ],
       "We just sent you a new link.": [
         "Vi s-a trimis o nouă legătură."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Vă monitorizăm adresele de e-mail, parolele și datele personale dacă apar pe internetul neoficial și vă informăm în cazul în care datele vă sunt compromise."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
@@ -9627,6 +9709,9 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Luați ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Luați ${ VPN_APP_NAME }"
@@ -11938,6 +12023,17 @@
         "Pentru persoane"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **parola veche**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **expresia de recuperare** sau **parola veche**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Orice metodă de **autentificare cu doi factori (A2F)** din cont va fi dezactivată."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Toți administratorii vor primi acces la cheie."
@@ -11969,11 +12065,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Permisiune refuzată, drepturile de administrator au fost restricționate."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Asigurați-vă că au o adresă activată și invitați-i separat mai târziu."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Utilizatorii privați pot fi promovați la funcția de administrator atunci când s-au conectat pentru prima dată."
       ],
       "Reset organization key": [
         "Resetare cheie organizație"
+      ],
+      "The following administrators could not be restored.": [
+        "Următorii administratori nu au putut fi restaurați."
       ],
       "The following administrators will get access to the organization key.": [
         "Următorii administratori vor primi acces la cheia organizației."
@@ -12043,6 +12145,9 @@
       ],
       "Invalid expiration date": [
         "Data expirării nu este validă."
+      ],
+      "Invalid security code": [
+        "Cod de securitate nevalid"
       ],
       "Something went wrong. Please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
@@ -13987,6 +14092,18 @@
       "Billing cycle": [
         "Ciclu de facturare"
       ],
+      "Breach Alerts": [
+        "Alerte breșe"
+      ],
+      "Breach Date": [
+        "Date breșă"
+      ],
+      "Breach Information": [
+        "Informații breșă"
+      ],
+      "Breach Size": [
+        "Mărime breșă"
+      ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
       ],
@@ -14034,6 +14151,9 @@
       ],
       "Clear out the junk": [
         "Eliminare mesaje din gunoi"
+      ],
+      "Close": [
+        "Închidere"
       ],
       "Composing": [
         "Compunere"
@@ -14154,6 +14274,9 @@
       "Delete account": [
         "Ștergere cont"
       ],
+      "Delete address permanently?": [
+        "Ștergeți permanent adresa?"
+      ],
       "Delete calendar": [
         "Ștergere calendar"
       ],
@@ -14255,6 +14378,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email address": [
+        "Adresa de e-mail"
+      ],
       "Email composer": [
         "Editor mesaj e-mail"
       ],
@@ -14294,6 +14420,9 @@
       "Export public key": [
         "Exportare cheie publică"
       ],
+      "Exposed info": [
+        "Informații expuse"
+      ],
       "External PGP settings": [
         "Setări externe PGP"
       ],
@@ -14316,9 +14445,6 @@
       ],
       "Folders and labels": [
         "Foldere și etichete"
-      ],
-      "For ${ platform }": [
-        "Pentru ${ platform }"
       ],
       "Forward and auto-reply": [
         "Redirecționare și răspuns automat"
@@ -14463,6 +14589,9 @@
       "Night theme": [
         "Temă noapte"
       ],
+      "No account information was found in any data breaches": [
+        "Nu s-au găsit informații despre cont în nicio încălcare a datelor"
+      ],
       "No recovery method": [
         "Nu există metodă de recuperare"
       ],
@@ -14531,6 +14660,9 @@
       ],
       "Recommended": [
         "Recomandat"
+      ],
+      "Recommended actions": [
+        "Acțiuni recomandate"
       ],
       "Reconnect your account": [
         "Reconectați-vă contul"
@@ -14800,6 +14932,9 @@
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
+      ],
+      "Your Exposed Information": [
+        "Informațiile expuse"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
