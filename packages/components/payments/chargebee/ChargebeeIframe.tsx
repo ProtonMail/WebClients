@@ -39,7 +39,8 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useChargebeeContext, useChargebeeKillSwitch } from '../client-extensions/useChargebeeContext';
+import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
+import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
