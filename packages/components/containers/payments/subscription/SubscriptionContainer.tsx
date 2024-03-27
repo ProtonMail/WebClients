@@ -19,7 +19,6 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import { subscribe as apiSubscribe, getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { TelemetryMeasurementGroups, TelemetrySubscriptionModalEvents } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
@@ -36,7 +35,6 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getPlanFromCheckout,
@@ -108,8 +106,8 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import { SelectedProductPlans, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
-import { getInitialStep } from './telemetry';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
+import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';
 
@@ -257,6 +255,8 @@ const SubscriptionContainer = ({
         }
         return defaultAudience;
     });
+
+    const { reportSubscriptionModalInitialization, reportSubscriptionModalPayment } = useSubscriptionModalTelemetry();
 
     const planIDs = useMemo(() => {
         const subscriptionPlanIDs = getPlanIDs(subscription);
@@ -484,6 +484,11 @@ const SubscriptionContainer = ({
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
+                void reportSubscriptionModalPayment({
+                    cycle: model.cycle,
+                    currency: model.currency,
+                    plan: Object.keys(model.planIDs)[0],
+                });
             } catch (error) {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
@@ -679,17 +684,12 @@ const SubscriptionContainer = ({
         // Trigger once to initialise the check values
         void withLoadingCheck(check());
         // Send telemetry event: initialization
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.subscriptionModal,
-            event: TelemetrySubscriptionModalEvents.initialization,
-            dimensions: {
-                initial_step: getInitialStep(maybeStep),
-                plan_selected: plan ? plansMap[plan].Name : '',
-                billing_cycle: model.cycle.toString(),
-                currency: model.currency,
-                upsell_reference: upsellRef,
-            },
+        void reportSubscriptionModalInitialization({
+            step: maybeStep,
+            plan: plan,
+            cycle: model.cycle,
+            currency: model.currency,
+            upsellRef,
         });
     }, []);
 
