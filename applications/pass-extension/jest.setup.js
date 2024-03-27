@@ -5,14 +5,15 @@ import { TextDecoder, TextEncoder } from 'util';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
+jest.mock('loglevel');
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
     loadCryptoWorker: jest.fn(),
 }));
 
-jest.mock('loglevel');
-
 // JSDom does not include webcrypto
 const crypto = require('crypto').webcrypto;
 global.crypto.subtle = crypto.subtle;
+global.VERSION = '0.0.1';
