@@ -9,8 +9,9 @@ import { ConfigProvider } from '@proton/components/containers/config';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { apiMock } from '../api';
 import { mockCache } from '../cache';
@@ -107,3 +108,21 @@ export const withAuthentication =
             </AuthenticationProvider>
         );
     };
+
+export const withPaymentContext =
+    (enableChargebee: ChargebeeEnabled = ChargebeeEnabled.INHOUSE_FORCED) =>
+    <T extends {}>(Component: ComponentType<T>) =>
+        function PaymentContextHoc(props: T & JSX.IntrinsicAttributes) {
+            return (
+                <PaymentSwitcherContext.Provider
+                    value={{
+                        enableChargebee,
+                        setEnableChargebee: () => {},
+                        calledKillSwitch: 'not-called',
+                        setCalledKillSwitch: () => {},
+                    }}
+                >
+                    <Component {...props} />
+                </PaymentSwitcherContext.Provider>
+            );
+        };

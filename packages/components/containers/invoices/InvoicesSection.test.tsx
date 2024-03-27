@@ -1,5 +1,7 @@
 import { render } from '@testing-library/react';
 
+import { applyHOCs, withConfig, withPaymentContext } from '@proton/testing/index';
+
 import { useSubscribeEventManager } from '../../hooks';
 import InvoicesSection from './InvoicesSection';
 
@@ -52,6 +54,8 @@ jest.mock('../../hooks/useModals', () => {
     };
 });
 
+const InvoicesSectionContext = applyHOCs(withConfig(), withPaymentContext())(InvoicesSection);
+
 describe('InvoicesSection', () => {
     let useSubscribeEventManagerMock: jest.Mock;
 
@@ -65,7 +69,7 @@ describe('InvoicesSection', () => {
     });
 
     it('should request the list of invoices again when there is an Invoices event', () => {
-        render(<InvoicesSection />);
+        render(<InvoicesSectionContext />);
 
         expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
         let [callback] = useSubscribeEventManagerMock.mock.lastCall;
@@ -78,7 +82,7 @@ describe('InvoicesSection', () => {
     });
 
     it('should not request invoices if the Invoices array is empty', () => {
-        render(<InvoicesSection />);
+        render(<InvoicesSectionContext />);
 
         expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
         let [callback] = useSubscribeEventManagerMock.mock.lastCall;
@@ -91,7 +95,7 @@ describe('InvoicesSection', () => {
     });
 
     it('should not request invoices if the Invoices are not there ', () => {
-        render(<InvoicesSection />);
+        render(<InvoicesSectionContext />);
 
         let useSubscribeEventManagerMock = useSubscribeEventManager as jest.Mock;
         expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
@@ -103,7 +107,7 @@ describe('InvoicesSection', () => {
     });
 
     it('should not request invoices if the callback does not have an argument', () => {
-        render(<InvoicesSection />);
+        render(<InvoicesSectionContext />);
 
         let useSubscribeEventManagerMock = useSubscribeEventManager as jest.Mock;
         expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
