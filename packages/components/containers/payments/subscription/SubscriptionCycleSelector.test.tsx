@@ -378,9 +378,10 @@ describe('getAllowedCycles', () => {
     it('should return all cycles if there is no subscription', () => {
         const subscription = undefined;
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {};
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -393,8 +394,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -407,8 +409,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -421,8 +424,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
@@ -439,8 +443,9 @@ describe('getAllowedCycles', () => {
         subscription.UpcomingSubscription = upcomingSubscriptionMock;
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -454,8 +459,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -469,8 +475,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -484,8 +491,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -499,8 +507,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.YEARLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -514,8 +523,9 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.TWO_YEARS;
+        const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
 
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
@@ -528,9 +538,10 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
         const defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
 
-        const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
@@ -549,9 +560,10 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
         const defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
 
-        const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
 
@@ -563,9 +575,10 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.YEARLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
         const defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
 
-        const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
@@ -577,22 +590,36 @@ describe('getAllowedCycles', () => {
         };
 
         const minimumCycle = CYCLE.TWO_YEARS;
+        const maximumCycle = CYCLE.TWO_YEARS;
         const defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
 
-        const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
         expect(result).toEqual([CYCLE.TWO_YEARS]);
+    });
+
+    it('should return cycles respecting the maximumCycle = 12', () => {
+        const subscription = getSubscriptionMock();
+        const minimumCycle = CYCLE.MONTHLY;
+        const maximumCycle = CYCLE.YEARLY;
+        const planIDs: PlanIDs = {
+            [PLANS.BUNDLE]: 1,
+        };
+
+        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs });
+        expect(result).toEqual([CYCLE.MONTHLY, CYCLE.YEARLY]);
     });
 
     describe('defaultCycles', () => {
         it('should default defaultCycles to TWO_YEARS, YEARLY, MONTHLY', () => {
             const subscription = undefined;
             const minimumCycle = CYCLE.MONTHLY;
+            const maximumCycle = CYCLE.TWO_YEARS;
             const defaultCycles = [CYCLE.YEARLY, CYCLE.MONTHLY, CYCLE.TWO_YEARS];
             const planIDs: PlanIDs = {
                 [PLANS.BUNDLE]: 1,
             };
 
-            const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+            const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
         });
@@ -600,12 +627,13 @@ describe('getAllowedCycles', () => {
         it('should sort default cycles in descending order', () => {
             const subscription = undefined;
             const minimumCycle = CYCLE.MONTHLY;
+            const maximumCycle = CYCLE.TWO_YEARS;
             const defaultCycles = [CYCLE.YEARLY, CYCLE.MONTHLY, CYCLE.TWO_YEARS];
             const planIDs: PlanIDs = {
                 [PLANS.BUNDLE]: 1,
             };
 
-            const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+            const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
         });
@@ -613,12 +641,13 @@ describe('getAllowedCycles', () => {
         it('should default defaultCycles to TWO_YEARS, YEARLY, MONTHLY', () => {
             const subscription = undefined;
             const minimumCycle = CYCLE.MONTHLY;
+            const maximumCycle = CYCLE.TWO_YEARS;
             const defaultCycles = [CYCLE.THIRTY, CYCLE.MONTHLY, CYCLE.FIFTEEN];
             const planIDs: PlanIDs = {
                 [PLANS.BUNDLE]: 1,
             };
 
-            const result = getAllowedCycles({ subscription, minimumCycle, defaultCycles, planIDs });
+            const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, defaultCycles, planIDs });
 
             expect(result).toEqual([CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY]);
         });
