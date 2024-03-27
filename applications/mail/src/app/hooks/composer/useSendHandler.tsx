@@ -12,7 +12,12 @@ import SendingMessageNotification, {
     SendingMessageNotificationManager,
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
+import {
+    MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    SAVE_DRAFT_ERROR_CODES,
+    SEND_EMAIL_ERROR_CODES,
+    STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
+} from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { endSending, startSending } from '../../store/messages/draft/messagesDraftActions';
@@ -141,6 +146,14 @@ export const useSendHandler = ({
                 throw error;
             }
 
+            if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Sending attachments is restricted until you meet your plan limits or upgrade.`,
+                });
+                throw error;
+            }
+
             if (error.data?.Error) {
                 createNotification({
                     text: error.data?.Error,
@@ -228,14 +241,16 @@ export const useSendHandler = ({
             try {
                 await promiseUpload;
             } catch (error: any) {
-                hideNotification(notifManager.ID);
-                createNotification({
-                    text: c('Error').t`Error while uploading attachments. Message is not sent.`,
-                    type: 'error',
-                });
-                console.error('Error while uploading attachments.', error);
-                onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
-                throw error;
+                if (error?.message !== STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                    hideNotification(notifManager.ID);
+                    createNotification({
+                        text: c('Error').t`Error while uploading attachments. Message is not sent.`,
+                        type: 'error',
+                    });
+                    console.error('Error while uploading attachments.', error);
+                    onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
+                    throw error;
+                }
             }
 
             // Split handlers to have the updated version of the message
