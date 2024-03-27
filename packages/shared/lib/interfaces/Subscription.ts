@@ -192,3 +192,7 @@ export enum Audience {
     B2B = 'b2b',
     FAMILY = 'family',
 }
+
+export enum PriceType {
+    default,
+}

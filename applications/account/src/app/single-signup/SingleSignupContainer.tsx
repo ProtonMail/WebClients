@@ -5,6 +5,8 @@ import {
     OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
+    VPNIntroPricingVariant,
+    getVPNIntroPricingVariant,
     useActiveBreakpoint,
     useApi,
     useConfig,
@@ -72,10 +74,12 @@ const getCycleData = ({
     plan,
     coupon,
     activeBreakpoint,
+    vpnIntroPricingVariant,
 }: {
     plan: PLANS;
     coupon?: string;
     activeBreakpoint: Breakpoints;
+    vpnIntroPricingVariant?: VPNIntroPricingVariant;
 }) => {
     if (getIsVpn2024Deal(plan, coupon)) {
         return {
@@ -84,6 +88,17 @@ const getCycleData = ({
                 ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
                 : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
         };
+    }
+
+    const defaultValue = {
+        upsellCycle: CYCLE.TWO_YEARS,
+        cycles: activeBreakpoint.viewportWidth['>=large']
+            ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
+            : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
+    };
+
+    if (vpnIntroPricingVariant === VPNIntroPricingVariant.New2024) {
+        return defaultValue;
     }
 
     if (getIsVpn2024(plan)) {
@@ -95,12 +110,7 @@ const getCycleData = ({
         };
     }
 
-    return {
-        upsellCycle: CYCLE.TWO_YEARS,
-        cycles: activeBreakpoint.viewportWidth['>=large']
-            ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
-            : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
-    };
+    return defaultValue;
 };
 
 interface Props {
@@ -127,6 +137,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         flow: 'signup-vpn',
     });
     const activeBreakpoint = useActiveBreakpoint();
+    const vpnIntroPricingVariant = getVPNIntroPricingVariant();
 
     useMetaTags(metaTags);
 
@@ -221,13 +232,15 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const plansMap = toMap(Plans, 'Name') as PlansMap;
             const vpnPlanName = getVPNPlanToUse(
                 plansMap,
-                signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {}
+                signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {},
+                { vpnIntroPricingVariant }
             );
 
             const { cycles, upsellCycle } = getCycleData({
                 plan: vpnPlanName,
                 coupon: signupParameters.coupon,
                 activeBreakpoint,
+                vpnIntroPricingVariant,
             });
 
             const defaults: SignupDefaults = {
@@ -372,6 +385,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         plan: selectedPlan.Name as PLANS,
         activeBreakpoint,
         coupon,
+        vpnIntroPricingVariant,
     });
 
     return (
