@@ -106,7 +106,8 @@ async function* errorIterator(source = 'src', options = { isVerbose: false }) {
             yield* errorsPlurals.errors(file);
         }
 
-        const errorsBackticks = testRule(/c\((\s+\x60|\x60).+(\x60|\x60\s+)\)/g, content, 'backticks');
+        // https://regex101.com/r/cT9edH/1
+        const errorsBackticks = testRule(/(?<!\w)c\((\s+\x60|\x60).+(\x60|\x60\s+)\)/g, content, 'backticks');
         if (errorsBackticks.match) {
             yield* errorsBackticks.errors(file);
         }
