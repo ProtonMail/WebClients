@@ -1,11 +1,13 @@
 import Logger from "electron-log";
 import Store from "electron-store";
+import { SerializedTheme } from "../utils/themes";
 
 const store = new Store();
 
 interface SettingsStore {
     spellChecker: boolean;
     overrideError: boolean;
+    theme?: SerializedTheme;
 }
 
 const defaultSettings: SettingsStore = {
