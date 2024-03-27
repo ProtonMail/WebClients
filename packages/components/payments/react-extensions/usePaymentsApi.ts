@@ -1,10 +1,15 @@
+import { useState } from 'react';
+
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { CheckSubscriptionData, PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api, ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useApi, useConfig } from '../../hooks';
-import { useChargebeeEnabledCache, useChargebeeKillSwitch } from '../client-extensions/useChargebeeContext';
+import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
+import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
@@ -24,6 +29,48 @@ const queryPaymentMethodStatus = (version: PaymentsVersion) => ({
     method: 'get',
 });
 
+export const useReportRoutingError = () => {
+    const errorsToReport: string[] = [
+        'This operation is not supported for users without a legacy subscription',
+        'This operation is not supported for users on a legacy subscription',
+    ];
+
+    const chargebeeContext = useChargebeeContext();
+    const { APP_NAME } = useConfig();
+
+    const [alreadyReported, setAlreadyReported] = useState(false);
+
+    const isRoutingError = (error: string) => {
+        return errorsToReport.some((reportable) => error?.includes(reportable));
+    };
+
+    return (error: any, additionalContext: any) => {
+        const message: unknown = error?.data?.Error;
+        if (alreadyReported || typeof message !== 'string' || !isRoutingError(message)) {
+            return;
+        }
+
+        const context = {
+            app: APP_NAME,
+            paymentsVersion: getPaymentsVersion(),
+            chargebeeEnabled: chargebeeContext.enableChargebee,
+            ...additionalContext,
+        };
+
+        const sentryError = getSentryError(error);
+        captureMessage('Payments: routing error', {
+            level: 'error',
+            extra: {
+                error: sentryError,
+                message,
+                context,
+            },
+        });
+
+        setAlreadyReported(true);
+    };
+};
+
 export const usePaymentsApi = (
     apiOverride?: Api
 ): {
@@ -35,6 +82,7 @@ export const usePaymentsApi = (
     const { chargebeeKillSwitch } = useChargebeeKillSwitch();
     const chargebeeEnabledCache = useChargebeeEnabledCache();
     const { APP_NAME } = useConfig();
+    const reportRoutingError = useReportRoutingError();
 
     const getPaymentsApi = (api: Api, chargebeeEnabled: ChargebeeEnabled = chargebeeEnabledCache): PaymentsApi => {
         const statusExtended = (version: PaymentsVersion): Promise<PaymentMethodStatusExtended> => {
@@ -109,27 +157,39 @@ export const usePaymentsApi = (
 
         const checkV4 = async (
             data: CheckSubscriptionData,
-            signal?: AbortSignal
+            signal: AbortSignal | undefined,
+            additionalContext?: any
         ): Promise<SubscriptionCheckResponse> => {
-            return api({
-                ...checkSubscription(data, 'v4'),
-                signal,
-            });
+            try {
+                return await api({
+                    ...checkSubscription(data, 'v4'),
+                    signal,
+                });
+            } catch (error) {
+                reportRoutingError(error, additionalContext);
+                throw error;
+            }
         };
 
         const checkV5 = async (
             data: CheckSubscriptionData,
-            signal?: AbortSignal
+            signal: AbortSignal | undefined,
+            additionalContext?: any
         ): Promise<SubscriptionCheckResponse> => {
             // Patch for coupons compatibility v4 vs v5
             if (!data.Codes || data.Codes.length === 0) {
                 data.Codes = data.CouponCode ? [data.CouponCode] : [];
             }
 
-            return api({
-                ...checkSubscription(data, 'v5'),
-                signal,
-            });
+            try {
+                return await api({
+                    ...checkSubscription(data, 'v5'),
+                    signal,
+                });
+            } catch (error) {
+                reportRoutingError(error, additionalContext);
+                throw error;
+            }
         };
 
         const checkWithAutomaticVersion = async (
@@ -137,21 +197,24 @@ export const usePaymentsApi = (
             signal?: AbortSignal
         ): Promise<SubscriptionCheckResponse> => {
             if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
-                return checkV4(data, signal);
+                return checkV4(data, signal, { system: 'inhouse', reason: 'forced' });
             }
 
             if (chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-                return checkV5(data, signal);
+                return checkV5(data, signal, { system: 'chargebee', reason: 'forced' });
             }
 
             const passB2bPlans = [PLANS.PASS_PRO, PLANS.PASS_BUSINESS];
             const isPassB2b = passB2bPlans.some((plan) => data.Plans[plan] > 0);
             if (isPassB2b) {
-                return checkV4(data, signal);
+                return checkV4(data, signal, {
+                    reason: 'pass b2b',
+                    system: 'inhouse',
+                });
             }
 
             try {
-                return await checkV5(data, signal);
+                return await checkV5(data, signal, { system: 'chargebee', reason: 'default' });
             } catch (error) {
                 if (
                     chargebeeKillSwitch({
@@ -160,7 +223,10 @@ export const usePaymentsApi = (
                         error,
                     })
                 ) {
-                    return await checkV4(data, signal);
+                    return await checkV4(data, signal, {
+                        reason: 'killswitch',
+                        system: 'inhouse',
+                    });
                 }
 
                 throw error;

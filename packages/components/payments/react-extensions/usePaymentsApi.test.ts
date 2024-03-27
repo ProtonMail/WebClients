@@ -3,23 +3,27 @@ import { renderHook } from '@testing-library/react-hooks';
 import { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { addApiMock, apiMock, defaultProtonConfig, hookWrapper, withApi, withConfig } from '@proton/testing/index';
+import {
+    addApiMock,
+    apiMock,
+    defaultProtonConfig,
+    hookWrapper,
+    withApi,
+    withConfig,
+    withPaymentContext,
+} from '@proton/testing/index';
 
-import { useChargebeeEnabledCache, useChargebeeKillSwitch } from '../client-extensions/useChargebeeContext';
+import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import { usePaymentsApi } from './usePaymentsApi';
 
-const wrapper = hookWrapper(withApi(), withConfig());
-
-const mockInhouseForced = ChargebeeEnabled.INHOUSE_FORCED;
-
-const mockUseChargebeeEnabledCache = useChargebeeEnabledCache as jest.Mock;
 const mockUseChargebeeKillSwitch = useChargebeeKillSwitch as jest.Mock;
-
-jest.mock('../client-extensions/useChargebeeContext', () => ({
+jest.mock('../client-extensions/useChargebeeKillSwitch', () => ({
     __esModule: true,
-    useChargebeeEnabledCache: jest.fn().mockReturnValue(mockInhouseForced),
     useChargebeeKillSwitch: jest.fn().mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(true) }),
 }));
+
+const getWrapper = (chargebeeEnabled?: ChargebeeEnabled) =>
+    hookWrapper(withApi(), withConfig(), withPaymentContext(chargebeeEnabled));
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -49,16 +53,15 @@ beforeEach(() => {
 describe('usePaymentsApi', () => {
     it('returns an object with paymentsApi and getPaymentsApi properties', () => {
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(),
         });
         expect(result.current).toHaveProperty('paymentsApi');
         expect(result.current).toHaveProperty('getPaymentsApi');
     });
 
     it('should call v4 status when user is inhouse forced', () => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.INHOUSE_FORCED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.INHOUSE_FORCED),
         });
 
         void result.current.paymentsApi.statusExtendedAutomatic();
@@ -69,9 +72,8 @@ describe('usePaymentsApi', () => {
     });
 
     it('should call v5 status when user is chargebee forced', () => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_FORCED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_FORCED),
         });
 
         void result.current.paymentsApi.statusExtendedAutomatic();
@@ -82,9 +84,8 @@ describe('usePaymentsApi', () => {
     });
 
     it('should call v5 status when user is chargebee allowed', () => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
         void result.current.paymentsApi.statusExtendedAutomatic();
@@ -96,9 +97,9 @@ describe('usePaymentsApi', () => {
 
     it('should trigger kill switch when status failes for chargebee allowed user', async () => {
         apiMock.mockRejectedValueOnce(new Error('status call failed in the unit test'));
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
+
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
         await expect(result.current.paymentsApi.statusExtendedAutomatic()).resolves.toEqual({
@@ -126,9 +127,8 @@ describe('usePaymentsApi', () => {
     it('should not call v4 if kill switch was not triggered and returned false', async () => {
         apiMock.mockRejectedValueOnce(new Error('status call failed in the unit test'));
         mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
         await expect(result.current.paymentsApi.statusExtendedAutomatic()).rejects.toThrow(
@@ -159,9 +159,8 @@ describe('usePaymentsApi', () => {
 
     // tests for checkWithAutomaticVersion
     it('should call v4 check when user is inhouse forced', () => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.INHOUSE_FORCED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.INHOUSE_FORCED),
         });
 
         const data = getCheckSubscriptionData();
@@ -174,9 +173,8 @@ describe('usePaymentsApi', () => {
     });
 
     it('should call v5 check when user is chargebee forced', () => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_FORCED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_FORCED),
         });
 
         const data = getCheckSubscriptionData();
@@ -189,9 +187,8 @@ describe('usePaymentsApi', () => {
     });
 
     it('should call v5 check when user is chargebee allowed', () => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
         const data = getCheckSubscriptionData();
@@ -205,10 +202,9 @@ describe('usePaymentsApi', () => {
 
     it('should trigger kill switch when check failes for chargebee allowed user', async () => {
         apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
         mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(true) });
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
         const data = getCheckSubscriptionData();
@@ -229,9 +225,8 @@ describe('usePaymentsApi', () => {
     it('should not call v4 if kill switch was not triggered and returned false', async () => {
         apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
         mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper,
+            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
         const data = getCheckSubscriptionData();
@@ -254,9 +249,8 @@ describe('usePaymentsApi', () => {
     it.each([PLANS.PASS_PRO, PLANS.PASS_BUSINESS])(
         'should call v4 check when user is chargebee allowed calls B2B plans: %s',
         (plan) => {
-            mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
             const { result } = renderHook(() => usePaymentsApi(), {
-                wrapper,
+                wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
             });
 
             const data = getCheckSubscriptionData();
@@ -283,15 +277,14 @@ describe('usePaymentsApi', () => {
             expectedCashValue: true,
         },
     ])('should switch Cash to $expectedCashValue when it is $appName', async ({ appName, expectedCashValue }) => {
-        mockUseChargebeeEnabledCache.mockReturnValue(ChargebeeEnabled.CHARGEBEE_ALLOWED);
-
         const { result } = renderHook(() => usePaymentsApi(), {
             wrapper: hookWrapper(
                 withApi(),
                 withConfig({
                     ...defaultProtonConfig,
                     APP_NAME: appName,
-                })
+                }),
+                withPaymentContext(ChargebeeEnabled.CHARGEBEE_ALLOWED)
             ),
         });
 

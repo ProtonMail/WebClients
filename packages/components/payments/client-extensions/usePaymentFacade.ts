@@ -26,7 +26,8 @@ import {
     usePaymentFacade as useInnerPaymentFacade,
 } from '../react-extensions';
 import { PaymentProcessorType } from '../react-extensions/interface';
-import { useChargebeeEnabledCache, useChargebeeKillSwitch, useChargebeeUserStatusTracker } from './useChargebeeContext';
+import { useChargebeeEnabledCache, useChargebeeUserStatusTracker } from './useChargebeeContext';
+import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';
 import { wrapMethods } from './useMethods';
 import { usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
