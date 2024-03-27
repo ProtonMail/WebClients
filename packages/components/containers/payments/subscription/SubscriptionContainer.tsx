@@ -19,6 +19,7 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import { subscribe as apiSubscribe, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { TelemetryMeasurementGroups, TelemetrySubscriptionModalEvents } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
@@ -35,6 +36,7 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getPlanFromCheckout,
@@ -106,6 +108,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import { SelectedProductPlans, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
+import { getInitialStep } from './telemetry';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
 
 import './SubscriptionContainer.scss';
@@ -166,7 +169,6 @@ export interface SubscriptionContainerProps {
     ) => void;
     metrics: {
         source: Source;
-        upsellRef?: string;
     };
     render: (renderProps: RenderProps) => ReactNode;
     subscription: SubscriptionModel;
@@ -174,10 +176,12 @@ export interface SubscriptionContainerProps {
     plans: Plan[];
     freePlan: FreePlanDefault;
     mode?: 'upsell-modal';
+    upsellRef?: string;
 }
 
 const SubscriptionContainer = ({
     topRef: customTopRef,
+    upsellRef,
     app,
     step: maybeStep,
     cycle: maybeCycle,
@@ -674,6 +678,19 @@ const SubscriptionContainer = ({
     useEffect(() => {
         // Trigger once to initialise the check values
         void withLoadingCheck(check());
+        // Send telemetry event: initialization
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.subscriptionModal,
+            event: TelemetrySubscriptionModalEvents.initialization,
+            dimensions: {
+                initial_step: getInitialStep(maybeStep),
+                plan_selected: plan ? plansMap[plan].Name : '',
+                billing_cycle: model.cycle.toString(),
+                currency: model.currency,
+                upsell_reference: upsellRef,
+            },
+        });
     }, []);
 
     useEffect(() => {
