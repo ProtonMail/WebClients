@@ -5,6 +5,7 @@ import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers'
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
+import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -332,6 +333,10 @@ const ThemeProvider = ({ children, appName }: Props) => {
             window.ipcInboxMessageBroker!.send('setTheme', themeSetting);
         }
     }, [themeSetting]);
+
+    useEffect(() => {
+        updateElectronThemeModeClassnames(themeSetting);
+    }, [colorScheme, themeSetting]);
 
     return (
         <ThemeContext.Provider
