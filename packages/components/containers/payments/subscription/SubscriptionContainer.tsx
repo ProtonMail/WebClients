@@ -148,6 +148,7 @@ export interface SubscriptionContainerProps {
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;
     minimumCycle?: Cycle;
+    maximumCycle?: Cycle;
     currency?: Currency;
     plan?: PLANS;
     planIDs?: PlanIDs;
@@ -184,6 +185,7 @@ const SubscriptionContainer = ({
     step: maybeStep,
     cycle: maybeCycle,
     minimumCycle,
+    maximumCycle,
     currency: maybeCurrency,
     coupon: maybeCoupon,
     plan,
@@ -1053,6 +1055,7 @@ const SubscriptionContainer = ({
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
+                                                    maximumCycle={maximumCycle}
                                                     subscription={subscription}
                                                     defaultCycles={defaultCycles}
                                                 />

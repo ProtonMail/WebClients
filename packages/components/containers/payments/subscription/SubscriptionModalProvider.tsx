@@ -30,6 +30,7 @@ export interface OpenCallbackProps
         | 'defaultSelectedProductPlans'
         | 'metrics'
         | 'upsellRef'
+        | 'maximumCycle'
     > {
     hasClose?: boolean;
     onClose?: () => void;
