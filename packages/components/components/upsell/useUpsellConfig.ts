@@ -5,7 +5,7 @@ import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell
 import { useConfig, useFlag, useSubscriptionModal } from '../..';
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
 
-// Return config properties to inject in the upsell
+// Return config properties to inject in the subscription modal
 const useUpsellConfig = (upsellRef: string) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
