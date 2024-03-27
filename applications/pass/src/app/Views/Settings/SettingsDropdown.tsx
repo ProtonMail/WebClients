@@ -27,7 +27,7 @@ export const SettingsDropdown: FC = () => {
     const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
     const offlineEnabled = useSelector(selectOfflineEnabled);
-    const offlineSignaled = OFFLINE_SUPPORTED && !offlineEnabled;
+    const offlineSignaled = !offlineEnabled;
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 

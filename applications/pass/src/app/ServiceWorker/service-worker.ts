@@ -23,7 +23,7 @@ declare let self: ServiceWorkerGlobalScope;
 self.addEventListener('install', (event) =>
     event.waitUntil(
         cacheCriticalOfflineAssets().then(() => {
-            logger.debug(`[ServiceWorker] Skip waiting.. [offline=${OFFLINE_SUPPORTED}]`);
+            logger.debug(`[ServiceWorker] Skip waiting..`);
             return self.skipWaiting();
         })
     )
