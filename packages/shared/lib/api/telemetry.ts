@@ -8,12 +8,18 @@ export enum TelemetryMeasurementGroups {
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     changelogOpened = 'any.changelog_opened',
     keyTransparency = 'any.web.key_transparency',
+    subscriptionModal = 'any.web.subscription_modal',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
+}
+
+export enum TelemetrySubscriptionModalEvents {
+    initialization = 'initialization',
+    payment = 'payment',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -106,6 +112,7 @@ export enum TelemetryPaymentsEvents {
 
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
+    | TelemetrySubscriptionModalEvents
     | TelemetryCalendarEvents
     | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents

@@ -8,9 +8,9 @@ const getUpsellSubscriptionModalConfig = (upsellRef: string): OpenCallbackProps 
     step: SUBSCRIPTION_STEPS.CHECKOUT,
     disablePlanSelection: true,
     disableCycleSelector: true,
+    upsellRef,
     metrics: {
         source: 'upsells',
-        upsellRef,
     },
 });
 

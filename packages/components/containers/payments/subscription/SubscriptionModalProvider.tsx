@@ -29,6 +29,7 @@ export interface OpenCallbackProps
         | 'disableCycleSelector'
         | 'defaultSelectedProductPlans'
         | 'metrics'
+        | 'upsellRef'
     > {
     hasClose?: boolean;
     onClose?: () => void;
