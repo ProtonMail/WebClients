@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useFlag } from '@proton/components';
 import {
     APPS,
     APP_NAMES,
@@ -21,6 +22,7 @@ import {
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
+import { LockedStateTopBanner } from '.';
 import { SettingsLink } from '../../components';
 import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
@@ -275,6 +277,7 @@ const PooledStorageLimitTopBanner = ({
 };
 
 const StorageLimitTopBanner = ({ app }: Props) => {
+    const lockedStateEnabled = useFlag('LockedState');
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
@@ -287,6 +290,18 @@ const StorageLimitTopBanner = ({ app }: Props) => {
         component: UPSELL_COMPONENT.MODAL,
         fromApp: app,
     });
+
+    if (lockedStateEnabled && user.LockedFlags) {
+        return (
+            <LockedStateTopBanner
+                app={app}
+                user={user}
+                subscription={subscription}
+                upsellRef={upsellRef}
+                lockedFlags={user.LockedFlags}
+            />
+        );
+    }
 
     return space.splitStorage ? (
         <SplitStorageLimitTopBanner
