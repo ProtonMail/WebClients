@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { PublicKeyReference } from '@proton/crypto';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
-import { KEY_FLAG, MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, KEY_FLAG, MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { ApiKeysConfig, KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
@@ -41,7 +41,17 @@ const useGetVerificationPreferences = () => {
         async ({ email, lifetime, contactEmailsMap }) => {
             const addresses = await getAddresses();
             const canonicalEmail = canonicalizeInternalEmail(email);
-            const selfAddress = addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail);
+            // Disabled addresses might now belong to other users (internal or external), who reused them.
+            // Since own keys take precedence on verification, but the message might be signed by a new/different address owner,
+            // we want to avoid considering disabled addresses as own addresses, in order to successfully verify messages sent by
+            // different owners.
+            // As a result, however, verification will fail for messages who were indeed sent from the disabled address.
+            // This downside has been deemed acceptable, since it aligns with the more general issue (to be tackled separately)
+            // of needing to preserve  the message verification status at the time when a message is first read, regardless of
+            // any subsequent public key changes (for non-pinned keys).
+            const selfAddress = addresses
+                .filter(({ Status }) => Status !== ADDRESS_STATUS.STATUS_DISABLED)
+                .find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail);
             if (selfAddress) {
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
                 const activeAddressKeys = await getActiveKeys(
