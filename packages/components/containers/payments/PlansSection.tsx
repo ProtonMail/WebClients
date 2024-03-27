@@ -66,6 +66,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             appName: app,
             plan: searchParams.plan,
             planIDs: getPlanIDs(subscription),
+            cycle: subscription.Cycle,
             plansMap,
             vpnIntroPricingVariant,
         });
@@ -137,13 +138,15 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
         if (isLoading) {
             return;
         }
-        setCycle(subscription.Cycle || DEFAULT_CYCLE);
+        const cycle = subscription.Cycle || DEFAULT_CYCLE;
+        setCycle(cycle);
         setSelectedProductPlans(
             getDefaultSelectedProductPlans({
                 appName: app,
                 planIDs: getPlanIDs(subscription),
                 plan: searchParams.plan,
                 plansMap,
+                cycle: subscription.Cycle,
                 vpnIntroPricingVariant,
             })
         );
