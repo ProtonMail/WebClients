@@ -12122,6 +12122,9 @@
       "Select a reason": [
         "Sélectionnez une raison."
       ],
+      "Select state": [
+        "Sélectionnez l'état"
+      ],
       "Text": [
         "Texte"
       ],
@@ -13766,7 +13769,7 @@
         "4. Sélectionnez le serveur auquel se connecter"
       ],
       "A filter name is required": [
-        "Un nom de filtre est requis"
+        "Le nom du filtre est requis."
       ],
       "A filter with this name already exists": [
         "Un filtre portant ce nom existe déjà."
@@ -14231,7 +14234,7 @@
         "${ failedUsers.length } comptes utilisateur n'ont pas pu être créés."
       ],
       "Filter name cannot contain only spaces": [
-        "Le nom du filtre ne doit pas contenir uniquement des espaces"
+        "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
       "Filters": [
         "Filtres"
@@ -14245,8 +14248,14 @@
       "Folders and labels": [
         "Dossiers et labels"
       ],
-      "For ${ platform }": [
-        "Pour ${ platform }"
+      "For Linux": [
+        "Pour Linux"
+      ],
+      "For macOS": [
+        "Pour macOS"
+      ],
+      "For Windows": [
+        "Pour Windows"
       ],
       "Forward and auto-reply": [
         "Transfert et réponse automatique"
