@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useReportRoutingError } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -68,6 +69,15 @@ const InvoicesSection = () => {
         request: requestInvoices,
         error,
     } = useApiResult<InvoiceResponse, typeof query>(query, [page, owner], false);
+
+    const reportRoutingError = useReportRoutingError();
+    useEffect(
+        () =>
+            reportRoutingError(error, {
+                flow: 'invoices',
+            }),
+        [error]
+    );
 
     const { Invoices: invoices, Total: total } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
