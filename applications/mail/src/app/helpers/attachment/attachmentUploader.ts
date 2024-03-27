@@ -14,6 +14,7 @@ import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import {
     ATTACHMENT_MAX_SIZE,
     MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
 import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
@@ -97,6 +98,8 @@ const uploadFile = (
 
         if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
             throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
+        } else if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.STORAGE_QUOTA_EXCEEDED) {
+            throw new Error(STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR);
         }
 
         return { attachment: result.Attachment, packets, addressID: message.data.AddressID };
