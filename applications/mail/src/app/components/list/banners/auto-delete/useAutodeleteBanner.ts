@@ -1,10 +1,14 @@
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature, useUser } from '@proton/components/hooks';
-import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { isAllowedAutoDeleteLabelID } from '../../../../helpers/autoDelete';
+import {
+    isAllowedAutoDeleteLabelID,
+    isAutoDeleteEnabled,
+    isAutoDeleteExplicitlyDisabled,
+    isAutoDeleteNotEnabled,
+} from '../../../../helpers/autoDelete';
 
 export type AutoDeleteBannerType = 'disabled' | 'enabled' | 'paid-banner' | 'free-banner' | 'hide';
 
@@ -23,21 +27,15 @@ const useAutoDeleteBanner = (labelID: string) => {
             return 'free-banner';
         }
 
-        // User explicitly disabled
-        if (mailSetting.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED) {
+        if (isAutoDeleteExplicitlyDisabled(mailSetting)) {
             return 'disabled';
         }
 
-        // User has not enabled yet
-        if (user.hasPaidMail && mailSetting.AutoDeleteSpamAndTrashDays === null) {
+        if (isAutoDeleteNotEnabled(user, mailSetting)) {
             return 'paid-banner';
         }
 
-        if (
-            user.hasPaidMail &&
-            mailSetting.AutoDeleteSpamAndTrashDays &&
-            mailSetting.AutoDeleteSpamAndTrashDays > AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED
-        ) {
+        if (isAutoDeleteEnabled(user, mailSetting)) {
             return 'enabled';
         }
 
