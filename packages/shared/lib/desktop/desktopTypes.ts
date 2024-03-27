@@ -1,3 +1,5 @@
+import { ThemeSetting } from '../themes/themes';
+
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {
     title: string;
@@ -17,7 +19,8 @@ export type IPCInboxMessage =
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
     | { type: 'trialEnd'; payload: 'trialEnded' | 'resetTrialEnded' }
     | { type: 'showNotification'; payload: ElectronNotification }
-    | { type: 'updateLocale'; payload: string };
+    | { type: 'updateLocale'; payload: string }
+    | { type: 'setTheme'; payload: ThemeSetting };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**
@@ -28,6 +31,7 @@ export type IPCInboxMessageType = IPCInboxMessage['type'];
  * The object can be injected when used in specific clients to avoid adding it globally
  */
 export type IPCInboxMessageBroker = {
+    getTheme: () => ThemeSetting;
     send: <T extends IPCInboxMessageType>(type: T, payload: Extract<IPCInboxMessage, { type: T }>['payload']) => void;
 };
 
