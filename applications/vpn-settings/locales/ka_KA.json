@@ -134,6 +134,9 @@
       "Delete": [
         "წაშლა"
       ],
+      "Delete address": [
+        "მისამართის წაშლა"
+      ],
       "Delete Gateway": [
         "რაუტერის წაშლა"
       ],
@@ -608,6 +611,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "მისამართის წაშლა"
+      ],
       "Disable": [
         "გათიშვა"
       ],
@@ -1851,6 +1857,25 @@
       ],
       "/user per month": [
         "/მომხმარებელი თვეში"
+      ]
+    },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "წაშლის შემთხვევაში ამ მისამართს ვეღარც თქვენ გამოიყენებთ და ვეღარავინ სხვა."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "თქვენი სიის შემდეგი აქტიური მისამართი ნაგულისხმევად მოინიშნება."
+      ],
+      "You can only delete 1 address per year.": [
+        "თქვენ წელიწადში, მხოლოდ, 1 მისამართის წაშლა შეგიძლიათ."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "თქვენ წელიწადში, მხოლოდ, 1 მისამართის წაშლა შეგიძლიათ"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "მიაღწიეთ მისამართების წაშლის ზღვარს ამ მომხმარებლისთვის."
       ]
     },
     "Delinquent modal title": {
@@ -3429,6 +3454,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი.",
+        "გამოიყენეთ პაროლი ${ MIN_PASSWORD_LENGTH }-ზე მეტი სიმბოლოთი."
       ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
@@ -5466,11 +5495,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "შემოსული შეტყობინებებისთვის ავტომოპასუხის დაყენება"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "30 დღეზე ძველი შეტყობინებების ავტომატური გასუფთავება ნაგვის ყუთიდან და სპამიდან"
+      ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "გადაამისამართეთ ავტომატურ თქვენს ${ MAIL_APP_NAME }-ზე გამოგზავნილი ელფოსტები ნებისმიერ სხვა ელფოსტის მისამართზე."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "სარეკლამო ან პროგრამული ელფოსტის მასიური გაგზავნა ამჟამად მხარდაუჭერელია. ამ მიზნისთვის გირჩევთ, ელფოსტის გამოყოფილი სერვისი აირჩიოთ."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "აირჩიტ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "გააკონტროლეთ წვდომა თქვენს გაზიარებულ ფაილებზე მათზე პაროლებისა და ბმულების ვადის დამატების საშუალებით"
@@ -5953,11 +5988,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "დარწმუნდით, რომ მათ ჩართული მისამართი აქვთ და ისინი მოგვიანებით, ცალკე მოიწვიეთ."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "კონფიდენციალურ მომხმარებლებს შეგიძლიათ, ადმინისტრატორის უფლებები მიანიჭოთ, როცა სისტემაში პირველად შევლენ"
       ],
       "Reset organization key": [
         "ორგანიზაციის გასაღების ჩამოყრა"
+      ],
+      "The following administrators could not be restored.": [
+        "შემდეგი ადმინისტრატორების აღდგენა შეუძლებელია."
       ],
       "The following administrators will get access to the organization key.": [
         "შემდეგი ადმინისტრატორები მიიღებენ წვდომას ორგანიზაციის გასაღებზე."
@@ -6027,6 +6068,9 @@
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
+      ],
+      "Invalid security code": [
+        "უსაფრთხოების არასწორი კოდი"
       ],
       "Something went wrong. Please try again later.": [
         "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -6257,6 +6301,11 @@
     "Select file": {
       "Upload CSV file": [
         "CSV ფაილის ატვირთვა"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "შედეგების გარეშე"
       ]
     },
     "Server-Info": {
@@ -7374,6 +7423,9 @@
       "Change role": [
         "როლის შეცვლა"
       ],
+      "Close": [
+        "დახურვა"
+      ],
       "Confirm": [
         "დასტური"
       ],
@@ -7449,6 +7501,9 @@
       ],
       "Delete account": [
         "ანგარიშის წაშლა"
+      ],
+      "Delete address permanently?": [
+        "წავშალო მისამართი სამუდამოდ?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)",
@@ -7988,6 +8043,12 @@
       ]
     },
     "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "გამოწერა ავტომატურად განახლდება ყოველ 1 თვეში. შემდეგი გადახდის თარიღი 1 თვეშია."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "გამოწერა ავტომატურად განახლდება ყოველ 3 თვეში. შემდეგი გადახდის თარიღი 3 თვეშია."
+      ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],

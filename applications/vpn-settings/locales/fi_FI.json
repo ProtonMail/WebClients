@@ -1860,6 +1860,12 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Poistamisen jälkeen sinä tai kukaan muu ei voi enää käyttää tätä osoitetta."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
+      ],
       "You can only delete 1 address per year.": [
         "Voit poistaa vain yhden osoitteen vuodessa."
       ]
@@ -1867,6 +1873,9 @@
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
         "Voit poistaa vain yhden osoitteen vuodessa"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Olet saavuttanut tämän käyttäjän osoitteiden poistojen enimmäismäärän."
       ]
     },
     "Delinquent modal title": {
@@ -6315,6 +6324,11 @@
     "Select file": {
       "Upload CSV file": [
         "Lataa CSV-tiedosto"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Tuloksia ei löytynyt"
       ]
     },
     "Server-Info": {
