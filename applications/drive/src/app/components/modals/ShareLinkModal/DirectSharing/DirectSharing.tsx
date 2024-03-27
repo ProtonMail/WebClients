@@ -17,7 +17,10 @@ interface Props {
     onFocus: () => void;
 }
 const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit, onClose, onFocus }: Props) => {
-    const { members, invitations, isLoading, isAdding, addNewMembers } = useShareMemberView(rootShareId, linkId);
+    const { volumeId, members, invitations, isLoading, isAdding, addNewMembers } = useShareMemberView(
+        rootShareId,
+        linkId
+    );
     const [directSharingList, setDirectSharingList] = useState<ShareInvitee[]>(
         members.map((member) => ({
             email: member.email,
@@ -45,7 +48,13 @@ const DirectSharing = ({ rootShareId, linkId, isDirectSharingWorkflow, onSubmit,
             {!isDirectSharingWorkflow && (
                 <>
                     <h2 className="text-lg text-semibold">{c('Info').t`Share with`}</h2>
-                    <DirectSharingListing isLoading={isLoading} members={members} invitations={invitations} />
+                    <DirectSharingListing
+                        volumeId={volumeId}
+                        linkId={linkId}
+                        isLoading={isLoading}
+                        members={members}
+                        invitations={invitations}
+                    />
                 </>
             )}
         </ContactEmailsProvider>
