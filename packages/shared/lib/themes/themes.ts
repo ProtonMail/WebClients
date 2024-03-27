@@ -157,6 +157,11 @@ export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, Theme
 export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
 
 export const getThemes = () => {
+    // Currently we only support Snow and Carbon themes on the desktop app.
+    if (isElectronApp) {
+        return [ThemeTypes.Snow, ThemeTypes.Carbon].map((id) => PROTON_THEMES_MAP[id]);
+    }
+
     return [
         ThemeTypes.Duotone,
         ThemeTypes.Classic,
