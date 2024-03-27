@@ -1,10 +1,6 @@
 .is-electron-mac {
 	background: transparent;
 
-	@media (prefers-color-scheme: dark) {
-		background: rgb(5 0 13 / 0.35);
-	}
-
 	.content,
 	.sidebar {
 		@include media('>small') {
@@ -26,8 +22,46 @@
 		--border-weak: rgb(0 0 0 / 0.05);
 		--promotion-background-start: rgb(109 74 255 / 0.25);
 		--promotion-background-end: rgb(109 74 255 / 0.1);
+	}
 
-		@media (prefers-color-scheme: dark) {
+	.header {
+		block-size: rem(56);
+		padding-block: rem(10);
+	}
+
+	.is-in-background {
+		.header,
+		.drawer-sidebar,
+		.sidebar {
+			> * {
+				filter: saturate(0.8) brightness(0.95);
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+.is-electron-light {
+	&.is-electron-mac {
+		.main {
+			box-shadow: 0 0 2px 0 #00000026;
+		}
+
+		.is-in-background {
+			.header,
+			.drawer-sidebar,
+			.main {
+				background: var(--background-weak);
+			}
+		}
+	}
+}
+
+.is-electron-dark {
+	&.is-electron-mac {
+		background: rgb(5 0 13 / 0.35);
+
+		.sidebar {
 			--text-norm: rgb(255 255 255 / 0.9);
 			--text-weak: rgb(255 255 255 / 0.6);
 			--text-hint: rgb(255 255 255 / 0.5);
@@ -44,46 +78,12 @@
 		}
 	}
 
-	.header {
-		block-size: rem(56);
-		padding-block: rem(10);
-	}
-
-	.main {
-		@media (prefers-color-scheme: light) {
-			box-shadow: 0 0 2px 0 #00000026;
-		}
-	}
-
-	.is-in-background {
-		.header,
-		.drawer-sidebar,
-		.main {
-			@media (prefers-color-scheme: light) {
-				background: var(--background-weak);
-			}
-		}
-
-		.header,
-		.drawer-sidebar,
-		.sidebar {
-			> * {
-				filter: saturate(0.8) brightness(0.95);
-				opacity: 0.8;
-			}
-		}
-	}
-}
-
-.is-electron {
 	.sign-layout-bg {
-		@media (prefers-color-scheme: dark) {
-			background: linear-gradient(62.88deg, #32226f 30%, #1d1738 100%);
-			color: var(--text-norm);
+		background: linear-gradient(62.88deg, #32226f 30%, #1d1738 100%);
+		color: var(--text-norm);
 
-			.signup-link {
-				color: var(--text-norm);
-			}
+		.signup-link {
+			color: var(--text-norm);
 		}
 	}
 }
