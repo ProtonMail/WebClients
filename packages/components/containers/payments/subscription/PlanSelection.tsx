@@ -197,7 +197,7 @@ const PlanSelection = ({
     const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [
         PLANS.MAIL,
-        getVPNPlanToUse(plansMap, {}, { vpnIntroPricingVariant }),
+        getVPNPlanToUse(plansMap, planIDs, subscription?.Cycle, { vpnIntroPricingVariant }),
         PLANS.DRIVE,
         PLANS.PASS_PLUS,
     ].filter(isTruthy);
