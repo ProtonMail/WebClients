@@ -1,14 +1,15 @@
 import type { MaybeNull } from '../utils';
 
 export enum PassFeature {
-    PassSharingV1 = 'PassSharingV1',
+    PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
+    PassEnableOrganizationExport = 'PassEnableOrganizationExport',
+    PassEnableOrganizationSharing = 'PassEnableOrganizationSharing',
+    PassItemHistoryV1 = 'PassItemHistoryV1',
+    PassPinningV1 = 'PassPinningV1',
     PassRemovePrimaryVault = 'PassRemovePrimaryVault',
     PassSharingNewUsers = 'PassSharingNewUsers',
-    PassPinningV1 = 'PassPinningV1',
-    PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
-    PassItemHistoryV1 = 'PassItemHistoryV1',
-    PassEnableOrganizationSharing = 'PassEnableOrganizationSharing',
-    PassEnableOrganizationExport = 'PassEnableOrganizationExport',
+    PassSharingV1 = 'PassSharingV1',
+    PassWebOfflineMode = 'PassWebOfflineMode',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
