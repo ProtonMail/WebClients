@@ -70,10 +70,10 @@ if [ "$1" = "windows" ]; then
   git lfs track "*.exe" "*.nupkg"
 elif [ "$1" = "macos" ]; then
   cp "${PROJECT_ROOT}/out/make/Proton Pass.dmg" "${path}/${executable_filename}"
-  # RELEASES.json follows the format detailed here: https://github.com/Squirrel/Squirrel.Mac#update-file-json-format
-  cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/RELEASES.json" "${path}/RELEASES.json"
   if [[ "${CATEGORY}" == "Stable" ]]; then
     cp "${PROJECT_ROOT}/out/make/Proton Pass.dmg" "${path}/ProtonPass.dmg"
+    # RELEASES.json follows the format detailed here: https://github.com/Squirrel/Squirrel.Mac#update-file-json-format
+    cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/RELEASES.json" "${path}/RELEASES.json"
     # zip file name must match what is defined in RELEASES.json
     cp "${PROJECT_ROOT}/out/make/zip/darwin/universal/Proton Pass-darwin-universal-${VERSION}.zip" "${path}/Proton Pass-darwin-universal-${VERSION}.zip"
   fi
