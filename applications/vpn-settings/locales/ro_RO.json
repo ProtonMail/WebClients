@@ -134,6 +134,9 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete address": [
+        "Ștergere adresă"
+      ],
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
@@ -611,6 +614,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Ștergere adresă"
+      ],
       "Disable": [
         "Dezactivare"
       ],
@@ -1859,6 +1865,25 @@
       ],
       "/user per month": [
         "/utilizator pe lună"
+      ]
+    },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "După ștergere, această adresă nu mai poate fi refolosită de nimeni."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Următoarea adresă activă din listă va fi setată ca implicită."
+      ],
+      "You can only delete 1 address per year.": [
+        "Puteți șterge o singură adresă pe an."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Puteți șterge o singură adresă pe an"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ați atins limita de adrese șterse pentru acest utilizator."
       ]
     },
     "Delinquent modal title": {
@@ -6042,6 +6067,17 @@
         "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **parola veche**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **expresia de recuperare** sau **parola veche**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Orice metodă de **autentificare cu doi factori (A2F)** din cont va fi dezactivată."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Toți administratorii vor primi acces la cheie."
@@ -6073,11 +6109,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Permisiune refuzată, drepturile de administrator au fost restricționate."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Asigurați-vă că au o adresă activată și invitați-i separat mai târziu."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Utilizatorii privați pot fi promovați la funcția de administrator atunci când s-au conectat pentru prima dată."
       ],
       "Reset organization key": [
         "Resetare cheie organizație"
+      ],
+      "The following administrators could not be restored.": [
+        "Următorii administratori nu au putut fi restaurați."
       ],
       "The following administrators will get access to the organization key.": [
         "Următorii administratori vor primi acces la cheia organizației."
@@ -6147,6 +6189,9 @@
       ],
       "Invalid expiration date": [
         "Data expirării nu este validă."
+      ],
+      "Invalid security code": [
+        "Cod de securitate nevalid"
       ],
       "Something went wrong. Please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
@@ -6380,6 +6425,11 @@
     "Select file": {
       "Upload CSV file": [
         "Încărcați un fișier CSV"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nu s-au găsit rezultate"
       ]
     },
     "Server-Info": {
@@ -7530,6 +7580,9 @@
       "Change role": [
         "Schimbare rol"
       ],
+      "Close": [
+        "Închidere"
+      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -7606,6 +7659,9 @@
       ],
       "Delete account": [
         "Ștergere cont"
+      ],
+      "Delete address permanently?": [
+        "Ștergeți permanent adresa?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ștergere server (veți putea să-l recuperați timp de ${ days } zi).",
