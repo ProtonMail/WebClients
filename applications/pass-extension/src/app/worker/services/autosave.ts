@@ -1,3 +1,5 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import store from 'proton-pass-extension/app/worker/store';
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
@@ -11,11 +13,8 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
-import WorkerMessageBroker from '../channel';
-import store from '../store';
-
 export const createAutoSaveService = () => {
-    const resolvePromptOptions = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutosavePrompt => {
+    const shouldPrompt = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutosavePrompt => {
         const candidates = selectAutosaveCandidate({
             domain: submission.domain,
             subdomain: submission.subdomain,
@@ -107,7 +106,7 @@ export const createAutoSaveService = () => {
         return false;
     });
 
-    return { resolvePromptOptions };
+    return { shouldPrompt };
 };
 
 export type AutoSaveService = ReturnType<typeof createAutoSaveService>;
