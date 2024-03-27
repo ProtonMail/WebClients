@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/components/containers';
+import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import {
     BillingAddress,
@@ -636,7 +637,7 @@ export const getPlanCardSubscriptionData = async ({
     planIDs,
     plansMap,
     paymentsApi,
-    coupon,
+    coupon: maybeCoupon,
     currency,
     cycles,
     billingAddress,
@@ -654,6 +655,7 @@ export const getPlanCardSubscriptionData = async ({
             cycles
                 .map((cycle) => [planIDs, cycle] as const)
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
+                    const coupon = getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle });
                     // If there's no coupon we can optimistically calculate the price. Also always exclude Enterprise (price never shown).
                     if (!coupon || planIDs[PLANS.ENTERPRISE]) {
                         return {

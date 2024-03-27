@@ -24,6 +24,7 @@ import {
     Plan,
     PlanIDs,
     PlansMap,
+    PriceType,
     Pricing,
     Subscription,
     SubscriptionModel,
@@ -464,8 +465,28 @@ export function getIpPricePerMonth(cycle: CYCLE): number {
     return getIpPrice(cycle) / cycle;
 }
 
-export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
-    const totalPrice = plan.Pricing[cycle] || 0;
+/**
+ * The purpose of this overridden price is to show a coupon discount in the cycle selector. If that would be supported
+ * this would not be needed.
+ */
+export const getOverriddenPricePerCycle = (plan: Plan | undefined, cycle: CYCLE, type?: PriceType) => {
+    if (type === PriceType.default) {
+        return plan?.Pricing?.[cycle];
+    }
+    if (plan?.Name === PLANS.VPN2024) {
+        if (cycle === CYCLE.YEARLY) {
+            return 5988;
+        }
+        if (cycle === CYCLE.TWO_YEARS) {
+            return 10776;
+        }
+    }
+
+    return plan?.Pricing?.[cycle];
+};
+
+export function getPricePerMember(plan: Plan, cycle: CYCLE, priceType?: PriceType): number {
+    const totalPrice = getOverriddenPricePerCycle(plan, cycle, priceType) || 0;
 
     if (plan.Name === PLANS.VPN_BUSINESS) {
         // For VPN business, we exclude IP price from calculation. And we also divide by 2,
@@ -483,9 +504,9 @@ export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
     return totalPrice / (plan.MaxMembers || 1);
 }
 
-export function getPricingPerMember(plan: Plan): Pricing {
+export function getPricingPerMember(plan: Plan, priceType?: PriceType): Pricing {
     return allCycles.reduce((acc, cycle) => {
-        acc[cycle] = getPricePerMember(plan, cycle);
+        acc[cycle] = getPricePerMember(plan, cycle, priceType);
 
         // If the plan doesn't have custom cycles, we need to remove it from the resulting Pricing object
         const isNonDefinedCycle = acc[cycle] === undefined || acc[cycle] === null || acc[cycle] === 0;
@@ -497,7 +518,11 @@ export function getPricingPerMember(plan: Plan): Pricing {
     }, {} as Pricing);
 }
 
-export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): AggregatedPricing => {
+export const getPricingFromPlanIDs = (
+    planIDs: PlanIDs,
+    plansMap: PlansMap,
+    priceType?: PriceType
+): AggregatedPricing => {
     const initial = {
         [CYCLE.MONTHLY]: 0,
         [CYCLE.YEARLY]: 0,
@@ -519,14 +544,14 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): Agg
             acc.membersNumber += members;
 
             const add = (target: PricingForCycles, cycle: CYCLE) => {
-                const price = plan.Pricing[cycle];
+                const price = getOverriddenPricePerCycle(plan, cycle, priceType);
                 if (price) {
                     target[cycle] += quantity * price;
                 }
             };
 
             const addMembersPricing = (target: PricingForCycles, cycle: CYCLE) => {
-                const price = getPricePerMember(plan, cycle);
+                const price = getPricePerMember(plan, cycle, priceType);
                 if (price) {
                     target[cycle] += members * price;
                 }
@@ -549,7 +574,7 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): Agg
             }
 
             const defaultMonthly = plan.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
-            const monthly = plan.Pricing?.[CYCLE.MONTHLY] ?? 0;
+            const monthly = getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0;
 
             // Offers might affect Pricing both ways, increase and decrease.
             // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
@@ -609,7 +634,7 @@ interface OfferResult {
 export const getPlanOffer = (plan: Plan) => {
     const result = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].reduce<OfferResult>(
         (acc, cycle) => {
-            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (plan.Pricing?.[cycle] ?? 0);
+            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (getOverriddenPricePerCycle(plan, cycle) ?? 0);
             return acc;
         },
         {
