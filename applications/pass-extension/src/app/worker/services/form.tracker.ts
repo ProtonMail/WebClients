@@ -158,10 +158,10 @@ export const createFormTrackerService = () => {
                     const committed = commit(tabId, url.domain, reason);
 
                     if (committed !== undefined) {
-                        const promptOptions = ctx.service.autosave.resolvePromptOptions(committed);
+                        const autosave = ctx.service.autosave.shouldPrompt(committed);
 
-                        return promptOptions.shouldPrompt
-                            ? { committed: merge(committed, { autosave: promptOptions }) }
+                        return autosave.shouldPrompt
+                            ? { committed: merge(committed, { autosave }) }
                             : (() => {
                                   stash(tabId, url.domain, 'PROMPT_IGNORE');
                                   return { committed: undefined };
@@ -191,7 +191,7 @@ export const createFormTrackerService = () => {
                             submission !== undefined
                                 ? (merge(submission, {
                                       autosave: isCommitted
-                                          ? ctx.service.autosave.resolvePromptOptions(submission)
+                                          ? ctx.service.autosave.shouldPrompt(submission)
                                           : { shouldPrompt: false },
                                   }) as WithAutosavePrompt<FormEntry>)
                                 : submission,
