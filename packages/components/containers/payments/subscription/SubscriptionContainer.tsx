@@ -272,11 +272,6 @@ const SubscriptionContainer = ({
 
     const vpnIntroPricingVariant = getVPNIntroPricingVariant();
 
-    const [selectedProductPlans, setSelectedProductPlans] = useState(
-        defaultSelectedProductPlans ||
-            getDefaultSelectedProductPlans({ appName: app, planIDs, plansMap, vpnIntroPricingVariant })
-    );
-
     const [model, setModel] = useState<Model>(() => {
         const step = (() => {
             // Users with VPN B2B plans must not have access to the checkout step.
@@ -336,6 +331,17 @@ const SubscriptionContainer = ({
 
         return model;
     });
+
+    const [selectedProductPlans, setSelectedProductPlans] = useState(
+        defaultSelectedProductPlans ||
+            getDefaultSelectedProductPlans({
+                appName: app,
+                planIDs,
+                plansMap,
+                cycle: subscription?.Cycle,
+                vpnIntroPricingVariant,
+            })
+    );
 
     const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
 
