@@ -611,8 +611,14 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Удалить адрес"
+      ],
       "Disable": [
         "Отключить"
+      ],
+      "Disable E2EE mail": [
+        "Отключить E2EE почты"
       ],
       "Disallow unsigned mail": [
         "Запретить почту без подписи"
@@ -625,6 +631,9 @@
       ],
       "Enable": [
         "Включить"
+      ],
+      "Enable E2EE mail": [
+        "Включить E2EE почты"
       ],
       "Generate missing keys": [
         "Создать недостающие ключи"
@@ -1853,6 +1862,14 @@
       ],
       "/user per month": [
         "/за пользователя в месяц"
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Вы можете удалить только один адрес в год"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Вы достигли лимита удалений адреса для этого пользователя."
       ]
     },
     "Delinquent modal title": {
@@ -4740,6 +4757,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Активировать пользователя"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -4972,6 +4992,9 @@
       "1 user": [
         "1 пользователь"
       ],
+      "24/7 account management support": [
+        "Постоянная круглосуточная поддержка управления аккаунтом"
+      ],
       "24/7 support": [
         "Круглосуточная поддержка"
       ],
@@ -5155,6 +5178,9 @@
       "Router support": [
         "Поддержка маршрутизаторов"
       ],
+      "Schedule and snooze emails for any time": [
+        "Планируйте и откладывайте сообщения электронной почты на любое время"
+      ],
       "Schedule messages at any time": [
         "Планируйте сообщения в любое время"
       ],
@@ -5313,6 +5339,9 @@
       ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
       ],
       "For next-level password management and identity protection.": [
         "Для нового уровня управления паролями и защиты личных данных."
@@ -5888,6 +5917,17 @@
         "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Все ваши существующие данные** (электронные письма, события, контакты, файлы, входы в ${ PASS_APP_NAME } и т. д.) **будут заблокированы** и могут быть разблокированы только с помощью вашего **старого пароля**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Все ваши существующие данные** (электронные письма, события, контакты, файлы, входы в ${ PASS_APP_NAME } и т. д.) **будут заблокированы** и могут быть разблокированы только с помощью вашей **фразы восстановления** или вашего **старого пароля**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Любой метод **двухфакторной аутентификации (2FA)** в вашем аккаунте будет отключен."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Все администраторы получат доступ к ключу."
@@ -5901,14 +5941,32 @@
       "Organization key activated": [
         "Ключ организации активирован"
       ],
+      "Organization key does not exist.": [
+        "Ключ организации не существует."
+      ],
+      "Organization key restored": [
+        "Ключ организации восстановлен"
+      ],
       "Organization key updated": [
         "Ключ организации обновлен"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Пожалуйста, убедитесь, что у них есть активный адрес, и пригласите их отдельно позже."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
+      ],
       "Reset organization key": [
         "Сбросить ключ организации"
+      ],
+      "The following administrators could not be restored.": [
+        "Следующие администраторы не могут быть восстановлены."
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Следующие администраторы получат доступ к ключу организации."
       ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
@@ -5919,6 +5977,12 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Чтобы включить права администратора в своем аккаунте, активируйте ключ организации."
       ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Используйте метод восстановления данных или сбросьте ключ организации, чтобы восстановить права администратора."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Используйте метод восстановления данных, обратитесь к другому администратору или сбросьте ключ организации, чтобы восстановить права администратора."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Мы не смогли проверить безопасность ключа адреса этого отправителя. Иногда бывает задержка обновления информации об отправителе. Повторите попытку позже. Если вы не доверяете достоверности этого приглашения или отправителя, обратитесь в Службу Поддержки ${ BRAND_NAME }."
       ],
@@ -5927,6 +5991,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Вас назначили администратором организации **${ organizationName }**"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Для выполнения этой операции вам необходим доступ к ключу организации."
       ]
     },
     "Payment method option": {
@@ -6710,8 +6777,14 @@
       "contact your administrator": [
         "свяжитесь с администратором"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "Для всех служб ${ BRAND_NAME }"
+      ],
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Мы зачислим остаток на счете за оставшееся время на ваш аккаунт ${ BRAND_NAME }"
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
@@ -6721,6 +6794,18 @@
       ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Вы потеряете доступ к хранилищу ${ gb } и приоритетную поддержку."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Вы потеряете доступ к дополнительным хранилищам, адресам электронной почты, псевдонимам, календарям, а также к приоритетной поддержке."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Вы потеряете доступ к самой высокой скорости VPN, защите 10 устройств, высокоскоростному потоковому вещанию, защите от блокировки рекламы и вредоносных программ, а также к приоритетной поддержке."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
       ]
     },
     "Subscription": {
@@ -7326,6 +7411,9 @@
       "Delete account": [
         "Удалить аккаунт"
       ],
+      "Delete address permanently?": [
+        "Удалить адрес навсегда?"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Удалить сервер (вы сможете восстановить его в течение ${ days } дня)",
         "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
@@ -7881,8 +7969,14 @@
       "15-month": [
         "15-month"
       ],
+      "18-month": [
+        "18-месячная"
+      ],
       "2-year": [
         "2 года"
+      ],
+      "3-month": [
+        "3-месячная"
       ],
       "30-month": [
         "30-месячный"
