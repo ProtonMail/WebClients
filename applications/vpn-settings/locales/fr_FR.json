@@ -4763,6 +4763,35 @@
         "${ twoFAMembers.length } membres de votre organisation sur ${ members.length } utilisent l'authentification à deux facteurs (A2F)."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "En savoir plus"
+      ],
+      "upgrade for more storage": [
+        "changer d'abonnement pour augmenter votre espace de stockage"
+      ],
+      "Upgrade to restore full access": [
+        "Changez d'abonnement pour accéder de nouveau à tout"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Votre ${ driveStorage } est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Votre ${ mailStorage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Votre compte risque d'être supprimé. Pour éviter de perdre des données, demandez à votre administrateur de changer d'abonnement. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "J'en profite"
@@ -6187,7 +6216,7 @@
         "Sélectionnez une raison."
       ],
       "Select state": [
-        "Sélectionnez l'état"
+        "Sélectionner l'état"
       ]
     },
     "plan customizer, ips": {
