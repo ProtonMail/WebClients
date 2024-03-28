@@ -3,7 +3,9 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { useLoading } from '@proton/hooks';
+import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
+import { useLoading } from '@proton/hooks/index';
 import { removeHolidaysCalendar } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
@@ -33,16 +35,16 @@ import {
     ColorPicker,
     Form,
     InputFieldTwo as InputField,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
     ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
     Option,
     SelectTwo as Select,
     useFormErrors,
-} from '../../../components';
-import CountrySelect from '../../../components/country/CountrySelect';
+} from '../../../../components';
+import CountrySelect from '../../../../components/country/CountrySelect';
 import {
     useApi,
     useCalendarUserSettings,
@@ -51,11 +53,10 @@ import {
     useGetAddresses,
     useNotifications,
     useReadCalendarBootstrap,
-} from '../../../hooks';
-import { useCalendarModelEventManager } from '../../eventManager';
-import { CALENDAR_MODAL_TYPE } from '../calendarModal';
-import { getDefaultModel } from '../calendarModal/calendarModalState';
-import Notifications from '../notifications/Notifications';
+} from '../../../../hooks';
+import { useCalendarModelEventManager } from '../../../eventManager';
+import Notifications from '../../notifications/Notifications';
+import { getDefaultModel } from '../personalCalendarModal/calendarModalState';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
     if (!bootstrap) {
@@ -391,9 +392,16 @@ const HolidaysCalendarModalWithDirectory = ({
     );
 
     return (
-        <Modal as={Form} fullscreenOnMobile onSubmit={() => withLoading(handleSubmit())} size="large" {...rest}>
-            <ModalHeader title={getModalTitle(isEdit)} subline={getModalSubline(isEdit)} />
-            <ModalContent className="holidays-calendar-modal-content">
+        <ModalTwo
+            as={Form}
+            fullscreenOnMobile
+            onSubmit={() => withLoading(handleSubmit())}
+            size={getCalendarModalSize(type)}
+            className="w-full"
+            {...rest}
+        >
+            <ModalTwoHeader title={getModalTitle(isEdit)} subline={getModalSubline(isEdit)} />
+            <ModalTwoContent className="holidays-calendar-modal-content">
                 {isComplete && (
                     <CountrySelect
                         options={countryOptions}
@@ -444,8 +452,8 @@ const HolidaysCalendarModalWithDirectory = ({
                         }}
                     />
                 )}
-            </ModalContent>
-            <ModalFooter>
+            </ModalTwoContent>
+            <ModalTwoFooter>
                 <>
                     <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                     <Button
@@ -458,8 +466,8 @@ const HolidaysCalendarModalWithDirectory = ({
                         {isEdit ? c('Action').t`Save` : c('Action').t`Add`}
                     </Button>
                 </>
-            </ModalFooter>
-        </Modal>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

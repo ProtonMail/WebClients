@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal';
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getOwnedPersonalCalendars,

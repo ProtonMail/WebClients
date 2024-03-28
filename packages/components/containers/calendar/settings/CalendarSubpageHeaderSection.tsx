@@ -16,8 +16,9 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
-import { CALENDAR_MODAL_TYPE, CalendarModal } from '../calendarModal/CalendarModal';
-import HolidaysCalendarModal from '../holidaysCalendarModal/HolidaysCalendarModal';
+import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import { CALENDAR_MODAL_TYPE } from '../calendarModal/interface';
+import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
 import CalendarBadge from './CalendarBadge';
 
 interface Props {
@@ -60,7 +61,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
     return (
         <SettingsSectionWide className="container-section-sticky-section">
             {renderCalendarModal && (
-                <CalendarModal
+                <PersonalCalendarModal
                     calendar={calendar}
                     type={CALENDAR_MODAL_TYPE.VISUAL}
                     onEditCalendar={onEdit}

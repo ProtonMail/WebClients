@@ -22,9 +22,9 @@ import { Alert, PrimaryButton, Prompt, SettingsLink, useModalState } from '../..
 import { useApi, useEventManager, useFeature, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
-import { CalendarModal } from '../calendarModal/CalendarModal';
-import HolidaysCalendarModal from '../holidaysCalendarModal/HolidaysCalendarModal';
-import SubscribedCalendarModal from '../subscribedCalendarModal/SubscribedCalendarModal';
+import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
+import SubscribedCalendarModal from '../calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
 import CalendarsSection from './CalendarsSection';
 
 type ModalsMap = {
@@ -191,7 +191,7 @@ const OtherCalendarsSection = ({
                 <HolidaysCalendarModal {...holidaysCalendarModal} holidaysCalendars={holidaysCalendars} />
             )}
             {calendarModal.props?.editCalendar && (
-                <CalendarModal
+                <PersonalCalendarModal
                     {...calendarModalProps}
                     calendar={calendarModal.props.editCalendar}
                     onExit={() => {

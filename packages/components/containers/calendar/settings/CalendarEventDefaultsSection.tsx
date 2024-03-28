@@ -9,7 +9,7 @@ import { SettingsLayoutLeft, SettingsSectionWide, useCalendarModelEventManager }
 import {
     getCalendarEventSettingsModel,
     getDefaultModel,
-} from '@proton/components/containers/calendar/calendarModal/calendarModalState';
+} from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';

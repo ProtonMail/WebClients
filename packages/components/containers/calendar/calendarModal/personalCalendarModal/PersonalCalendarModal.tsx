@@ -2,9 +2,11 @@ import { ChangeEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/index';
+import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { useLoading } from '@proton/hooks';
+import { useLoading } from '@proton/hooks/index';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
@@ -24,24 +26,18 @@ import {
     Option,
     SelectTwo,
     TextArea,
-} from '../../../components';
-import { SelectChangeEvent } from '../../../components/selectTwo/select';
-import { TruncatedText } from '../../../components/truncatedText';
-import GenericError from '../../error/GenericError';
-import useGetCalendarActions from '../hooks/useGetCalendarActions';
-import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
-import Notifications from '../notifications/Notifications';
+} from '../../../../components';
+import { SelectChangeEvent } from '../../../../components/selectTwo/select';
+import { TruncatedText } from '../../../../components/truncatedText';
+import GenericError from '../../../error/GenericError';
+import useGetCalendarActions from '../../hooks/useGetCalendarActions';
+import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
+import Notifications from '../../notifications/Notifications';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
 
-import './CalendarModal.scss';
+import './PersonalCalendarModal.scss';
 
 const URL_MAX_DISPLAY_LENGTH = 100;
-
-export enum CALENDAR_MODAL_TYPE {
-    COMPLETE,
-    SHARED,
-    VISUAL,
-}
 
 const { COMPLETE, VISUAL, SHARED } = CALENDAR_MODAL_TYPE;
 
@@ -57,7 +53,7 @@ export interface CalendarModalProps {
     type?: CALENDAR_MODAL_TYPE;
 }
 
-export const CalendarModal = ({
+export const PersonalCalendarModal = ({
     calendar: initialCalendar,
     calendars = [],
     defaultCalendarID = '',
@@ -160,14 +156,6 @@ export const CalendarModal = ({
                 </>
             )
         );
-    };
-
-    const getSize = (type: CALENDAR_MODAL_TYPE) => {
-        if (type === VISUAL) {
-            return 'small';
-        }
-
-        return 'large';
     };
 
     const handleSubmit = () => {
@@ -367,7 +355,7 @@ export const CalendarModal = ({
 
     return (
         <ModalTwo
-            size={getSize(type)}
+            size={getCalendarModalSize(type)}
             fullscreenOnMobile
             className="w-full"
             open={open}
@@ -411,4 +399,4 @@ export const CalendarModal = ({
     );
 };
 
-export default CalendarModal;
+export default PersonalCalendarModal;
