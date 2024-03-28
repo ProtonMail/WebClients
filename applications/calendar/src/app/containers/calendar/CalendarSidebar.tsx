@@ -29,9 +29,9 @@ import {
     useWelcomeFlags,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
-import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
-import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
-import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
+import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import SubscribedCalendarModal from '@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
@@ -326,7 +326,7 @@ const CalendarSidebar = ({
             version={<CalendarSidebarVersion />}
         >
             {renderCalendarModal && (
-                <CalendarModal
+                <PersonalCalendarModal
                     {...calendarModal}
                     calendars={calendars}
                     defaultCalendarID={calendarUserSettings.DefaultCalendarID}

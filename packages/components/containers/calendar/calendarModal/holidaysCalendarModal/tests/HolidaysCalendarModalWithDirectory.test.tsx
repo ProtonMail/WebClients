@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useCalendarUserSettings, useNotifications } from '@proton/components/hooks';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
@@ -8,7 +9,6 @@ import { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/in
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
-import { CALENDAR_MODAL_TYPE } from '../../calendarModal';
 import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
 jest.mock('@proton/components/hooks/useAddresses', () => ({
@@ -298,7 +298,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 within(screen.getByTestId('select-list')).getByText('Based on your time zone');
 
                 // Preselected option is focused
-                const preselectedOption = await waitFor(() => screen.getByTestId('preselected-country-select-option'));
+                const preselectedOption = await screen.findByTestId('preselected-country-select-option');
                 expect(preselectedOption).toHaveTextContent('France');
                 expect(preselectedOption).toHaveClass('dropdown-item--is-selected');
 
@@ -341,7 +341,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 within(screen.getByTestId('select-list')).getByText('Based on your time zone');
 
                 // Preselected option is focused
-                const preselectedOption = await waitFor(() => screen.getByTestId('preselected-country-select-option'));
+                const preselectedOption = await screen.findByTestId('preselected-country-select-option');
                 expect(preselectedOption).toHaveTextContent('Switzerland');
                 expect(preselectedOption).toHaveClass('dropdown-item--is-selected');
 
@@ -385,7 +385,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 within(screen.getByTestId('select-list')).getByText('Based on your time zone');
 
                 // Preselected option is focused
-                const preselectedOption = await waitFor(() => screen.getByTestId('preselected-country-select-option'));
+                const preselectedOption = await screen.findByTestId('preselected-country-select-option');
                 expect(preselectedOption).toHaveTextContent('Spain');
                 expect(preselectedOption).toHaveClass('dropdown-item--is-selected');
 
