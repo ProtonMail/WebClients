@@ -177,6 +177,7 @@ export interface SubscriptionContainerProps {
     freePlan: FreePlanDefault;
     mode?: 'upsell-modal';
     upsellRef?: string;
+    parent?: string;
 }
 
 const SubscriptionContainer = ({
@@ -207,6 +208,7 @@ const SubscriptionContainer = ({
     plans,
     freePlan,
     mode,
+    parent,
 }: SubscriptionContainerProps) => {
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -487,11 +489,13 @@ const SubscriptionContainer = ({
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
-                void reportSubscriptionModalPayment({
-                    cycle: model.cycle,
-                    currency: model.currency,
-                    plan: getPlanNameFromIDs(model.planIDs) || 'n/a',
-                });
+                if (parent === 'subscription-modal') {
+                    void reportSubscriptionModalPayment({
+                        cycle: model.cycle,
+                        currency: model.currency,
+                        plan: getPlanNameFromIDs(model.planIDs) || 'n/a',
+                    });
+                }
             } catch (error) {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
@@ -686,14 +690,16 @@ const SubscriptionContainer = ({
     useEffect(() => {
         // Trigger once to initialise the check values
         void withLoadingCheck(check());
-        // Send telemetry event: initialization
-        void reportSubscriptionModalInitialization({
-            step: maybeStep,
-            plan: plan,
-            cycle: model.cycle,
-            currency: model.currency,
-            upsellRef,
-        });
+        if (parent === 'subscription-modal') {
+            // Send telemetry event: initialization
+            void reportSubscriptionModalInitialization({
+                step: maybeStep,
+                plan: plan,
+                cycle: model.cycle,
+                currency: model.currency,
+                upsellRef,
+            });
+        }
     }, []);
 
     useEffect(() => {
