@@ -123,9 +123,9 @@ export const getHasDtend = (
 };
 
 export const getHasRecurrenceId = (
-    vevent: VcalVeventComponent
+    vevent?: VcalVeventComponent
 ): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>> => {
-    return !!vevent['recurrence-id'];
+    return !!vevent?.['recurrence-id'];
 };
 
 export const getHasAttendee = (

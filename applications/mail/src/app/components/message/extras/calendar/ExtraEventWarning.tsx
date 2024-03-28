@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Alert } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
@@ -37,7 +38,7 @@ const ExtraEventWarning = ({ model }: Props) => {
                 </Alert>
             );
         }
-        const singleAnswersNotSupported = veventIcs['recurrence-id'] && !invitationApi?.vevent['recurrence-id'];
+        const singleAnswersNotSupported = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(invitationApi?.vevent);
         if (method === ICAL_METHOD.COUNTER) {
             return (
                 <>
