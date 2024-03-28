@@ -17,16 +17,20 @@ import noop from '@proton/utils/noop';
 
 import { ExtensionCore } from './ExtensionCore';
 
-type Props = { endpoint: ClientEndpoint; children: (ready: boolean) => ReactNode };
+type Props = {
+    endpoint: ClientEndpoint;
+    children: (ready: boolean) => ReactNode;
+    onDisconnect?: () => void;
+};
 
-export const ExtensionApp: FC<Props> = ({ endpoint, children }) => {
+export const ExtensionApp: FC<Props> = ({ endpoint, children, onDisconnect }) => {
     const [ready, setReady] = useState(false);
 
     useEffect(() => {
         setupExtensionContext({
             endpoint,
             onDisconnect: () => {
-                window.location.reload();
+                onDisconnect?.();
                 return { recycle: false };
             },
             onRecycle: noop,

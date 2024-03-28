@@ -20,7 +20,7 @@ const Popup = () => {
     const store = useRef<ReturnType<typeof createClientStore>>();
 
     return (
-        <ExtensionApp endpoint="popup">
+        <ExtensionApp endpoint="popup" onDisconnect={() => window.location.reload()}>
             {(ready) =>
                 ready && (
                     <ReduxProvider

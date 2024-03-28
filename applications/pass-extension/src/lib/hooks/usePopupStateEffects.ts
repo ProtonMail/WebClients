@@ -45,19 +45,20 @@ export const usePopupStateEffects = () => {
     useEffect(() => {
         const { initial } = popup.state;
         const { selectedItem } = initial;
+        const filters = { ...initial.filters, search: initial.search ?? '' };
 
-        setFilters({ ...initial.filters, search: initial.search ?? '' });
-        if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId);
-
-        /** When supporting drafts v2: remove these as we will be able to leverage
-         * the full draft state and give the user more control over the drafts */
         if (isNewItemDraft(draft)) {
-            return navigate(getLocalPath(`item/new/${draft.type}`), { hash: 'draft', mode: 'push' });
+            /** When supporting drafts v2: remove these as we will be able to leverage
+             * the full draft state and give the user more control over the drafts */
+            return navigate(getLocalPath(`item/new/${draft.type}`), { hash: 'draft', mode: 'push', filters });
         }
 
         if (isEditItemDraft(draft)) {
-            return selectItem(draft.shareId, draft.itemId, { hash: 'draft', mode: 'push', view: 'edit' });
+            return selectItem(draft.shareId, draft.itemId, { hash: 'draft', mode: 'push', view: 'edit', filters });
         }
+
+        if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { filters });
+        else setFilters(filters);
     }, []);
 
     useEffect(() => {
