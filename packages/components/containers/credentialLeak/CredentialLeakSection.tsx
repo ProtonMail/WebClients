@@ -15,8 +15,8 @@ import {
     useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { getBreaches } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getBreaches } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import freeUserBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';

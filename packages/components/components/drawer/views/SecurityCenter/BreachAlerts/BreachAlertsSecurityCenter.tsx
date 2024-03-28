@@ -10,8 +10,8 @@ import { getStyle } from '@proton/components/containers/credentialLeak/helpers';
 import { BREACH_API_ERROR, toCamelCase } from '@proton/components/containers/credentialLeak/helpers';
 import { useApi, useErrorHandler, useUser } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
+import { getBreaches } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getRecentBreaches } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
 import BreachAlertUpsellModal from './BreachAlertUpsellModal';
@@ -38,7 +38,7 @@ const BreachAlertsSecurityCenter = () => {
     useEffect(() => {
         const fetchLeakData = async () => {
             try {
-                const { Breaches, Count } = await api(getRecentBreaches());
+                const { Breaches, Count } = await api(getBreaches(true));
                 const fetchedData = toCamelCase(Breaches);
                 if (fetchedData.length < BREACHES_LIMIT) {
                     setFetchedBreachData(fetchedData);
