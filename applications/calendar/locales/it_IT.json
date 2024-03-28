@@ -5018,6 +5018,35 @@
         "La tua importazione sta iniziando"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Scopri di più"
+      ],
+      "upgrade for more storage": [
+        "effettua l'upgrade per ottenere più spazio di archiviazione"
+      ],
+      "Upgrade to restore full access": [
+        "Effettua l'upgrade per ripristinare l'accesso completo"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Il tuo ${ driveStorage } è pieno. Per caricare o sincronizzare file, libera spazio o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Il tuo ${ mailStorage } è pieno. Per inviare o ricevere email, libera spazio o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Il tuo account è a rischio di cancellazione. Per evitare la perdita di dati, chiedi al tuo amministratore di eseguire l'aggiornamento. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Il tuo spazio di archiviazione è pieno. Per inviare o ricevere email, libera spazio o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Il tuo spazio di archiviazione è pieno. Per caricare o sincronizzare file, libera spazio o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come",
@@ -5842,6 +5871,9 @@
       ],
       "Select": [
         "Seleziona"
+      ],
+      "Select state": [
+        "Seleziona Stato"
       ],
       "Start typing an email address": [
         "Inizia a digitare un indirizzo email"
