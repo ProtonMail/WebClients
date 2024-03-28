@@ -25,6 +25,7 @@ export const createContentScriptContext = (options: {
     const state: CSContextState = {
         localID: undefined,
         loggedIn: false,
+        ready: false,
         stale: false,
         status: AppStatus.IDLE,
         UID: undefined,
@@ -74,6 +75,7 @@ export const createContentScriptContext = (options: {
                 AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
                 AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
                 Autosave: autosave.prompt && !hasCriteria(mask, 'Autosave'),
+                Passkeys: !hasCriteria(mask, 'Passkey'),
             };
         },
         getSettings: () => settings,
