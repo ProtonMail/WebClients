@@ -10,7 +10,6 @@ import {
     cacheRequest,
     stateDestroy,
     stopEventPolling,
-    syncLocalSettings,
 } from '@proton/pass/store/actions';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
@@ -25,11 +24,7 @@ import { hydrate } from './hydrate.saga';
 function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: ReturnType<typeof bootIntent>) {
     try {
         options.setAppStatus(AppStatus.BOOTING);
-
-        /* Force sync the proxied settings from local storage */
-        yield put(syncLocalSettings(yield options.getSettings()));
         yield put(stopEventPolling());
-
         yield loadCryptoWorker();
 
         const hydratedFromCache: boolean = yield hydrate(
