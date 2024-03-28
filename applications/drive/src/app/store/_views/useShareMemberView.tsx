@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
@@ -6,44 +6,46 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { useDriveEventManager } from '..';
 import { useLink } from '../_links';
 import { ShareInvitation, ShareInvitee, ShareMember, useShare, useShareActions, useShareInvitation } from '../_shares';
-import { useVolumesState } from '../_volumes';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { inviteProtonUser } = useShareInvitation();
     const { getLink } = useLink();
-    const [isLoading /*,withLoading */] = useLoading();
+    const [isLoading, withLoading] = useLoading();
     const [isAdding, withAdding] = useLoading();
     const { getShare, getSharePrivateKey, getShareWithKey, getShareSessionKey } = useShare();
     const [members /*,setMembers */] = useState<ShareMember[]>([]);
     const [invitations, setInvitations] = useState<ShareInvitation[]>([]);
     const { createShare } = useShareActions();
     const events = useDriveEventManager();
-    const volumeState = useVolumesState();
+    const [volumeId, setVolumeId] = useState<string>();
 
-    // TODO: Uncomment this when listing Shared by me will be available
-    // useEffect(() => {
-    //     const abortController = new AbortController();
-    //     void withLoading(async () => {
-    //         const link = await getLink(abortController.signal, rootShareId, linkId);
-    //         if (!link.shareId) {
-    //             return;
-    //         }
-    //         const share = await getShare(abortController.signal, link.shareId);
+    useEffect(() => {
+        const abortController = new AbortController();
+        if (volumeId) {
+            return;
+        }
+        void withLoading(async () => {
+            const link = await getLink(abortController.signal, rootShareId, linkId);
+            if (!link.shareId) {
+                return;
+            }
+            const share = await getShare(abortController.signal, link.shareId);
+            setVolumeId(share.volumeId);
+            // TODO: Uncomment this when listing Shared by me will be available
+            // await getShareMembers(abortController.signal, {
+            //     volumeId: share.volumeId,
+            //     shareId: share.shareId,
+            // }).then((members) => {
+            //     if (members) {
+            //         setMembers(members);
+            //     }
+            // });
+        });
 
-    //         await getShareMembers(abortController.signal, {
-    //             volumeId: share.volumeId,
-    //             shareId: share.shareId,
-    //         }).then((members) => {
-    //             if (members) {
-    //                 setMembers(members);
-    //             }
-    //         });
-    //     });
-
-    //     return () => {
-    //         abortController.abort();
-    //     };
-    // }, [rootShareId, linkId, getLink]);
+        return () => {
+            abortController.abort();
+        };
+    }, [rootShareId, linkId, getLink]);
 
     const getShareIdWithSessionkey = async (abortSignal: AbortSignal, rootShareId: string, linkId: string) => {
         const [share, link] = await Promise.all([
@@ -56,11 +58,8 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         }
 
         const createShareResult = await createShare(abortSignal, rootShareId, share.volumeId, linkId);
-        const volumeId = volumeState.findVolumeId(rootShareId);
-        if (volumeId) {
-            // TODO: Volume event is not properly handled for share creation
-            await events.pollEvents.volumes(volumeId);
-        }
+        // TODO: Volume event is not properly handled for share creation
+        await events.pollEvents.volumes(share.volumeId);
 
         return createShareResult;
     };
@@ -108,7 +107,15 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         });
     };
 
-    return { members, invitations, isLoading, isAdding, addNewMember, addNewMembers };
+    return {
+        volumeId,
+        members,
+        invitations,
+        isLoading,
+        isAdding,
+        addNewMember,
+        addNewMembers,
+    };
 };
 
 export default useShareMemberView;
