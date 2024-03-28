@@ -275,6 +275,9 @@
       "Delete": [
         "Törlés"
       ],
+      "Delete address": [
+        "Cím törlése"
+      ],
       "Delete and confirm": [
         "Törlés és megerősítés"
       ],
@@ -1043,6 +1046,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Cím törlése"
+      ],
       "Disable": [
         "Letiltás"
       ],
@@ -2766,6 +2772,25 @@
     "Default display name vcard": {
       "Unknown": [
         "Ismeretlen"
+      ]
+    },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Törlés után ezt a címet sem Ön, sem más nem használhatja többé."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "A listán szereplő következő aktív cím lesz az alapértelmezett."
+      ],
+      "You can only delete 1 address per year.": [
+        "Évente csak egy címet törölhet."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Évente csak egy címet törölhet"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Elérte a címtörlési limitet ennél a felhasználónál."
       ]
     },
     "Delete calendar section description": {
@@ -11575,6 +11600,9 @@
       ],
       "Delete account": [
         "Fiók törlése"
+      ],
+      "Delete address permanently?": [
+        "Véglegesen törli a címet?"
       ],
       "Delete calendar": [
         "Naptár törlése"
