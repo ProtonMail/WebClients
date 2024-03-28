@@ -11,14 +11,15 @@ import {
     stateHydrate,
     stateSync,
     stopEventPolling,
-    syncLocalSettings,
 } from '@proton/pass/store/actions';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
@@ -33,7 +34,7 @@ type HydrateCacheOptions = {
 
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
-export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
+export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, getSettings }: RootSagaOptions) {
     try {
         const authStore = getAuthStore();
         const keyPassword = authStore.getPassword();
@@ -46,19 +47,21 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
+        const snapshot = cache?.snapshot;
         const userState: HydratedUserState = yield cache?.state.user ?? getUserData();
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const currentState: State = yield select();
 
-        const snapshot = cache?.snapshot;
-        const state: State = {
-            ...(cache?.state ? config.merge(currentState, cache.state) : currentState),
-            user: userState,
-        };
+        /** Note: Settings may have been modified offline, thus they might not align
+         * with the cached state settings. Since caching requests cannot be triggered
+         * when offline, it's essential to synchronize the initial settings accordingly */
+        const settings: Partial<ProxiedSettings> = (yield getSettings()) ?? {};
+        settings.locale = cache?.state.settings.locale ?? userState.userSettings?.Locale;
 
-        const locale = state.settings.locale ?? userState.userSettings?.Locale;
-        yield put(syncLocalSettings({ locale }));
+        const state: State = cache?.state
+            ? config.merge(currentState, partialMerge(cache?.state, { settings })) /* merge cached state */
+            : partialMerge(currentState, { user: userState, settings }); /* hydrate current state */
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
