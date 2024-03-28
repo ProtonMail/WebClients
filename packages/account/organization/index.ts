@@ -4,8 +4,9 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { FREE_ORGANIZATION } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { Organization, User } from '@proton/shared/lib/interfaces';
+import { type Organization, type User, UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -24,7 +25,13 @@ type Model = NonNullable<SliceState['value']>;
 export const selectOrganization = (state: OrganizationState) => state[name];
 
 const canFetch = (user: User) => {
-    return isPaid(user);
+    /*
+    After auto-downgrade admin user is downgraded to a free user, organization state is set to `Delinquent`
+    and the user gets into a locked state if they have members in their organizaion and .
+    In that case we want to refetch the organization to avoid getting FREE_ORGANIZATION object.
+    */
+    const isOrgAdminUserInLockedState = hasBit(user.LockedFlags, UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN);
+    return isPaid(user) || isOrgAdminUserInLockedState;
 };
 
 const freeOrganization = FREE_ORGANIZATION as unknown as Organization;
