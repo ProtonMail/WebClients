@@ -74,6 +74,13 @@ export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
     tmpOriginalTarget?: CalendarViewEvent | CalendarViewEventTemporaryEvent;
 }
 
+export interface CalendarViewBusyEvent
+    extends Pick<CalendarViewEvent, 'start' | 'end' | 'isAllDay' | 'isAllPartDay' | 'uniqueId'> {
+    type: 'busy';
+    color: string;
+    email: string;
+}
+
 export interface TargetEventData {
     uniqueId: string;
     idx?: number;
