@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
+import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasMemberCapablePlan,
@@ -21,6 +22,8 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
+    const hasActiveOrganizationKey = organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationKey;
+    const hasActiveOrganization = organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganization;
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
@@ -67,7 +70,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 to: '/domain-names',
                 icon: 'globe',
                 // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
-                available: hasOrganizationKey && user.hasPaidMail,
+                available: hasActiveOrganizationKey && user.hasPaidMail,
                 subsections: [
                     { id: 'domains' },
                     {
@@ -81,8 +84,8 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 to: '/organization-keys',
                 icon: 'buildings',
                 available: isPartOfFamily
-                    ? hasOrganization //Show this section once the family is setup (only requires a name)
-                    : (hasOrganizationKey || hasOrganization) && organization && !!organization.RequiresKey,
+                    ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
+                    : (hasActiveOrganizationKey || hasActiveOrganization) && organization && !!organization.RequiresKey,
                 subsections: [
                     {
                         text: subSectionTitle,
@@ -91,7 +94,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                     {
                         text: c('Title').t`Organization key`,
                         id: 'password-keys',
-                        available: hasMemberCapablePlan && hasOrganizationKey,
+                        available: hasMemberCapablePlan && hasActiveOrganizationKey,
                     },
                 ],
             },
@@ -110,7 +113,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 text: subMenuTitle,
                 to: '/multi-user-support',
                 icon: 'users',
-                available: isPartOfFamily ? !hasOrganization : !hasOrganizationKey && canHaveOrganization,
+                available: isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization,
                 subsections: [
                     {
                         text: subSectionTitle,
@@ -122,7 +125,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 text: c('Title').t`Organization filters`,
                 to: '/organization-filters',
                 icon: 'filter',
-                available: !hasVpnOrPassB2BPlan && (hasOrganizationKey || hasOrganization),
+                available: !hasVpnOrPassB2BPlan && (hasActiveOrganizationKey || hasActiveOrganization),
                 subsections: [
                     {
                         text: c('Title').t`Spam, block, and allow lists`,
@@ -134,7 +137,8 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 text: c('Title').t`Authentication security`,
                 to: '/authentication-security',
                 icon: 'shield',
-                available: (hasOrganizationKey || hasOrganization) && organization && organization.MaxMembers > 1,
+                available:
+                    (hasActiveOrganizationKey || hasActiveOrganization) && organization && organization.MaxMembers > 1,
                 subsections: [
                     {
                         id: 'two-factor-authentication-users',
