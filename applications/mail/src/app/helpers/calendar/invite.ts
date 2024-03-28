@@ -255,7 +255,8 @@ export const getIsInvitationOutdated = ({
     const veventIcs = invitationIcs.vevent;
     const veventApi = invitationApi?.vevent;
     const updateTime = invitationApi?.attendee?.updateTime;
-    if (!veventApi) {
+    const singleAnswersNotSupported = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(invitationApi?.vevent);
+    if (!veventApi || singleAnswersNotSupported) {
         return false;
     }
     // DTSTAMP should always be present, but just in case
@@ -283,7 +284,8 @@ export const getIsInvitationFromFuture = ({
 }) => {
     const veventIcs = invitationIcs.vevent;
     const veventApi = invitationApi?.vevent;
-    if (!veventApi) {
+    const singleAnswersNotSupported = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(invitationApi?.vevent);
+    if (!veventApi || singleAnswersNotSupported) {
         return false;
     }
     const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
