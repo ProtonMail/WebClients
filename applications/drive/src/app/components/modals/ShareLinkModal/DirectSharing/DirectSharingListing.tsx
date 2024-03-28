@@ -1,27 +1,35 @@
-import { Fragment } from 'react';
+import { Fragment, useRef } from 'react';
+
+import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Icon } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useUser } from '@proton/components/hooks';
-import { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { ShareInvitation, ShareMember } from '../../../../store';
+import { useContextMenuControls } from '../../../FileBrowser';
+import { ShareInvitationContextMenu } from '../../../sharing/ShareInvitationContextMenu';
 
 interface Props {
+    volumeId?: string;
+    linkId: string;
     members: ShareMember[];
     invitations: ShareInvitation[];
     isLoading: boolean;
 }
 
-const DirectSharingListing = ({ members, invitations, isLoading }: Props) => {
+const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoading }: Props) => {
     const { contactEmailsMap } = useContactEmailsCache();
+    const ref = useRef<HTMLButtonElement>(null);
+    const contextMenuControls = useContextMenuControls();
     const [user] = useUser();
 
-    if (isLoading) {
+    if (isLoading || !volumeId) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
     if (!members.length && !invitations.length) {
@@ -61,32 +69,62 @@ const DirectSharingListing = ({ members, invitations, isLoading }: Props) => {
                     </Fragment>
                 );
             })}
-            {invitations.map(({ inviteeEmail, invitationId, permissions, state }) => {
-                const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                    canonicalizeInternalEmail(inviteeEmail)
-                ] || {
-                    Name: '',
-                    Email: inviteeEmail,
-                };
-                return (
-                    <Fragment key={invitationId}>
-                        <div className={'flex items-center my-4'}>
-                            <Avatar color="weak" className="mr-2">
-                                {getInitials(contactName || contactEmail)}
-                            </Avatar>
-                            <p className="flex flex-column p-0 m-0">
-                                <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
-                                {contactName && <span className="color-weak">{contactEmail}</span>}
-                            </p>
-                        </div>
-                        {/*// TODO: This component bellow is fully temporary for testing purpose*/}
-                        <Button size="small" shape="ghost" disabled={state === SHARE_MEMBER_STATE.PENDING}>
-                            Permissions: {permissions}
-                            State: {state}
-                        </Button>
-                    </Fragment>
-                );
-            })}
+
+            <ul className="unstyled">
+                {invitations.map((invitation) => {
+                    const { inviteeEmail, invitationId } = invitation;
+                    const { Name: contactName, Email: contactEmail } = contactEmailsMap[
+                        canonicalizeInternalEmail(inviteeEmail)
+                    ] || {
+                        Name: '',
+                        Email: inviteeEmail,
+                    };
+                    return (
+                        <Fragment key={invitationId}>
+                            <ShareInvitationContextMenu
+                                anchorRef={ref}
+                                isOpen={contextMenuControls.isOpen}
+                                position={contextMenuControls.position}
+                                open={contextMenuControls.open}
+                                close={contextMenuControls.close}
+                                volumeId={volumeId}
+                                linkId={linkId}
+                                invitation={invitation}
+                            />
+                            <li className="flex items-center">
+                                <div className={'flex items-center my-4'}>
+                                    <Avatar color="weak" className="mr-2">
+                                        {getInitials(contactName || contactEmail)}
+                                    </Avatar>
+                                    <p className="flex flex-column p-0 m-0">
+                                        <span className="text-semibold">
+                                            {contactName ? contactName : contactEmail}
+                                        </span>
+                                        {contactName && <span className="color-weak">{contactEmail}</span>}
+                                    </p>
+                                </div>
+                                {/*// TODO: This component bellow is fully temporary for testing purpose*/}
+
+                                <Button
+                                    className="ml-auto"
+                                    ref={ref}
+                                    shape="ghost"
+                                    size="small"
+                                    icon
+                                    onClick={(e) => {
+                                        contextMenuControls.handleContextMenu(e);
+                                    }}
+                                    onTouchEnd={(e) => {
+                                        contextMenuControls.handleContextMenuTouch(e);
+                                    }}
+                                >
+                                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                                </Button>
+                            </li>
+                        </Fragment>
+                    );
+                })}
+            </ul>
         </>
     );
 };
