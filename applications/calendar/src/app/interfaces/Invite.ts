@@ -44,6 +44,7 @@ export interface SendIcsActionData {
     vevent?: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
     noCheckSendPrefs?: boolean;
+    sendPreferencesMap?: SimpleMap<AugmentedSendPreferences>;
 }
 
 export type SendIcs = {
