@@ -5015,6 +5015,35 @@
         "Importen din starter"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Lær mer"
+      ],
+      "upgrade for more storage": [
+        "oppgrader for mer lagringsplass"
+      ],
+      "Upgrade to restore full access": [
+        "Oppgrader for å gjenopprette full tilgang"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Din ${ driveStorage } er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din ${ mailStorage } er full. For å sende eller motta e-post, frigjør plass eller ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Kontoen din står i fare for å bli slettet. For å unngå tap av data kan du be administratoren om å oppgradere. ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Lagringsplassen din er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
@@ -5839,6 +5868,9 @@
       ],
       "Select": [
         "Velg"
+      ],
+      "Select state": [
+        "Velg stat"
       ],
       "Start typing an email address": [
         "Begynn å skrive inn en e-postadresse"

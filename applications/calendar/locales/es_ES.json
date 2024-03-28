@@ -5018,6 +5018,35 @@
         "Tu importación está empezando."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Más información"
+      ],
+      "upgrade for more storage": [
+        "mejora para obtener más almacenamiento"
+      ],
+      "Upgrade to restore full access": [
+        "Mejora para restaurar el acceso a todo"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "El ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "El ${ mailStorage } está lleno. Para enviar o recibir correos, libera espacio o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Tu cuenta corre el riesgo de ser eliminada. Para evitar la pérdida de datos, pide a tu administrador que la actualice. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "El almacenamiento está lleno. Para enviar o recibir correos, libera espacio o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "El almacenamiento está lleno. Para cargar o sincronizar archivos, libera espacio o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todos los mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como",
@@ -5842,6 +5871,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Select state": [
+        "Seleccionar el estado"
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
