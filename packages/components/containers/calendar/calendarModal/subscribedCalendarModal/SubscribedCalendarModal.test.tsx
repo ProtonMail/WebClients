@@ -3,15 +3,15 @@ import userEvent from '@testing-library/user-event';
 
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
-import { renderWithProviders } from '../../contacts/tests/render';
+import { renderWithProviders } from '../../../contacts/tests/render';
 import SubscribedCalendarModal from './SubscribedCalendarModal';
 
-jest.mock('../hooks/useGetCalendarSetup', () => () => ({}));
+jest.mock('../../hooks/useGetCalendarSetup', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 
-jest.mock('../calendarModal/calendarModalState', () => ({
-    ...jest.requireActual('../calendarModal/calendarModalState'),
+jest.mock('../personalCalendarModal/calendarModalState', () => ({
+    ...jest.requireActual('../personalCalendarModal/calendarModalState'),
     getDefaultModel: jest.fn(() => ({
         calendarID: '7824929ac66f483ba12ee051c056b9e5',
         name: 'A fake calendar',
@@ -33,7 +33,7 @@ jest.mock('@proton/components/hooks/useApi', () => ({
 }));
 
 const mockHandleCreateCalendar = jest.fn();
-jest.mock('../hooks/useGetCalendarActions', () => ({
+jest.mock('../../hooks/useGetCalendarActions', () => ({
     __esModule: true,
     default: jest.fn(() => ({
         handleCreateCalendar: mockHandleCreateCalendar,

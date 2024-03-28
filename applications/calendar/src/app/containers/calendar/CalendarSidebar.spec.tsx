@@ -20,11 +20,11 @@ import noop from '@proton/utils/noop';
 
 import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
 
-jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', () => ({
+jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
-    CalendarModal: jest.fn(({ open }) => <span>{open ? 'CalendarModal' : null}</span>),
+    PersonalCalendarModal: jest.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
     // It's not great having to mock this export manually, but the only alternative would be
-    // to move the enum definition somewhere else. Ideally we shouldn't mock CalendarModal at all
+    // to move the enum definition somewhere else. Ideally we shouldn't mock PersonalCalendarModal at all
     CALENDAR_MODAL_TYPE: {
         COMPLETE: 0,
         SHARED: 1,
@@ -32,10 +32,13 @@ jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', 
     },
 }));
 
-jest.mock('@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal', () => ({
-    __esModule: true,
-    default: jest.fn(({ open }) => <span>{open ? 'SubscribedCalendarModal' : null}</span>),
-}));
+jest.mock(
+    '@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal',
+    () => ({
+        __esModule: true,
+        default: jest.fn(({ open }) => <span>{open ? 'SubscribedCalendarModal' : null}</span>),
+    })
+);
 
 jest.mock('@proton/components/containers/calendar/CalendarLimitReachedModal', () => ({
     __esModule: true,
@@ -245,7 +248,7 @@ describe('CalendarSidebar', () => {
     it('displays create calendar modal', async () => {
         const { queryByText, getByText } = render(renderComponent());
 
-        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getCalendarModal = () => queryByText(/^PersonalCalendarModal/);
         const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
         const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
 
@@ -272,7 +275,7 @@ describe('CalendarSidebar', () => {
         const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
         const getCreateSubscribedCalendarButton = () => queryByText(/Add calendar from URL/) as HTMLButtonElement;
 
-        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getCalendarModal = () => queryByText(/^PersonalCalendarModal/);
         const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
         const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
 
@@ -293,7 +296,7 @@ describe('CalendarSidebar', () => {
 
         const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
 
-        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getCalendarModal = () => queryByText(/^PersonalCalendarModal/);
         const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
         const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
 
@@ -313,7 +316,7 @@ describe('CalendarSidebar', () => {
 
         const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
 
-        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getCalendarModal = () => queryByText(/^PersonalCalendarModal/);
         const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
         const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
 
