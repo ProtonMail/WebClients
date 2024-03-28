@@ -1,4 +1,14 @@
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import { c } from 'ttag';
+
+import { ButtonLike } from '@proton/atoms/Button';
+import {
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    SettingsLink,
+} from '@proton/components/components';
 
 import BreachInfo from './BreachInfo';
 import BreachRecommendations from './BreachRecommendations';
@@ -10,8 +20,9 @@ import { getStyle } from './helpers';
 interface BreachModalProps {
     modalProps: ModalProps;
     breachData: FetchedBreaches | undefined;
+    securityCenter?: boolean;
 }
-const BreachModal = ({ modalProps, breachData }: BreachModalProps) => {
+const BreachModal = ({ modalProps, breachData, securityCenter }: BreachModalProps) => {
     if (!breachData) {
         return;
     }
@@ -33,7 +44,7 @@ const BreachModal = ({ modalProps, breachData }: BreachModalProps) => {
     return (
         <ModalTwo fullscreenOnMobile {...modalProps}>
             <ModalTwoHeader />
-            <ModalTwoContent className="px-4 pb-4">
+            <ModalTwoContent className="pb-4">
                 <BreachTitle name={name} createdAt={createdAt} style={getStyle(severity)} className="mb-4" />
                 <div className="flex flex-column flex-nowrap gap-2">
                     <BreachInfo
@@ -47,6 +58,12 @@ const BreachModal = ({ modalProps, breachData }: BreachModalProps) => {
                     {hasActions && <BreachRecommendations actions={actions} />}
                 </div>
             </ModalTwoContent>
+            {securityCenter && (
+                <ModalTwoFooter className="justify-end">
+                    <ButtonLike as={SettingsLink} path="/security#breaches">{c('Action')
+                        .t`View all reports`}</ButtonLike>
+                </ModalTwoFooter>
+            )}
         </ModalTwo>
     );
 };
