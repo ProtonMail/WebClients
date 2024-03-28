@@ -76,7 +76,7 @@ function getOperations(
 
     return {
         buyCredit: async () => {
-            return api(buyCredit(params)).then(wrappedAfterOperation);
+            return api(buyCredit(params, paymentsVersion)).then(wrappedAfterOperation);
         },
         payInvoice: async (invoiceId: string) => {
             return api(payInvoice(invoiceId, params)).then(wrappedAfterOperation);
