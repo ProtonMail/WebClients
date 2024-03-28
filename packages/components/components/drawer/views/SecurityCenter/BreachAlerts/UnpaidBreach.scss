@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/lib';
+
+.unpaid-breach-detected-card {
+	&,
+	&:hover,
+	&:focus,
+	&:focus-within {
+		background-color: var(--background-elevated);
+	}
+}
+
+.unpaid-icon-bg {
+	inline-size: rem(28);
+	background-color: var(--signal-danger-minor-1);
+}
