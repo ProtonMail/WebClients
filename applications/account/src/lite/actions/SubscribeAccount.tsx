@@ -18,6 +18,7 @@ import {
     useSubscription,
     useUser,
 } from '@proton/components';
+import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
@@ -66,11 +67,12 @@ interface Props {
     fullscreen?: boolean;
     searchParams: URLSearchParams;
     app: ProductParam;
+    loader: JSX.Element;
 }
 
 const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE];
 
-const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
+const SubscribeAccount = ({ app, redirect, searchParams, loader }: Props) => {
     const onceCloseRef = useRef(false);
     const topRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
@@ -90,11 +92,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const canEdit = canPay(user);
 
     if (!organization || !subscription || loadingSubscription || loadingPlans || loadingOrganization) {
-        return (
-            <LiteLayout searchParams={searchParams}>
-                <LiteLoaderPage />
-            </LiteLayout>
-        );
+        return loader;
     }
 
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
@@ -424,4 +422,18 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     );
 };
 
-export default SubscribeAccount;
+const SubscribeAccountWithProviders = (props: Omit<Props, 'loader'>) => {
+    const loader = (
+        <LiteLayout searchParams={props.searchParams}>
+            <LiteLoaderPage />
+        </LiteLayout>
+    );
+
+    return (
+        <PaymentSwitcher loader={loader}>
+            <SubscribeAccount {...props} loader={loader} />
+        </PaymentSwitcher>
+    );
+};
+
+export default SubscribeAccountWithProviders;
