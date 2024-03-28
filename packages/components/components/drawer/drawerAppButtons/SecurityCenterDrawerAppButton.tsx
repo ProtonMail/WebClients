@@ -9,6 +9,7 @@ import { Optional } from '@proton/shared/lib/interfaces';
 
 import { SecurityCenterDrawerLogo } from '../drawerIcons';
 import { selectHasAccountSecurityIssue } from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
+import BreachAlertsSpotlight from '../views/SecurityCenter/BreachAlertsSpotlight';
 import SecurityCenterSpotlight from '../views/SecurityCenter/SecurityCenterSpotlight';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
 
@@ -31,16 +32,18 @@ const SecurityCenterDrawerAppButton = ({
 
     return (
         <SecurityCenterSpotlight>
-            <DrawerAppButton
-                tooltipText={c('Title').t`Security center`}
-                data-testid="security-center-drawer-app-button:security-center-icon"
-                buttonContent={<SecurityCenterDrawerLogo />}
-                onClick={handleClick}
-                alt={c('Action').t`Toggle security center app`}
-                aria-controls="drawer-app-proton-security-center"
-                notificationDotColor={hasAccountSecurityWarning ? ThemeColor.Warning : undefined}
-                {...rest}
-            />
+            <BreachAlertsSpotlight>
+                <DrawerAppButton
+                    tooltipText={c('Title').t`Security center`}
+                    data-testid="security-center-drawer-app-button:security-center-icon"
+                    buttonContent={<SecurityCenterDrawerLogo />}
+                    onClick={handleClick}
+                    alt={c('Action').t`Toggle security center app`}
+                    aria-controls="drawer-app-proton-security-center"
+                    notificationDotColor={hasAccountSecurityWarning ? ThemeColor.Warning : undefined}
+                    {...rest}
+                />
+            </BreachAlertsSpotlight>
         </SecurityCenterSpotlight>
     );
 };

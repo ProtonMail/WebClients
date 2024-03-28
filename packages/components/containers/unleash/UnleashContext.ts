@@ -14,6 +14,7 @@ enum CommonFeatureFlag {
     DrawerSecurityCenter = 'DrawerSecurityCenter',
     DrawerSecurityCenterDisplayPassAliases = 'DrawerSecurityCenterDisplayPassAliases',
     DrawerSecurityCenterDisplaySentinel = 'DrawerSecurityCenterDisplaySentinel',
+    BreachesSecurityCenter = 'BreachesSecurityCenter',
     LockedState = 'LockedState',
     InboxUpsellFlow = 'InboxUpsellFlow',
 }
