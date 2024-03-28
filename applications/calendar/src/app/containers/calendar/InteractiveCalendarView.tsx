@@ -12,6 +12,7 @@ import {
 } from 'react';
 import { Prompt } from 'react-router';
 
+import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import {
@@ -31,6 +32,7 @@ import {
     useRelocalizeText,
     useUser,
 } from '@proton/components';
+import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
@@ -142,6 +144,8 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
+import { busyTimeSlotsActions } from '../../store/busyTimeSlots/busyTimeSlotsSlice';
+import { useCalendarDispatch } from '../../store/hooks';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -309,7 +313,9 @@ const InteractiveCalendarView = ({
     getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
+    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
     const { call } = useEventManager();
+    const dispatch = useCalendarDispatch();
     const { call: calendarCall } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
@@ -324,6 +330,7 @@ const InteractiveCalendarView = ({
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
+    const cancelClosePopoverRef = useRef(false);
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -414,6 +421,16 @@ const InteractiveCalendarView = ({
         [eventTargetAction]
     );
 
+    // Used for busy schedules
+    // When `handleSetTemporaryEventModel` is called dateRange[0] is not up to date in the component.
+    // Set the view start date (dateRange[0]) in the slice metadata entry to keep busy slots up to date
+    useEffect(() => {
+        const viewStartDate = dateRange[0];
+        if (viewStartDate) {
+            dispatch(busyTimeSlotsActions.setMetadataViewStartDate({ viewStartDate: getUnixTime(viewStartDate) }));
+        }
+    }, [dateRange[0]]);
+
     const { temporaryEvent, targetEventData, targetMoreData, searchData } = interactiveData || {};
 
     const { tmpData, tmpDataOriginal, data } = temporaryEvent || {};
@@ -457,6 +474,19 @@ const InteractiveCalendarView = ({
         }
 
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
+
+        if (isBusyTimeSlotsAvailable) {
+            void dispatch(
+                busyTimeSlotsActions.init({
+                    attendeeEmails: newTemporaryEvent.tmpData.attendees.map((attendee) => attendee.email),
+                    startDate: getUnixTime(newTemporaryEvent.tmpData.start.date),
+                    now: getUnixTime(now),
+                    tzid,
+                    view,
+                    viewStartDate: getUnixTime(dateRange[0]),
+                })
+            );
+        }
 
         // For the modal, we handle this on submit instead
         if (!createEventModal.isOpen) {
@@ -740,6 +770,19 @@ const InteractiveCalendarView = ({
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
                     });
+
+                    if (isBusyTimeSlotsAvailable) {
+                        dispatch(
+                            busyTimeSlotsActions.init({
+                                attendeeEmails: newTemporaryModel.attendees.map(({ email }) => email),
+                                startDate: getUnixTime(newTemporaryModel.start.date),
+                                now: getUnixTime(now),
+                                tzid,
+                                view,
+                                viewStartDate: getUnixTime(dateRange[0]),
+                            })
+                        );
+                    }
                 }
                 if (mouseUpAction.action === ACTIONS.EVENT_MOVE_UP) {
                     const { idx } = mouseUpAction.payload;
@@ -748,6 +791,19 @@ const InteractiveCalendarView = ({
                         temporaryEvent: newTemporaryEvent,
                         targetEventData: { uniqueId: 'tmp', idx, type },
                     });
+
+                    if (isBusyTimeSlotsAvailable) {
+                        dispatch(
+                            busyTimeSlotsActions.init({
+                                attendeeEmails: newTemporaryModel.attendees.map(({ email }) => email),
+                                startDate: getUnixTime(newTemporaryModel.start.date),
+                                now: getUnixTime(now),
+                                tzid,
+                                view,
+                                viewStartDate: getUnixTime(dateRange[0]),
+                            })
+                        );
+                    }
                 }
             };
         }
@@ -1082,11 +1138,21 @@ const InteractiveCalendarView = ({
                 return Promise.reject(new Error('Keep event'));
             }
             try {
-                return await handleCloseConfirmation();
+                return await new Promise<void>((resolve, reject) =>
+                    handleCloseConfirmation()
+                        .then(() => {
+                            dispatch(busyTimeSlotsActions.reset());
+                            resolve();
+                        })
+                        .catch(reject)
+                );
             } catch (e) {
                 return Promise.reject(new Error('Keep event'));
             }
         }
+
+        dispatch(busyTimeSlotsActions.reset());
+
         return Promise.resolve();
     };
 
@@ -1097,6 +1163,43 @@ const InteractiveCalendarView = ({
         // Close the popover only
         setInteractiveData({ temporaryEvent });
         updateModal('createEventModal', { isOpen: true, props: { isDuplicating } });
+    };
+
+    /**
+     * Used when switching from create/edit modal to grid popover
+     * 1. Close the modal
+     * 2. Open the popover
+     * 3. Fetch busy slots if needed
+     */
+    const handleDisplayBusySlots = (temporaryEvent: CalendarViewEventTemporaryEvent) => {
+        if (isSavingEvent.current) {
+            return;
+        }
+
+        cancelClosePopoverRef.current = true;
+        updateModal('createEventModal', { isOpen: false });
+
+        // Close the popover only
+        setInteractiveData({
+            temporaryEvent,
+            targetEventData: {
+                type: temporaryEvent.isAllDay ? TYPE.DAYGRID : TYPE.TIMEGRID,
+                uniqueId: temporaryEvent.uniqueId,
+                preventPopover: isDrawerApp,
+            },
+        });
+
+        // Init fetch busy slots
+        void dispatch(
+            busyTimeSlotsActions.init({
+                attendeeEmails: temporaryEvent.tmpData.attendees.map((attendee) => attendee.email),
+                startDate: getUnixTime(temporaryEvent.tmpData.start.date),
+                now: getUnixTime(now),
+                tzid,
+                view,
+                viewStartDate: getUnixTime(dateRange[0]),
+            })
+        );
     };
 
     const handleCreateEvent = ({
@@ -1396,6 +1499,7 @@ const InteractiveCalendarView = ({
             }
         } finally {
             isSavingEvent.current = false;
+            dispatch(busyTimeSlotsActions.reset());
         }
     };
 
@@ -1978,6 +2082,11 @@ const InteractiveCalendarView = ({
                     setModel={handleSetTemporaryEventModel}
                     isInvitation={isInvitation}
                     isOpen={createEventModal.isOpen}
+                    onDisplayBusySlots={() => {
+                        if (interactiveData?.temporaryEvent) {
+                            handleDisplayBusySlots(interactiveData.temporaryEvent);
+                        }
+                    }}
                     onSave={async (inviteActions: InviteActions) => {
                         if (!temporaryEvent) {
                             return Promise.reject(new Error('Undefined behavior'));
@@ -2015,12 +2124,16 @@ const InteractiveCalendarView = ({
                             return noop();
                         }
                     }}
-                    onExit={() => {
-                        closeAllPopovers();
-                    }}
                     isCreateEvent={isCreatingEvent}
                     addresses={addresses}
                     isDrawerApp={isDrawerApp}
+                    onExit={() => {
+                        if (cancelClosePopoverRef.current) {
+                            cancelClosePopoverRef.current = false;
+                            return;
+                        }
+                        closeAllPopovers();
+                    }}
                 />
             )}
         </>

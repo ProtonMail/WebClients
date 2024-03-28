@@ -17,6 +17,7 @@ enum CommonFeatureFlag {
     BreachesSecurityCenter = 'BreachesSecurityCenter',
     LockedState = 'LockedState',
     InboxUpsellFlow = 'InboxUpsellFlow',
+    CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
 }
 
 enum AccountFlag {

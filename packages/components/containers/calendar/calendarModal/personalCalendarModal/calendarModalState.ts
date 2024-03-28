@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getBusyTimeSlotCalSettingValue } from '@proton/components/helpers/busyTimeSlots';
 import { sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import {
@@ -61,10 +62,11 @@ export const getCalendarModel = ({
     addressID: AddressID,
     addressOptions: Addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
     type: Calendar.Type,
+    shareBusyTimeSlots: CalendarSettings.MakesUserBusy,
     ...getCalendarEventSettingsModel(CalendarSettings),
 });
 
-export const getDefaultModel = (): CalendarViewModelFull => {
+export const getDefaultModel = (calendarType = CALENDAR_TYPE.PERSONAL): CalendarViewModelFull => {
     return {
         calendarID: '',
         name: '',
@@ -79,7 +81,8 @@ export const getDefaultModel = (): CalendarViewModelFull => {
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
         partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
         fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true),
-        type: CALENDAR_TYPE.PERSONAL,
+        type: calendarType,
+        shareBusyTimeSlots: getBusyTimeSlotCalSettingValue(calendarType),
     };
 };
 
@@ -110,5 +113,6 @@ export const getCalendarSettingsPayload = (model: CalendarViewModelFull) => {
         DefaultEventDuration: +duration,
         DefaultFullDayNotifications: modelToNotifications(fullDayNotifications),
         DefaultPartDayNotifications: modelToNotifications(partDayNotifications),
+        MakesUserBusy: model.shareBusyTimeSlots,
     };
 };

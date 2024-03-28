@@ -2,7 +2,14 @@ import { Ref } from 'react';
 
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../../containers/calendar/interface';
+import {
+    CalendarViewBusyEvent,
+    CalendarViewEvent,
+    TargetEventData,
+    TargetMoreData,
+} from '../../../containers/calendar/interface';
+import { isBusyTimesSlotEvent } from '../../../helpers/busyTimeSlots';
+import FullDayBusyEvent from '../../events/FullDayBusyEvent';
 import FullDayEvent from '../../events/FullDayEvent';
 import MoreFullDayEvent from '../../events/MoreFullDayEvent';
 import getIsBeforeNow from '../getIsBeforeNow';
@@ -16,7 +23,7 @@ interface Props {
     row: number;
     tzid: string;
     now: Date;
-    events: CalendarViewEvent[];
+    events: (CalendarViewEvent | CalendarViewBusyEvent)[];
     targetEventRef?: Ref<HTMLDivElement>;
     targetMoreData?: TargetMoreData;
     targetMoreRef?: Ref<HTMLDivElement>;
@@ -77,7 +84,18 @@ const RowEvents = ({
 
         const modifiedEnd = event.isAllDay && !event.isAllPartDay ? addDays(event.end, 1) : event.end;
 
-        return (
+        return isBusyTimesSlotEvent(event) ? (
+            <FullDayBusyEvent
+                event={event}
+                formatTime={formatTime}
+                isBeforeNow={isBeforeNow}
+                isOutsideEnd={event.isAllDay ? modifiedEnd > lastWindow : false}
+                isOutsideStart={event.isAllDay ? event.start < startWindow : false}
+                style={style}
+                key={event.uniqueId}
+                eventRef={eventRef}
+            />
+        ) : (
             <FullDayEvent
                 tzid={tzid}
                 event={event}
