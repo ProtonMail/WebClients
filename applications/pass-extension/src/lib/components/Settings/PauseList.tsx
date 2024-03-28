@@ -94,19 +94,22 @@ export const PauseList: FC = () => {
                     <TableHeader>
                         <TableRow>
                             <TableHeaderCell className="w-1/4">
-                                <small>{c('Label').t`Domain`}</small>
+                                <small className="text-xs">{c('Label').t`Domain`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
-                                <small>{c('Label').t`Autofill`}</small>
+                                <small className="text-xs">{c('Label').t`Autofill`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
-                                <small>{c('Label').t`Autofill 2FA`}</small>
+                                <small className="text-xs">{c('Label').t`Autofill 2FA`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
-                                <small>{c('Label').t`Autosuggest`}</small>
+                                <small className="text-xs">{c('Label').t`Autosuggest`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
-                                <small>{c('Label').t`Autosave`}</small>
+                                <small className="text-xs">{c('Label').t`Autosave`}</small>
+                            </TableHeaderCell>
+                            <TableHeaderCell>
+                                <small className="text-xs">{c('Label').t`Passkeys`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
                                 <Icon name="pass-trash" size={4} className="mr-2" />
