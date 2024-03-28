@@ -24,6 +24,7 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { merge } from '@proton/pass/utils/object/merge';
+import noop from '@proton/utils/noop';
 
 import { withContext } from '../../context/context';
 
@@ -98,10 +99,12 @@ export const createIFrameApp = <A>({
     const sendSecurePostMessage = (message: IFrameMessage) =>
         sendMessage
             .onSuccess(contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }), async ({ key }) =>
-                ensureLoaded().then(() => {
-                    const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
-                    iframe.contentWindow?.postMessage(secureMessage, iframe.src);
-                })
+                ensureLoaded()
+                    .then(() => {
+                        const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
+                        iframe.contentWindow?.postMessage(secureMessage, iframe.src);
+                    })
+                    .catch(noop)
             )
             .catch((e) => onError?.(e));
 
