@@ -110,6 +110,23 @@ const getSettings =
                 ],
             },
             {
+                label: c('Label').t`Passkeys`,
+                settings: [
+                    {
+                        label: c('Label').t`Save passkeys`,
+                        description: c('Info').t`${PASS_APP_NAME} will suggest saving passkeys.`,
+                        checked: settings.passkeys.create,
+                        onChange: (checked) => onSettingsUpdate({ passkeys: { create: checked } }),
+                    },
+                    {
+                        label: c('Label').t`Authenticate with passkeys`,
+                        description: c('Info').t`${PASS_APP_NAME} will suggest authenticating using saved passkeys`,
+                        checked: settings.passkeys.get,
+                        onChange: (checked) => onSettingsUpdate({ passkeys: { get: checked } }),
+                    },
+                ],
+            },
+            {
                 label: c('Label').t`Display`,
                 settings: [
                     {
