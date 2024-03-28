@@ -53,6 +53,7 @@ import {
     getIsVpnPlan,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
+    getPlanNameFromIDs,
     hasNewVisionary,
     hasPassPlus,
 } from '@proton/shared/lib/helpers/subscription';
@@ -107,6 +108,7 @@ import { SelectedProductPlans, getAutoCoupon, getCurrency, getDefaultSelectedPro
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
+import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';
 
@@ -147,6 +149,7 @@ export interface SubscriptionContainerProps {
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;
     minimumCycle?: Cycle;
+    maximumCycle?: Cycle;
     currency?: Currency;
     plan?: PLANS;
     planIDs?: PlanIDs;
@@ -173,14 +176,18 @@ export interface SubscriptionContainerProps {
     plans: Plan[];
     freePlan: FreePlanDefault;
     mode?: 'upsell-modal';
+    upsellRef?: string;
+    parent?: string;
 }
 
 const SubscriptionContainer = ({
     topRef: customTopRef,
+    upsellRef,
     app,
     step: maybeStep,
     cycle: maybeCycle,
     minimumCycle,
+    maximumCycle,
     currency: maybeCurrency,
     coupon: maybeCoupon,
     plan,
@@ -201,6 +208,7 @@ const SubscriptionContainer = ({
     plans,
     freePlan,
     mode,
+    parent,
 }: SubscriptionContainerProps) => {
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -252,6 +260,8 @@ const SubscriptionContainer = ({
         }
         return defaultAudience;
     });
+
+    const { reportSubscriptionModalInitialization, reportSubscriptionModalPayment } = useSubscriptionModalTelemetry();
 
     const planIDs = useMemo(() => {
         const subscriptionPlanIDs = getPlanIDs(subscription);
@@ -479,6 +489,13 @@ const SubscriptionContainer = ({
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
+                if (parent === 'subscription-modal') {
+                    void reportSubscriptionModalPayment({
+                        cycle: model.cycle,
+                        currency: model.currency,
+                        plan: getPlanNameFromIDs(model.planIDs) || 'n/a',
+                    });
+                }
             } catch (error) {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
@@ -673,6 +690,16 @@ const SubscriptionContainer = ({
     useEffect(() => {
         // Trigger once to initialise the check values
         void withLoadingCheck(check());
+        if (parent === 'subscription-modal') {
+            // Send telemetry event: initialization
+            void reportSubscriptionModalInitialization({
+                step: maybeStep,
+                plan: plan,
+                cycle: model.cycle,
+                currency: model.currency,
+                upsellRef,
+            });
+        }
     }, []);
 
     useEffect(() => {
@@ -1035,6 +1062,7 @@ const SubscriptionContainer = ({
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
+                                                    maximumCycle={maximumCycle}
                                                     subscription={subscription}
                                                     defaultCycles={defaultCycles}
                                                 />

@@ -1,7 +1,14 @@
 import { FunctionComponent, useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { FeatureCode, ModalsChildren, useActiveBreakpoint, useFeatures } from '@proton/components';
+import {
+    FeatureCode,
+    ModalsChildren,
+    SubscriptionModalProvider,
+    useActiveBreakpoint,
+    useConfig,
+    useFeatures,
+} from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
@@ -17,6 +24,7 @@ import { MailContentRefProvider } from './hooks/useClickMailContent';
 
 const MainContainer: FunctionComponent = () => {
     const breakpoints = useActiveBreakpoint();
+    const { APP_NAME } = useConfig();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
         FeatureCode.MailServiceWorker,
@@ -64,19 +72,21 @@ const MainContainer: FunctionComponent = () => {
                 <SimpleLoginExtensionProvider>
                     <MailContentRefProvider mailContentRef={mailContentRef}>
                         <ChecklistsProvider>
-                            <ComposerContainer breakpoints={breakpoints}>
-                                <CheckAllRefProvider>
-                                    <ModalsChildren />
-                                    <Switch>
-                                        <Route
-                                            path={MAIN_ROUTE_PATH}
-                                            render={() => (
-                                                <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                            )}
-                                        />
-                                    </Switch>
-                                </CheckAllRefProvider>
-                            </ComposerContainer>
+                            <SubscriptionModalProvider app={APP_NAME}>
+                                <ComposerContainer breakpoints={breakpoints}>
+                                    <CheckAllRefProvider>
+                                        <ModalsChildren />
+                                        <Switch>
+                                            <Route
+                                                path={MAIN_ROUTE_PATH}
+                                                render={() => (
+                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                                )}
+                                            />
+                                        </Switch>
+                                    </CheckAllRefProvider>
+                                </ComposerContainer>
+                            </SubscriptionModalProvider>
                         </ChecklistsProvider>
                     </MailContentRefProvider>
                 </SimpleLoginExtensionProvider>
