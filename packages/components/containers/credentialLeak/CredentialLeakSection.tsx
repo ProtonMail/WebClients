@@ -51,6 +51,7 @@ export interface FetchedBreaches {
           }[]
         | null;
     source: {
+        isAggregated: boolean;
         domain: string | null;
         category: null | {
             code: string;

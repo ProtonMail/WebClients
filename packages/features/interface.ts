@@ -109,6 +109,7 @@ export enum FeatureCode {
     SeenReferralModal = 'SeenReferralModal',
     SetExpiration = 'SetExpiration',
     SmtpToken = 'SmtpToken',
+    SpotlightBreachAlertSecurityCenter = 'SpotlightBreachAlertSecurityCenter',
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
     SpotlightInboxDesktop = 'SpotlightInboxDesktop',
     SpotlightLoadContent = 'SpotlightLoadContent',
