@@ -4,8 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Prompt, useApi, useModalState, useNotifications, useSettingsLink } from '@proton/components';
-import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
-import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
+import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
+import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
@@ -347,7 +348,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                 />
             )}
             {calendarModalCalendar && (
-                <CalendarModal
+                <PersonalCalendarModal
                     {...calendarModalProps}
                     onExit={() => {
                         setCalendarModalCalendar(null);
