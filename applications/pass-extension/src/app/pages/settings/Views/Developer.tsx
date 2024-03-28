@@ -1,11 +1,11 @@
 import { type FC } from 'react';
 
-import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
 import { DropdownDebug } from 'proton-pass-extension/lib/components/Settings/debug/DropdownDebug';
 import { NotificationDebug } from 'proton-pass-extension/lib/components/Settings/debug/NotificationDebug';
 
 import { Button } from '@proton/atoms/Button';
 import Icon from '@proton/components/components/icon/Icon';
+import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 

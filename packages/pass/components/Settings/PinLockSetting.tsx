@@ -59,6 +59,8 @@ export const PinLockSetting: FC = () => {
                 </span>
             </Checkbox>
 
+            <hr className="mt-2 mb-4 border-weak shrink-0" />
+
             <LockCreate
                 opened={lockCreationModalOpened}
                 onClose={() => setLockCreationModalOpened(false)}
