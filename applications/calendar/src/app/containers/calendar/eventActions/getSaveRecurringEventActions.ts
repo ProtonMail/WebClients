@@ -53,6 +53,7 @@ import {
     getUpdateMainSeriesMergeVevent,
     getUpdateMergeVeventWithoutMaybeNotifications,
     getUpdateSingleEditMergeVevent,
+    getUpdatedMainSeriesMergeEvent,
 } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
@@ -520,29 +521,49 @@ const getSaveRecurringEventActions = async ({
                     'Cannot add participants and change calendar simultaneously. Please change the calendar first'
                 );
             }
-            const requestInviteActions = { ...updatedInviteActions };
+            // checking send preferences errors here to apply potential changes to all occurrences
+            // TODO: this assumes all occurrences have the same list of attendees
+            const {
+                sendPreferencesMap: sendPrefsMapAfterSendPrefsCheck,
+                inviteActions: inviteActionsAfterSendPrefsCheck,
+                vevent: veventAfterSendPrefsCheck,
+                cancelVevent: cancelVeventAfterSendPrefsCheck,
+            } = await onSendPrefsErrors({
+                inviteActions: updatedInviteActions,
+                vevent: updatedVeventComponent,
+                cancelVevent: originalVeventComponent,
+            });
+            updatedVeventComponent = veventAfterSendPrefsCheck;
+            updatedInviteActions = inviteActionsAfterSendPrefsCheck;
+            const updatedMainSeriesInviteActions = { ...updatedInviteActions };
+
             const originalIcsPromise = getBase64SharedSessionKey({
                 calendarEvent: originalEvent,
                 getCalendarKeys,
                 getAddressKeys,
             }).then((sharedSessionKey) => {
                 if (sharedSessionKey) {
-                    requestInviteActions.sharedEventID = originalEvent.SharedEventID;
-                    requestInviteActions.sharedSessionKey = sharedSessionKey;
+                    updatedMainSeriesInviteActions.sharedEventID = originalEvent.SharedEventID;
+                    updatedMainSeriesInviteActions.sharedSessionKey = sharedSessionKey;
                 }
                 return sendIcs({
-                    inviteActions: requestInviteActions,
+                    inviteActions: updatedMainSeriesInviteActions,
                     vevent: updatedVeventComponent,
-                    cancelVevent: originalVeventComponent,
+                    cancelVevent: cancelVeventAfterSendPrefsCheck,
+                    noCheckSendPrefs: false,
+                    sendPreferencesMap: sendPrefsMapAfterSendPrefsCheck,
                 });
             });
             const singleEditIcsPromises = [];
             if (!isBreakingChange) {
                 deleteOperations = [];
                 const oldVevent = isSingleEdit ? oldVeventComponent : originalVeventComponent;
+                // For non-breaking single edits, changes to date-time properties need a merge with the original date-time properties
+                // However, some attendees might have been removed after a send preference check.
+                // In that case, we want to use updateMainSeriesMergeVevent, but we take computed attendees from updatedVeventComponent
                 const updateMergeVevent = organizerEditsNonBreakingSingleEdit
-                    ? updateMainSeriesMergeVevent
-                    : getUpdateSingleEditMergeVevent(newRecurrentVeventWithSequence, oldVevent);
+                    ? getUpdatedMainSeriesMergeEvent(updatedVeventComponent, updateMainSeriesMergeVevent)
+                    : getUpdateSingleEditMergeVevent(updatedVeventComponent, oldVevent);
                 // implement the so-called smart rules for "edit all", namely propagate changed fields to single edits
                 singleEditIcsPromises.push(
                     ...singleEditRecurrences.map(async (event) => {
@@ -594,6 +615,7 @@ const getSaveRecurringEventActions = async ({
                                 // Do not re-check send preferences errors for single edits as they were checked for the main event already,
                                 // and it's currently not possible to have a different list of attendees in the single edits
                                 // TODO: Move send preference error check outside of sendIcs
+                                sendPreferencesMap: sendPrefsMapAfterSendPrefsCheck,
                                 noCheckSendPrefs: true,
                             });
                             updatedSingleEditVevent = finalVevent;
@@ -639,6 +661,7 @@ const getSaveRecurringEventActions = async ({
                                 // Do not re-check send preferences errors for single edits as they were checked for the main event already,
                                 // and it's currently not possible to have a different list of attendees in the single edits
                                 // TODO: Move send preference error check outside of sendIcs
+                                sendPreferencesMap: sendPrefsMapAfterSendPrefsCheck,
                                 noCheckSendPrefs: true,
                             });
                         })

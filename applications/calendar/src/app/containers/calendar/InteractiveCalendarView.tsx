@@ -130,6 +130,7 @@ import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
 import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
+import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers/sendPreferences';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
@@ -202,7 +203,7 @@ const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCa
 type ModalsMap = {
     sendWithErrorsConfirmationModal: ModalWithProps<{
         sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-        vevent?: VcalVeventComponent;
+        vevent: VcalVeventComponent;
         inviteActions: InviteActions;
         cancelVevent?: VcalVeventComponent;
     }>;
@@ -932,8 +933,26 @@ const InteractiveCalendarView = ({
         inviteActions,
         vevent,
         cancelVevent,
+        sendPreferencesMap: initialSendPrefsMap,
         noCheckSendPrefs,
     }: any) => {
+        if (initialSendPrefsMap) {
+            // Temporary fix for edit single occurrence v1:
+            // We are currently computing send preferences map for the main series only, because for v1, we assume that
+            // the participant list is the same between single edits and main series.
+            // The SendWithErrorsConfirmationModal won't be opened for single edits, so we have to compute the clean data
+            // so that we make sure participants with send preferences are cleaned properly.
+            // TODO this should be removed during edit single occurrences v2
+            const errorMap = getSendPrefErrorMap(initialSendPrefsMap);
+            const cleanSendData = getCleanSendDataFromSendPref({
+                emailsWithError: Object.keys(errorMap),
+                sendPreferencesMap: initialSendPrefsMap,
+                inviteActions,
+                vevent,
+                cancelVevent,
+            });
+            return cleanSendData;
+        }
         const { Sign } = await getMailSettings();
         const sendPreferencesMap: SimpleMap<AugmentedSendPreferences> = {};
         const emails = extractInviteEmails({ inviteActions, vevent, cancelVevent });
@@ -971,7 +990,7 @@ const InteractiveCalendarView = ({
     };
 
     const handleSendIcs: SendIcs = async (
-        { inviteActions, vevent, cancelVevent, noCheckSendPrefs }: any,
+        { inviteActions, vevent, cancelVevent, noCheckSendPrefs, sendPreferencesMap: initialSendPrefsMap }: any,
         calendarID
     ) => {
         const onRequestError = () => {
@@ -997,7 +1016,13 @@ const InteractiveCalendarView = ({
             inviteActions: cleanInviteActions,
             vevent: cleanVevent,
             cancelVevent: cleanCancelVevent,
-        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent, noCheckSendPrefs });
+        } = await handleSendPrefsErrors({
+            inviteActions,
+            vevent,
+            cancelVevent,
+            sendPreferencesMap: initialSendPrefsMap,
+            noCheckSendPrefs,
+        });
         // generate DTSTAMPs for the ICS
         const currentTimestamp = +serverTime();
         const cleanVeventWithDtstamp = cleanVevent
