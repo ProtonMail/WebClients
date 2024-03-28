@@ -4769,6 +4769,35 @@
         "${ twoFAMembers.length }/${ members.length } membri della tua organizzazione fanno uso dell'autenticazione a due fattori."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Scopri di più"
+      ],
+      "upgrade for more storage": [
+        "effettua l'upgrade per ottenere più spazio di archiviazione"
+      ],
+      "Upgrade to restore full access": [
+        "Effettua l'upgrade per ripristinare l'accesso completo"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Il tuo ${ driveStorage } è pieno. Per caricare o sincronizzare file, libera spazio o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Il tuo ${ mailStorage } è pieno. Per inviare o ricevere email, libera spazio o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Il tuo account è a rischio di cancellazione. Per evitare la perdita di dati, chiedi al tuo amministratore di eseguire l'aggiornamento. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Il tuo spazio di archiviazione è pieno. Per inviare o ricevere email, libera spazio o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Il tuo spazio di archiviazione è pieno. Per caricare o sincronizzare file, libera spazio o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Approfitta dell'offerta"
@@ -6215,6 +6244,9 @@
       ],
       "Select a reason": [
         "Seleziona un motivo"
+      ],
+      "Select state": [
+        "Seleziona Stato"
       ]
     },
     "plan customizer, ips": {
