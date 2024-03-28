@@ -3520,6 +3520,9 @@
       "Require at least one condition": [
         "Perlu minimal satu kondisi"
       ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Pengiriman lampiran dibatasi hingga Anda berada pada batas paket Anda atau meningkatkan akun."
+      ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
       ],
@@ -6926,6 +6929,35 @@
         "Proses impor Anda akan segera dimulai"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "upgrade for more storage": [
+        "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
+      ],
+      "Upgrade to restore full access": [
+        "Tingkatkan akun Anda untuk kembali memperoleh akses ke seluruh fitur"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } Anda penuh. Untuk tetap dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } Anda penuh. Untuk tetap dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Akun Anda berisiko untuk dihapus. Untuk mencegah hilangnya data, mintalah admin Anda untuk meningkatkan paket langganan Anda. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. Untuk tetap dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. Untuk mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arsip"
@@ -7584,6 +7616,9 @@
       ],
       "Select": [
         "Pilih"
+      ],
+      "Select state": [
+        "Pilih negara bagian"
       ],
       "Start date": [
         "Tanggal mulai"

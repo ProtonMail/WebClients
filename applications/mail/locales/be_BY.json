@@ -3674,6 +3674,9 @@
       "Require at least one condition": [
         "Патрабуецца прынамсі адна ўмова"
       ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Магчымасць адпраўкі далучэнняў абмежавана да таго, пакуль ваш тарыфны план не пачне адпавядаць абмежаванням або ваша падпіска не будзе палепшана."
+      ],
       "Signature not verified": [
         "Подпіс не правераны"
       ],
@@ -7694,6 +7697,35 @@
         "Пачалося імпартаванне"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "upgrade for more storage": [
+        "палепшыце тарыфны план, каб атрымаць больш сховішча"
+      ],
+      "Upgrade to restore full access": [
+        "Палепшыце, каб атрымаць поўны доступ"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваша сховішча ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваша сховішча запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
@@ -8422,6 +8454,9 @@
       ],
       "Select": [
         "Выбраць"
+      ],
+      "Select state": [
+        "Выбраць стан"
       ],
       "Start date": [
         "Дата пачатку"

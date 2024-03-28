@@ -5018,6 +5018,35 @@
         "Su importación está empezando"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Más información"
+      ],
+      "upgrade for more storage": [
+        "mejore para obtener más almacenamiento"
+      ],
+      "Upgrade to restore full access": [
+        "Mejore para restaurar el acceso a todo"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Su ${ driveStorage } está lleno. Para cargar o sincronizar archivos, libere espacio o ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Su ${ mailStorage } está lleno. Para enviar o recibir correos, libere espacio o ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Su cuenta corre el riesgo de ser eliminada. Para evitar la pérdida de datos, pida a su administrador que la actualice. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "El almacenamiento está lleno. Para enviar o recibir correos, libere espacio o ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "El almacenamiento está lleno. Para cargar o sincronizar archivos, libere espacio o ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Su suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importar todos los mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como",
