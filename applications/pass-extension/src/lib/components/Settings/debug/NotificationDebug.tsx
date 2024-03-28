@@ -9,10 +9,10 @@ import {
 import { Notification } from 'proton-pass-extension/app/content/injections/apps/notification/Notification';
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
+import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { selectItemsByType } from '@proton/pass/store/selectors';
 import { AppStatus, AutosaveType, FormEntryStatus } from '@proton/pass/types';
 
-import { SettingsPanel } from '../SettingsPanel';
 import { MockIFrameContainer } from './MockIFrameContainer';
 
 export const NotificationDebug: FC = () => {

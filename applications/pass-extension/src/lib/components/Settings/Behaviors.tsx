@@ -6,6 +6,7 @@ import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
+import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -20,7 +21,6 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { PauseList } from './PauseList';
-import { SettingsPanel } from './SettingsPanel';
 import { VaultSetting } from './VaultSetting';
 
 type SettingDefinition = {

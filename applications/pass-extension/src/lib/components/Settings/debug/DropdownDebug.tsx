@@ -4,12 +4,12 @@ import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.stat
 import { Dropdown } from 'proton-pass-extension/app/content/injections/apps/dropdown/Dropdown';
 import { DropdownAction } from 'proton-pass-extension/app/content/types';
 
+import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SafeLoginItem } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { SettingsPanel } from '../SettingsPanel';
 import { MockIFrameContainer } from './MockIFrameContainer';
 
 const LOGIN_ITEMS: SafeLoginItem[] = [
