@@ -78,43 +78,42 @@
 // custom scroll
 body:not(.isDarkMode) {
 	--scrollbar-thumb-color: rgb(0 0 0 / 0.35);
-	--scrollbar-thumb-hover-color: rgb(0 0 0 / 0.5);
 }
 
 body.isDarkMode {
 	--scrollbar-thumb-color: rgb(255 255 255 / 0.2);
-	--scrollbar-thumb-hover-color: rgb(255 255 255 / 0.5);
 }
 
 html:not(.feature-scrollbars-off) {
 	* {
-		scrollbar-width: thin;
-		scrollbar-color: var(--scrollbar-thumb-color) transparent;
-	}
+		@supports (scrollbar-width: auto) {
+			scrollbar-width: thin;
+			scrollbar-color: var(--scrollbar-thumb-color) transparent;
+		}
 
-	*::-webkit-scrollbar {
-		inline-size: 0.625rem; /* 10px */
-		block-size: 0.625rem;
-	}
+		@supports selector(::-webkit-scrollbar) {
+			$real-size: rem(6) + (rem(2) * 2);
 
-	*::-webkit-scrollbar-thumb {
-		border: 0.125rem solid transparent; /* 2px */
-		background-clip: padding-box;
-		border-radius: 0.313rem; /* 5px */
-		background-color: var(--scrollbar-thumb-color, rgb(0 0 0 / 0.35));
-	}
+			&::-webkit-scrollbar {
+				inline-size: $real-size;
+				block-size: $real-size;
+			}
 
-	*::-webkit-scrollbar-track {
-		background-color: transparent;
-	}
+			&::-webkit-scrollbar-thumb {
+				border: rem(2) solid transparent;
+				background-clip: padding-box;
+				border-radius: math.div($real-size, 2);
+				background-color: var(--scrollbar-thumb-color);
+			}
 
-	*::-webkit-scrollbar-thumb:horizontal:hover,
-	*::-webkit-scrollbar-thumb:vertical:hover {
-		background-color: var(--scrollbar-thumb-hover-color, rgb(0 0 0 / 0.5));
-	}
+			&::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
 
-	*::-webkit-scrollbar-corner {
-		visibility: hidden;
+			&::-webkit-scrollbar-corner {
+				visibility: hidden;
+			}
+		}
 	}
 }
 
