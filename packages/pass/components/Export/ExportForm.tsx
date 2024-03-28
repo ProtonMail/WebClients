@@ -1,10 +1,11 @@
-import type { FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Icon } from '@proton/components/index';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -12,6 +13,7 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
 import { selectNonOwnedVaults } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
 type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
 
@@ -19,6 +21,25 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
     const org = useOrganization();
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
+
+    const warnings = useMemo(
+        () =>
+            [
+                /* CSV warning */
+                form.values.format === ExportFormat.CSV &&
+                    c('Info')
+                        .t`CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.`,
+
+                /* non-encrypted warning */
+                form.values.format !== ExportFormat.PGP &&
+                    c('Info')
+                        .t`This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.`,
+
+                /* Owned vault warning */
+                hasNonOwnedVaults && c('Info').t`The export will only contain vaults that you own.`,
+            ].filter(truthy),
+        [form.values.format, hasNonOwnedVaults]
+    );
 
     return (
         <FormikProvider value={form}>
@@ -48,37 +69,36 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     />
                 </div>
 
-                {form.values.format === ExportFormat.CSV && (
-                    <Card className="mb-4 p-1">
-                        <div>{c('Info')
-                            .t`CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.`}</div>
+                {warnings.length > 0 && (
+                    <Card className="mb-4 p-1 flex flex-column flex-nowrap gap-2">
+                        {warnings.map((text, idx) => (
+                            <div key={`warning-${idx}`} className={'flex items-start flex-nowrap w-full gap-2'}>
+                                <Icon name="info-circle-filled" size={3} className="shrink-0 mt-0.5" />
+                                <span>{text}</span>
+                            </div>
+                        ))}
                     </Card>
                 )}
 
-                {hasNonOwnedVaults && (
-                    <em className="block text-sm color-weak mb-2">
-                        {c('Info').t`The export will only contain vaults that you own.`}
-                    </em>
-                )}
-
-                {form.values.format === ExportFormat.PGP ? (
+                {form.values.format === ExportFormat.PGP && (
                     <>
-                        <em className="block text-sm color-weak mb-2">
-                            {c('Info')
-                                .t`The exported file will be encrypted using PGP and requires a strong passphrase.`}
-                        </em>
+                        <hr className="mt-2 mb-4 border-weak shrink-0" />
+
                         <Field
                             name="passphrase"
-                            label={c('Label').t`Passphrase`}
+                            label={
+                                <div>
+                                    {c('Label').t`Passphrase`}{' '}
+                                    <em className="block text-normal text-sm color-weak my-1">
+                                        {c('Info')
+                                            .t`The exported file will be encrypted using PGP and requires a strong passphrase.`}
+                                    </em>
+                                </div>
+                            }
                             component={PasswordField}
                             autoComplete="new-password"
                         />
                     </>
-                ) : (
-                    <em className="block text-sm color-weak mt-2">
-                        {c('Info')
-                            .t`This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.`}
-                    </em>
                 )}
 
                 {orgExportDisabled && (
@@ -92,7 +112,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     color="norm"
                     loading={loading}
                     disabled={!form.isValid || loading || orgExportDisabled}
-                    className="mt-3 w-full"
+                    className="mt-5 w-full"
                 >
                     {c('Action').t`Export`}
                 </Button>

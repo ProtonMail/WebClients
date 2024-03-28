@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
 import { c } from 'ttag';
 
 import { Exporter } from '@proton/pass/components/Export/Exporter';
+import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
