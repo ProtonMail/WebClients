@@ -283,9 +283,10 @@ export interface GiftCodeData {
 }
 
 export const buyCredit = (
-    data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters
+    data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters,
+    forceVersion?: PaymentsVersion
 ) => ({
-    url: `payments/${paymentsVersion}/credit`,
+    url: `payments/${forceVersion ?? paymentsVersion}/credit`,
     method: 'post',
     data,
 });

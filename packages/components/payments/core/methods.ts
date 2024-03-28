@@ -226,16 +226,20 @@ export class PaymentMethods {
             return false;
         }
 
-        const forcedCondition = this.statusExtended.VendorStates.Card;
+        const cardAvailable = this.statusExtended.VendorStates.Card;
         if (this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-            return forcedCondition;
+            return cardAvailable;
         }
 
         const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
         const isAddCard = this.flow === 'add-card' && !isProduction(window.location.host);
+        const isSubscription = this.flow === 'subscription';
+        const isCredit = this.flow === 'credit';
+        const isAllowedFlow = isSignup || isAddCard || isSubscription || isCredit;
+
         const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
 
-        return forcedCondition && (this.flow === 'subscription' || isSignup || isAddCard) && !isB2BPlan;
+        return cardAvailable && isAllowedFlow && !isB2BPlan;
     }
 
     private isPaypalAvailable(): boolean {
@@ -264,15 +268,20 @@ export class PaymentMethods {
         const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT;
         const isInvoice = this.flow === 'invoice';
 
-        const forcedCondition =
+        const paypalAvailable =
             this.statusExtended.VendorStates.Paypal && !alreadyHasPayPal && (isPaypalAmountValid || isInvoice);
         if (this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-            return forcedCondition;
+            return paypalAvailable;
         }
 
         const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
+        const isSubscription = this.flow === 'subscription';
+        const isCredit = this.flow === 'credit';
+        const isAllowedFlow = isSubscription || isSignup || isCredit;
+
         const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
-        return forcedCondition && (this.flow === 'subscription' || isSignup) && !isB2BPlan;
+
+        return paypalAvailable && isAllowedFlow && !isB2BPlan;
     }
 }
 
