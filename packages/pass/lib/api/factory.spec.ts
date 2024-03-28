@@ -11,6 +11,8 @@ import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
 
 const { APP_VERSION_BAD } = API_CUSTOM_ERROR_CODES;
 
+const asyncNextTick = () => new Promise(process.nextTick);
+
 describe('API factory', () => {
     const config = { APP_NAME: 'proton-pass', APP_VERSION: '0.0.1-test', API_URL: 'https://test.api' } as ProtonConfig;
     const refreshMock = jest.fn(() => Promise.resolve({}));
@@ -69,11 +71,11 @@ describe('API factory', () => {
 
             expect(api.getState().pendingCount).toEqual(0);
 
-            const call1 = api({});
-            const call2 = api({});
-            const call3 = api({});
+            const call1 = api({}).then(asyncNextTick);
+            const call2 = api({}).then(asyncNextTick);
+            const call3 = api({}).then(asyncNextTick);
 
-            await new Promise(process.nextTick);
+            await asyncNextTick();
 
             expect(api.getState().pendingCount).toEqual(3);
             resolvers[0](mockAPIResponse());
@@ -98,11 +100,11 @@ describe('API factory', () => {
                 .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
                 .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)));
 
-            const call1 = backPressuredApi({});
-            const call2 = backPressuredApi({});
-            const call3 = backPressuredApi({});
+            const call1 = backPressuredApi({}).then(asyncNextTick);
+            const call2 = backPressuredApi({}).then(asyncNextTick);
+            const call3 = backPressuredApi({}).then(asyncNextTick);
 
-            await new Promise(process.nextTick);
+            await asyncNextTick();
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(backPressuredApi.getState().pendingCount).toEqual(3);
