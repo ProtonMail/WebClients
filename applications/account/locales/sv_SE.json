@@ -9742,6 +9742,35 @@
         "Din import har startat"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Lär dig mer"
+      ],
+      "upgrade for more storage": [
+        "uppgradera för mer lagringsutrymme"
+      ],
+      "Upgrade to restore full access": [
+        "Uppgradera för att återställa full åtkomst"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ditt ${ driveStorage } är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ditt ${ mailStorage } är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ditt konto riskerar att tas bort. För att undvika dataförlust, be din administratör att uppgradera. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ditt lagringsutrymme är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "Aktivera ${ PROTON_SENTINEL_NAME }"
@@ -12150,6 +12179,9 @@
       ],
       "Select a reason": [
         "Välj en anledning"
+      ],
+      "Select state": [
+        "Välj delstat"
       ],
       "Text": [
         "Text"
