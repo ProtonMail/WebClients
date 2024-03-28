@@ -617,7 +617,9 @@ export const ChargebeeIframe = ({
 
         const result = await iframeHandles.handles.getHeight();
 
-        if (result.status === 'success' && type === 'card') {
+        // We need to check that the iframe ref still exists because of the async operation before that.
+        // Sometimes the iframe gets destroyed before the async operation is finished.
+        if (!!iframeRef.current && result.status === 'success' && type === 'card') {
             const height = result.data.height;
             iframeRef.current.style.height = `${height}px`;
         }
