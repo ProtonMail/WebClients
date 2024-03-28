@@ -14,6 +14,7 @@ import { generateShareKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import chunk from '@proton/utils/chunk';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
@@ -173,7 +174,15 @@ export default function useShareActions() {
                                     return linkPrivateKey;
                                 }
                             ),
-                            getShareSessionKey(abortSignal, share.shareId).catch(() => {
+                            getShareSessionKey(abortSignal, share.shareId).catch((e) => {
+                                sendErrorReport(
+                                    new EnrichedError('Failed to get the share session key during share migration', {
+                                        tags: {
+                                            shareId: share.shareId,
+                                        },
+                                        extra: { e },
+                                    })
+                                );
                                 unreadableShareIDs.push(share.shareId);
                             }),
                         ]);
