@@ -256,3 +256,8 @@ export const getBreaches = () => ({
     url: 'account/v4/breaches',
     method: 'get',
 });
+
+export const getRecentBreaches = () => ({
+    url: 'account/v4/breaches?Recent=true',
+    method: 'get',
+});
