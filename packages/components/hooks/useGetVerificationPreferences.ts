@@ -50,7 +50,7 @@ const useGetVerificationPreferences = () => {
             // of needing to preserve  the message verification status at the time when a message is first read, regardless of
             // any subsequent public key changes (for non-pinned keys).
             const selfAddress = addresses
-                .filter(({ Status }) => Status !== ADDRESS_STATUS.STATUS_DISABLED)
+                .filter(({ Status }) => Status === ADDRESS_STATUS.STATUS_ENABLED)
                 .find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail);
             if (selfAddress) {
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
