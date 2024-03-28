@@ -96,26 +96,24 @@ const useGetCalendarActions = ({
         // Set the calendar in case one of the following calls fails so that it ends up in the update function after this.
         setCalendar(visualCalendar);
 
-        if (!isSubscribedCalendar) {
-            await Promise.all([
-                api(updateCalendarSettings(newCalendarID, calendarSettingsPayload)),
-                (() => {
-                    if (defaultCalendarID) {
-                        return;
-                    }
-                    const ownedActiveCalendars = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars));
-                    const newDefaultCalendarID = ownedActiveCalendars?.length
-                        ? ownedActiveCalendars[0].ID
-                        : newCalendarID;
-                    return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
-                })(),
-            ]).catch(() => {
-                createNotification({
-                    type: 'warning',
-                    text: c('Settings update growler warning').t`Failed to update settings`,
-                });
+        await Promise.all([
+            api(updateCalendarSettings(newCalendarID, calendarSettingsPayload)),
+            (() => {
+                // If the user has a default calendar, we don't want to change it.
+                // If the user has subscribed to a calendar, we don't allow it to be default one.
+                if (defaultCalendarID || isSubscribedCalendar) {
+                    return Promise.resolve();
+                }
+                const ownedActiveCalendars = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars));
+                const newDefaultCalendarID = ownedActiveCalendars?.length ? ownedActiveCalendars[0].ID : newCalendarID;
+                return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
+            })(),
+        ]).catch(() => {
+            createNotification({
+                type: 'warning',
+                text: c('Settings update growler warning').t`Failed to update settings`,
             });
-        }
+        });
 
         await call();
 
@@ -134,7 +132,7 @@ const useGetCalendarActions = ({
         calendarSettingsPayload: Required<
             Pick<
                 CalendarSettings,
-                'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications'
+                'DefaultEventDuration' | 'DefaultPartDayNotifications' | 'DefaultFullDayNotifications' | 'MakesUserBusy'
             >
         >
     ) => {

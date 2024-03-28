@@ -2,7 +2,9 @@ import { memo, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { AddressesAutocompleteTwo, Alert, Details, Summary, useMailSettings } from '@proton/components';
+import { Button } from '@proton/atoms/Button';
+import { AddressesAutocompleteTwo, Alert, Details, Icon, Summary, useMailSettings } from '@proton/components';
+import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
@@ -18,9 +20,11 @@ import { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/cal
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import { selectDisplayAvailabilityUnknown } from '../../../store/busyTimeSlots/busyTimeSlotsSelectors';
+import { useCalendarSelector } from '../../../store/hooks';
 import { getParticipantsError } from '../helpers';
 import OrganizerRow from '../rows/OrganizerRow';
-import ParticipantRow from '../rows/ParticipantRow';
+import ParticipantRows from '../rows/ParticipantRows';
 
 const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 
@@ -35,6 +39,7 @@ interface Props {
     onChange: (recipients: AttendeeModel[]) => void;
     setParticipantError?: (value: boolean) => void;
     collapsible?: boolean;
+    onDisplayBusySlots?: () => void;
 }
 
 const ParticipantsInput = ({
@@ -48,8 +53,11 @@ const ParticipantsInput = ({
     addresses,
     setParticipantError,
     collapsible = true,
+    onDisplayBusySlots,
 }: Props) => {
     const [mailSettings] = useMailSettings();
+    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const displayAvailabilityUnknown = useCalendarSelector(selectDisplayAvailabilityUnknown);
     const numberOfAttendees = value.length;
 
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
@@ -119,19 +127,14 @@ const ParticipantsInput = ({
     };
 
     const participantRows = (
-        <div className="pt-1">
-            {value.map((participant) => {
-                return (
-                    <ParticipantRow
-                        key={participant.email}
-                        attendee={participant}
-                        contactEmailsMap={contactEmailsMap}
-                        onToggleOptional={toggleIsOptional}
-                        onDelete={onDelete}
-                    />
-                );
-            })}
-        </div>
+        <ParticipantRows
+            attendeeModel={value}
+            contactEmailsMap={contactEmailsMap}
+            displayBusySlotsDot={!onDisplayBusySlots}
+            isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable}
+            onDelete={onDelete}
+            toggleIsOptional={toggleIsOptional}
+        />
     );
 
     return (
@@ -186,10 +189,26 @@ const ParticipantsInput = ({
                 ) : (
                     participantRows
                 ))}
-            {numberOfAttendees > 0 && organizer && (
-                <div className="pt-1">
-                    <OrganizerRow organizer={organizer} />
+            {numberOfAttendees > 0 && organizer && <OrganizerRow organizer={organizer} />}
+            {isBusyTimeSlotsAvailable && displayAvailabilityUnknown && (
+                <div className="flex items-center color-weak mt-2 text-sm bg-weak rounded py-1 px-2">
+                    <Icon name="circle-half-filled" size={2.5} className="rotateZ-45 opacity-70 mr-2" />{' '}
+                    {c('Description').t`Availability unknown`}
                 </div>
+            )}
+            {isBusyTimeSlotsAvailable && !!onDisplayBusySlots && (
+                <Button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        onDisplayBusySlots();
+                    }}
+                    shape="underline"
+                    color="norm"
+                    type="button"
+                >
+                    {c('Action').t`Show busy times`}
+                </Button>
             )}
         </>
     );

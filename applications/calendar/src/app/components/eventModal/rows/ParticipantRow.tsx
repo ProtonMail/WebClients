@@ -29,8 +29,8 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
         : c('Action').t`Make this participant optional`;
 
     return (
-        <div key={email} className={clsx(['address-item flex mb-1 pl-2'])}>
-            <div className="flex flex-1 p-2" title={nameEmail}>
+        <div key={email} className="address-item flex mb-1 pl-2">
+            <div className="flex flex-1 p-1" title={nameEmail}>
                 <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w-full'])}>{nameEmail}</div>
                 {isOptional ? <span className="color-weak w-full">{c('Label').t`Optional`}</span> : null}
             </div>
@@ -39,6 +39,7 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                     icon
                     shape="ghost"
                     type="button"
+                    size="small"
                     className="flex shrink-0"
                     onClick={() => onToggleOptional(attendee)}
                 >
@@ -46,7 +47,7 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove this participant`}>
-                <Button icon shape="ghost" className="flex shrink-0" onClick={() => onDelete(attendee)}>
+                <Button icon shape="ghost" size="small" className="flex shrink-0" onClick={() => onDelete(attendee)}>
                     <Icon name="trash" alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>

@@ -33,6 +33,7 @@ interface Props {
     onClose: () => void;
     setModel: (value: EventModel) => void;
     tzid: string;
+    onDisplayBusySlots: () => void;
     onExit: () => void;
 }
 
@@ -51,6 +52,7 @@ const CreateEventModal = ({
     onDelete,
     onClose,
     tzid,
+    onDisplayBusySlots,
     ...rest
 }: Props) => {
     const [mailSettings] = useMailSettings();
@@ -196,6 +198,7 @@ const CreateEventModal = ({
                 isCalendarWritable={isCalendarWritable}
                 isDrawerApp={isDrawerApp}
                 isSmallViewport={isSmallViewport}
+                onDisplayBusySlots={onDisplayBusySlots}
             />
         </BasicModal>
     );

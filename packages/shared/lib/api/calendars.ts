@@ -11,6 +11,7 @@ import {
     CreateCalendarMemberData,
     CreatePublicLinks,
     CreateSinglePersonalEventData,
+    GetBusyTimeSlotsParams,
     GetEventByUIDArguments,
     QueryCalendarAlarms,
     SyncMultipleEventsData,
@@ -384,4 +385,10 @@ export const joinHolidaysCalendar = (
     url: `${CALENDAR_V1}/${calendarID}/invitations/${addressID}/join`,
     method: 'post',
     data,
+});
+
+export const getBusyTimeSlots = (emailAddress: string, params: GetBusyTimeSlotsParams) => ({
+    url: `${CALENDAR_V1}/${emailAddress}/busy-schedule`,
+    method: 'get',
+    params,
 });

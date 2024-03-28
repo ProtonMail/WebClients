@@ -49,5 +49,10 @@ export const extendStore = (newThunkArguments: Partial<CalendarThunkArguments>) 
 export type CalendarStore = ReturnType<typeof setupStore>;
 export type CalendarDispatch = CalendarStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
+export type CalendarThunkExtra = {
+    state: CalendarState;
+    dispatch: CalendarDispatch;
+    extra: ExtraArgument;
+};
 
 export type AppStartListening = TypedStartListening<CalendarState, CalendarDispatch, ExtraArgument>;
