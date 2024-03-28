@@ -93,6 +93,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 
             subscriptionModal = (
                 <SubscriptionContainer
+                    parent="subscription-modal"
                     app={app}
                     subscription={subscription}
                     plans={plans}
