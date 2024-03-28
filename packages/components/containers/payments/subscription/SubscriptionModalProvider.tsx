@@ -29,6 +29,8 @@ export interface OpenCallbackProps
         | 'disableCycleSelector'
         | 'defaultSelectedProductPlans'
         | 'metrics'
+        | 'upsellRef'
+        | 'maximumCycle'
     > {
     hasClose?: boolean;
     onClose?: () => void;
@@ -91,6 +93,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 
             subscriptionModal = (
                 <SubscriptionContainer
+                    parent="subscription-modal"
                     app={app}
                     subscription={subscription}
                     plans={plans}
