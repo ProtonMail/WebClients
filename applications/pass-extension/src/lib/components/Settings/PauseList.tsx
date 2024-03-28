@@ -17,6 +17,7 @@ import {
     TableRow,
 } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { hasCriteria, toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectDisallowedDomains } from '@proton/pass/store/selectors';
@@ -25,8 +26,6 @@ import { CRITERIAS_SETTING_CREATE, CRITERIA_MASKS } from '@proton/pass/types/wor
 import { merge } from '@proton/pass/utils/object/merge';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-
-import { SettingsPanel } from './SettingsPanel';
 
 import './PauseList.scss';
 
@@ -176,7 +175,7 @@ export const PauseList: FC = () => {
                     />
                 </div>
                 <Button color="norm" shape="solid" onClick={() => addDisallowedUrl(url)}>
-                    {c('Action').t`Add domain to pause list`}
+                    {c('Action').t`Add domain`}
                 </Button>
             </div>
         </SettingsPanel>
