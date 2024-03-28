@@ -118,7 +118,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
 
         if (res.type === 'success') {
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
-            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false });
+            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false, ready: true });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
 
