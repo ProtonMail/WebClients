@@ -1,6 +1,6 @@
 import { eachDayOfInterval, endOfDay, isSameDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewEvent } from '../../containers/calendar/interface';
+import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 
 const MIN_DURATION = 15; // In minutes
@@ -18,7 +18,7 @@ export const toUTCMinutes = (date: Date) => {
 };
 
 interface SplitTimeGridEventsPerDay {
-    events: CalendarViewEvent[];
+    events: (CalendarViewEvent | CalendarViewBusyEvent)[];
     min: Date;
     max: Date;
     totalMinutes: number;

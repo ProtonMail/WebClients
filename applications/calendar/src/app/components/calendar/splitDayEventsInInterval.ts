@@ -1,6 +1,6 @@
 import { addDays, differenceInCalendarDays, endOfDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewEvent } from '../../containers/calendar/interface';
+import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 
 const getEndDate = (end: Date, maxDate: Date, isAllPartDay: boolean) => {
@@ -17,7 +17,7 @@ const getEndDate = (end: Date, maxDate: Date, isAllPartDay: boolean) => {
 };
 
 interface SplitDayEventsInIntervalArguments {
-    events: CalendarViewEvent[];
+    events: (CalendarViewEvent | CalendarViewBusyEvent)[];
     min: Date;
     max: Date;
 }

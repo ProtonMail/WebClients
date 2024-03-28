@@ -8,7 +8,7 @@ import generateUID from '../generateUID';
 
 import './CircleLoader.scss';
 
-export type CircleLoaderSize = 'small' | 'medium' | 'large';
+export type CircleLoaderSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
     size?: CircleLoaderSize;
