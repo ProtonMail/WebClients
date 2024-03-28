@@ -230,7 +230,7 @@ export const Settings: FC = () => {
 
     return (
         <>
-            <ExtensionApp endpoint="page">
+            <ExtensionApp endpoint="page" onDisconnect={() => window.location.reload()}>
                 {(ready) =>
                     ready && (
                         <ReduxProvider
