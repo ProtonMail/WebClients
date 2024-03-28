@@ -977,6 +977,12 @@
       "Unlock": [
         "Разблокировать"
       ],
+      "Unlock Breach Report": [
+        "Разблокировать отчет об утечке"
+      ],
+      "Unlock breach reports": [
+        "Разблокировать отчеты об утечках"
+      ],
       "Unlock data": [
         "Разблокировать данные"
       ],
@@ -1006,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Улучшить, чтобы просмотреть все"
       ],
       "Upgrade your plan": [
         "Улучшить тариф"
@@ -1146,8 +1155,14 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Удалить адрес"
+      ],
       "Disable": [
         "Отключить"
+      ],
+      "Disable E2EE mail": [
+        "Отключить E2EE почты"
       ],
       "Disallow unsigned mail": [
         "Запретить почту без подписи"
@@ -1160,6 +1175,9 @@
       ],
       "Enable": [
         "Включить"
+      ],
+      "Enable E2EE mail": [
+        "Включить E2EE почты"
       ],
       "Generate missing keys": [
         "Создать недостающие ключи"
@@ -3050,6 +3068,14 @@
         "Неизвестный"
       ]
     },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Вы можете удалить только один адрес в год"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Вы достигли лимита удалений адреса для этого пользователя."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Все события в этом календаре будут удалены."
@@ -4307,6 +4333,9 @@
       "Invalid URL": [
         "Неверный URL"
       ],
+      "Missing parameters in the URL.": [
+        "Недостающие параметры в URL."
+      ],
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
@@ -5107,6 +5136,20 @@
     "Free trial dekstop": {
       "web app": [
         "веб-приложение"
+      ]
+    },
+    "Free trial desktop": {
+      "Back to sign in": [
+        "Вернуться к входу"
+      ],
+      "Keep using the desktop app": [
+        "Продолжить использование приложения для настольных компьютеров"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Открыть ${ MAIL_APP_NAME } в ${ webAppMessage }"
+      ],
+      "Your desktop app free trial has ended": [
+        "Бесплатный пробный период вашего приложения для настольных компьютеров закончился"
       ]
     },
     "Frequency of news": {
@@ -8035,6 +8078,9 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Добавьте новый адрес для существующих пользователей вашей организации."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Добавить нового пользователя в вашу организацию и создать для него адрес."
       ]
@@ -9525,6 +9571,9 @@
       "Create account": [
         "Создать аккаунт"
       ],
+      "Create an alias": [
+        "Создать псевдоним"
+      ],
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
@@ -9533,6 +9582,9 @@
       ],
       "General": [
         "Основные"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Получить ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Перейти на тариф ${ VPN_APP_NAME }"
@@ -9733,6 +9785,9 @@
       "for the first month": [
         "за первый месяц"
       ],
+      "for your first month": [
+        "за ваш первый месяц"
+      ],
       "Get ${ planName } for ${ price }": [
         "Получить ${ planName } для ${ price }"
       ],
@@ -9773,6 +9828,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Активировать пользователя"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -10249,6 +10307,9 @@
       "1 user": [
         "1 пользователь"
       ],
+      "24/7 account management support": [
+        "Постоянная круглосуточная поддержка управления аккаунтом"
+      ],
       "24/7 support": [
         "Круглосуточная поддержка"
       ],
@@ -10432,6 +10493,9 @@
       "Router support": [
         "Поддержка маршрутизаторов"
       ],
+      "Schedule and snooze emails for any time": [
+        "Планируйте и откладывайте сообщения электронной почты на любое время"
+      ],
       "Schedule messages at any time": [
         "Планируйте сообщения в любое время"
       ],
@@ -10606,6 +10670,9 @@
       "Early access to new apps and features": [
         "Early access to new apps and features"
       ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
+      ],
       "For next-level password management and identity protection.": [
         "Для нового уровня управления паролями и защиты личных данных."
       ],
@@ -10703,6 +10770,9 @@
       ],
       "terms and conditions": [
         "условия"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Название организации будет видно вашим пользователям, пока они находятся в системе."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Чтобы начать работу, выберите отображаемое имя. Его будут видеть люди, когда вы отправите им электронное сообщение, пригласите их на мероприятие или поделитесь файлом."
@@ -11496,6 +11566,9 @@
       "Or ${ createANewAccount }": [
         "Или ${ createANewAccount }"
       ],
+      "Request trial": [
+        "Запросить пробную версию"
+      ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
       ],
@@ -11571,6 +11644,9 @@
       "All premium ${ BRAND_NAME } services.": [
         "Все премиальные сервисы ${ BRAND_NAME }."
       ],
+      "Based in Switzerland, GDPR compliant": [
+        "Находится в Швейцарии, соответствует требованиям GDPR"
+      ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Но вы можете получить скидку ${ discount }, перейдя на **${ upsellPlanTitle }** - это всего лишь ${ relativePrice } дополнительно в месяц."
       ],
@@ -11637,6 +11713,9 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Псевдонимы Hide-my-email защищают вашу электронную почту от утечек данных"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Я понимаю, что если я потеряю данные для восстановления, я могу навсегда потерять доступ к своему аккаунту."
+      ],
       "Includes:": [
         "Включает:"
       ],
@@ -11651,6 +11730,9 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Присоединяйтесь к более чем 100 миллионам людей, выбравшим ${ BRAND_NAME }, чтобы оставаться в безопасности в Интернете"
+      ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Присоединяйтесь к более чем 50 000 организациям, которые доверяют ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
@@ -11690,6 +11772,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Специальное стартовое предложение: Получите ${ title } навсегда за ${ price }!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Специальные разработки для крупных организаций с индивидуальными потребностями."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Предложение выбранное вами, недоступно для подписчиков ${ currentPlanTitle }."
@@ -11750,6 +11835,17 @@
         "Для частных лиц"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Все ваши существующие данные** (электронные письма, события, контакты, файлы, входы в ${ PASS_APP_NAME } и т. д.) **будут заблокированы** и могут быть разблокированы только с помощью вашего **старого пароля**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Все ваши существующие данные** (электронные письма, события, контакты, файлы, входы в ${ PASS_APP_NAME } и т. д.) **будут заблокированы** и могут быть разблокированы только с помощью вашей **фразы восстановления** или вашего **старого пароля**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Любой метод **двухфакторной аутентификации (2FA)** в вашем аккаунте будет отключен."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Все администраторы получат доступ к ключу."
@@ -11763,14 +11859,32 @@
       "Organization key activated": [
         "Ключ организации активирован"
       ],
+      "Organization key does not exist.": [
+        "Ключ организации не существует."
+      ],
+      "Organization key restored": [
+        "Ключ организации восстановлен"
+      ],
       "Organization key updated": [
         "Ключ организации обновлен"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Отказано в доступе, права администратора ограничены."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Пожалуйста, убедитесь, что у них есть активный адрес, и пригласите их отдельно позже."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Рядовые пользователи могут быть повышены до администратора при первом входе в систему"
+      ],
       "Reset organization key": [
         "Сбросить ключ организации"
+      ],
+      "The following administrators could not be restored.": [
+        "Следующие администраторы не могут быть восстановлены."
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Следующие администраторы получат доступ к ключу организации."
       ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
@@ -11781,6 +11895,12 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Чтобы включить права администратора в своем аккаунте, активируйте ключ организации."
       ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Используйте метод восстановления данных или сбросьте ключ организации, чтобы восстановить права администратора."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Используйте метод восстановления данных, обратитесь к другому администратору или сбросьте ключ организации, чтобы восстановить права администратора."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Мы не смогли проверить безопасность ключа адреса этого отправителя. Иногда бывает задержка обновления информации об отправителе. Повторите попытку позже. Если вы не доверяете достоверности этого приглашения или отправителя, обратитесь в Службу Поддержки ${ BRAND_NAME }."
       ],
@@ -11789,6 +11909,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Вас назначили администратором организации **${ organizationName }**"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Для выполнения этой операции вам необходим доступ к ключу организации."
       ]
     },
     "Payment method option": {
@@ -12864,20 +12987,38 @@
       "${ app } storage": [
         "${ app } хранилища"
       ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** из ${ humanMaxSpace }"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Рассмотрите возможность улучшения тарифа, чтобы продолжать пользоваться своим аккаунтом без перебоев."
       ],
       "contact your administrator": [
         "свяжитесь с администратором"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "Для всех служб ${ BRAND_NAME }"
+      ],
       "Get more storage": [
         "Получите больше дискового пространства"
+      ],
+      "Try out ${ app } to its full potential": [
+        "Испытайте ${ app } в полном объеме"
       ],
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Улучшите ваш тариф, чтобы продолжать пользоваться аккаунтом без перебоев."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Улучшите тарифный план, чтобы увеличить объем хранилища."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Мы зачислим остаток на счете за оставшееся время на ваш аккаунт ${ BRAND_NAME }"
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
@@ -12887,6 +13028,18 @@
       ],
       "Your storage is full": [
         "Ваше хранилище заполнено"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Вы потеряете доступ к хранилищу ${ gb } и приоритетную поддержку."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Вы потеряете доступ к дополнительным хранилищам, адресам электронной почты, псевдонимам, календарям, а также к приоритетной поддержке."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Вы потеряете доступ к самой высокой скорости VPN, защите 10 устройств, высокоскоростному потоковому вещанию, защите от блокировки рекламы и вредоносных программ, а также к приоритетной поддержке."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13649,6 +13802,15 @@
       "Billing cycle": [
         "Период оплаты"
       ],
+      "Breach Alerts": [
+        "Оповещения об утечках"
+      ],
+      "Breach Date": [
+        "Дата утечки"
+      ],
+      "Breach Size": [
+        "Размер утечки"
+      ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
@@ -13820,6 +13982,9 @@
       "Delete account": [
         "Удалить аккаунт"
       ],
+      "Delete address permanently?": [
+        "Удалить адрес навсегда?"
+      ],
       "Delete calendar": [
         "Удалить календарь"
       ],
@@ -13922,6 +14087,9 @@
       "Email": [
         "Эл. почта"
       ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
       "Email composer": [
         "Редактор эл. писем"
       ],
@@ -13960,6 +14128,9 @@
       ],
       "Export public key": [
         "Экспорт открытого ключа"
+      ],
+      "Exposed info": [
+        "Раскрытая информация"
       ],
       "External PGP settings": [
         "Внешние настройки PGP"
@@ -14126,6 +14297,9 @@
       "Night theme": [
         "Ночная тема"
       ],
+      "No account information was found in any data breaches": [
+        "Никакой информации об аккаунте не было обнаружено какой бы то ни было утечке данных"
+      ],
       "No recovery method": [
         "Отсутствует метод восстановления"
       ],
@@ -14194,6 +14368,9 @@
       ],
       "Recommended": [
         "Рекомендуется"
+      ],
+      "Recommended actions": [
+        "Рекомендуемые действия"
       ],
       "Reconnect your account": [
         "Повторно подключить свою учётную запись"
@@ -14458,6 +14635,9 @@
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
+      ],
+      "Your Exposed Information": [
+        "Ваша раскрытая информация"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
@@ -14951,8 +15131,14 @@
       "15-month": [
         "15-month"
       ],
+      "18-month": [
+        "18-месячная"
+      ],
       "2-year": [
         "2 года"
+      ],
+      "3-month": [
+        "3-месячная"
       ],
       "30-month": [
         "30-месячный"
