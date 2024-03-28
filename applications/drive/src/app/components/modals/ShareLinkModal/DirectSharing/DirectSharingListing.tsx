@@ -29,10 +29,10 @@ const DirectSharingListing = ({ volumeId, linkId, members, invitations, isLoadin
     const contextMenuControls = useContextMenuControls();
     const [user] = useUser();
 
-    if (isLoading || !volumeId) {
+    if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
-    if (!members.length && !invitations.length) {
+    if ((!members.length && !invitations.length) || !volumeId) {
         return (
             <div className={'flex items-center my-4'}>
                 <Avatar color="weak" className="mr-2">
