@@ -50,10 +50,6 @@ export const updatePauseListItem = createAction(
     (payload: { hostname: string; criteria: CriteriaMasks }) => pipe(withSettings, withCache)({ payload })
 );
 
-export const syncLocalSettings = createAction('settings::local::sync', (payload: RecursivePartial<ProxiedSettings>) =>
-    withSettings({ payload })
-);
-
 export const offlineSetupIntent = createAction('offline::setup::intent', (loginPassword: string) =>
     pipe(
         withRequest({ type: 'start', id: offlineSetupRequest }),

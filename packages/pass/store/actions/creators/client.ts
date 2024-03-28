@@ -5,6 +5,7 @@ import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withRequest, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
+import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
@@ -48,7 +49,7 @@ export const bootFailure = createAction('boot::failure', (error: unknown) =>
 );
 
 export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
-    withRequest({ id: bootRequest(), type: 'success' })({ payload })
+    pipe(withRequest({ id: bootRequest(), type: 'success' }), withSettings)({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', (type: SyncType) =>
