@@ -21,7 +21,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
 
     useEffect(() => {
         const abortController = new AbortController();
-        if (volumeId) {
+        if (volumeId || isLoading) {
             return;
         }
         void withLoading(async () => {
@@ -45,7 +45,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         return () => {
             abortController.abort();
         };
-    }, [rootShareId, linkId, getLink]);
+    }, [rootShareId, linkId, volumeId]);
 
     const getShareIdWithSessionkey = async (abortSignal: AbortSignal, rootShareId: string, linkId: string) => {
         const [share, link] = await Promise.all([
