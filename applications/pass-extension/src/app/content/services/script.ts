@@ -107,7 +107,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
          * need to avoid missing on events of the MessageBridge */
         context.service.iframe.init();
         context.service.webauthn.init();
-        window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT }, window.origin);
+        window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
 
         const res = await sendMessage(
             contentScriptMessage({
