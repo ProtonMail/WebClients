@@ -108,8 +108,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         }
     }, [form.values.members, validateAddresses]);
 
-    useEffect(() => org?.syncSettings(), []);
-
     const attributes = ((): {
         submitText: string;
         closeAction: Callback;
