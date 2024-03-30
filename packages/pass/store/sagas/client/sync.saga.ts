@@ -10,6 +10,7 @@ import {
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
+import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -29,6 +30,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
 
         yield put(withRevalidate(getUserAccessIntent(user.ID)));
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
+        yield put(withRevalidate(getOrganizationSettingsIntent()));
 
         yield put(syncSuccess(yield call(synchronize, payload.type)));
     } catch (e: unknown) {

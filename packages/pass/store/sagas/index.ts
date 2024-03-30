@@ -1,5 +1,7 @@
 import { all } from 'redux-saga/effects';
 
+import inviteAddressesValidate from '@proton/pass/store/sagas/invites/invite-addresses-validate.saga';
+
 import type { RootSagaOptions } from '../types';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
@@ -39,6 +41,8 @@ import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
+import organizationSettingsEdit from './organization/organization-settings-edit.saga';
+import getOrganizationSettings from './organization/organization-settings.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
 import shareEditRole from './shares/share-edit-role.saga';
 import shareLeave from './shares/share-leave.saga';
@@ -63,9 +67,10 @@ export function* workerRootSaga(options: RootSagaOptions) {
             events,
             featureFlags,
             inviteAccept,
+            inviteAddressesValidate,
             inviteCreate,
-            inviteReject,
             inviteRecommendations,
+            inviteReject,
             inviteRemove,
             inviteResend,
             itemAutofilled,
@@ -86,6 +91,8 @@ export function* workerRootSaga(options: RootSagaOptions) {
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
+            getOrganizationSettings,
+            organizationSettingsEdit,
             reportProblem,
             sessionLockDisable,
             sessionLockEnable,

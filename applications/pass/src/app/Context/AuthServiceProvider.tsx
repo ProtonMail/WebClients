@@ -1,5 +1,6 @@
-import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import { flushSync } from 'react-dom';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import type { ServiceWorkerMessageHandler } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
@@ -168,19 +169,18 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
 
+                setSentryUID(undefined);
                 onboarding.reset();
                 telemetry.stop();
                 void settings.clear();
-
                 localStorage.removeItem(getSessionKey(localID));
-                client.current.setStatus(AppStatus.UNAUTHORIZED);
+
+                flushSync(() => client.current.setStatus(AppStatus.UNAUTHORIZED));
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
-
                 history.replace('/');
-                setSentryUID(undefined);
             },
 
             onForkConsumed: async ({ UID, AccessToken }, state) => {
@@ -237,13 +237,12 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onSessionLocked: (localID, offline, broadcast) => {
-                client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED);
+                flushSync(() => client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED));
                 if (broadcast) sw?.send({ type: 'locked', localID, offline, broadcast: true });
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
-
                 history.replace('/');
             },
 

@@ -16,6 +16,7 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
@@ -31,7 +32,6 @@ import {
 } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
@@ -40,10 +40,12 @@ import { SettingsDropdown } from '../Settings/SettingsDropdown';
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
-    const onboarding = useOnboarding();
-    const client = useClientRef();
 
     const authService = useAuthService();
+    const onboarding = useOnboarding();
+    const org = useOrganization();
+    const client = useClientRef();
+
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
@@ -55,8 +57,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
     const offlineEnabled = useSelector(selectOfflineEnabled);
-
-    const b2bAdmin = user && isAdmin(user) && passPlan === UserPassPlan.BUSINESS;
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
@@ -99,7 +99,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 )}
 
                 {onboarding.enabled && <OnboardingButton />}
-                {b2bAdmin && <AdminPanelButton />}
+                {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
@@ -134,7 +134,10 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
                         <span className="text-left">
                             <div className="text-sm text-ellipsis">{user?.Email}</div>
-                            <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
+                            <div
+                                className={clsx('text-sm', org && 'text-ellipsis')}
+                                style={{ color: 'var(--interaction-norm)' }}
+                            >
                                 {planDisplayName}
                                 {passPlan === UserPassPlan.FREE && (
                                     <>
@@ -142,6 +145,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                                         <UpgradeButton upsellRef={UpsellRef.MENU} hideIcon inline />
                                     </>
                                 )}
+                                {org && ` · ${org.organization.Name}`}
                             </div>
                         </span>
                     </span>
