@@ -140,9 +140,9 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                                 const isEmpty = errors.includes(InviteEmailsError.EMPTY);
                                 if (isEmpty) return c('Warning').t`At least one email address is required`;
 
-                                const hasInvalid = errors.includes(InviteEmailsError.INVALID);
                                 const hasDuplicates = errors.includes(InviteEmailsError.DUPLICATE);
-                                const hasOrganizationLimits = errors.includes(InviteEmailsError.EXTERNAL);
+                                const hasInvalid = errors.includes(InviteEmailsError.INVALID_EMAIL);
+                                const hasOrganizationLimits = errors.includes(InviteEmailsError.INVALID_ORG);
 
                                 return (
                                     <>
