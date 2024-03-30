@@ -19,6 +19,7 @@ import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
@@ -106,21 +107,23 @@ const MainSwitch: FC = () => {
 };
 
 export const Main: FC = () => (
-    <ItemsProvider>
-        <BulkSelectProvider>
-            <ItemActionsProvider>
-                <InviteProvider>
-                    <VaultActionsProvider>
-                        <PasswordProvider>
-                            <SpotlightProvider>
-                                <OnboardingProvider>
-                                    <MainSwitch />
-                                </OnboardingProvider>
-                            </SpotlightProvider>
-                        </PasswordProvider>
-                    </VaultActionsProvider>
-                </InviteProvider>
-            </ItemActionsProvider>
-        </BulkSelectProvider>
-    </ItemsProvider>
+    <OrganizationProvider>
+        <ItemsProvider>
+            <BulkSelectProvider>
+                <ItemActionsProvider>
+                    <InviteProvider>
+                        <VaultActionsProvider>
+                            <PasswordProvider>
+                                <SpotlightProvider>
+                                    <OnboardingProvider>
+                                        <MainSwitch />
+                                    </OnboardingProvider>
+                                </SpotlightProvider>
+                            </PasswordProvider>
+                        </VaultActionsProvider>
+                    </InviteProvider>
+                </ItemActionsProvider>
+            </BulkSelectProvider>
+        </ItemsProvider>
+    </OrganizationProvider>
 );
