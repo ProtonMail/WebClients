@@ -16,7 +16,6 @@ import {
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
 import { SessionLockStatus } from '@proton/pass/types';
-import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type {
     AutoFillSettings,
     AutoSaveSettings,
@@ -33,11 +32,10 @@ export type SettingsState = {
     disallowedDomains: DomainCriterias;
     loadDomainImages: boolean;
     locale?: string;
+    offlineEnabled?: boolean;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
-    offlineEnabled?: boolean;
-    organizationSettings: MaybeNull<OrganizationSettings>;
 };
 
 /* proxied settings will also be copied on local
@@ -53,7 +51,6 @@ export const INITIAL_SETTINGS: ProxiedSettings = {
     disallowedDomains: {},
     loadDomainImages: true,
     passwordOptions: null,
-    organizationSettings: null,
 };
 
 const INITIAL_STATE: SettingsState = {
