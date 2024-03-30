@@ -4,6 +4,7 @@ import { all, fork, put, select } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { getUserAccessIntent, getUserFeaturesIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
+import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
@@ -75,10 +76,11 @@ function* onUserEvent(
         }
     }
 
-    /* Synchronize user access and user feature flags whenever polling for
-     * core user events. These actions are throttled via `maxAge` metadata */
+    /* Synchronize user access, feature flags & organization whenever polling
+     * for core user events. These actions are throttled via `maxAge` metadata */
     yield put(getUserAccessIntent(userId));
     yield put(getUserFeaturesIntent(userId));
+    yield put(getOrganizationSettingsIntent());
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
