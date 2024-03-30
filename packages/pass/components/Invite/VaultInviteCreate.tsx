@@ -75,7 +75,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                       withVaultCreation: false,
                   }),
         },
-        isInitialValid: false,
+        validateOnMount: true,
         validateOnChange: true,
         validate: validateShareInviteValues({
             emailField: emailFieldRef,
