@@ -6,15 +6,12 @@ import { c } from 'ttag';
 import { Tabs } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
-import {
-    type OrganizationContextValue,
-    useOrganization,
-} from '@proton/pass/components/Organization/OrganizationProvider';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { Organization } from '@proton/pass/components/Settings/Organization';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import type { MaybeNull, Unpack } from '@proton/pass/types';
+import type { Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Export } from './Tabs/Export';
@@ -26,49 +23,15 @@ import './Settings.scss';
 
 type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>> & { hash: string };
 
-const getSettingsTabs = (organization: MaybeNull<OrganizationContextValue>): SettingTab[] => {
-    const tabs = [
-        {
-            hash: 'general',
-            title: c('Label').t`General`,
-            content: <General />,
-        },
-        {
-            hash: 'security',
-            title: c('Label').t`Security`,
-            content: <Security />,
-        },
-        {
-            hash: 'import',
-            title: c('Label').t`Import`,
-            content: <Import />,
-        },
-        {
-            hash: 'export',
-            title: c('Label').t`Export`,
-            content: <Export />,
-        },
-        {
-            hash: 'support',
-            title: c('Label').t`Support`,
-            content: <Support />,
-        },
-        {
-            hash: 'account',
-            title: c('Label').t`Account`,
-            content: <></>,
-        },
-    ];
-    if (organization?.canUpdate) {
-        tabs.push({
-            hash: 'organization',
-            title: c('Label').t`Organization`,
-            content: <Organization />,
-        });
-    }
-
-    return tabs;
-};
+const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
+    { hash: 'general', title: c('Label').t`General`, content: <General /> },
+    { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
+    { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
+    { hash: 'export', title: c('Label').t`Export`, content: <Export /> },
+    { hash: 'account', title: c('Label').t`Account`, content: <></> },
+    ...(orgEnabled ? [{ hash: 'organization', title: c('Label').t`Organization`, content: <Organization /> }] : []),
+    { hash: 'support', title: c('Label').t`Support`, content: <Support /> },
+];
 
 const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
     const idx = tabs.findIndex((tab) => tab.hash === hash);
@@ -82,7 +45,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
 
     const organization = useOrganization();
 
-    const tabs = useMemo(() => getSettingsTabs(organization), [organization]);
+    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
     const handleOnChange = (nextTab: number) => {
