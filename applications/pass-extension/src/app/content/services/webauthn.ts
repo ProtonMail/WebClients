@@ -7,7 +7,13 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 
-import { createBridgeAbortSignal, createBridgeResponse, isBridgeAbortSignal, isBridgeRequest } from '../bridge/message';
+import {
+    createBridgeAbortSignal,
+    createBridgeDisconnectSignal,
+    createBridgeResponse,
+    isBridgeAbortSignal,
+    isBridgeRequest,
+} from '../bridge/message';
 import { withContext } from '../context/context';
 
 type WebAuthNServiceState = { requestToken: MaybeNull<string> };
@@ -24,21 +30,26 @@ export const createWebAuthNService = () => {
             window.postMessage(
                 browserFallback
                     ? createBridgeResponse({ type: 'success', intercept: false }, token)
-                    : createBridgeAbortSignal(token),
-                '*'
+                    : createBridgeAbortSignal(token)
             );
         }
     };
 
-    const approveRequest = (token: string) => {
+    const approveRequest = (token: string, allow: () => boolean) => {
         abort(false); /* abort any on-going requests */
         state.set('requestToken', token);
+
         return waitUntil(
             {
-                check: withContext<Predicate>((ctx) => (ctx ? clientHasSession(ctx.getState().status) : false)),
+                check: withContext<Predicate>((ctx) =>
+                    ctx && ctx.getState().ready ? clientHasSession(ctx.getState().status) : false
+                ),
                 cancel: withContext<Predicate>((ctx) => {
+                    if (!ctx) return true;
+                    if (!ctx.getState().ready) return false;
+                    if (!allow()) return true;
                     /** abort early if we have no session to resume from */
-                    if (!ctx || clientNeedsSession(ctx.getState().status)) return true;
+                    if (clientNeedsSession(ctx.getState().status)) return true;
                     /** cancel if request token is null or if the content-script is stale */
                     return state.get('requestToken') === null || (ctx?.getState()?.stale ?? false);
                 }),
@@ -60,7 +71,11 @@ export const createWebAuthNService = () => {
                 if (isBridgeRequest(data)) {
                     switch (data.request.type) {
                         case WorkerMessageType.PASSKEY_CREATE: {
-                            return approveRequest(data.token)
+                            return approveRequest(data.token, () => {
+                                const settings = ctx.getSettings();
+                                const features = ctx.getFeatures();
+                                return features.Passkeys && settings.passkeys.create;
+                            })
                                 .then(() =>
                                     ctx?.service.iframe.attachNotification()?.open({
                                         action: NotificationAction.PASSKEY_CREATE,
@@ -72,7 +87,11 @@ export const createWebAuthNService = () => {
                                 .catch(() => abort(true));
                         }
                         case WorkerMessageType.PASSKEY_GET: {
-                            return approveRequest(data.token)
+                            return approveRequest(data.token, () => {
+                                const settings = ctx.getSettings();
+                                const features = ctx.getFeatures();
+                                return features.Passkeys && settings.passkeys.get;
+                            })
                                 .then(() => {
                                     ctx?.service.iframe.attachNotification()?.open({
                                         action: NotificationAction.PASSKEY_GET,
@@ -94,8 +113,9 @@ export const createWebAuthNService = () => {
     });
 
     const destroy = () => {
-        listeners.removeAll();
         abort(false);
+        window.postMessage(createBridgeDisconnectSignal());
+        listeners.removeAll();
     };
 
     return { init, destroy };

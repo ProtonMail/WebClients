@@ -71,7 +71,10 @@ export const Settings: FC<RouteChildrenProps> = (props) => {
     const { config } = usePassCore();
     return (
         <LockConfirmContextProvider>
-            <div className="flex flex-column gap-2 flex-nowrap justify-space-between w-full h-full px-4 overflow-auto">
+            <div
+                className="flex flex-column gap-2 flex-nowrap justify-space-between w-full h-full px-4 overflow-auto"
+                style={{ '--max-w-custom': '50em' }}
+            >
                 <SettingsTabs {...props} />
 
                 <div className="justify-end shrink-0 pb-3">
