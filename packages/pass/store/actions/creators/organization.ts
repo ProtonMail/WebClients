@@ -21,13 +21,7 @@ export const getOrganizationSettingsSuccess = createAction(
 
 export const getOrganizationSettingsFailure = createAction(
     'organization::settings::get::failure',
-    withRequestFailure((payload: {}, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Failed to get organization settings`,
-            error,
-        })({ payload, error })
-    )
+    withRequestFailure((payload: {}, error: unknown) => ({ payload, error }))
 );
 
 export const organizationSettingsEditIntent = createAction(

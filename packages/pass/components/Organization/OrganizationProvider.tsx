@@ -7,6 +7,7 @@ import {
     getOrganizationSettingsIntent,
     organizationSettingsEditIntent,
 } from '@proton/pass/store/actions/creators/organization';
+import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -20,8 +21,8 @@ export type OrganizationContextValue = OrganizationState & {
 
 const OrganizationContext = createContext<MaybeNull<OrganizationContextValue>>(null);
 
-/** Organization context will always be `null` users
- * which do not belong to an organization. */
+/** Organization context will always be `null` for
+ * users which do not belong to an organization. */
 export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
 
@@ -35,7 +36,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
             organization
                 ? {
                       b2bAdmin,
-                      syncSettings: () => dispatch(getOrganizationSettingsIntent()),
+                      syncSettings: () => dispatch(withRevalidate(getOrganizationSettingsIntent())),
                       updateSetting: (key, value) => dispatch(organizationSettingsEditIntent({ [key]: value })),
                       ...organization,
                   }
