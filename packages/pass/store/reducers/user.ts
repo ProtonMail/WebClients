@@ -7,13 +7,7 @@ import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import type {
-    Address,
-    Organization,
-    SETTINGS_PASSWORD_MODE,
-    SETTINGS_STATUS,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
@@ -33,7 +27,6 @@ export type UserState = {
     addresses: AddressState;
     eventId: MaybeNull<string>;
     features: MaybeNull<FeatureFlagState>;
-    organization: MaybeNull<Organization>;
     user: MaybeNull<User>;
     userSettings: MaybeNull<UserSettingsState>;
 } & UserAccessState;
@@ -45,7 +38,6 @@ const initialState: UserState = {
     addresses: {},
     eventId: null,
     features: null,
-    organization: null,
     plan: null,
     user: null,
     userSettings: null,
@@ -56,7 +48,7 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 
-        const { Addresses = [], User, EventID, UserSettings, Organization } = action.payload;
+        const { Addresses = [], User, EventID, UserSettings } = action.payload;
         const user = User ?? state.user;
         const eventId = EventID ?? null;
 
@@ -75,23 +67,20 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
             state.addresses
         );
 
-        const organization = Organization ?? state.organization;
-
         return {
             ...state,
             user,
             eventId,
             addresses,
             userSettings,
-            organization,
         };
     }
 
     /* triggered on each popup wakeup: avoid unnecessary re-renders */
     if (getUserAccessSuccess.match(action)) {
-        const { organization, plan, waitingNewUserInvites } = action.payload;
+        const { plan, waitingNewUserInvites } = action.payload;
         const didChange = waitingNewUserInvites !== state.waitingNewUserInvites || !isDeepEqual(plan, state.plan);
-        return didChange ? partialMerge(state, { organization, plan, waitingNewUserInvites }) : state;
+        return didChange ? partialMerge(state, { plan, waitingNewUserInvites }) : state;
     }
 
     if (getUserFeaturesSuccess.match(action)) {

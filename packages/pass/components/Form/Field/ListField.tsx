@@ -11,6 +11,7 @@ import { Icon, InputFieldTwo } from '@proton/components/';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import type { Unpack } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
@@ -37,6 +38,7 @@ type ListFieldProps<Values, FieldKey extends ListFieldKeys<Values>, T = ListFiel
         onPush: (value: string) => ListFieldValue<T>;
         onReplace: (value: string, entry: ListFieldValue<T>) => ListFieldValue<T>;
         renderError?: (errors: FormikErrors<ListFieldValue<T>[]>) => ReactNode;
+        fieldLoading?: (entry: ListFieldValue<T>) => boolean;
     };
 
 export const ListField = <
@@ -57,6 +59,7 @@ export const ListField = <
     onPush,
     onReplace,
     renderError,
+    fieldLoading,
 }: ListFieldProps<Values, FieldKey>) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const ref = useCombinedRefs(fieldRef, inputRef);
@@ -69,7 +72,7 @@ export const ListField = <
     }, []);
 
     const values = (form.values[fieldKey] ?? []) as ListFieldValue<T>[];
-    const errors = form.errors[fieldKey] as FormikErrors<ListFieldValue<T>>[];
+    const errors = (form.errors[fieldKey] ?? []) as FormikErrors<ListFieldValue<T>>[];
     const hasItem = Boolean(values) || values.some(({ value }) => !isEmptyString(fieldValue(value)));
 
     /** For onBlur and onChange events, validation is triggered after a small timeout to
@@ -84,7 +87,10 @@ export const ListField = <
     );
 
     const handleBlur = () => {
-        void form.setFieldTouched(fieldKey as string);
+        /* Avoid immediate validation when marking the field as touched
+         * on blur to prevent error warning for potentially invalid trailing
+         * input values before the `onBlur` call. */
+        void form.setFieldTouched(fieldKey as string, true, false);
         onBlur?.(getValue());
         debouncedValidate();
     };
@@ -176,7 +182,6 @@ export const ListField = <
                         if (value.trim()) helpers.replace<ListFieldValue<unknown>>(idx, onReplace(value, entry));
                         else helpers.remove(idx);
                     };
-
                     return (
                         <div className="w-full flex-1 relative flex gap-1 max-w-full max-h-full">
                             {values.map((entry, idx) => (
@@ -184,6 +189,7 @@ export const ListField = <
                                     {...entry}
                                     key={entry.id}
                                     error={Boolean(errors?.[idx])}
+                                    loading={fieldLoading ? fieldLoading(entry) : false}
                                     onChange={onChange(idx, entry)}
                                     onMoveLeft={onMoveLeft(idx)}
                                     onMoveRight={onMoveRight(idx)}
@@ -214,7 +220,7 @@ export const ListField = <
                 }}
             />
 
-            {renderError && errors && form.dirty && (
+            {renderError && errors.filter(truthy).length > 0 && form.dirty && (
                 <div className="field-two-assist flex flex-nowrap items-start mt-4">
                     <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
                     <span>{renderError(errors)}</span>
