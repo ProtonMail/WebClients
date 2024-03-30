@@ -13,6 +13,7 @@ import { clone, exporter, promise } from './bridge/utils';
 
 type CredentialsGet = typeof navigator.credentials.get;
 type CredentialsCreate = typeof navigator.credentials.create;
+type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => void; onFallback: () => void };
 
 (() => {
     /** In Firefox, DOM objects in content scripts receive an additional
@@ -32,18 +33,21 @@ type CredentialsCreate = typeof navigator.credentials.create;
     const bridge = createMessageBridge();
     bridge.init();
 
-    const handleBridgeError = ({ error }: MessageFailure): Error => {
-        switch (error) {
+    const handleBridgeError = ({ data, onFallback, onReject }: BridgeErrorOptions): void => {
+        switch (data.error) {
+            case 'BridgeTimeout':
+            case 'BridgeDisconnected':
+                return onFallback();
             case 'BridgeAbort':
-                return new Exception('The operation either timed out or was not allowed.', 'NotAllowedError');
+                return onReject(new Exception('The operation either timed out or was not allowed.', 'NotAllowedError'));
             default:
-                return new Exception(`Something went wrong: ${error}`, 'NotAllowedError');
+                return onReject(new Exception(`Something went wrong: ${data.payload}`, 'NotAllowedError'));
         }
     };
 
     const createCredentials: CredentialsCreate = (options) =>
-        promise<MaybeNull<Credential>>(async (resolve) => {
-            if (!options?.publicKey) return resolve(create(options));
+        promise<MaybeNull<Credential>>(async (resolve, reject) => {
+            if (!options?.publicKey || !bridge.getState().connected) return resolve(create(options));
 
             const result = await bridge.sendMessage(
                 {
@@ -56,7 +60,13 @@ type CredentialsCreate = typeof navigator.credentials.create;
                 { timeout: options.publicKey.timeout }
             );
 
-            if (result.type === 'error') throw handleBridgeError(result);
+            if (result.type === 'error') {
+                return handleBridgeError({
+                    data: result,
+                    onReject: reject,
+                    onFallback: () => resolve(create(options)),
+                });
+            }
 
             if (!result.intercept) {
                 logger.debug('[WebAuthn] Intercept cancelled for `create`');
@@ -69,7 +79,7 @@ type CredentialsCreate = typeof navigator.credentials.create;
 
     const getCredentials: CredentialsGet = (options) =>
         promise<MaybeNull<Credential>>(async (resolve, reject) => {
-            if (!options?.publicKey) return resolve(get(options));
+            if (!options?.publicKey || !bridge.getState().connected) return resolve(get(options));
 
             const result = await bridge.sendMessage(
                 {
@@ -82,7 +92,13 @@ type CredentialsCreate = typeof navigator.credentials.create;
                 { timeout: options.publicKey.timeout }
             );
 
-            if (result.type === 'error') return reject(handleBridgeError(result));
+            if (result.type === 'error') {
+                return handleBridgeError({
+                    data: result,
+                    onReject: reject,
+                    onFallback: () => resolve(get(options)),
+                });
+            }
 
             if (!result.intercept) {
                 logger.debug('[WebAuthn] Intercept cancelled for `get`');

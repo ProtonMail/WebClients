@@ -172,7 +172,7 @@ const SettingsApp: FC = () => {
                                 exact
                                 path={'/logs'}
                                 render={() => (
-                                    <div className="max-h-full">
+                                    <div className="max-h-full max-w-full">
                                         <ApplicationLogs
                                             opened
                                             style={{ '--h-custom': 'max(calc(100vh - 130px), 18.75rem)' }}

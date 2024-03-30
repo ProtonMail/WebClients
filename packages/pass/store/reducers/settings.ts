@@ -21,6 +21,7 @@ import type {
     AutoSaveSettings,
     AutoSuggestSettings,
     DomainCriterias,
+    PasskeySettings,
 } from '@proton/pass/types/worker/settings';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
@@ -33,6 +34,7 @@ export type SettingsState = {
     loadDomainImages: boolean;
     locale?: string;
     offlineEnabled?: boolean;
+    passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
@@ -50,6 +52,7 @@ export const INITIAL_SETTINGS: ProxiedSettings = {
     createdItemsCount: 0,
     disallowedDomains: {},
     loadDomainImages: true,
+    passkeys: { get: true, create: true },
     passwordOptions: null,
 };
 

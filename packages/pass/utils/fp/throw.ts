@@ -1,5 +1,11 @@
-export const throwError = (options: { name?: string; message?: string }) => {
+type ErrorOptions = { name?: string; message?: string };
+
+export const error = (options: ErrorOptions): Error => {
     const error = new Error(options.message);
     error.name = options.name ?? error.name;
-    throw error;
+    return error;
+};
+
+export const throwError = (options: ErrorOptions) => {
+    throw error(options);
 };
