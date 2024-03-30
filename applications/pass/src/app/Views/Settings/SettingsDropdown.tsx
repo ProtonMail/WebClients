@@ -10,6 +10,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
@@ -17,16 +18,24 @@ import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
-type SettingAction = { key: string; label: string; icon: IconName; signaled?: boolean };
+type SettingAction = { icon: IconName; key: string; label: string; signaled?: boolean; onClick?: () => void };
 
 export const SettingsDropdown: FC = () => {
     const { navigate } = useNavigation();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();
-    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const orgEnabled = useOrganization()?.settings.enabled ?? false;
     const offlineEnabled = useSelector(selectOfflineEnabled);
     const offlineSignaled = OFFLINE_SUPPORTED && !offlineEnabled;
+
+    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+
+    const onLogout = useCallback(async () => {
+        createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
+        await authService.logout({ soft: false });
+        clearNotifications();
+    }, []);
 
     const settings = useMemo<SettingAction[]>(
         () => [
@@ -34,16 +43,15 @@ export const SettingsDropdown: FC = () => {
             { key: 'security', label: c('Label').t`Security`, icon: 'locks', signaled: offlineSignaled },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-up-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-down-line' },
+            { key: 'account', label: c('Label').t`Account`, icon: 'arrow-out-square', onClick: navigateToAccount },
+            ...(orgEnabled
+                ? [{ key: 'organization', label: c('Label').t`Organization`, icon: 'buildings' } as const]
+                : []),
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
+            { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: onLogout },
         ],
-        [offlineSignaled]
+        [offlineSignaled, orgEnabled]
     );
-
-    const onLogout = useCallback(async () => {
-        createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
-        await authService.logout({ soft: false });
-        clearNotifications();
-    }, []);
 
     return (
         <QuickActionsDropdown
@@ -56,7 +64,7 @@ export const SettingsDropdown: FC = () => {
             {settings.map((setting) => (
                 <DropdownMenuButton
                     key={setting.key}
-                    onClick={() => navigate(getLocalPath('settings'), { hash: setting.key })}
+                    onClick={setting.onClick ?? (() => navigate(getLocalPath('settings'), { hash: setting.key }))}
                     label={
                         <div className="flex items-center gap-3">
                             <span className="flex-1">{setting.label}</span>
@@ -68,8 +76,6 @@ export const SettingsDropdown: FC = () => {
                     className="relative"
                 ></DropdownMenuButton>
             ))}
-            <DropdownMenuButton icon="arrow-out-square" label={c('Label').t`Account`} onClick={navigateToAccount} />
-            <DropdownMenuButton icon="arrow-out-from-rectangle" label={c('Action').t`Sign out`} onClick={onLogout} />
         </QuickActionsDropdown>
     );
 };
