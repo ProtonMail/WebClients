@@ -4,6 +4,7 @@ import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
+import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
@@ -51,9 +52,12 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
             : undefined;
 
         const cachedState = cache?.state ? migrate(cache.state) : undefined;
+        const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
 
-        const userState: HydratedUserState = yield cache?.state.user ?? getUserData();
+        const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData();
+        const user = userState.user;
+        const addresses = Object.values(userState.addresses);
         const organization =
             userState.plan.Type === PlanType.business
                 ? cachedState?.organization ?? ((yield getOrganization()) as OrganizationState)
@@ -74,15 +78,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
          * cases, wait for network online in order to resume session */
-        if (keyPassword) {
-            yield PassCrypto.hydrate({
-                user: userState.user,
-                keyPassword,
-                addresses: Object.values(userState.addresses),
-                snapshot,
-                clear: true,
-            });
-        }
+        if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
 
         yield put(stateHydrate(state));
         return cache?.state !== undefined && cache?.snapshot !== undefined;
