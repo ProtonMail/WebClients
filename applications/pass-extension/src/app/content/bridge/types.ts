@@ -1,6 +1,6 @@
 import type { MessageFailure, Unpack, WorkerMessage, WorkerResponse } from '@proton/pass/types';
 
-import type { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
+import type { ALLOWED_MESSAGES, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 
 export type BridgeMessage = Extract<WorkerMessage, { type: Unpack<typeof ALLOWED_MESSAGES> }>;
 
@@ -15,5 +15,3 @@ export type BridgeResponse<T extends BridgeMessage = BridgeMessage> = {
     token: string;
     type: typeof BRIDGE_RESPONSE;
 };
-
-export type BridgeAbortSignal = { token: string; type: typeof BRIDGE_ABORT };

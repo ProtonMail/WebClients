@@ -14,17 +14,16 @@ export const SettingsPanel: FC<PropsWithChildren<Props>> = ({
     actions,
     children,
     className,
-    contentClassname = 'py-4',
+    contentClassname = 'flex flex-column flex-nowrap pt-4 pb-2',
     subTitle,
     title,
 }) => (
     <Card
         rounded
         className={clsx(
-            'pass-settings--panel flex flex-nowrap flex-column p-3 mb-4 relative max-w-custom *:min-size-auto',
+            'pass-settings--panel flex flex-nowrap flex-column p-5 mb-4 relative max-w-custom *:min-size-auto',
             className
         )}
-        style={{ '--max-w-custom': '50em' }}
         background={false}
     >
         <div className="flex flex-nowrap gap-2 items-start">

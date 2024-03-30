@@ -22,7 +22,7 @@
         "start": "yarn clean && yarn config:dev && RESUME_FALLBACK=true node ./tools/dev-server.js",
         "start:prod": "yarn clean && yarn run config && node ./tools/dev-server.js",
         "start:reload": "cross-env RUNTIME_RELOAD=true sh -c 'yarn start'",
-        "test": "NODE_NO_WARNINGS=1 jest --verbose || true",
+        "test": "jest",
         "test:ci": "jest --ci --coverage --passWithNoTests",
         "test:watch": "jest --watch"
     },
