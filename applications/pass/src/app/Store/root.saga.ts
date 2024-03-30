@@ -19,6 +19,7 @@ import sync from '@proton/pass/store/sagas/client/sync.saga';
 import events from '@proton/pass/store/sagas/events/events.saga';
 import itemsImport from '@proton/pass/store/sagas/import/import.saga';
 import inviteAccept from '@proton/pass/store/sagas/invites/invite-accept.saga';
+import inviteAddressesValidate from '@proton/pass/store/sagas/invites/invite-addresses-validate.saga';
 import inviteCreate from '@proton/pass/store/sagas/invites/invite-create.saga';
 import inviteRecommendations from '@proton/pass/store/sagas/invites/invite-recommendations.saga';
 import inviteReject from '@proton/pass/store/sagas/invites/invite-reject.saga';
@@ -39,6 +40,8 @@ import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
 import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
+import organizationSettingsEdit from '@proton/pass/store/sagas/organization/organization-settings-edit.saga';
+import organizationSettingsGet from '@proton/pass/store/sagas/organization/organization-settings.saga';
 import shareAccessOptions from '@proton/pass/store/sagas/shares/share-access-options.saga';
 import shareEditRole from '@proton/pass/store/sagas/shares/share-edit-role.saga';
 import shareLeave from '@proton/pass/store/sagas/shares/share-leave.saga';
@@ -65,6 +68,7 @@ export function* rootSaga(options: RootSagaOptions) {
             featureFlags,
             hydrate,
             inviteAccept,
+            inviteAddressesValidate,
             inviteCreate,
             inviteRecommendations,
             inviteReject,
@@ -90,6 +94,8 @@ export function* rootSaga(options: RootSagaOptions) {
             offlineDisable,
             offlineResume,
             offlineSetup,
+            organizationSettingsEdit,
+            organizationSettingsGet,
             reportProblem,
             sessionLockDisable,
             sessionLockEnable,

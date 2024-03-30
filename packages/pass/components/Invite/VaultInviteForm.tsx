@@ -11,6 +11,7 @@ import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListFiel
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVerificationMessage';
 import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
+import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
 import { selectUserVerified, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
@@ -27,22 +28,36 @@ import { InviteRecommendations } from './InviteRecommendations';
 
 export const FORM_ID = 'vault-invite';
 
-type Props = { form: FormikContextType<InviteFormValues>; autoFocus?: boolean };
+type Props = {
+    addressValidator: InviteAddressValidator;
+    autoFocus?: boolean;
+    form: FormikContextType<InviteFormValues>;
+};
 
 /** `VaultInviteForm` takes a forwarded ref parameter for the email input element.
  * This ref is essential to trigger validation on any non-added email values that
  * are pushed to the member list. This ensures correct interaction with the invite
  * recommendations. */
-const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ form, autoFocus }, fieldRef) => {
-    const [autocomplete, setAutocomplete] = useState('');
-    const userVerified = useSelector(selectUserVerified);
-
+const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+    { form, autoFocus, addressValidator },
+    fieldRef
+) => {
     const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
     const { step, members, withVaultCreation } = form.values;
+    const shareId = form.values.withVaultCreation ? '' : form.values.shareId;
+
+    const [autocomplete, setAutocomplete] = useState('');
+    const userVerified = useSelector(selectUserVerified);
+    const vaultSharedWith = useSelector(selectVaultSharedWithEmails(shareId));
+
     const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
 
-    const shareId = form.values.withVaultCreation ? '' : form.values.shareId;
-    const vaultSharedWith = useSelector(selectVaultSharedWithEmails(shareId));
+    /** Filter out emails pending validation by comparing against the address validator cache.
+     * Pending emails are those present in 'members' but not in the validator cache */
+    const emailsValidating = useMemo(
+        () => members.filter(({ value }) => !addressValidator.emails.current.has(value.email)),
+        [members]
+    );
 
     const createMember = (email: string): ListFieldValue<InviteFormMemberValue> => ({
         value: { email, role: ShareRole.READ },
@@ -108,7 +123,8 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                         <Field
                             autoFocus={autoFocus}
                             component={ListField<InviteFormValues>}
-                            disabled={!userVerified}
+                            disabled={!userVerified || addressValidator.loading}
+                            fieldLoading={(entry) => addressValidator.loading && emailsValidating.includes(entry)}
                             fieldKey="members"
                             fieldRef={fieldRef}
                             fieldValue={prop('email')}
@@ -124,11 +140,15 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                                 const isEmpty = errors.includes(InviteEmailsError.EMPTY);
                                 if (isEmpty) return c('Warning').t`At least one email address is required`;
 
-                                const hasInvalid = errors.includes(InviteEmailsError.INVALID);
                                 const hasDuplicates = errors.includes(InviteEmailsError.DUPLICATE);
+                                const hasInvalid = errors.includes(InviteEmailsError.INVALID_EMAIL);
+                                const hasOrganizationLimits = errors.includes(InviteEmailsError.INVALID_ORG);
 
                                 return (
                                     <>
+                                        {hasOrganizationLimits &&
+                                            c('Warning')
+                                                .t`Inviting email addresses outside organization is not allowed.`}
                                         {hasDuplicates && c('Warning').t`Duplicate email addresses.` + ` `}
                                         {hasInvalid && c('Warning').t`Invalid email addresses.`}
                                     </>

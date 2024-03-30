@@ -16,8 +16,10 @@ import { Icon, Tabs, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
+import { Organization } from '@proton/pass/components/Settings/Organization';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { pageMessage } from '@proton/pass/lib/extension/message';
@@ -40,62 +42,32 @@ import { Support } from './Views/Support';
 import './Settings.scss';
 
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
+type SettingTab = Tab & { path: string; hidden?: boolean };
 
-const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
-    const tabs = [
-        {
-            pathname: '/',
-            title: c('Label').t`General`,
-            content: <General />,
-        },
-        {
-            pathname: '/security',
-            title: c('Label').t`Security`,
-            content: <Security />,
-        },
-        {
-            pathname: '/import',
-            title: c('Label').t`Import`,
-            content: <Import />,
-        },
-        {
-            pathname: '/export',
-            title: c('Label').t`Export`,
-            content: <Export />,
-        },
-        {
-            pathname: '/support',
-            title: c('Label').t`Support`,
-            content: <Support />,
-        },
-        {
-            pathname: '/account',
-            title: c('Label').t`Account`,
-            content: <></>,
-        },
-    ];
-
-    if (ENV === 'development') {
-        tabs.push({
-            pathname: '/dev',
-            title: 'Developer',
-            content: <Developer />,
-        });
-    }
-    return tabs;
-};
+const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
+    { path: '/', title: c('Label').t`General`, content: <General /> },
+    { path: '/security', title: c('Label').t`Security`, content: <Security /> },
+    { path: '/import', title: c('Label').t`Import`, content: <Import /> },
+    { path: '/export', title: c('Label').t`Export`, content: <Export /> },
+    { path: '/account', title: c('Label').t`Account`, content: <></> },
+    ...(orgEnabled ? [{ path: '/organization', title: c('Label').t`Organization`, content: <Organization /> }] : []),
+    { path: '/support', title: c('Label').t`Support`, content: <Support /> },
+    ...(ENV === 'development' ? [{ path: '/dev', title: 'Developer', content: <Developer /> }] : []),
+];
 
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionConnect();
     const user = useSelector(selectUser);
+    const organization = useOrganization();
+
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
-    const tabs = useMemo(getSettingsTabs, []);
+    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
     const pathnameToIndex = (pathname: string) => {
-        const idx = tabs.findIndex((tab) => tab.pathname === pathname);
+        const idx = tabs.findIndex((tab) => tab.path === pathname);
         return idx !== -1 ? idx : 0;
     };
 
@@ -103,13 +75,11 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname));
 
     const handleOnChange = (nextTab: number) => {
-        if (tabs[nextTab].pathname === '/account') navigateToAccount();
-        else history.push(tabs[nextTab].pathname);
+        if (tabs[nextTab].path === '/account') navigateToAccount();
+        else history.push(tabs[nextTab].path);
     };
 
-    useEffect(() => {
-        setActiveTab(pathnameToIndex(pathname));
-    }, [pathname]);
+    useEffect(() => setActiveTab(pathnameToIndex(pathname)), [pathname]);
 
     if (context.state.loggedIn) {
         return (
@@ -238,7 +208,9 @@ export const Settings: FC = () => {
                                 store.current ??
                                 (store.current = createClientStore('page', ExtensionContext.get().tabId)))()}
                         >
-                            <SettingsApp />
+                            <OrganizationProvider>
+                                <SettingsApp />
+                            </OrganizationProvider>
                         </ReduxProvider>
                     )
                 }
