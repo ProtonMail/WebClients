@@ -17,7 +17,7 @@ export const Organization: FC = () => {
     const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing);
     const enableOrganizationExport = useFeatureFlag(PassFeature.PassEnableOrganizationExport);
 
-    const { settings, updateSetting } = useOrganization()!;
+    const { settings } = useOrganization()!;
     const { ShareMode, ExportMode } = settings;
     const loading = useSelector(selectRequestInFlight(organizationSettingsEditRequest())) !== null;
 
@@ -28,7 +28,7 @@ export const Organization: FC = () => {
                     <Checkbox
                         disabled={loading}
                         checked={ShareMode === BitField.ACTIVE}
-                        onChange={() => updateSetting('ShareMode', Number(!Boolean(ShareMode)))}
+                        onChange={() => settings.update('ShareMode', Number(!Boolean(ShareMode)))}
                     >
                         <span>
                             {c('Label').t`Disable sharing outside the organization`}
@@ -45,7 +45,7 @@ export const Organization: FC = () => {
                     <Checkbox
                         disabled={loading}
                         checked={ExportMode === BitField.ACTIVE}
-                        onChange={() => updateSetting('ExportMode', Number(!Boolean(ExportMode)))}
+                        onChange={() => settings.update('ExportMode', Number(!Boolean(ExportMode)))}
                     >
                         <span>
                             {c('Label').t`Disable data export for team members`}
