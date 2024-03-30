@@ -1,6 +1,7 @@
 export type AutoFillSettings = { inject: boolean; openOnFocus: boolean };
 export type AutoSaveSettings = { prompt: boolean; shareId?: string };
 export type AutoSuggestSettings = { password: boolean; email: boolean };
+export type PasskeySettings = { create: boolean; get: boolean };
 
 export type PauseListEntry = { hostname: string; criteria: CriteriaMasks };
 
@@ -13,6 +14,7 @@ export const CRITERIA_MASKS = {
     Autofill2FA: 1 << 1,
     Autosuggest: 1 << 2,
     Autosave: 1 << 3,
+    Passkey: 1 << 4,
 };
 
 export const CRITERIAS_SETTING_CREATE = Object.values(CRITERIA_MASKS).reduce((acc, curr) => acc ^ curr, 0);
