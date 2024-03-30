@@ -7,10 +7,10 @@ import type { InviteFormValues } from '@proton/pass/types';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export enum InviteEmailsError {
-    DUPLICATE = 'DUPLICATE',
-    INVALID = 'INVALID',
-    EMPTY = 'EMPTY',
-    EXTERNAL = 'EXTERNAL',
+    DUPLICATE = 'DUPLICATE' /* duplicate members */,
+    EMPTY = 'EMPTY' /* empty members */,
+    INVALID_EMAIL = 'INVALID_EMAIL' /* invalid email string */,
+    INVALID_ORG = 'INVALID_ORG' /* invalid organization member */,
 }
 
 type ValidateShareInviteOptions = {
@@ -38,9 +38,9 @@ export const validateShareInviteValues =
                         acc.pass = false;
                     } else if (!validateEmailAddress(value.email)) {
                         acc.pass = false;
-                        acc.errors.push(InviteEmailsError.INVALID);
+                        acc.errors.push(InviteEmailsError.INVALID_EMAIL);
                     } else if (validateAddresses && validationMap.current.get(value.email) === false) {
-                        acc.errors.push(InviteEmailsError.EXTERNAL);
+                        acc.errors.push(InviteEmailsError.INVALID_ORG);
                         acc.pass = false;
                     } else acc.errors.push('');
 
@@ -53,20 +53,18 @@ export const validateShareInviteValues =
 
             errors.members = emails.errors;
 
-            /** Validate the trailing input value only when it is not
-             * focused : this value lives outside of the formik state
+            /** Show any trailing input value error only when the field
+             * is not focused : this value lives outside of the formik state
              * values - as such adapt the validation logic accordingly */
-            if (emailField.current !== document.activeElement) {
-                const trailing = emailField.current?.value?.trim() ?? '';
-                const validTrailingEmail = validateEmailAddress(trailing);
+            const showError = emailField.current !== document.activeElement;
+            const empty = emails.errors.length === 0;
+            const trailing = emailField.current?.value?.trim() ?? '';
+            const validTrailingEmail = validateEmailAddress(trailing);
 
-                if (emails.errors.length === 0 && !validTrailingEmail) {
-                    emails.pass = false;
-                    errors.members.push(InviteEmailsError.EMPTY);
-                } else if (trailing && !validTrailingEmail) {
-                    emails.pass = false;
-                    errors.members.push(InviteEmailsError.INVALID);
-                }
+            if (!validTrailingEmail) {
+                emails.pass = false;
+                if (showError && empty) errors.members.push(InviteEmailsError.EMPTY);
+                else if (showError && trailing) errors.members.push(InviteEmailsError.INVALID_EMAIL);
             }
 
             if (emails.pass) delete errors.members;
