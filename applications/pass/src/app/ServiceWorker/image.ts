@@ -19,7 +19,8 @@ export const handleImage = fetchController.register(async (event, signal) => {
 
     if (cachedResponse && !shouldRevalidate(cachedResponse)) return cachedResponse;
 
-    const response = fetch(event.request, { signal })
+    const response = fetchController
+        .fetch(event.request, signal)
         .then(async (res) => {
             if (API_BODYLESS_STATUS_CODES.includes(res.status)) {
                 void cache.put(url, res.clone());

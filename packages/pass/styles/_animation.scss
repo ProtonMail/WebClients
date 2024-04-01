@@ -5,6 +5,11 @@
 	animation: anime-fade-in var(--anime-duration, 0.25s) easing(ease-out-sine) var(--anime-delay, 0.1s) both;
 }
 
+.anime-fade-out,
+.anime-fade-out > * {
+	animation: anime-fade-out var(--anime-duration, 0.25s) easing(ease-out-sine) var(--anime-delay, 0.1s) both;
+}
+
 @keyframes anime-fade-in {
 	from {
 		opacity: 0;
@@ -12,6 +17,16 @@
 
 	to {
 		opacity: var(--anime-opacity, 1);
+	}
+}
+
+@keyframes anime-fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
 	}
 }
 

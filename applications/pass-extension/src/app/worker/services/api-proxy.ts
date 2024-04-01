@@ -111,7 +111,7 @@ export const createApiProxyService = () => {
 
     if (BUILD_TARGET === 'chrome') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.FETCH_ABORT, ({ payload }) => {
-            fetchController.abort(payload.requestUrl);
+            fetchController.abort(payload.requestId);
             return true;
         });
 
