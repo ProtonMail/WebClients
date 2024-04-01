@@ -9,13 +9,11 @@ const CRITICAL_OFFLINE_ASSETS = ['index.html', 'index.js', 'index.css', 'runtime
 const result = (env: any): webpack.Configuration => {
     const config = getConfig(env);
     const version = env.version;
-    const OFFLINE_SUPPORTED = process.env.OFFLINE === '1' || process.env.OFFLINE === 'true';
 
     config.plugins?.push(
         new webpack.DefinePlugin({
             ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
             BUILD_TARGET: JSON.stringify('web'),
-            OFFLINE_SUPPORTED,
         })
     );
 
