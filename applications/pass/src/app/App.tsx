@@ -25,6 +25,7 @@ import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvide
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { api } from '@proton/pass/lib/api/api';
+import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
@@ -74,12 +75,11 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
             const cachedImage = cache.get(url);
             if (cachedImage) return cachedImage;
 
-            const baseUrl = `${PASS_CONFIG.API_URL}/${url}`;
-            const requestUrl = (/^https?:\/\//.test(baseUrl) ? baseUrl : new URL(baseUrl, document.baseURI)).toString();
-            signal.onabort = () => sw?.send({ type: 'abort', requestUrl });
-
             /* Forward the abort signal to the service worker. */
-            return api<Response>({ url, output: 'raw', signal })
+            const [headers, requestId] = sw ? getRequestIDHeaders() : [];
+            if (sw) signal.onabort = () => sw?.send({ type: 'abort', requestId: requestId! });
+
+            return api<Response>({ url, output: 'raw', signal, headers })
                 .then(async (res) => {
                     const dataURL = await imageResponsetoDataURL(res);
                     if (!sw) cache.set(url, dataURL);

@@ -12,7 +12,7 @@ export type ServiceWorkerMessageBase = {
 
 export type ServiceWorkerMessage = ServiceWorkerMessageBase &
     (
-        | { type: 'abort'; requestUrl: string }
+        | { type: 'abort'; requestId: string }
         | { type: 'action'; action: Action }
         | { type: 'locked'; offline: boolean }
         | { type: 'claim' }
