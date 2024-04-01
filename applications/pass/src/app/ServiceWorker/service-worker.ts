@@ -6,7 +6,13 @@ import noop from '@proton/utils/noop';
 import type { ServiceWorkerResponse } from './channel';
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
 import { handleImage, matchImageRoute } from './image';
-import { cacheCriticalOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchIndexRoute } from './offline';
+import {
+    cacheCriticalOfflineAssets,
+    handleAsset,
+    handleIndex,
+    matchAssetRoute,
+    matchOfflineIndexRoute,
+} from './offline';
 import { handlePolling, matchPollingRoute } from './polling';
 import {
     handleLock,
@@ -23,7 +29,7 @@ declare let self: ServiceWorkerGlobalScope;
 self.addEventListener('install', (event) =>
     event.waitUntil(
         cacheCriticalOfflineAssets().then(() => {
-            logger.debug(`[ServiceWorker] Skip waiting.. [offline=${OFFLINE_SUPPORTED}]`);
+            logger.debug(`[ServiceWorker] Skip waiting..`);
             return self.skipWaiting();
         })
     )
@@ -45,7 +51,7 @@ self.addEventListener('fetch', (event) => {
     if (matchPollingRoute(pathname)) return handlePolling(event);
     if (matchImageRoute(pathname)) return handleImage(event);
     if (matchAssetRoute(pathname)) return handleAsset(event);
-    if (matchIndexRoute(pathname)) return handleIndex(event);
+    if (matchOfflineIndexRoute(pathname)) return handleIndex(event);
 });
 
 self.addEventListener('message', async (event) => {
