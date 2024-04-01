@@ -31,7 +31,7 @@ export const handlePolling = fetchController.register(
             if (hit && isValidEventCache(hit)) return hit;
             await cache.delete(url);
 
-            const response = await fetch(event.request, { signal });
+            const response = await fetchController.fetch(event.request, signal);
             if (response.ok && response.status === 200) cache.put(url, response.clone()).catch(noop);
 
             return response;
