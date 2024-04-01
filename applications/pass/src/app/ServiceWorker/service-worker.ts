@@ -3,7 +3,7 @@ import { fetchController } from '@proton/pass/lib/api/fetch-controller';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import type { ServiceWorkerResponse} from './channel';
+import type { ServiceWorkerResponse } from './channel';
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
 import { handleImage, matchImageRoute } from './image';
 import { cacheCriticalOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchIndexRoute } from './offline';
@@ -53,9 +53,9 @@ self.addEventListener('message', async (event) => {
     const message = event.data as WithOrigin<ServiceWorkerMessage>;
 
     /* handle unidirectional messages */
-    if (message.type === 'claim') self.clients.claim();
+    if (message.type === 'claim') void self.clients.claim();
     if (message.type === 'unauthorized') void clearCache().catch(noop);
-    if (message.type === 'abort') fetchController.abort(message.requestUrl);
+    if (message.type === 'abort') fetchController.abort(message.requestId);
     if (message.broadcast) CLIENT_CHANNEL.postMessage(message);
 
     if (port) {
