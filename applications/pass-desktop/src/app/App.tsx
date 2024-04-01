@@ -76,7 +76,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 
             if (cachedResponse && !shouldRevalidate(cachedResponse)) return cachedResponse;
 
-            /* Forward the abort signal to the service worker. */
             return api<Response>({ url, output: 'raw', signal })
                 .then(async (res) => {
                     if (API_BODYLESS_STATUS_CODES.includes(res.status)) {
