@@ -14,6 +14,7 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { useOfflineSupported } from '@proton/pass/hooks/useOfflineSupported';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
@@ -27,7 +28,7 @@ export const SettingsDropdown: FC = () => {
     const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
     const offlineEnabled = useSelector(selectOfflineEnabled);
-    const offlineSignaled = OFFLINE_SUPPORTED && !offlineEnabled;
+    const offlineSignaled = useOfflineSupported() && !offlineEnabled;
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
