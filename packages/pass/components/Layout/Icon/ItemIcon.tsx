@@ -48,13 +48,15 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
 }) => {
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
     const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
+    const ready = imageStatus === ImageStatus.READY;
 
     return (
         <IconBox
             className={className}
-            mode={url && imageStatus === ImageStatus.READY ? 'image' : 'icon'}
+            mode={url && ready ? 'image' : 'icon'}
             size={size}
             pill={pill}
+            style={{ '--anime-delay': '0s' }}
         >
             <span className="sr-only">{alt}</span>
 
@@ -72,14 +74,12 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
                 />
             )}
 
-            {imageStatus !== ImageStatus.READY && (
-                <Icon
-                    className={clsx('absolute inset-center', iconClassName)}
-                    color={normColor ? 'var(--interaction-norm)' : ''}
-                    name={icon}
-                    size={size}
-                />
-            )}
+            <Icon
+                className={clsx('absolute inset-center', iconClassName, ready && 'anime-fade-out')}
+                color={normColor ? 'var(--interaction-norm)' : ''}
+                name={icon}
+                size={size}
+            />
 
             {renderIndicators?.(size)}
         </IconBox>
