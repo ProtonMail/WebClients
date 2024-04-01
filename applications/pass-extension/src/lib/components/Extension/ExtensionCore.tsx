@@ -9,6 +9,7 @@ import { promptForPermissions } from 'proton-pass-extension/lib/utils/permission
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
+import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
@@ -47,17 +48,20 @@ const getExtensionCoreProps = (
             const basePath = BUILD_TARGET === 'firefox' ? config.API_URL : API_PROXY_URL;
             const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
             const requestUrl = `${basePath}/${url}`;
+            const [headers, requestId] = BUILD_TARGET === 'chrome' ? getRequestIDHeaders() : [];
 
-            signal.onabort = () =>
-                sendMessage(
-                    messageFactory({
-                        type: WorkerMessageType.FETCH_ABORT,
-                        payload: { requestUrl },
-                    })
-                );
+            if (BUILD_TARGET === 'chrome') {
+                signal.onabort = () =>
+                    sendMessage(
+                        messageFactory({
+                            type: WorkerMessageType.FETCH_ABORT,
+                            payload: { requestId: requestId! },
+                        })
+                    );
+            }
 
             /* Forward the abort signal to the extension service worker. */
-            return fetch(requestUrl, { signal }).then(imageResponsetoDataURL);
+            return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
 
         getLogs: () =>
