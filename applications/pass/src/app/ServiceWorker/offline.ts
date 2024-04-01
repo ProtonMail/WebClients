@@ -49,7 +49,7 @@ export const handleAsset = fetchController.register(
         const { request } = event;
 
         try {
-            const response = await fetch(request);
+            const response = await fetchController.fetch(request);
             const status = response.status;
 
             if (status === 200 || status === 304) {
