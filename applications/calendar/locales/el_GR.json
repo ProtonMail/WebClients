@@ -606,11 +606,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -3851,6 +3851,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
       ],
+      "Change your password": [
+        "Αλλάξτε τον κωδικό πρόσβασής σας"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
       ],
@@ -3942,6 +3945,9 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
+      "email": [
+        "ηλεκτρονικό ταχυδρομείο"
+      ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
       ],
@@ -3979,11 +3985,17 @@
       "Existent, added and removed participants will be notified.": [
         "Θα ειδοποιούνται οι συμμετέχοντες, οι οποίοι έχουν προστεθεί και αφαιρεθεί."
       ],
+      "finance": [
+        "οικονομικά"
+      ],
       "Frequency modifications will be lost.": [
         "Οι τροποποιήσεις συχνότητας θα χαθούν."
       ],
       "here": [
         "εδώ"
+      ],
+      "High Priority": [
+        "Υψηλή προτεραιότητα"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
@@ -4064,11 +4076,20 @@
       "Loading events": [
         "Γίνεται φόρτωση εκδηλώσεων"
       ],
+      "Low Priority": [
+        "Χαμηλή προτεραιότητα"
+      ],
       "Manage your calendars": [
         "Διαχείριση των ημερολογίων σας"
       ],
+      "Medium Priority": [
+        "Μεσαία προτεραιότητα"
+      ],
       "Merged": [
         "Συγχωνευμένα"
+      ],
+      "Monitor accounts": [
+        "Παρακολούθηση λογαριασμών"
       ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
@@ -4108,6 +4129,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
+      ],
+      "password": [
+        "κωδικός πρόσβασης"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
@@ -4271,6 +4295,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Warning": [
         "Προειδοποίηση"
@@ -5013,6 +5040,35 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "upgrade for more storage": [
+        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+      ],
+      "Upgrade to restore full access": [
+        "Αναβάθμιση για επαναφορά πλήρους πρόσβασης"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ο ${ driveStorage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ο ${ mailStorage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ο λογαριασμός σας κινδυνεύει να διαγραφεί. Για να αποφύγετε την απώλεια δεδομένων, ζητήστε από τον διαχειριστή σας να κάνει αναβάθμιση. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
       ]
     },
     "Mail import summary": {
@@ -5839,6 +5895,9 @@
       ],
       "Select": [
         "Επιλογή"
+      ],
+      "Select state": [
+        "Επιλέξτε νομό/περιοχή"
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -6849,6 +6908,15 @@
       "Birthday": [
         "Γενέθλια"
       ],
+      "Breach Date": [
+        "Ημερομηνία παραβίασης"
+      ],
+      "Breach Information": [
+        "Πληροφορίες παραβίασης"
+      ],
+      "Breach Size": [
+        "Μέγεθος παραβίασης"
+      ],
       "Calendar": [
         "Ημερολόγιο"
       ],
@@ -6947,6 +7015,9 @@
       "Edit image": [
         "Επεξεργασία εικόνας"
       ],
+      "Email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
@@ -6973,6 +7044,9 @@
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
+      ],
+      "Exposed info": [
+        "Εκτεθειμένες πληροφορίες"
       ],
       "Feedback": [
         "Σχόλια"
@@ -7011,6 +7085,9 @@
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
+      "Location": [
+        "Τοποθεσία"
+      ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
       ],
@@ -7044,6 +7121,9 @@
       "Participants cannot be notified": [
         "Οι συμμετέχοντες δεν μπορούν να ειδοποιηθούν"
       ],
+      "Password": [
+        "Κωδικός"
+      ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
       ],
@@ -7055,6 +7135,9 @@
       ],
       "Reactivate calendar keys": [
         "Επανενεργοποιήστε τα κλειδιά ημερολογίου"
+      ],
+      "Recommended actions": [
+        "Συνιστώμενες ενέργειες"
       ],
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
@@ -7161,6 +7244,9 @@
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
       ],
+      "Type": [
+        "Τύπος"
+      ],
       "Unlock contacts groups": [
         "Ξεκλείδωμα ομάδων επαφών"
       ],
@@ -7199,6 +7285,9 @@
       ],
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
+      ],
+      "Your Exposed Information": [
+        "Οι Εκτεθειμένες Πληροφορίες σας"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
