@@ -18,6 +18,7 @@ import {
 } from '../constants';
 import {
     Audience,
+    BillingPlatform,
     Cycle,
     External,
     Organization,
@@ -70,7 +71,7 @@ export const getAddons = (subscription: Subscription | undefined) =>
 export const hasAddons = (subscription: Subscription | undefined) =>
     (subscription?.Plans || []).some(({ Type }) => Type === ADDON);
 
-export const getPlanName = (subscription: Subscription | undefined, service: PLAN_SERVICES) => {
+export const getPlanName = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
     const plan = getPlan(subscription, service);
     return plan?.Name;
 };
@@ -255,13 +256,23 @@ export function getPlanFromIds(planIDs: PlanIDs): PLANS {
     }) as PLANS;
 }
 
-export const isTrial = (subscription: Subscription | undefined) => {
+export const isTrial = (subscription: Subscription | undefined, plan?: PLANS): boolean => {
     const isTrialV4 =
         subscription?.CouponCode === COUPON_CODES.REFERRAL ||
         subscription?.CouponCode === COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
     const isTrialV5 = !!subscription?.IsTrial;
-    return isTrialV4 || isTrialV5;
+    const trial = isTrialV4 || isTrialV5;
+
+    if (!plan) {
+        return trial;
+    }
+
+    return trial && getPlanName(subscription) === plan;
 };
+
+export function isTrialChargebeeUser(subscription: Subscription | undefined): boolean {
+    return subscription?.BillingPlatform === BillingPlatform.Chargebee && isTrial(subscription);
+}
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {
     const now = new Date();
