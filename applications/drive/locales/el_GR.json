@@ -3571,6 +3571,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
       ],
+      "Change your password": [
+        "Αλλάξτε τον κωδικό πρόσβασής σας"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
       ],
@@ -3723,6 +3726,9 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
+      "email": [
+        "ηλεκτρονικό ταχυδρομείο"
+      ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
       ],
@@ -3799,6 +3805,9 @@
       "Finalizing": [
         "Οριστικοποιείται"
       ],
+      "finance": [
+        "οικονομικά"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Ο φάκελος \"${ link.name }\" διαγράφηκε κατά τη λήψη"
       ],
@@ -3834,6 +3843,9 @@
       ],
       "here": [
         "εδώ"
+      ],
+      "High Priority": [
+        "Υψηλή προτεραιότητα"
       ],
       "How does encrypted search work?": [
         "Πώς δουλεύει η κρυπτογραφημένη αναζήτηση;"
@@ -3947,6 +3959,9 @@
       "Loading...": [
         "Φόρτωση..."
       ],
+      "Low Priority": [
+        "Χαμηλή προτεραιότητα"
+      ],
       "Makes your account safer": [
         "Κάνει τον λογαριασμό σας ασφαλέστερο"
       ],
@@ -3954,8 +3969,14 @@
         "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρας",
         "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρες"
       ],
+      "Medium Priority": [
+        "Μεσαία προτεραιότητα"
+      ],
       "Merged": [
         "Συγχωνευμένα"
+      ],
+      "Monitor accounts": [
+        "Παρακολούθηση λογαριασμών"
       ],
       "More": [
         "Περισσότερα"
@@ -4032,6 +4053,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Ή χρησιμοποιήστε το \"+ Νέο\" κουμπί"
+      ],
+      "password": [
+        "κωδικός πρόσβασης"
       ],
       "Paused": [
         "Σε παύση"
@@ -4431,6 +4455,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Χρησιμοποιήστε αυτή τη φόρμα για να μας ενημερώσετε για ακατάλληλες, παράνομες,\nή άλλως κακόβουλα κοινόχρηστα αρχεία. Πρόκειται να αναφέρετε:"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Version is deleted": [
         "Έγινε διαγραφή της έκδοσης"
@@ -5227,6 +5254,35 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "upgrade for more storage": [
+        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+      ],
+      "Upgrade to restore full access": [
+        "Αναβάθμιση για επαναφορά πλήρους πρόσβασης"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ο ${ driveStorage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ο ${ mailStorage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ο λογαριασμός σας κινδυνεύει να διαγραφεί. Για να αποφύγετε την απώλεια δεδομένων, ζητήστε από τον διαχειριστή σας να κάνει αναβάθμιση. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
       ]
     },
     "Mail import summary": {
@@ -6041,6 +6097,9 @@
       ],
       "Select": [
         "Επιλογή"
+      ],
+      "Select state": [
+        "Επιλέξτε νομό/περιοχή"
       ],
       "Set date": [
         "Ορισμός ημερομηνίας"
@@ -6891,6 +6950,15 @@
       "Birthday": [
         "Γενέθλια"
       ],
+      "Breach Date": [
+        "Ημερομηνία παραβίασης"
+      ],
+      "Breach Information": [
+        "Πληροφορίες παραβίασης"
+      ],
+      "Breach Size": [
+        "Μέγεθος παραβίασης"
+      ],
       "Browser might run out of memory": [
         "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
       ],
@@ -7013,6 +7081,9 @@
       "Edit image": [
         "Επεξεργασία εικόνας"
       ],
+      "Email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
@@ -7033,6 +7104,9 @@
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
+      ],
+      "Exposed info": [
+        "Εκτεθειμένες πληροφορίες"
       ],
       "Failed": [
         "Αποτυχημένα"
@@ -7141,6 +7215,9 @@
       "Other names": [
         "Άλλα ονόματα"
       ],
+      "Password": [
+        "Κωδικός"
+      ],
       "Performance might be affected": [
         "Ίσως επηρεαστεί η απόδοση"
       ],
@@ -7161,6 +7238,9 @@
       ],
       "Re-signing contacts": [
         "Επανυπογραφή επαφών"
+      ],
+      "Recommended actions": [
+        "Συνιστώμενες ενέργειες"
       ],
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
@@ -7329,6 +7409,9 @@
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
+      ],
+      "Your Exposed Information": [
+        "Οι Εκτεθειμένες Πληροφορίες σας"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"

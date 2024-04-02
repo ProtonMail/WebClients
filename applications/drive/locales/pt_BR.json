@@ -176,6 +176,9 @@
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
+      "Copy invite link": [
+        "Copiar link de convite"
+      ],
       "Copy link": [
         "Copiar link"
       ],
@@ -759,6 +762,9 @@
       ],
       "View": [
         "Visualizar"
+      ],
+      "View all reports": [
+        "Ver todos os relatórios"
       ],
       "View invoice": [
         "Visualizar fatura"
@@ -1974,6 +1980,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A A2F adiciona uma camada extra de segurança, prevenindo acesso não autorizado."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Alerta e relatórios de violação estão disponíveis em um plano pago. Atualize para acesso imediato."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descriptografando contatos... Isso pode levar alguns minutos. Quando o processo for concluído, você poderá baixar o arquivo com todos seus contatos exportados."
       ],
@@ -2027,6 +2036,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Suas informações foram encontradas em pelo menos uma violação de dados."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Seus dados pessoais foram vazados por um serviço online em uma violação de dados. Veja detalhes completos e obtenha ações recomendadas."
       ]
     },
     "description": {
@@ -3553,6 +3568,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
+      "Breach alerts": [
+        "Alerta de violação"
+      ],
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
@@ -3570,6 +3588,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
+      ],
+      "Change your password": [
+        "Mudar sua senha"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contato ${ progress } de ${ max }..."
@@ -3723,6 +3744,9 @@
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
       ],
@@ -3799,6 +3823,9 @@
       "Finalizing": [
         "Finalizando"
       ],
+      "finance": [
+        "finança"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Pasta \"${ link.name }\" foi deletada durante o download"
       ],
@@ -3834,6 +3861,9 @@
       ],
       "here": [
         "aqui"
+      ],
+      "High Priority": [
+        "Alta prioridade"
       ],
       "How does encrypted search work?": [
         "Como a pesquisa criptografada funciona?"
@@ -3947,6 +3977,9 @@
       "Loading...": [
         "Carregando..."
       ],
+      "Low Priority": [
+        "Baixa prioridade"
+      ],
       "Makes your account safer": [
         "Torne sua conta mais segura"
       ],
@@ -3954,8 +3987,14 @@
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
       ],
+      "Medium Priority": [
+        "Média prioridade"
+      ],
       "Merged": [
         "Mesclado"
+      ],
+      "Monitor accounts": [
+        "Monitorar contas"
       ],
       "More": [
         "Mais"
@@ -4033,6 +4072,9 @@
       "Or use the \"+ New\" button": [
         "Ou use o botão \"+ Novo\""
       ],
+      "password": [
+        "senha"
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -4072,6 +4114,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Por favor, tente novamente em alguns instantes"
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -4432,11 +4477,17 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use esse formulário para nos notificar de arquivos compartilhados que são inapropriados, ilegais, ou maliciosos. Você irá denunciar:"
       ],
+      "username": [
+        "Nome de usuário"
+      ],
       "Version is deleted": [
         "Versão foi excluída"
       ],
       "Version is restored": [
         "Versão foi restaurada"
+      ],
+      "View details": [
+        "Ver detalhes"
       ],
       "Want to sync files faster?": [
         "Quer sincronizar arquivos mais rapidamente?"
@@ -5227,6 +5278,35 @@
       ],
       "Your import is starting": [
         "Sua importação está começando"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Upgrade to restore full access": [
+        "Atualizar para restaurar o acesso total"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Seu ${ driveStorage } está cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Seu ${ mailStorage } está cheio. Para enviar ou receber e-mails, libere espaço ou ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Sua conta corre o risco de exclusão. Para evitar a perda de dados, peça ao seu administrador para atualizar. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Seu armazenamento está cheio. Para enviar ou receber e-mails, libere espaço ou ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "O seu armazenamento está cheio. Para carregar ou sincronizar arquivos, liberte espaço ou ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
       ]
     },
     "Mail import summary": {
@@ -6169,6 +6249,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Seja notificado se a sua senha ou outros dados pessoais foram vazados."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nossa solução de segurança de última geração orientada por IA, projetada para usuários que buscam proteção reforçada para suas contas. ${ learnMoreLink }"
       ],
@@ -6894,6 +6977,21 @@
       "Birthday": [
         "Data de nascimento"
       ],
+      "Breach alerts": [
+        "Alerta de violação"
+      ],
+      "Breach Date": [
+        "Data da violação"
+      ],
+      "Breach detected": [
+        "Violação detectada"
+      ],
+      "Breach Information": [
+        "Informação de violação"
+      ],
+      "Breach Size": [
+        "Tamanho da violação"
+      ],
       "Browser might run out of memory": [
         "O navegador pode ficar sem memória"
       ],
@@ -7016,6 +7114,9 @@
       "Edit image": [
         "Editar imagem"
       ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
@@ -7036,6 +7137,9 @@
       ],
       "Exporting contacts": [
         "Exportando contatos"
+      ],
+      "Exposed info": [
+        "Informação da exposição"
       ],
       "Failed": [
         "Erro"
@@ -7123,6 +7227,9 @@
       "Night theme": [
         "Tema noturno"
       ],
+      "No breaches detected": [
+        "Nenhuma violação detectada"
+      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -7144,6 +7251,9 @@
       "Other names": [
         "Outros nomes"
       ],
+      "Password": [
+        "Senha"
+      ],
       "Performance might be affected": [
         "O desempenho pode ser afetado"
       ],
@@ -7164,6 +7274,9 @@
       ],
       "Re-signing contacts": [
         "Assinando os contatos novamente"
+      ],
+      "Recommended actions": [
+        "Ações recomendadas"
       ],
       "Reconnect your account": [
         "Reconecte sua conta"
@@ -7252,6 +7365,9 @@
       "Start import process": [
         "Iniciar processo de importação"
       ],
+      "Stay safer online": [
+        "Fique seguro on-line"
+      ],
       "Stop sharing": [
         "Parar compartilhamento"
       ],
@@ -7332,6 +7448,9 @@
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
+      ],
+      "Your Exposed Information": [
+        "Sua informação exposta"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"

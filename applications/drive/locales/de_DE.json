@@ -3571,6 +3571,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
       ],
+      "Change your password": [
+        "Passwort ändern"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakt ${ progress } von ${ max } wird geprüft…"
       ],
@@ -3835,6 +3838,9 @@
       "here": [
         "hier"
       ],
+      "High Priority": [
+        "Hohe Priorität"
+      ],
       "How does encrypted search work?": [
         "Wie funktioniert die verschlüsselte Suche?"
       ],
@@ -3947,6 +3953,9 @@
       "Loading...": [
         "Wird geladen..."
       ],
+      "Low Priority": [
+        "Niedrige Priorität"
+      ],
       "Makes your account safer": [
         "Macht dein Konto sicherer"
       ],
@@ -3954,8 +3963,14 @@
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen",
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen"
       ],
+      "Medium Priority": [
+        "Mittlere Priorität"
+      ],
       "Merged": [
         "Zusammengeführt"
+      ],
+      "Monitor accounts": [
+        "Konten überwachen"
       ],
       "More": [
         "Mehr"
@@ -4032,6 +4047,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Oder benutze den \"+ Neu\" Button."
+      ],
+      "password": [
+        "Passwort"
       ],
       "Paused": [
         "Angehalten"
@@ -4431,6 +4449,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
+      ],
+      "username": [
+        "Benutzername"
       ],
       "Version is deleted": [
         "Version gelöscht"
@@ -5227,6 +5248,17 @@
       ],
       "Your import is starting": [
         "Dein Datenimport wird gestartet"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -7073,6 +7105,9 @@
       "Edit image": [
         "Bild bearbeiten"
       ],
+      "Email address": [
+        "E‐Mail‐Adresse"
+      ],
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
@@ -7201,6 +7236,9 @@
       "Other names": [
         "Weitere Namen"
       ],
+      "Password": [
+        "Passwort"
+      ],
       "Performance might be affected": [
         "Die Leistung kann beeinträchtigt werden"
       ],
@@ -7221,6 +7259,9 @@
       ],
       "Re-signing contacts": [
         "Kontakte neu signieren"
+      ],
+      "Recommended actions": [
+        "Empfohlene Aktionen"
       ],
       "Reconnect your account": [
         "Erneut mit deinem Konto verbinden"
