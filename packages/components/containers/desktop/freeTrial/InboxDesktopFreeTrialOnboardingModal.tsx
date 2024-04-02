@@ -51,10 +51,10 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
                                 .t`Enjoy fast, secure, and distraction-free access to your inbox and calendar.`}</p>
                         </div>
                         <div>
-                            <Button color="norm" size="large" onClick={handleClose} fullWidth>{c('Free trial destkop')
+                            <Button color="norm" size="large" onClick={handleClose} fullWidth>{c('Free trial desktop')
                                 .t`Start free trial`}</Button>
                             <div className="text-center flex flex-column color-weak text-sm gap-0.5 mt-4">
-                                <p className="m-0">{c('Free trial desktop').t`14-day destkop app trial.`}</p>
+                                <p className="m-0">{c('Free trial desktop').t`14-day desktop app trial.`}</p>
                                 <p className="m-0">{c('Free trial desktop').t`No credit card required.`}</p>
                             </div>
                         </div>
