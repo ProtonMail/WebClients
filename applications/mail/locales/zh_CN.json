@@ -139,6 +139,9 @@
       "Cancel": [
         "取消"
       ],
+      "Cancel subscription": [
+        "取消订阅"
+      ],
       "Carbon Copy": [
         "抄送"
       ],
@@ -268,6 +271,9 @@
       "Create new message": [
         "创建新邮件"
       ],
+      "Current plan": [
+        "当前等级"
+      ],
       "Custom": [
         "其他"
       ],
@@ -276,6 +282,9 @@
       ],
       "Customize import": [
         "自定义导入"
+      ],
+      "Decrease": [
+        "减少"
       ],
       "Delete": [
         "删除"
@@ -322,6 +331,9 @@
       "Done": [
         "完成"
       ],
+      "Downgrade": [
+        "降级"
+      ],
       "Download": [
         "下载"
       ],
@@ -357,6 +369,9 @@
       ],
       "Edit sign-in details": [
         "更改登录信息"
+      ],
+      "Edit subscription": [
+        "修改"
       ],
       "Email settings": [
         "邮件设置"
@@ -411,6 +426,9 @@
       ],
       "Forward as attachment": [
         "作为附件转发"
+      ],
+      "Get in touch": [
+        "保持联系"
       ],
       "Get SimpleLogin extension": [
         "获取 SimpleLogin 扩展程序"
@@ -499,6 +517,9 @@
       "In the morning": [
         "早晨"
       ],
+      "Increase": [
+        "增加"
+      ],
       "Inline": [
         "内嵌图片"
       ],
@@ -520,6 +541,9 @@
       "Italic": [
         "斜体"
       ],
+      "Keep my Plus subscription": [
+        "保留 Plus 订阅"
+      ],
       "Label as": [
         "加标签"
       ],
@@ -535,6 +559,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "Let's talk": [
+        "让我们聊聊"
+      ],
       "Load": [
         "加载"
       ],
@@ -546,6 +573,9 @@
       ],
       "Load more": [
         "加载更多"
+      ],
+      "Loading verification": [
+        "正在载入验证"
       ],
       "Loading${ ellipsis }": [
         "正在加载${ ellipsis }"
@@ -700,14 +730,17 @@
       "Not saved": [
         "未保存"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "打开 ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
       "Open composer": [
         "打开邮件编辑区"
@@ -723,6 +756,12 @@
       ],
       "Pause": [
         "暂停"
+      ],
+      "Pay": [
+        "支付"
+      ],
+      "Pay ${ price } now": [
+        "立即支付 ${ price }"
       ],
       "Preview": [
         "预览"
@@ -787,11 +826,17 @@
       "Remove ${ attachmentName }": [
         "移除 ${ attachmentName }"
       ],
+      "Remove bonuses": [
+        "放弃特权"
+      ],
       "Remove encryption": [
         "移除加密"
       ],
       "Remove expiration time": [
         "移除邮件有效期"
+      ],
+      "Remove gift code": [
+        "移除礼品码"
       ],
       "Remove self-destruction": [
         "取消自动销毁"
@@ -838,6 +883,9 @@
       "Resume": [
         "继续"
       ],
+      "Retry": [
+        "重试"
+      ],
       "Revert to original display": [
         "恢复到原显示样式"
       ],
@@ -870,6 +918,9 @@
       ],
       "See plan features": [
         "查看套餐内容"
+      ],
+      "Select ${ planTitle }": [
+        "开通 ${ planTitle }"
       ],
       "Select all": [
         "全选"
@@ -1096,6 +1147,12 @@
       "Use ${ label } theme": [
         "使用 ${ label } 配色"
       ],
+      "Use a different card": [
+        "使用其他银行卡"
+      ],
+      "Use a different payment method": [
+        "使用其他方式支付"
+      ],
       "Use authentication code": [
         "使用验证码"
       ],
@@ -1141,6 +1198,9 @@
       "View rendered HTML": [
         "查看渲染后的HTML"
       ],
+      "What do I get?": [
+        "我可获得什么？"
+      ],
       "Why not?": [
         "为什么不呢？"
       ],
@@ -1160,6 +1220,11 @@
     "action": {
       "Search messages": [
         "搜索邮件"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "重新激活"
       ]
     },
     "Actions message": {
@@ -1193,6 +1258,17 @@
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
         "邮件有效期"
+      ]
+    },
+    "Addon": {
+      "${ price } per dedicated server": [
+        "${ price } 每个专用服务器"
+      ],
+      "${ price } per domain": [
+        "${ price } 每个域名"
+      ],
+      "${ price } per user": [
+        "${ price } 每位用户"
       ]
     },
     "Alert": {
@@ -1292,6 +1368,23 @@
         "发送方验证通过"
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "仅需${ price }即可**拥有我们的加密密码管理器**"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "添加 ${ PASS_APP_NAME }"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "移除 ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "订阅 15 个月即可获得我们的**加密密码管理器**，每月只需额外支付${ priceNoSuffix }！"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
@@ -1334,6 +1427,17 @@
         "30 天退款保证"
       ]
     },
+    "bf2023: renew": {
+      "the first month": [
+        "首月"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "特别折扣价 ${ discountedPrice } 将持续 ${ discountedMonths } ，之后将以每月 ${ nextPrice } 的价格自动续订 ${ nextMonths }，您可随时取消。"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "特别折扣价 ${ discountedPrice } 仅首月有效，之后将以每月 ${ nextPrice } 的价格自动续订，您可随时取消。"
+      ]
+    },
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
@@ -1352,6 +1456,31 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
+      ]
+    },
+    "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "将以 ${ renewPrice } 的价格自动续期 ${ renewalLength }"
+      ]
+    },
+    "Billing cycle option": {
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "Annually": [
+        "按年付费"
+      ],
+      "Monthly": [
+        "月费"
+      ],
+      "Two-year": [
+        "两年付费"
       ]
     },
     "Bug category": {
@@ -2863,6 +2992,14 @@
         "主题"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/月"
+      ],
+      "/user per month": [
+        "/用户每月"
+      ]
+    },
     "Daily recurring event, frequency": {
       "Daily": [
         "每天"
@@ -3023,6 +3160,37 @@
         "收到新邮件"
       ]
     },
+    "Downgrade account reason": {
+      "Bugs or quality issue": [
+        "软件缺陷或质量问题"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "我要改用其他 ${ BRAND_NAME } 账户"
+      ],
+      "Missing feature(s)": [
+        "缺失功能"
+      ],
+      "My reason isn't listed, please comment": [
+        "其他原因，请留言"
+      ],
+      "Streaming service unsupported": [
+        "不支持在线视频平台"
+      ],
+      "Subscription is too expensive": [
+        "费用过高"
+      ],
+      "Switching to a different provider": [
+        "打算改用其他邮箱"
+      ],
+      "Temporary need, may come back in the future": [
+        "临时需要退订，以后可能会重新开通"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "帮助我们做得更好！"
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "全部下载"
@@ -3109,6 +3277,12 @@
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
+      "Amount above the maximum.": [
+        "金额太大。"
+      ],
+      "Amount below minimum.": [
+        "金额太小。"
+      ],
       "Attachments are limited to 25 MB": [
         "附件大小不能超过 25 MB"
       ],
@@ -3123,6 +3297,9 @@
       ],
       "Cannot export this contact": [
         "无法导出此联系人"
+      ],
+      "Checkout expired, please try again": [
+        "支付超时，请重试"
       ],
       "Choose a date in the future.": [
         "选择未来的日期。"
@@ -3181,6 +3358,9 @@
       "Enter a password": [
         "输入密码"
       ],
+      "Error connecting to the Bitcoin API.": [
+        "连接比特币 API 失败。"
+      ],
       "Error in one of the conditions": [
         "条件存在错误"
       ],
@@ -3214,14 +3394,29 @@
       "Incorrect username": [
         "用户名不正确"
       ],
+      "Invalid ${ name } code": [
+        "${ name } 码不正确"
+      ],
+      "Invalid card number": [
+        "卡号无效"
+      ],
+      "Invalid code": [
+        "无效代码"
+      ],
       "Invalid email address": [
         "邮箱地址无效"
+      ],
+      "Invalid expiration date": [
+        "有效期不正确"
       ],
       "Invalid expiration time": [
         "有效期不正确"
       ],
       "Invalid name": [
         "名称无效"
+      ],
+      "Invalid postal code": [
+        "邮政编码不正确"
       ],
       "Invalid public key file": [
         "公钥文件无效"
@@ -3280,6 +3475,18 @@
       "Passwords do not match": [
         "密码不匹配"
       ],
+      "Payment process canceled": [
+        "支付已取消"
+      ],
+      "Payment process consumed": [
+        "已经支付过了"
+      ],
+      "Payment process failed": [
+        "支付失败"
+      ],
+      "Payment process not supported": [
+        "不支持此支付流程"
+      ],
       "Please activate your search again": [
         "请重新开启全文搜索"
       ],
@@ -3300,6 +3507,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "已获取的 ${ BRAND_NAME } 用户主密钥无效，无法发送邮件"
+      ],
+      "Process aborted": [
+        "操作已中止"
       ],
       "Public key could not be trusted": [
         "无法信任公钥"
@@ -3355,6 +3565,9 @@
       "status page": [
         "运行状态网页"
       ],
+      "Tab closed": [
+        "标签页已关闭"
+      ],
       "The email addresses do not match": [
         "邮箱地址不一致"
       ],
@@ -3375,6 +3588,12 @@
       ],
       "The maximum expiration is 4 weeks": [
         "有效期不能超过 4 周"
+      ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "充值金额不能低于 ${ price }"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "支付金额不能低于 ${ price }"
       ],
       "The sending key is not valid": [
         "发送密钥无效"
@@ -3423,6 +3642,9 @@
       ],
       "Unknown error.": [
         "未知错误。"
+      ],
+      "Unknown payment token status": [
+        "支付状态不明"
       ],
       "Username must begin with a letter or digit": [
         "用户名必须以字母或数字开头"
@@ -3763,6 +3985,11 @@
         "多达 6 位用户"
       ]
     },
+    "familyOffer_2023:Error": {
+      "Organization not recognized. Try again.": [
+        "无法识别机构，请重试。"
+      ]
+    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
@@ -3825,6 +4052,16 @@
         "您的当前账户无法加入 Visionary 或家庭账户。"
       ]
     },
+    "familyOffer_2023:Label": {
+      "Enter organization name to confirm": [
+        "请输入机构名称进行确认"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
+      ]
+    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "配置您的家庭账户并邀请用户 "
@@ -3834,6 +4071,11 @@
       ],
       "Set up your family account": [
         "设置您的家庭账户"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete organization?": [
+        "删除机构?"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -4515,6 +4757,15 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
+      ],
+      "${ storage } storage": [
+        "${ storage } 存储空间"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /月)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "（满足下列所有条件）"
       ],
@@ -4524,20 +4775,38 @@
       "(No Recipient)": [
         "(无收件人)"
       ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } 特权存储空间"
+      ],
+      "30-day money-back guarantee.": [
+        "30 天内可退款。"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
       ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "账户因欠费已被限制使用，请联系机构管理员。"
+      ],
+      "Account size": [
+        "账户大小"
+      ],
+      "Account successfully updated": [
+        "账户已成功更新"
       ],
       "Activation in progress": [
         "正在进行激活"
       ],
       "Add image URL": [
         "添加图片地址"
+      ],
+      "Additional options": [
+        "其他选项"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
@@ -4559,6 +4828,15 @@
       ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
+      ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey 图标"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "金额高于最高金额 (${ amount })."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "金额 (${ amount }) 过小。"
       ],
       "An unknown public key has been detected for this recipient.": [
         "检测到此收件人的一枚未知公钥。"
@@ -4599,8 +4877,14 @@
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "自动删除归入垃圾邮件或废件箱超过 30 天的邮件。"
       ],
+      "Awaiting transaction": [
+        "等待交易"
+      ],
       "Background color": [
         "背景颜色"
+      ],
+      "Balance from your previous subscription": [
+        "您之前订阅的余额"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "以下的基本导航和操作快捷键始终可以使用，不受开关控制。"
@@ -4608,8 +4892,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
+      "Billing cycle: ${ text }": [
+        "计费周期：${ text }"
+      ],
       "Body: ": [
         "正文： "
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "Calendar side panel": [
         "日历侧边栏"
@@ -4619,6 +4909,9 @@
       ],
       "Center": [
         "居中"
+      ],
+      "Change your password": [
+        "更改密码"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
@@ -4671,6 +4964,9 @@
       "Create in": [
         "创建于"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "根据当前账户等级的剩余有效时间折算返还的余额"
+      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
@@ -4679,6 +4975,9 @@
       ],
       "Custom daily": [
         "个人每日计划"
+      ],
+      "Custom email domains": [
+        "自有域名"
       ],
       "Custom monthly": [
         "个人月计划"
@@ -4695,11 +4994,17 @@
       "Daily": [
         "每天"
       ],
+      "Dedicated servers": [
+        "专用服务器"
+      ],
       "Default email application": [
         "设为默认邮件应用"
       ],
       "Disable message content search": [
         "禁用邮件全文搜索"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy 图标"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "确定要重新对联系人详细信息签名并信任下列密钥吗？"
@@ -4709,6 +5014,15 @@
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "没有跳转？请先关闭弹出窗口屏蔽插件。"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "即刻下载您所需的应用，随时随地保护隐私。"
       ],
       "Downloading paused": [
         "下载已暂停"
@@ -4749,6 +5063,12 @@
       "Email address": [
         "邮箱地址"
       ],
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        "免费为 10 个自有域名提供邮件托管服务，额外增加的域名按 ${ price } 收费。"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
+      ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "临时邮箱中的邮件将转发至真实邮箱，您真正的邮箱地址也就不会暴露。"
       ],
@@ -4784,6 +5104,9 @@
       ],
       "Expiration time": [
         "邮件有效期"
+      ],
+      "Expired": [
+        "已过期"
       ],
       "Expires in ${ formattedDate }": [
         "在 ${ formattedDate } 后过期"
@@ -4821,8 +5144,20 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "降级账户后您将不能使用 ${ MAIL_APP_NAME } 的收费功能，包括额外的存储空间和筛选规则。"
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "降级账户后您将不能再使用 ${ VPN_APP_NAME } 的收费功能。"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "倘若临时邮箱地址被泄露、被贩卖、被滥用，只需予以销毁即可免受垃圾邮件袭扰。"
@@ -4850,6 +5185,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "在下一步中，您将能够使用比特币地址提交存款。"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -4920,6 +5258,9 @@
       "Manage your labels": [
         "管理您的标签"
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode 图标"
+      ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "最多只能有 ${ EO_REPLY_NUM_ATTACHMENTS_LIMIT } 个附件。"
       ],
@@ -4958,6 +5299,9 @@
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "已归入垃圾邮件或废件箱超过 30 天的邮件将被直接删除。"
+      ],
+      "MM/YY": [
+        "月/年"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
@@ -4998,6 +5342,9 @@
       "No more results found": [
         "到底了"
       ],
+      "No payment is required at this time.": [
+        "目前不需要支付。"
+      ],
       "No results found": [
         "未找到结果"
       ],
@@ -5016,6 +5363,9 @@
       "Not a valid URL": [
         "URL 无效"
       ],
+      "Number of dedicated servers in the organization": [
+        "组织中的专用服务器数量"
+      ],
       "of": [
         "，共"
       ],
@@ -5025,11 +5375,17 @@
       "Open shortcut cheat sheet": [
         "打开快捷键列表"
       ],
+      "Organization size": [
+        "组织的规模"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
         "系统检测到此邮件来源可疑，请确认邮件真实性后再打开其中的链接或附件。"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 只能用于纯文本邮件。"
@@ -5046,6 +5402,12 @@
       "Please add at least one recipient.": [
         "请至少添加一个收件人。"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "请在验证页面完成银行卡核验。"
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "请在验证页面确认支付。"
+      ],
       "Please fill out this field.": [
         "请填写此项。"
       ],
@@ -5058,6 +5420,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "请注意，这个过程可能需要一些时间，取决于您的地址簿的大小。"
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
+      ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
@@ -5066,6 +5431,12 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "请选择将哪些邮箱地址加入「${ groupName }」。"
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "请尝试用其他方式支付，或联系您的发卡银行。"
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
       "Please wait till your changes are synced with the server.": [
         "请稍候，数据正在与服务器同步。"
@@ -5199,6 +5570,9 @@
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "如果您不愿将真实邮箱透露给其他网站，SimpleLogin 能够方便快捷地生成临时邮箱供您使用。"
       ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
@@ -5213,6 +5587,18 @@
       ],
       "Subject: ": [
         "主题："
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "订阅将每12个月自动续期。"
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "订阅将每24个月自动续期。"
+      ],
+      "Subscription auto-renews every month.": [
+        "订阅将每月自动续期。"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
@@ -5249,6 +5635,9 @@
       ],
       "The sender has requested a read receipt.": [
         "发件人请您寄回执。"
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "验证过程将在新页面进行，请先关闭弹出窗口屏蔽插件。"
       ],
       "Themes can give your inbox a new look.": [
         "各种风格配色让您的收件箱焕然一新。"
@@ -5346,6 +5735,9 @@
       "This sender's public key has not been trusted yet.": [
         "尚未信任此发件人的公钥。"
       ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "要完成付款，请发送 ${ btcAmountBold } 至以下地址。"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -5372,6 +5764,18 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
+      ],
+      "Total email addresses": [
+        "邮箱地址总数"
+      ],
+      "Total storage": [
+        "存储空间总量"
+      ],
+      "Total supported domains": [
+        "自有域名总数"
+      ],
+      "Total VPN connections": [
+        "VPN 同时在线设备总数"
       ],
       "Trackers blocked:": [
         "已屏蔽的跟踪器："
@@ -5451,11 +5855,23 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
       ],
+      "Users": [
+        "用户"
+      ],
       "Using SimpleLogin is easy": [
         "SimpleLogin 便捷易用"
       ],
+      "Verification may take a few minutes.": [
+        "验证过程可能需要数分钟。"
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
+      ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure 图标"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "很抱歉，这可能是我们的失误。确定要将此邮件标为非垃圾邮件吗？"
@@ -5466,8 +5882,23 @@
       "We could not verify the sender's trusted keys.": [
         "我们无法验证发件人的可信密钥。"
       ],
+      "We couldn’t process your payment.": [
+        "我们未能处理您的支付。"
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "我们需要向您的发卡银行核实支付方式是否有效。"
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "我们需要与您的发卡银行确认支付。"
+      ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
         "我们从下列链接中清除了跟踪信息，防止广告商等第三方追踪您的网络轨迹。"
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "我们使用 3-D Secure 来保护您的付款"
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
@@ -5507,6 +5938,9 @@
       ],
       "Yearly": [
         "每年"
+      ],
+      "You already have a free account": [
+        "您的账户已经是免费版了"
       ],
       "You are about to open another browser tab and visit:": [
         "您即将在新标签页中打开："
@@ -5556,6 +5990,18 @@
       "You have reached the maximum number of 5 replies.": [
         "您已经达到5回复的最大限制。"
       ],
+      "You may be redirected to your bank’s website.": [
+        "您可能将转至银行网站。"
+      ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自有域名。"
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "您需要在 PayPal 账户中绑定信用卡或银行账户，如果您没有绑定，请点击下方按钮。"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "即将为您转至 PayPal 确认支付。"
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
       ],
@@ -5583,6 +6029,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，因此功能已受限。欠费时间过长将导致无法收取邮件，网盘分享链接也将失效。${ payInvoiceLink }"
       ],
+      "Your account will be updated once the payment is cleared.": [
+        "支付成功后账户将立即完成升级。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
@@ -5601,6 +6050,9 @@
       "Your message will expire tomorrow.": [
         "您的邮件将在明天过期。"
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "您的下一个结算日期是${ renewalTime }。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
       ]
@@ -5613,9 +6065,24 @@
         "所选颜色"
       ]
     },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "请联系 ${ email } 了解如何使用现金支付。"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "点击查看详情"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "您可以重新激活，避免等级失效"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "仅查看"
       ]
     },
     "Key badge": {
@@ -5914,6 +6381,12 @@
       "Beta Access": [
         "测试版功能"
       ],
+      "Billing address": [
+        "账单地址"
+      ],
+      "Billing cycle": [
+        "计费周期"
+      ],
       "Blind Carbon Copy": [
         "密送"
       ],
@@ -5923,6 +6396,12 @@
       "Browser version": [
         "浏览器版本"
       ],
+      "BTC address": [
+        "比特币地址"
+      ],
+      "BTC amount": [
+        "比特币金额"
+      ],
       "Calendar": [
         "日历"
       ],
@@ -5931,6 +6410,18 @@
       ],
       "Carbon Copy": [
         "抄送"
+      ],
+      "Card details": [
+        "卡详情"
+      ],
+      "Card holder": [
+        "持卡人"
+      ],
+      "Card number": [
+        "卡号"
+      ],
+      "Cash": [
+        "现金"
       ],
       "Category": [
         "类别"
@@ -5965,6 +6456,15 @@
       "Copy": [
         "复制"
       ],
+      "Could you please let us know which provider?": [
+        "您能告诉我们是哪一款邮箱吗？"
+      ],
+      "Could you please specify which streaming service?": [
+        "您能具体说明是哪家视频平台吗？"
+      ],
+      "Could you please specify?": [
+        "您能具体说明一下吗？"
+      ],
       "Country": [
         "国家"
       ],
@@ -5982,6 +6482,9 @@
       ],
       "Density": [
         "密度"
+      ],
+      "Do you have any suggestions for our team?": [
+        "您对我们的团队有什么建议吗？"
       ],
       "Don't ask again": [
         "不再询问"
@@ -6015,6 +6518,12 @@
       ],
       "Encrypt emails": [
         "加密电子邮件"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "到期 (${ patternExpiration })"
+      ],
+      "Expires": [
+        "有效期至"
       ],
       "Export contacts": [
         "导出联系人"
@@ -6139,6 +6648,9 @@
       "New password": [
         "新密码"
       ],
+      "New plan": [
+        "新套餐"
+      ],
       "No label found": [
         "未找到标签"
       ],
@@ -6160,6 +6672,9 @@
       "Operating system version": [
         "操作系统版本"
       ],
+      "Optional": [
+        "非必填"
+      ],
       "OR": [
         "或"
       ],
@@ -6168,6 +6683,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Organization size": [
+        "组织规模"
       ],
       "Original link": [
         "原始链接"
@@ -6180,6 +6698,15 @@
       ],
       "Password hint": [
         "密码提示"
+      ],
+      "Payer": [
+        "付款人"
+      ],
+      "Payment details": [
+        "支付方式"
+      ],
+      "Payment method": [
+        "付款方式"
       ],
       "PGP scheme": [
         "PGP 方案"
@@ -6195,6 +6722,9 @@
       ],
       "Postal code": [
         "邮编"
+      ],
+      "Proration": [
+        "当前等级结余"
       ],
       "Public keys": [
         "公钥"
@@ -6217,6 +6747,12 @@
       "Search in": [
         "搜索范围"
       ],
+      "Security code (${ codeName })": [
+        "安全码 (${ codeName })"
+      ],
+      "Select your plan": [
+        "选择您的套餐"
+      ],
       "Send auto-reply": [
         "自动回复"
       ],
@@ -6232,11 +6768,17 @@
       "Starred": [
         "星标邮件"
       ],
+      "Start date": [
+        "起始日期"
+      ],
       "Statement": [
         "要求"
       ],
       "Street address": [
         "街道地址"
+      ],
+      "Subscription options": [
+        "计费方式"
       ],
       "Sync with system": [
         "跟随系统"
@@ -6283,6 +6825,9 @@
       "What happened?": [
         "发生了什么？"
       ],
+      "What is the main reason you are canceling?": [
+        "您退订的主要原因是什么？"
+      ],
       "With attachment": [
         "含有附件"
       ],
@@ -6322,6 +6867,11 @@
       ],
       "To": [
         "收件人"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "邮编"
       ]
     },
     "Label/folder modal": {
@@ -6373,6 +6923,9 @@
       ]
     },
     "Link": {
+      "Add a gift code": [
+        "使用礼品码"
+      ],
       "All mail": [
         "所有邮件"
       ],
@@ -6381,6 +6934,9 @@
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
+      ],
+      "click here": [
+        "点击此处"
       ],
       "Create a calendar linked to an active email address.": [
         "创建一个与在用邮箱地址关联的日历。"
@@ -6787,29 +7343,189 @@
         "标签名称"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "VPN 速度最快"
+      ],
+      "Keep your inbox organized with folders": [
+        "使用文件夹整理邮件，让邮箱井然有序"
+      ],
+      "Medium VPN speed": [
+        "VPN 速度一般"
+      ]
+    },
     "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
       "Upgrade now": [
         "立即升级账户"
       ]
     },
+    "new_plans: action": {
+      "Continue to review": [
+        "前去结算"
+      ],
+      "Delete account": [
+        "删除账户"
+      ],
+      "Downgrade account": [
+        "降级账户"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "免费获得 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保持计划 ${ plan }"
+      ],
+      "Keep account": [
+        "保留账户"
+      ],
+      "Switch plan": [
+        "切换计划"
+      ]
+    },
     "new_plans: feature": {
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 计划"
+      ],
+      "${ size } attachment size": [
+        "附件可达 ${ size }"
+      ],
+      "${ size } storage": [
+        "${ size } 存储空间"
+      ],
+      "${ size } storage per user": [
+        "每位用户 ${ size } 存储空间"
+      ],
+      "1 user": [
+        "1 位用户"
+      ],
+      "99.95% SLA": [
+        "保障 99.95% 正常运行时间"
+      ],
+      "Ad-blocker and malware protection": [
+        "广告拦截与恶意软件防护"
+      ],
+      "Admin console": [
+        "管理员控制台"
+      ],
+      "Advanced sharing security": [
+        "保障文件分享安全"
+      ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
+      ],
+      "Auto-reply": [
+        "自动回复"
       ],
       "Calendar sharing": [
         "共享日历"
       ],
+      "Catch-all": [
+        "通配邮箱"
+      ],
+      "Centralized billing": [
+        "集中计费"
+      ],
+      "Contact groups": [
+        "联系人群组"
+      ],
+      "Contact groups management": [
+        "联系人群组管理"
+      ],
+      "Custom domains for email aliases": [
+        "用于邮箱别名的自有域名"
+      ],
       "Custom email domains": [
         "自有域名"
+      ],
+      "Custom fields": [
+        "自定义字段"
       ],
       "Custom snooze time": [
         "自由调整免打扰时间"
       ],
+      "Data breach monitoring": [
+        "数据泄露监控"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "数据泄露监控（即将推出）"
+      ],
+      "DNS leak prevention": [
+        "防范 DNS 泄露"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "文档编辑器（文字、表格、幻灯片）"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch 导入助手"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "支持 IMAP/SMTP 客户端"
+      ],
+      "Enables HIPAA compliance": [
+        "遵循 HIPAA"
+      ],
+      "Encrypted contact details": [
+        "加密联系人详情"
+      ],
+      "Encrypted VPN servers": [
+        "加密 VPN 服务器"
+      ],
       "End-to-end encryption": [
         "端到端加密"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "通过 P2P/BitTorrent 高速下载"
+      ],
+      "Free VPN on a single device": [
+        "单台设备免费 VPN"
+      ],
+      "Fully refundable for 30 days": [
+        "30 天内无理由全额退款"
+      ],
+      "GDPR data processing agreement": [
+        "GDPR 数据处理协议"
+      ],
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
+      ],
+      "High-speed streaming": [
+        "高速看视频"
+      ],
+      "HTML signatures": [
+        "HTML 落款"
+      ],
+      "Integrated 2FA authenticator": [
+        "集成了双重身份验证"
+      ],
+      "Kill switch/always-on VPN": [
+        "安全闸确保始终开启 VPN"
+      ],
+      "Limited support": [
+        "有限的客户服务"
+      ],
+      "Multiple admin roles": [
+        "多管理员机制"
+      ],
+      "Password-protected Emails": [
+        "邮件密码保护"
+      ],
+      "Phone support (6+ users)": [
+        "电话客服（6+ 位用户）"
+      ],
+      "Priority email support": [
+        "优先享受邮件客服"
+      ],
+      "Priority support": [
+        "优先享受客服"
+      ],
+      "Router support": [
+        "支持路由器部署"
       ],
       "Schedule messages at any time": [
         "自由选择发送时间"
@@ -6817,17 +7533,80 @@
       "Search message content": [
         "搜索邮件全文"
       ],
+      "Secure Core servers": [
+        "Secure Core 服务器"
+      ],
       "Send & receive invitations": [
         "发送和接收邀请"
       ],
+      "Share files and folders via link": [
+        "通过链接分享文件或文件夹"
+      ],
+      "Sign in as user": [
+        "代替用户登录"
+      ],
+      "SMTP submission": [
+        "SMTP 投递邮件"
+      ],
+      "SMTP submission for select organizations": [
+        "特定机构可通过 SMTP 投递邮件"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "线路分离（支持 Android 与 Windows）"
+      ],
+      "Strict no-logs policy": [
+        "严格的零日志原则"
+      ],
+      "Team management": [
+        "团队管理"
+      ],
+      "Tor over VPN": [
+        "Tor + VPN"
+      ],
+      "Two-factor authentication": [
+        "双重验证"
+      ],
+      "Unlimited devices": [
+        "无设备数量限制"
+      ],
+      "Unlimited filters": [
+        "筛选规则数量不限"
+      ],
+      "Unlimited folders": [
+        "文件夹数量不限"
+      ],
       "Unlimited folders, labels, and filters": [
         "不限量文件夹、标签和筛选规则"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "无限制地 hide-my-email"
+      ],
+      "Unlimited labels": [
+        "标签数量不限"
+      ],
+      "Unlimited logins and notes": [
+        "无限制登录和备注"
+      ],
+      "Unlimited messages per day": [
+        "每日发送邮件不限量"
+      ],
+      "Unlimited volume/bandwidth": [
+        "流量与带宽不限"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "最高 ${ totalStorageSize } 存储空间"
       ],
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
       ],
       "Up to 3 TB of storage": [
         "高达 3 TB 的存储空间"
+      ],
+      "User credential management": [
+        "用户身份验证管理"
+      ],
+      "User session management": [
+        "用户登录管理"
       ]
     },
     "new_plans: feature info": {
@@ -6847,6 +7626,73 @@
         "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
       ]
     },
+    "new_plans: heading": {
+      "Support": [
+        "帮助"
+      ],
+      "Team management": [
+        "团队管理"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } 在${ last4 } 结束"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "所有 ${ BRAND_NAME } 应用及其高级功能"
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "可用余额、当前等级结余与优惠券将在下一步显示"
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "各项 ${ BRAND_NAME } 服务深度融合，为您提供全方位的隐私保护。"
+      ],
+      "For next-level password management and identity protection.": [
+        "体验更高等级的密码管理与身份保护。"
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "删除您的账户后，您将失去所有${ visionary } 套餐福利，如果您创建新账户，则无法享受这些福利。"
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "降级您的账户后，您将失去所有${ visionary } 套餐福利，如果您再次尝试订阅，则无法享受这些福利。"
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "如果您切换到其他套餐，您将失去${ visionary } 套餐的所有福利，并且无法切换回${ visionary }。"
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
+      ],
+      "Popular": [
+        "流行的"
+      ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "为企业量身定制的隐私与安全防护体系，囊括了所有 ${ BRAND_NAME } 高级服务。"
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "安全的云存储，让您轻松安全地存储、同步和共享文件。"
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "面向专业人士和企业的安全邮箱与日历。"
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "专用VPN解决方案，提供安全、无限制、高速的互联网访问。"
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "完全免费的普通账户，旨在助力所有人捍卫隐私。"
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "您正在享受当前套餐的促销价格。 删除账号后，您将失去优惠价格；创建新账号后，优惠价格将不可用。"
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "您可以详细叙述您的使用体验。（非必填）"
@@ -6857,9 +7703,202 @@
         "反馈内容"
       ]
     },
+    "new_plans: title": {
+      "Delete account?": [
+        "删除账户？"
+      ],
+      "Downgrade account?": [
+        "降级账户？"
+      ],
+      "Review subscription and pay": [
+        "确认订单并支付"
+      ],
+      "Switch plans?": [
+        "切换计划？"
+      ]
+    },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "随时随地观看 Netflix、Disney+、Prime Video 等流媒体"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "每个地址均可独立收发邮件。一位用户可以使用多个地址，但一个地址不能同时分配给多位用户。"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "实现同时接入不同网络，例如既能观看其他国家的电影又能搜索本地新闻"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "可对收到的邮件自动予以回复"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "目前不支持大规模推销或使用自动化程序发送邮件。若有此类需求建议使用其他邮箱服务。"
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "为分享的文件设置密码保护和链接有效期"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain } 用于收取时事新闻"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "具有专用 IP 地址的专用服务器可以添加到专用网关，以实现微调的访问控制。"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "通过多台服务器中转流量，增强 VPN 安全性"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "通过多台服务器中转流量，增强 VPN 安全性."
+      ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "与同事、亲友轻松分享日程安排"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "将密码泄露的用户强制下线"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 仅支持桌面客户端（如 Outlook、Apple Mail、Thunderbird）配合 ${ MAIL_APP_NAME } Bridge 使用。目前不支持云服务接入 IMAP。"
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "当您与我们的VPN服务器意外断开连接时，我们将通过阻止所有网络连接来保护您。"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "为邮件添加标签，方便查询与筛选"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "自由调整账户等级与功能选项。支持信用卡、PayPal、加密货币和电汇支付。"
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "工作日 24 小时内即可得到 ${ BRAND_NAME } 客服团队援助"
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "可查看非私密用户的邮件全文与联系人详情"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "机构管理员能够执行增删用户、分配存储空间、配置域名等操作"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "我们稳定的系统架构确保您能够在需要时顺利登录账户"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "我们的服务器硬盘均已使用多层密码全盘加密，即使硬件遭到掠夺，数据也不会泄露"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "6 名用户以上的账户可于欧洲的工作时段电话联系 ${ BRAND_NAME } 客户成功团队获取帮助"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "防止 ${ BRAND_NAME } 以及任何第三方窥探您的邮件。只有通信双方能够得知邮件内容。"
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "保护 Wi-Fi 网络中的所有设备，对自身不支持 VPN 的设备同样有效"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "提供最高级别的账户安全保护和专家支持"
+      ],
+      "Quickly set up out-of-office messages": [
+        "轻松设置出差期间如何回应客户邮件"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "方便快捷地从其他邮箱导入邮件、日程和通讯录"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "需要手机验证码方可登录，即使密码泄露也能确保账户安全。"
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "重置用户的密码与双重验证"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "实现一键连通 Tor 网络"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "设置筛选规则，自动对邮件执行回复、排序、加标签等操作"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "通过安全的网址与他人分享文件或文件夹"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "第三方设备或服务可以通过 SMTP 发送 ${ MAIL_APP_NAME } 邮件。"
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 和 ${ PASS_APP_NAME } 共用同一存储空间"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。管理员可为机构内各用户分配不同大小的存储空间。"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "所有用户的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 和 ${ PASS_APP_NAME } 服务共用同一存储空间。"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "支持 BitTorrent 等文件共享协议"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "我们不记录您的网络活动，也不记录任何可能侵害您隐私的信息"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "我们致力于帮助客户遵循 HIPAA/HITECH 法规，为需保护的健康信息（PHI）提供安全保障。所有商业版 ${ BRAND_NAME } 客户均可与我们签署商业伙伴协议（BAA）。"
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "连接 VPN 后，DNS 查询也将通过我们的加密 VPN 网络进行，从而提升安全性"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "向其他 ${ MAIL_APP_NAME } 用户发送的邮件已经自动加密，向非 ${ MAIL_APP_NAME_TWO } 用户发送邮件则需要在发送前设置密码。"
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "您可以指派多位管理员，所有管理员均可创建及管理用户，但只有主管理员能够执行计费相关操作。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "全天候支持"
+      ],
+      "Access advanced VPN features": [
+        "解锁高级 VPN 功能"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 个邮箱地址和 3 个自有域名供您选择"
+      ],
+      "Auto-connect": [
+        "自动连接"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "每位用户存储空间可升至 ${ bundleStorage }"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "总存储空间升至 ${ bundleStorage }"
+      ],
+      "Browser extension": [
+        "浏览器扩展"
+      ],
+      "Central control panel": [
+        "中央控制面板"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "10 个自有域名更显游刃有余"
+      ],
+      "Multi-platform support": [
+        "多平台支持"
       ]
     },
     "Notification": {
@@ -7027,6 +8066,25 @@
         "你"
       ]
     },
+    "Payment method option": {
+      "Credit/debit card": [
+        "信用卡/借记卡"
+      ],
+      "New credit/debit card": [
+        "添加信用卡/借记卡"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "卡号无效"
+      ],
+      "Invalid expiration date": [
+        "有效期不正确"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
@@ -7061,6 +8119,9 @@
       "End date": [
         "结束日期"
       ],
+      "Feedback": [
+        "意见反馈"
+      ],
       "Filter folders": [
         "搜索文件夹"
       ],
@@ -7072,6 +8133,9 @@
       ],
       "First name": [
         "名"
+      ],
+      "Gift code": [
+        "礼品码"
       ],
       "Group name": [
         "群组名称"
@@ -7127,6 +8191,9 @@
       "Select": [
         "选择"
       ],
+      "Select a reason": [
+        "请选择原因"
+      ],
       "Start date": [
         "起始日期"
       ],
@@ -7149,6 +8216,19 @@
     "Placeholder for contact group name": {
       "Name": [
         "名称"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "联系人"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "选择包含在套餐中的用户数。 每位额外用户需支付 ${ price }。"
+      ]
+    },
+    "Price": {
+      "Free": [
+        "免费版"
       ]
     },
     "Progress bar description": {
@@ -7505,6 +8585,11 @@
         "退出而不重置密码？"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "由 ${ ownerName } 共享"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP 加密邮件，发件人验证失败：${ verificationErrorsMessage }"
@@ -7739,6 +8824,11 @@
         "现已支持定时发送邮件"
       ]
     },
+    "State": {
+      "Downgrading your account, please wait": [
+        "正在降级账户，请稍候"
+      ]
+    },
     "Status": {
       "This message is from a mailing list.": [
         "此邮件来自邮件列表。"
@@ -7775,12 +8865,68 @@
         "您当前的存储空间："
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "保持计划 ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最高 ${ totalStorageSize } 网盘容量"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最高 ${ totalStorageSize } 邮箱容量"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } 存储空间"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "账户降级后您将失去下列权益。确定要继续吗？"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "用于所有 ${ BRAND_NAME } 服务"
+      ],
       "Your storage is full": [
         "你的存储空间满了"
+      ]
+    },
+    "Subscription": {
+      "Billed every 2 years": [
+        "每两年付费"
+      ],
+      "Billed monthly": [
+        "每月付费"
+      ],
+      "Billed yearly": [
+        "每年付费"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "了解"
+      ],
+      "Subscriptions": [
+        "订阅"
+      ]
+    },
+    "Subscription price": {
+      "For": [
+        "支付"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "节省"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "已激活"
+      ],
+      "Expiring": [
+        "即将到期"
       ]
     },
     "Success": {
@@ -7837,6 +8983,9 @@
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "来自 ${ sendersList } 的对话将移至 ${ folder }"
+      ],
+      "Copied to clipboard": [
+        "已复制到剪贴板"
       ],
       "Draft deleted": [
         "草稿已删除"
@@ -7933,6 +9082,12 @@
       ],
       "Verification successful": [
         "验证成功"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "您已成功取消订阅。"
+      ],
+      "You have successfully unsubscribed": [
+        "您已退订成功"
       ]
     },
     "Success notification": {
@@ -7948,6 +9103,14 @@
     "Suffix": {
       "/month": [
         "/月"
+      ],
+      "/user per month": [
+        "/用户每月"
+      ]
+    },
+    "Suffix for price": {
+      "per month": [
+        "每月"
       ]
     },
     "summer2023: Tooltip": {
@@ -7962,6 +9125,17 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "面向企业"
+      ],
+      "For families": [
+        "面向家庭"
+      ],
+      "For individuals": [
+        "面向个人"
       ]
     },
     "Table header": {
@@ -8061,6 +9235,12 @@
       "All settings": [
         "所有设置"
       ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Apply gift code": [
+        "使用礼品码"
+      ],
       "Archive": [
         "存档"
       ],
@@ -8076,6 +9256,9 @@
       "BCC": [
         "密送"
       ],
+      "Billing cycle": [
+        "计费周期"
+      ],
       "Birthday": [
         "生日"
       ],
@@ -8085,11 +9268,20 @@
       "Block sender": [
         "屏蔽发件人"
       ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
+      ],
+      "Cancel subscription?": [
+        "取消订阅?"
+      ],
       "Cannot add more addresses": [
         "无法添加更多地址"
       ],
       "Carbon Copy": [
         "副本"
+      ],
+      "Card verification": [
+        "银行卡验证"
       ],
       "CC": [
         "抄送"
@@ -8105,6 +9297,12 @@
       ],
       "Clearing data": [
         "数据清除中"
+      ],
+      "Confirm downgrade": [
+        "确认降级"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "确定放弃 ${ BRAND_NAME } 特权"
       ],
       "Confirm recipient address?": [
         "确认收件人地址？"
@@ -8142,6 +9340,9 @@
       "Create new group": [
         "创建群组"
       ],
+      "Credits": [
+        "余额"
+      ],
       "Currency": [
         "货币"
       ],
@@ -8153,6 +9354,9 @@
       ],
       "Customize your mail import": [
         "自定义您的邮件导入"
+      ],
+      "Customize your plan": [
+        "定制账户等级"
       ],
       "Data recovery": [
         "数据恢复"
@@ -8183,6 +9387,12 @@
       ],
       "Don't give spam a chance": [
         "不要给垃圾邮件留下可乘之机"
+      ],
+      "Downgrade account": [
+        "降级账户"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "降级至 ${ downgradedPlanName }?"
       ],
       "Edit contact": [
         "编辑联系人"
@@ -8247,6 +9457,9 @@
       "Get advanced protection": [
         "进一步提升防护等级"
       ],
+      "Gift": [
+        "礼品码"
+      ],
       "Groups": [
         "群组"
       ],
@@ -8291,6 +9504,9 @@
       ],
       "Load remote content": [
         "加载外链内容"
+      ],
+      "Location": [
+        "位置"
       ],
       "Mark as read": [
         "标为已读"
@@ -8349,6 +9565,9 @@
       "Moving a scheduled message": [
         "正在移动定时发送邮件"
       ],
+      "Network error": [
+        "网络错误"
+      ],
       "New message": [
         "撰写邮件"
       ],
@@ -8379,6 +9598,18 @@
       "Other names": [
         "其他名称"
       ],
+      "Password": [
+        "密码"
+      ],
+      "Payment failed": [
+        "支付失败"
+      ],
+      "Payment verification": [
+        "支付验证"
+      ],
+      "PayPal verification failed": [
+        "PayPal 验证失败"
+      ],
       "Phone numbers": [
         "电话号码"
       ],
@@ -8390,6 +9621,9 @@
       ],
       "Previous message": [
         "上一封邮件"
+      ],
+      "Processing...": [
+        "正在处理..."
       ],
       "Protect yourself from trackers": [
         "防范跟踪脚本"
@@ -8408,6 +9642,9 @@
       ],
       "Recipients": [
         "收件人"
+      ],
+      "Recommended": [
+        "推荐"
       ],
       "Reconnect your account": [
         "重新连接账户"
@@ -8435,6 +9672,9 @@
       ],
       "Security center": [
         "安全中心"
+      ],
+      "Select a plan": [
+        "选择账户等级"
       ],
       "Select a theme": [
         "选择配色"
@@ -8514,6 +9754,9 @@
       "Subject missing": [
         "未填写主题"
       ],
+      "Summary": [
+        "概览"
+      ],
       "To": [
         "收件人"
       ],
@@ -8526,6 +9769,9 @@
       "Trust public key?": [
         "信任公钥?"
       ],
+      "Type": [
+        "类型"
+      ],
       "Unlock contacts groups": [
         "解锁群组功能"
       ],
@@ -8537,6 +9783,18 @@
       ],
       "Verification error": [
         "签名校验失败"
+      ],
+      "Verification failed": [
+        "验证失败"
+      ],
+      "Verifying your card...": [
+        "正在验证您的银行卡..."
+      ],
+      "Verifying your payment...": [
+        "正在确认支付..."
+      ],
+      "Want to snooze any time?": [
+        "想在其他时间免打扰？"
       ],
       "Warning": [
         "警告"
@@ -8561,6 +9819,17 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
+      ]
+    },
+    "Title subscription": {
+      "End date": [
+        "结束日期"
+      ],
+      "Plan": [
+        "等级"
+      ],
+      "Status": [
+        "状态"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8608,6 +9877,9 @@
       "Hide side panel": [
         "隐藏侧边栏"
       ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
+      ],
       "Load image": [
         "加载图片"
       ],
@@ -8628,6 +9900,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "新的计费周期将从 ${ formattedTime } 开始"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
         "所选模式将在系统设置为“暗色模式”时生效。"
@@ -8705,6 +9980,9 @@
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "仅允许使用字母数字字符、点、连字符和下划线"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
