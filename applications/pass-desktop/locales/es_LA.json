@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "No se pudieron determinar los destinatarios del recurso compartido"
       ],
+      "Could not validate addresses at the moment.": [
+        "No se pudieron validar las direcciones por el momento."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Faltan los encabezados esperados del archivo CSV: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Error al eliminar los elementos seleccionados"
+      ],
+      "Failed to edit organization settings": [
+        "Error al editar los ajustes de la organización"
       ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Por defecto, los miembros del equipo solo pueden exportar bóvedas donde sean propietarios. Si esta opción está activada, no podrán exportar ningún dato."
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
       ],
@@ -1013,6 +1022,9 @@
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
       ],
+      "Organization settings successfully updated": [
+        "Los ajustes de la organización fueron actualizados."
+      ],
       "Owner": [
         "Propietario"
       ],
@@ -1131,6 +1143,9 @@
       "Syncing your vaults…": [
         "Sincronizando sus bóvedas…"
       ],
+      "Team members can only share vaults within organization": [
+        "Los miembros del equipo solo pueden compartir bóvedas dentro de la organización"
+      ],
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
       ],
@@ -1153,6 +1168,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso a su archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
       ],
+      "This setting is disabled on the organization level": [
+        "Este ajuste está desactivado para la organización."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta bóveda ya no se comparte con nadie. Invite a personas para compartirla con otros."
       ],
@@ -1173,6 +1191,9 @@
       ],
       "Unpinning item...": [
         "Desfijando elemento..."
+      ],
+      "Updating organization settings": [
+        "Actualizando los ajustes de la organización"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Mejore su plan ahora para desbloquear funciones premium"
@@ -1350,6 +1371,12 @@
       "Created": [
         "Creado"
       ],
+      "Disable data export for team members": [
+        "Desactivar exportación de datos para miembros del equipo"
+      ],
+      "Disable sharing outside the organization": [
+        "Desactivar intercambio fuera de la organización"
+      ],
       "Display": [
         "Mostrar"
       ],
@@ -1370,6 +1397,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Exporting policy": [
+        "Política de exportación"
       ],
       "Field name": [
         "Nombre del campo"
@@ -1506,6 +1536,9 @@
       "Oldest to newest": [
         "De más antiguo a más reciente"
       ],
+      "Organization": [
+        "Organización"
+      ],
       "Passkey": [
         "Clave de acceso"
       ],
@@ -1565,6 +1598,9 @@
       ],
       "Set PIN code": [
         "Establecer código PIN"
+      ],
+      "Sharing policy": [
+        "Política de intercambio"
       ],
       "Show website favicons": [
         "Mostrar faviconos de sitios web"
@@ -2017,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "Direcciones de correo inválidas."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "No se permiten invitar direcciones de correo fuera de la organización."
       ],
       "item was imported without custom fields": [
         "el elemento fue importado sin campos personalizados"

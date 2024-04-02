@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Impossibile recuperare i membri della condivisione"
       ],
+      "Could not validate addresses at the moment.": [
+        "Impossibile convalidare gli indirizzi al momento."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Il file CSV non contiene le seguenti intestazioni previste: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Impossibile eliminare gli elementi selezionati"
+      ],
+      "Failed to edit organization settings": [
+        "Impossibile modificare le impostazioni dell'organizzazione"
       ],
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Autenticazione 2FA integrata"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Per impostazione predefinita, i membri del team possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non saranno in grado di esportare alcun dato"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
       ],
@@ -1013,6 +1022,9 @@
       "Offline support successfully disabled": [
         "Accesso offline disabilitato"
       ],
+      "Organization settings successfully updated": [
+        "Impostazioni dell'organizzazione aggiornate correttamente"
+      ],
       "Owner": [
         "Proprietario"
       ],
@@ -1131,6 +1143,9 @@
       "Syncing your vaults…": [
         "Sincronizzazione casseforti…"
       ],
+      "Team members can only share vaults within organization": [
+        "I membri del team possono condividere le casseforti solo all'interno dell'organizzazione"
+      ],
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
       ],
@@ -1153,6 +1168,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
+      "This setting is disabled on the organization level": [
+        "Questa impostazione è disabilitata a livello di organizzazione"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Questa cassaforte non è attualmente condivisa con nessuno. Per condividerla con qualcuno, invita delle persone."
       ],
@@ -1173,6 +1191,9 @@
       ],
       "Unpinning item...": [
         "Annullamento del fissaggio dell'elemento in corso"
+      ],
+      "Updating organization settings": [
+        "Aggiornamento delle impostazioni dell'organizzazione"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Effettua ora l'upgrade per sbloccare le funzionalità premium"
@@ -1350,6 +1371,12 @@
       "Created": [
         "Creato"
       ],
+      "Disable data export for team members": [
+        "Disabilita l'esportazione dei dati per i membri del team"
+      ],
+      "Disable sharing outside the organization": [
+        "Disabilita la condivisione all'esterno dell'organizzazione"
+      ],
       "Display": [
         "Mostra"
       ],
@@ -1370,6 +1397,9 @@
       ],
       "Export": [
         "Esporta"
+      ],
+      "Exporting policy": [
+        "Regole di esportazione"
       ],
       "Field name": [
         "Nome campo"
@@ -1506,6 +1536,9 @@
       "Oldest to newest": [
         "Dal meno recente al più recente"
       ],
+      "Organization": [
+        "Organizzazione"
+      ],
       "Passkey": [
         "Passkey"
       ],
@@ -1565,6 +1598,9 @@
       ],
       "Set PIN code": [
         "Imposta codice PIN"
+      ],
+      "Sharing policy": [
+        "Regole di condivisione"
       ],
       "Show website favicons": [
         "Mostra le icone dei siti web"
@@ -2017,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "Indirizzi email non validi."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Non è consentito invitare indirizzi email esterni all'organizzazione."
       ],
       "item was imported without custom fields": [
         "Elemento importato senza campi personalizzati"
