@@ -17,8 +17,8 @@
       "Add current URL": [
         "Дадаць бягучы URL-адрас"
       ],
-      "Add domain to pause list": [
-        "Дадаць дамен у спіс прыпыненых"
+      "Add domain": [
+        "Дадаць дамен"
       ],
       "Add more": [
         "Дадаць яшчэ"
@@ -567,6 +567,9 @@
       "Could not resolve share members": [
         "Немагчыма вырашыць абагуленне ўдзельнікаў"
       ],
+      "Could not validate addresses at the moment.": [
+        "Немагчыма праверыць адрасы ў дадзены момант."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
       ],
@@ -608,6 +611,9 @@
       ],
       "Failed to delete selected items": [
         "Не ўдалося выдаліць выбраныя элементы"
+      ],
+      "Failed to edit organization settings": [
+        "Не ўдалося адрэдагаваць налады арганізацыі"
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
@@ -884,11 +890,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } не будзе прапаноўваць вам захоўваць або абнаўляць уліковыя даныя."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } прапануе прайсці аўтэнтыфікацыю з дапамогай захаваных ключоў доступу"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } будзе прапаноўваць стварыць псеўданім электроннай пошты на формах рэгістрацыі."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } не будзе прапаноўваць ствараць надзейныя паролі на формах рэгістрацыі."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } прапануе захаваць ключы доступу."
       ],
       "${ trialDaysLeft } day left": [
         "Застаўся ${ trialDaysLeft } дзень",
@@ -955,6 +967,9 @@
       ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Прадвызначана ўдзельнікі каманды могуць экспартаваць толькі тыя сховішчы, якімі яны валодаюць. Калі гэты параметр уключаны, то ў іх не будзе магчымасці экспартаваць даныя"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
@@ -1149,7 +1164,7 @@
         "я"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны па той самай тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным спосабам і даступны толькі вам."
+        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
@@ -1183,6 +1198,9 @@
       ],
       "Open the Extensions menu": [
         "Адкрыць меню з пашырэннямі"
+      ],
+      "Organization settings successfully updated": [
+        "Налады арганізацыі паспяхова абноўлены"
       ],
       "Owner": [
         "Уладальнік"
@@ -1319,6 +1337,9 @@
       "Syncing your vaults…": [
         "Сінхранізацыя вашых сховішчаў..."
       ],
+      "Team members can only share vaults within organization": [
+        "Удзельнікі каманды могуць абагуляць сховішчы толькі ў межах арганізацыі"
+      ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
@@ -1345,6 +1366,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
+      ],
+      "This setting is disabled on the organization level": [
+        "Налада адключана на ўзроўні арганізацыі"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
@@ -1378,6 +1402,9 @@
       ],
       "Update login": [
         "Абнавіць запіс уваходу"
+      ],
+      "Updating organization settings": [
+        "Абнаўленне налад арганізацыі"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
@@ -1534,6 +1561,9 @@
       "Application logs": [
         "Журналы праграмы"
       ],
+      "Authenticate with passkeys": [
+        "Аўтэнтыфікацыі з дапамогай ключоў доступу"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Аўтаблакіроўка ${ PASS_APP_NAME }"
       ],
@@ -1594,6 +1624,12 @@
       "Created": [
         "Створана"
       ],
+      "Disable data export for team members": [
+        "Адключыць экспартаванне даных для ўдзельнікаў каманды"
+      ],
+      "Disable sharing outside the organization": [
+        "Адключыць абагуленне па-за межамі арганізацыі"
+      ],
       "Display": [
         "Адлюстроўваць"
       ],
@@ -1620,6 +1656,9 @@
       ],
       "Export": [
         "Экспартаванне"
+      ],
+      "Exporting policy": [
+        "Экспартаванне палітыкі"
       ],
       "Field name": [
         "Назва поля"
@@ -1753,8 +1792,14 @@
       "Oldest to newest": [
         "Ад самых старых да самых новых"
       ],
+      "Organization": [
+        "Арганізацыя"
+      ],
       "Passkey": [
         "Ключ доступу"
+      ],
+      "Passkeys": [
+        "Ключы доступу"
       ],
       "Passphrase": [
         "Парольная фраза"
@@ -1798,6 +1843,9 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Save passkeys": [
+        "Захаваць ключы доступу"
+      ],
       "Security": [
         "Бяспека"
       ],
@@ -1824,6 +1872,9 @@
       ],
       "Settings": [
         "Налады"
+      ],
+      "Sharing policy": [
+        "Палітыка абагуленне"
       ],
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
@@ -2315,6 +2366,9 @@
       ],
       "Invalid email addresses.": [
         "Памылковыя адрасы электроннай пошты."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Запрашэнне адрасоў электроннай пошты па-за межамі арганізацыі забаронена."
       ],
       "item was imported without custom fields": [
         "элемент быў імпартаваны без карыстальніцкіх палёў"

@@ -17,8 +17,8 @@
       "Add current URL": [
         "Lägg till nuvarande URL"
       ],
-      "Add domain to pause list": [
-        "Lägg till domän i pauslista"
+      "Add domain": [
+        "Lägg till domän"
       ],
       "Add more": [
         "Lägg till fler"
@@ -562,6 +562,9 @@
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
       ],
+      "Could not validate addresses at the moment.": [
+        "Kunde inte validera adresser just nu."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil saknar förväntade rubriker: ${ missingHeaders }"
       ],
@@ -601,6 +604,9 @@
       ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
+      ],
+      "Failed to edit organization settings": [
+        "Misslyckades att redigera organisationsinställningar"
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
@@ -859,11 +865,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } kommer uppmana dig att spara eller uppdatera inloggningsuppgifter."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } kommer föreslå autentisering med sparade passkeys"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } kommer föreslå att skapa ett e-postalias på registreringsformulär."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } kommer föreslå att skapa starka lösenord på registreringsformulär."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } kommer föreslå sparade passkeys."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
@@ -928,6 +940,9 @@
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan teammedlemmar endast exportera valv där de är ägare. Om detta alternativ är påslaget kommer de inte att kunna exportera någon data"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
@@ -1148,6 +1163,9 @@
       "Open the Extensions menu": [
         "Öppna tilläggsmenyn"
       ],
+      "Organization settings successfully updated": [
+        "Organisationsinställningarna har uppdaterats"
+      ],
       "Owner": [
         "Ägare"
       ],
@@ -1281,6 +1299,9 @@
       "Syncing your vaults…": [
         "Synkroniserar dina valv…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammedlemmar kan endast dela valv inom organisationen"
+      ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
       ],
@@ -1305,6 +1326,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
+      ],
+      "This setting is disabled on the organization level": [
+        "Denna inställning är inaktiverad på organisationsnivå"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
@@ -1338,6 +1362,9 @@
       ],
       "Update login": [
         "Uppdatera inloggning"
+      ],
+      "Updating organization settings": [
+        "Uppdaterar organisationsinställningar"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Uppgradera ${ PASS_APP_NAME }"
@@ -1488,6 +1515,9 @@
       "Application logs": [
         "Applikationsloggar"
       ],
+      "Authenticate with passkeys": [
+        "Autentisera med passkeys"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Lås ${ PASS_APP_NAME } automatiskt"
       ],
@@ -1548,6 +1578,12 @@
       "Created": [
         "Skapad"
       ],
+      "Disable data export for team members": [
+        "Inaktivera dataexport för teammedlemmar"
+      ],
+      "Disable sharing outside the organization": [
+        "Inaktivera delning utanför organisationen"
+      ],
       "Display": [
         "Visa"
       ],
@@ -1574,6 +1610,9 @@
       ],
       "Export": [
         "Exportera"
+      ],
+      "Exporting policy": [
+        "Exportpolicy"
       ],
       "Field name": [
         "Fältnamn"
@@ -1710,8 +1749,14 @@
       "Oldest to newest": [
         "Äldsta till nyaste"
       ],
+      "Organization": [
+        "Organisation"
+      ],
       "Passkey": [
         "Passkey"
+      ],
+      "Passkeys": [
+        "Passkeys"
       ],
       "Passphrase": [
         "Lösenfras"
@@ -1755,6 +1800,9 @@
       "Reveal password": [
         "Visa lösenord"
       ],
+      "Save passkeys": [
+        "Spara passkeys"
+      ],
       "Security": [
         "Säkerhet"
       ],
@@ -1781,6 +1829,9 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Sharing policy": [
+        "Delningspolicy"
       ],
       "Show website favicons": [
         "Visa webbplatsens favicon"
