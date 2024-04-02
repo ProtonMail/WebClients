@@ -116,8 +116,9 @@ export const withPaymentContext =
             return (
                 <PaymentSwitcherContext.Provider
                     value={{
-                        enableChargebee,
-                        setEnableChargebee: () => {},
+                        enableChargebeeRef: {
+                            current: enableChargebee,
+                        },
                         calledKillSwitch: 'not-called',
                         setCalledKillSwitch: () => {},
                     }}

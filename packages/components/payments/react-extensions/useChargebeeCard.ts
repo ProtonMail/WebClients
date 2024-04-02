@@ -12,6 +12,7 @@ import {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
     ChargebeeKillSwitch,
+    ForceEnableChargebee,
     PaymentVerificatorV5,
 } from '../core';
 import { PaymentProcessorHook, PaymentProcessorType } from './interface';
@@ -31,6 +32,7 @@ export interface Dependencies {
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
     chargebeeKillSwitch: ChargebeeKillSwitch;
+    forceEnableChargebee: ForceEnableChargebee;
 }
 
 type Overrides = {
@@ -51,7 +53,7 @@ export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overri
 
 export const useChargebeeCard = (
     { amountAndCurrency, onChargeable, verifyOnly, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
-    { api, verifyPayment, handles, events, chargebeeKillSwitch }: Dependencies
+    { api, verifyPayment, handles, events, chargebeeKillSwitch, forceEnableChargebee }: Dependencies
 ): ChargebeeCardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
@@ -73,6 +75,7 @@ export const useChargebeeCard = (
                 events,
                 !!verifyOnly,
                 chargebeeKillSwitch,
+                forceEnableChargebee,
                 onChargeable
             )
     );
