@@ -475,6 +475,9 @@
       "Could not resolve share members": [
         "회원에게 공유를 해결할 수 없음"
       ],
+      "Could not validate addresses at the moment.": [
+        "현재 주소를 확인할 수 없습니다."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV 파일이 예상 헤더를 누락합니다: ${ missingHeaders }"
       ],
@@ -510,6 +513,9 @@
       ],
       "Failed to delete selected items": [
         "선택한 항목을 지우기 실패했습니다."
+      ],
+      "Failed to edit organization settings": [
+        "조직 설정을 수정할 수 없음"
       ],
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
@@ -766,6 +772,9 @@
       "Built in 2FA authenticator": [
         "내장형 2FA 인증기"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "기본적으로 팀 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
       ],
@@ -955,6 +964,9 @@
       "Offline support successfully disabled": [
         "오프라인 지원이 비활성화되었습니다"
       ],
+      "Organization settings successfully updated": [
+        "조직 설정이 성공적으로 업데이트됨"
+      ],
       "Owner": [
         "소유자"
       ],
@@ -1069,6 +1081,9 @@
       "Syncing your vaults…": [
         "금고를 동기화 하는 중..."
       ],
+      "Team members can only share vaults within organization": [
+        "팀 구성원은 조직 내에서만 금고를 공유할 수 있습니다"
+      ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
       ],
@@ -1086,6 +1101,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
+      ],
+      "This setting is disabled on the organization level": [
+        "이 설정은 조직에서 비활성화되었습니다"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "이 금고는 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
@@ -1107,6 +1125,9 @@
       ],
       "Unpinning item...": [
         "항목 고정 해제 중..."
+      ],
+      "Updating organization settings": [
+        "조직 설정 업데이트 중"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "프리미엄 기능 잠금해제 하려면 업그레이드"
@@ -1258,7 +1279,7 @@
         "신용 카드 생성"
       ],
       "Create a hide-my-email alias": [
-        "hide-my-email 생성"
+        "Hide-my-email 별칭 생성"
       ],
       "Create a login": [
         "로그인 생성"
@@ -1271,6 +1292,12 @@
       ],
       "Created": [
         "제작"
+      ],
+      "Disable data export for team members": [
+        "팀 멤버들의 데이터 내보내기 비활성화"
+      ],
+      "Disable sharing outside the organization": [
+        "조직 외부로 공유 비활성화"
       ],
       "Display": [
         "표시"
@@ -1292,6 +1319,9 @@
       ],
       "Export": [
         "내보내기"
+      ],
+      "Exporting policy": [
+        "내보내기 정책"
       ],
       "Field name": [
         "필드 이름"
@@ -1428,6 +1458,9 @@
       "Oldest to newest": [
         "오래된 항목 순"
       ],
+      "Organization": [
+        "조직"
+      ],
       "Passkey": [
         "패스키"
       ],
@@ -1487,6 +1520,9 @@
       ],
       "Set PIN code": [
         "PIN 코드 설정"
+      ],
+      "Sharing policy": [
+        "공유 정책"
       ],
       "Show website favicons": [
         "웹사이트 아이콘 표시"
@@ -1929,6 +1965,9 @@
       ],
       "Invalid email addresses.": [
         "유효하지 않은 이메일 주소들입니다."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "조직 외부의 이메일 주소로는 초대할 수 없습니다."
       ],
       "item was imported without custom fields": [
         "항목이 커스텀 입력란 없이 불러와졌습니다."

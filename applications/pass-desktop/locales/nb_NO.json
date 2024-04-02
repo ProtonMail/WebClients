@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Kunne ikke nøste opp medlemmene av delt ressurs."
       ],
+      "Could not validate addresses at the moment.": [
+        "Kunne ikke validere adresser for øyeblikket."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
+      ],
+      "Failed to edit organization settings": [
+        "Kan ikke redigere organisasjonsinnstillinger"
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan teammedlemmer bare eksportere hvelv der de er eierne. Hvis dette alternativet er aktivert, kan de ikke eksportere data."
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
       ],
@@ -1013,6 +1022,9 @@
       "Offline support successfully disabled": [
         "Støtte for frakoblet tilgang deaktivert"
       ],
+      "Organization settings successfully updated": [
+        "Organisasjonens innstillinger ble oppdatert"
+      ],
       "Owner": [
         "Eier"
       ],
@@ -1131,6 +1143,9 @@
       "Syncing your vaults…": [
         "Synkroniserer dine hvelv…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammedlemmer kan bare dele hvelv i organisasjonen"
+      ],
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
       ],
@@ -1153,6 +1168,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, vennligst slett den etter at du er ferdig med å bruke den."
       ],
+      "This setting is disabled on the organization level": [
+        "Denne innstillingen er deaktivert på organisasjonsnivå"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
       ],
@@ -1173,6 +1191,9 @@
       ],
       "Unpinning item...": [
         "Løser element..."
+      ],
+      "Updating organization settings": [
+        "Oppdaterer organisasjonsinnstillinger"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Oppgrader nå for å låse opp premiumfunksjoner"
@@ -1350,6 +1371,12 @@
       "Created": [
         "Opprettet"
       ],
+      "Disable data export for team members": [
+        "Deaktiver dataeksport for teammedlemmer"
+      ],
+      "Disable sharing outside the organization": [
+        "Deaktiver deling utenfor organisasjonen"
+      ],
       "Display": [
         "Vis"
       ],
@@ -1370,6 +1397,9 @@
       ],
       "Export": [
         "Eksporter"
+      ],
+      "Exporting policy": [
+        "Retningslinjer for eksport"
       ],
       "Field name": [
         "Feltnavn"
@@ -1506,6 +1536,9 @@
       "Oldest to newest": [
         "Eldste til nyeste"
       ],
+      "Organization": [
+        "Organisasjon"
+      ],
       "Passkey": [
         "Tilgangsnøkkel"
       ],
@@ -1565,6 +1598,9 @@
       ],
       "Set PIN code": [
         "Angi PIN-kode"
+      ],
+      "Sharing policy": [
+        "Retningslinjer for deling"
       ],
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
@@ -2017,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
       ],
       "item was imported without custom fields": [
         "elementet ble importert uten egendefinerte felt"

@@ -524,7 +524,7 @@
         "アイテムのインポートに失敗しました"
       ],
       "Invalid password manager": [
-        "無効なパスワードマネージャー"
+        "無効なパスワードマネージャーです"
       ],
       "Invitation could not be accepted": [
         "招待は承認できません"
@@ -704,7 +704,7 @@
         "すべてのアイテムを「${ fromVaultName }」から「${ toVaultName }」に移動してもよろしいですか?"
       ],
       "Auto-lock successfully disabled": [
-        "オートロックは正常に無効化された"
+        "自動ロックを無効にしました"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "既存のパスワードを${ BRAND_NAME }に移動する"
@@ -899,7 +899,7 @@
         "この設定を編集するには、PINコードを確認してください。"
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "PINコードを確認して、オートロック設定の登録を完了してください。"
+        "PINコードを確認して、自動ロック設定の登録を完了してください。"
       ],
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
@@ -1028,7 +1028,7 @@
         "ローカルストレージとのデータ同期で問題が生じています。${ PASS_SHORT_APP_NAME } の動作に必要なディスクの空き容量があることを確認してください。"
       ],
       "You are about to create:": [
-        "あなたはこれから作成しようとしています:"
+        "作成されるメールアドレス:"
       ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
@@ -1123,7 +1123,7 @@
         "大文字のアルファベット (A ～ Z)"
       ],
       "Capitalise": [
-        "大文字にする"
+        "先頭を大文字にする"
       ],
       "Card": [
         "カード"
@@ -1219,7 +1219,7 @@
         "招待"
       ],
       "Item ID": [
-        "項目 ID"
+        "アイテム ID"
       ],
       "Key": [
         "鍵"
@@ -1327,7 +1327,7 @@
         "PIN"
       ],
       "Prefix": [
-        "Prefix"
+        "プレフィックス"
       ],
       "Rate us": [
         "評価"
@@ -1447,7 +1447,7 @@
         "ウェブサイト"
       ],
       "You are about to create": [
-        "作成しようとしています"
+        "作成されるメールアドレス"
       ]
     },
     "lobby: Info": {
@@ -1551,7 +1551,7 @@
         "すべての保管庫の ${ pluralItemType } を検索"
       ],
       "Search in ${ vaultName }": [
-        "${ vaultName } で検索"
+        "${ vaultName } 内を検索"
       ],
       "Search in all vaults": [
         "すべての保管庫を検索"
@@ -1732,10 +1732,10 @@
         "URL を空にすることはできません"
       ],
       "Url is invalid": [
-        "Url が無効です"
+        "URL が無効です"
       ],
       "URL is invalid": [
-        "URLが無効です"
+        "URL が無効です"
       ]
     },
     "Warning": {
@@ -1776,7 +1776,7 @@
         "有効期限が MM/YY の形式ではありません"
       ],
       "Invalid alias prefix": [
-        "無効なエイリアスプレフィックス"
+        "無効なエイリアスプレフィックスです"
       ],
       "Invalid email addresses.": [
         "無効なメールアドレスです"
@@ -1842,7 +1842,7 @@
         "保管庫「${ vaultName }」とそのすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません。"
       ],
       "Vault name is required": [
-        "保管庫名は必須"
+        "保管庫名は必須です"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "サブスクリプションで許可されている以上の保管庫を作成することはできません。"
