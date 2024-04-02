@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Offline-tilstand er i øjeblikket ikke tilgængelig for to-adgangskode-tilstand."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Offline-tilstand er i øjeblikket ikke tilgængelig for dit abonnement og er ikke kompatibel med to adgangskode-tilstand."
+      ],
       "Passphrase is incorrect": [
         "Adgangssætning er forkert"
       ],
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Opgrader for at få tidlig adgang til ${ PASS_APP_NAME } desktop-app"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil kun importere logins, noter og betalingskort."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } kræver din ${ BRAND_NAME }-adgangskode for at tilgå data offline."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
@@ -969,7 +978,7 @@
         "mig"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mailaliaser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
+        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Fastgør element..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bekræft din adgangskode til ${ BRAND_NAME } for at aktivere offline-tilstand"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "Tøm papirkurv"
       ],
+      "Enable offline access": [
+        "Aktivér offline-adgang"
+      ],
       "Expiration date": [
         "Udløbsdato"
       ],
@@ -1481,6 +1496,9 @@
       ],
       "Notes": [
         "Noter"
+      ],
+      "Offline mode": [
+        "Offline-tilstand"
       ],
       "Old-New": [
         "Gammelt-Nyt"

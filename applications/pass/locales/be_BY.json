@@ -481,6 +481,9 @@
       "Could not resolve share members": [
         "Немагчыма вырашыць абагуленне ўдзельнікаў"
       ],
+      "Could not validate addresses at the moment.": [
+        "Немагчыма праверыць адрасы ў дадзены момант."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
       ],
@@ -522,6 +525,9 @@
       ],
       "Failed to delete selected items": [
         "Не ўдалося выдаліць выбраныя элементы"
+      ],
+      "Failed to edit organization settings": [
+        "Не ўдалося адрэдагаваць налады арганізацыі"
       ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
@@ -588,6 +594,9 @@
       ],
       "Offline mode is currently not available for two password mode.": [
         "Рэжым па-за сеткай у цяперашні момант недаступны для рэжыму двух пароляў."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Рэжым па-за сеткай у цяперашні момант недаступны для вашага тарыфнага плана і несумяшчальны з рэжымам двух пароляў."
       ],
       "Passphrase is incorrect": [
         "Няправільная парольная фраза"
@@ -774,6 +783,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
       ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } запатрабуе ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
       ],
@@ -827,6 +839,9 @@
       ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Прадвызначана ўдзельнікі каманды могуць экспартаваць толькі тыя сховішчы, якімі яны валодаюць. Калі гэты параметр уключаны, то ў іх не будзе магчымасці экспартаваць даныя"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
@@ -1000,7 +1015,7 @@
         "я"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны па той самай тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным спосабам і даступны толькі вам."
+        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
@@ -1035,6 +1050,9 @@
       "Offline support successfully disabled": [
         "Падтрымка па-за сеткай паспяхова адключана"
       ],
+      "Organization settings successfully updated": [
+        "Налады арганізацыі паспяхова абноўлены"
+      ],
       "Owner": [
         "Уладальнік"
       ],
@@ -1058,6 +1076,9 @@
       ],
       "Pinning item...": [
         "Замацаванне элемента..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
@@ -1152,6 +1173,9 @@
       "Syncing your vaults…": [
         "Сінхранізацыя вашых сховішчаў..."
       ],
+      "Team members can only share vaults within organization": [
+        "Удзельнікі каманды могуць абагуляць сховішчы толькі ў межах арганізацыі"
+      ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
@@ -1176,6 +1200,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
+      "This setting is disabled on the organization level": [
+        "Налада адключана на ўзроўні арганізацыі"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
       ],
@@ -1196,6 +1223,9 @@
       ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
+      ],
+      "Updating organization settings": [
+        "Абнаўленне налад арганізацыі"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
@@ -1379,6 +1409,12 @@
       "Created": [
         "Створана"
       ],
+      "Disable data export for team members": [
+        "Адключыць экспартаванне даных для ўдзельнікаў каманды"
+      ],
+      "Disable sharing outside the organization": [
+        "Адключыць абагуленне па-за межамі арганізацыі"
+      ],
       "Display": [
         "Адлюстроўваць"
       ],
@@ -1391,11 +1427,17 @@
       "Empty trash": [
         "Ачысціць сметніцу"
       ],
+      "Enable offline access": [
+        "Уключыць доступ па-за сеткай"
+      ],
       "Expiration date": [
         "Тэрмін дзеяння"
       ],
       "Export": [
         "Экспартаванне"
+      ],
+      "Exporting policy": [
+        "Экспартаванне палітыкі"
       ],
       "Field name": [
         "Назва поля"
@@ -1523,11 +1565,17 @@
       "Notes": [
         "Нататкі"
       ],
+      "Offline mode": [
+        "Рэжым па-за сеткай"
+      ],
       "Old-New": [
         "Ад самых старых"
       ],
       "Oldest to newest": [
         "Ад самых старых да самых новых"
+      ],
+      "Organization": [
+        "Арганізацыя"
       ],
       "Passkey": [
         "Ключ доступу"
@@ -1588,6 +1636,9 @@
       ],
       "Set PIN code": [
         "Задаць PIN-код"
+      ],
+      "Sharing policy": [
+        "Палітыка абагуленне"
       ],
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
@@ -2044,6 +2095,9 @@
       ],
       "Invalid email addresses.": [
         "Памылковыя адрасы электроннай пошты."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Запрашэнне адрасоў электроннай пошты па-за межамі арганізацыі забаронена."
       ],
       "item was imported without custom fields": [
         "элемент быў імпартаваны без карыстальніцкіх палёў"
