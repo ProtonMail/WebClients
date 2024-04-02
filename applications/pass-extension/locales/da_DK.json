@@ -17,8 +17,8 @@
       "Add current URL": [
         "Tilføj nuværende URL"
       ],
-      "Add domain to pause list": [
-        "Tilføj domæne til pauseliste"
+      "Add domain": [
+        "Tilføj domæne"
       ],
       "Add more": [
         "Tilføj mere"
@@ -945,7 +945,7 @@
         "Kan se elementer i denne boks."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Vælg en gemt adgangsnøgle til at logge ind med ${ domain }"
+        "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
       ],
       "Click the icon to open it anytime.": [
         "Du kan åbne den når som helst ved at klikke på ikonet."
@@ -1119,7 +1119,7 @@
         "mig"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mailaliaser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
+        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
