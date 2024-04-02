@@ -606,11 +606,11 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
-      "Upgrade Now": [
-        "ახლა გაუმჯობესება"
-      ],
       "Upgrade now": [
         "ტარიფის განახლება"
+      ],
+      "Upgrade Now": [
+        "ახლა გაუმჯობესება"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -3851,6 +3851,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
       ],
+      "Change your password": [
+        "შეცვალეთ თქვენი პაროლი"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
@@ -3942,6 +3945,9 @@
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
+      "email": [
+        "ელფოსტა"
+      ],
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
       ],
@@ -3979,11 +3985,17 @@
       "Existent, added and removed participants will be notified.": [
         "არსებულ, დამატებულ და წაშლილ მონაწილეებს გაფრთხლება გაეგზავნებათ."
       ],
+      "finance": [
+        "ფინანსები"
+      ],
       "Frequency modifications will be lost.": [
         "სიხშირის ცვლილებები დაიკარგება."
       ],
       "here": [
         "აქ"
+      ],
+      "High Priority": [
+        "მაღალი პრიორიტეტი"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
@@ -4064,11 +4076,20 @@
       "Loading events": [
         "მოვლენების ჩატვირთვა"
       ],
+      "Low Priority": [
+        "დაბალი პრიორიტეტი"
+      ],
       "Manage your calendars": [
         "კალენდრების მართვა"
       ],
+      "Medium Priority": [
+        "საშუალო პრიორიტეტი"
+      ],
       "Merged": [
         "შერწყმული"
+      ],
+      "Monitor accounts": [
+        "ანგარიშების მონიტორი"
       ],
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
@@ -4108,6 +4129,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
+      ],
+      "password": [
+        "პაროლი"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline, მხოლოდ, უბრალო ტექსტის ფორმატთანაა თავსებადი."
@@ -4271,6 +4295,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
+      ],
+      "username": [
+        "მომხმარებლის სახელი"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -5013,6 +5040,35 @@
       ],
       "Your import is starting": [
         "შემოტანის დასაწყისი"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "Upgrade to restore full access": [
+        "ასწიეთ სატარიფო გეგმა სრული წვდომის აღსადგენად"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი ${ driveStorage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი ${ mailStorage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
     "Mail import summary": {
@@ -5839,6 +5895,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select state": [
+        "აირჩიეთ შტატი"
       ],
       "Start typing an email address": [
         "დაიწყეთ ელფოსტის მისამართის აკრეფა"
@@ -6849,6 +6908,15 @@
       "Birthday": [
         "დაბადების დღე"
       ],
+      "Breach Date": [
+        "გაჟონვის თარიღი"
+      ],
+      "Breach Information": [
+        "გაჟონვის ინფორმაცია"
+      ],
+      "Breach Size": [
+        "გაჟონვის ზომა"
+      ],
       "Calendar": [
         "კალენდარი"
       ],
@@ -6947,6 +7015,9 @@
       "Edit image": [
         "გამოსახულების ჩასწორება"
       ],
+      "Email address": [
+        "ელფოსტის მისამართი"
+      ],
       "Email addresses": [
         "ელფოსტის მისამართები"
       ],
@@ -6973,6 +7044,9 @@
       ],
       "Exporting contacts": [
         "კონტაქტების გატანა"
+      ],
+      "Exposed info": [
+        "გაჟონილი ინფორმაცია"
       ],
       "Feedback": [
         "უკუკავშირი"
@@ -7011,6 +7085,9 @@
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
+      "Location": [
+        "მდებარეობა"
+      ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
       ],
@@ -7044,6 +7121,9 @@
       "Participants cannot be notified": [
         "მონაწილეების გაფრთხილება შეუძლებელია"
       ],
+      "Password": [
+        "პაროლი"
+      ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
       ],
@@ -7055,6 +7135,9 @@
       ],
       "Reactivate calendar keys": [
         "კალენდრის გასაღებების რეაქტივაცია"
+      ],
+      "Recommended actions": [
+        "რეკომენდებული ქმედებები"
       ],
       "Reconnect your account": [
         "თქვენი ანგარიშის თავიდან დაკავშირება"
@@ -7161,6 +7244,9 @@
       "Start import process": [
         "შემოტანის დაწყება"
       ],
+      "Type": [
+        "ტიპი"
+      ],
       "Unlock contacts groups": [
         "განბლოკეთ კონტაქტის ჯგუფები"
       ],
@@ -7199,6 +7285,9 @@
       ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
+      ],
+      "Your Exposed Information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"

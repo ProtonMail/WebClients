@@ -186,7 +186,7 @@
         "Ubah nama tampilan"
       ],
       "Edit email address": [
-        "Ubah alamat surel"
+        "Ubah alamat email"
       ],
       "Edit Gateway": [
         "Sunting Gateway"
@@ -234,7 +234,7 @@
         "Dapatkan ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Dapatkan alamat surel terenkripsi baru"
+        "Dapatkan alamat email terenkripsi baru"
       ],
       "Get in touch": [
         "Hubungi kami"
@@ -441,7 +441,7 @@
         "Kirim kode"
       ],
       "Send email reminder": [
-        "Kirim pengingat surel"
+        "Kirim pengingat email"
       ],
       "Send my username": [
         "Kirim nama pengguna saya"
@@ -543,7 +543,7 @@
         "Gunakan kode pemulihan"
       ],
       "Use your current email instead": [
-        "Gunakan alamat surel Anda saat ini"
+        "Gunakan alamat email Anda saat ini"
       ],
       "User": [
         "Pengguna"
@@ -606,10 +606,10 @@
         "Nonaktifkan"
       ],
       "Disable E2EE mail": [
-        "Nonaktif enkripsi surel"
+        "Nonaktif enkripsi email"
       ],
       "Disallow unsigned mail": [
-        "Larang surel tanpa Ttd."
+        "Larang email tanpa Ttd."
       ],
       "Edit": [
         "Sunting"
@@ -621,7 +621,7 @@
         "Aktifkan"
       ],
       "Enable E2EE mail": [
-        "Aktifkan enkripsi surel"
+        "Aktifkan enkripsi email"
       ],
       "Generate missing keys": [
         "Buat kunci yang hilang"
@@ -638,7 +638,7 @@
         "Aktif"
       ],
       "Allow unsigned mail": [
-        "Perbolehkan surel tidak ditandatangani"
+        "Perbolehkan email tidak ditandatangani"
       ],
       "Default": [
         "Bawaan"
@@ -653,7 +653,7 @@
         "Kunci yang hilang"
       ],
       "No E2EE mail": [
-        "Tanpa surel E2EE"
+        "Tanpa email E2EE"
       ],
       "Orphan": [
         "Tidak berinduk"
@@ -700,7 +700,7 @@
     },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
-        "Penyimpanan ${ storageSize }"
+        "Ruang penyimpanan ${ storageSize }"
       ],
       "1 user": [
         "1 pengguna"
@@ -740,7 +740,7 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Hemat dengan penawaran Jumat Hitam di VPN Swiss berkecepatan tinggi"
+        "Dapatkan harga hemat untuk aplikasi VPN Swiss berkecepatan tinggi dengan penawaran Jumat Hitam"
       ],
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Dapatkan penawaran hemat Minggu Cyber untuk produk VPN Swiss berkecepatan tinggi"
@@ -798,22 +798,22 @@
         "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
+        "Termasuk dukungan untuk 1 domain email kustom, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan lainnya."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Amankan surel Anda dan jadwalkan dengan enkripsi ujung ke ujung. Termasuk dukungan untuk beberapa domain surel kustom, 15 alamat surel, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
+        "Amankan email Anda dan jadwalkan dengan enkripsi ujung ke ujung. Termasuk dukungan untuk beberapa domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan awan aman. Termasuk riwayat versi, pembagian berkas terenkripsi, dan lainnya."
+        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Ruang penyimpanan dibagikan dengan semua aplikasi ${ BRAND_NAME }."
+        "Ruang penyimpanan terbagi antar seluruh aplikasi ${ BRAND_NAME }."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Simpan hingga 200 versi berkas sampai 10 tahun."
@@ -1830,7 +1830,7 @@
         "Setelah dihapus, alamat ini tidak akan lagi dapat digunakan oleh Anda atau siapa pun juga."
       ],
       "The next active address on your list will be set as the default.": [
-        "Alamat aktif berikutnya akan menjadi bawaan."
+        "Alamat aktif berikutnya yang terdapat pada daftar Anda akan diatur sebagai alamat bawaan."
       ],
       "You can only delete 1 address per year.": [
         "Anda hanya dapat menghapus 1 alamat per tahun."
@@ -1846,12 +1846,12 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Faktur yang menunggak"
+        "Faktur yang tertunggak"
       ]
     },
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Pisahkan berbagai aspek kehidupan Anda dengan alamat surelnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
+        "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ]
     },
     "Downgrade account reason": {
@@ -1874,7 +1874,7 @@
         "Biaya berlangganan terlalu mahal"
       ],
       "Switching to a different provider": [
-        "Saya telah berpindah ke layanan penyedia surel lainnya"
+        "Saya telah berpindah ke layanan penyedia email lainnya"
       ],
       "Temporary need, may come back in the future": [
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
@@ -1887,7 +1887,7 @@
     },
     "Email verification": {
       "Verification email sent to ${ address }": [
-        "Surel verifikasi dikirim ke ${ address }"
+        "Email verifikasi dikirim ke ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -1930,7 +1930,7 @@
         "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+        "Seluruh ruang penyimpanan telah dialokasikan. Silakan kurangi ruang penyimpanan yang dialokasikan kepada pengguna lainnya."
       ],
       "Amount above the maximum.": [
         "Jumlah melebihi nilai maksimum."
@@ -1951,10 +1951,10 @@
         "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email address is invalid": [
-        "Alamat surel tidak valid"
+        "Alamat email tidak valid"
       ],
       "Email is not valid": [
-        "Surel tidak valid"
+        "Email tidak valid"
       ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
@@ -2050,7 +2050,7 @@
         "Silakan buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
       "Please set a recovery email first": [
-        "Harap tentukan alamat surel pemulihan terlebih dahulu"
+        "Harap tentukan alamat email pemulihan terlebih dahulu"
       ],
       "Please set a recovery phone number first": [
         "Harap atur nomor telepon pemulihan terlebih dahulu"
@@ -2086,7 +2086,7 @@
         "Tab ditutup"
       ],
       "The email addresses do not match": [
-        "Alamat surel tidak cocok"
+        "Alamat email tidak cocok"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
@@ -2137,7 +2137,7 @@
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
+        "Akun atau organisasi Anda memiliki tagihan yang tertunggak. Mohon lunasi seluruh tagihan yang belum dibayar."
       ]
     },
     "Error importing users": {
@@ -2242,7 +2242,7 @@
     },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
-        "Grup keluarga tidak dikenal. Coba lagi."
+        "Grup keluarga tidak dikenal. Silakan coba lagi."
       ],
       "Organization not recognized. Try again.": [
         "Organisasi tidak dikenal. Coba lagi."
@@ -2253,7 +2253,7 @@
         "Grup ${ BRAND_NAME }"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Akun dengan domain kustom tidak dapat bergabung ke sebuah paket Visionary atau paket keluarga."
+        "Akun dengan domain khusus tidak dapat bergabung ke paket Visionary atau paket keluarga."
       ],
       "customer support": [
         "layanan dukungan"
@@ -2292,7 +2292,7 @@
         "Maaf, Anda tidak dapat mengganti paket saat ini."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
+        "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
@@ -2328,10 +2328,10 @@
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Akun Anda memiliki alamat surel lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
+        "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Akun Anda menggunakan penyimpanan ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan. Hapus beberapa data atau tanyakan kepada admin paket untuk menambahkan penyimpanan Anda."
+        "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Paket Anda saat ini tidak dapat bergabung ke paket Visionary atau paket keluarga."
@@ -2342,10 +2342,10 @@
         "*Hanya satu uji coba gratis per pengguna."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Secara bawaan, kami memberikan penyimpanan ${ formattedStorage } ke akun administrator. Anda dapat mengelola penyimpanan yang diberikan untuk dibagikan antara pengguna tambahan."
+        "Secara bawaan, kami memberikan ruang penyimpanan sebesar ${ formattedStorage } ke akun administrator. Anda dapat mengelola penyimpanan yang diberikan untuk dibagikan antara pengguna tambahan."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
-        "Buat dan kelola anggota keluarga dan memberikan mereka ruang penyimpanan terbagi antara ${ DRIVE_APP_NAME } dan ${ MAIL_APP_NAME }."
+        "Buat dan kelola anggota keluarga dan berikan mereka ruang penyimpanan yang terbagi antara ${ DRIVE_APP_NAME } dan ${ MAIL_APP_NAME }."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
@@ -2360,7 +2360,7 @@
         "Untuk membuat pengguna baru, Anda harus mengatur domain kustom."
       ],
       "You can increase or reduce the storage for this user.": [
-        "Anda dapat menambahkan atau mengurangi penyimpanan untuk pengguna ini."
+        "Anda dapat menambahkan atau mengurangi ruang penyimpanan untuk pengguna ini."
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -2415,7 +2415,7 @@
         "Hapus organisasi?"
       ],
       "Edit user storage": [
-        "Sunting penyimpanan pengguna"
+        "Sunting ruang penyimpanan pengguna"
       ],
       "Family name": [
         "Nama keluarga"
@@ -2432,10 +2432,10 @@
         "Beserta 2700 server di 65+ negara, hubungan sampai 10 perangkat, akses layanan streaming seluruh dunia, pemblokiran perangkat lunak jahat dan iklan, dan lebih banyak lagi."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Beserta dukungan untuk 3 domain surel kustom, 90 alamat surel, alias Hide-my-email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+        "Beserta dukungan untuk 3 domain email kustom, 90 alamat email, alias Hide-my-email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
+        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
       ]
     },
     "Feature": {
@@ -2590,19 +2590,19 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "(1 surel per bulan)"
+        "(1 email per bulan)"
       ],
       "(1 email per quarter)": [
-        "(1 surel per kuartal)"
+        "(1 email per kuartal)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 surel per bulan)"
+        "(1-2 email per bulan)"
       ],
       "(2-4 emails per year)": [
-        "(2-4 surel per tahun)"
+        "(2-4 email per tahun)"
       ],
       "(4-6 emails per year)": [
-        "(4-6 surel per tahun)"
+        "(4-6 email per tahun)"
       ],
       "(during your first month)": [
         "(pada bulan pertama Anda)"
@@ -2700,7 +2700,7 @@
     },
     "Human verification method": {
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Manual": [
         "Penuntun"
@@ -2750,7 +2750,7 @@
         "**Dapatkan alamat ${ BRAND_NAME }** untuk menggunakan seluruh layanan ${ BRAND_NAME_TWO } yang meliputi ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } kuota penyimpanan tambahan"
+        "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
       "30-day money-back guarantee": [
         "Jaminan uang kembali dalam 30 hari"
@@ -2861,10 +2861,10 @@
         "Sebelum membuat alamat ini, Anda harus menentukan kata sandi dan membuat kunci enkripsi."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat surel yang benar."
+        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Sebelum Anda dapat mulai mengirim dan menerima surel dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
+        "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
       "Beta": [
         "Beta"
@@ -2915,10 +2915,10 @@
         "Kode negara"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat surel di domain kustom Anda."
+        "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Buat alamat surel untuk orang lain dan gunakan ${ MAIL_APP_NAME } untuk mengelola bisnis, sekolah, atau grup Anda. Mulailah dengan menambahkan nama organisasi dan domain khusus milik Anda (mis. @yourcompany.com). "
+        "Buat alamat email untuk orang lain dan gunakan ${ MAIL_APP_NAME } untuk mengelola bisnis, sekolah, atau grup Anda. Mulailah dengan menambahkan nama organisasi dan domain khusus milik Anda (mis. @yourcompany.com). "
       ],
       "Create your first Gateway": [
         "Buat Gateway pertama Anda"
@@ -2933,7 +2933,7 @@
         "Paket saat ini"
       ],
       "Custom email domains": [
-        "Domain surel khusus"
+        "Domain email khusus"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
@@ -2993,16 +2993,16 @@
         "Masing-masing kode hanya dapat digunakan sekali"
       ],
       "Edit email address": [
-        "Sunting alamat surel"
+        "Sunting alamat email"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Layanan hosting surel gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
+        "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "Hosting surel hanya tersedia untuk domain yang Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak didukung. Anda dapat meng-host surel untuk domain yang terdaftar pada badan registrasi domain manapun."
+        "Hosting email hanya tersedia untuk domain yang Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak didukung. Anda dapat meng-host email untuk domain yang terdaftar pada badan registrasi domain manapun."
       ],
       "Emailing preference saved": [
-        "Preferensi surel disimpan"
+        "Preferensi email disimpan"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
@@ -3041,16 +3041,16 @@
         "Masukkan rincian akun ${ BRAND_NAME } Anda."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "Masukkan alamat surel atau nama pengguna akun ${ BRAND_NAME } Anda."
+        "Masukkan alamat email atau nama pengguna akun ${ BRAND_NAME } Anda."
       ],
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Masukkan alamat surel pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat surel Anda."
+        "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat surel Anda."
+        "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
       "Enter your recovery phrase to change your password now.": [
         "Masukkan frasa keamanan Anda untuk mengubah kata sandi Anda sekarang juga."
@@ -3104,7 +3104,7 @@
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Apabila Anda memiliki kode hadiah, masukkan kode Anda pada kolom di bawah ini untuk menerapkan diskon Anda."
@@ -3140,7 +3140,7 @@
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
-        "Tingkatkan keamanan akun Anda dengan memverifikasi alamat surel Anda."
+        "Tingkatkan keamanan akun Anda dengan memverifikasi alamat email Anda."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
@@ -3311,13 +3311,13 @@
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Harap diperhatikan bahwa dengan menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima surel melalui alamat ini."
+        "Harap diperhatikan bahwa dengan menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email melalui alamat ini."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Harap sertakan alamat surel seandainya kami perlu menghubungi Anda."
+        "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
@@ -3368,7 +3368,7 @@
         "Jangan lupa untuk membagikan rincian masuk ini kepada masing-masing pengguna."
       ],
       "Resend verification email": [
-        "Kirim ulang surel verifikasi"
+        "Kirim ulang email verifikasi"
       ],
       "Restore": [
         "Pulihkan"
@@ -3404,7 +3404,7 @@
         "Mengamankan akun Anda"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Kirim surel pengingat agar anggota organisasi Anda terdorong untuk melindungi akun mereka dengan 2FA."
+        "Kirim email pengingat agar anggota organisasi Anda terdorong untuk melindungi akun mereka dengan 2FA."
       ],
       "Server is currently down": [
         "Server sedang tidak aktif"
@@ -3440,16 +3440,16 @@
         "Pengguna SSO (sebagaimana yang disediakan oleh Penyedia Identitas Anda) akan dihapus"
       ],
       "Storage allocated to other users in this organisation": [
-        "Kuota penyimpanan yang dialokasikan bagi para pengguna lain di dalam organisasi ini"
+        "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
       ],
       "Storage allocated to this user": [
-        "Kuota penyimpanan yang dialokasikan bagi pengguna ini"
+        "Ruang penyimpanan yang dialokasikan kepada pengguna ini"
       ],
       "Storage for users": [
-        "Penyimpanan untuk anggota"
+        "Ruang penyimpanan untuk anggota"
       ],
       "Storage used by this user": [
-        "Kuota penyimpanan yang digunakan oleh pengguna ini"
+        "Ruang penyimpanan yang digunakan oleh pengguna ini"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
@@ -3485,7 +3485,7 @@
         "Informasi kredensial dari Penyedia Identitas Anda akan dihapus."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Para pengguna berikut akan menerima surel yang berisi permintaan untuk mengaktifkan autentikasi dua faktor sesegera mungkin."
+        "Para pengguna berikut akan menerima email yang berisi permintaan untuk mengaktifkan autentikasi dua faktor sesegera mungkin."
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
@@ -3539,7 +3539,7 @@
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
-        "Tindakan ini akan menghapus seluruh data dan alamat surel yang terhubung dengan pengguna ini secara permanen."
+        "Tindakan ini akan menghapus seluruh data dan alamat email yang terhubung dengan pengguna ini secara permanen."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
@@ -3596,10 +3596,10 @@
         "Tor"
       ],
       "Total email addresses": [
-        "Total alamat surel"
+        "Total alamat email"
       ],
       "Total storage": [
-        "Total kuota penyimpanan"
+        "Total ruang penyimpanan"
       ],
       "Total supported domains": [
         "Total domain yang didukung"
@@ -3635,7 +3635,7 @@
         "Tidak terverifikasi"
       ],
       "Unverified email address.": [
-        "Alamat surel belum diverifikasi."
+        "Alamat email belum diverifikasi."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
@@ -3647,10 +3647,10 @@
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Gunakan berbagai jenis alamat surel dan alias berbeda yang ditawarkan oleh ${ BRAND_NAME }."
+        "Gunakan berbagai jenis alamat email dan alias berbeda yang ditawarkan oleh ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gunakan informasi kredensial berikut pada saat Anda ingin terhubung ke server ${ VPN_APP_NAME } di luar aplikasi, semisal: Melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
+        "Gunakan informasi kredensial berikut pada saat Anda ingin terhubung ke server ${ VPN_APP_NAME } tanpa menggunakan aplikasi, semisal: Melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
       ],
       "User activated": [
         "Pengguna diaktifkan"
@@ -3665,7 +3665,7 @@
         "Proses verifikasi dapat memakan waktu sejenak."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir pop-up mana pun yang sedang aktif. Anda tidak akan dikenakan biaya sepeser pun. Seluruh dana yang digunakan untuk memverifikasi kartu akan langsung dikembalikan."
       ],
       "Verify domain": [
         "Verifikasi domain"
@@ -3740,7 +3740,7 @@
         "Kami akan mengirimkan kode pengaturan ulang ke ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat surel yang telah Anda tentukan sebelumnya."
+        "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat email yang telah Anda tentukan sebelumnya."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke nomor telpon yang telah Anda tentukan sebelumnya."
@@ -3785,10 +3785,10 @@
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Anda menggunakan ruang penyimpanan lebih dari yang dimiliki oleh paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
+        "Anda menggunakan ruang penyimpanan lebih dari yang terliput pada paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
-        "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat surel yang akan digunakan untuk verifikasi ini telah sesuai."
+        "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat email yang akan digunakan untuk verifikasi ini telah sesuai."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Anda dapat segera membuka kunci penyiapan di atas dengan menambahkan ${ specificCountryCount } ke jumlah alamat IP dalam paket Anda atau hubungi kami untuk solusi yang dibuat khusus untuk Anda."
@@ -3842,10 +3842,10 @@
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, surel tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Surel tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ BRAND_NAME } password": [
         "Kata sandi ${ BRAND_NAME } Anda"
@@ -3860,7 +3860,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, surel dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Akun Anda berhasil diperbarui dengan promosi ini"
@@ -3869,7 +3869,7 @@
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Surel Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
@@ -3915,7 +3915,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Untuk menghindari gangguan layanan karena tagihan yang belum terbayar, mohon pastikan Anda memiliki paling tidak 1 metode pembayaran yang valid yang telah tersimpan untuk digunakan sewaktu-waktu."
+        "Untuk menghindari gangguan layanan karena faktur yang tertunggak, pastikan Anda selalu memiliki setidaknya 1 metode pembayaran valid yang tersimpan."
       ]
     },
     "Info; access rights for shared calendar": {
@@ -4009,7 +4009,7 @@
         "Administrator"
       ],
       "Allow recovery by email": [
-        "Izinkan pemulihan akun melalui surel"
+        "Izinkan pemulihan akun melalui email"
       ],
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
@@ -4087,7 +4087,7 @@
         "Konfigurasi untuk tersambung ke ${ serverName }"
       ],
       "Confirm email": [
-        "Konfirmasi surel"
+        "Konfirmasi email"
       ],
       "Confirm login password": [
         "Konfirmasi kata sandi untuk masuk"
@@ -4108,7 +4108,7 @@
         "Salin"
       ],
       "Could you please let us know which provider?": [
-        "Dapatkah Anda memberitahu kami layanan penyedia surel mana yang Anda maksud?"
+        "Dapatkah Anda memberitahu kami layanan penyedia email mana yang Anda maksud?"
       ],
       "Could you please specify which streaming service?": [
         "Dapatkah Anda memberitahu kami layanan streaming mana yang Anda maksud?"
@@ -4129,7 +4129,7 @@
         "Nama tampilan saat ini"
       ],
       "Current email": [
-        "Surel saat ini"
+        "Email saat ini"
       ],
       "Default language": [
         "Bahasa bawaan"
@@ -4156,13 +4156,13 @@
         "mis. contoh.com"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email or username": [
-        "Surel atau nama pengguna"
+        "Email atau nama pengguna"
       ],
       "Enter the code displayed on your TV": [
         "Masukkan kode yang tertera pada TV Anda"
@@ -4234,7 +4234,7 @@
         "Nama tampilan baru"
       ],
       "New email": [
-        "Surel baru"
+        "Email baru"
       ],
       "New login password": [
         "Kata sandi masuk baru"
@@ -4315,7 +4315,7 @@
         "Sertifikat publik (X.509)"
       ],
       "Recovery email address": [
-        "Alamat surel pemulihan"
+        "Alamat email pemulihan"
       ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
@@ -4450,7 +4450,7 @@
         "Survei pengguna ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } surel datang"
+        "${ BRAND_NAME } email datang"
       ],
       "Daily email notifications": [
         "Notifikasi email harian"
@@ -4697,13 +4697,13 @@
         "Temukan nama pengguna Akun ${ BRAND_NAME } Anda"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Lupakan kata sandi Akun ${ BRAND_NAME } Anda? Atur ulang kata sandi Anda di sini dengan menggunakan kode, surel, atau SMS pemulihan untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
+        "Lupakan kata sandi Akun ${ BRAND_NAME } Anda? Atur ulang kata sandi Anda di sini dengan menggunakan kode, email, atau SMS pemulihan untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Lupakan nama pengguna Akun ${ BRAND_NAME } Anda? Temukan nama pengguna Anda dengan menggunakan surel atau nomor telepon pemulihan Anda untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
+        "Lupakan nama pengguna Akun ${ BRAND_NAME } Anda? Temukan nama pengguna Anda dengan menggunakan email atau nomor telepon pemulihan Anda untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
       ],
       "Private and secure email, no credit card required": [
-        "Surel pribadi dan aman, tanpa kartu kredit"
+        "Email pribadi dan aman, tanpa kartu kredit"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Atur ulang kata sandi Akun ${ BRAND_NAME } Anda?"
@@ -4791,10 +4791,10 @@
         "Batas ukuran lampiran ${ size }"
       ],
       "${ size } storage": [
-        "Kuota penyimpanan ${ size }"
+        "Ruang penyimpanan ${ size }"
       ],
       "${ size } storage per user": [
-        "Kuota penyimpanan ${ size } per pengguna"
+        "Ruang penyimpanan ${ size } per pengguna"
       ],
       "1 user": [
         "1 pengguna"
@@ -4845,7 +4845,7 @@
         "Berbagi kalender"
       ],
       "Catch-all": [
-        "Alamat surel catch-all"
+        "Alamat email catch-all"
       ],
       "Centralized billing": [
         "Tagihan yang terpusat"
@@ -4860,10 +4860,10 @@
         "Pengelolaan grup kontak"
       ],
       "Custom domains for email aliases": [
-        "Domain khusus untuk alias surel"
+        "Domain khusus untuk alias email"
       ],
       "Custom email domains": [
-        "Domain surel khusus"
+        "Domain email khusus"
       ],
       "Custom fields": [
         "Kolom khusus"
@@ -4896,7 +4896,7 @@
         "Alat bantu impor Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Dukungan klien surel (via IMAP/SMTP)"
+        "Dukungan klien email (via IMAP/SMTP)"
       ],
       "Enables HIPAA compliance": [
         "Tunduk terhadap undang-undang HIPAA"
@@ -4959,13 +4959,13 @@
         "Kelola item dengan berbagai brankas"
       ],
       "Password-protected Emails": [
-        "Surel yang terlindung oleh kata sandi"
+        "Email yang terlindung oleh kata sandi"
       ],
       "Phone support (6+ users)": [
         "Dukungan via telepon (6+ pengguna)"
       ],
       "Priority email support": [
-        "Dukungan surel prioritas"
+        "Dukungan email prioritas"
       ],
       "Priority support": [
         "Dukungan prioritas"
@@ -5067,10 +5067,10 @@
         "Tanpa batasan bandwidth/volume penyimpanan"
       ],
       "Up to ${ totalStorageSize } storage": [
-        "Kuota penyimpanan hingga ${ totalStorageSize }"
+        "Ruang penyimpanan hingga ${ totalStorageSize }"
       ],
       "Up to 15 email addresses": [
-        "Hingga 15 alamat surel"
+        "Hingga 15 alamat email"
       ],
       "Up to 3 TB of storage": [
         "Kuota penyimpanan hingga 3 TB"
@@ -5084,19 +5084,19 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat surelnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Dapatkan alamat surel samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+        "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
         "Tunda pesan dan ingatkan saat Anda mau"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Gunakan domain surel khusus milik Anda sendiri, mis. anda@namaanda.com"
+        "Gunakan domain email khusus milik Anda sendiri, mis. anda@namaanda.com"
       ]
     },
     "new_plans: heading": {
@@ -5112,7 +5112,7 @@
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        "${ BRAND_NAME } memungkinkan Anda untuk membuat alamat surel dan mengelola akun pada tingkatan sub-pengguna. Ideal bagi kebutuhan keluarga dan organisasi Anda."
+        "${ BRAND_NAME } memungkinkan Anda untuk membuat alamat email dan mengelola akun pada tingkatan sub-pengguna. Ideal bagi kebutuhan keluarga dan organisasi Anda."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Keamanan jaringan tingkat lanjut dan pengelolaan akses dengan Gateway terdedikasi yang aman"
@@ -5166,10 +5166,10 @@
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas secara mudah dan aman."
       ],
       "Secure email and calendar for professionals and businesses.": [
-        "Layanan surel dan kalender yang aman untuk para profesional dan pelaku usaha."
+        "Layanan email dan kalender yang aman untuk para profesional dan pelaku usaha."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Surel aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
+        "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
@@ -5243,10 +5243,10 @@
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan awan terenkripsi. Meliputi riwayat versi, berbagi berkas terenkripsi, dan masih banyak lagi."
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi riwayat versi, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: Amankan surel Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain surel kustom, 15 alamat surel, alias hide-my-email tak terbatas, dan masih banyak lagi."
+        "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Akses konten yang terblokir dan jelajahi secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, unduhan BitTorrent yang cepat, dan masih banyak lagi."
@@ -5273,7 +5273,7 @@
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Pengiriman surel secara massal atau terprogram saat ini tidak didukung. Kami menyarankan Anda untuk menggunakan layanan surel yang secara khusus diperuntukkan bagi keperluan tersebut."
+        "Pengiriman email secara massal atau terprogram saat ini tidak didukung. Kami menyarankan Anda untuk menggunakan layanan email yang secara khusus diperuntukkan bagi keperluan tersebut."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
@@ -5282,10 +5282,10 @@
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat surelnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Buat hingga ${ n } alamat/alias surel yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
+        "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Server khusus yang memiliki alamat IP-nya tersendiri dapat ditambahkan ke gateway pribadi untuk manajemen akses yang lebih spesifik"
@@ -5300,7 +5300,7 @@
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Memastikan seluruh surel yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif ataupun salah ketik sekalipun, akan tetap dapat Anda terima"
+        "Memastikan seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif ataupun salah ketik sekalipun, akan tetap dapat Anda terima"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Putuskan sesi pengguna secara paksa apabila kredensial akun mereka telah terindikasi bocor"
@@ -5348,7 +5348,7 @@
         "Pengelolaan kata sandi dan perlindungan identitas"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Buat tanda tangan surel Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
+        "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
         "Dukungan via telepon tersedia dari tim ${ BRAND_NAME } Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
@@ -5369,7 +5369,7 @@
         "Siapkan pesan balasan otomatis dengan cepat"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        "Pindahkan surel, kalender, atau kontak Anda dari layanan surel lain dengan cepat"
+        "Pindahkan email, kalender, atau kontak Anda dari layanan email lain dengan cepat"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Mengharuskan Anda untuk memasukkan kode yang terkirim ke ponsel Anda sebelum Anda dapat masuk. Hal ini memastikan bahwa bahkan apabila kata sandi Anda sampai bocor sekalipun, akun Anda akan tetap aman."
@@ -5387,16 +5387,16 @@
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        "Kirim surel ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"
+        "Kirim email ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Tentukan filter untuk dapat membalas, menyortir, dan/atau melabeli surel Anda secara otomatis"
+        "Tentukan filter untuk dapat membalas, menyortir, dan/atau melabeli email Anda secara otomatis"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Bagikan berkas atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
-        "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirimkan surel melalui ${ MAIL_APP_NAME }."
+        "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Teknologi NetShield kami dirancang secara khusus untuk melindungi perangkat Anda dan mempercepat perambanan Anda dengan memblokir iklan, program pelacak, serta malware"
@@ -5405,7 +5405,7 @@
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan. Para administrator dapat mengatur besar kuota penyimpanan yang akan dapat digunakan oleh masing-masing pengguna di dalam organisasi mereka"
+        "Ruang penyimpanan terbagi antar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Para administrator akan dapat mengatur besar kuota penyimpanan yang dimiliki oleh masing-masing pengguna di dalam organisasi mereka"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
@@ -5414,10 +5414,10 @@
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Membuat alamat surel yang unik dan tersedia seketika, melindungi identitas online Anda dan memberi Anda kendali atas apa yang masuk ke kotak masuk Anda. SimpleLogin oleh ${ BRAND_NAME }."
+        "Membuat alamat email yang unik dan tersedia seketika, melindungi identitas online Anda dan memberi Anda kendali atas apa yang masuk ke kotak masuk Anda. SimpleLogin oleh ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Dapatkan alamat surel yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
+        "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Kami tidak menyimpan log sesi yang merekam aktivitas online Anda, dan kami juga tidak mencatat metadata mana pun yang dapat membahayakan privasi Anda"
@@ -5448,7 +5448,7 @@
         "Akses berbagai fitur VPN lanjutan"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Terapkan berbagai opsi personalisasi dengan dukungan 15 alamat surel dan 3 domain khusus"
+        "Terapkan berbagai opsi personalisasi dengan dukungan 15 alamat email dan 3 domain khusus"
       ],
       "AES 256-bit VPN encryption": [
         "Enkripsi VPN AES 256-bit"
@@ -5457,10 +5457,10 @@
         "Sambungan otomatis"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Tingkatkan kuota penyimpanan Anda ke ${ bundleStorage } per pengguna"
+        "Tingkatkan ruang penyimpanan Anda ke ${ bundleStorage } per pengguna"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Tingkatkan total kuota penyimpanan Anda ke ${ bundleStorage }"
+        "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
       ],
       "Browser extension": [
         "Ekstensi browser"
@@ -5472,7 +5472,7 @@
         "Kontrol panel pusat"
       ],
       "Cover more ground with support for 10 custom email domains": [
-        "Perluas jaringan relasi Anda dengan dukungan 10 alamat surel khusus"
+        "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
       ],
       "Dedicated Account manager": [
         "Staf pengelola akun khusus"
@@ -5605,7 +5605,7 @@
         "${ upgradeLink } untuk menambahkan lebih banyak ruang penyimpanan, atau hapus sebagian data untuk mengosongkannya."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
-        "Paket Anda meliputi hingga ${ humanReadableAvailableSpace } kapasitas penyimpanan tambahan."
+        "Paket Anda meliputi ruang penyimpanan tambahan hingga ${ humanReadableAvailableSpace }."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -5890,7 +5890,7 @@
         "mis. https://idp.contoh.com/XXXXX"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Feedback": [
         "Kritik dan Saran"
@@ -5960,10 +5960,10 @@
         "Batal"
       ],
       "Email address has been verified.": [
-        "Alamat surel telah diverifikasi."
+        "Alamat email telah diverifikasi."
       ],
       "Email address not yet verified.": [
-        "Alamat surel belum diverifikasi."
+        "Alamat email belum diverifikasi."
       ],
       "Verify now": [
         "Verifikasi"
@@ -5972,18 +5972,18 @@
         "Verifikasi alamat email pemulihan ini sekarang: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Verifikasi alamat surel pemulihan?"
+        "Verifikasi alamat email pemulihan?"
       ],
       "Verify with email": [
-        "Verifikasi melalui surel"
+        "Verifikasi melalui email"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Memverifikasi alamat surel akan memungkinkan Anda untuk meningkatkan keamanan akun dan menambah metode pemulihan akun."
+        "Memverifikasi alamat email akan memungkinkan Anda untuk meningkatkan keamanan akun dan menambah metode pemulihan akun."
       ]
     },
     "Recovery method": {
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -6307,7 +6307,7 @@
         "Konfirmasi kata sandi"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Password": [
         "Kata sandi"
@@ -6367,7 +6367,7 @@
         "Akses dini premium"
       ],
       "Secure cloud storage": [
-        "Penyimpanan awan aman"
+        "Penyimpanan cloud yang aman"
       ],
       "Secure streaming": [
         "Streaming aman"
@@ -6450,7 +6450,7 @@
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
-        "Penawaran Jumat Hitam"
+        "Diskon Jumat Hitam"
       ],
       "Cyber Week Sale": [
         "Penawaran Minggu Siber"
@@ -6473,19 +6473,19 @@
         "Akses konten di layanan streaming, termasuk Netflix, Disney+, dan Prime Video, dari mana pun."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
+        "Semua layanan premium kami dengan batas tertinggi: 100 alamat email, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 3 domain email khusus, 15 alamat email, alias Hide-my-email tidak terbatas, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
+        "Cocok untuk keluarga atau tim kecil, di mana setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Memerlukan domain khusus."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Dapatkan semua layanan privasi baru versi berbayar tanpa harga tambahan, beserta akses dini ke semua fitur dan produk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
+        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
       ]
     },
     "Spotlight": {
@@ -6509,10 +6509,10 @@
         "Catatan rilis"
       ],
       "Upgrade storage": [
-        "Perbesar kuota penyimpanan"
+        "Tingkatkan ruang penyimpanan"
       ],
       "Your current storage:": [
-        "Penyimpanan Anda saat ini:"
+        "Ruang penyimpanan Anda saat ini:"
       ]
     },
     "storage_split: action": {
@@ -6566,10 +6566,10 @@
         "${ appStorage } Anda penuh"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Ruang penyimpanan ${ storage } Anda ${ percentage }% penuh. ${ cta }."
+        "${ storage } Anda ${ percentage }% penuh. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Ruang penyimpanan ${ storage } Anda penuh. ${ cta }."
+        "${ storage } Anda penuh. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
@@ -6581,10 +6581,10 @@
         "Ruang penyimpanan Anda penuh. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
-        "Anda akan kehilangan akses penyimpanan ${ gb } dan dukungan prioritas."
+        "Anda akan kehilangan akses ke ruang penyimpanan ${ gb } dan dukungan prioritas."
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "Anda akan kehilangan akses penyimpanan, alamat surel, alias, kalender, dan dukungan prioritas tambahan."
+        "Anda akan kehilangan akses ke ruang penyimpanan, alamat email, alias, kalender, dan dukungan prioritas tambahan."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "Anda akan kehilangan akses kecepatan VPN tertinggi, perlindungan untuk 10 perangkat, streaming berkecepatan tinggi, perlindungan pemblokir iklan dan perangkat lunak jahat, serta dukungan prioritas juga."
@@ -6618,7 +6618,7 @@
     },
     "Subscription attribute": {
       "1 email address": [
-        "1 alamat surel"
+        "1 alamat email"
       ],
       "1 VPN connection": [
         "1 koneksi VPN"
@@ -6681,7 +6681,7 @@
         "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebet dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, surel, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebet, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebet, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
       ]
     },
     "Subscription saving": {
@@ -6723,19 +6723,19 @@
         "Nama tampilan diperbarui"
       ],
       "Email address copied to clipboard": [
-        "Alamat surel disalin ke clipboard"
+        "Alamat email disalin ke clipboard"
       ],
       "Email address updated": [
         null
       ],
       "Email updated": [
-        "Surel diperbarui"
+        "Email diperbarui"
       ],
       "Gift code applied": [
         "Kode hadiah diterapkan"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Jika Anda memasukkan surel pemulihan yang valid, kami akan mengirimkan surel dengan nama pengguna Anda di menit berikutnya."
+        "Jika Anda memasukkan email pemulihan yang valid, kami akan mengirimkan email dengan nama pengguna Anda di menit berikutnya."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Jika Anda memasukkan nomor telepon pemulihan yang valid, kami akan mengirimkan Anda sms dengan nama pengguna Anda di menit berikutnya."
@@ -6887,13 +6887,13 @@
         "Negara"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email addresses": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Name": [
         "Nama"
@@ -6908,7 +6908,7 @@
         "Status"
       ],
       "Total storage": [
-        "Total kuota penyimpanan"
+        "Total ruang penyimpanan"
       ]
     },
     "Themes": {
@@ -6987,7 +6987,7 @@
         "Tambah pengguna"
       ],
       "Allocate storage": [
-        "Alokasi penyimpanan"
+        "Alokasi ruang penyimpanan"
       ],
       "Amount": [
         "Jumlah"
@@ -7149,7 +7149,7 @@
         "Sunting nama tampilan"
       ],
       "Edit email address": [
-        "Sunting alamat surel"
+        "Sunting alamat email"
       ],
       "Edit Gateway ${ currentName }": [
         "Sunting Gateway ${ currentName }"
@@ -7173,7 +7173,7 @@
         "Sunting siapa saja yang dapat mengakses gateway"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Email subscriptions": [
         "Langganan email"
@@ -7197,7 +7197,7 @@
         "Dapat diakses oleh seluruh anggota organisasi"
       ],
       "Find email or username": [
-        "Cari surel atau nama pengguna"
+        "Cari email atau nama pengguna"
       ],
       "Gateways": [
         "Gateway"
@@ -7341,7 +7341,7 @@
         "Pilih paket"
       ],
       "Send email reminders?": [
-        "Kirim pengingat surel?"
+        "Kirim pengingat email?"
       ],
       "Set new password": [
         "Atur kata sandi baru"
@@ -7434,7 +7434,7 @@
         "Memverifikasi pembayaran Anda..."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
-        "Kami akan mengirimkan surel ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."
+        "Kami akan mengirimkan email ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."
       ],
       "What's new": [
         "Apa-apa saja yang baru"
@@ -7479,7 +7479,7 @@
         "Alamat"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Features": [
         "Fitur"
@@ -7528,7 +7528,7 @@
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Anggota organisasi yang tidak menggunakan 2FA akan menerima surel yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
+        "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML"
@@ -7546,7 +7546,7 @@
         "Pada umumnya, URL yang mengandung nama penyedia identitas di dalamnya"
       ],
       "Verified email address": [
-        "Alamat surel terverifikasi"
+        "Alamat email terverifikasi"
       ]
     },
     "tooltip": {
@@ -7686,10 +7686,10 @@
         "Apakah Anda yakin untuk menghapus alamat ini?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat menerima notifikasi surel harian."
+        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat menerima notifikasi email harian."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat memulihkan akun Anda atau menerima notifikasi surel harian."
+        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat memulihkan akun Anda atau menerima notifikasi email harian."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Dengan menghapus alamat ini, Anda tidak akan lagi dapat memulihkan akun Anda."
@@ -7698,7 +7698,7 @@
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Dengan menonaktifkan alamat ini, Anda tidak akan lagi dapat mengirim atau menerima surel menggunakan alamat ini, dan seluruh produk ${ BRAND_NAME } yang tertaut juga akan dinonaktifkan. Apakah Anda yakin ingin menonaktifkan alamat ini?"
+        "Dengan menonaktifkan alamat ini, Anda tidak akan lagi dapat mengirim atau menerima email menggunakan alamat ini, dan seluruh produk ${ BRAND_NAME } yang tertaut juga akan dinonaktifkan. Apakah Anda yakin ingin menonaktifkan alamat ini?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."

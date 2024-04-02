@@ -4763,6 +4763,35 @@
         "${ twoFAMembers.length }/${ members.length } των μέλλων του οργανισμού σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
+      "upgrade for more storage": [
+        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+      ],
+      "Upgrade to restore full access": [
+        "Αναβάθμιση για επαναφορά πλήρους πρόσβασης"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ο ${ driveStorage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ο ${ mailStorage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ο λογαριασμός σας κινδυνεύει να διαγραφεί. Για να αποφύγετε την απώλεια δεδομένων, ζητήστε από τον διαχειριστή σας να κάνει αναβάθμιση. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -6185,6 +6214,9 @@
       ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
+      ],
+      "Select state": [
+        "Επιλέξτε νομό/περιοχή"
       ]
     },
     "plan customizer, ips": {

@@ -305,6 +305,9 @@
       "Delete": [
         "刪除"
       ],
+      "Delete address": [
+        "刪除地址"
+      ],
       "Delete and confirm": [
         "刪除並確認"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "解鎖"
       ],
+      "Unlock Breach Report": [
+        "解鎖外洩報告"
+      ],
+      "Unlock breach reports": [
+        "解鎖外洩報告"
+      ],
       "Unlock data": [
         "解鎖資料"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升級以啟用${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "升級以瀏覽全部"
       ],
       "Upgrade your plan": [
         "升級您的方案"
@@ -4984,9 +4996,17 @@
         "非常小"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "網頁應用程序"
+      ]
+    },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }桌面應用程式"
+      ],
+      "Back to sign in": [
+        "返回登錄"
       ]
     },
     "Frequency of news": {
@@ -6099,6 +6119,9 @@
       "Edit link": [
         "編輯連結"
       ],
+      "email": [
+        "電子信箱"
+      ],
       "Email address": [
         "電郵位址"
       ],
@@ -6195,6 +6218,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
+      "finance": [
+        "金融"
+      ],
       "for choosing ${ product }": [
         "選用 ${ product }"
       ],
@@ -6230,6 +6256,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "藉由代理伺服器載入遠端內容以保護你的身份資訊。也可選擇將內容存為附件。"
+      ],
+      "High Priority": [
+        "首要優先順序"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "如果另一位系統管理員更改了此密碼，您將需要向其索取新的組織密碼。"
@@ -6444,6 +6473,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "紀錄檔包含所有使用 ${ BRAND_NAME_TWO } 憑證的 ${ BRAND_NAME } 服務的驗證嘗試。"
       ],
+      "Low Priority": [
+        "較低優先順序"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "若無正確設置 SPF/DKIM/DMARC，各大電子郵件服務可能會拒收或過濾您的電子郵件。"
       ],
@@ -6459,6 +6491,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
       ],
+      "Medium Priority": [
+        "中等優先順序"
+      ],
       "Member": [
         "成員"
       ],
@@ -6467,6 +6502,9 @@
       ],
       "MM/YY": [
         "月月/年年"
+      ],
+      "Monitor accounts": [
+        "監控帳號"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
@@ -6594,6 +6632,9 @@
       "Paid for a monthly plan": [
         "以每月方案付費"
       ],
+      "password": [
+        "密碼"
+      ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
       ],
@@ -6674,6 +6715,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "請等待您的變更與伺服器同步。"
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "及${ numOfBreaches }更多"
       ],
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂購授權"
@@ -7212,6 +7256,12 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "將選取的電子郵件位址用作外部服務的 SMTP 使用者名稱、產生的通證用作 SMTP 密碼。"
       ],
+      "User activated": [
+        "使用者已啟用"
+      ],
+      "username": [
+        "使用者名稱"
+      ],
       "Users": [
         "使用者"
       ],
@@ -7253,6 +7303,9 @@
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告：刪除是永久性的。這也會一併移除對所有已連結服務的存取權限並刪除您所有的聯絡人。"
+      ],
+      "Ways you can minimize your breach risks": [
+        "降地外洩風險的方法"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我們建議您使用正版 ${ VPN_APP_NAME } 應用程式。"
@@ -9167,6 +9220,32 @@
         "您的匯入程序已開始"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "upgrade for more storage": [
+        "升級以增加儲存"
+      ],
+      "Upgrade to restore full access": [
+        "升級以還原完整存取權限"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的${ driveStorage }已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的儲存已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "啟用${ PROTON_SENTINEL_NAME }"
@@ -9247,6 +9326,12 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "啟用使用者"
+      ],
+      "Add address": [
+        "加入電郵位址"
+      ],
       "Change password": [
         "變更密碼"
       ],
@@ -11134,6 +11219,9 @@
       "Invalid expiration date": [
         "到期日無效"
       ],
+      "Invalid security code": [
+        "無效安全碼"
+      ],
       "Something went wrong. Please try again later.": [
         "發生錯誤。請稍後再試。"
       ],
@@ -11261,6 +11349,9 @@
       ],
       "Select a reason": [
         "選取理由"
+      ],
+      "Select state": [
+        "請選州"
       ],
       "Text": [
         "文字"
@@ -12738,6 +12829,9 @@
       "Activate organization key": [
         "啟用組織金鑰"
       ],
+      "Activate user": [
+        "啟用使用者"
+      ],
       "Add address": [
         "加入電郵位址"
       ],
@@ -12834,6 +12928,18 @@
       "Billing cycle": [
         "繳款單週期"
       ],
+      "Breach Alerts": [
+        "外洩警告"
+      ],
+      "Breach Date": [
+        "外洩資料"
+      ],
+      "Breach Information": [
+        "外洩資料"
+      ],
+      "Breach Size": [
+        "外洩尺寸"
+      ],
       "Bridge for ${ platform }": [
         "適用於 ${ platform } 的 Bridge"
       ],
@@ -12881,6 +12987,9 @@
       ],
       "Clear out the junk": [
         "清除垃圾"
+      ],
+      "Close": [
+        "關閉"
       ],
       "Composing": [
         "撰寫郵件"
@@ -12993,6 +13102,9 @@
       "Delete account": [
         "刪除帳號"
       ],
+      "Delete address permanently?": [
+        "永久刪除主要地址？"
+      ],
       "Delete calendar": [
         "刪除行事曆"
       ],
@@ -13089,6 +13201,9 @@
       "Email": [
         "電子郵件"
       ],
+      "Email address": [
+        "電子郵件地址"
+      ],
       "Email composer": [
         "電郵撰寫工具"
       ],
@@ -13146,6 +13261,15 @@
       "Folders and labels": [
         "資料夾和標籤"
       ],
+      "For Linux": [
+        "為Linux"
+      ],
+      "For macOS": [
+        "為macOS"
+      ],
+      "For Windows": [
+        "為Windows"
+      ],
       "Forward and auto-reply": [
         "轉寄及自動回覆"
       ],
@@ -13169,6 +13293,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "選購 ${ vpnPlus } 即可存取所有的伺服器"
+      ],
+      "Get the apps": [
+        "取得應用程式"
       ],
       "Gift": [
         "禮物"
@@ -13349,6 +13476,9 @@
       ],
       "Recommended": [
         "推薦"
+      ],
+      "Recommended actions": [
+        "建議行動"
       ],
       "Reconnect your account": [
         "重新連線到您的帳號"
@@ -14050,6 +14180,9 @@
       ],
       "15-month": [
         "15個月"
+      ],
+      "18-month": [
+        "18個月"
       ],
       "2-year": [
         "2-年"

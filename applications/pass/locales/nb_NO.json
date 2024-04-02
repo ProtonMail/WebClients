@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Kunne ikke nøste opp medlemmene av delt ressurs."
       ],
+      "Could not validate addresses at the moment.": [
+        "Kunne ikke validere adresser for øyeblikket."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
+      ],
+      "Failed to edit organization settings": [
+        "Kan ikke redigere organisasjonsinnstillinger"
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
@@ -584,6 +590,9 @@
       ],
       "Offline mode is currently not available for two password mode.": [
         "Frakoblet modus er for øyeblikket ikke tilgjengelig for topassordmodus."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Frakoblet modus er for øyeblikket ikke tilgjengelig for planen din og er ikke kompatibel med to passordmodus."
       ],
       "Passphrase is incorrect": [
         "Passfrase er feil"
@@ -752,6 +761,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater og kredittkort."
       ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
       ],
@@ -805,6 +817,9 @@
       ],
       "Built in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan teammedlemmer bare eksportere hvelv der de er eierne. Hvis dette alternativet er aktivert, kan de ikke eksportere data."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
@@ -1007,6 +1022,9 @@
       "Offline support successfully disabled": [
         "Støtte for frakoblet tilgang deaktivert"
       ],
+      "Organization settings successfully updated": [
+        "Organisasjonens innstillinger ble oppdatert"
+      ],
       "Owner": [
         "Eier"
       ],
@@ -1028,6 +1046,9 @@
       ],
       "Pinning item...": [
         "Fester element..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vennligst bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
@@ -1122,6 +1143,9 @@
       "Syncing your vaults…": [
         "Synkroniserer dine hvelv…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammedlemmer kan bare dele hvelv i organisasjonen"
+      ],
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
       ],
@@ -1144,6 +1168,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, vennligst slett den etter at du er ferdig med å bruke den."
       ],
+      "This setting is disabled on the organization level": [
+        "Denne innstillingen er deaktivert på organisasjonsnivå"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
       ],
@@ -1164,6 +1191,9 @@
       ],
       "Unpinning item...": [
         "Løser element..."
+      ],
+      "Updating organization settings": [
+        "Oppdaterer organisasjonsinnstillinger"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Oppgrader nå for å låse opp premiumfunksjoner"
@@ -1341,6 +1371,12 @@
       "Created": [
         "Opprettet"
       ],
+      "Disable data export for team members": [
+        "Deaktiver dataeksport for teammedlemmer"
+      ],
+      "Disable sharing outside the organization": [
+        "Deaktiver deling utenfor organisasjonen"
+      ],
       "Display": [
         "Vis"
       ],
@@ -1353,11 +1389,17 @@
       "Empty trash": [
         "Tøm papirkurven"
       ],
+      "Enable offline access": [
+        "Aktiver frakoblet tilgang"
+      ],
       "Expiration date": [
         "Utløpsdato"
       ],
       "Export": [
         "Eksporter"
+      ],
+      "Exporting policy": [
+        "Retningslinjer for eksport"
       ],
       "Field name": [
         "Feltnavn"
@@ -1485,11 +1527,17 @@
       "Notes": [
         "Notater"
       ],
+      "Offline mode": [
+        "Frakoblet modus"
+      ],
       "Old-New": [
         "Gammel-Ny"
       ],
       "Oldest to newest": [
         "Eldste til nyeste"
+      ],
+      "Organization": [
+        "Organisasjon"
       ],
       "Passkey": [
         "Tilgangsnøkkel"
@@ -1550,6 +1598,9 @@
       ],
       "Set PIN code": [
         "Angi PIN-kode"
+      ],
+      "Sharing policy": [
+        "Retningslinjer for deling"
       ],
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
@@ -2002,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
       ],
       "item was imported without custom fields": [
         "elementet ble importert uten egendefinerte felt"

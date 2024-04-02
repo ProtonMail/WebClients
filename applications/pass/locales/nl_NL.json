@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Offline-modus is momenteel niet beschikbaar voor twee wachtwoordmodus."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Offline-modus is momenteel niet beschikbaar voor uw abonnement en niet compatibel met twee wachtwoordmodus."
+      ],
       "Passphrase is incorrect": [
         "Wachtzin is onjuist"
       ],
       "PIN codes do not match": [
         "Pincodes komen niet overeen"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Upgrade om vroegtijdige toegang te hebben tot ${ PASS_APP_NAME } desktop app"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } zal enkel logins, notities en kredietkaarten importeren."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } heeft uw ${ BRAND_NAME }-wachtwoord nodig om offline toegang te krijgen tot gegevens."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagens om premium functies gratis te proberen. Enkel tijdens uw eerste week van ${ BRAND_NAME }."
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Item vastzetten..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
+      "Enable offline access": [
+        "Offline toegang inschakelen"
+      ],
       "Expiration date": [
         "Vervaldatum"
       ],
@@ -1481,6 +1496,9 @@
       ],
       "Notes": [
         "Notities"
+      ],
+      "Offline mode": [
+        "Offline modus"
       ],
       "Old-New": [
         "Oud-Nieuw"

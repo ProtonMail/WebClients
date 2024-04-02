@@ -221,6 +221,9 @@
       "Create new message": [
         "Stvori novu poruku"
       ],
+      "Current plan": [
+        "Trenutni plan"
+      ],
       "Custom": [
         "Prilagođeno"
       ],
@@ -229,6 +232,9 @@
       ],
       "Customize import": [
         "Prilagodi uvoz"
+      ],
+      "Decrease": [
+        "Smanji"
       ],
       "Delete": [
         "Izbriši"
@@ -281,6 +287,9 @@
       ],
       "Done": [
         "Gotovo"
+      ],
+      "Downgrade": [
+        "Snizi status"
       ],
       "Download": [
         "Preuzmi"
@@ -429,6 +438,9 @@
       "Import from Outlook": [
         "Uvoz iz Outlooka"
       ],
+      "Increase": [
+        "Povećaj"
+      ],
       "Inline": [
         "U ravnini s tekstom"
       ],
@@ -478,6 +490,9 @@
       ],
       "Load more": [
         "Učitaj više"
+      ],
+      "Loading verification": [
+        "Učitavanje potvrde"
       ],
       "Loading${ ellipsis }": [
         "Učitavanje${ ellipsis }"
@@ -602,14 +617,17 @@
       "Not saved": [
         "Nije spremljeno"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvori ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Otvori ${ CALENDAR_APP_NAME } postavke"
       ],
       "Open composer": [
         "Otvori prozor za novu poruku"
@@ -625,6 +643,12 @@
       ],
       "Pause": [
         "Pauziraj"
+      ],
+      "Pay": [
+        "Plati"
+      ],
+      "Pay ${ price } now": [
+        "Platite ${ price } sada"
       ],
       "Preview": [
         "Pregled"
@@ -686,8 +710,14 @@
       "Remove ${ attachmentName }": [
         "Izbriši ${ attachmentName }"
       ],
+      "Remove bonuses": [
+        "Ukloni bonuse"
+      ],
       "Remove encryption": [
         "Ukloni šifriranje"
+      ],
+      "Remove gift code": [
+        "Ukloni darovni kôd"
       ],
       "Remove this label": [
         "Ukloni ovu oznaku"
@@ -728,6 +758,9 @@
       "Resume": [
         "Nastavi"
       ],
+      "Retry": [
+        "Pokušaj ponovno"
+      ],
       "Save": [
         "Spremi"
       ],
@@ -742,6 +775,9 @@
       ],
       "Search message content": [
         "Pretraži sadržaj poruka"
+      ],
+      "Select ${ planTitle }": [
+        "Odaberite ${ planTitle }"
       ],
       "Select all": [
         "Odaberi sve"
@@ -919,6 +955,12 @@
       "Use ${ label } theme": [
         "Koristi ${ label } temu"
       ],
+      "Use a different card": [
+        "Upotrijebite neku drugu karticu"
+      ],
+      "Use a different payment method": [
+        "Koristite drugi način plaćanja"
+      ],
       "Use for sending": [
         "Koristi za slanje"
       ],
@@ -1003,6 +1045,9 @@
         "${ ips } poslužitelj",
         "${ ips } poslužitelja",
         "${ ips } poslužitelja"
+      ],
+      "${ price } per user": [
+        "${ price } po korisniku"
       ],
       "${ users } user": [
         "${ users } korisnik",
@@ -1093,6 +1138,14 @@
         "Uspješna potvrda pošiljatelja"
       ]
     },
+    "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Dodaj ${ PASS_APP_NAME }"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Izbriši ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 korisnik"
@@ -1107,6 +1160,40 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ]
+    },
+    "Billing cycle option": {
+      "1 month": [
+        "1 mjesec"
+      ],
+      "12 months": [
+        "12 mjeseci"
+      ],
+      "24 months": [
+        "24 mjeseca"
+      ],
+      "Annually": [
+        "Godišnje"
+      ],
+      "Monthly": [
+        "Mjesečno"
+      ],
+      "Two-year": [
+        "2 godine"
       ]
     },
     "Bug category": {
@@ -2433,6 +2520,11 @@
         "Predmet"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/mjesec"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } put",
@@ -2588,6 +2680,12 @@
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
       ],
+      "Amount above the maximum.": [
+        "Iznos veći od maksimuma."
+      ],
+      "Amount below minimum.": [
+        "Iznos ispod minimuma."
+      ],
       "Attachments are limited to 25 MB": [
         "Privitci su ograničeni na 25 MB."
       ],
@@ -2636,6 +2734,9 @@
       "Enter a password": [
         "Unesi lozinku"
       ],
+      "Error connecting to the Bitcoin API.": [
+        "Pogreška prilikom spajanja na Bitcoin API."
+      ],
       "Error in one of the conditions": [
         "Pogreška u jednom od uvjeta"
       ],
@@ -2657,14 +2758,29 @@
       "Image upload failed": [
         "Neuspješno učitavanje slike"
       ],
+      "Invalid ${ name } code": [
+        "Nevažeći ${ name } kôd"
+      ],
+      "Invalid card number": [
+        "Netočan broj kartice"
+      ],
+      "Invalid code": [
+        "Nevažeći kôd"
+      ],
       "Invalid email address": [
         "Nevažeća adresa e-pošte"
+      ],
+      "Invalid expiration date": [
+        "Nevažeći datum isteka"
       ],
       "Invalid expiration time": [
         "Nevažeći datum isteka"
       ],
       "Invalid name": [
         "Nevažeći naziv"
+      ],
+      "Invalid postal code": [
+        "Netočan poštanski broj"
       ],
       "Invalid public key file": [
         "Nevažeća datoteka javnog ključa"
@@ -2702,6 +2818,18 @@
       ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
+      ],
+      "Payment process consumed": [
+        "Proces plaćanja je konzumiran"
+      ],
+      "Payment process failed": [
+        "Proces plaćanja nije uspio"
+      ],
+      "Payment process not supported": [
+        "Proces plaćanja nije podržan"
+      ],
+      "Process aborted": [
+        "Proces je prekinut"
       ],
       "Public key could not be trusted": [
         "Javnom ključu se ne može vjerovati"
@@ -2741,6 +2869,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Nažalost, ${ BRAND_NAME } ne može dešifrirati vašu poruku. Molimo provjerite jesu li svi vaši ključevi aktivni."
+      ],
+      "Tab closed": [
+        "Kartica zatvorena"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Privitak nije bilo moguće dešifrirati.\nAko imate odgovarajući privatni ključ, i dalje će te moći dešifrirati\ndatoteku s programom kao što je GnuPG.",
@@ -2794,6 +2925,9 @@
       ],
       "Unknown error.": [
         "Nepoznata pogreška."
+      ],
+      "Unknown payment token status": [
+        "Nepoznati status tokena za plaćanje"
       ],
       "Username must begin with a letter or digit": [
         "Korisničko ime mora započeti s slovom ili brojkom"
@@ -3636,11 +3770,20 @@
       "(No Recipient)": [
         "(Nema primatelja)"
       ],
+      "+${ bonusSpace } bonus storage": [
+        "+ ${ bonusSpace } dodatnog prostora za pohranu"
+      ],
+      "30-day money-back guarantee.": [
+        "Povrat novca do 30 dana."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Zahtjev za otkazivanje pretplate s ove mailing liste poslat će se pošiljatelju biltena i automatski obraditi."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
+      ],
+      "Account successfully updated": [
+        "Račun je uspješno ažuriran"
       ],
       "Activation in progress": [
         "Aktiviranje u tijeku"
@@ -3662,6 +3805,9 @@
       ],
       "All your changes will be lost.": [
         "Sve vaše promjene će biti izgubljene."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Iznos ispod minimuma (${ amount })."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Otkriven je nepoznati javni ključ za ovog primatelja."
@@ -3714,11 +3860,17 @@
       "Body: ": [
         "Sadržaj: "
       ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
       ],
       "Center": [
         "Sredina"
+      ],
+      "Change your password": [
+        "Promijenite vašu lozinku"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
@@ -3756,6 +3908,9 @@
       "Custom daily": [
         "Prilagođeno dnevno"
       ],
+      "Custom email domains": [
+        "Prilagođene domene"
+      ],
       "Custom monthly": [
         "Prilagođeno mjesečno"
       ],
@@ -3778,6 +3933,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Želite li ponovno potpisati detalje kontakta?"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
       ],
       "Draft": [
         "Skica"
@@ -3828,6 +3989,9 @@
       "Expiration time": [
         "Vrijeme isteka"
       ],
+      "Expired": [
+        "Isteklo"
+      ],
       "file attached": [
         "privitak dodan",
         "privitka dodana",
@@ -3856,6 +4020,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ${ MAIL_APP_NAME }-a, uključujući dodatni prostor za pohranu i filtre."
       ],
       "Image URL": [
         "URL slike"
@@ -3944,6 +4114,9 @@
       "Message sent.": [
         "Poruka je poslana."
       ],
+      "MM/YY": [
+        "MM/GG"
+      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
@@ -3980,6 +4153,9 @@
       "No more results found": [
         "Nema više rezultata"
       ],
+      "No payment is required at this time.": [
+        "Trenutno nije potrebno plaćanje."
+      ],
       "No results found": [
         "Nema rezultata"
       ],
@@ -3994,6 +4170,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
       "Phone number": [
         "Broj telefona"
@@ -4010,8 +4189,14 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Odaberite vrstu poveznice koju želite umetnuti i popunite sva polja."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Pričekajte dok potražimo kontakte koji se mogu ponovno potpisati primarnim ključem šifriranja."
@@ -4075,6 +4260,9 @@
       ],
       "Show original message": [
         "Prikaži originalnu poruku"
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Žao nam je. Ova poruka ne postoji ili je istekla."
@@ -4207,6 +4395,12 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Users": [
+        "Korisnici"
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
+      ],
       "Version ${ appVersion }": [
         "Verzija ${ appVersion }"
       ],
@@ -4215,6 +4409,12 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nismo uspjeli provjeriti pouzdane ključeve pošiljatelja."
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "Za zaštitu vaših plaćanja koristimo 3-D Secure"
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
       ],
       "Web URL": [
         "URL stranice"
@@ -4230,6 +4430,9 @@
       ],
       "Yearly": [
         "Godišnje"
+      ],
+      "You already have a free account": [
+        "Već imate besplatan račun"
       ],
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
@@ -4258,8 +4461,20 @@
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Dosegli ste 100% svog prostora za pohranu. Razmislite o oslobađanju nekog prostora ili nadogradnji računa dodatnim prostorom za pohranu da biste sastavili nove poruke."
       ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom. Ukoliko nemate navedeno na vašem PayPal računu, molimo vas kliknite na dugme ispod."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "Vaš račun će se ažurirati nakon uspješnog plaćanja."
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
@@ -4277,6 +4492,11 @@
     "info": {
       "Optional": [
         "Neobavezno"
+      ]
+    },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "Obratite nam se na ${ email } kako biste dobili upute za plaćanje gotovinom."
       ]
     },
     "Info on errors": {
@@ -4527,6 +4747,11 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } korisničko ime"
       ],
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
       "Actions": [
         "Radnje"
       ],
@@ -4596,6 +4821,12 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "BTC address": [
+        "BTC adresa"
+      ],
+      "BTC amount": [
+        "Iznos u BTC-u"
+      ],
       "Calendar": [
         "Kalendar"
       ],
@@ -4604,6 +4835,18 @@
       ],
       "Carbon Copy": [
         "Indigo kopija"
+      ],
+      "Card details": [
+        "Pojedinosti o kartici"
+      ],
+      "Card holder": [
+        "Vlasnik kartice"
+      ],
+      "Card number": [
+        "Broj kreditne kartice"
+      ],
+      "Cash": [
+        "Gotovina"
       ],
       "Category": [
         "Kategorija"
@@ -4670,6 +4913,9 @@
       ],
       "Encrypt emails": [
         "Šifriraj e-poštu"
+      ],
+      "Expires": [
+        "Ističe"
       ],
       "Export contacts": [
         "Izvezi kontakte"
@@ -4773,6 +5019,9 @@
       "New password": [
         "Nova lozinka"
       ],
+      "New plan": [
+        "Novi plan"
+      ],
       "No label found": [
         "Nema pronađene oznake"
       ],
@@ -4794,6 +5043,9 @@
       "Operating system version": [
         "Verzija operativnog sustava"
       ],
+      "Optional": [
+        "Neobavezno"
+      ],
       "OR": [
         "ILI"
       ],
@@ -4811,6 +5063,12 @@
       ],
       "Password hint": [
         "Podsjetnik za lozinku"
+      ],
+      "Payer": [
+        "Platitelj"
+      ],
+      "Payment details": [
+        "Detalji o plaćanju"
       ],
       "PGP scheme": [
         "PGP sustav"
@@ -4859,6 +5117,9 @@
       ],
       "Starred": [
         "Sa zvjezdicom"
+      ],
+      "Start date": [
+        "Početni datum"
       ],
       "Statement": [
         "Izjava"
@@ -4946,6 +5207,11 @@
         "Za"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "Poštanski broj"
+      ]
+    },
     "Label/folder modal": {
       "Create folder": [
         "Stvori mapu"
@@ -4979,6 +5245,9 @@
       ]
     },
     "Link": {
+      "Add a gift code": [
+        "Dodaj darovni kôd"
+      ],
       "All mail": [
         "Sva pošta"
       ],
@@ -4987,6 +5256,9 @@
       ],
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
+      ],
+      "click here": [
+        "kliknite ovdje"
       ],
       "Create a calendar linked to an active email address.": [
         "Stvorite kalendar povezan s aktivnom adresom e-pošte."
@@ -5320,9 +5592,25 @@
         "Naziv oznake"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Najviša VPN brzina"
+      ]
+    },
     "new_plans: Action": {
       "Upgrade now": [
         "Nadogradi sada"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Ukloni račun"
+      ],
+      "Downgrade account": [
+        "Smanjite svoj plan"
+      ],
+      "Get ${ planName }": [
+        "Nabavite ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -5336,22 +5624,157 @@
         "${ n } kalendara po korisniku",
         "${ n } kalendara po korisniku"
       ],
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adresa e-pošte/pseudonim",
+        "${ n } adresa e-pošte/pseudonima"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-pošta po korisniku",
+        "${ n } e-pošte po korisniku",
+        "${ n } e-pošte po korisniku"
+      ],
+      "${ n } filter": [
+        "${ n } filtar",
+        "${ n } filtara",
+        "${ n } filtara"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mape",
+        "${ n } mapa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznake",
+        "${ n } oznaka"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezora",
+        "${ n } trezora"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
+      "${ size } attachment size": [
+        "Veličina privitka: ${ size }"
+      ],
+      "${ size } storage per user": [
+        "${ size } prostora za pohranu po korisniku"
+      ],
+      "1 user": [
+        "1 korisnik"
+      ],
+      "Auto-reply": [
+        "Automatski odgovor"
+      ],
+      "Contact groups": [
+        "Grupa kontakata"
+      ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "Easy Switch import assistant": [
+        "Pomoćnik za uvoz Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Podrška email klijenta (putem IMAP/SMTP)"
+      ],
+      "Encrypted contact details": [
+        "Šifrirani podaci o kontaktu"
       ],
       "End-to-end encryption": [
         "Krajnje do krajnje šifriranje"
       ],
+      "HTML signatures": [
+        "HTML potpisi"
+      ],
+      "Limited support": [
+        "Ograničena podrška"
+      ],
+      "Password-protected Emails": [
+        "Emailovi zaštićeni lozinkom"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
+      ],
       "Search message content": [
         "Pretraži sadržaj poruka"
       ],
+      "Secure Core servers": [
+        "Secure Core poslužitelji"
+      ],
+      "SMTP submission": [
+        "SMTP predaja"
+      ],
+      "Strict no-logs policy": [
+        "Stroga politika ne spremanja zapisa"
+      ],
+      "Tor over VPN": [
+        "Tor preko VPN-a"
+      ],
+      "Two-factor authentication": [
+        "Dvofaktorska autentikacija"
+      ],
+      "Unlimited filters": [
+        "Neograničen broj filtera"
+      ],
+      "Unlimited folders": [
+        "Neograničen broj mapa"
+      ],
       "Unlimited folders, labels, and filters": [
         "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Unlimited labels": [
+        "Neograničen broj oznaka"
+      ],
+      "Unlimited messages per day": [
+        "Neograničen broj poruka dnevno"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Podrška"
+      ]
+    },
+    "new_plans: info": {
+      "Popular": [
+        "Popularno"
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Sigurna e-pošta s naprednim značajkama za svakodnevnu komunikaciju."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Besplatni početni račun osmišljen kako bi svima osigurao privatnost prema zadanim postavkama."
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
         "Povratne informacije"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Izbriši račun?"
+      ],
+      "Downgrade account?": [
+        "Smanjite svoj plan?"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Multi-platform support": [
+        "Podrška na više platformi"
       ]
     },
     "Notification": {
@@ -5460,6 +5883,22 @@
         "Vi"
       ]
     },
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nova kreditna/debitna kartica"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Netočan broj kartice"
+      ],
+      "Invalid expiration date": [
+        "Nevažeći datum isteka"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ključ se ne može koristiti za šifriranje"
@@ -5483,6 +5922,9 @@
       "End date": [
         "Krajnji datum"
       ],
+      "Feedback": [
+        "Povratne informacije"
+      ],
       "Filter folders": [
         "Filtriraj mape"
       ],
@@ -5494,6 +5936,9 @@
       ],
       "First name": [
         "Ime"
+      ],
+      "Gift code": [
+        "Darovni kôd"
       ],
       "Group name": [
         "Naziv grupe"
@@ -5559,6 +6004,16 @@
     "Placeholder for contact group name": {
       "Name": [
         "Naziv"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "kontaktirajte"
+      ]
+    },
+    "Price": {
+      "Free": [
+        "Besplatno"
       ]
     },
     "Progress bar description": {
@@ -5993,6 +6448,11 @@
         "Zakaži slanje"
       ]
     },
+    "State": {
+      "Downgrading your account, please wait": [
+        "Snižavanje statusa vašeg računa, molimo pričekajte"
+      ]
+    },
     "Status": {
       "This message is from a mailing list.": [
         "Ovo poruka je s mailing liste."
@@ -6024,6 +6484,63 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "Subscription": {
+      "Billed every 2 years": [
+        "Naplaćuje se svake 2 godine"
+      ],
+      "Billed for 15 months": [
+        "Naplaćuje se svakih 15 mjeseci"
+      ],
+      "Billed for 18 months": [
+        "Naplaćuje se svakih 18 mjeseci"
+      ],
+      "Billed for 3 months": [
+        "Naplaćuje se svakih 3 mjeseci"
+      ],
+      "Billed for 30 months": [
+        "Naplaćuje se svakih 30 mjeseci"
+      ],
+      "Billed monthly": [
+        "Mjesečni račun"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } high-speed VPN connection": [
+        "${ n } VPN veza visoke brzine",
+        "${ n } VPN veze visoke brzine",
+        "${ n } VPN veza visoke brzine"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN veza po korisniku",
+        "${ n } VPN veze po korisniku",
+        "${ n } VPN veza po korisniku"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Razumijem"
+      ]
+    },
+    "Subscription price": {
+      "For": [
+        "Za"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Spremi"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "Aktivno"
       ]
     },
     "Success": {
@@ -6125,6 +6642,9 @@
       "Conversation removed from ${ labelName }.": [
         "Razgovor uklonjen iz ${ labelName }."
       ],
+      "Copied to clipboard": [
+        "Kopirano u međuspremnik"
+      ],
       "Draft deleted": [
         "Skica izbrisana"
       ],
@@ -6203,6 +6723,9 @@
       ],
       "Verification successful": [
         "Uspješna provjera"
+      ],
+      "You have successfully unsubscribed": [
+        "Uspješno ste poništili pretplatu"
       ]
     },
     "Success notification": {
@@ -6218,6 +6741,22 @@
     "Suffix": {
       "/month": [
         "/mjesec"
+      ]
+    },
+    "Suffix for price": {
+      "per month": [
+        "mjesečno"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "Za tvrtke"
+      ],
+      "For families": [
+        "Za obitelji"
+      ],
+      "For individuals": [
+        "Za pojedince"
       ]
     },
     "Table header": {
@@ -6345,6 +6884,12 @@
       "All settings": [
         "Sve postavke"
       ],
+      "Amount due": [
+        "Dospjeli iznos"
+      ],
+      "Apply gift code": [
+        "Primijeni darovni kôd"
+      ],
       "Archive": [
         "Arhiva"
       ],
@@ -6356,6 +6901,9 @@
       ],
       "BCC": [
         "Skrivena kopija"
+      ],
+      "Billing cycle": [
+        "Ciklus naplate"
       ],
       "Birthday": [
         "Rođendan"
@@ -6369,6 +6917,9 @@
       "Carbon Copy": [
         "Indigo kopija"
       ],
+      "Card verification": [
+        "Potvrda kartice"
+      ],
       "CC": [
         "Kopija"
       ],
@@ -6380,6 +6931,9 @@
       ],
       "Clearing data": [
         "Brisanje podataka"
+      ],
+      "Confirm downgrade": [
+        "Potvrdi snižavanje statusa"
       ],
       "Confirm recipient address?": [
         "Potvrdite adresu primatelja?"
@@ -6408,8 +6962,14 @@
       "Create new group": [
         "Stvori novu grupu"
       ],
+      "Credits": [
+        "Kredit"
+      ],
       "Currency": [
         "Valuta"
+      ],
+      "Customize your plan": [
+        "Prilagodite vaš plan"
       ],
       "Data recovery": [
         "Povrat podataka"
@@ -6459,6 +7019,9 @@
       ],
       "Deleting contacts": [
         "Brisanje kontakata"
+      ],
+      "Downgrade account": [
+        "Smanjite svoj plan"
       ],
       "Edit contact": [
         "Uredi kontakt"
@@ -6532,6 +7095,9 @@
       "Load remote content": [
         "Učitaj udaljeni sadržaj"
       ],
+      "Location": [
+        "Lokacija"
+      ],
       "Mark as read": [
         "Označi kao pročitano"
       ],
@@ -6577,6 +7143,9 @@
       "Move to trash": [
         "Premjesti u otpad"
       ],
+      "Network error": [
+        "Pogreška mreže"
+      ],
       "New message": [
         "Nova poruka"
       ],
@@ -6601,6 +7170,18 @@
       "Other names": [
         "Ostali nazivi"
       ],
+      "Password": [
+        "Lozinka"
+      ],
+      "Payment failed": [
+        "Neuspješno plaćanje"
+      ],
+      "Payment verification": [
+        "Potvrda plaćanja"
+      ],
+      "PayPal verification failed": [
+        "Neuspjela PayPal potvrda"
+      ],
       "Phone numbers": [
         "Telefonski brojevi"
       ],
@@ -6613,6 +7194,9 @@
       "Previous message": [
         "Prethodna e-poruka"
       ],
+      "Processing...": [
+        "Obrada..."
+      ],
       "Re-sign all contacts": [
         "Ponovno potpiši sve kontakte"
       ],
@@ -6624,6 +7208,9 @@
       ],
       "Recipients": [
         "Primatelji"
+      ],
+      "Recommended": [
+        "Preporučeno"
       ],
       "Reconnect your account": [
         "Ponovno povežite vaš račun"
@@ -6645,6 +7232,9 @@
       ],
       "Schedule send": [
         "Zakaži slanje"
+      ],
+      "Select a plan": [
+        "Odaberite plan"
       ],
       "Select a theme": [
         "Odaberi temu"
@@ -6703,6 +7293,9 @@
       "Storage capacity warning": [
         "Upozorenje prostora za pohranu"
       ],
+      "Summary": [
+        "Sažetak"
+      ],
       "To": [
         "Za"
       ],
@@ -6720,11 +7313,17 @@
       "Trust public key?": [
         "Vjeruj javnom ključu?"
       ],
+      "Type": [
+        "Vrsta"
+      ],
       "Unsubscribe": [
         "Otkaži pretplatu"
       ],
       "Verification error": [
         "Pogreška pri provjeri valjanosti"
+      ],
+      "Verification failed": [
+        "Neuspješna provjera"
       ],
       "Warning": [
         "Upozorenje"
@@ -6740,6 +7339,17 @@
       ],
       "What's new": [
         "Što je novo"
+      ]
+    },
+    "Title subscription": {
+      "End date": [
+        "Krajnji datum"
+      ],
+      "Plan": [
+        "Plan"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6772,6 +7382,9 @@
       "Encrypted data with verified digital signature": [
         "Šifrirani podaci sa potvrđenim digitalnim potpisom"
       ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"
       ],
@@ -6800,6 +7413,23 @@
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } poslužitelj",
+        "${ n }+ poslužitelja",
+        "${ n }+ poslužitelja"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ]
+    },
+    "vpn_2step: feature": {
+      "No ads": [
+        "Bez oglasa"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } će spojiti sve mape s istim imenom. Da biste to izbjegli, promijenite imena prije uvoza."
@@ -6823,6 +7453,9 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."

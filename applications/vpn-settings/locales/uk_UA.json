@@ -134,6 +134,9 @@
       "Delete": [
         "Видалити"
       ],
+      "Delete address": [
+        "Видалити адресу"
+      ],
       "Delete Gateway": [
         "Видалити мережевий шлюз"
       ],
@@ -611,6 +614,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Видалити адресу"
+      ],
       "Disable": [
         "Вимкнути"
       ],
@@ -1798,6 +1804,25 @@
         "/користувач на місяць"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Після видалення цю адресу більше не зможете використовувати ні ви, ні будь-хто інший."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Наступна активна адреса у вашому списку буде встановлена за замовчуванням."
+      ],
+      "You can only delete 1 address per year.": [
+        "Ви можете видалити лише 1 адресу на рік."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Ви можете видалити лише 1 адресу на рік"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ви досягли ліміту видалень адрес для цього користувача."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Протермінований рахунок"
@@ -1879,6 +1904,9 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
@@ -2909,6 +2937,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Обов'язково скопіюйте свій пароль і збережіть його в безпечному місці."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Перед активацією користувача необхідно вказати пароль і створити ключі шифрування для адрес."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед створенням цієї адреси необхідно ввести пароль і створити для неї ключі шифрування."
       ],
@@ -2987,6 +3018,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
       ],
+      "Current plan": [
+        "Поточний план"
+      ],
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
@@ -3034,6 +3068,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
+      ],
+      "Downgrade": [
+        "Понизити тарифний план"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
@@ -3194,6 +3231,9 @@
       "inactive": [
         "неактивний"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "В тому числі ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
       ],
@@ -3217,6 +3257,9 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
+      ],
+      "Keys created": [
+        "Ключі створені"
       ],
       "Lean more about gateways": [
         "Докладніше про мережеві шлюзи"
@@ -3274,6 +3317,9 @@
       ],
       "No addresses exist": [
         "Немає адрес"
+      ],
+      "No changes made to the current subscription": [
+        "У поточну підписку не внесено жодних змін"
       ],
       "No gateways": [
         "Без мережевих шлюзів"
@@ -3737,6 +3783,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без програми. Наприклад, Tunnelblick на macOS, або OpenVPN на GNU/Linux."
       ],
+      "User activated": [
+        "Користувач активований"
+      ],
       "Users": [
         "Користувачі"
       ],
@@ -3877,6 +3926,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ви увійшли в обліковий запис ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Ви використовуєте більше пам’яті сховища, ніж включено в план ${ downgradedPlanName }. Будь ласка, видаліть дані, щоб понизити тарифний план."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
@@ -4685,6 +4737,35 @@
         "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасники з ${ members.length }.",
         "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасників із ${ members.length }.",
         "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасників із ${ members.length }."
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "upgrade for more storage": [
+        "збільште сховище, передплативши тарифний план"
+      ],
+      "Upgrade to restore full access": [
+        "Покращить обліковий запис, щоб відновити повний доступ"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваше ${ driveStorage } повне. Щоб вивантажити або синхронізувати файли, звільніть місце або ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваше ${ mailStorage } повне. Щоб надсилати або отримувати електронні листи, звільніть місце або ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ваш обліковий запис під загрозою видалення. Щоб уникнути втрати даних, попросіть свого адміністратора покращити обліковий запис. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваше сховище вже повне. Щоб надсилати або отримувати електронні листи, звільніть місце або ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваше сховище вже повне. Щоб вивантажити або синхронізувати файли, звільніть місце або ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Ваша підписка закінчилася. ${ cta } і щоб уникнути втрати даних."
       ]
     },
     "mailtrial2024: Action": {
@@ -5659,6 +5740,11 @@
         "Двоетапна перевірка більше не обов'язкова"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Деякі зображення не було вивантажено через повтори назв файлів у поточному виділенні."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаємо у ${ appName }"
@@ -5937,6 +6023,9 @@
       ],
       "Select a reason": [
         "Оберіть причину"
+      ],
+      "Select state": [
+        "Оберіть область"
       ]
     },
     "plan customizer, ips": {
@@ -6129,6 +6218,9 @@
       "Password reset request approved (${ user.Email }).": [
         "Запит на скидання пароля схвалено (${ user.Email })."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Будь ласка, перейдіть на пристрій, на якому ви ввійшли (у сеансі, де було ініційовано запит), щоб змінити свій пароль."
+      ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
       ],
@@ -6178,6 +6270,16 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Скасувати скидання пароля?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запит на скидання пароля скасовано (${ user.Email }). Якщо ви не робили цей запит, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "змініть свій пароль зараз"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -6582,6 +6684,9 @@
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Ваше ${ storage } заповнене. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнене на ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Ваше сховище заповнене"
@@ -7177,6 +7282,9 @@
       ],
       "Delete account": [
         "Видалити обліковий запис"
+      ],
+      "Delete address permanently?": [
+        "Видалити адресу остаточно?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } дня)",

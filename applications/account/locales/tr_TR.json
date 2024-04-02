@@ -1055,6 +1055,9 @@
       "View": [
         "Görüntüle"
       ],
+      "View all reports": [
+        "Tüm raporları görüntüle"
+      ],
       "View invoice": [
         "Faturayı görüntüle"
       ],
@@ -9729,6 +9732,35 @@
         "İçe aktarma işleminize başlanıyor"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "upgrade for more storage": [
+        "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
+      ],
+      "Upgrade to restore full access": [
+        "Tam erişim sağlamak için tarifenizi yükseltin"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Kullandığınız ${ driveStorage } dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Kullandığınız ${ mailStorage } dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Hesabınızın silinme riski var. Verileriniz kaybolmasını önlemek için yöneticinizden tarifenizi yükseltmesini isteyin. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Depolama alanınız dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini aç"
@@ -12121,6 +12153,9 @@
       ],
       "Select a reason": [
         "Bir neden seçin"
+      ],
+      "Select state": [
+        "İl seçin"
       ],
       "Text": [
         "Metin"

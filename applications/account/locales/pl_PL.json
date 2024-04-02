@@ -1055,6 +1055,9 @@
       "View": [
         "Podgląd"
       ],
+      "View all reports": [
+        "Pokaż wszystkie raporty"
+      ],
       "View invoice": [
         "Pokaż fakturę"
       ],
@@ -3135,6 +3138,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Aby usunąć stopkę ${ MAIL_APP_NAME }, ulepsz konto i odblokuj więcej funkcji premium."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Aby zobaczyć pełny raport, w tym spersonalizowane zalecenia, ulepsz konto do płatnego planu."
       ],
       "Track the status and activity of your referrals.": [
         "Sprawdź status i aktywność linku polecającego."
@@ -7125,6 +7131,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organizacja posiada jeszcze innych administratorów. Jesteś odpowiedzialny za przekazanie im nowego hasła."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Pokaż użytkownikom organizacji, kiedy jestem zajęty. Szczegóły wydarzeń nie zostaną udostępnione."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Plik odzyskiwania jest nieaktualny. Zaktualizuj go, aby uzyskać dostęp do danych"
       ],
@@ -7806,8 +7815,14 @@
       "URL link": [
         "Adres URL"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Użyj ${ BRAND_NAME } Pass do generowania silnych i unikalnych haseł"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Użyj ${ VPN_APP_NAME } z funkcją NetShield, aby chronić się przed próbami wyłudzenia informacji oraz złośliwym oprogramowaniem"
+      ],
       "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Wykorzystaj aliasy do rejestracji w usługach internetowych. Chroni to Twoje prawdziwe adresy e-mail i tożsamość, ograniczając obszar rażenia w przypadku naruszenia."
+        "Użyj aliasów do rejestracji w usługach online. Chroni to prawdziwy adres e-mail i tożsamość, ograniczając obszar naruszenia."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
@@ -8710,6 +8725,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
+      "Access to my events": [
+        "Dostęp do wydarzeń"
+      ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
       ],
@@ -9403,6 +9421,9 @@
       "Send in": [
         "Język zaproszenia"
       ],
+      "Show others when I'm busy": [
+        "Pokaż, kiedy jestem zajęty"
+      ],
       "Show secondary time zone": [
         "Pokaż dodatkową strefę czasową"
       ],
@@ -9892,6 +9913,35 @@
       ],
       "Your import is starting": [
         "Proces importowania danych został rozpoczęty"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "upgrade for more storage": [
+        "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Upgrade to restore full access": [
+        "Ulepsz konto, aby przywrócić pełny dostęp"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Konto może zostać usunięte. Aby uniknąć utraty danych, poproś administratora o ulepszenie konta. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
       ]
     },
     "Log preference": {

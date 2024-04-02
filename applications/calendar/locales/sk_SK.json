@@ -3186,13 +3186,13 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
-        "Nastavte svoj rodinný účet a pozvite užívateľov "
+        "Nakonfigurujte svoj rodinný účet a pozvite používateľov "
       ],
       "Set up your family": [
-        "Vytvorte svoju rodinu"
+        "Nastavte svoju rodinu"
       ],
       "Set up your family account": [
-        "Vytvorte svoj rodinný účet"
+        "Nastavte svoj rodinný účet"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3841,6 +3841,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
       ],
+      "Change your password": [
+        "Zmeňte si heslo"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhľadávanie kontaktu ${ progress } o ${ max }..."
       ],
@@ -3934,6 +3937,9 @@
       "Edit email address": [
         "Upraviť emailovú adresu"
       ],
+      "email": [
+        "email"
+      ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
       ],
@@ -3973,11 +3979,17 @@
       "Existent, added and removed participants will be notified.": [
         "Existujúci, pridaní a odobraní účastníci budú oboznámení."
       ],
+      "finance": [
+        "financie"
+      ],
       "Frequency modifications will be lost.": [
         "Frekvencia úprav bude stratená."
       ],
       "here": [
         "tu"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
@@ -4060,11 +4072,20 @@
       "Loading events": [
         "Nahrávam udalosti"
       ],
+      "Low Priority": [
+        "Nízka priorita"
+      ],
       "Manage your calendars": [
         "Spravovať vaše kalendáre"
       ],
+      "Medium Priority": [
+        "Stredná priorita"
+      ],
       "Merged": [
         "Zlúčený"
+      ],
+      "Monitor accounts": [
+        "Monitorujte účty"
       ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
@@ -4104,6 +4125,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
+      ],
+      "password": [
+        "heslo"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilný iba s formátom obyčajného textu."
@@ -4269,6 +4293,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Warning": [
         "Varovanie"
@@ -5627,7 +5654,7 @@
         "Víta vás ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
-        "Kde môžete prevziať kontrolu nad svojim časom a svojimi dátami."
+        "Kde môžete prevziať kontrolu nad svojím časom a svojimi dátami."
       ]
     },
     "Onboarding Action": {
@@ -5640,22 +5667,22 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Vykonajte konfiguráciu svojej organizácie, priraďte doménové meno a vytvorte účty členov, aby všetci boli chránení."
+        "Nakonfigurujte svoju organizáciu, priraďte doménové meno a vytvorte účty, aby boli všetci členovia vašej organizácie chránení."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Objavte všetky služby ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Vyberte si tému"
+        "Vyberte motív"
       ],
       "Set up your organization": [
-        "Nastavenie organizácie"
+        "Nastavte svoju organizáciu"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Výberom aplikácie v ľavom hornom rohu získate prístup ku všetkým službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "Tému môžete kedykoľvek zmeniť v nastaveniach."
+        "Motív môžete kedykoľvek zmeniť v nastaveniach."
       ]
     },
     "Option": {
@@ -6850,6 +6877,15 @@
       "Birthday": [
         "Narodeniny"
       ],
+      "Breach Date": [
+        "Dátum úniku"
+      ],
+      "Breach Information": [
+        "Uniknuté informácie"
+      ],
+      "Breach Size": [
+        "Veľkosť úniku"
+      ],
       "Calendar": [
         "Kalendár"
       ],
@@ -6952,6 +6988,9 @@
       "Edit image": [
         "Upraviť obrázok"
       ],
+      "Email address": [
+        "Emailová adresa"
+      ],
       "Email addresses": [
         "Emailové adresy"
       ],
@@ -6975,6 +7014,9 @@
       ],
       "Exporting contacts": [
         "Exportovanie kontaktov"
+      ],
+      "Exposed info": [
+        "Odhalené informácie"
       ],
       "Feedback": [
         "Spätná väzba"
@@ -7009,6 +7051,9 @@
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
       ],
+      "Location": [
+        "Umiestnenie"
+      ],
       "Merge contacts": [
         "Zlúčiť kontakty"
       ],
@@ -7039,6 +7084,9 @@
       "Participants cannot be notified": [
         "Účastníci nemôžu byť upozornení"
       ],
+      "Password": [
+        "Heslo"
+      ],
       "Phone numbers": [
         "Telefónne čísla"
       ],
@@ -7050,6 +7098,9 @@
       ],
       "Reactivate calendar keys": [
         "Znovu aktivovať kľúč kalendára"
+      ],
+      "Recommended actions": [
+        "Odporúčané opatrenia"
       ],
       "Reconnect your account": [
         "Znovu pripojiť svoj účet"
@@ -7074,6 +7125,9 @@
       ],
       "Save changes": [
         "Uložiť zmeny"
+      ],
+      "Security center": [
+        "Centrum zabezpečenia"
       ],
       "Select a day in the month": [
         "Vybrať deň v mesiaci"
@@ -7153,6 +7207,9 @@
       "Start import process": [
         "Zahájiť proces importu"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
       ],
@@ -7189,6 +7246,9 @@
       "Your calendar link": [
         "Váš odkaz na kalendár"
       ],
+      "Your Exposed Information": [
+        "Vaše odhalené informácie"
+      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"
       ]
@@ -7219,6 +7279,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
+      ],
+      "Change start date to unselect": [
+        "Na zrušenie výberu zmeňte dátum začiatku"
       ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"

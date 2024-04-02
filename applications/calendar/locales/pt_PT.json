@@ -603,11 +603,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade Now": [
-        "Atualizar agora"
-      ],
       "Upgrade now": [
         "Actualizar agora"
+      ],
+      "Upgrade Now": [
+        "Atualizar agora"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -3704,6 +3704,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
       ],
+      "Change your password": [
+        "Altere a sua palavra-passe"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "A verificar contacto ${ progress } de ${ max }..."
       ],
@@ -4863,6 +4866,11 @@
       ],
       "Your import is starting": [
         "A sua importação está a começar"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "atualize para obter mais armazenamento"
       ]
     },
     "Mail import summary": {
@@ -6704,6 +6712,9 @@
       "Link confirmation": [
         "Confirmação de hiperligação"
       ],
+      "Location": [
+        "Localização"
+      ],
       "Merge contacts": [
         "Unir contactos"
       ],
@@ -6736,6 +6747,9 @@
       ],
       "Participants cannot be notified": [
         "Os participantes não podem ser notificados"
+      ],
+      "Password": [
+        "Palavra-passe"
       ],
       "Phone numbers": [
         "Números de telefone"
@@ -6853,6 +6867,9 @@
       ],
       "Start import process": [
         "Iniciar o processo de importação"
+      ],
+      "Type": [
+        "Tipo"
       ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contactos"
