@@ -3628,6 +3628,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
       ],
+      "Change your password": [
+        "Změňte své heslo"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
       ],
@@ -3781,6 +3784,9 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
@@ -3853,6 +3859,9 @@
       "Finalizing": [
         "Dokončování"
       ],
+      "finance": [
+        "finance"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Složka \"${ link.name }\" byla smazána během stahování"
       ],
@@ -3885,6 +3894,9 @@
       ],
       "here": [
         "zde"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "How does encrypted search work?": [
         "Jak funguje vyhledávání v šifrovaných datech?"
@@ -3997,8 +4009,14 @@
       "Loading...": [
         "Načítání..."
       ],
+      "Low Priority": [
+        "Nízká priorita"
+      ],
       "Makes your account safer": [
         "Zajišťuje větší bezpečnost vašeho účtu"
+      ],
+      "Medium Priority": [
+        "Střední priorita"
       ],
       "Merged": [
         "Sloučený"
@@ -4080,6 +4098,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Nebo použijte \"nové tlačítko +\""
+      ],
+      "password": [
+        "heslo"
       ],
       "Paused": [
         "Pozastaveno"
@@ -4464,6 +4485,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Version is deleted": [
         "Verze odstraněna"
@@ -5241,6 +5265,20 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -7016,6 +7054,9 @@
       "Edit image": [
         "Upravit obrázek"
       ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
       "Email addresses": [
         "E-mailové adresy"
       ],
@@ -7147,6 +7188,9 @@
       ],
       "Other names": [
         "Ostatní jména"
+      ],
+      "Password": [
+        "Heslo"
       ],
       "Performance might be affected": [
         "Může být ovlivněn výkon"
