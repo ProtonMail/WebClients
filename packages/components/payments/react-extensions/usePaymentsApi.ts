@@ -53,7 +53,7 @@ export const useReportRoutingError = () => {
         const context = {
             app: APP_NAME,
             paymentsVersion: getPaymentsVersion(),
-            chargebeeEnabled: chargebeeContext.enableChargebee,
+            chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
             ...additionalContext,
         };
 

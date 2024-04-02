@@ -1000,7 +1000,7 @@ const Step1 = ({
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         subscriptionDataType: model.subscriptionData.type,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebee,
+                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: Failed to handle single-signup-v1', {
