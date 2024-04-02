@@ -397,6 +397,7 @@ export const usePaymentFacade = (
             handles: chargebeeHandles,
             events: chargebeeEvents,
             chargebeeKillSwitch,
+            forceEnableChargebee,
         }
     );
 
@@ -424,6 +425,7 @@ export const usePaymentFacade = (
             events: chargebeeEvents,
             chargebeePaypalModalHandles,
             chargebeeKillSwitch,
+            forceEnableChargebee,
         }
     );
 

@@ -107,7 +107,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, onMeth
                     paymentMethodId,
                     processorType: paymentFacade.selectedProcessor?.meta.type,
                     paymentsVersion: getPaymentsVersion(),
-                    chargebeeEnabled: chargebeeContext.enableChargebee,
+                    chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                 };
 
                 captureMessage('Payments: failed to add card', {

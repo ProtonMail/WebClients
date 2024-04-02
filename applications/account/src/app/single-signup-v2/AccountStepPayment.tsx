@@ -260,7 +260,7 @@ const AccountStepPayment = ({
                         plan: options.plan,
                         planName: options.plan?.Name,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebee,
+                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: Failed to handle single-signup-v2', {
