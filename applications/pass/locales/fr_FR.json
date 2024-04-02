@@ -585,6 +585,9 @@
       "Offline mode is currently not available for two password mode.": [
         "Le mode hors ligne n'est actuellement pas disponible pour le mode deux mots de passe."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Le mode hors ligne n'est actuellement pas disponible pour votre abonnement et n'est pas compatible avec le mode deux mots de passe."
+      ],
       "Passphrase is incorrect": [
         "La phrase secrète n'est pas correcte."
       ],
@@ -751,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } vous demandera votre mot de passe ${ BRAND_NAME } pour accéder à vos données en mode hors ligne."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 jours pour essayer gratuitement les fonctionnalités premium, lors de votre première semaine d'utilisation de ${ BRAND_NAME }."
@@ -1028,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Épinglage de l'élément..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Veuillez confirmer votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
@@ -1353,6 +1362,9 @@
       "Empty trash": [
         "Vider la corbeille"
       ],
+      "Enable offline access": [
+        "Activer l’accès hors-ligne"
+      ],
       "Expiration date": [
         "Date d’expiration"
       ],
@@ -1485,11 +1497,17 @@
       "Notes": [
         "Notes"
       ],
+      "Offline mode": [
+        "Mode hors ligne"
+      ],
       "Old-New": [
         "Du plus ancien au plus récent"
       ],
       "Oldest to newest": [
         "Du plus ancien au plus récent"
+      ],
+      "Organization": [
+        "Organisation"
       ],
       "Passkey": [
         "Clé d'identification"
@@ -2032,7 +2050,7 @@
         "Aucun résultat"
       ],
       "Offline": [
-        "Hors connection"
+        "Hors ligne"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
