@@ -1,3 +1,0 @@
-Title,URL,Username,Password,Notes,OTPAuth
-"Info about importing",,,,"All fields in this CSV are optional and can be empty. Please do not modify the titles of the columns. For security, you may delete this file after successfully importing passwords to Proton Pass."
-"Your title here","https://example.com","Your username","password123","Your notes","otpauth://totp/Proton?secret=EXAMPLE-2FA-SECRET&algorithm=SHA1&digits=6&period=30"
