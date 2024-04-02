@@ -53,20 +53,34 @@ export const validateShareInviteValues =
 
             errors.members = emails.errors;
 
-            /** Show any trailing input value error only when the field
-             * is not focused : this value lives outside of the formik state
-             * values - as such adapt the validation logic accordingly */
-            const showError = emailField.current !== document.activeElement;
-            const empty = emails.errors.length === 0;
-            const trailing = emailField.current?.value?.trim() ?? '';
-            const validTrailingEmail = validateEmailAddress(trailing);
+            /** Determine conditions for displaying trailing input
+             * value errors: If the field isn't focused, only show
+             * an error if the field is empty and there are no other
+             * members in the form. Adapt validation accordingly.  */
+            const trailingOnly = values.members.length === 0;
+            const trailingFocused = emailField.current === document.activeElement;
+            const trailingValue = emailField.current?.value?.trim() ?? '';
+            const trailingEmpty = trailingValue.length === 0;
+            const trailingValid = !trailingEmpty && validateEmailAddress(trailingValue);
 
-            if (!validTrailingEmail) {
-                emails.pass = false;
-                if (showError && empty) errors.members.push(InviteEmailsError.EMPTY);
-                else if (showError && trailing) errors.members.push(InviteEmailsError.INVALID_EMAIL);
+            /* If the trailing input is focused, trigger errors if the trailing
+             * value is not a valid email address. If it's not focused, flag errors
+             * only when the trailing value is invalid and either the field is
+             * empty or there are no other members in the form. */
+            if (trailingFocused) {
+                emails.pass = emails.pass && (trailingOnly ? trailingValid : trailingValid || trailingEmpty);
+            } else if (!trailingValid) {
+                if (trailingEmpty && trailingOnly) {
+                    emails.pass = false;
+                    errors.members.push(InviteEmailsError.EMPTY);
+                } else if (!trailingEmpty) {
+                    emails.pass = false;
+                    errors.members.push(InviteEmailsError.INVALID_EMAIL);
+                }
             }
 
+            /* If no errors are found, delete any existing error
+             * messages related to members. */
             if (emails.pass) delete errors.members;
         }
 

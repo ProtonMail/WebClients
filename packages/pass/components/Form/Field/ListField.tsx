@@ -155,7 +155,7 @@ export const ListField = <
                             case 'Backspace':
                                 if (getValue().length === 0) {
                                     setValue('');
-                                    helpers.pop();
+                                    if (values.length > 0) helpers.pop();
                                 }
                                 break;
 
