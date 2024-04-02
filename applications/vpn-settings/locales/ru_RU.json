@@ -2948,6 +2948,9 @@
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Вы уверены, что хотите предоставить этому пользователю права администратора?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
       ],
@@ -2971,6 +2974,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Обязательно скопируйте ваш пароль и сохраните его в безопасном месте."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Перед активацией пользователя необходимо предоставить пароль и создать ключи шифрования для адресов."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед созданием этого адреса необходимо указать пароль и создать для него ключи шифрования."
@@ -3245,6 +3251,9 @@
       "inactive": [
         "неактивный"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
       ],
@@ -3325,6 +3334,9 @@
       ],
       "No addresses exist": [
         "Нет адресов"
+      ],
+      "No changes made to the current subscription": [
+        "Никаких изменений в текущей подписке не было сделано"
       ],
       "No gateways": [
         "Нет шлюзов"
@@ -3427,6 +3439,12 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символа.",
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов."
       ],
       "Please use another browser or download the file.": [
         "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
@@ -3904,6 +3922,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы вошли в аккаунт ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Вы используете больше места в хранилище, чем включено в тариф ${ downgradedPlanName }. Удалите данные, чтобы перейти на более дешевую версию."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можете изменить это один раз, чтобы обеспечить правильную проверку адреса электронной почты."
@@ -4707,6 +4728,11 @@
         "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "выберите другой тариф для увеличения хранилища"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Получить"
@@ -5114,6 +5140,9 @@
       ],
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Управление группами (скоро)"
       ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
@@ -7955,6 +7984,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
       ]
     },
     "vpn_2step: billing": {

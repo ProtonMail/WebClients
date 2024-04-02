@@ -3571,6 +3571,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
+      "Change your password": [
+        "Skift din adgangskode"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
@@ -3723,6 +3726,9 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
@@ -3799,6 +3805,9 @@
       "Finalizing": [
         "Færdiggører"
       ],
+      "finance": [
+        "finans"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mappe \"${ link.name }\" blev slettet under download"
       ],
@@ -3834,6 +3843,9 @@
       ],
       "here": [
         "hér"
+      ],
+      "High Priority": [
+        "Høj prioritet"
       ],
       "How does encrypted search work?": [
         "Hvordan fungerer krypteret søgning?"
@@ -3947,6 +3959,9 @@
       "Loading...": [
         "Indlæser..."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Makes your account safer": [
         "Gør din konto mere sikker"
       ],
@@ -3954,8 +3969,14 @@
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
       ],
+      "Medium Priority": [
+        "Mellem prioritet"
+      ],
       "Merged": [
         "Flettet"
+      ],
+      "Monitor accounts": [
+        "Overvåg konti"
       ],
       "More": [
         "Flere"
@@ -4032,6 +4053,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Eller brug knappen \"+ Ny\""
+      ],
+      "password": [
+        "adgangskode"
       ],
       "Paused": [
         "Sat på pause"
@@ -4432,6 +4456,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
+      "username": [
+        "brugernavn"
+      ],
       "Version is deleted": [
         "Versionen er slettet"
       ],
@@ -4520,8 +4547,8 @@
         "Du kan ikke fortryde denne handling."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Du har ${ expiresInDays } dag tilbage til at få dine 3 GB velkomst bonus og ",
-        "Du har ${ expiresInDays } dage tilbage til at få dine 3 GB velkomst bonus og "
+        "Du har ${ expiresInDays } dag tilbage til at få dine 3 GB velkomstbonus og ",
+        "Du har ${ expiresInDays } dage tilbage til at få dine 3 GB velkomstbonus og "
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
@@ -5229,6 +5256,20 @@
         "Din import starter"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Din ${ driveStorage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din ${ mailStorage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ cta }."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten",
@@ -5617,7 +5658,7 @@
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Del nemt dine kalendere med din familie, venner eller kolleger"
+        "Del nemt dine kalendere med din familie, venner eller kollegaer"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Hold dine planer private for dig og din familie med en krypteret kalender"
@@ -7013,6 +7054,9 @@
       "Edit image": [
         "Redigér billede"
       ],
+      "Email address": [
+        "E-mailadresse"
+      ],
       "Email addresses": [
         "E-mailadresser"
       ],
@@ -7140,6 +7184,9 @@
       ],
       "Other names": [
         "Andre navne"
+      ],
+      "Password": [
+        "Adgangskode"
       ],
       "Performance might be affected": [
         "Ydeevnen kan blive påvirket"
@@ -7428,8 +7475,8 @@
     },
     "Validation Error": {
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn",
-        "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn"
+        "Navnet må højst være på ${ MAX_NAME_LENGTH } tegn",
+        "Navnet må højst være på ${ MAX_NAME_LENGTH } tegn"
       ],
       "Name must not be empty": [
         "Navn må ikke være tomt"

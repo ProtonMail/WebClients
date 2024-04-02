@@ -2113,6 +2113,9 @@
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } прийняв(-ла) ваше запрошення на ${ eventTitle }"
       ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } відхилив ваше запрошення до ${ eventTitle }"
+      ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } попередньо прийняв(-ла) ваше запрошення на ${ eventTitle }"
       ]
@@ -3662,6 +3665,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
       ],
+      "Change your password": [
+        "Змініть свій пароль"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
@@ -3818,6 +3824,9 @@
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
+      "email": [
+        "е-пошта"
+      ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
       ],
@@ -3896,6 +3905,9 @@
       "Finalizing": [
         "Завершення"
       ],
+      "finance": [
+        "фінанси"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Теку \"${ link.name }\" було видалено під час завантаження"
       ],
@@ -3931,6 +3943,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "High Priority": [
+        "Високий пріоритет"
       ],
       "How does encrypted search work?": [
         "Як працює зашифрований пошук?"
@@ -4046,11 +4061,20 @@
       "Loading...": [
         "Завантаження..."
       ],
+      "Low Priority": [
+        "Низький пріоритет"
+      ],
       "Makes your account safer": [
         "Робить ваш обліковий запис надійнішим"
       ],
+      "Medium Priority": [
+        "Середній пріоритет"
+      ],
       "Merged": [
         "Об'єднано"
+      ],
+      "Monitor accounts": [
+        "Монітор облікових записів"
       ],
       "More": [
         "Докладніше"
@@ -4129,6 +4153,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Або використовуйте кнопку «+»"
+      ],
+      "password": [
+        "пароль"
       ],
       "Paused": [
         "Зупинено"
@@ -4528,6 +4555,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
+      ],
+      "username": [
+        "ім'я користувача"
       ],
       "Version is deleted": [
         "Версію видалено"
@@ -5334,6 +5364,35 @@
         "Імпортування розпочинається"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "upgrade for more storage": [
+        "збільште сховище, передплативши тарифний план"
+      ],
+      "Upgrade to restore full access": [
+        "Покращить обліковий запис, щоб відновити повний доступ"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваше ${ driveStorage } повне. Щоб вивантажити або синхронізувати файли, звільніть місце або ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваше ${ mailStorage } повне. Щоб надсилати або отримувати електронні листи, звільніть місце або ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ваш обліковий запис під загрозою видалення. Щоб уникнути втрати даних, попросіть свого адміністратора покращити обліковий запис. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваше сховище вже повне. Щоб надсилати або отримувати електронні листи, звільніть місце або ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваше сховище вже повне. Щоб вивантажити або синхронізувати файли, звільніть місце або ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Ваша підписка закінчилася. ${ cta } і щоб уникнути втрати даних."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
@@ -5962,6 +6021,11 @@
         "Ваші налаштування успішно змінено"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Деякі зображення не було вивантажено через повтори назв файлів у поточному виділенні."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "Далі вам потрібно буде ввійти до свого облікового запису Google і надати ${ BRAND_NAME } доступ до ваших даних."
@@ -6167,6 +6231,9 @@
       "Select": [
         "Вибрати"
       ],
+      "Select state": [
+        "Оберіть область"
+      ],
       "Set date": [
         "Встановити дату"
       ],
@@ -6346,6 +6413,9 @@
       "Password reset request approved (${ user.Email }).": [
         "Запит на скидання пароля схвалено (${ user.Email })."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Будь ласка, перейдіть на пристрій, на якому ви ввійшли (у сеансі, де було ініційовано запит), щоб змінити свій пароль."
+      ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
       ],
@@ -6389,6 +6459,16 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Скасувати скидання пароля?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запит на скидання пароля скасовано (${ user.Email }). Якщо ви не робили цей запит, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "змініть свій пароль зараз"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -6745,6 +6825,9 @@
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Ваше ${ storage } заповнене. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнене на ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Ваше сховище заповнене"
@@ -7273,6 +7356,9 @@
       ],
       "Other names": [
         "Інші імена"
+      ],
+      "Password": [
+        "Пароль"
       ],
       "Performance might be affected": [
         "Може знизитися швидкодія"

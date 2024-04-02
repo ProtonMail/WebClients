@@ -17,8 +17,8 @@
       "Add current URL": [
         "Adicionar URL atual"
       ],
-      "Add domain to pause list": [
-        "Adicionar domínio para a lista de pausa"
+      "Add domain": [
+        "Adicionar domínio"
       ],
       "Add more": [
         "Adicionar mais"
@@ -396,13 +396,13 @@
         "Mostrar opções avançadas"
       ],
       "Sign back in": [
-        "Faça login novamente"
+        "Inicie sessão novamente"
       ],
       "Sign in": [
         "Iniciar sessão"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Faça login com ${ BRAND_NAME }"
+        "Iniciar sessão com ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -1345,6 +1345,9 @@
       "Update login": [
         "Atualizar início de sessão"
       ],
+      "Updating organization settings": [
+        "Atualizando as configurações da organização"
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Atualizar o ${ PASS_APP_NAME }"
       ],
@@ -1494,6 +1497,9 @@
       "Application logs": [
         "Registros do aplicativo"
       ],
+      "Authenticate with passkeys": [
+        "Autenticação com chaves de aceso"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Bloquear o ${ PASS_APP_NAME } automaticamente"
       ],
@@ -1554,6 +1560,12 @@
       "Created": [
         "Criado"
       ],
+      "Disable data export for team members": [
+        "Desativar a exportação de dados para membros da equipe"
+      ],
+      "Disable sharing outside the organization": [
+        "Desativar compartilhamento fora da organização"
+      ],
       "Display": [
         "Exibição"
       ],
@@ -1580,6 +1592,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Exporting policy": [
+        "Exportando política"
       ],
       "Field name": [
         "Nome do campo"
@@ -1713,8 +1728,14 @@
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
       ],
+      "Organization": [
+        "Organização"
+      ],
       "Passkey": [
         "Chave de acesso"
+      ],
+      "Passkeys": [
+        "Chaves de acesso"
       ],
       "Passphrase": [
         "Frase secreta"
@@ -1758,6 +1779,9 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Save passkeys": [
+        "Salvar chaves de acesso"
+      ],
       "Security": [
         "Segurança"
       ],
@@ -1784,6 +1808,9 @@
       ],
       "Settings": [
         "Configurações"
+      ],
+      "Sharing policy": [
+        "Política de compartilhamento"
       ],
       "Show website favicons": [
         "Mostrar favicons do site"

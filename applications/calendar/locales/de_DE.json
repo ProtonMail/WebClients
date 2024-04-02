@@ -606,10 +606,10 @@
       "Upgrade": [
         "Wechseln"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Jetzt upgraden"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Jetzt upgraden"
       ],
       "Upload picture": [
@@ -3851,6 +3851,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
       ],
+      "Change your password": [
+        "Passwort ändern"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakt ${ progress } von ${ max } wird geprüft…"
       ],
@@ -3985,6 +3988,9 @@
       "here": [
         "hier"
       ],
+      "High Priority": [
+        "Hohe Priorität"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
       ],
@@ -4064,11 +4070,20 @@
       "Loading events": [
         "Termine werden geladen"
       ],
+      "Low Priority": [
+        "Niedrige Priorität"
+      ],
       "Manage your calendars": [
         "Kalender verwalten"
       ],
+      "Medium Priority": [
+        "Mittlere Priorität"
+      ],
       "Merged": [
         "Zusammengeführt"
+      ],
+      "Monitor accounts": [
+        "Konten überwachen"
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
@@ -4108,6 +4123,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
+      ],
+      "password": [
+        "Passwort"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline ist nur mit dem Plain Text-Format kompatibel."
@@ -4271,6 +4289,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
+      ],
+      "username": [
+        "Benutzername"
       ],
       "Warning": [
         "Warnung"
@@ -5013,6 +5034,17 @@
       ],
       "Your import is starting": [
         "Dein Datenimport wird gestartet"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -6950,6 +6982,9 @@
       "Edit image": [
         "Bild bearbeiten"
       ],
+      "Email address": [
+        "E‐Mail‐Adresse"
+      ],
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
@@ -7014,6 +7049,9 @@
       "Link confirmation": [
         "Linkbestätigung"
       ],
+      "Location": [
+        "Speicherort"
+      ],
       "Merge contacts": [
         "Kontakte zusammenführen"
       ],
@@ -7047,6 +7085,9 @@
       "Participants cannot be notified": [
         "Teilnehmer konnten nicht benachrichtigt werden"
       ],
+      "Password": [
+        "Passwort"
+      ],
       "Phone numbers": [
         "Telefonnummern"
       ],
@@ -7058,6 +7099,9 @@
       ],
       "Reactivate calendar keys": [
         "Kalenderschlüssel reaktivieren"
+      ],
+      "Recommended actions": [
+        "Empfohlene Aktionen"
       ],
       "Reconnect your account": [
         "Erneut mit deinem Konto verbinden"
@@ -7163,6 +7207,9 @@
       ],
       "Start import process": [
         "Importvorgang starten"
+      ],
+      "Type": [
+        "Typ"
       ],
       "Unlock contacts groups": [
         "Kontaktgruppen freischalten"

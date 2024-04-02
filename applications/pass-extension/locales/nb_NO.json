@@ -17,8 +17,8 @@
       "Add current URL": [
         "Legg til gjeldende nettadresse"
       ],
-      "Add domain to pause list": [
-        "Legg domene til pauselisten"
+      "Add domain": [
+        "Legg til domene"
       ],
       "Add more": [
         "Legg til flere"
@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Kunne ikke nøste opp medlemmene av delt ressurs."
       ],
+      "Could not validate addresses at the moment.": [
+        "Kunne ikke validere adresser for øyeblikket."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
+      ],
+      "Failed to edit organization settings": [
+        "Kan ikke redigere organisasjonsinnstillinger"
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
@@ -862,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vil be deg om å lagre eller oppdatere påloggingsinformasjon."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } vil foreslå autentisering ved hjelp av lagrede tilgangsnøkler"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } vil foreslå å opprette et e-postalias i registreringsskjemaer."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } vil foreslå å opprette sterke passord på registreringsskjemaer."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } vil foreslå å lagre tilgangsnøkler."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag igjen",
@@ -931,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan teammedlemmer bare eksportere hvelv der de er eierne. Hvis dette alternativet er aktivert, kan de ikke eksportere data."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
@@ -1154,6 +1169,9 @@
       "Open the Extensions menu": [
         "Åpne utvidelsesmenyen"
       ],
+      "Organization settings successfully updated": [
+        "Organisasjonens innstillinger ble oppdatert"
+      ],
       "Owner": [
         "Eier"
       ],
@@ -1287,6 +1305,9 @@
       "Syncing your vaults…": [
         "Synkroniserer dine hvelv…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammedlemmer kan bare dele hvelv i organisasjonen"
+      ],
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
       ],
@@ -1311,6 +1332,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, vennligst slett den etter at du er ferdig med å bruke den."
+      ],
+      "This setting is disabled on the organization level": [
+        "Denne innstillingen er deaktivert på organisasjonsnivå"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
@@ -1344,6 +1368,9 @@
       ],
       "Update login": [
         "Oppdater pålogging"
+      ],
+      "Updating organization settings": [
+        "Oppdaterer organisasjonsinnstillinger"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Oppgrader ${ PASS_APP_NAME }"
@@ -1494,6 +1521,9 @@
       "Application logs": [
         "Applikasjonslogger"
       ],
+      "Authenticate with passkeys": [
+        "Autentiser med tilgangsnøkler"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Autolås ${ PASS_APP_NAME }"
       ],
@@ -1554,6 +1584,12 @@
       "Created": [
         "Opprettet"
       ],
+      "Disable data export for team members": [
+        "Deaktiver dataeksport for teammedlemmer"
+      ],
+      "Disable sharing outside the organization": [
+        "Deaktiver deling utenfor organisasjonen"
+      ],
       "Display": [
         "Vis"
       ],
@@ -1580,6 +1616,9 @@
       ],
       "Export": [
         "Eksporter"
+      ],
+      "Exporting policy": [
+        "Retningslinjer for eksport"
       ],
       "Field name": [
         "Feltnavn"
@@ -1713,8 +1752,14 @@
       "Oldest to newest": [
         "Eldste til nyeste"
       ],
+      "Organization": [
+        "Organisasjon"
+      ],
       "Passkey": [
         "Tilgangsnøkkel"
+      ],
+      "Passkeys": [
+        "Tilgangsnøkler"
       ],
       "Passphrase": [
         "Passfrase"
@@ -1758,6 +1803,9 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Save passkeys": [
+        "Lagre tilgangsnøkler"
+      ],
       "Security": [
         "Sikkerhet"
       ],
@@ -1784,6 +1832,9 @@
       ],
       "Settings": [
         "Innstillinger"
+      ],
+      "Sharing policy": [
+        "Retningslinjer for deling"
       ],
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
@@ -2271,6 +2322,9 @@
       ],
       "Invalid email addresses.": [
         "Ugyldige e-postadresser"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
       ],
       "item was imported without custom fields": [
         "elementet ble importert uten egendefinerte felt"

@@ -176,6 +176,9 @@
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
+      "Copy invite link": [
+        "Uitnodigingslink kopiëren"
+      ],
       "Copy link": [
         "Link kopiëren"
       ],
@@ -3571,6 +3574,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
+      "Change your password": [
+        "Wijzig uw wachtwoord"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
       ],
@@ -3723,6 +3729,9 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
@@ -3799,6 +3808,9 @@
       "Finalizing": [
         "Afronden"
       ],
+      "finance": [
+        "financiën"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
       ],
@@ -3834,6 +3846,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "High Priority": [
+        "Hoge Prioriteit"
       ],
       "How does encrypted search work?": [
         "Hoe werkt versleuteld zoeken?"
@@ -3947,6 +3962,9 @@
       "Loading...": [
         "Laden..."
       ],
+      "Low Priority": [
+        "Lage Prioriteit"
+      ],
       "Makes your account safer": [
         "Maakt uw account veiliger"
       ],
@@ -3954,8 +3972,14 @@
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
       ],
+      "Medium Priority": [
+        "Middelmatige prioriteit"
+      ],
       "Merged": [
         "Samengevoegd"
+      ],
+      "Monitor accounts": [
+        "Accounts monitoren"
       ],
       "More": [
         "Meer"
@@ -4032,6 +4056,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Of gebruik de \"+ Nieuw\" knop"
+      ],
+      "password": [
+        "wachtwoord"
       ],
       "Paused": [
         "Gepauzeerd"
@@ -4431,6 +4458,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Version is deleted": [
         "Versie verwijderd"
@@ -5227,6 +5257,35 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade om volledige toegang te herstellen"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw ${ driveStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw ${ mailStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om e-mails te verzenden of te ontvangen, maak ruimte vrij of ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw opslag is vol. Maak ruimte vrij om bestanden te uploaden of te synchroniseren of ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
       ]
     },
     "Mail import summary": {
@@ -6891,6 +6950,15 @@
       "Birthday": [
         "Verjaardag"
       ],
+      "Breach Date": [
+        "Datum inbreuk"
+      ],
+      "Breach Information": [
+        "Inbreuk informatie"
+      ],
+      "Breach Size": [
+        "Grootte inbreuk"
+      ],
       "Browser might run out of memory": [
         "Browser valt mogelijk zonder geheugen"
       ],
@@ -7013,6 +7081,9 @@
       "Edit image": [
         "Afbeelding bewerken"
       ],
+      "Email address": [
+        "E-mailadres"
+      ],
       "Email addresses": [
         "E-mailadressen"
       ],
@@ -7033,6 +7104,9 @@
       ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
+      ],
+      "Exposed info": [
+        "Gelekte informatie"
       ],
       "Failed": [
         "Mislukt"
@@ -7141,6 +7215,9 @@
       "Other names": [
         "Andere namen"
       ],
+      "Password": [
+        "Wachtwoord"
+      ],
       "Performance might be affected": [
         "Prestaties kunnen beïnvloed zijn"
       ],
@@ -7161,6 +7238,9 @@
       ],
       "Re-signing contacts": [
         "Contacten opnieuw ondertekenen"
+      ],
+      "Recommended actions": [
+        "Aanbevolen acties"
       ],
       "Reconnect your account": [
         "Uw account opnieuw verbinden"
@@ -7329,6 +7409,9 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
+      ],
+      "Your Exposed Information": [
+        "Jouw gelekte informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"

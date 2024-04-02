@@ -84,6 +84,9 @@
       "Authenticate": [
         "Uwierzytelnij"
       ],
+      "Availability is unknown": [
+        "Dostępność jest nieznana"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -293,6 +296,9 @@
       ],
       "Hide affected calendars": [
         "Ukryj zaszyfrowane kalendarze"
+      ],
+      "Hide busy times": [
+        "Ukryj, kiedy jestem zajęty"
       ],
       "Hide time zones": [
         "Ukryj strefy czasowe"
@@ -540,6 +546,9 @@
       "Show affected calendars": [
         "Pokaż zaszyfrowane kalendarze"
       ],
+      "Show busy times": [
+        "Pokaż, kiedy jestem zajęty"
+      ],
       "Show less": [
         "Pokaż mniej"
       ],
@@ -612,10 +621,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
       "Upload picture": [
@@ -641,6 +650,9 @@
       ],
       "View": [
         "Podgląd"
+      ],
+      "View all reports": [
+        "Pokaż wszystkie raporty"
       ],
       "View contact details": [
         "Pokaż szczegóły kontaktu"
@@ -2219,8 +2231,14 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa, zapobiegając nieautoryzowanemu dostępowi."
       ],
+      "Availability unknown": [
+        "Dostępność jest nieznana"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Zwiększ wydajność i kontroluj swój czas, oznaczając wydarzenia kolorami. Ulepsz do płatnego planu, aby uzyskać dostęp do tej funkcji."
+      ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Alerty wycieków i raporty są dostępne w płatnym planie. Ulepsz konto, aby uzyskać dostęp."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
@@ -2278,6 +2296,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Twoje informacje zostały znalezione w co najmniej jednym wycieku danych."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Twoje dane zostały ujawnione w wycieku danych. Pokaż szczegóły i zalecane kroki."
       ]
     },
     "description": {
@@ -3963,6 +3987,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
+      "Breach alerts": [
+        "Alerty wycieków"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Udostępniając wszystkie szczegóły wydarzenia w kalendarzu, akceptujesz przyznanie dostępu usłudze ${ BRAND_NAME } do zaszyfrowanych danych kalendarza."
       ],
@@ -3974,6 +4001,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nie pamiętasz hasła? Aby odrzucić powiadomienie, możesz usunąć dane wszystkich kontaktów zaszyfrowanych tym kluczem."
+      ],
+      "Change your password": [
+        "Zmień hasło"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
@@ -4068,6 +4098,9 @@
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
+      "email": [
+        "adres e-mail"
+      ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
       ],
@@ -4107,11 +4140,17 @@
       "Existent, added and removed participants will be notified.": [
         "Obecni, dodani i usunięci uczestnicy zostaną powiadomieni."
       ],
+      "finance": [
+        "finanse"
+      ],
       "Frequency modifications will be lost.": [
         "Zmiany powtórzeń zostaną utracone."
       ],
       "here": [
         "tutaj"
+      ],
+      "High Priority": [
+        "Wysoki priorytet"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -4194,11 +4233,20 @@
       "Loading events": [
         "Ładowanie wydarzeń"
       ],
+      "Low Priority": [
+        "Niski priorytet"
+      ],
       "Manage your calendars": [
         "Zarządzaj swoimi kalendarzami"
       ],
+      "Medium Priority": [
+        "Średni priorytet"
+      ],
       "Merged": [
         "Scalony"
+      ],
+      "Monitor accounts": [
+        "Monitoring kont"
       ],
       "Monthly ${ onDayString }": [
         "Co miesiąc ${ onDayString }"
@@ -4239,6 +4287,12 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Pokaż użytkownikom organizacji, kiedy jestem zajęty. Szczegóły wydarzeń nie zostaną udostępnione."
+      ],
+      "password": [
+        "hasło"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu."
       ],
@@ -4271,6 +4325,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Zaznacz adresy, które chcesz dodać do grupy ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Spróbuj ponownie za kilka chwil"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Poczekaj na sprawdzenie kontaktów, które mogą zostać ponownie podpisane za pomocą głównego klucza szyfrowania."
@@ -4403,6 +4460,12 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
+      ],
+      "username": [
+        "nazwa użytkownika"
+      ],
+      "View details": [
+        "Pokaż szczegóły"
       ],
       "Warning": [
         "Ostrzeżenie"
@@ -4683,6 +4746,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
+      ],
+      "Access to my events": [
+        "Dostęp do wydarzeń"
       ],
       "Add email address": [
         "Dodaj adres e-mail"
@@ -4981,6 +5047,9 @@
       "Secondary time zone": [
         "Dodatkowa strefa czasowa"
       ],
+      "Show others when I'm busy": [
+        "Pokaż, kiedy jestem zajęty"
+      ],
       "Show week numbers": [
         "Pokaż numery tygodni"
       ],
@@ -5155,6 +5224,35 @@
       ],
       "Your import is starting": [
         "Proces importowania danych został rozpoczęty"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "upgrade for more storage": [
+        "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Upgrade to restore full access": [
+        "Ulepsz konto, aby przywrócić pełny dostęp"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Konto może zostać usunięte. Aby uniknąć utraty danych, poproś administratora o ulepszenie konta. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
       ]
     },
     "Mail import summary": {
@@ -6194,6 +6292,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych osobowych."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji zaprojektowane dla użytkowników poszukujących zwiększonej ochrony swoich kont. ${ learnMoreLink }"
       ],
@@ -6715,6 +6816,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "Koniec z konfliktami harmonogramów"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Możesz zobaczyć, kiedy uczestnicy mogą wziąć udział w spotkaniu."
+      ],
       "Public holidays are here!": [
         "Święta są tutaj"
       ],
@@ -7130,6 +7237,21 @@
       "Birthday": [
         "Urodziny"
       ],
+      "Breach alerts": [
+        "Alerty wycieków"
+      ],
+      "Breach Date": [
+        "Dane wycieku"
+      ],
+      "Breach detected": [
+        "Wykryto wyciek"
+      ],
+      "Breach Information": [
+        "Informacje o wycieku"
+      ],
+      "Breach Size": [
+        "Rozmiar wycieku"
+      ],
       "Calendar": [
         "Kalendarz"
       ],
@@ -7232,6 +7354,9 @@
       "Edit image": [
         "Edytuj zdjęcie"
       ],
+      "Email address": [
+        "Adres e-mail"
+      ],
       "Email addresses": [
         "Adresy e-mail"
       ],
@@ -7258,6 +7383,9 @@
       ],
       "Exporting contacts": [
         "Eksportowanie kontaktów"
+      ],
+      "Exposed info": [
+        "Ujawnione informacje"
       ],
       "Feedback": [
         "Opinia"
@@ -7298,6 +7426,9 @@
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
+      "Location": [
+        "Lokalizacja"
+      ],
       "Merge contacts": [
         "Scal kontakty"
       ],
@@ -7312,6 +7443,9 @@
       ],
       "Night theme": [
         "Ciemny motyw"
+      ],
+      "No breaches detected": [
+        "Brak wykrytych wycieków"
       ],
       "Notes": [
         "Notatki"
@@ -7331,6 +7465,9 @@
       "Participants cannot be notified": [
         "Uczestnicy nie mogą zostać powiadomieni"
       ],
+      "Password": [
+        "Hasło"
+      ],
       "Phone numbers": [
         "Numery telefonów"
       ],
@@ -7342,6 +7479,9 @@
       ],
       "Reactivate calendar keys": [
         "Reaktywacja kluczy kalendarza"
+      ],
+      "Recommended actions": [
+        "Zalecane kroki"
       ],
       "Reconnect your account": [
         "Połącz ponownie ze swoim kontem"
@@ -7448,6 +7588,12 @@
       "Start import process": [
         "Rozpocznij proces importowania"
       ],
+      "Stay safer online": [
+        "Zachowaj bezpieczeństwo online"
+      ],
+      "Type": [
+        "Typ"
+      ],
       "Unlock contacts groups": [
         "Odblokuj grupy kontaktów"
       ],
@@ -7486,6 +7632,9 @@
       ],
       "Your calendar link": [
         "Twój link kalendarza"
+      ],
+      "Your Exposed Information": [
+        "Twoje ujawnione informacje"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"

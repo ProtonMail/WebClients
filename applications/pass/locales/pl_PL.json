@@ -481,6 +481,9 @@
       "Could not resolve share members": [
         "Nie można załadować użytkowników sejfu"
       ],
+      "Could not validate addresses at the moment.": [
+        "Nie można zweryfikować adresów."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Brak wymaganych nagłówków w pliku CSV: ${ missingHeaders }"
       ],
@@ -522,6 +525,9 @@
       ],
       "Failed to delete selected items": [
         "Nie udało się przenieść zaznaczonych elementów"
+      ],
+      "Failed to edit organization settings": [
+        "Nie udało się zmienić ustawień organizacji"
       ],
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
@@ -588,6 +594,9 @@
       ],
       "Offline mode is currently not available for two password mode.": [
         "Tryb offline nie jest dostępny w trybie podwójnego hasła."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Tryb offline nie jest dostępny w Twoim planie i nie jest kompatybilny z trybem podwójnego hasła."
       ],
       "Passphrase is incorrect": [
         "Hasło jest nieprawidłowe"
@@ -771,6 +780,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek i kart płatniczych."
       ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } wymaga hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
       ],
@@ -824,6 +836,9 @@
       ],
       "Built in 2FA authenticator": [
         "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Domyślnie użytkownicy zespołu mogą eksportować tylko swoje sejfy. Po włączeniu tej opcji, użytkownicy nie będą mogli eksportować żadnych danych"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Może edytować i eksportować elementy w sejfie."
@@ -1032,6 +1047,9 @@
       "Offline support successfully disabled": [
         "Tryb offline został wyłączony"
       ],
+      "Organization settings successfully updated": [
+        "Ustawienia organizacji zostały zaktualizowane"
+      ],
       "Owner": [
         "Właściciel"
       ],
@@ -1055,6 +1073,9 @@
       ],
       "Pinning item...": [
         "Przypinanie elementu..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
@@ -1149,6 +1170,9 @@
       "Syncing your vaults…": [
         "Synchronizowanie sejfów…"
       ],
+      "Team members can only share vaults within organization": [
+        "Użytkownicy zespołu mogą udostępniać sejfy tylko w obrębie organizacji"
+      ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
@@ -1173,6 +1197,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
       ],
+      "This setting is disabled on the organization level": [
+        "Ustawienie jest wyłączone na poziomie organizacji"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
       ],
@@ -1193,6 +1220,9 @@
       ],
       "Unpinning item...": [
         "Odpinanie elementu..."
+      ],
+      "Updating organization settings": [
+        "Aktualizacja ustawień organizacji"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Ulepsz konto, aby odblokować funkcje premium"
@@ -1376,6 +1406,12 @@
       "Created": [
         "Utworzono"
       ],
+      "Disable data export for team members": [
+        "Wyłącz eksportowanie danych dla użytkowników zespołu"
+      ],
+      "Disable sharing outside the organization": [
+        "Wyłącz udostępnianie poza organizację"
+      ],
       "Display": [
         "Wyświetlanie"
       ],
@@ -1388,11 +1424,17 @@
       "Empty trash": [
         "Opróżnij Kosz"
       ],
+      "Enable offline access": [
+        "Włącz dostęp offline"
+      ],
       "Expiration date": [
         "Data wygaśnięcia"
       ],
       "Export": [
         "Eksportowanie"
+      ],
+      "Exporting policy": [
+        "Polityka eksportowania"
       ],
       "Field name": [
         "Nazwa pola"
@@ -1520,11 +1562,17 @@
       "Notes": [
         "Notatki"
       ],
+      "Offline mode": [
+        "Tryb offline"
+      ],
       "Old-New": [
         "Od najstarszych"
       ],
       "Oldest to newest": [
         "Od najstarszych"
+      ],
+      "Organization": [
+        "Organizacja"
       ],
       "Passkey": [
         "Klucz dostępu"
@@ -1582,6 +1630,9 @@
       ],
       "Set PIN code": [
         "Ustaw kod PIN"
+      ],
+      "Sharing policy": [
+        "Polityka udostępniania"
       ],
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
@@ -2038,6 +2089,9 @@
       ],
       "Invalid email addresses.": [
         "Adresy e-mail są nieprawidłowe."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Zapraszanie adresów e-mail spoza organizacji nie jest dozwolone."
       ],
       "item was imported without custom fields": [
         "element został zaimportowany bez pól niestandardowych"

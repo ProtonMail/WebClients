@@ -476,6 +476,9 @@
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
       ],
+      "Could not validate addresses at the moment.": [
+        "Kunde inte validera adresser just nu."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil saknar förväntade rubriker: ${ missingHeaders }"
       ],
@@ -515,6 +518,9 @@
       ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
+      ],
+      "Failed to edit organization settings": [
+        "Misslyckades att redigera organisationsinställningar"
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
@@ -800,6 +806,9 @@
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan teammedlemmar endast exportera valv där de är ägare. Om detta alternativ är påslaget kommer de inte att kunna exportera någon data"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
       ],
@@ -998,6 +1007,9 @@
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
       ],
+      "Organization settings successfully updated": [
+        "Organisationsinställningarna har uppdaterats"
+      ],
       "Owner": [
         "Ägare"
       ],
@@ -1116,6 +1128,9 @@
       "Syncing your vaults…": [
         "Synkroniserar dina valv…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammedlemmar kan endast dela valv inom organisationen"
+      ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
       ],
@@ -1138,6 +1153,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
       ],
+      "This setting is disabled on the organization level": [
+        "Denna inställning är inaktiverad på organisationsnivå"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
@@ -1158,6 +1176,9 @@
       ],
       "Unpinning item...": [
         "Lossar objekt..."
+      ],
+      "Updating organization settings": [
+        "Uppdaterar organisationsinställningar"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Uppgradera nu för att låsa upp premiumfunktioner"
@@ -1335,6 +1356,12 @@
       "Created": [
         "Skapad"
       ],
+      "Disable data export for team members": [
+        "Inaktivera dataexport för teammedlemmar"
+      ],
+      "Disable sharing outside the organization": [
+        "Inaktivera delning utanför organisationen"
+      ],
       "Display": [
         "Visa"
       ],
@@ -1355,6 +1382,9 @@
       ],
       "Export": [
         "Exportera"
+      ],
+      "Exporting policy": [
+        "Exportpolicy"
       ],
       "Field name": [
         "Fältnamn"
@@ -1494,6 +1524,9 @@
       "Oldest to newest": [
         "Äldsta till nyaste"
       ],
+      "Organization": [
+        "Organisation"
+      ],
       "Passkey": [
         "Passkey"
       ],
@@ -1553,6 +1586,9 @@
       ],
       "Set PIN code": [
         "Ställ in PIN-kod"
+      ],
+      "Sharing policy": [
+        "Delningspolicy"
       ],
       "Show website favicons": [
         "Visa webbplatsens favicon"

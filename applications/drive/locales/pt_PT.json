@@ -3406,6 +3406,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
       ],
+      "Change your password": [
+        "Altere a sua palavra-passe"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "A verificar contacto ${ progress } de ${ max }..."
       ],
@@ -4945,6 +4948,11 @@
       ],
       "Your import is starting": [
         "A sua importação está a começar"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "atualize para obter mais armazenamento"
       ]
     },
     "Mail import summary": {
@@ -6547,6 +6555,9 @@
       ],
       "Other names": [
         "Outros nomes"
+      ],
+      "Password": [
+        "Palavra-passe"
       ],
       "Performance might be affected": [
         "O desempenho pode ser afetado."

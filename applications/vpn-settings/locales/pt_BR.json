@@ -1860,6 +1860,12 @@
       ]
     },
     "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Uma vez excluído, este endereço não pode ser usado novamente por você ou por qualquer outra pessoa."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "O próximo endereço ativo na sua lista será definido como padrão."
+      ],
       "You can only delete 1 address per year.": [
         "Você somente pode excluir 1 endereço por ano."
       ]
@@ -1867,6 +1873,9 @@
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
         "Você somente pode excluir 1 endereço por ano"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Você atingiu o limite de exclusões de endereço para este usuário."
       ]
     },
     "Delinquent modal title": {
@@ -4755,6 +4764,35 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "${ twoFAMembers.length }/${ members.length } membro da sua organização usa a autenticação de dois fatores.",
         "${ twoFAMembers.length }/${ members.length } membros da sua organização usam a autenticação de dois fatores."
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Upgrade to restore full access": [
+        "Atualizar para restaurar o acesso total"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Seu ${ driveStorage } está cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Seu ${ mailStorage } está cheio. Para enviar ou receber e-mails, libere espaço ou ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Sua conta corre o risco de exclusão. Para evitar a perda de dados, peça ao seu administrador para atualizar. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Seu armazenamento está cheio. Para enviar ou receber e-mails, libere espaço ou ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "O seu armazenamento está cheio. Para carregar ou sincronizar arquivos, liberte espaço ou ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
       ]
     },
     "mailtrial2024: Action": {

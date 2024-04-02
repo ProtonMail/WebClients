@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Çevrim dışı kip şu anda iki parola kipinde kullanılamaz."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Çevrim dışı kip şu anda tarifenizde kullanılamaz ve iki parola kipi ile uyumlu değil."
+      ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
       ],
       "PIN codes do not match": [
         "PIN kodu ile onayı aynı değil"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "${ PASS_APP_NAME } masaüstü uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } uygulaması verilere çevrim dışı erişebilmek için ${ BRAND_NAME } parolanızı isteyecek."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Öge sabitleniyor..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Çevrim dışı kipi kullanıma almak için lütfen ${ BRAND_NAME } parolanızı onaylayın"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
+      "Enable offline access": [
+        "Çevrim dışı erişimi kullanıma al"
+      ],
       "Expiration date": [
         "Son kullanma tarihi"
       ],
@@ -1482,11 +1497,17 @@
       "Notes": [
         "Notlar"
       ],
+      "Offline mode": [
+        "Çevrim dışı kip"
+      ],
       "Old-New": [
         "Eskiden yeniye"
       ],
       "Oldest to newest": [
         "Eskiden yeniye"
+      ],
+      "Organization": [
+        "Kuruluş"
       ],
       "Passkey": [
         "Geçiş anahtarı"

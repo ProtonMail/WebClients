@@ -176,6 +176,9 @@
       "Copy email to clipboard": [
         "Kopier e-post til utklippstavlen"
       ],
+      "Copy invite link": [
+        "Kopier invitasjonskobling"
+      ],
       "Copy link": [
         "Kopier kobling"
       ],
@@ -759,6 +762,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View all reports": [
+        "Vis alle rapporter"
       ],
       "View invoice": [
         "Vis faktura"
@@ -1974,6 +1980,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Bruddvarsler og rapporter er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
       ],
@@ -2027,6 +2036,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Dine personlige data ble lekket av en nettjeneste i et databrudd. Se alle detaljer og få anbefalte handlinger."
       ]
     },
     "description": {
@@ -3553,6 +3568,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
+      ],
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
@@ -3570,6 +3588,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
+      ],
+      "Change your password": [
+        "Endre passordet ditt"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
@@ -3723,6 +3744,9 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
+      "email": [
+        "e-post"
+      ],
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
@@ -3799,6 +3823,9 @@
       "Finalizing": [
         "Fullfører"
       ],
+      "finance": [
+        "finans"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mappe \"${ link.name }\" ble slettet under nedlasting"
       ],
@@ -3834,6 +3861,9 @@
       ],
       "here": [
         "her"
+      ],
+      "High Priority": [
+        "Høy prioritet"
       ],
       "How does encrypted search work?": [
         "Hvordan fungerer kryptert søk?"
@@ -3947,6 +3977,9 @@
       "Loading...": [
         "Laster..."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Makes your account safer": [
         "Gjør kontoen din sikrere"
       ],
@@ -3954,8 +3987,14 @@
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
       ],
+      "Medium Priority": [
+        "Middels prioritet"
+      ],
       "Merged": [
         "Slått sammen"
+      ],
+      "Monitor accounts": [
+        "Overvåk kontoer"
       ],
       "More": [
         "Mer"
@@ -4033,6 +4072,9 @@
       "Or use the \"+ New\" button": [
         "Eller bruk \"+ Ny\"-knappen"
       ],
+      "password": [
+        "passord"
+      ],
       "Paused": [
         "Satt på pause"
       ],
@@ -4072,6 +4114,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Vennligst prøv igjen om få øyeblikk"
       ],
       "Please use another browser or download the file.": [
         "Vennligst bruk en annen nettleser eller last ned filen."
@@ -4432,11 +4477,17 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bruk dette skjemaet til å varsle oss om upassende, ulovlige,\neller på annen måte ondsinnede delte filer. Du er i ferd med å rapportere:"
       ],
+      "username": [
+        "brukernavn"
+      ],
       "Version is deleted": [
         "Versjon er slettet"
       ],
       "Version is restored": [
         "Versjon er gjenopprettet"
+      ],
+      "View details": [
+        "Vis detaljer"
       ],
       "Want to sync files faster?": [
         "Ønsker du å synkronisere filer raskere?"
@@ -6255,6 +6306,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Bli varslet hvis passordet ditt eller andre personlige data ble lekket."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
       ],
@@ -6980,6 +7034,21 @@
       "Birthday": [
         "Bursdag"
       ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
+      ],
+      "Breach Date": [
+        "Dato for datainnbrudd"
+      ],
+      "Breach detected": [
+        "Sikkerhetsbrudd oppdaget"
+      ],
+      "Breach Information": [
+        "Informasjon om datainnbrudd"
+      ],
+      "Breach Size": [
+        "Størrelse for datainnbrudd"
+      ],
       "Browser might run out of memory": [
         "Nettleseren kan gå tom for minne"
       ],
@@ -7102,6 +7171,9 @@
       "Edit image": [
         "Rediger bilde"
       ],
+      "Email address": [
+        "E-postadresse"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -7122,6 +7194,9 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
+      ],
+      "Exposed info": [
+        "Eksponert info"
       ],
       "Failed": [
         "Mislyktes"
@@ -7209,6 +7284,9 @@
       "Night theme": [
         "Natt-tema"
       ],
+      "No breaches detected": [
+        "Ingen sikkerhetsbrudd oppdaget"
+      ],
       "No results found": [
         "Ingen resultater funnet"
       ],
@@ -7230,6 +7308,9 @@
       "Other names": [
         "Andre navn"
       ],
+      "Password": [
+        "Passord"
+      ],
       "Performance might be affected": [
         "Det kan gå utover ytelsen"
       ],
@@ -7250,6 +7331,9 @@
       ],
       "Re-signing contacts": [
         "Signerer kontakter på nytt"
+      ],
+      "Recommended actions": [
+        "Anbefalte tiltak"
       ],
       "Reconnect your account": [
         "Koble til kontoen din på nytt"
@@ -7338,6 +7422,9 @@
       "Start import process": [
         "Start importprosessen"
       ],
+      "Stay safer online": [
+        "Hold deg tryggere på nettet"
+      ],
       "Stop sharing": [
         "Avslutt deling"
       ],
@@ -7418,6 +7505,9 @@
       ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
+      ],
+      "Your Exposed Information": [
+        "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."

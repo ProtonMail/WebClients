@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Der Offlinemodus ist derzeit nicht für den Zwei-Passwort-Modus verfügbar."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Der Offline-Modus ist derzeit für dein Abonnement nicht verfügbar und nicht mit dem Zwei-Passwort-Modus kompatibel."
+      ],
       "Passphrase is incorrect": [
         "Passphrase ist falsch"
       ],
       "PIN codes do not match": [
         "PIN-Codes stimmen nicht überein"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Bitte upgraden, um frühzeitigen Zugriff auf ${ PASS_APP_NAME } Desktop Applikation zu erhalten"
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } benötigt dein ${ BRAND_NAME }-Passwort, um offline auf Daten zugreifen zu können."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Eintrag wird angeheftet..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "Papierkorb leeren"
       ],
+      "Enable offline access": [
+        "Offline-Zugriff aktivieren"
+      ],
       "Expiration date": [
         "Ablaufdatum"
       ],
@@ -1481,6 +1496,9 @@
       ],
       "Notes": [
         "Notizen"
+      ],
+      "Offline mode": [
+        "Offline-Modus"
       ],
       "Old-New": [
         "Alt-Neu"

@@ -82,6 +82,9 @@
       "Authenticate": [
         "Kimliği doğrula"
       ],
+      "Availability is unknown": [
+        "Kullanılabilirlik durumu bilinmiyor"
+      ],
       "Back": [
         "Geri"
       ],
@@ -287,6 +290,9 @@
       ],
       "Hide affected calendars": [
         "Etkilenen takvimleri gizle"
+      ],
+      "Hide busy times": [
+        "Yoğun zamanları gizle"
       ],
       "Hide time zones": [
         "Saat dilimlerini gizle"
@@ -534,6 +540,9 @@
       "Show affected calendars": [
         "Etkilenen takvimleri görüntüle"
       ],
+      "Show busy times": [
+        "Yoğun zamanları göster"
+      ],
       "Show less": [
         "Daha az görüntüle"
       ],
@@ -606,10 +615,10 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Şimdi yükselt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Şimdi yükselt"
       ],
       "Upload picture": [
@@ -635,6 +644,9 @@
       ],
       "View": [
         "Görüntüle"
+      ],
+      "View all reports": [
+        "Tüm raporları görüntüle"
       ],
       "View contact details": [
         "Kişi bilgilerini görüntüle"
@@ -2190,6 +2202,9 @@
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
+      ],
+      "Availability unknown": [
+        "Kullanılabilirlik durumu bilinmiyor"
       ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Etkinlikleri kategoriye ya da enerji düzeylerine göre renklendirerek verimliliği artırın ve zamanınızı izleyin. Ücretli bir tarifeye geçerek bunun gibi başka pek çok özelliği edinin."
@@ -3851,6 +3866,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
+      "Change your password": [
+        "Parolanızı değiştirin"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
@@ -3942,6 +3960,9 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
+      "email": [
+        "e-posta"
+      ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
@@ -3979,11 +4000,17 @@
       "Existent, added and removed participants will be notified.": [
         "Var olan, eklenen ve kaldırılan katılımcılara bildirim gönderilecek."
       ],
+      "finance": [
+        "finans"
+      ],
       "Frequency modifications will be lost.": [
         "Yinelenme değişiklikleri kaybolacak."
       ],
       "here": [
         "buraya"
+      ],
+      "High Priority": [
+        "Yüksek öncelik"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -4064,11 +4091,20 @@
       "Loading events": [
         "Etkinlikler yükleniyor"
       ],
+      "Low Priority": [
+        "Düşük Öncelik"
+      ],
       "Manage your calendars": [
         "Takvimlerinizi yönetin"
       ],
+      "Medium Priority": [
+        "Orta öncelik"
+      ],
       "Merged": [
         "Birleştirilmiş"
+      ],
+      "Monitor accounts": [
+        "Hesapları izle"
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
@@ -4109,6 +4145,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "password": [
+        "parola"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
       ],
@@ -4139,6 +4178,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
+      ],
+      "Please try again in a few moments": [
+        "Lütfen birkaç saniye içinde tekrar deneyin"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
@@ -4271,6 +4313,12 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "username": [
+        "kullanıcı adı"
+      ],
+      "View details": [
+        "Ayrıntıları görüntüle"
       ],
       "Warning": [
         "Uyarı"
@@ -5013,6 +5061,35 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "upgrade for more storage": [
+        "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
+      ],
+      "Upgrade to restore full access": [
+        "Tam erişim sağlamak için tarifenizi yükseltin"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Kullandığınız ${ driveStorage } dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Kullandığınız ${ mailStorage } dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Hesabınızın silinme riski var. Verileriniz kaybolmasını önlemek için yöneticinizden tarifenizi yükseltmesini isteyin. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Depolama alanınız dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -5839,6 +5916,9 @@
       ],
       "Select": [
         "Seçin"
+      ],
+      "Select state": [
+        "İl seçin"
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
@@ -6849,6 +6929,15 @@
       "Birthday": [
         "Doğum günü"
       ],
+      "Breach Date": [
+        "Verilerin ele geçirilme tarihi"
+      ],
+      "Breach Information": [
+        "Verilerin ele geçirilme bilgileri"
+      ],
+      "Breach Size": [
+        "Verilerin ele geçirilme boyutu"
+      ],
       "Calendar": [
         "Takvim"
       ],
@@ -6947,6 +7036,9 @@
       "Edit image": [
         "Görseli düzenle"
       ],
+      "Email address": [
+        "E-posta adresi"
+      ],
       "Email addresses": [
         "E-posta adresleri"
       ],
@@ -6973,6 +7065,9 @@
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
+      ],
+      "Exposed info": [
+        "Açığa çıkan bilgiler"
       ],
       "Feedback": [
         "Geri bildirim"
@@ -7011,6 +7106,9 @@
       "Link confirmation": [
         "Bağlantı onayı"
       ],
+      "Location": [
+        "Konum"
+      ],
       "Merge contacts": [
         "Kişileri birleştir"
       ],
@@ -7044,6 +7142,9 @@
       "Participants cannot be notified": [
         "Katılımcılara bildirim gönderilemedi"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Phone numbers": [
         "Telefon numaraları"
       ],
@@ -7055,6 +7156,9 @@
       ],
       "Reactivate calendar keys": [
         "Takvim anahtarlarını yeniden kullanıma al"
+      ],
+      "Recommended actions": [
+        "Önerilen işlemler"
       ],
       "Reconnect your account": [
         "Hesabınızı yeniden bağlayın"
@@ -7161,6 +7265,9 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
+      "Type": [
+        "Tür"
+      ],
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"
       ],
@@ -7199,6 +7306,9 @@
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
+      ],
+      "Your Exposed Information": [
+        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
