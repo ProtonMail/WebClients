@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useChargebeeUserStatusTracker } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useReportRoutingError } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -37,6 +38,11 @@ const InvoicesSection = () => {
     const previewRef = useRef<InvoicesPreviewControls | undefined>();
     const api = useApi();
     const [user] = useUser();
+
+    // There are cases when we don't have the tracker in the current context.
+    // For example, if user upgrades to CB in one tab and has the second tab open, then the invoices request
+    // will go to v4 instead of v5 leading to an error. This hook tracks chargebee for the invoices section.
+    useChargebeeUserStatusTracker();
 
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
