@@ -14,8 +14,8 @@ export const useChargebeeKillSwitch = () => {
             return false;
         }
 
-        if (chargebeeContext.enableChargebee === ChargebeeEnabled.CHARGEBEE_ALLOWED) {
-            chargebeeContext.setEnableChargebee(ChargebeeEnabled.INHOUSE_FORCED);
+        if (chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.CHARGEBEE_ALLOWED) {
+            chargebeeContext.enableChargebeeRef.current = ChargebeeEnabled.INHOUSE_FORCED;
             setPaymentsVersion('v4');
             chargebeeContext.setCalledKillSwitch('called');
 
@@ -39,7 +39,7 @@ export const useChargebeeKillSwitch = () => {
     };
 
     const forceEnableChargebee = () => {
-        chargebeeContext.setEnableChargebee(ChargebeeEnabled.CHARGEBEE_ALLOWED);
+        chargebeeContext.enableChargebeeRef.current = ChargebeeEnabled.CHARGEBEE_FORCED;
         setPaymentsVersion('v5');
     };
 
