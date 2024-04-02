@@ -84,6 +84,9 @@
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
+      "Availability is unknown": [
+        "Даступнасць невядома"
+      ],
       "Back": [
         "Назад"
       ],
@@ -293,6 +296,9 @@
       ],
       "Hide affected calendars": [
         "Схаваць датычныя календары"
+      ],
+      "Hide busy times": [
+        "Схаваць час занятасці"
       ],
       "Hide time zones": [
         "Схаваць часавыя паясы"
@@ -540,6 +546,9 @@
       "Show affected calendars": [
         "Паказаць датычныя календары"
       ],
+      "Show busy times": [
+        "Паказаць час занятасці"
+      ],
       "Show less": [
         "Паказаць менш"
       ],
@@ -612,11 +621,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade Now": [
-        "Палепшыць"
-      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade Now": [
+        "Палепшыць"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -634,13 +643,16 @@
         "Выкарыстоўваць код аднаўлення"
       ],
       "Verify": [
-        "Праверыць"
+        "Праверка"
       ],
       "Verify account": [
         "Праверыць уліковы запіс"
       ],
       "View": [
         "Прагледзець"
+      ],
+      "View all reports": [
+        "Паглядзець усе справаздачы"
       ],
       "View contact details": [
         "Паглядзець кантактныя звесткі"
@@ -2225,8 +2237,14 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Availability unknown": [
+        "Даступнасць невядома"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Павялічце эфектыўнасць і сачыце за сваім часам кадзіруючы колерам падзеі пры дапамозе катэгорый або сваім энергетычным узроўнем. Атрымайце гэту і многія іншыя функцыі з платным тарыфным планам."
+      ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Папярэджанні ўцечкі і справаздачы даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
@@ -2284,6 +2302,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Вашы звесткі былі знойдзены прынамсі ў выніку адной уцечкі даных."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Парушэнне вашых асабістых даных адбылося праз сэрвіс у інтэрнэце ў выніку ўцечкі даных. Азнаёмцеся з падрабязнасцямі і прыміце неабходныя меры."
       ]
     },
     "description": {
@@ -3969,6 +3993,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
+      "Breach alerts": [
+        "Папярэджанні ўцечкі"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
       ],
@@ -3980,6 +4007,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
+      ],
+      "Change your password": [
+        "Змяніць свой пароль"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
@@ -4074,6 +4104,9 @@
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
+      "email": [
+        "электронная пошта"
+      ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
@@ -4113,11 +4146,17 @@
       "Existent, added and removed participants will be notified.": [
         "Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
+      "finance": [
+        "фінансы"
+      ],
       "Frequency modifications will be lost.": [
         "Змяненні перыядычнасці будуць страчаны."
       ],
       "here": [
         "тут"
+      ],
+      "High Priority": [
+        "Высокі прыярытэт"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -4200,11 +4239,20 @@
       "Loading events": [
         "Загрузка падзей"
       ],
+      "Low Priority": [
+        "Нізкі прыярытэт"
+      ],
       "Manage your calendars": [
         "Кіраваць сваімі календарамі"
       ],
+      "Medium Priority": [
+        "Сярэдні прыярытэт"
+      ],
       "Merged": [
         "Аб'яднана"
+      ],
+      "Monitor accounts": [
+        "Назіранне за ўліковымі запісамі"
       ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
@@ -4245,6 +4293,12 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы інтэрвалы занятасці. Падрабязнасці аб падзеі не абагульваюцца."
+      ],
+      "password": [
+        "пароль"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
       ],
@@ -4277,6 +4331,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Паўтарыце спробу крыху пазней"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія можна паўторна падпісаць пры дапамозе асноўнага ключа шыфравання."
@@ -4409,6 +4466,12 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
+      "username": [
+        "імя карыстальніка"
+      ],
+      "View details": [
+        "Паглядзець падрабязнасці"
       ],
       "Warning": [
         "Папярэджанне"
@@ -4689,6 +4752,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паўтарыце спробу пазней.)"
+      ],
+      "Access to my events": [
+        "Доступ да маіх падзей"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -4987,6 +5053,9 @@
       "Secondary time zone": [
         "Другі часавы пояс"
       ],
+      "Show others when I'm busy": [
+        "Паказваць іншым, калі я заняты"
+      ],
       "Show week numbers": [
         "Паказваць нумары тыдняў"
       ],
@@ -5177,7 +5246,7 @@
         "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
+        "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
@@ -5855,7 +5924,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Сканфігурыруйце вашу арганізацыю, звяжыце з ёй імя дамена і стварыце ўліковыя запісы, каб забяспечыць абарону ўсіх удзельнікаў вашай арганізацыі."
+        "Сканфігурыруйце вашу арганізацыю, звяжыце з ёй даменнае імя і стварыце ўліковыя запісы, каб забяспечыць абарону ўсіх удзельнікаў вашай арганізацыі."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
@@ -6090,7 +6159,7 @@
         "Выбраць"
       ],
       "Select state": [
-        "Выбраць стан"
+        "Выбраць вобласць"
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
@@ -6229,6 +6298,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых асабістых даных."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
       ],
@@ -6750,6 +6822,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "Канфлікты пры планаванні не выяўлены"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Цяпер вы можаце бачыць, калі ўдзельнікі могуць прысутнічаць на вашай сустрэчы."
+      ],
       "Public holidays are here!": [
         "Дзяржаўныя святы знаходзяцца тут!"
       ],
@@ -7165,6 +7243,21 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
+      "Breach alerts": [
+        "Папярэджанні ўцечкі"
+      ],
+      "Breach Date": [
+        "Дата ўцечкі"
+      ],
+      "Breach detected": [
+        "Выяўлена ўцечка"
+      ],
+      "Breach Information": [
+        "Звесткі аб уцечках"
+      ],
+      "Breach Size": [
+        "Памер уцечкі"
+      ],
       "Calendar": [
         "Каляндар"
       ],
@@ -7267,6 +7360,9 @@
       "Edit image": [
         "Рэдагаванне відарыса"
       ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
@@ -7294,6 +7390,9 @@
       "Exporting contacts": [
         "Экспартаванне кантактаў"
       ],
+      "Exposed info": [
+        "Звесткі кампраметацыі"
+      ],
       "Feedback": [
         "Водгук"
       ],
@@ -7301,7 +7400,7 @@
         "Атрыманне дадатковай абароны"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Атрыманне праграм ${ appName[APP_NAME] }"
+        "Атрымаць праграмы ${ appName[APP_NAME] }"
       ],
       "Groups": [
         "Групы"
@@ -7333,6 +7432,9 @@
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
+      "Location": [
+        "Размяшчэнне"
+      ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
       ],
@@ -7347,6 +7449,9 @@
       ],
       "Night theme": [
         "Начная тэма"
+      ],
+      "No breaches detected": [
+        "Уцечкі не выяўлены"
       ],
       "Notes": [
         "Нататкі"
@@ -7366,6 +7471,9 @@
       "Participants cannot be notified": [
         "Немагчыма апавясціць удзельнікаў"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Phone numbers": [
         "Нумары тэлефонаў"
       ],
@@ -7377,6 +7485,9 @@
       ],
       "Reactivate calendar keys": [
         "Паўторна актываваць ключы календара"
+      ],
+      "Recommended actions": [
+        "Рэкамендаваныя дзеянні"
       ],
       "Reconnect your account": [
         "Перападключыць свой уліковы запіс"
@@ -7483,6 +7594,12 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Stay safer online": [
+        "Заставайцеся абароненымі ў інтэрнэце"
+      ],
+      "Type": [
+        "Тып"
+      ],
       "Unlock contacts groups": [
         "Разблакіраваць групы кантактаў"
       ],
@@ -7521,6 +7638,9 @@
       ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"
+      ],
+      "Your Exposed Information": [
+        "Вашы скампраметаваныя звесткі"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"

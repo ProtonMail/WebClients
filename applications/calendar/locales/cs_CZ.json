@@ -606,10 +606,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
       "Upload picture": [
@@ -3924,6 +3924,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
       ],
+      "Change your password": [
+        "Změňte své heslo"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
       ],
@@ -4017,6 +4020,9 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
@@ -4056,11 +4062,17 @@
       "Existent, added and removed participants will be notified.": [
         "Existující, přidaní a odebraní účastníci budou upozorněni."
       ],
+      "finance": [
+        "finance"
+      ],
       "Frequency modifications will be lost.": [
         "Změny frekvence budou ztraceny."
       ],
       "here": [
         "zde"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -4143,8 +4155,14 @@
       "Loading events": [
         "Načítání událostí"
       ],
+      "Low Priority": [
+        "Nízká priorita"
+      ],
       "Manage your calendars": [
         "Spravovat vaše kalendáře"
+      ],
+      "Medium Priority": [
+        "Střední priorita"
       ],
       "Merged": [
         "Sloučený"
@@ -4187,6 +4205,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
+      ],
+      "password": [
+        "heslo"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu."
@@ -4352,6 +4373,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Warning": [
         "Varování"
@@ -5104,6 +5128,20 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -7069,6 +7107,9 @@
       "Edit image": [
         "Upravit obrázek"
       ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
       "Email addresses": [
         "E-mailové adresy"
       ],
@@ -7135,6 +7176,9 @@
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
+      "Location": [
+        "Umístění"
+      ],
       "Merge contacts": [
         "Sloučit kontakty"
       ],
@@ -7167,6 +7211,9 @@
       ],
       "Participants cannot be notified": [
         "Účastníci nemohou být upozorněni"
+      ],
+      "Password": [
+        "Heslo"
       ],
       "Phone numbers": [
         "Telefonní čísla"
@@ -7284,6 +7331,9 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
+      ],
+      "Type": [
+        "Typ"
       ],
       "Unlock contacts groups": [
         "Odemknout skupiny kontaktů"

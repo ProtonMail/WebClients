@@ -606,11 +606,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade Now": [
-        "Opgradere nu"
-      ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade Now": [
+        "Opgradere nu"
       ],
       "Upload picture": [
         "Upload billede"
@@ -3851,6 +3851,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
+      "Change your password": [
+        "Skift din adgangskode"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
@@ -3942,6 +3945,9 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
@@ -3979,11 +3985,17 @@
       "Existent, added and removed participants will be notified.": [
         "Eksisterende, tilføjede og fjernede deltagere vil blive underrettet."
       ],
+      "finance": [
+        "finans"
+      ],
       "Frequency modifications will be lost.": [
         "Hyppighedsændringer vil gå tabt."
       ],
       "here": [
         "hér"
+      ],
+      "High Priority": [
+        "Høj prioritet"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -4064,11 +4076,20 @@
       "Loading events": [
         "Indlæser begivenheder"
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Manage your calendars": [
         "Administrer dine kalendere"
       ],
+      "Medium Priority": [
+        "Mellem prioritet"
+      ],
       "Merged": [
         "Flettet"
+      ],
+      "Monitor accounts": [
+        "Overvåg konti"
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
@@ -4108,6 +4129,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
+      ],
+      "password": [
+        "adgangskode"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med Plain Text-formatet."
@@ -4271,6 +4295,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Warning": [
         "Advarsel"
@@ -5015,6 +5042,20 @@
         "Din import starter"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Din ${ driveStorage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din ${ mailStorage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ cta }."
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten",
@@ -5405,7 +5446,7 @@
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Del nemt dine kalendere med din familie, venner eller kolleger"
+        "Del nemt dine kalendere med din familie, venner eller kollegaer"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Hold dine planer private for dig og din familie med en krypteret kalender"
@@ -6947,6 +6988,9 @@
       "Edit image": [
         "Redigér billede"
       ],
+      "Email address": [
+        "E-mailadresse"
+      ],
       "Email addresses": [
         "E-mailadresser"
       ],
@@ -7011,6 +7055,9 @@
       "Link confirmation": [
         "Linkbekræftelse"
       ],
+      "Location": [
+        "Placering"
+      ],
       "Merge contacts": [
         "Flet kontakter"
       ],
@@ -7043,6 +7090,9 @@
       ],
       "Participants cannot be notified": [
         "Deltagere kan ikke underrettes"
+      ],
+      "Password": [
+        "Adgangskode"
       ],
       "Phone numbers": [
         "Telefonnumre"
@@ -7160,6 +7210,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Type": [
+        "Type"
       ],
       "Unlock contacts groups": [
         "Få adgang til kontaktgrupper"
