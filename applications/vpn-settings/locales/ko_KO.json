@@ -798,13 +798,13 @@
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "무제한 별칭, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별명 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
+        "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -2432,7 +2432,7 @@
         "65개 이상 국가의 2700여개 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3개 커스텀 이메일 도메인, 90개 이메일 주소, 무제한 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "3개 커스텀 이메일 도메인, 90개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -4575,6 +4575,35 @@
         "채팅 지원과 다른 프리미엄 서비스를 잠금해제 하기 위해 업그레이드 하거나, 문제를 신고하기 위해 무료 지원팀에 연락하세요."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "upgrade for more storage": [
+        "추가 저장 공간을 위해 업그레이드 하세요."
+      ],
+      "Upgrade to restore full access": [
+        "업그레이드 해주세요"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "사용자의 ${ driveStorage }이 찼습니다. 파일을 업로드 하려면 저장 공간을 비우거나 ${ cta }해주세요."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "사용자의 ${ mailStorage }이 찼습니다. 이메일 수발신을 위해선, 저장 공간을 비우거나 ${ cta }해주세요."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "사용자의 계정이 삭제될 수도 있습니다. 데이터 손실 방지를 위해서, 관리자에게 업그레이드를 문의하십시오. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "사용자의 저장 공간이 찼습니다. 메일을 계속 주고 받으려면, 저장 공간을 비우거나 ${ cta }해주세요."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "사용자의 스토리지가 가득 찼습니다. 파일을 업로드 하거나 동기화하려면, 공간을 비우거나 ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "특가 받기"
@@ -4759,7 +4788,7 @@
     },
     "new_plans: feature": {
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "무제한 hide-my-email이 포함된 ${ PASS_APP_NAME }"
+        "무제한 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 프로그램"
@@ -5223,7 +5252,7 @@
         "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별명 등 기능을 포함하는 이메일로 보호하세요."
+        "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일로 보호하세요."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: ${ serversAndCountries }, 빠른 VPN 속도, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 제저, 빠른 BitTorrent 다운로드 등을 지원하는 VPN으로 비공개로 차단된 컨텐츠에 접근하세요."
@@ -5683,7 +5712,7 @@
         "매월"
       ],
       "per month, billed annually": [
-        "월 기준, 매년마다 납부됩"
+        "월 기준, 매년마다 납부됨"
       ],
       "per month, billed every month": [
         "월 기준, 개월마다 납부됨"
@@ -5922,6 +5951,9 @@
       ],
       "Select a reason": [
         "사유 선택"
+      ],
+      "Select state": [
+        "시・도 선택"
       ]
     },
     "plan customizer, ips": {
@@ -6468,13 +6500,13 @@
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video가 포함됩니다."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "자사 프리미엄 서비스의 최대 제한: 100개 이메일 주소, 10개 지정 도메인 지원, 무제한 Hide-my-email 별명, 캘린더 공유, 암호화된 클라우드 저장 공간 및 파일 공유 등."
+        "자사 프리미엄 서비스의 최대 제한: 100개 이메일 주소, 10개 지정 도메인 지원, 무제한 hide-my-email 별칭, 캘린더 공유, 암호화된 클라우드 저장 공간 및 파일 공유 등."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3개 커스텀 이메일 도메인, 15개 이메일 주소, 무제한 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "3개 커스텀 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "가족 및 소규모 팀에게 적합하며, 각 인원이 자신의 받은 편지함과 별명을 소유합니다. 지정 도메인이 필요합니다."
+        "가족이나 소규모 팀에 딱 맞습니다. 각 구성원이 그만의 받은 편지함과 별칭을 가지며 커스텀 도메인을 필요로 합니다."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "향후 모든 기능 및 제품에 대한 얼리 액세스와 함께 향후 출시할 모든 새로운 개인 정보 보호 서비스의 유료 버전을 추가 비용 없이 누리세요."
@@ -6585,7 +6617,7 @@
         "우선 지원과 고속 VPN 속도, 10개 디바이스 보호, 고속 스트리밍, 멀웨어 보호 및 광고 차단를 잃게 됩니다."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "우선 지원과 무제한 로그인 및 노트, 무제한 hide-my-email 별명, 20개 금고를 잃게 됩니다."
+        "우선 지원과 무제한 로그인 및 노트, 무제한 hide-my-email 별칭, 20개 금고를 잃게 됩니다."
       ]
     },
     "Subscription": {
@@ -6854,7 +6886,7 @@
         "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."

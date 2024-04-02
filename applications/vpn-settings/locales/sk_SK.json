@@ -134,6 +134,9 @@
       "Delete": [
         "Odstrániť"
       ],
+      "Delete address": [
+        "Vymazať adresu"
+      ],
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
@@ -175,6 +178,9 @@
       ],
       "Edit": [
         "Upraviť"
+      ],
+      "Edit billing cycle": [
+        "Upraviť fakturačné obdobie"
       ],
       "Edit display name": [
         "Upraviť zobrazované meno"
@@ -602,6 +608,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Vymazať adresu"
+      ],
       "Disable": [
         "Vypnúť"
       ],
@@ -1857,6 +1866,19 @@
         "/používateľ mesačne"
       ]
     },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Môžete vymazať iba 1 adresu za rok."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Môžete vymazať iba 1 adresu za rok"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Dosiahli ste limit mazania adries pre tohto používateľa."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktúra po splatnosti"
@@ -2912,6 +2934,12 @@
       "Admin account allocation": [
         "Pridelenie účtu správcu"
       ],
+      "Affected user is on row": [
+        "Zasiahnutý používateľ je v riadku",
+        "Zasiahnutí používatelia sú v riadkoch",
+        "Zasiahnutí používatelia sú v riadkoch",
+        "Zasiahnutí používatelia sú v riadkoch"
+      ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
       ],
@@ -2972,6 +3000,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Nezabudnite si skopírovať heslo a uložiť ho na bezpečné miesto."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Pred aktiváciou používateľa musíte zadať heslo a vytvoriť šifrovacie kľúče pre adresy."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Pred vytvorením tejto adresy, musíte zadať heslo a vytvoriť na ňu šifrovacie kľúče."
       ],
@@ -2988,7 +3019,7 @@
         "Účtované za cenu ${ price }"
       ],
       "Billing cycle: ${ text }": [
-        "Fakturačný cyklus: ${ text }"
+        "Fakturačné obdobie: ${ text }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -3269,6 +3300,9 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "Keys created": [
+        "Kľúče vytvorené"
+      ],
       "Lean more about gateways": [
         "Zistiť viac o sieťových bránach"
       ],
@@ -3322,6 +3356,9 @@
       ],
       "No addresses exist": [
         "Neexistujú žiadne adresy"
+      ],
+      "No changes made to the current subscription": [
+        "V aktuálnom predplatnom nedošlo k žiadnym zmenám"
       ],
       "No gateways": [
         "Žiadne brány"
@@ -3427,6 +3464,12 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znak.",
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znaky.",
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov.",
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -3760,6 +3803,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Pri pripájaní k serverom ${ VPN_APP_NAME } bez aplikácie použite nasledujúce poverenia. Príklady použitia zahŕňajú: Tunnelblick na macOS, OpenVPN na GNU/Linux."
+      ],
+      "User activated": [
+        "Používateľ aktivovaný"
       ],
       "Users": [
         "Používatelia"
@@ -4190,7 +4236,7 @@
         "Fakturačná adresa"
       ],
       "Billing cycle": [
-        "Účtovacie obdobie"
+        "Fakturačné obdobie"
       ],
       "Block malware only": [
         "Blokovať iba malvér"
@@ -4718,7 +4764,15 @@
         "Neobmedzený počet priečinkov, štítkov a filtrov"
       ]
     },
+    "mailtrial2024: Info": {
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
+      ]
+    },
     "Member action": {
+      "Activate user": [
+        "Aktivovať používateľa"
+      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -5020,6 +5074,9 @@
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
       "DNS leak prevention": [
         "Prevencia úniku DNS"
       ],
@@ -5061,6 +5118,9 @@
       ],
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Správa skupiny (už čoskoro)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
@@ -5205,6 +5265,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Neobmedzené zdieľané trezory s prístupovými právami"
+      ],
+      "Unlimited vaults": [
+        "Neobmedzené trezory"
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
@@ -5975,6 +6038,9 @@
       ],
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
+      ],
+      "Invalid security code": [
+        "Neplatný bezpečnostný kód"
       ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
@@ -6852,7 +6918,7 @@
         "Účtované za 18 mesiacov"
       ],
       "Billed for 3 months": [
-        "Účtované za 3 mesiacov"
+        "Účtované za 3 mesiace"
       ],
       "Billed for 30 months": [
         "Účtované za 30 mesiacov"
@@ -7285,6 +7351,9 @@
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
       ],
+      "Activate user": [
+        "Aktivovať používateľa"
+      ],
       "Add address": [
         "Pridať adresu"
       ],
@@ -7331,7 +7400,7 @@
         "Zabezpečenie overenia"
       ],
       "Billing cycle": [
-        "Účtovacie obdobie"
+        "Fakturačné obdobie"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušiť predplatné ${ MAIL_SHORT_APP_NAME }"
@@ -7362,6 +7431,9 @@
       ],
       "Change role": [
         "Zmeniť funkciu"
+      ],
+      "Close": [
+        "Zatvoriť"
       ],
       "Confirm": [
         "Potvrdiť"
@@ -7402,6 +7474,9 @@
       "Create multiple user accounts": [
         "Vytvoriť viacero používateľských účtov"
       ],
+      "Create organization key": [
+        "Vytvoriť kľúč organizácie"
+      ],
       "Create user accounts": [
         "Vytvoriť používateľské účty"
       ],
@@ -7437,6 +7512,9 @@
       ],
       "Delete account": [
         "Zmazať účet"
+      ],
+      "Delete address permanently?": [
+        "Vymazať adresu natrvalo?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } deň)",
@@ -7966,6 +8044,14 @@
         "${ numberOfServers } v ${ numberOfCountries } krajinách"
       ]
     },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiac",
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiace",
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiacov",
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiacov"
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Účtované mesačne"
@@ -7978,8 +8064,14 @@
       "15-month": [
         "15-mesačným"
       ],
+      "18-month": [
+        "18-mesačným"
+      ],
       "2-year": [
         "2-ročným"
+      ],
+      "3-month": [
+        "3-mesačným"
       ],
       "30-month": [
         "30-mesačným"
