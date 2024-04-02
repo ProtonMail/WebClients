@@ -134,6 +134,9 @@
       "Delete": [
         "Smazat"
       ],
+      "Delete address": [
+        "Smazat adresu"
+      ],
       "Delete Gateway": [
         "Smazat bránu"
       ],
@@ -175,6 +178,9 @@
       ],
       "Edit": [
         "Upravit"
+      ],
+      "Edit billing cycle": [
+        "Upravit fakturační cyklus"
       ],
       "Edit display name": [
         "Upravit zobrazované jméno"
@@ -4709,6 +4715,20 @@
         "${ twoFAMembers.length }/${ members.length } členů vaší organizace používá dvoufázové ověření."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
@@ -7349,6 +7369,9 @@
       ],
       "Change role": [
         "Změnit roli"
+      ],
+      "Close": [
+        "Zavřít"
       ],
       "Confirm": [
         "Potvrdit"

@@ -4816,6 +4816,35 @@
         "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "upgrade for more storage": [
+        "treceți la alt tip de plan pentru mai mult spațiu"
+      ],
+      "Upgrade to restore full access": [
+        "Schimbați tipul de abonament pentru a restaura accesul complet"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Contul riscă să fie șters. Pentru a evita pierderea datelor solicitați administratorului să modifice tipul de abonament. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Spațiul de stocare este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Obțineți oferta"
@@ -6283,6 +6312,9 @@
       ],
       "Select a reason": [
         "Selectați un motiv"
+      ],
+      "Select state": [
+        "Selectare țară"
       ]
     },
     "plan customizer, ips": {
