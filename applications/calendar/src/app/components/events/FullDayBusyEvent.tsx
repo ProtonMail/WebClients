@@ -1,6 +1,8 @@
 import { CSSProperties, Ref, useMemo } from 'react';
 
 import { Icon } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
@@ -28,8 +30,13 @@ const FullDayBusyEvent = ({
     isOutsideEnd,
     eventRef,
 }: Props) => {
-    const { start, isAllDay, isAllPartDay, color, email } = event;
+    const { start, isAllDay, isAllPartDay, color } = event;
     const canonicalizedEmail = canonicalizeEmail(event.email);
+
+    const { contactEmailsMap } = useContactEmailsCache();
+    const { Name: contactName } = contactEmailsMap[canonicalizedEmail] || {};
+    const { nameEmail } = getContactDisplayNameEmail({ name: contactName, email: event.email });
+
     const isHighlighted = useCalendarSelector((state) => state.busyTimeSlots.attendeeHighlight === canonicalizedEmail);
 
     const eventStyle = useMemo(() => {
@@ -49,7 +56,7 @@ const FullDayBusyEvent = ({
             data-ignore-create="1"
         >
             <div
-                title={email}
+                title={nameEmail}
                 className={clsx([
                     'isLoaded calendar-dayeventcell-inner text-left flex',
                     !isAllDay && 'isNotAllDay',
@@ -74,7 +81,7 @@ const FullDayBusyEvent = ({
 
                     <span data-testid="calendar-view:all-day-event" className="flex-1 text-ellipsis">
                         {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
-                        <span className="calendar-dayeventcell-title">{email}</span>
+                        <span className="calendar-dayeventcell-title">{nameEmail}</span>
                     </span>
 
                     {isOutsideEnd ? <Icon name="chevron-right" size={3} className="shrink-0" /> : null}

@@ -1,14 +1,13 @@
 import { selectUserSettings } from '@proton/account';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
-import { getBusyTimeSlots } from '@proton/shared/lib/api/calendars';
-import { BUSY_TIME_SLOT_TYPE, GetBusyTimeSlotsResponse } from '@proton/shared/lib/interfaces/calendar';
-import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import { BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED, VIEWS } from '@proton/shared/lib/calendar/constants';
 import diff from '@proton/utils/diff';
 
 import { CalendarState } from '../store';
 import {
     assertBusyTimeSlotMetadata,
     busySlotsDateRangeChanged,
+    fetchAttendeeBusyTimeSlots,
     getBusyAttendeesColor,
     getBusyAttendeesToFetch,
     getBusyDatesToFetch,
@@ -16,6 +15,8 @@ import {
 import { busyTimeSlotsActions, busyTimeSlotsSliceName } from './busyTimeSlotsSlice';
 
 export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStartListening<CalendarState>) => {
+    // Listener related to the attendees list
+    // Fetch busy slots for attendees when the attendees list changes
     startListening({
         predicate: (action, nextState, originalState) => {
             // Action is not related to busyTimeSlots
@@ -23,9 +24,12 @@ export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStart
             // don't do anything
             if (
                 !action.type.startsWith(busyTimeSlotsSliceName) ||
-                [busyTimeSlotsActions.setMetadataViewStartDate.type, busyTimeSlotsActions.reset.type].some(
-                    (type) => type === action.type
-                )
+                [
+                    // Ignore `setMetadataViewStartDate` because this one is awaited in the effect
+                    busyTimeSlotsActions.setMetadataViewStartDate.type,
+                    busyTimeSlotsActions.reset.type,
+                    busyTimeSlotsActions.setHighlightedAttendee.type,
+                ].some((type) => type === action.type)
             ) {
                 return false;
             }
@@ -38,25 +42,31 @@ export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStart
                 nextState.busyTimeSlots.attendees.length > 0 &&
                 nextState.busyTimeSlots.metadata?.startDate !== originalState.busyTimeSlots.metadata?.startDate;
 
-            const viewChanged =
+            const calendarViewChanged =
                 nextState.busyTimeSlots.attendees.length > 0 &&
                 nextState.busyTimeSlots.metadata?.view !== originalState.busyTimeSlots.metadata?.view;
 
-            return attendeesChanged || eventDateChanged || viewChanged;
+            return attendeesChanged || eventDateChanged || calendarViewChanged;
         },
         effect: async (_, listenerApi) => {
+            let state = listenerApi.getState();
             const originalState = listenerApi.getOriginalState();
+
+            const userSettings = selectUserSettings(state).value;
+            if (!userSettings) {
+                return;
+            }
+
+            // No busy slots in month view
+            if (state.busyTimeSlots.metadata?.view === VIEWS.MONTH) {
+                listenerApi.dispatch(busyTimeSlotsActions.reset());
+                return;
+            }
 
             // Wait for a potential metadata change
             // This case occurs when user changes start date of the event
             // Just wait for the metadata to be updated from InteractiveCalendarView
             await listenerApi.take(busyTimeSlotsActions.setMetadataViewStartDate.match, 150);
-
-            let state = listenerApi.getState();
-            const userSettings = selectUserSettings(state).value;
-            if (!userSettings) {
-                return;
-            }
 
             // If the date range changed, we reset the attendee list in order to refetch the busy slots
             const dateRangeChanged = busySlotsDateRangeChanged(originalState, state);
@@ -73,14 +83,9 @@ export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStart
 
             state = listenerApi.getState();
 
-            const { startDate, tzid, view, viewStartDate, now } = assertBusyTimeSlotMetadata(
-                state.busyTimeSlots.metadata
-            );
+            const { tzid } = assertBusyTimeSlotMetadata(state.busyTimeSlots.metadata);
 
-            const attendeesToFetch = getBusyAttendeesToFetch(
-                state.busyTimeSlots.attendees,
-                state.busyTimeSlots.attendeeFetchStatus
-            );
+            const attendeesToFetch = getBusyAttendeesToFetch(state);
 
             // If nothing new to fetch stop here
             if (attendeesToFetch.length === 0) {
@@ -97,59 +102,80 @@ export const startListeningBusyTimeSlotsAttendees = (startListening: SharedStart
             // Set fetch statuses to loading
             listenerApi.dispatch(
                 busyTimeSlotsActions.setAttendeeFetchStatusLoadingAndColor(
-                    attendeesToFetch.map((email) => ({ email, color: nextAttendeesColor[email] }))
+                    attendeesToFetch.map((email) => ({
+                        email,
+                        color: nextAttendeesColor[email],
+                    }))
                 )
             );
 
+            const [startDateToFetch, endDateToFetch] = getBusyDatesToFetch(state);
+
             // Set statuses to fetching
-            const promises = attendeesToFetch.map(async (email) => {
-                try {
-                    const timezone = tzid;
-                    const [startDateToFetch, endDateToFetch] = getBusyDatesToFetch({
-                        startTimestamp: startDate,
-                        currentViewStartTimestamp: viewStartDate,
-                        nowTimestamp: now,
-                        view,
-                        weekStartsOn: getWeekStartsOn(userSettings),
-                    });
-                    const result = await listenerApi.extra.api<GetBusyTimeSlotsResponse>(
-                        getBusyTimeSlots(email, {
-                            Start: startDateToFetch,
-                            End: endDateToFetch,
-                            Type: BUSY_TIME_SLOT_TYPE.PARTIAL_DAY_IN,
-                            Timezone: timezone,
-                        })
-                    );
+            const promises = attendeesToFetch.map((email) =>
+                fetchAttendeeBusyTimeSlots({
+                    api: listenerApi.extra.api,
+                    email,
+                    startDate: startDateToFetch,
+                    endDate: endDateToFetch,
+                    tzid,
+                })
+            );
 
-                    let busyTimeSlots: Exclude<GetBusyTimeSlotsResponse['BusySchedule']['BusyTimeSlots'], null> = [];
-                    let isDataAccessible = false;
+            const results = await Promise.allSettled(promises);
+            const fulfilledAttendees: Record<string, Awaited<ReturnType<typeof fetchAttendeeBusyTimeSlots>>> = {};
+            const rejectedAttendeesEmails: string[] = [];
 
-                    if (Array.isArray(result?.BusySchedule?.BusyTimeSlots)) {
-                        busyTimeSlots = result.BusySchedule.BusyTimeSlots?.filter(
-                            (timeSlot): timeSlot is (typeof busyTimeSlots)[number] => !!timeSlot
-                        );
-                    }
-                    if (result?.BusySchedule?.IsDataAccessible) {
-                        isDataAccessible = !!result.BusySchedule.IsDataAccessible;
-                    }
-
-                    listenerApi.dispatch(
-                        busyTimeSlotsActions.setFetchStatusSuccess({
-                            busyTimeSlots,
-                            email,
-                            isDataAccessible,
-                        })
-                    );
-                } catch (error) {
-                    listenerApi.dispatch(
-                        busyTimeSlotsActions.setFetchStatusFail({
-                            email,
-                        })
-                    );
+            results.forEach((result, index) => {
+                const attendeeEmail = attendeesToFetch[index];
+                if ('fulfilled' === result.status) {
+                    fulfilledAttendees[attendeeEmail] = result.value;
+                }
+                if ('rejected' === result.status) {
+                    rejectedAttendeesEmails.push(attendeeEmail);
                 }
             });
 
-            await Promise.all(promises);
+            const currentVisibleAttendeesCount = state.busyTimeSlots.attendees.filter(
+                (email) =>
+                    state.busyTimeSlots.attendeeVisibility[email] === 'visible' &&
+                    state.busyTimeSlots.attendeeDataAccessible[email]
+            ).length;
+
+            if (Object.keys(fulfilledAttendees).length > 0) {
+                listenerApi.dispatch(
+                    busyTimeSlotsActions.setFetchStatusesSuccess(
+                        (() => {
+                            let nonAccessibleCounter = 0;
+                            return Object.entries(fulfilledAttendees).map(
+                                ([email, { isDataAccessible, busyTimeSlots }], index) => {
+                                    if (!isDataAccessible) {
+                                        nonAccessibleCounter++;
+                                    }
+                                    const visibleAttendeesCount =
+                                        currentVisibleAttendeesCount + index - nonAccessibleCounter;
+
+                                    const visibility =
+                                        visibleAttendeesCount >= BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED
+                                            ? 'hidden'
+                                            : 'visible';
+
+                                    return {
+                                        busyTimeSlots,
+                                        email,
+                                        isDataAccessible,
+                                        visibility,
+                                    };
+                                }
+                            );
+                        })()
+                    )
+                );
+            }
+
+            if (rejectedAttendeesEmails.length > 0) {
+                listenerApi.dispatch(busyTimeSlotsActions.setFetchStatusesFail(rejectedAttendeesEmails));
+            }
         },
     });
 };
