@@ -134,6 +134,9 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete address": [
+        "Verwijder adres"
+      ],
       "Delete Gateway": [
         "Gateway verwijderen"
       ],
@@ -608,6 +611,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Verwijder adres"
+      ],
       "Disable": [
         "Uitschakelen"
       ],
@@ -1851,6 +1857,25 @@
       ],
       "/user per month": [
         "/gebruiker per maand"
+      ]
+    },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Eens verwijderd, kan dit adres niet opnieuw door u of iemand anders gebruikt worden."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Het volgende actieve adres op uw lijst zal als standaard worden ingesteld."
+      ],
+      "You can only delete 1 address per year.": [
+        "U kunt slechts 1 adres per jaar verwijderen."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "U kunt slechts 1 adres per jaar verwijderen"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "U heeft het maximale aantal adresverwijderingen voor deze gebruiker bereikt."
       ]
     },
     "Delinquent modal title": {
@@ -4738,6 +4763,35 @@
         "${ twoFAMembers.length }/${ members.length } organisatieleden gebruiken tweestapsverificatie"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade om volledige toegang te herstellen"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw ${ driveStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw ${ mailStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om e-mails te verzenden of te ontvangen, maak ruimte vrij of ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw opslag is vol. Maak ruimte vrij om bestanden te uploaden of te synchroniseren of ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Kies deze deal"
@@ -5944,6 +5998,17 @@
         "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **oude wachtwoord**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **herstelzin** of uw **oude wachtwoord**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Elke **tweestapsverificatie (2FA)** methode op uw account wordt uitgeschakeld."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Alle beheerders krijgen toegang tot de sleutel."
@@ -5975,11 +6040,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Zorg ervoor dat ze een actief email adres hebben en nodig ze later afzonderlijk uit."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
       ],
       "Reset organization key": [
         "Herstel organisatiesleutel"
+      ],
+      "The following administrators could not be restored.": [
+        "De volgende beheerders konden niet worden hersteld."
       ],
       "The following administrators will get access to the organization key.": [
         "De volgende beheerders zullen toegang krijgen tot de organisatiesleutel."
@@ -6049,6 +6120,9 @@
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
+      ],
+      "Invalid security code": [
+        "Ongeldige beveiligingscode"
       ],
       "Something went wrong. Please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -7401,6 +7475,9 @@
       "Change role": [
         "Privileges wijzigen"
       ],
+      "Close": [
+        "Sluit"
+      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -7476,6 +7553,9 @@
       ],
       "Delete account": [
         "Account verwijderen"
+      ],
+      "Delete address permanently?": [
+        "Adres definitief verwijderen?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
