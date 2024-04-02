@@ -3571,6 +3571,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
+      "Change your password": [
+        "Vaihda salasanasi"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
       ],
@@ -3723,6 +3726,9 @@
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
+      "email": [
+        "sähköpostiosoite"
+      ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
       ],
@@ -3799,6 +3805,9 @@
       "Finalizing": [
         "Viimeistellään"
       ],
+      "finance": [
+        "rahoitus"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Kansio \"${ link.name }\" poistettiin kesken latauksen"
       ],
@@ -3834,6 +3843,9 @@
       ],
       "here": [
         "tässä"
+      ],
+      "High Priority": [
+        "Korkea tärkeys"
       ],
       "How does encrypted search work?": [
         "Miten salattu haku toimii?"
@@ -3947,6 +3959,9 @@
       "Loading...": [
         "Ladataan..."
       ],
+      "Low Priority": [
+        "Alhainen tärkeys"
+      ],
       "Makes your account safer": [
         "Tekee tilistäsi turvallisemman"
       ],
@@ -3954,8 +3969,14 @@
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
       ],
+      "Medium Priority": [
+        "Keskitason tärkeys"
+      ],
       "Merged": [
         "Yhdistetty"
+      ],
+      "Monitor accounts": [
+        "Valvo tilejä"
       ],
       "More": [
         "Lisää"
@@ -4032,6 +4053,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Tai käytä \"+ Uusi\" -painiketta"
+      ],
+      "password": [
+        "salasana"
       ],
       "Paused": [
         "Keskeytetty"
@@ -4431,6 +4455,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Tällä lomakkeella voit ilmoittaa meille sopimattomista, laittomista tai muuten haitallisista tiedostoista. Olet ilmoittamassa:"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Version is deleted": [
         "Versio on poistettu"
@@ -5227,6 +5254,35 @@
       ],
       "Your import is starting": [
         "Tuontisi alkaa"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Lue lisää"
+      ],
+      "upgrade for more storage": [
+        "hanki lisää päivittämällä tilauksesi"
+      ],
+      "Upgrade to restore full access": [
+        "Palauta täysi pääsy päivittämällä tilauksesi"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Lähettääksesi tai synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
       ]
     },
     "Mail import summary": {
@@ -6041,6 +6097,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select state": [
+        "Valitse osavaltio"
       ],
       "Set date": [
         "Aseta päivämäärä"
@@ -6888,6 +6947,15 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Breach Date": [
+        "Vuodon päiväys"
+      ],
+      "Breach Information": [
+        "Tietoja vuodosta"
+      ],
+      "Breach Size": [
+        "Vuodon koko"
+      ],
       "Browser might run out of memory": [
         "Selaimen käytettävissä oleva keskusmuisti ei välttämättä riitä"
       ],
@@ -7010,6 +7078,9 @@
       "Edit image": [
         "Muokkaa kuvaa"
       ],
+      "Email address": [
+        "Sähköpostiosoite"
+      ],
       "Email addresses": [
         "Sähköpostiosoitteet"
       ],
@@ -7030,6 +7101,9 @@
       ],
       "Exporting contacts": [
         "Yhteystietoja viedään"
+      ],
+      "Exposed info": [
+        "Vuotaneet tiedot"
       ],
       "Failed": [
         "Epäonnistuneet"
@@ -7138,6 +7212,9 @@
       "Other names": [
         "Muut nimet"
       ],
+      "Password": [
+        "Salasana"
+      ],
       "Performance might be affected": [
         "Voi vaikuttaa suorituskykyyn"
       ],
@@ -7158,6 +7235,9 @@
       ],
       "Re-signing contacts": [
         "Yhteystietojen allekirjoitus uudelleen"
+      ],
+      "Recommended actions": [
+        "Suositellut toimenpiteet"
       ],
       "Reconnect your account": [
         "Yhdistä tilisi uudelleen"
@@ -7326,6 +7406,9 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
+      ],
+      "Your Exposed Information": [
+        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"

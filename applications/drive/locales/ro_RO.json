@@ -3636,6 +3636,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
+      "Change your password": [
+        "Schimbare parolă"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
       ],
@@ -3790,6 +3793,9 @@
       "Edit email address": [
         "Editare adresă de e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
@@ -3867,6 +3873,9 @@
       "Finalizing": [
         "Finalizare"
       ],
+      "finance": [
+        "finanțe"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Folderul „${ link.name }” a fost șters în timpul descărcării."
       ],
@@ -3902,6 +3911,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "High Priority": [
+        "Prioritate înaltă"
       ],
       "How does encrypted search work?": [
         "Cum funcționează căutarea criptată?"
@@ -4016,6 +4028,9 @@
       "Loading...": [
         "Se încarcă…"
       ],
+      "Low Priority": [
+        "Prioritate scăzută"
+      ],
       "Makes your account safer": [
         "Vă face contul mai sigur"
       ],
@@ -4024,8 +4039,14 @@
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } de caractere"
       ],
+      "Medium Priority": [
+        "Prioritate medie"
+      ],
       "Merged": [
         "Îmbinat"
+      ],
+      "Monitor accounts": [
+        "Monitorizare conturi"
       ],
       "More": [
         "Detalii"
@@ -4103,6 +4124,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Sau folosiți butonul „+ Nou”"
+      ],
+      "password": [
+        "parola"
       ],
       "Paused": [
         "Suspendat"
@@ -4505,6 +4529,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Version is deleted": [
         "Versiunea a fost ștearsă."
@@ -5308,6 +5335,35 @@
       ],
       "Your import is starting": [
         "Începe importarea"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "upgrade for more storage": [
+        "treceți la alt tip de plan pentru mai mult spațiu"
+      ],
+      "Upgrade to restore full access": [
+        "Schimbați tipul de abonament pentru a restaura accesul complet"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Contul riscă să fie șters. Pentru a evita pierderea datelor solicitați administratorului să modifice tipul de abonament. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Spațiul de stocare este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
       ]
     },
     "Mail import summary": {
@@ -6146,6 +6202,9 @@
       ],
       "Select": [
         "Selectare"
+      ],
+      "Select state": [
+        "Selectare țară"
       ],
       "Set date": [
         "Setare dată"
@@ -7031,6 +7090,15 @@
       "Birthday": [
         "Data nașterii"
       ],
+      "Breach Date": [
+        "Date breșă"
+      ],
+      "Breach Information": [
+        "Informații breșă"
+      ],
+      "Breach Size": [
+        "Mărime breșă"
+      ],
       "Browser might run out of memory": [
         "Navigatorul ar putea rămâne fără memorie"
       ],
@@ -7155,6 +7223,9 @@
       "Edit image": [
         "Editare imagine"
       ],
+      "Email address": [
+        "Adresa de e-mail"
+      ],
       "Email addresses": [
         "Adrese de e-mail"
       ],
@@ -7175,6 +7246,9 @@
       ],
       "Exporting contacts": [
         "Exportare contacte"
+      ],
+      "Exposed info": [
+        "Informații expuse"
       ],
       "Failed": [
         "Eșuate"
@@ -7285,6 +7359,9 @@
       "Other names": [
         "Alte nume"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Performance might be affected": [
         "Performanța ar putea fi afectată"
       ],
@@ -7305,6 +7382,9 @@
       ],
       "Re-signing contacts": [
         "Resemnare contacte"
+      ],
+      "Recommended actions": [
+        "Acțiuni recomandate"
       ],
       "Reconnect your account": [
         "Reconectați-vă contul"
@@ -7473,6 +7553,9 @@
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
+      ],
+      "Your Exposed Information": [
+        "Informațiile expuse"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
