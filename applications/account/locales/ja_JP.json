@@ -465,7 +465,7 @@
         "新しい回復用フレーズを生成"
       ],
       "Generate recovery phrase": [
-        "回復フレーズを生成"
+        "回復用フレーズを生成"
       ],
       "Generate token": [
         "トークンを生成"
@@ -861,7 +861,7 @@
         "新しいパスワードを設定"
       ],
       "Set recovery phrase": [
-        "回復フレーズを設定"
+        "回復用フレーズを設定"
       ],
       "Settings": [
         "設定"
@@ -984,7 +984,7 @@
         "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
-        "回復フレーズを更新"
+        "回復用フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -3155,6 +3155,16 @@
         "このタブは安全に閉じても問題ありません。"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "説明:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "場所:\n${ eventLocation }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } が追加されました"
@@ -3819,10 +3829,10 @@
         "フォルダー名が長すぎます。別の名前を選択してください。"
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "回復ファイルのキーを検証できません。サポートまでお問い合わせください。"
+        "回復用ファイルのキーを検証できません。サポートまでお問い合わせください。"
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "回復ファイルのキーの検証ができません。 詳細については、個別にアップロードしてください。"
+        "回復用ファイルのキーの検証ができません。 詳細については、個別にアップロードしてください。"
       ],
       "The label name is invalid. Please choose a different name.": [
         "このラベル名は無効です。別の名前を選択してください。"
@@ -4865,6 +4875,11 @@
         "極小"
       ]
     },
+    "Free trial dekstop": {
+      "web app": [
+        "ウェブアプリ"
+      ]
+    },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -5558,7 +5573,7 @@
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "リカバリーファイルは、アカウントリセット後にロックを解除し、データを閲覧できるようにするものです"
+        "回復用ファイルは、アカウントリセット後にロックを解除し、データを閲覧できるようにするものです"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "回復用フレーズはパスワードを忘れた場合にアカウントにアクセスしたり暗号化されたメッセージを復元するのに使われます。"
@@ -5927,7 +5942,7 @@
         "完了! ${ destination } にコードを送信しました!"
       ],
       "Don’t know your recovery phrase?": [
-        "回復フレーズを知りませんか？"
+        "回復用フレーズを知りませんか？"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
@@ -5970,6 +5985,9 @@
       ],
       "Edit link": [
         "リンクを編集"
+      ],
+      "email": [
+        "メール"
       ],
       "Email address": [
         "メールアドレス"
@@ -6044,7 +6062,7 @@
         "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
       "Enter your recovery phrase to change your password now.": [
-        "今すぐパスワードを変更するには、回復フレーズを入力してください。"
+        "今すぐパスワードを変更するには、回復用フレーズを入力してください。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "イベントの招待状と RSVP はこの言語で送信されます。"
@@ -6105,6 +6123,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "プロキシ経由でリモート コンテンツをロードすることで、識別情報を非表示にします。 コンテンツを添付ファイルとして保存するオプション。"
+      ],
+      "High Priority": [
+        "優先度：高"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
@@ -6313,6 +6334,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "すべての ${ BRAND_NAME } サービスに対して、あなたの ${ BRAND_NAME_TWO } 認証情報を使用した認証の試行が、ログに含まれます。"
       ],
+      "Low Priority": [
+        "優先度：低"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "SPF/DKIM/DMARC が欠落しているか正しく設定されていない場合、主要な電子メール サービスで電子メールが拒否されたり、スパムにフィルタリングされたりすることがあります。"
       ],
@@ -6327,6 +6351,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
+      ],
+      "Medium Priority": [
+        "優先度：中"
       ],
       "Member": [
         "メンバー"
@@ -6596,7 +6623,7 @@
         "リカバリ キットがクリップボードにコピーされました"
       ],
       "Recovery phrase copied to clipboard": [
-        "回復フレーズはクリップボードへコピーされました"
+        "回復用フレーズはクリップボードへコピーされました"
       ],
       "Recovery phrase downloaded": [
         "回復用フレーズをダウンロードしました"
@@ -7084,6 +7111,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "選択した電子メール アドレスを外部サービスの SMTP ユーザー名として使用し、生成されたトークンを SMTP パスワードとして使用します。"
       ],
+      "username": [
+        "ユーザー名"
+      ],
       "Users": [
         "ユーザー"
       ],
@@ -7352,7 +7382,7 @@
         "ダウンロードした回復用ファイルを使ってロックされたデータを復元することはできません。"
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "ダウンロードした回復ファイルを使用してロックされたデータを回復することはできません。 これにより、信頼されたデバイスの回復も無効になります。"
+        "ダウンロードした回復用ファイルを使用してロックされたデータを回復することはできません。 これにより、信頼されたデバイスの回復も無効になります。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "あなたの ${ BRAND_NAME } アカウントは、${ externalEmailAddress } に関連付けられています。"
@@ -7427,7 +7457,7 @@
         "あなたのプランでは、最大 7 日間 10 バージョンに制限されています"
       ],
       "Your recovery phrase": [
-        "回復フレーズ"
+        "回復用フレーズ"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "回復用フレーズは 12 語の単語を順番に並べて構成されたものです。"
@@ -8533,7 +8563,7 @@
         "回復用電話番号"
       ],
       "Recovery phrase": [
-        "回復フレーズ"
+        "回復用フレーズ"
       ],
       "Repeat password": [
         "パスワードを再度入力"
@@ -8650,7 +8680,7 @@
         "1 つ以上の暗号鍵をアップロード"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "1 つ以上の回復ファイルまたは暗号鍵をアップロード"
+        "1 つ以上の回復用ファイルまたは暗号鍵をアップロード"
       ],
       "URL": [
         "URL"
@@ -9109,6 +9139,9 @@
       ]
     },
     "Member action": {
+      "Add address": [
+        "アドレスを追加"
+      ],
       "Change password": [
         "パスワードを変更する"
       ],
@@ -9558,6 +9591,9 @@
       "Dedicated servers and IP": [
         "専用サーバーとIP"
       ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
       "DNS leak prevention": [
         "DNS 漏洩防止"
       ],
@@ -9599,6 +9635,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
+      ],
+      "Group management (coming soon)": [
+        "グループ管理 (近日公開)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
@@ -11167,6 +11206,9 @@
       "Search for a user or address": [
         "ユーザーまたはアドレスを検索"
       ],
+      "Search parent folder": [
+        "親フォルダーを検索"
+      ],
       "Search users": [
         "ユーザーを検索"
       ],
@@ -12592,6 +12634,12 @@
       "4. Select a server to connect to": [
         "4. 接続したいサーバーを選択"
       ],
+      "A filter name is required": [
+        "フィルター名は必須です"
+      ],
+      "A filter with this name already exists": [
+        "この名前のフィルターは既に存在します"
+      ],
       "Accessibility": [
         "アクセシビリティ"
       ],
@@ -12757,6 +12805,9 @@
       "Clear out the junk": [
         "ジャンクメールを自動で削除"
       ],
+      "Close": [
+        "閉じる"
+      ],
       "Composing": [
         "組版"
       ],
@@ -12916,6 +12967,12 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } をダウンロード"
       ],
+      "Download the desktop app": [
+        "デスクトップアプリをダウンロード"
+      ],
+      "Download the mobile apps": [
+        "モバイルアプリをダウンロード"
+      ],
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
       ],
@@ -12956,6 +13013,9 @@
         "ゲートウェイにアクセスできる人を編集する"
       ],
       "Email": [
+        "メールアドレス"
+      ],
+      "Email address": [
         "メールアドレス"
       ],
       "Email composer": [
@@ -13000,6 +13060,9 @@
       "External PGP settings": [
         "外部 PGP 設定"
       ],
+      "Filter name cannot contain only spaces": [
+        "スペースのみのフィルター名は使用できません"
+      ],
       "Filters": [
         "フィルター"
       ],
@@ -13035,6 +13098,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
+      ],
+      "Get the apps": [
+        "アプリを入手"
       ],
       "Gift": [
         "ギフト"
@@ -13911,8 +13977,14 @@
       "15-month": [
         "15 か月"
       ],
+      "18-month": [
+        "18 か月"
+      ],
       "2-year": [
         "2年"
+      ],
+      "3-month": [
+        "3 か月"
       ],
       "30-month": [
         "30 か月"

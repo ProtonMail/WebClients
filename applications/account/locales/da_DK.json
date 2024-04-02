@@ -1137,6 +1137,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Slet adresse"
+      ],
       "Disable": [
         "Deaktivér"
       ],
@@ -9665,6 +9668,20 @@
         "Din import starter"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Din ${ driveStorage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din ${ mailStorage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ cta }."
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "Aktivér ${ PROTON_SENTINEL_NAME }"
@@ -10526,7 +10543,7 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
-        "Deling af boks (op til ${ n } person)"
+        "Deling af boks (op til ${ n } personer)"
       ]
     },
     "new_plans: feature info": {
@@ -10790,7 +10807,7 @@
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Del nemt dine kalendere med din familie, venner eller kolleger"
+        "Del nemt dine kalendere med din familie, venner eller kollegaer"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
