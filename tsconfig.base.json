@@ -24,6 +24,7 @@
             "proton-pass-web/*": ["./applications/pass/src/*"],
             "@proton/activation/*": ["./packages/activation/*"],
             "@proton/atoms/*": ["./packages/atoms/*"],
+            "@proton/chargebee": ["./packages/chargebee/*"],
             "@proton/colors/*": ["./packages/colors/*"],
             "@proton/components/*": ["./packages/components/*"],
             "@proton/config/*": ["./packages/config/*"],
@@ -37,15 +38,14 @@
             "@proton/pack/*": ["./packages/pack/*"],
             "@proton/pass/*": ["./packages/pass/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
+            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
             "@proton/shared/*": ["./packages/shared/*"],
             "@proton/sieve/*": ["./packages/sieve/*"],
             "@proton/srp/*": ["./packages/srp/*"],
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
-            "@proton/utils/*": ["./packages/utils/*"],
-            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
-            "@proton/chargebee": ["./packages/chargebee/*"]
+            "@proton/utils/*": ["./packages/utils/*"]
         }
     },
     "exclude": ["**/node_modules", "**/.*/"]
