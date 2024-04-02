@@ -10,11 +10,20 @@ import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 export interface AttendeeBusyTimeSlot extends CalendarViewBusyEvent {}
 
 /** Attendee email */
-type Email = string;
+export type BusyTimeSlotEmail = string;
 /** Attendee visibility */
-type Visibility = 'visible' | 'hidden';
-/** Attendee fetchStatus */
-type FetchStatus = 'loading' | 'success' | 'error';
+export type BusyTimeSlotVisibility = 'visible' | 'hidden';
+/**
+ * Attendee fetchStatus
+ * - loading: request is in progress
+ * - success: request has been successful
+ * - error: request failed.
+ */
+export type BusyTimeSlotFetchStatus = 'loading' | 'success' | 'error';
+
+export type BusyTimeSlot = Exclude<GetBusyTimeSlotsResponse['BusySchedule']['BusyTimeSlots'], null>[number] & {
+    isAllDay: boolean;
+};
 
 /**
  * When a create or edit event modal is opened:
@@ -46,28 +55,28 @@ export interface BusyTimeSlotsState {
         now: number;
     };
     /** List of event attendees */
-    attendees: Email[];
+    attendees: BusyTimeSlotEmail[];
     /**
      * Selected color for the attendee.
      * Each attendee will be assigned a different color from the actual
      * calendar colors the user has and the actual attendees colors assigned
      */
-    attendeeColor: Record<Email, string>;
+    attendeeColor: Record<BusyTimeSlotEmail, string>;
     /** Is attendee email hidden  */
-    attendeeVisibility: Record<Email, Visibility>;
+    attendeeVisibility: Record<BusyTimeSlotEmail, BusyTimeSlotVisibility>;
     /** Are attendee busy slots accessible ?  */
-    attendeeDataAccessible: Record<Email, boolean>;
+    attendeeDataAccessible: Record<BusyTimeSlotEmail, boolean>;
     /**
      * Allows to know status of getBusyTimeSlots request for each user
      * - loading: request is in progress
      * - success: request has been successful
      * - error: request failed.
      */
-    attendeeFetchStatus: Record<Email, FetchStatus>;
+    attendeeFetchStatus: Record<BusyTimeSlotEmail, BusyTimeSlotFetchStatus>;
     /** Busy time slots for each attendees */
-    attendeeBusySlots: Record<Email, Exclude<GetBusyTimeSlotsResponse['BusySchedule']['BusyTimeSlots'], null>>;
+    attendeeBusySlots: Record<BusyTimeSlotEmail, BusyTimeSlot[]>;
     /** Highlighted attendee in the ui */
-    attendeeHighlight: Email | undefined;
+    attendeeHighlight: BusyTimeSlotEmail | undefined;
 }
 
 export const busyTimeSlotsSliceName = 'busyTimeSlots';
@@ -97,7 +106,9 @@ const busyTimeSlotSlice = createSlice({
             state,
             {
                 payload: { attendeeEmails, startDate, tzid, view, now, viewStartDate },
-            }: PayloadAction<{ attendeeEmails: Email[] } & Exclude<BusyTimeSlotsState['metadata'], undefined>>
+            }: PayloadAction<
+                { attendeeEmails: BusyTimeSlotEmail[] } & Exclude<BusyTimeSlotsState['metadata'], undefined>
+            >
         ) => {
             state.metadata = {
                 now,
@@ -114,7 +125,9 @@ const busyTimeSlotSlice = createSlice({
             state,
             {
                 payload: { attendeeEmails, startDate, tzid, view, now, viewStartDate },
-            }: PayloadAction<{ attendeeEmails: Email[] } & Exclude<BusyTimeSlotsState['metadata'], undefined>>
+            }: PayloadAction<
+                { attendeeEmails: BusyTimeSlotEmail[] } & Exclude<BusyTimeSlotsState['metadata'], undefined>
+            >
         ) => {
             state.metadata = {
                 now,
@@ -129,6 +142,7 @@ const busyTimeSlotSlice = createSlice({
             state.attendeeDataAccessible = initialState.attendeeDataAccessible;
             state.attendeeFetchStatus = initialState.attendeeFetchStatus;
             state.attendeeBusySlots = initialState.attendeeBusySlots;
+            state.attendeeHighlight = undefined;
         },
         setMetadataViewStartDate: (state, { payload }: PayloadAction<{ viewStartDate: number }>) => {
             if (!state.metadata) {
@@ -144,41 +158,60 @@ const busyTimeSlotSlice = createSlice({
 
             state.metadata!.view = payload.view;
         },
-        removeAttendee: (state, action: PayloadAction<Email>) => {
+        removeAttendee: (state, action: PayloadAction<BusyTimeSlotEmail>) => {
             const emailCanonicalized = canonicalizeEmailByGuess(action.payload);
             state.attendees = state.attendees.filter((email) => email !== emailCanonicalized);
+            state.attendeeVisibility[emailCanonicalized] = 'hidden';
         },
-        setAttendeeVisibility: (state, action: PayloadAction<{ email: Email; visible: boolean }>) => {
+        setAttendeeVisibility: (state, action: PayloadAction<{ email: BusyTimeSlotEmail; visible: boolean }>) => {
             const emailCanonicalized = canonicalizeEmailByGuess(action.payload.email);
+
+            if (state.attendeeDataAccessible[emailCanonicalized] === false) {
+                state.attendeeVisibility[emailCanonicalized] = 'hidden';
+            }
+
             state.attendeeVisibility[emailCanonicalized] = action.payload.visible ? 'visible' : 'hidden';
         },
-        setAttendeeFetchStatusLoadingAndColor: (state, action: PayloadAction<{ email: Email; color: string }[]>) => {
+        setAttendeeFetchStatusLoadingAndColor: (
+            state,
+            action: PayloadAction<{ email: BusyTimeSlotEmail; color: string }[]>
+        ) => {
             for (const { email, color } of action.payload) {
                 const emailCanonicalized = canonicalizeEmailByGuess(email);
                 state.attendeeFetchStatus[emailCanonicalized] = 'loading';
+                state.attendeeVisibility[email] = 'hidden';
                 state.attendeeColor[emailCanonicalized] = color;
             }
         },
-        setFetchStatusSuccess: (
+        setFetchStatusesSuccess: (
             state,
             {
-                payload: { email, busyTimeSlots, isDataAccessible },
-            }: PayloadAction<{
-                email: Email;
-                busyTimeSlots: Exclude<GetBusyTimeSlotsResponse['BusySchedule']['BusyTimeSlots'], null>;
-                isDataAccessible: boolean;
-            }>
+                payload,
+            }: PayloadAction<
+                {
+                    email: BusyTimeSlotEmail;
+                    busyTimeSlots: BusyTimeSlot[];
+                    isDataAccessible: boolean;
+                    visibility: BusyTimeSlotVisibility;
+                }[]
+            >
         ) => {
-            state.attendeeBusySlots[email] = busyTimeSlots;
-            state.attendeeDataAccessible[email] = isDataAccessible;
-            state.attendeeFetchStatus[email] = 'success';
-            state.attendeeVisibility[email] = 'visible';
+            for (const { email, busyTimeSlots, isDataAccessible, visibility } of payload) {
+                const emailCanonicalized = canonicalizeEmailByGuess(email);
+                state.attendeeBusySlots[emailCanonicalized] = busyTimeSlots;
+                state.attendeeDataAccessible[emailCanonicalized] = isDataAccessible;
+                state.attendeeFetchStatus[emailCanonicalized] = 'success';
+                state.attendeeVisibility[emailCanonicalized] = visibility;
+            }
         },
-        setFetchStatusFail: (state, action: PayloadAction<{ email: Email }>) => {
-            const emailCanonicalized = canonicalizeEmailByGuess(action.payload.email);
-            state.attendeeFetchStatus[emailCanonicalized] = 'error';
+        setFetchStatusesFail: (state, action: PayloadAction<BusyTimeSlotEmail[]>) => {
+            for (const email of action.payload) {
+                const emailCanonicalized = canonicalizeEmailByGuess(email);
+                state.attendeeFetchStatus[emailCanonicalized] = 'error';
+                state.attendeeVisibility[emailCanonicalized] = 'hidden';
+            }
         },
-        setHighlightedAttendee: (state, action: PayloadAction<Email | undefined>) => {
+        setHighlightedAttendee: (state, action: PayloadAction<BusyTimeSlotEmail | undefined>) => {
             state.attendeeHighlight = action.payload ? canonicalizeEmailByGuess(action.payload) : undefined;
         },
     },
