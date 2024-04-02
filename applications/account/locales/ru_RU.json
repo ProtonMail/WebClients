@@ -3126,6 +3126,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Для удаления нижнего колонтитула ${ MAIL_APP_NAME } обновите тариф и разблокируйте ещё больше премиум-функций."
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Чтобы просмотреть полный отчет, включая персональные рекомендации, улучшите до платного тарифа."
+      ],
       "Track the status and activity of your referrals.": [
         "Отлеживайте состояние и активность ваших рефералов."
       ],
@@ -3255,6 +3258,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Помогите нам совершенствоваться!"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb для Debian / Ubuntu."
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm для Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6183,6 +6194,9 @@
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Вы уверены, что хотите предоставить этому пользователю права администратора?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Вы уверены, что хотите безвозвратно удалить все журналы доступа?"
       ],
@@ -6234,6 +6248,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Обязательно скопируйте ваш пароль и сохраните его в безопасном месте."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Перед активацией пользователя необходимо предоставить пароль и создать ключи шифрования для адресов."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед созданием этого адреса необходимо указать пароль и создать для него ключи шифрования."
       ],
@@ -6257,6 +6274,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Запрещает отправителям видеть, открывали ли вы сообщение и когда."
+      ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Breach Alert работает на основе собственных баз данных ${ BRAND_NAME }, баз данных с открытым исходным кодом и Constella Intelligence. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -6561,6 +6581,9 @@
       "Failed to fetch logs.": [
         "Не удалось загрузить журналы."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Быстро и целенаправленно. Электронная почта и календарь прямо на вашем рабочем столе."
+      ],
       "Fill in user details": [
         "Заполните данные пользователя"
       ],
@@ -6714,6 +6737,9 @@
       "inactive": [
         "неактивный"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
       ],
@@ -6864,6 +6890,9 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "Monitor accounts": [
+        "Отслеживать аккаунты"
+      ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
       ],
@@ -6899,6 +6928,9 @@
       ],
       "No addresses exist": [
         "Нет адресов"
+      ],
+      "No changes made to the current subscription": [
+        "Никаких изменений в текущей подписке не было сделано"
       ],
       "No credit card required": [
         "Кредитная карта не требуется"
@@ -7079,6 +7111,12 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символа.",
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов.",
+        "Используйте пароль длиной более ${ MIN_PASSWORD_LENGTH } символов."
       ],
       "Please use another browser or download the file.": [
         "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
@@ -7485,6 +7523,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать его для доступа к вашему аккаунту в ${ BRAND_NAME } в будущем."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
@@ -7722,6 +7763,9 @@
       "We just sent you a new link.": [
         "Мы только что отправили вам новую ссылку."
       ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Мы отслеживаем ваши адреса электронной почты, пароли и личные данные на предмет их появления в темной сети и уведомляем вас об этом в случае, если ваши данные будут раскрыты."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
@@ -7845,6 +7889,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Вы вошли в аккаунт ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Вы используете больше места в хранилище, чем включено в тариф ${ downgradedPlanName }. Удалите данные, чтобы перейти на более дешевую версию."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
       ],
@@ -7877,6 +7924,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Теперь вы можете получить доступ к аккаунту и управлять им как администратор."
+      ],
+      "You can now close this tab.": [
+        "Теперь вы можете закрыть эту вкладку."
       ],
       "You can now close this window.": [
         "Теперь это окно можно закрыть."
@@ -9700,6 +9750,11 @@
         "Ваш импорт начался"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "выберите другой тариф для увеличения хранилища"
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "Включите ${ PROTON_SENTINEL_NAME }"
@@ -10429,6 +10484,9 @@
       ],
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Управление группами (скоро)"
       ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
@@ -13808,6 +13866,9 @@
       "Breach Date": [
         "Дата утечки"
       ],
+      "Breach Information": [
+        "Информация об утечке"
+      ],
       "Breach Size": [
         "Размер утечки"
       ],
@@ -15117,6 +15178,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
       ]
     },
     "vpn_2step: billing": {

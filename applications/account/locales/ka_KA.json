@@ -3116,6 +3116,9 @@
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME }-ის ქვედა კოლონტიტულის მოსაცილებლად ასწიეთ სატარიფო გეგმა და მიიღეთ კიდევ უფრო მეტი ფასიანი ფუნქცია."
       ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "სრული ანგარიშის სანახავად, პერსონალიზებული რეკომენდაციების ჩათვლით, გადადით ფასიან გეგმაზე."
+      ],
       "Track the status and activity of your referrals.": [
         "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი."
       ],
@@ -3739,6 +3742,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } არის თქვენი მომხმარებლის სახელი. ${ emailAddress }-ის შესაქმნელად გთხოვთ გადადით პარამეტრები > შეტყობინებები და შედგენა > მოკლე დომენი (pm.me)"
       ],
       "A group with this name already exists": [
         "ჯგუფი ამ სახელით უკვე არსებობს"
@@ -5198,6 +5204,9 @@
       "Back to sign in": [
         "შესვლის გვერდზე დაბრუნება"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
+        "განაგრძეთ ისიამოვნეთ სწრაფი, ორიენტირებული და უსაფრთხო დესკტოპის გამოცდილებით. განაახლეთ ულიმიტო წვდომისა და სხვა პრემიუმ ფუნქციების განბლოკვის მიზნით. "
+      ],
       "Keep using the desktop app": [
         "კომპიუტერის აპის გამოყენების გაგრძელება"
       ],
@@ -6241,6 +6250,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "დარწმუნდით, რომ დააკოპირეთ თქვენი პაროლი და ის უსაფრთხო ადგილას შეინახეთ."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "მომხმარებლის გააქტიურებამდე თქვენ უნდა მიუთითოთ პაროლი და შექმნათ დაშიფვრის გასაღებები მისამართებისთვის."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "მისამართის შექმნამდე პაროლის შეყვანა და მისთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
       ],
@@ -6264,6 +6276,9 @@
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "გამომგზავნის დაბლოკვა დაინახოს, თუ და როდის გახსენით შეტყობინება."
+      ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "დარღვევის გაფრთხილება უზრუნველყოფილია ${ BRAND_NAME }-ის საკუთრების მონაცემთა ნაკრებებით, ღია კოდის მონაცემთა ნაკრებით და Constella Intelligence-ით. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -7653,6 +7668,9 @@
       "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
         "გამოიყენეთ ${ VPN_APP_NAME } ჩართული Netshield-ით ფიშინგისა და მავნე პროგრამებისგან თავის დასაცავად"
       ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "გამოიყენეთ მეტსახელები ონლაინ სერვისებზე დასარეგისტრირებლად. ეს იცავს თქვენს რეალურ ელფოსტის მისამართს და პირადობას, ზღუდავს დარღვევის აფეთქების რადიუსს."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
       ],
@@ -7727,6 +7745,9 @@
       ],
       "We just sent you a new link.": [
         "ახლახან ახალი ბმული გამოგიგზავნეთ."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "ჩვენ ვაკვირდებით თქვენს ელფოსტის მისამართებს, პაროლებსა და პერსონალურ მონაცემებს ბნელ ქსელში გამოჩენისთვის და შეგატყობინებთ თქვენი მონაცემების დარღვევის შემთხვევაში."
       ],
       "We need to authenticate your payment method with your bank.": [
         "ჩვენ თქვენი გადახდის მეთოდის ავთენტიკაცია გვჭირდება თქვენს ბანკში."
@@ -8058,6 +8079,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "თქვენი მხარდაჭერის ბილეთი დაიხურა. გმადლობთ, რომ დაუკავშირდით ${ BRAND_NAME } მხარდაჭერას."
       ]
     },
     "info": {
@@ -9702,6 +9726,35 @@
         "შემოტანის დასაწყისი"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "Upgrade to restore full access": [
+        "ასწიეთ სატარიფო გეგმა სრული წვდომის აღსადგენად"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი ${ driveStorage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი ${ mailStorage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }-ის ჩართვა"
@@ -9787,6 +9840,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "თქვენი გამოწერა ავტომატურად განახლდება ${ renewTime }-ზე ${ renewablePrice }-ზე, გააუქმეთ ნებისმიერ დროს"
       ]
     },
     "mailtrial2024: Title": {
@@ -10789,6 +10845,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: იქონიეთ წვდომა დაბლოკილ შემცველობასთან და იმუშავეთ ინტერნეტში კონფიდენციალურად. შეიცავს ${ serversAndCountries }, ყველაზე სწრაფ VPN-ს, წვდომას ვიდეოსტრიმინგის სერვისებთან, მავნე პროგრამებისა და რეკლამის დაბლოკვას, სწრაფ BtTorrent-ს და სხვ."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "წვდომა ${ MAIL_APP_NAME }-სა და ${ CALENDAR_APP_NAME }-ზე თქვენი დესკტოპის მოხერხებულობიდან"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+ და Prime Video-ის ჩათვლით, ნებისმიერი ადგილიდან"
       ],
@@ -10811,7 +10870,7 @@
         "სარეკლამო ან პროგრამული ელფოსტის მასიური გაგზავნა ამჟამად მხარდაუჭერელია. ამ მიზნისთვის გირჩევთ, ელფოსტის გამოყოფილი სერვისი აირჩიოთ."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "აირჩიტ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
+        "აირჩიეთ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "გააკონტროლეთ წვდომა თქვენს გაზიარებულ ფაილებზე მათზე პაროლებისა და ბმულების ვადის დამატების საშუალებით"
@@ -11835,6 +11894,17 @@
         "ინდივიდუალური პირებისთვის"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**თქვენი ყველა არსებული მონაცემი** (ელფოსტა, მოვლენები, კონტაქტები, ფაილები, ${ PASS_APP_NAME } ჩანაწერები და ა.შ.) ** დაიბლოკება** და მისი განბლოკვა შესაძლებელია მხოლოდ თქვენი **ძველი პაროლით**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**თქვენი ყველა არსებული მონაცემი** (ელფოსტა, მოვლენები, კონტაქტები, ფაილები, ${ PASS_APP_NAME } ჩანაწერები და ა.შ.) ** დაიბლოკება** და მისი განბლოკვა შესაძლებელია მხოლოდ თქვენი **აღდგენის ფრაზით** ან თქვენი ** ძველი პაროლი**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "თქვენს ანგარიშზე არსებული **ორფაქტორიანი ავთენტიფიკაციის (2FA)** მეთოდი გაითიშება."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "გასაღებთან წვდომას ყველა ადმინისტრატორი მიიღებს."
@@ -12077,6 +12147,9 @@
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
+      ],
+      "Select state": [
+        "აირჩიეთ შტატი"
       ],
       "Text": [
         "ტექსტი"
@@ -14200,6 +14273,15 @@
       ],
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
+      ],
+      "For Linux": [
+        "Linux-სთვის"
+      ],
+      "For macOS": [
+        "macOS-სთვის"
+      ],
+      "For Windows": [
+        "Windows-სთვის"
       ],
       "Forward and auto-reply": [
         "გადაგზავნა და ავტომოპასუხე"

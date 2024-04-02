@@ -197,6 +197,9 @@
       "Close navigation": [
         "Zavrieť menu"
       ],
+      "Close tab": [
+        "Zatvoriť kartu"
+      ],
       "Close this banner": [
         "Zatvoriť tento banner"
       ],
@@ -302,6 +305,9 @@
       "Delete": [
         "Odstrániť"
       ],
+      "Delete address": [
+        "Vymazať adresu"
+      ],
       "Delete and confirm": [
         "Vymazať a potvrdiť"
       ],
@@ -379,6 +385,9 @@
       ],
       "Edit": [
         "Upraviť"
+      ],
+      "Edit billing cycle": [
+        "Upraviť fakturačné obdobie"
       ],
       "Edit display name": [
         "Upraviť zobrazované meno"
@@ -995,6 +1004,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgradovať pre využívanie programu ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to view all": [
+        "Upgradovať na zobrazenie všetkého"
+      ],
       "Upgrade your plan": [
         "Inovujte svoj plán"
       ],
@@ -1134,6 +1146,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Vymazať adresu"
+      ],
       "Disable": [
         "Vypnúť"
       ],
@@ -3049,6 +3064,19 @@
         "Neznáme"
       ]
     },
+    "Delete address prompt": {
+      "You can only delete 1 address per year.": [
+        "Môžete vymazať iba 1 adresu za rok."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Môžete vymazať iba 1 adresu za rok"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Dosiahli ste limit mazania adries pre tohto používateľa."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Všetky udalosti v tomto kalendári budú odstránené."
@@ -4321,6 +4349,9 @@
       "Invalid URL": [
         "Neplatná URL"
       ],
+      "Missing parameters in the URL.": [
+        "Chýbajúce parametre v URL."
+      ],
       "Oops, something went wrong": [
         "Ups, niečo sa pokazilo"
       ],
@@ -4332,6 +4363,9 @@
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "Support ticket does not exist.": [
+        "Požiadavka na podporu neexistuje."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Pre použitie ${ MAIL_APP_NAME } alebo ${ CALENDAR_APP_NAME }, prejdite na webovú verziu."
@@ -5119,6 +5153,19 @@
       ],
       "Very small": [
         "Veľmi malé"
+      ]
+    },
+    "Free trial dekstop": {
+      "web app": [
+        "webová aplikácia"
+      ]
+    },
+    "Free trial desktop": {
+      "Back to sign in": [
+        "Späť na prihlásenie"
+      ],
+      "Keep using the desktop app": [
+        "Pokračujte v používaní desktopovej aplikácie"
       ]
     },
     "Frequency of news": {
@@ -6041,6 +6088,12 @@
       "Admin account allocation": [
         "Pridelenie účtu správcu"
       ],
+      "Affected user is on row": [
+        "Zasiahnutý používateľ je v riadku",
+        "Zasiahnutí používatelia sú v riadkoch",
+        "Zasiahnutí používatelia sú v riadkoch",
+        "Zasiahnutí používatelia sú v riadkoch"
+      ],
       "Align left": [
         "Zarovnať vľavo"
       ],
@@ -6206,6 +6259,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Nezabudnite si skopírovať heslo a uložiť ho na bezpečné miesto."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Pred aktiváciou používateľa musíte zadať heslo a vytvoriť šifrovacie kľúče pre adresy."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Pred vytvorením tejto adresy, musíte zadať heslo a vytvoriť na ňu šifrovacie kľúče."
       ],
@@ -6225,7 +6281,7 @@
         "Účtované za cenu ${ price }"
       ],
       "Billing cycle: ${ text }": [
-        "Fakturačný cyklus: ${ text }"
+        "Fakturačné obdobie: ${ text }"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokuje odosielateľov, aby videli, či a kedy ste otvorili správu."
@@ -6440,6 +6496,9 @@
       "Edit link": [
         "Upraviť odkaz"
       ],
+      "email": [
+        "email"
+      ],
       "Email address": [
         "Emailová adresa"
       ],
@@ -6530,11 +6589,17 @@
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
+      ],
       "Fill in user details": [
         "Vyplňte podrobnosti o používateľovi"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre fungujú pre všetky emaily, vrátane prichádzajúcich aj odoslaných emailov. Každý filter musí obsahovať aspoň meno, podmienku a akciu."
+      ],
+      "finance": [
+        "financie"
       ],
       "for choosing ${ product }": [
         "za výber ${ product }"
@@ -6577,6 +6642,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skryje identifikačné informácie načítaním vzdialeného obsahu cez proxy server. Možnosť ukladať obsah ako prílohy."
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokiaľ niektorý zo správcov zmenil heslo, budete ho musiet požiadať o nové heslo organizácie."
@@ -6740,6 +6808,9 @@
       "Key deletion is irreversible!": [
         "Vymazanie kľúča je nezvratné!"
       ],
+      "Keys created": [
+        "Kľúče vytvorené"
+      ],
       "Label all imported messages as": [
         "Označiť všetky importované správy ako"
       ],
@@ -6800,6 +6871,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Protokoly zahŕňajú pokusy o overenie pre všetky služby ${ BRAND_NAME }, ktoré používajú vaše ${ BRAND_NAME_TWO } poverenia."
       ],
+      "Low Priority": [
+        "Nízka priorita"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Veľké emailové služby môžu odmietnuť alebo filtrovať vaše e-maily ako spam, ak chýba alebo nie je správne nastavený SPF/DKIM/DMARC."
       ],
@@ -6815,6 +6889,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Medium Priority": [
+        "Stredná priorita"
+      ],
       "Member": [
         "Člen"
       ],
@@ -6823,6 +6900,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Monitor accounts": [
+        "Monitorujte účty"
       ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
@@ -6859,6 +6939,9 @@
       ],
       "No addresses exist": [
         "Neexistujú žiadne adresy"
+      ],
+      "No changes made to the current subscription": [
+        "V aktuálnom predplatnom nedošlo k žiadnym zmenám"
       ],
       "No credit card required": [
         "Nie je potrebná platobná karta"
@@ -6956,6 +7039,9 @@
       "Paid for a monthly plan": [
         "Zaplatené za mesačný plán"
       ],
+      "password": [
+        "heslo"
+      ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
       ],
@@ -7040,6 +7126,12 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znak.",
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znaky.",
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov.",
+        "Použite, prosím, heslo s dĺžkou viac než ${ MIN_PASSWORD_LENGTH } znakov."
+      ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
       ],
@@ -7048,6 +7140,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkajte prosím, kým sa vaše zmeny nesynchronizujú so serverom."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "A ${ numOfBreaches } ďalšie"
       ],
       "Plus or Visionary subscription required": [
         "Je vyžadované predplatné Plus alebo Visionary"
@@ -7448,6 +7543,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Týmto sa nahradí vaše dočasné heslo. V budúcnosti ho použite pre prístup k vášmu účtu ${ BRAND_NAME }."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Toto vás odhlási zo všetkých aktívnych relácií a vypne dvojstupňové overenie."
       ],
@@ -7601,6 +7699,9 @@
       "URL link": [
         "URL odkaz"
       ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Na registráciu do online služieb používajte prezývky. Chránite tak svoju skutočnú emailovú adresu a identitu, čím obmedzíte rádius útoku v prípade narušenia."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
       ],
@@ -7612,6 +7713,12 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Použite vybratú emailovú adresu ako používateľské meno SMTP v externej službe a vygenerovaný token ako SMTP heslo."
+      ],
+      "User activated": [
+        "Používateľ aktivovaný"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -7655,6 +7762,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Upozornenie: vymazanie je trvalé. Odstráni sa tým aj prístup ku všetkým pripojeným službám a vymažú sa všetky vaše kontakty."
       ],
+      "Ways you can minimize your breach risks": [
+        "Spôsoby, akými môžete minimalizovať riziko úniku"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ak je to možné, odporúčame vám používať oficiálne aplikácie ${ VPN_APP_NAME }."
       ],
@@ -7666,6 +7776,9 @@
       ],
       "We just sent you a new link.": [
         "Práve sme vám zaslali nový odkaz."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Monitorujeme, či sa vaše adresy, heslá a osobné informácie objavili na temnom webe a upozorníme vás v prípade, že boli vaše dáta skompromitované."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
@@ -7825,6 +7938,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Teraz môžete pristupovať k účtu a spravovať ho ako správca."
+      ],
+      "You can now close this tab.": [
+        "Túto kartu teraz môžete zatvoriť."
       ],
       "You can now close this window.": [
         "Teraz môžete toto okno zavrieť."
@@ -8008,6 +8124,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Vaša požiadavka na podporu bola uzavretá. Ďakujeme, že ste kontaktovali ${ BRAND_NAME } podporu."
       ]
     },
     "info": {
@@ -8580,11 +8699,14 @@
       "Awarded": [
         "Ocenený"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Fakturačná adresa"
       ],
       "Billing cycle": [
-        "Účtovacie obdobie"
+        "Fakturačné obdobie"
       ],
       "Block": [
         "Blokovať"
@@ -9530,6 +9652,9 @@
       "Create account": [
         "Vytvoriť účet"
       ],
+      "Create an alias": [
+        "Vytvoriť alias"
+      ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
       ],
@@ -9714,7 +9839,10 @@
     },
     "mailtrial2024: Info": {
       "Get ${ planName } for ${ price }": [
-        "Získajte ${ planName } pre ${ price }"
+        "Získajte ${ planName } za ${ price }"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Vaše predplatné sa automaticky obnoví ${ renewTime } za ${ renewablePrice }, môžete ho kedykoľvek zrušiť"
       ]
     },
     "Maintenance mode": {
@@ -9742,6 +9870,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktivovať používateľa"
+      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -10293,6 +10424,9 @@
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
       "DNS leak prevention": [
         "Prevencia úniku DNS"
       ],
@@ -10334,6 +10468,9 @@
       ],
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
+      ],
+      "Group management (coming soon)": [
+        "Správa skupiny (už čoskoro)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
@@ -10478,6 +10615,9 @@
       ],
       "Unlimited shared vaults with access permissions": [
         "Neobmedzené zdieľané trezory s prístupovými právami"
+      ],
+      "Unlimited vaults": [
+        "Neobmedzené trezory"
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
@@ -11882,6 +12022,9 @@
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
       ],
+      "Invalid security code": [
+        "Neplatný bezpečnostný kód"
+      ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
       ],
@@ -13092,7 +13235,7 @@
         "Účtované za 18 mesiacov"
       ],
       "Billed for 3 months": [
-        "Účtované za 3 mesiacov"
+        "Účtované za 3 mesiace"
       ],
       "Billed for 30 months": [
         "Účtované za 30 mesiacov"
@@ -13727,6 +13870,9 @@
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
       ],
+      "Activate user": [
+        "Aktivovať používateľa"
+      ],
       "Add address": [
         "Pridať adresu"
       ],
@@ -13805,6 +13951,9 @@
       "Are you sure you want to close?": [
         "Naozaj chcete zatvoriť?"
       ],
+      "Are you sure?": [
+        "Ste si istí?"
+      ],
       "Authentication security": [
         "Zabezpečenie overenia"
       ],
@@ -13818,7 +13967,16 @@
         "Záloha a export"
       ],
       "Billing cycle": [
-        "Účtovacie obdobie"
+        "Fakturačné obdobie"
+      ],
+      "Breach Date": [
+        "Dátum úniku"
+      ],
+      "Breach Information": [
+        "Uniknuté informácie"
+      ],
+      "Breach Size": [
+        "Veľkosť úniku"
       ],
       "Bridge for ${ platform }": [
         "Most pre ${ platform }"
@@ -13868,6 +14026,9 @@
       "Clear out the junk": [
         "Prečistenie nevyžiadanej pošty"
       ],
+      "Close": [
+        "Zatvoriť"
+      ],
       "Composing": [
         "Zostavovanie"
       ],
@@ -13915,6 +14076,9 @@
       ],
       "Create multiple user accounts": [
         "Vytvoriť viacero používateľských účtov"
+      ],
+      "Create organization key": [
+        "Vytvoriť kľúč organizácie"
       ],
       "Create public link": [
         "Vytvoriť verejný odkaz"
@@ -13985,6 +14149,9 @@
       "Delete account": [
         "Zmazať účet"
       ],
+      "Delete address permanently?": [
+        "Vymazať adresu natrvalo?"
+      ],
       "Delete calendar": [
         "Odstrániť kalendár"
       ],
@@ -14039,6 +14206,12 @@
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Stiahnuť desktopové aplikácie"
+      ],
+      "Download the mobile apps": [
+        "Stiahnuť mobilné aplikácie"
+      ],
       "Edit credit/debit card": [
         "Upraviť platobnú kartu"
       ],
@@ -14081,6 +14254,9 @@
       "Email": [
         "Email"
       ],
+      "Email address": [
+        "Emailová adresa"
+      ],
       "Email composer": [
         "Editor mailu"
       ],
@@ -14120,6 +14296,9 @@
       "Export public key": [
         "Exportovať verejný kľúč"
       ],
+      "Exposed info": [
+        "Odhalené informácie"
+      ],
       "External PGP settings": [
         "Externé nastavenie PGP"
       ],
@@ -14140,6 +14319,15 @@
       ],
       "Folders and labels": [
         "Priečinky a štítky"
+      ],
+      "For Linux": [
+        "Pre Linux"
+      ],
+      "For macOS": [
+        "Pre macOS"
+      ],
+      "For Windows": [
+        "Pre Windows"
       ],
       "Forward and auto-reply": [
         "Preposlať a automaticky odpovedať"
@@ -14164,6 +14352,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Získajte ${ vpnPlus } pre prístup ku všetkým serverom"
+      ],
+      "Get the apps": [
+        "Získajte aplikácie"
       ],
       "Gift": [
         "Dar"
@@ -14351,6 +14542,9 @@
       "Recommended": [
         "Odporúčané"
       ],
+      "Recommended actions": [
+        "Odporúčané opatrenia"
+      ],
       "Reconnect your account": [
         "Znovu pripojiť svoj účet"
       ],
@@ -14519,6 +14713,9 @@
       "Summary": [
         "Zhrnutie"
       ],
+      "Support ticket closed": [
+        "Požiadavka na podporu uzavretá"
+      ],
       "Switch account": [
         "Prepnúť účet"
       ],
@@ -14532,7 +14729,7 @@
         "Buďte opatrní, aby nedošlo k strate údajov!"
       ],
       "Theme": [
-        "Vzhľad"
+        "Motív"
       ],
       "This field cannot be empty": [
         "Toto pole nemôže byť prázdne"
@@ -14614,6 +14811,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
+      ],
+      "Your Exposed Information": [
+        "Vaše odhalené informácie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"
@@ -15089,6 +15289,14 @@
         "${ numberOfServers } v ${ numberOfCountries } krajinách"
       ]
     },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiac",
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiace",
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiacov",
+        "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiacov"
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Účtované mesačne"
@@ -15101,8 +15309,14 @@
       "15-month": [
         "15-mesačným"
       ],
+      "18-month": [
+        "18-mesačným"
+      ],
       "2-year": [
         "2-ročným"
+      ],
+      "3-month": [
+        "3-mesačným"
       ],
       "30-month": [
         "30-mesačným"
