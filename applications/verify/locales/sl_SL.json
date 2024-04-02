@@ -1,146 +1,146 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
-    "language": "id_ID"
+    "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
+    "language": "sl_SL"
   },
   "contexts": {
     "Action": {
       "Authenticate": [
-        "Autentikasi"
+        "Preverjanje pristnosti"
       ],
       "Back": [
-        "Kembali"
+        "Nazaj"
       ],
       "Cancel": [
-        "Batal"
+        "Prekliči"
       ],
       "Close": [
-        "Tutup"
+        "Zapri"
       ],
       "Continue": [
-        "Lanjutkan"
+        "Nadaljuj"
       ],
       "Don't know your password?": [
-        "Tidak tahu kata sandi Anda?"
+        "Ne veste gesla?"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Uredi e-poštni naslov"
       ],
       "Edit phone number": [
-        "Ubah nomor telepon"
+        "Uredi telefonsko številko"
       ],
       "Edit sign-in details": [
-        "Sunting rincian masuk"
+        "Uredi podrobnosti prijave"
       ],
       "Get verification code": [
-        "Dapatkan kode verifikasi"
+        "Pridobi kodo za preverjanje"
       ],
       "More info: ${ safeTitle }": [
-        "Info lebih lanjut: ${ safeTitle }"
+        "Več informacij: ${ safeTitle }"
       ],
       "Refresh the page": [
-        "Muat ulang halaman"
+        "Osveži stran"
       ],
       "Request new code": [
-        "Minta kode baru"
+        "Zahtevaj novo kodo"
       ],
       "Resend code": [
-        "Kirim ulang kode"
+        "Znova pošlji kodo"
       ],
       "Search countries": [
-        "Cari negara"
+        "Iskanje držav"
       ],
       "Submit": [
-        "Kirim"
+        "Pošlji"
       ],
       "Try another method": [
-        "Coba metode lain"
+        "Poskusi z drugo metodo"
       ],
       "Use authentication code": [
-        "Gunakan kode autentikasi"
+        "Uporabi kodo za preverjanje pristnosti"
       ],
       "Use recovery code": [
-        "Gunakan kode pemulihan"
+        "Uporabi kodo za obnovitev"
       ],
       "Verify": [
-        "Verifikasi"
+        "Preveri"
       ],
       "Verify account": [
-        "Verifikasi akun"
+        "Potrdi račun"
       ],
       "View invoice": [
-        "Lihat faktur"
+        "Ogled računa"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "Abkhazia"
+        "Abhazija"
       ],
       "Afghanistan": [
-        "Afghanistan"
+        "Afganistan"
       ],
       "Albania": [
-        "Albania"
+        "Albanija"
       ],
       "Algeria": [
-        "Aljazair"
+        "Alžirija"
       ],
       "American Samoa": [
-        "Samoa Amerika"
+        "Ameriška Samoa"
       ],
       "Andorra": [
-        "Andorra"
+        "Andora"
       ],
       "Angola": [
         "Angola"
       ],
       "Anguilla": [
-        "Anguilla"
+        "Angvila"
       ],
       "Antarctica": [
-        "Antartika"
+        "Antarktika"
       ],
       "Antigua and Barbuda": [
-        "Antigua dan Barbuda"
+        "Antigva in Barbuda"
       ],
       "Argentina": [
         "Argentina"
       ],
       "Armenia": [
-        "Armenia"
+        "Armenija"
       ],
       "Aruba": [
         "Aruba"
       ],
       "Ascension Island": [
-        "Pulau Ascension"
+        "Otok Ascension"
       ],
       "Australia": [
-        "Australia"
+        "Avstralija"
       ],
       "Austria": [
-        "Austria"
+        "Avstrija"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbajdžan"
       ],
       "Bahamas": [
-        "Bahama"
+        "Bahami"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahrajn"
       ],
       "Bangladesh": [
-        "Bangladesh"
+        "Bangladeš"
       ],
       "Barbados": [
         "Barbados"
       ],
       "Belarus": [
-        "Belarus"
+        "Belorusija"
       ],
       "Belgium": [
-        "Belgia"
+        "Belgija"
       ],
       "Belize": [
         "Belize"
@@ -149,37 +149,37 @@
         "Benin"
       ],
       "Bermuda": [
-        "Bermuda"
+        "Bermudi"
       ],
       "Bhutan": [
-        "Bhutan"
+        "Butan"
       ],
       "Bolivia": [
-        "Bolivia"
+        "Bolivija"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sint Eustatius dan Saba"
+        "Bonaire, Sveti Evstahij in Saba"
       ],
       "Bosnia and Herzegovina": [
-        "Bosnia dan Herzegovina"
+        "Bosna in Hercegovina"
       ],
       "Botswana": [
-        "Botswana"
+        "Bocvana"
       ],
       "Bouvet Island": [
-        "Pulau Bouvet"
+        "Bouvetov otok"
       ],
       "Brazil": [
-        "Brazil"
+        "Brazilija"
       ],
       "British Indian Ocean Territory": [
-        "Teritori Samudera Hindia Inggris"
+        "Britansko ozemlje v Indijskem oceanu"
       ],
       "Brunei Darussalam": [
-        "Brunei Darussalam"
+        "Brunej"
       ],
       "Bulgaria": [
-        "Bulgaria"
+        "Bolgarija"
       ],
       "Burkina Faso": [
         "Burkina Faso"
@@ -188,7 +188,7 @@
         "Burundi"
       ],
       "Cambodia": [
-        "Kamboja"
+        "Kambodža"
       ],
       "Cameroon": [
         "Kamerun"
@@ -197,49 +197,49 @@
         "Kanada"
       ],
       "Cape Verde": [
-        "Tanjung Verde"
+        "Zelenortski otoki"
       ],
       "Cayman Islands": [
-        "Kepulauan Cayman"
+        "Kajmanski otoki"
       ],
       "Central African Republic": [
-        "Republik Afrika Tengah"
+        "Srednjeafriška republika"
       ],
       "Chad": [
-        "Chad"
+        "Čad"
       ],
       "Chile": [
-        "Cili"
+        "Čile"
       ],
       "China": [
-        "Tiongkok"
+        "Kitajska"
       ],
       "Christmas Island": [
-        "Pulau Christmas"
+        "Božični otok"
       ],
       "Cocos (Keeling) Islands": [
-        "Kepulauan Cocos (Keeling)"
+        "Kokosovi (Keelingovi) otoki"
       ],
       "Colombia": [
-        "Kolombia"
+        "Kolumbija"
       ],
       "Comoros": [
-        "Komoro"
+        "Komori"
       ],
       "Congo": [
         "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "Republik Demokratik Kongo"
+        "Demokratična republika Kongo"
       ],
       "Cook Islands": [
-        "Kepulauan Cook"
+        "Cookovi otoki"
       ],
       "Costa Rica": [
-        "Kosta Rika"
+        "Kostarika"
       ],
       "Croatia": [
-        "Kroasia"
+        "Hrvaška"
       ],
       "Cuba": [
         "Kuba"
@@ -248,154 +248,154 @@
         "Curaçao"
       ],
       "Cyprus": [
-        "Siprus"
+        "Ciper"
       ],
       "Czech Republic": [
-        "Republik Ceko"
+        "Češka"
       ],
       "Côte d'Ivoire": [
-        "Pantai Gading"
+        "Slonokoščena obala"
       ],
       "Denmark": [
-        "Denmark"
+        "Danska"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Džibuti"
       ],
       "Dominica": [
         "Dominika"
       ],
       "Dominican Republic": [
-        "Republik Dominika"
+        "Dominikanska republika"
       ],
       "Ecuador": [
-        "Ekuador"
+        "Ekvador"
       ],
       "Egypt": [
-        "Mesir"
+        "Egipt"
       ],
       "El Salvador": [
-        "El Salvador"
+        "Salvador"
       ],
       "Equatorial Guinea": [
-        "Guinea Ekuatorial"
+        "Ekvatorialna Gvineja"
       ],
       "Eritrea": [
-        "Eritrea"
+        "Eritreja"
       ],
       "Estonia": [
-        "Estonia"
+        "Estonija"
       ],
       "Eswatini": [
-        "Eswatini"
+        "Esvatini"
       ],
       "Ethiopia": [
-        "Etiopia"
+        "Etiopija"
       ],
       "Falkland Islands": [
-        "Kepulauan Falkland"
+        "Falklandski otoki"
       ],
       "Faroe Islands": [
-        "Kepulauan Faroe"
+        "Ferski otoki"
       ],
       "Federated States of Micronesia": [
-        "Federasi Mikronesia"
+        "Zvezne države Mikronezije"
       ],
       "Fiji": [
-        "Fiji"
+        "Fidži"
       ],
       "Finland": [
-        "Finlandia"
+        "Finska"
       ],
       "France": [
-        "Perancis"
+        "Francija"
       ],
       "French Guiana": [
-        "Guyana Perancis"
+        "Francoska Gvajana"
       ],
       "French Polynesia": [
-        "Polinesia Perancis"
+        "Francoska Polinezija"
       ],
       "French Southern Territories": [
-        "Teritori Selatan Perancis"
+        "Francoska južna ozemlja"
       ],
       "Gabon": [
         "Gabon"
       ],
       "Gambia": [
-        "Gambia"
+        "Gambija"
       ],
       "Georgia": [
-        "Georgia"
+        "Gruzija"
       ],
       "Germany": [
-        "Jerman"
+        "Nemčija"
       ],
       "Ghana": [
-        "Ghana"
+        "Gana"
       ],
       "Gibraltar": [
         "Gibraltar"
       ],
       "Greece": [
-        "Yunani"
+        "Grčija"
       ],
       "Greenland": [
-        "Greenland"
+        "Grenlandija"
       ],
       "Grenada": [
         "Grenada"
       ],
       "Guadeloupe": [
-        "Guadeloupe"
+        "Gvadelup"
       ],
       "Guam": [
         "Guam"
       ],
       "Guatemala": [
-        "Guatemala"
+        "Gvatemala"
       ],
       "Guernsey": [
         "Guernsey"
       ],
       "Guinea": [
-        "Guinea"
+        "Gvineja"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Gvineja Bissau"
       ],
       "Guyana": [
-        "Guyana"
+        "Gvajana"
       ],
       "Haiti": [
         "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        "Pulau Heard dan Kepulauan McDonald"
+        "Heardov otok in McDonaldovi otoki"
       ],
       "Holy See (Vatican City State)": [
-        "Takhta Suci (Negara-Kota Vatikan)"
+        "Sveti sedež (Vatikan)"
       ],
       "Honduras": [
         "Honduras"
       ],
       "Hong Kong": [
-        "Hong Kong"
+        "Hongkong"
       ],
       "Hungary": [
-        "Hungaria"
+        "Madžarska"
       ],
       "Iceland": [
-        "Islandia"
+        "Islandija"
       ],
       "India": [
-        "India"
+        "Indija"
       ],
       "Indonesia": [
-        "Indonesia"
+        "Indonezija"
       ],
       "International": [
-        "Internasional"
+        "Mednarodno"
       ],
       "Iran": [
         "Iran"
@@ -404,34 +404,34 @@
         "Irak"
       ],
       "Ireland": [
-        "Irlandia"
+        "Irska"
       ],
       "Isle of Man": [
-        "Pulau Mann"
+        "Otok Man"
       ],
       "Israel": [
-        "Israel"
+        "Izrael"
       ],
       "Italy": [
-        "Italia"
+        "Italija"
       ],
       "Jamaica": [
-        "Jamaika"
+        "Jamajka"
       ],
       "Japan": [
-        "Jepang"
+        "Japonska"
       ],
       "Jersey": [
         "Jersey"
       ],
       "Jordan": [
-        "Yordania"
+        "Jordanija"
       ],
       "Kazakhstan": [
-        "Kazakhstan"
+        "Kazahstan"
       ],
       "Kenya": [
-        "Kenya"
+        "Kenija"
       ],
       "Kiribati": [
         "Kiribati"
@@ -440,52 +440,52 @@
         "Kosovo"
       ],
       "Kuwait": [
-        "Kuwait"
+        "Kuvajt"
       ],
       "Kyrgyzstan": [
-        "Kyrgyzstan"
+        "Kirgizistan"
       ],
       "Laos": [
         "Laos"
       ],
       "Latvia": [
-        "Latvia"
+        "Latvija"
       ],
       "Lebanon": [
-        "Lebanon"
+        "Libanon"
       ],
       "Lesotho": [
-        "Lesotho"
+        "Lesoto"
       ],
       "Liberia": [
-        "Liberia"
+        "Liberija"
       ],
       "Libya": [
-        "Libya"
+        "Libija"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        "Lihtenštajn"
       ],
       "Lithuania": [
-        "Lithuania"
+        "Litva"
       ],
       "Luxembourg": [
-        "Luxembourg"
+        "Luksemburg"
       ],
       "Macao": [
-        "Makau"
+        "Makav"
       ],
       "Madagascar": [
         "Madagaskar"
       ],
       "Malawi": [
-        "Malawi"
+        "Malavi"
       ],
       "Malaysia": [
-        "Malaysia"
+        "Malezija"
       ],
       "Maldives": [
-        "Maladewa"
+        "Maldivi"
       ],
       "Mali": [
         "Mali"
@@ -494,37 +494,37 @@
         "Malta"
       ],
       "Marshall Islands": [
-        "Kepulauan Marshall"
+        "Marshallovi otoki"
       ],
       "Martinique": [
-        "Martinique"
+        "Martinik"
       ],
       "Mauritania": [
-        "Mauritania"
+        "Mavretanija"
       ],
       "Mauritius": [
-        "Mauritius"
+        "Mavricij"
       ],
       "Mayotte": [
         "Mayotte"
       ],
       "Mexico": [
-        "Meksiko"
+        "Mehika"
       ],
       "Moldova": [
-        "Moldova"
+        "Moldavija"
       ],
       "Monaco": [
         "Monako"
       ],
       "Mongolia": [
-        "Mongolia"
+        "Mongolija"
       ],
       "Montenegro": [
-        "Montenegro"
+        "Črna gora"
       ],
       "Montserrat": [
-        "Montserrat"
+        "Monserat"
       ],
       "Morocco": [
         "Maroko"
@@ -533,10 +533,10 @@
         "Mozambik"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Mjanmar"
       ],
       "Namibia": [
-        "Namibia"
+        "Namibija"
       ],
       "Nauru": [
         "Nauru"
@@ -545,40 +545,40 @@
         "Nepal"
       ],
       "Netherlands": [
-        "Belanda"
+        "Nizozemska"
       ],
       "New Caledonia": [
-        "Kaledonia Baru"
+        "Nova Kaledonija"
       ],
       "New Zealand": [
-        "Selandia Baru"
+        "Nova Zelandija"
       ],
       "Nicaragua": [
-        "Nikaragua"
+        "Nikaragva"
       ],
       "Niger": [
         "Niger"
       ],
       "Nigeria": [
-        "Nigeria"
+        "Nigerija"
       ],
       "Niue": [
         "Niue"
       ],
       "Norfolk Island": [
-        "Pulau Norfolk"
+        "Otok Norfolk"
       ],
       "North Korea": [
-        "Korea Utara"
+        "Severna Koreja"
       ],
       "North Macedonia": [
-        "Makedonia Utara"
+        "Severna Makedonija"
       ],
       "Northern Mariana Islands": [
-        "Kepulauan Mariana Utara"
+        "Severni Marijanski otoki"
       ],
       "Norway": [
-        "Norwegia"
+        "Norveška"
       ],
       "Oman": [
         "Oman"
@@ -587,7 +587,7 @@
         "Pakistan"
       ],
       "Palau": [
-        "Palau"
+        "Palav"
       ],
       "Palestine": [
         "Palestina"
@@ -596,64 +596,64 @@
         "Panama"
       ],
       "Papua New Guinea": [
-        "Papua Nugini"
+        "Papuanska Nova Gvineja"
       ],
       "Paraguay": [
-        "Paraguay"
+        "Paragvaj"
       ],
       "Peru": [
         "Peru"
       ],
       "Philippines": [
-        "Filipina"
+        "Filipini"
       ],
       "Pitcairn": [
         "Pitcairn"
       ],
       "Poland": [
-        "Polandia"
+        "Poljska"
       ],
       "Portugal": [
-        "Portugal"
+        "Portugalska"
       ],
       "Puerto Rico": [
-        "Puerto Riko"
+        "Portoriko"
       ],
       "Qatar": [
-        "Qatar"
+        "Katar"
       ],
       "Reunion": [
         "Reunion"
       ],
       "Romania": [
-        "Romania"
+        "Romunija"
       ],
       "Russia": [
-        "Rusia"
+        "Rusija"
       ],
       "Rwanda": [
-        "Rwanda"
+        "Ruanda"
       ],
       "Saint Barthélemy": [
-        "Saint Barthélemy"
+        "Sveti Bartolomej"
       ],
       "Saint Helena": [
-        "Saint Helena"
+        "Sveta Helena"
       ],
       "Saint Kitts and Nevis": [
-        "Saint Kitts dan Nevis"
+        "Sveti Krištof in Nevis"
       ],
       "Saint Lucia": [
-        "Saint Lucia"
+        "Sveta Lucija"
       ],
       "Saint Martin (French Part)": [
-        "Saint Martin (Wilayah Perancis)"
+        "Sveti Martin (francoski del)"
       ],
       "Saint Pierre and Miquelon": [
-        "Saint Pierre dan Miquelon"
+        "Sveta Peter in Mihael"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint Vincent dan Grenadine"
+        "Sveti Vincencij in Grenadine"
       ],
       "Samoa": [
         "Samoa"
@@ -662,121 +662,121 @@
         "San Marino"
       ],
       "Sao Tome and Principe": [
-        "Sao Tome dan Principe"
+        "Sveti Tomaž in Princ"
       ],
       "Saudi Arabia": [
-        "Arab Saudi"
+        "Saudova Arabija"
       ],
       "Senegal": [
         "Senegal"
       ],
       "Serbia": [
-        "Serbia"
+        "Srbija"
       ],
       "Seychelles": [
-        "Seychelles"
+        "Sejšeli"
       ],
       "Sierra Leone": [
         "Sierra Leone"
       ],
       "Singapore": [
-        "Singapura"
+        "Singapur"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sveti Martin"
       ],
       "Slovakia": [
-        "Slovakia"
+        "Slovaška"
       ],
       "Slovenia": [
-        "Slovenia"
+        "Slovenija"
       ],
       "Solomon Islands": [
-        "Kepulauan Solomon"
+        "Salomonovi otoki"
       ],
       "Somalia": [
-        "Somalia"
+        "Somalija"
       ],
       "South Africa": [
-        "Afrika Selatan"
+        "Južna Afrika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Georgia Selatan dan Kepulauan Sandwich Selatan"
+        "Južna Georgija in Južni Sandwichevi otoki"
       ],
       "South Korea": [
-        "Korea Selatan"
+        "Južna Koreja"
       ],
       "South Ossetia": [
-        "Ossetia Selatan"
+        "Južna Osetija"
       ],
       "South Sudan": [
-        "Sudan Selatan"
+        "Južni Sudan"
       ],
       "Spain": [
-        "Spanyol"
+        "Španija"
       ],
       "Sri Lanka": [
-        "Sri Lanka"
+        "Šrilanka"
       ],
       "Sudan": [
         "Sudan"
       ],
       "Suriname": [
-        "Suriname"
+        "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard dan Jan Mayen"
+        "Svalbard in Jan Mayen"
       ],
       "Sweden": [
-        "Swedia"
+        "Švedska"
       ],
       "Switzerland": [
-        "Swiss"
+        "Švica"
       ],
       "Syria": [
-        "Suriah"
+        "Sirija"
       ],
       "Taiwan": [
-        "Taiwan"
+        "Tajvan"
       ],
       "Tajikistan": [
-        "Tajikistan"
+        "Tadžikistan"
       ],
       "Tanzania": [
-        "Tanzania"
+        "Tanzanija"
       ],
       "Thailand": [
-        "Thailand"
+        "Tajska"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Vzhodni Timor"
       ],
       "Togo": [
         "Togo"
       ],
       "Tokelau": [
-        "Tokelau"
+        "Tokelav"
       ],
       "Tonga": [
         "Tonga"
       ],
       "Trinidad and Tobago": [
-        "Trinidad dan Tobago"
+        "Trinidad in Tobago"
       ],
       "Tristan da Cunha": [
         "Tristan da Cunha"
       ],
       "Tunisia": [
-        "Tunisia"
+        "Tunizija"
       ],
       "Turkey": [
-        "Turki"
+        "Turčija"
       ],
       "Turkmenistan": [
         "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
-        "Kepulauan Turks dan Caicos"
+        "Otoki Turks in Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -785,22 +785,22 @@
         "Uganda"
       ],
       "Ukraine": [
-        "Ukraina"
+        "Ukrajina"
       ],
       "United Arab Emirates": [
-        "Uni Emirat Arab"
+        "Združeni arabski emirati"
       ],
       "United Kingdom": [
-        "Britania Raya"
+        "Združeno kraljestvo"
       ],
       "United States": [
-        "Amerika Serikat"
+        "Združene države Amerike"
       ],
       "United States Minor Outlying Islands": [
-        "Kepulauan Terluar Kecil Amerika Serikat"
+        "Manjši zunanji otoki Združenih držav"
       ],
       "Uruguay": [
-        "Uruguay"
+        "Urugvaj"
       ],
       "Uzbekistan": [
         "Uzbekistan"
@@ -815,301 +815,315 @@
         "Vietnam"
       ],
       "Virgin Islands, British": [
-        "Kepulauan Virgin, Britania"
+        "Britanski Deviški otoki"
       ],
       "Virgin Islands, U.S.": [
-        "Kepulauan Virgin, A.S."
+        "Deviški otoki Združenih držav"
       ],
       "Wallis and Futuna": [
-        "Wallis dan Futuna"
+        "Wallis in Futuna"
       ],
       "Western Sahara": [
-        "Sahara Barat"
+        "Zahodna Sahara"
       ],
       "Yemen": [
-        "Yaman"
+        "Jemen"
       ],
       "Zambia": [
-        "Zambia"
+        "Zambija"
       ],
       "Zimbabwe": [
-        "Zimbabwe"
+        "Zimbabve"
       ],
       "Åland Islands": [
-        "Kepulauan Åland"
+        "Alandski otoki"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Faktur yang tertunggak"
+        "Zapadel račun"
       ]
     },
     "Error": {
       "Email is not valid": [
-        "Email tidak valid"
+        "E-pošta ni veljavna"
       ],
       "Enter 6 digits": [
-        "Masukkan 6 digit"
+        "Vnesite 6 števk"
       ],
       "Incorrect username": [
-        "Nama pengguna salah"
+        "Nepravilno uporabniško ime"
       ],
       "Invalid verification code": [
-        "Kode verifikasi tidak valid"
+        "Neveljavna koda za preverjanje"
       ],
       "Not a valid number": [
-        "Nomor telepon tidak valid"
+        "Ni veljavna številka"
       ],
       "Passwords do not match": [
-        "Kata sandi tidak sesuai"
+        "Gesli se ne ujemata"
       ],
       "Request timed out": [
-        "Waktu permintaan habis"
+        "Zahteva se je iztekla"
       ],
       "The email addresses do not match": [
-        "Alamat email tidak cocok"
+        "E-poštna naslova se ne ujemata"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+        "To polje presega število dovoljenih znakov - ${ maximumLength }."
       ],
       "This field is required": [
-        "Kolom ini wajib diisi"
+        "To polje je obvezno"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
+        "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+        "Poskusite uporabiti samo črke, števke in _.-"
       ],
       "Unknown error": [
-        "Kesalahan yang tidak diketahui"
+        "Neznana napaka"
       ],
       "Username must begin with a letter or digit": [
-        "Nama pengguna harus dimulai dengan huruf atau angka"
+        "Uporabniško ime se mora začeti s črko ali številko"
       ],
       "Username must end with a letter or digit": [
-        "Nama pengguna harus diakhiri dengan huruf atau angka"
+        "Uporabniško ime se mora končati s črko ali številko"
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "Kesalahan: ${ errorMessage }"
+        "Napaka: ${ errorMessage }"
       ],
       "Please refresh the page or try again later.": [
-        "Silakan muat ulang laman atau coba lagi nanti."
+        "Osvežite stran ali poskusite znova pozneje."
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "Nekaj je šlo narobe"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
+        "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Kunci keamanan"
+        "Varnostni ključ"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Kunci keamanan"
+        "Varnostni ključ"
       ]
     },
     "Font face option": {
       "System default": [
-        "Bawaan sistem"
+        "Sistemsko privzeto"
       ],
       "Theme font": [
-        "Jenis tulisan tema"
+        "Pisava teme"
       ]
     },
     "Font size option": {
       "Large": [
-        "Besar"
+        "Veliko"
       ],
       "Medium (recommended)": [
-        "Sedang (direkomendasikan)"
+        "Srednje (priporočeno)"
       ],
       "Small": [
-        "Kecil"
+        "Majhno"
       ],
       "Very large": [
-        "Sangat besar"
+        "Zelo veliko"
       ],
       "Very small": [
-        "Mungil"
+        "Zelo majhno"
       ]
     },
     "Human verification method": {
       "Email": [
-        "Email"
+        "E-pošta"
       ],
       "Manual": [
-        "Penuntun"
+        "Ročno"
       ],
       "No verification method available": [
-        "Metode verifikasi tidak tersedia"
+        "Način preverjanja ni na voljo"
       ]
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
+        "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+        "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
+        "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
       ],
       "Country code": [
-        "Kode negara"
+        "Koda države"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan sekali"
+        "Vsaka koda se lahko uporabi samo enkrat"
       ],
       "Edit email address": [
-        "Sunting alamat email"
+        "Uredi e-poštni naslov"
       ],
       "Enter the code from your authenticator app": [
-        "Masukkan kode yang tertera pada aplikasi autentikator Anda"
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+        "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Masukkan kode verifikasi. Digit ${ digit }."
+        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Masukkan kata sandi Anda (selaku admin organisasi)."
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
+        "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+        "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
       "Internet connection lost": [
-        "Koneksi internet terputus"
+        "Internetna povezava je prekinjena"
       ],
       "Learn more": [
-        "Pelajari lebih lanjut"
+        "Več o tem"
       ],
       "Loading": [
-        "Memuat"
+        "Nalaganje"
       ],
       "No results found": [
-        "Tidak ada hasil yang ditemukan"
+        "Ni najdenih rezultatov"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
       ],
       "Session timed out": [
-        "Masa berlaku sesi telah berakhir"
+        "Seja je potekla"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+        "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
+        "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačno metodo preverjanja?"
       ],
       "Would you like to receive a new verification code?": [
-        "Apakah Anda ingin menerima kode verifikasi baru?"
+        "Bi želeli prejeti novo kodo za preverjanje?"
       ],
       "You can now return to the application to continue": [
-        "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
+        "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. Po 28 dneh e-poštni predal ne bo več prejemal sporočil, vaše povezave za skupno rabo na Disku bodo blokirane in ne boste mogli nalagati novih datotek. Za nadaljnje delovanje storitve plačajte morebitne zapadle račune."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. E-poštni predal ne prejema sporočil, vaše povezave za skupno rabo na Disku so deaktivirane in ne morete nalagati novih datotek. Za nadaljnjo uporabo storitve plačajte morebitne zapadle račune."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
       ]
     },
     "Label": {
       "Authenticator app": [
-        "Aplikasi autentikator"
+        "Aplikacija za preverjanje pristnosti"
       ],
       "Code is 6 digits without spaces": [
-        "Kode tersusun atas 6 digit angka tanpa spasi"
+        "Koda vsebuje 6 števk brez presledkov"
       ],
       "Email address": [
-        "Alamat email"
+        "E-poštni naslov"
       ],
       "Hide password": [
-        "Sembunyikan kata sandi"
+        "Skrij geslo"
       ],
       "Password": [
-        "Kata sandi"
+        "Geslo"
       ],
       "Phone number": [
-        "Nomor telepon"
+        "Telefonska številka"
       ],
       "Reveal password": [
-        "Perlihatkan kata sandi"
+        "Razkrij geslo"
       ],
       "Verification code": [
-        "Kode verifikasi"
+        "Koda za preverjanje"
       ],
       "Your password (admin)": [
-        "Kata sandi Anda (admin)"
+        "Vaše geslo (admin)"
       ]
     },
     "Link": {
       "Learn more": [
-        "Lebih lanjut"
+        "Več o tem"
       ],
       "Request an invite": [
-        "Minta undangan"
+        "Zahtevaj povabilo"
       ]
     },
     "Placeholder": {
       "Password": [
-        "Kata sandi"
+        "Geslo"
       ]
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Kode dikirim ke ${ methodTo }"
+        "Koda je poslana na ${ methodTo }"
       ],
       "Verification successful": [
-        "Verifikasi berhasil"
+        "Preverjanje uspešno"
       ]
     },
     "Title": {
       "Enter your password": [
-        "Masukkan kata sandi Anda"
+        "Vnesite geslo"
       ],
       "Human verification": [
-        "Verifikasi manusia"
+        "Ali si človek"
       ],
       "Invalid verification code": [
-        "Kode verifikasi tidak valid"
+        "Neveljavna koda za preverjanje"
       ],
       "Request new code": [
-        "Minta kode baru"
+        "Zahtevaj novo kodo"
       ],
       "Sign in with 2FA": [
-        "Masuk dengan 2FA"
+        "Prijava z overjanjem v dveh korakih"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ]
     }
   }
