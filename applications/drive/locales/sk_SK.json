@@ -2821,13 +2821,13 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
-        "Nastavte svoj rodinný účet a pozvite užívateľov "
+        "Nakonfigurujte svoj rodinný účet a pozvite používateľov "
       ],
       "Set up your family": [
-        "Vytvorte svoju rodinu"
+        "Nastavte svoju rodinu"
       ],
       "Set up your family account": [
-        "Vytvorte svoj rodinný účet"
+        "Nastavte svoj rodinný účet"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3581,6 +3581,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
       ],
+      "Change your password": [
+        "Zmeňte si heslo"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhľadávanie kontaktu ${ progress } o ${ max }..."
       ],
@@ -3737,6 +3740,9 @@
       "Edit email address": [
         "Upraviť emailovú adresu"
       ],
+      "email": [
+        "email"
+      ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
       ],
@@ -3806,11 +3812,17 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Súboru chýba podpis. Nemohli sme overiť, kto nahral ${ fileName }."
       ],
+      "File scanning in Drive": [
+        "Skenovanie súborov v Drive"
+      ],
       "File will not be updated": [
         "Súbor nebude aktualizovaný"
       ],
       "Finalizing": [
         "Finalizácia"
+      ],
+      "finance": [
+        "financie"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Priečinok „${ link.name }“ bol vymazaný počas sťahovania"
@@ -3847,6 +3859,9 @@
       ],
       "here": [
         "tu"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "How does encrypted search work?": [
         "Ako funguje vyhľadávanie v šifrovaných dátach?"
@@ -3962,6 +3977,9 @@
       "Loading...": [
         "Načítavanie..."
       ],
+      "Low Priority": [
+        "Nízka priorita"
+      ],
       "Makes your account safer": [
         "Robí váš účet bezpečnejším"
       ],
@@ -3971,8 +3989,14 @@
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov",
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov"
       ],
+      "Medium Priority": [
+        "Stredná priorita"
+      ],
       "Merged": [
         "Zlúčený"
+      ],
+      "Monitor accounts": [
+        "Monitorujte účty"
       ],
       "More": [
         "Viac"
@@ -4051,6 +4075,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Alebo použite tlačidlo \"+ Nový\""
+      ],
+      "password": [
+        "heslo"
       ],
       "Paused": [
         "Pozastavené"
@@ -4235,6 +4262,9 @@
       "Share files with links": [
         "Zdieľajte súbory pomocou odkazov"
       ],
+      "Share via link settings": [
+        "Zdieľať cez nastavenia odkazu"
+      ],
       "Share with": [
         "Zdieľať s"
       ],
@@ -4370,6 +4400,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
+        "Aby sme vás mohli pomôcť chrániť, ${ DRIVE_APP_NAME } môže skenovať a blokovať škodlivé súbory. Stále by ste ale mali sťahovať iba súbory od ľudí, ktorým dôverujete."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Ak chcete importovať udalosti, najprv vytvorte kalendár v ${ CALENDAR_APP_NAME }. Po importe sa tu zobrazia udalosti."
       ],
@@ -4437,7 +4470,7 @@
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
       ],
       "upgrade your storage": [
-        "upgradujte svoj úložný priestor."
+        "upgradujte svoje úložisko"
       ],
       "Uploaded": [
         "Nahrané"
@@ -4450,6 +4483,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Použite tento formulár, aby ste nás informovali o nevhodných, nelegálnych\nalebo inak škodlivých zdieľaných súboroch. Chystáte sa nahlásiť:"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Version is deleted": [
         "Verzia je vymazaná"
@@ -5911,22 +5947,22 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Vykonajte konfiguráciu svojej organizácie, priraďte doménové meno a vytvorte účty členov, aby všetci boli chránení."
+        "Nakonfigurujte svoju organizáciu, priraďte doménové meno a vytvorte účty, aby boli všetci členovia vašej organizácie chránení."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Objavte všetky služby ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Vyberte si tému"
+        "Vyberte motív"
       ],
       "Set up your organization": [
-        "Nastavenie organizácie"
+        "Nastavte svoju organizáciu"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Výberom aplikácie v ľavom hornom rohu získate prístup ku všetkým službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "Tému môžete kedykoľvek zmeniť v nastaveniach."
+        "Motív môžete kedykoľvek zmeniť v nastaveniach."
       ]
     },
     "Onboarding Title": {
@@ -6899,6 +6935,15 @@
       "Birthday": [
         "Narodeniny"
       ],
+      "Breach Date": [
+        "Dátum úniku"
+      ],
+      "Breach Information": [
+        "Uniknuté informácie"
+      ],
+      "Breach Size": [
+        "Veľkosť úniku"
+      ],
       "Browser might run out of memory": [
         "Prehliadaču môžno dochádza pamäť"
       ],
@@ -7025,6 +7070,9 @@
       "Edit image": [
         "Upraviť obrázok"
       ],
+      "Email address": [
+        "Emailová adresa"
+      ],
       "Email addresses": [
         "Emailové adresy"
       ],
@@ -7042,6 +7090,9 @@
       ],
       "Exporting contacts": [
         "Exportovanie kontaktov"
+      ],
+      "Exposed info": [
+        "Odhalené informácie"
       ],
       "Failed": [
         "Neúspešne"
@@ -7148,6 +7199,9 @@
       "Other names": [
         "Ostatné mená"
       ],
+      "Password": [
+        "Heslo"
+      ],
       "Performance might be affected": [
         "Môže byť ovplyvnený výkon"
       ],
@@ -7168,6 +7222,9 @@
       ],
       "Re-signing contacts": [
         "Znovu podpísať kontakty"
+      ],
+      "Recommended actions": [
+        "Odporúčané opatrenia"
       ],
       "Reconnect your account": [
         "Znovu pripojiť svoj účet"
@@ -7201,6 +7258,9 @@
       ],
       "Searching…": [
         "Vyhľadávanie…"
+      ],
+      "Security center": [
+        "Centrum zabezpečenia"
       ],
       "Select action to take on contact group": [
         "Vyberte akciu, ktorú chcete vykonať pre skupinu kontaktov"
@@ -7330,6 +7390,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
+      ],
+      "Your Exposed Information": [
+        "Vaše odhalené informácie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby Mail Plus končí ${ textDate }"

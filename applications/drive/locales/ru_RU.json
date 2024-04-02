@@ -3532,6 +3532,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
+      "Change your password": [
+        "Измените пароль"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
       ],
@@ -3679,6 +3682,9 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
+      "email": [
+        "электронная почта"
+      ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
       ],
@@ -3783,6 +3789,9 @@
       ],
       "here": [
         "здесь"
+      ],
+      "High Priority": [
+        "Высокий приоритет"
       ],
       "How does encrypted search work?": [
         "Как работает зашифрованный поиск?"
@@ -3895,11 +3904,20 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Low Priority": [
+        "Низкий приоритет"
+      ],
       "Makes your account safer": [
         "Делает ваш аккаунт безопаснее"
       ],
+      "Medium Priority": [
+        "Средний приоритет"
+      ],
       "Merged": [
         "Объединённые"
+      ],
+      "Monitor accounts": [
+        "Отслеживать аккаунты"
       ],
       "More": [
         "Ещё"
@@ -3978,6 +3996,9 @@
       ],
       "Or use the \"+ New\" button": [
         "Или используйте кнопку \"+\""
+      ],
+      "password": [
+        "пароль"
       ],
       "Paused": [
         "Приостановлено"
@@ -4338,6 +4359,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Используйте эту форму, чтобы уведомить нас о неприемлемых, незаконных,\nили других вредоносных файлах общего доступа. Вы собираетесь сообщить:"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Version is deleted": [
         "Версия удалена"
@@ -5101,6 +5125,11 @@
       ],
       "Your import is starting": [
         "Ваш импорт начался"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "выберите другой тариф для увеличения хранилища"
       ]
     },
     "Mail import summary": {
@@ -6507,6 +6536,15 @@
       "Birthday": [
         "День рождения"
       ],
+      "Breach Date": [
+        "Дата утечки"
+      ],
+      "Breach Information": [
+        "Информация об утечке"
+      ],
+      "Breach Size": [
+        "Размер утечки"
+      ],
       "Browser might run out of memory": [
         "У браузера могла закончиться память"
       ],
@@ -6633,6 +6671,9 @@
       "Edit image": [
         "Изменение изображения"
       ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
       "Email addresses": [
         "Адреса электронной почты"
       ],
@@ -6650,6 +6691,9 @@
       ],
       "Exporting contacts": [
         "Экспортирование контактов"
+      ],
+      "Exposed info": [
+        "Раскрытая информация"
       ],
       "Failed": [
         "Не удалось"
@@ -6756,6 +6800,9 @@
       "Other names": [
         "Другие названия"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Performance might be affected": [
         "Это может отразиться на производительности"
       ],
@@ -6776,6 +6823,9 @@
       ],
       "Re-signing contacts": [
         "Переподписание контактов"
+      ],
+      "Recommended actions": [
+        "Рекомендуемые действия"
       ],
       "Reconnect your account": [
         "Повторно подключить свою учётную запись"
@@ -6935,6 +6985,9 @@
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
+      ],
+      "Your Exposed Information": [
+        "Ваша раскрытая информация"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
