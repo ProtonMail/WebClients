@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Η λειτουργία χωρίς σύνδεση δεν είναι προς το παρόν διαθέσιμη για τη λειτουργία δύο κωδικών πρόσβασης."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Η λειτουργία εκτός σύνδεσης δεν είναι προς το παρόν διαθέσιμη για το πλάνο σας και δεν είναι συμβατή με τη λειτουργία δύο κωδικών πρόσβασης."
+      ],
       "Passphrase is incorrect": [
         "Η φράση πρόσβασης είναι εσφαλμένη"
       ],
       "PIN codes do not match": [
         "Οι κωδικοί PIN δεν ταιριάζουν"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
       ],
+      "Enable offline access": [
+        "Ενεργοποίηση πρόσβασης εκτός σύνδεσης"
+      ],
       "Expiration date": [
         "Ημερομηνία λήξης"
       ],
@@ -1481,6 +1496,9 @@
       ],
       "Notes": [
         "Σημειώσεις"
+      ],
+      "Offline mode": [
+        "Λειτουργία χωρίς σύνδεση"
       ],
       "Old-New": [
         "Παλιό-Νέο"

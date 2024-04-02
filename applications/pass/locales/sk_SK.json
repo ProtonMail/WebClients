@@ -589,11 +589,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Offline režim momentálne nie je k dispozícii pre režim dvoch hesiel."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Offline režim nie je momentálne k dispozícii pre váš plán a nie je kompatibilný s režimom dvoch hesiel."
+      ],
       "Passphrase is incorrect": [
         "Prístupová fráza je nesprávna"
       ],
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Upgradujte pre získanie skorého prístupu k aplikácii ${ PASS_APP_NAME } pre počítače"
       ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
@@ -770,6 +776,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky a platobné karty."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } bude vyžadovať vaše ${ BRAND_NAME } heslo na prístup k údajom offline."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dní na bezplatné vyskúšanie prémiových funkcií. Len počas vášho prvého týždňa s ${ BRAND_NAME }."
@@ -1055,6 +1064,9 @@
       ],
       "Pinning item...": [
         "Pripínanie položky..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potvrďte svoje ${ BRAND_NAME } heslo na povolenie offline režimu"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
@@ -1388,6 +1400,9 @@
       "Empty trash": [
         "Vyprázdniť kôš"
       ],
+      "Enable offline access": [
+        "Povoliť offline prístup"
+      ],
       "Expiration date": [
         "Koniec platnosti "
       ],
@@ -1519,6 +1534,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "Offline mode": [
+        "Offline režim"
       ],
       "Old-New": [
         "Staré-Nové"
