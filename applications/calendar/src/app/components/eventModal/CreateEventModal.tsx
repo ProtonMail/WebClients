@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BasicModal, Form, useMailSettings } from '@proton/components';
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
@@ -35,6 +35,7 @@ interface Props {
     tzid: string;
     onDisplayBusySlots: () => void;
     onExit: () => void;
+    view: VIEWS;
 }
 
 const CreateEventModal = ({
@@ -53,6 +54,7 @@ const CreateEventModal = ({
     onClose,
     tzid,
     onDisplayBusySlots,
+    view,
     ...rest
 }: Props) => {
     const [mailSettings] = useMailSettings();
@@ -199,6 +201,7 @@ const CreateEventModal = ({
                 isDrawerApp={isDrawerApp}
                 isSmallViewport={isSmallViewport}
                 onDisplayBusySlots={onDisplayBusySlots}
+                view={view}
             />
         </BasicModal>
     );

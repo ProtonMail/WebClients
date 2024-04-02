@@ -7,7 +7,7 @@ import { AddressesAutocompleteTwo, Alert, Details, Icon, Summary, useMailSetting
 import useBusyTimeSlotsAvailable from '@proton/components/containers/calendar/hooks/useBusyTimeSlotsAvailable';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import {
     CANONICALIZE_SCHEME,
@@ -40,6 +40,7 @@ interface Props {
     setParticipantError?: (value: boolean) => void;
     collapsible?: boolean;
     onDisplayBusySlots?: () => void;
+    view: VIEWS;
 }
 
 const ParticipantsInput = ({
@@ -54,9 +55,10 @@ const ParticipantsInput = ({
     setParticipantError,
     collapsible = true,
     onDisplayBusySlots,
+    view,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable();
+    const isBusyTimeSlotsAvailable = useBusyTimeSlotsAvailable(view);
     const displayAvailabilityUnknown = useCalendarSelector(selectDisplayAvailabilityUnknown);
     const numberOfAttendees = value.length;
 
@@ -130,7 +132,6 @@ const ParticipantsInput = ({
         <ParticipantRows
             attendeeModel={value}
             contactEmailsMap={contactEmailsMap}
-            displayBusySlotsDot={!onDisplayBusySlots}
             isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable}
             onDelete={onDelete}
             toggleIsOptional={toggleIsOptional}
@@ -189,7 +190,9 @@ const ParticipantsInput = ({
                 ) : (
                     participantRows
                 ))}
-            {numberOfAttendees > 0 && organizer && <OrganizerRow organizer={organizer} />}
+            {numberOfAttendees > 0 && organizer && (
+                <OrganizerRow organizer={organizer} isBusyTimeSlotsAvailable={isBusyTimeSlotsAvailable} />
+            )}
             {isBusyTimeSlotsAvailable && displayAvailabilityUnknown && (
                 <div className="flex items-center color-weak mt-2 text-sm bg-weak rounded py-1 px-2">
                     <Icon name="circle-half-filled" size={2.5} className="rotateZ-45 opacity-70 mr-2" />{' '}

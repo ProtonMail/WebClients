@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PrimaryButton, useMailSettings } from '@proton/components';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -36,6 +37,7 @@ interface Props {
     isInvitation: boolean;
     isDraggingDisabled?: boolean;
     isDrawerApp?: boolean;
+    view: VIEWS;
 }
 
 const CreateEventPopover = ({
@@ -54,6 +56,7 @@ const CreateEventPopover = ({
     isInvitation,
     isDraggingDisabled = false,
     isDrawerApp,
+    view,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [participantError, setParticipantError] = useState(false);
@@ -182,6 +185,7 @@ const CreateEventPopover = ({
                     setParticipantError={setParticipantError}
                     isSmallViewport={isSmallViewport}
                     isDrawerApp={isDrawerApp}
+                    view={view}
                 />
                 <PopoverFooter className="justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">
                     <Button

@@ -58,7 +58,12 @@ const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
     formatTime: (date: Date) => string;
-    onEdit: () => void;
+    /**
+     * On edit event callback
+     * @param userCanDuplicateEvent - used for busy slots to know if we should fetch them or not
+     * @returns
+     */
+    onEdit: (userCanDuplicateEvent: boolean) => void;
     onRefresh: () => Promise<void>;
     onDuplicate?: () => void;
     onChangePartstat: (inviteActions: InviteActions) => Promise<void>;
@@ -141,6 +146,17 @@ const EventPopover = ({
         color,
     } = getEventInformation(targetEvent, model, hasPaidMail);
 
+    const canDuplicateEvent =
+        !isSearchView &&
+        onDuplicate &&
+        getCanDuplicateEvent({
+            isUnknownCalendar,
+            isSubscribedCalendar,
+            isOwnedCalendar,
+            isOrganizer: model.isOrganizer,
+            isInvitation,
+        });
+
     const handleDelete = () => {
         const sendCancellationNotice =
             !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
@@ -206,7 +222,9 @@ const EventPopover = ({
             <ButtonLike
                 data-testid="event-popover:edit"
                 shape="ghost"
-                onClick={onEdit}
+                onClick={() => {
+                    onEdit(!!canDuplicateEvent);
+                }}
                 disabled={loadingDelete}
                 icon
                 size="small"
@@ -229,28 +247,20 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const duplicateButton = !isSearchView &&
-        onDuplicate &&
-        getCanDuplicateEvent({
-            isUnknownCalendar,
-            isSubscribedCalendar,
-            isOwnedCalendar,
-            isOrganizer: model.isOrganizer,
-            isInvitation,
-        }) && (
-            <Tooltip title={duplicateText}>
-                <ButtonLike
-                    data-testid="event-popover:duplicate"
-                    shape="ghost"
-                    onClick={onDuplicate}
-                    disabled={loadingDelete}
-                    icon
-                    size="small"
-                >
-                    <Icon name="squares" alt={duplicateText} />
-                </ButtonLike>
-            </Tooltip>
-        );
+    const duplicateButton = canDuplicateEvent && (
+        <Tooltip title={duplicateText}>
+            <ButtonLike
+                data-testid="event-popover:duplicate"
+                shape="ghost"
+                onClick={onDuplicate}
+                disabled={loadingDelete}
+                icon
+                size="small"
+            >
+                <Icon name="squares" alt={duplicateText} />
+            </ButtonLike>
+        </Tooltip>
+    );
 
     const reloadButton = !isSearchView && (
         <Tooltip title={reloadText}>
