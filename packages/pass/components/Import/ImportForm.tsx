@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components/components';
+import csvTemplate from '@proton/pass/assets/protonpass-import.csv';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -107,7 +108,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                             {c('Info').t`Follow those steps to import your data with a generic CSV :`}
                             <ol className="mt-2 mb-0">
                                 <li>
-                                    <Href href="/assets/protonpass-import.csv" download="protonpass-import.csv">
+                                    <Href href={csvTemplate} download="protonpass-import.csv">
                                         {c('Action').t`Download this CSV template`}
                                     </Href>
                                 </li>
