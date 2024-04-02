@@ -1960,6 +1960,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } არის თქვენი მომხმარებლის სახელი. ${ emailAddress }-ის შესაქმნელად გთხოვთ გადადით პარამეტრები > შეტყობინებები და შედგენა > მოკლე დომენი (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
       ],
@@ -2970,6 +2973,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "დარწმუნდით, რომ დააკოპირეთ თქვენი პაროლი და ის უსაფრთხო ადგილას შეინახეთ."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "მომხმარებლის გააქტიურებამდე თქვენ უნდა მიუთითოთ პაროლი და შექმნათ დაშიფვრის გასაღებები მისამართებისთვის."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "მისამართის შექმნამდე პაროლის შეყვანა და მისთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
@@ -4757,6 +4763,35 @@
         "${ twoFAMembers.length }/${ members.length } თქვენი ორგანიზაციის წევრი იყენებს 2FA-ს."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "Upgrade to restore full access": [
+        "ასწიეთ სატარიფო გეგმა სრული წვდომის აღსადგენად"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი ${ driveStorage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი ${ mailStorage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "ფასდაკლების მიღება"
@@ -4796,6 +4831,9 @@
       ],
       "Limited-time offer, expires April 2 2024": [
         "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "თქვენი გამოწერა ავტომატურად განახლდება ${ renewTime }-ზე ${ renewablePrice }-ზე, გააუქმეთ ნებისმიერ დროს"
       ]
     },
     "mailtrial2024: Title": {
@@ -5483,6 +5521,9 @@
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: იქონიეთ წვდომა დაბლოკილ შემცველობასთან და იმუშავეთ ინტერნეტში კონფიდენციალურად. შეიცავს ${ serversAndCountries }, ყველაზე სწრაფ VPN-ს, წვდომას ვიდეოსტრიმინგის სერვისებთან, მავნე პროგრამებისა და რეკლამის დაბლოკვას, სწრაფ BtTorrent-ს და სხვ."
       ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "წვდომა ${ MAIL_APP_NAME }-სა და ${ CALENDAR_APP_NAME }-ზე თქვენი დესკტოპის მოხერხებულობიდან"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+ და Prime Video-ის ჩათვლით, ნებისმიერი ადგილიდან"
       ],
@@ -5505,7 +5546,7 @@
         "სარეკლამო ან პროგრამული ელფოსტის მასიური გაგზავნა ამჟამად მხარდაუჭერელია. ამ მიზნისთვის გირჩევთ, ელფოსტის გამოყოფილი სერვისი აირჩიოთ."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "აირჩიტ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
+        "აირჩიეთ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "გააკონტროლეთ წვდომა თქვენს გაზიარებულ ფაილებზე მათზე პაროლებისა და ბმულების ვადის დამატების საშუალებით"
@@ -5957,6 +5998,17 @@
         "ყველა ${ BRAND_NAME } Plus-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**თქვენი ყველა არსებული მონაცემი** (ელფოსტა, მოვლენები, კონტაქტები, ფაილები, ${ PASS_APP_NAME } ჩანაწერები და ა.შ.) ** დაიბლოკება** და მისი განბლოკვა შესაძლებელია მხოლოდ თქვენი **ძველი პაროლით**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**თქვენი ყველა არსებული მონაცემი** (ელფოსტა, მოვლენები, კონტაქტები, ფაილები, ${ PASS_APP_NAME } ჩანაწერები და ა.შ.) ** დაიბლოკება** და მისი განბლოკვა შესაძლებელია მხოლოდ თქვენი **აღდგენის ფრაზით** ან თქვენი ** ძველი პაროლი**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "თქვენს ანგარიშზე არსებული **ორფაქტორიანი ავთენტიფიკაციის (2FA)** მეთოდი გაითიშება."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "გასაღებთან წვდომას ყველა ადმინისტრატორი მიიღებს."
@@ -6162,6 +6214,9 @@
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
+      ],
+      "Select state": [
+        "აირჩიეთ შტატი"
       ]
     },
     "plan customizer, ips": {

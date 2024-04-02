@@ -589,6 +589,9 @@
       "Offline mode is currently not available for two password mode.": [
         "Način brez povezave trenutno ni na voljo za način z dvema gesloma."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Način brez povezave trenutno ni na voljo za vaš paket in ni združljiv z načinom z dvema gesloma."
+      ],
       "Passphrase is incorrect": [
         "Geslo ni pravilno"
       ],
@@ -770,6 +773,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in kreditne kartice."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } bo zahteval ${ BRAND_NAME } geslo za dostop do podatkov v načinu brez povezave."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dni, da brezplačno preizkusite vrhunske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
@@ -1055,6 +1061,9 @@
       ],
       "Pinning item...": [
         "Pripenjanje predmeta..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potrdite svoje ${ BRAND_NAME } geslo, da omogočite način brez povezave"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }"
@@ -1388,6 +1397,9 @@
       "Empty trash": [
         "Izprazni smetnjak"
       ],
+      "Enable offline access": [
+        "Omogoči način brez povezave"
+      ],
       "Expiration date": [
         "Datum poteka"
       ],
@@ -1519,6 +1531,9 @@
       ],
       "Notes": [
         "Opombe"
+      ],
+      "Offline mode": [
+        "Način brez povezave"
       ],
       "Old-New": [
         "Staro-novo"

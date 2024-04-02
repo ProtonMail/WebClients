@@ -599,7 +599,7 @@
         "フィードバックを送信"
       ],
       "Set recovery phrase": [
-        "回復フレーズを設定"
+        "回復用フレーズを設定"
       ],
       "Settings": [
         "設定"
@@ -704,7 +704,7 @@
         "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
-        "回復フレーズを更新"
+        "回復用フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -1964,6 +1964,16 @@
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "説明:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "場所:\n${ eventLocation }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } の予定のキャンセル"
@@ -3166,6 +3176,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
+      "Change your password": [
+        "パスワードを変更"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
       ],
@@ -3310,6 +3323,9 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
+      "email": [
+        "メール"
+      ],
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
       ],
@@ -3414,6 +3430,9 @@
       ],
       "here": [
         "こちら"
+      ],
+      "High Priority": [
+        "優先度：高"
       ],
       "How does encrypted search work?": [
         "暗号化された検索の原理"
@@ -3520,8 +3539,14 @@
       "Loading...": [
         "読み込み中..."
       ],
+      "Low Priority": [
+        "優先度：低"
+      ],
       "Makes your account safer": [
         "アカウントをより安全にする"
+      ],
+      "Medium Priority": [
+        "優先度：中"
       ],
       "Merged": [
         "結合済み"
@@ -3967,6 +3992,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "このフォームを使うことで、不適切であったり違法である共有ファイル、およびその他の悪意ある共有ファイルを報告することができます。レポートする内容:"
       ],
+      "username": [
+        "ユーザー名"
+      ],
       "Version is deleted": [
         "バージョンが削除されました"
       ],
@@ -4106,7 +4134,7 @@
         "以前のパスワード"
       ],
       "Your previous recovery phrase": [
-        "以前の回復フレーズ"
+        "以前の回復用フレーズ"
       ]
     },
     "info": {
@@ -5398,6 +5426,9 @@
       "Search for name or email": [
         "名前またはメールアドレスで検索"
       ],
+      "Search parent folder": [
+        "親フォルダーを検索"
+      ],
       "Select": [
         "選択してください"
       ],
@@ -6165,6 +6196,9 @@
       "Edit image": [
         "画像の編集"
       ],
+      "Email address": [
+        "メールアドレス"
+      ],
       "Email addresses": [
         "メールアドレス"
       ],
@@ -6281,6 +6315,9 @@
       ],
       "Other names": [
         "別名"
+      ],
+      "Password": [
+        "パスワード"
       ],
       "Performance might be affected": [
         "動作が少し遅くなる可能性があります。"
@@ -6593,7 +6630,7 @@
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
       ],
       "Invalid alias prefix": [
-        "無効なエイリアスプレフィックス"
+        "無効なエイリアスプレフィックスです"
       ],
       "Missing alias prefix": [
         "エイリアスのプレフィックスがありません"

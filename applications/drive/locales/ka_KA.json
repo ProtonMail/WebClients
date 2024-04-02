@@ -3571,6 +3571,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
       ],
+      "Change your password": [
+        "შეცვალეთ თქვენი პაროლი"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
@@ -3723,6 +3726,9 @@
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
+      "email": [
+        "ელფოსტა"
+      ],
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
       ],
@@ -3799,6 +3805,9 @@
       "Finalizing": [
         "დასრულება"
       ],
+      "finance": [
+        "ფინანსები"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "საქაღალდე \"${ link.name }\" წაიშალა გადმოწერის დროს"
       ],
@@ -3834,6 +3843,9 @@
       ],
       "here": [
         "აქ"
+      ],
+      "High Priority": [
+        "მაღალი პრიორიტეტი"
       ],
       "How does encrypted search work?": [
         "როგორ მუშაობს დაშიფრული ძებნა?"
@@ -3947,6 +3959,9 @@
       "Loading...": [
         "ჩატვირთვა..."
       ],
+      "Low Priority": [
+        "დაბალი პრიორიტეტი"
+      ],
       "Makes your account safer": [
         "თქვენს ანგარიშს უფრო უსაფრთხოს გახდის"
       ],
@@ -3954,8 +3969,14 @@
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
       ],
+      "Medium Priority": [
+        "საშუალო პრიორიტეტი"
+      ],
       "Merged": [
         "შერწყმული"
+      ],
+      "Monitor accounts": [
+        "ანგარიშების მონიტორი"
       ],
       "More": [
         "მეტი"
@@ -4032,6 +4053,9 @@
       ],
       "Or use the \"+ New\" button": [
         "ან გამოიყენეთ ღილაკი '+ ახალი'"
+      ],
+      "password": [
+        "პაროლი"
       ],
       "Paused": [
         "შეჩერებულია"
@@ -4431,6 +4455,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "გამოიყენეთ ეს ფორმა შეუფერებელი, უკანონო ან სხვაგვარად \nშეუთავსებელი გაზიარებული ფაილების დასარეპორტებლად. ახლა აგზავნით ანგარიშს:"
+      ],
+      "username": [
+        "მომხმარებლის სახელი"
       ],
       "Version is deleted": [
         "ვერსია წაიშალა"
@@ -5227,6 +5254,35 @@
       ],
       "Your import is starting": [
         "შემოტანის დასაწყისი"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "Upgrade to restore full access": [
+        "ასწიეთ სატარიფო გეგმა სრული წვდომის აღსადგენად"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი ${ driveStorage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი ${ mailStorage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
     "Mail import summary": {
@@ -6041,6 +6097,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select state": [
+        "აირჩიეთ შტატი"
       ],
       "Set date": [
         "თარიღის დაყენება"
@@ -6891,6 +6950,15 @@
       "Birthday": [
         "დაბადების დღე"
       ],
+      "Breach Date": [
+        "გაჟონვის თარიღი"
+      ],
+      "Breach Information": [
+        "გაჟონვის ინფორმაცია"
+      ],
+      "Breach Size": [
+        "გაჟონვის ზომა"
+      ],
       "Browser might run out of memory": [
         "თქვენს ბრაუზერს მეხსიერება არ ჰყოფნის"
       ],
@@ -7013,6 +7081,9 @@
       "Edit image": [
         "გამოსახულების ჩასწორება"
       ],
+      "Email address": [
+        "ელფოსტის მისამართი"
+      ],
       "Email addresses": [
         "ელფოსტის მისამართები"
       ],
@@ -7033,6 +7104,9 @@
       ],
       "Exporting contacts": [
         "კონტაქტების გატანა"
+      ],
+      "Exposed info": [
+        "გაჟონილი ინფორმაცია"
       ],
       "Failed": [
         "წარუმატებელი"
@@ -7141,6 +7215,9 @@
       "Other names": [
         "სხვა სახელები"
       ],
+      "Password": [
+        "პაროლი"
+      ],
       "Performance might be affected": [
         "გავლენა ექნება წარმადობაზე"
       ],
@@ -7161,6 +7238,9 @@
       ],
       "Re-signing contacts": [
         "კონტაქტის თავიდან ხელმოწერა"
+      ],
+      "Recommended actions": [
+        "რეკომენდებული ქმედებები"
       ],
       "Reconnect your account": [
         "თქვენი ანგარიშის თავიდან დაკავშირება"
@@ -7329,6 +7409,9 @@
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
+      ],
+      "Your Exposed Information": [
+        "თქვენი გაჟონილი ინფორმაცია"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "თქვენი Mail Plus-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"

@@ -4851,6 +4851,35 @@
         "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "upgrade for more storage": [
+        "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Upgrade to restore full access": [
+        "Ulepsz konto, aby przywrócić pełny dostęp"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Konto może zostać usunięte. Aby uniknąć utraty danych, poproś administratora o ulepszenie konta. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Subskrypcja zakończyła się. ${ cta } i uniknąć utraty danych."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Skorzystaj z oferty"

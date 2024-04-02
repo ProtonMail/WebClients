@@ -305,6 +305,9 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete address": [
+        "Verwijder adres"
+      ],
       "Delete and confirm": [
         "Verwijder en bevestig"
       ],
@@ -974,6 +977,12 @@
       "Unlock": [
         "Ontgrendel"
       ],
+      "Unlock Breach Report": [
+        "Open inbreuk rapport"
+      ],
+      "Unlock breach reports": [
+        "Open inbreuk rapporten"
+      ],
       "Unlock data": [
         "Ontgrendel gegevens"
       ],
@@ -1003,6 +1012,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade om ${ PROTON_SENTINEL_NAME } in te schakelen"
+      ],
+      "Upgrade to view all": [
+        "Upgrade om volledig te bekijken"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
@@ -1137,6 +1149,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Verwijder adres"
+      ],
       "Disable": [
         "Uitschakelen"
       ],
@@ -3032,6 +3047,25 @@
         "Onbekend"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Eens verwijderd, kan dit adres niet opnieuw door u of iemand anders gebruikt worden."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Het volgende actieve adres op uw lijst zal als standaard worden ingesteld."
+      ],
+      "You can only delete 1 address per year.": [
+        "U kunt slechts 1 adres per jaar verwijderen."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "U kunt slechts 1 adres per jaar verwijderen"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "U heeft het maximale aantal adresverwijderingen voor deze gebruiker bereikt."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Alle afspraken in deze agenda worden verwijderd."
@@ -3081,6 +3115,9 @@
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Upgrade om de ${ MAIL_APP_NAME }-voet te verwijderen en ontgrendel nog meer premium functies."
+      ],
+      "To view the full report including personalized recommendations, upgrade to a paid plan.": [
+        "Om het volledige rapport inclusief persoonlijke aanbevelingen te bekijken, upgrade naar een betalend plan."
       ],
       "Track the status and activity of your referrals.": [
         "Volg de status en activiteiten van uw doorverwijzingen."
@@ -6240,6 +6277,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkeert dat afzenders kunnen zien of en wanneer u een bericht hebt geopend."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Melding wordt aangedreven door ${ BRAND_NAME }zijn propietaire datasets, open-source datasets en Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
@@ -6441,6 +6481,9 @@
       ],
       "Edit link": [
         "Link bewerken"
+      ],
+      "email": [
+        "e-mail"
       ],
       "Email address": [
         "E-mailadres"
@@ -6840,6 +6883,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "Monitor accounts": [
+        "Accounts monitoren"
+      ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ],
@@ -7068,6 +7114,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus ${ numOfBreaches } meer"
       ],
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
@@ -7616,6 +7665,15 @@
       "URL link": [
         "Website (URL)"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Gebruik ${ BRAND_NAME } Pass om sterke wachtwoorden te genereren en hergebruik van het wachtwoord te voorkomen"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Gebruik ${ VPN_APP_NAME } met Netshield ingeschakeld om u te beschermen tegen phishing en malware."
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Gebruik aliassen om u aan te melden voor online diensten. Dit beschermt uw echte e-mailadres en identiteit, waardoor de hoog-straal van een inbreuk wordt beperkt."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
@@ -7675,6 +7733,9 @@
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Waarschuwing: verwijdering is permanent. Dit verwijdert ook de toegang tot alle verbonden diensten en verwijdert al uw contacten."
+      ],
+      "Ways you can minimize your breach risks": [
+        "Manieren om het risico op een datalek te verminderen."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
@@ -9552,6 +9613,9 @@
       "General": [
         "Algemeen"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Verkrijg ${ BRAND_NAME } Pass"
+      ],
       "Get ${ VPN_APP_NAME }": [
         "Kies ${ VPN_APP_NAME }"
       ],
@@ -9660,6 +9724,35 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade om volledige toegang te herstellen"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw ${ driveStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw ${ mailStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om e-mails te verzenden of te ontvangen, maak ruimte vrij of ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw opslag is vol. Maak ruimte vrij om bestanden te uploaden of te synchroniseren of ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
       ]
     },
     "Log preference": {
@@ -11801,6 +11894,17 @@
         "Voor particulieren"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **oude wachtwoord**."
+      ],
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **herstelzin** of uw **oude wachtwoord**."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Elke **tweestapsverificatie (2FA)** methode op uw account wordt uitgeschakeld."
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Alle beheerders krijgen toegang tot de sleutel."
@@ -11832,11 +11936,17 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Zorg ervoor dat ze een actief email adres hebben en nodig ze later afzonderlijk uit."
+      ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Privégebruikers kunnen worden gepromoveerd tot admin wanneer ze voor de eerste keer zijn ingelogd"
       ],
       "Reset organization key": [
         "Herstel organisatiesleutel"
+      ],
+      "The following administrators could not be restored.": [
+        "De volgende beheerders konden niet worden hersteld."
       ],
       "The following administrators will get access to the organization key.": [
         "De volgende beheerders zullen toegang krijgen tot de organisatiesleutel."
@@ -11906,6 +12016,9 @@
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
+      ],
+      "Invalid security code": [
+        "Ongeldige beveiligingscode"
       ],
       "Something went wrong. Please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -13807,6 +13920,18 @@
       "Billing cycle": [
         "Factuurperiode"
       ],
+      "Breach Alerts": [
+        "Inbreukwaarschuwingen"
+      ],
+      "Breach Date": [
+        "Datum inbreuk"
+      ],
+      "Breach Information": [
+        "Inbreuk informatie"
+      ],
+      "Breach Size": [
+        "Grootte inbreuk"
+      ],
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
       ],
@@ -13854,6 +13979,9 @@
       ],
       "Clear out the junk": [
         "Spam opruimen"
+      ],
+      "Close": [
+        "Sluit"
       ],
       "Composing": [
         "Opstellen"
@@ -13973,6 +14101,9 @@
       "Delete account": [
         "Account verwijderen"
       ],
+      "Delete address permanently?": [
+        "Adres definitief verwijderen?"
+      ],
       "Delete calendar": [
         "Agenda verwijderen"
       ],
@@ -14073,6 +14204,9 @@
       "Email": [
         "E-mailadres"
       ],
+      "Email address": [
+        "E-mailadres"
+      ],
       "Email composer": [
         "Opstelvenster e-mail"
       ],
@@ -14112,6 +14246,9 @@
       "Export public key": [
         "Openbare sleutel exporteren"
       ],
+      "Exposed info": [
+        "Gelekte informatie"
+      ],
       "External PGP settings": [
         "Externe PGP-instellingen"
       ],
@@ -14133,6 +14270,15 @@
       ],
       "Folders and labels": [
         "Mappen en labels"
+      ],
+      "For Linux": [
+        "Voor Linux"
+      ],
+      "For macOS": [
+        "Voor macOS"
+      ],
+      "For Windows": [
+        "Voor Windows"
       ],
       "Forward and auto-reply": [
         "Doorsturen en automatisch beantwoorden"
@@ -14276,6 +14422,9 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No account information was found in any data breaches": [
+        "Er is geen account informatie gevonden in enige datalek"
+      ],
       "No recovery method": [
         "Geen herstelmethode"
       ],
@@ -14344,6 +14493,9 @@
       ],
       "Recommended": [
         "Aanbevolen"
+      ],
+      "Recommended actions": [
+        "Aanbevolen acties"
       ],
       "Reconnect your account": [
         "Uw account opnieuw verbinden"
@@ -14612,6 +14764,9 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
+      ],
+      "Your Exposed Information": [
+        "Jouw gelekte informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"

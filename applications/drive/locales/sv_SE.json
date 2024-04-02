@@ -176,6 +176,9 @@
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
       ],
+      "Copy invite link": [
+        "Kopiera inbjudningslänk"
+      ],
       "Copy link": [
         "Kopiera länk"
       ],
@@ -759,6 +762,9 @@
       ],
       "View": [
         "Visa"
+      ],
+      "View all reports": [
+        "Visa alla rapporter"
       ],
       "View invoice": [
         "Visa faktura"
@@ -1977,6 +1983,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Intrångsvarningar och rapporter är tillgängliga med ett betalt paket. Uppgradera för omedelbar åtkomst."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -2030,6 +2039,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Din information hittades i minst ett dataintrång."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Dina personuppgifter läcktes av en onlinetjänst i ett dataintrång. Visa alla detaljer och få rekommenderade åtgärder."
       ]
     },
     "description": {
@@ -3565,6 +3580,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
+      "Breach alerts": [
+        "Intrångsvarningar"
+      ],
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
@@ -3582,6 +3600,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
+      ],
+      "Change your password": [
+        "Ändra ditt lösenord"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
@@ -3735,6 +3756,9 @@
       "Edit email address": [
         "Redigera e-postadress"
       ],
+      "email": [
+        "e-post"
+      ],
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
       ],
@@ -3811,6 +3835,9 @@
       "Finalizing": [
         "Färdigställer"
       ],
+      "finance": [
+        "finans"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mapp “${ link.name }“ togs bort under nedladdningen"
       ],
@@ -3846,6 +3873,9 @@
       ],
       "here": [
         "här"
+      ],
+      "High Priority": [
+        "Hög prioritet"
       ],
       "How does encrypted search work?": [
         "Hur fungerar krypterad sökning?"
@@ -3959,6 +3989,9 @@
       "Loading...": [
         "Laddar..."
       ],
+      "Low Priority": [
+        "Låg prioritet"
+      ],
       "Makes your account safer": [
         "Gör ditt konto säkrare"
       ],
@@ -3966,8 +3999,14 @@
         "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken",
         "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken"
       ],
+      "Medium Priority": [
+        "Medium prioritet"
+      ],
       "Merged": [
         "Sammanslagna"
+      ],
+      "Monitor accounts": [
+        "Övervaka konton"
       ],
       "More": [
         "Mer"
@@ -4045,6 +4084,9 @@
       "Or use the \"+ New\" button": [
         "Eller använd knappen “+ Ny“"
       ],
+      "password": [
+        "lösenord"
+      ],
       "Paused": [
         "Pausad"
       ],
@@ -4084,6 +4126,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Försök igen om en stund"
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -4444,11 +4489,17 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Använd detta formulär för att meddela oss om olämpliga, olagliga,\n eller på annat sätt skadliga delade filer. Du är på väg att rapportera:"
       ],
+      "username": [
+        "användarnamn"
+      ],
       "Version is deleted": [
         "Version är borttagen"
       ],
       "Version is restored": [
         "Version är återställd"
+      ],
+      "View details": [
+        "Visa detaljer"
       ],
       "Want to sync files faster?": [
         "Vill du synkronisera filer snabbare?"
@@ -6270,6 +6321,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Bli aviserad om ditt lösenord eller andra personliga uppgifter har läckt."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
       ],
@@ -6995,6 +7049,21 @@
       "Birthday": [
         "Födelsedag"
       ],
+      "Breach alerts": [
+        "Intrångsvarningar"
+      ],
+      "Breach Date": [
+        "Intrångsdatum"
+      ],
+      "Breach detected": [
+        "Intrång upptäckt"
+      ],
+      "Breach Information": [
+        "Intrångsinformation"
+      ],
+      "Breach Size": [
+        "Storlek på intrång"
+      ],
       "Browser might run out of memory": [
         "Webbläsaren kan få slut på minne"
       ],
@@ -7120,6 +7189,9 @@
       "Edit image": [
         "Redigera bild"
       ],
+      "Email address": [
+        "E-postadress"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -7140,6 +7212,9 @@
       ],
       "Exporting contacts": [
         "Exporterar kontakter"
+      ],
+      "Exposed info": [
+        "Exponeringsinformation"
       ],
       "Failed": [
         "Misslyckades"
@@ -7227,6 +7302,9 @@
       "Night theme": [
         "Natt-tema"
       ],
+      "No breaches detected": [
+        "Inga intrång upptäckta"
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -7248,6 +7326,9 @@
       "Other names": [
         "Andra namn"
       ],
+      "Password": [
+        "Lösenord"
+      ],
       "Performance might be affected": [
         "Prestanda kan påverkas"
       ],
@@ -7268,6 +7349,9 @@
       ],
       "Re-signing contacts": [
         "Återsignerar kontakter"
+      ],
+      "Recommended actions": [
+        "Rekommenderade åtgärder"
       ],
       "Reconnect your account": [
         "Återanslut ditt konto"
@@ -7356,6 +7440,9 @@
       "Start import process": [
         "Starta importprocessen"
       ],
+      "Stay safer online": [
+        "Var säkrare online"
+      ],
       "Stop sharing": [
         "Sluta dela"
       ],
@@ -7436,6 +7523,9 @@
       ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
+      ],
+      "Your Exposed Information": [
+        "Din exponeringsinformation"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis provperiod för Mail Plus slutar den ${ textDate }"

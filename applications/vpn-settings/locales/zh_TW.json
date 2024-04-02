@@ -134,6 +134,9 @@
       "Delete": [
         "刪除"
       ],
+      "Delete address": [
+        "刪除地址"
+      ],
       "Delete Gateway": [
         "刪除閘道器"
       ],
@@ -3597,6 +3600,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
       ],
+      "User activated": [
+        "使用者已啟用"
+      ],
       "Users": [
         "使用者"
       ],
@@ -4503,6 +4509,32 @@
         "升級以解鎖聊天支援與其他進階功能，或是使用我們的免費支援表單來回報您的問題。"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "upgrade for more storage": [
+        "升級以增加儲存"
+      ],
+      "Upgrade to restore full access": [
+        "升級以還原完整存取權限"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的${ driveStorage }已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的儲存已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "取得優惠"
@@ -4550,6 +4582,12 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "啟用使用者"
+      ],
+      "Add address": [
+        "加入電郵位址"
+      ],
       "Change password": [
         "變更密碼"
       ],
@@ -5638,6 +5676,9 @@
       "Invalid expiration date": [
         "到期日無效"
       ],
+      "Invalid security code": [
+        "無效安全碼"
+      ],
       "Something went wrong. Please try again later.": [
         "發生錯誤。請稍後再試。"
       ],
@@ -5728,6 +5769,9 @@
       ],
       "Select a reason": [
         "選取理由"
+      ],
+      "Select state": [
+        "請選州"
       ]
     },
     "plan customizer, ips": {
@@ -6748,6 +6792,9 @@
       "Activate organization key": [
         "啟用組織金鑰"
       ],
+      "Activate user": [
+        "啟用使用者"
+      ],
       "Add address": [
         "加入電郵位址"
       ],
@@ -6826,6 +6873,9 @@
       "Change role": [
         "變更角色"
       ],
+      "Close": [
+        "關閉"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -6894,6 +6944,9 @@
       ],
       "Delete account": [
         "刪除帳號"
+      ],
+      "Delete address permanently?": [
+        "永久刪除主要地址？"
       ],
       "Delete user?": [
         "刪除使用者?"
@@ -7400,6 +7453,9 @@
       ],
       "15-month": [
         "15個月"
+      ],
+      "18-month": [
+        "18個月"
       ],
       "2-year": [
         "2-年"

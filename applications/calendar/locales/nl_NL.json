@@ -606,11 +606,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade Now": [
-        "Upgrade Nu"
-      ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade Now": [
+        "Upgrade Nu"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -3851,6 +3851,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
+      "Change your password": [
+        "Wijzig uw wachtwoord"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
       ],
@@ -3942,6 +3945,9 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
@@ -3979,11 +3985,17 @@
       "Existent, added and removed participants will be notified.": [
         "Bestaande, toegevoegde en verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
+      "finance": [
+        "financiën"
+      ],
       "Frequency modifications will be lost.": [
         "Aanpassingen m.b.t. frequentie zullen verloren gaan."
       ],
       "here": [
         "hier"
+      ],
+      "High Priority": [
+        "Hoge Prioriteit"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -4064,11 +4076,20 @@
       "Loading events": [
         "Afspraken laden"
       ],
+      "Low Priority": [
+        "Lage Prioriteit"
+      ],
       "Manage your calendars": [
         "Uw agenda's beheren"
       ],
+      "Medium Priority": [
+        "Middelmatige prioriteit"
+      ],
       "Merged": [
         "Samengevoegd"
+      ],
+      "Monitor accounts": [
+        "Accounts monitoren"
       ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
@@ -4108,6 +4129,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
+      ],
+      "password": [
+        "wachtwoord"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -4271,6 +4295,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "username": [
+        "gebruikersnaam"
       ],
       "Warning": [
         "Waarschuwing"
@@ -5013,6 +5040,35 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade om volledige toegang te herstellen"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw ${ driveStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw ${ mailStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om e-mails te verzenden of te ontvangen, maak ruimte vrij of ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw opslag is vol. Maak ruimte vrij om bestanden te uploaden of te synchroniseren of ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
       ]
     },
     "Mail import summary": {
@@ -6849,6 +6905,15 @@
       "Birthday": [
         "Verjaardag"
       ],
+      "Breach Date": [
+        "Datum inbreuk"
+      ],
+      "Breach Information": [
+        "Inbreuk informatie"
+      ],
+      "Breach Size": [
+        "Grootte inbreuk"
+      ],
       "Calendar": [
         "Agenda"
       ],
@@ -6947,6 +7012,9 @@
       "Edit image": [
         "Afbeelding bewerken"
       ],
+      "Email address": [
+        "E-mailadres"
+      ],
       "Email addresses": [
         "E-mailadressen"
       ],
@@ -6973,6 +7041,9 @@
       ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
+      ],
+      "Exposed info": [
+        "Gelekte informatie"
       ],
       "Feedback": [
         "Feedback"
@@ -7011,6 +7082,9 @@
       "Link confirmation": [
         "Link bevestigen"
       ],
+      "Location": [
+        "Locatie"
+      ],
       "Merge contacts": [
         "Contacten samenvoegen"
       ],
@@ -7044,6 +7118,9 @@
       "Participants cannot be notified": [
         "Deelnemers kunnen niet op de hoogte worden gebracht"
       ],
+      "Password": [
+        "Wachtwoord"
+      ],
       "Phone numbers": [
         "Telefoonnummers"
       ],
@@ -7055,6 +7132,9 @@
       ],
       "Reactivate calendar keys": [
         "Agendasleutels heractiveren"
+      ],
+      "Recommended actions": [
+        "Aanbevolen acties"
       ],
       "Reconnect your account": [
         "Uw account opnieuw verbinden"
@@ -7161,6 +7241,9 @@
       "Start import process": [
         "Importproces starten"
       ],
+      "Type": [
+        "Soort"
+      ],
       "Unlock contacts groups": [
         "Ontgrendel contactgroepen"
       ],
@@ -7199,6 +7282,9 @@
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
+      ],
+      "Your Exposed Information": [
+        "Jouw gelekte informatie"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"

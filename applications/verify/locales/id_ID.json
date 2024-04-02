@@ -24,7 +24,7 @@
         "Tidak tahu kata sandi Anda?"
       ],
       "Edit email address": [
-        "Ubah alamat surel"
+        "Ubah alamat email"
       ],
       "Edit phone number": [
         "Ubah nomor telepon"
@@ -841,12 +841,12 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Faktur yang menunggak"
+        "Faktur yang tertunggak"
       ]
     },
     "Error": {
       "Email is not valid": [
-        "Surel tidak valid"
+        "Email tidak valid"
       ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
@@ -867,7 +867,7 @@
         "Waktu permintaan habis"
       ],
       "The email addresses do not match": [
-        "Alamat surel tidak cocok"
+        "Alamat email tidak cocok"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
@@ -950,7 +950,7 @@
     },
     "Human verification method": {
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Manual": [
         "Penuntun"
@@ -964,7 +964,7 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat surel yang benar."
+        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -976,7 +976,7 @@
         "Masing-masing kode hanya dapat digunakan sekali"
       ],
       "Edit email address": [
-        "Sunting alamat surel"
+        "Sunting alamat email"
       ],
       "Enter the code from your authenticator app": [
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
@@ -994,7 +994,7 @@
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
@@ -1033,13 +1033,13 @@
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, surel tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Surel tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Surel Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
@@ -1053,7 +1053,7 @@
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"

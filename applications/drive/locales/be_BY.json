@@ -178,6 +178,9 @@
       "Copy email to clipboard": [
         "Капіяваць ліст у буфер абмену"
       ],
+      "Copy invite link": [
+        "Скапіяваць запрашальную спасылку"
+      ],
       "Copy link": [
         "Капіяваць спасылку"
       ],
@@ -758,13 +761,16 @@
         "Выкарыстоўваць код аднаўлення"
       ],
       "Verify": [
-        "Праверыць"
+        "Праверка"
       ],
       "Verify account": [
         "Праверыць уліковы запіс"
       ],
       "View": [
         "Прагледзець"
+      ],
+      "View all reports": [
+        "Паглядзець усе справаздачы"
       ],
       "View invoice": [
         "Паглядзець рахунак"
@@ -1992,6 +1998,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Папярэджанні ўцечкі і справаздачы даступны з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да гэтай функцыі."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -2045,6 +2054,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Вашы звесткі былі знойдзены прынамсі ў выніку адной уцечкі даных."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Парушэнне вашых асабістых даных адбылося праз сэрвіс у інтэрнэце ў выніку ўцечкі даных. Азнаёмцеся з падрабязнасцямі і прыміце неабходныя меры."
       ]
     },
     "description": {
@@ -3683,6 +3698,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
+      "Breach alerts": [
+        "Папярэджанні ўцечкі"
+      ],
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
@@ -3700,6 +3718,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
+      ],
+      "Change your password": [
+        "Змяніць свой пароль"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
@@ -3857,6 +3878,9 @@
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
+      "email": [
+        "электронная пошта"
+      ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
@@ -3935,6 +3959,9 @@
       "Finalizing": [
         "Завяршэнне"
       ],
+      "finance": [
+        "фінансы"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Папка \"${ link.name }\" была выдалена падчас спампоўвання"
       ],
@@ -3970,6 +3997,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "High Priority": [
+        "Высокі прыярытэт"
       ],
       "How does encrypted search work?": [
         "Як працуе зашыфраваны пошук?"
@@ -4085,6 +4115,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Low Priority": [
+        "Нізкі прыярытэт"
+      ],
       "Makes your account safer": [
         "Зрабіце свой уліковы запіс больш бяспечным"
       ],
@@ -4094,8 +4127,14 @@
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў",
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалаў"
       ],
+      "Medium Priority": [
+        "Сярэдні прыярытэт"
+      ],
       "Merged": [
         "Аб'яднана"
+      ],
+      "Monitor accounts": [
+        "Назіранне за ўліковымі запісамі"
       ],
       "More": [
         "Больш"
@@ -4175,6 +4214,9 @@
       "Or use the \"+ New\" button": [
         "Або скарыстайцеся кнопкай \"+ Новы\""
       ],
+      "password": [
+        "пароль"
+      ],
       "Paused": [
         "Прыпынена"
       ],
@@ -4216,6 +4258,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Паўтарыце спробу крыху пазней"
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -4580,11 +4625,17 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
       ],
+      "username": [
+        "імя карыстальніка"
+      ],
       "Version is deleted": [
         "Версія выдалена"
       ],
       "Version is restored": [
         "Версія адноўлена"
+      ],
+      "View details": [
+        "Паглядзець падрабязнасці"
       ],
       "Want to sync files faster?": [
         "Хочаце сінхранізаваць файлы хутчэй?"
@@ -5405,7 +5456,7 @@
         "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
+        "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
@@ -6166,7 +6217,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Сканфігурыруйце вашу арганізацыю, звяжыце з ёй імя дамена і стварыце ўліковыя запісы, каб забяспечыць абарону ўсіх удзельнікаў вашай арганізацыі."
+        "Сканфігурыруйце вашу арганізацыю, звяжыце з ёй даменнае імя і стварыце ўліковыя запісы, каб забяспечыць абарону ўсіх удзельнікаў вашай арганізацыі."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
@@ -6333,7 +6384,7 @@
         "Выбраць"
       ],
       "Select state": [
-        "Выбраць стан"
+        "Выбраць вобласць"
       ],
       "Set date": [
         "Задаць дату"
@@ -6465,6 +6516,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых асабістых даных."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
       ],
@@ -7254,6 +7308,21 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
+      "Breach alerts": [
+        "Папярэджанні ўцечкі"
+      ],
+      "Breach Date": [
+        "Дата ўцечкі"
+      ],
+      "Breach detected": [
+        "Выяўлена ўцечка"
+      ],
+      "Breach Information": [
+        "Звесткі аб уцечках"
+      ],
+      "Breach Size": [
+        "Памер уцечкі"
+      ],
       "Browser might run out of memory": [
         "Браўзеру магчыма не хапае памяці"
       ],
@@ -7380,6 +7449,9 @@
       "Edit image": [
         "Рэдагаванне відарыса"
       ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
@@ -7400,6 +7472,9 @@
       ],
       "Exporting contacts": [
         "Экспартаванне кантактаў"
+      ],
+      "Exposed info": [
+        "Звесткі кампраметацыі"
       ],
       "Failed": [
         "Збой"
@@ -7491,6 +7566,9 @@
       "Night theme": [
         "Начная тэма"
       ],
+      "No breaches detected": [
+        "Уцечкі не выяўлены"
+      ],
       "No results found": [
         "Нічога не знойдзена"
       ],
@@ -7512,6 +7590,9 @@
       "Other names": [
         "Іншыя імёны"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Performance might be affected": [
         "Можа паўплываць на прадукцыйнасць"
       ],
@@ -7532,6 +7613,9 @@
       ],
       "Re-signing contacts": [
         "Паўторна падпісаць кантакты"
+      ],
+      "Recommended actions": [
+        "Рэкамендаваныя дзеянні"
       ],
       "Reconnect your account": [
         "Перападключыць свой уліковы запіс"
@@ -7620,6 +7704,9 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Stay safer online": [
+        "Заставайцеся абароненымі ў інтэрнэце"
+      ],
       "Stop sharing": [
         "Спыніць абагуленне"
       ],
@@ -7700,6 +7787,9 @@
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
+      ],
+      "Your Exposed Information": [
+        "Вашы скампраметаваныя звесткі"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"

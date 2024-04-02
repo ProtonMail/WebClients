@@ -176,6 +176,9 @@
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
+      "Copy invite link": [
+        "Davet bağlantısını kopyala"
+      ],
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
@@ -759,6 +762,9 @@
       ],
       "View": [
         "Görüntüle"
+      ],
+      "View all reports": [
+        "Tüm raporları görüntüle"
       ],
       "View invoice": [
         "Faturayı görüntüle"
@@ -3571,6 +3577,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
+      "Change your password": [
+        "Parolanızı değiştirin"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
@@ -3723,6 +3732,9 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
+      "email": [
+        "e-posta"
+      ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
@@ -3799,6 +3811,9 @@
       "Finalizing": [
         "Tamamlanıyor"
       ],
+      "finance": [
+        "finans"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "\"${ link.name }\" klasörü indirme sırasında silindi"
       ],
@@ -3834,6 +3849,9 @@
       ],
       "here": [
         "buraya"
+      ],
+      "High Priority": [
+        "Yüksek öncelik"
       ],
       "How does encrypted search work?": [
         "Şifrelenmiş arama nasıl çalışır?"
@@ -3947,6 +3965,9 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Low Priority": [
+        "Düşük Öncelik"
+      ],
       "Makes your account safer": [
         "Hesabınızı daha güvenli kılar"
       ],
@@ -3954,8 +3975,14 @@
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
+      "Medium Priority": [
+        "Orta öncelik"
+      ],
       "Merged": [
         "Birleştirilmiş"
+      ],
+      "Monitor accounts": [
+        "Hesapları izle"
       ],
       "More": [
         "Diğer"
@@ -4033,6 +4060,9 @@
       "Or use the \"+ New\" button": [
         "Ya da \"+ Yeni\" düğmesini kullanın"
       ],
+      "password": [
+        "parola"
+      ],
       "Paused": [
         "Duraklatıldı"
       ],
@@ -4072,6 +4102,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
+      ],
+      "Please try again in a few moments": [
+        "Lütfen birkaç saniye içinde tekrar deneyin"
       ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
@@ -4432,11 +4465,17 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
       ],
+      "username": [
+        "kullanıcı adı"
+      ],
       "Version is deleted": [
         "Sürüm silindi"
       ],
       "Version is restored": [
         "Sürüm geri yüklendi"
+      ],
+      "View details": [
+        "Ayrıntıları görüntüle"
       ],
       "Want to sync files faster?": [
         "Dosyaları daha hızlı eşitlemek ister misiniz?"
@@ -5227,6 +5266,35 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "upgrade for more storage": [
+        "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
+      ],
+      "Upgrade to restore full access": [
+        "Tam erişim sağlamak için tarifenizi yükseltin"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Kullandığınız ${ driveStorage } dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Kullandığınız ${ mailStorage } dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Hesabınızın silinme riski var. Verileriniz kaybolmasını önlemek için yöneticinizden tarifenizi yükseltmesini isteyin. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Depolama alanınız dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
       ]
     },
     "Mail import summary": {
@@ -6041,6 +6109,9 @@
       ],
       "Select": [
         "Seçin"
+      ],
+      "Select state": [
+        "İl seçin"
       ],
       "Set date": [
         "Tarihi ayarla"
@@ -6891,6 +6962,15 @@
       "Birthday": [
         "Doğum günü"
       ],
+      "Breach Date": [
+        "Verilerin ele geçirilme tarihi"
+      ],
+      "Breach Information": [
+        "Verilerin ele geçirilme bilgileri"
+      ],
+      "Breach Size": [
+        "Verilerin ele geçirilme boyutu"
+      ],
       "Browser might run out of memory": [
         "Bellek tarayıcı için yetersiz olabilir"
       ],
@@ -7013,6 +7093,9 @@
       "Edit image": [
         "Görseli düzenle"
       ],
+      "Email address": [
+        "E-posta adresi"
+      ],
       "Email addresses": [
         "E-posta adresleri"
       ],
@@ -7033,6 +7116,9 @@
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
+      ],
+      "Exposed info": [
+        "Açığa çıkan bilgiler"
       ],
       "Failed": [
         "Aktarılmayan"
@@ -7141,6 +7227,9 @@
       "Other names": [
         "Diğer adlar"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Performance might be affected": [
         "Başarım etkilenebilir"
       ],
@@ -7161,6 +7250,9 @@
       ],
       "Re-signing contacts": [
         "Kişiler yeniden imzalanıyor"
+      ],
+      "Recommended actions": [
+        "Önerilen işlemler"
       ],
       "Reconnect your account": [
         "Hesabınızı yeniden bağlayın"
@@ -7329,6 +7421,9 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
+      ],
+      "Your Exposed Information": [
+        "Açığa çıkmış bilgileriniz"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"

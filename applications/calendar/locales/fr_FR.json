@@ -82,6 +82,9 @@
       "Authenticate": [
         "S'authentifier"
       ],
+      "Availability is unknown": [
+        "La disponibilité est inconnue."
+      ],
       "Back": [
         "Précédent"
       ],
@@ -287,6 +290,9 @@
       ],
       "Hide affected calendars": [
         "Masquer les calendriers concernés"
+      ],
+      "Hide busy times": [
+        "Masquer mes indisponibilités"
       ],
       "Hide time zones": [
         "Masquer les fuseaux horaires"
@@ -534,6 +540,9 @@
       "Show affected calendars": [
         "Afficher les calendriers concernés"
       ],
+      "Show busy times": [
+        "Afficher mes indisponibilités"
+      ],
       "Show less": [
         "Afficher moins"
       ],
@@ -606,11 +615,11 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
-      "Upgrade Now": [
-        "Passer à l'abonnement supérieur"
-      ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade Now": [
+        "Passer à l'abonnement supérieur"
       ],
       "Upload picture": [
         "Importer une image"
@@ -635,6 +644,9 @@
       ],
       "View": [
         "Afficher"
+      ],
+      "View all reports": [
+        "Afficher tous les rapports"
       ],
       "View contact details": [
         "Voir les informations du contact"
@@ -2191,8 +2203,14 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
+      "Availability unknown": [
+        "Disponibilité inconnue"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Gagnez en efficacité et organisez votre emploi du temps en classant les événements par catégorie ou selon vos priorités. Profitez de cette fonctionnalité et de bien d'autres avec un abonnement payant."
+      ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Les alertes et les rapports de fuites de données sont disponibles avec un abonnement payant. Changez d'abonnement pour y accéder immédiatement."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
@@ -2250,6 +2268,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Vos informations ont été trouvées dans au moins une fuite de données."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Vos données personnelles ont été divulguées par un service en ligne dans une fuite de données. Consultez l'ensemble des informations et prenez les mesures qui s'imposent."
       ]
     },
     "description": {
@@ -3839,6 +3863,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
+      "Breach alerts": [
+        "Alertes de fuites de données"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
       ],
@@ -3850,6 +3877,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
+      ],
+      "Change your password": [
+        "Modifier votre mot de passe"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts en cours : ${ progress } de ${ max }"
@@ -3942,6 +3972,9 @@
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
@@ -3979,11 +4012,17 @@
       "Existent, added and removed participants will be notified.": [
         "Les participants existants, ajoutés et retirés seront informés."
       ],
+      "finance": [
+        "finance"
+      ],
       "Frequency modifications will be lost.": [
         "Les modifications de fréquence seront perdues."
       ],
       "here": [
         "ici"
+      ],
+      "High Priority": [
+        "Prioritée élevée"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
@@ -4064,11 +4103,20 @@
       "Loading events": [
         "Les événements sont en cours de chargement."
       ],
+      "Low Priority": [
+        "Prioritée basse"
+      ],
       "Manage your calendars": [
         "Gérer vos calendriers"
       ],
+      "Medium Priority": [
+        "Prioritée moyenne"
+      ],
       "Merged": [
         "Fusionné"
+      ],
+      "Monitor accounts": [
+        "Surveiller les comptes"
       ],
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
@@ -4109,6 +4157,12 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur l'événement n'est partagée."
+      ],
+      "password": [
+        "mot de passe"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
       ],
@@ -4139,6 +4193,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Veuillez réessayer dans quelques instants."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -4271,6 +4328,12 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "username": [
+        "nom d'utilisateur"
+      ],
+      "View details": [
+        "Afficher les informations"
       ],
       "Warning": [
         "Avertissement"
@@ -4545,6 +4608,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
+      ],
+      "Access to my events": [
+        "Accès à mes événements"
       ],
       "Add email address": [
         "Ajouter une adresse e-mail"
@@ -4840,6 +4906,9 @@
       ],
       "Secondary time zone": [
         "Fuseau horaire secondaire"
+      ],
+      "Show others when I'm busy": [
+        "Montrer aux autres lorsque je suis occupé"
       ],
       "Show week numbers": [
         "Affichage des numéros de semaine"
@@ -6003,6 +6072,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Soyez averti si votre mot de passe ou d'autres données personnelles ont été divulguées."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Notre solution de sécurité de pointe utilise l'IA et est conçue pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes. ${ learnMoreLink }"
       ],
@@ -6488,6 +6560,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "Il n'y a plus de conflits d'horaires."
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Vous pouvez maintenant voir les disponibilités des participants pour votre réunion."
+      ],
       "Public holidays are here!": [
         "Les jours fériés sont arrivés !"
       ],
@@ -6881,6 +6959,21 @@
       "Birthday": [
         "Date de naissance"
       ],
+      "Breach alerts": [
+        "Alertes de fuites de données"
+      ],
+      "Breach Date": [
+        "Date de la fuite de données"
+      ],
+      "Breach detected": [
+        "Une fuite de données a été détectée."
+      ],
+      "Breach Information": [
+        "Informations sur la fuite de données"
+      ],
+      "Breach Size": [
+        "Ampleur de la fuite de données"
+      ],
       "Calendar": [
         "Calendrier"
       ],
@@ -6979,6 +7072,9 @@
       "Edit image": [
         "Modifier l'image"
       ],
+      "Email address": [
+        "Adresse e-mail"
+      ],
       "Email addresses": [
         "Adresses e-mail"
       ],
@@ -7005,6 +7101,9 @@
       ],
       "Exporting contacts": [
         "Exportation des contacts"
+      ],
+      "Exposed info": [
+        "Informations exposées"
       ],
       "Feedback": [
         "Votre avis"
@@ -7043,6 +7142,9 @@
       "Link confirmation": [
         "Confirmation du lien"
       ],
+      "Location": [
+        "Emplacement"
+      ],
       "Merge contacts": [
         "Fusionner les contacts"
       ],
@@ -7057,6 +7159,9 @@
       ],
       "Night theme": [
         "Thème nuit"
+      ],
+      "No breaches detected": [
+        "Aucune fuite de données n'a été détectée."
       ],
       "Notes": [
         "Notes"
@@ -7076,6 +7181,9 @@
       "Participants cannot be notified": [
         "Les participants ne peuvent pas être informés."
       ],
+      "Password": [
+        "Mot de passe"
+      ],
       "Phone numbers": [
         "Numéros de téléphone"
       ],
@@ -7087,6 +7195,9 @@
       ],
       "Reactivate calendar keys": [
         "Réactiver les clés du calendrier"
+      ],
+      "Recommended actions": [
+        "Actions recommandées"
       ],
       "Reconnect your account": [
         "Reconnecter votre compte"
@@ -7193,6 +7304,12 @@
       "Start import process": [
         "Démarrer l'importation"
       ],
+      "Stay safer online": [
+        "Améliorez votre sécurité en ligne"
+      ],
+      "Type": [
+        "Type"
+      ],
       "Unlock contacts groups": [
         "Débloquer les groupes des contacts"
       ],
@@ -7231,6 +7348,9 @@
       ],
       "Your calendar link": [
         "Lien de votre calendrier"
+      ],
+      "Your Exposed Information": [
+        "Vos informations exposées"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Votre essai gratuit Mail Plus se termine le ${ textDate }."

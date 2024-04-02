@@ -1047,13 +1047,16 @@
         "Карыстальнік"
       ],
       "Verify": [
-        "Праверыць"
+        "Праверка"
       ],
       "Verify account": [
         "Праверыць уліковы запіс"
       ],
       "View": [
         "Прагледзець"
+      ],
+      "View all reports": [
+        "Паглядзець усе справаздачы"
       ],
       "View invoice": [
         "Паглядзець рахунак"
@@ -6399,6 +6402,9 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Не дазваляе адпраўнікам бачыць ці адкрывалі вы паведамленне."
       ],
+      "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
+        "Папярэджанне ўцечкі працуе на платформе прапрыетарных набораў даных ${ BRAND_NAME }, набораў даных са свабоднай ліцэнзіяй і Constella Intelligence. ${ dataBreachLink }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -7130,6 +7136,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашай арганізацыі існуюць іншыя ўліковыя запісы са статусам адміністратар. Вы адказваеце за тое, каб паведаміць ім новы пароль."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы інтэрвалы занятасці. Падрабязнасці аб падзеі не абагульваюцца."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Састарэлы файл аднаўлення; абнавіце яго для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
@@ -8038,7 +8047,7 @@
         "Вы можаце ўключыць журнал аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Вы зможаце адразу разблакіраваць налады вышэй дадаўшы ${ specificCountryCount } да нумара IP-адрасоў у сваім тарыфным плане або звязацца з намі для атрымання індывідуальнага рашэння."
+        "Вы зможаце неадкладна разблакіраваць налады вышэй, дадаўшы ${ specificCountryCount } да колькасці IP-адрасоў у сваім тарыфным плане або звязацца з намі для атрымання індывідуальнага рашэння."
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
@@ -8277,7 +8286,7 @@
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
+        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8722,6 +8731,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паўтарыце спробу пазней.)"
       ],
+      "Access to my events": [
+        "Доступ да маіх падзей"
+      ],
       "Account storage": [
         "Сховішча ўліковага запісу"
       ],
@@ -9029,7 +9041,7 @@
         "Дамен"
       ],
       "Domain name": [
-        "Імя дамена"
+        "Даменнае імя"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -9415,6 +9427,9 @@
       "Send in": [
         "Адправіць у"
       ],
+      "Show others when I'm busy": [
+        "Паказваць іншым, калі я заняты"
+      ],
       "Show secondary time zone": [
         "Паказаць дадатковы часавы пояс"
       ],
@@ -9654,7 +9669,7 @@
         "Дамен"
       ],
       "Verify": [
-        "Праверыць"
+        "Праверка"
       ]
     },
     "Label on payment method": {
@@ -9920,7 +9935,7 @@
         "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша сховішча ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
+        "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
@@ -11279,7 +11294,7 @@
         "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } для бізнесу."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Уключана некалькі карыстальнікаў для тарыфных планаў ${ BRAND_NAME } for Business."
+        "Тарыфныя планы ${ BRAND_NAME } for Business уключаюць падтрымку некалькіх карыстальнікаў."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12405,7 +12420,7 @@
         "Выберыце прычыну"
       ],
       "Select state": [
-        "Выбраць стан"
+        "Выбраць вобласць"
       ],
       "Text": [
         "Тэкст"
@@ -14491,7 +14506,7 @@
         "Бачнае імя і подпіс"
       ],
       "Domain names": [
-        "Імёны дамена"
+        "Даменныя імёны"
       ],
       "Don't show again?": [
         "Больш не паказваць?"
@@ -14776,7 +14791,7 @@
         "Начная тэма"
       ],
       "No account information was found in any data breaches": [
-        "Звесткі пра ўліковы запіс не былі знойдзены ў ніякіх скампраметаваных даных"
+        "Звесткі пра ўліковы запіс не былі знойдзены ў выніку ўцечкі даных"
       ],
       "No recovery method": [
         "Адсутнічае спосаб аднаўлення"
@@ -15716,7 +15731,7 @@
         "Дадайце прынамсі аднаго атрымальніка."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны адразу. Мы абновім яго толькі пасля пацвярджэння аплаты."
+        "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."

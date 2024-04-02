@@ -3301,6 +3301,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
+      "Change your password": [
+        "變更您的密碼"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
@@ -3445,6 +3448,9 @@
       "Edit email address": [
         "編輯電子郵件位址"
       ],
+      "email": [
+        "電子信箱"
+      ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
@@ -3517,6 +3523,9 @@
       "Finalizing": [
         "即將完成"
       ],
+      "finance": [
+        "金融"
+      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "資料夾 \"${ link.name }\" 在下載過程中被刪除"
       ],
@@ -3552,6 +3561,9 @@
       ],
       "here": [
         "這裡"
+      ],
+      "High Priority": [
+        "首要優先順序"
       ],
       "How does encrypted search work?": [
         "加密搜索如何運作？"
@@ -3661,11 +3673,20 @@
       "Loading...": [
         "載入中‧‧‧"
       ],
+      "Low Priority": [
+        "較低優先順序"
+      ],
       "Makes your account safer": [
         "讓您的帳號更安全"
       ],
+      "Medium Priority": [
+        "中等優先順序"
+      ],
       "Merged": [
         "合併的"
+      ],
+      "Monitor accounts": [
+        "監控帳號"
       ],
       "More": [
         "更多"
@@ -3738,6 +3759,9 @@
       ],
       "Or use the \"+ New\" button": [
         "或使用\"+\"按鈕"
+      ],
+      "password": [
+        "密碼"
       ],
       "Paused": [
         "已暫停"
@@ -4125,6 +4149,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
+      ],
+      "username": [
+        "使用者名稱"
       ],
       "Version is deleted": [
         "已刪除版本"
@@ -4893,6 +4920,32 @@
         "您的匯入程序已開始"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "upgrade for more storage": [
+        "升級以增加儲存"
+      ],
+      "Upgrade to restore full access": [
+        "升級以還原完整存取權限"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的${ driveStorage }已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的儲存已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "取得優惠"
@@ -5600,6 +5653,9 @@
       "Select": [
         "選取"
       ],
+      "Select state": [
+        "請選州"
+      ],
       "Set date": [
         "設定日期"
       ],
@@ -6301,6 +6357,15 @@
       "Birthday": [
         "生日"
       ],
+      "Breach Date": [
+        "外洩資料"
+      ],
+      "Breach Information": [
+        "外洩資料"
+      ],
+      "Breach Size": [
+        "外洩尺寸"
+      ],
       "Browser might run out of memory": [
         "瀏覽器或耗盡記憶體"
       ],
@@ -6414,6 +6479,9 @@
       ],
       "Edit image": [
         "編輯圖像"
+      ],
+      "Email address": [
+        "電子郵件地址"
       ],
       "Email addresses": [
         "電郵位址"
@@ -6535,6 +6603,9 @@
       "Other names": [
         "其它名稱"
       ],
+      "Password": [
+        "密碼"
+      ],
       "Performance might be affected": [
         "效能可能會受到影響"
       ],
@@ -6555,6 +6626,9 @@
       ],
       "Re-signing contacts": [
         "正在重新簽署聯絡人"
+      ],
+      "Recommended actions": [
+        "建議行動"
       ],
       "Reconnect your account": [
         "重新連線到您的帳號"
