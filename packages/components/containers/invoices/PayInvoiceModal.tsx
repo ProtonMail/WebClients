@@ -88,7 +88,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebee,
+                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: failed to pay invoice', {

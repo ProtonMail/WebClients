@@ -70,7 +70,7 @@ export const usePaymentsTelemetry = ({
             flow: flowOverride ?? flow,
             plan: planOverride ?? plan ?? 'n/a',
             calledKillSwitch: chargebeeContext.calledKillSwitch,
-            chargebeeEnabled: chargebeeEnabledToString(chargebeeContext.enableChargebee),
+            chargebeeEnabled: chargebeeEnabledToString(chargebeeContext.enableChargebeeRef.current),
             system: getSystemByHookType(method),
             method,
             cycle: formattedCycle,
