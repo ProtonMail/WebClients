@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autentiser"
       ],
+      "Availability is unknown": [
+        "Ukjent tilgjengelighet"
+      ],
       "Back": [
         "Tilbake"
       ],
@@ -287,6 +290,9 @@
       ],
       "Hide affected calendars": [
         "Skjul berørte kalendere"
+      ],
+      "Hide busy times": [
+        "Skjul travle perioder"
       ],
       "Hide time zones": [
         "Skjul tidssoner"
@@ -534,6 +540,9 @@
       "Show affected calendars": [
         "Vis berørte kalendere"
       ],
+      "Show busy times": [
+        "Vis travle perioder"
+      ],
       "Show less": [
         "Vis mindre"
       ],
@@ -606,10 +615,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
       "Upload picture": [
@@ -635,6 +644,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View all reports": [
+        "Vis alle rapporter"
       ],
       "View contact details": [
         "Se kontaktinformasjon"
@@ -2191,8 +2203,14 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
+      "Availability unknown": [
+        "Ukjent tilgjengelighet"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Øk effektiviteten og spor tiden din ved å fargekode hendelser etter kategori eller energinivå. Få dette og mye mer med en betalt plan."
+      ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Bruddvarsler og rapporter er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
@@ -2250,6 +2268,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Informasjonen din ble funnet i minst ett datainnbrudd."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Dine personlige data ble lekket av en nettjeneste i et databrudd. Se alle detaljer og få anbefalte handlinger."
       ]
     },
     "description": {
@@ -3839,6 +3863,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved å dele alle hendelsesdetaljene i denne kalenderen, godtar du å gi ${ BRAND_NAME } tilgang til denne kalenderens krypterte informasjon."
       ],
@@ -3850,6 +3877,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
+      ],
+      "Change your password": [
+        "Endre passordet ditt"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
@@ -3942,6 +3972,9 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
+      "email": [
+        "e-post"
+      ],
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
@@ -3979,11 +4012,17 @@
       "Existent, added and removed participants will be notified.": [
         "Eksisterende, tilføyde og fjernede deltakere vil bli varslet."
       ],
+      "finance": [
+        "finans"
+      ],
       "Frequency modifications will be lost.": [
         "Frekvensendringer vil gå tapt."
       ],
       "here": [
         "her"
+      ],
+      "High Priority": [
+        "Høy prioritet"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
@@ -4064,11 +4103,20 @@
       "Loading events": [
         "Laster hendelser"
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Manage your calendars": [
         "Administrer dine kalendere"
       ],
+      "Medium Priority": [
+        "Middels prioritet"
+      ],
       "Merged": [
         "Slått sammen"
+      ],
+      "Monitor accounts": [
+        "Overvåk kontoer"
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
@@ -4109,6 +4157,12 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Andre brukere i organisasjonen din vil se de travle tidslukene dine. Ingen hendelsesdetaljer deles."
+      ],
+      "password": [
+        "passord"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med klartekst-format."
       ],
@@ -4139,6 +4193,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupName }."
+      ],
+      "Please try again in a few moments": [
+        "Vennligst prøv igjen om få øyeblikk"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vennligst vent mens vi ser etter kontakter som kan gjensigneres med den primære krypteringsnøkkelen."
@@ -4271,6 +4328,12 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "username": [
+        "brukernavn"
+      ],
+      "View details": [
+        "Vis detaljer"
       ],
       "Warning": [
         "Advarsel"
@@ -4545,6 +4608,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig, vennligst kom tilbake senere)."
+      ],
+      "Access to my events": [
+        "Tilgang til mine hendelser"
       ],
       "Add email address": [
         "Legg til e-postadresse"
@@ -4840,6 +4906,9 @@
       ],
       "Secondary time zone": [
         "Sekundærtidssone"
+      ],
+      "Show others when I'm busy": [
+        "Vis andre når jeg er opptatt"
       ],
       "Show week numbers": [
         "Vis ukenumre"
@@ -6003,6 +6072,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Bli varslet hvis passordet ditt eller andre personlige data ble lekket."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
       ],
@@ -6488,6 +6560,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
       ],
+      "No more scheduling conflicts": [
+        "Ingen flere planleggingskonflikter"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Nå kan du se når deltakerne er frie til å delta på møtet ditt."
+      ],
       "Public holidays are here!": [
         "Helligdager er her"
       ],
@@ -6881,6 +6959,21 @@
       "Birthday": [
         "Bursdag"
       ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
+      ],
+      "Breach Date": [
+        "Dato for datainnbrudd"
+      ],
+      "Breach detected": [
+        "Sikkerhetsbrudd oppdaget"
+      ],
+      "Breach Information": [
+        "Informasjon om datainnbrudd"
+      ],
+      "Breach Size": [
+        "Størrelse for datainnbrudd"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -6979,6 +7072,9 @@
       "Edit image": [
         "Rediger bilde"
       ],
+      "Email address": [
+        "E-postadresse"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -7005,6 +7101,9 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
+      ],
+      "Exposed info": [
+        "Eksponert info"
       ],
       "Feedback": [
         "Tilbakemelding"
@@ -7043,6 +7142,9 @@
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
+      "Location": [
+        "Plassering"
+      ],
       "Merge contacts": [
         "Slå sammen kontakter"
       ],
@@ -7057,6 +7159,9 @@
       ],
       "Night theme": [
         "Natt-tema"
+      ],
+      "No breaches detected": [
+        "Ingen sikkerhetsbrudd oppdaget"
       ],
       "Notes": [
         "Notater"
@@ -7076,6 +7181,9 @@
       "Participants cannot be notified": [
         "Deltakere kan ikke varsles"
       ],
+      "Password": [
+        "Passord"
+      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -7087,6 +7195,9 @@
       ],
       "Reactivate calendar keys": [
         "Aktiver kalendernøkler på nytt"
+      ],
+      "Recommended actions": [
+        "Anbefalte tiltak"
       ],
       "Reconnect your account": [
         "Koble til kontoen din på nytt"
@@ -7193,6 +7304,12 @@
       "Start import process": [
         "Start importprosessen"
       ],
+      "Stay safer online": [
+        "Hold deg tryggere på nettet"
+      ],
+      "Type": [
+        "Type"
+      ],
       "Unlock contacts groups": [
         "Lås opp kontaktgrupper"
       ],
@@ -7231,6 +7348,9 @@
       ],
       "Your calendar link": [
         "Din kalenderkobling"
+      ],
+      "Your Exposed Information": [
+        "Din eksponerte informasjon"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."

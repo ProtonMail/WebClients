@@ -78,6 +78,9 @@
       "Authenticate": [
         "인증"
       ],
+      "Availability is unknown": [
+        "활동 상태를 확인할 수 없음"
+      ],
       "Back": [
         "이전"
       ],
@@ -169,7 +172,7 @@
         "새 연락처 그룹 만들기"
       ],
       "Create and copy alias": [
-        "별명 생성 및 복사"
+        "별칭 생성 및 복사"
       ],
       "Create calendar": [
         "캘린더 생성"
@@ -275,6 +278,9 @@
       ],
       "Hide affected calendars": [
         "종료 캘린더 가리기"
+      ],
+      "Hide busy times": [
+        "바쁜 시간대 숨기기"
       ],
       "Hide time zones": [
         "시간대 숨기기"
@@ -522,6 +528,9 @@
       "Show affected calendars": [
         "종료 캘린더 보기"
       ],
+      "Show busy times": [
+        "바쁜 시간대 표시"
+      ],
       "Show less": [
         "가리기"
       ],
@@ -594,10 +603,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
       "Upload picture": [
@@ -623,6 +632,9 @@
       ],
       "View": [
         "보기"
+      ],
+      "View all reports": [
+        "모든 보고서 확인하기"
       ],
       "View contact details": [
         "연락처 정보 보기"
@@ -819,13 +831,13 @@
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+        "무제한 별칭, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별명 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
+        "사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일과 공유 캘린더를 지원하는 보안 캘린더로 보호하세요."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -2117,8 +2129,14 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA는 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
+      "Availability unknown": [
+        "활동 상태를 확인할 수 없음"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "카테고리 또는 에너지 레벨별로 이벤트를 컬러 코딩하여 효율성을 높이고 시간을 추적하세요. 유료 플랜에서 이 기능과 그 외 특전을 누리세요."
+      ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "침해 경고와 보고서는 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
@@ -2136,7 +2154,7 @@
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별명과 500 GB 스토리지 공간을 받으세요."
+        "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
@@ -2176,6 +2194,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
+      ],
+      "Your information was found in at least one data breach.": [
+        "귀하의 개인정보가 하나 이상의 데이터 침해사례에서 발견되었습니다."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "귀하의 개인정보가 데이터 침해사례에 속하는 온라인 서비스로부터 유출되었습니다. 전체 세부사항을 보고 권장하는 대응을 취하십시오."
       ]
     },
     "description": {
@@ -2373,7 +2397,7 @@
         "기본 주소 키 찾을 수 없음"
       ],
       "Alias is not valid": [
-        "유효하지 않은 별명입니다"
+        "유효하지 않은 별칭입니다"
       ],
       "Alias is required": [
         "별칭이 필요합니다."
@@ -2382,16 +2406,16 @@
         "별명 옵션을 해결할 수 없습니다."
       ],
       "Aliases could not be loaded": [
-        "별명을 불러올 수 없습니다."
+        "별칭을 불러올 수 없습니다."
       ],
       "Already a member of this calendar": [
         "이미 이 캘린더의 구성원입니다"
       ],
       "An error occurred while loading alias options": [
-        "별명 옵션 로드 중 오류가 발생했습니다."
+        "별칭 옵션 로드 중 오류가 발생했습니다."
       ],
       "An error occurred while saving your alias": [
-        "별명을 저장하는 도중 오류가 발생했습니다."
+        "별칭을 저장하는 도중 오류가 발생했습니다."
       ],
       "Answer failed to be sent": [
         "대답 전송 실패"
@@ -3137,7 +3161,7 @@
         "65개 이상 국가의 2700여개 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3개 커스텀 이메일 도메인, 90개 이메일 주소, 무제한 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "3개 커스텀 이메일 도메인, 90개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -3265,7 +3289,7 @@
         "암호화 및 이벤트 추가 중 문제가 발생했습니다. 불러올 이벤트가 없습니다."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "암호화 및 연락처 추가 주이 ${ totalToImport }/${ totalImported }"
+        "연락처를 암호화 및 추가하는 중: ${ totalToImport }/${ totalImported }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "암호화 및 초대를 캘린더에 추가 중: ${ totalImported }/${ totalToImport }"
@@ -3567,6 +3591,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
       ],
+      "Breach alerts": [
+        "침해 경고"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "이 캘린더의 구체적인 일정 내용을 공유하면서 ${ BRAND_NAME } 이 달력의 암호화된 정보를 접근할 수 있는 권한을 제공하는 것을 허용합니다."
       ],
@@ -3578,6 +3605,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
+      ],
+      "Change your password": [
+        "비밀번호를 변경하십시오"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
@@ -3666,6 +3696,9 @@
       "Edit email address": [
         "이메일 주소 변경"
       ],
+      "email": [
+        "이메일"
+      ],
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
       ],
@@ -3699,11 +3732,17 @@
       "Existent, added and removed participants will be notified.": [
         "존재, 추가 및 삭제된 참가자들에게 알림이 전송됩니다."
       ],
+      "finance": [
+        "금융정보"
+      ],
       "Frequency modifications will be lost.": [
         "빈도 수정사항을 잃게 됩니다."
       ],
       "here": [
         "여기"
+      ],
+      "High Priority": [
+        "중요도 높음"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -3780,11 +3819,20 @@
       "Loading events": [
         "이벤트를 불러오는 중"
       ],
+      "Low Priority": [
+        "중요도 낮음"
+      ],
       "Manage your calendars": [
         "캘린더 관리"
       ],
+      "Medium Priority": [
+        "중요도 보통"
+      ],
       "Merged": [
         "합쳤음"
+      ],
+      "Monitor accounts": [
+        "계정 모니터링"
       ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
@@ -3825,6 +3873,12 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
+      ],
+      "password": [
+        "비밀번호"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGM/Inline은 오직 일반 텍스트 포맷에만 호환됩니다."
       ],
@@ -3851,6 +3905,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "${ groupName } 개 그룹에 추가 할 이메일 주소를 선택하세요."
+      ],
+      "Please try again in a few moments": [
+        "잠시 후 다시 시도하십시오"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "기본 암호화 키로 다시 서명할 수 있는 연락처를 찾는 동안 기다려 주세요."
@@ -3983,6 +4040,12 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "username": [
+        "사용자 이름"
+      ],
+      "View details": [
+        "자세히 보기"
       ],
       "Warning": [
         "경고"
@@ -4243,6 +4306,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
+      ],
+      "Access to my events": [
+        "내 이벤트에 접근"
       ],
       "Add email address": [
         "이메일 주소 추가"
@@ -4535,6 +4601,9 @@
       "Secondary time zone": [
         "보조 시간대"
       ],
+      "Show others when I'm busy": [
+        "다른 사용자에게 바쁨으로 표시"
+      ],
       "Show week numbers": [
         "주 번호 표시"
       ],
@@ -4703,6 +4772,35 @@
       ],
       "Your import is starting": [
         "가져오기 작업이 시작 중입니다!"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "upgrade for more storage": [
+        "추가 저장 공간을 위해 업그레이드 하세요."
+      ],
+      "Upgrade to restore full access": [
+        "업그레이드 해주세요"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "사용자의 ${ driveStorage }이 찼습니다. 파일을 업로드 하려면 저장 공간을 비우거나 ${ cta }해주세요."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "사용자의 ${ mailStorage }이 찼습니다. 이메일 수발신을 위해선, 저장 공간을 비우거나 ${ cta }해주세요."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "사용자의 계정이 삭제될 수도 있습니다. 데이터 손실 방지를 위해서, 관리자에게 업그레이드를 문의하십시오. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "사용자의 저장 공간이 찼습니다. 메일을 계속 주고 받으려면, 저장 공간을 비우거나 ${ cta }해주세요."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "사용자의 스토리지가 가득 찼습니다. 파일을 업로드 하거나 동기화하려면, 공간을 비우거나 ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
       ]
     },
     "mailtrial2024: Action": {
@@ -5380,6 +5478,9 @@
       "Select": [
         "선택"
       ],
+      "Select state": [
+        "시・도 선택"
+      ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
       ]
@@ -5402,7 +5503,7 @@
         "병합할 연락처 없음."
       ],
       "Progress: ${ combinedProgress }%": [
-        "진행: ${ combinedProgress }%"
+        "진행률: ${ combinedProgress }%"
       ]
     },
     "Property type": {
@@ -5458,16 +5559,16 @@
         "별칭 만들기"
       ],
       "Create an alias": [
-        "별명 생성"
+        "별칭 생성"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "언제 어디서나 별명을 생성하고, 쉽게 별명 및 비밀번호를 관리하세요."
+        "언제 어디서나 별칭을 생성하고, 쉽게 별명 및 비밀번호를 관리하세요."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email 별명은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
+        "Hide-my-email 별칭은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
       ],
       "New alias": [
         "새 별칭"
@@ -5485,7 +5586,7 @@
         "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "이메일 주소를 누군가 물어본다면, 별명을 대신 제공하세요. 별명이 ${ passLink }에 의해 제공됩니다."
+        "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -5499,6 +5600,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 받으십시오."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계된 최첨단 AI 기반 보안 솔루션입니다. ${ learnMoreLink }"
       ],
@@ -5869,13 +5973,13 @@
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video가 포함됩니다."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "자사 프리미엄 서비스의 최대 제한: 100개 이메일 주소, 10개 지정 도메인 지원, 무제한 Hide-my-email 별명, 캘린더 공유, 암호화된 클라우드 저장 공간 및 파일 공유 등."
+        "자사 프리미엄 서비스의 최대 제한: 100개 이메일 주소, 10개 지정 도메인 지원, 무제한 hide-my-email 별칭, 캘린더 공유, 암호화된 클라우드 저장 공간 및 파일 공유 등."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3개 커스텀 이메일 도메인, 15개 이메일 주소, 무제한 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "3개 커스텀 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "가족 및 소규모 팀에게 적합하며, 각 인원이 자신의 받은 편지함과 별명을 소유합니다. 지정 도메인이 필요합니다."
+        "가족이나 소규모 팀에 딱 맞습니다. 각 구성원이 그만의 받은 편지함과 별칭을 가지며 커스텀 도메인을 필요로 합니다."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "향후 모든 기능 및 제품에 대한 얼리 액세스와 함께 향후 출시할 모든 새로운 개인 정보 보호 서비스의 유료 버전을 추가 비용 없이 누리세요."
@@ -5905,6 +6009,12 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
+      ],
+      "No more scheduling conflicts": [
+        "추가적인 일정 충돌 없음"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "이제 참가자가 언제 미팅에 참석할 수 있는지 확인할 수 있습니다."
       ],
       "Public holidays are here!": [
         "공휴일이 여기 있습니다!"
@@ -5992,7 +6102,7 @@
         "별칭이 클립보드에 복사됨"
       ],
       "Alias saved and copied": [
-        "별명이 저장 및 복사되었습니다"
+        "별칭이 저장 및 복사되었습니다"
       ],
       "All events deleted": [
         "모든 이벤트 삭제됨"
@@ -6142,7 +6252,7 @@
         "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
+        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -6251,6 +6361,21 @@
       "Birthday": [
         "생일"
       ],
+      "Breach alerts": [
+        "침해 경고"
+      ],
+      "Breach Date": [
+        "침해 일자"
+      ],
+      "Breach detected": [
+        "침해사례 감지됨"
+      ],
+      "Breach Information": [
+        "침해 정보"
+      ],
+      "Breach Size": [
+        "침해 규모"
+      ],
       "Calendar": [
         "캘린더"
       ],
@@ -6341,6 +6466,9 @@
       "Edit image": [
         "이미지 편집"
       ],
+      "Email address": [
+        "이메일 주소"
+      ],
       "Email addresses": [
         "이메일 주소"
       ],
@@ -6367,6 +6495,9 @@
       ],
       "Exporting contacts": [
         "연락처 내보내기"
+      ],
+      "Exposed info": [
+        "노출된 정보"
       ],
       "Feedback": [
         "피드백"
@@ -6401,6 +6532,9 @@
       "Link confirmation": [
         "링크 확인"
       ],
+      "Location": [
+        "위치"
+      ],
       "Merge contacts": [
         "연락처 병합"
       ],
@@ -6415,6 +6549,9 @@
       ],
       "Night theme": [
         "야간 테마"
+      ],
+      "No breaches detected": [
+        "감지한 침해사례 없음"
       ],
       "Notes": [
         "메모"
@@ -6434,6 +6571,9 @@
       "Participants cannot be notified": [
         "참가자에게 알려지지 않습니다"
       ],
+      "Password": [
+        "비밀번호"
+      ],
       "Phone numbers": [
         "전화번호"
       ],
@@ -6445,6 +6585,9 @@
       ],
       "Reactivate calendar keys": [
         "캘린더 키 재활성화"
+      ],
+      "Recommended actions": [
+        "권장하는 조치"
       ],
       "Reconnect your account": [
         "계정 재연결"
@@ -6551,6 +6694,12 @@
       "Start import process": [
         "불러오기 과정 시작"
       ],
+      "Stay safer online": [
+        "온라인 상에서 안전하기"
+      ],
+      "Type": [
+        "유형"
+      ],
       "Unlock contacts groups": [
         "연락처 그룹 잠금 해제"
       ],
@@ -6589,6 +6738,9 @@
       ],
       "Your calendar link": [
         "내 캘린더 링크"
+      ],
+      "Your Exposed Information": [
+        "노출된 나의 정보"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus 무료 체험판이 ${ textDate }에 종료됩니다"

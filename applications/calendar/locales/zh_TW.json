@@ -594,11 +594,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade Now": [
+        "請升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -3579,6 +3579,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
+      "Change your password": [
+        "變更您的密碼"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
@@ -3666,6 +3669,9 @@
       "Edit email address": [
         "編輯電子郵件位址"
       ],
+      "email": [
+        "電子信箱"
+      ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
@@ -3699,11 +3705,17 @@
       "Existent, added and removed participants will be notified.": [
         "現有、已加入及已移除的參與者將獲通知。"
       ],
+      "finance": [
+        "金融"
+      ],
       "Frequency modifications will be lost.": [
         "頻率修改將會消失。"
       ],
       "here": [
         "這裡"
+      ],
+      "High Priority": [
+        "首要優先順序"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -3780,11 +3792,20 @@
       "Loading events": [
         "載入活動中"
       ],
+      "Low Priority": [
+        "較低優先順序"
+      ],
       "Manage your calendars": [
         "管理您的行事曆"
       ],
+      "Medium Priority": [
+        "中等優先順序"
+      ],
       "Merged": [
         "合併的"
+      ],
+      "Monitor accounts": [
+        "監控帳號"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
@@ -3824,6 +3845,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
+      ],
+      "password": [
+        "密碼"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 僅與純文字格式相容。"
@@ -3983,6 +4007,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "username": [
+        "使用者名稱"
       ],
       "Warning": [
         "警告"
@@ -4705,6 +4732,32 @@
         "您的匯入程序已開始"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "了解更多"
+      ],
+      "upgrade for more storage": [
+        "升級以增加儲存"
+      ],
+      "Upgrade to restore full access": [
+        "升級以還原完整存取權限"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的${ driveStorage }已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的${ mailStorage }已滿。要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ cta }。"
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "您的儲存已滿。要上載或同步檔案，釋放空間或${ cta }。"
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "取得優惠"
@@ -5373,6 +5426,9 @@
       ],
       "Select": [
         "選取"
+      ],
+      "Select state": [
+        "請選州"
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
@@ -6245,6 +6301,15 @@
       "Birthday": [
         "生日"
       ],
+      "Breach Date": [
+        "外洩資料"
+      ],
+      "Breach Information": [
+        "外洩資料"
+      ],
+      "Breach Size": [
+        "外洩尺寸"
+      ],
       "Calendar": [
         "行事曆"
       ],
@@ -6335,6 +6400,9 @@
       "Edit image": [
         "編輯圖像"
       ],
+      "Email address": [
+        "電子郵件地址"
+      ],
       "Email addresses": [
         "電郵位址"
       ],
@@ -6395,6 +6463,9 @@
       "Link confirmation": [
         "外部連結確認"
       ],
+      "Location": [
+        "位置"
+      ],
       "Merge contacts": [
         "合併通訊錄"
       ],
@@ -6428,6 +6499,9 @@
       "Participants cannot be notified": [
         "無法知會參與者"
       ],
+      "Password": [
+        "密碼"
+      ],
       "Phone numbers": [
         "手機號碼"
       ],
@@ -6439,6 +6513,9 @@
       ],
       "Reactivate calendar keys": [
         "重新啟用行事曆金鑰"
+      ],
+      "Recommended actions": [
+        "建議行動"
       ],
       "Reconnect your account": [
         "重新連線到您的帳號"
@@ -6545,6 +6622,9 @@
       "Start import process": [
         "開始匯入流程"
       ],
+      "Type": [
+        "類型"
+      ],
       "Unlock contacts groups": [
         "解鎖通訊群組"
       ],
@@ -6614,6 +6694,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
+      ],
+      "Change start date to unselect": [
+        "變更開始日以取消選取"
       ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"

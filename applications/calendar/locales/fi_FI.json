@@ -606,10 +606,10 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
       "Upload picture": [
@@ -3851,6 +3851,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
+      "Change your password": [
+        "Vaihda salasanasi"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
       ],
@@ -3942,6 +3945,9 @@
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
+      "email": [
+        "sähköpostiosoite"
+      ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
       ],
@@ -3979,11 +3985,17 @@
       "Existent, added and removed participants will be notified.": [
         "Nykyisille, lisätyille ja poistetuille osallistujille ilmoitetaan."
       ],
+      "finance": [
+        "rahoitus"
+      ],
       "Frequency modifications will be lost.": [
         "Toistuvuuden muutokset menetetään."
       ],
       "here": [
         "tässä"
+      ],
+      "High Priority": [
+        "Korkea tärkeys"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
@@ -4064,11 +4076,20 @@
       "Loading events": [
         "Tapahtumia ladataan"
       ],
+      "Low Priority": [
+        "Alhainen tärkeys"
+      ],
       "Manage your calendars": [
         "Hallitse kalentereitasi"
       ],
+      "Medium Priority": [
+        "Keskitason tärkeys"
+      ],
       "Merged": [
         "Yhdistetty"
+      ],
+      "Monitor accounts": [
+        "Valvo tilejä"
       ],
       "Monthly ${ onDayString }": [
         "Kuukausittain ${ onDayString }"
@@ -4108,6 +4129,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
+      ],
+      "password": [
+        "salasana"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline on yhteensopiva vain pelkkä teksti -muodon kanssa."
@@ -4271,6 +4295,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Warning": [
         "Varoitus"
@@ -5013,6 +5040,35 @@
       ],
       "Your import is starting": [
         "Tuontisi alkaa"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Lue lisää"
+      ],
+      "upgrade for more storage": [
+        "hanki lisää päivittämällä tilauksesi"
+      ],
+      "Upgrade to restore full access": [
+        "Palauta täysi pääsy päivittämällä tilauksesi"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Tallennustilasi on täynnä. Lähettääksesi tai synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
       ]
     },
     "Mail import summary": {
@@ -5839,6 +5895,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select state": [
+        "Valitse osavaltio"
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"
@@ -6846,6 +6905,15 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Breach Date": [
+        "Vuodon päiväys"
+      ],
+      "Breach Information": [
+        "Tietoja vuodosta"
+      ],
+      "Breach Size": [
+        "Vuodon koko"
+      ],
       "Calendar": [
         "Kalenteri"
       ],
@@ -6944,6 +7012,9 @@
       "Edit image": [
         "Muokkaa kuvaa"
       ],
+      "Email address": [
+        "Sähköpostiosoite"
+      ],
       "Email addresses": [
         "Sähköpostiosoitteet"
       ],
@@ -6970,6 +7041,9 @@
       ],
       "Exporting contacts": [
         "Yhteystietoja viedään"
+      ],
+      "Exposed info": [
+        "Vuotaneet tiedot"
       ],
       "Feedback": [
         "Palaute"
@@ -7008,6 +7082,9 @@
       "Link confirmation": [
         "Linkin vahvistus"
       ],
+      "Location": [
+        "Sijainti"
+      ],
       "Merge contacts": [
         "Yhdistä yhteystietoja"
       ],
@@ -7041,6 +7118,9 @@
       "Participants cannot be notified": [
         "Osallistujille ei voida ilmoittaa"
       ],
+      "Password": [
+        "Salasana"
+      ],
       "Phone numbers": [
         "Puhelinnumerot"
       ],
@@ -7052,6 +7132,9 @@
       ],
       "Reactivate calendar keys": [
         "Aktivoi kalenterin avaimet uudelleen"
+      ],
+      "Recommended actions": [
+        "Suositellut toimenpiteet"
       ],
       "Reconnect your account": [
         "Yhdistä tilisi uudelleen"
@@ -7158,6 +7241,9 @@
       "Start import process": [
         "Aloita tuonti"
       ],
+      "Type": [
+        "Tyyppi"
+      ],
       "Unlock contacts groups": [
         "Avaa yhteystietoryhmät"
       ],
@@ -7196,6 +7282,9 @@
       ],
       "Your calendar link": [
         "Linkki kalenteriisi"
+      ],
+      "Your Exposed Information": [
+        "Paljastuneet tietosi"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
