@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react';
 
 import {
     CalledKillSwitchString,
@@ -162,7 +162,7 @@ const InnerPaymentSwitcher = ({ loader, children }: Props) => {
             const isForced = chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
             if ((isAllowed || isForced) && chargebeeContext) {
-                chargebeeContext.setEnableChargebee(chargebeeEnabled);
+                chargebeeContext.enableChargebeeRef.current = chargebeeEnabled;
             }
 
             if (isForced) {
@@ -180,12 +180,13 @@ const InnerPaymentSwitcher = ({ loader, children }: Props) => {
 };
 
 const PaymentSwitcher = (props: Props) => {
-    const [enableChargebee, setEnableChargebee] = useState<ChargebeeEnabled>(ChargebeeEnabled.INHOUSE_FORCED);
+    const enableChargebeeRef: MutableRefObject<ChargebeeEnabled> = useRef<ChargebeeEnabled>(
+        ChargebeeEnabled.INHOUSE_FORCED
+    );
     const [calledKillSwitch, setCalledKillSwitch] = useState<CalledKillSwitchString>('not-called');
 
     const chargebeeContext = {
-        enableChargebee,
-        setEnableChargebee,
+        enableChargebeeRef,
         calledKillSwitch,
         setCalledKillSwitch,
     };

@@ -17,6 +17,7 @@ import {
     ChargeableV5PaymentParameters,
     ChargebeeFetchedPaymentToken,
     ChargebeeKillSwitch,
+    ForceEnableChargebee,
     V5PaymentToken,
 } from '../interface';
 import { InvalidDataError, PaymentProcessor } from './paymentProcessor';
@@ -60,6 +61,7 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         private events: ChargebeeIframeEvents,
         private verifyOnly: boolean,
         private chargebeeKillSwitch: ChargebeeKillSwitch,
+        private forceEnableChargebee: ForceEnableChargebee,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
         super(
@@ -91,6 +93,7 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
                 api: this.api,
                 handles: this.handles,
                 events: this.events,
+                forceEnableChargebee: this.forceEnableChargebee,
             });
         } catch (error: any) {
             // if that's not a form validation error, then we have something unexpected,

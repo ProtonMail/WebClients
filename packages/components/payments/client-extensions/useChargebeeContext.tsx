@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from 'react';
+import { MutableRefObject, createContext, useContext, useEffect } from 'react';
 
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ChargebeeEnabled, UserModel } from '@proton/shared/lib/interfaces';
@@ -8,15 +8,15 @@ import { useCachedUser } from './data-utils';
 export type CalledKillSwitchString = 'called' | 'not-called';
 
 export type ChargebeeContext = {
-    enableChargebee: ChargebeeEnabled;
-    setEnableChargebee: (value: ChargebeeEnabled) => unknown;
+    enableChargebeeRef: MutableRefObject<ChargebeeEnabled>;
     calledKillSwitch: CalledKillSwitchString;
     setCalledKillSwitch: (value: CalledKillSwitchString) => unknown;
 };
 
 export const PaymentSwitcherContext = createContext<ChargebeeContext>({
-    enableChargebee: ChargebeeEnabled.INHOUSE_FORCED,
-    setEnableChargebee: () => {},
+    enableChargebeeRef: {
+        current: ChargebeeEnabled.INHOUSE_FORCED,
+    },
     calledKillSwitch: 'not-called',
     setCalledKillSwitch: () => {},
 });
@@ -27,7 +27,7 @@ export const useChargebeeContext = () => {
 
 export const useChargebeeEnabledCache = () => {
     const chargebeeContext = useChargebeeContext();
-    return chargebeeContext.enableChargebee;
+    return chargebeeContext.enableChargebeeRef.current;
 };
 
 export const useChargebeeUserStatusTracker = () => {
@@ -35,23 +35,23 @@ export const useChargebeeUserStatusTracker = () => {
     // We need just to read the information from the cache, no more.
     const maybeUser: UserModel | undefined = useCachedUser();
 
-    const { enableChargebee, setEnableChargebee } = useChargebeeContext();
+    const { enableChargebeeRef } = useChargebeeContext();
 
     useEffect(() => {
         if (
             maybeUser?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED &&
-            enableChargebee !== ChargebeeEnabled.CHARGEBEE_FORCED
+            enableChargebeeRef.current !== ChargebeeEnabled.CHARGEBEE_FORCED
         ) {
-            setEnableChargebee(ChargebeeEnabled.CHARGEBEE_FORCED);
+            enableChargebeeRef.current = ChargebeeEnabled.CHARGEBEE_FORCED;
             setPaymentsVersion('v5');
         }
 
         if (
             maybeUser?.ChargebeeUser === ChargebeeEnabled.INHOUSE_FORCED &&
-            enableChargebee !== ChargebeeEnabled.INHOUSE_FORCED
+            enableChargebeeRef.current !== ChargebeeEnabled.INHOUSE_FORCED
         ) {
-            setEnableChargebee(ChargebeeEnabled.INHOUSE_FORCED);
+            enableChargebeeRef.current = ChargebeeEnabled.INHOUSE_FORCED;
             setPaymentsVersion('v4');
         }
-    }, [maybeUser?.ChargebeeUser, enableChargebee]);
+    }, [maybeUser?.ChargebeeUser, enableChargebeeRef.current]);
 };

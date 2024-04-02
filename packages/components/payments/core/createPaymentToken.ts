@@ -26,6 +26,7 @@ import {
     ChargebeeFetchedPaymentToken,
     ExistingPayment,
     ExistingPaymentMethod,
+    ForceEnableChargebee,
     NonAuthorizedV5PaymentToken,
     NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,
@@ -171,6 +172,7 @@ type Dependencies = {
     api: Api;
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
+    forceEnableChargebee: ForceEnableChargebee;
 };
 
 function submitChargebeeCard(
@@ -235,7 +237,7 @@ function submitSavedChargebeeCard(
 
 export async function createPaymentTokenV5CreditCard(
     params: ChargebeeCardParams,
-    { api, handles, events }: Dependencies,
+    { api, handles, events, forceEnableChargebee }: Dependencies,
     abortController?: AbortController
 ): Promise<ChargebeeFetchedPaymentToken> {
     const { type, amountAndCurrency } = params;
@@ -267,6 +269,7 @@ export async function createPaymentTokenV5CreditCard(
         Status,
         Data: paymentIntentData,
     } = await fetchPaymentIntentV5(api, data, abortController?.signal);
+    forceEnableChargebee();
 
     let Data = convertPaymentIntentData(paymentIntentData);
     let authorizedStatus: AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken;
@@ -301,7 +304,7 @@ export async function createPaymentTokenV5CreditCard(
 
 export async function createPaymentTokenV5Paypal(
     params: ChargebeePaypalParams,
-    { api }: Dependencies,
+    { api, forceEnableChargebee }: Dependencies,
     abortController?: AbortController
 ): Promise<
     {
@@ -322,6 +325,7 @@ export async function createPaymentTokenV5Paypal(
         Status,
         Data: paymentIntentData,
     } = await fetchPaymentIntentV5(api, data, abortController?.signal);
+    forceEnableChargebee();
 
     let paymentIntent = convertPaymentIntentData(paymentIntentData);
     let authorizedStatus: AuthorizedV5PaymentToken = {
