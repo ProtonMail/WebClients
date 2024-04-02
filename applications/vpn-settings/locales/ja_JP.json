@@ -2851,7 +2851,7 @@
         "完了! ${ destination } にコードを送信しました!"
       ],
       "Don’t know your recovery phrase?": [
-        "回復フレーズを知りませんか？"
+        "回復用フレーズを知りませんか？"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
@@ -2929,7 +2929,7 @@
         "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
       "Enter your recovery phrase to change your password now.": [
-        "今すぐパスワードを変更するには、回復フレーズを入力してください。"
+        "今すぐパスワードを変更するには、回復用フレーズを入力してください。"
       ],
       "Expired": [
         "有効期限切れ"
@@ -4116,7 +4116,7 @@
         "回復用電話番号"
       ],
       "Recovery phrase": [
-        "回復フレーズ"
+        "回復用フレーズ"
       ],
       "Require 2FA for administrators": [
         "管理者の 2 要素認証を必須にする"
@@ -4399,6 +4399,9 @@
       ]
     },
     "Member action": {
+      "Add address": [
+        "アドレスを追加"
+      ],
       "Change password": [
         "パスワードを変更する"
       ],
@@ -4616,6 +4619,9 @@
       "Dedicated servers and IP": [
         "専用サーバーとIP"
       ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
       "DNS leak prevention": [
         "DNS 漏洩防止"
       ],
@@ -4657,6 +4663,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
+      ],
+      "Group management (coming soon)": [
+        "グループ管理 (近日公開)"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
@@ -6664,6 +6673,9 @@
       "Change role": [
         "役割の変更"
       ],
+      "Close": [
+        "閉じる"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -7224,8 +7236,14 @@
       "15-month": [
         "15 か月"
       ],
+      "18-month": [
+        "18 か月"
+      ],
       "2-year": [
         "2年"
+      ],
+      "3-month": [
+        "3 か月"
       ],
       "30-month": [
         "30 か月"

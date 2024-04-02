@@ -17,8 +17,8 @@
       "Add current URL": [
         "Dodaj obecny adres URL"
       ],
-      "Add domain to pause list": [
-        "Dodaj domenę do listy wykluczonych"
+      "Add domain": [
+        "Dodaj domenę"
       ],
       "Add more": [
         "Dodaj więcej"
@@ -567,6 +567,9 @@
       "Could not resolve share members": [
         "Nie można załadować użytkowników sejfu"
       ],
+      "Could not validate addresses at the moment.": [
+        "Nie można zweryfikować adresów."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Brak wymaganych nagłówków w pliku CSV: ${ missingHeaders }"
       ],
@@ -608,6 +611,9 @@
       ],
       "Failed to delete selected items": [
         "Nie udało się przenieść zaznaczonych elementów"
+      ],
+      "Failed to edit organization settings": [
+        "Nie udało się zmienić ustawień organizacji"
       ],
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
@@ -881,11 +887,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } będzie proponował zapisywanie lub aktualizację danych logowania."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } będzie sugerował uwierzytelnianie za pomocą kluczy dostępu"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } będzie sugerował utworzenie aliasu w formularzach logowania."
+        "${ PASS_APP_NAME } będzie sugerował tworzenie aliasu w formularzach logowania."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } będzie sugerował utworzenie silnych haseł w formularzach logowania."
+        "${ PASS_APP_NAME } będzie sugerował tworzenie silnych haseł w formularzach logowania."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } będzie sugerował zapisywanie kluczy dostępu."
       ],
       "${ trialDaysLeft } day left": [
         "Pozostał ${ trialDaysLeft } dzień",
@@ -952,6 +964,9 @@
       ],
       "Built in 2FA authenticator": [
         "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Domyślnie użytkownicy zespołu mogą eksportować tylko swoje sejfy. Po włączeniu tej opcji, użytkownicy nie będą mogli eksportować żadnych danych"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Może edytować i eksportować elementy w sejfie."
@@ -1181,6 +1196,9 @@
       "Open the Extensions menu": [
         "Otwórz menu rozszerzenia"
       ],
+      "Organization settings successfully updated": [
+        "Ustawienia organizacji zostały zaktualizowane"
+      ],
       "Owner": [
         "Właściciel"
       ],
@@ -1316,6 +1334,9 @@
       "Syncing your vaults…": [
         "Synchronizowanie sejfów…"
       ],
+      "Team members can only share vaults within organization": [
+        "Użytkownicy zespołu mogą udostępniać sejfy tylko w obrębie organizacji"
+      ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
@@ -1342,6 +1363,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
+      ],
+      "This setting is disabled on the organization level": [
+        "Ustawienie jest wyłączone na poziomie organizacji"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
@@ -1375,6 +1399,9 @@
       ],
       "Update login": [
         "Zaktualizuj dane logowania"
+      ],
+      "Updating organization settings": [
+        "Aktualizacja ustawień organizacji"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Ulepsz ${ PASS_APP_NAME }"
@@ -1531,6 +1558,9 @@
       "Application logs": [
         "Logi aplikacji"
       ],
+      "Authenticate with passkeys": [
+        "Uwierzytelnij za pomocą kluczy dostępu"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Automatyczna blokada ${ PASS_APP_NAME }"
       ],
@@ -1591,6 +1621,12 @@
       "Created": [
         "Utworzono"
       ],
+      "Disable data export for team members": [
+        "Wyłącz eksportowanie danych dla użytkowników zespołu"
+      ],
+      "Disable sharing outside the organization": [
+        "Wyłącz udostępnianie poza organizację"
+      ],
       "Display": [
         "Wyświetlanie"
       ],
@@ -1617,6 +1653,9 @@
       ],
       "Export": [
         "Eksportowanie"
+      ],
+      "Exporting policy": [
+        "Polityka eksportowania"
       ],
       "Field name": [
         "Nazwa pola"
@@ -1750,8 +1789,14 @@
       "Oldest to newest": [
         "Od najstarszych"
       ],
+      "Organization": [
+        "Organizacja"
+      ],
       "Passkey": [
         "Klucz dostępu"
+      ],
+      "Passkeys": [
+        "Klucze dostępu"
       ],
       "Passphrase": [
         "Hasło"
@@ -1795,6 +1840,9 @@
       "Reveal password": [
         "Pokaż hasło"
       ],
+      "Save passkeys": [
+        "Zapisz klucze dostępu"
+      ],
       "Security": [
         "Bezpieczeństwo"
       ],
@@ -1818,6 +1866,9 @@
       ],
       "Settings": [
         "Ustawienia"
+      ],
+      "Sharing policy": [
+        "Polityka udostępniania"
       ],
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
@@ -2309,6 +2360,9 @@
       ],
       "Invalid email addresses.": [
         "Adresy e-mail są nieprawidłowe."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Zapraszanie adresów e-mail spoza organizacji nie jest dozwolone."
       ],
       "item was imported without custom fields": [
         "element został zaimportowany bez pól niestandardowych"

@@ -342,10 +342,10 @@
         "Mostrar"
       ],
       "Sign back in": [
-        "Faça login novamente"
+        "Inicie sessão novamente"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Faça login com ${ BRAND_NAME }"
+        "Iniciar sessão com ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Modo off-line está temporariamente indisponível para o modo de duas senhas."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Modo sem rede não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
+      ],
       "Passphrase is incorrect": [
         "A frase de acesso está incorreta"
       ],
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Por favor, atualize para ter acesso antecipado a ${ PASS_APP_NAME } aplicativo de área de trabalho"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dias para testar os recursos premium de graça. Somente durante a primeira semana da ${ BRAND_NAME }."
@@ -1026,6 +1035,9 @@
       "Pinning item...": [
         "Fixando item..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
@@ -1161,6 +1173,9 @@
       ],
       "Unpinning item...": [
         "Desafiando item..."
+      ],
+      "Updating organization settings": [
+        "Atualizando as configurações da organização"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Faça upgrade agora para desbloquear recursos premium"
@@ -1338,6 +1353,12 @@
       "Created": [
         "Criado"
       ],
+      "Disable data export for team members": [
+        "Desativar a exportação de dados para membros da equipe"
+      ],
+      "Disable sharing outside the organization": [
+        "Desativar compartilhamento fora da organização"
+      ],
       "Display": [
         "Exibição"
       ],
@@ -1350,11 +1371,17 @@
       "Empty trash": [
         "Esvaziar lixeira"
       ],
+      "Enable offline access": [
+        "Ativar acesso off-line"
+      ],
       "Expiration date": [
         "Data de expiração"
       ],
       "Export": [
         "Exportar"
+      ],
+      "Exporting policy": [
+        "Exportando política"
       ],
       "Field name": [
         "Nome do campo"
@@ -1482,11 +1509,17 @@
       "Notes": [
         "Notas"
       ],
+      "Offline mode": [
+        "Modo off-line"
+      ],
       "Old-New": [
         "Do mais antigo para o mais recente"
       ],
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
+      ],
+      "Organization": [
+        "Organização"
       ],
       "Passkey": [
         "Chave de acesso"
@@ -1547,6 +1580,9 @@
       ],
       "Set PIN code": [
         "Definir código PIN"
+      ],
+      "Sharing policy": [
+        "Política de compartilhamento"
       ],
       "Show website favicons": [
         "Mostrar favicons do site"

@@ -197,6 +197,9 @@
       "Close navigation": [
         "Zavřít menu"
       ],
+      "Close tab": [
+        "Zavřít kartu"
+      ],
       "Close this banner": [
         "Zavřít tento banner"
       ],
@@ -302,6 +305,9 @@
       "Delete": [
         "Smazat"
       ],
+      "Delete address": [
+        "Smazat adresu"
+      ],
       "Delete and confirm": [
         "Smazat a potvrdit"
       ],
@@ -379,6 +385,9 @@
       ],
       "Edit": [
         "Upravit"
+      ],
+      "Edit billing cycle": [
+        "Upravit fakturační cyklus"
       ],
       "Edit display name": [
         "Upravit zobrazované jméno"
@@ -6476,6 +6485,9 @@
       "Edit link": [
         "Upravit odkaz"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email address": [
         "E-mailová adresa"
       ],
@@ -6569,6 +6581,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
+      "finance": [
+        "finance"
+      ],
       "for choosing ${ product }": [
         "za výběr ${ product }"
       ],
@@ -6610,6 +6625,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skrývá identifikační informace načítáním vzdáleného obsahu prostřednictvím proxy serveru. Možnost ukládat obsah jako přílohy."
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokud některý ze správců změnil heslo, budete ho muset požádat o nové heslo organizace."
@@ -6833,6 +6851,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Nízká priorita"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Velké e-mailové služby mohou odmítnout nebo filtrovat vaše e-maily jako spam, pokud chybí nebo není správně nastaven SPF/DKIM/DMARC."
       ],
@@ -6847,6 +6868,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
+      ],
+      "Medium Priority": [
+        "Střední priorita"
       ],
       "Member": [
         "Člen"
@@ -6991,6 +7015,9 @@
       ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
+      ],
+      "password": [
+        "heslo"
       ],
       "Password copied to clipboard": [
         "Heslo bylo zkopírováno do schránky"
@@ -7654,6 +7681,9 @@
       ],
       "User activated": [
         "Uživatel aktivován"
+      ],
+      "username": [
+        "uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -8615,6 +8645,9 @@
       ],
       "Awarded": [
         "Uděleno"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fakturační adresa"
@@ -9690,6 +9723,20 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Vaše ${ driveStorage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše ${ mailStorage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ cta }."
       ]
     },
     "Log preference": {
@@ -13901,6 +13948,9 @@
       "Clear out the junk": [
         "Pročištění nevyžádané pošty"
       ],
+      "Close": [
+        "Zavřít"
+      ],
       "Composing": [
         "Psaní"
       ],
@@ -14075,6 +14125,12 @@
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Stáhnout desktopovou aplikaci"
+      ],
+      "Download the mobile apps": [
+        "Stáhnout mobilní aplikace"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -14116,6 +14172,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email address": [
+        "E-mailová adresa"
       ],
       "Email composer": [
         "E-mailový editor"
@@ -14180,6 +14239,15 @@
       "Folders and labels": [
         "Složky a štítky"
       ],
+      "For Linux": [
+        "Pro Linux"
+      ],
+      "For macOS": [
+        "Pro macOS"
+      ],
+      "For Windows": [
+        "Pro Windows"
+      ],
       "Forward and auto-reply": [
         "Přeposlat a odpovědět"
       ],
@@ -14203,6 +14271,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
+      ],
+      "Get the apps": [
+        "Získat aplikace"
       ],
       "Gift": [
         "Dárek"

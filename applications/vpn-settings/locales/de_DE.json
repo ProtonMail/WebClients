@@ -4763,6 +4763,17 @@
         "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Dein ${ driveStorage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ cta }."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ cta }."
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Jetzt zugreifen"

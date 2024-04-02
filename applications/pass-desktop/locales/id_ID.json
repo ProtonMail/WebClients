@@ -475,6 +475,9 @@
       "Could not resolve share members": [
         "Anggota share tidak dapat ditetapkan"
       ],
+      "Could not validate addresses at the moment.": [
+        "Alamat tidak dapat divalidasi pada saat ini."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Berkas CSV tidak memiliki header yang seharusnya ada: ${ missingHeaders }"
       ],
@@ -585,6 +588,9 @@
       ],
       "PIN codes do not match": [
         "Kode PIN tidak sesuai"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Silakan tingkatkan akun untuk memperoleh akses dini ke aplikasi desktop ${ PASS_APP_NAME }"
       ],
       "Request timed out": [
         "Waktu permintaan habis"
@@ -722,13 +728,13 @@
         "Admin"
       ],
       "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Setelah tidak ada aktivitas, akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi saat ini. Anda akan dikeluarkan setelah 3 percobaan gagal."
+        "Setelah sekian waktu tanpa aktivitas, akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka kunci sesi saat ini. Anda akan dikeluarkan dari akun setelah 3 percobaan yang gagal."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan surel ke kotak surat Anda"
+        "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
@@ -896,7 +902,7 @@
         "Sematan item berhasil dilepas"
       ],
       "Leaving vault...": [
-        "Mengeluarkan dari brankas..."
+        "Meninggalkan brankas..."
       ],
       "Let's get you started by creating your first item": [
         "Mulailah dengan membuat item pertama Anda"
@@ -917,7 +923,7 @@
         "saya"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat surel pribadi Anda melalui alamat surel samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
+        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alamat email samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
@@ -951,6 +957,9 @@
       ],
       "Offline support successfully disabled": [
         "Dukungan offline berhasil dinonaktifkan"
+      ],
+      "Organization settings successfully updated": [
+        "Pengaturan organisasi berhasil diperbarui"
       ],
       "Owner": [
         "Pemilik"
@@ -1010,7 +1019,7 @@
         "Memulihkan item dari sampah"
       ],
       "Restoring trashed items...": [
-        "Memulihkan semua item yang dibuang..."
+        "Memulihkan item yang dibuang..."
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
@@ -1269,6 +1278,9 @@
       "Created": [
         "Waktu pembuatan"
       ],
+      "Disable data export for team members": [
+        "Nonaktifkan ekspor data bagi anggota tim"
+      ],
       "Display": [
         "Tampilan"
       ],
@@ -1289,6 +1301,9 @@
       ],
       "Export": [
         "Ekspor"
+      ],
+      "Exporting policy": [
+        "Kebijakan ekspor"
       ],
       "Field name": [
         "Nama kolom"
@@ -1468,7 +1483,7 @@
         "Kode keamanan"
       ],
       "Select an email address": [
-        "Pilih alamat surel"
+        "Pilih alamat email"
       ],
       "Select preferred language": [
         "Pilih bahasa yang diinginkan"
@@ -1484,6 +1499,9 @@
       ],
       "Set PIN code": [
         "Tentukan kode PIN"
+      ],
+      "Sharing policy": [
+        "Kebijakan berbagi"
       ],
       "Show website favicons": [
         "Tampilkan favicon situs web"
@@ -1634,7 +1652,7 @@
         "Tambahkan teks"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Enter a note...": [
         "Masukkan catatan..."
@@ -1643,7 +1661,7 @@
         "Masukkan awalan"
       ],
       "Enter email or username": [
-        "Masukkan surel atau nama pengguna"
+        "Masukkan email atau nama pengguna"
       ],
       "Enter password": [
         "Masukkan kata sandi"
@@ -1926,6 +1944,9 @@
       ],
       "Invalid email addresses.": [
         "Terdapat alamat email yang tidak valid."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Mengundang alamat email di luar organisasi tidak diperkenankan"
       ],
       "item was imported without custom fields": [
         "item telah diimpor tanpa kolom kustom"
