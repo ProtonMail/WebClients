@@ -54,6 +54,8 @@ jest.mock('../../hooks/useModals', () => {
     };
 });
 
+jest.mock('@proton/components/payments/client-extensions/useChargebeeContext');
+
 const InvoicesSectionContext = applyHOCs(withConfig(), withPaymentContext())(InvoicesSection);
 
 describe('InvoicesSection', () => {
