@@ -19,3 +19,5 @@ declare module 'is-valid-domain';
 declare module 'punycode.js';
 
 declare module '*.raw.scss';
+
+declare module '*.csv';
