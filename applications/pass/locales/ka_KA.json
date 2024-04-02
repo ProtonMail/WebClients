@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "ინტერნეტის გარეშე მუშაობის რეჟიმი ამჟამად ხელმიუწვდომელია 2 პაროლის რეჟიმში."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "ინტერნეტის გარეშე მუშაობის რეჟიმი ამჟამად ხელმიუწვდომელია თქვენი ტარიფისთვის და თავსებადი არაა ორი პაროლის რეჟიმთან."
+      ],
       "Passphrase is incorrect": [
         "საკვანძო ფრაზა არასწორია"
       ],
       "PIN codes do not match": [
         "Pin-კოდები არ ემთხვევა"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის კომპიუტერის აპთან ადრეული წვდომის მისაღებად"
       ],
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "ელემენტის მიმაგრება..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
       ],
+      "Enable offline access": [
+        "ქსელის გარეშე წვდომის დაშვება"
+      ],
       "Expiration date": [
         "ვადა"
       ],
@@ -1481,6 +1496,9 @@
       ],
       "Notes": [
         "შენიშვნები"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
       ],
       "Old-New": [
         "ძველი-ახალი"

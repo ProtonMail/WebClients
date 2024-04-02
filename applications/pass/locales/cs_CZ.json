@@ -720,6 +720,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } bude vyžadovat vaše heslo ${ BRAND_NAME } pro přístup k datům offline."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
       ],
@@ -944,6 +947,9 @@
       ],
       "Pinning item...": [
         "Připínání položky..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
@@ -1250,6 +1256,9 @@
       "Empty trash": [
         "Vyprázdnit koš"
       ],
+      "Enable offline access": [
+        "Povolit přístup offline"
+      ],
       "Expiration date": [
         "Konec platnosti"
       ],
@@ -1372,6 +1381,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "Offline mode": [
+        "Režim offline"
       ],
       "Old-New": [
         "Staré-Nové"

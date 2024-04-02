@@ -587,11 +587,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Modul deconectat nu este momentan disponibil pentru modul cu două parole."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Modul deconectat nu este momentan disponibil pentru planul actual și nu este compatibil cu modul cu două parole."
+      ],
       "Passphrase is incorrect": [
         "Fraza de acces nu este corectă."
       ],
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Treceți la un plan superior pentru a avea acces timpuriu la aplicația ${ PASS_APP_NAME } pentru desktop."
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -759,6 +765,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } va importa doar autentificări, note și carduri de plată."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
@@ -1040,6 +1049,9 @@
       ],
       "Pinning item...": [
         "Se fixează articolul..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirmați parola ${ BRAND_NAME } pentru a activa modul deconectat."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
@@ -1369,6 +1381,9 @@
       "Empty trash": [
         "Golire «Gunoi»"
       ],
+      "Enable offline access": [
+        "Activare acces deconectat"
+      ],
       "Expiration date": [
         "Dată expirare"
       ],
@@ -1500,6 +1515,9 @@
       ],
       "Notes": [
         "Note"
+      ],
+      "Offline mode": [
+        "Mod deconectat"
       ],
       "Old-New": [
         "De la vechi la noi"

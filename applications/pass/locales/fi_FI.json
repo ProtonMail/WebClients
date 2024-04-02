@@ -585,11 +585,17 @@
       "Offline mode is currently not available for two password mode.": [
         "Yhteydetön tila ei ole tällä hetkellä käytettävissä kahden salasanan tilassa."
       ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Offline-tila ei ole tällä hetkellä käytettävissä tilauksessasi, eikä se ole yhteensopiva kahden salasanan tilan kanssa."
+      ],
       "Passphrase is incorrect": [
         "Tunnuslauseke on virheellinen"
       ],
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -työpöytäsovellukseen"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -748,6 +754,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja maksukortit."
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } vaatii ${ BRAND_NAME }-salasanasi tietojen yhteydettömään käyttöön."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
@@ -1025,6 +1034,9 @@
       ],
       "Pinning item...": [
         "Kohdetta kiinnitetään..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
@@ -1350,6 +1362,9 @@
       "Empty trash": [
         "Tyhjennä roskakori"
       ],
+      "Enable offline access": [
+        "Käytä yhteydetöntä tilaa"
+      ],
       "Expiration date": [
         "Voimassaolo päättyy"
       ],
@@ -1481,6 +1496,9 @@
       ],
       "Notes": [
         "Muistiinpanot"
+      ],
+      "Offline mode": [
+        "Yhteydetön tila"
       ],
       "Old-New": [
         "Vanhimmasta uusimpaan"
