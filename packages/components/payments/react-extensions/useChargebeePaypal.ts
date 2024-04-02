@@ -10,6 +10,7 @@ import {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
     ChargebeeKillSwitch,
+    ForceEnableChargebee,
     PaymentVerificatorV5,
 } from '../core';
 import {
@@ -32,6 +33,7 @@ export interface Dependencies {
     events: ChargebeeIframeEvents;
     chargebeePaypalModalHandles: ChargebeePaypalModalHandles | undefined;
     chargebeeKillSwitch: ChargebeeKillSwitch;
+    forceEnableChargebee: ForceEnableChargebee;
 }
 
 type Overrides = {
@@ -50,7 +52,15 @@ export type ChargebeePaypalProcessorHook = Omit<PaymentProcessorHook, keyof Over
 
 export const useChargebeePaypal = (
     { amountAndCurrency, isCredit, onChargeable }: Props,
-    { api, verifyPayment, handles, events, chargebeePaypalModalHandles, chargebeeKillSwitch }: Dependencies
+    {
+        api,
+        verifyPayment,
+        handles,
+        events,
+        chargebeePaypalModalHandles,
+        chargebeeKillSwitch,
+        forceEnableChargebee,
+    }: Dependencies
 ): ChargebeePaypalProcessorHook => {
     const paypalIframeLoadedRef = useRef(false);
 
@@ -64,6 +74,7 @@ export const useChargebeePaypal = (
                 events,
                 isCredit,
                 chargebeeKillSwitch,
+                forceEnableChargebee,
                 chargebeePaypalModalHandles,
                 onChargeable
             )

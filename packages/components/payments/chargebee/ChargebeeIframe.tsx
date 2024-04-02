@@ -525,7 +525,7 @@ export const useCbIframe = (): CbIframeHandles => {
             if (error) {
                 const context = {
                     paymentsVersion: getPaymentsVersion(),
-                    chargebeeEnabled: chargebeeContext.enableChargebee,
+                    chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                 };
 
                 captureMessage('Payments: Unhandled Chargebee error', {
