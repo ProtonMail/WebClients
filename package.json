@@ -30,6 +30,7 @@
         "terser": "^5.30.3"
     },
     "dependencies": {
+        "@mlc-ai/web-llm": "^0.2.29",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
         "is-ci": "^3.0.1",

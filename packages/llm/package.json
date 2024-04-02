@@ -1,0 +1,16 @@
+{
+    "name": "@proton/llm",
+    "version": "0.1.0",
+    "description": "Large Language Model shared library",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.24.3",
+        "@babel/preset-env": "^7.24.3",
+        "@jest/globals": "^29.7.0",
+        "@types/jest": "^29.5.12",
+        "babel-jest": "^29.7.0",
+        "jest": "^29.7.0"
+    }
+}

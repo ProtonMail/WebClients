@@ -220,7 +220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.4, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.3, @babel/core@npm:^7.24.4, @babel/core@npm:^7.7.5":
   version: 7.24.4
   resolution: "@babel/core@npm:7.24.4"
   dependencies:
@@ -1694,7 +1694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.11.0, @babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.24.4":
+"@babel/preset-env@npm:^7.11.0, @babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.24.3, @babel/preset-env@npm:^7.24.4":
   version: 7.24.4
   resolution: "@babel/preset-env@npm:7.24.4"
   dependencies:
@@ -6374,6 +6374,19 @@ __metadata:
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.4.4"
     webpack: "npm:^5.91.0"
+  languageName: unknown
+  linkType: soft
+
+"@proton/llm@workspace:packages/llm":
+  version: 0.0.0-use.local
+  resolution: "@proton/llm@workspace:packages/llm"
+  dependencies:
+    "@babel/core": "npm:^7.24.3"
+    "@babel/preset-env": "npm:^7.24.3"
+    "@jest/globals": "npm:^29.7.0"
+    "@types/jest": "npm:^29.5.12"
+    babel-jest: "npm:^29.7.0"
+    jest: "npm:^29.7.0"
   languageName: unknown
   linkType: soft
 
@@ -31473,7 +31486,6 @@ __metadata:
   resolution: "proton-mail@workspace:applications/mail"
   dependencies:
     "@babel/plugin-transform-runtime": "npm:^7.24.3"
-    "@mlc-ai/web-llm": "npm:^0.2.29"
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/components": "workspace:packages/components"
@@ -34529,6 +34541,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
+    "@mlc-ai/web-llm": "npm:^0.2.29"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
