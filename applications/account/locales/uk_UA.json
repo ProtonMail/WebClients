@@ -302,6 +302,9 @@
       "Delete": [
         "Видалити"
       ],
+      "Delete address": [
+        "Видалити адресу"
+      ],
       "Delete and confirm": [
         "Видалити й підтвердити"
       ],
@@ -1137,6 +1140,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Видалити адресу"
+      ],
       "Disable": [
         "Вимкнути"
       ],
@@ -2948,6 +2954,25 @@
         "Невідомо"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Після видалення цю адресу більше не зможете використовувати ні ви, ні будь-хто інший."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Наступна активна адреса у вашому списку буде встановлена за замовчуванням."
+      ],
+      "You can only delete 1 address per year.": [
+        "Ви можете видалити лише 1 адресу на рік."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Ви можете видалити лише 1 адресу на рік"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Ви досягли ліміту видалень адрес для цього користувача."
+      ]
+    },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "Усі події в цьому календарі будуть видалені."
@@ -3218,6 +3243,9 @@
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } прийняв(-ла) ваше запрошення на ${ eventTitle }"
       ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } відхилив ваше запрошення до ${ eventTitle }"
+      ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } попередньо прийняв(-ла) ваше запрошення на ${ eventTitle }"
       ]
@@ -3376,6 +3404,14 @@
         "Введіть текст чи ключове слово"
       ]
     },
+    "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Для адреси відправника буде знову ввімкнено наскрізне шифрування."
+      ],
+      "Forwarding to the destination address will end.": [
+        "Пересилання на адресу призначення буде припинено."
+      ]
+    },
     "email_forwarding_2023: Status": {
       "Active": [
         "Активно"
@@ -3443,6 +3479,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -5991,6 +6030,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Обов'язково скопіюйте свій пароль і збережіть його в безпечному місці."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Перед активацією користувача необхідно вказати пароль і створити ключі шифрування для адрес."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед створенням цієї адреси необхідно ввести пароль і створити для неї ключі шифрування."
       ],
@@ -6105,6 +6147,9 @@
       "Credits earned": [
         "Зароблені кредити"
       ],
+      "Current plan": [
+        "Поточний план"
+      ],
       "Custom": [
         "Власний"
       ],
@@ -6182,6 +6227,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
+      ],
+      "Downgrade": [
+        "Понизити тарифний план"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
@@ -6312,11 +6360,17 @@
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Швидкий і зосереджений. Електронна пошта та календар прямо на робочому столі."
+      ],
       "Fill in user details": [
         "Заповніть дані користувача"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
+      ],
+      "finance": [
+        "фінанси"
       ],
       "for choosing ${ product }": [
         "за вибір ${ product }"
@@ -6356,6 +6410,9 @@
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Приховує інформацію, що може вас ідентифікувати, завантажуючи зовнішній вміст через проксі. Можливість зберігати вміст у вигляді вкладень."
+      ],
+      "High Priority": [
+        "Високий пріоритет"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
@@ -6459,6 +6516,9 @@
       "inactive": [
         "неактивний"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "В тому числі ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
       ],
@@ -6515,6 +6575,9 @@
       ],
       "Key deletion is irreversible!": [
         "Видалення ключа незворотне!"
+      ],
+      "Keys created": [
+        "Ключі створені"
       ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
@@ -6576,6 +6639,9 @@
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Журнали містять записи про спроби автентифікації для всіх служб ${ BRAND_NAME }, які використовують ваші облікові дані ${ BRAND_NAME_TWO }."
       ],
+      "Low Priority": [
+        "Низький пріоритет"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Основні поштові сервіси можуть відхиляти або фільтрувати ваші листи як спам, якщо SPF/DKIM/DMARC відсутні або налаштовані неправильно."
       ],
@@ -6588,6 +6654,9 @@
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Середній пріоритет"
+      ],
       "Member": [
         "Учасник"
       ],
@@ -6596,6 +6665,9 @@
       ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "Monitor accounts": [
+        "Монітор облікових записів"
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -6632,6 +6704,9 @@
       ],
       "No addresses exist": [
         "Немає адрес"
+      ],
+      "No changes made to the current subscription": [
+        "У поточну підписку не внесено жодних змін"
       ],
       "No credit card required": [
         "Банківська картка не потрібна"
@@ -6729,6 +6804,9 @@
       "Paid for a monthly plan": [
         "Передплачено місячний тарифний план"
       ],
+      "password": [
+        "пароль"
+      ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
@@ -6821,6 +6899,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Плюс ще ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
@@ -7371,6 +7452,15 @@
       "URL link": [
         "URL-посилання"
       ],
+      "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
+        "Використовуйте ${ BRAND_NAME } Pass, щоб створювати надійні паролі та уникати повторного використання паролів"
+      ],
+      "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
+        "Використовуйте ${ VPN_APP_NAME } з увімкненим Netshield, щоб захистити себе від шахрайства та зловмисних програм"
+      ],
+      "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
+        "Використовуйте псевдоніми для реєстрації в онлайн-сервісах. Це захищає вашу справжню електронну адресу та ідентифікаційні дані, обмежуючи радіус ураження у випадку зламу."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
@@ -7382,6 +7472,12 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Використовуйте обрану адресу електронної пошти як ім'я користувача SMTP у зовнішньому сервісі, а згенерований токен – як пароль SMTP."
+      ],
+      "User activated": [
+        "Користувач активований"
+      ],
+      "username": [
+        "ім'я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -7425,6 +7521,9 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Попередження: Видалення є незворотним. Це також вилучить доступ для всіх під'єднаних служб та видалить усі ваші контакти."
       ],
+      "Ways you can minimize your breach risks": [
+        "Способи мінімізації ризиків витоку"
+      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ми рекомендуємо вам використовувати офіційні програми ${ VPN_APP_NAME }, якщо це можливо."
       ],
@@ -7436,6 +7535,9 @@
       ],
       "We just sent you a new link.": [
         "Ми надіслали вам нове посилання."
+      ],
+      "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
+        "Ми відстежуємо ваші адреси електронної пошти, паролі та особисті дані для появи в даркнеті, і повідомляємо вас у випадку, якщо дані були скомпрометовані."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -7559,6 +7661,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ви увійшли в обліковий запис ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Ви використовуєте більше пам’яті сховища, ніж включено в план ${ downgradedPlanName }. Будь ласка, видаліть дані, щоб понизити тарифний план."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."
@@ -9401,6 +9506,35 @@
         "Імпортування розпочинається"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "upgrade for more storage": [
+        "збільште сховище, передплативши тарифний план"
+      ],
+      "Upgrade to restore full access": [
+        "Покращить обліковий запис, щоб відновити повний доступ"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваше ${ driveStorage } повне. Щоб вивантажити або синхронізувати файли, звільніть місце або ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваше ${ mailStorage } повне. Щоб надсилати або отримувати електронні листи, звільніть місце або ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Ваш обліковий запис під загрозою видалення. Щоб уникнути втрати даних, попросіть свого адміністратора покращити обліковий запис. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Ваше сховище вже повне. Щоб надсилати або отримувати електронні листи, звільніть місце або ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Ваше сховище вже повне. Щоб вивантажити або синхронізувати файли, звільніть місце або ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Ваша підписка закінчилася. ${ cta } і щоб уникнути втрати даних."
+      ]
+    },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
         "Увімкнути ${ PROTON_SENTINEL_NAME }"
@@ -10749,6 +10883,11 @@
         "Двоетапна перевірка більше не обов'язкова"
       ]
     },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Деякі зображення не було вивантажено через повтори назв файлів у поточному виділенні."
+      ]
+    },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
         "Не вдалося додати календар свят"
@@ -11560,6 +11699,9 @@
       "Select a reason": [
         "Оберіть причину"
       ],
+      "Select state": [
+        "Оберіть область"
+      ],
       "Text": [
         "Текст"
       ],
@@ -11856,6 +11998,9 @@
       "Password reset request approved (${ user.Email }).": [
         "Запит на скидання пароля схвалено (${ user.Email })."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Будь ласка, перейдіть на пристрій, на якому ви ввійшли (у сеансі, де було ініційовано запит), щоб змінити свій пароль."
+      ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
       ],
@@ -11905,6 +12050,16 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Скасувати скидання пароля?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запит на скидання пароля скасовано (${ user.Email }). Якщо ви не робили цей запит, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "змініть свій пароль зараз"
       ]
     },
     "session_recovery:disable:action": {
@@ -12477,6 +12632,9 @@
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Ваше ${ storage } заповнене. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваше сховище заповнене на ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Ваше сховище заповнене"
@@ -13404,6 +13562,9 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
+      "Delete address permanently?": [
+        "Видалити адресу остаточно?"
+      ],
       "Delete calendar": [
         "Видалити календар"
       ],
@@ -13562,6 +13723,15 @@
       ],
       "Folders and labels": [
         "Теки й мітки"
+      ],
+      "For Linux": [
+        "Для Linux"
+      ],
+      "For macOS": [
+        "Для macOS"
+      ],
+      "For Windows": [
+        "Для Windows"
       ],
       "Forward and auto-reply": [
         "Пересилання та автовідповідь"
