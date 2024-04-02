@@ -10,7 +10,7 @@ export type ElectronNotification = {
     labelID?: string;
 };
 
-export type IPCMessage =
+export type IPCClientUpdateMessage =
     | { type: "updateNotification"; payload: number }
     | { type: "userLogout"; payload: undefined }
     | { type: "clearAppData"; payload: undefined }
@@ -22,5 +22,8 @@ export type IPCMessage =
     | { type: "updateLocale"; payload: string }
     | { type: "setTheme"; payload: ThemeSetting };
 
-export type IPCMessageType = IPCMessage["type"];
-export type IPCMessagePayload<T extends IPCMessageType> = Extract<IPCMessage, { type: T }>["payload"];
+export type IPCClientUpdateMessageType = IPCClientUpdateMessage["type"];
+export type IPCClientUpdateMessagePayload<T extends IPCClientUpdateMessageType> = Extract<
+    IPCClientUpdateMessage,
+    { type: T }
+>["payload"];

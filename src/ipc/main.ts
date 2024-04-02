@@ -4,10 +4,10 @@ import { clearStorage } from "../utils/helpers";
 import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
-import { IPCMessage } from "./ipcConstants";
+import { IPCClientUpdateMessage } from "./ipcConstants";
 import { getTheme, setTheme } from "../utils/themes";
 
-function isValidMessage(message: unknown): message is IPCMessage {
+function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
 }
 
@@ -17,7 +17,7 @@ export const handleIPCCalls = () => {
     });
 
     ipcMain.on("clientUpdate", (_e, message: unknown) => {
-        if (!isValidMessage(message)) {
+        if (!isValidClientUpdateMessage(message)) {
             Logger.error(`Invalid clientUpdate message: ${message}`);
             return;
         }

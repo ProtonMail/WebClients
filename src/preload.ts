@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 import Logger from "electron-log";
-import { IPCMessagePayload, IPCMessageType } from "./ipc/ipcConstants";
+import { IPCClientUpdateMessagePayload, IPCClientUpdateMessageType } from "./ipc/ipcConstants";
 import { ThemeSetting } from "./utils/themes";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
@@ -9,7 +9,10 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         return ipcRenderer.sendSync("getTheme");
     },
 
-    send: <T extends IPCMessageType>(type: IPCMessageType, payload: IPCMessagePayload<T>) => {
+    send: <T extends IPCClientUpdateMessageType>(
+        type: IPCClientUpdateMessageType,
+        payload: IPCClientUpdateMessagePayload<T>,
+    ) => {
         Logger.info(`Sending IPC message: ${type}`);
         ipcRenderer.send("clientUpdate", { type, payload });
     },
