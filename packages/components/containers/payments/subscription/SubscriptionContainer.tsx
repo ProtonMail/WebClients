@@ -1133,6 +1133,8 @@ const SubscriptionContainer = ({
                                                 chargebeePaypal={paymentFacade.chargebeePaypal}
                                                 iframeHandles={paymentFacade.iframeHandles}
                                                 noPaymentNeeded={model.noPaymentNeeded}
+                                                subscription={subscription}
+                                                user={user}
                                             />
                                             {paymentFacade.showInclusiveTax && (
                                                 <InclusiveVatText
@@ -1293,6 +1295,8 @@ const SubscriptionContainer = ({
                                             chargebeePaypal={paymentFacade.chargebeePaypal}
                                             iframeHandles={paymentFacade.iframeHandles}
                                             noPaymentNeeded={model.noPaymentNeeded}
+                                            subscription={subscription}
+                                            user={user}
                                         />
                                         {paymentFacade.showInclusiveTax && (
                                             <InclusiveVatText
