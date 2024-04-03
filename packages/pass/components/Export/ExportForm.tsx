@@ -28,7 +28,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                 /* CSV warning */
                 form.values.format === ExportFormat.CSV &&
                     c('Info')
-                        .t`CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.`,
+                        .t`CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.`,
 
                 /* non-encrypted warning */
                 form.values.format !== ExportFormat.PGP &&
