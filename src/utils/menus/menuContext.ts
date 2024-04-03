@@ -52,11 +52,19 @@ const getContextEditFlags = (props: ContextMenuParams) => {
     if (props.editFlags.canCut) {
         template.push({ role: "cut" });
     }
+
     if (props.editFlags.canCopy) {
         template.push({ role: "copy" });
     }
 
-    if (props.editFlags.canCopy && props.linkURL) {
+    if (props.linkURL) {
+        if (!props.editFlags.canCopy && props.linkText) {
+            template.push({
+                label: c("Context Menu").t`Copy`,
+                click: () => clipboard.writeText(props.linkText),
+            });
+        }
+
         template.push({
             label: c("Context menu").t`Copy link`,
             click: () => clipboard.writeText(props.linkURL),
