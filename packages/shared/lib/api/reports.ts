@@ -19,7 +19,7 @@ export interface BugPayload {
 
 export const reportBug = (data: BugPayload, input?: 'form') => ({
     method: 'post',
-    url: 'reports/bug',
+    url: 'core/v4/reports/bug',
     input,
     data,
 });
@@ -42,7 +42,7 @@ interface PhishingPayload {
 
 export const reportPhishing = ({ MessageID, MIMEType, Body }: PhishingPayload) => ({
     method: 'post',
-    url: 'reports/phishing',
+    url: 'core/v4/reports/phishing',
     data: { MessageID, MIMEType, Body },
 });
 
