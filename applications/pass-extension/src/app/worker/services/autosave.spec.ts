@@ -49,11 +49,15 @@ describe('AutosaveService [worker]', () => {
                 shouldPrompt: true,
                 data: {
                     type: AutosaveType.UPDATE,
-                    name: 'Domain.com',
-                    selectedItem: {
-                        itemId: revision.itemId,
-                        shareId: mockShareId,
-                    },
+                    candidates: [
+                        {
+                            itemId: revision.itemId,
+                            shareId: mockShareId,
+                            name: 'Domain.com',
+                            url: 'https://domain.com/',
+                            username: 'test@proton.me',
+                        },
+                    ],
                 },
             });
         });
@@ -169,12 +173,13 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        type: AutosaveType.UPDATE,
-                        selectedItem: { shareId: mockShareId, itemId: 'unknown-item-id' },
-                        username: 'test@proton.me',
-                        password: 'new-password',
                         domain: 'proton.me',
+                        itemId: 'unknown-item-id',
                         name: 'Domain.com#Update',
+                        password: 'new-password',
+                        shareId: mockShareId,
+                        type: AutosaveType.UPDATE,
+                        username: 'test@proton.me',
                     },
                 })
             );
@@ -201,12 +206,13 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        type: AutosaveType.UPDATE,
-                        selectedItem: { shareId: mockShareId, itemId: revision.itemId },
-                        username: 'test@proton.me',
-                        password: 'new-password',
                         domain: 'sub.domain.com',
+                        itemId: revision.itemId,
                         name: 'Domain.com#Update',
+                        password: 'new-password',
+                        shareId: mockShareId,
+                        type: AutosaveType.UPDATE,
+                        username: 'test@proton.me',
                     },
                 })
             );
@@ -253,13 +259,14 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        type: AutosaveType.UPDATE,
-                        selectedItem: { shareId: mockShareId, itemId: revision.itemId },
-                        username: newPasskey.userName,
-                        password: '',
                         domain: 'domain.com',
+                        itemId: revision.itemId,
                         name: 'Domain.com#Update',
                         passkey: newPasskey,
+                        password: '',
+                        shareId: mockShareId,
+                        type: AutosaveType.UPDATE,
+                        username: newPasskey.userName,
                     },
                 })
             );
