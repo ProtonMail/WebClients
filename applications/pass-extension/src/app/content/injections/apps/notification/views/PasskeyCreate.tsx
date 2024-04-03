@@ -84,7 +84,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                         contentScriptMessage({
                             type: WorkerMessageType.AUTOSAVE_REQUEST,
                             payload: selectedItem
-                                ? { ...base, selectedItem, type: AutosaveType.UPDATE }
+                                ? { ...base, ...selectedItem, type: AutosaveType.UPDATE }
                                 : { ...base, type: AutosaveType.NEW },
                         }),
                         (res) => res.type === 'error' && throwError({ message: res.error })

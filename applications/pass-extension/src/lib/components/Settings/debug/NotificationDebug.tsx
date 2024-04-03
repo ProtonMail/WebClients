@@ -70,11 +70,14 @@ export const NotificationDebug: FC = () => {
                                 shouldPrompt: true,
                                 data: {
                                     type: AutosaveType.UPDATE,
-                                    name: 'netflix.com',
-                                    selectedItem: {
-                                        itemId: 'test-itemId',
-                                        shareId: 'test-shareId',
-                                    },
+                                    candidates: [
+                                        {
+                                            itemId: 'test-itemId',
+                                            shareId: 'test-shareId',
+                                            name: 'netflix.com',
+                                            username: 'john@proton.me',
+                                        },
+                                    ],
                                 },
                             },
                             data: {
@@ -82,6 +85,62 @@ export const NotificationDebug: FC = () => {
                                 password: 'password',
                             },
                         },
+                    }}
+                >
+                    <Notification />
+                </MockIFrameContainer>
+
+                <MockIFrameContainer
+                    width={NOTIFICATION_WIDTH}
+                    height={NOTIFICATION_HEIGHT}
+                    payload={{
+                        action: NotificationAction.AUTOSAVE,
+                        submission: {
+                            status: FormEntryStatus.COMMITTED,
+                            domain: 'netflix.com',
+                            subdomain: null,
+                            type: 'login',
+                            partial: false,
+                            autosave: {
+                                shouldPrompt: true,
+                                data: {
+                                    type: AutosaveType.UPDATE,
+                                    candidates: [
+                                        {
+                                            itemId: 'test-itemId',
+                                            shareId: 'test-shareId',
+                                            name: 'Netflix family',
+                                            username: 'john@proton.me',
+                                            url: 'netflix.com',
+                                        },
+                                        {
+                                            itemId: 'test-itemId2',
+                                            shareId: 'test-shareId2',
+                                            name: 'Netflix Oscar',
+                                            username: '',
+                                            url: 'netflix.com',
+                                        },
+                                    ],
+                                },
+                            },
+                            data: {
+                                username: 'nobody@proton.me',
+                                password: 'password',
+                            },
+                        },
+                    }}
+                >
+                    <Notification />
+                </MockIFrameContainer>
+
+                <MockIFrameContainer
+                    width={NOTIFICATION_WIDTH}
+                    height={NOTIFICATION_HEIGHT}
+                    payload={{
+                        action: NotificationAction.PASSKEY_GET,
+                        domain: 'webauthn.io',
+                        token: 'some-token',
+                        request: JSON.stringify({}),
                     }}
                 >
                     <Notification />
