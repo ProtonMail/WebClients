@@ -3,7 +3,7 @@ import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Info, Toggle, Tooltip } from '@proton/components/components';
-import { ThemeCards, useTheme } from '@proton/components/containers';
+import { ThemeCards, useFlag, useTheme } from '@proton/components/containers';
 import ThemeSyncModeDropdown from '@proton/components/containers/themes/ThemeSyncModeDropdown';
 import { useEarlyAccess, useIsInboxElectronApp, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
@@ -42,7 +42,11 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
         void betaToggleWithLoading(run());
     };
 
-    const showThemeSelection = isElectron ? hasInboxDesktopFeature('ThemeSelection') : true;
+    const inboxDesktopThemeSelectionFlag = useFlag('InboxDesktopThemeSelection');
+
+    const showThemeSelection = isElectron
+        ? hasInboxDesktopFeature('ThemeSelection') && inboxDesktopThemeSelectionFlag
+        : true;
 
     return (
         <>
