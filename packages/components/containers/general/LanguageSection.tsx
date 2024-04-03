@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import { useLoading } from '@proton/hooks';
 import { updateLocale } from '@proton/shared/lib/api/settings';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
@@ -42,10 +42,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
         await call();
         createNotification({ text: c('Success').t`Locale updated` });
         forceRefresh();
-
-        if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker!.send('updateLocale', locale);
-        }
+        invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale });
     };
 
     const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
