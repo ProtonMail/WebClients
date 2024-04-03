@@ -10,6 +10,7 @@ import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/Api
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { APP_NAME, APP_VERSION } from '../../../config';
+import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
 
 // Stream wrapper has outdated types
@@ -38,7 +39,7 @@ export default async function downloadBlock(
             abortController.signal.removeEventListener('abort', signalAbortHandle);
         };
 
-        return fetch(url, {
+        return fetch(replaceLocalURL(url), {
             signal: abortController.signal,
             method: 'get',
             credentials: 'omit',
