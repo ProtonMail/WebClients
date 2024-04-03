@@ -2,13 +2,13 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useConversationCounts } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import * as ipcHelpers from '@proton/shared/lib/desktop/ipcHelpers';
+import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
 
 import { useInboxDesktopBadgeCount } from './';
 
 jest.mock('@proton/components/hooks/useConversationCounts');
-jest.mock('@proton/shared/lib/desktop/ipcHelpers');
-const ipcHelpersMock = ipcHelpers as jest.MockedObject<typeof ipcHelpers>;
+jest.mock('@proton/shared/lib/helpers/desktop');
+const desktopHelpersMock = desktopHelpers as jest.MockedObject<typeof desktopHelpers>;
 
 declare const global: {
     ipcInboxMessageBroker?: any;
@@ -33,7 +33,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should not call when not on desktop', () => {
-        ipcHelpersMock.canInvokeInboxDesktopIPC = false;
+        desktopHelpersMock.isElectronApp = false;
         useConversationCountsMock.mockReturnValue([]);
 
         renderHook(() => useInboxDesktopBadgeCount());
@@ -41,7 +41,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should call with not call when no count', () => {
-        ipcHelpersMock.canInvokeInboxDesktopIPC = true;
+        desktopHelpersMock.isElectronApp = true;
         useConversationCountsMock.mockReturnValue([]);
 
         renderHook(() => useInboxDesktopBadgeCount());
@@ -49,7 +49,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should call with 1 when 1 unread', () => {
-        ipcHelpersMock.canInvokeInboxDesktopIPC = true;
+        desktopHelpersMock.isElectronApp = true;
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
 
         renderHook(() => useInboxDesktopBadgeCount());
@@ -57,7 +57,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should call with 100 when 100 unread', () => {
-        ipcHelpersMock.canInvokeInboxDesktopIPC = true;
+        desktopHelpersMock.isElectronApp = true;
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
 
         renderHook(() => useInboxDesktopBadgeCount());
