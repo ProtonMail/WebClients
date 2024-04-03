@@ -2,7 +2,11 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateTheme } from '@proton/shared/lib/api/settings';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import {
+    canGetInboxDesktopInfo,
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+} from '@proton/shared/lib/desktop/ipcHelpers';
 import { getIsDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -54,8 +58,8 @@ export const ThemeInjector = () => {
             if (isElectronApp) {
                 let electronAppTheme = defaultElectronAppTheme;
 
-                if (canInvokeInboxDesktopIPC) {
-                    electronAppTheme = window.ipcInboxMessageBroker!.getInfo('theme');
+                if (canGetInboxDesktopInfo && hasInboxDesktopFeature('ThemeSelection')) {
+                    electronAppTheme = getInboxDesktopInfo('theme');
                 }
 
                 theme = {

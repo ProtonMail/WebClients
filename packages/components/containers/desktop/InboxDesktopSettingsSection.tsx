@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Pill } from '@proton/atoms/Pill';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -39,8 +39,8 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
             return;
         }
 
-        if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker!.send('openExternal', value);
+        if (isElectronMail) {
+            invokeInboxDesktopIPC({ type: 'openExternal', payload: value });
         } else {
             window.open(value, '_self');
         }
@@ -66,9 +66,7 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
 const DownloadButton = ({ link }: { link?: string }) => {
     if (isElectronMail && link) {
         const handleClick = () => {
-            if (canInvokeInboxDesktopIPC) {
-                window.ipcInboxMessageBroker!.send('openExternal', link);
-            }
+            invokeInboxDesktopIPC({ type: 'openExternal', payload: link });
         };
 
         return <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>;

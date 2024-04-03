@@ -1,12 +1,8 @@
-import { canInvokeInboxDesktopIPC } from '../desktop/ipcHelpers';
-import { ThemeModeSetting, ThemeSetting } from '../themes/themes';
+import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
+import { ThemeModeSetting, ThemeSetting, electronAppTheme } from '../themes/themes';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from './desktop';
 
 export const updateElectronThemeModeClassnames = (theme: ThemeSetting) => {
-    if (!isElectronApp) {
-        return;
-    }
-
     const prefersDark =
         theme.Mode === ThemeModeSetting.Dark ||
         (theme.Mode === ThemeModeSetting.Auto && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -24,8 +20,10 @@ export const initElectronClassnames = () => {
     if (isElectronApp) {
         document.body.classList.add('is-electron');
 
-        if (canInvokeInboxDesktopIPC) {
-            updateElectronThemeModeClassnames(window.ipcInboxMessageBroker!.getInfo('theme'));
+        if (hasInboxDesktopFeature('ThemeSelection') && canGetInboxDesktopInfo) {
+            updateElectronThemeModeClassnames(getInboxDesktopInfo('theme'));
+        } else {
+            updateElectronThemeModeClassnames(electronAppTheme);
         }
     }
 

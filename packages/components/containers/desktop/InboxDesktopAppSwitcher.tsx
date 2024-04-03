@@ -3,7 +3,7 @@ import { Icon } from '@proton/components/components';
 import { useConfig } from '@proton/components/hooks';
 import { APPS, APP_NAMES, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes';
-import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -16,9 +16,7 @@ const InboxDesktopAppSwitcher = ({ appToLinkTo }: Props) => {
     const isAppCalendar = APP_NAME === APPS.PROTONCALENDAR || APPS.PROTONCALENDAR === appToLinkTo;
 
     const handleClick = (target: CHANGE_VIEW_TARGET) => {
-        if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker!.send('changeView', target);
-        }
+        invokeInboxDesktopIPC({ type: 'changeView', payload: target });
     };
 
     return (
