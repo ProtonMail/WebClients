@@ -8,6 +8,7 @@ import ThemeSyncModeDropdown from '@proton/components/containers/themes/ThemeSyn
 import { useEarlyAccess, useIsInboxElectronApp, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
@@ -41,10 +42,11 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
         void betaToggleWithLoading(run());
     };
 
+    const showThemeSelection = isElectron ? hasInboxDesktopFeature('ThemeSelection') : true;
+
     return (
         <>
-            {/* We hide the theme section in the electron app since theme are fixed */}
-            {!isElectron && (
+            {showThemeSelection && (
                 <DrawerAppSection className="pb-4">
                     <div>
                         {settings.Mode === ThemeModeSetting.Auto ? (
