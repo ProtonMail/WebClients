@@ -1,6 +1,10 @@
 import { ThemeSetting } from "../utils/themes";
 import { TrialStatus } from "../store/trialStore";
 
+export const DESKTOP_FEATURES = {
+    ThemeSelection: true,
+} as const;
+
 export type VIEW_TARGET = "mail" | "calendar" | "account";
 export type ElectronNotification = {
     title: string;
@@ -8,6 +12,11 @@ export type ElectronNotification = {
     app: VIEW_TARGET;
     elementID?: string;
     labelID?: string;
+};
+
+export type IPCHasFeatureMessage = {
+    feature: keyof typeof DESKTOP_FEATURES;
+    status: boolean;
 };
 
 export type IPCGetInfoMessage = { type: "theme"; result: ThemeSetting };

@@ -4,7 +4,7 @@ import { clearStorage } from "../utils/helpers";
 import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
-import { IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
+import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
 import { getTheme, setTheme } from "../utils/themes";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
@@ -12,6 +12,10 @@ function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdat
 }
 
 export const handleIPCCalls = () => {
+    ipcMain.on("hasFeature", (event: IpcMainEvent, message: keyof typeof DESKTOP_FEATURES) => {
+        event.returnValue = !!DESKTOP_FEATURES[message];
+    });
+
     ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCGetInfoMessage["type"]) => {
         switch (message) {
             case "theme":
