@@ -10,6 +10,7 @@ export type ElectronNotification = {
 };
 
 // This type must be updated in the Electron application as well
+export type IPCInboxGetInfoMessage = { type: 'theme'; result: ThemeSetting };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogout'; payload: undefined }
@@ -31,7 +32,9 @@ export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'
  * The object can be injected when used in specific clients to avoid adding it globally
  */
 export type IPCInboxMessageBroker = {
-    getTheme: () => ThemeSetting;
+    getInfo: <T extends IPCInboxGetInfoMessage['type']>(
+        type: T
+    ) => Extract<IPCInboxGetInfoMessage, { type: T }>['result'];
     send: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
         payload: Extract<IPCInboxClientUpdateMessage, { type: T }>['payload']
