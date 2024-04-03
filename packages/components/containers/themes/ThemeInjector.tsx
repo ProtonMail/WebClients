@@ -55,7 +55,7 @@ export const ThemeInjector = () => {
                 let electronAppTheme = defaultElectronAppTheme;
 
                 if (canInvokeInboxDesktopIPC) {
-                    electronAppTheme = window.ipcInboxMessageBroker!.getTheme();
+                    electronAppTheme = window.ipcInboxMessageBroker!.getInfo('theme');
                 }
 
                 theme = {
