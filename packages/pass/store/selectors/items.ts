@@ -266,10 +266,10 @@ const autosaveCandidateSelector = createSelector(
             selectItemsByDomain(domain, { protocol: null, isPrivate: false })(state),
         (_: State, { username }: SelectAutosaveCandidatesOptions) => username,
     ],
-    (subdomainItems, domainItems, username) =>
-        deduplicate(subdomainItems.concat(domainItems), itemEq).filter(
-            ({ data }) => deobfuscate(data.content.username) === username
-        )
+    (subdomainItems, domainItems, username) => {
+        const candidates = deduplicate(subdomainItems.concat(domainItems), itemEq);
+        return username ? candidates.filter(({ data }) => deobfuscate(data.content.username) === username) : candidates;
+    }
 );
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
