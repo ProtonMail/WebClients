@@ -34,9 +34,17 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     renewState?: Autopay;
     paymentMethodId?: string;
     onMethodAdded?: () => void;
+    enableRenewToggle?: boolean;
 }
 
-const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, onMethodAdded, ...rest }: Props) => {
+const EditCardModal = ({
+    card: existingCard,
+    renewState,
+    paymentMethodId,
+    onMethodAdded,
+    enableRenewToggle = true,
+    ...rest
+}: Props) => {
     const api = useApi();
     const [user] = useUser();
 
@@ -145,7 +153,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, onMeth
                     chargebeeCard={paymentFacade.chargebeeCard}
                 />
             )}
-            {formFullyLoaded && (
+            {enableRenewToggle && formFullyLoaded && (
                 <RenewToggle
                     loading={processing}
                     onChange={async () => {
