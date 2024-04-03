@@ -2,7 +2,7 @@ import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import type { UrlGroupValues } from '@proton/pass/types';
-import { duplicates } from '@proton/pass/utils/array/duplicates';
+import { duplicates } from '@proton/pass/utils/array/duplicate';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
