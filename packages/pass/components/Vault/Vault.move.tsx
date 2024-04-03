@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Alert } from '@proton/components/index';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { vaultMoveAllItemsIntent } from '@proton/pass/store/actions';
 import { type VaultShareItem } from '@proton/pass/store/reducers';
@@ -58,12 +60,17 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
                             onSubmit={pipe(moveItems.confirm, tap(onClose))}
                             submitText={c('Action').t`Move all items`}
                             title={c('Title').t`Move all items ?`}
-                            alertText={
-                                // translator: variables here are the names of the source and destination vault
-                                c('Info')
-                                    .t`Are you sure you want to move all items from "${fromVaultName}" to "${toVaultName}" ?`
-                            }
-                        />
+                        >
+                            <Card className="mb-2">{c('Info')
+                                .t`Moving an item to another vault will erase its history`}</Card>
+                            <Alert className="mb-4" type="info">
+                                {
+                                    // translator: variables here are the names of the source and destination vault
+                                    c('Info')
+                                        .t`Are you sure you want to move all items from "${fromVaultName}" to "${toVaultName}" ?`
+                                }
+                            </Alert>
+                        </ConfirmationModal>
                     );
                 }}
             </WithVault>
