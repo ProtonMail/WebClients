@@ -37,7 +37,7 @@ const createSession = () => {
 
     if (app.isPackaged) {
         // Use certificate pinning
-        secureSession.setCertificateVerifyProc(certificateVerifyProc);
+        if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
         // Allow cross-origin requests when fetching favicon blobs and similar from the API
         secureSession.webRequest.onHeadersReceived({ urls: [`${config.API_URL}/*`] }, (details, callback) => {
@@ -60,6 +60,8 @@ const createSession = () => {
                 return config.windowsClientID || config.clientID;
             case 'darwin':
                 return config.macosClientID || config.clientID;
+            case 'linux':
+                return config.linuxClientID || config.clientID;
             default:
                 return config.clientID;
         }

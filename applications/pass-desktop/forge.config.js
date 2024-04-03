@@ -4,6 +4,8 @@ const { WebpackPlugin } = require('@electron-forge/plugin-webpack');
 const { MakerSquirrel } = require('@electron-forge/maker-squirrel');
 const { MakerZIP } = require('@electron-forge/maker-zip');
 const { MakerDMG } = require('@electron-forge/maker-dmg');
+const { MakerDeb } = require('@electron-forge/maker-deb');
+const { MakerRpm } = require('@electron-forge/maker-rpm');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
@@ -17,7 +19,9 @@ const config = {
         icon: 'assets/logo',
         extraResource: 'assets',
         appBundleId: 'me.proton.pass.electron',
-        executableName: 'ProtonPass',
+        executableName: process.platform === 'win32' ? 'ProtonPass' : 'Proton Pass',
+        // required for debian, else MakerDeb will incorrectly use name from package.json
+        name: 'Proton Pass',
         appCategoryType: 'public.app-category.productivity',
         osxSign: {},
         osxNotarize: {
@@ -69,6 +73,29 @@ const config = {
             },
             ['darwin']
         ),
+        // Linux Debian
+        new MakerDeb({
+            name: 'proton-pass',
+            categories: ['Utility'],
+            productName: 'Proton Pass',
+            bin: 'Proton Pass',
+            genericName: 'Password Manager',
+            productDescription: 'Open-source and secure identity manager.',
+            homepage: 'https://proton.me/pass',
+            icon: path.join(__dirname, 'assets', 'logo.svg'),
+            maintainer: 'Proton',
+        }),
+        // Linux Fedora
+        new MakerRpm({
+            name: 'proton-pass',
+            categories: ['Utility'],
+            productName: 'Proton Pass',
+            bin: 'Proton Pass',
+            genericName: 'Password Manager',
+            productDescription: 'Open-source and secure identity manager.',
+            homepage: 'https://proton.me/pass',
+            icon: path.join(__dirname, 'assets', 'logo.svg'),
+        }),
     ],
     plugins: [
         new AutoUnpackNativesPlugin({}),
