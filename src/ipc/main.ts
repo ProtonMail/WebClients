@@ -1,10 +1,10 @@
-import { ipcMain, shell } from "electron";
+import { IpcMainEvent, ipcMain, shell } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
 import { refreshHiddenViews, setTrialEnded, updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import Logger from "electron-log";
-import { IPCClientUpdateMessage } from "./ipcConstants";
+import { IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
 import { getTheme, setTheme } from "../utils/themes";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
@@ -12,8 +12,15 @@ function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdat
 }
 
 export const handleIPCCalls = () => {
-    ipcMain.on("getTheme", (event) => {
-        event.returnValue = getTheme();
+    ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCGetInfoMessage["type"]) => {
+        switch (message) {
+            case "theme":
+                event.returnValue = getTheme();
+                break;
+            default:
+                Logger.error(`Invalid getInfo message: ${message}`);
+                break;
+        }
     });
 
     ipcMain.on("clientUpdate", (_e, message: unknown) => {

@@ -1,12 +1,11 @@
 import { contextBridge, ipcRenderer } from "electron";
 import Logger from "electron-log";
-import { IPCClientUpdateMessagePayload, IPCClientUpdateMessageType } from "./ipc/ipcConstants";
-import { ThemeSetting } from "./utils/themes";
+import { IPCClientUpdateMessagePayload, IPCClientUpdateMessageType, IPCGetInfoMessage } from "./ipc/ipcConstants";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
-    getTheme: (): ThemeSetting => {
-        Logger.info("Requesting theme from host");
-        return ipcRenderer.sendSync("getTheme");
+    getInfo: <T extends IPCGetInfoMessage["type"]>(type: T): Extract<IPCGetInfoMessage, { type: T }>["result"] => {
+        Logger.info(`Requesting info from host: ${type}`);
+        return ipcRenderer.sendSync("getInfo", type);
     },
 
     send: <T extends IPCClientUpdateMessageType>(

@@ -10,6 +10,8 @@ export type ElectronNotification = {
     labelID?: string;
 };
 
+export type IPCGetInfoMessage = { type: "theme"; result: ThemeSetting };
+
 export type IPCClientUpdateMessage =
     | { type: "updateNotification"; payload: number }
     | { type: "userLogout"; payload: undefined }
