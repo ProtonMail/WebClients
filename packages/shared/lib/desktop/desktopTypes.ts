@@ -10,7 +10,7 @@ export type ElectronNotification = {
 };
 
 // This type must be updated in the Electron application as well
-export type IPCInboxMessage =
+export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogout'; payload: undefined }
     | { type: 'clearAppData'; payload: undefined }
@@ -21,7 +21,7 @@ export type IPCInboxMessage =
     | { type: 'showNotification'; payload: ElectronNotification }
     | { type: 'updateLocale'; payload: string }
     | { type: 'setTheme'; payload: ThemeSetting };
-export type IPCInboxMessageType = IPCInboxMessage['type'];
+export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 /**
  * Electron injects an object in the window object
@@ -32,7 +32,10 @@ export type IPCInboxMessageType = IPCInboxMessage['type'];
  */
 export type IPCInboxMessageBroker = {
     getTheme: () => ThemeSetting;
-    send: <T extends IPCInboxMessageType>(type: T, payload: Extract<IPCInboxMessage, { type: T }>['payload']) => void;
+    send: <T extends IPCInboxClientUpdateMessageType>(
+        type: T,
+        payload: Extract<IPCInboxClientUpdateMessage, { type: T }>['payload']
+    ) => void;
 };
 
 export const END_OF_TRIAL_KEY = 'endOfTrial';
