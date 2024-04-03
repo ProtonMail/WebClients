@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isLoginItem, isPasskeyItem, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isLoginItem, isPasskeyItem, isPinned, isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import {
     filterItemsByShareId,
     filterItemsByType,
@@ -26,6 +26,7 @@ import type {
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
+import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -246,10 +247,8 @@ const autofillCandidatesSelector = createSelector(
                 sortOn: 'lastUseTime',
             })(state),
     ],
-    (domainMatches, subdomainMatches) => [
-        ...subdomainMatches /* push subdomain matches on top */,
-        ...domainMatches.filter(({ itemId }) => !subdomainMatches.some((item) => item.itemId === itemId)),
-    ]
+    /* push subdomain matches on top */
+    (domainMatches, subdomainMatches) => deduplicate(subdomainMatches.concat(domainMatches), itemEq)
 );
 
 export const selectAutofillCandidates = (options: SelectAutofillCandidatesOptions) => (state: State) => {
@@ -268,7 +267,9 @@ const autosaveCandidateSelector = createSelector(
         (_: State, { username }: SelectAutosaveCandidatesOptions) => username,
     ],
     (subdomainItems, domainItems, username) =>
-        [...subdomainItems, ...domainItems].filter(({ data }) => deobfuscate(data.content.username) === username)
+        deduplicate(subdomainItems.concat(domainItems), itemEq).filter(
+            ({ data }) => deobfuscate(data.content.username) === username
+        )
 );
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
