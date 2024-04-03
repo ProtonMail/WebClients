@@ -35,6 +35,10 @@ enum AccountFlag {
     ScimTenantCreation = 'ScimTenantCreation',
 }
 
+enum BridgeFeatureFlag {
+    InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
+}
+
 enum CalendarFeatureFlag {
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     // CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
@@ -58,6 +62,7 @@ enum MailFeatureFlag {
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
+    | `${BridgeFeatureFlag}`
     | `${CalendarFeatureFlag}`
     | `${DriveFeatureFlag}`
     | `${MailFeatureFlag}`;
