@@ -329,7 +329,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 
     // Electron follow system settings and only Snow and Carbon theme
     if (canInvokeInboxDesktopIPC) {
-        return window.ipcInboxMessageBroker!.getTheme();
+        return window.ipcInboxMessageBroker!.getInfo('theme');
     }
 
     return theme;

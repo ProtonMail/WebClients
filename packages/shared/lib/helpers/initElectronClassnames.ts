@@ -25,7 +25,7 @@ export const initElectronClassnames = () => {
         document.body.classList.add('is-electron');
 
         if (canInvokeInboxDesktopIPC) {
-            updateElectronThemeModeClassnames(window.ipcInboxMessageBroker!.getTheme());
+            updateElectronThemeModeClassnames(window.ipcInboxMessageBroker!.getInfo('theme'));
         }
     }
 
