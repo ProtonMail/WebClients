@@ -22,7 +22,12 @@ export const ListItem: FC<
     } & ListItemIconProps
 > = ({ onClick, className, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
     <DropdownMenuButton
-        className={clsx('pass-injected-dropdown--item text-left min-h-custom h-custom', subTheme, className)}
+        className={clsx(
+            'pass-injected-dropdown--item text-left',
+            autogrow ? 'min-h-custom' : 'h-custom',
+            subTheme,
+            className
+        )}
         style={autogrow ? { '--min-h-custom': `${LIST_ITEM_HEIGHT}rem` } : { '--h-custom': `${LIST_ITEM_HEIGHT}rem` }}
         onClick={onClick}
         disabled={disabled}
