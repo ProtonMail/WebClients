@@ -3,11 +3,11 @@ import store from 'proton-pass-extension/app/worker/store';
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import { selectAutosaveCandidate, selectAutosaveVault, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry, FormEntryStatus } from '@proton/pass/types';
 import { AutosaveType, WorkerMessageType } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -27,13 +27,17 @@ export const createAutoSaveService = () => {
 
         /* If we cannot find an entry which also matches the current submission's
          * password then we should prompt for update */
-        const match = candidates.filter((item) => deobfuscate(item.data.content.password) === submission.data.password);
-        const { itemId, shareId, data } = first(candidates)!;
-        const { name } = data.metadata;
+        const match = candidates.some((item) => deobfuscate(item.data.content.password) === submission.data.password);
 
-        return match.length > 0
+        return match
             ? { shouldPrompt: false }
-            : { shouldPrompt: true, data: { type: AutosaveType.UPDATE, selectedItem: { itemId, shareId }, name } };
+            : {
+                  shouldPrompt: true,
+                  data: {
+                      type: AutosaveType.UPDATE,
+                      candidates: candidates.map(intoSafeLoginItem),
+                  },
+              };
     };
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOSAVE_REQUEST, async ({ payload }) => {
@@ -71,8 +75,7 @@ export const createAutoSaveService = () => {
         }
 
         if (payload.type === AutosaveType.UPDATE) {
-            const { selectedItem } = payload;
-            const { shareId, itemId } = selectedItem;
+            const { shareId, itemId } = payload;
 
             const currentItem = selectItemByShareIdAndId<'login'>(shareId, itemId)(state);
             if (!currentItem) throw new Error(c('Error').t`Item does not exist`);
