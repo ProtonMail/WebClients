@@ -105,7 +105,6 @@ export interface SignupModel {
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;
     vpnServersCountData: VPNServersCountData;
-    offers: { [key: string]: boolean };
 }
 
 export class HumanVerificationError extends Error {
