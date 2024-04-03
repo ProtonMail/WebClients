@@ -4,23 +4,21 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { mailTrial2024Config } from '@proton/components/containers/offers/operations/mailTrial2024';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { BillingAddress } from '@proton/components/payments/core';
 import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import type { Feature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { getFeature } from '@proton/shared/lib/api/features';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
@@ -136,6 +134,8 @@ const SignupContainer = ({
     const history = useHistory();
 
     const ktActivation = useKTActivation();
+    const mailTrialOfferEnabled = useFlag('MailTrialOffer');
+
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
         toApp = APPS.PROTONMAIL;
@@ -273,7 +273,7 @@ const SignupContainer = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, referralData, Plans, freePlan, offers] = await Promise.all([
+            const [{ Domains: domains }, referralData, Plans, freePlan] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 referrer
                     ? await silentApi(checkReferrer(referrer))
@@ -293,11 +293,6 @@ const SignupContainer = ({
                     )
                 ).then(({ Plans }) => Plans),
                 getFreePlan({ api: silentApi }),
-                silentApi<{
-                    Feature: Feature<{}>;
-                }>(getFeature(FeatureCode.Offers))
-                    .then((result) => result?.Feature?.Value)
-                    .catch(() => ({})),
             ]);
 
             if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
@@ -314,7 +309,6 @@ const SignupContainer = ({
                 referralData,
                 subscriptionData,
                 inviteData: location.state?.invite,
-                offers,
             });
         };
 
@@ -787,9 +781,7 @@ const SignupContainer = ({
             )}
             {step === Upsell && (
                 <UpsellStep
-                    hasMailTrialUpsell={
-                        toApp === APPS.PROTONMAIL && !signupParameters.noPromo && !!model.offers[mailTrial2024Config.ID]
-                    }
+                    hasMailTrialUpsell={toApp === APPS.PROTONMAIL && !signupParameters.noPromo && mailTrialOfferEnabled}
                     freePlan={model.freePlan}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
