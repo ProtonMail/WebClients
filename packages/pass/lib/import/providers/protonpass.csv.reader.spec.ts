@@ -19,15 +19,17 @@ describe('Import Proton Pass CSV', () => {
     });
 
     it('should correctly parse items', async () => {
-        const [vaultData] = payload.vaults;
+        const [firstVault, secondVault] = payload.vaults;
 
-        expect(payload.vaults.length).toEqual(1);
-        expect(vaultData.name).not.toBeUndefined();
+        expect(payload.vaults.length).toEqual(2);
+        expect(firstVault.name).toEqual('Personal');
+        expect(secondVault.name).toEqual('Second vault');
 
-        const { items } = vaultData;
+        const { items: firstVaultItems } = firstVault;
+        const { items: secondVaultItems } = secondVault;
 
         /* Note */
-        const noteItem = items[0] as ItemImportIntent<'note'>;
+        const noteItem = firstVaultItems[0] as ItemImportIntent<'note'>;
         expect(noteItem.type).toEqual('note');
         expect(noteItem.metadata.name).toEqual('note title');
         expect(deobfuscate(noteItem.metadata.note)).toEqual('this is my note');
@@ -36,7 +38,7 @@ describe('Import Proton Pass CSV', () => {
         expect(noteItem.modifyTime).toEqual(1707735222);
 
         /* Login */
-        const loginItem = items[1] as ItemImportIntent<'login'>;
+        const loginItem = firstVaultItems[1] as ItemImportIntent<'login'>;
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('login title');
         expect(deobfuscate(loginItem.metadata.note)).toEqual('login note');
@@ -50,7 +52,7 @@ describe('Import Proton Pass CSV', () => {
         expect(loginItem.modifyTime).toEqual(1707735349);
 
         /* Credit Card */
-        const creditCardItem = items[2] as ItemImportIntent<'creditCard'>;
+        const creditCardItem = secondVaultItems[0] as ItemImportIntent<'creditCard'>;
         expect(creditCardItem.type).toEqual('creditCard');
         expect(creditCardItem.metadata.name).toEqual('credit card title');
         expect(deobfuscate(creditCardItem.metadata.note)).toEqual('credit card note');
