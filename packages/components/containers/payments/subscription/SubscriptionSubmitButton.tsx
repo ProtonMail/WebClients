@@ -2,14 +2,8 @@ import { c } from 'ttag';
 
 import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
-import {
-    ChargebeeEnabled,
-    Currency,
-    SubscriptionCheckResponse,
-    SubscriptionModel,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import { isTrialChargebeeUser } from '@proton/shared/lib/helpers/subscription';
+import { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton, useModalState } from '../../../components';
 import { ChargebeePaypalWrapper, ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
@@ -29,7 +23,6 @@ type Props = {
     disabled?: boolean;
     noPaymentNeeded?: boolean;
     subscription: SubscriptionModel;
-    user: UserModel;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -46,12 +39,11 @@ const SubscriptionSubmitButton = ({
     iframeHandles,
     noPaymentNeeded,
     subscription,
-    user,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
 
     if (noPaymentNeeded) {
-        if (user.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED && isTrial(subscription)) {
+        if (isTrialChargebeeUser(subscription)) {
             return (
                 <>
                     <PrimaryButton
