@@ -10,11 +10,12 @@ export type ElectronNotification = {
 };
 
 // This type must be updated in the Electron application as well
+export type IPCInboxDesktopFeature = 'ThemeSelection';
 export type IPCInboxGetInfoMessage = { type: 'theme'; result: ThemeSetting };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
-    | { type: 'userLogout'; payload: undefined }
-    | { type: 'clearAppData'; payload: undefined }
+    | { type: 'userLogout'; payload?: undefined }
+    | { type: 'clearAppData'; payload?: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
@@ -32,10 +33,11 @@ export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'
  * The object can be injected when used in specific clients to avoid adding it globally
  */
 export type IPCInboxMessageBroker = {
-    getInfo: <T extends IPCInboxGetInfoMessage['type']>(
+    hasFeature?: (feature: IPCInboxDesktopFeature) => boolean;
+    getInfo?: <T extends IPCInboxGetInfoMessage['type']>(
         type: T
     ) => Extract<IPCInboxGetInfoMessage, { type: T }>['result'];
-    send: <T extends IPCInboxClientUpdateMessageType>(
+    send?: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
         payload: Extract<IPCInboxClientUpdateMessage, { type: T }>['payload']
     ) => void;
