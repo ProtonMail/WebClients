@@ -195,6 +195,10 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, onMeth
             as="form"
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
+                // it handles the case when the EditCardModal is rendered as part of SubscriptionContainer.
+                // We need to prevent premature closing of the SubscriptionContainer by stopping the event propagation
+                // and subsequent handling
+                event.stopPropagation();
                 withProcessing(process()).catch(noop);
             }}
             {...rest}
