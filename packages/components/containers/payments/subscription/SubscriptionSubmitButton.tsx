@@ -62,7 +62,9 @@ const SubscriptionSubmitButton = ({
                     >
                         {c('Action').t`Add credit / debit card`}
                     </PrimaryButton>
-                    {renderCreditCardModal && <EditCardModal onMethodAdded={onDone} {...creditCardModalProps} />}
+                    {renderCreditCardModal && (
+                        <EditCardModal enableRenewToggle={false} onMethodAdded={onDone} {...creditCardModalProps} />
+                    )}
                 </>
             );
         }
