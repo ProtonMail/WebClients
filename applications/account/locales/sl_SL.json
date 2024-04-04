@@ -978,10 +978,10 @@
         "Odkleni"
       ],
       "Unlock Breach Report": [
-        "Omogočite poročilo o vdoru v podatke"
+        "Omogočite poročilo o uhajanju podatkov"
       ],
       "Unlock breach reports": [
-        "Omogočite poročila o vdorih v podatke"
+        "Omogočite poročila o uhajanju podatkov"
       ],
       "Unlock data": [
         "Odkleni podatke"
@@ -1054,6 +1054,9 @@
       ],
       "View": [
         "Pogled"
+      ],
+      "View all reports": [
+        "Prikaži vsa poročila"
       ],
       "View invoice": [
         "Ogled računa"
@@ -6400,7 +6403,7 @@
         "Prepreči, da pošiljatelji vidijo, če in kdaj ste odprli sporočilo."
       ],
       "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Opozorila o vdorih v podatke temeljijo na lastniških zbirkah podatkov ${ BRAND_NAME }, javno dostopnih zbirkah podatkov in podatkih družbe Constella Intelligence. ${ dataBreachLink }"
+        "Opozorila o uhajanju podatkov temeljijo na lastniških zbirkah podatkov ${ BRAND_NAME }, javno dostopnih zbirkah podatkov in podatkih družbe Constella Intelligence. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
@@ -7134,6 +7137,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "V vaši organizaciji obstajajo drugi skrbniki, vi pa ste odgovorni za obveščanje o novih gesel zanje."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Drugi uporabniki v vaši organizaciji bodo videli, da so vaši časovni intervali zasedeni. Informacije o dogodku se ne delijo."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastarela datoteka za obnovitev. Posodobite jo, da si zagotovite dostop do vaših podatkov."
       ],
@@ -7822,7 +7828,7 @@
         "Uporabite ${ VPN_APP_NAME } z vključenim NetShield za zaščito pred lažnim predstavljanjem in zlonamerno programsko opremo"
       ],
       "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Za prijavo v spletne storitve uporabljajte vzdevke. S tem zaščitite svoj pravi e-poštni naslov in identiteto ter omejite škodo v primeru vdora v podatke."
+        "Za prijavo v spletne storitve uporabljajte vzdevke. S tem zaščitite svoj pravi e-poštni naslov in identiteto ter omejite škodo v primeru uhajanja podatkov."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Uporabi najboljši strežnik glede na trenutno obremenitev in položaj: ${ formattedBestServerName }."
@@ -7885,7 +7891,7 @@
         "Opozorilo: izbris je trajen. S tem se odstrani tudi dostop do vseh povezanih storitev in izbrišejo vsi vaši stiki."
       ],
       "Ways you can minimize your breach risks": [
-        "Načini za zmanjšanje možnosti vdorov v podatke"
+        "Načini za zmanjšanje možnosti uhajanja podatkov"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Svetujemo vam, da če je le mogoče, uporabljate uradne aplikacije ${ VPN_APP_NAME }."
@@ -8725,6 +8731,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
+      "Access to my events": [
+        "Dostop do mojih dogodkov"
+      ],
       "Account storage": [
         "Shramba računa"
       ],
@@ -9418,6 +9427,9 @@
       "Send in": [
         "Pošlji v"
       ],
+      "Show others when I'm busy": [
+        "Pokaži drugim, ko sem zaseden"
+      ],
       "Show secondary time zone": [
         "Prikaži sekundarni časovni pas"
       ],
@@ -9915,6 +9927,27 @@
       ],
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
+      ],
+      "Upgrade to restore full access": [
+        "Nadgradite in obnovite polni dostop"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } je poln. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } je poln. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Vaš račun se lahko izbriše. Če se želite izogniti izgubi podatkov, prosite skrbnika za nadgradnjo. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Shramba je polna. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Shramba je polna. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
     },
     "Log preference": {
@@ -12244,6 +12277,9 @@
       "MM/YY": [
         "MM/LL"
       ],
+      "Processing payment": [
+        "Plačilo v teku"
+      ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
       ]
@@ -12385,6 +12421,9 @@
       ],
       "Select a reason": [
         "Izberite razlog"
+      ],
+      "Select state": [
+        "Izberite stanje"
       ],
       "Text": [
         "Besedilo"
@@ -14242,16 +14281,16 @@
         "Cikel obračunavanja"
       ],
       "Breach Alerts": [
-        "Opozorila o vdorih v podatke"
+        "Opozorila o uhajanju podatkov"
       ],
       "Breach Date": [
-        "Datum vdora v podatke"
+        "Datum uhajanja podatkov"
       ],
       "Breach Information": [
-        "informacije o vdoru v podatke"
+        "Informacije o uhajanju podatkov"
       ],
       "Breach Size": [
-        "Obseg vdora v podatke"
+        "Obseg uhajanja podatkov"
       ],
       "Bridge for ${ platform }": [
         "Prehod za ${ platform }"
@@ -14752,7 +14791,7 @@
         "Nočna tema"
       ],
       "No account information was found in any data breaches": [
-        "Vaši podatki niso bili izpostavljeni nobenemu vdoru v podatke"
+        "Vaši podatki niso bili izpostavljeni nobenemu uhajanju podatkov"
       ],
       "No recovery method": [
         "Ni načina obnovitve"
