@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Δεν ήταν δυνατή η επίλυση μελών κοινής χρήσης"
       ],
+      "Could not validate addresses at the moment.": [
+        "Δεν ήταν δυνατή η επικύρωση διευθύνσεων αυτήν τη στιγμή."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Λείπει το αρχείο CSV αναμενόμενες κεφαλίδες: ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "Αποτυχία διαγραφής επιλεγμένων στοιχείων."
+      ],
+      "Failed to edit organization settings": [
+        "Αποτυχία επεξεργασίας ρυθμίσεων οργανισμού"
       ],
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
@@ -862,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "Το ${ PASS_APP_NAME } θα σας ζητήσει να αποθηκεύσετε ή να ενημερώσετε διαπιστευτήρια."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } θα προτείνει έλεγχο ταυτότητας χρησιμοποιώντας αποθηκευμένα κλειδιά πρόσβασης"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "Το ${ PASS_APP_NAME } θα προτείνει τη δημιουργία ψευδώνυμου ηλεκτρονικού ταχυδρομείου σε φόρμες εγγραφής."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "Το ${ PASS_APP_NAME } θα προτείνει τη δημιουργία ισχυρών κωδικών πρόσβασης σε φόρμες εγγραφής."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } θα προτείνει την αποθήκευση κλειδιών πρόσβασης."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } ημέρα απομένει",
@@ -931,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής ταυτότητας 2FA"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Από προεπιλογή, τα μέλη της ομάδας μπορούν να εξάγουν κρύπτες μόνο όπου είναι οι κάτοχοι. Εάν αυτή η επιλογή είναι ενεργοποιημένη, δε θα μπορούν να εξάγουν δεδομένα"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Μπορεί να δημιουργήσει, επεξεργαστεί, διαγράψει και εξάγει στοιχεία σε αυτήν την κρύπτη."
@@ -1154,6 +1169,9 @@
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Επεκτάσεις\""
       ],
+      "Organization settings successfully updated": [
+        "Οι ρυθμίσεις οργανισμού ενημερώθηκαν με επιτυχία"
+      ],
       "Owner": [
         "Ιδιοκτήτης"
       ],
@@ -1287,6 +1305,9 @@
       "Syncing your vaults…": [
         "Συγχρονισμός των κρυπτών σας..."
       ],
+      "Team members can only share vaults within organization": [
+        "Τα μέλη της ομάδας μπορούν να κάνουν κοινή χρήση κρυπτών μόνο εντός του οργανισμού"
+      ],
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
       ],
@@ -1311,6 +1332,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
+      ],
+      "This setting is disabled on the organization level": [
+        "Αυτή η ρύθμιση είναι απενεργοποιημένη σε επίπεδο οργανισμού"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτή η κρύπτη δεν είναι προς το παρόν κοινόχρηστη με κανέναν. Προσκαλέστε άτομα να τη μοιράστε με άλλους."
@@ -1344,6 +1368,9 @@
       ],
       "Update login": [
         "Ενημέρωση διαπιστευτηρίων"
+      ],
+      "Updating organization settings": [
+        "Ενημέρωση ρυθμίσεων οργανισμού"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Αναβάθμιση ${ PASS_APP_NAME }"
@@ -1494,6 +1521,9 @@
       "Application logs": [
         "Αρχείο καταγραφών"
       ],
+      "Authenticate with passkeys": [
+        "Έλεγχος ταυτότητας με κλειδιά πρόσβασης"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Αυτόματο κλείδωμα ${ PASS_APP_NAME }"
       ],
@@ -1554,6 +1584,12 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
+      "Disable data export for team members": [
+        "Απενεργοποίηση εξαγωγής δεδομένων για μέλη της ομάδας"
+      ],
+      "Disable sharing outside the organization": [
+        "Απενεργοποίηση κοινής χρήσης εκτός του οργανισμού"
+      ],
       "Display": [
         "Προβολή"
       ],
@@ -1580,6 +1616,9 @@
       ],
       "Export": [
         "Εξαγωγή"
+      ],
+      "Exporting policy": [
+        "Εξαγωγική πολιτικής"
       ],
       "Field name": [
         "Όνομα πεδίου"
@@ -1713,8 +1752,14 @@
       "Oldest to newest": [
         "Από το παλαιότερο στο νεότερο"
       ],
+      "Organization": [
+        "Οργανισμός"
+      ],
       "Passkey": [
         "Κλειδί πρόσβασης"
+      ],
+      "Passkeys": [
+        "Κλειδιά πρόσβασης"
       ],
       "Passphrase": [
         "Συνθηματικό"
@@ -1758,6 +1803,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Save passkeys": [
+        "Αποθήκευση κλειδιών πρόσβασης"
+      ],
       "Security": [
         "Ασφάλεια"
       ],
@@ -1784,6 +1832,9 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
+      ],
+      "Sharing policy": [
+        "Πολιτική κοινής χρήσης"
       ],
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
@@ -2271,6 +2322,9 @@
       ],
       "Invalid email addresses.": [
         "Μη έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Δεν επιτρέπεται η πρόσκληση διευθύνσεων ηλεκτρονικού ταχυδρομείου εκτός οργανισμού."
       ],
       "item was imported without custom fields": [
         "στοιχείο εισήχθη χωρίς προσαρμοσμένα πεδία"
