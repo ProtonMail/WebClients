@@ -589,6 +589,7 @@ const SingleSignupContainerV2 = ({
                     planParameters,
                     signupParameters,
                     options: {
+                        plansMap: plansMap,
                         planIDs: planParameters.planIDs,
                         currency,
                         cycle,
@@ -771,6 +772,7 @@ const SingleSignupContainerV2 = ({
                 api: silentApi,
                 paymentsApi,
                 options: {
+                    plansMap: model.plansMap,
                     cycle,
                     currency: model.subscriptionData.currency,
                     planIDs,
@@ -838,6 +840,7 @@ const SingleSignupContainerV2 = ({
                 planParameters: model.planParameters!,
                 signupParameters,
                 options: {
+                    plansMap: model.plansMap,
                     cycle: model.subscriptionData.cycle,
                     currency: model.subscriptionData.currency,
                     planIDs: model.subscriptionData.planIDs,
