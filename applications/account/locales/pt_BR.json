@@ -1246,7 +1246,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay } caixa de entrada"
+        "Caixa de entrada de ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 rastreadores removidos"
@@ -1486,7 +1486,7 @@
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+        "Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Proteja seus e-mails e sua agenda com criptografia de ponta a ponta. Inclui compatibilidade para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
@@ -5289,7 +5289,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Encaminhar automaticamente"
+        "Encaminhe automaticamente"
       ],
       "Gmail messages to your inbox": [
         "Mensagens do Gmail para sua caixa de entrada"
@@ -6308,7 +6308,7 @@
         "Centralizar"
       ],
       "Change your password": [
-        "Mudar sua senha"
+        "Alterar sua senha"
       ],
       "Check the status of imports and forwarding.": [
         "Verificar o status das importações e encaminhamento."
@@ -6890,7 +6890,7 @@
         "MM/AA"
       ],
       "Monitor accounts": [
-        "Monitorar contas"
+        "Monitor de contas"
       ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
@@ -9755,7 +9755,7 @@
         "faça upgrade para mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Atualizar para restaurar o acesso total"
+        "Faça upgrade para restaurar o acesso total"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Seu ${ driveStorage } está cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ cta }."
@@ -12035,6 +12035,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Processing payment": [
+        "Processando pagamento"
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
