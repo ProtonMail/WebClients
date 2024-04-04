@@ -252,11 +252,11 @@ export const getOptimisticCheckResult = ({
     priceType,
 }: {
     cycle: CYCLE;
-    planIDs: PlanIDs;
+    planIDs: PlanIDs | undefined;
     plansMap: PlansMap;
     priceType?: PriceType;
 }): RequiredCheckResponse => {
-    const { amount } = Object.entries(planIDs).reduce(
+    const { amount } = Object.entries(planIDs || {}).reduce(
         (acc, [planName, quantity]) => {
             const plan = plansMap?.[planName as keyof typeof plansMap];
             const price = getOverriddenPricePerCycle(plan, cycle, priceType);
