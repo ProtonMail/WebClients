@@ -2,7 +2,7 @@ import type { Runtime } from 'webextension-polyfill';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, MaybeNull } from '@proton/pass/types';
+import type { AppState, FormCredentials, MaybeNull } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
@@ -79,7 +79,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownActions }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
     | { type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }
-    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: { username: string; password: string } }
+    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: FormCredentials }
     | { type: IFrameMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
     | { type: IFrameMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
     | { type: IFrameMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }

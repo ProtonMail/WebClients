@@ -78,7 +78,17 @@ const getSettings =
                         label: c('Label').t`Prompt for auto-save`,
                         description: c('Info').t`${PASS_APP_NAME} will prompt you to save or update credentials.`,
                         checked: settings.autosave.prompt,
-                        onChange: (checked) => onSettingsUpdate({ autosave: { prompt: checked } }),
+                        onChange: (checked) =>
+                            onSettingsUpdate({
+                                autosave: { prompt: checked, ...(!checked ? { passwordSuggest: false } : {}) },
+                            }),
+                    },
+                    {
+                        label: c('Label').t`Prompt for auto-save when generating passwords`,
+                        description: c('Info')
+                            .t`${PASS_APP_NAME} will prompt you as soon as generated passwords are autofilled.`,
+                        checked: settings.autosave.prompt && settings.autosave.passwordSuggest,
+                        onChange: (checked) => onSettingsUpdate({ autosave: { passwordSuggest: checked } }),
                     },
                 ],
                 extra: (
