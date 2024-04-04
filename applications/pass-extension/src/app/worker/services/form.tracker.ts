@@ -1,28 +1,16 @@
-import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutosavePrompt } from '@proton/pass/types';
+import { getFormId, isFormEntryCommitted } from 'proton-pass-extension/lib/utils/form-entry';
+
+import type { FormEntry, FormEntryBase, FormIdentifier, Maybe, TabId } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { requestHasBodyFormData } from '@proton/pass/utils/requests';
 import { parseSender } from '@proton/pass/utils/url/parser';
 
-import { isFormEntryCommittable, isFormEntryCommitted } from '../../../lib/utils/form-entry';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import { createMainFrameRequestTracker } from './main-frame.tracker';
 import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
-
-const isPartialFormData = ({ type, data }: Pick<FormEntry, 'data' | 'type'>): boolean => {
-    switch (type) {
-        case 'login':
-        case 'register': {
-            return !(data.username?.trim() && data.password?.trim());
-        }
-        default:
-            return false;
-    }
-};
-
-const getFormId = (tabId: TabId, domain: string): FormIdentifier => `${tabId}:${domain}`;
 
 export const createFormTrackerService = () => {
     const submissions: Map<FormIdentifier, FormEntry> = new Map();
@@ -41,7 +29,7 @@ export const createFormTrackerService = () => {
         }
     };
 
-    const stage = (tabId: TabId, submission: Omit<FormEntry, 'status' | 'partial'>, reason: string): FormEntry => {
+    const stage = (tabId: TabId, submission: FormEntryBase, reason: string): FormEntry => {
         logger.info(`[FormTracker::Stage]: on tab ${tabId} for domain "${submission.domain}" {${reason}}`);
 
         const formId = getFormId(tabId, submission.domain);
@@ -50,18 +38,12 @@ export const createFormTrackerService = () => {
         if (pending !== undefined && pending.status === FormEntryStatus.STAGING) {
             /* do not override empty values when merging in order to properly
              * support multi-step forms which may have partial data on each step */
-            const update = merge(pending, { ...submission, status: FormEntryStatus.STAGING }, { excludeEmpty: true });
-            const staging = merge(update, { partial: isPartialFormData(update) });
-
+            const staging = merge(pending, { ...submission, status: FormEntryStatus.STAGING }, { excludeEmpty: true });
             submissions.set(formId, staging);
             return staging;
         }
 
-        const staging = merge(submission, {
-            status: FormEntryStatus.STAGING,
-            partial: isPartialFormData(submission),
-        }) as FormEntry;
-
+        const staging = merge(submission, { status: FormEntryStatus.STAGING });
         submissions.set(formId, staging);
         return staging;
     };
@@ -72,12 +54,9 @@ export const createFormTrackerService = () => {
 
         if (pending !== undefined && pending.status === FormEntryStatus.STAGING) {
             logger.info(`[FormTracker::Commit] on tab ${tabId} for domain "${domain}" {${reason}}`);
-            const commit = merge(pending, { status: FormEntryStatus.COMMITTED });
-
-            if (isFormEntryCommittable(commit)) {
-                submissions.set(formId, commit);
-                return commit;
-            }
+            const commit = merge(pending, { status: FormEntryStatus.COMMITTED as const });
+            submissions.set(formId, commit);
+            return commit;
         }
     };
 
@@ -114,20 +93,11 @@ export const createFormTrackerService = () => {
 
             if (ctx.getState().loggedIn) {
                 const { tabId, url } = parseSender(sender);
+                const { domain, subdomain, protocol: scheme } = url;
+                const staged = stage(tabId, { domain, subdomain, scheme, type, data }, payload.reason);
+                const autosave = ctx.service.autosave.shouldPrompt(staged);
 
-                return {
-                    staged: stage(
-                        tabId,
-                        {
-                            domain: url.domain,
-                            subdomain: url.subdomain,
-                            scheme: url.protocol,
-                            type,
-                            data,
-                        },
-                        payload.reason
-                    ),
-                };
+                return { submission: merge(staged, { autosave }) };
             }
 
             throw new Error('Cannot stage submission while logged out');
@@ -161,10 +131,10 @@ export const createFormTrackerService = () => {
                         const autosave = ctx.service.autosave.shouldPrompt(committed);
 
                         return autosave.shouldPrompt
-                            ? { committed: merge(committed, { autosave }) }
+                            ? { submission: merge(committed, { autosave }) }
                             : (() => {
                                   stash(tabId, url.domain, 'PROMPT_IGNORE');
-                                  return { committed: undefined };
+                                  return { submission: null };
                               })();
                     }
 
@@ -189,17 +159,17 @@ export const createFormTrackerService = () => {
                     return {
                         submission:
                             submission !== undefined
-                                ? (merge(submission, {
+                                ? merge(submission, {
                                       autosave: isCommitted
                                           ? ctx.service.autosave.shouldPrompt(submission)
-                                          : { shouldPrompt: false },
-                                  }) as WithAutosavePrompt<FormEntry>)
-                                : submission,
+                                          : { shouldPrompt: false as const },
+                                  })
+                                : null,
                     };
                 }
             }
 
-            return { submission: undefined };
+            return { submission: null };
         })
     );
 
