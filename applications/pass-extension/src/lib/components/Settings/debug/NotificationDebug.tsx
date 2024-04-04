@@ -11,7 +11,7 @@ import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { selectItemsByType } from '@proton/pass/store/selectors';
-import { AppStatus, AutosaveType, FormEntryStatus } from '@proton/pass/types';
+import { AppStatus, AutosaveMode } from '@proton/pass/types';
 
 import { MockIFrameContainer } from './MockIFrameContainer';
 
@@ -35,20 +35,11 @@ export const NotificationDebug: FC = () => {
                     height={NOTIFICATION_HEIGHT}
                     payload={{
                         action: NotificationAction.AUTOSAVE,
-                        submission: {
-                            status: FormEntryStatus.COMMITTED,
+                        data: {
                             domain: 'proton.me',
-                            subdomain: null,
-                            type: 'login',
-                            partial: false,
-                            autosave: {
-                                shouldPrompt: true,
-                                data: { type: AutosaveType.NEW },
-                            },
-                            data: {
-                                username: 'nobody@proton.me',
-                                password: 'proton123',
-                            },
+                            type: AutosaveMode.NEW,
+                            username: 'nobody@proton.me',
+                            password: 'proton123',
                         },
                     }}
                 >
@@ -60,30 +51,19 @@ export const NotificationDebug: FC = () => {
                     height={NOTIFICATION_HEIGHT}
                     payload={{
                         action: NotificationAction.AUTOSAVE,
-                        submission: {
-                            status: FormEntryStatus.COMMITTED,
+                        data: {
                             domain: 'netflix.com',
-                            subdomain: null,
-                            type: 'login',
-                            partial: false,
-                            autosave: {
-                                shouldPrompt: true,
-                                data: {
-                                    type: AutosaveType.UPDATE,
-                                    candidates: [
-                                        {
-                                            itemId: 'test-itemId',
-                                            shareId: 'test-shareId',
-                                            name: 'netflix.com',
-                                            username: 'john@proton.me',
-                                        },
-                                    ],
+                            type: AutosaveMode.UPDATE,
+                            username: 'nobody@proton.me',
+                            password: 'password',
+                            candidates: [
+                                {
+                                    itemId: 'test-itemId',
+                                    shareId: 'test-shareId',
+                                    name: 'netflix.com',
+                                    username: 'john@proton.me',
                                 },
-                            },
-                            data: {
-                                username: 'nobody@proton.me',
-                                password: 'password',
-                            },
+                            ],
                         },
                     }}
                 >
@@ -95,38 +75,27 @@ export const NotificationDebug: FC = () => {
                     height={NOTIFICATION_HEIGHT}
                     payload={{
                         action: NotificationAction.AUTOSAVE,
-                        submission: {
-                            status: FormEntryStatus.COMMITTED,
+                        data: {
                             domain: 'netflix.com',
-                            subdomain: null,
-                            type: 'login',
-                            partial: false,
-                            autosave: {
-                                shouldPrompt: true,
-                                data: {
-                                    type: AutosaveType.UPDATE,
-                                    candidates: [
-                                        {
-                                            itemId: 'test-itemId',
-                                            shareId: 'test-shareId',
-                                            name: 'Netflix family',
-                                            username: 'john@proton.me',
-                                            url: 'netflix.com',
-                                        },
-                                        {
-                                            itemId: 'test-itemId2',
-                                            shareId: 'test-shareId2',
-                                            name: 'Netflix Oscar',
-                                            username: '',
-                                            url: 'netflix.com',
-                                        },
-                                    ],
+                            type: AutosaveMode.UPDATE,
+                            candidates: [
+                                {
+                                    itemId: 'test-itemId',
+                                    shareId: 'test-shareId',
+                                    name: 'Netflix family',
+                                    username: 'john@proton.me',
+                                    url: 'netflix.com',
                                 },
-                            },
-                            data: {
-                                username: 'nobody@proton.me',
-                                password: 'password',
-                            },
+                                {
+                                    itemId: 'test-itemId2',
+                                    shareId: 'test-shareId2',
+                                    name: 'Netflix Oscar',
+                                    username: '',
+                                    url: 'netflix.com',
+                                },
+                            ],
+                            username: 'nobody@proton.me',
+                            password: 'password',
                         },
                     }}
                 >

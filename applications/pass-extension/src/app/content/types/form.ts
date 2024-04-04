@@ -1,7 +1,7 @@
 import { type AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
 
 import type { FieldType, FormType } from '@proton/pass/fathom';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { AutosaveFormEntry, Maybe, MaybeNull } from '@proton/pass/types';
 
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
@@ -62,7 +62,7 @@ export type FormTrackerState = { isSubmitting: boolean };
 
 export interface FormTracker {
     detach: () => void;
-    reconciliate: () => void;
-    submit: () => void;
     getState: () => FormTrackerState;
+    reconciliate: () => void;
+    submit: () => Promise<MaybeNull<AutosaveFormEntry>>;
 }

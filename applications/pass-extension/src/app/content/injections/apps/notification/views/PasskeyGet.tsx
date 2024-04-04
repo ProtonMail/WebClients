@@ -114,7 +114,7 @@ export const PasskeyGet: FC<Props> = (props) => {
             />
 
             <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
-                <div className="shrink-0 py-1 px-2 text-sm">{c('Info')
+                <div className="shrink-0 px-1 text-sm">{c('Info')
                     .t`Choose a saved passkey to sign-in to ${domain}`}</div>
                 <WithPinUnlock>
                     {(locked, input) =>
@@ -136,7 +136,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                 </WithPinUnlock>
             </div>
 
-            <div className="shrink-0 py-1 px-2 text-xs color-weak">{c('Info')
+            <div className="shrink-0 p-1 text-xs color-weak">{c('Info')
                 .t`Close this window in order to use a security key or another passkey.`}</div>
         </div>
     );

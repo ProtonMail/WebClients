@@ -30,7 +30,7 @@ import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { MaybeNull, SafeLoginItem, SelectedItem } from '@proton/pass/types';
-import { AutosaveType, WorkerMessageType } from '@proton/pass/types';
+import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { throwError } from '@proton/pass/utils/fp/throw';
@@ -78,14 +78,14 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
 
                     const { response } = result;
                     const passkey = sanitizePasskey(response);
-                    const base = { type: AutosaveType.UPDATE, name, username, password: '', domain, passkey };
+                    const base = { type: AutosaveMode.UPDATE, name, username, password: '', domain, passkey };
 
                     await sendMessage.on(
                         contentScriptMessage({
                             type: WorkerMessageType.AUTOSAVE_REQUEST,
                             payload: selectedItem
-                                ? { ...base, ...selectedItem, type: AutosaveType.UPDATE }
-                                : { ...base, type: AutosaveType.NEW },
+                                ? { ...base, ...selectedItem, type: AutosaveMode.UPDATE }
+                                : { ...base, type: AutosaveMode.NEW },
                         }),
                         (res) => res.type === 'error' && throwError({ message: res.error })
                     );
@@ -194,7 +194,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                     </>
                 )}
             </Form>
-            <div className="shrink-0 flex justify-space-between gap-3">
+            <div className="shrink-0 flex justify-space-between">
                 <Button
                     pill
                     color="norm"
@@ -233,7 +233,7 @@ export const PasskeyCreate: FC<Props> = (props) => {
                     {(locked, input) =>
                         locked ? (
                             <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
-                                <div className="shrink-0 py-1 px-2">{`${c('Label').t`Passkey`} • ${domain}`}</div>
+                                <div className="shrink-0 px-1">{`${c('Label').t`Passkey`} • ${domain}`}</div>
 
                                 <Card className="flex flex-auto">
                                     <div className="flex flex-column justify-center items-center gap-2 mb-2">
@@ -246,7 +246,7 @@ export const PasskeyCreate: FC<Props> = (props) => {
                                     {input}
                                 </Card>
 
-                                <div className="shrink-0 py-1 px-2 text-xs color-weak">{c('Info')
+                                <div className="shrink-0 p-1 text-xs color-weak">{c('Info')
                                     .t`Close this window in order to use another passkey manager.`}</div>
                             </div>
                         ) : (
