@@ -450,7 +450,7 @@
         "Afficher les journaux de l'application"
       ],
       "View history": [
-        "Voir l'historique"
+        "Afficher l'historique"
       ],
       "View item history": [
         "Afficher l'historique de l'élément"
@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Impossible de définir les membres du partage"
       ],
+      "Could not validate addresses at the moment.": [
+        "Les adresses ne peuvent être validées pour le moment."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Le fichier CSV ne contient pas les en-têtes nécessaires : ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "Les éléments sélectionnés n'ont pas été supprimés."
+      ],
+      "Failed to edit organization settings": [
+        "La modification des paramètres de votre organisation n'a pas abouti."
       ],
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
@@ -862,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vous invitera à enregistrer ou à mettre à jour vos identifiants."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } suggérera de vous authentifier en utilisant les clés d'authentifications enregistrées."
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } proposera de créer un alias d'adresse e-mail dans les formulaires d'inscription."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } proposera de créer des mots de passe forts dans les formulaires d'inscription."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } suggérera de sauvegarder les clés d'authentification."
       ],
       "${ trialDaysLeft } day left": [
         "Il reste ${ trialDaysLeft } jour.",
@@ -931,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "Authentification A2F intégrée"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Par défaut, les membres sont autorisés à partager les coffres-forts dont ils sont propriétaires. L'activation de cette option les empêchera d'exporter leurs informations."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
@@ -1154,6 +1169,9 @@
       "Open the Extensions menu": [
         "Ouvrez le menu des extensions"
       ],
+      "Organization settings successfully updated": [
+        "Les paramètres d'organisation ont été modifiés."
+      ],
       "Owner": [
         "Propriétaire"
       ],
@@ -1287,6 +1305,9 @@
       "Syncing your vaults…": [
         "Synchronisation de vos coffres-forts en cours"
       ],
+      "Team members can only share vaults within organization": [
+        "Les membres sont autorisés à partager les coffres-forts uniquement au sein de l'organisation"
+      ],
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
       ],
@@ -1311,6 +1332,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Cette exportation ne sera pas chiffrée et toute personne ayant accès au fichier exporté pourra voir vos mots de passe. Pour des raisons de sécurité, supprimez ce fichier après l'avoir utilisé."
+      ],
+      "This setting is disabled on the organization level": [
+        "Ce paramètre est désactivé pour l'organisation."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
@@ -1344,6 +1368,9 @@
       ],
       "Update login": [
         "Mettre à jour l'identifiant"
+      ],
+      "Updating organization settings": [
+        "Mise à jour des paramètres de l’organisation"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Mettre à jour ${ PASS_APP_NAME }"
@@ -1494,6 +1521,9 @@
       "Application logs": [
         "Journaux de l'application"
       ],
+      "Authenticate with passkeys": [
+        "Authentifier avec des clés d'authentifications"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Verrouillage automatique de ${ PASS_APP_NAME }"
       ],
@@ -1554,6 +1584,12 @@
       "Created": [
         "Créé"
       ],
+      "Disable data export for team members": [
+        "Désactiver l'exportation d'information pour les membres"
+      ],
+      "Disable sharing outside the organization": [
+        "Désactiver le partage en dehors de l'organisation"
+      ],
       "Display": [
         "Affichage"
       ],
@@ -1580,6 +1616,9 @@
       ],
       "Export": [
         "Exportation"
+      ],
+      "Exporting policy": [
+        "Règle d'exportation"
       ],
       "Field name": [
         "Nom du champ"
@@ -1793,6 +1832,9 @@
       ],
       "Settings": [
         "Paramètres"
+      ],
+      "Sharing policy": [
+        "Règle de partage"
       ],
       "Show website favicons": [
         "Afficher les favicônes des sites internet"
@@ -2280,6 +2322,9 @@
       ],
       "Invalid email addresses.": [
         "Les adresses électroniques ne sont pas valides."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Les invitations d'adresses e-mail en dehors de l'organisation ne sont pas autorisées."
       ],
       "item was imported without custom fields": [
         "L'élément a été importé sans les champs personnalisés."

@@ -1248,6 +1248,9 @@
       "Save passkey": [
         "Guardar clave de acceso"
       ],
+      "Select an existing login item to update.": [
+        "Seleccione un elemento de inicio de sesión existente para actualizar."
+      ],
       "Select an existing login or create a new one.": [
         "Seleccione un inicio de sesión existente o cree uno."
       ],
@@ -1323,6 +1326,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",
         "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
+      ],
+      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "El elemento de inicio de sesión para \"${ domain }\" será actualizado y estará disponible en los dispositivos donde ${ PASS_APP_NAME } esté instalado."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
