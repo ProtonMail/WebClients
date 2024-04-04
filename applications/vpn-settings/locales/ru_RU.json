@@ -2771,6 +2771,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } и вам придется создавать их вручную, чтобы добавить их в свою организацию."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
@@ -3014,11 +3017,20 @@
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Настройте аутентификацию SAML для своей организации через провайдера идентификации (IdP). Это позволит включить SAML для всей организации."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Настройте аутентификацию SAML для своей организации через провайдера идентификационных данных, например Okta, Microsoft Azure или Google Identity Platform. Это позволит включить SAML для всей организации."
+      ],
       "Continue with ${ freeName }": [
         "Продолжить с ${ freeName }"
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скопируйте и вставьте этот URL-адрес в поле ID субъекта вашего поставщика идентификационных данных"
       ],
       "Copy the suggested password to clipboard": [
         "Скопировать предложенный пароль в буфер обмена"
@@ -3128,6 +3140,12 @@
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
       ],
+      "Enable single sign-on to keep your organization safe": [
+        "Включите единый вход для обеспечения безопасности вашей организации"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL конечной точки, полученный от поставщика идентификационных данных (например, https://idp.example.com/sso/saml)."
+      ],
       "Enhance your network security": [
         "Повысьте безопасность вашей сети"
       ],
@@ -3202,6 +3220,9 @@
       ],
       "here": [
         "здесь"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Открытый ключ поставщика идентификационных данных для подписи подтверждения подлинности. Здесь должно быть место для загрузки или копирования хэша сертификата поставщика идентификационных данных. Просто вставьте хэш сертификата в поле текстовой области."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Если другой администратор изменил этот пароль, вам нужно будет спросить у него новый пароль организации."
@@ -3350,6 +3371,9 @@
       "No results found": [
         "Результаты не найдены"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Пользователи, не входящие в систему SSO (созданные вручную, а не предоставленные поставщиком идентификационных данных), по-прежнему могут входить в вашу организацию"
+      ],
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
@@ -3358,6 +3382,9 @@
       ],
       "of": [
         "из"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Если в вашей организации отключена единая регистрация:"
       ],
       "Once you reset your password:": [
         "После изменения пароля:"
@@ -3605,6 +3632,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Спасибо за поддержку нашей миссии по созданию лучшего Интернета, в котором частная жизнь и свобода стоят на первом месте."
       ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Учетные данные поставщика идентификационных данных будут удалены."
+      ],
       "The following address is invalid.": [
         "Следующий адрес недействителен.",
         "Следующие адреса недействительны.",
@@ -3683,6 +3713,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это приведет к окончательному удалению вашего аккаунта и всех его данных. Вы не сможете повторно активировать этот аккаунт."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Это удалит SSO для ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать его для доступа к вашему аккаунту в ${ BRAND_NAME } в будущем."
       ],
@@ -3694,6 +3727,9 @@
       ],
       "to ${ product } Business": [
         "на ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Чтобы разрешить домену ${ boldDomainName } использовать SAML SSO, необходимо подтвердить право собственности на него, добавив следующую запись DNS TXT к домену вашего поставщика DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Чтобы отменить вашу подписку, пожалуйста, свяжитесь с нами."
@@ -3754,6 +3790,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "К сожалению, для этого аккаунта не настроен ни один метод восстановления."
+      ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Уникальный идентификатор, генерируемый поставщиком идентификационных данных, обычно в виде URL, содержащего название поставщика идентификационных данных (например, https://idp.example.com/XXXXX)."
       ],
       "Unsaved changes": [
         "Несохраненные изменения"
