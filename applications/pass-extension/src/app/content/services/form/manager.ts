@@ -4,7 +4,8 @@ import type { FormHandle } from 'proton-pass-extension/app/content/types';
 import {
     hasUnprocessedFields,
     hasUnprocessedForms,
-    isNodeOfInterest,
+    isAddedNodeOfInterest,
+    isRemovedNodeOfInterest,
     purgeStaleSeenFields,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
@@ -200,8 +201,8 @@ export const createFormManager = (options: FormManagerOptions) => {
             if (mutation.type === 'childList') {
                 state.staleMutationsCount = 0;
 
-                const deletedFields = Array.from(mutation.removedNodes).some(isNodeOfInterest);
-                const addedFields = Array.from(mutation.addedNodes).some(isNodeOfInterest);
+                const deletedFields = Array.from(mutation.removedNodes).some(isRemovedNodeOfInterest);
+                const addedFields = Array.from(mutation.addedNodes).some(isAddedNodeOfInterest);
 
                 if (addedFields) onNewField(mutation.target as HTMLElement);
                 if (deletedFields) onDeletedField(mutation.target as HTMLElement);
