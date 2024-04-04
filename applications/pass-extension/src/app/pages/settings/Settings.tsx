@@ -55,6 +55,11 @@ const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
     ...(ENV === 'development' ? [{ path: '/dev', title: 'Developer', content: <Developer /> }] : []),
 ];
 
+const pathnameToIndex = (pathname: string, availableTabs: SettingTab[]) => {
+    const idx = availableTabs.findIndex((tab) => tab.path === pathname);
+    return idx !== -1 ? idx : 0;
+};
+
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionConnect();
     const user = useSelector(selectUser);
@@ -63,23 +68,19 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
+
     const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
-    const pathnameToIndex = (pathname: string) => {
-        const idx = tabs.findIndex((tab) => tab.path === pathname);
-        return idx !== -1 ? idx : 0;
-    };
-
     const history = useHistory();
-    const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname));
+    const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].path === '/account') navigateToAccount();
         else history.push(tabs[nextTab].path);
     };
 
-    useEffect(() => setActiveTab(pathnameToIndex(pathname)), [pathname]);
+    useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
     if (context.state.loggedIn) {
         return (
