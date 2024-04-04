@@ -1123,12 +1123,6 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
-      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -1224,6 +1218,9 @@
       ],
       "View": [
         "Pogled"
+      ],
+      "View all reports": [
+        "Prikaži vsa poročila"
       ],
       "View contact details": [
         "Ogled podrobnosti stika"
@@ -3240,6 +3237,9 @@
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Samodejno odstrani sporočila, starejša od 30 dni, iz smeti in neželene pošte. Z nadgradnjo lahko uživate v tej in drugih koristnih funkcijah."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Opozorila in poročila o kršitvah so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
       ],
@@ -3329,6 +3329,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in metode za obnovitev podatkov so nastavljene."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Vaši podatki so bili najdeni v vsaj enem primeru uhajanja podatkov."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Spletna storitev je razkrila vaše osebne podatke v zaradi uhajanja podatkov. Preberite vse informacije in ustrezno ukrepajte."
       ]
     },
     "description": {
@@ -3899,6 +3905,9 @@
       ],
       "Require at least one condition": [
         "Zahtevan je vsaj en pogoj"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Pošiljanje priponk je omejeno, dokler ne dosežete dovoljene omejitve paketa oziroma ga nadgradite."
       ],
       "Signature not verified": [
         "Podpis ni potrjen"
@@ -4769,7 +4778,7 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizja"
       ],
-      "14-day destkop app trial.": [
+      "14-day desktop app trial.": [
         "14-dnevni preizkus aplikacije za namizne računalnike."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
@@ -4781,16 +4790,14 @@
       "No credit card required.": [
         "Plačilna kartica ni potrebna."
       ],
+      "Start free trial": [
+        "Začnite brezplačni preizkus"
+      ],
       "Try the app-new desktop app": [
         "Preizkusite novo aplikacijo za namizne računalnike"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
-      ]
-    },
-    "Free trial destkop": {
-      "Start free trial": [
-        "Začnite brezplačni preizkus"
       ]
     },
     "Get started checklist instructions": {
@@ -5772,6 +5779,9 @@
       "Body: ": [
         "Telo: "
       ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
       ],
@@ -6423,6 +6433,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Poskusite znova čez nekaj trenutkov"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prosimo, poskusite znova z uporabo drugega načina plačila ali se obrnite na vašo banko."
       ],
@@ -6929,6 +6942,9 @@
       ],
       "Version ${ appVersion }": [
         "Različica ${ appVersion }"
+      ],
+      "View details": [
+        "Prikaži podrobnosti"
       ],
       "Visa Secure logo": [
         "Visa Secure logotip"
@@ -8359,6 +8375,27 @@
       ],
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
+      ],
+      "Upgrade to restore full access": [
+        "Nadgradite in obnovite polni dostop"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } je poln. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } je poln. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Vaš račun se lahko izbriše. Če se želite izogniti izgubi podatkov, prosite skrbnika za nadgradnjo. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Shramba je polna. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Shramba je polna. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
     },
     "Mail import summary": {
@@ -9854,6 +9891,9 @@
       "Select a reason": [
         "Izberite razlog"
       ],
+      "Select state": [
+        "Izberite stanje"
+      ],
       "Start date": [
         "Začetni datum"
       ],
@@ -10112,6 +10152,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Prejemanje obvestil v primeru razkritja vašega gesla in drugih osebnih podatkov."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],
@@ -10707,6 +10750,9 @@
       ]
     },
     "Spotlight": {
+      "Breach Alerts": [
+        "Opozorila o uhajanju podatkov"
+      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Priročno zaženite ${ MAIL_APP_NAME } neposredno z namizja."
       ],
@@ -10733,6 +10779,9 @@
       ],
       "Schedule send": [
         "Načrtuj pošiljanje"
+      ],
+      "Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.": [
+        "Vklopite opozorila o kršitvah in spremljajte morebitno uhajanje podatkov. Oglejte si podrobnosti in ukrepajte ter se zaščitite."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Slike po novem privzeto naložimo, pri čemer preprečimo, da bi vam pošiljatelji z njimi sledili. To lahko spremenite v ${ settingsLink }."
@@ -11542,14 +11591,20 @@
       "Block sender": [
         "Blokiraj pošiljatelja"
       ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
+      ],
       "Breach Date": [
-        "Datum vdora v podatke"
+        "Datum uhajanja podatkov"
+      ],
+      "Breach detected": [
+        "Odkrito je uhajanje podatkov"
       ],
       "Breach Information": [
-        "informacije o vdoru v podatke"
+        "Informacije o uhajanju podatkov"
       ],
       "Breach Size": [
-        "Obseg vdora v podatke"
+        "Obseg uhajanja podatkov"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Prekliči ${ MAIL_SHORT_APP_NAME } naročnino"
@@ -11947,6 +12002,9 @@
       "No attachment found": [
         "Ni priponk"
       ],
+      "No breaches detected": [
+        "Ni odkritih uhajanj podatkov"
+      ],
       "No trackers found": [
         "Ni najdenih sledilcev."
       ],
@@ -12117,6 +12175,9 @@
       ],
       "Start import process": [
         "Začni uvažati"
+      ],
+      "Stay safer online": [
+        "Izboljšajte spletno varnost"
       ],
       "Storage capacity warning": [
         "Opozorilo o zmogljivosti shranjevanja"

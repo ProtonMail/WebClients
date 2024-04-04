@@ -608,6 +608,9 @@
       ]
     },
     "Address action": {
+      "Delete address": [
+        "Smazat adresu"
+      ],
       "Disable": [
         "Deaktivovat"
       ],
@@ -1863,6 +1866,25 @@
         "/uživatel měsíčně"
       ]
     },
+    "Delete address prompt": {
+      "Once deleted, this address can't be used again by you or anyone else.": [
+        "Pokud bude smazána, tato adresa nebude moct být využita ani vámi ani nikým jiným."
+      ],
+      "The next active address on your list will be set as the default.": [
+        "Další aktivní adresa v listu bude nastavena jako výchozí."
+      ],
+      "You can only delete 1 address per year.": [
+        "Můžete pouze smazat 1 adresu ročně."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Můžete pouze smazat 1 adresu ročně"
+      ],
+      "You've reached the limit of address deletions for this user.": [
+        "Dosáhli jste limitu smazání adres pro tohoto uživatele."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktura po splatnosti"
@@ -2729,6 +2751,12 @@
       "Name": [
         "Jméno"
       ],
+      "Save big with the best deals on ${ VPN_APP_NAME }": [
+        "Ušetřete hodně s nejlepšími nabídkami pro ${ VPN_APP_NAME }"
+      ],
+      "Select your deal": [
+        "Vyberte svoji nabídku"
+      ],
       "Select your pricing plan": [
         "Vyberte si tarif"
       ],
@@ -3244,6 +3272,9 @@
       "inactive": [
         "neaktivní"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Včetně ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
       ],
@@ -3324,6 +3355,9 @@
       ],
       "No addresses exist": [
         "Neexistují žádné adresy"
+      ],
+      "No changes made to the current subscription": [
+        "Žádné změny provedeny na vašem předplatné"
       ],
       "No gateways": [
         "Žádné brány"
@@ -3909,6 +3943,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Využíváte více úložiště než je dostupné v předplatným ${ downgradedPlanName }. Prosim odstraňte data abyste mohli snížit svoje předplatné."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "K zajištění správné e-mailové adresy pro ověření můžete tento údaj jednou upravit."
@@ -4976,6 +5013,9 @@
       "1 user": [
         "1 uživatel"
       ],
+      "24/7 account management support": [
+        "24/7 podpora správy účtu"
+      ],
       "24/7 support": [
         "Podpora 24/7"
       ],
@@ -4988,11 +5028,17 @@
       "Admin console": [
         "Konzole správce"
       ],
+      "Administration Panel": [
+        "Administrátorský panel"
+      ],
       "Advanced network security": [
         "Pokročilé zabezpečení sítě"
       ],
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automaticky mazat spam a koš"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
@@ -5159,6 +5205,9 @@
       "Router support": [
         "Podpora routeru"
       ],
+      "Schedule and snooze emails for any time": [
+        "Naplánovat a ztišit e-maily na jakoukoliv dobu"
+      ],
       "Schedule messages at any time": [
         "Plánování zpráv v libovolném čase"
       ],
@@ -5311,6 +5360,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Pokročilá ochrana pro týmy, která překonává to, co je na trhu běžné."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
@@ -6841,8 +6893,14 @@
       "Your storage is full": [
         "Vaše úložiště je plné"
       ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Ztratíte přístup k ${ gb } úložiště a prioritní podporu."
+      ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Ztratíte přístup k neomezeným přihlášením a poznámek, neomezeným hide-my-email adresám, 20 trezorů a prioritní podpoře."
       ]
     },
     "Subscription": {
@@ -7450,6 +7508,9 @@
       ],
       "Delete account": [
         "Smazat účet"
+      ],
+      "Delete address permanently?": [
+        "Trvale smazat adresu?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
@@ -8093,6 +8154,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužel nejsme momentálně dostupní. Chcete-li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat vás, až budeme opět dostupní."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Musíte ${ activateLink } organizační klíč před přidáním e-mailové adresy neveřejnýmu uživateli."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
