@@ -3461,7 +3461,7 @@
         "기본 주소 키 찾을 수 없음"
       ],
       "Alias is not valid": [
-        "유효하지 않은 별칭입니다"
+        "유효하지 않은 별칭임"
       ],
       "Alias is required": [
         "별칭이 필요합니다."
@@ -4544,7 +4544,7 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ],
-      "14-day destkop app trial.": [
+      "14-day desktop app trial.": [
         "14일 데스크톱 앱 체험."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
@@ -4556,16 +4556,14 @@
       "No credit card required.": [
         "신용 카드 필요 없음."
       ],
+      "Start free trial": [
+        "무료 체험 시작하기"
+      ],
       "Try the app-new desktop app": [
         "새로운 데스크톱 앱을 사용해보세요"
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ]
-    },
-    "Free trial destkop": {
-      "Start free trial": [
-        "무료 체험 시작하기"
       ]
     },
     "Get started checklist instructions": {
@@ -5111,10 +5109,10 @@
         "American Express SafeKey 로고"
       ],
       "Amount above maximum (${ amount }).": [
-        "최대 금액 (${ amount }) 보다 높습니다."
+        "최대 금액 (${ amount })보다 높습니다."
       ],
       "Amount below minimum (${ amount }).": [
-        "최소 금액 (${ amount }) 의 이하입니다."
+        "최소 금액 (${ amount })보다 적습니다."
       ],
       "An unknown public key has been detected for this recipient.": [
         "이 수신자에 대해 알 수 없는 공개 키가 발견되었습니다."

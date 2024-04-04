@@ -1115,10 +1115,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -4691,9 +4687,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
       ],
-      "14-day destkop app trial.": [
-        "14-dages prøveversion af desktop-appen."
-      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Nyd hurtig, sikker og distraktion-fri adgang til din indbakke og kalender."
       ],
@@ -4708,11 +4701,6 @@
       ],
       "Upgrade now": [
         "Opgradere dit plan nu"
-      ]
-    },
-    "Free trial destkop": {
-      "Start free trial": [
-        "Start gratis prøveperiode"
       ]
     },
     "Get started checklist instructions": {
@@ -8941,6 +8929,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Ryd automatisk beskeder, der er ældre end 30 dage, fra papirkurven og spam."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Videresend automatisk e-mails sendt til din ${ MAIL_APP_NAME }-konto til enhver anden e-mailadresse."
