@@ -107,7 +107,6 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
          * need to avoid missing on events of the MessageBridge */
         context.service.iframe.init();
         context.service.webauthn.init();
-        window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
 
         const res = await sendMessage(
             contentScriptMessage({
@@ -117,12 +116,9 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         );
 
         if (res.type === 'success') {
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
             context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false, ready: true });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
-
-            await reconciliate();
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
@@ -132,6 +128,11 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
             if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
+
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
+            window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
+
+            await reconciliate();
 
             port.onMessage.addListener(onPortMessage);
             context.service.formManager.observe();
