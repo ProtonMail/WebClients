@@ -52,7 +52,7 @@ export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial }) =>
             payload: { password: generator.password },
         });
 
-        timer.current = setTimeout(() => close, immediate ? 0 : 1_500);
+        timer.current = setTimeout(close, immediate ? 0 : 1_500);
         setCopied(true);
     };
 

@@ -6,7 +6,7 @@ import { FieldType, FormType } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
-import type { MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
+import type { FormCredentials, MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { AutofillResult } from '@proton/pass/types/worker/autofill';
@@ -73,7 +73,7 @@ export const createAutofillService = () => {
         sendTelemetryEvent(event);
     };
 
-    const autofillLogin = (form: FormHandle, data: { username: string; password: string }) => {
+    const autofillLogin = (form: FormHandle, data: FormCredentials) => {
         first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.username);
         first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.username);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
@@ -87,6 +87,13 @@ export const createAutofillService = () => {
 
             const { domain, subdomain, hostname } = ctx.getExtensionContext().url;
             form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
+
+            if (ctx.getSettings().autosave.passwordSuggest) {
+                form.tracker
+                    ?.submit()
+                    .then((res) => res && ctx.service.autosave.promptAutoSave(res))
+                    .catch(noop);
+            }
 
             void sendMessage(
                 contentScriptMessage({

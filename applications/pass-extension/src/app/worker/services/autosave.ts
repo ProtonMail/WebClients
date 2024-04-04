@@ -1,42 +1,40 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import store from 'proton-pass-extension/app/worker/store';
+import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import { selectAutosaveCandidate, selectAutosaveVault, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
-import type { AutosavePrompt, FormEntry, FormEntryStatus } from '@proton/pass/types';
-import { AutosaveType, WorkerMessageType } from '@proton/pass/types';
+import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
+import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 export const createAutoSaveService = () => {
-    const shouldPrompt = (submission: FormEntry<FormEntryStatus.COMMITTED>): AutosavePrompt => {
-        const candidates = selectAutosaveCandidate({
-            domain: submission.domain,
-            subdomain: submission.subdomain,
-            username: submission.data.username,
-        })(store.getState());
+    const shouldPrompt = ({ type, data, domain, subdomain }: FormEntry): AutosavePrompt => {
+        /* If credentials are not valid for the form type : exit early */
+        if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
+
+        const { username, password } = data;
+        const candidates = selectAutosaveCandidate({ domain, subdomain, username })(store.getState());
 
         /* If no login items found for the current domain & the current
          * username - prompt for autosaving a new entry */
-        if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveType.NEW } };
+        if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
          * password then we should prompt for update */
-        const match = candidates.some((item) => deobfuscate(item.data.content.password) === submission.data.password);
+        const match = candidates.some((item) => deobfuscate(item.data.content.password) === password);
 
         return match
             ? { shouldPrompt: false }
             : {
                   shouldPrompt: true,
-                  data: {
-                      type: AutosaveType.UPDATE,
-                      candidates: candidates.map(intoSafeLoginItem),
-                  },
+                  data: { type: AutosaveMode.UPDATE, candidates: candidates.map(intoSafeLoginItem) },
               };
     };
 
@@ -44,7 +42,7 @@ export const createAutoSaveService = () => {
         const state = store.getState();
         const { valid, url } = isValidURL(payload.domain);
 
-        if (payload.type === AutosaveType.NEW) {
+        if (payload.type === AutosaveMode.NEW) {
             const selectedVault = selectAutosaveVault(state);
             const item = itemBuilder('login');
 
@@ -74,7 +72,7 @@ export const createAutoSaveService = () => {
             );
         }
 
-        if (payload.type === AutosaveType.UPDATE) {
+        if (payload.type === AutosaveMode.UPDATE) {
             const { shareId, itemId } = payload;
 
             const currentItem = selectItemByShareIdAndId<'login'>(shareId, itemId)(state);

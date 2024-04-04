@@ -17,7 +17,7 @@ import {
     selectVaultLimits,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
+import type { FormCredentials, ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -28,13 +28,7 @@ export const createAutoFillService = () => {
     const getCandidates = (options: SelectAutofillCandidatesOptions): ItemRevision<'login'>[] =>
         selectAutofillCandidates(options)(store.getState());
 
-    const getAutofillData = ({
-        shareId,
-        itemId,
-    }: {
-        shareId: string;
-        itemId: string;
-    }): Maybe<{ username: string; password: string }> => {
+    const getAutofillData = ({ shareId, itemId }: SelectedItem): Maybe<FormCredentials> => {
         const state = store.getState();
         const item = selectItemByShareIdAndId(shareId, itemId)(state);
 

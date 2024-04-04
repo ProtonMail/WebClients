@@ -6,7 +6,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import type { FormEntry, ItemCreateIntent, ItemEditIntent } from '@proton/pass/types';
-import { AutosaveType, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { AutosaveMode, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { createAutoSaveService } from './autosave';
@@ -21,7 +21,6 @@ describe('AutosaveService [worker]', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
             data: { username: 'test@proton.me', password: 'p4ssw0rd' },
             domain: 'domain.com',
-            partial: false,
             status: FormEntryStatus.COMMITTED,
             subdomain: 'domain.com',
             type: 'login',
@@ -29,7 +28,12 @@ describe('AutosaveService [worker]', () => {
 
         test('should prompt for new item if no match', () => {
             const result = autosave.shouldPrompt(submission);
-            expect(result).toEqual({ shouldPrompt: true, data: { type: AutosaveType.NEW } });
+            expect(result).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
+        });
+
+        test('should not prompt if form credentials are invalid', () => {
+            const result = autosave.shouldPrompt({ ...submission, data: { username: '', password: '' } });
+            expect(result).toEqual({ shouldPrompt: false });
         });
 
         test('should prompt for item update if match and password change', () => {
@@ -48,7 +52,7 @@ describe('AutosaveService [worker]', () => {
             expect(autosave.shouldPrompt(submission)).toEqual({
                 shouldPrompt: true,
                 data: {
-                    type: AutosaveType.UPDATE,
+                    type: AutosaveMode.UPDATE,
                     candidates: [
                         {
                             itemId: revision.itemId,
@@ -90,7 +94,7 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        type: AutosaveType.NEW,
+                        type: AutosaveMode.NEW,
                         username: 'john@proton.me',
                         password: '123',
                         domain: 'proton.me',
@@ -126,7 +130,7 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        type: AutosaveType.NEW,
+                        type: AutosaveMode.NEW,
                         username: passkey.userName,
                         password: '',
                         domain: 'proton.me',
@@ -178,7 +182,7 @@ describe('AutosaveService [worker]', () => {
                         name: 'Domain.com#Update',
                         password: 'new-password',
                         shareId: mockShareId,
-                        type: AutosaveType.UPDATE,
+                        type: AutosaveMode.UPDATE,
                         username: 'test@proton.me',
                     },
                 })
@@ -211,7 +215,7 @@ describe('AutosaveService [worker]', () => {
                         name: 'Domain.com#Update',
                         password: 'new-password',
                         shareId: mockShareId,
-                        type: AutosaveType.UPDATE,
+                        type: AutosaveMode.UPDATE,
                         username: 'test@proton.me',
                     },
                 })
@@ -265,7 +269,7 @@ describe('AutosaveService [worker]', () => {
                         passkey: newPasskey,
                         password: '',
                         shareId: mockShareId,
-                        type: AutosaveType.UPDATE,
+                        type: AutosaveMode.UPDATE,
                         username: newPasskey.userName,
                     },
                 })
