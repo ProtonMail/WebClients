@@ -47,7 +47,7 @@ export type ProxiedSettings = Omit<SettingsState, 'sessionLockRegistered' | 'ses
 
 export const INITIAL_SETTINGS: ProxiedSettings = {
     autofill: { inject: true, openOnFocus: true },
-    autosave: { prompt: true },
+    autosave: { prompt: true, passwordSuggest: false },
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     disallowedDomains: {},

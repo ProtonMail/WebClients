@@ -21,69 +21,64 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import type { AutosaveData, AutosavePayload, FormEntryPrompt, SelectedItem } from '@proton/pass/types';
-import { AutosaveType, WorkerMessageType } from '@proton/pass/types';
+import type { AutosavePayload, AutosaveRequest, AutosaveType, SelectedItem } from '@proton/pass/types';
+import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-type Props = { submission: FormEntryPrompt };
+type Props = { data: AutosavePayload };
 type PasskeyCreateStep = 'select' | 'edit';
-type AutosaveValues = AutosaveData<SelectedItem> & {
+type AutosaveValues = AutosaveType<SelectedItem> & {
     step: PasskeyCreateStep;
     name: string;
     username: string;
     password: string;
 };
 
-const getInitialValues = (submission: FormEntryPrompt): AutosaveValues => {
-    const { data } = submission.autosave;
-    const domain = submission.subdomain ?? submission.domain;
-    const candidate = data.type === AutosaveType.UPDATE && data.candidates.length === 1 ? data.candidates[0] : null;
+const getInitialValues = (data: AutosavePayload): AutosaveValues => {
+    const { username, password, domain } = data;
+    const candidate = data.type === AutosaveMode.UPDATE && data.candidates.length === 1 ? data.candidates[0] : null;
 
-    return data.type === AutosaveType.UPDATE
+    return data.type === AutosaveMode.UPDATE
         ? {
-              type: AutosaveType.UPDATE,
+              type: AutosaveMode.UPDATE,
               itemId: candidate?.itemId ?? '',
               shareId: candidate?.shareId ?? '',
               step: !candidate ? 'select' : 'edit',
               name: candidate?.name ?? domain,
-              username: candidate?.username ?? submission.data.username,
-              password: submission.data.password,
+              username: candidate?.username ?? username,
+              password: password,
           }
         : {
-              type: AutosaveType.NEW,
+              type: AutosaveMode.NEW,
               step: 'edit',
               name: domain,
-              username: submission.data.username,
-              password: submission.data.password,
+              username,
+              password,
           };
 };
 
 const getAutosavePayload =
-    (submission: FormEntryPrompt) =>
-    (values: AutosaveValues): AutosavePayload => {
-        const domain = submission.subdomain ?? submission.domain;
-        return values.type === AutosaveType.UPDATE ? { ...values, domain } : { ...values, domain };
-    };
+    ({ domain }: AutosavePayload) =>
+    (values: AutosaveValues): AutosaveRequest =>
+        values.type === AutosaveMode.UPDATE ? { ...values, domain } : { ...values, domain };
 
-export const Autosave: FC<Props> = ({ submission }) => {
+export const Autosave: FC<Props> = ({ data }) => {
     const { settings, visible, close } = useIFrameContext();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
 
     const [busy, setBusy] = useMountedState(false);
-    const { data } = submission.autosave;
-    const domain = submission.subdomain ?? submission.domain;
+    const { domain } = data;
 
     const form = useFormik<AutosaveValues>({
-        initialValues: getInitialValues(submission),
+        initialValues: getInitialValues(data),
         validateOnChange: true,
         validate: (values) => {
             const errors: FormikErrors<AutosaveValues> = { name: validateItemName(values.name) };
 
             if (values.step === 'select') return {};
-            if (values.type === AutosaveType.UPDATE) {
+            if (values.type === AutosaveMode.UPDATE) {
                 const { itemId, shareId } = values;
                 if (!(itemId && shareId)) errors.type = 'Invalid update request';
             }
@@ -92,12 +87,16 @@ export const Autosave: FC<Props> = ({ submission }) => {
             return errors;
         },
 
-        onSubmit: async (values) => {
+        onSubmit: async (values, { setValues }) => {
+            if (values.step === 'select') {
+                return setValues((values) => ({ ...values, step: 'edit', type: AutosaveMode.NEW }));
+            }
+
             setBusy(true);
             return sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
-                    payload: getAutosavePayload(submission)(values),
+                    payload: getAutosavePayload(data)(values),
                 })
             )
                 .then((result) => {
@@ -120,25 +119,25 @@ export const Autosave: FC<Props> = ({ submission }) => {
             <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full anime-fadein gap-2">
                 <NotificationHeader
                     title={(() => {
-                        switch (submission.autosave.data.type) {
-                            case AutosaveType.NEW:
+                        switch (form.values.type) {
+                            case AutosaveMode.NEW:
                                 return c('Info').t`Save login`;
-                            case AutosaveType.UPDATE:
+                            case AutosaveMode.UPDATE:
                                 return c('Info').t`Update login`;
                         }
                     })()}
                     extra={
                         <PauseListDropdown
                             criteria="Autosave"
-                            hostname={submission.subdomain ?? submission.domain}
+                            hostname={domain}
                             label={c('Action').t`Disable autosave on this website`}
                         />
                     }
                 />
 
-                {form.values.step === 'select' && data.type === AutosaveType.UPDATE && (
+                {form.values.step === 'select' && data.type === AutosaveMode.UPDATE && (
                     <>
-                        <div className="shrink-0 py-1 px-2">
+                        <div className="shrink-0 px-1">
                             {`${c('Label').t`Login`} • ${domain}`}
                             <span className="block text-xs color-weak">{c('Info')
                                 .t`Select an existing login item to update.`}</span>
@@ -156,7 +155,7 @@ export const Autosave: FC<Props> = ({ submission }) => {
                                     onClick={() =>
                                         form.setValues((values) => ({
                                             ...values,
-                                            type: AutosaveType.UPDATE,
+                                            type: AutosaveMode.UPDATE,
                                             step: 'edit',
                                             itemId,
                                             shareId,
@@ -167,70 +166,56 @@ export const Autosave: FC<Props> = ({ submission }) => {
                                 />
                             ))}
                         </Scroll>
-
-                        <div className="px-2 py-1 text-xs color-weak shrink-0">{c('Info')
-                            .t`The login item for "${domain}" will be updated and available on devices where ${PASS_APP_NAME} is installed.`}</div>
                     </>
                 )}
 
                 {form.values.step === 'edit' && (
-                    <>
-                        <div>
-                            <div className="flex flex-nowrap items-center mb-2">
-                                <ItemIcon
-                                    url={submission.domain}
-                                    icon={'user'}
-                                    size={5}
-                                    alt=""
-                                    className="shrink-0"
-                                    loadImage={settings.loadDomainImages}
+                    <div>
+                        <div className="flex flex-nowrap items-center mb-2">
+                            <ItemIcon
+                                url={domain}
+                                icon={'user'}
+                                size={5}
+                                alt=""
+                                className="shrink-0"
+                                loadImage={settings.loadDomainImages}
+                            />
+                            <div className="flex-auto">
+                                <Field
+                                    lengthLimiters
+                                    name="name"
+                                    component={TitleField}
+                                    spellCheck={false}
+                                    autoComplete={'off'}
+                                    placeholder={c('Placeholder').t`Untitled`}
+                                    maxLength={MAX_ITEM_NAME_LENGTH}
+                                    className="pr-0"
+                                    dense
                                 />
-                                <div className="flex-auto">
-                                    <Field
-                                        lengthLimiters
-                                        name="name"
-                                        component={TitleField}
-                                        spellCheck={false}
-                                        autoComplete={'off'}
-                                        placeholder={c('Placeholder').t`Untitled`}
-                                        maxLength={MAX_ITEM_NAME_LENGTH}
-                                        className="pr-0"
-                                        dense
-                                    />
-                                </div>
                             </div>
+                        </div>
 
-                            <FieldsetCluster>
-                                <Field name="username" component={TextField} label={c('Label').t`Username`} />
-                                <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
-                            </FieldsetCluster>
-                        </div>
-                        <div className="flex justify-space-between gap-3">
-                            <Button pill color="norm" shape="outline" onClick={() => close({ discard: true })}>{c(
-                                'Action'
-                            ).t`Not now`}</Button>
-                            <Button
-                                pill
-                                color="norm"
-                                type="submit"
-                                loading={busy}
-                                disabled={busy}
-                                className="flex-auto"
-                            >
-                                <span className="text-ellipsis">
-                                    {(() => {
-                                        switch (data.type) {
-                                            case AutosaveType.NEW:
-                                                return busy ? c('Action').t`Saving` : c('Action').t`Add`;
-                                            case AutosaveType.UPDATE:
-                                                return busy ? c('Action').t`Updating` : c('Action').t`Update`;
-                                        }
-                                    })()}
-                                </span>
-                            </Button>
-                        </div>
-                    </>
+                        <FieldsetCluster>
+                            <Field name="username" component={TextField} label={c('Label').t`Username`} />
+                            <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
+                        </FieldsetCluster>
+                    </div>
                 )}
+
+                <div className="flex justify-space-between shrink-0 gap-3 mt-1">
+                    <Button pill color="norm" shape="outline" onClick={() => close({ discard: true })}>{c('Action')
+                        .t`Not now`}</Button>
+                    <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
+                        <span className="text-ellipsis">
+                            {(() => {
+                                const { step, type } = form.values;
+                                if (step === 'select') return c('Action').t`Create new login`;
+                                if (type === AutosaveMode.NEW) return busy ? c('Action').t`Saving` : c('Action').t`Add`;
+                                return busy ? c('Action').t`Updating` : c('Action').t`Update`;
+                            })()}
+                        </span>
+                    </Button>
+                </div>
             </Form>
         </FormikProvider>
     );
