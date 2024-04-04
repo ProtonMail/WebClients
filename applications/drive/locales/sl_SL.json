@@ -178,6 +178,9 @@
       "Copy email to clipboard": [
         "Kopiraj e-poštni naslov v odložišče"
       ],
+      "Copy invite link": [
+        "Kopiraj povezavo do povabila"
+      ],
       "Copy link": [
         "Kopiraj povezavo"
       ],
@@ -765,6 +768,9 @@
       ],
       "View": [
         "Pogled"
+      ],
+      "View all reports": [
+        "Prikaži vsa poročila"
       ],
       "View invoice": [
         "Ogled računa"
@@ -1992,6 +1998,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Opozorila in poročila o kršitvah so na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
       ],
@@ -2045,6 +2054,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in metode za obnovitev podatkov so nastavljene."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Vaši podatki so bili najdeni v vsaj enem primeru uhajanja podatkov."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Spletna storitev je razkrila vaše osebne podatke v zaradi uhajanja podatkov. Preberite vse informacije in ustrezno ukrepajte."
       ]
     },
     "description": {
@@ -3683,6 +3698,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
       ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
+      ],
       "Calendar side panel": [
         "Stranska plošča s koledarjem"
       ],
@@ -4241,6 +4259,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Poskusite znova čez nekaj trenutkov"
+      ],
       "Please use another browser or download the file.": [
         "Prosimo, uporabite drug brskalnik ali prenesite datoteko."
       ],
@@ -4612,6 +4633,9 @@
       ],
       "Version is restored": [
         "Različica je obnovljena"
+      ],
+      "View details": [
+        "Prikaži podrobnosti"
       ],
       "Want to sync files faster?": [
         "Želite hitreje sinhronizirati datoteke?"
@@ -5424,6 +5448,27 @@
       ],
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
+      ],
+      "Upgrade to restore full access": [
+        "Nadgradite in obnovite polni dostop"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "${ driveStorage } je poln. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "${ mailStorage } je poln. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Vaš račun se lahko izbriše. Če se želite izogniti izgubi podatkov, prosite skrbnika za nadgradnjo. ${ cta }"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
+        "Shramba je polna. Če želite pošiljati ali prejemati sporočila, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Shramba je polna. Če želite uvoziti ali sinhronizirati datoteke, sprostite nekaj prostora ali ${ cta }."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
     },
     "Mail import summary": {
@@ -6287,6 +6332,9 @@
       "Select": [
         "Izberi"
       ],
+      "Select state": [
+        "Izberite stanje"
+      ],
       "Set date": [
         "Nastavi datum"
       ],
@@ -6417,6 +6465,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Prejemanje obvestil v primeru razkritja vašega gesla in drugih osebnih podatkov."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
       ],
@@ -7206,14 +7257,20 @@
       "Birthday": [
         "Rojstni dan"
       ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
+      ],
       "Breach Date": [
-        "Datum vdora v podatke"
+        "Datum uhajanja podatkov"
+      ],
+      "Breach detected": [
+        "Odkrito je uhajanje podatkov"
       ],
       "Breach Information": [
-        "informacije o vdoru v podatke"
+        "Informacije o uhajanju podatkov"
       ],
       "Breach Size": [
-        "Obseg vdora v podatke"
+        "Obseg uhajanja podatkov"
       ],
       "Browser might run out of memory": [
         "Brskalniku morda manjka pomnilnika"
@@ -7458,6 +7515,9 @@
       "Night theme": [
         "Nočna tema"
       ],
+      "No breaches detected": [
+        "Ni odkritih uhajanj podatkov"
+      ],
       "No results found": [
         "Ni najdenih rezultatov"
       ],
@@ -7592,6 +7652,9 @@
       ],
       "Start import process": [
         "Začni uvažati"
+      ],
+      "Stay safer online": [
+        "Izboljšajte spletno varnost"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"
