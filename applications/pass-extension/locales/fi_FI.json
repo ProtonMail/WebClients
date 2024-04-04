@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Jaon jäseniä ei voitu selvittää"
       ],
+      "Could not validate addresses at the moment.": [
+        "Osoitteita ei voitu vahvistaa juuri nyt."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "Valittujen kohteiden poisto epäonnistui"
+      ],
+      "Failed to edit organization settings": [
+        "Organisaation asetusten muokkaaminen epäonnistui"
       ],
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
@@ -862,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } tarjoaa kirjautumistietojen tallennusta tai päivitystä."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } ehdottaa todennusta tallennettuja avainkoodeja käyttäen"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } tarjoaa sähköpostialiaksen luotia rekisteröitymislomakkeissa."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } tarjoaa vahvan salasanan luontia rekisteröitymislomakkeissa."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } ehdottaa avainkoodien tallentamista."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
@@ -931,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu 2FA-todentaja"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Oletusarvoisesti ryhmän jäsenet voivat viedä vain holveja, joiden omistajia he ovat. Jos tämä asetus on käytössä, he eivät voi viedä mitään tietoja"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
@@ -1154,6 +1169,9 @@
       "Open the Extensions menu": [
         "Avaa laajennusvalikko"
       ],
+      "Organization settings successfully updated": [
+        "Organisaation asetusten päivitys onnistui"
+      ],
       "Owner": [
         "Omistaja"
       ],
@@ -1287,6 +1305,9 @@
       "Syncing your vaults…": [
         "Holvejasi synkronoidaan…"
       ],
+      "Team members can only share vaults within organization": [
+        "Ryhmän jäsenet voivat jakaa holveja vain organisaation sisällä"
+      ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
@@ -1311,6 +1332,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
+      ],
+      "This setting is disabled on the organization level": [
+        "Tämä asetus on poistettu käytöstä organisaatiotasolla"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Holvia ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
@@ -1344,6 +1368,9 @@
       ],
       "Update login": [
         "Päivitä kirjautumistieto"
+      ],
+      "Updating organization settings": [
+        "Organisaation asetuksia päivitetään"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Päivitä ${ PASS_APP_NAME }-tilauksesi"
@@ -1494,6 +1521,9 @@
       "Application logs": [
         "Sovelluksen lokitiedot"
       ],
+      "Authenticate with passkeys": [
+        "Todenna avainkoodeilla"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME } automaattisesti"
       ],
@@ -1554,6 +1584,12 @@
       "Created": [
         "Luotu"
       ],
+      "Disable data export for team members": [
+        "Poista tietojen vienti käytöstä ryhmän jäseniltä"
+      ],
+      "Disable sharing outside the organization": [
+        "Poista organisaation ulkopuolinen jakaminen käytöstä"
+      ],
       "Display": [
         "Ulkoasu"
       ],
@@ -1580,6 +1616,9 @@
       ],
       "Export": [
         "Vienti"
+      ],
+      "Exporting policy": [
+        "Vientikäytäntö"
       ],
       "Field name": [
         "Kentän nimi"
@@ -1713,8 +1752,14 @@
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
+      "Organization": [
+        "Organisaatio"
+      ],
       "Passkey": [
         "Avainkoodi"
+      ],
+      "Passkeys": [
+        "Avainkoodit"
       ],
       "Passphrase": [
         "Tunnuslauseke"
@@ -1758,6 +1803,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Save passkeys": [
+        "Tallenna avainkoodit"
+      ],
       "Security": [
         "Suojaus"
       ],
@@ -1784,6 +1832,9 @@
       ],
       "Settings": [
         "Asetukset"
+      ],
+      "Sharing policy": [
+        "Jakamiskäytäntö"
       ],
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
@@ -2271,6 +2322,9 @@
       ],
       "Invalid email addresses.": [
         "Virheellisiä sähköpostiosoitteita."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Organisaation ulkopuolisten sähköpostiosoitteiden kutsumista ei ole sallittu."
       ],
       "item was imported without custom fields": [
         "kohde tuotiin ilman mukautettuja kenttiä"

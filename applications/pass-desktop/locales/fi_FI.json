@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Jaon jäseniä ei voitu selvittää"
       ],
+      "Could not validate addresses at the moment.": [
+        "Osoitteita ei voitu vahvistaa juuri nyt."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Valittujen kohteiden poisto epäonnistui"
+      ],
+      "Failed to edit organization settings": [
+        "Organisaation asetusten muokkaaminen epäonnistui"
       ],
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Sisäänrakennettu 2FA-todentaja"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Oletusarvoisesti ryhmän jäsenet voivat viedä vain holveja, joiden omistajia he ovat. Jos tämä asetus on käytössä, he eivät voi viedä mitään tietoja"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
       ],
@@ -1013,6 +1022,9 @@
       "Offline support successfully disabled": [
         "Yhteydetön tila on poistettu käytöstä"
       ],
+      "Organization settings successfully updated": [
+        "Organisaation asetusten päivitys onnistui"
+      ],
       "Owner": [
         "Omistaja"
       ],
@@ -1131,6 +1143,9 @@
       "Syncing your vaults…": [
         "Holvejasi synkronoidaan…"
       ],
+      "Team members can only share vaults within organization": [
+        "Ryhmän jäsenet voivat jakaa holveja vain organisaation sisällä"
+      ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
@@ -1153,6 +1168,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
+      "This setting is disabled on the organization level": [
+        "Tämä asetus on poistettu käytöstä organisaatiotasolla"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Holvia ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
       ],
@@ -1173,6 +1191,9 @@
       ],
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
+      ],
+      "Updating organization settings": [
+        "Organisaation asetuksia päivitetään"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Päivitä tilauksesi nyt avataksesi Premium-ominaisuudet"
@@ -1350,6 +1371,12 @@
       "Created": [
         "Luotu"
       ],
+      "Disable data export for team members": [
+        "Poista tietojen vienti käytöstä ryhmän jäseniltä"
+      ],
+      "Disable sharing outside the organization": [
+        "Poista organisaation ulkopuolinen jakaminen käytöstä"
+      ],
       "Display": [
         "Ulkoasu"
       ],
@@ -1370,6 +1397,9 @@
       ],
       "Export": [
         "Vienti"
+      ],
+      "Exporting policy": [
+        "Vientikäytäntö"
       ],
       "Field name": [
         "Kentän nimi"
@@ -1506,6 +1536,9 @@
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
+      "Organization": [
+        "Organisaatio"
+      ],
       "Passkey": [
         "Avainkoodi"
       ],
@@ -1565,6 +1598,9 @@
       ],
       "Set PIN code": [
         "Aseta PIN-koodi"
+      ],
+      "Sharing policy": [
+        "Jakamiskäytäntö"
       ],
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
@@ -2017,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "Virheellisiä sähköpostiosoitteita."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Organisaation ulkopuolisten sähköpostiosoitteiden kutsumista ei ole sallittu."
       ],
       "item was imported without custom fields": [
         "kohde tuotiin ilman mukautettuja kenttiä"
