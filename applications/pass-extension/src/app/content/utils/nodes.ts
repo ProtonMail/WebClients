@@ -21,7 +21,12 @@ export const purgeStaleSeenFields = (target?: HTMLElement) => {
     });
 };
 
-export const isNodeOfInterest = (node: Node): node is HTMLElement =>
-    node instanceof HTMLInputElement ||
-    node instanceof HTMLFormElement ||
-    (node instanceof HTMLElement && hasUnprocessedFields(node));
+const isNodeOfInterestFactory =
+    (subtreeCheck: (el: HTMLElement) => boolean) =>
+    (node: Node): node is HTMLElement =>
+        node instanceof HTMLInputElement ||
+        node instanceof HTMLFormElement ||
+        (node instanceof HTMLElement && subtreeCheck(node));
+
+export const isAddedNodeOfInterest = isNodeOfInterestFactory(hasUnprocessedFields);
+export const isRemovedNodeOfInterest = isNodeOfInterestFactory((el) => el.querySelector('form, input') !== null);
