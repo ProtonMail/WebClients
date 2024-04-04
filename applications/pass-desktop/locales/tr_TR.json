@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Paylaşım üyeleri çözümlenemedi"
       ],
+      "Could not validate addresses at the moment.": [
+        "Şu anda adresler doğrulanamıyor."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Seçilmiş ögeler silinemedi"
+      ],
+      "Failed to edit organization settings": [
+        "Kuruluş ayarları düzenlenemedi"
       ],
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
@@ -1013,6 +1019,9 @@
       "Offline support successfully disabled": [
         "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
+      "Organization settings successfully updated": [
+        "Kuruluş ayarları başarıyla güncellendi"
+      ],
       "Owner": [
         "Sahibi"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
+      ],
+      "Updating organization settings": [
+        "Kuruluş ayarları güncelleniyor"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
@@ -1350,6 +1362,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Disable sharing outside the organization": [
+        "Kuruluş dışında paylaşımı devre dışı bırak"
+      ],
       "Display": [
         "Görünüm"
       ],
@@ -1370,6 +1385,9 @@
       ],
       "Export": [
         "Dışa aktar"
+      ],
+      "Exporting policy": [
+        "Dışa aktarma politikası"
       ],
       "Field name": [
         "Alan adı"
@@ -1568,6 +1586,9 @@
       ],
       "Set PIN code": [
         "PIN kodu ayarla"
+      ],
+      "Sharing policy": [
+        "Paylaşım politikası"
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"

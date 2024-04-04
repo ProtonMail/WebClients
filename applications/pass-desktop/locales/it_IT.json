@@ -480,7 +480,7 @@
         "Impossibile recuperare i membri della condivisione"
       ],
       "Could not validate addresses at the moment.": [
-        "Impossibile convalidare gli indirizzi al momento."
+        "Impossibile verificare gli indirizzi al momento."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Il file CSV non contiene le seguenti intestazioni previste: ${ missingHeaders }"
@@ -523,7 +523,7 @@
         "Impossibile eliminare gli elementi selezionati"
       ],
       "Failed to edit organization settings": [
-        "Impossibile modificare le impostazioni dell'organizzazione"
+        "Modifica delle impostazioni dell'organizzazione non riuscita"
       ],
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
@@ -601,7 +601,7 @@
         "I codici PIN non corrispondono"
       ],
       "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Esegui l'upgrade per avere accesso anticipato all'app desktop ${ PASS_APP_NAME }"
+        "Effettua l'upgrade per avere accesso anticipato all'app desktop di ${ PASS_APP_NAME }"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -819,7 +819,7 @@
         "Autenticazione 2FA integrata"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Per impostazione predefinita, i membri del team possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non saranno in grado di esportare alcun dato"
+        "Per impostazione predefinita, i membri del team possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non potranno esportare alcun dato."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
@@ -1023,7 +1023,7 @@
         "Accesso offline disabilitato"
       ],
       "Organization settings successfully updated": [
-        "Impostazioni dell'organizzazione aggiornate correttamente"
+        "Impostazioni dell'organizzazione aggiornate"
       ],
       "Owner": [
         "Proprietario"
