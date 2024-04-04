@@ -67,7 +67,7 @@ export const createContentScriptContext = (options: {
             const subDomainMask = subdomain ? disallowed[subdomain] : 0;
             const mask = domainMask | subDomainMask;
 
-            const { autofill, autosuggest, autosave } = settings;
+            const { autofill, autosuggest, autosave, passkeys } = settings;
 
             return {
                 Autofill: autofill.inject && !hasCriteria(mask, 'Autofill'),
@@ -75,7 +75,7 @@ export const createContentScriptContext = (options: {
                 AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
                 AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
                 Autosave: autosave.prompt && !hasCriteria(mask, 'Autosave'),
-                Passkeys: !hasCriteria(mask, 'Passkey'),
+                Passkeys: (passkeys.create || passkeys.get) && !hasCriteria(mask, 'Passkey'),
             };
         },
         getSettings: () => settings,
