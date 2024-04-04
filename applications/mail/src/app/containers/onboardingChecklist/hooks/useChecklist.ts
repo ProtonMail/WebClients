@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { useApi, useEventManager, useFlag, useSubscription, useUser, useUserSettings } from '@proton/components';
+import { useApi, useEventManager, useUserSettings } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getChecklist } from '@proton/shared/lib/api/checklist';
-import { canCheckItemGetStarted } from '@proton/shared/lib/helpers/subscription';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { Event } from '../../../models/event';
@@ -38,15 +37,8 @@ const useChecklist = (id: ChecklistId) => {
     const { subscribe } = useEventManager();
     const api = useApi();
 
-    // TODO remove once the extended checklist storage split is finished
-    const TO_DELETE_FIX_FOR_CHECKLIST = useFlag('SplitStorageChecklistReopenedNova');
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const canFetch =
-        TO_DELETE_FIX_FOR_CHECKLIST && id === 'get-started' && (canCheckItemGetStarted(subscription) || user.isFree);
-
     useEffect(() => {
-        if (canFetch || userSettings.Checklists?.includes(id)) {
+        if (userSettings.Checklists?.includes(id)) {
             void withLoading(api<Checklist>(getChecklist(id)).then(setChecklist));
         }
 
