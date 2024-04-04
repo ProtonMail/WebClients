@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Paylaşım üyeleri çözümlenemedi"
       ],
+      "Could not validate addresses at the moment.": [
+        "Şu anda adresler doğrulanamıyor."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "Seçilmiş ögeler silinemedi"
+      ],
+      "Failed to edit organization settings": [
+        "Kuruluş ayarları düzenlenemedi"
       ],
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
@@ -1154,6 +1160,9 @@
       "Open the Extensions menu": [
         "Eklenti menüsünü açın"
       ],
+      "Organization settings successfully updated": [
+        "Kuruluş ayarları başarıyla güncellendi"
+      ],
       "Owner": [
         "Sahibi"
       ],
@@ -1345,6 +1354,9 @@
       "Update login": [
         "Oturum açma kaydını güncelle"
       ],
+      "Updating organization settings": [
+        "Kuruluş ayarları güncelleniyor"
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını yükselt"
       ],
@@ -1494,6 +1506,9 @@
       "Application logs": [
         "Uygulama günlükleri"
       ],
+      "Authenticate with passkeys": [
+        "Geçiş anahtarları ile kimlik doğrulama"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } otomatik kilitleme"
       ],
@@ -1554,6 +1569,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Disable sharing outside the organization": [
+        "Kuruluş dışında paylaşımı devre dışı bırak"
+      ],
       "Display": [
         "Görünüm"
       ],
@@ -1580,6 +1598,9 @@
       ],
       "Export": [
         "Dışa aktar"
+      ],
+      "Exporting policy": [
+        "Dışa aktarma politikası"
       ],
       "Field name": [
         "Alan adı"
@@ -1719,6 +1740,9 @@
       "Passkey": [
         "Geçiş anahtarı"
       ],
+      "Passkeys": [
+        "Geçiş anahtarları"
+      ],
       "Passphrase": [
         "Parola ifadesi"
       ],
@@ -1761,6 +1785,9 @@
       "Reveal password": [
         "Parolayı göster"
       ],
+      "Save passkeys": [
+        "Geçiş anahtarlarını kaydet"
+      ],
       "Security": [
         "Güvenlik"
       ],
@@ -1787,6 +1814,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Sharing policy": [
+        "Paylaşım politikası"
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"

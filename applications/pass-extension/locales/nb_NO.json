@@ -1248,6 +1248,9 @@
       "Save passkey": [
         "Lagre tilgangsnøkkel"
       ],
+      "Select an existing login item to update.": [
+        "Velg et eksisterende påloggingselement som skal oppdateres."
+      ],
       "Select an existing login or create a new one.": [
         "Velg en eksisterende pålogging eller opprett en ny."
       ],
@@ -1323,6 +1326,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kan ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
+      ],
+      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Påloggingselementet for \"${ domain }\" vil bli oppdatert og tilgjengelig på enheter der ${ PASS_APP_NAME } er installert."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du prøver å lime inn, er lengre enn den maksimalt tillatte lengden på ${ maxLength }-tegn."

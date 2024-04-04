@@ -1277,6 +1277,9 @@
       "Save passkey": [
         "Zapisz klucz dostępu"
       ],
+      "Select an existing login item to update.": [
+        "Wybierz dane logowania do zaktualizowania."
+      ],
       "Select an existing login or create a new one.": [
         "Wybierz dane logowania lub utwórz nowe."
       ],
@@ -1354,6 +1357,9 @@
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
         "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:",
         "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:"
+      ],
+      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Dane logowania \"${ domain }\" zostaną zaktualizowane i dostępne na urządzeniach z zainstalowanym ${ PASS_APP_NAME }."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."

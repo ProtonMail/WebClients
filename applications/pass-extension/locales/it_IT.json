@@ -566,7 +566,7 @@
         "Impossibile recuperare i membri della condivisione"
       ],
       "Could not validate addresses at the moment.": [
-        "Impossibile convalidare gli indirizzi al momento."
+        "Impossibile verificare gli indirizzi al momento."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Il file CSV non contiene le seguenti intestazioni previste: ${ missingHeaders }"
@@ -609,7 +609,7 @@
         "Impossibile eliminare gli elementi selezionati"
       ],
       "Failed to edit organization settings": [
-        "Impossibile modificare le impostazioni dell'organizzazione"
+        "Modifica delle impostazioni dell'organizzazione non riuscita"
       ],
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
@@ -869,7 +869,7 @@
         "${ PASS_APP_NAME } ti chiederà di salvare o aggiornare le credenziali."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } ti suggerirà di autenticarti attraverso le passkey salvate"
+        "${ PASS_APP_NAME } ti suggerirà di autenticarti con le passkey salvate."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } ti suggerirà di creare un alias email nei moduli di registrazione."
@@ -945,7 +945,7 @@
         "Autenticazione 2FA integrata"
       ],
       "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Per impostazione predefinita, i membri del team possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non saranno in grado di esportare alcun dato"
+        "Per impostazione predefinita, i membri del team possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non potranno esportare alcun dato."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
@@ -1170,7 +1170,7 @@
         "Apri il menu Estensioni"
       ],
       "Organization settings successfully updated": [
-        "Impostazioni dell'organizzazione aggiornate correttamente"
+        "Impostazioni dell'organizzazione aggiornate"
       ],
       "Owner": [
         "Proprietario"
@@ -1248,6 +1248,9 @@
       "Save passkey": [
         "Salva la passkey"
       ],
+      "Select an existing login item to update.": [
+        "Seleziona un elemento di login esistente da aggiornare."
+      ],
       "Select an existing login or create a new one.": [
         "Seleziona un login esistente o creane uno nuovo."
       ],
@@ -1323,6 +1326,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
         "Impossibile importare i seguenti ${ result.ignored.length } elementi:"
+      ],
+      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "L'elemento di login per \"${ domain }\" verrà aggiornato e sarà disponibile sui dispositivi su cui è installato ${ PASS_APP_NAME }."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Il testo che stai provando a incollare è più lungo della lunghezza massima di ${ maxLength } caratteri."
@@ -1522,7 +1528,7 @@
         "Log dell'applicazione"
       ],
       "Authenticate with passkeys": [
-        "Autenticati con passkey"
+        "Autentica con passkey"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Blocco automatico di ${ PASS_APP_NAME }"

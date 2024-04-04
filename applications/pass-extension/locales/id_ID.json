@@ -574,7 +574,7 @@
         "Item gagal dihapus"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Gagal menghapus brankas \"${ payload.content.name }\""
+        "Brankas \"${ payload.content.name }\" gagal dihapus"
       ],
       "Editing item failed": [
         "Item gagal disunting"
@@ -599,6 +599,9 @@
       ],
       "Failed to delete selected items": [
         "Item yang dipilih gagal dihapus"
+      ],
+      "Failed to edit organization settings": [
+        "Gagal menyunting pengaturan organisasi"
       ],
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
@@ -754,7 +757,7 @@
         "Format berkas 1Password tidak didukung"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Gagal memperbarui brankas \"${ payload.content.name }\""
+        "Brankas \"${ payload.content.name }\" gagal diperbarui"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Pembuatan brankas \"${ payload.content.name }\" gagal"
@@ -835,7 +838,7 @@
         "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "Versi terbaru dari ${ PASS_APP_NAME } tersedia. Perbarui aplikasinya untuk menikmati fitur terbaru dan perbaikan bug."
+        "Versi terbaru dari ${ PASS_APP_NAME } telah tersedia. Perbarui aplikasi Anda untuk menikmati berbagai fitur terbaru dan perbaikan bug."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
         "Passkey untuk \"${ username }\" akan disimpan dan tersedia pada perangkat yang memasang ${ PASS_APP_NAME }."
@@ -890,6 +893,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Secara bawaan anggota tim hanya dapat mengekspor brankas di mana mereka pemiliknya. Jika opsi ini diaktifkan, mereka tidak akan dapat mengekspor data apa pun"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Dapat membuat, menyunting, menghapus, dan mengekspor item dalam brankas ini."
@@ -1176,6 +1182,9 @@
       "Save passkey": [
         "Simpan passkey"
       ],
+      "Select an existing login item to update.": [
+        "Pilih entri masuk yang ada untuk diperbarui."
+      ],
       "Select an existing login or create a new one.": [
         "Pilih entri masuk yang telah ada atau buat entri masuk baru."
       ],
@@ -1231,7 +1240,10 @@
         "Ganti ke brankas lain atau buat item dalam brankas ini"
       ],
       "Syncing your vaults…": [
-        "Menyinkronkan berkas Anda…"
+        "Menyinkronkan brankas Anda…"
+      ],
+      "Team members can only share vaults within organization": [
+        "Anggota tim hanya dapat membagikan brankas dalam organisasi"
       ],
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
@@ -1245,6 +1257,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
       ],
+      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Item entri masuk untuk \"${ domain }\" akan diperbarui dan tersedia pada perangkat yang terpasang ${ PASS_APP_NAME }."
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
       ],
@@ -1253,6 +1268,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
+      ],
+      "This setting is disabled on the organization level": [
+        "Pengaturan ini dinonaktifkan pada tingkat organisasi"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Brankas ini sedang tidak dibagikan dengan siapa pun. Undanglah orang-orang ke brankas ini untuk saling berbagi brankas bersama mereka."
@@ -1286,6 +1304,9 @@
       ],
       "Update login": [
         "Perbarui entri masuk"
+      ],
+      "Updating organization settings": [
+        "Memperbarui pengaturan organisasi"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Tingkatkan ke ${ PASS_APP_NAME }"
@@ -1490,6 +1511,9 @@
       "Disable data export for team members": [
         "Nonaktifkan ekspor data bagi anggota tim"
       ],
+      "Disable sharing outside the organization": [
+        "Nonaktifkan pembagian di luar organisasi"
+      ],
       "Display": [
         "Tampilan"
       ],
@@ -1651,6 +1675,9 @@
       ],
       "Oldest to newest": [
         "Terlama ke terbaru"
+      ],
+      "Organization": [
+        "Organisasi"
       ],
       "Passkey": [
         "Passkey"
@@ -2187,7 +2214,7 @@
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "Berkas \"${ vaultName }\" tidak dapat dibuat"
+        "Brankas \"${ vaultName }\" tidak dapat dibuat"
       ],
       "Could not send invitations to the following addresses :": [
         "Undangan tidak dapat dikirimkan ke alamat berikut :"
@@ -2256,7 +2283,7 @@
         "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur alias email"
       ],
       "Please verify your email address in order to use vault sharing": [
-        "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur berbagi berkas"
+        "Silakan verifikasi alamat email Anda untuk menggunakan fitur berbagi brankas"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
