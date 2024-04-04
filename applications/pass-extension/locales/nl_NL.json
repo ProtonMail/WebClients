@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Kon niet vaststellen met welke leden er gedeeld moest worden"
       ],
+      "Could not validate addresses at the moment.": [
+        "Het is momenteel niet mogelijk om de adressen te verifiëren."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Csv-bestand mist verwachte headers: ${ missingHeaders }"
       ],
@@ -1553,6 +1556,9 @@
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Disable data export for team members": [
+        "Gegevensexport uitschakelen voor teamleden"
       ],
       "Display": [
         "Weergeven"

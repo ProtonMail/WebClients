@@ -448,6 +448,12 @@
       "Authentication error": [
         "Lỗi xác thực"
       ],
+      "Authentication failure: ${ message }": [
+        "Xác thực thất bại: ${ message }"
+      ],
+      "Authenticator failure": [
+        "Xác thực thất bại"
+      ],
       "Auto-lock could not be activated": [
         "Không thể kích hoạt Tự động khóa"
       ],
@@ -517,6 +523,9 @@
       "Failed to edit user's access.": [
         "Lỗi khi chỉnh sửa quyền truy cập của người dùng."
       ],
+      "Failed to load item history": [
+        "Tải lịch sử nội dung thất bại"
+      ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Thất bại khi chuyển toàn bộ nội dung từ \"${ payload.content.name }\""
       ],
@@ -565,8 +574,14 @@
       "Item creation failed": [
         "Tạo nội dung thất bại"
       ],
+      "Item does not exist": [
+        "Nội dung không tồn tại"
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass sẽ xuất ra một tập tin CSV bị hỏng nếu bất kỳ trường nội dung nào bạn chứa các dấu phẩy, dấu ngoặc kép hoặc nhiều dòng không mong đợi."
+      ],
+      "Missing passkey": [
+        "Thiếu passkey"
       ],
       "Moving item failed": [
         "Dời nội dung thất bại"
@@ -582,6 +597,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Vui lòng ghim tiện ích hoặc chọn \"Tiếp tục nhưng không ghim\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Đăng ký thất bại: ${ message }"
       ],
       "Requesting alias options failed": [
         "Yêu cầu tùy chọn bí danh thất bại"
@@ -633,6 +651,12 @@
       ],
       "Unknown invite": [
         "Lời mời không xác định"
+      ],
+      "Unknown item": [
+        "Nội dung không xác định"
+      ],
+      "Unknown passkey": [
+        "Passkey không xác định"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Định dạng tệp ${ PASS_APP_NAME } không được hỗ trợ"
@@ -741,6 +765,12 @@
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Bạn có muốn chuyển tất cả nội dung từ \"${ fromVaultName }\" tới \"${ toVaultName }\" không?"
+      ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Bạn có muốn chuyển các nội dung này tới \"${ name }\"?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Bạn có muốn chuyển nội dung này tới \"${ name }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Đã vô hiệu hóa Tự động khóa thành công"
@@ -901,8 +931,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history": [
+        "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó"
+      ],
       "Moving items": [
         "Đang chuyển nội dung"
+      ],
+      "Moving items to another vault will erase their history": [
+        "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó"
       ],
       "Moving items to trash": [
         "Đang chuyển nội dung tới thùng rác"
@@ -1386,6 +1422,9 @@
       "Oldest to newest": [
         "Cũ nhất đến mới nhất"
       ],
+      "Passkey": [
+        "Passkey"
+      ],
       "Passphrase": [
         "Cụm từ mật khẩu"
       ],
@@ -1520,6 +1559,9 @@
       ],
       "View logs": [
         "Xem nhật kí"
+      ],
+      "Website": [
+        "Trang web"
       ],
       "Websites": [
         "Trang web"

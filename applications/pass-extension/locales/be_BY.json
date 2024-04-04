@@ -1280,6 +1280,9 @@
       "Save passkey": [
         "Захаваць ключ доступу"
       ],
+      "Select an existing login item to update.": [
+        "Выберыце існуючы элемент запісу ўваходу для абнаўлення."
+      ],
       "Select an existing login or create a new one.": [
         "Выберыце бягучы запіс уваходу або стварыце новы."
       ],
@@ -1357,6 +1360,9 @@
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:"
+      ],
+      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Элемент запісу ўваходу для \"${ domain }\" будзе абноўлены і даступны на прыладах з усталяваным ${ PASS_APP_NAME }."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
