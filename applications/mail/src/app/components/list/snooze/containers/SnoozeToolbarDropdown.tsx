@@ -2,12 +2,15 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr';
 import { Icon, useModalState } from '@proton/components/components';
+import { useApi } from '@proton/components/hooks';
+import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
+import { sendSnoozeReport } from '../helpers/snoozeTelemetry';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from './SnoozeToolbarDropdownStepWrapper';
@@ -18,6 +21,8 @@ interface Props {
 }
 
 const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
+    const api = useApi();
+
     const { canSnooze, canUnsnooze } = useSnooze();
     const { selectAll } = useSelectAll({ labelID });
 
@@ -31,6 +36,12 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
         <>
             <Vr />
             <ToolbarDropdown
+                clickCallback={() => {
+                    void sendSnoozeReport(api, {
+                        event: TelemetryMailEvents.snooze_open_dropdown,
+                        dimensions: { snooze_open_dropdown: 'toolbar' },
+                    });
+                }}
                 disabled={!selectedIDs || !selectedIDs.length || selectAll}
                 content={<Icon className="toolbar-icon flex" name="clock" alt={c('Title').t`Snooze`} />}
                 title={c('Title').t`Snooze`}
