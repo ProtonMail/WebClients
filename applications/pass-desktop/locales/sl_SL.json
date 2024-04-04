@@ -481,6 +481,9 @@
       "Could not resolve share members": [
         "Članov v skupni rabi ni bilo mogoče razrešiti"
       ],
+      "Could not validate addresses at the moment.": [
+        "Naslovov trenutno ni mogoče preveriti."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Datoteka CSV ne vsebuje pričakovanih glav: ${ missingHeaders }"
       ],
@@ -522,6 +525,9 @@
       ],
       "Failed to delete selected items": [
         "Izbranih predmetov ni bilo mogoče izbrisati"
+      ],
+      "Failed to edit organization settings": [
+        "Sprememba nastavitev vaše organizacije ni uspela."
       ],
       "Failed to edit user's access.": [
         "Uporabnikovega dostopa ni bilo mogoče urediti."
@@ -597,6 +603,9 @@
       ],
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Nadgradite za zgodnji dostop do ${ PASS_APP_NAME } namizne aplikacije"
       ],
       "Request timed out": [
         "Zahteva se je iztekla"
@@ -831,6 +840,9 @@
       "Built in 2FA authenticator": [
         "Vgrajen 2FA autentifikator"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Člani ekipe lahko privzeto izvozijo le trezorje, katerih lastniki so. Če je ta možnost vklopljena, ne bodo mogli izvoziti nobenih podatkov."
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Lahko ustvarja, ureja, briše in izvaža elemente v tem trezorju."
       ],
@@ -1038,6 +1050,9 @@
       "Offline support successfully disabled": [
         "Način brez povezave je onemogočen"
       ],
+      "Organization settings successfully updated": [
+        "Nastavitve organizacije so bile posodobljene"
+      ],
       "Owner": [
         "Lastnik"
       ],
@@ -1158,6 +1173,9 @@
       "Syncing your vaults…": [
         "Sinhronizacija vaših trezorjev …"
       ],
+      "Team members can only share vaults within organization": [
+        "Člani ekipe lahko delijo trezorje samo znotraj organizacije."
+      ],
       "Thank you, the problem has been reported": [
         "Hvala, težava je bila prijavljena"
       ],
@@ -1182,6 +1200,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ta izvoz bo nešifriran in vsak, ki ima dostop do vaše izvožene datoteke, bo lahko videl vaša gesla. Zaradi varnosti ga izbrišite, ko ga nehate uporabljati."
       ],
+      "This setting is disabled on the organization level": [
+        "Ta nastavitev je onemogočena na ravni organizacije"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ta trezor trenutno ni v skupni rabi z nikomer. Povabite ljudi, da to delijo z drugimi."
       ],
@@ -1202,6 +1223,9 @@
       ],
       "Unpinning item...": [
         "Odpenjanje predmeta..."
+      ],
+      "Updating organization settings": [
+        "Posodabljanje nastavitev organizacije"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Nadgradite zdaj, da odklenete Premium funkcije"
@@ -1385,6 +1409,12 @@
       "Created": [
         "Ustvarjeno"
       ],
+      "Disable data export for team members": [
+        "Onemogočite izvoz podatkov za člane ekipe"
+      ],
+      "Disable sharing outside the organization": [
+        "Onemogočite skupno rabo izven organizacije"
+      ],
       "Display": [
         "Zaslon"
       ],
@@ -1405,6 +1435,9 @@
       ],
       "Export": [
         "Izvozi"
+      ],
+      "Exporting policy": [
+        "Pravilnik izvoza podatkov"
       ],
       "Field name": [
         "Ime polja"
@@ -1541,6 +1574,9 @@
       "Oldest to newest": [
         "Od starejšega do najnovejšega"
       ],
+      "Organization": [
+        "Organizacija"
+      ],
       "Passkey": [
         "Identifikacijski ključ"
       ],
@@ -1600,6 +1636,9 @@
       ],
       "Set PIN code": [
         "Nastavi kodo PIN"
+      ],
+      "Sharing policy": [
+        "Pravilnik skupne rabe"
       ],
       "Show website favicons": [
         "Pokaži ikone spletnega mesta"
@@ -2056,6 +2095,9 @@
       ],
       "Invalid email addresses.": [
         "Neveljavni e-poštni naslovi."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Vabljenje e-poštnih naslovov izven organizacije ni dovoljeno."
       ],
       "item was imported without custom fields": [
         "element je bil uvožen brez polj po meri"
