@@ -3,10 +3,12 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle, FormHandle, FormTracker, FormTrackerState } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
+import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 
-import { FieldType, FormType, kButtonSubmitSelector } from '@proton/pass/fathom';
+import { FieldType, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -23,8 +25,6 @@ type FieldsForFormResults = WeakMap<
     }
 >;
 
-/** We do not want to trigger form submission for these form types */
-const EXCLUDED_SUBMIT_FORM_TYPES = [FormType.NOOP, FormType.MFA, FormType.RECOVERY];
 /** Heuristic duration after which we reset the internal `isSubmitting` flag. */
 const SUBMITTING_RESET_TIMEOUT = 500;
 
@@ -50,7 +50,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     /** Resolves form data for autosaving purposes, prioritizing usernames over
      * hidden usernames and email fields. Additionally, prioritizes new passwords
      * over current passwords to detect changes */
-    const getFormData = (): { username?: string; password?: string } => {
+    const getFormData = (): FormCredentials => {
         const nonEmptyField = (field: FieldHandle) => !isEmptyString(field.value);
 
         /* Determine the username based on priority: username > hidden username > email */
@@ -65,38 +65,40 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         const passwordCurrent = lastItem(form.getFieldsFor(FieldType.PASSWORD_CURRENT, nonEmptyField));
 
         return {
-            username: (username ?? email ?? usernameHidden)?.value,
-            password: (passwordNew ?? passwordCurrent)?.value,
+            username: (username ?? email ?? usernameHidden)?.value ?? '',
+            password: (passwordNew ?? passwordCurrent)?.value ?? '',
         };
     };
 
-    const submit = async () => {
-        /* Exit early when there is nothing to stage (eg. MFA and NOOP forms).
-         * This check is done here instead of not binding the listener in the
-         * first place because the `formType` can change for a particular form
-         * (eg. re-rendering in SPAs). */
-        if (EXCLUDED_SUBMIT_FORM_TYPES.includes(form.formType)) return;
+    /* Exit when there is nothing to stage (eg. MFA and RECOVERY forms).
+     * This check is done here instead of not binding the listener in the
+     * first place because the `formType` can change for a particular form
+     * (eg. re-rendering in SPAs). We validate the form credentials against
+     * partial form data in order to support multi-step form staging. */
+    const submit = async (): Promise<MaybeNull<AutosaveFormEntry>> => {
+        const data = getFormData();
+        const valid = validateFormCredentials(data, { type: form.formType, partial: true });
 
-        const { username, password } = getFormData();
-        const hasCredentials = Boolean(username?.length || password?.length);
-
-        if (!state.isSubmitting && hasCredentials) {
+        if (!state.isSubmitting && valid) {
             state.isSubmitting = true;
-            await sendMessage(
+            const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.FORM_ENTRY_STAGE,
                     payload: {
                         type: form.formType,
                         reason: 'FORM_SUBMIT_HANDLER',
                         action: parseFormAction(form.element),
-                        data: { username, password },
+                        data,
                     },
                 })
             );
 
             /* FIXME: Handle intercepted xmlhttprequests failures here */
             setTimeout(() => (state.isSubmitting = false), SUBMITTING_RESET_TIMEOUT);
+            return response.type === 'success' ? response.submission : null;
         }
+
+        return null;
     };
 
     const onSubmitHandler = withContext(async (ctx) => {

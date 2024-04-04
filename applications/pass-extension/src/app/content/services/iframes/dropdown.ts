@@ -159,7 +159,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
 
             ctx?.service.autofill.autofillGeneratedPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
-            form.tracker?.submit();
+            void form.tracker?.submit();
         })
     );
 
@@ -169,7 +169,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
-        fieldRef.current?.getFormHandle()?.tracker?.submit();
+        void fieldRef.current?.getFormHandle()?.tracker?.submit();
     });
 
     const destroy = () => {

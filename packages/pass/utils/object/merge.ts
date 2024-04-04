@@ -22,7 +22,7 @@ const merge = <Original extends Obj, Overwrite extends Obj>(
             ...overwritten,
             [key]:
                 isObject(original[key]) && isObject(overwrite[key])
-                    ? merge(original[key], overwrite[key])
+                    ? merge(original[key], overwrite[key], options)
                     : overwrite[key],
         }),
         original

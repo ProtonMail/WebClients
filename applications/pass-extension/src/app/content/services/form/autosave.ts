@@ -1,24 +1,26 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
-import { isFormEntryPromptable } from 'proton-pass-extension/lib/utils/form-entry';
+import { isFormEntryPromptable, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import type { FormEntryPrompt } from '@proton/pass/types';
+import type { AutosaveFormEntry } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 
 export const createAutosaveService = () => {
-    const promptAutoSave: (submission: FormEntryPrompt) => boolean = withContext((ctx, submission) => {
-        if (ctx?.getFeatures().Autosave) {
+    /** Checks the user's settings and prompts for autosave accordingly.
+     * Returns wether the autosave prompt was shown or not. */
+    const promptAutoSave: (submission: AutosaveFormEntry) => boolean = withContext(
+        (ctx, { domain, subdomain, autosave, data }) => {
+            if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
+
             ctx.service.iframe.attachNotification()?.open({
                 action: NotificationAction.AUTOSAVE,
-                submission,
+                data: { domain: subdomain ?? domain, ...autosave.data, ...data },
             });
 
             return true;
         }
-
-        return false;
-    });
+    );
 
     /** Autosave reconciliation is responsible for syncing the service worker state with our
      * local detection in order to take the appropriate the appropriate action for auto-save */
@@ -26,11 +28,12 @@ export const createAutosaveService = () => {
         /* Resolve any on-going submissions for the current domain */
         const submission = await sendMessage.on(
             contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
-            (response) => (response.type === 'success' ? response.submission : undefined)
+            (response) => (response.type === 'success' ? response.submission : null)
         );
 
-        if (submission !== undefined) {
-            const { status, partial, domain, type } = submission;
+        if (submission !== null) {
+            const { status, domain, type, data } = submission;
+            const valid = validateFormCredentials(data, { type, partial: false });
 
             const currentDomain = ctx?.getExtensionContext().url.domain;
             const domainmatch = currentDomain === domain;
@@ -46,19 +49,19 @@ export const createAutosaveService = () => {
             const submitting = typedForms?.some(({ tracker }) => tracker?.getState().isSubmitting);
 
             const formTypeChangedOrRemoved = !submissionTypeMatch;
-            const canCommit = domainmatch && formTypeChangedOrRemoved;
+            const canCommit = domainmatch && formTypeChangedOrRemoved && valid;
 
             /* if we have a non-partial staging form submission at
              * this stage either commit it if no forms of the same
              * type are present in the DOM - or stash it if it's the
              * case : we may be dealing with a failed login */
-            if (status === FormEntryStatus.STAGING && !partial && canCommit) {
+            if (status === FormEntryStatus.STAGING && canCommit) {
                 return sendMessage.on(
                     contentScriptMessage({
                         type: WorkerMessageType.FORM_ENTRY_COMMIT,
                         payload: { reason: 'FORM_TYPE_REMOVED' },
                     }),
-                    (res) => (res.type === 'success' && res.committed ? promptAutoSave(res.committed) : false)
+                    (res) => (res.type === 'success' && res.submission ? promptAutoSave(res.submission) : false)
                 );
             }
 
@@ -66,11 +69,11 @@ export const createAutosaveService = () => {
 
             /* Stash the form submission if it meets the following conditions:
              * - The form type is still detected on the current page.
-             * - The form is not current submitting
+             * - The form is not currently submitting
              * - The submission is not "partial" or does not have a username value.
              * This prevents data loss on multi-step forms while properly stashing
              * when navigating back and forth on such forms. */
-            if (submissionTypeMatch && !submitting && (!partial || !submission.data.username)) {
+            if (submissionTypeMatch && !submitting && (valid || !data.username)) {
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.FORM_ENTRY_STASH,
@@ -83,7 +86,7 @@ export const createAutosaveService = () => {
         return false;
     });
 
-    return { reconciliate };
+    return { reconciliate, promptAutoSave };
 };
 
 export type AutosaveService = ReturnType<typeof createAutosaveService>;

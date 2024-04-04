@@ -76,7 +76,7 @@ export const createFormManager = (options: FormManagerOptions) => {
     const garbagecollect = () => {
         state.trackedForms.forEach((form) => {
             if (form.shouldRemove()) {
-                form.tracker?.submit();
+                void form.tracker?.submit();
                 detachTrackedForm(form.element);
             }
         });
