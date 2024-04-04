@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Kon niet vaststellen met welke leden er gedeeld moest worden"
       ],
+      "Could not validate addresses at the moment.": [
+        "Het is momenteel niet mogelijk om de adressen te verifiëren."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Csv-bestand mist verwachte headers: ${ missingHeaders }"
       ],
@@ -595,7 +598,7 @@
         "Pincodes komen niet overeen"
       ],
       "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
-        "Upgrade om vroegtijdige toegang te hebben tot ${ PASS_APP_NAME } desktop app"
+        "Upgrade om vroegtijdige toegang te hebben tot ${ PASS_APP_NAME }-desktopapp"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -1349,6 +1352,9 @@
       ],
       "Created": [
         "Aangemaakt"
+      ],
+      "Disable data export for team members": [
+        "Gegevensexport uitschakelen voor teamleden"
       ],
       "Display": [
         "Weergeven"
