@@ -34,6 +34,7 @@ export const getInfo = (User: User) => {
         hasPaidMail: hasPaidMail(User),
         hasPaidVpn: hasPaidVpn(User),
         hasPaidDrive: hasPaidDrive(User),
+        hasPaidPass: hasPaidPass(User),
         canPay: canPay(User),
     };
 };
