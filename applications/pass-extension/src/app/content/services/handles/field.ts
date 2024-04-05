@@ -144,6 +144,7 @@ export const createFieldHandles = ({
             listeners.addListener(field.element, 'focus', onFocusField(field));
             listeners.addListener(field.element, 'input', onInputField(field));
             listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
+            listeners.addResizeObserver(field.element, () => field.icon?.reposition());
             listeners.addObserver(field.element, onFieldAttributeChange(field), {
                 attributeFilter: ['type'],
                 attributeOldValue: true,
