@@ -69,6 +69,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         hasPaidMail: true,
         hasPaidVpn: false,
         hasPaidDrive: false,
+        hasPaidPass: false,
         canPay: true,
         AccountRecovery: null,
         ...value,
