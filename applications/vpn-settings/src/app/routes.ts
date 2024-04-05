@@ -2,17 +2,14 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import {
-    canScheduleOrganizationPhoneCalls,
-    hasOrganizationSetup,
-    hasOrganizationSetupWithKeys,
-} from '@proton/shared/lib/helpers/organization';
+import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasVpnB2BPlan,
     getIsVpnB2BPlan,
     hasCancellablePlan,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
+import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
@@ -38,7 +35,7 @@ export const getRoutes = ({ user, subscription, organization, isScheduleCallsEna
     const multiUserTitle = c('Title').t`Multi-user support`;
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
-    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls(organization, user, isScheduleCallsEnabled);
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
 
     return {
         dashboard: <SectionConfig>{
