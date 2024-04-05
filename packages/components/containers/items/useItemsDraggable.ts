@@ -1,4 +1,4 @@
-import { DragEvent, useCallback, useEffect, useState } from 'react';
+import { DragEvent, useCallback, useEffect, useRef, useState } from 'react';
 
 import { generateUID } from '../../helpers';
 import useHandler from '../../hooks/useHandler';
@@ -29,7 +29,7 @@ const useItemsDraggable = <Item extends AbstractItem>(
     selectAll?: boolean
 ) => {
     // HTML reference to the drag element
-    const [dragElement, setDragElement] = useState<HTMLDivElement>();
+    const dragElementRef = useRef<HTMLDivElement>();
 
     // List of currently dragged item ids
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
@@ -41,12 +41,12 @@ const useItemsDraggable = <Item extends AbstractItem>(
         setDraggedIDs([]);
     }, [items]);
 
-    const clearDragElement = useCallback(() => {
-        if (dragElement) {
-            document.body.removeChild(dragElement);
-            setDragElement(undefined);
+    const clearDragElement = () => {
+        if (dragElementRef.current) {
+            document.body.removeChild(dragElementRef.current);
+            dragElementRef.current = undefined;
         }
-    }, [setDragElement]);
+    };
 
     const handleDragCanceled = useHandler(() => {
         setDraggedIDs([]);
@@ -60,19 +60,16 @@ const useItemsDraggable = <Item extends AbstractItem>(
     /**
      * Drag end handler to use on the draggable element
      */
-    const handleDragEnd = useCallback(
-        (event: DragEvent) => {
-            // Always clear the drag element no matter why the drag has ended
-            clearDragElement();
+    const handleDragEnd = useCallback((event: DragEvent) => {
+        // Always clear the drag element no matter why the drag has ended
+        clearDragElement();
 
-            // We discover that Chrome initialize the dropEffect to 'copy' and only set it to 'none' just after
-            // We don't use 'copy' at all so both 'none' and 'copy' effects can be considered as canceled drags
-            if (event.dataTransfer.dropEffect === 'none' || event.dataTransfer.dropEffect === 'copy') {
-                return handleDragCanceled();
-            }
-        },
-        [clearDragElement, handleDragCanceled]
-    );
+        // We discover that Chrome initialize the dropEffect to 'copy' and only set it to 'none' just after
+        // We don't use 'copy' at all so both 'none' and 'copy' effects can be considered as canceled drags
+        if (event.dataTransfer.dropEffect === 'none' || event.dataTransfer.dropEffect === 'copy') {
+            return handleDragCanceled();
+        }
+    }, []);
 
     const handleDragSucceed = useHandler((action: string | undefined) => {
         clearDragElement();
@@ -117,7 +114,8 @@ const useItemsDraggable = <Item extends AbstractItem>(
             event.dataTransfer.setDragImage(dragElement, 0, 0);
             event.dataTransfer.setData(DRAG_ITEM_KEY, JSON.stringify(selection));
             event.dataTransfer.setData(DRAG_ITEM_ID_KEY, dragElement.id);
-            setDragElement(dragElement);
+
+            dragElementRef.current = dragElement;
         },
         [checkedIDs, onCheck, selectAll]
     );
