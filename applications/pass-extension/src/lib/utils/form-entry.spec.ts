@@ -2,23 +2,27 @@ import { FormType } from '@proton/pass/fathom';
 import type { AutosaveFormEntry, FormCredentials, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
 
-import { getFormId, isFormEntryCommitted, isFormEntryPromptable, validateFormCredentials } from './form-entry';
+import { isFormEntryCommitted, isFormEntryPromptable, setFormEntryStatus, validateFormCredentials } from './form-entry';
 
 const getMockCredentials = (username: string = '', password: string = ''): FormCredentials => ({ username, password });
 const getMockFormSubmission = (status: FormEntryStatus, type: FormType, data?: FormCredentials): FormEntry => ({
-    status,
-    type,
     data: data ?? getMockCredentials('john@proton.me', '123'),
     domain: 'proton.me',
+    status,
     subdomain: null,
+    submitted: false,
+    type,
+    updatedAt: -1,
 });
 
 describe('Form entry utils', () => {
-    describe('getFormId', () => {
-        test('should return correct form identifier', () => {
-            const tabId = 42;
-            const domain = 'proton.me';
-            expect(getFormId(tabId, domain)).toBe(`${tabId}:${domain}`);
+    describe('setFormEntryStatus', () => {
+        test('should update an entries status', () => {
+            const submission = getMockFormSubmission(FormEntryStatus.STAGING, FormType.LOGIN);
+            expect(setFormEntryStatus(submission, FormEntryStatus.COMMITTED)).toEqual({
+                ...submission,
+                status: FormEntryStatus.COMMITTED,
+            });
         });
     });
 
