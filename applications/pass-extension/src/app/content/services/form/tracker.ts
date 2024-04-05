@@ -1,6 +1,12 @@
 import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FieldHandle, FormHandle, FormTracker, FormTrackerState } from 'proton-pass-extension/app/content/types';
+import type {
+    FieldHandle,
+    FormHandle,
+    FormTracker,
+    FormTrackerState,
+    FormTrackerSubmitOptions,
+} from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
@@ -75,20 +81,21 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
      * first place because the `formType` can change for a particular form
      * (eg. re-rendering in SPAs). We validate the form credentials against
      * partial form data in order to support multi-step form staging. */
-    const submit = async (): Promise<MaybeNull<AutosaveFormEntry>> => {
+    const submit = async (options: FormTrackerSubmitOptions): Promise<MaybeNull<AutosaveFormEntry>> => {
         const data = getFormData();
-        const valid = validateFormCredentials(data, { type: form.formType, partial: true });
+        const valid = validateFormCredentials(data, { type: form.formType, partial: options.partial });
 
         if (!state.isSubmitting && valid) {
-            state.isSubmitting = true;
+            state.isSubmitting = options.submitted;
             const response = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.FORM_ENTRY_STAGE,
                     payload: {
-                        type: form.formType,
-                        reason: 'FORM_SUBMIT_HANDLER',
                         action: parseFormAction(form.element),
                         data,
+                        reason: 'FORM_SUBMIT_HANDLER',
+                        submitted: options.submitted,
+                        type: form.formType,
                     },
                 })
             );
@@ -110,7 +117,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         const dropdown = ctx?.service.iframe.dropdown;
         if (dropdown?.getState().visible) dropdown?.close();
 
-        await submit();
+        await submit({ partial: true, submitted: true });
     });
 
     const getTrackableFields = (): FieldsForFormResults => {

@@ -16,8 +16,9 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
  * of the active's tabs statuses.
  */
 type MainFrameRequestTrackerOptions = {
-    onTabError: (tabId: TabId, domain: MaybeNull<string>) => void;
     onTabDelete: (tabId: TabId) => void;
+    onTabError: (tabId: TabId, domain: MaybeNull<string>) => void;
+    onTabLoaded: (tabId: TabId, method: string, domain: MaybeNull<string>) => void;
 };
 
 const filter: WebRequest.RequestFilter = {
@@ -25,9 +26,16 @@ const filter: WebRequest.RequestFilter = {
     types: ['main_frame'],
 };
 
-export const createMainFrameRequestTracker = ({ onTabDelete, onTabError }: MainFrameRequestTrackerOptions) => {
-    const onMainFrameCompleted = (req: WebRequest.OnCompletedDetailsType) =>
-        isFailedRequest(req) && onTabError(req.tabId, parseUrl(req.url).domain);
+export const createMainFrameRequestTracker = ({
+    onTabDelete,
+    onTabError,
+    onTabLoaded,
+}: MainFrameRequestTrackerOptions) => {
+    const onMainFrameCompleted = (req: WebRequest.OnCompletedDetailsType) => {
+        const domain = parseUrl(req.url).domain;
+        if (isFailedRequest(req)) onTabError(req.tabId, domain);
+        else onTabLoaded(req.tabId, req.method, domain);
+    };
 
     browser.tabs.onRemoved.addListener(onTabDelete);
     browser.webRequest.onCompleted.addListener(onMainFrameCompleted, filter);
