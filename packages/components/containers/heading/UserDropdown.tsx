@@ -52,12 +52,12 @@ import {
     SSO_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { openNewTab, textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan, hasLifetime, isTrial } from '@proton/shared/lib/helpers/subscription';
-import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
+import { canScheduleOrganizationPhoneCalls, openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
@@ -227,7 +227,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         try {
             const { CalendlyLink } = await getScheduleCall();
 
-            openNewTab(CalendlyLink);
+            openCalendlyLink(CalendlyLink, user);
         } finally {
             hideNotification(id);
         }
