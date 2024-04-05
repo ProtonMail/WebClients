@@ -63,6 +63,9 @@ export interface EditorComposer {
     toggleMaximized?: () => void;
     composerID: ComposerID;
     minimizeButtonRef: RefObject<HTMLButtonElement>;
+    openedAssistants: string[];
+    openAssistant: (id: string) => void;
+    closeAssistant: (id: string) => void;
 }
 
 export interface EditorQuickReply {
@@ -127,6 +130,20 @@ export const useComposerContent = (args: EditorArgs) => {
     // Map of send preferences and send icons for each recipient
     const messageSendInfo = useMessageSendInfo(modelMessage);
     const reloadSendInfo = useReloadSendInfo();
+
+    const [showAssistant, setShowAssistant] = useState(false);
+
+    const toggleAssistant = () => {
+        setShowAssistant(!showAssistant);
+    };
+
+    const isAssistantOpenedInComposer = isComposer && args.openedAssistants.includes(args.composerID);
+
+    const handleCloseAssistant = () => {
+        if (isComposer && isAssistantOpenedInComposer) {
+            args.closeAssistant(args.composerID);
+        }
+    };
 
     const { message: syncedMessage } = useMessage(messageID);
 
@@ -541,6 +558,7 @@ export const useComposerContent = (args: EditorArgs) => {
     };
 
     const handleDelete = async (hasChanges = true) => {
+        handleCloseAssistant();
         autoSave.cancel?.();
         try {
             onClose();
@@ -645,6 +663,8 @@ export const useComposerContent = (args: EditorArgs) => {
               hasHotkeysEnabled,
               editorRef: args.editorRef,
               minimizeButtonRef: args.minimizeButtonRef,
+              showAssistant,
+              closeAssistant: handleCloseAssistant,
           }
         : {
               type: EditorTypes.quickReply,
@@ -747,5 +767,10 @@ export const useComposerContent = (args: EditorArgs) => {
         // Quick reply specific
         handleExpandComposer,
         handleSendQuickReply,
+
+        // Assistant
+        showAssistant,
+        setShowAssistant,
+        toggleAssistant,
     };
 };

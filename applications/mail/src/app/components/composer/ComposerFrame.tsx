@@ -5,6 +5,7 @@ import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
+import { useAssistant } from 'proton-mail/genie/useAssistant';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
@@ -76,6 +77,8 @@ const ComposerFrame = ({
         drawerOffset,
     });
 
+    const { openedAssistants, closeAssistant } = useAssistant();
+
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
     const onClose = useHandler(inputOnClose);
@@ -99,6 +102,9 @@ const ComposerFrame = ({
     }, [windowHeight]);
 
     const handleClose = () => {
+        if (openedAssistants.includes(composerID)) {
+            closeAssistant(composerID);
+        }
         composerRef?.current?.close();
     };
 

@@ -13,6 +13,7 @@ import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeI
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
+import { AssistantProvider } from 'proton-mail/genie/useAssistant';
 
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
@@ -66,32 +67,34 @@ const MainContainer: FunctionComponent = () => {
     }, [featureSw, loadingSw]);
 
     return (
-        <QuickSettingsRemindersProvider>
-            <DrawerThemeInjector />
-            <EncryptedSearchProvider>
-                <SimpleLoginExtensionProvider>
-                    <MailContentRefProvider mailContentRef={mailContentRef}>
-                        <ChecklistsProvider>
-                            <SubscriptionModalProvider app={APP_NAME}>
-                                <ComposerContainer breakpoints={breakpoints}>
-                                    <CheckAllRefProvider>
-                                        <ModalsChildren />
-                                        <Switch>
-                                            <Route
-                                                path={MAIN_ROUTE_PATH}
-                                                render={() => (
-                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                                )}
-                                            />
-                                        </Switch>
-                                    </CheckAllRefProvider>
-                                </ComposerContainer>
-                            </SubscriptionModalProvider>
-                        </ChecklistsProvider>
-                    </MailContentRefProvider>
-                </SimpleLoginExtensionProvider>
-            </EncryptedSearchProvider>
-        </QuickSettingsRemindersProvider>
+        <AssistantProvider assistantFeature={'ComposerAssistant'}>
+            <QuickSettingsRemindersProvider>
+                <DrawerThemeInjector />
+                <EncryptedSearchProvider>
+                    <SimpleLoginExtensionProvider>
+                        <MailContentRefProvider mailContentRef={mailContentRef}>
+                            <ChecklistsProvider>
+                                <SubscriptionModalProvider app={APP_NAME}>
+                                    <ComposerContainer breakpoints={breakpoints}>
+                                        <CheckAllRefProvider>
+                                            <ModalsChildren />
+                                            <Switch>
+                                                <Route
+                                                    path={MAIN_ROUTE_PATH}
+                                                    render={() => (
+                                                        <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                                    )}
+                                                />
+                                            </Switch>
+                                        </CheckAllRefProvider>
+                                    </ComposerContainer>
+                                </SubscriptionModalProvider>
+                            </ChecklistsProvider>
+                        </MailContentRefProvider>
+                    </SimpleLoginExtensionProvider>
+                </EncryptedSearchProvider>
+            </QuickSettingsRemindersProvider>
+        </AssistantProvider>
     );
 };
 
