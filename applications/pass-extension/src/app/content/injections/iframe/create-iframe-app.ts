@@ -64,7 +64,8 @@ export const createIFrameApp = <A>({
         framePort: null,
         loaded: false,
         port: null,
-        position: { top: -1, left: -1, right: -1, bottom: -1, zIndex: -1 },
+        position: { top: -1, left: -1, right: -1, bottom: -1 },
+        positionReq: -1,
         ready: false,
         visible: false,
     };
@@ -74,6 +75,7 @@ export const createIFrameApp = <A>({
     const ensureReady = () => waitUntil({ check: () => state.ready, cancel: ensureStale }, 50);
 
     const listeners = createListenerStore();
+    const activeListeners = createListenerStore();
 
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
@@ -138,8 +140,7 @@ export const createIFrameApp = <A>({
     const setIframePosition = (values: IFramePosition) => {
         state.position = values;
 
-        const { top, left, right, zIndex } = values;
-        iframe.style.setProperty(`--frame-zindex`, `${zIndex ?? 1}`);
+        const { top, left, right } = values;
         iframe.style.setProperty(`--frame-top`, top ? pixelEncoder(top) : 'unset');
         iframe.style.setProperty(`--frame-left`, left ? pixelEncoder(left) : 'unset');
         iframe.style.setProperty(`--frame-right`, right ? pixelEncoder(right) : 'unset');
@@ -150,9 +151,15 @@ export const createIFrameApp = <A>({
         iframe.style.setProperty(`--frame-height`, pixelEncoder(height));
     };
 
-    const updatePosition = () => requestAnimationFrame(() => setIframePosition(position(root)));
+    const updatePosition = () => {
+        cancelAnimationFrame(state.positionReq);
+        state.positionReq = requestAnimationFrame(() => setIframePosition(position(root)));
+    };
 
     const close = (options: IFrameCloseOptions = {}) => {
+        cancelAnimationFrame(state.positionReq);
+        activeListeners.removeAll();
+
         if (state.visible) {
             const target = (options?.event?.target ?? null) as MaybeNull<HTMLElement>;
 
@@ -174,11 +181,13 @@ export const createIFrameApp = <A>({
             state.action = action;
             state.visible = true;
 
-            listeners.addListener(window, 'resize', updatePosition);
-            listeners.addListener(scrollRef, 'scroll', updatePosition);
+            activeListeners.addListener(window, 'resize', updatePosition);
+            activeListeners.addListener(window, 'scroll', updatePosition);
+            activeListeners.addListener(scrollRef, 'scroll', updatePosition);
 
             if (backdropClose) {
-                listeners.addListener(window, 'mousedown', (event) => close({ event, discard: true, refocus: false }));
+                const onMouseDown = (event: Event) => close({ event, discard: true, refocus: false });
+                activeListeners.addListener(window, 'mousedown', onMouseDown);
             }
 
             void sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
@@ -213,6 +222,7 @@ export const createIFrameApp = <A>({
     const destroy = () => {
         close({ discard: false, refocus: false });
         listeners.removeAll();
+        activeListeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
         safeCall(() => root.removeChild(iframe))();
         state.port = null;
