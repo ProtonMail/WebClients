@@ -4,7 +4,7 @@ import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import useLoading from '@proton/hooks/useLoading';
-import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import { openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import illustration from '@proton/styles/assets/img/illustrations/account-support-phone.svg';
 
@@ -25,7 +25,7 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
     const handleScheduleCallClick = async () => {
         const { CalendlyLink } = await getScheduleCall();
 
-        openNewTab(CalendlyLink);
+        openCalendlyLink(CalendlyLink, user);
     };
 
     const boldPhoneCall = (
