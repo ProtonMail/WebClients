@@ -2,17 +2,14 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import {
-    canScheduleOrganizationPhoneCalls,
-    hasOrganizationSetup,
-    hasOrganizationSetupWithKeys,
-} from '@proton/shared/lib/helpers/organization';
+import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     getHasVpnOrPassB2BPlan,
     hasFamily,
 } from '@proton/shared/lib/helpers/subscription';
+import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -32,7 +29,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isS
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
-    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls(organization, user, isScheduleCallsEnabled);
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
