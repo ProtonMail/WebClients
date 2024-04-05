@@ -59,10 +59,11 @@ export type FormTrackerFieldConfig = {
 };
 
 export type FormTrackerState = { isSubmitting: boolean };
+export type FormTrackerSubmitOptions = { partial: boolean; submitted: boolean };
 
 export interface FormTracker {
     detach: () => void;
     getState: () => FormTrackerState;
     reconciliate: () => void;
-    submit: () => Promise<MaybeNull<AutosaveFormEntry>>;
+    submit: (options: FormTrackerSubmitOptions) => Promise<MaybeNull<AutosaveFormEntry>>;
 }

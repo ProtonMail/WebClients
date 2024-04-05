@@ -1,11 +1,14 @@
 import type { FormType } from '@proton/pass/fathom';
-import type { AutosaveFormEntry, FormCredentials, FormIdentifier, TabId } from '@proton/pass/types';
+import type { AutosaveFormEntry, FormCredentials } from '@proton/pass/types';
 import { type FormEntry, FormEntryStatus } from '@proton/pass/types';
-
-export const getFormId = (tabId: TabId, domain: string): FormIdentifier => `${tabId}:${domain}`;
 
 export const isFormEntryCommitted = (submission: FormEntry): submission is FormEntry<FormEntryStatus.COMMITTED> =>
     submission.status === FormEntryStatus.COMMITTED;
+
+export const setFormEntryStatus = <T extends FormEntryStatus>(submission: FormEntry, status: T): FormEntry<T> => {
+    submission.status = status;
+    return submission as FormEntry<T>;
+};
 
 export const isFormEntryPromptable = (
     submission: AutosaveFormEntry

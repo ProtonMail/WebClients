@@ -88,13 +88,6 @@ export const createAutofillService = () => {
             const { domain, subdomain, hostname } = ctx.getExtensionContext().url;
             form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
-            if (ctx.getSettings().autosave.passwordSuggest) {
-                form.tracker
-                    ?.submit()
-                    .then((res) => res && ctx.service.autosave.promptAutoSave(res))
-                    .catch(noop);
-            }
-
             void sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.STORE_DISPATCH,
