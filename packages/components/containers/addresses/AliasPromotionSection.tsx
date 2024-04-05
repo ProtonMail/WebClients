@@ -29,7 +29,8 @@ const AliasPromotionSection = () => {
         !feature.Value ||
         !subscription ||
         !subscription.Plans ||
-        getIsB2BAudienceFromPlan(subscription.Plans[0].Name)
+        user.hasPaidPass ||
+        getIsB2BAudienceFromPlan(subscription.Plans[0].Name) // Exclude B2B users
     ) {
         return null;
     }
