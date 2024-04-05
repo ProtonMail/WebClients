@@ -1,9 +1,16 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { PersistedSession, PersistedSessionBlob, PersistedSessionWithLocalID } from './SessionInterface';
+import {
+    DefaultPersistedSession,
+    OfflinePersistedSession,
+    PersistedSession,
+    PersistedSessionBlob,
+    PersistedSessionWithLocalID,
+} from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 import { getValidatedLocalID } from './sessionForkValidation';
@@ -26,6 +33,12 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
             payloadVersion: parsedValue.payloadVersion || 1,
+            ...(parsedValue.offlineKeySalt
+                ? {
+                      payloadType: 'offline',
+                      offlineKeySalt: parsedValue.offlineKeySalt,
+                  }
+                : { payloadType: 'default' }),
         };
     } catch (e: any) {
         return undefined;
@@ -67,8 +80,20 @@ export const getPersistedSessions = (): PersistedSessionWithLocalID[] => {
 export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | undefined => {
     try {
         const parsedValue = JSON.parse(blob);
+        const keyPassword = parsedValue.keyPassword || '';
+        const offlineKeyPassword = parsedValue.offlineKeyPassword || '';
+
+        if (parsedValue.offlineKeyPassword) {
+            return {
+                type: 'offline',
+                keyPassword,
+                offlineKeyPassword,
+            };
+        }
+
         return {
-            keyPassword: parsedValue.keyPassword || '',
+            type: 'default',
+            keyPassword,
         };
     } catch (e: any) {
         return undefined;
@@ -101,6 +126,7 @@ export const setPersistedSessionWithBlob = async (
         UserID: string;
         UID: string;
         keyPassword: string;
+        offlineKey: OfflineKey | undefined;
         isSubUser: boolean;
         persistent: boolean;
         trusted: boolean;
@@ -108,6 +134,36 @@ export const setPersistedSessionWithBlob = async (
 ) => {
     const payloadVersion =
         1 as PersistedSession['payloadVersion']; /* Update to 2 when all clients understand it (safe for rollback) */
+
+    const { clearTextPayloadData, encryptedPayloadData } = ((): {
+        clearTextPayloadData:
+            | Pick<OfflinePersistedSession, 'payloadType' | 'offlineKeySalt'>
+            | Pick<DefaultPersistedSession, 'payloadType'>;
+        encryptedPayloadData: PersistedSessionBlob;
+    } => {
+        if (data.offlineKey) {
+            return {
+                clearTextPayloadData: {
+                    payloadType: 'offline',
+                    offlineKeySalt: data.offlineKey.salt,
+                },
+                encryptedPayloadData: {
+                    keyPassword: data.keyPassword,
+                    offlineKeyPassword: data.offlineKey.password,
+                },
+            } as const;
+        }
+
+        return {
+            clearTextPayloadData: {
+                payloadType: 'default',
+            },
+            encryptedPayloadData: {
+                keyPassword: data.keyPassword,
+            },
+        } as const;
+    })();
+
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
@@ -115,9 +171,10 @@ export const setPersistedSessionWithBlob = async (
         persistent: data.persistent,
         trusted: data.trusted,
         payloadVersion,
+        ...clearTextPayloadData,
         blob: await getEncryptedBlob(
             key,
-            JSON.stringify({ keyPassword: data.keyPassword }),
+            JSON.stringify(encryptedPayloadData),
             payloadVersion === 2 ? stringToUtf8Array('session') : undefined
         ),
     };

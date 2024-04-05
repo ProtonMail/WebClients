@@ -1,26 +1,26 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
-import { Href } from '@proton/atoms';
-import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { OnLoginCallbackResult } from '@proton/components/containers';
+import { AuthSession } from '@proton/components/containers/login/interface';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { OAuthClientInfo, getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     GetActiveSessionsResult,
+    getActiveLocalSession,
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     OAuthProduceForkParameters,
-    ProduceForkParameters,
+    ProduceForkParametersFull,
     getProduceForkParameters,
+    getRequiredForkParameters,
+    getShouldReAuth,
 } from '@proton/shared/lib/authentication/sessionForking';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useApi, useErrorHandler } from '../../hooks';
-import StandardErrorPage from './StandardErrorPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 
 const getProduceOAuthForkParameters = () => {
@@ -43,47 +43,38 @@ export type OAuthData = OAuthProduceForkParameters & {
     clientInfo: OAuthClientInfo;
 };
 
-export type ActiveSessionData =
-    | {
-          type: SSOType.Proton;
-          payload: ProduceForkParameters;
-      }
-    | {
-          type: SSOType.OAuth;
-          payload: OAuthData;
-      };
+export type ProtonForkData = {
+    type: SSOType.Proton;
+    payload: {
+        forkParameters: ProduceForkParametersFull;
+    };
+};
 
-export type ProduceForkData =
-    | {
-          type: SSOType.Proton;
-          payload: ProduceForkParameters & {
-              UID: string;
-              keyPassword?: string;
-              persistent: boolean;
-              trusted: boolean;
-          };
-      }
-    | {
-          type: SSOType.OAuth;
-          payload: OAuthData & { UID: string };
-      };
+export type OAuthForkData = {
+    type: SSOType.OAuth;
+    payload: {
+        oauthData: OAuthData;
+    };
+};
+
+export type ProduceForkData = OAuthForkData | ProtonForkData;
 
 interface Props {
     type: SSOType;
-    onActiveSessions: (data: ActiveSessionData, activeSessions: GetActiveSessionsResult) => void;
+    onActiveSessions: (data: ProduceForkData, activeSessions: GetActiveSessionsResult) => void;
     onInvalidFork: () => void;
-    onProduceFork: (data: ProduceForkData) => Promise<void>;
+    onProduceFork: (data: ProduceForkData, session: AuthSession) => Promise<OnLoginCallbackResult>;
     loader: ReactNode;
 }
 
 const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProduceFork }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
-    const [tooManyChildSessionsError, setTooManyChildSessionsError] = useState<boolean>(false);
     const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
 
     useEffect(() => {
+        const silentApi = getSilentApi(normalApi);
+
         const runOAuth = async () => {
             const { clientID, oaSession } = getProduceOAuthForkParameters();
             if (!clientID || !oaSession) {
@@ -95,109 +86,64 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
                 getActiveSessions(silentApi),
                 silentApi<{ Info: OAuthClientInfo }>(getOAuthClientInfo(clientID)),
             ]);
+
+            const oauthData: OAuthData = {
+                clientInfo: Info,
+                clientID,
+                oaSession,
+            };
+
             const { session, sessions } = activeSessionsResult;
 
             if (session && sessions.length === 1) {
-                const { UID } = session;
-
-                await onProduceFork({
-                    type: SSOType.OAuth,
-                    payload: {
-                        UID,
-                        clientInfo: Info,
-                        clientID,
-                        oaSession,
+                await onProduceFork(
+                    {
+                        type: SSOType.OAuth,
+                        payload: { oauthData },
                     },
-                });
+                    session
+                );
                 return;
             }
 
-            onActiveSessions(
-                {
-                    type: SSOType.OAuth,
-                    payload: {
-                        clientInfo: Info,
-                        clientID,
-                        oaSession,
-                    },
-                },
-                activeSessionsResult
-            );
+            onActiveSessions({ type: SSOType.OAuth, payload: { oauthData } }, activeSessionsResult);
             return;
         };
 
         const runInternal = async () => {
-            const { app, state, localID, forkType, payloadType, payloadVersion, plan, independent } =
-                getProduceForkParameters();
-            if (!app || !state) {
+            const forkParameters = getProduceForkParameters();
+            if (!getRequiredForkParameters(forkParameters)) {
                 onInvalidFork();
                 return;
             }
 
             const handleActiveSessions = async (activeSessionsResult: GetActiveSessionsResult) => {
-                const { session, sessions } = activeSessionsResult;
-
-                if (session && sessions.length === 1 && forkType === undefined) {
-                    const { UID, keyPassword, persistent, trusted } = session;
-                    await onProduceFork({
-                        type: SSOType.Proton,
-                        payload: {
-                            UID,
-                            keyPassword,
-                            state,
-                            app,
-                            plan,
-                            persistent,
-                            trusted,
-                            independent,
-                            payloadType,
-                            payloadVersion,
-                        },
-                    });
-                    return;
-                }
-
-                onActiveSessions(
-                    {
-                        type: SSOType.Proton,
-                        payload: {
-                            state,
-                            app,
-                            forkType,
-                            plan,
-                            independent,
-                            payloadType,
-                            payloadVersion,
-                        },
-                    },
-                    activeSessionsResult
-                );
+                onActiveSessions({ type: SSOType.Proton, payload: { forkParameters } }, activeSessionsResult);
             };
 
+            const handleProduceFork = async (session: AuthSession) => {
+                return onProduceFork({ type: SSOType.Proton, payload: { forkParameters } }, session);
+            };
+
+            const localID = forkParameters.localID;
             if (localID === undefined) {
-                const activeSessionsResult = await getActiveSessions(silentApi);
+                const activeSessionsResult = await getActiveSessions(silentApi, localID);
                 await handleActiveSessions(activeSessionsResult);
                 return;
             }
 
             try {
                 // Resume session and produce the fork
-                const validatedSession = await resumeSession(silentApi, localID);
-                await onProduceFork({
-                    type: SSOType.Proton,
-                    payload: {
-                        keyPassword: validatedSession.keyPassword,
-                        UID: validatedSession.UID,
-                        state,
-                        app,
-                        plan,
-                        independent,
-                        persistent: validatedSession.persistent,
-                        trusted: validatedSession.trusted,
-                        payloadType,
-                        payloadVersion,
-                    },
-                });
+                const session = await resumeSession(silentApi, localID);
+
+                if (getShouldReAuth(forkParameters, session)) {
+                    const sessions = await getActiveLocalSession(getUIDApi(session.UID, silentApi));
+                    const activeSessionsResult = { session, sessions };
+                    await handleActiveSessions(activeSessionsResult);
+                    return;
+                }
+
+                await handleProduceFork(session);
             } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     const activeSessionsResult = await getActiveSessions(silentApi);
@@ -209,27 +155,10 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
         };
 
         (type === SSOType.Proton ? runInternal() : runOAuth()).catch((e) => {
-            const { code } = getApiError(error);
-            if (code === API_CUSTOM_ERROR_CODES.TOO_MANY_CHILDREN) {
-                setTooManyChildSessionsError(true);
-                return;
-            }
-
             errorHandler(e);
-            setError({
-                message: getApiErrorMessage(e),
-            });
+            setError({ message: getApiErrorMessage(e) });
         });
     }, []);
-
-    if (tooManyChildSessionsError) {
-        return (
-            <StandardErrorPage>
-                {c('Error message').jt`Too many child sessions, please clear your cookies and sign back in.`}
-                <Href href={getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies')}>{c('Info').t`Learn more`}</Href>
-            </StandardErrorPage>
-        );
-    }
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;

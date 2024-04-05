@@ -8,7 +8,7 @@ import {
     ConfirmSignOutModal,
     Icon,
     Loader,
-    OnLoginCallbackArguments,
+    OnLoginCallback,
     Prompt,
     useApi,
     useErrorHandler,
@@ -42,11 +42,11 @@ import Main from './Main';
 import { getContinueToString } from './helper';
 
 interface Props {
-    onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
+    onLogin: OnLoginCallback;
     toApp?: APP_NAMES;
     toAppName?: string;
     activeSessions?: LocalSessionPersisted[];
-    onSignOut: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
+    updateActiveSessions: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
     onAddAccount: () => void;
     metaTags: MetaTags;
 }
@@ -64,15 +64,21 @@ const compareSessions = (a: LocalSessionPersisted, b: LocalSessionPersisted) => 
     return 0;
 };
 
-const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, onAddAccount, onSignOut }: Props) => {
+const SwitchAccountContainer = ({
+    metaTags,
+    toAppName,
+    onLogin,
+    activeSessions,
+    onAddAccount,
+    updateActiveSessions,
+}: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
 
     useMetaTags(metaTags);
 
-    const [localActiveSessions, setLocalActiveSessions] = useState(activeSessions);
-    const [loading, withLoading] = useLoading(!localActiveSessions);
+    const [loading, withLoading] = useLoading(!activeSessions);
     const [loadingMap, setLoadingMap] = useState<{ [key: number]: boolean }>({});
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
@@ -89,7 +95,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
         if (!activeSessions) {
             const run = async () => {
                 const { sessions } = await getActiveSessions(silentApi);
-                setLocalActiveSessions(sessions);
+                updateActiveSessions(sessions);
             };
             void withLoading(run().catch(() => setError(true)));
         }
@@ -103,14 +109,19 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
         silentApi(withUIDHeaders(session.UID, revoke())).catch(noop);
     };
 
+    const removeSessions = (localIDs: number[]) => {
+        const removeSet = new Set(localIDs);
+        const updatedActiveSessions = (activeSessions || [])?.filter(
+            (session) => !removeSet.has(session.remote.LocalID)
+        );
+        updateActiveSessions(updatedActiveSessions);
+    };
+
     const handleSignOut = (sessions: LocalSessionPersisted[], clearDeviceRecovery: boolean) => {
         sessions.forEach((session) => {
             clearSession(session.persisted, clearDeviceRecovery);
         });
-        const remove = new Set(sessions.map((session) => session.remote.LocalID));
-        const updatedActiveSessions = localActiveSessions?.filter((session) => !remove.has(session.remote.LocalID));
-        setLocalActiveSessions(updatedActiveSessions);
-        onSignOut(updatedActiveSessions);
+        removeSessions(sessions.map((session) => session.remote.LocalID));
     };
 
     const handleSignOutMultiple = (sessions: LocalSessionPersisted[], type: 'all' | 'single') => {
@@ -128,16 +139,19 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
 
     const handleClickSession = async (localID: number) => {
         try {
+            const params = new URLSearchParams(location.search);
             setLoadingMap((old) => ({ ...old, [localID]: true }));
-            await wait(1000);
+            await wait(300);
             const validatedSession = await resumeSession(silentApi, localID);
-            await onLogin({ ...validatedSession, flow: 'switch' });
+            await onLogin({
+                ...validatedSession,
+                flow: 'switch',
+                prompt: params.get('prompt') === 'login' ? 'login' : undefined,
+            });
         } catch (e: any) {
             setLoadingMap((old) => ({ ...old, [localID]: false }));
             if (e instanceof InvalidPersistentSessionError) {
-                setLocalActiveSessions((list) => {
-                    return list?.filter((session) => session.remote.LocalID !== localID);
-                });
+                removeSessions([localID]);
                 createNotification({
                     type: 'error',
                     text: c('Error').t`The session has expired. Please sign in again.`,
@@ -173,11 +187,11 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
             return <Loader />;
         }
 
-        if (!localActiveSessions?.length) {
-            return <Alert className="mb-4">{c('Error').t`No active sessions`}</Alert>;
+        if (!activeSessions?.length) {
+            return <div className="mb-4">{c('Error').t`No active sessions`}</div>;
         }
 
-        return [...localActiveSessions.sort(compareSessions)].map((session, index) => {
+        return [...activeSessions.sort(compareSessions)].map((session, index) => {
             const { LocalID, DisplayName, Username, PrimaryEmail } = session.remote;
             const isLoading = loadingMap[LocalID];
 
@@ -250,7 +264,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                             <Icon className="account-button-icon my-auto" name="arrow-right" aria-hidden="true" />
                         )}
                     </div>
-                    {index !== localActiveSessions.length - 1 && <hr className="my-2" />}
+                    {index !== activeSessions.length - 1 && <hr className="my-2" />}
                 </Fragment>
             );
         });
@@ -277,7 +291,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                         shape="ghost"
                         fullWidth
                         onClick={() => {
-                            handleSignOutMultiple(localActiveSessions || [], 'all');
+                            handleSignOutMultiple(activeSessions || [], 'all');
                         }}
                     >{c('Action').t`Sign out of all accounts`}</Button>
                 </div>

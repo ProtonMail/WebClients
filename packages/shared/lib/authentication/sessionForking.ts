@@ -1,3 +1,4 @@
+import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
@@ -11,7 +12,7 @@ import { APPS, APP_NAMES, SSO_PATHS } from '../constants';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { replaceUrl } from '../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
-import { Api, User as tsUser } from '../interfaces';
+import { Api, User, User as tsUser } from '../interfaces';
 import { Extension, FORK_TYPE } from './ForkInterface';
 import { getKey } from './cryptoHelper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
@@ -25,9 +26,21 @@ import {
     getValidatedRawKey,
 } from './sessionForkValidation';
 
+interface ExtensionForkPayloadArguments {
+    selector: string;
+    session: {
+        keyPassword?: string | undefined;
+        offlineKey: OfflineKey | undefined;
+        persistent: boolean;
+        trusted: boolean;
+    };
+    forkParameters: ProduceForkParameters;
+}
+
 interface ExtensionForkPayload {
     selector: string;
     keyPassword: string | undefined;
+    offlineKey: OfflineKey | undefined;
     persistent: boolean;
     trusted: boolean;
     state: string;
@@ -42,17 +55,22 @@ export type ExtensionForkResult = ExtensionMessageResponse<ExtensionForkResultPa
 export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
 export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
 
-export const produceExtensionFork = async ({
-    extension,
-    payload,
-}: {
+export const produceExtensionFork = async (options: {
     extension: Extension;
-    payload: ExtensionForkPayload;
-}): Promise<ExtensionForkResult> =>
-    sendExtensionMessage<ExtensionForkMessage, ExtensionForkResultPayload>(
+    payload: ExtensionForkPayloadArguments;
+}): Promise<ExtensionForkResult> => {
+    const payload: ExtensionForkPayload = {
+        selector: options.payload.selector,
+        keyPassword: options.payload.session.keyPassword,
+        offlineKey: options.payload.session.offlineKey,
+        persistent: options.payload.session.persistent,
+        trusted: options.payload.session.trusted,
+        state: options.payload.forkParameters.state,
+    };
+    return sendExtensionMessage<ExtensionForkMessage, ExtensionForkResultPayload>(
         { type: 'fork', payload },
         {
-            extensionId: extension.ID,
+            extensionId: options.extension.ID,
             onFallbackMessage: (evt) =>
                 evt.data.fork === 'success' /* support legacy VPN fallback message */
                     ? {
@@ -62,6 +80,7 @@ export const produceExtensionFork = async ({
                     : undefined,
         }
     );
+};
 
 interface ForkState {
     url: string;
@@ -115,12 +134,13 @@ export interface OAuthProduceForkParameters {
     oaSession: string;
 }
 
-interface ProduceOAuthForkArguments extends OAuthProduceForkParameters {
+interface ProduceOAuthForkArguments {
     api: Api;
     UID: string;
+    oauthData: OAuthProduceForkParameters;
 }
 
-export const produceOAuthFork = async ({ api, UID, oaSession, clientID }: ProduceOAuthForkArguments) => {
+export const produceOAuthFork = async ({ api, UID, oauthData: { oaSession, clientID } }: ProduceOAuthForkArguments) => {
     const {
         Data: { RedirectUri },
     } = await api<{ Data: OAuthForkResponse }>(
@@ -142,6 +162,8 @@ export interface ProduceForkParameters {
     plan?: string;
     independent: boolean;
     forkType?: FORK_TYPE;
+    prompt: 'login' | undefined;
+    promptType: 'offline-bypass' | 'offline' | 'default';
     payloadType: 'offline' | 'default';
     payloadVersion: 1 | 2;
 }
@@ -150,13 +172,14 @@ export interface ProduceForkParametersFull extends ProduceForkParameters {
     localID: number;
 }
 
-export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> &
-    Required<Pick<ProduceForkParametersFull, 'independent' | 'payloadType' | 'payloadVersion'>> => {
+export const getProduceForkParameters = (): Omit<ProduceForkParametersFull, 'localID' | 'app'> &
+    Partial<Pick<ProduceForkParametersFull, 'localID' | 'app'>> => {
     const searchParams = new URLSearchParams(window.location.search);
     const app = searchParams.get('app') || '';
     const state = searchParams.get('state') || '';
     const localID = searchParams.get('u') || '';
     const forkType = searchParams.get('t') || '';
+    const prompt = searchParams.get('prompt') || '';
     const plan = searchParams.get('plan') || '';
     const independent = searchParams.get('independent') || '0';
     const payloadType = (() => {
@@ -173,12 +196,21 @@ export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> &
         }
         return 1;
     })();
+    const promptType = (() => {
+        const value = searchParams.get('promptType') || '';
+        if (value === 'offline' || value === 'offline-bypass') {
+            return value;
+        }
+        return 'default';
+    })();
 
     return {
         state: state.slice(0, 100),
         localID: getValidatedLocalID(localID),
         app: getValidatedApp(app),
         forkType: getValidatedForkType(forkType),
+        prompt: prompt === 'login' ? 'login' : undefined,
+        promptType,
         plan,
         independent: independent === '1' || independent === 'true',
         payloadType,
@@ -186,41 +218,66 @@ export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> &
     };
 };
 
+export const getRequiredForkParameters = (
+    forkParameters: ReturnType<typeof getProduceForkParameters>
+): forkParameters is ProduceForkParametersFull => {
+    return Boolean(forkParameters.app && forkParameters.state);
+};
+
+export const getCanUserReAuth = (user: User) => {
+    return !user.Flags.sso && !user.OrganizationPrivateKey;
+};
+
+export const getShouldReAuth = (
+    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType'>,
+    authSession: {
+        User: User;
+        offlineKey: OfflineKey | undefined;
+    }
+) => {
+    const shouldReAuth = forkParameters.prompt === 'login';
+    if (!shouldReAuth) {
+        return false;
+    }
+    if (!getCanUserReAuth(authSession.User)) {
+        return false;
+    }
+    if (forkParameters.promptType === 'offline-bypass' && authSession.offlineKey) {
+        return false;
+    }
+    return true;
+};
+
 interface ProduceForkArguments {
     api: Api;
-    UID: string;
-    keyPassword?: string;
-    app: APP_NAMES;
-    state: string;
-    persistent: boolean;
-    trusted: boolean;
-    independent: boolean;
-    forkType?: ProduceForkParameters['forkType'];
-    payloadType: ProduceForkParameters['payloadType'];
-    payloadVersion: ProduceForkParameters['payloadVersion'];
+    session: {
+        UID: string;
+        keyPassword?: string;
+        offlineKey: OfflineKey | undefined;
+        persistent: boolean;
+        trusted: boolean;
+    };
+    forkParameters: ProduceForkParameters;
 }
 
 export const produceFork = async ({
     api,
-    UID,
-    keyPassword,
-    state,
-    app,
-    forkType,
-    persistent,
-    trusted,
-    independent,
-    payloadType,
-    payloadVersion,
+    session: { UID, keyPassword, offlineKey, persistent, trusted },
+    forkParameters: { state, app, independent, forkType, payloadType, payloadVersion },
 }: ProduceForkArguments) => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
     const encryptedPayload = await (async () => {
         const forkData = (() => {
-            if (payloadType === 'default' || payloadType === 'offline') {
-                return { type: 'default', keyPassword: keyPassword || '' } as const;
+            if (payloadType === 'offline' && offlineKey && offlineKey.salt && offlineKey.password) {
+                return {
+                    type: 'offline',
+                    keyPassword: keyPassword || '',
+                    offlineKeyPassword: offlineKey.password,
+                    offlineKeySalt: offlineKey.salt,
+                } as const;
             }
-            throw new Error('Unsupported fork payload type');
+            return { type: 'default', keyPassword: keyPassword || '' } as const;
         })();
         return {
             blob: await getForkEncryptedBlob(await getKey(rawKey), forkData, payloadVersion),
@@ -358,11 +415,18 @@ export const consumeFork = async ({
     }
 
     let keyPassword = '';
+    let forkedOfflineKey: OfflineKey | undefined;
 
     if (Payload) {
         try {
             const data = await getForkDecryptedBlob(await getKey(key), Payload, payloadVersion);
             keyPassword = data?.keyPassword || '';
+            if (data?.type === 'offline') {
+                forkedOfflineKey = {
+                    password: data.offlineKeyPassword,
+                    salt: data.offlineKeySalt,
+                };
+            }
         } catch (e: any) {
             throw new InvalidForkConsumeError('Failed to decrypt payload');
         }
@@ -381,9 +445,11 @@ export const consumeFork = async ({
         RefreshToken,
     };
 
-    const { clientKey } = await persistSession({
+    const { clientKey, offlineKey } = await persistSession({
         api: authApi,
         ...result,
+        clearKeyPassword: '',
+        offlineKey: forkedOfflineKey,
         mode,
     });
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
@@ -392,5 +458,6 @@ export const consumeFork = async ({
         ...result,
         path,
         clientKey,
+        offlineKey,
     } as const;
 };

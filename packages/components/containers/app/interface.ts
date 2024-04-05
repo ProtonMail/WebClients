@@ -4,7 +4,8 @@ import { AuthSession } from '../login/interface';
 
 export type OnLoginCallbackArguments = AuthSession;
 export type ProtonLoginCallback = (data: OnLoginCallbackArguments) => void;
-export type OnLoginCallback = (data: OnLoginCallbackArguments) => Promise<void>;
+export type OnLoginCallbackResult = { state: 'complete' | 'input' };
+export type OnLoginCallback = (data: OnLoginCallbackArguments) => Promise<OnLoginCallbackResult>;
 
 export interface PrivateAuthenticationStore extends AuthenticationStore {
     UID: string;

@@ -627,6 +627,7 @@ const SingleSignupContainerV2 = ({
                     persistent: resumedSession.persistent,
                     trusted: resumedSession.trusted,
                     clientKey: resumedSession.clientKey,
+                    offlineKey: resumedSession.offlineKey,
                     ...userInfo,
                 };
             }
@@ -854,6 +855,7 @@ const SingleSignupContainerV2 = ({
                 trusted: authSession.trusted,
                 persistent: authSession.persistent,
                 clientKey: authSession.clientKey,
+                offlineKey: authSession.offlineKey,
                 ...userInfo,
             };
 
@@ -917,6 +919,7 @@ const SingleSignupContainerV2 = ({
                 trusted: cache.session.trusted,
                 persistent: cache.session.persistent,
                 clientKey: cache.session.clientKey,
+                offlineKey: cache.session.offlineKey,
             });
         } catch (error) {
             handleError(error);
@@ -1087,6 +1090,7 @@ const SingleSignupContainerV2 = ({
                     onLogin={async (props) => {
                         await handleSignIn(props);
                         setLoginModal(false);
+                        return { state: 'input' };
                     }}
                 />
             )}

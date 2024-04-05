@@ -110,6 +110,8 @@ const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
             )}
             {step === Step.Explore && (
                 <ExploreStep
+                    user={cache.setupData?.user}
+                    plan={plan?.Name}
                     onExplore={async (app) => {
                         try {
                             if (!cache || cache.type !== 'signup') {

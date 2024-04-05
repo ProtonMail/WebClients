@@ -307,6 +307,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                         api,
                         authentication,
                         keyPassword,
+                        clearKeyPassword: newPassword,
                         User: user,
                     });
 

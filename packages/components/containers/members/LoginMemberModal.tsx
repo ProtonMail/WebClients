@@ -68,6 +68,9 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
                 User,
                 LocalID,
                 UID,
+                // Signing into subuser doesn't need offline mode support
+                clearKeyPassword: '',
+                offlineKey: undefined,
                 persistent: authentication.getPersistent(),
                 trusted: false,
             });
