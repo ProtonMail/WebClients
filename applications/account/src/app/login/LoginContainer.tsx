@@ -127,10 +127,11 @@ const LoginContainer = ({
         setStep(AuthStep.LOGIN);
     };
 
-    const handleResult = (result: AuthActionResponse) => {
+    const handleResult = async (result: AuthActionResponse) => {
         createFlow.reset();
         if (result.to === AuthStep.DONE) {
-            return onLogin(result.session);
+            await onLogin(result.session);
+            return;
         }
         cacheRef.current = result.cache;
         setStep(result.to);

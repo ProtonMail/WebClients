@@ -1,33 +1,14 @@
 import { ReactNode } from 'react';
 
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
-import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import {
-    getIsPublicUserWithoutProtonAddress,
-    getIsSSOVPNOnlyAccount,
-    getRequiresAddressSetup,
-} from '@proton/shared/lib/keys';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
 import { AppLink, SettingsLink } from '../../components';
-
-export const apps = (user?: UserModel) => {
-    if (getIsSSOVPNOnlyAccount(user)) {
-        return getSSOVPNOnlyAccountApps();
-    }
-    if (getIsPublicUserWithoutProtonAddress(user)) {
-        return getPublicUserProtonAddressApps();
-    }
-    if (isElectronApp) {
-        return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
-    }
-    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS];
-};
 
 interface ProductLinkProps {
     ownerApp: APP_NAMES;

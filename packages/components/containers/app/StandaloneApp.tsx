@@ -29,6 +29,7 @@ const Component = () => {
                         locales={{}}
                         onLogin={async (args) => {
                             replaceUrl(authentication.login(args));
+                            return { state: 'complete' };
                         }}
                     />
                 </ApiProvider>

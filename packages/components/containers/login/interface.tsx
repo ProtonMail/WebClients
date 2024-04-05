@@ -1,4 +1,5 @@
 import { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
+import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     Address,
@@ -69,10 +70,12 @@ export interface AuthSession {
     loginPassword?: string;
     path?: string;
     flow?: AuthFlows;
+    prompt?: 'login' | null;
     appIntent?: AppIntent;
     persistent: boolean;
     trusted: boolean;
     clientKey: string;
+    offlineKey: OfflineKey | undefined;
 }
 
 export type AuthActionResponse =
