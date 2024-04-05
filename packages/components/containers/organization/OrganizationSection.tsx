@@ -188,6 +188,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                     api,
                                     authentication,
                                     keyPassword: passphrase,
+                                    clearKeyPassword: credentials.password,
                                     User: user,
                                 });
                                 await preAuthKTVerifier.preAuthKTCommit(user.ID);

@@ -1040,6 +1040,8 @@ const SignupContainer = ({
             )}
             {step === Explore && (
                 <ExploreStep
+                    plan={plan?.Name}
+                    user={cache?.setupData?.user}
                     onExplore={async (app) => {
                         try {
                             if (!cache) {

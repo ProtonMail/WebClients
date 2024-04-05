@@ -232,6 +232,8 @@ export const SSO_PATHS = {
     FORK: '/login',
     SWITCH: '/switch',
     LOGIN: '/login',
+    REAUTH: '/reauth',
+    APP_SWITCHER: '/apps',
     RESET_PASSWORD: '/reset-password',
     FORGOT_USERNAME: '/forgot-username',
     MAIL_SIGNUP: '/mail/signup',

@@ -253,28 +253,6 @@ export const handleSetupAddressAndKey = async ({
     });
 };
 
-export const handleAddressGeneration = async ({
-    username,
-    domain,
-    setup,
-    api,
-    preAuthKTVerify,
-}: AddressGenerationPayload & { api: Api }) => {
-    if (setup.mode === 'create') {
-        return handleCreateAddressAndKey({ username, domain, api, passphrase: setup.keyPassword, preAuthKTVerify });
-    }
-    if (setup.mode === 'setup') {
-        return handleSetupAddressAndKey({
-            username,
-            domain,
-            api,
-            password: setup.loginPassword,
-            preAuthKTVerify,
-        });
-    }
-    throw new Error('Unknown internal address setup mode');
-};
-
 export const getRequiresMailKeySetup = (user: tsUser | undefined) => {
     if (!user) {
         return false;

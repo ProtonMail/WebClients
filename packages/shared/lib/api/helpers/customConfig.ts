@@ -1,4 +1,4 @@
-import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { Api } from '../../interfaces';
 
@@ -15,7 +15,14 @@ export const getSilentApiWithAbort = (api: Api, signal: AbortSignal) => {
 };
 
 export const getUIDApi = (UID: string, api: Api) => {
-    return <T>(config: any) => api<T>(withUIDHeaders(UID, config));
+    return <T>(config: any) => {
+        // Note: requestUID !== UID means that this config is already set with a UID, so ignore the original one.
+        const requestUID = getUIDHeaderValue(config.headers) ?? UID;
+        if (requestUID !== UID) {
+            return api(config);
+        }
+        return api<T>(withUIDHeaders(UID, config));
+    };
 };
 
 export const getAuthAPI = (UID: string, AccessToken: string, api: Api) => {

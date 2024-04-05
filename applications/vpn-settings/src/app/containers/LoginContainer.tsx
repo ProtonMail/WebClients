@@ -5,12 +5,12 @@ import { Paths } from 'proton-account/src/app/content/helper';
 import AccountLoginContainer from 'proton-account/src/app/login/LoginContainer';
 import { MetaTags } from 'proton-account/src/app/useMetaTags';
 
-import { ProtonLoginCallback } from '@proton/components';
+import { OnLoginCallback } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isMember } from '@proton/shared/lib/user/helpers';
 
 interface Props {
-    onLogin: ProtonLoginCallback;
+    onLogin: OnLoginCallback;
     paths: Paths;
     metaTags: MetaTags;
 }
@@ -31,7 +31,7 @@ const LoginContainer = ({ metaTags, onLogin, paths }: Props) => {
             onLogin={async (data) => {
                 if (vpnTestflight) {
                     document.location.assign('https://testflight.apple.com/join/3yl2MSbw');
-                    return;
+                    return { state: 'complete' };
                 }
                 const { User } = data;
                 const previousLocation = location.state?.from;
