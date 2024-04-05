@@ -2,19 +2,16 @@ import { useRef, useState } from 'react';
 
 import { GpuLlmManager } from '@proton/llm/gpu';
 import { GenerationCallback, LlmManager, LlmModel, MonitorDownloadCallback } from '@proton/llm/index';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MessageChange } from '../components/composer/Composer';
-import { MessageState } from '../store/messages/messagesTypes';
 
 type GenieModelStatus = 'unloaded' | 'downloading' | 'loading' | 'loaded';
 
 interface Props {
-    message: MessageState;
     onChange: MessageChange;
-    onChangeContent: (content: string, refreshContent: boolean) => void;
+    setResult: (content: string) => void;
 }
-const useGenieModel = ({ message, onChangeContent }: Props) => {
+const useGenieModel = ({ setResult }: Props) => {
     const [genieWish, setGenieWish] = useState<string>('');
     const [genieModelStatus, setGenieModelStatus] = useState<GenieModelStatus>('unloaded');
     const [genieModelDownloadProgress, setGenieModelDownloadProgress] = useState<number>(0);
@@ -22,12 +19,7 @@ const useGenieModel = ({ message, onChangeContent }: Props) => {
     const model = useRef<LlmModel | null>(null);
 
     const setBody = (body: string) => {
-        if (isPlainText(message.data)) {
-            onChangeContent(body, true);
-        } else {
-            const bodyHtml = body.replaceAll('\n', '<br>');
-            onChangeContent(bodyHtml, true);
-        }
+        setResult(body);
     };
 
     const handleGenieKeyDown = async (event: React.KeyboardEvent<HTMLInputElement>) => {

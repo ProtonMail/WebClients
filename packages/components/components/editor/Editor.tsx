@@ -110,7 +110,7 @@ const Editor = ({
             >
                 <div
                     className={clsx([
-                        'h-full flex-1 flex flex-column relative',
+                        'h-full flex-1 flex flex-column relative flex-nowrap',
                         disabled && 'editor--disabled',
                         isPlainText ? '' : 'composer-content--rich-edition',
                         editorClassname,

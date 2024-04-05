@@ -12,13 +12,16 @@ import {
 
 import { c } from 'ttag';
 
-import { useHandler, useSubscribeEventManager } from '@proton/components';
+import { useAddresses, useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
+import ComposerAssistant from 'proton-mail/genie/ComposerAssistant';
+import { useAssistant } from 'proton-mail/genie/useAssistant';
+import { cleanAssistantEmailGeneration, insertTextBeforeBlockquotes } from 'proton-mail/helpers/message/messageContent';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -75,6 +78,8 @@ const Composer = (
     ref: Ref<ComposerAction>
 ) => {
     const mailSettings = useMailModel('MailSettings');
+    const [userSettings] = useUserSettings();
+    const [addresses = []] = useAddresses();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -102,6 +107,11 @@ const Composer = (
             onFocus();
         }
     };
+
+    const { initAssistant, openedAssistants, openAssistant, closeAssistant, hasAccessToAssistant, canRunAssistant } =
+        useAssistant();
+
+    const showAssistantButton = hasAccessToAssistant && canRunAssistant;
 
     const {
         modelMessage,
@@ -145,6 +155,10 @@ const Composer = (
         handleAddAttachmentsUpload,
         handleRemoveAttachment,
         handleRemoveUpload,
+
+        showAssistant,
+        setShowAssistant,
+        toggleAssistant,
     } = useComposerContent({
         type: EditorTypes.composer,
         composerID,
@@ -157,6 +171,9 @@ const Composer = (
         editorRef,
         editorReady,
         minimizeButtonRef,
+        openedAssistants,
+        openAssistant,
+        closeAssistant,
     });
 
     // Update subject on ComposerFrame
@@ -238,6 +255,23 @@ const Composer = (
         onFocus(); // Events on the main div will not fire because the editor is in an iframe
     }, []);
 
+    const handleToggleAssistant = () => {
+        toggleAssistant();
+        const isAssistantOpenedInComposer = openedAssistants.includes(composerID);
+        if (isAssistantOpenedInComposer) {
+            closeAssistant(composerID);
+        } else {
+            openAssistant(composerID);
+        }
+    };
+
+    const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
+        const newBody = insertTextBeforeBlockquotes(textToInsert, modelMessage, mailSettings, userSettings, addresses);
+
+        // Update the content in the composer
+        handleChangeContent(newBody, true);
+    };
+
     return (
         <div
             className="composer-container flex flex-column flex-1 relative w-full"
@@ -259,6 +293,14 @@ const Composer = (
                 handleCancelSend={handleCancelSend}
             />
             <div className="composer-blur-container flex flex-column flex-1 max-w-full">
+                {showAssistant && (
+                    <ComposerAssistant
+                        onUseGeneratedText={handleInsertGeneratedTextInEditor}
+                        onUpdateShowAssistant={(value: boolean) => setShowAssistant(value)}
+                        assistantID={composerID}
+                        onCleanGeneration={cleanAssistantEmailGeneration}
+                    />
+                )}
                 <div
                     ref={bodyRef}
                     className="composer-body-container flex flex-column flex-nowrap flex-1 max-w-full mt-2"
@@ -310,6 +352,10 @@ const Composer = (
                     opening={opening}
                     syncInProgress={pendingSave.isPending}
                     canScheduleSend={canScheduleSend}
+                    showAssistantButton={showAssistantButton}
+                    disableAssistant={openedAssistants.length > 0} // TODO remove this after alpha
+                    onToggleAssistant={handleToggleAssistant}
+                    initAssistant={initAssistant}
                 />
             </div>
             {waitBeforeScheduleModal}
