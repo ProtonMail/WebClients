@@ -502,7 +502,7 @@ export const handleSetupUser = async ({
         reportPaymentFailure
     );
 
-    const [{ keyPassword, user, addresses }] = await Promise.all([
+    const [{ keySetupData, user, addresses }] = await Promise.all([
         (async () => {
             // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
             // array, and keys won't be setup.
@@ -510,18 +510,26 @@ export const handleSetupUser = async ({
 
             const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
 
-            const keyPassword = addresses.length
-                ? await handleSetupKeys({
-                      api,
-                      addresses,
-                      password,
-                      preAuthKTVerify,
-                  })
-                : undefined;
+            let keySetupData = {
+                keyPassword: '',
+                clearKeyPassword: '',
+            };
+            if (addresses.length) {
+                const keyPassword = await handleSetupKeys({
+                    api,
+                    addresses,
+                    password,
+                    preAuthKTVerify,
+                });
+                keySetupData = {
+                    keyPassword,
+                    clearKeyPassword: password,
+                };
+            }
 
             const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
             await preAuthKTCommit(user.ID);
-            return { keyPassword, user, addresses };
+            return { keySetupData, user, addresses };
         })(),
         api(updateLocale(localeCode)).catch(noop),
     ]);
@@ -529,8 +537,8 @@ export const handleSetupUser = async ({
     const trusted = false;
     const { clientKey, offlineKey } = await persistSession({
         ...authResponse,
-        clearKeyPassword: password,
-        keyPassword,
+        keyPassword: keySetupData.keyPassword,
+        clearKeyPassword: keySetupData.clearKeyPassword,
         User: user,
         api,
         persistent,
@@ -540,7 +548,7 @@ export const handleSetupUser = async ({
     const mnemonicData = await handleSetupMnemonic({
         emailAddress: userEmail,
         user,
-        keyPassword,
+        keyPassword: keySetupData.keyPassword,
         api,
         setupMnemonic,
     });
@@ -550,7 +558,7 @@ export const handleSetupUser = async ({
         trusted,
         setupData: {
             user,
-            keyPassword,
+            keyPassword: keySetupData.keyPassword,
             clientKey,
             offlineKey,
             addresses,
