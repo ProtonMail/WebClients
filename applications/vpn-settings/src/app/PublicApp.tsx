@@ -12,6 +12,7 @@ import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/sr
 
 import {
     NotificationsChildren,
+    OnLoginCallbackResult,
     ProtonLoginCallback,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
@@ -41,8 +42,12 @@ const getPaths = (maybeLocalePrefix: string): Paths => {
         signup: `${prefix}/signup`,
         reset: `${prefix}/reset-password`,
         forgotUsername: `${prefix}/forgot-username`,
+        reauth: '',
+        appSwitcher: '',
     };
 };
+
+const completeResult: OnLoginCallbackResult = { state: 'complete' };
 
 interface InnerPublicAppProps {
     onLogin: ProtonLoginCallback;
@@ -74,7 +79,10 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 loginUrl={paths.login}
                                                 setupVPN={false}
                                                 toApp={APPS.PROTONVPN_SETTINGS}
-                                                onLogin={async (...args) => onLogin(...args)}
+                                                onLogin={async (...args) => {
+                                                    onLogin(...args);
+                                                    return completeResult;
+                                                }}
                                             />
                                         </Route>
                                         <Route path="/forgot-username">
@@ -103,16 +111,24 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 loader={loader}
                                                 productParam={APPS.PROTONVPN_SETTINGS}
                                                 clientType={CLIENT_TYPES.VPN}
-                                                onLogin={async (args) =>
+                                                onLogin={async (args) => {
                                                     onLogin({
                                                         ...args,
                                                         path: '/downloads?prompt',
-                                                    })
-                                                }
+                                                    });
+                                                    return completeResult;
+                                                }}
                                             />
                                         </Route>
                                         <Route path="/login">
-                                            <LoginContainer metaTags={loginPage()} onLogin={onLogin} paths={paths} />
+                                            <LoginContainer
+                                                metaTags={loginPage()}
+                                                onLogin={async (args) => {
+                                                    onLogin(args);
+                                                    return completeResult;
+                                                }}
+                                                paths={paths}
+                                            />
                                         </Route>
                                         <Redirect
                                             to={{

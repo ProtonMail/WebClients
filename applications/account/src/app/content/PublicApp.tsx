@@ -10,6 +10,8 @@ import {
     ErrorBoundary,
     ModalsChildren,
     NotificationsChildren,
+    OnLoginCallback,
+    OnLoginCallbackResult,
     ProtonApp,
     SSOForkProducer,
     StandardErrorPage,
@@ -17,10 +19,10 @@ import {
     UnAuthenticatedApiProvider,
     UnleashFlagProvider,
 } from '@proton/components';
-import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
-import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
+import { ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
+import type { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import { AuthType } from '@proton/components/containers/login/interface';
+import { AuthSession, AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
@@ -31,6 +33,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import createApi from '@proton/shared/lib/api/createApi';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
+import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api/organization';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -41,7 +44,13 @@ import {
     GetActiveSessionsResult,
     LocalSessionPersisted,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { produceExtensionFork, produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
+import {
+    getCanUserReAuth,
+    getShouldReAuth,
+    produceExtensionFork,
+    produceFork,
+    produceOAuthFork,
+} from '@proton/shared/lib/authentication/sessionForking';
 import { APPS, CLIENT_TYPES, PLANS, SETUP_ADDRESS_PATH, SSO_PATHS, UNPAID_STATE } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -50,6 +59,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
+import { Organization } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -60,6 +70,7 @@ import HandleLogout from '../containers/HandleLogout';
 import locales from '../locales';
 import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
+import AppSwitcherContainer, { AppSwitcherState } from '../public/AppSwitcherContainer';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
 import CloseTicketContainer from '../public/CloseTicketContainer';
 import DisableAccountContainer from '../public/DisableAccountContainer';
@@ -68,6 +79,7 @@ import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
+import ReAuthContainer, { ReAuthState } from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
@@ -84,6 +96,10 @@ import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
+import { addSession } from './session';
+
+const completeResult: OnLoginCallbackResult = { state: 'complete' };
+const inputResult: OnLoginCallbackResult = { state: 'input' };
 
 const bootstrapApp = () => {
     const api = createApi({ config, sendLocaleHeaders: true });
@@ -168,11 +184,13 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
-    const [forkState, setForkState] = useState<ActiveSessionData>();
-    const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.OAuth }>>();
+    const [forkState, setForkState] = useState<ProduceForkData>();
+    const [confirmForkData, setConfirmForkState] = useState<{
+        data: Extract<ProduceForkData, { type: SSOType.OAuth }>;
+        session: AuthSession;
+    }>();
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
     const ignoreAutoRef = useRef(false);
-    const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
     const searchParams = new URLSearchParams(location.search);
 
@@ -193,9 +211,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
         return getLocalRedirect(getPathFromLocation(localLocation));
     });
 
-    const getPreAppIntent = (forkState: ActiveSessionData | undefined) => {
+    const getPreAppIntent = (forkState: ProduceForkData | undefined) => {
         return (
-            (forkState?.type === SSOType.Proton && forkState.payload?.app) ||
+            (forkState?.type === SSOType.Proton && forkState.payload.forkParameters.app) ||
             maybeLocalRedirect?.toApp ||
             maybeQueryAppIntent
         );
@@ -205,18 +223,19 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const maybePreAppIntent = getPreAppIntent(forkState);
     const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent, productParam);
 
-    const handleProduceFork = async (data: ProduceForkData) => {
+    const handleProduceFork = async (data: ProduceForkData, session: AuthSession): Promise<OnLoginCallbackResult> => {
         if (data.type === SSOType.Proton) {
-            const extension = getExtension(data.payload.app);
+            const { forkParameters } = data.payload;
+            const extension = getExtension(forkParameters.app);
 
             if (extension) {
-                const childClientID = getClientID(data.payload.app);
+                const childClientID = getClientID(forkParameters.app);
                 const { Selector: selector } = await api<PushForkResponse>(
                     withUIDHeaders(
-                        data.payload.UID,
+                        session.UID,
                         pushForkSession({
                             ChildClientID: childClientID,
-                            Independent: data.payload.independent ? 1 : 0,
+                            Independent: forkParameters.independent ? 1 : 0,
                         })
                     )
                 );
@@ -224,49 +243,91 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     extension,
                     payload: {
                         selector,
-                        keyPassword: data.payload.keyPassword,
-                        persistent: data.payload.persistent,
-                        trusted: data.payload.trusted,
-                        state: data.payload.state,
+                        session,
+                        forkParameters,
                     },
                 });
 
                 const state: AuthExtensionState = { ...result, extension };
                 history.replace('/auth-ext', state);
-                return;
+                return inputResult;
             }
 
-            return produceFork({ api, ...data.payload });
+            await produceFork({
+                api,
+                session,
+                forkParameters,
+            });
+            return completeResult;
         }
 
         if (data.type === SSOType.OAuth) {
+            const { payload } = data;
+            const UID = session.UID;
             const {
                 Access: { Accepted },
-            } = await api<{ Access: OAuthLastAccess }>(
-                withUIDHeaders(data.payload.UID, getOAuthLastAccess(data.payload.clientID))
-            );
+            } = await api<{
+                Access: OAuthLastAccess;
+            }>(withUIDHeaders(UID, getOAuthLastAccess(payload.oauthData.clientID)));
             if (Accepted) {
-                return produceOAuthFork({ api, ...data.payload });
+                await produceOAuthFork({ api, oauthData: payload.oauthData, UID });
+                return completeResult;
             }
-            setConfirmForkState(data);
+            setConfirmForkState({ data, session });
             history.replace(SSO_PATHS.OAUTH_CONFIRM_FORK);
+            return inputResult;
         }
+
+        throw new Error('Unknown fork type');
     };
 
-    const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const {
-            loginPassword,
-            keyPassword,
-            clientKey,
-            UID,
-            LocalID,
-            User: user,
-            persistent,
-            trusted,
-            appIntent,
-        } = args;
+    const getOrganization = async (session: OnLoginCallbackArguments) => {
+        if (!session.User.Subscribed) {
+            return undefined;
+        }
+        return api<{
+            Organization: Organization;
+        }>(withUIDHeaders(session.UID, getOrganizationConfig())).then(({ Organization }) => Organization);
+    };
 
-        const toApp = getToApp(appIntent?.app || maybePreAppIntent, user);
+    const handleLogin: OnLoginCallback = async (session) => {
+        const { loginPassword, clientKey, LocalID, User: user, appIntent } = session;
+
+        const maybeToApp = appIntent?.app || maybePreAppIntent;
+
+        // In any forking scenario, ignore the app switcher
+        if (!maybeToApp && !forkState) {
+            setActiveSessions((previousSessions) => {
+                return addSession(previousSessions, session);
+            });
+
+            const organization = await getOrganization(session).catch(noop);
+            const appSwitcherState: AppSwitcherState = {
+                session: { ...session, Organization: organization },
+            };
+            history.replace(paths.appSwitcher, appSwitcherState);
+            return inputResult;
+        }
+
+        const toApp = getToApp(maybeToApp, user);
+
+        if (
+            // Reauth is only triggered through the switch flow as in other scenarios the user always enters their password
+            session.flow === 'switch' &&
+            getCanUserReAuth(session.User) &&
+            (session.prompt === 'login' ||
+                (forkState?.type === SSOType.Proton && getShouldReAuth(forkState.payload.forkParameters, session)))
+        ) {
+            const reAuthState: ReAuthState = {
+                session,
+                reAuthType:
+                    forkState && forkState.type === SSOType.Proton
+                        ? forkState.payload.forkParameters.promptType
+                        : 'default',
+            };
+            history.replace(paths.reauth, reAuthState);
+            return inputResult;
+        }
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect = (() => {
@@ -296,51 +357,62 @@ const BasePublicApp = ({ onLogin }: Props) => {
             params.set('to', toApp);
             params.set('from', 'switch');
             const path = `${SETUP_ADDRESS_PATH}?${params.toString()}#${blob || ''}`;
-            return onLogin({
-                ...args,
+            onLogin({
+                ...session,
                 path,
             });
+            return completeResult;
         }
 
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
-            return onLogin({
-                ...args,
+            onLogin({
+                ...session,
                 path: joinPaths(getSlugFromApp(toApp), getInvoicesPathname()),
             });
+            return completeResult;
         }
 
         // Fork early to extensions because they don't need to follow the signup logic
-        if (forkState?.type === SSOType.Proton && getExtension(forkState.payload.app)) {
-            await handleProduceFork({
-                type: SSOType.Proton,
-                payload: { ...forkState.payload, UID, keyPassword, persistent, trusted },
-            });
-            return;
+        if (forkState?.type === SSOType.Proton && getExtension(forkState.payload.forkParameters.app)) {
+            return handleProduceFork(
+                {
+                    type: SSOType.Proton,
+                    payload: { forkParameters: forkState.payload.forkParameters },
+                },
+                session
+            );
         }
 
         if (forkState?.type === SSOType.OAuth) {
-            await handleProduceFork({ type: SSOType.OAuth, payload: { ...forkState.payload, UID } });
-            return;
+            return handleProduceFork(
+                {
+                    type: SSOType.OAuth,
+                    payload: { oauthData: forkState.payload.oauthData },
+                },
+                session
+            );
         }
 
         // If the user signed up and there is an active fork, purposefully ignore it so that it
         // triggers a page load with the query parameters
-        if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
-            await handleProduceFork({
-                type: SSOType.Proton,
-                payload: { ...forkState.payload, UID, keyPassword, persistent, trusted },
-            });
-            return;
+        if (forkState?.type === SSOType.Proton && session.flow !== 'signup') {
+            return handleProduceFork(
+                {
+                    type: SSOType.Proton,
+                    payload: { forkParameters: forkState.payload.forkParameters },
+                },
+                session
+            );
         }
 
         const url = (() => {
             let path;
 
             if (localRedirect) {
-                if (args.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS) {
+                if (session.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS) {
                     path = joinPaths(getSlugFromApp(APPS.PROTONVPN_SETTINGS), '/vpn-apps?prompt=true');
-                } else if (args.flow === 'signup' && toApp === APPS.PROTONPASS) {
+                } else if (session.flow === 'signup' && toApp === APPS.PROTONPASS) {
                     path = joinPaths(getSlugFromApp(APPS.PROTONPASS), '/download');
                 } else {
                     path = localRedirect.path || '';
@@ -356,7 +428,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
             return new URL(getAppHref(path, toApp, LocalID));
         })();
 
-        if (args.flow === 'signup') {
+        if (session.flow === 'signup') {
             url.searchParams.append('welcome', 'true');
             if (appIntent?.ref !== undefined) {
                 url.searchParams.append('ref', appIntent.ref);
@@ -364,28 +436,60 @@ const BasePublicApp = ({ onLogin }: Props) => {
         }
 
         if (url.hostname === window.location.hostname || authentication.mode !== 'sso') {
-            return onLogin({
-                ...args,
+            onLogin({
+                ...session,
                 path: getPathFromLocation(url),
             });
+            return completeResult;
         }
 
-        return replaceUrl(url.toString());
+        replaceUrl(url.toString());
+        return completeResult;
     };
 
-    const handleActiveSessionsFork = (newForkState: ActiveSessionData, { sessions }: GetActiveSessionsResult) => {
+    const handleActiveSessionsFork = async (
+        newForkState: ProduceForkData,
+        { session, sessions }: GetActiveSessionsResult
+    ): Promise<OnLoginCallbackResult> => {
         ignoreAutoRef.current = true;
 
         setForkState(newForkState);
         setActiveSessions(sessions);
 
-        if (newForkState.type === SSOType.Proton && newForkState.payload.forkType === FORK_TYPE.SIGNUP) {
-            const paths = getPaths(location.localePrefix, newForkState, getPreAppIntent(newForkState), productParam);
-            history.replace(paths.signup);
-            return;
+        if (newForkState.type === SSOType.Proton) {
+            const forkParameters = newForkState.payload.forkParameters;
+            const autoSignIn = session && (sessions.length === 1 || forkParameters.localID !== undefined);
+
+            if (autoSignIn && getShouldReAuth(forkParameters, session)) {
+                const state: ReAuthState = { session, reAuthType: forkParameters.promptType };
+                history.replace(paths.reauth, state);
+                return inputResult;
+            }
+
+            if (autoSignIn && forkParameters.forkType === undefined) {
+                return handleProduceFork(
+                    {
+                        type: SSOType.Proton,
+                        payload: { forkParameters },
+                    },
+                    session
+                );
+            }
+
+            if (forkParameters.forkType === FORK_TYPE.SIGNUP) {
+                const paths = getPaths(
+                    location.localePrefix,
+                    newForkState,
+                    getPreAppIntent(newForkState),
+                    productParam
+                );
+                history.replace(paths.signup);
+                return inputResult;
+            }
         }
 
         history.replace(sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login);
+        return inputResult;
     };
 
     const handleInvalidFork = () => {
@@ -393,40 +497,35 @@ const BasePublicApp = ({ onLogin }: Props) => {
         history.replace(paths.login);
     };
 
-    const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
+    const handleActiveSessions = async ({
+        session,
+        sessions,
+    }: GetActiveSessionsResult): Promise<OnLoginCallbackResult> => {
         // Ignore the automatic login
         if (ignoreAutoRef.current || DISABLE_AUTO_SIGN_IN_ROUTES.includes(location.pathname)) {
             setActiveSessions(sessions);
-            if (sessions.length >= 1) {
-                setHasBackToSwitch(true);
-            }
             if (!sessions.length && location.pathname === SSO_PATHS.SWITCH) {
                 // This is recalculated because the set locale might have changed
                 const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent, productParam);
                 history.replace(paths.login);
             }
-            return false;
+            return inputResult;
         }
         if (!sessions.length) {
             setActiveSessions(sessions);
-            return false;
+            return inputResult;
         }
         if (session && sessions.length === 1) {
-            void handleLogin(session);
-            return true;
+            return handleLogin(session);
         }
         setActiveSessions(sessions);
-        if (sessions.length >= 1) {
-            setHasBackToSwitch(true);
-        }
         history.replace(SSO_PATHS.SWITCH);
-        return false;
+        return inputResult;
     };
 
-    const handleSignOut = (updatedActiveSessions?: LocalSessionPersisted[]) => {
+    const updateActiveSessions = (updatedActiveSessions?: LocalSessionPersisted[]) => {
         if (!updatedActiveSessions?.length) {
             setActiveSessions([]);
-            setHasBackToSwitch(false);
             history.push(paths.login);
             return;
         }
@@ -439,8 +538,8 @@ const BasePublicApp = ({ onLogin }: Props) => {
 
     const toOAuthName =
         forkState?.type === SSOType.OAuth
-            ? forkState.payload.clientInfo.Name
-            : confirmForkData?.payload.clientInfo.Name;
+            ? forkState.payload.oauthData.clientInfo.Name
+            : confirmForkData?.data.payload.oauthData.clientInfo.Name;
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
@@ -464,6 +563,8 @@ const BasePublicApp = ({ onLogin }: Props) => {
     ) : (
         <AccountLoaderPage />
     );
+
+    const hasBackToSwitch = (activeSessions?.length || 0) >= 1;
 
     return (
         <>
@@ -553,11 +654,16 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         <UnAuthenticated>
                                                             <OAuthConfirmForkContainer
                                                                 name={toAppName}
-                                                                image={confirmForkData.payload.clientInfo.Logo}
+                                                                image={
+                                                                    confirmForkData.data.payload.oauthData.clientInfo
+                                                                        .Logo
+                                                                }
                                                                 onConfirm={() => {
                                                                     return produceOAuthFork({
                                                                         api,
-                                                                        ...confirmForkData.payload,
+                                                                        oauthData:
+                                                                            confirmForkData.data.payload.oauthData,
+                                                                        UID: confirmForkData.session.UID,
                                                                     });
                                                                 }}
                                                                 onCancel={() => {
@@ -594,7 +700,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             toApp={maybePreAppIntent}
                                                             toAppName={toAppName}
                                                             onLogin={handleLogin}
-                                                            onSignOut={handleSignOut}
+                                                            updateActiveSessions={updateActiveSessions}
                                                             onAddAccount={handleAddAccount}
                                                         />
                                                     </UnAuthenticated>
@@ -751,6 +857,21 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             }
                                                             setupVPN={setupVPN}
                                                             paths={paths}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.REAUTH}>
+                                                    <UnAuthenticated>
+                                                        <ReAuthContainer paths={paths} onLogin={handleLogin} />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.APP_SWITCHER}>
+                                                    <UnAuthenticated>
+                                                        <AppSwitcherContainer
+                                                            onLogin={handleLogin}
+                                                            onSwitch={() => {
+                                                                history.push(SSO_PATHS.SWITCH);
+                                                            }}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>

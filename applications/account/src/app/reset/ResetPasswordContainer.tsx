@@ -103,10 +103,11 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
 
-    const handleResult = (result: ResetActionResponse) => {
+    const handleResult = async (result: ResetActionResponse) => {
         createFlow.reset();
         if (result.to === STEPS.DONE) {
-            return onLogin(result.session);
+            await onLogin(result.session);
+            return;
         }
         if (result.to === STEPS.NO_RECOVERY_METHODS) {
             setStep(result.to);

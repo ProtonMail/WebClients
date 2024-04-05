@@ -22,7 +22,8 @@ export const resumeSessionDrawerApp = ({
             }
 
             if (event.data.type === DRAWER_EVENTS.SESSION) {
-                const { UID, keyPassword, User, localID, clientKey, persistent, trusted, tag } = event.data.payload;
+                const { UID, keyPassword, User, localID, clientKey, offlineKey, persistent, trusted, tag } =
+                    event.data.payload;
                 window.removeEventListener('message', handler);
 
                 if (timeout) {
@@ -39,6 +40,7 @@ export const resumeSessionDrawerApp = ({
                         UID,
                         keyPassword,
                         clientKey,
+                        offlineKey,
                         User,
                         persistent,
                         trusted,
