@@ -132,7 +132,7 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
                     maxWidth: '22em',
                 }}
             >
-                <SnoozeCustomTime onClose={onClose} handleSnooze={handleSnooze} />
+                <SnoozeCustomTime onClose={onClose} handleSnooze={handleSnooze} element={elements[0]} />
             </Dropdown>
             {renderUpsellModal && (
                 <SnoozeUpsellModal {...upsellModalProps} onClose={() => handleUpsellModalDisplay(false)} />
