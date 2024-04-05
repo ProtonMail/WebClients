@@ -18,7 +18,7 @@ export interface Organization {
     MaxMembers: number;
     MaxVPN: number;
     Features: number; // bits: 1 = catch-all addresses
-    Flags: number; // bits: 1 = loyalty, 2 = covid, 4 = smtp_submission, 8 = no_cycle_scheduled, 64 = dissident, 128 = proton
+    Flags: number; // bits: 1 = loyalty, 2 = covid, 4 = smtp_submission, 8 = no_cycle_scheduled, 64 = dissident, 128 = proton, 256 = has phone support
     UsedDomains: number;
     UsedCalendars: number;
     RequiresKey: number; // greater than 0 if the organization requires a key to be setup
