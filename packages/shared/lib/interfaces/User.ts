@@ -112,5 +112,6 @@ export interface UserModel extends User {
     hasPaidMail: boolean;
     hasPaidVpn: boolean;
     hasPaidDrive: boolean;
+    hasPaidPass: boolean;
     canPay: boolean;
 }
