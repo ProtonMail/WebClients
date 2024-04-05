@@ -16,6 +16,8 @@ interface ComposerHotkeysHandlers {
     handleExpiration: () => void;
     editorRef: MutableRefObject<ExternalEditorActions | undefined>;
     minimizeButtonRef: RefObject<HTMLButtonElement>;
+    showAssistant: boolean;
+    closeAssistant: () => void;
 }
 
 interface QuickReplyHotkeysHandlers {
@@ -49,6 +51,7 @@ export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
     const isSafari = checkIsSafari();
 
     const isComposer = type === EditorTypes.composer;
+    const isAssistantOpened = isComposer && !!args.showAssistant;
 
     const attachmentTriggerRef = useRef<() => void>(noop);
 
@@ -57,13 +60,14 @@ export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
             if (isComposer) {
                 e.preventDefault();
                 e.stopPropagation();
+                args.closeAssistant();
                 await args.handleClose();
             }
         },
         send: async (e: KeyboardEvent) => {
             e.preventDefault();
             e.stopPropagation();
-            if (!lock) {
+            if (!lock && !isAssistantOpened) {
                 await handleSend();
             }
         },
@@ -94,35 +98,35 @@ export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
             toggleMaximized();
         },
         addAttachment: (e: KeyboardEvent) => {
-            if (attachmentTriggerRef.current) {
+            if (attachmentTriggerRef.current && !isAssistantOpened) {
                 e.preventDefault();
                 e.stopPropagation();
                 attachmentTriggerRef.current();
             }
         },
         encrypt: (e: KeyboardEvent) => {
-            if (isComposer) {
+            if (isComposer && !isAssistantOpened) {
                 e.preventDefault();
                 e.stopPropagation();
                 args.handlePassword();
             }
         },
         addExpiration: (e: KeyboardEvent) => {
-            if (isComposer) {
+            if (isComposer && !isAssistantOpened) {
                 e.preventDefault();
                 e.stopPropagation();
                 args.handleExpiration();
             }
         },
         linkModal: (e: KeyboardEvent) => {
-            if (isComposer && args.editorRef?.current) {
+            if (isComposer && args.editorRef?.current && !isAssistantOpened) {
                 e.preventDefault();
                 e.stopPropagation();
                 args.editorRef.current?.showLinkModal?.();
             }
         },
         emojiPicker: (e: KeyboardEvent) => {
-            if (args.editorRef?.current) {
+            if (args.editorRef?.current && !isAssistantOpened) {
                 e.preventDefault();
                 e.stopPropagation();
                 args.editorRef.current?.openEmojiPicker?.();

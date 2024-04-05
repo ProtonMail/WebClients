@@ -73,6 +73,32 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
 
+jest.mock('./src/app/genie/useAssistant.tsx', () => {
+    return {
+        __esModule: true,
+        useAssistant: jest.fn(() => ({
+            canRunAssistant: false,
+            hasAccessToAssistant: false,
+            isModelDownloaded: false,
+            isModelDownloading: false,
+            downloadModelProgress: false,
+            isModelLoadedOnGPU: false,
+            isModelLoadingOnGPU: false,
+            isGeneratingResult: false,
+            isWaitingForResult: false,
+            openedAssistants: [],
+            openAssistant: jest.fn(),
+            closeAssistant: jest.fn(),
+            cancelDownloadModel: jest.fn(),
+            unloadModelOnGPU: jest.fn(),
+            initAssistant: jest.fn(),
+            generateResult: jest.fn(),
+            cancelRunningAction: jest.fn(),
+        })),
+    };
+});
+
+// TODO remove when before merging assistant (hook should be deleted)
 jest.mock('./src/app/genie/useGenieModel.ts', () => {
     return {
         __esModule: true,

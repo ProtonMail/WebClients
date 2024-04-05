@@ -1,0 +1,44 @@
+@import '~@proton/styles/scss/lib';
+
+.composer-assistant {
+	// will need to taxonomise these, not needed for alpha
+	--upgrade-color-stop-1: #ad7ffc;
+	--upgrade-color-stop-2: #db4fe8;
+	--upgrade-background-color: var(--background-norm);
+
+	&-container {
+		inset-inline: 0;
+		inset-block-end: 0.5em;
+		block-size: calc(100% - 10.5em);
+		background: var(--background-norm);
+		padding-inline: 1.5em 1em;
+
+		// to hide properly everything, including dark modes
+	}
+
+	// custom border
+	position: relative;
+	block-size: 95%;
+	padding: 1em;
+	background:
+		linear-gradient(var(--upgrade-background-color), var(--upgrade-background-color)) padding-box,
+		linear-gradient(var(--background-norm), var(--background-norm)) padding-box,
+		linear-gradient(to right, var(--upgrade-color-stop-1), var(--upgrade-color-stop-2)) border-box;
+	color: var(--text-norm);
+	border: 1px solid transparent;
+
+	> span {
+		z-index: 2;
+	}
+
+	&-button {
+		&,
+		&:hover,
+		&:focus,
+		&:focus-within {
+			// will need to taxonomise these
+			background: linear-gradient(54.12deg, var(--upgrade-color-stop-1) 5.58%, var(--upgrade-color-stop-2) 92.13%);
+			color: white;
+		}
+	}
+}

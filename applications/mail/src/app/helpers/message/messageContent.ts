@@ -1,7 +1,11 @@
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+
+import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -181,4 +185,105 @@ export const getContentWithBlockquotes = (
     } else {
         return `${content}${blockquotes.toString()}`;
     }
+};
+
+// TODO add unit tests
+export const insertTextBeforeBlockquotes = (
+    textToInsert: string,
+    message: MessageState,
+    mailSettings: MailSettings,
+    userSettings: UserSettings,
+    addresses: Address[]
+) => {
+    const fontStyle = defaultFontStyle(mailSettings);
+    const sender = message.data?.Sender;
+
+    let newBody;
+    if (isPlainText(message.data)) {
+        /**
+         * To insert the generated part into a plaintext message we need to:
+         * - Generate the signature and insert it after the generated part
+         * - Deal with blockquotes
+         *  => [Won't be done for alpha] locate the blockquotes and insert them
+         *  => [Will be done for alpha] Today we have no blockquote detection for plain messages
+         *     So, instead of adding the blockquotes we will just drop them for now
+         */
+        // We should always get a sender. But in case it fails for some reason, insert the content without signature
+        if (sender) {
+            // Canonicalize the sender address in case we're sending from an alias
+            const canonicalizedSenderAddress = canonicalizeInternalEmail(sender?.Address);
+            const senderAddress = addresses.find((address) => address.Email === canonicalizedSenderAddress);
+            // Always use "reply" message action so that we don't add extra spaces before and after signature
+            // Insert the signature without the body because we need to convert it to text once it has been generated
+            const signature = insertSignature(
+                undefined,
+                senderAddress?.Signature,
+                MESSAGE_ACTIONS.REPLY,
+                mailSettings,
+                userSettings,
+                fontStyle,
+                true
+            );
+            const plainSignature = toText(signature);
+            newBody = `${textToInsert}${plainSignature}`;
+        } else {
+            newBody = textToInsert;
+        }
+    } else {
+        // TODO USE FONT SIZE/STYLE IN GENERATED CONTENT (for v2)
+        /**
+         * To insert the generated part into an HTML message body, we need to:
+         * - "Convert" the generated part to HTML (luckily we only need to replace the line breaks)
+         * - Generate the signature and insert it after the generated part
+         * - Locate the blockquotes from the "current message content" so that we can re-use it below
+         */
+        const resultHtml = textToInsert.replaceAll('\n', '<br>');
+
+        const [, blockquote] = locateBlockquote(message.messageDocument?.document);
+
+        // We should always get a sender. But in case it fails for some reason, insert the content without signature
+        if (sender) {
+            // Canonicalize the sender address in case we're sending from an alias
+            // TODO can we have external addresses?
+            const canonicalizedSenderAddress = canonicalizeInternalEmail(sender?.Address);
+            const senderAddress = addresses.find((address) => address.Email === canonicalizedSenderAddress);
+            // Always use "reply" message action so that we don't add extra spaces before and after signature
+            const bodyAndSignature = insertSignature(
+                resultHtml,
+                senderAddress?.Signature,
+                MESSAGE_ACTIONS.REPLY,
+                mailSettings,
+                userSettings,
+                fontStyle,
+                true
+            );
+            newBody = `${bodyAndSignature}${blockquote}`;
+        } else {
+            newBody = `${resultHtml}${blockquote}`;
+        }
+    }
+
+    return newBody;
+};
+
+// todo move in asistant helpers
+export const cleanAssistantEmailGeneration = (inputText: string) => {
+    /* Assistant often generates content with a subject and a body with the following format
+     *
+     *      Subject: email subject
+     *      Body: some text
+     *
+     *      some other text
+     *
+     * We need to clean this in order to display the correct content to the user
+     */
+    let text = inputText
+        .split('\n')
+        .filter((line) => !line.startsWith('Subject:'))
+        .join('\n')
+        .trim();
+    if (text.startsWith('Body:')) {
+        text = text.substring('Body:'.length).trim();
+    }
+    return text;
 };
