@@ -25,7 +25,7 @@ export enum SeperatorOptions {
 export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordConfig<'memorable'> = {
     type: 'memorable',
     options: {
-        wordCount: 4,
+        wordCount: 5,
         seperator: SeperatorOptions.HYPHEN,
         capitalize: true,
         extraNumbers: true,
