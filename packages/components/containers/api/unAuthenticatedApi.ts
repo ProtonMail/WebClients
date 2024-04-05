@@ -8,6 +8,7 @@ import {
     payload,
     revoke,
     setCookies,
+    setLocalKey,
     setRefreshCookies,
 } from '@proton/shared/lib/api/auth';
 import { getApiError, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -28,7 +29,7 @@ const unAuthStorageKey = 'ua_uid';
 
 const context: {
     UID: string | undefined;
-    auth: { set: boolean; id: any };
+    auth: { set: boolean; id: any; finalised: boolean };
     api: Api;
     refresh: () => void;
     abortController: AbortController;
@@ -39,7 +40,7 @@ const context: {
     api: undefined as any,
     abortController: new AbortController(),
     challenge: createPromise<ChallengePayload | undefined>(),
-    auth: { set: false, id: {} },
+    auth: { set: false, id: {}, finalised: false },
     promises: [],
     refresh: () => {},
 };
@@ -52,6 +53,7 @@ export const updateUID = (UID: string) => {
 
     context.UID = UID;
     context.auth.set = false;
+    context.auth.finalised = false;
     context.auth.id = {};
     context.abortController = new AbortController();
 };
@@ -138,6 +140,7 @@ const clearTabPersistedUID = () => {
 const authConfig = auth({} as any, true);
 const mnemonicAuthConfig = authMnemonic('', true);
 const auth2FAConfig = auth2FA({ TwoFactorCode: '' });
+const localKeyConfig = setLocalKey('');
 
 export const apiCallback: Api = async (config: any) => {
     const UID = context.UID;
@@ -175,6 +178,10 @@ export const apiCallback: Api = async (config: any) => {
             context.auth.id = id;
         }
 
+        if (config.url === localKeyConfig.url) {
+            context.auth.finalised = true;
+        }
+
         const result = await context.api(
             withUIDHeaders(UID, {
                 ...config,
@@ -194,6 +201,9 @@ export const apiCallback: Api = async (config: any) => {
     } catch (e: any) {
         if (isAuthUrl && context.auth.id === id) {
             context.auth.set = false;
+        }
+        if (config.url === localKeyConfig.url && context.auth.id === id) {
+            context.auth.finalised = false;
         }
         if (getIs401Error(e)) {
             const { code } = getApiError(e);
@@ -223,6 +233,12 @@ export const setChallenge = (data: ChallengePayload | undefined) => {
 export const startUnAuthFlow = createOnceHandler(async () => {
     if (!(context.auth.set && context.UID)) {
         return;
+    }
+
+    // Avoid deleting the session if it's been fully finalised and persisted
+    if (context.auth.set && context.UID && context.auth.finalised) {
+        updateUID('');
+        return init();
     }
 
     // Abort all previous request to prevent it triggering 401 and refresh

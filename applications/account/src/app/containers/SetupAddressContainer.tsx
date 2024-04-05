@@ -30,7 +30,8 @@ import {
     getAddressGenerationSetup,
     getDecryptedSetupBlob,
     getRequiresAddressSetup,
-    handleAddressGeneration,
+    handleCreateAddressAndKey,
+    handleSetupAddressAndKey,
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -267,16 +268,35 @@ const SetupAddressContainer = () => {
                                 normalApi
                             );
 
-                            const keyPassword = await handleAddressGeneration({
-                                api: silentApi,
-                                setup: payload.setup,
-                                domain: payload.domain,
-                                username: payload.username,
-                                preAuthKTVerify,
-                            });
-
                             const user = await getUser();
-                            await mutatePassword({ authentication, keyPassword, User: user, api: silentApi });
+
+                            if (payload.setup.mode === 'setup') {
+                                const keyPassword = await handleSetupAddressAndKey({
+                                    username: payload.username,
+                                    domain: payload.domain,
+                                    api: silentApi,
+                                    password: payload.setup.loginPassword,
+                                    preAuthKTVerify,
+                                });
+
+                                await mutatePassword({
+                                    authentication,
+                                    keyPassword,
+                                    clearKeyPassword: payload.setup.loginPassword,
+                                    User: user,
+                                    api: silentApi,
+                                });
+                            }
+
+                            if (payload.setup.mode === 'create') {
+                                await handleCreateAddressAndKey({
+                                    username: payload.username,
+                                    domain: payload.domain,
+                                    api: silentApi,
+                                    passphrase: payload.setup.keyPassword,
+                                    preAuthKTVerify,
+                                });
+                            }
 
                             await preAuthKTCommit(user.ID);
 

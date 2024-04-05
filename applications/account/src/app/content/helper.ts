@@ -1,4 +1,4 @@
-import type { ActiveSessionData } from '@proton/components/containers/app/SSOForkProducer';
+import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -37,9 +37,17 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
     return `${localePath}${path}`;
 };
 
+export const getReauthUrl = (localePath: string) => {
+    return `${localePath}${SSO_PATHS.REAUTH}`;
+};
+
+export const getAppSwitcherUrl = (localePath: string) => {
+    return `${localePath}${SSO_PATHS.APP_SWITCHER}`;
+};
+
 export const getSignupUrl = (
     localePath: string,
-    forkState: ActiveSessionData | undefined,
+    forkState: ProduceForkData | undefined,
     app: APP_NAMES | undefined,
     productParam: ProductParam
 ) => {
@@ -51,7 +59,7 @@ export const getSignupUrl = (
         let params = {};
 
         if (forkState?.type === SSOType.Proton) {
-            params = forkState.payload.plan ? { plan: forkState.payload.plan } : {};
+            params = forkState.payload.forkParameters.plan ? { plan: forkState.payload.forkParameters.plan } : {};
         }
 
         if (getIsMailApp(app)) {
@@ -81,13 +89,15 @@ export const getSignupUrl = (
 export interface Paths {
     login: string;
     signup: string;
+    reauth: string;
+    appSwitcher: string;
     reset: string;
     forgotUsername: string;
 }
 
 export const getPaths = (
     maybeLocalePrefix: string,
-    forkState: ActiveSessionData | undefined,
+    forkState: ProduceForkData | undefined,
     app: APP_NAMES | undefined,
     productParam: ProductParam
 ): Paths => {
@@ -95,6 +105,8 @@ export const getPaths = (
     const prefix = getLocalePathPrefix(localePrefix);
     return {
         login: getLoginUrl(prefix, app),
+        reauth: getReauthUrl(prefix),
+        appSwitcher: getAppSwitcherUrl(prefix),
         signup: getSignupUrl(prefix, forkState, app, productParam),
         forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
