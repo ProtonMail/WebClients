@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
+import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
+import useLoading from '@proton/hooks/useLoading';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import illustration from '@proton/styles/assets/img/illustrations/account-support-phone.svg';
 
@@ -16,6 +19,14 @@ interface Props {
 const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
     const [user] = useUser();
     const canEnableChat = useCanEnableChat(user) && onOpenChat;
+    const [generatingCalendlyLink, withGeneratingCalendlyLink] = useLoading();
+    const getScheduleCall = useGetScheduleCall();
+
+    const handleScheduleCallClick = async () => {
+        const { CalendlyLink } = await getScheduleCall();
+
+        openNewTab(CalendlyLink);
+    };
 
     const boldPhoneCall = (
         <b key="imperative-bold-text">{
@@ -45,7 +56,14 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
                     <Href href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>
                 </p>
                 <div className="flex gap-4 justify-center lg:justify-start">
-                    <Button color="norm" shape="solid">{c('Action').t`Schedule a call`}</Button>
+                    <Button
+                        onClick={() => withGeneratingCalendlyLink(handleScheduleCallClick)}
+                        color="norm"
+                        shape="solid"
+                        loading={generatingCalendlyLink}
+                    >
+                        {c('Action').t`Schedule a call`}
+                    </Button>
                     {canEnableChat && (
                         <Button
                             color="norm"
