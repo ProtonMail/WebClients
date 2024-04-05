@@ -1,6 +1,6 @@
 import { MouseEvent, useEffect, useState } from 'react';
 
-import { addDays, endOfToday, isToday, set } from 'date-fns';
+import { addDays, endOfToday, fromUnixTime, isToday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -8,6 +8,9 @@ import { DateInputTwo, InputFieldTwo, PrimaryButton, TimeInput } from '@proton/c
 import { generateUID } from '@proton/components/helpers';
 import { useUserSettings } from '@proton/components/hooks';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+
+import { getSnoozeTimeFromSnoozeLabel } from 'proton-mail/helpers/snooze';
+import { Element } from 'proton-mail/models/element';
 
 import { getMinScheduleTime } from '../../../../helpers/schedule';
 import { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
@@ -18,9 +21,10 @@ interface Props {
     onClose: () => void;
     onLock?: (value: boolean) => void;
     handleSnooze: (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime: Date) => void;
+    element?: Element; // Used to initialize the time on element already snoozed
 }
 
-const SnoozeCustomTime = ({ onClose, onLock, handleSnooze }: Props) => {
+const SnoozeCustomTime = ({ onClose, onLock, handleSnooze, element }: Props) => {
     const [userSettings] = useUserSettings();
     const [uid] = useState(generateUID('snooze-message-modal'));
 
@@ -28,8 +32,13 @@ const SnoozeCustomTime = ({ onClose, onLock, handleSnooze }: Props) => {
         onLock?.(true);
     }, []);
 
-    // default date is the next day at 9:00AM
-    const defaultDate = set(addDays(new Date(), 1), { hours: 9, minutes: 0, seconds: 0 });
+    const elementTime = getSnoozeTimeFromSnoozeLabel(element);
+
+    // default date is the current snooze time if item is already snoozed or the next day at 9:00AM
+    const defaultDate = elementTime
+        ? fromUnixTime(elementTime)
+        : set(addDays(new Date(), 1), { hours: 9, minutes: 0, seconds: 0 });
+
     const {
         date,
         time,
@@ -81,6 +90,7 @@ const SnoozeCustomTime = ({ onClose, onLock, handleSnooze }: Props) => {
             </div>
             <div className="flex flex-column gap-2">
                 <PrimaryButton
+                    data-testid="snooze-time-confirm"
                     disabled={disabled}
                     onClick={(event: MouseEvent) => handleSnooze(event, 'custom', scheduleDateTime)}
                 >{c('Action').t`Snooze`}</PrimaryButton>
