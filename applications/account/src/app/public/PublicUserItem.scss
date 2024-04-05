@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/lib';
+
+.public-user-item {
+	&--container {
+		--interaction-default-hover: rgba(191 181 233 / 0.2);
+		--interaction-default-active: rgba(191 181 233 / 0.35);
+	}
+
+	&--initials {
+		color: var(--primary);
+		background-color: var(--interaction-norm-minor-1);
+		min-inline-size: rem(28);
+		min-block-size: rem(28);
+	}
+}

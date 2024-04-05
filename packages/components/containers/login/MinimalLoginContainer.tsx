@@ -274,9 +274,10 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
     const [step, setStep] = useState(AuthStep.LOGIN);
 
-    const handleResult = (result: AuthActionResponse) => {
+    const handleResult = async (result: AuthActionResponse) => {
         if (result.to === AuthStep.DONE) {
-            return onLogin(result.session);
+            await onLogin(result.session);
+            return;
         }
         cacheRef.current = result.cache;
         setStep(result.to);

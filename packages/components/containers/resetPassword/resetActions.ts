@@ -160,12 +160,13 @@ export const handleNewPassword = async ({
         }
     }
 
-    const { clientKey } = await persistSession({
+    const { clientKey, offlineKey } = await persistSession({
         ...authResponse,
+        clearKeyPassword: password,
+        keyPassword,
         persistent,
         trusted,
         User: user,
-        keyPassword,
         api,
     });
 
@@ -182,6 +183,7 @@ export const handleNewPassword = async ({
             loginPassword: password,
             keyPassword,
             clientKey,
+            offlineKey,
             flow: 'reset',
         },
     };
@@ -224,12 +226,13 @@ export const handleNewPasswordMnemonic = async ({
 
     const trusted = false;
     const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    const { clientKey } = await persistSession({
+    const { clientKey, offlineKey } = await persistSession({
         ...authResponse,
+        clearKeyPassword: password,
+        keyPassword,
         persistent,
         trusted,
         User: user,
-        keyPassword,
         api,
     });
 
@@ -243,6 +246,7 @@ export const handleNewPasswordMnemonic = async ({
             loginPassword: password,
             keyPassword,
             clientKey,
+            offlineKey,
             flow: 'reset',
         },
     };

@@ -1,5 +1,6 @@
 import { ThemeColor } from '@proton/colors/types';
 import type { IconName } from '@proton/components/components/icon';
+import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import { APPS } from '@proton/shared/lib/constants';
 import { Environment } from '@proton/shared/lib/interfaces';
 
@@ -90,6 +91,7 @@ interface SESSION {
         User: tsUser;
         localID: number;
         clientKey: string;
+        offlineKey: OfflineKey | undefined;
         persistent: boolean;
         trusted: boolean;
         tag?: Environment;

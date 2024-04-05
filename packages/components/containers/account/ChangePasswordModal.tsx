@@ -162,12 +162,19 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
         onSuccess?.();
     };
 
-    const mutatePassword = async (keyPassword: string) => {
+    const mutatePassword = async ({
+        keyPassword,
+        clearKeyPassword,
+    }: {
+        keyPassword: string;
+        clearKeyPassword: string;
+    }) => {
         try {
             await innerMutatePassword({
                 api,
                 authentication,
                 keyPassword,
+                clearKeyPassword,
                 User,
             });
         } catch (e: any) {
@@ -348,7 +355,7 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
 
                         await api(updatePrivateKeyRoute(updateKeysPayload));
 
-                        await mutatePassword(keyPassword);
+                        await mutatePassword({ keyPassword, clearKeyPassword: inputs.newPassword });
                         await call();
 
                         notifySuccess();
@@ -421,7 +428,7 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
                         config: routeConfig,
                     });
                 }
-                await mutatePassword(keyPassword);
+                await mutatePassword({ keyPassword, clearKeyPassword: inputs.newPassword });
                 await call();
 
                 notifySuccess();

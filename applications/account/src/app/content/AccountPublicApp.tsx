@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import * as H from 'history';
 
 import { publicApp } from '@proton/account/bootstrap';
-import { ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
+import { OnLoginCallbackResult, ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -21,7 +21,7 @@ interface Props {
     location: H.Location;
     locales?: TtagLocaleMap;
     children: ReactNode;
-    onActiveSessions: (data: GetActiveSessionsResult) => boolean;
+    onActiveSessions: (data: GetActiveSessionsResult) => Promise<OnLoginCallbackResult>;
     onLogin: ProtonLoginCallback;
     loader: ReactNode;
     pathLocale: string;
@@ -46,7 +46,8 @@ const AccountPublicApp = ({
             const searchParams = new URLSearchParams(location.search);
             await publicApp({ app: APPS.PROTONACCOUNT, locales, searchParams, pathLocale });
             const activeSessionsResult = await getActiveSessions(silentApi);
-            if (!onActiveSessions(activeSessionsResult)) {
+            const activeSessions = await onActiveSessions(activeSessionsResult);
+            if (activeSessions.state !== 'complete') {
                 setLoading(false);
             }
         };

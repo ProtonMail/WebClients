@@ -198,6 +198,7 @@ export const DrawerProvider = ({
                                         persistent: authentication.getPersistent(),
                                         trusted: authentication.getTrusted(),
                                         clientKey: authentication.getClientKey(),
+                                        offlineKey: authentication.getOfflineKey(),
                                         User: user,
                                         tag: versionCookieAtLoad,
                                     },

@@ -1,8 +1,17 @@
-export interface PersistedSessionBlob {
-    keyPassword: string;
-}
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 
-export interface PersistedSession {
+export type PersistedSessionBlob =
+    | {
+          keyPassword: string;
+          type?: 'default';
+      }
+    | {
+          type: 'offline';
+          keyPassword: string;
+          offlineKeyPassword: OfflineKey['password'];
+      };
+
+export interface DefaultPersistedSession {
     UserID: string;
     UID: string;
     blob?: string;
@@ -10,8 +19,16 @@ export interface PersistedSession {
     persistent: boolean;
     trusted: boolean;
     payloadVersion: 2 | 1;
+    payloadType: 'default';
 }
 
-export interface PersistedSessionWithLocalID extends PersistedSession {
-    localID: number;
+export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, 'payloadType'> {
+    offlineKeySalt: string;
+    payloadType: 'offline';
 }
+
+export type PersistedSession = OfflinePersistedSession | DefaultPersistedSession;
+
+export type PersistedSessionWithLocalID = PersistedSession & {
+    localID: number;
+};
