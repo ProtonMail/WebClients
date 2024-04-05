@@ -64,7 +64,12 @@ const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displa
                 />
             )}
             {snoozeState === 'custom-snooze' && (
-                <SnoozeCustomTime handleSnooze={handleSnooze} onClose={closeDropdown} onLock={onLock} />
+                <SnoozeCustomTime
+                    handleSnooze={handleSnooze}
+                    onClose={closeDropdown}
+                    onLock={onLock}
+                    element={elements[0]}
+                />
             )}
         </>
     );
