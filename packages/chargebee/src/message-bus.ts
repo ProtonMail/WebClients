@@ -170,23 +170,23 @@ export interface ParentMessagesProps {
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
 const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => {
+    const parseEvent = (data: any) => {
+        if (typeof data !== 'string') {
+            return data;
+        }
+
+        let props;
+        try {
+            props = JSON.parse(data);
+        } catch (error) {
+            props = {};
+        }
+        return props;
+    };
+
+    const event = parseEvent(e.data);
+
     try {
-        const parseEvent = (data: any) => {
-            if (typeof data !== 'string') {
-                return data;
-            }
-
-            let props;
-            try {
-                props = JSON.parse(data);
-            } catch (error) {
-                props = {};
-            }
-            return props;
-        };
-
-        const event = parseEvent(e.data);
-
         if (isSetConfigurationEvent(event)) {
             // Do not remove await here or anywhere else in the function. It ensures that all errors are caught
             await messageBus.onSetConfiguration(event, (result) => {
@@ -258,7 +258,7 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
             // ignore unknown event
         }
     } catch (error) {
-        addCheckpoint('failed_to_handle_parent_message', { error, event });
+        addCheckpoint('failed_to_handle_parent_message', { error, event, eventRawData: e.data });
         messageBus.sendUnhandledErrorMessage(error);
     }
 };
