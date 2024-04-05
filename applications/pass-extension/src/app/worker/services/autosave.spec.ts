@@ -23,7 +23,9 @@ describe('AutosaveService [worker]', () => {
             domain: 'domain.com',
             status: FormEntryStatus.COMMITTED,
             subdomain: 'domain.com',
+            submitted: false,
             type: 'login',
+            updatedAt: -1,
         };
 
         test('should prompt for new item if no match', () => {

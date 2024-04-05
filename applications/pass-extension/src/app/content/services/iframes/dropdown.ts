@@ -43,7 +43,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
 
-            const { boxElement, element, zIndex } = field;
+            const { boxElement, element } = field;
             const boxed = boxElement !== element;
 
             const bodyTop = iframeRoot.getBoundingClientRect().top;
@@ -58,7 +58,6 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             return {
                 top: top - bodyTop + offsetBox.top + height,
                 left: boxLeft + width - DROPDOWN_WIDTH,
-                zIndex,
             };
         },
         dimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
@@ -155,11 +154,17 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
+            const prompt = ctx?.getSettings().autosave.passwordSuggest;
+
             if (!form) return;
 
             ctx?.service.autofill.autofillGeneratedPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
-            void form.tracker?.submit();
+
+            form.tracker
+                ?.submit({ submitted: false, partial: true })
+                .then((res) => res && prompt && ctx.service.autosave.promptAutoSave(res))
+                .catch(noop);
         })
     );
 
@@ -169,7 +174,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
     iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
-        void fieldRef.current?.getFormHandle()?.tracker?.submit();
+        void fieldRef.current?.getFormHandle()?.tracker?.submit({ submitted: false, partial: true });
     });
 
     const destroy = () => {

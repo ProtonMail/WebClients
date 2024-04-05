@@ -69,19 +69,25 @@ export const createFormManager = (options: FormManagerOptions) => {
         state.trackedForms.delete(formEl);
     };
 
-    /* Garbage collection is used to detach tracked forms
-     * if they have been removed from the DOM - this may be the case
-     * in SPA apps. Once a form is detected, it will be tracked until
-     * removed : form visibility changes have no effect on detachment
-     * for performance reasons (costly `isVisible` check) */
-    const garbagecollect = () => {
+    /* Garbage collection is used to detach tracked forms if they have been
+     * removed from the DOM - this may be the case in SPA apps. Once a form
+     * is detected, it will be tracked until removed */
+    const garbagecollect = (didDetach: boolean = false): boolean => {
         state.trackedForms.forEach((form) => {
             if (form.shouldRemove()) {
-                void form.tracker?.submit();
+                void form.tracker?.submit({ submitted: form.tracker.getState().isSubmitting, partial: true });
                 detachTrackedForm(form.element);
+                didDetach = true;
             }
         });
+
+        return didDetach;
     };
+
+    const onBottleneck = withContext((ctx) => {
+        logger.info(`[FormManager::Detector] Bottleneck detected : destroying context.`);
+        ctx?.destroy({ reason: 'bottleneck' });
+    });
 
     /**
      * Asynchronously runs form detection with throttling to optimize performance.
@@ -93,8 +99,6 @@ export const createFormManager = (options: FormManagerOptions) => {
      */
     const runDetection = throttle(
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
-            garbagecollect();
-
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;
 
@@ -104,9 +108,8 @@ export const createFormManager = (options: FormManagerOptions) => {
                         logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                         try {
-                            const forms = ctx?.service.detector.runDetection({
-                                onBottleneck: () => ctx?.destroy({ reason: 'bottleneck' }),
-                            });
+                            garbagecollect();
+                            const forms = ctx?.service.detector.runDetection({ onBottleneck });
 
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
@@ -116,8 +119,8 @@ export const createFormManager = (options: FormManagerOptions) => {
                             });
 
                             /* Prompt for 2FA autofill before autosave */
-                            const didPrompt = await ctx?.service.autofill.reconciliate();
-                            await (!didPrompt && ctx?.service.autosave.reconciliate());
+                            const didPromptFor2FA = await ctx?.service.autofill.reconciliate();
+                            await (!didPromptFor2FA && ctx?.service.autosave.reconciliate());
 
                             options.onDetection(getTrackedForms());
                         } catch (err) {
@@ -131,9 +134,11 @@ export const createFormManager = (options: FormManagerOptions) => {
                 });
 
                 return true;
-            } else clearDetectionCache();
+            }
 
-            void ctx?.service.autosave.reconciliate();
+            if (garbagecollect() || state.detectionCount === 0) void ctx?.service.autosave.reconciliate();
+            clearDetectionCache();
+
             return false;
         }),
         250,
@@ -143,11 +148,11 @@ export const createFormManager = (options: FormManagerOptions) => {
     const detect = async (options: { reason: string }) => {
         /* If `detect` calls are inundated due to concurrent DOM mutations or transition events,
          * this function cancels ongoing detection requests if they occur too closely together—
-         * set heuristically to 15ms. This prevents triggering detectors on a transitioning page,
+         * set heuristically to 150ms. This prevents triggering detectors on a transitioning page,
          * which may still have DOM nodes affecting final prediction results. This condition only
          * applies to subsequent detection runs, prioritizing the speed of the initial detection. */
         const now = Date.now();
-        const cancel = !state.active || (state.detectionCount > 0 && now - state.detectionAt < 15);
+        const cancel = !state.active || (state.detectionCount > 0 && now - state.detectionAt < 150);
         state.detectionAt = now;
 
         if (cancel) {
@@ -213,6 +218,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                 const { oldValue, attributeName } = mutation;
                 const target = mutation.target as HTMLElement;
                 const current = attributeName ? target?.getAttribute(attributeName) : null;
+                if (target.childElementCount === 0) return false;
 
                 if (oldValue !== null && oldValue === current) state.staleMutationsCount++;
                 else state.staleMutationsCount = 0;
@@ -252,6 +258,7 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onTransitionEnd = debounce(
         ({ target }: Event) =>
             requestAnimationFrame(() => {
+                garbagecollect();
                 if (target !== document.body) purgeStaleSeenFields(target as HTMLElement);
                 if (hasUnprocessedForms()) void detect({ reason: 'TransitionEnd' });
             }),
