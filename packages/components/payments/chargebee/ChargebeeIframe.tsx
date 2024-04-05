@@ -599,6 +599,7 @@ export const ChargebeeIframe = ({
 }: ChargebeeIframeProps) => {
     const [initialized, setInitialized] = useState(false);
     const abortRef = useRef<AbortController | null>(null);
+    const loadingTimeoutRef = useRef<any>(null);
 
     useEffect(() => {
         return () => {
@@ -641,6 +642,8 @@ export const ChargebeeIframe = ({
     const threeDs = useThreeDsChallenge(false);
 
     const onLoad = async () => {
+        clearTimeout(loadingTimeoutRef.current);
+
         // initialization of paypal is called in the facade, and others are called here, at least for now
         if (type === 'card') {
             await iframeHandles.handles.initializeCreditCard({ isNarrow: !!isNarrow });
@@ -670,6 +673,19 @@ export const ChargebeeIframe = ({
         },
         []
     );
+
+    useEffect(() => {
+        loadingTimeoutRef.current = setTimeout(() => {
+            if (!initialized) {
+                captureMessage('Payments: Chargebee iframe not loaded', {
+                    level: 'error',
+                    extra: { type },
+                });
+            }
+        }, 20000);
+
+        return () => clearTimeout(loadingTimeoutRef.current);
+    }, []);
 
     // The iframe document body has a margin of 8px by default. We don't remove it from within, because this
     // additional space is used to display the borders and other elements.
