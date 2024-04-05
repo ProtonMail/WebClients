@@ -8,7 +8,7 @@ import type { Rect } from '@proton/pass/types/utils/dom';
 import type { DropdownActions } from './dropdown';
 import type { NotificationActions } from './notification';
 
-export type IFramePosition = Partial<Rect> & { zIndex?: number };
+export type IFramePosition = Partial<Rect>;
 
 export type IFrameState<A> = {
     action: MaybeNull<A>;
@@ -16,6 +16,7 @@ export type IFrameState<A> = {
     loaded: boolean;
     port: MaybeNull<Runtime.Port>;
     position: IFramePosition;
+    positionReq: number;
     ready: boolean;
     visible: boolean;
 };

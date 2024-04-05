@@ -3,7 +3,7 @@ import { createFormTracker } from 'proton-pass-extension/app/content/services/fo
 import type { DetectedField, DetectedForm, FormHandle } from 'proton-pass-extension/app/content/types';
 import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/nodes';
 
-import { type FormType, removeProcessedFlag } from '@proton/pass/fathom';
+import { type FormType, isVisibleForm, removeClassifierFlags, removeProcessedFlag } from '@proton/pass/fathom';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
@@ -51,7 +51,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             removeProcessedFlag(field);
         },
 
-        shouldRemove: () => !document.body.contains(form),
+        shouldRemove: () => !document.body.contains(form) || !isVisibleForm(form),
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             formHandle.formType = formType;
@@ -91,9 +91,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             listeners.removeAll();
             formHandle.tracker?.detach();
             formHandle.getFields().forEach((field) => field.detach());
-
-            removeProcessedFlag(form);
-            form.querySelectorAll('input').forEach(removeProcessedFlag);
+            removeClassifierFlags(form);
         },
     };
 

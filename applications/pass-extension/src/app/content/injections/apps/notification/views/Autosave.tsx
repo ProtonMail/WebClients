@@ -11,6 +11,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { useNotifications } from '@proton/components/hooks';
+import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -69,6 +70,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     const { createNotification } = useNotifications();
 
     const [busy, setBusy] = useMountedState(false);
+    const shouldUpdate = usePrevious(data) !== data;
     const { domain } = data;
 
     const form = useFormik<AutosaveValues>({
@@ -113,6 +115,10 @@ export const Autosave: FC<Props> = ({ data }) => {
     useEffect(() => {
         if (visible) onTelemetry(createTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {}));
     }, [visible]);
+
+    useEffect(() => {
+        if (shouldUpdate) form.setValues(getInitialValues(data)).catch(noop);
+    }, [shouldUpdate, data]);
 
     return (
         <FormikProvider value={form}>
