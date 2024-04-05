@@ -56,6 +56,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan, hasLifetime, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
@@ -202,7 +203,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
 
     const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
-    const canSchedulePhoneCalls = !!organization && user.isAdmin && isScheduleCallsEnabled;
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
 
     return (
         <>
