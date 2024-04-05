@@ -44,7 +44,7 @@ import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
 import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '../keyTransparency';
-import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
+import { AuthActionResponse, AuthCacheResult, AuthSession, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
 const syncUser = async (cache: AuthCacheResult): Promise<tsUser> => {
@@ -74,10 +74,12 @@ const finalizeLogin = async ({
     cache,
     loginPassword,
     keyPassword,
+    clearKeyPassword,
 }: {
     cache: AuthCacheResult;
     loginPassword: string;
     keyPassword?: string;
+    clearKeyPassword?: string;
 }): Promise<AuthActionResponse> => {
     const { authResponse, authVersion, api, persistent, appName, preAuthKTVerifier } = cache;
 
@@ -93,10 +95,11 @@ const finalizeLogin = async ({
         const user = cache.data.user || (await syncUser(cache));
         const trusted = false;
 
-        const { clientKey } = await persistSession({
+        const { clientKey, offlineKey } = await persistSession({
             ...authResponse,
-            User: user,
+            clearKeyPassword: clearKeyPassword || '',
             keyPassword,
+            User: user,
             api,
             persistent,
             trusted,
@@ -108,6 +111,7 @@ const finalizeLogin = async ({
                 ...authResponse,
                 keyPassword,
                 clientKey,
+                offlineKey,
                 loginPassword,
                 persistent,
                 trusted,
@@ -177,10 +181,11 @@ const finalizeLogin = async ({
         }
     }
 
-    const { clientKey } = await persistSession({
+    const { clientKey, offlineKey } = await persistSession({
         ...authResponse,
-        User: user,
+        clearKeyPassword: clearKeyPassword || '',
         keyPassword,
+        User: user,
         api,
         persistent,
         trusted,
@@ -194,6 +199,7 @@ const finalizeLogin = async ({
             ...authResponse,
             keyPassword,
             loginPassword,
+            offlineKey,
             clientKey,
             persistent,
             trusted,
@@ -274,7 +280,14 @@ const handleKeyUpgrade = async ({
         cache.data.addresses = undefined;
     }
 
-    return finalizeLogin({ cache, loginPassword, keyPassword });
+    return finalizeLogin({ cache, loginPassword, keyPassword, clearKeyPassword });
+};
+
+export const getUnlockError = () => {
+    const error: any = new Error(c('Error').t`Incorrect mailbox password. Please try again.`);
+    error.name = 'PasswordError';
+    error.trace = false;
+    return error;
 };
 
 /**
@@ -303,10 +316,7 @@ export const handleUnlock = async ({
 
     const unlockResult = await handleUnlockKey(user, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
-        const error: any = new Error(c('Error').t`Incorrect mailbox password. Please try again.`);
-        error.name = 'PasswordError';
-        error.trace = false;
-        throw error;
+        throw getUnlockError();
     }
 
     return handleKeyUpgrade({
@@ -316,6 +326,36 @@ export const handleUnlock = async ({
         keyPassword: unlockResult.keyPassword,
         isOnePasswordMode,
     });
+};
+
+export const handleReAuthKeyPassword = async ({
+    authSession,
+    User,
+    clearKeyPassword,
+    salts,
+    api,
+}: {
+    authSession: AuthSession;
+    User: tsUser;
+    clearKeyPassword: string;
+    salts: tsKeySalt[];
+    api: Api;
+}) => {
+    const unlockResult = await handleUnlockKey(User, salts, clearKeyPassword).catch(() => undefined);
+    if (!unlockResult) {
+        throw getUnlockError();
+    }
+    const newAuthSession = {
+        ...authSession,
+        User,
+        keyPassword: unlockResult.keyPassword,
+    };
+    const { clientKey, offlineKey } = await persistSession({
+        ...newAuthSession,
+        clearKeyPassword,
+        api,
+    });
+    return { ...newAuthSession, clientKey, offlineKey, prompt: null };
 };
 
 /**

@@ -35,6 +35,7 @@ import {
     useUserSettings,
 } from '@proton/components';
 import { useDispatch } from '@proton/redux-shared-store';
+import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -60,7 +61,7 @@ import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interface
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
-import ProductLink, { apps } from '../../containers/app/ProductLink';
+import ProductLink from '../../containers/app/ProductLink';
 import { generateUID } from '../../helpers';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import { AuthenticatedBugModal } from '../support';
@@ -369,7 +370,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                     {(() => {
                         if (viewportWidth['<=small'] && hasAppLinks) {
-                            const availableApps = apps(user);
+                            const availableApps = getAvailableApps(user);
                             if (availableApps.length <= 1) {
                                 return null;
                             }

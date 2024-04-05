@@ -1,18 +1,20 @@
-import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
-import { generateClientKey, getClientKey } from '@proton/shared/lib/authentication/clientKey';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { appMode } from '@proton/shared/lib/webpack.constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { getLocalKey, getLocalSessions, revoke, setLocalKey } from '../api/auth';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
+import { getUIDApi } from '../api/helpers/customConfig';
 import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
 import { withUIDHeaders } from '../fetch/headers';
+import { captureMessage } from '../helpers/sentry';
 import { Api, User as tsUser } from '../interfaces';
+import { appMode } from '../webpack.constants';
+import { PersistedSessionWithLocalID } from './SessionInterface';
+import { generateClientKey, getClientKey } from './clientKey';
 import { InvalidPersistentSessionError } from './error';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
+import { OfflineKey, generateOfflineKey } from './offlineKey';
 import {
     getDecryptedPersistedSessionBlob,
     getPersistedSession,
@@ -29,6 +31,7 @@ export type ResumedSessionResult = {
     persistent: boolean;
     trusted: boolean;
     clientKey: string;
+    offlineKey: OfflineKey | undefined;
 };
 
 export const logRemoval = (e: any = {}, UID: string, context: string) => {
@@ -67,6 +70,7 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
             throw InactiveSessionError();
         }
         let keyPassword: undefined | string;
+        let offlineKey: undefined | OfflineKey;
         if (persistedSessionBlobString && ClientKey) {
             const key = await getClientKey(ClientKey);
             const decryptedBlob = await getDecryptedPersistedSessionBlob(
@@ -75,6 +79,16 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
                 payloadVersion
             );
             keyPassword = decryptedBlob.keyPassword;
+            if (
+                decryptedBlob.type === 'offline' &&
+                persistedSession.payloadType === 'offline' &&
+                persistedSession.offlineKeySalt
+            ) {
+                offlineKey = {
+                    password: decryptedBlob.offlineKeyPassword,
+                    salt: persistedSession.offlineKeySalt,
+                };
+            }
         }
         return {
             UID: persistedUID,
@@ -84,6 +98,7 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
             persistent,
             trusted,
             clientKey: ClientKey,
+            offlineKey,
         };
     } catch (e: any) {
         if (getIs401Error(e)) {
@@ -104,7 +119,9 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
 
 interface PersistSessionWithPasswordArgs {
     api: Api;
+    clearKeyPassword: string;
     keyPassword: string | undefined;
+    offlineKey?: OfflineKey;
     User: tsUser;
     UID: string;
     LocalID: number;
@@ -115,7 +132,9 @@ interface PersistSessionWithPasswordArgs {
 
 export const persistSession = async ({
     api,
+    clearKeyPassword,
     keyPassword = '',
+    offlineKey: maybeOfflineKey,
     User,
     UID,
     LocalID,
@@ -125,7 +144,13 @@ export const persistSession = async ({
 }: PersistSessionWithPasswordArgs) => {
     const { serializedData, key } = await generateClientKey();
     await api<LocalKeyResponse>(setLocalKey(serializedData));
+
+    let offlineKey = maybeOfflineKey;
+
     if (mode === 'sso') {
+        if (clearKeyPassword && !offlineKey) {
+            offlineKey = await generateOfflineKey(clearKeyPassword);
+        }
         await setPersistedSessionWithBlob(LocalID, key, {
             UID,
             UserID: User.ID,
@@ -133,9 +158,11 @@ export const persistSession = async ({
             isSubUser: !!User.OrganizationPrivateKey,
             persistent,
             trusted,
+            offlineKey,
         });
     }
-    return { clientKey: serializedData };
+
+    return { clientKey: serializedData, offlineKey };
 };
 
 export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => {
@@ -197,45 +224,55 @@ const getNonExistingSessions = async (
     return result.filter(isTruthy);
 };
 
-export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionPersisted[] };
-export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResult> => {
+export const getActiveLocalSession = async (api: Api) => {
+    const { Sessions = [] } = await api<{ Sessions: LocalSessionResponse[] }>(getLocalSessions());
+
     const persistedSessions = getPersistedSessions();
     const persistedSessionsMap = Object.fromEntries(
         persistedSessions.map((persistedSession) => [persistedSession.localID, persistedSession])
     );
 
+    // The returned sessions have to exist in localstorage to be able to activate
+    const maybeActiveSessions = Sessions.map((remoteSession) => {
+        return {
+            persisted: persistedSessionsMap[remoteSession.LocalID],
+            remote: remoteSession,
+        };
+    }).filter((value): value is LocalSessionPersisted => !!value.persisted);
+
+    const nonExistingSessions = await getNonExistingSessions(api, persistedSessions, maybeActiveSessions);
+    if (nonExistingSessions.length) {
+        captureMessage('Unexpected non-existing sessions', {
+            extra: {
+                length: nonExistingSessions.length,
+                ids: nonExistingSessions.map((session) => ({
+                    id: `${session.remote.Username || session.remote.PrimaryEmail || session.remote.UserID}`,
+                    lid: session.remote.LocalID,
+                })),
+            },
+        });
+    }
+
+    return [...maybeActiveSessions, ...nonExistingSessions];
+};
+
+export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionPersisted[] };
+export const getActiveSessions = async (api: Api, localID?: number): Promise<GetActiveSessionsResult> => {
+    let persistedSessions = getPersistedSessions();
+
+    if (localID !== undefined) {
+        // Increase ordered priority to the specified local ID
+        persistedSessions = [
+            ...persistedSessions.filter((a) => a.localID === localID),
+            ...persistedSessions.filter((a) => a.localID !== localID),
+        ];
+    }
+
     for (const persistedSession of persistedSessions) {
         try {
-            const validatedSession = await resumeSession(api, persistedSession.localID);
-            const { Sessions = [] } = await api<{
-                Sessions: LocalSessionResponse[];
-            }>(withUIDHeaders(validatedSession.UID, getLocalSessions()));
-
-            // The returned sessions have to exist in localstorage to be able to activate
-            const maybeActiveSessions = Sessions.map((remoteSession) => {
-                return {
-                    persisted: persistedSessionsMap[remoteSession.LocalID],
-                    remote: remoteSession,
-                };
-            }).filter((value): value is LocalSessionPersisted => !!value.persisted);
-
-            const nonExistingSessions = await getNonExistingSessions(api, persistedSessions, maybeActiveSessions);
-            if (nonExistingSessions.length) {
-                captureMessage('Unexpected non-existing sessions', {
-                    extra: {
-                        length: nonExistingSessions.length,
-                        ids: nonExistingSessions.map((session) => ({
-                            id: `${session.remote.Username || session.remote.PrimaryEmail || session.remote.UserID}`,
-                            lid: session.remote.LocalID,
-                        })),
-                    },
-                });
-            }
-
-            return {
-                session: validatedSession,
-                sessions: [...maybeActiveSessions, ...nonExistingSessions],
-            };
+            const session = await resumeSession(api, persistedSession.localID);
+            const sessions = await getActiveLocalSession(getUIDApi(session.UID, api));
+            return { session, sessions };
         } catch (e: any) {
             if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                 // Session expired, try another session

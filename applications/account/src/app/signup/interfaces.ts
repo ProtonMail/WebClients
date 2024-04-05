@@ -6,6 +6,7 @@ import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/pay
 import { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     Address,
@@ -59,6 +60,7 @@ export interface SessionData {
     persistent: boolean;
     trusted: boolean;
     clientKey: string;
+    offlineKey: OfflineKey | undefined;
     paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | undefined;
@@ -159,6 +161,7 @@ export interface SetupData {
     addresses: Address[];
     keyPassword: string | undefined;
     clientKey: string;
+    offlineKey: OfflineKey | undefined;
     authResponse: AuthResponse;
     api: Api;
     mnemonicData?: MnemonicData;
