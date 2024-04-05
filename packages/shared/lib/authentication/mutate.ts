@@ -7,11 +7,13 @@ import { isSubUser } from '@proton/shared/lib/user/helpers';
 const mutatePassword = async ({
     authentication,
     keyPassword,
+    clearKeyPassword,
     User,
     api,
 }: {
     authentication: AuthenticationStore;
     keyPassword: string;
+    clearKeyPassword: string;
     api: Api;
     User: User;
 }) => {
@@ -27,8 +29,9 @@ const mutatePassword = async ({
     try {
         authentication.setPassword(keyPassword);
 
-        const { clientKey } = await persistSession({
+        const { clientKey, offlineKey } = await persistSession({
             api,
+            clearKeyPassword,
             keyPassword,
             User,
             UID: authentication.getUID(),
@@ -39,6 +42,7 @@ const mutatePassword = async ({
         });
 
         authentication.setClientKey(clientKey);
+        authentication.setOfflineKey(offlineKey);
 
         sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
     } catch (e: any) {

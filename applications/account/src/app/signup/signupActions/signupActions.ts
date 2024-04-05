@@ -80,7 +80,7 @@ export const handleDone = ({
     if (!setupData?.authResponse) {
         throw new Error('Missing auth response');
     }
-    const { authResponse, user, keyPassword, clientKey } = setupData;
+    const { authResponse, user, keyPassword, clientKey, offlineKey } = setupData;
 
     // Users that creates an account after a logout don't have appIntent, foring forcing it here
     if (isElectronApp) {
@@ -99,6 +99,7 @@ export const handleDone = ({
             loginPassword: password,
             keyPassword: keyPassword,
             clientKey,
+            offlineKey,
             flow: 'signup',
             appIntent: appIntent,
         },
@@ -229,8 +230,9 @@ export const handleSetPassword = async ({
         config: updatePrivateKeyRoute(updateKeysPayload),
     });
 
-    const { clientKey } = await persistSession({
+    const { clientKey, offlineKey } = await persistSession({
         api,
+        clearKeyPassword: newPassword,
         keyPassword,
         User: user,
         UID: setupData?.authResponse.UID,
@@ -250,6 +252,7 @@ export const handleSetPassword = async ({
             },
             setupData: {
                 ...setupData,
+                offlineKey,
                 clientKey,
                 keyPassword,
                 user: updatedUser,
@@ -524,10 +527,11 @@ export const handleSetupUser = async ({
     ]);
 
     const trusted = false;
-    const { clientKey } = await persistSession({
+    const { clientKey, offlineKey } = await persistSession({
         ...authResponse,
-        User: user,
+        clearKeyPassword: password,
         keyPassword,
+        User: user,
         api,
         persistent,
         trusted,
@@ -548,6 +552,7 @@ export const handleSetupUser = async ({
             user,
             keyPassword,
             clientKey,
+            offlineKey,
             addresses,
             authResponse,
             mnemonicData,

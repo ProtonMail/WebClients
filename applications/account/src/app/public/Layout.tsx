@@ -22,6 +22,7 @@ export interface Props {
     children: ReactNode;
     hasFooter?: boolean;
     bottomRight?: ReactNode;
+    topRight?: ReactNode;
     hasDecoration?: boolean;
     onBack?: () => void;
     hasWelcome?: boolean;
@@ -40,6 +41,7 @@ const Layout = ({
     headerClassName,
     centeredContent,
     layoutClassName,
+    topRight,
 }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
@@ -92,14 +94,15 @@ const Layout = ({
                     <div className="hidden md:block">{stepper}</div>
                 </div>
                 <div>
-                    {hasDecoration && (
-                        <LanguageSelect
-                            className="signup-link mr-custom"
-                            style={{ '--mr-custom': 'calc(var(--space-3) * -1)' }}
-                            globe
-                            locales={locales}
-                        />
-                    )}
+                    {topRight ||
+                        (hasDecoration && (
+                            <LanguageSelect
+                                className="signup-link mr-custom"
+                                style={{ '--mr-custom': 'calc(var(--space-3) * -1)' }}
+                                globe
+                                locales={locales}
+                            />
+                        ))}
                 </div>
             </header>
             <div

@@ -3,6 +3,7 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { useConfig, useUser } from '@proton/components/hooks';
+import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
@@ -11,7 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
-import ProductLink, { apps } from './ProductLink';
+import ProductLink from './ProductLink';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;
@@ -23,7 +24,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
 
-        const availableApps = apps(user);
+        const availableApps = getAvailableApps(user);
 
         if (availableApps.length <= 1) {
             return null;
