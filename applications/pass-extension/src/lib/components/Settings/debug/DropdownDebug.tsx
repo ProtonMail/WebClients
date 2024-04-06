@@ -49,7 +49,7 @@ export const DropdownDebug: FC = () => {
                 </MockIFrameContainer>
 
                 <MockIFrameContainer
-                    appState={{ status: AppStatus.LOCKED }}
+                    appState={{ status: AppStatus.SESSION_LOCKED }}
                     payload={{
                         action: DropdownAction.AUTOFILL,
                         hostname: 'proton.me',

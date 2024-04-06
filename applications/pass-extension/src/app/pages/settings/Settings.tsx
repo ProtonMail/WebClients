@@ -21,6 +21,7 @@ import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLog
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import { clientSessionLocked } from '@proton/pass/lib/client';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
@@ -29,7 +30,7 @@ import {
     selectTrialDaysRemaining,
     selectUser,
 } from '@proton/pass/store/selectors';
-import { AppStatus, type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import { type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Developer } from './Views/Developer';
@@ -140,7 +141,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     return (
         <div className="flex flex-column items-center justify-center my-auto">
             <Icon name="lock-filled" size={10} className="mb-4" />
-            {context.state.status === AppStatus.LOCKED && (
+            {clientSessionLocked(context.state.status) && (
                 <>
                     <span className="block color-norm">{c('Info').t`Your ${PASS_APP_NAME} session is locked`}</span>
                     <span className="block text-sm color-weak">{c('Info')

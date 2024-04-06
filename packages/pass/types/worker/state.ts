@@ -9,10 +9,10 @@ export enum AppStatus {
     BOOTING = 'BOOTING' /* app is currently in the boot sequence */,
     ERROR = 'ERROR' /* app is in an error state */,
     IDLE = 'IDLE' /* initial app state - pending initalization */,
-    LOCKED = 'LOCKED' /* app is locked (session may not) */,
-    OFFLINE_LOCKED = 'OFFLINE_LOCKED' /* offline locked app */,
-    OFFLINE_UNLOCKED = 'OFFLINE_UNLOCKED' /* app is unlocked for offline usage */,
+    OFFLINE = 'OFFLINE' /* app is unlocked for offline usage */,
+    PASSWORD_LOCKED = 'PASSWORD_LOCKED' /* offline locked app */,
     READY = 'READY' /* app is authorized and has booted */,
+    SESSION_LOCKED = 'SESSION_LOCKED' /* session is locked back-end side */,
     UNAUTHORIZED = 'UNAUTHORIZED' /* app is pending login */,
 }
 

@@ -23,7 +23,7 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientOffline } from '@proton/pass/lib/client';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
@@ -64,7 +64,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
-        const offlineLock = offlineEnabled && clientOfflineUnlocked(client.current.state.status);
+        const offlineLock = offlineEnabled && clientOffline(client.current.state.status);
         await authService.lock({ broadcast: true, offline: offlineLock, soft: false });
 
         clearNotifications();

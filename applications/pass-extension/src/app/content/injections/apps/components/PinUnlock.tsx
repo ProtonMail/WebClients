@@ -7,7 +7,7 @@ import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
-import { clientLocked } from '@proton/pass/lib/client';
+import { clientSessionLocked } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -64,7 +64,7 @@ export const WithPinUnlock: FC<Props & { children: (locked: boolean, input: Reac
 }) => {
     const { appState } = useIFrameContext();
     const { status } = appState;
-    const locked = clientLocked(status);
+    const locked = clientSessionLocked(status);
     const input = locked ? <PinUnlock {...props} /> : null;
 
     return children(locked, input);

@@ -16,7 +16,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientBooted, clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
+import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import {
@@ -111,7 +111,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onNotification: (notification) => {
-                    if (notification.type === 'error' && clientOfflineUnlocked(client.current.state.status)) {
+                    if (notification.type === 'error' && clientOffline(client.current.state.status)) {
                         notification.errorMessage = c('Warning').t`Offline`;
                     }
 
