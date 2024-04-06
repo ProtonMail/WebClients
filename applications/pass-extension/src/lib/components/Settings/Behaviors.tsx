@@ -88,6 +88,7 @@ const getSettings =
                         description: c('Info')
                             .t`${PASS_APP_NAME} will prompt you as soon as generated passwords are autofilled.`,
                         checked: settings.autosave.prompt && settings.autosave.passwordSuggest,
+                        disabled: !settings.autosave.prompt,
                         onChange: (checked) => onSettingsUpdate({ autosave: { passwordSuggest: checked } }),
                     },
                 ],
