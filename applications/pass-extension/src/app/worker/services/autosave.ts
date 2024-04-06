@@ -15,15 +15,21 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 export const createAutoSaveService = () => {
-    const shouldPrompt = ({ type, data, domain, subdomain }: FormEntry): AutosavePrompt => {
+    const resolve = ({ type, data, domain, subdomain }: FormEntry): AutosavePrompt => {
         /* If credentials are not valid for the form type : exit early */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
+
+        /* If the form was of type `register` we should always
+         * ask the user to create a new item. Ideally for `NOOP`
+         * forms as well but we are still getting too many false
+         * positives on password-change form detections. */
+        if (type === 'register') return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         const { username, password } = data;
         const candidates = selectAutosaveCandidate({ domain, subdomain, username })(store.getState());
 
-        /* If no login items found for the current domain & the current
-         * username - prompt for autosaving a new entry */
+        /* If no login items found for the current domain & the
+         * current username - prompt for autosaving a new entry */
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
@@ -107,7 +113,7 @@ export const createAutoSaveService = () => {
         return false;
     });
 
-    return { shouldPrompt };
+    return { resolve };
 };
 
 export type AutoSaveService = ReturnType<typeof createAutoSaveService>;
