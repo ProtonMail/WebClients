@@ -17,7 +17,7 @@ describe('AutosaveService [worker]', () => {
     beforeEach(() => store.getState.mockReturnValue(getMockState()));
     afterEach(() => store.getState.mockClear());
 
-    describe('shouldPrompt', () => {
+    describe('resolve', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
             data: { username: 'test@proton.me', password: 'p4ssw0rd' },
             domain: 'domain.com',
@@ -29,12 +29,12 @@ describe('AutosaveService [worker]', () => {
         };
 
         test('should prompt for new item if no match', () => {
-            const result = autosave.shouldPrompt(submission);
+            const result = autosave.resolve(submission);
             expect(result).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
         });
 
         test('should not prompt if form credentials are invalid', () => {
-            const result = autosave.shouldPrompt({ ...submission, data: { username: '', password: '' } });
+            const result = autosave.resolve({ ...submission, data: { username: '', password: '' } });
             expect(result).toEqual({ shouldPrompt: false });
         });
 
@@ -51,7 +51,7 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.shouldPrompt(submission)).toEqual({
+            expect(autosave.resolve(submission)).toEqual({
                 shouldPrompt: true,
                 data: {
                     type: AutosaveMode.UPDATE,
@@ -81,7 +81,7 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.shouldPrompt(submission)).toEqual({ shouldPrompt: false });
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
         });
     });
 
