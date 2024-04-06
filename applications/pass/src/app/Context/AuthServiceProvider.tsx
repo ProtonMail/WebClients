@@ -23,7 +23,7 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { canOfflineUnlock } from '@proton/pass/lib/cache/utils';
-import { clientBooted, clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
@@ -107,7 +107,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         /** configure the authentication store partially in order to
                          * hydrate the userID and offline salts properties */
                         authStore.setSession(persistedSession);
-                        if (await canResumeOffline()) client.current.setStatus(AppStatus.OFFLINE_LOCKED);
+                        if (await canResumeOffline()) client.current.setStatus(AppStatus.PASSWORD_LOCKED);
                         else if (authStore.hasSession(initialLocalID)) client.current.setStatus(AppStatus.ERROR);
                         else client.current.setStatus(AppStatus.UNAUTHORIZED);
                     } else client.current.setStatus(AppStatus.UNAUTHORIZED);
@@ -144,12 +144,12 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onAuthorize: () => {
-                if (clientOfflineUnlocked(client.current.state.status)) return;
+                if (clientOffline(client.current.state.status)) return;
                 else client.current.setStatus(AppStatus.AUTHORIZING);
             },
 
             onAuthorized: async (_, localID) => {
-                const bootedOffline = clientOfflineUnlocked(client.current.state.status);
+                const bootedOffline = clientOffline(client.current.state.status);
                 if (bootedOffline) client.current.setStatus(AppStatus.READY);
                 else {
                     const redirect = stripLocalBasenameFromPathname(redirectPath.current);
@@ -225,7 +225,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onSessionLocked: (localID, offline, broadcast) => {
-                flushSync(() => client.current.setStatus(offline ? AppStatus.OFFLINE_LOCKED : AppStatus.LOCKED));
+                flushSync(() =>
+                    client.current.setStatus(offline ? AppStatus.PASSWORD_LOCKED : AppStatus.SESSION_LOCKED)
+                );
                 if (broadcast) sw?.send({ type: 'locked', localID, offline, broadcast: true });
 
                 store.dispatch(cacheCancel());
@@ -268,7 +270,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionFailure: async () => {
                 const offline = OFFLINE_SUPPORTED && isOffline();
                 const resumeOffline = offline && (await canResumeOffline());
-                client.current.setStatus(resumeOffline ? AppStatus.OFFLINE_LOCKED : AppStatus.ERROR);
+                client.current.setStatus(resumeOffline ? AppStatus.PASSWORD_LOCKED : AppStatus.ERROR);
             },
             onNotification: (notification) =>
                 createNotification({
@@ -353,7 +355,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const status = client.current.state.status;
         const booted = clientBooted(status);
         const offlineEnabled = selectOfflineEnabled(store.getState());
-        const offlineLock = offlineEnabled && clientOfflineUnlocked(status);
+        const offlineLock = offlineEnabled && clientOffline(status);
 
         if (booted && registeredLock && ttl) {
             const now = getEpoch();

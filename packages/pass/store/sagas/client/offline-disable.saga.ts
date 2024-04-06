@@ -1,7 +1,7 @@
 import { takeLeading } from 'redux-saga/effects';
 
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
-import { clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientOffline } from '@proton/pass/lib/client';
 import { offlineDisable } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
@@ -18,7 +18,7 @@ function* offlineDisableWorker({ getAuthService, getAuthStore, getAppState }: Ro
      * because the session is not resumed. We need access to the `keyPassword` in
      * the AuthSession for session persisting. In this case, fallback to removing
      * the `offlineConfig` and save. */
-    if (clientOfflineUnlocked(status)) {
+    if (clientOffline(status)) {
         const localID = authStore.getLocalID();
         const persistedSession: MaybeNull<EncryptedAuthSession> = yield auth.config.getPersistedSession(localID);
 

@@ -13,7 +13,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Localized } from '@proton/pass/components/Core/Localized';
-import { clientBusy, clientErrored, clientLocked, clientUnauthorized } from '@proton/pass/lib/client';
+import { clientBusy, clientErrored, clientSessionLocked, clientUnauthorized } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -62,7 +62,7 @@ export const Dropdown: FC = () => {
                 {(() => {
                     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
-                    if (clientLocked(status)) {
+                    if (clientSessionLocked(status)) {
                         return (
                             <PinUnlock
                                 header={

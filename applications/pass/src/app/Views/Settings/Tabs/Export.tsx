@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientOffline } from '@proton/pass/lib/client';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 import { SessionLockStatus } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
@@ -16,8 +16,8 @@ export const Export: FC = () => {
     const authService = useAuthService();
     const { status } = useClient().state;
     const offlineEnabled = useSelector(selectOfflineEnabled);
-    const offlineUnlocked = clientOfflineUnlocked(status);
-    const offlineConfirm = offlineEnabled && offlineUnlocked;
+    const offline = clientOffline(status);
+    const offlineConfirm = offlineEnabled && offline;
 
     return (
         <SettingsPanel title={c('Label').t`Export`}>

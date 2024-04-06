@@ -73,7 +73,7 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     }, []);
 
     const lock = useCallback(() => {
-        setState({ ...INITIAL_WORKER_STATE, status: AppStatus.LOCKED });
+        setState({ ...INITIAL_WORKER_STATE, status: AppStatus.SESSION_LOCKED });
         dispatch(sessionLockIntent());
     }, []);
 
