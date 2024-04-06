@@ -29,8 +29,8 @@ import { createApi } from '@proton/pass/lib/api/factory';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import {
     clientErrored,
-    clientLocked,
     clientReady,
+    clientSessionLocked,
     clientStale,
     clientStatusResolved,
     clientUnauthorized,
@@ -102,7 +102,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
             void setPopupIcon({
                 disabled: or(clientUnauthorized, clientErrored, clientStale)(status),
-                locked: clientLocked(status),
+                locked: clientSessionLocked(status),
             });
 
             WorkerMessageBroker.ports.broadcast(

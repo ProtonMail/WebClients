@@ -7,7 +7,13 @@ import { useOnline } from '@proton/components/hooks';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { OfflineUnlock } from '@proton/pass/components/Lock/OfflineUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
-import { clientBusy, clientErrored, clientLocked, clientOfflineLocked, clientStale } from '@proton/pass/lib/client';
+import {
+    clientBusy,
+    clientErrored,
+    clientPasswordLocked,
+    clientSessionLocked,
+    clientStale,
+} from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -29,11 +35,11 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
     const [unlocking, setUnlocking] = useState(false);
 
     const stale = clientStale(status);
-    const locked = clientLocked(status);
+    const locked = clientSessionLocked(status);
     const errored = clientErrored(status);
-    const offlineLocked = clientOfflineLocked(status);
+    const passwordLocked = clientPasswordLocked(status);
     const busy = clientBusy(status);
-    const canSignOut = errored || locked || offlineLocked;
+    const canSignOut = errored || locked || passwordLocked;
     const navigatorOnline = useOnline();
 
     useEffect(() => {
@@ -85,16 +91,16 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
                 <span className="pass-lobby--heading text-bold text-norm text-no-wrap flex flex-nowrap items-end justify-center user-select-none">
-                    {locked || offlineLocked
+                    {locked || passwordLocked
                         ? c('lobby: Title').jt`Unlock ${brandNameJSX}`
                         : c('lobby: Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
                 <span className="text-norm">
                     {(() => {
                         switch (status) {
-                            case AppStatus.LOCKED:
+                            case AppStatus.SESSION_LOCKED:
                                 return c('lobby: Info').jt`Enter your PIN code`;
-                            case AppStatus.OFFLINE_LOCKED:
+                            case AppStatus.PASSWORD_LOCKED:
                                 return c('lobby: Info')
                                     .t`You are currently offline. Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
                             default:
@@ -107,14 +113,14 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
             <div className="flex-1 mt-8 flex flex-column gap-2">
                 {(() => {
                     switch (status) {
-                        case AppStatus.LOCKED:
+                        case AppStatus.SESSION_LOCKED:
                             return (
                                 <div className="mb-8">
                                     <PinUnlock onLoading={setUnlocking} />
                                     {unlocking && <CircleLoader size="small" className="mt-12" />}
                                 </div>
                             );
-                        case AppStatus.OFFLINE_LOCKED:
+                        case AppStatus.PASSWORD_LOCKED:
                             return <OfflineUnlock />;
                         default:
                             return (

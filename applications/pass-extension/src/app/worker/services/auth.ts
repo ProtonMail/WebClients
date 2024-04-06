@@ -9,7 +9,7 @@ import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { clientAuthorized, clientLocked, clientReady, clientUnauthorized } from '@proton/pass/lib/client';
+import { clientAuthorized, clientReady, clientSessionLocked, clientUnauthorized } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import {
@@ -63,7 +63,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
              * return as the authentication store will have been configured */
-            if (or(clientUnauthorized, clientLocked)(ctx.status)) return false;
+            if (or(clientUnauthorized, clientSessionLocked)(ctx.status)) return false;
             if (clientAuthorized(ctx.status)) return true;
             return ctx.service.auth.resumeSession(undefined, options);
         }),
@@ -145,7 +145,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onSessionLocked: withContext((ctx, _offline, _broadcast) => {
-            ctx.setStatus(AppStatus.LOCKED);
+            ctx.setStatus(AppStatus.SESSION_LOCKED);
             ctx.service.autofill.clear();
 
             store.dispatch(cacheCancel());
@@ -215,7 +215,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             try {
                 await authService.consumeFork({ mode: 'secure', ...payload }, `${SSO_URL}/api`);
-                if (clientLocked(status)) await service.storage.session.setItems(authStore.getSession());
+                if (clientSessionLocked(status)) await service.storage.session.setItems(authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
                 authService.logout({ soft: true }).catch(noop);

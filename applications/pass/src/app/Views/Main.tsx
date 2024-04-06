@@ -26,7 +26,7 @@ import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvi
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientOfflineUnlocked } from '@proton/pass/lib/client';
+import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
@@ -40,13 +40,13 @@ import { Menu } from './Sidebar/Menu';
 const MainSwitch: FC = () => {
     const dispatch = useDispatch();
     const client = useClient();
-    const offlineUnlocked = clientOfflineUnlocked(client.state.status);
+    const offline = clientOffline(client.state.status);
     const { state: expanded, toggle } = useToggle();
 
     const connectivityBar = useConnectivityBar((online) => ({
-        className: offlineUnlocked ? 'bg-weak border-top' : 'bg-danger',
-        hidden: online && !offlineUnlocked,
-        text: offlineUnlocked ? (
+        className: offline ? 'bg-weak border-top' : 'bg-danger',
+        hidden: online && !offline,
+        text: offline ? (
             <div className="flex items-center gap-2">
                 <span>{c('Info').t`Offline mode`}</span>
 

@@ -8,7 +8,7 @@ import { useClient, useClientRef } from 'proton-pass-web/app/Context/ClientProvi
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientOfflineLocked, clientOfflineUnlocked, clientReady } from '@proton/pass/lib/client';
+import { clientOffline, clientPasswordLocked, clientReady } from '@proton/pass/lib/client';
 import { offlineResume, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { ping } from '@proton/shared/lib/api/tests';
 
@@ -31,8 +31,8 @@ export const AppGuard: FC = () => {
             if (clientReady(status)) dispatch(startEventPolling());
             /** if the client was offline unlocked and network connectivity
              * resumes, try to silently resume the session in the background */
-            if (clientOfflineUnlocked(status)) dispatch(offlineResume(localID));
-            if (clientOfflineLocked(status)) void auth.init({ retryable: false });
+            if (clientOffline(status)) dispatch(offlineResume(localID));
+            if (clientPasswordLocked(status)) void auth.init({ retryable: false });
         } else dispatch(stopEventPolling());
     };
 

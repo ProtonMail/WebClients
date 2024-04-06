@@ -43,12 +43,12 @@ function* bootWorker(options: RootSagaOptions, { payload: { loginPassword } }: R
 
         yield put(bootSuccess(fromCache ? undefined : yield synchronize(SyncType.FULL)));
 
-        options.setAppStatus(loginPassword ? AppStatus.OFFLINE_UNLOCKED : AppStatus.READY);
+        options.setAppStatus(loginPassword ? AppStatus.OFFLINE : AppStatus.READY);
         options.onBoot?.({ ok: true, fromCache });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
-        options.setAppStatus(loginPassword ? AppStatus.OFFLINE_LOCKED : AppStatus.ERROR);
+        options.setAppStatus(loginPassword ? AppStatus.PASSWORD_LOCKED : AppStatus.ERROR);
         options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
     }
 }
