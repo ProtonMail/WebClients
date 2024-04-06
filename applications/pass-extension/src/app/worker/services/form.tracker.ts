@@ -109,7 +109,7 @@ export const createFormTrackerService = () => {
                 const { tabId, url } = parseSender(sender);
                 const { domain, subdomain, protocol: scheme } = url;
                 const staged = stage(tabId, { domain, subdomain, scheme, ...staging }, reason);
-                const autosave = ctx.service.autosave.shouldPrompt(staged);
+                const autosave = ctx.service.autosave.resolve(staged);
 
                 return { submission: merge(staged, { autosave }) };
             }
@@ -141,15 +141,16 @@ export const createFormTrackerService = () => {
                 if (url.domain) {
                     const committed = commit(tabId, url.domain, reason);
 
-                    if (committed !== undefined) {
-                        const autosave = ctx.service.autosave.shouldPrompt(committed);
-
-                        return autosave.shouldPrompt
-                            ? { submission: merge(committed, { autosave }) }
-                            : (() => {
-                                  stash(tabId, 'PROMPT_IGNORE');
-                                  return { submission: null };
-                              })();
+                    if (committed) {
+                        const autosave = ctx.service.autosave.resolve(committed);
+                        return {
+                            submission: autosave.shouldPrompt
+                                ? merge(committed, { autosave })
+                                : (() => {
+                                      stash(tabId, 'PROMPT_IGNORE');
+                                      return null;
+                                  })(),
+                        };
                     }
 
                     throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${url.domain}"`);
@@ -177,18 +178,11 @@ export const createFormTrackerService = () => {
                     /** If the form was not submitted, add a short timeout before
                      * resolving the response to intercept possible XMLHttpRequests */
                     await wait(submission.submitted ? 0 : 250);
-                    const isCommitted = isFormEntryCommitted(submission);
+                    const autosave = isFormEntryCommitted(submission)
+                        ? ctx.service.autosave.resolve(submission)
+                        : { shouldPrompt: false as const };
 
-                    return {
-                        submission:
-                            submission !== undefined
-                                ? merge(submission, {
-                                      autosave: isCommitted
-                                          ? ctx.service.autosave.shouldPrompt(submission)
-                                          : { shouldPrompt: false as const },
-                                  })
-                                : null,
-                    };
+                    return { submission: merge(submission, { autosave }) };
                 }
             }
 
