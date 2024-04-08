@@ -127,3 +127,11 @@ export const querySubmitAbuseReport = (data: AbuseReportPayload) => {
         data,
     };
 };
+
+export const querySharedWithMeLinks = (params?: { AnchorID?: string }) => {
+    return {
+        method: 'get',
+        url: 'drive/v2/sharedwithme',
+        params,
+    };
+};

@@ -23,6 +23,7 @@ import {
     useActivePing,
     useDefaultShare,
     useDriveEventManager,
+    useDriveSharingFeatureFlag,
     usePhotosFeatureFlag,
     useSearchControl,
 } from '../store';
@@ -32,7 +33,9 @@ import FolderContainer from './FolderContainer';
 import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
 import SharedURLsContainer from './SharedLinksContainer';
+import SharedWithMeContainer from './SharedWithMeContainer';
 import TrashContainer from './TrashContainer';
+import { VolumeLinkContainer } from './VolumeLinkContainer';
 
 // Empty shared root for blurred container.
 const DEFAULT_VOLUME_INITIAL_STATE: {
@@ -57,6 +60,7 @@ const InitContainer = () => {
     const driveEventManager = useDriveEventManager();
     const [hasPhotosShare, setHasPhotosShare] = useState(false);
     const isPhotosEnabled = usePhotosFeatureFlag();
+    const isDriveSharingEnabled = useDriveSharingFeatureFlag();
     useActivePing();
 
     useEffect(() => {
@@ -114,8 +118,10 @@ const InitContainer = () => {
                     <Route path="/devices" component={DevicesContainer} />
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
+                    {isDriveSharingEnabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
                     {(isPhotosEnabled || hasPhotosShare) && <Route path="/photos" component={PhotosContainer} />}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
+                    <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
                 </Switch>
