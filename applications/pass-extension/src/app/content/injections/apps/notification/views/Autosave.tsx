@@ -36,28 +36,10 @@ type AutosaveValues = AutosaveType<SelectedItem> & {
     password: string;
 };
 
-const getInitialValues = (data: AutosavePayload): AutosaveValues => {
-    const { username, password, domain } = data;
-    const candidate = data.type === AutosaveMode.UPDATE && data.candidates.length === 1 ? data.candidates[0] : null;
-
-    return data.type === AutosaveMode.UPDATE
-        ? {
-              type: AutosaveMode.UPDATE,
-              itemId: candidate?.itemId ?? '',
-              shareId: candidate?.shareId ?? '',
-              step: !candidate ? 'select' : 'edit',
-              name: candidate?.name ?? domain,
-              username: candidate?.username ?? username,
-              password: password,
-          }
-        : {
-              type: AutosaveMode.NEW,
-              step: 'edit',
-              name: domain,
-              username,
-              password,
-          };
-};
+const getInitialValues = ({ username, password, domain, type }: AutosavePayload): AutosaveValues =>
+    type === AutosaveMode.UPDATE
+        ? { type: AutosaveMode.UPDATE, itemId: '', shareId: '', step: 'select', name: domain, username, password }
+        : { type: AutosaveMode.NEW, step: 'edit', name: domain, username, password };
 
 const getAutosavePayload =
     ({ domain }: AutosavePayload) =>
