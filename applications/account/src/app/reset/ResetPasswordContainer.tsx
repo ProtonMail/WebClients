@@ -455,6 +455,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                                         }
                                     } catch (e) {
                                         handleError(e);
+                                        return;
                                     }
                                 }
 
