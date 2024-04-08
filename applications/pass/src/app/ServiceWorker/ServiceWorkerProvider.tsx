@@ -17,6 +17,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
+import { COMMIT } from '../config';
 import type { ServiceWorkerResponse } from './channel';
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type ServiceWorkerMessageType, type WithOrigin } from './channel';
 
@@ -43,9 +44,9 @@ export const ServiceWorkerEnabled = 'serviceWorker' in navigator;
 export const ServiceWorkerContext = createContext<MaybeNull<ServiceWorkerContextValue>>(null);
 
 export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
+    const origin = ServiceWorkerClientID;
     const [ready, setReady] = useState(false);
     const handlers = useRef<Map<ServiceWorkerMessageType, ServiceWorkerMessageHandler[]>>(new Map());
-    const origin = ServiceWorkerClientID;
 
     const sw = useMemo<MaybeNull<ServiceWorkerContextValue>>(
         () =>
@@ -124,7 +125,14 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
                         active?.postMessage({ type: 'claim' });
                     }
 
-                    sw?.send({ type: 'ping' });
+                    sw?.send({ type: 'connect' });
+
+                    sw?.on('check', ({ hash }) => {
+                        if (hash !== COMMIT) {
+                            logger.info(`[ServiceWorkerProvider] New version detected [${hash}] - reloading`);
+                            window.location.reload();
+                        }
+                    });
                 })
                 .catch(() => logger.warn('[ServiceWorkerProvider] Could not register service worker'))
                 .finally(() => setReady(true));
@@ -137,8 +145,13 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
                 } catch {}
             };
 
+            navigator.serviceWorker.addEventListener('message', handleChannelMessage);
             CLIENT_CHANNEL.addEventListener('message', handleChannelMessage);
-            return () => CLIENT_CHANNEL.removeEventListener('message', handleChannelMessage);
+
+            return () => {
+                navigator.serviceWorker.removeEventListener('message', handleChannelMessage);
+                CLIENT_CHANNEL.removeEventListener('message', handleChannelMessage);
+            };
         } else setReady(true);
     }, []);
 

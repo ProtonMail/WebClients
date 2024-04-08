@@ -1,8 +1,11 @@
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import { PassErrorCode } from './errors';
+
 export type AbortableFetchHandler = (event: FetchEvent, signal: AbortSignal) => Maybe<Promise<Response>>;
-type FetchHandlerOptions = { unauthenticated?: boolean };
+export type FetchHandlerOptions = { unauthenticated?: boolean };
+export type FetchControllerConfig = { protocols?: string[]; hostnames?: string[] };
 
 const getFetchEventHeader =
     (header: string) =>
@@ -25,16 +28,27 @@ export const getRequestIDHeaders = (init?: HeadersInit): [Record<string, string>
     return [Object.fromEntries(headers.entries()), requestId];
 };
 
+/** Service-worker network errors should conform to the
+ * API error response format in order to conform to client
+ * side error handlers. As our service-worker fetch handler
+ * acts as some kind of proxy, if we cannot reach */
+export const createNetworkError = () =>
+    new Response(JSON.stringify({ Error: 'Network error', Code: PassErrorCode.SERVICE_NETWORK_ERROR }), {
+        status: 503,
+        statusText: 'Network error',
+        headers: { 'Content-Type': 'application/json' },
+    });
+
 /** Fetch event handler factory with custom abort controller management. Allows using
  * service-worker messages to trigger abort controllers for client-side cancellation. */
-export const fetchControllerFactory = () => {
+export const fetchControllerFactory = (config?: FetchControllerConfig) => {
     const controllers = new Map<string, AbortController>();
 
     return {
         _controllers: controllers,
 
         /** Aborts any initiated fetch request for the supplied `requestId` */
-        abort: (requestId: string) => controllers.get(requestId)?.abort?.(),
+        abort: (requestId: string) => controllers.get(requestId)?.abort?.('cancelled'),
 
         fetch: (req: Request, signal?: AbortSignal): Promise<Response> => {
             const request = new Request(req);
@@ -49,8 +63,13 @@ export const fetchControllerFactory = () => {
         register:
             (handler: AbortableFetchHandler, options?: FetchHandlerOptions) =>
             (event: FetchEvent): void => {
+                const requestUrl = event.request.url;
+                const { protocol, hostname } = new URL(requestUrl);
+
+                if (config?.protocols && !config.protocols.includes(protocol)) return;
+                if (config?.hostnames && !config.hostnames.includes(hostname)) return;
+
                 if (options?.unauthenticated || getUID(event)) {
-                    const requestUrl = event.request.url;
                     const requestId = getRequestID(event) ?? requestUrl;
 
                     const controller = new AbortController();
@@ -68,4 +87,3 @@ export const fetchControllerFactory = () => {
 };
 
 export type FetchController = ReturnType<typeof fetchControllerFactory>;
-export const fetchController = fetchControllerFactory();
