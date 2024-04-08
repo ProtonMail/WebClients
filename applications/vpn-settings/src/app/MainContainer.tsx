@@ -56,10 +56,12 @@ import {
     useUserSettings,
 } from '@proton/components';
 import {
+    OrganizationScheduleCallSection,
     OrganizationTwoFAEnforcementSection,
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     SsoPage,
+    useFlag,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
@@ -92,7 +94,8 @@ const MainContainer: FunctionComponent = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const routes = getRoutes({ user, subscription, organization });
+    const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
+    const routes = getRoutes({ user, subscription, organization, isScheduleCallsEnabled });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -144,22 +147,17 @@ const MainContainer: FunctionComponent = () => {
 
     const top = <TopBanners app={APPS.PROTONVPN_SETTINGS} />;
 
+    const openChat = canEnableChat
+        ? () => {
+              setShowChat({ autoToggle: true, render: true });
+              zendeskRef.current?.toggle();
+          }
+        : undefined;
+
     const header = (
         <PrivateHeader
             app={app}
-            userDropdown={
-                <UserDropdown
-                    app={app}
-                    onOpenChat={
-                        canEnableChat
-                            ? () => {
-                                  setShowChat({ autoToggle: true, render: true });
-                                  zendeskRef.current?.toggle();
-                              }
-                            : undefined
-                    }
-                />
-            }
+            userDropdown={<UserDropdown app={app} onOpenChat={openChat} />}
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
@@ -263,6 +261,7 @@ const MainContainer: FunctionComponent = () => {
                             {getIsSectionAvailable(routes.setup) ? (
                                 <Route path={routes.setup.to}>
                                     <PrivateMainSettingsArea config={routes.setup}>
+                                        <OrganizationScheduleCallSection onOpenChat={openChat} />
                                         <OrganizationSection organization={organization} app={app} />
                                     </PrivateMainSettingsArea>
                                 </Route>
@@ -278,6 +277,7 @@ const MainContainer: FunctionComponent = () => {
                                 <Route path={routes.users.to}>
                                     <SubscriptionModalProvider app={app}>
                                         <PrivateMainSettingsArea config={routes.users}>
+                                            <OrganizationScheduleCallSection onOpenChat={openChat} />
                                             <UsersAndAddressesSection app={app} onceRef={onceRef} />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>

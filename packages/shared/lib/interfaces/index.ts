@@ -25,6 +25,7 @@ export * from './Referrals';
 export * from './SignedKeyList';
 export * from './SSO';
 export * from './Subscription';
+export * from './Support';
 export * from './User';
 export * from './UserSettings';
 export * from './VPN';

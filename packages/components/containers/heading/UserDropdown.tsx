@@ -1,11 +1,13 @@
 import { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
-import { Button, ButtonLike, NotificationDot } from '@proton/atoms';
+import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
+import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import {
     ConfirmSignOutModal,
@@ -55,6 +57,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan, hasLifetime, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { canScheduleOrganizationPhoneCalls, openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
@@ -104,6 +107,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         renderSessionRecoverySignOutConfirmPrompt,
     ] = useModalState();
 
+    const getScheduleCall = useGetScheduleCall();
+
     const sessionRecoveryState = useSessionRecoveryState();
     const sessionRecoveryInitiated =
         sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD ||
@@ -123,7 +128,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     );
     const shouldShowSpotlight = useSpotlightShow(showSpotlight);
 
-    const { createNotification } = useNotifications();
+    const { createNotification, hideNotification } = useNotifications();
     const handleCopyEmail = () => {
         textToClipboard(Email);
         createNotification({
@@ -199,6 +204,34 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
+
+    const isScheduleCallsEnabled = useFlag('ScheduleB2BSupportPhoneCalls');
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
+
+    const handleScheduleCallClick = async () => {
+        close();
+
+        const id = createNotification({
+            type: 'info',
+            text: (
+                <>
+                    <CircleLoader size="small" className="mr-4" />
+                    {c('Info')
+                        .t`Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.`}
+                </>
+            ),
+            expiration: -1,
+            showCloseButton: false,
+        });
+
+        try {
+            const { CalendlyLink } = await getScheduleCall();
+
+            openCalendlyLink(CalendlyLink, user);
+        } finally {
+            hideNotification(id);
+        }
+    };
 
     return (
         <>
@@ -437,6 +470,18 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 {c('Action').t`${BRAND_NAME} shop`}
                             </a>
                         </div>
+
+                        {canSchedulePhoneCalls && (
+                            <div className="block">
+                                <button
+                                    type="button"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
+                                    onClick={handleScheduleCallClick}
+                                >
+                                    {c('Action').t`Request a call`}
+                                </button>
+                            </div>
+                        )}
 
                         <div className="block">
                             <a
