@@ -3,15 +3,20 @@ import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Info, Toggle, Tooltip } from '@proton/components/components';
-import { ThemeCards, useFlag, useTheme } from '@proton/components/containers';
+import { ThemeCards, useTheme } from '@proton/components/containers';
 import ThemeSyncModeDropdown from '@proton/components/containers/themes/ThemeSyncModeDropdown';
-import { useEarlyAccess, useIsInboxElectronApp, useNotifications } from '@proton/components/hooks';
+import { useEarlyAccess, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
+import {
+    ColorScheme,
+    PROTON_THEMES_MAP,
+    ThemeModeSetting,
+    getThemes,
+    useShowThemeSelection,
+} from '@proton/shared/lib/themes/themes';
 
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';
@@ -27,7 +32,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
     const { information, settings, setTheme, setAutoTheme } = useTheme();
     const themes = getThemes();
     const { createNotification } = useNotifications();
-    const { isElectron } = useIsInboxElectronApp();
+    const showThemeSelection = useShowThemeSelection();
 
     const earlyAccess = useEarlyAccess();
 
@@ -41,12 +46,6 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
         };
         void betaToggleWithLoading(run());
     };
-
-    const inboxDesktopThemeSelectionFlag = useFlag('InboxDesktopThemeSelection');
-
-    const showThemeSelection = isElectron
-        ? hasInboxDesktopFeature('ThemeSelection') && inboxDesktopThemeSelectionFlag
-        : true;
 
     return (
         <>

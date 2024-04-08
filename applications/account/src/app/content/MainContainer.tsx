@@ -36,7 +36,6 @@ import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHasPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
@@ -47,6 +46,7 @@ import {
     getIsSSOVPNOnlyAccount,
     getRequiresAddressSetup,
 } from '@proton/shared/lib/keys';
+import { useShowThemeSelection } from '@proton/shared/lib/themes/themes';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
@@ -129,9 +129,7 @@ const MainContainer = () => {
     ]);
 
     const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
-    const inboxDesktopThemeSelectionFlag = useFlag('InboxDesktopThemeSelection');
-    const isInboxDesktopThemeSelectionEnabled =
-        hasInboxDesktopFeature('ThemeSelection') && inboxDesktopThemeSelectionFlag;
+    const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -159,7 +157,7 @@ const MainContainer = () => {
         isNotifInboxDesktopAppOn,
         isScheduleCallsEnabled,
         isBreachesAccountDashboardEnabled,
-        isInboxDesktopThemeSelectionEnabled,
+        showThemeSelection,
     });
 
     useEffect(() => {
