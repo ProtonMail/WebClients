@@ -1,4 +1,3 @@
-import type { ShareInvitation } from '../../store';
 import { ContextMenuProps } from '../FileBrowser';
 import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
 import CopyShareInvitationLinkButton from './ContextMenuButtons/CopyShareInvitationLinkButton';
@@ -9,11 +8,11 @@ export function ShareInvitationContextMenu({
     position,
     open,
     close,
-    invitation,
+    invitationId,
     volumeId,
     linkId,
 }: ContextMenuProps & {
-    invitation: ShareInvitation;
+    invitationId: string;
     volumeId: string;
     linkId: string;
 }) {
@@ -22,7 +21,7 @@ export function ShareInvitationContextMenu({
             <CopyShareInvitationLinkButton
                 volumeId={volumeId}
                 linkId={linkId}
-                invitationId={invitation.invitationId}
+                invitationId={invitationId}
                 close={close}
             />
         </ItemContextMenu>

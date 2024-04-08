@@ -56,6 +56,24 @@ export const creationDate = {
     sorting: true,
 };
 
+export const sharedOnDate = {
+    type: 'linkCreateTime',
+    getText: () => c('Label').t`Shared on`,
+    props: {
+        className: 'w-1/6',
+    },
+    sorting: true,
+};
+
+export const sharedBy = {
+    type: 'sharedBy',
+    getText: () => c('Label').t`Shared by`,
+    props: {
+        className: 'w-1/5',
+    },
+    sorting: true,
+};
+
 export const accessCount = {
     type: 'numAccesses',
     getText: () => c('Label').t`# of downloads`,
@@ -90,6 +108,8 @@ export default {
     size,
     trashed,
     creationDate,
+    sharedOnDate,
+    sharedBy,
     expirationDate,
     accessCount,
 };
