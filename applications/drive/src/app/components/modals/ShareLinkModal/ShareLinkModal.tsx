@@ -13,8 +13,7 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 
-import { useShareURLView } from '../../../store';
-import { useDriveSharingFeatureFlag } from '../../../store/_shares/useCollaborativeSharingFeatureFlag';
+import { useDriveSharingFeatureFlag, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import DirectSharing from './DirectSharing';
 import ErrorState from './ErrorState';

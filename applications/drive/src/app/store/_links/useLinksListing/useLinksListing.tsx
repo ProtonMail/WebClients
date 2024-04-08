@@ -21,6 +21,7 @@ import {
     useLinksListingHelpers,
 } from './useLinksListingHelpers';
 import { useSharedLinksListing } from './useSharedLinksListing';
+import { useSharedWithMeLinksListing } from './useSharedWithMeLinksListing';
 import { useTrashedLinksListing } from './useTrashedLinksListing';
 
 type FetchState = {
@@ -71,6 +72,7 @@ export function useLinksListingProvider() {
     const linksState = useLinksState();
     const trashedLinksListing = useTrashedLinksListing();
     const sharedLinksListing = useSharedLinksListing();
+    const sharedWithMeLinksListing = useSharedWithMeLinksListing();
 
     const { cacheLoadedLinks, fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
         useLinksListingHelpers();
@@ -322,11 +324,15 @@ export function useLinksListingProvider() {
         loadLinksSharedByLink: (signal: AbortSignal, volumeId: string) => {
             return sharedLinksListing.loadSharedLinks(signal, volumeId, loadLinksMeta);
         },
+        loadLinksSharedWithMeLink: (signal: AbortSignal) => {
+            return sharedWithMeLinksListing.loadSharedWithMeLinks(signal, loadLinksMeta);
+        },
         loadLinksMeta,
         getCachedChildren,
         getCachedChildrenCount,
         getCachedTrashed: trashedLinksListing.getCachedTrashed,
         getCachedSharedByLink: sharedLinksListing.getCachedSharedLinks,
+        getCachedSharedWithMeLink: sharedWithMeLinksListing.getCachedSharedWithMeLinks,
         getCachedLinks,
     };
 }
