@@ -34,7 +34,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
@@ -83,7 +83,7 @@ export const handleDone = ({
     const { authResponse, user, keyPassword, clientKey, offlineKey } = setupData;
 
     // Users that creates an account after a logout don't have appIntent, foring forcing it here
-    if (isElectronApp) {
+    if (isElectronMail) {
         appIntent = {
             app: APPS.PROTONMAIL,
         };

@@ -15,7 +15,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { resetEndOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
 import inboxPlaceholder from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder.png';
@@ -48,7 +48,7 @@ const InboxDesktopFreeTrialEnded = () => {
     useEffect(() => {
         // The free trial page is only displayed for the electron desktop application
         // This is put here as security to prevent users on the web to access this page
-        if (!isElectronApp) {
+        if (!isElectronMail) {
             history.replace('/login');
         }
     }, []);

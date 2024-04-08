@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
-    isElectronApp,
+    isElectronMail,
     isElectronOnLinux,
     isElectronOnMac,
     isElectronOnWindows,
@@ -165,7 +165,7 @@ const Sidebar = ({
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
 
-                {!isElectronApp && (
+                {!isElectronMail && (
                     <div className="logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
                         {logo}
                         <div className="hidden md:block">{appsDropdown}</div>
@@ -192,7 +192,9 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary && !isElectronApp ? <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div> : null}
+                {primary && !isElectronMail ? (
+                    <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div>
+                ) : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(

@@ -6,7 +6,7 @@ import { useDesktopSpotlight } from '@proton/components/containers';
 import InboxDestktopSpotlight from '@proton/components/containers/desktop/InboxDesktopSpotlight';
 import { useConfig } from '@proton/components/hooks';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 const appName = {
     [APPS.PROTONMAIL]: MAIL_APP_NAME,
@@ -23,7 +23,7 @@ const DrawerDownloadApps = () => {
     }
 
     // We return null here instead of the wrapper to still mark spotlight as seen
-    if (isElectronApp) {
+    if (isElectronMail) {
         return null;
     }
 
