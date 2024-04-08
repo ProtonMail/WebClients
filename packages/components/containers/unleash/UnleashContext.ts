@@ -33,9 +33,6 @@ enum AccountFlag {
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
     ScimTenantCreation = 'ScimTenantCreation',
-}
-
-enum BridgeFeatureFlag {
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
 }
 
@@ -62,7 +59,6 @@ enum MailFeatureFlag {
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
-    | `${BridgeFeatureFlag}`
     | `${CalendarFeatureFlag}`
     | `${DriveFeatureFlag}`
     | `${MailFeatureFlag}`;
