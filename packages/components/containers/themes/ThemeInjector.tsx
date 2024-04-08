@@ -52,28 +52,25 @@ export const ThemeInjector = () => {
     const themeSetting = userSettings.Theme && 'Mode' in userSettings.Theme ? userSettings.Theme : legacyThemeSettings;
 
     useLayoutEffect(() => {
-        const updateThemeSetting = async () => {
-            let theme = themeSetting;
-
-            if (isElectronApp) {
-                let electronAppTheme = defaultElectronAppTheme;
-
-                if (canGetInboxDesktopInfo && hasInboxDesktopFeature('ThemeSelection')) {
-                    electronAppTheme = getInboxDesktopInfo('theme');
-                }
-
-                theme = {
-                    ...electronAppTheme,
-                    FontSize: themeSetting.FontSize,
-                    FontFace: themeSetting.FontFace,
-                    Features: themeSetting.Features,
-                };
+        const theme = (() => {
+            if (!isElectronApp) {
+                return themeSetting;
             }
 
-            setThemeSetting(theme);
-        };
+            let electronAppTheme =
+                canGetInboxDesktopInfo && hasInboxDesktopFeature('ThemeSelection')
+                    ? getInboxDesktopInfo('theme')
+                    : defaultElectronAppTheme;
 
-        void updateThemeSetting();
+            return {
+                ...electronAppTheme,
+                FontSize: themeSetting.FontSize,
+                FontFace: themeSetting.FontFace,
+                Features: themeSetting.Features,
+            };
+        })();
+
+        setThemeSetting(theme);
     }, [themeSetting]);
 
     useEffect(() => {
