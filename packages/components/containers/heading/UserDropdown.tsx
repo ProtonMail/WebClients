@@ -471,17 +471,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             </a>
                         </div>
 
-                        <div className="block">
-                            <a
-                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
-                                href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
-                                target="_blank"
-                                data-testid="userdropdown:help:link:request-feature"
-                            >
-                                {c('Action').t`Request a feature`}
-                            </a>
-                        </div>
-
                         {canSchedulePhoneCalls && (
                             <div className="block">
                                 <button
@@ -493,6 +482,17 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 </button>
                             </div>
                         )}
+
+                        <div className="block">
+                            <a
+                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
+                                href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
+                                target="_blank"
+                                data-testid="userdropdown:help:link:request-feature"
+                            >
+                                {c('Action').t`Request a feature`}
+                            </a>
+                        </div>
 
                         {onOpenChat && (
                             <div className="block">
