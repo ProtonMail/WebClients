@@ -9,7 +9,7 @@ import { ShareInvitation, ShareInvitee, ShareMember, useShare, useShareActions, 
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { inviteProtonUser } = useShareInvitation();
-    const { getLink } = useLink();
+    const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const [isLoading, withLoading] = useLoading();
     const [isAdding, withAdding] = useLoading();
     const { getShare, getSharePrivateKey, getShareWithKey, getShareSessionKey } = useShare();
@@ -52,14 +52,18 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             getShareWithKey(abortSignal, rootShareId),
             getLink(abortSignal, rootShareId, linkId),
         ]);
+        setVolumeId(share.volumeId);
         if (link.shareId) {
-            const sessionKey = await getShareSessionKey(abortSignal, rootShareId);
-            return { shareId: link.shareId, sessionKey, passphrase: share.passphrase };
+            const linkPrivateKey = await getLinkPrivateKey(abortSignal, rootShareId, linkId);
+
+            const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
+            return { shareId: link.shareId, sessionKey };
         }
 
         const createShareResult = await createShare(abortSignal, rootShareId, share.volumeId, linkId);
-        // TODO: Volume event is not properly handled for share creation
+        // TODO: Volume event is not properly handled for share creation, we load fresh link for now
         await events.pollEvents.volumes(share.volumeId);
+        await loadFreshLink(abortSignal, rootShareId, linkId);
 
         return createShareResult;
     };

@@ -21,6 +21,11 @@ export type SharedUrlInfo = {
     NumAccesses?: number;
 };
 
+export type SharingDetails = {
+    ShareUrl: SharedUrlInfo | null;
+    ShareID: string;
+};
+
 interface FileProperties {
     ContentKeyPacket: string;
     ContentKeyPacketSignature: string;
@@ -77,6 +82,7 @@ interface DriveLink {
     UrlsExpired: boolean;
     ShareIDs: string[];
     ShareUrls: SharedUrlInfo[];
+    SharingDetails: SharingDetails | null;
     // XAttr has following JSON structure encrypted by node key:
     // {
     //    Common: {

@@ -118,6 +118,18 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    const getSharedWithMeByLink = useCallback(
+        (shareId: string): Link[] => {
+            return getAllShareLinks(shareId).filter(
+                ({ encrypted }) =>
+                    !encrypted.trashed &&
+                    !!encrypted.sharingDetails &&
+                    encrypted.sharingDetails.shareId === encrypted.rootShareId
+            );
+        },
+        [state]
+    );
+
     const removeLinkForMigration = useCallback(
         (shareId: string, linkId: string) => {
             setState((state) => deleteLinks(state, shareId, [linkId]));
@@ -135,6 +147,7 @@ export function useLinksStateProvider() {
         getChildren,
         getTrashed,
         getSharedByLink,
+        getSharedWithMeByLink,
         removeLinkForMigration,
     };
 }

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { ContextMenuButton } from '../../sections/ContextMenu';
 
@@ -17,7 +16,7 @@ const CopyShareInvitationLinkButton = ({ volumeId, linkId, invitationId, close }
     const { createNotification } = useNotifications();
 
     const copyShareInviteLinkUrl = () => {
-        textToClipboard(getStaticURL(`/${volumeId}/${linkId}?invitation=${invitationId}`));
+        textToClipboard(`${window.location.origin}/${volumeId}/${linkId}?invitation=${invitationId}`);
         createNotification({
             text: c('Info').t`Link copied to clipboard`,
         });
