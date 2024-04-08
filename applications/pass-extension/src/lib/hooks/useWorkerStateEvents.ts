@@ -14,6 +14,7 @@ import type {
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
+import { omit } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
 type WakeupOptions = { tabId: TabId; endpoint: ClientEndpoint; messageFactory: MessageWithSenderFactory };
@@ -47,9 +48,10 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
         ExtensionContext.get().port.onMessage.addListener(onMessage);
 
         wakeup(options)
-            .then(({ localID, loggedIn, status, UID }) => onWorkerStateChange({ localID, loggedIn, status, UID }))
+            .then((state) => onWorkerStateChange(omit(state, ['features', 'settings'])))
             .catch(() =>
                 onWorkerStateChange({
+                    booted: false,
                     localID: undefined,
                     loggedIn: false,
                     status: AppStatus.ERROR,
