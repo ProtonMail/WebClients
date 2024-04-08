@@ -7,9 +7,9 @@
  * These measures mitigate potential pitfalls and race conditions that may arise
  * when users stress the web application by accessing it from multiple tabs.
  */
-import { fetchController } from '@proton/pass/lib/api/fetch-controller';
 import { globToRegExp } from '@proton/pass/utils/url/glob';
 
+import { fetchController } from './fetch-controller';
 import { requestLockFactory, requestQueueFactory } from './utils';
 
 const REFRESH_ROUTE = '/api/auth/refresh';

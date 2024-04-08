@@ -1,18 +1,12 @@
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
-import { fetchController } from '@proton/pass/lib/api/fetch-controller';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import type { ServiceWorkerResponse } from './channel';
-import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
+import { COMMIT } from '../config';
+import { type ServiceWorkerMessage, ServiceWorkerMessageBroker } from './channel';
+import { fetchController } from './fetch-controller';
 import { handleImage, matchImageRoute } from './image';
-import {
-    cacheCriticalOfflineAssets,
-    handleAsset,
-    handleIndex,
-    matchAssetRoute,
-    matchOfflineIndexRoute,
-} from './offline';
+import { cacheOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchNavigate } from './offline';
 import { handlePolling, matchPollingRoute } from './polling';
 import {
     handleLock,
@@ -26,49 +20,58 @@ import {
 export default null;
 declare let self: ServiceWorkerGlobalScope;
 
+/** Claims all clients to ensure they are controlled by the latest service worker.
+ * After claiming, sends a message to all clients (including uncontrolled ones)
+ * to check for version mismatches. If a mismatch is detected, clients should
+ * perform a full reload to update to the latest version of the application. */
+const onClaim = async () => {
+    await self.clients.claim();
+    const clients = await self.clients.matchAll({ includeUncontrolled: true });
+    const message = { type: 'check', hash: COMMIT } satisfies ServiceWorkerMessage;
+    clients.forEach((client) => client.postMessage(message));
+};
+
+const onConnect = async () => {
+    await cleanCache();
+    await cacheOfflineAssets(false);
+};
+
 self.addEventListener('install', (event) =>
     event.waitUntil(
-        cacheCriticalOfflineAssets().then(() => {
+        (() => {
             logger.debug(`[ServiceWorker] Skip waiting..`);
+            void cacheOfflineAssets(true);
             return self.skipWaiting();
-        })
+        })()
     )
 );
 
-self.addEventListener('activate', (event) => {
-    logger.debug('[ServiceWorker] Activation in progress..');
-    cleanCache().catch(noop);
-    event.waitUntil(self.clients.claim());
-});
+self.addEventListener('activate', async (event) =>
+    event.waitUntil(
+        (() => {
+            logger.debug(`[ServiceWorker] Activation in progress..`);
+            void cleanCache();
+            return onClaim();
+        })()
+    )
+);
 
-self.addEventListener('fetch', (event) => {
-    const { url } = event.request;
+self.addEventListener('fetch', async (event) => {
+    const { url, mode } = event.request;
     const { pathname } = new URL(url);
 
+    if (mode === 'navigate' && matchNavigate(pathname)) return handleIndex(event);
     if (matchLockRoute(pathname)) return handleLock(event);
     if (matchSetLocalKeyRoute(pathname)) return handleSetLocalKey(event);
     if (matchRefreshRoute(pathname)) return handleRefresh(event);
     if (matchPollingRoute(pathname)) return handlePolling(event);
     if (matchImageRoute(pathname)) return handleImage(event);
     if (matchAssetRoute(pathname)) return handleAsset(event);
-    if (matchOfflineIndexRoute(pathname)) return handleIndex(event);
 });
 
-self.addEventListener('message', async (event) => {
-    const port = event.ports?.[0];
-    const message = event.data as WithOrigin<ServiceWorkerMessage>;
+ServiceWorkerMessageBroker.register('connect', onConnect);
+ServiceWorkerMessageBroker.register('abort', ({ requestId }) => fetchController.abort(requestId));
+ServiceWorkerMessageBroker.register('claim', onClaim);
+ServiceWorkerMessageBroker.register('unauthorized', () => clearCache().then(noop));
 
-    /* handle unidirectional messages */
-    if (message.type === 'claim') void self.clients.claim();
-    if (message.type === 'unauthorized') void clearCache().catch(noop);
-    if (message.type === 'abort') fetchController.abort(message.requestId);
-    if (message.broadcast) CLIENT_CHANNEL.postMessage(message);
-
-    if (port) {
-        /** If we have a port in the event payload then
-         * we are dealing with a bi-directional message
-         * which requres a `ServiceWorkerResponse` */
-        const response = await (async (): Promise<ServiceWorkerResponse<typeof message.type>> => true)();
-        port.postMessage(response);
-    }
-});
+self.addEventListener('message', ServiceWorkerMessageBroker.onMessage);

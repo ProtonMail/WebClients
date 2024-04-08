@@ -49,12 +49,12 @@ describe('fetch controller', () => {
     describe('getUID', () => {
         test('should return correct header value if present', () => {
             const uid = uniqueId();
-            const event = new MockFetchEvent('/', { 'X-Pm-Uid': uid }) as FetchEvent;
+            const event = new MockFetchEvent('https://pass.test/', { 'X-Pm-Uid': uid }) as FetchEvent;
             expect(getUID(event)).toEqual(uid);
         });
 
         test('should return null if header is not present', () => {
-            const event = new MockFetchEvent('/', {}) as FetchEvent;
+            const event = new MockFetchEvent('https://pass.test/', {}) as FetchEvent;
             expect(getUID(event)).toBeNull();
         });
     });
@@ -62,12 +62,14 @@ describe('fetch controller', () => {
     describe('getRequestID', () => {
         test('should return correct header value if present', () => {
             const requestId = uniqueId();
-            const event = new MockFetchEvent('/', { 'X-Pass-Worker-RequestID': requestId }) as FetchEvent;
+            const event = new MockFetchEvent('https://pass.test/', {
+                'X-Pass-Worker-RequestID': requestId,
+            }) as FetchEvent;
             expect(getRequestID(event)).toEqual(requestId);
         });
 
         test('should return null if header is not present', () => {
-            const event = new MockFetchEvent('/', {}) as FetchEvent;
+            const event = new MockFetchEvent('https://pass.test/', {}) as FetchEvent;
             expect(getRequestID(event)).toBeNull();
         });
     });
@@ -82,7 +84,7 @@ describe('fetch controller', () => {
             test('should setup abort controller and respond with handler response', async () => {
                 const requestId = uniqueId();
                 const response = new MockResponse();
-                const event = new MockFetchEvent('/', {
+                const event = new MockFetchEvent('https://pass.proton.test/', {
                     'X-Pm-Uid': uniqueId(),
                     'X-Pass-Worker-RequestID': requestId,
                 }) as FetchEvent;
@@ -102,11 +104,11 @@ describe('fetch controller', () => {
 
             test('should fallback to requestUrl as identifier if no `X-Pass-Worker-RequestID` header', async () => {
                 const response = new MockResponse();
-                const event = new MockFetchEvent('/', { 'X-Pm-Uid': uniqueId() }) as FetchEvent;
+                const event = new MockFetchEvent('https://pass.test/', { 'X-Pm-Uid': uniqueId() }) as FetchEvent;
                 const handler = jest.fn().mockResolvedValue(response);
 
                 fetchController.register(handler)(event);
-                expect(fetchController._controllers.get('/')).toBeInstanceOf(AbortController);
+                expect(fetchController._controllers.get('https://pass.test/')).toBeInstanceOf(AbortController);
 
                 await asyncNextTick();
 
@@ -114,16 +116,16 @@ describe('fetch controller', () => {
                 expect(response.clone).toHaveBeenCalled();
                 expect(event.respondWith).toHaveBeenCalled();
                 await expect((event.respondWith as jest.Mock<any>).mock?.lastCall[0]).resolves.toEqual(response);
-                expect(fetchController._controllers.get('/')).toBeUndefined();
+                expect(fetchController._controllers.get('https://pass.test/')).toBeUndefined();
             });
 
             test('should allow unauthenticated handlers', async () => {
                 const response = new MockResponse();
-                const event = new MockFetchEvent('/', {}) as FetchEvent;
+                const event = new MockFetchEvent('https://pass.test/', {}) as FetchEvent;
                 const handler = jest.fn().mockResolvedValue(response);
 
                 fetchController.register(handler, { unauthenticated: true })(event);
-                expect(fetchController._controllers.get('/')).toBeInstanceOf(AbortController);
+                expect(fetchController._controllers.get('https://pass.test/')).toBeInstanceOf(AbortController);
 
                 await asyncNextTick();
 
@@ -131,14 +133,14 @@ describe('fetch controller', () => {
                 expect(response.clone).toHaveBeenCalled();
                 expect(event.respondWith).toHaveBeenCalled();
                 await expect((event.respondWith as jest.Mock<any>).mock?.lastCall[0]).resolves.toEqual(response);
-                expect(fetchController._controllers.get('/')).toBeUndefined();
+                expect(fetchController._controllers.get('https://pass.test/')).toBeUndefined();
             });
 
             test('should noop if handler does not return a response', () => {
                 const handler = jest.fn();
                 const response = new MockResponse();
                 const requestId = uniqueId();
-                const event = new MockFetchEvent('/', {
+                const event = new MockFetchEvent('https://pass.test/', {
                     'X-Pm-Uid': uniqueId(),
                     'X-Pass-Worker-RequestID': requestId,
                 }) as FetchEvent;
@@ -154,28 +156,28 @@ describe('fetch controller', () => {
             test('should noop if no UID header', () => {
                 const handler = jest.fn();
                 const response = new MockResponse();
-                const event = new MockFetchEvent('/', {}) as FetchEvent;
+                const event = new MockFetchEvent('https://pass.test/', {}) as FetchEvent;
                 fetchController.register(handler)(event);
 
                 expect(handler).not.toHaveBeenCalled();
                 expect(response.clone).not.toHaveBeenCalled();
                 expect(event.respondWith).not.toHaveBeenCalled();
-                expect(fetchController._controllers.get('/')).toBeUndefined();
+                expect(fetchController._controllers.get('https://pass.test/')).toBeUndefined();
             });
 
             test('should clear abort controller if handler throws', async () => {
                 const handler = jest.fn().mockRejectedValue('TestError');
                 const response = new MockResponse();
-                const event = new MockFetchEvent('/', { 'X-Pm-Uid': uniqueId() }) as FetchEvent;
+                const event = new MockFetchEvent('https://pass.test/', { 'X-Pm-Uid': uniqueId() }) as FetchEvent;
                 fetchController.register(handler)(event);
 
-                expect(fetchController._controllers.get('/')).toBeInstanceOf(AbortController);
+                expect(fetchController._controllers.get('https://pass.test/')).toBeInstanceOf(AbortController);
                 await asyncNextTick();
 
                 expect(handler).toHaveBeenCalled();
                 expect(response.clone).not.toHaveBeenCalled();
                 expect(event.respondWith).toHaveBeenCalled();
-                expect(fetchController._controllers.get('/')).toBeUndefined();
+                expect(fetchController._controllers.get('https://pass.test/')).toBeUndefined();
             });
         });
 
@@ -185,7 +187,7 @@ describe('fetch controller', () => {
             });
 
             test('should forward abort signal', async () => {
-                const request = new MockRequest({ url: '/', headers: {} });
+                const request = new MockRequest({ url: 'https://pass.test/', headers: {} });
                 const abort = new AbortController();
                 await fetchController.fetch(request as Request, abort.signal);
                 const params = (global.fetch as jest.Mock<any>).mock.lastCall;
@@ -195,7 +197,10 @@ describe('fetch controller', () => {
             });
 
             test('should fetch with modified request without `X-Pass-Worker-RequestID` header', async () => {
-                const request = new MockRequest({ url: '/', headers: { 'X-Pass-Worker-RequestID': uniqueId() } });
+                const request = new MockRequest({
+                    url: 'https://pass.test/',
+                    headers: { 'X-Pass-Worker-RequestID': uniqueId() },
+                });
                 const abort = new AbortController();
                 await fetchController.fetch(request as Request, abort.signal);
                 const params = (global.fetch as jest.Mock<any>).mock.lastCall;
