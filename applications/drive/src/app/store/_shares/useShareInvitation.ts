@@ -80,7 +80,7 @@ export const useShareInvitation = () => {
             signingKeys: inviter.addressKey,
             detached: true,
             format: 'binary',
-            context: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_MEMBER },
+            context: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_INVITER },
         });
 
         return debouncedRequest<{ Code: number; Invitation: ShareInvitationPayload }>(
