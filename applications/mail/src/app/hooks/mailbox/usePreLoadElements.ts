@@ -4,7 +4,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature } from '@proton/components/hooks';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { isConversation } from 'proton-mail/helpers/elements';
 import { Element } from 'proton-mail/models/element';
@@ -31,7 +31,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const electronPreload = electronPreloadAmount?.Value || 0;
 
     // We increase the preloaded conversations for the electron app
-    const numberOfPreloadedConversations = isElectronApp ? electronPreload : defaultPreload;
+    const numberOfPreloadedConversations = isElectronMail ? electronPreload : defaultPreload;
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useMailSelector(allConversations);
 

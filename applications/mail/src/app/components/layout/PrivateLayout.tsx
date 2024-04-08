@@ -11,7 +11,7 @@ import {
     useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -52,8 +52,8 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
 
     const top = (
         <>
-            {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
-            {isElectronApp && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
+            {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
+            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
             <TopBanners app={APPS.PROTONMAIL} />
         </>
     );
