@@ -503,7 +503,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                         close();
                                         onOpenChat();
                                     }}
-                                    data-testid="userdropdown:help:button:chat"
+                                    data-testid="userdropdown:help:button:bugreport"
                                 >
                                     {c('Action').t`Chat with us`}
                                 </button>
