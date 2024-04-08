@@ -68,7 +68,7 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
                             onClick={() => {
                                 onOpenChat();
                             }}
-                        >{c('Action').t`Chat with us`}</Button>
+                        >{c('Action').t`Start live chat`}</Button>
                     )}
                 </div>
             </div>
