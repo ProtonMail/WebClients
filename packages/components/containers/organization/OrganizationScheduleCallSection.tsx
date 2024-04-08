@@ -35,7 +35,7 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
 
     const boldLiveChat = (
         <b key="imperative-bold-text">{
-            // translator: Request a phone call (or Zoom meet) with one of our support specialists, or open a Live chat for chat support'
+            // translator: Request a phone call (or Zoom meet) with one of our support specialists, or open a Live chat for chat support.'
             c('Info').t`Live chat`
         }</b>
     );
@@ -47,9 +47,11 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
                 <h2 className="text-lg text-bold mb-4">{c('Headline').t`Contact us`}</h2>
                 <p className="mb-5">
                     {canEnableChat
-                        ? c('Info')
+                        ? // translator: Full sentence is 'If you’re having trouble, we’re here to help. Request a phone call (or Zoom meet) with one of our support specialists, or open a Live chat for chat support.'
+                          c('Info')
                               .jt`If you’re having trouble, we’re here to help. ${boldPhoneCall} (or Zoom meet) with one of our support specialists, or open a ${boldLiveChat} for chat support.`
-                        : c('Info')
+                        : // translator: Full sentence is 'If you’re having trouble, we’re here to help. Request a phone call (or Zoom meet) with one of our support specialists.'
+                          c('Info')
                               .jt`If you’re having trouble, we’re here to help. ${boldPhoneCall} (or Zoom meet) with one of our support specialists.`}{' '}
                 </p>
                 <div className="flex gap-4 justify-center lg:justify-start">
