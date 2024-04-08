@@ -9,15 +9,17 @@ import {
     getHasVpnOrPassB2BPlan,
     hasFamily,
 } from '@proton/shared/lib/helpers/subscription';
+import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
+    isScheduleCallsEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ user, organization, subscription }: Props) => {
+export const getOrganizationAppRoutes = ({ user, organization, subscription, isScheduleCallsEnabled }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -27,6 +29,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
@@ -88,6 +91,10 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                     : (hasActiveOrganizationKey || hasActiveOrganization) && organization && !!organization.RequiresKey,
                 subsections: [
                     {
+                        id: 'schedule-call',
+                        available: canSchedulePhoneCalls,
+                    },
+                    {
                         text: subSectionTitle,
                         id: 'organization',
                     },
@@ -115,6 +122,10 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription }: P
                 icon: 'users',
                 available: isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization,
                 subsections: [
+                    {
+                        id: 'schedule-call',
+                        available: canSchedulePhoneCalls,
+                    },
                     {
                         text: subSectionTitle,
                         id: 'name',
