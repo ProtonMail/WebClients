@@ -489,7 +489,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                     className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                     onClick={handleScheduleCallClick}
                                 >
-                                    {c('Action').t`Schedule a call`}
+                                    {c('Action').t`Request a call`}
                                 </button>
                             </div>
                         )}

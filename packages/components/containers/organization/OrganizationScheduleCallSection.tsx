@@ -6,7 +6,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import illustration from '@proton/styles/assets/img/illustrations/account-support-phone.svg';
 
-import { useUser } from '../..';
+import { useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import { useCanEnableChat } from '../zendesk/LiveChatZendesk';
 
@@ -28,14 +28,14 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
 
     const boldPhoneCall = (
         <b key="imperative-bold-text">{
-            // translator: Full sentence is 'Schedule a phone call (or Zoom meet) with one of our support specialists, ...'
-            c('Info').t`Schedule a phone call`
+            // translator: Full sentence is 'Request a phone call (or Zoom meet) with one of our support specialists, ...'
+            c('Info').t`Request a phone call`
         }</b>
     );
 
     const boldLiveChat = (
         <b key="imperative-bold-text">{
-            // translator: Schedule a phone call (or Zoom meet) with one of our support specialists, or open a Live chat for chat support'
+            // translator: Request a phone call (or Zoom meet) with one of our support specialists, or open a Live chat for chat support'
             c('Info').t`Live chat`
         }</b>
     );
@@ -56,10 +56,10 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
                     <Button
                         onClick={() => withGeneratingCalendlyLink(handleScheduleCallClick)}
                         color="norm"
-                        shape="solid"
+                        shape="outline"
                         loading={generatingCalendlyLink}
                     >
-                        {c('Action').t`Schedule a call`}
+                        {c('Action').t`Request a call`}
                     </Button>
                     {canEnableChat && (
                         <Button
