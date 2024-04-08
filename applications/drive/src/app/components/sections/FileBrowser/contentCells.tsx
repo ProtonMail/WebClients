@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
+import { Avatar } from '@proton/atoms/Avatar';
+import { FileIcon, Icon, TableCell, useActiveBreakpoint, useContactEmails } from '@proton/components';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
@@ -164,6 +166,22 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
                     trashed={item.trashed}
                 />
             ) : null}
+        </TableCell>
+    );
+};
+
+export const SharedByCell = ({ item }: { item: DriveItem }) => {
+    const [contactEmails] = useContactEmails();
+
+    const email = item.signatureAddress;
+    const contactEmail = contactEmails?.find((contactEmail) => contactEmail.Email === email);
+    const displayName = email && contactEmails && contactEmail ? contactEmail.Name : email;
+    return (
+        <TableCell className="flex items-center m-0 w-1/5" data-testid="column-shared-by">
+            <Avatar color="weak" className="mr-2">
+                {getInitials(displayName)}
+            </Avatar>
+            {displayName}
         </TableCell>
     );
 };
