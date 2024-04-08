@@ -1,11 +1,8 @@
 import { isElectronApp } from '../helpers/desktop';
 import { IPCInboxClientUpdateMessage, IPCInboxDesktopFeature, IPCInboxGetInfoMessage } from './desktopTypes';
 
-const canInvokeInboxDesktopIPC =
-    isElectronApp && !!window.ipcInboxMessageBroker && !!window.ipcInboxMessageBroker!.send;
-
 export function invokeInboxDesktopIPC({ type, payload }: IPCInboxClientUpdateMessage) {
-    if (canInvokeInboxDesktopIPC) {
+    if (isElectronApp && window.ipcInboxMessageBroker?.send) {
         window.ipcInboxMessageBroker!.send!(type, payload);
     }
 }
