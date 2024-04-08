@@ -7,6 +7,7 @@ import {
     GatewaysSection,
     MultiUserCreationSection,
     OrganizationPasswordSection,
+    OrganizationScheduleCallSection,
     OrganizationSection,
     OrganizationSpamFiltersSection,
     OrganizationTwoFAEnforcementSection,
@@ -58,6 +59,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(setup) && (
                 <Route path={getSectionPath(path, setup)}>
                     <PrivateMainSettingsArea config={setup}>
+                        <OrganizationScheduleCallSection />
                         <OrganizationSection organization={organization} app={app} />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -79,6 +81,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(orgKeys) && (
                 <Route path={getSectionPath(path, orgKeys)}>
                     <PrivateMainSettingsArea config={orgKeys}>
+                        <OrganizationScheduleCallSection />
                         <OrganizationSection app={app} organization={organization} />
                         <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
                     </PrivateMainSettingsArea>

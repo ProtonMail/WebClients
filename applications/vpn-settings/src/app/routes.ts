@@ -9,6 +9,7 @@ import {
     hasCancellablePlan,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
+import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
@@ -16,9 +17,10 @@ interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     organization?: Organization;
+    isScheduleCallsEnabled: boolean;
 }
 
-export const getRoutes = ({ user, subscription, organization }: Arguments) => {
+export const getRoutes = ({ user, subscription, organization, isScheduleCallsEnabled }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const hasVpnBusinessPlan = hasVpnBusiness(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
@@ -32,6 +34,8 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
 
     const multiUserTitle = c('Title').t`Multi-user support`;
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
+
+    const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user, isScheduleCallsEnabled });
 
     return {
         dashboard: <SectionConfig>{
@@ -172,6 +176,10 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
             available: canHaveOrganization && (hasOrganizationKey || hasOrganization),
             subsections: [
                 {
+                    id: 'schedule-call',
+                    available: canSchedulePhoneCalls,
+                },
+                {
                     id: 'members',
                 },
                 {
@@ -198,6 +206,10 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
             icon: 'users',
             available: canHaveOrganization && !hasOrganizationKey && hasVpnB2BPlan,
             subsections: [
+                {
+                    id: 'schedule-call',
+                    available: canSchedulePhoneCalls,
+                },
                 {
                     text: multiUserTitle,
                     id: 'name',

@@ -3,12 +3,13 @@ import React, { MutableRefObject, useEffect, useImperativeHandle, useRef, useSta
 import { addHours } from 'date-fns';
 import { c } from 'ttag';
 
+import { APPS } from '@proton/shared/lib/constants';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
-import { useNotifications } from '../../hooks';
+import { useConfig, useNotifications } from '../../hooks';
 
 // The sizes for these are hardcoded since the widget calculates it based on the viewport, and since it's in
 // an iframe it needs to have something reasonable.
@@ -69,8 +70,12 @@ const getPaidMarker = (userID: string) => {
 export const useCanEnableChat = (user: UserModel) => {
     const hasCachedChat = getPaidMarker(user.ID) > Date.now();
     const canEnableChat = user.hasPaidVpn || hasCachedChat;
+    const { APP_NAME } = useConfig();
 
     useEffect(() => {
+        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            return;
+        }
         clearPaidMarkers();
         if (!user.hasPaidVpn) {
             return;
@@ -86,7 +91,7 @@ export const useCanEnableChat = (user: UserModel) => {
         return () => window.clearInterval(handle);
     }, [user.hasPaidVpn]);
 
-    return canEnableChat;
+    return APP_NAME === APPS.PROTONVPN_SETTINGS && canEnableChat;
 };
 
 export interface ZendeskRef {

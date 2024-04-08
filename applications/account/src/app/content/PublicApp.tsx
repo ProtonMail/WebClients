@@ -72,6 +72,7 @@ import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AppSwitcherContainer, { AppSwitcherState } from '../public/AppSwitcherContainer';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
+import CallScheduledPage from '../public/CallScheduledPage';
 import CloseTicketContainer from '../public/CloseTicketContainer';
 import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
@@ -633,6 +634,11 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 </Route>
                 <Route path="/auth-ext">
                     <AuthExtension />
+                </Route>
+                <Route path="/call-scheduled">
+                    <UnAuthenticated>
+                        <CallScheduledPage />
+                    </UnAuthenticated>
                 </Route>
                 <Route path="*">
                     <AccountPublicApp
