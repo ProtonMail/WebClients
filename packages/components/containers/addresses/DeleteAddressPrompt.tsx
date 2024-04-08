@@ -28,7 +28,7 @@ const DeleteAddressPrompt = ({ onDeleteAddress, ...rest }: Props) => {
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
-            <p>{c('Delete address prompt').t`Once deleted, this address can't be used again by you or anyone else.`}</p>
+            <p>{c('Delete address prompt').t`Once deleted, this address can't be used again by anyone else.`}</p>
             <p>{c('Delete address prompt').t`The next active address on your list will be set as the default.`}</p>
             <p>{c('Delete address prompt').t`You can only delete 1 address per year.`}</p>
         </Prompt>
