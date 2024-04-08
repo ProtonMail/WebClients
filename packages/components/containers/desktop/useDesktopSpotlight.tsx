@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useDrawer, useFeature, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isUserOlderThan } from '@proton/shared/lib/user/helpers';
 
 import { FeatureCode } from '../features';
@@ -19,7 +19,7 @@ const useDesktopSpotlight = () => {
      * Display conditions:
      * 30 minutes after account creation for users that didn't log in the desktop app or mobile app
      */
-    const displaySpotlight = !isElectronApp && isDone && accountIsOlderThan30Minutes;
+    const displaySpotlight = !isElectronMail && isDone && accountIsOlderThan30Minutes;
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightInboxDesktop, displaySpotlight);
 
     useEffect(() => {
@@ -31,10 +31,10 @@ const useDesktopSpotlight = () => {
 
     // We mark the spotlight as closed if the user is using the desktop app
     useEffect(() => {
-        if (isElectronApp && feature?.Value) {
+        if (isElectronMail && feature?.Value) {
             onDisplayed();
         }
-    }, [isElectronApp, feature]);
+    }, [isElectronMail, feature]);
 
     return {
         show,

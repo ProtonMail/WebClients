@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { type Paths } from '../content/helper';
 
@@ -19,7 +19,7 @@ const SignupButton = ({ paths }: Props) => {
         return null;
     }
 
-    if (isElectronApp) {
+    if (isElectronMail) {
         const handleSignupDesktop = () => {
             openLinkInBrowser(getAppHref(paths.signup, APPS.PROTONACCOUNT));
         };
