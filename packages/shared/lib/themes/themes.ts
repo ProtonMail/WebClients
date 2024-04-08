@@ -20,6 +20,8 @@ import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 // @ts-ignore
 import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
+import { useFlag } from '@proton/components/containers';
+import { useIsInboxElectronApp } from '@proton/components/hooks';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
@@ -456,4 +458,10 @@ export const getThemeType = (theme: ThemeSetting, colorScheme: ColorScheme): The
     }
 
     return getValidatedThemeType(value) ?? PROTON_DEFAULT_THEME;
+};
+
+export const useShowThemeSelection = () => {
+    const { isElectron } = useIsInboxElectronApp();
+    const inboxDesktopThemeSelectionFlag = useFlag('InboxDesktopThemeSelection');
+    return isElectron ? hasInboxDesktopFeature('ThemeSelection') && inboxDesktopThemeSelectionFlag : true;
 };
