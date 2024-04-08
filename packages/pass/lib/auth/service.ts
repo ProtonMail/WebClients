@@ -461,6 +461,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             config.onNotification?.({
                                 key: NotificationKey.SESSION_LOCK,
                                 text: c('Warning').t`Your session was locked.`,
+                                type: 'info',
                             });
                         }
 
