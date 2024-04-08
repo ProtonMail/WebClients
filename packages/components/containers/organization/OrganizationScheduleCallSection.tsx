@@ -8,7 +8,6 @@ import illustration from '@proton/styles/assets/img/illustrations/account-suppor
 
 import { useUser } from '../../hooks';
 import { SettingsSection } from '../account';
-import { useCanEnableChat } from '../zendesk/LiveChatZendesk';
 
 interface Props {
     onOpenChat?: () => void;
@@ -16,7 +15,6 @@ interface Props {
 
 const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
     const [user] = useUser();
-    const canEnableChat = useCanEnableChat(user) && onOpenChat;
     const [generatingCalendlyLink, withGeneratingCalendlyLink] = useLoading();
     const getScheduleCall = useGetScheduleCall();
 
@@ -46,7 +44,7 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
             <div>
                 <h2 className="text-lg text-bold mb-4">{c('Headline').t`Contact us`}</h2>
                 <p className="mb-5">
-                    {canEnableChat
+                    {onOpenChat
                         ? // translator: Full sentence is 'If you’re having trouble, we’re here to help. Request a phone call (or Zoom meet) with one of our support specialists, or open a Live chat for chat support.'
                           c('Info')
                               .jt`If you’re having trouble, we’re here to help. ${boldPhoneCall} (or Zoom meet) with one of our support specialists, or open a ${boldLiveChat} for chat support.`
@@ -63,14 +61,10 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
                     >
                         {c('Action').t`Request a call`}
                     </Button>
-                    {canEnableChat && (
-                        <Button
-                            color="norm"
-                            shape="outline"
-                            onClick={() => {
-                                onOpenChat();
-                            }}
-                        >{c('Action').t`Start live chat`}</Button>
+                    {onOpenChat && (
+                        <Button color="norm" shape="outline" onClick={onOpenChat}>
+                            {c('Action').t`Start live chat`}
+                        </Button>
                     )}
                 </div>
             </div>

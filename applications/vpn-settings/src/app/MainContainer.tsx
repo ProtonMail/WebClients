@@ -147,12 +147,12 @@ const MainContainer: FunctionComponent = () => {
 
     const top = <TopBanners app={APPS.PROTONVPN_SETTINGS} />;
 
-    const openChat = () => {
-        if (canEnableChat) {
-            setShowChat({ autoToggle: true, render: true });
-            zendeskRef.current?.toggle();
-        }
-    };
+    const openChat = canEnableChat
+        ? () => {
+              setShowChat({ autoToggle: true, render: true });
+              zendeskRef.current?.toggle();
+          }
+        : undefined;
 
     const header = (
         <PrivateHeader
