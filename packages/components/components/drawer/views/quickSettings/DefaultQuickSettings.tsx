@@ -2,22 +2,16 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Info, Toggle, Tooltip } from '@proton/components/components';
-import { ThemeCards, useTheme } from '@proton/components/containers';
-import ThemeSyncModeDropdown from '@proton/components/containers/themes/ThemeSyncModeDropdown';
-import { useEarlyAccess, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import {
-    ColorScheme,
-    PROTON_THEMES_MAP,
-    ThemeModeSetting,
-    getThemes,
-    useShowThemeSelection,
-} from '@proton/shared/lib/themes/themes';
+import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
+import { Info, Toggle, Tooltip } from '../../../../components';
+import { ThemeCards, useTheme } from '../../../../containers';
+import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
+import { useEarlyAccess, useNotifications, useShowThemeSelection } from '../../../../hooks';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';
