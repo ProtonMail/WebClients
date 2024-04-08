@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import { ShareWithKey, usePhotos, usePhotosFeatureFlag } from '../../../../store';
+import { ShareWithKey, useDriveSharingFeatureFlag, usePhotos, usePhotosFeatureFlag } from '../../../../store';
 import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
 import DriveSidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
@@ -19,6 +19,7 @@ interface Props {
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
     const isPhotosEnabled = usePhotosFeatureFlag();
+    const isDriveSharingEnabled = useDriveSharingFeatureFlag();
     const { hasPhotosShare } = usePhotos();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
@@ -54,6 +55,17 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
             >
                 <span className="text-ellipsis" title={c('Link').t`Shared`}>{c('Link').t`Shared`}</span>
             </DriveSidebarListItem>
+            {isDriveSharingEnabled && (
+                <DriveSidebarListItem
+                    to="/shared-with-me"
+                    icon="users"
+                    shareId={shareId}
+                    isActive={match.url === '/shared-with-me'}
+                >
+                    <span className="text-ellipsis" title={c('Link').t`Shared with me`}>{c('Link')
+                        .t`Shared with me`}</span>
+                </DriveSidebarListItem>
+            )}
             <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} isActive={match.url === '/trash'}>
                 <span className="text-ellipsis" title={c('Link').t`Trash`}>{c('Link').t`Trash`}</span>
             </DriveSidebarListItem>

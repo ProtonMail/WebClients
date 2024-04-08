@@ -4,8 +4,7 @@ import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { DecryptedLink } from '../../../store';
-import { useDriveSharingFeatureFlag } from '../../../store/_shares/useCollaborativeSharingFeatureFlag';
+import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,

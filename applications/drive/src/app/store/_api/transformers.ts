@@ -76,8 +76,8 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         hasHdThumbnail: !!link.FileProperties?.ActiveRevision?.Thumbnails?.find(
             (Thumbnail) => Thumbnail.Type === ThumbnailType.HD_PREVIEW
         ),
-        isShared: !!link.Shared,
-        shareId: link.ShareIDs?.length > 0 ? link.ShareIDs[0] : undefined,
+        isShared: !!link.SharingDetails,
+        shareId: link.SharingDetails?.ShareID,
         rootShareId: shareId,
         shareUrl:
             link.ShareUrls?.length > 0
@@ -90,6 +90,21 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       numAccesses: link.ShareUrls[0].NumAccesses,
                   }
                 : undefined,
+        sharingDetails: link.SharingDetails
+            ? {
+                  shareId: link.SharingDetails.ShareID,
+                  shareUrl: link.SharingDetails.ShareUrl
+                      ? {
+                            id: link.SharingDetails.ShareUrl.ShareUrlID,
+                            token: link.SharingDetails.ShareUrl.Token,
+                            isExpired: link.UrlsExpired, // TODO: Remove it when full refactor as it's deprecated
+                            createTime: link.SharingDetails.ShareUrl.CreateTime,
+                            expireTime: link.SharingDetails.ShareUrl.ExpireTime,
+                            numAccesses: link.SharingDetails.ShareUrl.NumAccesses,
+                        }
+                      : undefined,
+              }
+            : undefined,
         nodeKey: link.NodeKey,
         nodePassphrase: link.NodePassphrase,
         nodePassphraseSignature: link.NodePassphraseSignature,

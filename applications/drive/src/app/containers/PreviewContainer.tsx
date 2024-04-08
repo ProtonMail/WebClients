@@ -30,7 +30,14 @@ const getSharedStatus = (link?: DecryptedLink) => {
 
 export default function PreviewContainer({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) {
     const { shareId, linkId } = match.params;
-    const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot, navigateToSearch } = useNavigate();
+    const {
+        navigateToLink,
+        navigateToSharedURLs,
+        navigateToSharedWithMe,
+        navigateToTrash,
+        navigateToRoot,
+        navigateToSearch,
+    } = useNavigate();
     const { setFolder } = useActiveShare();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
@@ -38,10 +45,12 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { saveFile } = useActions();
 
     const isEditEnabled = useIsEditEnabled();
-
     const referer = new URLSearchParams(useLocation().search).get('r');
     const useNavigation =
-        !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash') && !referer?.startsWith('/search');
+        !referer?.startsWith('/shared-with-me') &&
+        !referer?.startsWith('/shared-urls') &&
+        !referer?.startsWith('/trash') &&
+        !referer?.startsWith('/search');
 
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, navigation } =
         useFileView(shareId, linkId, useNavigation);
@@ -54,7 +63,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     }, [link?.isFile]);
 
     useEffect(() => {
-        if (link) {
+        if (link && !referer?.startsWith('/shared-with-me')) {
             setFolder({ shareId, linkId: link.parentLinkId });
         }
     }, [shareId, link?.parentLinkId]);
@@ -75,6 +84,10 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     }, [error]);
 
     const navigateToParent = useCallback(() => {
+        if (referer?.startsWith('/shared-with-me')) {
+            navigateToSharedWithMe();
+            return;
+        }
         if (referer?.startsWith('/shared-urls')) {
             navigateToSharedURLs();
             return;
