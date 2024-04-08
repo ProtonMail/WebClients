@@ -3,29 +3,18 @@ import { useMemo } from 'react';
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
-import { DecryptedLink, useDriveSharingFeatureFlag } from '../../../store';
+import { DecryptedLink } from '../../../store';
 import { useSelection } from '../../FileBrowser';
-import {
-    DetailsButton,
-    DownloadButton,
-    LayoutButton,
-    PreviewButton,
-    RenameButton,
-    ShareButton,
-    ShareLinkButton,
-} from '../ToolbarButtons';
-import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
+import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { getSelectedItems } from '../helpers';
-import { StopSharingButton } from './ToolbarButtons';
 
 interface Props {
     shareId: string;
     items: DecryptedLink[];
 }
 
-const SharedLinksToolbar = ({ shareId, items }: Props) => {
+const SharedWithMeToolbar = ({ items }: Props) => {
     const selectionControls = useSelection()!;
-    const driveSharing = useDriveSharingFeatureFlag();
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -33,29 +22,12 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
     );
 
     const renderSelectionActions = () => {
-        if (!selectedItems.length) {
-            return (
-                <>
-                    <ShareButton shareId={shareId} />
-                </>
-            );
-        }
-
         return (
             <>
                 <PreviewButton selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
                 <Vr />
-                <RenameButton selectedLinks={selectedItems} />
                 <DetailsButton selectedLinks={selectedItems} />
-                <Vr />
-                {driveSharing ? (
-                    <ShareLinkButton selectedLinks={selectedItems} />
-                ) : (
-                    <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
-                )}
-
-                <StopSharingButton selectedLinks={selectedItems} />
             </>
         );
     };
@@ -71,4 +43,4 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
     );
 };
 
-export default SharedLinksToolbar;
+export default SharedWithMeToolbar;

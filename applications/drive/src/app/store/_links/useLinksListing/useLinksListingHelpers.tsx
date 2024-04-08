@@ -227,6 +227,21 @@ export function useLinksListingHelpers() {
     };
 
     /**
+     * Invokes a callback function until all pages are loaded using technique with AnchorID.
+     * The callback function must return a AnchorID and More as boolean value representing a presence of the next page in listing.
+     */
+    const loadFullListingWithAnchor = async (
+        callback: (AnchorID?: string) => Promise<{ AnchorID: string; More: boolean }>,
+        AnchorIdIn?: string
+    ): Promise<void> => {
+        const result = await callback(AnchorIdIn);
+
+        if (result.More) {
+            await loadFullListingWithAnchor(callback, result.AnchorID);
+        }
+    };
+
+    /**
      * Returns cached decrypted links (including stale), decrypts
      * all encrypted or stale links in the background.
      */
@@ -261,6 +276,7 @@ export function useLinksListingHelpers() {
         fetchNextPageWithSortingHelper,
         fetchNextPageHelper,
         loadFullListing,
+        loadFullListingWithAnchor,
         getDecryptedLinksAndDecryptRest,
     };
 }

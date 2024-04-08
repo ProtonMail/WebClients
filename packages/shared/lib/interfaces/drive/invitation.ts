@@ -19,6 +19,21 @@ export interface ShareInvitationPayload {
     State: SHARE_MEMBER_STATE;
 }
 
+export interface ShareInvitationSharePayload {
+    ShareID: string;
+    VolumeID: string;
+    Passphrase: string;
+    ShareKey: string;
+    CreatorEmail: string;
+}
+
+export interface ShareInvitationLinkPayload {
+    Type: number;
+    LinkID: string;
+    Name: string;
+    MIMEType: string;
+}
+
 export interface ShareInvitationListingPayload {
     InvitationIDs: string[];
     More: boolean;

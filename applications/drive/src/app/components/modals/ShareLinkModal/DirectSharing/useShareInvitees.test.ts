@@ -5,8 +5,8 @@ import { useNotifications } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 
+import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
-import { getPrimaryPublicKeyForEmail } from './helpers/getPublicKeysForEmail';
 import { useShareInvitees } from './useShareInvitees';
 
 const invitee = {
@@ -33,7 +33,7 @@ jest.mocked(useNotifications).mockReturnValue({
 jest.mock('@proton/crypto');
 const mockedImportPublicKey = jest.mocked(CryptoProxy.importPublicKey);
 
-jest.mock('./helpers/getPublicKeysForEmail');
+jest.mock('../../../../utils/getPublicKeysForEmail');
 const mockedGetPrimaryPublicKey = jest.mocked(getPrimaryPublicKeyForEmail);
 
 const primaryPublicKey = 'primaryPublicKey';

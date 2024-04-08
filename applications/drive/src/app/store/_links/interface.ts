@@ -47,6 +47,7 @@ interface Link {
     // Links associated with Shared URLs don't have share id
     rootShareId: string;
     shareUrl?: LinkShareUrl;
+    sharingDetails?: LinkSharingDetails;
     activeRevision?: {
         id: string;
         size: number;
@@ -82,6 +83,11 @@ export interface LinkShareUrl {
     // heavy for API. This number needs to be loaded explicitely with route
     // to get info about share URL.
     numAccesses?: number;
+}
+
+export interface LinkSharingDetails {
+    shareUrl?: LinkShareUrl;
+    shareId: string;
 }
 
 export type SignatureIssues = {

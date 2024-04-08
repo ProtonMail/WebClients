@@ -2,11 +2,19 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
-import { PrivateKeyReference } from '@proton/crypto';
+import {
+    useApi,
+    useAuthentication,
+    useGetAddressKeys,
+    useGetAddresses,
+    useGetUser,
+    useNotifications,
+} from '@proton/components';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
+import { getPublicKeysForEmail } from '../../utils/getPublicKeysForEmail';
 import { ShareWithKey } from '../_shares';
 import {
     decryptSharePassphraseAsync,
@@ -21,6 +29,8 @@ function useDriveCrypto() {
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
     const { UID } = useAuthentication();
+    const getUser = useGetUser();
+    const api = useApi();
 
     const getPrimaryAddress = useCallback(async () => {
         return getPrimaryAddressAsync(getAddresses).catch((error) => {
@@ -62,10 +72,23 @@ function useDriveCrypto() {
             if (!email || !UID) {
                 return [];
             }
+
+            // We first try to fetch logged-in user keys and fallback to external publicKeys if case we found none
+            // This behavior is intended for sharing as we try to get verification key from other users
             const result = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
-            return result?.publicKeys || [];
+            if (result?.publicKeys) {
+                return result.publicKeys;
+            }
+            return getPublicKeysForEmail(api, email).then((publicKeys) => {
+                if (!publicKeys) {
+                    return [];
+                }
+                return Promise.all(
+                    publicKeys.map((publicKey) => CryptoProxy.importPublicKey({ armoredKey: publicKey }))
+                );
+            });
         },
-        [getAddresses, getAddressKeys]
+        [UID, getAddresses, getAddressKeys]
     );
 
     const sign = useCallback(
@@ -85,10 +108,15 @@ function useDriveCrypto() {
      */
     const decryptSharePassphrase = async (meta: ShareWithKey, privateKeys?: PrivateKeyReference[]) => {
         if (!privateKeys) {
-            const keys = await getOwnAddressKeys(meta.creator);
+            // If logged-in we need to fetch AddressKeys (publicKeys + privateKeys) of the user,
+            // otherwise we take the creator of the share
+            const userEmail = !!UID ? await getUser().then((user) => user.Email) : undefined;
+            let keys = await getOwnAddressKeys(userEmail || meta.creator);
+
             if (!keys) {
                 throw new Error('Address key was not found');
             }
+
             privateKeys = keys.privateKeys;
         }
         return decryptSharePassphraseAsync(meta, privateKeys, getVerificationKey);

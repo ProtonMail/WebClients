@@ -194,5 +194,6 @@ const HOURS_IN_MS = 60 * 60 * 1000;
 export const ACTIVE_PING_INTERVAL = 6 * HOURS_IN_MS;
 
 export enum DRIVE_SIGNATURE_CONTEXT {
-    SHARE_MEMBER_INVITE = 'drive.share-member.inviter',
+    SHARE_MEMBER_INVITER = 'drive.share-member.inviter',
+    SHARE_MEMBER_MEMBER = 'drive.share-member.member',
 }

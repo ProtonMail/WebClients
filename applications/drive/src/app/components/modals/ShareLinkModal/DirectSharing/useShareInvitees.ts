@@ -7,8 +7,8 @@ import { CryptoProxy } from '@proton/crypto';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import { ShareInvitee } from '../../../../store';
+import { getPrimaryPublicKeyForEmail } from '../../../../utils/getPublicKeysForEmail';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
-import { getPrimaryPublicKeyForEmail } from './helpers/getPublicKeysForEmail';
 
 /**
  * useShareInvitees hook is used to manage a list of user that we want to add to a drive share.
