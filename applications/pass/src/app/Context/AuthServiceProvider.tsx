@@ -172,7 +172,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 void settings.clear();
                 localStorage.removeItem(getSessionKey(localID));
 
-                flushSync(() => client.current.setStatus(AppStatus.UNAUTHORIZED));
+                flushSync(() => {
+                    client.current.setBooted(false);
+                    client.current.setStatus(AppStatus.UNAUTHORIZED);
+                });
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
@@ -271,6 +274,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const offline = OFFLINE_SUPPORTED && isOffline();
                 const resumeOffline = offline && (await canResumeOffline());
                 client.current.setStatus(resumeOffline ? AppStatus.PASSWORD_LOCKED : AppStatus.ERROR);
+                client.current.setBooted(false);
             },
             onNotification: (notification) =>
                 createNotification({

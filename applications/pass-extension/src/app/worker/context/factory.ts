@@ -28,6 +28,7 @@ import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import {
+    clientBooted,
     clientErrored,
     clientReady,
     clientSessionLocked,
@@ -90,6 +91,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
 
         getState: () => ({
+            booted: clientBooted(context.status),
             localID: authStore.getLocalID(),
             loggedIn: authStore.hasSession() && clientReady(context.status),
             status: context.status,

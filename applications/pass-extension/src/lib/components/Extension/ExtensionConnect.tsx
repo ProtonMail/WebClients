@@ -20,6 +20,7 @@ import noop from '@proton/utils/noop';
 import { ExtensionContext, type ExtensionContextType } from '../../context/extension-context';
 
 export const INITIAL_WORKER_STATE: AppState = {
+    booted: false,
     localID: undefined,
     loggedIn: false,
     status: AppStatus.IDLE,
