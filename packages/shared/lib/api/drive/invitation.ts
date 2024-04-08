@@ -9,6 +9,22 @@ export const queryInviteProtonUser = (shareID: string, invitation: InviteProtonU
     },
 });
 
+export const queryInvitationDetails = (invitationID: string) => ({
+    method: 'get',
+    url: `drive/v2/shares/invitations/${invitationID}`,
+});
+
+export const queryAcceptShareInvite = (
+    invitationID: string,
+    { SessionKeySignature }: { SessionKeySignature: string }
+) => ({
+    method: 'post',
+    url: `drive/v2/shares/invitations/${invitationID}/accept`,
+    data: {
+        SessionKeySignature,
+    },
+});
+
 //TODO: Add pagination
 export const queryShareInvitationsListing = (volumeId: string, shareId: string) => ({
     method: 'get',

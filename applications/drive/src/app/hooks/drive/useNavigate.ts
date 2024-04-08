@@ -46,6 +46,10 @@ function useNavigate() {
         pushToHistory('/devices');
     };
 
+    const navigateToSharedWithMe = () => {
+        pushToHistory(`/shared-with-me`);
+    };
+
     const navigateToSearch = useCallback(
         (searchTerm: string) => {
             history.push({
@@ -76,6 +80,7 @@ function useNavigate() {
         addListener,
         removeListener,
         navigateToDevices,
+        navigateToSharedWithMe,
     };
 }
 
