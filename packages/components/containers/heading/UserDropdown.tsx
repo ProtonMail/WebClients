@@ -488,7 +488,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                     type="button"
                                     className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                     onClick={handleScheduleCallClick}
-                                    data-testid="userdropdown:help:button:schedule-call"
                                 >
                                     {c('Action').t`Schedule a call`}
                                 </button>
