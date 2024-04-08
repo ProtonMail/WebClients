@@ -2,16 +2,10 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    useApi,
-    useAuthentication,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetUser,
-    useNotifications,
-} from '@proton/components';
+import { useApi, useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { Address } from '@proton/shared/lib/interfaces/Address';
+import { splitKeys } from '@proton/shared/lib/keys';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { getPublicKeysForEmail } from '../../utils/getPublicKeysForEmail';
@@ -29,7 +23,6 @@ function useDriveCrypto() {
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
     const { UID } = useAuthentication();
-    const getUser = useGetUser();
     const api = useApi();
 
     const getPrimaryAddress = useCallback(async () => {
@@ -44,11 +37,6 @@ function useDriveCrypto() {
     const getPrimaryAddressKey = useCallback(async () => {
         return getPrimaryAddressKeyAsync(getPrimaryAddress, getAddressKeys);
     }, [getPrimaryAddress, getAddressKeys]);
-
-    const getOwnAddressKeys = useCallback(
-        async (email: string) => getOwnAddressKeysAsync(email, getAddresses, getAddressKeys),
-        [getAddresses, getAddressKeys]
-    );
 
     // This should be used for encryption and signing of any content.
     const getOwnAddressAndPrimaryKeys = useCallback(
@@ -110,8 +98,7 @@ function useDriveCrypto() {
         if (!privateKeys) {
             // If logged-in we need to fetch AddressKeys (publicKeys + privateKeys) of the user,
             // otherwise we take the creator of the share
-            const userEmail = !!UID ? await getUser().then((user) => user.Email) : undefined;
-            let keys = await getOwnAddressKeys(userEmail || meta.creator);
+            let keys = splitKeys(await getAddressKeys(meta.addressId));
 
             if (!keys) {
                 throw new Error('Address key was not found');
