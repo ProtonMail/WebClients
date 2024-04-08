@@ -2,10 +2,8 @@ import { c } from 'ttag';
 
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button } from '@proton/atoms/Button';
-import { Href } from '@proton/atoms/Href';
 import useLoading from '@proton/hooks/useLoading';
 import { openCalendlyLink } from '@proton/shared/lib/helpers/support';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import illustration from '@proton/styles/assets/img/illustrations/account-support-phone.svg';
 
 import { useUser } from '../..';
@@ -53,7 +51,6 @@ const OrganizationScheduleCallSection = ({ onOpenChat }: Props) => {
                               .jt`If you’re having trouble, we’re here to help. ${boldPhoneCall} (or Zoom meet) with one of our support specialists, or open a ${boldLiveChat} for chat support.`
                         : c('Info')
                               .jt`If you’re having trouble, we’re here to help. ${boldPhoneCall} (or Zoom meet) with one of our support specialists.`}{' '}
-                    <Href href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>
                 </p>
                 <div className="flex gap-4 justify-center lg:justify-start">
                     <Button
