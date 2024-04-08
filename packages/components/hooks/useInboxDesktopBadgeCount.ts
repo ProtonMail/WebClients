@@ -17,7 +17,7 @@ const useInboxDesktopBadgeCount = () => {
 
     // Updates the notification badge on the desktop app icon depending on the unread count
     useEffect(() => {
-        if (isElectronApp) {
+        if (!isElectronApp) {
             return;
         }
 
