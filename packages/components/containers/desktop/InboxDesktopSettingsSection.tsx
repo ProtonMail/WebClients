@@ -6,7 +6,7 @@ import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Pill } from '@proton/atoms/Pill';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { FeatureCode, useFeature } from '../..';
@@ -64,7 +64,7 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
 };
 
 const DownloadButton = ({ link }: { link?: string }) => {
-    if (isElectronApp && link) {
+    if (isElectronMail && link) {
         const handleClick = () => {
             if (canInvokeInboxDesktopIPC) {
                 window.ipcInboxMessageBroker!.send('openExternal', link);

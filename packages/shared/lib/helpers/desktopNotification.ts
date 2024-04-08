@@ -4,7 +4,7 @@ import noop from '@proton/utils/noop';
 
 import { ElectronNotification } from '../desktop/desktopTypes';
 import { canInvokeInboxDesktopIPC } from '../desktop/ipcHelpers';
-import { isElectronApp } from './desktop';
+import { isElectronMail } from './desktop';
 
 Push.config({
     serviceWorker: './assets/serviceWorker.min.js', // Sets a custom service worker script
@@ -55,8 +55,10 @@ export const create = async (title = '', params = {}, electronNotification?: Ele
     if (!isEnabled()) {
         return;
     }
-    if (isElectronApp && electronNotification) {
-        if (!canInvokeInboxDesktopIPC) {return;}
+    if (isElectronMail && electronNotification) {
+        if (!canInvokeInboxDesktopIPC) {
+            return;
+        }
         window.ipcInboxMessageBroker?.send('showNotification', electronNotification);
     } else {
         return Push.create(title, params);

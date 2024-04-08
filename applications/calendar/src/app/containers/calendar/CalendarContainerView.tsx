@@ -59,7 +59,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -397,8 +397,8 @@ const CalendarContainerView = ({
 
     const top = !isDrawerApp && (
         <>
-            {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
-            {isElectronApp && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
+            {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
+            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
             <TopBanners app={APPS.PROTONCALENDAR} />
         </>
     );
