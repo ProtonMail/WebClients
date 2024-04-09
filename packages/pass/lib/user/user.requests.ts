@@ -66,6 +66,7 @@ export const getUserData = async (): Promise<HydratedUserState> => {
         user,
         userSettings: {
             Email: { Status: userSettings.Email.Status },
+            HighSecurity: userSettings.HighSecurity,
             Locale: userSettings.Locale,
             Password: { Mode: userSettings.Password.Mode },
             Telemetry: userSettings.Telemetry,
