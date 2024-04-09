@@ -104,6 +104,9 @@
       "Add notification": [
         "Lisää ilmoitus"
       ],
+      "Add or switch account": [
+        "Lisää tai vaihda tiliä"
+      ],
       "Add PayPal": [
         "Lisää PayPal"
       ],
@@ -1055,6 +1058,9 @@
       "View": [
         "Tarkastele"
       ],
+      "View all reports": [
+        "Näytä kaikki raportit"
+      ],
       "View invoice": [
         "Näytä lasku"
       ],
@@ -1069,6 +1075,9 @@
       ],
       "Void all recovery files?": [
         "Mitätöidäänkö kaikki palautustiedostot?"
+      ],
+      "Welcome": [
+        "Tervetuloa"
       ],
       "What do I get?": [
         "Mitä saan?"
@@ -1259,6 +1268,23 @@
       ],
       "New email": [
         "Uusi viesti saapuu"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Selaa verkkoa yksityisesti ja estä mainoksia"
+      ],
+      "Keep your schedule private": [
+        "Pidä aikataulusi yksityisenä"
+      ],
+      "Protect your passwords and identity": [
+        "Suojaa salasanasi ja henkilöllisyytesi"
+      ],
+      "Safeguard your files and photos": [
+        "Turvaa tietostosi ja valokuvasi"
+      ],
+      "Secure your communications": [
+        "Suojaa viestintäsi"
       ]
     },
     "Apps dropdown": {
@@ -1996,7 +2022,7 @@
         "riutta"
       ],
       "ruddy pink": [
-        "punertava vaaleanpunainen"
+        "punertava pinkki"
       ],
       "sahara": [
         "sahara"
@@ -3048,9 +3074,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Poistamisen jälkeen sinä tai kukaan muu ei voi enää käyttää tätä osoitetta."
-      ],
       "The next active address on your list will be set as the default.": [
         "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
       ],
@@ -4427,9 +4450,6 @@
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Käyttääksesi ${ MAIL_APP_NAME } tai ${ CALENDAR_APP_NAME }, vaihda selainversioon."
       ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Liian monta ali-istuntoa. Tyhjennä selaimen evästeet ja kirjaudu uudelleen."
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
       ]
@@ -4907,7 +4927,7 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Lisää suojausavaimet"
+        "Lisää todennuslaite"
       ],
       "Delete key": [
         "Poista todennuslaite"
@@ -4915,7 +4935,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Poista kaksivaiheinen todennus suojausavaimella käytöstä ennen TOTP:n käytöstäpoistoa"
+        "Poista kaksivaiheinen todennus todennuslaitteella käytöstä ennen TOTP:n käytöstäpoistoa"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen todennuslaitteellasi tunnistauduttaessa. Yritä uudelleen."
@@ -4935,16 +4955,16 @@
         "Salli alustojen avaimet"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Mahdollistaa sisäänrakennettujen suojausavaimien käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
+        "Mahdollistaa sisäänrakennettujen todennuslaitteiden käytön (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
       ],
       "Insert your security key into your device's USB port.": [
-        "Syötä todennuslaitteesi laitteesi USB-porttiin."
+        "Kytke todennuslaitteesi laitteen USB-porttiin."
       ],
       "Security key": [
         "Todennuslaite"
@@ -4959,10 +4979,10 @@
         "Tämä poistaa kaikki tiliisi liitetyt todennuslaitteet."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Ottaaksesi kaksivaiheisen todennuksen suojasavaimella käyttöön, on kaksivaiheinen todennus todennussovelluksella otettava käyttöön"
+        "Käyttääksesi kaksivaiheista todennusta todennuslaitteella, on kaksivaiheinen todennus todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-suojausavaimella"
+        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-todennuslaitteella"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Todennuslaitteesi on valmis käyttöön."
@@ -4990,7 +5010,7 @@
         "Rekisteröi todennuslaitteesi"
       ],
       "Registered security keys": [
-        "Rekisteröidyt suojausavaimet"
+        "Rekisteröidyt todennuslaitteet"
       ],
       "Security key registered": [
         "Todennuslaite rekisteröitiin"
@@ -6307,6 +6327,9 @@
       "Check the status of imports and forwarding.": [
         "Tarkista tuontien ja edelleenlähetyksen tila."
       ],
+      "Choose an app to get started": [
+        "Aloita valitsemalla sovellus"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
@@ -7000,6 +7023,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Organisaatiosi muut käyttäjät näkevät varatut aikasi. Tapahtumatietoja ei jaeta."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Vanhentunut palautustiedosto, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
@@ -7660,7 +7686,7 @@
         "Luo tilejä tuomalla täydellinen CSV-tiedosto"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Ladattu tiedosto ei ole kelvollinen ykisityinen avain. Tarkista ja yritä uudelleen."
+        "Ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen."
       ],
       "URL link": [
         "URL-linkki"
@@ -8549,6 +8575,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
+      "Access to my events": [
+        "Tapahtumieni käyttöoikeudet"
+      ],
       "Account storage": [
         "Tilin tallennustila"
       ],
@@ -9242,6 +9271,9 @@
       "Send in": [
         "Lähetetään"
       ],
+      "Show others when I'm busy": [
+        "Näytä muille koska olen varattu"
+      ],
       "Show secondary time zone": [
         "Näytä toissijainen aikavyöhyke"
       ],
@@ -9626,7 +9658,7 @@
         "Osallistu käännökseen"
       ],
       "here": [
-        "tässä"
+        "täältä"
       ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
@@ -10492,7 +10524,7 @@
         "Salasanasuojatut sähköpostiviestit"
       ],
       "Phone support (6+ users)": [
-        "Puhelintuki (6+ käyttäjää)"
+        "Puhelinasiakaspalvelu (6+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -10952,7 +10984,7 @@
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa puhelintukea vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -10973,7 +11005,7 @@
         "Siirrä sähköpostisi, kalenterisi ja yhteystietosi nopeasti miltä tahansa palveluntarjoajalta"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        "Kirjautumiseen tarvitaan matkapuhelimeen lähetetty koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
+        "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
@@ -12008,6 +12040,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Processing payment": [
+        "Käsitellään maksua"
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -14946,7 +14981,7 @@
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Laajan lokikirjauksen ollessa käytössä, kirjataan jokaisen tapahtuman IP-osoite suojauslokiin."
+        "Laajan lokikirjauksen ollessa käytössä, kirjataan suojauslokiin jokaisen tapahtuman IP-osoite."
       ],
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
@@ -15329,10 +15364,10 @@
         "Jos poistat tämän osoitteen, et voi enää palauttaa tiliäsi tai vastaanottaa päivittäisiä sähköposti-ilmoituksia."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Jos poistat sähköpostiosoitteen, et voi enää palauttaa tiliäsi."
+        "Jos poistat tämän sähköpostiosoitteen, et voi enää palauttaa tiliäsi."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Jos poistat puhelinnumeron, et voi enää palauttaa tiliäsi."
+        "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Lokikirjauksen käytöstäpoiston yhteydessä tyhjennetään myös kaikki vanhat lokitiedot. Haluatko varmasti poistaa sen käytöstä?"

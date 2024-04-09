@@ -104,6 +104,9 @@
       "Add notification": [
         "Lägg till avisering"
       ],
+      "Add or switch account": [
+        "Lägg till eller byt konto"
+      ],
       "Add PayPal": [
         "Lägg till PayPal"
       ],
@@ -740,6 +743,9 @@
       "Report a problem": [
         "Rapportera ett problem"
       ],
+      "Request a call": [
+        "Begär ett samtal"
+      ],
       "Request a feature": [
         "Begär en funktion"
       ],
@@ -938,6 +944,9 @@
       "Start import": [
         "Starta import"
       ],
+      "Start live chat": [
+        "Starta livechatt"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -1072,6 +1081,9 @@
       ],
       "Void all recovery files?": [
         "Ogiltigförklara alla återställningsfiler?"
+      ],
+      "Welcome": [
+        "Välkommen"
       ],
       "What do I get?": [
         "Vad får jag?"
@@ -1262,6 +1274,20 @@
       ],
       "New email": [
         "Ny e-post"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surfa på webben privat och blockera annonser"
+      ],
+      "Protect your passwords and identity": [
+        "Skydda dina lösenord och din identitet"
+      ],
+      "Safeguard your files and photos": [
+        "Skydda dina filer och foton"
+      ],
+      "Secure your communications": [
+        "Säkra din kommunikation"
       ]
     },
     "Apps dropdown": {
@@ -1825,6 +1851,14 @@
       ],
       "Week": [
         "Vecka"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Begäran skickad"
+      ],
+      "You can safely close this tab.": [
+        "Du kan stänga denna flik säkert."
       ]
     },
     "Checkout row": {
@@ -3050,8 +3084,8 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "När den har tagits bort kan den inte användas igen av dig eller någon annan."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "När den har tagits bort kan denna adress inte användas igen av någon annan."
       ],
       "The next active address on your list will be set as the default.": [
         "Nästa aktiva adress på din lista kommer att ställas in som standard."
@@ -4426,9 +4460,6 @@
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "För många undersessioner, rensa dina cookies och logga in igen."
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
       ]
@@ -5488,6 +5519,11 @@
         "Prova den bästa av ${ MAIL_APP_NAME } gratis"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Kontakta oss"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Hittade ${ items.length } förslag, använd tangentbordet för att navigera.",
@@ -6317,6 +6353,9 @@
       "Check the status of imports and forwarding.": [
         "Kontrollera status för importer och vidarebefordran."
       ],
+      "Choose an app to get started": [
+        "Välj en app för att komma igång"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
@@ -6845,6 +6884,9 @@
       "Link type": [
         "Länktyp"
       ],
+      "Live chat": [
+        "Livechatt"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Laddat innehåll skyddas av vår proxy när spårningsskydd är aktiverat."
       ],
@@ -7214,6 +7256,9 @@
       ],
       "Report link expired": [
         "Rapportlänk löpt ut"
+      ],
+      "Request a phone call": [
+        "Begär ett telefonsamtal"
       ],
       "Resend verification email": [
         "Skicka e-postverifiering igen"
