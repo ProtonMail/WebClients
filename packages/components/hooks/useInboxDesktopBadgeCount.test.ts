@@ -33,7 +33,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should not call when not on desktop', () => {
-        desktopHelpersMock.isElectronApp = false;
+        desktopHelpersMock.isElectronMail = false;
         useConversationCountsMock.mockReturnValue([]);
 
         renderHook(() => useInboxDesktopBadgeCount());
@@ -41,7 +41,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should call with not call when no count', () => {
-        desktopHelpersMock.isElectronApp = true;
+        desktopHelpersMock.isElectronMail = true;
         useConversationCountsMock.mockReturnValue([]);
 
         renderHook(() => useInboxDesktopBadgeCount());
@@ -49,7 +49,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should call with 1 when 1 unread', () => {
-        desktopHelpersMock.isElectronApp = true;
+        desktopHelpersMock.isElectronMail = true;
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
 
         renderHook(() => useInboxDesktopBadgeCount());
@@ -57,7 +57,7 @@ describe('useInboxDesktopBadgeCount', () => {
     });
 
     it('should call with 100 when 100 unread', () => {
-        desktopHelpersMock.isElectronApp = true;
+        desktopHelpersMock.isElectronMail = true;
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
 
         renderHook(() => useInboxDesktopBadgeCount());
