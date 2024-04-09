@@ -1,3 +1,16 @@
+### Version 1.16.5
+
+-   Improve Proton Pass CSV export/import to support importing items in multiple vaults
+-   Improve generic CSV import to support importing items in multiple vaults
+-   Improve initial settings hydration
+-   Fix favicons loading/flickering
+-   Fix yubikey conflict
+-   Fix 2FA autofill popup reopening after closing it in certain websites
+-   Allow disabling passkeys in the settings (globally or per website)
+-   Improve autosave for password change forms & password autosuggest
+-   Add setting to allow prompting autosave right after generating a password
+-   Allow selecting in autosave which item to update between multiple items after updating a login
+
 ### Version 1.16.4
 
 -   Fix settings persistence shadowed by locale sync

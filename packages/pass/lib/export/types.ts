@@ -1,21 +1,9 @@
-import type { ItemType, Maybe, UnsafeItemRevision, VaultShareContent } from '@proton/pass/types';
+import type { ItemType, UnsafeItemRevision, VaultShareContent } from '@proton/pass/types';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     UnsafeItemRevision<T>,
     'revision' | 'revisionTime' | 'lastUseTime'
 >;
-
-export type ExportedCsvItem = {
-    type: ItemType;
-    name: string;
-    url: Maybe<string>;
-    username: Maybe<string>;
-    password: Maybe<string>;
-    note: Maybe<string>;
-    totp: Maybe<string>;
-    createTime: Maybe<string>;
-    modifyTime: Maybe<string>;
-};
 
 export type ExportedVault = VaultShareContent & { items: ExportedItem[] };
 
@@ -36,6 +24,7 @@ export type ExportCSVItem = {
     type: ItemType;
     url: string;
     username: string;
+    vault: string;
 };
 
 export enum ExportFormat {
