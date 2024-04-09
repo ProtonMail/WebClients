@@ -6,15 +6,15 @@ import clsx from '@proton/utils/clsx';
 export type InfoCardProps = {
     className?: string;
     icon: IconName;
-    subtitle: string;
+    subtitle?: string;
     title: string;
 };
 export const InfoCard: FC<InfoCardProps> = ({ icon, title, subtitle, className }) => (
     <div className={clsx('flex items-center flex-nowrap w-full gap-4 text-sm', className)}>
-        <Icon name={icon} size={5} className="color-weak" />
-        <div className="flex flex-column items-start">
-            <span className="text-ellipsis inline-block color-norm">{title}</span>
-            <span className="block color-weak text-ellipsis">{subtitle}</span>
+        <Icon name={icon} size={5} />
+        <div className="flex flex-column flex-nowrap justify-start w-full">
+            <span className="text-left text-ellipsis color-norm">{title}</span>
+            {subtitle && <span className="text-left text-ellipsis color-weak">{subtitle}</span>}
         </div>
     </div>
 );
