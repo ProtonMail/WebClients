@@ -1123,6 +1123,12 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -5313,10 +5319,10 @@
         "${ elementsCount } розмов будуть позначені як непрочитані."
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } повідомлення буде позначено як непрочитане.",
-        "${ elementsCount } повідомлення буде позначено як непрочитане.",
-        "${ elementsCount } повідомлень будуть позначені як непрочитані.",
-        "${ elementsCount } повідомлень будуть позначені як непрочитані."
+        "${ elementsCount } повідомлення буде позначено непрочитаним.",
+        "${ elementsCount } повідомлення будуть позначені непрочитаними.",
+        "${ elementsCount } повідомлень будуть позначені непрочитаними.",
+        "${ elementsCount } повідомлень будуть позначені непрочитаними."
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } вбудоване зображення",
@@ -5814,7 +5820,7 @@
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
       ],
       "Downgrade": [
-        "Понизити тарифний план"
+        "Перейти на нижчий тарифний план"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
@@ -6048,7 +6054,7 @@
         "Включити теки Спам/Смітник."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "В тому числі ${ formattedTaxRate }% ${ taxName }: ${ price }"
+        "Включно з ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -6174,7 +6180,7 @@
         "ММ/РР"
       ],
       "Monitor accounts": [
-        "Монітор облікових записів"
+        "Моніторинг облікових записів"
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -6189,7 +6195,7 @@
         "Жодної дії не вибрано"
       ],
       "No changes made to the current subscription": [
-        "У поточну підписку не внесено жодних змін"
+        "Щодо поточної передплати не внесено жодних змін"
       ],
       "No contacts added yet": [
         "Контактів ще не додано"
@@ -6903,7 +6909,7 @@
         "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Ви використовуєте більше пам’яті сховища, ніж включено в план ${ downgradedPlanName }. Будь ласка, видаліть дані, щоб понизити тарифний план."
+        "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Ви можете додати його як вкладення, або показати в тілі листа."
