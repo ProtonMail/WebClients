@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
+import { getUserAccessSuccess, getUserFeaturesSuccess, sentinelToggle, userEvent } from '@proton/pass/store/actions';
 import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -8,6 +8,7 @@ import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
@@ -16,6 +17,10 @@ export type UserSettingsState = {
     Password: { Mode: SETTINGS_PASSWORD_MODE };
     Telemetry: BitField;
     Locale?: string;
+    HighSecurity: {
+        Eligible: BitField;
+        Value: SETTINGS_PROTON_SENTINEL_STATE;
+    };
 };
 
 export type UserAccessState = {
@@ -44,6 +49,11 @@ const initialState: UserState = {
     waitingNewUserInvites: 0,
 };
 
+export const INITIAL_HIGHSECURITY_SETTINGS = {
+    Eligible: 0,
+    Value: SETTINGS_PROTON_SENTINEL_STATE.DISABLED,
+};
+
 const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
@@ -58,6 +68,7 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
                   Password: { Mode: UserSettings.Password.Mode },
                   Telemetry: UserSettings.Telemetry,
                   Locale: UserSettings.Locale,
+                  HighSecurity: UserSettings.HighSecurity,
               })
             : state.userSettings;
 
@@ -86,6 +97,10 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (getUserFeaturesSuccess.match(action)) {
         const next: UserState = { ...state, features: null }; /* wipe all features before merge */
         return partialMerge(next, { features: action.payload });
+    }
+
+    if (sentinelToggle.success.match(action)) {
+        return partialMerge(state, { userSettings: { HighSecurity: { Value: action.payload.value } } });
     }
 
     return state;

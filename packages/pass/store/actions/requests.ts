@@ -54,3 +54,5 @@ export const reportBugRequest = (id: string) => `report::bug::${id}`;
 
 export const organizationSettingsRequest = () => `organization::settings::get`;
 export const organizationSettingsEditRequest = () => `organization::settings::edit`;
+
+export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;

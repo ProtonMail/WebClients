@@ -3,6 +3,7 @@ import { type MaybeNull } from '@proton/pass/types';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
+import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
 import { selectPassPlan, selectUser } from './selectors';
 import type { State } from './types';
 
@@ -23,6 +24,9 @@ export const migrate = (state: State) => {
                   }
                 : null;
         }
+    }
+    if (state.user.userSettings && !state.user.userSettings.HighSecurity) {
+        state.user.userSettings.HighSecurity = INITIAL_HIGHSECURITY_SETTINGS;
     }
 
     return state;

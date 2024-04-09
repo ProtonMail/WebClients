@@ -5,6 +5,7 @@ export * from './creators/client';
 export * from './creators/import';
 export * from './creators/invite';
 export * from './creators/item';
+export * from './creators/monitor';
 export * from './creators/notification';
 export * from './creators/password';
 export * from './creators/report';

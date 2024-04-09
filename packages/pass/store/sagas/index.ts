@@ -41,6 +41,7 @@ import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
+import sentinelToggle from './monitor/sentinel-toggle.saga';
 import organizationSettingsEdit from './organization/organization-settings-edit.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
@@ -90,10 +91,11 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemUnpin,
             newUserInvitePromote,
             newUserInviteRemove,
-            notification,
             getOrganizationSettings,
+            notification,
             organizationSettingsEdit,
             reportProblem,
+            sentinelToggle,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
