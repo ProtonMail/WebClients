@@ -818,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Varsayılan olarak ekip üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, herhangi bir veriyi dışa aktaramazlar"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
       ],
@@ -1140,6 +1143,9 @@
       "Syncing your vaults…": [
         "Kasalarınız eşitleniyor…"
       ],
+      "Team members can only share vaults within organization": [
+        "Ekip üyeleri yalnızca kuruluş içindeki kasaları paylaşabilir"
+      ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
@@ -1161,6 +1167,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
+      ],
+      "This setting is disabled on the organization level": [
+        "Bu ayar kuruluş düzeyinde devre dışı bırakılmıştır"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
@@ -1361,6 +1370,9 @@
       ],
       "Created": [
         "Oluşturulma"
+      ],
+      "Disable data export for team members": [
+        "Ekip üyeleri için veri dışa aktarımını devre dışı bırak"
       ],
       "Disable sharing outside the organization": [
         "Kuruluş dışında paylaşımı devre dışı bırak"
@@ -2041,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "E-posta adresleri geçersiz."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Kuruluş dışındaki e-posta adreslerinin davet edilmesine izin verilmez."
       ],
       "item was imported without custom fields": [
         "öge özel alanlar olmadan ie aktarılmış"
