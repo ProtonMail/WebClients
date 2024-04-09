@@ -430,6 +430,9 @@
       "Auto-lock could not be disabled": [
         "自動ロックを無効化出来ませんでした"
       ],
+      "Cannot send invitation at the moment": [
+        "現在招待を送ることができません"
+      ],
       "Cannot send invitations at the moment": [
         "現在招待を送ることができません"
       ],
@@ -465,6 +468,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "このCSVは${ errors.length } 行の破損を検知しました"
       ],
       "Editing item failed": [
         "アイテムの編集に失敗しました"
@@ -638,6 +644,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "バイト"
+      ],
       "GB": [
         "GB"
       ],
@@ -649,6 +658,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "バイト"
+      ],
+      "Gigabyte": [
+        "ギガバイト"
+      ],
+      "Kilobyte": [
+        "キロバイト"
+      ],
+      "Megabyte": [
+        "メガバイト"
+      ],
+      "Terabyte": [
+        "テラバイト"
       ]
     },
     "Info": {
@@ -663,6 +689,15 @@
       ],
       "${ count } invites successfully sent": [
         "${ count } へ正常に招待状が送られました"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount }人のメンバー"
+      ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } 回"
+      ],
+      "${ n } item": [
+        "${ n } アイテム"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
@@ -760,6 +795,9 @@
       "For security reasons, your access needs to be confirmed": [
         "セキュリティ上の理由から、アクセスを確認する必要があります"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "生成されたパスワードは ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間保存されます。"
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "チームやプロジェクトごとに保管庫を作成し、Passを最大限に活用しましょう。"
       ],
@@ -768,6 +806,9 @@
       ],
       "Import in progress:": [
         "インポートが進行中:"
+      ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } 件のアイテムをインポートしました"
       ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
@@ -807,6 +848,9 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "すでに ${ PASS_APP_NAME } にログインしているようです。 別のアカウントでログインしようとしている場合は、まず拡張機能からログアウトしてください。"
+      ],
+      "item": [
+        "アイテム"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "アイテム「${ payload.item.data.metadata.name }」が作成されました"
@@ -882,6 +926,9 @@
       ],
       "Pass Plus trial": [
         "Pass Plusトライアル"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間より古いパスワードは履歴から自動的に削除されます。"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PINコードの登録が完了しました。 それを使用して ${ PASS_APP_NAME } のロックを解除します"
@@ -973,6 +1020,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "エクスポートされるファイルを PGP を使用して暗号化するため、強力なパスフレーズが必要です。"
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
       ],
@@ -1033,6 +1083,9 @@
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
       ],
@@ -1059,6 +1112,12 @@
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } 文字"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } 単語"
+      ],
       "1 hour": [
         "1 時間"
       ],
@@ -1466,6 +1525,11 @@
         "${ brandNameJSX } へようこそ"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } 件のアイテム"
+      ]
+    },
     "Option": {
       "Commas": [
         "コンマ"
@@ -1576,6 +1640,11 @@
       ],
       "Write your note": [
         "メモを書く"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
       ]
     },
     "Title": {
@@ -1780,6 +1849,9 @@
       ],
       "Invalid email addresses.": [
         "無効なメールアドレスです"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "最大長は ${ maxLength } 文字です"
       ],
       "Missing alias prefix": [
         "エイリアスのプレフィックスがありません"
