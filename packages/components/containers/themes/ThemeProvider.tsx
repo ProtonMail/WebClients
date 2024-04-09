@@ -4,7 +4,7 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import { isElectronApp, isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail, isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
@@ -335,7 +335,7 @@ const ThemeProvider = ({ children, appName }: Props) => {
     }, [themeSetting]);
 
     useEffect(() => {
-        if (isElectronApp) {
+        if (isElectronMail) {
             updateElectronThemeModeClassnames(themeSetting);
         }
     }, [colorScheme, themeSetting]);
