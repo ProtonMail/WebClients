@@ -4387,9 +4387,6 @@
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Skift til webversionen for at bruge ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "For mange undersessioner, ryd dine cookies og log på igen."
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
       ]
@@ -9669,8 +9666,14 @@
       ]
     },
     "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Få mere at vide"
+      ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
+      ],
+      "Upgrade to restore full access": [
+        "Opgrader for at genoprette fuld adgang"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Din ${ driveStorage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ cta }."
@@ -9678,8 +9681,17 @@
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Din ${ mailStorage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ cta }."
       ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Din konto er i fare for at blive slettet. For at undgå datatab skal du bede din administrator om at opgradere. ${ cta }"
+      ],
       "Your storage is full. To send or receive emails, free up space or ${ cta }.": [
         "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ cta }."
+      ],
+      "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. Frigør plads eller ${ cta } for at uploade eller synkronisere filer."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
       ]
     },
     "Log preference": {
@@ -12043,6 +12055,9 @@
       "Select a reason": [
         "Vælg en årsag"
       ],
+      "Select state": [
+        "Vælg stat"
+      ],
       "Text": [
         "Tekst"
       ],
@@ -14147,6 +14162,15 @@
       ],
       "Folders and labels": [
         "Mapper og etiketter"
+      ],
+      "For Linux": [
+        "Til Linux"
+      ],
+      "For macOS": [
+        "Til macOS"
+      ],
+      "For Windows": [
+        "Til Windows"
       ],
       "Forward and auto-reply": [
         "Videresendelse og autosvar"

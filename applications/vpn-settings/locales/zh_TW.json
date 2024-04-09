@@ -588,6 +588,12 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } 個自訂網域"
+      ],
+      "${ ips } server": [
+        "${ ips } 台伺服器"
+      ],
       "${ price } per dedicated server": [
         "每專用伺服器${ price }"
       ],
@@ -596,6 +602,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ users } user": [
+        "${ users } 個使用者"
       ]
     },
     "Address action": {
@@ -766,6 +775,9 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n }月"
+      ],
       "the first month": [
         "第一個月"
       ],
@@ -791,6 +803,9 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "我們遍佈全世界的網路與伺服器助您翻過長城，免於審查。"
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 ${ domains } 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
@@ -814,6 +829,9 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n }個月"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewalLength }"
       ]
@@ -920,6 +938,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } 個使用者"
+      ],
+      "Total for ${ n } month": [
+        "總額可用 ${ n } 個月"
       ]
     },
     "Checkout summary": {
@@ -2411,11 +2437,20 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } 個 VPN 連線"
+      ],
       "Access to all countries": [
         "所有國家任選"
       ],
       "Add": [
         "新增"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "新增 (${ numberOfAddedServers } 台)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "多達 ${ plusVpnConnections } 台裝置的連線"
       ],
       "Fastest VPN servers": [
         "最快速的 VPN 伺服器"
@@ -2522,6 +2557,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -2532,6 +2570,23 @@
         "MB"
       ],
       "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "位元組"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Megabyte": [
+        "MB"
+      ],
+      "Terabyte": [
         "TB"
       ]
     },
@@ -2700,11 +2755,32 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
+      "${ n } address": [
+        "${ n } 個電郵位址"
+      ],
+      "${ number } city": [
+        "${ number } 座城市"
+      ],
+      "${ number } server": [
+        "${ number } 個伺服器"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } 台伺服器仍在設置。通常需時約 ${ provisioningDuration }。"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } 以上"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length }更多的電子郵件位址"
+      ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
+      ],
+      "${ userFound } user found": [
+        "找到 ${ userFound } 個使用者"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "國家等級的連線需要 ${ vpnPlus } 。"
@@ -2720,6 +2796,9 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
       ],
       "30-day money-back guarantee": [
         "30 天體驗不滿意退款服務"
@@ -2756,6 +2835,15 @@
       ],
       "Add domain": [
         "加入網域"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "新增伺服器 (${ availableAddedCount } 台可用)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "正在新增 ${ addedServerCount } 台閘道伺服器"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "正在新增閘道伺服器：${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "額外設定"
@@ -2886,6 +2974,9 @@
       "Create your first Gateway": [
         "創建您的第一個閘道器"
       ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "正在建立閘道伺服器：${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "創建您的帳號"
       ],
@@ -2909,6 +3000,9 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "具有專用 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制。"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
@@ -3249,6 +3343,12 @@
       "per month, billed every 24 months": [
         "每月，每24個月收費"
       ],
+      "Please add a password for the user on row": [
+        "請在此行使用者處加入密碼"
+      ],
+      "Please add an email address for the user on row": [
+        "請在此行使用者處加入電郵位址"
+      ],
       "Please authenticate your card in the verification tab.": [
         "請在驗證索引標籤中認證您的信用卡。"
       ],
@@ -3278,6 +3378,9 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "諘再試一次，您也可換另一個繳款方式，或聯絡 PayPal 尋求協助。"
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "密碼至少需要 ${ MIN_PASSWORD_LENGTH } 個字元長。"
       ],
       "Please use another browser or download the file.": [
         "請使用其他瀏覽器或下載檔案。"
@@ -3393,6 +3496,9 @@
       "SSO users (provided by your Identity Provider) will be deleted": [
         "(由您的身分提供者提供的) SSO 使用者將予刪除"
       ],
+      "Step ${ step }": [
+        "步驟 ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
       ],
@@ -3434,6 +3540,15 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "您的身分提供者提供的認證將予刪除。"
+      ],
+      "The following address is invalid.": [
+        "下列電子郵件位址無效。"
+      ],
+      "The following address is unavailable.": [
+        "下列電子郵件位址不可用。"
+      ],
+      "The following address was not created.": [
+        "以下的電子郵件位址還未創建。"
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "以下成員將收到電子郵件提示盡速使用雙重身份驗證"
@@ -3732,6 +3847,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "您目前正在使用 ${ ipAddresses } 個可用伺服器中的 ${ ipCount } 個。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "您目前使用${ maxMembers }的可用序號${ usedMembers }。"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
       ],
@@ -3744,6 +3865,12 @@
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "您可以立刻解鎖上方的設定，只要在您的方案中新增 ${ specificCountryCount } 個 IP 位址，或聯絡我們以取得量身打造的解決方案。"
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的訂閱。"
+      ],
       "You can now access and manage the account as an administrator.": [
         "您現在可以管理員身份存取與管理帳號。"
       ],
@@ -3755,6 +3882,9 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "您有${ availableCount }台可用的獨立伺服器。"
       ],
       "You have no invoices.": [
         "您沒有任何帳單。"
@@ -3941,6 +4071,15 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 位址"
+      ],
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } 天"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
       ],
       "Account storage": [
         "帳號儲存空間"
@@ -4512,6 +4651,11 @@
         "升級以解鎖聊天支援與其他進階功能，或是使用我們的免費支援表單來回報您的問題。"
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "您組織的${ twoFAMembers.length }/${ members.length }成員使用了雙重身分驗證"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "了解更多"
@@ -4718,6 +4862,48 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } calendar per user": [
+        "${ n } 個行事曆分配給每位使用者"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 個自訂電郵網域"
+      ],
+      "${ n } email address": [
+        "${ n } 組電郵位址/別名"
+      ],
+      "${ n } email address per user": [
+        "${ n } 組電郵位址/每位使用者"
+      ],
+      "${ n } filter": [
+        "${ n } 個篩選器"
+      ],
+      "${ n } folder": [
+        "${ n } 個資料夾"
+      ],
+      "${ n } folder and label": [
+        "${ n } 個資料夾和標籤"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email 組別名"
+      ],
+      "${ n } label": [
+        "${ n } 個標籤"
+      ],
+      "${ n } message per day": [
+        "${ n } 封郵件 / 每天"
+      ],
+      "${ n } vault": [
+        "${ n } 個保險櫃"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "包含無限數量 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -4871,6 +5057,9 @@
       "High-speed Swiss VPN that protects your privacy": [
         "高速的瑞士 VPN 可保護您的隱私"
       ],
+      "High-speed VPN on ${ n } device": [
+        "極速 VPN 裝載多達 ${ n } 臺裝置"
+      ],
       "HTML signatures": [
         "HTML簽名"
       ],
@@ -4907,6 +5096,9 @@
       "Priority support & live chat": [
         "優先支援與即時真人對話"
       ],
+      "Protect ${ n } device at a time": [
+        "同時保護 ${ n } 台裝置"
+      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
@@ -4924,6 +5116,9 @@
       ],
       "Send & receive invitations": [
         "傳送並接收邀請"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "於${ vpnServersCountData.paid.countries }+國家的伺服器"
       ],
       "Share files and folders via link": [
         "透過連結分享檔案及資料夾"
@@ -4997,6 +5192,9 @@
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
       ],
+      "Up to ${ n } user": [
+        "多達 ${ n } 位使用者"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
@@ -5011,6 +5209,9 @@
       ],
       "User session management": [
         "使用者作業階段管理"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "保管共享(每人至多${ n })"
       ]
     },
     "new_plans: feature info": {
@@ -5197,6 +5398,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "為您的線上身分創建多個電子郵件位址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
+      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "創建${ n }個電子郵件位址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
       ],
@@ -5378,6 +5582,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
       ],
+      "Create up to ${ n } calendar": [
+        "創建多達 ${ n } 個行事曆"
+      ],
       "Dedicated Account manager": [
         "專屬客戶經理"
       ],
@@ -5507,6 +5714,15 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } 點擊取得更多儲存空間；或移除一些分配儲存以釋出可用空間。"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "您的方案上限包含額外 ${ availableAddresses } 組電子郵件位址。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "您的方案上限包含額外 ${ availableNumberOfMembers } 位組織使用者。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "您的方案上限包含額外 ${ availableVPNAccess } 個 VPN 帳號。"
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "您的方案包含最高 ${ humanReadableAvailableSpace } 的儲存空間。"
@@ -5780,6 +5996,9 @@
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
         "請聯繫${ contactHref }我們的銷售團隊。"
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "您需要多餘 ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -5788,6 +6007,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
@@ -5872,6 +6094,9 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "貴組織中的 ${ n } 個管理員需要存取組織金鑰。"
+      ],
       "Changing organization keys": [
         "變更組織金鑰"
       ],
@@ -5940,6 +6165,12 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays }天"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours }小時"
+      ],
       "Didn’t make this request?": [
         "沒有提出這個需求嗎？"
       ],
@@ -5951,6 +6182,12 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "此權限將在${ timeRemaining.inDays }天後過期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
       "This permission expires soon": [
         "此權限即將到期"
@@ -5966,6 +6203,18 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "您可以在 ${ boldDate } 前重設密碼。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " 你有${ timeRemaining.inHours }小時重設密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -6028,6 +6277,9 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "還剩下${ gracePeriodHoursRemaining }小時"
+      ],
       "Didn’t make this request?": [
         "沒有提出這個需求嗎？"
       ],
@@ -6040,11 +6292,17 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "密碼重設從 ${ boldDate } 開始可使用。這讓您有時間取消任何詐騙需求。"
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "已需求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准需求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "我們收到了 ${ boldEmail } 的密碼重設需求。"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "您可以在${ gracePeriodHoursRemaining }小時內變更您的密碼"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -6095,6 +6353,9 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "需求密碼重設？"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "您將可以在${ gracePeriodHoursRemaining }小時內重設您的密碼"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -6106,6 +6367,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining }小時"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } 現在可用。"
       ],
@@ -6177,6 +6441,25 @@
         "使用無限制"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days }天"
+      ],
+      "${ hours } hour": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }分鐘"
+      ],
+      "${ seconds } second": [
+        "${ seconds }秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n }個月免費"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 位使用者"
@@ -6235,6 +6518,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -6398,6 +6684,9 @@
       "upgrade for more storage": [
         "升級以增加儲存"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "您的**${ currentPlanName }** 方案尚餘 **${ daysRemaining }** 天。"
+      ],
       "Your ${ appStorage } is almost full": [
         "您的 ${ appStorage } 快滿了"
       ],
@@ -6453,6 +6742,42 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } 專用伺服器"
+      ],
+      "${ n } calendar per user": [
+        "${ n } 個行事曆分配給每位使用者"
+      ],
+      "${ n } free VPN connection per user": [
+        "每一位用戶${ n }個免費VPN連線"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } 個極飆速 VPN 連線"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } 個極飆速 VPN 連線 / 每一位使用者"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } 個電郵位址"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } 個行事曆"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ MaxDomains } 個可用自訂網域，已用 ${ UsedDomains } 個"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers } 位可用會員名額，已用 ${ UsedMembers } 位"
+      ],
       "1 email address": [
         "1 組電郵位址"
       ],
@@ -6464,6 +6789,9 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "內建廣告攔截程式 (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
       ]
     },
     "Subscription change warning": {
@@ -6900,6 +7228,9 @@
       "Couldn’t create accounts": [
         "無法創建帳號"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "創建 ${ selectedUserIds.length } 個使用者"
+      ],
       "Create a new Gateway": [
         "創建新閘道器"
       ],
@@ -6953,6 +7284,9 @@
       ],
       "Delete address permanently?": [
         "永久刪除主要地址？"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "刪除伺服器（您仍可於 ${ days } 天內還原）"
       ],
       "Delete user?": [
         "刪除使用者?"
@@ -7031,6 +7365,9 @@
       ],
       "Every member of the organization can access": [
         "團隊內的每個成員都能存取"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } 個使用者帳號創建失敗。"
       ],
       "Find email or username": [
         "尋找電郵位址或使用者名稱"
@@ -7223,6 +7560,9 @@
       ],
       "Subscription": [
         "訂購授權"
+      ],
+      "Successfully created ${ n } user account": [
+        "成功創建 ${ n } 使用者帳號"
       ],
       "Summary": [
         "總結"
@@ -7429,6 +7769,14 @@
         "您身份提供者提供的單一登入使用者"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "我找到了另一個我更喜歡的服務"
@@ -7446,6 +7794,25 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix、Amazon Prime Video、BBC iPlayer、ESPN+、Disney+、HBO Now，還有更多。"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } 台伺服器"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 條VPN連線"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } 台，分布於 ${ numberOfCountries }+ 個國家"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "您的訂閱將每 ${ cycle }月自動更新。"
       ]
     },
     "vpn_2step: billing": {
@@ -7488,6 +7855,12 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "嘗試無風險的 ${ upsellPlanName }"
       ],

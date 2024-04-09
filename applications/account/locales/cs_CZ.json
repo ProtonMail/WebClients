@@ -830,6 +830,9 @@
       "Select calendar view": [
         "Vybrat zobrazení kalendáře"
       ],
+      "Select country": [
+        "Vyberte zemi"
+      ],
       "Select files": [
         "Vybrat soubory"
       ],
@@ -975,10 +978,10 @@
         "Odemknout"
       ],
       "Unlock Breach Report": [
-        "Odemknout přístup k úniku"
+        "Odemknout přístup k hlášení úniku"
       ],
       "Unlock breach reports": [
-        "Odemknout přístup k únikům"
+        "Odemknout přístup k hlášením úniků informací"
       ],
       "Unlock data": [
         "Odemknout údaje"
@@ -1008,10 +1011,10 @@
         "Upgrade na Business"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
-        "Navyšte pro povolení ${ PROTON_SENTINEL_NAME }"
+        "Navyšte svůj tarif pro povolení ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to view all": [
-        "Navyšte plán abyste zobrazili vše"
+        "Navyšte tarif pro zobrazení všeho"
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
@@ -1051,6 +1054,9 @@
       ],
       "View": [
         "Zobrazit"
+      ],
+      "View all reports": [
+        "Zobrazit všechny zprávy"
       ],
       "View invoice": [
         "Zobrazit fakturu"
@@ -3071,22 +3077,19 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Pokud bude smazána, tato adresa nebude moct být využita ani vámi ani nikým jiným."
-      ],
       "The next active address on your list will be set as the default.": [
-        "Další aktivní adresa v listu bude nastavena jako výchozí."
+        "Další aktivní adresa ve vašem seznamu bude nastavena jako výchozí."
       ],
       "You can only delete 1 address per year.": [
-        "Můžete pouze smazat 1 adresu ročně."
+        "Můžete smazat pouze 1 adresu ročně."
       ]
     },
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
-        "Můžete pouze smazat 1 adresu ročně"
+        "Můžete smazat pouze 1 adresu ročně"
       ],
       "You've reached the limit of address deletions for this user.": [
-        "Dosáhli jste limitu smazání adres pro tohoto uživatele."
+        "Dosáhli jste limitu počtu smazání adres pro tohoto uživatele."
       ]
     },
     "Delete calendar section description": {
@@ -3140,7 +3143,7 @@
         "K odstranění zápatí ${ MAIL_APP_NAME } navyšte tarif a odemkněte ještě více prémiových funkcí."
       ],
       "To view the full report including personalized recommendations, upgrade to a paid plan.": [
-        "Abyste se podívali na celý hlášení včetně upřesněných doporučení, navyšte svůj plán na placený."
+        "Pro zobrazení celého hlášení, včetně doporučení vám na míru, přejděte na placený tarif."
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
@@ -4399,7 +4402,7 @@
         "Neplatná URL"
       ],
       "Missing parameters in the URL.": [
-        "Chybějící parametry v URL"
+        "Chybějící parametry v URL."
       ],
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
@@ -4414,13 +4417,10 @@
         "Něco se pokazilo"
       ],
       "Support ticket does not exist.": [
-        "Žádost na podporu neexistuje."
+        "Požadavek na podporu neexistuje."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Chcete-li použít ${ MAIL_APP_NAME } nebo ${ CALENDAR_APP_NAME }, přejděte na webovou verzi."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Příliš mnoho přidružených relací, prosím vymažte soubory cookie a znovu se přihlaste."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
@@ -5382,7 +5382,7 @@
         "Ochrana"
       ],
       "Save big with the best deals on ${ VPN_APP_NAME }": [
-        "Ušetřete hodně s nejlepšími nabídkami pro ${ VPN_APP_NAME }"
+        "Ušetřete s nejlepšími nabídkami ${ VPN_APP_NAME }"
       ],
       "Select your deal": [
         "Vyberte svoji nabídku"
@@ -6328,7 +6328,7 @@
         "Zamezuje odesílatelům zjistit, zda a kdy jste zprávu otevřeli."
       ],
       "Breach Alert is powered by ${ BRAND_NAME }'s propietary datasets, open-source datasets, and Constella Intelligence. ${ dataBreachLink }": [
-        "Oznámení o ohrožení je založena na datech služby ${ BRAND_NAME }, volně dostupných datech a Constella Intelligence. ${ dataBreachLink }"
+        "Upozornění na únik dat je založeno na soukromých datových sadách ${ BRAND_NAME }, volně dostupných datových sadách a na Constella Intelligence. ${ dataBreachLink }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -6341,6 +6341,12 @@
       ],
       "Cancel anytime": [
         "Možnost zrušit kdykoli"
+      ],
+      "Can’t access your recovery email?": [
+        "Nemáte přístup k emailu pro obnovení?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Nemáte přístup k telefonu pro obnovení?"
       ],
       "Center": [
         "Zarovnat na střed"
@@ -6625,7 +6631,7 @@
         "Načtení záznamů selhalo."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rychlé a zaměřené. Email a kalendář, přímo na vaší ploše."
+        "Rychlost a praktičnost. E-mail a kalendář přímo na vaší ploše."
       ],
       "Fill in user details": [
         "Vyplňte údaje uživatele"
@@ -6937,7 +6943,7 @@
         "MM/RR"
       ],
       "Monitor accounts": [
-        "Sledovst účty"
+        "Sledování účtů"
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -6976,7 +6982,7 @@
         "Neexistují žádné adresy"
       ],
       "No changes made to the current subscription": [
-        "Žádné změny provedeny na vašem předplatné"
+        "Nebyly provedeny žádné změny vašeho předplatného"
       ],
       "No credit card required": [
         "Platební karta není vyžadována"
@@ -7180,7 +7186,7 @@
         "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
       ],
       "Plus ${ numOfBreaches } more": [
-        "A ještě ${ numOfBreaches }"
+        "A ještě ${ numOfBreaches } další(ch)"
       ],
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
@@ -7582,7 +7588,7 @@
         "Toto nahradí vaše dočasné heslo. V budoucnu jej použijete pro přístup k vašemu ${ BRAND_NAME } Účtu."
       ],
       "This will sign you out of all accounts currently logged in.": [
-        "Toto vás odhlásí ze všech účtů ve kterých jste aktuálně přihlášeni."
+        "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
@@ -7631,6 +7637,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Chcete-li pokračovat, vyberte způsob obnovení účtu, abychom mohli žádost ověřit."
+      ],
+      "To proceed, we must verify the request.": [
+        "Než budeme pokračovat, musíme vaši žádost ověřit."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Chcete-li zabezpečit připojení k internetu, stáhněte a nainstalujte do svého zařízení aplikaci ${ VPN_APP_NAME } a připojte se k serveru."
@@ -7735,13 +7744,13 @@
         "URL odkaz"
       ],
       "Use ${ BRAND_NAME } Pass to generate strong passwords and avoid password re-use": [
-        "Využijte ${ BRAND_NAME } Pass pro vytvoření silných hesel a zabráníte tím znovuvyužití hesel"
+        "Používejte ${ BRAND_NAME } Pass pro vytvoření silných hesel a zabraňte opětovného používání stejného hesla"
       ],
       "Use ${ VPN_APP_NAME } with Netshield enabled to protect you from phishing and malware": [
-        "Využijte ${ VPN_APP_NAME } se zapnutým Netshield abyste ochránili sebe před podvody a viry"
+        "Používejte ${ VPN_APP_NAME } se zapnutým Netshield abyste se chránili před phishingem a malware."
       ],
       "Use aliases to sign up for online services. This protects your real email address and identity, limiting the blast radius of a breach.": [
-        "Použijte aliasy na zaregistrování na online službách. Chrání vám to skutečnou adresu a identitu a omezuje to dosah škod napáchaných při nabourání online služby."
+        "Používejte aliasy při registraci do online služeb. Toto chrání vaší hlavní e-mailovou adresu a identitu, čímž je omezen dopad úniku dat."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
@@ -7804,7 +7813,7 @@
         "Upozornění: Odstranění nelze vrátit zpět. Tímto úkonem také odeberete přístup ke všem připojeným službám a odstraníte všechny své kontakty."
       ],
       "Ways you can minimize your breach risks": [
-        "Způsoby, jakými můžete snížit vaše rizika úniků informací"
+        "Způsoby, kterými můžete snížit riziko úniků vašich informací"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Doporučujeme používat jen oficiální aplikace ${ VPN_APP_NAME }, pokud je to možné."
@@ -7819,7 +7828,7 @@
         "Právě jsme vám poslali nový odkaz."
       ],
       "We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.": [
-        "My sledujeme vaše e-mailové adresy, hesla a osobní data aby se neobjevovaly na temném webu a oznámíme vás v případě ohrožení."
+        "Sledujeme dark web a upozorňujeme vás při úniku vaší e-mailové adresy, hesla a osobních dat."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit vaši platební metodu u vaší banky."
@@ -7868,6 +7877,9 @@
       ],
       "Welcome": [
         "Vítejte"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Odešleme ověřovací kód na ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
@@ -7942,7 +7954,7 @@
         "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Využíváte více úložiště než je dostupné v předplatným ${ downgradedPlanName }. Prosim odstraňte data abyste mohli snížit svoje předplatné."
+        "Využíváte více úložiště než je dostupné v rámci tarifu ${ downgradedPlanName }. Prosím odstraňte některá data abyste mohli snížit své předplatné."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími ${ BRAND_NAME } kalendáři."
@@ -9899,8 +9911,14 @@
       ]
     },
     "mailtrial2024: Info": {
+      "for your first month": [
+        "pro první měsíc"
+      ],
       "Get ${ planName } for ${ price }": [
         "Získat ${ planName } za ${ price }"
+      ],
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Vaše předplatné bude automaticky obnoveno každých ${ renewTime } za ${ renewablePrice }, zrušitelné kdykoliv"
       ]
     },
     "Maintenance mode": {
@@ -9930,6 +9948,9 @@
     "Member action": {
       "Activate user": [
         "Aktivovat uživatele"
+      ],
+      "Add address": [
+        "Přidat adresu"
       ],
       "Change password": [
         "Změnit heslo"
@@ -10426,7 +10447,7 @@
         "Konzole správce"
       ],
       "Administration Panel": [
-        "Administrátorský panel"
+        "Panel správce"
       ],
       "Advanced network security": [
         "Pokročilé zabezpečení sítě"
@@ -10435,7 +10456,7 @@
         "Pokročilé zabezpečení sdílení"
       ],
       "Auto-delete Spam and Trash": [
-        "Automaticky mazat spam a koš"
+        "Automatické smazání obsahu složek spam a koš"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
@@ -10603,7 +10624,7 @@
         "Podpora routeru"
       ],
       "Schedule and snooze emails for any time": [
-        "Naplánovat a ztišit e-maily na jakoukoliv dobu"
+        "Naplánujte a odložte e-maily na později"
       ],
       "Schedule messages at any time": [
         "Plánování zpráv v libovolném čase"
@@ -10774,7 +10795,7 @@
         "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Pokročilá ochrana pro týmy, která překonává to, co je na trhu běžné."
+        "Pokročilá ochrana pro týmy, která překonává to, co je běžné na trhu."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
@@ -10955,8 +10976,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Umožňuje vám nastavit automatické odpovědi na příchozí zprávy"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Automaticky vyčistit zprávy starší než 30 dnů z koše a spamu"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Automaticky přeposlat e-maily odeslané do vašeho ${ MAIL_APP_NAME } účtu do jakýkoliv jiné e-mailové adresy."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Odesílání hromadných reklamních e-mailů a programovatelných e-mailů momentálně není podporováno. Pro tento případ doporučujeme využít služeb poskytovatele dedikované e-mailové služby."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Vyberte vlastní časy aby jste byly upozorněni o e-mailu anebo kdy vám zpráva přijde"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
@@ -13210,10 +13240,13 @@
         "Snížením úrovně přijdete o následující výhody. Jste si jisti, že chcete pokračovat?"
       ],
       "Consider upgrading your plan to continue to use your account without interruptions.": [
-        "Zvažte navýšení vašeho plánu abyste mohli pokračovat v používání účtu bez přerušení."
+        "Zvažte navýšení vašeho tarifu abyste mohli pokračovat v používání účtu bez přerušení."
       ],
       "contact your administrator": [
         "kontaktujte svého správce"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Pro všechny služby ${ BRAND_NAME }"
       ],
       "Get more storage": [
         "Získat více úložného prostoru"
@@ -13228,7 +13261,10 @@
         "Navyšte svůj tarif a pokračujte v používání účtu bez přerušení."
       ],
       "Upgrade your plan to increase your storage.": [
-        "Navyšte svůj plán abyste získali více úložiště."
+        "Navyšte svůj tarif, abyste získali více úložiště."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Přidáme kredit za zbývající čas k vašemu ${ BRAND_NAME } účtu."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
@@ -13251,8 +13287,11 @@
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
       ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Ztratíte přístup k nejrychlejší rychlosti VPN, ochranu na 10 zařízeních, vysoko-rychlostní streamování, blokování reklam a ochrana proti malwaru, a k prioritní podpoře."
+      ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Ztratíte přístup k neomezeným přihlášením a poznámek, neomezeným hide-my-email adresám, 20 trezorů a prioritní podpoře."
+        "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
       ]
     },
     "Subscribe to calendar modal": {
@@ -14025,7 +14064,7 @@
         "Fakturační cyklus"
       ],
       "Breach Alerts": [
-        "Upozornění o únicích"
+        "Upozornění na úniky dat"
       ],
       "Breach Date": [
         "Datum úniku"
@@ -14535,7 +14574,7 @@
         "Noční motiv"
       ],
       "No account information was found in any data breaches": [
-        "Žádné informace o vašich účtech nebyly nalezeny v žádných datových únicích"
+        "V uniklých datech nebyly nalezeny žádné informace o vašich účtech"
       ],
       "No recovery method": [
         "Žádná metoda pro obnovení"
@@ -15356,6 +15395,17 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích"
       ]
     },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Předplatné se automaticky obnoví každý měsíc. Budete účtováni za měsíc."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Předplatné se automaticky obnoví za 3 měsíce. Budete účtováni za 3 měsíce."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Potom budete účtováni každých 12 měsíců za ${ renewPrice }."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -15505,7 +15555,7 @@
         "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Musíte ${ activateLink } organizační klíč před přidáním e-mailové adresy neveřejnýmu uživateli."
+        "Musíte ${ activateLink } klíč organizace před přidáním e-mailové adresy soukromému uživateli."
       ],
       "You will lose any customization you made so far.": [
         "Přijdete o změny, které jste doposud provedli."

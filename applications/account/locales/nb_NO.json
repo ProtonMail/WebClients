@@ -104,6 +104,9 @@
       "Add notification": [
         "Legg til varsel"
       ],
+      "Add or switch account": [
+        "Legg til eller bytt konto"
+      ],
       "Add PayPal": [
         "Legg til PayPal"
       ],
@@ -1073,6 +1076,9 @@
       "Void all recovery files?": [
         "Ugyldiggjøre alle gjenopprettingsfiler?"
       ],
+      "Welcome": [
+        "Velkommen"
+      ],
       "What do I get?": [
         "Hva får jeg?"
       ],
@@ -1262,6 +1268,23 @@
       ],
       "New email": [
         "Ny e-post"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Surf privat på nettet og blokker annonser"
+      ],
+      "Keep your schedule private": [
+        "Hold timeplanen privat"
+      ],
+      "Protect your passwords and identity": [
+        "Beskytt passordene og identiteten din"
+      ],
+      "Safeguard your files and photos": [
+        "Beskytt filene og bildene dine"
+      ],
+      "Secure your communications": [
+        "Sikre kommunikasjonen din"
       ]
     },
     "Apps dropdown": {
@@ -3051,9 +3074,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Når den er slettet, kan ikke denne adressen brukes igjen av deg eller noen andre."
-      ],
       "The next active address on your list will be set as the default.": [
         "Den neste aktive adressen på listen din vil bli angitt som standard."
       ],
@@ -4429,9 +4449,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "For å bruke ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }, bytt til nettversjonen."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "For mange barneøkter, vennligst fjern informasjonskapslene dine og logg på igjen."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke laste denne siden. Vennligst oppdater siden eller undersøk internettforbindelsen din."
@@ -6309,6 +6326,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "Sjekk statusen på importer og videresending."
+      ],
+      "Choose an app to get started": [
+        "Velg en app for å komme i gang"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."

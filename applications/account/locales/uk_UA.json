@@ -2955,9 +2955,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Після видалення цю адресу більше не зможете використовувати ні ви, ні будь-хто інший."
-      ],
       "The next active address on your list will be set as the default.": [
         "Наступна активна адреса у вашому списку буде встановлена за замовчуванням."
       ],
@@ -4169,9 +4166,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Щоб використовувати ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }, перейдіть до вебверсії."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Занадто багато дочірніх сеансів. Будь ласка, очистьте файли cookie та увійдіть знову."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
@@ -6031,7 +6025,7 @@
         "Обов'язково скопіюйте свій пароль і збережіть його в безпечному місці."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
-        "Перед активацією користувача необхідно вказати пароль і створити ключі шифрування для адрес."
+        "Перш ніж активувати користувача, необхідно вказати пароль і створити ключі шифрування для адрес."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед створенням цієї адреси необхідно ввести пароль і створити для неї ключі шифрування."
@@ -6229,7 +6223,7 @@
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
       ],
       "Downgrade": [
-        "Понизити тарифний план"
+        "Перейти на нижчий тарифний план"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
@@ -6361,7 +6355,7 @@
         "Помилка отримання журналів."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Швидкий і зосереджений. Електронна пошта та календар прямо на робочому столі."
+        "Швидкість і зосередження. Електронна пошта й календар безпосередньо на вашому робочому столі."
       ],
       "Fill in user details": [
         "Заповніть дані користувача"
@@ -6517,7 +6511,7 @@
         "неактивний"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "В тому числі ${ formattedTaxRate }% ${ taxName }: ${ price }"
+        "Включно з ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
@@ -6577,7 +6571,7 @@
         "Видалення ключа незворотне!"
       ],
       "Keys created": [
-        "Ключі створені"
+        "Ключі створено"
       ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
@@ -6667,7 +6661,7 @@
         "ММ/РР"
       ],
       "Monitor accounts": [
-        "Монітор облікових записів"
+        "Моніторинг облікових записів"
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -6706,7 +6700,7 @@
         "Немає адрес"
       ],
       "No changes made to the current subscription": [
-        "У поточну підписку не внесено жодних змін"
+        "Щодо поточної передплати не внесено жодних змін"
       ],
       "No credit card required": [
         "Банківська картка не потрібна"
@@ -7663,7 +7657,7 @@
         "Ви увійшли в обліковий запис ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Ви використовуєте більше пам’яті сховища, ніж включено в план ${ downgradedPlanName }. Будь ласка, видаліть дані, щоб понизити тарифний план."
+        "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."

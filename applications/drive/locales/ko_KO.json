@@ -58,6 +58,9 @@
       "Apply": [
         "적용"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
+      ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
       ],
@@ -204,6 +207,12 @@
       ],
       "Delete": [
         "삭제"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } 개의 연락처 삭제"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } 개의 그룹 삭제"
       ],
       "Delete contact": [
         "연락처 삭제"
@@ -757,6 +766,9 @@
       "View invoice": [
         "청구서 보기"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
       "Your 3 GB bonus": [
         "나의 3 GB 보너스"
       ],
@@ -782,6 +794,17 @@
       ],
       "You don't have any groups.": [
         "그룹을 가지고 있지 않습니다."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "사용자 지정 이메일 도메인 ${ domains }개"
+      ],
+      "${ ips } server": [
+        "${ ips }개 서버"
+      ],
+      "${ users } user": [
+        "${ users }명 사용자"
       ]
     },
     "Alert": {
@@ -871,6 +894,9 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "사용자 맞춤 도메인 ${ domains }개, 이메일 주소 ${ addresses }개, 무제한 hide-my-email 별칭, 캘린더 공유의 지원 외 기타 등등."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
@@ -976,6 +1002,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } 사용자"
       ]
     },
     "Collapsible tooltip": {
@@ -2209,6 +2240,12 @@
       "Could not open updated vault": [
         "업데이트된 금고를 열 수 없습니다."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "최소 ${ calendarsToFixCount } 캘린더를 선택 해제하거나"
+      ],
       "Device name does not match": [
         "디바이스 이름이 맞지 않습니다"
       ],
@@ -2284,6 +2321,9 @@
       "Last name is too long": [
         "성(이름)이 너무 깁니다."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "존재하는 ${ BRAND_NAME } 에 최소한 ${ calendarsToFixCount } 개의 캘린더를 병합하십시오"
+      ],
       "Missing key packet": [
         "키 패킷 없음"
       ],
@@ -2311,6 +2351,12 @@
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
+      ],
       "Password is required": [
         "비밀번호가 필요함"
       ],
@@ -2323,6 +2369,9 @@
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "계속하려면 표시된 충돌을 해결해 주세요."
+      ],
       "Please provide either a first name, a last name or a display name": [
         "성, 이름 및 표시되는 이름을 입력하십시오."
       ],
@@ -2334,6 +2383,9 @@
       ],
       "Primary address key is not decrypted.": [
         "기본 주소 키가 복호화되지 않았습니다."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "중복된 수신자 ${ joinedInvitee }명을 삭제했습니다."
       ],
       "Report failed to be sent": [
         "보고서 보내기 실패"
@@ -2455,6 +2507,9 @@
       "Validation error": [
         "검증 오류"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
+      ],
       "You have reached the contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
       ],
@@ -2486,6 +2541,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "알 수 없는 오류. 불러오기가 재시작되어야 함."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "파일 ${ formattedFilename }에 이벤트가 ${ MAX_IMPORT_EVENTS }개 넘게 포함되어 있습니다."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "사용자의 ${ formattedFilename } 파일은 유효하지 않은 방법이므로 불러올 수 없습니다."
@@ -2737,6 +2795,11 @@
         "(제목 없음)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks }개 실패"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "총 3TB 저장공간"
@@ -2877,6 +2940,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "바이트"
+      ],
       "GB": [
         "GB"
       ],
@@ -2888,6 +2954,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "바이트"
+      ],
+      "Gigabyte": [
+        "기가바이트"
+      ],
+      "Kilobyte": [
+        "킬로바이트"
+      ],
+      "Megabyte": [
+        "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Filter notification": {
@@ -2946,6 +3029,9 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } 개 제안 찾음. 탐색하려면 키보드를 사용하세요."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
       ]
@@ -2962,6 +3048,12 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화하고 캘린더에 추가했습니다"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "이벤트를 암호화하고 추가하는 데 오류가 발생했습니다. 이벤트 ${ totalToImport }개 중 ${ totalImported }개를 성공적으로 불러왔습니다."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "이벤트 생성 및 암호화 중 문제가 발생했습니다. 이벤트를 불러올 수 없습니다."
       ],
@@ -2996,11 +3088,20 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "가져온 초대는 ${ CALENDAR_APP_NAME } 에 주최자 및 참가자 세부 정보가 없는 간단한 이벤트로 표시됩니다. 이벤트 업데이트를 받고 참가자를 보려면, 주최자에게 ${ BRAND_NAME } 이메일 주소를 사용하여 초대를 요청하세요."
       ],
+      "This file contains an event invitation:": [
+        "이 파일은 이벤트 초대를 포함하고 있습니다:"
+      ],
+      "This file contains an invitation response:": [
+        "이 파일은 초대 응답을 포함합니다:"
+      ],
       "This file contains some data that we cannot import:": [
         "이 파일은 불러올 수 없는 데이터를 포함하고 있습니다:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport }개의 연락처를 연락처 목록에 암호화하여 추가했습니다."
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "사용자의 연락처를 암호화 및 생성 중에 오류가 감지되었습니다. 연락처를 불러올 수 없습니다."
       ],
@@ -3020,6 +3121,11 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "연락처 (${ contactId }): "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "연락처 ${ totalContacts }개"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3191,6 +3297,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 이벤트 중 ${ totalEventsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 펼치세요."
+      ],
       "No contact can be imported. Click for details": [
         "불러올 연락처 없음. 세부사항을 보려면 클릭하십시오"
       ],
@@ -3202,14 +3311,56 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount }개 다운로드 중"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount }개 다운로드 중 (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount }개 업로드 중 (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "이메일 주소 ${ addressCount }개"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 당신의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount }개 새 달력"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount }개 캘린더로 병합됨"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount }개 취소됨"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 개 연락처가 여러 이메일 주소를 포함합니다."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } 회원"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 은(는) 여러 이메일 주소를 포함하고 있습니다."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } 연락처 찾음"
+      ],
+      "${ contactsLength } contact": [
+        "연락처 ${ contactsLength }개"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount }개 완료됨"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount }개 다운로드됨"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount }개 업로드됨"
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store에서 ${ DRIVE_APP_NAME } 받기"
@@ -3217,17 +3368,62 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store에서 ${ DRIVE_APP_NAME } 받기"
       ],
+      "${ errorCount } failed": [
+        "${ errorCount }개 실패"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } 그룹 찾음"
+      ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } 암호화된 파일"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } 암호화된 파일..."
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount }개 일시 정지됨"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized }개 폴더 찾음"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail에서 ${ providerFoldersNumLocalized }개 라벨 찾음"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount }개 선택됨"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized }개 라벨 선택함"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount }개 건너뜀"
+      ],
       "${ speed }/s": [
         "${ speed }/초"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 이(가) 이미 이 위치에 존재합니다."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 회원)"
       ],
       "A number will be added to the filename": [
         "숫자가 파일 이름에 추가됩니다"
@@ -3244,11 +3440,20 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "총 (${ totalFoldersCount } 개 폴더)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "총 (${ totalFoldersCount } 개 라벨)"
+      ],
       "All encrypted files": [
         "전체 암호화된 파일"
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
       ],
       "Also try looking in Trash.": [
         "또한 휴지통을 확인해 보세요."
@@ -3367,6 +3572,9 @@
       "Country code": [
         "국가 코드"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount }개의 새 달력 만들기"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 폴더를 만드세요."
       ],
@@ -3402,6 +3610,9 @@
       ],
       "Decrypting files": [
         "파일 복호화 중"
+      ],
+      "Delete locked drive": [
+        "잠긴 드라이브 삭제"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "디지털 서명이 인증되었습니다. 이 파일은 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
@@ -3505,6 +3716,9 @@
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "남은 예상 시간: ${ estimatedMinutes }분"
+      ],
       "Estimated time remaining: Less than a minute": [
         "남은 예상 시간: 1분 이하"
       ],
@@ -3594,6 +3808,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "만약 이들 중 하나를 가지고 있다면, ${ BRAND_NAME } 계정 설정에서 차단 해제 절차를 계속하세요."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount }개 중 ${ calendarCount }개 달력 불러오기"
       ],
       "Import from": [
         "다음에서 가져오기"
@@ -3697,6 +3914,9 @@
       "Makes your account safer": [
         "당신의 계정을 더 안전하게 만드세요"
       ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
+      ],
       "Medium Priority": [
         "중요도 보통"
       ],
@@ -3769,6 +3989,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "${ MAX_CUSTOM_PASSWORD_LENGTH }글자까지만 허용됩니다"
+      ],
       "Only the people with the link and the password can access this file.": [
         "링크와 비밀번호를 가지고 있는 사람만 이 파일에 접근할 수 있습니다."
       ],
@@ -3813,6 +4036,9 @@
       ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "${ groupCount }개 그룹에 추가 할 이메일 주소를 선택하세요."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "${ groupName } 개 그룹에 추가 할 이메일 주소를 선택하세요."
@@ -3912,6 +4138,9 @@
       ],
       "Search Enabled": [
         "검색 활성화됨"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } 파일 안전히 다운로드됨"
       ],
       "Securely downloaded all encrypted files": [
         "안전히 모든 암호화된 파일을 다운로드 했습니다."
@@ -4062,6 +4291,9 @@
       ],
       "This month": [
         "이번 달"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "링크가 삭제되고 아무도 이 링크를 통해 파일이나 폴더에 접근할 수 없게 됩니다."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "이 작업은 동기화된 장치 ${ deviceName }을(를) ${ DRIVE_APP_NAME }에서 제거하고, 내 컴퓨터에 추가한 폴더의 동기화를 중지합니다."
@@ -4264,6 +4496,9 @@
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
       ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "웰컴 보너스로 저장공간 3 GB 확장을 받을 수 있는 시간이 ${ expiresInDays } "
+      ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
       ],
@@ -4335,6 +4570,14 @@
         "자세한 내용을 보려면 클릭하세요"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } 개 라벨 선택함"
+      ]
+    },
     "Item": {
       "file attributes": [
         "파일 속성"
@@ -4387,6 +4630,12 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay }일"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } 년"
       ],
       "(Expired)": [
         "(만료됨)"
@@ -4498,6 +4747,9 @@
       ],
       "Delete": [
         "삭제"
+      ],
+      "Delete drive?": [
+        "드라이브를 삭제할까요?"
       ],
       "Delete link": [
         "링크 삭제하기"
@@ -4928,6 +5180,9 @@
       "Almost there": [
         "거의 다왔습니다"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "생성된 캘린더수: ${ calendarsToBeCreated }개 중 ${ createdCalendarCount }개"
+      ],
       "Connecting to your email provider": [
         "사용자의 이메일 제공자에 연결 중"
       ],
@@ -4971,6 +5226,20 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
       ]
     },
     "mailtrial2024: Action": {
@@ -5262,6 +5531,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "캘린더 ${ n }개"
+      ],
+      "${ n } calendar per user": [
+        "사용자 당 ${ n }개 캘린더"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
@@ -5330,11 +5605,19 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
+      ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "최대 ${ n }개 캘린더 생성"
       ]
     },
     "Notification": {
@@ -5379,6 +5662,39 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\"의 이름을 성공적으로 변경하였습니다"
+      ],
+      "${ count } item failed to be decrypted": [
+        "${ count }개 암호화 해독 실패"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems }개가 휴지통에서 영구적으로 삭제되었습니다"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems }개를 휴지통에서 영구적으로 삭제하는 데 실패했습니다"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems }개 이동 실패"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems }개를 휴지통으로 이동하는데 실패했습니다"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems }개를 휴지통에서 복구하는 데 실패했습니다"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems }개가 휴지통으로 이동되었습니다"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems }개가 휴지통에서 복구되었습니다"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems }개가 성공적으로 삭제되었습니다"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "항목 ${ numberOfItems }개의 링크를 삭제하는 데 실패했습니다"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "항목 ${ numberOfItems }개의 링크가 삭제되었습니다"
       ],
       "${ PROTON_SENTINEL_NAME } has been disabled": [
         "${ PROTON_SENTINEL_NAME }이(가) 비활성화 되었습니다."
@@ -5425,6 +5741,9 @@
       "Failed to upload files: ${ err }": [
         "파일 업로드 실패: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "\"${ filename }\" 및 ${ count }개의 파일 및 폴더가 이미 업로드 중입니다"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "파일 또는 폴더 \"${ filename }\"이(가) 이미 업로드 중입니다"
       ],
@@ -5433,6 +5752,15 @@
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
+      ],
+      "Move ${ n } file": [
+        "파일 ${ n }개 이동"
+      ],
+      "Move ${ n } folder": [
+        "폴더 ${ n }개 이동"
+      ],
+      "Move ${ n } item": [
+        "항목 ${ n }개 이동"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
@@ -5510,6 +5838,9 @@
       ],
       "Set a recovery method": [
         "복구 방법 설정"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "${ expiresInDays }일 이내로 다음을 완료하세요:"
       ],
       "Upload a file": [
         "파일 업로드"
@@ -5702,6 +6033,15 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts }개 중 ${ contactsExported.length }개의 연락처를 성공적으로 내보냈습니다."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ totalBeDeleted }개 중 ${ model.deleted.length }를 성공적으로 삭제했습니다."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ totalBeMerged }개 중 ${ model.submitted.length }개의 연락처를 성공적으로 병합했습니다."
+      ],
       "No contacts exported.": [
         "내보낼 연락처 없음."
       ],
@@ -5838,11 +6178,23 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays }일"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours }시간"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "비밀번호 재설정 요청이 승인되었습니다 (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "권한이 ${ timeRemaining.inDays }일 내에 만료됩니다."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "권한이 ${ timeRemaining.inHours }시간 내에 만료됩니다."
       ],
       "This permission expires soon": [
         "이 권한은 곧 만료됩니다"
@@ -5852,6 +6204,18 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -5911,8 +6275,14 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining }시간 이상"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "만약 재설정 요청을 자신이 하지 않았다면, 요청을 즉시 취소하세요."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "비밀번호 재설정 요청됨 (${ user.Email }) ${ hoursRemaining }시간 내에 비밀번호를 변경할 수 있습니다."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "비밀번호를 재설정하려고 하는지 확인하기 위해, 보통 요청을 승인하기 전에 72시간을 기다립니다. ${ boldTimeLeft } 내에 비밀번호를 변경할 수 있습니다. ${ viewRequest }"
@@ -5940,6 +6310,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining }시간"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset }이(가) 이제 가능합니다."
       ],
@@ -5985,6 +6358,25 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Unlimited로 전환"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days }일"
+      ],
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
+      ],
+      "${ seconds } second": [
+        "${ seconds }초"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n }개월 무료"
       ]
     },
     "specialoffer: Deal details": {
@@ -6045,6 +6437,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
       "/ month": [
         "/ 월"
       ],
@@ -6219,6 +6614,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft }개 남음"
+      ],
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
       ],
@@ -6236,6 +6637,12 @@
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
+      ],
+      "Contact deleted": [
+        "콘텐츠 삭제됨"
+      ],
+      "Contact group deleted": [
+        "콘텐츠 그룹 삭제됨"
       ],
       "Contact saved": [
         "연락처가 저장되었습니다"
@@ -6359,9 +6766,43 @@
         "vCard 란"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }시간"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5시간"
+      ],
+      "${ minutes } min": [
+        "${ minutes }분"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5시간"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "# 다운로드"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount }개 이메일 주소"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } 개의 파일 다운로드에 실패함"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } 개의 파일 전송에 실패함"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } 개의 파일 업로드에 실패함"
       ],
       "Account recovery": [
         "계정 복구"
@@ -6374,6 +6815,9 @@
       ],
       "Add contact group name": [
         "연락처 그룹 이름 추가"
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } 그룹에 추가"
       ],
       "Add to ${ groupName }": [
         "${ groupName }그룹에 추가"
@@ -6477,6 +6921,12 @@
       "Day theme": [
         "주간 테마"
       ],
+      "Delete ${ count } contact": [
+        "${ count }개의 연락처 삭제"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count }개의 그룹 삭제"
+      ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제할까요"
       ],
@@ -6564,6 +7014,9 @@
       "Folder details": [
         "폴더 세부 정보"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults }개 결과 찾음"
+      ],
       "Get advanced protection": [
         "향상된 보호 얻기"
       ],
@@ -6575,6 +7028,9 @@
       ],
       "Human verification": [
         "사람임을 인증"
+      ],
+      "Import as simple event?": [
+        "간단 이벤트로 불러올까요?"
       ],
       "Import contacts": [
         "연락처 가져오기"
@@ -6938,7 +7394,18 @@
         "내보낼 연락처가 없습니다."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
+      ]
+    },
     "Validation Error": {
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "이름은 최대 ${ MAX_NAME_LENGTH }글자까지입니다."
+      ],
       "Name must not be empty": [
         "이름은 비워둘 수 없습니다"
       ]
@@ -6957,6 +7424,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "이 연락처 그룹을 영구적으로 삭제하시겠습니까?"

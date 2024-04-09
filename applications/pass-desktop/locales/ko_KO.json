@@ -451,6 +451,9 @@
       "Auto-lock could not be disabled": [
         "자동 잠금을 비활성화 할 수 없습니다."
       ],
+      "Cannot send invitation at the moment": [
+        "현재 초대 전송할 수 없습니다."
+      ],
       "Cannot send invitations at the moment": [
         "현재 초대 전송할 수 없습니다."
       ],
@@ -489,6 +492,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } 손상된 csv 행 감지됨"
       ],
       "Editing item failed": [
         "항목 수정 실패"
@@ -683,6 +689,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "바이트"
+      ],
       "GB": [
         "GB"
       ],
@@ -694,6 +703,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "바이트"
+      ],
+      "Gigabyte": [
+        "기가바이트"
+      ],
+      "Kilobyte": [
+        "킬로바이트"
+      ],
+      "Megabyte": [
+        "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Info": {
@@ -708,6 +734,15 @@
       ],
       "${ count } invites successfully sent": [
         "초대 ${ count }개를 잘 보냈습니다"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount }명 회원"
+      ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } 회"
+      ],
+      "${ n } item": [
+        "${ n }개 항목"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
@@ -832,6 +867,9 @@
       "For security reasons, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 수락되어야 합니다."
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "생성된 비밀번호가 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주의 기간 동안 저장됩니다."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "각 팀이나 프로젝트를 위한 금고를 만들어 Pass를 최대한 활용하세요."
       ],
@@ -843,6 +881,9 @@
       ],
       "Import the CSV file below.": [
         "아래에 CSV 파일을 불어오십시오."
+      ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total }개 항목을 불러왔습니다"
       ],
       "Imported on ${ date }": [
         "${ date }에 들여옴"
@@ -882,6 +923,9 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
+      ],
+      "item": [
+        "항목"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "항목 \"${ payload.item.data.metadata.name }\" 이(가) 생성되었습니다."
@@ -975,6 +1019,9 @@
       ],
       "Pass Plus trial": [
         "Pass Plus 체험"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주보다 오래된 비밀번호는 기록에서 자동 삭제됩니다."
       ],
       "Permanently deleting selected items": [
         "선택 항목을 영구적으로 삭제하는 중"
@@ -1093,6 +1140,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "내보낸 파일이 PGP를 통해 암호화되며 강력한 암호가 필요합니다."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "붙여넣으려는 텍스트는 ${ maxLength } 문자의 최대 허용 길이보다 깁니다."
       ],
@@ -1168,6 +1218,9 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 처음 두 금고로 이동됩니다. 모든 금고 간에 항목을 이동하려면 구독을 업그레이드하세요."
       ],
@@ -1197,6 +1250,12 @@
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length }글자"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount }단어"
+      ],
       "1 hour": [
         "1시간"
       ],
@@ -1626,6 +1685,9 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count }개 항목"
+      ],
       "You selected ${ semiboldText } in this vault": [
         "이 금고애서 ${ semiboldText }개 선택했습니다."
       ]
@@ -1740,6 +1802,11 @@
       ],
       "Write your note": [
         "메모를 작성하세요"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ]
     },
     "Title": {
@@ -1971,6 +2038,9 @@
       ],
       "item was imported without custom fields": [
         "항목이 커스텀 입력란 없이 불러와졌습니다."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "최대 길이는 ${ maxLength }자 입니다."
       ],
       "Missing alias prefix": [
         "별명 접두사가 없습니다."

@@ -608,6 +608,9 @@
       "Failed to delete selected items": [
         "Fout bij het verwijderen van geselecteerde items"
       ],
+      "Failed to edit organization settings": [
+        "Fout bij het bewerken van organisatie instellingen"
+      ],
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
       ],
@@ -1157,6 +1160,9 @@
       "Open the Extensions menu": [
         "Open het Extensie-menu"
       ],
+      "Organization settings successfully updated": [
+        "Organisatie instellingen succesvol bijgewerkt"
+      ],
       "Owner": [
         "Eigenaar"
       ],
@@ -1290,6 +1296,9 @@
       "Syncing your vaults…": [
         "Uw kluizen synchroniseren..."
       ],
+      "Team members can only share vaults within organization": [
+        "Teamleden kunnen alleen kluizen delen binnen de organisatie"
+      ],
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
       ],
@@ -1347,6 +1356,9 @@
       ],
       "Update login": [
         "Update login"
+      ],
+      "Updating organization settings": [
+        "Organisatie-instellingen worden bijgewerkt"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgrade ${ PASS_APP_NAME }"
@@ -1496,6 +1508,9 @@
       ],
       "Application logs": [
         "Applicatielogboek"
+      ],
+      "Authenticate with passkeys": [
+        "Verifiëren met passkeys"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Auto-vergrendel ${ PASS_APP_NAME }"
@@ -1719,8 +1734,14 @@
       "Oldest to newest": [
         "Van oud naar nieuw"
       ],
+      "Organization": [
+        "Organisatie"
+      ],
       "Passkey": [
         "Toegangssleutel"
+      ],
+      "Passkeys": [
+        "Passkeys"
       ],
       "Passphrase": [
         "Wachtzin"
@@ -1763,6 +1784,9 @@
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Save passkeys": [
+        "Passkey opslaan"
       ],
       "Security": [
         "Beveiliging"
@@ -2277,6 +2301,9 @@
       ],
       "Invalid email addresses.": [
         "Ongeldige e-mailadressen."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Het uitnodigen van e-mailadressen buiten de organisatie is niet toegestaan."
       ],
       "item was imported without custom fields": [
         "item is geïmporteerd zonder aangepaste velden"
