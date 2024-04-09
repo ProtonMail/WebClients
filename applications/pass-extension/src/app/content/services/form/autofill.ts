@@ -2,7 +2,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { DropdownAction, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
 import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
@@ -132,7 +132,12 @@ export const createAutofillService = () => {
 
         const otpFieldDetected = ctx?.service.formManager
             .getTrackedForms()
-            .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
+            .some(
+                (form) =>
+                    !isIgnored(form.element) &&
+                    form.formType === FormType.MFA &&
+                    form.getFieldsFor(FieldType.OTP).length > 0
+            );
 
         if (otpFieldDetected && ctx?.getFeatures().Autofill2FA) {
             const { subdomain, domain } = ctx?.getExtensionContext().url;
