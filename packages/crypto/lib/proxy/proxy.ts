@@ -133,7 +133,8 @@ export const CryptoProxy: CryptoProxyInterface = {
     importPublicKey: async (opts) => assertNotNull(endpoint).importPublicKey(opts),
     generateKey: async ({ date = new Date(+serverTime() + DEFAULT_OFFSET), ...opts }) =>
         assertNotNull(endpoint).generateKey({ ...opts, date }),
-    reformatKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).reformatKey({ ...opts, date }),
+    reformatKey: async ({ privateKey, date = privateKey.getCreationTime(), ...opts }) =>
+        assertNotNull(endpoint).reformatKey({ ...opts, privateKey, date }),
     exportPublicKey: async (opts) => assertNotNull(endpoint).exportPublicKey(opts),
     exportPrivateKey: async (opts) => assertNotNull(endpoint).exportPrivateKey(opts),
     clearKeyStore: () => assertNotNull(endpoint).clearKeyStore(),
