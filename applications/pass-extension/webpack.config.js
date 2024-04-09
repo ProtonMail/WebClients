@@ -144,12 +144,13 @@ module.exports = {
     plugins: [
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
-            ENV: JSON.stringify(ENV),
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
-            RUNTIME_RELOAD: RUNTIME_RELOAD,
-            RESUME_FALLBACK: RESUME_FALLBACK,
+            ENV: JSON.stringify(ENV),
+            OFFLINE_SUPPORTED: false,
             REDUX_DEVTOOLS_PORT: REDUX_DEVTOOLS_PORT,
+            RESUME_FALLBACK: RESUME_FALLBACK,
             RUNTIME_RELOAD_PORT: RUNTIME_RELOAD_PORT,
+            RUNTIME_RELOAD: RUNTIME_RELOAD,
             VERSION:
                 ENV === 'production'
                     ? getManifestVersion()

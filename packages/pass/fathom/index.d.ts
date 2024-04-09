@@ -1,5 +1,5 @@
-import { Fnode, rule, ruleset } from './fathom.js';
 import * as fathomWeb from './fathom.js';
+import { Fnode, rule, ruleset } from './fathom.js';
 
 export { fathomWeb as fathom };
 
@@ -109,7 +109,12 @@ declare const getParentFormPrediction: (el?: HTMLElement) => HTMLElement | null;
 declare const setPrediction: (_el: HTMLElement, type: string) => void;
 declare const isPredictedType: (type: string) => (fnode: Fnode) => boolean;
 declare const isClassifiable: (form: HTMLElement) => boolean;
-declare const removeClassifierFlags: (el: HTMLElement) => void;
+declare const removeClassifierFlags: (
+    el: HTMLElement,
+    options: {
+        preserveIgnored: boolean;
+    }
+) => void;
 
 declare const getFormParent: (form: HTMLElement) => HTMLElement;
 type FormInputIterator = ReturnType<typeof createInputIterator>;
@@ -137,22 +142,13 @@ declare const isVisibleField: (field: HTMLElement) => boolean;
 declare const clearDetectionCache: () => void;
 
 export {
-    type AnyRule,
-    type Bias,
-    type BoundRuleset,
-    type Coeff,
     EL_ATTRIBUTES,
     FIELD_ATTRIBUTES,
     FORM_ATTRIBUTES,
     FORM_CLUSTER_ATTR,
     FieldType,
-    type FormInputIterator,
     FormType,
-    type Ruleset,
-    type RulesetAggregation,
     TEXT_ATTRIBUTES,
-    type Trainee,
-    type TrainingResults,
     buttonSelector,
     cacheContext,
     clearDetectionCache,
@@ -222,4 +218,13 @@ export {
     shouldRunClassifier,
     splitFieldsByVisibility,
     trainees,
+    type AnyRule,
+    type Bias,
+    type BoundRuleset,
+    type Coeff,
+    type FormInputIterator,
+    type Ruleset,
+    type RulesetAggregation,
+    type Trainee,
+    type TrainingResults,
 };

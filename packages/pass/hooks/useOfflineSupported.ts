@@ -4,7 +4,11 @@ import { PassFeature } from '@proton/pass/types/api/features';
 export const useOfflineSupported = () => {
     const offlineModeEnabled = useFeatureFlag(PassFeature.PassWebOfflineMode);
 
-    if (BUILD_TARGET === 'web') return offlineModeEnabled;
-    else if (['chrome', 'firefox'].includes(BUILD_TARGET)) return false;
-    else return true;
+    if (OFFLINE_SUPPORTED) {
+        if (BUILD_TARGET === 'web') return offlineModeEnabled;
+        else if (['chrome', 'firefox'].includes(BUILD_TARGET)) return false;
+        else return true;
+    }
+
+    return false;
 };
