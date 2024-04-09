@@ -86,13 +86,20 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             formHandle.tracker.reconciliate();
         },
 
-        detach() {
+        detach: withContext((ctx) => {
             logger.info(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
+            const dropdown = ctx?.service.iframe.dropdown;
+            const dropdownField = dropdown?.getCurrentField() ?? null;
+
             listeners.removeAll();
             formHandle.tracker?.detach();
-            formHandle.getFields().forEach((field) => field.detach());
+            formHandle.getFields().forEach((field) => {
+                if (field === dropdownField) dropdown?.close();
+                field.detach();
+            });
+
             removeClassifierFlags(form, { preserveIgnored: true });
-        },
+        }),
     };
 
     /**
