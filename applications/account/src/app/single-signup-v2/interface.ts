@@ -103,8 +103,10 @@ export interface Options {
     cycle: CYCLE;
     currency: Currency;
     coupon?: string;
+    plansMap: PlansMap;
     planIDs: PlanIDs | undefined;
     billingAddress: BillingAddress;
+    skipUpsell?: boolean;
 }
 
 export interface Upsell {

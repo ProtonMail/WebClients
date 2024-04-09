@@ -89,7 +89,12 @@ export const getFreeSubscriptionData = (
     };
 };
 
-const getSubscriptionData = async (paymentsApi: PaymentsApi, options: Options): Promise<SubscriptionData> => {
+export const getSubscriptionData = async (
+    paymentsApi: PaymentsApi,
+    options: Options & {
+        info?: boolean;
+    }
+): Promise<SubscriptionData> => {
     const { planIDs, checkResult } = await getSubscriptionPrices(
         paymentsApi,
         options.planIDs || {},
@@ -105,14 +110,24 @@ const getSubscriptionData = async (paymentsApi: PaymentsApi, options: Options): 
             };
         })
         .catch(() => {
-            // If the check call fails, just reset everything
+            if (!options?.info) {
+                return {
+                    checkResult: getFreeCheckResult(
+                        options.currency,
+                        // "Reset" the cycle because the custom cycles are only valid with a coupon
+                        getNormalCycleFromCustomCycle(options.cycle)
+                    ),
+                    planIDs: undefined,
+                };
+            }
+            // If this is only an "informational" call, like what we would display in a plan/cycle card at signup, we can calculate the price optimistically
             return {
-                checkResult: getFreeCheckResult(
-                    options.currency,
-                    // "Reset" the cycle because the custom cycles are only valid with a coupon
-                    getNormalCycleFromCustomCycle(options.cycle)
-                ),
-                planIDs: undefined,
+                checkResult: {
+                    ...getOptimisticCheckResult(options),
+                    Currency: options.currency,
+                    PeriodEnd: 0,
+                },
+                planIDs: options.planIDs,
             };
         });
     return {
@@ -120,7 +135,7 @@ const getSubscriptionData = async (paymentsApi: PaymentsApi, options: Options): 
         currency: checkResult.Currency,
         checkResult,
         planIDs: planIDs || {},
-        skipUpsell: !!planIDs,
+        skipUpsell: options.skipUpsell ?? false,
         billingAddress: options.billingAddress,
     };
 };
@@ -672,11 +687,13 @@ export const getPlanCardSubscriptionData = async ({
                         };
                     }
                     const subscriptionData = await getSubscriptionData(paymentsApi, {
+                        plansMap,
                         planIDs,
                         cycle,
                         coupon,
                         currency,
                         billingAddress,
+                        info: true,
                     });
                     return subscriptionData;
                 })

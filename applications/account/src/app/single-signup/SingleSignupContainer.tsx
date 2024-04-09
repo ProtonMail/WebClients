@@ -1,11 +1,9 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import {
-    Breakpoints,
     OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
-    VPNIntroPricingVariant,
     getVPNIntroPricingVariant,
     useActiveBreakpoint,
     useApi,
@@ -15,11 +13,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import {
-    getIsVpn2024,
-    getIsVpn2024Deal,
-    getVPNPlanToUse,
-} from '@proton/components/containers/payments/subscription/helpers';
+import { getIsVpn2024Deal, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -55,9 +49,8 @@ import {
     handleSetupUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
-import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
 import { getPlanCardSubscriptionData } from '../single-signup-v2/helper';
-import { SignupDefaults, SignupModelV2, Steps } from '../single-signup-v2/interface';
+import { SignupDefaults, Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -67,51 +60,10 @@ import Step3 from './Step3';
 import Step4 from './Step4';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
+import { VPNSignupModel } from './interface';
 import { TelemetryMeasurementData } from './measure';
+import { defaultVPNSignupModel, getCycleData } from './state';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
-
-const getCycleData = ({
-    plan,
-    coupon,
-    activeBreakpoint,
-    vpnIntroPricingVariant,
-}: {
-    plan: PLANS;
-    coupon?: string;
-    activeBreakpoint: Breakpoints;
-    vpnIntroPricingVariant?: VPNIntroPricingVariant;
-}) => {
-    if (getIsVpn2024Deal(plan, coupon)) {
-        return {
-            upsellCycle: CYCLE.THIRTY,
-            cycles: activeBreakpoint.viewportWidth['>=large']
-                ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
-                : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
-        };
-    }
-
-    const defaultValue = {
-        upsellCycle: CYCLE.TWO_YEARS,
-        cycles: activeBreakpoint.viewportWidth['>=large']
-            ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
-            : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
-    };
-
-    if (vpnIntroPricingVariant === VPNIntroPricingVariant.New2024) {
-        return defaultValue;
-    }
-
-    if (getIsVpn2024(plan)) {
-        return {
-            upsellCycle: CYCLE.EIGHTEEN,
-            cycles: activeBreakpoint.viewportWidth['>=large']
-                ? [CYCLE.MONTHLY, CYCLE.EIGHTEEN, CYCLE.THREE]
-                : [CYCLE.EIGHTEEN, CYCLE.THREE, CYCLE.MONTHLY],
-        };
-    }
-
-    return defaultValue;
-};
 
 interface Props {
     loader: ReactNode;
@@ -184,9 +136,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         }).catch(noop);
     };
 
-    const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
+    const [model, setModel] = useState<VPNSignupModel>(defaultVPNSignupModel);
 
-    const setModelDiff = (diff: Partial<SignupModelV2>) => {
+    const setModelDiff = (diff: Partial<VPNSignupModel>) => {
         return setModel((model) => ({
             ...model,
             ...diff,
@@ -237,16 +189,17 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 { vpnIntroPricingVariant }
             );
 
-            const { cycles, upsellCycle } = getCycleData({
+            const coupon = signupParameters.coupon;
+
+            const cycleData = getCycleData({
                 plan: vpnPlanName,
-                coupon: signupParameters.coupon,
-                activeBreakpoint,
+                coupon,
                 vpnIntroPricingVariant,
             });
 
             const defaults: SignupDefaults = {
                 plan: vpnPlanName,
-                cycle: upsellCycle,
+                cycle: cycleData.upsellCycle,
             };
 
             const cycle = signupParameters.cycle || defaults.cycle;
@@ -255,10 +208,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
                 plansMap,
                 planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
-                cycles: unique([cycle, ...cycles]),
+                cycles: unique([cycle, ...cycleData.cycles]),
                 paymentsApi,
                 currency,
-                coupon: signupParameters.coupon,
+                coupon,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             });
 
@@ -276,7 +229,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             const subscriptionData =
                 subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                subscriptionDataCycleMapping[vpnPlanName]?.[upsellCycle];
+                subscriptionDataCycleMapping[vpnPlanName]?.[cycleData.upsellCycle];
+
+            const selectedPlan = getPlanFromPlanIDs(plansMap, subscriptionData?.planIDs) || FREE_PLAN;
 
             setModelDiff({
                 domains,
@@ -286,6 +241,13 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 paymentMethodStatusExtended,
                 subscriptionData,
                 subscriptionDataCycleMapping,
+                cycleData,
+                signupType: getIsVpn2024Deal(
+                    selectedPlan.Name as PLANS,
+                    subscriptionData?.checkResult.Coupon?.Code || coupon
+                )
+                    ? 'vpn2024'
+                    : 'default',
             });
         };
 
@@ -378,16 +340,6 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     };
 
     const loading = loadingDependencies || loadingChallenge;
-    const coupon = model.subscriptionData.checkResult.Coupon?.Code;
-
-    const isVpn2024Deal = getIsVpn2024Deal(selectedPlan.Name as PLANS, coupon);
-
-    const cycleData = getCycleData({
-        plan: selectedPlan.Name as PLANS,
-        activeBreakpoint,
-        coupon,
-        vpnIntroPricingVariant,
-    });
 
     return (
         <>
@@ -404,8 +356,8 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         className={loading ? 'visibility-hidden' : undefined}
                         loading={loading}
                         selectedPlan={selectedPlan}
-                        cycleData={cycleData}
-                        isVpn2024Deal={isVpn2024Deal}
+                        cycleData={model.cycleData}
+                        isVpn2024Deal={model.signupType === 'vpn2024'}
                         isB2bPlan={isB2bPlan}
                         background={background}
                         vpnServersCountData={vpnServersCountData}
