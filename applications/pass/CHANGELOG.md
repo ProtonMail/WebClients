@@ -1,3 +1,10 @@
+### Version 1.16.5
+
+-   Improve Proton Pass CSV export/import to support importing items in multiple vaults
+-   Improve generic CSV import to support importing items in multiple vaults
+-   Improve initial settings hydration
+-   Fix favicons loading/flickering
+
 ### Version 1.16.0
 
 -   Add passkey support
