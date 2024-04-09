@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Redirect, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,6 @@ import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { SETTINGS_PASSWORD_MODE, User, UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
@@ -43,9 +42,7 @@ export type ReAuthState = {
     reAuthType: 'offline' | 'offline-bypass' | 'default';
 };
 
-const ReAuthContainer = ({ paths, onLogin }: { paths: Paths; onLogin: OnLoginCallback }) => {
-    const location = useLocation<ReAuthState | undefined>();
-    const state = location.state;
+const ReAuthContainer = ({ paths, onLogin, state }: { paths: Paths; onLogin: OnLoginCallback; state: ReAuthState }) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [submitting, withSubmitting] = useLoading();
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -53,10 +50,6 @@ const ReAuthContainer = ({ paths, onLogin }: { paths: Paths; onLogin: OnLoginCal
     const [data, setData] = useState<{ step: 'login' | 'unlock'; salts: tsKeySalt[] }>({ step: 'login', salts: [] });
     const errorHandler = useErrorHandler();
     const normalApi = useApi();
-
-    if (!state?.session) {
-        return <Redirect to={SSO_PATHS.SWITCH} />;
-    }
 
     const { UID, User } = state.session;
     const uidApi = getUIDApi(UID, normalApi);
