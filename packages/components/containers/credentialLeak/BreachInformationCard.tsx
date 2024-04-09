@@ -1,6 +1,10 @@
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
 import clsx from '@proton/utils/clsx';
 
 import BreachInfo from './BreachInfo';
+import BreachInfoNote from './BreachInfoNote';
 import BreachRecommendations from './BreachRecommendations';
 import BreachTitle from './BreachTitle';
 import { FetchedBreaches } from './CredentialLeakSection';
@@ -21,37 +25,35 @@ const BreachInformationCard = ({ breachData, paid }: Props) => {
 
     const { name, createdAt, email, severity } = breachData;
 
-    const {
-        passwordLastChars,
-        publishedAt,
-        actions,
-        size,
-        source: { category, country },
-        exposedData,
-    } = paid ? breachData : getFillerBreachData();
+    const { passwordLastChars, actions, exposedData } = paid ? breachData : getFillerBreachData();
 
     const hasActions = actions && actions?.length > 0;
     const blurClass = paid ? '' : 'breach-info-card-nonpaid pointer-event-none select-none';
 
+    const isResolved = false; // TODO: API?
+
     return (
         <div
             className={clsx(
-                'p-10 md:p-6 lg:p-10 flex flex-column *:min-size-auto flex-nowrap overflow-y-auto w-full h-full gap-6 rounded-lg border border-weak shadow-norm',
+                'p-10 flex flex-column *:min-size-auto flex-nowrap w-full h-full overflow-y-auto gap-4 rounded-lg border border-weak shadow-norm',
                 blurClass
             )}
             aria-hidden={paid ? false : true}
         >
-            <BreachTitle name={name} createdAt={createdAt} style={getStyle(severity)} />
+            <BreachTitle name={name} createdAt={createdAt} style={getStyle(severity)} severity={severity} />
             <div className="flex flex-column flex-nowrap gap-2">
-                <BreachInfo
-                    publishedAt={publishedAt}
-                    category={category?.name}
-                    size={size}
-                    country={country?.name}
-                    exposedData={exposedData}
-                />
-                <UserBreachInfo email={email} passwordLastChars={passwordLastChars} style={getStyle(severity)} />
+                <BreachInfo exposedData={exposedData} />
+                <UserBreachInfo email={email} passwordLastChars={passwordLastChars} />
                 {hasActions && <BreachRecommendations actions={actions} />}
+
+                <BreachInfoNote />
+
+                {/* TODO */}
+                {isResolved ? (
+                    <Button disabled className="mr-auto">{c('Action').t`Mark as open`}</Button>
+                ) : (
+                    <Button disabled className="mr-auto">{c('Action').t`Mark as resolved`}</Button>
+                )}
             </div>
         </div>
     );

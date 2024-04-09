@@ -1,6 +1,11 @@
 @import '~@proton/styles/scss/lib';
 
 .drawerAppSection {
-	background-color: var(--background-elevated, var(--bg-norm));
-	min-block-size: rem(40);
+	&,
+	&:hover,
+	&:focus,
+	&:focus-within {
+		background-color: var(--background-elevated, var(--bg-norm));
+		min-block-size: rem(40);
+	}
 }
