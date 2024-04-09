@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "Não é possível determinar os membros do compartilhamento"
       ],
+      "Could not validate addresses at the moment.": [
+        "Não foi possível validar endereços neste momento."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
+      ],
+      "Failed to edit organization settings": [
+        "Falha ao editar as configurações da organização"
       ],
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Por padrão, membros da equipe só podem exportar cofres de onde eles forem os proprietários. Se essa opção for ativada, eles não poderão exportar dados"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Pode criar, editar, excluir, e exportar itens para esse cofre."
       ],
@@ -984,13 +993,13 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history": [
-        "Movendo um item para outro cofre irá apagar seu histórico"
+        "Movendo um item para outro cofre apagará seu histórico"
       ],
       "Moving items": [
         "Movendo itens"
       ],
       "Moving items to another vault will erase their history": [
-        "Movendo item para outro cofre irá pagar seus históricos"
+        "Movendo item para outro cofre apagará seus históricos"
       ],
       "Moving items to trash": [
         "Movendo itens para a lixeira"
@@ -1012,6 +1021,9 @@
       ],
       "Offline support successfully disabled": [
         "Modo off-line desativado com sucesso"
+      ],
+      "Organization settings successfully updated": [
+        "Configurações da organização foram atualizadas"
       ],
       "Owner": [
         "Proprietário"
@@ -1131,6 +1143,9 @@
       "Syncing your vaults…": [
         "Sincronizando seus cofres..."
       ],
+      "Team members can only share vaults within organization": [
+        "Membros da equipe só podem compartilhar cofres dentro da organização"
+      ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
       ],
@@ -1152,6 +1167,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
+      ],
+      "This setting is disabled on the organization level": [
+        "A configuração está desativada para a organização"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
@@ -2035,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "Endereços de e-mail inválidos."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Convidar endereços de e-mail de fora da organização não é permitido."
       ],
       "item was imported without custom fields": [
         "itens foram importados sem os campos personalizados"

@@ -479,6 +479,9 @@
       "Could not resolve share members": [
         "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
       ],
+      "Could not validate addresses at the moment.": [
+        "მისამართების გადამოწმება ამჟამად შეუძლებელია."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV ფაილს მოსალოდნელი თავსართები აკლია: ${ missingHeaders }"
       ],
@@ -518,6 +521,9 @@
       ],
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
+      ],
+      "Failed to edit organization settings": [
+        "ორგანიზაციის პარამეტრების ჩასწორება ჩავარდა"
       ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
@@ -812,6 +818,9 @@
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "ნაგულისხმევად გუნდის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
       ],
@@ -1013,6 +1022,9 @@
       "Offline support successfully disabled": [
         "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
       ],
+      "Organization settings successfully updated": [
+        "ორგანიზაციის პარამეტრები წარმატებით განახლდა"
+      ],
       "Owner": [
         "მფლობელი"
       ],
@@ -1131,6 +1143,9 @@
       "Syncing your vaults…": [
         "თქვენი საცავების სინქრონიზაცია…"
       ],
+      "Team members can only share vaults within organization": [
+        "გუნდის წევრებს საცავების გაზიარება, მხოოდ, ორგანიზაციის შიგნით შეუძლიათ"
+      ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
       ],
@@ -1153,6 +1168,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
       ],
+      "This setting is disabled on the organization level": [
+        "ეს პარამეტრი გათიშულია ორგანიზაციის დონეზე"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
       ],
@@ -1173,6 +1191,9 @@
       ],
       "Unpinning item...": [
         "ელემენტის მოხსნა..."
+      ],
+      "Updating organization settings": [
+        "ორგანიზაციის პარამეტრების განახლება"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
@@ -1350,6 +1371,12 @@
       "Created": [
         "შექმნილია"
       ],
+      "Disable data export for team members": [
+        "მონაცემების გატანის გათიშვა გუნდის წევრებისთვის"
+      ],
+      "Disable sharing outside the organization": [
+        "გაზიარებით გათიშვა ორგანიზაციის გარეთ"
+      ],
       "Display": [
         "ჩვენება"
       ],
@@ -1370,6 +1397,9 @@
       ],
       "Export": [
         "გატანა"
+      ],
+      "Exporting policy": [
+        "გატანის პოლიტიკა"
       ],
       "Field name": [
         "ველის სახელწოდება"
@@ -1568,6 +1598,9 @@
       ],
       "Set PIN code": [
         "PIN-კოდის დაყენება"
+      ],
+      "Sharing policy": [
+        "გაზიარების პოლიტიკა"
       ],
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
@@ -2020,6 +2053,9 @@
       ],
       "Invalid email addresses.": [
         "არასწორი ელფოსტის მისამართები."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "ორგანიზაციის გარედან ელფოსტის მისამართების მოწვევა დაშვებული არაა."
       ],
       "item was imported without custom fields": [
         "ელემენტის შემოტანა მომხმარებლის ველების გარეშე მოხდა"

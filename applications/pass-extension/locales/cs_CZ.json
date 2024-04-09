@@ -200,6 +200,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Jak mohu exportovat svá data z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Jak používat ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importovat"
       ],
@@ -335,6 +338,9 @@
       "Save": [
         "Uložit"
       ],
+      "Save passkey": [
+        "Uložit přístupový klíč"
+      ],
       "Saving": [
         "Ukládání"
       ],
@@ -416,6 +422,9 @@
       "Upgrade now to share with more people": [
         "Navyšte nyní a sdílejte s více lidmi"
       ],
+      "View app logs": [
+        "Prohlédnout logy aplikace"
+      ],
       "View history": [
         "Zobrazit historii"
       ],
@@ -483,6 +492,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ověření selhalo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu"
       ],
+      "Authentication failure: ${ message }": [
+        "Ověření selhalo: ${ message }"
+      ],
       "Auto-lock could not be activated": [
         "Automatické zamykání nelze aktivovat"
       ],
@@ -492,11 +504,23 @@
       "Cannot create alias (${ error }).": [
         "Nelze vytvořit alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Pozvánku nyní nelze odeslat.",
+        "Pozvánky nyní nelze odeslat.",
+        "Pozvánky nyní nelze odeslat.",
+        "Pozvánky nyní nelze odeslat."
+      ],
+      "Cannot send invitations at the moment": [
+        "Pozvánky nyní nelze odeslat."
+      ],
       "Could not confirm this invite at the moment": [
         "Nepodařilo se potvrdit tuto pozvánku v tuto chvíli"
       ],
       "Could not leave vault.": [
         "Nepodařilo se opustit trezor."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Doporučení se v tuto chvíli nedaří načíst."
       ],
       "Could not open created vault": [
         "Nelze otevřít vytvořený trezor"
@@ -509,6 +533,9 @@
       ],
       "Could not resolve share members": [
         "Nepodařilo se vyřešit členy sdílení"
+      ],
+      "Could not validate addresses at the moment.": [
+        "Ověření adres se nezdařilo."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
@@ -549,8 +576,17 @@
       "Failed resending invite.": [
         "Opětovné zaslání pozvánky selhalo."
       ],
+      "Failed to delete selected items": [
+        "Odstranění vybraných položek selhalo."
+      ],
+      "Failed to edit organization settings": [
+        "Úprava nastavení organizase se nezdařila."
+      ],
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
+      ],
+      "Failed to load item history": [
+        "Načítání historie položky selhalo."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Přesunutí všech položek z \"${ payload.content.name }\" selhalo"
@@ -566,6 +602,9 @@
       ],
       "Failed to remove user's access.": [
         "Odstranění uživatelského přístupu selhalo."
+      ],
+      "Failed to restore items from trash": [
+        "Obnovení položek z Koše selhalo."
       ],
       "Failed to transfer this vault's ownership.": [
         "Nepodařilo se přenést vlastnictví tohoto trezoru."
@@ -603,8 +642,14 @@
       "Item creation failed": [
         "Vytvoření položky se nezdařilo"
       ],
+      "Item does not exist": [
+        "Položka neexistuje."
+      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "Aplikace LastPass vyexportuje poškozený soubor CSV, pokud některé z polí položek obsahuje neočekávané čárky, uvozovky nebo více řádků"
+      ],
+      "Missing passkey": [
+        "Chybějící přístupový klíč."
       ],
       "Moving item failed": [
         "Přesouvání položky selhalo"
@@ -620,6 +665,9 @@
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Připněte rozšíření nebo vyberte možnost \"Pokračovat bez připnutí\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Registrace selhala: ${ message }"
       ],
       "Request timed out": [
         "Vypršel časový limit žádosti"
@@ -674,6 +722,12 @@
       ],
       "Unknown invite": [
         "Neznámá pozvánka"
+      ],
+      "Unknown item": [
+        "Neznámá položka"
+      ],
+      "Unknown passkey": [
+        "Neznámý přístupový klíč"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nepodporovaný formát souboru ${ PASS_APP_NAME }"
@@ -772,6 +826,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } pozvánek odesláno."
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -929,6 +986,12 @@
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdne.",
+        "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů.",
+        "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů.",
+        "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů."
+      ],
       "Generating alias...": [
         "Generování aliasu..."
       ],
@@ -1052,6 +1115,9 @@
       "Open the Extensions menu": [
         "Otevřít menu rozšíření"
       ],
+      "Organization settings successfully updated": [
+        "Nastavení organizace bylo úspěšně aktualizováno"
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -1064,8 +1130,17 @@
       "Password copied": [
         "Heslo zkopírováno"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týden budou z historie automaticky smazána.",
+        "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdny budou z historie automaticky smazána.",
+        "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána.",
+        "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána."
+      ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
+      ],
+      "Permanently deleting selected items": [
+        "Trvalé odstranění vybraných položek"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Připněte ${ PASS_APP_NAME } na panel nástrojů"
@@ -1106,6 +1181,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
       ],
+      "Restoring items from trash": [
+        "Obnovují se položky z koše"
+      ],
       "Restoring trashed items...": [
         "Obnovování položek z koše..."
       ],
@@ -1117,6 +1195,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vyberte, kam chcete importované trezory uložit."
+      ],
+      "Selected items permanently deleted": [
+        "Vybrané položky byly trvale odstraněny"
+      ],
+      "Selected items successfully moved to trash": [
+        "Vybrané položky byly úspěšně přesunutz do koše"
+      ],
+      "Selected items successfully restored from trash": [
+        "Vybrané položky byly z koše úspěšně obnoveny"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -1157,11 +1244,17 @@
       "Syncing your vaults…": [
         "Synchronizace trezorů…"
       ],
+      "Team members can only share vaults within organization": [
+        "Členové týmu mohou trezory sdílet pouze v rámci organizace"
+      ],
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Rozbalovací nabídka automatického vyplňování se automaticky otevře, když na pole kliknete nebo ho vyberete."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Export bude obsahovat pouze vaše vlastní trezory."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Následující ${ result.ignored.length } položku nelze importovat:",
@@ -1201,6 +1294,9 @@
       ],
       "Update login": [
         "Aktualizovat přihlášení"
+      ],
+      "Updating organization settings": [
+        "Aktualizuje se nastavení organizace"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Navýšit ${ PASS_APP_NAME }"
@@ -1264,6 +1360,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Dosáhli jste limitu aliasů, které můžete vytvořit. Při navýšení předplatného si můžete vytvořit neomezený počet aliasů."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Dosáhli jste limitu počtu platebních karet, které můžete vytvořit. Navyšte své předplatné, abyste mohli vytvářet neomezený počet platebních karet."
       ],
       "You have reached the limit of vaults you can create.": [
         "Dosáhli jste limitu trezorů, které můžete vytvořit."
@@ -1519,6 +1618,15 @@
       "Logins": [
         "Přihlášení"
       ],
+      "Make all admins": [
+        "Učinit ze všech správce"
+      ],
+      "Make all editors": [
+        "Oprávnit všechny k úpravám"
+      ],
+      "Make all viewers": [
+        "Oprávnit všechny ke čtení"
+      ],
       "Members": [
         "Členové"
       ],
@@ -1564,6 +1672,9 @@
       "Oldest to newest": [
         "Od nejstarších k nejnovějším"
       ],
+      "Passkey": [
+        "Přístupový klíč"
+      ],
       "Passphrase": [
         "Heslo"
       ],
@@ -1578,6 +1689,9 @@
       ],
       "Pause list": [
         "Seznam pozastavených"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP-šifrovaný JSON (doporučeno)"
       ],
       "PIN": [
         "PIN"
@@ -2091,6 +2205,9 @@
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses :": [
+        "Odeslání pozvánek pro následující adresy selhalo:"
+      ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
       ],
@@ -2108,6 +2225,12 @@
       ],
       "Invalid email addresses.": [
         "Neplatné e-mailové adresy."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Odeslání pozvánky na e-mailovou adresu mimo organizaci není povoleno."
+      ],
+      "item was imported without custom fields": [
+        "položka byla importována bez vlastních polí"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximální délka je ${ maxLength } znak",
@@ -2144,6 +2267,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
+      ],
+      "Please contact us for investigating the issue": [
+        "Kontaktujte nás, prosím, abychom problém mohli prošetřit."
       ],
       "Please verify your email address in order to use email aliases": [
         "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"

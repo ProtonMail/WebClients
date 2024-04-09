@@ -529,17 +529,29 @@
       "Failed resending invite.": [
         "Не удалось повторно отправить приглашение."
       ],
+      "Failed to delete selected items": [
+        "Не удалось удалить выбранные элементы"
+      ],
       "Failed to edit user's access.": [
         "Не удалось изменить доступ пользователя."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Не удалось переместить элементы"
+      ],
+      "Failed to move items to trash": [
+        "Не удалось переместить элементы в Корзину"
+      ],
       "Failed to pin item": [
         "Сбой при закреплении элемента"
       ],
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
+      ],
+      "Failed to restore items from trash": [
+        "Не удалось восстановить элементы из Корзины"
       ],
       "Failed to transfer this vault's ownership.": [
         "Сбой при передаче владения хранилищем."
@@ -576,6 +588,9 @@
       ],
       "Item creation failed": [
         "Ошибка при создании элемента"
+      ],
+      "Item does not exist": [
+        "Элемент не существует"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass экспортирует поврежденный CSV-файл, если любое поле содержит неожиданные запятые, кавычки или несколько строк"
@@ -996,6 +1011,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Перемещение элементов"
+      ],
+      "Moving items to trash": [
+        "Перемещение элементов в Корзину"
+      ],
       "Never": [
         "Никогда"
       ],
@@ -1062,6 +1083,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
       ],
+      "Restoring items from trash": [
+        "Восстановление элементов из Корзины"
+      ],
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
       ],
@@ -1073,6 +1097,9 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Выберите куда вы хотите сохранить импортированное(ые) хранилище(я)."
+      ],
+      "Selected items successfully moved to trash": [
+        "Выбранные элементы успешно перемещены в Корзину"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -1508,6 +1535,9 @@
       "Oldest to newest": [
         "От старых к новым"
       ],
+      "Organization": [
+        "Организация"
+      ],
       "Passphrase": [
         "Кодовая фраза"
       ],
@@ -1889,6 +1919,12 @@
       ],
       "Move all items ?": [
         "Переместить все элементы?"
+      ],
+      "Move item?": [
+        "Переместить элемент?"
+      ],
+      "Move items?": [
+        "Переместить элементы?"
       ],
       "Our welcome gift to you": [
         "Our welcome gift to you"

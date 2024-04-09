@@ -104,6 +104,9 @@
       "Add notification": [
         "Añadir notificación"
       ],
+      "Add or switch account": [
+        "Añadir o cambiar cuenta"
+      ],
       "Add PayPal": [
         "Añadir PayPal"
       ],
@@ -740,6 +743,9 @@
       "Report a problem": [
         "Reportar un problema"
       ],
+      "Request a call": [
+        "Solicitar una llamada"
+      ],
       "Request a feature": [
         "Solicitar una característica"
       ],
@@ -938,6 +944,9 @@
       "Start import": [
         "Iniciar importación"
       ],
+      "Start live chat": [
+        "Iniciar chat en directo"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1072,6 +1081,9 @@
       ],
       "Void all recovery files?": [
         "¿Anular todos los archivos de recuperación?"
+      ],
+      "Welcome": [
+        "Le damos la bienvenida"
       ],
       "What do I get?": [
         "¿Qué obtengo?"
@@ -1262,6 +1274,23 @@
       ],
       "New email": [
         "Correo nuevo"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navegue en la web de manera privada y bloquee anuncios"
+      ],
+      "Keep your schedule private": [
+        "Mantenga privada su agenda"
+      ],
+      "Protect your passwords and identity": [
+        "Proteja sus contraseñas y su identidad"
+      ],
+      "Safeguard your files and photos": [
+        "Proteja sus archivos y fotos"
+      ],
+      "Secure your communications": [
+        "Proteja sus comunicaciones"
       ]
     },
     "Apps dropdown": {
@@ -1825,6 +1854,17 @@
       ],
       "Week": [
         "Semana"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Solicitud enviada"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Nos comunicaremos con usted con más información tan pronto como podamos."
+      ],
+      "You can safely close this tab.": [
+        "Ya puede cerrar esta ventana."
       ]
     },
     "Checkout row": {
@@ -3051,8 +3091,8 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Una vez eliminada, esta dirección no puede ser usada nuevamente por usted u otra persona."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Una vez eliminada, esta dirección no puede ser usada nuevamente por otra persona."
       ],
       "The next active address on your list will be set as the default.": [
         "La siguiente dirección activa en su lista será establecida como la dirección por defecto."
@@ -4430,9 +4470,6 @@
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
       ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Demasiadas sesiones activas, borre las cookies e inicie sesión otra vez."
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise su conexión a internet."
       ]
@@ -5487,6 +5524,11 @@
         "Pruebe lo mejor de ${ MAIL_APP_NAME } gratis"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contáctenos"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Se encontró ${ items.length } sugerencia, use el teclado para navegar.",
@@ -6310,6 +6352,9 @@
       "Check the status of imports and forwarding.": [
         "Verificar el estado de las importaciones y reenvío."
       ],
+      "Choose an app to get started": [
+        "Elija una app para comenzar"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
@@ -6692,6 +6737,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si quiere combinar esta cuenta con otra, NO la elimine."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Estamos para ayudarle si tiene problemas. ${ boldPhoneCall } (o reunión de Zoom) con uno de nuestros especialistas de soporte, o abra el ${ boldLiveChat } para soporte vía chat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists.": [
+        "Estamos para ayudarle si tiene problemas. ${ boldPhoneCall } (o reunión de Zoom) con uno de nuestros especialistas de soporte."
+      ],
       "Image description": [
         "Descripción de la imagen"
       ],
@@ -6838,6 +6889,9 @@
       "Link type": [
         "Tipo de enlace"
       ],
+      "Live chat": [
+        "Chat en directo"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Nuestro proxy protege el contenido cargado cuando se activa el rastreador de bloqueo."
       ],
@@ -6846,6 +6900,9 @@
       ],
       "Loading ${ appName }": [
         "Cargando ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
       "Loading preview": [
         "Cargando vista previa"
@@ -7204,6 +7261,9 @@
       ],
       "Report link expired": [
         "Reportar enlace expirado"
+      ],
+      "Request a phone call": [
+        "Solicite una llamada telefónica"
       ],
       "Resend verification email": [
         "Reenviar correo de verificación"

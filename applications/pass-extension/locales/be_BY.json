@@ -887,6 +887,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } прапануе вам, як толькі згенерыраваныя паролі будуць запоўнены аўтаматычна."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } не будзе прапаноўваць вам захоўваць або абнаўляць уліковыя даныя."
       ],
@@ -1361,9 +1364,6 @@
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:"
       ],
-      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Элемент запісу ўваходу для \"${ domain }\" будзе абноўлены і даступны на прыладах з усталяваным ${ PASS_APP_NAME }."
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
       ],
@@ -1833,6 +1833,9 @@
       ],
       "Prompt for auto-save": [
         "Запыт на аўтазахаванне"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Прапануе для аўтаматычнага захавання пры генерацыі пароляў"
       ],
       "Rate us": [
         "Ацаніце нас"

@@ -268,6 +268,9 @@
       "Create a new label": [
         "Vytvořit nový štítek"
       ],
+      "Create and copy alias": [
+        "Vytvořit a kopírovat alias"
+      ],
       "Create folder": [
         "Vytvořit složku"
       ],
@@ -964,6 +967,9 @@
       "Select all messages": [
         "Označit všechny zprávy"
       ],
+      "Select country": [
+        "Vyberte zemi"
+      ],
       "Select date and time": [
         "Vyberte datum a čas"
       ],
@@ -1117,6 +1123,12 @@
       "Trust": [
         "Důvěřovat"
       ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
+      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1212,6 +1224,9 @@
       ],
       "View": [
         "Zobrazit"
+      ],
+      "View all reports": [
+        "Zobrazit všechny zprávy"
       ],
       "View contact details": [
         "Zobrazit detaily kontaktu"
@@ -5686,6 +5701,9 @@
       "Body: ": [
         "Tělo: "
       ],
+      "Breach alerts": [
+        "Upozornění na úniky informací"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
@@ -5706,6 +5724,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
+      ],
+      "Clear app data": [
+        "Vymazat data"
       ],
       "Clear data": [
         "Smazat data"
@@ -6188,7 +6209,7 @@
         "MM/RR"
       ],
       "Monitor accounts": [
-        "Sledovst účty"
+        "Sledování účtů"
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -6203,7 +6224,7 @@
         "Není vybrána žádná akce"
       ],
       "No changes made to the current subscription": [
-        "Žádné změny provedeny na vašem předplatné"
+        "Nebyly provedeny žádné změny vašeho předplatného"
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -6334,6 +6355,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Zkuste to prosím za chvíli znovu"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Zkuste prosím použít jinou platební metodu a nebo kontaktujte svou banku."
       ],
@@ -6381,6 +6405,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Odstraní všechna data spojená s touto aplikací, včetně stažených zpráv"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlášení této zprávy jako pokusu o phishing odešle tuto zprávu nám, abychom ji mohli analyzovat a zlepšit tím naše filtry. To znamená, že uvidíme kompletně celý obsah této zprávy."
@@ -6432,6 +6459,12 @@
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Vybrat ${ elementsCount } v ${ location }",
+        "Vybrat ${ elementsCount } v ${ location }",
+        "Vybrat ${ elementsCount } v ${ location }",
+        "Vybrat ${ elementsCount } v ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
@@ -6679,6 +6712,9 @@
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
       ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Tím odstraníte všechna data spojená s touto aplikací, včetně stažených zpráv. Aplikace se restartuje a k jejímu používání se budete muset znovu přihlásit."
+      ],
       "This sender's public key has not been trusted yet.": [
         "Veřejný klíč tohoto odesílatele nebyl dosud označen jako důvěryhodný."
       ],
@@ -6826,6 +6862,9 @@
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
       ],
+      "View details": [
+        "Zobrazit podrobnosti"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -6908,7 +6947,7 @@
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Využíváte více úložiště než je dostupné v předplatným ${ downgradedPlanName }. Prosim odstraňte data abyste mohli snížit svoje předplatné."
+        "Využíváte více úložiště než je dostupné v rámci tarifu ${ downgradedPlanName }. Prosím odstraňte některá data abyste mohli snížit své předplatné."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Můžete ji přidat jako přílohu nebo ji zobrazit v těle e-mailu."
@@ -8317,6 +8356,11 @@
         "Neomezený počet složek, štítků a filtrů"
       ]
     },
+    "mailtrial2024: Info": {
+      "Your subscription will auto-renew on ${ renewTime } at ${ renewablePrice }, cancel anytime": [
+        "Vaše předplatné bude automaticky obnoveno každých ${ renewTime } za ${ renewablePrice }, zrušitelné kdykoliv"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -8701,13 +8745,13 @@
         "Konzole správce"
       ],
       "Administration Panel": [
-        "Administrátorský panel"
+        "Panel správce"
       ],
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
       ],
       "Auto-delete Spam and Trash": [
-        "Automaticky mazat spam a koš"
+        "Automatické smazání obsahu složek spam a koš"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
@@ -8863,7 +8907,7 @@
         "Podpora routeru"
       ],
       "Schedule and snooze emails for any time": [
-        "Naplánovat a ztišit e-maily na jakoukoliv dobu"
+        "Naplánujte a odložte e-maily na později"
       ],
       "Schedule messages at any time": [
         "Plánování zpráv v libovolném čase"
@@ -9004,7 +9048,7 @@
         "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
-        "Pokročilá ochrana pro týmy, která překonává to, co je na trhu běžné."
+        "Pokročilá ochrana pro týmy, která překonává to, co je běžné na trhu."
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
@@ -9122,8 +9166,17 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Umožňuje vám nastavit automatické odpovědi na příchozí zprávy"
       ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Automaticky vyčistit zprávy starší než 30 dnů z koše a spamu"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Automaticky přeposlat e-maily odeslané do vašeho ${ MAIL_APP_NAME } účtu do jakýkoliv jiné e-mailové adresy."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Odesílání hromadných reklamních e-mailů a programovatelných e-mailů momentálně není podporováno. Pro tento případ doporučujeme využít služeb poskytovatele dedikované e-mailové služby."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Vyberte vlastní časy aby jste byly upozorněni o e-mailu anebo kdy vám zpráva přijde"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
@@ -10601,6 +10654,9 @@
       "contact your administrator": [
         "kontaktujte svého správce"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "Pro všechny služby ${ BRAND_NAME }"
+      ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
@@ -10609,6 +10665,9 @@
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Přidáme kredit za zbývající čas k vašemu ${ BRAND_NAME } účtu."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
@@ -10631,8 +10690,11 @@
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
       ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Ztratíte přístup k nejrychlejší rychlosti VPN, ochranu na 10 zařízeních, vysoko-rychlostní streamování, blokování reklam a ochrana proti malwaru, a k prioritní podpoře."
+      ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Ztratíte přístup k neomezeným přihlášením a poznámek, neomezeným hide-my-email adresám, 20 trezorů a prioritní podpoře."
+        "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
       ]
     },
     "Subscription": {
@@ -12138,6 +12200,17 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Subscription auto-renews every 1 month. Your next billing date is in 1 month.": [
+        "Předplatné se automaticky obnoví každý měsíc. Budete účtováni za měsíc."
+      ],
+      "Subscription auto-renews every 3 months. Your next billing date is in 3 months.": [
+        "Předplatné se automaticky obnoví za 3 měsíce. Budete účtováni za 3 měsíce."
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Potom budete účtováni každých 12 měsíců za ${ renewPrice }."
       ]
     },
     "vpn_2step: feature": {
