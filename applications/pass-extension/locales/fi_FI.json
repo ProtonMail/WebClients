@@ -360,13 +360,13 @@
         "Tallenna"
       ],
       "Save passkey": [
-        "Tallenna avainkoodi"
+        "Tallenna suojausavain"
       ],
       "Saving": [
         "Tallennetaan"
       ],
       "Saving passkey...": [
-        "Tallennetaan avainkoodia..."
+        "Tallennetaan suojausavainta..."
       ],
       "See members": [
         "Näytä jäsenet"
@@ -526,7 +526,7 @@
         "Todennusvirhe: ${ message }"
       ],
       "Authenticator failure": [
-        "Todentajavirhe"
+        "Todentajan virhe"
       ],
       "Auto-lock could not be activated": [
         "Automaattilukitusta ei voitu ottaa käyttöön"
@@ -678,7 +678,7 @@
         "LastPass vie virheellisen CSV-tiedoston, jos yksikin kohteidesi kentistäsi sisältää odottamattomia pilkkuja, lainausmerkkejä tai useita rivejä"
       ],
       "Missing passkey": [
-        "Puuttuva avaikoodi"
+        "Suojausavain puuttuu"
       ],
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
@@ -756,7 +756,7 @@
         "Tuntematon kohde"
       ],
       "Unknown passkey": [
-        "Tuntematon avainkoodi"
+        "Tuntematon suojausavain"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
@@ -865,20 +865,23 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja maksukortit."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } pyytää sinulta vahvistusta heti, kun generoitua salasanaa täytetään automaattisesti."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } tarjoaa kirjautumistietojen tallennusta tai päivitystä."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } ehdottaa todennusta tallennettuja avainkoodeja käyttäen"
+        "${ PASS_APP_NAME } tarjoaa tallennettuja suojausavaimia kirjauduttaessa."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } tarjoaa sähköpostialiaksen luotia rekisteröitymislomakkeissa."
+        "${ PASS_APP_NAME } tarjoaa sähköpostialiasten luontia rekisteröitymislomakkeissa."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } tarjoaa vahvan salasanan luontia rekisteröitymislomakkeissa."
+        "${ PASS_APP_NAME } tarjoaa vahvojen salasanojen luontia rekisteröitymislomakkeissa."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } ehdottaa avainkoodien tallentamista."
+        "${ PASS_APP_NAME } tarjoaa suojausavainten tallennusta."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
@@ -891,7 +894,7 @@
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Käyttäjätunnuksen \"${ username }\" avainkoodi tallennetaan ja se on käytettävissä laitteissa, joihin on asennettu ${ PASS_APP_NAME }."
+        "Käyttäjätunnuksen \"${ username }\" suojausavain tallennetaan ja se on käytettävissä laitteissa, joihin ${ PASS_APP_NAME } on asennettu."
       ],
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
@@ -960,16 +963,16 @@
         "Voi tarkastella holvin kohteita."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Valitse tallennettu avainkoodi, jolla kirjaudut verkkotunnukseen ${ domain }"
+        "Valitse tallennettu suojausavain, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
       "Click the icon to open it anytime.": [
         "Avaa se koska tahansa klikkaamalla kuvaketta."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Sulje tämä ikkuna käyttääksesi suojausavainta tai toista avainkoodia."
+        "Sulje tämä ikkuna käyttääksesi todennuslaitetta tai eri suojausavainta."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Sulje tämä ikkuna käyttääksesi toista avainkoodihallintaa."
+        "Sulje tämä ikkuna käyttääksesi jotain muuta suojausavainratkaisua."
       ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
@@ -1182,7 +1185,7 @@
         "Pass Plus -kokeilu"
       ],
       "Passkey sign-in": [
-        "Avainkoodilla kirjautuminen"
+        "Kirjautuminen suojausavaimella"
       ],
       "Password copied": [
         "Salasana kopioitiin"
@@ -1246,7 +1249,10 @@
         "Tallenna kirjautumistieto"
       ],
       "Save passkey": [
-        "Tallenna avainkoodi"
+        "Tallenna suojausavain"
+      ],
+      "Select an existing login item to update.": [
+        "Valitse päivitettävä olemassa oleva kirjautumiskohde."
       ],
       "Select an existing login or create a new one.": [
         "Valitse olemassa oleva kirjautumistieto tai luo uusi."
@@ -1355,10 +1361,10 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Avaa ${ PASS_APP_NAME } PIN-koodilla päästäksesi käsiksi avainkoodeihisi."
+        "Käsittele suojausavaimiasi avaamalla ${ PASS_APP_NAME } PIN-koodillasi."
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Avaa ${ PASS_APP_NAME } PIN-koodilla tallentaaksesi tämän avainkoodin."
+        "Tallenna suojausavain avaamalla ${ PASS_APP_NAME } PIN-koodillasi."
       ],
       "Unlock it with your PIN to access the settings": [
         "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
@@ -1522,7 +1528,7 @@
         "Sovelluksen lokitiedot"
       ],
       "Authenticate with passkeys": [
-        "Todenna avainkoodeilla"
+        "Tunnistaudu suojausavaimilla"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME } automaattisesti"
@@ -1756,10 +1762,10 @@
         "Organisaatio"
       ],
       "Passkey": [
-        "Avainkoodi"
+        "Suojausavain"
       ],
       "Passkeys": [
-        "Avainkoodit"
+        "Suojausavaimet"
       ],
       "Passphrase": [
         "Tunnuslauseke"
@@ -1788,6 +1794,9 @@
       "Prompt for auto-save": [
         "Tarjoa automaattitallennusta"
       ],
+      "Prompt for auto-save when generating passwords": [
+        "Ehdota automaattitäyttöä salasanojen luonnin yhteydessä"
+      ],
       "Rate us": [
         "Arvostele meidät"
       ],
@@ -1804,7 +1813,7 @@
         "Näytä salasana"
       ],
       "Save passkeys": [
-        "Tallenna avainkoodit"
+        "Tallenna suojausavaimet"
       ],
       "Security": [
         "Suojaus"
@@ -2173,7 +2182,7 @@
         "Tervetuliaislahjamme sinulle"
       ],
       "Passkey": [
-        "Avainkoodi"
+        "Suojausavain"
       ],
       "Password": [
         "Salasana"
@@ -2349,7 +2358,7 @@
         "Kohteita ei löydy haulla"
       ],
       "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Suojausavaimia ei löytynyt. Tallenna suojausavaimesi ${ PASS_APP_NAME }iin kirjautuaksesi kohteeseen ${ domain }."
+        "Suojausavaimia ei löytynyt. Kirjaudu osoiteeseen ${ domain } tallentamalla suojausavaimesi ${ PASS_APP_NAME }iin."
       ],
       "No password manager selected": [
         "Salasanahallintaa ei ole valittu"

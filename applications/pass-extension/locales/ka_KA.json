@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
       ],
+      "Could not validate addresses at the moment.": [
+        "მისამართების გადამოწმება ამჟამად შეუძლებელია."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV ფაილს მოსალოდნელი თავსართები აკლია: ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "მონიშნული ელემენტების წაშლა ჩავარდა"
+      ],
+      "Failed to edit organization settings": [
+        "ორგანიზაციის პარამეტრების ჩასწორება ჩავარდა"
       ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
@@ -862,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } გკითხავთ, გნებავთ თქვენი ავტორიზაციის დეტალების შენახვა, თუ არა."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } შემოგთავაზებთ ავთენტიკაციას შენახული წვდომის გასაღებებით"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } რეგისტრაციის ფორმებზე ელფოსტის ფსევდონიმის შექმნას გირჩევთ."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } რეგისტრაციის ფორმებბზე ძლიერ პაროლებს შემოგთავაზებთ."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } შემოგთავაზებთ წვდომის გასაღების შენახვას."
       ],
       "${ trialDaysLeft } day left": [
         "დარჩენილია ${ trialDaysLeft } დღე",
@@ -931,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "ნაგულისხმევად გუნდის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
@@ -1154,6 +1169,9 @@
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
       ],
+      "Organization settings successfully updated": [
+        "ორგანიზაციის პარამეტრები წარმატებით განახლდა"
+      ],
       "Owner": [
         "მფლობელი"
       ],
@@ -1230,6 +1248,9 @@
       "Save passkey": [
         "წვდომის გასაღების შენახვა"
       ],
+      "Select an existing login item to update.": [
+        "აირჩიეთ არსებული შესვლის ელემენტი, გასაახლებლად"
+      ],
       "Select an existing login or create a new one.": [
         "აირჩიეთ არსებული შესვლის დეტალი ან შექმენით ახალი."
       ],
@@ -1287,6 +1308,9 @@
       "Syncing your vaults…": [
         "თქვენი საცავების სინქრონიზაცია…"
       ],
+      "Team members can only share vaults within organization": [
+        "გუნდის წევრებს საცავების გაზიარება, მხოოდ, ორგანიზაციის შიგნით შეუძლიათ"
+      ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
       ],
@@ -1311,6 +1335,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
+      ],
+      "This setting is disabled on the organization level": [
+        "ეს პარამეტრი გათიშულია ორგანიზაციის დონეზე"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
@@ -1344,6 +1371,9 @@
       ],
       "Update login": [
         "შესვლის დეტალების განახლება"
+      ],
+      "Updating organization settings": [
+        "ორგანიზაციის პარამეტრების განახლება"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ტარიფის აწევა"
@@ -1494,6 +1524,9 @@
       "Application logs": [
         "აპლიკაციის ჟურნალი"
       ],
+      "Authenticate with passkeys": [
+        "ავთენტიკაცია წვდომის გასაღებებით"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ავტომატური დაბლოკვა"
       ],
@@ -1554,6 +1587,12 @@
       "Created": [
         "შექმნილია"
       ],
+      "Disable data export for team members": [
+        "მონაცემების გატანის გათიშვა გუნდის წევრებისთვის"
+      ],
+      "Disable sharing outside the organization": [
+        "გაზიარებით გათიშვა ორგანიზაციის გარეთ"
+      ],
       "Display": [
         "ჩვენება"
       ],
@@ -1580,6 +1619,9 @@
       ],
       "Export": [
         "გატანა"
+      ],
+      "Exporting policy": [
+        "გატანის პოლიტიკა"
       ],
       "Field name": [
         "ველის სახელწოდება"
@@ -1764,6 +1806,9 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
+      "Save passkeys": [
+        "წვდომის გასაღებების შენახვა"
+      ],
       "Security": [
         "უსაფრთხოება"
       ],
@@ -1790,6 +1835,9 @@
       ],
       "Settings": [
         "მორგება"
+      ],
+      "Sharing policy": [
+        "გაზიარების პოლიტიკა"
       ],
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
@@ -2277,6 +2325,9 @@
       ],
       "Invalid email addresses.": [
         "არასწორი ელფოსტის მისამართები."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "ორგანიზაციის გარედან ელფოსტის მისამართების მოწვევა დაშვებული არაა."
       ],
       "item was imported without custom fields": [
         "ელემენტის შემოტანა მომხმარებლის ველების გარეშე მოხდა"

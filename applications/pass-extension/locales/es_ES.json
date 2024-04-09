@@ -865,6 +865,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } te avisará tan pronto como las contraseñas generadas se completen automáticamente."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } te avisará de guardar o actualizar las credenciales."
       ],
@@ -1247,6 +1250,9 @@
       ],
       "Save passkey": [
         "Guardar la clave de acceso"
+      ],
+      "Select an existing login item to update.": [
+        "Selecciona un elemento de inicio de sesión existente para actualizar."
       ],
       "Select an existing login or create a new one.": [
         "Selecciona un inicio de sesión existente o crea uno nuevo."
@@ -1787,6 +1793,9 @@
       ],
       "Prompt for auto-save": [
         "Avisar para guardar automáticamente"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Solicitar el guardado automático al generar contraseñas"
       ],
       "Rate us": [
         "Evalúanos"
