@@ -8,7 +8,9 @@ const HeaderSize = ({ size }: Props) => {
 
     return (
         <div>
-            <span className="color-disabled mx-2">•</span>
+            <span className="color-disabled mx-2" aria-hidden="true">
+                •
+            </span>
             <span className="color-weak text-pre">{readableSize}</span>
         </div>
     );

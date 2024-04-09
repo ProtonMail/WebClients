@@ -34,20 +34,32 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     return (
         <UnAuthenticated>
             <div className={containerClassname}>
-                <Header className="shadow-norm flex items-center">
+                <Header className="header--wrap shadow-norm *:min-size-auto items-center h-auto">
                     <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                    <div className="logo-container flex justify-space-between items-center flex-nowrap">
+                    <div className="logo-container p-0 md:p-4 flex justify-space-between items-center flex-nowrap w-full md:w-auto">
                         <MainLogo to="/" />
                         <UnAuthenticatedAppsDropdown />
                     </div>
 
-                    <div className="flex justify-end flex-1 self-center my-auto">
+                    <div className="flex justify-end flex-1 self-center my-auto w-full md:w-auto">
                         {isProtonUser ? (
-                            <ButtonLike color="norm" as="a" href={APPS.PROTONDRIVE} target="_blank">
+                            <ButtonLike
+                                className="w-full md:w-auto"
+                                color="norm"
+                                as="a"
+                                href={APPS.PROTONDRIVE}
+                                target="_blank"
+                            >
                                 {c('Action').t`Go to Drive`}
                             </ButtonLike>
                         ) : (
-                            <ButtonLike color="norm" as="a" href={DRIVE_PRICING_PAGE} target="_blank">
+                            <ButtonLike
+                                className="w-full md:w-auto"
+                                color="norm"
+                                as="a"
+                                href={DRIVE_PRICING_PAGE}
+                                target="_blank"
+                            >
                                 {c('Action').t`Try for free`}
                             </ButtonLike>
                         )}
