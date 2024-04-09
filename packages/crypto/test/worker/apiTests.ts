@@ -1481,7 +1481,7 @@ DQ==
             ).to.be.rejectedWith(/Key packet is already decrypted/);
         });
 
-        it('reformatted key has a separate key reference', async () => {
+        it('reformatKey - reformatted key has a separate key reference', async () => {
             const passphrase = 'passphrase';
             const originalKeyRef = await CryptoApiImplementation.importPrivateKey({
                 armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
@@ -1524,6 +1524,24 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
                 passphrase,
             });
             expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
+        });
+
+        it('reformatKey - it reformats a key using the key creation time', async () => {
+            const date = new Date(0);
+            const privateKey = await CryptoApiImplementation.generateKey({
+                userIDs: [{ name: 'name', email: 'email@test.com' }],
+                date,
+            });
+
+            const reformattedKeyRef = await CryptoApiImplementation.reformatKey({
+                privateKey,
+                userIDs: [{ name: 'reformatted', email: 'reformatteed@test.com' }],
+            });
+            const armoredReformattedKey = await CryptoApiImplementation.exportPublicKey({ key: reformattedKeyRef });
+            const reformattedKey = await openpgp_readKey({ armoredKey: armoredReformattedKey });
+            const primaryUser = await reformattedKey.getPrimaryUser();
+            expect(primaryUser.user.userID?.userID).to.equal('reformatted <reformatteed@test.com>');
+            expect((await reformattedKey.getPrimaryUser()).selfCertification.created).to.deep.equal(date);
         });
 
         it('isWeak() - it correctly marks a weak key', async () => {
