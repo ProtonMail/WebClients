@@ -1111,6 +1111,14 @@
       "Sign in with 2FA": [
         "使用 2FA 登入"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
+      ]
     }
   }
 }
