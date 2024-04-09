@@ -30,6 +30,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2023OfferCoupon, getIsVpnB2BPlan, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -459,7 +460,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                         flow: isB2bPlan ? 'b2b' : 'b2c',
                                     });
                                 }
-                            } catch (error) {
+                            } catch (error: any) {
                                 observeApiError(error, (status) =>
                                     metrics.core_vpn_single_signup_step2_setup_3_total.increment({
                                         status,
@@ -467,6 +468,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                         flow: isB2bPlan ? 'b2b' : 'b2c',
                                     })
                                 );
+
+                                if (error?.config?.url?.endsWith?.('keys/setup')) {
+                                    captureMessage(`Signup setup failure`);
+                                }
 
                                 handleError(error);
                                 setModelDiff({
