@@ -84,11 +84,14 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
             }
         }
 
+        case ImportProvider.CSV: {
+            return readProtonPassCSV(await file.text());
+        }
+
         case ImportProvider.DASHLANE: {
             return readDashlaneData(await file.arrayBuffer());
         }
 
-        case ImportProvider.CSV:
         case ImportProvider.SAFARI: {
             return readSafariData(await file.text());
         }

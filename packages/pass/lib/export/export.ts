@@ -25,7 +25,7 @@ export const createPassExportZip = async (payload: ExportData): Promise<Uint8Arr
 export const createPassExportCSV = (payload: ExportData): string => {
     const items = Object.values(payload.vaults)
         .flatMap(prop('items'))
-        .map<ExportCSVItem>(({ data, aliasEmail, createTime, modifyTime }) => ({
+        .map<ExportCSVItem>(({ data, aliasEmail, createTime, modifyTime, shareId }) => ({
             type: data.type,
             name: data.metadata.name,
             url: 'urls' in data.content ? data.content.urls.join(', ') : '',
@@ -47,6 +47,7 @@ export const createPassExportCSV = (payload: ExportData): string => {
             totp: 'totpUri' in data.content ? data.content.totpUri : '',
             createTime: createTime.toString(),
             modifyTime: modifyTime.toString(),
+            vault: payload.vaults[shareId].name,
         }));
 
     return Papa.unparse(items);
