@@ -396,7 +396,7 @@
         "Mostra impostazioni avanzate"
       ],
       "Sign back in": [
-        "Accedi di nuovo"
+        "Effettua nuovamente l'accesso"
       ],
       "Sign in": [
         "Accedi"
@@ -405,7 +405,7 @@
         "Accedi con ${ BRAND_NAME }"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Sort vault items": [
         "Ordina gli elementi della cassaforte"
@@ -864,6 +864,9 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importerà solamente i login, le note e le carte di credito."
+      ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } ti avviserà non appena le password generate verranno compilate automaticamente."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } ti chiederà di salvare o aggiornare le credenziali."
@@ -1326,9 +1329,6 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
         "Impossibile importare i seguenti ${ result.ignored.length } elementi:"
-      ],
-      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "L'elemento di login per \"${ domain }\" verrà aggiornato e sarà disponibile sui dispositivi su cui è installato ${ PASS_APP_NAME }."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Il testo che stai provando a incollare è più lungo della lunghezza massima di ${ maxLength } caratteri."
@@ -1793,6 +1793,9 @@
       ],
       "Prompt for auto-save": [
         "Richiedi il salvataggio automatico"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Richiedi il salvataggio automatico durante la generazione delle password"
       ],
       "Rate us": [
         "Valutaci"

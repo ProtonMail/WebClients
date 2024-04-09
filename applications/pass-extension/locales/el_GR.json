@@ -865,6 +865,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } θα σας προτρέψει μόλις συμπληρωθούν αυτόματα οι κωδικοί πρόσβασης που δημιουργούνται."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "Το ${ PASS_APP_NAME } θα σας ζητήσει να αποθηκεύσετε ή να ενημερώσετε διαπιστευτήρια."
       ],
@@ -1247,6 +1250,9 @@
       ],
       "Save passkey": [
         "Αποθήκευση κλειδιού πρόσβασης"
+      ],
+      "Select an existing login item to update.": [
+        "Επιλέξτε ένα υπάρχον στοιχείο σύνδεσης για ενημέρωση."
       ],
       "Select an existing login or create a new one.": [
         "Επιλέξτε μια υπάρχουσα σύνδεση ή δημιουργήστε μια νέα."
@@ -1787,6 +1793,9 @@
       ],
       "Prompt for auto-save": [
         "Ερώτηση για αυτόματη αποθήκευση"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Προτροπή για αυτόματη αποθήκευση κατά τη δημιουργία κωδικών πρόσβασης"
       ],
       "Rate us": [
         "Βαθμολογήστε μας"
