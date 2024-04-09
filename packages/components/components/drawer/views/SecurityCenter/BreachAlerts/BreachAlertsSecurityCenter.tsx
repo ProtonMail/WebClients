@@ -78,11 +78,10 @@ const BreachAlertsSecurityCenter = () => {
     return (
         <>
             <div className="w-full">
-                <h3 className="text-rg text-bold mt-1 mb-2">{c('Title').t`Breach alerts`}</h3>
                 {(() => {
                     if (loading) {
                         return (
-                            <div className="w-full flex flex-column justify-center">
+                            <div className="w-full flex flex-column justify-center mt-4">
                                 <Loader size="medium" className="color-primary m-auto" />
                             </div>
                         );
@@ -93,41 +92,48 @@ const BreachAlertsSecurityCenter = () => {
                                 .t`Please try again in a few moments`}</GenericError>
                         );
                     }
-                    // TODO: this will be changed with the new designs
+
                     if (!isPaid) {
                         if (count === 0) {
                             return <FreeUserNoBreaches onToggleBreaches={handleUpgradeClick} />;
                         }
-                        return <BreachDetectedUpsell onBreachDetectedUpsellClick={handleUpgradeClick} />;
+                        return <BreachDetectedUpsell onToggleBreaches={handleUpgradeClick} />; // TO UPDATE for upsell
                     }
 
-                    if (isPaid && count === 0) {
-                        return (
-                            <div className="text-center pt-2 drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap items-center gap-2">
-                                <Icon name="checkmark-circle-filled" className="color-success" alt="" />
-                                <p className="m-0 color-hint">{c('Title').t`No breaches detected`}</p>
-                            </div>
-                        );
-                    }
                     return (
-                        <div className="flex flex-column flex-nowrap gap-2 w-full">
-                            {fetchedBreachData?.map((breach) => {
-                                return (
-                                    <BreachCard
-                                        name={breach.name}
-                                        email={breach.email}
-                                        publishedAt={breach.publishedAt}
-                                        password={breach.passwordLastChars}
-                                        key={breach.id}
-                                        onClick={() => {
-                                            setSelectedBreachID(breach.id);
-                                            openBreachModal();
-                                        }}
-                                        style={getStyle(breach.severity)}
+                        <>
+                            <h3 className="text-rg text-bold mt-1 mb-2">{c('Title').t`Breach Alert`}</h3>
+                            {count === 0 ? (
+                                <div className="drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap gap-2">
+                                    <Icon
+                                        name="checkmark-circle-filled"
+                                        className="color-success shrink-0 mt-0.5"
+                                        alt=""
                                     />
-                                );
-                            })}
-                        </div>
+                                    <p className="m-0 color-hint text-left flex-1">{c('Title')
+                                        .t`No breaches detected`}</p>
+                                </div>
+                            ) : (
+                                <div className="flex flex-column flex-nowrap gap-2 w-full">
+                                    {fetchedBreachData?.map((breach) => {
+                                        return (
+                                            <BreachCard
+                                                name={breach.name}
+                                                email={breach.email}
+                                                password={breach.passwordLastChars}
+                                                key={breach.id}
+                                                onClick={() => {
+                                                    setSelectedBreachID(breach.id);
+                                                    openBreachModal();
+                                                }}
+                                                style={getStyle(breach.severity)}
+                                                severity={breach.severity}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </>
                     );
                 })()}
             </div>
