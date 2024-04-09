@@ -1,8 +1,8 @@
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import ReadableDate from './ReadableDate';
+import { getBreachIcon } from './helpers';
 
 import './BreachListItem.scss';
 
@@ -13,17 +13,26 @@ interface Props {
     disabled?: boolean;
     selected?: boolean;
     style: {
-        backgroundClass: string;
-        colorClass: string;
         iconAltText: string;
     };
+    severity: number;
+    exposedData:
+        | null
+        | {
+              code: string;
+              name: string;
+          }[];
 }
 
-const BreachListItem = ({ name, createdAt, handleClick, disabled, selected, style }: Props) => {
-    const { colorClass, backgroundClass, iconAltText } = style;
+const BreachListItem = ({ name, createdAt, handleClick, disabled, selected, style, severity, exposedData }: Props) => {
+    const { iconAltText } = style;
+
+    const unReadBreach = false; // TODO: API needed?
+
+    const breachIcon = getBreachIcon(severity);
 
     return (
-        <li>
+        <li className="mb-1">
             <Button
                 className={clsx(
                     'w-full px-4 py-3 border-none',
@@ -33,18 +42,31 @@ const BreachListItem = ({ name, createdAt, handleClick, disabled, selected, styl
                 onClick={handleClick}
             >
                 <span className="flex flex-nowrap items-start">
-                    <span
-                        className={clsx('ratio-square rounded flex w-custom', backgroundClass)}
-                        style={{ '--w-custom': '48px' }}
-                    >
-                        <Icon name="bolt" size={6} className={clsx('m-auto', colorClass)} alt={iconAltText} />
+                    <span className="flex w-custom relative" style={{ '--w-custom': '1.875rem' }}>
+                        <img src={breachIcon} className="m-auto w-full h-full" alt={iconAltText} />
                     </span>
                     <span className="flex-1 text-left pl-2 pr-1">
-                        <span className="block max-w-full text-ellipsis">{name}</span>
+                        <span className={clsx('block max-w-full text-ellipsis', unReadBreach && 'text-bold')}>
+                            {name}
+                        </span>
                         <ReadableDate
                             value={createdAt}
-                            className="block max-w-full text-ellipsis m-0 text-sm color-weak"
+                            className={clsx(
+                                'block max-w-full text-ellipsis m-0 text-sm color-weak',
+                                unReadBreach && 'text-bold'
+                            )}
                         />
+                        <div className="text-ellipsis mt-1">
+                            {exposedData?.map((data) => {
+                                return (
+                                    <span className="pr-2 inline-block" key={`${data.code}${data.name}`}>
+                                        <span className="text-sm rounded-full bg-norm border inline-block px-3 py-0.5">
+                                            {data.name}
+                                        </span>
+                                    </span>
+                                );
+                            })}
+                        </div>
                     </span>
                 </span>
             </Button>

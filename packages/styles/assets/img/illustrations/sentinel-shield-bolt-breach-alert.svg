@@ -1,31 +1,24 @@
-<svg width="56" height="64" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M24.7825 4.10207C25.8863 3.70069 27.0431 3.5 28.2 3.5C29.3568 3.5 30.5136 3.70069 31.6174 4.10207L50.8834 11.1079C51.6738 11.3953 52.2 12.1465 52.2 12.9875V35.4894C52.2 42.0764 48.602 48.1373 42.8193 51.2915L29.1577 58.7433C28.8592 58.9061 28.5296 58.9844 28.2 58.9844C27.8703 58.9844 27.5407 58.9061 27.2422 58.7433L13.5806 51.2915C7.79792 48.1373 4.19995 42.0764 4.19995 35.4894V12.9875C4.19995 12.1465 4.72609 11.3953 5.51647 11.1079L24.7825 4.10207Z"
-        fill="url(#paint0_linear_33739_153706)"
-        stroke="#6D4AFF"
-        stroke-opacity="0.2"
-        stroke-width="5"
-    />
-    <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M27.6353 32H19L30.0666 15L28.3647 29L37 29L25.9333 46L27.6353 32Z"
-        fill="white"
-    />
-    <defs>
-        <linearGradient
-            id="paint0_linear_33739_153706"
-            x1="28"
-            y1="28.7"
-            x2="49.7"
-            y2="28.7"
-            gradientUnits="userSpaceOnUse"
-        >
-            <stop offset="0.0001" stop-color="#7C5DFF" />
-            <stop offset="0.0002" stop-color="#987FFE" />
-            <stop offset="1" stop-color="#CBC0F9" />
-        </linearGradient>
-    </defs>
+<svg
+    fill="none"
+    height="64"
+    viewBox="0 0 56 64"
+    width="56"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="28" x2="49.7" y1="28.7" y2="28.7">
+        <stop offset=".0001" stop-color="#7c5dff" />
+        <stop offset=".0002" stop-color="#987ffe" />
+        <stop offset="1" stop-color="#cbc0f9" />
+    </linearGradient>
+    <g clip-rule="evenodd" fill-rule="evenodd">
+        <path
+            d="m24.7825 4.10207c1.1038-.40138 2.2606-.60207 3.4175-.60207 1.1568 0 2.3136.20069 3.4174.60207l19.266 7.00583c.7904.2874 1.3166 1.0386 1.3166 1.8796v22.5019c0 6.587-3.598 12.6479-9.3807 15.8021l-13.6616 7.4518c-.2985.1628-.6281.2411-.9577.2411-.3297 0-.6593-.0783-.9578-.2411l-13.6616-7.4518c-5.78268-3.1542-9.38065-9.2151-9.38065-15.8021v-22.5019c0-.841.52614-1.5922 1.31652-1.8796z"
+            fill="url(#a)"
+            stroke="#6d4aff"
+            stroke-opacity=".2"
+            stroke-width="5"
+        />
+        <path d="m27.6353 32h-8.6353l11.0666-17-1.7019 14h8.6353l-11.0667 17z" fill="#fff" />
+    </g>
 </svg>
