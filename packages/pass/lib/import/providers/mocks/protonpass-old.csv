@@ -1,0 +1,5 @@
+type,name,url,username,password,note,totp,createTime,modifyTime
+note,note title,,,,this is my note,,1706621831,1707735222
+login,login title,"https://example.com/, https://proton.me/",john,password123,login note,otpauth://totp/login%20title:john?issuer=login%20title&secret=ABCDEF&algorithm=SHA1&digits=6&period=30,1707735320,1707735349
+alias,alias title,,aliastitle.skipping290@passdevpremium.com,,alias note,,1707735363,1707735363
+creditCard,credit card title,,,,"{""cardholderName"":""John Doe"",""cardType"":0,""number"":""4242424242424242"",""verificationNumber"":""123"",""expirationDate"":""2024-02"",""pin"":""1234"",""note"":""credit card note""}",,1707735447,1707735447
