@@ -1,5 +1,5 @@
-import { clusters as clusters$1, dom, out, rule, ruleset, score, type, utils } from './fathom.js';
 import * as fathomWeb from './fathom.js';
+import { clusters as clusters$1, dom, out, rule, ruleset, score, type, utils } from './fathom.js';
 
 export { fathomWeb as fathom };
 
@@ -499,8 +499,8 @@ const getCommonAncestor = (elementA, elementB) => {
     return elementA.contains(elementB)
         ? elementA
         : elementA.parentElement
-        ? getCommonAncestor(elementA.parentElement, elementB)
-        : elementA;
+          ? getCommonAncestor(elementA.parentElement, elementB)
+          : elementA;
 };
 
 const findStackedParent = (el, cache = [], maxIterations) => {
@@ -563,11 +563,11 @@ const isPredictedType = (type) => (fnode) => {
 
 const isClassifiable = (form) => !(isPrediction(form) || isIgnored(form));
 
-const removeClassifierFlags = (el) => {
+const removeClassifierFlags = (el, options) => {
     removeProcessedFlag(el);
     removePredictionFlag(el);
-    removeIgnoredFlag(el);
-    el.querySelectorAll(kFieldSelector).forEach(removeClassifierFlags);
+    if (!options.preserveIgnored) removeIgnoredFlag(el);
+    el.querySelectorAll(kFieldSelector).forEach((el) => removeClassifierFlags(el, options));
 };
 
 var FormType;
@@ -690,8 +690,8 @@ const createInputIterator = (form) => {
             return idx === -1
                 ? null
                 : (_a = formEls === null || formEls === void 0 ? void 0 : formEls[idx - 1]) !== null && _a !== void 0
-                ? _a
-                : null;
+                  ? _a
+                  : null;
         },
         next(input) {
             var _a;
@@ -699,8 +699,8 @@ const createInputIterator = (form) => {
             return idx === -1
                 ? null
                 : (_a = formEls === null || formEls === void 0 ? void 0 : formEls[idx + 1]) !== null && _a !== void 0
-                ? _a
-                : null;
+                  ? _a
+                  : null;
         },
     };
 };
@@ -2795,7 +2795,10 @@ const shouldRunClassifier = () => {
     const runForForms = selectFormCandidates().reduce((runDetection, form) => {
         if (isProcessed(form)) {
             const unprocessedFields = selectInputCandidates(form).some(isProcessableField);
-            if (unprocessedFields) removeClassifierFlags(form);
+            if (unprocessedFields)
+                removeClassifierFlags(form, {
+                    preserveIgnored: false,
+                });
             return runDetection || unprocessedFields;
         }
         if (isVisibleForm(form)) return true;
