@@ -104,6 +104,9 @@
       "Add notification": [
         "Añadir notificación"
       ],
+      "Add or switch account": [
+        "Añadir o cambiar de cuenta"
+      ],
       "Add PayPal": [
         "Añadir PayPal"
       ],
@@ -1073,6 +1076,9 @@
       "Void all recovery files?": [
         "¿Anular todos los archivos de recuperación?"
       ],
+      "Welcome": [
+        "Te damos la bienvenida"
+      ],
       "What do I get?": [
         "¿Qué obtengo?"
       ],
@@ -1262,6 +1268,23 @@
       ],
       "New email": [
         "Nuevo correo electrónico"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navega en la web de manera privada y bloquea anuncios"
+      ],
+      "Keep your schedule private": [
+        "Mantén privada tu agenda"
+      ],
+      "Protect your passwords and identity": [
+        "Protege tus contraseñas y tu identidad"
+      ],
+      "Safeguard your files and photos": [
+        "Protege tus archivos y fotos"
+      ],
+      "Secure your communications": [
+        "Protege tus comunicaciones"
       ]
     },
     "Apps dropdown": {
@@ -3051,9 +3074,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Una vez eliminada, esta dirección no puede ser usada nuevamente por ti u otra persona."
-      ],
       "The next active address on your list will be set as the default.": [
         "La siguiente dirección activa en tu lista será establecida como la dirección por defecto."
       ],
@@ -4429,9 +4449,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Para utilizar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Hay demasiadas sesiones secundarias. Borra tus cookies y vuelve a iniciar sesión."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -6309,6 +6326,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "Verifica el estado de las importaciones y de los reenvíos."
+      ],
+      "Choose an app to get started": [
+        "Elige una aplicación para comenzar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -12020,6 +12040,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Processing payment": [
+        "Procesando el pago"
       ],
       "Timeout exceeded": [
         "Se ha superado el tiempo de espera."

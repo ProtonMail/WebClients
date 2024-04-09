@@ -380,6 +380,9 @@
       "Auto-lock could not be disabled": [
         "Không thể vô hiệu hóa Tự động khóa"
       ],
+      "Cannot send invitation at the moment": [
+        "Hiện tại không thể gửi lời mời"
+      ],
       "Cannot send invitations at the moment": [
         "Hiện tại không thể gửi lời mời"
       ],
@@ -401,6 +404,9 @@
       "Could not resolve share members": [
         "Không thể lấy thông tin chia sẻ của thành viên"
       ],
+      "Could not validate addresses at the moment.": [
+        "Không thể xác thực các địa chỉ ngay lúc này."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Tệp CSV bị thiếu tiêu đề mong đợi: ${ missingHeaders }"
       ],
@@ -412,6 +418,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Xóa kho lưu trữ ${ payload.content.name } thất bại"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Phát hiện ${ errors.length } hàng CSV bị lỗi"
       ],
       "Editing item failed": [
         "Chỉnh sửa nội dung thất bại"
@@ -436,6 +445,9 @@
       ],
       "Failed to delete selected items": [
         "Lỗi khi xóa các nội dung được chọn"
+      ],
+      "Failed to edit organization settings": [
+        "Chỉnh sửa cài đặt tổ chức thất bại."
       ],
       "Failed to edit user's access.": [
         "Lỗi khi chỉnh sửa quyền truy cập của người dùng."
@@ -579,6 +591,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte\nbytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -587,6 +602,14 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte\nBytes"
+      ],
+      "Kilobyte": [
+        "Kilôbytes"
       ]
     },
     "Info": {
@@ -598,6 +621,15 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Cập nhật nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } thành viên"
+      ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } lần"
+      ],
+      "${ n } item": [
+        "${ n } nội dung"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } sẽ hiển thị biểu tượng của nội dung qua các máy chủ hình ảnh ẩn danh của ${ BRAND_NAME }."
@@ -656,6 +688,9 @@
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Mặc định các thành viên trong nhóm chỉ có thể xuất các kho lưu trữ khi họ là chủ sở hữu của nó. Nếu tùy chọn này được bật, họ sẽ không thể xuất bất kỳ dữ liệu nào."
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Cho phép tạo, chỉnh sửa, xóa và xuất nội dung trong kho lưu trữ này."
       ],
@@ -713,6 +748,9 @@
       "Import the CSV file below.": [
         "Nhập tệp CSV vào bên dưới."
       ],
+      "Imported ${ payload.total } item": [
+        "Đã nhập ${ payload.total } nội dung"
+      ],
       "Imported on ${ date }": [
         "Đã nhập vào ${ date }"
       ],
@@ -739,6 +777,9 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu bạn đang muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi trình mở rộng này trước nhé."
+      ],
+      "item": [
+        "nội dung"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã được tạo"
@@ -802,6 +843,9 @@
       ],
       "None": [
         "Không"
+      ],
+      "Organization settings successfully updated": [
+        "Cài đặt tổ chức đã được cập nhật thành công."
       ],
       "Owner": [
         "Chủ sở hữu"
@@ -893,11 +937,17 @@
       "Syncing your vaults…": [
         "Đang đồng bộ hóa kho lưu trữ…"
       ],
+      "Team members can only share vaults within organization": [
+        "Các thành viên trong nhóm chỉ được chia sẻ các kho lưu trữ bên trong tổ chức"
+      ],
       "Thank you, the problem has been reported": [
         "Cảm ơn bạn, vấn đề này đã được báo cáo"
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Tệp xuất của bạn được mã hóa bằng PGP và cần một mật khẩu mạnh."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "${ result.ignored.length } nội dung không thể nhập vào:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
@@ -908,8 +958,14 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "File xuất này sẽ không được mã hóa và tất cả những người có thể truy cập vào file xuất này sẽ thấy được mật khẩu của bạn. Vì lý do an toàn, vui lòng xóa file này khi bạn đã sử dụng xong."
       ],
+      "This setting is disabled on the organization level": [
+        "Tùy chọn này bị tắt ở cấp độ tổ chức"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kho lưu trữ này hiện chưa được chia sẻ với ai. Để chia sẻ, hãy mời thêm người."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Phiên bản này sẽ thêm vào lịch sử như là phiên bản mới nhất."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu của bạn và tải nó lên ${ PASS_APP_NAME }. Khi dữ liệu của bạn đã được nhập vào, xóa tệp đã xuất ban đầu."
@@ -919,6 +975,9 @@
       ],
       "Unable to copy to clipboard": [
         "Không thể sao chép vào bộ nhớ tạm"
+      ],
+      "Updating organization settings": [
+        "Đang cập nhật cài đặt tổ chức"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Nâng cấp bây giờ để mở khóa các tính năng cao cấp"
@@ -956,6 +1015,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Bạn không thể đổi địa chỉ email nhận cho bí danh này."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Bạn còn ${ daysRemaining } ngày để thử nó và những tính năng cao cấp khác."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để chuyển nội dung giữa tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
       ],
@@ -979,6 +1041,12 @@
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } ký tự"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } từ"
+      ],
       "1 hour": [
         "1 giờ"
       ],
@@ -1072,6 +1140,12 @@
       "Created": [
         "Đã tạo"
       ],
+      "Disable data export for team members": [
+        "Tắt xuất dữ liệu cho thành viên nhóm"
+      ],
+      "Disable sharing outside the organization": [
+        "Tắt chia sẽ ngoài tổ chức"
+      ],
       "Display": [
         "Hiển thị"
       ],
@@ -1089,6 +1163,9 @@
       ],
       "Export": [
         "Xuất"
+      ],
+      "Exporting policy": [
+        "Chính xách xuất dữ liệu"
       ],
       "Field name": [
         "Tên trường"
@@ -1207,6 +1284,9 @@
       "Oldest to newest": [
         "Cũ nhất đến mới nhất"
       ],
+      "Organization": [
+        "Tổ chức"
+      ],
       "Passkey": [
         "Passkey"
       ],
@@ -1263,6 +1343,9 @@
       ],
       "Set PIN code": [
         "Đặt mã PIN"
+      ],
+      "Sharing policy": [
+        "Chính sách chia sẽ"
       ],
       "Show website favicons": [
         "Hiển thị biểu tượng trang web"
@@ -1360,6 +1443,11 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Chào mừng tới ${ brandNameJSX }"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } nội dung"
       ]
     },
     "Option": {
@@ -1469,6 +1557,11 @@
       ],
       "Write your note": [
         "Viết ghi chú của bạn"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Kho lưu trữ không thể có hơn ${ vault.targetMaxMembers } thành viên."
       ]
     },
     "Title": {
@@ -1625,6 +1718,12 @@
       ],
       "Invalid alias prefix": [
         "Tiền tố bí danh không hợp lệ"
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Không được mời các địa chỉ bên ngoài tổ chức."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Độ dài tối đa là ${ maxLength } ký tự"
       ],
       "Missing alias prefix": [
         "Thiếu tiền tố bí danh"

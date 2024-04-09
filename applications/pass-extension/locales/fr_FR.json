@@ -865,11 +865,14 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } vous indiquera dès que les mots de passe générés sont remplis automatiquement."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vous invitera à enregistrer ou à mettre à jour vos identifiants."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } suggérera de vous authentifier en utilisant les clés d'authentifications enregistrées."
+        "${ PASS_APP_NAME } suggérera de vous authentifier en utilisant les clés d'identification enregistrées."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } proposera de créer un alias d'adresse e-mail dans les formulaires d'inscription."
@@ -878,7 +881,7 @@
         "${ PASS_APP_NAME } proposera de créer des mots de passe forts dans les formulaires d'inscription."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } suggérera de sauvegarder les clés d'authentification."
+        "${ PASS_APP_NAME } suggérera de sauvegarder les clés d'identification."
       ],
       "${ trialDaysLeft } day left": [
         "Il reste ${ trialDaysLeft } jour.",
@@ -1170,7 +1173,7 @@
         "Ouvrez le menu des extensions"
       ],
       "Organization settings successfully updated": [
-        "Les paramètres d'organisation ont été modifiés."
+        "Les paramètres d'organisation ont été mis à jour."
       ],
       "Owner": [
         "Propriétaire"
@@ -1247,6 +1250,9 @@
       ],
       "Save passkey": [
         "Enregistrer la clé d'identification"
+      ],
+      "Select an existing login item to update.": [
+        "Sélectionnez un élément de connexion existant à mettre à jour."
       ],
       "Select an existing login or create a new one.": [
         "Sélectionnez un identifiant existant ou créez-en un nouveau."
@@ -1522,7 +1528,7 @@
         "Journaux de l'application"
       ],
       "Authenticate with passkeys": [
-        "Authentifier avec des clés d'authentifications"
+        "Authentification à l'aide de clés d'identification"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Verrouillage automatique de ${ PASS_APP_NAME }"
@@ -1585,7 +1591,7 @@
         "Créé"
       ],
       "Disable data export for team members": [
-        "Désactiver l'exportation d'information pour les membres"
+        "Désactiver l'exportation des données pour les membres"
       ],
       "Disable sharing outside the organization": [
         "Désactiver le partage en dehors de l'organisation"
@@ -1787,6 +1793,9 @@
       ],
       "Prompt for auto-save": [
         "Demander l'enregistrement automatique"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Inviter à enregistrer automatiquement les mots de passe générés"
       ],
       "Rate us": [
         "Évaluez-nous"

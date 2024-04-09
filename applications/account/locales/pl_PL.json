@@ -104,6 +104,9 @@
       "Add notification": [
         "Dodaj powiadomienie"
       ],
+      "Add or switch account": [
+        "Dodaj lub przełącz konto"
+      ],
       "Add PayPal": [
         "Dodaj konto PayPal"
       ],
@@ -1073,6 +1076,9 @@
       "Void all recovery files?": [
         "Unieważnić wszystkie pliki odzyskiwania?"
       ],
+      "Welcome": [
+        "Witaj"
+      ],
       "What do I get?": [
         "Co otrzymam?"
       ],
@@ -1268,6 +1274,23 @@
       ],
       "New email": [
         "Nowa wiadomość"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Przeglądaj prywatnie Internet i blokuj reklamy"
+      ],
+      "Keep your schedule private": [
+        "Zachowaj prywatność swojego harmonogramu"
+      ],
+      "Protect your passwords and identity": [
+        "Chroń swoje hasło i tożsamość"
+      ],
+      "Safeguard your files and photos": [
+        "Zabezpiecz pliki i zdjęcia"
+      ],
+      "Secure your communications": [
+        "Zabezpiecz komunikację"
       ]
     },
     "Apps dropdown": {
@@ -3071,9 +3094,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Usuniętego adresu nie będzie mógł nikt użyć, również Ty."
-      ],
       "The next active address on your list will be set as the default.": [
         "Następny aktywny adres zostanie ustawiony jako domyślny."
       ],
@@ -4461,9 +4481,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Otwórz przeglądarkę, aby korzystać z ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Zbyt wiele sesji podrzędnych. Wyczyść pliki cookies i zaloguj się ponownie."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
@@ -6425,6 +6442,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "Sprawdź status importów i przekierowania."
+      ],
+      "Choose an app to get started": [
+        "Wybierz aplikację, aby rozpocząć"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."

@@ -451,6 +451,9 @@
       "Auto-lock could not be disabled": [
         "Kunci otomatis tidak dapat dinonaktifkan"
       ],
+      "Cannot send invitation at the moment": [
+        "Undangan tidak dapat dikirim untuk saat ini"
+      ],
       "Cannot send invitations at the moment": [
         "Undangan tidak dapat dikirim untuk saat ini"
       ],
@@ -489,6 +492,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal dihapus"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } baris CSV yang rusak terdeteksi"
       ],
       "Editing item failed": [
         "Item gagal disunting"
@@ -683,6 +689,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -694,6 +703,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte"
       ]
     },
     "Info": {
@@ -708,6 +734,15 @@
       ],
       "${ count } invites successfully sent": [
         "${ count } undangan berhasil dikirim"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } anggota"
+      ],
+      "${ modifiedCount } time": [
+        "${ modifiedCount } kali"
+      ],
+      "${ n } item": [
+        "${ n } item"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
@@ -832,6 +867,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Kata sandi yang dihasilkan akan disimpan selama ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Dapatkan pengalaman Pass yang maksimal dengan membuat brankas khusus bagi masing-masing tim atau proyek."
       ],
@@ -843,6 +881,9 @@
       ],
       "Import the CSV file below.": [
         "Impor CSV pada kolom di bawah ini."
+      ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } item diimpor"
       ],
       "Imported on ${ date }": [
         "Diimpor pada tanggal ${ date }"
@@ -882,6 +923,9 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sepertinya Anda telah masuk ke ${ PASS_APP_NAME }. Apabila Anda mencoba masuk dengan akun lain, silakan keluar dari ekstensi terlebih dahulu."
+      ],
+      "item": [
+        "item"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" dibuat"
@@ -975,6 +1019,9 @@
       ],
       "Pass Plus trial": [
         "Uji coba Pass Plus"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Kata sandi yang berusia lebih dari ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu akan dihapus dari daftar riwayat secara otomatis."
       ],
       "Permanently deleting selected items": [
         "Menghapus item yang dipilih secara permanen"
@@ -1093,6 +1140,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "${ result.ignored.length } item berikut tidak dapat diimpor:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
       ],
@@ -1168,6 +1218,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item yang Anda miliki hanya akan dapat dipindahkan ke dalam dua brankas pertama Anda. Untuk memindahkan item antar seluruh brankas, tingkatkan paket langganan Anda."
       ],
@@ -1197,6 +1250,12 @@
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } kata"
+      ],
       "1 hour": [
         "1 jam"
       ],
@@ -1626,6 +1685,9 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } item"
+      ],
       "You selected ${ semiboldText } in this vault": [
         "Anda memilih ${ semiboldText } pada brankas ini"
       ]
@@ -1740,6 +1802,11 @@
       ],
       "Write your note": [
         "Tulis catatan Anda"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Brankas tidak dapat berisi lebih dari ${ vault.targetMaxMembers } pengguna."
       ]
     },
     "Title": {
@@ -1971,6 +2038,9 @@
       ],
       "item was imported without custom fields": [
         "item telah diimpor tanpa kolom kustom"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Panjang maksimum adalah ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Awalan alias hilang"

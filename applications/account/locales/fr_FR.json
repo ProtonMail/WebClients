@@ -104,6 +104,9 @@
       "Add notification": [
         "Ajouter une notification"
       ],
+      "Add or switch account": [
+        "Ajouter ou changer de compte"
+      ],
       "Add PayPal": [
         "Ajouter PayPal"
       ],
@@ -1073,6 +1076,9 @@
       "Void all recovery files?": [
         "Annuler tous les fichiers de récupération ?"
       ],
+      "Welcome": [
+        "Bienvenue"
+      ],
       "What do I get?": [
         "Votre abonnement comprend :"
       ],
@@ -1262,6 +1268,23 @@
       ],
       "New email": [
         "Nouveau message"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Naviguez en privé sur le web tout en bloquant les publicités"
+      ],
+      "Keep your schedule private": [
+        "Protégez votre emploi du temps des regards indiscrets"
+      ],
+      "Protect your passwords and identity": [
+        "Protégez vos mots de passe et votre identité"
+      ],
+      "Safeguard your files and photos": [
+        "Protégez vos fichiers et photos"
+      ],
+      "Secure your communications": [
+        "Sécurisez vos communications"
       ]
     },
     "Apps dropdown": {
@@ -3051,9 +3074,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Une fois supprimée, cette adresse ne peut pas être réutilisée par vous ou qui que ce soit."
-      ],
       "The next active address on your list will be set as the default.": [
         "La prochaine adresse active de votre liste sera définie comme adresse par défaut."
       ],
@@ -4429,9 +4449,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Pour utiliser ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME }, passez sur la version web."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Il y a trop de sessions enfant, nous vous invitons à effacer vos cookies et à vous authentifier de nouveau."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
@@ -6309,6 +6326,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "Vérifier le statut des importations et des transferts."
+      ],
+      "Choose an app to get started": [
+        "Choisissez une application afin de commencer"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
