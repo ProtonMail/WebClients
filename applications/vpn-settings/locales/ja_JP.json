@@ -576,6 +576,12 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } のカスタム ドメイン"
+      ],
+      "${ ips } server": [
+        "${ ips } のサーバー"
+      ],
       "${ price } per dedicated server": [
         "専用サーバーあたり ${ price }"
       ],
@@ -584,6 +590,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ users } user": [
+        "${ users } のユーザー"
       ]
     },
     "Address action": {
@@ -749,6 +758,9 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } か月"
+      ],
       "the first month": [
         "最初の月"
       ],
@@ -776,6 +788,9 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "${ renewPrice }、${ renewalLength } で自動的に更新されます"
       ]
@@ -882,6 +897,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } を使って続行します。"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } 人のユーザー"
+      ],
+      "Total for ${ n } month": [
+        "合計 ${ n } か月"
       ]
     },
     "Checkout summary": {
@@ -2348,11 +2371,20 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } 件の VPN 接続"
+      ],
       "Access to all countries": [
         "すべての国にアクセス"
       ],
       "Add": [
         "追加"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "追加 ( ${ numberOfAddedServers } )"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "最大 ${ plusVpnConnections } 台のデバイスに接続"
       ],
       "Fastest VPN servers": [
         "最速の VPN サーバー"
@@ -2459,6 +2491,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "バイト"
+      ],
       "GB": [
         "GB"
       ],
@@ -2470,6 +2505,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "バイト"
+      ],
+      "Gigabyte": [
+        "ギガバイト"
+      ],
+      "Kilobyte": [
+        "キロバイト"
+      ],
+      "Megabyte": [
+        "メガバイト"
+      ],
+      "Terabyte": [
+        "テラバイト"
       ]
     },
     "Font face option": {
@@ -2631,11 +2683,32 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
       ],
+      "${ n } address": [
+        "${ n } 件のアドレス"
+      ],
+      "${ number } city": [
+        "${ number } つの都市"
+      ],
+      "${ number } server": [
+        "${ number } 台のサーバー"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } サーバーはまだセットアップ中です。 通常、これには ${ provisioningDuration } 程度かかります。"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } 以上"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } 個のアドレスが追加されました"
+      ],
       "${ storage } storage": [
         "${ storage } ストレージ"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } 人のユーザーが見つかりました"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "国別の接続には ${ vpnPlus } が必要です。"
@@ -2651,6 +2724,9 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
       "30-day money-back guarantee": [
         "30 日間返金保証"
@@ -2687,6 +2763,15 @@
       ],
       "Add domain": [
         "ドメインを追加"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "サーバーを追加 (${ availableAddedCount } が利用可能)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } ゲートウェイ サーバーを追加しています"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "ゲートウェイ サーバーの追加: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "追加のオプション"
@@ -2805,6 +2890,9 @@
       "Create your first Gateway": [
         "最初のゲートウェイを作成する"
       ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "ゲートウェイ サーバーの作成: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "アカウントを作成しています"
       ],
@@ -2828,6 +2916,9 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
@@ -3147,6 +3238,12 @@
       "per month, billed every 24 months": [
         "月額、24ヶ月ごとに請求"
       ],
+      "Please add a password for the user on row": [
+        "追加ユーザーのパスワードを入力してください。"
+      ],
+      "Please add an email address for the user on row": [
+        "追加ユーザーのメールアドレスを入力してください。"
+      ],
       "Please authenticate your card in the verification tab.": [
         "認証タブでカード認証をしてください。"
       ],
@@ -3279,6 +3376,9 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "最近削除されたため、特定の国でのみ使用可能なサーバーがあります。"
       ],
+      "Step ${ step }": [
+        "ステップ ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
       ],
@@ -3320,6 +3420,15 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
+      ],
+      "The following address is invalid.": [
+        "次のアドレスに間違いがあります。"
+      ],
+      "The following address is unavailable.": [
+        "次のアドレスは利用できません。"
+      ],
+      "The following address was not created.": [
+        "次のアドレスは作成されませんでした。"
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "以下のメンバーには、できるだけ早く2ファクタ認証を有効にするよう促すメールが送信されます。"
@@ -3600,6 +3709,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "現在、${ ipAddresses } 個の利用可能な専用サーバーのうち ${ ipCount } 個を使用しています。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "現在、利用可能な ${ maxMembers } ユーザー ライセンスのうち ${ usedMembers } を使用しています。"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "アカウント ${ memberAddress } でサインインしました"
       ],
@@ -3612,6 +3727,12 @@
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "プラン内の IP アドレス番号に ${ specificCountryCount } を追加することで、上記の設定をすぐに利用できます。特別な対応が必要な場合は私たちにご相談ください"
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "最大 ${ MAX_CALENDARS_FREE } 個までカレンダーを保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクとあなたのカレンダーを共有した ${ BRAND_NAME } のユーザーを削除してください。"
+      ],
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
       ],
@@ -3620,6 +3741,9 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
       "You have no invoices.": [
         "請求書はありません。"
@@ -3811,6 +3935,15 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } アドレス"
+      ],
+      "${ n } month": [
+        "${ n } か月"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } 日"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ MaxAddresses } 件のうち ${ UsedAddresses } 件のメールアドレス"
       ],
       "Account storage": [
         "アカウントの容量"
@@ -4355,6 +4488,11 @@
         "アップグレードしてチャットによるサポートやその他プレミアム機能を解放するか、無料のサポートフォームで問題をご報告ください。"
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "組織メンバーうち、${ twoFAMembers.length }/${ members.length } 人が 2 要素認証を使用しています。"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "割引を入手"
@@ -4529,6 +4667,48 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } カレンダー"
+      ],
+      "${ n } calendar per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 件の独自メールドメイン"
+      ],
+      "${ n } email address": [
+        "${ n } 件のメールアドレス / エイリアス"
+      ],
+      "${ n } email address per user": [
+        "1 ユーザーあたり ${ n } 件のメールアドレス"
+      ],
+      "${ n } filter": [
+        "${ n } 件のフィルター"
+      ],
+      "${ n } folder": [
+        "${ n } 件のフォルダー"
+      ],
+      "${ n } folder and label": [
+        "${ n } 件のフォルダーおよびラベル"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } 件の Hide-my-email エイリアス"
+      ],
+      "${ n } label": [
+        "${ n } 件のラベル"
+      ],
+      "${ n } message per day": [
+        "1 日あたり ${ n } メッセージ"
+      ],
+      "${ n } vault": [
+        "${ n } 個の保管庫"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 件の VPN 接続"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } と ${ n } hide-my-email エイリアス"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス付きの ${ PASS_APP_NAME }"
       ],
@@ -4676,6 +4856,9 @@
       "High-speed Swiss VPN that protects your privacy": [
         "プライバシーを保護する高速 VPN"
       ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } 台のデバイスで高速 VPN"
+      ],
       "HTML signatures": [
         "HTML 署名"
       ],
@@ -4712,6 +4895,9 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
+      "Protect ${ n } device at a time": [
+        "${ n }台のデバイスを同時に保護"
+      ],
       "Require 2FA for organization": [
         "組織には 2FA が必要です"
       ],
@@ -4729,6 +4915,9 @@
       ],
       "Send & receive invitations": [
         "招待を送受信"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }+ か国のサーバー"
       ],
       "Share files and folders via link": [
         "リンクでファイルやフォルダーを共有"
@@ -4798,6 +4987,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
+      ],
+      "Up to ${ n } user": [
+        "最大 ${ n } ユーザーまで"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
@@ -5005,6 +5197,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
+      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
       ],
@@ -5192,6 +5387,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
       ],
+      "Create up to ${ n } calendar": [
+        "最大 ${ n } 個までのカレンダーを作成"
+      ],
       "Dedicated Account manager": [
         "専任のアカウントマネージャー"
       ],
@@ -5316,6 +5514,15 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } してストレージを追加するか、ストレージの一部を削除してスペースを解放します。"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "現在のプランでは、最大${ availableAddresses } 件のメールアドレスを作成できます。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "現在のプランでは、最大${ availableNumberOfMembers } 名の組織ユーザーを作成できます。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "現在のプランでは、最大${ availableVPNAccess } 件のVPNアカウントを作成できます。"
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "現在のプランでは、最大${ humanReadableAvailableSpace } のストレージを作成できます。"
@@ -5613,6 +5820,9 @@
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "プランに含める IP の数を選択します。 追加の IP ごとに ${ price } の費用がかかります。"
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "${ maxIPs } を超える IP が必要な場合は、 "
       ]
     },
     "plan customizer, users": {
@@ -5621,6 +5831,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "プランに含めるユーザー数を選択してください。ユーザーを 1 人追加するごとに ${ price } 必要です。"
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "${ maxUsers }個以上のアカウントが必要な場合は、営業チームに連絡してください。${ contact }"
       ]
     },
     "Price": {
@@ -5705,6 +5918,9 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "組織内の ${ n } 管理者は、組織キーにアクセスする必要があります。"
+      ],
       "Changing organization keys": [
         "組織の鍵を変更しています"
       ],
@@ -5773,6 +5989,12 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } 日"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours }時間"
+      ],
       "Didn’t make this request?": [
         "この要求を行っていませんか？"
       ],
@@ -5781,6 +6003,12 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "この許可はあと${ timeRemaining.inDays }日で期限切れになります。"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
@@ -5852,6 +6080,9 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "あと${ gracePeriodHoursRemaining }時間"
+      ],
       "Didn’t make this request?": [
         "この要求は行っていませんか？"
       ],
@@ -5864,11 +6095,17 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "${ boldDate }からパスワードリセットが可能です。これにより、不正な要求をキャンセルするための時間が与えられます。"
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "パスワードリセットがリクエストされました(${ user.Email })。パスワードを変更できるのはあと${ hoursRemaining }時間後です。"
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "パスワードをリセットしようとしているのが本当にあなたであることを確認するために、リクエストを承認する前に72時間待っています。パスワードを変更できるのはあと${ boldTimeLeft }です。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "${ boldEmail }のパスワードリセットリクエストを受け取りました。"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } 時間後にパスワードを変更できます"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5919,6 +6156,9 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "パスワードリセットをリクエストしますか？"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } 時間後にパスワードをリセットできるようになります"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5930,6 +6170,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } 時間"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } が現在利用可能です。"
       ],
@@ -6001,6 +6244,25 @@
         "Unlimited にする"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } 日"
+      ],
+      "${ hours } hour": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } か月無料"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1ユーザー"
@@ -6056,6 +6318,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -6213,6 +6478,9 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "お客様の**${ currentPlanName }**プランの有効期限は残り**${ daysRemaining }**日です。"
+      ],
       "Your storage is full": [
         "ストレージがいっぱいです"
       ],
@@ -6253,6 +6521,42 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } の専用サーバー"
+      ],
+      "${ n } calendar per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
+      ],
+      "${ n } free VPN connection per user": [
+        "1 ユーザーあたり ${ n } 個の無料 VPN 接続"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } 件の高速 VPN 接続"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "1 ユーザーあたり ${ n } 件の高速 VPN 接続"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 件の VPN 接続"
+      ],
+      "${ n } VPN connection per user": [
+        "1 ユーザーあたり ${ n } 件の VPN 接続"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } アドレス"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ MaxAddresses } 件のうち ${ UsedAddresses } 件のメールアドレス"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } 件のカレンダー"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ MaxDomains } 件のうち ${ UsedDomains } 件の独自ドメイン"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers } ユーザーのうち ${ UsedMembers } ユーザー"
+      ],
       "1 email address": [
         "1 件のメールアドレス"
       ],
@@ -6264,6 +6568,9 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "広告ブロッカー内蔵 (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "${ maxVpn } 台のデバイスでの高速 VPN"
       ]
     },
     "Subscription change warning": {
@@ -6697,6 +7004,9 @@
       "Couldn’t create accounts": [
         "アカウントの作成に失敗しました"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } ユーザーを作成します"
+      ],
       "Create a new Gateway": [
         "新しいゲートウェイを作成する"
       ],
@@ -6744,6 +7054,9 @@
       ],
       "Delete account": [
         "アカウントの削除"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "サーバーを削除します (${ days } 日間はまだ復元できます)"
       ],
       "Delete user?": [
         "ユーザーを削除しますか？"
@@ -6816,6 +7129,9 @@
       ],
       "Every member of the organization can access": [
         "組織の全メンバーがアクセスできる"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } ユーザー アカウントの作成に失敗しました。"
       ],
       "Find email or username": [
         "メールアドレスまたはユーザー名を探す"
@@ -6996,6 +7312,9 @@
       ],
       "Subscription": [
         "サブスクリプション"
+      ],
+      "Successfully created ${ n } user account": [
+        "${ n }個のユーザーアカウントが正常に作成されました"
       ],
       "Summary": [
         "概要"
@@ -7205,6 +7524,14 @@
         "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "もっと気に入ったサービスを見つけた"
@@ -7222,6 +7549,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix、Amazon Prime Video、BBC iPlayer、ESPN+、Disney+、HBO Now など"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } サーバー"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 件の VPN 接続"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } か国以上で ${ numberOfServers } 台"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } か国で ${ numberOfServers } 台"
       ]
     },
     "vpn_2step: billing": {
@@ -7264,6 +7605,12 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } か月"
+      ],
+      "${ n } year": [
+        "${ n }年"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "${ upsellPlanName } をリスクなしでお試しください"
       ],
