@@ -10,7 +10,8 @@
         "@emoji-mart/data",
         "pmcrypto",
         "pmcrypto-v6-canary",
-        "@openpgp/web-stream-tools"
+        "@openpgp/web-stream-tools",
+        "@protontech/pass-rust-core"
     ],
     "ignorePaths": ["**/node_modules/**"],
     "packageRules": [
