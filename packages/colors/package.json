@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "@types/node": "^20.11.30",
+        "@types/node": "^20.12.6",
         "css-tree": "^2.3.1",
         "prettier": "^3.2.5",
         "tinycolor2": "^1.6.0"
@@ -27,7 +27,7 @@
         "ts-jest": "^29.1.2",
         "ts-loader": "^9.5.1",
         "ts-node": "^10.9.2",
-        "typescript": "^5.4.3",
+        "typescript": "^5.4.4",
         "webpack": "^5.91.0",
         "webpack-cli": "^5.1.4"
     }

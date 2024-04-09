@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "@babel/cli": "^7.24.1",
-        "@babel/core": "^7.24.3",
+        "@babel/core": "^7.24.4",
         "@babel/plugin-proposal-class-properties": "^7.18.6",
         "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
         "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
@@ -23,10 +23,10 @@
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/plugin-transform-regenerator": "^7.24.1",
         "@babel/plugin-transform-runtime": "^7.24.3",
-        "@babel/preset-env": "^7.24.3",
+        "@babel/preset-env": "^7.24.4",
         "@babel/preset-react": "^7.24.1",
         "@babel/preset-typescript": "^7.24.1",
-        "@babel/runtime": "^7.24.1",
+        "@babel/runtime": "^7.24.4",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
         "@sentry/webpack-plugin": "^1.21.0",
         "@types/webpack": "^5.28.5",
@@ -38,7 +38,7 @@
         "copy-webpack-plugin": "^12.0.2",
         "core-js": "^3.36.1",
         "cross-env": "^7.0.3",
-        "css-loader": "^6.10.0",
+        "css-loader": "^6.11.0",
         "css-minimizer-webpack-plugin": "^6.0.0",
         "dedent": "^1.5.1",
         "eslint-webpack-plugin": "^4.1.0",
@@ -51,12 +51,12 @@
         "po-gettext-loader": "^1.0.0",
         "portfinder": "^1.0.32",
         "postcss": "^8.4.38",
-        "postcss-color-functional-notation": "^6.0.7",
+        "postcss-color-functional-notation": "^6.0.8",
         "postcss-loader": "^8.1.1",
         "postcss-logical": "^7.0.1",
         "react-refresh": "^0.14.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.72.0",
+        "sass": "^1.74.1",
         "sass-loader": "^14.1.1",
         "terser-webpack-plugin": "^5.3.10",
         "ttag": "^1.8.6",
@@ -72,6 +72,6 @@
         "prettier": "^3.2.5"
     },
     "engines": {
-        "node": ">= 20.11.1"
+        "node": ">= 20.12.1"
     }
 }
