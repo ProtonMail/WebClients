@@ -91,7 +91,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             listeners.removeAll();
             formHandle.tracker?.detach();
             formHandle.getFields().forEach((field) => field.detach());
-            removeClassifierFlags(form);
+            removeClassifierFlags(form, { preserveIgnored: true });
         },
     };
 
