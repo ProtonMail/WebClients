@@ -50,6 +50,7 @@ const CycleItemView = ({
     cycle,
     currency,
     text,
+    orderGroup,
     billedText,
     headerText,
     totalPerMonth,
@@ -64,6 +65,7 @@ const CycleItemView = ({
 }: {
     cycle: CYCLE;
     currency: Currency;
+    orderGroup: number;
     text: string;
     billedText: string | null;
     headerText: ReactNode;
@@ -79,7 +81,10 @@ const CycleItemView = ({
 }) => {
     return (
         <div
-            className="lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0"
+            className={clsx(
+                'lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0',
+                orderGroup === 1 ? `order-0 lg:order-${orderGroup}` : `order-1 lg:order-${orderGroup}`
+            )}
             style={{ '--max-w-custom': '30em' }}
         >
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
@@ -182,6 +187,7 @@ const CycleSelector = ({
     const discount24months = upsellMapping?.discountPercent;
     const discountPercentage = `${discount24months}%`;
     const offText = upsellCycle ? getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '') : '';
+    let firstNonBestOffer = false;
     return (
         <>
             {cycles.map((cycleItem) => {
@@ -190,15 +196,24 @@ const CycleSelector = ({
                     return null;
                 }
                 const currentCheckout = cycleMapping;
+                const bestOffer = cycleItem === upsellCycle;
+                let orderGroup = 2;
+                if (bestOffer) {
+                    orderGroup = 1;
+                } else if (!firstNonBestOffer) {
+                    orderGroup = 0;
+                    firstNonBestOffer = true;
+                }
                 return (
                     <CycleItemView
                         bg={bg}
                         cycle={cycleItem}
-                        headerText={cycleItem === upsellCycle ? c('Header').t`Best deal` : undefined}
+                        orderGroup={orderGroup}
+                        headerText={bestOffer ? c('Header').t`Best deal` : undefined}
                         onSelect={() => {
                             onChangeCycle(cycleItem);
                         }}
-                        highlightPrice={cycleItem === upsellCycle}
+                        highlightPrice={bestOffer}
                         selected={cycle === cycleItem}
                         text={getShortBillingText(cycleItem)}
                         billedText={getBilledAtPerMonthText(
