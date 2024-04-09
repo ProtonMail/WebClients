@@ -23,7 +23,7 @@ const SpotlightContent = () => (
         <div className="mb-6">
             {c('Info')
                 .t`To help protect you, ${DRIVE_APP_NAME} can scan and block malicious files. You should still only download files from people you trust.`}{' '}
-            <Href className="color-weak" href={getBlogURL('/drive-scan-and-download')}>
+            <Href className="color-weak" href={getBlogURL('/proton-drive-malware-protection')}>
                 {c('Link').t`Learn more`}
             </Href>
         </div>
