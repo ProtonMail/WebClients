@@ -1,6 +1,6 @@
 import { CSSProperties, Ref, useMemo } from 'react';
 
-import { Icon, useUser } from '@proton/components';
+import { CalendarEventDateHeader, Icon, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
@@ -37,7 +37,7 @@ const FullDayEvent = ({
     tzid,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
-    const { start, data: targetEventData, isAllDay, isAllPartDay } = event;
+    const { start, end, data: targetEventData, isAllDay, isAllPartDay } = event;
 
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
     const { isEventReadLoading, color, eventReadError, eventTitleSafe } = getEventInformation(
@@ -91,6 +91,16 @@ const FullDayEvent = ({
             <span data-testid="calendar-view:all-day-event" className="flex-1 text-ellipsis">
                 {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
                 <span className="calendar-dayeventcell-title">{titleString}</span>
+                <div className="sr-only">
+                    <CalendarEventDateHeader
+                        startDate={start}
+                        endDate={end}
+                        isAllDay={true}
+                        formatTime={formatTime}
+                        hasFakeUtcDates
+                        hasModifiedAllDayEndDate
+                    />
+                </div>
             </span>
 
             {isOutsideEnd ? <Icon name="chevron-right" size={3} className="shrink-0" /> : null}
@@ -98,11 +108,12 @@ const FullDayEvent = ({
     );
 
     return (
-        <div
+        <li
             style={style}
             className={clsx([className, isOutsideStart && 'isOutsideStart', isOutsideEnd && 'isOutsideEnd'])}
             data-ignore-create="1"
         >
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
             <div
                 onClick={onClick}
                 title={expandableTitleString}
@@ -122,7 +133,7 @@ const FullDayEvent = ({
             >
                 {content}
             </div>
-        </div>
+        </li>
     );
 };
 
