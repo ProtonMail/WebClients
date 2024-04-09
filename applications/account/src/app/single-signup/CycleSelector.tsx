@@ -83,7 +83,9 @@ const CycleItemView = ({
         <div
             className={clsx(
                 'lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0',
-                orderGroup === 1 ? `order-0 lg:order-${orderGroup}` : `order-1 lg:order-${orderGroup}`
+                orderGroup === 1
+                    ? `order-0 lg:order-${orderGroup}`
+                    : `order-${orderGroup === 2 ? 1 : 2} lg:order-${orderGroup}`
             )}
             style={{ '--max-w-custom': '30em' }}
         >
