@@ -865,6 +865,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater og kredittkort."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } vil spørre deg så snart genererte passord er autofylt."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vil be deg om å lagre eller oppdatere påloggingsinformasjon."
       ],
@@ -1326,9 +1329,6 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kan ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
-      ],
-      "The login item for \"${ domain }\" will be updated and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Påloggingselementet for \"${ domain }\" vil bli oppdatert og tilgjengelig på enheter der ${ PASS_APP_NAME } er installert."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du prøver å lime inn, er lengre enn den maksimalt tillatte lengden på ${ maxLength }-tegn."
@@ -1793,6 +1793,9 @@
       ],
       "Prompt for auto-save": [
         "Be om autolagring"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Be om automatisk lagring når du genererer passord"
       ],
       "Rate us": [
         "Vurder oss"

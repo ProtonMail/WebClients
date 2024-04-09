@@ -567,6 +567,9 @@
       "Could not resolve share members": [
         "Nepodarilo sa vyriešiť členov zdieľania"
       ],
+      "Could not validate addresses at the moment.": [
+        "Adresu v súčasnosti nie je možné overiť."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V súbore CSV chýbajú očakávané hlavičky: ${ missingHeaders }"
       ],
@@ -608,6 +611,9 @@
       ],
       "Failed to delete selected items": [
         "Nepodarilo sa odstrániť vybrané položky"
+      ],
+      "Failed to edit organization settings": [
+        "Nepodarilo sa upraviť nastavenia organizácie"
       ],
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
@@ -881,14 +887,23 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky a platobné karty."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } vás vyzve hneď, ako sa automaticky vyplnia vygenerované heslá."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vás požiada o uloženie alebo aktualizáciu prihlasovacích údajov."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } navrhne overenie pomocou uložených prístupových kľúčov"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } navrhne vytvorenie emailového aliasu v registračných formulároch."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } navrhne vytvorenie silných hesiel v registračných formulároch."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } navrhne uloženie prístupových kľúčov."
       ],
       "${ trialDaysLeft } day left": [
         "Zostáva ${ trialDaysLeft } deň",
@@ -955,6 +970,9 @@
       ],
       "Built in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "V predvolenom nastavení môžu členovia tímu exportovať len tie trezory, ktorých sú vlastníkmi. Ak je táto možnosť zapnutá, nebudú môcť exportovať žiadne údaje"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
@@ -1184,6 +1202,9 @@
       "Open the Extensions menu": [
         "Otvorte menu rozšírenia"
       ],
+      "Organization settings successfully updated": [
+        "Nastavenia organizácie boli úspešne aktualizované"
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -1262,6 +1283,9 @@
       "Save passkey": [
         "Uložiť prístupový kľúč"
       ],
+      "Select an existing login item to update.": [
+        "Vyberte existujúcu položku prihlásenia, ktorú chcete aktualizovať."
+      ],
       "Select an existing login or create a new one.": [
         "Vyberte existujúce prihlásenie alebo vytvorte nové."
       ],
@@ -1319,6 +1343,9 @@
       "Syncing your vaults…": [
         "Synchronizácia trezorov..."
       ],
+      "Team members can only share vaults within organization": [
+        "Členovia tímu môžu zdieľať trezory len v rámci organizácie"
+      ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
       ],
@@ -1345,6 +1372,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
+      ],
+      "This setting is disabled on the organization level": [
+        "Toto nastavenie je vypnuté na úrovni organizácie"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor zatiaľ nie je s nikým zdieľaný. Pozvite ľudí, s ktorými ho chcete zdieľať."
@@ -1378,6 +1408,9 @@
       ],
       "Update login": [
         "Aktualizovať prihlásenie"
+      ],
+      "Updating organization settings": [
+        "Aktualizujem nastavenia organizácie"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgradovať ${ PASS_APP_NAME }"
@@ -1534,6 +1567,9 @@
       "Application logs": [
         "Záznamy aplikácie"
       ],
+      "Authenticate with passkeys": [
+        "Overiť pomocou prístupových kľúčov"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Automatické uzamknutie ${ PASS_APP_NAME }"
       ],
@@ -1594,6 +1630,12 @@
       "Created": [
         "Vytvorené"
       ],
+      "Disable data export for team members": [
+        "Zakázať export údajov členom tímu"
+      ],
+      "Disable sharing outside the organization": [
+        "Zakázať zdieľanie mimo organizácie"
+      ],
       "Display": [
         "Zobraziť"
       ],
@@ -1620,6 +1662,9 @@
       ],
       "Export": [
         "Export"
+      ],
+      "Exporting policy": [
+        "Pravidlá exportu"
       ],
       "Field name": [
         "Názov poľa"
@@ -1753,8 +1798,14 @@
       "Oldest to newest": [
         "Od najstaršieho po najnovšie"
       ],
+      "Organization": [
+        "Organizácia"
+      ],
       "Passkey": [
         "Prístupový kľúč"
+      ],
+      "Passkeys": [
+        "Prístupové kľúče"
       ],
       "Passphrase": [
         "Prístupová fráza"
@@ -1783,6 +1834,9 @@
       "Prompt for auto-save": [
         "Výzva na automatické ukladanie"
       ],
+      "Prompt for auto-save when generating passwords": [
+        "Výzva na automatické uloženie pri generovaní hesiel"
+      ],
       "Rate us": [
         "Ohodnoťte nás"
       ],
@@ -1797,6 +1851,9 @@
       ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Save passkeys": [
+        "Uložiť prístupové kľúče"
       ],
       "Security": [
         "Zabezpečenie"
@@ -1824,6 +1881,9 @@
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Sharing policy": [
+        "Pravidlá zdieľania"
       ],
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
@@ -2315,6 +2375,9 @@
       ],
       "Invalid email addresses.": [
         "Neplatné emailové adresy."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Pozývanie emailových adries nepatriacich do organizácie nie je povolené."
       ],
       "item was imported without custom fields": [
         "Položka bola importovaná bez vlastných polí"
