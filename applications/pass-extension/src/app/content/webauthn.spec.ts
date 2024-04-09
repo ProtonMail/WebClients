@@ -110,7 +110,7 @@ describe('webauthn [supported]', () => {
                         id: 'credential-id',
                         raw_id: [],
                         authenticator_attachment: 'cross-platform',
-                        client_extension_results: { cred_props: undefined },
+                        client_extension_results: { credProps: undefined },
                         type: 'public-key',
                         response: {
                             client_data_json: [],
@@ -215,7 +215,7 @@ describe('webauthn [supported]', () => {
                         id: 'credential-id',
                         raw_id: [],
                         authenticator_attachment: 'cross-platform',
-                        client_extension_results: { cred_props: undefined },
+                        client_extension_results: { credProps: undefined },
                         type: 'public-key',
                         response: {
                             client_data_json: [],
