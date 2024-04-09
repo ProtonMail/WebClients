@@ -12,7 +12,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const [isLoading, withLoading] = useLoading();
     const [isAdding, withAdding] = useLoading();
-    const { getShare, getSharePrivateKey, getShareWithKey, getShareSessionKey } = useShare();
+    const { getShare, getShareWithKey, getShareSessionKey, getShareCreatorKeys } = useShare();
     const [members /*,setMembers */] = useState<ShareMember[]>([]);
     const [invitations, setInvitations] = useState<ShareInvitation[]>([]);
     const { createShare } = useShareActions();
@@ -72,7 +72,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         const abortSignal = new AbortController().signal;
 
         const { shareId: linkShareId, sessionKey } = await getShareIdWithSessionkey(abortSignal, rootShareId, linkId);
-        const primaryAddressKey = await getSharePrivateKey(abortSignal, linkShareId);
+        const primaryAddressKey = await getShareCreatorKeys(abortSignal, rootShareId);
 
         if (!primaryAddressKey) {
             throw new Error('Could not find primary address key for share owner');
@@ -95,7 +95,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             },
             inviter: {
                 inviterEmail: share.creator,
-                addressKey: primaryAddressKey,
+                addressKey: primaryAddressKey.privateKey,
             },
             permissions,
         });
