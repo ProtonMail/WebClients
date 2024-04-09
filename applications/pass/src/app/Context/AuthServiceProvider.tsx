@@ -118,7 +118,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     return false;
                 };
 
-                if (isOffline()) return handleOffline();
+                if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
 
                 /* remove any in-memory lock status/tokens to force
                  * session lock revalidation on init */
@@ -135,7 +135,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 const validSession = isValidSession(session) && session.LocalID === initialLocalID;
                 const autoFork = !loggedIn && !locked && hasLocalID && !validSession;
 
-                if (isOffline()) return handleOffline();
+                if (OFFLINE_SUPPORTED && isOffline()) return handleOffline();
                 if (autoFork && isOnline()) {
                     /* If the session could not be resumed from the LocalID from path,
                      * we are likely dealing with an app-switch request from another client.
@@ -278,7 +278,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
             onSessionFailure: async () => {
-                const offline = isOffline();
+                const offline = OFFLINE_SUPPORTED && isOffline();
                 const resumeOffline = offline && (await canResumeOffline());
                 client.current.setStatus(resumeOffline ? AppStatus.OFFLINE_LOCKED : AppStatus.ERROR);
             },
