@@ -3061,9 +3061,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "După ștergere, această adresă nu mai poate fi refolosită de nimeni."
-      ],
       "The next active address on your list will be set as the default.": [
         "Următoarea adresă activă din listă va fi setată ca implicită."
       ],
@@ -4445,9 +4442,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Pentru a folosi ${ MAIL_APP_NAME } sau ${ CALENDAR_APP_NAME }, comutați la versiunea web."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Prea multe sesiuni secundare, ștergeți fişierele cookie și reconectați-vă."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
@@ -9848,7 +9842,7 @@
         "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Spațiul de stocare este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
+        "Spațiul de stocare este ocupat. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
@@ -13291,7 +13285,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "Spațiul de stocare ${ app }"
+        "Spațiul de stocare din ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } - ${ percentage }% ocupat"
@@ -13347,13 +13341,13 @@
         "${ appStorage } este plin."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Spațiul de stocare din ${ storage } este ${ percentage }% plin. ${ cta }."
+        "${ storage } este ${ percentage }% plin. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Spațiul din ${ storage } este plin. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Spațiul de stocare este ${ percentage }% plin. ${ cta }."
+        "Spațiul de stocare este ${ percentage }% ocupat. ${ cta }."
       ],
       "Your storage is full": [
         "Spațiu de stocare plin"
@@ -15263,7 +15257,7 @@
         "Ați decriptat local această cheie."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        "Spațiul de stocare din ${ MAIL_APP_NAME } este aproape ocupat."
+        "Spațiul de stocare din ${ MAIL_APP_NAME } este aproape plin."
       ],
       "Your DKIM signing is working.": [
         "Semnarea DKIM funcționează."
