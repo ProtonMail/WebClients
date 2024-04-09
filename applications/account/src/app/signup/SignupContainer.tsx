@@ -38,8 +38,8 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getNormalCycleFromCustomCycle, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
-import { Api, Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
+import { Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -50,6 +50,7 @@ import mailReferPage from '../../pages/refer-a-friend';
 import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getContinueToString } from '../public/helper';
+import { getSubscriptionData } from '../single-signup-v2/helper';
 import { useFlowRef } from '../useFlowRef';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -75,7 +76,7 @@ import {
     SignupType,
     SubscriptionData,
 } from './interfaces';
-import { SignupParameters, getPlanIDsFromParams, getSignupSearchParams } from './searchParams';
+import { getPlanIDsFromParams, getSignupSearchParams } from './searchParams';
 import {
     handleCreateAccount,
     handleDisplayName,
@@ -217,55 +218,6 @@ const SignupContainer = ({
     };
 
     useEffect(() => {
-        const getSubscriptionData = async (
-            api: Api,
-            plans: Plan[],
-            signupParameters: SignupParameters
-        ): Promise<SubscriptionData> => {
-            const planParameters = getPlanIDsFromParams(plans, signupParameters, {
-                plan: PLANS.FREE,
-            });
-            const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
-            const cycle = signupParameters.cycle || DEFAULT_CYCLE;
-            const billingAddress = DEFAULT_TAX_BILLING_ADDRESS;
-
-            const { planIDs, checkResult } = await getSubscriptionPrices(
-                getPaymentsApi(api),
-                planParameters.planIDs,
-                currency,
-                cycle,
-                billingAddress,
-                signupParameters.coupon
-            )
-                .then((checkResult) => {
-                    return {
-                        checkResult,
-                        planIDs: planParameters.planIDs,
-                    };
-                })
-                .catch(() => {
-                    // If the check call fails, just reset everything
-                    return {
-                        checkResult: getFreeCheckResult(
-                            signupParameters.currency,
-                            // "Reset" the cycle because the custom cycles are only valid with a coupon
-                            getNormalCycleFromCustomCycle(cycle)
-                        ),
-                        planIDs: undefined,
-                    };
-                });
-
-            return {
-                cycle: checkResult.Cycle,
-                minimumCycle: signupParameters.minimumCycle,
-                currency: checkResult.Currency,
-                checkResult,
-                planIDs: planIDs || {},
-                skipUpsell: planParameters.defined,
-                billingAddress,
-            };
-        };
-
         const fetchDependencies = async () => {
             const { referrer, invite } = signupParameters;
 
@@ -299,13 +251,30 @@ const SignupContainer = ({
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
-            const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
+            const plansMap = toMap(Plans, 'Name') as PlansMap;
+            const planParameters = getPlanIDsFromParams(Plans, signupParameters, {
+                plan: PLANS.FREE,
+            });
+            const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
+            const cycle = signupParameters.cycle || DEFAULT_CYCLE;
+            const billingAddress = DEFAULT_TAX_BILLING_ADDRESS;
+            const coupon = signupParameters.coupon;
+
+            const subscriptionData = await getSubscriptionData(getPaymentsApi(silentApi), {
+                plansMap,
+                planIDs: planParameters.planIDs,
+                currency,
+                cycle,
+                coupon,
+                billingAddress,
+                skipUpsell: planParameters.defined,
+            });
 
             setModelDiff({
                 domains,
                 plans: Plans,
                 freePlan,
-                plansMap: toMap(Plans, 'Name') as PlansMap,
+                plansMap,
                 referralData,
                 subscriptionData,
                 inviteData: location.state?.invite,
