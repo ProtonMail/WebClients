@@ -192,6 +192,14 @@ const BasePublicApp = ({ onLogin }: Props) => {
     }>();
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
     const ignoreAutoRef = useRef(false);
+    const [locationState, setLocationState] = useState<
+        | null
+        | { type: 'reauth'; payload: ReAuthState }
+        | {
+              type: 'appSwitcher';
+              payload: AppSwitcherState;
+          }
+    >(null);
 
     const searchParams = new URLSearchParams(location.search);
 
@@ -306,7 +314,8 @@ const BasePublicApp = ({ onLogin }: Props) => {
             const appSwitcherState: AppSwitcherState = {
                 session: { ...session, Organization: organization },
             };
-            history.replace(paths.appSwitcher, appSwitcherState);
+            setLocationState({ type: 'appSwitcher', payload: appSwitcherState });
+            history.replace(paths.appSwitcher);
             return inputResult;
         }
 
@@ -326,7 +335,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
                         ? forkState.payload.forkParameters.promptType
                         : 'default',
             };
-            history.replace(paths.reauth, reAuthState);
+            // Intentionally not using history state to avoid persisting it to the browser
+            setLocationState({ type: 'reauth', payload: reAuthState });
+            history.replace(paths.reauth);
             return inputResult;
         }
 
@@ -462,8 +473,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
             const autoSignIn = session && (sessions.length === 1 || forkParameters.localID !== undefined);
 
             if (autoSignIn && getShouldReAuth(forkParameters, session)) {
-                const state: ReAuthState = { session, reAuthType: forkParameters.promptType };
-                history.replace(paths.reauth, state);
+                const reAuthState: ReAuthState = { session, reAuthType: forkParameters.promptType };
+                setLocationState({ type: 'reauth', payload: reAuthState });
+                history.replace(paths.reauth);
                 return inputResult;
             }
 
@@ -866,21 +878,30 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
-                                                <Route path={SSO_PATHS.REAUTH}>
-                                                    <UnAuthenticated>
-                                                        <ReAuthContainer paths={paths} onLogin={handleLogin} />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={SSO_PATHS.APP_SWITCHER}>
-                                                    <UnAuthenticated>
-                                                        <AppSwitcherContainer
-                                                            onLogin={handleLogin}
-                                                            onSwitch={() => {
-                                                                history.push(SSO_PATHS.SWITCH);
-                                                            }}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
+                                                {locationState?.type === 'reauth' && (
+                                                    <Route path={SSO_PATHS.REAUTH}>
+                                                        <UnAuthenticated>
+                                                            <ReAuthContainer
+                                                                paths={paths}
+                                                                onLogin={handleLogin}
+                                                                state={locationState.payload}
+                                                            />
+                                                        </UnAuthenticated>
+                                                    </Route>
+                                                )}
+                                                {locationState?.type === 'appSwitcher' && (
+                                                    <Route path={SSO_PATHS.APP_SWITCHER}>
+                                                        <UnAuthenticated>
+                                                            <AppSwitcherContainer
+                                                                onLogin={handleLogin}
+                                                                onSwitch={() => {
+                                                                    history.push(SSO_PATHS.SWITCH);
+                                                                }}
+                                                                state={locationState.payload}
+                                                            />
+                                                        </UnAuthenticated>
+                                                    </Route>
+                                                )}
                                                 <Redirect
                                                     to={{
                                                         pathname: paths.login,
