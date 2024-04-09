@@ -180,8 +180,7 @@ app.on("web-contents-created", (_ev, contents) => {
 
         // This is used to redirect users to the external browser for internal upgrade modals
         if (isHostAccount(url) && isUpgradeURL(url)) {
-            shell.openExternal(url);
-            return preventDefault(ev);
+            return;
         }
 
         const sessionID = getSessionID(url);
@@ -198,12 +197,6 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-navigate", (details) => {
         Logger.info("will-navigate");
         if (!isHostAllowed(details.url) && !global.oauthProcess) {
-            return preventDefault(details);
-        }
-
-        // This is used to redirect users to the external browser for upsell modals
-        if (isHostAccount(details.url) && isUpgradeURL(details.url)) {
-            shell.openExternal(details.url);
             return preventDefault(details);
         }
 
