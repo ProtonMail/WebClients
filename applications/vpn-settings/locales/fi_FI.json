@@ -681,6 +681,23 @@
         "Tämä katkaisee kaikkien tätä varmennettä käyttävien reitittimien ja asiakaspäätteiden yhteydet."
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Selaa verkkoa yksityisesti ja estä mainoksia"
+      ],
+      "Keep your schedule private": [
+        "Pidä aikataulusi yksityisenä"
+      ],
+      "Protect your passwords and identity": [
+        "Suojaa salasanasi ja henkilöllisyytesi"
+      ],
+      "Safeguard your files and photos": [
+        "Turvaa tietostosi ja valokuvasi"
+      ],
+      "Secure your communications": [
+        "Suojaa viestintäsi"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Lisää salattu salasananhallintamme** vain ${ price } lisähintaan"
@@ -1860,9 +1877,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Poistamisen jälkeen sinä tai kukaan muu ei voi enää käyttää tätä osoitetta."
-      ],
       "The next active address on your list will be set as the default.": [
         "Seuraava listallasi oleva aktiivinen osoite asetetaan oletusosoitteeksi."
       ],
@@ -2506,7 +2520,7 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Lisää suojausavaimet"
+        "Lisää todennuslaite"
       ],
       "Delete key": [
         "Poista todennuslaite"
@@ -2514,7 +2528,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Poista kaksivaiheinen todennus suojausavaimella käytöstä ennen TOTP:n käytöstäpoistoa"
+        "Poista kaksivaiheinen todennus todennuslaitteella käytöstä ennen TOTP:n käytöstäpoistoa"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen todennuslaitteellasi tunnistauduttaessa. Yritä uudelleen."
@@ -2534,16 +2548,16 @@
         "Salli alustojen avaimet"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Mahdollistaa sisäänrakennettujen suojausavaimien käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
+        "Mahdollistaa sisäänrakennettujen todennuslaitteiden käytön (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
       ],
       "Insert your security key into your device's USB port.": [
-        "Syötä todennuslaitteesi laitteesi USB-porttiin."
+        "Kytke todennuslaitteesi laitteen USB-porttiin."
       ],
       "Security key": [
         "Todennuslaite"
@@ -2558,10 +2572,10 @@
         "Tämä poistaa kaikki tiliisi liitetyt todennuslaitteet."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Ottaaksesi kaksivaiheisen todennuksen suojasavaimella käyttöön, on kaksivaiheinen todennus todennussovelluksella otettava käyttöön"
+        "Käyttääksesi kaksivaiheista todennusta todennuslaitteella, on kaksivaiheinen todennus todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-suojausavaimella"
+        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-todennuslaitteella"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Todennuslaitteesi on valmis käyttöön."
@@ -2589,7 +2603,7 @@
         "Rekisteröi todennuslaitteesi"
       ],
       "Registered security keys": [
-        "Rekisteröidyt suojausavaimet"
+        "Rekisteröidyt todennuslaitteet"
       ],
       "Security key registered": [
         "Todennuslaite rekisteröitiin"
@@ -5216,7 +5230,7 @@
         "Salasanasuojatut sähköpostiviestit"
       ],
       "Phone support (6+ users)": [
-        "Puhelintuki (6+ käyttäjää)"
+        "Puhelinasiakaspalvelu (6+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -5625,7 +5639,7 @@
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa puhelintukea vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -5646,7 +5660,7 @@
         "Siirrä sähköpostisi, kalenterisi ja yhteystietosi nopeasti miltä tahansa palveluntarjoajalta"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        "Kirjautumiseen tarvitaan matkapuhelimeen lähetetty koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
+        "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
@@ -6109,6 +6123,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Processing payment": [
+        "Käsitellään maksua"
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -8186,10 +8203,10 @@
         "Jos poistat tämän osoitteen, et voi enää palauttaa tiliäsi tai vastaanottaa päivittäisiä sähköposti-ilmoituksia."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Jos poistat sähköpostiosoitteen, et voi enää palauttaa tiliäsi."
+        "Jos poistat tämän sähköpostiosoitteen, et voi enää palauttaa tiliäsi."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Jos poistat puhelinnumeron, et voi enää palauttaa tiliäsi."
+        "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
         "Jos poistat osoitteen käytöstä, et voi enää käyttää sitä viestien lähetykseen ja vastaanottoon, ja kaikki siihen liitetyt ${ BRAND_NAME }-tuotteet poistetaan käytöstä. Haluatko varmasti poistaa osoitteen käytöstä?"

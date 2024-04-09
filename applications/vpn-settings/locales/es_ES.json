@@ -681,6 +681,23 @@
         "Esto desconectará todos los routers y clientes que utilicen este certificado."
       ]
     },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navega en la web de manera privada y bloquea anuncios"
+      ],
+      "Keep your schedule private": [
+        "Mantén privada tu agenda"
+      ],
+      "Protect your passwords and identity": [
+        "Protege tus contraseñas y tu identidad"
+      ],
+      "Safeguard your files and photos": [
+        "Protege tus archivos y fotos"
+      ],
+      "Secure your communications": [
+        "Protege tus comunicaciones"
+      ]
+    },
     "bf2023: Action": {
       "**Add our encrypted password manager** for only ${ price }": [
         "**Añade nuestro gestor cifrado de contraseñas** por solo ${ price }"
@@ -1860,9 +1877,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Una vez eliminada, esta dirección no puede ser usada nuevamente por ti u otra persona."
-      ],
       "The next active address on your list will be set as the default.": [
         "La siguiente dirección activa en tu lista será establecida como la dirección por defecto."
       ],
@@ -6109,6 +6123,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Processing payment": [
+        "Procesando el pago"
       ],
       "Timeout exceeded": [
         "Se ha superado el tiempo de espera."

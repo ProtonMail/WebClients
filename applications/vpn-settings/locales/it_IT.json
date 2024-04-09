@@ -371,6 +371,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Request a call": [
+        "Richiedi una chiamata"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
@@ -477,13 +480,16 @@
         "Accedi con SSO"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "sign up for free": [
         "registrati gratuitamente"
       ],
       "Signing in": [
         "Accesso"
+      ],
+      "Start live chat": [
+        "Avvia una Live chat"
       ],
       "Stop using single sign-on": [
         "Interrompi l'utilizzo di single sign-on"
@@ -650,7 +656,7 @@
         "Attivo"
       ],
       "Allow unsigned mail": [
-        "Consenti posta non firmata"
+        "Consenti la posta non firmata"
       ],
       "Default": [
         "Predefinito"
@@ -679,6 +685,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Naviga privatamente sul web e blocca gli annunci"
+      ],
+      "Keep your schedule private": [
+        "Mantieni privata la tua agenda"
+      ],
+      "Protect your passwords and identity": [
+        "Proteggi le tue password e la tua identità"
+      ],
+      "Safeguard your files and photos": [
+        "Proteggi i tuoi file e le tue foto"
+      ],
+      "Secure your communications": [
+        "Proteggi le tue comunicazioni"
       ]
     },
     "bf2023: Action": {
@@ -1860,8 +1883,8 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Una volta eliminato, questo indirizzo non potrà essere utilizzato nuovamente né da te né da nessun altro."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Una volta eliminato, questo indirizzo non potrà essere utilizzato nuovamente da nessun altro."
       ],
       "The next active address on your list will be set as the default.": [
         "Il successivo indirizzo attivo nell'elenco verrà impostato come predefinito."
@@ -2765,6 +2788,11 @@
         "Nome utente"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contattaci"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Aggiungi questo record al tuo dominio nel pannello di controllo del tuo registratore di nomi di dominio"
@@ -3255,6 +3283,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se desideri combinare questo account con un altro, NON eliminarlo."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } (o meeting Zoom) con uno dei nostri specialisti dell'assistenza oppure apri una ${ boldLiveChat } per ricevere assistenza via chat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists.": [
+        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } (o meeting Zoom) con uno dei nostri specialisti dell'assistenza."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account in caso perdessi il tuo dispositivo per l'autenticazione a due fattori."
       ],
@@ -3309,11 +3343,17 @@
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
+      "Live chat": [
+        "Live chat"
+      ],
       "Loading": [
         "Caricamento in corso"
       ],
       "Loading ${ appName }": [
         "Caricamento di ${ appName } in corso"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
       ],
       "Loading preview": [
         "Caricamento dell'anteprima in corso"
@@ -3509,6 +3549,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
+      ],
+      "Request a phone call": [
+        "Richiedi una telefonata"
       ],
       "Resend verification email": [
         "Reinvia l'email di verifica"
@@ -6637,7 +6680,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Stay signed in": [
         "Rimani connesso"
@@ -6652,7 +6695,7 @@
         "La ${ passwordReset } è ora disponibile."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Se esci prima di reimpostare la password, potresti perdere l'accesso al tuo account."
+        "Se esci prima di reimpostare la password potresti perdere l'accesso al tuo account."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Se esci senza reimpostare la password potresti perdere l'accesso al tuo account."
@@ -6668,7 +6711,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Vuoi disconnetterti senza reimpostare la password?"
+        "Vuoi uscire dall'account senza reimpostare la password?"
       ]
     },
     "session_recovery:status:info": {
@@ -7857,7 +7900,7 @@
         "Accedi con autenticazione a 2 fattori"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Signed in to member account": [
         "Accesso all'account membro"
