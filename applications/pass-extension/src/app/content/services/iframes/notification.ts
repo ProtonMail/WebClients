@@ -49,7 +49,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
                             .getTrackedForms()
                             .filter(({ formType }) => formType === FormType.MFA)
                             .forEach(({ element }) => {
-                                removeClassifierFlags(element);
+                                removeClassifierFlags(element, { preserveIgnored: true });
                                 flagAsIgnored(element);
                             });
                     }

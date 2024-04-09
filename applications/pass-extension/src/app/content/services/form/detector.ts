@@ -18,10 +18,13 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
+const DETECTION_TIE_TRESHOLD = 0.01;
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: Fnode; type: T; score: number };
-type PredictionBestSelector<T extends string> = (a: PredictionResult<T>, b: PredictionResult<T>) => PredictionResult<T>;
+type PredictionBestSelector<T extends string> = (
+    candidates: [PredictionResult<T>, PredictionResult<T>]
+) => PredictionResult<T>;
 
 /* We should run the detection when :
  * - a stale form is now considered of interest
@@ -62,11 +65,12 @@ const getPredictionsFor = <T extends string>(
         const fnodes: Fnode[] = boundRuleset.get(subType);
         fnodes.forEach((fnode) => {
             const score = fnode.hasType('cache') ? 1 : fnode.scoreFor(subType);
+
             const candidate = { type: subType, fnode, score };
             const bestSoFar = results.get(fnode);
 
             if (!bestSoFar) results.set(fnode, candidate);
-            else results.set(fnode, options.selectBest(candidate, bestSoFar));
+            else results.set(fnode, options.selectBest([candidate, bestSoFar]));
         });
 
         return results;
@@ -101,16 +105,22 @@ const groupFields = (
     return grouping;
 };
 
-const selectBest = <T extends string>(a: PredictionResult<T>, b: PredictionResult<T>): PredictionResult<T> =>
-    a.score > b.score ? a : b;
+const selectBest: PredictionBestSelector<any> = ([a, b]) => (a.score > b.score ? a : b);
 
 /* if we have a tie with a login form : always prefer the login type
  * as it is less deceptive for the user. FIXME: on tie between login &
  * register, we should query the autofillable candidates and adapt the
- * form-type accordingly */
-const selectBestForm = (a: PredictionResult<FormType>, b: PredictionResult<FormType>): PredictionResult<FormType> => {
-    if (a.type !== FormType.LOGIN && b.type !== FormType.LOGIN) return selectBest(a, b);
-    return a.type === FormType.LOGIN ? a : b;
+ * form-type accordingly. In the case of a close tie between a register
+ * and a password-change form, pick password-change for autosave.  */
+const selectBestForm: PredictionBestSelector<FormType> = (candidates) => {
+    const pwChange = candidates.find(({ type }) => type === FormType.PASSWORD_CHANGE);
+    const login = candidates.find(({ type }) => type === FormType.LOGIN);
+    const register = candidates.find(({ type }) => type === FormType.REGISTER);
+    const delta = Math.abs(candidates[0].score - candidates[1].score);
+
+    if (pwChange && register) return delta <= DETECTION_TIE_TRESHOLD ? pwChange : register;
+    if (!login) return selectBest(candidates) as PredictionResult<FormType>;
+    else return login;
 };
 
 /* Runs the fathom detection and returns a form handle for each detected form.. */
@@ -126,7 +136,7 @@ const createDetectionRunner =
                         subTypes: formTypes,
                         selectBest: selectBestForm,
                     }),
-                    getPredictionsFor(boundRuleset, {
+                    getPredictionsFor<FieldType>(boundRuleset, {
                         type: 'field',
                         subTypes: fieldTypes,
                         selectBest,
