@@ -109,6 +109,7 @@ interface SetupKeysPayload {
 export const setupKeys = (data: SetupKeysPayload) => ({
     url: 'core/v4/keys/setup',
     method: 'post',
+    timeout: 60_000,
     data,
 });
 
