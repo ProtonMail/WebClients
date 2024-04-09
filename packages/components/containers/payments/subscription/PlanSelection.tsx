@@ -98,6 +98,8 @@ interface Props {
     hasPlanSelectionComparison?: boolean;
     hasFreePlan?: boolean;
     cycle: Cycle;
+    minimumCycle?: Cycle;
+    maximumCycle?: Cycle;
     plans: Plan[];
     plansMap: PlansMap;
     freePlan: FreePlanDefault;
@@ -151,6 +153,18 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap, priceType
     return price;
 };
 
+const getCycleSelectorOptions = (app: ProductParam) => {
+    const oneMonth = { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY };
+    const oneYear = { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY };
+    const twoYears = { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS };
+
+    if (app === APPS.PROTONPASS) {
+        return [oneMonth, oneYear];
+    }
+
+    return [oneMonth, oneYear, twoYears];
+};
+
 const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency; cycle: Cycle }) => {
     const serverPrice = <Price currency={currency}>{getIpPricePerMonth(cycle)}</Price>;
     // translator: example of full sentence: "VPN Business requires at least 1 dedicated server (CHF 39.99 /month)"
@@ -177,6 +191,8 @@ const PlanSelection = ({
     freePlan,
     vpnServers,
     cycle,
+    minimumCycle,
+    maximumCycle,
     currency,
     loading,
     subscription,
@@ -456,13 +472,9 @@ const PlanSelection = ({
                         cycle={cycle}
                         onSelect={onChangeCycle}
                         disabled={loading}
-                        options={[
-                            { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY },
-                            { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
-                            app !== APPS.PROTONPASS
-                                ? { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS }
-                                : undefined,
-                        ].filter(isTruthy)}
+                        minimumCycle={minimumCycle}
+                        maximumCycle={maximumCycle}
+                        options={getCycleSelectorOptions(app)}
                     />
                 )}
             </div>
