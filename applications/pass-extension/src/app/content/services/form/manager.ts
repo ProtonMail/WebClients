@@ -170,7 +170,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * may change (ie: dynamic form recycling) */
     const onNewField = (field?: HTMLElement) => {
         const ignored = getIgnoredParent(field);
-        if (ignored) removeClassifierFlags(ignored);
+        if (ignored) removeClassifierFlags(ignored, { preserveIgnored: false });
     };
 
     /* if a field was deleted from a currently detected form :
@@ -178,7 +178,7 @@ export const createFormManager = (options: FormManagerOptions) => {
      * may change (ie: dynamic form recycling) */
     const onDeletedField = (field?: HTMLElement) => {
         const detected = getParentFormPrediction(field);
-        if (detected) removeClassifierFlags(detected);
+        if (detected) removeClassifierFlags(detected, { preserveIgnored: false });
     };
 
     /**
