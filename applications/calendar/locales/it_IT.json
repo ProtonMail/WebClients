@@ -477,6 +477,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Request a call": [
+        "Richiedi una chiamata"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
@@ -556,7 +559,7 @@
         "Mostra fusi orari"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Skip": [
         "Salta"
@@ -4097,6 +4100,9 @@
       "Loading ${ appName }": [
         "Caricamento di ${ appName } in corso"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
+      ],
       "Loading event": [
         "Caricamento evento"
       ],
@@ -6250,7 +6256,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Stay signed in": [
         "Rimani connesso"
@@ -6265,7 +6271,7 @@
         "La ${ passwordReset } è ora disponibile."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Se esci prima di reimpostare la password, potresti perdere l'accesso al tuo account."
+        "Se esci prima di reimpostare la password potresti perdere l'accesso al tuo account."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Se esci senza reimpostare la password potresti perdere l'accesso al tuo account."
@@ -6281,7 +6287,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Vuoi disconnetterti senza reimpostare la password?"
+        "Vuoi uscire dall'account senza reimpostare la password?"
       ]
     },
     "Settings update growler warning": {
@@ -7299,7 +7305,7 @@
         "Accedi con autenticazione a 2 fattori"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Start a new import": [
         "Avvia una nuova importazione"
