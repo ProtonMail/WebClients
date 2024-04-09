@@ -15,8 +15,6 @@ import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 import { useItemHistory } from './ItemHistoryProvider';
 import { RevisionItem } from './RevisionItem';
 
-import './RevisionsTimeline.scss';
-
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
     const { selectItem, navigate, matchTrash } = useNavigation();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
