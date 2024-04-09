@@ -57,7 +57,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
@@ -1296,8 +1296,11 @@ const SingleSignupContainerV2 = ({
                                         step: Steps.Loading,
                                     });
                                 }
-                            } catch (error) {
+                            } catch (error: any) {
                                 handleError(error);
+                                if (error?.config?.url?.endsWith?.('keys/setup')) {
+                                    captureMessage(`Signup setup failure`);
+                                }
                             }
                         }}
                         mode={signupParameters.mode}
