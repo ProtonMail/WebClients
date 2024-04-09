@@ -43,6 +43,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
     const canDisplayOnlyOneLine = eventPartDuration ? eventPartDuration < 75 * MINUTE : false;
 
     return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
             role="button"
             tabIndex={0}
