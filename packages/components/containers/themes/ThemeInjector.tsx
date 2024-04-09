@@ -9,7 +9,7 @@ import {
 } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getIsDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import {
     ThemeSetting,
@@ -53,7 +53,7 @@ export const ThemeInjector = () => {
 
     useLayoutEffect(() => {
         const theme = (() => {
-            if (!isElectronApp) {
+            if (!isElectronMail) {
                 return themeSetting;
             }
 
