@@ -29,7 +29,8 @@ describe('CalendarEventDateHeader', () => {
                     formatOptions={{ locale: enUS }}
                 />
             );
-            expect(screen.getByText(/Nov/)).toHaveTextContent('Tue, Nov 2, 2021–Wed, Nov 3, 2021');
+            expect(screen.getAllByText(/Nov/)[0]).toHaveTextContent('Tue, Nov 2, 2021');
+            expect(screen.getAllByText(/Nov/)[1]).toHaveTextContent('Wed, Nov 3, 2021');
         });
     });
 
@@ -43,8 +44,8 @@ describe('CalendarEventDateHeader', () => {
                     formatOptions={{ locale: enUS }}
                 />
             );
-
-            expect(screen.getByText(/Nov/)).toHaveTextContent('Tue, Nov 2, 2021, 12:00 PM–4:30 PM');
+            const time = screen.getByTestId('calendar-event-header:time-same-day');
+            expect(time.textContent).toEqual('Tue, Nov 2, 2021, 12:00 PM–4:30 PM');
         });
 
         it('for multi-day events', () => {
@@ -58,7 +59,8 @@ describe('CalendarEventDateHeader', () => {
                 />
             );
 
-            expect(screen.getByText(/Nov/)).toHaveTextContent('Tue, Nov 2, 2021 12:00 PM–Wed, Nov 3, 2021 12:30 AM');
+            const time = screen.getByTestId('calendar-event-header:time');
+            expect(time.textContent).toEqual('Tue, Nov 2, 2021 12:00 PM–Wed, Nov 3, 2021 12:30 AM');
         });
     });
 
@@ -88,7 +90,8 @@ describe('CalendarEventDateHeader', () => {
                 />
             );
 
-            expect(screen.getByText(/nov/)).toHaveTextContent('ter, 2 de nov de 2021, 12:00–16:30');
+            const time = screen.getByTestId('calendar-event-header:time-same-day');
+            expect(time.textContent).toEqual('ter, 2 de nov de 2021, 12:00–16:30');
         });
     });
 });

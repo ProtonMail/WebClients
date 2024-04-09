@@ -188,8 +188,10 @@ const DayGrid = ({
                                             onClickDate={onClickDate}
                                         />
                                     </div>
+                                    {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                                     <div
-                                        className="relative flex-1 calendar-daygrid-row"
+                                        className="relative flex-1 calendar-daygrid-row unstyled"
+                                        role="list"
                                         data-row={rowIndex}
                                         {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
                                     >
