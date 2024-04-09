@@ -69,6 +69,9 @@
       "Apply": [
         "적용"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
+      ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
       ],
@@ -194,6 +197,12 @@
       ],
       "Delete": [
         "삭제"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } 개의 연락처 삭제"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } 개의 그룹 삭제"
       ],
       "Delete contact": [
         "연락처 삭제"
@@ -648,6 +657,9 @@
       "Yes, I'll attend": [
         "참여함"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험이 2일 내에 종료됩니다. ${ upgradeButton }"
       ],
@@ -689,6 +701,17 @@
       ],
       "You don't have any groups.": [
         "그룹을 가지고 있지 않습니다."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "사용자 지정 이메일 도메인 ${ domains }개"
+      ],
+      "${ ips } server": [
+        "${ ips }개 서버"
+      ],
+      "${ users } user": [
+        "${ users }명 사용자"
       ]
     },
     "Alarm notification": {
@@ -829,6 +852,9 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "사용자 맞춤 도메인 ${ domains }개, 이메일 주소 ${ addresses }개, 무제한 hide-my-email 별칭, 캘린더 공유의 지원 외 기타 등등."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
@@ -1007,6 +1033,12 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "더 많은 ${ BRAND_NAME } 사용자들에게 이 캘린더를 공유할 수 없음"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "캘린더당 구성원 한도 ${ MAX_CALENDAR_MEMBERS }명에 도달했습니다. 이 캘린더를 더 많은 ${ BRAND_NAME } 계정과 공유하려면, 일부 구성원을 제거하세요."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "이 캘린더의 최대 ${ MAX_LINKS_PER_CALENDAR } 개 링크에 도달했습니다.\n새 링크를 생성하거나 존재하는 링크를 삭제하십시오."
       ]
     },
     "Calendar sharing access option label": {
@@ -1098,6 +1130,16 @@
       ],
       "Change time range to": [
         "해당 시간대로 변경"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } 명 더"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } 사용자"
       ]
     },
     "Collapsible tooltip": {
@@ -2057,11 +2099,20 @@
       ],
       "On date…": [
         "해당 일에..."
+      ],
+      "time": [
+        "시간"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count }번"
+      ],
       "Daily": [
         "일간"
+      ],
+      "Every ${ interval } day": [
+        "매 ${ interval }일"
       ],
       "until ${ dateString }": [
         "${ dateString } 까지"
@@ -2070,11 +2121,17 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "종일, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "매 ${ interval }일, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "매일, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "매 ${ interval }일, ${ untilString }"
       ]
     },
     "Day": {
@@ -2384,6 +2441,18 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
+      "${ list } doesn't have a valid email address": [
+        "연락처에 유효한 이메일 주소가 없습니다: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } 는 이메일 주소에 존재하지 않음"
+      ],
+      "${ list } has invalid emails": [
+        "연락처 그룹에 유효하지 않은 이메일 주소가 있습니다: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "그룹에 연락처가 없습니다: ${ list }"
+      ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
@@ -2461,6 +2530,12 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "복호화 오류: 이 이벤트 컨텐츠의 복호화 실패."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "최소 ${ calendarsToFixCount } 캘린더를 선택 해제하거나"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -2555,6 +2630,9 @@
       "Last name is too long": [
         "성(이름)이 너무 깁니다."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "존재하는 ${ BRAND_NAME } 에 최소한 ${ calendarsToFixCount } 개의 캘린더를 병합하십시오"
+      ],
       "Missing key packet": [
         "키 패킷 없음"
       ],
@@ -2591,6 +2669,12 @@
       "Number of occurrences cannot be empty": [
         "발생 횟수는 비워 둘 수 없습니다."
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
+      ],
       "Password is required": [
         "비밀번호가 필요함"
       ],
@@ -2602,6 +2686,9 @@
       ],
       "Please create an address first.": [
         "주소를 먼저 생성해주세요."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "계속하려면 표시된 충돌을 해결해 주세요."
       ],
       "Please provide either a first name, a last name or a display name": [
         "성, 이름 및 표시되는 이름을 입력하십시오."
@@ -2620,6 +2707,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } 사용자를 불러오기 위한 기본 키가 전송에 유효하지 않습니다"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "중복된 수신자를 삭제했습니다: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
@@ -2729,6 +2819,9 @@
       "You already added this holidays calendar": [
         "이 연휴 캘린더를 이미 생성했습니다"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
+      ],
       "You have reached the contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
       ],
@@ -2767,6 +2860,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "알 수 없는 오류. 불러오기가 재시작되어야 함."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "파일 ${ formattedFilename }에 이벤트가 ${ MAX_IMPORT_EVENTS }개 넘게 포함되어 있습니다."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "사용자의 ${ formattedFilename } 파일은 유효하지 않은 방법이므로 불러올 수 없습니다."
@@ -2973,9 +3069,17 @@
         "취소됨"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "참여자 ${ numberOfAttendees }명"
+      ]
+    },
     "Event info in search view; event duration": {
       "All day": [
         "매일"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "매일, ${ plusDaysToEnd }일간 지속"
       ]
     },
     "Event info. Organizer name": {
@@ -3191,6 +3295,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "바이트"
+      ],
       "GB": [
         "GB"
       ],
@@ -3202,6 +3309,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "바이트"
+      ],
+      "Gigabyte": [
+        "기가바이트"
+      ],
+      "Kilobyte": [
+        "킬로바이트"
+      ],
+      "Megabyte": [
+        "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Filter notification": {
@@ -3266,6 +3390,9 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } 개 제안 찾음. 탐색하려면 키보드를 사용하세요."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
       ]
@@ -3282,6 +3409,12 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화하고 캘린더에 추가했습니다"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "이벤트를 암호화하고 추가하는 데 오류가 발생했습니다. 이벤트 ${ totalToImport }개 중 ${ totalImported }개를 성공적으로 불러왔습니다."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "이벤트 생성 및 암호화 중 문제가 발생했습니다. 이벤트를 불러올 수 없습니다."
       ],
@@ -3316,11 +3449,20 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "가져온 초대는 ${ CALENDAR_APP_NAME } 에 주최자 및 참가자 세부 정보가 없는 간단한 이벤트로 표시됩니다. 이벤트 업데이트를 받고 참가자를 보려면, 주최자에게 ${ BRAND_NAME } 이메일 주소를 사용하여 초대를 요청하세요."
       ],
+      "This file contains an event invitation:": [
+        "이 파일은 이벤트 초대를 포함하고 있습니다:"
+      ],
+      "This file contains an invitation response:": [
+        "이 파일은 초대 응답을 포함합니다:"
+      ],
       "This file contains some data that we cannot import:": [
         "이 파일은 불러올 수 없는 데이터를 포함하고 있습니다:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport }개의 연락처를 연락처 목록에 암호화하여 추가했습니다."
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "사용자의 연락처를 암호화 및 생성 중에 오류가 감지되었습니다. 연락처를 불러올 수 없습니다."
       ],
@@ -3340,6 +3482,11 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "연락처 (${ contactId }): "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "연락처 ${ totalContacts }개"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3511,6 +3658,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 이벤트 중 ${ totalEventsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 펼치세요."
+      ],
       "No contact can be imported. Click for details": [
         "불러올 연락처 없음. 세부사항을 보려면 클릭하십시오"
       ],
@@ -3522,17 +3672,65 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "이메일 주소 ${ addressCount }개"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 당신의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount }개 새 달력"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount }개 캘린더로 병합됨"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 개 연락처가 여러 이메일 주소를 포함합니다."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } 회원"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 은(는) 여러 이메일 주소를 포함하고 있습니다."
       ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } 연락처 찾음"
+      ],
+      "${ contactsLength } contact": [
+        "연락처 ${ contactsLength }개"
+      ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } 와(과) ${ lastItem }"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } 그룹 찾음"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized }개 폴더 찾음"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail에서 ${ providerFoldersNumLocalized }개 라벨 찾음"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized }개 라벨 선택함"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 회원)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "취소 이메일이 삭제된 참가자들에게 전송됩니다."
@@ -3558,8 +3756,17 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "총 (${ totalFoldersCount } 개 폴더)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "총 (${ totalFoldersCount } 개 라벨)"
+      ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "모든 참가자가 취소 이메일을 수신받습니다. 어느 이벤트를 삭제하시겠어요?"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
       ],
       "An invitation will be sent to added participants.": [
         "초대가 추가된 참가자들에게 전송됩니다."
@@ -3642,6 +3849,9 @@
       "Country code": [
         "국가 코드"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount }개의 새 달력 만들기"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 폴더를 만드세요."
       ],
@@ -3717,6 +3927,9 @@
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "남은 예상 시간: ${ estimatedMinutes }분"
+      ],
       "Estimated time remaining: Less than a minute": [
         "남은 예상 시간: 1분 이하"
       ],
@@ -3749,6 +3962,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount }개 중 ${ calendarCount }개 달력 불러오기"
       ],
       "Import from": [
         "다음에서 가져오기"
@@ -3902,6 +4118,9 @@
       ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "${ groupCount }개 그룹에 추가 할 이메일 주소를 선택하세요."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "${ groupName } 개 그룹에 추가 할 이메일 주소를 선택하세요."
@@ -4224,6 +4443,14 @@
         "자세한 내용을 보려면 클릭하세요"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } 개 라벨 선택함"
+      ]
+    },
     "Info; access rights for shared calendar": {
       "View only": [
         "보기 전용"
@@ -4258,6 +4485,9 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "참가자는 초대마다 최대 ${ maxAttendees }명까지만 허용됩니다"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "공유 캘린더에서는 초대를 생성할 수 없습니다"
       ]
@@ -4556,6 +4786,9 @@
       "Organizer": [
         "주최자"
       ],
+      "participant": [
+        "참가자"
+      ],
       "Participants": [
         "참가자"
       ],
@@ -4758,6 +4991,9 @@
       "Almost there": [
         "거의 다왔습니다"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "생성된 캘린더수: ${ calendarsToBeCreated }개 중 ${ createdCalendarCount }개"
+      ],
       "Connecting to your email provider": [
         "사용자의 이메일 제공자에 연결 중"
       ],
@@ -4801,6 +5037,20 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 폴더에서 메시지를 불러오고 메시지들을 이로 라벨"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
       ]
     },
     "mailtrial2024: Action": {
@@ -4941,16 +5191,25 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "매 ${ interval }개월 ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "매 ${ interval }개월 ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "매월 ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "매 ${ interval }개월 ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "매월 ${ onDayString }, ${ untilString }"
       ]
@@ -5082,6 +5341,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "캘린더 ${ n }개"
+      ],
+      "${ n } calendar per user": [
+        "사용자 당 ${ n }개 캘린더"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
@@ -5150,11 +5415,19 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
+      ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "최대 ${ n }개 캘린더 생성"
       ]
     },
     "Notification": {
@@ -5190,6 +5463,11 @@
         "캘린더 업데이트됨"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "구성원 추가됨"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "캘린더 초대 거부됨"
@@ -5220,11 +5498,71 @@
       "at time of event": [
         "이벤트의 같은 시간에"
       ],
+      "day before": [
+        "일 전"
+      ],
+      "hour before": [
+        "시간 전"
+      ],
+      "minute before": [
+        "분 전"
+      ],
       "on the same day": [
         "같은 날에"
+      ],
+      "week before": [
+        "주 전"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value }일 후"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ time }로부터 ${ value }일 후"
+      ],
+      "${ value } day before": [
+        "${ value }일 전"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ time }로부터 ${ value }일 전"
+      ],
+      "${ value } hour after": [
+        "${ value }시간 후"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ time }로부터 ${ value }시간 후"
+      ],
+      "${ value } hour before": [
+        "${ value }시간 전"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ time }로부터 ${ value }시간 전"
+      ],
+      "${ value } minute after": [
+        "${ value }분 후"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ time }로부터 ${ value }분 후"
+      ],
+      "${ value } minute before": [
+        "${ value }분 전"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ time }로부터 ${ value }분 전"
+      ],
+      "${ value } week after": [
+        "${ value }주 후"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ time }로부터 ${ value }주 후"
+      ],
+      "${ value } week before": [
+        "${ value }주 전"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ time }로부터 ${ value }주 전"
+      ],
       "At time of event": [
         "이벤트 시간에"
       ],
@@ -5305,6 +5643,9 @@
       "Custom": [
         "사용자 정의"
       ],
+      "Day": [
+        "일"
+      ],
       "Does not repeat": [
         "반복하지 않음"
       ],
@@ -5323,6 +5664,9 @@
       "Ignore group": [
         "그룹 무시"
       ],
+      "Month": [
+        "월"
+      ],
       "No parent folder": [
         "상위 폴더 없음"
       ],
@@ -5331,6 +5675,12 @@
       ],
       "This event": [
         "이 이벤트"
+      ],
+      "Week": [
+        "주"
+      ],
+      "Year": [
+        "년"
       ]
     },
     "Option group label": {
@@ -5496,6 +5846,15 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts }개 중 ${ contactsExported.length }개의 연락처를 성공적으로 내보냈습니다."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ totalBeDeleted }개 중 ${ model.deleted.length }를 성공적으로 삭제했습니다."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ totalBeMerged }개 중 ${ model.submitted.length }개의 연락처를 성공적으로 병합했습니다."
+      ],
       "No contacts exported.": [
         "내보낼 연락처 없음."
       ],
@@ -5640,11 +5999,23 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays }일"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours }시간"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "비밀번호 재설정 요청이 승인되었습니다 (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "권한이 ${ timeRemaining.inDays }일 내에 만료됩니다."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "권한이 ${ timeRemaining.inHours }시간 내에 만료됩니다."
       ],
       "This permission expires soon": [
         "이 권한은 곧 만료됩니다"
@@ -5654,6 +6025,18 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -5713,8 +6096,14 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining }시간 이상"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "만약 재설정 요청을 자신이 하지 않았다면, 요청을 즉시 취소하세요."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "비밀번호 재설정 요청됨 (${ user.Email }) ${ hoursRemaining }시간 내에 비밀번호를 변경할 수 있습니다."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "비밀번호를 재설정하려고 하는지 확인하기 위해, 보통 요청을 승인하기 전에 72시간을 기다립니다. ${ boldTimeLeft } 내에 비밀번호를 변경할 수 있습니다. ${ viewRequest }"
@@ -5742,6 +6131,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining }시간"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset }이(가) 이제 가능합니다."
       ],
@@ -5773,6 +6165,11 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "비 ${ BRAND_NAME } 사용자에게 초대하려면, 링크로 캘린더를 공유하세요."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "캘린더당 구성원 한도 ${ MAX_CALENDAR_MEMBERS }명을 초과했습니다"
       ]
     },
     "Share calendar modal description": {
@@ -5830,6 +6227,25 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Unlimited로 전환"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days }일"
+      ],
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
+      ],
+      "${ seconds } second": [
+        "${ seconds }초"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n }개월 무료"
       ]
     },
     "specialoffer: Deal details": {
@@ -5890,6 +6306,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
       "/ month": [
         "/ 월"
       ],
@@ -6092,6 +6511,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "이 시리즈의 모든 이벤트의 삭제될 참가자들에게 취소 이메일이 전송됩니다."
       ],
@@ -6151,6 +6573,12 @@
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
+      ],
+      "Contact deleted": [
+        "콘텐츠 삭제됨"
+      ],
+      "Contact group deleted": [
+        "콘텐츠 그룹 삭제됨"
       ],
       "Contact saved": [
         "연락처가 저장되었습니다"
@@ -6316,12 +6744,37 @@
         "vCard 란"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }시간"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5시간"
+      ],
+      "${ minutes } min": [
+        "${ minutes }분"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5시간"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "시간대 검색"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount }개 이메일 주소"
+      ],
       "Account recovery": [
         "계정 복구"
       ],
@@ -6348,6 +6801,9 @@
       ],
       "Add some color to your day": [
         "당신의 하루에 색을 더하세요."
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } 그룹에 추가"
       ],
       "Add to ${ groupName }": [
         "${ groupName }그룹에 추가"
@@ -6439,6 +6895,12 @@
       "Day theme": [
         "주간 테마"
       ],
+      "Delete ${ count } contact": [
+        "${ count }개의 연락처 삭제"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count }개의 그룹 삭제"
+      ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제할까요"
       ],
@@ -6516,6 +6978,9 @@
       ],
       "Human verification": [
         "사람임을 인증"
+      ],
+      "Import as simple event?": [
+        "간단 이벤트로 불러올까요?"
       ],
       "Import contacts": [
         "연락처 가져오기"
@@ -6845,6 +7310,14 @@
         "인증된 연락처의 종단 간 암호화로 공유됨"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "이 비디오 회신하려면 클릭"
@@ -6867,6 +7340,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "이 연락처 그룹을 영구적으로 삭제하시겠습니까?"
@@ -6956,6 +7432,42 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "매 ${ interval }주 ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "매 ${ interval }주 모든 요일"
+      ],
+      "Every ${ interval } week on Friday": [
+        "매 ${ interval }주 금요일"
+      ],
+      "Every ${ interval } week on Monday": [
+        "매 ${ interval }주 월요일"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "매 ${ interval }주 월요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "매 ${ interval }주 토요일"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "매 ${ interval }주 일요일"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "매 ${ interval }주 일요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "매 ${ interval }주 목요일"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "매 ${ interval }주 화요일"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "매 ${ interval }주 화요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "매 ${ interval }주 수요일"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "주의 ${ multipleDaysString }"
       ],
@@ -6985,6 +7497,24 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "매 ${ interval } 주 ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "매 ${ interval }주 모든 요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "매 ${ interval }주 금요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "매 ${ interval }주 토요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "매 ${ interval }주 목요일, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "매 ${ interval }주 수요일, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "주의 ${ multipleDaysString }, ${ timesString }"
       ],
@@ -7014,6 +7544,33 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "매 ${ interval }주 ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "매 ${ interval }주 모든 요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "매 ${ interval }주 금요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "매 ${ interval }주 월요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "매 ${ interval }주 토요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "매 ${ interval }주 일요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "매 ${ interval }주 목요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "매 ${ interval }주 화요일, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "매 ${ interval }주 수요일, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "주의 ${ multipleDaysString }, ${ untilString }"
       ],
@@ -7066,16 +7623,25 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "매 ${ interval }년"
+      ],
       "Yearly": [
         "연간"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "매 ${ interval }년, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "연간, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "매 ${ interval }년, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
       ]
