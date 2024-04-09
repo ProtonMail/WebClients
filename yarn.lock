@@ -1886,7 +1886,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.4, @babel/runtime@npm:^7.23.5, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.4, @babel/runtime@npm:^7.23.5, @babel/runtime@npm:^7.24.1, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.24.4
   resolution: "@babel/runtime@npm:7.24.4"
   dependencies:
@@ -5943,7 +5943,7 @@ __metadata:
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
     eslint: "npm:^8.57.0"
@@ -5968,7 +5968,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/utils": "workspace:packages/utils"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/dom": "npm:^9.3.4"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
@@ -6052,7 +6052,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
     eslint: "npm:^8.57.0"
@@ -6304,7 +6304,7 @@ __metadata:
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
   languageName: unknown
   linkType: soft
 
@@ -6376,7 +6376,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
     eslint: "npm:^8.57.0"
@@ -6489,7 +6489,7 @@ __metadata:
     "@proton/srp": "workspace:packages/srp"
     "@proton/styles": "workspace:^"
     "@protontech/pass-rust-core": "npm:^0.7.2"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6573,7 +6573,7 @@ __metadata:
     "@proton/mail": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     react: "npm:^18.2.0"
     react-redux: "npm:^9.1.0"
   languageName: unknown
@@ -6584,7 +6584,7 @@ __metadata:
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
     eslint: "npm:^8.57.0"
@@ -6930,20 +6930,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redux-devtools/remote@npm:^0.9.1":
-  version: 0.9.1
-  resolution: "@redux-devtools/remote@npm:0.9.1"
+"@redux-devtools/remote@npm:^0.9.3":
+  version: 0.9.3
+  resolution: "@redux-devtools/remote@npm:0.9.3"
   dependencies:
-    "@babel/runtime": "npm:^7.23.5"
+    "@babel/runtime": "npm:^7.24.1"
     "@redux-devtools/instrument": "npm:^2.2.0"
     "@redux-devtools/utils": "npm:^3.0.0"
     jsan: "npm:^3.1.14"
     querystring: "npm:^0.2.1"
     rn-host-detect: "npm:^1.2.0"
-    socketcluster-client: "npm:^17.2.2"
+    socketcluster-client: "npm:^19.1.0"
   peerDependencies:
     redux: ^3.5.2 || ^4.0.0 || ^5.0.0
-  checksum: 10c0/b6a9f0ba45a4ba15703191cd9f48733797a0bb6d5b98042b56e2ff13532ece84513f473c5016e4b49cf47a37752f274a612eb9bb2264ec21cf67169c5f776d44
+  checksum: 10c0/d106675ce7f58477667536cc20c2e5f5cbeeb8ccc1e6b5372a0b7f48704766d821612cf19c6972764fdfa5a68ae995e1e033645e455545f98b77133b4f882e4c
   languageName: node
   linkType: hard
 
@@ -7036,9 +7036,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "@reduxjs/toolkit@npm:2.2.2"
+"@reduxjs/toolkit@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "@reduxjs/toolkit@npm:2.2.3"
   dependencies:
     immer: "npm:^10.0.3"
     redux: "npm:^5.0.1"
@@ -7052,7 +7052,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 10c0/d749181b1bc071698517cba7ce05c42ddfe99363019249722b4dfa3afc71b3a6e4cb9885af574cf81c5d6515f68201ebfedddb5c14b262c941a45112fdc66ce3
+  checksum: 10c0/f10f2c8f4b6c5c7a65d8d60246bdfde86b6cd2f542210ebdda8002223c7f4e99ed32964825e63f37345d9d12532671150fcec2809a40690931ae44afe8aba7f8
   languageName: node
   linkType: hard
 
@@ -11420,7 +11420,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ag-request@npm:^1.0.0":
+"ag-request@npm:^1.0.1":
   version: 1.0.1
   resolution: "ag-request@npm:1.0.1"
   dependencies:
@@ -12375,12 +12375,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async-stream-emitter@npm:^4.0.0":
-  version: 4.1.0
-  resolution: "async-stream-emitter@npm:4.1.0"
+"async-stream-emitter@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "async-stream-emitter@npm:7.0.1"
   dependencies:
-    stream-demux: "npm:^8.1.0"
-  checksum: 10c0/d8b47a8f3a923cb923b6d0f0c7eb57e2a7eb291f1fc640398fc4b12545c101718a4bac65a540121b28c8987da6b5d138f8e6814ad0c46a150fb9ba12f41c16c3
+    stream-demux: "npm:^10.0.1"
+  checksum: 10c0/0e8d1daaca584f741dd10375748fa11bb7a52282d88c5b4ddcefeba776edf60dc3d4aa4820cdc0d162519b0838085ec250d427dd3e3b7f0926a91d95da320473
   languageName: node
   linkType: hard
 
@@ -15913,6 +15913,13 @@ __metadata:
   version: 2.0.0
   resolution: "consumable-stream@npm:2.0.0"
   checksum: 10c0/4276ac662d254ef17e38daeaf280584801906a661ab215bde5cc3a37e6bd3def428c19abd8db601527a1582c065529ad9608466f09619ba3d1dcd89abcfadaea
+  languageName: node
+  linkType: hard
+
+"consumable-stream@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "consumable-stream@npm:3.0.0"
+  checksum: 10c0/a6e9a7f29666aa135e898628edf3671d92b6fe061dcab1eff6f8eadb35438ea0f6eb2d782b9ca8320bb05ae2e73706986a17392f2c6bcd5e5c6826745d353fcb
   languageName: node
   linkType: hard
 
@@ -26055,10 +26062,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"linked-list@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "linked-list@npm:0.1.0"
-  checksum: 10c0/b63862851a95af9bb71ef2e6fb0d607edefa3336fa74e6ad1c42a307bcd9900bdd25b59f7ea92ff96d94a10fa95181304663edca8efc735a7a15c1f985815426
+"linked-list@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "linked-list@npm:2.1.0"
+  checksum: 10c0/d039f664f847022be908460a06a7f63792aadcdfd3061f999726a92d89bf3a10688e7dfb98236f65d9980e2a175839028a374070e48e0676ab9e66122fca7063
   languageName: node
   linkType: hard
 
@@ -31475,7 +31482,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"
-    "@reduxjs/toolkit": "npm:^2.2.2"
+    "@reduxjs/toolkit": "npm:^2.2.3"
     "@testing-library/dom": "npm:^9.3.4"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.3.0"
@@ -31564,7 +31571,7 @@ __metadata:
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
     "@proton/pass": "workspace:packages/pass"
-    "@redux-devtools/remote": "npm:^0.9.1"
+    "@redux-devtools/remote": "npm:^0.9.3"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/webextension-polyfill": "npm:^0.10.7"
     babel-plugin-transform-require-context: "npm:^0.1.1"
@@ -34736,7 +34743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sc-errors@npm:^2.0.1, sc-errors@npm:^2.0.2":
+"sc-errors@npm:^2.0.2, sc-errors@npm:^2.0.3":
   version: 2.0.3
   resolution: "sc-errors@npm:2.0.3"
   checksum: 10c0/08b18a9cbab4269fdec84e28eec3f083604eeeaf0f989a857596cfff09daedd89a2f4f677b1e87449f0579e3d6d752f821e7fb02677dfc0265f1c0b717edc985
@@ -35554,23 +35561,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socketcluster-client@npm:^17.2.2":
-  version: 17.2.2
-  resolution: "socketcluster-client@npm:17.2.2"
+"socketcluster-client@npm:^19.1.0":
+  version: 19.1.2
+  resolution: "socketcluster-client@npm:19.1.2"
   dependencies:
     ag-channel: "npm:^5.0.0"
-    ag-request: "npm:^1.0.0"
-    async-stream-emitter: "npm:^4.0.0"
+    ag-request: "npm:^1.0.1"
+    async-stream-emitter: "npm:^7.0.1"
     buffer: "npm:^5.2.1"
     clone-deep: "npm:^4.0.1"
-    linked-list: "npm:^0.1.0"
-    sc-errors: "npm:^2.0.1"
+    linked-list: "npm:^2.1.0"
+    sc-errors: "npm:^2.0.3"
     sc-formatter: "npm:^4.0.0"
-    stream-demux: "npm:^8.0.0"
+    stream-demux: "npm:^10.0.1"
     uuid: "npm:^8.3.2"
     vinyl-buffer: "npm:^1.0.1"
     ws: "npm:^8.9.0"
-  checksum: 10c0/6b88f2f0c2667b5293fdcf9411277875806265420464a7fb960acc855e9374436bae4d70f906e0641636710950fbb620a7d048488495d4022f6b8017ee7ce536
+  checksum: 10c0/ffe67bf6860da01ccc245a3765d06a7a4c86fba08bc8994d4c4f5041277d8d7dbabd5f99c5538ae848f12b30c72f0746f5498350e6209df77aded75a543b91c4
   languageName: node
   linkType: hard
 
@@ -36018,13 +36025,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stream-demux@npm:^8.0.0, stream-demux@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "stream-demux@npm:8.1.0"
+"stream-demux@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "stream-demux@npm:10.0.1"
   dependencies:
-    consumable-stream: "npm:^2.0.0"
-    writable-consumable-stream: "npm:^3.0.1"
-  checksum: 10c0/dd378f16eacb3cb74a7258537d1f3f174377e05126489fcbc4c8ed23521fc36a22482bb60f6cf1ebc7457bbceef05e182330e0da3b3e33b01fbc7f5708117635
+    consumable-stream: "npm:^3.0.0"
+    writable-consumable-stream: "npm:^4.1.0"
+  checksum: 10c0/9c6b42af758560ceab49b0fdae169599cfca95fcd6f234b45fa3e1465751c2576ad65fd86e54bf5365fda6152955d06d6e6957c506b51460343c4801260402cf
   languageName: node
   linkType: hard
 
@@ -40423,12 +40430,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"writable-consumable-stream@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "writable-consumable-stream@npm:3.0.1"
+"writable-consumable-stream@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "writable-consumable-stream@npm:4.1.0"
   dependencies:
-    consumable-stream: "npm:^2.0.0"
-  checksum: 10c0/2c2d388ff0c4971bb6c6d4da13d7388242916dd6b8ced7e828ef43c18b83d0c265308a8a05eeffc10f60217f03dac0b71eb82a56505d4922eb4046f982119df0
+    consumable-stream: "npm:^3.0.0"
+  checksum: 10c0/4b5fc9d84276aa0c4362c37b82ccca496978630eccd0b91cb853ca690431f149d5d109d5748e4ff7080510575a994709eb54489bc7cffcfcbf326cfbef3c4686
   languageName: node
   linkType: hard
 
