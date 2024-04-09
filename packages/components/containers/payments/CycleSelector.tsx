@@ -18,6 +18,8 @@ interface SharedProps {
     onSelect: (newCycle: Cycle) => void;
     options?: { text: string; value: number }[];
     disabled?: boolean;
+    minimumCycle?: Cycle;
+    maximumCycle?: Cycle;
 }
 
 interface SelectProps extends Omit<ForwardedSelectProps, 'onSelect' | 'onChange' | 'options'>, SharedProps {
@@ -39,7 +41,7 @@ type Props = ButtonGroupProps | SelectProps | SelectTwoProps;
 const propsToOmit = ['onSelect', 'options', 'cycle', 'disabled'] as const;
 
 const CycleSelector = (props: Props) => {
-    const { onSelect, disabled } = props;
+    const { onSelect, disabled, minimumCycle, maximumCycle } = props;
 
     const defaultOptions = [
         { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
@@ -47,7 +49,17 @@ const CycleSelector = (props: Props) => {
         { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS },
     ];
 
-    const options = (props.options || defaultOptions).sort((a, b) => a.value - b.value);
+    const options = (props.options || defaultOptions)
+        .filter(({ value }) => {
+            if (minimumCycle && value < minimumCycle) {
+                return false;
+            }
+            if (maximumCycle && value > maximumCycle) {
+                return false;
+            }
+            return true;
+        })
+        .sort((a, b) => a.value - b.value);
 
     const cycle = (() => {
         const cycleToCheck = props.cycle || DEFAULT_CYCLE;
