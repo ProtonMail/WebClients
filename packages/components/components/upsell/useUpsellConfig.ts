@@ -2,7 +2,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
-import { useConfig, useFlag, useSubscription, useSubscriptionModal, useUser } from '../..';
+import { SUBSCRIPTION_STEPS, useConfig, useFlag, useSubscription, useSubscriptionModal, useUser } from '../..';
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
 
 // Return config properties to inject in the subscription modal
@@ -11,6 +11,7 @@ const useUpsellConfig = (upsellRef: string) => {
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
+    const ABTestInboxUpsellStepEnabled = useFlag('ABTestInboxUpsellStep'); // If enabled, we show the plan selection step
     const { APP_NAME } = useConfig();
     // Make sure the new upsell flow is never enabled for the account app in case the modal is used in multiple places
     const isAccount = APP_NAME === APPS.PROTONACCOUNT;
@@ -20,7 +21,12 @@ const useUpsellConfig = (upsellRef: string) => {
         return {
             upgradePath: '',
             onUpgrade() {
-                openSubscriptionModal(getUpsellSubscriptionModalConfig(upsellRef));
+                openSubscriptionModal(
+                    getUpsellSubscriptionModalConfig(
+                        upsellRef,
+                        ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : undefined
+                    )
+                );
             },
         };
     }

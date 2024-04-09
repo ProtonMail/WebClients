@@ -2,11 +2,15 @@ import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
 import { OpenCallbackProps, SUBSCRIPTION_STEPS } from '../..';
 
-const getUpsellSubscriptionModalConfig = (upsellRef: string): OpenCallbackProps => ({
+const getUpsellSubscriptionModalConfig = (
+    upsellRef: string,
+    step = SUBSCRIPTION_STEPS.CHECKOUT
+): OpenCallbackProps => ({
+    mode: 'upsell-modal', // hide the Free plan
     planIDs: { [PLANS.MAIL]: 1 },
     cycle: CYCLE.YEARLY,
-    step: SUBSCRIPTION_STEPS.CHECKOUT,
-    disablePlanSelection: true,
+    step,
+    disablePlanSelection: step === SUBSCRIPTION_STEPS.CHECKOUT,
     maximumCycle: CYCLE.YEARLY,
     upsellRef,
     metrics: {
