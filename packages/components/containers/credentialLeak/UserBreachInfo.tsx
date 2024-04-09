@@ -1,37 +1,31 @@
 import { c } from 'ttag';
 
-import clsx from '@proton/utils/clsx';
-
 interface UserBreachInfoProps {
     email: string;
     passwordLastChars: string | null;
-    style: {
-        backgroundClass: string;
-        colorClass: string;
-        iconAltText: string;
-    };
+    inModal?: boolean;
 }
-const UserBreachInfo = ({ email, passwordLastChars, style }: UserBreachInfoProps) => {
-    const { backgroundClass } = style;
-
+const UserBreachInfo = ({ email, passwordLastChars, inModal = false }: UserBreachInfoProps) => {
     return (
         <>
-            <h4 className="text-semibold text-rg">{c('Title').t`Your Exposed Information`}</h4>
-            <div
-                className={clsx(
-                    'flex justify-start flex-nowrap h-custom gap-6 py-3 px-4 overflow-x-auto *:min-size-auto rounded mb-2',
-                    backgroundClass
-                )}
-                style={{ '--h-custom': '3.75rem' }}
-            >
-                <div className="flex flex-column flex-nowrap *:min-size-auto ">
-                    <span className="block text-sm text-semibold">{c('Title').t`Email address`}</span>
-                    <span className="block m-0 text-sm">{email}</span>
+            {inModal ? (
+                <h2 className="text-semibold text-rg mb-2">{c('Title').t`Details`}</h2>
+            ) : (
+                <h3 className="text-semibold text-rg mb-2">{c('Title').t`Details`}</h3>
+            )}
+            <div className="mb-4">
+                <div className="flex flex-nowrap flex-column sm:flex-row w-full text-sm mb-2">
+                    <span className="sm:w-1/3 color-weak">{c('Title').t`Email address`}</span>
+                    <span className="sm:flex-1 pl-2 sm:pl-O text-ellipsis" title={email}>
+                        {email}
+                    </span>
                 </div>
                 {passwordLastChars && (
-                    <div className="flex flex-column flex-nowrap *:min-size-auto ">
-                        <span className="block text-sm text-semibold">{c('Title').t`Password`}</span>
-                        <span className="block m-0 text-sm">{passwordLastChars}</span>
+                    <div className="flex flex-nowrap flex-column sm:flex-row w-full text-sm mb-2">
+                        <span className="sm:w-1/3 color-weak">{c('Title').t`Password`}</span>
+                        <span className="sm:flex-1 pl-2 sm:pl-O text-ellipsis" title={passwordLastChars}>
+                            {passwordLastChars}
+                        </span>
                     </div>
                 )}
             </div>

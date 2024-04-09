@@ -1,7 +1,14 @@
 import { camelCase } from 'lodash';
 import { c } from 'ttag';
 
-const enum SEVERITY_LEVELS {
+import breachIconAlertBig from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-big.svg';
+import breachIconAlertSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-small.svg';
+import breachIconResolvedBig from '@proton/styles/assets/img/breach-alert/shield-bolt-resolved-big.svg';
+import breachIconResolvedSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-resolved-small.svg';
+import breachIconWarningBig from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-big.svg';
+import breachIconWarningSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-small.svg';
+
+export const enum SEVERITY_LEVELS {
     HIGH = 0.67,
     MEDIUM = 0.33,
 }
@@ -10,21 +17,41 @@ export const enum BREACH_API_ERROR {
     GENERIC = 2902,
 }
 
-export const getStyle = (severity: number): { backgroundClass: string; colorClass: string; iconAltText: string } => {
+export const getBreachIcon = (severity: number, big?: boolean, resolved?: boolean) => {
+    if (resolved) {
+        if (big) {
+            return breachIconResolvedBig;
+        }
+        return breachIconResolvedSmall;
+    }
+
+    if (severity > SEVERITY_LEVELS.HIGH) {
+        if (big) {
+            return breachIconAlertBig;
+        }
+        return breachIconAlertSmall;
+    }
+
+    if (big) {
+        return breachIconWarningBig;
+    }
+    return breachIconWarningSmall;
+
+    // TO CHECK: no styles for low prio?
+};
+
+export const getStyle = (severity: number): { colorClass: string; iconAltText: string } => {
     const style = {
         high: {
             colorClass: 'color-danger',
-            backgroundClass: 'breach-icon-bg-danger',
             iconAltText: c('Info').t`High Priority`,
         },
         medium: {
             colorClass: 'color-warning',
-            backgroundClass: 'breach-icon-bg-warning',
             iconAltText: c('Info').t`Medium Priority`,
         },
         low: {
-            colorClass: 'color-info',
-            backgroundClass: 'breach-icon-bg-info',
+            colorClass: 'color-warning', // TO DISCUSS : color-info looks misleading
             iconAltText: c('Info').t`Low Priority`,
         },
     };

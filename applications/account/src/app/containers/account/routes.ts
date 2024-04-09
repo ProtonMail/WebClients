@@ -256,7 +256,7 @@ export const getAccountAppRoutes = ({
                     },
 
                     {
-                        text: c('Title').t`Breach Alerts`,
+                        text: c('Title').t`Breach Alert`,
                         id: 'breaches',
                         available: isBreachesAccountDashboardEnabled && !isSSOUser,
                     },

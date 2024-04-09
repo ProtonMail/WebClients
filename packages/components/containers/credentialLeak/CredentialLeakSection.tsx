@@ -5,24 +5,33 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import {
     GenericError,
+    Icon,
     Loader,
     SUBSCRIPTION_STEPS,
+    Toggle,
     useErrorHandler,
     useModalStateObject,
     useSubscriptionModal,
     useUser,
 } from '@proton/components';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getBreaches } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import freeUserBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
+import freeUserNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found-inactive.svg';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useActiveBreakpoint, useApi } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
+import {
+    SettingsLayout,
+    SettingsLayoutLeft,
+    SettingsLayoutRight,
+    SettingsParagraph,
+    SettingsSectionWide,
+} from '../account';
 import BreachInformationCard from './BreachInformationCard';
 import BreachModal from './BreachModal';
 import BreachesList from './BreachesList';
@@ -124,7 +133,7 @@ const CredentialLeakSection = () => {
 
     useEffect(() => {
         const handleBreachModal = () => {
-            if (!loading && viewportWidth['<=small'] && openModal) {
+            if (!loading && viewportWidth['<=medium'] && openModal) {
                 breachModal.openModal(true);
                 setOpenModal(!openModal);
             }
@@ -140,21 +149,43 @@ const CredentialLeakSection = () => {
     };
 
     // TODO: update to knowledge base url for data breaches
+    // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
     const dataBreachLink = (
-        <Href key={'breach'} href={getKnowledgeBaseUrl('/proton-sentinel')}>{c('Link').t`Learn more`}</Href>
+        <Href key={'breach'} className="inline-block" href={getKnowledgeBaseUrl('/TO-ADD')}>{c('Link')
+            .t`How does monitoring work?`}</Href>
+    );
+
+    const breachAlertIntroText = (
+        <SettingsParagraph>
+            {
+                // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
+                c('Info')
+                    .jt`We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. ${dataBreachLink}`
+            }
+        </SettingsParagraph>
+    );
+
+    const breachAlertInfoSharing = (
+        <SettingsParagraph>
+            {c('Info')
+                .t`${BRAND_NAME} never shares your information with third parties. Data comes from  ${BRAND_NAME}'s own analyses and Constella Intelligence.`}
+        </SettingsParagraph>
+    );
+
+    // translator: full sentence is: Get notified if your password or other personal data was leaked. <Learn more>
+    const learnMoreLinkNoBreach = (
+        <Href href={getKnowledgeBaseUrl('/TO-ADD')} className="inline-block">{c('Link').t`Learn more`}</Href>
+    );
+
+    // translator: full sentence is: Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. <Learn more>
+    const learnMoreLinkBreach = (
+        <Href href={getKnowledgeBaseUrl('/TO-ADD')} className="inline-block color-danger">{c('Link')
+            .t`Learn more`}</Href>
     );
 
     return (
         <>
             <SettingsSectionWide>
-                <SettingsParagraph large>
-                    {c('Info')
-                        .t`We monitor your email addresses, passwords, and personal data for appearances on the dark web and notify you in case your data is compromised.`}
-                </SettingsParagraph>
-                <SettingsParagraph large>
-                    {c('Info')
-                        .jt`Breach Alert is powered by ${BRAND_NAME}'s propietary datasets, open-source datasets, and Constella Intelligence. ${dataBreachLink}`}
-                </SettingsParagraph>
                 {(() => {
                     if (error) {
                         return <GenericError className="text-center">{error.message}</GenericError>;
@@ -162,51 +193,119 @@ const CredentialLeakSection = () => {
                     if (loading) {
                         return <Loader size="medium" />;
                     }
-                    if (total === 0) {
-                        if (isPaidUser) {
-                            return <NoBreachesView />;
-                        }
+
+                    if (!isPaidUser) {
                         return (
-                            <PromotionButton iconName="upgrade" iconGradient={true} onClick={handleUpgrade}>
-                                {c('Action').t`Unlock breach reports`}
-                            </PromotionButton>
-                        );
-                    }
-                    if (!isPaidUser && total === 1) {
-                        return (
-                            <div className="relative align-center w-full lg:w-2/3">
-                                <UnlockBreachReportCard />
-                                <BreachInformationCard paid={isPaidUser} breachData={getSelectedBreachData()} />
+                            <div className="flex flex-nowrap">
+                                <div className="flex-1">
+                                    {breachAlertIntroText}
+                                    {total === 0 ? (
+                                        <SettingsParagraph>
+                                            {c('Info')
+                                                .jt`Get notified if your password or other personal data was leaked. ${learnMoreLinkNoBreach}`}
+                                        </SettingsParagraph>
+                                    ) : (
+                                        <SettingsParagraph>
+                                            <div
+                                                className="flex flex-nowrap color-danger p-4 rounded"
+                                                style={{ 'background-color': 'var(--signal-danger-minor-2)' }}
+                                            >
+                                                <Icon
+                                                    name="exclamation-circle-filled"
+                                                    className="shrink-0 mt-0.5 mr-2"
+                                                />
+                                                <span className="flex-1">
+                                                    {
+                                                        // translator: full sentence is: Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. <Learn more>
+                                                        c('Security Center - Info')
+                                                            .jt`Your information was found in at least one data breach. Turn on Breach Alert to view details and take action. ${learnMoreLinkBreach}`
+                                                    }
+                                                </span>
+                                            </div>
+                                        </SettingsParagraph>
+                                    )}
+
+                                    <SettingsLayout>
+                                        <SettingsLayoutLeft>
+                                            <label className="text-semibold" htmlFor="data-breach-toggle">
+                                                <span className="mr-2">{c('Log preference')
+                                                    .t`Enable Breach Alert`}</span>
+                                            </label>
+                                        </SettingsLayoutLeft>
+                                        <SettingsLayoutRight isToggleContainer>
+                                            <Toggle
+                                                id="data-breach-toggle"
+                                                disabled={false}
+                                                checked={false}
+                                                onClick={handleUpgrade}
+                                            />
+                                            {/* TODO: toggle activation */}
+                                        </SettingsLayoutRight>
+                                    </SettingsLayout>
+                                </div>
+
+                                <div className="hidden lg:flex">
+                                    <img
+                                        src={total === 0 ? freeUserNoBreachImg : freeUserBreachImg}
+                                        alt=""
+                                        width={300}
+                                        className="m-auto"
+                                    />
+                                </div>
                             </div>
                         );
                     }
+
                     return (
-                        <div
-                            className={clsx(
-                                'flex flex-column flex-nowrap md:flex-row w-full max-h-custom md:max-h-custom'
+                        <>
+                            {breachAlertIntroText}
+                            {breachAlertInfoSharing}
+
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label className="text-semibold" htmlFor="data-breach-toggle">
+                                        <span className="mr-2">{c('Log preference').t`Enable Breach Alert`}</span>
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight isToggleContainer>
+                                    <Toggle id="data-breach-toggle" disabled={false} checked={true} />
+                                    {/* TODO: toggle activation */}
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+
+                            {total === 0 ? (
+                                <NoBreachesView />
+                            ) : (
+                                <div
+                                    className="flex flex-nowrap lg:flex-row w-full max-h-custom lg:max-h-custom"
+                                    style={{ '--max-h-custom': '40vh', '--lg-max-h-custom': '90vh' }}
+                                >
+                                    <BreachesList
+                                        breachData={fetchedBreachData}
+                                        selectedID={selectedBreachID}
+                                        setSelectedBreachID={setSelectedBreachID}
+                                        isPaidUser={isPaidUser}
+                                        total={total}
+                                        setOpenModal={setOpenModal}
+                                    />
+
+                                    <div
+                                        className={clsx(
+                                            'relative w-full md:w-2/3',
+                                            viewportWidth['<=medium'] && 'hidden'
+                                        )}
+                                    >
+                                        {!isPaidUser && <UnlockBreachReportCard />}
+                                        {selectedBreachID && (
+                                            <BreachInformationCard
+                                                paid={isPaidUser}
+                                                breachData={getSelectedBreachData()}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
                             )}
-                            style={{ '--max-h-custom': '40vh', '--md-max-h-custom': '70vh' }}
-                        >
-                            <BreachesList
-                                breachData={fetchedBreachData}
-                                selectedID={selectedBreachID}
-                                setSelectedBreachID={setSelectedBreachID}
-                                isPaidUser={isPaidUser}
-                                total={total}
-                                setOpenModal={setOpenModal}
-                            />
-                            <div
-                                className={clsx(
-                                    'relative w-full md:w-2/3 h-auto',
-                                    viewportWidth['<=small'] ? 'hidden' : ''
-                                )}
-                            >
-                                {!isPaidUser && <UnlockBreachReportCard />}
-                                {selectedBreachID && (
-                                    <BreachInformationCard paid={isPaidUser} breachData={getSelectedBreachData()} />
-                                )}
-                            </div>
-                        </div>
+                        </>
                     );
                 })()}
             </SettingsSectionWide>
