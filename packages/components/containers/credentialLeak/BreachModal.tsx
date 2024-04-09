@@ -11,6 +11,7 @@ import {
 } from '@proton/components/components';
 
 import BreachInfo from './BreachInfo';
+import BreachInfoNote from './BreachInfoNote';
 import BreachRecommendations from './BreachRecommendations';
 import BreachTitle from './BreachTitle';
 import { FetchedBreaches } from './CredentialLeakSection';
@@ -22,48 +23,51 @@ interface BreachModalProps {
     breachData: FetchedBreaches | undefined;
     securityCenter?: boolean;
 }
+
 const BreachModal = ({ modalProps, breachData, securityCenter }: BreachModalProps) => {
     if (!breachData) {
         return;
     }
-    const {
-        name,
-        createdAt,
-        email,
-        severity,
-        passwordLastChars,
-        publishedAt,
-        actions,
-        size,
-        source: { category, country },
-        exposedData,
-    } = breachData;
+    const { name, createdAt, email, severity, passwordLastChars, actions, exposedData } = breachData;
 
     const hasActions = actions && actions?.length > 0;
 
+    const isResolved = false; // TODO: API?
+
     return (
         <ModalTwo fullscreenOnMobile {...modalProps}>
-            <ModalTwoHeader />
-            <ModalTwoContent className="pb-4">
-                <BreachTitle name={name} createdAt={createdAt} style={getStyle(severity)} className="mb-4" />
-                <div className="flex flex-column flex-nowrap gap-2">
-                    <BreachInfo
-                        publishedAt={publishedAt}
-                        category={category?.name}
-                        size={size}
-                        country={country?.name}
-                        exposedData={exposedData}
+            <ModalTwoHeader
+                title={
+                    <BreachTitle
+                        name={name}
+                        createdAt={createdAt}
+                        style={getStyle(severity)}
+                        className="mb-4"
+                        inModal
+                        severity={severity}
                     />
-                    <UserBreachInfo email={email} passwordLastChars={passwordLastChars} style={getStyle(severity)} />
-                    {hasActions && <BreachRecommendations actions={actions} />}
+                }
+            />
+            <ModalTwoContent className="pb-4">
+                <div className="flex flex-column flex-nowrap gap-2">
+                    <BreachInfo exposedData={exposedData} inModal />
+                    <UserBreachInfo email={email} passwordLastChars={passwordLastChars} inModal />
+                    {hasActions && <BreachRecommendations actions={actions} inModal />}
+
+                    <BreachInfoNote />
                 </div>
             </ModalTwoContent>
-            {securityCenter && (
-                <ModalTwoFooter className="justify-end">
+            <ModalTwoFooter>
+                {isResolved ? (
+                    <ButtonLike disabled>{c('Action').t`Mark as open`}</ButtonLike>
+                ) : (
+                    <ButtonLike disabled>{c('Action').t`Mark as resolved`}</ButtonLike>
+                )}
+                {securityCenter && (
                     <ButtonLike as={SettingsLink} path="/security#breaches">{c('Action')
                         .t`View all reports`}</ButtonLike>
-                </ModalTwoFooter>
-            )}
+                )}
+            </ModalTwoFooter>
         </ModalTwo>
     );
 };
