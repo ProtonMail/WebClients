@@ -1104,7 +1104,7 @@
         "Kytke Yhteystiedot-sovellus"
       ],
       "Toggle security center app": [
-        "Avaa/sulje turvakeskus"
+        "Avaa/sulje suojauskeskus"
       ],
       "Toggle settings": [
         "Kytke asetuksia"
@@ -1114,6 +1114,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1210,6 +1214,9 @@
       ],
       "View": [
         "Tarkastele"
+      ],
+      "View all reports": [
+        "Näytä kaikki raportit"
       ],
       "View contact details": [
         "Näytä yhteystiedon tiedot"
@@ -2093,7 +2100,7 @@
         "riutta"
       ],
       "ruddy pink": [
-        "punertava vaaleanpunainen"
+        "punertava pinkki"
       ],
       "sahara": [
         "sahara"
@@ -3200,6 +3207,9 @@
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Poista roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti. Nauti tästä ja muista eduista päivittämällä tilauksesi."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Tietovuotohälytykset ja -raportit sisältyvät maksullisiin tilauksiin. Saat ne heti käyttöösi päivitämällä tilauksesi."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -3287,6 +3297,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Tietojasi havaittiin ainakin yhdessä tietovuodossa."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Henkilökohtaisia tietojasi on vuotanut verkkopalvelun tietovuodon seurauksena. Tarkastele vuodon tietoja ja ryhdy tarvittaviin toimenpiteisiin."
       ]
     },
     "description": {
@@ -4467,7 +4483,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
       ],
       "Security key": [
         "Todennuslaite"
@@ -4690,6 +4706,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } -työpöytäsovellus"
       ],
+      "14-day desktop app trial.": [
+        "Työpöytäsovelluksen 14 päivän kokeilujakso."
+      ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Nauti nopeasta, turvallisesta ja häiriötekijöistä vapaasta pääsystä postilaatikkoosi ja kalenteriisi."
       ],
@@ -4698,6 +4717,9 @@
       ],
       "No credit card required.": [
         "Luottokorttia ei tarvita."
+      ],
+      "Start free trial": [
+        "Aloita ilmainen kokeilu"
       ],
       "Try the app-new desktop app": [
         "Kokeile uutta työpäytäsovellusta"
@@ -4882,7 +4904,7 @@
         "Haku"
       ],
       "Security Center": [
-        "Turvakeskus"
+        "Suojauskeskus"
       ]
     },
     "Hint": {
@@ -5569,6 +5591,9 @@
       "Body: ": [
         "Sisältö: "
       ],
+      "Breach alerts": [
+        "Tietovuotohälytykset"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -6200,6 +6225,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
+      "Please try again in a few moments": [
+        "Yritä uudelleen hetken kuluttua"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
       ],
@@ -6474,7 +6502,7 @@
         "Keskustelut merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Tämä sähköposti ei ole täyttänyt verkkotunnuksensa todennusvaatimuksia. Se voi olla väärennetty tai edelleenlähetetty väärin."
+        "Viesti ei täyttänyt sen verkkotunnuksen todennusvaatimuksia. Se voi olla väärennetty tai virheellisesti välitetty."
       ],
       "This file is too large to preview": [
         "Tämä tiedosto on liian suuri esikatseltavaksi"
@@ -6698,6 +6726,9 @@
       ],
       "Version ${ appVersion }": [
         "Versio ${ appVersion }"
+      ],
+      "View details": [
+        "Näytä tiedot"
       ],
       "Visa Secure logo": [
         "Visa Secure -logo"
@@ -8674,7 +8705,7 @@
         "Salasanasuojatut sähköpostiviestit"
       ],
       "Phone support (6+ users)": [
-        "Puhelintuki (6+ käyttäjää)"
+        "Puhelinasiakaspalvelu (6+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -9043,7 +9074,7 @@
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa puhelintukea vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -9064,7 +9095,7 @@
         "Siirrä sähköpostisi, kalenterisi ja yhteystietosi nopeasti miltä tahansa palveluntarjoajalta"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        "Kirjautumiseen tarvitaan matkapuhelimeen lähetetty koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
+        "Kirjautumiseen tarvitaan matkapuhelimeen lähetettävä koodi. Tällä varmistetaan tilin suojaus vaikka salasana olisi vaarantunut."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nollaa käyttäjien salasanat ja palauta kaksivaiheinen todennus oletustilaan"
@@ -9757,13 +9788,13 @@
         "Luo alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Luo aliaksia lennossa ja hallitse aliaksia ja salasanoja helposti."
+        "Luo uusia aliaksia lennossa, ja hallitse niitä sekä salasanojasi helposti."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliaksien avulla voit rekisteröityä verkossa jakamatta sähköpostiosoitettasi. ${ learnMoreLink }"
+        "Hide-my-email-aliasten avulla voit rekisteröityä verkkopalveluihin jakamatta todellista sähköpostiosoitettasi. ${ learnMoreLink }"
       ],
       "New alias": [
         "Uusi alias"
@@ -9778,15 +9809,15 @@
         "Kokeile ${ PASS_APP_NAME }ia"
       ],
       "Used on amazon for shopping, etc.": [
-        "Käytetään Amazonissa ostoksiin jne."
+        "Käytetään Amazon-ostoksiin yms."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Kun sinulta kysytään sähköpostiosoitettasi, anna sen sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
+        "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
-        "(avaa ${ PASS_APP_NAME })"
+        "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
     "Security Center - Action": {
@@ -9795,8 +9826,11 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Huippuluokan tekoälyyn perustuva tietoturvaratkaisumme, joka on suunniteltu käyttäjille, jotka kaipaavat tehostettua suojaa tileilleen. ${ learnMoreLink }"
+        "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
@@ -10344,6 +10378,9 @@
       ]
     },
     "Spotlight": {
+      "Breach Alerts": [
+        "Tietovuotohälytykset"
+      ],
       "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
         "Käynnistä ${ MAIL_APP_NAME } kätevästi suoraan työpöydältäsi."
       ],
@@ -10370,6 +10407,9 @@
       ],
       "Schedule send": [
         "Ajoita lähetys"
+      ],
+      "Turn on breach alerts to monitor potential data leaks. View details and take action to protect yourself.": [
+        "Ota tietovuotohälytykset käyttöön pysyäksesi ajan tasalla mahdollisesti vaarantuneista tiedoistasi. Tarkastele yksityiskohtaisia tietoja ja suojaa itseäsi."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyt kuvat ladataan oletusarvoisesti ja lähettäjiä estetään seuraamasta sinua. Tätä voidaan muuttaa ${ settingsLink }."
@@ -10777,6 +10817,9 @@
       "Labels applied.": [
         "Tunnisteet määritettiin."
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Viimeksi muokatut vanhimmassa holvissasi säilytettävät aliakset"
+      ],
       "Mail list unsubscribed": [
         "Postituslistatilaus on peruttu"
       ],
@@ -11094,8 +11137,14 @@
       "Block sender": [
         "Estä lähettäjä"
       ],
+      "Breach alerts": [
+        "Tietovuotohälytykset"
+      ],
       "Breach Date": [
         "Vuodon päiväys"
+      ],
+      "Breach detected": [
+        "Havaittiin tietovuoto"
       ],
       "Breach Information": [
         "Tietoja vuodosta"
@@ -11487,6 +11536,9 @@
       "No attachment found": [
         "Liitettä ei löytynyt"
       ],
+      "No breaches detected": [
+        "Tietovuotoja ei havaittu"
+      ],
       "No trackers found": [
         "Seurantoja ei löydetty"
       ],
@@ -11578,7 +11630,7 @@
         "Ajoita lähetys"
       ],
       "Security center": [
-        "Turvakeskus"
+        "Suojauskeskus"
       ],
       "Select a plan": [
         "Valitse tilaus"
@@ -11657,6 +11709,9 @@
       ],
       "Start import process": [
         "Aloita tuonti"
+      ],
+      "Stay safer online": [
+        "Pysy turvassa verkossa"
       ],
       "Storage capacity warning": [
         "Tallennuskapasiteetin varoitus"
