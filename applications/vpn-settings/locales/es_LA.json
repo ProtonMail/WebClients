@@ -371,6 +371,9 @@
       "Report a problem": [
         "Reportar un problema"
       ],
+      "Request a call": [
+        "Solicitar una llamada"
+      ],
       "Request a feature": [
         "Solicitar una característica"
       ],
@@ -484,6 +487,9 @@
       ],
       "Signing in": [
         "Iniciando sesión"
+      ],
+      "Start live chat": [
+        "Iniciar chat en directo"
       ],
       "Stop using single sign-on": [
         "Dejar de usar el inicio de sesión único"
@@ -679,6 +685,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Esto desconectará todos los routers y clientes que usen este certificado."
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Navegue en la web de manera privada y bloquee anuncios"
+      ],
+      "Keep your schedule private": [
+        "Mantenga privada su agenda"
+      ],
+      "Protect your passwords and identity": [
+        "Proteja sus contraseñas y su identidad"
+      ],
+      "Safeguard your files and photos": [
+        "Proteja sus archivos y fotos"
+      ],
+      "Secure your communications": [
+        "Proteja sus comunicaciones"
       ]
     },
     "bf2023: Action": {
@@ -1860,8 +1883,8 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Una vez eliminada, esta dirección no puede ser usada nuevamente por usted u otra persona."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Una vez eliminada, esta dirección no puede ser usada nuevamente por otra persona."
       ],
       "The next active address on your list will be set as the default.": [
         "La siguiente dirección activa en su lista será establecida como la dirección por defecto."
@@ -2765,6 +2788,11 @@
         "Nombre de usuario"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contáctenos"
+      ]
+    },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Añada este registro en el panel de control de su dominio en su registrador de nombre de dominio"
@@ -3255,6 +3283,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si quiere combinar esta cuenta con otra, NO la elimine."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Estamos para ayudarle si tiene problemas. ${ boldPhoneCall } (o reunión de Zoom) con uno de nuestros especialistas de soporte, o abra el ${ boldLiveChat } para soporte vía chat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists.": [
+        "Estamos para ayudarle si tiene problemas. ${ boldPhoneCall } (o reunión de Zoom) con uno de nuestros especialistas de soporte."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: asegúrese de guardar los códigos de recuperación, de lo contrario, puede perder permanentemente el acceso a su cuenta si pierde su dispositivo de autenticación de dos factores."
       ],
@@ -3309,11 +3343,17 @@
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
+      "Live chat": [
+        "Chat en directo"
+      ],
       "Loading": [
         "Cargando"
       ],
       "Loading ${ appName }": [
         "Cargando ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
       "Loading preview": [
         "Cargando vista previa"
@@ -3506,6 +3546,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Recuerde compartir los detalles de inicio de sesión con el usuario."
+      ],
+      "Request a phone call": [
+        "Solicite una llamada telefónica"
       ],
       "Resend verification email": [
         "Reenviar correo de verificación"

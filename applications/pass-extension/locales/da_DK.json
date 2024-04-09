@@ -565,6 +565,9 @@
       "Could not resolve share members": [
         "Kunne ikke afgøre delingsmedlemmer"
       ],
+      "Could not validate addresses at the moment.": [
+        "Kan ikke validere adresser i øjeblikket."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
@@ -604,6 +607,9 @@
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette de valgte elementer"
+      ],
+      "Failed to edit organization settings": [
+        "Kunne ikke redigere organisationsindstillinger"
       ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
@@ -862,11 +868,17 @@
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vil bede dig om at gemme eller opdatere legitimationsoplysninger."
       ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } vil foreslå autentificering med gemte adgangsnøgler"
+      ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } vil foreslå dig at oprette et e-mail-alias på tilmeldingsformularer."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } vil foreslå dig at oprette stærke adgangskoder på tilmeldingsformularer."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } vil foreslå at gemme adgangsnøgler."
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag tilbage",
@@ -931,6 +943,9 @@
       ],
       "Built in 2FA authenticator": [
         "Indbygget 2FA-godkendelse"
+      ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "Som standard kan teammedlemmer kun eksportere bokse, hvor de er ejere. Hvis denne indstilling er slået til, kan de ikke eksportere nogen data."
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan oprette, redigere, slette og eksportere elementer i denne boks."
@@ -1154,6 +1169,9 @@
       "Open the Extensions menu": [
         "Åbn menuen Udvidelser"
       ],
+      "Organization settings successfully updated": [
+        "Organisationsindstillinger opdateret"
+      ],
       "Owner": [
         "Ejer"
       ],
@@ -1230,6 +1248,9 @@
       "Save passkey": [
         "Gem adgangsnøgle"
       ],
+      "Select an existing login item to update.": [
+        "Vælg et eksisterende login-element, der skal opdateres."
+      ],
       "Select an existing login or create a new one.": [
         "Vælg et eksisterende login, eller opret et nyt."
       ],
@@ -1287,6 +1308,9 @@
       "Syncing your vaults…": [
         "Synkroniserer dine bokse…"
       ],
+      "Team members can only share vaults within organization": [
+        "Teammedlemmer kan kun dele bokse inden for organisationen"
+      ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
       ],
@@ -1311,6 +1335,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
+      ],
+      "This setting is disabled on the organization level": [
+        "Denne indstilling er deaktiveret på organisationsniveau"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Denne boks deles i øjeblikket ikke med nogen. Inviter folk for at dele den med andre."
@@ -1344,6 +1371,9 @@
       ],
       "Update login": [
         "Opdatér login"
+      ],
+      "Updating organization settings": [
+        "Opdaterer organisationsindstillinger"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Opgradér ${ PASS_APP_NAME }"
@@ -1494,6 +1524,9 @@
       "Application logs": [
         "Applikationslogs"
       ],
+      "Authenticate with passkeys": [
+        "Autentificer med adgangsnøgler"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Autolås ${ PASS_APP_NAME }"
       ],
@@ -1554,6 +1587,12 @@
       "Created": [
         "Oprettet"
       ],
+      "Disable data export for team members": [
+        "Deaktivér dataeksport for teammedlemmer"
+      ],
+      "Disable sharing outside the organization": [
+        "Deaktivér deling uden for organisationen"
+      ],
       "Display": [
         "Visning"
       ],
@@ -1580,6 +1619,9 @@
       ],
       "Export": [
         "Eksportér"
+      ],
+      "Exporting policy": [
+        "Politik for eksport"
       ],
       "Field name": [
         "Feltnavn"
@@ -1713,8 +1755,14 @@
       "Oldest to newest": [
         "Ældste til nyeste"
       ],
+      "Organization": [
+        "Organisation"
+      ],
       "Passkey": [
         "Adgangsnøgle"
+      ],
+      "Passkeys": [
+        "Adgangsnøgler"
       ],
       "Passphrase": [
         "Adgangssætning"
@@ -1758,6 +1806,9 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Save passkeys": [
+        "Gem adgangsnøgler"
+      ],
       "Security": [
         "Sikkerhed"
       ],
@@ -1784,6 +1835,9 @@
       ],
       "Settings": [
         "Indstillinger"
+      ],
+      "Sharing policy": [
+        "Politik for deling"
       ],
       "Show website favicons": [
         "Vis websteders favicon"
@@ -2137,7 +2191,7 @@
         "Fastgør udvidelsen"
       ],
       "Pinned (${ items.length })": [
-        "Fastgjorde (${ items.length })"
+        "Fastgjorte (${ items.length })"
       ],
       "Restore this version?": [
         "Gendan denne version?"
@@ -2271,6 +2325,9 @@
       ],
       "Invalid email addresses.": [
         "Ugyldige e-mailadresser."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Det er ikke tilladt at invitere e-mailadresser uden for organisationen."
       ],
       "item was imported without custom fields": [
         "element blev importeret uden brugerdefinerede felter"

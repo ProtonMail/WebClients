@@ -104,6 +104,9 @@
       "Add notification": [
         "Bildirim ekle"
       ],
+      "Add or switch account": [
+        "Hesap ekle veya değiştir"
+      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -1073,6 +1076,9 @@
       "Void all recovery files?": [
         "Tüm kurtarma dosyaları geçersiz kılınsın mı?"
       ],
+      "Welcome": [
+        "Hoş geldiniz"
+      ],
       "What do I get?": [
         "Ne alacağım?"
       ],
@@ -1262,6 +1268,11 @@
       ],
       "New email": [
         "Yeni e-posta"
+      ]
+    },
+    "app-switcher": {
+      "Safeguard your files and photos": [
+        "Dosyalarınızı ve fotoğraflarınızı koruyun"
       ]
     },
     "Apps dropdown": {
@@ -3051,9 +3062,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Bu adres silindikten sonra siz ya da bir başkası tarafından yeniden kullanılamaz."
-      ],
       "The next active address on your list will be set as the default.": [
         "Listenizdeki bir sonraki etkin adres varsayılan olarak ayarlanacak."
       ],
@@ -4429,9 +4437,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Çok fazla alt oturum var. Lütfen tanımlama bilgilerini temizleyip yeniden oturum açın."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
@@ -6309,6 +6314,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "İçe aktarma ve iletme durumunu denetleyin."
+      ],
+      "Choose an app to get started": [
+        "Başlamak için bir uygulama seçin"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."

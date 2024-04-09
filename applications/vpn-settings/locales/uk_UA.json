@@ -1805,9 +1805,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Після видалення цю адресу більше не зможете використовувати ні ви, ні будь-хто інший."
-      ],
       "The next active address on your list will be set as the default.": [
         "Наступна активна адреса у вашому списку буде встановлена за замовчуванням."
       ],
@@ -2938,7 +2935,7 @@
         "Обов'язково скопіюйте свій пароль і збережіть його в безпечному місці."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
-        "Перед активацією користувача необхідно вказати пароль і створити ключі шифрування для адрес."
+        "Перш ніж активувати користувача, необхідно вказати пароль і створити ключі шифрування для адрес."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед створенням цієї адреси необхідно ввести пароль і створити для неї ключі шифрування."
@@ -3070,7 +3067,7 @@
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
       ],
       "Downgrade": [
-        "Понизити тарифний план"
+        "Перейти на нижчий тарифний план"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
@@ -3232,7 +3229,7 @@
         "неактивний"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "В тому числі ${ formattedTaxRate }% ${ taxName }: ${ price }"
+        "Включно з ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
@@ -3259,7 +3256,7 @@
         "З'єднання з інтернетом відновлено."
       ],
       "Keys created": [
-        "Ключі створені"
+        "Ключі створено"
       ],
       "Lean more about gateways": [
         "Докладніше про мережеві шлюзи"
@@ -3319,7 +3316,7 @@
         "Немає адрес"
       ],
       "No changes made to the current subscription": [
-        "У поточну підписку не внесено жодних змін"
+        "Щодо поточної передплати не внесено жодних змін"
       ],
       "No gateways": [
         "Без мережевих шлюзів"
@@ -3928,7 +3925,7 @@
         "Ви увійшли в обліковий запис ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Ви використовуєте більше пам’яті сховища, ніж включено в план ${ downgradedPlanName }. Будь ласка, видаліть дані, щоб понизити тарифний план."
+        "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."

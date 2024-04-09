@@ -82,6 +82,9 @@
       "Authenticate": [
         "Tunnistaudu"
       ],
+      "Availability is unknown": [
+        "Tavoitettavuus ei ole tiedossa"
+      ],
       "Back": [
         "Takaisin"
       ],
@@ -287,6 +290,9 @@
       ],
       "Hide affected calendars": [
         "Piilota kalenterit, joita tämä koskee"
+      ],
+      "Hide busy times": [
+        "Piilota varatut ajat"
       ],
       "Hide time zones": [
         "Piilota aikavyöhykkeet"
@@ -534,6 +540,9 @@
       "Show affected calendars": [
         "Näytä kalenterit, joita tämä koskee"
       ],
+      "Show busy times": [
+        "Näytä varatut ajat"
+      ],
       "Show less": [
         "Näytä vähemmän"
       ],
@@ -635,6 +644,9 @@
       ],
       "View": [
         "Tarkastele"
+      ],
+      "View all reports": [
+        "Näytä kaikki raportit"
       ],
       "View contact details": [
         "Näytä yhteystiedon tiedot"
@@ -2191,8 +2203,14 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
+      "Availability unknown": [
+        "Tavoitettavuus ei ole tiedossa"
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Lisää tehokkuutta ja seuraa aikaasi värikoodaamalla tapahtumia kategorian tai energiatasosi mukaan. Hanki tämä ja paljon muuta maksullisella paketilla."
+      ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Tietovuotohälytykset ja -raportit sisältyvät maksullisiin tilauksiin. Saat ne heti käyttöösi päivitämällä tilauksesi."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
@@ -2250,6 +2268,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Tietojasi havaittiin ainakin yhdessä tietovuodossa."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Henkilökohtaisia tietojasi on vuotanut verkkopalvelun tietovuodon seurauksena. Tarkastele vuodon tietoja ja ryhdy tarvittaviin toimenpiteisiin."
       ]
     },
     "description": {
@@ -3291,7 +3315,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
       ],
       "Security key": [
         "Todennuslaite"
@@ -3400,7 +3424,7 @@
         "Haku"
       ],
       "Security Center": [
-        "Turvakeskus"
+        "Suojauskeskus"
       ]
     },
     "Hint": {
@@ -3839,6 +3863,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
+      "Breach alerts": [
+        "Tietovuotohälytykset"
+      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Jakamalla tämän kalenterin täydet tapahtumatiedot, myönnät ${ BRAND_NAME }ille sen salattujen tietojen käyttöoikeuden."
       ],
@@ -4130,6 +4157,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Organisaatiosi muut käyttäjät näkevät varatut aikasi. Tapahtumatietoja ei jaeta."
+      ],
       "password": [
         "salasana"
       ],
@@ -4163,6 +4193,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
+      ],
+      "Please try again in a few moments": [
+        "Yritä uudelleen hetken kuluttua"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Odota kun etsitään yhteystietoja, jotka voidaan allekirjoittaa uudelleen ensisijaisella salausavaimella."
@@ -4298,6 +4331,9 @@
       ],
       "username": [
         "käyttäjätunnus"
+      ],
+      "View details": [
+        "Näytä tiedot"
       ],
       "Warning": [
         "Varoitus"
@@ -4572,6 +4608,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
+      ],
+      "Access to my events": [
+        "Tapahtumieni käyttöoikeudet"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -4867,6 +4906,9 @@
       ],
       "Secondary time zone": [
         "Toissijainen aikavyöhyke"
+      ],
+      "Show others when I'm busy": [
+        "Näytä muille koska olen varattu"
       ],
       "Show week numbers": [
         "Näytä viikkonumerot"
@@ -5992,13 +6034,13 @@
         "Luo alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Luo aliaksia lennossa ja hallitse aliaksia ja salasanoja helposti."
+        "Luo uusia aliaksia lennossa, ja hallitse niitä sekä salasanojasi helposti."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliaksien avulla voit rekisteröityä verkossa jakamatta sähköpostiosoitettasi. ${ learnMoreLink }"
+        "Hide-my-email-aliasten avulla voit rekisteröityä verkkopalveluihin jakamatta todellista sähköpostiosoitettasi. ${ learnMoreLink }"
       ],
       "New alias": [
         "Uusi alias"
@@ -6013,15 +6055,15 @@
         "Kokeile ${ PASS_APP_NAME }ia"
       ],
       "Used on amazon for shopping, etc.": [
-        "Käytetään Amazonissa ostoksiin jne."
+        "Käytetään Amazon-ostoksiin yms."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Kun sinulta kysytään sähköpostiosoitettasi, anna sen sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
+        "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
-        "(avaa ${ PASS_APP_NAME })"
+        "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
     "Security Center - Action": {
@@ -6030,8 +6072,11 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Huippuluokan tekoälyyn perustuva tietoturvaratkaisumme, joka on suunniteltu käyttäjille, jotka kaipaavat tehostettua suojaa tileilleen. ${ learnMoreLink }"
+        "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
@@ -6515,6 +6560,12 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
       ],
+      "No more scheduling conflicts": [
+        "Aikatauluristiriitoja ei enää ole"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Nyt voit nähdä milloin osallistujat ovat vapaita osallistumaan kokoukseesi."
+      ],
       "Public holidays are here!": [
         "Yleiset vapaapäivät ovat täällä!"
       ],
@@ -6711,6 +6762,9 @@
       "Invitation sent and participants added to all events": [
         "Kutsu lähetettiin ja osallistujat lisättiin ketjun kaikkiin tapahtumiin"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Viimeksi muokatut vanhimmassa holvissasi säilytettävät aliakset"
+      ],
       "Participants notified and all events updated": [
         "Osallistuijille ilmoitettiin ja ketjun kaikki tapahtumat päivitettiin"
       ],
@@ -6905,8 +6959,14 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Breach alerts": [
+        "Tietovuotohälytykset"
+      ],
       "Breach Date": [
         "Vuodon päiväys"
+      ],
+      "Breach detected": [
+        "Havaittiin tietovuoto"
       ],
       "Breach Information": [
         "Tietoja vuodosta"
@@ -7100,6 +7160,9 @@
       "Night theme": [
         "Yöteema"
       ],
+      "No breaches detected": [
+        "Tietovuotoja ei havaittu"
+      ],
       "Notes": [
         "Muistiinpanot"
       ],
@@ -7161,7 +7224,7 @@
         "Tallenna muutokset"
       ],
       "Security center": [
-        "Turvakeskus"
+        "Suojauskeskus"
       ],
       "Select a day in the month": [
         "Valitse kuukauden päivä"
@@ -7241,6 +7304,9 @@
       "Start import process": [
         "Aloita tuonti"
       ],
+      "Stay safer online": [
+        "Pysy turvassa verkossa"
+      ],
       "Type": [
         "Tyyppi"
       ],
@@ -7316,6 +7382,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
+      ],
+      "Change start date to unselect": [
+        "Vaihda aloitusaika määrittämättömäksi"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"

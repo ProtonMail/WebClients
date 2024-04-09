@@ -104,6 +104,9 @@
       "Add notification": [
         "Adicionar notificação"
       ],
+      "Add or switch account": [
+        "Adicionar ou trocar de conta"
+      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -1073,6 +1076,9 @@
       "Void all recovery files?": [
         "Anular todos os arquivos de recuperação?"
       ],
+      "Welcome": [
+        "Bem-vindo"
+      ],
       "What do I get?": [
         "O que eu recebo?"
       ],
@@ -1262,6 +1268,17 @@
       ],
       "New email": [
         "Novo e-mail"
+      ]
+    },
+    "app-switcher": {
+      "Keep your schedule private": [
+        "Mantenha sua agenda privada"
+      ],
+      "Protect your passwords and identity": [
+        "Proteja suas senhas e identidade"
+      ],
+      "Secure your communications": [
+        "Proteja suas comunicações"
       ]
     },
     "Apps dropdown": {
@@ -3051,9 +3068,6 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Uma vez excluído, este endereço não pode ser usado novamente por você ou por qualquer outra pessoa."
-      ],
       "The next active address on your list will be set as the default.": [
         "O próximo endereço ativo na sua lista será definido como padrão."
       ],
@@ -4429,9 +4443,6 @@
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Para usar o ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME } mude para a versão web."
-      ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Há muitas sessões secundárias. Limpe seus cookies e faça login novamente."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
@@ -6312,6 +6323,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "Verificar o status das importações e encaminhamento."
+      ],
+      "Choose an app to get started": [
+        "Escolha um aplicativo para iniciar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
