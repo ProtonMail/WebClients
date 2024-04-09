@@ -104,6 +104,9 @@
       "Add notification": [
         "Aggiungi notifica"
       ],
+      "Add or switch account": [
+        "Aggiungi o cambia account"
+      ],
       "Add PayPal": [
         "Aggiungi PayPal"
       ],
@@ -740,6 +743,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Request a call": [
+        "Richiedi una chiamata"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
@@ -906,13 +912,13 @@
         "Accedi con SSO"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
-        "Disconnetti da ${ nameToDisplay } ${ maybeEmailInBrackets }"
+        "Esci dall'account ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
-        "Disconnetti tutti gli account"
+        "Esci da tutti gli account"
       ],
       "sign up for free": [
         "registrati gratuitamente"
@@ -937,6 +943,9 @@
       ],
       "Start import": [
         "Avvia importazione"
+      ],
+      "Start live chat": [
+        "Avvia una Live chat"
       ],
       "Stay": [
         "Resta"
@@ -1073,6 +1082,9 @@
       "Void all recovery files?": [
         "Vuoi invalidare tutti i file di recupero?"
       ],
+      "Welcome": [
+        "Ti diamo il benvenuto"
+      ],
       "What do I get?": [
         "Cosa ottengo?"
       ],
@@ -1191,7 +1203,7 @@
         "Attivo"
       ],
       "Allow unsigned mail": [
-        "Consenti posta non firmata"
+        "Consenti la posta non firmata"
       ],
       "Default": [
         "Predefinito"
@@ -1262,6 +1274,23 @@
       ],
       "New email": [
         "Nuova email"
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Naviga privatamente sul web e blocca gli annunci"
+      ],
+      "Keep your schedule private": [
+        "Mantieni privata la tua agenda"
+      ],
+      "Protect your passwords and identity": [
+        "Proteggi le tue password e la tua identità"
+      ],
+      "Safeguard your files and photos": [
+        "Proteggi i tuoi file e le tue foto"
+      ],
+      "Secure your communications": [
+        "Proteggi le tue comunicazioni"
       ]
     },
     "Apps dropdown": {
@@ -1825,6 +1854,17 @@
       ],
       "Week": [
         "Settimana"
+      ]
+    },
+    "Call Scheduled Confirmation": {
+      "Request sent": [
+        "Richiesta inviata"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Ti ricontatteremo con ulteriori informazioni il prima possibile."
+      ],
+      "You can safely close this tab.": [
+        "Puoi chiudere questa scheda."
       ]
     },
     "Checkout row": {
@@ -3051,8 +3091,8 @@
       ]
     },
     "Delete address prompt": {
-      "Once deleted, this address can't be used again by you or anyone else.": [
-        "Una volta eliminato, questo indirizzo non potrà essere utilizzato nuovamente né da te né da nessun altro."
+      "Once deleted, this address can't be used again by anyone else.": [
+        "Una volta eliminato, questo indirizzo non potrà essere utilizzato nuovamente da nessun altro."
       ],
       "The next active address on your list will be set as the default.": [
         "Il successivo indirizzo attivo nell'elenco verrà impostato come predefinito."
@@ -4430,9 +4470,6 @@
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Per utilizzare ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, passa alla versione web."
       ],
-      "Too many child sessions, please clear your cookies and sign back in.": [
-        "Troppe sessioni per bambini, cancella i tuoi cookie e accedi nuovamente."
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
       ]
@@ -5487,6 +5524,11 @@
         "Prova il meglio di ${ MAIL_APP_NAME } gratuitamente"
       ]
     },
+    "Headline": {
+      "Contact us": [
+        "Contattaci"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Trovato ${ items.length } suggerimento, usa la tastiera per navigare.",
@@ -6310,6 +6352,9 @@
       "Check the status of imports and forwarding.": [
         "Controlla lo stato delle importazioni e degli inoltri."
       ],
+      "Choose an app to get started": [
+        "Scegli un'app per iniziare"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
@@ -6692,6 +6737,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se desideri combinare questo account con un altro, NON eliminarlo."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } (o meeting Zoom) con uno dei nostri specialisti dell'assistenza oppure apri una ${ boldLiveChat } per ricevere assistenza via chat."
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } (or Zoom meet) with one of our support specialists.": [
+        "Se riscontri problemi, siamo qui per aiutarti. ${ boldPhoneCall } (o meeting Zoom) con uno dei nostri specialisti dell'assistenza."
+      ],
       "Image description": [
         "Descrizione immagine"
       ],
@@ -6838,6 +6889,9 @@
       "Link type": [
         "Tipo di link"
       ],
+      "Live chat": [
+        "Live chat"
+      ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Il contenuti caricati vengono protetti dal nostro proxy quando la protezione dai tracker è attivata."
       ],
@@ -6846,6 +6900,9 @@
       ],
       "Loading ${ appName }": [
         "Caricamento di ${ appName } in corso"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
       ],
       "Loading preview": [
         "Caricamento dell'anteprima in corso"
@@ -7207,6 +7264,9 @@
       ],
       "Report link expired": [
         "Link di segnalazione scaduto"
+      ],
+      "Request a phone call": [
+        "Richiedi una telefonata"
       ],
       "Resend verification email": [
         "Reinvia l'email di verifica"
@@ -12724,7 +12784,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Stay signed in": [
         "Rimani connesso"
@@ -12739,7 +12799,7 @@
         "La ${ passwordReset } è ora disponibile."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Se esci prima di reimpostare la password, potresti perdere l'accesso al tuo account."
+        "Se esci prima di reimpostare la password potresti perdere l'accesso al tuo account."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Se esci senza reimpostare la password potresti perdere l'accesso al tuo account."
@@ -12755,7 +12815,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Vuoi disconnetterti senza reimpostare la password?"
+        "Vuoi uscire dall'account senza reimpostare la password?"
       ]
     },
     "session_recovery:status:info": {
@@ -14675,7 +14735,7 @@
         "Accedi con autenticazione a 2 fattori"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Signed in successfully!": [
         "Accesso effettuato con successo!"
