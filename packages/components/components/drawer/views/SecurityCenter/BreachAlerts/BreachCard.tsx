@@ -1,26 +1,42 @@
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
+import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import clsx from '@proton/utils/clsx';
 
 import './BreachCard.scss';
-import './UnpaidBreach.scss';
 
 interface Props {
     name: string | null;
     email?: string;
     password?: string | null;
-    publishedAt?: string;
     onClick?: () => void;
     style: {
-        backgroundClass: string;
         colorClass: string;
         iconAltText: string;
     };
+    severity: number;
 }
 
-const BreachCard = ({ name, email, publishedAt, password, onClick, style }: Props) => {
-    const { colorClass, backgroundClass, iconAltText } = style;
+const getCopy = (email?: string, password?: string | null) => {
+    if (email && password) {
+        return c('Info').t`Your email address and password were leaked:`;
+    }
+    if (email) {
+        return c('Info').t`Your email address was exposed:`;
+    }
+    if (password) {
+        return c('Info').t`Your password was leaked:`;
+    }
+};
+
+const BreachCard = ({ name, email, password, onClick, style, severity }: Props) => {
+    const { colorClass, iconAltText } = style;
+
+    const textInfo = getCopy(email, password);
+
+    const breachIcon = getBreachIcon(severity);
 
     return (
         <div className="group-hover-opacity-container security-card-container relative rounded-lg w-full gap-4">
@@ -29,25 +45,24 @@ const BreachCard = ({ name, email, publishedAt, password, onClick, style }: Prop
                 onClick={onClick}
             >
                 <span className="flex flex-nowrap items-start">
-                    <span
-                        className={clsx(
-                            'ratio-square rounded flex security-card-icon-container relative',
-                            backgroundClass
-                        )}
-                    >
-                        <Icon name="bolt-filled" className={clsx('m-auto', colorClass)} alt={iconAltText} />
-                        <Icon
-                            name="exclamation-circle-filled"
-                            className="absolute top-0 right-0 security-card-icon-bubble color-danger"
-                        />
+                    <span className="flex security-card-icon-container security-card-icon-container--transparent relative">
+                        <img src={breachIcon} className="m-auto w-full h-full" alt={iconAltText} />
                     </span>
                     <span className="flex-1 text-left pl-2 pr-1">
                         <span className="block">{name}</span>
-                        {publishedAt && <ReadableDate value={publishedAt} className="block m-0 text-sm color-weak" />}
-                        {email && <span className="block m-0 text-sm color-danger">{email}</span>}
-                        {password && <span className="block m-0 text-sm color-danger">{password}</span>}
+                        <span className="block text-sm color-weak py-0.5">{textInfo}</span>
+                        {email && (
+                            <span className={clsx('block text-ellipsis m-0 text-sm', colorClass)} title={email}>
+                                {email}
+                            </span>
+                        )}
+                        {password && (
+                            <span className={clsx('block text-ellipsis m-0 text-sm', colorClass)} title={password}>
+                                {password}
+                            </span>
+                        )}
                     </span>
-                    <span className="flex-0 flex self-stretch color-weak">
+                    <span className="flex-0 flex self-stretch color-weak shrink-0">
                         <Icon name="chevron-right" className="my-auto group-hover:opacity-100" />
                     </span>
                 </span>

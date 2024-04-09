@@ -13,10 +13,15 @@
 
 	&-icon {
 		&-container {
-			inline-size: rem(28);
+			inline-size: rem(30);
 			background-color: var(--signal-info-minor-2);
+
+			&--transparent {
+				background-color: transparent;
+			}
 		}
 
+		// used for account cards
 		&-bubble {
 			transform: translate(50%, -50%);
 		}
