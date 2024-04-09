@@ -526,6 +526,9 @@
       "Report an issue": [
         "Segnala un problema"
       ],
+      "Request a call": [
+        "Richiedi una chiamata"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
@@ -644,7 +647,7 @@
         "Mostra pannello laterale"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Skip": [
         "Salta"
@@ -3820,6 +3823,9 @@
       "File will not be updated": [
         "Il file non verrà aggiornato."
       ],
+      "Files and folders that others shared with you will appear here": [
+        "I file e le cartelle che altri hanno condiviso con te verranno visualizzati qui"
+      ],
       "Finalizing": [
         "Finalizzare"
       ],
@@ -3964,6 +3970,9 @@
       ],
       "Loading ${ appName }": [
         "Caricamento di ${ appName } in corso"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
       ],
       "Loading link": [
         "Caricamento del link"
@@ -4271,6 +4280,9 @@
       ],
       "Shared link not found": [
         "Link condiviso non trovato"
+      ],
+      "Shared with me": [
+        "Condiviso con me"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "Registra il tuo account ${ DRIVE_APP_NAME }, proteggi i tuoi dati con la crittografia end-to-end e condividili in modo sicuro."
@@ -5089,6 +5101,12 @@
       "Set recovery method": [
         "Impostare un metodo di recupero"
       ],
+      "Shared by": [
+        "Condiviso da"
+      ],
+      "Shared on": [
+        "Condiviso su"
+      ],
       "Show indexing progress of Encrypted Search": [
         "Mostra il progresso d'indicizzazione della ricerca crittografata"
       ],
@@ -5251,6 +5269,9 @@
       ],
       "Shared": [
         "Condivisi"
+      ],
+      "Shared with me": [
+        "Condiviso con me"
       ],
       "Trash": [
         "Cestino"
@@ -5883,6 +5904,9 @@
       "Encrypted search activated": [
         "Ricerca crittografata attivata"
       ],
+      "Failed to accept share invitation": [
+        "Impossibile accettare l'invito alla condivisione"
+      ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
       ],
@@ -5922,6 +5946,12 @@
       ],
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
+      ],
+      "Share invitation accepted successfully": [
+        "Invito alla condivisione accettato con successo"
+      ],
+      "Share invitation ID was not found. Please check the link": [
+        "Impossibile trovare l'ID dell'invito condiviso. Controlla il link"
       ],
       "Subfolder failed to be loaded": [
         "Caricamento della sottocartella non riuscito"
@@ -6472,7 +6502,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Stay signed in": [
         "Rimani connesso"
@@ -6487,7 +6517,7 @@
         "La ${ passwordReset } è ora disponibile."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Se esci prima di reimpostare la password, potresti perdere l'accesso al tuo account."
+        "Se esci prima di reimpostare la password potresti perdere l'accesso al tuo account."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Se esci senza reimpostare la password potresti perdere l'accesso al tuo account."
@@ -6503,7 +6533,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Vuoi disconnetterti senza reimpostare la password?"
+        "Vuoi uscire dall'account senza reimpostare la password?"
       ]
     },
     "Signing preference for emails": {
@@ -7392,6 +7422,9 @@
       "Shared": [
         "Condivisi"
       ],
+      "Shared with me": [
+        "Condiviso con me"
+      ],
       "Show actions": [
         "Mostra azioni"
       ],
@@ -7402,7 +7435,7 @@
         "Accedi con autenticazione a 2 fattori"
       ],
       "Sign out": [
-        "Disconnetti"
+        "Esci dall'account"
       ],
       "Size": [
         "Dimensione"

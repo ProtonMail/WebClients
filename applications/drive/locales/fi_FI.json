@@ -176,6 +176,9 @@
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
+      "Copy invite link": [
+        "Kopioi kutsulinkki"
+      ],
       "Copy link": [
         "Kopioi linkki"
       ],
@@ -759,6 +762,9 @@
       ],
       "View": [
         "Tarkastele"
+      ],
+      "View all reports": [
+        "Näytä kaikki raportit"
       ],
       "View invoice": [
         "Näytä lasku"
@@ -1974,6 +1980,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
+      "Breach alerts and reports are available with a paid plan. Upgrade for immediate access.": [
+        "Tietovuotohälytykset ja -raportit sisältyvät maksullisiin tilauksiin. Saat ne heti käyttöösi päivitämällä tilauksesi."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -2027,6 +2036,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautusmenetelmät on määritetty."
+      ],
+      "Your information was found in at least one data breach.": [
+        "Tietojasi havaittiin ainakin yhdessä tietovuodossa."
+      ],
+      "Your personal data was leaked by an online service in a data breach. View full details and get recommended actions.": [
+        "Henkilökohtaisia tietojasi on vuotanut verkkopalvelun tietovuodon seurauksena. Tarkastele vuodon tietoja ja ryhdy tarvittaviin toimenpiteisiin."
       ]
     },
     "description": {
@@ -2932,7 +2947,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
       ],
       "Security key": [
         "Todennuslaite"
@@ -3035,7 +3050,7 @@
         "Yhteystiedot"
       ],
       "Security Center": [
-        "Turvakeskus"
+        "Suojauskeskus"
       ]
     },
     "Hint": {
@@ -3552,6 +3567,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
+      ],
+      "Breach alerts": [
+        "Tietovuotohälytykset"
       ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
@@ -4097,6 +4115,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
+      "Please try again in a few moments": [
+        "Yritä uudelleen hetken kuluttua"
+      ],
       "Please use another browser or download the file.": [
         "Käytä toista selainta tai lataa tiedosto."
       ],
@@ -4464,6 +4485,9 @@
       ],
       "Version is restored": [
         "Versio on palautettu"
+      ],
+      "View details": [
+        "Näytä tiedot"
       ],
       "Want to sync files faster?": [
         "Haluatko synkronoida tiedostot nopeammin?"
@@ -6187,13 +6211,13 @@
         "Luo alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Luo aliaksia lennossa ja hallitse aliaksia ja salasanoja helposti."
+        "Luo uusia aliaksia lennossa, ja hallitse niitä sekä salasanojasi helposti."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliaksien avulla voit rekisteröityä verkossa jakamatta sähköpostiosoitettasi. ${ learnMoreLink }"
+        "Hide-my-email-aliasten avulla voit rekisteröityä verkkopalveluihin jakamatta todellista sähköpostiosoitettasi. ${ learnMoreLink }"
       ],
       "New alias": [
         "Uusi alias"
@@ -6208,15 +6232,15 @@
         "Kokeile ${ PASS_APP_NAME }ia"
       ],
       "Used on amazon for shopping, etc.": [
-        "Käytetään Amazonissa ostoksiin jne."
+        "Käytetään Amazon-ostoksiin yms."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Kun sinulta kysytään sähköpostiosoitettasi, anna sen sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
+        "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
-        "(avaa ${ PASS_APP_NAME })"
+        "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
     "Security Center - Action": {
@@ -6225,8 +6249,11 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other personal data was leaked.": [
+        "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Huippuluokan tekoälyyn perustuva tietoturvaratkaisumme, joka on suunniteltu käyttäjille, jotka kaipaavat tehostettua suojaa tileilleen. ${ learnMoreLink }"
+        "Huippumoderni tekoälypohjainen tietoturvaratkaisumme, joka on suunniteltu tileilleen tehostettua suojausta kaipaaville käyttäjille. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel on **käytössä** ja suojaa tiliäsi."
@@ -6761,6 +6788,9 @@
       "Import record deleted": [
         "Tuontitapahtuma poistettiin"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Viimeksi muokatut vanhimmassa holvissasi säilytettävät aliakset"
+      ],
       "Phone number copied to clipboard": [
         "Puhelinnumero kopioitiin leikepöydälle"
       ],
@@ -6947,8 +6977,14 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Breach alerts": [
+        "Tietovuotohälytykset"
+      ],
       "Breach Date": [
         "Vuodon päiväys"
+      ],
+      "Breach detected": [
+        "Havaittiin tietovuoto"
       ],
       "Breach Information": [
         "Tietoja vuodosta"
@@ -7191,6 +7227,9 @@
       "Night theme": [
         "Yöteema"
       ],
+      "No breaches detected": [
+        "Tietovuotoja ei havaittu"
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
@@ -7273,7 +7312,7 @@
         "Haetaan…"
       ],
       "Security center": [
-        "Turvakeskus"
+        "Suojauskeskus"
       ],
       "Select action to take on contact group": [
         "Valitse yhteystietoryhmään kohdistettava toiminto"
@@ -7325,6 +7364,9 @@
       ],
       "Start import process": [
         "Aloita tuonti"
+      ],
+      "Stay safer online": [
+        "Pysy turvassa verkossa"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"
