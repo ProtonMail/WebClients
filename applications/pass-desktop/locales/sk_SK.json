@@ -481,6 +481,9 @@
       "Could not resolve share members": [
         "Nepodarilo sa vyriešiť členov zdieľania"
       ],
+      "Could not validate addresses at the moment.": [
+        "Adresu v súčasnosti nie je možné overiť."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V súbore CSV chýbajú očakávané hlavičky: ${ missingHeaders }"
       ],
@@ -522,6 +525,9 @@
       ],
       "Failed to delete selected items": [
         "Nepodarilo sa odstrániť vybrané položky"
+      ],
+      "Failed to edit organization settings": [
+        "Nepodarilo sa upraviť nastavenia organizácie"
       ],
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
@@ -834,6 +840,9 @@
       "Built in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
       ],
+      "By default team members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "V predvolenom nastavení môžu členovia tímu exportovať len tie trezory, ktorých sú vlastníkmi. Ak je táto možnosť zapnutá, nebudú môcť exportovať žiadne údaje"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
       ],
@@ -1041,6 +1050,9 @@
       "Offline support successfully disabled": [
         "Podpora offline bola úspešne vypnutá"
       ],
+      "Organization settings successfully updated": [
+        "Nastavenia organizácie boli úspešne aktualizované"
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -1161,6 +1173,9 @@
       "Syncing your vaults…": [
         "Synchronizácia trezorov..."
       ],
+      "Team members can only share vaults within organization": [
+        "Členovia tímu môžu zdieľať trezory len v rámci organizácie"
+      ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
       ],
@@ -1185,6 +1200,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
       ],
+      "This setting is disabled on the organization level": [
+        "Toto nastavenie je vypnuté na úrovni organizácie"
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor zatiaľ nie je s nikým zdieľaný. Pozvite ľudí, s ktorými ho chcete zdieľať."
       ],
@@ -1205,6 +1223,9 @@
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
+      ],
+      "Updating organization settings": [
+        "Aktualizujem nastavenia organizácie"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Inovujte teraz pre odomknutie prémiových funkcií"
@@ -1388,6 +1409,12 @@
       "Created": [
         "Vytvorené"
       ],
+      "Disable data export for team members": [
+        "Zakázať export údajov členom tímu"
+      ],
+      "Disable sharing outside the organization": [
+        "Zakázať zdieľanie mimo organizácie"
+      ],
       "Display": [
         "Zobraziť"
       ],
@@ -1408,6 +1435,9 @@
       ],
       "Export": [
         "Export"
+      ],
+      "Exporting policy": [
+        "Pravidlá exportu"
       ],
       "Field name": [
         "Názov poľa"
@@ -1544,6 +1574,9 @@
       "Oldest to newest": [
         "Od najstaršieho po najnovšie"
       ],
+      "Organization": [
+        "Organizácia"
+      ],
       "Passkey": [
         "Prístupový kľúč"
       ],
@@ -1603,6 +1636,9 @@
       ],
       "Set PIN code": [
         "Nastaviť PIN kód"
+      ],
+      "Sharing policy": [
+        "Pravidlá zdieľania"
       ],
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
@@ -2059,6 +2095,9 @@
       ],
       "Invalid email addresses.": [
         "Neplatné emailové adresy."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Pozývanie emailových adries nepatriacich do organizácie nie je povolené."
       ],
       "item was imported without custom fields": [
         "Položka bola importovaná bez vlastných polí"
