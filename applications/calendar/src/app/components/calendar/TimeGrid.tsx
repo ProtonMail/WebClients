@@ -19,6 +19,7 @@ import { Button } from '@proton/atoms';
 import { ButtonGroup, Icon, Tooltip, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
@@ -118,7 +119,7 @@ const TimeGrid = ({
 }: Props) => {
     const attendeeBusyTimeSlots = useCalendarSelector(selectAttendeesBusyTimeSlots);
     const timeGridRef = useRef<HTMLDivElement>(null);
-    const dayGridRef = useRef<HTMLDivElement>(null);
+    const dayGridRef = useRef<HTMLUListElement>(null);
     const nowRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -387,8 +388,8 @@ const TimeGrid = ({
                         )}
                     </div>
                     <div className="flex-1 relative">
-                        <div
-                            className="calendar-time-fullday h-custom"
+                        <ul
+                            className="calendar-time-fullday h-custom unstyled m-0"
                             style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
                             data-row="0"
                             ref={dayGridRef}
@@ -408,7 +409,7 @@ const TimeGrid = ({
                                 targetEventRef={targetEventRef}
                                 targetEventData={targetEventData}
                             />
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -434,14 +435,18 @@ const TimeGrid = ({
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
                                 const isActiveDay = isSameDay(day, date);
+                                const dayFullDetail = formatUTC(day, 'PPPP', { locale: dateLocale });
                                 if (isSmallViewport && !isActiveDay) {
                                     return null;
                                 }
                                 return (
+                                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                     <div
                                         data-testid="calendar-week-day-view:weekday-column"
                                         className="flex-1 relative calendar-grid-gridcell h-full"
                                         key={key}
+                                        aria-label={dayFullDetail}
+                                        role="region"
                                     >
                                         <DayEvents
                                             tzid={tzid}

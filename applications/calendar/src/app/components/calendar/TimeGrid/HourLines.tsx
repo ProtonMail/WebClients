@@ -3,7 +3,7 @@ interface Props {
 }
 const HourLines = ({ hours }: Props) => {
     return (
-        <div className="calendar-grid-hours">
+        <div className="calendar-grid-hours" aria-hidden="true">
             {hours.map((hour) => {
                 return <div className="calendar-grid-hourLine" key={hour.getUTCHours()} />;
             })}
