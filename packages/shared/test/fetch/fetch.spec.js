@@ -115,14 +115,13 @@ describe('fetch', () => {
                 message: '',
                 status: 400,
                 data: { bar: 1 },
-                config: jasmine.objectContaining({
+                config: {
+                    url: 'http://foo.com/',
                     suppress: [123],
-                    mode: 'cors',
-                    credentials: 'include',
-                    redirect: 'follow',
+                    params: undefined,
                     headers: {},
                     body: undefined,
-                }),
+                },
             })
         );
     });

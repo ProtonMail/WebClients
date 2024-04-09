@@ -29,10 +29,16 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
 
     signal?.addEventListener('abort', otherAbortCallback);
 
+    const errorConfig = {
+        url: urlString,
+        params,
+        ...rest,
+    };
+
     return fetch(url, config)
         .catch((e) => {
             if (isTimeout) {
-                throw createTimeoutError(config);
+                throw createTimeoutError(errorConfig);
             }
 
             if (e?.name === 'AbortError') {
@@ -40,10 +46,10 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
             }
 
             // Assume any other error is offline error.
-            throw createOfflineError(config);
+            throw createOfflineError(errorConfig);
         })
         .then((response) => {
-            return checkStatus(response, config);
+            return checkStatus(response, errorConfig);
         })
         .finally(() => {
             clearTimeout(timeoutHandle);
