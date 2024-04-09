@@ -18,7 +18,7 @@
         "chalk": "^4.1.2",
         "execa": "^5.1.1",
         "gettext-parser": "^7.0.1",
-        "glob": "^10.3.10",
+        "glob": "^10.3.12",
         "ttag-cli": "^1.10.11"
     },
     "devDependencies": {
@@ -27,6 +27,6 @@
         "prettier": "^3.2.5"
     },
     "engines": {
-        "node": ">= 20.11.1"
+        "node": ">= 20.12.1"
     }
 }
