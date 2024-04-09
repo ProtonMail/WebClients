@@ -14,8 +14,8 @@ export const RevisionItem: FC<Props> = ({ onClick, ...infoCardProps }) => {
             fullWidth
             size="medium"
             className={clsx(
-                'pass-revision-list--item flex justify-space-between flex-nowrap items-center rounded-xl',
-                !onClick && 'not-clickable'
+                'bg-weak border-norm flex justify-space-between flex-nowrap items-center rounded-xl',
+                !onClick && 'pointer-events-none cursor-default'
             )}
             onClick={onClick}
         >
