@@ -1,11 +1,8 @@
-import { Redirect, useLocation } from 'react-router-dom';
-
 import { c } from 'ttag';
 
 import { DropdownMenu, Icon, SimpleDropdown } from '@proton/components/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import ExploreAppsList, { getExploreApps } from '../signup/ExploreAppsList';
@@ -22,17 +19,11 @@ export type AppSwitcherState = {
 interface Props {
     onLogin: OnLoginCallback;
     onSwitch: () => void;
+    state: AppSwitcherState;
 }
 
-const AppSwitcherContainer = ({ onLogin, onSwitch }: Props) => {
-    const location = useLocation<AppSwitcherState | undefined>();
-    const state = location.state;
-
-    const session = state?.session;
-    if (!session) {
-        return <Redirect to={SSO_PATHS.SWITCH} />;
-    }
-
+const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
+    const session = state.session;
     const { User, Organization } = session;
 
     const subscribed = User.Subscribed;
@@ -50,7 +41,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch }: Props) => {
                     <DropdownMenu>
                         <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={onSwitch}>
                             <Icon name="plus" />
-                            {c('Action').t`Add or switch account`}
+                            {c('Action').t`Switch or add account`}
                         </DropdownMenuButton>
                     </DropdownMenu>
                 </SimpleDropdown>
