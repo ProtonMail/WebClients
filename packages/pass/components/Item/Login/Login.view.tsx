@@ -6,6 +6,7 @@ import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHisto
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
+import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
@@ -15,6 +16,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
+            <ItemReport shareId={shareId} itemId={itemId} />
             <LoginContent revision={revision} />
 
             <ItemHistoryStats
