@@ -12,6 +12,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
 import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
+import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -102,6 +103,8 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                {/* TODO add feature flag here */}
+                <MonitorButton />
 
                 <Submenu
                     icon="bolt"

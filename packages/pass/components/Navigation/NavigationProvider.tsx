@@ -31,11 +31,13 @@ export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationSta
 export type NavigationContextValue = {
     /** Parsed search parameter filters. */
     filters: ItemFilters;
-    /** Flag indicating wether we are currently on the onboarding route */
+    /** Flag indicating whether we are currently on the onboarding route */
     matchOnboarding: boolean;
-    /** Flag indicating wether we are currently on a settings route */
+    /** Flag indicating whether we are currently on a monitor route */
+    matchMonitor: boolean;
+    /** Flag indicating whether we are currently on a settings route */
     matchSettings: boolean;
-    /** Flag indicating wether we are currently on a trash route */
+    /** Flag indicating whether we are currently on a trash route */
     matchTrash: boolean;
     /** Selected item's `itemId` and `shareId` parsed from URL */
     selectedItem: Maybe<SelectedItem>;
@@ -61,6 +63,8 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const location = useLocation();
 
     const filters = decodeFiltersFromSearch(location.search);
+
+    const matchMonitor = useRouteMatch(getLocalPath('monitor')) !== null;
     const matchSettings = useRouteMatch(getLocalPath('settings')) !== null;
     const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const matchOnboarding = useRouteMatch(getOnboardingRoute()) !== null;
@@ -116,6 +120,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigation = useMemo<NavigationContextValue>(
         () => ({
             filters,
+            matchMonitor,
             matchOnboarding,
             matchSettings,
             matchTrash,
@@ -128,6 +133,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
         }),
         [
             location.search /* indirectly matches filter changes */,
+            matchMonitor,
             matchOnboarding,
             matchSettings,
             matchTrash,
