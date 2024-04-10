@@ -136,6 +136,8 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
     exporter(getCredentials, credentials, { defineAs: 'get' });
     exporter(createCredentials, credentials, { defineAs: 'create' });
 
-    exporter(mediationAvailable, pk, { defineAs: 'isConditionalMediationAvailable' });
-    exporter(authenticatorAvailable, pk, { defineAs: 'isUserVerifyingPlatformAuthenticatorAvailable' });
+    if (pk) {
+        exporter(mediationAvailable, pk, { defineAs: 'isConditionalMediationAvailable' });
+        exporter(authenticatorAvailable, pk, { defineAs: 'isUserVerifyingPlatformAuthenticatorAvailable' });
+    }
 })();
