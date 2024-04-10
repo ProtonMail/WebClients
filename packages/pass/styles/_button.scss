@@ -27,6 +27,10 @@ a {
 		inline-size: 2.25rem;
 	}
 
+	&.button-fluid {
+		block-size: unset;
+	}
+
 	&.button-small {
 		block-size: 2rem;
 
