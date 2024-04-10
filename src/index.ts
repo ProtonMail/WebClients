@@ -196,7 +196,8 @@ app.on("web-contents-created", (_ev, contents) => {
 
     contents.on("will-navigate", (details) => {
         Logger.info("will-navigate");
-        if (!isHostAllowed(details.url) && !global.oauthProcess) {
+
+        if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
             return preventDefault(details);
         }
 
@@ -230,6 +231,9 @@ app.on("web-contents-created", (_ev, contents) => {
             return { action: "allow" };
         } else if (global.oauthProcess) {
             Logger.info("Open OAuth link in app");
+            return { action: "allow" };
+        } else if (global.subscriptionProcess) {
+            Logger.info("Open Subscription link in modal");
             return { action: "allow" };
         } else {
             Logger.info("Open link in browser");

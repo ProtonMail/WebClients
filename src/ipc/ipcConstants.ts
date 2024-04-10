@@ -26,6 +26,7 @@ export type IPCClientUpdateMessage =
     | { type: "userLogout"; payload?: undefined }
     | { type: "clearAppData"; payload?: undefined }
     | { type: "oauthPopupOpened"; payload: "oauthPopupStarted" | "oauthPopupFinished" }
+    | { type: "subscriptionModalOpened"; payload: "subscriptionModalStarted" | "subscriptionModalFinished" }
     | { type: "openExternal"; payload: string }
     | { type: "trialEnd"; payload: TrialStatus }
     | { type: "changeView"; payload: VIEW_TARGET }

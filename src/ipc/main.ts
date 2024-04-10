@@ -50,6 +50,9 @@ export const handleIPCCalls = () => {
             case "oauthPopupOpened":
                 global.oauthProcess = payload === "oauthPopupStarted";
                 break;
+            case "subscriptionModalOpened":
+                global.subscriptionProcess = payload === "subscriptionModalStarted";
+                break;
             case "openExternal":
                 shell.openExternal(payload);
                 break;
