@@ -3,7 +3,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 let parallel = undefined;
 if (typeof process.env.WEBPACK_PARALLELISM !== 'undefined') {
-    parallel = parseInt(process.env.WEBPACK_PARALLELISM);
+    parallel = parseInt(process.env.WEBPACK_PARALLELISM, 10);
 }
 
 module.exports = /** @type { (env: any) => import('webpack').Options.Optimization } */ ({ isProduction }) => ({
