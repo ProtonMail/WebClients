@@ -11,7 +11,12 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import { ApiEnvironmentConfig, CachedOrganizationKey, Organization, ProtonConfig } from '@proton/shared/lib/interfaces';
+import {
+    ApiEnvironmentConfig,
+    CachedOrganizationKey,
+    OrganizationWithSettings,
+    ProtonConfig,
+} from '@proton/shared/lib/interfaces';
 import { DecryptedKey, MailSettings, SubscriptionModel, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock } from '@proton/testing/lib/api';
@@ -116,7 +121,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             userSettings: getModelState({} as UserSettings),
             mailSettings: getModelState({} as MailSettings),
             subscription: getModelState({} as SubscriptionModel),
-            organization: getModelState({} as Organization),
+            organization: getModelState({} as OrganizationWithSettings),
             organizationKey: getModelState({} as CachedOrganizationKey),
             userInvitations: getModelState([]),
             plans: getModelState({ plans: [], freePlan: FREE_PLAN }),

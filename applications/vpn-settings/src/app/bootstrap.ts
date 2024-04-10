@@ -80,6 +80,8 @@ export const bootstrapApp = async ({
             store.unsubscribe();
         });
 
+        dispatch(bootstrap.bootstrapEvent({ type: 'complete' }));
+
         return {
             ...userData,
             eventManager,

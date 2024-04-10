@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
-import { baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
