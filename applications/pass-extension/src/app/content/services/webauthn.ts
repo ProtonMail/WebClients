@@ -71,7 +71,10 @@ export const createWebAuthNService = () => {
                 if (isBridgeRequest(data)) {
                     switch (data.request.type) {
                         case WorkerMessageType.PASSKEY_CREATE: {
-                            return approveRequest(data.token, () => {
+                            const { token } = data;
+                            const { domain, request } = data.request.payload;
+
+                            return approveRequest(token, () => {
                                 const settings = ctx.getSettings();
                                 const features = ctx.getFeatures();
                                 return features.Passkeys && settings.passkeys.create;
@@ -79,15 +82,18 @@ export const createWebAuthNService = () => {
                                 .then(() =>
                                     ctx?.service.iframe.attachNotification()?.open({
                                         action: NotificationAction.PASSKEY_CREATE,
-                                        domain: data.request.payload.domain,
-                                        request: data.request.payload.request,
-                                        token: data.token,
+                                        domain,
+                                        request,
+                                        token,
                                     })
                                 )
                                 .catch(() => abort(true));
                         }
                         case WorkerMessageType.PASSKEY_GET: {
-                            return approveRequest(data.token, () => {
+                            const { token } = data;
+                            const { domain, request } = data.request.payload;
+
+                            return approveRequest(token, () => {
                                 const settings = ctx.getSettings();
                                 const features = ctx.getFeatures();
                                 return features.Passkeys && settings.passkeys.get;
@@ -95,12 +101,26 @@ export const createWebAuthNService = () => {
                                 .then(() => {
                                     ctx?.service.iframe.attachNotification()?.open({
                                         action: NotificationAction.PASSKEY_GET,
-                                        domain: data.request.payload.domain,
-                                        request: data.request.payload.request,
-                                        token: data.token,
+                                        domain,
+                                        request,
+                                        token,
                                     });
                                 })
                                 .catch(() => abort(true));
+                        }
+
+                        case WorkerMessageType.PASSKEY_INTERCEPT: {
+                            const { token } = data;
+                            const settings = ctx.getSettings();
+                            const features = ctx.getFeatures();
+                            const intercept = features.Passkeys && (settings.passkeys.get || settings.passkeys.create);
+
+                            return window.postMessage(
+                                createBridgeResponse<WorkerMessageType.PASSKEY_INTERCEPT>(
+                                    { type: 'success', intercept },
+                                    token
+                                )
+                            );
                         }
                     }
                 }

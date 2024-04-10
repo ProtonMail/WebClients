@@ -2,16 +2,17 @@ import type { MessageFailure, Unpack, WorkerMessage, WorkerResponse } from '@pro
 
 import type { ALLOWED_MESSAGES, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 
-export type BridgeMessage = Extract<WorkerMessage, { type: Unpack<typeof ALLOWED_MESSAGES> }>;
+export type BridgeMessageType = Unpack<typeof ALLOWED_MESSAGES>;
+export type BridgeMessage<T extends BridgeMessageType = BridgeMessageType> = Extract<WorkerMessage, { type: T }>;
 
-export type BridgeRequest<T extends BridgeMessage = BridgeMessage> = {
-    request: T;
+export type BridgeRequest<T extends BridgeMessageType = BridgeMessageType> = {
+    request: BridgeMessage<T>;
     token: string;
     type: typeof BRIDGE_REQUEST;
 };
 
-export type BridgeResponse<T extends BridgeMessage = BridgeMessage> = {
-    response: WorkerResponse<T> | MessageFailure;
+export type BridgeResponse<T extends BridgeMessageType = BridgeMessageType> = {
+    response: WorkerResponse<BridgeMessage<T>> | MessageFailure;
     token: string;
     type: typeof BRIDGE_RESPONSE;
 };

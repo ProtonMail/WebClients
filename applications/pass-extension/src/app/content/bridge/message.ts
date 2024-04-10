@@ -7,15 +7,15 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
-import type { BridgeMessage, BridgeRequest, BridgeResponse } from './types';
+import type { BridgeMessage, BridgeMessageType, BridgeRequest, BridgeResponse } from './types';
 
 type BridgeState = { connected: boolean; ready: Awaiter<void> };
 export const BRIDGE_INIT_TIMEOUT = 1_500;
 
 export const createBridgeAbortSignal = (token: string) => ({ token, type: BRIDGE_ABORT });
 export const createBridgeDisconnectSignal = () => ({ type: BRIDGE_DISCONNECT });
-export const createBridgeResponse = <T extends BridgeMessage>(
-    response: WorkerResponse<T> | MessageFailure,
+export const createBridgeResponse = <T extends BridgeMessageType>(
+    response: WorkerResponse<BridgeMessage<T>> | MessageFailure,
     token: string
 ): BridgeResponse<T> => ({ response, token, type: BRIDGE_RESPONSE });
 
@@ -54,13 +54,13 @@ export const createMessageBridge = () => {
         ]).catch(state.ready.reject);
     };
 
-    const sendMessage = async <T extends BridgeMessage>(
-        request: T,
+    const sendMessage = async <T extends BridgeMessageType>(
+        request: BridgeMessage<T>,
         options?: { timeout?: number; signal?: AbortSignal }
-    ): Promise<WorkerResponse<T> | MessageFailure> => {
+    ): Promise<WorkerResponse<BridgeMessage<T>> | MessageFailure> => {
         const token = uniqueId(16);
         const message: BridgeRequest<T> = { request, token, type: BRIDGE_REQUEST };
-        const response = awaiter<WorkerResponse<T> | MessageFailure>();
+        const response = awaiter<WorkerResponse<BridgeMessage<T>> | MessageFailure>();
 
         const abort = () => window.postMessage(createBridgeAbortSignal(token));
         options?.signal?.addEventListener('abort', abort);
