@@ -2,7 +2,6 @@ import type { Action } from 'redux';
 import { select, takeLatest } from 'redux-saga/effects';
 
 import { generateCache } from '@proton/pass/lib/cache/generate';
-import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { cacheCancel, stateDestroy } from '@proton/pass/store/actions';
 import { type WithCache, isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
@@ -17,17 +16,17 @@ const CACHE_THROTTLING_TIMEOUT = 1_000;
 function* cacheWorker({ meta, type }: WithCache<Action>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
     if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
 
+    const { booted, loggedIn } = getAppState();
     const authStore = getAuthStore();
-    const loggedIn = authStore.hasSession();
-    const keyPassword = authStore.getPassword() ?? '';
+    const keyPassword = authStore.getPassword();
+    const validSession = authStore.hasSession() && keyPassword !== undefined;
     const sessionLockToken = authStore.getLockToken();
     const offlineKD = authStore.getOfflineKD();
+    const ready = booted && loggedIn;
 
-    const ready = clientReady(getAppState().status);
-
-    if (loggedIn && ready && PassCrypto.ready) {
+    if (validSession && ready && PassCrypto.ready) {
         try {
-            const state = (yield select()) as State;
+            const state: State = yield select();
             const cache: EncryptedPassCache = yield generateCache({ keyPassword, offlineKD, sessionLockToken })(state);
             yield setCache(cache);
 

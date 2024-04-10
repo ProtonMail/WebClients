@@ -5,7 +5,6 @@ import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess }
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { selectFeatureFlags } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { SessionLockStatus } from '@proton/pass/types';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 /* Try to sync the user feature flags on each wakeup success :
@@ -17,7 +16,7 @@ function* syncFeatures(
 ) {
     try {
         const loggedIn = getAuthStore().hasSession();
-        const locked = getAuthStore().getLockStatus() === SessionLockStatus.LOCKED;
+        const locked = getAuthStore().getLocked();
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
         const current: FeatureFlagState = yield select(selectFeatureFlags);

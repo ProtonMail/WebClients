@@ -18,6 +18,7 @@ import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/header
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import { LockMode } from './lock/types';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
 
 export type RequestForkOptions = {
@@ -124,8 +125,9 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
     return {
         AccessToken: refresh.AccessToken,
         keyPassword,
-        payloadVersion,
         LocalID,
+        lockMode: LockMode.NONE,
+        payloadVersion,
         RefreshToken: refresh.RefreshToken,
         UID,
         UserID: User.ID,

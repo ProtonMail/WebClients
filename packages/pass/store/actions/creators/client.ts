@@ -10,12 +10,12 @@ import { withRequest, withRequestSuccess } from '@proton/pass/store/request/enha
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');
 export const stopEventPolling = createAction('events::polling::stop');
 
 export const stateDestroy = createAction('state::destroy');
-export const stateSync = createAction('state::sync');
 export const stateHydrate = createAction('state::hydrate', (state: any, options?: EndpointOptions) =>
     options ? withReceiver(options)({ payload: { state } }) : { payload: { state } }
 );
@@ -37,14 +37,14 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
-export const bootIntent = createAction('boot::intent', (loginPassword?: string) =>
-    withRequest({ id: bootRequest(), status: 'start' })({ payload: { loginPassword } })
+export const bootIntent = createAction('boot::intent', () =>
+    withRequest({ id: bootRequest(), status: 'start' })({ payload: {} })
 );
 
-export const bootFailure = createAction('boot::failure', (error: unknown) =>
+export const bootFailure = createAction('boot::failure', (error?: unknown) =>
     pipe(
         withRequest({ id: bootRequest(), status: 'failure' }),
-        withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error })
+        error ? withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error }) : identity
     )({ payload: {}, error })
 );
 
