@@ -14,13 +14,14 @@ import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
 import { type ItemType, OnboardingMessage } from '@proton/pass/types';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { onboarding } from '../../../lib/onboarding';
 
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
 export const Header: FC<Props> = ({ hamburger }) => {
-    const { filters, navigate, matchSettings, matchOnboarding } = useNavigation();
+    const { filters, navigate, matchMonitor, matchSettings, matchOnboarding } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     const spotlight = useSpotlight();
@@ -36,6 +37,30 @@ export const Header: FC<Props> = ({ hamburger }) => {
         <>
             <CoreHeader className="border-bottom h-auto p-2">
                 {(() => {
+                    if (matchMonitor) {
+                        return (
+                            <div className="flex items-center gap-2">
+                                {hamburger}
+                                <Button
+                                    className="shrink-0"
+                                    size="small"
+                                    icon
+                                    pill
+                                    shape="solid"
+                                    onClick={() => navigate(getLocalPath())}
+                                >
+                                    <Icon
+                                        className="modal-close-icon"
+                                        name="arrow-left"
+                                        size={3.5}
+                                        alt={c('Action').t`Close`}
+                                    />
+                                </Button>
+                                <h5 className="text-bold">{c('Title').t`${PASS_SHORT_APP_NAME} Monitor`}</h5>
+                            </div>
+                        );
+                    }
+
                     if (matchSettings) {
                         return (
                             <div className="flex items-center gap-2">
@@ -70,7 +95,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
                     );
                 })()}
             </CoreHeader>
-            {!(matchSettings || matchOnboarding) && <PinnedItemsBar />}
+            {!(matchSettings || matchOnboarding || matchMonitor) && <PinnedItemsBar />}
         </>
     );
 };
