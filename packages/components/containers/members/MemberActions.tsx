@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
-import { APPS, MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { APPS, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     CachedOrganizationKey,
@@ -54,6 +54,7 @@ const MemberActions = ({
     const canDelete = !member.Self;
     const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
     const canRevokeSessions = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
+    const isOrganizationDelinquent = organization?.State === ORGANIZATION_STATE.DELINQUENT;
 
     const canSetupMember =
         getCanGenerateMemberKeysPermissions(user, organizationKey) &&
@@ -81,36 +82,42 @@ const MemberActions = ({
     const list = [
         canEdit && {
             text: c('Member action').t`Edit`,
+            disabled: isOrganizationDelinquent,
             onClick: () => {
                 onEdit(member);
             },
         },
         canLogin && {
             text: c('Member action').t`Sign in`,
+            disabled: isOrganizationDelinquent,
             onClick: () => {
                 onLogin(member);
             },
         },
         onAddAddress && {
             text: c('Member action').t`Add address`,
+            disabled: isOrganizationDelinquent,
             onClick: () => {
                 onAddAddress(member);
             },
         },
         canSetupMember && {
             text: c('Member action').t`Activate user`,
+            disabled: isOrganizationDelinquent,
             onClick: () => {
                 onSetup(member);
             },
         },
         canChangePassword && {
             text: c('Member action').t`Change password`,
+            disabled: isOrganizationDelinquent,
             onClick: () => {
                 onChangePassword(member);
             },
         },
         canRevokeSessions && {
             text: c('Member action').t`Revoke sessions`,
+            disabled: isOrganizationDelinquent,
             onClick: () => {
                 void withLoading(onRevoke(member));
             },
