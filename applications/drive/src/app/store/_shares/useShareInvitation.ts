@@ -8,6 +8,7 @@ import {
 import {
     queryAcceptShareInvite,
     queryInvitationDetails,
+    queryInvitationList,
     queryInviteProtonUser,
     queryShareInvitationDetails,
     queryShareInvitationsListing,
@@ -95,6 +96,25 @@ export const useShareInvitation = () => {
         ).then(({ Invitation }) => shareInvitationPayloadToShareInvitation(Invitation));
     };
 
+    const listInvitations = async (abortSignal: AbortSignal, shareId: string) => {
+        return debouncedRequest<{ Code: number; Invitations: ShareInvitationPayload[] }>(
+            queryInvitationList(shareId),
+            abortSignal
+        )
+            .then(({ Invitations }) =>
+                Invitations.map((Invitation) => shareInvitationPayloadToShareInvitation(Invitation))
+            )
+            .catch((e) => {
+                new EnrichedError('Failed to fetch share invitations', {
+                    tags: {
+                        shareId,
+                    },
+                    extra: { e },
+                });
+                return [];
+            });
+    };
+
     const acceptInvitation = async (
         abortSignal: AbortSignal,
         params: {
@@ -159,6 +179,7 @@ export const useShareInvitation = () => {
     return {
         getShareInvitations,
         inviteProtonUser,
+        listInvitations,
         acceptInvitation,
         updateShareInvitationPermissions,
     };
