@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath } from '@proton/pass/constants';
@@ -71,20 +70,18 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
 export const Settings: FC<RouteChildrenProps> = (props) => {
     const { config } = usePassCore();
     return (
-        <LockConfirmContextProvider>
-            <div
-                className="flex flex-column gap-2 flex-nowrap justify-space-between w-full h-full px-4 overflow-auto"
-                style={{ '--max-w-custom': '50em' }}
-            >
-                <SettingsTabs {...props} />
+        <div
+            className="flex flex-column gap-2 flex-nowrap justify-space-between w-full h-full px-4 overflow-auto"
+            style={{ '--max-w-custom': '50em' }}
+        >
+            <SettingsTabs {...props} />
 
-                <div className="justify-end shrink-0 pb-3">
-                    <hr className="mb-2" />
-                    <span className="text-xs color-weak">
-                        {PASS_APP_NAME} v{config.APP_VERSION}
-                    </span>
-                </div>
+            <div className="justify-end shrink-0 pb-3">
+                <hr className="mb-2" />
+                <span className="text-xs color-weak">
+                    {PASS_APP_NAME} v{config.APP_VERSION}
+                </span>
             </div>
-        </LockConfirmContextProvider>
+        </div>
     );
 };

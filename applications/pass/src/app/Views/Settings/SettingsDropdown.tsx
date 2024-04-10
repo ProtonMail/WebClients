@@ -41,8 +41,8 @@ export const SettingsDropdown: FC = () => {
 
     const settings = useMemo<SettingAction[]>(
         () => [
-            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
-            { key: 'security', label: c('Label').t`Security`, icon: 'locks', signaled: offlineSignaled },
+            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel', signaled: offlineSignaled },
+            { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-up-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-down-line' },
             { key: 'account', label: c('Label').t`Account`, icon: 'arrow-out-square', onClick: navigateToAccount },

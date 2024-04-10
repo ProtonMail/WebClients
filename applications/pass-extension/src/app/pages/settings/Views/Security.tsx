@@ -1,5 +1,5 @@
 import { type FC } from 'react';
 
-import { PinLockSetting } from '@proton/pass/components/Settings/PinLockSetting';
+import { LockSettings } from '@proton/pass/components/Settings/Lock';
 
-export const Security: FC = () => <PinLockSetting />;
+export const Security: FC = () => <LockSettings />;

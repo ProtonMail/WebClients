@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 import { flushSync } from 'react-dom';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import { useNotifications } from '@proton/components/hooks';
+import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -29,6 +30,7 @@ import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -406,5 +408,19 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useVisibleEffect((visible) => probe[visible ? 'start' : 'cancel']());
 
-    return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
+    return (
+        <AuthServiceContext.Provider value={authService}>
+            <UnlockProvider
+                unlock={useCallback(async ({ mode, secret }) => {
+                    try {
+                        await authService.unlock(mode, secret);
+                    } catch (err) {
+                        throw new Error(getErrorMessage(err));
+                    }
+                }, [])}
+            >
+                {children}
+            </UnlockProvider>
+        </AuthServiceContext.Provider>
+    );
 };

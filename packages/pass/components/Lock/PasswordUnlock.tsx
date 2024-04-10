@@ -1,21 +1,22 @@
 import { type FC } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Field } from '@proton/pass/components/Form/Field/Field';
+import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
+import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { bootIntent } from '@proton/pass/store/actions';
+import { unlock } from '@proton/pass/store/actions';
+import { unlockRequest } from '@proton/pass/store/actions/requests';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
-import { Field } from '../Form/Field/Field';
-import { PasswordField } from '../Form/legacy/PasswordField';
-
-export const OfflineUnlock: FC = () => {
-    const dispatch = useDispatch();
+export const PasswordUnlock: FC = () => {
     const history = useHistory();
+    const passwordUnlock = useRequest(unlock, { initialRequestId: unlockRequest() });
 
     const form = useFormik({
         initialValues: { password: '' },
@@ -28,7 +29,7 @@ export const OfflineUnlock: FC = () => {
              * in the service's `onAuthorized` callback */
             const localID = authStore.getLocalID();
             history.replace(getBasename(localID) ?? '/');
-            dispatch(bootIntent(password));
+            passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password });
         },
     });
 
@@ -43,9 +44,17 @@ export const OfflineUnlock: FC = () => {
                         rootClassName="flex-1"
                         className="flex-1 rounded-xl overflow-hidden"
                         inputClassName="text-rg rounded-none"
+                        disabled={passwordUnlock.loading}
                     />
                 </div>
-                <Button pill shape="solid" color="norm" className="w-full" type="submit">
+                <Button
+                    pill
+                    shape="solid"
+                    color="norm"
+                    className="w-full"
+                    type="submit"
+                    loading={passwordUnlock.loading}
+                >
                     {c('Action').t`Continue`}
                 </Button>
             </Form>

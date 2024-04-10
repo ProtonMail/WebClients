@@ -15,7 +15,6 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
@@ -183,13 +182,7 @@ const SettingsApp: FC = () => {
                                     </div>
                                 )}
                             />
-                            <Route
-                                render={({ location: { pathname } }) => (
-                                    <LockConfirmContextProvider>
-                                        <SettingsTabs pathname={pathname} />
-                                    </LockConfirmContextProvider>
-                                )}
-                            />
+                            <Route render={({ location: { pathname } }) => <SettingsTabs pathname={pathname} />} />
                         </Switch>
                     </div>
                 </ExtensionConnect>

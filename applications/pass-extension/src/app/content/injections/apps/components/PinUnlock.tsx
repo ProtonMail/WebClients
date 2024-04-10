@@ -4,13 +4,13 @@ import { useEffect } from 'react';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
+import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientSessionLocked } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
 
 type Props = { header?: ReactNode; onUnlock?: () => void };
 
@@ -23,20 +23,18 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
     /* Re-render the PIN input with correct input focus */
     const [key, rerender] = useRerender('pin-input');
 
-    const onSubmit = async (value: string) => {
+    const unlock = useUnlock((err) => {
+        setValue('');
+        setError(err.message);
+        rerender();
+    });
+
+    const onSubmit = async (secret: string) => {
         try {
             setLoading(true);
             setError(null);
-            await sendMessage.onSuccess(
-                contentScriptMessage({ type: WorkerMessageType.AUTH_UNLOCK, payload: { pin: value } }),
-                (res) => {
-                    if (!res.ok) {
-                        setValue('');
-                        setError(res.error);
-                        rerender();
-                    } else onUnlock?.();
-                }
-            );
+            await unlock({ mode: LockMode.SESSION, secret });
+            onUnlock?.();
         } catch {
         } finally {
             setLoading(false);
