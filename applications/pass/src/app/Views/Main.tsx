@@ -18,6 +18,7 @@ import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
+import { MonitorProvider } from '@proton/pass/components/Monitor/MonitorProvider';
 import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
@@ -120,7 +121,9 @@ export const Main: FC = () => (
                             <PasswordProvider>
                                 <SpotlightProvider>
                                     <OnboardingProvider>
-                                        <MainSwitch />
+                                        <MonitorProvider>
+                                            <MainSwitch />
+                                        </MonitorProvider>
                                     </OnboardingProvider>
                                 </SpotlightProvider>
                             </PasswordProvider>
