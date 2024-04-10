@@ -80,3 +80,10 @@ export const getDBCache = async (userID: string): Promise<Partial<EncryptedPassC
         return {};
     }
 };
+
+export const getEncryptedCacheKey = async (userID: string): Promise<Maybe<string>> => {
+    try {
+        const cache = await getDBCache(userID);
+        return cache.encryptedCacheKey;
+    } catch {}
+};

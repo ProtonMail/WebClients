@@ -9,7 +9,6 @@ import createSagaMiddleware from 'redux-saga';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { draftsGarbageCollect, startEventPolling } from '@proton/pass/store/actions';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
 import { workerRootSaga } from '@proton/pass/store/sagas';
@@ -90,18 +89,20 @@ const options: RootSagaOptions = {
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.i18n.setLocale(selectLocale(store.getState())).catch(noop);
             ctx.service.autofill.sync();
-            store.dispatch(startEventPolling());
-            store.dispatch(draftsGarbageCollect());
             WorkerMessageBroker.buffer.flush();
 
-            const lockStatus = authStore.getLockStatus();
+            const lockMode = authStore.getLockMode();
             const lockTtl = authStore.getLockTTL();
             /* If the boot is initiated following a session unlock, execute the
              * `onSessionLockUpdate` effect after the sequence successfully completes.
              * This step ensures the proper setup of the `SESSION_LOCK_ALARM` based on
              * the current lock status and TTL */
-            if (lockStatus && lockTtl) {
-                void ctx.service.auth.config.onSessionLockUpdate?.({ status: lockStatus, ttl: lockTtl }, false);
+            if (lockMode && lockTtl) {
+                void ctx.service.auth.config.onLockUpdate?.(
+                    { mode: lockMode, locked: false, ttl: lockTtl },
+                    authStore.getLocalID(),
+                    false
+                );
             }
         } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
     }),
@@ -133,7 +134,7 @@ const options: RootSagaOptions = {
             payload: { notification },
         });
 
-        logger.info(`[Notification::${notification.type}] ${notification.text} - broadcasting`);
+        logger.info(`[Notification::${notification.type}] ${notification.text}`);
 
         return canConsume || notification.type === 'success'
             ? WorkerMessageBroker.ports.broadcast(message)

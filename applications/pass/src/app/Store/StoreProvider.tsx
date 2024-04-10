@@ -19,20 +19,16 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
+import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import {
-    draftsGarbageCollect,
-    getBreaches,
-    getUserAccessIntent,
-    getUserFeaturesIntent,
-    getUserSettings,
-    passwordHistoryGarbageCollect,
-    startEventPolling,
-    stopEventPolling,
-} from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
+    selectFeatureFlag,
+    selectLocale,
+    selectLockEnabled,
+    selectOnboardingEnabled,
+} from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import { useAuthService } from '../Context/AuthServiceProvider';
@@ -68,32 +64,19 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getTelemetry: () => telemetry,
 
                 onBoot: async (res) => {
+                    client.current.setBooted(res.ok);
                     const userID = authStore.getUserID()!;
                     const state = store.getState();
 
                     if (res.ok) {
                         telemetry.start().catch(noop);
-                        void core.i18n.setLocale(selectLocale(state));
-
-                        store.dispatch(draftsGarbageCollect());
-                        store.dispatch(passwordHistoryGarbageCollect());
-                        store.dispatch(withRevalidate(getBreaches.intent()));
-
-                        if (res.fromCache) {
-                            /** Revalidate user data when booting from cache  */
-                            store.dispatch(withRevalidate(getUserFeaturesIntent(userID)));
-                            store.dispatch(withRevalidate(getUserAccessIntent(userID)));
-                            store.dispatch(withRevalidate(getUserSettings.intent(userID)));
-                        }
-
+                        core.i18n.setLocale(selectLocale(state)).catch(noop);
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
+                        if (selectLockEnabled(state)) authStore.setLockLastExtendTime(getEpoch());
 
-                        if (
-                            selectOnboardingEnabled(installed)(state) &&
-                            (await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING))
-                        ) {
-                            history.replace(getLocalPath('onboarding'));
-                        }
+                        const onboardingEnabled = selectOnboardingEnabled(installed)(state);
+                        const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
+                        if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
 

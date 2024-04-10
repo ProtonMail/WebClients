@@ -1,7 +1,8 @@
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientReady } from '@proton/pass/lib/client';
 import { createMessageBroker } from '@proton/pass/lib/extension/message';
 import { cacheRequest } from '@proton/pass/store/actions';
-import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { withContext } from './context';
@@ -40,7 +41,7 @@ const WorkerMessageBroker = createMessageBroker({
     }),
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = portName.startsWith('popup');
-        const hasRegisteredLock = ctx.authStore.getLockStatus() === SessionLockStatus.REGISTERED;
+        const hasRegisteredLock = ctx.authStore.getLockMode() !== LockMode.NONE;
 
         /** check if the client is ready before triggering this
          * cache request as we may be in an on-going boot */

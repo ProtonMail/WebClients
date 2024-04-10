@@ -39,7 +39,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
 export const draftDiscard = createAction('draft::discard', (payload: DraftBase) => withThrottledCache({ payload }));
-export const draftsGarbageCollect = createAction('drafts::gc', () => withThrottledCache({ payload: {} }));
+export const draftsGarbageCollect = createAction('drafts::gc');
 
 export const itemCreationIntent = createOptimisticAction(
     'item::creation::intent',
