@@ -8,7 +8,7 @@ import { useLink } from '../_links';
 import { ShareInvitation, ShareInvitee, ShareMember, useShare, useShareActions, useShareInvitation } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
-    const { inviteProtonUser } = useShareInvitation();
+    const { inviteProtonUser, listInvitations } = useShareInvitation();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const [isLoading, withLoading] = useLoading();
     const [isAdding, withAdding] = useLoading();
@@ -30,6 +30,13 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
                 return;
             }
             const share = await getShare(abortController.signal, link.shareId);
+
+            await listInvitations(abortController.signal, share.shareId).then((invites: ShareInvitation[]) => {
+                if (invites) {
+                    setInvitations(invites);
+                }
+            });
+
             setVolumeId(share.volumeId);
             // TODO: Uncomment this when listing Shared by me will be available
             // await getShareMembers(abortController.signal, {
