@@ -94,6 +94,7 @@ export enum WorkerMessageType {
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PASSKEY_CREATE = 'PASSKEY_CREATE',
     PASSKEY_GET = 'PASSKEY_GET',
+    PASSKEY_INTERCEPT = 'PASSKEY_INTERCEPT',
     PASSKEY_QUERY = 'PASSKEY_QUERY',
     PAUSE_WEBSITE = 'PAUSE_WEBSITE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
@@ -158,6 +159,7 @@ export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQU
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
 export type PasskeyGetMessage = WithPayload<WorkerMessageType.PASSKEY_GET, PasskeyGetPayload>;
+export type PasskeyInterceptMessage = { type: WorkerMessageType.PASSKEY_INTERCEPT };
 export type PasskeyQueryMessage = WithPayload<WorkerMessageType.PASSKEY_QUERY, PasskeyQueryPayload>;
 export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
@@ -217,6 +219,7 @@ export type WorkerMessage =
     | OTPCodeGenerateMessage
     | PasskeyCreateMessage
     | PasskeyGetMessage
+    | PasskeyInterceptMessage
     | PasskeyQueryMessage
     | PauseWebsiteMessage
     | PermissionsUpdateMessage
@@ -268,6 +271,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;
     [WorkerMessageType.PASSKEY_GET]: PasskeyGetResponse;
+    [WorkerMessageType.PASSKEY_INTERCEPT]: { intercept: boolean };
     [WorkerMessageType.PASSKEY_QUERY]: { passkeys: SelectedPasskey[] };
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.REGISTER_ELEMENTS]: { hash: string };

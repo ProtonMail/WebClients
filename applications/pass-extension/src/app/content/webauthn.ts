@@ -20,14 +20,18 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
      * property called `wrappedJSObject`. This property contains an "unwrapped"
      * version of the object, including any modifications made by page scripts.
      * This override is necessary to intercept and manipulate navigator APIs */
-    const self = window.wrappedJSObject ?? window;
+    const self = (window.wrappedJSObject ?? window) as Window & typeof globalThis;
     const credentials = self.navigator.credentials;
+    const pk = self.PublicKeyCredential;
     const webauthnSupported = typeof credentials?.get === 'function' && typeof credentials?.create === 'function';
 
     if (!webauthnSupported) return;
 
     const create = credentials.create.bind(navigator.credentials);
     const get = credentials.get.bind(navigator.credentials);
+    const conditionalMediationAvailable = pk?.isConditionalMediationAvailable?.bind(pk);
+    const verifyingPlatformAuthenticatorAvailable = pk?.isUserVerifyingPlatformAuthenticatorAvailable?.bind(pk);
+
     const Exception = window.DOMException;
 
     const bridge = createMessageBridge();
@@ -109,6 +113,29 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
             resolve(clone(intoPublicKeyCredential(result.response.credential, response, clone)));
         });
 
+    const shouldIntercept = async (): Promise<boolean> =>
+        bridge.getState().connected
+            ? bridge
+                  .sendMessage({ type: WorkerMessageType.PASSKEY_INTERCEPT }, {})
+                  .then((res) => (res.type === 'success' ? res.intercept : false))
+                  .catch(() => false)
+            : false;
+
+    const mediationAvailable = () =>
+        promise<boolean>(async (resolve) => {
+            const intercept = await shouldIntercept();
+            resolve(Boolean(intercept || (await conditionalMediationAvailable?.())));
+        });
+
+    const authenticatorAvailable = () =>
+        promise<boolean>(async (resolve) => {
+            const intercept = await shouldIntercept();
+            resolve(Boolean(intercept || (await verifyingPlatformAuthenticatorAvailable?.())));
+        });
+
     exporter(getCredentials, credentials, { defineAs: 'get' });
     exporter(createCredentials, credentials, { defineAs: 'create' });
+
+    exporter(mediationAvailable, pk, { defineAs: 'isConditionalMediationAvailable' });
+    exporter(authenticatorAvailable, pk, { defineAs: 'isUserVerifyingPlatformAuthenticatorAvailable' });
 })();
