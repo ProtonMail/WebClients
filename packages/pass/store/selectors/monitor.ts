@@ -13,8 +13,10 @@ export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSetti
 
 export const selectDuplicatePasswords = createSelector(selectItemsByType('login'), getDuplicatePasswords);
 
-export const selectDuplicatePasswordItems = createSelector(selectDuplicatePasswords, selectItems, (duplicates, items) =>
-    duplicates.map((group) => group.map(({ shareId, itemId }) => items[shareId][itemId]).filter(truthy))
+export const selectDuplicatePasswordItems = createSelector(
+    [selectDuplicatePasswords, selectItems],
+    (duplicates, items) =>
+        duplicates.map((group) => group.map(({ shareId, itemId }) => items[shareId][itemId]).filter(truthy))
 );
 
 export const selectItemReport = (item: SelectedItem) =>
