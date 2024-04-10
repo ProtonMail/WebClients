@@ -1,0 +1,10 @@
+.pass-monitor-grid {
+	display: flex;
+	flex-direction: column;
+
+	// for md screens
+	@media (width >= 42.51em) {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr;
+	}
+}

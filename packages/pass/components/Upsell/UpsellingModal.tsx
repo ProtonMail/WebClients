@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import monitorSVG from '@proton/pass/assets/monitoring/upgrade.svg';
+import monitorSVG from '@proton/pass/assets/monitor/upgrade.svg';
 import onboardingSVG from '@proton/pass/assets/onboarding.svg';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { type AdapativeModalProps, AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';

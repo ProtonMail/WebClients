@@ -12,11 +12,11 @@ import type { SelectedItem } from '@proton/pass/types';
 export const ItemReport: FC<SelectedItem> = (item) => {
     const { navigate } = useNavigation();
     const report = useSelector(selectItemReport(item));
-    const { duplicates } = report.password;
+    const duplicatesCount = report.password.duplicates.length;
 
     return (
         <>
-            {duplicates > 1 && (
+            {duplicatesCount > 1 && (
                 <div className="py-4">
                     <ActionCard
                         onClick={() => navigate(getLocalPath('monitor'))}
@@ -25,20 +25,20 @@ export const ItemReport: FC<SelectedItem> = (item) => {
                         subtitle={
                             <>
                                 <div>
-                                    {duplicates < 5
+                                    {duplicatesCount < 5
                                         ? c('Description').ngettext(
-                                              msgid`${duplicates} other login use this password:`,
-                                              `${duplicates} other logins use this password:`,
-                                              duplicates
+                                              msgid`${duplicatesCount} other login use this password:`,
+                                              `${duplicatesCount} other logins use this password:`,
+                                              duplicatesCount
                                           )
                                         : // translator full sentence is "X other login use this password", in this usecase X is allwas >5 and the text "X other login" is displayed as pill
-                                          c('Description').jt`${duplicates} other logins use this password`}
+                                          c('Description').jt`${duplicatesCount} other logins use this password`}
                                 </div>
                                 <div>{c('Description')
                                     .t`Visit the website and generate a unique password for this item.`}</div>
                             </>
                         }
-                        pillLabel={duplicates}
+                        pillLabel={duplicatesCount}
                         type="warning"
                     />
                 </div>
