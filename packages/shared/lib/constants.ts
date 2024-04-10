@@ -748,8 +748,6 @@ export function isFreeSubscription(obj: any): obj is FreeSubscription {
     return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
 }
 
-export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
-
 export enum PLANS {
     FREE = 'free',
     DRIVE = 'drive2022',
