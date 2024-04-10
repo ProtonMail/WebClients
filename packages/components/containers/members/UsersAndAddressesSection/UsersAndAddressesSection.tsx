@@ -338,7 +338,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         loadingOrganization ||
         loadingCustomDomains ||
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
+
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
+    const disableAddAddressButton = loadingAddAddresses || organization?.State === ORGANIZATION_STATE.DELINQUENT;
     const selfMember = members?.find((member) => member.Self);
 
     const settingsParagraphContent = (() => {
@@ -507,7 +509,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     />
                                 ))}
 
-                            <Button shape="outline" disabled={loadingAddAddresses} onClick={() => handleAddAddress()}>
+                            <Button
+                                shape="outline"
+                                disabled={disableAddAddressButton}
+                                onClick={() => handleAddAddress()}
+                            >
                                 {c('Action').t`Add address`}
                             </Button>
                         </>
