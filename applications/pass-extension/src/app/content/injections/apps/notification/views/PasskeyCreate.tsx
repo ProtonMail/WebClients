@@ -74,7 +74,12 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                 if (result.type !== 'success') throw new Error(result.error);
 
                 const response = await (async () => {
-                    if (!result.intercept) return createBridgeResponse({ type: 'success', intercept: false }, token);
+                    if (!result.intercept) {
+                        return createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
+                            { type: 'success', intercept: false },
+                            token
+                        );
+                    }
 
                     const { response } = result;
                     const passkey = sanitizePasskey(response);
@@ -90,7 +95,10 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
                         (res) => res.type === 'error' && throwError({ message: res.error })
                     );
 
-                    return createBridgeResponse({ type: 'success', response, intercept: true }, token);
+                    return createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
+                        { type: 'success', response, intercept: true },
+                        token
+                    );
                 })();
 
                 postMessage(response);
@@ -225,7 +233,14 @@ export const PasskeyCreate: FC<Props> = (props) => {
         <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
             <NotificationHeader
                 title={c('Info').t`Save passkey`}
-                onClose={() => postMessage(createBridgeResponse({ type: 'success', intercept: false }, token))}
+                onClose={() =>
+                    postMessage(
+                        createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
+                            { type: 'success', intercept: false },
+                            token
+                        )
+                    )
+                }
             />
 
             <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
