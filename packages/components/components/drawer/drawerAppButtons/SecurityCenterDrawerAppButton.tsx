@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ThemeColor } from '@proton/colors/types';
 import DrawerAppButton, { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { useDrawer } from '@proton/components/hooks';
-import { baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Optional } from '@proton/shared/lib/interfaces';
 

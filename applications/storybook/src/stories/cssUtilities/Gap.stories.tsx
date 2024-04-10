@@ -19,6 +19,11 @@ const sizes = [
         px: '0',
     },
     {
+        class: 'px',
+        rem: '0.0625rem',
+        px: '1',
+    },
+    {
         class: '0.5',
         rem: '0.125rem',
         px: '2px',
@@ -127,10 +132,7 @@ export const Gap = () => {
     return (
         <div className="w-full relative flex gap-4">
             {sizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="border rounded w-1/3 flex flex-column items-center gap-2 p-2"
-                >
+                <div key={size.class} className="border rounded w-1/3 flex flex-column items-center gap-2 p-2">
                     <span className="text-2xs">gap-{size.class}</span>
                     <div
                         className={`gap-${size.class}`}
@@ -152,10 +154,7 @@ export const GapY = () => {
     return (
         <div className="w-full relative flex gap-4">
             {sizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="border rounded w-1/3 flex flex-column items-center gap-2 p-2"
-                >
+                <div key={size.class} className="border rounded w-1/3 flex flex-column items-center gap-2 p-2">
                     <span className="text-2xs">gap-y-{size.class}</span>
                     <div
                         className={`gap-y-${size.class}`}
@@ -177,10 +176,7 @@ export const GapX = () => {
     return (
         <div className="w-full relative flex gap-4">
             {sizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="border rounded w-1/3 flex flex-column items-center gap-2 p-2"
-                >
+                <div key={size.class} className="border rounded w-1/3 flex flex-column items-center gap-2 p-2">
                     <span className="text-2xs">gap-x-{size.class}</span>
                     <div
                         className={`gap-x-${size.class}`}

@@ -25,6 +25,7 @@ interface Arguments {
     isScheduleCallsEnabled: boolean;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
+    isOrganizationLogoUploadAvailable: boolean;
 }
 
 export const getRoutes = ({
@@ -42,6 +43,7 @@ export const getRoutes = ({
     isScheduleCallsEnabled,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
+    isOrganizationLogoUploadAvailable,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -74,6 +76,7 @@ export const getRoutes = ({
             organization,
             subscription,
             isScheduleCallsEnabled,
+            isOrganizationLogoUploadAvailable,
         }),
         vpn: getVpnAppRoutes({ app }),
     };

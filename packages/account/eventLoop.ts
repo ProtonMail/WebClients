@@ -12,6 +12,7 @@ import type {
     MailSettings,
     Member,
     Organization,
+    OrganizationSettings,
     OutgoingAddressForwarding,
     PendingInvitation,
     SSO,
@@ -37,7 +38,8 @@ export interface EventLoop {
     ContactEmails?: EventItemUpdate<ContactEmail, 'ContactEmail'>[];
     Calendars?: CalendarEventManager[];
     CalendarMembers?: CalendarMemberEventManager[];
-    Organization?: Organization;
+    Organization?: Omit<Organization, 'Settings'>;
+    OrganizationSettings?: OrganizationSettings;
     UserSettings?: UserSettings;
     MailSettings?: MailSettings;
     UserInvitations?: EventItemUpdate<PendingInvitation, 'UserInvitation'>[];
