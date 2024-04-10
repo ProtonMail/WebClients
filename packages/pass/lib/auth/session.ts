@@ -14,6 +14,7 @@ import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentic
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
+import type { LockMode } from './lock/types';
 import type { AuthServiceConfig } from './service';
 import type { AuthStore } from './store';
 
@@ -24,6 +25,8 @@ export type AuthSession = {
     AccessToken: string;
     keyPassword: string;
     LocalID?: number;
+    lockMode: LockMode;
+    lockTTL?: number;
     offlineConfig?: OfflineConfig;
     offlineKD?: string;
     payloadVersion?: AuthSessionVersion;
@@ -44,6 +47,8 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
     'keyPassword',
     'LocalID',
+    'lockMode',
+    'lockTTL',
     'offlineConfig',
     'offlineKD',
     'payloadVersion',
@@ -54,7 +59,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 ];
 
 export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
-    Boolean(data.AccessToken && data.keyPassword && data.RefreshToken && data.UID && data.UserID);
+    Boolean(data.AccessToken && data.RefreshToken && data.UID && data.UserID && data.keyPassword);
 
 export const isValidPersistedSession = (data: any): data is EncryptedAuthSession =>
     isObject(data) &&

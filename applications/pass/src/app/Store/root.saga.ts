@@ -2,17 +2,15 @@ import { all } from 'redux-saga/effects';
 
 import aliasDetailsRequest from '@proton/pass/store/sagas/alias/alias-details-request.saga';
 import aliasOptionsRequest from '@proton/pass/store/sagas/alias/alias-options-request.saga';
-import sessionLockDisable from '@proton/pass/store/sagas/auth/session-lock-disable.saga';
-import sessionLockEnable from '@proton/pass/store/sagas/auth/session-lock-enable.saga';
-import sessionLockImmediate from '@proton/pass/store/sagas/auth/session-lock-immediate.saga';
-import sessionUnlock from '@proton/pass/store/sagas/auth/session-unlock.saga';
+import lockCreate from '@proton/pass/store/sagas/auth/lock-create.saga';
+import lock from '@proton/pass/store/sagas/auth/lock.saga';
+import unlock from '@proton/pass/store/sagas/auth/unlock.saga';
 import boot from '@proton/pass/store/sagas/client/boot.saga';
 import cache from '@proton/pass/store/sagas/client/cache.saga';
-import hydrate from '@proton/pass/store/sagas/client/hydrate.saga';
 import notification from '@proton/pass/store/sagas/client/notification.saga';
 import offlineDisable from '@proton/pass/store/sagas/client/offline-disable.saga';
+import offlineEnable from '@proton/pass/store/sagas/client/offline-enable.saga';
 import offlineResume from '@proton/pass/store/sagas/client/offline-resume.saga';
-import offlineSetup from '@proton/pass/store/sagas/client/offline-setup.saga';
 import reportProblem from '@proton/pass/store/sagas/client/report-problem.saga';
 import settings from '@proton/pass/store/sagas/client/settings.saga';
 import sync from '@proton/pass/store/sagas/client/sync.saga';
@@ -87,7 +85,6 @@ export function* rootSaga(options: RootSagaOptions) {
             customAddressVerify,
             events,
             featureFlags,
-            hydrate,
             inviteAccept,
             inviteAddressesValidate,
             inviteCreate,
@@ -110,6 +107,8 @@ export function* rootSaga(options: RootSagaOptions) {
             itemsImport,
             itemTrash,
             itemUnpin,
+            lock,
+            lockCreate,
             monitorAddressResolve,
             monitorAddressToggle,
             monitorToggle,
@@ -117,15 +116,11 @@ export function* rootSaga(options: RootSagaOptions) {
             newUserInviteRemove,
             notification,
             offlineDisable,
+            offlineEnable,
             offlineResume,
-            offlineSetup,
             organizationSettingsGet,
             reportProblem,
             sentinelToggle,
-            sessionLockDisable,
-            sessionLockEnable,
-            sessionLockImmediate,
-            sessionUnlock,
             settings,
             shareAccessOptions,
             shareEditRole,
@@ -134,6 +129,7 @@ export function* rootSaga(options: RootSagaOptions) {
             sync,
             trashDelete,
             trashRestore,
+            unlock,
             userAccess,
             userSettings,
             vaultCreation,

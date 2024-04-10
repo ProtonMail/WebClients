@@ -26,6 +26,8 @@ import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
+import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import {
     clientBooted,
@@ -55,7 +57,9 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
     const core = createPassCoreProxyService();
+    const auth = createAuthService(api, authStore);
 
+    auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     exposePassCrypto(createPassCrypto());
 
     const context = WorkerContext.set({
@@ -65,7 +69,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             activation: createActivationService(),
             alias: createAliasService(),
             apiProxy: createApiProxyService(),
-            auth: createAuthService(api, authStore),
+            auth,
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
             core,

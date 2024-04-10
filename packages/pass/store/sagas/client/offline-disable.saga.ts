@@ -1,5 +1,6 @@
 import { takeLeading } from 'redux-saga/effects';
 
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineDisable } from '@proton/pass/store/actions';
@@ -11,8 +12,7 @@ function* offlineDisableWorker({ getAuthService, getAuthStore, getAppState }: Ro
     const authStore = getAuthStore();
     const { status } = getAppState();
 
-    authStore.setOfflineConfig(undefined);
-    authStore.setOfflineKD(undefined);
+    yield auth.deleteLock(LockMode.PASSWORD, '');
 
     /** If the client is offline-unlocked, we cannot properly re-persist the session
      * because the session is not resumed. We need access to the `keyPassword` in
@@ -27,7 +27,7 @@ function* offlineDisableWorker({ getAuthService, getAuthStore, getAppState }: Ro
             delete session.offlineConfig;
             yield auth.config.onSessionPersist?.(JSON.stringify(session));
         }
-    } else yield auth.persistSession();
+    }
 }
 
 export default function* watcher(options: RootSagaOptions): Generator {

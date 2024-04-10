@@ -6,24 +6,23 @@ import { c } from 'ttag';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
+import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
-import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
+import { SESSION_KEYS, isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { clientAuthorized, clientReady, clientSessionLocked, clientUnauthorized } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     cacheCancel,
+    lockSync,
     notification,
-    sessionLockSync,
-    sessionUnlockFailure,
-    sessionUnlockIntent,
-    sessionUnlockSuccess,
     stateDestroy,
     stopEventPolling,
+    unlock,
 } from '@proton/pass/store/actions';
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
-import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
@@ -126,11 +125,11 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onSessionEmpty: withContext((ctx) => ctx.setStatus(AppStatus.UNAUTHORIZED)),
 
-        onSessionLockUpdate: withContext(async (ctx, lock) => {
+        onLockUpdate: withContext(async (ctx, lock) => {
             try {
-                store.dispatch(sessionLockSync(lock));
+                store.dispatch(lockSync(lock));
 
-                const { ttl, status } = lock;
+                const { ttl, mode } = lock;
                 await browser.alarms.clear(SESSION_LOCK_ALARM);
                 const ready = clientReady(ctx.getState().status);
 
@@ -138,14 +137,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                  * setting the `SESSION_LOCK_ALARM` immediately if the session is locked.
                  * This precaution is taken because the boot process might exceed the lock
                  * TTL duration, leading to an unsuccessful boot for the user */
-                if (ready && status === SessionLockStatus.REGISTERED && ttl) {
-                    browser.alarms.create(SESSION_LOCK_ALARM, { when: epochToMs(getEpoch() + ttl) });
+                if (ready && mode !== LockMode.NONE && ttl) {
+                    const when = epochToMs(getEpoch() + ttl);
+                    browser.alarms.create(SESSION_LOCK_ALARM, { when });
                 }
             } catch {}
         }),
 
-        onSessionLocked: withContext((ctx, _offline, _broadcast) => {
-            ctx.setStatus(AppStatus.SESSION_LOCKED);
+        onLocked: withContext((ctx, mode, _localID, _broadcast) => {
+            ctx.setStatus(AppStatusFromLockMode[mode]);
             ctx.service.autofill.clear();
 
             store.dispatch(cacheCancel());
@@ -159,6 +159,16 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
+
+        onUnlocked: async (mode, _, localID) => {
+            const validSession = isValidSession(authStore.getSession());
+            if (mode === LockMode.SESSION) {
+                /** If the unlock request was triggered before the authentication
+                 * store session was fully hydrated, trigger a session resume. */
+                if (!validSession) await authService.resumeSession(localID, { retryable: false, unlocked: true });
+                else await authService.login(authStore.getSession(), { unlocked: true });
+            }
+        },
 
         onSessionPersist: withContext(async (ctx, encryptedSession) => {
             void ctx.service.storage.local.setItem('ps', encryptedSession);
@@ -232,9 +242,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = ({ payload }) =>
         new Promise<WorkerMessageResponse<WorkerMessageType.AUTH_UNLOCK>>((resolve) => {
             store.dispatch(
-                sessionUnlockIntent({ pin: payload.pin }, (action) => {
-                    if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
-                    if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
+                unlock.intent(payload, (action) => {
+                    if (unlock.success.match(action)) resolve({ ok: true });
+                    if (unlock.failure.match(action)) {
+                        resolve({
+                            ok: false,
+                            error: action.meta.notification.text?.toString() ?? null,
+                        });
+                    }
                 })
             );
         });
@@ -245,23 +260,23 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     const handleAuthCheck: MessageHandlerCallback<WorkerMessageType.AUTH_CHECK> = withContext(
         async (ctx, { payload: { immediate } }) => {
             try {
-                const status = await (async (): Promise<SessionLockStatus> => {
-                    if (immediate) return (await authService.checkLock()).status;
+                const locked = await (async (): Promise<boolean> => {
+                    if (immediate) return (await authService.checkLock()).locked;
 
-                    const lockStatus = authStore.getLockStatus();
-                    const registeredLock = lockStatus === SessionLockStatus.REGISTERED;
+                    const lockMode = authStore.getLockMode();
+                    const registeredLock = lockMode !== LockMode.NONE;
                     const ttl = authStore.getLockTTL();
 
                     if (clientReady(ctx.status) && registeredLock && ttl) {
                         const now = getEpoch();
                         const diff = now - (authStore.getLockLastExtendTime() ?? 0);
-                        if (diff > ttl * 0.5) return (await authService.checkLock()).status;
+                        if (diff > ttl * 0.5) return (await authService.checkLock()).locked;
                     }
 
-                    return lockStatus ?? SessionLockStatus.NONE;
+                    return authStore.getLocked() ?? false;
                 })();
 
-                return { ok: true, status };
+                return { ok: true, locked };
             } catch {
                 return { ok: false, error: null };
             }
@@ -290,7 +305,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     const ready = clientReady(ctx.getState().status);
                     logger.info(`[AuthService] session lock alarm detected [ready=${ready}]`);
                     await ctx.service.storage.local.setItem('forceLock', true);
-                    if (ready) return authService.lock({ soft: false });
+                    if (ready) return authService.lock(LockMode.SESSION, { soft: false });
                     else return authService.init({ forceLock: true, retryable: false });
                 }
                 case SESSION_RESUME_ALARM: {

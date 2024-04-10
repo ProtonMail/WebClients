@@ -1,7 +1,8 @@
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
-import type { Maybe, SessionLockStatus, Store } from '@proton/pass/types';
+import type { Maybe, Store } from '@proton/pass/types';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
+import { LockMode } from './lock/types';
 import type { AuthSessionVersion } from './session';
 import { type AuthSession, SESSION_VERSION } from './session';
 
@@ -10,8 +11,9 @@ export type AuthStore = ReturnType<typeof createAuthStore>;
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
 const PASS_LOCK_LAST_EXTEND_TIME = 'pass:lock_extend_time';
-const PASS_LOCK_STATUS_KEY = 'pass:lock_status';
+const PASS_LOCK_STATE_KEY = 'pass:lock_state';
 const PASS_LOCK_TOKEN_KEY = 'pass:lock_token';
+const PASS_LOCK_MODE_KEY = 'pass:lock_mode';
 const PASS_LOCK_TTL_KEY = 'pass:lock_ttl';
 const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_OFFLINE_KD_KEY = 'pass:offline_kd';
@@ -29,13 +31,17 @@ export const createAuthStore = (store: Store) => {
         hasSession: (localID?: number) =>
             Boolean(authStore.getUID() && (localID === undefined || authStore.getLocalID() === localID)),
 
+        hasOfflinePassword: () => Boolean(authStore.getOfflineConfig() && authStore.getOfflineKD()),
+
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
             keyPassword: authStore.getPassword() ?? '',
             LocalID: authStore.getLocalID(),
-            payloadVersion: authStore.getSessionVersion(),
+            lockMode: authStore.getLockMode(),
+            lockTTL: authStore.getLockTTL(),
             offlineConfig: authStore.getOfflineConfig(),
             offlineKD: authStore.getOfflineKD(),
+            payloadVersion: authStore.getSessionVersion(),
             RefreshTime: authStore.getRefreshTime(),
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
@@ -52,6 +58,8 @@ export const createAuthStore = (store: Store) => {
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
+            if (session.lockMode) authStore.setLockMode(session.lockMode);
+            if (session.lockTTL) authStore.setLockTTL(session.lockTTL);
             if (session.UID) authStore.setUID(session.UID);
             if (session.UserID) authStore.setUserID(session.UserID);
         },
@@ -77,8 +85,10 @@ export const createAuthStore = (store: Store) => {
         setOfflineConfig: (config: Maybe<OfflineConfig>) => store.set(PASS_OFFLINE_CONFIG_KEY, config),
         getOfflineConfig: (): Maybe<OfflineConfig> => store.get(PASS_OFFLINE_CONFIG_KEY),
 
-        setLockStatus: (status: Maybe<SessionLockStatus>): void => store.set(PASS_LOCK_STATUS_KEY, status),
-        getLockStatus: (): Maybe<SessionLockStatus> => store.get(PASS_LOCK_STATUS_KEY),
+        setLockMode: (mode: LockMode): void => store.set(PASS_LOCK_MODE_KEY, mode),
+        getLockMode: (): LockMode => store.get(PASS_LOCK_MODE_KEY) ?? LockMode.NONE,
+        setLocked: (status: boolean): void => store.set(PASS_LOCK_STATE_KEY, status),
+        getLocked: (): Maybe<boolean> => store.get(PASS_LOCK_STATE_KEY),
         setLockToken: encodedSetter(store)(PASS_LOCK_TOKEN_KEY),
         getLockToken: encodedGetter(store)(PASS_LOCK_TOKEN_KEY),
         setLockTTL: (ttl: Maybe<number>) => store.set(PASS_LOCK_TTL_KEY, ttl),

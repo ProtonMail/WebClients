@@ -1,6 +1,7 @@
 import type { Action } from 'redux';
 
-import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
+import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
+import type { LockMode } from '@proton/pass/lib/auth/lock/types';
 
 export type ServiceWorkerMessageBase = {
     /**  set this flag when sending out messages from clients to
@@ -14,12 +15,12 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
     (
         | { type: 'abort'; requestId: string }
         | { type: 'action'; action: Action }
-        | { type: 'locked'; offline: boolean }
         | { type: 'claim' }
+        | { type: 'lock_deleted'; mode: LockMode }
+        | { type: 'locked'; mode: LockMode }
         | { type: 'ping' }
         | { type: 'refresh'; data: RefreshSessionData }
         | { type: 'unauthorized' }
-        | { type: 'unlocked' }
     );
 
 export type ServiceWorkerMessageType = ServiceWorkerMessage['type'];

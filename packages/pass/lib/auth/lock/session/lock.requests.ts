@@ -1,20 +1,16 @@
 import { api } from '@proton/pass/lib/api/api';
-import { SessionLockStatus } from '@proton/pass/types';
+import { type Lock, LockMode } from '@proton/pass/lib/auth/lock/types';
 
-export type SessionLock = {
-    status: SessionLockStatus;
-    ttl?: number;
-};
-
-export const checkSessionLock = async (): Promise<SessionLock> => {
+export const checkSessionLock = async (): Promise<Lock> => {
     try {
         const { LockInfo } = await api({ url: 'pass/v1/user/session/lock/check', method: 'get' });
         return {
-            status: LockInfo?.Exists ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE,
+            mode: LockInfo?.Exists ? LockMode.SESSION : LockMode.NONE,
+            locked: false,
             ttl: LockInfo?.UnlockedSecs ?? undefined,
         };
     } catch (e: any) {
-        if (e?.name === 'LockedSession') return { status: SessionLockStatus.LOCKED };
+        if (e?.name === 'LockedSession') return { mode: LockMode.SESSION, locked: true };
         throw e;
     }
 };
