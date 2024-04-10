@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { useOnline } from '@proton/components/hooks';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
-import { OfflineUnlock } from '@proton/pass/components/Lock/OfflineUnlock';
+import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
 import {
     clientBusy,
@@ -102,7 +102,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                                 return c('lobby: Info').jt`Enter your PIN code`;
                             case AppStatus.PASSWORD_LOCKED:
                                 return c('lobby: Info')
-                                    .t`You are currently offline. Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
+                                    .t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
                             default:
                                 return c('lobby: Info').jt`Sign in to your account`;
                         }
@@ -121,7 +121,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                                 </div>
                             );
                         case AppStatus.PASSWORD_LOCKED:
-                            return <OfflineUnlock />;
+                            return <PasswordUnlock />;
                         default:
                             return (
                                 <Button
@@ -138,8 +138,8 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                     }
                 })()}
 
-                {!(busy || unlocking) ? (
-                    canSignOut ? (
+                {!(busy || unlocking) &&
+                    (canSignOut ? (
                         <Button
                             className="w-full"
                             color={'weak'}
@@ -160,8 +160,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                         >
                             {c('Action').t`Create a ${BRAND_NAME} account`}
                         </Button>
-                    )
-                ) : null}
+                    ))}
             </div>
 
             {renderFooter?.()}

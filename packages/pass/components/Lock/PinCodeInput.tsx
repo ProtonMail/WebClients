@@ -17,7 +17,8 @@ export const PinCodeInput: FC<Props> = ({ value, onValue, loading = false, autoF
 
     useEffect(() => {
         if (autoFocus) focusRef.current?.focus();
-    }, [autoFocus]);
+        if (loading) focusRef.current?.blur();
+    }, [autoFocus, loading]);
 
     return (
         <div className={clsx('pass-pin--input', loading && 'opacity-30 pointer-events-none')}>

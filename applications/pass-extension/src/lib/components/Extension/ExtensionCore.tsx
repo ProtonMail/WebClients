@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, useMemo, useRef } from 'react';
+import { type FC, useCallback, useMemo, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
@@ -10,6 +10,7 @@ import { promptForPermissions } from 'proton-pass-extension/lib/utils/permission
 
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
+import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -153,7 +154,25 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
             getCurrentTabUrl={() => currentTabUrl.current}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
         >
-            {children}
+            <UnlockProvider
+                unlock={useCallback(
+                    async (payload) => {
+                        const res = await sendMessage(
+                            resolveMessageFactory(endpoint)({
+                                type: WorkerMessageType.AUTH_UNLOCK,
+                                payload,
+                            })
+                        );
+
+                        if (res.type === 'error') throw new Error();
+                        if (!res.ok) throw new Error(res.error ?? '');
+                    },
+
+                    []
+                )}
+            >
+                {children}
+            </UnlockProvider>
         </PassCoreProvider>
     );
 };

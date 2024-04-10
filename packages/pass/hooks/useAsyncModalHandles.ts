@@ -12,7 +12,7 @@ export type UseAsyncModalHandle<V, T> = (options: UseAsyncModalHandlerOptions<V,
 type UseAsyncModalHandlerOptions<V, T> = Partial<T> & {
     onError?: (error: unknown) => MaybePromise<void>;
     onAbort?: () => MaybePromise<void>;
-    onSubmit: (value: V) => MaybePromise<void>;
+    onSubmit: (value: V) => MaybePromise<unknown>;
 };
 
 export const useAsyncModalHandles = <V, T = {}>(options?: HookOptions<T>) => {
