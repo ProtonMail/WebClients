@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
+import { Monitor } from 'proton-pass-web/app/Views/Monitor/Monitor';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -72,6 +73,7 @@ const MainSwitch: FC = () => {
                         <main id="main" className="content flex-1 overflow-hidden">
                             <div className="flex flex-nowrap flex-column h-full">
                                 <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
+
                                 <div className="flex items-center justify-center flex-nowrap w-full h-full">
                                     {route.match && (
                                         <Switch>
@@ -80,6 +82,7 @@ const MainSwitch: FC = () => {
                                                 path={`${route.match.path}/onboarding`}
                                                 component={Onboarding}
                                             />
+                                            <Route path={`${route.match.path}/monitor`} component={Monitor} />
                                             <Route exact path={`${route.match.path}/settings`} component={Settings} />
                                             <Route>
                                                 {(subRoute) => (
