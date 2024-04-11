@@ -4,6 +4,10 @@
 
 export type MonitorDownloadCallback = (progress: number, done: boolean) => void;
 
+export type PromiseResolve = (value: PromiseLike<void> | void) => void;
+
+export type PromiseReject = (reason?: any) => void;
+
 // @ts-ignore
 export interface LlmManager {
     hasGpu: () => boolean;
@@ -23,6 +27,7 @@ export interface RunningAction {
     isCancelled: () => boolean;
     action: () => Action;
     cancel: () => boolean;
+    waitForCompletion(): Promise<void>;
 }
 
 export type GenerationCallback = (token: string, fulltext: string) => void;

@@ -8,6 +8,8 @@ import type {
     LlmManager,
     LlmModel,
     MonitorDownloadCallback,
+    PromiseReject,
+    PromiseResolve,
     RunningAction,
     WriteFullEmailAction,
 } from '@proton/llm/index';
@@ -37,7 +39,13 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
 
     private cancelled: boolean;
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    private finishedPromise: Promise<void>;
+
+    private finishedPromiseSignals: { resolve: PromiseResolve; reject: PromiseReject } | undefined;
+
+    // @ts-ignore
+    private generation: Promise<void>;
+
     constructor(action: WriteFullEmailAction, chat: ChatWorkerClient, callback: GenerationCallback) {
         const userPrompt = action.prompt
             .trim()
@@ -60,9 +68,19 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
             fulltext = message;
             callback(token, fulltext);
         };
-        void chat
+
+        this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {
+            this.finishedPromiseSignals = { resolve, reject };
+        });
+
+        this.generation = chat
             .generate(prompt, generateProgressCallback)
             .then(() => {
+                this.finishedPromiseSignals!.resolve();
+            })
+            .catch(() => {
+                this.done = true;
+                this.finishedPromiseSignals!.reject();
                 this.done = true;
             })
             .finally(() => {
@@ -100,6 +118,10 @@ export class GpuWriteFullEmailRunningAction implements RunningAction {
             return true;
         }
         return false;
+    }
+
+    waitForCompletion(): Promise<void> {
+        return this.finishedPromise;
     }
 }
 
